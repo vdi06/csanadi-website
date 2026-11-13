@@ -1,0 +1,189 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000001",
+  "pageType": "home",
+  "menuLabel": "Kezdőoldal",
+  "title": "Kezdőoldal",
+  "slug": "kezdolap",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Sportiskola – fejlesztési minta",
+    "organization": "Csanádi Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Kezdőoldal – Csanádi Sportiskola",
+    "description": "Fejlesztési mintanézet: A(z) „Kezdőoldal” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "kezdolap"
+  ],
+  "tags": [
+    "fejlesztesi-minta"
+  ],
+  "summary": "A(z) „Kezdőoldal” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "blocks": [
+    {
+      "id": "block:home-hero",
+      "type": "hero",
+      "data": {
+        "eyebrow": "Sport • tudás • közösség",
+        "title": "A teljesítmény mögött közösség áll.",
+        "subtitle": "A Csanádi Sportiskola 2026-os weboldalának helyben futó, JSON-vezérelt fejlesztési előnézete.",
+        "buttons": [
+          {
+            "label": "Fedezd fel képzéseinket",
+            "href": "#/oktatas/kepzeseink"
+          },
+          {
+            "label": "Sportéletünk",
+            "href": "#/sport"
+          }
+        ],
+        "imageId": "media:hero"
+      }
+    },
+    {
+      "id": "block:home-shortcuts",
+      "type": "quick-links",
+      "title": "Népszerű területek",
+      "data": {
+        "items": [
+          {
+            "label": "Felvételi",
+            "href": "#/oktatas/felveteli",
+            "description": "Évfolyamok és eljárások",
+            "mediaId": "media:felveteli"
+          },
+          {
+            "label": "Események",
+            "href": "#/hirek-es-esemenyek/esemenynaptar",
+            "description": "Iskolai és sportprogramok",
+            "mediaId": "media:esemenyek"
+          },
+          {
+            "label": "Dokumentumok",
+            "href": "#/informaciok/dokumentumtar",
+            "description": "Szabályzatok és nyomtatványok",
+            "mediaId": "media:kozosseg"
+          },
+          {
+            "label": "Sporteredmények",
+            "href": "#/sport/sporteredmenyek",
+            "description": "Sportági áttekintés",
+            "mediaId": "media:eredmenyek"
+          }
+        ]
+      }
+    },
+    {
+      "id": "block:home-section",
+      "type": "section",
+      "title": "Két világ, egy közösség",
+      "children": [
+        {
+          "id": "block:home-desc",
+          "type": "markdown",
+          "data": {
+            "text": "**Tanulás és sport** — A weboldal új szerkezetében az oktatási és sportélet egymással összekapcsolva jelenik meg. A tényleges intézményi szövegek és hírek csak forrásellenőrzés után kerülnek bele."
+          }
+        },
+        {
+          "id": "block:home-cards",
+          "type": "cards",
+          "data": {
+            "items": [
+              {
+                "title": "Oktatási központ",
+                "description": "Képzéseink, felvételi és tanévi információk.",
+                "href": "#/oktatas",
+                "mediaId": "media:oktatas"
+              },
+              {
+                "title": "Sportközpont",
+                "description": "Sportágak, csapatok, eredmények és profilok.",
+                "href": "#/sport",
+                "mediaId": "media:sport"
+              },
+              {
+                "title": "Hírek és események",
+                "description": "Összekapcsolt hírek, események és közlemények.",
+                "href": "#/hirek-es-esemenyek",
+                "mediaId": "media:esemenyek"
+              }
+            ]
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "block:home-gallery-section",
+      "type": "section",
+      "title": "Pillanatképek az iskola világából",
+      "children": [
+        {
+          "id": "block:home-gallery",
+          "type": "gallery",
+          "data": {
+            "items": [
+              {
+                "mediaId": "media:iskolank",
+                "title": "Iskolánk"
+              },
+              {
+                "mediaId": "media:oktatas",
+                "title": "Oktatás"
+              },
+              {
+                "mediaId": "media:sport",
+                "title": "Sport"
+              },
+              {
+                "mediaId": "media:kozosseg",
+                "title": "Közösség"
+              },
+              {
+                "mediaId": "media:felveteli",
+                "title": "Felvételi"
+              },
+              {
+                "mediaId": "media:eredmenyek",
+                "title": "Eredmények"
+              },
+              {
+                "mediaId": "media:esemenyek",
+                "title": "Események"
+              },
+              {
+                "mediaId": "media:kapcsolat",
+                "title": "Kapcsolat"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:home-status",
+      "type": "markdown",
+      "data": {
+        "text": "**Fejlesztői előnézet:** ez a helyi változat még nem az iskola hivatalos, közzétett honlapja. A próbatartalmak helyett a következő szakaszokban hiteles, jóváhagyott információk kerülnek."
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": true,
+    "route": "#/",
+    "verifiedContent": false,
+    "bannerMediaId": "media:hero"
+  }
+}

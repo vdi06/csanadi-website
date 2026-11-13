@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000047",
+  "pageType": "hub",
+  "menuLabel": "Információk",
+  "title": "Információk",
+  "slug": "informaciok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Sportiskola – fejlesztési minta",
+    "organization": "Csanádi Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Információk – Csanádi Sportiskola",
+    "description": "Fejlesztési mintanézet: Mindennapi tudnivalók, dokumentumok és ügyintézési információk.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [
+    "fejlesztesi-minta"
+  ],
+  "summary": "Mindennapi tudnivalók, dokumentumok és ügyintézési információk.",
+  "blocks": [
+    {
+      "id": "block:047-intro",
+      "type": "section",
+      "title": "Áttekintés",
+      "children": [
+        {
+          "id": "block:047-lead",
+          "type": "markdown",
+          "data": {
+            "text": "Mindennapi tudnivalók, dokumentumok és ügyintézési információk."
+          }
+        },
+        {
+          "id": "block:047-hint",
+          "type": "markdown",
+          "data": {
+            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": true,
+    "route": "#/informaciok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg"
+  }
+}
