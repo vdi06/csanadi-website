@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="light dark">
   <meta name="description" content="Csanádi Árpád Sportiskola – helyi fejlesztési előnézet, nem hivatalos közzététel.">
   <meta name="robots" content="noindex,nofollow">
-  <title>Csanádi Sportiskola 2026 – Helyi előnézet</title>
+  <title>Csanádi Sportiskola 2026 – Fejlesztési előnézet</title>
   <link rel="icon" href="assets/graphics/favicon.png" type="image/png">
   <!-- Bootstrap: kizarolag CDN, helyi peldany nelkul. -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
@@ -14,7 +14,7 @@
 </head>
 <body>
   <a class="skip-link" href="#app">Ugrás a tartalomra</a>
-  <div class="preview-ribbon" role="status"><span class="status-dot"></span> HELYI FEJLESZTÉSI ELŐNÉZET <span class="ribbon-explain">· nem az iskola éles honlapja</span></div>
+  <div class="preview-ribbon" role="status"><span class="status-dot"></span> FEJLESZTÉSI ELŐNÉZET <span class="ribbon-explain">· nem az iskola éles honlapja</span></div>
   <header class="site-header" id="site-header">
     <div class="container-xxl brand-row">
       <a class="brand" href="#/" aria-label="Csanádi Sportiskola – kezdőoldal">
@@ -46,11 +46,11 @@
         var card=document.createElement('div');card.className='container-xxl launch-help';
         var h=document.createElement('h1');h.textContent='A weboldal nem indult el';
         var p=document.createElement('p');p.textContent=message;
-        var hint=document.createElement('p');hint.textContent=location.protocol==='file:'?'Windows alatt indítsd a START_HELYBEN.bat fájlt, és a megjelenő http://127.0.0.1 címen nyisd meg a weboldalt.':'GitHub Pages-en ellenőrizd, hogy minden fájlt feltöltöttél a repository gyökerébe (index.html, js/, json/, assets/). Frissíts Ctrl+F5-tel.';
+        var hint=document.createElement('p');hint.textContent=location.protocol==='file:'?'A JSON-alapú weboldal HTTPS vagy HTTP kiszolgálást igényel. Nyisd meg a GitHub Pages-oldalt.':'GitHub Pages-en ellenőrizd, hogy minden fájlt feltöltöttél a repository gyökerébe (index.html, js/, json/, assets/). Frissíts Ctrl+F5-tel.';
         card.append(h,p,hint);box.append(card);
       }
       if(location.protocol==='file:')fail('Az index.html közvetlen megnyitásával a JSON-oldalak biztonsági korlátozás miatt nem töltődhetnek be.');
-      else window.setTimeout(function(){if(!window.__CSANADI_STARTED__)fail('A helyi kiszolgáló vagy az alkalmazás egyik modulja nem elérhető. Ellenőrizd az indítóablak üzenetét, vagy nyomj Ctrl+F5-öt.');},25000);
+      else window.setTimeout(function(){if(!window.__CSANADI_STARTED__)fail('Az alkalmazás egyik modulja nem elérhető. Ellenőrizd a GitHub-feltöltést, vagy nyomj Ctrl+F5-öt.');},25000);
     })();
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous" defer></script>

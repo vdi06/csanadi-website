@@ -15,7 +15,7 @@
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Sporteredmények – Csanádi Sportiskola",
@@ -28,8 +28,18 @@
   "tags": [
     "fejlesztesi-minta"
   ],
-  "summary": "Sportági eredmények megjelenítési területe. Ellenőrzött sportadatok később tölthetők fel.",
+  "summary": "Képes sporttörténetek és részletes sporthírek központja, sportágak szerint szűrhető gyűjteményben.",
   "blocks": [
+    {
+      "id": "block:sports-feed-archive",
+      "type": "sports-successes",
+      "title": "Sporteredmények – válogatás",
+      "data": {
+        "view": "archive",
+        "source": "adatok/sportsikerek.json",
+        "maxNews": 8
+      }
+    },
     {
       "id": "block:033-intro",
       "type": "section",

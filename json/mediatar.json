@@ -9,8 +9,8 @@
         "mimeType": "image/webp",
         "width": 512,
         "height": 512,
-        "sizeBytes": 60934,
-        "sha256": "eb8d5f61a2fbef058b5a2c094fe1e230ca20bca880185bf5647094136f79fba2"
+        "sizeBytes": 22756,
+        "sha256": "bf32c83b51a4d7fd6a079a73dc9488e3e70720f26a45f604c1f1bcfc84ec8c16"
       },
       "variants": [
         {
@@ -18,26 +18,26 @@
           "mimeType": "image/webp",
           "width": 128,
           "height": 128,
-          "sizeBytes": 9606,
-          "sha256": "716a4115a23c438dad97209b353111a7ee742fdc28af729a2aa57b24ec0f03a5"
+          "sizeBytes": 22120,
+          "sha256": "485a839fd426871b669c634f418f34078c5e810f63b28205539e10735ea8660c"
         },
         {
           "path": "assets/media/logo/csanadi-cimer-512.webp",
           "mimeType": "image/webp",
           "width": 512,
           "height": 512,
-          "sizeBytes": 60934,
-          "sha256": "eb8d5f61a2fbef058b5a2c094fe1e230ca20bca880185bf5647094136f79fba2"
+          "sizeBytes": 22756,
+          "sha256": "bf32c83b51a4d7fd6a079a73dc9488e3e70720f26a45f604c1f1bcfc84ec8c16"
         }
       ],
-      "alt": "Csanádi címer eredeti jelképei alapján készített digitális látványterv",
-      "caption": "Az eredeti címer motívumai alapján generált logólátványterv, nem a hiteles eredeti logófájl.",
+      "alt": "Csanádi Árpád Sportiskola eredeti címerének megőrzött, digitálisan méretezett változata",
+      "caption": "A felhasználó által biztosított eredeti iskolai címer, megjelenítésre méretezve.",
       "decorative": false,
       "rights": {
-        "clearance": "pending",
-        "holder": "Csanádi Sportiskola – vizuális tervezési változat",
-        "source": "Közép-Pesti Tájolóban megjelent iskolai címer vizuális referenciája és MI-generált átdolgozás",
-        "license": "Hivatalos arculati jóváhagyás előtt csak fejlesztési előnézethez."
+        "clearance": "user-provided",
+        "holder": "Csanádi Sportiskola",
+        "source": "Felhasználó által átadott eredeti címer",
+        "license": "Az iskolai felhasználás jóváhagyása az intézmény feladata."
       }
     },
     {
@@ -389,6 +389,94 @@
         "holder": "Csanádi Sportiskola – tervezési látványanyag",
         "source": "2026. november 13. – mesterséges intelligenciával generált látványkép, fejlesztési előnézethez",
         "license": "Csak belső fejlesztési előnézethez; nyilvános iskolai használat előtt külön jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:siker-atletika",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/siker-atletika.webp",
+        "mimeType": "image/webp",
+        "width": 960,
+        "height": 540,
+        "sizeBytes": 53224,
+        "sha256": "8b8d161d8ffdbb47292825bc175b97af9fcb9190a147447563c01851e0d2fb3c"
+      },
+      "variants": [],
+      "alt": "MI-generált, illusztratív sportpillanat – atletika",
+      "caption": "Generált sportillusztráció, nem egy valóban megtörtént iskolai verseny dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "preview-only",
+        "holder": "2026-os honlapterv fejlesztési illusztrációja",
+        "source": "MI-generált, fiktív sportjelenet",
+        "license": "Fejlesztési bemutatásra; intézményi publikálás előtt ellenőrizendő."
+      }
+    },
+    {
+      "id": "media:siker-kosarlabda",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/siker-kosarlabda.webp",
+        "mimeType": "image/webp",
+        "width": 960,
+        "height": 540,
+        "sizeBytes": 62626,
+        "sha256": "7872c165553a88a60eec3b0426c9098911ed3cd04fd209b5da9d80ae773a0fae"
+      },
+      "variants": [],
+      "alt": "MI-generált, illusztratív sportpillanat – kosarlabda",
+      "caption": "Generált sportillusztráció, nem egy valóban megtörtént iskolai verseny dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "preview-only",
+        "holder": "2026-os honlapterv fejlesztési illusztrációja",
+        "source": "MI-generált, fiktív sportjelenet",
+        "license": "Fejlesztési bemutatásra; intézményi publikálás előtt ellenőrizendő."
+      }
+    },
+    {
+      "id": "media:siker-uszas",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/siker-uszas.webp",
+        "mimeType": "image/webp",
+        "width": 960,
+        "height": 540,
+        "sizeBytes": 55842,
+        "sha256": "bdf51a2c9b0f8adde3bc35e482a599f411bce04df3469e7254a2df57c1021ccb"
+      },
+      "variants": [],
+      "alt": "MI-generált, illusztratív sportpillanat – uszas",
+      "caption": "Generált sportillusztráció, nem egy valóban megtörtént iskolai verseny dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "preview-only",
+        "holder": "2026-os honlapterv fejlesztési illusztrációja",
+        "source": "MI-generált, fiktív sportjelenet",
+        "license": "Fejlesztési bemutatásra; intézményi publikálás előtt ellenőrizendő."
+      }
+    },
+    {
+      "id": "media:siker-roplabda",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/siker-roplabda.webp",
+        "mimeType": "image/webp",
+        "width": 960,
+        "height": 540,
+        "sizeBytes": 54400,
+        "sha256": "2c9b1e5cb4c63bfd39261c45625ed2a1fbecaa927b6387c319ce8809a6ced3de"
+      },
+      "variants": [],
+      "alt": "MI-generált, illusztratív sportpillanat – roplabda",
+      "caption": "Generált sportillusztráció, nem egy valóban megtörtént iskolai verseny dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "preview-only",
+        "holder": "2026-os honlapterv fejlesztési illusztrációja",
+        "source": "MI-generált, fiktív sportjelenet",
+        "license": "Fejlesztési bemutatásra; intézményi publikálás előtt ellenőrizendő."
       }
     }
   ]

@@ -15,11 +15,11 @@
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Kezdőoldal – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Kezdőoldal” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "A Csanádi Árpád Sportiskola sportéletének és tanulóközösségének fejlesztési bemutatóoldala, kiemelt sportgalériával.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -28,7 +28,7 @@
   "tags": [
     "fejlesztesi-minta"
   ],
-  "summary": "A(z) „Kezdőoldal” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "summary": "Sport, tudás és közösség – kiemelt sporttörténetek, a legújabb sporthírek és az iskola fő tartalmi területei.",
   "blocks": [
     {
       "id": "block:home-hero",
@@ -48,6 +48,16 @@
           }
         ],
         "imageId": "media:hero"
+      }
+    },
+    {
+      "id": "block:home-sports-successes",
+      "type": "sports-successes",
+      "title": "Sportolói sikereink",
+      "data": {
+        "view": "home",
+        "source": "adatok/sportsikerek.json",
+        "maxNews": 5
       }
     },
     {

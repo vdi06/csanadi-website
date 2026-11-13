@@ -1,3 +1,4 @@
+import {renderSportsSuccesses} from './sports-successes.js';
 import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js';
 /* Biztonságos, kizárólag előre regisztrált komponenseket tartalmazó blokkmegjelenítő. */
 const dom=(tag,attrs={},text='')=>{
@@ -52,6 +53,7 @@ function linkCard(data,i,css='feature-card') {
   return a;
 }
 const styles={
+  'sports-successes': block => renderSportsSuccesses(block),
   'hero': block=>{
     const data=block.data||{};
     const section=dom('section',{class:'page-hero hero-with-photo'});

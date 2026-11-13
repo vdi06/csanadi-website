@@ -15,7 +15,7 @@
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Sport – Csanádi Sportiskola",
@@ -28,8 +28,18 @@
   "tags": [
     "fejlesztesi-minta"
   ],
-  "summary": "Sportágak, csapatok, eredmények és az edzői munka áttekintése.",
+  "summary": "Képes beszámolók, sportági történetek és a kapcsolódó eredményadatok egységes JSON-forrásból.",
   "blocks": [
+    {
+      "id": "block:sports-feed-news",
+      "type": "sports-successes",
+      "title": "A sportélet középpontjában",
+      "data": {
+        "view": "news",
+        "source": "adatok/sportsikerek.json",
+        "maxNews": 8
+      }
+    },
     {
       "id": "block:031-intro",
       "type": "section",
