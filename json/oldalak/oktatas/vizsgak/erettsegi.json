@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000022",
+  "pageType": "standard",
+  "menuLabel": "Érettségi",
+  "title": "Érettségi",
+  "slug": "erettsegi",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Sportiskola – fejlesztési minta",
+    "organization": "Csanádi Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Érettségi – Csanádi Sportiskola",
+    "description": "Fejlesztési mintanézet: A hivatalos, aktuális érettségi tájékoztatók és dokumentumok későbbi gyűjtőoldala.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [
+    "fejlesztesi-minta"
+  ],
+  "summary": "A hivatalos, aktuális érettségi tájékoztatók és dokumentumok későbbi gyűjtőoldala.",
+  "blocks": [
+    {
+      "id": "block:022-intro",
+      "type": "section",
+      "title": "Áttekintés",
+      "children": [
+        {
+          "id": "block:022-lead",
+          "type": "markdown",
+          "data": {
+            "text": "A hivatalos, aktuális érettségi tájékoztatók és dokumentumok későbbi gyűjtőoldala."
+          }
+        },
+        {
+          "id": "block:022-hint",
+          "type": "markdown",
+          "data": {
+            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": true,
+    "route": "#/oktatas/vizsgak/erettsegi",
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas"
+  }
+}

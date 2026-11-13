@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000052",
+  "pageType": "hub",
+  "menuLabel": "Dokumentumtár",
+  "title": "Dokumentumtár",
+  "slug": "dokumentumtar",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Sportiskola – fejlesztési minta",
+    "organization": "Csanádi Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Dokumentumtár – Csanádi Sportiskola",
+    "description": "Fejlesztési mintanézet: Hivatalos dokumentumok kereshető gyűjteménye. Ellenőrizetlen fájlokat nem teszünk közzé.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [
+    "fejlesztesi-minta"
+  ],
+  "summary": "Hivatalos dokumentumok kereshető gyűjteménye. Ellenőrizetlen fájlokat nem teszünk közzé.",
+  "blocks": [
+    {
+      "id": "block:052-intro",
+      "type": "section",
+      "title": "Áttekintés",
+      "children": [
+        {
+          "id": "block:052-lead",
+          "type": "markdown",
+          "data": {
+            "text": "Hivatalos dokumentumok kereshető gyűjteménye. Ellenőrizetlen fájlokat nem teszünk közzé."
+          }
+        },
+        {
+          "id": "block:052-hint",
+          "type": "markdown",
+          "data": {
+            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": true,
+    "route": "#/informaciok/dokumentumtar",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg"
+  }
+}

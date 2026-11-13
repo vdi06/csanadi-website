@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000041",
+  "pageType": "collection",
+  "menuLabel": "Sporthírek",
+  "title": "Sporthírek",
+  "slug": "sporthirek",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Sportiskola – fejlesztési minta",
+    "organization": "Csanádi Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 2
+  },
+  "seo": {
+    "title": "Sporthírek – Csanádi Sportiskola",
+    "description": "Fejlesztési mintanézet: A(z) „Sporthírek” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "hirek-es-esemenyek"
+  ],
+  "tags": [
+    "fejlesztesi-minta"
+  ],
+  "summary": "Képes beszámolók, sportági történetek és a kapcsolódó eredményadatok egységes JSON-forrásból.",
+  "blocks": [
+    {
+      "id": "block:sports-feed-news",
+      "type": "sports-successes",
+      "title": "Sporthírek és történetek",
+      "data": {
+        "view": "news",
+        "source": "adatok/sportsikerek.json",
+        "maxNews": 8
+      }
+    },
+    {
+      "id": "block:041-intro",
+      "type": "section",
+      "title": "Áttekintés",
+      "children": [
+        {
+          "id": "block:041-lead",
+          "type": "markdown",
+          "data": {
+            "text": "A(z) „Sporthírek” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+          }
+        },
+        {
+          "id": "block:041-hint",
+          "type": "markdown",
+          "data": {
+            "text": "**Fejlesztési megjegyzés:** A gyűjtemény még nem tartalmaz ellenőrzött közzétételi tételeket."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": true,
+    "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+    "verifiedContent": false,
+    "bannerMediaId": "media:esemenyek"
+  }
+}

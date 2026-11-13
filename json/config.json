@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "site": {
+    "name": "Csanádi Árpád Sportiskola – helyi fejlesztési változat",
+    "baseUrl": "https://csanadi-bp.edu.hu/",
+    "locale": "hu-HU",
+    "contactPageId": "page:000063"
+  },
+  "startPageId": "page:000001",
+  "currentSchoolYear": "2026/2027",
+  "navigation": {
+    "mode": "hash",
+    "maxDepth": 3,
+    "rememberExpanded": true,
+    "restoreScroll": true
+  },
+  "refresh": {
+    "structureSeconds": 60,
+    "activePageSeconds": 60,
+    "backgroundPause": true,
+    "maxConcurrentRequests": 4
+  },
+  "theme": {
+    "defaultMode": "system",
+    "allowManualOverride": true,
+    "primary": "#10233D",
+    "accent": "#D7B66E"
+  },
+  "content": {
+    "structurePath": "structure.json",
+    "mediaRegistryPath": "mediatar.json",
+    "collectionRoot": "entitasok",
+    "componentRoot": "komponensek"
+  },
+  "privacy": {
+    "requireConsentForExternalEmbeds": true,
+    "analyticsEnabled": false,
+    "externalOrigins": []
+  },
+  "search": {
+    "enabled": true,
+    "indexCacheHours": 12,
+    "maxResults": 40
+  },
+  "performance": {
+    "maxCacheMegabytes": 50,
+    "respectReducedMotion": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000021",
+  "pageType": "hub",
+  "menuLabel": "Vizsgaközpont",
+  "title": "Vizsgaközpont",
+  "slug": "vizsgak",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Sportiskola – fejlesztési minta",
+    "organization": "Csanádi Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Vizsgaközpont – Csanádi Sportiskola",
+    "description": "Fejlesztési mintanézet: A(z) „Vizsgaközpont” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [
+    "fejlesztesi-minta"
+  ],
+  "summary": "A(z) „Vizsgaközpont” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "blocks": [
+    {
+      "id": "block:021-intro",
+      "type": "section",
+      "title": "Áttekintés",
+      "children": [
+        {
+          "id": "block:021-lead",
+          "type": "markdown",
+          "data": {
+            "text": "A(z) „Vizsgaközpont” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+          }
+        },
+        {
+          "id": "block:021-hint",
+          "type": "markdown",
+          "data": {
+            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": true,
+    "route": "#/oktatas/vizsgak",
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas"
+  }
+}

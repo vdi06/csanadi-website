@@ -1,0 +1,349 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000001",
+  "pageType": "home",
+  "menuLabel": "Kezdőoldal",
+  "title": "Kezdőoldal",
+  "slug": "kezdolap",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Sportiskola – fejlesztési minta",
+    "organization": "Csanádi Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-13T22:35:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 3
+  },
+  "seo": {
+    "title": "Kezdőoldal – Csanádi Sportiskola",
+    "description": "A Csanádi Árpád Sportiskola sportéletének és tanulóközösségének fejlesztési bemutatóoldala, kiemelt sportgalériával.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "kezdolap"
+  ],
+  "tags": [
+    "fejlesztesi-minta"
+  ],
+  "summary": "A sport, a tanulás és a közösség találkozása: látványos kezdőoldal, sportolóink történetei, részletesen felfedezhető oktatási és sporttartalmak.",
+  "blocks": [
+    {
+      "id": "block:home-hero",
+      "type": "hero",
+      "data": {
+        "eyebrow": "CSANÁDI 2026 • SPORT · TUDÁS · KÖZÖSSÉG",
+        "title": "Sportban és tanulásban is előre.",
+        "subtitle": "Fedezd fel az iskolai mindennapok, a sport és a tanulás összetartozó világát. A közösség történeteit, a sportági lehetőségeket és a tudnivalókat egy helyen találod.",
+        "buttons": [
+          {
+            "label": "Fedezd fel iskolánkat",
+            "href": "#/iskolank/bemutatkozas"
+          },
+          {
+            "label": "Sportolói sikereink",
+            "href": "#/sport/sporteredmenyek"
+          }
+        ],
+        "imageId": "media:hero",
+        "intervalMs": 7200,
+        "slides": [
+          {
+            "id": "hero-2026-sport",
+            "mediaId": "media:hero",
+            "eyebrow": "SPORT • TANULÁS • KÖZÖSSÉG",
+            "title": "Sportban és tanulásban is előre.",
+            "subtitle": "A Csanádi Árpád Sportiskola világában a kitartás, a tudás és a közös élmények egymást erősítik. Ismerd meg az iskolai élet legfontosabb területeit!",
+            "buttons": [
+              {
+                "label": "Iskolánk bemutatása",
+                "href": "#/iskolank/bemutatkozas"
+              },
+              {
+                "label": "Képzéseink",
+                "href": "#/oktatas/kepzeseink"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-siker",
+            "mediaId": "media:eredmenyek",
+            "eyebrow": "SPORTOLÓI TÖRTÉNETEK",
+            "title": "Minden eredmény mögött történet áll.",
+            "subtitle": "A pályán megszerzett tapasztalat, a rendszeres gyakorlás és a csapattársak támogatása együtt formálja a sportolók fejlődését. Nézd meg sportági történeteinket!",
+            "buttons": [
+              {
+                "label": "Sporteredmények",
+                "href": "#/sport/sporteredmenyek"
+              },
+              {
+                "label": "Sportágaink",
+                "href": "#/sport/sportagak"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-oktatas",
+            "mediaId": "media:oktatas",
+            "eyebrow": "OKTATÁS • FELFEDEZÉS",
+            "title": "A tudás új lehetőségeket nyit.",
+            "subtitle": "Képzési lehetőségek, tanulási utak és a mindennapokat segítő információk: minden fontos téma könnyen áttekinthető és összekapcsolt formában.",
+            "buttons": [
+              {
+                "label": "Oktatási központ",
+                "href": "#/oktatas"
+              },
+              {
+                "label": "Felvételi tájékoztató",
+                "href": "#/oktatas/felveteli"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-kozosseg",
+            "mediaId": "media:kozosseg",
+            "eyebrow": "DIÁKÉLET • ÖSSZETARTOZÁS",
+            "title": "Együtt többek lehetünk.",
+            "subtitle": "A sport és az oktatás mellett az együtt megélt pillanatok, a közösségi alkalmak és a hagyományok is alakítják az iskolai mindennapokat.",
+            "buttons": [
+              {
+                "label": "Iskolánk világa",
+                "href": "#/iskolank"
+              },
+              {
+                "label": "Hírek és események",
+                "href": "#/hirek-es-esemenyek"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-jovo",
+            "mediaId": "media:felveteli",
+            "eyebrow": "JÖVŐ • LEHETŐSÉGEK",
+            "title": "A következő lépés itt kezdődik.",
+            "subtitle": "Ismerd meg az oktatási területeket, böngéssz a felvételi témák között, és tájékozódj a vizsgákhoz és tanévekhez kapcsolódó oldalakon.",
+            "buttons": [
+              {
+                "label": "Felvételi központ",
+                "href": "#/oktatas/felveteli"
+              },
+              {
+                "label": "Tanévi információk",
+                "href": "#/oktatas/tanevek"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "block:home-sports-successes",
+      "type": "sports-successes",
+      "title": "Sportolói sikereink",
+      "data": {
+        "view": "home",
+        "source": "adatok/sportsikerek.json",
+        "maxNews": 5
+      }
+    },
+    {
+      "id": "block:home-live-dashboard",
+      "type": "live-dashboard",
+      "title": "Sportélet és események – élő kimutatások",
+      "data": {
+        "sportsSource": "adatok/sportsikerek.json",
+        "eventsSource": "adatok/esemenyek.json",
+        "refreshSeconds": 20,
+        "showVerification": true,
+        "mode": "overview"
+      }
+    },
+    {
+      "id": "block:home-shortcuts",
+      "type": "quick-links",
+      "title": "Fedezd fel az iskolát",
+      "data": {
+        "items": [
+          {
+            "label": "Képzéseink",
+            "href": "#/oktatas/kepzeseink",
+            "description": "Különböző tanulási utak, oktatási területek és kapcsolódó lehetőségek.",
+            "mediaId": "media:oktatas",
+            "icon": "study"
+          },
+          {
+            "label": "Sporteredmények",
+            "href": "#/sport/sporteredmenyek",
+            "description": "Sportáganként bemutatott történetek, eredmények és sporthírek.",
+            "mediaId": "media:eredmenyek",
+            "icon": "trophy"
+          },
+          {
+            "label": "Felvételi",
+            "href": "#/oktatas/felveteli",
+            "description": "A jelentkezési folyamat és a tájékozódáshoz szükséges tudnivalók.",
+            "mediaId": "media:felveteli",
+            "icon": "school"
+          },
+          {
+            "label": "Eseménynaptár",
+            "href": "#/hirek-es-esemenyek/esemenynaptar",
+            "description": "Közösségi alkalmak és az iskola életéhez kapcsolódó események.",
+            "mediaId": "media:esemenyek",
+            "icon": "calendar"
+          },
+          {
+            "label": "Diákélet",
+            "href": "#/iskolank",
+            "description": "Iskolai élmények, közösségi történetek és együttműködés.",
+            "mediaId": "media:kozosseg",
+            "icon": "users"
+          },
+          {
+            "label": "Képgalériák",
+            "href": "#/sport/sportgaleriak",
+            "description": "A sport és a közösség látványos, képes bemutatása.",
+            "mediaId": "media:sport",
+            "icon": "gallery"
+          }
+        ]
+      }
+    },
+    {
+      "id": "block:home-editorial-2026",
+      "type": "home-editorial",
+      "title": "A teljesítmény mögött emberek vannak",
+      "data": {
+        "eyebrow": "TÖBB MINT EGY WEBOLDAL",
+        "lead": "A sportolói fejlődés nem egyetlen mérkőzésen vagy versenyen dől el. Az iskolai felkészülés, a közös munka, a tanulás és a tapasztalatok egymásra épülnek. Ebben a szemléletben mutatjuk be az oktatás és a sport találkozását.",
+        "items": [
+          {
+            "icon": "trophy",
+            "title": "Sport – kitartás és együttműködés",
+            "text": "Egy sportág megtanít célokat kitűzni, figyelni a részletekre és tovább dolgozni egy nehezebb nap után is. A csapatsportok az együttműködést, az egyéni sportágak az önismeretet és a tudatos felkészülést erősíthetik. A sportoldalak sportáganként összekapcsolják a történeteket, a képeket és az eredményeket.",
+            "href": "#/sport/sportagak",
+            "linkText": "Sportágak megtekintése"
+          },
+          {
+            "icon": "study",
+            "title": "Oktatás – tudás és kíváncsiság",
+            "text": "A tanulás a kérdezéssel, a gyakorlással és a megértés keresésével válik igazán élővé. Az oktatási központban helyet kapnak a képzési területek, a felvételi tájékozódást segítő anyagok, a vizsgák és a tanévi információk. A cél, hogy az eligazodás egyszerű legyen.",
+            "href": "#/oktatas",
+            "linkText": "Oktatási központ"
+          },
+          {
+            "icon": "users",
+            "title": "Közösség – egymásra figyelés",
+            "text": "A közösségi alkalmak, a sportversenyek, az iskolai események és a mindennapi beszélgetések egyaránt meghatározó élményekké válhatnak. A honlap ezért a híreket, az eseményeket és a képeket összekapcsolva mutatja be, és lehetőséget ad arra, hogy mindenki megtalálja a számára fontos témákat.",
+            "href": "#/hirek-es-esemenyek",
+            "linkText": "Hírek és események"
+          }
+        ]
+      }
+    },
+    {
+      "id": "block:home-section",
+      "type": "section",
+      "title": "Sport, tudás, közösség – egyetlen történet",
+      "children": [
+        {
+          "id": "block:home-desc",
+          "type": "markdown",
+          "data": {
+            "text": "**Tanulás és sport** — A weboldal új szerkezetében az oktatási és sportélet egymással összekapcsolva jelenik meg. A tényleges intézményi szövegek és hírek csak forrásellenőrzés után kerülnek bele."
+          }
+        },
+        {
+          "id": "block:home-cards",
+          "type": "cards",
+          "data": {
+            "items": [
+              {
+                "title": "Oktatási központ",
+                "description": "Képzéseink, felvételi és tanévi információk.",
+                "href": "#/oktatas",
+                "mediaId": "media:oktatas"
+              },
+              {
+                "title": "Sportközpont",
+                "description": "Sportágak, csapatok, eredmények és profilok.",
+                "href": "#/sport",
+                "mediaId": "media:sport"
+              },
+              {
+                "title": "Hírek és események",
+                "description": "Összekapcsolt hírek, események és közlemények.",
+                "href": "#/hirek-es-esemenyek",
+                "mediaId": "media:esemenyek"
+              }
+            ]
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "block:home-gallery-section",
+      "type": "section",
+      "title": "Pillanatképek az iskola világából",
+      "children": [
+        {
+          "id": "block:home-gallery",
+          "type": "gallery",
+          "data": {
+            "items": [
+              {
+                "mediaId": "media:iskolank",
+                "title": "Iskolánk"
+              },
+              {
+                "mediaId": "media:oktatas",
+                "title": "Oktatás"
+              },
+              {
+                "mediaId": "media:sport",
+                "title": "Sport"
+              },
+              {
+                "mediaId": "media:kozosseg",
+                "title": "Közösség"
+              },
+              {
+                "mediaId": "media:felveteli",
+                "title": "Felvételi"
+              },
+              {
+                "mediaId": "media:eredmenyek",
+                "title": "Eredmények"
+              },
+              {
+                "mediaId": "media:esemenyek",
+                "title": "Események"
+              },
+              {
+                "mediaId": "media:kapcsolat",
+                "title": "Kapcsolat"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:home-status",
+      "type": "markdown",
+      "data": {
+        "text": "**Fejlesztői előnézet:** ez a GitHub Pages-en kipróbálható változat nem az iskola hivatalos, éles honlapja. A generált képek és a sporttörténetek illusztrációk; a hivatalos intézményi adatok és eredmények csak ellenőrzött forrás alapján tehetők közzé."
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": true,
+    "route": "#/",
+    "verifiedContent": false,
+    "bannerMediaId": "media:hero"
+  }
+}

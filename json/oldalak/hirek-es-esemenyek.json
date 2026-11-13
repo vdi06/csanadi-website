@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000038",
+  "pageType": "hub",
+  "menuLabel": "Hírek és események",
+  "title": "Hírek és események",
+  "slug": "hirek-es-esemenyek",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Sportiskola – fejlesztési minta",
+    "organization": "Csanádi Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Hírek és események – Csanádi Sportiskola",
+    "description": "Fejlesztési mintanézet: Iskolai és sporthírek, közlemények, események közös felülete.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "hirek-es-esemenyek"
+  ],
+  "tags": [
+    "fejlesztesi-minta"
+  ],
+  "summary": "Iskolai és sporthírek, közlemények, események közös felülete.",
+  "blocks": [
+    {
+      "id": "block:038-intro",
+      "type": "section",
+      "title": "Áttekintés",
+      "children": [
+        {
+          "id": "block:038-lead",
+          "type": "markdown",
+          "data": {
+            "text": "Iskolai és sporthírek, közlemények, események közös felülete."
+          }
+        },
+        {
+          "id": "block:038-hint",
+          "type": "markdown",
+          "data": {
+            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": true,
+    "route": "#/hirek-es-esemenyek",
+    "verifiedContent": false,
+    "bannerMediaId": "media:esemenyek"
+  }
+}

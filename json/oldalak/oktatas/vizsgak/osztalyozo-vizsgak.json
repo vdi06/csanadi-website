@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000023",
+  "pageType": "standard",
+  "menuLabel": "Osztályozó vizsgák",
+  "title": "Osztályozó vizsgák",
+  "slug": "osztalyozo-vizsgak",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Sportiskola – fejlesztési minta",
+    "organization": "Csanádi Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Osztályozó vizsgák – Csanádi Sportiskola",
+    "description": "Fejlesztési mintanézet: A(z) „Osztályozó vizsgák” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [
+    "fejlesztesi-minta"
+  ],
+  "summary": "A(z) „Osztályozó vizsgák” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "blocks": [
+    {
+      "id": "block:023-intro",
+      "type": "section",
+      "title": "Áttekintés",
+      "children": [
+        {
+          "id": "block:023-lead",
+          "type": "markdown",
+          "data": {
+            "text": "A(z) „Osztályozó vizsgák” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+          }
+        },
+        {
+          "id": "block:023-hint",
+          "type": "markdown",
+          "data": {
+            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": true,
+    "route": "#/oktatas/vizsgak/osztalyozo-vizsgak",
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas"
+  }
+}
