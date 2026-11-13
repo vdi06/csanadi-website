@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Csanádi Árpád Sportiskola – helyi fejlesztési előnézet, nem hivatalos közzététel.">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Csanádi Sportiskola 2026 – Helyi előnézet</title>
+  <link rel="icon" href="assets/graphics/favicon.png" type="image/png">
+  <!-- Bootstrap: kizarolag CDN, helyi peldany nelkul. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#app">Ugrás a tartalomra</a>
+  <div class="preview-ribbon" role="status"><span class="status-dot"></span> HELYI FEJLESZTÉSI ELŐNÉZET <span class="ribbon-explain">· nem az iskola éles honlapja</span></div>
+  <header class="site-header" id="site-header">
+    <div class="container-xxl brand-row">
+      <a class="brand" href="#/" aria-label="Csanádi Sportiskola – kezdőoldal">
+        <img class="brand-logo" src="assets/media/logo/csanadi-cimer-128.webp" alt="" width="58" height="58">
+        <span class="brand-copy"><strong>CSANÁDI</strong><small>ÁRPÁD SPORTISKOLA</small></span>
+      </a>
+      <div class="header-actions">
+        <span class="header-tag">TUDÁS <i aria-hidden="true"></i> SPORT <i aria-hidden="true"></i> KÖZÖSSÉG</span>
+        <button class="icon-btn" id="search-open" type="button" aria-label="Keresés megnyitása" title="Keresés"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></button>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Megjelenési mód váltása" title="Világos/sötét téma"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5 8.5 8.5 0 1 0 20.5 14.3Z"/></svg></button>
+        <button class="icon-btn menu-btn" id="mobile-menu-toggle" type="button" aria-label="Mobilmenü megnyitása" aria-controls="mobile-navigation" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+    <div class="nav-row"><div class="container-xxl"><nav id="desktop-navigation" class="desktop-nav" aria-label="Fő navigáció"></nav></div></div>
+    <nav id="mobile-navigation" class="mobile-navigation" aria-label="Mobil navigáció" hidden></nav>
+  </header>
+  <main id="app" tabindex="-1" aria-live="polite" class="main-content">
+    <div class="container-xxl loading-area"><div class="spinner-border" role="status"><span class="visually-hidden">Betöltés…</span></div><p>A tartalmak betöltése…</p></div>
+  </main>
+  <footer class="site-footer"><div class="container-xxl footer-grid"><div><p class="footer-brand">CSANÁDI <span>2026</span></p><p>Sport, tudás és közösség. Helyi fejlesztési előnézet ellenőrzésre váró mintatartalmakkal.</p></div><div><strong>Gyorselérés</strong><a href="#/oktatas/felveteli">Felvételi</a><a href="#/sport">Sport</a><a href="#/informaciok/dokumentumtar">Dokumentumok</a></div><div><strong>Tájékoztatás</strong><a href="#/informaciok/adatvedelem">Adatvédelem</a><a href="#/kapcsolat">Kapcsolat</a><span class="footer-note">Nem hivatalos, nem publikált változat</span></div></div><div class="container-xxl footer-bottom">© 2026 Csanádi Sportiskola – fejlesztési felület <span id="footer-page-count"></span></div></footer>
+  <div id="search-panel" class="search-backdrop" hidden><div class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="search-heading"><div class="search-head"><div><span class="eyebrow">KERESŐKÖZPONT</span><h2 id="search-heading">Mit szeretnél megtalálni?</h2></div><button id="search-close" type="button" class="icon-btn" aria-label="Keresés bezárása">✕</button></div><label class="visually-hidden" for="search-input">Keresés az oldalak között</label><input id="search-input" type="search" class="form-control form-control-lg" placeholder="Például: felvételi, sporteredmények, dokumentumok…" autocomplete="off"><div class="search-meta"><span id="search-status">Az oldalak között kereshetsz.</span><kbd>ESC</kbd></div><div id="search-results" class="search-results" role="list"></div></div></div>
+  <div id="toast" class="toast-info" role="status" aria-live="polite" hidden></div>
+  <script>
+    (function(){
+      function fail(message){
+        if(window.__CSANADI_STARTED__)return;
+        var box=document.getElementById('app');if(!box)return;
+        box.innerHTML='';
+        var card=document.createElement('div');card.className='container-xxl launch-help';
+        var h=document.createElement('h1');h.textContent='A weboldal nem indult el';
+        var p=document.createElement('p');p.textContent=message;
+        var hint=document.createElement('p');hint.textContent=location.protocol==='file:'?'Windows alatt indítsd a START_HELYBEN.bat fájlt, és a megjelenő http://127.0.0.1 címen nyisd meg a weboldalt.':'GitHub Pages-en ellenőrizd, hogy minden fájlt feltöltöttél a repository gyökerébe (index.html, js/, json/, assets/). Frissíts Ctrl+F5-tel.';
+        card.append(h,p,hint);box.append(card);
+      }
+      if(location.protocol==='file:')fail('Az index.html közvetlen megnyitásával a JSON-oldalak biztonsági korlátozás miatt nem töltődhetnek be.');
+      else window.setTimeout(function(){if(!window.__CSANADI_STARTED__)fail('A helyi kiszolgáló vagy az alkalmazás egyik modulja nem elérhető. Ellenőrizd az indítóablak üzenetét, vagy nyomj Ctrl+F5-öt.');},25000);
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous" defer></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
