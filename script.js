@@ -7,7 +7,7 @@ function startupError(error){
   const p=document.createElement('p');p.textContent='Egy szükséges JavaScript- vagy JSON-fájl nem érhető el, vagy a weboldal hibát talált.';
   const detail=document.createElement('pre');detail.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;padding:1rem;border:1px solid #d4d4d4;border-radius:8px';
   detail.textContent=String(error?.message||error);
-  const hint=document.createElement('p');hint.textContent=location.protocol==='file:'?'A weboldalhoz indítsd el a START_HELYBEN.bat fájlt.':'Ha GitHubon teszteled: az index.html, script.js, js/, json/ és assets/ mappáknak a repository gyökerében kell lenniük.';
+  const hint=document.createElement('p');hint.textContent=location.protocol==='file:'?'Az oldal JSON-adatokkal működik, ezért HTTPS/HTTP-kiszolgáló szükséges. Használd a GitHub Pages-oldalt.':'Ha GitHubon teszteled: az index.html, script.js, js/, json/ és assets/ mappáknak a repository gyökerében kell lenniük.';
   shell.append(h,p,detail,hint);target.replaceChildren(shell);
 }
 import('./js/app.js').then(({startApp})=>startApp()).catch(startupError);

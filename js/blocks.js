@@ -1,4 +1,6 @@
 import {renderSportsSuccesses} from './sports-successes.js';
+import {renderPremiumHero} from './hero-2026.js';
+import {renderLiveDashboard} from './home-live.js';
 import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js';
 /* Biztonságos, kizárólag előre regisztrált komponenseket tartalmazó blokkmegjelenítő. */
 const dom=(tag,attrs={},text='')=>{
@@ -39,13 +41,30 @@ export function markdown(text){
   }
   return el;
 }
+const ICON_PATHS={
+ study:'<path d="m3 10 9-5 9 5-9 5-9-5Z M6 13v6c3 2 9 2 12 0v-6 M21 10v6"/>',
+ trophy:'<path d="M7 4h10v5c0 5-2 7-5 7s-5-2-5-7V4Z M7 6H4v3c0 3 2 4 5 4m8-7h3v3c0 3-2 4-5 4m-3 3v4m-5 1h10"/>',
+ school:'<path d="m3 11 9-7 9 7M5 11v9h14v-9M9 20v-6h6v6 M9 9h.01 M15 9h.01"/>',
+ calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18m-13 5h3m4 0h3m-10 3h3"/>',
+ users:'<circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M17 5a3 3 0 0 1 0 6m1 3a5 5 0 0 1 3 5v1"/>',
+ gallery:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8" cy="9" r="2"/><path d="m5 18 5-5 3 3 3-4 4 6"/>'
+};
+function iconNode(name){
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('fill','none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','1.8');svg.setAttribute('stroke-linecap','round');svg.setAttribute('stroke-linejoin','round');svg.setAttribute('aria-hidden','true');
+  // Constant path dictionary, never interpreted from JSON. SVG is authored program content, not user HTML.
+  svg.innerHTML=ICON_PATHS[name]||ICON_PATHS.study;
+  return svg;
+}
 function linkCard(data,i,css='feature-card') {
   const a=dom('a',{class:css,href:data.href||'#/'}) ;
   const id=data.mediaId || mediaForRoute(data.href||'');
   const art=createPicture(id,{className:'card-picture',sizes:'(max-width: 560px) 100vw, (max-width: 900px) 50vw, 400px'});
   if(art) a.append(art);
   const copy=dom('div',{class:'card-copy'});
-  copy.append(dom('span',{class:'card-index'},String(i+1).padStart(2,'0')));
+  const head=dom('div',{class:'card-topline'});
+  head.append(dom('span',{class:'card-icon'}));head.firstChild.append(iconNode(data.icon||'study'));
+  head.append(dom('span',{class:'card-index'},String(i+1).padStart(2,'0')));copy.append(head);
   copy.append(dom('h3',{class:'card-title'},data.title||data.label||'Tartalom'));
   if(data.description)copy.append(dom('p',{class:'card-desc'},data.description));
   copy.append(dom('span',{class:'card-arrow'},'Megnyitás  ↗'));
@@ -54,20 +73,24 @@ function linkCard(data,i,css='feature-card') {
 }
 const styles={
   'sports-successes': block => renderSportsSuccesses(block),
-  'hero': block=>{
+  'live-dashboard': block => renderLiveDashboard(block),
+  'hero':block=>renderPremiumHero(block),
+  'home-editorial':block=>{
     const data=block.data||{};
-    const section=dom('section',{class:'page-hero hero-with-photo'});
-    const art=createPicture(data.imageId||'media:hero',{className:'hero-media',eager:true,sizes:'100vw'});
-    if(art){section.append(art,imageDisclaimer());}
-    const container=dom('div',{class:'container-xxl hero-grid'}),left=dom('div');
-    left.append(dom('span',{class:'hero-overline'},data.eyebrow||'Sport • tudás • közösség'),dom('h1',{class:'hero-title'},data.title||''),dom('p',{class:'hero-desc'},data.subtitle||''));
-    const actions=dom('div',{class:'hero-actions'});
-    (data.buttons||[]).forEach((b,i)=>actions.append(dom('a',{class:i?'btn-outline-custom':'btn-gold',href:b.href},b.label||'Tovább')));
-    left.append(actions);
-    const right=dom('div',{class:'hero-accent'});
-    const seal=createPicture('media:logo',{className:'hero-crest'});
-    if(seal)right.append(seal);else right.append(dom('div',{class:'hero-ring'},'CS'));
-    container.append(left,right);section.append(container);return section;
+    const section=dom('section',{class:'editorial-section'}),container=dom('div',{class:'container-xxl'});
+    container.append(dom('div',{class:'section-overline'},data.eyebrow||'AZ ISKOLA VILÁGA'));
+    container.append(dom('h2',{class:'section-title'},block.title||'Fedezd fel az iskolát'));
+    if(data.lead)container.append(dom('p',{class:'editorial-lead'},data.lead));
+    const grid=dom('div',{class:'editorial-grid'});
+    (data.items||[]).slice(0,6).forEach(item=>{
+      const tile=dom('article',{class:'editorial-tile'});
+      const header=dom('div',{class:'editorial-tile-head'});
+      const icon=dom('span',{class:'editorial-icon'});icon.append(iconNode(item.icon||'study'));
+      header.append(icon);tile.append(header,dom('h3',{},item.title||''),dom('p',{},item.text||''));
+      if(item.href)tile.append(dom('a',{class:'editorial-link',href:item.href},item.linkText||'Tovább a témához'));
+      grid.append(tile);
+    });
+    container.append(grid);section.append(container);return section;
   },
   'quick-links':block=>{
     const section=dom('section',{class:'section-wrap'}),container=dom('div',{class:'container-xxl'});
