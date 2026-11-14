@@ -1,5 +1,5 @@
 /* Csanádi 2026 – képes hírközpont: ellenőrzött tartalom, helyi szűrés, rendezés és lapozás.
- * A képek tematikus illusztrációk, nem az egyes közlemények eseményfotói. */
+ * A hírekhez tartozó tematikus képek és eredeti forráslinkek külön kezelve. */
 const SOURCE=new URL('../json/adatok/hirek-hivatalos.json',import.meta.url);
 const IMAGE_ROOT='assets/media/web/';
 const ILLUSTRATIONS={Sport:'sport-1600.webp',Felvételi:'felveteli-1600.webp',Oktatás:'oktatas-1600.webp',Közlemény:'kozosseg-1600.webp',Archívum:'iskolank-1600.webp',Iskolánk:'iskolank-1600.webp'};
@@ -30,7 +30,7 @@ function sourceLink(item){
 function newsCard(item,compact=false){
  const card=el('article','cs-news-card dfg-news-card'+(compact?' dfg-news-compact':''));
  const cover=el('div','dfg-news-cover');const img=el('img');img.src=IMAGE_ROOT+(ILLUSTRATIONS[item.category]||'iskolank-1600.webp');
- img.loading='lazy';img.decoding='async';img.width=480;img.height=270;img.alt='Tematikus iskolai illusztráció – nem a hírben szereplő esemény fényképe';cover.append(img);
+ img.loading='lazy';img.decoding='async';img.width=480;img.height=270;img.alt='Iskolai témájú kép';cover.append(img);
  const copy=el('div','dfg-news-body'),meta=el('div','cs-news-meta');
  add(meta,el('span','cs-news-cat',item.category),el('time','dfg-news-date',item.date?formatDate(item.date):'Dátum nélküli közlemény'));
  if(item.date)meta.querySelector('time').dateTime=item.date;
@@ -73,7 +73,7 @@ export function renderNewsTeasers(){
 }
 export function renderNewsCenter(route){
  const section=el('section','cs-news-center dfg-news-center');
- const intro=el('p','cs-news-intro','Ellenőrzött iskolai közlemények, az eredeti hírekre mutató hivatkozásokkal. A képek tematikus illusztrációk.');
+ const intro=el('p','cs-news-intro','Ellenőrzött iskolai közlemények, az eredeti hírekre mutató hivatkozásokkal.');
  const toolbar=el('div','cs-news-toolbar dfg-news-toolbar');
  const input=el('input','form-control'),category=el('select','form-select'),order=el('select','form-select');
  input.type='search';input.placeholder='Keress címben és leírásban…';input.setAttribute('aria-label','Hírek keresése');input.autocomplete='off';

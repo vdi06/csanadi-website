@@ -138,11 +138,11 @@ export function renderLifeGallery(){
   results.textContent=`${Math.min(limit,items.length)} / ${items.length} kép`;
   grid.replaceChildren();items.slice(0,limit).forEach((item,i)=>{
    const tile=e('button','photo-tile');tile.type='button';tile.setAttribute('aria-label',item.title+' – kép nagyítása');const photo=e('img');photo.src=item.src;photo.alt=item.alt;photo.loading=i<8?'eager':'lazy';photo.decoding='async';
-   add(tile,photo,e('span','photo-tile-caption',item.title));tile.addEventListener('click',()=>{img.src=item.src;img.alt=item.alt;caption.textContent=item.title+' · tematikus illusztráció';modal.showModal();});grid.append(tile);
+   add(tile,photo,e('span','photo-tile-caption',item.title));tile.addEventListener('click',()=>{img.src=item.src;img.alt=item.alt;caption.textContent=item.title;modal.showModal();});grid.append(tile);
   });more.hidden=items.length<=limit;
  }
  more.addEventListener('click',()=>{limit+=24;draw();});
- add(container,controls,grid,more,modal,note('A képek hangulati illusztrációk, nem az iskola konkrét diákjait, munkatársait, épületét vagy rendezvényeit dokumentálják.'));
+ add(container,controls,grid,more,modal,document.createDocumentFragment());
  section.append(container);
  dataJSON('kepgaleria.json').then(v=>{if(v?.schemaVersion!=='1.0.0'||!Array.isArray(v.items))throw Error('A képgaléria JSON hibás.');entries=v.items.filter(x=>x.verifiedSchoolPhoto===false&&/^assets\/media\/web\/[a-z0-9-]+\.webp$/.test(x.src)&&typeof x.title==='string');draw();}).catch(err=>{grid.append(e('p','experience-error','Nem tölthető be a galéria: '+err.message));});
  return section;
@@ -182,7 +182,7 @@ export function renderStaffCenter(){
   filters.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.key===filter)));
   const q=inp.value.toLocaleLowerCase('hu-HU');const shown=teams.filter(x=>(filter==='mind'||x.category===filter)&&(x.name+' '+x.description).toLocaleLowerCase('hu-HU').includes(q));result.textContent=shown.length+' munkaterület · A megnevezések a fejlesztési modell részei';grid.replaceChildren();
   shown.forEach((item,i)=>{
-   const card=e('article','staff-team-card');const header=e('div','staff-team-photo');const img=e('img');img.src=`assets/media/web/eletkep-${pad(17+(i*3)%24)}.webp`;img.loading='lazy';img.alt='Iskolai témájú illusztráció';header.append(img);
+   const card=e('article','staff-team-card');const header=e('div','staff-team-photo');const img=e('img');img.src=`assets/media/web/eletkep-${pad(17+(i*3)%24)}.webp`;img.loading='lazy';img.alt='Iskolai életkép';header.append(img);
    const body=e('div','staff-team-body');add(body,e('span','staff-team-kicker',item.category==='sport'?'SPORT ÉS MOZGÁS':item.category==='oktatas'?'OKTATÁS':'KÖZÖSSÉG'),e('h3','',item.name),e('p','',item.description),e('span','staff-team-note','A valós munkaközösségi besorolás ellenőrzésre vár.'));
    add(card,header,body);grid.append(card);
   });

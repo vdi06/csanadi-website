@@ -121,7 +121,7 @@ const styles={
     const entry=mediaItem(block.data?.mediaId);if(!entry)return null;
     const figure=dom('figure',{class:'story-figure'});
     const p=createPicture(entry.id,{className:'story-image',sizes:'(max-width: 850px) 100vw, 900px'});
-    if(p) figure.append(p,dom('figcaption',{},entry.caption||'Iskolai témájú illusztráció'));
+    if(p) figure.append(p,dom('figcaption',{},entry.caption||'Sport és iskolai élet'));
     return figure;
   },
   'gallery':block=>{
@@ -130,10 +130,10 @@ const styles={
       const entry=mediaItem(item.mediaId);if(!entry)return;
       const figure=dom('figure',{class:'gallery-item'});
       const p=createPicture(entry.id,{className:'gallery-picture',sizes:'(max-width: 560px) 100vw, (max-width: 850px) 50vw, 33vw'});
-      if(p){figure.append(p,dom('figcaption',{},item.title||'Iskolai illusztráció'));gallery.append(figure);}
+      if(p){figure.append(p,dom('figcaption',{},item.title||'Iskolai élet'));gallery.append(figure);}
     });
     if(!gallery.children.length)return null;
-    const wrap=dom('div');wrap.append(gallery,dom('p',{class:'gallery-disclaimer'},'A képek tematikus illusztrációk; nem az iskola tényleges személyeit, épületeit vagy eseményeit dokumentálják.'));
+    const wrap=dom('div');wrap.append(gallery);
     return wrap;
   },
   'accordion':block=>{

@@ -1,5 +1,5 @@
 /* Csanádi 2026 / H – külön multimédiás galériaközpont.
- * A képek és rövid videók helyi, illusztratív médiák. Külső beágyazás nincs.
+ * A képek és rövid képmontázsok helyi médiafájlok. Külső beágyazás nincs.
  * A JSON-szöveg kizárólag textContent formában kerül a DOM-ba.
  */
 const PHOTO_URL = new URL('../json/adatok/kepgaleria.json', import.meta.url);
@@ -31,7 +31,7 @@ export function renderMediaGallery({compact=false}={}){
  const grid=el('div','media26-grid'),videoGrid=el('div','media26-video-grid');
  const loadMore=galleryButton('További képek megjelenítése','media26-more',()=>{limit+=12;draw();});
  const visual=el('div','media26-content');add(visual,grid,videoGrid,loadMore);
- const foot=el('p','media26-disclaimer','Fontos: minden kép tematikus illusztráció, a videók ezekből készített képmontázsok. Nem valódi iskolai személyeket vagy eseményeket dokumentálnak.');
+ const foot=document.createDocumentFragment();
  const direct=compact?el('a','media26-full-link','A teljes galériaközpont megnyitása ↗'):null;if(direct)direct.href='#/sport/sportgaleriak';
  add(toolbar,tabs,searchWrap);add(inner,albumsBar,toolbar,info,visual,foot,direct);section.append(inner);
  const modal=el('dialog','media26-lightbox');modal.setAttribute('aria-label','Képnézegető');
@@ -44,7 +44,7 @@ export function renderMediaGallery({compact=false}={}){
  add(modalFrame,close,previous,image,next,count,caption);modal.append(modalFrame);section.append(modal);
  modal.addEventListener('click',evt=>{if(evt.target===modal)modal.close();});
  let photos=[],videos=[],album='mind',type='photo',limit=compact?9:18,activeImages=[],at=0,oldFocus=null;
- function showImage(){const p=activeImages[at];if(!p)return;image.src=p.src;image.alt=p.alt;count.textContent=`${at+1} / ${activeImages.length}`;caption.textContent=p.title+' · tematikus illusztráció';previous.disabled=activeImages.length<=1;next.disabled=activeImages.length<=1;}
+ function showImage(){const p=activeImages[at];if(!p)return;image.src=p.src;image.alt=p.alt;count.textContent=`${at+1} / ${activeImages.length}`;caption.textContent=p.title;previous.disabled=activeImages.length<=1;next.disabled=activeImages.length<=1;}
  function openImage(filtered,index,source){activeImages=filtered;at=index;oldFocus=source;showImage();modal.showModal();close.focus();}
  function move(step){if(!activeImages.length)return;at=(at+step+activeImages.length)%activeImages.length;showImage();}
  modal.addEventListener('keydown',evt=>{if(evt.key==='ArrowRight'){evt.preventDefault();move(1);}else if(evt.key==='ArrowLeft'){evt.preventDefault();move(-1);}});
@@ -67,9 +67,9 @@ export function renderMediaGallery({compact=false}={}){
     if(!filtered.length)grid.append(el('p','media26-empty','Nincs találat. Válassz másik albumot vagy keresőkifejezést.'));
   }else{
     loadMore.hidden=true;info.textContent=`${matchedVideos.length} képmontázs található`;
-    matchedVideos.forEach(item=>{const card=el('article','media26-video-card'),media=el('video','media26-video');media.controls=true;media.preload='none';media.playsInline=true;media.poster=item.poster;media.setAttribute('aria-label',item.title+' – illusztrációs képmontázs');
+    matchedVideos.forEach(item=>{const card=el('article','media26-video-card'),media=el('video','media26-video');media.controls=true;media.preload='none';media.playsInline=true;media.poster=item.poster;media.setAttribute('aria-label',item.title+' – képmontázs');
       const source=el('source');source.src=item.src;source.type='video/mp4';media.append(source);
-      add(card,media,el('span','media26-video-badge','KÉPMONTÁZS · ILLUSZTRÁCIÓ'),el('h3','',item.title),el('p','',item.description));videoGrid.append(card);});
+      add(card,media,el('span','media26-video-badge','KÉPMONTÁZS'),el('h3','',item.title),el('p','',item.description));videoGrid.append(card);});
     if(!matchedVideos.length)videoGrid.append(el('p','media26-empty','Ehhez a témához egyelőre nincs képmontázs.'));
   }
  }

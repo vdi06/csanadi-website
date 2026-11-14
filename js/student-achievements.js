@@ -25,11 +25,11 @@ const isFeatured=x=>{const d=daysSince(actualPublication(x),localDate());return 
 function picture(x){
  if(!x.isDemo&&(x.imageApproved!==true||x.photoIsOfStudent!==true))return null;
  if(!/^assets\/media\/web\/[a-z0-9/_-]+\.webp$/.test(x.image||''))return null;
- const img=el('img');img.src=x.image;img.alt=x.isDemo?x.sport+' – sportági illusztráció, nem a bemutató tanuló portréja':x.studentName+' – '+x.sport;img.loading='lazy';img.decoding='async';img.addEventListener('error',()=>img.remove());return img;
+ const img=el('img');img.src=x.image;img.alt=x.isDemo?x.sport+' – sportos témájú kép':x.studentName+' – '+x.sport;img.loading='lazy';img.decoding='async';img.addEventListener('error',()=>img.remove());return img;
 }
 function card(x,featured){
  const article=el('article','student-success-card'+(featured?' is-featured':'')+(x.isDemo?' is-example':''));
- const pic=picture(x);if(pic){const f=el('div','student-success-image');f.append(pic);if(x.isDemo)f.append(el('span','student-photo-note','Sportági illusztráció'));article.append(f);}
+ const pic=picture(x);if(pic){const f=el('div','student-success-image');f.append(pic);article.append(f);}
  const b=el('div','student-success-body');
  if(x.isDemo)b.append(el('span','student-demo-label','BEMUTATÓBEJEGYZÉS'));
  b.append(el('p','student-success-tag',x.sport),el('h3','',x.studentName),el('p','student-success-class',x.className+' osztály'),el('p','student-success-event',x.competition),el('strong','student-success-result',x.result));

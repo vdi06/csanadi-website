@@ -1,4 +1,5 @@
 import {setupSmartSearch} from './search-j-2026.js?v=20261114j1';
+import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=20261114kmil2';
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=20261114be1';
 import {renderMediaGallery} from './media-gallery-h-2026.js?v=20261114h1';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=20261114premium1';
@@ -184,6 +185,7 @@ function contentPage(node){
 
   const docRoute=route.startsWith('#/informaciok/dokumentumtar');
   if(docRoute)body.prepend(renderDocumentCenter(route));
+  if(['#/oktatas','#/oktatas/felveteli','#/oktatas/kepzeseink','#/oktatas/tanevek','#/oktatas/vizsgak'].includes(route))body.prepend(learningNavigator());
   if(['#/iskolank/buszkesegeink','#/sport/sporteredmenyek'].includes(route)){
     body.prepend(renderSportsSuccesses({data:{view:'archive'},title:'Közzétett sporteredmények'}));
     body.prepend(renderStudentAchievements('archive'));
@@ -282,6 +284,7 @@ function homePage(node){
   }
   // Új oldalmodulok esetén se vesszen el egyetlen blokk sem.
   for(const unit of units)if(!canvas.contains(unit))canvas.append(unit);
+  enhanceHomeInterests(canvas);
   frag.append(canvas);
   return frag;
 }
@@ -411,5 +414,5 @@ export async function startApp(){
   beginPolling();
   setInterval(()=>{if(!document.hidden)loadDocumentRegistry(true);},documentRefreshSeconds()*1000);
   console.info('Csanádi 2026 – tartalmi oldalak:',catalog.items.length);
-  // A médiatár már elérhető a JSON-ban regisztrált fejlesztési illusztrációkkal.
+  // A médiatár már elérhető a JSON-ban regisztrált képekkel.
 }

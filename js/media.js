@@ -33,12 +33,12 @@ export function createPicture(id,{className='',eager=false,sizes='100vw',decorat
   }
   const img=document.createElement('img');
   img.src=entry.original.path;
-  img.alt=decorative?'':(entry.alt||'Illusztráció');
-  img.loading=eager?'eager':'lazy';img.decoding='async';
+  img.alt=decorative?'':(entry.alt||'Sportos vagy iskolai témájú kép');
+  img.loading=eager?'eager':'lazy';img.decoding='async';if(!eager)img.setAttribute('fetchpriority','low');
   if(eager)img.setAttribute('fetchpriority','high');
   if(entry.original.width)img.width=entry.original.width;
   if(entry.original.height)img.height=entry.original.height;
   picture.append(img);
   return picture;
 }
-export function imageDisclaimer(){const b=document.createElement('span');b.className='media-illustration-tag';b.textContent='ILLUSZTRÁCIÓ';return b;}
+export function imageDisclaimer(){const b=document.createElement('span');b.hidden=true;return b;}

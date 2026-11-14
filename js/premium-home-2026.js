@@ -1,5 +1,5 @@
 /* CSANÁDI 2026 – prémium, képközpontú kezdőoldali sportmagazin.
-   Az összes képet a meglévő, helyi és illusztrációként jelölt médiatárból használja. */
+   A meglévő médiatár felhasználásával készül. */
 import {createPicture} from './media.js?v=20261114v5';
 
 const node=(tag,klass='',value)=>{
@@ -33,7 +33,7 @@ export function renderHomeSportSpotlight(){
   const title=node('h2','premium26-heading','A mozgás összeköt.');title.id='premium26-showcase-title';head.append(title);
   head.append(node('p','premium26-section-lead','Négy sportos pillanat, négy különböző történet. Fedezd fel az iskolai sport világát és az elérhető eredményeket.'));
   const grid=node('div','premium26-visual-grid');featureItems.forEach((x,i)=>grid.append(pictureCard(x,i)));
-  const disclaimer=node('p','premium26-illustration-notice','A képek tematikus illusztrációk, nem az iskola tényleges eseményeit dokumentáló felvételek.');
+  const disclaimer=document.createDocumentFragment();
   const destinations=node('nav','premium26-discover');destinations.setAttribute('aria-label','Kiemelt témák gyorselérése');
   [
     {text:'Sportágak',href:'#/sport/sportagak',number:'01'},

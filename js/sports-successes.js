@@ -25,12 +25,12 @@ function home(root,results,images){
  append(header,append(n('div'),n('span','sports-eyebrow','CSANÁDI · SPORT · EREDMÉNYEK'),n('h2','sports-title','Sportolói sikereink')));
  const all=n('a','sports-all-link','Összes eredmény és sporthír →');all.href='#/sport/sporteredmenyek';header.append(all);container.append(header);
  const layout=n('div','cs-sport-layout');
- const carousel=n('div','cs-sport-gallery');carousel.setAttribute('aria-label','Sportpillanatok, tematikus illusztrációk');
+ const carousel=n('div','cs-sport-gallery');carousel.setAttribute('aria-label','Sportpillanatok');
  const stage=n('div','cs-sport-stage');const slides=[];
  images.forEach((img,i)=>{
   const slide=n('figure','cs-sport-scene');slide.hidden=i!==0;slide.setAttribute('aria-hidden',String(i!==0));
   const picture=n('img');picture.src=img.src;picture.alt=img.alt||img.title;picture.loading=i===0?'eager':'lazy';picture.decoding='async';
-  const cover=n('div','cs-sport-photo-shade');const caption=n('figcaption');append(caption,n('span','cs-sport-kicker','SPORT · CSAPAT · MOZGÁS'),n('strong','',img.title),n('small','','ILLUSZTRÁCIÓ'));
+  const cover=n('div','cs-sport-photo-shade');const caption=n('figcaption');append(caption,n('span','cs-sport-kicker','SPORT · CSAPAT · MOZGÁS'),n('strong','',img.title),document.createDocumentFragment());
   append(slide,picture,cover,caption);stage.append(slide);slides.push(slide);
  });
  const controls=n('div','cs-sport-controls'),prev=n('button','cs-sport-btn','‹'),next=n('button','cs-sport-btn','›'),pause=n('button','cs-sport-pause','Szünet'),counter=n('span','cs-sport-count','');
@@ -43,7 +43,7 @@ function home(root,results,images){
  carousel.addEventListener('focusin',()=>focused=true);carousel.addEventListener('focusout',e=>{if(!carousel.contains(e.relatedTarget))focused=false;});
  append(controls,prev,counter,next,pause);append(carousel,stage,controls);if(slides.length)show(0);
  const timer=setInterval(()=>{if(!root.isConnected){clearInterval(timer);return;}if(paused||hovered||focused||reduced.matches||document.hidden||slides.length<2)return;show(index+1);},6800);
- const sidebar=n('section','cs-sport-achievements');append(sidebar,n('h3','','Hivatalos büszkeségeink'),n('p','','Név szerinti eredmények az iskola közzétett jegyzékéből, illusztrációs portrék nélkül.'));
+ const sidebar=n('section','cs-sport-achievements');append(sidebar,n('h3','','Hivatalos büszkeségeink'),n('p','','Név szerinti eredmények az iskola közzétett jegyzékéből.'));
  results.slice(0,5).forEach(x=>sidebar.append(achievementCard(x)));
  append(layout,carousel,sidebar);append(container,layout);root.append(container);
 }
