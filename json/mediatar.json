@@ -14,14 +14,6 @@
       },
       "variants": [
         {
-          "path": "assets/media/logo/csanadi-cimer-128.webp",
-          "mimeType": "image/webp",
-          "width": 128,
-          "height": 128,
-          "sizeBytes": 22120,
-          "sha256": "485a839fd426871b669c634f418f34078c5e810f63b28205539e10735ea8660c"
-        },
-        {
           "path": "assets/media/logo/csanadi-cimer-512.webp",
           "mimeType": "image/webp",
           "width": 512,
@@ -48,29 +40,21 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 208352,
-        "sha256": "e83208ecdf4f76393262f04ded6bccf812b381aecc248d0247e57cd7e99eeafb"
+        "sizeBytes": 248214,
+        "sha256": "dacb351f86a9013094856b4e72dc05ef693ac7aebb76ffd949bd6fe85673a461"
       },
       "variants": [
-        {
-          "path": "assets/media/web/hero-560.webp",
-          "mimeType": "image/webp",
-          "width": 560,
-          "height": 315,
-          "sizeBytes": 47968,
-          "sha256": "33d054c5133fe277331a979b2a4f9010db89633d5ed76d42e2370f865bb0a174"
-        },
         {
           "path": "assets/media/web/hero-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 208352,
-          "sha256": "e83208ecdf4f76393262f04ded6bccf812b381aecc248d0247e57cd7e99eeafb"
+          "sizeBytes": 248214,
+          "sha256": "dacb351f86a9013094856b4e72dc05ef693ac7aebb76ffd949bd6fe85673a461"
         }
       ],
-      "alt": "Kezdőoldal – sport és tanulás a közösségben (MI-generált illusztráció; nem valódi iskolai fénykép)",
-      "caption": "MI-generált látványkép, nem az iskola valós helyszínéről vagy diákjairól készült fénykép.",
+      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
+      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
@@ -87,8 +71,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 375808,
-        "sha256": "8de6e4746367b899c7d1bcfd1fa85cf52f481e3ce2b8575befa170b9a95d43dc"
+        "sizeBytes": 314032,
+        "sha256": "e5ca12da1f3cfa3502d2bbc8700ff91c0658e6be102e92805fb72b93cf62cc6a"
       },
       "variants": [
         {
@@ -96,12 +80,12 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 375808,
-          "sha256": "8de6e4746367b899c7d1bcfd1fa85cf52f481e3ce2b8575befa170b9a95d43dc"
+          "sizeBytes": 314032,
+          "sha256": "e5ca12da1f3cfa3502d2bbc8700ff91c0658e6be102e92805fb72b93cf62cc6a"
         }
       ],
-      "alt": "Iskolánk – illusztrált iskolai épület és udvar (MI-generált illusztráció; nem valódi iskolai fénykép)",
-      "caption": "MI-generált látványkép, nem az iskola valós helyszínéről vagy diákjairól készült fénykép.",
+      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
+      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
@@ -118,8 +102,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 223668,
-        "sha256": "b72b72d9df125594525888a83f1efd2d92e3f6e0311e8ec20e277dd37f842cfb"
+        "sizeBytes": 187050,
+        "sha256": "a2c172c358039863179d38ce0826d1842439f2d0eac1031ab9a611f0ee529e1a"
       },
       "variants": [
         {
@@ -127,12 +111,12 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 223668,
-          "sha256": "b72b72d9df125594525888a83f1efd2d92e3f6e0311e8ec20e277dd37f842cfb"
+          "sizeBytes": 187050,
+          "sha256": "a2c172c358039863179d38ce0826d1842439f2d0eac1031ab9a611f0ee529e1a"
         }
       ],
-      "alt": "Oktatás – tanulók és pedagógus közös munkája (MI-generált illusztráció; nem valódi iskolai fénykép)",
-      "caption": "MI-generált látványkép, nem az iskola valós helyszínéről vagy diákjairól készült fénykép.",
+      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
+      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
@@ -149,29 +133,21 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 254604,
-        "sha256": "ce47e82aa1bb3a5501581087586bc9cb5cef0e9af69e1639ea2382875cba29e9"
+        "sizeBytes": 152090,
+        "sha256": "8b64536d918c4bb546d7bd81126625466ba75de489c20acc0946705b0379e85f"
       },
       "variants": [
-        {
-          "path": "assets/media/web/sport-560.webp",
-          "mimeType": "image/webp",
-          "width": 560,
-          "height": 315,
-          "sizeBytes": 58728,
-          "sha256": "d8de4aa9660f518212a371810003ad8e7c666ed5a5e28fc3359f3e769099b007"
-        },
         {
           "path": "assets/media/web/sport-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 254604,
-          "sha256": "ce47e82aa1bb3a5501581087586bc9cb5cef0e9af69e1639ea2382875cba29e9"
+          "sizeBytes": 152090,
+          "sha256": "8b64536d918c4bb546d7bd81126625466ba75de489c20acc0946705b0379e85f"
         }
       ],
-      "alt": "Sport – futás, kosárlabda és edzés (MI-generált illusztráció; nem valódi iskolai fénykép)",
-      "caption": "MI-generált látványkép, nem az iskola valós helyszínéről vagy diákjairól készült fénykép.",
+      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
+      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
@@ -188,8 +164,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 185592,
-        "sha256": "c4a6f804260e0264324a52fa1cc93bcb5eb8a56aff9fd6665e2481c50eabee19"
+        "sizeBytes": 171864,
+        "sha256": "e4fa88a009abab28cb824e30958f8cea4c2aced9d573dbdcec8e355949d32262"
       },
       "variants": [
         {
@@ -197,12 +173,12 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 185592,
-          "sha256": "c4a6f804260e0264324a52fa1cc93bcb5eb8a56aff9fd6665e2481c50eabee19"
+          "sizeBytes": 171864,
+          "sha256": "e4fa88a009abab28cb824e30958f8cea4c2aced9d573dbdcec8e355949d32262"
         }
       ],
-      "alt": "Közösség – diákélet és együttműködés (MI-generált illusztráció; nem valódi iskolai fénykép)",
-      "caption": "MI-generált látványkép, nem az iskola valós helyszínéről vagy diákjairól készült fénykép.",
+      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
+      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
@@ -219,8 +195,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 191412,
-        "sha256": "2ea62ecd5e0adb7786042d619d92372377602bd7ab49273eb0fca9196795e8e7"
+        "sizeBytes": 159630,
+        "sha256": "418314f39aae4dfb9e7d9e55a2f6035622067b0e3b8e0911d8e2d38ece453c28"
       },
       "variants": [
         {
@@ -228,12 +204,12 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 191412,
-          "sha256": "2ea62ecd5e0adb7786042d619d92372377602bd7ab49273eb0fca9196795e8e7"
+          "sizeBytes": 159630,
+          "sha256": "418314f39aae4dfb9e7d9e55a2f6035622067b0e3b8e0911d8e2d38ece453c28"
         }
       ],
-      "alt": "Felvételi – családok fogadása nyílt napon (MI-generált illusztráció; nem valódi iskolai fénykép)",
-      "caption": "MI-generált látványkép, nem az iskola valós helyszínéről vagy diákjairól készült fénykép.",
+      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
+      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
@@ -250,29 +226,21 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 245340,
-        "sha256": "fa3d0bd76f6a0cac77be2e2a6b6b6faa30c1e7847edabbf2098fbb92ef3513ce"
+        "sizeBytes": 206904,
+        "sha256": "17a4bb1294c3ba3955f53b20014bdc6ef2255e3721009de8b5901ff4579f2071"
       },
       "variants": [
-        {
-          "path": "assets/media/web/eredmenyek-560.webp",
-          "mimeType": "image/webp",
-          "width": 560,
-          "height": 315,
-          "sizeBytes": 54440,
-          "sha256": "94a89026e9b48ac7a27bd38103b13a78ec5faa6db5ec436ebd172e940b4d060d"
-        },
         {
           "path": "assets/media/web/eredmenyek-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 245340,
-          "sha256": "fa3d0bd76f6a0cac77be2e2a6b6b6faa30c1e7847edabbf2098fbb92ef3513ce"
+          "sizeBytes": 206904,
+          "sha256": "17a4bb1294c3ba3955f53b20014bdc6ef2255e3721009de8b5901ff4579f2071"
         }
       ],
-      "alt": "Eredmények – sport- és tanulmányi sikerek (MI-generált illusztráció; nem valódi iskolai fénykép)",
-      "caption": "MI-generált látványkép, nem az iskola valós helyszínéről vagy diákjairól készült fénykép.",
+      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
+      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
@@ -289,29 +257,21 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 183292,
-        "sha256": "542b0821f49621ff3e368d5e9c50c7ac73ef1ed8336ed16574a3a3932d062d91"
+        "sizeBytes": 155052,
+        "sha256": "18c57003c7ee1dbcd0baf5be0f05340c0c60648213764f8c8207dd5951bbc935"
       },
       "variants": [
-        {
-          "path": "assets/media/web/esemenyek-560.webp",
-          "mimeType": "image/webp",
-          "width": 560,
-          "height": 315,
-          "sizeBytes": 48756,
-          "sha256": "f1f17a9291076f8fa727c517db46536e58c8827580e16ac3e2a4c0a928a68b9b"
-        },
         {
           "path": "assets/media/web/esemenyek-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 183292,
-          "sha256": "542b0821f49621ff3e368d5e9c50c7ac73ef1ed8336ed16574a3a3932d062d91"
+          "sizeBytes": 155052,
+          "sha256": "18c57003c7ee1dbcd0baf5be0f05340c0c60648213764f8c8207dd5951bbc935"
         }
       ],
-      "alt": "Események – iskolai sportnap (MI-generált illusztráció; nem valódi iskolai fénykép)",
-      "caption": "MI-generált látványkép, nem az iskola valós helyszínéről vagy diákjairól készült fénykép.",
+      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
+      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
@@ -328,8 +288,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 297290,
-        "sha256": "1e967658119d9f18496197d88296d7068fa9ae945fbee367bb7b3d4d4e190b20"
+        "sizeBytes": 209718,
+        "sha256": "b2541024267001402cb843181a079fa11229c9c137957388c0fadba516c93a00"
       },
       "variants": [
         {
@@ -337,12 +297,12 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 297290,
-          "sha256": "1e967658119d9f18496197d88296d7068fa9ae945fbee367bb7b3d4d4e190b20"
+          "sizeBytes": 209718,
+          "sha256": "b2541024267001402cb843181a079fa11229c9c137957388c0fadba516c93a00"
         }
       ],
-      "alt": "Kapcsolat – sportiskolai épület bejárata (MI-generált illusztráció; nem valódi iskolai fénykép)",
-      "caption": "MI-generált látványkép, nem az iskola valós helyszínéről vagy diákjairól készült fénykép.",
+      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
+      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
@@ -357,14 +317,14 @@
       "original": {
         "path": "assets/media/web/siker-atletika.webp",
         "mimeType": "image/webp",
-        "width": 960,
-        "height": 540,
-        "sizeBytes": 53224,
-        "sha256": "8b8d161d8ffdbb47292825bc175b97af9fcb9190a147447563c01851e0d2fb3c"
+        "width": 1100,
+        "height": 600,
+        "sizeBytes": 47132,
+        "sha256": "409c6d8afda5807ee695b60e9cb1ed0af5c010792f191f22f80717f839da1dd8"
       },
       "variants": [],
-      "alt": "MI-generált, illusztratív sportpillanat – atletika",
-      "caption": "Generált sportillusztráció, nem egy valóban megtörtént iskolai verseny dokumentumfotója.",
+      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
+      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
       "decorative": false,
       "rights": {
         "clearance": "preview-only",
@@ -379,14 +339,14 @@
       "original": {
         "path": "assets/media/web/siker-kosarlabda.webp",
         "mimeType": "image/webp",
-        "width": 960,
-        "height": 540,
-        "sizeBytes": 62626,
-        "sha256": "7872c165553a88a60eec3b0426c9098911ed3cd04fd209b5da9d80ae773a0fae"
+        "width": 1100,
+        "height": 600,
+        "sizeBytes": 59432,
+        "sha256": "75d4318fb4b4cb309a8c9dfd79e961a94744221c6e906dd89398462e081e6c58"
       },
       "variants": [],
-      "alt": "MI-generált, illusztratív sportpillanat – kosarlabda",
-      "caption": "Generált sportillusztráció, nem egy valóban megtörtént iskolai verseny dokumentumfotója.",
+      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
+      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
       "decorative": false,
       "rights": {
         "clearance": "preview-only",
@@ -401,14 +361,14 @@
       "original": {
         "path": "assets/media/web/siker-uszas.webp",
         "mimeType": "image/webp",
-        "width": 960,
-        "height": 540,
-        "sizeBytes": 55842,
-        "sha256": "bdf51a2c9b0f8adde3bc35e482a599f411bce04df3469e7254a2df57c1021ccb"
+        "width": 1100,
+        "height": 600,
+        "sizeBytes": 56444,
+        "sha256": "8d4f5a974ec52618e35fda3429542e8b5d2049299ff3b188b56cd2f13c204e70"
       },
       "variants": [],
-      "alt": "MI-generált, illusztratív sportpillanat – uszas",
-      "caption": "Generált sportillusztráció, nem egy valóban megtörtént iskolai verseny dokumentumfotója.",
+      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
+      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
       "decorative": false,
       "rights": {
         "clearance": "preview-only",
@@ -423,14 +383,14 @@
       "original": {
         "path": "assets/media/web/siker-roplabda.webp",
         "mimeType": "image/webp",
-        "width": 960,
-        "height": 540,
-        "sizeBytes": 54400,
-        "sha256": "2c9b1e5cb4c63bfd39261c45625ed2a1fbecaa927b6387c319ce8809a6ced3de"
+        "width": 1100,
+        "height": 600,
+        "sizeBytes": 52374,
+        "sha256": "6cf34ebdc2047df162ad0d91e17b3cdf70e881911718a9557ccbb3fc0da0dca8"
       },
       "variants": [],
-      "alt": "MI-generált, illusztratív sportpillanat – roplabda",
-      "caption": "Generált sportillusztráció, nem egy valóban megtörtént iskolai verseny dokumentumfotója.",
+      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
+      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
       "decorative": false,
       "rights": {
         "clearance": "preview-only",

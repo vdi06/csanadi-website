@@ -1,0 +1,210 @@
+{
+  "schemaVersion": "1.0.0",
+  "collectionId": "collection:csanadi-public-documents",
+  "locale": "hu-HU",
+  "updatedAt": "2026-11-14",
+  "description": "Publikusan hozzáférhető, ellenőrzött elérhetőségű fejlesztési segédletek; nem intézményi szabályzatok.",
+  "defaultView": "cards",
+  "defaultSort": "newest",
+  "refreshSeconds": 75,
+  "categories": [
+    {
+      "id": "felveteli",
+      "label": "Felvételi és tájékozódás",
+      "parentId": null,
+      "description": "Felkészülési és jelentkezési tájékozódó segédletek",
+      "order": 1
+    },
+    {
+      "id": "felveteli-tervezes",
+      "label": "Jelentkezés megtervezése",
+      "parentId": "felveteli",
+      "description": "Ellenőrzőlisták és tervezési szempontok",
+      "order": 1
+    },
+    {
+      "id": "tanulas",
+      "label": "Tanulás és digitális kultúra",
+      "parentId": null,
+      "description": "Tanulási módszerek és digitális ügyintézés",
+      "order": 2
+    },
+    {
+      "id": "tanulas-digitalis",
+      "label": "Digitális fájlkezelés",
+      "parentId": "tanulas",
+      "description": "Letöltés, beadás, adatvédelem",
+      "order": 1
+    },
+    {
+      "id": "sport",
+      "label": "Sport és fejlődés",
+      "parentId": null,
+      "description": "Sportolók és tanulók mindennapjait támogató anyagok",
+      "order": 3
+    },
+    {
+      "id": "sport-idobeosztas",
+      "label": "Tanulás és edzés",
+      "parentId": "sport",
+      "description": "Időgazdálkodás és terheléstervezés",
+      "order": 1
+    },
+    {
+      "id": "intezmenyi",
+      "label": "Intézményi dokumentumok",
+      "parentId": null,
+      "description": "Jóváhagyott szabályzatok és közzétételi anyagok helye",
+      "order": 4
+    },
+    {
+      "id": "intezmenyi-szabalyzat",
+      "label": "Szabályzatok",
+      "parentId": "intezmenyi",
+      "description": "Csak igazolt, jóváhagyott szabályzatok jelenhetnek meg",
+      "order": 1
+    },
+    {
+      "id": "intezmenyi-nyomtatvany",
+      "label": "Nyomtatványok",
+      "parentId": "intezmenyi",
+      "description": "Hivatalos űrlapok, ha közzétételre kerültek",
+      "order": 2
+    },
+    {
+      "id": "intezmenyi-kozzetetel",
+      "label": "Közzétételi lista",
+      "parentId": "intezmenyi",
+      "description": "Jóváhagyott közzétételi dokumentumok",
+      "order": 3
+    }
+  ],
+  "documents": [
+    {
+      "id": "document:felveteli-segedlet-2026",
+      "title": "Felvételi tájékozódási segédlet",
+      "summary": "Összetett ellenőrzőlista és gyakorlati útmutató a jelentkezési folyamat megtervezéséhez.",
+      "categoryId": "felveteli-tervezes",
+      "tags": [
+        "felvételi",
+        "jelentkezés",
+        "tervezés"
+      ],
+      "keywords": [
+        "ellenőrzőlista",
+        "jelentkezés",
+        "felkészülés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "felveteli-tajekozodasi-segedlet-2026.pdf",
+      "filePath": "assets/documents/felveteli-tajekozodasi-segedlet-2026.pdf",
+      "fileSizeBytes": 48341,
+      "sha256": "398e044c33cfd3b109d841b4e650be9c082ee90ce129dc242c85a5d997c80522",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-14",
+      "validFrom": "2026-11-14",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/oktatas/felveteli",
+        "#/oktatas/felveteli/elso-evfolyam",
+        "#/oktatas/felveteli/kilencedik-evfolyam",
+        "#/oktatas/felveteli/nyilt-napok"
+      ],
+      "sourceType": "developed-general-guidance",
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-14",
+          "change": "Első fejlesztési kiadás; általános, nem hivatalos tájékoztató."
+        }
+      ]
+    },
+    {
+      "id": "document:tanulas-sport-idogazdalkodas",
+      "title": "Tanulás és sport – időgazdálkodási útmutató",
+      "summary": "Tanulási blokkok, edzések, pihenés és heti tervezés módszerei.",
+      "categoryId": "sport-idobeosztas",
+      "tags": [
+        "sport",
+        "tanulás",
+        "időgazdálkodás"
+      ],
+      "keywords": [
+        "pihenés",
+        "edzés",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "tanulas-sport-idogazdalkodas.pdf",
+      "filePath": "assets/documents/tanulas-sport-idogazdalkodas.pdf",
+      "fileSizeBytes": 48603,
+      "sha256": "4af4e9c0c78536f6fb53c23701ff1ac42c628e9466debcdb993a49e1ae42f97f",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-14",
+      "validFrom": "2026-11-14",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/sport",
+        "#/sport/sportolok",
+        "#/sport/edzok",
+        "#/oktatas/kepzeseink/sportiskolai-neveles"
+      ],
+      "sourceType": "developed-general-guidance",
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-14",
+          "change": "Első fejlesztési kiadás; általános, nem hivatalos tájékoztató."
+        }
+      ]
+    },
+    {
+      "id": "document:digitalis-fajlkezeles",
+      "title": "Digitális fájlkezelés és beadás",
+      "summary": "A fájlok letöltése, elnevezése, rendszerezése, beadás előtti ellenőrzése és biztonságos megosztása.",
+      "categoryId": "tanulas-digitalis",
+      "tags": [
+        "digitális",
+        "dokumentumok",
+        "adatvédelem"
+      ],
+      "keywords": [
+        "pdf",
+        "fájlkezelés",
+        "beadás",
+        "letöltés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "digitalis-fajlok-es-beadas.pdf",
+      "filePath": "assets/documents/digitalis-fajlok-es-beadas.pdf",
+      "fileSizeBytes": 48220,
+      "sha256": "8a2ad96eacd33bd78f77b28a6367a24b2a1b473e5422a17e1010c4181199063f",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-14",
+      "validFrom": "2026-11-14",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/informaciok/digitalis-ugyintezes",
+        "#/oktatas/tananyagok-es-jegyzetek",
+        "#/informaciok"
+      ],
+      "sourceType": "developed-general-guidance",
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-14",
+          "change": "Első fejlesztési kiadás; általános, nem hivatalos tájékoztató."
+        }
+      ]
+    }
+  ]
+}

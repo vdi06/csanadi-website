@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "2.0.0",
+  "collectionId": "collection:csengetesi-rend",
+  "status": "preview",
+  "verifiedBySchool": false,
+  "timezone": "Europe/Budapest",
+  "schoolYear": "2026/2027",
+  "description": "Mindkét időbeosztás fejlesztési példa. Az iskola hitelesített csengetési rendjének közzététele külön jóváhagyást igényel.",
+  "applicableWeekdays": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "defaultScheduleId": "schedule:general",
+  "revision": 2,
+  "schedules": [
+    {
+      "id": "schedule:general",
+      "name": "Általános tanítási nap – szemléltető",
+      "status": "preview",
+      "periods": [
+        {
+          "id": "period:01",
+          "number": 1,
+          "start": "08:00",
+          "end": "08:45"
+        },
+        {
+          "id": "period:02",
+          "number": 2,
+          "start": "08:55",
+          "end": "09:40"
+        },
+        {
+          "id": "period:03",
+          "number": 3,
+          "start": "09:55",
+          "end": "10:40"
+        },
+        {
+          "id": "period:04",
+          "number": 4,
+          "start": "10:50",
+          "end": "11:35"
+        },
+        {
+          "id": "period:05",
+          "number": 5,
+          "start": "11:45",
+          "end": "12:30"
+        },
+        {
+          "id": "period:06",
+          "number": 6,
+          "start": "12:40",
+          "end": "13:25"
+        },
+        {
+          "id": "period:07",
+          "number": 7,
+          "start": "13:35",
+          "end": "14:20"
+        },
+        {
+          "id": "period:08",
+          "number": 8,
+          "start": "14:30",
+          "end": "15:15"
+        }
+      ]
+    },
+    {
+      "id": "schedule:short",
+      "name": "Rövidített nap – szemléltető",
+      "status": "preview",
+      "periods": [
+        {
+          "id": "period:short-01",
+          "number": 1,
+          "start": "08:00",
+          "end": "08:35"
+        },
+        {
+          "id": "period:short-02",
+          "number": 2,
+          "start": "08:45",
+          "end": "09:20"
+        },
+        {
+          "id": "period:short-03",
+          "number": 3,
+          "start": "09:30",
+          "end": "10:05"
+        },
+        {
+          "id": "period:short-04",
+          "number": 4,
+          "start": "10:15",
+          "end": "10:50"
+        },
+        {
+          "id": "period:short-05",
+          "number": 5,
+          "start": "11:00",
+          "end": "11:35"
+        },
+        {
+          "id": "period:short-06",
+          "number": 6,
+          "start": "11:45",
+          "end": "12:20"
+        }
+      ]
+    }
+  ],
+  "specialDates": []
+}

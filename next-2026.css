@@ -1,0 +1,213 @@
+/* 2026.11: kiegészítő látvány- és viselkedési réteg. Nincs helyi Bootstrap. */
+.portal-replay-btn{width:auto;min-width:44px;padding:0 12px;font-size:11px;display:inline-flex;gap:5px;align-items:center;justify-content:center;white-space:nowrap;color:#f5d594}
+.portal-replay-btn span{font-weight:800}
+.gate26{position:fixed;inset:0;z-index:4500;overflow:hidden;background:#071729;color:#fff;isolation:isolate;perspective:1600px;display:grid;place-items:center}
+.gate26-scene{position:absolute;inset:-4%;background:linear-gradient(120deg,rgba(5,16,31,.43),rgba(3,12,26,.1)),url('assets/media/web/belepes-kapu.webp') center/cover no-repeat;transform:scale(1.23);transition:transform 3.1s cubic-bezier(.18,.72,.28,1);z-index:0}
+.gate26-glow{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.8;background:radial-gradient(ellipse at 50% 40%,rgba(255,220,147,.33),transparent 37%),linear-gradient(105deg,transparent 44%,rgba(251,206,108,.17) 49%,transparent 56%);mix-blend-mode:screen;transition:opacity 1s ease,transform 2.9s ease}
+.gate26-doors{position:absolute;inset:0;display:flex;z-index:3;perspective:1500px;pointer-events:none}
+.gate26-door{width:50%;height:100%;position:relative;background:linear-gradient(95deg,#061525,#133755,#07182a);border:4px solid #ddb565;backface-visibility:hidden;box-shadow:inset 0 0 0 8px #051522,inset 0 0 0 13px #cea653,0 0 45px rgba(0,0,0,.46);transition:transform 2.6s cubic-bezier(.12,.73,.17,1),filter 2.6s ease;will-change:transform}
+.gate26-left{transform-origin:0 50%;border-right:9px ridge #dbb15b}
+.gate26-right{transform-origin:100% 50%;border-left:9px ridge #dbb15b}
+.gate26-bars{position:absolute;inset:4%;border:3px solid #e1b85f;background:repeating-linear-gradient(90deg,transparent 0 8%,rgba(247,203,117,.8) 8.15% 8.85%,transparent 9.1% 14%),repeating-linear-gradient(0deg,transparent 0 23%,rgba(236,190,104,.52) 23.1% 24%,transparent 24.1% 47%)}
+.gate26-crest{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);font-size:clamp(75px,18vw,240px);line-height:1;color:rgba(247,213,140,.74);text-shadow:0 13px 33px #020b14}
+.gate26-content{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;max-width:910px;padding:20px 26px;text-shadow:0 2px 18px rgba(0,0,0,.85);transition:opacity .85s ease,transform 1.2s ease}
+.gate26-logo{object-fit:contain;filter:drop-shadow(0 7px 15px #081526)}
+.gate26-eyebrow{color:#f7d489;letter-spacing:.25em;font-size:11px;font-weight:900}
+.gate26-content h2{font-size:clamp(36px,5.7vw,76px);line-height:1.04;letter-spacing:-.047em;font-weight:950;margin:5px 0}
+.gate26-content p{font-size:clamp(14px,1.7vw,20px);margin:0 0 10px;line-height:1.5}
+.gate26-enter{background:linear-gradient(125deg,#ffe6a5,#c6973e);color:#132843;border:1px solid #fff1c4;border-radius:11px;padding:13px 28px;font-weight:900;box-shadow:0 12px 30px #0007}
+.gate26-skip{border:1px solid #ffffff88;background:#051c36b9;color:#fff;padding:9px 16px;border-radius:9px}
+.gate26 button:focus-visible{outline:4px solid #fff;outline-offset:4px}
+.gate26-open .gate26-left{transform:rotateY(-94deg);filter:brightness(.7)}
+.gate26-open .gate26-right{transform:rotateY(94deg);filter:brightness(.7)}
+.gate26-open .gate26-scene{transform:scale(1)}
+.gate26-open .gate26-glow{opacity:0;transform:scale(1.8)}
+.gate26-open .gate26-content{opacity:0;transform:translateY(-25px) scale(1.06);pointer-events:none}
+.gate26-finished{opacity:0;pointer-events:none;transition:opacity .34s ease}
+/* Interaktív napirend: táblázat és grafikus időszalag. */
+.hub26-select,.hub26-input{border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);padding:9px 11px;max-width:100%;font-size:13px}
+.hub26-select:focus-visible,.hub26-input:focus-visible{outline:3px solid #d3ab59;outline-offset:2px}
+.hub26-bell .hub26-select{display:block;width:100%;margin:9px 0 15px}
+.hub26-timeline{height:30px;border-radius:8px;position:relative;margin:15px 0 17px;background:linear-gradient(110deg,#283d54,#506077);overflow:hidden;box-shadow:inset 0 0 6px #09162366}
+.hub26-timeblock{position:absolute;top:4px;bottom:4px;border:1px solid #fff6b3;border-radius:4px;background:linear-gradient(125deg,#b18236,#e5ca87);box-shadow:0 0 6px #f9d18b6c}
+.hub26-timeblock.is-current{background:#ffe3a1;border:2px solid #fff;box-shadow:0 0 12px #fff9bc}
+.hub26-now-marker{position:absolute;top:0;bottom:0;width:3px;border-radius:2px;background:#fff;box-shadow:0 0 8px #fff,0 0 16px #ffc654;z-index:2}
+.hub26-note{font-size:12px;line-height:1.55;color:var(--muted);margin:9px 0 0}
+.hub26-bell .bell-countdown{font-variant-numeric:tabular-nums;font-size:clamp(26px,3vw,38px)}
+.hub26-bell .bell-hour-list{max-height:280px;overflow:auto;padding-right:4px}
+.experience-standalone .hub26-bell .bell-hour-list{max-height:none}
+/* A havi, heti, napi naptár külön hozzáférhető navigációt kap. */
+.hub26-calendar .calendar-control{justify-content:space-between}
+.hub26-cal-top{display:flex;gap:7px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:5px 0 13px}
+.hub26-cal-top .calendar-title{font-size:clamp(14px,1.6vw,19px);text-transform:capitalize;flex:1;min-width:140px;text-align:center;white-space:normal}
+.hub26-cal-modes{display:flex;gap:5px;flex-wrap:wrap;margin:9px 0}
+.hub26-pill,.hub26-mini-action,.hub26-export{border:1px solid var(--line);color:var(--ink);background:var(--card);border-radius:9px;padding:8px 10px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none}
+.hub26-pill:hover,.hub26-mini-action:hover,.hub26-export:hover{border-color:#d6a94e;background:var(--light)}
+.hub26-pill[aria-pressed="true"]{background:linear-gradient(120deg,#fbe6ac,#d3a246);color:#19293e;border-color:#c4983a}
+.hub26-export:disabled{opacity:.52;cursor:not-allowed}
+.hub26-cal-filters{display:flex;gap:7px;flex-wrap:wrap;margin:11px 0 14px}
+.hub26-cal-filters .hub26-input{flex:1 1 160px;min-width:0}
+.hub26-cal-filters .hub26-select{flex:1 1 130px;min-width:0}
+.hub26-cal-actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin:14px 0}
+.hub26-count{font-size:12px;font-weight:850;color:var(--ink)}
+.hub26-event-results{display:grid;gap:10px;max-height:360px;overflow:auto}
+.hub26-event-card{background:var(--light);padding:14px;border:1px solid var(--line);border-radius:12px}
+.hub26-event-card h4{font-size:17px;color:var(--ink);font-weight:850;margin:6px 0}
+.hub26-event-card p{font-size:12px;color:var(--muted);line-height:1.6}
+.hub26-event-kicker{font-size:10px;color:#a27a2f;font-weight:900}
+.hub26-event-actions{display:flex;flex-wrap:wrap;gap:8px}
+.experience-standalone .hub26-calendar .calendar-grid{max-width:100%}
+.experience-standalone .hub26-calendar .hub26-event-results{max-height:none}
+/* Tantestület adatvédelmi alapbeállításokkal. */
+.hub26-staff .staff-toolbar{align-items:stretch}
+.hub26-staff .staff-filter-group{align-items:center}
+.hub26-staff .staff-filter[aria-pressed="true"]{background:linear-gradient(110deg,#f7deab,#d1a044);color:#172b43}
+.hub26-staff-person{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 11px 26px #14243d13}
+.hub26-staff-person h3{font-size:20px;font-weight:900;color:var(--ink)}
+.hub26-staff-dialog{border:1px solid #c7a364;border-radius:18px;width:min(650px,calc(100vw - 28px));padding:0;box-shadow:0 25px 65px #0005;color:var(--ink);background:var(--card)}
+.hub26-staff-dialog::backdrop{background:#071b31b8}
+.hub26-staff-profile{padding:30px;display:grid;gap:12px}
+.hub26-staff-profile img{width:120px;height:120px;object-fit:cover;border-radius:14px}
+/* Hozzájárulás nélküli média-beágyazást soha nem helyezünk az oldalra. */
+.hub26-embed-area{border:1px solid var(--line);border-radius:13px;padding:12px;margin-top:12px}
+.hub26-embed-area .hub26-select{width:100%;margin:11px 0}
+.hub26-embed-holder:empty{display:none}
+.hub26-embed-frame{width:100%;min-height:340px;border:0;border-radius:9px;margin-top:14px;background:#10243c}
+/* Átlátható billentyűzetes fókusz és csökkentett mozgás. */
+.hub26-calendar button:focus-visible,.hub26-staff button:focus-visible,.hub26-embed-area button:focus-visible{outline:3px solid #c89b43;outline-offset:2px}
+@media(max-width:1050px){.portal-replay-btn span{display:none}.portal-replay-btn{padding:0;width:38px}}
+@media(max-width:760px){.gate26-doors{perspective:850px}.gate26-door{border-width:3px}.gate26-content h2{font-size:clamp(29px,8.8vw,45px)}.gate26-eyebrow{letter-spacing:.12em}.hub26-calendar .calendar-day{min-height:35px}.hub26-staff .staff-toolbar{flex-direction:column}.hub26-bell .bell-hour-list{max-height:200px}}
+@media(prefers-reduced-motion:reduce){.gate26-scene,.gate26-door,.gate26-content,.gate26-glow{transition:none!important;animation:none!important}.gate26-open .gate26-door{transform:none!important}.gate26-finished{transition:none!important}}
+
+/* VÉGLEGES ARKULATI PALETTA: mélykék, ugyanaz az elefántcsont mindkét módban, arany. */
+html[data-theme="light"]{
+ --navy:#102840;--navy2:#183a58;--gold:#b78d41;--gold2:#d7b773;
+ --ink:#13283e;--muted:#445971;--light:#f1e9da;--line:#d8c9ad;
+ --card:#fffaf0;--page:#f6f0e5;--shadow:0 14px 38px rgba(26,41,56,.11);
+ --decorative-base:#f8f1e5;--surface-tint:#fffaf1;--surface-soft:#f0e6d4;
+ --experience-surface:#fffaf1;--experience-text:#13283e;
+ color-scheme:light;
+}
+html[data-theme="dark"]{
+ --navy:#091c30;--navy2:#102d49;--gold:#dbb86a;--gold2:#edcf91;
+ --ink:#f3ead9;--muted:#c8d1dc;--light:#1a334c;--line:#49637a;
+ --card:#142d46;--page:#0b2034;--shadow:0 15px 38px rgba(0,0,0,.28);
+ --decorative-base:#102a42;--surface-tint:#142d46;--surface-soft:#1b3954;
+ --experience-surface:#142d46;--experience-text:#f3ead9;
+ color-scheme:dark;
+}
+html[data-theme="light"] body,
+html[data-theme="light"] .main-content{background-color:var(--page)!important;color:var(--ink)}
+html[data-theme="dark"] body,
+html[data-theme="dark"] .main-content{background-color:var(--page)!important;color:var(--ink)}
+/* Világosban az egész fejléc és lábléc elefántcsont; nincs sötét sáv. */
+html[data-theme="light"] .site-header,
+html[data-theme="light"] .brand-row,
+html[data-theme="light"] .nav-row,
+html[data-theme="light"] .site-footer,
+html[data-theme="light"] .mobile-navigation{
+ background:linear-gradient(135deg,#fffaf0 0%,#f3ebdd 62%,#ebd9ae 100%)!important;
+ color:#13283e!important;border-color:#d5bb81!important;
+}
+html[data-theme="light"] .nav-row{background:linear-gradient(105deg,#f7f0e4,#efe2cb)!important;border-block:1px solid #d5c29e!important}
+html[data-theme="light"] .site-footer{border-top:2px solid #be9445!important}
+html[data-theme="light"] .brand,
+html[data-theme="light"] .brand:hover,
+html[data-theme="light"] .brand-copy strong,
+html[data-theme="light"] .header-tag,
+html[data-theme="light"] .nav-pill,
+html[data-theme="light"] .nav-documents,
+html[data-theme="light"] .footer-brand,
+html[data-theme="light"] .footer-grid strong,
+html[data-theme="light"] .footer-grid a,
+html[data-theme="light"] .footer-grid p,
+html[data-theme="light"] .footer-bottom,
+html[data-theme="light"] .footer-note,
+html[data-theme="light"] .mobile-navigation a,
+html[data-theme="light"] .mobile-navigation summary{
+ color:#13283e!important;
+}
+html[data-theme="light"] .brand-copy small,
+html[data-theme="light"] .nav-pill.active,
+html[data-theme="light"] .nav-pill:hover,
+html[data-theme="light"] .nav-documents.active,
+html[data-theme="light"] .footer-brand span{color:#91671d!important}
+html[data-theme="light"] .icon-btn:not(.menu-btn),
+html[data-theme="light"] .menu-btn{
+ background:#fffaf0!important;color:#13283e!important;border-color:#c5a45e!important;
+}
+html[data-theme="light"] .icon-btn:hover,
+html[data-theme="light"] .nav-pill:hover{background:#e9dcc4!important}
+html[data-theme="light"] .site-map-topline{background:linear-gradient(125deg,#fff9ec,#ead9b8)!important;color:#152d44!important}
+html[data-theme="light"] .site-map-topline p,
+html[data-theme="light"] .site-map-eyebrow,
+html[data-theme="light"] .site-map-close{color:#233b50!important}
+html[data-theme="light"] .site-map-close{background:#fffaf0;border-color:#bea263}
+html[data-theme="light"] .footer-bottom{border-color:#d5bb81!important}
+html[data-theme="light"] .mobile-navigation details,
+html[data-theme="light"] .mobile-navigation .mobile-root,
+html[data-theme="light"] .mobile-navigation .mobile-sub{border-color:#d6c19c!important}
+html[data-theme="light"] .mobile-navigation .mobile-overview{color:#926821!important;background:#ecdfc4!important}
+html[data-theme="light"] .page-banner{background:linear-gradient(115deg,#fbf4e7,#ecdcb9)!important;color:#13283e!important;border-bottom:1px solid #d4b878}
+html[data-theme="light"] .page-banner h1,
+html[data-theme="light"] .page-banner p,
+html[data-theme="light"] .breadcrumbs,
+html[data-theme="light"] .breadcrumbs a{color:#13283e!important}
+/* Sötétben marad a mélykék bázis, elefántcsont szövegek és arany díszítés. */
+html[data-theme="dark"] .site-header,
+html[data-theme="dark"] .nav-row,
+html[data-theme="dark"] .mobile-navigation,
+html[data-theme="dark"] .site-footer{background:linear-gradient(125deg,#091b2e,#173854)!important;color:#f4ecdb!important}
+html[data-theme="dark"] .site-header a,
+html[data-theme="dark"] .site-footer a,
+html[data-theme="dark"] .site-footer strong,
+html[data-theme="dark"] .nav-pill,
+html[data-theme="dark"] .mobile-navigation a,
+html[data-theme="dark"] .mobile-navigation summary{color:#f4ecdb}
+html[data-theme="dark"] .site-footer p,
+html[data-theme="dark"] .footer-bottom{color:#d3deeb!important}
+html[data-theme="dark"] .nav-row{border-color:#476482!important}
+html[data-theme="dark"] .site-map-topline{background:linear-gradient(115deg,#0c2843,#204662)!important;color:#f4ecdb}
+html[data-theme="dark"] .site-map-topline p{color:#f3e8d4!important}
+html[data-theme="dark"] .nav-map-trigger{color:#152a42!important}
+html[data-theme="dark"] .page-banner{background:linear-gradient(115deg,#071c31,#214965)!important}
+html[data-theme="dark"] .page-banner p,
+html[data-theme="dark"] .breadcrumbs a{color:#e9e0cf!important}
+/* Az összes kártya ugyanazon felületpalettából épül. */
+html[data-theme] .body-card,
+html[data-theme] .feature-card,
+html[data-theme] .doc-center,
+html[data-theme] .experience-panel,
+html[data-theme] .staff-team-card,
+html[data-theme] .side-panel,
+html[data-theme] .social-feature-box,
+html[data-theme] .doc-filters,
+html[data-theme] .hub26-event-card,
+html[data-theme] .search-dialog{
+ color:var(--ink);border-color:var(--line);
+}
+html[data-theme="light"] .experience-panel,
+html[data-theme="light"] .staff-team-card,
+html[data-theme="light"] .social-feature-box{background:#fffaf1!important}
+html[data-theme="dark"] .experience-panel,
+html[data-theme="dark"] .staff-team-card,
+html[data-theme="dark"] .social-feature-box{background:#142d46!important}
+html[data-theme] .calendar-title,
+html[data-theme] .clock-date,
+html[data-theme] .experience-title,
+html[data-theme] .experience-lead,
+html[data-theme] .experience-panel-tag,
+html[data-theme] .bell-current,
+html[data-theme] .staff-team-body h3{color:var(--ink)}
+html[data-theme] .preview-ribbon{background:linear-gradient(95deg,#e9cb89,#f4e0b7);color:#1a2f42}
+html[data-theme] .theme-switch{border-radius:999px}
+html[data-theme="light"] .nav-pill.active{border-bottom-color:#b88b42}
+html[data-theme="light"] .header-social .social-chip,
+html[data-theme="light"] .header-social a{color:#13283e!important}
+@media(max-width:850px){
+ html[data-theme="light"] .mobile-navigation{box-shadow:0 16px 35px #273c511a}
+ html[data-theme="dark"] .mobile-navigation{box-shadow:0 16px 40px #0008}
+}
+@media(prefers-reduced-motion:reduce){
+ .hub26-timeblock,.hub26-now-marker,.gate26-logo,.gate26-glow{animation:none!important;transition:none!important}
+}

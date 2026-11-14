@@ -1,0 +1,441 @@
+{
+  "schemaVersion": "1.0.0",
+  "collectionId": "collection:eletkepek-2026",
+  "status": "development",
+  "title": "Sport, tudás és közösség – képes történetek",
+  "description": "Sport-, tanulási és közösségi témájú illusztrációs képtár; a képek nem valós iskolai események dokumentumfotói.",
+  "items": [
+    {
+      "id": "photo:001",
+      "title": "Kosárlabda – gyors támadás",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-01.webp",
+      "alt": "Tematikus kép: kosárlabda – gyors támadás",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:002",
+      "title": "Atlétika – futópályán",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-02.webp",
+      "alt": "Tematikus kép: atlétika – futópályán",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:003",
+      "title": "Úszás – lendület a vízben",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-03.webp",
+      "alt": "Tematikus kép: úszás – lendület a vízben",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:004",
+      "title": "Röplabda – labdamenet",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-04.webp",
+      "alt": "Tematikus kép: röplabda – labdamenet",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:005",
+      "title": "Könyvtári olvasás",
+      "category": "oktatas",
+      "src": "assets/media/web/eletkep-05.webp",
+      "alt": "Tematikus kép: könyvtári olvasás",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:006",
+      "title": "Digitális tanulás",
+      "category": "oktatas",
+      "src": "assets/media/web/eletkep-06.webp",
+      "alt": "Tematikus kép: digitális tanulás",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:007",
+      "title": "Csoportos feladatmegoldás",
+      "category": "oktatas",
+      "src": "assets/media/web/eletkep-07.webp",
+      "alt": "Tematikus kép: csoportos feladatmegoldás",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:008",
+      "title": "Szakmai megbeszélés",
+      "category": "oktatas",
+      "src": "assets/media/web/eletkep-08.webp",
+      "alt": "Tematikus kép: szakmai megbeszélés",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:009",
+      "title": "Kézilabda – csapatmunka",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-09.webp",
+      "alt": "Tematikus kép: kézilabda – csapatmunka",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:010",
+      "title": "Labdarúgás – edzés",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-10.webp",
+      "alt": "Tematikus kép: labdarúgás – edzés",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:011",
+      "title": "Tenisz – ütésgyakorlat",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-11.webp",
+      "alt": "Tematikus kép: tenisz – ütésgyakorlat",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:012",
+      "title": "Evezés – közös ritmus",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-12.webp",
+      "alt": "Tematikus kép: evezés – közös ritmus",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:013",
+      "title": "Baráti beszélgetés az udvaron",
+      "category": "kozosseg",
+      "src": "assets/media/web/eletkep-13.webp",
+      "alt": "Tematikus kép: baráti beszélgetés az udvaron",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:014",
+      "title": "Iskolai környezet",
+      "category": "kozosseg",
+      "src": "assets/media/web/eletkep-14.webp",
+      "alt": "Tematikus kép: iskolai környezet",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:015",
+      "title": "Egyéni tanulói konzultáció",
+      "category": "oktatas",
+      "src": "assets/media/web/eletkep-15.webp",
+      "alt": "Tematikus kép: egyéni tanulói konzultáció",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:016",
+      "title": "Önálló felkészülés",
+      "category": "oktatas",
+      "src": "assets/media/web/eletkep-16.webp",
+      "alt": "Tematikus kép: önálló felkészülés",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:017",
+      "title": "Küzdősport és önfegyelem",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-17.webp",
+      "alt": "Tematikus kép: küzdősport és önfegyelem",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:018",
+      "title": "Torna – mozgáskultúra",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-18.webp",
+      "alt": "Tematikus kép: torna – mozgáskultúra",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:019",
+      "title": "Közös tábori élmény",
+      "category": "kozosseg",
+      "src": "assets/media/web/eletkep-19.webp",
+      "alt": "Tematikus kép: közös tábori élmény",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:020",
+      "title": "Sportolói elismerés",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-20.webp",
+      "alt": "Tematikus kép: sportolói elismerés",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:021",
+      "title": "Tudatos táplálkozás",
+      "category": "kozosseg",
+      "src": "assets/media/web/eletkep-21.webp",
+      "alt": "Tematikus kép: tudatos táplálkozás",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:022",
+      "title": "Sportrehabilitáció",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-22.webp",
+      "alt": "Tematikus kép: sportrehabilitáció",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:023",
+      "title": "Falmászás",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-23.webp",
+      "alt": "Tematikus kép: falmászás",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:024",
+      "title": "Kerékpáros közösség",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-24.webp",
+      "alt": "Tematikus kép: kerékpáros közösség",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:025",
+      "title": "Olvasás és elmélyülés",
+      "category": "oktatas",
+      "src": "assets/media/web/eletkep-25.webp",
+      "alt": "Tematikus kép: olvasás és elmélyülés",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:026",
+      "title": "Digitális informatikai foglalkozás",
+      "category": "oktatas",
+      "src": "assets/media/web/eletkep-26.webp",
+      "alt": "Tematikus kép: digitális informatikai foglalkozás",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:027",
+      "title": "Közös feladatmegoldás",
+      "category": "oktatas",
+      "src": "assets/media/web/eletkep-27.webp",
+      "alt": "Tematikus kép: közös feladatmegoldás",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:028",
+      "title": "Pedagógiai konzultáció",
+      "category": "oktatas",
+      "src": "assets/media/web/eletkep-28.webp",
+      "alt": "Tematikus kép: pedagógiai konzultáció",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:029",
+      "title": "Kosárlabda – dobás",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-29.webp",
+      "alt": "Tematikus kép: kosárlabda – dobás",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:030",
+      "title": "Atlétika – rajt",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-30.webp",
+      "alt": "Tematikus kép: atlétika – rajt",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:031",
+      "title": "Úszás – gyorsúszás",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-31.webp",
+      "alt": "Tematikus kép: úszás – gyorsúszás",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:032",
+      "title": "Röplabda – háló fölött",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-32.webp",
+      "alt": "Tematikus kép: röplabda – háló fölött",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:033",
+      "title": "Tanulói közösség",
+      "category": "kozosseg",
+      "src": "assets/media/web/eletkep-33.webp",
+      "alt": "Tematikus kép: tanulói közösség",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:034",
+      "title": "Zöld iskolai udvar",
+      "category": "kozosseg",
+      "src": "assets/media/web/eletkep-34.webp",
+      "alt": "Tematikus kép: zöld iskolai udvar",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:035",
+      "title": "Tanulói beszélgetés pedagógussal",
+      "category": "oktatas",
+      "src": "assets/media/web/eletkep-35.webp",
+      "alt": "Tematikus kép: tanulói beszélgetés pedagógussal",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:036",
+      "title": "Tanulás sport mellett",
+      "category": "oktatas",
+      "src": "assets/media/web/eletkep-36.webp",
+      "alt": "Tematikus kép: tanulás sport mellett",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:037",
+      "title": "Kézilabdameccs",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-37.webp",
+      "alt": "Tematikus kép: kézilabdameccs",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:038",
+      "title": "Labdarúgás – edzés",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-38.webp",
+      "alt": "Tematikus kép: labdarúgás – edzés",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:039",
+      "title": "Tenisz – koncentráció",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-39.webp",
+      "alt": "Tematikus kép: tenisz – koncentráció",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:040",
+      "title": "Evezőscsapat",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-40.webp",
+      "alt": "Tematikus kép: evezőscsapat",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:041",
+      "title": "Bemelegítés a futópályán",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-41.webp",
+      "alt": "Tematikus kép: bemelegítés a futópályán",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:042",
+      "title": "Úszócsapat és közösség",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-42.webp",
+      "alt": "Tematikus kép: úszócsapat és közösség",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:043",
+      "title": "Röplabdacsapat – együttműködés",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-43.webp",
+      "alt": "Tematikus kép: röplabdacsapat – együttműködés",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:044",
+      "title": "Labdarúgóedzés",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-44.webp",
+      "alt": "Tematikus kép: labdarúgóedzés",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:045",
+      "title": "Karate és önfegyelem",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-45.webp",
+      "alt": "Tematikus kép: karate és önfegyelem",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:046",
+      "title": "Torna – egyensúlygyakorlat",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-46.webp",
+      "alt": "Tematikus kép: torna – egyensúlygyakorlat",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:047",
+      "title": "Közösségi táborozás",
+      "category": "kozosseg",
+      "src": "assets/media/web/eletkep-47.webp",
+      "alt": "Tematikus kép: közösségi táborozás",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    },
+    {
+      "id": "photo:048",
+      "title": "Díjátadás és sportelismerés",
+      "category": "sport",
+      "src": "assets/media/web/eletkep-48.webp",
+      "alt": "Tematikus kép: díjátadás és sportelismerés",
+      "sourceType": "generated-illustration",
+      "verifiedSchoolPhoto": false
+    }
+  ]
+}

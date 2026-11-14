@@ -41,4 +41,4 @@ export function createPicture(id,{className='',eager=false,sizes='100vw',decorat
   picture.append(img);
   return picture;
 }
-export function imageDisclaimer(){const b=document.createElement('span');b.className='media-illustration-tag';b.textContent='MI-GENERÁLT ILLUSZTRÁCIÓ';return b;}
+export function imageDisclaimer(){const b=document.createElement('span');b.className='media-illustration-tag';b.textContent='ILLUSZTRÁCIÓ';return b;}

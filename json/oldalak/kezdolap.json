@@ -48,7 +48,7 @@
           }
         ],
         "imageId": "media:hero",
-        "intervalMs": 7200,
+        "intervalMs": 8000,
         "slides": [
           {
             "id": "hero-2026-sport",
@@ -207,6 +207,13 @@
             "description": "A sport és a közösség látványos, képes bemutatása.",
             "mediaId": "media:sport",
             "icon": "gallery"
+          },
+          {
+            "title": "Tantestület",
+            "label": "Tantestület",
+            "description": "Pedagógusaink és a munkaközösségek bemutatása, kereshető áttekintésben.",
+            "icon": "study",
+            "href": "#/iskolank/tantestulet"
           }
         ]
       }
@@ -335,7 +342,7 @@
       "id": "block:home-status",
       "type": "markdown",
       "data": {
-        "text": "**Fejlesztői előnézet:** ez a GitHub Pages-en kipróbálható változat nem az iskola hivatalos, éles honlapja. A generált képek és a sporttörténetek illusztrációk; a hivatalos intézményi adatok és eredmények csak ellenőrzött forrás alapján tehetők közzé."
+        "text": "**Fejlesztői előnézet:** ez a GitHub Pages-en kipróbálható változat nem az iskola hivatalos, éles honlapja. A képek és a bemutató sporttörténetek szemléltető tartalmak; az intézményi adatok és eredmények közzététele ellenőrzött forrás alapján történhet."
       }
     }
   ],

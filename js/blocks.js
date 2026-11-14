@@ -1,7 +1,7 @@
-import {renderSportsSuccesses} from './sports-successes.js';
-import {renderPremiumHero} from './hero-2026.js';
-import {renderLiveDashboard} from './home-live.js?v=20261114a';
-import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js';
+import {renderSportsSuccesses} from './sports-successes.js?v=20261114f';
+import {renderPremiumHero} from './hero-2026.js?v=20261114f';
+import {renderLiveDashboard} from './home-live.js?v=20261114f';
+import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js?v=20261114f';
 /* Biztonságos, kizárólag előre regisztrált komponenseket tartalmazó blokkmegjelenítő. */
 const dom=(tag,attrs={},text='')=>{
   const x=document.createElement(tag);
@@ -121,7 +121,7 @@ const styles={
     const entry=mediaItem(block.data?.mediaId);if(!entry)return null;
     const figure=dom('figure',{class:'story-figure'});
     const p=createPicture(entry.id,{className:'story-image',sizes:'(max-width: 850px) 100vw, 900px'});
-    if(p) figure.append(p,dom('figcaption',{},entry.caption||'MI-generált illusztráció'));
+    if(p) figure.append(p,dom('figcaption',{},entry.caption||'Iskolai témájú illusztráció'));
     return figure;
   },
   'gallery':block=>{
@@ -133,7 +133,7 @@ const styles={
       if(p){figure.append(p,dom('figcaption',{},item.title||'Iskolai illusztráció'));gallery.append(figure);}
     });
     if(!gallery.children.length)return null;
-    const wrap=dom('div');wrap.append(gallery,dom('p',{class:'gallery-disclaimer'},'A képek MI-generált látványtervek; nem dokumentálják a valós iskolaépületet, eseményeket vagy személyeket.'));
+    const wrap=dom('div');wrap.append(gallery,dom('p',{class:'gallery-disclaimer'},'A képek tematikus illusztrációk; nem az iskola tényleges személyeit, épületeit vagy eseményeit dokumentálják.'));
     return wrap;
   },
   'accordion':block=>{

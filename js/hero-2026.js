@@ -1,5 +1,5 @@
 /* Csanádi 2026 – prémium, JSON-konfigurált hero. Csak regisztrált médiákat és útvonalakat használ. */
-import {createPicture, imageDisclaimer} from './media.js';
+import {createPicture, imageDisclaimer} from './media.js?v=20261114f';
 const safeHref=value=>typeof value==='string'&&/^#\/[a-z0-9/-]*$/.test(value)?value:'#/';
 const el=(tag,cls='',text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 const action=(item,i)=>{const a=el('a',i?'hero2026-cta ghost':'hero2026-cta primary',item.label||'Tovább');a.href=safeHref(item.href);return a;};
@@ -10,7 +10,7 @@ export function renderPremiumHero(block){
   const section=el('section','hero2026');section.setAttribute('aria-roledescription','diavetítés');section.setAttribute('aria-label','A Csanádi Sportiskola kiemelt témái');
   const stage=el('div','hero2026-stage');const panels=[];
   for(let index=0;index<slides.length;index++){
-    const s=slides[index],panel=el('div','hero2026-slide');panel.hidden=index!==0;
+    const s=slides[index],panel=el('div','hero2026-slide');panel.setAttribute('aria-hidden',String(index!==0));panel.inert=index!==0;
     const pic=createPicture(s.mediaId,{className:'hero2026-photo',eager:index===0,sizes:'100vw'});
     if(pic)panel.append(pic);
     const overlay=el('div','hero2026-shade');panel.append(overlay);
@@ -41,7 +41,7 @@ export function renderPremiumHero(block){
   const dotsList=slides.map((slide,i)=>{const b=el('button','hero2026-dot');b.type='button';b.setAttribute('aria-label',`${i+1}. kiemelt kép: ${slide.title||''}`);b.addEventListener('click',()=>switchTo(i));dots.append(b);return b;});
   const counter=el('span','hero2026-count');
   const sync=()=>{
-    panels.forEach((p,i)=>{p.hidden=i!==idx;p.classList.toggle('is-active',i===idx);});
+    panels.forEach((p,i)=>{p.setAttribute('aria-hidden',String(i!==idx));p.inert=i!==idx;p.classList.toggle('is-active',i===idx);});
     dotsList.forEach((b,i)=>{b.classList.toggle('active',i===idx);b.setAttribute('aria-pressed',String(i===idx));});
     counter.textContent=`${String(idx+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
   };

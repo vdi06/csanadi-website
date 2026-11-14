@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "2.0.0",
+  "collectionId": "collection:social-2026",
+  "status": "development",
+  "lastChecked": "2026-11-14",
+  "description": "A Facebook-hivatkozás külső intézményjegyzék alapján szerepel; az intézménynek meg kell erősítenie. További profilokat nem találunk ki.",
+  "items": [
+    {
+      "id": "social:facebook",
+      "platform": "Facebook",
+      "label": "Facebook",
+      "url": "https://www.facebook.com/csanadiiskola",
+      "status": "external-directory-listed",
+      "schoolVerified": false,
+      "icon": "f",
+      "embed": {
+        "approved": false,
+        "url": null
+      }
+    },
+    {
+      "id": "social:instagram",
+      "platform": "Instagram",
+      "label": "Instagram",
+      "url": null,
+      "status": "pending-verification",
+      "schoolVerified": false,
+      "icon": "◎",
+      "embed": {
+        "approved": false,
+        "url": null
+      }
+    },
+    {
+      "id": "social:youtube",
+      "platform": "YouTube",
+      "label": "YouTube",
+      "url": null,
+      "status": "pending-verification",
+      "schoolVerified": false,
+      "icon": "▶",
+      "embed": {
+        "approved": false,
+        "url": null
+      }
+    },
+    {
+      "id": "social:tiktok",
+      "platform": "TikTok",
+      "label": "TikTok",
+      "url": null,
+      "status": "pending-verification",
+      "schoolVerified": false,
+      "icon": "♪",
+      "embed": {
+        "approved": false,
+        "url": null
+      }
+    }
+  ]
+}

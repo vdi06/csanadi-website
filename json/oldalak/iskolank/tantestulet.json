@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000064",
+  "pageType": "content",
+  "menuLabel": "Tantestület",
+  "title": "Tantestület – pedagógusaink és munkaközösségeink",
+  "slug": "tantestulet",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Sportiskola – fejlesztési minta",
+    "organization": "Csanádi Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Tantestület – Csanádi Sportiskola",
+    "description": "Tantestületi központ, pedagógiai területek és munkaközösségi bemutatás – fejlesztési előnézet.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "iskolank",
+    "tantestulet"
+  ],
+  "tags": [
+    "tantestulet",
+    "pedagogusok",
+    "munkakozossegek",
+    "sport"
+  ],
+  "summary": "Ismerd meg az iskolai pedagógiai munka fő területeit. Kereshető tantestületi központ, intézményi jóváhagyásra váró személyes profilokkal.",
+  "blocks": [
+    {
+      "id": "block:tantestulet-intro",
+      "type": "section",
+      "title": "Tudás, sport és közösség",
+      "children": [
+        {
+          "id": "block:tantestulet-lead",
+          "type": "markdown",
+          "data": {
+            "text": "A pedagógusok szakmai munkája a sport, a tanulás és a személyes fejlődés összehangolásához kapcsolódik. Az alábbi munkaközösségi területek tájékoztató jellegűek; a tényleges tantestületi névsor és fényképek intézményi jóváhagyás után publikálhatók."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "route": "#/iskolank/tantestulet",
+    "preview": true,
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas"
+  }
+}

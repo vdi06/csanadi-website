@@ -1,5 +1,5 @@
 /* Központi sporteredmény/ sporthír megjelenítés. A JSON adat, soha nem futtatható kód. */
-import {mediaItem,createPicture} from './media.js';
+import {mediaItem,createPicture} from './media.js?v=20261114f';
 const SOURCE=new URL('../json/adatok/sportsikerek.json',import.meta.url);
 const VALID_ID=/^success:[a-z0-9-]{3,50}$/;
 const ROUTE=/^#\/[a-z0-9/-]*$/;
@@ -45,7 +45,7 @@ function article(entry,compact=false){
   else if(entry.publishedAt)add(line,$('time','sport-news-date',entry.publishedAt));
   add(body,line,$('h3','sport-news-title',entry.title),$('p','sport-news-summary',entry.summary));
   const details=$('details','sport-news-details');add(details,$('summary','','Teljes történet'),$('p','',entry.body));
-  if(entry.status==='preview')add(details,$('p','sport-preview-note','Fejlesztési bemutató: nem ellenőrzött iskolai versenyeredmény. A kép generált illusztráció.'));
+  if(entry.status==='preview')add(details,$('p','sport-preview-note','Bemutató sporttörténet: nem ellenőrzött iskolai versenyeredmény. A kép illusztráció.'));
   add(body,details);add(card,body);return card;
 }
 function renderHome(mount,data,block){
@@ -59,7 +59,7 @@ function renderHome(mount,data,block){
     const img=createPicture(entry.mediaId,{className:'sports-slide-picture',eager:index===0,sizes:'(max-width:800px) 100vw, 900px'});
     if(img)slide.append(img);
     const overlay=$('div','sports-slide-overlay');
-    const tag=$('div','sports-slide-overline');add(tag,$('span','sport-tag',entry.category));if(entry.status==='preview')add(tag,$('span','sport-demo-badge','GENERÁLT KÉP'));
+    const tag=$('div','sports-slide-overline');add(tag,$('span','sport-tag',entry.category));if(entry.status==='preview')add(tag,$('span','sport-demo-badge','ILLUSZTRÁCIÓ'));
     add(overlay,tag,$('h3','sports-slide-title',entry.title),$('p','sports-slide-summary',entry.summary),link('Sporttörténetek →',entry.links.results,'sports-slide-link'));
     add(slide,overlay);viewport.append(slide);return slide;
   });

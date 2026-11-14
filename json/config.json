@@ -45,5 +45,36 @@
   "performance": {
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true
+  },
+  "modules2026": {
+    "gate": {
+      "enabled": true,
+      "showOncePerSession": true,
+      "reducedMotionSkip": true
+    },
+    "clock": {
+      "timezone": "Europe/Budapest",
+      "tickSeconds": 1
+    },
+    "calendar": {
+      "source": "adatok/esemenyek.json",
+      "displayOnlyVerifiedDates": true
+    },
+    "bell": {
+      "source": "adatok/csengetesi-rend.json",
+      "requireVerifiedForOfficialBadge": true
+    },
+    "gallery": {
+      "source": "adatok/kepgaleria.json",
+      "imageCount": 48
+    },
+    "social": {
+      "source": "adatok/social.json",
+      "requireVerifiedLinksForOfficialBadge": true
+    },
+    "staff": {
+      "source": "adatok/tantestulet.json",
+      "onlyPublishedPeople": true
+    }
   }
 }

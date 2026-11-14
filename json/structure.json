@@ -36,6 +36,10 @@
         {
           "path": "oldalak/iskolank/partnerek.json",
           "order": 8
+        },
+        {
+          "path": "oldalak/iskolank/tantestulet.json",
+          "order": 9
         }
       ]
     },

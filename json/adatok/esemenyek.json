@@ -1,64 +1,86 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "2.0.0",
   "collectionId": "collection:esemenyek",
-  "title": "Események és programok",
-  "refreshSeconds": 20,
-  "description": "A jelenlegi bejegyzések szerkesztési bemutatók, nem valós, meghirdetett programok. Dátumot csak jóváhagyott, igazolt eseményhez adj meg.",
+  "timezone": "Europe/Budapest",
+  "refreshSeconds": 60,
+  "description": "Dátum és naptárexport kizárólag ellenőrzött, közzétett programhoz. Bemutató témák nem meghirdetett események.",
+  "categories": [
+    {
+      "id": "category:sport",
+      "label": "Sportélet"
+    },
+    {
+      "id": "category:admission",
+      "label": "Felvételi"
+    },
+    {
+      "id": "category:competition",
+      "label": "Versenyek"
+    },
+    {
+      "id": "category:community",
+      "label": "Közösség"
+    }
+  ],
   "items": [
     {
       "id": "esemeny:sportnap",
       "title": "Sportnap és közösségi mozgás",
-      "category": "Sportélet",
       "summary": "A sportnap változatos, közösségépítő program lehet; a tényleges esemény időpontját csak hivatalos jóváhagyás után közöljük.",
+      "categoryId": "category:sport",
       "status": "preview",
       "startsAt": null,
+      "endsAt": null,
       "location": null,
+      "route": "#/hirek-es-esemenyek/esemenynaptar",
       "source": {
         "verified": false
       },
-      "route": "#/hirek-es-esemenyek/esemenynaptar",
       "priority": 100
     },
     {
       "id": "esemeny:nyilt-nap",
       "title": "Nyílt nap és iskolabemutató",
-      "category": "Felvételi",
       "summary": "A nyílt nap segítheti a továbbtanulás előtt álló családokat. Az aktuális jelentkezési és időpontadatok intézményi megerősítésre várnak.",
+      "categoryId": "category:admission",
       "status": "preview",
       "startsAt": null,
+      "endsAt": null,
       "location": null,
+      "route": "#/oktatas/felveteli",
       "source": {
         "verified": false
       },
-      "route": "#/oktatas/felveteli",
       "priority": 90
     },
     {
       "id": "esemeny:sportverseny",
       "title": "Sportversenyek és eredmények",
-      "category": "Versenyek",
       "summary": "A sportversenyekről a sportág, helyszín, dátum, korcsoport és ellenőrzött eredmény birtokában készülhet részletes eseménylap.",
+      "categoryId": "category:competition",
       "status": "preview",
       "startsAt": null,
+      "endsAt": null,
       "location": null,
+      "route": "#/sport/sporteredmenyek",
       "source": {
         "verified": false
       },
-      "route": "#/sport/sporteredmenyek",
       "priority": 80
     },
     {
       "id": "esemeny:kozosseg",
       "title": "Diákélet és közösségi programok",
-      "category": "Közösség",
       "summary": "Az iskolai közösségi programokhoz képes beszámolók, dokumentumok és meghívók kapcsolhatók. Az itt látható kártya a modul működését szemlélteti.",
+      "categoryId": "category:community",
       "status": "preview",
       "startsAt": null,
+      "endsAt": null,
       "location": null,
+      "route": "#/hirek-es-esemenyek",
       "source": {
         "verified": false
       },
-      "route": "#/hirek-es-esemenyek",
       "priority": 70
     }
   ]

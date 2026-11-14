@@ -26,19 +26,19 @@ function checkSports(data){
 }
 function validISOString(value){if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?([+-]\d{2}:\d{2}|Z)$/.test(value))return false;const d=new Date(value);return Number.isFinite(d.getTime());}
 function checkEvents(data){
- if(!data||data.schemaVersion!=='1.0.0'||data.collectionId!=='collection:esemenyek'||!Array.isArray(data.items)||data.items.length>200||!Number.isInteger(data.refreshSeconds)||data.refreshSeconds<15||data.refreshSeconds>3600)throw Error('Érvénytelen esemenyek.json gyűjtemény.');
- const ids=new Set();
- for(const item of data.items){
+ if(!data||data.schemaVersion!=='2.0.0'||data.collectionId!=='collection:esemenyek'||!Array.isArray(data.items)||!Array.isArray(data.categories)||!Number.isInteger(data.refreshSeconds)||data.refreshSeconds<15||data.refreshSeconds>3600)throw Error('Érvénytelen esemenyek.json gyűjtemény.');
+ const ids=new Set(),categories=new Map(data.categories.map(x=>[x.id,x.label]));
+ return data.items.map(item=>{
   if(!item||typeof item.id!=='string'||!/^esemeny:[a-z0-9-]{3,60}$/.test(item.id)||ids.has(item.id)||
-     typeof item.title!=='string'||item.title.trim().length<8||item.title.length>120||
+     typeof item.title!=='string'||item.title.trim().length<8||item.title.length>140||
      typeof item.summary!=='string'||item.summary.trim().length<30||item.summary.length>500||
-     typeof item.category!=='string'||item.category.length>48||!STRING_TEXT.test(item.category)||
-     !VALID_ROUTE.test(item.route)||!['preview','verified'].includes(item.status)||!item.source||typeof item.source.verified!=='boolean')throw Error('Hibás eseményadat.');
-  if(item.status==='verified'&&(!item.source.verified||!validISOString(item.startsAt)))throw Error('Az éles eseményhez igazolt pontos időpont szükséges.');
-  if(item.status==='preview'&&(item.source.verified||item.startsAt!==null))throw Error('A bemutató esemény nem tartalmazhat látszólag hivatalos időpontot.');
+     !categories.has(item.categoryId)||!VALID_ROUTE.test(item.route)||
+     !['preview','published'].includes(item.status)||!item.source||typeof item.source.verified!=='boolean')throw Error('Hibás eseményadat.');
+  if(item.status==='published'&&(!item.source.verified||!validISOString(item.startsAt)||!validISOString(item.endsAt)||Date.parse(item.endsAt)<=Date.parse(item.startsAt)))throw Error('A közzétett eseményhez igazolt kezdés és befejezés szükséges.');
+  if(item.status==='preview'&&(item.source.verified||item.startsAt!==null||item.endsAt!==null))throw Error('Bemutató esemény nem tartalmazhat látszólag hivatalos időpontot.');
   ids.add(item.id);
- }
- return data.items;
+  return {...item,status:item.status==='published'?'verified':'preview',category:categories.get(item.categoryId)};
+ });
 }
 function link(href,label,cls=''){const el=mk('a',cls,label);el.href=VALID_ROUTE.test(href)?href:'#/';return el;}
 function cardValue(label,value,caption,icon){const c=mk('article','live-metric');add(c,mk('span','live-metric-icon',icon),mk('span','live-metric-label',label),mk('strong','live-metric-number',value),mk('small','live-metric-caption',caption));return c;}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "2.0.0",
+  "collectionId": "collection:tantestulet",
+  "title": "Tantestület és pedagógiai területek",
+  "revision": 2,
+  "status": "development",
+  "privacy": {
+    "publishOnlyApproved": true,
+    "publicPrivateContacts": false,
+    "consentRequiredForPortraits": true
+  },
+  "description": "A személyes profilok nyilvános listája kizárólag jóváhagyott adatokat tartalmazhat. A munkaterületek tájékoztató kategóriák, nem igazolt intézményi struktúra.",
+  "staff": [],
+  "teams": [
+    {
+      "id": "team:human",
+      "name": "Humán munkaközösség",
+      "description": "A magyar nyelv, az irodalom, a történelem és az emberi kultúra tantárgyi kapcsolatai. A diákok önálló szövegértését, érvelését, kommunikációját és kulturális tájékozódását támogató pedagógiai munka bemutatása.",
+      "category": "oktatas",
+      "verifiedInstitutionalUnit": false
+    },
+    {
+      "id": "team:math",
+      "name": "Matematika és digitális kultúra",
+      "description": "Problémamegoldás, logikus gondolkodás, digitális alkotás és alkalmazható tudás. A kompetenciák fejlesztését és a tantárgyközi együttműködéseket bemutató felület.",
+      "category": "oktatas",
+      "verifiedInstitutionalUnit": false
+    },
+    {
+      "id": "team:nature",
+      "name": "Természettudományos terület",
+      "description": "Megfigyelés, kísérletezés, természeti összefüggések és egészségtudatosság. A sportban hasznosítható természettudományos ismeretekkel is összekapcsolható.",
+      "category": "oktatas",
+      "verifiedInstitutionalUnit": false
+    },
+    {
+      "id": "team:languages",
+      "name": "Idegen nyelvek",
+      "description": "Nyelvhasználat, nemzetközi kommunikáció és nyelvtanulási utak. A tanulási módszerekről és a diákok támogatásáról részletes tájékoztatás jeleníthető meg.",
+      "category": "oktatas",
+      "verifiedInstitutionalUnit": false
+    },
+    {
+      "id": "team:sport",
+      "name": "Testnevelés és sport",
+      "description": "Mozgásfejlesztés, sportpedagógia, egészséges életvitel és csapatszellem. A sport és az iskolai tanulmányok összehangolásának pedagógiai szempontjai.",
+      "category": "sport",
+      "verifiedInstitutionalUnit": false
+    },
+    {
+      "id": "team:mentors",
+      "name": "Osztályfőnöki és közösségi nevelés",
+      "description": "Közösségépítés, iskolai kapcsolatok, tanulói támogatás és családokkal való együttműködés. A személyes bemutatkozók csak intézményileg jóváhagyott adatokkal jelenhetnek meg.",
+      "category": "kozosseg",
+      "verifiedInstitutionalUnit": false
+    }
+  ]
+}
