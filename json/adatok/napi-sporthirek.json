@@ -1,8 +1,20 @@
 {
   "schemaVersion": "1.0.0",
   "collectionId": "collection:napi-sporthirek",
-  "updatedAt": "2026-11-14T20:28:45+00:00",
+  "updatedAt": "2026-11-14T20:36:09+00:00",
   "items": [
+    {
+      "title": "Schäfer András: A győzelemnek és az ötvenediknek is egyformán örülök",
+      "url": "https://nemzetisport.hu/magyar-valogatott/2026/11/schafer-andras-a-gyozelemnek-es-az-otvenediknek-is-egyforman-orulok",
+      "publishedAt": "2026-11-14T20:32:51+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Női vízilabda ob I: a KSI szétlövésben győzte le az Egert",
+      "url": "https://nemzetisport.hu/vizilabda/2026/11/noi-vizilabda-ob-i-a-ksi-szetlovesben-gyozte-le-az-egert",
+      "publishedAt": "2026-11-14T20:31:39+00:00",
+      "category": "Sport"
+    },
     {
       "title": "Ismét Csinger Márk volt lapunknál a meccs embere – NS-értékelés",
       "url": "https://nemzetisport.hu/magyar-valogatott/2026/11/ismet-csinger-mark-volt-lapunknal-a-meccs-embere-ns-ertekeles",
@@ -97,18 +109,6 @@
       "title": "Szoboszlai Nyilasit, Schäfer Bognárt érte be az örökrangsorban",
       "url": "https://nemzetisport.hu/magyar-valogatott/2026/11/szoboszlai-nyilasit-schafer-bognart-erte-be-az-orokrangsorban",
       "publishedAt": "2026-11-14T17:30:34+00:00",
-      "category": "Sport"
-    },
-    {
-      "title": "Galéria: képeken a magyar válogatott grúziai sikere",
-      "url": "https://nemzetisport.hu/magyar-valogatott/2026/11/galeria-kepeken-a-magyar-valogatott-gruziai-sikere",
-      "publishedAt": "2026-11-14T17:14:57+00:00",
-      "category": "Sport"
-    },
-    {
-      "title": "Háromszettes fehérvári győzelem a női röplabda Extraligában",
-      "url": "https://nemzetisport.hu/roplabda/2026/11/haromszettes-fehervari-gyozelem-a-noi-roplabda-extraligaban",
-      "publishedAt": "2026-11-14T16:54:50+00:00",
       "category": "Sport"
     }
   ]
