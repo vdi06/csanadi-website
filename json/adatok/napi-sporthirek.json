@@ -1,8 +1,14 @@
 {
   "schemaVersion": "1.0.0",
   "collectionId": "collection:napi-sporthirek",
-  "updatedAt": "2026-11-14T21:08:15+00:00",
+  "updatedAt": "2026-11-14T21:30:38+00:00",
   "items": [
+    {
+      "title": "Vezetnek az északírek Ukrajna ellen",
+      "url": "https://nemzetisport.hu/minden-mas-foci/2026/11/nemzetek-ligaja-eszak-irorszag-ukrajna",
+      "publishedAt": "2026-11-14T21:10:38+00:00",
+      "category": "Sport"
+    },
     {
       "title": "Férfi röplabda Extraliga: szetthátrányból fordított a Pénzügyőr",
       "url": "https://nemzetisport.hu/roplabda/2026/11/ferfi-roplabda-extraliga-szetthatranybol-forditott-a-penzugyor",
@@ -43,12 +49,6 @@
       "title": "Szoboszlai a bemelegítésnél közel járt ahhoz, hogy ne vállalja a játékot",
       "url": "https://nemzetisport.hu/magyar-valogatott/2026/11/szoboszlai-a-bemelegitesnel-kozel-jart-ahhoz-hogy-ne-vallalja-a-jatekot",
       "publishedAt": "2026-11-14T19:37:02+00:00",
-      "category": "Sport"
-    },
-    {
-      "title": "Nemzetek Ligája: Észak-Írország–Ukrajna",
-      "url": "https://nemzetisport.hu/minden-mas-foci/2026/11/nemzetek-ligaja-eszak-irorszag-ukrajna",
-      "publishedAt": "2026-11-14T19:35:38+00:00",
       "category": "Sport"
     },
     {
