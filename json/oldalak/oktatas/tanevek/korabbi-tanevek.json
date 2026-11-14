@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000027",
+  "pageType": "standard",
+  "menuLabel": "Korábbi tanévek",
+  "title": "Korábbi tanévek",
+  "slug": "korabbi-tanevek",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Korábbi tanévek – Csanádi Sportiskola",
+    "description": "Korábbi tanévekhez kapcsolódó dokumentumok és események rendszerezett gyűjtőoldala.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [],
+  "summary": "Korábbi tanévekhez kapcsolódó dokumentumok és események rendszerezett gyűjtőoldala.",
+  "blocks": [
+    {
+      "id": "block:000027-section-1",
+      "type": "section",
+      "title": "Hogyan használható az archívum?",
+      "children": [
+        {
+          "id": "block:000027-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A korábbi tanévek tanévrendjét, eseményeit és egyéb nyilvános dokumentumait az eredeti dátummal és az adott tanév megjelölésével érdemes közzétenni. A régi dokumentumokat nem szabad az aktuális tanév követelményeiként bemutatni."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000027-section-2",
+      "type": "section",
+      "title": "Mi érhető el most?",
+      "children": [
+        {
+          "id": "block:000027-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A jelenlegi fejlesztési változatban nincs jóváhagyott, teljes korábbi tanéves archívum. A gyűjtemény akkor bővülhet, ha a dokumentumok eredete és nyilvánossága ellenőrizhető.\n\n[Aktuális tanév](#/oktatas/tanevek/aktualis-tanev) · [Hírarchívum](#/hirek-es-esemenyek/hirek/hirarchivum)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/oktatas/tanevek/korabbi-tanevek",
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000034",
+  "pageType": "collection",
+  "menuLabel": "Sportolók",
+  "title": "Sportolók",
+  "slug": "sportolok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Sportolók – Csanádi Sportiskola",
+    "description": "A sportolói bemutatkozások és ellenőrzött eredmények leendő gyűjtőhelye.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "sport"
+  ],
+  "tags": [],
+  "summary": "A sportolói bemutatkozások és ellenőrzött eredmények leendő gyűjtőhelye.",
+  "blocks": [
+    {
+      "id": "block:000034-section-1",
+      "type": "section",
+      "title": "Sportolói profilok",
+      "children": [
+        {
+          "id": "block:000034-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "Egy sportolói adatlap tartalmazhat sportágat, korosztályt, a közzétételhez jóváhagyott eredményeket és kapcsolódó sporteseményeket. Kiskorúak azonosító adatai és képmásai csak megfelelő engedéllyel közölhetők."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000034-section-2",
+      "type": "section",
+      "title": "Jelenlegi állapot",
+      "children": [
+        {
+          "id": "block:000034-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A felületen jelenleg nem szerepelnek jóváhagyott, név szerinti sportolói profilok. Addig a nyilvánosan ellenőrizhető eredmények gyűjteménye használható.\n\n[Sporteredmények](#/sport/sporteredmenyek) · [Sportágak](#/sport/sportagak)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000034-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/sport/sportolok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:eredmenyek"
+  }
+}

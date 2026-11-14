@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000058",
+  "pageType": "standard",
+  "menuLabel": "Tudnivalók",
+  "title": "Tudnivalók",
+  "slug": "kozossegi-tudnivalok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Tudnivalók – Csanádi Sportiskola",
+    "description": "Tájékozódás a közösségi szolgálat feladatairól és igazolásáról.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [],
+  "summary": "Tájékozódás a közösségi szolgálat feladatairól és igazolásáról.",
+  "blocks": [
+    {
+      "id": "block:000058-section-1",
+      "type": "section",
+      "title": "A szolgálat megtervezése",
+      "children": [
+        {
+          "id": "block:000058-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A tanulói közösségi szolgálattal kapcsolatban az intézményi koordináció, a fogadóhely megválasztása, az előzetes egyeztetés és az igazolások kezelése különösen fontos. Az aktuális helyi szabályokat mindig a kijelölt felelős tájékoztatása alapján kell követni."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000058-section-2",
+      "type": "section",
+      "title": "Mit érdemes rögzíteni?",
+      "children": [
+        {
+          "id": "block:000058-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A tevékenység időpontját, helyét, időtartamát és a szükséges igazolásokat az előírt módon kell dokumentálni.\n\n[Közösségi szolgálat](#/informaciok/kozossegi-szolgalat) · [Kapcsolódó dokumentumok](#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000058-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg"
+  }
+}

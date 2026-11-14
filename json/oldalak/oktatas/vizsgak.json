@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T19:30:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Vizsgaközpont – Csanádi Sportiskola",
@@ -38,6 +38,20 @@
           "type": "markdown",
           "data": {
             "text": "A vizsgákra való felkészülés során fontos a követelmények rendszerezése és az időbeosztás. A tantárgyi témaköröket, vizsgaidőpontokat és a jelentkezéssel kapcsolatos feltételeket mindig az intézmény aktuális hivatalos közlése alapján kell követni.\n\nA vizsgaközpont az érettségi, az osztályozó vizsgák és a kapcsolódó dokumentumok közötti eligazodást segíti."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:be2026-nav-000021",
+      "type": "section",
+      "title": "További tájékozódási lehetőségek",
+      "children": [
+        {
+          "id": "block:be2026-navlinks-000021",
+          "type": "markdown",
+          "data": {
+            "text": "[Egyéb vizsgák](#/oktatas/vizsgak/egyeb-vizsgak)"
           }
         }
       ]

@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T19:30:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 3
   },
   "seo": {
     "title": "Sport – Csanádi Sportiskola",
@@ -38,6 +38,20 @@
           "type": "markdown",
           "data": {
             "text": "A sport közösséget épít, célokat ad, és olyan készségeket fejleszt, amelyek az iskolai tanulásban is értékesek. A sportágak bemutatásánál a technikai ismeretek mellett szerepet kap a csapatmunka, a fegyelem és az egészséges életmód.\n\nA sporteredményeket az intézmény által közzétett, ellenőrizhető forrásokra alapozzuk. A képtár a mozgás és a közösség világát mutatja be tematikus illusztrációkon, nem konkrét személyek dokumentumfényképein."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:be2026-nav-000031",
+      "type": "section",
+      "title": "További tájékozódási lehetőségek",
+      "children": [
+        {
+          "id": "block:be2026-navlinks-000031",
+          "type": "markdown",
+          "data": {
+            "text": "[Sportolók](#/sport/sportolok) · [Csapatok](#/sport/csapatok) · [Edzők](#/sport/edzok)"
           }
         }
       ]

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000010",
+  "pageType": "standard",
+  "menuLabel": "Partnereink",
+  "title": "Partnereink",
+  "slug": "partnerek",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Partnereink – Csanádi Sportiskola",
+    "description": "Az iskola együttműködéseinek és lehetséges kapcsolódási területeinek áttekintése.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "iskolank"
+  ],
+  "tags": [],
+  "summary": "Az iskola együttműködéseinek és lehetséges kapcsolódási területeinek áttekintése.",
+  "blocks": [
+    {
+      "id": "block:000010-section-1",
+      "type": "section",
+      "title": "Miért fontos az együttműködés?",
+      "children": [
+        {
+          "id": "block:000010-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A sportegyesületekkel, szakmai partnerekkel és közösségi szereplőkkel való kapcsolatok az oktatási és sportnevelési célokat támogathatják. Partnerként kizárólag intézményi jóváhagyással és ellenőrzött megnevezéssel szerepelhet szervezet."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000010-section-2",
+      "type": "section",
+      "title": "Kapcsolatfelvétel",
+      "children": [
+        {
+          "id": "block:000010-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Együttműködéssel kapcsolatos megkereséseket az intézmény hivatalos kapcsolati felületén lehet kezdeményezni. A konkrét partnerlista ellenőrzés után bővíthető.\n\n[Kapcsolati adatok](#/kapcsolat)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/iskolank/partnerek",
+    "verifiedContent": false,
+    "bannerMediaId": "media:iskolank"
+  }
+}

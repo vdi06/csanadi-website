@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T19:30:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Könyvtár – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "Kezdd a feladat kulcskérdéseivel, gyűjts többféle forrást, és jegyezd fel a szerzőt, a címet, valamint a megjelenés dátumát. A saját szavaiddal készített összefoglaló segít a megértés ellenőrzésében.\n\nA felhasznált forrásokat mindig különítsd el a saját megállapításaidtól."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:be2026-nav-000028",
+      "type": "section",
+      "title": "További tájékozódási lehetőségek",
+      "children": [
+        {
+          "id": "block:be2026-navlinks-000028",
+          "type": "markdown",
+          "data": {
+            "text": "[Könyvtári szolgáltatások](#/oktatas/konyvtar/konyvtari-szolgaltatasok)"
           }
         }
       ]

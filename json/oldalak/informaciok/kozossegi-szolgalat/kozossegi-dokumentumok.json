@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000060",
+  "pageType": "standard",
+  "menuLabel": "Közösségi szolgálat dokumentumai",
+  "title": "Közösségi szolgálat dokumentumai",
+  "slug": "kozossegi-dokumentumok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Közösségi szolgálat dokumentumai – Csanádi Sportiskola",
+    "description": "Közösségi szolgálathoz kapcsolódó igazolások és űrlapok gyűjtőhelye.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [],
+  "summary": "Közösségi szolgálathoz kapcsolódó igazolások és űrlapok gyűjtőhelye.",
+  "blocks": [
+    {
+      "id": "block:000060-section-1",
+      "type": "section",
+      "title": "Milyen dokumentumokra lehet szükség?",
+      "children": [
+        {
+          "id": "block:000060-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A szolgálat szervezésénél megállapodási, jelentkezési vagy teljesítésigazolási dokumentumok fordulhatnak elő. A pontos dokumentumkör a helyi eljárástól és a fogadóhelytől függ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000060-section-2",
+      "type": "section",
+      "title": "Ellenőrzött nyomtatványok",
+      "children": [
+        {
+          "id": "block:000060-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A megfelelő intézményi nyomtatványokat csak az aktuális, jóváhagyott fájlok alapján érdemes feltölteni. Ellenőrizetlen űrlapokat nem tüntetünk fel használatra kész dokumentumként.\n\n[Nyomtatványok](#/informaciok/dokumentumtar/nyomtatvanyok) · [Közösségi szolgálat](#/informaciok/kozossegi-szolgalat)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000060-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg"
+  }
+}

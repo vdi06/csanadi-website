@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000053",
+  "pageType": "collection",
+  "menuLabel": "Szabályzatok",
+  "title": "Szabályzatok",
+  "slug": "szabalyzatok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Szabályzatok – Csanádi Sportiskola",
+    "description": "Hivatalos szabályzatok és a nyilvános intézményi alapdokumentumok áttekintése.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [],
+  "summary": "Hivatalos szabályzatok és a nyilvános intézményi alapdokumentumok áttekintése.",
+  "blocks": [
+    {
+      "id": "block:000053-section-1",
+      "type": "section",
+      "title": "Mely dokumentumokat érdemes keresni?",
+      "children": [
+        {
+          "id": "block:000053-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A pedagógiai program, a házirend, a szervezeti és működési szabályzat és az adatkezelési tájékoztatás eltérő kérdésekre adhat választ. Mindig a hatályos és hivatalosan közzétett változatot kell figyelembe venni."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000053-section-2",
+      "type": "section",
+      "title": "Dokumentumváltozatok",
+      "children": [
+        {
+          "id": "block:000053-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Egy szabályzatnál az elnevezés, a verzió, a közzétételi dátum és a forrás egyértelmű megjelölése különösen fontos. A nem ellenőrzött dokumentumokat nem tüntetjük fel hivatalosként.\n\n[Dokumentumtár](#/informaciok/dokumentumtar) · [Adatvédelem](#/informaciok/adatvedelem)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000053-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/informaciok/dokumentumtar/szabalyzatok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg"
+  }
+}

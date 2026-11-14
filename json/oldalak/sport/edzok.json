@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000036",
+  "pageType": "collection",
+  "menuLabel": "Edzők",
+  "title": "Edzők",
+  "slug": "edzok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Edzők – Csanádi Sportiskola",
+    "description": "Sportági szakemberek bemutatása és az edzői munkakörök általános ismertetése.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "sport"
+  ],
+  "tags": [],
+  "summary": "Sportági szakemberek bemutatása és az edzői munkakörök általános ismertetése.",
+  "blocks": [
+    {
+      "id": "block:000036-section-1",
+      "type": "section",
+      "title": "Az edzői munka területei",
+      "children": [
+        {
+          "id": "block:000036-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A sportági technikai képzés, a felkészítés tervezése, a terhelés és regeneráció összehangolása, valamint a tanulói fejlődés támogatása fontos szempont lehet a sportiskolai nevelésben."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000036-section-2",
+      "type": "section",
+      "title": "Név szerinti edzői adatok",
+      "children": [
+        {
+          "id": "block:000036-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Név, végzettség, szerepkör és portré csak megfelelő ellenőrzés és közzétételi jóváhagyás után szerepelhet ezen az oldalon.\n\n[Sportiskolai nevelés](#/oktatas/kepzeseink/sportiskolai-neveles) · [Kapcsolat](#/kapcsolat)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000036-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/sport/edzok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:eredmenyek"
+  }
+}

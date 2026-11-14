@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000056",
+  "pageType": "standard",
+  "menuLabel": "Digitális ügyintézés",
+  "title": "Digitális ügyintézés",
+  "slug": "digitalis-ugyintezes",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Digitális ügyintézés – Csanádi Sportiskola",
+    "description": "Iskolai digitális rendszerek és az elektronikus ügyintézés tájékozódási oldala.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [],
+  "summary": "Iskolai digitális rendszerek és az elektronikus ügyintézés tájékozódási oldala.",
+  "blocks": [
+    {
+      "id": "block:000056-section-1",
+      "type": "section",
+      "title": "Digitális belépések",
+      "children": [
+        {
+          "id": "block:000056-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A KRÉTA az intézményi elektronikus ügyintézés és tájékoztatás egyik fontos felülete. Belépéskor a hivatalos intézményi címet használd, és soha ne add meg a jelszavadat nem megbízható oldalon."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000056-section-2",
+      "type": "section",
+      "title": "Fájlbeküldés és kommunikáció",
+      "children": [
+        {
+          "id": "block:000056-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A megadott digitális felületen mindig az adott feladat vagy ügy előírásait kell követni. Ellenőrizd a fájlnevet, a szükséges formátumot, a jogosultságokat és a határidőt.\n\n[KRÉTA – hivatalos belépés](https://klik200346001.e-kreta.hu/) · [Dokumentumtár](#/informaciok/dokumentumtar)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/informaciok/digitalis-ugyintezes",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg"
+  }
+}

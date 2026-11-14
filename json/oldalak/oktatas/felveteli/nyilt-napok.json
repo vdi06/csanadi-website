@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000019",
+  "pageType": "standard",
+  "menuLabel": "Nyílt napok",
+  "title": "Nyílt napok",
+  "slug": "nyilt-napok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Nyílt napok – Csanádi Sportiskola",
+    "description": "Tájékozódás az iskolai bemutatkozó alkalmakról és a nyílt napokról.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [],
+  "summary": "Tájékozódás az iskolai bemutatkozó alkalmakról és a nyílt napokról.",
+  "blocks": [
+    {
+      "id": "block:000019-section-1",
+      "type": "section",
+      "title": "Mire jó a nyílt nap?",
+      "children": [
+        {
+          "id": "block:000019-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A nyílt nap lehetőség az iskola képzési kínálatának, tanulási környezetének és sportnevelési szemléletének megismerésére. A részvételi feltételeket és a regisztráció módját az adott esemény hivatalos tájékoztatója határozza meg."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000019-section-2",
+      "type": "section",
+      "title": "Időpontok és jelentkezés",
+      "children": [
+        {
+          "id": "block:000019-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A 2026/2027-es tanévhez kapcsolódó események pontos időpontját csak jóváhagyott intézményi közlemény alapján lehet megadni; ezen a fejlesztői változaton nem közlünk becsült dátumot.\n\n[Felvételi központ](#/oktatas/felveteli) · [Eseménynaptár](#/hirek-es-esemenyek/esemenynaptar)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000019-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/oktatas/felveteli/nyilt-napok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:felveteli"
+  }
+}

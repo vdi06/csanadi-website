@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000024",
+  "pageType": "standard",
+  "menuLabel": "Egyéb vizsgák",
+  "title": "Egyéb vizsgák",
+  "slug": "egyeb-vizsgak",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Egyéb vizsgák – Csanádi Sportiskola",
+    "description": "Az érettségin és az osztályozó vizsgán kívüli vizsgahelyzetek tájékozódási oldala.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [],
+  "summary": "Az érettségin és az osztályozó vizsgán kívüli vizsgahelyzetek tájékozódási oldala.",
+  "blocks": [
+    {
+      "id": "block:000024-section-1",
+      "type": "section",
+      "title": "Lehetséges vizsgahelyzetek",
+      "children": [
+        {
+          "id": "block:000024-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A tanulmányi előmenetellel összefüggésben különböző vizsgaformák fordulhatnak elő; a pontos jogosultságokat, feladatokat és eljárásokat mindig az aktuális intézményi szabályzatok határozzák meg."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000024-section-2",
+      "type": "section",
+      "title": "Milyen információkat kell keresni?",
+      "children": [
+        {
+          "id": "block:000024-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Az érintett tantárgyat, a követelményeket, a jelentkezési és igazolási feltételeket, a vizsga időpontját és az értékelés módját érdemes ellenőrizni.\n\n[Vizsgaközpont](#/oktatas/vizsgak) · [Dokumentumtár](#/informaciok/dokumentumtar)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000024-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/oktatas/vizsgak/egyeb-vizsgak",
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas"
+  }
+}

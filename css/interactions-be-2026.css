@@ -1,0 +1,52 @@
+/* 2026: B + E finomított interakciók. Az alapértelmezett oldal és a nyitott körmenü keret/burkolat nélkül marad. */
+:root{--be-gold:#b88932;--be-focus:#dca949}
+#site-map-overlay .compass26-choice.is-keyfocus .compass26-choice-link{outline:3px solid var(--be-focus)!important;outline-offset:3px!important;box-shadow:0 0 0 8px rgba(218,164,63,.20),0 12px 30px rgba(0,0,0,.28)!important}
+#site-map-overlay .compass26-choice-link{position:relative;isolation:isolate}
+#site-map-overlay .compass26-choice-link::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;background:linear-gradient(115deg,transparent 16%,rgba(255,255,255,.21) 46%,transparent 72%);transform:translateX(-45%);transition:opacity .3s,transform .35s}
+#site-map-overlay .compass26-choice-link:is(:hover,:focus-visible)::before{opacity:1;transform:translateX(35%)}
+#site-map-overlay .compass26-subgroup{animation:be2026-sub-in .32s ease both;animation-delay:0ms}
+@keyframes be2026-sub-in{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+#site-map-overlay .compass26-sub-link{min-width:0;text-decoration:none!important;font-weight:850!important;letter-spacing:.01em;transition:transform .19s,box-shadow .19s,filter .19s!important}
+#site-map-overlay .compass26-sub-link:is(:hover,:focus-visible){transform:translateY(-3px) scale(1.018)!important;box-shadow:0 12px 28px rgba(4,22,39,.30)!important}
+#site-map-overlay .compass26-panel{background:transparent!important;border:0!important;box-shadow:none!important}
+#site-map-overlay .compass26-panel[hidden]{display:none!important}
+html[data-theme="light"] #site-map-overlay .compass26-sub-link{color:#152d44!important;background:linear-gradient(145deg,#fffaf0,#ead3a6)!important}
+html[data-theme="dark"] #site-map-overlay .compass26-sub-link{color:#fff5dd!important;background:linear-gradient(145deg,#25465f,#081c31)!important}
+/* Valósághűbb kapunyitás a meglévő helyi kapuillusztráció kettévágott képével. */
+.entry-gate-leaf{background-image:linear-gradient(rgba(4,17,31,.1),rgba(3,15,29,.18)),url('../assets/media/web/belepes-kapu.webp')!important;background-repeat:no-repeat!important;background-size:200% 100%!important;border:0!important;box-shadow:0 0 35px rgba(3,13,24,.64)!important}
+.entry-gate-left{background-position:left center!important;border-right:2px solid rgba(227,184,99,.65)!important}
+.entry-gate-right{background-position:right center!important;border-left:2px solid rgba(227,184,99,.65)!important}
+.entry-gate-leaf .entry-gate-bars,.entry-gate-leaf .entry-gate-emblem{display:none!important}
+.entry-portal-copy{background:radial-gradient(ellipse at center,rgba(4,18,34,.64),rgba(4,18,34,.05) 68%)}
+.entry-portal-copy .entry-portal-skip{background:rgba(8,28,44,.76);color:#fff!important}
+.entry-portal-copy .be2026-portal-caption{font-size:11px;opacity:.9;letter-spacing:.08em;color:#fff0ce}
+/* A képváltó az automatikus képcserét finom, kontrollált vizuális váltással jelzi. */
+#global-hero .hero2026-slide{transition:opacity .85s ease,visibility .85s ease!important}
+#global-hero .hero2026-slide.is-active .hero2026-photo img{animation:be2026-picture 10s ease-out both!important}
+@keyframes be2026-picture{from{transform:scale(1.045)}to{transform:scale(1.11)}}
+#global-hero .hero2026-dot{min-height:9px;cursor:pointer;outline-offset:5px}
+#global-hero .hero2026-dot:focus-visible{outline:3px solid #e7b95f}
+#global-hero .hero2026-arrow:focus-visible,#global-hero .hero2026-pause:focus-visible{outline:3px solid #e7b95f;outline-offset:3px}
+/* Saját tartalomjegyzék, ami nem hoz létre új keskeny csempéket. */
+.be2026-toc{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:18px 20px;margin:0 auto 24px;border-radius:17px;max-width:100%}
+.be2026-toc strong{display:block;text-align:center;margin-bottom:11px;color:var(--ink);font-size:14px}
+.be2026-toc-links{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
+.be2026-toc a{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:99px;padding:8px 12px;text-decoration:none;background:var(--light);color:var(--ink);font-weight:750;font-size:12px;text-align:center}
+.be2026-toc a:hover,.be2026-toc a:focus-visible{border-color:var(--be-gold);text-decoration:underline;text-underline-offset:3px}
+#app .article-section{scroll-margin-top:28px}
+/* Megjelenés- és mobilfüggetlen 'vissza a tetejére', csak görgetés után. */
+.be2026-top{position:fixed;right:clamp(13px,2vw,28px);bottom:clamp(16px,2vw,28px);z-index:1100;display:grid;place-items:center;width:49px;height:49px;border-radius:50%;border:2px solid #c69d51;background:#0e2b44;color:#ffebbd;font-size:26px;font-weight:900;box-shadow:0 8px 22px rgba(5,20,38,.26);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.be2026-top[hidden]{display:none!important}
+.be2026-top:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(5,20,38,.3)}
+html[data-theme="light"] .be2026-top{background:#fff1d3;color:#17324b;border-color:#a6792d}
+html[data-theme="dark"] .be2026-top{background:#0f2d49;color:#fce5ae;border-color:#deb765}
+.be2026-top:focus-visible{outline:3px solid #dca949;outline-offset:3px}
+@media(max-width:620px){.be2026-toc{padding:14px 10px}.be2026-toc-links{gap:6px}.be2026-toc a{padding:7px 9px;font-size:11px}.be2026-top{width:43px;height:43px;bottom:15px;right:13px}#site-map-overlay .compass26-subtopics{gap:7px!important}}
+@media(prefers-reduced-motion:reduce){#site-map-overlay .compass26-subgroup{animation:none!important}#global-hero .hero2026-slide.is-active .hero2026-photo img{animation:none!important}#site-map-overlay .compass26-choice-link::before{display:none!important}#site-map-overlay .compass26-sub-link,.be2026-top{transition:none!important}}
+/* A ténylegesen aktív nyitóanimáció neve gate26. A kapuszárnyak a helyi részletgazdag kép két feléből épülnek. */
+.gate26-door{background-image:linear-gradient(180deg,rgba(2,14,26,.10),rgba(3,14,26,.23)),url('../assets/media/web/belepes-kapu.webp')!important;background-repeat:no-repeat!important;background-size:200% 100%!important;box-shadow:0 0 32px rgba(2,12,25,.52)!important;border:0!important}
+.gate26-left{background-position:left center!important;border-right:2px solid #d8b16a!important}
+.gate26-right{background-position:right center!important;border-left:2px solid #d8b16a!important}
+.gate26-bars,.gate26-crest{display:none!important}
+.gate26-content{background:radial-gradient(ellipse at center,rgba(4,18,34,.68),transparent 77%);border-radius:24px}
+.gate26-caption{font-size:10px!important;color:#f5ddad!important;letter-spacing:.09em;font-weight:750}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000004",
+  "pageType": "standard",
+  "menuLabel": "Küldetésünk és értékeink",
+  "title": "Küldetésünk és értékeink",
+  "slug": "kuldetes-es-ertekek",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Küldetésünk és értékeink – Csanádi Sportiskola",
+    "description": "Az iskola küldetése a tanulás és a sport összehangolása, az egyéni fejlődés és a közösségi felelősség támogatása.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "iskolank"
+  ],
+  "tags": [],
+  "summary": "Az iskola küldetése a tanulás és a sport összehangolása, az egyéni fejlődés és a közösségi felelősség támogatása.",
+  "blocks": [
+    {
+      "id": "block:000004-section-1",
+      "type": "section",
+      "title": "A tanulás és a sport közös alapja",
+      "children": [
+        {
+          "id": "block:000004-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A tudás megszerzése és a rendszeres, kitartó munka egymást erősítő célok. A következetesség, a sportszerűség, az együttműködés és az önállóság nemcsak az edzésen, hanem a tanórákon is fontosak.\n\nA nevelési célok részletes, hivatalos megfogalmazását az intézmény pedagógiai programja tartalmazza. Az itt olvasható szöveg tájékoztató összefoglaló."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000004-section-2",
+      "type": "section",
+      "title": "Miben jelennek meg ezek az értékek?",
+      "children": [
+        {
+          "id": "block:000004-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A közösségi munka, a tanulmányi és sportteljesítmény, a digitális felelősség és az egymás iránti figyelem mind a mindennapok részét képezhetik.\n\n[Iskolánk bemutatása](#/iskolank/bemutatkozas) · [Sportiskolai nevelés](#/oktatas/kepzeseink/sportiskolai-neveles)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/iskolank/kuldetes-es-ertekek",
+    "verifiedContent": false,
+    "bannerMediaId": "media:iskolank"
+  }
+}

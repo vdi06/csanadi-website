@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T19:30:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Felvételi központ – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Első évfolyam](#/oktatas/felveteli/elso-evfolyam) · [Kilencedik évfolyam](#/oktatas/felveteli/kilencedik-evfolyam)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:be2026-nav-000016",
+      "type": "section",
+      "title": "További tájékozódási lehetőségek",
+      "children": [
+        {
+          "id": "block:be2026-navlinks-000016",
+          "type": "markdown",
+          "data": {
+            "text": "[Nyílt napok](#/oktatas/felveteli/nyilt-napok) · [Felvételi határidők](#/oktatas/felveteli/felveteli-hataridok)"
           }
         }
       ]

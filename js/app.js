@@ -1,10 +1,12 @@
+import {initEnhancedInteractions} from './interactions-be-2026.js?v=20261114be1';
 import {renderLifeGallery} from './experience-2026.js?v=20261114v5';
+import {renderHomeSportSpotlight} from './premium-home-2026.js?v=20261114premium1';
 import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=20261114v5';
 import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=20261114v5';
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=20261114v5';
 /* Csanádi Sportiskola – hozzáférhető hash-SPA, regisztrált JSON-oldalakkal. */
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=20261114v5';
-import {renderBlock,dom,listCards} from './blocks.js?v=20261114v5';
+import {renderBlock,dom,listCards} from './blocks.js?v=20261114premium1';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=20261114v5';
 import {renderSportsSuccesses} from './sports-successes.js?v=20261114v5';
 import {renderStudentAchievements} from './student-achievements.js?v=20261114v5';
@@ -32,6 +34,7 @@ const siteMap=document.getElementById('site-map-overlay');
 const siteMapCats=document.getElementById('site-map-categories');
 const siteMapSubtopics=document.getElementById('site-map-subtopics');
 const siteMapDetails=document.getElementById('site-map-details');
+const siteMapPanel=document.getElementById('compass26-panel');
 let siteMapSelected=null,siteMapReturnFocus=null;
 const compassSymbols=['✦','◈','★','✧','▤','✉'];
 function rootForCurrentRoute(){
@@ -62,7 +65,7 @@ function compassRow(node,level=2){
 }
 function renderSiteMap(root){
  if(!catalog)return;
- siteMapSelected=root||rootForCurrentRoute();
+ siteMapSelected=root||null;
  siteMapCats.replaceChildren();siteMapSubtopics.replaceChildren();siteMapDetails.replaceChildren();
  catalog.roots.forEach((entry,i)=>{
   const wrapper=dom('div',{class:'compass26-choice'+(entry===siteMapSelected?' is-active':'')});
@@ -72,24 +75,24 @@ function renderSiteMap(root){
   wrapper.append(link);
   const children=pageChildren(entry);
   if(children.length){
-   const toggle=dom('button',{class:'compass26-choice-toggle','aria-label':titleOf(entry)+' almenüinek megjelenítése','aria-pressed':String(entry===siteMapSelected)},'⌄');
-   toggle.type='button';toggle.addEventListener('click',()=>renderSiteMap(entry));wrapper.append(toggle);
+   const expanded=entry===siteMapSelected;
+   const toggle=dom('button',{class:'compass26-choice-toggle','aria-label':titleOf(entry)+(expanded?' almenüinek bezárása':' almenüinek megjelenítése'),'aria-expanded':String(expanded)},expanded?'−':'+');
+   toggle.type='button';toggle.addEventListener('click',()=>{renderSiteMap(expanded?null:entry);siteMapCats.querySelectorAll('.compass26-choice-toggle')[i]?.focus();});wrapper.append(toggle);
   }
   siteMapCats.append(wrapper);
  });
- document.getElementById('compass26-current').textContent=titleOf(siteMapSelected);
- const children=pageChildren(siteMapSelected);
- if(children.length)children.forEach(child=>siteMapSubtopics.append(compassRow(child)));
- else siteMapSubtopics.append(dom('p',{class:'compass26-empty'},'Ez a témakör önálló oldal. A nagy kártyára kattintva megnyithatod.'));
- const parent=navLink(siteMapSelected);parent.className='compass26-parent-link';parent.textContent=titleOf(siteMapSelected)+' oldal megnyitása ↗';
- siteMapDetails.append(parent);
+ siteMapPanel.hidden=!siteMapSelected;
+ if(siteMapSelected){
+  document.getElementById('compass26-current').textContent=titleOf(siteMapSelected)+' almenüi';
+  pageChildren(siteMapSelected).forEach((child,i)=>{const sub=compassRow(child);sub.style.animationDelay=String(Math.min(i,12)*45)+'ms';siteMapSubtopics.append(sub);});
+ }
 }
 function openSiteMap(){
  if(!catalog)return;
  siteMapReturnFocus=document.activeElement;
- renderSiteMap(rootForCurrentRoute());siteMap.hidden=false;
+ renderSiteMap(null);siteMap.hidden=false;
  document.body.classList.add('site-map-is-open');
- document.getElementById('site-map-close').focus();
+ (siteMapCats.querySelector('.compass26-choice-link')||document.getElementById('site-map-close')).focus();
 }
 function closeSiteMap(restoreFocus=true){
  if(siteMap.hidden)return;
@@ -149,55 +152,59 @@ function breadcrumb(node){
 }
 function getSiblings(node){if(node.depth===0)return[];return catalog.items.filter(x=>x.parent===node.parent&&x!==node).slice(0,8);}
 function contentPage(node){
-  const page=node.page;const fragment=document.createDocumentFragment();
+  const page=node.page,route=page.schemaExtensions?.route||'';
+  const fragment=document.createDocumentFragment();
   const banner=dom('section',{class:'page-banner'}),bannerInner=dom('div',{class:'container-xxl'});
   const bannerMedia=createPicture(page.schemaExtensions?.bannerMediaId,{className:'page-banner-media',eager:true,sizes:'100vw'});
   if(bannerMedia){banner.classList.add('has-photo');banner.append(bannerMedia,imageDisclaimer());}
-  bannerInner.append(breadcrumb(node),dom('h1',{},page.title),dom('p',{},page.summary||''));banner.append(bannerInner);fragment.append(banner);
-  const shell=dom('div',{class:'container-xxl content-shell'}),layout=dom('div',{class:'content-layout'}),body=dom('div',{class:'content-tiles'});
-  const docRoute=page.schemaExtensions?.route?.startsWith('#/informaciok/dokumentumtar');
-  if(docRoute){layout.classList.add('document-content-layout');body.append(renderDocumentCenter(page.schemaExtensions.route));for(const block of page.blocks||[]){const element=renderBlock(block);if(element)body.append(element);}}
-  else{
-  for(const block of page.blocks||[]){
-    const words=JSON.stringify(block).length;
-    // A JSON-blokk tartalma alapján választott, kiszámítható kártyaméret.
-    // Rövid cikkek párosával, galériák és összetett modulok teljes sávban.
-    const blockText=(block.data?.text||'')+' '+(block.title||'');
-    const wide=['gallery','cards','accordion','table','chart'].includes(block.type)
-      || (block.type==='section' && (block.children||[]).length>=3)
-      || blockText.length>1550;
-    const outer=dom('section',{class:'body-card content-tile '+(wide?'tile-wide':'tile-half')});
+  bannerInner.append(breadcrumb(node),dom('h1',{},page.title),dom('p',{},page.summary||''));
+  banner.append(bannerInner);fragment.append(banner);
+
+  // Az aloldal elsődlegesen szöveges tartalom, nem véletlenszerű félkártyák.
+  // A gyűjtemények és az összetett modulok saját, teljes szélességű egységet kapnak.
+  const shell=dom('div',{class:'container-xxl content-shell'});
+  const layout=dom('div',{class:'content-layout content-no-aside'});
+  const body=dom('div',{class:'content-tiles content-tiles--editorial'});
+  const blocks=Array.isArray(page.blocks)?page.blocks:[];
+  const article=dom('article',{class:'body-card content-tile tile-wide article-flow'+(blocks.length>=5?' article-flow--long':'')});
+  for(const block of blocks){
+    if(!block||typeof block!=='object')continue;
     if(block.type==='section'){
-      if(block.title)outer.append(dom('h2',{},block.title));
-      for(const sub of block.children||[]){const element=renderBlock(sub);if(element)outer.append(element);}
-      body.append(outer);
+      const section=dom('section',{class:'article-section'});
+      if(block.title)section.append(dom('h2',{},block.title));
+      for(const sub of block.children||[]){const el=renderBlock(sub);if(el)section.append(el);}
+      if(section.children.length)article.append(section);
     } else {
-      const element=renderBlock(block);if(element){outer.append(element);body.append(outer);}
+      const el=renderBlock(block);
+      if(el){const section=dom('section',{class:'article-section article-section--module'});section.append(el);article.append(section);}
     }
   }
+  if(article.children.length)body.append(article);
+
+  const docRoute=route.startsWith('#/informaciok/dokumentumtar');
+  if(docRoute)body.prepend(renderDocumentCenter(route));
+  if(['#/iskolank/buszkesegeink','#/sport/sporteredmenyek'].includes(route)){
+    body.prepend(renderSportsSuccesses({data:{view:'archive'},title:'Közzétett sporteredmények'}));
+    body.prepend(renderStudentAchievements('archive'));
   }
-  // A speciális modulok a meglévő JSON-oldalakhoz kapcsolódnak: egyetlen hash-SPA.
-  const specialRoute=page.schemaExtensions?.route;
-  if(['#/iskolank/buszkesegeink','#/sport/sporteredmenyek'].includes(specialRoute)){body.prepend(renderSportsSuccesses({data:{view:'archive'},title:'Közzétett sporteredmények'}));body.prepend(renderStudentAchievements('archive'));}
-  if(specialRoute==='#/iskolank/tantestulet')body.prepend(renderStaffCenter());
-  if(specialRoute==='#/informaciok/mindennapi-tudnivalok/csengetesi-rend')body.prepend(renderBellCenter());
-  if(specialRoute==='#/hirek-es-esemenyek/esemenynaptar')body.prepend(renderCalendarCenter());
-  if(['#/hirek-es-esemenyek/hirek','#/hirek-es-esemenyek/hirek/iskolai-hirek','#/hirek-es-esemenyek/hirek/sporthirek','#/hirek-es-esemenyek/hirek/hirarchivum','#/hirek-es-esemenyek/kozlemenyek'].includes(specialRoute))body.prepend(renderNewsCenter(specialRoute));
-  if(specialRoute==='#/hirek-es-esemenyek/hirek/sporthirek')body.prepend(renderDailySportsNews('full'));
-  const relatedDocs=renderRelatedDocuments(page.schemaExtensions?.route);if(relatedDocs)body.append(relatedDocs);
+  if(route==='#/iskolank/tantestulet')body.prepend(renderStaffCenter());
+  if(route==='#/informaciok/mindennapi-tudnivalok/csengetesi-rend')body.prepend(renderBellCenter());
+  if(route==='#/hirek-es-esemenyek/esemenynaptar')body.prepend(renderCalendarCenter());
+  if(['#/hirek-es-esemenyek/hirek','#/hirek-es-esemenyek/hirek/iskolai-hirek','#/hirek-es-esemenyek/hirek/sporthirek','#/hirek-es-esemenyek/hirek/hirarchivum','#/hirek-es-esemenyek/kozlemenyek'].includes(route))body.prepend(renderNewsCenter(route));
+  if(route==='#/hirek-es-esemenyek/hirek/sporthirek')body.prepend(renderDailySportsNews('full'));
+  const relatedDocs=renderRelatedDocuments(route);if(relatedDocs)body.append(relatedDocs);
+
+  // Kapcsolódó navigációt egyszer, az oldal alján mutatunk; nincs duplikált,
+  // összeszűkítő oldalsáv. A megjelenített kártyák minden méretben rugalmasak.
   const kids=pageChildren(node);
-  if(kids.length){const sect=dom('section',{class:'mt-4'});sect.append(dom('p',{class:'section-overline'},'KAPCSOLÓDÓ OLDALAK'),dom('h2',{class:'section-title mb-4'},'Fedezd fel a témát'));sect.append(listCards(kids));body.append(sect);}
-  const related=(kids.length?kids:getSiblings(node));
-  const hasAside=related.length>=2&&!docRoute&&body.children.length<=7;
-  layout.classList.add(hasAside?'content-has-aside':'content-no-aside');
-  layout.append(body);
-  if(hasAside){
-    const side=dom('aside',{class:'content-side','aria-label':'Kapcsolódó navigáció'}),panel=dom('div',{class:'side-panel'});
-    panel.append(dom('h3',{},kids.length?'További aloldalak':'Ugyanebben a témában'));
-    for(const target of related)panel.append(navLink(target));
-    side.append(panel);layout.append(side);
+  const related=kids.length?kids:getSiblings(node).slice(0,6);
+  if(related.length>=1){
+    const sect=dom('section',{class:'related-content'});
+    sect.append(dom('p',{class:'section-overline'},'KAPCSOLÓDÓ OLDALAK'),
+      dom('h2',{class:'section-title'},kids.length?'Fedezd fel a témát':'További oldalak a témában'),listCards(related));
+    body.append(sect);
   }
-  shell.append(layout);fragment.append(shell);
+  layout.append(body);shell.append(layout);fragment.append(shell);
   return fragment;
 }
 function homePage(node){
@@ -208,6 +215,8 @@ function homePage(node){
     const unit=dom('div',{class:'home-unit home-unit--'+role});
     unit.append(element);canvas.append(unit);
   }
+  // Közvetlenül a képváltó alatt új, képes sportmagazin-nyitány.
+  place(renderHomeSportSpotlight(),'premium-showcase');
   for(const block of node.page.blocks||[]){
     const rendered=block.id==='block:home-hero'?null:renderBlock(block);
     if(block.id==='block:home-status'){
@@ -241,7 +250,7 @@ function errorPage(){const section=dom('section',{class:'not-found container-xxl
 function pageForRoute(route){return catalog.routes.get(route)||null;}
 function wireReveal(){
   revealObserver?.disconnect();
-  const targets=[...app.querySelectorAll('.feature-card,.editorial-tile,.gallery-item,.section-title')];
+  const targets=[...app.querySelectorAll('.feature-card,.editorial-tile,.gallery-item,.section-title,.premium26-visual-card,.premium26-discover-link,.student-success-card,.cs-achievement')];
   if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   revealObserver=new IntersectionObserver((entries,observer)=>{
     for(const entry of entries)if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}
@@ -367,6 +376,7 @@ export async function startApp(){
   window.__CSANADI_STARTED__=true;
   initSocialLinks();
   openEntrancePortal();
+  initEnhancedInteractions();
   beginPolling();
   setInterval(()=>{if(!document.hidden)loadDocumentRegistry(true);},documentRefreshSeconds()*1000);
   console.info('Csanádi 2026 – tartalmi oldalak:',catalog.items.length);

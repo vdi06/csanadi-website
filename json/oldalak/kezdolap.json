@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T22:35:00+01:00",
+  "updatedAt": "2026-11-14T19:21:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 4
   },
   "seo": {
     "title": "Kezdőoldal – Csanádi Sportiskola",
@@ -48,6 +48,23 @@
         "imageId": "media:hero",
         "intervalMs": 7500,
         "slides": [
+          {
+            "id": "hero-2026-plus-13",
+            "mediaId": "media:sport",
+            "eyebrow": "CSANÁDI · MOZGÁS · LENDÜLET",
+            "title": "A pályán kezdődik a történet",
+            "subtitle": "Sport, tudás és közösség: együtt a következő cél felé.",
+            "buttons": [
+              {
+                "label": "Sportágak felfedezése",
+                "href": "#/sport/sportagak"
+              },
+              {
+                "label": "Iskolánk bemutatása",
+                "href": "#/iskolank/bemutatkozas"
+              }
+            ]
+          },
           {
             "id": "hero-2026-sport",
             "mediaId": "media:hero",
@@ -278,19 +295,6 @@
               {
                 "label": "Tanévi információk",
                 "href": "#/oktatas/tanevek"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-13",
-            "mediaId": "media:sport",
-            "eyebrow": "SPORTÁGAK",
-            "title": "Fedezd fel a sportágakat",
-            "subtitle": "Találd meg a saját utadat.",
-            "buttons": [
-              {
-                "label": "Részletek",
-                "href": "#/sport/sportagak"
               }
             ]
           },

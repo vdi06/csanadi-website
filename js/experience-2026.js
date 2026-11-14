@@ -42,7 +42,7 @@ export function openEntrancePortal(){
 
 export function renderDigitalClock(){
  const panel=e('section','experience-panel clock-panel');panel.setAttribute('aria-label','Digitális óra');
- add(panel,e('div','experience-panel-tag','PONTOS IDŐ · BUDAPEST'),e('div','seven-segment-clock','--:--:--'),e('p','clock-date',''),e('small','experience-mini-hint','A látogató böngészőjének időadatából számítva.'));
+ add(panel,e('div','experience-panel-tag','PONTOS IDŐ · BUDAPEST'),e('div','seven-segment-clock','--:--:--'),e('p','clock-date',''));
  const digits=panel.querySelector('.seven-segment-clock'),date=panel.querySelector('.clock-date');
  const tick=()=>{const p=parts(new Date());digits.textContent=p.hour+':'+p.minute+':'+p.second;date.textContent=huDate(new Date());};tick();
  const timer=setInterval(()=>{if(!panel.isConnected){clearInterval(timer);return;}tick();},1000);

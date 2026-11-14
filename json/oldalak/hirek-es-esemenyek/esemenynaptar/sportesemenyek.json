@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000046",
+  "pageType": "collection",
+  "menuLabel": "Sportesemények",
+  "title": "Sportesemények",
+  "slug": "sportesemenyek",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Sportesemények – Csanádi Sportiskola",
+    "description": "Sportesemények és versenyprogramok áttekintő oldala.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "hirek-es-esemenyek"
+  ],
+  "tags": [],
+  "summary": "Sportesemények és versenyprogramok áttekintő oldala.",
+  "blocks": [
+    {
+      "id": "block:000046-section-1",
+      "type": "section",
+      "title": "Sportesemények típusa",
+      "children": [
+        {
+          "id": "block:000046-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A sportági versenyek, bemutatók, mérkőzések és közösségi sportprogramok időpontjai külön sportesemény-kategóriában kezelhetők."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000046-section-2",
+      "type": "section",
+      "title": "Program és eredmény",
+      "children": [
+        {
+          "id": "block:000046-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Egy eseményhez kapcsolódhat sportág, helyszín, kezdési idő, jelentkezési tájékoztatás és utólag ellenőrzött eredmény. Nem jelenítünk meg kitalált versenyidőpontokat.\n\n[Eseménynaptár](#/hirek-es-esemenyek/esemenynaptar) · [Sporteredmények](#/sport/sporteredmenyek)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/hirek-es-esemenyek/esemenynaptar/sportesemenyek",
+    "verifiedContent": false,
+    "bannerMediaId": "media:esemenyek"
+  }
+}

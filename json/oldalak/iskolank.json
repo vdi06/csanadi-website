@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T19:30:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 3
   },
   "seo": {
     "title": "Iskolánk – Csanádi Sportiskola",
@@ -66,6 +66,20 @@
           "type": "markdown",
           "data": {
             "text": "Egy iskolai weboldal mögött sok tervezés, mérlegelés és ellenőrzés áll. [Olvasd el a honlap megújulásának történetét](#/iskolank/a-honlap-szuletese), és ismerd meg, hogyan segíthetnek a digitális eszközök a fejlesztésben."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:be2026-nav-000002",
+      "type": "section",
+      "title": "További tájékozódási lehetőségek",
+      "children": [
+        {
+          "id": "block:be2026-navlinks-000002",
+          "type": "markdown",
+          "data": {
+            "text": "[Küldetés és értékek](#/iskolank/kuldetes-es-ertekek) · [Hagyományok](#/iskolank/hagyomanyok-es-elismeresek) · [Partnerek](#/iskolank/partnerek)"
           }
         }
       ]

@@ -76,3 +76,98 @@
 }
 @media(max-width:390px){#site-map-overlay .compass26-stage{--radius:113px;height:324px}#site-map-overlay .compass26-choice{width:89px}#site-map-overlay .compass26-subtopics{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){#site-map-overlay .compass26-choice{animation:none!important}#site-map-overlay .compass26-choice-link{transition:none!important}}
+
+
+/* 2026-11-14: teljesen átlátszó / keret nélküli, lebegő, középre rendezett játékos körmenü. */
+.orbit-launch {display:flex!important;align-items:center!important;justify-content:center!important;width:100%;margin:0 auto;padding:clamp(15px,2.2vw,25px) 12px;position:relative;z-index:6;text-align:center}
+.orbit-launch #orbit-open {display:inline-flex;justify-content:center;align-items:center;margin:0 auto;gap:11px;min-width:min(275px,calc(100vw - 40px));font-weight:900;font-size:clamp(14px,1.25vw,17px);padding:14px 24px;border-radius:100px;border:2px solid #c69a46;box-shadow:0 8px 24px #132a4140}
+html[data-theme="light"] .orbit-launch #orbit-open{background:linear-gradient(140deg,#f9f0db,#e8d3a8)!important;color:#142f49!important;border-color:#b78936!important}
+html[data-theme="dark"] .orbit-launch #orbit-open{background:linear-gradient(140deg,#183852,#091c33)!important;color:#fff3d5!important;border-color:#d8b466!important}
+.orbit-launch #orbit-open:hover{transform:translateY(-2px);filter:brightness(1.06)}
+#site-map-overlay{background:transparent!important;backdrop-filter:none!important;padding:8px!important;isolation:isolate!important}
+#site-map-overlay .site-map-shade{background:transparent!important;backdrop-filter:none!important;box-shadow:none!important}
+#site-map-overlay .site-map-dialog{background:transparent!important;border:0!important;outline:0!important;box-shadow:none!important;border-radius:0!important;color:var(--ink)!important;width:min(1080px,100%)!important;max-height:98dvh!important;overflow-y:auto!important;scrollbar-width:thin!important;overscroll-behavior:contain}
+#site-map-overlay .site-map-topline{position:relative!important;display:flex!important;justify-content:flex-end!important;align-items:center!important;background:transparent!important;border:0!important;box-shadow:none!important;color:var(--ink)!important;min-height:50px!important;padding:4px 8px!important}
+#site-map-overlay .site-map-close{display:grid;place-items:center;font-size:0!important;width:44px;height:44px;border-radius:50%!important;box-shadow:0 3px 12px #0004!important;padding:0!important;border:2px solid #b78d42!important;cursor:pointer}
+#site-map-overlay .site-map-close span{font-size:29px!important;line-height:1;margin:0!important}
+#site-map-overlay .compass26-layout{background:transparent!important;border:0!important;box-shadow:none!important;gap:0!important;padding:0 8px 10px!important}
+#site-map-overlay .compass26-stage{margin-inline:auto!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#site-map-overlay .compass26-stage::before{background:transparent!important;box-shadow:none!important;border:1px dashed rgba(179,134,64,.42)!important}
+#site-map-overlay .compass26-stage::after{border:1px solid rgba(189,147,74,.23)!important}
+#site-map-overlay .compass26-choice-link{transition:transform .2s ease,filter .2s ease;background:#0e263d!important;color:#fffaf0!important;border:2px solid #c4a260!important;box-shadow:0 10px 24px #0005!important}
+#site-map-overlay .compass26-choice-icon{color:#f2d696!important}
+#site-map-overlay .compass26-choice.is-active .compass26-choice-link{filter:brightness(1.09)}
+#site-map-overlay .compass26-choice-toggle{border:2px solid #c4a260!important;border-radius:13px!important;box-shadow:0 6px 14px #0004!important}
+#site-map-overlay .compass26-emblem{background:radial-gradient(circle at 33% 25%,#294963,#0c2239)!important;border-color:#d8b46a!important}
+#site-map-overlay .compass26-panel{background:transparent!important;box-shadow:none!important;border:0!important;border-radius:0!important;padding:0 6px 12px!important;max-width:870px!important;margin:0 auto!important}
+#site-map-overlay .compass26-panel[hidden]{display:none!important}
+#site-map-overlay .compass26-subtopics{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px!important;align-items:start;justify-content:center!important;margin-inline:auto}
+#site-map-overlay .compass26-subgroup{background:transparent!important;min-width:0!important}
+#site-map-overlay .compass26-linkrow{min-width:0}
+#site-map-overlay .compass26-sub-link{background:#0e263d!important;color:#fff9eb!important;border:2px solid #c4a260!important;border-radius:15px!important;box-shadow:0 7px 17px #0004!important;padding:12px 9px!important;justify-content:center!important;align-items:center!important;text-align:center!important;min-height:53px!important;font-size:clamp(11px,1vw,13px)!important;transition:transform .17s ease, filter .17s ease}
+#site-map-overlay .compass26-sub-link:hover,#site-map-overlay .compass26-sub-link:focus-visible{transform:translateY(-2px);filter:brightness(1.14)!important}
+#site-map-overlay .compass26-mini{color:#e9c982!important}
+#site-map-overlay .compass26-expand{border:2px solid #c4a260!important;border-radius:12px!important;background:#e6cc91!important;color:#192b3f!important;box-shadow:0 6px 13px #0004!important;min-height:53px!important;flex:0 0 33px!important;font-size:20px!important}
+#site-map-overlay .compass26-nested{background:transparent!important;grid-column:1/-1;margin:7px 0 0!important;display:grid!important;gap:7px!important}
+#site-map-overlay .compass26-nested .compass26-sub-link{min-height:42px!important;font-size:11px!important;padding:8px!important}
+#site-map-overlay .compass26-nested[hidden]{display:none!important}
+/* Világos üzemmód: külön világos színek, világos gombok / sötét betűk, valódi kontraszttal. */
+html[data-theme="light"] #site-map-overlay .compass26-choice-link,
+html[data-theme="light"] #site-map-overlay .compass26-sub-link{background:linear-gradient(145deg,#fff9ec,#e8d6b6)!important;color:#17334c!important;border-color:#a5772c!important;box-shadow:0 8px 23px #172c453d!important;text-shadow:none!important}
+html[data-theme="light"] #site-map-overlay .compass26-choice-icon,
+html[data-theme="light"] #site-map-overlay .compass26-mini{color:#74511e!important}
+html[data-theme="light"] #site-map-overlay .compass26-choice-toggle,
+html[data-theme="light"] #site-map-overlay .compass26-expand{background:#f9e7bb!important;color:#15304b!important;border-color:#9e752e!important}
+html[data-theme="light"] #site-map-overlay .compass26-emblem{background:radial-gradient(circle at 34% 25%,#fdf4df,#e2ca9a)!important;color:#1b344b!important;border-color:#a5772c!important;box-shadow:0 0 0 8px #d9b97544,0 10px 24px #11273e44!important}
+html[data-theme="light"] #site-map-overlay .site-map-close{color:#142c44!important;background:#fff5e4!important;border-color:#a5772c!important}
+html[data-theme="dark"] #site-map-overlay .compass26-choice-link,
+html[data-theme="dark"] #site-map-overlay .compass26-sub-link{background:linear-gradient(145deg,#244560,#0b2139)!important;color:#fff8e5!important;border-color:#e0bd78!important}
+html[data-theme="dark"] #site-map-overlay .compass26-choice-icon,
+html[data-theme="dark"] #site-map-overlay .compass26-mini{color:#f4d68f!important}
+html[data-theme="dark"] #site-map-overlay .site-map-close{color:#fff8e6!important;background:#102940!important;border-color:#d7b16a!important}
+html[data-theme="dark"] #site-map-overlay .compass26-choice-toggle,
+html[data-theme="dark"] #site-map-overlay .compass26-expand{background:#d7b672!important;color:#152a42!important;border-color:#f2d28e!important}
+#site-map-overlay :is(.compass26-choice-link,.compass26-sub-link,.compass26-choice-toggle,.compass26-expand,.site-map-close):focus-visible{outline:3px solid #ebac37!important;outline-offset:3px!important}
+/* A fotó 20 dián a főszereplő: csak visszafogott szöveg a képen, nem szöveges plakát. */
+#global-hero .hero2026-stage{height:clamp(320px,33vw,490px)!important;min-height:320px!important}
+#global-hero .hero2026-shade{background:linear-gradient(0deg,rgba(2,15,31,.64),transparent 66%),linear-gradient(90deg,rgba(4,20,39,.28),transparent 55%)!important}
+#global-hero .hero2026-inner{justify-content:center!important;align-items:flex-end!important;gap:0!important;text-align:center!important;max-width:1100px!important;padding:24px 14px 25px!important}
+#global-hero .hero2026-copy{max-width:720px!important;margin:0 auto!important;text-align:center!important;background:rgba(6,23,42,.67)!important;backdrop-filter:blur(5px);border:1px solid #f6d69c33;border-radius:20px;padding:13px 20px 15px!important}
+#global-hero .hero2026-title{font-size:clamp(21px,2.6vw,35px)!important;max-width:690px!important;margin:5px auto!important;color:#fffaf0!important;text-shadow:0 3px 9px #000b!important}
+#global-hero .hero2026-kicker{font-size:10px!important;letter-spacing:.12em!important;color:#f6dca0!important}
+#global-hero .hero2026-subtitle{font-size:clamp(11px,1.07vw,14px)!important;margin:5px auto 8px!important;color:#f6f0e7!important;line-height:1.4!important}
+#global-hero .hero2026-actions{justify-content:center!important;margin:8px auto 0!important}
+#global-hero .hero2026-identity{display:none!important}
+html[data-theme="light"] #global-hero .hero2026-shade{background:linear-gradient(0deg,rgba(5,20,37,.55),transparent 63%)!important}
+html[data-theme="light"] #global-hero .hero2026-title,html[data-theme="light"] #global-hero .hero2026-subtitle{color:#fffaf0!important;text-shadow:0 3px 10px #000a!important}
+/* A főoldali és aloldali főelemek következetesen középen. A táblázatok adattartalma igazítva marad. */
+#app :is(.section-overline,.section-title,.experience-section-head,.experience-eyebrow,.experience-title,.experience-lead,.content-tile>h2,.content-tile>h3,.feature-card,.quick-card,.editorial-tile,.cs-news-card,.daily-sports-card,.student-success-card,.sports-head,.sports-title,.page-banner,.gallery-item figcaption){text-align:center!important}
+#app :is(.section-title,.experience-title,.experience-lead,.content-tile>h2,.content-tile>h3){margin-left:auto!important;margin-right:auto!important}
+#app :is(.sports-head,.hero2026-actions,.sports-slide-overline,.sports-slide-controls,.sports-dots,.hub26-cal-actions){justify-content:center!important}
+#app :is(.feature-card,.quick-card,.daily-sports-card,.cs-news-card,.student-success-card){margin-left:auto;margin-right:auto}
+#app :is(.content-shell,.home-canvas,.section-wrap,.experience-hub,.student-success-section,.daily-sports-news,.editorial-section,.content-layout){margin-inline:auto}
+/* Mobilon is a kijelző közepe a kör középpontja; az almenü gombjai sorokban lebegnek. */
+@media(max-width:720px){
+ #site-map-overlay{padding:2px!important}
+ #site-map-overlay .site-map-dialog{max-height:100dvh!important;width:100%!important}
+ #site-map-overlay .site-map-topline{min-height:42px!important;padding:2px 7px!important}
+ #site-map-overlay .site-map-close{width:39px!important;height:39px!important}
+ #site-map-overlay .compass26-layout{padding:0 3px 12px!important}
+ #site-map-overlay .compass26-stage{height:clamp(320px,86vw,422px)!important;margin:0 auto!important}
+ #site-map-overlay .compass26-panel{padding:0 6px 20px!important}
+ #site-map-overlay .compass26-subtopics{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}
+ #site-map-overlay .compass26-sub-link{font-size:11px!important;padding:9px 6px!important;min-height:47px!important}
+ #site-map-overlay .compass26-expand{min-height:47px!important}
+ #global-hero .hero2026-stage{height:clamp(300px,95vw,385px)!important;min-height:300px!important}
+ #global-hero .hero2026-inner{padding:12px 10px 17px!important}
+ #global-hero .hero2026-copy{max-width:min(95%,560px)!important;padding:10px 12px!important}
+ #global-hero .hero2026-title{font-size:clamp(18px,5.2vw,26px)!important}
+ #global-hero .hero2026-subtitle{font-size:11px!important;line-height:1.3!important}
+ #global-hero .hero2026-actions{margin-top:6px!important}
+ #global-hero .hero2026-cta{padding:6px 10px!important;font-size:10px!important}
+}
+@media(max-width:390px){#site-map-overlay .compass26-subtopics{grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){#site-map-overlay .compass26-choice-link,#site-map-overlay .compass26-sub-link{transition:none!important}}
+/* Segédosztály CDN-kieséskor is: a szemantikus címek nem látszanak rá a gombokra. */
+#site-map-overlay .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+body.site-map-is-open .orbit-launch #orbit-open{visibility:hidden!important}

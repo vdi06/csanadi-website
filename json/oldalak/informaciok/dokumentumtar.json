@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T19:30:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Dokumentumtár – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Pedagógiai program és intézményi dokumentumok](#/informaciok/dokumentumtar) · [Házirend és szabályzatok](#/informaciok/dokumentumtar) · [Intézményi dokumentumok](#/informaciok/dokumentumtar) · [Teljes dokumentumjegyzék](#/informaciok/dokumentumtar)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:be2026-nav-000052",
+      "type": "section",
+      "title": "További tájékozódási lehetőségek",
+      "children": [
+        {
+          "id": "block:be2026-navlinks-000052",
+          "type": "markdown",
+          "data": {
+            "text": "[Szabályzatok](#/informaciok/dokumentumtar/szabalyzatok) · [Nyomtatványok](#/informaciok/dokumentumtar/nyomtatvanyok) · [Közzétételi lista](#/informaciok/dokumentumtar/kozzeteteli-lista)"
           }
         }
       ]

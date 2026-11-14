@@ -1,0 +1,87 @@
+/* 2026 – Egységes, szerkesztett aloldal-tipográfia és törésbiztos kártyák.
+   A szöveges oldalak olvasható cikket, a modulok és kapcsolódó oldalak külön
+   teljes szélességű tartalmi egységet kapnak. */
+#app .content-layout.content-no-aside {display:block!important;max-width:1180px;margin-inline:auto}
+#app .content-tiles--editorial {display:grid;grid-template-columns:minmax(0,1fr)!important;gap:clamp(18px,2.6vw,30px);align-items:start;min-width:0;width:100%}
+#app .content-tiles--editorial > * {grid-column:1/-1!important;min-width:0;max-width:100%}
+#app .content-tiles--editorial > .article-flow {width:100%;max-width:1020px;margin-inline:auto!important;padding:clamp(22px,3.8vw,48px)!important;background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow-wrap:anywhere}
+#app .article-flow .article-section {width:100%;max-width:840px;margin-inline:auto;min-width:0;padding:0 0 clamp(16px,2.5vw,29px);text-align:center}
+#app .article-flow .article-section + .article-section {padding-top:clamp(17px,2.3vw,27px);border-top:1px solid var(--line)}
+#app .article-flow .article-section:last-child {padding-bottom:0}
+#app .article-flow .article-section > h2 {max-width:810px;margin:0 auto clamp(12px,1.8vw,20px);font-size:clamp(22px,2.2vw,31px);line-height:1.24;text-wrap:balance;color:var(--ink);overflow-wrap:anywhere}
+#app .article-flow .article-section > h2::after {content:'';display:block;width:54px;height:3px;margin:12px auto 0;border-radius:4px;background:var(--gold)}
+#app .article-flow .text-flow {max-width:75ch;width:100%;margin-inline:auto;font-size:clamp(15px,1.2vw,17px);line-height:1.82;color:var(--ink);text-align:left}
+#app .article-flow .text-flow p {margin:0 0 1.05rem;max-width:100%;overflow-wrap:anywhere}
+#app .article-flow .text-flow p:last-child {margin-bottom:0}
+#app .article-flow .text-flow a {text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;font-weight:650;overflow-wrap:anywhere}
+#app .article-flow .text-flow :is(h2,h3) {text-align:center;margin:20px auto 12px;color:var(--ink);text-wrap:balance}
+#app .article-flow .article-section--module {max-width:100%;}
+#app .article-flow :is(.features-grid,.quick-grid,.image-gallery) {max-width:100%;margin-inline:auto}
+#app .article-flow :is(.body-card,.story-figure,.content-accordion) {min-width:0;max-width:100%}
+#app .content-tiles--editorial > .related-content {width:100%;max-width:1180px;margin:0 auto!important;text-align:center;padding:0 0 clamp(12px,2vw,24px)}
+#app .related-content .section-title {margin:0 auto 22px;text-wrap:balance}
+#app .related-content .features-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,255px),1fr));gap:clamp(12px,1.6vw,19px);justify-items:stretch;align-items:stretch;margin-inline:auto;max-width:1120px;width:100%}
+#app .related-content .feature-card {display:flex;flex-direction:column;height:100%;min-width:0;width:100%;overflow:hidden}
+#app .related-content .feature-card .card-copy {width:100%;flex:1;min-width:0;display:flex;flex-direction:column}
+#app .related-content .feature-card .card-arrow {margin-top:auto}
+#app .related-content .feature-card .card-picture {width:100%;height:auto;aspect-ratio:16/9;overflow:hidden}
+#app .related-content .feature-card img {width:100%;height:100%;object-fit:cover}
+/* A dokumentum-, hír-, esemény-, sport- és személyzeti panelek teljes soron maradnak. */
+#app .content-tiles--editorial > :not(.article-flow):not(.related-content) {width:100%;max-width:100%;margin-inline:auto;min-width:0;overflow-wrap:anywhere}
+#app .content-tiles--editorial :is(.news-grid,.features-grid,.quick-grid,.image-gallery,.gallery-grid,.document-grid,.docs-grid,.student-success-feature-grid,.student-success-archive-grid,.daily-sports-cards,.staff-team-grid) {min-width:0;max-width:100%}
+#app .content-tiles--editorial :is(.feature-card,.gallery-item,.daily-sports-card,.cs-news-card,.student-success-card,.editorial-tile) {min-width:0;max-width:100%;overflow-wrap:anywhere}
+#app .content-tiles--editorial :is(pre,code) {max-width:100%;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere}
+#app .content-tiles--editorial :is(table,.table) {max-width:100%;min-width:0}
+#app .content-tiles--editorial .table-responsive {max-width:100%;overflow-x:auto}
+#app .content-tiles--editorial :is(input,select,textarea,button) {max-width:100%;min-width:0}
+#app .content-tiles--editorial :is(img,video,iframe,canvas,picture) {max-width:100%}
+/* A képtől elkülönülő, világos témájú kártyaszöveg mindig megfelelő kontrasztú. */
+html[data-theme="light"] #app .article-flow {background:#fffaf0;color:#173147;border-color:#d8c7aa}
+html[data-theme="light"] #app .article-flow .text-flow,html[data-theme="light"] #app .article-flow h2{color:#173147}
+html[data-theme="dark"] #app .article-flow {background:var(--card);color:var(--ink)}
+/* Közös középre rendezés, de hosszú folyószövegnél az olvashatóság kedvéért balra zárt sorok. */
+#app .content-tiles--editorial .related-content :is(.card-copy,.card-title,.card-desc,.card-topline,.card-arrow){text-align:center;justify-content:center}
+#app .content-tiles--editorial .related-content .card-arrow {align-self:center}
+#app .content-tiles--editorial .related-content .card-topline {align-items:center}
+@media (max-width:850px){
+ #app .content-tiles--editorial > .article-flow {padding:clamp(19px,4.3vw,32px)!important}
+ #app .related-content .features-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:600px){
+ #app .content-shell{padding-inline:clamp(10px,3.5vw,18px)!important}
+ #app .content-tiles--editorial{gap:20px}
+ #app .content-tiles--editorial > .article-flow{padding:22px 18px!important;border-radius:18px}
+ #app .article-flow .text-flow{font-size:15px;line-height:1.76}
+ #app .related-content .features-grid{grid-template-columns:minmax(0,1fr)}
+ #app .article-flow .article-section>h2{font-size:23px}
+}
+/* A kapcsolat- és tájékoztatóoldalak rövid szövegei is középre rendezve. */
+#app .article-flow:not(.article-flow--long) .text-flow {text-align:center}
+/* Az aloldal kapcsolódó csempéi nem maradnak üresen a lapozó/feltáró animáció miatt. */
+#app .content-tiles--editorial .reveal-on-scroll {opacity:1!important;transform:none!important;filter:none!important;visibility:visible!important}
+/* A sporteredmény-oldalak nagy dekoratív köre ne növelje a belső szélességet. */
+#app .content-tiles--editorial > .sports-highlights-section::before {right:4%;width:min(40%,390px);top:4%;max-height:390px}
+
+
+/* Középre rendezett aloldalfejlécek és minden oldalon egységes lábléc. */
+#app .page-banner > .container-xxl {text-align:center;max-width:1180px;margin-inline:auto}
+#app .page-banner :is(h1,p) {margin-left:auto;margin-right:auto;text-wrap:balance}
+#app .page-banner .breadcrumbs {justify-content:center;align-items:center;max-width:100%;gap:7px 11px}
+#app .page-banner .breadcrumbs :is(a,span) {max-width:100%;overflow-wrap:anywhere}
+#app .page-banner h1 {max-width:100%;overflow-wrap:anywhere}
+#app .content-shell > .content-layout {margin-inline:auto}
+#app .article-flow :is(.features-grid,.quick-grid,.image-gallery) {justify-items:stretch;align-items:stretch}
+#app .article-flow :is(.feature-card,.quick-card,.gallery-item) {height:100%;min-width:0}
+#app .article-flow :is(.card-copy,.card-title,.card-desc,.card-topline,.card-arrow) {text-align:center}
+#app .article-flow .card-arrow {align-self:center}
+#app .related-content .feature-card {text-align:center}
+#app .related-content .card-copy {align-items:center}
+#app .related-content .card-topline {justify-content:center}
+#app .related-content .card-desc {max-width:48ch;margin-inline:auto}
+.site-footer .footer-grid {justify-items:center;align-items:start;text-align:center;grid-template-columns:minmax(0,2fr) repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,44px)}
+.site-footer .footer-grid > div {display:flex;flex-direction:column;align-items:center;min-width:0;max-width:100%;overflow-wrap:anywhere}
+.site-footer .footer-grid p {margin-inline:auto;max-width:46ch}
+.site-footer .footer-grid a {overflow-wrap:anywhere}
+.site-footer .footer-bottom {justify-content:center;align-items:center;gap:8px 20px;flex-wrap:wrap;text-align:center}
+@media(max-width:850px){.site-footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.site-footer .footer-grid > div:first-child{grid-column:1/-1}.site-footer .footer-grid > div:nth-child(3){grid-column:auto}}
+@media(max-width:560px){.site-footer .footer-grid{grid-template-columns:minmax(0,1fr)}.site-footer .footer-grid > div:first-child,.site-footer .footer-grid > div:nth-child(3){grid-column:auto}.site-footer .footer-bottom{display:flex;flex-direction:column}}

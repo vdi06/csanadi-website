@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000020",
+  "pageType": "standard",
+  "menuLabel": "Felvételi határidők",
+  "title": "Felvételi határidők",
+  "slug": "felveteli-hataridok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Felvételi határidők – Csanádi Sportiskola",
+    "description": "A felvételi és beiratkozási időpontok ellenőrzésének kiindulópontja.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [],
+  "summary": "A felvételi és beiratkozási időpontok ellenőrzésének kiindulópontja.",
+  "blocks": [
+    {
+      "id": "block:000020-section-1",
+      "type": "section",
+      "title": "Mely határidőket érdemes figyelni?",
+      "children": [
+        {
+          "id": "block:000020-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A jelentkezés, a szükséges dokumentumok beadása, az esetleges vizsga vagy meghallgatás, valamint az eredményközlés eltérő időpontokhoz kapcsolódhat. Az első és a kilencedik évfolyamra jelentkezés folyamata sem feltétlenül azonos."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000020-section-2",
+      "type": "section",
+      "title": "Hivatalos információ ellenőrzése",
+      "children": [
+        {
+          "id": "block:000020-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A határidők és feltételek a tanévre közzétett felvételi tájékoztatókban irányadók. Ha az intézmény még nem tett közzé ellenőrzött időpontot, az oldal nem jelenít meg kitalált dátumot.\n\n[Első évfolyamos beiskolázás](#/oktatas/felveteli/elso-evfolyam) · [Kilencedik évfolyamos felvételi](#/oktatas/felveteli/kilencedik-evfolyam)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000020-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/oktatas/felveteli/felveteli-hataridok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:felveteli"
+  }
+}

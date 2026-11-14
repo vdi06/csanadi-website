@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000035",
+  "pageType": "collection",
+  "menuLabel": "Csapatok",
+  "title": "Csapatok",
+  "slug": "csapatok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Csapatok – Csanádi Sportiskola",
+    "description": "A csapatokhoz kapcsolódó sportági, korosztályos és eredményinformációk áttekintő oldala.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "sport"
+  ],
+  "tags": [],
+  "summary": "A csapatokhoz kapcsolódó sportági, korosztályos és eredményinformációk áttekintő oldala.",
+  "blocks": [
+    {
+      "id": "block:000035-section-1",
+      "type": "section",
+      "title": "Mit mutatna egy csapatprofil?",
+      "children": [
+        {
+          "id": "block:000035-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A csapat neve, sportága, korosztálya, az intézmény által jóváhagyott edzői adatok, valamint a közzétehető események és eredmények kapcsolhatók össze egy adatlapban."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000035-section-2",
+      "type": "section",
+      "title": "Hiteles adatok nélkül nincs névsor",
+      "children": [
+        {
+          "id": "block:000035-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A jelenlegi változatban még nincs ellenőrzött csapatnévsor vagy csapatprofil-adatállomány. Az adatok felvitele a jóváhagyott nyilvánossági és adatkezelési szabályok mellett történhet.\n\n[Sportágak](#/sport/sportagak) · [Sporteredmények](#/sport/sporteredmenyek)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000035-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/sport/csapatok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:eredmenyek"
+  }
+}

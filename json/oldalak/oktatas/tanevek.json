@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T19:30:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Tanévek – Csanádi Sportiskola",
@@ -38,6 +38,20 @@
           "type": "markdown",
           "data": {
             "text": "A tanév során a tanítási napok, szünetek, vizsgák és iskolai programok közös időrendet alkotnak. A pontos dátumok ismerete különösen fontos, ha a tanulás mellé rendszeres edzések és sportversenyek társulnak.\n\nA 2026/2027-es tanévre vonatkozó ellenőrzött közleményeket és a kapcsolódó intézményi dokumentumokat külön oldalon gyűjtjük."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:be2026-nav-000025",
+      "type": "section",
+      "title": "További tájékozódási lehetőségek",
+      "children": [
+        {
+          "id": "block:be2026-navlinks-000025",
+          "type": "markdown",
+          "data": {
+            "text": "[Korábbi tanévek](#/oktatas/tanevek/korabbi-tanevek)"
           }
         }
       ]

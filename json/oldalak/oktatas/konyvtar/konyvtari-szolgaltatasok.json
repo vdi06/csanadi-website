@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000029",
+  "pageType": "standard",
+  "menuLabel": "Könyvtári szolgáltatások",
+  "title": "Könyvtári szolgáltatások",
+  "slug": "konyvtari-szolgaltatasok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Könyvtári szolgáltatások – Csanádi Sportiskola",
+    "description": "Iskolai könyvtári lehetőségek és tájékozódási útmutató.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [],
+  "summary": "Iskolai könyvtári lehetőségek és tájékozódási útmutató.",
+  "blocks": [
+    {
+      "id": "block:000029-section-1",
+      "type": "section",
+      "title": "Miben segíthet a könyvtár?",
+      "children": [
+        {
+          "id": "block:000029-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A könyvtári szolgáltatások a tanulást, az olvasást, az információkeresést és az önálló kutatómunkát támogathatják. A kölcsönzési feltételeket és az elérhető állományt a helyi könyvtári szabályzat rögzíti."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000029-section-2",
+      "type": "section",
+      "title": "Kölcsönzés és tájékozódás",
+      "children": [
+        {
+          "id": "block:000029-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A nyitvatartásra, beiratkozásra, könyvkölcsönzésre és tanulói hozzáférésre vonatkozó aktuális feltételek intézményi ellenőrzés után jeleníthetők meg.\n\n[Könyvtár](#/oktatas/konyvtar) · [Tananyagok és jegyzetek](#/oktatas/tananyagok-es-jegyzetek)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/oktatas/konyvtar/konyvtari-szolgaltatasok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas"
+  }
+}

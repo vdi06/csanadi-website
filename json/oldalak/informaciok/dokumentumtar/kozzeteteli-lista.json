@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000055",
+  "pageType": "collection",
+  "menuLabel": "Közzétételi lista",
+  "title": "Közzétételi lista",
+  "slug": "kozzeteteli-lista",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Közzétételi lista – Csanádi Sportiskola",
+    "description": "A nyilvánosan kötelezően hozzáférhető dokumentumok és információk gyűjtőpontja.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [],
+  "summary": "A nyilvánosan kötelezően hozzáférhető dokumentumok és információk gyűjtőpontja.",
+  "blocks": [
+    {
+      "id": "block:000055-section-1",
+      "type": "section",
+      "title": "A közzétételi lista célja",
+      "children": [
+        {
+          "id": "block:000055-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A közzétételre előírt intézményi dokumentumok és adatok nyilvános elérhetőségét egységes szerkezetben célszerű biztosítani. A teljes és aktuális lista összeállítása intézményi adategyeztetést kíván."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000055-section-2",
+      "type": "section",
+      "title": "Mit ellenőrizz a dokumentumon?",
+      "children": [
+        {
+          "id": "block:000055-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Cím, forrás, hatály, frissítés dátuma és az adott dokumentum valódi fájlhivatkozása mind fontos. Ezen az oldalon ellenőrzés nélkül nem szerepelnek hivatalosnak jelölt dokumentumok.\n\n[Szabályzatok](#/informaciok/dokumentumtar/szabalyzatok) · [Dokumentumtár](#/informaciok/dokumentumtar)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000055-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/informaciok/dokumentumtar/kozzeteteli-lista",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg"
+  }
+}

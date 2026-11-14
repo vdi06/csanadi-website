@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000045",
+  "pageType": "collection",
+  "menuLabel": "Iskolai események",
+  "title": "Iskolai események",
+  "slug": "iskolai-esemenyek",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Iskolai események – Csanádi Sportiskola",
+    "description": "Iskolai programok, közösségi alkalmak és tanulmányi események helye a naptárban.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "hirek-es-esemenyek"
+  ],
+  "tags": [],
+  "summary": "Iskolai programok, közösségi alkalmak és tanulmányi események helye a naptárban.",
+  "blocks": [
+    {
+      "id": "block:000045-section-1",
+      "type": "section",
+      "title": "Milyen események tartozhatnak ide?",
+      "children": [
+        {
+          "id": "block:000045-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskolai ünnepségek, közösségi alkalmak, tájékoztatók, pályaorientációs programok és más jóváhagyott események külön iskolai kategóriában jeleníthetők meg."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000045-section-2",
+      "type": "section",
+      "title": "Hogyan tájékozódj?",
+      "children": [
+        {
+          "id": "block:000045-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A pontos helyszín, időpont és regisztrációs feltétel csak ellenőrzött eseménybejegyzésből követhető. A központi naptárban több nézet és szűrés is elérhető.\n\n[Teljes eseménynaptár](#/hirek-es-esemenyek/esemenynaptar) · [Iskolai hírek](#/hirek-es-esemenyek/hirek/iskolai-hirek)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek",
+    "verifiedContent": false,
+    "bannerMediaId": "media:esemenyek"
+  }
+}

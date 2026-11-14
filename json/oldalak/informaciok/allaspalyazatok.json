@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000061",
+  "pageType": "standard",
+  "menuLabel": "Álláspályázatok",
+  "title": "Álláspályázatok",
+  "slug": "allaspalyazatok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Álláspályázatok – Csanádi Sportiskola",
+    "description": "A nyilvánosan meghirdetett, intézmény által jóváhagyott álláspályázatok megjelenítési helye.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [],
+  "summary": "A nyilvánosan meghirdetett, intézmény által jóváhagyott álláspályázatok megjelenítési helye.",
+  "blocks": [
+    {
+      "id": "block:000061-section-1",
+      "type": "section",
+      "title": "Álláshirdetések követése",
+      "children": [
+        {
+          "id": "block:000061-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A betöltendő munkakör, a jelentkezési feltételek, a szükséges dokumentumok, a határidő és a kapcsolattartás módja minden álláshirdetésnél külön ellenőrizendő."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000061-section-2",
+      "type": "section",
+      "title": "Jelenlegi állapot",
+      "children": [
+        {
+          "id": "block:000061-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Ebben a fejlesztői változatban nincs jóváhagyott, aktuális álláshirdetés feltöltve. A korábbi hirdetéseket nem jelenítjük meg élő pályázatként.\n\n[Kapcsolat](#/kapcsolat)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000061-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/informaciok/allaspalyazatok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg"
+  }
+}

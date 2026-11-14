@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000054",
+  "pageType": "collection",
+  "menuLabel": "Nyomtatványok",
+  "title": "Nyomtatványok",
+  "slug": "nyomtatvanyok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Nyomtatványok – Csanádi Sportiskola",
+    "description": "Beadandó nyomtatványok és ügyintézési űrlapok gyűjtőoldala.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [],
+  "summary": "Beadandó nyomtatványok és ügyintézési űrlapok gyűjtőoldala.",
+  "blocks": [
+    {
+      "id": "block:000054-section-1",
+      "type": "section",
+      "title": "Nyomtatványok használata",
+      "children": [
+        {
+          "id": "block:000054-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A megfelelő nyomtatvány kiválasztásakor ellenőrizd az ügytípust, a kitöltési útmutatót, a kötelező mellékleteket és az aktuális verziót. Egyes ügyek intézésére digitális felület is rendelkezésre állhat."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000054-section-2",
+      "type": "section",
+      "title": "Közzétehető állományok",
+      "children": [
+        {
+          "id": "block:000054-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A fejlesztői változat nem kínál ellenőrizetlen hivatalos űrlapot. A fájlokat csak intézményi jóváhagyás és dokumentumazonosító után szabad megjelentetni.\n\n[Digitális ügyintézés](#/informaciok/digitalis-ugyintezes) · [Dokumentumtár](#/informaciok/dokumentumtar)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000054-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/informaciok/dokumentumtar/nyomtatvanyok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg"
+  }
+}

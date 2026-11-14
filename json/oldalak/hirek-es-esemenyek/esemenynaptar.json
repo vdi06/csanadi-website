@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T19:30:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Eseménynaptár – Csanádi Sportiskola",
@@ -38,6 +38,20 @@
           "type": "markdown",
           "data": {
             "text": "Az eseménynaptárban a közzétett iskolai programok időpontjai kereshetők és szűrhetők. A 2026. novemberi gimnáziumi nyílt napokat az iskola hivatalos oldala alapján tüntetjük fel.\n\nA naptárba mentés az olyan időpontoknál is működik, amelyekhez a forrás csak kezdést közölt; ilyenkor az export nem állít be kitalált befejezési időt."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:be2026-nav-000044",
+      "type": "section",
+      "title": "További tájékozódási lehetőségek",
+      "children": [
+        {
+          "id": "block:be2026-navlinks-000044",
+          "type": "markdown",
+          "data": {
+            "text": "[Iskolai események](#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek) · [Sportesemények](#/hirek-es-esemenyek/esemenynaptar/sportesemenyek)"
           }
         }
       ]

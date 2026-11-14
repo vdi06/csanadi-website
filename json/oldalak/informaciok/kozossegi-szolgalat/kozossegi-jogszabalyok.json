@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000059",
+  "pageType": "standard",
+  "menuLabel": "Jogszabályok",
+  "title": "Jogszabályok",
+  "slug": "kozossegi-jogszabalyok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Jogszabályok – Csanádi Sportiskola",
+    "description": "A közösségi szolgálathoz kapcsolódó szabályozási háttér tájékozódási oldala.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [],
+  "summary": "A közösségi szolgálathoz kapcsolódó szabályozási háttér tájékozódási oldala.",
+  "blocks": [
+    {
+      "id": "block:000059-section-1",
+      "type": "section",
+      "title": "Miért fontosak a szabályok?",
+      "children": [
+        {
+          "id": "block:000059-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A közösségi szolgálat szervezésének és beszámításának feltételeit jogszabályok és intézményi szabályok is érinthetik. Az alkalmazandó előírásokat mindig a hatályos szöveg és az intézmény hivatalos tájékoztatása alapján kell megállapítani."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000059-section-2",
+      "type": "section",
+      "title": "Hivatalos szövegek ellenőrzése",
+      "children": [
+        {
+          "id": "block:000059-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A jogszabályok változhatnak; ezért ide csak ellenőrzött, naprakész forrásra mutató hivatkozást érdemes feltölteni.\n\n[Közösségi szolgálat – tudnivalók](#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok) · [Szabályzatok](#/informaciok/dokumentumtar/szabalyzatok)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg"
+  }
+}
