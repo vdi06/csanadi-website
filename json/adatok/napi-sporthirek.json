@@ -1,7 +1,116 @@
 {
   "schemaVersion": "1.0.0",
   "collectionId": "collection:napi-sporthirek",
-  "updatedAt": null,
+  "updatedAt": "2026-11-14T17:36:57+00:00",
   "source": "Nemzeti Sport Online RSS",
-  "items": []
+  "items": [
+    {
+      "title": "Szoboszlai Nyilasit, Schäfer Bognárt érte be az örökrangsorban",
+      "url": "https://nemzetisport.hu/magyar-valogatott/2026/11/szoboszlai-nyilasit-schafer-bognart-erte-be-az-orokrangsorban",
+      "publishedAt": "2026-11-14T17:30:34+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Grúziában a magyar válogatott, agresszívan kezdett a vendéglátó – percről percre",
+      "url": "https://nemzetisport.hu/magyar-valogatott/2026/11/nemzetek-ligaja-gruzia-magyarorszag",
+      "publishedAt": "2026-11-14T17:15:00+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Galéria: Grúziában játszik Nemzetek Ligája-mérkőzést a magyar válogatott",
+      "url": "https://nemzetisport.hu/magyar-valogatott/2026/11/galeria-gruziaban-jatszik-nemzetek-ligaja-merkozest-a-magyar-valogatott",
+      "publishedAt": "2026-11-14T17:14:57+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Háromszettes fehérvári győzelem a női röplabda Extraligában",
+      "url": "https://nemzetisport.hu/roplabda/2026/11/haromszettes-fehervari-gyozelem-a-noi-roplabda-extraligaban",
+      "publishedAt": "2026-11-14T16:54:50+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Félidőben öt gól a Győr előnye a német Blomberg-Lippe ellen",
+      "url": "https://nemzetisport.hu/kezilabda/2026/11/noi-kezi-bl-gyori-eto-blomberg-lippe",
+      "publishedAt": "2026-11-14T16:53:28+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Cselgáncs World Tour: Kriza Anna ötödik Zágrábban",
+      "url": "https://nemzetisport.hu/egyeb-egyeni/2026/11/cselgancs-world-tour-kriza-anna-otodik-zagrabban",
+      "publishedAt": "2026-11-14T16:49:29+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Kiváló meccsen játszott döntetlent a Szeged hazai pályán a Veszprém ellen",
+      "url": "https://nemzetisport.hu/kezilabda/2026/11/kivalo-meccsen-jatszott-dontetlent-a-szeged-hazai-palyan-a-veszprem-ellen",
+      "publishedAt": "2026-11-14T16:46:44+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Férfi kosár NB I: 102 pontig jutott, 10 meccs után is hibátlan az Atomerőmű",
+      "url": "https://nemzetisport.hu/kosarlabda/2026/11/ferfi-kosar-nb-i-102-pontig-jutott-10-meccs-utan-is-hibatlan-az-atomeromu",
+      "publishedAt": "2026-11-14T16:13:33+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Mezeifutó ob: Böhm Lilla és Karsai Gábor aranyérme",
+      "url": "https://nemzetisport.hu/atletika/2026/11/mezeifuto-ob-bohm-lilla-es-karsai-gabor-aranyerme",
+      "publishedAt": "2026-11-14T16:12:16+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Vívás: Battai Sugár bronzérmes a kairói világkupa-viadalon",
+      "url": "https://nemzetisport.hu/egyeb-egyeni/2026/11/vivas-battai-sugar-bronzermes-a-kairoi-vilagkupa-viadalon",
+      "publishedAt": "2026-11-14T16:04:29+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Vívás: Pásztor Flóra nyolcadik a plovdivi vk-viadalon",
+      "url": "https://nemzetisport.hu/egyeb-egyeni/2026/11/vivas-pasztor-flora-nyolcadik-a-plovdivi-vk-viadalon",
+      "publishedAt": "2026-11-14T15:57:42+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Most sem született gól Koszovó és Izrael meccsén",
+      "url": "https://nemzetisport.hu/minden-mas-foci/2026/11/most-sem-szuletett-gol-koszovo-es-izrael-meccsen",
+      "publishedAt": "2026-11-14T15:53:12+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Női NB I: minimális különbséggel nyert a Fradi a DVTK ellen",
+      "url": "https://nemzetisport.hu/labdarugo-nb-i/2026/11/noi-nb-i-minimalis-kulonbseggel-nyert-a-fradi-a-dvtk-ellen",
+      "publishedAt": "2026-11-14T15:50:51+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Szoboszlaival támadunk Grúzia ellen – megvannak a hivatalos kezdőcsapatok!",
+      "url": "https://nemzetisport.hu/magyar-valogatott/2026/11/szoboszlaival-tamadunk-gruzia-ellen-megvannak-a-hivatalos-kezdocsapatok",
+      "publishedAt": "2026-11-14T15:50:20+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Jégkorong-vb: Thomas Bach támogatja az oroszok részvételét",
+      "url": "https://nemzetisport.hu/jegkorong/2026/11/jegkorong-vb-thomas-bach-tamogatja-az-oroszok-reszvetelet",
+      "publishedAt": "2026-11-14T15:11:46+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "NL: Frenkie de Jong kihagyja a németek elleni meccset",
+      "url": "https://nemzetisport.hu/minden-mas-foci/2026/11/nl-frenkie-de-jong-kihagyja-a-nemetek-elleni-meccset",
+      "publishedAt": "2026-11-14T14:47:40+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Női kézi El-selejtező: idegenben is lelépte a Baníkot az Esztergom",
+      "url": "https://nemzetisport.hu/kezilabda/2026/11/noi-kezi-el-selejtezo-idegenben-is-lelepte-a-banikot-az-esztergom",
+      "publishedAt": "2026-11-14T14:40:57+00:00",
+      "category": "Sport"
+    },
+    {
+      "title": "Berke Balázs ismét a Nemzetek Ligájában vezet",
+      "url": "https://nemzetisport.hu/minden-mas-foci/2026/11/berke-balazs-ismet-a-nemzetek-ligajaban-vezet",
+      "publishedAt": "2026-11-14T14:12:14+00:00",
+      "category": "Sport"
+    }
+  ]
 }
