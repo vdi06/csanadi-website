@@ -7,8 +7,8 @@
   "slug": "csengetesi-rend",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Csengetési rend – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A jóváhagyott csengetési rend későbbi közzétételi helye.",
+    "description": "Az intézmény hivatalos tanóraidőpontjai, digitális idővonallal.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A jóváhagyott csengetési rend későbbi közzétételi helye.",
+  "tags": [],
+  "summary": "A tanítási órák hivatalosan közzétett időpontjai, élő órával és a következő csengetésig tartó visszaszámlálással.",
   "blocks": [
     {
-      "id": "block:049-intro",
+      "id": "block:000049-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Tanóraidőpontok",
       "children": [
         {
-          "id": "block:049-lead",
+          "id": "block:000049-text-1",
           "type": "markdown",
           "data": {
-            "text": "A jóváhagyott csengetési rend későbbi közzétételi helye."
+            "text": "A tanítási órák időpontjait az iskola közzétett csengetési rendje alapján jelenítjük meg. A digitális órával és a következő csengetésig tartó visszaszámlálással napközben könnyen követheted az időrendet.\n\nAz általános iskolai ügyelet a hivatalos tájékoztatás szerint tanítási napokon 7:00-tól 18:00-ig tart.\n\n[Az iskola csengetési rendje](https://csanadi-bp.edu.hu/csengetes.html)"
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000049-section-2",
+      "type": "section",
+      "title": "Eredeti időbeosztás",
+      "children": [
         {
-          "id": "block:049-hint",
+          "id": "block:000049-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "A tanítási órák időpontjait az iskola közzétett csengetési rendje alapján jelenítjük meg. A digitális órával és a következő csengetésig tartó visszaszámlálással napközben könnyen követheted az időrendet.\n\nAz általános iskolai ügyelet a hivatalos tájékoztatás szerint tanítási napokon 7:00-tól 18:00-ig tart.\n\n[Az iskola csengetési rendje](https://csanadi-bp.edu.hu/csengetes.html)"
           }
         }
       ]
@@ -54,9 +59,9 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/informaciok/mindennapi-tudnivalok/csengetesi-rend",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:kozosseg"
   }
 }

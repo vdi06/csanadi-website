@@ -7,8 +7,8 @@
   "slug": "bemutatkozas",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Bemutatkozás – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Bemutatkozás” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Általános iskola, gimnázium és sportiskolai nevelés egy közösségben.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "iskolank"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Bemutatkozás” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Általános iskola, gimnázium és sportiskolai nevelés egy közösségben.",
   "blocks": [
     {
-      "id": "block:003-intro",
+      "id": "block:000003-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Iskola Zugló szívében",
       "children": [
         {
-          "id": "block:003-lead",
+          "id": "block:000003-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Bemutatkozás” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "Az intézmény teljes neve Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium. Budapesten, az Őrnagy utca 5–7. szám alatt működik; OM azonosítója 200346.\n\nA képzések a közismereti tudás és a sport világának találkozására épülnek. A hivatalos pedagógiai program az utánpótlás-nevelést és a tanulási lehetőségek biztosítását kiemelten tárgyalja."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000003-section-2",
+      "type": "section",
+      "title": "Közös értékek",
+      "children": [
         {
-          "id": "block:003-hint",
+          "id": "block:000003-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "Az iskola 2026-os pedagógiai programja a tisztességet, a kitartást, a fegyelmet és a tudatos munkát hangsúlyozza. Ezek az értékek a sportpályán, az osztályteremben és az iskolai közösségben egyaránt jelen vannak.\n\n[Pedagógiai program – hivatalos PDF](https://csanadi-bp.edu.hu/docs/pedprogram.pdf)"
           }
         }
       ]
@@ -54,9 +59,9 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/iskolank/bemutatkozas",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:iskolank"
   }
 }

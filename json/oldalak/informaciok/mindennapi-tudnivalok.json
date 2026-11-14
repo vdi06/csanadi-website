@@ -7,8 +7,8 @@
   "slug": "mindennapi-tudnivalok",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,25 @@
   },
   "seo": {
     "title": "Mindennapi tudnivalók – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Mindennapi tudnivalók” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Mindennapi tudnivalók” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez.",
   "blocks": [
     {
-      "id": "block:048-intro",
+      "id": "block:000048-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Napirend és tájékoztatás",
       "children": [
         {
-          "id": "block:048-lead",
+          "id": "block:000048-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Mindennapi tudnivalók” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
-          }
-        },
-        {
-          "id": "block:048-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+            "text": "A csengetési rend a tanórák időpontjait rögzíti, a szülői tájékoztatás pedig a mindennapi ügyintézéshez nyújt kapaszkodót. A digitális idővonal az ellenőrzött órarendet követi.\n\nA különleges tanítási napokra vonatkozó eltérő napirendet csak intézményi közlés alapján lehet beállítani, ezért itt nem jelenik meg találgatott rövidített csengetési rend."
           }
         }
       ]
@@ -54,7 +45,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/informaciok/mindennapi-tudnivalok",
     "verifiedContent": false,
     "bannerMediaId": "media:kozosseg"

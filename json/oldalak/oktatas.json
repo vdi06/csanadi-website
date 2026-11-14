@@ -2,51 +2,56 @@
   "schemaVersion": "1.0.0",
   "id": "page:000011",
   "pageType": "hub",
-  "menuLabel": "Oktatás",
-  "title": "Oktatás",
+  "menuLabel": "Oktatás és felvételi",
+  "title": "Oktatás és felvételi",
   "slug": "oktatas",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Oktatás – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A képzési utak, a felvételi eljárás, a vizsgák és a tanév információinak központi áttekintése.",
+    "description": "Képzési utak, felvételi, vizsgák, tanévi tudnivalók és tanulási segédletek.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A képzési utak, a felvételi eljárás, a vizsgák és a tanév információinak központi áttekintése.",
+  "tags": [],
+  "summary": "Képzési utak, felvételi, vizsgák, tanévi tudnivalók és tanulási segédletek.",
   "blocks": [
     {
-      "id": "block:011-intro",
+      "id": "block:000011-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Tudás a sport mellett",
       "children": [
         {
-          "id": "block:011-lead",
+          "id": "block:000011-text-1",
           "type": "markdown",
           "data": {
-            "text": "A képzési utak, a felvételi eljárás, a vizsgák és a tanév információinak központi áttekintése."
+            "text": "A tanulás és az edzés mindennapjai összehangolást igényelnek. A képzési központban az általános iskolai és gimnáziumi útvonalakat, valamint a sportiskolai nevelés alapelveit mutatjuk be.\n\nKülön aloldalon találhatók a felvételi tájékozódást segítő információk, a vizsgákkal kapcsolatos tudnivalók és a tanévi időpontok. A hivatalos határidőket mindig külön, ellenőrzött forrás alapján tesszük közzé."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000011-new-section-2026",
+      "type": "section",
+      "title": "Digitális kultúra a mindennapokban",
+      "children": [
         {
-          "id": "block:011-hint",
+          "id": "block:000011-new-text-2026",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+            "text": "A technológia tudatos használata minden tanulási területen fontos. [Fedezd fel a digitális kultúráról szóló részletes írásunkat](#/oktatas/digitalis-kultura): hogyan lehet a digitális eszközöket biztonságosan, alkotó módon és valóban hasznos célokra használni?"
           }
         }
       ]
@@ -54,7 +59,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/oktatas",
     "verifiedContent": false,
     "bannerMediaId": "media:oktatas"

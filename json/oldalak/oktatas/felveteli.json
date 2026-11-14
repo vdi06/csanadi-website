@@ -7,8 +7,8 @@
   "slug": "felveteli",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,64 +19,47 @@
   },
   "seo": {
     "title": "Felvételi központ – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: Évfolyamonkénti felvételi információk. Aktuális határidőket csak ellenőrzött forrásból szabad megadni.",
+    "description": "Tájékozódás az általános iskolai beiratkozás és a gimnáziumi jelentkezés előtt.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "Évfolyamonkénti felvételi információk. Aktuális határidőket csak ellenőrzött forrásból szabad megadni.",
+  "tags": [],
+  "summary": "Tájékozódás az általános iskolai beiratkozás és a gimnáziumi jelentkezés előtt.",
   "blocks": [
     {
-      "id": "block:016-intro",
+      "id": "block:000016-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Hogyan készüljünk?",
       "children": [
         {
-          "id": "block:016-lead",
+          "id": "block:000016-text-1",
           "type": "markdown",
           "data": {
-            "text": "Évfolyamonkénti felvételi információk. Aktuális határidőket csak ellenőrzött forrásból szabad megadni."
-          }
-        },
-        {
-          "id": "block:016-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+            "text": "A felvételi folyamatban különösen fontos a határidők, a szükséges nyilatkozatok és a felhasználható digitális felületek pontos ismerete. Az első és a kilencedik évfolyamra jelentkezők tájékoztatása eltérő dokumentumokat és eljárásokat érinthet.\n\nAz aktuális, intézmény által közzétett dokumentumok a hivatalos beiratkozási és felvételi oldalakon érhetők el. A hiányzó vagy még nem megadott határidők helyett nem közlünk becsült dátumokat."
           }
         }
       ]
     },
     {
-      "id": "block:admissions-help",
-      "type": "accordion",
-      "title": "A központ tervezett funkciói",
-      "data": {
-        "items": [
-          {
-            "title": "Tanévenkénti tájékoztatás",
-            "text": "Az aktuális tanévi dokumentumokat és határidőket csak ellenőrzött forrásból állítjuk össze."
-          },
-          {
-            "title": "Képzési utak",
-            "text": "A különböző képzések egyetlen rendszerből lesznek böngészhetők."
-          },
-          {
-            "title": "Kapcsolódó dokumentumok",
-            "text": "A dokumentumközpontban jóváhagyott állományokkal kapcsolódik össze."
+      "id": "block:000016-section-2",
+      "type": "section",
+      "title": "Közvetlen hivatalos elérhetőségek",
+      "children": [
+        {
+          "id": "block:000016-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "[Első évfolyam](https://csanadi-bp.edu.hu/altisk.html) · [Kilencedik évfolyam](https://csanadi-bp.edu.hu/felveteli.html)"
           }
-        ]
-      },
-      "children": []
+        }
+      ]
     }
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/oktatas/felveteli",
     "verifiedContent": false,
     "bannerMediaId": "media:felveteli"

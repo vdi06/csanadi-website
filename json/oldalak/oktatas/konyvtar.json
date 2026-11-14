@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "page:000028",
   "pageType": "hub",
-  "menuLabel": "Könyvtár",
-  "title": "Könyvtár",
+  "menuLabel": "Könyvtár és tanulás",
+  "title": "Könyvtár és tanulás",
   "slug": "konyvtar",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Könyvtár – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Könyvtár” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Olvasás, információkeresés és önálló tudásszerzés.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Könyvtár” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Olvasás, információkeresés és önálló tudásszerzés.",
   "blocks": [
     {
-      "id": "block:028-intro",
+      "id": "block:000028-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "A könyvtár szerepe",
       "children": [
         {
-          "id": "block:028-lead",
+          "id": "block:000028-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Könyvtár” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "A könyvtár a tanulás és a tájékozódás fontos helyszíne: könyvek, szakirodalom, források és közös tanulási alkalmak segíthetik az elmélyülést.\n\nAz információk megbízhatóságának értékelése, a források tudatos használata és az önálló kutatás a digitális környezetben is hasznos tudás. Az intézmény pedagógiai programja a könyvtárhasználat és a tanulási módszerek fejlesztésének szerepét is tárgyalja."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000028-section-2",
+      "type": "section",
+      "title": "Kutatási és olvasási tippek",
+      "children": [
         {
-          "id": "block:028-hint",
+          "id": "block:000028-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+            "text": "Kezdd a feladat kulcskérdéseivel, gyűjts többféle forrást, és jegyezd fel a szerzőt, a címet, valamint a megjelenés dátumát. A saját szavaiddal készített összefoglaló segít a megértés ellenőrzésében.\n\nA felhasznált forrásokat mindig különítsd el a saját megállapításaidtól."
           }
         }
       ]
@@ -54,7 +59,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/oktatas/konyvtar",
     "verifiedContent": false,
     "bannerMediaId": "media:oktatas"

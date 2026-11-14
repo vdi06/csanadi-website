@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "page:000037",
   "pageType": "collection",
-  "menuLabel": "Sportgalériák",
-  "title": "Sportgalériák",
+  "menuLabel": "Képgaléria",
+  "title": "Képgaléria",
   "slug": "sportgaleriak",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,25 @@
   },
   "seo": {
     "title": "Sportgalériák – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Sportgalériák” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Sport, tanulás és közösség képes témái.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "sport"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Sportgalériák” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Sport, tanulás és közösség képes témái.",
   "blocks": [
     {
-      "id": "block:037-intro",
+      "id": "block:000037-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Pillanatok, amelyek mesélnek",
       "children": [
         {
-          "id": "block:037-lead",
+          "id": "block:000037-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Sportgalériák” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
-          }
-        },
-        {
-          "id": "block:037-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** A gyűjtemény még nem tartalmaz ellenőrzött közzétételi tételeket."
+            "text": "A sportgaléria az edzések, a mozgás és a közösségi élmények világát mutatja be. A képeket sportág és iskolai téma szerint válogathatod, és nagyobb méretben is megtekintheted. A fotórealisztikus illusztrációk általános sportiskolai jeleneteket mutatnak be; nem az intézmény egyes rendezvényeinek dokumentumfelvételei."
           }
         }
       ]
@@ -54,7 +45,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/sport/sportgaleriak",
     "verifiedContent": false,
     "bannerMediaId": "media:sport"

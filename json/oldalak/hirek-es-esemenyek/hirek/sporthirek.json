@@ -7,8 +7,8 @@
   "slug": "sporthirek",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,44 +19,39 @@
   },
   "seo": {
     "title": "Sporthírek – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Sporthírek” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "A sportélet legfontosabb, hitelesen közzétett eredményei és történetei.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "hirek-es-esemenyek"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "Képes beszámolók, sportági történetek és a kapcsolódó eredményadatok egységes JSON-forrásból.",
+  "tags": [],
+  "summary": "A sportélet legfontosabb, hitelesen közzétett eredményei és történetei.",
   "blocks": [
     {
-      "id": "block:sports-feed-news",
-      "type": "sports-successes",
-      "title": "Sporthírek és történetek",
-      "data": {
-        "view": "news",
-        "source": "adatok/sportsikerek.json",
-        "maxNews": 8
-      }
-    },
-    {
-      "id": "block:041-intro",
+      "id": "block:000041-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Sportolói teljesítmények",
       "children": [
         {
-          "id": "block:041-lead",
+          "id": "block:000041-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Sporthírek” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "Az intézmény nyilvános oldalain több tanulói sporteredmény és a korábbi diákok kiemelkedő nemzetközi eredményei is szerepelnek. Az ellenőrzött eredményadatokat sportág, név és forrás szerint tesszük kereshetővé.\n\nA képek a sportiskolai mozgás és közösség hangulatát mutatják be; névhez kötött eredményfotót csak akkor kapcsolunk, ha valóban az adott sportolóról vagy eseményről készült."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000041-section-2",
+      "type": "section",
+      "title": "Hivatalos források",
+      "children": [
         {
-          "id": "block:041-hint",
+          "id": "block:000041-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** A gyűjtemény még nem tartalmaz ellenőrzött közzétételi tételeket."
+            "text": "[Iskolai aktualitások](https://csanadi-bp.edu.hu/def.html) · [Büszkeségeink](https://csanadi-bp.edu.hu/buszkeseg.html)"
           }
         }
       ]
@@ -64,7 +59,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/hirek-es-esemenyek/hirek/sporthirek",
     "verifiedContent": false,
     "bannerMediaId": "media:esemenyek"

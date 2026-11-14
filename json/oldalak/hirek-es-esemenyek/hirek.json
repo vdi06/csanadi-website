@@ -7,8 +7,8 @@
   "slug": "hirek",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,25 @@
   },
   "seo": {
     "title": "Hírek – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: Az intézmény jóváhagyott hírei itt jelennek majd meg. A próbaoldal nem közöl valódi híreket.",
+    "description": "Iskolai hírek és sporttörténetek áttekinthető, kereshető formában.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "hirek-es-esemenyek"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "Az intézmény jóváhagyott hírei itt jelennek majd meg. A próbaoldal nem közöl valódi híreket.",
+  "tags": [],
+  "summary": "Iskolai hírek és sporttörténetek áttekinthető, kereshető formában.",
   "blocks": [
     {
-      "id": "block:039-intro",
+      "id": "block:000039-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Közlemények és beszámolók",
       "children": [
         {
-          "id": "block:039-lead",
+          "id": "block:000039-text-1",
           "type": "markdown",
           "data": {
-            "text": "Az intézmény jóváhagyott hírei itt jelennek majd meg. A próbaoldal nem közöl valódi híreket."
-          }
-        },
-        {
-          "id": "block:039-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** A gyűjtemény még nem tartalmaz ellenőrzött közzétételi tételeket."
+            "text": "A hírek feladata a pontos, könnyen követhető tájékoztatás. A felvételi programok, tanévi tudnivalók és iskolai sporteredmények külön témakörökben találhatók meg.\n\nA közölt tényekhez és időpontokhoz az intézmény eredeti oldalára mutató hivatkozás tartozik. A képes sportbemutató önálló, tematikus galériában marad."
           }
         }
       ]
@@ -54,7 +45,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/hirek-es-esemenyek/hirek",
     "verifiedContent": false,
     "bannerMediaId": "media:esemenyek"

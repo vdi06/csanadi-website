@@ -36,30 +36,30 @@
       "id": "media:hero",
       "kind": "image",
       "original": {
-        "path": "assets/media/web/hero-1600.webp",
+        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/hero-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 248214,
-        "sha256": "dacb351f86a9013094856b4e72dc05ef693ac7aebb76ffd949bd6fe85673a461"
+        "sizeBytes": 286734,
+        "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
       },
       "variants": [
         {
-          "path": "assets/media/web/hero-1600.webp",
+          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/hero-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 248214,
-          "sha256": "dacb351f86a9013094856b4e72dc05ef693ac7aebb76ffd949bd6fe85673a461"
+          "sizeBytes": 286734,
+          "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
         }
       ],
-      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
-      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
+      "alt": "Érkező diákok a sportakadémia bejáratánál",
+      "caption": "Életszerű, generált illusztráció a sportiskola reggeli érkezési hangulatáról.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
         "holder": "Csanádi Sportiskola – tervezési látványanyag",
-        "source": "2026. november 13. – mesterséges intelligenciával generált látványkép, fejlesztési előnézethez",
+        "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Csak belső fejlesztési előnézethez; nyilvános iskolai használat előtt külön jóváhagyás szükséges."
       }
     },
@@ -67,30 +67,30 @@
       "id": "media:iskolank",
       "kind": "image",
       "original": {
-        "path": "assets/media/web/iskolank-1600.webp",
+        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/iskolank-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 314032,
-        "sha256": "e5ca12da1f3cfa3502d2bbc8700ff91c0658e6be102e92805fb72b93cf62cc6a"
+        "sizeBytes": 266314,
+        "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
       },
       "variants": [
         {
-          "path": "assets/media/web/iskolank-1600.webp",
+          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/iskolank-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 314032,
-          "sha256": "e5ca12da1f3cfa3502d2bbc8700ff91c0658e6be102e92805fb72b93cf62cc6a"
+          "sizeBytes": 266314,
+          "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
         }
       ],
-      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
-      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
+      "alt": "Vidám iskolai sportnap a campuson",
+      "caption": "Életszerű, generált közösségi látványkép a campuséletről.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
         "holder": "Csanádi Sportiskola – tervezési látványanyag",
-        "source": "2026. november 13. – mesterséges intelligenciával generált látványkép, fejlesztési előnézethez",
+        "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Csak belső fejlesztési előnézethez; nyilvános iskolai használat előtt külön jóváhagyás szükséges."
       }
     },
@@ -98,30 +98,30 @@
       "id": "media:oktatas",
       "kind": "image",
       "original": {
-        "path": "assets/media/web/oktatas-1600.webp",
+        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/oktatas-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 187050,
-        "sha256": "a2c172c358039863179d38ce0826d1842439f2d0eac1031ab9a611f0ee529e1a"
+        "sizeBytes": 229154,
+        "sha256": "786744eb3f3c97e706da0b899719076b1d320c273950c20a086a54d59500f9eb"
       },
       "variants": [
         {
-          "path": "assets/media/web/oktatas-1600.webp",
+          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/oktatas-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 187050,
-          "sha256": "a2c172c358039863179d38ce0826d1842439f2d0eac1031ab9a611f0ee529e1a"
+          "sizeBytes": 229154,
+          "sha256": "786744eb3f3c97e706da0b899719076b1d320c273950c20a086a54d59500f9eb"
         }
       ],
-      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
-      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
+      "alt": "Együttműködő tanulás modern osztályteremben",
+      "caption": "Életszerű, generált oktatási jelenet együtt tanuló diákokkal.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
         "holder": "Csanádi Sportiskola – tervezési látványanyag",
-        "source": "2026. november 13. – mesterséges intelligenciával generált látványkép, fejlesztési előnézethez",
+        "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Csak belső fejlesztési előnézethez; nyilvános iskolai használat előtt külön jóváhagyás szükséges."
       }
     },
@@ -129,30 +129,30 @@
       "id": "media:sport",
       "kind": "image",
       "original": {
-        "path": "assets/media/web/sport-1600.webp",
+        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/sport-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 152090,
-        "sha256": "8b64536d918c4bb546d7bd81126625466ba75de489c20acc0946705b0379e85f"
+        "sizeBytes": 342632,
+        "sha256": "461395c1deda2d731b68339921526d8e25d79dc20609123e6ca53ec46b0e734a"
       },
       "variants": [
         {
-          "path": "assets/media/web/sport-1600.webp",
+          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/sport-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 152090,
-          "sha256": "8b64536d918c4bb546d7bd81126625466ba75de489c20acc0946705b0379e85f"
+          "sizeBytes": 342632,
+          "sha256": "461395c1deda2d731b68339921526d8e25d79dc20609123e6ca53ec46b0e734a"
         }
       ],
-      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
-      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
+      "alt": "Kék-arany fociedzés az akadémián",
+      "caption": "Életszerű, generált sportjelenet kültéri edzésről.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
         "holder": "Csanádi Sportiskola – tervezési látványanyag",
-        "source": "2026. november 13. – mesterséges intelligenciával generált látványkép, fejlesztési előnézethez",
+        "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Csak belső fejlesztési előnézethez; nyilvános iskolai használat előtt külön jóváhagyás szükséges."
       }
     },
@@ -160,30 +160,30 @@
       "id": "media:kozosseg",
       "kind": "image",
       "original": {
-        "path": "assets/media/web/kozosseg-1600.webp",
+        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/kozosseg-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 171864,
-        "sha256": "e4fa88a009abab28cb824e30958f8cea4c2aced9d573dbdcec8e355949d32262"
+        "sizeBytes": 254656,
+        "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
       },
       "variants": [
         {
-          "path": "assets/media/web/kozosseg-1600.webp",
+          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/kozosseg-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 171864,
-          "sha256": "e4fa88a009abab28cb824e30958f8cea4c2aced9d573dbdcec8e355949d32262"
+          "sizeBytes": 254656,
+          "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
         }
       ],
-      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
-      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
+      "alt": "Közös tanulás a modern könyvtárban",
+      "caption": "Életszerű, generált könyvtári közösségi látványkép.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
         "holder": "Csanádi Sportiskola – tervezési látványanyag",
-        "source": "2026. november 13. – mesterséges intelligenciával generált látványkép, fejlesztési előnézethez",
+        "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Csak belső fejlesztési előnézethez; nyilvános iskolai használat előtt külön jóváhagyás szükséges."
       }
     },
@@ -191,30 +191,30 @@
       "id": "media:felveteli",
       "kind": "image",
       "original": {
-        "path": "assets/media/web/felveteli-1600.webp",
+        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/felveteli-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 159630,
-        "sha256": "418314f39aae4dfb9e7d9e55a2f6035622067b0e3b8e0911d8e2d38ece453c28"
+        "sizeBytes": 286734,
+        "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
       },
       "variants": [
         {
-          "path": "assets/media/web/felveteli-1600.webp",
+          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/felveteli-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 159630,
-          "sha256": "418314f39aae4dfb9e7d9e55a2f6035622067b0e3b8e0911d8e2d38ece453c28"
+          "sizeBytes": 286734,
+          "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
         }
       ],
-      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
-      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
+      "alt": "Érkező diákok a sportakadémia bejáratánál",
+      "caption": "Életszerű, generált bevezető kép a felvételi tájékozódáshoz.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
         "holder": "Csanádi Sportiskola – tervezési látványanyag",
-        "source": "2026. november 13. – mesterséges intelligenciával generált látványkép, fejlesztési előnézethez",
+        "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Csak belső fejlesztési előnézethez; nyilvános iskolai használat előtt külön jóváhagyás szükséges."
       }
     },
@@ -222,30 +222,30 @@
       "id": "media:eredmenyek",
       "kind": "image",
       "original": {
-        "path": "assets/media/web/eredmenyek-1600.webp",
+        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/eredmenyek-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 206904,
-        "sha256": "17a4bb1294c3ba3955f53b20014bdc6ef2255e3721009de8b5901ff4579f2071"
+        "sizeBytes": 169604,
+        "sha256": "8566576bd8c959c40d6ad92e99f5795cd13c3ff3fb7e1c1620186616b84055ba"
       },
       "variants": [
         {
-          "path": "assets/media/web/eredmenyek-1600.webp",
+          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/eredmenyek-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 206904,
-          "sha256": "17a4bb1294c3ba3955f53b20014bdc6ef2255e3721009de8b5901ff4579f2071"
+          "sizeBytes": 169604,
+          "sha256": "8566576bd8c959c40d6ad92e99f5795cd13c3ff3fb7e1c1620186616b84055ba"
         }
       ],
-      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
-      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
+      "alt": "Iskolai díjátadó ünnepség",
+      "caption": "Életszerű, generált díjátadó-jelenet sport- és tanulmányi sikerekkel.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
         "holder": "Csanádi Sportiskola – tervezési látványanyag",
-        "source": "2026. november 13. – mesterséges intelligenciával generált látványkép, fejlesztési előnézethez",
+        "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Csak belső fejlesztési előnézethez; nyilvános iskolai használat előtt külön jóváhagyás szükséges."
       }
     },
@@ -253,30 +253,30 @@
       "id": "media:esemenyek",
       "kind": "image",
       "original": {
-        "path": "assets/media/web/esemenyek-1600.webp",
+        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/esemenyek-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 155052,
-        "sha256": "18c57003c7ee1dbcd0baf5be0f05340c0c60648213764f8c8207dd5951bbc935"
+        "sizeBytes": 266314,
+        "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
       },
       "variants": [
         {
-          "path": "assets/media/web/esemenyek-1600.webp",
+          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/esemenyek-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 155052,
-          "sha256": "18c57003c7ee1dbcd0baf5be0f05340c0c60648213764f8c8207dd5951bbc935"
+          "sizeBytes": 266314,
+          "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
         }
       ],
-      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
-      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
+      "alt": "Vidám iskolai sportnap a campuson",
+      "caption": "Életszerű, generált közösségi eseménykép.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
         "holder": "Csanádi Sportiskola – tervezési látványanyag",
-        "source": "2026. november 13. – mesterséges intelligenciával generált látványkép, fejlesztési előnézethez",
+        "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Csak belső fejlesztési előnézethez; nyilvános iskolai használat előtt külön jóváhagyás szükséges."
       }
     },
@@ -284,30 +284,30 @@
       "id": "media:kapcsolat",
       "kind": "image",
       "original": {
-        "path": "assets/media/web/kapcsolat-1600.webp",
+        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/kapcsolat-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 209718,
-        "sha256": "b2541024267001402cb843181a079fa11229c9c137957388c0fadba516c93a00"
+        "sizeBytes": 254656,
+        "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
       },
       "variants": [
         {
-          "path": "assets/media/web/kapcsolat-1600.webp",
+          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/kapcsolat-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 209718,
-          "sha256": "b2541024267001402cb843181a079fa11229c9c137957388c0fadba516c93a00"
+          "sizeBytes": 254656,
+          "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
         }
       ],
-      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
-      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
+      "alt": "Közös tanulás a modern könyvtárban",
+      "caption": "Életszerű, generált közösségi látványkép.",
       "decorative": false,
       "rights": {
         "clearance": "pending",
         "holder": "Csanádi Sportiskola – tervezési látványanyag",
-        "source": "2026. november 13. – mesterséges intelligenciával generált látványkép, fejlesztési előnézethez",
+        "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Csak belső fejlesztési előnézethez; nyilvános iskolai használat előtt külön jóváhagyás szükséges."
       }
     },
@@ -315,21 +315,30 @@
       "id": "media:siker-atletika",
       "kind": "image",
       "original": {
-        "path": "assets/media/web/siker-atletika.webp",
+        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-atletika.webp",
         "mimeType": "image/webp",
-        "width": 1100,
-        "height": 600,
-        "sizeBytes": 47132,
-        "sha256": "409c6d8afda5807ee695b60e9cb1ed0af5c010792f191f22f80717f839da1dd8"
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 229260,
+        "sha256": "b16a3377340e805f424483fce6018ae609a215304ad151bb73cfdc0ad46e3e1a"
       },
-      "variants": [],
-      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
-      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
+      "variants": [
+        {
+          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-atletika.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 229260,
+          "sha256": "b16a3377340e805f424483fce6018ae609a215304ad151bb73cfdc0ad46e3e1a"
+        }
+      ],
+      "alt": "Diadal a célvonalnál",
+      "caption": "Életszerű, generált atlétikai sikerjelenet.",
       "decorative": false,
       "rights": {
         "clearance": "preview-only",
         "holder": "2026-os honlapterv fejlesztési illusztrációja",
-        "source": "MI-generált, fiktív sportjelenet",
+        "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Fejlesztési bemutatásra; intézményi publikálás előtt ellenőrizendő."
       }
     },
@@ -337,21 +346,30 @@
       "id": "media:siker-kosarlabda",
       "kind": "image",
       "original": {
-        "path": "assets/media/web/siker-kosarlabda.webp",
+        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-kosarlabda.webp",
         "mimeType": "image/webp",
-        "width": 1100,
-        "height": 600,
-        "sizeBytes": 59432,
-        "sha256": "75d4318fb4b4cb309a8c9dfd79e961a94744221c6e906dd89398462e081e6c58"
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 219684,
+        "sha256": "1474a09b8adfb3830bdded2f4029b7e09341034ad3fd2f886765d9fd8be18123"
       },
-      "variants": [],
-      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
-      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
+      "variants": [
+        {
+          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-kosarlabda.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 219684,
+          "sha256": "1474a09b8adfb3830bdded2f4029b7e09341034ad3fd2f886765d9fd8be18123"
+        }
+      ],
+      "alt": "Intenzív kosárlabdaedzés az iskolai tornateremben",
+      "caption": "Életszerű, generált kosárlabdaedzés-jelenet.",
       "decorative": false,
       "rights": {
         "clearance": "preview-only",
         "holder": "2026-os honlapterv fejlesztési illusztrációja",
-        "source": "MI-generált, fiktív sportjelenet",
+        "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Fejlesztési bemutatásra; intézményi publikálás előtt ellenőrizendő."
       }
     },
@@ -359,21 +377,30 @@
       "id": "media:siker-uszas",
       "kind": "image",
       "original": {
-        "path": "assets/media/web/siker-uszas.webp",
+        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-uszas.webp",
         "mimeType": "image/webp",
-        "width": 1100,
-        "height": 600,
-        "sizeBytes": 56444,
-        "sha256": "8d4f5a974ec52618e35fda3429542e8b5d2049299ff3b188b56cd2f13c204e70"
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 276394,
+        "sha256": "63c099895ead15acee5b9b491dd15d37aa27629e5468e1bc70ce90b96cc898ba"
       },
-      "variants": [],
-      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
-      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
+      "variants": [
+        {
+          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-uszas.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 276394,
+          "sha256": "63c099895ead15acee5b9b491dd15d37aa27629e5468e1bc70ce90b96cc898ba"
+        }
+      ],
+      "alt": "Medencés csapatünneplés",
+      "caption": "Életszerű, generált úszósiker-jelenet.",
       "decorative": false,
       "rights": {
         "clearance": "preview-only",
         "holder": "2026-os honlapterv fejlesztési illusztrációja",
-        "source": "MI-generált, fiktív sportjelenet",
+        "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Fejlesztési bemutatásra; intézményi publikálás előtt ellenőrizendő."
       }
     },
@@ -381,21 +408,30 @@
       "id": "media:siker-roplabda",
       "kind": "image",
       "original": {
-        "path": "assets/media/web/siker-roplabda.webp",
+        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-roplabda.webp",
         "mimeType": "image/webp",
-        "width": 1100,
-        "height": 600,
-        "sizeBytes": 52374,
-        "sha256": "6cf34ebdc2047df162ad0d91e17b3cdf70e881911718a9557ccbb3fc0da0dca8"
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 165954,
+        "sha256": "623f6ef3ae6ca9550d4c8b8b884974749d0aa74ef93cae46f7e2e0f041c732b7"
       },
-      "variants": [],
-      "alt": "Sport- és iskolai életet bemutató tematikus illusztráció",
-      "caption": "Tematikus illusztráció; nem helyszíni dokumentumfelvétel.",
+      "variants": [
+        {
+          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-roplabda.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 165954,
+          "sha256": "623f6ef3ae6ca9550d4c8b8b884974749d0aa74ef93cae46f7e2e0f041c732b7"
+        }
+      ],
+      "alt": "Lendületes röplabdaakció az iskolai csarnokban",
+      "caption": "Életszerű, generált röplabda-jelenet.",
       "decorative": false,
       "rights": {
         "clearance": "preview-only",
         "holder": "2026-os honlapterv fejlesztési illusztrációja",
-        "source": "MI-generált, fiktív sportjelenet",
+        "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Fejlesztési bemutatásra; intézményi publikálás előtt ellenőrizendő."
       }
     }

@@ -10,4 +10,4 @@ function startupError(error){
   const hint=document.createElement('p');hint.textContent=location.protocol==='file:'?'Az oldal JSON-adatokkal működik, ezért HTTPS/HTTP-kiszolgáló szükséges. Használd a GitHub Pages-oldalt.':'Ha GitHubon teszteled: az index.html, script.js, js/, json/ és assets/ mappáknak a repository gyökerében kell lenniük.';
   shell.append(h,p,detail,hint);target.replaceChildren(shell);
 }
-import('./js/app.js?v=20261114g').then(({startApp})=>startApp()).catch(startupError);
+import('./js/app.js?v=20261114curated1').then(({startApp})=>startApp()).catch(startupError);

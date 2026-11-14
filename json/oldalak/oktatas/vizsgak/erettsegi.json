@@ -7,8 +7,8 @@
   "slug": "erettsegi",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Érettségi – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A hivatalos, aktuális érettségi tájékoztatók és dokumentumok későbbi gyűjtőoldala.",
+    "description": "A közzétett 2026-os őszi vizsgaidőpontok és a felkészülés forrásai.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A hivatalos, aktuális érettségi tájékoztatók és dokumentumok későbbi gyűjtőoldala.",
+  "tags": [],
+  "summary": "A közzétett 2026-os őszi vizsgaidőpontok és a felkészülés forrásai.",
   "blocks": [
     {
-      "id": "block:022-intro",
+      "id": "block:000022-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "2026 őszi vizsgaidőszak",
       "children": [
         {
-          "id": "block:022-lead",
+          "id": "block:000022-text-1",
           "type": "markdown",
           "data": {
-            "text": "A hivatalos, aktuális érettségi tájékoztatók és dokumentumok későbbi gyűjtőoldala."
+            "text": "Az intézmény közlése szerint a 2026-os őszi középszintű írásbelik között szerepel a földrajz és a magyar nyelv és irodalom október 12-én, a matematika október 13-án, a történelem október 14-én, valamint az angol nyelv október 15-én.\n\nA dolgozatok megtekintésére közzétett nap november 3., a középszintű szóbeli időpontja november 18. Az iskola az érkezés idejét és a felkészülési témaköröket is a saját hivatalos oldalán részletezi."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000022-section-2",
+      "type": "section",
+      "title": "Hivatalos időpontok és témakörök",
+      "children": [
         {
-          "id": "block:022-hint",
+          "id": "block:000022-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "[Érettségi vizsga – 2026 ősz](https://csanadi-bp.edu.hu/erettsegi.html)"
           }
         }
       ]
@@ -54,9 +59,9 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/oktatas/vizsgak/erettsegi",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:oktatas"
   }
 }

@@ -7,8 +7,8 @@
   "slug": "szuloi-informaciok",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,25 @@
   },
   "seo": {
     "title": "Szülői információk – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Szülői információk” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Ügyintézés, tájékozódás és a mindennapi együttműködés.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Szülői információk” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Ügyintézés, tájékozódás és a mindennapi együttműködés.",
   "blocks": [
     {
-      "id": "block:051-intro",
+      "id": "block:000051-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Iskolai kapcsolattartás",
       "children": [
         {
-          "id": "block:051-lead",
+          "id": "block:000051-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Szülői információk” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
-          }
-        },
-        {
-          "id": "block:051-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "A szülőknek fontos lehet a tanévi programok, a vizsgák, az étkezés, a beiratkozás és az igazolások pontos menete. A hivatalos intézményi közleményekből az adott időszakra érvényes részletek ellenőrizhetők.\n\nAz iskola titkárságának elérhetőségeit a Kapcsolat oldalon gyűjtöttük össze. A beiratkozás és a felvételi aktuális tudnivalói külön az Oktatás terület alatt érhetők el."
           }
         }
       ]
@@ -54,7 +45,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/informaciok/mindennapi-tudnivalok/szuloi-informaciok",
     "verifiedContent": false,
     "bannerMediaId": "media:kozosseg"

@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "page:000013",
   "pageType": "standard",
-  "menuLabel": "Általános iskolai képzés",
-  "title": "Általános iskolai képzés",
+  "menuLabel": "Általános iskola",
+  "title": "Általános iskola",
   "slug": "altalanos-iskola",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Általános iskolai képzés – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Általános iskolai képzés” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "A tanulási alapok, közösségi élmények és a mozgás fejlesztése.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Általános iskolai képzés” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "A tanulási alapok, közösségi élmények és a mozgás fejlesztése.",
   "blocks": [
     {
-      "id": "block:013-intro",
+      "id": "block:000013-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Az alapok megerősítése",
       "children": [
         {
-          "id": "block:013-lead",
+          "id": "block:000013-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Általános iskolai képzés” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "Az általános iskolai tanulásban a szövegértés, a számolási készség, a kíváncsiság és az önálló feladatmegoldás kap szerepet. A sportiskolai környezetben a mozgás öröme és a közösséghez tartozás szintén jelentős élmény lehet.\n\nAz iskolaválasztás előtt érdemes áttekinteni az intézmény pedagógiai programját, a beiratkozás aktuális feltételeit és a szükséges dokumentumokat."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000013-section-2",
+      "type": "section",
+      "title": "Beiratkozás",
+      "children": [
         {
-          "id": "block:013-hint",
+          "id": "block:000013-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "[Első évfolyamos beiskolázás – hivatalos oldal](https://csanadi-bp.edu.hu/altisk.html)"
           }
         }
       ]
@@ -54,7 +59,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/oktatas/kepzeseink/altalanos-iskola",
     "verifiedContent": false,
     "bannerMediaId": "media:oktatas"

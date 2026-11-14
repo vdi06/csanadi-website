@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "page:000031",
   "pageType": "hub",
-  "menuLabel": "Sport",
-  "title": "Sport",
+  "menuLabel": "Sportélet",
+  "title": "Sportélet",
   "slug": "sport",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,44 +19,25 @@
   },
   "seo": {
     "title": "Sport – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: Sportágak, csapatok, eredmények és az edzői munka áttekintése.",
+    "description": "Kitartás, sportágak, történetek és a Csanádi sportolói hagyománya.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "sport"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "Képes beszámolók, sportági történetek és a kapcsolódó eredményadatok egységes JSON-forrásból.",
+  "tags": [],
+  "summary": "Kitartás, sportágak, történetek és a Csanádi sportolói hagyománya.",
   "blocks": [
     {
-      "id": "block:sports-feed-news",
-      "type": "sports-successes",
-      "title": "A sportélet középpontjában",
-      "data": {
-        "view": "news",
-        "source": "adatok/sportsikerek.json",
-        "maxNews": 8
-      }
-    },
-    {
-      "id": "block:031-intro",
+      "id": "block:000031-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Sport a mindennapokban",
       "children": [
         {
-          "id": "block:031-lead",
+          "id": "block:000031-text-1",
           "type": "markdown",
           "data": {
-            "text": "Sportágak, csapatok, eredmények és az edzői munka áttekintése."
-          }
-        },
-        {
-          "id": "block:031-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+            "text": "A sport közösséget épít, célokat ad, és olyan készségeket fejleszt, amelyek az iskolai tanulásban is értékesek. A sportágak bemutatásánál a technikai ismeretek mellett szerepet kap a csapatmunka, a fegyelem és az egészséges életmód.\n\nA sporteredményeket az intézmény által közzétett, ellenőrizhető forrásokra alapozzuk. A képtár a mozgás és a közösség világát mutatja be tematikus illusztrációkon, nem konkrét személyek dokumentumfényképein."
           }
         }
       ]
@@ -64,7 +45,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/sport",
     "verifiedContent": false,
     "bannerMediaId": "media:sport"

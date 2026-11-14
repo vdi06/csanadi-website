@@ -7,8 +7,8 @@
   "slug": "hirek-es-esemenyek",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,25 @@
   },
   "seo": {
     "title": "Hírek és események – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: Iskolai és sporthírek, közlemények, események közös felülete.",
+    "description": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "hirek-es-esemenyek"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "Iskolai és sporthírek, közlemények, események közös felülete.",
+  "tags": [],
+  "summary": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum.",
   "blocks": [
     {
-      "id": "block:038-intro",
+      "id": "block:000038-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Tájékozódj egy helyen",
       "children": [
         {
-          "id": "block:038-lead",
+          "id": "block:000038-text-1",
           "type": "markdown",
           "data": {
-            "text": "Iskolai és sporthírek, közlemények, események közös felülete."
-          }
-        },
-        {
-          "id": "block:038-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+            "text": "Az iskolai hírek és események időrendben mutatják meg a közösség fontos időszakait. A közzétett információk mellé lehetőség szerint az intézmény eredeti közleményét kapcsoljuk.\n\nA keresővel és a kategóriaszűrővel az aktuális tájékoztatások és a korábbi bejegyzések között is eligazodhatsz. A naptár csak olyan programot jelöl eseményként, amelyhez ellenőrzött dátum társul."
           }
         }
       ]
@@ -54,7 +45,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/hirek-es-esemenyek",
     "verifiedContent": false,
     "bannerMediaId": "media:esemenyek"

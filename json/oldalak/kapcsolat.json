@@ -7,8 +7,8 @@
   "slug": "kapcsolat",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,53 +19,49 @@
   },
   "seo": {
     "title": "Kapcsolat – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: Az intézmény hiteles elérhetőségeit a szerkesztői ellenőrzés után lehet feltölteni.",
+    "description": "Az intézmény ellenőrzött elérhetőségei Budapesten.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "kapcsolat"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "Az intézmény hiteles elérhetőségeit a szerkesztői ellenőrzés után lehet feltölteni.",
+  "tags": [],
+  "summary": "Az intézmény ellenőrzött elérhetőségei Budapesten.",
   "blocks": [
     {
-      "id": "block:063-intro",
+      "id": "block:000063-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
       "children": [
         {
-          "id": "block:063-lead",
+          "id": "block:000063-text-1",
           "type": "markdown",
           "data": {
-            "text": "Az intézmény hiteles elérhetőségeit a szerkesztői ellenőrzés után lehet feltölteni."
-          }
-        },
-        {
-          "id": "block:063-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** Kérjük, az elérhetőségek közzététele előtt ellenőrizd a hivatalos forrásokat."
+            "text": "Cím: **1143 Budapest, Őrnagy utca 5–7.**\n\nTitkárság: **+36 30 267 82 08** és **+36 30 427 82 30**\n\nE-mail: **csanadi@csanadiiskola.hu**\n\nOM azonosító: **200346**\n\nA fenntartó a Közép-Pesti Tankerületi Központ. Címe: 1149 Budapest, Mogyoródi út 21. A telefonos és elektronikus elérhetőségeket az intézmény hivatalos kapcsolati oldala közli."
           }
         }
       ]
     },
     {
-      "id": "block:contact-notice",
-      "type": "card",
-      "data": {
-        "title": "Elérhetőségek ellenőrzés alatt",
-        "description": "A cím, telefonszám, e-mail cím és ügyfélfogadási idő csak intézményi megerősítés után jelenik meg."
-      },
-      "children": []
+      "id": "block:000063-section-2",
+      "type": "section",
+      "title": "Térkép és elérhetőség",
+      "children": [
+        {
+          "id": "block:000063-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "[Hivatalos kapcsolati oldal](https://csanadi-bp.edu.hu/kapcsolat.html) · [Útvonal tervezése](https://www.google.com/maps/search/?api=1&query=1143%20Budapest%20%C5%90rnagy%20utca%205-7)"
+          }
+        }
+      ]
     }
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/kapcsolat",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:kapcsolat"
   }
 }

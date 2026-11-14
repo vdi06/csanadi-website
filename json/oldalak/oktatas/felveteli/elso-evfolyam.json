@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "page:000017",
   "pageType": "standard",
-  "menuLabel": "Első évfolyamos beiskolázás",
-  "title": "Első évfolyamos beiskolázás",
+  "menuLabel": "Első évfolyamos beiratkozás",
+  "title": "Első évfolyamos beiratkozás",
   "slug": "elso-evfolyam",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Első évfolyamos beiskolázás – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Első évfolyamos beiskolázás” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Első évfolyamos beiskolázás” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források.",
   "blocks": [
     {
-      "id": "block:017-intro",
+      "id": "block:000017-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Első lépések",
       "children": [
         {
-          "id": "block:017-lead",
+          "id": "block:000017-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Első évfolyamos beiskolázás” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "A családok számára az első iskolai év egyszerre jelent új tanulási környezetet, közösséget és napi ritmust. A beiratkozás előtt célszerű áttekinteni az intézmény pedagógiai programját, az aktuális beiratkozási felhívást és az ügyintézés technikai feltételeit.\n\nA hivatalos beiskolázási oldalon a KRÉTA modul használatához és a szülői nyilatkozatokhoz kapcsolódó anyagok is szerepelnek. Ezekből mindig az adott felvételi időszakra érvényes változatot kell használni."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000017-section-2",
+      "type": "section",
+      "title": "Hivatalos anyagok",
+      "children": [
         {
-          "id": "block:017-hint",
+          "id": "block:000017-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "[Beiratkozási dokumentumok](https://csanadi-bp.edu.hu/altisk.html)"
           }
         }
       ]
@@ -54,7 +59,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/oktatas/felveteli/elso-evfolyam",
     "verifiedContent": false,
     "bannerMediaId": "media:felveteli"

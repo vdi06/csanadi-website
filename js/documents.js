@@ -124,7 +124,7 @@ function openPreview(doc){
  const head=el('div','doc-preview-head');head.append(el('div','doc-preview-title',doc.title),htmlButton('Bezárás ×','doc-close',()=>dialog.close()));dialog.append(head);
  const meta=el('div','doc-preview-meta');meta.append(makeTag(statusLabel(doc)),makeTag(KIND[doc.documentKind]),makeTag('Verzió '+doc.version),makeTag(formatDate(doc.publishedAt)));dialog.append(meta);
  dialog.append(el('p','doc-preview-summary',doc.summary));
- dialog.append(el('p','doc-preview-explain',doc.official?'Jóváhagyott intézményi dokumentum.':'Fejlesztési segédlet – nem hivatalos intézményi szabályzat vagy kiírás.'));
+ dialog.append(el('p','doc-preview-explain',doc.official?'Jóváhagyott intézményi dokumentum.':'Önálló tanulási segédlet, nem intézményi szabályzat.'));
  if(doc.status!=='withdrawn'&&doc.filePath){
   const iframe=el('iframe','doc-iframe');iframe.title=doc.title+' előnézete';iframe.loading='lazy';iframe.src=docURL(doc)+'#toolbar=1';dialog.append(iframe);
   const actions=el('div','doc-preview-actions');const open=el('a','btn btn-outline-secondary','Megnyitás új lapon');open.href=docURL(doc);open.target='_blank';open.rel='noopener noreferrer';
@@ -161,7 +161,7 @@ function renderCenterContents(mount,route,initial){
  if(!registry){mount.append(statusBanner(error||'A dokumentumadatok jelenleg nem érhetők el.','error'));return;}
  if(!registry.cats.has(state.category)&&state.category!=='all')state.category='all';
  if(!Object.hasOwn(VIEWS,state.view))state.view='cards';if(!Object.hasOwn(SORTS,state.sort))state.sort='newest';if(state.status!=='all'&&!Object.hasOwn(STATUS,state.status))state.status='published';
- const top=el('div','doc-center-head');top.append(el('p','doc-kicker','ELLENŐRZÖTT FÁJLHIVATKOZÁSOK · NYILVÁNOS SEGÉDLETEK'),el('h2',null,'Dokumentumközpont'),el('p','doc-lead','Dokumentumokat kereshetsz, szűrhetsz, megtekinthetsz és letölthetsz. A jelenlegi kiadványok általános fejlesztési segédletek, nem az iskola hivatalos szabályzatai.'));
+ const top=el('div','doc-center-head');top.append(el('p','doc-kicker','ELLENŐRZÖTT FÁJLHIVATKOZÁSOK · NYILVÁNOS SEGÉDLETEK'),el('h2',null,'Dokumentumközpont'),el('p','doc-lead','Dokumentumokat kereshetsz, szűrhetsz, megtekinthetsz és letölthetsz. A gyűjteményben általános tanulási segédletek böngészhetők. A hivatalos intézményi szabályzatok az iskola saját honlapjáról érhetők el.'));
  mount.append(top);
  const filters=el('div','doc-filters');
  const results=el('div','doc-results');

@@ -7,8 +7,8 @@
   "slug": "kozossegi-szolgalat",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Közösségi szolgálat – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Közösségi szolgálat” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Közösségi feladatok, együttműködés és felelősségvállalás.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Közösségi szolgálat” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Közösségi feladatok, együttműködés és felelősségvállalás.",
   "blocks": [
     {
-      "id": "block:057-intro",
+      "id": "block:000057-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Tevékeny részvétel",
       "children": [
         {
-          "id": "block:057-lead",
+          "id": "block:000057-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Közösségi szolgálat” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "A közösségi szolgálat a közösség érdekében végzett tevékenységek megismerésére ad alkalmat. A programok során fontos a szervezett együttműködés, az egyeztetés és a tevékenység dokumentálása.\n\nAz intézmény hivatalos oldala külön tájékoztatást, dokumentumokat és jogszabályi hátteret biztosít ehhez a témához. A kötelező feltételek részleteiért a hivatalos szabályozás az irányadó."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000057-section-2",
+      "type": "section",
+      "title": "Iskolai tájékoztatás",
+      "children": [
         {
-          "id": "block:057-hint",
+          "id": "block:000057-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+            "text": "[Közösségi szolgálat – hivatalos oldal](https://csanadi-bp.edu.hu/kozszol.html)"
           }
         }
       ]
@@ -54,7 +59,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/informaciok/kozossegi-szolgalat",
     "verifiedContent": false,
     "bannerMediaId": "media:kozosseg"

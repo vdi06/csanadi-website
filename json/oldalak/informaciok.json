@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "page:000047",
   "pageType": "hub",
-  "menuLabel": "Információk",
-  "title": "Információk",
+  "menuLabel": "Iskolai információk",
+  "title": "Iskolai információk",
   "slug": "informaciok",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,25 @@
   },
   "seo": {
     "title": "Információk – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: Mindennapi tudnivalók, dokumentumok és ügyintézési információk.",
+    "description": "Csengetési rend, dokumentumok, közösségi szolgálat és ügyintézés.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "Mindennapi tudnivalók, dokumentumok és ügyintézési információk.",
+  "tags": [],
+  "summary": "Csengetési rend, dokumentumok, közösségi szolgálat és ügyintézés.",
   "blocks": [
     {
-      "id": "block:047-intro",
+      "id": "block:000047-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "A mindennapokhoz szükséges tudnivalók",
       "children": [
         {
-          "id": "block:047-lead",
+          "id": "block:000047-text-1",
           "type": "markdown",
           "data": {
-            "text": "Mindennapi tudnivalók, dokumentumok és ügyintézési információk."
-          }
-        },
-        {
-          "id": "block:047-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+            "text": "A mindennapi ügyintézésben a pontos csengetési rend, az étkezés, a szülői tájékoztatás és az intézményi dokumentumok játszanak fontos szerepet. Az információs központ ezeket a témákat egy helyen teszi elérhetővé.\n\nA dokumentumoknál külön jelezzük az intézmény hivatalos forrásait, az általános segédleteket pedig ettől elkülönítve kezeljük."
           }
         }
       ]
@@ -54,7 +45,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/informaciok",
     "verifiedContent": false,
     "bannerMediaId": "media:kozosseg"

@@ -7,8 +7,8 @@
   "slug": "buszkesegeink",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Büszkeségeink – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Büszkeségeink” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Olimpiai és világbajnoki eredmények az iskola nyilvános büszkeséglistájáról.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "iskolank"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Büszkeségeink” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Olimpiai és világbajnoki eredmények az iskola nyilvános büszkeséglistájáról.",
   "blocks": [
     {
-      "id": "block:007-intro",
+      "id": "block:000007-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "A Csanádi sportolói öröksége",
       "children": [
         {
-          "id": "block:007-lead",
+          "id": "block:000007-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Büszkeségeink” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "Az intézmény hivatalos Büszkeségeink oldala olimpiai bajnokok, világ- és Európa-bajnokok hosszú sorát mutatja be. Ezek valóban közzétett, történeti sporteredmények, nem képes illusztrációkból következtetett sikerek.\n\nA névsorban például Kozák Danuta kajakos, Szabó Gabriella kajakos, Berki Krisztián tornász és Lőrincz Tamás birkózó is szerepel. A névhez és az eredményhez az intézményi forrást kapcsoljuk, nem egy másik személyt ábrázoló képet."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000007-section-2",
+      "type": "section",
+      "title": "Eredmények és további nevek",
+      "children": [
         {
-          "id": "block:007-hint",
+          "id": "block:000007-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "[Az iskola hivatalos büszkeséglistája](https://csanadi-bp.edu.hu/buszkeseg.html)"
           }
         }
       ]
@@ -54,9 +59,9 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/iskolank/buszkesegeink",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:eredmenyek"
   }
 }

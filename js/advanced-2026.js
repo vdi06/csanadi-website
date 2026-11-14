@@ -2,7 +2,7 @@
  * Közvetlenül a szigorúan validált, közzétehető JSON-adatokat használja.
  * Harmadik féltől származó tartalmat hozzájárulás nélkül nem tölt be.
  */
-import {renderDigitalClock} from './experience-2026.js?v=20261114g';
+import {renderDigitalClock} from './experience-2026.js?v=20261114curated1';
 const BASE='json/adatok/';
 const ZONE='Europe/Budapest';
 const e=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -29,7 +29,6 @@ let gateShowing=false;
 export function openEntrancePortal({force=false}={}){
  if(gateShowing)return;
  if(!force&&!['','#','#/'].includes(location.hash))return;
- if(!force&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
  const key='csanadi-portal-visit-v3';const today=dayISO(new Date());
  if(!force&&getStore(key)===today)return;
  if(!force)setStore(key,today);
@@ -39,16 +38,36 @@ export function openEntrancePortal({force=false}={}){
  for(const side of ['left','right']){const d=e('div','gate26-door gate26-'+side);add(d,e('div','gate26-bars'),e('div','gate26-crest','✦'));doors.append(d);}
  const content=e('div','gate26-content');const logo=e('img','gate26-logo');logo.src='assets/media/logo/csanadi-cimer-512.webp';logo.alt='Csanádi Sportiskola címer';logo.width=76;logo.height=76;
  const title=e('h2','', 'Lépj be a sport és a tudás világába');title.id='gate26-title';const desc=e('p','','Nyitva áll a Csanádi Sportiskola kapuja.');desc.id='gate26-description';
- const enter=btn('Kapunyitás és belépés','gate26-enter',()=>open());const skip=btn('Animáció átugrása','gate26-skip',()=>finish());
+ const enter=btn('Belépés az oldalra','gate26-enter',()=>open());const skip=btn('Animáció átugrása','gate26-skip',()=>finish());
  add(content,logo,e('span','gate26-eyebrow','CSANÁDI SPORTISKOLA · 2026'),title,desc,enter,skip);
  add(layer,scenery,glow,doors,content);document.body.append(layer);
- const oldFocus=document.activeElement;let done=false,finishTimer;
+ const oldFocus=document.activeElement;let done=false,opening=false,finishTimer;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
- function cleanup(){if(!layer.isConnected)return;layer.remove();gateShowing=false;if(oldFocus?.isConnected&&oldFocus!==document.body)oldFocus.focus?.();}
- function finish(){if(done)return;done=true;clearTimeout(finishTimer);layer.classList.add('gate26-finished');setTimeout(cleanup,reduced?0:360);}
- function open(){if(done||layer.classList.contains('gate26-open'))return;if(reduced){finish();return;}enter.disabled=true;enter.setAttribute('aria-disabled','true');layer.classList.add('gate26-open');finishTimer=setTimeout(finish,5700);}
- layer.addEventListener('keydown',ev=>{if(ev.key==='Escape'){ev.preventDefault();finish();}if(ev.key==='Tab'){const choices=[enter,skip];let index=choices.indexOf(document.activeElement);if(index!==-1){ev.preventDefault();choices[(index+(ev.shiftKey?1:-1)+2)%2].focus();}}});
- enter.focus(); // A kapu kizárólag a belépés gomb megnyomásakor nyílik.
+ const previousOverflow=document.body.style.overflow;
+ document.body.style.overflow='hidden';
+ function cleanup(){if(!layer.isConnected)return;layer.remove();document.body.style.overflow=previousOverflow;gateShowing=false;if(oldFocus?.isConnected&&oldFocus!==document.body)oldFocus.focus?.();}
+ function finish(){if(done)return;done=true;clearTimeout(finishTimer);layer.classList.add('gate26-finished');setTimeout(cleanup,reduced?0:470);}
+ function open(){
+  if(done||opening)return;
+  opening=true;
+  enter.disabled=true;
+  enter.textContent='A kapu nyílik…';
+  if(reduced){finish();return;}
+  layer.classList.add('gate26-open');
+  // A teljes 3D nyitás 4,8 másodperc; ezután finom áttűnés vezet az oldalra.
+  finishTimer=setTimeout(finish,5200);
+ }
+ layer.addEventListener('keydown',ev=>{
+  if(ev.key==='Escape'){ev.preventDefault();finish();}
+  if(ev.key==='Tab'){
+   const choices=opening?[skip]:[enter,skip];
+   const index=choices.indexOf(document.activeElement);
+   if(index!==-1){ev.preventDefault();choices[(index+(ev.shiftKey?-1:1)+choices.length)%choices.length].focus();}
+  }
+ });
+ enter.focus();
+ // Nincs automatikus open()/finish(): a felhasználó dönt a belépésről.
+
 }
 function bindPortalButton(){const replay=document.getElementById('portal-replay');if(replay&&!replay.dataset.wired){replay.dataset.wired='1';replay.addEventListener('click',()=>openEntrancePortal({force:true}));}}
 
@@ -78,7 +97,7 @@ export function renderBellPanel({expanded=false}={}){
   if(!scheduledToday&&!isExplicit){nowTitle.textContent='Ma nincs tanítási idősáv';status.textContent='Választhatsz egy napirendet az előnézethez.';}
   else if(active){nowTitle.textContent=`${active.number}. tanóra · ${active.start}–${active.end}`;status.textContent=`A tanóra ${active.end} órakor ér véget.`;}
   else if(next){nowTitle.textContent=info.seconds>0?'Szünet / következő tanóra': 'Tanítás előtt';status.textContent=`A következő óra ${next.start} órakor kezdődik.`;}
-  else {nowTitle.textContent='Idősávok áttekintése';status.textContent='A kiválasztott csengetési rend szemléltetése.';}
+  else {nowTitle.textContent='Idősávok áttekintése';status.textContent='A kiválasztott csengetési rend tanórái.';}
   count.textContent=(active||next)?(()=>{const seconds=Math.max(0,Math.ceil(info.seconds));return `${pad(Math.floor(seconds/3600))}:${pad(Math.floor(seconds%3600/60))}:${pad(seconds%60)}`;})():'—';
   progress.firstChild.style.width=(active?inRange(info.ratio*100,0,100):0)+'%';
   timeline.replaceChildren();rows.replaceChildren();
@@ -87,20 +106,20 @@ export function renderBellPanel({expanded=false}={}){
    const r=e('div','bell-row'+(active?.number===p.number?' bell-row-current':''));add(r,e('span','bell-row-nr',p.number+'. tanóra'),e('strong','',`${p.start}–${p.end}`));rows.append(r);
   }
   if(useClock){const marker=e('span','hub26-now-marker');marker.style.left=(inRange((n.minute-first)/width*100,0,100))+'%';marker.title='Jelenlegi idő';timeline.append(marker);}
-  summary.textContent=value.verifiedBySchool&&value.status==='verified'?'Az intézmény által jóváhagyott időbeosztás.':'Az időpontok szerkesztési előnézetek, nem az iskola hivatalos csengetési rendje.';
+  summary.textContent=value.verifiedBySchool&&value.status==='verified'?'Forrás: az iskola hivatalosan közzétett csengetési rendje.':'Az időpontok szerkesztési előnézetek, nem az iskola hivatalos csengetési rendje.';
  }
  picker.addEventListener('change',()=>{selected=picker.value;isExplicit=true;render();});
- load('csengetesi-rend.json').then(raw=>{value=validateBell(raw);validity.textContent=value.verifiedBySchool?'HITELESÍTETT':'ELŐNÉZET · NEM HIVATALOS';selected=value.defaultScheduleId;for(const s of value.schedules){const o=e('option','',s.name);o.value=s.id;picker.append(o);}picker.value=selected;render();}).catch(err=>{validity.textContent='Hiba';nowTitle.textContent='Az időrend nem érhető el';status.textContent=err.message;});
+ load('csengetesi-rend.json').then(raw=>{value=validateBell(raw);validity.textContent=value.verifiedBySchool?'HIVATALOS CSENGETÉSI REND':'TÁJÉKOZTATÓ ADATOK';selected=value.defaultScheduleId;for(const s of value.schedules){const o=e('option','',s.name);o.value=s.id;picker.append(o);}picker.value=selected;render();}).catch(err=>{validity.textContent='Hiba';nowTitle.textContent='Az időrend nem érhető el';status.textContent=err.message;});
  const tick=setInterval(()=>{if(!panel.isConnected){clearInterval(tick);return;}render();},1000);return panel;
 }
-export function renderBellCenter(){const wrap=e('section','experience-standalone');add(wrap,heading('TANÍTÁSI NAPOK','Digitális csengetési rend','Válassz különböző órasávokat, kövesd az idővonalat és az aktuális óra állapotát. A bemutató időpontok nem helyettesítik az intézmény hivatalos rendjét.'),renderBellPanel({expanded:true}));return wrap;}
+export function renderBellCenter(){const wrap=e('section','experience-standalone');add(wrap,heading('TANÍTÁSI NAPOK','Digitális csengetési rend','Kövesd az iskola hivatalosan közzétett tanóraidőpontjait, a budapesti időhöz igazított animált idővonalon.'),renderBellPanel({expanded:true}));return wrap;}
 
 // A naptárból csak kifejezetten közzétett és ellenőrzött, időponttal rendelkező esemény kerül exportálásra.
 function validateEvents(value){
  if(!value||value.schemaVersion!=='2.0.0'||value.collectionId!=='collection:esemenyek'||!Array.isArray(value.items)||!Array.isArray(value.categories))throw Error('Az esemény-JSON szerkezete nem megfelelő.');
  const ids=new Set(),categories=new Set(value.categories.map(x=>x.id));if(categories.size!==value.categories.length)throw Error('Ismétlődő eseménykategória.');
  return value.items.filter(x=>{if(!x||!/^esemeny:[a-z0-9-]+$/.test(x.id)||ids.has(x.id)||!categories.has(x.categoryId))throw Error('Érvénytelen eseményazonosító vagy kategória.');ids.add(x.id);if(x.status!=='published'||x.source?.verified!==true)return false;
-  const re=/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})$/;if(!re.test(x.startsAt)||!re.test(x.endsAt)||!Number.isFinite(Date.parse(x.startsAt))||Date.parse(x.endsAt)<=Date.parse(x.startsAt))throw Error('Hibás közzétett eseményidőpont.');
+  const re=/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})$/;if(!re.test(x.startsAt)||!Number.isFinite(Date.parse(x.startsAt))||(x.endsAt!==null&&(!re.test(x.endsAt)||Date.parse(x.endsAt)<=Date.parse(x.startsAt))))throw Error('Hibás közzétett eseményidőpont.');
   if(!['string'].includes(typeof x.title)||x.title.length<4)throw Error('Hibás eseménycím.');return true;
  }).sort((a,b)=>Date.parse(a.startsAt)-Date.parse(b.startsAt));
 }
@@ -111,7 +130,8 @@ const escapeICS=s=>String(s||'').replace(/\\/g,'\\\\').replace(/\r?\n/g,'\\n').r
 const toICSDate=s=>new Date(s).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
 function exportICS(items){if(!items.length)return false;
  const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Csanadi Sportiskola//Eseménynaptar//HU','CALSCALE:GREGORIAN','METHOD:PUBLISH'];const stamp=toICSDate(new Date().toISOString());
- items.forEach(x=>{lines.push('BEGIN:VEVENT',`UID:${x.id.replace(/[^a-z0-9:-]/gi,'')}@csanadi-website`,`DTSTAMP:${stamp}`,`DTSTART:${toICSDate(x.startsAt)}`,`DTEND:${toICSDate(x.endsAt)}`,`SUMMARY:${escapeICS(x.title)}`,`DESCRIPTION:${escapeICS(x.summary)}`,`LOCATION:${escapeICS(x.location||'')}`,'END:VEVENT');});lines.push('END:VCALENDAR');
+ items.forEach(x=>{const when=x.endsAt?[`DTSTART:${toICSDate(x.startsAt)}`,`DTEND:${toICSDate(x.endsAt)}`]:(()=>{const day=new Date(x.startsAt);const next=new Date(day.getTime()+86400000);const date=d=>{const parts=new Intl.DateTimeFormat('en-GB',{timeZone:ZONE,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(d);const get=type=>parts.find(p=>p.type===type)?.value||'';return get('year')+get('month')+get('day');};return [`DTSTART;VALUE=DATE:${date(day)}`,`DTEND;VALUE=DATE:${date(next)}`];})();
+  lines.push('BEGIN:VEVENT',`UID:${x.id.replace(/[^a-z0-9:-]/gi,'')}@csanadi-website`,`DTSTAMP:${stamp}`,...when,`SUMMARY:${escapeICS(x.title)}`,`DESCRIPTION:${escapeICS(x.summary)}`,`LOCATION:${escapeICS(x.location||'')}`,'END:VEVENT');});lines.push('END:VCALENDAR');
  const blob=new Blob([lines.join('\r\n')+'\r\n'],{type:'text/calendar;charset=utf-8'});const url=URL.createObjectURL(blob);const a=e('a');a.href=url;a.download=items.length===1?`${items[0].id.replace(':','-')}.ics`:'csanadi-esemenyek.ics';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000);return true;
 }
 const isoToUTC=s=>{const [y,m,d]=s.split('-').map(Number);return new Date(Date.UTC(y,m-1,d,12));};
@@ -143,8 +163,8 @@ export function renderCalendarPanel({expanded=false}={}){
   let dates=[];if(view==='month'){const offset=(dayIndex(start)+6)%7;for(let i=0;i<offset;i++)grid.append(e('span','calendar-blank'));for(let d=start;d<=end;d=dateShift(d,1))dates.push(d);}else if(view==='week'){for(let i=0;i<7;i++)dates.push(dateShift(start,i));}else dates=[focus];
   dates.forEach(d=>{const c=btn(d.slice(-2).replace(/^0/,''),'calendar-day',()=>{focus=d;if(view==='month'&&!expanded)view='day';draw();});c.setAttribute('aria-label',`${d}: ${(byDate.get(d)||[]).length} esemény`);if(d===localNow().iso)c.classList.add('is-today');if(d===focus)c.classList.add('is-selected');if(byDate.has(d))c.classList.add('has-event');grid.append(c);});
   const visible=visibleEvents();count.textContent=`${visible.length} hitelesített esemény`;exportButton.disabled=!visible.length;output.replaceChildren();
-  if(!visible.length)output.append(note('Erre az időszakra nincs közzétett, ellenőrzött esemény. A naptár a hivatalos időpontok jóváhagyása után automatikusan feltöltődik.'));
-  visible.slice(0,expanded?100:5).forEach(item=>{const card=e('article','hub26-event-card');add(card,e('span','hub26-event-kicker',dateLabel(item.startsAt)),e('h4','',item.title),e('p','',item.summary||''),e('p','',`${timeLabel(item.startsAt)}–${timeLabel(item.endsAt)}${item.location?' · '+item.location:''}`));const buttons=e('div','hub26-event-actions');const link=e('a','hub26-pill','Részletek ↗');link.href=/^#\/[a-z0-9\/-]+$/.test(item.route||'')?item.route:'#/hirek-es-esemenyek/esemenynaptar';add(buttons,link,btn('Naptárba (.ics)','hub26-pill',()=>exportICS([item])));card.append(buttons);output.append(card);});
+  if(!visible.length)output.append(note('Ebben az időszakban nincs közzétett, ellenőrzött program a naptárban.'));
+  visible.slice(0,expanded?100:5).forEach(item=>{const card=e('article','hub26-event-card');add(card,e('span','hub26-event-kicker',dateLabel(item.startsAt)),e('h4','',item.title),e('p','',item.summary||''),e('p','',`${timeLabel(item.startsAt)}${item.endsAt?'–'+timeLabel(item.endsAt):' · befejezés nem közölt'}${item.location?' · '+item.location:''}`));const buttons=e('div','hub26-event-actions');const link=e('a','hub26-pill','Részletek ↗');link.href=/^#\/[a-z0-9\/-]+$/.test(item.route||'')?item.route:'#/hirek-es-esemenyek/esemenynaptar';add(buttons,link,btn('Naptárba (.ics)','hub26-pill',()=>exportICS([item])));card.append(buttons);output.append(card);});
  }
  function apply(v){events=validateEvents(v);categories=v.categories;categorySelect.replaceChildren(allOption);for(const item of categories){const o=e('option','',item.label);o.value=item.id;categorySelect.append(o);}categorySelect.value=category;draw();}
  async function refresh(){try{apply(await load('esemenyek.json'));status.textContent=`Adatok ellenőrizve: ${new Intl.DateTimeFormat('hu-HU',{timeZone:ZONE,hour:'2-digit',minute:'2-digit'}).format(new Date())}. Csak jóváhagyott bejegyzések látszanak.`;}catch(err){status.textContent='Az események ellenőrzése nem sikerült: '+err.message;}}
@@ -159,7 +179,7 @@ function validateStaff(v){
  const ids=new Set();for(const s of v.staff){if(!/^staff:[a-z0-9-]+$/.test(s.id)||ids.has(s.id)||s.status!=='published'||s.publicApproved!==true||typeof s.fullName!=='string'||s.fullName.trim().length<5||!Array.isArray(s.teamIds)||!s.teamIds.every(id=>teamIDs.has(id))||!Array.isArray(s.subjects)||!s.subjects.every(x=>typeof x==='string')||typeof s.bio!=='string')throw Error('Érvénytelen vagy jóvá nem hagyott pedagógusadat az állományban.');ids.add(s.id);if(s.portrait&&!s.portraitApproved)throw Error('Jóvá nem hagyott portréfotó.');}
  return v;
 }
-export function renderStaffCenter(){const wrap=e('section','staff-center hub26-staff');wrap.append(heading('PEDAGÓGIAI KÖZÖSSÉG','Tantestület és munkaközösségek','Részletes, ellenőrzött profilrendszer név, szerepkör, oktatott tárgyak és kapcsolódó munkaterületek alapján.'));
+export function renderStaffCenter(){const wrap=e('section','staff-center hub26-staff');wrap.append(heading('PEDAGÓGIAI KÖZÖSSÉG','Tantestület és munkaközösségek','Ismerd meg az iskolai pedagógiai munkaterületeket és a tanulás, a sport, valamint a közösségi nevelés kapcsolatait.'));
  const toolbar=e('div','staff-toolbar'),search=e('input','staff-search');search.type='search';search.placeholder='Keresés név, tantárgy vagy munkaközösség szerint…';search.setAttribute('aria-label','Pedagógusok keresése');
  const mode=e('div','staff-filter-group');const groupBtn=btn('Munkaközösségek','staff-filter',()=>{tab='teams';draw();}),peopleBtn=btn('Pedagógusok','staff-filter',()=>{tab='people';draw();});const category=e('select','hub26-select');category.setAttribute('aria-label','Munkaterület szűrése');for(const [value,title] of [['all','Minden terület'],['oktatas','Oktatás'],['sport','Sport'],['kozosseg','Közösség']]){const opt=e('option','',title);opt.value=value;category.append(opt);}
  add(mode,peopleBtn,groupBtn);add(toolbar,search,category,mode);const total=e('p','hub26-note','Adatok betöltése…'),grid=e('div','staff-team-grid'),foot=e('p','hub26-note','');add(wrap,toolbar,total,grid,foot);let value=null,tab='teams';
@@ -170,7 +190,7 @@ export function renderStaffCenter(){const wrap=e('section','staff-center hub26-s
   else {const rows=value.staff.filter(x=>(cat==='all'||x.teamIds.some(id=>value.teams.find(t=>t.id===id)?.category===cat))&&matches(q,[x.fullName,x.role,x.bio,...x.subjects]));total.textContent=rows.length+' nyilvánosan jóváhagyott pedagógusprofil';rows.forEach(p=>{const card=e('article','hub26-staff-person');add(card,e('h3','',p.fullName),e('p','',p.role||''),e('p','',p.subjects.join(' · ')),btn('Részletes bemutatkozás ↗','hub26-pill',()=>showProfile(p)));grid.append(card);});}
   if(!grid.childElementCount)grid.append(note(tab==='people'?'Jelenleg nincs jóváhagyott, közzétehető pedagógusprofil. A személyes adatok csak intézményi jóváhagyás után kerülnek fel.':'Nincs találat; próbálj más keresést.'));
  }
- search.addEventListener('input',draw);category.addEventListener('change',draw);load('tantestulet.json').then(v=>{value=validateStaff(v);draw();foot.textContent='A munkaterületek bemutató csoportosítások; hivatalos intézményi besorolás csak megerősítés után jelenhet meg.';}).catch(err=>{grid.append(e('p','experience-error','A Tantestület adatbetöltési hibája: '+err.message));});return wrap;
+ search.addEventListener('input',draw);category.addEventListener('change',draw);load('tantestulet.json').then(v=>{value=validateStaff(v);if(!value.staff.length)peopleBtn.style.display='none';draw();foot.textContent='A pedagógiai területek bemutatása az általános iskolai, gimnáziumi és sportiskolai feladatkörökre épül.';}).catch(err=>{grid.append(e('p','experience-error','A Tantestület adatbetöltési hibája: '+err.message));});return wrap;
 }
 
 function validateSocial(v){if(!v||v.schemaVersion!=='2.0.0'||v.collectionId!=='collection:social-2026'||!Array.isArray(v.items))throw Error('A közösségi adatok szerkezete hibás.');const ids=new Set();for(const x of v.items){if(!/^social:[a-z0-9-]+$/.test(x.id)||ids.has(x.id)||!['Facebook','Instagram','YouTube','TikTok','LinkedIn'].includes(x.platform))throw Error('Hibás social hivatkozás.');ids.add(x.id);}return v;}

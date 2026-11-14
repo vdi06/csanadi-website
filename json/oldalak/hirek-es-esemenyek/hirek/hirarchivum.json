@@ -7,8 +7,8 @@
   "slug": "hirarchivum",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,25 @@
   },
   "seo": {
     "title": "Hírarchívum – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Hírarchívum” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Korábbi iskolai információk és közzétett történetek visszakeresése.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "hirek-es-esemenyek"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Hírarchívum” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Korábbi iskolai információk és közzétett történetek visszakeresése.",
   "blocks": [
     {
-      "id": "block:042-intro",
+      "id": "block:000042-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Időrend és visszakeresés",
       "children": [
         {
-          "id": "block:042-lead",
+          "id": "block:000042-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Hírarchívum” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
-          }
-        },
-        {
-          "id": "block:042-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** A gyűjtemény még nem tartalmaz ellenőrzött közzétételi tételeket."
+            "text": "Az archívumban a hírek kereséssel és kategóriák szerint is visszakereshetők. A korábbi időpontok nem kerülnek automatikusan a közelgő események közé, de tájékoztatási és történeti értékük megmaradhat.\n\nA korábbi tanévek vizsgái, felvételi eljárásai és sporteredményei időben elkülönítve szerepelnek, hogy ne lehessen őket aktuális határidőként értelmezni."
           }
         }
       ]
@@ -54,7 +45,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/hirek-es-esemenyek/hirek/hirarchivum",
     "verifiedContent": false,
     "bannerMediaId": "media:esemenyek"

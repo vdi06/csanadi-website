@@ -7,8 +7,8 @@
   "slug": "esemenynaptar",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,25 @@
   },
   "seo": {
     "title": "Eseménynaptár – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: Tanévi és sportesemények listájának, illetve naptárának felülete. Jelenleg nincs feltöltött, ellenőrzött esemény.",
+    "description": "Havi, heti és napi naptár az ellenőrzött intézményi eseményekkel.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "hirek-es-esemenyek"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "Tanévi és sportesemények listájának, illetve naptárának felülete. Jelenleg nincs feltöltött, ellenőrzött esemény.",
+  "tags": [],
+  "summary": "Havi, heti és napi naptár az ellenőrzött intézményi eseményekkel.",
   "blocks": [
     {
-      "id": "block:044-intro",
+      "id": "block:000044-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Programok és időpontok",
       "children": [
         {
-          "id": "block:044-lead",
+          "id": "block:000044-text-1",
           "type": "markdown",
           "data": {
-            "text": "Tanévi és sportesemények listájának, illetve naptárának felülete. Jelenleg nincs feltöltött, ellenőrzött esemény."
-          }
-        },
-        {
-          "id": "block:044-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** Eseményadatok ellenőrzése és jóváhagyása után a naptár automatikusan feltölthető."
+            "text": "Az eseménynaptárban a közzétett iskolai programok időpontjai kereshetők és szűrhetők. A 2026. novemberi gimnáziumi nyílt napokat az iskola hivatalos oldala alapján tüntetjük fel.\n\nA naptárba mentés az olyan időpontoknál is működik, amelyekhez a forrás csak kezdést közölt; ilyenkor az export nem állít be kitalált befejezési időt."
           }
         }
       ]
@@ -54,7 +45,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/hirek-es-esemenyek/esemenynaptar",
     "verifiedContent": false,
     "bannerMediaId": "media:esemenyek"

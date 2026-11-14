@@ -3,12 +3,12 @@
   "id": "page:000001",
   "pageType": "home",
   "menuLabel": "Kezdőoldal",
-  "title": "Kezdőoldal",
+  "title": "Csanádi Sportiskola – Sport, tanulás, közösség",
   "slug": "kezdolap",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T22:35:00+01:00",
@@ -19,16 +19,14 @@
   },
   "seo": {
     "title": "Kezdőoldal – Csanádi Sportiskola",
-    "description": "A Csanádi Árpád Sportiskola sportéletének és tanulóközösségének fejlesztési bemutatóoldala, kiemelt sportgalériával.",
+    "description": "A Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium honlapja: sportolói sikerek, oktatás, programok és mindennapi információk.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "kezdolap"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A sport, a tanulás és a közösség találkozása: látványos kezdőoldal, sportolóink történetei, részletesen felfedezhető oktatási és sporttartalmak.",
+  "tags": [],
+  "summary": "A Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium honlapja: sportolói sikerek, oktatás, programok és mindennapi információk.",
   "blocks": [
     {
       "id": "block:home-hero",
@@ -53,17 +51,13 @@
           {
             "id": "hero-2026-sport",
             "mediaId": "media:hero",
-            "eyebrow": "SPORT • TANULÁS • KÖZÖSSÉG",
-            "title": "Sportban és tanulásban is előre.",
-            "subtitle": "A Csanádi Árpád Sportiskola világában a kitartás, a tudás és a közös élmények egymást erősítik. Ismerd meg az iskolai élet legfontosabb területeit!",
+            "eyebrow": "BUDAPEST · ZUGLÓ · SPORTISKOLA",
+            "title": "Csanádi Sportiskola – minden nap új lehetőség",
+            "subtitle": "A sport, a tudás és a közösség találkozása Zuglóban.",
             "buttons": [
               {
                 "label": "Iskolánk bemutatása",
                 "href": "#/iskolank/bemutatkozas"
-              },
-              {
-                "label": "Képzéseink",
-                "href": "#/oktatas/kepzeseink"
               }
             ]
           },
@@ -72,15 +66,11 @@
             "mediaId": "media:eredmenyek",
             "eyebrow": "SPORTOLÓI TÖRTÉNETEK",
             "title": "Minden eredmény mögött történet áll.",
-            "subtitle": "A pályán megszerzett tapasztalat, a rendszeres gyakorlás és a csapattársak támogatása együtt formálja a sportolók fejlődését. Nézd meg sportági történeteinket!",
+            "subtitle": "A sport, a tudás és a közösség találkozása Zuglóban.",
             "buttons": [
               {
                 "label": "Sporteredmények",
                 "href": "#/sport/sporteredmenyek"
-              },
-              {
-                "label": "Sportágaink",
-                "href": "#/sport/sportagak"
               }
             ]
           },
@@ -89,7 +79,7 @@
             "mediaId": "media:oktatas",
             "eyebrow": "OKTATÁS • FELFEDEZÉS",
             "title": "A tudás új lehetőségeket nyit.",
-            "subtitle": "Képzési lehetőségek, tanulási utak és a mindennapokat segítő információk: minden fontos téma könnyen áttekinthető és összekapcsolt formában.",
+            "subtitle": "A sport, a tudás és a közösség találkozása Zuglóban.",
             "buttons": [
               {
                 "label": "Oktatási központ",
@@ -106,7 +96,7 @@
             "mediaId": "media:kozosseg",
             "eyebrow": "DIÁKÉLET • ÖSSZETARTOZÁS",
             "title": "Együtt többek lehetünk.",
-            "subtitle": "A sport és az oktatás mellett az együtt megélt pillanatok, a közösségi alkalmak és a hagyományok is alakítják az iskolai mindennapokat.",
+            "subtitle": "A sport, a tudás és a közösség találkozása Zuglóban.",
             "buttons": [
               {
                 "label": "Iskolánk világa",
@@ -123,7 +113,7 @@
             "mediaId": "media:felveteli",
             "eyebrow": "JÖVŐ • LEHETŐSÉGEK",
             "title": "A következő lépés itt kezdődik.",
-            "subtitle": "Ismerd meg az oktatási területeket, böngéssz a felvételi témák között, és tájékozódj a vizsgákhoz és tanévekhez kapcsolódó oldalakon.",
+            "subtitle": "A sport, a tudás és a közösség találkozása Zuglóban.",
             "buttons": [
               {
                 "label": "Felvételi központ",
@@ -141,7 +131,7 @@
     {
       "id": "block:home-sports-successes",
       "type": "sports-successes",
-      "title": "Sportolói sikereink",
+      "title": "Sportélet és büszkeségeink",
       "data": {
         "view": "home",
         "source": "adatok/sportsikerek.json",
@@ -151,7 +141,7 @@
     {
       "id": "block:home-live-dashboard",
       "type": "live-dashboard",
-      "title": "Sportélet és események – élő kimutatások",
+      "title": "Sporteredmények számokban",
       "data": {
         "sportsSource": "adatok/sportsikerek.json",
         "eventsSource": "adatok/esemenyek.json",
@@ -256,13 +246,6 @@
       "title": "Sport, tudás, közösség – egyetlen történet",
       "children": [
         {
-          "id": "block:home-desc",
-          "type": "markdown",
-          "data": {
-            "text": "**Tanulás és sport** — A weboldal új szerkezetében az oktatási és sportélet egymással összekapcsolva jelenik meg. A tényleges intézményi szövegek és hírek csak forrásellenőrzés után kerülnek bele."
-          }
-        },
-        {
           "id": "block:home-cards",
           "type": "cards",
           "data": {
@@ -337,18 +320,11 @@
           }
         }
       ]
-    },
-    {
-      "id": "block:home-status",
-      "type": "markdown",
-      "data": {
-        "text": "**Fejlesztői előnézet:** ez a GitHub Pages-en kipróbálható változat nem az iskola hivatalos, éles honlapja. A képek és a bemutató sporttörténetek szemléltető tartalmak; az intézményi adatok és eredmények közzététele ellenőrzött forrás alapján történhet."
-      }
     }
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/",
     "verifiedContent": false,
     "bannerMediaId": "media:hero"

@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "page:000021",
   "pageType": "hub",
-  "menuLabel": "Vizsgaközpont",
-  "title": "Vizsgaközpont",
+  "menuLabel": "Vizsgák",
+  "title": "Vizsgák",
   "slug": "vizsgak",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,25 @@
   },
   "seo": {
     "title": "Vizsgaközpont – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Vizsgaközpont” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Érettségi és osztályozó vizsgák: tájékoztatás és felkészülés.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Vizsgaközpont” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Érettségi és osztályozó vizsgák: tájékoztatás és felkészülés.",
   "blocks": [
     {
-      "id": "block:021-intro",
+      "id": "block:000021-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Felkészülés és pontos tájékozódás",
       "children": [
         {
-          "id": "block:021-lead",
+          "id": "block:000021-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Vizsgaközpont” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
-          }
-        },
-        {
-          "id": "block:021-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+            "text": "A vizsgákra való felkészülés során fontos a követelmények rendszerezése és az időbeosztás. A tantárgyi témaköröket, vizsgaidőpontokat és a jelentkezéssel kapcsolatos feltételeket mindig az intézmény aktuális hivatalos közlése alapján kell követni.\n\nA vizsgaközpont az érettségi, az osztályozó vizsgák és a kapcsolódó dokumentumok közötti eligazodást segíti."
           }
         }
       ]
@@ -54,7 +45,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/oktatas/vizsgak",
     "verifiedContent": false,
     "bannerMediaId": "media:oktatas"

@@ -3,7 +3,7 @@
   "collectionId": "collection:esemenyek",
   "timezone": "Europe/Budapest",
   "refreshSeconds": 60,
-  "description": "Dátum és naptárexport kizárólag ellenőrzött, közzétett programhoz. Bemutató témák nem meghirdetett események.",
+  "description": "Hivatalosan közölt események ellenőrizhető dátummal.",
   "categories": [
     {
       "id": "category:sport",
@@ -24,64 +24,36 @@
   ],
   "items": [
     {
-      "id": "esemeny:sportnap",
-      "title": "Sportnap és közösségi mozgás",
-      "summary": "A sportnap változatos, közösségépítő program lehet; a tényleges esemény időpontját csak hivatalos jóváhagyás után közöljük.",
-      "categoryId": "category:sport",
-      "status": "preview",
-      "startsAt": null,
+      "id": "esemeny:nyilt-nap-17",
+      "title": "Gimnáziumi nyílt nap",
+      "summary": "Nyílt nap a Csanádi Sportiskolában 2026. november 17-én. Az igazgatói tájékoztató 8:30-kor, az intézmény bemutatása 9:50-kor kezdődik. A befejezés időpontját az iskola közleménye nem adja meg.",
+      "categoryId": "category:admission",
+      "status": "published",
+      "startsAt": "2026-11-17T08:30:00+01:00",
       "endsAt": null,
-      "location": null,
-      "route": "#/hirek-es-esemenyek/esemenynaptar",
+      "location": "Csanádi Árpád Sportiskola, Budapest, Őrnagy utca 5–7.",
+      "route": "#/oktatas/felveteli/kilencedik-evfolyam",
       "source": {
-        "verified": false
+        "verified": true,
+        "url": "https://csanadi-bp.edu.hu/def.html"
       },
       "priority": 100
     },
     {
-      "id": "esemeny:nyilt-nap",
-      "title": "Nyílt nap és iskolabemutató",
-      "summary": "A nyílt nap segítheti a továbbtanulás előtt álló családokat. Az aktuális jelentkezési és időpontadatok intézményi megerősítésre várnak.",
+      "id": "esemeny:nyilt-nap-19",
+      "title": "Gimnáziumi nyílt nap",
+      "summary": "Nyílt nap a Csanádi Sportiskolában 2026. november 19-én. Az igazgatói tájékoztató 8:30-kor, az intézmény bemutatása 9:50-kor kezdődik. A befejezés időpontját az iskola közleménye nem adja meg.",
       "categoryId": "category:admission",
-      "status": "preview",
-      "startsAt": null,
+      "status": "published",
+      "startsAt": "2026-11-19T08:30:00+01:00",
       "endsAt": null,
-      "location": null,
-      "route": "#/oktatas/felveteli",
+      "location": "Csanádi Árpád Sportiskola, Budapest, Őrnagy utca 5–7.",
+      "route": "#/oktatas/felveteli/kilencedik-evfolyam",
       "source": {
-        "verified": false
+        "verified": true,
+        "url": "https://csanadi-bp.edu.hu/def.html"
       },
-      "priority": 90
-    },
-    {
-      "id": "esemeny:sportverseny",
-      "title": "Sportversenyek és eredmények",
-      "summary": "A sportversenyekről a sportág, helyszín, dátum, korcsoport és ellenőrzött eredmény birtokában készülhet részletes eseménylap.",
-      "categoryId": "category:competition",
-      "status": "preview",
-      "startsAt": null,
-      "endsAt": null,
-      "location": null,
-      "route": "#/sport/sporteredmenyek",
-      "source": {
-        "verified": false
-      },
-      "priority": 80
-    },
-    {
-      "id": "esemeny:kozosseg",
-      "title": "Diákélet és közösségi programok",
-      "summary": "Az iskolai közösségi programokhoz képes beszámolók, dokumentumok és meghívók kapcsolhatók. Az itt látható kártya a modul működését szemlélteti.",
-      "categoryId": "category:community",
-      "status": "preview",
-      "startsAt": null,
-      "endsAt": null,
-      "location": null,
-      "route": "#/hirek-es-esemenyek",
-      "source": {
-        "verified": false
-      },
-      "priority": 70
+      "priority": 100
     }
   ]
 }

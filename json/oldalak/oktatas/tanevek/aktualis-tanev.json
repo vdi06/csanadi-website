@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "page:000026",
   "pageType": "standard",
-  "menuLabel": "Aktuális tanév",
-  "title": "Aktuális tanév",
+  "menuLabel": "Aktuális tanév – 2026/2027",
+  "title": "Aktuális tanév – 2026/2027",
   "slug": "aktualis-tanev",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Aktuális tanév – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Aktuális tanév” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Aktuális tanév” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi.",
   "blocks": [
     {
-      "id": "block:026-intro",
+      "id": "block:000026-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Tanévkezdés és tájékozódás",
       "children": [
         {
-          "id": "block:026-lead",
+          "id": "block:000026-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Aktuális tanév” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "Az iskola közzétett tanévnyitó-tájékoztatója szerint a 2026/2027-es tanév első tanítási napja 2026. szeptember 1., a tanévnyitó ünnepség 9:00 órakor kezdődött.\n\nA tanév további részében a vizsgaidőszakok és az intézményi események időpontjait a hivatalos tájékoztatás alapján frissítjük. A részletes csengetési rend a Mindennapi tudnivalók között található."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000026-section-2",
+      "type": "section",
+      "title": "Események időrendben",
+      "children": [
         {
-          "id": "block:026-hint",
+          "id": "block:000026-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "[Hivatalos aktuális közlemények](https://csanadi-bp.edu.hu/def.html)"
           }
         }
       ]
@@ -54,9 +59,9 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/oktatas/tanevek/aktualis-tanev",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:oktatas"
   }
 }

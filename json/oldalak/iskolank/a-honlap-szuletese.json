@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000066",
+  "pageType": "standard",
+  "menuLabel": "A honlap születése",
+  "title": "A honlap születése – emberi döntések és digitális segítség",
+  "slug": "a-honlap-szuletese",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "A honlap születése – emberi döntések és digitális segítség – Csanádi Sportiskola",
+    "description": "Hogyan születik egy korszerű iskolai honlap, és miként segítheti a mesterséges intelligencia az emberi fejlesztőmunkát?",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "iskolank"
+  ],
+  "tags": [
+    "honlap",
+    "webfejlesztes",
+    "mesterseges-intelligencia",
+    "emberi-felelosseg"
+  ],
+  "summary": "Hogyan születik egy korszerű iskolai honlap, és miként segítheti a mesterséges intelligencia az emberi fejlesztőmunkát?",
+  "blocks": [
+    {
+      "id": "block:000066-section-1",
+      "type": "section",
+      "title": "A megújuló digitális találkozási pont",
+      "children": [
+        {
+          "id": "block:000066-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "Egy iskola honlapja nem pusztán oldalak, menüpontok és képek gyűjteménye. Olyan közös információs tér, ahol a tanulók, a családok, a pedagógusok, a sportolók és az érdeklődők a számukra fontos tudnivalókat keresik. Egy jól működő honlapnak ezért egyszerre kell áttekinthetőnek, hozzáférhetőnek, informatívnak és megbízhatónak lennie.\n\nA Csanádi Sportiskola 2026-os weboldalának megújítását ez a szempont vezeti. A cél, hogy az iskola hagyományai, az oktatás, a sporteredmények, a hétköznapi tudnivalók és a közösségi élet egymással összekapcsolva jelenjenek meg. Az új felület a gyors tájékozódást éppúgy támogatja, mint az elmélyültebb olvasást, a keresést és a képes történetmesélést."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000066-section-2",
+      "type": "section",
+      "title": "Az első lépés: kérdések és tudatos döntések",
+      "children": [
+        {
+          "id": "block:000066-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Egy weboldal minőségét nem az határozza meg, hány látványos elemet sikerül elhelyezni rajta. A fontosabb kérdés az, hogy az egyes megoldások mit tesznek hozzá a látogató élményéhez. Meg kell határozni, milyen témák fontosak az intézménynek, hogyan kapcsolódnak az oldalak, mit kell gyorsan megtalálni, és mely információknál szükséges különösen pontos, rendszeresen ellenőrzött tartalom.\n\nA tervezés ezért a célok, a menüszerkezet, a hozzáférhetőség, az arculat és az adatkezelés átgondolásával kezdődött. A feladatok sorrendje is számított: előbb az alapokat és az összefüggéseket kellett tisztázni, majd ezekre lehetett felépíteni a képgalériákat, a keresőt, az eseménynaptárt, a dokumentumtárat és más interaktív felületeket."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000066-section-3",
+      "type": "section",
+      "title": "Arculat, amelyben a hagyomány és a jelen találkozik",
+      "children": [
+        {
+          "id": "block:000066-text-3",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskola címerének, sportos karakterének és közösségi értékeinek megőrzése mellett olyan vizuális világot kerestünk, amely korszerű, de nem öncélúan harsány. A sötétkék, a törtfehér és az arany színek egymást kiegészítve jelennek meg, a világos és sötét megjelenés pedig ugyanannak az egységes arculatnak két változata.\n\nA mozgó képsávok, a sportági motívumok, a kapunyitó jelenet és az animációk az élményt gazdagíthatják, de csak akkor hasznosak, ha közben az oldal könnyen kezelhető marad. Fontos szempont a telefonos használat, a jól olvasható szöveg, a billentyűzetes navigáció és a csökkentett mozgást előnyben részesítő látogatók igényeinek figyelembevétele is."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000066-section-4",
+      "type": "section",
+      "title": "A háttérben: átgondolt tartalom és szervezett adatok",
+      "children": [
+        {
+          "id": "block:000066-text-4",
+          "type": "markdown",
+          "data": {
+            "text": "A látható honlap mögött sok olyan munka zajlik, amely a látogató számára szinte észrevétlen. Egy hírnek, egy dokumentumnak vagy egy oldalnak megfelelő címet, leírást, elérési utat és kapcsolódásokat kell kapnia. A csengetési rendnek egyértelmű időpontokkal, az eseményeknek értelmezhető dátumokkal, a sporteredményeknek ellenőrizhető adatokkal kell rendelkezniük.\n\nA rendszer ezért strukturált JSON-adatokra és újrafelhasználható megjelenítőelemekre épül. Ez segít abban, hogy ugyanaz az információ több helyen is következetesen jelenjen meg, és a későbbi változtatások ne igényeljék minden oldal kézi újraszerkesztését. A technikai felépítés célja nem a bonyolultság, hanem a **pontosság, az átláthatóság és a hosszú távú fenntarthatóság**."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000066-section-5",
+      "type": "section",
+      "title": "Miben segített a mesterséges intelligencia?",
+      "children": [
+        {
+          "id": "block:000066-text-5",
+          "type": "markdown",
+          "data": {
+            "text": "A honlap fejlesztésében a mesterséges intelligencia jelentős segítséget nyújtott. Különösen ott bizonyult hasznosnak, ahol egy feladat sok ismétlődő lépésből állt, nagy mennyiségű szöveg vagy strukturált adat átnézését igényelte, illetve több megoldási változat gyors összehasonlítására volt szükség.\n\nSegített ötleteket rendszerezni, szövegvázlatokat és szerkezeti javaslatokat készíteni, egyes programozási feladatokat előkészíteni, kódrészleteket átvizsgálni, adatkapcsolatokat ellenőrizni és hibalehetőségeket feltárni. A források feltérképezésében és bizonyos rutinszerű ellenőrzésekben is támogatta a munkát. Ezek a lehetőségek gyorsíthatják a fejlesztést, és több időt hagyhatnak arra, ami valóban emberi figyelmet kíván: a célok tisztázására, a tartalom megértésére és a minőség értékelésére."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000066-section-6",
+      "type": "section",
+      "title": "Miért nélkülözhetetlen az emberi irányítás?",
+      "children": [
+        {
+          "id": "block:000066-text-6",
+          "type": "markdown",
+          "data": {
+            "text": "A mesterséges intelligencia használata nem azt jelenti, hogy a fejlesztés önállóan, emberi döntések nélkül történik. Valakinek meg kell fogalmaznia, mi készüljön el, milyen színvonalon, milyen korlátokkal és milyen felelősséggel. A jó eredményhez világos feladatmeghatározás, következetes visszajelzés és gyakran többszöri javítás szükséges.\n\nAz automatizált rendszer válaszokat és javaslatokat állít elő a kapott utasítások és a rendelkezésére álló mintázatok alapján. Képes összetett feladatokban is közreműködni, de **nem helyettesíti az intézmény szempontjainak ismeretét, a közösség iránti felelősséget és az emberi mérlegelést**. A végső tartalmi döntés, a közzététel jóváhagyása, a megfelelő utasítások megadása és az eredmény vállalása emberi feladat marad."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000066-section-7",
+      "type": "section",
+      "title": "Ellenőrzés nélkül nincs megbízható eredmény",
+      "children": [
+        {
+          "id": "block:000066-text-7",
+          "type": "markdown",
+          "data": {
+            "text": "Egy technikailag helyesnek látszó megoldás is tartalmazhat hibát. Egy program elindulhat úgy, hogy valamelyik menüpontja nem működik megfelelően; egy adatlap lehet szépen formázott, miközben hibás dátumot tartalmaz; egy magabiztosan megfogalmazott állítás pedig lehet pontatlan. A fejlesztés ezért nem ér véget a tartalom előállításánál.\n\nA munka része a JSON-fájlok és a hivatkozások ellenőrzése, a navigáció kipróbálása, a különböző képernyőméretek vizsgálata és a hibák javítása. Legalább ilyen fontos a források ellenőrzése. A hivatalos iskolai tényekhez hiteles intézményi forrást kell keresni; ha egy adat még nem ellenőrzött, nem szabad biztos információként megjelentetni. Az emberi ellenőrzés és az automatizált tesztelés itt egymást erősíti."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000066-section-8",
+      "type": "section",
+      "title": "Képek, személyes adatok és hitelesség",
+      "children": [
+        {
+          "id": "block:000066-text-8",
+          "type": "markdown",
+          "data": {
+            "text": "Egy iskolai honlap vizuális világa sokat hozzátesz a tájékozódáshoz, ezért szükség van jó minőségű, változatos képekre. Ugyanakkor alapvető különbség van egy tematikus illusztráció és egy valóban megtörtént iskolai esemény dokumentumfotója között. A kétféle tartalmat nem szabad összekeverni, különösen akkor, ha név szerint azonosítható sportoló, pedagógus vagy tanuló szerepel az oldalon.\n\nA személyes adatok megjelenítésénél az iskolai közösség tagjainak érdekeit és a közzététel feltételeit is figyelembe kell venni. A részletes tanári profilok és az eseménybeszámolók akkor válnak hitelessé, ha a szükséges adatok és képek megfelelő jóváhagyással állnak rendelkezésre. A fejlesztés egyik fontos tanulsága: **a látvány és a tartalmi igazság nem választható el egymástól**."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000066-section-9",
+      "type": "section",
+      "title": "A gondolkodás és az eszköz kapcsolatáról",
+      "children": [
+        {
+          "id": "block:000066-text-9",
+          "type": "markdown",
+          "data": {
+            "text": "A mesterséges intelligencia fejlődése új kérdéseket vet fel arról, hogyan dolgozunk, tanulunk és hozunk döntéseket. Egyre több olyan részfeladatban lehet segítségünkre, amelyhez korábban hosszú, ismétlődő kézi munka kellett. Ez értékes lehetőség, de nem jelenti azt, hogy minden javaslatát mérlegelés nélkül el kellene fogadnunk.\n\nAz emberi gondolkodás nem csupán lehetséges válaszok előállítása. Hozzátartozik a célok kijelölése, a tapasztalat, a közösségi értékek figyelembevétele, a következmények mérlegelése és a felelősség vállalása. A technológia lehet egyre ügyesebb segítőtárs; attól azonban, hogy egy rendszer egyre jobb válaszokat képes adni, **a tudatos döntés és a felelős felhasználás szerepe nem csökken, hanem felértékelődik**."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000066-section-10",
+      "type": "section",
+      "title": "Egy honlap, amely folyamatosan fejlődhet",
+      "children": [
+        {
+          "id": "block:000066-text-10",
+          "type": "markdown",
+          "data": {
+            "text": "A digitális felület akkor marad értékes, ha az elkészülte után is gondozzák. Új hírek, sporteredmények, tanévi információk, dokumentumok és közösségi történetek jelenhetnek meg rajta. A tartalmak frissítése mellett a hozzáférhetőség, a biztonság, az adatminőség és a látogatói visszajelzések vizsgálata is fontos.\n\nA honlap története ezért nem egyetlen elkészült képernyőképről szól. Sok apró döntés, ellenőrzés és javítás eredménye, amelyben a digitális eszközök és a mesterséges intelligencia hasznos segítséget adhatnak, de az irányt az emberi szándék és felelősség határozza meg. Ez ugyanaz a szemlélet, amelyet a [digitális kultúra szerepét bemutató oldalunkon](#/oktatas/digitalis-kultura) is fontosnak tartunk."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [
+    "page:000065"
+  ],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/iskolank/a-honlap-szuletese",
+    "verifiedContent": false,
+    "bannerMediaId": "media:iskolank"
+  }
+}

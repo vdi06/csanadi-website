@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "page:000008",
   "pageType": "standard",
-  "menuLabel": "ÖKO-iskola",
-  "title": "ÖKO-iskola",
+  "menuLabel": "Ökoiskolai szemlélet",
+  "title": "Ökoiskolai szemlélet",
   "slug": "oko-iskola",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "ÖKO-iskola – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „ÖKO-iskola” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Környezettudatosság, egészséges életmód és felelős közösség.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "iskolank"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „ÖKO-iskola” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Környezettudatosság, egészséges életmód és felelős közösség.",
   "blocks": [
     {
-      "id": "block:008-intro",
+      "id": "block:000008-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Természet és mindennapok",
       "children": [
         {
-          "id": "block:008-lead",
+          "id": "block:000008-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „ÖKO-iskola” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "Az intézmény hivatalos ÖKO Iskola oldala a fenntarthatósági ismeretek és a környezeti nevelés szerepét hangsúlyozza. A természet védelme, a takarékosság és a tudatos döntések a diákok számára kézzelfogható feladatokká válhatnak.\n\nA közösségi programok, a kirándulások és a sport is alkalmat teremthetnek arra, hogy a diákok a környezetükre figyeljenek, és saját lehetőségeikhez mérten cselekedjenek."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000008-section-2",
+      "type": "section",
+      "title": "Kapcsolódó forrás",
+      "children": [
         {
-          "id": "block:008-hint",
+          "id": "block:000008-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "[ÖKO Iskola – intézményi tájékoztatás](https://csanadi-bp.edu.hu/oko.html)"
           }
         }
       ]
@@ -54,9 +59,9 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/iskolank/oko-iskola",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:iskolank"
   }
 }

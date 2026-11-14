@@ -7,8 +7,8 @@
   "slug": "dokumentumtar",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Dokumentumtár – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: Hivatalos dokumentumok kereshető gyűjteménye. Ellenőrizetlen fájlokat nem teszünk közzé.",
+    "description": "Kereshető szabályzatok, hivatalos források és letölthető tanulási segédletek.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "Hivatalos dokumentumok kereshető gyűjteménye. Ellenőrizetlen fájlokat nem teszünk közzé.",
+  "tags": [],
+  "summary": "Kereshető szabályzatok, hivatalos források és letölthető tanulási segédletek.",
   "blocks": [
     {
-      "id": "block:052-intro",
+      "id": "block:000052-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Hivatalos intézményi dokumentumok",
       "children": [
         {
-          "id": "block:052-lead",
+          "id": "block:000052-text-1",
           "type": "markdown",
           "data": {
-            "text": "Hivatalos dokumentumok kereshető gyűjteménye. Ellenőrizetlen fájlokat nem teszünk közzé."
+            "text": "Az iskola hivatalos dokumentumtárában megtalálható a pedagógiai program, a házirend, a szervezeti és működési szabályzat, valamint az adatkezelési tájékoztató. Ezeket közvetlen, eredeti intézményi hivatkozásokon keresztül érheted el.\n\nA beépített dokumentumkeresőben külön, önállóan használható tanulási segédletek is elérhetők PDF-ként."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000052-section-2",
+      "type": "section",
+      "title": "Hivatalos dokumentumok",
+      "children": [
         {
-          "id": "block:052-hint",
+          "id": "block:000052-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+            "text": "[Pedagógiai program (PDF)](https://csanadi-bp.edu.hu/docs/pedprogram.pdf) · [Házirend (PDF)](https://csanadi-bp.edu.hu/docs/Hazirend.pdf) · [SZMSZ (PDF)](https://csanadi-bp.edu.hu/docs/szmsz.pdf) · [Teljes dokumentumjegyzék](https://csanadi-bp.edu.hu/docs.html)"
           }
         }
       ]
@@ -54,7 +59,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/informaciok/dokumentumtar",
     "verifiedContent": false,
     "bannerMediaId": "media:kozosseg"

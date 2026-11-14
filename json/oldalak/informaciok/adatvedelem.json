@@ -7,8 +7,8 @@
   "slug": "adatvedelem",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Adatvédelem – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Adatvédelem” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Személyes adatok, dokumentumok és biztonságos digitális tájékozódás.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Adatvédelem” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Személyes adatok, dokumentumok és biztonságos digitális tájékozódás.",
   "blocks": [
     {
-      "id": "block:062-intro",
+      "id": "block:000062-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Adatkezelési tájékozódás",
       "children": [
         {
-          "id": "block:062-lead",
+          "id": "block:000062-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Adatvédelem” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "Az iskolai ügyintézés és a digitális felületek használata során fontos, hogy a személyes adatok célhoz kötötten, a megfelelő tájékoztatás mellett kerüljenek kezelésre.\n\nA hivatalos intézményi adatkezelési tájékoztató és szabályzat a dokumentumtárban érhető el. A fejlesztett honlap nem tesz közzé nem jóváhagyott tanári profilt vagy személyes elérhetőséget."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000062-section-2",
+      "type": "section",
+      "title": "Hivatalos dokumentumok",
+      "children": [
         {
-          "id": "block:062-hint",
+          "id": "block:000062-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "[Adatkezelés – intézményi dokumentumok](https://csanadi-bp.edu.hu/docs.html)"
           }
         }
       ]
@@ -54,7 +59,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/informaciok/adatvedelem",
     "verifiedContent": false,
     "bannerMediaId": "media:kozosseg"

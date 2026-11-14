@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "page:000050",
   "pageType": "standard",
-  "menuLabel": "Étkezés és ebédbefizetés",
-  "title": "Étkezés és ebédbefizetés",
+  "menuLabel": "Étkezés",
+  "title": "Étkezés",
   "slug": "etkezes",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Étkezés és ebédbefizetés – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Étkezés és ebédbefizetés” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Étkezési tájékoztatás és a kapcsolódó ügyintézési lehetőségek.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Étkezés és ebédbefizetés” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Étkezési tájékoztatás és a kapcsolódó ügyintézési lehetőségek.",
   "blocks": [
     {
-      "id": "block:050-intro",
+      "id": "block:000050-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Étkezés és lemondás",
       "children": [
         {
-          "id": "block:050-lead",
+          "id": "block:000050-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Étkezés és ebédbefizetés” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "Az intézmény hivatalos tájékoztatása szerint az étkezéshez internetes ügyintézési lehetőség is kapcsolódik. Az ebédbefizetéssel, megrendeléssel és lemondással kapcsolatos részletek a hivatalos étkezési oldalon találhatók.\n\nAz étlapokat és az aktuális megrendelési feltételeket mindig a megfelelő szolgáltató felületén kell ellenőrizni."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000050-section-2",
+      "type": "section",
+      "title": "Hivatalos információk",
+      "children": [
         {
-          "id": "block:050-hint",
+          "id": "block:000050-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "[Ebédbefizetés – intézményi tájékoztató](https://csanadi-bp.edu.hu/ebed.html)"
           }
         }
       ]
@@ -54,7 +59,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/informaciok/mindennapi-tudnivalok/etkezes",
     "verifiedContent": false,
     "bannerMediaId": "media:kozosseg"

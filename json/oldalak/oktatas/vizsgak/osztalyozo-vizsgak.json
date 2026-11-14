@@ -7,8 +7,8 @@
   "slug": "osztalyozo-vizsgak",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,25 @@
   },
   "seo": {
     "title": "Osztályozó vizsgák – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Osztályozó vizsgák” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Az önálló felkészülés és a hivatalos vizsgakövetelmények áttekintése.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Osztályozó vizsgák” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Az önálló felkészülés és a hivatalos vizsgakövetelmények áttekintése.",
   "blocks": [
     {
-      "id": "block:023-intro",
+      "id": "block:000023-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Tervezés és dokumentáció",
       "children": [
         {
-          "id": "block:023-lead",
+          "id": "block:000023-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Osztályozó vizsgák” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
-          }
-        },
-        {
-          "id": "block:023-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "Osztályozó vizsgára készülve a tananyagot célszerű témakörökre bontani, majd rendszeres önellenőrzéssel végighaladni az anyagon. A vizsgára jogosultságot, a jelentkezési teendőket és a számonkérés módját az intézmény hivatalos szabályozása határozza meg.\n\nA felkészüléshez elsősorban a megadott tantárgyi követelményeket, a pedagógus útmutatását és az intézményi tájékoztatókat érdemes használni. Az aktuális időpontot nem helyettesítjük általános becsléssel."
           }
         }
       ]
@@ -54,7 +45,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/oktatas/vizsgak/osztalyozo-vizsgak",
     "verifiedContent": false,
     "bannerMediaId": "media:oktatas"

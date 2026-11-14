@@ -7,8 +7,8 @@
   "slug": "kepzeseink",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Képzéseink – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Képzéseink” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Általános iskolai, gimnáziumi és sportiskolai tanulási utak.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Képzéseink” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Általános iskolai, gimnáziumi és sportiskolai tanulási utak.",
   "blocks": [
     {
-      "id": "block:012-intro",
+      "id": "block:000012-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Tudatos tanulmányi út",
       "children": [
         {
-          "id": "block:012-lead",
+          "id": "block:000012-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Képzéseink” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "A képzés kiválasztásakor érdemes a tanulmányi érdeklődést, az egyéni fejlődést és a sportolási terhelést egyszerre figyelembe venni. A Csanádi Árpád Sportiskola általános iskolai és gimnáziumi oktatást is biztosít.\n\nA sportiskolai nevelés célja nem a tanulmányi fejlődés háttérbe szorítása, hanem a sportbeli és iskolai feladatok egymással összeegyeztethető szervezése."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000012-section-2",
+      "type": "section",
+      "title": "Intézményi alapdokumentum",
+      "children": [
         {
-          "id": "block:012-hint",
+          "id": "block:000012-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+            "text": "[A 2026-os pedagógiai program képzési fejezete](https://csanadi-bp.edu.hu/docs/pedprogram.pdf)"
           }
         }
       ]
@@ -54,7 +59,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/oktatas/kepzeseink",
     "verifiedContent": false,
     "bannerMediaId": "media:oktatas"

@@ -3,14 +3,14 @@
 .portal-replay-btn span{font-weight:800}
 .gate26{position:fixed;inset:0;z-index:4500;overflow:hidden;background:#071729;color:#fff;isolation:isolate;perspective:1600px;display:grid;place-items:center}
 .gate26-scene{position:absolute;inset:-4%;background:linear-gradient(120deg,rgba(5,16,31,.43),rgba(3,12,26,.1)),url('assets/media/web/belepes-kapu.webp') center/cover no-repeat;transform:scale(1.23);transition:transform 5.1s cubic-bezier(.18,.72,.28,1);z-index:0}
-.gate26-glow{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.8;background:radial-gradient(ellipse at 50% 40%,rgba(255,220,147,.33),transparent 37%),linear-gradient(105deg,transparent 44%,rgba(251,206,108,.17) 49%,transparent 56%);mix-blend-mode:screen;transition:opacity 4.3s ease,transform 5.1s ease}
+.gate26-glow{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.8;background:radial-gradient(ellipse at 50% 40%,rgba(255,220,147,.33),transparent 37%),linear-gradient(105deg,transparent 44%,rgba(251,206,108,.17) 49%,transparent 56%);mix-blend-mode:screen;transition:opacity 3.4s ease,transform 5.0s ease}
 .gate26-doors{position:absolute;inset:0;display:flex;z-index:3;perspective:1500px;pointer-events:none}
-.gate26-door{width:50%;height:100%;position:relative;background:linear-gradient(95deg,#061525,#133755,#07182a);border:4px solid #ddb565;backface-visibility:hidden;box-shadow:inset 0 0 0 8px #051522,inset 0 0 0 13px #cea653,0 0 45px rgba(0,0,0,.46);transition:transform 5s cubic-bezier(.12,.73,.17,1),filter 5s ease;will-change:transform}
+.gate26-door{width:50%;height:100%;position:relative;background:linear-gradient(95deg,#061525,#133755,#07182a);border:4px solid #ddb565;backface-visibility:hidden;box-shadow:inset 0 0 0 8px #051522,inset 0 0 0 13px #cea653,0 0 45px rgba(0,0,0,.46);transition:transform 4.8s cubic-bezier(.14,.71,.18,1),filter 4.8s ease;will-change:transform}
 .gate26-left{transform-origin:0 50%;border-right:9px ridge #dbb15b}
 .gate26-right{transform-origin:100% 50%;border-left:9px ridge #dbb15b}
 .gate26-bars{position:absolute;inset:4%;border:3px solid #e1b85f;background:repeating-linear-gradient(90deg,transparent 0 8%,rgba(247,203,117,.8) 8.15% 8.85%,transparent 9.1% 14%),repeating-linear-gradient(0deg,transparent 0 23%,rgba(236,190,104,.52) 23.1% 24%,transparent 24.1% 47%)}
 .gate26-crest{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);font-size:clamp(75px,18vw,240px);line-height:1;color:rgba(247,213,140,.74);text-shadow:0 13px 33px #020b14}
-.gate26-content{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;max-width:910px;padding:20px 26px;text-shadow:0 2px 18px rgba(0,0,0,.85);transition:opacity 1.4s ease,transform 1.8s ease}
+.gate26-content{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;max-width:910px;padding:20px 26px;text-shadow:0 2px 18px rgba(0,0,0,.85);transition:opacity 1.0s ease,transform 1.7s ease}
 .gate26-logo{object-fit:contain;filter:drop-shadow(0 7px 15px #081526)}
 .gate26-eyebrow{color:#f7d489;letter-spacing:.25em;font-size:11px;font-weight:900}
 .gate26-content h2{font-size:clamp(36px,5.7vw,76px);line-height:1.04;letter-spacing:-.047em;font-weight:950;margin:5px 0}
@@ -211,3 +211,131 @@ html[data-theme="light"] .header-social a{color:#13283e!important}
 @media(prefers-reduced-motion:reduce){
  .hub26-timeblock,.hub26-now-marker,.gate26-logo,.gate26-glow{animation:none!important;transition:none!important}
 }
+
+/* A kapunyitás kizárólag a Belépés gombra indul; lassú, 4,8 mp-es animáció. */
+.gate26-enter:disabled{cursor:progress;opacity:.8}
+.gate26:not(.gate26-open):not(.gate26-finished) .gate26-doors{transform:none}
+
+/* 2026 / összehangolt, teljes világos és sötét arculat, egységes hat főmenü. */
+:root,html[data-theme="light"]{--navy:#122b46;--navy2:#214360;--gold:#c39a4a;--gold2:#ead09b;--ink:#182d40;--muted:#516477;--light:#f5ecdc;--line:#d8c9ad;--card:#fffcf6;--page:#f7f1e6;--shadow:0 16px 45px #17345118;color-scheme:light}
+html[data-theme="dark"]{--navy:#0b1d30;--navy2:#173b57;--gold:#d8b169;--gold2:#efdcaf;--ink:#f5edda;--muted:#c3cfda;--light:#1b3650;--line:#3a5770;--card:#142f48;--page:#0c2136;--shadow:0 18px 40px #0006;color-scheme:dark}
+body,.main-content{background-color:var(--page);color:var(--ink)}
+html[data-theme="light"] body{background-image:linear-gradient(136deg,#faf5e9db,#f5e9cddc),url('assets/graphics/sports-pattern-light.svg');background-attachment:fixed;background-size:cover,620px auto}
+html[data-theme="dark"] body{background-image:linear-gradient(140deg,#081e31ec,#0f2a43ec),url('assets/graphics/sports-pattern-dark.svg');background-attachment:fixed;background-size:cover,620px auto}
+html[data-theme="light"] .main-content,html[data-theme="dark"] .main-content{background:transparent!important;color:var(--ink)}
+
+/* Hat egyértelmű desktop menü; alatta csak a megmaradt és tartalommal feltöltött oldalak. */
+.desktop-nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;align-items:stretch;width:100%}
+.nav-mega-root{position:relative;min-width:0}
+.nav-mega-button{display:flex;align-items:center;justify-content:center;gap:9px;padding:17px 7px;cursor:pointer;list-style:none;border-bottom:3px solid transparent;color:inherit;font-size:clamp(12px,1.0vw,15px);font-weight:800;white-space:nowrap;user-select:none}
+.nav-mega-button::-webkit-details-marker{display:none}
+.nav-mega-root.active>.nav-mega-button,.nav-mega-root[open]>.nav-mega-button{border-bottom-color:var(--gold)}
+.nav-mega-caret{font-size:16px;color:var(--gold);transition:transform .2s ease}
+.nav-mega-root[open] .nav-mega-caret{transform:rotate(180deg)}
+.nav-mega-panel{position:absolute;left:50%;top:calc(100% + 3px);width:min(650px,88vw);z-index:35;transform:translateX(-50%);padding:22px;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 18px 18px;box-shadow:var(--shadow);color:var(--ink)}
+.nav-mega-root:first-child .nav-mega-panel{left:0;transform:none}
+.nav-mega-root:nth-child(n+5) .nav-mega-panel{left:auto;right:0;transform:none}
+.nav-mega-intro{padding:5px 4px 15px;border-bottom:1px solid var(--line)}
+.nav-mega-intro strong{font-size:20px;color:var(--ink)}
+.nav-mega-intro p{font-size:13px;line-height:1.6;margin:5px 0 8px;color:var(--muted)}
+.nav-mega-overview,.nav-mega-heading,.nav-mega-sublink{display:block;text-decoration:none;border-radius:8px;padding:7px 9px;color:var(--ink)!important}
+.nav-mega-overview{color:#947025!important;font-weight:850;font-size:13px}
+.nav-mega-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding-top:15px;max-height:58vh;overflow-y:auto}
+.nav-mega-heading{font-size:14px;font-weight:850;background:var(--light)}
+.nav-mega-sublink{font-size:13px;padding-left:15px;color:var(--muted)!important}
+.nav-mega-overview:hover,.nav-mega-heading:hover,.nav-mega-sublink:hover{background:var(--light);color:#ad8035!important}
+html[data-theme="light"] .nav-mega-button{color:#1c3248}
+html[data-theme="dark"] .nav-mega-button{color:#f7edd9}
+html[data-theme="light"] .nav-mega-root:hover>.nav-mega-button{background:#e7d7b6}
+html[data-theme="dark"] .nav-mega-root:hover>.nav-mega-button{background:#213e56}
+.site-header{z-index:80}
+.nav-row{overflow:visible}
+
+/* A képsávok a témával együtt váltanak; a képek megmaradnak, csak a színes rétegek változnak. */
+html[data-theme="light"] .hero2026{background:#f7ecda!important;color:#162c42!important}
+html[data-theme="light"] .hero2026-shade{background:linear-gradient(96deg,rgba(251,247,236,.98),rgba(248,240,223,.95) 28%,rgba(247,236,210,.76) 50%,rgba(250,237,210,.05) 86%)!important}
+html[data-theme="light"] .hero2026-shade::after{background:linear-gradient(123deg,transparent 41%,#dfc27c31 52%,transparent 62%),radial-gradient(circle at 15% 50%,#fbf6e899,transparent 62%)}
+html[data-theme="light"] .hero2026-title{color:#17304a!important;text-shadow:0 2px 20px #fffdf4c9!important}
+html[data-theme="light"] .hero2026-subtitle{color:#253c51!important;text-shadow:0 1px 9px #fff8e8a6!important}
+html[data-theme="light"] .hero2026-kicker{color:#9a722d!important}
+html[data-theme="light"] .hero2026-bottom{background:linear-gradient(90deg,#fff9ed,#efe0bf)!important;border-color:#d0ad6a!important;color:#18354e!important}
+html[data-theme="light"] .hero2026-progress-overline{color:#8e682e}
+html[data-theme="light"] .hero2026-progress-sub,.hero2026-nav{color:var(--ink)!important}
+html[data-theme="light"] .hero2026-arrow,html[data-theme="light"] .hero2026-pause{color:#17304a!important;border-color:#bea572!important;background:#fff8ec!important}
+html[data-theme="light"] .hero2026-count{color:#23405a!important}
+html[data-theme="light"] .hero2026-cta.ghost{background:#fff8e7d9!important;color:#17304a!important;border-color:#b98b44!important}
+html[data-theme="light"] .hero2026-identity-caption{color:#916c26!important;text-shadow:none}
+html[data-theme="light"] .hero2026-slide .media-illustration-tag{background:#f9f0dbdd;color:#1b3046}
+html[data-theme="dark"] .hero2026{background:#0b2038!important}
+html[data-theme="dark"] .hero2026-shade{background:linear-gradient(94deg,rgba(5,18,35,.98),rgba(9,29,49,.87) 35%,rgba(10,32,53,.55) 72%,rgba(7,22,39,.18))!important}
+html[data-theme="dark"] .hero2026-bottom{background:linear-gradient(100deg,#081e32,#163955)!important}
+
+html[data-theme="light"] .cs-sports-2026{background:linear-gradient(145deg,#fffbf3,#ead9b4 95%)!important;color:#172f47!important;border-block:2px solid #d7b66e70}
+html[data-theme="dark"] .cs-sports-2026{background:linear-gradient(135deg,#081c30,#1a3f5d 85%)!important;color:#f5edda!important;border-block:2px solid #cca76366}
+html[data-theme="light"] .cs-sports-2026 .sports-title{color:#172f47!important}
+html[data-theme="light"] .cs-sports-2026 .sports-eyebrow{color:#8f671e!important}
+html[data-theme="light"] .cs-sports-2026 .sports-all-link{color:#72531d!important}
+.cs-sport-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,1fr);gap:22px}
+.cs-sport-gallery{border-radius:20px;overflow:hidden;box-shadow:var(--shadow);min-width:0;border:1px solid var(--line);background:var(--card)}
+.cs-sport-stage{position:relative;min-height:465px;background:var(--card)}
+.cs-sport-scene{position:absolute;inset:0;margin:0;overflow:hidden}
+.cs-sport-scene[hidden]{display:none}
+.cs-sport-scene>img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 6.5s ease}
+.cs-sport-scene:not([hidden])>img{transform:scale(1.055)}
+.cs-sport-photo-shade{position:absolute;inset:0}
+html[data-theme="light"] .cs-sport-photo-shade{background:linear-gradient(0deg,#fff9ebf5 0%,#f9efd5c8 28%,transparent 68%)}
+html[data-theme="dark"] .cs-sport-photo-shade{background:linear-gradient(0deg,#071b30fa 0%,#102d49cf 30%,transparent 73%)}
+.cs-sport-scene figcaption{position:absolute;bottom:23px;left:26px;right:26px;z-index:2;display:grid;gap:8px}
+.cs-sport-scene figcaption strong{font-size:clamp(23px,2.5vw,36px);line-height:1.18;max-width:630px}
+.cs-sport-scene figcaption small{font-size:10px;letter-spacing:.14em;font-weight:800}
+.cs-sport-kicker{letter-spacing:.15em;font-size:11px;font-weight:850;color:#a77925}
+html[data-theme="dark"] .cs-sport-kicker{color:#f1cc7d}
+.cs-sport-controls{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 18px;border-top:1px solid var(--line);background:var(--card);color:var(--ink)}
+.cs-sport-btn,.cs-sport-pause{border:1px solid var(--line);border-radius:999px;background:var(--light);color:var(--ink);padding:6px 15px;cursor:pointer}
+.cs-sport-btn{font-size:23px;line-height:1.2}
+.cs-sport-count{font-variant-numeric:tabular-nums;font-weight:700;font-size:13px}
+.cs-sport-achievements{border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--ink);padding:23px;max-height:540px;overflow-y:auto}
+.cs-sport-achievements h3{font-size:22px;font-weight:900;margin:0 0 7px;color:var(--ink)}
+.cs-sport-achievements>p{color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:17px}
+.cs-achievement{padding:14px 12px;margin-bottom:11px;border:1px solid var(--line);background:var(--light);border-radius:12px;color:var(--ink)}
+.cs-achievement h3{font-size:16px!important;margin:7px 0!important;color:var(--ink)!important}
+.cs-achievement p{font-size:13px;line-height:1.65;color:var(--muted);margin:0 0 8px}
+.cs-achievement-sport{font-size:10px;font-weight:900;color:#a67a31;letter-spacing:.1em;text-transform:uppercase}
+.cs-achievement-source{font-size:12px;color:#96702d!important;text-decoration:underline;text-underline-offset:3px}
+html[data-theme="dark"] .cs-achievement-source{color:#f2cf8d!important}
+.cs-result-tools{display:flex;gap:12px;margin:15px 0}
+.cs-result-tools>*{min-width:0;max-width:360px;background:var(--card);color:var(--ink);border-color:var(--line)}
+.cs-result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.cs-result-count{font-size:13px;font-weight:700;color:var(--muted)}
+.cs-news-teasers,.cs-news-center{color:var(--ink)}
+.cs-news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+.cs-news-card{padding:22px;border:1px solid var(--line);background:var(--card);border-radius:16px;box-shadow:0 9px 22px #213c5712;min-width:0}
+.cs-news-card h3{font-weight:900;font-size:clamp(17px,1.75vw,22px);line-height:1.25;margin:12px 0}
+.cs-news-card p{font-size:14px;line-height:1.7;color:var(--muted)}
+.cs-news-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:11px}
+.cs-news-cat{background:#dcc18b;color:#28394b;border-radius:99px;padding:3px 9px;font-weight:850}
+.cs-news-detail summary{font-weight:800;cursor:pointer;font-size:13px}
+.cs-news-detail p{margin-top:8px}
+.cs-news-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.cs-news-source,.cs-news-route{font-size:12px;color:#9e772f!important;text-decoration:none;font-weight:750}
+html[data-theme="dark"] .cs-news-source,html[data-theme="dark"] .cs-news-route{color:#efd08d!important}
+.cs-news-toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 8px}
+.cs-news-toolbar>*{max-width:375px;color:var(--ink);background:var(--card)}
+.cs-news-intro{color:var(--muted);line-height:1.7}
+.cs-news-count{font-size:13px;color:var(--muted)}
+.cs-news-center .cs-news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+html[data-theme="dark"] .cs-sport-achievements,.cs-achievement,html[data-theme="dark"] .cs-news-card{border-color:#45637a}
+
+/* Smaller displays keep the six-menu concept as an accessible hamburger tree. */
+@media(max-width:1050px){.desktop-nav{gap:0}.nav-mega-button{padding:16px 4px;font-size:12px}.nav-mega-panel{width:min(600px,85vw)}}
+@media(max-width:850px){.desktop-nav{display:none}.nav-row{display:none}.menu-btn{display:grid}.mobile-navigation:not([hidden]){display:block}.cs-sport-layout{grid-template-columns:1fr}.cs-news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.cs-news-grid,.cs-news-center .cs-news-grid,.cs-result-grid{grid-template-columns:1fr}.cs-sport-stage{min-height:390px}.cs-sport-scene figcaption{left:19px;right:19px}.cs-sport-achievements{max-height:none}.cs-result-tools{flex-direction:column}.cs-result-tools>*{width:100%;max-width:none}}
+@media(prefers-reduced-motion:reduce){.cs-sport-scene>img{transition:none;transform:none!important}.nav-mega-caret{transition:none}}
+/* Egységes elefántcsont–sötétkék–arany: a hero felirata sem hófehér. */
+html[data-theme="dark"] .hero2026-title{color:#f5edda!important}
+html[data-theme="dark"] .hero2026-subtitle{color:#eadfcb!important}
+html[data-theme="dark"] .cs-sport-scene figcaption{color:#f4e8d3!important}
+html[data-theme="light"] .cs-sport-scene figcaption{color:#182f46!important}
+
+/* A technikai oldalszám a belső ellenőrzéshez megmarad, de nem látogatói tartalom. */
+#footer-page-count{display:none}

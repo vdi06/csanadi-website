@@ -3,12 +3,12 @@
   "id": "page:000064",
   "pageType": "content",
   "menuLabel": "Tantestület",
-  "title": "Tantestület – pedagógusaink és munkaközösségeink",
+  "title": "Tantestület",
   "slug": "tantestulet",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,7 +19,7 @@
   },
   "seo": {
     "title": "Tantestület – Csanádi Sportiskola",
-    "description": "Tantestületi központ, pedagógiai területek és munkaközösségi bemutatás – fejlesztési előnézet.",
+    "description": "A tanítás, a nevelés és a sportpedagógia közös munkaterületei.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -32,18 +32,18 @@
     "munkakozossegek",
     "sport"
   ],
-  "summary": "Ismerd meg az iskolai pedagógiai munka fő területeit. Kereshető tantestületi központ, intézményi jóváhagyásra váró személyes profilokkal.",
+  "summary": "A tanítás, a nevelés és a sportpedagógia közös munkaterületei.",
   "blocks": [
     {
-      "id": "block:tantestulet-intro",
+      "id": "block:000064-section-1",
       "type": "section",
-      "title": "Tudás, sport és közösség",
+      "title": "Pedagógiai együttműködés",
       "children": [
         {
-          "id": "block:tantestulet-lead",
+          "id": "block:000064-text-1",
           "type": "markdown",
           "data": {
-            "text": "A pedagógusok szakmai munkája a sport, a tanulás és a személyes fejlődés összehangolásához kapcsolódik. Az alábbi munkaközösségi területek tájékoztató jellegűek; a tényleges tantestületi névsor és fényképek intézményi jóváhagyás után publikálhatók."
+            "text": "Az iskolai tantestület munkájában az általános iskolai és gimnáziumi nevelés, a közismereti tantárgyak, a testnevelés és a sportpedagógia egymást kiegészítő területek. A munkaközösségi együttműködés segíti az egységes pedagógiai szemléletet, a tehetséggondozást és a tanulók személyes fejlődésének támogatását.\n\nA tantestületi áttekintőben a pedagógiai szakterületek között kereshetsz, megismerheted az egyes munkaterületek feladatait és az iskolai közösségben betöltött szerepüket."
           }
         }
       ]
@@ -52,7 +52,7 @@
   "related": [],
   "schemaExtensions": {
     "route": "#/iskolank/tantestulet",
-    "preview": true,
+    "preview": false,
     "verifiedContent": false,
     "bannerMediaId": "media:oktatas"
   }

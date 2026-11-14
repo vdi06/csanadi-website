@@ -7,8 +7,8 @@
   "slug": "kozlemenyek",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Közlemények – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Közlemények” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Aktuális intézményi tájékoztatások és fontos tudnivalók.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "hirek-es-esemenyek"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Közlemények” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Aktuális intézményi tájékoztatások és fontos tudnivalók.",
   "blocks": [
     {
-      "id": "block:043-intro",
+      "id": "block:000043-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Ellenőrzött közlemények",
       "children": [
         {
-          "id": "block:043-lead",
+          "id": "block:000043-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Közlemények” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "A hivatalos iskolaoldal a 2026. novemberi nyílt napok mellett az étkeztetési rendszerrel, a 2026/2027-es tanévvel és az őszi érettségivel kapcsolatban is közzétett információkat.\n\nMinden tájékoztatásnál lényeges a közzététel ideje és a vonatkozó időszak. A korábbi híreket archívumként kezeljük, nem állítjuk őket aktuális utasításként."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000043-section-2",
+      "type": "section",
+      "title": "Hivatalos információk",
+      "children": [
         {
-          "id": "block:043-hint",
+          "id": "block:000043-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** A gyűjtemény még nem tartalmaz ellenőrzött közzétételi tételeket."
+            "text": "[Iskolai közlemények](https://csanadi-bp.edu.hu/def.html)"
           }
         }
       ]
@@ -54,7 +59,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/hirek-es-esemenyek/kozlemenyek",
     "verifiedContent": false,
     "bannerMediaId": "media:esemenyek"

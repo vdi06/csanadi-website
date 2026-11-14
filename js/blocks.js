@@ -1,7 +1,7 @@
-import {renderSportsSuccesses} from './sports-successes.js?v=20261114g';
-import {renderPremiumHero} from './hero-2026.js?v=20261114g';
-import {renderLiveDashboard} from './home-live.js?v=20261114g';
-import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js?v=20261114g';
+import {renderSportsSuccesses} from './sports-successes.js?v=20261114curated1';
+import {renderPremiumHero} from './hero-2026.js?v=20261114curated1';
+import {renderLiveDashboard} from './home-live.js?v=20261114curated1';
+import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js?v=20261114curated1';
 /* Biztonságos, kizárólag előre regisztrált komponenseket tartalmazó blokkmegjelenítő. */
 const dom=(tag,attrs={},text='')=>{
   const x=document.createElement(tag);

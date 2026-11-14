@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "page:000014",
   "pageType": "standard",
-  "menuLabel": "Gimnáziumi képzés",
-  "title": "Gimnáziumi képzés",
+  "menuLabel": "Gimnázium",
+  "title": "Gimnázium",
   "slug": "gimnazium",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Gimnáziumi képzés – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Gimnáziumi képzés” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Felkészülés továbbtanulásra, érettségire és a sportolói élet kihívásaira.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Gimnáziumi képzés” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Felkészülés továbbtanulásra, érettségire és a sportolói élet kihívásaira.",
   "blocks": [
     {
-      "id": "block:014-intro",
+      "id": "block:000014-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Középiskolai évek",
       "children": [
         {
-          "id": "block:014-lead",
+          "id": "block:000014-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Gimnáziumi képzés” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "A gimnáziumi tanulásban az összetettebb ismeretek, a saját tanulási módszerek és a továbbtanulásra való felkészülés kerül előtérbe. A rendszeres sportolás mellett különösen hasznos a tanulmányi idő tudatos megtervezése.\n\nA 9. évfolyamos felvételi részletes eljárását az intézmény hivatalos dokumentumai szabályozzák. A jelentkezés előtt a központi tájékoztatókat és a legfrissebb intézményi információkat célszerű áttekinteni."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000014-section-2",
+      "type": "section",
+      "title": "Felvételi tájékoztatás",
+      "children": [
         {
-          "id": "block:014-hint",
+          "id": "block:000014-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "[A 9. évfolyam felvételi oldala](https://csanadi-bp.edu.hu/felveteli.html)"
           }
         }
       ]
@@ -54,7 +59,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/oktatas/kepzeseink/gimnazium",
     "verifiedContent": false,
     "bannerMediaId": "media:oktatas"

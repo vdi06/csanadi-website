@@ -7,46 +7,65 @@
   "slug": "iskolank",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Iskolánk – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: Az intézmény bemutatkozása, története, közössége és partnerkapcsolatai.",
+    "description": "Több mint száz évnyi iskolatörténet, sport és közösség.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "iskolank"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "Az intézmény bemutatkozása, története, közössége és partnerkapcsolatai.",
+  "tags": [],
+  "summary": "Több mint száz évnyi iskolatörténet, sport és közösség.",
   "blocks": [
     {
-      "id": "block:002-intro",
+      "id": "block:000002-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Ismerd meg intézményünket",
       "children": [
         {
-          "id": "block:002-lead",
+          "id": "block:000002-text-1",
           "type": "markdown",
           "data": {
-            "text": "Az intézmény bemutatkozása, története, közössége és partnerkapcsolatai."
+            "text": "A Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium Budapest XIV. kerületében, az Őrnagy utca 5–7. szám alatt működik. Az oktatás és a sport közös története különleges szerepet kap az intézmény életében.\n\nAz iskola múltjáról, névadójáról, hagyományairól és eredményes sportoló tanítványairól külön oldalakon olvashatsz. A történeti adatokhoz az intézmény hivatalos tájékoztatóit használjuk."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000002-section-2",
+      "type": "section",
+      "title": "A sport és a tanulás kapcsolata",
+      "children": [
         {
-          "id": "block:002-hint",
+          "id": "block:000002-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Válassz a kapcsolódó menüpontok közül. Az aloldalak most demonstrációs tartalmat jelenítenek meg."
+            "text": "A sportolói felkészülés kitartást, önfegyelmet, együttműködést és tudatos időgazdálkodást igényel. Ugyanezek a készségek a tanulásban és a mindennapi életben is értékesek.\n\nA Csanádi szemléletében a teljesítmény mellett fontos az emberi kapcsolatok, a tudás és a közösség megerősítése is."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000002-new-section-2026",
+      "type": "section",
+      "title": "Hogyan született a honlap?",
+      "children": [
+        {
+          "id": "block:000002-new-text-2026",
+          "type": "markdown",
+          "data": {
+            "text": "Egy iskolai weboldal mögött sok tervezés, mérlegelés és ellenőrzés áll. [Olvasd el a honlap megújulásának történetét](#/iskolank/a-honlap-szuletese), és ismerd meg, hogyan segíthetnek a digitális eszközök a fejlesztésben."
           }
         }
       ]
@@ -54,9 +73,9 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/iskolank",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:iskolank"
   }
 }

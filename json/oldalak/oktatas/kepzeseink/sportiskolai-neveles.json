@@ -7,8 +7,8 @@
   "slug": "sportiskolai-neveles",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,25 @@
   },
   "seo": {
     "title": "Sportiskolai nevelés – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Sportiskolai nevelés” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Sportteljesítmény és tanulmányi előrehaladás tudatos összehangolása.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Sportiskolai nevelés” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Sportteljesítmény és tanulmányi előrehaladás tudatos összehangolása.",
   "blocks": [
     {
-      "id": "block:015-intro",
+      "id": "block:000015-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Két terület, közös fejlődés",
       "children": [
         {
-          "id": "block:015-lead",
+          "id": "block:000015-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Sportiskolai nevelés” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
-          }
-        },
-        {
-          "id": "block:015-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "A sportolói élet rendszeres edzésekkel, versenyekkel és sokszor utazással jár. A tanulás az ismeretek bővítését és a hosszabb távú életpálya megalapozását segíti.\n\nA Csanádi pedagógiai programjában külön szerepet kap a sportoló tanulók szükségleteihez igazodó nevelés és oktatás. A kitartás, a felelősségvállalás és a tudatos szervezés a két terület közös értékei."
           }
         }
       ]
@@ -54,7 +45,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/oktatas/kepzeseink/sportiskolai-neveles",
     "verifiedContent": false,
     "bannerMediaId": "media:oktatas"

@@ -1,0 +1,172 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000065",
+  "pageType": "standard",
+  "menuLabel": "Digitális kultúra",
+  "title": "Digitális kultúra – értsük és használjuk jól a technológiát",
+  "slug": "digitalis-kultura",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "schoolYear": "2026/2027",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Digitális kultúra – értsük és használjuk jól a technológiát – Csanádi Sportiskola",
+    "description": "A technológia nem önmagában jó vagy rossz: az a fontos, hogy tudatosan, biztonságosan és alkotó módon használjuk.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [
+    "digitalis-kultura",
+    "technologia",
+    "tudatos-hasznalat",
+    "digitalis-biztonsag"
+  ],
+  "summary": "A technológia nem önmagában jó vagy rossz: az a fontos, hogy tudatosan, biztonságosan és alkotó módon használjuk.",
+  "blocks": [
+    {
+      "id": "block:000065-section-1",
+      "type": "section",
+      "title": "Nem a technológia helyettünk, hanem a technológia velünk",
+      "children": [
+        {
+          "id": "block:000065-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A digitális kultúra jóval több egy tantárgynál, egy számítógép kezelésénél vagy néhány alkalmazás használatánál. Annak megértéséről szól, hogyan alakítja a technológia a tanulást, a munkát, a kapcsolatainkat és a mindennapi döntéseinket. Olyan tudásról, amely segít abban, hogy ne csupán fogyasztói legyünk a digitális világnak, hanem tudatos, felelős alakítói is.\n\nEgy eszköz önmagában nem helyettesíti az emberi figyelmet, kíváncsiságot és mérlegelést. Ugyanazzal a telefonnal lehet céltalanul görgetni, kapcsolatot tartani egy családtaggal, új ismereteket szerezni vagy egy alkotást létrehozni. Nem csak az a kérdés, mennyi időt töltünk a képernyő előtt, hanem az is, **milyen célból, milyen tartalommal és milyen következményekkel használjuk**."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000065-section-2",
+      "type": "section",
+      "title": "A használattól a megértésig",
+      "children": [
+        {
+          "id": "block:000065-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A digitális jártasság nem egyenlő a gyors kattintással. Aki megtanul egy felületet kezelni, még nem feltétlenül érti, mi történik az adataival, hogyan működik egy keresés, mitől megbízható egy információ vagy miért hibás egy automatikus javaslat. A digitális kultúra oktatása éppen a látható műveletek mögötti összefüggéseket teszi érthetővé.\n\nA jó feladat ezért gyakran egy valódi problémából indul ki: hogyan rendszerezzük egy projekt adatait, miként készítsünk közérthető bemutatót, milyen módon ellenőrizhetünk egy állítást, vagy hogyan működjön egy egyszerű program? A megoldás közben fejlődik az önállóság, a tervezés, a pontos fogalmazás és az együttműködés is. A számítógép ilyenkor nem cél, hanem **a gondolkodás és az alkotás eszköze**."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000065-section-3",
+      "type": "section",
+      "title": "Tudást építeni, nem csak információt gyűjteni",
+      "children": [
+        {
+          "id": "block:000065-text-3",
+          "type": "markdown",
+          "data": {
+            "text": "Az internet óriási mennyiségű információhoz ad hozzáférést, de a hozzáférés még nem jelent megértést. Meg kell tanulni különbséget tenni tény, vélemény, reklám, feltételezés és szándékosan félrevezető tartalom között. Érdemes megvizsgálni, ki állít valamit, milyen bizonyítékra hivatkozik, mikor jelent meg az információ, és más, független források megerősítik-e.\n\nA valódi tanulás során az információt értelmezzük, kérdéseket teszünk fel róla, kapcsolatba hozzuk korábbi ismereteinkkel, és képesek vagyunk saját szavainkkal elmagyarázni. A technológia ebben segíthet jegyzeteléssel, vizualizációval, szimulációval vagy gyakorlófeladatokkal. Nem az a cél, hogy valaki a legtöbb választ megtalálja, hanem hogy **értse is, amit felhasznál**."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000065-section-4",
+      "type": "section",
+      "title": "Alkotás: a digitális világ aktív oldala",
+      "children": [
+        {
+          "id": "block:000065-text-4",
+          "type": "markdown",
+          "data": {
+            "text": "A digitális kultúra egyik legfontosabb élménye, amikor a tanuló felismeri: a technológia segítségével nemcsak nézni, hanem létrehozni is lehet valamit. Egy jól szerkesztett dokumentum, egy adatokra épülő grafikon, egy prezentáció, egy fényképes történet, egy saját weboldal vagy egy egyszerű alkalmazás mind ennek példája.\n\nA digitális alkotás figyelmet kíván. Pontosan kell megfogalmazni a célt, meg kell tervezni a lépéseket, ki kell próbálni az eredményt, fel kell ismerni a hibákat, és sokszor újra kell gondolni a megoldást. A hibakeresés, a kitartás és az igényesség ugyanúgy része a folyamatnak, mint az eszközkezelés. Egy elkészült produktum akkor értékes igazán, ha egy valós kérdésre ad érthető és használható választ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000065-section-5",
+      "type": "section",
+      "title": "A sport és az adatok találkozása",
+      "children": [
+        {
+          "id": "block:000065-text-5",
+          "type": "markdown",
+          "data": {
+            "text": "A sport különösen jó terepet kínál a tudatos technológiahasználat megértéséhez. Egy edzésnapló, egy mérkőzésstatisztika, egy időeredményeket ábrázoló grafikon vagy egy videós mozgáselemzés segíthet abban, hogy pontosabban lássuk a fejlődést. Az adatokból mintázatok rajzolódhatnak ki, és könnyebben megfogalmazhatók a következő célok.\n\nUgyanakkor a számok nem mondanak el mindent. A teljesítményt befolyásolhatja a terhelés, a pihenés, a motiváció, a sérülés vagy a versenyhelyzet is. Egy digitális eszköz mérése segítheti az edző és a sportoló munkáját, de önmagában nem helyettesíti a szakmai tapasztalatot és az emberi beszélgetést. A felelős technológiahasználat ezért **az adatok és az emberi szempontok együttes értelmezését** jelenti."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000065-section-6",
+      "type": "section",
+      "title": "Biztonság és felelősség az online térben",
+      "children": [
+        {
+          "id": "block:000065-text-6",
+          "type": "markdown",
+          "data": {
+            "text": "A hasznos technológiahasználathoz hozzátartozik a személyes adatok védelme. Nem minden információ való nyilvános felületre, és nem minden alkalmazásnak van szüksége ugyanazokra az engedélyekre. Az erős jelszavak, a többfaktoros azonosítás, a frissítések, a gyanús üzenetek felismerése és a tudatos megosztás a mindennapi digitális önvédelem részei.\n\nLegalább ilyen fontos a mások iránti felelősség. Egy fénykép, egy üzenet vagy egy továbbosztott információ másokra is hatással lehet. A digitális kultúra ezért a tiszteletteljes kommunikációt, a források megjelölését, a szerzői jogok figyelembevételét és a segítségkérés lehetőségét is tanítja. **A képernyő mögött is emberek vannak**, akiket ugyanúgy megillet a méltóság és a biztonság."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000065-section-7",
+      "type": "section",
+      "title": "A mesterséges intelligencia mint eszköz, nem mint felmentés",
+      "children": [
+        {
+          "id": "block:000065-text-7",
+          "type": "markdown",
+          "data": {
+            "text": "A mesterséges intelligenciára épülő alkalmazások képesek ötleteket rendszerezni, szövegtervezeteket készíteni, adatokat feldolgozni vagy különböző megoldási lehetőségeket javasolni. Segíthetnek az indulásban, a gyakorlásban, az összefoglalásban és az ismétlődő feladatok egyszerűsítésében. Ettől azonban az általuk előállított válasz még nem válik automatikusan helyessé.\n\nA felhasználónak kell eldöntenie, **mire kér segítséget, mit fogad el, mit ellenőriz és miért használja fel az eredményt**. Különösen fontos ez akkor, ha egy válasz személyes adatokat, tudományos állításokat, iskolai tájékoztatást vagy másokat érintő döntéseket befolyásol. A jó kérdésfeltevés, a forráskritika és az önálló értékelés a mesterséges intelligencia használatával nem veszít, hanem új jelentőséget kap."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000065-section-8",
+      "type": "section",
+      "title": "Digitális egyensúly és jó szokások",
+      "children": [
+        {
+          "id": "block:000065-text-8",
+          "type": "markdown",
+          "data": {
+            "text": "A technológia akkor támogatja az életünket, ha nem szorítja háttérbe az alvást, a mozgást, a személyes kapcsolatokat és az elmélyült figyelmet. Érdemes felismerni, mikor segít egy értesítés, és mikor szakítja meg feleslegesen a munkát; mikor érdemes online keresni, és mikor jobb letenni a készüléket, beszélgetni vagy kipróbálni valamit a valóságban.\n\nA digitális egyensúly nem a technológia elutasítása, hanem a **tudatos idő- és figyelemgazdálkodás**. Egy jól megválasztott alkalmazás csökkentheti a felesleges munkát, átláthatóbbá teheti a tanulást és több időt hagyhat a sportolásra vagy a közösségi életre. A döntés azonban a felhasználóé: a digitális eszköznek az ember céljaihoz kell igazodnia, nem fordítva."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000065-section-9",
+      "type": "section",
+      "title": "A digitális kultúra mindenkié",
+      "children": [
+        {
+          "id": "block:000065-text-9",
+          "type": "markdown",
+          "data": {
+            "text": "A digitális világ folyamatosan változik. Egy mai felület vagy alkalmazás néhány év múlva másképp nézhet ki, de az alapvető készségek hosszú távon is értékesek maradnak: az önálló tanulás, a kritikai gondolkodás, az adatok értelmezése, az alkotás, a biztonságos kommunikáció és az új helyzetekhez való alkalmazkodás.\n\nEzért a digitális kultúra nem csupán azoknak szól, akik később informatikával szeretnének foglalkozni. Ugyanúgy része lehet egy sportoló, egy pedagógus, egy egészségügyi szakember, egy művész vagy bármely más területen dolgozó ember életének. A cél, hogy a technológiától ne félnünk kelljen, és ne is kritikátlanul kövessük: **értsük meg, válasszuk meg, és használjuk értelmes, hasznos célokra**."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [
+    "page:000066"
+  ],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/oktatas/digitalis-kultura",
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas"
+  }
+}

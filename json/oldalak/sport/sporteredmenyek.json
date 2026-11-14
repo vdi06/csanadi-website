@@ -7,8 +7,8 @@
   "slug": "sporteredmenyek",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,44 +19,25 @@
   },
   "seo": {
     "title": "Sporteredmények – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: Sportági eredmények megjelenítési területe. Ellenőrzött sportadatok később tölthetők fel.",
+    "description": "A nyilvánosan ellenőrizhető eredmények külön, név szerinti jegyzéke.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "sport"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "Képes sporttörténetek és részletes sporthírek központja, sportágak szerint szűrhető gyűjteményben.",
+  "tags": [],
+  "summary": "A nyilvánosan ellenőrizhető eredmények külön, név szerinti jegyzéke.",
   "blocks": [
     {
-      "id": "block:sports-feed-archive",
-      "type": "sports-successes",
-      "title": "Sporteredmények – válogatás",
-      "data": {
-        "view": "archive",
-        "source": "adatok/sportsikerek.json",
-        "maxNews": 8
-      }
-    },
-    {
-      "id": "block:033-intro",
+      "id": "block:000033-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Hiteles eredmények",
       "children": [
         {
-          "id": "block:033-lead",
+          "id": "block:000033-text-1",
           "type": "markdown",
           "data": {
-            "text": "Sportági eredmények megjelenítési területe. Ellenőrzött sportadatok később tölthetők fel."
-          }
-        },
-        {
-          "id": "block:033-hint",
-          "type": "markdown",
-          "data": {
-            "text": "**Fejlesztési megjegyzés:** A gyűjtemény még nem tartalmaz ellenőrzött közzétételi tételeket."
+            "text": "A Csanádi Sportiskola egykori tanulói között olimpiai bajnokok, világ- és Európa-bajnokok is szerepelnek. A sikerek név és sportág szerint is böngészhetők, az egyes adatok mellett megtalálható az iskola hivatalos eredményjegyzékére mutató hivatkozás.\n\n[Az intézmény eredeti Büszkeségeink oldala](https://csanadi-bp.edu.hu/buszkeseg.html)"
           }
         }
       ]
@@ -64,7 +45,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/sport/sporteredmenyek",
     "verifiedContent": false,
     "bannerMediaId": "media:eredmenyek"

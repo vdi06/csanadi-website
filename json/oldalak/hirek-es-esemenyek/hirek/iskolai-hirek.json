@@ -7,8 +7,8 @@
   "slug": "iskolai-hirek",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Iskolai hírek – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Iskolai hírek” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Az intézmény közzétett tájékoztatói és közösségi aktualitásai.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "hirek-es-esemenyek"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Iskolai hírek” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Az intézmény közzétett tájékoztatói és közösségi aktualitásai.",
   "blocks": [
     {
-      "id": "block:040-intro",
+      "id": "block:000040-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Közérdekű tájékoztatás",
       "children": [
         {
-          "id": "block:040-lead",
+          "id": "block:000040-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Iskolai hírek” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "A hivatalos honlap 2026. november 17-re és november 19-re gimnáziumi nyílt napot hirdetett. Az igazgatói tájékoztatót 8:30-ra, az intézmény bemutatását 9:50-re jelezte.\n\nAz intézményi aktuális oldalon a felvételi információk mellett egyéb tanévi, étkeztetési és sportéleti közlemények is megjelennek. Az itt közzétett programokhoz eredeti forráskapcsolatot adunk."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000040-section-2",
+      "type": "section",
+      "title": "További aktualitások",
+      "children": [
         {
-          "id": "block:040-hint",
+          "id": "block:000040-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** A gyűjtemény még nem tartalmaz ellenőrzött közzétételi tételeket."
+            "text": "[Hivatalos iskolai hírek](https://csanadi-bp.edu.hu/def.html)"
           }
         }
       ]
@@ -54,7 +59,7 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/hirek-es-esemenyek/hirek/iskolai-hirek",
     "verifiedContent": false,
     "bannerMediaId": "media:esemenyek"

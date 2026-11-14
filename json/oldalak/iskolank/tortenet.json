@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "page:000005",
   "pageType": "standard",
-  "menuLabel": "Történetünk",
-  "title": "Történetünk",
+  "menuLabel": "Iskolánk története",
+  "title": "Iskolánk története",
   "slug": "tortenet",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,53 @@
   },
   "seo": {
     "title": "Történetünk – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Történetünk” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "A törökőri iskola története a sportiskolai hagyományokig.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "iskolank"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Történetünk” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "A törökőri iskola története a sportiskolai hagyományokig.",
   "blocks": [
     {
-      "id": "block:005-intro",
+      "id": "block:000005-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "A kezdetektől a saját épületig",
       "children": [
         {
-          "id": "block:005-lead",
+          "id": "block:000005-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Történetünk” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "Az intézmény története 1897-ben kezdődött, amikor a törökőri gyermekek oktatása a Várna utcai épületben indult meg. A mai Őrnagy utcai iskolaépületet 1904 októberében adták át.\n\nA XX. század során az épületet átalakították és bővítették. Az iskola a történelmi nehézségek után is a városrész oktatási életének része maradt."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000005-section-2",
+      "type": "section",
+      "title": "A sportiskolai korszak",
+      "children": [
         {
-          "id": "block:005-hint",
+          "id": "block:000005-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "Az iskola 1987-től a Központi Sportiskola bázisiskolájaként működött. Az 1988/1989-es tanévben gimnáziumi osztályok is indultak. 1989. május 25-én az intézmény Csanádi Árpád nevét vette fel.\n\nA névadó a magyar és a nemzetközi sportélet meghatározó szereplője volt. Az iskola története és a sporthoz kötődő hagyományai ma is összekapcsolódnak."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000005-section-3",
+      "type": "section",
+      "title": "Bővebben",
+      "children": [
+        {
+          "id": "block:000005-text-3",
+          "type": "markdown",
+          "data": {
+            "text": "[Iskolánk hivatalos története](https://csanadi-bp.edu.hu/tortenet.html)"
           }
         }
       ]
@@ -54,9 +73,9 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/iskolank/tortenet",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:iskolank"
   }
 }

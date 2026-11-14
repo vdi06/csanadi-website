@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "page:000009",
   "pageType": "standard",
-  "menuLabel": "Alapítvány",
-  "title": "Alapítvány",
+  "menuLabel": "Iskolai alapítvány",
+  "title": "Iskolai alapítvány",
   "slug": "alapitvany",
   "locale": "hu-HU",
   "author": {
-    "displayName": "Csanádi Sportiskola – fejlesztési minta",
-    "organization": "Csanádi Sportiskola"
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-13T00:00:00+01:00",
@@ -19,34 +19,39 @@
   },
   "seo": {
     "title": "Alapítvány – Csanádi Sportiskola",
-    "description": "Fejlesztési mintanézet: A(z) „Alapítvány” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+    "description": "Tanulás és sport: támogatás a fejlődési lehetőségekhez.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "iskolank"
   ],
-  "tags": [
-    "fejlesztesi-minta"
-  ],
-  "summary": "A(z) „Alapítvány” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye.",
+  "tags": [],
+  "summary": "Tanulás és sport: támogatás a fejlődési lehetőségekhez.",
   "blocks": [
     {
-      "id": "block:009-intro",
+      "id": "block:000009-section-1",
       "type": "section",
-      "title": "Áttekintés",
+      "title": "Tanulásért és a Sportért Iskolai Alapítvány",
       "children": [
         {
-          "id": "block:009-lead",
+          "id": "block:000009-text-1",
           "type": "markdown",
           "data": {
-            "text": "A(z) „Alapítvány” témához tartozó tájékoztatók, dokumentumok és kapcsolódó tartalmak helye."
+            "text": "Az iskola hivatalos bemutatkozása szerint az alapítvány célja többek között a szociálisan rászoruló diákok támogatása, a tehetséggondozás és a sport- vagy tanulmányi programok segítése.\n\nAz alapítvány az oktatáshoz, az iskolai közösséghez és a sportoláshoz kapcsolódó lehetőségeket támogatja. A részletes feltételekért és a hivatalos információkért az intézmény eredeti tájékoztatóját érdemes megnyitni."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "block:000009-section-2",
+      "type": "section",
+      "title": "Hivatalos ismertető",
+      "children": [
         {
-          "id": "block:009-hint",
+          "id": "block:000009-text-2",
           "type": "markdown",
           "data": {
-            "text": "**Fejlesztési megjegyzés:** Az intézmény által ellenőrzött szöveg, dokumentum vagy média ide tölthető fel."
+            "text": "[Iskolai alapítvány – hivatalos oldal](https://csanadi-bp.edu.hu/alapitvany.html)"
           }
         }
       ]
@@ -54,9 +59,9 @@
   ],
   "related": [],
   "schemaExtensions": {
-    "preview": true,
+    "preview": false,
     "route": "#/iskolank/alapitvany",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:iskolank"
   }
 }

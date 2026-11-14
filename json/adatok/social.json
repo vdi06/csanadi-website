@@ -8,54 +8,15 @@
     {
       "id": "social:facebook",
       "platform": "Facebook",
-      "label": "Facebook",
+      "label": "Facebook – Csanádi Sportiskola",
+      "status": "published",
+      "schoolVerified": true,
       "url": "https://www.facebook.com/csanadiiskola",
-      "status": "external-directory-listed",
-      "schoolVerified": false,
-      "icon": "f",
       "embed": {
         "approved": false,
         "url": null
-      }
-    },
-    {
-      "id": "social:instagram",
-      "platform": "Instagram",
-      "label": "Instagram",
-      "url": null,
-      "status": "pending-verification",
-      "schoolVerified": false,
-      "icon": "◎",
-      "embed": {
-        "approved": false,
-        "url": null
-      }
-    },
-    {
-      "id": "social:youtube",
-      "platform": "YouTube",
-      "label": "YouTube",
-      "url": null,
-      "status": "pending-verification",
-      "schoolVerified": false,
-      "icon": "▶",
-      "embed": {
-        "approved": false,
-        "url": null
-      }
-    },
-    {
-      "id": "social:tiktok",
-      "platform": "TikTok",
-      "label": "TikTok",
-      "url": null,
-      "status": "pending-verification",
-      "schoolVerified": false,
-      "icon": "♪",
-      "embed": {
-        "approved": false,
-        "url": null
-      }
+      },
+      "sourceUrl": "https://csanadi-bp.edu.hu/oko.html"
     }
   ]
 }

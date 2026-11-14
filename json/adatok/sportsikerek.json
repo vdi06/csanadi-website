@@ -2,8 +2,8 @@
   "schemaVersion": "1.0.0",
   "collectionId": "collection:sportsikerek",
   "title": "Sportolói sikereink",
-  "description": "Központi szerkesztett sporteredmény- és sporthírgyűjtemény. Az induló 8 cikk próbatartalom, nem igazolt sporteredmény.",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "description": "A Csanádi Sportiskola hivatalos büszkeséglistáján szereplő sportolók és közzétett eredményeik.",
+  "updatedAt": "2026-11-14T12:00:00+01:00",
   "refreshSeconds": 60,
   "carousel": {
     "intervalMs": 6500,
@@ -12,104 +12,21 @@
   },
   "items": [
     {
-      "id": "success:atletika",
-      "slug": "atletika",
-      "category": "Atlétika",
-      "title": "A célvonalnál kezdődő történetek",
-      "summary": "Amikor minden edzés egy újabb lépés az egyéni rekord felé.",
-      "body": "Az atlétika olyan sportág, amelyben az apró fejlődések is óriási jelentőséggel bírnak. A közös felkészülés, a rajthoz állás bátorsága és a célvonal átlépése együtt formálja az utánpótlás sportolóinak élményeit. Ez a bemutató sporthír azt szemlélteti, hogyan jelenhet meg később egy ellenőrzött versenybeszámoló, eredménytáblázat és fotógaléria.",
-      "mediaId": "media:siker-atletika",
-      "priority": 100,
-      "status": "preview",
-      "isIllustration": true,
-      "publishedAt": null,
-      "source": {
-        "type": "editorial-demo",
-        "verified": false
-      },
-      "links": {
-        "results": "#/sport/sporteredmenyek",
-        "news": "#/hirek-es-esemenyek/hirek/sporthirek"
-      }
-    },
-    {
-      "id": "success:kosarlabda",
-      "slug": "kosarlabda",
-      "category": "Kosárlabda",
-      "title": "A csapat, amely együtt lép előre",
-      "summary": "Az összjáték, a bizalom és a pályán hozott döntések közös ereje.",
-      "body": "A kosárlabda sikerének hátterében a folyamatos kommunikáció, a koncentráció és az egymásért végzett munka áll. Az eredményeken túl fontos, hogyan fejlődik a csapat mérkőzésről mérkőzésre. Az éles honlapon az ilyen tudósításokhoz a pontos mérkőzésadatok, a hivatalos eredmény és a jogtisztán felhasználható képek tartoznak majd.",
-      "mediaId": "media:siker-kosarlabda",
-      "priority": 92,
-      "status": "preview",
-      "isIllustration": true,
-      "publishedAt": null,
-      "source": {
-        "type": "editorial-demo",
-        "verified": false
-      },
-      "links": {
-        "results": "#/sport/sporteredmenyek",
-        "news": "#/hirek-es-esemenyek/hirek/sporthirek"
-      }
-    },
-    {
-      "id": "success:uszas",
-      "slug": "uszas",
-      "category": "Úszás",
-      "title": "Minden hossz egy újabb lehetőség",
-      "summary": "A kitartás és a következetes munka története a medencében.",
-      "body": "A medence világában gyakran néhány századmásodperc mutatja meg a felkészülés eredményét. Az úszásra jellemző egyéni teljesítmény közösségi élménnyé válik, amikor a sportolók támogatják egymást. A végleges sporthírben a versenyszám, a hivatalos időeredmény, a korcsoport és a versenyhelyszín is ellenőrizhető adatként jelenik meg.",
-      "mediaId": "media:siker-uszas",
-      "priority": 88,
-      "status": "preview",
-      "isIllustration": true,
-      "publishedAt": null,
-      "source": {
-        "type": "editorial-demo",
-        "verified": false
-      },
-      "links": {
-        "results": "#/sport/sporteredmenyek",
-        "news": "#/hirek-es-esemenyek/hirek/sporthirek"
-      }
-    },
-    {
-      "id": "success:roplabda",
-      "slug": "roplabda",
-      "category": "Röplabda",
-      "title": "Együtt az utolsó labdamenetig",
-      "summary": "Lendület, figyelem és összetartás a röplabdapályán.",
-      "body": "Egy jó csapat teljesítménye a közös gyakorlásból, az egymásra figyelésből és a nehéz pillanatok kezeléséből épül. A röplabda különösen látványosan mutatja meg a csapatsport erejét. Ezen a mintán a fejlesztésben már kipróbálható a sportág szerinti szűrés és a részletes cikk megnyitása.",
-      "mediaId": "media:siker-roplabda",
-      "priority": 84,
-      "status": "preview",
-      "isIllustration": true,
-      "publishedAt": null,
-      "source": {
-        "type": "editorial-demo",
-        "verified": false
-      },
-      "links": {
-        "results": "#/sport/sporteredmenyek",
-        "news": "#/hirek-es-esemenyek/hirek/sporthirek"
-      }
-    },
-    {
-      "id": "success:eredmenyek",
-      "slug": "eredmenyek",
-      "category": "Eredmények",
-      "title": "Pillanatok, amelyekre büszkék lehetünk",
-      "summary": "A versenyek mellett a felkészülés és a közösség is fontos.",
-      "body": "A sport sikerei egyszerre jelentenek személyes mérföldköveket és közös emlékeket. A honlap célja, hogy az eredmények ne néhány soros közleményként, hanem fotókkal és áttekinthető adatokkal együtt jelenjenek meg. A megjelenítés mintaként szolgál; nem közöl konkrét, igazolatlan helyezést vagy sportolói nevet.",
+      "id": "success:kozak-danuta",
+      "slug": "kozak-danuta",
+      "category": "Kajak-kenu",
+      "title": "Kozák Danuta – kiemelkedő sportpályafutás",
+      "summary": "Hatszoros olimpiai bajnok, tizenötszörös világbajnok. A Csanádi Sportiskola hivatalos büszkeséglistájában szerepel.",
+      "body": "Kozák Danuta sportolói eredményei az iskola nyilvános eredményjegyzékében szerepelnek. Hatszoros olimpiai bajnok, tizenötszörös világbajnok. A bemutatás célja az intézmény sportolói hagyományainak dokumentálása. A teljes, ellenőrizhető névsor az eredeti intézményi oldalon tekinthető meg.",
       "mediaId": "media:eredmenyek",
-      "priority": 80,
-      "status": "preview",
-      "isIllustration": true,
+      "priority": 100,
+      "status": "verified",
+      "isIllustration": false,
       "publishedAt": null,
       "source": {
-        "type": "editorial-demo",
-        "verified": false
+        "type": "official-school-site",
+        "verified": true,
+        "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
       },
       "links": {
         "results": "#/sport/sporteredmenyek",
@@ -117,20 +34,21 @@
       }
     },
     {
-      "id": "success:sportnap",
-      "slug": "sportnap",
-      "category": "Sportélet",
-      "title": "Mozgásban az iskolai közösség",
-      "summary": "A sport sokféle formában jelenik meg a mindennapokban.",
-      "body": "Az iskolai sportélet nem csupán a versenyről szól: a közös sportnapok, az utánpótlásprogramok és a rendszeres mozgás mind hozzájárulnak a közösség építéséhez. A későbbi eseménybeszámolók a hivatalos programot és a jóváhagyott galériát is összekapcsolhatják.",
-      "mediaId": "media:esemenyek",
-      "priority": 76,
-      "status": "preview",
-      "isIllustration": true,
+      "id": "success:szabo-gabriella",
+      "slug": "szabo-gabriella",
+      "category": "Kajak-kenu",
+      "title": "Szabó Gabriella – kiemelkedő sportpályafutás",
+      "summary": "Háromszoros olimpiai bajnok, kilencszeres világbajnok. A Csanádi Sportiskola hivatalos büszkeséglistájában szerepel.",
+      "body": "Szabó Gabriella sportolói eredményei az iskola nyilvános eredményjegyzékében szerepelnek. Háromszoros olimpiai bajnok, kilencszeres világbajnok. A bemutatás célja az intézmény sportolói hagyományainak dokumentálása. A teljes, ellenőrizhető névsor az eredeti intézményi oldalon tekinthető meg.",
+      "mediaId": "media:eredmenyek",
+      "priority": 99,
+      "status": "verified",
+      "isIllustration": false,
       "publishedAt": null,
       "source": {
-        "type": "editorial-demo",
-        "verified": false
+        "type": "official-school-site",
+        "verified": true,
+        "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
       },
       "links": {
         "results": "#/sport/sporteredmenyek",
@@ -138,20 +56,21 @@
       }
     },
     {
-      "id": "success:csapat",
-      "slug": "csapat",
-      "category": "Csapatsportok",
-      "title": "Közös célok, közös élmények",
-      "summary": "A csapatszellem minden sportágban érték.",
-      "body": "Az együttműködés, a kölcsönös támogatás és a felelős döntések meghatározzák az iskolai csapatsportok karakterét. Ezen a próbabejegyzésen bemutatható az egyes sportágakhoz kapcsolódó hírek szerkesztése, a fényképek megjelenítése és a kapcsolódó oldalak összekötése.",
-      "mediaId": "media:sport",
-      "priority": 72,
-      "status": "preview",
-      "isIllustration": true,
+      "id": "success:liu-shaoang",
+      "slug": "liu-shaoang",
+      "category": "Gyorskorcsolya",
+      "title": "Liu Shaoang – kiemelkedő sportpályafutás",
+      "summary": "Kétszeres olimpiai bajnok, hatszoros világbajnok. A Csanádi Sportiskola hivatalos büszkeséglistájában szerepel.",
+      "body": "Liu Shaoang sportolói eredményei az iskola nyilvános eredményjegyzékében szerepelnek. Kétszeres olimpiai bajnok, hatszoros világbajnok. A bemutatás célja az intézmény sportolói hagyományainak dokumentálása. A teljes, ellenőrizhető névsor az eredeti intézményi oldalon tekinthető meg.",
+      "mediaId": "media:eredmenyek",
+      "priority": 98,
+      "status": "verified",
+      "isIllustration": false,
       "publishedAt": null,
       "source": {
-        "type": "editorial-demo",
-        "verified": false
+        "type": "official-school-site",
+        "verified": true,
+        "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
       },
       "links": {
         "results": "#/sport/sporteredmenyek",
@@ -159,20 +78,153 @@
       }
     },
     {
-      "id": "success:teljesitmeny",
-      "slug": "teljesitmeny",
-      "category": "Sportolói fejlődés",
-      "title": "A fejlődésnek sokféle arca van",
-      "summary": "Az eredmény mögött gyakran hónapok következetes munkája áll.",
-      "body": "A sportoló fejlődése nem mindig egyetlen érmen vagy helyezésen mérhető. A technikai tudás, a kitartás, a felelősség és a sporttársak támogatása ugyancsak fontos eredmény. A végleges sporthírek között az ilyen történeteknek is helyük lesz, ellenőrzött adatokkal, jóváhagyott fényképekkel és kapcsolódó eseményekkel.",
-      "mediaId": "media:sport",
-      "priority": 68,
-      "status": "preview",
-      "isIllustration": true,
+      "id": "success:vari-attila",
+      "slug": "vari-attila",
+      "category": "Vízilabda",
+      "title": "Vári Attila – kiemelkedő sportpályafutás",
+      "summary": "Kétszeres olimpiai bajnok, világbajnok és kétszeres Európa-bajnok. A Csanádi Sportiskola hivatalos büszkeséglistájában szerepel.",
+      "body": "Vári Attila sportolói eredményei az iskola nyilvános eredményjegyzékében szerepelnek. Kétszeres olimpiai bajnok, világbajnok és kétszeres Európa-bajnok. A bemutatás célja az intézmény sportolói hagyományainak dokumentálása. A teljes, ellenőrizhető névsor az eredeti intézményi oldalon tekinthető meg.",
+      "mediaId": "media:eredmenyek",
+      "priority": 97,
+      "status": "verified",
+      "isIllustration": false,
       "publishedAt": null,
       "source": {
-        "type": "editorial-demo",
-        "verified": false
+        "type": "official-school-site",
+        "verified": true,
+        "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      },
+      "links": {
+        "results": "#/sport/sporteredmenyek",
+        "news": "#/hirek-es-esemenyek/hirek/sporthirek"
+      }
+    },
+    {
+      "id": "success:berki-krisztian",
+      "slug": "berki-krisztian",
+      "category": "Torna",
+      "title": "Berki Krisztián – kiemelkedő sportpályafutás",
+      "summary": "Olimpiai bajnok, háromszoros világbajnok és hatszoros Európa-bajnok. A Csanádi Sportiskola hivatalos büszkeséglistájában szerepel.",
+      "body": "Berki Krisztián sportolói eredményei az iskola nyilvános eredményjegyzékében szerepelnek. Olimpiai bajnok, háromszoros világbajnok és hatszoros Európa-bajnok. A bemutatás célja az intézmény sportolói hagyományainak dokumentálása. A teljes, ellenőrizhető névsor az eredeti intézményi oldalon tekinthető meg.",
+      "mediaId": "media:eredmenyek",
+      "priority": 96,
+      "status": "verified",
+      "isIllustration": false,
+      "publishedAt": null,
+      "source": {
+        "type": "official-school-site",
+        "verified": true,
+        "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      },
+      "links": {
+        "results": "#/sport/sporteredmenyek",
+        "news": "#/hirek-es-esemenyek/hirek/sporthirek"
+      }
+    },
+    {
+      "id": "success:lorincz-tamas",
+      "slug": "lorincz-tamas",
+      "category": "Birkózás",
+      "title": "Lőrincz Tamás – kiemelkedő sportpályafutás",
+      "summary": "Olimpiai bajnok, világbajnok és négyszeres Európa-bajnok. A Csanádi Sportiskola hivatalos büszkeséglistájában szerepel.",
+      "body": "Lőrincz Tamás sportolói eredményei az iskola nyilvános eredményjegyzékében szerepelnek. Olimpiai bajnok, világbajnok és négyszeres Európa-bajnok. A bemutatás célja az intézmény sportolói hagyományainak dokumentálása. A teljes, ellenőrizhető névsor az eredeti intézményi oldalon tekinthető meg.",
+      "mediaId": "media:eredmenyek",
+      "priority": 95,
+      "status": "verified",
+      "isIllustration": false,
+      "publishedAt": null,
+      "source": {
+        "type": "official-school-site",
+        "verified": true,
+        "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      },
+      "links": {
+        "results": "#/sport/sporteredmenyek",
+        "news": "#/hirek-es-esemenyek/hirek/sporthirek"
+      }
+    },
+    {
+      "id": "success:toth-krisztian",
+      "slug": "toth-krisztian",
+      "category": "Judo",
+      "title": "Tóth Krisztián – kiemelkedő sportpályafutás",
+      "summary": "Olimpiai és világbajnoki bronzérmes, kétszeres Európa-bajnok. A Csanádi Sportiskola hivatalos büszkeséglistájában szerepel.",
+      "body": "Tóth Krisztián sportolói eredményei az iskola nyilvános eredményjegyzékében szerepelnek. Olimpiai és világbajnoki bronzérmes, kétszeres Európa-bajnok. A bemutatás célja az intézmény sportolói hagyományainak dokumentálása. A teljes, ellenőrizhető névsor az eredeti intézményi oldalon tekinthető meg.",
+      "mediaId": "media:eredmenyek",
+      "priority": 94,
+      "status": "verified",
+      "isIllustration": false,
+      "publishedAt": null,
+      "source": {
+        "type": "official-school-site",
+        "verified": true,
+        "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      },
+      "links": {
+        "results": "#/sport/sporteredmenyek",
+        "news": "#/hirek-es-esemenyek/hirek/sporthirek"
+      }
+    },
+    {
+      "id": "success:erdei-zsolt",
+      "slug": "erdei-zsolt",
+      "category": "Ökölvívás",
+      "title": "Erdei Zsolt – kiemelkedő sportpályafutás",
+      "summary": "Olimpiai bronzérmes, profi és amatőr világbajnok. A Csanádi Sportiskola hivatalos büszkeséglistájában szerepel.",
+      "body": "Erdei Zsolt sportolói eredményei az iskola nyilvános eredményjegyzékében szerepelnek. Olimpiai bronzérmes, profi és amatőr világbajnok. A bemutatás célja az intézmény sportolói hagyományainak dokumentálása. A teljes, ellenőrizhető névsor az eredeti intézményi oldalon tekinthető meg.",
+      "mediaId": "media:eredmenyek",
+      "priority": 93,
+      "status": "verified",
+      "isIllustration": false,
+      "publishedAt": null,
+      "source": {
+        "type": "official-school-site",
+        "verified": true,
+        "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      },
+      "links": {
+        "results": "#/sport/sporteredmenyek",
+        "news": "#/hirek-es-esemenyek/hirek/sporthirek"
+      }
+    },
+    {
+      "id": "success:erdi-maria",
+      "slug": "erdi-maria",
+      "category": "Vitorlázás",
+      "title": "Érdi Mária – kiemelkedő sportpályafutás",
+      "summary": "Világbajnok és Európa-bajnok. A Csanádi Sportiskola hivatalos büszkeséglistájában szerepel.",
+      "body": "Érdi Mária sportolói eredményei az iskola nyilvános eredményjegyzékében szerepelnek. Világbajnok és Európa-bajnok. A bemutatás célja az intézmény sportolói hagyományainak dokumentálása. A teljes, ellenőrizhető névsor az eredeti intézményi oldalon tekinthető meg.",
+      "mediaId": "media:eredmenyek",
+      "priority": 92,
+      "status": "verified",
+      "isIllustration": false,
+      "publishedAt": null,
+      "source": {
+        "type": "official-school-site",
+        "verified": true,
+        "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      },
+      "links": {
+        "results": "#/sport/sporteredmenyek",
+        "news": "#/hirek-es-esemenyek/hirek/sporthirek"
+      }
+    },
+    {
+      "id": "success:lorincz-viktor",
+      "slug": "lorincz-viktor",
+      "category": "Birkózás",
+      "title": "Lőrincz Viktor – kiemelkedő sportpályafutás",
+      "summary": "Olimpiai és világbajnoki ezüstérmes, Európa-bajnok. A Csanádi Sportiskola hivatalos büszkeséglistájában szerepel.",
+      "body": "Lőrincz Viktor sportolói eredményei az iskola nyilvános eredményjegyzékében szerepelnek. Olimpiai és világbajnoki ezüstérmes, Európa-bajnok. A bemutatás célja az intézmény sportolói hagyományainak dokumentálása. A teljes, ellenőrizhető névsor az eredeti intézményi oldalon tekinthető meg.",
+      "mediaId": "media:eredmenyek",
+      "priority": 91,
+      "status": "verified",
+      "isIllustration": false,
+      "publishedAt": null,
+      "source": {
+        "type": "official-school-site",
+        "verified": true,
+        "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
       },
       "links": {
         "results": "#/sport/sporteredmenyek",
