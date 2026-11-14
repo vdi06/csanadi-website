@@ -1,0 +1,121 @@
+/* Csanádi 2026 – D + F + G: korszerű hírek, események, dokumentumok;
+   prémium, témakövető látvány, akadálymentes és mobilbarát interakciók. */
+:root{--dfg-gold:#bd9141;--dfg-focus:#9b6f16;--dfg-radius:21px}
+html[data-theme="dark"]{--dfg-gold:#f3d48e;--dfg-focus:#ffe5a9}
+/* A felület központi elemei továbbra is középre rendezettek. */
+#app :is(.cs-news-center,.doc-center,.experience-standalone,.related-content){width:100%;min-width:0;margin-inline:auto}
+#app :is(.cs-news-center,.doc-center) :is(.doc-center-head,.cs-news-intro,.cs-news-count){text-align:center}
+#app .content-tiles--editorial :is(.cs-news-center,.doc-center,.experience-standalone){max-width:1100px}
+#app :is(.cs-news-center,.doc-center,.hub26-calendar) :is(input,select,button,a,summary):focus-visible,
+#site-map-overlay :is(button,a):focus-visible,#global-hero :is(button,a):focus-visible{
+ outline:3px solid var(--dfg-focus)!important;outline-offset:3px!important
+}
+/* D: képes, dátumozott, forrással ellátott hírmúzeum. */
+#app .dfg-news-center{padding:clamp(14px,2vw,28px) 0;max-width:1100px;margin:auto}
+#app .dfg-news-center .cs-news-intro{max-width:690px;margin:0 auto 22px;line-height:1.7;color:var(--muted)}
+#app .dfg-news-toolbar{display:grid;grid-template-columns:minmax(230px,1.55fr) repeat(2,minmax(150px,1fr)) auto;gap:12px;align-items:center;margin:0 auto 18px;max-width:1100px}
+#app .dfg-news-toolbar>*{min-width:0;max-width:none!important;width:100%;min-height:45px}
+#app .dfg-news-toolbar :is(input,select){background:var(--card)!important;color:var(--ink)!important;border:1px solid var(--line)!important;border-radius:12px;padding:10px 12px}
+#app .dfg-news-toolbar .dfg-reset{background:var(--light);color:var(--ink);border:1px solid var(--line);border-radius:12px;font-weight:800;padding:10px 16px}
+#app .dfg-news-toolbar .dfg-reset:hover{border-color:var(--dfg-gold)}
+#app .dfg-news-card{overflow:hidden!important;padding:0!important;display:flex!important;flex-direction:column;border-radius:var(--dfg-radius)!important;background:var(--card);border:1px solid var(--line);box-shadow:0 14px 34px rgba(8,28,49,.09);isolation:isolate;transition:box-shadow .3s ease,transform .3s ease,border-color .3s ease}
+#app .dfg-news-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(8,28,49,.17);border-color:var(--dfg-gold)}
+#app .dfg-news-card .dfg-news-cover{position:relative;aspect-ratio:16/9;min-height:150px;width:100%;background:#173550;overflow:hidden}
+#app .dfg-news-cover::after{content:'';position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(transparent,rgba(11,26,43,.4));pointer-events:none}
+#app .dfg-news-cover::before{content:'';position:absolute;z-index:1;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,#e9c982,#9e7028,transparent)}
+#app .dfg-news-cover img{height:100%;width:100%;display:block;object-fit:cover;object-position:center;transition:transform .65s ease}
+#app .dfg-news-card:hover .dfg-news-cover img{transform:scale(1.05)}
+#app .dfg-news-body{padding:clamp(16px,2vw,25px);display:flex;flex-direction:column;flex:1;min-width:0;gap:10px;text-align:left;overflow-wrap:anywhere}
+#app .dfg-news-body .cs-news-meta{gap:7px;justify-content:flex-start}
+#app .dfg-news-body .cs-news-cat{background:#dfbb73!important;color:#122a42!important;border-radius:99px;padding:5px 12px;font-weight:900}
+#app .dfg-news-date{font-size:11px;color:var(--muted);font-weight:750}
+#app .dfg-news-title{color:var(--ink);font-weight:900;font-size:clamp(17px,1.8vw,24px);letter-spacing:-.025em;line-height:1.22;margin:0;text-wrap:balance}
+#app .dfg-news-summary{line-height:1.65;color:var(--muted);font-size:clamp(13px,1.15vw,15px);margin:0}
+#app .dfg-news-body details{margin-top:2px;color:var(--ink)}
+#app .dfg-news-body details summary{font-size:13px;color:var(--ink);font-weight:850;list-style-position:inside;cursor:pointer}
+#app .dfg-news-body .cs-news-links{margin-top:auto;padding-top:13px;border-top:1px solid var(--line);display:flex;justify-content:flex-start;gap:9px 16px;align-items:center}
+#app .dfg-news-body .cs-news-links a{font-size:12px;color:var(--ink)!important;text-underline-offset:3px;overflow-wrap:anywhere}
+#app .dfg-news-body .cs-news-links a:hover{text-decoration:underline;color:var(--dfg-gold)!important}
+#app .cs-news-grid{align-items:stretch;grid-auto-rows:1fr}
+#app .cs-news-center .cs-news-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,23px)}
+#app .cs-news-teasers .cs-news-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(11px,1.3vw,17px)}
+#app .cs-news-count{font-size:13px;color:var(--muted);font-weight:750;margin:18px auto 12px}
+#app .dfg-news-pager{display:flex;justify-content:center;align-items:center;gap:15px;margin:20px auto 12px;font-weight:850;color:var(--ink)}
+#app .dfg-news-pager button{border:1px solid var(--line);border-radius:100px;background:var(--card);color:var(--ink);padding:11px 20px;font-weight:850}
+#app .dfg-news-pager button:not(:disabled):hover{border-color:var(--dfg-gold);background:var(--light)}
+#app .dfg-news-pager button:disabled{opacity:.45;cursor:not-allowed}
+#app .dfg-empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:16px;padding:25px;text-align:center;background:var(--light);color:var(--muted)}
+/* Naptár: szűrők egységesen és érintésbarát műveletgombok. */
+#app .hub26-calendar{min-width:0;overflow-wrap:anywhere}
+#app .hub26-calendar .hub26-cal-filters{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 10px}
+#app .hub26-calendar .hub26-cal-filters :is(input,select){min-width:150px;max-width:100%;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;min-height:43px;padding:9px 12px}
+#app .hub26-calendar .hub26-cal-modes{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:11px 0 14px}
+#app .hub26-calendar .hub26-cal-modes button[aria-pressed="true"]{background:#d3ab5b!important;color:#11263a!important;border-color:#af8636!important}
+#app .hub26-calendar .hub26-cal-modes button,.hub26-calendar .dfg-next-event{min-height:42px}
+#app .hub26-calendar .hub26-event-card{position:relative;padding:clamp(15px,2vw,22px);background:var(--card);border-color:var(--line);border-radius:17px;box-shadow:0 6px 18px rgba(12,32,52,.07)}
+#app .hub26-event-card::before{content:'';position:absolute;left:0;top:15px;bottom:15px;width:3px;border-radius:4px;background:var(--dfg-gold)}
+#app .hub26-event-card h4{font-size:clamp(16px,1.6vw,22px);text-wrap:balance}
+#app .hub26-event-card :is(.hub26-event-kicker,.dfg-event-source){font-weight:850}
+#app .hub26-event-card .hub26-event-actions{justify-content:flex-start;gap:8px}
+#app .hub26-event-card .hub26-event-actions a,#app .hub26-event-card .hub26-event-actions button{white-space:normal;min-height:39px;padding:9px 11px}
+#app .hub26-calendar .calendar-day{min-width:0;min-height:40px}
+#app .hub26-calendar .calendar-day:focus-visible{z-index:2}
+/* Dokumentumtár – letisztultabb, könnyen görgethető és olvasható. */
+#app .doc-center-head{max-width:760px;margin:0 auto 25px}
+#app .doc-filters{gap:12px;grid-template-columns:repeat(3,minmax(0,1fr));padding:clamp(14px,2vw,22px);background:var(--card);border-radius:20px}
+#app .doc-filters :is(select,input){max-width:100%;min-width:0;background:var(--card);color:var(--ink)}
+#app .doc-card{position:relative;overflow:hidden;border-radius:20px;box-shadow:0 10px 30px rgba(8,28,48,.09)}
+#app .doc-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#e7c47b,#b48738,transparent)}
+#app .doc-card :is(.doc-title,.doc-description){overflow-wrap:anywhere}
+#app .doc-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+#app .doc-saved-panel{max-width:100%;min-width:0}
+#app .doc-table-scroll{max-width:100%;overflow:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+#app .doc-table th{position:sticky;top:0;z-index:1}
+#app .doc-toolbar{justify-content:center;gap:10px}
+#app .doc-preview-dialog{min-width:0;overflow:auto;max-height:90dvh;overscroll-behavior:contain}
+#app .doc-preview-title{overflow-wrap:anywhere}
+#app .doc-preview-actions>a{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+/* F: látványos, de tudatosan visszafogott hover és fókusz. */
+.orbit-launch #orbit-open{position:relative;isolation:isolate;transition:transform .25s ease,box-shadow .25s ease,filter .25s ease}
+.orbit-launch #orbit-open::after{content:'';position:absolute;inset:-7px;border:1px solid rgba(196,157,79,.55);border-radius:inherit;pointer-events:none;transition:inset .3s ease,opacity .3s ease;opacity:.8}
+.orbit-launch #orbit-open:is(:hover,:focus-visible)::after{inset:-12px;opacity:1}
+#site-map-overlay .compass26-choice-link:is(:hover,:focus-visible){transform:translateY(-3px) scale(1.02);filter:brightness(1.07)}
+#site-map-overlay .compass26-sub-link:is(:hover,:focus-visible){filter:brightness(1.08)}
+/* G: hosszú szövegek, téma, kisebb érintőképernyők. */
+#app :is(.doc-center,.cs-news-center,.hub26-calendar) *{min-width:0}
+#app :is(.doc-center,.cs-news-center,.hub26-calendar) :is(p,h2,h3,h4,a){overflow-wrap:anywhere}
+html[data-theme="dark"] #app .dfg-news-date,html[data-theme="dark"] #app .cs-news-count{color:#cedde9}
+html[data-theme="dark"] #app .dfg-news-summary{color:#d9e2e9}
+html[data-theme="light"] #app .dfg-news-summary{color:#3f5164}
+@media(max-width:1050px){#app .dfg-news-toolbar{grid-template-columns:repeat(2,minmax(0,1fr))}#app .cs-news-teasers .cs-news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ #app .dfg-news-toolbar{grid-template-columns:1fr 1fr}
+ #app .dfg-news-toolbar input{grid-column:1/-1}
+ #app .dfg-news-toolbar .dfg-reset{grid-column:1/-1}
+ #app .cs-news-center .cs-news-grid{grid-template-columns:1fr}
+ #app .doc-filters{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #app .hub26-calendar .hub26-cal-filters :is(input,select){flex:1 1 180px}
+ #app .hub26-calendar .hub26-cal-top{justify-content:center;gap:8px;flex-wrap:wrap}
+}
+@media(max-width:540px){
+ #app .cs-news-teasers .cs-news-grid,#app .cs-news-center .cs-news-grid{grid-template-columns:1fr}
+ #app .dfg-news-toolbar{grid-template-columns:1fr}
+ #app .dfg-news-toolbar input,#app .dfg-news-toolbar .dfg-reset{grid-column:auto}
+ #app .dfg-news-card .dfg-news-cover{aspect-ratio:16/9}
+ #app .dfg-news-body{padding:16px}
+ #app .doc-filters,#app .doc-saved-panel{grid-template-columns:1fr}
+ #app .doc-card-grid{grid-template-columns:1fr}
+ #app .hub26-calendar .hub26-cal-filters{flex-direction:column;align-items:stretch}
+ #app .hub26-calendar .hub26-cal-filters>*{width:100%!important;max-width:100%!important}
+ #app .hub26-cal-actions{flex-wrap:wrap;gap:10px;justify-content:center}
+ #app .hub26-calendar .hub26-cal-modes button{padding:8px 11px}
+ #app .hub26-calendar .calendar-day{min-height:37px}
+ #app .doc-preview-dialog{width:96vw;max-width:96vw;padding:14px}
+ #app .dfg-news-pager{gap:8px;flex-wrap:wrap}
+ #app .dfg-news-pager button{padding:10px 14px}
+}
+@media(prefers-reduced-motion:reduce){
+ #app .dfg-news-card,#app .dfg-news-cover img,.orbit-launch #orbit-open,
+ .orbit-launch #orbit-open::after,#site-map-overlay .compass26-choice-link{transition:none!important;animation:none!important}
+ #app .dfg-news-card:hover,#app .dfg-news-card:hover img,#site-map-overlay .compass26-choice-link:is(:hover,:focus-visible){transform:none!important}
+}

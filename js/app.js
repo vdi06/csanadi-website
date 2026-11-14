@@ -1,13 +1,13 @@
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=20261114be1';
 import {renderLifeGallery} from './experience-2026.js?v=20261114v5';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=20261114premium1';
-import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=20261114v5';
+import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=20261114dfg1';
 import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=20261114v5';
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=20261114v5';
 /* Csanádi Sportiskola – hozzáférhető hash-SPA, regisztrált JSON-oldalakkal. */
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=20261114v5';
 import {renderBlock,dom,listCards} from './blocks.js?v=20261114premium1';
-import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=20261114v5';
+import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=20261114dfg1';
 import {renderSportsSuccesses} from './sports-successes.js?v=20261114v5';
 import {renderStudentAchievements} from './student-achievements.js?v=20261114v5';
 import {renderDailySportsNews} from './daily-sport-news.js?v=20261114v5';
