@@ -72,11 +72,17 @@
             "maxLength": 2000
           },
           "publishedAt": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "format": "date"
           },
           "eventDate": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "format": "date"
           },
           "approved": {

@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Történetünk – Csanádi Sportiskola",
@@ -66,6 +66,20 @@
           "type": "markdown",
           "data": {
             "text": "[Iskolánk hivatalos története](#/iskolank/tortenet)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Iskolatörténeti mérföldkövek",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az első tanítás 1897-ben a Várna utcában indult. Az Őrnagy utcai iskolaépületet 1904 októberében adták át, 1987-től az intézmény a Központi Sportiskola bázisiskolája lett, és 1989-ben felvette Csanádi Árpád nevét. 1998-ban a Magyar Olimpiai Bizottság olimpiai érdeméremmel tüntette ki.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/tortenet.html)"
           }
         }
       ]

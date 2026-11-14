@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T19:30:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 3
   },
   "seo": {
     "title": "Felvételi központ – Csanádi Sportiskola",
@@ -66,6 +66,20 @@
           "type": "markdown",
           "data": {
             "text": "[Nyílt napok](#/oktatas/felveteli/nyilt-napok) · [Felvételi határidők](#/oktatas/felveteli/felveteli-hataridok)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "A két beiskolázási út különbözik",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az első évfolyamos beiratkozás a tanköteles gyermekek általános iskolai felvételéhez kapcsolódik, a kilencedik évfolyamra jelentkezők pedig a középfokú felvételi rendszerét használják. A Csanádi honlapján mindkét eljáráshoz külön dokumentumok, nyilatkozatok és KRÉTA-útmutatók érhetők el.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/felveteli.html)"
           }
         }
       ]

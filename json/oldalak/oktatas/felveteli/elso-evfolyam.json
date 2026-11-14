@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Első évfolyamos beiskolázás – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Beiratkozási dokumentumok](#/oktatas/felveteli/elso-evfolyam)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Első osztály: szükséges tájékoztatók",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A hivatalos általános iskolai beiratkozási oldalon megtalálható a beiskolázási kiadvány, a tankerületi felhívás, a KRÉTA BÁI-modul szülői útmutatója, valamint a kapcsolódó nyilatkozatok. Az adott beiratkozás konkrét időpontját az aktuális tankerületi közleményből kell ellenőrizni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/altisk.html)"
           }
         }
       ]

@@ -163,6 +163,22 @@ function renderCenterContents(mount,route,initial){
  if(!Object.hasOwn(VIEWS,state.view))state.view='cards';if(!Object.hasOwn(SORTS,state.sort))state.sort='newest';if(state.status!=='all'&&!Object.hasOwn(STATUS,state.status))state.status='published';
  const top=el('div','doc-center-head');top.append(el('p','doc-kicker','ELLENŐRZÖTT FÁJLHIVATKOZÁSOK · NYILVÁNOS SEGÉDLETEK'),el('h2',null,'Dokumentumközpont'),el('p','doc-lead','Dokumentumokat kereshetsz, szűrhetsz, megtekinthetsz és letölthetsz. A gyűjteményben általános tanulási segédletek böngészhetők. A hivatalos intézményi szabályzatok az iskola saját honlapjáról érhetők el.'));
  mount.append(top);
+ // A hivatalos iskolai iratok nem részei a fejlesztői segédlet-archívumnak.
+ // A megfelelő intézményi gyűjtőoldal mégis közvetlenül elérhető marad.
+ const officialLinks=[
+  ['Intézményi alapdokumentumok','https://csanadi-bp.edu.hu/docs.html','intezmenyi-szabalyzat'],
+  ['Szülői nyomtatványok','https://csanadi-bp.edu.hu/szulok.html','intezmenyi-nyomtatvany'],
+  ['Különös közzétételi lista','https://csanadi-bp.edu.hu/kozzetetel.html','intezmenyi-kozzetetel'],
+  ['Felvételi dokumentumok','https://csanadi-bp.edu.hu/felveteli.html','felveteli'],
+  ['Közösségi szolgálati nyomtatványok','https://csanadi-bp.edu.hu/kozszoldokuk.html','kozossegi']
+ ];
+ const officialBox=el('section','csanadi-official-doc-links');
+ officialBox.append(el('h3',null,'Hivatalos intézményi dokumentumok'),el('p',null,'A közzétett, hiteles dokumentumok az iskola saját honlapján érhetők el. A linkek a jelenlegi hivatalos gyűjtőoldalakra vezetnek.'));
+ const officialGrid=el('div','csanadi-official-doc-grid');
+ officialLinks.filter(x=>docRoute==='all'||x[2]===docRoute||x[2]==='kozossegi'&&docRoute==='intezmenyi-nyomtatvany').forEach(([label,href])=>{
+  const link=el('a','csanadi-official-doc-link',label+' ↗');link.href=href;link.target='_blank';link.rel='noopener noreferrer';officialGrid.append(link);
+ });
+ officialBox.append(officialGrid);mount.append(officialBox);
  const filters=el('div','doc-filters');
  const results=el('div','doc-results');
  const resultLabel=el('div','doc-result-label');set(resultLabel,'aria-live','polite');

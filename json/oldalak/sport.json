@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T19:30:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 4
   },
   "seo": {
     "title": "Sport – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Sportolók](#/sport/sportolok) · [Csapatok](#/sport/csapatok) · [Edzők](#/sport/edzok)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Csanádi sporthagyomány",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az intézmény sportiskolai profiljához jelentős versenyzői életutak kapcsolódnak. A hivatalos büszkeséglistán többek között kajak-kenusok, vízilabdázók, birkózók, tornászok és rövidpályás gyorskorcsolyázók találhatók. A különböző korú eredményeket történeti és aktuális kategóriába érdemes sorolni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/buszkeseg.html)"
           }
         }
       ]

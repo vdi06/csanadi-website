@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Közlemények – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Iskolai közlemények](#/hirek-es-esemenyek/hirek)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Közzétett közlemények",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A Multischool5 szülői étkezési moduljának közzétett év végi szünete 2026. december 22. 9:00-tól december 31. 9:15-ig tart. Ezen időszak alatt a hivatalos közlemény szerint az étkezés megrendelése és lemondása nem érhető el. A szülők a pontos ügyintézési lépéseket az eredeti intézményi tájékoztatóból ellenőrizhetik.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/def.html)"
           }
         }
       ]

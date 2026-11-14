@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 3
   },
   "seo": {
     "title": "Oktatás – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "A technológia tudatos használata minden tanulási területen fontos. [Fedezd fel a digitális kultúráról szóló részletes írásunkat](#/oktatas/digitalis-kultura): hogyan lehet a digitális eszközöket biztonságosan, alkotó módon és valóban hasznos célokra használni?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Oktatási tájékozódás",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az intézmény általános iskolai és gimnáziumi képzést működtet sportiskolai profillal. Az első osztályba történő beiratkozásnak és a kilencedik évfolyamos középfokú felvételinek eltérő szabályai és dokumentumai vannak. Ezekhez külön, hivatalos tájékoztató oldalak érhetők el.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/felveteli.html)"
           }
         }
       ]

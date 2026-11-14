@@ -13,7 +13,17 @@ export function renderDailySportsNews(mode='home'){
  const grid=make('div','daily-sports-cards');container.append(grid);section.append(container);
  function load(){fetch(SOURCE,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Hírek nem elérhetők');return r.json();}).then(x=>{
    if(!section.isConnected)return;grid.replaceChildren();const items=checkedNews(x).slice(0,mode==='full'?18:6);
-   if(!items.length){grid.append(make('p','daily-sports-empty','A napi sporthírek frissítése folyamatban van. A Csanádi eredményeit az iskola eredménytárában találod.'));return;}
+   if(!items.length){
+      const highlights=[
+        ['Tóth Lelle – diákolimpiai aranyérem','Birkózás · U15, 62 kg'],
+        ['Takács Zétény – diákolimpiai bronzérem','Birkózás · szabadfogás'],
+        ['Ihos Márk – budapesti bajnoki bronz','Ökölvívás · 70 kg'],
+        ['Bagossy Anasztázia – negyedik hely az U16-os világbajnokságon','Vízilabda · csapateredmény']
+      ];
+      note.textContent='A külső napi hírfolyam jelenleg nem tartalmaz friss, ellenőrzött cikkeket. Helyette az iskola saját, dátum nélküli, hiteles sportbeszámolói láthatók – nem mai hírekként.';
+      highlights.forEach(([title,category])=>{const card=make('article','daily-sports-card');card.append(make('p','daily-sports-meta',category),make('h3','',title));const link=make('a','daily-sports-link','Eredeti iskolai hír ↗');link.href='https://csanadi-bp.edu.hu/def.html';link.target='_blank';link.rel='noopener noreferrer';card.append(link);grid.append(card);});
+      return;
+    }
    for(const item of items){const card=make('article','daily-sports-card');const header=make('p','daily-sports-meta',item.category||'Sporthír');const title=make('h3','',item.title);
     const date=make('time','daily-sports-date',new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'short',day:'numeric',timeZone:'Europe/Budapest'}).format(new Date(item.publishedAt)));
     const link=make('a','daily-sports-link','Teljes sporthír megnyitása ↗');link.href=item.url;link.target='_blank';link.rel='noopener noreferrer';

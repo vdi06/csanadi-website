@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Mindennapi tudnivalók – Csanádi Sportiskola",
@@ -38,6 +38,20 @@
           "type": "markdown",
           "data": {
             "text": "A csengetési rend a tanórák időpontjait rögzíti, a szülői tájékoztatás pedig a mindennapi ügyintézéshez nyújt kapaszkodót. A digitális idővonal az ellenőrzött órarendet követi.\n\nA különleges tanítási napokra vonatkozó eltérő napirendet csak intézményi közlés alapján lehet beállítani, ezért itt nem jelenik meg találgatott rövidített csengetési rend."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Napi iskolai tudnivalók",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskola hivatalos csengetési rendje szerint az első óra 8:00-kor, a nyolcadik óra 14:20-kor kezdődik. Az általános iskolai ügyelet tanítási napokon 7:00 és 18:00 között működik. Az étkezési ügyintézés feltételei az intézmény ebédbefizetési oldalán találhatók.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/csengetes.html)"
           }
         }
       ]

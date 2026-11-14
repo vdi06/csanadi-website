@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Tananyagok és jegyzetek – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "A dokumentumszerkesztés, a táblázatkezelés, a prezentációkészítés és a forráskritika egymást kiegészítő készségek. A feladatoknál érdemes egyértelmű célokat, jól strukturált tartalmat és következetes ellenőrzési lépéseket használni.\n\n[Digitális dokumentumsegédletek megnyitása](#/informaciok/dokumentumtar)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Tanulást támogató segédletek",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A honlap digitális dokumentumtára felvételi tervezési, digitális fájlkezelési és sport melletti időgazdálkodási segédleteket tartalmaz. Ezek fejlesztési tájékoztató anyagok, nem helyettesítik az iskola hivatalos pedagógiai programját, tantervét vagy házirendjét.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/docs.html)"
           }
         }
       ]

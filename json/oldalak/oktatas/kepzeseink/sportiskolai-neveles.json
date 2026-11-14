@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Sportiskolai nevelés – Csanádi Sportiskola",
@@ -38,6 +38,20 @@
           "type": "markdown",
           "data": {
             "text": "A sportolói élet rendszeres edzésekkel, versenyekkel és sokszor utazással jár. A tanulás az ismeretek bővítését és a hosszabb távú életpálya megalapozását segíti.\n\nA Csanádi pedagógiai programjában külön szerepet kap a sportoló tanulók szükségleteihez igazodó nevelés és oktatás. A kitartás, a felelősségvállalás és a tudatos szervezés a két terület közös értékei."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Sport és tanulmányok összehangolása",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A sportiskolai képzésben a közismereti tanulmányok mellett kiemelt szerepet kap a sportoló diákok felkészülésének támogatása. A szakmai keretek, a tanulmányi követelmények és a sportági sajátosságok részleteit az iskola pedagógiai programja és felvételi tájékoztatója tartalmazza.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/docs.html)"
           }
         }
       ]

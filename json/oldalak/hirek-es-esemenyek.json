@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Hírek és események – Csanádi Sportiskola",
@@ -38,6 +38,20 @@
           "type": "markdown",
           "data": {
             "text": "Az iskolai hírek és események időrendben mutatják meg a közösség fontos időszakait. A közzétett információk mellé lehetőség szerint az intézmény eredeti közleményét kapcsoljuk.\n\nA keresővel és a kategóriaszűrővel az aktuális tájékoztatások és a korábbi bejegyzések között is eligazodhatsz. A naptár csak olyan programot jelöl eseményként, amelyhez ellenőrzött dátum társul."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Aktuális iskolai közlemények",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A 2026. november 14-i ellenőrzéskor a hivatalos intézményi oldalon két novemberi gimnáziumi nyílt nap, őszi érettségi tájékoztató és több diákverseny-beszámoló szerepel. Az oldalon az esemény dátumát mindig megkülönböztetjük a hír tényleges közzétételének időpontjától.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/def.html)"
           }
         }
       ]

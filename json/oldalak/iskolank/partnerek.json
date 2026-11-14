@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Partnereink – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "Együttműködéssel kapcsolatos megkereséseket az intézmény hivatalos kapcsolati felületén lehet kezdeményezni. A konkrét partnerlista ellenőrzés után bővíthető.\n\n[Kapcsolati adatok](#/kapcsolat)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Intézményi és sportkapcsolatok",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskola fenntartója a Közép-Pesti Tankerületi Központ. A sportági együttműködések és az egyesületi igazolások fontosak a sportolói élet megszervezésében. A konkrét, aktuális partnerlistát kizárólag az iskola által jóváhagyott megnevezésekkel érdemes közzétenni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/kapcsolat.html)"
           }
         }
       ]

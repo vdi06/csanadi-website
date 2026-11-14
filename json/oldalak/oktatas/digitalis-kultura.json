@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Digitális kultúra – értsük és használjuk jól a technológiát – Csanádi Sportiskola",
@@ -155,6 +155,20 @@
           "type": "markdown",
           "data": {
             "text": "A digitális világ folyamatosan változik. Egy mai felület vagy alkalmazás néhány év múlva másképp nézhet ki, de az alapvető készségek hosszú távon is értékesek maradnak: az önálló tanulás, a kritikai gondolkodás, az adatok értelmezése, az alkotás, a biztonságos kommunikáció és az új helyzetekhez való alkalmazkodás.\n\nEzért a digitális kultúra nem csupán azoknak szól, akik később informatikával szeretnének foglalkozni. Ugyanúgy része lehet egy sportoló, egy pedagógus, egy egészségügyi szakember, egy művész vagy bármely más területen dolgozó ember életének. A cél, hogy a technológiától ne félnünk kelljen, és ne is kritikátlanul kövessük: **értsük meg, válasszuk meg, és használjuk értelmes, hasznos célokra**."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Digitális kultúra a gyakorlatban",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A digitális kultúra témái között szerepel az információk ellenőrzése, az adatvédelem, a szövegszerkesztés, a táblázatkezelés, a prezentációkészítés és az algoritmikus problémamegoldás. Az intézményi követelményeket és az adott tanév feladatait a szaktanár által meghatározott hivatalos tanulási környezet közli.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/digital.html)"
           }
         }
       ]

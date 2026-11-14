@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Bemutatkozás – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "Az iskola 2026-os pedagógiai programja a tisztességet, a kitartást, a fegyelmet és a tudatos munkát hangsúlyozza. Ezek az értékek a sportpályán, az osztályteremben és az iskolai közösségben egyaránt jelen vannak.\n\n[Pedagógiai program – hivatalos PDF](#/informaciok/dokumentumtar)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Közös iskolai és sportolói út",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A Csanádi közismereti oktatást és sportolói felkészülést egyaránt nyújt. Az intézmény saját bemutatkozása a sportolók utánpótlás-nevelését hangsúlyozza; az általános iskolai alsó tagozaton a sport szeretete fontos, de a sportegyesületi tagság nem előfeltétel. Az iskola OM-azonosítója 200346.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/felveteli.html)"
           }
         }
       ]

@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 3
   },
   "seo": {
     "title": "Sporthírek – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Iskolai aktualitások](#/hirek-es-esemenyek/hirek) · [Büszkeségeink](#/sport/sporteredmenyek)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Sporthírek és versenyeredmények",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskola aktuális hírei Tóth Lelle, Takács Zétény, Ihos Márk és Bagossy Anasztázia sporteredményéről is beszámolnak. Az időpont nélküli eredményeket nem soroljuk automatikusan a legutóbbi hét eredményei közé. A sportágakat, helyezéseket és neveket az eredeti közlemény alapján jelenítjük meg.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/def.html)"
           }
         }
       ]

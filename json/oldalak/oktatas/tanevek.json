@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T19:30:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 3
   },
   "seo": {
     "title": "Tanévek – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Korábbi tanévek](#/oktatas/tanevek/korabbi-tanevek)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Tanévi tervezés",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A 2026/2027-es tanév az iskola közzététele szerint 2026. szeptember 1-jén indult. Az intézményi csengetési rend, az eseménynaptár és az érettségi tájékoztató külön oldalon érhető el. A tanévi helyi rendet a közzétételi lista tartalmazza.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/kozzetetel.html)"
           }
         }
       ]

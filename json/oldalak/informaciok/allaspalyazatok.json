@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Álláspályázatok – Csanádi Sportiskola",
@@ -68,6 +68,20 @@
           }
         ]
       }
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Az iskola álláshirdetései",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A Csanádi hivatalos állásoldala jelenleg karbantartót és digitális kultúra (informatika) szakos tanárt sorol fel. A digitális kultúra állás leírásában a 2027. június 18-ig tartó határozott jogviszony és heti négyórás megbízás szerepel. A pályázati feltételeket és az aktuális álláshelyeket a hivatalos közzétételnél kell újra ellenőrizni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/allas.html)"
+          }
+        }
+      ]
     }
   ],
   "related": [],

@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Szülői információk – Csanádi Sportiskola",
@@ -38,6 +38,20 @@
           "type": "markdown",
           "data": {
             "text": "A szülőknek fontos lehet a tanévi programok, a vizsgák, az étkezés, a beiratkozás és az igazolások pontos menete. A hivatalos intézményi közleményekből az adott időszakra érvényes részletek ellenőrizhetők.\n\nAz iskola titkárságának elérhetőségeit a Kapcsolat oldalon gyűjtöttük össze. A beiratkozás és a felvételi aktuális tudnivalói külön az Oktatás terület alatt érhetők el."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Szülői dokumentumok és igazolások",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A hivatalos szülői oldalon elérhető többek között a jogszerű távolléthez kapcsolódó szülői igazolás, az egyesületi sportolói igazolás, napközis és tanulószobai nyilatkozat, valamint az egyéni tanrenddel kapcsolatos kérelem. A kitöltés előtt mindig a dokumentum legújabb példányát kell letölteni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/szulok.html)"
           }
         }
       ]

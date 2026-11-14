@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Sportesemények – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "Egy eseményhez kapcsolódhat sportág, helyszín, kezdési idő, jelentkezési tájékoztatás és utólag ellenőrzött eredmény. Nem jelenítünk meg kitalált versenyidőpontokat.\n\n[Eseménynaptár](#/hirek-es-esemenyek/esemenynaptar) · [Sporteredmények](#/sport/sporteredmenyek)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Sportesemények ellenőrzése",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskola 2026-os aktuális oldala több sportverseny eredményét is közzéteszi, de nem minden beszámolóban található ellenőrizhető kezdési időpont. Ezeket a hírek és az eredménytár mutatja be; naptári programként csak valós, közzétett eseményidőponttal szerepelhetnek.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/def.html)"
           }
         }
       ]

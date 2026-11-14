@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Érettségi – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Érettségi vizsga – 2026 ősz](#/oktatas/vizsgak/erettsegi)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "2026 őszi érettségi – közzétett időpontok",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A Csanádi középszintű szóbeli érettségit 2026. november 18-ra hirdette meg, legkésőbb 7:30-as érkezéssel. Az októberi írásbelik már lezajlottak. A magyar, történelem és földrajz szóbeli témakörei az iskola hivatalos érettségi oldalán érhetők el.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/erettsegi.html)"
           }
         }
       ]

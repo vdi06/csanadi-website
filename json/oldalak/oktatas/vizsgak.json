@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T19:30:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 3
   },
   "seo": {
     "title": "Vizsgaközpont – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Egyéb vizsgák](#/oktatas/vizsgak/egyeb-vizsgak)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Vizsgák: hivatalos dokumentumok",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az érettségi, az osztályozó vizsga és az egyéb tanulmányi vizsgák időpontjai eltérők. Az iskola közzétett érettségi oldala 2026 őszi vizsgaadatokat tartalmaz, az osztályozó vizsga honlapján viszont egyes látható időpontok még 2025-ből származnak. A régi dátumokat nem tekintjük aktuális vizsgaidőpontnak.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/erettsegi.html)"
           }
         }
       ]

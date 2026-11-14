@@ -109,6 +109,54 @@
       "status": "verified",
       "route": "#/hirek-es-esemenyek/hirek/sporthirek",
       "url": "https://csanadi-bp.edu.hu/def.html"
+    },
+    {
+      "id": "hir:molnar-noemi-bmx",
+      "category": "Sport",
+      "title": "Molnár Noémi BMX-sikere",
+      "summary": "Molnár Noémi az eszéki Pannonian Challenge női profi BMX-versenyén első helyezést ért el.",
+      "detail": "Az eredményt az iskola hivatalos aktuális közleménye ismerteti. A közlemény nem tartalmaz olyan pontos publikálási dátumot, amelyből biztonsággal meghatározható lenne a verseny napja.",
+      "date": null,
+      "dateType": "nem közölt",
+      "status": "verified",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": "https://csanadi-bp.edu.hu/def.html"
+    },
+    {
+      "id": "hir:revia-oliver-kezilabda",
+      "category": "Sport",
+      "title": "Révia Olivér csapatának ezüstérme",
+      "summary": "Révia Olivér a PLER-Budapest csapatával az I. osztályú országos kézilabda-bajnokságban ezüstérmes lett.",
+      "detail": "Az eredményt az iskola hivatalos aktuális közleménye ismerteti. A közlemény nem tartalmaz olyan pontos publikálási dátumot, amelyből biztonsággal meghatározható lenne a verseny napja.",
+      "date": null,
+      "dateType": "nem közölt",
+      "status": "verified",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": "https://csanadi-bp.edu.hu/def.html"
+    },
+    {
+      "id": "hir:szabo-zsamba-zalan-vizilabda",
+      "category": "Sport",
+      "title": "Szabó-Zsámba Zalán vízilabdaezüstje",
+      "summary": "Szabó-Zsámba Zalán a KSI serdülő csapatával országos ezüstérmet szerzett.",
+      "detail": "Az eredményt az iskola hivatalos aktuális közleménye ismerteti. A közlemény nem tartalmaz olyan pontos publikálási dátumot, amelyből biztonsággal meghatározható lenne a verseny napja.",
+      "date": null,
+      "dateType": "nem közölt",
+      "status": "verified",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": "https://csanadi-bp.edu.hu/def.html"
+    },
+    {
+      "id": "hir:sinko-panni-kezilabda",
+      "category": "Sport",
+      "title": "Sinkó Panni csapatának bajnoki sikere",
+      "summary": "Sinkó Panni csapata, a Tempo Kézilabda SE LU20, megnyerte a kézilabda-bajnokság II. osztályának nyugati csoportját.",
+      "detail": "Az eredményt az iskola hivatalos aktuális közleménye ismerteti. A közlemény nem tartalmaz olyan pontos publikálási dátumot, amelyből biztonsággal meghatározható lenne a verseny napja.",
+      "date": null,
+      "dateType": "nem közölt",
+      "status": "verified",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": "https://csanadi-bp.edu.hu/def.html"
     }
   ]
 }

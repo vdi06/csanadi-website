@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Digitális ügyintézés – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "A megadott digitális felületen mindig az adott feladat vagy ügy előírásait kell követni. Ellenőrizd a fájlnevet, a szükséges formátumot, a jogosultságokat és a határidőt.\n\n[KRÉTA – hivatalos belépés](https://klik200346001.e-kreta.hu/) · [Dokumentumtár](#/informaciok/dokumentumtar)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Digitális ügyintézés",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A KRÉTA a beiratkozási folyamatban és több tanuló–szülő ügyben hivatalosan használt digitális felület. Az általános iskolai beiratkozás BÁI és a középiskolai beiratkozás BKI moduljának útmutatói az iskola felvételi oldalain találhatók. Bejelentkezési adatokat kizárólag a hivatalos rendszerekbe szabad megadni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/felveteli.html)"
           }
         }
       ]

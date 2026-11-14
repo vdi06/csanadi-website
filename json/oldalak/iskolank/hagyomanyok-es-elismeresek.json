@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Hagyományok és elismerések – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "A nyilvánosan közölhető eredmények kizárólag ellenőrzött intézményi közlés alapján szerepelhetnek ezen az oldalon. A kapcsolódó eredményeket külön gyűjteményben lehet böngészni.\n\n[Büszkeségeink](#/iskolank/buszkesegeink) · [Sporteredmények](#/sport/sporteredmenyek)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Közzétett elismerések",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A Magyar Olimpiai Bizottság 1998-ban olimpiai érdemérmet adományozott az iskolának. Az intézményi elismerésjegyzék több sportiskolai díjat sorol fel, és tartalmazza a 2025/2026-os Boldog Iskola elismerését is. Az egyes díjak évét és megnevezését a hivatalos kitüntetési oldalon lehet ellenőrizni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/awards.html)"
           }
         }
       ]

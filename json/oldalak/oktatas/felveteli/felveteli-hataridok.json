@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Felvételi határidők – Csanádi Sportiskola",
@@ -68,6 +68,20 @@
           }
         ]
       }
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Országos középfokú felvételi – 2027",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "2026. december 1.: jelentkezés a központi írásbelire. 2027. január 23., 10:00: központi írásbeli vizsga. 2027. február 3., 14:00: pótló írásbeli. 2027. február 22.: a középfokú jelentkezési lapok továbbításának határideje. 2027. március 1–19.: a szóbeli vizsgák országos időszaka. Ezek országos időpontok, nem külön Csanádi által meghirdetett programok.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/felveteli.html)\n\n[Az országos felvételi eljárás részletes időrendje](https://palyavalasztas.csmpsz.hu/a-kozepfoku-felveteli-eljaras-rendje-a-2026-2027-tanevben/)"
+          }
+        }
+      ]
     }
   ],
   "related": [],

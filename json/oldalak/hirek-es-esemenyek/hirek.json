@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Hírek – Csanádi Sportiskola",
@@ -38,6 +38,20 @@
           "type": "markdown",
           "data": {
             "text": "A hírek feladata a pontos, könnyen követhető tájékoztatás. A felvételi programok, tanévi tudnivalók és iskolai sporteredmények külön témakörökben találhatók meg.\n\nA közölt tényekhez és időpontokhoz az intézmény eredeti oldalára mutató hivatkozás tartozik. A képes sportbemutató önálló, tematikus galériában marad."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Hiteles hírek",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A hírek az intézmény által nyilvánosan közzétett programokra, eredményekre és iskolai tájékoztatásokra épülnek. Külön kategória a felvételi, az oktatás, a sport és a közlemény. A dátum nélküli iskolai hírnél nem tüntetünk fel kitalált publikálási dátumot.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/def.html)"
           }
         }
       ]

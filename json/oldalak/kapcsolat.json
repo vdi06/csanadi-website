@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Kapcsolat – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Hivatalos kapcsolati oldal](#/kapcsolat) · [Útvonal tervezése](https://www.google.com/maps/search/?api=1&query=1143%20Budapest%20%C5%90rnagy%20utca%205-7)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Hivatalos elérhetőségek",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium. 1143 Budapest, Őrnagy utca 5–7.; OM: 200346. Titkárság: +36 30 267 8208 és +36 30 427 8230; e-mail: csanadi@csanadiiskola.hu. A fenntartó a Közép-Pesti Tankerületi Központ.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/kapcsolat.html)"
           }
         }
       ]

@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Tudnivalók – Csanádi Sportiskola",
@@ -68,6 +68,20 @@
           }
         ]
       }
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Közösségi szolgálat: hogyan kezdj hozzá?",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A tanuló a közösségi szolgálat megkezdése előtt az iskolai koordinátorral egyezteti a helyszínt és a tevékenységet. A szolgálati naplóban dátummal és tevékenységgel dokumentálja a teljesítést. Az utazási idő a szolgálati időbe nem számítható be.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/kozszolinfo.html)\n\n[Az iskola közösségi szolgálati dokumentumai](https://csanadi-bp.edu.hu/kozszoldokuk.html)"
+          }
+        }
+      ]
     }
   ],
   "related": [],

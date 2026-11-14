@@ -119,3 +119,12 @@ html[data-theme="light"] #app .dfg-news-summary{color:#3f5164}
  .orbit-launch #orbit-open::after,#site-map-overlay .compass26-choice-link{transition:none!important;animation:none!important}
  #app .dfg-news-card:hover,#app .dfg-news-card:hover img,#site-map-overlay .compass26-choice-link:is(:hover,:focus-visible){transform:none!important}
 }
+
+/* Hivatalos, külső intézményi dokumentumgyűjtők. */
+#app .csanadi-official-doc-links{margin:14px auto 26px;max-width:1100px;text-align:center;border:1px solid var(--line);border-radius:18px;padding:18px;background:var(--card);color:var(--ink)}
+#app .csanadi-official-doc-links h3{font-size:clamp(17px,2vw,23px);font-weight:900;margin:0 0 8px}
+#app .csanadi-official-doc-links p{font-size:13px;color:var(--muted);margin:0 0 13px}
+#app .csanadi-official-doc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:9px}
+#app .csanadi-official-doc-link{display:flex;align-items:center;justify-content:center;padding:11px 10px;min-height:45px;border:1px solid var(--line);background:var(--light);color:var(--ink);border-radius:12px;text-align:center;text-decoration:none;font-size:13px;font-weight:750}
+#app .csanadi-official-doc-link:hover,#app .csanadi-official-doc-link:focus-visible{border-color:var(--gold);color:var(--ink)}
+@media(max-width:600px){#app .csanadi-official-doc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#app .csanadi-official-doc-links{padding:13px}#app .csanadi-official-doc-link{padding:9px 7px;font-size:11px}}

@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "A honlap születése – emberi döntések és digitális segítség – Csanádi Sportiskola",
@@ -169,6 +169,20 @@
           "type": "markdown",
           "data": {
             "text": "A digitális felület akkor marad értékes, ha az elkészülte után is gondozzák. Új hírek, sporteredmények, tanévi információk, dokumentumok és közösségi történetek jelenhetnek meg rajta. A tartalmak frissítése mellett a hozzáférhetőség, a biztonság, az adatminőség és a látogatói visszajelzések vizsgálata is fontos.\n\nA honlap története ezért nem egyetlen elkészült képernyőképről szól. Sok apró döntés, ellenőrzés és javítás eredménye, amelyben a digitális eszközök és a mesterséges intelligencia hasznos segítséget adhatnak, de az irányt az emberi szándék és felelősség határozza meg. Ez ugyanaz a szemlélet, amelyet a [digitális kultúra szerepét bemutató oldalunkon](#/oktatas/digitalis-kultura) is fontosnak tartunk."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "A megújuló honlap tartalmi alapelvei",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A megújuló oldal az iskola nyilvános tájékoztatását, a sportot, a tanulást és a dokumentumokat kapcsolja össze. A közzététel alapelve a dátumok, a dokumentumok és az intézményi adatok ellenőrizhetősége: a szemléltető média és a hivatalos iskolai fénykép nem ugyanaz.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/docs.html)"
           }
         }
       ]

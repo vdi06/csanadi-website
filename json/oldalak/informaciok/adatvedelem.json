@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Adatvédelem – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Adatkezelés – intézményi dokumentumok](#/informaciok/dokumentumtar)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Adatkezelés és adatbiztonság",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskola a hivatalos dokumentumoldalon külön adatkezelési szabályzatot, általános adatkezelési tájékoztatót és a kamerarendszerhez kapcsolódó tájékoztatót is közzétesz. Az aktuális kapcsolattartó és adatvédelmi tisztviselő elérhetősége a Kapcsolat oldalon található meg.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/docs.html)"
           }
         }
       ]

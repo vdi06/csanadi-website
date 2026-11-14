@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Kilencedik évfolyamos felvételi – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Felvételi tájékoztató és dokumentumok](#/oktatas/felveteli/kilencedik-evfolyam)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Kilencedik évfolyam: felvételi lépések",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A gimnáziumi jelentkezéshez tanulmányi területi tájékoztató, jelentkezési lapok és a központi írásbelihez kapcsolódó útmutatók érhetők el. Az országos eljárásban az írásbelire 2026. december 1-jéig kell jelentkezni, a vizsga 2027. január 23-án 10:00-kor lesz; az iskola saját felvételi feltételeit külön is ellenőrizni kell.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/felveteli.html)\n\n[Országos eljárási határidők](https://palyavalasztas.csmpsz.hu/a-kozepfoku-felveteli-eljaras-rendje-a-2026-2027-tanevben/)"
           }
         }
       ]

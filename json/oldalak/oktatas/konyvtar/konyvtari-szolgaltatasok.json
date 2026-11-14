@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Könyvtári szolgáltatások – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "A nyitvatartásra, beiratkozásra, könyvkölcsönzésre és tanulói hozzáférésre vonatkozó aktuális feltételek intézményi ellenőrzés után jeleníthetők meg.\n\n[Könyvtár](#/oktatas/konyvtar) · [Tananyagok és jegyzetek](#/oktatas/tananyagok-es-jegyzetek)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Könyvtári szolgáltatások",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A dokumentumkeresés, a szakirodalom és az iskolai tananyagok tudatos használata a könyvtári tanulás része. A beiratkozás, a helyben használat és a kölcsönzés intézményi feltételei a könyvtáros vagy a titkárság aktuális tájékoztatásából ismerhetők meg.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/kapcsolat.html)"
           }
         }
       ]

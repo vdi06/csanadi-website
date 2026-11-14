@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Közzétételi lista – Csanádi Sportiskola",
@@ -68,6 +68,20 @@
           }
         ]
       }
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Különös közzétételi lista",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskola honlapján külön közzétételi lista tartalmazza az intézményi adatokat, mérési és érettségi eredményekre, osztálylétszámokra, munkatervre és házi feladatok szabályaira mutató hivatkozásokat. A hivatalos oldal jelzi, hogy az adatok frissítése folyamatban van, ezért az egyes dokumentumok dátumát külön ellenőrizni kell.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/kozzetetel.html)"
+          }
+        }
+      ]
     }
   ],
   "related": [],

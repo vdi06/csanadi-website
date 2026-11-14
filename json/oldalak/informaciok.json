@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T19:30:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 3
   },
   "seo": {
     "title": "Információk – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Digitális ügyintézés](#/informaciok/digitalis-ugyintezes) · [Álláspályázatok](#/informaciok/allaspalyazatok)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Iskolai ügyintézés egy helyen",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az intézmény hivatalos oldalán a szülői nyilatkozatok, az étkezés, a csengetési rend, a házirend, a felvételi, a közösségi szolgálat és a közzétételi lista külön elérhető. A honlapon ezekhez közvetlenül használható, ellenőrzött útvonalakat és témaköröket tartunk fenn.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/docs.html)"
           }
         }
       ]

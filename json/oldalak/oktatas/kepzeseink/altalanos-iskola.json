@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Általános iskolai képzés – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "[Első évfolyamos beiskolázás – hivatalos oldal](#/oktatas/felveteli/elso-evfolyam)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Általános iskola: mire számíthat a család?",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskola 2026/2027-es bemutatkozó anyaga évfolyamonként jellemzően egy, 14–16 fős általános iskolai osztályt ír le. Az alsó tagozaton az óvoda és az iskola közötti fokozatos átmenetre helyezik a hangsúlyt. A jelentkezéshez és a beiratkozáshoz a közzétett KRÉTA-útmutatók és nyilatkozatok tartoznak.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/altisk.html)"
           }
         }
       ]

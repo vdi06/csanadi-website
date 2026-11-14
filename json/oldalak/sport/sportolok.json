@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Sportolók – Csanádi Sportiskola",
@@ -68,6 +68,20 @@
           }
         ]
       }
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Sportolói bemutatkozások",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskolai sportolói közösségben a tanulás és a versenyzés összehangolása kiemelt feladat. Ellenőrzött, nyilvános eredmény szerepel például Tóth Lelle diákolimpiai aranyérméről és Takács Zétény birkózó bronzérméről. Más tanulók profilját és portréját csak jóváhagyott adatok alapján szabad közzétenni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/def.html)"
+          }
+        }
+      ]
     }
   ],
   "related": [],

@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Hírarchívum – Csanádi Sportiskola",
@@ -38,6 +38,20 @@
           "type": "markdown",
           "data": {
             "text": "Az archívumban a hírek kereséssel és kategóriák szerint is visszakereshetők. A korábbi időpontok nem kerülnek automatikusan a közelgő események közé, de tájékoztatási és történeti értékük megmaradhat.\n\nA korábbi tanévek vizsgái, felvételi eljárásai és sporteredményei időben elkülönítve szerepelnek, hogy ne lehessen őket aktuális határidőként értelmezni."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "Hírarchívum és időrend",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "Az archív tartalom múltbeli tanévi közleményeket, történeti iskolai információkat és lezárult programokat tartalmazhat. Például a 2026. szeptemberi tanévnyitó és az októberi őszi érettségi írásbeli időpontjai már történeti események; felvételi vagy vizsgatervezéshez az aktuális naptár az irányadó.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/def.html)"
           }
         }
       ]

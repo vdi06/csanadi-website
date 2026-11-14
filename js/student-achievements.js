@@ -10,7 +10,7 @@ function validate(root){
  if(root?.schemaVersion!=='1.0.0'||root?.collectionId!=='collection:tanuloi-sikerek'||root?.timezone!=='Europe/Budapest'||root?.featureDays!==7||!Array.isArray(root.items))throw Error('Érvénytelen sporteredmény-adatforrás.');
  const ids=new Set();const result=[];
  for(const x of root.items){
-  if(!x||!/^student-success:[a-z0-9-]+$/.test(x.id)||ids.has(x.id)||!iso(x.publishedAt)||!iso(x.eventDate)||
+  if(!x||!/^student-success:[a-z0-9-]+$/.test(x.id)||ids.has(x.id)||!(x.publishedAt===null||iso(x.publishedAt))||!(x.eventDate===null||iso(x.eventDate))||
    !['studentName','className','sport','competition','result'].every(k=>typeof x[k]==='string'&&x[k].trim())||
    !(x.isDemo===true&&root.previewMode===true || x.isDemo!==true&&x.approved===true&&x.verified===true))continue;
   if(x.isDemo&&( !Number.isInteger(x.demoDaysAgo)||x.demoDaysAgo<0||x.demoDaysAgo>1500))continue;
@@ -21,7 +21,7 @@ function validate(root){
 async function load(){const r=await fetch(SOURCE,{cache:'no-store'});if(!r.ok)throw Error('A sporteredmények nem érhetők el.');return validate(await r.json());}
 const actualPublication=x=>x.isDemo?datePlus(localDate(),-x.demoDaysAgo):x.publishedAt;
 const actualEventDate=x=>x.isDemo?datePlus(localDate(),-x.demoDaysAgo-1):x.eventDate;
-const isFeatured=x=>{const d=daysSince(actualPublication(x),localDate());return d>=0&&d<7;};
+const isFeatured=x=>{const pub=actualPublication(x);if(!pub)return false;const d=daysSince(pub,localDate());return d>=0&&d<7;};
 function picture(x){
  if(!x.isDemo&&(x.imageApproved!==true||x.photoIsOfStudent!==true))return null;
  if(!/^assets\/media\/web\/[a-z0-9/_-]+\.webp$/.test(x.image||''))return null;
@@ -34,19 +34,19 @@ function card(x,featured){
  if(x.isDemo)b.append(el('span','student-demo-label','BEMUTATÓBEJEGYZÉS'));
  b.append(el('p','student-success-tag',x.sport),el('h3','',x.studentName),el('p','student-success-class',x.className+' osztály'),el('p','student-success-event',x.competition),el('strong','student-success-result',x.result));
  if(x.summary)b.append(el('p','student-success-summary',x.summary));
- const published=el('time','student-success-date','Közzétéve: '+huDate(actualPublication(x)));published.dateTime=actualPublication(x);b.append(published);article.append(b);return article;
+ const date=actualPublication(x);if(date){const published=el('time','student-success-date','Közzétéve: '+huDate(date));published.dateTime=date;b.append(published);}else b.append(el('span','student-success-date','A hivatalos közleményben nincs pontos dátum'));article.append(b);return article;
 }
 function sectionHead(inner,title,subtitle){const h=el('div','student-success-head');const wrap=el('div');wrap.append(el('span','section-overline','SPORT · KITARTÁS · EREDMÉNYEK'),el('h2','section-title',title));h.append(wrap);inner.append(h);if(subtitle)inner.append(el('p','student-success-intro',subtitle));}
 function notice(inner,items){if(items.some(x=>x.isDemo))inner.append(el('p','student-demo-banner','A képes eredménybejegyzések szemléltető minták: a nevek, osztályok, versenyek, helyezések és dátumok nem az iskola tényleges eredményei. A képek nem az említett tanulók portréi.'));}
 function mount(section,items,view){
  section.replaceChildren();const inner=el('div','container-xxl student-success-container');
  const active=items.filter(isFeatured).sort((a,b)=>actualPublication(b).localeCompare(actualPublication(a)));
- const older=items.filter(x=>!isFeatured(x)).sort((a,b)=>actualPublication(b).localeCompare(actualPublication(a)));
+ const older=items.filter(x=>!isFeatured(x)).sort((a,b)=>(actualPublication(b)||'').localeCompare(actualPublication(a)||'')||a.studentName.localeCompare(b.studentName,'hu'));
  if(view==='home'){
-  sectionHead(inner,'Diákjaink sportsikerei','Az új eredmények hét napig kiemelt helyen láthatók. A korábbi történetek a sporteredmények archívumában is megtalálhatók.');
+  sectionHead(inner,'Diákjaink sportsikerei','Az intézmény által közzétett valós versenyeredmények; a dátum nélküli beszámolókat külön kezeljük.');
   notice(inner,active);
   if(active.length){const count=el('p','student-success-stat',`${active.length} kiemelt bejegyzés · ${older.length} korábbi eredmény az archívumban`);inner.append(count);const grid=el('div','student-success-feature-grid');active.slice(0,10).forEach(x=>grid.append(card(x,true)));inner.append(grid);}
-  else inner.append(el('p','student-success-note','Jelenleg nincs az elmúlt hét napban közzétett eredmény. A korábbi sikerek az archívumban továbbra is elérhetők.'));
+  else if(older.length){inner.append(el('p','student-success-note','Ellenőrzött sporteredmények az iskola közleményeiből; az ismeretlen eseménydátumokat nem helyettesítjük becsült időpontokkal.'));const grid=el('div','student-success-feature-grid');older.slice(0,4).forEach(x=>grid.append(card(x,false)));inner.append(grid);}else inner.append(el('p','student-success-note','Jelenleg nincs ellenőrzött sporteredmény a gyűjteményben.'));
   const link=el('a','student-success-all','Összes sporteredmény és archívum →');link.href='#/sport/sporteredmenyek';inner.append(link);
  }else{
   sectionHead(inner,'Diákjaink sportsikerei – eredménytár','Kiemelt és korábbi bejegyzések, sportág, név, osztály, verseny és helyezés szerint kereshetően.');

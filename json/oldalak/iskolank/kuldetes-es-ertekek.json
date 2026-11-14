@@ -11,11 +11,11 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-14T21:00:00+01:00",
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Küldetésünk és értékeink – Csanádi Sportiskola",
@@ -52,6 +52,20 @@
           "type": "markdown",
           "data": {
             "text": "A közösségi munka, a tanulmányi és sportteljesítmény, a digitális felelősség és az egymás iránti figyelem mind a mindennapok részét képezhetik.\n\n[Iskolánk bemutatása](#/iskolank/bemutatkozas) · [Sportiskolai nevelés](#/oktatas/kepzeseink/sportiskolai-neveles)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114",
+      "type": "section",
+      "title": "A tanulás és a sport egyensúlya",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114",
+          "type": "markdown",
+          "data": {
+            "text": "A tanulói fejlődés az alapműveltség, az önálló munkavégzés és a sportban fontos kitartás együttese. A sportolói felkészülés mellett az általános iskolai és gimnáziumi képzés is az intézmény hivatalos feladata. A konkrét szakmai követelményeket mindig a közzétett pedagógiai program alapján érdemes áttekinteni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/docs.html)"
           }
         }
       ]
