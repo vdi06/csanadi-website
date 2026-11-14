@@ -1,5 +1,5 @@
-/* CSANÁDI 2026 – prémium, képközpontú kezdőoldali sportmagazin.
-   A meglévő médiatár felhasználásával készül. */
+
+ 
 import {createPicture} from './media.js?v=20261114v5';
 
 const node=(tag,klass='',value)=>{

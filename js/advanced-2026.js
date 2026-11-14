@@ -1,7 +1,7 @@
-/* Csanádi 2026 – akadálymentes belépő, tanítási rend, eseményközpont, tantestület, közösség.
- * Közvetlenül a szigorúan validált, közzétehető JSON-adatokat használja.
- * Harmadik féltől származó tartalmat hozzájárulás nélkül nem tölt be.
- */
+
+
+
+ 
 import {renderDigitalClock} from './experience-2026.js?v=20261114orbit1';
 const BASE='json/adatok/';
 const ZONE='Europe/Budapest';
@@ -24,7 +24,7 @@ const getSession=(key)=>{try{return sessionStorage.getItem(key);}catch{return nu
 async function load(name){const r=await fetch(BASE+name,{cache:'no-store'});if(!r.ok)throw Error(`${name}: HTTP ${r.status}`);return r.json();}
 const heading=(over,title,desc)=>{const box=e('div','experience-section-head');add(box,e('span','experience-eyebrow',over),e('h2','experience-title',title));if(desc)box.append(e('p','experience-lead',desc));return box;};
 
-// A napi egyszeri automatikus megjelenést a budapesti naptári nap szerint tároljuk.
+ 
 let gateShowing=false;
 export function openEntrancePortal({force=false}={}){
  if(gateShowing)return;
@@ -54,7 +54,7 @@ export function openEntrancePortal({force=false}={}){
   enter.textContent='A kapu nyílik…';
   if(reduced){finish();return;}
   layer.classList.add('gate26-open');
-  // A teljes 3D nyitás 4,8 másodperc; ezután finom áttűnés vezet az oldalra.
+   
   finishTimer=setTimeout(finish,5200);
  }
  layer.addEventListener('keydown',ev=>{
@@ -66,7 +66,7 @@ export function openEntrancePortal({force=false}={}){
   }
  });
  enter.focus();
- // Nincs automatikus open()/finish(): a felhasználó dönt a belépésről.
+  
 
 }
 function bindPortalButton(){const replay=document.getElementById('portal-replay');if(replay&&!replay.dataset.wired){replay.dataset.wired='1';replay.addEventListener('click',()=>openEntrancePortal({force:true}));}}
@@ -114,7 +114,7 @@ export function renderBellPanel({expanded=false}={}){
 }
 export function renderBellCenter(){const wrap=e('section','experience-standalone');add(wrap,heading('TANÍTÁSI NAPOK','Digitális csengetési rend','Kövesd az iskola hivatalosan közzétett tanóraidőpontjait, a budapesti időhöz igazított animált idővonalon.'),renderBellPanel({expanded:true}));return wrap;}
 
-// A naptárból csak kifejezetten közzétett és ellenőrzött, időponttal rendelkező esemény kerül exportálásra.
+ 
 function validateEvents(value){
  if(!value||value.schemaVersion!=='2.0.0'||value.collectionId!=='collection:esemenyek'||!Array.isArray(value.items)||!Array.isArray(value.categories))throw Error('Az esemény-JSON szerkezete nem megfelelő.');
  const ids=new Set(),categories=new Set(value.categories.map(x=>x.id));if(categories.size!==value.categories.length)throw Error('Ismétlődő eseménykategória.');

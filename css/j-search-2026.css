@@ -1,13 +1,13 @@
-/* J – teljes szélességű sporthírblokk és reszponzív keresőközpont. */
+ 
 #app[data-page-kind="home"] .home-unit--sports-news{
-  grid-column:1 / -1!important;min-width:0;width:100%;
+  grid-column:1 / -1 ;min-width:0;width:100%;
 }
 #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-news,
 #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-news .container-xxl{
   width:100%;max-width:100%;min-width:0;margin-inline:auto;
 }
 #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-cards{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:clamp(10px,1.8vw,20px);
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) ;gap:clamp(10px,1.8vw,20px);
 }
 #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-card{
   min-width:0;height:100%;margin:0;
@@ -19,17 +19,17 @@
 #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-intro,
 #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-stamp{text-align:center}
 @media(max-width:850px){
- #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-cards{grid-template-columns:repeat(2,minmax(0,1fr)) }
 }
 @media(max-width:440px){
  #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-cards{gap:8px}
- #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-card{padding:13px!important}
+ #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-card{padding:13px }
  #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-card h3{font-size:14px}
 }
-/* Az időközben hiányzó sporthírek egy teljes sorban, szemmel látható helyen jelenjenek meg. */
+ 
 #app[data-page-kind="home"] .daily-sports-empty{grid-column:1/-1;width:100%;text-align:center;}
 
-/* Kereső – a meglévő dialógus kibővítése az eredeti színpalettán. */
+ 
 #search-panel .search-dialog{width:min(980px,100%);padding:clamp(16px,2.4vw,30px);max-height:90dvh;overflow-y:auto;overscroll-behavior:contain;}
 #search-panel .search-dialog *{min-width:0}
 #search-panel .search-head{gap:12px;align-items:center;}

@@ -1,84 +1,84 @@
-/* 2026 – J2: larger desktop radial navigation, anchor-adjacent submenu, centered name-free sport demos. */
+ 
 @media (min-width:761px){
- #site-map-overlay .site-map-dialog{width:min(1460px,calc(100vw - 26px))!important;max-height:98dvh!important;overflow:visible!important;}
- #site-map-overlay .site-map-topline{min-height:42px!important;}
- #site-map-overlay .compass26-layout{padding:0 4px 8px!important;}
+ #site-map-overlay .site-map-dialog{width:min(1460px,calc(100vw - 26px)) ;max-height:98dvh ;overflow:visible ;}
+ #site-map-overlay .site-map-topline{min-height:42px ;}
+ #site-map-overlay .compass26-layout{padding:0 4px 8px ;}
  #site-map-overlay .compass26-stage{
-  width:min(100%,1330px)!important;height:clamp(520px,81dvh,810px)!important;
-  --radius:clamp(215px,min(27vw,34dvh),352px)!important;
-  margin-inline:auto!important;
+  width:min(100%,1330px) ;height:clamp(520px,81dvh,810px) ;
+  --radius:clamp(215px,min(27vw,34dvh),352px) ;
+  margin-inline:auto ;
  }
- #site-map-overlay .compass26-choice{width:clamp(140px,14vw,194px)!important;height:clamp(75px,9dvh,96px)!important;}
- #site-map-overlay .compass26-choice-link{font-size:clamp(12px,1vw,15px)!important;padding:12px 8px!important;border-radius:19px!important;}
- #site-map-overlay .compass26-choice-icon{font-size:clamp(20px,1.8vw,28px)!important;}
- #site-map-overlay .compass26-choice-toggle{width:37px!important;flex-basis:37px!important;font-size:21px!important;}
- #site-map-overlay .compass26-emblem{width:clamp(130px,12vw,185px)!important;height:clamp(130px,12vw,185px)!important;}
+ #site-map-overlay .compass26-choice{width:clamp(140px,14vw,194px) ;height:clamp(75px,9dvh,96px) ;}
+ #site-map-overlay .compass26-choice-link{font-size:clamp(12px,1vw,15px) ;padding:12px 8px ;border-radius:19px ;}
+ #site-map-overlay .compass26-choice-icon{font-size:clamp(20px,1.8vw,28px) ;}
+ #site-map-overlay .compass26-choice-toggle{width:37px ;flex-basis:37px ;font-size:21px ;}
+ #site-map-overlay .compass26-emblem{width:clamp(130px,12vw,185px) ;height:clamp(130px,12vw,185px) ;}
  #site-map-overlay .compass26-panel:not([hidden]){
-  position:fixed!important;z-index:8!important;
-  max-height:min(77dvh,700px)!important;overflow-y:auto!important;overscroll-behavior:contain!important;
-  padding:10px!important;margin:0!important;
-  background:transparent!important;border:0!important;box-shadow:none!important;
+  position:fixed ;z-index:8 ;
+  max-height:min(77dvh,700px) ;overflow-y:auto ;overscroll-behavior:contain ;
+  padding:10px ;margin:0 ;
+  background:transparent ;border:0 ;box-shadow:none ;
   scrollbar-width:thin;
  }
- #site-map-overlay .compass26-subtopics{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;}
- #site-map-overlay .compass26-sub-link{font-size:12px!important;min-height:51px!important;}
- #site-map-overlay .compass26-nested{gap:6px!important;}
+ #site-map-overlay .compass26-subtopics{grid-template-columns:repeat(2,minmax(0,1fr)) ;gap:9px ;}
+ #site-map-overlay .compass26-sub-link{font-size:12px ;min-height:51px ;}
+ #site-map-overlay .compass26-nested{gap:6px ;}
 }
 @media (min-width:761px) and (max-width:1050px){
- #site-map-overlay .compass26-stage{--radius:clamp(192px,25vw,255px)!important;}
- #site-map-overlay .compass26-choice{width:132px!important;height:75px!important;}
- #site-map-overlay .compass26-panel:not([hidden]){max-width:360px!important;}
+ #site-map-overlay .compass26-stage{--radius:clamp(192px,25vw,255px) ;}
+ #site-map-overlay .compass26-choice{width:132px ;height:75px ;}
+ #site-map-overlay .compass26-panel:not([hidden]){max-width:360px ;}
 }
-/* On narrow screens the submenu stays underneath the radial menu as requested. */
+ 
 @media (max-width:760px){
  #site-map-overlay .compass26-panel:not([hidden]){
-  position:static!important;top:auto!important;left:auto!important;right:auto!important;
-  width:100%!important;max-width:100%!important;max-height:48dvh!important;overflow-y:auto!important;
-  margin:0 auto!important;
+  position:static ;top:auto ;left:auto ;right:auto ;
+  width:100% ;max-width:100% ;max-height:48dvh ;overflow-y:auto ;
+  margin:0 auto ;
  }
- #site-map-overlay .compass26-subtopics{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+ #site-map-overlay .compass26-subtopics{grid-template-columns:repeat(2,minmax(0,1fr)) ;}
 }
-@media (max-width:370px){#site-map-overlay .compass26-subtopics{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;}}
-/* Center the entire student sport-demonstration module, not just its headings. */
-#app .home-unit--students{grid-column:1/-1!important;min-width:0;text-align:center!important;}
-#app .student-success-section,#app .student-success-container{text-align:center!important;width:100%;max-width:1350px;margin-inline:auto!important;}
-#app .student-success-head{display:flex!important;justify-content:center!important;text-align:center!important;}
-#app .student-success-intro,#app .student-success-note,#app .student-demo-banner,#app .student-success-stat{max-width:860px;margin-left:auto!important;margin-right:auto!important;text-align:center!important;}
-#app .student-success-feature-grid,#app .student-success-archive-grid{width:100%;display:grid!important;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))!important;gap:clamp(10px,1.6vw,19px)!important;justify-content:center!important;}
-#app .student-success-card{width:100%;max-width:none!important;margin-inline:auto!important;}
+@media (max-width:370px){#site-map-overlay .compass26-subtopics{grid-template-columns:repeat(2,minmax(0,1fr)) ;gap:6px ;}}
+ 
+#app .home-unit--students{grid-column:1/-1 ;min-width:0;text-align:center ;}
+#app .student-success-section,#app .student-success-container{text-align:center ;width:100%;max-width:1350px;margin-inline:auto ;}
+#app .student-success-head{display:flex ;justify-content:center ;text-align:center ;}
+#app .student-success-intro,#app .student-success-note,#app .student-demo-banner,#app .student-success-stat{max-width:860px;margin-left:auto ;margin-right:auto ;text-align:center ;}
+#app .student-success-feature-grid,#app .student-success-archive-grid{width:100%;display:grid ;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr)) ;gap:clamp(10px,1.6vw,19px) ;justify-content:center ;}
+#app .student-success-card{width:100%;max-width:none ;margin-inline:auto ;}
 #app .student-success-body{justify-items:center;text-align:center;}
 #app .student-success-tools{justify-content:center;}
 #app .student-success-all{display:inline-flex;justify-content:center;}
 #app .student-demo-banner{border:1px solid color-mix(in srgb,var(--gold) 65%,var(--line));background:var(--light);color:var(--ink);border-radius:12px;padding:12px 15px;font-size:13px;font-weight:750;}
 #app .student-demo-label{color:#855a1d;font-weight:850;letter-spacing:.07em;}
-@media(max-width:600px){#app .student-success-feature-grid,#app .student-success-archive-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;}}
-/* Highlight the destination of a search result, without changing page content. */
-#app .cs-search-found{outline:3px solid var(--gold)!important;outline-offset:5px!important;box-shadow:0 0 0 7px color-mix(in srgb,var(--gold) 16%,transparent)!important;scroll-margin-top:24px;}
-#app .cs-search-found:focus{outline:3px solid var(--gold)!important;}
+@media(max-width:600px){#app .student-success-feature-grid,#app .student-success-archive-grid{grid-template-columns:repeat(2,minmax(0,1fr)) ;gap:9px ;}}
+ 
+#app .cs-search-found{outline:3px solid var(--gold) ;outline-offset:5px ;box-shadow:0 0 0 7px color-mix(in srgb,var(--gold) 16%,transparent) ;scroll-margin-top:24px;}
+#app .cs-search-found:focus{outline:3px solid var(--gold) ;}
 @media(prefers-reduced-motion:reduce){#app .cs-search-found{scroll-behavior:auto;}}
 
-/* Adjacent floating submenu stays above radial menu, without covering its own anchor. */
+ 
 @media (min-width:761px){
- #site-map-overlay>.compass26-panel:not([hidden]){position:fixed!important;z-index:12!important;box-sizing:border-box;overflow-y:auto!important;overflow-x:hidden!important;}
- #site-map-overlay>.compass26-panel .compass26-subtopics{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+ #site-map-overlay>.compass26-panel:not([hidden]){position:fixed ;z-index:12 ;box-sizing:border-box;overflow-y:auto ;overflow-x:hidden ;}
+ #site-map-overlay>.compass26-panel .compass26-subtopics{grid-template-columns:repeat(2,minmax(0,1fr)) ;}
  #site-map-overlay>.compass26-panel[style*="width: 1"], #site-map-overlay>.compass26-panel[style*="width: 2"]{--cs-panel-gap:6px;}
- #site-map-overlay>.compass26-panel .compass26-sub-link{min-width:0!important;overflow-wrap:anywhere;}
+ #site-map-overlay>.compass26-panel .compass26-sub-link{min-width:0 ;overflow-wrap:anywhere;}
 }
 @media (min-width:761px) and (max-width:1080px){
- #site-map-overlay>.compass26-panel .compass26-subtopics{grid-template-columns:minmax(0,1fr)!important;}
+ #site-map-overlay>.compass26-panel .compass26-subtopics{grid-template-columns:minmax(0,1fr) ;}
 }
 
-/* The three destination cards belong to their own row below the sport image mosaic. */
+ 
 #app .premium26-showcase .premium26-discover{
- position:relative!important;clear:both!important;z-index:2!important;
- width:100%!important;max-width:100%!important;min-width:0!important;
- margin:clamp(22px,3vw,36px) auto 0!important;
- padding:4px 0 0!important;align-items:stretch!important;
+ position:relative ;clear:both ;z-index:2 ;
+ width:100% ;max-width:100% ;min-width:0 ;
+ margin:clamp(22px,3vw,36px) auto 0 ;
+ padding:4px 0 0 ;align-items:stretch ;
 }
-#app .premium26-showcase .premium26-discover-link{position:relative;z-index:2;min-width:0;min-height:68px!important;isolation:isolate;}
-@media(max-width:640px){#app .premium26-showcase .premium26-discover{margin-top:18px!important;gap:9px!important;}#app .premium26-showcase .premium26-discover-link{min-height:54px!important;}}
+#app .premium26-showcase .premium26-discover-link{position:relative;z-index:2;min-width:0;min-height:68px ;isolation:isolate;}
+@media(max-width:640px){#app .premium26-showcase .premium26-discover{margin-top:18px ;gap:9px ;}#app .premium26-showcase .premium26-discover-link{min-height:54px ;}}
 
-/* Sportminta-szűrők ne nyúljanak végig a teljes oldalszélességen. */
-#app .student-success-tools{width:min(100%,880px)!important;margin:17px auto 14px!important;justify-content:center!important;gap:12px!important;}
-#app .student-success-group-heading{width:100%;text-align:center!important;margin-inline:auto!important;}
-@media(max-width:600px){#app .student-success-tools{gap:8px!important;}#app .student-success-tools :is(input,select){font-size:12px!important;}}
+ 
+#app .student-success-tools{width:min(100%,880px) ;margin:17px auto 14px ;justify-content:center ;gap:12px ;}
+#app .student-success-group-heading{width:100%;text-align:center ;margin-inline:auto ;}
+@media(max-width:600px){#app .student-success-tools{gap:8px ;}#app .student-success-tools :is(input,select){font-size:12px ;}}

@@ -1,0 +1,680 @@
+{
+  "schemaVersion": "1.0.0",
+  "jsonFiles": [
+    "json/adatok/csengetesi-rend.json",
+    "json/adatok/dokumentumok.json",
+    "json/adatok/esemenyek.json",
+    "json/adatok/galeriavideok.json",
+    "json/adatok/hirek-hivatalos.json",
+    "json/adatok/iskolatorteneti-idovonal.json",
+    "json/adatok/kepgaleria.json",
+    "json/adatok/napi-sporthirek.json",
+    "json/adatok/social.json",
+    "json/adatok/sportsikerek.json",
+    "json/adatok/tantestulet.json",
+    "json/adatok/tanuloi-sikerek.json",
+    "json/assets-inventory.json",
+    "json/config.json",
+    "json/mediatar.json",
+    "json/oldalak/hirek-es-esemenyek.json",
+    "json/oldalak/hirek-es-esemenyek/esemenynaptar.json",
+    "json/oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json",
+    "json/oldalak/hirek-es-esemenyek/esemenynaptar/sportesemenyek.json",
+    "json/oldalak/hirek-es-esemenyek/hirek.json",
+    "json/oldalak/hirek-es-esemenyek/hirek/hirarchivum.json",
+    "json/oldalak/hirek-es-esemenyek/hirek/iskolai-hirek.json",
+    "json/oldalak/hirek-es-esemenyek/hirek/sporthirek.json",
+    "json/oldalak/hirek-es-esemenyek/kozlemenyek.json",
+    "json/oldalak/informaciok.json",
+    "json/oldalak/informaciok/adatvedelem.json",
+    "json/oldalak/informaciok/allaspalyazatok.json",
+    "json/oldalak/informaciok/digitalis-ugyintezes.json",
+    "json/oldalak/informaciok/dokumentumtar.json",
+    "json/oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json",
+    "json/oldalak/informaciok/dokumentumtar/nyomtatvanyok.json",
+    "json/oldalak/informaciok/dokumentumtar/szabalyzatok.json",
+    "json/oldalak/informaciok/kozossegi-szolgalat.json",
+    "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json",
+    "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok.json",
+    "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok.json",
+    "json/oldalak/informaciok/mindennapi-tudnivalok.json",
+    "json/oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json",
+    "json/oldalak/informaciok/mindennapi-tudnivalok/etkezes.json",
+    "json/oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json",
+    "json/oldalak/iskolank.json",
+    "json/oldalak/iskolank/a-honlap-szuletese.json",
+    "json/oldalak/iskolank/alapitvany.json",
+    "json/oldalak/iskolank/bemutatkozas.json",
+    "json/oldalak/iskolank/buszkesegeink.json",
+    "json/oldalak/iskolank/hagyomanyok-es-elismeresek.json",
+    "json/oldalak/iskolank/kuldetes-es-ertekek.json",
+    "json/oldalak/iskolank/oko-iskola.json",
+    "json/oldalak/iskolank/partnerek.json",
+    "json/oldalak/iskolank/tantestulet.json",
+    "json/oldalak/iskolank/tortenet.json",
+    "json/oldalak/kapcsolat.json",
+    "json/oldalak/kezdolap.json",
+    "json/oldalak/oktatas.json",
+    "json/oldalak/oktatas/digitalis-kultura.json",
+    "json/oldalak/oktatas/felveteli.json",
+    "json/oldalak/oktatas/felveteli/elso-evfolyam.json",
+    "json/oldalak/oktatas/felveteli/felveteli-hataridok.json",
+    "json/oldalak/oktatas/felveteli/kilencedik-evfolyam.json",
+    "json/oldalak/oktatas/felveteli/nyilt-napok.json",
+    "json/oldalak/oktatas/kepzeseink.json",
+    "json/oldalak/oktatas/kepzeseink/altalanos-iskola.json",
+    "json/oldalak/oktatas/kepzeseink/gimnazium.json",
+    "json/oldalak/oktatas/kepzeseink/sportiskolai-neveles.json",
+    "json/oldalak/oktatas/konyvtar.json",
+    "json/oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json",
+    "json/oldalak/oktatas/tananyagok-es-jegyzetek.json",
+    "json/oldalak/oktatas/tanevek.json",
+    "json/oldalak/oktatas/tanevek/aktualis-tanev.json",
+    "json/oldalak/oktatas/tanevek/korabbi-tanevek.json",
+    "json/oldalak/oktatas/vizsgak.json",
+    "json/oldalak/oktatas/vizsgak/egyeb-vizsgak.json",
+    "json/oldalak/oktatas/vizsgak/erettsegi.json",
+    "json/oldalak/oktatas/vizsgak/osztalyozo-vizsgak.json",
+    "json/oldalak/sport.json",
+    "json/oldalak/sport/csapatok.json",
+    "json/oldalak/sport/edzok.json",
+    "json/oldalak/sport/sportagak.json",
+    "json/oldalak/sport/sporteredmenyek.json",
+    "json/oldalak/sport/sportgaleriak.json",
+    "json/oldalak/sport/sportolok.json",
+    "json/oldalindex.json",
+    "json/schemas/dokumentumok.schema.json",
+    "json/schemas/tanuloi-sikerek.schema.json",
+    "json/structure.json"
+  ],
+  "codeFiles": [
+    "css/compass-2026.css",
+    "css/content-reflow-2026.css",
+    "css/dfg-2026.css",
+    "css/extended-hubs-2026.css",
+    "css/gallery-h-2026.css",
+    "css/home-gallery-news-gate-2026.css",
+    "css/interactions-be-2026.css",
+    "css/j-home-layout-2026.css",
+    "css/j-mobile-home-2026.css",
+    "css/j-search-2026.css",
+    "css/kmil-2026.css",
+    "css/layout-2026.css",
+    "css/media-manager-2026.css",
+    "css/menu-backdrop-guaranteed-2026.css",
+    "css/mobile-compact-h2-2026.css",
+    "css/navigation-student-search-2026.css",
+    "css/next-2026.css",
+    "css/next10-2026.css",
+    "css/orbit-2026.css",
+    "css/organized-2026.css",
+    "css/performance-diagnostics-2026.css",
+    "css/premium-home-2026.css",
+    "css/radial-2026.css",
+    "css/style.css",
+    "css/tenway-2026.css",
+    "css/tools-2026.css",
+    "index.html",
+    "js/advanced-2026.js",
+    "js/app.js",
+    "js/blocks.js",
+    "js/content.js",
+    "js/daily-sport-news.js",
+    "js/documents.js",
+    "js/experience-2026.js",
+    "js/extended-hubs-2026.js",
+    "js/hero-2026.js",
+    "js/home-live.js",
+    "js/interactions-be-2026.js",
+    "js/kmil-2026.js",
+    "js/media-gallery-h-2026.js",
+    "js/media.js",
+    "js/news-2026.js",
+    "js/next10-2026.js",
+    "js/performance-diagnostics-2026.js",
+    "js/premium-home-2026.js",
+    "js/search-j-2026.js",
+    "js/site-quality-2026.js",
+    "js/sports-successes.js",
+    "js/student-achievements.js",
+    "js/tenway-2026.js",
+    "script.js",
+    "tools/eszkoz-mediator.html",
+    "tools/media-manager-2026.js",
+    "tools/oldal-json-szerkeszto.html",
+    "tools/oldalindex-frissito.html",
+    "tools/sporthirek-szerkeszto.html",
+    "tools/tool-ui-2026.js",
+    "tools/zip-native-2026.js"
+  ],
+  "assetReferences": {
+    "assets/documents/digitalis-fajlok-es-beadas.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/felveteli-tajekozodasi-segedlet-2026.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/tanulas-sport-idogazdalkodas.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/sports-pattern-dark.svg": [
+      "css/next-2026.css",
+      "css/orbit-2026.css",
+      "css/style.css",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/sports-pattern-light.svg": [
+      "css/next-2026.css",
+      "css/orbit-2026.css",
+      "css/style.css",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/logo/csanadi-cimer-512.webp": [
+      "index.html",
+      "js/advanced-2026.js",
+      "js/next10-2026.js",
+      "json/assets-inventory.json",
+      "json/mediatar.json",
+      "tools/eszkoz-mediator.html",
+      "tools/oldal-json-szerkeszto.html",
+      "tools/oldalindex-frissito.html",
+      "tools/sporthirek-szerkeszto.html"
+    ],
+    "assets/media/video/sport-pillanatok.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/tudas-kozosseg.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/belepes-kapu.webp": [
+      "css/interactions-be-2026.css",
+      "css/next-2026.css",
+      "css/style.css",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/belepes-nyitott.webp": [
+      "css/home-gallery-news-gate-2026.css",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-01.webp": [
+      "json/adatok/galeriavideok.json",
+      "json/adatok/kepgaleria.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-02.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-03.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-04.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-05.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-06.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-07.webp": [
+      "json/adatok/galeriavideok.json",
+      "json/adatok/kepgaleria.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-08.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-09.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-10.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-11.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-12.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-13.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-14.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-15.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-16.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-17.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-18.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-19.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-20.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-21.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-22.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-23.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-24.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-25.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-26.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-27.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-28.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-29.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-30.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-31.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-32.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-33.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-34.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-35.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-36.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-37.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-38.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-39.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-40.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-41.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-42.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-43.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-44.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-45.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-46.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-47.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-48.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eredmenyek-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/esemenyek-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/felveteli-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/hero-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/iskolank-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/kapcsolat-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/kozosseg-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/oktatas-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/siker-atletika.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/siker-kosarlabda.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/siker-roplabda.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/siker-uszas.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/sport-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ]
+  },
+  "mediaIdReferences": {
+    "media:logo": [
+      "json/assets-inventory.json"
+    ],
+    "media:hero": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json",
+      "json/oldalindex.json"
+    ],
+    "media:iskolank": [
+      "json/assets-inventory.json",
+      "json/oldalak/iskolank.json",
+      "json/oldalak/iskolank/a-honlap-szuletese.json",
+      "json/oldalak/iskolank/alapitvany.json",
+      "json/oldalak/iskolank/bemutatkozas.json",
+      "json/oldalak/iskolank/hagyomanyok-es-elismeresek.json",
+      "json/oldalak/iskolank/kuldetes-es-ertekek.json",
+      "json/oldalak/iskolank/oko-iskola.json",
+      "json/oldalak/iskolank/partnerek.json",
+      "json/oldalak/iskolank/tortenet.json",
+      "json/oldalak/kezdolap.json",
+      "json/oldalindex.json"
+    ],
+    "media:oktatas": [
+      "json/assets-inventory.json",
+      "json/oldalak/iskolank/tantestulet.json",
+      "json/oldalak/kezdolap.json",
+      "json/oldalak/oktatas.json",
+      "json/oldalak/oktatas/digitalis-kultura.json",
+      "json/oldalak/oktatas/kepzeseink.json",
+      "json/oldalak/oktatas/kepzeseink/altalanos-iskola.json",
+      "json/oldalak/oktatas/kepzeseink/gimnazium.json",
+      "json/oldalak/oktatas/kepzeseink/sportiskolai-neveles.json",
+      "json/oldalak/oktatas/konyvtar.json",
+      "json/oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json",
+      "json/oldalak/oktatas/tananyagok-es-jegyzetek.json",
+      "json/oldalak/oktatas/tanevek.json",
+      "json/oldalak/oktatas/tanevek/aktualis-tanev.json",
+      "json/oldalak/oktatas/tanevek/korabbi-tanevek.json",
+      "json/oldalak/oktatas/vizsgak.json",
+      "json/oldalak/oktatas/vizsgak/egyeb-vizsgak.json",
+      "json/oldalak/oktatas/vizsgak/erettsegi.json",
+      "json/oldalak/oktatas/vizsgak/osztalyozo-vizsgak.json",
+      "json/oldalindex.json"
+    ],
+    "media:sport": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json",
+      "json/oldalak/sport.json",
+      "json/oldalak/sport/sportagak.json",
+      "json/oldalak/sport/sportgaleriak.json",
+      "json/oldalindex.json"
+    ],
+    "media:kozosseg": [
+      "json/assets-inventory.json",
+      "json/oldalak/informaciok.json",
+      "json/oldalak/informaciok/adatvedelem.json",
+      "json/oldalak/informaciok/allaspalyazatok.json",
+      "json/oldalak/informaciok/digitalis-ugyintezes.json",
+      "json/oldalak/informaciok/dokumentumtar.json",
+      "json/oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json",
+      "json/oldalak/informaciok/dokumentumtar/nyomtatvanyok.json",
+      "json/oldalak/informaciok/dokumentumtar/szabalyzatok.json",
+      "json/oldalak/informaciok/kozossegi-szolgalat.json",
+      "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json",
+      "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok.json",
+      "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok.json",
+      "json/oldalak/informaciok/mindennapi-tudnivalok.json",
+      "json/oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json",
+      "json/oldalak/informaciok/mindennapi-tudnivalok/etkezes.json",
+      "json/oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json",
+      "json/oldalak/kezdolap.json",
+      "json/oldalindex.json"
+    ],
+    "media:felveteli": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json",
+      "json/oldalak/oktatas/felveteli.json",
+      "json/oldalak/oktatas/felveteli/elso-evfolyam.json",
+      "json/oldalak/oktatas/felveteli/felveteli-hataridok.json",
+      "json/oldalak/oktatas/felveteli/kilencedik-evfolyam.json",
+      "json/oldalak/oktatas/felveteli/nyilt-napok.json",
+      "json/oldalindex.json"
+    ],
+    "media:eredmenyek": [
+      "json/adatok/sportsikerek.json",
+      "json/assets-inventory.json",
+      "json/oldalak/iskolank/buszkesegeink.json",
+      "json/oldalak/kezdolap.json",
+      "json/oldalak/sport/csapatok.json",
+      "json/oldalak/sport/edzok.json",
+      "json/oldalak/sport/sporteredmenyek.json",
+      "json/oldalak/sport/sportolok.json",
+      "json/oldalindex.json"
+    ],
+    "media:esemenyek": [
+      "json/assets-inventory.json",
+      "json/oldalak/hirek-es-esemenyek.json",
+      "json/oldalak/hirek-es-esemenyek/esemenynaptar.json",
+      "json/oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json",
+      "json/oldalak/hirek-es-esemenyek/esemenynaptar/sportesemenyek.json",
+      "json/oldalak/hirek-es-esemenyek/hirek.json",
+      "json/oldalak/hirek-es-esemenyek/hirek/hirarchivum.json",
+      "json/oldalak/hirek-es-esemenyek/hirek/iskolai-hirek.json",
+      "json/oldalak/hirek-es-esemenyek/hirek/sporthirek.json",
+      "json/oldalak/hirek-es-esemenyek/kozlemenyek.json",
+      "json/oldalak/kezdolap.json",
+      "json/oldalindex.json"
+    ],
+    "media:kapcsolat": [
+      "json/assets-inventory.json",
+      "json/oldalak/kapcsolat.json",
+      "json/oldalak/kezdolap.json",
+      "json/oldalindex.json"
+    ],
+    "media:siker-atletika": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json"
+    ],
+    "media:siker-kosarlabda": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json"
+    ],
+    "media:siker-uszas": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json"
+    ],
+    "media:siker-roplabda": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json"
+    ],
+    "media:eletkep-01": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json"
+    ],
+    "media:eletkep-02": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json"
+    ],
+    "media:eletkep-03": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json"
+    ],
+    "media:eletkep-04": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json"
+    ],
+    "media:eletkep-05": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json"
+    ],
+    "media:eletkep-06": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json"
+    ],
+    "media:eletkep-07": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json"
+    ],
+    "media:eletkep-08": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json"
+    ],
+    "media:eletkep-09": [
+      "json/assets-inventory.json",
+      "json/oldalak/kezdolap.json"
+    ],
+    "media:eletkep-10": [
+      "json/assets-inventory.json"
+    ],
+    "media:eletkep-11": [
+      "json/assets-inventory.json"
+    ],
+    "media:eletkep-12": [
+      "json/assets-inventory.json"
+    ],
+    "media:eletkep-13": [
+      "json/assets-inventory.json"
+    ],
+    "media:eletkep-14": [
+      "json/assets-inventory.json"
+    ],
+    "media:eletkep-15": [
+      "json/assets-inventory.json"
+    ],
+    "media:eletkep-16": [
+      "json/assets-inventory.json"
+    ],
+    "media:eletkep-17": [
+      "json/assets-inventory.json"
+    ],
+    "media:eletkep-18": [
+      "json/assets-inventory.json"
+    ],
+    "media:eletkep-19": [
+      "json/assets-inventory.json"
+    ],
+    "media:eletkep-20": [
+      "json/assets-inventory.json"
+    ]
+  }
+}

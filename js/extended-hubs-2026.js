@@ -1,7 +1,7 @@
-/* Csanádi 2026 – önálló, FTP-kompatibilis tartalmi bővítések.
- * Minden JSON azonos eredetről töltődik; sem felhasználói adatok, sem külső API nem szükséges.
- * Az opcionális Chart.js kizárólag a grafikus megjelenítést gazdagítja;
- * a működő SVG/oszlopos tartalék már előtte elkészül. */
+
+
+
+ 
 const make=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=String(text);return e;};
 const append=(to,...nodes)=>{nodes.filter(Boolean).forEach(n=>to.append(n));return to;};
 const DATA_ROOT=new URL('../json/', import.meta.url);
@@ -13,7 +13,7 @@ function heading(eyebrow,title,desc){const h=make('header','ext26-heading');appe
 function itemLink(title,desc,href,meta=''){const link=make('a','ext26-tile');link.href=href;append(link,meta?make('span','ext26-label',meta):null,make('strong','',title),make('small','',desc));return link;}
 const format=(d)=>new Intl.DateTimeFormat('hu-HU',{timeZone:'Europe/Budapest',year:'numeric',month:'short',day:'numeric'}).format(new Date(d));
 
-// 3. Sportstatisztika: csak ellenőrzött, közölt bejegyzések darabszámát számolja.
+ 
 export function renderSportsCharts(){
  const root=make('section','ext26-section ext26-charts');append(root,heading('SPORTSTATISZTIKÁK','Sportági áttekintés','Az ábra a közzétett, ellenőrzött eredménybejegyzések darabszámát mutatja. Nem tanuló- vagy csapatlétszám, és nem új sporteredmény.'));
  const grid=make('div','ext26-chart-layout'),bars=make('div','ext26-chart-bars'),graph=make('div','ext26-chart-optional'),state=make('p','ext26-note','Adatok betöltése…');
@@ -45,7 +45,7 @@ export function renderSportsCharts(){
  return root;
 }
 
-// 5. Eseménynaptár: dátumtartomány, téma, szöveges keresés, csak igazolt események.
+ 
 export function renderCalendarFilters(){
  const root=make('details','ext26-section ext26-calendar-explorer');
  const summary=make('summary','ext26-disclosure','Részletes eseményszűrő · dátum, kategória és keresés');
@@ -72,7 +72,7 @@ export function renderCalendarFilters(){
  return root;
 }
 
-// 6. Helyi dokumentumkereső: meglévő natív PDF-böngészővel (nem szükséges PDF.js).
+ 
 export function renderDocumentFinder(){
  const root=make('details','ext26-section ext26-doc-finder'),summary=make('summary','ext26-disclosure','Dokumentumok gyorskeresése és PDF-előnézete');
  const controls=make('div','ext26-filter-row'),search=make('input'),list=make('div','ext26-list'),status=make('p','ext26-note','Dokumentumok betöltése…');search.type='search';search.placeholder='Cím, kategória, tartalom…';search.setAttribute('aria-label','Dokumentumok gyorskeresése');
@@ -95,7 +95,7 @@ export function renderDocumentFinder(){
  return root;
 }
 
-// 8. Különféle tartalmak összekapcsolása az oldal tényleges metaadataiból.
+ 
 export function renderSmartRelations(node,catalog){
  const root=make('section','ext26-section ext26-relations');append(root,heading('FELFEDEZÉS','Kapcsolódó tartalmak','A javaslatok az oldalak megadott címkéi, témái és közzétett dokumentumai alapján készülnek.'));
  const list=make('div','ext26-relation-grid');root.append(list);
@@ -119,7 +119,7 @@ export function renderSmartRelations(node,catalog){
  return root;
 }
 
-// 4. Galériaközpont: billentyűzetes kezdő/utolsó kép és következő kép előtöltése.
+ 
 export function enhanceGallery(root){
  const library=root.querySelector('#media26-library');if(!library || library.dataset.extEnhanced)return;
  library.dataset.extEnhanced='1';const dialog=library.querySelector('.media26-lightbox');
@@ -134,6 +134,6 @@ export function enhanceGallery(root){
    for(let i=0;i<Math.min(n,count);i++)button?.click();
   }
  });
- image.addEventListener('load',()=>{const next=dialog.querySelector('.media26-lightbox-next');if(!next)return; /* next is controlled by the existing album renderer */ });
+ image.addEventListener('load',()=>{const next=dialog.querySelector('.media26-lightbox-next');if(!next)return;   });
  const link=make('a','ext26-gallery-skip','Ugrás a galéria képrácsához ↓');link.href='#media26-library-tiles';library.querySelector('.media26-grid')?.setAttribute('id','media26-library-tiles');library.querySelector('.media26-heading')?.after(link);
 }

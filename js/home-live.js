@@ -1,6 +1,6 @@
-/* Csanádi 2026 – dinamikus kezdőoldali statisztikák és események.
- * Kizárólag ellenőrzött JSON adatokból számol. Nem futtat adatként kapott kódot.
- */
+
+
+ 
 const SPORTS_URL=new URL('../json/adatok/sportsikerek.json',import.meta.url);
 const EVENTS_URL=new URL('../json/adatok/esemenyek.json',import.meta.url);
 const VALID_ROUTE=/^#\/[a-z0-9/-]*$/;

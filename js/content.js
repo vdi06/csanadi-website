@@ -1,4 +1,4 @@
-/* Statikus JSON-adatbetöltő és a háromszintű menü indexe. Nem futtat JSON-kódot. */
+ 
 const ROOT = new URL('../json/', import.meta.url);
 const PATH_RE = /^(?:oldalak\/)[a-z0-9/_-]+\.json$/;
 const ACCENTS = /[\u0300-\u036f]/g;
@@ -9,10 +9,20 @@ export function jsonURL(path) {
   if (!/^[a-z0-9][a-z0-9/_\-.]*\.json$/.test(path) || path.includes('..') || path.startsWith('/')) throw new Error('Érvénytelen JSON-útvonal: '+path);
   return new URL(path, ROOT).href;
 }
-export async function loadJSON(path) {
-  const res = await fetch(jsonURL(path), {cache:'no-cache'});
-  if (!res.ok) throw new Error(`Nem elérhető: ${path} (${res.status})`);
-  return await res.json();
+
+
+ 
+const jsonCache=new Map();
+const CACHE_TTL=8000;
+export async function loadJSON(path,{fresh=false}={}) {
+  const url=jsonURL(path),now=Date.now(),prior=jsonCache.get(url);
+  if(!fresh&&prior&&(prior.pending||now<prior.validUntil))return prior.pending||prior.value;
+  const entry={value:null,validUntil:now+CACHE_TTL,pending:null};
+  entry.pending=fetch(url,{cache:'no-cache'}).then(async res=>{
+    if(!res.ok)throw new Error(`Nem elérhető: ${path} (${res.status})`);
+    const data=await res.json();entry.value=data;entry.pending=null;entry.validUntil=Date.now()+CACHE_TTL;return data;
+  }).catch(error=>{if(jsonCache.get(url)===entry)jsonCache.delete(url);throw error;});
+  jsonCache.set(url,entry);return entry.pending;
 }
 export function walkStructure(nodes, parent=null, depth=1, target=[]) {
   if(!Array.isArray(nodes)) return target;

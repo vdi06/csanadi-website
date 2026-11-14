@@ -1,4 +1,4 @@
-/* Sporthírek publikált JSON-ból: statikus FTP-kompatibilis, külső ütemezés nélkül is működik. */
+ 
 const SOURCE=new URL('../json/adatok/napi-sporthirek.json',import.meta.url);
 const make=(tag,cls='',text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 function checkedNews(payload){

@@ -1,4 +1,4 @@
-/* Kliensoldali sport-, oktatási, naptár- és dokumentumközpont. Nincs külső szolgáltatás. */
+ 
 const tag=(name,cls,text)=>{const n=document.createElement(name);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
 const link=(title,desc,href,mark='↗')=>{const a=tag('a','cs-portal-link');a.href=href;a.append(tag('span','cs-portal-marker',mark),tag('strong','',title),tag('small','',desc));return a;};
 function heading(kicker,title,detail){const wrap=tag('header','cs-portal-heading');wrap.append(tag('p','section-overline',kicker),tag('h2','',title),tag('p','',detail));return wrap;}

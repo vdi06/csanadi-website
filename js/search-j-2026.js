@@ -1,4 +1,4 @@
-/* J – intelligens, teljes tartalomra épülő, kizárólag kliensoldali kereső. */
+ 
 const TYPES={page:'Oldal',news:'Hír',event:'Esemény',document:'Dokumentum',image:'Galériakép',video:'Videó'};
 const SECTIONS={iskolank:'Iskolánk',oktatas:'Oktatás',sport:'Sport', 'hirek-es-esemenyek':'Hírek és események',informaciok:'Információk',kapcsolat:'Kapcsolat',home:'Kezdőlap'};
 const DATASETS=[
@@ -76,7 +76,7 @@ function score(entry,query,tokens){
   if(entry.normalSection.includes(term))score+=9;
   if(entry.normalSummary.includes(term))score+=10;
   if(entry.normalBody.includes(term))score+=5;
-  if(score===0)return -1; // Minden kifejezésnek szerepelnie kell a tartalomban.
+  if(score===0)return -1;  
   points+=score;
  }
  if(entry.normalTitle.includes(query))points+=36;

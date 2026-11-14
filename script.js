@@ -1,4 +1,4 @@
-/* Csanádi 2026 – hibát is megjelenítő indítás, egyetlen teljes fájl. */
+ 
 const target=document.getElementById('app');
 function startupError(error){
   console.error('A Csanádi SPA nem indul:',error);
@@ -10,4 +10,4 @@ function startupError(error){
   const hint=document.createElement('p');hint.textContent=location.protocol==='file:'?'Az oldal JSON-adatokkal működik, ezért HTTPS/HTTP-kiszolgáló szükséges. Indítsd HTTP/HTTPS kiszolgálón.':'Az index.html, script.js, js/, json/ és assets/ mappáknak a webkiszolgáló megfelelő gyökérkönyvtárában kell lenniük.';
   shell.append(h,p,detail,hint);target.replaceChildren(shell);
 }
-import('./js/app.js?v=20261114ext2').then(({startApp})=>startApp()).catch(startupError);
+import('./js/app.js?v=20261114n10final3').then(({startApp})=>startApp()).catch(startupError);

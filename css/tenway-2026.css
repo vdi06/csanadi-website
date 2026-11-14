@@ -1,10 +1,10 @@
-/* 2026 / tízterületes fejlesztés – kizárólag statikus tárhelyen működő javítások */
-body.cs-inner-page #global-hero{display:none!important}
-body.cs-inner-page .orbit-launch{padding:7px 12px 12px!important}
-body.cs-inner-page .orbit-launch #orbit-open{min-height:43px!important;padding:9px 18px!important}
-body.cs-inner-page #app .page-banner{padding:clamp(20px,3vw,35px) 0 clamp(22px,3vw,39px)!important}
-body.cs-inner-page #app .page-banner h1{font-size:clamp(28px,4vw,43px)!important;margin:9px 0 5px!important}
-body.cs-inner-page #app .content-shell{padding-top:clamp(20px,3vw,35px)!important}
+ 
+body.cs-inner-page #global-hero{display:block ;visibility:visible }
+body.cs-inner-page .orbit-launch{padding:7px 12px 12px }
+body.cs-inner-page .orbit-launch #orbit-open{min-height:43px ;padding:9px 18px }
+body.cs-inner-page #app .page-banner{padding:clamp(20px,3vw,35px) 0 clamp(22px,3vw,39px) }
+body.cs-inner-page #app .page-banner h1{font-size:clamp(28px,4vw,43px) ;margin:9px 0 5px }
+body.cs-inner-page #app .content-shell{padding-top:clamp(20px,3vw,35px) }
 #app .cs-page-loading,#app .cs-page-load-error{padding:55px 20px;text-align:center;font-weight:750;color:var(--ink)}
 #app .cs-page-load-error{border:1px solid var(--line);border-radius:14px}
 #app .cs-portal-section{margin:20px auto 35px;max-width:var(--site-width);width:100%;min-width:0;}
@@ -32,15 +32,15 @@ body.cs-inner-page #app .content-shell{padding-top:clamp(20px,3vw,35px)!importan
 #app :is(.cs-portal-link,.cs-portal-filter button,.cs-doc-export,.cs-skip-shortcuts a):focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 @media(max-width:900px){#app .cs-portal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){
- #site-header #mobile-menu-toggle{display:grid!important;visibility:visible!important;position:relative!important;z-index:5;min-width:42px!important;min-height:42px!important}
- .site-header .mobile-navigation:not([hidden]){display:block!important}
+ #site-header #mobile-menu-toggle{display:grid ;visibility:visible ;position:relative ;z-index:5;min-width:42px ;min-height:42px }
+ .site-header .mobile-navigation:not([hidden]){display:block }
  #app .cs-portal-grid{gap:9px}
  #app .cs-portal-link{min-height:94px;padding:12px 9px;border-radius:13px}
  #app .cs-portal-link strong{font-size:13px}
  #app .cs-portal-link small{font-size:11px}
  #app .cs-portal-marker{font-size:21px}
- body.cs-inner-page #app .page-banner{padding:16px 0 20px!important}
- body.cs-inner-page #app .content-shell{padding:15px 0 35px!important}
+ body.cs-inner-page #app .page-banner{padding:16px 0 20px }
+ body.cs-inner-page #app .content-shell{padding:15px 0 35px }
 }
 @media(max-width:380px){#app .cs-portal-link{padding:10px 6px}#app .cs-portal-link strong{font-size:12px}}
-@media(prefers-reduced-motion:reduce){#app .cs-portal-link{transition:none!important}}
+@media(prefers-reduced-motion:reduce){#app .cs-portal-link{transition:none }}

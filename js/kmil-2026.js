@@ -1,4 +1,4 @@
-/* K+M+I+L. DOM only: content is static, no tracking/cookies/sensitive storage. */
+ 
 const e=(tag,cls,txt)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=txt;return n;};
 const groups={
  felveteli:[
@@ -53,7 +53,7 @@ export function enhanceHomeInterests(canvas){
    const ix=n=>{const i=priority.indexOf(groupName(n));return i<0?100+initialOrder.get(n):i;};return ix(a)-ix(b);
   });
   for(const node of ordered)canvas.append(node);
-  // The user controls expanding/collapsing. A topic preset only opens the first relevant group.
+   
   if(id!=='all'){for(const node of folds)node.open=priority[0]===groupName(node);}
  };
  for(const [id,label] of options){const b=e('button','kmil-interest-button',label);b.type='button';b.dataset.interest=id;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>pick(id));controls.append(b);buttons.push(b);}

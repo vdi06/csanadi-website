@@ -4,30 +4,38 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sporthírek JSON szerkesztője – Csanádi Sportiskola</title>
 <meta name="robots" content="noindex,nofollow">
-<style>
-:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light;--ink:#17324c;--gold:#c9a05b}
-*{box-sizing:border-box}body{margin:0;background:#f5f2eb;color:var(--ink);line-height:1.6}main{max-width:950px;margin:0 auto;padding:26px 15px 70px}h1{line-height:1.15}a{color:#0b5686}p{max-width:85ch}
-.notice{padding:16px;border:1px solid #d0b275;border-radius:14px;background:#fff9eb}.notice strong{display:block}
-.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.toolbar>*{flex:0 0 auto}
-button,.file-label{appearance:none;border:1px solid #bf9b60;background:#fff;color:var(--ink);border-radius:10px;padding:10px 15px;font-weight:750;cursor:pointer;min-height:45px}
-button.primary{background:#19344d;color:white}button:focus-visible,input:focus-visible{outline:3px solid #ad7e28;outline-offset:2px}
-.file-label input{display:none}#items{display:grid;gap:14px}
-.item{background:#fff;padding:16px;border-radius:14px;box-shadow:0 6px 20px #0001;border:1px solid #ddd1bb}
-.item label{display:block;font-weight:750;font-size:13px;margin:7px 0}
-.item input{display:block;width:100%;border:1px solid #a9b4bd;border-radius:8px;padding:11px;color:#17324c;font:inherit;background:#fff}
-.item-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}#status{padding:12px;border-radius:10px;background:#e5eee6;min-height:40px}
-@media(max-width:640px){.item-grid{grid-template-columns:1fr}main{padding-top:15px}}
-</style>
+
+<script>(function(){try{var m=localStorage.getItem("csanadi-theme");if(!["system","light","dark"].includes(m))m="system";var t=m==="system"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):m;document.documentElement.dataset.theme=t;document.documentElement.setAttribute("data-bs-theme",t);}catch(e){document.documentElement.dataset.theme="light";document.documentElement.setAttribute("data-bs-theme","light");}})();
+</script>
+<link rel="stylesheet" href="../css/style.css?v=20261114v5">
+<link rel="stylesheet" href="../css/tools-2026.css?v=20261114tool2">
+<script src="tool-ui-2026.js?v=20261114tool1" defer>
+</script>
 </head>
-<body><main>
-<h1>Sporthírközpont – helyi JSON-szerkesztő</h1>
+<body class="csanadi-tool"><a class="skip-link" href="#tool-main">Ugrás a szerkesztéshez</a>
+<header class="tool-header">
+  <div class="tool-topbar">
+    <a class="tool-brand" href="../index.html#/" aria-label="Csanádi Sportiskola – honlap">
+      <img src="../assets/media/logo/csanadi-cimer-512.webp" alt="" width="51" height="51">
+      <span class="tool-brand-text"><strong>CSANÁDI</strong><small>ÁRPÁD SPORTISKOLA · ESZKÖZÖK</small></span>
+    </a>
+    <div class="tool-header-actions">
+      <a class="tool-return" href="../index.html#/">← Vissza a honlapra</a>
+      <button id="tool-theme-toggle" class="tool-theme-toggle" type="button" aria-label="Megjelenési mód váltása">◐ Megjelenés</button>
+    </div>
+  </div>
+  <nav class="tool-breadcrumb" aria-label="Morzsamenü"><div class="tool-breadcrumb-inner"><a href="../index.html#/">Kezdőlap</a><span aria-hidden="true">›</span><span>Eszközök</span><span aria-hidden="true">›</span><span aria-current="page">Sporthírek szerkesztése</span></div></nav>
+</header>
+<main id="tool-main" class="tool-main"><div class="tool-lead"><span class="tool-eyebrow">Csanádi · helyi szerkesztőeszközök</span><h1>Sporthírek szerkesztése</h1><p>FTP-re feltölthető, ellenőrzött sporthír-adatok előállítása. Az adatok csak a böngésződben kerülnek feldolgozásra; az eszköz nem tölti fel őket automatikusan.</p></div>
+<nav class="tool-tabs" aria-label="Szerkesztőeszközök közötti navigáció"><a href="oldal-json-szerkeszto.html">Oldal-JSON szerkesztése</a>
+<a href="oldalindex-frissito.html">Keresőindex frissítése</a>
+<a href="sporthirek-szerkeszto.html" aria-current="page">Sporthírek szerkesztése</a><a href="eszkoz-mediator.html">Médiatár és dokumentumok</a></nav>
 <div class="notice"><strong>Kizárólag helyben működik, nincs szerveroldali írás.</strong>
 <p>Ez az eszköz nem gyűjt híreket, nem tölti fel a weboldalt és nem tesz közzé adatot automatikusan. Beírhatók az ellenőrzött cikkek címei, linkjei, dátumai és kategóriái. Az elkészült <code>napi-sporthirek.json</code> fájlt kézzel kell a webtárhely <code>json/adatok/</code> mappájába feltölteni. A honlap a legfeljebb 72 órás cikkeket jeleníti meg.</p></div>
 <div class="toolbar"><label class="file-label">Meglévő JSON megnyitása <input id="import" type="file" accept=".json,application/json"></label><button id="add" type="button">+ Új sporthír</button><button id="clear" type="button">Lista ürítése</button><button id="save" class="primary" type="button">JSON letöltése</button></div>
 <p id="status" role="status" aria-live="polite">Még nincsenek adatok. Az itt létrehozott JSON a meglévő oldalon automatikusan megjeleníthető, miután feltöltötted.</p>
 <section id="items" aria-label="Hírbejegyzések"></section>
-<script>
-'use strict';
+<script>'use strict';
 const list=document.getElementById('items'),status=document.getElementById('status');
 const make=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e};
 function addRow(entry={}){
@@ -65,4 +73,5 @@ document.getElementById('save').addEventListener('click',()=>{
  }catch(err){status.textContent='Hiba: '+err.message;}
 });
 </script>
-</main></body></html>
+</main><footer class="tool-footer"><div class="tool-footer-inner"><div><strong>CSANÁDI SPORTISKOLA · 2026</strong><span> · Helyi, FTP-kompatibilis eszközök</span></div><div><a href="../index.html#/">Vissza a kezdőoldalra</a> · <span>A letöltött fájlok közzététel előtt ellenőrzendők.</span></div></div></footer>
+</body></html>

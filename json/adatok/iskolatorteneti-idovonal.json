@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "Iskolatörténeti idővonal",
+  "updatedAt": "2026-11-14",
+  "description": "Az intézmény hivatalos történetéből ellenőrzött időpontok.",
+  "events": [
+    {
+      "year": 1904,
+      "title": "Az Őrnagy utcai iskolaépület átadása",
+      "description": "1904. október 18-án átadták a jelenlegi épületet. A tanítás október 19-én indult.",
+      "url": "https://csanadi-bp.edu.hu/tortenet.html"
+    },
+    {
+      "year": 1972,
+      "title": "A 75 éves jubileum",
+      "description": "Az iskola a jubileumi évfordulóra márványtáblát avatott.",
+      "url": "https://csanadi-bp.edu.hu/tortenet.html"
+    },
+    {
+      "year": 1987,
+      "title": "A Központi Sportiskola bázisiskolája",
+      "description": "1987. szeptember 1-jétől sportiskolai bázisintézményként is működött.",
+      "url": "https://csanadi-bp.edu.hu/tortenet.html"
+    },
+    {
+      "year": 1988,
+      "title": "Gimnáziumi osztályok indulása",
+      "description": "Az 1988/1989-es tanévben gimnáziumi osztályok is indultak.",
+      "url": "https://csanadi-bp.edu.hu/tortenet.html"
+    },
+    {
+      "year": 1989,
+      "title": "A Csanádi Árpád név felvétele",
+      "description": "1989. május 25-én az iskola felvette Csanádi Árpád nevét.",
+      "url": "https://csanadi-bp.edu.hu/tortenet.html"
+    },
+    {
+      "year": 1998,
+      "title": "Olimpiai érdemérem",
+      "description": "A Magyar Olimpiai Bizottság olimpiai érdeméremmel tüntette ki az intézményt.",
+      "url": "https://csanadi-bp.edu.hu/tortenet.html"
+    },
+    {
+      "year": 2004,
+      "title": "Új sportiskolai felvételi rendszer",
+      "description": "A 2004/2005-ös tanévben átalakították a felvételi eljárást, és elindult a nyelvi előkészítő.",
+      "url": "https://csanadi-bp.edu.hu/tortenet.html"
+    },
+    {
+      "year": 2006,
+      "title": "Sportiskolai kerettanterv",
+      "description": "Elkészült a közoktatási típusú sportiskolai kerettanterv.",
+      "url": "https://csanadi-bp.edu.hu/tortenet.html"
+    }
+  ]
+}

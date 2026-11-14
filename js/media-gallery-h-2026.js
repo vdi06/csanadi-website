@@ -1,7 +1,7 @@
-/* Csanádi 2026 / H – külön multimédiás galériaközpont.
- * A képek és rövid képmontázsok helyi médiafájlok. Külső beágyazás nincs.
- * A JSON-szöveg kizárólag textContent formában kerül a DOM-ba.
- */
+
+
+
+ 
 const PHOTO_URL = new URL('../json/adatok/kepgaleria.json', import.meta.url);
 const VIDEO_URL = new URL('../json/adatok/galeriavideok.json', import.meta.url);
 const albums = [

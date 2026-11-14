@@ -1,9 +1,9 @@
-/* 2026.11.14 – Főoldali galéria, hírkártyák és nyitott kapu háttere.
-   A már elfogadott mobilos, kétoszlopos csemperácsot megőrizzük. */
 
-/* A képes galéria végre a teljes 12 oszlopos főoldali területet használja. */
+ 
+
+ 
 #app[data-page-kind="home"] .home-unit--life-gallery {
-  grid-column: 1 / -1 !important;
+  grid-column: 1 / -1  ;
   width: 100%;
   min-width: 0;
   max-width: 100%;
@@ -26,10 +26,10 @@
   align-items: stretch;
 }
 
-/* A hírmodul ne maradjon egy fél szélességű panelben, amelyben
-   a 3 oszlop nagyon keskeny kártyákat eredményezett. */
+
+ 
 #app[data-page-kind="home"] .home-unit--school-news {
-  grid-column: 1 / -1 !important;
+  grid-column: 1 / -1  ;
   min-width: 0;
   width: 100%;
 }
@@ -42,7 +42,7 @@
 }
 #app[data-page-kind="home"] .home-unit--school-news .cs-news-teasers .cs-news-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr))  ;
   gap: clamp(12px,2vw,20px);
   align-items: stretch;
   grid-auto-rows: auto;
@@ -51,10 +51,10 @@
   min-width: 0;
   height: 100%;
 }
-/* A harmadik (páratlan) hír kiemelt vízszintes kártya, nem lesz árva 3. oszlop. */
+ 
 #app[data-page-kind="home"] .home-unit--school-news .cs-news-card:last-child:nth-child(odd):not(:first-child) {
   grid-column: 1 / -1;
-  display: grid !important;
+  display: grid  ;
   grid-template-columns: minmax(200px, .78fr) minmax(0, 1.22fr);
   align-items: stretch;
 }
@@ -67,12 +67,12 @@
   min-width: 0;
 }
 
-/* A zárt előtéri kapuszárnyak mögött most MÁR NYITOTT kapu látszik
-   a teljes animáció alatt. A főoldalra áttűnésig nem tűnik újra zártnak. */
+
+ 
 .gate26 .gate26-scene {
   background-image:
     linear-gradient(120deg,rgba(5,16,31,.26),rgba(3,12,26,.05)),
-    url('../assets/media/web/belepes-nyitott.webp?v=20261114openout3') !important;
+    url('../assets/media/web/belepes-nyitott.webp?v=20261114openout3')  ;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -85,12 +85,12 @@
 }
 @media (max-width: 640px) {
   #app[data-page-kind="home"] .home-unit--life-gallery .media26-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    grid-template-columns: repeat(2, minmax(0,1fr))  ;
     gap: 8px;
   }
   #app[data-page-kind="home"] .home-unit--school-news .cs-news-teasers .cs-news-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
-    gap: 9px !important;
+    grid-template-columns: repeat(2, minmax(0,1fr))  ;
+    gap: 9px  ;
   }
   #app[data-page-kind="home"] .home-unit--school-news .dfg-news-title {
     font-size: 15px;
@@ -100,10 +100,10 @@
     grid-template-columns: minmax(100px, .75fr) minmax(0, 1.25fr);
   }
   #app[data-page-kind="home"] .home-unit--school-news .cs-news-card:last-child:nth-child(odd):not(:first-child) .dfg-news-cover {
-    min-height: 160px !important;
+    min-height: 160px  ;
   }
   #app[data-page-kind="home"] .home-unit--school-news .cs-news-card:last-child:nth-child(odd):not(:first-child) .dfg-news-body {
-    padding: 10px !important;
+    padding: 10px  ;
   }
   #app[data-page-kind="home"] .home-unit--school-news .cs-news-card:last-child:nth-child(odd):not(:first-child) .dfg-news-summary {
     -webkit-line-clamp: 3;
@@ -115,11 +115,11 @@
   }
 }
 
-/* Két oszlopos kompakt hír-előnézet: a részletek a dedikált híroldalon olvashatók. */
+ 
 #app[data-page-kind="home"] .home-unit--school-news .dfg-news-compact .dfg-news-cover {
   height: clamp(150px,15vw,210px);
-  min-height: 0 !important;
-  aspect-ratio: auto !important;
+  min-height: 0  ;
+  aspect-ratio: auto  ;
   flex: 0 0 auto;
 }
 #app[data-page-kind="home"] .home-unit--school-news .dfg-news-compact .dfg-news-body {
@@ -145,29 +145,29 @@
 }
 #app[data-page-kind="home"] .home-unit--school-news .dfg-news-compact:last-child:nth-child(odd):not(:first-child) .dfg-news-cover {
   height: 100%;
-  min-height: 175px !important;
+  min-height: 175px  ;
 }
 @media(max-width:640px){
   #app[data-page-kind="home"] .home-unit--school-news .dfg-news-compact .dfg-news-cover {
     height: 96px;
   }
   #app[data-page-kind="home"] .home-unit--school-news .dfg-news-compact .dfg-news-body {
-    padding: 11px !important;
-    gap: 6px !important;
+    padding: 11px  ;
+    gap: 6px  ;
   }
   #app[data-page-kind="home"] .home-unit--school-news .dfg-news-compact .dfg-news-summary {
     -webkit-line-clamp: 3;
-    font-size: 11px !important;
-    line-height: 1.45 !important;
+    font-size: 11px  ;
+    line-height: 1.45  ;
   }
   #app[data-page-kind="home"] .home-unit--school-news .dfg-news-compact .dfg-news-title {
-    font-size: 14px !important;
+    font-size: 14px  ;
   }
   #app[data-page-kind="home"] .home-unit--school-news .dfg-news-compact .cs-news-links a {
-    font-size: 11px !important;
+    font-size: 11px  ;
   }
   #app[data-page-kind="home"] .home-unit--school-news .dfg-news-compact:last-child:nth-child(odd):not(:first-child) .dfg-news-cover {
     height: 100%;
-    min-height: 135px !important;
+    min-height: 135px  ;
   }
 }

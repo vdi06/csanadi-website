@@ -15,7 +15,7 @@
   "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 4
   },
   "seo": {
     "title": "Dokumentumtár – Csanádi Sportiskola",
@@ -80,6 +80,20 @@
           "type": "markdown",
           "data": {
             "text": "A Csanádi hivatalos dokumentumoldala tartalmazza a pedagógiai programot, az általános és gimnáziumi helyi tanterveket, a házirendet, a munkatervet, az SZMSZ-t és az adatkezelési szabályzatot. A fejlesztői segédletek nem intézményi szabályzatok; a hivatalos dokumentumokhoz a Csanádi közzétett fájllistája az irányadó.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/docs.html)\n\n[Hivatalos közzétételi lista](https://csanadi-bp.edu.hu/kozzetetel.html) · [Szülői nyomtatványok](https://csanadi-bp.edu.hu/szulok.html)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:next10-official",
+      "type": "section",
+      "title": "Hivatalos dokumentumok megnyitása",
+      "children": [
+        {
+          "id": "block:next10-official-text",
+          "type": "markdown",
+          "data": {
+            "text": "A [hivatalos intézményi dokumentumoldalon](https://csanadi-bp.edu.hu/docs.html) megtalálható a pedagógiai program, a házirend, a szervezeti és működési szabályzat és az adatkezelési dokumentáció. A honlap saját PDF-segédletei nem helyettesítik a jóváhagyott szabályzatokat."
           }
         }
       ]

@@ -1,6 +1,6 @@
-/* 2026/5: egyetlen közös szerkesztői ritmus a teljes honlapon.
-   A stílus a meglévő komponenseket tartja meg, de közös méret-, térköz-
-   és kontrasztszabályokkal rendezi a kezdőoldalt és az aloldalakat. */
+
+
+ 
 :root {
   --site-width: 1400px;
   --site-gutter: clamp(12px, 2.5vw, 26px);
@@ -16,7 +16,7 @@ body { line-height: 1.62; }
 #app :is(img, picture, video, svg) { max-width: 100%; }
 #app :is(p, h1, h2, h3, h4, a, span) { overflow-wrap: break-word; }
 
-/* Középre rendezett, egységes oldalsablonok. */
+ 
 #app .content-shell {
   width: 100%; max-width: var(--site-width);
   margin-inline: auto; padding: clamp(20px, 3vw, 36px) var(--site-gutter) 65px;
@@ -41,7 +41,7 @@ body { line-height: 1.62; }
 #app .content-tiles > .content-tile.tile-wide { grid-column:1/-1; }
 #app .content-tiles > .content-tile.tile-half:first-child { grid-column:span 6; }
 #app .content-tiles > :not(.content-tile) { grid-column:1/-1; min-width:0; }
-#app .content-tiles > .mt-4 { margin-top:4px!important; }
+#app .content-tiles > .mt-4 { margin-top:4px ; }
 #app .content-tiles .section-wrap { padding-block:5px; }
 #app .content-tiles .container-xxl { padding-inline:0; max-width:100%; }
 #app .content-tiles .text-flow { max-width:72ch; margin-inline:auto; line-height:1.77; }
@@ -50,7 +50,7 @@ body { line-height: 1.62; }
 #app .content-tiles .content-tile :last-child { margin-bottom:0; }
 #app .content-side { min-width:0; position:sticky; top:18px; }
 #app .side-panel { width:100%; margin:0; padding:22px; border-radius:var(--site-radius); }
-#app .page-banner { min-height:0; padding:clamp(28px,5vw,56px) 0!important; }
+#app .page-banner { min-height:0; padding:clamp(28px,5vw,56px) 0 ; }
 #app .page-banner .container-xxl { margin-inline:auto; max-width:1100px; padding-inline:var(--site-gutter); text-align:center; }
 #app .page-banner .breadcrumbs { justify-content:center; flex-wrap:wrap; }
 #app .page-banner h1 { margin:12px auto; max-width:920px; font-size:clamp(28px,4vw,47px); line-height:1.14; }
@@ -58,7 +58,7 @@ body { line-height: 1.62; }
 #app .page-banner.has-photo { isolation:isolate; }
 #app .page-banner.has-photo .container-xxl { z-index:2; position:relative; }
 
-/* A főoldal nem egymás alá dobált blokkokból, hanem egy 12 oszlopos szerkesztett rácsból áll. */
+ 
 #app .home-canvas {
   width:100%; max-width:var(--site-width); padding:clamp(15px,2vw,30px) var(--site-gutter) 55px;
   margin-inline:auto; display:grid; grid-template-columns:repeat(12,minmax(0,1fr));
@@ -92,30 +92,30 @@ body { line-height: 1.62; }
 #app .quick-grid, #app .features-grid { gap:var(--site-gap); }
 #app .footer-grid { gap:var(--site-gap); }
 
-/* Visszafogott elefántcsont alap: jó kontraszt a teljes felületen, nem vakító fehér. */
+ 
 html[data-theme="light"] {
  --page:#e9e2d6; --card:#f5f0e6; --light:#e4dacb; --line:#c5b8a2;
  --ink:#1b3044; --muted:#45586a; --gold:#a97c2f; --gold2:#e1c693;
  --bs-body-bg:#e9e2d6; --bs-body-color:#1b3044;
 }
-html[data-theme="light"] body { background-color:var(--page)!important; }
+html[data-theme="light"] body { background-color:var(--page) ; }
 html[data-theme="light"] :is(.body-card,.content-tile,.feature-card,.editorial-tile,.daily-sports-card,.cs-news-card,.side-panel,.student-success-card,.doc-card) { color:var(--ink); }
 html[data-theme="light"] :is(.body-card,.content-tile,.feature-card,.editorial-tile,.daily-sports-card,.cs-news-card,.side-panel,.student-success-card,.doc-card) :is(h2,h3,h4,strong) { color:var(--ink); }
 html[data-theme="light"] :is(.body-card,.content-tile,.feature-card,.editorial-tile,.daily-sports-card,.cs-news-card,.side-panel,.student-success-card,.doc-card) :is(p,small) { color:var(--muted); }
 html[data-theme="light"] .home-unit--sports-news,
-html[data-theme="light"] .home-unit--school-news { background:var(--card)!important; }
-html[data-theme="light"] .site-footer, html[data-theme="light"] .site-header { color:var(--ink)!important; }
-html[data-theme="light"] .section-overline { color:#86612b!important; }
+html[data-theme="light"] .home-unit--school-news { background:var(--card) ; }
+html[data-theme="light"] .site-footer, html[data-theme="light"] .site-header { color:var(--ink) ; }
+html[data-theme="light"] .section-overline { color:#86612b ; }
 html[data-theme="light"] :is(input,select,textarea) { color:var(--ink); }
 html[data-theme="dark"] .home-unit--sports-news,
-html[data-theme="dark"] .home-unit--school-news { background:var(--card)!important;color:var(--ink); }
+html[data-theme="dark"] .home-unit--school-news { background:var(--card) ;color:var(--ink); }
 html[data-theme="dark"] .home-unit--sports-news :is(h2,h3),
 html[data-theme="dark"] .home-unit--school-news :is(h2,h3) { color:var(--ink); }
 
-/* Valódi középre rendezett navigáció, visszafogott beúszással. */
-#site-map-overlay .site-map-dialog { margin-inline:auto!important; }
-#site-map-overlay .radial-menu-wheel { margin-inline:auto!important; }
-#site-map-overlay .radial-menu-details { margin-inline:auto!important; }
+ 
+#site-map-overlay .site-map-dialog { margin-inline:auto ; }
+#site-map-overlay .radial-menu-wheel { margin-inline:auto ; }
+#site-map-overlay .radial-menu-details { margin-inline:auto ; }
 #site-map-overlay:not([hidden]) .radial-menu-node {
  animation: cs-radial-appear .43s cubic-bezier(.18,.77,.29,1) both;
  animation-delay:calc(var(--node-index, 0) * 24ms);
@@ -131,7 +131,7 @@ html[data-theme="dark"] .home-unit--school-news :is(h2,h3) { color:var(--ink); }
  }
 }
 #site-map-overlay .radial-menu-center:focus-visible,
-#site-map-overlay .radial-menu-node:focus-visible { outline:3px solid var(--gold)!important;outline-offset:4px; }
+#site-map-overlay .radial-menu-node:focus-visible { outline:3px solid var(--gold) ;outline-offset:4px; }
 
 @media (max-width:820px) {
  #site-map-overlay .radial-ring-sub .radial-menu-node,
@@ -150,17 +150,17 @@ html[data-theme="dark"] .home-unit--school-news :is(h2,h3) { color:var(--ink); }
  #app .home-unit--sports-news .daily-sports-cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
  #app .home-unit--daily-hub .experience-dash-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
  #app .home-unit--daily-hub .experience-dash-grid > :last-child { grid-column:1/-1; }
- #app .content-tiles > .content-tile { grid-column:1/-1!important; }
+ #app .content-tiles > .content-tile { grid-column:1/-1 ; }
 }
 @media (max-width:620px) {
  #app .home-canvas { padding-inline:12px; grid-template-columns:minmax(0,1fr); gap:12px; }
- #app .home-unit { grid-column:1/-1!important; }
+ #app .home-unit { grid-column:1/-1 ; }
  #app .home-unit--sports-news .daily-sports-cards,
  #app .home-unit--daily-hub .experience-dash-grid { grid-template-columns:minmax(0,1fr); }
  #app .home-unit--daily-hub .experience-dash-grid > :last-child { grid-column:auto; }
  #app .home-unit--sports-news, #app .home-unit--school-news { padding:13px; }
  #app .content-shell { padding-inline:12px; }
- #app .page-banner { padding:22px 0!important; }
+ #app .page-banner { padding:22px 0 ; }
  #app .page-banner .container-xxl { padding-inline:16px; }
  #app .content-tiles > .content-tile { padding:18px; }
  #app .quick-grid, #app .features-grid { grid-template-columns:minmax(0,1fr); }
@@ -169,12 +169,12 @@ html[data-theme="dark"] .home-unit--school-news :is(h2,h3) { color:var(--ink); }
  #app .home-unit--daily-hub .experience-panel { padding:15px; }
 }
 @media (prefers-reduced-motion:reduce) {
- #site-map-overlay .radial-menu-node { animation:none!important; }
+ #site-map-overlay .radial-menu-node { animation:none ; }
 }
 
 
-/* 2026/6 – Kártyák belső ritmusa és sporthír/eredmény megjelenítés.
-   A meglévő DOM-komponensekre épül; nem változtatja a navigációt. */
+
+ 
 #app :is(.feature-card,.quick-card,.editorial-tile,.cs-news-card,.daily-sports-card,
          .student-success-card,.cs-achievement,.staff-team-card) {
   min-width:0;
@@ -196,7 +196,7 @@ html[data-theme="dark"] .home-unit--school-news :is(h2,h3) { color:var(--ink); }
   line-height:1.65;
   overflow-wrap:anywhere;
 }
-/* Képkivágás: minden csempében stabil képarány és fókuszpont. */
+ 
 #app .feature-card .card-picture { aspect-ratio:16/10; height:auto; }
 #app .quick-card .card-picture { aspect-ratio:16/9; height:auto; }
 #app :is(.card-picture,.student-success-image,.staff-team-photo) {
@@ -210,14 +210,14 @@ html[data-theme="dark"] .home-unit--school-news :is(h2,h3) { color:var(--ink); }
 #app .student-success-image img { position:absolute;inset:0; }
 #app .staff-team-photo { aspect-ratio:16/10; height:auto; }
 #app .staff-team-photo img { position:absolute;inset:0; }
-/* A cím, törzsszöveg és link függőlegesen egyenletesen rendeződjön. */
+ 
 #app .feature-card .card-copy { display:flex; flex-direction:column; flex:1; min-height:0; }
 #app .feature-card .card-title { margin-bottom:.55rem; }
 #app .feature-card .card-desc { margin-bottom:1.15rem; }
 #app .feature-card .card-arrow { margin-top:auto; }
 #app .editorial-tile { gap:12px; }
 #app .editorial-tile p { line-height:1.68; }
-/* Napi sporthírek – címke, cím, idő és forráslink világos szerkesztői rendben. */
+ 
 #app .daily-sports-cards { align-items:stretch; gap:var(--site-gap); }
 #app .daily-sports-card {
   display:flex;flex-direction:column;gap:9px; height:100%;
@@ -240,7 +240,7 @@ html[data-theme="dark"] .home-unit--school-news :is(h2,h3) { color:var(--ink); }
 }
 #app .daily-sports-card .daily-sports-link:focus-visible,
 #app .cs-news-card .cs-news-route:focus-visible { outline:3px solid var(--gold); outline-offset:4px; border-radius:3px; }
-/* Iskolai hírcsempék – részletek és kapcsolódó oldal a kártya alján. */
+ 
 #app .cs-news-grid { align-items:stretch; gap:var(--site-gap); }
 #app .cs-news-card {
   display:flex;flex-direction:column;gap:11px;height:100%;
@@ -258,7 +258,7 @@ html[data-theme="dark"] .home-unit--school-news :is(h2,h3) { color:var(--ink); }
   align-items:center;justify-content:space-between;
 }
 #app .cs-news-card .cs-news-route { display:inline-flex;min-height:32px;align-items:center; }
-/* Tanulói és sporteredmény-kártyák – eredmény önálló vizuális egység. */
+ 
 #app :is(.student-success-feature-grid,.student-success-archive-grid,.cs-result-grid) {
   align-items:stretch;gap:var(--site-gap);
 }
@@ -279,9 +279,9 @@ html[data-theme="dark"] .home-unit--school-news :is(h2,h3) { color:var(--ink); }
 #app .student-success-card .student-success-date { display:block;margin-top:auto;padding-top:8px;font-size:12px;color:var(--muted); }
 #app .student-success-card .student-photo-note { position:absolute;bottom:8px;left:8px;max-width:calc(100% - 16px); }
 #app .cs-achievement { display:flex;flex-direction:column;gap:8px;padding:17px;border-radius:var(--site-radius); }
-#app .cs-achievement :is(h3,p) { margin:0!important; }
+#app .cs-achievement :is(h3,p) { margin:0 ; }
 #app .cs-achievement .cs-achievement-source { margin-top:auto; }
-/* Mobilon ne alakuljon ki összenyomott, olvashatatlan kártya. */
+ 
 @media(max-width:900px) {
  #app .student-success-feature-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
  #app .student-success-archive-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }

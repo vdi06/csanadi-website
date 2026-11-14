@@ -1,5 +1,5 @@
-/* Csanádi Sportiskola 2026 – publikus, szigorúan ellenőrzött, JSON-vezérelt dokumentumközpont.
-   Bootstrap csak a fő index.html CDN-hivatkozásából; ez a modul natív JavaScriptet használ. */
+
+ 
 const ROOT = new URL('../', import.meta.url);
 const REGISTRY = new URL('../json/adatok/dokumentumok.json', import.meta.url);
 const SCHEMA = new URL('../json/schemas/dokumentumok.schema.json', import.meta.url);
@@ -163,8 +163,8 @@ function renderCenterContents(mount,route,initial){
  if(!Object.hasOwn(VIEWS,state.view))state.view='cards';if(!Object.hasOwn(SORTS,state.sort))state.sort='newest';if(state.status!=='all'&&!Object.hasOwn(STATUS,state.status))state.status='published';
  const top=el('div','doc-center-head');top.append(el('p','doc-kicker','ELLENŐRZÖTT FÁJLHIVATKOZÁSOK · NYILVÁNOS SEGÉDLETEK'),el('h2',null,'Dokumentumközpont'),el('p','doc-lead','Dokumentumokat kereshetsz, szűrhetsz, megtekinthetsz és letölthetsz. A gyűjteményben általános tanulási segédletek böngészhetők. A hivatalos intézményi szabályzatok az iskola saját honlapjáról érhetők el.'));
  mount.append(top);
- // A hivatalos iskolai iratok nem részei a fejlesztői segédlet-archívumnak.
- // A megfelelő intézményi gyűjtőoldal mégis közvetlenül elérhető marad.
+  
+  
  const officialLinks=[
   ['Intézményi alapdokumentumok','https://csanadi-bp.edu.hu/docs.html','intezmenyi-szabalyzat'],
   ['Szülői nyomtatványok','https://csanadi-bp.edu.hu/szulok.html','intezmenyi-nyomtatvany'],

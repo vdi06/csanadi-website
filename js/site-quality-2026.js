@@ -1,5 +1,5 @@
-/* Központi, csak böngészőben futó állapotellenőrzés és részletes betöltési diagnosztika.
- * HTTP/HTTPS + statikus JSON; nincs külső API, követő, szerveroldali függőség. */
+
+ 
 const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
 const append=(to,...nodes)=>{nodes.filter(Boolean).forEach(n=>to.append(n));return to;};
 const formatted=(n)=>Number.isFinite(n)?(n<1000?Math.round(n)+' ms':(n/1000).toFixed(2).replace('.',',')+' s'):'—';
@@ -66,7 +66,10 @@ export function initSiteHealth(catalog){
     while(cursor<list.length){const path=list[cursor++];try{const response=await fetch(path,{method:'HEAD',cache:'no-store'});if(response.ok)good++;else if([405,501].includes(response.status)){const fallback=await fetch(path,{cache:'no-store'});if(fallback.ok)good++;else bad.push(path+' ('+fallback.status+')');}else bad.push(path+' ('+response.status+')');}catch(e){bad.push(path+' (hálózati hiba)');}}
    }));
    check(bad.length===0,`${good}/${list.length} belső fájl elérhető${bad.length?' · hibák: '+bad.slice(0,6).join(', '):''}`);
-   const missingImages=[...document.images].filter(x=>x.complete&&x.naturalWidth===0);check(missingImages.length===0,`${document.images.length} jelenlegi kép · ${missingImages.length} betöltési hiba`);
+   const sourcedImages=[...document.images].filter(img=>{const src=img.currentSrc||img.getAttribute('src')||img.getAttribute('srcset')||'';return src.trim().length>0;});
+   const missingImages=sourcedImages.filter(img=>img.complete&&img.naturalWidth===0);
+   const imageNames=missingImages.slice(0,4).map(img=>{const path=img.currentSrc||img.getAttribute('src')||img.getAttribute('srcset')||'';try{return new URL(path,location.href).pathname;}catch{return path;}});
+   check(missingImages.length===0,`${sourcedImages.length} valódi képforrás vizsgálva · ${missingImages.length} betöltési hiba${imageNames.length?' · hibás fájlok: '+imageNames.join(', '):''}`);
   }catch(e){fail++;mark(false,'Az ellenőrzés megszakadt: '+e.message);}
   status.textContent=`Ellenőrzés vége: ${ok} sikeres, ${fail} hibás ellenőrzési csoport${skipped?', '+skipped+' nem vizsgált fájl':''}.`;button.disabled=false;
  });

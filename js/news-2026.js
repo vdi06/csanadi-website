@@ -1,5 +1,5 @@
-/* Csanádi 2026 – képes hírközpont: ellenőrzött tartalom, helyi szűrés, rendezés és lapozás.
- * A hírekhez tartozó tematikus képek és eredeti forráslinkek külön kezelve. */
+
+ 
 const SOURCE=new URL('../json/adatok/hirek-hivatalos.json',import.meta.url);
 const IMAGE_ROOT='assets/media/web/';
 const ILLUSTRATIONS={Sport:'sport-1600.webp',Felvételi:'felveteli-1600.webp',Oktatás:'oktatas-1600.webp',Közlemény:'kozosseg-1600.webp',Archívum:'iskolank-1600.webp',Iskolánk:'iskolank-1600.webp'};
@@ -37,7 +37,7 @@ function newsCard(item,compact=false){
  const title=el('h3','dfg-news-title',item.title),summary=el('p','dfg-news-summary',item.summary),details=el('details','cs-news-detail');
  add(details,el('summary','','További részletek'),el('p','',item.detail||item.summary));
  const link=el('a','cs-news-route','Kapcsolódó oldal →');link.href=item.route;
- // A kezdőoldali ízelítő kisebb, de a teljes tartalom továbbra is a híroldalon elérhető.
+  
  const original=sourceLink(item);
  if(compact){original.textContent='Eredeti hír ↗';link.textContent='Részletek →';}
  if(compact)add(copy,meta,title,summary,add(el('div','cs-news-links'),original,link));
@@ -54,7 +54,7 @@ function safeArchive(items,route){
 function sorted(items,order){
  return [...items].sort((a,b)=>{
   if(order==='az')return a.title.localeCompare(b.title,'hu');
-  // Dátum nélküli bejegyzés mindig a keltezett közlemények után szerepel.
+   
   const ad=a.date?Date.parse(a.date):null,bd=b.date?Date.parse(b.date):null;
   if(ad===null&&bd!==null)return 1;if(bd===null&&ad!==null)return -1;
   return (ad!==null&&bd!==null?(order==='oldest'?ad-bd:bd-ad):0)||a.title.localeCompare(b.title,'hu');

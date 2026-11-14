@@ -2,7 +2,7 @@ import {renderSportsSuccesses} from './sports-successes.js?v=20261114orbit1';
 import {renderPremiumHero} from './hero-2026.js?v=20261114premium1';
 import {renderLiveDashboard} from './home-live.js?v=20261114orbit1';
 import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js?v=20261114v5';
-/* Biztonságos, kizárólag előre regisztrált komponenseket tartalmazó blokkmegjelenítő. */
+ 
 const dom=(tag,attrs={},text='')=>{
   const x=document.createElement(tag);
   for(const [key,value] of Object.entries(attrs)){
@@ -19,7 +19,7 @@ const dom=(tag,attrs={},text='')=>{
 export {dom};
 const allowedLink=href=>/^#\/[a-z0-9\-/]*$/.test(href)||/^https:\/\/[^\s<>"']+$/.test(href);
 function inlineText(parent,text){
-  // Markdown szöveget kizárólag DOM-szövegcsomópontokként jelenítünk meg.
+   
   const re=/(\*\*(.+?)\*\*|\*(.+?)\*|\[([^\]]+)\]\(([^)]+)\))/g;
   let from=0,match;
   while((match=re.exec(String(text)))!==null){
@@ -52,7 +52,7 @@ const ICON_PATHS={
 function iconNode(name){
   const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
   svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('fill','none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','1.8');svg.setAttribute('stroke-linecap','round');svg.setAttribute('stroke-linejoin','round');svg.setAttribute('aria-hidden','true');
-  // Constant path dictionary, never interpreted from JSON. SVG is authored program content, not user HTML.
+   
   svg.innerHTML=ICON_PATHS[name]||ICON_PATHS.study;
   return svg;
 }

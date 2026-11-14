@@ -1,4 +1,4 @@
-/* JSON-ban regisztrált, kizárólag lokális médiaútvonalakat használó képrendszer. */
+ 
 let mediaMap = new Map();
 const safePath = path => typeof path === 'string' && /^assets\/media\/[a-z0-9/_\-.]+$/i.test(path) && !path.includes('..');
 export function registerMedia(registry) {

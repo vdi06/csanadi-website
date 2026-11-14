@@ -1,5 +1,5 @@
-/* Statikus FTP-s komponensek: sportdiagramok, esemény- és dokumentumkereső,
-   kapcsolódó tartalmak, mobilos gyorsnavigáció és böngésződiagnosztika. */
+
+ 
 #app .ext26-section{width:100%;max-width:100%;min-width:0;margin:25px auto;padding:clamp(16px,2.6vw,28px);background:var(--card);border:1px solid var(--line);border-radius:20px;color:var(--ink);box-shadow:0 9px 28px rgba(13,36,59,.055)}
 #app .ext26-heading{text-align:center;margin:0 auto 20px;max-width:800px}
 #app .ext26-heading h2{font-size:clamp(21px,2.8vw,31px);font-weight:900;line-height:1.22;margin:4px 0 10px;color:var(--ink)}
@@ -39,18 +39,18 @@
 #app .ext26-pdf-dialog button{float:right}
 #app .ext26-gallery-skip{display:block;width:max-content;max-width:100%;text-align:center;margin:0 auto 12px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;color:var(--ink);background:var(--light);text-decoration:none;font-size:12px;font-weight:750}
 #app .ext26-section :is(a,button,input,select,summary):focus-visible,.ext26-health :is(button,summary):focus-visible{outline:3px solid #cca151;outline-offset:3px}
-/* Mobilos navigáció: a fejlécben maradó menügombot kiegészíti, nem helyettesíti. */
+ 
 .ext26-mobile-nav{display:none}
 .ext26-health{margin-top:15px;margin-bottom:17px;border:1px solid #d5ad69aa;border-radius:15px;background:#142b46;color:#eef4fb;padding:13px 15px;font-size:12px}
 .ext26-health summary{font-weight:850;color:#f3d8a1;cursor:pointer;font-size:13px}
-.ext26-health-body{margin-top:12px}.ext26-health-body p{color:#e0e9f2!important;font-size:12px!important}
+.ext26-health-body{margin-top:12px}.ext26-health-body p{color:#e0e9f2 ;font-size:12px }
 .ext26-run-check,.ext26-refresh{min-height:38px;border:1px solid #dbc38d;border-radius:9px;background:#f3dfb2;color:#152b43;padding:8px 12px;font-weight:850;font-size:12px}
 .ext26-run-check:disabled{opacity:.6}.ext26-health-results{display:grid;gap:6px;margin:10px 0}
 .ext26-check-pass,.ext26-check-fail{padding:7px 10px;border:1px solid #8ca6afaa;border-radius:8px;overflow-wrap:anywhere;color:#f2f8ff}
 .ext26-check-fail{border-color:#e5b27e;background:#713d33;color:#fff7ef}
 .cs-speed-panel .ext26-perf-details{border-top:1px solid #ffffff30;padding-top:9px;margin-top:9px}
 .cs-speed-panel .ext26-perf-details summary{color:#f4d9a5;font-size:12px;font-weight:800;cursor:pointer}
-.cs-speed-panel .ext26-perf-details p{color:#e3ecf6!important;font-size:11px!important;margin:8px 0!important}
+.cs-speed-panel .ext26-perf-details p{color:#e3ecf6 ;font-size:11px ;margin:8px 0 }
 .ext26-perf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
 .ext26-perf-card{border:1px solid #ffffff34;border-radius:9px;padding:9px;min-width:0;display:grid;gap:4px}
 .ext26-perf-card strong{font-size:12px;color:#f3d7a6}
@@ -59,7 +59,7 @@
 @media(max-width:960px){#app .ext26-filter-row{grid-template-columns:repeat(2,minmax(0,1fr))}#app .ext26-filter-row button{max-width:none}#app .ext26-chart-layout{grid-template-columns:1fr}.ext26-perf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){
  body{padding-bottom:66px}
- .ext26-mobile-nav{display:grid!important;position:fixed;z-index:1030;bottom:0;left:0;right:0;grid-template-columns:repeat(5,minmax(0,1fr));padding:6px max(5px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom));background:#102943f2;backdrop-filter:blur(14px);border-top:1px solid #d1ab66;box-shadow:0 -6px 25px #0004;gap:3px}
+ .ext26-mobile-nav{display:grid ;position:fixed;z-index:1030;bottom:0;left:0;right:0;grid-template-columns:repeat(5,minmax(0,1fr));padding:6px max(5px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom));background:#102943f2;backdrop-filter:blur(14px);border-top:1px solid #d1ab66;box-shadow:0 -6px 25px #0004;gap:3px}
  .ext26-mobile-nav button{background:transparent;border:0;border-radius:8px;color:#f4f7fb;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:45px;min-width:0;font-size:10px;overflow-wrap:anywhere;padding:4px 2px}
  .ext26-mobile-nav .ext26-nav-symbol{font-size:19px;line-height:1}
  .ext26-mobile-nav button[aria-current=page]{background:#dec187;color:#192d44;font-weight:900}
@@ -77,9 +77,9 @@
  .ext26-mobile-nav button{font-size:9px}
  .ext26-perf-grid{grid-template-columns:1fr}
 }
-@media(prefers-reduced-motion:reduce){#app .ext26-tile,#app .ext26-bar-fill,.ext26-mobile-nav{animation:none!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){#app .ext26-tile,#app .ext26-bar-fill,.ext26-mobile-nav{animation:none ;transition:none }}
 
-/* 7 – visszafogott, akadálymentes témaváltások és tartalomátmenetek. */
+ 
 @media(prefers-reduced-motion:no-preference){
  #app .ext26-tile{transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
  #app .ext26-tile:hover{transform:translateY(-3px);box-shadow:0 11px 26px #10253d18}

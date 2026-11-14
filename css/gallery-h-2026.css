@@ -1,4 +1,4 @@
-/* H – Prémium multimédia-központ, a meglévő 2026-os témák színeivel. */
+ 
 #app .media26-section{width:100%;min-width:0;padding:clamp(22px,3vw,48px) 0;}
 #app .media26-container{max-width:1300px;margin-inline:auto;width:100%;min-width:0;}
 #app .media26-heading{text-align:center;max-width:900px;margin:0 auto clamp(22px,3vw,38px);}
@@ -51,9 +51,9 @@
 #app .media26-lightbox-next{right:6px;top:50%;transform:translateY(-50%);}
 #app :is(.media26-lightbox-close,.media26-lightbox-prev,.media26-lightbox-next):disabled{opacity:.35;cursor:default;}
 #app :is(.media26-album,.media26-tab,.media26-tile,.media26-more,.media26-full-link,.media26-search,.media26-lightbox button):focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
-/* Meglévő hibás „Közösség és megosztás” blokk: a 4/12-es oszlop belsejében
-   ismét két oszlopra törtek a szövegek. A blokk teljes szélességet kap. */
-#app .home-unit--social{grid-column:1/-1!important;min-width:0;}
+
+ 
+#app .home-unit--social{grid-column:1/-1 ;min-width:0;}
 #app .home-unit--social .social-feature-section{width:100%;}
 #app .home-unit--social .social-feature-section .experience-section-head{max-width:880px;margin:0 auto 24px;text-align:center;}
 #app .home-unit--social .social-feature-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,38px);align-items:center;min-width:0;padding:clamp(19px,3vw,35px);}
@@ -88,4 +88,4 @@
  #app .media26-lightbox-caption{max-width:100%;font-size:12px;}
  #app .home-unit--social .social-feature-box{padding:18px 14px;}
 }
-@media(prefers-reduced-motion:reduce){#app .media26-tile img,#app .media26-album,#app .media26-more{transition:none!important;}}
+@media(prefers-reduced-motion:reduce){#app .media26-tile img,#app .media26-album,#app .media26-more{transition:none ;}}

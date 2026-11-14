@@ -1,7 +1,7 @@
-/* Csanádi 2026: bemutató kapunyitás, fotófal, digitális óra, naptár,
- * JSON-alapú csengetési rend, social linkek és tantestületi központ.
- * Kizárólag natív JS; nem igényel helyi szervert vagy telepített csomagokat.
- */
+
+
+
+ 
 const e=(tag,cls='',text)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=String(text);return x;};
 const add=(target,...kids)=>{kids.filter(Boolean).forEach(k=>target.append(k));return target;};
 const safe=(s)=>String(s||'').replace(/[^a-zA-Z0-9À-ž _.,!?–:()/-]/g,'').slice(0,220);
@@ -16,7 +16,7 @@ const minuteTime=s=>/^([01]\d|2[0-3]):[0-5]\d$/.test(s)?Number(s.slice(0,2))*60+
 const href=(url)=>typeof url==='string'&&(/^#\/[a-z0-9/-]*$/.test(url)||/^https:\/\/[^\s<>"']+$/.test(url))?url:'#/';
 const sectionHead=(overline,title,description)=>{const box=e('div','experience-section-head');add(box,e('span','experience-eyebrow',overline),e('h2','experience-title',title));if(description)box.append(e('p','experience-lead',description));return box;};
 
-// Full-viewport entrance. Ends automatically; skip button and reduced-motion rules keep it usable.
+ 
 export function openEntrancePortal(){
  const hash=window.location.hash||'#/';if(hash!=='#/'&&hash!=='#')return;
  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;

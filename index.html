@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" id="theme-color" content="#FFF8E9">
-  <script>(function(){try{var m=localStorage.getItem("csanadi-theme");if(!["system","light","dark"].includes(m))m="system";var actual=m==="system"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):m;document.documentElement.dataset.theme=actual;document.documentElement.setAttribute("data-bs-theme",actual);}catch(e){document.documentElement.dataset.theme="light";document.documentElement.setAttribute("data-bs-theme","light");}})();</script>
+  <script>(function(){try{var m=localStorage.getItem("csanadi-theme");if(!["system","light","dark"].includes(m))m="system";var actual=m==="system"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):m;document.documentElement.dataset.theme=actual;document.documentElement.setAttribute("data-bs-theme",actual);}catch(e){document.documentElement.dataset.theme="light";document.documentElement.setAttribute("data-bs-theme","light");}})();
+</script>
   <meta name="description" content="Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium – sport, tanulás, közösség, iskolai információk.">
   <meta name="robots" content="noindex,nofollow">
   <title>Csanádi Árpád Sportiskola – 2026</title>
   <link rel="icon" href="assets/media/logo/csanadi-cimer-512.webp" type="image/webp">
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css?v=20261114v5">
   <link rel="stylesheet" href="css/next-2026.css?v=20261114v5">
@@ -34,6 +36,7 @@
   <link rel="stylesheet" href="css/tenway-2026.css?v=20261114ten1">
   <link rel="stylesheet" href="css/performance-diagnostics-2026.css?v=20261114speed1">
   <link rel="stylesheet" href="css/extended-hubs-2026.css?v=20261114ext1">
+  <link rel="stylesheet" href="css/next10-2026.css?v=20261114n10final3">
 </head>
 <body>
   <a class="skip-link" href="#app">Ugrás a tartalomra</a>
@@ -55,6 +58,7 @@
     <nav id="desktop-navigation" class="desktop-nav" aria-label="Rejtett tartalmi navigáció" hidden></nav>
     <nav id="mobile-navigation" class="mobile-navigation" aria-label="Mobil navigáció" hidden></nav>
   </header>
+  
     <div id="site-map-overlay" class="site-map-overlay" hidden>
       <div class="site-map-shade" data-site-map-dismiss="true"></div>
       <section class="site-map-dialog" role="dialog" aria-modal="true" aria-labelledby="site-map-title">
@@ -83,8 +87,7 @@
   <footer class="site-footer"><div class="container-xxl footer-grid"><div><p class="footer-brand">CSANÁDI <span>2026</span></p><p>1143 Budapest, Őrnagy utca 5–7. · csanadi@csanadiiskola.hu · Sport, tanulás, közösség.</p></div><div><strong>Gyorselérés</strong><a href="#/oktatas/felveteli">Felvételi</a><a href="#/sport">Sport</a><a href="#/informaciok/dokumentumtar">Dokumentumok</a></div><div><strong>Tájékoztatás</strong><a href="#/informaciok/adatvedelem">Adatvédelem</a><a href="#/kapcsolat">Kapcsolat</a><span class="footer-note"></span><div id="social-footer" aria-label="Közösségi média"></div></div></div><div class="container-xxl footer-bottom">© 2026 Csanádi Árpád Sportiskola <span id="footer-page-count"></span></div></footer>
   <div id="search-panel" class="search-backdrop" hidden><div class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="search-heading"><div class="search-head"><div><span class="eyebrow">KERESŐKÖZPONT</span><h2 id="search-heading">Mit szeretnél megtalálni?</h2></div><button id="search-close" type="button" class="icon-btn" aria-label="Keresés bezárása">✕</button></div><label class="visually-hidden" for="search-input">Keresés az oldalak között</label><input id="search-input" type="search" class="form-control form-control-lg" placeholder="Például: felvételi, sporteredmények, dokumentumok…" autocomplete="off"><div class="search-meta"><span id="search-status">Az oldalak között kereshetsz.</span><kbd>ESC</kbd></div><div id="search-results" class="search-results" role="list"></div></div></div>
   <div id="toast" class="toast-info" role="status" aria-live="polite" hidden></div>
-  <script>
-    (function(){
+  <script>    (function(){
       function fail(message){
         if(window.__CSANADI_STARTED__)return;
         var box=document.getElementById('app');if(!box)return;
@@ -98,8 +101,11 @@
       if(location.protocol==='file:')fail('Az index.html közvetlen megnyitásával a JSON-oldalak biztonsági korlátozás miatt nem töltődhetnek be.');
       else window.setTimeout(function(){if(!window.__CSANADI_STARTED__)fail('Az alkalmazás egyik modulja nem elérhető. Ellenőrizd a webtárhely fájljait, vagy nyomj Ctrl+F5-öt.');},25000);
     })();
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous" defer></script>
-  <script type="module" src="script.js?v=20261114ext2"></script>
+  
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous" defer>
+</script>
+  <script type="module" src="script.js?v=20261114n10final3">
+</script>
 </body>
 </html>

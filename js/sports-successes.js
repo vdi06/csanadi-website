@@ -1,4 +1,4 @@
-/* Hiteles sporteredmények szövegesen, külön, tematikus mozgásgalériával. */
+ 
 const RESULTS=new URL('../json/adatok/sportsikerek.json',import.meta.url);
 const GALLERY=new URL('../json/adatok/kepgaleria.json',import.meta.url);
 const n=(tag,klass='',text)=>{const x=document.createElement(tag);if(klass)x.className=klass;if(text!==undefined)x.textContent=String(text);return x;};

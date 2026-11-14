@@ -1,4 +1,4 @@
-/* Csanádi Sportiskola – ellenőrzött eredmények vagy elkülönített bemutatóbejegyzések. */
+ 
 const SOURCE=new URL('../json/adatok/tanuloi-sikerek.json',import.meta.url);
 const el=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
 const iso=s=>typeof s==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(s)&&!Number.isNaN(Date.parse(s+'T00:00:00Z'));

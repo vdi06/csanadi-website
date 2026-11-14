@@ -1,5 +1,5 @@
-/* Csanádi – statikus FTP-n is működő, helyi böngészős teljesítménydiagnosztika.
-   Nem használ külső mérést, sütit, követőkódot vagy szerveroldali szolgáltatást. */
+
+ 
 let panel=null;
 let pending=null;
 let initialReadyMs=null;
@@ -52,7 +52,7 @@ export function markNavigationStart(route,{initial=false}={}){
 function finish(route,ok){
  const record=pending;
  if(!record||record.route!==route)return;
- // A második animation frame azt jelzi, hogy a tartalomnak már volt esélye kirajzolódni.
+  
  requestAnimationFrame(()=>requestAnimationFrame(()=>{
   if(pending!==record)return;
   const duration=Math.max(0,clock()-record.at);

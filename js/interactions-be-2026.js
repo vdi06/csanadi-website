@@ -1,10 +1,10 @@
-/* B + E fejlesztés: natív, akadálymentes mikromozgások és böngészési kényelmi funkciók.
-   A navigáció és a képváltó változatlan adatait használjuk; nincs új külső függőség. */
+
+ 
 export function initEnhancedInteractions(){
   const overlay=document.getElementById('site-map-overlay');
   const hero=document.getElementById('global-hero');
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
-  // Játékszerű, körkörös billentyűzetes választás. A (+) almenügombok továbbra is külön működnek.
+   
   overlay?.addEventListener('keydown',(event)=>{
     if(overlay.hidden||!['ArrowRight','ArrowLeft','ArrowUp','ArrowDown','Home','End'].includes(event.key))return;
     const main=[...overlay.querySelectorAll('.compass26-choice-link')];
@@ -17,7 +17,7 @@ export function initEnhancedInteractions(){
     const step=['ArrowRight','ArrowDown'].includes(event.key)?1:-1;
     main[(Math.max(0,current)+step+main.length)%main.length].focus();
   });
-  // Mutatjuk a kiválasztott irányt akkor is, ha a felhasználó csak billentyűvel böngészik.
+   
   overlay?.addEventListener('focusin',(event)=>{
     const choice=event.target.closest?.('.compass26-choice');
     overlay.querySelectorAll('.compass26-choice.is-keyfocus').forEach(n=>n.classList.remove('is-keyfocus'));
@@ -30,7 +30,7 @@ export function initEnhancedInteractions(){
   let scheduled=false;
   window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(()=>{top.hidden=window.scrollY<650;scheduled=false;});}},{passive:true});
   const previewHero=()=>hero?.querySelector('.hero2026');
-  // 20 diás képváltó: érintéses lapozás és billentyűzetes vezérlés.
+   
   let swipe=null;
   hero?.addEventListener('pointerdown',(event)=>{
     const section=previewHero();
@@ -41,7 +41,7 @@ export function initEnhancedInteractions(){
     if(!swipe||swipe.id!==event.pointerId)return;
     const dx=event.clientX-swipe.x,dy=event.clientY-swipe.y;
     if(Math.abs(dx)>65&&Math.abs(dx)>Math.abs(dy)*1.4&&performance.now()-swipe.time<1300){
-      // Explicit osztálylista szerinti választás; nem függ a díszítő markup sorrendjétől.
+       
       const arrows=hero.querySelectorAll('.hero2026-arrow');
       (dx<0?arrows[1]:arrows[0])?.click();
     }
@@ -54,7 +54,7 @@ export function initEnhancedInteractions(){
     const arrows=hero.querySelectorAll('.hero2026-arrow');
     event.preventDefault();(event.key==='ArrowRight'?arrows[1]:arrows[0])?.click();
   });
-  // A JSON-blokkokban szereplő címsorok egy kattintással megosztható, stabil szakaszhivatkozást kapnak.
+   
   let sectionSerial=0;
   const enhancePage=()=>{
     const article=document.querySelector('#app .article-flow');
