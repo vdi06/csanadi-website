@@ -37,7 +37,12 @@ function newsCard(item,compact=false){
  const title=el('h3','dfg-news-title',item.title),summary=el('p','dfg-news-summary',item.summary),details=el('details','cs-news-detail');
  add(details,el('summary','','További részletek'),el('p','',item.detail||item.summary));
  const link=el('a','cs-news-route','Kapcsolódó oldal →');link.href=item.route;
- add(copy,meta,title,summary,details,add(el('div','cs-news-links'),sourceLink(item),link));return add(card,cover,copy);
+ // A kezdőoldali ízelítő kisebb, de a teljes tartalom továbbra is a híroldalon elérhető.
+ const original=sourceLink(item);
+ if(compact){original.textContent='Forrás ↗';link.textContent='Részletek →';}
+ if(compact)add(copy,meta,title,summary,add(el('div','cs-news-links'),original,link));
+ else add(copy,meta,title,summary,details,add(el('div','cs-news-links'),original,link));
+ return add(card,cover,copy);
 }
 function safeArchive(items,route){
  if(route.endsWith('/sporthirek'))return items.filter(x=>x.category==='Sport');
@@ -61,7 +66,7 @@ export function renderNewsTeasers(){
  const grid=el('div','cs-news-grid');container.append(grid);section.append(container);
  load().then(items=>{
   if(!section.isConnected)return;
-  sorted(items.filter(x=>x.category!=='Archívum'),'newest').slice(0,3).forEach(x=>grid.append(newsCard(x)));
+  sorted(items.filter(x=>x.category!=='Archívum'),'newest').slice(0,3).forEach(x=>grid.append(newsCard(x,true))); 
   if(!grid.childElementCount)grid.append(el('p','dfg-empty','Jelenleg nincs megjeleníthető ellenőrzött hír.'));
  }).catch(err=>grid.append(el('p','dfg-empty',err.message)));
  return section;
