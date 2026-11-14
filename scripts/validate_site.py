@@ -28,6 +28,19 @@ for p in (ROOT/'json/adatok').rglob('*.json'):
         for item in data.get('items',[]):
             target=ROOT/item['src']
             if not target.is_file():error('Hiányzó galériakép: '+item['src'])
+    if p.name=='galeriavideok.json':
+        if data.get('schemaVersion')!='1.0.0':error('Hibás galériavideó séma')
+        video_ids=set()
+        for entry in data.get('items',[]):
+            ident=entry.get('id')
+            if ident in video_ids:error('Ismétlődő galériavideó: '+str(ident))
+            video_ids.add(ident)
+            if entry.get('type')!='illustrative-montage' or entry.get('category') not in {'sport','oktatas','kozosseg'}:
+                error('Hibás vagy nem megfelelően jelölt galériavideó: '+str(ident))
+            for key,expected in [('src',r'assets/media/video/[a-z0-9-]+\.mp4'),('poster',r'assets/media/web/[a-z0-9-]+\.webp')]:
+                rel=entry.get(key,'')
+                if not isinstance(rel,str) or re.fullmatch(expected,rel) is None or not (ROOT/rel).is_file():
+                    error('Hiányzó vagy nem megengedett galéria média: '+str(ident)+' '+key)
     if p.name=='tanuloi-sikerek.json':
         if data.get('featureDays')!=7:error('A hétnapos időablak nem teljesül')
         seen=set()
@@ -47,7 +60,7 @@ for p in (ROOT/'json/adatok').rglob('*.json'):
 for item in json.loads((ROOT/'json/mediatar.json').read_text(encoding='utf-8'))['items']:
     path=item['original']['path']
     if not (ROOT/path).is_file():error('Hiányzó média: '+path)
-for p in ('index.html','script.js','css/style.css','css/next-2026.css','css/orbit-2026.css','css/layout-2026.css','css/radial-2026.css','css/organized-2026.css','js/student-achievements.js','js/daily-sport-news.js'):
+for p in ('index.html','script.js','css/style.css','css/next-2026.css','css/orbit-2026.css','css/layout-2026.css','css/radial-2026.css','css/organized-2026.css','js/student-achievements.js','js/daily-sport-news.js','js/media-gallery-h-2026.js','css/gallery-h-2026.css'):
     if not (ROOT/p).is_file():error('Hiányzó programfájl: '+p)
 for sheet in re.findall(r'href="(css/[^"]+\.css)(?:\?[^"]*)?"',(ROOT/'index.html').read_text(encoding='utf-8')):
     if not (ROOT/sheet).is_file():error('Hiányzó CSS-hivatkozás: '+sheet)

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "1.0.0",
+  "collectionId": "collection:galeria-montazsok-2026",
+  "status": "development",
+  "notice": "A videók generált, tematikus illusztrációkból összeállított képmontázsok; nem valódi iskolai események felvételei.",
+  "items": [
+    {"id":"video:sport-pillanatok","title":"Sportpillanatok – mozgás és csapatmunka","description":"Rövid, hang nélküli képmontázs sportos tematikus illusztrációkból. Nem eseményvideó.","category":"sport","type":"illustrative-montage","src":"assets/media/video/sport-pillanatok.mp4","poster":"assets/media/web/eletkep-01.webp"},
+    {"id":"video:tudas-kozosseg","title":"Tudás és közösség – iskolai pillanatok","description":"Rövid, hang nélküli képmontázs tanulási és közösségi illusztrációkból. Nem eseményvideó.","category":"kozosseg","type":"illustrative-montage","src":"assets/media/video/tudas-kozosseg.mp4","poster":"assets/media/web/eletkep-07.webp"}
+  ]
+}

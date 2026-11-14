@@ -1,5 +1,5 @@
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=20261114be1';
-import {renderLifeGallery} from './experience-2026.js?v=20261114v5';
+import {renderMediaGallery} from './media-gallery-h-2026.js?v=20261114h1';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=20261114premium1';
 import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=20261114dfg1';
 import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=20261114v5';
@@ -187,6 +187,7 @@ function contentPage(node){
     body.prepend(renderSportsSuccesses({data:{view:'archive'},title:'Közzétett sporteredmények'}));
     body.prepend(renderStudentAchievements('archive'));
   }
+  if(route==='#/sport/sportgaleriak')body.prepend(renderMediaGallery({compact:false}));
   if(route==='#/iskolank/tantestulet')body.prepend(renderStaffCenter());
   if(route==='#/informaciok/mindennapi-tudnivalok/csengetesi-rend')body.prepend(renderBellCenter());
   if(route==='#/hirek-es-esemenyek/esemenynaptar')body.prepend(renderCalendarCenter());
@@ -231,7 +232,7 @@ function homePage(node){
       place(renderNewsTeasers(),'school-news');
     }else if(block.id==='block:home-gallery-section'){
       place(rendered,'gallery');
-      place(renderLifeGallery(),'life-gallery');
+      place(renderMediaGallery({compact:true}),'life-gallery');
       place(renderSocialSection(),'social');
     }else if(block.id==='block:home-live-dashboard')place(rendered,'statistics');
     else if(block.id==='block:home-shortcuts')place(rendered,'shortcuts');

@@ -1,0 +1,91 @@
+/* H – Prémium multimédia-központ, a meglévő 2026-os témák színeivel. */
+#app .media26-section{width:100%;min-width:0;padding:clamp(22px,3vw,48px) 0;}
+#app .media26-container{max-width:1300px;margin-inline:auto;width:100%;min-width:0;}
+#app .media26-heading{text-align:center;max-width:900px;margin:0 auto clamp(22px,3vw,38px);}
+#app .media26-eyebrow{display:block;font-size:12px;line-height:1.5;font-weight:900;letter-spacing:.18em;color:var(--gold);margin-bottom:9px;}
+#app .media26-title{font-size:clamp(27px,3.8vw,48px);font-weight:950;line-height:1.18;letter-spacing:-.035em;color:var(--ink);margin:0 0 14px;text-wrap:balance;}
+#app .media26-lead{font-size:clamp(14px,1.5vw,17px);line-height:1.7;color:var(--muted);max-width:760px;margin:0 auto;}
+#app .media26-albums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(9px,1.2vw,16px);margin-bottom:20px;}
+#app .media26-album{min-width:0;display:flex;align-items:center;flex-direction:column;gap:4px;text-align:center;justify-content:center;padding:17px 9px;min-height:105px;border:1px solid var(--line);border-radius:18px;background:var(--card);color:var(--ink);box-shadow:0 5px 15px rgba(6,19,34,.06);transition:transform .2s,border-color .2s,background-color .2s;}
+#app .media26-album:hover{transform:translateY(-3px);border-color:var(--gold);}
+#app .media26-album.is-active{border:2px solid var(--gold);background:color-mix(in srgb,var(--gold) 12%,var(--card));}
+#app .media26-album-icon{font-size:27px;line-height:1.25;color:var(--gold);}
+#app .media26-album-label{font-weight:850;font-size:clamp(12px,1.15vw,15px);overflow-wrap:anywhere;}
+#app .media26-album-count{font-size:11px;color:var(--muted);}
+#app .media26-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:0 0 10px;}
+#app .media26-tabs{display:flex;gap:8px;flex-wrap:wrap;}
+#app .media26-tab,#app .media26-more,#app .media26-full-link{display:inline-flex;align-items:center;justify-content:center;min-height:43px;border:1px solid var(--line);border-radius:40px;background:var(--card);color:var(--ink);padding:10px 19px;font-weight:800;font-size:13px;text-decoration:none;transition:background-color .18s,border-color .18s;}
+#app .media26-tab.is-active,#app .media26-tab:hover{background:var(--gold);color:#14263a;border-color:var(--gold);}
+#app .media26-search-label{display:block;width:min(365px,100%);flex:0 1 365px;}
+#app .media26-search{width:100%;min-height:45px;border:1px solid var(--line);border-radius:22px;background:var(--card);color:var(--ink);font:inherit;font-size:14px;padding:9px 16px;}
+#app .media26-search::placeholder{color:var(--muted);opacity:1;}
+#app .media26-counter{min-height:21px;text-align:center;margin:12px auto 16px;font-weight:700;font-size:12px;color:var(--muted);}
+#app .media26-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(9px,1.2vw,16px);align-items:stretch;}
+#app .media26-tile{position:relative;aspect-ratio:4/3;min-width:0;border:0;border-radius:16px;padding:0;overflow:hidden;display:block;background:#182c45;color:#fff;cursor:pointer;isolation:isolate;}
+#app .media26-tile:nth-child(7n+1){grid-row:span 2;aspect-ratio:auto;min-height:220px;}
+#app .media26-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
+#app .media26-tile-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 36%,rgba(3,13,25,.85));}
+#app .media26-tile-label{position:absolute;bottom:13px;left:13px;right:42px;font-size:clamp(12px,1.2vw,16px);line-height:1.4;font-weight:850;text-align:left;overflow-wrap:break-word;}
+#app .media26-tile-zoom{position:absolute;bottom:11px;right:13px;font-size:20px;font-weight:700;}
+#app .media26-tile:hover img{transform:scale(1.06);}
+#app .media26-empty{grid-column:1/-1;text-align:center;padding:35px 16px;color:var(--muted);}
+#app .media26-more{display:flex;margin:22px auto 0;}
+#app .media26-full-link{display:flex;max-width:max-content;margin:22px auto 0;border-color:var(--gold);}
+#app .media26-more:hover,#app .media26-full-link:hover{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 13%,var(--card));color:var(--ink);}
+#app .media26-disclaimer{text-align:center;max-width:980px;margin:17px auto 0;font-size:12px;color:var(--muted);line-height:1.6;}
+#app .media26-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;}
+#app .media26-video-card{border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--ink);padding:15px;box-shadow:0 10px 28px rgba(8,22,36,.08);min-width:0;text-align:center;}
+#app .media26-video{display:block;width:100%;max-width:100%;aspect-ratio:16/9;object-fit:cover;background:#0c1c32;border-radius:13px;}
+#app .media26-video-badge{font-size:11px;font-weight:900;letter-spacing:.06em;color:var(--gold);display:block;margin:13px auto 8px;}
+#app .media26-video-card h3{font-size:clamp(17px,1.7vw,22px);margin:0 0 8px;color:var(--ink);}
+#app .media26-video-card p{color:var(--muted);line-height:1.6;font-size:13px;margin:0 0 10px;}
+#app .media26-lightbox{position:fixed;inset:0;width:min(1160px,96vw);max-width:96vw;max-height:96vh;height:fit-content;border:1px solid rgba(238,205,142,.5);border-radius:17px;padding:0;overflow:hidden;background:#0c1c30;color:#fff;box-shadow:0 30px 100px rgba(0,0,0,.56);}
+#app .media26-lightbox::backdrop{background:rgba(3,10,20,.86);backdrop-filter:blur(7px);}
+#app .media26-lightbox-frame{position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:47px 52px 30px;min-height:280px;}
+#app .media26-lightbox-image{display:block;max-width:100%;height:auto;max-height:72vh;object-fit:contain;border-radius:10px;}
+#app .media26-lightbox-caption{text-align:center;color:#fff;margin:15px 0 0;max-width:85%;font-size:15px;}
+#app .media26-lightbox-count{font-size:12px;color:#e7c98c;margin-top:11px;font-weight:800;}
+#app :is(.media26-lightbox-close,.media26-lightbox-prev,.media26-lightbox-next){position:absolute;z-index:2;display:grid;place-items:center;min-width:42px;min-height:42px;border:1px solid rgba(235,201,141,.48);border-radius:50%;background:#142c48;color:#fff;font-weight:900;font-size:27px;}
+#app .media26-lightbox-close{right:10px;top:10px;}
+#app .media26-lightbox-prev{left:6px;top:50%;transform:translateY(-50%);}
+#app .media26-lightbox-next{right:6px;top:50%;transform:translateY(-50%);}
+#app :is(.media26-lightbox-close,.media26-lightbox-prev,.media26-lightbox-next):disabled{opacity:.35;cursor:default;}
+#app :is(.media26-album,.media26-tab,.media26-tile,.media26-more,.media26-full-link,.media26-search,.media26-lightbox button):focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+/* Meglévő hibás „Közösség és megosztás” blokk: a 4/12-es oszlop belsejében
+   ismét két oszlopra törtek a szövegek. A blokk teljes szélességet kap. */
+#app .home-unit--social{grid-column:1/-1!important;min-width:0;}
+#app .home-unit--social .social-feature-section{width:100%;}
+#app .home-unit--social .social-feature-section .experience-section-head{max-width:880px;margin:0 auto 24px;text-align:center;}
+#app .home-unit--social .social-feature-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,38px);align-items:center;min-width:0;padding:clamp(19px,3vw,35px);}
+#app .home-unit--social .social-feature-copy,#app .home-unit--social .social-feature-items{min-width:0;width:100%;}
+#app .home-unit--social .social-feature-copy{text-align:center;}
+#app .home-unit--social .social-feature-copy h3{max-width:36ch;margin:0 auto 12px;line-height:1.3;text-wrap:balance;}
+#app .home-unit--social .social-feature-copy p{max-width:65ch;margin:0 auto 15px;line-height:1.72;}
+#app .home-unit--social .social-links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:10px;}
+#app .home-unit--social .social-links-grid .social-chip{width:100%;min-width:0;display:flex;justify-content:center;flex-wrap:wrap;text-align:center;overflow-wrap:anywhere;}
+#app .home-unit--social .hub26-embed-area{text-align:center;max-width:100%;}
+@media(max-width:1000px){
+ #app .media26-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+ #app .home-unit--social .social-feature-box{grid-template-columns:minmax(0,1fr);}
+}
+@media(max-width:700px){
+ #app .media26-albums{grid-template-columns:repeat(2,minmax(0,1fr));}
+ #app .media26-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+ #app .media26-tile:nth-child(7n+1){grid-row:auto;aspect-ratio:4/3;min-height:0;}
+ #app .media26-video-grid{grid-template-columns:minmax(0,1fr);}
+ #app .media26-toolbar{justify-content:center;}
+ #app .media26-search-label{flex:1 1 100%;width:100%;}
+ #app .media26-tabs{justify-content:center;}
+}
+@media(max-width:450px){
+ #app .media26-grid{gap:9px;}
+ #app .media26-tile-label{font-size:11px;line-height:1.35;right:26px;left:9px;bottom:9px;}
+ #app .media26-tile-zoom{right:7px;bottom:8px;font-size:17px;}
+ #app .media26-album{min-height:95px;padding:12px 6px;}
+ #app .media26-lightbox-frame{padding:50px 25px 25px;}
+ #app .media26-lightbox-prev{left:2px;min-width:32px;min-height:38px;}
+ #app .media26-lightbox-next{right:2px;min-width:32px;min-height:38px;}
+ #app .media26-lightbox-caption{max-width:100%;font-size:12px;}
+ #app .home-unit--social .social-feature-box{padding:18px 14px;}
+}
+@media(prefers-reduced-motion:reduce){#app .media26-tile img,#app .media26-album,#app .media26-more{transition:none!important;}}
