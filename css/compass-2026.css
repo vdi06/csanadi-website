@@ -85,7 +85,9 @@ html[data-theme="light"] .orbit-launch #orbit-open{background:linear-gradient(14
 html[data-theme="dark"] .orbit-launch #orbit-open{background:linear-gradient(140deg,#183852,#091c33)!important;color:#fff3d5!important;border-color:#d8b466!important}
 .orbit-launch #orbit-open:hover{transform:translateY(-2px);filter:brightness(1.06)}
 #site-map-overlay{background:transparent!important;backdrop-filter:none!important;padding:8px!important;isolation:isolate!important}
-#site-map-overlay .site-map-shade{background:transparent!important;backdrop-filter:none!important;box-shadow:none!important}
+#site-map-overlay .site-map-shade{position:absolute!important;inset:0!important;background:rgba(9,22,39,.12)!important;-webkit-backdrop-filter:blur(7px) saturate(1.03)!important;backdrop-filter:blur(7px) saturate(1.03)!important;box-shadow:none!important}
+html[data-theme="light"] #site-map-overlay .site-map-shade{background:rgba(255,248,233,.10)!important;-webkit-backdrop-filter:blur(7px) saturate(1.02)!important;backdrop-filter:blur(7px) saturate(1.02)!important}
+html[data-theme="dark"] #site-map-overlay .site-map-shade{background:rgba(5,16,28,.18)!important;-webkit-backdrop-filter:blur(8px) saturate(1.05)!important;backdrop-filter:blur(8px) saturate(1.05)!important}
 #site-map-overlay .site-map-dialog{background:transparent!important;border:0!important;outline:0!important;box-shadow:none!important;border-radius:0!important;color:var(--ink)!important;width:min(1080px,100%)!important;max-height:98dvh!important;overflow-y:auto!important;scrollbar-width:thin!important;overscroll-behavior:contain}
 #site-map-overlay .site-map-topline{position:relative!important;display:flex!important;justify-content:flex-end!important;align-items:center!important;background:transparent!important;border:0!important;box-shadow:none!important;color:var(--ink)!important;min-height:50px!important;padding:4px 8px!important}
 #site-map-overlay .site-map-close{display:grid;place-items:center;font-size:0!important;width:44px;height:44px;border-radius:50%!important;box-shadow:0 3px 12px #0004!important;padding:0!important;border:2px solid #b78d42!important;cursor:pointer}
