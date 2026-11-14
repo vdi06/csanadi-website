@@ -2,7 +2,7 @@
  * Közvetlenül a szigorúan validált, közzétehető JSON-adatokat használja.
  * Harmadik féltől származó tartalmat hozzájárulás nélkül nem tölt be.
  */
-import {renderDigitalClock} from './experience-2026.js?v=20261114curated1';
+import {renderDigitalClock} from './experience-2026.js?v=20261114orbit1';
 const BASE='json/adatok/';
 const ZONE='Europe/Budapest';
 const e=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};

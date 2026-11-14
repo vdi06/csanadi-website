@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vdi06.github.io/csanadi-website/json/schemas/tanuloi-sikerek.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "collectionId",
+    "featureDays",
+    "timezone",
+    "items"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "collectionId": {
+      "const": "collection:tanuloi-sikerek"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "featureDays": {
+      "const": 7
+    },
+    "timezone": {
+      "const": "Europe/Budapest"
+    },
+    "items": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "studentName",
+          "className",
+          "sport",
+          "competition",
+          "result",
+          "publishedAt",
+          "eventDate"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^student-success:[a-z0-9-]+$"
+          },
+          "studentName": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 140
+          },
+          "sport": {
+            "type": "string",
+            "minLength": 2
+          },
+          "competition": {
+            "type": "string",
+            "minLength": 4
+          },
+          "result": {
+            "type": "string",
+            "minLength": 3
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "publishedAt": {
+            "type": "string",
+            "format": "date"
+          },
+          "eventDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "approved": {
+            "type": "boolean"
+          },
+          "sourceVerified": {
+            "type": "boolean"
+          },
+          "image": {
+            "type": "string",
+            "pattern": "^assets/media/web/[a-z0-9/_-]+\\.webp$"
+          },
+          "imageApproved": {
+            "type": "boolean"
+          },
+          "photoIsOfStudent": {
+            "type": "boolean"
+          },
+          "sourceNote": {
+            "type": "string",
+            "maxLength": 300
+          },
+          "className": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 30
+          },
+          "isDemo": {
+            "type": "boolean"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "isDemo": {
+                  "const": true
+                }
+              },
+              "required": [
+                "isDemo"
+              ]
+            },
+            "then": {
+              "properties": {
+                "isDemo": {
+                  "const": true
+                }
+              }
+            },
+            "else": {
+              "required": [
+                "approved",
+                "sourceVerified"
+              ],
+              "properties": {
+                "approved": {
+                  "const": true
+                },
+                "sourceVerified": {
+                  "const": true
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "previewMode": {
+      "type": "boolean"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "previewMode": {
+            "const": false
+          }
+        },
+        "required": [
+          "previewMode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "items": {
+            "items": {
+              "properties": {
+                "isDemo": {
+                  "const": false
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -17,7 +17,7 @@ function achievementCard(x){
  const card=n('article','cs-achievement');const badge=n('span','cs-achievement-sport',x.category);
  const title=n('h3','',x.title.replace(' – kiemelkedő sportpályafutás',''));
  const description=n('p','',x.summary.replace(' A Csanádi Sportiskola hivatalos büszkeséglistájában szerepel.',''));
- const link=n('a','cs-achievement-source','Hivatalos eredményjegyzék ↗');link.href=x.source.url;link.target='_blank';link.rel='noopener noreferrer';
+ const link=n('span','cs-achievement-source','Ellenőrzött intézményi eredmény');
  return append(card,badge,title,description,link);
 }
 function home(root,results,images){

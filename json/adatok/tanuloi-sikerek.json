@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "1.0.0",
+  "collectionId": "collection:tanuloi-sikerek",
+  "title": "Diákjaink sportsikerei",
+  "featureDays": 7,
+  "timezone": "Europe/Budapest",
+  "description": "A honlap működését szemléltető kitalált nevek, osztályok és eredmények. A valódi, jóváhagyott sporteredmények később tölthetők fel.",
+  "items": [
+    {
+      "id": "student-success:demo-atletika",
+      "isDemo": true,
+      "studentName": "Kovács Lili",
+      "className": "10.A",
+      "sport": "Atlétika",
+      "competition": "Budapesti Iskolai Atlétikai Kupa – 100 méteres síkfutás",
+      "result": "1. helyezés",
+      "summary": "A futószámban határozott rajttal és erős hajrával mutatott példát a kitartó felkészülésre. Bemutató történet, nem megtörtént versenyeredmény.",
+      "publishedAt": "2026-11-14",
+      "eventDate": "2026-11-13",
+      "image": "assets/media/web/siker-atletika.webp"
+    },
+    {
+      "id": "student-success:demo-kosarlabda",
+      "isDemo": true,
+      "studentName": "Nagy Bence",
+      "className": "11.B",
+      "sport": "Kosárlabda",
+      "competition": "Őszi Középiskolai Kosárlabdatorna – döntő",
+      "result": "Tornagyőztes csapat tagja",
+      "summary": "A csapat közös védekezéssel és pontos játékkal zárta a versenyt. Bemutató történet, nem megtörtént versenyeredmény.",
+      "publishedAt": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "image": "assets/media/web/siker-kosarlabda.webp"
+    },
+    {
+      "id": "student-success:demo-uszas",
+      "isDemo": true,
+      "studentName": "Tóth Emma",
+      "className": "9.C",
+      "sport": "Úszás",
+      "competition": "Diák Úszó Kupa – 100 méter gyorsúszás",
+      "result": "2. helyezés",
+      "summary": "A versenyszámban kiegyensúlyozott tempóval és lendületes utolsó hosszal ért célba. Bemutató történet, nem megtörtént versenyeredmény.",
+      "publishedAt": "2026-11-12",
+      "eventDate": "2026-11-11",
+      "image": "assets/media/web/siker-uszas.webp"
+    },
+    {
+      "id": "student-success:demo-roplabda",
+      "isDemo": true,
+      "studentName": "Szabó Máté",
+      "className": "12.A",
+      "sport": "Röplabda",
+      "competition": "Városi Iskolai Röplabdakupa – helyosztó mérkőzés",
+      "result": "Bronzérmes csapat tagja",
+      "summary": "A csapat a helyosztón fordulatos mérkőzést játszott. Bemutató történet, nem megtörtént versenyeredmény.",
+      "publishedAt": "2026-11-10",
+      "eventDate": "2026-11-09",
+      "image": "assets/media/web/siker-roplabda.webp"
+    },
+    {
+      "id": "student-success:demo-archiv",
+      "isDemo": true,
+      "studentName": "Farkas Áron",
+      "className": "8.B",
+      "sport": "Labdarúgás",
+      "competition": "Őszi Iskolai Labdarúgó Torna – csoportdöntő",
+      "result": "3. helyezés",
+      "summary": "Példa arra, hogy a kiemelés lejárta után is visszakereshető marad egy eredmény. Nem megtörtént versenyeredmény.",
+      "publishedAt": "2026-10-31",
+      "eventDate": "2026-10-30",
+      "image": "assets/media/web/eletkep-10.webp"
+    }
+  ],
+  "previewMode": true
+}

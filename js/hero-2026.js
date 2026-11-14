@@ -1,5 +1,5 @@
 /* Csanádi 2026 – prémium, JSON-konfigurált hero. Csak regisztrált médiákat és útvonalakat használ. */
-import {createPicture, imageDisclaimer} from './media.js?v=20261114curated1';
+import {createPicture, imageDisclaimer} from './media.js?v=20261114orbit1';
 const safeHref=value=>typeof value==='string'&&/^#\/[a-z0-9/-]*$/.test(value)?value:'#/';
 const el=(tag,cls='',text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 const action=(item,i)=>{const a=el('a',i?'hero2026-cta ghost':'hero2026-cta primary',item.label||'Tovább');a.href=safeHref(item.href);return a;};

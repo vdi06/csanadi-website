@@ -6,7 +6,7 @@ async function load(){const r=await fetch(SOURCE,{cache:'no-cache'});if(!r.ok)th
 function newsCard(item){
  const card=el('article','cs-news-card');const top=el('div','cs-news-meta');add(top,el('span','cs-news-cat',item.category),el('span','',item.date?`${item.date} · ${item.dateType}`:'Iskolatörténet'));
  const title=el('h3','',item.title),description=el('p','',item.summary),details=el('details','cs-news-detail');add(details,el('summary','','Részletek'),el('p','',item.detail));
- const link=el('a','cs-news-source','Eredeti iskolai közlemény ↗');link.href=item.source;link.target='_blank';link.rel='noopener noreferrer';
+ const link=el('span','cs-news-source','Iskolai közlemény');
  const route=el('a','cs-news-route','Kapcsolódó oldal →');route.href=item.route;return add(card,top,title,description,details,add(el('div','cs-news-links'),link,route));
 }
 export function renderNewsTeasers(){
