@@ -1,0 +1,162 @@
+/* Csanádi Sportiskola 2026 – középre helyezett körmenü és állandó kompakt képváltó. */
+*,*::before,*::after{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:clip}
+img,picture,svg,video{max-width:100%}
+#global-hero{position:relative;z-index:4;min-width:0;overflow:hidden;background:var(--card)}
+#global-hero:empty{display:none}
+#global-hero .hero2026{margin:0;overflow:hidden;border-bottom:1px solid var(--line)}
+#global-hero .hero2026-stage{height:clamp(205px,23vw,320px)!important;min-height:205px!important}
+#global-hero .hero2026-inner{align-items:center;padding-top:12px!important;padding-bottom:12px!important}
+#global-hero .hero2026-copy{max-width:760px;min-width:0}
+#global-hero .hero2026-title{font-size:clamp(25px,3.4vw,42px)!important;line-height:1.1;max-width:670px;margin-bottom:6px}
+#global-hero .hero2026-kicker{font-size:10px;letter-spacing:.12em}
+#global-hero .hero2026-subtitle{font-size:clamp(12px,1.05vw,14px)!important;line-height:1.45;max-width:600px;margin:8px 0}
+#global-hero .hero2026-actions{margin-top:13px;gap:8px}
+#global-hero .hero2026-cta{min-height:35px;padding:8px 13px;font-size:11px}
+#global-hero .hero2026-identity{max-width:115px;min-width:65px;flex-basis:105px;filter:drop-shadow(0 4px 12px #122a4677)}
+#global-hero .hero2026-crest{width:91px}
+#global-hero .hero2026-identity-caption{font-size:7px}
+#global-hero .hero2026-bottom{min-height:42px!important;padding-top:4px!important;padding-bottom:4px!important;gap:8px}
+#global-hero .hero2026-progress-overline{font-size:8px}
+#global-hero .hero2026-progress-sub{font-size:11px}
+#global-hero .hero2026-arrow{width:30px;height:30px;font-size:20px}
+#global-hero .hero2026-pause{padding:6px 9px;min-width:62px;font-size:10px}
+#global-hero .hero2026-dots{gap:5px}
+#global-hero .hero2026-nav{gap:5px}
+#global-hero .media-illustration-tag{font-size:8px}
+/* Körmenü az oldal közepén; az aloldalak a kör alatt jelennek meg. */
+#site-map-overlay{padding:clamp(8px,2vw,24px)!important}
+#site-map-overlay .site-map-dialog{width:min(920px,100%)!important;max-height:95dvh!important;overflow-y:auto!important;overscroll-behavior:contain}
+#site-map-overlay .site-map-topline{padding:18px 26px;min-height:0;position:relative;flex-shrink:0}
+#site-map-overlay .site-map-topline h2{font-size:clamp(20px,2.3vw,28px);margin:2px 0 3px}
+#site-map-overlay .site-map-topline p{font-size:12px}
+#site-map-overlay .site-map-orbit-layout{display:flex!important;flex-direction:column!important;overflow:visible!important;gap:0!important;min-height:0!important}
+#site-map-overlay .orbit-field{width:100%;height:480px;min-height:480px;flex:0 0 480px;border:0!important;border-bottom:1px solid var(--line)!important}
+#site-map-overlay .orbit-field::before{width:375px;height:375px}
+#site-map-overlay .orbit-field::after{width:292px;height:292px}
+#site-map-overlay .orbit-center{width:161px;height:161px}
+#site-map-overlay .orbit-center img{width:72px;height:72px}
+#site-map-overlay .orbit-categories{inset:0!important}
+#site-map-overlay .orbit-categories .orbit-item{min-width:116px;min-height:72px;width:139px;height:77px;max-width:none}
+#site-map-overlay .orbit-categories .orbit-item:nth-child(1){--ox:-197px;--oy:-132px}
+#site-map-overlay .orbit-categories .orbit-item:nth-child(2){--ox:0px;--oy:-204px}
+#site-map-overlay .orbit-categories .orbit-item:nth-child(3){--ox:197px;--oy:-132px}
+#site-map-overlay .orbit-categories .orbit-item:nth-child(4){--ox:197px;--oy:132px}
+#site-map-overlay .orbit-categories .orbit-item:nth-child(5){--ox:0px;--oy:204px}
+#site-map-overlay .orbit-categories .orbit-item:nth-child(6){--ox:-197px;--oy:132px}
+#site-map-overlay .orbit-details{padding:22px 26px 26px;min-height:200px;overflow:visible!important}
+#site-map-overlay .site-map-topic-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px}
+#site-map-overlay .site-map-topic{min-width:0}
+#site-map-overlay .site-map-topic-leaf{min-width:0;overflow-wrap:anywhere}
+#site-map-overlay .site-map-bottom{position:sticky;bottom:0;z-index:3;background:var(--card)}
+/* Rugalmas, biztonságos kártyaszerkezetek. */
+.content-shell,.content-layout,.content-tiles,.content-tile,.body-card,.quick-grid,.features-grid,.news-grid,.student-success-feature-grid,.student-success-archive-grid{min-width:0;max-width:100%}
+.content-tiles>*,.student-success-card,.daily-sports-card{min-width:0;overflow-wrap:anywhere}
+.student-success-feature-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}
+.student-success-archive-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.student-success-card{box-shadow:var(--shadow);border-top:4px solid var(--gold)}
+.student-success-image{height:148px}
+.student-success-card h3{font-size:clamp(16px,1.4vw,20px)}
+.student-success-body{padding:14px;gap:5px}
+.student-success-summary{font-size:12px;line-height:1.5}
+.student-success-event{font-size:12px}
+.student-success-tag{font-size:10px}
+.student-success-group-heading{font-size:clamp(18px,2vw,24px);font-weight:850;margin:27px 0 15px;color:var(--ink)}
+.student-success-intro{font-size:14px;color:var(--muted);line-height:1.65;max-width:920px}
+.student-success-stat{font-size:13px;font-weight:800;color:var(--ink);margin:12px 0 18px}
+.student-success-tools{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin:16px 0}
+.student-success-tools .student-success-filter{margin:0;flex:2 1 300px}
+.student-success-tools .student-success-sport{flex:1 1 180px;max-width:300px}
+.student-success-all{display:inline-flex;margin:18px 0}
+.student-demo-banner{max-width:100%}
+@media(max-width:1050px){
+ #site-map-overlay .orbit-field{height:445px;min-height:445px;flex-basis:445px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(1){--ox:-181px;--oy:-118px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(2){--ox:0px;--oy:-181px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(3){--ox:181px;--oy:-118px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(4){--ox:181px;--oy:118px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(5){--ox:0px;--oy:181px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(6){--ox:-181px;--oy:118px}
+ .student-success-feature-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .student-success-archive-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:700px){
+ #global-hero .hero2026-stage{height:205px!important;min-height:205px!important}
+ #global-hero .hero2026-title{font-size:25px!important;max-width:460px}
+ #global-hero .hero2026-subtitle{font-size:12px!important;max-width:420px}
+ #global-hero .hero2026-identity{display:none}
+ #global-hero .hero2026-copy{max-width:100%}
+ #global-hero .hero2026-actions{margin-top:8px}
+ #global-hero .hero2026-cta{font-size:10px;padding:7px 10px;min-height:30px}
+ #global-hero .hero2026-bottom{align-items:center;flex-direction:row;padding:3px 12px}
+ #global-hero .hero2026-progress-text{display:none}
+ #global-hero .hero2026-nav{width:100%;justify-content:center;flex-wrap:nowrap}
+ #global-hero .hero2026-dots{gap:4px;margin:0 3px}
+ #global-hero .hero2026-dot{width:6px;height:6px}
+ #global-hero .hero2026-dot.active{width:17px}
+ #site-map-overlay .site-map-dialog{max-height:96dvh!important}
+ #site-map-overlay .site-map-topline{padding:14px 18px}
+ #site-map-overlay .orbit-field{height:325px;min-height:325px;flex-basis:325px}
+ #site-map-overlay .orbit-field::before{width:240px;height:240px}
+ #site-map-overlay .orbit-field::after{width:167px;height:167px}
+ #site-map-overlay .orbit-center{width:100px;height:100px}
+ #site-map-overlay .orbit-center img{width:46px;height:46px}
+ #site-map-overlay .orbit-center strong{font-size:11px}
+ #site-map-overlay .orbit-categories .orbit-item{width:108px;min-width:0;height:57px;min-height:0;padding:5px;gap:2px;border-radius:12px}
+ #site-map-overlay .orbit-item-icon{font-size:16px}
+ #site-map-overlay .orbit-item-label{font-size:10px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(1){--ox:-118px;--oy:-78px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(2){--ox:0px;--oy:-132px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(3){--ox:118px;--oy:-78px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(4){--ox:118px;--oy:78px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(5){--ox:0px;--oy:132px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(6){--ox:-118px;--oy:78px}
+ #site-map-overlay .orbit-details{padding:16px}
+ #site-map-overlay .site-map-topic-list{grid-template-columns:1fr!important}
+ .student-success-feature-grid,.student-success-archive-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .student-success-image{height:115px}
+ .student-success-body{padding:12px}
+ .student-success-summary{display:none}
+}
+@media(max-width:480px){
+ #site-map-overlay .orbit-field{height:286px;min-height:286px;flex-basis:286px}
+ #site-map-overlay .orbit-field::before{width:207px;height:207px}
+ #site-map-overlay .orbit-field::after{width:136px;height:136px}
+ #site-map-overlay .orbit-center{width:80px;height:80px}
+ #site-map-overlay .orbit-center img{width:39px;height:39px}
+ #site-map-overlay .orbit-center strong{font-size:10px}
+ #site-map-overlay .orbit-center span{font-size:4px}
+ #site-map-overlay .orbit-categories .orbit-item{width:84px;height:49px;border-radius:10px}
+ #site-map-overlay .orbit-item-icon{font-size:14px}
+ #site-map-overlay .orbit-item-label{font-size:9px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(1){--ox:-98px;--oy:-68px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(2){--ox:0px;--oy:-113px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(3){--ox:98px;--oy:-68px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(4){--ox:98px;--oy:68px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(5){--ox:0px;--oy:113px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(6){--ox:-98px;--oy:68px}
+ .student-success-feature-grid,.student-success-archive-grid{grid-template-columns:1fr}
+ .student-success-image{height:165px}
+}
+@media(prefers-reduced-motion:reduce){#global-hero *,#site-map-overlay .orbit-item{transition:none!important;animation:none!important}}
+/* Végső ellenőrzés: a kör menüpontjai ne érjenek a panel széléhez. */
+@media(min-width:1051px){
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(2){--oy:-185px}
+ #site-map-overlay .orbit-categories .orbit-item:nth-child(5){--oy:185px}
+}
+/* Mobilon egyetlen, egyértelműen felismerhető hamburgermenü nyitja a központi körmenüt. */
+.site-header #mobile-menu-toggle{display:none!important}
+@media(max-width:650px){
+ .site-header .orbit-open-button{font-size:0;padding:8px 10px;gap:5px}
+ .site-header .orbit-open-button .orbit-open-symbol{display:none}
+ .site-header .orbit-open-button>span:nth-child(2){font-size:11px;font-weight:900}
+ .site-header .orbit-open-button .orbit-open-bars{font-size:20px}
+}
+/* A digitális óra és feliratai világos témában sötét, jól olvasható színt kapnak. */
+html[data-theme="light"] .clock-panel,
+html[data-theme="light"] .clock-panel .experience-panel-tag,
+html[data-theme="light"] .clock-panel p,
+html[data-theme="light"] .clock-panel small{color:#233c52!important}
+html[data-theme="light"] .clock-panel .seven-segment-clock{color:#173e5e!important;text-shadow:none!important}
+html[data-theme="light"] .clock-panel{background:linear-gradient(132deg,#eee3cc,#f5eddf)!important;border-color:#cdb68a!important}
+html[data-theme="dark"] .clock-panel .seven-segment-clock{color:#f4d183!important}

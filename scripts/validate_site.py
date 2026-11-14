@@ -34,14 +34,20 @@ for p in (ROOT/'json/adatok').rglob('*.json'):
         for item in data.get('items',[]):
             if item.get('id') in seen:error('Ismétlődő tanulói siker: '+item['id'])
             seen.add(item.get('id'))
-            if item.get('approved') is not True or item.get('sourceVerified') is not True:
-                error('Csak jóváhagyott, igazolt tanulói eredmény tehető közzé')
-            if item.get('image') and (item.get('imageApproved') is not True or item.get('photoIsOfStudent') is not True or not (ROOT/item['image']).exists()):
+            demo=item.get('isDemo') is True
+            if demo:
+                if data.get('previewMode') is not True or not isinstance(item.get('demoDaysAgo'),int):
+                    error('Bemutatóeredmény csak külön előnézeti jelöléssel szerepelhet: '+item.get('id','?'))
+                if item.get('photoIsOfStudent') is True:
+                    error('Bemutatókép nem jelölhető valódi tanulói portrénak: '+item.get('id','?'))
+            elif item.get('approved') is not True or item.get('sourceVerified') is not True:
+                error('Valódi tanulói eredményhez jóváhagyás és forrásellenőrzés szükséges: '+item.get('id','?'))
+            if item.get('image') and (not (ROOT/item['image']).exists() or (not demo and (item.get('imageApproved') is not True or item.get('photoIsOfStudent') is not True))):
                 error('Hiányzó/engedély nélküli diákkép: '+item.get('id','?'))
 for item in json.loads((ROOT/'json/mediatar.json').read_text(encoding='utf-8'))['items']:
     path=item['original']['path']
     if not (ROOT/path).is_file():error('Hiányzó média: '+path)
-for p in ('index.html','script.js','style.css','next-2026.css','orbit-2026.css','js/student-achievements.js','js/daily-sport-news.js'):
+for p in ('index.html','script.js','style.css','next-2026.css','orbit-2026.css','radial-2026.css','js/student-achievements.js','js/daily-sport-news.js'):
     if not (ROOT/p).is_file():error('Hiányzó programfájl: '+p)
 if errors:
     print('\n'.join('HIBA: '+s for s in errors));sys.exit(1)

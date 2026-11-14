@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "site": {
     "name": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
-    "baseUrl": "https://csanadi-bp.edu.hu/",
+    "baseUrl": "https://vdi06.github.io/csanadi-website/",
     "locale": "hu-HU",
     "contactPageId": "page:000063"
   },

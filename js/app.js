@@ -30,54 +30,89 @@ function navLink(x){return dom('a',{href:hrefOf(x)},titleOf(x));}
 function pageChildren(node){return childrenOf(catalog,node)}
 const siteMap=document.getElementById('site-map-overlay');
 const siteMapCats=document.getElementById('site-map-categories');
+const siteMapSubtopics=document.getElementById('site-map-subtopics');
+const siteMapPages=document.getElementById('site-map-pages');
 const siteMapDetails=document.getElementById('site-map-details');
-let siteMapSelected=null,siteMapReturnFocus=null;
-const featuredRoots=['#/iskolank','#/oktatas','#/sport','#/hirek-es-esemenyek'];
+let siteMapSelected=null,siteMapSelectedChild=null,siteMapReturnFocus=null;
 function rootForCurrentRoute(){
  return catalog.roots.find(r=>currentRoute===hrefOf(r)||currentRoute?.startsWith(hrefOf(r)+'/'))||catalog.roots[0];
 }
-function renderSiteMap(root){
+function radialNode(node, index, count, layer, active, hasChildren){
+ const angle=(index*360/count-90);
+ const element=document.createElement(hasChildren?'button':'a');
+ if(!hasChildren)element.href=hrefOf(node);
+ if(hasChildren)element.type='button';
+ element.className='radial-menu-node radial-node-'+layer+(active?' is-selected':'');
+ element.style.setProperty('--angle',angle+'deg');
+ element.title=titleOf(node);
+ if(hasChildren){
+   element.setAttribute('aria-pressed',String(active));
+   element.setAttribute('aria-label',titleOf(node)+' – aloldalak megjelenítése');
+ } else element.setAttribute('aria-label',titleOf(node)+' – oldal megnyitása');
+ const symbols=['⌂','✦','★','▤','ⓘ','✉'];
+ if(layer===1)element.append(dom('span',{class:'radial-node-symbol','aria-hidden':'true'},symbols[catalog.roots.indexOf(node)]||'◆'));
+ else element.append(dom('span',{class:'radial-node-symbol','aria-hidden':'true'},layer===2?(hasChildren?'◎':'↗'):'↗'));
+ element.append(dom('span',{class:'radial-node-label'},titleOf(node)));
+ if(hasChildren){
+   element.addEventListener('click',()=>{
+      if(layer===1)renderSiteMap(node,null,true);
+      else renderSiteMap(siteMapSelected,node);
+   });
+ }
+ return element;
+}
+function renderSiteMap(root, child, resetChild=false){
  siteMapSelected=root||rootForCurrentRoute();
  if(!siteMapSelected)return;
- siteMapCats.replaceChildren();siteMapDetails.replaceChildren();
- for(const entry of catalog.roots){
-  const b=dom('button',{class:'site-map-category orbit-item'+(entry===siteMapSelected?' is-selected':'')});
-  b.type='button';
-  const symbols=['⌂','✧','★','▤','ⓘ','✉'];
-  b.append(dom('span',{class:'orbit-item-icon','aria-hidden':'true'},symbols[catalog.roots.indexOf(entry)]||'◆'),dom('span',{class:'orbit-item-label'},titleOf(entry)));
-  b.title=titleOf(entry);
-  b.setAttribute('aria-pressed',String(entry===siteMapSelected));
-  b.addEventListener('click',()=>renderSiteMap(entry));siteMapCats.append(b);
- }
- const head=dom('div',{class:'site-map-topic-header'});
- head.append(dom('p',{class:'site-map-eyebrow'},'TARTALMI TERÜLET'),dom('h3',{},siteMapSelected.page.title),dom('p',{},siteMapSelected.page.summary||''));
- const overview=navLink(siteMapSelected);overview.className='site-map-overview';overview.textContent='A témakör áttekintése  →';
- head.append(overview);siteMapDetails.append(head);
  const children=pageChildren(siteMapSelected);
- if(!children.length){siteMapDetails.append(dom('p',{},'Ebben a témában egyelőre nincs további almenü.'));return;}
- const list=dom('div',{class:'site-map-topic-list'});
- for(const child of children){
-  const sub=pageChildren(child);
-  if(sub.length){
-   const detail=dom('details',{class:'site-map-topic'});
-   if(currentRoute===hrefOf(child)||currentRoute?.startsWith(hrefOf(child)+'/'))detail.open=true;
-   const summary=dom('summary');summary.append(dom('strong',{},titleOf(child)),dom('span',{class:'site-map-topic-arrow','aria-hidden':'true'},'＋'));
-   detail.append(summary);
-   const inner=dom('div',{class:'site-map-topic-content'});
-   const route=navLink(child);route.textContent='Áttekintés: '+titleOf(child);inner.append(route);
-   for(const third of sub)inner.append(navLink(third));
-   detail.append(inner);
-   detail.addEventListener('toggle',()=>{if(detail.open)for(const other of list.querySelectorAll('details'))if(other!==detail)other.open=false;});
-   list.append(detail);
-  }else{
-   const link=navLink(child);link.className='site-map-topic-leaf';link.append(dom('span',{class:'site-map-topic-arrow','aria-hidden':'true'},'↗'));list.append(link);
-  }
+ siteMapSelectedChild=child&&children.includes(child)?child:null;
+ if(!siteMapSelectedChild&&!resetChild){
+   const routeMatch=children.find(n=>currentRoute===hrefOf(n)||currentRoute?.startsWith(hrefOf(n)+'/'));
+   if(routeMatch&&pageChildren(routeMatch).length)siteMapSelectedChild=routeMatch;
  }
- siteMapDetails.append(list);
+ siteMapCats.replaceChildren();siteMapSubtopics.replaceChildren();siteMapPages.replaceChildren();siteMapDetails.replaceChildren();
+ catalog.roots.forEach((entry,i)=>{
+   siteMapCats.append(radialNode(entry,i,catalog.roots.length,1,entry===siteMapSelected,true));
+ });
+ const grandchildren=siteMapSelectedChild?pageChildren(siteMapSelectedChild):[];
+ const atThird=grandchildren.length>0;
+ siteMapSubtopics.hidden=atThird;
+ siteMapPages.hidden=!atThird;
+ if(!atThird){children.forEach((entry,i)=>{
+   siteMapSubtopics.append(radialNode(entry,i,children.length,2,entry===siteMapSelectedChild,pageChildren(entry).length>0));
+ });}
+ if(atThird){grandchildren.forEach((entry,i)=>{
+   siteMapPages.append(radialNode(entry,i,grandchildren.length,3,false,false));
+ });}
+ document.querySelector('.radial-menu-wheel')?.classList.toggle('has-third-ring',atThird);
+ const summary=dom('div',{class:'radial-menu-summary'});
+ const crumb=dom('p',{class:'radial-menu-breadcrumb'});
+ crumb.append(dom('span',{},'1. '+titleOf(siteMapSelected)));
+ if(siteMapSelectedChild)crumb.append(dom('span',{'aria-hidden':'true'},'›'),dom('span',{},'2. '+titleOf(siteMapSelectedChild)));
+ summary.append(crumb);
+ summary.append(dom('h3',{},siteMapSelectedChild?siteMapSelectedChild.page.title:siteMapSelected.page.title));
+ summary.append(dom('p',{class:'radial-menu-description'},(siteMapSelectedChild?.page?.summary||siteMapSelected.page.summary||'')));
+ const actions=dom('div',{class:'radial-menu-actions'});
+ const rootLink=navLink(siteMapSelected);rootLink.textContent='Főtémakör megnyitása';rootLink.className='radial-menu-action';actions.append(rootLink);
+ if(siteMapSelectedChild){
+   const childLink=navLink(siteMapSelectedChild);childLink.textContent='Almenü áttekintése';childLink.className='radial-menu-action is-primary';actions.append(childLink);
+ }
+ if(grandchildren.length){
+   const back=dom('button',{class:'radial-menu-action radial-menu-back'},'← Vissza az almenükhöz');back.type='button';
+   back.addEventListener('click',()=>renderSiteMap(siteMapSelected,null,true));actions.prepend(back);
+ }
+ summary.append(actions);
+ if(grandchildren.length){
+   const hint=dom('p',{class:'radial-menu-hint'},'3. szint: a külső gyűrűből közvetlenül megnyithatod a részletes oldalakat.');summary.append(hint);
+ } else if(children.length){
+   summary.append(dom('p',{class:'radial-menu-hint'},'A külső gyűrűben lévő oldalak egyetlen kattintással megnyithatók.'));
+ }
+ siteMapDetails.append(summary);
 }
 function openSiteMap(){
  siteMapReturnFocus=document.activeElement;
- renderSiteMap(rootForCurrentRoute());siteMap.hidden=false;
+ const root=(currentRoute==='#/'||!currentRoute)?(catalog.roots.find(r=>hrefOf(r)==='#/oktatas')||rootForCurrentRoute()):rootForCurrentRoute();
+ renderSiteMap(root);siteMap.hidden=false;
  document.body.classList.add('site-map-is-open');
  document.getElementById('site-map-close').focus();
 }
@@ -189,7 +224,8 @@ function homePage(node){
       const icon=dom('span',{class:'preview-note-icon','aria-hidden':'true'},'i');
       panel.append(icon,rendered);container.append(panel);wrap.append(container);frag.append(wrap);
     }else if(block.id==='block:home-hero'){
-      frag.append(rendered,renderHomeExperience());
+      // A közös képváltó az oldalak fölött állandóan látható; ne duplikáljuk.
+      frag.append(renderHomeExperience());
     }else if(block.id==='block:home-sports-successes'){
       frag.append(renderStudentAchievements('home'),rendered,renderDailySportsNews('home'),renderNewsTeasers());
     }else if(block.id==='block:home-gallery-section'){
@@ -317,6 +353,13 @@ export async function startApp(){
   registerMedia(await loadJSON('mediatar.json'));
   catalog=await buildCatalog();
   await loadDocumentRegistry(); // Hibás/hiányzó dokumentum-JSON esetén a többi oldal akkor is elindul.
+  const sharedHero=document.getElementById('global-hero');
+  const homeNode=catalog.routes.get('#/');
+  const homeHero=homeNode?.page?.blocks?.find(b=>b.id==='block:home-hero');
+  if(sharedHero&&homeHero){
+    const carousel=renderBlock(homeHero);
+    if(carousel)sharedHero.replaceChildren(carousel);
+  }
   lastRawStructure=JSON.stringify(catalog.structure);
   if(catalog.items.length===0)throw new Error('Nem található érvényes JSON-oldal.');
   renderRoute({focus:false});
