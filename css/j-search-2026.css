@@ -1,0 +1,69 @@
+/* J – teljes szélességű sporthírblokk és reszponzív keresőközpont. */
+#app[data-page-kind="home"] .home-unit--sports-news{
+  grid-column:1 / -1!important;min-width:0;width:100%;
+}
+#app[data-page-kind="home"] .home-unit--sports-news .daily-sports-news,
+#app[data-page-kind="home"] .home-unit--sports-news .daily-sports-news .container-xxl{
+  width:100%;max-width:100%;min-width:0;margin-inline:auto;
+}
+#app[data-page-kind="home"] .home-unit--sports-news .daily-sports-cards{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:clamp(10px,1.8vw,20px);
+}
+#app[data-page-kind="home"] .home-unit--sports-news .daily-sports-card{
+  min-width:0;height:100%;margin:0;
+}
+#app[data-page-kind="home"] .home-unit--sports-news .daily-sports-head{
+  justify-content:center;gap:10px 22px;text-align:center;
+}
+#app[data-page-kind="home"] .home-unit--sports-news .daily-sports-head>div{align-items:center;}
+#app[data-page-kind="home"] .home-unit--sports-news .daily-sports-intro,
+#app[data-page-kind="home"] .home-unit--sports-news .daily-sports-stamp{text-align:center}
+@media(max-width:850px){
+ #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:440px){
+ #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-cards{gap:8px}
+ #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-card{padding:13px!important}
+ #app[data-page-kind="home"] .home-unit--sports-news .daily-sports-card h3{font-size:14px}
+}
+/* Az időközben hiányzó sporthírek egy teljes sorban, szemmel látható helyen jelenjenek meg. */
+#app[data-page-kind="home"] .daily-sports-empty{grid-column:1/-1;width:100%;text-align:center;}
+
+/* Kereső – a meglévő dialógus kibővítése az eredeti színpalettán. */
+#search-panel .search-dialog{width:min(980px,100%);padding:clamp(16px,2.4vw,30px);max-height:90dvh;overflow-y:auto;overscroll-behavior:contain;}
+#search-panel .search-dialog *{min-width:0}
+#search-panel .search-head{gap:12px;align-items:center;}
+#search-panel .search-head h2{font-size:clamp(23px,3vw,34px);}
+#search-panel .j-search-tools{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:12px;}
+#search-panel .j-search-field{display:flex;flex-direction:column;gap:5px;font-size:12px;font-weight:800;color:var(--muted);}
+#search-panel .j-search-select{width:100%;min-height:44px;padding:9px 12px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;}
+#search-panel .j-search-picks{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:13px 0;}
+#search-panel .j-search-picks-label{font-size:11px;font-weight:800;color:var(--muted);margin-right:3px;}
+#search-panel .j-search-chip{border:1px solid var(--line);color:var(--ink);background:var(--light);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:750;min-height:36px;}
+#search-panel .j-search-chip:hover{border-color:var(--gold);background:var(--card);}
+#search-panel .search-meta{margin:12px 0;align-items:center;gap:10px;}
+#search-panel .search-results{max-height:none;overflow:visible;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+#search-panel .search-result{display:flex;flex-direction:column;gap:7px;padding:14px 15px;border:1px solid var(--line);border-radius:14px;background:var(--light);color:var(--ink);text-decoration:none;overflow-wrap:anywhere;transition:border-color .18s ease,transform .18s ease;}
+#search-panel .search-result:hover,#search-panel .search-result:focus-visible{background:var(--card);border-color:var(--gold);color:var(--ink);transform:translateY(-1px);}
+#search-panel .search-result-title{font-size:15px;line-height:1.35;overflow-wrap:anywhere;}
+#search-panel .search-result small{display:block;margin:0;color:var(--muted);font-size:12px;line-height:1.5;}
+#search-panel .j-search-result-top{display:flex;justify-content:space-between;gap:6px 12px;align-items:center;flex-wrap:wrap;}
+#search-panel .j-search-type{font-size:10px;font-weight:900;letter-spacing:.05em;padding:4px 9px;border-radius:999px;background:color-mix(in srgb,var(--gold) 18%,var(--card));color:var(--ink);}
+#search-panel .j-search-section{font-size:10px;color:var(--muted);font-weight:700;}
+#search-panel .search-result mark{background:color-mix(in srgb,var(--gold) 48%,transparent);color:inherit;border-radius:3px;padding:0 2px;}
+#search-panel .j-search-more{margin:15px auto 2px;display:block;padding:10px 20px;min-height:43px;border:1px solid var(--gold);border-radius:999px;color:var(--ink);background:var(--card);font-size:13px;font-weight:800;}
+#search-panel .j-search-empty{grid-column:1/-1;text-align:center;padding:26px 12px;background:var(--light);border-radius:14px;color:var(--muted);}
+#search-panel :is(.j-search-chip,.j-search-select,.j-search-more,.search-result):focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+@media(max-width:680px){
+ #search-panel{padding:8px;}
+ #search-panel .search-dialog{max-height:calc(100dvh - 16px);padding:17px 13px;border-radius:15px;}
+ #search-panel .search-head h2{font-size:23px;}
+ #search-panel .search-results{gap:8px;}
+ #search-panel .search-result{padding:11px;}
+ #search-panel .search-result-title{font-size:13px;}
+ #search-panel .search-result small{font-size:11px;}
+ #search-panel .j-search-picks{gap:5px;}
+ #search-panel .j-search-chip{padding:6px 9px;font-size:11px;}
+}
+@media(max-width:340px){#search-panel .search-results{grid-template-columns:1fr;}}
+@media(prefers-reduced-motion:reduce){#search-panel .search-result{transition:none;}}

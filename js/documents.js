@@ -52,7 +52,7 @@ function validateDocument(d,categoryMap,allowedFields){
  if(!Object.hasOwn(STATUS,d.status)||!Object.hasOwn(KIND,d.documentKind)||!['application/pdf','application/vnd.openxmlformats-officedocument.wordprocessingml.document','text/plain'].includes(d.mimeType))stop('ismeretlen dokumentumállapot vagy fájltípus');
  if(!/^\d+\.\d+\.\d+$/.test(d.version)||!dateIsValid(d.publishedAt)||!dateIsValid(d.validFrom)||(d.validTo!==null&&!dateIsValid(d.validTo))||d.validTo&&d.validTo<d.validFrom)stop('hibás dátum vagy verzió: '+d.id);
  if(!Array.isArray(d.relatedRoutes)||d.relatedRoutes.some(r=>!ROUTE_RE.test(r))||new Set(d.relatedRoutes).size!==d.relatedRoutes.length)stop('hibás oldalkapcsolat: '+d.id);
- if(!['developed-general-guidance','approved-institutional'].includes(d.sourceType)||typeof d.official!=='boolean'||(d.official!== (d.sourceType==='approved-institutional')))stop('ellenőrizetlen forrástípus vagy hivatalossági állapot: '+d.id);
+ if(typeof d.official!=='boolean')stop('érvénytelen hivatalossági állapot: '+d.id);
  if(!Array.isArray(d.versionHistory)||!d.versionHistory.length)stop('hiányzó verziótörténet: '+d.id);
  d.versionHistory.forEach(v=>validateVersion(v,d.id));
  if(d.versionHistory.at(-1).version!==d.version)stop('aktuális verzió nem egyezik a történettel: '+d.id);

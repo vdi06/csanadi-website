@@ -17,14 +17,14 @@ async function load(){
  if(x.schemaVersion!=='1.0.0'||x.collectionId!=='collection:hirek-hivatalos'||!Array.isArray(x.items))throw Error('A hírgyűjtemény felépítése hibás.');
  const seen=new Set();
  return x.items.filter(v=>{
-  if(!v||v.status!=='verified'||!validSource(v.source)||!validRoute(v.route)||typeof v.title!=='string'||typeof v.summary!=='string')return false;
+  if(!v||v.status!=='verified'||!validSource(v.url)||!validRoute(v.route)||typeof v.title!=='string'||typeof v.summary!=='string')return false;
   if(seen.has(v.id))return false;seen.add(v.id);
   if(v.date&&(!/^\d{4}-\d{2}-\d{2}$/.test(v.date)||Number.isNaN(Date.parse(v.date+'T12:00:00Z'))))return false;
   return true;
  });
 }
 function sourceLink(item){
- const a=el('a','cs-news-source','Eredeti iskolai közlemény ↗');a.href=item.source;
+ const a=el('a','cs-news-source','Eredeti iskolai közlemény ↗');a.href=item.url;
  a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',item.title+' – hivatalos forrás megnyitása új lapon');return a;
 }
 function newsCard(item,compact=false){
@@ -39,7 +39,7 @@ function newsCard(item,compact=false){
  const link=el('a','cs-news-route','Kapcsolódó oldal →');link.href=item.route;
  // A kezdőoldali ízelítő kisebb, de a teljes tartalom továbbra is a híroldalon elérhető.
  const original=sourceLink(item);
- if(compact){original.textContent='Forrás ↗';link.textContent='Részletek →';}
+ if(compact){original.textContent='Eredeti hír ↗';link.textContent='Részletek →';}
  if(compact)add(copy,meta,title,summary,add(el('div','cs-news-links'),original,link));
  else add(copy,meta,title,summary,details,add(el('div','cs-news-links'),original,link));
  return add(card,cover,copy);
@@ -73,7 +73,7 @@ export function renderNewsTeasers(){
 }
 export function renderNewsCenter(route){
  const section=el('section','cs-news-center dfg-news-center');
- const intro=el('p','cs-news-intro','Ellenőrzött iskolai közlemények – az eredeti forrás közvetlenül minden hírnél elérhető. A képek tematikus illusztrációk.');
+ const intro=el('p','cs-news-intro','Ellenőrzött iskolai közlemények, az eredeti hírekre mutató hivatkozásokkal. A képek tematikus illusztrációk.');
  const toolbar=el('div','cs-news-toolbar dfg-news-toolbar');
  const input=el('input','form-control'),category=el('select','form-select'),order=el('select','form-select');
  input.type='search';input.placeholder='Keress címben és leírásban…';input.setAttribute('aria-label','Hírek keresése');input.autocomplete='off';

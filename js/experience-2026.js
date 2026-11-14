@@ -87,7 +87,7 @@ export function renderBellPanel({expanded=false}={}){
  const h=setInterval(()=>{if(!panel.isConnected){clearInterval(h);return;}paint();},1000);
  return panel;
 }
-function validEvents(value){return Array.isArray(value?.items)?value.items.filter(x=>x&&typeof x.title==='string'&&x.source?.verified===true&&typeof x.startsAt==='string'&&/^\d{4}-\d{2}-\d{2}/.test(x.startsAt)):[];}
+function validEvents(value){return Array.isArray(value?.items)?value.items.filter(x=>x&&typeof x.title==='string'&&x.verified===true&&typeof x.startsAt==='string'&&/^\d{4}-\d{2}-\d{2}/.test(x.startsAt)):[];}
 function monthInfo(date){return new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',timeZone}).format(date);}
 export function renderCalendarPanel({expanded=false}={}){
  const panel=e('section','experience-panel calendar-panel');panel.setAttribute('aria-label','Interaktív eseménynaptár');

@@ -1,3 +1,4 @@
+import {setupSmartSearch} from './search-j-2026.js?v=20261114j1';
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=20261114be1';
 import {renderMediaGallery} from './media-gallery-h-2026.js?v=20261114h1';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=20261114premium1';
@@ -19,7 +20,7 @@ const dialog=document.getElementById('search-panel');
 const searchInput=document.getElementById('search-input');
 const searchResults=document.getElementById('search-results');
 const searchStatus=document.getElementById('search-status');
-let catalog=null,currentRoute=null,previousSearchFocus=null,lastRawStructure='',refreshTimer=null;
+let catalog=null,currentRoute=null,previousSearchFocus=null,lastRawStructure='',refreshTimer=null,smartSearch=null;
 let lastRawPage=null;
 const historyScroll=new Map();
 const noticeNode=document.getElementById('toast');
@@ -244,6 +245,43 @@ function homePage(node){
   container.append(dom('div',{class:'section-overline'},'AZ INTÉZMÉNY VILÁGA'),dom('h2',{class:'section-title mb-4'},'Fő tartalmi területeink'),listCards(catalog.roots));
   mini.append(container);place(mini,'areas');
   const docs=renderDocumentQuickLinks();if(docs)place(docs,'documents');
+  // J: áttekinthető, rövidebb kezdőlap. Minden korábbi modul DOM-ban marad,
+  // de a részletes blokkok natív, billentyűzettel kezelhető details csoportokba kerülnek.
+  const units=[...canvas.querySelectorAll(':scope > .home-unit')];
+  const roleOf=el=>[...el.classList].find(x=>x.startsWith('home-unit--'))?.slice(11)||'';
+  const roleMap=new Map(units.map(el=>[roleOf(el),el]));
+  const nav=dom('nav',{class:'home-j-navrail','aria-label':'Kezdőoldali gyorsnavigáció'});
+  for(const [label,route] of [['Felvételi','#/oktatas/felveteli'],['Hírek','#/hirek-es-esemenyek/hirek'],['Sport','#/sport'],['Dokumentumok','#/informaciok/dokumentumtar']]){
+    nav.append(dom('a',{href:route},label+' ↗'));
+  }
+  const searchShortcut=dom('button',{type:'button',class:'home-j-search'},'Keresés a honlapon ⌕');
+  searchShortcut.addEventListener('click',openSearch);nav.append(searchShortcut);
+  const rails=dom('div',{class:'home-j-navrail-unit'});rails.append(nav);
+  const visibleRoles=['premium-showcase','school-news','sports-news'];
+  canvas.replaceChildren();
+  for(const role of visibleRoles){const unit=roleMap.get(role);if(unit)canvas.append(unit);if(role==='premium-showcase')canvas.append(rails);}
+  const foldGroups=[
+    {title:'Napi központ és interaktív információk',sub:'A napi központ részletes elemei egy kattintással',roles:['daily-hub']},
+    {title:'Sporteredmények és statisztikák',sub:'Tanulói sikerek, részletes sporttartalmak és adatok',roles:['students','sports-story','statistics']},
+    {title:'Sport és iskolai élet – képekben',sub:'Fotógaléria, albumok és közösségi felületek',roles:['gallery','life-gallery','social']},
+    {title:'Fedezd fel az iskolát',sub:'Képzési, közösségi és ügyintézési információk',roles:['shortcuts','editorial','story','areas','documents','standard']}
+  ];
+  for(const info of foldGroups){
+    const children=info.roles.map(role=>roleMap.get(role)).filter(Boolean);
+    if(!children.length)continue;
+    const fold=dom('details',{class:'home-j-fold'});
+    const summary=dom('summary',{class:'home-j-fold-toggle'});
+    const title=dom('span',{class:'home-j-fold-copy'});
+    title.append(dom('strong',{},info.title),dom('small',{},info.sub));
+    summary.append(dom('span',{class:'home-j-fold-symbol','aria-hidden':'true'},'✦'),title,dom('span',{class:'home-j-fold-arrow','aria-hidden':'true'},'⌄'));
+    const grid=dom('div',{class:'home-j-fold-grid'});
+    for(const child of children)grid.append(child);
+    fold.append(summary,grid);
+    if(info.roles.includes('daily-hub'))canvas.insertBefore(fold,canvas.querySelector('.home-unit--school-news'));
+    else canvas.append(fold);
+  }
+  // Új oldalmodulok esetén se vesszen el egyetlen blokk sem.
+  for(const unit of units)if(!canvas.contains(unit))canvas.append(unit);
   frag.append(canvas);
   return frag;
 }
@@ -275,17 +313,8 @@ function renderRoute(options={}){
   if(isNew)requestAnimationFrame(()=>window.scrollTo({top:target,behavior:'instant'}));
   if(options.focus)app.focus({preventScroll:true});
 }
-function closeSearch(){dialog.hidden=true;document.body.style.overflow='';searchInput.value='';if(previousSearchFocus?.focus)previousSearchFocus.focus();}
-function openSearch(){previousSearchFocus=document.activeElement;dialog.hidden=false;document.body.style.overflow='hidden';renderSearch('');setTimeout(()=>searchInput.focus(),0);}
-function renderSearch(query){if(!catalog)return;searchResults.replaceChildren();
-  const q=norm(query.trim());
-  const matches=catalog.items.map(n=>({n,hay:norm([n.page.title,n.page.summary,...(n.page.tags||[])].join(' '))})).filter(x=>!q||x.hay.includes(q));
-  matches.sort((a,b)=>{const A=norm(a.n.page.title),B=norm(b.n.page.title);return (Number(B.startsWith(q))-Number(A.startsWith(q)))||a.n.depth-b.n.depth||A.localeCompare(B,'hu');});
-  const max=query.trim()?24:10;
-  searchStatus.textContent=q?`${matches.length} találat az oldalak között`:'Kezdj el gépelni, vagy válassz az alábbi oldalak közül.';
-  if(!matches.length)searchResults.append(dom('p',{class:'section-lead p-3'},'Nincs találat. Próbálj más kifejezést.'));
-  matches.slice(0,max).forEach(({n})=>{const a=dom('a',{class:'search-result',href:hrefOf(n)});a.append(dom('strong',{},n.page.title),dom('small',{},n.page.summary||'Tartalmi oldal'));a.addEventListener('click',closeSearch);searchResults.append(a);});
-}
+function closeSearch(){dialog.hidden=true;document.body.style.overflow='';smartSearch?.reset();if(previousSearchFocus?.focus)previousSearchFocus.focus();}
+function openSearch(){previousSearchFocus=document.activeElement;dialog.hidden=false;document.body.style.overflow='hidden';smartSearch?.render();setTimeout(()=>searchInput.focus(),0);}
 const THEME_MODES=['system','light','dark'];
 const THEME_LABELS={system:'Automatikus',light:'Világos',dark:'Sötét'};
 const THEME_ICONS={
@@ -322,7 +351,6 @@ function wireEvents(){
   document.getElementById('search-open').addEventListener('click',openSearch);
   document.getElementById('search-close').addEventListener('click',closeSearch);
   dialog.addEventListener('click',e=>{if(e.target===dialog)closeSearch()});
-  searchInput.addEventListener('input',()=>renderSearch(searchInput.value));
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dialog.hidden)closeSearch();if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openSearch();}
     if(e.key==='Escape'&&!siteMap.hidden)closeSiteMap();
     if(!dialog.hidden&&e.key==='Tab'){
@@ -337,7 +365,7 @@ function wireEvents(){
 }
 async function checkStructure(){
   try{const value=JSON.stringify(await loadJSON('structure.json'));
-    if(lastRawStructure&&value!==lastRawStructure){const before=currentRoute;const scroll=window.scrollY;catalog=await buildCatalog();renderRoute({keepScroll:true});window.scrollTo({top:scroll,behavior:'instant'});notify('A menürendszer újratöltve.');}
+    if(lastRawStructure&&value!==lastRawStructure){const before=currentRoute;const scroll=window.scrollY;catalog=await buildCatalog();smartSearch?.rebuild(catalog);renderRoute({keepScroll:true});window.scrollTo({top:scroll,behavior:'instant'});notify('A menürendszer újratöltve.');}
     lastRawStructure=value;
   }catch(e){console.warn('Ideiglenes struktúrafrissítési hiba, korábbi állapot megtartva:',e);}
 }
@@ -363,6 +391,8 @@ export async function startApp(){
   if(location.protocol==='file:')throw new Error('A JSON-alapú weboldal HTTPS/HTTP kiszolgálást igényel, például GitHub Pages-t.');
   registerMedia(await loadJSON('mediatar.json'));
   catalog=await buildCatalog();
+  smartSearch=setupSmartSearch({catalog,loadJSON,norm,dialog,input:searchInput,results:searchResults,status:searchStatus,onNavigate:closeSearch});
+  await smartSearch.rebuild(catalog);
   await loadDocumentRegistry(); // Hibás/hiányzó dokumentum-JSON esetén a többi oldal akkor is elindul.
   const sharedHero=document.getElementById('global-hero');
   const homeNode=catalog.routes.get('#/');

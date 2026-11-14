@@ -7,7 +7,7 @@ async function data(url){const r=await fetch(url,{cache:'no-cache'});if(!r.ok)th
 function valid(r,g){
  if(!r||r.collectionId!=='collection:sportsikerek'||!Array.isArray(r.items)||!g||!Array.isArray(g.items))throw Error('Érvénytelen galériaadat.');
  const seen=new Set();const items=r.items.filter(x=>{
-  if(!x||!/^success:[a-z0-9-]+$/.test(x.id)||seen.has(x.id)||typeof x.title!=='string'||!x.summary||x.status!=='verified'||x.source?.verified!==true||x.source?.url!=='https://csanadi-bp.edu.hu/buszkeseg.html')return false;
+  if(!x||!/^success:[a-z0-9-]+$/.test(x.id)||seen.has(x.id)||typeof x.title!=='string'||!x.summary||x.status!=='verified'||x.verified!==true||x.url!=='https://csanadi-bp.edu.hu/buszkeseg.html')return false;
   seen.add(x.id);return true;
  });
  const images=g.items.filter(x=>x.category==='sport'&&/^assets\/media\/web\/[a-z0-9/_-]+\.webp$/.test(x.src||'')).slice(0,12);

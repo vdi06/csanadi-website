@@ -106,7 +106,7 @@ export function renderBellPanel({expanded=false}={}){
    const r=e('div','bell-row'+(active?.number===p.number?' bell-row-current':''));add(r,e('span','bell-row-nr',p.number+'. tanóra'),e('strong','',`${p.start}–${p.end}`));rows.append(r);
   }
   if(useClock){const marker=e('span','hub26-now-marker');marker.style.left=(inRange((n.minute-first)/width*100,0,100))+'%';marker.title='Jelenlegi idő';timeline.append(marker);}
-  summary.textContent=value.verifiedBySchool&&value.status==='verified'?'Forrás: az iskola hivatalosan közzétett csengetési rendje.':'Az időpontok szerkesztési előnézetek, nem az iskola hivatalos csengetési rendje.';
+  summary.textContent=value.verifiedBySchool&&value.status==='verified'?'Az iskola közzétett csengetési rendje.':'Az időpontok szerkesztési előnézetek, nem az iskola hivatalos csengetési rendje.';
  }
  picker.addEventListener('change',()=>{selected=picker.value;isExplicit=true;render();});
  load('csengetesi-rend.json').then(raw=>{value=validateBell(raw);validity.textContent=value.verifiedBySchool?'HIVATALOS CSENGETÉSI REND':'TÁJÉKOZTATÓ ADATOK';selected=value.defaultScheduleId;for(const s of value.schedules){const o=e('option','',s.name);o.value=s.id;picker.append(o);}picker.value=selected;render();}).catch(err=>{validity.textContent='Hiba';nowTitle.textContent='Az időrend nem érhető el';status.textContent=err.message;});
@@ -118,7 +118,7 @@ export function renderBellCenter(){const wrap=e('section','experience-standalone
 function validateEvents(value){
  if(!value||value.schemaVersion!=='2.0.0'||value.collectionId!=='collection:esemenyek'||!Array.isArray(value.items)||!Array.isArray(value.categories))throw Error('Az esemény-JSON szerkezete nem megfelelő.');
  const ids=new Set(),categories=new Set(value.categories.map(x=>x.id));if(categories.size!==value.categories.length)throw Error('Ismétlődő eseménykategória.');
- return value.items.filter(x=>{if(!x||!/^esemeny:[a-z0-9-]+$/.test(x.id)||ids.has(x.id)||!categories.has(x.categoryId))throw Error('Érvénytelen eseményazonosító vagy kategória.');ids.add(x.id);if(x.status!=='published'||x.source?.verified!==true)return false;
+ return value.items.filter(x=>{if(!x||!/^esemeny:[a-z0-9-]+$/.test(x.id)||ids.has(x.id)||!categories.has(x.categoryId))throw Error('Érvénytelen eseményazonosító vagy kategória.');ids.add(x.id);if(x.status!=='published'||x.verified!==true)return false;
   const re=/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})$/;if(!re.test(x.startsAt)||!Number.isFinite(Date.parse(x.startsAt))||(x.endsAt!==null&&(!re.test(x.endsAt)||Date.parse(x.endsAt)<=Date.parse(x.startsAt))))throw Error('Hibás közzétett eseményidőpont.');
   if(!['string'].includes(typeof x.title)||x.title.length<4)throw Error('Hibás eseménycím.');return true;
  }).sort((a,b)=>Date.parse(a.startsAt)-Date.parse(b.startsAt));
@@ -167,7 +167,7 @@ export function renderCalendarPanel({expanded=false}={}){
   if(!visible.length)output.append(note('Ebben az időszakban nincs közzétett, ellenőrzött program a naptárban.'));
   visible.slice(0,expanded?100:5).forEach(item=>{const card=e('article','hub26-event-card');add(card,e('span','hub26-event-kicker',dateLabel(item.startsAt)),e('h4','',item.title),e('p','',item.summary||''),e('p','',`${timeLabel(item.startsAt)}${item.endsAt?'–'+timeLabel(item.endsAt):' · befejezés nem közölt'}${item.location?' · '+item.location:''}`));const buttons=e('div','hub26-event-actions');const link=e('a','hub26-pill','Részletek ↗');link.href=/^#\/[a-z0-9\/-]+$/.test(item.route||'')?item.route:'#/hirek-es-esemenyek/esemenynaptar';
   add(buttons,link,btn('Naptárba (.ics)','hub26-pill',()=>exportICS([item])));
-  if(item.source?.verified===true&&safeLink(item.source.url)){const source=e('a','hub26-pill dfg-event-source','Hivatalos forrás ↗');source.href=item.source.url;source.target='_blank';source.rel='noopener noreferrer';buttons.append(source);}card.append(buttons);output.append(card);});
+  if(item.verified===true&&safeLink(item.url)){const source=e('a','hub26-pill dfg-event-source','Eredeti közlemény ↗');source.href=item.url;source.target='_blank';source.rel='noopener noreferrer';buttons.append(source);}card.append(buttons);output.append(card);});
  }
  function apply(v){events=validateEvents(v);categories=v.categories;categorySelect.replaceChildren(allOption);for(const item of categories){const o=e('option','',item.label);o.value=item.id;categorySelect.append(o);}categorySelect.value=category;draw();}
  async function refresh(){try{apply(await load('esemenyek.json'));status.textContent=`Adatok ellenőrizve: ${new Intl.DateTimeFormat('hu-HU',{timeZone:ZONE,hour:'2-digit',minute:'2-digit'}).format(new Date())}. Csak jóváhagyott bejegyzések látszanak.`;}catch(err){status.textContent='Az események ellenőrzése nem sikerült: '+err.message;}}

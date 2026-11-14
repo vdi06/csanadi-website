@@ -16,10 +16,10 @@ export function renderDailySportsNews(mode='home'){
    if(!items.length){grid.append(make('p','daily-sports-empty','A napi sporthírek frissítése folyamatban van. A Csanádi eredményeit az iskola eredménytárában találod.'));return;}
    for(const item of items){const card=make('article','daily-sports-card');const header=make('p','daily-sports-meta',item.category||'Sporthír');const title=make('h3','',item.title);
     const date=make('time','daily-sports-date',new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'short',day:'numeric',timeZone:'Europe/Budapest'}).format(new Date(item.publishedAt)));
-    const link=make('a','daily-sports-link','Cikk megnyitása a forrásnál ↗');link.href=item.url;link.target='_blank';link.rel='noopener noreferrer';
+    const link=make('a','daily-sports-link','Teljes sporthír megnyitása ↗');link.href=item.url;link.target='_blank';link.rel='noopener noreferrer';
     card.append(header,title,date,link);grid.append(card);
    }
-   const stamp=make('p','daily-sports-stamp',`Hírforrás: ${x.source||'Nemzeti Sport Online'} · utolsó adatfrissítés: ${x.updatedAt?new Intl.DateTimeFormat('hu-HU',{dateStyle:'short',timeStyle:'short',timeZone:'Europe/Budapest'}).format(new Date(x.updatedAt)):'még nincs adat'}`);grid.after(stamp);
+   const stamp=make('p','daily-sports-stamp',`Utolsó frissítés: ${x.updatedAt?new Intl.DateTimeFormat('hu-HU',{dateStyle:'short',timeStyle:'short',timeZone:'Europe/Budapest'}).format(new Date(x.updatedAt)):'még nincs adat'}`);grid.after(stamp);
   }).catch(()=>{if(section.isConnected)grid.replaceChildren(make('p','daily-sports-empty','A sporthírfolyam jelenleg nem érhető el.'));});}
  load();const interval=setInterval(()=>{if(!section.isConnected){clearInterval(interval);return;}if(!document.hidden)load();},5*60*1000);
  return section;

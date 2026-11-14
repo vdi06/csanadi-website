@@ -117,7 +117,6 @@
           "validFrom",
           "validTo",
           "relatedRoutes",
-          "sourceType",
           "official",
           "versionHistory"
         ],
@@ -225,12 +224,6 @@
               "pattern": "^#/[a-z0-9/-]*$"
             },
             "uniqueItems": true
-          },
-          "sourceType": {
-            "enum": [
-              "developed-general-guidance",
-              "approved-institutional"
-            ]
           },
           "official": {
             "type": "boolean"

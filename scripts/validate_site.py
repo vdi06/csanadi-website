@@ -53,7 +53,7 @@ for p in (ROOT/'json/adatok').rglob('*.json'):
                     error('Bemutatóeredmény csak külön előnézeti jelöléssel szerepelhet: '+item.get('id','?'))
                 if item.get('photoIsOfStudent') is True:
                     error('Bemutatókép nem jelölhető valódi tanulói portrénak: '+item.get('id','?'))
-            elif item.get('approved') is not True or item.get('sourceVerified') is not True:
+            elif item.get('approved') is not True or item.get('verified') is not True:
                 error('Valódi tanulói eredményhez jóváhagyás és forrásellenőrzés szükséges: '+item.get('id','?'))
             if item.get('image') and (not (ROOT/item['image']).exists() or (not demo and (item.get('imageApproved') is not True or item.get('photoIsOfStudent') is not True))):
                 error('Hiányzó/engedély nélküli diákkép: '+item.get('id','?'))
@@ -72,10 +72,10 @@ for path in paths:
 news=json.loads((ROOT/'json/adatok/hirek-hivatalos.json').read_text(encoding='utf-8'))
 news_ids=set()
 for entry in news.get('items',[]):
-    source=entry.get('source','')
+    url=entry.get('url','')
     if entry.get('id') in news_ids:error('Ismétlődő hír: '+str(entry.get('id')))
     news_ids.add(entry.get('id'))
-    if entry.get('status')!='verified' or not re.fullmatch(r'https://csanadi-bp\.edu\.hu/[a-z0-9/.-]+',source):
+    if entry.get('status')!='verified' or not re.fullmatch(r'https://csanadi-bp\.edu\.hu/[a-z0-9/.-]+',url):
         error('Ellenőrizetlen hír vagy hibás forrás: '+str(entry.get('id')))
     if entry.get('route') not in known_routes:error('A hír céloldala nem létezik: '+str(entry.get('id')))
     if entry.get('date'):
@@ -93,7 +93,7 @@ for item in events.get('items',[]):
     if item.get('categoryId') not in event_cats:error('Hibás eseménykategória: '+ident)
     if item.get('route') not in known_routes:error('Hiányzó eseményoldal: '+ident)
     if item.get('status')=='published':
-        src=item.get('source',{})
+        src=item
         if src.get('verified') is not True or not re.fullmatch(r'https://csanadi-bp\.edu\.hu/[a-z0-9/.-]+',src.get('url','')):
             error('Esemény forrása nem ellenőrzött: '+ident)
         try:

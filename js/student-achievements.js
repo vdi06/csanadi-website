@@ -12,7 +12,7 @@ function validate(root){
  for(const x of root.items){
   if(!x||!/^student-success:[a-z0-9-]+$/.test(x.id)||ids.has(x.id)||!iso(x.publishedAt)||!iso(x.eventDate)||
    !['studentName','className','sport','competition','result'].every(k=>typeof x[k]==='string'&&x[k].trim())||
-   !(x.isDemo===true&&root.previewMode===true || x.isDemo!==true&&x.approved===true&&x.sourceVerified===true))continue;
+   !(x.isDemo===true&&root.previewMode===true || x.isDemo!==true&&x.approved===true&&x.verified===true))continue;
   if(x.isDemo&&( !Number.isInteger(x.demoDaysAgo)||x.demoDaysAgo<0||x.demoDaysAgo>1500))continue;
   ids.add(x.id);result.push(x);
  }

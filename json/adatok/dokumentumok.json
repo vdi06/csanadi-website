@@ -112,7 +112,6 @@
         "#/oktatas/felveteli/kilencedik-evfolyam",
         "#/oktatas/felveteli/nyilt-napok"
       ],
-      "sourceType": "developed-general-guidance",
       "official": false,
       "versionHistory": [
         {
@@ -154,7 +153,6 @@
         "#/sport/edzok",
         "#/oktatas/kepzeseink/sportiskolai-neveles"
       ],
-      "sourceType": "developed-general-guidance",
       "official": false,
       "versionHistory": [
         {
@@ -196,7 +194,6 @@
         "#/oktatas/tananyagok-es-jegyzetek",
         "#/informaciok"
       ],
-      "sourceType": "developed-general-guidance",
       "official": false,
       "versionHistory": [
         {

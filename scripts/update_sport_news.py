@@ -54,7 +54,7 @@ def main():
     old=json.loads(OUT.read_text(encoding='utf-8'))
     if old.get('items')==new_items:
         print('Nem változott a hírfolyam.');return
-    old.update({'schemaVersion':'1.0.0','collectionId':'collection:napi-sporthirek','source':'Nemzeti Sport Online RSS','updatedAt':now.isoformat(timespec='seconds'),'items':new_items})
+    old.update({'schemaVersion':'1.0.0','collectionId':'collection:napi-sporthirek','updatedAt':now.isoformat(timespec='seconds'),'items':new_items})
     OUT.write_text(json.dumps(old,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(len(new_items),'friss hír került a JSON-ba.')
 if __name__=='__main__':main()

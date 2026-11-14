@@ -333,7 +333,6 @@
       "title": "Sportélet és büszkeségeink",
       "data": {
         "view": "home",
-        "source": "adatok/sportsikerek.json",
         "maxNews": 5
       }
     },
@@ -342,8 +341,6 @@
       "type": "live-dashboard",
       "title": "Sporteredmények számokban",
       "data": {
-        "sportsSource": "adatok/sportsikerek.json",
-        "eventsSource": "adatok/esemenyek.json",
         "refreshSeconds": 20,
         "showVerification": true,
         "mode": "overview"

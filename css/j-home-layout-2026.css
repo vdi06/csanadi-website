@@ -1,0 +1,38 @@
+/* J – Teljes 12 oszlopos szélességaudit és rövidebb kezdőoldal.
+   Nem elrejtés: a tartalmi blokkok natív, kinyitható szekciókba kerülnek. */
+#app[data-page-kind="home"] .home-canvas{width:100%;max-width:var(--site-width);min-width:0;align-items:start}
+#app[data-page-kind="home"] .home-canvas>.home-unit,
+#app[data-page-kind="home"] .home-canvas>.home-j-navrail-unit,
+#app[data-page-kind="home"] .home-canvas>.home-j-fold{grid-column:1/-1!important;width:100%!important;max-width:100%!important;min-width:0}
+#app[data-page-kind="home"] .home-unit :is(.container-xxl,.premium26-container,.daily-sports-news,.daily-sports-cards,.media26-container,.cs-news-teasers,.cs-news-grid,.experience-hub,.section-wrap,.home-live-section,.student-success-section){max-width:100%;min-width:0}
+#app[data-page-kind="home"] .home-unit--sports-news,
+#app[data-page-kind="home"] .home-unit--school-news,
+#app[data-page-kind="home"] .home-unit--gallery,
+#app[data-page-kind="home"] .home-unit--life-gallery,
+#app[data-page-kind="home"] .home-unit--social{grid-column:1/-1!important;max-width:100%!important;width:100%}
+#app[data-page-kind="home"] .daily-sports-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:clamp(10px,1.5vw,19px)!important}
+#app[data-page-kind="home"] .daily-sports-cards>.daily-sports-empty{grid-column:1/-1;max-width:100%}
+#app[data-page-kind="home"] .home-unit :is(.feature-card,.quick-card,.editorial-tile,.cs-news-card,.daily-sports-card,.student-success-card,.media26-tile){min-width:0;max-width:100%;overflow-wrap:anywhere}
+#app[data-page-kind="home"] .home-j-navrail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;align-items:stretch}
+#app[data-page-kind="home"] .home-j-navrail>*{min-width:0;display:flex;align-items:center;justify-content:center;text-align:center;min-height:52px;padding:10px 9px;border:1px solid var(--line);border-radius:15px;background:var(--card);color:var(--ink);font-size:13px;font-weight:850;text-decoration:none;box-shadow:0 5px 20px rgba(11,30,51,.06);cursor:pointer;line-height:1.25}
+#app[data-page-kind="home"] .home-j-navrail>*:is(:hover,:focus-visible){border-color:var(--gold);background:var(--light);color:var(--ink);outline-offset:2px}
+#app[data-page-kind="home"] .home-j-fold{border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:0 8px 26px rgba(10,26,45,.07);overflow:hidden}
+#app[data-page-kind="home"] .home-j-fold-toggle{display:flex;align-items:center;gap:15px;min-height:92px;padding:19px clamp(15px,2.6vw,32px);cursor:pointer;list-style:none;color:var(--ink);user-select:none;text-align:left}
+#app[data-page-kind="home"] .home-j-fold-toggle::-webkit-details-marker{display:none}
+#app[data-page-kind="home"] .home-j-fold-copy{display:flex;flex:1;flex-direction:column;gap:5px;min-width:0}
+#app[data-page-kind="home"] .home-j-fold-copy strong{font-size:clamp(17px,2.1vw,24px);line-height:1.2;letter-spacing:-.02em}
+#app[data-page-kind="home"] .home-j-fold-copy small{font-size:clamp(11px,1vw,13px);color:var(--muted);line-height:1.4}
+#app[data-page-kind="home"] .home-j-fold-symbol{display:grid;place-items:center;flex:0 0 40px;height:40px;border-radius:14px;color:#172c40;background:linear-gradient(120deg,#f7dfae,#c89c45);font-size:19px}
+#app[data-page-kind="home"] .home-j-fold-arrow{font-size:28px;color:var(--gold);transition:transform .2s ease}
+#app[data-page-kind="home"] .home-j-fold[open] .home-j-fold-arrow{transform:rotate(180deg)}
+#app[data-page-kind="home"] .home-j-fold[open] .home-j-fold-toggle{border-bottom:1px solid var(--line)}
+#app[data-page-kind="home"] .home-j-fold-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(12px,2vw,23px);padding:clamp(12px,2vw,24px);min-width:0}
+#app[data-page-kind="home"] .home-j-fold-grid>.home-unit{grid-column:1/-1!important;width:100%;min-width:0;max-width:100%}
+#app[data-page-kind="home"] .home-j-fold-grid .section-wrap{padding-block:12px}
+#app[data-page-kind="home"] .home-j-fold :is(.home-unit--school-news,.home-unit--sports-news){padding:clamp(12px,1.8vw,22px)}
+#app[data-page-kind="home"] .home-j-fold-toggle:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+@media(max-width:900px){
+ #app[data-page-kind="home"] .home-j-navrail{grid-template-columns:repeat(3,minmax(0,1fr))}
+ #app[data-page-kind="home"] .daily-sports-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(prefers-reduced-motion:reduce){#app[data-page-kind="home"] .home-j-fold-arrow{transition:none}}

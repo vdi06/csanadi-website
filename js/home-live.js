@@ -18,8 +18,8 @@ function checkSports(data){
   if(!item||typeof item.id!=='string'||!SAFE_ID.test(item.id)||!item.id.startsWith('success:')||ids.has(item.id)||
      typeof item.title!=='string'||item.title.trim().length<8||item.title.length>140||
      typeof item.category!=='string'||item.category.length>48||!STRING_TEXT.test(item.category)||
-     !['preview','verified'].includes(item.status)||!item.source||typeof item.source.verified!=='boolean')throw Error('Hibás sporteredmény-rekord.');
-  if(item.status==='verified'&&item.source.verified!==true)throw Error('Nem igazolt sporteredmény nem lehet publikus.');
+     !['preview','verified'].includes(item.status)||typeof item.verified!=='boolean')throw Error('Hibás sporteredmény-rekord.');
+  if(item.status==='verified'&&item.verified!==true)throw Error('Nem igazolt sporteredmény nem lehet publikus.');
   ids.add(item.id);
  }
  return data.items;
@@ -33,9 +33,9 @@ function checkEvents(data){
      typeof item.title!=='string'||item.title.trim().length<8||item.title.length>140||
      typeof item.summary!=='string'||item.summary.trim().length<30||item.summary.length>500||
      !categories.has(item.categoryId)||!VALID_ROUTE.test(item.route)||
-     !['preview','published'].includes(item.status)||!item.source||typeof item.source.verified!=='boolean')throw Error('Hibás eseményadat.');
-  if(item.status==='published'&&(!item.source.verified||!validISOString(item.startsAt)||(item.endsAt!==null&&(!validISOString(item.endsAt)||Date.parse(item.endsAt)<=Date.parse(item.startsAt)))))throw Error('A közzétett eseményhez igazolt kezdés és befejezés szükséges.');
-  if(item.status==='preview'&&(item.source.verified||item.startsAt!==null||item.endsAt!==null))throw Error('Bemutató esemény nem tartalmazhat látszólag hivatalos időpontot.');
+     !['preview','published'].includes(item.status)||typeof item.verified!=='boolean')throw Error('Hibás eseményadat.');
+  if(item.status==='published'&&(!item.verified||!validISOString(item.startsAt)||(item.endsAt!==null&&(!validISOString(item.endsAt)||Date.parse(item.endsAt)<=Date.parse(item.startsAt)))))throw Error('A közzétett eseményhez igazolt kezdés és befejezés szükséges.');
+  if(item.status==='preview'&&(item.verified||item.startsAt!==null||item.endsAt!==null))throw Error('Bemutató esemény nem tartalmazhat látszólag hivatalos időpontot.');
   ids.add(item.id);
   return {...item,status:item.status==='published'?'verified':'preview',category:categories.get(item.categoryId)};
  });
@@ -107,7 +107,7 @@ export function renderLiveDashboard(block){
   const metrics=mk('div','live-metrics');
   metrics.append(cardValue('Bemutatott sportolók',sportData.length,'Nyilvánosan felsorolt sportolók','🏆'),cardValue('Sportági témák',categories.length,'Különböző sportágak','◉'),cardValue('Igazolt eredmények',verifiedSports.length,'Iskolai jegyzék alapján','✓'),cardValue('Közelgő események',scheduled.length,'Jóváhagyott jövőbeli időpontok','▦'));
   const content=mk('div','live-data-grid');const stats=mk('article','live-panel'),events=mk('article','live-panel live-event-panel');
-  const statTitle=mk('div','live-panel-top');add(statTitle,mk('h3','','Sportági áttekintés'),mk('span','live-small-note','Adatforrás: hivatalos eredményjegyzék'));
+  const statTitle=mk('div','live-panel-top');add(statTitle,mk('h3','','Sportági áttekintés'),mk('span','live-small-note','Ellenőrzött sporteredmények'));
   stats.append(statTitle);
   const filter=mk('label','live-filter-label','Sportági szűrő');const select=mk('select','form-select live-filter-select');select.setAttribute('aria-label','Sportág szerinti kimutatás szűrése');
   [['','Összes sportági téma'],...categories].forEach(([value,label])=>{const option=mk('option','',label);option.value=value;select.append(option);});select.value=chosen;
@@ -115,7 +115,7 @@ export function renderLiveDashboard(block){
   const filtered=chosen?sportData.filter(x=>x.category===chosen):sportData;
   const graph=mk('div','live-chart-layout');
   const barSide=mk('div','live-bar-side');barSide.append(barGraph(counts(filtered),filtered.length,chosen,next=>{chosen=next;paint();}));
-  const donutSide=mk('div','live-donut-side');add(donutSide,donutChart(filtered.filter(x=>x.status==='verified').length,filtered.length),mk('p','','Forrással igazolt bejegyzések aránya'));
+  const donutSide=mk('div','live-donut-side');add(donutSide,donutChart(filtered.filter(x=>x.status==='verified').length,filtered.length),mk('p','','Ellenőrzött bejegyzések aránya'));
   graph.append(barSide,donutSide);stats.append(graph);
   const foot=mk('p','live-chart-note','A diagram az iskola által közzétett sportolók sportág szerinti megoszlását mutatja, nem az érmek vagy helyezések számát.');stats.append(foot);
   const evHead=mk('div','live-panel-top');evHead.append(mk('h3','','Események és programok'),link('#/hirek-es-esemenyek/esemenynaptar','Teljes naptár →','live-event-all'));events.append(evHead);

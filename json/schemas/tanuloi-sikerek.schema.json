@@ -82,9 +82,6 @@
           "approved": {
             "type": "boolean"
           },
-          "sourceVerified": {
-            "type": "boolean"
-          },
           "image": {
             "type": "string",
             "pattern": "^assets/media/web/[a-z0-9/_-]+\\.webp$"
@@ -94,10 +91,6 @@
           },
           "photoIsOfStudent": {
             "type": "boolean"
-          },
-          "sourceNote": {
-            "type": "string",
-            "maxLength": 300
           },
           "className": {
             "type": "string",
@@ -116,6 +109,9 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 1500
+          },
+          "verified": {
+            "type": "boolean"
           }
         },
         "allOf": [
@@ -143,13 +139,13 @@
             "else": {
               "required": [
                 "approved",
-                "sourceVerified"
+                "verified"
               ],
               "properties": {
                 "approved": {
                   "const": true
                 },
-                "sourceVerified": {
+                "verified": {
                   "const": true
                 }
               }

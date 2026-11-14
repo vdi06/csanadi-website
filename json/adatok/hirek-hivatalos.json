@@ -1,7 +1,6 @@
 {
   "schemaVersion": "1.0.0",
   "collectionId": "collection:hirek-hivatalos",
-  "sourcePolicy": "Kizárólag az intézmény honlapján ellenőrzött információk, külön dátummal vagy időszakkal, ahol rendelkezésre áll.",
   "items": [
     {
       "id": "hir:nyilt-nap-2026",
@@ -11,9 +10,9 @@
       "detail": "Az iskola mindkét dátumra meghirdette a programot. A részvétellel és a regisztrációval kapcsolatos aktuális tájékoztatás az eredeti intézményi közleményben olvasható. A program végét a forrás nem részletezi.",
       "date": "2026-11-17",
       "dateType": "esemény kezdőnapja",
-      "source": "https://csanadi-bp.edu.hu/def.html",
       "status": "verified",
-      "route": "#/oktatas/felveteli/kilencedik-evfolyam"
+      "route": "#/oktatas/felveteli/kilencedik-evfolyam",
+      "url": "https://csanadi-bp.edu.hu/def.html"
     },
     {
       "id": "hir:erettsegi-2026",
@@ -23,9 +22,9 @@
       "detail": "A részletes tantárgyi időpontok, a dolgozatmegtekintésre vonatkozó információk és a témakörök az intézmény érettségi oldalán érhetők el.",
       "date": "2026-11-18",
       "dateType": "szóbeli vizsga napja",
-      "source": "https://csanadi-bp.edu.hu/erettsegi.html",
       "status": "verified",
-      "route": "#/oktatas/vizsgak/erettsegi"
+      "route": "#/oktatas/vizsgak/erettsegi",
+      "url": "https://csanadi-bp.edu.hu/erettsegi.html"
     },
     {
       "id": "hir:etkeztetes-2026",
@@ -35,9 +34,9 @@
       "detail": "A hivatalos közlemény szerint ebben az időszakban étkeztetési megrendelés és lemondás nem lehetséges. A részletekért az aktuális intézményi közleményt kell ellenőrizni.",
       "date": "2026-12-22",
       "dateType": "jelzett szünet kezdete",
-      "source": "https://csanadi-bp.edu.hu/def.html",
       "status": "verified",
-      "route": "#/informaciok/mindennapi-tudnivalok/etkezes"
+      "route": "#/informaciok/mindennapi-tudnivalok/etkezes",
+      "url": "https://csanadi-bp.edu.hu/def.html"
     },
     {
       "id": "hir:tanevnyito-2026",
@@ -47,9 +46,9 @@
       "detail": "Az eredeti közlemény a megérkezésről, az első tanítási napról és a kapcsolódó tudnivalókról is részletes tájékoztatást adott. Ez a bejegyzés történeti visszatekintésként szerepel.",
       "date": "2026-09-01",
       "dateType": "tanévkezdés",
-      "source": "https://csanadi-bp.edu.hu/def.html",
       "status": "verified",
-      "route": "#/oktatas/tanevek/aktualis-tanev"
+      "route": "#/oktatas/tanevek/aktualis-tanev",
+      "url": "https://csanadi-bp.edu.hu/def.html"
     },
     {
       "id": "hir:iskolatortenet",
@@ -59,9 +58,9 @@
       "detail": "Az intézménytörténet az oktatás és a sport összekapcsolódásáról, a közösség továbbélő hagyományairól és a névadóhoz kötődő sportolói örökségről is szól.",
       "date": null,
       "dateType": "történeti összefoglaló",
-      "source": "https://csanadi-bp.edu.hu/tortenet.html",
       "status": "verified",
-      "route": "#/iskolank/tortenet"
+      "route": "#/iskolank/tortenet",
+      "url": "https://csanadi-bp.edu.hu/tortenet.html"
     },
     {
       "id": "hir:toth-lelle-birkozas-2026",
@@ -71,9 +70,9 @@
       "detail": "Az iskola nyilvános közleménye a kiskunfélegyházi U15 Leány Országos Diákolimpiai Döntőn elért első helyezést és az ötödik diákolimpiai bajnoki címet közli.",
       "date": null,
       "dateType": "iskolai közlemény",
-      "source": "https://csanadi-bp.edu.hu/def.html",
       "status": "verified",
-      "route": "#/hirek-es-esemenyek/hirek/sporthirek"
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": "https://csanadi-bp.edu.hu/def.html"
     },
     {
       "id": "hir:takacs-zete-birkozas-2026",
@@ -83,9 +82,9 @@
       "detail": "Az intézmény a szabadfogású birkózásban szerzett bronzérmet külön is közzétette. A közlemény nem tartalmaz olyan részletes időpontot, amelyet a naptárban pontos dátumként lehetne használni.",
       "date": null,
       "dateType": "iskolai közlemény",
-      "source": "https://csanadi-bp.edu.hu/def.html",
       "status": "verified",
-      "route": "#/hirek-es-esemenyek/hirek/sporthirek"
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": "https://csanadi-bp.edu.hu/def.html"
     },
     {
       "id": "hir:ihos-mark-budapest-2026",
@@ -95,9 +94,9 @@
       "detail": "Az iskola közleménye szerint az eseményt a Laurecz László sportcsarnokban, Csepelen rendezték meg.",
       "date": null,
       "dateType": "iskolai közlemény",
-      "source": "https://csanadi-bp.edu.hu/def.html",
       "status": "verified",
-      "route": "#/hirek-es-esemenyek/hirek/sporthirek"
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": "https://csanadi-bp.edu.hu/def.html"
     },
     {
       "id": "hir:bagossy-anasztazia-vizilabda-2026",
@@ -107,9 +106,9 @@
       "detail": "A csapateredményről az iskola közzétett közleménye tájékoztat, fotót nem társítunk más sportoló személyéhez.",
       "date": null,
       "dateType": "iskolai közlemény",
-      "source": "https://csanadi-bp.edu.hu/def.html",
       "status": "verified",
-      "route": "#/hirek-es-esemenyek/hirek/sporthirek"
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": "https://csanadi-bp.edu.hu/def.html"
     }
   ]
 }

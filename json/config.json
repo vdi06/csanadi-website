@@ -57,24 +57,24 @@
       "tickSeconds": 1
     },
     "calendar": {
-      "source": "adatok/esemenyek.json",
-      "displayOnlyVerifiedDates": true
+      "displayOnlyVerifiedDates": true,
+      "dataPath": "adatok/esemenyek.json"
     },
     "bell": {
-      "source": "adatok/csengetesi-rend.json",
-      "requireVerifiedForOfficialBadge": true
+      "requireVerifiedForOfficialBadge": true,
+      "dataPath": "adatok/csengetesi-rend.json"
     },
     "gallery": {
-      "source": "adatok/kepgaleria.json",
-      "imageCount": 48
+      "imageCount": 48,
+      "dataPath": "adatok/kepgaleria.json"
     },
     "social": {
-      "source": "adatok/social.json",
-      "requireVerifiedLinksForOfficialBadge": true
+      "requireVerifiedLinksForOfficialBadge": true,
+      "dataPath": "adatok/social.json"
     },
     "staff": {
-      "source": "adatok/tantestulet.json",
-      "onlyPublishedPeople": true
+      "onlyPublishedPeople": true,
+      "dataPath": "adatok/tantestulet.json"
     }
   }
 }

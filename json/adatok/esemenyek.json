@@ -33,11 +33,9 @@
       "endsAt": null,
       "location": "Csanádi Árpád Sportiskola, Budapest, Őrnagy utca 5–7.",
       "route": "#/oktatas/felveteli/kilencedik-evfolyam",
-      "source": {
-        "verified": true,
-        "url": "https://csanadi-bp.edu.hu/def.html"
-      },
-      "priority": 100
+      "priority": 100,
+      "verified": true,
+      "url": "https://csanadi-bp.edu.hu/def.html"
     },
     {
       "id": "esemeny:nyilt-nap-19",
@@ -49,11 +47,9 @@
       "endsAt": null,
       "location": "Csanádi Árpád Sportiskola, Budapest, Őrnagy utca 5–7.",
       "route": "#/oktatas/felveteli/kilencedik-evfolyam",
-      "source": {
-        "verified": true,
-        "url": "https://csanadi-bp.edu.hu/def.html"
-      },
-      "priority": 100
+      "priority": 100,
+      "verified": true,
+      "url": "https://csanadi-bp.edu.hu/def.html"
     }
   ]
 }
