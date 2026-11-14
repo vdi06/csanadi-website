@@ -1,0 +1,77 @@
+/* H2 – Mobilos tömörített rács: kevesebb függőleges görgetés, több egymás melletti csempe. */
+@media (max-width: 640px){
+  #app .section-wrap{padding:34px 0;}
+  #app .section-head{margin-bottom:18px;}
+  #app .section-title{font-size:clamp(21px,5.6vw,29px);}
+  #app .section-lead{font-size:13px;line-height:1.6;}
+  #app .body-card{padding:18px;}
+
+  /* Általános kártyarácsok */
+  #app :is(.quick-grid,.features-grid,.gallery-grid,.image-gallery,.daily-sports-cards,.student-success-feature-grid,.student-success-archive-grid,.staff-team-grid,.document-grid,.docs-grid){
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:10px !important;
+  }
+  #app :is(.feature-card,.quick-card,.editorial-tile,.daily-sports-card,.student-success-card,.staff-member-card,.gallery-item,.doc-card){
+    padding:14px !important;
+    border-radius:14px !important;
+  }
+  #app .quick-card{min-height:165px !important;}
+  #app :is(.card-index,.daily-sports-card .news-kicker,.student-success-meta,.gallery-results){font-size:10px !important;}
+  #app :is(.card-title,.editorial-tile h3,.feature-card h3,.quick-card h3){font-size:15px !important;line-height:1.3 !important;}
+  #app :is(.card-desc,.daily-sports-card p,.student-success-card p,.feature-card p,.quick-card p,.editorial-tile p){font-size:12px !important;line-height:1.5 !important;}
+
+  /* Hírkártyák mobilon legyenek egymás mellett */
+  #app .cs-news-teasers .cs-news-grid,
+  #app .cs-news-center .cs-news-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important;}
+  #app .dfg-news-card .dfg-news-cover{min-height:110px !important;}
+  #app .dfg-news-body{padding:12px !important;gap:7px !important;}
+  #app .dfg-news-title{font-size:15px !important;line-height:1.25 !important;}
+  #app .dfg-news-summary{font-size:12px !important;line-height:1.5 !important;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+  #app .dfg-news-body .cs-news-links{padding-top:9px !important;gap:7px 10px !important;}
+
+  /* Dokumentumok – mobilon is 2 oszlop, kisebb kártyákkal */
+  #app .doc-card-grid,
+  #app .doc-related-list{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important;}
+  #app .doc-card{padding:14px !important;}
+  #app .doc-toolbar{gap:8px !important;}
+  #app .doc-view-button{padding:9px 8px !important;}
+
+  /* Galéria és közösségi rész */
+  #app .media26-section{padding:20px 0 !important;}
+  #app .media26-albums{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:8px !important;}
+  #app .media26-album{min-height:82px !important;padding:10px 6px !important;border-radius:14px !important;}
+  #app .media26-album-icon{font-size:20px !important;}
+  #app .media26-album-label{font-size:11px !important;}
+  #app .media26-album-count{font-size:10px !important;}
+  #app .media26-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:8px !important;}
+  #app .media26-video-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important;}
+  #app .media26-video-card{padding:10px !important;border-radius:16px !important;}
+  #app .media26-video-card h3{font-size:14px !important;}
+  #app .media26-video-card p{font-size:12px !important;line-height:1.45 !important;}
+  #app .home-unit--social .social-feature-box{padding:16px 12px !important;gap:14px !important;}
+  #app .home-unit--social .social-feature-copy h3{font-size:18px !important;}
+  #app .home-unit--social .social-feature-copy p{font-size:12px !important;line-height:1.55 !important;}
+  #app .home-unit--social .social-links-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:8px !important;}
+  #app .home-unit--social .social-links-grid .social-chip{padding:12px 8px !important;font-size:11px !important;border-radius:12px !important;gap:7px !important;}
+  #app .home-unit--social .social-links-grid .social-glyph{font-size:20px !important;}
+
+  /* Élmény/infó panelek és fotófal */
+  #app .experience-dash-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important;}
+  #app .clock-panel{grid-column:1/-1;min-height:165px !important;}
+  #app .photo-wall-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:7px !important;}
+
+  /* Néhány gomb és vezérlő kisebb helyen is elférjen */
+  #app :is(.gallery-more,.media26-more,.media26-full-link,.dfg-news-pager button,.hub26-calendar .hub26-cal-modes button,.hub26-calendar .dfg-next-event){
+    min-height:38px !important;
+    padding:8px 10px !important;
+    font-size:11px !important;
+  }
+}
+
+@media (max-width: 420px){
+  #app .section-wrap{padding:30px 0;}
+  #app :is(.quick-grid,.features-grid,.gallery-grid,.image-gallery,.daily-sports-cards,.student-success-feature-grid,.student-success-archive-grid,.staff-team-grid,.document-grid,.docs-grid,.cs-news-teasers .cs-news-grid,.cs-news-center .cs-news-grid,.doc-card-grid,.doc-related-list,.media26-grid,.media26-video-grid,.home-unit--social .social-links-grid){gap:8px !important;}
+  #app .photo-wall-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+  #app .home-unit--social .social-feature-copy h3{font-size:17px !important;}
+  #app .feature-card:before{width:52px !important;}
+}
