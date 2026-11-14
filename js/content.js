@@ -39,14 +39,24 @@ function validPage(page) {
     safeRoute(page.schemaExtensions?.route)===page.schemaExtensions?.route);
 }
 export async function buildCatalog() {
-  const structure=await loadJSON('structure.json');
-  const config=await loadJSON('config.json');
+  const [structure,config]=await Promise.all([loadJSON('structure.json'),loadJSON('config.json')]);
   const items=[{path:'oldalak/kezdolap.json',depth:0,parent:null,children:[],order:0},...walkStructure(structure.nodes)];
-  const loaded=await concurrent(items,Math.max(1,Math.min(8,config.refresh?.maxConcurrentRequests||4)), async item=>{
-    try{const page=await loadJSON(item.path);if(!validPage(page))throw new Error('Kötelező mezők vagy publikációs állapot hibás');return page;}
-    catch(e){console.error('Oldal kihagyva:',item.path,e);return null;}
-  });
-  for(let i=0;i<items.length;i++)items[i].page=loaded[i];
+  let indexed=null;
+  try{
+    const bundle=await loadJSON('oldalindex.json');
+    if(bundle?.schemaVersion==='1.0.0' && bundle.pages &&
+       items.every(x=>validPage(bundle.pages[x.path]))){indexed=bundle.pages;}
+    else console.warn('Az oldalindex hiányos; az eredeti JSON-fájlok betöltésére váltunk.');
+  }catch(e){console.warn('A gyors oldalindex nem érhető el; a hagyományos betöltés működik.',e);}
+  if(indexed){
+    for(const item of items){item.page={...indexed[item.path]};item._fullLoaded=false;}
+  }else{
+    const loaded=await concurrent(items,Math.max(1,Math.min(12,config.refresh?.maxConcurrentRequests||8)), async item=>{
+      try{const page=await loadJSON(item.path);if(!validPage(page))throw Error('Hibás vagy nem publikált oldal');return page;}
+      catch(e){console.error('Oldal kihagyva:',item.path,e);return null;}
+    });
+    for(let i=0;i<items.length;i++){items[i].page=loaded[i];items[i]._fullLoaded=!!loaded[i];}
+  }
   const counts=new Map(),idCounts=new Map();
   for(const item of items){if(!item.page)continue;const r=item.page.schemaExtensions.route;counts.set(r,(counts.get(r)||0)+1);idCounts.set(item.page.id,(idCounts.get(item.page.id)||0)+1);}
   for(const item of items){if(item.page&&(counts.get(item.page.schemaExtensions.route)>1||idCounts.get(item.page.id)>1)){console.error('Ütköző oldalazonosító/útvonal; mindkét elem elrejtve:',item.path);item.page=null;}}

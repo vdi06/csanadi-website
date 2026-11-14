@@ -147,6 +147,12 @@ export function renderBlock(block){
   try{return styles[block.type]?.(block)||null;}
   catch(err){console.error('Hibás komponens kihagyva',block.id,err);return null;}
 }
-export const listCards=(items)=>{
-  const grid=dom('div',{class:'features-grid'});items.forEach((item,i)=>grid.append(linkCard({title:item.page.title,description:item.page.summary,href:item.page.schemaExtensions.route},i)));return grid;
+export const listCards=(items,{withoutNumbers=false}={})=>{
+  const grid=dom('div',{class:'features-grid'});
+  items.forEach((item,i)=>{
+    const card=linkCard({title:item.page.title,description:item.page.summary,href:item.page.schemaExtensions.route},i);
+    if(withoutNumbers)card.querySelector('.card-index')?.remove();
+    grid.append(card);
+  });
+  return grid;
 };

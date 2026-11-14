@@ -52,8 +52,8 @@ function indexPayload(type,data){
   if(type==='news' && item.status!=='verified')continue;
   if(type==='event' && item.status!=='published')continue;
   let route='#/sport/sportgaleriak';
-  if(type==='news')route=item.route||'#/hirek-es-esemenyek/hirek';
-  if(type==='event')route=item.route||'#/hirek-es-esemenyek/esemenynaptar';
+  if(type==='news')route='#/hirek-es-esemenyek/hirek';
+  if(type==='event')route='#/hirek-es-esemenyek/esemenynaptar';
   result.push({
    id:item.id||type+':'+result.length,title:item.title,summary:item.summary||item.description||item.alt||'',
    tags:[item.category,item.categoryId].filter(Boolean),body:labelsFrom(null,[item.detail,item.location,item.date]),
@@ -85,7 +85,7 @@ function score(entry,query,tokens){
 }
 export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,status,onNavigate}){
  let all=[],query='',type='all',section='all',max=12,rebuildSerial=0;
- const resultWrap=results;
+ const resultWrap=results;resultWrap.setAttribute('aria-label','Keresési találatok');status.setAttribute('role','status');status.setAttribute('aria-live','polite');
  const form=element('div','j-search-tools');
  const typeLabel=element('label','j-search-field','Tartalomtípus');
  const typeSelect=element('select','j-search-select');typeSelect.setAttribute('aria-label','Tartalomtípus szerinti szűrés');
@@ -94,6 +94,7 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
  typeLabel.append(typeSelect);sectionLabel.append(sectionSelect);form.append(typeLabel,sectionLabel);
  input.insertAdjacentElement('afterend',form);
  const picks=element('div','j-search-picks');picks.setAttribute('aria-label','Keresési javaslatok');
+ const resetBtn=element('button','j-search-clear','Keresés törlése');resetBtn.type='button';resetBtn.addEventListener('click',()=>{input.value='';query='';max=12;type='all';section='all';typeSelect.value='all';sectionSelect.value='all';render();input.focus();});picks.append(resetBtn);
  form.insertAdjacentElement('afterend',picks);
  const more=element('button','j-search-more','További találatok');more.type='button';more.hidden=true;
  resultWrap.insertAdjacentElement('afterend',more);
@@ -108,7 +109,7 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
  }
  populateFilters();
  function rebuildPages(pages){
-  return pages.items.map((entry)=>({id:entry.page.id,title:entry.page.title,summary:entry.page.summary||'',tags:[...(entry.page.tags||[]),...(entry.page.categories||[])],body:strings(entry.page.blocks||[]).join(' ').slice(0,24000),href:entry.page.schemaExtensions.route,type:'page'}));
+  return pages.items.map((entry)=>({id:entry.page.id,title:entry.page.title,summary:entry.page.summary||'',tags:[...(entry.page.tags||[]),...(entry.page.categories||[])],body:entry.page.searchText||strings(entry.page.blocks||[]).join(' ').slice(0,24000),href:entry.page.schemaExtensions.route,type:'page'}));
  }
  async function rebuild(pages){
   const serial=++rebuildSerial;
@@ -141,6 +142,7 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
    ? all.filter(x=>x.normalTitle.includes(norm(query))&&x.normalTitle!==norm(query)).slice(0,5).map(x=>x.title)
    : ['Felvételi','Sporteredmények','Eseménynaptár','Dokumentumtár','Képgaléria'];
   for(const s of [...new Set(suggestions)].slice(0,5))picks.append(suggestion(s));
+  if(query.trim()||type!=='all'||section!=='all')picks.append(resetBtn);
  }
  function appendHighlight(target,value,tokens){
   const plain=String(value||'');
@@ -162,7 +164,7 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   const top=element('div','j-search-result-top');top.append(element('span','j-search-type',TYPES[entry.type]||'Tartalom'),element('span','j-search-section',SECTIONS[entry.section]||'Tartalom'));
   const title=element('strong','search-result-title');appendHighlight(title,entry.title,tokens);
   const description=element('small','',entry.summary||'Kapcsolódó tartalom megtekintése');
-  a.append(top,title,description);a.addEventListener('click',onNavigate);
+  a.append(top,title,description);a.addEventListener('click',event=>onNavigate(entry,query,event));
   return a;
  }
  function render(){

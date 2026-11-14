@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Oldalindex készítő – Csanádi Sportiskola</title>
+<style>
+body{font:16px/1.6 system-ui,-apple-system,sans-serif;margin:0;background:#f7f4ed;color:#18344e}main{max-width:850px;margin:auto;padding:30px 16px 70px}h1{line-height:1.2}.notice{background:white;padding:20px;border-left:4px solid #bc914d;border-radius:11px;margin:20px 0}label{display:block;font-weight:750;margin:16px 0 8px}input{display:block;max-width:100%;padding:12px;background:#fff;border:1px solid #d4bd97;border-radius:9px}button{border:0;border-radius:10px;padding:13px 20px;font:inherit;font-weight:800;color:#fff;background:#193954;cursor:pointer;min-height:44px}button:disabled{opacity:.45}p#status{background:#fff;padding:15px;border-radius:10px;min-height:52px}kbd{border:1px solid #ccc;padding:1px 5px;border-radius:4px;background:white}
+</style></head><body><main>
+<h1>Oldalindex frissítése – helyi eszköz</h1>
+<div class="notice"><p>A weboldal gyors betöltése érdekében egy közös <code>json/oldalindex.json</code> fájl tárolja az oldalak címét és keresési szövegét. <strong>Az oldal-JSON-ok szerkesztése után ezt az indexet is frissíteni kell.</strong> A folyamat teljesen a böngészőben zajlik: nincs külső szerver, GitHub Actions vagy adatküldés.</p>
+<p>Válaszd ki a weboldal <code>json/oldalak</code> mappáját, vagy Firefox esetén a benne lévő összes oldal-JSON-t (a fájlok kiválasztásával), majd töltsd le az új indexet. A friss fájlt töltsd fel FTP-n a <code>json/oldalindex.json</code> helyére, a módosított oldalfájlokkal együtt.</p></div>
+<label for="folder">Oldal-JSON mappa (Chrome / Edge)</label><input id="folder" type="file" webkitdirectory directory multiple accept="application/json,.json">
+<label for="files">Vagy oldal-JSON fájlok (több fájl egyszerre)</label><input id="files" type="file" multiple accept="application/json,.json">
+<p id="status" role="status" aria-live="polite">Válassz ki egy oldalmappát vagy fájlokat.</p><button id="make" type="button">Oldalindex.json előállítása</button>
+<script>
+'use strict';
+const status=document.getElementById('status');
+const getTexts=(x,result,depth=0)=>{if(depth>18||result.length>1500)return;if(typeof x==='string')result.push(x);else if(Array.isArray(x))x.forEach(t=>getTexts(t,result,depth+1));else if(x&&typeof x==='object')for(const k of ['title','heading','label','text','summary','description','detail','caption','body','content','lead','children','items','blocks','intro'])if(k in x)getTexts(x[k],result,depth+1);};
+const derivePath=(file,page)=>{
+ const rel=String(file.webkitRelativePath||'');const marker=rel.indexOf('/oldalak/');
+ if(marker>=0)return 'oldalak/'+rel.slice(marker+9);
+ const route=page?.schemaExtensions?.route;
+ if(route==='#/')return 'oldalak/kezdolap.json';
+ if(typeof route==='string'&&/^#\/[a-z0-9-/]+$/.test(route))return 'oldalak/'+route.slice(2)+'.json';
+ throw Error('Érvénytelen útvonal: '+file.name);
+};
+document.getElementById('make').addEventListener('click',async()=>{
+ try{
+  const folder=[...document.getElementById('folder').files],direct=[...document.getElementById('files').files];
+  const picked=folder.length?folder:direct;if(!picked.length)throw Error('Nincs kiválasztott oldal-JSON.');
+  const pages={};
+  for(const file of picked){if(!file.name.endsWith('.json'))continue;if(file.size>500000)throw Error('Túl nagy fájl: '+file.name);
+   const p=JSON.parse(await file.text());if(!/^page:\d{6}$/.test(p.id||'')||!Array.isArray(p.blocks)||!/^#\/[a-z0-9-/]*$/.test(p.schemaExtensions?.route||'')||p.lifecycle?.status!=='published')throw Error('Hibás vagy nem publikált oldal: '+file.name);
+   const path=derivePath(file,p),texts=[];getTexts(p.blocks,texts);if(pages[path])throw Error('Ismétlődő útvonal: '+path);
+   pages[path]={id:p.id,title:p.title,menuLabel:p.menuLabel||p.title,summary:p.summary||'',tags:p.tags||[],categories:p.categories||[],lifecycle:{status:'published'},schemaExtensions:p.schemaExtensions,searchText:texts.join(' ').slice(0,16000),blocks:[]};
+  }
+  if(Object.keys(pages).length<60)throw Error('Csak '+Object.keys(pages).length+' oldal van kiválasztva. A teljes 66 oldalas mappát add meg, nehogy hiányos index készüljön.');
+  const data={schemaVersion:'1.0.0',generatedFor:'csanadi-static-ftp',pages};
+  const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)+'\n'],{type:'application/json;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='oldalindex.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);
+  status.textContent=Object.keys(pages).length+' oldalból elkészült az új index. Töltsd fel FTP-n a json/oldalindex.json helyére.';
+ }catch(err){status.textContent='Hiba: '+err.message;}
+});
+</script></main></body></html>

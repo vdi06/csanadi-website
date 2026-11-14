@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sporthírek JSON szerkesztője – Csanádi Sportiskola</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light;--ink:#17324c;--gold:#c9a05b}
+*{box-sizing:border-box}body{margin:0;background:#f5f2eb;color:var(--ink);line-height:1.6}main{max-width:950px;margin:0 auto;padding:26px 15px 70px}h1{line-height:1.15}a{color:#0b5686}p{max-width:85ch}
+.notice{padding:16px;border:1px solid #d0b275;border-radius:14px;background:#fff9eb}.notice strong{display:block}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.toolbar>*{flex:0 0 auto}
+button,.file-label{appearance:none;border:1px solid #bf9b60;background:#fff;color:var(--ink);border-radius:10px;padding:10px 15px;font-weight:750;cursor:pointer;min-height:45px}
+button.primary{background:#19344d;color:white}button:focus-visible,input:focus-visible{outline:3px solid #ad7e28;outline-offset:2px}
+.file-label input{display:none}#items{display:grid;gap:14px}
+.item{background:#fff;padding:16px;border-radius:14px;box-shadow:0 6px 20px #0001;border:1px solid #ddd1bb}
+.item label{display:block;font-weight:750;font-size:13px;margin:7px 0}
+.item input{display:block;width:100%;border:1px solid #a9b4bd;border-radius:8px;padding:11px;color:#17324c;font:inherit;background:#fff}
+.item-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}#status{padding:12px;border-radius:10px;background:#e5eee6;min-height:40px}
+@media(max-width:640px){.item-grid{grid-template-columns:1fr}main{padding-top:15px}}
+</style>
+</head>
+<body><main>
+<h1>Sporthírközpont – helyi JSON-szerkesztő</h1>
+<div class="notice"><strong>Kizárólag helyben működik, nincs szerveroldali írás.</strong>
+<p>Ez az eszköz nem gyűjt híreket, nem tölti fel a weboldalt és nem tesz közzé adatot automatikusan. Beírhatók az ellenőrzött cikkek címei, linkjei, dátumai és kategóriái. Az elkészült <code>napi-sporthirek.json</code> fájlt kézzel kell a webtárhely <code>json/adatok/</code> mappájába feltölteni. A honlap a legfeljebb 72 órás cikkeket jeleníti meg.</p></div>
+<div class="toolbar"><label class="file-label">Meglévő JSON megnyitása <input id="import" type="file" accept=".json,application/json"></label><button id="add" type="button">+ Új sporthír</button><button id="clear" type="button">Lista ürítése</button><button id="save" class="primary" type="button">JSON letöltése</button></div>
+<p id="status" role="status" aria-live="polite">Még nincsenek adatok. Az itt létrehozott JSON a meglévő oldalon automatikusan megjeleníthető, miután feltöltötted.</p>
+<section id="items" aria-label="Hírbejegyzések"></section>
+<script>
+'use strict';
+const list=document.getElementById('items'),status=document.getElementById('status');
+const make=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e};
+function addRow(entry={}){
+ const card=make('article');card.className='item';const h=make('h2','Sporthír');h.style.fontSize='18px';card.append(h);
+ const grid=make('div');grid.className='item-grid';
+ function field(label,key,type='text'){
+  const l=make('label',label),i=make('input');i.type=type;i.dataset.key=key;i.value=String(entry[key]??'');i.autocomplete='off';
+  if(key==='title')i.maxLength=220;if(key==='category')i.maxLength=60;if(key==='url')i.placeholder='https://www.nemzetisport.hu/...';
+  l.append(i);return l;
+ }
+ grid.append(field('Cikk címe','title'),field('Kategória','category'),field('Eredeti cikk URL-je','url','url'),field('Megjelenés időpontja (ISO)','publishedAt'));
+ card.append(grid);const del=make('button','Bejegyzés törlése');del.type='button';del.style.marginTop='10px';del.addEventListener('click',()=>card.remove());card.append(del);list.append(card);
+}
+function collect(){
+ const results=[];
+ for(const [i,card] of [...list.querySelectorAll('.item')].entries()){
+  const obj={};for(const input of card.querySelectorAll('[data-key]'))obj[input.dataset.key]=input.value.trim();
+  if(!obj.title||obj.title.length<6||obj.title.length>220)throw Error((i+1)+'. hír: 6–220 karakteres cím szükséges.');
+  if(!/^https:\/\/(www\.)?nemzetisport\.hu\//.test(obj.url))throw Error((i+1)+'. hír: ellenőrzött, https://www.nemzetisport.hu/ hivatkozást adj meg.');
+  if(!obj.publishedAt||!Number.isFinite(Date.parse(obj.publishedAt)))throw Error((i+1)+'. hír: az időpont nem értelmezhető (példa: 2026-11-14T18:30:00+01:00).');
+  if(Date.parse(obj.publishedAt)>Date.now()+120000)throw Error((i+1)+'. hír: jövőbeli időpont nem elfogadható.');
+  obj.category=obj.category||'Sport';results.push(obj);
+ }
+ return results.sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt)).slice(0,18);
+}
+document.getElementById('add').addEventListener('click',()=>addRow({category:'Sport',publishedAt:new Date().toISOString()}));
+document.getElementById('clear').addEventListener('click',()=>{if(window.confirm('Valóban üríted a szerkesztett hírlistát?')){list.replaceChildren();status.textContent='A helyi lista kiürítve.';}});
+document.getElementById('import').addEventListener('change',async e=>{
+ try{const f=e.target.files[0];if(!f)return;if(f.size>1000000)throw Error('Túl nagy JSON-fájl.');const data=JSON.parse(await f.text());if(data.collectionId!=='collection:napi-sporthirek'||!Array.isArray(data.items))throw Error('Nem sporthír-adatállomány.');list.replaceChildren();for(const item of data.items.slice(0,18))addRow(item);status.textContent=`${list.children.length} hír betöltve. A szerkesztés még nincs közzétéve.`;}catch(err){status.textContent='Hiba: '+err.message;}
+});
+document.getElementById('save').addEventListener('click',()=>{
+ try{const rows=collect();const payload={schemaVersion:'1.0.0',collectionId:'collection:napi-sporthirek',updatedAt:new Date().toISOString(),items:rows};
+ const blob=new Blob([JSON.stringify(payload,null,2)+'\n'],{type:'application/json;charset=utf-8'});const url=URL.createObjectURL(blob);const a=make('a');a.href=url;a.download='napi-sporthirek.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);
+ status.textContent=`${rows.length} sporthír JSON-ja letöltve. A fájlt ezután kézzel kell feltölteni az FTP-re.`;
+ }catch(err){status.textContent='Hiba: '+err.message;}
+});
+</script>
+</main></body></html>
