@@ -1,0 +1,92 @@
+/* Statikus FTP-s komponensek: sportdiagramok, esemény- és dokumentumkereső,
+   kapcsolódó tartalmak, mobilos gyorsnavigáció és böngésződiagnosztika. */
+#app .ext26-section{width:100%;max-width:100%;min-width:0;margin:25px auto;padding:clamp(16px,2.6vw,28px);background:var(--card);border:1px solid var(--line);border-radius:20px;color:var(--ink);box-shadow:0 9px 28px rgba(13,36,59,.055)}
+#app .ext26-heading{text-align:center;margin:0 auto 20px;max-width:800px}
+#app .ext26-heading h2{font-size:clamp(21px,2.8vw,31px);font-weight:900;line-height:1.22;margin:4px 0 10px;color:var(--ink)}
+#app .ext26-heading p{font-size:13px;line-height:1.55;color:var(--muted);margin:0}
+#app .ext26-chart-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:22px;align-items:center}
+#app .ext26-chart-bars{display:grid;gap:9px}
+#app .ext26-bar-row{display:grid;grid-template-columns:minmax(95px,130px) minmax(0,1fr) 20px;align-items:center;gap:9px;font-size:12px;color:var(--ink)}
+#app .ext26-bar-row span:first-child{overflow-wrap:anywhere;font-weight:750}
+#app .ext26-bar-track{height:13px;border-radius:14px;background:var(--light);border:1px solid var(--line);overflow:hidden}
+#app .ext26-bar-fill{display:block;height:100%;border-radius:14px;background:linear-gradient(90deg,#c19344,#f4d896)}
+#app .ext26-chart-optional{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:175px;gap:10px;min-width:0}
+#app .ext26-chart-optional canvas{max-width:min(100%,370px);max-height:350px}
+#app .ext26-chart-upgrade{max-width:270px;padding:12px 14px;min-height:44px;border-radius:14px;border:1px solid var(--gold);color:var(--ink);background:var(--light);font-weight:800;font-size:12px;line-height:1.4}
+#app .ext26-note{font-size:12px;text-align:center;line-height:1.55;color:var(--muted);margin:15px auto 0}
+#app .ext26-disclosure{padding:5px 2px;font-size:clamp(15px,2vw,19px);font-weight:900;cursor:pointer;color:var(--ink);line-height:1.4}
+#app .ext26-disclosure::marker{color:var(--gold)}
+#app .ext26-filter-row{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,.9fr)) auto;align-items:end;gap:10px;padding:13px 0}
+#app .ext26-field{display:grid;gap:4px;min-width:0;font-size:11px;font-weight:800;color:var(--muted)}
+#app .ext26-filter-row :is(input,select,button){width:100%;min-width:0;min-height:43px;border:1px solid var(--line);border-radius:10px;background:var(--light);color:var(--ink);padding:8px 10px;font-size:13px}
+#app .ext26-filter-row button{font-size:11px;font-weight:850;max-width:140px}
+#app .ext26-list,#app .ext26-relation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:14px}
+#app .ext26-tile{display:flex;min-width:0;flex-direction:column;gap:7px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--light);color:var(--ink);text-decoration:none;overflow-wrap:anywhere;min-height:95px}
+#app .ext26-tile:hover{border-color:var(--gold);color:var(--ink)}
+#app .ext26-label{font-size:10px;font-weight:950;letter-spacing:.1em;text-transform:uppercase;color:#aa8235}
+#app .ext26-tile strong{font-size:15px;line-height:1.3}
+#app .ext26-tile small{font-size:12px;color:var(--muted);line-height:1.45}
+#app .ext26-empty{grid-column:1/-1;padding:12px;color:var(--muted);text-align:center}
+#app .ext26-doc-row{display:flex;gap:7px 14px;flex-wrap:wrap;align-items:center;border:1px solid var(--line);border-radius:13px;padding:12px 14px;background:var(--light);min-width:0;overflow-wrap:anywhere}
+#app .ext26-doc-row strong{flex-basis:100%;font-size:14px;color:var(--ink)}
+#app .ext26-doc-row small{font-size:11px;color:var(--muted);flex:1 1 100%}
+#app .ext26-doc-row :is(button,a){min-height:39px;border:1px solid var(--gold);border-radius:9px;padding:8px 12px;color:var(--ink);background:var(--card);font-size:12px;font-weight:800;text-decoration:none}
+#app .ext26-pdf-dialog{width:min(1000px,96vw);max-width:96vw;height:min(85vh,950px);max-height:85vh;border:1px solid var(--gold);border-radius:15px;background:var(--card);color:var(--ink);padding:16px;box-shadow:0 20px 80px #0008}
+#app .ext26-pdf-dialog::backdrop{background:#07172ac9;backdrop-filter:blur(4px)}
+#app .ext26-pdf-dialog h3{font-size:18px;margin:5px 0 10px}
+#app .ext26-pdf-dialog iframe{width:100%;height:calc(100% - 110px);border:1px solid var(--line);border-radius:8px;background:white}
+#app .ext26-pdf-dialog button,#app .ext26-pdf-dialog a{display:inline-flex;align-items:center;min-height:38px;padding:7px 12px;background:var(--light);color:var(--ink);border:1px solid var(--line);border-radius:9px;text-decoration:none}
+#app .ext26-pdf-dialog button{float:right}
+#app .ext26-gallery-skip{display:block;width:max-content;max-width:100%;text-align:center;margin:0 auto 12px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;color:var(--ink);background:var(--light);text-decoration:none;font-size:12px;font-weight:750}
+#app .ext26-section :is(a,button,input,select,summary):focus-visible,.ext26-health :is(button,summary):focus-visible{outline:3px solid #cca151;outline-offset:3px}
+/* Mobilos navigáció: a fejlécben maradó menügombot kiegészíti, nem helyettesíti. */
+.ext26-mobile-nav{display:none}
+.ext26-health{margin-top:15px;margin-bottom:17px;border:1px solid #d5ad69aa;border-radius:15px;background:#142b46;color:#eef4fb;padding:13px 15px;font-size:12px}
+.ext26-health summary{font-weight:850;color:#f3d8a1;cursor:pointer;font-size:13px}
+.ext26-health-body{margin-top:12px}.ext26-health-body p{color:#e0e9f2!important;font-size:12px!important}
+.ext26-run-check,.ext26-refresh{min-height:38px;border:1px solid #dbc38d;border-radius:9px;background:#f3dfb2;color:#152b43;padding:8px 12px;font-weight:850;font-size:12px}
+.ext26-run-check:disabled{opacity:.6}.ext26-health-results{display:grid;gap:6px;margin:10px 0}
+.ext26-check-pass,.ext26-check-fail{padding:7px 10px;border:1px solid #8ca6afaa;border-radius:8px;overflow-wrap:anywhere;color:#f2f8ff}
+.ext26-check-fail{border-color:#e5b27e;background:#713d33;color:#fff7ef}
+.cs-speed-panel .ext26-perf-details{border-top:1px solid #ffffff30;padding-top:9px;margin-top:9px}
+.cs-speed-panel .ext26-perf-details summary{color:#f4d9a5;font-size:12px;font-weight:800;cursor:pointer}
+.cs-speed-panel .ext26-perf-details p{color:#e3ecf6!important;font-size:11px!important;margin:8px 0!important}
+.ext26-perf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.ext26-perf-card{border:1px solid #ffffff34;border-radius:9px;padding:9px;min-width:0;display:grid;gap:4px}
+.ext26-perf-card strong{font-size:12px;color:#f3d7a6}
+.ext26-perf-card span{font-size:11px;color:#f6f9fd;overflow-wrap:anywhere}
+.ext26-perf-final{grid-column:1/-1}
+@media(max-width:960px){#app .ext26-filter-row{grid-template-columns:repeat(2,minmax(0,1fr))}#app .ext26-filter-row button{max-width:none}#app .ext26-chart-layout{grid-template-columns:1fr}.ext26-perf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ body{padding-bottom:66px}
+ .ext26-mobile-nav{display:grid!important;position:fixed;z-index:1030;bottom:0;left:0;right:0;grid-template-columns:repeat(5,minmax(0,1fr));padding:6px max(5px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom));background:#102943f2;backdrop-filter:blur(14px);border-top:1px solid #d1ab66;box-shadow:0 -6px 25px #0004;gap:3px}
+ .ext26-mobile-nav button{background:transparent;border:0;border-radius:8px;color:#f4f7fb;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:45px;min-width:0;font-size:10px;overflow-wrap:anywhere;padding:4px 2px}
+ .ext26-mobile-nav .ext26-nav-symbol{font-size:19px;line-height:1}
+ .ext26-mobile-nav button[aria-current=page]{background:#dec187;color:#192d44;font-weight:900}
+ .ext26-mobile-nav button:focus-visible{outline:2px solid #ffe7a8;outline-offset:-2px}
+ #app .ext26-list,#app .ext26-relation-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ #app .ext26-section{padding:14px;margin:13px auto;border-radius:15px}
+ #app .ext26-tile{padding:10px;min-height:90px}
+ #app .ext26-tile strong{font-size:13px}#app .ext26-tile small{font-size:11px}
+ .ext26-perf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:400px){
+ #app .ext26-filter-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ #app .ext26-bar-row{grid-template-columns:minmax(65px,100px) minmax(0,1fr) 15px;gap:5px;font-size:10px}
+ #app .ext26-heading h2{font-size:21px}
+ .ext26-mobile-nav button{font-size:9px}
+ .ext26-perf-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){#app .ext26-tile,#app .ext26-bar-fill,.ext26-mobile-nav{animation:none!important;transition:none!important}}
+
+/* 7 – visszafogott, akadálymentes témaváltások és tartalomátmenetek. */
+@media(prefers-reduced-motion:no-preference){
+ #app .ext26-tile{transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+ #app .ext26-tile:hover{transform:translateY(-3px);box-shadow:0 11px 26px #10253d18}
+ #app .ext26-bar-fill{animation:ext26-bar-grow .7s cubic-bezier(.19,.8,.2,1) both;transform-origin:left}
+ #app .page-banner,#app .content-shell{animation:ext26-page-enter .27s ease-out both}
+ .ext26-mobile-nav button{transition:background-color .16s,color .16s,transform .16s}
+ .ext26-mobile-nav button:active{transform:scale(.96)}
+ @keyframes ext26-bar-grow{from{transform:scaleX(.02)}to{transform:scaleX(1)}}
+ @keyframes ext26-page-enter{from{opacity:.64;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+}

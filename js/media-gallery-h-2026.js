@@ -44,7 +44,7 @@ export function renderMediaGallery({compact=false}={}){
  add(modalFrame,close,previous,image,next,count,caption);modal.append(modalFrame);section.append(modal);
  modal.addEventListener('click',evt=>{if(evt.target===modal)modal.close();});
  let photos=[],videos=[],album='mind',type='photo',limit=compact?9:18,activeImages=[],at=0,oldFocus=null;
- function showImage(){const p=activeImages[at];if(!p)return;image.src=p.src;image.alt=p.alt;count.textContent=`${at+1} / ${activeImages.length}`;caption.textContent=p.title;previous.disabled=activeImages.length<=1;next.disabled=activeImages.length<=1;}
+ function showImage(){const p=activeImages[at];if(!p)return;image.src=p.src;image.alt=p.alt;count.textContent=`${at+1} / ${activeImages.length}`;caption.textContent=p.title;previous.disabled=activeImages.length<=1;next.disabled=activeImages.length<=1;const upcoming=activeImages[(at+1)%activeImages.length];if(upcoming&&upcoming.src!==p.src){const preload=new Image();preload.decoding='async';preload.src=upcoming.src;}}
  function openImage(filtered,index,source){activeImages=filtered;at=index;oldFocus=source;showImage();modal.showModal();close.focus();}
  function move(step){if(!activeImages.length)return;at=(at+step+activeImages.length)%activeImages.length;showImage();}
  modal.addEventListener('keydown',evt=>{if(evt.key==='ArrowRight'){evt.preventDefault();move(1);}else if(evt.key==='ArrowLeft'){evt.preventDefault();move(-1);}});

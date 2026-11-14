@@ -1,4 +1,6 @@
 import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=20261114speed1';
+import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=20261114ext1';
+import {initDetailedDiagnostics,initSiteHealth,initMobileQuickNav} from './site-quality-2026.js?v=20261114ext1';
 import {setupSmartSearch} from './search-j-2026.js?v=20261114ten2';
 import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=20261114ten1';
 import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=20261114kmil2';
@@ -221,10 +223,11 @@ function contentPage(node){
   if(article.children.length)body.append(article);
 
   const docRoute=route.startsWith('#/informaciok/dokumentumtar');
-  if(docRoute){body.prepend(renderDocumentCenter(route));body.prepend(renderDocumentIndexExport());}
+  if(docRoute){body.prepend(renderDocumentCenter(route));body.prepend(renderDocumentFinder());body.prepend(renderDocumentIndexExport());}
   if(['#/oktatas','#/oktatas/felveteli','#/oktatas/kepzeseink','#/oktatas/tanevek','#/oktatas/vizsgak'].includes(route))body.prepend(learningNavigator());
   if(route==='#/oktatas'||route==='#/oktatas/felveteli')body.prepend(renderEducationPath());
   if(route==='#/sport'||route==='#/sport/sportagak')body.prepend(renderSportsPortal());
+  if(['#/sport','#/sport/sportagak','#/sport/sporteredmenyek'].includes(route))body.prepend(renderSportsCharts());
   if(['#/iskolank/buszkesegeink','#/sport/sporteredmenyek'].includes(route)){
     body.prepend(renderSportsSuccesses({data:{view:'archive'},title:'Közzétett sporteredmények'}));
     body.prepend(renderStudentAchievements('archive'));
@@ -232,21 +235,13 @@ function contentPage(node){
   if(route==='#/sport/sportgaleriak')body.prepend(renderMediaGallery({compact:false}));
   if(route==='#/iskolank/tantestulet')body.prepend(renderStaffCenter());
   if(route==='#/informaciok/mindennapi-tudnivalok/csengetesi-rend')body.prepend(renderBellCenter());
-  if(route==='#/hirek-es-esemenyek/esemenynaptar'){body.prepend(renderCalendarCenter());body.prepend(renderUpcomingPanel());}
+  if(route==='#/hirek-es-esemenyek/esemenynaptar'){body.prepend(renderCalendarCenter());body.prepend(renderCalendarFilters());body.prepend(renderUpcomingPanel());}
   if(['#/hirek-es-esemenyek/hirek','#/hirek-es-esemenyek/hirek/iskolai-hirek','#/hirek-es-esemenyek/hirek/sporthirek','#/hirek-es-esemenyek/hirek/hirarchivum','#/hirek-es-esemenyek/kozlemenyek'].includes(route))body.prepend(renderNewsCenter(route));
   if(route==='#/hirek-es-esemenyek/hirek/sporthirek')body.prepend(renderDailySportsNews('full'));
   const relatedDocs=renderRelatedDocuments(route);if(relatedDocs)body.append(relatedDocs);
 
-  // Kapcsolódó navigációt egyszer, az oldal alján mutatunk; nincs duplikált,
-  // összeszűkítő oldalsáv. A megjelenített kártyák minden méretben rugalmasak.
-  const kids=pageChildren(node);
-  const related=kids.length?kids:getSiblings(node).slice(0,6);
-  if(related.length>=1){
-    const sect=dom('section',{class:'related-content'});
-    sect.append(dom('p',{class:'section-overline'},'KAPCSOLÓDÓ OLDALAK'),
-      dom('h2',{class:'section-title'},kids.length?'Fedezd fel a témát':'További oldalak a témában'),listCards(related,{withoutNumbers:true}));
-    body.append(sect);
-  }
+  // Valós oldalmetaadatok és közzétett közös adatok alapján súlyozott kapcsolódó tartalmak.
+  body.append(renderSmartRelations(node,catalog));
   layout.append(body);shell.append(layout);fragment.append(shell);
   return fragment;
 }
@@ -364,6 +359,8 @@ function renderRoute(options={}){
   document.body.classList.toggle('cs-inner-page',kind!=='home');
   app.replaceChildren(node?(node.depth===0?homePage(node):contentPage(node)):errorPage());
   wireReveal();
+  enhanceGallery(app);
+  document.dispatchEvent(new CustomEvent('csanadi:route-rendered',{detail:{route}}));
   if(pendingSearchJump && pendingSearchJump.route===route)setTimeout(trySearchJump,90);
   const title=node?.page?.title||'Az oldal nem található';document.title=title+' | Csanádi Árpád Sportiskola';
   renderMenu();closeMobile();closeSiteMap(false);
@@ -520,6 +517,7 @@ function beginPolling(){
 }
 export async function startApp(){
   initPerformanceDiagnostics();
+  initDetailedDiagnostics();
   markNavigationStart(getRoute(),{initial:true});
   wireEvents();
   if(location.protocol==='file:')throw new Error('A JSON-alapú weboldal HTTP/HTTPS kiszolgálást igényel, például helyi localhost szervert vagy az iskola webtárhelyét.');
@@ -543,6 +541,8 @@ export async function startApp(){
   lastRawStructure=JSON.stringify(catalog.structure);
   if(catalog.items.length===0)throw new Error('Nem található érvényes JSON-oldal.');
   renderRoute({focus:false});
+  initSiteHealth(catalog);
+  initMobileQuickNav();
   window.__CSANADI_STARTED__=true;
   initSocialLinks();
   openEntrancePortal();
