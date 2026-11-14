@@ -2,7 +2,7 @@
  * Közvetlenül a szigorúan validált, közzétehető JSON-adatokat használja.
  * Harmadik féltől származó tartalmat hozzájárulás nélkül nem tölt be.
  */
-import {renderDigitalClock} from './experience-2026.js?v=20261114f';
+import {renderDigitalClock} from './experience-2026.js?v=20261114g';
 const BASE='json/adatok/';
 const ZONE='Europe/Budapest';
 const e=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -39,16 +39,16 @@ export function openEntrancePortal({force=false}={}){
  for(const side of ['left','right']){const d=e('div','gate26-door gate26-'+side);add(d,e('div','gate26-bars'),e('div','gate26-crest','✦'));doors.append(d);}
  const content=e('div','gate26-content');const logo=e('img','gate26-logo');logo.src='assets/media/logo/csanadi-cimer-512.webp';logo.alt='Csanádi Sportiskola címer';logo.width=76;logo.height=76;
  const title=e('h2','', 'Lépj be a sport és a tudás világába');title.id='gate26-title';const desc=e('p','','Nyitva áll a Csanádi Sportiskola kapuja.');desc.id='gate26-description';
- const enter=btn('Belépés az oldalra','gate26-enter',()=>open());const skip=btn('Animáció átugrása','gate26-skip',()=>finish());
+ const enter=btn('Kapunyitás és belépés','gate26-enter',()=>open());const skip=btn('Animáció átugrása','gate26-skip',()=>finish());
  add(content,logo,e('span','gate26-eyebrow','CSANÁDI SPORTISKOLA · 2026'),title,desc,enter,skip);
  add(layer,scenery,glow,doors,content);document.body.append(layer);
- const oldFocus=document.activeElement;let done=false,openTimer,finishTimer,safetyTimer;
+ const oldFocus=document.activeElement;let done=false,finishTimer;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  function cleanup(){if(!layer.isConnected)return;layer.remove();gateShowing=false;if(oldFocus?.isConnected&&oldFocus!==document.body)oldFocus.focus?.();}
- function finish(){if(done)return;done=true;clearTimeout(openTimer);clearTimeout(finishTimer);clearTimeout(safetyTimer);layer.classList.add('gate26-finished');setTimeout(cleanup,reduced?0:360);}
- function open(){if(done)return;if(reduced){finish();return;}layer.classList.add('gate26-open');clearTimeout(openTimer);finishTimer=setTimeout(finish,2800);}
+ function finish(){if(done)return;done=true;clearTimeout(finishTimer);layer.classList.add('gate26-finished');setTimeout(cleanup,reduced?0:360);}
+ function open(){if(done||layer.classList.contains('gate26-open'))return;if(reduced){finish();return;}enter.disabled=true;enter.setAttribute('aria-disabled','true');layer.classList.add('gate26-open');finishTimer=setTimeout(finish,5700);}
  layer.addEventListener('keydown',ev=>{if(ev.key==='Escape'){ev.preventDefault();finish();}if(ev.key==='Tab'){const choices=[enter,skip];let index=choices.indexOf(document.activeElement);if(index!==-1){ev.preventDefault();choices[(index+(ev.shiftKey?1:-1)+2)%2].focus();}}});
- enter.focus();if(!reduced){openTimer=setTimeout(open,1450);safetyTimer=setTimeout(finish,9000);}else safetyTimer=setTimeout(finish,10000);
+ enter.focus(); // A kapu kizárólag a belépés gomb megnyomásakor nyílik.
 }
 function bindPortalButton(){const replay=document.getElementById('portal-replay');if(replay&&!replay.dataset.wired){replay.dataset.wired='1';replay.addEventListener('click',()=>openEntrancePortal({force:true}));}}
 

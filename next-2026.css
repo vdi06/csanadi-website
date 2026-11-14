@@ -2,15 +2,15 @@
 .portal-replay-btn{width:auto;min-width:44px;padding:0 12px;font-size:11px;display:inline-flex;gap:5px;align-items:center;justify-content:center;white-space:nowrap;color:#f5d594}
 .portal-replay-btn span{font-weight:800}
 .gate26{position:fixed;inset:0;z-index:4500;overflow:hidden;background:#071729;color:#fff;isolation:isolate;perspective:1600px;display:grid;place-items:center}
-.gate26-scene{position:absolute;inset:-4%;background:linear-gradient(120deg,rgba(5,16,31,.43),rgba(3,12,26,.1)),url('assets/media/web/belepes-kapu.webp') center/cover no-repeat;transform:scale(1.23);transition:transform 3.1s cubic-bezier(.18,.72,.28,1);z-index:0}
-.gate26-glow{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.8;background:radial-gradient(ellipse at 50% 40%,rgba(255,220,147,.33),transparent 37%),linear-gradient(105deg,transparent 44%,rgba(251,206,108,.17) 49%,transparent 56%);mix-blend-mode:screen;transition:opacity 1s ease,transform 2.9s ease}
+.gate26-scene{position:absolute;inset:-4%;background:linear-gradient(120deg,rgba(5,16,31,.43),rgba(3,12,26,.1)),url('assets/media/web/belepes-kapu.webp') center/cover no-repeat;transform:scale(1.23);transition:transform 5.1s cubic-bezier(.18,.72,.28,1);z-index:0}
+.gate26-glow{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.8;background:radial-gradient(ellipse at 50% 40%,rgba(255,220,147,.33),transparent 37%),linear-gradient(105deg,transparent 44%,rgba(251,206,108,.17) 49%,transparent 56%);mix-blend-mode:screen;transition:opacity 4.3s ease,transform 5.1s ease}
 .gate26-doors{position:absolute;inset:0;display:flex;z-index:3;perspective:1500px;pointer-events:none}
-.gate26-door{width:50%;height:100%;position:relative;background:linear-gradient(95deg,#061525,#133755,#07182a);border:4px solid #ddb565;backface-visibility:hidden;box-shadow:inset 0 0 0 8px #051522,inset 0 0 0 13px #cea653,0 0 45px rgba(0,0,0,.46);transition:transform 2.6s cubic-bezier(.12,.73,.17,1),filter 2.6s ease;will-change:transform}
+.gate26-door{width:50%;height:100%;position:relative;background:linear-gradient(95deg,#061525,#133755,#07182a);border:4px solid #ddb565;backface-visibility:hidden;box-shadow:inset 0 0 0 8px #051522,inset 0 0 0 13px #cea653,0 0 45px rgba(0,0,0,.46);transition:transform 5s cubic-bezier(.12,.73,.17,1),filter 5s ease;will-change:transform}
 .gate26-left{transform-origin:0 50%;border-right:9px ridge #dbb15b}
 .gate26-right{transform-origin:100% 50%;border-left:9px ridge #dbb15b}
 .gate26-bars{position:absolute;inset:4%;border:3px solid #e1b85f;background:repeating-linear-gradient(90deg,transparent 0 8%,rgba(247,203,117,.8) 8.15% 8.85%,transparent 9.1% 14%),repeating-linear-gradient(0deg,transparent 0 23%,rgba(236,190,104,.52) 23.1% 24%,transparent 24.1% 47%)}
 .gate26-crest{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);font-size:clamp(75px,18vw,240px);line-height:1;color:rgba(247,213,140,.74);text-shadow:0 13px 33px #020b14}
-.gate26-content{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;max-width:910px;padding:20px 26px;text-shadow:0 2px 18px rgba(0,0,0,.85);transition:opacity .85s ease,transform 1.2s ease}
+.gate26-content{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;max-width:910px;padding:20px 26px;text-shadow:0 2px 18px rgba(0,0,0,.85);transition:opacity 1.4s ease,transform 1.8s ease}
 .gate26-logo{object-fit:contain;filter:drop-shadow(0 7px 15px #081526)}
 .gate26-eyebrow{color:#f7d489;letter-spacing:.25em;font-size:11px;font-weight:900}
 .gate26-content h2{font-size:clamp(36px,5.7vw,76px);line-height:1.04;letter-spacing:-.047em;font-weight:950;margin:5px 0}

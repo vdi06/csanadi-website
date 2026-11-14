@@ -1,5 +1,5 @@
 /* Központi sporteredmény/ sporthír megjelenítés. A JSON adat, soha nem futtatható kód. */
-import {mediaItem,createPicture} from './media.js?v=20261114f';
+import {mediaItem,createPicture} from './media.js?v=20261114g';
 const SOURCE=new URL('../json/adatok/sportsikerek.json',import.meta.url);
 const VALID_ID=/^success:[a-z0-9-]{3,50}$/;
 const ROUTE=/^#\/[a-z0-9/-]*$/;
