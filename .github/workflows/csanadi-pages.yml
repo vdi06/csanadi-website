@@ -1,0 +1,62 @@
+name: Csanadi 2026 - ellenorzes, napi sporthirek, Pages
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '15 5,11,17,23 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: csanadi-pages
+  cancel-in-progress: false
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Sporthirfolyam frissitese (hiba eseten a korabbi index marad)
+        shell: bash
+        run: python scripts/update_sport_news.py || echo 'A forras most nem erheto el; a korabbi adatok maradnak.'
+      - name: Elengedhetetlen tartalmak ellenorzese
+        shell: bash
+        run: |
+          python scripts/validate_site.py
+          for f in script.js js/*.js; do node --check "$f"; done
+      - name: Valtozott sporthirkatalogus mentese
+        shell: bash
+        run: |
+          if ! git diff --quiet -- json/adatok/napi-sporthirek.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add json/adatok/napi-sporthirek.json
+            git commit -m "chore: sporthir-index frissitese"
+            git push
+          fi
+      - name: GitHub Pages publikus fajlok osszeallitasa
+        shell: bash
+        run: |
+          mkdir -p site-dist
+          cp index.html script.js style.css next-2026.css orbit-2026.css site-dist/
+          cp -R js json assets site-dist/
+          touch site-dist/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site-dist
+      - name: GitHub Pages kozzezetetel
+        id: deployment
+        uses: actions/deploy-pages@v4
