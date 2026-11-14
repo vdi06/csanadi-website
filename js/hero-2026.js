@@ -5,7 +5,7 @@ const el=(tag,cls='',text)=>{const node=document.createElement(tag);if(cls)node.
 const action=(item,i)=>{const a=el('a',i?'hero2026-cta ghost':'hero2026-cta primary',item.label||'Tovább');a.href=safeHref(item.href);return a;};
 export function renderPremiumHero(block){
   const d=block.data||{};
-  const slides=(Array.isArray(d.slides)&&d.slides.length?d.slides:[d]).filter(s=>s&&typeof s.mediaId==='string').slice(0,8);
+  const slides=(Array.isArray(d.slides)&&d.slides.length?d.slides:[d]).filter(s=>s&&typeof s.mediaId==='string').slice(0,20);
   if(!slides.length)return null;
   const section=el('section','hero2026');section.setAttribute('aria-roledescription','diavetítés');section.setAttribute('aria-label','A Csanádi Sportiskola kiemelt témái');
   const stage=el('div','hero2026-stage');const panels=[];
@@ -29,8 +29,7 @@ export function renderPremiumHero(block){
     panel.append(imageDisclaimer());stage.append(panel);panels.push(panel);
   }
   section.append(stage);
-  const bottom=el('div','hero2026-bottom container-xxl'),intro=el('div','hero2026-progress-text');
-  intro.append(el('span','hero2026-progress-overline','2026 • FÓKUSZBAN'),el('strong','hero2026-progress-sub','Sport · Tudás · Közösség'));
+  const bottom=el('div','hero2026-bottom container-xxl');
   const rail=el('div','hero2026-nav');
   const prev=el('button','hero2026-arrow','‹'),next=el('button','hero2026-arrow','›'),pause=el('button','hero2026-pause','Szünet');
   prev.type=next.type=pause.type='button';prev.setAttribute('aria-label','Előző kiemelt kép');next.setAttribute('aria-label','Következő kiemelt kép');
@@ -59,7 +58,7 @@ export function renderPremiumHero(block){
   section.addEventListener('focusin',()=>focused=true);
   section.addEventListener('focusout',()=>{setTimeout(()=>focused=section.contains(document.activeElement),0);});
   const onMotion=()=>pausedText();prefersReduced.addEventListener?.('change',onMotion);
-  rail.append(prev,dots,next,counter,pause);bottom.append(intro,rail);section.append(bottom);
+  rail.append(prev,dots,next,counter,pause);bottom.append(rail);section.append(bottom);
   sync();pausedText();
   const tick=Math.max(4000,Math.min(16000,Number(d.intervalMs)||7200));
   const timer=setInterval(()=>{

@@ -36,7 +36,7 @@
       "id": "media:hero",
       "kind": "image",
       "original": {
-        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/hero-1600.webp",
+        "path": "assets/media/web/hero-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
@@ -45,7 +45,7 @@
       },
       "variants": [
         {
-          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/hero-1600.webp",
+          "path": "assets/media/web/hero-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
@@ -67,7 +67,7 @@
       "id": "media:iskolank",
       "kind": "image",
       "original": {
-        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/iskolank-1600.webp",
+        "path": "assets/media/web/iskolank-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
@@ -76,7 +76,7 @@
       },
       "variants": [
         {
-          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/iskolank-1600.webp",
+          "path": "assets/media/web/iskolank-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
@@ -98,7 +98,7 @@
       "id": "media:oktatas",
       "kind": "image",
       "original": {
-        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/oktatas-1600.webp",
+        "path": "assets/media/web/oktatas-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
@@ -107,7 +107,7 @@
       },
       "variants": [
         {
-          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/oktatas-1600.webp",
+          "path": "assets/media/web/oktatas-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
@@ -129,7 +129,7 @@
       "id": "media:sport",
       "kind": "image",
       "original": {
-        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/sport-1600.webp",
+        "path": "assets/media/web/sport-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
@@ -138,7 +138,7 @@
       },
       "variants": [
         {
-          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/sport-1600.webp",
+          "path": "assets/media/web/sport-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
@@ -160,7 +160,7 @@
       "id": "media:kozosseg",
       "kind": "image",
       "original": {
-        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/kozosseg-1600.webp",
+        "path": "assets/media/web/kozosseg-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
@@ -169,7 +169,7 @@
       },
       "variants": [
         {
-          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/kozosseg-1600.webp",
+          "path": "assets/media/web/kozosseg-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
@@ -191,7 +191,7 @@
       "id": "media:felveteli",
       "kind": "image",
       "original": {
-        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/felveteli-1600.webp",
+        "path": "assets/media/web/felveteli-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
@@ -200,7 +200,7 @@
       },
       "variants": [
         {
-          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/felveteli-1600.webp",
+          "path": "assets/media/web/felveteli-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
@@ -222,7 +222,7 @@
       "id": "media:eredmenyek",
       "kind": "image",
       "original": {
-        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/eredmenyek-1600.webp",
+        "path": "assets/media/web/eredmenyek-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
@@ -231,7 +231,7 @@
       },
       "variants": [
         {
-          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/eredmenyek-1600.webp",
+          "path": "assets/media/web/eredmenyek-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
@@ -253,7 +253,7 @@
       "id": "media:esemenyek",
       "kind": "image",
       "original": {
-        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/esemenyek-1600.webp",
+        "path": "assets/media/web/esemenyek-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
@@ -262,7 +262,7 @@
       },
       "variants": [
         {
-          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/esemenyek-1600.webp",
+          "path": "assets/media/web/esemenyek-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
@@ -284,7 +284,7 @@
       "id": "media:kapcsolat",
       "kind": "image",
       "original": {
-        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/kapcsolat-1600.webp",
+        "path": "assets/media/web/kapcsolat-1600.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
@@ -293,7 +293,7 @@
       },
       "variants": [
         {
-          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/kapcsolat-1600.webp",
+          "path": "assets/media/web/kapcsolat-1600.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
@@ -315,7 +315,7 @@
       "id": "media:siker-atletika",
       "kind": "image",
       "original": {
-        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-atletika.webp",
+        "path": "assets/media/web/siker-atletika.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
@@ -324,7 +324,7 @@
       },
       "variants": [
         {
-          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-atletika.webp",
+          "path": "assets/media/web/siker-atletika.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
@@ -346,7 +346,7 @@
       "id": "media:siker-kosarlabda",
       "kind": "image",
       "original": {
-        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-kosarlabda.webp",
+        "path": "assets/media/web/siker-kosarlabda.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
@@ -355,7 +355,7 @@
       },
       "variants": [
         {
-          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-kosarlabda.webp",
+          "path": "assets/media/web/siker-kosarlabda.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
@@ -377,7 +377,7 @@
       "id": "media:siker-uszas",
       "kind": "image",
       "original": {
-        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-uszas.webp",
+        "path": "assets/media/web/siker-uszas.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
@@ -386,7 +386,7 @@
       },
       "variants": [
         {
-          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-uszas.webp",
+          "path": "assets/media/web/siker-uszas.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
@@ -408,7 +408,7 @@
       "id": "media:siker-roplabda",
       "kind": "image",
       "original": {
-        "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-roplabda.webp",
+        "path": "assets/media/web/siker-roplabda.webp",
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
@@ -417,7 +417,7 @@
       },
       "variants": [
         {
-          "path": "/mnt/data/Csanadi_2026_KEPCSERE_FRISSITETT_HONLAP/assets/media/web/siker-roplabda.webp",
+          "path": "assets/media/web/siker-roplabda.webp",
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
@@ -433,6 +433,626 @@
         "holder": "2026-os honlapterv fejlesztési illusztrációja",
         "source": "2026-os fotórealisztikus, generált látványkép fejlesztési felhasználásra",
         "license": "Fejlesztési bemutatásra; intézményi publikálás előtt ellenőrizendő."
+      }
+    },
+    {
+      "id": "media:eletkep-01",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-01.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 219684,
+        "sha256": "1474a09b8adfb3830bdded2f4029b7e09341034ad3fd2f886765d9fd8be18123"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-01.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 219684,
+          "sha256": "1474a09b8adfb3830bdded2f4029b7e09341034ad3fd2f886765d9fd8be18123"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 1.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-02",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-02.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 229260,
+        "sha256": "b16a3377340e805f424483fce6018ae609a215304ad151bb73cfdc0ad46e3e1a"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-02.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 229260,
+          "sha256": "b16a3377340e805f424483fce6018ae609a215304ad151bb73cfdc0ad46e3e1a"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 2.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-03",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-03.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 276394,
+        "sha256": "63c099895ead15acee5b9b491dd15d37aa27629e5468e1bc70ce90b96cc898ba"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-03.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 276394,
+          "sha256": "63c099895ead15acee5b9b491dd15d37aa27629e5468e1bc70ce90b96cc898ba"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 3.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-04",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-04.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 165954,
+        "sha256": "623f6ef3ae6ca9550d4c8b8b884974749d0aa74ef93cae46f7e2e0f041c732b7"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-04.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 165954,
+          "sha256": "623f6ef3ae6ca9550d4c8b8b884974749d0aa74ef93cae46f7e2e0f041c732b7"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 4.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-05",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-05.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 254656,
+        "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-05.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 254656,
+          "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 5.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-06",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-06.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 229154,
+        "sha256": "786744eb3f3c97e706da0b899719076b1d320c273950c20a086a54d59500f9eb"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-06.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 229154,
+          "sha256": "786744eb3f3c97e706da0b899719076b1d320c273950c20a086a54d59500f9eb"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 6.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-07",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-07.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 266314,
+        "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-07.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 266314,
+          "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 7.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-08",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-08.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 169604,
+        "sha256": "8566576bd8c959c40d6ad92e99f5795cd13c3ff3fb7e1c1620186616b84055ba"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-08.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 169604,
+          "sha256": "8566576bd8c959c40d6ad92e99f5795cd13c3ff3fb7e1c1620186616b84055ba"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 8.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-09",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-09.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 342632,
+        "sha256": "461395c1deda2d731b68339921526d8e25d79dc20609123e6ca53ec46b0e734a"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-09.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 342632,
+          "sha256": "461395c1deda2d731b68339921526d8e25d79dc20609123e6ca53ec46b0e734a"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 9.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-10",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-10.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 286734,
+        "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-10.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 286734,
+          "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 10.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-11",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-11.webp",
+        "mimeType": "image/webp",
+        "width": 460,
+        "height": 400,
+        "sizeBytes": 21702,
+        "sha256": "8af078c52426b91c416b182858c635c98c31a5bd99790a0986e9993ec5073a7a"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-11.webp",
+          "mimeType": "image/webp",
+          "width": 460,
+          "height": 400,
+          "sizeBytes": 21702,
+          "sha256": "8af078c52426b91c416b182858c635c98c31a5bd99790a0986e9993ec5073a7a"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 11.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-12",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-12.webp",
+        "mimeType": "image/webp",
+        "width": 460,
+        "height": 400,
+        "sizeBytes": 25502,
+        "sha256": "a7181527daaa43aa7813f7ff4ba239a4d3011585521774e86a61c5ae88f3237d"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-12.webp",
+          "mimeType": "image/webp",
+          "width": 460,
+          "height": 400,
+          "sizeBytes": 25502,
+          "sha256": "a7181527daaa43aa7813f7ff4ba239a4d3011585521774e86a61c5ae88f3237d"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 12.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-13",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-13.webp",
+        "mimeType": "image/webp",
+        "width": 460,
+        "height": 400,
+        "sizeBytes": 31120,
+        "sha256": "c3e38463d4128e274dc18766333670e0cc32b68d6201f1bec54b3b9ea6f267e6"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-13.webp",
+          "mimeType": "image/webp",
+          "width": 460,
+          "height": 400,
+          "sizeBytes": 31120,
+          "sha256": "c3e38463d4128e274dc18766333670e0cc32b68d6201f1bec54b3b9ea6f267e6"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 13.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-14",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-14.webp",
+        "mimeType": "image/webp",
+        "width": 460,
+        "height": 400,
+        "sizeBytes": 49466,
+        "sha256": "5b31de36c3db73f7389196cd0fc940979fb2357471cfcc52295d7acf18f47b35"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-14.webp",
+          "mimeType": "image/webp",
+          "width": 460,
+          "height": 400,
+          "sizeBytes": 49466,
+          "sha256": "5b31de36c3db73f7389196cd0fc940979fb2357471cfcc52295d7acf18f47b35"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 14.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-15",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-15.webp",
+        "mimeType": "image/webp",
+        "width": 460,
+        "height": 400,
+        "sizeBytes": 26414,
+        "sha256": "7756e6e2aa8c7b570f1e851d791f50b2b447398b49624a06943acb1901dd3836"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-15.webp",
+          "mimeType": "image/webp",
+          "width": 460,
+          "height": 400,
+          "sizeBytes": 26414,
+          "sha256": "7756e6e2aa8c7b570f1e851d791f50b2b447398b49624a06943acb1901dd3836"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 15.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-16",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-16.webp",
+        "mimeType": "image/webp",
+        "width": 460,
+        "height": 400,
+        "sizeBytes": 29096,
+        "sha256": "f20dd59a48acc9ece0c683c1d82632177167b4c5fe1d32e1d1a92876d713f090"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-16.webp",
+          "mimeType": "image/webp",
+          "width": 460,
+          "height": 400,
+          "sizeBytes": 29096,
+          "sha256": "f20dd59a48acc9ece0c683c1d82632177167b4c5fe1d32e1d1a92876d713f090"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 16.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-17",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-17.webp",
+        "mimeType": "image/webp",
+        "width": 460,
+        "height": 400,
+        "sizeBytes": 20036,
+        "sha256": "75402d40c1920cabfb15245a698c57b4b187b589fa2eadf4c0d28de99792c4c0"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-17.webp",
+          "mimeType": "image/webp",
+          "width": 460,
+          "height": 400,
+          "sizeBytes": 20036,
+          "sha256": "75402d40c1920cabfb15245a698c57b4b187b589fa2eadf4c0d28de99792c4c0"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 17.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-18",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-18.webp",
+        "mimeType": "image/webp",
+        "width": 460,
+        "height": 400,
+        "sizeBytes": 11456,
+        "sha256": "656b4182677713ae62148d589469bc26f11b87cb7507ad5b3b677bdb6a8e9a7b"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-18.webp",
+          "mimeType": "image/webp",
+          "width": 460,
+          "height": 400,
+          "sizeBytes": 11456,
+          "sha256": "656b4182677713ae62148d589469bc26f11b87cb7507ad5b3b677bdb6a8e9a7b"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 18.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-19",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-19.webp",
+        "mimeType": "image/webp",
+        "width": 460,
+        "height": 400,
+        "sizeBytes": 21132,
+        "sha256": "df3114ded01a54cee5b9613cbda824077e7ac521e1e537d218a03e3a4197c26d"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-19.webp",
+          "mimeType": "image/webp",
+          "width": 460,
+          "height": 400,
+          "sizeBytes": 21132,
+          "sha256": "df3114ded01a54cee5b9613cbda824077e7ac521e1e537d218a03e3a4197c26d"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 19.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-20",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-20.webp",
+        "mimeType": "image/webp",
+        "width": 460,
+        "height": 400,
+        "sizeBytes": 32202,
+        "sha256": "b0abd7d9e641438de0833bc9612abce993ea487d34ef18d2af435278ff0abadd"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-20.webp",
+          "mimeType": "image/webp",
+          "width": 460,
+          "height": 400,
+          "sizeBytes": 32202,
+          "sha256": "b0abd7d9e641438de0833bc9612abce993ea487d34ef18d2af435278ff0abadd"
+        }
+      ],
+      "alt": "Sportiskolai témájú illusztráció 20.",
+      "caption": "Tematikus illusztráció, nem az iskola dokumentumfotója.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "source": "Korábbi honlapcsomag illusztrációja",
+        "license": "Intézményi jóváhagyás szükséges."
       }
     }
   ]

@@ -171,3 +171,131 @@ html[data-theme="dark"] .home-unit--school-news :is(h2,h3) { color:var(--ink); }
 @media (prefers-reduced-motion:reduce) {
  #site-map-overlay .radial-menu-node { animation:none!important; }
 }
+
+
+/* 2026/6 – Kártyák belső ritmusa és sporthír/eredmény megjelenítés.
+   A meglévő DOM-komponensekre épül; nem változtatja a navigációt. */
+#app :is(.feature-card,.quick-card,.editorial-tile,.cs-news-card,.daily-sports-card,
+         .student-success-card,.cs-achievement,.staff-team-card) {
+  min-width:0;
+  transition:box-shadow .2s ease, border-color .2s ease, transform .2s ease;
+}
+#app :is(.feature-card,.quick-card,.editorial-tile,.cs-news-card,.daily-sports-card,
+         .student-success-card,.cs-achievement,.staff-team-card):hover {
+  border-color:color-mix(in srgb,var(--gold) 42%,var(--line));
+  box-shadow:0 14px 32px rgba(7,26,48,.12);
+}
+#app :is(.feature-card,.quick-card,.editorial-tile,.cs-news-card,.daily-sports-card,
+         .student-success-card,.cs-achievement) :is(h3,h4) {
+  text-wrap:pretty;
+  overflow-wrap:anywhere;
+  line-height:1.34;
+}
+#app :is(.feature-card,.quick-card,.editorial-tile,.cs-news-card,.daily-sports-card,
+         .student-success-card,.cs-achievement) :is(p,small) {
+  line-height:1.65;
+  overflow-wrap:anywhere;
+}
+/* Képkivágás: minden csempében stabil képarány és fókuszpont. */
+#app .feature-card .card-picture { aspect-ratio:16/10; height:auto; }
+#app .quick-card .card-picture { aspect-ratio:16/9; height:auto; }
+#app :is(.card-picture,.student-success-image,.staff-team-photo) {
+  display:block; overflow:hidden; position:relative;
+  background:linear-gradient(145deg,#0a2340,#28445e);
+}
+#app :is(.card-picture,.student-success-image,.staff-team-photo) img {
+  display:block; width:100%; height:100%; object-fit:cover; object-position:center;
+}
+#app .student-success-image { height:auto; aspect-ratio:16/10; }
+#app .student-success-image img { position:absolute;inset:0; }
+#app .staff-team-photo { aspect-ratio:16/10; height:auto; }
+#app .staff-team-photo img { position:absolute;inset:0; }
+/* A cím, törzsszöveg és link függőlegesen egyenletesen rendeződjön. */
+#app .feature-card .card-copy { display:flex; flex-direction:column; flex:1; min-height:0; }
+#app .feature-card .card-title { margin-bottom:.55rem; }
+#app .feature-card .card-desc { margin-bottom:1.15rem; }
+#app .feature-card .card-arrow { margin-top:auto; }
+#app .editorial-tile { gap:12px; }
+#app .editorial-tile p { line-height:1.68; }
+/* Napi sporthírek – címke, cím, idő és forráslink világos szerkesztői rendben. */
+#app .daily-sports-cards { align-items:stretch; gap:var(--site-gap); }
+#app .daily-sports-card {
+  display:flex;flex-direction:column;gap:9px; height:100%;
+  padding:clamp(16px,1.65vw,23px);
+  border:1px solid var(--line);
+  border-top:3px solid var(--gold);
+  background:var(--card);
+}
+#app .daily-sports-card .daily-sports-meta {
+  margin:0; font-size:11px; font-weight:850; letter-spacing:.07em;
+  text-transform:uppercase; color:var(--gold); line-height:1.4;
+}
+#app .daily-sports-card h3 { margin:0; font-size:clamp(16px,1.35vw,20px); font-weight:850; }
+#app .daily-sports-card .daily-sports-date { font-size:12px; color:var(--muted); }
+#app .daily-sports-card .daily-sports-link {
+  display:inline-flex;align-items:center;align-self:flex-start;
+  margin-top:auto;padding-top:8px;min-height:38px;
+  color:var(--gold);font-weight:800;font-size:13px;text-decoration:underline;
+  text-underline-offset:4px;
+}
+#app .daily-sports-card .daily-sports-link:focus-visible,
+#app .cs-news-card .cs-news-route:focus-visible { outline:3px solid var(--gold); outline-offset:4px; border-radius:3px; }
+/* Iskolai hírcsempék – részletek és kapcsolódó oldal a kártya alján. */
+#app .cs-news-grid { align-items:stretch; gap:var(--site-gap); }
+#app .cs-news-card {
+  display:flex;flex-direction:column;gap:11px;height:100%;
+  padding:clamp(17px,1.8vw,24px);
+  border-top:3px solid var(--gold);
+}
+#app .cs-news-card .cs-news-meta { gap:7px;line-height:1.5; }
+#app .cs-news-card h3 { margin:0;font-size:clamp(17px,1.5vw,22px); }
+#app .cs-news-card > p { margin:0;flex:1; }
+#app .cs-news-card .cs-news-detail { border-top:1px solid var(--line);padding-top:9px; }
+#app .cs-news-card .cs-news-detail summary { min-height:30px; }
+#app .cs-news-card .cs-news-links {
+  margin-top:auto;padding-top:12px;gap:8px 16px;
+  border-top:1px solid var(--line);
+  align-items:center;justify-content:space-between;
+}
+#app .cs-news-card .cs-news-route { display:inline-flex;min-height:32px;align-items:center; }
+/* Tanulói és sporteredmény-kártyák – eredmény önálló vizuális egység. */
+#app :is(.student-success-feature-grid,.student-success-archive-grid,.cs-result-grid) {
+  align-items:stretch;gap:var(--site-gap);
+}
+#app .student-success-card { display:flex;flex-direction:column;height:100%;overflow:hidden; }
+#app .student-success-card .student-success-body {
+  display:flex;flex-direction:column;flex:1;gap:8px;
+  padding:clamp(15px,1.4vw,21px);
+}
+#app .student-success-card :is(.student-success-tag,.student-success-class,.student-success-event,.student-success-summary) { margin:0; }
+#app .student-success-card h3 { margin:0;font-size:clamp(17px,1.35vw,21px); }
+#app .student-success-card .student-success-result {
+  display:block;align-self:flex-start;
+  border-radius:9px;padding:8px 11px;
+  background:color-mix(in srgb,var(--gold) 15%,var(--card));
+  border:1px solid color-mix(in srgb,var(--gold) 35%,var(--line));
+  font-size:clamp(14px,1.2vw,17px);line-height:1.4;
+}
+#app .student-success-card .student-success-date { display:block;margin-top:auto;padding-top:8px;font-size:12px;color:var(--muted); }
+#app .student-success-card .student-photo-note { position:absolute;bottom:8px;left:8px;max-width:calc(100% - 16px); }
+#app .cs-achievement { display:flex;flex-direction:column;gap:8px;padding:17px;border-radius:var(--site-radius); }
+#app .cs-achievement :is(h3,p) { margin:0!important; }
+#app .cs-achievement .cs-achievement-source { margin-top:auto; }
+/* Mobilon ne alakuljon ki összenyomott, olvashatatlan kártya. */
+@media(max-width:900px) {
+ #app .student-success-feature-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ #app .student-success-archive-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:620px) {
+ #app :is(.student-success-feature-grid,.student-success-archive-grid,.cs-news-grid,.cs-news-center .cs-news-grid,.cs-result-grid) {
+   grid-template-columns:minmax(0,1fr);
+ }
+ #app .student-success-image { aspect-ratio:16/9; }
+ #app .daily-sports-card,.cs-news-card { padding:17px; }
+ #app .daily-sports-card .daily-sports-link { min-height:44px; }
+ #app .cs-news-card .cs-news-links { align-items:flex-start; }
+}
+@media(prefers-reduced-motion:reduce) {
+ #app :is(.feature-card,.quick-card,.editorial-tile,.cs-news-card,.daily-sports-card,
+         .student-success-card,.cs-achievement,.staff-team-card) { transition:none; }
+}

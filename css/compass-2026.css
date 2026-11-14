@@ -1,0 +1,78 @@
+/* 2026: játékos, szimmetrikus menükorong, valódi középpontból kibomló gombok. */
+#site-map-overlay{position:fixed!important;inset:0!important;z-index:2000!important;display:grid;place-items:center;padding:12px!important}
+#site-map-overlay[hidden]{display:none!important}
+#site-map-overlay .site-map-dialog{width:min(1040px,calc(100vw - 24px))!important;max-height:min(94dvh,970px)!important;overflow:auto!important;display:block!important;position:relative;margin:auto;border-radius:24px}
+#site-map-overlay .site-map-topline{padding:16px 24px 9px!important}
+#site-map-overlay .site-map-topline h2{font-size:clamp(20px,2.5vw,28px)!important}
+#site-map-overlay .compass26-layout{display:block!important;padding:0 18px 22px}
+#site-map-overlay .compass26-stage{--radius:clamp(176px,24vw,242px);position:relative;width:min(100%,840px);height:clamp(440px,60vh,580px);margin:auto;isolation:isolate;display:grid;place-items:center;overflow:visible}
+#site-map-overlay .compass26-stage::before,#site-map-overlay .compass26-stage::after{content:"";position:absolute;left:50%;top:50%;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
+#site-map-overlay .compass26-stage::before{width:calc(2 * var(--radius) + 58px);height:calc(2 * var(--radius) + 58px);border:1px solid rgba(194,153,80,.4);background:radial-gradient(circle,rgba(203,161,83,.15) 0 15%,rgba(154,128,80,.04) 16% 50%,transparent 62%);box-shadow:inset 0 0 45px rgba(197,153,63,.07)}
+#site-map-overlay .compass26-stage::after{width:calc(2 * var(--radius) - 105px);height:calc(2 * var(--radius) - 105px);border:1px dashed rgba(194,153,80,.47)}
+#site-map-overlay .compass26-directions{position:absolute;inset:0;z-index:3;pointer-events:none}
+#site-map-overlay .compass26-choice{--angle:0deg;position:absolute;left:50%;top:50%;width:clamp(115px,17vw,156px);height:76px;display:flex;gap:3px;align-items:stretch;pointer-events:auto;transform:translate(-50%,-50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle)));animation:compass26-emerge .65s cubic-bezier(.2,.85,.3,1.1) backwards;animation-delay:calc(var(--idx) * 50ms)}
+#site-map-overlay .compass26-choice:nth-child(1){--angle:0deg;--idx:0}
+#site-map-overlay .compass26-choice:nth-child(2){--angle:60deg;--idx:1}
+#site-map-overlay .compass26-choice:nth-child(3){--angle:120deg;--idx:2}
+#site-map-overlay .compass26-choice:nth-child(4){--angle:180deg;--idx:3}
+#site-map-overlay .compass26-choice:nth-child(5){--angle:240deg;--idx:4}
+#site-map-overlay .compass26-choice:nth-child(6){--angle:300deg;--idx:5}
+@keyframes compass26-emerge{from{opacity:0;transform:translate(-50%,-50%) rotate(var(--angle)) translateY(0) rotate(calc(-1 * var(--angle))) scale(.55)}to{opacity:1;transform:translate(-50%,-50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle))) scale(1)}}
+#site-map-overlay .compass26-choice-link{min-width:0;flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;padding:7px 5px;text-align:center;text-decoration:none;background:linear-gradient(155deg,#183650,#0e263d);color:#fff;border:1px solid #d8b771;border-radius:15px;box-shadow:0 9px 23px #0005;font-size:clamp(10px,1.1vw,12px);line-height:1.2;font-weight:850;overflow-wrap:anywhere;transition:transform .18s,border-color .18s,box-shadow .18s}
+#site-map-overlay .compass26-choice-link:hover,#site-map-overlay .compass26-choice-link:focus-visible{color:#fff;transform:scale(1.08);border-color:#fff1ba;box-shadow:0 0 0 4px #d9b56844,0 14px 28px #0008;outline:2px solid transparent}
+#site-map-overlay .compass26-choice.is-active .compass26-choice-link{background:linear-gradient(140deg,#a8782e,#e7c77d);color:#102740;border-color:#f4dcaa}
+#site-map-overlay .compass26-choice-icon{color:#eccc8c;font-size:20px;line-height:1}
+#site-map-overlay .compass26-choice.is-active .compass26-choice-icon{color:#173a56}
+#site-map-overlay .compass26-choice-cta{display:none}
+#site-map-overlay .compass26-choice-toggle{width:27px;flex:0 0 27px;border:1px solid #d9b572;border-radius:10px;background:#ecd39b;color:#18334c;cursor:pointer;font-size:18px;font-weight:900;transition:background .15s}
+#site-map-overlay .compass26-choice-toggle:hover,#site-map-overlay .compass26-choice-toggle:focus-visible{background:#fff2cc;outline:2px solid #d8ac59;outline-offset:1px}
+#site-map-overlay .compass26-emblem{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(112px,14vw,150px);height:clamp(112px,14vw,150px);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;border-radius:50%;border:3px solid #d8b771;background:radial-gradient(circle at 35% 28%,#254c68,#081c30);box-shadow:0 0 0 10px #bd944326,0 14px 35px #0c203a70;color:#f5db9a;pointer-events:none}
+#site-map-overlay .compass26-emblem img{width:66%;max-height:82px;object-fit:contain}
+#site-map-overlay .compass26-emblem span{font-size:11px;font-weight:900;letter-spacing:.1em}
+#site-map-overlay .compass26-intro{position:absolute;top:6px;left:50%;transform:translateX(-50%);text-align:center;max-width:210px;z-index:1;pointer-events:none}
+#site-map-overlay .compass26-intro span{display:none}
+#site-map-overlay .compass26-intro strong{display:block;font-size:12px;color:var(--muted)}
+#site-map-overlay .compass26-intro p{display:none}
+#site-map-overlay .compass26-panel{max-width:900px;margin:0 auto;border:1px solid var(--line);border-radius:17px;padding:14px 18px;background:var(--light);color:var(--ink)}
+#site-map-overlay .compass26-panel-head{text-align:center;margin-bottom:8px}
+#site-map-overlay .compass26-eyebrow{font-size:10px;font-weight:900;letter-spacing:.13em;color:var(--muted)}
+#site-map-overlay .compass26-panel-head h3{font-size:19px;font-weight:900;margin:3px 0;color:var(--ink)}
+#site-map-overlay .compass26-panel-head p{font-size:12px;color:var(--muted);margin:0}
+#site-map-overlay .compass26-subtopics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+#site-map-overlay .compass26-subgroup{min-width:0}
+#site-map-overlay .compass26-linkrow{display:flex;min-width:0;gap:4px}
+#site-map-overlay .compass26-sub-link{min-width:0;flex:1;text-decoration:none;display:flex;gap:7px;align-items:center;border-radius:9px;padding:9px;background:var(--card);border:1px solid var(--line);color:var(--ink);font-size:12px;font-weight:750;overflow-wrap:anywhere}
+#site-map-overlay .compass26-sub-link:hover,#site-map-overlay .compass26-sub-link:focus-visible{border-color:#cbaa65;background:var(--light);color:var(--ink)}
+#site-map-overlay .compass26-mini{color:#a67a39;font-weight:900}
+#site-map-overlay .compass26-expand{flex:0 0 29px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;cursor:pointer}
+#site-map-overlay .compass26-nested{margin:5px 0 7px 9px;display:grid;gap:5px}
+#site-map-overlay .compass26-nested[hidden]{display:none!important}
+#site-map-overlay .compass26-nested .compass26-sub-link{font-size:11px;padding:7px}
+#site-map-overlay .compass26-help{display:none}
+#site-map-overlay .compass26-empty{font-size:12px;color:var(--muted);text-align:center}
+/* 20 dia – csak kezelősor, a redundant "Fókuszban" felirat teljesen eltűnik. */
+#global-hero .hero2026-bottom{justify-content:center!important}
+#global-hero .hero2026-progress-text{display:none!important}
+#global-hero .hero2026-nav{width:100%;justify-content:center!important;gap:8px!important;min-width:0;flex-wrap:nowrap}
+#global-hero .hero2026-dots{display:flex;overflow-x:auto;max-width:min(62vw,460px);flex:0 1 auto;min-width:0;scrollbar-width:thin;padding:6px 2px;justify-content:flex-start;gap:7px}
+#global-hero .hero2026-dot{flex:0 0 9px;width:9px;height:9px}
+#global-hero .hero2026-dot.active{flex-basis:22px;width:22px}
+#global-hero .hero2026-count{flex:0 0 auto}
+@media(max-width:720px){
+ #site-map-overlay .site-map-dialog{max-height:96dvh!important}
+ #site-map-overlay .site-map-topline{padding:12px 14px 4px!important}
+ #site-map-overlay .compass26-layout{padding:0 8px 12px}
+ #site-map-overlay .compass26-stage{--radius:clamp(114px,31vw,165px);height:clamp(330px,87vw,420px)}
+ #site-map-overlay .compass26-choice{width:clamp(89px,26vw,120px);height:59px;gap:2px}
+ #site-map-overlay .compass26-choice-link{border-radius:11px;font-size:9px;gap:1px;padding:3px}
+ #site-map-overlay .compass26-choice-icon{font-size:14px}
+ #site-map-overlay .compass26-choice-toggle{flex-basis:20px;width:20px;font-size:14px}
+ #site-map-overlay .compass26-emblem{width:78px;height:78px;border-width:2px}
+ #site-map-overlay .compass26-emblem span{font-size:8px}
+ #site-map-overlay .compass26-intro{top:0}
+ #site-map-overlay .compass26-panel{padding:11px 8px}
+ #site-map-overlay .compass26-subtopics{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #global-hero .hero2026-dots{max-width:45vw}
+}
+@media(max-width:390px){#site-map-overlay .compass26-stage{--radius:113px;height:324px}#site-map-overlay .compass26-choice{width:89px}#site-map-overlay .compass26-subtopics{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){#site-map-overlay .compass26-choice{animation:none!important}#site-map-overlay .compass26-choice-link{transition:none!important}}

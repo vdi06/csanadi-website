@@ -46,7 +46,7 @@
           }
         ],
         "imageId": "media:hero",
-        "intervalMs": 8000,
+        "intervalMs": 7500,
         "slides": [
           {
             "id": "hero-2026-sport",
@@ -62,6 +62,45 @@
             ]
           },
           {
+            "id": "hero-2026-plus-01",
+            "mediaId": "media:eletkep-01",
+            "eyebrow": "ISKOLAI KÖZÖSSÉG",
+            "title": "Iskolánk mindennapjai",
+            "subtitle": "Együtt a mindennapokban.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/iskolank"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-plus-02",
+            "mediaId": "media:eletkep-02",
+            "eyebrow": "SPORTÉLET",
+            "title": "A sport szeretete",
+            "subtitle": "A mozgás része a történetünknek.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/sport"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-plus-03",
+            "mediaId": "media:siker-atletika",
+            "eyebrow": "SPORTEREDMÉNYEK",
+            "title": "Új kihívások",
+            "subtitle": "Kitartás, fejlődés, élmények.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/sport/sporteredmenyek"
+              }
+            ]
+          },
+          {
             "id": "hero-2026-siker",
             "mediaId": "media:eredmenyek",
             "eyebrow": "SPORTOLÓI TÖRTÉNETEK",
@@ -71,6 +110,45 @@
               {
                 "label": "Sporteredmények",
                 "href": "#/sport/sporteredmenyek"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-plus-04",
+            "mediaId": "media:siker-kosarlabda",
+            "eyebrow": "CSAPATOK",
+            "title": "Csapatban erősebbek",
+            "subtitle": "Egy csapat, sok közös cél.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/sport/csapatok"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-plus-05",
+            "mediaId": "media:eletkep-03",
+            "eyebrow": "OKTATÁS",
+            "title": "Minden nap tanulunk",
+            "subtitle": "Kérdések, válaszok, felfedezések.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/oktatas"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-plus-06",
+            "mediaId": "media:eletkep-04",
+            "eyebrow": "DIÁKÉLET",
+            "title": "A pályán és azon túl",
+            "subtitle": "Fontos pillanatok együtt.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/iskolank"
               }
             ]
           },
@@ -92,6 +170,45 @@
             ]
           },
           {
+            "id": "hero-2026-plus-07",
+            "mediaId": "media:eletkep-05",
+            "eyebrow": "KÖZÖSSÉG",
+            "title": "A közösség lendülete",
+            "subtitle": "Élmények, amelyek összekötnek.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/hirek-es-esemenyek"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-plus-08",
+            "mediaId": "media:eletkep-06",
+            "eyebrow": "FELVÉTELI",
+            "title": "Az első lépések",
+            "subtitle": "Ismerd meg a lehetőségeket.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/oktatas/felveteli"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-plus-09",
+            "mediaId": "media:siker-roplabda",
+            "eyebrow": "SPORTISKOLA",
+            "title": "Egymást támogatva",
+            "subtitle": "Fejlődés közös munkával.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/sport"
+              }
+            ]
+          },
+          {
             "id": "hero-2026-kozosseg",
             "mediaId": "media:kozosseg",
             "eyebrow": "DIÁKÉLET • ÖSSZETARTOZÁS",
@@ -109,6 +226,45 @@
             ]
           },
           {
+            "id": "hero-2026-plus-10",
+            "mediaId": "media:siker-uszas",
+            "eyebrow": "SPORTOLÓI SIKEREK",
+            "title": "Több mint eredmény",
+            "subtitle": "A befektetett munka értéke.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/sport/sporteredmenyek"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-plus-11",
+            "mediaId": "media:eletkep-07",
+            "eyebrow": "ISKOLÁNK",
+            "title": "Élet az iskolában",
+            "subtitle": "Nézz körül az iskola világában.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/iskolank"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-plus-12",
+            "mediaId": "media:esemenyek",
+            "eyebrow": "ESEMÉNYNAPTÁR",
+            "title": "Találkozások és események",
+            "subtitle": "Kövesd az iskolai programokat.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/hirek-es-esemenyek/esemenynaptar"
+              }
+            ]
+          },
+          {
             "id": "hero-2026-jovo",
             "mediaId": "media:felveteli",
             "eyebrow": "JÖVŐ • LEHETŐSÉGEK",
@@ -122,6 +278,45 @@
               {
                 "label": "Tanévi információk",
                 "href": "#/oktatas/tanevek"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-plus-13",
+            "mediaId": "media:sport",
+            "eyebrow": "SPORTÁGAK",
+            "title": "Fedezd fel a sportágakat",
+            "subtitle": "Találd meg a saját utadat.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/sport/sportagak"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-plus-14",
+            "mediaId": "media:eletkep-08",
+            "eyebrow": "ISKOLÁNK",
+            "title": "A mindennapok mögött",
+            "subtitle": "Sok történet, egy közösség.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/iskolank"
+              }
+            ]
+          },
+          {
+            "id": "hero-2026-plus-15",
+            "mediaId": "media:eletkep-09",
+            "eyebrow": "SPORT ÉS TANULÁS",
+            "title": "Közösen a célokért",
+            "subtitle": "A fejlődés számtalan formája.",
+            "buttons": [
+              {
+                "label": "Részletek",
+                "href": "#/oktatas"
               }
             ]
           }

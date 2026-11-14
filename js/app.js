@@ -31,89 +31,63 @@ function pageChildren(node){return childrenOf(catalog,node)}
 const siteMap=document.getElementById('site-map-overlay');
 const siteMapCats=document.getElementById('site-map-categories');
 const siteMapSubtopics=document.getElementById('site-map-subtopics');
-const siteMapPages=document.getElementById('site-map-pages');
 const siteMapDetails=document.getElementById('site-map-details');
-let siteMapSelected=null,siteMapSelectedChild=null,siteMapReturnFocus=null;
+let siteMapSelected=null,siteMapReturnFocus=null;
+const compassSymbols=['✦','◈','★','✧','▤','✉'];
 function rootForCurrentRoute(){
- return catalog.roots.find(r=>currentRoute===hrefOf(r)||currentRoute?.startsWith(hrefOf(r)+'/'))||catalog.roots[0];
+ return catalog.roots.find(r=>currentRoute===hrefOf(r)||(hrefOf(r)!=='#/'&&currentRoute?.startsWith(hrefOf(r)+'/')))||catalog.roots[0];
 }
-function radialNode(node, index, count, layer, active, hasChildren){
- const angle=(index*360/count-90);
- const element=document.createElement(hasChildren?'button':'a');
- if(!hasChildren)element.href=hrefOf(node);
- if(hasChildren)element.type='button';
- element.className='radial-menu-node radial-node-'+layer+(active?' is-selected':'');
- element.style.setProperty('--angle',angle+'deg');
- element.style.setProperty('--node-index',String(index));
- element.title=titleOf(node);
- if(hasChildren){
-   element.setAttribute('aria-pressed',String(active));
-   element.setAttribute('aria-label',titleOf(node)+' – aloldalak megjelenítése');
- } else element.setAttribute('aria-label',titleOf(node)+' – oldal megnyitása');
- const symbols=['⌂','✦','★','▤','ⓘ','✉'];
- if(layer===1)element.append(dom('span',{class:'radial-node-symbol','aria-hidden':'true'},symbols[catalog.roots.indexOf(node)]||'◆'));
- else element.append(dom('span',{class:'radial-node-symbol','aria-hidden':'true'},layer===2?(hasChildren?'◎':'↗'):'↗'));
- element.append(dom('span',{class:'radial-node-label'},titleOf(node)));
- if(hasChildren){
-   element.addEventListener('click',()=>{
-      if(layer===1)renderSiteMap(node,null,true);
-      else renderSiteMap(siteMapSelected,node);
-   });
- }
- return element;
+function compassExpandButton(node, level, expanded, action){
+ const button=dom('button',{class:'compass26-expand','aria-label':titleOf(node)+' aloldalainak '+(expanded?'bezárása':'megtekintése'),'aria-expanded':String(expanded)},expanded?'−':'+');
+ button.type='button';button.addEventListener('click',action);return button;
 }
-function renderSiteMap(root, child, resetChild=false){
+function compassRow(node,level=2){
+ const children=pageChildren(node);
+ const group=dom('div',{class:'compass26-subgroup'});
+ const row=dom('div',{class:'compass26-linkrow'});
+ const link=navLink(node);link.className='compass26-sub-link';
+ link.prepend(dom('span',{class:'compass26-mini','aria-hidden':'true'},level===2?'↗':'›'));
+ row.append(link);
+ if(children.length){
+  const nested=dom('div',{class:'compass26-nested'});nested.hidden=true;
+  const btn=compassExpandButton(node,level,false,()=>{
+   nested.hidden=!nested.hidden;btn.textContent=nested.hidden?'+':'−';btn.setAttribute('aria-expanded',String(!nested.hidden));
+   btn.setAttribute('aria-label',titleOf(node)+' aloldalainak '+(nested.hidden?'megtekintése':'bezárása'));
+  });
+  row.append(btn);group.append(row);
+  children.forEach(child=>nested.append(compassRow(child,level+1)));
+  group.append(nested);
+ }else group.append(row);
+ return group;
+}
+function renderSiteMap(root){
+ if(!catalog)return;
  siteMapSelected=root||rootForCurrentRoute();
- if(!siteMapSelected)return;
- const children=pageChildren(siteMapSelected);
- siteMapSelectedChild=child&&children.includes(child)?child:null;
- if(!siteMapSelectedChild&&!resetChild){
-   const routeMatch=children.find(n=>currentRoute===hrefOf(n)||currentRoute?.startsWith(hrefOf(n)+'/'));
-   if(routeMatch&&pageChildren(routeMatch).length)siteMapSelectedChild=routeMatch;
- }
- siteMapCats.replaceChildren();siteMapSubtopics.replaceChildren();siteMapPages.replaceChildren();siteMapDetails.replaceChildren();
+ siteMapCats.replaceChildren();siteMapSubtopics.replaceChildren();siteMapDetails.replaceChildren();
  catalog.roots.forEach((entry,i)=>{
-   siteMapCats.append(radialNode(entry,i,catalog.roots.length,1,entry===siteMapSelected,true));
+  const wrapper=dom('div',{class:'compass26-choice'+(entry===siteMapSelected?' is-active':'')});
+  const link=navLink(entry);link.className='compass26-choice-link';
+  link.prepend(dom('span',{class:'compass26-choice-icon','aria-hidden':'true'},compassSymbols[i]||'◆'));
+  link.append(dom('span',{class:'compass26-choice-cta','aria-hidden':'true'},'↗'));
+  wrapper.append(link);
+  const children=pageChildren(entry);
+  if(children.length){
+   const toggle=dom('button',{class:'compass26-choice-toggle','aria-label':titleOf(entry)+' almenüinek megjelenítése','aria-pressed':String(entry===siteMapSelected)},'⌄');
+   toggle.type='button';toggle.addEventListener('click',()=>renderSiteMap(entry));wrapper.append(toggle);
+  }
+  siteMapCats.append(wrapper);
  });
- const grandchildren=siteMapSelectedChild?pageChildren(siteMapSelectedChild):[];
- const atThird=grandchildren.length>0;
- siteMapSubtopics.hidden=atThird;
- siteMapPages.hidden=!atThird;
- if(!atThird){children.forEach((entry,i)=>{
-   siteMapSubtopics.append(radialNode(entry,i,children.length,2,entry===siteMapSelectedChild,pageChildren(entry).length>0));
- });}
- if(atThird){grandchildren.forEach((entry,i)=>{
-   siteMapPages.append(radialNode(entry,i,grandchildren.length,3,false,false));
- });}
- document.querySelector('.radial-menu-wheel')?.classList.toggle('has-third-ring',atThird);
- const summary=dom('div',{class:'radial-menu-summary'});
- const crumb=dom('p',{class:'radial-menu-breadcrumb'});
- crumb.append(dom('span',{},'1. '+titleOf(siteMapSelected)));
- if(siteMapSelectedChild)crumb.append(dom('span',{'aria-hidden':'true'},'›'),dom('span',{},'2. '+titleOf(siteMapSelectedChild)));
- summary.append(crumb);
- summary.append(dom('h3',{},siteMapSelectedChild?siteMapSelectedChild.page.title:siteMapSelected.page.title));
- summary.append(dom('p',{class:'radial-menu-description'},(siteMapSelectedChild?.page?.summary||siteMapSelected.page.summary||'')));
- const actions=dom('div',{class:'radial-menu-actions'});
- const rootLink=navLink(siteMapSelected);rootLink.textContent='Főtémakör megnyitása';rootLink.className='radial-menu-action';actions.append(rootLink);
- if(siteMapSelectedChild){
-   const childLink=navLink(siteMapSelectedChild);childLink.textContent='Almenü áttekintése';childLink.className='radial-menu-action is-primary';actions.append(childLink);
- }
- if(grandchildren.length){
-   const back=dom('button',{class:'radial-menu-action radial-menu-back'},'← Vissza az almenükhöz');back.type='button';
-   back.addEventListener('click',()=>renderSiteMap(siteMapSelected,null,true));actions.prepend(back);
- }
- summary.append(actions);
- if(grandchildren.length){
-   const hint=dom('p',{class:'radial-menu-hint'},'3. szint: a külső gyűrűből közvetlenül megnyithatod a részletes oldalakat.');summary.append(hint);
- } else if(children.length){
-   summary.append(dom('p',{class:'radial-menu-hint'},'A külső gyűrűben lévő oldalak egyetlen kattintással megnyithatók.'));
- }
- siteMapDetails.append(summary);
+ document.getElementById('compass26-current').textContent=titleOf(siteMapSelected);
+ const children=pageChildren(siteMapSelected);
+ if(children.length)children.forEach(child=>siteMapSubtopics.append(compassRow(child)));
+ else siteMapSubtopics.append(dom('p',{class:'compass26-empty'},'Ez a témakör önálló oldal. A nagy kártyára kattintva megnyithatod.'));
+ const parent=navLink(siteMapSelected);parent.className='compass26-parent-link';parent.textContent=titleOf(siteMapSelected)+' oldal megnyitása ↗';
+ siteMapDetails.append(parent);
 }
 function openSiteMap(){
+ if(!catalog)return;
  siteMapReturnFocus=document.activeElement;
- const root=(currentRoute==='#/'||!currentRoute)?(catalog.roots.find(r=>hrefOf(r)==='#/oktatas')||rootForCurrentRoute()):rootForCurrentRoute();
- renderSiteMap(root);siteMap.hidden=false;
+ renderSiteMap(rootForCurrentRoute());siteMap.hidden=false;
  document.body.classList.add('site-map-is-open');
  document.getElementById('site-map-close').focus();
 }
