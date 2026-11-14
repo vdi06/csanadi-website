@@ -1,9 +1,15 @@
 {
   "schemaVersion": "1.0.0",
   "collectionId": "collection:napi-sporthirek",
-  "updatedAt": "2026-11-14T19:38:03+00:00",
+  "updatedAt": "2026-11-14T19:55:56+00:00",
   "source": "Nemzeti Sport Online RSS",
   "items": [
+    {
+      "title": "Asztalitenisz, Európa-kupa: nem volt esély a spanyolok ellen",
+      "url": "https://nemzetisport.hu/egyeb-egyeni/2026/11/asztalitenisz-europa-kupa-nem-volt-esely-a-spanyolok-ellen",
+      "publishedAt": "2026-11-14T19:49:32+00:00",
+      "category": "Sport"
+    },
     {
       "title": "Szoboszlai a bemelegítésnél közel járt ahhoz, hogy ne vállalja a játékot",
       "url": "https://nemzetisport.hu/magyar-valogatott/2026/11/szoboszlai-a-bemelegitesnel-kozel-jart-ahhoz-hogy-ne-vallalja-a-jatekot",
@@ -83,8 +89,8 @@
       "category": "Sport"
     },
     {
-      "title": "Galéria: Grúziában játszik Nemzetek Ligája-mérkőzést a magyar válogatott",
-      "url": "https://nemzetisport.hu/magyar-valogatott/2026/11/galeria-gruziaban-jatszik-nemzetek-ligaja-merkozest-a-magyar-valogatott",
+      "title": "Galéria: képeken a magyar válogatott grúziai sikere",
+      "url": "https://nemzetisport.hu/magyar-valogatott/2026/11/galeria-kepeken-a-magyar-valogatott-gruziai-sikere",
       "publishedAt": "2026-11-14T17:14:57+00:00",
       "category": "Sport"
     },
@@ -104,12 +110,6 @@
       "title": "Kiváló meccsen játszott döntetlent a Szeged hazai pályán a Veszprém ellen",
       "url": "https://nemzetisport.hu/kezilabda/2026/11/kivalo-meccsen-jatszott-dontetlent-a-szeged-hazai-palyan-a-veszprem-ellen",
       "publishedAt": "2026-11-14T16:46:44+00:00",
-      "category": "Sport"
-    },
-    {
-      "title": "Férfi kosár NB I: 102 pontig jutott, 10 meccs után is hibátlan az Atomerőmű",
-      "url": "https://nemzetisport.hu/kosarlabda/2026/11/ferfi-kosar-nb-i-102-pontig-jutott-10-meccs-utan-is-hibatlan-az-atomeromu",
-      "publishedAt": "2026-11-14T16:13:33+00:00",
       "category": "Sport"
     }
   ]
