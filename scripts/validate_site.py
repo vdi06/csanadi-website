@@ -47,8 +47,10 @@ for p in (ROOT/'json/adatok').rglob('*.json'):
 for item in json.loads((ROOT/'json/mediatar.json').read_text(encoding='utf-8'))['items']:
     path=item['original']['path']
     if not (ROOT/path).is_file():error('Hiányzó média: '+path)
-for p in ('index.html','script.js','style.css','next-2026.css','orbit-2026.css','radial-2026.css','js/student-achievements.js','js/daily-sport-news.js'):
+for p in ('index.html','script.js','css/style.css','css/next-2026.css','css/orbit-2026.css','css/layout-2026.css','css/radial-2026.css','css/organized-2026.css','js/student-achievements.js','js/daily-sport-news.js'):
     if not (ROOT/p).is_file():error('Hiányzó programfájl: '+p)
+for sheet in re.findall(r'href="(css/[^"]+\.css)(?:\?[^"]*)?"',(ROOT/'index.html').read_text(encoding='utf-8')):
+    if not (ROOT/sheet).is_file():error('Hiányzó CSS-hivatkozás: '+sheet)
 if errors:
     print('\n'.join('HIBA: '+s for s in errors));sys.exit(1)
 print(f'OK: {len(paths)} regisztrált oldal, {len(list((ROOT/"json").rglob("*.json")))} JSON, médiaellenőrzés, hétnapos eredményséma')

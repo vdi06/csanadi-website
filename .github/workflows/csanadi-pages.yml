@@ -50,8 +50,8 @@ jobs:
         shell: bash
         run: |
           mkdir -p site-dist
-          cp index.html script.js style.css next-2026.css orbit-2026.css site-dist/
-          cp -R js json assets site-dist/
+          cp index.html script.js site-dist/
+          cp -R css js json assets site-dist/
           touch site-dist/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4

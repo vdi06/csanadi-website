@@ -111,14 +111,14 @@ html,body{min-height:100%}
 body{background:var(--decorative-base);transition:background-color .3s,color .2s}
 .main-content{
   background-color:var(--decorative-base);
-  background-image:linear-gradient(117deg,rgba(255,255,255,.86),rgba(255,248,225,.5) 38%,rgba(239,196,110,.18) 65%,rgba(255,255,255,.87)),url('assets/graphics/sports-pattern-light.svg');
+  background-image:linear-gradient(117deg,rgba(255,255,255,.86),rgba(255,248,225,.5) 38%,rgba(239,196,110,.18) 65%,rgba(255,255,255,.87)),url('../assets/graphics/sports-pattern-light.svg');
   background-size:cover,840px 840px;
   background-repeat:repeat;
   background-position:center,center top;
   transition:background-color .4s;
 }
 html[data-theme="dark"] .main-content{
-  background-image:linear-gradient(115deg,rgba(9,24,42,.92),rgba(12,28,48,.76) 36%,rgba(33,49,68,.76) 72%,rgba(9,23,40,.93)),url('assets/graphics/sports-pattern-dark.svg');
+  background-image:linear-gradient(115deg,rgba(9,24,42,.92),rgba(12,28,48,.76) 36%,rgba(33,49,68,.76) 72%,rgba(9,23,40,.93)),url('../assets/graphics/sports-pattern-dark.svg');
 }
 .main-content[data-page-kind="sport"]{background-size:cover,770px 770px}
 .main-content[data-page-kind="education"]{background-size:cover,960px 960px}
@@ -458,7 +458,7 @@ html[data-theme="dark"]{--experience-line:rgba(222,181,101,.35);--experience-sur
 
 /* Entrance gate: a full viewport cinematic overlay, automatically removable. */
 .entry-portal{position:fixed;z-index:2500;inset:0;width:100%;height:100svh;overflow:hidden;background:#07182a;color:#fff;perspective:1100px;isolation:isolate}
-.entry-portal-backdrop{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,17,34,.43),rgba(6,19,35,.14)),url('assets/media/web/belepes-kapu.webp') center/cover no-repeat;transform:scale(1.055);transition:transform 3s ease}
+.entry-portal-backdrop{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,17,34,.43),rgba(6,19,35,.14)),url('../assets/media/web/belepes-kapu.webp') center/cover no-repeat;transform:scale(1.055);transition:transform 3s ease}
 .entry-portal-frame{position:absolute;inset:0;z-index:2;display:flex;perspective:1400px;pointer-events:none}
 .entry-gate-leaf{width:50%;height:100%;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(1,10,23,.96),rgba(15,34,56,.97),rgba(2,13,25,.94));border:3px solid #bb9448;box-shadow:inset 0 0 0 7px #0b223a,inset 0 0 0 12px #d2aa5c,0 0 65px #050d18;transition:transform 2.15s cubic-bezier(.16,.76,.28,1),opacity 1.8s ease;backface-visibility:hidden}
 .entry-gate-left{transform-origin:left center;border-right:8px solid #dbb96f}

@@ -13,11 +13,11 @@ html[data-theme="dark"]{
  --shadow:0 13px 37px rgba(2,9,18,.35);color-scheme:dark;
 }
 html[data-theme="light"] body{
- background-image:linear-gradient(125deg,rgba(236,230,220,.94),rgba(226,217,201,.90)),url('assets/graphics/sports-pattern-light.svg')!important;
+ background-image:linear-gradient(125deg,rgba(236,230,220,.94),rgba(226,217,201,.90)),url('../assets/graphics/sports-pattern-light.svg')!important;
  background-color:var(--page)!important;
 }
 html[data-theme="dark"] body{
- background-image:linear-gradient(125deg,rgba(12,27,44,.95),rgba(16,40,61,.92)),url('assets/graphics/sports-pattern-dark.svg')!important;
+ background-image:linear-gradient(125deg,rgba(12,27,44,.95),rgba(16,40,61,.92)),url('../assets/graphics/sports-pattern-dark.svg')!important;
 }
 body,.main-content,.text-flow,.body-card,.feature-card,.side-panel{color:var(--ink)}
 .section-title,.card-title,.body-card h2,.content-tile h3,.student-success-card h3,.daily-sports-card h3{color:var(--ink)!important}

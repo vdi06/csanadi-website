@@ -2,7 +2,7 @@
 .portal-replay-btn{width:auto;min-width:44px;padding:0 12px;font-size:11px;display:inline-flex;gap:5px;align-items:center;justify-content:center;white-space:nowrap;color:#f5d594}
 .portal-replay-btn span{font-weight:800}
 .gate26{position:fixed;inset:0;z-index:4500;overflow:hidden;background:#071729;color:#fff;isolation:isolate;perspective:1600px;display:grid;place-items:center}
-.gate26-scene{position:absolute;inset:-4%;background:linear-gradient(120deg,rgba(5,16,31,.43),rgba(3,12,26,.1)),url('assets/media/web/belepes-kapu.webp') center/cover no-repeat;transform:scale(1.23);transition:transform 5.1s cubic-bezier(.18,.72,.28,1);z-index:0}
+.gate26-scene{position:absolute;inset:-4%;background:linear-gradient(120deg,rgba(5,16,31,.43),rgba(3,12,26,.1)),url('../assets/media/web/belepes-kapu.webp') center/cover no-repeat;transform:scale(1.23);transition:transform 5.1s cubic-bezier(.18,.72,.28,1);z-index:0}
 .gate26-glow{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.8;background:radial-gradient(ellipse at 50% 40%,rgba(255,220,147,.33),transparent 37%),linear-gradient(105deg,transparent 44%,rgba(251,206,108,.17) 49%,transparent 56%);mix-blend-mode:screen;transition:opacity 3.4s ease,transform 5.0s ease}
 .gate26-doors{position:absolute;inset:0;display:flex;z-index:3;perspective:1500px;pointer-events:none}
 .gate26-door{width:50%;height:100%;position:relative;background:linear-gradient(95deg,#061525,#133755,#07182a);border:4px solid #ddb565;backface-visibility:hidden;box-shadow:inset 0 0 0 8px #051522,inset 0 0 0 13px #cea653,0 0 45px rgba(0,0,0,.46);transition:transform 4.8s cubic-bezier(.14,.71,.18,1),filter 4.8s ease;will-change:transform}
@@ -220,8 +220,8 @@ html[data-theme="light"] .header-social a{color:#13283e!important}
 :root,html[data-theme="light"]{--navy:#122b46;--navy2:#214360;--gold:#c39a4a;--gold2:#ead09b;--ink:#182d40;--muted:#516477;--light:#f5ecdc;--line:#d8c9ad;--card:#fffcf6;--page:#f7f1e6;--shadow:0 16px 45px #17345118;color-scheme:light}
 html[data-theme="dark"]{--navy:#0b1d30;--navy2:#173b57;--gold:#d8b169;--gold2:#efdcaf;--ink:#f5edda;--muted:#c3cfda;--light:#1b3650;--line:#3a5770;--card:#142f48;--page:#0c2136;--shadow:0 18px 40px #0006;color-scheme:dark}
 body,.main-content{background-color:var(--page);color:var(--ink)}
-html[data-theme="light"] body{background-image:linear-gradient(136deg,#faf5e9db,#f5e9cddc),url('assets/graphics/sports-pattern-light.svg');background-attachment:fixed;background-size:cover,620px auto}
-html[data-theme="dark"] body{background-image:linear-gradient(140deg,#081e31ec,#0f2a43ec),url('assets/graphics/sports-pattern-dark.svg');background-attachment:fixed;background-size:cover,620px auto}
+html[data-theme="light"] body{background-image:linear-gradient(136deg,#faf5e9db,#f5e9cddc),url('../assets/graphics/sports-pattern-light.svg');background-attachment:fixed;background-size:cover,620px auto}
+html[data-theme="dark"] body{background-image:linear-gradient(140deg,#081e31ec,#0f2a43ec),url('../assets/graphics/sports-pattern-dark.svg');background-attachment:fixed;background-size:cover,620px auto}
 html[data-theme="light"] .main-content,html[data-theme="dark"] .main-content{background:transparent!important;color:var(--ink)}
 
 /* Hat egyértelmű desktop menü; alatta csak a megmaradt és tartalommal feltöltött oldalak. */
