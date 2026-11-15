@@ -15,7 +15,7 @@ import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=20261114
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=20261114verified1';
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=20261114ten2';
-import {renderBlock,dom,listCards} from './blocks.js?v=20261114navs3';
+import {renderBlock,dom,listCards} from './blocks.js?v=20261115dock1';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=20261114dfg1';
 import {renderSportsSuccesses} from './sports-successes.js?v=20261114v5';
 import {renderStudentAchievements} from './student-achievements.js?v=20261114navs3';

@@ -14,7 +14,7 @@ export function renderPageMedia(route){
   const config=data.items?.[route];if(!config){box.hidden=true;return;}
   icon.src=config.icon;
   for(const item of config.images){
-   const card=els('a','media2026-card');card.href='#/sport/sportgaleriak';card.title='Teljes galéria megnyitása';
+   const card=els('a','media2026-card');card.href=item.photoId?'?galleryPhoto='+encodeURIComponent(item.photoId)+'#/sport/sportgaleriak':'#/sport/sportgaleriak';card.title='A kiválasztott kép megnyitása a galériában';
    const image=els('img');image.src=item.thumb||item.src;image.alt=item.alt;image.loading='lazy';image.decoding='async';
    if(item.srcset){image.srcset=item.srcset;image.sizes='(max-width:600px) 45vw, 330px';}
    card.append(image,els('strong','',item.title));grid.append(card);

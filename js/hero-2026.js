@@ -30,6 +30,31 @@ export function renderPremiumHero(block){
   }
   section.append(stage);
   const bottom=el('div','hero2026-bottom container-xxl');
+  const dock=el('div','csn26-hero-dock');
+  const preview=(position)=>{
+    const button=el('button','csn26-hero-preview csn26-hero-preview--'+position);
+    button.type='button';
+    const photo=el('span','csn26-hero-preview-photo');
+    const copy=el('span','csn26-hero-preview-copy');
+    const positionLabel=el('span','csn26-hero-preview-direction',position==='left'?'Előző kiemelés':'Következő kiemelés');
+    const title=el('strong','csn26-hero-preview-title');
+    copy.append(positionLabel,title);button.append(photo,copy);
+    button.addEventListener('click',()=>switchTo(idx+(position==='left'?-1:1)));
+    return {button,photo,title,position};
+  };
+  const before=preview('left'),after=preview('right');
+  const launcher=document.querySelector('body > .orbit-launch');
+  if(launcher){
+    const open=launcher.querySelector('#orbit-open');
+    if(open){
+      open.replaceChildren(
+        el('span','csn26-dock-compass','✥'),
+        el('span','csn26-dock-label','Oldaltérkép'),
+        el('span','csn26-dock-hint','Navigáció megnyitása')
+      );
+    }
+    dock.append(before.button,launcher,after.button);
+  }
   const rail=el('div','hero2026-nav');
   const prev=el('button','hero2026-arrow','‹'),next=el('button','hero2026-arrow','›'),pause=el('button','hero2026-pause','Szünet');
   prev.type=next.type=pause.type='button';prev.setAttribute('aria-label','Előző kiemelt kép');next.setAttribute('aria-label','Következő kiemelt kép');
@@ -39,10 +64,19 @@ export function renderPremiumHero(block){
   const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)');
   const dotsList=slides.map((slide,i)=>{const b=el('button','hero2026-dot');b.type='button';b.setAttribute('aria-label',`${i+1}. kiemelt kép: ${slide.title||''}`);b.addEventListener('click',()=>switchTo(i));dots.append(b);return b;});
   const counter=el('span','hero2026-count');
+  const syncPreview=(item,slideIndex)=>{
+    const selected=slides[(slideIndex+slides.length)%slides.length];
+    const title=selected.title||'Kiemelt iskolai tartalom';
+    item.title.textContent=title;
+    item.button.setAttribute('aria-label',(item.position==='left'?'Előző':'Következő')+' kiemelt kép: '+title);
+    const photo=createPicture(selected.mediaId,{className:'csn26-hero-preview-picture',sizes:'(max-width: 760px) 110px, 260px'});
+    item.photo.replaceChildren(...(photo?[photo]:[]));
+  };
   const sync=()=>{
     panels.forEach((p,i)=>{p.setAttribute('aria-hidden',String(i!==idx));p.inert=i!==idx;p.classList.toggle('is-active',i===idx);});
     dotsList.forEach((b,i)=>{b.classList.toggle('active',i===idx);b.setAttribute('aria-pressed',String(i===idx));});
     counter.textContent=`${String(idx+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
+    if(launcher){syncPreview(before,idx-1);syncPreview(after,idx+1);}
   };
   const switchTo=i=>{idx=(i+slides.length)%slides.length;sync();};
   prev.addEventListener('click',()=>switchTo(idx-1));next.addEventListener('click',()=>switchTo(idx+1));
@@ -58,7 +92,9 @@ export function renderPremiumHero(block){
   section.addEventListener('focusin',()=>focused=true);
   section.addEventListener('focusout',()=>{setTimeout(()=>focused=section.contains(document.activeElement),0);});
   const onMotion=()=>pausedText();prefersReduced.addEventListener?.('change',onMotion);
-  rail.append(prev,dots,next,counter,pause);bottom.append(rail);section.append(bottom);
+  rail.append(prev,dots,next,counter,pause);
+  if(launcher)bottom.append(dock);
+  bottom.append(rail);section.append(bottom);
   sync();pausedText();
   const tick=Math.max(4000,Math.min(16000,Number(d.intervalMs)||7200));
   const timer=setInterval(()=>{

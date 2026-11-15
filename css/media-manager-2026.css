@@ -70,3 +70,5 @@
 .mm-item-line .mm-bulk-check{width:20px;height:20px;flex:0 0 20px;accent-color:#bd8b35;cursor:pointer}
 .mm-item-line .mm-bulk-check:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 @media(max-width:490px){.mm-bulk-controls{grid-template-columns:1fr}.mm-bulk{padding:11px}}
+
+@media(min-width:780px){.csanadi-tool .mm-toolbar{grid-template-columns:repeat(2,minmax(0,1fr))}}

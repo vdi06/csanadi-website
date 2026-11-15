@@ -50,6 +50,30 @@
           "height": 900,
           "sizeBytes": 286734,
           "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
+        },
+        {
+          "path": "assets/media/web/responsive/hero-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 14204,
+          "sha256": "57a8ca7f15b8f563bbc8abaf91d53bac383a60e56d20797a8065853717bbae39"
+        },
+        {
+          "path": "assets/media/web/responsive/hero-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 41474,
+          "sha256": "fa8ea75a31a24f21fa0deccf3419d898eb9971239d4fb3cb9a88ace81647a9fe"
+        },
+        {
+          "path": "assets/media/web/responsive/hero-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 73582,
+          "sha256": "0a34280b1a34a3b254cf4eb24338c7a71dd2a62622504e127958767425d91b42"
         }
       ],
       "alt": "Érkező diákok a sportakadémia bejáratánál",
@@ -80,6 +104,30 @@
           "height": 900,
           "sizeBytes": 266314,
           "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
+        },
+        {
+          "path": "assets/media/web/responsive/iskolank-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 15748,
+          "sha256": "8dd849c58f88206adcac4e93ed53f33d52f2adfa7b7cb42213e8d64efe35d44a"
+        },
+        {
+          "path": "assets/media/web/responsive/iskolank-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 43216,
+          "sha256": "c7af996bde51dc05011862306897ce8aa7c5fb674fc3580467c11b677bec33ca"
+        },
+        {
+          "path": "assets/media/web/responsive/iskolank-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 72102,
+          "sha256": "0900ca96f35f4387636c322c5b95bd8e7f654eb6d1d479de010e125a3a330768"
         }
       ],
       "alt": "Vidám iskolai sportnap a campuson",
@@ -110,6 +158,30 @@
           "height": 900,
           "sizeBytes": 229154,
           "sha256": "786744eb3f3c97e706da0b899719076b1d320c273950c20a086a54d59500f9eb"
+        },
+        {
+          "path": "assets/media/web/responsive/oktatas-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 12992,
+          "sha256": "d982cbfa96d021c3a79d50e93233af2472c0ee422db1f800b4b361f882ac21fa"
+        },
+        {
+          "path": "assets/media/web/responsive/oktatas-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 33178,
+          "sha256": "00f2199cca065fa9a4094d313d86d6f13570668a0b884cdc80c42db966ea7f8a"
+        },
+        {
+          "path": "assets/media/web/responsive/oktatas-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 56340,
+          "sha256": "22fcbe5c9253937bda6e0a3115259be13d02ae8d7b6380437c9239ad985f29f0"
         }
       ],
       "alt": "Együttműködő tanulás modern osztályteremben",
@@ -140,6 +212,30 @@
           "height": 900,
           "sizeBytes": 342632,
           "sha256": "461395c1deda2d731b68339921526d8e25d79dc20609123e6ca53ec46b0e734a"
+        },
+        {
+          "path": "assets/media/web/responsive/sport-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 15602,
+          "sha256": "64db2daf5cb56bfed91153afc597a7fa19bd742197510a27c276147b9ba84c7b"
+        },
+        {
+          "path": "assets/media/web/responsive/sport-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 47290,
+          "sha256": "aafcac1340d8deba91228fb07a55fb8eedb1db7651b770357902dcba1f3eee4e"
+        },
+        {
+          "path": "assets/media/web/responsive/sport-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 85288,
+          "sha256": "5aa6a5affa63e9df50eea9b6b671fb5ade0c60fb68c6a25307007e8d00cdf5ab"
         }
       ],
       "alt": "Kék-arany fociedzés az akadémián",
@@ -170,6 +266,30 @@
           "height": 900,
           "sizeBytes": 254656,
           "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
+        },
+        {
+          "path": "assets/media/web/responsive/kozosseg-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 14676,
+          "sha256": "29ad175bbc0a907b9b8bd91992afacfaed548b166045829350b5607595edabf1"
+        },
+        {
+          "path": "assets/media/web/responsive/kozosseg-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 39774,
+          "sha256": "72c838ce7088bb70d09876ff51b313b81836878002ccdd6a6585e05496d127e6"
+        },
+        {
+          "path": "assets/media/web/responsive/kozosseg-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 64774,
+          "sha256": "17af530afb0f195826cc9f8f26482cc1e8eb8ee989d7ac3a5566e8ef64c4f12a"
         }
       ],
       "alt": "Közös tanulás a modern könyvtárban",
@@ -200,6 +320,30 @@
           "height": 900,
           "sizeBytes": 286734,
           "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
+        },
+        {
+          "path": "assets/media/web/responsive/felveteli-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 14204,
+          "sha256": "57a8ca7f15b8f563bbc8abaf91d53bac383a60e56d20797a8065853717bbae39"
+        },
+        {
+          "path": "assets/media/web/responsive/felveteli-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 41474,
+          "sha256": "fa8ea75a31a24f21fa0deccf3419d898eb9971239d4fb3cb9a88ace81647a9fe"
+        },
+        {
+          "path": "assets/media/web/responsive/felveteli-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 73582,
+          "sha256": "0a34280b1a34a3b254cf4eb24338c7a71dd2a62622504e127958767425d91b42"
         }
       ],
       "alt": "Érkező diákok a sportakadémia bejáratánál",
@@ -230,6 +374,30 @@
           "height": 900,
           "sizeBytes": 169604,
           "sha256": "8566576bd8c959c40d6ad92e99f5795cd13c3ff3fb7e1c1620186616b84055ba"
+        },
+        {
+          "path": "assets/media/web/responsive/eredmenyek-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 11540,
+          "sha256": "c387902e17282488880d6e43acc0bf6c6dd448e6a9dca4fa3d737a3a6f521bde"
+        },
+        {
+          "path": "assets/media/web/responsive/eredmenyek-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 27474,
+          "sha256": "187ba85f1c4591f4a98b8faca64ede8b53bee499bd71265c8a41b21c85ba4b7d"
+        },
+        {
+          "path": "assets/media/web/responsive/eredmenyek-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 43552,
+          "sha256": "78deb94bf9c9219cd928ea3cfb97c2b7407e69d932e337d74dfae5b37e341566"
         }
       ],
       "alt": "Iskolai díjátadó ünnepség",
@@ -260,6 +428,30 @@
           "height": 900,
           "sizeBytes": 266314,
           "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
+        },
+        {
+          "path": "assets/media/web/responsive/esemenyek-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 15748,
+          "sha256": "8dd849c58f88206adcac4e93ed53f33d52f2adfa7b7cb42213e8d64efe35d44a"
+        },
+        {
+          "path": "assets/media/web/responsive/esemenyek-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 43216,
+          "sha256": "c7af996bde51dc05011862306897ce8aa7c5fb674fc3580467c11b677bec33ca"
+        },
+        {
+          "path": "assets/media/web/responsive/esemenyek-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 72102,
+          "sha256": "0900ca96f35f4387636c322c5b95bd8e7f654eb6d1d479de010e125a3a330768"
         }
       ],
       "alt": "Vidám iskolai sportnap a campuson",
@@ -290,6 +482,30 @@
           "height": 900,
           "sizeBytes": 254656,
           "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
+        },
+        {
+          "path": "assets/media/web/responsive/kapcsolat-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 14676,
+          "sha256": "29ad175bbc0a907b9b8bd91992afacfaed548b166045829350b5607595edabf1"
+        },
+        {
+          "path": "assets/media/web/responsive/kapcsolat-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 39774,
+          "sha256": "72c838ce7088bb70d09876ff51b313b81836878002ccdd6a6585e05496d127e6"
+        },
+        {
+          "path": "assets/media/web/responsive/kapcsolat-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 64774,
+          "sha256": "17af530afb0f195826cc9f8f26482cc1e8eb8ee989d7ac3a5566e8ef64c4f12a"
         }
       ],
       "alt": "Közös tanulás a modern könyvtárban",
@@ -320,6 +536,30 @@
           "height": 900,
           "sizeBytes": 229260,
           "sha256": "b16a3377340e805f424483fce6018ae609a215304ad151bb73cfdc0ad46e3e1a"
+        },
+        {
+          "path": "assets/media/web/responsive/siker-atletika-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 14270,
+          "sha256": "e4f97f15096a18a35debcac7173b7df52aabef26b577b48bf8c516f5243dc280"
+        },
+        {
+          "path": "assets/media/web/responsive/siker-atletika-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 36762,
+          "sha256": "8c743e1d292d7d2c92dcbde74280947f1aa8d87d3f2828ccf02c99f6b3dd2327"
+        },
+        {
+          "path": "assets/media/web/responsive/siker-atletika-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 59644,
+          "sha256": "21fe4b22fd326c1334cfb0a669a24939eca4bfb5e827836de354d3dadedd07ae"
         }
       ],
       "alt": "Diadal a célvonalnál",
@@ -350,6 +590,30 @@
           "height": 900,
           "sizeBytes": 219684,
           "sha256": "1474a09b8adfb3830bdded2f4029b7e09341034ad3fd2f886765d9fd8be18123"
+        },
+        {
+          "path": "assets/media/web/responsive/siker-kosarlabda-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 12138,
+          "sha256": "c6b7bf626582c2c195ee5ca5078b709a4bd1d895e5a1a0e5eb144de3b8050229"
+        },
+        {
+          "path": "assets/media/web/responsive/siker-kosarlabda-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 32448,
+          "sha256": "5a23f17b6030160d3f4826fd36ffc43c1a0c7850e407efdd3fefcbd001faec6f"
+        },
+        {
+          "path": "assets/media/web/responsive/siker-kosarlabda-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 54376,
+          "sha256": "dfdd07a846ac2a5ad3ea95d2be69bc6e0a167294e644eeeb52f83272c7ea03b6"
         }
       ],
       "alt": "Intenzív kosárlabdaedzés az iskolai tornateremben",
@@ -380,6 +644,30 @@
           "height": 900,
           "sizeBytes": 276394,
           "sha256": "63c099895ead15acee5b9b491dd15d37aa27629e5468e1bc70ce90b96cc898ba"
+        },
+        {
+          "path": "assets/media/web/responsive/siker-uszas-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 14648,
+          "sha256": "c23879c626a1af7ab1f68751cde54046dc930d29d6dd7c63777c075ed5d55127"
+        },
+        {
+          "path": "assets/media/web/responsive/siker-uszas-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 40350,
+          "sha256": "35ed5c9301ad3c4ee9c3bd4b73f26297974f76e205b3c308a592205bf7d47972"
+        },
+        {
+          "path": "assets/media/web/responsive/siker-uszas-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 69506,
+          "sha256": "4f919ddb5fc08ffe83b4478a2fdf73b44cc028b60a3850270eb7a09e0da392bb"
         }
       ],
       "alt": "Medencés csapatünneplés",
@@ -410,6 +698,30 @@
           "height": 900,
           "sizeBytes": 165954,
           "sha256": "623f6ef3ae6ca9550d4c8b8b884974749d0aa74ef93cae46f7e2e0f041c732b7"
+        },
+        {
+          "path": "assets/media/web/responsive/siker-roplabda-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 9982,
+          "sha256": "679a736b32a255f1632d348b6c3d5ee0f7560d7bf4693e1f497bacb758b506b9"
+        },
+        {
+          "path": "assets/media/web/responsive/siker-roplabda-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 24952,
+          "sha256": "a77c1968de3813b29cfe6c6164a30d1424026393938f409a9037cf82a7dd35cf"
+        },
+        {
+          "path": "assets/media/web/responsive/siker-roplabda-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 40838,
+          "sha256": "f0710928fb10ccaf27536e162652e4c1df0f66a5a991218b868beeb52f5401aa"
         }
       ],
       "alt": "Lendületes röplabdaakció az iskolai csarnokban",
@@ -440,6 +752,30 @@
           "height": 900,
           "sizeBytes": 219684,
           "sha256": "1474a09b8adfb3830bdded2f4029b7e09341034ad3fd2f886765d9fd8be18123"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-01-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 12138,
+          "sha256": "c6b7bf626582c2c195ee5ca5078b709a4bd1d895e5a1a0e5eb144de3b8050229"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-01-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 32448,
+          "sha256": "5a23f17b6030160d3f4826fd36ffc43c1a0c7850e407efdd3fefcbd001faec6f"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-01-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 54376,
+          "sha256": "dfdd07a846ac2a5ad3ea95d2be69bc6e0a167294e644eeeb52f83272c7ea03b6"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -470,6 +806,30 @@
           "height": 900,
           "sizeBytes": 229260,
           "sha256": "b16a3377340e805f424483fce6018ae609a215304ad151bb73cfdc0ad46e3e1a"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-02-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 14270,
+          "sha256": "e4f97f15096a18a35debcac7173b7df52aabef26b577b48bf8c516f5243dc280"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-02-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 36762,
+          "sha256": "8c743e1d292d7d2c92dcbde74280947f1aa8d87d3f2828ccf02c99f6b3dd2327"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-02-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 59644,
+          "sha256": "21fe4b22fd326c1334cfb0a669a24939eca4bfb5e827836de354d3dadedd07ae"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -500,6 +860,30 @@
           "height": 900,
           "sizeBytes": 276394,
           "sha256": "63c099895ead15acee5b9b491dd15d37aa27629e5468e1bc70ce90b96cc898ba"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-03-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 14648,
+          "sha256": "c23879c626a1af7ab1f68751cde54046dc930d29d6dd7c63777c075ed5d55127"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-03-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 40350,
+          "sha256": "35ed5c9301ad3c4ee9c3bd4b73f26297974f76e205b3c308a592205bf7d47972"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-03-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 69506,
+          "sha256": "4f919ddb5fc08ffe83b4478a2fdf73b44cc028b60a3850270eb7a09e0da392bb"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -530,6 +914,30 @@
           "height": 900,
           "sizeBytes": 165954,
           "sha256": "623f6ef3ae6ca9550d4c8b8b884974749d0aa74ef93cae46f7e2e0f041c732b7"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-04-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 9982,
+          "sha256": "679a736b32a255f1632d348b6c3d5ee0f7560d7bf4693e1f497bacb758b506b9"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-04-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 24952,
+          "sha256": "a77c1968de3813b29cfe6c6164a30d1424026393938f409a9037cf82a7dd35cf"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-04-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 40838,
+          "sha256": "f0710928fb10ccaf27536e162652e4c1df0f66a5a991218b868beeb52f5401aa"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -560,6 +968,30 @@
           "height": 900,
           "sizeBytes": 254656,
           "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-05-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 14676,
+          "sha256": "29ad175bbc0a907b9b8bd91992afacfaed548b166045829350b5607595edabf1"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-05-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 39774,
+          "sha256": "72c838ce7088bb70d09876ff51b313b81836878002ccdd6a6585e05496d127e6"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-05-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 64774,
+          "sha256": "17af530afb0f195826cc9f8f26482cc1e8eb8ee989d7ac3a5566e8ef64c4f12a"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -590,6 +1022,30 @@
           "height": 900,
           "sizeBytes": 229154,
           "sha256": "786744eb3f3c97e706da0b899719076b1d320c273950c20a086a54d59500f9eb"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-06-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 12992,
+          "sha256": "d982cbfa96d021c3a79d50e93233af2472c0ee422db1f800b4b361f882ac21fa"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-06-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 33178,
+          "sha256": "00f2199cca065fa9a4094d313d86d6f13570668a0b884cdc80c42db966ea7f8a"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-06-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 56340,
+          "sha256": "22fcbe5c9253937bda6e0a3115259be13d02ae8d7b6380437c9239ad985f29f0"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -620,6 +1076,30 @@
           "height": 900,
           "sizeBytes": 266314,
           "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-07-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 15748,
+          "sha256": "8dd849c58f88206adcac4e93ed53f33d52f2adfa7b7cb42213e8d64efe35d44a"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-07-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 43216,
+          "sha256": "c7af996bde51dc05011862306897ce8aa7c5fb674fc3580467c11b677bec33ca"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-07-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 72102,
+          "sha256": "0900ca96f35f4387636c322c5b95bd8e7f654eb6d1d479de010e125a3a330768"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -650,6 +1130,30 @@
           "height": 900,
           "sizeBytes": 169604,
           "sha256": "8566576bd8c959c40d6ad92e99f5795cd13c3ff3fb7e1c1620186616b84055ba"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-08-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 11540,
+          "sha256": "c387902e17282488880d6e43acc0bf6c6dd448e6a9dca4fa3d737a3a6f521bde"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-08-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 27474,
+          "sha256": "187ba85f1c4591f4a98b8faca64ede8b53bee499bd71265c8a41b21c85ba4b7d"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-08-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 43552,
+          "sha256": "78deb94bf9c9219cd928ea3cfb97c2b7407e69d932e337d74dfae5b37e341566"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -680,6 +1184,30 @@
           "height": 900,
           "sizeBytes": 342632,
           "sha256": "461395c1deda2d731b68339921526d8e25d79dc20609123e6ca53ec46b0e734a"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-09-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 15602,
+          "sha256": "64db2daf5cb56bfed91153afc597a7fa19bd742197510a27c276147b9ba84c7b"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-09-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 47290,
+          "sha256": "aafcac1340d8deba91228fb07a55fb8eedb1db7651b770357902dcba1f3eee4e"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-09-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 85288,
+          "sha256": "5aa6a5affa63e9df50eea9b6b671fb5ade0c60fb68c6a25307007e8d00cdf5ab"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -710,6 +1238,30 @@
           "height": 900,
           "sizeBytes": 286734,
           "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-10-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 14204,
+          "sha256": "57a8ca7f15b8f563bbc8abaf91d53bac383a60e56d20797a8065853717bbae39"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-10-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 41474,
+          "sha256": "fa8ea75a31a24f21fa0deccf3419d898eb9971239d4fb3cb9a88ace81647a9fe"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-10-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 73582,
+          "sha256": "0a34280b1a34a3b254cf4eb24338c7a71dd2a62622504e127958767425d91b42"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -740,6 +1292,14 @@
           "height": 400,
           "sizeBytes": 21702,
           "sha256": "8af078c52426b91c416b182858c635c98c31a5bd99790a0986e9993ec5073a7a"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-11-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 278,
+          "sizeBytes": 8416,
+          "sha256": "3a3049365d09c777ffe90d187aa9f7c5658c3e7d1909e77d1901000ada1d7546"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -770,6 +1330,14 @@
           "height": 400,
           "sizeBytes": 25502,
           "sha256": "a7181527daaa43aa7813f7ff4ba239a4d3011585521774e86a61c5ae88f3237d"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-12-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 278,
+          "sizeBytes": 10050,
+          "sha256": "5c412c7b7bf308b9a98082a3666a3026ed3a1c453d060fc6b894a324df241055"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -800,6 +1368,14 @@
           "height": 400,
           "sizeBytes": 31120,
           "sha256": "c3e38463d4128e274dc18766333670e0cc32b68d6201f1bec54b3b9ea6f267e6"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-13-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 278,
+          "sizeBytes": 12320,
+          "sha256": "cf2ead93ff754cbe0525f0f6e6d0b9d88504af1d57a03fd8dced9acc99a0e143"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -830,6 +1406,14 @@
           "height": 400,
           "sizeBytes": 49466,
           "sha256": "5b31de36c3db73f7389196cd0fc940979fb2357471cfcc52295d7acf18f47b35"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-14-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 278,
+          "sizeBytes": 18260,
+          "sha256": "2a56553cd7bfcd1a9e35cef00f8d070b10012d4a8c03070855ad2151f0f29384"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -860,6 +1444,14 @@
           "height": 400,
           "sizeBytes": 26414,
           "sha256": "7756e6e2aa8c7b570f1e851d791f50b2b447398b49624a06943acb1901dd3836"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-15-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 278,
+          "sizeBytes": 9924,
+          "sha256": "ad7431e957108e0b66e405d7663fbf1ee3c19be00f315719dbf8ba0a7ff1aa5d"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -890,6 +1482,14 @@
           "height": 400,
           "sizeBytes": 29096,
           "sha256": "f20dd59a48acc9ece0c683c1d82632177167b4c5fe1d32e1d1a92876d713f090"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-16-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 278,
+          "sizeBytes": 11236,
+          "sha256": "2a97fbb748aceae84f932368f19427cf1ac78017e0614b116bb19381196669b8"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -920,6 +1520,14 @@
           "height": 400,
           "sizeBytes": 20036,
           "sha256": "75402d40c1920cabfb15245a698c57b4b187b589fa2eadf4c0d28de99792c4c0"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-17-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 278,
+          "sizeBytes": 8416,
+          "sha256": "20b5b6c266a8ae488fd01d78c268219f4bd62f5cff19c576b4c9c45c14072e77"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -950,6 +1558,14 @@
           "height": 400,
           "sizeBytes": 11456,
           "sha256": "656b4182677713ae62148d589469bc26f11b87cb7507ad5b3b677bdb6a8e9a7b"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-18-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 278,
+          "sizeBytes": 4480,
+          "sha256": "706dae27205c03635f2264f9ac1262cb9043acbddf177f5982ae1833099d1e5e"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -980,6 +1596,14 @@
           "height": 400,
           "sizeBytes": 21132,
           "sha256": "df3114ded01a54cee5b9613cbda824077e7ac521e1e537d218a03e3a4197c26d"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-19-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 278,
+          "sizeBytes": 8766,
+          "sha256": "4eb41daff6c505e82685d70a722c3de16ab41e84c5dd64625c72b86aff9e26bb"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",
@@ -1010,6 +1634,14 @@
           "height": 400,
           "sizeBytes": 32202,
           "sha256": "b0abd7d9e641438de0833bc9612abce993ea487d34ef18d2af435278ff0abadd"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-20-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 278,
+          "sizeBytes": 12750,
+          "sha256": "3f444d85258913ecee792c5cc162c6660ff93a38fe6b84c8b9a93cd6547db1a6"
         }
       ],
       "alt": "Sportos vagy iskolai témájú látványkép",

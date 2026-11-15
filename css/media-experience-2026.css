@@ -44,3 +44,5 @@
 #app .doc26-more[hidden]{display:none}
 @media(max-width:760px){#app .doc26-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:440px){#app .doc26-toolbar{grid-template-columns:1fr}#app .doc26-grid{gap:7px}#app .doc26-item{padding:10px}#app .doc26-item h3{font-size:13px}}
+
+#app .media26-share-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:14px auto}#app .media26-direct-link,#app .media26-next-video{display:inline-flex;min-height:40px;align-items:center;justify-content:center;padding:9px 13px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:800;font-size:12px;cursor:pointer}#app .media26-direct-link:hover,#app .media26-next-video:hover{border-color:var(--gold)}#app .media26-deep-focus{outline:3px solid var(--gold);outline-offset:4px}

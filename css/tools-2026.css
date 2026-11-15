@@ -81,3 +81,7 @@ body.csanadi-tool{background:var(--page);color:var(--ink);min-height:100dvh;line
 .csanadi-tool .tool-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media(max-width:720px){.csanadi-tool .tool-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.csanadi-tool .tool-tabs a:last-child:nth-child(odd){grid-column:auto}}
 @media(max-width:355px){.csanadi-tool .tool-tabs{grid-template-columns:1fr}}
+
+@media(min-width:780px){.csanadi-tool .tool-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
+.csanadi-tool .tool-verify-check{display:flex;gap:11px;align-items:center;padding:12px;border-radius:12px;background:var(--card);border:1px solid var(--line)}.csanadi-tool .tool-verify-check input[type="checkbox"]{width:19px;min-width:19px;min-height:19px;height:19px;padding:0;accent-color:#b78d41}

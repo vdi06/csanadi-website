@@ -10,7 +10,7 @@
       "title": "Kosárlabdacsarnok",
       "category": "sport",
       "src": "assets/media/web/cs2026-001.webp",
-      "thumb": "assets/media/web/responsive/cs2026-001-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-001-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-001-320.webp 320w, assets/media/web/responsive/cs2026-001-640.webp 640w, assets/media/web/responsive/cs2026-001-960.webp 960w, assets/media/web/cs2026-001.webp 1200w",
       "alt": "Kosárlabdacsarnok",
       "verifiedSchoolPhoto": false,
@@ -28,7 +28,7 @@
       "title": "Kosárlabda a parketten",
       "category": "sport",
       "src": "assets/media/web/cs2026-002.webp",
-      "thumb": "assets/media/web/responsive/cs2026-002-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-002-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-002-320.webp 320w, assets/media/web/responsive/cs2026-002-640.webp 640w, assets/media/web/responsive/cs2026-002-960.webp 960w, assets/media/web/cs2026-002.webp 1200w",
       "alt": "Kosárlabda a parketten",
       "verifiedSchoolPhoto": false,
@@ -46,7 +46,7 @@
       "title": "Kosárpalánk",
       "category": "sport",
       "src": "assets/media/web/cs2026-003.webp",
-      "thumb": "assets/media/web/responsive/cs2026-003-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-003-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-003-320.webp 320w, assets/media/web/responsive/cs2026-003-640.webp 640w, assets/media/web/responsive/cs2026-003-960.webp 960w, assets/media/web/cs2026-003.webp 1200w",
       "alt": "Kosárpalánk",
       "verifiedSchoolPhoto": false,
@@ -64,7 +64,7 @@
       "title": "Eredményjelző",
       "category": "sport",
       "src": "assets/media/web/cs2026-004.webp",
-      "thumb": "assets/media/web/responsive/cs2026-004-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-004-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-004-320.webp 320w, assets/media/web/responsive/cs2026-004-640.webp 640w, assets/media/web/responsive/cs2026-004-960.webp 960w, assets/media/web/cs2026-004.webp 1200w",
       "alt": "Eredményjelző",
       "verifiedSchoolPhoto": false,
@@ -82,7 +82,7 @@
       "title": "Futópálya",
       "category": "sport",
       "src": "assets/media/web/cs2026-005.webp",
-      "thumb": "assets/media/web/responsive/cs2026-005-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-005-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-005-320.webp 320w, assets/media/web/responsive/cs2026-005-640.webp 640w, assets/media/web/responsive/cs2026-005-960.webp 960w, assets/media/web/cs2026-005.webp 1200w",
       "alt": "Futópálya",
       "verifiedSchoolPhoto": false,
@@ -100,7 +100,7 @@
       "title": "Rajtvonalak",
       "category": "sport",
       "src": "assets/media/web/cs2026-006.webp",
-      "thumb": "assets/media/web/responsive/cs2026-006-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-006-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-006-320.webp 320w, assets/media/web/responsive/cs2026-006-640.webp 640w, assets/media/web/responsive/cs2026-006-960.webp 960w, assets/media/web/cs2026-006.webp 1200w",
       "alt": "Rajtvonalak",
       "verifiedSchoolPhoto": false,
@@ -118,7 +118,7 @@
       "title": "Magasugróhely",
       "category": "sport",
       "src": "assets/media/web/cs2026-007.webp",
-      "thumb": "assets/media/web/responsive/cs2026-007-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-007-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-007-320.webp 320w, assets/media/web/responsive/cs2026-007-640.webp 640w, assets/media/web/responsive/cs2026-007-960.webp 960w, assets/media/web/cs2026-007.webp 1200w",
       "alt": "Magasugróhely",
       "verifiedSchoolPhoto": false,
@@ -136,7 +136,7 @@
       "title": "Labdarúgópálya",
       "category": "sport",
       "src": "assets/media/web/cs2026-008.webp",
-      "thumb": "assets/media/web/responsive/cs2026-008-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-008-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-008-320.webp 320w, assets/media/web/responsive/cs2026-008-640.webp 640w, assets/media/web/responsive/cs2026-008-960.webp 960w, assets/media/web/cs2026-008.webp 1200w",
       "alt": "Labdarúgópálya",
       "verifiedSchoolPhoto": false,
@@ -154,7 +154,7 @@
       "title": "Úszómedence",
       "category": "sport",
       "src": "assets/media/web/cs2026-009.webp",
-      "thumb": "assets/media/web/responsive/cs2026-009-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-009-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-009-320.webp 320w, assets/media/web/responsive/cs2026-009-640.webp 640w, assets/media/web/responsive/cs2026-009-960.webp 960w, assets/media/web/cs2026-009.webp 1200w",
       "alt": "Úszómedence",
       "verifiedSchoolPhoto": false,
@@ -172,7 +172,7 @@
       "title": "Úszópályák",
       "category": "sport",
       "src": "assets/media/web/cs2026-010.webp",
-      "thumb": "assets/media/web/responsive/cs2026-010-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-010-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-010-320.webp 320w, assets/media/web/responsive/cs2026-010-640.webp 640w, assets/media/web/responsive/cs2026-010-960.webp 960w, assets/media/web/cs2026-010.webp 1200w",
       "alt": "Úszópályák",
       "verifiedSchoolPhoto": false,
@@ -190,7 +190,7 @@
       "title": "Röplabdaháló",
       "category": "sport",
       "src": "assets/media/web/cs2026-011.webp",
-      "thumb": "assets/media/web/responsive/cs2026-011-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-011-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-011-320.webp 320w, assets/media/web/responsive/cs2026-011-640.webp 640w, assets/media/web/responsive/cs2026-011-960.webp 960w, assets/media/web/cs2026-011.webp 1200w",
       "alt": "Röplabdaháló",
       "verifiedSchoolPhoto": false,
@@ -208,7 +208,7 @@
       "title": "Asztalitenisz",
       "category": "sport",
       "src": "assets/media/web/cs2026-012.webp",
-      "thumb": "assets/media/web/responsive/cs2026-012-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-012-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-012-320.webp 320w, assets/media/web/responsive/cs2026-012-640.webp 640w, assets/media/web/responsive/cs2026-012-960.webp 960w, assets/media/web/cs2026-012.webp 1200w",
       "alt": "Asztalitenisz",
       "verifiedSchoolPhoto": false,
@@ -226,7 +226,7 @@
       "title": "Iskolai könyvtár",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-013.webp",
-      "thumb": "assets/media/web/responsive/cs2026-013-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-013-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-013-320.webp 320w, assets/media/web/responsive/cs2026-013-640.webp 640w, assets/media/web/responsive/cs2026-013-960.webp 960w, assets/media/web/cs2026-013.webp 1200w",
       "alt": "Iskolai könyvtár",
       "verifiedSchoolPhoto": false,
@@ -243,7 +243,7 @@
       "title": "Számítástechnikai terem",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-014.webp",
-      "thumb": "assets/media/web/responsive/cs2026-014-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-014-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-014-320.webp 320w, assets/media/web/responsive/cs2026-014-640.webp 640w, assets/media/web/responsive/cs2026-014-960.webp 960w, assets/media/web/cs2026-014.webp 1200w",
       "alt": "Számítástechnikai terem",
       "verifiedSchoolPhoto": false,
@@ -260,7 +260,7 @@
       "title": "Tanulási eszközök",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-015.webp",
-      "thumb": "assets/media/web/responsive/cs2026-015-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-015-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-015-320.webp 320w, assets/media/web/responsive/cs2026-015-640.webp 640w, assets/media/web/responsive/cs2026-015-960.webp 960w, assets/media/web/cs2026-015.webp 1200w",
       "alt": "Tanulási eszközök",
       "verifiedSchoolPhoto": false,
@@ -277,7 +277,7 @@
       "title": "Sporttrófeás folyosó",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-016.webp",
-      "thumb": "assets/media/web/responsive/cs2026-016-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-016-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-016-320.webp 320w, assets/media/web/responsive/cs2026-016-640.webp 640w, assets/media/web/responsive/cs2026-016-960.webp 960w, assets/media/web/cs2026-016.webp 1200w",
       "alt": "Sporttrófeás folyosó",
       "verifiedSchoolPhoto": false,
@@ -296,7 +296,9 @@
       "src": "assets/media/web/eletkep-01.webp",
       "alt": "Életszerű kép: kosárlabdaedzés a tornateremben",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "kosarlabda"
+      "sportDiscipline": "kosarlabda",
+      "srcset": "assets/media/web/responsive/eletkep-01-320.webp 320w, assets/media/web/responsive/eletkep-01-640.webp 640w, assets/media/web/responsive/eletkep-01-960.webp 960w, assets/media/web/eletkep-01.webp 1600w",
+      "thumb": "assets/media/web/responsive/eletkep-01-320.webp"
     },
     {
       "id": "photo:002",
@@ -305,7 +307,9 @@
       "src": "assets/media/web/eletkep-02.webp",
       "alt": "Életszerű kép: diadal a célvonalnál",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "atletika"
+      "sportDiscipline": "atletika",
+      "srcset": "assets/media/web/responsive/eletkep-02-320.webp 320w, assets/media/web/responsive/eletkep-02-640.webp 640w, assets/media/web/responsive/eletkep-02-960.webp 960w, assets/media/web/eletkep-02.webp 1600w",
+      "thumb": "assets/media/web/responsive/eletkep-02-320.webp"
     },
     {
       "id": "photo:003",
@@ -314,7 +318,9 @@
       "src": "assets/media/web/eletkep-03.webp",
       "alt": "Életszerű kép: csapatöröm az uszodában",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-03-320.webp 320w, assets/media/web/responsive/eletkep-03-640.webp 640w, assets/media/web/responsive/eletkep-03-960.webp 960w, assets/media/web/eletkep-03.webp 1600w",
+      "thumb": "assets/media/web/responsive/eletkep-03-320.webp"
     },
     {
       "id": "photo:004",
@@ -323,7 +329,9 @@
       "src": "assets/media/web/eletkep-04.webp",
       "alt": "Életszerű kép: röplabdaakció a csarnokban",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "roplabda"
+      "sportDiscipline": "roplabda",
+      "srcset": "assets/media/web/responsive/eletkep-04-320.webp 320w, assets/media/web/responsive/eletkep-04-640.webp 640w, assets/media/web/responsive/eletkep-04-960.webp 960w, assets/media/web/eletkep-04.webp 1600w",
+      "thumb": "assets/media/web/responsive/eletkep-04-320.webp"
     },
     {
       "id": "photo:005",
@@ -331,7 +339,9 @@
       "category": "oktatas",
       "src": "assets/media/web/eletkep-05.webp",
       "alt": "Életszerű kép: közös tanulás a könyvtárban",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-05-320.webp 320w, assets/media/web/responsive/eletkep-05-640.webp 640w, assets/media/web/responsive/eletkep-05-960.webp 960w, assets/media/web/eletkep-05.webp 1600w",
+      "thumb": "assets/media/web/responsive/eletkep-05-320.webp"
     },
     {
       "id": "photo:006",
@@ -339,7 +349,9 @@
       "category": "oktatas",
       "src": "assets/media/web/eletkep-06.webp",
       "alt": "Életszerű kép: együttműködő tanulás az osztályteremben",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-06-320.webp 320w, assets/media/web/responsive/eletkep-06-640.webp 640w, assets/media/web/responsive/eletkep-06-960.webp 960w, assets/media/web/eletkep-06.webp 1600w",
+      "thumb": "assets/media/web/responsive/eletkep-06-320.webp"
     },
     {
       "id": "photo:007",
@@ -347,7 +359,9 @@
       "category": "kozosseg",
       "src": "assets/media/web/eletkep-07.webp",
       "alt": "Életszerű kép: vidám iskolai sportnap",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-07-320.webp 320w, assets/media/web/responsive/eletkep-07-640.webp 640w, assets/media/web/responsive/eletkep-07-960.webp 960w, assets/media/web/eletkep-07.webp 1600w",
+      "thumb": "assets/media/web/responsive/eletkep-07-320.webp"
     },
     {
       "id": "photo:008",
@@ -355,7 +369,9 @@
       "category": "kozosseg",
       "src": "assets/media/web/eletkep-08.webp",
       "alt": "Életszerű kép: iskolai díjátadó ünnepség",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-08-320.webp 320w, assets/media/web/responsive/eletkep-08-640.webp 640w, assets/media/web/responsive/eletkep-08-960.webp 960w, assets/media/web/eletkep-08.webp 1600w",
+      "thumb": "assets/media/web/responsive/eletkep-08-320.webp"
     },
     {
       "id": "photo:009",
@@ -364,7 +380,9 @@
       "src": "assets/media/web/eletkep-09.webp",
       "alt": "Életszerű kép: fociedzés az akadémián",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "labdarugas"
+      "sportDiscipline": "labdarugas",
+      "srcset": "assets/media/web/responsive/eletkep-09-320.webp 320w, assets/media/web/responsive/eletkep-09-640.webp 640w, assets/media/web/responsive/eletkep-09-960.webp 960w, assets/media/web/eletkep-09.webp 1600w",
+      "thumb": "assets/media/web/responsive/eletkep-09-320.webp"
     },
     {
       "id": "photo:010",
@@ -372,7 +390,9 @@
       "category": "kozosseg",
       "src": "assets/media/web/eletkep-10.webp",
       "alt": "Életszerű kép: reggeli érkezés a sportakadémiára",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-10-320.webp 320w, assets/media/web/responsive/eletkep-10-640.webp 640w, assets/media/web/responsive/eletkep-10-960.webp 960w, assets/media/web/eletkep-10.webp 1600w",
+      "thumb": "assets/media/web/responsive/eletkep-10-320.webp"
     },
     {
       "id": "photo:011",
@@ -381,7 +401,9 @@
       "src": "assets/media/web/eletkep-11.webp",
       "alt": "Tematikus kép: tenisz – ütésgyakorlat",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-11-320.webp 320w, assets/media/web/eletkep-11.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-11-320.webp"
     },
     {
       "id": "photo:012",
@@ -390,7 +412,9 @@
       "src": "assets/media/web/eletkep-12.webp",
       "alt": "Tematikus kép: evezés – közös ritmus",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-12-320.webp 320w, assets/media/web/eletkep-12.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-12-320.webp"
     },
     {
       "id": "photo:013",
@@ -398,7 +422,9 @@
       "category": "kozosseg",
       "src": "assets/media/web/eletkep-13.webp",
       "alt": "Tematikus kép: baráti beszélgetés az udvaron",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-13-320.webp 320w, assets/media/web/eletkep-13.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-13-320.webp"
     },
     {
       "id": "photo:014",
@@ -406,7 +432,9 @@
       "category": "kozosseg",
       "src": "assets/media/web/eletkep-14.webp",
       "alt": "Tematikus kép: iskolai környezet",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-14-320.webp 320w, assets/media/web/eletkep-14.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-14-320.webp"
     },
     {
       "id": "photo:015",
@@ -414,7 +442,9 @@
       "category": "oktatas",
       "src": "assets/media/web/eletkep-15.webp",
       "alt": "Tematikus kép: egyéni tanulói konzultáció",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-15-320.webp 320w, assets/media/web/eletkep-15.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-15-320.webp"
     },
     {
       "id": "photo:016",
@@ -422,7 +452,9 @@
       "category": "oktatas",
       "src": "assets/media/web/eletkep-16.webp",
       "alt": "Tematikus kép: önálló felkészülés",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-16-320.webp 320w, assets/media/web/eletkep-16.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-16-320.webp"
     },
     {
       "id": "photo:017",
@@ -431,7 +463,9 @@
       "src": "assets/media/web/eletkep-17.webp",
       "alt": "Tematikus kép: küzdősport és önfegyelem",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-17-320.webp 320w, assets/media/web/eletkep-17.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-17-320.webp"
     },
     {
       "id": "photo:018",
@@ -440,14 +474,16 @@
       "src": "assets/media/web/eletkep-18.webp",
       "alt": "Tematikus kép: torna – mozgáskultúra",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-18-320.webp 320w, assets/media/web/eletkep-18.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-18-320.webp"
     },
     {
       "id": "photo:cs2026-017",
       "title": "Labdavezetés",
       "category": "sport",
       "src": "assets/media/web/cs2026-017.webp",
-      "thumb": "assets/media/web/responsive/cs2026-017-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-017-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-017-320.webp 320w, assets/media/web/responsive/cs2026-017-640.webp 640w, assets/media/web/responsive/cs2026-017-960.webp 960w, assets/media/web/cs2026-017.webp 1200w",
       "alt": "Labdavezetés: A labda maradjon kontroll alatt a tempóváltás közben.",
       "verifiedSchoolPhoto": false,
@@ -465,7 +501,7 @@
       "title": "Pontos passz",
       "category": "sport",
       "src": "assets/media/web/cs2026-018.webp",
-      "thumb": "assets/media/web/responsive/cs2026-018-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-018-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-018-320.webp 320w, assets/media/web/responsive/cs2026-018-640.webp 640w, assets/media/web/responsive/cs2026-018-960.webp 960w, assets/media/web/cs2026-018.webp 1200w",
       "alt": "Pontos passz: Passz előtt mérd fel a társ helyzetét és a védő mozgását.",
       "verifiedSchoolPhoto": false,
@@ -483,7 +519,7 @@
       "title": "Lepattanózás",
       "category": "sport",
       "src": "assets/media/web/cs2026-019.webp",
-      "thumb": "assets/media/web/responsive/cs2026-019-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-019-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-019-320.webp 320w, assets/media/web/responsive/cs2026-019-640.webp 640w, assets/media/web/responsive/cs2026-019-960.webp 960w, assets/media/web/cs2026-019.webp 1200w",
       "alt": "Lepattanózás: Figyeld a dobás ívét, és helyezkedj stabil alapállásban.",
       "verifiedSchoolPhoto": false,
@@ -501,7 +537,7 @@
       "title": "Passzsávok",
       "category": "sport",
       "src": "assets/media/web/cs2026-020.webp",
-      "thumb": "assets/media/web/responsive/cs2026-020-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-020-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-020-320.webp 320w, assets/media/web/responsive/cs2026-020-640.webp 640w, assets/media/web/responsive/cs2026-020-960.webp 960w, assets/media/web/cs2026-020.webp 1200w",
       "alt": "Passzsávok: Keress olyan helyet, ahol a társad akadály nélkül elér.",
       "verifiedSchoolPhoto": false,
@@ -519,7 +555,7 @@
       "title": "Átvétel",
       "category": "sport",
       "src": "assets/media/web/cs2026-021.webp",
-      "thumb": "assets/media/web/responsive/cs2026-021-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-021-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-021-320.webp 320w, assets/media/web/responsive/cs2026-021-640.webp 640w, assets/media/web/responsive/cs2026-021-960.webp 960w, assets/media/web/cs2026-021.webp 1200w",
       "alt": "Átvétel: Az első érintéssel készítsd elő a következő mozdulatot.",
       "verifiedSchoolPhoto": false,
@@ -537,7 +573,7 @@
       "title": "Védekezés",
       "category": "sport",
       "src": "assets/media/web/cs2026-022.webp",
-      "thumb": "assets/media/web/responsive/cs2026-022-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-022-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-022-320.webp 320w, assets/media/web/responsive/cs2026-022-640.webp 640w, assets/media/web/responsive/cs2026-022-960.webp 960w, assets/media/web/cs2026-022.webp 1200w",
       "alt": "Védekezés: Maradj a labda és a kapu között, figyeld a mozgást.",
       "verifiedSchoolPhoto": false,
@@ -555,7 +591,7 @@
       "title": "Bemelegítés",
       "category": "sport",
       "src": "assets/media/web/cs2026-023.webp",
-      "thumb": "assets/media/web/responsive/cs2026-023-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-023-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-023-320.webp 320w, assets/media/web/responsive/cs2026-023-640.webp 640w, assets/media/web/responsive/cs2026-023-960.webp 960w, assets/media/web/cs2026-023.webp 1200w",
       "alt": "Bemelegítés: Fokozatosan emeld a mozgás intenzitását.",
       "verifiedSchoolPhoto": false,
@@ -573,7 +609,7 @@
       "title": "Futóritmus",
       "category": "sport",
       "src": "assets/media/web/cs2026-024.webp",
-      "thumb": "assets/media/web/responsive/cs2026-024-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-024-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-024-320.webp 320w, assets/media/web/responsive/cs2026-024-640.webp 640w, assets/media/web/responsive/cs2026-024-960.webp 960w, assets/media/web/cs2026-024.webp 1200w",
       "alt": "Futóritmus: Keress egyenletes, fenntartható tempót.",
       "verifiedSchoolPhoto": false,
@@ -591,7 +627,7 @@
       "title": "Ugrótechnika",
       "category": "sport",
       "src": "assets/media/web/cs2026-025.webp",
-      "thumb": "assets/media/web/responsive/cs2026-025-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-025-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-025-320.webp 320w, assets/media/web/responsive/cs2026-025-640.webp 640w, assets/media/web/responsive/cs2026-025-960.webp 960w, assets/media/web/cs2026-025.webp 1200w",
       "alt": "Ugrótechnika: A nekifutás és az elrugaszkodás összehangolt legyen.",
       "verifiedSchoolPhoto": false,
@@ -609,7 +645,7 @@
       "title": "Légzésritmus",
       "category": "sport",
       "src": "assets/media/web/cs2026-026.webp",
-      "thumb": "assets/media/web/responsive/cs2026-026-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-026-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-026-320.webp 320w, assets/media/web/responsive/cs2026-026-640.webp 640w, assets/media/web/responsive/cs2026-026-960.webp 960w, assets/media/web/cs2026-026.webp 1200w",
       "alt": "Légzésritmus: A kilégzés a vízben történik, a belégzés rövid és tudatos.",
       "verifiedSchoolPhoto": false,
@@ -627,7 +663,7 @@
       "title": "Siklás",
       "category": "sport",
       "src": "assets/media/web/cs2026-027.webp",
-      "thumb": "assets/media/web/responsive/cs2026-027-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-027-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-027-320.webp 320w, assets/media/web/responsive/cs2026-027-640.webp 640w, assets/media/web/responsive/cs2026-027-960.webp 960w, assets/media/web/cs2026-027.webp 1200w",
       "alt": "Siklás: A hosszú, rendezett testhelyzet segíti a haladást.",
       "verifiedSchoolPhoto": false,
@@ -645,7 +681,7 @@
       "title": "Forduló",
       "category": "sport",
       "src": "assets/media/web/cs2026-028.webp",
-      "thumb": "assets/media/web/responsive/cs2026-028-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-028-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-028-320.webp 320w, assets/media/web/responsive/cs2026-028-640.webp 640w, assets/media/web/responsive/cs2026-028-960.webp 960w, assets/media/web/cs2026-028.webp 1200w",
       "alt": "Forduló: Az irányváltás után őrizd meg a megfelelő testhelyzetet.",
       "verifiedSchoolPhoto": false,
@@ -663,7 +699,7 @@
       "title": "Alkarérintés",
       "category": "sport",
       "src": "assets/media/web/cs2026-029.webp",
-      "thumb": "assets/media/web/responsive/cs2026-029-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-029-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-029-320.webp 320w, assets/media/web/responsive/cs2026-029-640.webp 640w, assets/media/web/responsive/cs2026-029-960.webp 960w, assets/media/web/cs2026-029.webp 1200w",
       "alt": "Alkarérintés: Az alkarok szögével irányítható a labda.",
       "verifiedSchoolPhoto": false,
@@ -681,7 +717,7 @@
       "title": "Nyitás",
       "category": "sport",
       "src": "assets/media/web/cs2026-030.webp",
-      "thumb": "assets/media/web/responsive/cs2026-030-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-030-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-030-320.webp 320w, assets/media/web/responsive/cs2026-030-640.webp 640w, assets/media/web/responsive/cs2026-030-960.webp 960w, assets/media/web/cs2026-030.webp 1200w",
       "alt": "Nyitás: Állandó labdafeldobás segíti a pontos nyitást.",
       "verifiedSchoolPhoto": false,
@@ -699,7 +735,7 @@
       "title": "Csapathelyezkedés",
       "category": "sport",
       "src": "assets/media/web/cs2026-031.webp",
-      "thumb": "assets/media/web/responsive/cs2026-031-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-031-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-031-320.webp 320w, assets/media/web/responsive/cs2026-031-640.webp 640w, assets/media/web/responsive/cs2026-031-960.webp 960w, assets/media/web/cs2026-031.webp 1200w",
       "alt": "Csapathelyezkedés: Figyelj a társak pozíciójára és a szabad területekre.",
       "verifiedSchoolPhoto": false,
@@ -717,7 +753,7 @@
       "title": "Alapállás",
       "category": "sport",
       "src": "assets/media/web/cs2026-032.webp",
-      "thumb": "assets/media/web/responsive/cs2026-032-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-032-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-032-320.webp 320w, assets/media/web/responsive/cs2026-032-640.webp 640w, assets/media/web/responsive/cs2026-032-960.webp 960w, assets/media/web/cs2026-032.webp 1200w",
       "alt": "Alapállás: Enyhén hajlított térd és aktív lábmunka kell.",
       "verifiedSchoolPhoto": false,
@@ -735,7 +771,7 @@
       "title": "Szerva",
       "category": "sport",
       "src": "assets/media/web/cs2026-033.webp",
-      "thumb": "assets/media/web/responsive/cs2026-033-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-033-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-033-320.webp 320w, assets/media/web/responsive/cs2026-033-640.webp 640w, assets/media/web/responsive/cs2026-033-960.webp 960w, assets/media/web/cs2026-033.webp 1200w",
       "alt": "Szerva: Törekedj az ismételhető mozdulatra és a szabályos végrehajtásra.",
       "verifiedSchoolPhoto": false,
@@ -753,7 +789,7 @@
       "title": "Pörgetés",
       "category": "sport",
       "src": "assets/media/web/cs2026-034.webp",
-      "thumb": "assets/media/web/responsive/cs2026-034-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-034-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-034-320.webp 320w, assets/media/web/responsive/cs2026-034-640.webp 640w, assets/media/web/responsive/cs2026-034-960.webp 960w, assets/media/web/cs2026-034.webp 1200w",
       "alt": "Pörgetés: Az ütő szöge és a találati pont együtt befolyásol.",
       "verifiedSchoolPhoto": false,
@@ -771,7 +807,7 @@
       "title": "Fokozatosság",
       "category": "sport",
       "src": "assets/media/web/cs2026-035.webp",
-      "thumb": "assets/media/web/responsive/cs2026-035-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-035-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-035-320.webp 320w, assets/media/web/responsive/cs2026-035-640.webp 640w, assets/media/web/responsive/cs2026-035-960.webp 960w, assets/media/web/cs2026-035.webp 1200w",
       "alt": "Fokozatosság: A terhelést a felkészültséghez kell igazítani.",
       "verifiedSchoolPhoto": false,
@@ -789,7 +825,7 @@
       "title": "Pihenőidő",
       "category": "sport",
       "src": "assets/media/web/cs2026-036.webp",
-      "thumb": "assets/media/web/responsive/cs2026-036-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-036-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-036-320.webp 320w, assets/media/web/responsive/cs2026-036-640.webp 640w, assets/media/web/responsive/cs2026-036-960.webp 960w, assets/media/web/cs2026-036.webp 1200w",
       "alt": "Pihenőidő: Az alkalmazkodáshoz regeneráció is szükséges.",
       "verifiedSchoolPhoto": false,
@@ -807,7 +843,7 @@
       "title": "Mobilitás",
       "category": "sport",
       "src": "assets/media/web/cs2026-037.webp",
-      "thumb": "assets/media/web/responsive/cs2026-037-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-037-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-037-320.webp 320w, assets/media/web/responsive/cs2026-037-640.webp 640w, assets/media/web/responsive/cs2026-037-960.webp 960w, assets/media/web/cs2026-037.webp 1200w",
       "alt": "Mobilitás: Gondozd az ízületek kontrollált mozgástartományát.",
       "verifiedSchoolPhoto": false,
@@ -825,7 +861,7 @@
       "title": "Sportszerűség",
       "category": "sport",
       "src": "assets/media/web/cs2026-038.webp",
-      "thumb": "assets/media/web/responsive/cs2026-038-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-038-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-038-320.webp 320w, assets/media/web/responsive/cs2026-038-640.webp 640w, assets/media/web/responsive/cs2026-038-960.webp 960w, assets/media/web/cs2026-038.webp 1200w",
       "alt": "Sportszerűség: Tartsd tiszteletben az ellenfelet és a szabályokat.",
       "verifiedSchoolPhoto": false,
@@ -843,7 +879,7 @@
       "title": "Együttműködés",
       "category": "sport",
       "src": "assets/media/web/cs2026-039.webp",
-      "thumb": "assets/media/web/responsive/cs2026-039-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-039-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-039-320.webp 320w, assets/media/web/responsive/cs2026-039-640.webp 640w, assets/media/web/responsive/cs2026-039-960.webp 960w, assets/media/web/cs2026-039.webp 1200w",
       "alt": "Együttműködés: A közös célhoz minden szerep hozzáad valamit.",
       "verifiedSchoolPhoto": false,
@@ -861,7 +897,7 @@
       "title": "Biztonság",
       "category": "sport",
       "src": "assets/media/web/cs2026-040.webp",
-      "thumb": "assets/media/web/responsive/cs2026-040-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-040-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-040-320.webp 320w, assets/media/web/responsive/cs2026-040-640.webp 640w, assets/media/web/responsive/cs2026-040-960.webp 960w, assets/media/web/cs2026-040.webp 1200w",
       "alt": "Biztonság: Ismerd a felszerelés és a helyszín használati szabályait.",
       "verifiedSchoolPhoto": false,
@@ -879,7 +915,7 @@
       "title": "Fájlrendszerezés",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-041.webp",
-      "thumb": "assets/media/web/responsive/cs2026-041-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-041-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-041-320.webp 320w, assets/media/web/responsive/cs2026-041-640.webp 640w, assets/media/web/responsive/cs2026-041-960.webp 960w, assets/media/web/cs2026-041.webp 1200w",
       "alt": "Fájlrendszerezés: Használj érthető mappaneveket és következetes fájlneveket.",
       "verifiedSchoolPhoto": false,
@@ -896,7 +932,7 @@
       "title": "Forráskritika",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-042.webp",
-      "thumb": "assets/media/web/responsive/cs2026-042-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-042-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-042-320.webp 320w, assets/media/web/responsive/cs2026-042-640.webp 640w, assets/media/web/responsive/cs2026-042-960.webp 960w, assets/media/web/cs2026-042.webp 1200w",
       "alt": "Forráskritika: Ellenőrizd a szerzőt, a dátumot és a forrás célját.",
       "verifiedSchoolPhoto": false,
@@ -913,7 +949,7 @@
       "title": "Adatvédelem",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-043.webp",
-      "thumb": "assets/media/web/responsive/cs2026-043-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-043-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-043-320.webp 320w, assets/media/web/responsive/cs2026-043-640.webp 640w, assets/media/web/responsive/cs2026-043-960.webp 960w, assets/media/web/cs2026-043.webp 1200w",
       "alt": "Adatvédelem: Csak a szükséges személyes adatot oszd meg.",
       "verifiedSchoolPhoto": false,
@@ -930,7 +966,7 @@
       "title": "Biztonsági mentés",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-044.webp",
-      "thumb": "assets/media/web/responsive/cs2026-044-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-044-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-044-320.webp 320w, assets/media/web/responsive/cs2026-044-640.webp 640w, assets/media/web/responsive/cs2026-044-960.webp 960w, assets/media/web/cs2026-044.webp 1200w",
       "alt": "Biztonsági mentés: A fontos fájlokról legyen elkülönített másolat.",
       "verifiedSchoolPhoto": false,
@@ -947,7 +983,7 @@
       "title": "Időblokkok",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-045.webp",
-      "thumb": "assets/media/web/responsive/cs2026-045-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-045-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-045-320.webp 320w, assets/media/web/responsive/cs2026-045-640.webp 640w, assets/media/web/responsive/cs2026-045-960.webp 960w, assets/media/web/cs2026-045.webp 1200w",
       "alt": "Időblokkok: Rövid, tervezett fókuszidő után tarts szünetet.",
       "verifiedSchoolPhoto": false,
@@ -964,7 +1000,7 @@
       "title": "Aktív felidézés",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-046.webp",
-      "thumb": "assets/media/web/responsive/cs2026-046-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-046-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-046-320.webp 320w, assets/media/web/responsive/cs2026-046-640.webp 640w, assets/media/web/responsive/cs2026-046-960.webp 960w, assets/media/web/cs2026-046.webp 1200w",
       "alt": "Aktív felidézés: Olvasás után próbáld saját szavaiddal elmondani a lényeget.",
       "verifiedSchoolPhoto": false,
@@ -981,7 +1017,7 @@
       "title": "Jegyzetelés",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-047.webp",
-      "thumb": "assets/media/web/responsive/cs2026-047-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-047-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-047-320.webp 320w, assets/media/web/responsive/cs2026-047-640.webp 640w, assets/media/web/responsive/cs2026-047-960.webp 960w, assets/media/web/cs2026-047.webp 1200w",
       "alt": "Jegyzetelés: Az alapfogalmat, példát és saját kérdést válaszd szét.",
       "verifiedSchoolPhoto": false,
@@ -998,7 +1034,7 @@
       "title": "Önellenőrzés",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-048.webp",
-      "thumb": "assets/media/web/responsive/cs2026-048-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-048-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-048-320.webp 320w, assets/media/web/responsive/cs2026-048-640.webp 640w, assets/media/web/responsive/cs2026-048-960.webp 960w, assets/media/web/cs2026-048.webp 1200w",
       "alt": "Önellenőrzés: Készíts rövid kérdéseket a tananyaghoz.",
       "verifiedSchoolPhoto": false,
@@ -1015,7 +1051,7 @@
       "title": "Feladatértelmezés",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-049.webp",
-      "thumb": "assets/media/web/responsive/cs2026-049-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-049-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-049-320.webp 320w, assets/media/web/responsive/cs2026-049-640.webp 640w, assets/media/web/responsive/cs2026-049-960.webp 960w, assets/media/web/cs2026-049.webp 1200w",
       "alt": "Feladatértelmezés: Jelöld az ismert adatokat és a keresett mennyiséget.",
       "verifiedSchoolPhoto": false,
@@ -1032,7 +1068,7 @@
       "title": "Becslés",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-050.webp",
-      "thumb": "assets/media/web/responsive/cs2026-050-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-050-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-050-320.webp 320w, assets/media/web/responsive/cs2026-050-640.webp 640w, assets/media/web/responsive/cs2026-050-960.webp 960w, assets/media/web/cs2026-050.webp 1200w",
       "alt": "Becslés: A számolás előtt gondold át a várható nagyságrendet.",
       "verifiedSchoolPhoto": false,
@@ -1049,7 +1085,7 @@
       "title": "Mértékegység",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-051.webp",
-      "thumb": "assets/media/web/responsive/cs2026-051-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-051-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-051-320.webp 320w, assets/media/web/responsive/cs2026-051-640.webp 640w, assets/media/web/responsive/cs2026-051-960.webp 960w, assets/media/web/cs2026-051.webp 1200w",
       "alt": "Mértékegység: A műveleteknél azonos egységekkel számolj.",
       "verifiedSchoolPhoto": false,
@@ -1066,7 +1102,7 @@
       "title": "Ellenőrzés",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-052.webp",
-      "thumb": "assets/media/web/responsive/cs2026-052-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-052-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-052-320.webp 320w, assets/media/web/responsive/cs2026-052-640.webp 640w, assets/media/web/responsive/cs2026-052-960.webp 960w, assets/media/web/cs2026-052.webp 1200w",
       "alt": "Ellenőrzés: Próbáld az eredményt visszahelyettesíteni.",
       "verifiedSchoolPhoto": false,
@@ -1083,7 +1119,7 @@
       "title": "Vázlat",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-053.webp",
-      "thumb": "assets/media/web/responsive/cs2026-053-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-053-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-053-320.webp 320w, assets/media/web/responsive/cs2026-053-640.webp 640w, assets/media/web/responsive/cs2026-053-960.webp 960w, assets/media/web/cs2026-053.webp 1200w",
       "alt": "Vázlat: Írás előtt rendezd logikai sorrendbe a fő gondolatokat.",
       "verifiedSchoolPhoto": false,
@@ -1100,7 +1136,7 @@
       "title": "Közérthetőség",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-054.webp",
-      "thumb": "assets/media/web/responsive/cs2026-054-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-054-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-054-320.webp 320w, assets/media/web/responsive/cs2026-054-640.webp 640w, assets/media/web/responsive/cs2026-054-960.webp 960w, assets/media/web/cs2026-054.webp 1200w",
       "alt": "Közérthetőség: Használj pontos, rövid mondatokat.",
       "verifiedSchoolPhoto": false,
@@ -1117,7 +1153,7 @@
       "title": "Hivatkozás",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-055.webp",
-      "thumb": "assets/media/web/responsive/cs2026-055-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-055-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-055-320.webp 320w, assets/media/web/responsive/cs2026-055-640.webp 640w, assets/media/web/responsive/cs2026-055-960.webp 960w, assets/media/web/cs2026-055.webp 1200w",
       "alt": "Hivatkozás: A felhasznált forrásokat jelöld egyértelműen.",
       "verifiedSchoolPhoto": false,
@@ -1134,7 +1170,7 @@
       "title": "Javítás",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-056.webp",
-      "thumb": "assets/media/web/responsive/cs2026-056-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-056-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-056-320.webp 320w, assets/media/web/responsive/cs2026-056-640.webp 640w, assets/media/web/responsive/cs2026-056-960.webp 960w, assets/media/web/cs2026-056.webp 1200w",
       "alt": "Javítás: Olvasd át a szöveget tartalom és nyelvhelyesség szerint.",
       "verifiedSchoolPhoto": false,
@@ -1151,7 +1187,7 @@
       "title": "Célmeghatározás",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-057.webp",
-      "thumb": "assets/media/web/responsive/cs2026-057-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-057-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-057-320.webp 320w, assets/media/web/responsive/cs2026-057-640.webp 640w, assets/media/web/responsive/cs2026-057-960.webp 960w, assets/media/web/cs2026-057.webp 1200w",
       "alt": "Célmeghatározás: Fogalmazd meg, milyen eredmény készüljön el.",
       "verifiedSchoolPhoto": false,
@@ -1168,7 +1204,7 @@
       "title": "Feladatmegosztás",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-058.webp",
-      "thumb": "assets/media/web/responsive/cs2026-058-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-058-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-058-320.webp 320w, assets/media/web/responsive/cs2026-058-640.webp 640w, assets/media/web/responsive/cs2026-058-960.webp 960w, assets/media/web/cs2026-058.webp 1200w",
       "alt": "Feladatmegosztás: A közös projektben tisztázd a felelősségeket.",
       "verifiedSchoolPhoto": false,
@@ -1185,7 +1221,7 @@
       "title": "Verziózás",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-059.webp",
-      "thumb": "assets/media/web/responsive/cs2026-059-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-059-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-059-320.webp 320w, assets/media/web/responsive/cs2026-059-640.webp 640w, assets/media/web/responsive/cs2026-059-960.webp 960w, assets/media/web/cs2026-059.webp 1200w",
       "alt": "Verziózás: A fontos változtatásokról legyen visszakereshető előzmény.",
       "verifiedSchoolPhoto": false,
@@ -1202,7 +1238,7 @@
       "title": "Bemutatás",
       "category": "oktatas",
       "src": "assets/media/web/cs2026-060.webp",
-      "thumb": "assets/media/web/responsive/cs2026-060-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-060-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-060-320.webp 320w, assets/media/web/responsive/cs2026-060-640.webp 640w, assets/media/web/responsive/cs2026-060-960.webp 960w, assets/media/web/cs2026-060.webp 1200w",
       "alt": "Bemutatás: Az eredmény mellett mutasd meg a módszert is.",
       "verifiedSchoolPhoto": false,
@@ -1219,7 +1255,7 @@
       "title": "Érkezés",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-061.webp",
-      "thumb": "assets/media/web/responsive/cs2026-061-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-061-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-061-320.webp 320w, assets/media/web/responsive/cs2026-061-640.webp 640w, assets/media/web/responsive/cs2026-061-960.webp 960w, assets/media/web/cs2026-061.webp 1200w",
       "alt": "Érkezés: Tervezz időt az utazásra és a felkészülésre.",
       "verifiedSchoolPhoto": false,
@@ -1236,7 +1272,7 @@
       "title": "Tanulási környezet",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-062.webp",
-      "thumb": "assets/media/web/responsive/cs2026-062-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-062-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-062-320.webp 320w, assets/media/web/responsive/cs2026-062-640.webp 640w, assets/media/web/responsive/cs2026-062-960.webp 960w, assets/media/web/cs2026-062.webp 1200w",
       "alt": "Tanulási környezet: Rendezd áttekinthetően a szükséges eszközöket.",
       "verifiedSchoolPhoto": false,
@@ -1253,7 +1289,7 @@
       "title": "Közös szabályok",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-063.webp",
-      "thumb": "assets/media/web/responsive/cs2026-063-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-063-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-063-320.webp 320w, assets/media/web/responsive/cs2026-063-640.webp 640w, assets/media/web/responsive/cs2026-063-960.webp 960w, assets/media/web/cs2026-063.webp 1200w",
       "alt": "Közös szabályok: A megállapodott szabályok mindenkire vonatkoznak.",
       "verifiedSchoolPhoto": false,
@@ -1270,7 +1306,7 @@
       "title": "Értékelés",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-064.webp",
-      "thumb": "assets/media/web/responsive/cs2026-064-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-064-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-064-320.webp 320w, assets/media/web/responsive/cs2026-064-640.webp 640w, assets/media/web/responsive/cs2026-064-960.webp 960w, assets/media/web/cs2026-064.webp 1200w",
       "alt": "Értékelés: Fogalmazd meg, mi sikerült és min érdemes változtatni.",
       "verifiedSchoolPhoto": false,
@@ -1287,7 +1323,7 @@
       "title": "Ötletgyűjtés",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-065.webp",
-      "thumb": "assets/media/web/responsive/cs2026-065-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-065-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-065-320.webp 320w, assets/media/web/responsive/cs2026-065-640.webp 640w, assets/media/web/responsive/cs2026-065-960.webp 960w, assets/media/web/cs2026-065.webp 1200w",
       "alt": "Ötletgyűjtés: Minden résztvevő javaslatát hallgasd meg.",
       "verifiedSchoolPhoto": false,
@@ -1304,7 +1340,7 @@
       "title": "Tervezés",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-066.webp",
-      "thumb": "assets/media/web/responsive/cs2026-066-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-066-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-066-320.webp 320w, assets/media/web/responsive/cs2026-066-640.webp 640w, assets/media/web/responsive/cs2026-066-960.webp 960w, assets/media/web/cs2026-066.webp 1200w",
       "alt": "Tervezés: Rögzíts feladatokat, felelősöket és határidőket.",
       "verifiedSchoolPhoto": false,
@@ -1321,7 +1357,7 @@
       "title": "Megvalósítás",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-067.webp",
-      "thumb": "assets/media/web/responsive/cs2026-067-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-067-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-067-320.webp 320w, assets/media/web/responsive/cs2026-067-640.webp 640w, assets/media/web/responsive/cs2026-067-960.webp 960w, assets/media/web/cs2026-067.webp 1200w",
       "alt": "Megvalósítás: A munka során röviden egyeztessetek a változásokról.",
       "verifiedSchoolPhoto": false,
@@ -1338,7 +1374,7 @@
       "title": "Bemutató",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-068.webp",
-      "thumb": "assets/media/web/responsive/cs2026-068-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-068-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-068-320.webp 320w, assets/media/web/responsive/cs2026-068-640.webp 640w, assets/media/web/responsive/cs2026-068-960.webp 960w, assets/media/web/cs2026-068.webp 1200w",
       "alt": "Bemutató: Mutassátok be a munkafolyamatot és az eredményeket.",
       "verifiedSchoolPhoto": false,
@@ -1355,7 +1391,7 @@
       "title": "Energiatudatosság",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-069.webp",
-      "thumb": "assets/media/web/responsive/cs2026-069-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-069-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-069-320.webp 320w, assets/media/web/responsive/cs2026-069-640.webp 640w, assets/media/web/responsive/cs2026-069-960.webp 960w, assets/media/web/cs2026-069.webp 1200w",
       "alt": "Energiatudatosság: Kapcsold ki a nem használt eszközöket.",
       "verifiedSchoolPhoto": false,
@@ -1372,7 +1408,7 @@
       "title": "Hulladékkezelés",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-070.webp",
-      "thumb": "assets/media/web/responsive/cs2026-070-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-070-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-070-320.webp 320w, assets/media/web/responsive/cs2026-070-640.webp 640w, assets/media/web/responsive/cs2026-070-960.webp 960w, assets/media/web/cs2026-070.webp 1200w",
       "alt": "Hulladékkezelés: A hulladékot a helyi gyűjtési szabály szerint válogasd.",
       "verifiedSchoolPhoto": false,
@@ -1389,7 +1425,7 @@
       "title": "Vízhasználat",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-071.webp",
-      "thumb": "assets/media/web/responsive/cs2026-071-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-071-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-071-320.webp 320w, assets/media/web/responsive/cs2026-071-640.webp 640w, assets/media/web/responsive/cs2026-071-960.webp 960w, assets/media/web/cs2026-071.webp 1200w",
       "alt": "Vízhasználat: Figyelj a felesleges vízfolyatás elkerülésére.",
       "verifiedSchoolPhoto": false,
@@ -1406,7 +1442,7 @@
       "title": "Közös terek",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-072.webp",
-      "thumb": "assets/media/web/responsive/cs2026-072-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-072-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-072-320.webp 320w, assets/media/web/responsive/cs2026-072-640.webp 640w, assets/media/web/responsive/cs2026-072-960.webp 960w, assets/media/web/cs2026-072.webp 1200w",
       "alt": "Közös terek: Vigyázz a sport- és tanulóterek rendjére.",
       "verifiedSchoolPhoto": false,
@@ -1423,7 +1459,7 @@
       "title": "Aktív figyelem",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-073.webp",
-      "thumb": "assets/media/web/responsive/cs2026-073-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-073-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-073-320.webp 320w, assets/media/web/responsive/cs2026-073-640.webp 640w, assets/media/web/responsive/cs2026-073-960.webp 960w, assets/media/web/cs2026-073.webp 1200w",
       "alt": "Aktív figyelem: Hagyd végigmondani a másik fél gondolatát.",
       "verifiedSchoolPhoto": false,
@@ -1440,7 +1476,7 @@
       "title": "Építő visszajelzés",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-074.webp",
-      "thumb": "assets/media/web/responsive/cs2026-074-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-074-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-074-320.webp 320w, assets/media/web/responsive/cs2026-074-640.webp 640w, assets/media/web/responsive/cs2026-074-960.webp 960w, assets/media/web/cs2026-074.webp 1200w",
       "alt": "Építő visszajelzés: A helyzetet és a megoldási javaslatot különítsd el.",
       "verifiedSchoolPhoto": false,
@@ -1457,7 +1493,7 @@
       "title": "Konfliktuskezelés",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-075.webp",
-      "thumb": "assets/media/web/responsive/cs2026-075-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-075-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-075-320.webp 320w, assets/media/web/responsive/cs2026-075-640.webp 640w, assets/media/web/responsive/cs2026-075-960.webp 960w, assets/media/web/cs2026-075.webp 1200w",
       "alt": "Konfliktuskezelés: Előbb tisztázd a tényeket és a különböző nézőpontokat.",
       "verifiedSchoolPhoto": false,
@@ -1474,7 +1510,7 @@
       "title": "Online jelenlét",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-076.webp",
-      "thumb": "assets/media/web/responsive/cs2026-076-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-076-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-076-320.webp 320w, assets/media/web/responsive/cs2026-076-640.webp 640w, assets/media/web/responsive/cs2026-076-960.webp 960w, assets/media/web/cs2026-076.webp 1200w",
       "alt": "Online jelenlét: Nyilvános hozzászólás előtt gondold át a hatását.",
       "verifiedSchoolPhoto": false,
@@ -1491,7 +1527,7 @@
       "title": "Napirend",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-077.webp",
-      "thumb": "assets/media/web/responsive/cs2026-077-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-077-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-077-320.webp 320w, assets/media/web/responsive/cs2026-077-640.webp 640w, assets/media/web/responsive/cs2026-077-960.webp 960w, assets/media/web/cs2026-077.webp 1200w",
       "alt": "Napirend: A tervezésben legyen helye tanulásnak és pihenésnek.",
       "verifiedSchoolPhoto": false,
@@ -1508,7 +1544,7 @@
       "title": "Mozgásszünet",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-078.webp",
-      "thumb": "assets/media/web/responsive/cs2026-078-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-078-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-078-320.webp 320w, assets/media/web/responsive/cs2026-078-640.webp 640w, assets/media/web/responsive/cs2026-078-960.webp 960w, assets/media/web/cs2026-078.webp 1200w",
       "alt": "Mozgásszünet: Hosszú ülőmunka után állj fel és mozogj át.",
       "verifiedSchoolPhoto": false,
@@ -1525,7 +1561,7 @@
       "title": "Alvás",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-079.webp",
-      "thumb": "assets/media/web/responsive/cs2026-079-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-079-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-079-320.webp 320w, assets/media/web/responsive/cs2026-079-640.webp 640w, assets/media/web/responsive/cs2026-079-960.webp 960w, assets/media/web/cs2026-079.webp 1200w",
       "alt": "Alvás: A pihenés a fejlődés és az összpontosítás része.",
       "verifiedSchoolPhoto": false,
@@ -1542,7 +1578,7 @@
       "title": "Segítségkérés",
       "category": "kozosseg",
       "src": "assets/media/web/cs2026-080.webp",
-      "thumb": "assets/media/web/responsive/cs2026-080-640.webp",
+      "thumb": "assets/media/web/responsive/cs2026-080-320.webp",
       "srcset": "assets/media/web/responsive/cs2026-080-320.webp 320w, assets/media/web/responsive/cs2026-080-640.webp 640w, assets/media/web/responsive/cs2026-080-960.webp 960w, assets/media/web/cs2026-080.webp 1200w",
       "alt": "Segítségkérés: Ha elakadsz, keresd a megfelelő segítő személyt.",
       "verifiedSchoolPhoto": false,
@@ -1560,7 +1596,9 @@
       "category": "kozosseg",
       "src": "assets/media/web/eletkep-19.webp",
       "alt": "Tematikus kép: közös tábori élmény",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-19-320.webp 320w, assets/media/web/eletkep-19.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-19-320.webp"
     },
     {
       "id": "photo:020",
@@ -1569,7 +1607,9 @@
       "src": "assets/media/web/eletkep-20.webp",
       "alt": "Tematikus kép: sportolói elismerés",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-20-320.webp 320w, assets/media/web/eletkep-20.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-20-320.webp"
     },
     {
       "id": "photo:021",
@@ -1577,7 +1617,9 @@
       "category": "kozosseg",
       "src": "assets/media/web/eletkep-21.webp",
       "alt": "Tematikus kép: tudatos táplálkozás",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-21-320.webp 320w, assets/media/web/eletkep-21.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-21-320.webp"
     },
     {
       "id": "photo:022",
@@ -1586,7 +1628,9 @@
       "src": "assets/media/web/eletkep-22.webp",
       "alt": "Tematikus kép: sportrehabilitáció",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-22-320.webp 320w, assets/media/web/eletkep-22.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-22-320.webp"
     },
     {
       "id": "photo:023",
@@ -1595,7 +1639,9 @@
       "src": "assets/media/web/eletkep-23.webp",
       "alt": "Tematikus kép: falmászás",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-23-320.webp 320w, assets/media/web/eletkep-23.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-23-320.webp"
     },
     {
       "id": "photo:024",
@@ -1604,7 +1650,9 @@
       "src": "assets/media/web/eletkep-24.webp",
       "alt": "Tematikus kép: kerékpáros közösség",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-24-320.webp 320w, assets/media/web/eletkep-24.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-24-320.webp"
     },
     {
       "id": "photo:025",
@@ -1612,7 +1660,9 @@
       "category": "oktatas",
       "src": "assets/media/web/eletkep-25.webp",
       "alt": "Tematikus kép: olvasás és elmélyülés",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-25-320.webp 320w, assets/media/web/eletkep-25.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-25-320.webp"
     },
     {
       "id": "photo:026",
@@ -1620,7 +1670,9 @@
       "category": "oktatas",
       "src": "assets/media/web/eletkep-26.webp",
       "alt": "Tematikus kép: digitális informatikai foglalkozás",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-26-320.webp 320w, assets/media/web/eletkep-26.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-26-320.webp"
     },
     {
       "id": "photo:027",
@@ -1628,7 +1680,9 @@
       "category": "oktatas",
       "src": "assets/media/web/eletkep-27.webp",
       "alt": "Tematikus kép: közös feladatmegoldás",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-27-320.webp 320w, assets/media/web/eletkep-27.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-27-320.webp"
     },
     {
       "id": "photo:028",
@@ -1636,7 +1690,9 @@
       "category": "oktatas",
       "src": "assets/media/web/eletkep-28.webp",
       "alt": "Tematikus kép: pedagógiai konzultáció",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-28-320.webp 320w, assets/media/web/eletkep-28.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-28-320.webp"
     },
     {
       "id": "photo:029",
@@ -1645,7 +1701,9 @@
       "src": "assets/media/web/eletkep-29.webp",
       "alt": "Tematikus kép: kosárlabda – dobás",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "kosarlabda"
+      "sportDiscipline": "kosarlabda",
+      "srcset": "assets/media/web/responsive/eletkep-29-320.webp 320w, assets/media/web/eletkep-29.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-29-320.webp"
     },
     {
       "id": "photo:030",
@@ -1654,7 +1712,9 @@
       "src": "assets/media/web/eletkep-30.webp",
       "alt": "Tematikus kép: atlétika – rajt",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "atletika"
+      "sportDiscipline": "atletika",
+      "srcset": "assets/media/web/responsive/eletkep-30-320.webp 320w, assets/media/web/eletkep-30.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-30-320.webp"
     },
     {
       "id": "photo:031",
@@ -1663,7 +1723,9 @@
       "src": "assets/media/web/eletkep-31.webp",
       "alt": "Tematikus kép: úszás – gyorsúszás",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "uszas"
+      "sportDiscipline": "uszas",
+      "srcset": "assets/media/web/responsive/eletkep-31-320.webp 320w, assets/media/web/eletkep-31.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-31-320.webp"
     },
     {
       "id": "photo:032",
@@ -1672,7 +1734,9 @@
       "src": "assets/media/web/eletkep-32.webp",
       "alt": "Tematikus kép: röplabda – háló fölött",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "roplabda"
+      "sportDiscipline": "roplabda",
+      "srcset": "assets/media/web/responsive/eletkep-32-320.webp 320w, assets/media/web/eletkep-32.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-32-320.webp"
     },
     {
       "id": "photo:033",
@@ -1680,7 +1744,9 @@
       "category": "kozosseg",
       "src": "assets/media/web/eletkep-33.webp",
       "alt": "Tematikus kép: tanulói közösség",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-33-320.webp 320w, assets/media/web/eletkep-33.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-33-320.webp"
     },
     {
       "id": "photo:034",
@@ -1688,7 +1754,9 @@
       "category": "kozosseg",
       "src": "assets/media/web/eletkep-34.webp",
       "alt": "Tematikus kép: zöld iskolai udvar",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-34-320.webp 320w, assets/media/web/eletkep-34.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-34-320.webp"
     },
     {
       "id": "photo:035",
@@ -1696,7 +1764,9 @@
       "category": "oktatas",
       "src": "assets/media/web/eletkep-35.webp",
       "alt": "Tematikus kép: tanulói beszélgetés pedagógussal",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-35-320.webp 320w, assets/media/web/eletkep-35.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-35-320.webp"
     },
     {
       "id": "photo:036",
@@ -1704,7 +1774,9 @@
       "category": "oktatas",
       "src": "assets/media/web/eletkep-36.webp",
       "alt": "Tematikus kép: tanulás sport mellett",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-36-320.webp 320w, assets/media/web/eletkep-36.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-36-320.webp"
     },
     {
       "id": "photo:037",
@@ -1713,7 +1785,9 @@
       "src": "assets/media/web/eletkep-37.webp",
       "alt": "Tematikus kép: kézilabdameccs",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-37-320.webp 320w, assets/media/web/eletkep-37.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-37-320.webp"
     },
     {
       "id": "photo:038",
@@ -1722,7 +1796,9 @@
       "src": "assets/media/web/eletkep-38.webp",
       "alt": "Tematikus kép: labdarúgás – edzés",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "labdarugas"
+      "sportDiscipline": "labdarugas",
+      "srcset": "assets/media/web/responsive/eletkep-38-320.webp 320w, assets/media/web/eletkep-38.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-38-320.webp"
     },
     {
       "id": "photo:039",
@@ -1731,7 +1807,9 @@
       "src": "assets/media/web/eletkep-39.webp",
       "alt": "Tematikus kép: tenisz – koncentráció",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-39-320.webp 320w, assets/media/web/eletkep-39.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-39-320.webp"
     },
     {
       "id": "photo:040",
@@ -1740,7 +1818,9 @@
       "src": "assets/media/web/eletkep-40.webp",
       "alt": "Tematikus kép: evezőscsapat",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-40-320.webp 320w, assets/media/web/eletkep-40.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-40-320.webp"
     },
     {
       "id": "photo:041",
@@ -1749,7 +1829,9 @@
       "src": "assets/media/web/eletkep-41.webp",
       "alt": "Tematikus kép: bemelegítés a futópályán",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "atletika"
+      "sportDiscipline": "atletika",
+      "srcset": "assets/media/web/responsive/eletkep-41-320.webp 320w, assets/media/web/eletkep-41.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-41-320.webp"
     },
     {
       "id": "photo:042",
@@ -1758,7 +1840,9 @@
       "src": "assets/media/web/eletkep-42.webp",
       "alt": "Tematikus kép: úszócsapat és közösség",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "uszas"
+      "sportDiscipline": "uszas",
+      "srcset": "assets/media/web/responsive/eletkep-42-320.webp 320w, assets/media/web/eletkep-42.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-42-320.webp"
     },
     {
       "id": "photo:043",
@@ -1767,7 +1851,9 @@
       "src": "assets/media/web/eletkep-43.webp",
       "alt": "Tematikus kép: röplabdacsapat – együttműködés",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "roplabda"
+      "sportDiscipline": "roplabda",
+      "srcset": "assets/media/web/responsive/eletkep-43-320.webp 320w, assets/media/web/eletkep-43.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-43-320.webp"
     },
     {
       "id": "photo:044",
@@ -1776,7 +1862,9 @@
       "src": "assets/media/web/eletkep-44.webp",
       "alt": "Tematikus kép: labdarúgóedzés",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "labdarugas"
+      "sportDiscipline": "labdarugas",
+      "srcset": "assets/media/web/responsive/eletkep-44-320.webp 320w, assets/media/web/eletkep-44.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-44-320.webp"
     },
     {
       "id": "photo:045",
@@ -1785,7 +1873,9 @@
       "src": "assets/media/web/eletkep-45.webp",
       "alt": "Tematikus kép: karate és önfegyelem",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-45-320.webp 320w, assets/media/web/eletkep-45.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-45-320.webp"
     },
     {
       "id": "photo:046",
@@ -1794,7 +1884,9 @@
       "src": "assets/media/web/eletkep-46.webp",
       "alt": "Tematikus kép: torna – egyensúlygyakorlat",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-46-320.webp 320w, assets/media/web/eletkep-46.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-46-320.webp"
     },
     {
       "id": "photo:047",
@@ -1802,7 +1894,9 @@
       "category": "kozosseg",
       "src": "assets/media/web/eletkep-47.webp",
       "alt": "Tematikus kép: közösségi táborozás",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "srcset": "assets/media/web/responsive/eletkep-47-320.webp 320w, assets/media/web/eletkep-47.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-47-320.webp"
     },
     {
       "id": "photo:048",
@@ -1811,7 +1905,9 @@
       "src": "assets/media/web/eletkep-48.webp",
       "alt": "Tematikus kép: díjátadás és sportelismerés",
       "verifiedSchoolPhoto": false,
-      "sportDiscipline": "egyeb"
+      "sportDiscipline": "egyeb",
+      "srcset": "assets/media/web/responsive/eletkep-48-320.webp 320w, assets/media/web/eletkep-48.webp 460w",
+      "thumb": "assets/media/web/responsive/eletkep-48-320.webp"
     },
     {
       "id": "graphic:kosarlabda",

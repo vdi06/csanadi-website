@@ -27,7 +27,7 @@
         <button id="tool-theme-toggle" class="tool-theme-toggle" type="button">◐ Megjelenés</button>
       </div>
     </div>
-    <nav class="tool-breadcrumb" aria-label="Morzsamenü"><div class="tool-breadcrumb-inner"><span>Eszközök</span><span aria-hidden="true">›</span><span aria-current="page">Médiatár- és dokumentumkezelő</span></div></nav>
+    <nav class="tool-breadcrumb" aria-label="Morzsamenü"><div class="tool-breadcrumb-inner"><span>Eszközök</span><span aria-hidden="true">›</span><span aria-current="page">Médiatár- és dokumentumkezelő</span></div><a href="dokumentum-szerkeszto.html">Dokumentumadatok szerkesztése</a></nav>
   </header>
   <main id="tool-main" class="tool-main media-manager-main">
     <div class="tool-lead"><span class="tool-eyebrow">Csanádi · szerkesztési központ</span><h1>Médiatár- és dokumentumkezelő</h1>
@@ -50,7 +50,7 @@
         <div class="mm-panel-head"><h2>Médiafájlok</h2><p>Mindegyik felsorolt fájl a honlap <code>assets/</code> mappájában szerepel.</p></div>
         <div class="mm-toolbar">
           <label class="mm-visually-named" for="mm-filter">Fájlok keresése<input id="mm-filter" type="search" placeholder="Név, útvonal, címke…" autocomplete="off"></label>
-          <label class="mm-visually-named" for="mm-type">Típus<select id="mm-type"><option value="all">Összes fájltípus</option><option value="image">Képek</option><option value="video">Videók</option><option value="document">PDF és dokumentumok</option><option value="graphic">Grafikák</option><option value="file">Egyéb fájlok</option></select></label>
+          <label class="mm-visually-named" for="mm-type">Típus<select id="mm-type"><option value="all">Összes fájltípus</option><option value="image">Képek</option><option value="video">Videók</option><option value="document">PDF és dokumentumok</option><option value="graphic">Grafikák</option><option value="file">Egyéb fájlok</option></select></label><label class="mm-visually-named" for="mm-usage">Használat<select id="mm-usage"><option value="all">Minden fájl</option><option value="used">Hivatkozott fájlok</option><option value="unused">Nincs külső hivatkozás</option><option value="changed">Módosított fájlok</option></select></label><label class="mm-visually-named" for="mm-order">Sorrend<select id="mm-order"><option value="title">Cím szerint</option><option value="size">Fájlméret szerint</option><option value="usage">Hivatkozások száma szerint</option></select></label>
         </div>
         <div class="mm-actions">
           <label class="mm-file-action">+ Új fájlok hozzáadása<input id="mm-add" type="file" multiple accept="image/png,image/jpeg,image/webp,image/avif,image/gif,image/svg+xml,video/mp4,video/webm,application/pdf,.doc,.docx,.odt,.csv,.txt,.svg,.mp3,.wav"></label>
@@ -65,7 +65,7 @@
             <label for="mm-bulk-category">Kategória<input id="mm-bulk-category" placeholder="sport, oktatas, kozosseg"></label>
             <label for="mm-bulk-tags">Új közös címkék<input id="mm-bulk-tags" placeholder="például: kosárlabda, archívum"></label>
             <button type="button" class="primary" id="mm-bulk-apply">Kategória és címkék alkalmazása</button>
-            <button type="button" id="mm-usage-report">Hivatkozási jegyzék CSV</button>
+            <button type="button" id="mm-usage-report">Hivatkozási jegyzék CSV</button><button type="button" id="mm-undo" disabled>Legutóbbi szerkesztés visszavonása</button><label class="mm-file-action mm-secondary">Csoportos fájlcsere, név alapján<input id="mm-bulk-replace" type="file" multiple accept="image/webp,image/jpeg,image/png,image/avif,image/svg+xml,video/mp4,application/pdf"></label>
           </div>
         </section>
         <p class="mm-small" id="mm-list-count" role="status" aria-live="polite"></p>
