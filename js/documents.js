@@ -9,7 +9,7 @@ const KIND={guide:'Segédlet',form:'Nyomtatvány',policy:'Szabályzat',publicati
 const STATUS={published:'Aktuális',archived:'Archív',withdrawn:'Visszavont'};
 const SORTS={newest:'Legújabb elöl',oldest:'Legrégebbi elöl',title:'Cím szerint',size:'Fájlméret szerint'};
 const VIEWS={cards:'Kártyák',list:'Lista',table:'Táblázat'};
-const DEFAULT={q:'',category:'all',kind:'all',status:'published',tag:'all',sort:'newest',view:'cards',saved:''};
+const DEFAULT={q:'',category:'all',kind:'all',status:'published',tag:'all',sort:'newest',view:'cards',hasVersions:false,saved:''};
 let registry=null;
 let hash='';
 let error=null;
@@ -105,7 +105,7 @@ function childCategories(id,cats){const descendants=new Set([id]);let prev=-1;wh
 function matchedDocuments(s){
  if(!registry)return[];
  const categories=s.category==='all'?null:childCategories(s.category,registry.cats),q=normal(s.q),date=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Budapest',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
- let docs=registry.data.documents.filter(d=>(s.status==='all'||d.status===s.status)&&(d.status!=='published'||d.validFrom<=date)&&(!d.validTo||d.validTo>=date||s.status!=='published')&&(!categories||categories.has(d.categoryId))&&(s.kind==='all'||d.documentKind===s.kind)&&(s.tag==='all'||d.tags.includes(s.tag)));
+ let docs=registry.data.documents.filter(d=>(s.status==='all'||d.status===s.status)&&(d.status!=='published'||d.validFrom<=date)&&(!d.validTo||d.validTo>=date||s.status!=='published')&&(!categories||categories.has(d.categoryId))&&(s.kind==='all'||d.documentKind===s.kind)&&(s.tag==='all'||d.tags.includes(s.tag))&&(!s.hasVersions||d.versionHistory.length>1));
  if(q)docs=docs.filter(d=>normal([d.title,d.summary,d.categoryId,...d.tags,...d.keywords].join(' ')).includes(q));
  docs.sort((a,b)=>s.sort==='oldest'?a.publishedAt.localeCompare(b.publishedAt):s.sort==='title'?a.title.localeCompare(b.title,'hu'):s.sort==='size'?(b.fileSizeBytes||0)-(a.fileSizeBytes||0):b.publishedAt.localeCompare(a.publishedAt)||a.title.localeCompare(b.title,'hu'));
  return docs;
@@ -127,11 +127,13 @@ function openPreview(doc){
  dialog.append(el('p','doc-preview-explain',doc.official?'Jóváhagyott intézményi dokumentum.':'Önálló tanulási segédlet, nem intézményi szabályzat.'));
  if(doc.status!=='withdrawn'&&doc.filePath){
   const iframe=el('iframe','doc-iframe');iframe.title=doc.title+' előnézete';iframe.loading='lazy';iframe.src=docURL(doc)+'#toolbar=1';dialog.append(iframe);
+  const fallback=el('p','doc-preview-fallback','Ha az előnézet üres vagy a böngésző nem támogatja, használd a Megnyitás új lapon vagy a Letöltés gombot.');dialog.append(fallback);
   const actions=el('div','doc-preview-actions');const open=el('a','btn btn-outline-secondary','Megnyitás új lapon');open.href=docURL(doc);open.target='_blank';open.rel='noopener noreferrer';
   const download=el('a','btn btn-primary','Letöltés ('+formatSize(doc.fileSizeBytes)+')');download.href=docURL(doc);download.download=doc.fileName;actions.append(open,download);dialog.append(actions);
  }else dialog.append(el('p','doc-error','A dokumentumot visszavonták; nem elérhető letöltés.'));
  const detail=el('details','doc-version-history');detail.append(el('summary',null,'Verziótörténet és metaadatok'));
  const list=el('ul');for(const v of doc.versionHistory){list.append(el('li',null,v.version+' · '+formatDate(v.date)+' – '+v.change));}detail.append(list);
+ if(doc.versionHistory.length>1){const compare=el('div','doc-version-comparison');compare.append(el('strong',null,'Verziók változásnaplója'));for(let i=1;i<doc.versionHistory.length;i++){const older=doc.versionHistory[i-1],newer=doc.versionHistory[i];compare.append(el('p',null,older.version+' → '+newer.version+' · '+newer.change));}compare.append(el('p',null,'Ez metaadat-alapú összehasonlítás, nem a PDF-oldalak automatikus szöveges összevetése.'));detail.append(compare);}
  detail.append(el('p',null,'Azonosító: '+doc.id+' · SHA-256: '+(doc.sha256||'nem elérhető')));
  dialog.append(detail);
  dialog.addEventListener('close',()=>{dialog.remove();lastTrigger?.focus?.();});
@@ -163,8 +165,13 @@ function renderCenterContents(mount,route,initial){
  if(!Object.hasOwn(VIEWS,state.view))state.view='cards';if(!Object.hasOwn(SORTS,state.sort))state.sort='newest';if(state.status!=='all'&&!Object.hasOwn(STATUS,state.status))state.status='published';
  const top=el('div','doc-center-head');top.append(el('p','doc-kicker','ELLENŐRZÖTT FÁJLHIVATKOZÁSOK · NYILVÁNOS SEGÉDLETEK'),el('h2',null,'Dokumentumközpont'),el('p','doc-lead','Dokumentumokat kereshetsz, szűrhetsz, megtekinthetsz és letölthetsz. A gyűjteményben általános tanulási segédletek böngészhetők. A hivatalos intézményi szabályzatok az iskola saját honlapjáról érhetők el.'));
  mount.append(top);
-  
-  
+ const manual=el('section','csn26-manual-feature');
+ manual.setAttribute('aria-label','Teljes weboldal-használati útmutató');
+ manual.append(el('p','doc-kicker','TELJES FELHASZNÁLÓI ÉS KARBANTARTÓI DOKUMENTÁCIÓ'),el('h3',null,'A Csanádi Sportiskola 2026 teljes használati kézikönyve'),el('p',null,'66 tartalmi oldal, 6 karbantartó eszköz, a körmenü, a képes oldaltérkép, a keresés, a médiák, a dokumentumkezelés és az FTP-kiadás lépésről lépésre.'));
+ const manualLinks=el('div','csn26-manual-links');
+ const online=el('a','doc-center-link','Kereshető webes kézikönyv megnyitása');online.href=new URL('utmutato.html',ROOT).href;
+ const pdf=el('a','doc-center-link','PDF-kézikönyv letöltése');pdf.href=new URL('assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf',ROOT).href;pdf.download='csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf';
+ const pdfView=el('a','doc-center-link','PDF megnyitása új lapon');pdfView.href=new URL('assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf',ROOT).href;pdfView.target='_blank';pdfView.rel='noopener noreferrer';manualLinks.append(online,pdfView,pdf);manual.append(manualLinks);mount.append(manual);
  const officialLinks=[
   ['Intézményi alapdokumentumok','https://csanadi-bp.edu.hu/docs.html','intezmenyi-szabalyzat'],
   ['Szülői nyomtatványok','https://csanadi-bp.edu.hu/szulok.html','intezmenyi-nyomtatvany'],
@@ -190,6 +197,7 @@ function renderCenterContents(mount,route,initial){
  filters.append(field('Kategória',selectNode(categoryOptions(),state.category,v=>change('category',v,true))));
  filters.append(field('Dokumentumtípus',selectNode([['all','Mindegyik'],...Object.entries(KIND)],state.kind,v=>change('kind',v,true))));
  filters.append(field('Állapot',selectNode([['published','Aktuális'],['archived','Archív'],['withdrawn','Visszavont'],['all','Összes']],state.status,v=>change('status',v,true))));
+ const versionCheck=el('input');versionCheck.type='checkbox';versionCheck.checked=!!state.hasVersions;versionCheck.addEventListener('change',()=>change('hasVersions',versionCheck.checked));const versionLabel=el('label','doc-version-filter');versionLabel.append(versionCheck,el('span',null,'Csak többverziós dokumentumok'));filters.append(versionLabel);
  const tags=[...new Set(registry.data.documents.flatMap(d=>d.tags))].sort((a,b)=>a.localeCompare(b,'hu'));
  filters.append(field('Címke',selectNode([['all','Összes címke'],...tags.map(t=>[t,t])],state.tag,v=>change('tag',v,true))));
  filters.append(field('Rendezés',selectNode(Object.entries(SORTS),state.sort,v=>change('sort',v,true))));

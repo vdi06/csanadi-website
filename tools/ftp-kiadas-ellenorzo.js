@@ -44,6 +44,15 @@ run.addEventListener('click',async()=>{
    const missing=await bounded(assets,available,10);
    add(missing.length?'fail':'ok','Médiafájlok elérése',`${assets.length-missing.length}/${assets.length} állomány érhető el.${missing.length?' Hiányzik: '+missing.slice(0,8).join(', '):''}`);
   }else add('warn','Médiaellenőrzés kihagyva','A teljes állományellenőrzést nem kérted.');
+  try{
+   const manifest=await json('release-manifest.json'),items=manifest.files||{},paths=Object.keys(items);
+   add(paths.length>600?'ok':'warn','Kiadási állományjegyzék',paths.length+' állomány SHA-256 metaadattal a release-manifest.json fájlban.');
+   if(crypto?.subtle){
+    const critical=['index.html','utmutato.html','service-worker.js','js/app.js','js/hero-2026.js','json/oldalindex.json','json/adatok/dokumentumok.json','assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf'];
+    const checked=[];for(const path of critical){const entry=items[path];if(!entry){checked.push(path+' hiányzik a manifestből');continue;}const response=await fetch('../'+path,{cache:'no-store'});if(!response.ok){checked.push(path+' HTTP '+response.status);continue;}const buffer=await response.arrayBuffer(),hash=await crypto.subtle.digest('SHA-256',buffer),hex=[...new Uint8Array(hash)].map(x=>x.toString(16).padStart(2,'0')).join('');if(hex!==entry.sha256||buffer.byteLength!==entry.sizeBytes)checked.push(path+' hash-/méreteltérés');}
+    add(checked.length?'fail':'ok','Kritikus fájlok hash-ellenőrzése',checked.length?checked.join('; '):critical.length+' kritikus fájl tartalma és mérete egyezik a kiadási manifeszttel.');
+   }else add('warn','Kiadási hash-ellenőrzés','A WebCrypto API nem elérhető ebben a környezetben. Használj HTTPS-t vagy helyi biztonságos kiszolgálást.');
+  }catch(e){add('warn','Kiadási manifest','A kiadási manifest ellenőrzése nem sikerült: '+e.message);}
   const html=await fetch('../index.html',{cache:'no-store'}).then(r=>r.text());
   add(/<meta\s+name="robots"\s+content="noindex,nofollow"/.test(html)?'warn':'ok','Keresőmotoros indexelés',/noindex,nofollow/.test(html)?'A fejlesztési noindex,nofollow beállítás aktív; élesítés előtt tudatos döntést igényel.':'A fejlesztési noindex jelölés nem található a főoldalon.');
   const parsed=new DOMParser().parseFromString(html,'text/html');

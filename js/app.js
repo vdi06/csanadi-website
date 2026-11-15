@@ -3,7 +3,7 @@ import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,en
 import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=20261114speed1';
 import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=20261114ext1';
 import {initDetailedDiagnostics,initSiteHealth,initMobileQuickNav} from './site-quality-2026.js?v=20261114ext1';
-import {setupSmartSearch} from './search-j-2026.js?v=20261115round10b';
+import {setupSmartSearch} from './search-j-2026.js?v=20261115r13';
 import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=20261114ten1';
 import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=20261114kmil2';
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=20261114be1';
@@ -13,10 +13,10 @@ import {renderPageMedia} from './page-media-2026.js?v=20261115m1';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=20261114premium1';
 import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=20261114dfg1';
 import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=20261114v5';
-import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=20261114verified1';
+import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=20261115r13';
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=20261114ten2';
-import {renderBlock,dom,listCards} from './blocks.js?v=20261115wing3';
+import {renderBlock,dom,listCards} from './blocks.js?v=20261115r13';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=20261114dfg1';
 import {renderSportsSuccesses} from './sports-successes.js?v=20261114v5';
 import {renderStudentAchievements} from './student-achievements.js?v=20261114navs3';
@@ -46,6 +46,15 @@ const siteMapSubtopics=document.getElementById('site-map-subtopics');
 const siteMapDetails=document.getElementById('site-map-details');
 const siteMapPanel=document.getElementById('compass26-panel');
 let siteMapSelected=null,siteMapReturnFocus=null;
+let siteMapLauncherHome=null;
+function relocateSiteMapButton(open){
+ const emblem=siteMap.querySelector('.compass26-emblem');
+ const launcher=document.querySelector('.csn26-visual-launch');
+ if(!emblem||!launcher)return;
+ if(open){siteMapLauncherHome=launcher.parentElement;emblem.replaceChildren(launcher);launcher.querySelector('button')?.setAttribute('aria-expanded','true');launcher.querySelector('button')?.setAttribute('aria-label','Csanádi körmenü bezárása');}
+ else if(siteMapLauncherHome){siteMapLauncherHome.append(launcher);launcher.querySelector('button')?.setAttribute('aria-expanded','false');launcher.querySelector('button')?.setAttribute('aria-label','Csanádi körmenü megnyitása');}
+}
+
 const outerRing=document.createElement('nav');
 outerRing.id='csn26-outer-ring';outerRing.className='csn26-outer-ring';
 outerRing.setAttribute('aria-label','Külső gyűrű – az aktív főmenü almenüpontjai');
@@ -189,13 +198,21 @@ function positionCompassSubmenu(){
 function openSiteMap(){
  if(!catalog)return;
  siteMapReturnFocus=document.activeElement;
- renderSiteMap(null);siteMap.hidden=false;
+ renderSiteMap(null);siteMap.hidden=false;relocateSiteMapButton(true);
  document.body.classList.add('site-map-is-open');
  (siteMapCats.querySelector('.compass26-choice-link')||document.getElementById('site-map-close')).focus();
 }
+siteMap.addEventListener('keydown',event=>{
+ if(event.key!=='Tab'||siteMap.hidden)return;
+ const active=[...siteMap.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(node=>node.getClientRects().length&&node.getAttribute('aria-hidden')!=='true'&&!node.closest('[hidden]'));
+ if(!active.length)return;
+ const first=active[0],last=active[active.length-1];
+ if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+ if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+});
 function closeSiteMap(restoreFocus=true){
  if(siteMap.hidden)return;
- siteMap.hidden=true;outerRing.hidden=true;siteMap.classList.remove('csn26-ring-active');document.body.classList.remove('site-map-is-open');
+ siteMap.hidden=true;outerRing.hidden=true;siteMap.classList.remove('csn26-ring-active');document.body.classList.remove('site-map-is-open');relocateSiteMapButton(false);
  if(restoreFocus)siteMapReturnFocus?.focus?.();
 }
 function renderMenu(){
@@ -532,7 +549,7 @@ function changeTheme(){
 }
 function wireEvents(){
   window.addEventListener('hashchange',()=>{markNavigationStart(getRoute());renderRoute({focus:true});});
-  document.getElementById('orbit-open').addEventListener('click',openSiteMap);
+  document.getElementById('orbit-open').addEventListener('click',()=>{if(siteMap.hidden)openSiteMap();else closeSiteMap();});
   window.addEventListener('resize',()=>{if(!siteMap.hidden)requestAnimationFrame(positionCompassSubmenu);});
   document.getElementById('site-map-close').addEventListener('click',()=>closeSiteMap());
   siteMap.addEventListener('click',e=>{if(e.target.closest('[data-site-map-dismiss]'))closeSiteMap();if(e.target.closest('a[href]'))closeSiteMap(false);});

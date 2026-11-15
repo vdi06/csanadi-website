@@ -9,6 +9,13 @@
   "refreshSeconds": 75,
   "categories": [
     {
+      "id": "weboldal-utmutato",
+      "label": "A honlap használata – teljes útmutató",
+      "parentId": null,
+      "description": "A teljes honlap és szerkesztőeszközei használati útmutatója",
+      "order": 0
+    },
+    {
       "id": "felveteli",
       "label": "Felvételi és tájékozódás",
       "parentId": null,
@@ -80,6 +87,61 @@
     }
   ],
   "documents": [
+    {
+      "id": "document:csanadi-weboldal-kezikonyv-2026",
+      "title": "Csanádi Sportiskola 2026 – Teljes weboldal-használati útmutató",
+      "summary": "Részletes, lépésenkénti kézikönyv a honlap mind a 66 navigálható oldalához, a körmenühöz, keresőhöz, médiákhoz, PDF-ekhez és mind a 7 karbantartó eszközhöz. Webes változat is elérhető.",
+      "categoryId": "weboldal-utmutato",
+      "tags": [
+        "honlap",
+        "használati útmutató",
+        "dokumentáció",
+        "kézikönyv",
+        "oldaltérkép",
+        "ftp",
+        "médiakezelés"
+      ],
+      "keywords": [
+        "weboldal",
+        "útmutató",
+        "kézikönyv",
+        "kezdőlap",
+        "oldalak",
+        "használat",
+        "funkciók",
+        "szerkesztés",
+        "körmenü",
+        "pdf"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
+      "filePath": "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
+      "fileSizeBytes": 91038,
+      "sha256": "7df868ab0d27299ce61b817c85c2ac2b313792f6f82aad6eac34369e0fec6f18",
+      "version": "2.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/",
+        "#/informaciok/dokumentumtar"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "66 tartalmi oldal és hat segédoldal első teljes útmutatója."
+        },
+        {
+          "version": "2.0.0",
+          "date": "2026-11-15",
+          "change": "Hét segédoldal, képsávok vezérlése, service worker, PDF-megnyitás és felülvizsgálati munkalap."
+        }
+      ]
+    },
     {
       "id": "document:felveteli-segedlet-2026",
       "title": "Felvételi tájékozódási segédlet",

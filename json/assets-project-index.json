@@ -114,9 +114,11 @@
     "css/performance-diagnostics-2026.css",
     "css/premium-home-2026.css",
     "css/radial-2026.css",
+    "css/round12-visual-menu-2026.css",
     "css/style.css",
     "css/tenway-2026.css",
     "css/tools-2026.css",
+    "index.html",
     "js/advanced-2026.js",
     "js/app.js",
     "js/blocks.js",
@@ -137,11 +139,13 @@
     "js/page-media-2026.js",
     "js/performance-diagnostics-2026.js",
     "js/premium-home-2026.js",
+    "js/round12-media-performance.js",
     "js/search-j-2026.js",
     "js/site-quality-2026.js",
     "js/sports-successes.js",
     "js/student-achievements.js",
     "js/tenway-2026.js",
+    "script.js",
     "tools/eszkoz-mediator.html",
     "tools/media-manager-2026.js",
     "tools/oldal-json-szerkeszto.html",
@@ -149,8 +153,7 @@
     "tools/sporthirek-szerkeszto.html",
     "tools/tool-ui-2026.js",
     "tools/zip-native-2026.js",
-    "script.js",
-    "index.html"
+    "utmutato.html"
   ],
   "assetReferences": {
     "assets/graphics/ikon-labdarugas.svg": [
@@ -2483,7 +2486,14 @@
     "assets/media/web/responsive/siker-uszas-960.webp": [],
     "assets/media/web/responsive/sport-1600-320.webp": [],
     "assets/media/web/responsive/sport-1600-640.webp": [],
-    "assets/media/web/responsive/sport-1600-960.webp": []
+    "assets/media/web/responsive/sport-1600-960.webp": [],
+    "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf": [
+      "js/document-collections-2026.js",
+      "js/documents.js",
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json",
+      "utmutato.html"
+    ]
   },
   "mediaIdReferences": {
     "media:logo": [

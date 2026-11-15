@@ -1,0 +1,2866 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "csanadi-sportiskola-2026-r13",
+  "date": "2026-11-15",
+  "ftpCompatible": true,
+  "bootstrap": "CDN bootstrap@5.3.9",
+  "notes": "A manifest önmagát nem tartalmazza; minden egyéb kiadási fájlt SHA-256-tal és pontos bájtmérettel sorol fel.",
+  "files": {
+    "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf": {
+      "sizeBytes": 91038,
+      "sha256": "7df868ab0d27299ce61b817c85c2ac2b313792f6f82aad6eac34369e0fec6f18"
+    },
+    "assets/documents/digitalis-fajlok-es-beadas.pdf": {
+      "sizeBytes": 48220,
+      "sha256": "8a2ad96eacd33bd78f77b28a6367a24b2a1b473e5422a17e1010c4181199063f"
+    },
+    "assets/documents/felveteli-tajekozodasi-segedlet-2026.pdf": {
+      "sizeBytes": 48341,
+      "sha256": "398e044c33cfd3b109d841b4e650be9c082ee90ce129dc242c85a5d997c80522"
+    },
+    "assets/documents/segedlet-2026-01.pdf": {
+      "sizeBytes": 46582,
+      "sha256": "1c8809c1a235eea5838afb55f01cdc792e6d5a1c93b64bc09829c9d9be8609e0"
+    },
+    "assets/documents/segedlet-2026-02.pdf": {
+      "sizeBytes": 46721,
+      "sha256": "32ebaca81e5ec33eb81dbd9e578d2371eb1bcc14d510d9635a13d029e8a68676"
+    },
+    "assets/documents/segedlet-2026-03.pdf": {
+      "sizeBytes": 46656,
+      "sha256": "782c200fddb49af2439fcdb2cfd659e70f6053756860c1512512dac1f8a8ccd1"
+    },
+    "assets/documents/segedlet-2026-04.pdf": {
+      "sizeBytes": 46632,
+      "sha256": "a2a3c25e7aac820232b6d535e2accd2cf7d294f3ca429710aa13dfc1e0e112cf"
+    },
+    "assets/documents/segedlet-2026-05.pdf": {
+      "sizeBytes": 46718,
+      "sha256": "47615c78cb268f3314726d3b05faa6a53c411c0acb28be836ad9cb42940c16ea"
+    },
+    "assets/documents/segedlet-2026-06.pdf": {
+      "sizeBytes": 46652,
+      "sha256": "0c6358e85bed05a7d19e91ae3645474b4a2c11c7239bb3bbc5872198920fcd55"
+    },
+    "assets/documents/segedlet-2026-07.pdf": {
+      "sizeBytes": 46655,
+      "sha256": "ffad2a8d9d1bc41e2e3070174b71a6346ebc9aa61cc06b6d837be7d648fc2261"
+    },
+    "assets/documents/segedlet-2026-08.pdf": {
+      "sizeBytes": 46647,
+      "sha256": "250edd9cf8aaac6a0bf16de7bc73afc355fcb9b211265406399736847ab4425d"
+    },
+    "assets/documents/segedlet-2026-09.pdf": {
+      "sizeBytes": 46628,
+      "sha256": "b9720741c7b8be20aec2ca401809bc992a8c91ff7c8a3f58dc2da1a94d5e2db3"
+    },
+    "assets/documents/segedlet-2026-10.pdf": {
+      "sizeBytes": 46663,
+      "sha256": "01bbfefd0abced8be6a4030b6d97f3682ebf388d31a920ec0f1fe9bf44de284d"
+    },
+    "assets/documents/segedlet-2026-11.pdf": {
+      "sizeBytes": 46574,
+      "sha256": "4af6013d019f7bb259ce2964d92e74338b211b202e7976992e9322cee8ae0d45"
+    },
+    "assets/documents/segedlet-2026-12.pdf": {
+      "sizeBytes": 46668,
+      "sha256": "b1b1bc24284de27f0eb55de75033dca25557a4cf78bf561c192956f60dbe9bcf"
+    },
+    "assets/documents/segedlet-2026-13.pdf": {
+      "sizeBytes": 46668,
+      "sha256": "267963816a743f11a94f26dd4a26ec6297e9c5a209c554d23ca5dd026d4813d0"
+    },
+    "assets/documents/segedlet-2026-14.pdf": {
+      "sizeBytes": 46664,
+      "sha256": "45ea1fbc14798dafec1cd7cc2178999913d2ed81e1c5db1278fa61678643c9dd"
+    },
+    "assets/documents/segedlet-2026-15.pdf": {
+      "sizeBytes": 46690,
+      "sha256": "31eaa3af7b0b145b1286407e6871cb125fd266f19b85310e2fa9219478244ef9"
+    },
+    "assets/documents/tanulas-sport-idogazdalkodas.pdf": {
+      "sizeBytes": 48603,
+      "sha256": "4af4e9c0c78536f6fb53c23701ff1ac42c628e9466debcdb993a49e1ae42f97f"
+    },
+    "assets/graphics/ikon-atletika.svg": {
+      "sizeBytes": 554,
+      "sha256": "243d4fc17b4086034b402296b9ff11e0b67fa8d67e19b04e0fbc19c6a7e46253"
+    },
+    "assets/graphics/ikon-fenntarthatosag.svg": {
+      "sizeBytes": 513,
+      "sha256": "0200122ea29c8bec5ad2f944485e48e66500ae9aa773cce930a3d38e2d1b17c0"
+    },
+    "assets/graphics/ikon-konyv.svg": {
+      "sizeBytes": 510,
+      "sha256": "6cf2996f5ab45dbd5eb05f46427d2d62777060c33c34f33d9184177829598cc4"
+    },
+    "assets/graphics/ikon-kosarlabda.svg": {
+      "sizeBytes": 520,
+      "sha256": "2561fe042c23e721a7b0a1f95b8a2919dbeb65b37d282226a196274968a7111c"
+    },
+    "assets/graphics/ikon-kozosseg.svg": {
+      "sizeBytes": 584,
+      "sha256": "426d04efe24dd4ee437d3b91aa230aba7940a809758f1a259fbd52fda97909be"
+    },
+    "assets/graphics/ikon-labdarugas.svg": {
+      "sizeBytes": 557,
+      "sha256": "fd172b6fe129d0695213fdd56768e44a98bb8177cd59e9dae8d49dc50bacdb99"
+    },
+    "assets/graphics/ikon-laptop.svg": {
+      "sizeBytes": 500,
+      "sha256": "3f3ccedd40758a9facb1dc0771d2e0e2bd14d40c80051eb2fe2a4efeaf656117"
+    },
+    "assets/graphics/ikon-naptar.svg": {
+      "sizeBytes": 542,
+      "sha256": "d843fda7bb1b9745746d646e4b8291be52b7f94c970be98741f910386762d515"
+    },
+    "assets/graphics/ikon-roplabda.svg": {
+      "sizeBytes": 501,
+      "sha256": "ac841654d7ed91995aa4b9bd896e2a56d3138fcfac3a7fb7aa4ae27062a2cad7"
+    },
+    "assets/graphics/ikon-uszas.svg": {
+      "sizeBytes": 524,
+      "sha256": "64547cf3b1d7f01bed71d92a5b2a39eed50047404236e9815b5e1600b4b84f92"
+    },
+    "assets/graphics/sports-pattern-dark.svg": {
+      "sizeBytes": 11611,
+      "sha256": "7ea42dac91facb633cc3181b248e747122cbc3ae31dbe0b29bfbf68823b90c6a"
+    },
+    "assets/graphics/sports-pattern-light.svg": {
+      "sizeBytes": 11611,
+      "sha256": "271c85fd117a2d23b2d6534ab9cf0fa64f37df0257f52b05035f614d42abee10"
+    },
+    "assets/media/logo/csanadi-cimer-512.webp": {
+      "sizeBytes": 22756,
+      "sha256": "bf32c83b51a4d7fd6a079a73dc9488e3e70720f26a45f604c1f1bcfc84ec8c16"
+    },
+    "assets/media/video/montazs-2026-01.mp4": {
+      "sizeBytes": 376600,
+      "sha256": "b1a84dc60c67954b4b0f2c3e72af07389f0076bbaf61b719c7a749b24c194c09"
+    },
+    "assets/media/video/montazs-2026-02.mp4": {
+      "sizeBytes": 410829,
+      "sha256": "629a22862a15af0859f31fb6ab78ddbf7881166cfae3d50aa890a3c0dd59f409"
+    },
+    "assets/media/video/montazs-2026-03.mp4": {
+      "sizeBytes": 233213,
+      "sha256": "1207884d020ddc45b6587eb70ce875eb6053fef215d92d274139060ce004b4b8"
+    },
+    "assets/media/video/montazs-2026-04.mp4": {
+      "sizeBytes": 342136,
+      "sha256": "dff215a31d0f07045a2b2e7e75230e6f0135a7c21c45006b9de0f0f0fc3b3f01"
+    },
+    "assets/media/video/montazs-2026-05.mp4": {
+      "sizeBytes": 181172,
+      "sha256": "0ceb4143b2e30e4b7eaceca86d339526196ebd6217d7c87a912b0268d1c78f26"
+    },
+    "assets/media/video/montazs-2026-06.mp4": {
+      "sizeBytes": 268271,
+      "sha256": "99de3f3a3d4ae56d9bdee8d7174309082a2dba272af5bdc7068c3f95a2330232"
+    },
+    "assets/media/video/montazs-2026-07.mp4": {
+      "sizeBytes": 262628,
+      "sha256": "177e40455f3cf0fcbfec598fcc60d27b66fc2ad4c1a51b2b5228ab85a430202b"
+    },
+    "assets/media/video/montazs-2026-08.mp4": {
+      "sizeBytes": 272279,
+      "sha256": "14a101fd61f9a4ce7a44b6b75e8a42e3350a0cb74a56574c5ff4a8f17ca3608b"
+    },
+    "assets/media/video/montazs-2026-09.mp4": {
+      "sizeBytes": 192709,
+      "sha256": "7822a5267fe01dbd3977b6e6a45c142c04f0049645a659766c5722eacf303443"
+    },
+    "assets/media/video/montazs-2026-10.mp4": {
+      "sizeBytes": 186853,
+      "sha256": "51a0d0a88cbb717866ab00b0cfa20a7569b030b12facacb99a566474405d9d2b"
+    },
+    "assets/media/video/sport-pillanatok.mp4": {
+      "sizeBytes": 561143,
+      "sha256": "9bc495d484f9216bcdd46fc22fc47720bf6e25bf40fc5a1ab6e02a80ad3c3bc0"
+    },
+    "assets/media/video/tudas-kozosseg.mp4": {
+      "sizeBytes": 612719,
+      "sha256": "1b91a1d080561629c938115ee2f81a312cd67b367f662137ad807874648564bb"
+    },
+    "assets/media/web/belepes-kapu.webp": {
+      "sizeBytes": 317992,
+      "sha256": "6e93e94887bdbaae99b98c9361fb28260b198faecf35e1f05dd41e2e634338ee"
+    },
+    "assets/media/web/belepes-nyitott.webp": {
+      "sizeBytes": 307012,
+      "sha256": "58367c56b1439286be31a611591a83c4d90abb5b64cb626036533325d0c5bda7"
+    },
+    "assets/media/web/cs2026-001.webp": {
+      "sizeBytes": 65950,
+      "sha256": "dc17a59c5f973cd200d454f6117cd3ab12940a5c1ce2999fabdf7511df2155a0"
+    },
+    "assets/media/web/cs2026-002.webp": {
+      "sizeBytes": 33826,
+      "sha256": "8c6b26c3852abea43a813aeabd765e36edd90b923b6514d0821873ca0d2adcec"
+    },
+    "assets/media/web/cs2026-003.webp": {
+      "sizeBytes": 51862,
+      "sha256": "d121791d81baafbf2efdb16aec75adb05eef6199b71eeb15792541a75b150cf8"
+    },
+    "assets/media/web/cs2026-004.webp": {
+      "sizeBytes": 51400,
+      "sha256": "6f509a392825c5f650efd45fd0405b835f4ea2ac08c45fb358e8b4cf92f78721"
+    },
+    "assets/media/web/cs2026-005.webp": {
+      "sizeBytes": 61268,
+      "sha256": "41addf7b570ce41ffe2e5fb36da436f46d0e09728c545203ccc6bfea9ca8944d"
+    },
+    "assets/media/web/cs2026-006.webp": {
+      "sizeBytes": 67398,
+      "sha256": "47aeeff5b231833ced9b19d3d2443a037ce18e36a1d1d1db85e4040b7b06957f"
+    },
+    "assets/media/web/cs2026-007.webp": {
+      "sizeBytes": 62170,
+      "sha256": "85fa4a00e359dfcd7ebdfb79771604b94d69c86f4054dade45464a7cbd92e2e5"
+    },
+    "assets/media/web/cs2026-008.webp": {
+      "sizeBytes": 85352,
+      "sha256": "09224c9c483b6e4ffe9897fd87f0104a694d8c944224f9b3171578eeecb399e0"
+    },
+    "assets/media/web/cs2026-009.webp": {
+      "sizeBytes": 57560,
+      "sha256": "a5cd7b7e5371f7d31eb465349016bcd1602a2888a4a36ca8c724c32c1e4f0087"
+    },
+    "assets/media/web/cs2026-010.webp": {
+      "sizeBytes": 71636,
+      "sha256": "49d3954c182e48ac2da6bed6f67b3a3106ed0e6d3e75bab25955027bf5fc6917"
+    },
+    "assets/media/web/cs2026-011.webp": {
+      "sizeBytes": 44160,
+      "sha256": "81ae78d54eb8e38a7120298c2126202e801402cb0905a407a6ed8e779f3adb80"
+    },
+    "assets/media/web/cs2026-012.webp": {
+      "sizeBytes": 26484,
+      "sha256": "5654f35034b7f24c9389cb2f4034277cb710c01826eff645ebcc249195cc4a99"
+    },
+    "assets/media/web/cs2026-013.webp": {
+      "sizeBytes": 40370,
+      "sha256": "872d6c3c1389c6adc586d0c2b6335c689cdbf1f130dff28c07e854f08c1fef18"
+    },
+    "assets/media/web/cs2026-014.webp": {
+      "sizeBytes": 35516,
+      "sha256": "76165ddf964d398e7b1e59778cf857b959c1f26adf871dc1d4a41f00882f9a0a"
+    },
+    "assets/media/web/cs2026-015.webp": {
+      "sizeBytes": 39010,
+      "sha256": "c4796e80e4dd374dfa2d67781f68abb9886925bf587d3988e6f1e3ccf6dfc164"
+    },
+    "assets/media/web/cs2026-016.webp": {
+      "sizeBytes": 44340,
+      "sha256": "e13aa25ac61a709ccdee3b712325a8e72b760554c644fc2576e150b176ad101a"
+    },
+    "assets/media/web/cs2026-017.webp": {
+      "sizeBytes": 24672,
+      "sha256": "34eb0ce46a564b68bc06d49d5cf2703dcc6cb039f3ece37454b83ad23ce4e2bb"
+    },
+    "assets/media/web/cs2026-018.webp": {
+      "sizeBytes": 24544,
+      "sha256": "f20d58420b688be654fc21eafbb5f7babdde9481a8519221255755b0eb9d64d9"
+    },
+    "assets/media/web/cs2026-019.webp": {
+      "sizeBytes": 25950,
+      "sha256": "fa55fd8f065e404756944d7a3d484bdab80a508bd3ab898a36e1f6cf6142003c"
+    },
+    "assets/media/web/cs2026-020.webp": {
+      "sizeBytes": 24332,
+      "sha256": "f8d1897422cf52bdb63e55297a02e5cd46fecb7c14d962300480aacc12685dd1"
+    },
+    "assets/media/web/cs2026-021.webp": {
+      "sizeBytes": 23966,
+      "sha256": "5a8e92ccd47c21dd170b9608558cb3a36afdee7e5286243e1d71735efea4939f"
+    },
+    "assets/media/web/cs2026-022.webp": {
+      "sizeBytes": 24184,
+      "sha256": "f9026858dd8b1fab1de01865559a196b7122de938d607079f032ac690ee5977c"
+    },
+    "assets/media/web/cs2026-023.webp": {
+      "sizeBytes": 23602,
+      "sha256": "9b9b4c6adf353c81897811221a672090eeb22a1ee8b01fb79c9e12eba9579442"
+    },
+    "assets/media/web/cs2026-024.webp": {
+      "sizeBytes": 21580,
+      "sha256": "f51af6e0e54e46e29a132cab89eadecbd0226de4df9591d12c8b6e38c1776e69"
+    },
+    "assets/media/web/cs2026-025.webp": {
+      "sizeBytes": 23966,
+      "sha256": "a95b43dd6e8d0ea862bd2e3f12b520b2ad64153b3c5273b2091b520572d58027"
+    },
+    "assets/media/web/cs2026-026.webp": {
+      "sizeBytes": 24702,
+      "sha256": "9ddea2def6d460d56acbe7cad4f5d67e470196ef3cd6e5b7eb299ad6ae2532ce"
+    },
+    "assets/media/web/cs2026-027.webp": {
+      "sizeBytes": 21934,
+      "sha256": "03d31c6b325eeb287427655df32bae745ed6004c1fc16a4c19126b916fb7b41d"
+    },
+    "assets/media/web/cs2026-028.webp": {
+      "sizeBytes": 24372,
+      "sha256": "8ef9d731264f973bf4a86b04263d02c550b80f62730abea2a12a12f4314300f4"
+    },
+    "assets/media/web/cs2026-029.webp": {
+      "sizeBytes": 22650,
+      "sha256": "bfdefb04d0ceef944165ceeee16463485280d3f60189fc49b1ae8fc443e473c0"
+    },
+    "assets/media/web/cs2026-030.webp": {
+      "sizeBytes": 22202,
+      "sha256": "970551e6c532a82831f7143c8e717300c291d840ece9a1855811a0007756a48a"
+    },
+    "assets/media/web/cs2026-031.webp": {
+      "sizeBytes": 25740,
+      "sha256": "c4f6ea9d9dd6f1a8206095686ad174811a3b5ab014e7fb68ff04c6ae248f9512"
+    },
+    "assets/media/web/cs2026-032.webp": {
+      "sizeBytes": 22524,
+      "sha256": "36e8b9a8c2eff63991f10a6608c89a073379d5bfad2e08d4b13f1d45b4881358"
+    },
+    "assets/media/web/cs2026-033.webp": {
+      "sizeBytes": 24188,
+      "sha256": "b66ee2e4ddf6ec01ac4a5017eaa2f88a17a8967c4a1dd6741ef7e462bf61f544"
+    },
+    "assets/media/web/cs2026-034.webp": {
+      "sizeBytes": 23392,
+      "sha256": "6f71ad1e6e649a8ec9cde94416ba90d82707bc5f84eed99357c3d00d50289e90"
+    },
+    "assets/media/web/cs2026-035.webp": {
+      "sizeBytes": 23402,
+      "sha256": "c6d9d76207b64f615e71d876360607b9cd2e0a15b372e4b1a76623706b516c1a"
+    },
+    "assets/media/web/cs2026-036.webp": {
+      "sizeBytes": 23018,
+      "sha256": "f950cf283e52915fc25da256318afcefe8fe1ac696507e097843d3ead68aa978"
+    },
+    "assets/media/web/cs2026-037.webp": {
+      "sizeBytes": 22996,
+      "sha256": "95e485d62438e74551c9d775a545b0e96521496fcb076b78d1fbe08bd9431d30"
+    },
+    "assets/media/web/cs2026-038.webp": {
+      "sizeBytes": 25796,
+      "sha256": "6eecaf95c6f7d65fc2d797753d4213fca82ed6700cb6ffa9c55c95aaf2c809d2"
+    },
+    "assets/media/web/cs2026-039.webp": {
+      "sizeBytes": 25076,
+      "sha256": "de896008355e394b76f0adb0d09cfe0ff3be1c32be05aebcd3f1666687fb4bd2"
+    },
+    "assets/media/web/cs2026-040.webp": {
+      "sizeBytes": 24782,
+      "sha256": "d9de898a8ed9d34ae560e44909b78ed955f5e895f16ebaaa268d808f9917bb0d"
+    },
+    "assets/media/web/cs2026-041.webp": {
+      "sizeBytes": 25350,
+      "sha256": "95e2891c83df2f70a1dc8a926c2cf8ffa61577edf87543fdad4559def69fac6b"
+    },
+    "assets/media/web/cs2026-042.webp": {
+      "sizeBytes": 23744,
+      "sha256": "bf084f197a4d906f7fa0c8688b0e31bdc498defde5742a7b74d9ac15cfd6ca74"
+    },
+    "assets/media/web/cs2026-043.webp": {
+      "sizeBytes": 23784,
+      "sha256": "d54a9a856350e95db974af40a927201891f791716d51c5a6f9fd9059bd707fa9"
+    },
+    "assets/media/web/cs2026-044.webp": {
+      "sizeBytes": 23608,
+      "sha256": "114a4c55b1da150212232fdc228c85f858746435615d8213d20a60bf0cb2fa9a"
+    },
+    "assets/media/web/cs2026-045.webp": {
+      "sizeBytes": 23366,
+      "sha256": "9994fc6d99f61d5a511c74c10db5fd32f7b984f4c403ff7e45d44f76f6f17b42"
+    },
+    "assets/media/web/cs2026-046.webp": {
+      "sizeBytes": 24958,
+      "sha256": "c31c3f589ed52fe57e1a09e38f6f5add9bb4b4df6497ab7bb71e95754119e3d2"
+    },
+    "assets/media/web/cs2026-047.webp": {
+      "sizeBytes": 23692,
+      "sha256": "a81fd5516510a3817db9255ba778c697520e389f979c45263698a59bd768789d"
+    },
+    "assets/media/web/cs2026-048.webp": {
+      "sizeBytes": 21428,
+      "sha256": "da119c01a4d1acbf96d7bb8b31a0d5a1ccc199969c142458cb1eaf144735b7cd"
+    },
+    "assets/media/web/cs2026-049.webp": {
+      "sizeBytes": 23652,
+      "sha256": "db1a3f8fca856836bf80764e2b38df758831d21d3709366db0198388e7db4be4"
+    },
+    "assets/media/web/cs2026-050.webp": {
+      "sizeBytes": 22260,
+      "sha256": "cb6629bd354f16c0ab4a04eaeadef0c416a71b0a3fe03bda4ef27fce4c0c00d9"
+    },
+    "assets/media/web/cs2026-051.webp": {
+      "sizeBytes": 23388,
+      "sha256": "9ba7ad186c438827392255585598362880fbd6ed85f8edffd3065dfecedbb26d"
+    },
+    "assets/media/web/cs2026-052.webp": {
+      "sizeBytes": 21966,
+      "sha256": "1e8de3b0d1855ae3d88f830a17de414b5cbd1af8f6fec49f546343b8e715ac5f"
+    },
+    "assets/media/web/cs2026-053.webp": {
+      "sizeBytes": 21656,
+      "sha256": "03fe3059b60d2248f74887d347b64b609d91fef6b78030d48eca1839f4853266"
+    },
+    "assets/media/web/cs2026-054.webp": {
+      "sizeBytes": 22736,
+      "sha256": "6f7026f533b5477373125e6969f4f38bd9514b6eff82a5350da6e8bcc549fd73"
+    },
+    "assets/media/web/cs2026-055.webp": {
+      "sizeBytes": 22508,
+      "sha256": "d98e1ed5702e8bef3d4b151119efb73491015e06195274e9f191303d77e0f69a"
+    },
+    "assets/media/web/cs2026-056.webp": {
+      "sizeBytes": 22814,
+      "sha256": "b7adcb9e2cf3ff9f791ed9450bc9e8bc624193944015d76fbe0492ed0783a1a3"
+    },
+    "assets/media/web/cs2026-057.webp": {
+      "sizeBytes": 22800,
+      "sha256": "cbd8364a298f61f509cf69a512f7151de6de4cb017d033b8a11009a63b97fd86"
+    },
+    "assets/media/web/cs2026-058.webp": {
+      "sizeBytes": 23404,
+      "sha256": "5a4ac70804c3de4a97f37b77792b885ed51547b48eeb0f9a50ede633437ba4a4"
+    },
+    "assets/media/web/cs2026-059.webp": {
+      "sizeBytes": 23760,
+      "sha256": "e65336e4333dedb4f21e5f9534856ed28b2e4c0bc2866857a540197bf978d222"
+    },
+    "assets/media/web/cs2026-060.webp": {
+      "sizeBytes": 21904,
+      "sha256": "9d0787e7648b82d19e674c7c0e8245ad7dad1a29e5dffc2e3d7a3d26e42e3a1c"
+    },
+    "assets/media/web/cs2026-061.webp": {
+      "sizeBytes": 23140,
+      "sha256": "05c29329e6dd511dd5156877d0ff1d7f2ee6c532b81740c9bf960c1760abe636"
+    },
+    "assets/media/web/cs2026-062.webp": {
+      "sizeBytes": 25584,
+      "sha256": "39b17d635b2bf7f8b3d3d860efe1b2c63a98628e0b119f58396c13253d8c2f9c"
+    },
+    "assets/media/web/cs2026-063.webp": {
+      "sizeBytes": 25680,
+      "sha256": "b62506f8f9cdc75540855c2f279c039c8b33c8155b76c8e7811a2bc6fbb57f9a"
+    },
+    "assets/media/web/cs2026-064.webp": {
+      "sizeBytes": 23620,
+      "sha256": "27dedb17155cd54fedc4e6ae3b14a550791ec1890fb3d4a4e4ecc34e58ed2d68"
+    },
+    "assets/media/web/cs2026-065.webp": {
+      "sizeBytes": 24074,
+      "sha256": "633b833f2cddf66c244760fa510ada2488b6b725186003f7ce89a6197c826300"
+    },
+    "assets/media/web/cs2026-066.webp": {
+      "sizeBytes": 22638,
+      "sha256": "75b9e269e95db5a501010a89d795bd796d96f42bd315d565ebd243d8e63c9757"
+    },
+    "assets/media/web/cs2026-067.webp": {
+      "sizeBytes": 23646,
+      "sha256": "551e70a1c79d3d5ff77f3576a096d46d32123772c59cde4630b75f4ddbd895b9"
+    },
+    "assets/media/web/cs2026-068.webp": {
+      "sizeBytes": 23938,
+      "sha256": "68e28fbb0ff88c15295b5f17d3bc844f47fd08302519fb1ac52139496b856212"
+    },
+    "assets/media/web/cs2026-069.webp": {
+      "sizeBytes": 23770,
+      "sha256": "08872173dc051e8a65b1936a360ad66c6780824abc3d31d64a4df75509227383"
+    },
+    "assets/media/web/cs2026-070.webp": {
+      "sizeBytes": 25798,
+      "sha256": "e992f56f123fd5e70bb87183ea2ad0bba23934f08910398e6f2ad34928d7392a"
+    },
+    "assets/media/web/cs2026-071.webp": {
+      "sizeBytes": 23596,
+      "sha256": "7bab5a0cd045e43063e3858a72182e2e1e2760100e63e4eb008ce3607dc041ed"
+    },
+    "assets/media/web/cs2026-072.webp": {
+      "sizeBytes": 22956,
+      "sha256": "dc131728ccace79cbee11d42ea82e6ac425196a169aacb2fdaf5666a83c5355b"
+    },
+    "assets/media/web/cs2026-073.webp": {
+      "sizeBytes": 22880,
+      "sha256": "8c1749515d4c5b7536ef43853dbfb1a437e4a6704f65531720fbb389f0375b14"
+    },
+    "assets/media/web/cs2026-074.webp": {
+      "sizeBytes": 24710,
+      "sha256": "9888bdc6b7f32489881b5f117ecbc168f93e85a682e5aff10e1046171947ca05"
+    },
+    "assets/media/web/cs2026-075.webp": {
+      "sizeBytes": 24492,
+      "sha256": "be7504e3b388c991fb91a8e6be1ea9035b03edb2395e320eea833010933e730c"
+    },
+    "assets/media/web/cs2026-076.webp": {
+      "sizeBytes": 24484,
+      "sha256": "0db9ca3968f2090463204d35bd879338bb2b7c12dd7aed9db13a367dab3be71f"
+    },
+    "assets/media/web/cs2026-077.webp": {
+      "sizeBytes": 23512,
+      "sha256": "0bb02896650765646f212c1dce42b697b9abd6545382476a08197794b2fdcd64"
+    },
+    "assets/media/web/cs2026-078.webp": {
+      "sizeBytes": 23744,
+      "sha256": "4c1d42cec88149cdf573cc484966c4adc478bbf0685cb54c12832bec4db4ac69"
+    },
+    "assets/media/web/cs2026-079.webp": {
+      "sizeBytes": 22200,
+      "sha256": "53dffaa44104c8e2ca9d089ef6edd8493827676ef7f16cd2f25cf3eebe34d251"
+    },
+    "assets/media/web/cs2026-080.webp": {
+      "sizeBytes": 25058,
+      "sha256": "b1bec2bacbce23e73772313a55bc33b8763e3c83dc80f579550a675ff3de3519"
+    },
+    "assets/media/web/eletkep-01.webp": {
+      "sizeBytes": 115026,
+      "sha256": "1788f50b18f8d95b103b81278e27c6a172edf28738f6d6e999a9f7b227c5b291"
+    },
+    "assets/media/web/eletkep-02.webp": {
+      "sizeBytes": 122184,
+      "sha256": "0e122c95484fb74a7030ea39fd392b7c3d3ee10367c333346f335821f5c3442d"
+    },
+    "assets/media/web/eletkep-03.webp": {
+      "sizeBytes": 150494,
+      "sha256": "1dd7795f03f0235385b44ad297d3af0de89cd0d12332513439789685408dd0bc"
+    },
+    "assets/media/web/eletkep-04.webp": {
+      "sizeBytes": 86222,
+      "sha256": "83e30728117fd15810ea002e5fd88ad0c52adcffadd3f9eea1ba675fcbce55f0"
+    },
+    "assets/media/web/eletkep-05.webp": {
+      "sizeBytes": 136694,
+      "sha256": "03fc8def51c72cb5f6717010021c19cf87f4242f272269a275f6696af66c06bc"
+    },
+    "assets/media/web/eletkep-06.webp": {
+      "sizeBytes": 124066,
+      "sha256": "f543aa280151c768f51847b3d03e6b38519dabd7599f5f81ad44f92a1da97944"
+    },
+    "assets/media/web/eletkep-07.webp": {
+      "sizeBytes": 147856,
+      "sha256": "dd3d9f4b6bb579e5d5b34b8a5921d6a75689404e7b921b9159dedac49517cb4e"
+    },
+    "assets/media/web/eletkep-08.webp": {
+      "sizeBytes": 89440,
+      "sha256": "5929ca73bf8033e26be8d24d0d1a28f2cdfeb5f95b1f41ada51a5edc1eb33d3d"
+    },
+    "assets/media/web/eletkep-09.webp": {
+      "sizeBytes": 191108,
+      "sha256": "828879404d355ea47a037faccac9471d5b4babcefec2cc12ba727e6011c4b221"
+    },
+    "assets/media/web/eletkep-10.webp": {
+      "sizeBytes": 155646,
+      "sha256": "09d62b3144c3638fd3614bb6eb42c1e67d09618a1fb3744655854254df3aa79c"
+    },
+    "assets/media/web/eletkep-11.webp": {
+      "sizeBytes": 21702,
+      "sha256": "8af078c52426b91c416b182858c635c98c31a5bd99790a0986e9993ec5073a7a"
+    },
+    "assets/media/web/eletkep-12.webp": {
+      "sizeBytes": 25502,
+      "sha256": "a7181527daaa43aa7813f7ff4ba239a4d3011585521774e86a61c5ae88f3237d"
+    },
+    "assets/media/web/eletkep-13.webp": {
+      "sizeBytes": 31120,
+      "sha256": "c3e38463d4128e274dc18766333670e0cc32b68d6201f1bec54b3b9ea6f267e6"
+    },
+    "assets/media/web/eletkep-14.webp": {
+      "sizeBytes": 49466,
+      "sha256": "5b31de36c3db73f7389196cd0fc940979fb2357471cfcc52295d7acf18f47b35"
+    },
+    "assets/media/web/eletkep-15.webp": {
+      "sizeBytes": 26414,
+      "sha256": "7756e6e2aa8c7b570f1e851d791f50b2b447398b49624a06943acb1901dd3836"
+    },
+    "assets/media/web/eletkep-16.webp": {
+      "sizeBytes": 29096,
+      "sha256": "f20dd59a48acc9ece0c683c1d82632177167b4c5fe1d32e1d1a92876d713f090"
+    },
+    "assets/media/web/eletkep-17.webp": {
+      "sizeBytes": 20036,
+      "sha256": "75402d40c1920cabfb15245a698c57b4b187b589fa2eadf4c0d28de99792c4c0"
+    },
+    "assets/media/web/eletkep-18.webp": {
+      "sizeBytes": 11456,
+      "sha256": "656b4182677713ae62148d589469bc26f11b87cb7507ad5b3b677bdb6a8e9a7b"
+    },
+    "assets/media/web/eletkep-19.webp": {
+      "sizeBytes": 21132,
+      "sha256": "df3114ded01a54cee5b9613cbda824077e7ac521e1e537d218a03e3a4197c26d"
+    },
+    "assets/media/web/eletkep-20.webp": {
+      "sizeBytes": 32202,
+      "sha256": "b0abd7d9e641438de0833bc9612abce993ea487d34ef18d2af435278ff0abadd"
+    },
+    "assets/media/web/eletkep-21.webp": {
+      "sizeBytes": 13660,
+      "sha256": "a326e215960dc9c793e0d652f3a537442ee866806e4097cdbebcd82a4daf7696"
+    },
+    "assets/media/web/eletkep-22.webp": {
+      "sizeBytes": 22132,
+      "sha256": "dc6a1139bf52d9f9fafd98fbc0e391513fd28d18fb7ac126b460d5c0f0e212c2"
+    },
+    "assets/media/web/eletkep-23.webp": {
+      "sizeBytes": 22412,
+      "sha256": "1c8f4ed41a43387feb8a80ebc0c5f02151804a2c390d42092c1ff60d25cb43b2"
+    },
+    "assets/media/web/eletkep-24.webp": {
+      "sizeBytes": 31066,
+      "sha256": "d789189c6fa57d865cfcf5e53be25a6630ebaa5591c7d8fa67016e0b9d6ec4c5"
+    },
+    "assets/media/web/eletkep-25.webp": {
+      "sizeBytes": 35012,
+      "sha256": "10b0d1d3091bfae0a8a223478c6c3a5b4304275c8704f10580f7602f9839ae0b"
+    },
+    "assets/media/web/eletkep-26.webp": {
+      "sizeBytes": 25996,
+      "sha256": "6b1a2c8c7daa881ecb52938619b2db721e292509050eb8287eac94180a043688"
+    },
+    "assets/media/web/eletkep-27.webp": {
+      "sizeBytes": 27620,
+      "sha256": "721dd9c8121d2761ab8366069cf0b2b946cda273589e2d77b4b0adfb69f0a073"
+    },
+    "assets/media/web/eletkep-28.webp": {
+      "sizeBytes": 26414,
+      "sha256": "7756e6e2aa8c7b570f1e851d791f50b2b447398b49624a06943acb1901dd3836"
+    },
+    "assets/media/web/eletkep-29.webp": {
+      "sizeBytes": 25544,
+      "sha256": "f31e98e737044b57df639ad42288631e61ef568f7dc78f148278a936b4fa05b3"
+    },
+    "assets/media/web/eletkep-30.webp": {
+      "sizeBytes": 28832,
+      "sha256": "54b02c5cd167b1133b8927872abb27ca21636828290c558748d783e599d3e6bf"
+    },
+    "assets/media/web/eletkep-31.webp": {
+      "sizeBytes": 22830,
+      "sha256": "f49cec3c82cda5d7f886a9f0664aea8840d55869fd8c6abfa2fcea1c249bdce1"
+    },
+    "assets/media/web/eletkep-32.webp": {
+      "sizeBytes": 28690,
+      "sha256": "aec73593e0acb070ffeadb740952d6c4c9daf3c4928a369b85eb3056630a152b"
+    },
+    "assets/media/web/eletkep-33.webp": {
+      "sizeBytes": 31648,
+      "sha256": "2e5b0bbcc12d4e69126b7542b12b2b05f0094d3041761fabcab1b80678c73c28"
+    },
+    "assets/media/web/eletkep-34.webp": {
+      "sizeBytes": 38450,
+      "sha256": "40644b90a497c471301b72a675d81429e40af3edda2297f532c8c695e981f93e"
+    },
+    "assets/media/web/eletkep-35.webp": {
+      "sizeBytes": 26392,
+      "sha256": "f2547c882510da0242ddb03be3c6336e9614893aae61b10057f2a347892de7f1"
+    },
+    "assets/media/web/eletkep-36.webp": {
+      "sizeBytes": 27620,
+      "sha256": "721dd9c8121d2761ab8366069cf0b2b946cda273589e2d77b4b0adfb69f0a073"
+    },
+    "assets/media/web/eletkep-37.webp": {
+      "sizeBytes": 35852,
+      "sha256": "29484fb96d754691c36aff0d8bd7f92d8562877cff6ed5bfa47cd4e44d8f63dc"
+    },
+    "assets/media/web/eletkep-38.webp": {
+      "sizeBytes": 24906,
+      "sha256": "397fce672edadc5e2a51f3df45909d783314f5f42fccf50cc88a3bc50984318a"
+    },
+    "assets/media/web/eletkep-39.webp": {
+      "sizeBytes": 21702,
+      "sha256": "8af078c52426b91c416b182858c635c98c31a5bd99790a0986e9993ec5073a7a"
+    },
+    "assets/media/web/eletkep-40.webp": {
+      "sizeBytes": 23738,
+      "sha256": "17e3ce44e26e7c2d68e0aae6f0f67664b91583e4d002efe9fdd2cf2b072af768"
+    },
+    "assets/media/web/eletkep-41.webp": {
+      "sizeBytes": 40630,
+      "sha256": "72d0a94d2df50f84508e810ba41a1d7d51a5f7c01b6239df7fd38f0e1b15b27f"
+    },
+    "assets/media/web/eletkep-42.webp": {
+      "sizeBytes": 31696,
+      "sha256": "afd9294c827877ba010c97e5927525e487a33c59133046528f212c877d3155c7"
+    },
+    "assets/media/web/eletkep-43.webp": {
+      "sizeBytes": 21898,
+      "sha256": "95f9f8134d2b473d1f437e92233a7920cdc7b4e81190f00c2e1fd76694e67077"
+    },
+    "assets/media/web/eletkep-44.webp": {
+      "sizeBytes": 33702,
+      "sha256": "a2243398d758b731abfc89b5b2805451dfff50b1daddd6127e98d0220096b128"
+    },
+    "assets/media/web/eletkep-45.webp": {
+      "sizeBytes": 20036,
+      "sha256": "75402d40c1920cabfb15245a698c57b4b187b589fa2eadf4c0d28de99792c4c0"
+    },
+    "assets/media/web/eletkep-46.webp": {
+      "sizeBytes": 24028,
+      "sha256": "b3ac0f14a17fde076a34a0764dea74cc1dd95f5f222e72dcff8c26c1d2bb566d"
+    },
+    "assets/media/web/eletkep-47.webp": {
+      "sizeBytes": 33686,
+      "sha256": "e116579d13005a58e4cfa4f22966fd0b0b377601d37bf6eeb50196fbfcb91bc4"
+    },
+    "assets/media/web/eletkep-48.webp": {
+      "sizeBytes": 44598,
+      "sha256": "422b2f9e726817f2f098874c40cb5fa43a8921896a83d9ad589a7c0633d4802c"
+    },
+    "assets/media/web/eredmenyek-1600.webp": {
+      "sizeBytes": 89440,
+      "sha256": "5929ca73bf8033e26be8d24d0d1a28f2cdfeb5f95b1f41ada51a5edc1eb33d3d"
+    },
+    "assets/media/web/esemenyek-1600.webp": {
+      "sizeBytes": 147856,
+      "sha256": "dd3d9f4b6bb579e5d5b34b8a5921d6a75689404e7b921b9159dedac49517cb4e"
+    },
+    "assets/media/web/felveteli-1600.webp": {
+      "sizeBytes": 155646,
+      "sha256": "09d62b3144c3638fd3614bb6eb42c1e67d09618a1fb3744655854254df3aa79c"
+    },
+    "assets/media/web/hero-1600.webp": {
+      "sizeBytes": 155646,
+      "sha256": "09d62b3144c3638fd3614bb6eb42c1e67d09618a1fb3744655854254df3aa79c"
+    },
+    "assets/media/web/iskolank-1600.webp": {
+      "sizeBytes": 147856,
+      "sha256": "dd3d9f4b6bb579e5d5b34b8a5921d6a75689404e7b921b9159dedac49517cb4e"
+    },
+    "assets/media/web/kapcsolat-1600.webp": {
+      "sizeBytes": 136694,
+      "sha256": "03fc8def51c72cb5f6717010021c19cf87f4242f272269a275f6696af66c06bc"
+    },
+    "assets/media/web/kozosseg-1600.webp": {
+      "sizeBytes": 136694,
+      "sha256": "03fc8def51c72cb5f6717010021c19cf87f4242f272269a275f6696af66c06bc"
+    },
+    "assets/media/web/oktatas-1600.webp": {
+      "sizeBytes": 124066,
+      "sha256": "f543aa280151c768f51847b3d03e6b38519dabd7599f5f81ad44f92a1da97944"
+    },
+    "assets/media/web/responsive/belepes-kapu-320.webp": {
+      "sizeBytes": 19044,
+      "sha256": "630bda9d1571001878d213e4c10681206f222cf7f5cc5c3cd8b800764734e415"
+    },
+    "assets/media/web/responsive/belepes-kapu-640.webp": {
+      "sizeBytes": 62514,
+      "sha256": "831e619a20cbb1752dbaeec5d6d449df678ce8e16b82d161c60ff4c0bb16f38b"
+    },
+    "assets/media/web/responsive/belepes-kapu-960.webp": {
+      "sizeBytes": 122144,
+      "sha256": "d08656a715b3839b4e1c929c72eb1c3701e9b962dd4094eeca63df4085a5e147"
+    },
+    "assets/media/web/responsive/belepes-nyitott-320.webp": {
+      "sizeBytes": 18472,
+      "sha256": "231b4d9ac11325deca1215b7caa3f42922b9b3ee86535f64b5f7a6a67a77f51e"
+    },
+    "assets/media/web/responsive/belepes-nyitott-640.webp": {
+      "sizeBytes": 60128,
+      "sha256": "662f947bf32d243797713c50f164ca27f63e8348244e3c4fefd423073531adb8"
+    },
+    "assets/media/web/responsive/belepes-nyitott-960.webp": {
+      "sizeBytes": 117776,
+      "sha256": "69b9ba047878e55c64e2372f263f992e5758d249c5709094d33baf2560acafb3"
+    },
+    "assets/media/web/responsive/cs2026-001-320.webp": {
+      "sizeBytes": 14476,
+      "sha256": "cc8cfdfa4bbf3cf056919f3c4a8d5825cb0715b818388426172d6cfda8b79f5f"
+    },
+    "assets/media/web/responsive/cs2026-001-640.webp": {
+      "sizeBytes": 30310,
+      "sha256": "79d0191fd1565c6b1a0e1a46e080ecf65d79791719fc5eb725163a91c96da719"
+    },
+    "assets/media/web/responsive/cs2026-001-960.webp": {
+      "sizeBytes": 51698,
+      "sha256": "390940e9429f457a82d6ca613dd58d68222593e655837577c04c54d53ae608a5"
+    },
+    "assets/media/web/responsive/cs2026-002-320.webp": {
+      "sizeBytes": 5898,
+      "sha256": "013e663d8198344a03edd6547692385c22ada646f949a87d156796d91e79569f"
+    },
+    "assets/media/web/responsive/cs2026-002-640.webp": {
+      "sizeBytes": 14484,
+      "sha256": "9470d006777eaf06d232b00b1b97a3b8aefad54b583c49d49d9c11a5e6a5e54e"
+    },
+    "assets/media/web/responsive/cs2026-002-960.webp": {
+      "sizeBytes": 25890,
+      "sha256": "eb3b773dd0fe02c4cfd809e6bc3b082aafe0830d7d7da348e91173ea0d29cee0"
+    },
+    "assets/media/web/responsive/cs2026-003-320.webp": {
+      "sizeBytes": 11074,
+      "sha256": "e0394c2f318d74cb081898ac117ed985e4a0c9950c0772cd4bac17a59bfdcbbe"
+    },
+    "assets/media/web/responsive/cs2026-003-640.webp": {
+      "sizeBytes": 23754,
+      "sha256": "ea78781f61bf41633126d3c7aa4ffe62284838119bdf7f5f6f87fd1e1c17751c"
+    },
+    "assets/media/web/responsive/cs2026-003-960.webp": {
+      "sizeBytes": 39640,
+      "sha256": "c93e4c95b1fe9601418062b259096295533bcd91873a60c2160a184c0bded494"
+    },
+    "assets/media/web/responsive/cs2026-004-320.webp": {
+      "sizeBytes": 10132,
+      "sha256": "7799962ae54e0488677f3cbafaa713dc4f663ab7a9e551024248b2d615fee577"
+    },
+    "assets/media/web/responsive/cs2026-004-640.webp": {
+      "sizeBytes": 22670,
+      "sha256": "fbb03eb704b5498db3d3dfaf300425e2be345835cd1a80fda8536d18c0c9c813"
+    },
+    "assets/media/web/responsive/cs2026-004-960.webp": {
+      "sizeBytes": 39692,
+      "sha256": "a3b9ea90773e9d9fe5ff48501df83c2411a1ffb07b2eb961bf678b5346c50215"
+    },
+    "assets/media/web/responsive/cs2026-005-320.webp": {
+      "sizeBytes": 11882,
+      "sha256": "eb360cba812367c29c4047e3abeabb9a2f67750e751a545743fb9e1a97023f28"
+    },
+    "assets/media/web/responsive/cs2026-005-640.webp": {
+      "sizeBytes": 27312,
+      "sha256": "7c325621f5881940900170c91ccf4ba6f4b80cebb2aa1a464c4e7eaab9543e98"
+    },
+    "assets/media/web/responsive/cs2026-005-960.webp": {
+      "sizeBytes": 47170,
+      "sha256": "15f83fa8fcde1d0ee94829e81b9f42057c155749033b0b886174c697d9e22162"
+    },
+    "assets/media/web/responsive/cs2026-006-320.webp": {
+      "sizeBytes": 11906,
+      "sha256": "fba772f7f53987afb3ce4ac7c992468f7c005ac0b1c22d2bd7d45fc3ad62620c"
+    },
+    "assets/media/web/responsive/cs2026-006-640.webp": {
+      "sizeBytes": 28954,
+      "sha256": "a658dcff9a07ebe568312a45bae137fdafac5f57878a46730394766d52ef2ddc"
+    },
+    "assets/media/web/responsive/cs2026-006-960.webp": {
+      "sizeBytes": 51986,
+      "sha256": "ba68598932e713978d2f4026929f4c0b5bdfb6ce8c6ba60c1c08cb2f7d8362a1"
+    },
+    "assets/media/web/responsive/cs2026-007-320.webp": {
+      "sizeBytes": 12306,
+      "sha256": "396b68493e6eb0376180607227b5e0e2bdfb38d688dfa4fd0d923f2ecc39a9b5"
+    },
+    "assets/media/web/responsive/cs2026-007-640.webp": {
+      "sizeBytes": 27936,
+      "sha256": "572a63441cb11a8ff8e197a9f7f7b9558e52aa14078750ea634f9269be16b2a7"
+    },
+    "assets/media/web/responsive/cs2026-007-960.webp": {
+      "sizeBytes": 48344,
+      "sha256": "dec31d47bc21f685861ef1e5e6f992be3537a35fd9a566d98104480aaa50d2df"
+    },
+    "assets/media/web/responsive/cs2026-008-320.webp": {
+      "sizeBytes": 16634,
+      "sha256": "4972aa89dc9ec88b2e3bb26cae16ed916696b4ebc2ea035302272016d55168e0"
+    },
+    "assets/media/web/responsive/cs2026-008-640.webp": {
+      "sizeBytes": 39088,
+      "sha256": "43fcbff91f420ca96fc872ace573e437da4455bcc8bae92498719dd0e7d85849"
+    },
+    "assets/media/web/responsive/cs2026-008-960.webp": {
+      "sizeBytes": 66440,
+      "sha256": "2dac01e67d1d68b0a7b69936c627bbf2eb273836ab429668950b090ea92e5388"
+    },
+    "assets/media/web/responsive/cs2026-009-320.webp": {
+      "sizeBytes": 12196,
+      "sha256": "aec66c841344e8779f7d13d190744dc09d842cabdb8f0f86bbf6171f839f5152"
+    },
+    "assets/media/web/responsive/cs2026-009-640.webp": {
+      "sizeBytes": 26394,
+      "sha256": "326bd1a2371c4042031a37ff484d840b414f6847e43c90ef157b0dc66440e2cb"
+    },
+    "assets/media/web/responsive/cs2026-009-960.webp": {
+      "sizeBytes": 44388,
+      "sha256": "4334a7fd075fe6e348883816394c6aab492e2923f9fedb6896d94d9ff5c21e1e"
+    },
+    "assets/media/web/responsive/cs2026-010-320.webp": {
+      "sizeBytes": 14482,
+      "sha256": "41464f7039d9efdaaec3ce90012619e8affb056fd42657b284b4aa136cb75d3d"
+    },
+    "assets/media/web/responsive/cs2026-010-640.webp": {
+      "sizeBytes": 32558,
+      "sha256": "4b021216d7f1fc190d39bbed0778c48e222081117f5ed7821ff32f0863c75a98"
+    },
+    "assets/media/web/responsive/cs2026-010-960.webp": {
+      "sizeBytes": 55370,
+      "sha256": "1f578de17d5361a545f58de3628a19467829a566fa0658e30431f252df20e393"
+    },
+    "assets/media/web/responsive/cs2026-011-320.webp": {
+      "sizeBytes": 9042,
+      "sha256": "0308783b156f3a4751832d41941997b39aba64f62ae4e14814e30550a447f0f7"
+    },
+    "assets/media/web/responsive/cs2026-011-640.webp": {
+      "sizeBytes": 20242,
+      "sha256": "38c949ebe21273ef7e9559014277b6dabcc6640501775873a97f19e6bdffc55e"
+    },
+    "assets/media/web/responsive/cs2026-011-960.webp": {
+      "sizeBytes": 34604,
+      "sha256": "80febf8f8b0fe9df3a7ca9bcb4176c152d45dc8ec17339112da56364d7c66032"
+    },
+    "assets/media/web/responsive/cs2026-012-320.webp": {
+      "sizeBytes": 5856,
+      "sha256": "1ccbcf542996f1e4a0995541f8ad44a8b4577c493c91dbba2d944317ddacf4e1"
+    },
+    "assets/media/web/responsive/cs2026-012-640.webp": {
+      "sizeBytes": 11816,
+      "sha256": "99305234c349a417bfa50906e10e651016e7cd5715aabd03957e92816cdf9926"
+    },
+    "assets/media/web/responsive/cs2026-012-960.webp": {
+      "sizeBytes": 20310,
+      "sha256": "17107b3ecf5b9cb0359b01595f9e792a73060be8b1036445623535852d48fba5"
+    },
+    "assets/media/web/responsive/cs2026-013-320.webp": {
+      "sizeBytes": 9140,
+      "sha256": "c242720f4dc4de9dce3a13786ed94b5e1e41cb13752db03b90171b5c17c09cef"
+    },
+    "assets/media/web/responsive/cs2026-013-640.webp": {
+      "sizeBytes": 18558,
+      "sha256": "ab2b3a61b50eb418dc3e454482cf51ae15661c047ce3a47666f05485445053c5"
+    },
+    "assets/media/web/responsive/cs2026-013-960.webp": {
+      "sizeBytes": 32060,
+      "sha256": "12d048976fc50b059cc75447ffff5747d4a78266fed3ef38f44b42a733e71b4c"
+    },
+    "assets/media/web/responsive/cs2026-014-320.webp": {
+      "sizeBytes": 8360,
+      "sha256": "b3c65354644b8268fc446456742993cd86715aa1e3e1a87135950405c03880dd"
+    },
+    "assets/media/web/responsive/cs2026-014-640.webp": {
+      "sizeBytes": 16366,
+      "sha256": "5f4e68696b696c93fb5a3c84156bd63f193b4cd796706cc835fa6e201f791bc8"
+    },
+    "assets/media/web/responsive/cs2026-014-960.webp": {
+      "sizeBytes": 27522,
+      "sha256": "b204cf0c71377def2f4aec9ab8c4b344dd38af16d335c3198511262556175edb"
+    },
+    "assets/media/web/responsive/cs2026-015-320.webp": {
+      "sizeBytes": 8938,
+      "sha256": "15887043c7a63ba8b7f7b89de02388dd65ee4d939871ef23cea5a1170518a2cc"
+    },
+    "assets/media/web/responsive/cs2026-015-640.webp": {
+      "sizeBytes": 17924,
+      "sha256": "87db79b25ea4199a05ccf76f0596026f49297bf7d270ee2ad3c804f30ed9bfdb"
+    },
+    "assets/media/web/responsive/cs2026-015-960.webp": {
+      "sizeBytes": 30746,
+      "sha256": "ec2ced6560bca2efeb4a0642daf562499547a717b7cd5c8dfba1039c1c62fe2c"
+    },
+    "assets/media/web/responsive/cs2026-016-320.webp": {
+      "sizeBytes": 9800,
+      "sha256": "0998b19cc762e1e3c74076a943dbc5fb3013d962a62be54d50385778411a0ad4"
+    },
+    "assets/media/web/responsive/cs2026-016-640.webp": {
+      "sizeBytes": 20746,
+      "sha256": "17e5f3367ac92c0458cb5da0517a7db15e014ac38fd84682dd2e15b0857f4f10"
+    },
+    "assets/media/web/responsive/cs2026-016-960.webp": {
+      "sizeBytes": 35060,
+      "sha256": "af5a8e0e976ee71c170ee51999eb4b79fa49cc5adc5ed700495bbe5d42bd3a97"
+    },
+    "assets/media/web/responsive/cs2026-017-320.webp": {
+      "sizeBytes": 4322,
+      "sha256": "fa7976a4e72b51caa7c3b54d039547e8ac4a5ad0c350cd164360bb7e088d0a70"
+    },
+    "assets/media/web/responsive/cs2026-017-640.webp": {
+      "sizeBytes": 11220,
+      "sha256": "2083a20543b58e37de0e9b9d4f22014159e2f088d5395b7745dcb00a358f2118"
+    },
+    "assets/media/web/responsive/cs2026-017-960.webp": {
+      "sizeBytes": 18602,
+      "sha256": "eb3de0c6fe8ef220fc94e5ef5e762912b9780b7d10c620e009e7c9608222a223"
+    },
+    "assets/media/web/responsive/cs2026-018-320.webp": {
+      "sizeBytes": 4236,
+      "sha256": "dcbd971bbac71fb7617a6cf20d8b62474221ff12fb78c3f30a46f07396a67458"
+    },
+    "assets/media/web/responsive/cs2026-018-640.webp": {
+      "sizeBytes": 10990,
+      "sha256": "45f2a7816f891d9099f3975b1fd70b639b8850e6b9f7d1daf5622a3a7a169f61"
+    },
+    "assets/media/web/responsive/cs2026-018-960.webp": {
+      "sizeBytes": 18336,
+      "sha256": "e9430bea6b285dc625fe94422e301378e65de062ce9c4c1584b548174b2864fe"
+    },
+    "assets/media/web/responsive/cs2026-019-320.webp": {
+      "sizeBytes": 4378,
+      "sha256": "341b82d7011f52c95668574bd48d37ab487025771df8292db948f2ce42f73ecd"
+    },
+    "assets/media/web/responsive/cs2026-019-640.webp": {
+      "sizeBytes": 11492,
+      "sha256": "509c41dcc6443ad0d6baec8d9deb7b44acf1e3e1fccad73afdab7485a2d260db"
+    },
+    "assets/media/web/responsive/cs2026-019-960.webp": {
+      "sizeBytes": 19138,
+      "sha256": "59d69fdd30e3025659e1063e37310b48a6b6ccea845d0409f682e35bc30b50ea"
+    },
+    "assets/media/web/responsive/cs2026-020-320.webp": {
+      "sizeBytes": 4136,
+      "sha256": "385b4f458b1c986d047cfa4df1595e7348c424e53a7b75c860102c1a224d9782"
+    },
+    "assets/media/web/responsive/cs2026-020-640.webp": {
+      "sizeBytes": 10920,
+      "sha256": "1d7ea355b660bd51c5d54df7d42f9ba0f8ebb0bf1c4191c881c8f122f02888e6"
+    },
+    "assets/media/web/responsive/cs2026-020-960.webp": {
+      "sizeBytes": 18276,
+      "sha256": "3d96dfd7868d361795d1c1826318fb86db8efd30ec27e09b5350ea1f6f2ec593"
+    },
+    "assets/media/web/responsive/cs2026-021-320.webp": {
+      "sizeBytes": 4084,
+      "sha256": "2d91610707c5837c3169228b2b89e9d0711dc54be86cc8efefaf3d248521e13e"
+    },
+    "assets/media/web/responsive/cs2026-021-640.webp": {
+      "sizeBytes": 10566,
+      "sha256": "3d0b8dc140760c5ca13eb1c69004fb98d0ffc9c3d53daa1e739a2d115a9d4d9b"
+    },
+    "assets/media/web/responsive/cs2026-021-960.webp": {
+      "sizeBytes": 17768,
+      "sha256": "8a33a5fb3cc132c2041da0cdc7e53b2c0a68a6b6b06801697222eaab6e8c14dd"
+    },
+    "assets/media/web/responsive/cs2026-022-320.webp": {
+      "sizeBytes": 4148,
+      "sha256": "de15f77bc68c41e1061fd987a045fb60771d2753f0b011c85f9de15bc71b356e"
+    },
+    "assets/media/web/responsive/cs2026-022-640.webp": {
+      "sizeBytes": 10568,
+      "sha256": "934216ae13b35f2562f77750da194ddd9ecef35d530275351b8975fe7e6f783d"
+    },
+    "assets/media/web/responsive/cs2026-022-960.webp": {
+      "sizeBytes": 17980,
+      "sha256": "28e4c6e4708f4182982fece9f49316648649df3de3cf72849f6261ab7e976698"
+    },
+    "assets/media/web/responsive/cs2026-023-320.webp": {
+      "sizeBytes": 4050,
+      "sha256": "096cba6b5aa2bd26a54bc716618e76ec7de45445b6e1ab27ce707a4211d961e5"
+    },
+    "assets/media/web/responsive/cs2026-023-640.webp": {
+      "sizeBytes": 10472,
+      "sha256": "e78243ac5efb88a690af0fac2bed9417882a8f7a645d0e53be612bab5e9b4e02"
+    },
+    "assets/media/web/responsive/cs2026-023-960.webp": {
+      "sizeBytes": 17448,
+      "sha256": "57befe53cb218bbdfa2c744bca3956f57216c035ecc691c2f3adc3d02493a861"
+    },
+    "assets/media/web/responsive/cs2026-024-320.webp": {
+      "sizeBytes": 3798,
+      "sha256": "8bfdf418ac47f18a97bce1e2fe98dc9b5b61b9f824c3594afa0322d3c512e9bb"
+    },
+    "assets/media/web/responsive/cs2026-024-640.webp": {
+      "sizeBytes": 9446,
+      "sha256": "e3fefbf32722641d694eb67f82af8f5a5b9b92efdbe1f7ab30a19b5457bbd0a1"
+    },
+    "assets/media/web/responsive/cs2026-024-960.webp": {
+      "sizeBytes": 15836,
+      "sha256": "dd39604fa55108b7b9c7fd80c11712ad8fa404faca5d38a73e493a01d53e0317"
+    },
+    "assets/media/web/responsive/cs2026-025-320.webp": {
+      "sizeBytes": 4192,
+      "sha256": "644c651b234e02fed744aa9a9ff66d6fdeb616049eee24c2957fc24cca1d1438"
+    },
+    "assets/media/web/responsive/cs2026-025-640.webp": {
+      "sizeBytes": 10730,
+      "sha256": "df62bb81ad5a666f0fcd5bc4223275122c2f71c19c7dd86092781643a5a8881e"
+    },
+    "assets/media/web/responsive/cs2026-025-960.webp": {
+      "sizeBytes": 17864,
+      "sha256": "f5857e1262dff455b545d26fc2f11b41d6eee982d76bc7a0b0f21de1f642d573"
+    },
+    "assets/media/web/responsive/cs2026-026-320.webp": {
+      "sizeBytes": 4396,
+      "sha256": "cb5a5bfe2aee87631a6d5ee874607e434b3a73579100a9fad5c6f8b201c925b2"
+    },
+    "assets/media/web/responsive/cs2026-026-640.webp": {
+      "sizeBytes": 10976,
+      "sha256": "fa0b8a6b6a84b58ad6cf9967dd8d684bde894506d6fc63f5297937a5c44a89c3"
+    },
+    "assets/media/web/responsive/cs2026-026-960.webp": {
+      "sizeBytes": 18306,
+      "sha256": "a47add13e03a8d304334aa6e763afedb4bf53f9d6e522b79c34c004713c96ef7"
+    },
+    "assets/media/web/responsive/cs2026-027-320.webp": {
+      "sizeBytes": 3820,
+      "sha256": "0369c5d0cf1359cf1ae71dbab9381f36b5d6131b04383ed591972266c722095b"
+    },
+    "assets/media/web/responsive/cs2026-027-640.webp": {
+      "sizeBytes": 9590,
+      "sha256": "3d9cf903eddd676053bb1622771a11ae1d2c4b60d3aff3cc26707cefa6834482"
+    },
+    "assets/media/web/responsive/cs2026-027-960.webp": {
+      "sizeBytes": 16144,
+      "sha256": "1556e75a7fc3538f51e65f4ded9cab2016809d299cef85c7b9432b3602ed99e9"
+    },
+    "assets/media/web/responsive/cs2026-028-320.webp": {
+      "sizeBytes": 4180,
+      "sha256": "75eb4ff75313bfc98034183a5dfee193af1a90ced666aeb63399bd78c51d69fd"
+    },
+    "assets/media/web/responsive/cs2026-028-640.webp": {
+      "sizeBytes": 10708,
+      "sha256": "6545ef0515c67e4b902244d986f2c4b156055b01a3b7489033dfee0208d60abb"
+    },
+    "assets/media/web/responsive/cs2026-028-960.webp": {
+      "sizeBytes": 18070,
+      "sha256": "58fccd26364f9efb7bbb6d3588d867095c63c5d7821d74fcd7a14bf746409c2f"
+    },
+    "assets/media/web/responsive/cs2026-029-320.webp": {
+      "sizeBytes": 3898,
+      "sha256": "09a3666e68d559d309b1f483d3c352e787ff1503c520e97dfbc1cef6881bb9c7"
+    },
+    "assets/media/web/responsive/cs2026-029-640.webp": {
+      "sizeBytes": 9996,
+      "sha256": "e2dea9ec8618ce0095306bef0d76150e09e1aefba5318536826387f57acb16c8"
+    },
+    "assets/media/web/responsive/cs2026-029-960.webp": {
+      "sizeBytes": 16710,
+      "sha256": "c33866a481541084cdbef04c06b6f906cc0ab8a73fd5b854a4389bc5e643cc38"
+    },
+    "assets/media/web/responsive/cs2026-030-320.webp": {
+      "sizeBytes": 3798,
+      "sha256": "fa1eeaf84b498a7e3494d374d93378c964df30014d30aee6e7111d72b98396a1"
+    },
+    "assets/media/web/responsive/cs2026-030-640.webp": {
+      "sizeBytes": 9636,
+      "sha256": "bf9f782424f002284a21a41fab67f4ae3d35d9452866eb27b832a623ca5030e1"
+    },
+    "assets/media/web/responsive/cs2026-030-960.webp": {
+      "sizeBytes": 16246,
+      "sha256": "0534e126bfbcbd9b3f9db94354dc98a107800f9e67d6f6cfdfddca311925b25e"
+    },
+    "assets/media/web/responsive/cs2026-031-320.webp": {
+      "sizeBytes": 4556,
+      "sha256": "2c1d6e720203b2430295ba2c2cba73299d9cdf777865659c88786ea881441a01"
+    },
+    "assets/media/web/responsive/cs2026-031-640.webp": {
+      "sizeBytes": 11630,
+      "sha256": "68f6c8caf35dfdc251acdca07370f744991c20171efad0e111d893385dee6635"
+    },
+    "assets/media/web/responsive/cs2026-031-960.webp": {
+      "sizeBytes": 19214,
+      "sha256": "466ec8749ed10aabbb59ecc5a22fa111af671559444d5db682cbd679d28fcbe2"
+    },
+    "assets/media/web/responsive/cs2026-032-320.webp": {
+      "sizeBytes": 3916,
+      "sha256": "f831cbb9424ebd1e1c05a61262874b352f5da404808bae882f00c208da614013"
+    },
+    "assets/media/web/responsive/cs2026-032-640.webp": {
+      "sizeBytes": 10086,
+      "sha256": "75c3f8f6bfd2a6be65bde74d87de2a9c861402fd2b1977547083fae5c2c9180b"
+    },
+    "assets/media/web/responsive/cs2026-032-960.webp": {
+      "sizeBytes": 16762,
+      "sha256": "1a578535bbaba19ba69ed2a609ad487015165193c895f2427afcba96290dbbc0"
+    },
+    "assets/media/web/responsive/cs2026-033-320.webp": {
+      "sizeBytes": 4074,
+      "sha256": "e9b7df8c636f0bf515ab878d753053d50feea201f68386105cb0b88c68fd2eb5"
+    },
+    "assets/media/web/responsive/cs2026-033-640.webp": {
+      "sizeBytes": 10596,
+      "sha256": "70d99d084297aa9d1298b70c97e55cc31e1e8016cf85e45e17bee84614a2238c"
+    },
+    "assets/media/web/responsive/cs2026-033-960.webp": {
+      "sizeBytes": 17760,
+      "sha256": "c938c338d564e19ad7ec5c20e4b46c8aa8a5389faf0af435d264a34b47afdf5b"
+    },
+    "assets/media/web/responsive/cs2026-034-320.webp": {
+      "sizeBytes": 3994,
+      "sha256": "7c04ad8dd03ee0456f8f82f3e6a9fe527e0c98a31cbd33efe9e64a677881d8f8"
+    },
+    "assets/media/web/responsive/cs2026-034-640.webp": {
+      "sizeBytes": 10368,
+      "sha256": "30f255007b0496a7bc2e0c6019726a2d8a8ea16241052c620de4adf9a70588eb"
+    },
+    "assets/media/web/responsive/cs2026-034-960.webp": {
+      "sizeBytes": 17260,
+      "sha256": "002316b7c506afc1678188340eea13cb88fc8c8362f68e58dd385ba93bcd900d"
+    },
+    "assets/media/web/responsive/cs2026-035-320.webp": {
+      "sizeBytes": 4060,
+      "sha256": "b6df23f59195df1b0cc7e4e0832271eea8fcc5c9763662e8bb207937c9e15746"
+    },
+    "assets/media/web/responsive/cs2026-035-640.webp": {
+      "sizeBytes": 10410,
+      "sha256": "7f2584ef64f9f0cf85e2d3bdd582da2a16e94dd56adc93dbbfef81549153ddba"
+    },
+    "assets/media/web/responsive/cs2026-035-960.webp": {
+      "sizeBytes": 17660,
+      "sha256": "199dd89c93719595f12cf14b7c737d2642ce3a5c88dc0ff1c42c688a2f3432c3"
+    },
+    "assets/media/web/responsive/cs2026-036-320.webp": {
+      "sizeBytes": 3976,
+      "sha256": "c632889ba7be88ab6981439f6ae416cd9d6b867a29914cddffe8f2a1c9a334b5"
+    },
+    "assets/media/web/responsive/cs2026-036-640.webp": {
+      "sizeBytes": 10068,
+      "sha256": "c9dfddaf1ad4cc2baf74845809aeb5fe642d35deb817c677ab0048733ace9cde"
+    },
+    "assets/media/web/responsive/cs2026-036-960.webp": {
+      "sizeBytes": 17100,
+      "sha256": "dcc1f63b24063ff73f2709dbc6dcf07888ab7c1bd05410190e377b3126b9603f"
+    },
+    "assets/media/web/responsive/cs2026-037-320.webp": {
+      "sizeBytes": 3958,
+      "sha256": "b1863e4a2d95a15fb0b0559858d7f4d466ce86aa9307268c750712c54c6690f7"
+    },
+    "assets/media/web/responsive/cs2026-037-640.webp": {
+      "sizeBytes": 10106,
+      "sha256": "42a93a89b7d06977044b2c11a9086fe842d34dceee606d68b4e0f9a3fed6abb2"
+    },
+    "assets/media/web/responsive/cs2026-037-960.webp": {
+      "sizeBytes": 17060,
+      "sha256": "e4c7a0149190cd083f6450362f15eabd9fde4481bbb911537d0eaa09af6bf4ab"
+    },
+    "assets/media/web/responsive/cs2026-038-320.webp": {
+      "sizeBytes": 4340,
+      "sha256": "72d33ac67bacce138711065464a0b5f6daeb91fe9395ed6cfea17d413d1eb52a"
+    },
+    "assets/media/web/responsive/cs2026-038-640.webp": {
+      "sizeBytes": 11282,
+      "sha256": "7d41d7a9c5755cb8b7a78dd1338aceac53e8b6fe48fe6389b303f2433218e1fc"
+    },
+    "assets/media/web/responsive/cs2026-038-960.webp": {
+      "sizeBytes": 18866,
+      "sha256": "350ca80b033ffd49fe99c011a540d387843b1161d2d9a28bd6c85460adf23ffa"
+    },
+    "assets/media/web/responsive/cs2026-039-320.webp": {
+      "sizeBytes": 4352,
+      "sha256": "5b08da94ff9e7ef1bae74d8d35f97d043f196f5fc06cbd17ba6e3b0ff1a449ab"
+    },
+    "assets/media/web/responsive/cs2026-039-640.webp": {
+      "sizeBytes": 11208,
+      "sha256": "6ce105b30c4ff62a8c68010037549994b63724508759017723193ff58be0a93d"
+    },
+    "assets/media/web/responsive/cs2026-039-960.webp": {
+      "sizeBytes": 18630,
+      "sha256": "e319ca51ad26587e8e8e31c7eb7b9849dd6ffb825cbb2865f4acc527c68ce6de"
+    },
+    "assets/media/web/responsive/cs2026-040-320.webp": {
+      "sizeBytes": 4242,
+      "sha256": "16a1b471d3a63251cbdd1e290d2a8d44201118cb224dada570ba5601b43dcabc"
+    },
+    "assets/media/web/responsive/cs2026-040-640.webp": {
+      "sizeBytes": 11082,
+      "sha256": "7a443988bd7bee34d002a02e7d3c29bebc37d1e09616cb7eaf80b87d7c3440b4"
+    },
+    "assets/media/web/responsive/cs2026-040-960.webp": {
+      "sizeBytes": 18618,
+      "sha256": "4a996e6ebab7a0490086d8062bf3993414c9ce82f55f0f933ebeaeff9fba9520"
+    },
+    "assets/media/web/responsive/cs2026-041-320.webp": {
+      "sizeBytes": 4290,
+      "sha256": "ec70f60a756049ea9a2b21e3266b797a987bab38e4f56425ac86615d6b09d8c6"
+    },
+    "assets/media/web/responsive/cs2026-041-640.webp": {
+      "sizeBytes": 11252,
+      "sha256": "b52252b1804b9c704a083713520e40edb368042fbe54d612fd3414c88eb72106"
+    },
+    "assets/media/web/responsive/cs2026-041-960.webp": {
+      "sizeBytes": 19142,
+      "sha256": "e4bbb4c8fd50f64de1fa5acfd7f3f3450e2167bb92c47c13cef5ce35196a3d03"
+    },
+    "assets/media/web/responsive/cs2026-042-320.webp": {
+      "sizeBytes": 3894,
+      "sha256": "1dfd7ea7aefe5b69658218d0f062f16b8528de11942fd94db1ecc7b26d415e77"
+    },
+    "assets/media/web/responsive/cs2026-042-640.webp": {
+      "sizeBytes": 10268,
+      "sha256": "b32949ee9d39cf5cb40ffbb801c1052f9d5c65b5acf1f7632a657c22baab5248"
+    },
+    "assets/media/web/responsive/cs2026-042-960.webp": {
+      "sizeBytes": 17614,
+      "sha256": "565094917a6e4266743df281dc81f2a5ccfb5d8fde9e6bfc0ab5c1136de6a2dd"
+    },
+    "assets/media/web/responsive/cs2026-043-320.webp": {
+      "sizeBytes": 3876,
+      "sha256": "8669dac0108bcc29a4e0e5c8745afb4b2e88bdbc1e7301ccf3372fe55e4782e1"
+    },
+    "assets/media/web/responsive/cs2026-043-640.webp": {
+      "sizeBytes": 10158,
+      "sha256": "b318fada9b833b59181278a586d982512be31bb770cb05818a95b6a0aced1282"
+    },
+    "assets/media/web/responsive/cs2026-043-960.webp": {
+      "sizeBytes": 17286,
+      "sha256": "ef97e5dad969198a6e336a8c70772d7ef27b56faa892f22a865ed1cd45aa238e"
+    },
+    "assets/media/web/responsive/cs2026-044-320.webp": {
+      "sizeBytes": 4062,
+      "sha256": "276e4b0c50caf9c489c7c182cf480d800b2d4560db996f157595beaa0647363c"
+    },
+    "assets/media/web/responsive/cs2026-044-640.webp": {
+      "sizeBytes": 10530,
+      "sha256": "58f16dde449f68b3c920ac9b3f8d10d1adb1bc48ca0e4de557c1bfc4111e5403"
+    },
+    "assets/media/web/responsive/cs2026-044-960.webp": {
+      "sizeBytes": 17680,
+      "sha256": "c170b7473b47b8bad32929ff459af7ed12b7161c01676c3cb247153b1f993222"
+    },
+    "assets/media/web/responsive/cs2026-045-320.webp": {
+      "sizeBytes": 3926,
+      "sha256": "14498fb31a481950632854033385659199cceb70189bcb2ad4e987b4ef84a1b0"
+    },
+    "assets/media/web/responsive/cs2026-045-640.webp": {
+      "sizeBytes": 10104,
+      "sha256": "d638d282f1de293bf55dd408effa7ef5f60302623d04020af1816dea0e8faa6e"
+    },
+    "assets/media/web/responsive/cs2026-045-960.webp": {
+      "sizeBytes": 17148,
+      "sha256": "3f4cf56eff71d780c36c4b3b2179e232120fd4b2d2e3d60d7eb33d25509b01dd"
+    },
+    "assets/media/web/responsive/cs2026-046-320.webp": {
+      "sizeBytes": 4178,
+      "sha256": "d13a538bd8a99da5ed10be7c2fffaed9c382c29ae58479be9939823d4695a44a"
+    },
+    "assets/media/web/responsive/cs2026-046-640.webp": {
+      "sizeBytes": 11150,
+      "sha256": "8fa6413162a83969f2be5be80f763130970ce627a91c1c8f96d4f560be7637ba"
+    },
+    "assets/media/web/responsive/cs2026-046-960.webp": {
+      "sizeBytes": 18598,
+      "sha256": "895eaf75c6c8994ead6d2bf472ddbee70c1ae7c11a723f3d0eee9baca9a0d513"
+    },
+    "assets/media/web/responsive/cs2026-047-320.webp": {
+      "sizeBytes": 3900,
+      "sha256": "b7256d42ff79ab52870568cc37656139b25ad2a5888ab4de752dbd043d9c2384"
+    },
+    "assets/media/web/responsive/cs2026-047-640.webp": {
+      "sizeBytes": 10280,
+      "sha256": "77c17b030af3359c7adf7c224fc7a009aa992e5eab54c678c77ec4740fc00f43"
+    },
+    "assets/media/web/responsive/cs2026-047-960.webp": {
+      "sizeBytes": 17460,
+      "sha256": "da11bcd5793e3c5ad519e2c630c565c46a0af0c44cd004410cafe73094f640f0"
+    },
+    "assets/media/web/responsive/cs2026-048-320.webp": {
+      "sizeBytes": 3614,
+      "sha256": "7633e823c82d3ef5b1e070ed1551517ead80b649813809b3d53bb82531c9ad14"
+    },
+    "assets/media/web/responsive/cs2026-048-640.webp": {
+      "sizeBytes": 9330,
+      "sha256": "8bdd469341144b3dc49bcf29db1754990dd825bf4e875d12e20a263c56b137c7"
+    },
+    "assets/media/web/responsive/cs2026-048-960.webp": {
+      "sizeBytes": 15918,
+      "sha256": "c07ef309bf1fb44e8b44c1a4692c82eb893e230bd6fe9dcf8e4cc155b5b9ca8d"
+    },
+    "assets/media/web/responsive/cs2026-049-320.webp": {
+      "sizeBytes": 4098,
+      "sha256": "27eb975bd518654bc0778836630dbf1ddecf52f13668b89c0f7d0552bdba3e8c"
+    },
+    "assets/media/web/responsive/cs2026-049-640.webp": {
+      "sizeBytes": 10654,
+      "sha256": "838f3e983f10d8b2c6b6e4326e71a6fad91eaba7e5e4988cbb371cbd38539ffd"
+    },
+    "assets/media/web/responsive/cs2026-049-960.webp": {
+      "sizeBytes": 17866,
+      "sha256": "b7f6c77e718c3462ebc70d0ca669780b0b98a595a19db5e5b2b3750fb5c94d17"
+    },
+    "assets/media/web/responsive/cs2026-050-320.webp": {
+      "sizeBytes": 3626,
+      "sha256": "07209c206864441c28f589090cda2e227503e4ac0e16d292b7ab3da6eda61008"
+    },
+    "assets/media/web/responsive/cs2026-050-640.webp": {
+      "sizeBytes": 9498,
+      "sha256": "54f64c15e19a55200b855cff6da05ad3b6f49290598c6f9c0709d3400a7ebd50"
+    },
+    "assets/media/web/responsive/cs2026-050-960.webp": {
+      "sizeBytes": 16218,
+      "sha256": "fd58a0304c0c9acc1a26494188f3c1b39c675596290ddbd87973ba56f0d79186"
+    },
+    "assets/media/web/responsive/cs2026-051-320.webp": {
+      "sizeBytes": 3870,
+      "sha256": "ac70e02c2b8afa4435ee853dcde4d8a895a8267ca77e0cc23f2c91c590df1833"
+    },
+    "assets/media/web/responsive/cs2026-051-640.webp": {
+      "sizeBytes": 10128,
+      "sha256": "97a06d6ee91b13f4173be27528dc8ade1061383b70b06c2de0bdabcaea944581"
+    },
+    "assets/media/web/responsive/cs2026-051-960.webp": {
+      "sizeBytes": 17164,
+      "sha256": "d45ed9438b494b70796f7d7cf9f2bb19f3b29fed5980e6d16f3c30986ddf0cc1"
+    },
+    "assets/media/web/responsive/cs2026-052-320.webp": {
+      "sizeBytes": 3582,
+      "sha256": "04a353b4bb596d9f02a86b9cb33ce6b688b6925aab9544fa6911aeaddb6790a3"
+    },
+    "assets/media/web/responsive/cs2026-052-640.webp": {
+      "sizeBytes": 9362,
+      "sha256": "388c21300e8727b878289e3c50bef0c958e2b059871af893acd90dee7585e1ea"
+    },
+    "assets/media/web/responsive/cs2026-052-960.webp": {
+      "sizeBytes": 15884,
+      "sha256": "8647763e38385c0ef91874e767d9c612585572f4fc1742eb6f820f355e9f7161"
+    },
+    "assets/media/web/responsive/cs2026-053-320.webp": {
+      "sizeBytes": 3632,
+      "sha256": "d1e193818a90f00505aa5f3a0c04391fee276f0a9971d356847b8df706f07f57"
+    },
+    "assets/media/web/responsive/cs2026-053-640.webp": {
+      "sizeBytes": 9282,
+      "sha256": "9cad23d527601ad0100bf340aa8b243025b14997a92bb1f138e5138d766f07af"
+    },
+    "assets/media/web/responsive/cs2026-053-960.webp": {
+      "sizeBytes": 16096,
+      "sha256": "c2c95c351055f68518cd36e0474f44bcf2b6ac9d118999f2fafe1ae78bb0502a"
+    },
+    "assets/media/web/responsive/cs2026-054-320.webp": {
+      "sizeBytes": 3766,
+      "sha256": "13254dcb90b80eaa24f9f2e31f83f94485fd149ebd8ca290143e9ebb8da89b59"
+    },
+    "assets/media/web/responsive/cs2026-054-640.webp": {
+      "sizeBytes": 9610,
+      "sha256": "7841649451e8666336aa80e8c19b3740af17d202c266b400d959b1b40dbba868"
+    },
+    "assets/media/web/responsive/cs2026-054-960.webp": {
+      "sizeBytes": 16430,
+      "sha256": "ab05722ce195585b91aebe77331ef57cf884dcfd7c35b764b568711e218ff17f"
+    },
+    "assets/media/web/responsive/cs2026-055-320.webp": {
+      "sizeBytes": 3762,
+      "sha256": "5d4b8c12d6ad3aeccdb8b2fa73c2de2aef1aef2d87708033ff96a032980ff9a0"
+    },
+    "assets/media/web/responsive/cs2026-055-640.webp": {
+      "sizeBytes": 9646,
+      "sha256": "987439d1b41d53f5896d6d571396dc9563757e490107b4e32762169ebe87a3b6"
+    },
+    "assets/media/web/responsive/cs2026-055-960.webp": {
+      "sizeBytes": 16574,
+      "sha256": "179535ba570977e37e1e937f0ab5729c3fb57622bdb751a9bdb22db60c8815c7"
+    },
+    "assets/media/web/responsive/cs2026-056-320.webp": {
+      "sizeBytes": 3784,
+      "sha256": "9e93352a8fe8c8c2a73ffa4cff5386a1e679ce55a45fdfc8b4f4b044f36356bf"
+    },
+    "assets/media/web/responsive/cs2026-056-640.webp": {
+      "sizeBytes": 9800,
+      "sha256": "88fd0511725c6773b40ce1de92c7074de81e433f9b9526a3ef015bbe238a309b"
+    },
+    "assets/media/web/responsive/cs2026-056-960.webp": {
+      "sizeBytes": 16768,
+      "sha256": "50d6c73d35d88a02fbf4ea905cb1fd1949feb3cf2c26a2c527b12c7f5692112c"
+    },
+    "assets/media/web/responsive/cs2026-057-320.webp": {
+      "sizeBytes": 3902,
+      "sha256": "ceda6884f84ba9e564fedea629aa7959efa5cb3e605942c86c2eafa37480b60d"
+    },
+    "assets/media/web/responsive/cs2026-057-640.webp": {
+      "sizeBytes": 9940,
+      "sha256": "d84c83fab3655d31a47b8bbe7f6f43bd8dbc460675e1e720829938c12da97c6c"
+    },
+    "assets/media/web/responsive/cs2026-057-960.webp": {
+      "sizeBytes": 16822,
+      "sha256": "d4f905d1e4962eeb4e82660b01e9eef6bec307922b109c3768e6056beea73687"
+    },
+    "assets/media/web/responsive/cs2026-058-320.webp": {
+      "sizeBytes": 3916,
+      "sha256": "a0445c95febfdb4febc1d161c01b5552b318f974f8328c72374db09ee787a3d8"
+    },
+    "assets/media/web/responsive/cs2026-058-640.webp": {
+      "sizeBytes": 10090,
+      "sha256": "7b6dd875b3131e9cbdc2d9dcc71f821f15383cc8362605bc236de60d6e8a5c7f"
+    },
+    "assets/media/web/responsive/cs2026-058-960.webp": {
+      "sizeBytes": 17318,
+      "sha256": "2410cfdef9c0ada32b2675f848a96f94590ca40e1ccc6f425f80d80b487a5240"
+    },
+    "assets/media/web/responsive/cs2026-059-320.webp": {
+      "sizeBytes": 3982,
+      "sha256": "092187b7df799e535ef71a0a31253da4100a3f545cb8604471f20974520e5c37"
+    },
+    "assets/media/web/responsive/cs2026-059-640.webp": {
+      "sizeBytes": 10372,
+      "sha256": "ae62a9fe263a278174f46c44de69d87e4bbda78a2c72980c65b2dd55e01854a4"
+    },
+    "assets/media/web/responsive/cs2026-059-960.webp": {
+      "sizeBytes": 17652,
+      "sha256": "654f001b4405e72903897dfa774be37baeed0abfd078ac7c929186c7b9f4a965"
+    },
+    "assets/media/web/responsive/cs2026-060-320.webp": {
+      "sizeBytes": 3648,
+      "sha256": "61fda2c58abf695055c29358093a42e752bd49b1e47eaed8e979e8dc04f7e3c1"
+    },
+    "assets/media/web/responsive/cs2026-060-640.webp": {
+      "sizeBytes": 9374,
+      "sha256": "f1e4e1f79b00d9519a69586b441b992a81888e89fedb03c1c09e606453843a17"
+    },
+    "assets/media/web/responsive/cs2026-060-960.webp": {
+      "sizeBytes": 16000,
+      "sha256": "304d755c9fc135747e7687e3cbb957dd534c7f876b7e3849edfc3cf39ec7ea54"
+    },
+    "assets/media/web/responsive/cs2026-061-320.webp": {
+      "sizeBytes": 3840,
+      "sha256": "fa8e1d90e679c5fdba2e5ae4e46f61902324ae9da62bf77fc16da26be8a1f561"
+    },
+    "assets/media/web/responsive/cs2026-061-640.webp": {
+      "sizeBytes": 9908,
+      "sha256": "f25ca104abdabc48cfe67d3cf81aadeeda3c1ec1c74fbadeafb7ecc5811fb9f9"
+    },
+    "assets/media/web/responsive/cs2026-061-960.webp": {
+      "sizeBytes": 17214,
+      "sha256": "497c5733c2e3aeb405df7a159dde7365a0c15a61208f58ef37cf41b954163520"
+    },
+    "assets/media/web/responsive/cs2026-062-320.webp": {
+      "sizeBytes": 4444,
+      "sha256": "f1d21282464d721e1ff6cae822cc15f5c5b33f6154e57f6ec9c07288cbe253ea"
+    },
+    "assets/media/web/responsive/cs2026-062-640.webp": {
+      "sizeBytes": 11276,
+      "sha256": "d8a906ff462a3c9a4a4dcea027c4298e1c673d3f6fa6030e739777a00916a7a1"
+    },
+    "assets/media/web/responsive/cs2026-062-960.webp": {
+      "sizeBytes": 19188,
+      "sha256": "ea448902551a52d1e7de94973f0c877a5709c9a4aefae9958e4daf1b4e901644"
+    },
+    "assets/media/web/responsive/cs2026-063-320.webp": {
+      "sizeBytes": 4486,
+      "sha256": "20738f750741456c279c306553a59ea6c0671a90c12ba3d3c18967218d00fbfa"
+    },
+    "assets/media/web/responsive/cs2026-063-640.webp": {
+      "sizeBytes": 11224,
+      "sha256": "34a9be8fab3c07f63b4753f9f9c51ee07aa0a16477a36ddcecce124dcb34aa06"
+    },
+    "assets/media/web/responsive/cs2026-063-960.webp": {
+      "sizeBytes": 19276,
+      "sha256": "eebcb5f21a7f11469864e3ed95d9bfbb3dffc287629277d63d889a62bc5630cb"
+    },
+    "assets/media/web/responsive/cs2026-064-320.webp": {
+      "sizeBytes": 4116,
+      "sha256": "180f9efc752721e7d3ccd530a9e379655a74203fdf2fa01c3594212914919c5b"
+    },
+    "assets/media/web/responsive/cs2026-064-640.webp": {
+      "sizeBytes": 10228,
+      "sha256": "c10d5756d86b4355f0b2809109df3162389da951963d16c8708ff8fc75515687"
+    },
+    "assets/media/web/responsive/cs2026-064-960.webp": {
+      "sizeBytes": 17608,
+      "sha256": "9ff34a4b911ec6b358d42b39d52f313613eb55c298a2917f83c0f150893f518e"
+    },
+    "assets/media/web/responsive/cs2026-065-320.webp": {
+      "sizeBytes": 4004,
+      "sha256": "dea4d8fdd8fe15b3548c092dda315d0e5e595118a15ec4ff56ed928316c1ab17"
+    },
+    "assets/media/web/responsive/cs2026-065-640.webp": {
+      "sizeBytes": 10146,
+      "sha256": "f446aec6a51e14d872850386d819ce92bf3f889127e3c68e5bbe7f0c93e94b46"
+    },
+    "assets/media/web/responsive/cs2026-065-960.webp": {
+      "sizeBytes": 17702,
+      "sha256": "867aca2147eeef8261a3626fea6a44996310104ce187b320d1469b339c874d6f"
+    },
+    "assets/media/web/responsive/cs2026-066-320.webp": {
+      "sizeBytes": 3828,
+      "sha256": "3eb15587a386bb34ea97fed21a979a67afceb3139a9e72fa5b1c7305e758ef87"
+    },
+    "assets/media/web/responsive/cs2026-066-640.webp": {
+      "sizeBytes": 9774,
+      "sha256": "400ed2c43cf57b870248b021cfe7c65f7c579500dce0636f7a31dfe50156a2ce"
+    },
+    "assets/media/web/responsive/cs2026-066-960.webp": {
+      "sizeBytes": 16894,
+      "sha256": "941df6d952e5204382ff62a84bb9bc8fef0e47ed94a312f71705513c5b03e6d4"
+    },
+    "assets/media/web/responsive/cs2026-067-320.webp": {
+      "sizeBytes": 4150,
+      "sha256": "46aedf9b92ed420b3141b3893a36acf3f2a48fa8d6816198e011c0d1b4614144"
+    },
+    "assets/media/web/responsive/cs2026-067-640.webp": {
+      "sizeBytes": 10288,
+      "sha256": "cb9c1465835f4d81de7e85d547d14f412c23fdcae52894c103e97d30f6263367"
+    },
+    "assets/media/web/responsive/cs2026-067-960.webp": {
+      "sizeBytes": 17584,
+      "sha256": "32a3fc3054fea8df23384e82ca4d49b802d07edd94956e582b12dac6717e1ed3"
+    },
+    "assets/media/web/responsive/cs2026-068-320.webp": {
+      "sizeBytes": 4072,
+      "sha256": "2dd6aedd766060015db36577e17fd61af9d40977dab511250c1c33ceee4ba51c"
+    },
+    "assets/media/web/responsive/cs2026-068-640.webp": {
+      "sizeBytes": 10456,
+      "sha256": "68dea94f9e7901c99a084012205319967b784091e8858d599637aba9a03bc629"
+    },
+    "assets/media/web/responsive/cs2026-068-960.webp": {
+      "sizeBytes": 17882,
+      "sha256": "33080336b50b9715538a62b6965f08181b0882b08d9a1364e0b8aba25ffe472b"
+    },
+    "assets/media/web/responsive/cs2026-069-320.webp": {
+      "sizeBytes": 4232,
+      "sha256": "2cfa1fb03520698ed13627cb0d5ef7cea587cade72248345b0a981288b795935"
+    },
+    "assets/media/web/responsive/cs2026-069-640.webp": {
+      "sizeBytes": 10588,
+      "sha256": "c235df6e615faedf7a5b60169d8c5cd84b44bd0ab208834deea3000cb1b21240"
+    },
+    "assets/media/web/responsive/cs2026-069-960.webp": {
+      "sizeBytes": 18012,
+      "sha256": "b481e66ef37a55bbbcf0d1577cd5e11b4e26eee4beab16ab8e44019d51a27836"
+    },
+    "assets/media/web/responsive/cs2026-070-320.webp": {
+      "sizeBytes": 4544,
+      "sha256": "c66dbc267a2534e1e8516eea599072e308b414edffd2316f36cfb992bf23cbca"
+    },
+    "assets/media/web/responsive/cs2026-070-640.webp": {
+      "sizeBytes": 11422,
+      "sha256": "335345e1c1deff9160d2463b7924b6a381ce650580961b1dfd8f41df41f6d041"
+    },
+    "assets/media/web/responsive/cs2026-070-960.webp": {
+      "sizeBytes": 19324,
+      "sha256": "d1553c7bd57f691431c370a3501b684a97bf09cc8165a45076976fe1ff0870ee"
+    },
+    "assets/media/web/responsive/cs2026-071-320.webp": {
+      "sizeBytes": 4042,
+      "sha256": "4dc729a89b29c9f2a6523f63821307b6d261b44e9ad20f44d0a9a9b34a07bbb5"
+    },
+    "assets/media/web/responsive/cs2026-071-640.webp": {
+      "sizeBytes": 10258,
+      "sha256": "b9346897e09bb2cc9ba7ccb8309f7760db653e09941af3e7b6391edc3144e355"
+    },
+    "assets/media/web/responsive/cs2026-071-960.webp": {
+      "sizeBytes": 17584,
+      "sha256": "1f50e792728dda6e68e288fc470e20a27e016f6e77fdfbdfbe8911a5fdb63b16"
+    },
+    "assets/media/web/responsive/cs2026-072-320.webp": {
+      "sizeBytes": 3948,
+      "sha256": "f7b3446e57263196db38cab9082ffcd78239d1c3224ead16e074e6b85279890f"
+    },
+    "assets/media/web/responsive/cs2026-072-640.webp": {
+      "sizeBytes": 9924,
+      "sha256": "e9ebe846e9290f5a8092383a25558ac13c4abf083c169a32bf56769a45c59c84"
+    },
+    "assets/media/web/responsive/cs2026-072-960.webp": {
+      "sizeBytes": 17062,
+      "sha256": "a301d8551c03781490a9c2763f4fca2a31566cafd0edebd3bff239fde273158e"
+    },
+    "assets/media/web/responsive/cs2026-073-320.webp": {
+      "sizeBytes": 3956,
+      "sha256": "98c83cf27bb32a6f0b7e50885759fdcf3ba79e1ec6bed26532ec7a4eeab64c01"
+    },
+    "assets/media/web/responsive/cs2026-073-640.webp": {
+      "sizeBytes": 9892,
+      "sha256": "ebabcd44e6d6daccd683b8a738f97cda20e564448bd49758a01ab2ee6fab7330"
+    },
+    "assets/media/web/responsive/cs2026-073-960.webp": {
+      "sizeBytes": 17162,
+      "sha256": "30a61897f9cb2a30c43e49476b4651b20d57c08b218f9c716210807135a00e67"
+    },
+    "assets/media/web/responsive/cs2026-074-320.webp": {
+      "sizeBytes": 4388,
+      "sha256": "2519e83956d6ffb361c10247309dfc9a5c6ed0308afd539f9dae7876c7164f99"
+    },
+    "assets/media/web/responsive/cs2026-074-640.webp": {
+      "sizeBytes": 10930,
+      "sha256": "7cabe2f2a50d19949500a14d52fb0c49cbdb0ece1194c31e3d0a02319ad74ccb"
+    },
+    "assets/media/web/responsive/cs2026-074-960.webp": {
+      "sizeBytes": 18680,
+      "sha256": "484871758db7b8b308407a87dda90ec2dce80263eb3f2364884bafc8a4e676ab"
+    },
+    "assets/media/web/responsive/cs2026-075-320.webp": {
+      "sizeBytes": 4388,
+      "sha256": "485c0aa3fb69dbce8e2459708b111fe92eae563c21f0143c0eb4f90c60ef9c15"
+    },
+    "assets/media/web/responsive/cs2026-075-640.webp": {
+      "sizeBytes": 10974,
+      "sha256": "9c399fc3aa47c0194ef52c85e47c292eeba5c9f05e8848209b4b7d6be5ea89b1"
+    },
+    "assets/media/web/responsive/cs2026-075-960.webp": {
+      "sizeBytes": 18564,
+      "sha256": "3258c1cf79ef4486d178a3840b4fac607965d93dca88a1577f00d8495cd6894c"
+    },
+    "assets/media/web/responsive/cs2026-076-320.webp": {
+      "sizeBytes": 4212,
+      "sha256": "67a1df1e9b8e239c5bd64cd2a0b60c5ceb4e36cdf5b9cc38f505d65023056715"
+    },
+    "assets/media/web/responsive/cs2026-076-640.webp": {
+      "sizeBytes": 10760,
+      "sha256": "a71f6f62bfa411c273fef3087153b9f8fab3af92d7e7de198ed87a524c1369dd"
+    },
+    "assets/media/web/responsive/cs2026-076-960.webp": {
+      "sizeBytes": 18510,
+      "sha256": "227d836c8eb0394a12d2751f83a8e1efc0fd7a81e4072049e2dcdae363dc9241"
+    },
+    "assets/media/web/responsive/cs2026-077-320.webp": {
+      "sizeBytes": 4040,
+      "sha256": "c42f46a66d4a9eaa008e7d75c0991316988e3e22a1c1333f2ac4a15ec22d1335"
+    },
+    "assets/media/web/responsive/cs2026-077-640.webp": {
+      "sizeBytes": 10082,
+      "sha256": "272cc4c3110537d1451f388147ea38c920ecdc343c7d2a564693c96802c76a06"
+    },
+    "assets/media/web/responsive/cs2026-077-960.webp": {
+      "sizeBytes": 17280,
+      "sha256": "e3d30c4168a086942bbffd80dc01a18a3f342004776749ae5fae8a00e2ecd728"
+    },
+    "assets/media/web/responsive/cs2026-078-320.webp": {
+      "sizeBytes": 4102,
+      "sha256": "9aafafab6e517a01f0e017b16fdb12a23c59758e35de92632645a0679c156e76"
+    },
+    "assets/media/web/responsive/cs2026-078-640.webp": {
+      "sizeBytes": 10282,
+      "sha256": "67a6be37434245c6a730dfcdd53901080b100c3352e3ed0ea71922728330544c"
+    },
+    "assets/media/web/responsive/cs2026-078-960.webp": {
+      "sizeBytes": 17660,
+      "sha256": "a3c4d931aa88a25684b5fc9227a5ee13c9c83db749c0e38d5463a991e78beef6"
+    },
+    "assets/media/web/responsive/cs2026-079-320.webp": {
+      "sizeBytes": 3652,
+      "sha256": "b07fc19cbe3937e8363e7c2e77f77089dc39270413bbb2153654d689e86cca60"
+    },
+    "assets/media/web/responsive/cs2026-079-640.webp": {
+      "sizeBytes": 9436,
+      "sha256": "3d0666fbfb6dbefff49a64406d83978fd852dc708402f7ae9094b1c61ec398c8"
+    },
+    "assets/media/web/responsive/cs2026-079-960.webp": {
+      "sizeBytes": 16348,
+      "sha256": "f3677e34a7064f820fb16ff707fb596c463672558423c059f012f705094e955d"
+    },
+    "assets/media/web/responsive/cs2026-080-320.webp": {
+      "sizeBytes": 4302,
+      "sha256": "b7b1849b1b506964b7460f6279b8c60f4ae8e082c14e5ec5add4bcf16b49ec21"
+    },
+    "assets/media/web/responsive/cs2026-080-640.webp": {
+      "sizeBytes": 10988,
+      "sha256": "c1a8c0cd917107db7e2e79b133461fb307dff8cf900eeea5e3ba69b34517bbe5"
+    },
+    "assets/media/web/responsive/cs2026-080-960.webp": {
+      "sizeBytes": 18826,
+      "sha256": "548820fca15a9cea84d1dc226efe2c9538b3f59cf1576af28077dc6de407cc0a"
+    },
+    "assets/media/web/responsive/eletkep-01-320.webp": {
+      "sizeBytes": 12138,
+      "sha256": "c6b7bf626582c2c195ee5ca5078b709a4bd1d895e5a1a0e5eb144de3b8050229"
+    },
+    "assets/media/web/responsive/eletkep-01-640.webp": {
+      "sizeBytes": 32448,
+      "sha256": "5a23f17b6030160d3f4826fd36ffc43c1a0c7850e407efdd3fefcbd001faec6f"
+    },
+    "assets/media/web/responsive/eletkep-01-960.webp": {
+      "sizeBytes": 54376,
+      "sha256": "dfdd07a846ac2a5ad3ea95d2be69bc6e0a167294e644eeeb52f83272c7ea03b6"
+    },
+    "assets/media/web/responsive/eletkep-02-320.webp": {
+      "sizeBytes": 14270,
+      "sha256": "e4f97f15096a18a35debcac7173b7df52aabef26b577b48bf8c516f5243dc280"
+    },
+    "assets/media/web/responsive/eletkep-02-640.webp": {
+      "sizeBytes": 36762,
+      "sha256": "8c743e1d292d7d2c92dcbde74280947f1aa8d87d3f2828ccf02c99f6b3dd2327"
+    },
+    "assets/media/web/responsive/eletkep-02-960.webp": {
+      "sizeBytes": 59644,
+      "sha256": "21fe4b22fd326c1334cfb0a669a24939eca4bfb5e827836de354d3dadedd07ae"
+    },
+    "assets/media/web/responsive/eletkep-03-320.webp": {
+      "sizeBytes": 14648,
+      "sha256": "c23879c626a1af7ab1f68751cde54046dc930d29d6dd7c63777c075ed5d55127"
+    },
+    "assets/media/web/responsive/eletkep-03-640.webp": {
+      "sizeBytes": 40350,
+      "sha256": "35ed5c9301ad3c4ee9c3bd4b73f26297974f76e205b3c308a592205bf7d47972"
+    },
+    "assets/media/web/responsive/eletkep-03-960.webp": {
+      "sizeBytes": 69506,
+      "sha256": "4f919ddb5fc08ffe83b4478a2fdf73b44cc028b60a3850270eb7a09e0da392bb"
+    },
+    "assets/media/web/responsive/eletkep-04-320.webp": {
+      "sizeBytes": 9982,
+      "sha256": "679a736b32a255f1632d348b6c3d5ee0f7560d7bf4693e1f497bacb758b506b9"
+    },
+    "assets/media/web/responsive/eletkep-04-640.webp": {
+      "sizeBytes": 24952,
+      "sha256": "a77c1968de3813b29cfe6c6164a30d1424026393938f409a9037cf82a7dd35cf"
+    },
+    "assets/media/web/responsive/eletkep-04-960.webp": {
+      "sizeBytes": 40838,
+      "sha256": "f0710928fb10ccaf27536e162652e4c1df0f66a5a991218b868beeb52f5401aa"
+    },
+    "assets/media/web/responsive/eletkep-05-320.webp": {
+      "sizeBytes": 14676,
+      "sha256": "29ad175bbc0a907b9b8bd91992afacfaed548b166045829350b5607595edabf1"
+    },
+    "assets/media/web/responsive/eletkep-05-640.webp": {
+      "sizeBytes": 39774,
+      "sha256": "72c838ce7088bb70d09876ff51b313b81836878002ccdd6a6585e05496d127e6"
+    },
+    "assets/media/web/responsive/eletkep-05-960.webp": {
+      "sizeBytes": 64774,
+      "sha256": "17af530afb0f195826cc9f8f26482cc1e8eb8ee989d7ac3a5566e8ef64c4f12a"
+    },
+    "assets/media/web/responsive/eletkep-06-320.webp": {
+      "sizeBytes": 12992,
+      "sha256": "d982cbfa96d021c3a79d50e93233af2472c0ee422db1f800b4b361f882ac21fa"
+    },
+    "assets/media/web/responsive/eletkep-06-640.webp": {
+      "sizeBytes": 33178,
+      "sha256": "00f2199cca065fa9a4094d313d86d6f13570668a0b884cdc80c42db966ea7f8a"
+    },
+    "assets/media/web/responsive/eletkep-06-960.webp": {
+      "sizeBytes": 56340,
+      "sha256": "22fcbe5c9253937bda6e0a3115259be13d02ae8d7b6380437c9239ad985f29f0"
+    },
+    "assets/media/web/responsive/eletkep-07-320.webp": {
+      "sizeBytes": 15748,
+      "sha256": "8dd849c58f88206adcac4e93ed53f33d52f2adfa7b7cb42213e8d64efe35d44a"
+    },
+    "assets/media/web/responsive/eletkep-07-640.webp": {
+      "sizeBytes": 43216,
+      "sha256": "c7af996bde51dc05011862306897ce8aa7c5fb674fc3580467c11b677bec33ca"
+    },
+    "assets/media/web/responsive/eletkep-07-960.webp": {
+      "sizeBytes": 72102,
+      "sha256": "0900ca96f35f4387636c322c5b95bd8e7f654eb6d1d479de010e125a3a330768"
+    },
+    "assets/media/web/responsive/eletkep-08-320.webp": {
+      "sizeBytes": 11540,
+      "sha256": "c387902e17282488880d6e43acc0bf6c6dd448e6a9dca4fa3d737a3a6f521bde"
+    },
+    "assets/media/web/responsive/eletkep-08-640.webp": {
+      "sizeBytes": 27474,
+      "sha256": "187ba85f1c4591f4a98b8faca64ede8b53bee499bd71265c8a41b21c85ba4b7d"
+    },
+    "assets/media/web/responsive/eletkep-08-960.webp": {
+      "sizeBytes": 43552,
+      "sha256": "78deb94bf9c9219cd928ea3cfb97c2b7407e69d932e337d74dfae5b37e341566"
+    },
+    "assets/media/web/responsive/eletkep-09-320.webp": {
+      "sizeBytes": 15602,
+      "sha256": "64db2daf5cb56bfed91153afc597a7fa19bd742197510a27c276147b9ba84c7b"
+    },
+    "assets/media/web/responsive/eletkep-09-640.webp": {
+      "sizeBytes": 47290,
+      "sha256": "aafcac1340d8deba91228fb07a55fb8eedb1db7651b770357902dcba1f3eee4e"
+    },
+    "assets/media/web/responsive/eletkep-09-960.webp": {
+      "sizeBytes": 85288,
+      "sha256": "5aa6a5affa63e9df50eea9b6b671fb5ade0c60fb68c6a25307007e8d00cdf5ab"
+    },
+    "assets/media/web/responsive/eletkep-10-320.webp": {
+      "sizeBytes": 14204,
+      "sha256": "57a8ca7f15b8f563bbc8abaf91d53bac383a60e56d20797a8065853717bbae39"
+    },
+    "assets/media/web/responsive/eletkep-10-640.webp": {
+      "sizeBytes": 41474,
+      "sha256": "fa8ea75a31a24f21fa0deccf3419d898eb9971239d4fb3cb9a88ace81647a9fe"
+    },
+    "assets/media/web/responsive/eletkep-10-960.webp": {
+      "sizeBytes": 73582,
+      "sha256": "0a34280b1a34a3b254cf4eb24338c7a71dd2a62622504e127958767425d91b42"
+    },
+    "assets/media/web/responsive/eletkep-11-320.webp": {
+      "sizeBytes": 8416,
+      "sha256": "3a3049365d09c777ffe90d187aa9f7c5658c3e7d1909e77d1901000ada1d7546"
+    },
+    "assets/media/web/responsive/eletkep-12-320.webp": {
+      "sizeBytes": 10050,
+      "sha256": "5c412c7b7bf308b9a98082a3666a3026ed3a1c453d060fc6b894a324df241055"
+    },
+    "assets/media/web/responsive/eletkep-13-320.webp": {
+      "sizeBytes": 12320,
+      "sha256": "cf2ead93ff754cbe0525f0f6e6d0b9d88504af1d57a03fd8dced9acc99a0e143"
+    },
+    "assets/media/web/responsive/eletkep-14-320.webp": {
+      "sizeBytes": 18260,
+      "sha256": "2a56553cd7bfcd1a9e35cef00f8d070b10012d4a8c03070855ad2151f0f29384"
+    },
+    "assets/media/web/responsive/eletkep-15-320.webp": {
+      "sizeBytes": 9924,
+      "sha256": "ad7431e957108e0b66e405d7663fbf1ee3c19be00f315719dbf8ba0a7ff1aa5d"
+    },
+    "assets/media/web/responsive/eletkep-16-320.webp": {
+      "sizeBytes": 11236,
+      "sha256": "2a97fbb748aceae84f932368f19427cf1ac78017e0614b116bb19381196669b8"
+    },
+    "assets/media/web/responsive/eletkep-17-320.webp": {
+      "sizeBytes": 8416,
+      "sha256": "20b5b6c266a8ae488fd01d78c268219f4bd62f5cff19c576b4c9c45c14072e77"
+    },
+    "assets/media/web/responsive/eletkep-18-320.webp": {
+      "sizeBytes": 4480,
+      "sha256": "706dae27205c03635f2264f9ac1262cb9043acbddf177f5982ae1833099d1e5e"
+    },
+    "assets/media/web/responsive/eletkep-19-320.webp": {
+      "sizeBytes": 8766,
+      "sha256": "4eb41daff6c505e82685d70a722c3de16ab41e84c5dd64625c72b86aff9e26bb"
+    },
+    "assets/media/web/responsive/eletkep-20-320.webp": {
+      "sizeBytes": 12750,
+      "sha256": "3f444d85258913ecee792c5cc162c6660ff93a38fe6b84c8b9a93cd6547db1a6"
+    },
+    "assets/media/web/responsive/eletkep-21-320.webp": {
+      "sizeBytes": 5584,
+      "sha256": "0c1a1545118b64a96f3e798e1b98310278f9a42ecfc02f9e017bac7b4c585528"
+    },
+    "assets/media/web/responsive/eletkep-22-320.webp": {
+      "sizeBytes": 9422,
+      "sha256": "d2509d15a64f4d183dbef1269681fda2d0dbd0e4518c6fd7639a10e3c6956988"
+    },
+    "assets/media/web/responsive/eletkep-23-320.webp": {
+      "sizeBytes": 9040,
+      "sha256": "70b265b14c4c8a7caa7a6c49bc954f538f78aeaf674fe6e48ce01bde2cdad669"
+    },
+    "assets/media/web/responsive/eletkep-24-320.webp": {
+      "sizeBytes": 13074,
+      "sha256": "8e4cd5f8b92ff5ec0d450b1bb82b95b09e262b02b2efe270683ab0f920c9b4f8"
+    },
+    "assets/media/web/responsive/eletkep-25-320.webp": {
+      "sizeBytes": 13518,
+      "sha256": "7a06c18879f33925787bcba2ef6f35572c4cb41a296e7303c4b0d9819aad8ec0"
+    },
+    "assets/media/web/responsive/eletkep-26-320.webp": {
+      "sizeBytes": 10366,
+      "sha256": "4f8cf286f5916311c15a2e96ead2a3d411fd697cfe6e87fe82700245cdb1553b"
+    },
+    "assets/media/web/responsive/eletkep-27-320.webp": {
+      "sizeBytes": 11028,
+      "sha256": "d425b5e79e161735b36c1e81b5900acaf5bca64993c13669418cc4330742d731"
+    },
+    "assets/media/web/responsive/eletkep-28-320.webp": {
+      "sizeBytes": 9924,
+      "sha256": "ad7431e957108e0b66e405d7663fbf1ee3c19be00f315719dbf8ba0a7ff1aa5d"
+    },
+    "assets/media/web/responsive/eletkep-29-320.webp": {
+      "sizeBytes": 10842,
+      "sha256": "9cae50da2eacaeff007ac29d0b71d806147b6f4361cda9f4e61f98b9806e3e52"
+    },
+    "assets/media/web/responsive/eletkep-30-320.webp": {
+      "sizeBytes": 12116,
+      "sha256": "07fe194ab989bdb03788499a577769383785233495aad43afd9601f1761bbc54"
+    },
+    "assets/media/web/responsive/eletkep-31-320.webp": {
+      "sizeBytes": 9108,
+      "sha256": "16ace2282427e2402edaa5c2d63b8ebc03e93b1842256e7e0b68bbfa32f9f9f0"
+    },
+    "assets/media/web/responsive/eletkep-32-320.webp": {
+      "sizeBytes": 12056,
+      "sha256": "27c183a073a0f5c11752c41452321f551714d89eab1ee4d785eca80e20b0336b"
+    },
+    "assets/media/web/responsive/eletkep-33-320.webp": {
+      "sizeBytes": 11878,
+      "sha256": "7892ac9c4abc972fa8a5e1e11ae599ee3c65cdee1c9600bb4f49274d5be753ad"
+    },
+    "assets/media/web/responsive/eletkep-34-320.webp": {
+      "sizeBytes": 16542,
+      "sha256": "30a9e905cc171bbc79faa8a1746a4543d54e3e066d6766ab026991f15e2c0fda"
+    },
+    "assets/media/web/responsive/eletkep-35-320.webp": {
+      "sizeBytes": 10212,
+      "sha256": "307d6c50bf9b6c7a3beb7b5cc8d202f2fa953db05bfabdfad8645ac6f6c5e024"
+    },
+    "assets/media/web/responsive/eletkep-36-320.webp": {
+      "sizeBytes": 11028,
+      "sha256": "d425b5e79e161735b36c1e81b5900acaf5bca64993c13669418cc4330742d731"
+    },
+    "assets/media/web/responsive/eletkep-37-320.webp": {
+      "sizeBytes": 13012,
+      "sha256": "b2faa16fd569a79a00686d8ab9ddddc597293494bcff18928ddcf88b7a69fdd7"
+    },
+    "assets/media/web/responsive/eletkep-38-320.webp": {
+      "sizeBytes": 9982,
+      "sha256": "bd9ff888af47d1e3f8988ee8705f128531f492838b76f014c57d798f294d046d"
+    },
+    "assets/media/web/responsive/eletkep-39-320.webp": {
+      "sizeBytes": 8416,
+      "sha256": "3a3049365d09c777ffe90d187aa9f7c5658c3e7d1909e77d1901000ada1d7546"
+    },
+    "assets/media/web/responsive/eletkep-40-320.webp": {
+      "sizeBytes": 9554,
+      "sha256": "903995e569cf2bf682a52a8349f1548f877005744c7f03a7337e23246646cb6c"
+    },
+    "assets/media/web/responsive/eletkep-41-320.webp": {
+      "sizeBytes": 15974,
+      "sha256": "2fdfd8613bc61cfaa0c46d79d58f171659f50726065d2973e353fd965e7355a1"
+    },
+    "assets/media/web/responsive/eletkep-42-320.webp": {
+      "sizeBytes": 12930,
+      "sha256": "029c3e007159933fc4146eafe77539f77e454ca262c38d486ca3e5f85d30f19a"
+    },
+    "assets/media/web/responsive/eletkep-43-320.webp": {
+      "sizeBytes": 9182,
+      "sha256": "3b7dd133c1f43aab5604fe377d08e06eba0dbda3681e85ffa3c7b77996114708"
+    },
+    "assets/media/web/responsive/eletkep-44-320.webp": {
+      "sizeBytes": 14238,
+      "sha256": "c75f56f590ece2cb49b10497ed8bd8459f801a706e83496824962a7a4cf78965"
+    },
+    "assets/media/web/responsive/eletkep-45-320.webp": {
+      "sizeBytes": 8416,
+      "sha256": "20b5b6c266a8ae488fd01d78c268219f4bd62f5cff19c576b4c9c45c14072e77"
+    },
+    "assets/media/web/responsive/eletkep-46-320.webp": {
+      "sizeBytes": 9696,
+      "sha256": "adfdb642be7b41e413af35d6f78e5d8e3e359fa2f020caeecd32f1a68a6f2d51"
+    },
+    "assets/media/web/responsive/eletkep-47-320.webp": {
+      "sizeBytes": 14268,
+      "sha256": "b53828ff28f316e233dc3356e0cb9f02811f414f76443cff4e20b04512e42679"
+    },
+    "assets/media/web/responsive/eletkep-48-320.webp": {
+      "sizeBytes": 16082,
+      "sha256": "3565951fd2d5ee703decb007ba1a77a1a20089e75e4783f807b1d144d5902e10"
+    },
+    "assets/media/web/responsive/eredmenyek-1600-320.webp": {
+      "sizeBytes": 11540,
+      "sha256": "c387902e17282488880d6e43acc0bf6c6dd448e6a9dca4fa3d737a3a6f521bde"
+    },
+    "assets/media/web/responsive/eredmenyek-1600-640.webp": {
+      "sizeBytes": 27474,
+      "sha256": "187ba85f1c4591f4a98b8faca64ede8b53bee499bd71265c8a41b21c85ba4b7d"
+    },
+    "assets/media/web/responsive/eredmenyek-1600-960.webp": {
+      "sizeBytes": 43552,
+      "sha256": "78deb94bf9c9219cd928ea3cfb97c2b7407e69d932e337d74dfae5b37e341566"
+    },
+    "assets/media/web/responsive/esemenyek-1600-320.webp": {
+      "sizeBytes": 15748,
+      "sha256": "8dd849c58f88206adcac4e93ed53f33d52f2adfa7b7cb42213e8d64efe35d44a"
+    },
+    "assets/media/web/responsive/esemenyek-1600-640.webp": {
+      "sizeBytes": 43216,
+      "sha256": "c7af996bde51dc05011862306897ce8aa7c5fb674fc3580467c11b677bec33ca"
+    },
+    "assets/media/web/responsive/esemenyek-1600-960.webp": {
+      "sizeBytes": 72102,
+      "sha256": "0900ca96f35f4387636c322c5b95bd8e7f654eb6d1d479de010e125a3a330768"
+    },
+    "assets/media/web/responsive/felveteli-1600-320.webp": {
+      "sizeBytes": 14204,
+      "sha256": "57a8ca7f15b8f563bbc8abaf91d53bac383a60e56d20797a8065853717bbae39"
+    },
+    "assets/media/web/responsive/felveteli-1600-640.webp": {
+      "sizeBytes": 41474,
+      "sha256": "fa8ea75a31a24f21fa0deccf3419d898eb9971239d4fb3cb9a88ace81647a9fe"
+    },
+    "assets/media/web/responsive/felveteli-1600-960.webp": {
+      "sizeBytes": 73582,
+      "sha256": "0a34280b1a34a3b254cf4eb24338c7a71dd2a62622504e127958767425d91b42"
+    },
+    "assets/media/web/responsive/hero-1600-320.webp": {
+      "sizeBytes": 14204,
+      "sha256": "57a8ca7f15b8f563bbc8abaf91d53bac383a60e56d20797a8065853717bbae39"
+    },
+    "assets/media/web/responsive/hero-1600-640.webp": {
+      "sizeBytes": 41474,
+      "sha256": "fa8ea75a31a24f21fa0deccf3419d898eb9971239d4fb3cb9a88ace81647a9fe"
+    },
+    "assets/media/web/responsive/hero-1600-960.webp": {
+      "sizeBytes": 73582,
+      "sha256": "0a34280b1a34a3b254cf4eb24338c7a71dd2a62622504e127958767425d91b42"
+    },
+    "assets/media/web/responsive/iskolank-1600-320.webp": {
+      "sizeBytes": 15748,
+      "sha256": "8dd849c58f88206adcac4e93ed53f33d52f2adfa7b7cb42213e8d64efe35d44a"
+    },
+    "assets/media/web/responsive/iskolank-1600-640.webp": {
+      "sizeBytes": 43216,
+      "sha256": "c7af996bde51dc05011862306897ce8aa7c5fb674fc3580467c11b677bec33ca"
+    },
+    "assets/media/web/responsive/iskolank-1600-960.webp": {
+      "sizeBytes": 72102,
+      "sha256": "0900ca96f35f4387636c322c5b95bd8e7f654eb6d1d479de010e125a3a330768"
+    },
+    "assets/media/web/responsive/kapcsolat-1600-320.webp": {
+      "sizeBytes": 14676,
+      "sha256": "29ad175bbc0a907b9b8bd91992afacfaed548b166045829350b5607595edabf1"
+    },
+    "assets/media/web/responsive/kapcsolat-1600-640.webp": {
+      "sizeBytes": 39774,
+      "sha256": "72c838ce7088bb70d09876ff51b313b81836878002ccdd6a6585e05496d127e6"
+    },
+    "assets/media/web/responsive/kapcsolat-1600-960.webp": {
+      "sizeBytes": 64774,
+      "sha256": "17af530afb0f195826cc9f8f26482cc1e8eb8ee989d7ac3a5566e8ef64c4f12a"
+    },
+    "assets/media/web/responsive/kozosseg-1600-320.webp": {
+      "sizeBytes": 14676,
+      "sha256": "29ad175bbc0a907b9b8bd91992afacfaed548b166045829350b5607595edabf1"
+    },
+    "assets/media/web/responsive/kozosseg-1600-640.webp": {
+      "sizeBytes": 39774,
+      "sha256": "72c838ce7088bb70d09876ff51b313b81836878002ccdd6a6585e05496d127e6"
+    },
+    "assets/media/web/responsive/kozosseg-1600-960.webp": {
+      "sizeBytes": 64774,
+      "sha256": "17af530afb0f195826cc9f8f26482cc1e8eb8ee989d7ac3a5566e8ef64c4f12a"
+    },
+    "assets/media/web/responsive/oktatas-1600-320.webp": {
+      "sizeBytes": 12992,
+      "sha256": "d982cbfa96d021c3a79d50e93233af2472c0ee422db1f800b4b361f882ac21fa"
+    },
+    "assets/media/web/responsive/oktatas-1600-640.webp": {
+      "sizeBytes": 33178,
+      "sha256": "00f2199cca065fa9a4094d313d86d6f13570668a0b884cdc80c42db966ea7f8a"
+    },
+    "assets/media/web/responsive/oktatas-1600-960.webp": {
+      "sizeBytes": 56340,
+      "sha256": "22fcbe5c9253937bda6e0a3115259be13d02ae8d7b6380437c9239ad985f29f0"
+    },
+    "assets/media/web/responsive/siker-atletika-320.webp": {
+      "sizeBytes": 14270,
+      "sha256": "e4f97f15096a18a35debcac7173b7df52aabef26b577b48bf8c516f5243dc280"
+    },
+    "assets/media/web/responsive/siker-atletika-640.webp": {
+      "sizeBytes": 36762,
+      "sha256": "8c743e1d292d7d2c92dcbde74280947f1aa8d87d3f2828ccf02c99f6b3dd2327"
+    },
+    "assets/media/web/responsive/siker-atletika-960.webp": {
+      "sizeBytes": 59644,
+      "sha256": "21fe4b22fd326c1334cfb0a669a24939eca4bfb5e827836de354d3dadedd07ae"
+    },
+    "assets/media/web/responsive/siker-kosarlabda-320.webp": {
+      "sizeBytes": 12138,
+      "sha256": "c6b7bf626582c2c195ee5ca5078b709a4bd1d895e5a1a0e5eb144de3b8050229"
+    },
+    "assets/media/web/responsive/siker-kosarlabda-640.webp": {
+      "sizeBytes": 32448,
+      "sha256": "5a23f17b6030160d3f4826fd36ffc43c1a0c7850e407efdd3fefcbd001faec6f"
+    },
+    "assets/media/web/responsive/siker-kosarlabda-960.webp": {
+      "sizeBytes": 54376,
+      "sha256": "dfdd07a846ac2a5ad3ea95d2be69bc6e0a167294e644eeeb52f83272c7ea03b6"
+    },
+    "assets/media/web/responsive/siker-roplabda-320.webp": {
+      "sizeBytes": 9982,
+      "sha256": "679a736b32a255f1632d348b6c3d5ee0f7560d7bf4693e1f497bacb758b506b9"
+    },
+    "assets/media/web/responsive/siker-roplabda-640.webp": {
+      "sizeBytes": 24952,
+      "sha256": "a77c1968de3813b29cfe6c6164a30d1424026393938f409a9037cf82a7dd35cf"
+    },
+    "assets/media/web/responsive/siker-roplabda-960.webp": {
+      "sizeBytes": 40838,
+      "sha256": "f0710928fb10ccaf27536e162652e4c1df0f66a5a991218b868beeb52f5401aa"
+    },
+    "assets/media/web/responsive/siker-uszas-320.webp": {
+      "sizeBytes": 14648,
+      "sha256": "c23879c626a1af7ab1f68751cde54046dc930d29d6dd7c63777c075ed5d55127"
+    },
+    "assets/media/web/responsive/siker-uszas-640.webp": {
+      "sizeBytes": 40350,
+      "sha256": "35ed5c9301ad3c4ee9c3bd4b73f26297974f76e205b3c308a592205bf7d47972"
+    },
+    "assets/media/web/responsive/siker-uszas-960.webp": {
+      "sizeBytes": 69506,
+      "sha256": "4f919ddb5fc08ffe83b4478a2fdf73b44cc028b60a3850270eb7a09e0da392bb"
+    },
+    "assets/media/web/responsive/sport-1600-320.webp": {
+      "sizeBytes": 15602,
+      "sha256": "64db2daf5cb56bfed91153afc597a7fa19bd742197510a27c276147b9ba84c7b"
+    },
+    "assets/media/web/responsive/sport-1600-640.webp": {
+      "sizeBytes": 47290,
+      "sha256": "aafcac1340d8deba91228fb07a55fb8eedb1db7651b770357902dcba1f3eee4e"
+    },
+    "assets/media/web/responsive/sport-1600-960.webp": {
+      "sizeBytes": 85288,
+      "sha256": "5aa6a5affa63e9df50eea9b6b671fb5ade0c60fb68c6a25307007e8d00cdf5ab"
+    },
+    "assets/media/web/siker-atletika.webp": {
+      "sizeBytes": 122184,
+      "sha256": "0e122c95484fb74a7030ea39fd392b7c3d3ee10367c333346f335821f5c3442d"
+    },
+    "assets/media/web/siker-kosarlabda.webp": {
+      "sizeBytes": 115026,
+      "sha256": "1788f50b18f8d95b103b81278e27c6a172edf28738f6d6e999a9f7b227c5b291"
+    },
+    "assets/media/web/siker-roplabda.webp": {
+      "sizeBytes": 86222,
+      "sha256": "83e30728117fd15810ea002e5fd88ad0c52adcffadd3f9eea1ba675fcbce55f0"
+    },
+    "assets/media/web/siker-uszas.webp": {
+      "sizeBytes": 150494,
+      "sha256": "1dd7795f03f0235385b44ad297d3af0de89cd0d12332513439789685408dd0bc"
+    },
+    "assets/media/web/sport-1600.webp": {
+      "sizeBytes": 191108,
+      "sha256": "828879404d355ea47a037faccac9471d5b4babcefec2cc12ba727e6011c4b221"
+    },
+    "css/compass-2026.css": {
+      "sizeBytes": 18794,
+      "sha256": "c7f3579a5ff9570b9aea633383edd0edcdf287fa22ec72fb6459bc451acd9cc9"
+    },
+    "css/content-reflow-2026.css": {
+      "sizeBytes": 7788,
+      "sha256": "ff8e57e7c01864bb137ac6e0fc462a6ea5fb6b02361d635652923a6f060e237f"
+    },
+    "css/dfg-2026.css": {
+      "sizeBytes": 11832,
+      "sha256": "5a7b369526399fdda62d617e2107ddfdfd96d25918fe54a560538eed524c5912"
+    },
+    "css/extended-hubs-2026.css": {
+      "sizeBytes": 9190,
+      "sha256": "528c26c1cb3c2d4427252bb09a4748df99b4c00eea33291bf358e72e3b276b1b"
+    },
+    "css/finish11-2026.css": {
+      "sizeBytes": 3721,
+      "sha256": "5d901b0b4f615c7d5da932a22b884680eb240b8e614e08180496512776caa5bf"
+    },
+    "css/finish12-wing-2026.css": {
+      "sizeBytes": 6098,
+      "sha256": "da5eff42a19fc092ff24376ed618315e041838bbe99397a491eb7a6fd9ce9d72"
+    },
+    "css/gallery-h-2026.css": {
+      "sizeBytes": 9233,
+      "sha256": "0b365c1b58152d7c2d10b6c8a0263fa5a3c34e92d4d3c2728c2148e14571553d"
+    },
+    "css/gate-key-2026.css": {
+      "sizeBytes": 1967,
+      "sha256": "f7c608f4c103accbf3a1bfbeb3e60459c7e61256a9704539042f9a7474a28dd3"
+    },
+    "css/hero-map-dock-2026.css": {
+      "sizeBytes": 6891,
+      "sha256": "de078c1867bef12d5c568205937536ae0468c1a8ef3f1a3904422b9af1831fa7"
+    },
+    "css/home-gallery-news-gate-2026.css": {
+      "sizeBytes": 5557,
+      "sha256": "bf3de52855f2a3ac9819071c7514293d6b119a029804c24a1c6aa6acd47fb642"
+    },
+    "css/interactions-be-2026.css": {
+      "sizeBytes": 5701,
+      "sha256": "50970d82ddbb1b2194b09a9078c122857b981276d4a449911986625a8cc0fda8"
+    },
+    "css/j-home-layout-2026.css": {
+      "sizeBytes": 4299,
+      "sha256": "d71b9038ab5233498d6bf1ce696f639e7ba6de41f185d27d9c6f786efbdadb91"
+    },
+    "css/j-mobile-home-2026.css": {
+      "sizeBytes": 4226,
+      "sha256": "032a416b95b23636f36f965b16b289415173f52d77cfd3a84fc86d21cc5544fa"
+    },
+    "css/j-search-2026.css": {
+      "sizeBytes": 5306,
+      "sha256": "a61ea2abb32a3ca33c79c91f880723f0dc61995178a705924fcdaf89ae7d6c8b"
+    },
+    "css/kmil-2026.css": {
+      "sizeBytes": 5030,
+      "sha256": "a3499a6896d0560f1667e589754107f7fdc5465bd1b4c712b37a0ab5382cd11c"
+    },
+    "css/layout-2026.css": {
+      "sizeBytes": 10757,
+      "sha256": "c3078567f05c3307e80b7d413831d74d50ebb868c18846ad81a344920651ca75"
+    },
+    "css/media-experience-2026.css": {
+      "sizeBytes": 5806,
+      "sha256": "3ca21fb0ea8d8d6becea406178edfd69213c686350df99b6920371b66c482fee"
+    },
+    "css/media-manager-2026.css": {
+      "sizeBytes": 7684,
+      "sha256": "4ff8490bb914bd9221e6720ed515488cb2ed90c0db7cebbe70c9f028f4eed7a2"
+    },
+    "css/menu-backdrop-guaranteed-2026.css": {
+      "sizeBytes": 2345,
+      "sha256": "f28036b25a6a11934e6d79fa54c60c4c50fa8db35e5938d7ece9ddee567f7810"
+    },
+    "css/mobile-compact-h2-2026.css": {
+      "sizeBytes": 4228,
+      "sha256": "55835b1bd18061aa0b41e87ba2f9a9f2e14471db79d0b414fe72221aef088595"
+    },
+    "css/navigation-student-search-2026.css": {
+      "sizeBytes": 5282,
+      "sha256": "1063a2ed135e68a4b2f89f68ec47188b866266fd43fc436db297a213bece4be0"
+    },
+    "css/next-2026.css": {
+      "sizeBytes": 26091,
+      "sha256": "59d342477cbbd7a10946a3d45c1a06f04615b56ca7cd5aa55a9e9a936a5b1e95"
+    },
+    "css/next10-2026.css": {
+      "sizeBytes": 8327,
+      "sha256": "689691f872a3f7f7cf3663f012f12289caaf398a87f727bc1a78d0a69c6aa9d9"
+    },
+    "css/orbit-2026.css": {
+      "sizeBytes": 19522,
+      "sha256": "e439d6c0156db662a1f8d34fc15892265dcf8957e1f3db6265835f98eed35e7e"
+    },
+    "css/organized-2026.css": {
+      "sizeBytes": 15836,
+      "sha256": "f4a63a3ae13568453af3759757ca30e10734f3ff0d000f7ac1571b982d146976"
+    },
+    "css/performance-diagnostics-2026.css": {
+      "sizeBytes": 2570,
+      "sha256": "a1451ea6bccfc7ea24a49fc5cf09a7ba80d5b1d4ea9d86a917ac9e9916dce7ce"
+    },
+    "css/premium-home-2026.css": {
+      "sizeBytes": 18298,
+      "sha256": "035afeed7facbec406553eec9ddc2b54dd1a85ce3d6ee67553636c92da590449"
+    },
+    "css/radial-2026.css": {
+      "sizeBytes": 8648,
+      "sha256": "776743927c96002201a1475bd76558ba9982c4fc4e62e4c58ec46e9ea768bad2"
+    },
+    "css/round10-cinematic-2026.css": {
+      "sizeBytes": 10855,
+      "sha256": "9e59807a153c5ccad4dd7fa5aef2785fa7e36f57789562aa769a5949a403f031"
+    },
+    "css/round10-quality-2026.css": {
+      "sizeBytes": 3059,
+      "sha256": "7579295ef8b6e035f7671cea4eeeaf9de62c3a49657523ff529b2680e3238303"
+    },
+    "css/round12-visual-menu-2026.css": {
+      "sizeBytes": 13737,
+      "sha256": "0fc2b46c438823dd26b7383fa60f95a5189318854c0efb0a0ea991ff823aceaf"
+    },
+    "css/round13-accessibility.css": {
+      "sizeBytes": 2753,
+      "sha256": "d59abc3974f18aeca6e02888271601dd888be7906eb0a44e0b6038d786b6947d"
+    },
+    "css/style.css": {
+      "sizeBytes": 75798,
+      "sha256": "f2f47fd767b83bf57a70833c6c2ae600cf0a7ba085b9b60ee3bd9d46fbddb771"
+    },
+    "css/tenway-2026.css": {
+      "sizeBytes": 4276,
+      "sha256": "db23249b1b887a69a5b1c074b9323486bb5241804c24d79548a1e6c7d63b66e0"
+    },
+    "css/tools-2026.css": {
+      "sizeBytes": 10183,
+      "sha256": "1a2e2ac95e61a423137158b77589cb1ded55a451457a79204ee719502a308081"
+    },
+    "dokumentacio/FEJLESZTESI_ES_TESZTBESZAMOLO_2026.md": {
+      "sizeBytes": 7954,
+      "sha256": "f0f3f80283ac8130c2a3855e8ec1514da0e92abeb9b9d6a8a3184e5c454515fb"
+    },
+    "dokumentacio/FTP_ATALLAS_ES_VISSZAALLITAS.md": {
+      "sizeBytes": 3724,
+      "sha256": "204c5594ef42354876623256453337b27a6f73c59103872506eaa8c2f59487fd"
+    },
+    "dokumentacio/MEDIA_FELHASZNALASI_JOGOK_FELULVIZSGALAT.csv": {
+      "sizeBytes": 44003,
+      "sha256": "2b81f0e5b7c3b7e18bf821da6b0dbb015a5f410fa7cf328df69003c6e8d92b01"
+    },
+    "dokumentacio/TARTALMI_FELULVIZSGALAT_66_OLDAL.csv": {
+      "sizeBytes": 15104,
+      "sha256": "00eb23c69e2889b2ede6073d3259a46c2ba4985a52ed5e8ee077adc7f45a77c3"
+    },
+    "index.html": {
+      "sizeBytes": 11364,
+      "sha256": "92f53c92733a563a6c2d16f88d42e945b60ba9733f54aaf6557801465ba5e1c7"
+    },
+    "js/advanced-2026.js": {
+      "sizeBytes": 33865,
+      "sha256": "dad503093ea98866c9cae9c0e1ad9df4fb8d002d9034326de36461ff8d4c6e94"
+    },
+    "js/app.js": {
+      "sizeBytes": 41576,
+      "sha256": "7d1eece4ef187b78802fd6aabf11ae4406c4ecea5e32f463a84b08c58c96d14e"
+    },
+    "js/blocks.js": {
+      "sizeBytes": 8712,
+      "sha256": "80a742cab141d2aa1c192332ac9fb37237ea5da13d960ac0298f995e26ca3128"
+    },
+    "js/content.js": {
+      "sizeBytes": 4962,
+      "sha256": "66f84a734d41b1ad87b55e7dee65e0a303b0343250b4d6a0aaf1999f2e66c9fa"
+    },
+    "js/daily-sport-news.js": {
+      "sizeBytes": 3923,
+      "sha256": "ac954236bf7cbe6ff111cf6c44128d65b12bcb3e3391653aca857fcc90d39e9d"
+    },
+    "js/document-collections-2026.js": {
+      "sizeBytes": 4133,
+      "sha256": "c885df87e8bd2434436dafbe9333a822d08a5b4669975f36ba2208db627036dd"
+    },
+    "js/documents.js": {
+      "sizeBytes": 27033,
+      "sha256": "e1c7ce41c1f0b097b6bb7f77974536626ac4f6d38a2717cc8395a244dee579be"
+    },
+    "js/experience-2026.js": {
+      "sizeBytes": 20769,
+      "sha256": "29eed606fa5e9249ea6a7d9a7d5fc29d766c694589f57bc732eb0ebfcef29ffb"
+    },
+    "js/extended-hubs-2026.js": {
+      "sizeBytes": 13413,
+      "sha256": "20d50a338abca4782f166e905a59c3664db32213122ea9fc11001ef17e8a419d"
+    },
+    "js/hero-2026.js": {
+      "sizeBytes": 6270,
+      "sha256": "7e23dfc3e60d94e1c9b6b5f0e86f04e66197d779a0a917014e589b987a13f0a4"
+    },
+    "js/home-live.js": {
+      "sizeBytes": 13698,
+      "sha256": "703d4b414e2fc1a66cb686a204b171324073e0f18d8ee50c0eb6e86586dcd349"
+    },
+    "js/interactions-be-2026.js": {
+      "sizeBytes": 4428,
+      "sha256": "7d15b886ab003ddc5e887ff363d67138120173fa90b559e6fe86ef97e5027a53"
+    },
+    "js/kmil-2026.js": {
+      "sizeBytes": 4886,
+      "sha256": "dcee841516906d292e7d2bfa8efd5ebb7913f6f853b920e758f1ac32dd23b858"
+    },
+    "js/media-gallery-h-2026.js": {
+      "sizeBytes": 15746,
+      "sha256": "f50f23ae7ae0ab9806bcb001cc4b0574371bf3112d48947af2f4b40d878a8426"
+    },
+    "js/media.js": {
+      "sizeBytes": 2327,
+      "sha256": "d33706c3b3113317e8a8437d7e155f75a02ba84f68742bdf8de1162f44aa10ba"
+    },
+    "js/news-2026.js": {
+      "sizeBytes": 7897,
+      "sha256": "62721cd13dff312c47d1b9f838a91dfc8fb7f115f00c24b9053db2514b3d6e6c"
+    },
+    "js/next10-2026.js": {
+      "sizeBytes": 11107,
+      "sha256": "859582f71d483c9fa525cf732ae2edd04d6294ff9b64e3e25c26905187e5c58e"
+    },
+    "js/page-media-2026.js": {
+      "sizeBytes": 2136,
+      "sha256": "3b9dafe2ec515e8f8f9cb22b0da3565ee9ed26dc441f11ffeb641d1915debf03"
+    },
+    "js/performance-diagnostics-2026.js": {
+      "sizeBytes": 3883,
+      "sha256": "9b42121914b6de8bbd04e0b996f26dd57e5c6682d64dd3a4dbc7e69bb0722e7d"
+    },
+    "js/premium-home-2026.js": {
+      "sizeBytes": 3135,
+      "sha256": "d212dc8a9a8bdfa05362193eabfdaaaae28e16c917099a4b96339768773b3d3c"
+    },
+    "js/round10-enhancements.js": {
+      "sizeBytes": 4222,
+      "sha256": "f1f7327583eb84a7da88c60846d57e8a660c060039798663950d7d8b8e9f9580"
+    },
+    "js/round12-media-performance.js": {
+      "sizeBytes": 1099,
+      "sha256": "5e8e5ab0680dff3515cf506460f47d5b087ff9af8d9cc31e2ea222d87310f793"
+    },
+    "js/round13-network.js": {
+      "sizeBytes": 294,
+      "sha256": "35fdbe1539a20a9228c53dbd89a5cf0210760170f13a9540a26661fb97003fc8"
+    },
+    "js/search-j-2026.js": {
+      "sizeBytes": 12243,
+      "sha256": "5398450ce9ae3b59b9334d5a3089b47266f4cfaeff36811fe2fda886e2d2d2e8"
+    },
+    "js/site-quality-2026.js": {
+      "sizeBytes": 8983,
+      "sha256": "d823c441824eceeaec827b9daa02d87dab92e366beec24410b9154d9b5644707"
+    },
+    "js/sports-successes.js": {
+      "sizeBytes": 6624,
+      "sha256": "1b95b2d68b8b84a1e1e6723bd4d26c43b82e4940bc6a1d51e6c5aa397a5bc5fd"
+    },
+    "js/student-achievements.js": {
+      "sizeBytes": 8584,
+      "sha256": "ded6c0b8a8799abcdca0360974eeefcc339794ded554e4022630f706ef594052"
+    },
+    "js/tenway-2026.js": {
+      "sizeBytes": 7286,
+      "sha256": "61731667d813d47688ce156f9e1c953e6d51ddc15a724b2a5a32a8e01254246c"
+    },
+    "json/adatok/csengetesi-rend.json": {
+      "sizeBytes": 1598,
+      "sha256": "68a08c6869224abd78548c48795bcfbcae8237b1b992f68c3734c0c02e1a2cff"
+    },
+    "json/adatok/dokumentumok.json": {
+      "sizeBytes": 26364,
+      "sha256": "673a6981107e09e468d3784eb186f5a7c1f51cff8db6b7c72d3c6adf95795e17"
+    },
+    "json/adatok/esemenyek.json": {
+      "sizeBytes": 1938,
+      "sha256": "a5a7b6b0f80a2da7c3a2e067f2083290a19ca7c0cddc61e08c0d9d2d013a2ca2"
+    },
+    "json/adatok/galeriavideok.json": {
+      "sizeBytes": 5463,
+      "sha256": "f1e75b64a66e10de30c0b4fe0cc4e4ae101dd3db7dbdfe07bc45a39902b374b3"
+    },
+    "json/adatok/hirek-hivatalos.json": {
+      "sizeBytes": 8959,
+      "sha256": "58ca894e7609632a11abdb649851077e9a13b5dcc9c0b8a3a5ebfa3584bc82c6"
+    },
+    "json/adatok/iskolatorteneti-idovonal.json": {
+      "sizeBytes": 2115,
+      "sha256": "12b7ae10f8c5ce9b094f68fd5cf99f9ae2edb233c95eeee5b822f145f49efea8"
+    },
+    "json/adatok/kepgaleria.json": {
+      "sizeBytes": 85593,
+      "sha256": "fb76fac641d6e4bb2ced60c3008732a627d75a37d816620d80621f916e25aa23"
+    },
+    "json/adatok/napi-sporthirek.json": {
+      "sizeBytes": 115,
+      "sha256": "62fae825e6451cf00f888c6b319eaa149389c7dc7931eeea7d85d9824449c384"
+    },
+    "json/adatok/oldalmedia-2026.json": {
+      "sizeBytes": 76821,
+      "sha256": "020d01e4c6d1ff443f1d4fa27f9ec5da4b67e37e09986a5f65c8286454229425"
+    },
+    "json/adatok/social.json": {
+      "sizeBytes": 631,
+      "sha256": "2b04e2a0c84d8d4a9c00b076b208ea1dcd399ae8a97a7e4f2da5955da5e7f478"
+    },
+    "json/adatok/sportsikerek.json": {
+      "sizeBytes": 10503,
+      "sha256": "54c63bf1e20c3089f13cc937814f7d0f0603ec4711afaad8a16ee2cb8b841180"
+    },
+    "json/adatok/tantestulet.json": {
+      "sizeBytes": 2730,
+      "sha256": "2faef1fb6ddf910d85afed303429c111844d1945144592f760dc37ecb3a7c086"
+    },
+    "json/adatok/tanuloi-sikerek.json": {
+      "sizeBytes": 6212,
+      "sha256": "faefefbd80efc5da756c03f31c1d4e198075638086f8769b256d0d627c63db40"
+    },
+    "json/assets-inventory.json": {
+      "sizeBytes": 304316,
+      "sha256": "190b3c5a41be8aa8d8cd03fe5c53481966d05c5454c43fdd9df167ba623c825d"
+    },
+    "json/assets-project-index.json": {
+      "sizeBytes": 104086,
+      "sha256": "8f6dcdcc3161d4c1ecebf6d565bba96fda1b26c481f72a13be78ac8caaa7f996"
+    },
+    "json/config.json": {
+      "sizeBytes": 1908,
+      "sha256": "b2418e878feddc854a21aaf329305e420a77975f0946afb94cc480d771556a62"
+    },
+    "json/mediatar.json": {
+      "sizeBytes": 218634,
+      "sha256": "92fd2b66a0ad4227017484b785128033d3f6e6631b758c7f2e28a94465319ee6"
+    },
+    "json/oldalak/hirek-es-esemenyek.json": {
+      "sizeBytes": 2493,
+      "sha256": "153d6e5dca2bf12d05eafa8897074b6a9931666376028cfdcd6755fdb8580703"
+    },
+    "json/oldalak/hirek-es-esemenyek/esemenynaptar.json": {
+      "sizeBytes": 2842,
+      "sha256": "c5a69dca5e10ee4f817f2713cafc41c5898e1f0b4072de1be6e9744865548ad4"
+    },
+    "json/oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json": {
+      "sizeBytes": 2809,
+      "sha256": "778290af9c0dd46d2f79436c2d85b0ee5f73e00527425e72128cf7328643ff58"
+    },
+    "json/oldalak/hirek-es-esemenyek/esemenynaptar/sportesemenyek.json": {
+      "sizeBytes": 2746,
+      "sha256": "99ef6f822534d2136585ef9db3ff204f520fcbc55dbc787608c4610e441b76a5"
+    },
+    "json/oldalak/hirek-es-esemenyek/hirek.json": {
+      "sizeBytes": 2345,
+      "sha256": "ec283bae97e0220124a18ae5a50205577c74aab6d9fde05508ee453cb246655d"
+    },
+    "json/oldalak/hirek-es-esemenyek/hirek/hirarchivum.json": {
+      "sizeBytes": 2488,
+      "sha256": "2646df0e053679cd8affa3901f6f26b1f92cfe044d0239ab18747d5db27aff24"
+    },
+    "json/oldalak/hirek-es-esemenyek/hirek/iskolai-hirek.json": {
+      "sizeBytes": 2780,
+      "sha256": "e1c221805ce6e1e0fed9efe3ecfb865d422290afd699c3c0ab97665418e2e278"
+    },
+    "json/oldalak/hirek-es-esemenyek/hirek/sporthirek.json": {
+      "sizeBytes": 2898,
+      "sha256": "e427e01de321d32350830db740e6fef1e89bc8604c0254f08f4501b5337069e9"
+    },
+    "json/oldalak/hirek-es-esemenyek/kozlemenyek.json": {
+      "sizeBytes": 2792,
+      "sha256": "46ddba8ad7ea9b8dba0b4ccc47a09105e1917c5d7363057f907623f841326dd8"
+    },
+    "json/oldalak/informaciok.json": {
+      "sizeBytes": 2865,
+      "sha256": "f472b8f3f6a347fe2b2e7b162d8ca158cb195955e6601027c503d11d9274507c"
+    },
+    "json/oldalak/informaciok/adatvedelem.json": {
+      "sizeBytes": 2798,
+      "sha256": "bbbac0cc2b9173e0fdd4541e6b0c204f064d6ad84bf0b9b0c91218310496c9ca"
+    },
+    "json/oldalak/informaciok/allaspalyazatok.json": {
+      "sizeBytes": 3283,
+      "sha256": "01dab62e29324662fd9c32201a353bdda17928f086d37d76fc4554bbe2395f75"
+    },
+    "json/oldalak/informaciok/digitalis-ugyintezes.json": {
+      "sizeBytes": 2967,
+      "sha256": "6f8a86b4ba594b74fb05c4aec78fe379e2e42a2a15e64b5897b9e8674dd7d281"
+    },
+    "json/oldalak/informaciok/dokumentumtar.json": {
+      "sizeBytes": 4282,
+      "sha256": "cdbf824e2b17ade799eaa80f81585250cb5ec0e423176e08424bc5e0b6ec35ab"
+    },
+    "json/oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json": {
+      "sizeBytes": 3444,
+      "sha256": "cbd76d1dff002220690364bd1e829e9049f5ec61d4c34e3afd9de49e6e0c92b4"
+    },
+    "json/oldalak/informaciok/dokumentumtar/nyomtatvanyok.json": {
+      "sizeBytes": 3419,
+      "sha256": "71a6c61a6ee1f551a738e3e411b7f5a4d1baafa3a3c81b91376ad8e977cb0afb"
+    },
+    "json/oldalak/informaciok/dokumentumtar/szabalyzatok.json": {
+      "sizeBytes": 3313,
+      "sha256": "2c1c1ef7a8811b2db5e375ee13be594769fc3b6bd32fc98a5fd7feb310bd6bfa"
+    },
+    "json/oldalak/informaciok/kozossegi-szolgalat.json": {
+      "sizeBytes": 3411,
+      "sha256": "e6b123ceb8968d439534fdf10e853a4b3b782e0b8aeea64cff9906c27bcc4877"
+    },
+    "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json": {
+      "sizeBytes": 3415,
+      "sha256": "fcaf74a2caa41d3f27adacc48228dc271fac8dd77c6237b86b7e6a9537bf6910"
+    },
+    "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok.json": {
+      "sizeBytes": 3037,
+      "sha256": "9377165ebb8bbb9278c7e467a73ad9c9513960147204ebd2da541f6e8c645d4b"
+    },
+    "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok.json": {
+      "sizeBytes": 3453,
+      "sha256": "a4eaa51d6649aba254301b894b98c7e0449af5c2743437146f5aea66ba763039"
+    },
+    "json/oldalak/informaciok/mindennapi-tudnivalok.json": {
+      "sizeBytes": 2468,
+      "sha256": "623c1af706ec1bfb434dd52772aebd012ff956216456b298c63bc3edb0384553"
+    },
+    "json/oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json": {
+      "sizeBytes": 3070,
+      "sha256": "9dd0f0dd93bd4d91fc188eee2064ccf8e223844468a5cd4901264ce7f22cc1a7"
+    },
+    "json/oldalak/informaciok/mindennapi-tudnivalok/etkezes.json": {
+      "sizeBytes": 3034,
+      "sha256": "3e0a058d1581bc962043676907fd0e69dac5351a7b5803f66feb23fa78dd82a6"
+    },
+    "json/oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json": {
+      "sizeBytes": 2533,
+      "sha256": "66e931883d60ce52c6fda5cdd3570a614898b1b2652ac02746de2ba71e61b96c"
+    },
+    "json/oldalak/iskolank.json": {
+      "sizeBytes": 4119,
+      "sha256": "78ed0297d8b82766297fbdcf77806d00e5538efa9fa741cc965cfc0eb38d7402"
+    },
+    "json/oldalak/iskolank/a-honlap-szuletese.json": {
+      "sizeBytes": 13409,
+      "sha256": "ad0a30936934406fa54f208d377d0e1dc2da16cd63ec20043f54978fea2f27fc"
+    },
+    "json/oldalak/iskolank/alapitvany.json": {
+      "sizeBytes": 2911,
+      "sha256": "b2f00880910685976e4cb45e45373fb8c3aa4602930ed125a302cfdf64d62094"
+    },
+    "json/oldalak/iskolank/bemutatkozas.json": {
+      "sizeBytes": 3038,
+      "sha256": "3345af47a9daa15d2d4970b5ad7e58473bdb042084d6cb182344290c52023ef0"
+    },
+    "json/oldalak/iskolank/buszkesegeink.json": {
+      "sizeBytes": 2941,
+      "sha256": "55da6a32d59d1e36fff7ef037d3c29156e9cc462a34beba7fa656df979f997d1"
+    },
+    "json/oldalak/iskolank/hagyomanyok-es-elismeresek.json": {
+      "sizeBytes": 3025,
+      "sha256": "d893ccd647a994e7edd2622d92c1b58b8bcfdfa597215ce90f3843c4564d6201"
+    },
+    "json/oldalak/iskolank/kuldetes-es-ertekek.json": {
+      "sizeBytes": 3239,
+      "sha256": "24ec8100247d0235e320f4ef002a69bd0881ea2686171ea49a07af532b1150b6"
+    },
+    "json/oldalak/iskolank/oko-iskola.json": {
+      "sizeBytes": 2852,
+      "sha256": "a5ccc8270f802e8920f3f34cd225eae773f1e9dea0a11d6c761f68a2750dc067"
+    },
+    "json/oldalak/iskolank/partnerek.json": {
+      "sizeBytes": 2822,
+      "sha256": "88099412271aa2bbf764bf877b931af1eae2b489fe3dba9b2b315bdf6d01794c"
+    },
+    "json/oldalak/iskolank/tantestulet.json": {
+      "sizeBytes": 2697,
+      "sha256": "b0d7b42ef76704d57bf074ac2f4ffa5713fdfb63a3508c2bb5a77e1c587e47e9"
+    },
+    "json/oldalak/iskolank/tortenet.json": {
+      "sizeBytes": 3966,
+      "sha256": "c297fbc64b1dcd939070b4ff20943678022badf2e6040d9a6440ee899ca08d36"
+    },
+    "json/oldalak/kapcsolat.json": {
+      "sizeBytes": 3431,
+      "sha256": "187af8948ba4ab58171f50b93b53119bc5b92bc6c3ab9ac2634f65501bc7b282"
+    },
+    "json/oldalak/kezdolap.json": {
+      "sizeBytes": 18769,
+      "sha256": "b31fc6f75021eebec3bb9c061a14d9d728f02403d24df1d6490f0aca96c18c15"
+    },
+    "json/oldalak/oktatas.json": {
+      "sizeBytes": 3087,
+      "sha256": "7f76a9b93dbee0861c2a176042e90c3862e0b31a10fa9e6f156720a007ae010c"
+    },
+    "json/oldalak/oktatas/digitalis-kultura.json": {
+      "sizeBytes": 12280,
+      "sha256": "93371244b16f14528c0329cd6c0135b895ba341c0be9a85e73f9a93663e3d950"
+    },
+    "json/oldalak/oktatas/felveteli.json": {
+      "sizeBytes": 4030,
+      "sha256": "ad241eb24633ffa650e1fac2aaa994c3845357bfb41b916900799ef31a4e128b"
+    },
+    "json/oldalak/oktatas/felveteli/elso-evfolyam.json": {
+      "sizeBytes": 2979,
+      "sha256": "3f7c39ce779089dce9f2b89954257f024a33c9378a477614bcf21778c8b04f78"
+    },
+    "json/oldalak/oktatas/felveteli/felveteli-hataridok.json": {
+      "sizeBytes": 3698,
+      "sha256": "25bc1899b66561d93a31898bc629e734a92b3a96fda9cec3851d056d2e6224ea"
+    },
+    "json/oldalak/oktatas/felveteli/kilencedik-evfolyam.json": {
+      "sizeBytes": 3194,
+      "sha256": "21ae95174879008a56e992af8875c6a99d8bfb425122c3720d1646499cf7b8a3"
+    },
+    "json/oldalak/oktatas/felveteli/nyilt-napok.json": {
+      "sizeBytes": 3364,
+      "sha256": "324680e9c4f0a6f583c628e71197f84f289aa5d3eef1373e59a3c0f30ffa1bc4"
+    },
+    "json/oldalak/oktatas/kepzeseink.json": {
+      "sizeBytes": 2764,
+      "sha256": "a12c9d2a522526d69ce379e42f60f87222b9340aecc9c57cdb3745baf27fe753"
+    },
+    "json/oldalak/oktatas/kepzeseink/altalanos-iskola.json": {
+      "sizeBytes": 2897,
+      "sha256": "529aacfaf204bfdb609fe0d1a386de5638035b9466363fd986f41a5d8a0829c8"
+    },
+    "json/oldalak/oktatas/kepzeseink/gimnazium.json": {
+      "sizeBytes": 2949,
+      "sha256": "7ea1deb03db14a482bd23da151928773a614af801a34b4b2a8d33c1e74a82bd3"
+    },
+    "json/oldalak/oktatas/kepzeseink/sportiskolai-neveles.json": {
+      "sizeBytes": 2516,
+      "sha256": "605afabc022bb9229bf8a592d91703aac8ff98515b7e3e8f3a025e46c3e349c5"
+    },
+    "json/oldalak/oktatas/konyvtar.json": {
+      "sizeBytes": 3499,
+      "sha256": "41e0ba306ca34c38ba1edb483cebade1828b3956ad0e9908dbd66aec215c1b1b"
+    },
+    "json/oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json": {
+      "sizeBytes": 2880,
+      "sha256": "cd26026f7e21383073c8b1bf9d47e72bd2f901d065b73a3d448b64e35f613930"
+    },
+    "json/oldalak/oktatas/tananyagok-es-jegyzetek.json": {
+      "sizeBytes": 3128,
+      "sha256": "9024fca13df172b5a53362d35b5759db4eaf462afdaf8d3cbef3d7eb3fee4e63"
+    },
+    "json/oldalak/oktatas/tanevek.json": {
+      "sizeBytes": 2663,
+      "sha256": "ea32ab2e2dc01ddf9f574dd08b929101cf15bb61a4b960c9f9c5eec69b638876"
+    },
+    "json/oldalak/oktatas/tanevek/aktualis-tanev.json": {
+      "sizeBytes": 2828,
+      "sha256": "7f2150ffa159a32ba50655bbc4d115d5f997f897e446332cc756f76e2f4764e3"
+    },
+    "json/oldalak/oktatas/tanevek/korabbi-tanevek.json": {
+      "sizeBytes": 2941,
+      "sha256": "bfd264a673f4618b1a44be936f1d106cc5ce45ee1705dff83ce27eef59836f04"
+    },
+    "json/oldalak/oktatas/vizsgak.json": {
+      "sizeBytes": 2825,
+      "sha256": "0a793247eb7337a9ccf862c633d34f47f61e3235a1ded449e46a3224f63b43de"
+    },
+    "json/oldalak/oktatas/vizsgak/egyeb-vizsgak.json": {
+      "sizeBytes": 3289,
+      "sha256": "976c25b6afca7444250eac9751dc0da82eb91436ca5b55ee239ab6f87a489df6"
+    },
+    "json/oldalak/oktatas/vizsgak/erettsegi.json": {
+      "sizeBytes": 2870,
+      "sha256": "06259f33fbe2fdc4752a8fbb3dba0ed9f360b8a96a1f82230a58bf190399c54a"
+    },
+    "json/oldalak/oktatas/vizsgak/osztalyozo-vizsgak.json": {
+      "sizeBytes": 2620,
+      "sha256": "2de5e2c56a955a5b2f0166b841ccd98f6ed89b25095f2db01914a336076a17ce"
+    },
+    "json/oldalak/sport.json": {
+      "sizeBytes": 2833,
+      "sha256": "3dd66043337bff4f5122af1a2d34b16902352802a64f1a5eb733ca0ab46858f7"
+    },
+    "json/oldalak/sport/csapatok.json": {
+      "sizeBytes": 3236,
+      "sha256": "165a7604d174bf3f8eff60443fd7e839e0ca5299fb18970aaf0ef1b6f4cc9a24"
+    },
+    "json/oldalak/sport/edzok.json": {
+      "sizeBytes": 3167,
+      "sha256": "4dd7b7e782e9129b42d85508f3778de1210b5815fc5e6a9e5f6103db2802024d"
+    },
+    "json/oldalak/sport/sportagak.json": {
+      "sizeBytes": 3000,
+      "sha256": "628534922048339a8ee4e71f0b53f18e64fce1ae7360548a3b0511c9908ddc63"
+    },
+    "json/oldalak/sport/sporteredmenyek.json": {
+      "sizeBytes": 2416,
+      "sha256": "e91f57e9df5ff91ca7ddbab8b45e1e335dbdb69ca26229c7dd83b4924000f288"
+    },
+    "json/oldalak/sport/sportgaleriak.json": {
+      "sizeBytes": 2155,
+      "sha256": "11284cceceeb0f8f1de41ec11e3cf571853964dd6837335c504051cb8e11fb08"
+    },
+    "json/oldalak/sport/sportolok.json": {
+      "sizeBytes": 3255,
+      "sha256": "938f85ee7b482bd00d2a7f0e72f0f747c683e7ba1967d494083b3e3e2fe0b582"
+    },
+    "json/oldalindex.json": {
+      "sizeBytes": 48813,
+      "sha256": "2890d75579824a6229b5112ab5e2e7fa86ab54f9de7ed8a006f4edf8818b12a0"
+    },
+    "json/schemas/dokumentumok.schema.json": {
+      "sizeBytes": 5976,
+      "sha256": "f80a5cfba6f225f5cbe03a53de8397d8e3c5c64dcfb4fcc13e725479ea407a3d"
+    },
+    "json/schemas/tanuloi-sikerek.schema.json": {
+      "sizeBytes": 4328,
+      "sha256": "076b489abb5aee576927edf8348de3c73820b698318cb6c09ec4a30a6584ed2d"
+    },
+    "json/structure.json": {
+      "sizeBytes": 7717,
+      "sha256": "9f1ac23f828fc3c4af582a713fb5af83ad36c283447b7b1b1934e7634797d293"
+    },
+    "script.js": {
+      "sizeBytes": 1178,
+      "sha256": "455b6e3bc33ff9ce143bddf7bb8fceb4b57e159332f8cc8357c548b666996746"
+    },
+    "service-worker.js": {
+      "sizeBytes": 2121,
+      "sha256": "c7d9546c8c739c7dc2949a3c1f2d92d6d449886bf67600656e136ab0aa31e843"
+    },
+    "tools/dokumentum-szerkeszto.html": {
+      "sizeBytes": 4546,
+      "sha256": "763ebb0f34e8969ac5af31aaefe382dac1649af0797d8ce092e7b12279482f3b"
+    },
+    "tools/dokumentum-szerkeszto.js": {
+      "sizeBytes": 4523,
+      "sha256": "bc9426965d65e4795425a12e63c5feb34d3813beea70f10562f3c35de0f1efa2"
+    },
+    "tools/eszkoz-mediator.html": {
+      "sizeBytes": 11308,
+      "sha256": "6468a145b07c33dad59d1c674bc7bc978714ff252dc1bc47b9dd55e91ebe6673"
+    },
+    "tools/ftp-kiadas-ellenorzo.html": {
+      "sizeBytes": 3756,
+      "sha256": "92b3b0a51999a2d37abecf0726cb1354b48fff802a4a45074c7fdab1f21be14f"
+    },
+    "tools/ftp-kiadas-ellenorzo.js": {
+      "sizeBytes": 9987,
+      "sha256": "23fdbf81e714ba077008fd23d2067cb1df63c29908922ef0af6f2137dbbf6eed"
+    },
+    "tools/media-manager-2026.js": {
+      "sizeBytes": 36140,
+      "sha256": "5e40804306f98982cd39d2028c2b5fb679ff878db0e7ab6615cd6d7f8f091e7f"
+    },
+    "tools/media-minoseg-2026.js": {
+      "sizeBytes": 3773,
+      "sha256": "46ccce8d819dec0bf3a27ffba6fd46a480528c611f23a1eeeac7e4916bd86b61"
+    },
+    "tools/oldal-json-szerkeszto.html": {
+      "sizeBytes": 8606,
+      "sha256": "bf5c17e215cce9e13d2f671a70b17a86d57c98f20afd3cf16445895b1986367b"
+    },
+    "tools/oldalindex-frissito.html": {
+      "sizeBytes": 6808,
+      "sha256": "29a40dc83cc2e84a1589208d70c2d2fc65200b9a8be3c293b29dc932f98858f7"
+    },
+    "tools/sporthirek-szerkeszto.html": {
+      "sizeBytes": 7658,
+      "sha256": "e134c593ffd12fb0ca96f80d268d653c29554b2b35e8412752ff6a38b85b5cd1"
+    },
+    "tools/tartalmi-hitelesites.html": {
+      "sizeBytes": 4721,
+      "sha256": "1b51bd4a924f47c852981237685484028ef084c843fcd23c696f9566756ec3c7"
+    },
+    "tools/tartalmi-hitelesites.js": {
+      "sizeBytes": 5430,
+      "sha256": "f5e16a7c11b8af035a839450fa905b4e464aacdf94bee1610160224cda892a38"
+    },
+    "tools/tartalom-attekintes-2026.csv": {
+      "sizeBytes": 9738,
+      "sha256": "745a34ddf97b37c2adf249b865775c1006ca840bb34ac3a1e5dbe0fb07f75cea"
+    },
+    "tools/tartalomellenorzesi-jegyzek.csv": {
+      "sizeBytes": 25241,
+      "sha256": "48e0e38bd9456662eed95e239b0d6af3fc65f29c999186eaad46ddbd404fc617"
+    },
+    "tools/tool-ui-2026.js": {
+      "sizeBytes": 1138,
+      "sha256": "4e8158555eb9bcdad6990b957a3ec96a09b036f17181b1cab1fffb338d37bc3e"
+    },
+    "tools/zip-native-2026.js": {
+      "sizeBytes": 3556,
+      "sha256": "b8860ea52dc614a1a88f8164116c586c3cbecda317d72c104a8b97aaea667258"
+    },
+    "utmutato.html": {
+      "sizeBytes": 76990,
+      "sha256": "11f0da499bc1353b7ab722091f342a47f4dac9eb2ccca255591c28f2e2451957"
+    }
+  }
+}

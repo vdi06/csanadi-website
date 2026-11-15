@@ -141,29 +141,31 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   const suggestions=query.trim()
    ? all.filter(x=>x.normalTitle.includes(norm(query))&&x.normalTitle!==norm(query)).slice(0,5).map(x=>x.title)
    : ['Felvételi','Sporteredmények','Eseménynaptár','Dokumentumtár','Képgaléria'];
-  for(const s of [...new Set(suggestions)].slice(0,5))picks.append(suggestion(s));
+  let picksList=[...new Set(suggestions)];
+  if(query.trim()&&!picksList.length){const term=norm(query);picksList=all.filter(x=>x.normalTitle.split(' ').some(word=>word.startsWith(term.slice(0,Math.min(3,term.length)))&&Math.abs(word.length-term.length)<=6)).slice(0,5).map(x=>x.title);}
+  for(const s of [...new Set(picksList)].slice(0,5))picks.append(suggestion(s));
   if(query.trim()||type!=='all'||section!=='all')picks.append(resetBtn);
  }
  function appendHighlight(target,value,tokens){
   const plain=String(value||'');
   if(!tokens.length){target.textContent=plain;return;}
-  const lower=norm(plain);const indexes=[];
-  for(const word of tokens){const start=lower.indexOf(word);if(start>=0)indexes.push({start,end:start+word.length});}
-  indexes.sort((a,b)=>a.start-b.start);
-  let cursor=0;
-  for(const {start,end} of indexes){
-   if(start<cursor)continue;
-   target.append(document.createTextNode(plain.slice(cursor,start)),element('mark','',plain.slice(start,end)));
-   cursor=end;
+  const chars=[...plain];let folded='',positions=[];
+  for(let i=0;i<chars.length;i++){
+   const normalized=norm(chars[i]);
+   for(const char of normalized){folded+=char;positions.push(i);}
   }
-  target.append(document.createTextNode(plain.slice(cursor)));
+  const spans=[];
+  for(const word of tokens){let at=0;while(at<folded.length){const pos=folded.indexOf(word,at);if(pos<0)break;spans.push([positions[pos],positions[Math.min(pos+word.length-1,positions.length-1)]+1]);at=pos+word.length;}}
+  spans.sort((a,b)=>a[0]-b[0]);let cursor=0;
+  for(const [start,end] of spans){if(start<cursor)continue;target.append(document.createTextNode(chars.slice(cursor,start).join('')),element('mark','',chars.slice(start,end).join('')));cursor=end;}
+  target.append(document.createTextNode(chars.slice(cursor).join('')));
  }
  function makeCard(entry,tokens){
   const a=element('a','search-result');a.href=entry.href;
   if(entry.external){a.target='_blank';a.rel='noopener noreferrer';}
   const top=element('div','j-search-result-top');top.append(element('span','j-search-type',TYPES[entry.type]||'Tartalom'),element('span','j-search-section',SECTIONS[entry.section]||'Tartalom'));
   const title=element('strong','search-result-title');appendHighlight(title,entry.title,tokens);
-  const description=element('small','',entry.summary||'Kapcsolódó tartalom megtekintése');
+  const description=element('small');appendHighlight(description,entry.summary||'Kapcsolódó tartalom megtekintése',tokens);
   a.append(top,title,description);a.addEventListener('click',event=>onNavigate(entry,query,event));
   return a;
  }
@@ -176,7 +178,8 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   const shown=matches.slice(0,max);
   status.textContent=`${matches.length} találat · ${shown.length} megjelenítve`;
   for(const hit of shown)results.append(makeCard(hit.x,tokens));
-  if(!matches.length)results.append(element('p','j-search-empty','Nem található egyezés. Próbálj más kifejezést vagy szűrőt.'));
+  if(!matches.length)results.append(element('p','j-search-empty','Nincs pontos találat. Válassz egy javaslatot, egyszerűsítsd a kifejezést, vagy módosítsd a témakör szűrőjét.'));
+  if(matches.length && query.trim())results.setAttribute('aria-label',`${matches.length} találat a(z) ${query} keresésre`);
   more.hidden=shown.length>=matches.length;
  }
  function setQuery(value){query=String(value||'');max=12;render();}
