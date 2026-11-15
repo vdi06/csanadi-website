@@ -1,0 +1,62 @@
+/* R29 – világos/sötét témák egységes gomb- és kártyafelületei.
+   A tematizálás az eredeti arculati sötétkék fejlécet és a fényképes hősképeket nem írja felül. */
+html[data-theme="light"]{
+ --cs29-action-bg:#fff8e8;
+ --cs29-action-hover:#f5ead1;
+ --cs29-action-fg:#173348;
+ --cs29-action-border:#9e906e;
+ --cs29-action-focus:#95600d;
+}
+html[data-theme="dark"]{
+ --cs29-action-bg:#263e55;
+ --cs29-action-hover:#36546b;
+ --cs29-action-fg:#f5f5ee;
+ --cs29-action-border:#8499a9;
+ --cs29-action-focus:#f1ce81;
+}
+html[data-theme="light"] :is(.cs29-map-button,.cs29-route-card,.cs29-quick-more,.cs29-drawer-top,.cs29-nav-close,.cs29-nav-item,.cs29-nav-trigger){
+ background:var(--cs29-action-bg)!important;color:var(--cs29-action-fg)!important;border-color:var(--cs29-action-border)!important;
+}
+html[data-theme="light"] :is(.cs29-map-button,.cs29-route-card,.cs29-quick-more,.cs29-drawer-top,.cs29-nav-close,.cs29-nav-item,.cs29-nav-trigger):is(:hover,:focus-visible){
+ background:var(--cs29-action-hover)!important;color:var(--cs29-action-fg)!important;
+}
+html[data-theme="dark"] :is(.cs29-map-button,.cs29-route-card,.cs29-quick-more,.cs29-drawer-top,.cs29-nav-close,.cs29-nav-item,.cs29-nav-trigger){
+ background:var(--cs29-action-bg)!important;color:var(--cs29-action-fg)!important;border-color:var(--cs29-action-border)!important;
+}
+html[data-theme="dark"] :is(.cs29-map-button,.cs29-route-card,.cs29-quick-more,.cs29-drawer-top,.cs29-nav-close,.cs29-nav-item,.cs29-nav-trigger):is(:hover,:focus-visible){
+ background:var(--cs29-action-hover)!important;
+}
+html[data-theme="light"] :is(.cs29-approach,.cs29-nav-drawer,.cs29-map-preview,.cs29-route-card){
+ color:#173348!important;border-color:#c7b997!important;
+}
+html[data-theme="light"] .cs29-map-preview{background:radial-gradient(ellipse at 68% 34%,#e8dab8,transparent 58%),repeating-linear-gradient(40deg,transparent 0 22px,#c8d1ca33 23px 25px),#fffdf5!important;}
+html[data-theme="dark"] .cs29-map-preview{background:radial-gradient(ellipse at 68% 34%,#56604555,transparent 55%),repeating-linear-gradient(40deg,transparent 0 22px,#b2c7da14 23px 25px),#1a344a!important;}
+html[data-theme="light"] .cs29-route-card small{color:#42586b!important}
+html[data-theme="dark"] .cs29-route-card small{color:#d3e0e9!important}
+
+/* A 26-os megközelítési tartalom önálló és SPA-ba ágyazott nézetben is ugyanazokat a témaszabályokat kapja. */
+html[data-theme="light"]{
+ --r23-action:#fff8e8;--r23-action-text:#173348;
+}
+html[data-theme="dark"]{
+ --r23-action:#263e55;--r23-action-text:#f5f5ee;
+}
+html[data-theme="light"] :is(.r26-action-line a,.r26-section-link,.r26-map-consent button,.r26-map-close,.r26-toolbar button,.r26-form button,.r26-goal button,.r26-tool button,.r23-top-actions a,.r23-top-actions button,.r23-fields>button,.r23-panel>button){
+ background:#fff8e8!important;color:#173348!important;border-color:#9e906e!important;
+}
+html[data-theme="dark"] :is(.r26-action-line a,.r26-section-link,.r26-map-consent button,.r26-map-close,.r26-toolbar button,.r26-form button,.r26-goal button,.r26-tool button,.r23-top-actions a,.r23-top-actions button,.r23-fields>button,.r23-panel>button){
+ background:#263e55!important;color:#f5f5ee!important;border-color:#8499a9!important;
+}
+html[data-theme="light"] :is(.r26-action-line a,.r26-section-link,.r26-map-consent button,.r26-map-close,.r26-toolbar button,.r26-form button,.r26-goal button,.r26-tool button,.r23-top-actions a,.r23-top-actions button,.r23-fields>button,.r23-panel>button):is(:hover,:focus-visible){background:#f5ead1!important}
+html[data-theme="dark"] :is(.r26-action-line a,.r26-section-link,.r26-map-consent button,.r26-map-close,.r26-toolbar button,.r26-form button,.r26-goal button,.r26-tool button,.r23-top-actions a,.r23-top-actions button,.r23-fields>button,.r23-panel>button):is(:hover,:focus-visible){background:#36546b!important}
+html[data-theme="light"] :is(.r26-map-area,.r26-location-info,.r23-panel,.r26-tool,.r23-card){color:#173348!important}
+html[data-theme="dark"] :is(.r26-map-area,.r26-location-info,.r23-panel,.r26-tool,.r23-card){color:#f5f5ee!important}
+html[data-theme="light"] :is(.r26-location-info input,.r26-location-info select,.r26-form input,.r26-form select,.r26-toolbar input){background:#fffdf5!important;color:#173348!important;border-color:#9e906e!important}
+html[data-theme="dark"] :is(.r26-location-info input,.r26-location-info select,.r26-form input,.r26-form select,.r26-toolbar input){background:#1e354a!important;color:#f5f5ee!important;border-color:#8499a9!important}
+html[data-theme="light"] :is(.r26-action-line a,.r26-section-link,.r26-map-consent button,.cs29-map-button):focus-visible{outline:3px solid var(--cs29-action-focus)!important;outline-offset:3px}
+html[data-theme="dark"] :is(.r26-action-line a,.r26-section-link,.r26-map-consent button,.cs29-map-button):focus-visible{outline:3px solid var(--cs29-action-focus)!important;outline-offset:3px}
+/* Kiadásfrissítési üzenet: mindkét téma saját gombszíneit használja. */
+.toast-info .cs-release-actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:10px}
+.toast-info .cs-release-actions button{min-height:40px;padding:8px 15px;border-radius:10px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer;font-weight:750}
+.toast-info .cs-release-actions button:last-child{background:var(--gold);border-color:var(--gold);color:#172c3e}
+.toast-info .cs-release-actions button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}

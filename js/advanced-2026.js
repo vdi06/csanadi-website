@@ -2,7 +2,7 @@
 
 
  
-import {renderDigitalClock} from './experience-2026.js?v=csanadi-r29b-20261115';
+import {renderDigitalClock} from './experience-2026.js?v=csanadi-r29e-20261115';
 const BASE='json/adatok/';
 const ZONE=()=>setting('modules2026.clock.timezone');
 const e=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -58,9 +58,10 @@ export function openEntrancePortal({force=false}={}){
   // A nyitott kapu a mobilos várakozás alatt is felismerhető marad.
   // A három közelítés csak a belépéskor kap képeket: induláskor nem terheli a hálózatot.
   const approach=e('div','gate29-approach');approach.setAttribute('aria-hidden','true');
+  const mobileGate=window.matchMedia('(max-width:767px)').matches;
   for(let i=0;i<3;i++){
    const img=e('img','gate29-approach-image gate29-approach-'+(i+1));
-   img.src='assets/media/web/belepes-nyitott.webp';img.alt='';img.decoding='async';
+   img.src=mobileGate?'assets/media/web/belepes-nyitott-mobil.webp':'assets/media/web/belepes-nyitott.webp';img.alt='';img.decoding='async';
    approach.append(img);
   }
   layer.insertBefore(approach,glow);

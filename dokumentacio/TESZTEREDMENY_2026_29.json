@@ -52,7 +52,7 @@
       "details": ""
     },
     {
-      "name": "Kulcs alakú nem kerek kapunyitó",
+      "name": "Kulcs alakú nem kerek kapunyitó, fekete árnyékkal",
       "passed": true,
       "details": ""
     },
@@ -104,10 +104,60 @@
     {
       "name": "PDF kézikönyv olvasható és bővült",
       "passed": true,
-      "details": "45"
+      "details": "46"
     },
     {
       "name": "Gyorsítótár-token R29 javított",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Verzióértesítés csak kiadásazonosító-változásra",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Első service worker-aktiválás nem közvetlen értesítés",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Frissítés vagy későbbi elnapolás gomb",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Mobil képváltó sávok a tartalmon kívül maradnak",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Álló mobil kapukép és teljes magasságú megjelenítés",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Asztali kapukép teljes szélességben és magasságban",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Világos/sötét témát követő térképgomb",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A 26-os térképes aloldal betölti a témakorrekciót",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A főoldal betölti a témakorrekciót",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Jóváhagyási eltérésjegyzék elkészült",
       "passed": true,
       "details": ""
     },
@@ -117,7 +167,7 @@
       "details": ""
     }
   ],
-  "passed": 23,
+  "passed": 33,
   "failed": 0,
   "browserAndDeviceTests": "Nem futott: a Chromium környezet socket engedélyhiánnyal megszakadt. Valós mobil, képernyőolvasó, CLS/LCP és offline teszt nyitott.",
   "ftpUpload": false

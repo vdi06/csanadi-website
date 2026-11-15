@@ -29,8 +29,9 @@ html[data-theme="light"] .cs29-route-card,html[data-theme="light"] .cs29-nav-ite
 @media(prefers-reduced-motion:reduce){.cs29-reveal-fold .home-unit{animation:none!important}.cs29-route-card,.cs29-quicklink{transition:none!important}}
 
 /* A jóváhagyás utáni pontosítások: a kulcs nem kerek gomb, a kapu a fejlécben újrajátszó. */
-.gate26 .gate26-key,.gate26 .gate26-key:hover,.gate26 .gate26-key:focus-visible{width:136px;height:136px;border:0;border-radius:0;background:transparent;box-shadow:none;color:#f1c568;padding:9px;filter:drop-shadow(0 7px 12px #031527bb)}
-.gate26 .gate26-key::before{content:none}.gate26 .gate26-key svg{height:108px;width:108px;transform:rotate(-20deg);filter:drop-shadow(0 2px 4px #0009)}
+.gate26 .gate26-key,.gate26 .gate26-key:hover,.gate26 .gate26-key:focus-visible{width:136px;height:136px;border:0;border-radius:0;background:transparent;box-shadow:none;color:#f1c568;padding:9px;filter:none}
+.gate26 .gate26-key::before,.gate26 .gate26-key::after{content:none!important;border:0!important;box-shadow:none!important}
+.gate26 .gate26-key svg{height:108px;width:108px;transform:rotate(-20deg);filter:drop-shadow(0 5px 4px rgba(0,0,0,.85)) drop-shadow(0 13px 14px rgba(0,0,0,.65))}
 .gate26 .gate26-key:hover,.gate26 .gate26-key:focus-visible{transform:scale(1.09)}
 .gate26 .gate26-key:focus-visible{outline:3px solid #ffe6ab;outline-offset:4px}
 #site-header .portal-replay-btn{display:grid;place-items:center;width:44px;min-width:44px;height:44px;padding:6px;border-radius:12px}
@@ -51,9 +52,10 @@ html[data-theme="light"] #global-hero .csn26-visual-row>.csn26-edge-arrow:hover{
 body:not(.cs-inner-page) #be2026-top{display:none!important}
 @media(max-width:768px){
  .gate26 .gate26-key{width:112px;height:112px}.gate26 .gate26-key svg{height:92px;width:92px}
- #global-hero .csn26-visual-row{width:calc(100% - 12px)!important}
- #global-hero .csn26-visual-row>.csn26-edge-arrow{top:0!important;bottom:0!important;height:100%!important;width:clamp(38px,10vw,55px)!important;transform:none!important;font-size:35px!important}
- #global-hero .csn26-visual-row>.csn26-edge-arrow--left{left:0!important;right:auto!important}
- #global-hero .csn26-visual-row>.csn26-edge-arrow--right{right:0!important;left:auto!important}
+ /* A teljes magasságú léptetők a mobilos képpár KÜLSŐ oldalán futnak. */
+ #global-hero .csn26-visual-row{width:calc(100% - 100px)!important;max-width:500px!important;margin-inline:auto!important;overflow:visible!important}
+ #global-hero .csn26-visual-row>.csn26-edge-arrow{top:0!important;bottom:0!important;height:100%!important;width:42px!important;min-width:42px!important;transform:none!important;font-size:31px!important}
+ #global-hero .csn26-visual-row>.csn26-edge-arrow--left{left:-47px!important;right:auto!important}
+ #global-hero .csn26-visual-row>.csn26-edge-arrow--right{right:-47px!important;left:auto!important}
 }
 @media(prefers-reduced-motion:reduce){#global-hero .csn26-visual-row>.csn26-edge-arrow{transition:none!important}}

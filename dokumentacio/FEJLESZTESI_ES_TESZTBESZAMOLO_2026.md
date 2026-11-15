@@ -1,5 +1,27 @@
 # Csanádi Sportiskola 2026 · 29. fejlesztési kör – jóváhagyott kezdőoldal
 
+## Hibás honlapverzió-értesítés javítása
+
+A korábbi értesítés a service worker minden `controllerchange` eseményére megjelent, ezért akár az első látogatáskor is tévesen új honlapverziót jelzett. Az új megoldás a betöltött HTML `v` kiadásazonosítóját veti össze a hálózatról frissen lekért `json/config.json` `performance.cacheVersion` értékével. Azonos verziónál nincs üzenet; eltérő, tényleges kiadásnál jelenik meg a témához illeszkedő „Később” és „Frissítés” művelettel. A vizsgálat induláskor, visszatéréskor és a konfigurált (jelenleg 300 másodperces) időközönként működik; HTTP-s FTP-környezetben service worker nélkül is elérhető. Írásban végzett teszt mellett a frissítéses élő helyzetet valódi böngészőben még ellenőrizni kell.
+
+## Mobilos képváltó és kapunyitás utólagos javítása
+
+- A mobilos képváltó két teljes magasságú, áttetsző léptetősávja már a képek **külső oldalán**, külön oldalsó helyen fut; nem takarhatja a kártyák felületét. Az asztali képelrendezés érintetlen.
+- A kapunyitás utáni várakozáshoz külön **900 × 1600 képpontos álló mobilkép** készült (`assets/media/web/belepes-nyitott-mobil.webp`), amelyen a kapu mindkét oldala és az iskola látható. A képsor mobilon ezzel a külön eszközre komponált képpel, teljes magasságú `cover` megjelenítéssel fut; asztalon az eredeti széles képet tartja meg.
+- Az asztali eredeti széles kapukép is `cover` megjelenítést kapott: a teljes képernyőszélességet és -magasságot kitölti. Eltérő képernyőarány mellett a szélekből/függőleges részből kis mértékű vágás szükséges lehet.
+- A kulcs továbbra is keret nélküli, saját alakját követő kétlépcsős fekete árnyékkal.
+- A kép újratervezett, képgenerálással kiegészített változat, tehát **látványgrafika**, nem az iskola tényleges épületéről készült hiteles fénykép. A mobilos megjelenés manuális, valódi készülékes tesztje továbbra is szükséges.
+
+## Témakorrekció és a korábbi egyeztetések teljes átvizsgálása
+
+A világos téma térképes főgombja az előző R29-ben **tévesen fix sötétkék** `#15334b` hátteret kapott. A javítás a `css/round29-theme-unified.css` állományban felülírja ezt a gombot, a megközelítési kártyákat és az oldalsó szakasznavigátor műveleti gombjait: világos témában világos krémszín/sötét szöveg, sötét témában sötétkék/világos szöveg szerepel. Ugyanezt a stíluslapot a `megkozelites-es-tanulas.html` is betölti az R26 térképindító, útvonal-, űrlap- és vezérlőgombjaira.
+
+A jóváhagyott kezdőoldali egyeztetés **23 követelményét** tételesen összevetettük a forráskóddal. Az összesített állapot és a pontos hiánylista: `dokumentacio/KEZDOLAP_JOVAHAGYAS_ES_ELTERESEK_2026.md`. Nem igazolt vagy hiányzó elemek közé tartozik a harmadik szintű, B típusú csempés menüpanel, az egygyermekes menücsoportok összevonása, a sportsportlight kártyák swipe/expand viselkedése, az iskolai/sporthírek 3 és 4 kártyás végleges kompozíciója, a sportági szűrés és a mobilos lábléc összecsukható csoportjai. A laphoz szükséges JSON-ok metaadat-első, igény szerinti betöltése részben létezik az oldalindex alapján, de nem minden tartalmi hívás lusta.
+
+**Fontos:** a témajavítás forrásban és CSS-ben készült el, valós képernyőn a korábbi böngészőindítási korlátozás miatt nem igazolt. A javítatlan funkciókat továbbra sem tekintjük befejezettnek. Iskolai FTP-feltöltés nem történt.
+
+---
+
 ## A 29. kiadás utólagos javításai (a legújabb ZIP-ben)
 
 - **Kapunyitás:** a belépést valódi kulcsformájú SVG indítja, kerek gombháttér nélkül. A fejléc jobb felső sarkában külön, nyitott kaput ábrázoló ikon indítja újra a kapunyitást.
