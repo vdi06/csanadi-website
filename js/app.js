@@ -1,22 +1,23 @@
 import {initRound10Enhancements} from './round10-enhancements.js?v=20261115round10a';
-import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=20261114n10final3';
+import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=20261115r15sport';
 import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=20261114speed1';
 import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=20261114ext1';
 import {initDetailedDiagnostics,initSiteHealth,initMobileQuickNav} from './site-quality-2026.js?v=20261114ext1';
-import {setupSmartSearch} from './search-j-2026.js?v=20261115r13';
+import {setupSmartSearch} from './search-j-2026.js?v=20261115r15';
 import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=20261114ten1';
 import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=20261114kmil2';
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=20261114be1';
 import {renderMediaGallery} from './media-gallery-h-2026.js?v=20261115round10b';
 import {renderDocumentCollections} from './document-collections-2026.js?v=20261115d1';
 import {renderPageMedia} from './page-media-2026.js?v=20261115m1';
+import {useSiteSettings,settingNumber} from './site-settings-2026.js';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=20261114premium1';
-import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=20261114dfg1';
+import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=20261115r15sport';
 import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=20261114v5';
-import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=20261115r13';
+import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=20261115r15';
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=20261114ten2';
-import {renderBlock,dom,listCards} from './blocks.js?v=20261115r13';
+import {renderBlock,dom,listCards} from './blocks.js?v=20261115r15sport';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=20261114dfg1';
 import {renderSportsSuccesses} from './sports-successes.js?v=20261114v5';
 import {renderStudentAchievements} from './student-achievements.js?v=20261114navs3';
@@ -35,7 +36,7 @@ const historyScroll=new Map();
 const noticeNode=document.getElementById('toast');
 let toastClear=null;
 let revealObserver=null;
-function notify(s){clearTimeout(toastClear);noticeNode.textContent=s;noticeNode.hidden=false;toastClear=setTimeout(()=>noticeNode.hidden=true,2800);}
+function notify(s){clearTimeout(toastClear);noticeNode.textContent=s;noticeNode.hidden=false;toastClear=setTimeout(()=>noticeNode.hidden=true,settingNumber('runtime.timing.toastDurationMs'));}
 function titleOf(x){return routeTitle(x)}
 function hrefOf(x){return x?.page?.schemaExtensions?.route||'#/'}
 function navLink(x){return dom('a',{href:hrefOf(x)},titleOf(x));}
@@ -60,7 +61,7 @@ outerRing.id='csn26-outer-ring';outerRing.className='csn26-outer-ring';
 outerRing.setAttribute('aria-label','Külső gyűrű – az aktív főmenü almenüpontjai');
 outerRing.hidden=true;siteMap.append(outerRing);
 function updateOuterRing(){
- const active=!!siteMapSelected&&!siteMap.hidden&&matchMedia('(min-width: 1100px)').matches;
+ const active=!!siteMapSelected&&!siteMap.hidden&&innerWidth>=settingNumber('runtime.navigation.outerRingMinWidthPx');
  outerRing.replaceChildren();outerRing.hidden=!active;
  siteMap.classList.toggle('csn26-ring-active',active);
  if(!active)return false;
@@ -69,10 +70,10 @@ function updateOuterRing(){
  const origin=emblem?.getBoundingClientRect();if(!origin||!nodes.length)return false;
  const cx=origin.left+origin.width/2,cy=origin.top+origin.height/2;
  const small=innerWidth<1250||innerHeight<800;
- const radius=Math.min(425,innerWidth*.39,innerHeight*.46);
+ const radius=Math.min(settingNumber('runtime.navigation.outerRingRadiusMaxPx'),innerWidth*settingNumber('runtime.navigation.outerRingRadiusWidthRatio'),innerHeight*settingNumber('runtime.navigation.outerRingRadiusHeightRatio'));
  const selectedIndex=catalog.roots.indexOf(siteMapSelected);
  const total=nodes.length;
- const arc=total<=5 ? Math.min(135,Math.max(45,(total-1)*34)) : 360;
+ const arc=total<=5 ? Math.min(settingNumber('runtime.navigation.outerRingArcMaxDegrees'),Math.max(45,(total-1)*settingNumber('runtime.navigation.outerRingArcSpacingDegrees'))) : 360;
  const direction=selectedIndex*60-90;
  const start=total<=5? direction-arc/2:-90;
  const spacing=total<=5 ? arc/Math.max(1,total-1):360/total;
@@ -167,7 +168,7 @@ function positionCompassSubmenu(){
  if(siteMap.hidden || !siteMapSelected){outerRing.hidden=true;return;}
  if(updateOuterRing()){siteMapPanel.hidden=true;siteMapPanel.setAttribute('aria-hidden','true');return;}
  siteMapPanel.removeAttribute('aria-hidden');siteMapPanel.hidden=false;
- if(matchMedia('(max-width: 760px)').matches){
+ if(innerWidth<=settingNumber('runtime.navigation.mobileSubmenuMaxWidthPx')){
   if(siteMapPanel.parentElement!==submenuOriginalParent)submenuOriginalParent.append(siteMapPanel);
   siteMap.querySelector('.site-map-dialog')?.removeAttribute('aria-owns');
   siteMapPanel.style.removeProperty('left');siteMapPanel.style.removeProperty('top');siteMapPanel.style.removeProperty('right');siteMapPanel.style.removeProperty('width');
@@ -200,6 +201,7 @@ function openSiteMap(){
  siteMapReturnFocus=document.activeElement;
  renderSiteMap(null);siteMap.hidden=false;relocateSiteMapButton(true);
  document.body.classList.add('site-map-is-open');
+ for(const node of document.body.children)if(node!==siteMap&&node!==outerRing&&node!==document.getElementById('toast')&&node!==document.querySelector('script'))if(['HEADER','MAIN','FOOTER'].includes(node.tagName)||node.id==='global-hero')node.inert=true;
  (siteMapCats.querySelector('.compass26-choice-link')||document.getElementById('site-map-close')).focus();
 }
 siteMap.addEventListener('keydown',event=>{
@@ -213,6 +215,7 @@ siteMap.addEventListener('keydown',event=>{
 function closeSiteMap(restoreFocus=true){
  if(siteMap.hidden)return;
  siteMap.hidden=true;outerRing.hidden=true;siteMap.classList.remove('csn26-ring-active');document.body.classList.remove('site-map-is-open');relocateSiteMapButton(false);
+ for(const node of document.body.children)if(node.inert&&(['HEADER','MAIN','FOOTER'].includes(node.tagName)||node.id==='global-hero'))node.inert=false;
  if(restoreFocus)siteMapReturnFocus?.focus?.();
 }
 function renderMenu(){
@@ -266,7 +269,7 @@ function breadcrumb(node){
     else bar.append(navLink(item));}
   return bar;
 }
-function getSiblings(node){if(node.depth===0)return[];return catalog.items.filter(x=>x.parent===node.parent&&x!==node).slice(0,8);}
+function getSiblings(node){if(node.depth===0)return[];return catalog.items.filter(x=>x.parent===node.parent&&x!==node).slice(0,settingNumber('runtime.display.relatedPages'));}
 function contentPage(node){
   const page=node.page,route=page.schemaExtensions?.route||'';
   const fragment=document.createDocumentFragment();
@@ -439,7 +442,7 @@ function renderRoute(options={}){
   enhanceNext10Route(node,app);
   if(node)updatePageMeta(node.page,route);
   document.dispatchEvent(new CustomEvent('csanadi:route-rendered',{detail:{route}}));
-  if(pendingSearchJump && pendingSearchJump.route===route)setTimeout(trySearchJump,90);
+  if(pendingSearchJump && pendingSearchJump.route===route)setTimeout(trySearchJump,settingNumber('runtime.timing.searchJumpDelayMs'));
   const title=node?.page?.title||'Az oldal nem található';document.title=title+' | Csanádi Árpád Sportiskola';
   renderMenu();closeMobile();closeSiteMap(false);
   const target=options.keepScroll?window.scrollY:(historyScroll.get(route)||0);
@@ -455,7 +458,7 @@ function markSearchTarget(element){
  const target=element.closest('.dfg-news-card,.cs-news-card,.hub26-event-card,.media26-tile,.media26-video-card,.doc-card,.feature-card,.student-success-card,.body-card')||element;
  target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'center',inline:'nearest'});
  target.classList.add('cs-search-found');target.setAttribute('tabindex','-1');target.focus({preventScroll:true});
- setTimeout(()=>target.classList.remove('cs-search-found'),3200);
+ setTimeout(()=>target.classList.remove('cs-search-found'),settingNumber('search.highlightDurationMs'));
 }
 function searchTargetMatch(root,entry,phrase){
  const normalize=s=>norm(s).replace(/\\s+/g,' ').trim();
@@ -505,7 +508,7 @@ function trySearchJump(){
   else markSearchTarget(found);
   return;
  }
- if(++state.attempts<22){setTimeout(trySearchJump,150);return;}
+ if(++state.attempts<settingNumber('search.jumpMaxAttempts')){setTimeout(trySearchJump,settingNumber('search.jumpRetryMs'));return;}
  pendingSearchJump=null;
  markSearchTarget(searchTargetMatch(root,state.entry,state.query));
 }
@@ -515,11 +518,11 @@ function handleSearchNavigation(entry,query,event){
  const route=safeRoute(entry.href);
  pendingSearchJump={entry,query,route,filtered:false,attempts:0};
  closeSearch();
- if(getRoute()===route){setTimeout(trySearchJump,90);}
+ if(getRoute()===route){setTimeout(trySearchJump,settingNumber('runtime.timing.searchJumpDelayMs'));}
  else location.hash=route;
 }
 
-function openSearch(){previousSearchFocus=document.activeElement;dialog.hidden=false;document.body.style.overflow='hidden';smartSearch?.render();setTimeout(()=>searchInput.focus(),0);}
+function openSearch(){previousSearchFocus=document.activeElement;dialog.hidden=false;document.body.style.overflow='hidden';smartSearch?.render();setTimeout(()=>searchInput.focus(),settingNumber('runtime.timing.searchFocusDelayMs'));}
 const THEME_MODES=['system','light','dark'];
 const THEME_LABELS={system:'Automatikus',light:'Világos',dark:'Sötét'};
 const THEME_ICONS={
@@ -587,8 +590,8 @@ async function checkActivePage(){
   }catch(e){console.warn('Az aktív oldal ideiglenesen nem frissíthető:',e);}
 }
 function beginPolling(){
-  const seconds=Math.min(3600,Math.max(15,catalog.config.refresh?.structureSeconds||60));
-  const pageSeconds=Math.min(3600,Math.max(15,catalog.config.refresh?.activePageSeconds||60));
+  const seconds=Math.min(settingNumber('refresh.maximumSeconds'),Math.max(settingNumber('refresh.minimumSeconds'),settingNumber('refresh.structureSeconds')));
+  const pageSeconds=Math.min(settingNumber('refresh.maximumSeconds'),Math.max(settingNumber('refresh.minimumSeconds'),settingNumber('refresh.activePageSeconds')));
   setInterval(()=>{if(!document.hidden)checkStructure();},seconds*1000);
   setInterval(()=>{if(!document.hidden)checkActivePage();},pageSeconds*1000);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden){checkStructure();checkActivePage();}});
@@ -603,6 +606,7 @@ export async function startApp(){
   if(location.protocol==='file:')throw new Error('A JSON-alapú weboldal HTTP/HTTPS kiszolgálást igényel, például helyi localhost szervert vagy az iskola webtárhelyét.');
   registerMedia(await loadJSON('mediatar.json'));
   catalog=await buildCatalog();
+  useSiteSettings(catalog.config);
   smartSearch=setupSmartSearch({catalog,loadJSON,norm,dialog,input:searchInput,results:searchResults,status:searchStatus,onNavigate:handleSearchNavigation});
   await smartSearch.rebuild(catalog);
   await loadDocumentRegistry();  

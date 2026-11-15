@@ -4,7 +4,18 @@
     "name": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "baseUrl": "https://vdi06.github.io/csanadi-website/",
     "locale": "hu-HU",
-    "contactPageId": "page:000063"
+    "contactPageId": "page:000063",
+    "shortName": "CSANÁDI",
+    "footerYear": 2026,
+    "address": "1143 Budapest, Őrnagy utca 5–7.",
+    "email": "csanadi@csanadiiskola.hu",
+    "secretariatPhones": ["+36 30 267 82 08", "+36 30 427 82 30"],
+    "omIdentifier": "200346",
+    "directorName": "Rúzsa Sándor",
+    "maintainerName": "Közép-Pesti Tankerületi Központ",
+    "maintainerAddress": "1149 Budapest, Mogyoródi út 21.",
+    "motto": "Sport, tanulás, közösség.",
+    "kretaUrl": "https://klik200346001.e-kreta.hu/"
   },
   "startPageId": "page:000001",
   "currentSchoolYear": "2026/2027",
@@ -18,13 +29,45 @@
     "structureSeconds": 60,
     "activePageSeconds": 60,
     "backgroundPause": true,
-    "maxConcurrentRequests": 4
+    "maxConcurrentRequests": 4,
+    "minimumSeconds": 15,
+    "maximumSeconds": 3600
   },
   "theme": {
     "defaultMode": "system",
     "allowManualOverride": true,
     "primary": "#10233D",
-    "accent": "#D7B66E"
+    "accent": "#D7B66E",
+    "lightColors": {
+      "page": "#D8D0C2",
+      "card": "#EEE7DC",
+      "light": "#D9D0C1",
+      "line": "#AA9C87",
+      "ink": "#172B3D",
+      "muted": "#344A5F",
+      "header": "#E6DDCD",
+      "footer": "#DBD1C0",
+      "nav": "#E1D7C6",
+      "veil": "rgba(216,208,194,.86)",
+      "sportGreen": "#26734C",
+      "sportYellow": "#D0A52F",
+      "chartOtherColors": ["#517993", "#548580", "#8A944E", "#B27F66", "#7B8EAA", "#A67146"]
+    },
+    "darkColors": {
+      "page": "#0C1E31",
+      "card": "#162B41",
+      "light": "#1C354D",
+      "line": "#405A71",
+      "ink": "#F1EAD9",
+      "muted": "#BCCBDB",
+      "header": "#0C2136",
+      "footer": "#0A1A2B",
+      "nav": "#112C43",
+      "veil": "rgba(10,26,43,.86)",
+      "sportGreen": "#68C994",
+      "sportYellow": "#F3D265",
+      "chartOtherColors": ["#75A2C6", "#6AA7A0", "#ACB66C", "#C9947C", "#9CBBCA", "#D4A67D"]
+    }
   },
   "content": {
     "structurePath": "structure.json",
@@ -40,11 +83,135 @@
   "search": {
     "enabled": true,
     "indexCacheHours": 12,
-    "maxResults": 40
+    "maxResults": 40,
+    "pageSize": 12,
+    "suggestionLimit": 5,
+    "datalistLimit": 120,
+    "textCharacterLimit": 24000,
+    "minimumFuzzyLength": 3,
+    "highlightDurationMs": 3200,
+    "jumpMaxAttempts": 22,
+    "jumpRetryMs": 150,
+    "quickSuggestions": ["Felvételi", "Sporteredmények", "Eseménynaptár", "Dokumentumtár", "Képgaléria"],
+    "fuzzyWordLengthTolerance": 6
   },
   "performance": {
+    "cacheVersion": "csanadi-r15-sport-20261115",
     "maxCacheMegabytes": 50,
-    "respectReducedMotion": true
+    "respectReducedMotion": true,
+    "mediaCacheEntries": 100,
+    "offlineShellMaxAgeHours": 24,
+    "offlinePrecacheFileMaxBytes": 300000,
+    "offlinePrecacheMaxEntries": 220
+  },
+  "runtime": {
+    "hero": {
+      "maxSlides": 20,
+      "rotationDefaultMs": 7500,
+      "rotationMinimumMs": 5000,
+      "rotationMaximumMs": 12000,
+      "swipeThresholdPx": 55,
+      "startsAt": null,
+      "endsAt": null,
+      "mobileCutoutRadiusPx": 68,
+      "smallMobileCutoutRadiusPx": 58,
+      "desktopCutoutRadiusPx": 118,
+      "tabletCutoutRadiusPx": 94
+    },
+    "navigation": {
+      "outerRingMinWidthPx": 1100,
+      "outerRingRadiusMaxPx": 425,
+      "outerRingRadiusWidthRatio": 0.39,
+      "outerRingRadiusHeightRatio": 0.46,
+      "outerRingArcMaxDegrees": 135,
+      "outerRingArcSpacingDegrees": 34,
+      "mobileSubmenuMaxWidthPx": 760,
+      "menuFocusDelayMs": 90
+    },
+    "documents": {
+      "maxSavedFilters": 20,
+      "suggestionLimit": 35,
+      "searchDelayMs": 130,
+      "previewCheckDelayMs": 3500,
+      "defaultView": "cards",
+      "defaultSort": "newest",
+      "refreshSeconds": 75
+    },
+    "timing": {
+      "toastDurationMs": 2800,
+      "searchFocusDelayMs": 0,
+      "searchJumpDelayMs": 90,
+      "homeDashboardRefreshMs": 20000,
+      "homeDashboardCleanupMs": 15000,
+      "homeCounterAnimationMs": 620,
+      "studentAchievementsRefreshMs": 300000,
+      "calendarRefreshMs": 60000,
+      "dailySportNewsRefreshMs": 300000,
+      "sportsCarouselRotationMs": 6800,
+      "chartLoadTimeoutMs": 4500,
+      "portalOpenDurationMs": 5200,
+      "portalCleanupMs": 470,
+      "entranceOpenDelayMs": 1250,
+      "entranceFinishDelayMs": 6500,
+      "entranceOpenDurationMs": 2200,
+      "entranceCleanupMs": 450
+    },
+    "studentAchievements": {
+      "featuredDays": 7,
+      "demoDaysAgoMaximum": 1500,
+      "dataPath": "adatok/tanuloi-sikerek.json"
+    },
+    "events": {
+      "refreshSeconds": 60
+    },
+    "sports": {
+      "refreshSeconds": 60
+    },
+    "news": {
+      "maximumAgeHours": 72,
+      "maximumEditorRows": 18
+    },
+    "tools": {
+      "mediaImportMaximumBytes": 104857600,
+      "pageJsonMaximumBytes": 500000,
+      "sportNewsJsonMaximumBytes": 1000000
+    },
+    "display": {
+      "relatedPages": 8,
+      "homepageUpcomingEvents": 3,
+      "homepagePreviewEvents": 4,
+      "upcomingEventPanel": 6,
+      "featuredStudents": 10,
+      "otherStudents": 4,
+      "calendarCollapsedItems": 5,
+      "calendarExpandedItems": 100,
+      "relatedCards": 4,
+      "relatedPreviewCards": 2,
+      "sportsPhotoCarousel": 12,
+      "sportsSuccessSidebar": 5,
+      "galleryCollapsedPeriods": 5,
+      "galleryBatch": 24,
+      "documentCollectionBatch": 6,
+      "documentRelated": 4,
+      "documentTeasers": 3,
+      "newsTeasers": 3,
+      "dailyNewsFull": 18,
+      "dailyNewsCompact": 6,
+      "mediaBatch": 12,
+      "mediaCompactInitial": 9,
+      "mediaFullInitial": 18,
+      "mediaVideoMax": 15,
+      "genericListCards": 6
+    },
+    "accessibility": {
+      "targetMinimumPx": 40,
+      "focusOutlinePx": 3,
+      "motionReductionHonored": true
+    },
+    "diagnostics": {
+      "maxErrorEntries": 200,
+      "summaryRefreshSeconds": 60
+    }
   },
   "modules2026": {
     "gate": {

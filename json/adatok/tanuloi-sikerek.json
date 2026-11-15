@@ -2,8 +2,6 @@
   "schemaVersion": "1.0.0",
   "collectionId": "collection:tanuloi-sikerek",
   "title": "Diáksport – név nélküli bemutatókártyák",
-  "featureDays": 7,
-  "timezone": "Europe/Budapest",
   "description": "Kizárólag fiktív, nem személyhez köthető tartalomminták. Nincsenek tényleges tanulók, osztályadatok, versenyek vagy helyezések.",
   "previewMode": true,
   "demoDateBehavior": "relative-to-current-day",

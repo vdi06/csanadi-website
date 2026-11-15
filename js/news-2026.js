@@ -66,7 +66,7 @@ export function renderNewsTeasers(){
  const grid=el('div','cs-news-grid');container.append(grid);section.append(container);
  load().then(items=>{
   if(!section.isConnected)return;
-  sorted(items.filter(x=>x.category!=='Archívum'),'newest').slice(0,3).forEach(x=>grid.append(newsCard(x,true))); 
+  sorted(items.filter(x=>x.category!=='Archívum'),'newest').slice(0,settingNumber('runtime.display.newsTeasers')).forEach(x=>grid.append(newsCard(x,true))); 
   if(!grid.childElementCount)grid.append(el('p','dfg-empty','Jelenleg nincs megjeleníthető ellenőrzött hír.'));
  }).catch(err=>grid.append(el('p','dfg-empty',err.message)));
  return section;
@@ -110,3 +110,4 @@ export function renderNewsCenter(route){
  }).catch(err=>{count.textContent='Hírbetöltési hiba';grid.replaceChildren(el('p','dfg-empty',err.message));});
  return section;
 }
+import {settingNumber} from './site-settings-2026.js';

@@ -26,7 +26,7 @@ function checkSports(data){
 }
 function validISOString(value){if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?([+-]\d{2}:\d{2}|Z)$/.test(value))return false;const d=new Date(value);return Number.isFinite(d.getTime());}
 function checkEvents(data){
- if(!data||data.schemaVersion!=='2.0.0'||data.collectionId!=='collection:esemenyek'||!Array.isArray(data.items)||!Array.isArray(data.categories)||!Number.isInteger(data.refreshSeconds)||data.refreshSeconds<15||data.refreshSeconds>3600)throw Error('Érvénytelen esemenyek.json gyűjtemény.');
+ if(!data||data.schemaVersion!=='2.0.0'||data.collectionId!=='collection:esemenyek'||!Array.isArray(data.items)||!Array.isArray(data.categories))throw Error('Érvénytelen esemenyek.json gyűjtemény.');
  const ids=new Set(),categories=new Map(data.categories.map(x=>[x.id,x.label]));
  return data.items.map(item=>{
   if(!item||typeof item.id!=='string'||!/^esemeny:[a-z0-9-]{3,60}$/.test(item.id)||ids.has(item.id)||
@@ -46,7 +46,7 @@ function updateCounters(container){
  for(const node of container.querySelectorAll('.live-metric-number')){
   const n=Number(node.textContent);if(!Number.isFinite(n)||n<0||n>10000)continue;
   if(matchMedia('(prefers-reduced-motion: reduce)').matches||document.hidden)continue;
-  node.textContent='0';const start=performance.now();const duration=620;
+  node.textContent='0';const start=performance.now();const duration=settingNumber('runtime.timing.homeCounterAnimationMs');
   const tick=now=>{if(!node.isConnected)return;const p=Math.min(1,(now-start)/duration);node.textContent=String(Math.round(n*(1-Math.pow(1-p,3))));if(p<1)requestAnimationFrame(tick);};
   requestAnimationFrame(tick);
  }
@@ -77,7 +77,7 @@ function donutChart(verified,total){
  wrap.append(svg,center);return wrap;
 }
 function eventCard(item,upcoming){
- const el=mk('article','live-event'+(item.status==='preview'?' preview':''));
+ const el=mk('a','live-event'+(item.status==='preview'?' preview':''));el.href=VALID_ROUTE.test(item.route)?item.route:'#/hirek-es-esemenyek/esemenynaptar';el.setAttribute('aria-label',item.title+' – esemény megnyitása');
  const badge=mk('span','live-event-tag',item.status==='preview'?'TÉMA':'HIVATALOS ESEMÉNY');
  const head=mk('div','live-event-head');add(head,badge,mk('span','live-event-category',item.category));
  const title=mk('h3','',item.title),summary=mk('p','',item.summary);
@@ -87,7 +87,6 @@ function eventCard(item,upcoming){
   if(item.location)details.append(mk('span','live-event-location',item.location));
   if(upcoming)details.append(mk('span','live-event-live','Következő program'));
  }else details.append(mk('span','live-event-date','Időpont még nincs meghirdetve'));
- details.append(link(item.route,'Részletek →','live-event-link'));
  el.append(head,title,summary,details);return el;
 }
 function showSkeleton(root,text){root.replaceChildren(mk('p','live-load-note',text));}
@@ -103,7 +102,7 @@ export function renderLiveDashboard(block){
  const paint=(doAnimation=false)=>{
   const verifiedSports=sportData.filter(x=>x.status==='verified');const categories=counts(sportData);
   const scheduled=eventData.filter(x=>x.status==='verified'&&new Date(x.startsAt).getTime()>=Date.now()).sort((a,b)=>new Date(a.startsAt)-new Date(b.startsAt));
-  const previews=eventData.filter(x=>x.status==='preview').slice(0,4);
+  const previews=eventData.filter(x=>x.status==='preview').slice(0,settingNumber('runtime.display.homepagePreviewEvents'));
   const metrics=mk('div','live-metrics');
   metrics.append(cardValue('Bemutatott sportolók',sportData.length,'Nyilvánosan felsorolt sportolók','🏆'),cardValue('Sportági témák',categories.length,'Különböző sportágak','◉'),cardValue('Igazolt eredmények',verifiedSports.length,'Iskolai jegyzék alapján','✓'),cardValue('Közelgő események',scheduled.length,'Jóváhagyott jövőbeli időpontok','▦'));
   const content=mk('div','live-data-grid');const stats=mk('article','live-panel'),events=mk('article','live-panel live-event-panel');
@@ -120,7 +119,7 @@ export function renderLiveDashboard(block){
   const foot=mk('p','live-chart-note','A diagram az iskola által közzétett sportolók sportág szerinti megoszlását mutatja, nem az érmek vagy helyezések számát.');stats.append(foot);
   const evHead=mk('div','live-panel-top');evHead.append(mk('h3','','Események és programok'),link('#/hirek-es-esemenyek/esemenynaptar','Teljes naptár →','live-event-all'));events.append(evHead);
   const evIntro=mk('p','live-event-intro',scheduled.length?`${scheduled.length} ellenőrzött, közelgő esemény a naptárban.`:'Még nincs jóváhagyott, dátummal rendelkező közelgő esemény. Az alábbiak tervezési témakörök, nem meghirdetett programok.');events.append(evIntro);
-  const evList=mk('div','live-event-list');const shown=(scheduled.length?scheduled.slice(0,3):previews);shown.forEach((e,i)=>evList.append(eventCard(e,!!(scheduled.length&&i===0))));
+  const evList=mk('div','live-event-list');const shown=(scheduled.length?scheduled.slice(0,settingNumber('runtime.display.homepageUpcomingEvents')):previews);shown.forEach((e,i)=>evList.append(eventCard(e,!!(scheduled.length&&i===0))));
   if(!shown.length)evList.append(mk('p','live-empty','Egyelőre nincs megjeleníthető program.'));
   events.append(evList);content.append(stats,events);
   stage.replaceChildren(metrics,content);
@@ -139,7 +138,8 @@ export function renderLiveDashboard(block){
  }
  refreshButton.addEventListener('click',refreshData);
  refreshData();
- const timer=setInterval(()=>{if(!section.isConnected){clearInterval(timer);return;}if(!document.hidden)refreshData();},20000);
- document.addEventListener('visibilitychange',()=>{if(!document.hidden&&section.isConnected)refreshData();},{signal:(()=>{const controller=new AbortController();const cleanup=setInterval(()=>{if(!section.isConnected){controller.abort();clearInterval(cleanup);}},15000);return controller.signal;})()});
+ const timer=setInterval(()=>{if(!section.isConnected){clearInterval(timer);return;}if(!document.hidden)refreshData();},settingNumber('runtime.timing.homeDashboardRefreshMs'));
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden&&section.isConnected)refreshData();},{signal:(()=>{const controller=new AbortController();const cleanup=setInterval(()=>{if(!section.isConnected){controller.abort();clearInterval(cleanup);}},settingNumber('runtime.timing.homeDashboardCleanupMs'));return controller.signal;})()});
  return section;
 }
+import {settingNumber} from './site-settings-2026.js';

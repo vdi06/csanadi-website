@@ -27,7 +27,7 @@ export function renderMediaGallery({compact=false}={}){
  const search=el('input','media26-search');search.type='search';search.placeholder='Keresés képek és videók között…';search.autocomplete='off';search.setAttribute('aria-label','Keresés a galériában');searchWrap.append(search);
  const info=el('p','media26-counter','Galéria betöltése…');info.setAttribute('role','status');info.setAttribute('aria-live','polite');
  const grid=el('div','media26-grid'),videoGrid=el('div','media26-video-grid');
- const loadMore=galleryButton('További képek megjelenítése','media26-more',()=>{limit+=12;draw();});
+ const loadMore=galleryButton('További képek megjelenítése','media26-more',()=>{limit+=settingNumber('runtime.display.mediaBatch');draw();});
  const visual=el('div','media26-content');add(visual,grid,videoGrid,loadMore);
  const foot=document.createDocumentFragment();
  const direct=compact?el('a','media26-full-link','A teljes galériaközpont megnyitása ↗'):null;if(direct)direct.href='#/sport/sportgaleriak';
@@ -44,7 +44,7 @@ export function renderMediaGallery({compact=false}={}){
  const deep=compact?new URLSearchParams():new URLSearchParams(location.search);
  const requestedPhoto=deep.get('galleryPhoto')||'';const requestedVideo=deep.get('galleryVideo')||'';
  let openedDeep=false;
- let photos=[],videos=[],album=['mind','sport','oktatas','kozosseg'].includes(deep.get('galleryAlbum'))?deep.get('galleryAlbum'):'mind',discipline=disciplines.some(x=>x[0]===deep.get('galleryDiscipline'))?deep.get('galleryDiscipline'):'mind',type=deep.get('galleryType')==='video'?'video':'photo',limit=compact?9:18,activeImages=[],at=0,oldFocus=null;
+ let photos=[],videos=[],album=['mind','sport','oktatas','kozosseg'].includes(deep.get('galleryAlbum'))?deep.get('galleryAlbum'):'mind',discipline=disciplines.some(x=>x[0]===deep.get('galleryDiscipline'))?deep.get('galleryDiscipline'):'mind',type=deep.get('galleryType')==='video'?'video':'photo',limit=compact?settingNumber('runtime.display.mediaCompactInitial'):settingNumber('runtime.display.mediaFullInitial'),activeImages=[],at=0,oldFocus=null;
  function shareUrl(photo=null,video=null){const u=new URL(location.href);u.hash='/sport/sportgaleriak';for(const k of ['galleryPhoto','galleryAlbum','galleryDiscipline','galleryType','galleryVideo'])u.searchParams.delete(k);u.searchParams.set('galleryAlbum',album);if(discipline!=='mind')u.searchParams.set('galleryDiscipline',discipline);if(type==='video')u.searchParams.set('galleryType','video');if(photo)u.searchParams.set('galleryPhoto',photo.id);if(video)u.searchParams.set('galleryVideo',video.id);return u;}
  function syncLink(photo=null){if(compact||!['http:','https:'].includes(location.protocol))return;history.replaceState(history.state,'',shareUrl(photo));}
  const linkActions=el('div','media26-share-actions');const shareButton=galleryButton('Galériahivatkozás másolása','media26-share',async()=>{const url=shareUrl(activeImages[at]&&modal.open?activeImages[at]:null).href;try{await navigator.clipboard.writeText(url);shareButton.textContent='Hivatkozás másolva';}catch{shareButton.textContent='A címsorból másold a hivatkozást';}});const directShare=el('a','media26-direct-link','Albumhivatkozás megnyitása ↗');directShare.href=shareUrl().href;directShare.rel='noopener';linkActions.append(shareButton,directShare);inner.append(linkActions);
@@ -58,10 +58,10 @@ export function renderMediaGallery({compact=false}={}){
  modal.addEventListener('close',()=>{directShare.href=shareUrl().href;image.removeAttribute('src');if(oldFocus?.isConnected)oldFocus.focus();});
  function matching(rows){const q=normal(search.value.trim());const found=rows.filter(item=>(album==='mind'||item.category===album)&&(discipline==='mind'||album!=='sport'||type==='video'||item.sportDiscipline===discipline)&&(!q||normal([item.title,item.alt||'',item.description||'',item.sportDiscipline||''].join(' ')).includes(q)));if(sorting.value==='az')found.sort((a,b)=>a.title.localeCompare(b.title,'hu'));if(sorting.value==='za')found.sort((a,b)=>b.title.localeCompare(a.title,'hu'));return found;}
  function draw(){
-  albumsBar.replaceChildren();for(const [id,label,mark] of albums){const b=galleryButton('','media26-album'+(album===id?' is-active':''),()=>{album=id;discipline='mind';limit=compact?9:18;draw();});
+  albumsBar.replaceChildren();for(const [id,label,mark] of albums){const b=galleryButton('','media26-album'+(album===id?' is-active':''),()=>{album=id;discipline='mind';limit=compact?settingNumber('runtime.display.mediaCompactInitial'):settingNumber('runtime.display.mediaFullInitial');draw();});
    b.setAttribute('aria-pressed',String(album===id));const cover=photos.find(x=>id==='mind'||x.category===id);if(cover){const preview=el('img','media26-album-image');preview.src=cover.thumb||cover.src;preview.alt='';preview.loading='lazy';b.append(preview);}
    add(b,el('span','media26-album-icon',mark),el('strong','media26-album-label',label),el('span','media26-album-count',`${id==='mind'?photos.length:photos.filter(x=>x.category===id).length} kép`));albumsBar.append(b);}
-  sportBar.replaceChildren();sportBar.hidden=album!=='sport';if(album==='sport'){for(const [id,label] of disciplines){const total=photos.filter(x=>x.category==='sport'&&(id==='mind'||x.sportDiscipline===id)).length;if(!total&&id!=='mind')continue;const b=galleryButton(label+' · '+total,'media26-discipline'+(discipline===id?' is-active':''),()=>{discipline=id;limit=compact?9:18;draw();});b.setAttribute('aria-pressed',String(discipline===id));sportBar.append(b);}}
+  sportBar.replaceChildren();sportBar.hidden=album!=='sport';if(album==='sport'){for(const [id,label] of disciplines){const total=photos.filter(x=>x.category==='sport'&&(id==='mind'||x.sportDiscipline===id)).length;if(!total&&id!=='mind')continue;const b=galleryButton(label+' · '+total,'media26-discipline'+(discipline===id?' is-active':''),()=>{discipline=id;limit=compact?settingNumber('runtime.display.mediaCompactInitial'):settingNumber('runtime.display.mediaFullInitial');draw();});b.setAttribute('aria-pressed',String(discipline===id));sportBar.append(b);}}
   videoPlaylists.replaceChildren();videoPlaylists.hidden=type!=='video';
   if(type==='video'){
    videoPlaylists.append(el('span','r10-video-playlist-title','Videós tematikus listák'));
@@ -88,11 +88,11 @@ export function renderMediaGallery({compact=false}={}){
     if(!matchedVideos.length)videoGrid.append(el('p','media26-empty','Ehhez a témához egyelőre nincs képmontázs.'));
   }
  }
- search.addEventListener('input',()=>{limit=compact?9:18;draw();});sorting.addEventListener('change',draw);
+ search.addEventListener('input',()=>{limit=compact?settingNumber('runtime.display.mediaCompactInitial'):settingNumber('runtime.display.mediaFullInitial');draw();});sorting.addEventListener('change',draw);
  draw();
  Promise.all([getJSON(PHOTO_URL),getJSON(VIDEO_URL)]).then(([p,v])=>{
   if(p?.schemaVersion!=='1.0.0'||!Array.isArray(p.items)||v?.schemaVersion!=='1.0.0'||!Array.isArray(v.items))throw Error('A galéria adatformátuma hibás.');
-  photos=p.items.filter(validPhoto);videos=v.items.filter(validVideo).slice(0,15);if(requestedVideo){const selected=videos.find(x=>x.id===requestedVideo);if(selected){album=selected.category;type='video';}}
+  photos=p.items.filter(validPhoto);videos=v.items.filter(validVideo).slice(0,settingNumber('runtime.display.mediaVideoMax'));if(requestedVideo){const selected=videos.find(x=>x.id===requestedVideo);if(selected){album=selected.category;type='video';}}
   if(requestedPhoto){const item=photos.find(x=>x.id===requestedPhoto);if(item){album=item.category;discipline=item.category==='sport'?(item.sportDiscipline||'mind'):'mind';type='photo';limit=Math.max(limit,photos.length);}}
   draw();
   if(requestedVideo&&!compact)requestAnimationFrame(()=>{const card=[...videoGrid.querySelectorAll('.media26-video-card')].find(x=>x.dataset.videoId===requestedVideo);if(card&&section.isConnected){card.scrollIntoView({block:'center',behavior:'instant'});card.focus({preventScroll:true});card.classList.add('media26-deep-focus');}});
@@ -100,3 +100,4 @@ export function renderMediaGallery({compact=false}={}){
  }).catch(error=>{info.textContent='A galéria pillanatnyilag nem tölthető be: '+error.message;});
  return section;
 }
+import {settingNumber} from './site-settings-2026.js';

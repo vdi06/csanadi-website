@@ -12,7 +12,6 @@
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-14T21:00:00+01:00",
-  "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
     "revision": 3
@@ -37,7 +36,7 @@
           "id": "block:000063-text-1",
           "type": "markdown",
           "data": {
-            "text": "Cím: **1143 Budapest, Őrnagy utca 5–7.**\n\nTitkárság: **+36 30 267 82 08** és **+36 30 427 82 30**\n\nE-mail: **csanadi@csanadiiskola.hu**\n\nOM azonosító: **200346**\n\nA fenntartó a Közép-Pesti Tankerületi Központ. Címe: 1149 Budapest, Mogyoródi út 21. A telefonos és elektronikus elérhetőségeket az intézmény hivatalos kapcsolati oldala közli."
+            "text": "Cím: **{{site.address}}**\n\nTitkárság: **{{site.secretariatPhones}}**\n\nE-mail: **{{site.email}}**\n\nOM azonosító: **{{site.omIdentifier}}**\n\nA fenntartó: {{site.maintainerName}}. Címe: {{site.maintainerAddress}}. A telefonos és elektronikus elérhetőségeket az intézmény hivatalos kapcsolati oldala közli."
           }
         }
       ]
@@ -65,7 +64,7 @@
           "id": "block:content-review-text-20261114",
           "type": "markdown",
           "data": {
-            "text": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium. 1143 Budapest, Őrnagy utca 5–7.; OM: 200346. Titkárság: +36 30 267 8208 és +36 30 427 8230; e-mail: csanadi@csanadiiskola.hu. A fenntartó a Közép-Pesti Tankerületi Központ.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/kapcsolat.html)"
+            "text": "{{site.name}}. {{site.address}}; OM: {{site.omIdentifier}}. Titkárság: {{site.secretariatPhones}}; e-mail: {{site.email}}. A fenntartó: {{site.maintainerName}}.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/kapcsolat.html)"
           }
         }
       ]
@@ -79,7 +78,7 @@
           "id": "block:next10-official-text",
           "type": "markdown",
           "data": {
-            "text": "Az intézmény címe **1143 Budapest, Őrnagy utca 5–7.** Telefonszámok: **+36 30 267 8208** és **+36 30 427 8230**; e-mail: **csanadi@csanadiiskola.hu**. A főigazgató a hivatalos nyitóoldal szerint **Rúzsa Sándor**. Az aktuális elérhetőségeket a [hivatalos iskolai honlapon](https://csanadi-bp.edu.hu/) is ellenőrizheted."
+            "text": "Az intézmény címe **{{site.address}}**. Telefonszámok: **{{site.secretariatPhones}}**; e-mail: **{{site.email}}**. A főigazgató a hivatalos nyitóoldal szerint **{{site.directorName}}**. Az aktuális elérhetőségeket a [hivatalos iskolai honlapon](https://csanadi-bp.edu.hu/) is ellenőrizheted."
           }
         }
       ]

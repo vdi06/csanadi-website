@@ -1,5 +1,5 @@
+import {setting} from './site-settings-2026.js';
 
- 
 const e=(tag,cls,text)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=String(text);return x;};
 const add=(parent,...children)=>{for(const child of children)if(child)parent.append(child);return parent;};
 const LOCAL=new URL('../json/',import.meta.url);
@@ -56,10 +56,12 @@ export function renderSportsStatisticsV3(){
   if(view==='table'){tableWrap.hidden=false;return;}tableWrap.hidden=true;
   const width=600,height=view==='bar'?Math.max(230,rows.length*40+42):310;const svg=svgEl('svg',{viewBox:`0 0 ${width} ${height}`,role:'img','aria-label':`Közzétett sporteredmények sportáganként – ${view==='bar'?'oszlopdiagram':'kördiagram'}`});
   const max=Math.max(...rows.map(x=>x.count),1);
+  const mode=document.documentElement.dataset.theme==='dark'?'dark':'light';
+  const colors=[setting('theme.'+mode+'Colors.sportYellow'),setting('theme.'+mode+'Colors.sportGreen'),...setting('theme.'+mode+'Colors.chartOtherColors')];
   if(view==='bar'){rows.forEach((r,i)=>{const y=i*40+16;const label=svgEl('text',{x:10,y:y+20,fill:'currentColor','font-size':13});label.textContent=r.label;svg.append(label);
-   const bar=svgEl('rect',{x:174,y,width:(r.count/max)*345,height:25,rx:6,fill:i%2?'#7f9faf':'#cda45a'});svg.append(bar);
+   const bar=svgEl('rect',{x:174,y,width:(r.count/max)*345,height:25,rx:6,fill:colors[i%colors.length]});svg.append(bar);
    const amount=svgEl('text',{x:530,y:y+19,fill:'currentColor','font-size':14,'font-weight':'bold'});amount.textContent=r.count;svg.append(amount);});
-  }else{const cx=210,cy=150,rad=104,inner=52,total=rows.reduce((n,r)=>n+r.count,0),colors=['#cda45a','#356485','#7fa0a2','#879c6f','#b48d88','#8d81aa','#beac6e','#b68f70'];let start=-Math.PI/2;
+  }else{const cx=210,cy=150,rad=104,inner=52,total=rows.reduce((n,r)=>n+r.count,0);let start=-Math.PI/2;
    rows.forEach((r,i)=>{const angle=(r.count/total)*2*Math.PI,end=start+angle;
     const pt=(a,rr)=>[cx+rr*Math.cos(a),cy+rr*Math.sin(a)],p1=pt(start,rad),p2=pt(end,rad),p3=pt(end,inner),p4=pt(start,inner);
     if(angle>=2*Math.PI-0.001){svg.append(svgEl('circle',{cx,cy,r:rad,fill:colors[i%colors.length]}));svg.append(svgEl('circle',{cx,cy,r:inner,fill:'var(--card)'}));}

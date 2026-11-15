@@ -10,7 +10,7 @@ function valid(r,g){
   if(!x||!/^success:[a-z0-9-]+$/.test(x.id)||seen.has(x.id)||typeof x.title!=='string'||!x.summary||x.status!=='verified'||x.verified!==true||x.url!=='https://csanadi-bp.edu.hu/buszkeseg.html')return false;
   seen.add(x.id);return true;
  });
- const images=g.items.filter(x=>x.category==='sport'&&/^assets\/media\/web\/[a-z0-9/_-]+\.webp$/.test(x.src||'')).slice(0,12);
+ const images=g.items.filter(x=>x.category==='sport'&&/^assets\/media\/web\/[a-z0-9/_-]+\.webp$/.test(x.src||'')).slice(0,settingNumber('runtime.display.sportsPhotoCarousel'));
  return {items,images};
 }
 function achievementCard(x){
@@ -42,9 +42,9 @@ function home(root,results,images){
  carousel.addEventListener('mouseenter',()=>hovered=true);carousel.addEventListener('mouseleave',()=>hovered=false);
  carousel.addEventListener('focusin',()=>focused=true);carousel.addEventListener('focusout',e=>{if(!carousel.contains(e.relatedTarget))focused=false;});
  append(controls,prev,counter,next,pause);append(carousel,stage,controls);if(slides.length)show(0);
- const timer=setInterval(()=>{if(!root.isConnected){clearInterval(timer);return;}if(paused||hovered||focused||reduced.matches||document.hidden||slides.length<2)return;show(index+1);},6800);
+ const timer=setInterval(()=>{if(!root.isConnected){clearInterval(timer);return;}if(paused||hovered||focused||reduced.matches||document.hidden||slides.length<2)return;show(index+1);},settingNumber('runtime.timing.sportsCarouselRotationMs'));
  const sidebar=n('section','cs-sport-achievements');append(sidebar,n('h3','','Hivatalos büszkeségeink'),n('p','','Név szerinti eredmények az iskola közzétett jegyzékéből.'));
- results.slice(0,5).forEach(x=>sidebar.append(achievementCard(x)));
+ results.slice(0,settingNumber('runtime.display.sportsSuccessSidebar')).forEach(x=>sidebar.append(achievementCard(x)));
  append(layout,carousel,sidebar);append(container,layout);root.append(container);
 }
 function archive(root,results){
@@ -64,3 +64,4 @@ export function renderSportsSuccesses(block){
  }).catch(err=>{console.error(err);box.replaceChildren(n('p','sports-error','A sporttartalom jelenleg nem érhető el.'));});
  return wrap;
 }
+import {settingNumber} from './site-settings-2026.js';

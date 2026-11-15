@@ -1,4 +1,4 @@
- 
+import {resolveConfiguredText,setting,settingNumber} from './site-settings-2026.js';
 const TYPES={page:'Oldal',news:'Hír',event:'Esemény',document:'Dokumentum',image:'Galériakép',video:'Videó'};
 const SECTIONS={iskolank:'Iskolánk',oktatas:'Oktatás',sport:'Sport', 'hirek-es-esemenyek':'Hírek és események',informaciok:'Információk',kapcsolat:'Kapcsolat',home:'Kezdőlap'};
 const DATASETS=[
@@ -29,7 +29,7 @@ const strings=(input,parts=[],depth=0)=>{
 const labelsFrom=(entry,fields=[])=>fields.filter(Boolean).map(x=>String(x)).join(' ');
 function buildEntry(x,norm){
  const entry={...x,section:sectionOf(x.href,x.type)};
- entry.title=String(x.title||'');entry.summary=String(x.summary||'');
+ entry.title=resolveConfiguredText(x.title||'');entry.summary=resolveConfiguredText(x.summary||'');entry.body=resolveConfiguredText(x.body||'');
  entry.normalTitle=norm(entry.title);entry.normalSummary=norm(entry.summary);
  entry.normalTags=norm(labelsFrom(null,x.tags||[]));entry.normalBody=norm(entry.body||'');
  entry.normalSection=norm(SECTIONS[entry.section]||'');
@@ -84,7 +84,8 @@ function score(entry,query,tokens){
  return points;
 }
 export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,status,onNavigate}){
- let all=[],query='',type='all',section='all',max=12,rebuildSerial=0;
+ const pageSize=settingNumber('search.pageSize'),suggestionLimit=settingNumber('search.suggestionLimit'),maxResults=settingNumber('search.maxResults');
+ let all=[],query='',type='all',section='all',max=pageSize,rebuildSerial=0;
  const resultWrap=results;resultWrap.setAttribute('aria-label','Keresési találatok');status.setAttribute('role','status');status.setAttribute('aria-live','polite');
  const form=element('div','j-search-tools');
  const typeLabel=element('label','j-search-field','Tartalomtípus');
@@ -94,7 +95,7 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
  typeLabel.append(typeSelect);sectionLabel.append(sectionSelect);form.append(typeLabel,sectionLabel);
  input.insertAdjacentElement('afterend',form);
  const picks=element('div','j-search-picks');picks.setAttribute('aria-label','Keresési javaslatok');
- const resetBtn=element('button','j-search-clear','Keresés törlése');resetBtn.type='button';resetBtn.addEventListener('click',()=>{input.value='';query='';max=12;type='all';section='all';typeSelect.value='all';sectionSelect.value='all';render();input.focus();});picks.append(resetBtn);
+ const resetBtn=element('button','j-search-clear','Keresés törlése');resetBtn.type='button';resetBtn.addEventListener('click',()=>{input.value='';query='';max=pageSize;type='all';section='all';typeSelect.value='all';sectionSelect.value='all';render();input.focus();});picks.append(resetBtn);
  form.insertAdjacentElement('afterend',picks);
  const more=element('button','j-search-more','További találatok');more.type='button';more.hidden=true;
  resultWrap.insertAdjacentElement('afterend',more);
@@ -109,7 +110,7 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
  }
  populateFilters();
  function rebuildPages(pages){
-  return pages.items.map((entry)=>({id:entry.page.id,title:entry.page.title,summary:entry.page.summary||'',tags:[...(entry.page.tags||[]),...(entry.page.categories||[])],body:entry.page.searchText||strings(entry.page.blocks||[]).join(' ').slice(0,24000),href:entry.page.schemaExtensions.route,type:'page'}));
+  return pages.items.map((entry)=>({id:entry.page.id,title:entry.page.title,summary:entry.page.summary||'',tags:[...(entry.page.tags||[]),...(entry.page.categories||[])],body:entry.page.searchText||strings(entry.page.blocks||[]).join(' ').slice(0,settingNumber('search.textCharacterLimit')),href:entry.page.schemaExtensions.route,type:'page'}));
  }
  async function rebuild(pages){
   const serial=++rebuildSerial;
@@ -127,23 +128,23 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   const unique=new Set();list.replaceChildren();
   for(const item of all){
    if(unique.has(item.title))continue;unique.add(item.title);
-   if(unique.size>120)break;
+   if(unique.size>settingNumber('search.datalistLimit'))break;
    const opt=document.createElement('option');opt.value=item.title;list.append(opt);
   }
   if(!dialog.hidden)render();
  }
  function suggestion(text){
   const btn=element('button','j-search-chip',text);btn.type='button';
-  btn.addEventListener('click',()=>{input.value=text;query=text;max=12;render();input.focus();});return btn;
+  btn.addEventListener('click',()=>{input.value=text;query=text;max=pageSize;render();input.focus();});return btn;
  }
  function renderPicks(){
   picks.replaceChildren(element('span','j-search-picks-label',query.trim()?'Kapcsolódó keresések:':'Gyorskeresések:'));
   const suggestions=query.trim()
-   ? all.filter(x=>x.normalTitle.includes(norm(query))&&x.normalTitle!==norm(query)).slice(0,5).map(x=>x.title)
-   : ['Felvételi','Sporteredmények','Eseménynaptár','Dokumentumtár','Képgaléria'];
+   ? all.filter(x=>x.normalTitle.includes(norm(query))&&x.normalTitle!==norm(query)).slice(0,suggestionLimit).map(x=>x.title)
+   : setting('search.quickSuggestions');
   let picksList=[...new Set(suggestions)];
-  if(query.trim()&&!picksList.length){const term=norm(query);picksList=all.filter(x=>x.normalTitle.split(' ').some(word=>word.startsWith(term.slice(0,Math.min(3,term.length)))&&Math.abs(word.length-term.length)<=6)).slice(0,5).map(x=>x.title);}
-  for(const s of [...new Set(picksList)].slice(0,5))picks.append(suggestion(s));
+  if(query.trim()&&!picksList.length){const term=norm(query);picksList=all.filter(x=>x.normalTitle.split(' ').some(word=>word.startsWith(term.slice(0,Math.min(settingNumber('search.minimumFuzzyLength'),term.length)))&&Math.abs(word.length-term.length)<=settingNumber('search.fuzzyWordLengthTolerance'))).slice(0,suggestionLimit).map(x=>x.title);}
+  for(const s of [...new Set(picksList)].slice(0,suggestionLimit))picks.append(suggestion(s));
   if(query.trim()||type!=='all'||section!=='all')picks.append(resetBtn);
  }
  function appendHighlight(target,value,tokens){
@@ -175,18 +176,18 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   let pool=all.filter(x=>(type==='all'||x.type===type)&&(section==='all'||x.section===section));
   const matches=pool.map(x=>({x,score:score(x,q,tokens)})).filter(r=>r.score>=0);
   matches.sort((a,b)=>b.score-a.score||a.x.title.localeCompare(b.x.title,'hu'));
-  const shown=matches.slice(0,max);
+  const shown=matches.slice(0,Math.min(max,maxResults));
   status.textContent=`${matches.length} találat · ${shown.length} megjelenítve`;
   for(const hit of shown)results.append(makeCard(hit.x,tokens));
   if(!matches.length)results.append(element('p','j-search-empty','Nincs pontos találat. Válassz egy javaslatot, egyszerűsítsd a kifejezést, vagy módosítsd a témakör szűrőjét.'));
   if(matches.length && query.trim())results.setAttribute('aria-label',`${matches.length} találat a(z) ${query} keresésre`);
-  more.hidden=shown.length>=matches.length;
+  more.hidden=shown.length>=matches.length||shown.length>=maxResults;
  }
- function setQuery(value){query=String(value||'');max=12;render();}
+ function setQuery(value){query=String(value||'');max=pageSize;render();}
  input.addEventListener('input',()=>setQuery(input.value));
- typeSelect.addEventListener('change',()=>{type=typeSelect.value;max=12;render();});
- sectionSelect.addEventListener('change',()=>{section=sectionSelect.value;max=12;render();});
- more.addEventListener('click',()=>{max+=12;render();});
+ typeSelect.addEventListener('change',()=>{type=typeSelect.value;max=pageSize;render();});
+ sectionSelect.addEventListener('change',()=>{section=sectionSelect.value;max=pageSize;render();});
+ more.addEventListener('click',()=>{max+=pageSize;render();});
  input.addEventListener('keydown',e=>{
   if(e.key==='ArrowDown'){
    const first=results.querySelector('a.search-result');if(first){e.preventDefault();first.focus();}
@@ -201,5 +202,5 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
     if(next<0)input.focus();else arr[next].focus();}
   }
  });
- return {rebuild,render,reset(){query='';type='all';section='all';max=12;input.value='';typeSelect.value='all';sectionSelect.value='all';render();}};
+ return {rebuild,render,reset(){query='';type='all';section='all';max=pageSize;input.value='';typeSelect.value='all';sectionSelect.value='all';render();}};
 }

@@ -1,8 +1,6 @@
 {
   "schemaVersion": "2.0.0",
   "collectionId": "collection:esemenyek",
-  "timezone": "Europe/Budapest",
-  "refreshSeconds": 60,
   "description": "Hivatalosan közölt események ellenőrizhető dátummal.",
   "categories": [
     {

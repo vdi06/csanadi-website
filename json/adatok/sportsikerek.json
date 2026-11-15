@@ -4,7 +4,6 @@
   "title": "Sportolói sikereink",
   "description": "A Csanádi Sportiskola hivatalos büszkeséglistáján szereplő sportolók és közzétett eredményeik.",
   "updatedAt": "2026-11-14T12:00:00+01:00",
-  "refreshSeconds": 60,
   "carousel": {
     "intervalMs": 6500,
     "autoplay": true,

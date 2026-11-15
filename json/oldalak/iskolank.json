@@ -12,7 +12,6 @@
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
   "updatedAt": "2026-11-14T21:00:00+01:00",
-  "schoolYear": "2026/2027",
   "lifecycle": {
     "status": "published",
     "revision": 4
@@ -37,7 +36,7 @@
           "id": "block:000002-text-1",
           "type": "markdown",
           "data": {
-            "text": "A Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium Budapest XIV. kerületében, az Őrnagy utca 5–7. szám alatt működik. Az oktatás és a sport közös története különleges szerepet kap az intézmény életében.\n\nAz iskola múltjáról, névadójáról, hagyományairól és eredményes sportoló tanítványairól külön oldalakon olvashatsz. A történeti adatokhoz az intézmény hivatalos tájékoztatóit használjuk."
+            "text": "A {{site.name}} címe: {{site.address}}. Az oktatás és a sport közös története különleges szerepet kap az intézmény életében.\n\nAz iskola múltjáról, névadójáról, hagyományairól és eredményes sportoló tanítványairól külön oldalakon olvashatsz. A történeti adatokhoz az intézmény hivatalos tájékoztatóit használjuk."
           }
         }
       ]
@@ -93,7 +92,7 @@
           "id": "block:content-review-text-20261114",
           "type": "markdown",
           "data": {
-            "text": "A Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium Budapest XIV. kerületében, az Őrnagy utca 5–7. szám alatt működik. OM azonosítója 200346. A főigazgató a jelenlegi intézményi nyitóoldal szerint Rúzsa Sándor. A sportiskolai és általános közismereti nevelést közös intézményi keretben szervezik.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/kapcsolat.html)"
+            "text": "A {{site.name}} címe: {{site.address}}. OM azonosítója {{site.omIdentifier}}. A főigazgató a jelenlegi intézményi nyitóoldal szerint {{site.directorName}}. A sportiskolai és általános közismereti nevelést közös intézményi keretben szervezik.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/kapcsolat.html)"
           }
         }
       ]

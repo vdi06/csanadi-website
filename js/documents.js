@@ -9,7 +9,7 @@ const KIND={guide:'Segédlet',form:'Nyomtatvány',policy:'Szabályzat',publicati
 const STATUS={published:'Aktuális',archived:'Archív',withdrawn:'Visszavont'};
 const SORTS={newest:'Legújabb elöl',oldest:'Legrégebbi elöl',title:'Cím szerint',size:'Fájlméret szerint'};
 const VIEWS={cards:'Kártyák',list:'Lista',table:'Táblázat'};
-const DEFAULT={q:'',category:'all',kind:'all',status:'published',tag:'all',sort:'newest',view:'cards',hasVersions:false,saved:''};
+const initialFilters=()=>({q:'',category:'all',kind:'all',status:'published',tag:'all',sort:setting('runtime.documents.defaultSort'),view:setting('runtime.documents.defaultView'),hasVersions:false,saved:''});
 let registry=null;
 let hash='';
 let error=null;
@@ -67,7 +67,7 @@ function validateRegistry(data,schema){
  if(!data||!schema||schema.$schema!=='https://json-schema.org/draft/2020-12/schema'||data.schemaVersion!=='1.0.0'||schema.properties?.schemaVersion?.const!==data.schemaVersion)stop('inkompatibilis vagy hiányzó JSON-séma');
  const required=schema.required||[];
  if(required.some(k=>!Object.hasOwn(data,k))||Object.keys(data).some(k=>!required.includes(k)))stop('hibás gyűjteménymezők');
- if(data.collectionId!=='collection:csanadi-public-documents'||data.locale!=='hu-HU'||!dateIsValid(data.updatedAt)||!cleanText(data.description,20)||!Object.hasOwn(VIEWS,data.defaultView)||!Object.hasOwn(SORTS,data.defaultSort)||!Number.isInteger(data.refreshSeconds)||data.refreshSeconds<30||data.refreshSeconds>3600)stop('érvénytelen gyűjtemény-metaadatok');
+ if(data.collectionId!=='collection:csanadi-public-documents'||!dateIsValid(data.updatedAt)||!cleanText(data.description,20)||!Object.hasOwn(VIEWS,setting('runtime.documents.defaultView'))||!Object.hasOwn(SORTS,setting('runtime.documents.defaultSort'))||settingNumber('runtime.documents.refreshSeconds')<30)stop('érvénytelen gyűjtemény-metaadatok');
  if(!Array.isArray(data.categories)||!Array.isArray(data.documents))stop('a kategóriák és dokumentumok listája kötelező');
  const cats=verifiedCategoryTree(data.categories);
  const fields=schema.properties?.documents?.items?.required;
@@ -92,7 +92,7 @@ export async function loadDocumentRegistry(force=false){
  }catch(e){error=String(e.message||e);console.error(error);if(registry)return registry;return null;}
 }
 export function documentRegistryError(){return error;}
-function loadState(){const stored=localRead(STATE_KEY,{});return {...DEFAULT,...Object.fromEntries(Object.keys(DEFAULT).filter(k=>Object.hasOwn(stored,k)).map(k=>[k,stored[k]]))};}
+function loadState(){const defaults=initialFilters(),stored=localRead(STATE_KEY,{});return {...defaults,...Object.fromEntries(Object.keys(defaults).filter(k=>Object.hasOwn(stored,k)).map(k=>[k,stored[k]]))};}
 function saveState(s){localWrite(STATE_KEY,s);}
 const formatDate=(s)=>{try{return new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',day:'numeric'}).format(new Date(s+'T12:00:00'));}catch{return s;}};
 const formatSize=n=>n===null?'—':(n/1024).toLocaleString('hu-HU',{maximumFractionDigits:1})+' KB';
@@ -104,7 +104,7 @@ function routeCategory(route){
 function childCategories(id,cats){const descendants=new Set([id]);let prev=-1;while(prev!==descendants.size){prev=descendants.size;for(const c of cats.values())if(descendants.has(c.parentId))descendants.add(c.id);}return descendants;}
 function matchedDocuments(s){
  if(!registry)return[];
- const categories=s.category==='all'?null:childCategories(s.category,registry.cats),q=normal(s.q),date=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Budapest',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+ const categories=s.category==='all'?null:childCategories(s.category,registry.cats),q=normal(s.q),date=new Intl.DateTimeFormat('sv-SE',{timeZone:setting('modules2026.clock.timezone'),year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
  let docs=registry.data.documents.filter(d=>(s.status==='all'||d.status===s.status)&&(d.status!=='published'||d.validFrom<=date)&&(!d.validTo||d.validTo>=date||s.status!=='published')&&(!categories||categories.has(d.categoryId))&&(s.kind==='all'||d.documentKind===s.kind)&&(s.tag==='all'||d.tags.includes(s.tag))&&(!s.hasVersions||d.versionHistory.length>1));
  if(q)docs=docs.filter(d=>normal([d.title,d.summary,d.categoryId,...d.tags,...d.keywords].join(' ')).includes(q));
  docs.sort((a,b)=>s.sort==='oldest'?a.publishedAt.localeCompare(b.publishedAt):s.sort==='title'?a.title.localeCompare(b.title,'hu'):s.sort==='size'?(b.fileSizeBytes||0)-(a.fileSizeBytes||0):b.publishedAt.localeCompare(a.publishedAt)||a.title.localeCompare(b.title,'hu'));
@@ -114,7 +114,7 @@ function makeTag(text,cls=''){return el('span','doc-tag '+cls,text);}
 function htmlButton(text,cls,fn){const b=el('button',cls,text);b.type='button';b.addEventListener('click',fn);return b;}
 function field(labelText,widget){const group=el('label','doc-filter-field');group.append(el('span','doc-field-label',labelText),widget);return group;}
 function selectNode(options,value,onChange){const s=el('select','form-select doc-control');for(const [v,label] of options){const op=el('option',null,label);op.value=v;s.append(op);}s.value=value;s.addEventListener('change',()=>onChange(s.value));return s;}
-function searchInput(value,cb){const input=el('input','form-control doc-control');input.type='search';input.placeholder='Cím, leírás, kulcsszó…';input.value=value;input.autocomplete='off';const datalist=el('datalist');datalist.id='doc-suggestions';for(const token of [...new Set(registry.data.documents.flatMap(d=>[d.title,...d.tags]))].slice(0,35)){const o=el('option');o.value=token;datalist.append(o);}input.setAttribute('list',datalist.id);input.addEventListener('input',()=>cb(input.value));const wrapper=el('div');wrapper.append(input,datalist);return wrapper;}
+function searchInput(value,cb){const input=el('input','form-control doc-control');input.type='search';input.placeholder='Cím, leírás, kulcsszó…';input.value=value;input.autocomplete='off';const datalist=el('datalist');datalist.id='doc-suggestions';for(const token of [...new Set(registry.data.documents.flatMap(d=>[d.title,...d.tags]))].slice(0,settingNumber('runtime.documents.suggestionLimit'))){const o=el('option');o.value=token;datalist.append(o);}input.setAttribute('list',datalist.id);input.addEventListener('input',()=>cb(input.value));const wrapper=el('div');wrapper.append(input,datalist);return wrapper;}
 function categoryOptions(){const out=[['all','Összes kategória']];const list=[...registry.cats.values()].sort((a,b)=>a.order-b.order||a.label.localeCompare(b.label,'hu'));
  const walk=(pid,depth)=>{for(const c of list.filter(x=>x.parentId===pid)){out.push([c.id,'  '.repeat(depth)+(depth?'↳ ':'')+c.label]);walk(c.id,depth+1);}};walk(null,0);return out;}
 function statusLabel(d){return STATUS[d.status]||d.status;}
@@ -127,7 +127,7 @@ function openPreview(doc){
  dialog.append(el('p','doc-preview-explain',doc.official?'Jóváhagyott intézményi dokumentum.':'Önálló tanulási segédlet, nem intézményi szabályzat.'));
  if(doc.status!=='withdrawn'&&doc.filePath){
   const iframe=el('iframe','doc-iframe');iframe.title=doc.title+' előnézete';iframe.loading='lazy';iframe.src=docURL(doc)+'#toolbar=1';dialog.append(iframe);
-  const fallback=el('p','doc-preview-fallback','Ha az előnézet üres vagy a böngésző nem támogatja, használd a Megnyitás új lapon vagy a Letöltés gombot.');dialog.append(fallback);
+  const fallback=el('p','doc-preview-fallback','Ha az előnézet üres, használd a Megnyitás új lapon vagy a Letöltés gombot.');fallback.setAttribute('role','status');dialog.append(fallback);
   const actions=el('div','doc-preview-actions');const open=el('a','btn btn-outline-secondary','Megnyitás új lapon');open.href=docURL(doc);open.target='_blank';open.rel='noopener noreferrer';
   const download=el('a','btn btn-primary','Letöltés ('+formatSize(doc.fileSizeBytes)+')');download.href=docURL(doc);download.download=doc.fileName;actions.append(open,download);dialog.append(actions);
  }else dialog.append(el('p','doc-error','A dokumentumot visszavonták; nem elérhető letöltés.'));
@@ -150,7 +150,7 @@ function documentCard(d,view){
   const details=el('div','doc-meta');details.append(makeTag(KIND[d.documentKind]),makeTag(statusLabel(d),d.status==='published'?'doc-tag-good':''),makeTag('v'+d.version),makeTag(formatSize(d.fileSizeBytes)));
   text.append(details);
   const actions=el('div','doc-actions');actions.append(htmlButton('Részletek és előnézet','doc-action',()=>openPreview(d)));
-  if(d.filePath&&d.status!=='withdrawn'){const a=el('a','doc-download','Letöltés ↓');a.href=docURL(d);a.download=d.fileName;actions.append(a);}
+  if(d.filePath&&d.status!=='withdrawn'){const open=el('a','doc-download','Megnyitás ↗');open.href=docURL(d);open.target='_blank';open.rel='noopener noreferrer';const a=el('a','doc-download','Letöltés ↓');a.href=docURL(d);a.download=d.fileName;actions.append(open,a);}
   card.append(text,actions);
  }
  return card;
@@ -158,7 +158,7 @@ function documentCard(d,view){
 function statusBanner(text,cls=''){const x=el('div','doc-status '+cls,text);set(x,'role','status');set(x,'aria-live','polite');return x;}
 function renderCenterContents(mount,route,initial){
  if(!mount?.isConnected)return;
- mount.replaceChildren();const docRoute=routeCategory(route),state={...DEFAULT,...initial};
+ mount.replaceChildren();const docRoute=routeCategory(route),state={...initialFilters(),...initial};
  if(docRoute!=='all')state.category=docRoute;
  if(!registry){mount.append(statusBanner(error||'A dokumentumadatok jelenleg nem érhetők el.','error'));return;}
  if(!registry.cats.has(state.category)&&state.category!=='all')state.category='all';
@@ -192,7 +192,7 @@ function renderCenterContents(mount,route,initial){
  const notes=el('div','doc-filter-notes');
  let syncTimer=null;
  function change(k,v,rerenderAll=false){state[k]=v;state.saved='';saveState(state);if(rerenderAll){renderCenterContents(mount,route,state);}else updateResults();}
- const search=searchInput(state.q,v=>{state.q=v;saveState(state);clearTimeout(syncTimer);syncTimer=setTimeout(updateResults,130);});
+ const search=searchInput(state.q,v=>{state.q=v;saveState(state);clearTimeout(syncTimer);syncTimer=setTimeout(updateResults,settingNumber('runtime.documents.searchDelayMs'));});
  filters.append(field('Keresés',search));
  filters.append(field('Kategória',selectNode(categoryOptions(),state.category,v=>change('category',v,true))));
  filters.append(field('Dokumentumtípus',selectNode([['all','Mindegyik'],...Object.entries(KIND)],state.kind,v=>change('kind',v,true))));
@@ -205,15 +205,15 @@ function renderCenterContents(mount,route,initial){
  const toolbar=el('div','doc-toolbar');const viewControl=el('div','doc-view-control');
  for(const [mode,label] of Object.entries(VIEWS)){const b=htmlButton(label,'doc-view-button'+(state.view===mode?' is-current':''),()=>change('view',mode,true));b.setAttribute('aria-pressed',String(state.view===mode));viewControl.append(b);}
  const refresh=htmlButton('Adatok frissítése ↻','doc-refresh',async()=>{refresh.disabled=true;notes.textContent='Frissítés folyamatban…';await loadDocumentRegistry(true);refresh.disabled=false;notes.textContent=error?'Nem sikerült ellenőrizni az új adatokat; a korábbi lista megmaradt.':'Adatok ellenőrizve: '+new Date().toLocaleTimeString('hu-HU');});
- const clear=htmlButton('Szűrők törlése','doc-reset',()=>{const next={...DEFAULT,category:docRoute};saveState(next);renderCenterContents(mount,route,next);});
+ const clear=htmlButton('Szűrők törlése','doc-reset',()=>{const next={...initialFilters(),category:docRoute};saveState(next);renderCenterContents(mount,route,next);});
  toolbar.append(viewControl,refresh,clear);
  mount.append(toolbar,resultLabel,notes);
  const savedPane=el('div','doc-saved-panel');const savedList=selectNode([['','Mentett szűrés kiválasztása']], '',()=>{});
  savedList.classList.add('doc-saved-select');const savedInput=el('input','form-control doc-control');savedInput.type='text';savedInput.maxLength=60;savedInput.placeholder='Szűrés neve (pl. Felvételi)';set(savedInput,'aria-label','Mentett szűrés neve');
- const save=htmlButton('Szűrés mentése','doc-save',()=>{const label=savedInput.value.trim();if(label.length<3){notes.textContent='Adj legalább három karakter hosszú nevet a szűrésnek.';return;}const all=localRead(SEARCH_KEY,{});if(Object.keys(all).length>=20&&!Object.hasOwn(all,label)){notes.textContent='Legfeljebb 20 szűrés menthető.';return;}all[label]={...state,saved:''};localWrite(SEARCH_KEY,all);savedInput.value='';renderCenterContents(mount,route,state);});
+ const save=htmlButton('Szűrés mentése','doc-save',()=>{const label=savedInput.value.trim();if(label.length<3){notes.textContent='Adj legalább három karakter hosszú nevet a szűrésnek.';return;}const all=localRead(SEARCH_KEY,{});if(Object.keys(all).length>=settingNumber('runtime.documents.maxSavedFilters')&&!Object.hasOwn(all,label)){notes.textContent='A mentett szűrések száma elérte a központi beállításban megadott maximumot.';return;}all[label]={...state,saved:''};localWrite(SEARCH_KEY,all);savedInput.value='';renderCenterContents(mount,route,state);});
  const remove=htmlButton('Mentés törlése','doc-delete-save',()=>{const key=savedList.value;if(!key)return;const all=localRead(SEARCH_KEY,{});delete all[key];localWrite(SEARCH_KEY,all);renderCenterContents(mount,route,state);});
  const saved=localRead(SEARCH_KEY,{});savedList.replaceChildren();for(const [id,label] of [['','Mentett szűrések'],...Object.keys(saved).sort((a,b)=>a.localeCompare(b,'hu')).map(x=>[x,x])]){const opt=el('option',null,label);opt.value=id;savedList.append(opt);}
- savedList.addEventListener('change',()=>{const chosen=savedList.value;if(!chosen||!saved[chosen])return;const next={...DEFAULT,...saved[chosen]};saveState(next);renderCenterContents(mount,route,next);});
+ savedList.addEventListener('change',()=>{const chosen=savedList.value;if(!chosen||!saved[chosen])return;const next={...initialFilters(),...saved[chosen]};saveState(next);renderCenterContents(mount,route,next);});
  savedPane.append(field('Mentett szűrő',savedList),field('Új mentés',savedInput),save,remove);mount.append(savedPane);
  mount.append(results);
  function updateResults(){
@@ -236,7 +236,7 @@ export function renderDocumentCenter(route){
 }
 export function renderRelatedDocuments(route){
  if(!registry||!route||route.startsWith('#/informaciok/dokumentumtar'))return null;
- const docs=registry.data.documents.filter(d=>d.status==='published'&&d.relatedRoutes.includes(route)).slice(0,4);
+const docs=registry.data.documents.filter(d=>d.status==='published'&&d.relatedRoutes.includes(route)).slice(0,settingNumber('runtime.display.documentRelated'));
  if(!docs.length)return null;
  const section=el('section','doc-related');section.append(el('p','doc-kicker','KAPCSOLÓDÓ DOKUMENTUMOK'),el('h2',null,'Hasznos letölthető anyagok'));
  const list=el('div','doc-related-list');for(const d of docs){const card=el('article','doc-related-item');card.append(el('strong',null,d.title),el('p',null,d.summary),makeTag(d.official?'Intézményi dokumentum':'Általános segédlet'));
@@ -248,8 +248,9 @@ export function renderRelatedDocuments(route){
 export function renderDocumentQuickLinks(){
  if(!registry)return null;
  const s=el('section','doc-home-teaser section-wrap');const container=el('div','container-xxl');container.append(el('p','doc-kicker','DOKUMENTUMKÖZPONT'),el('h2','section-title','Letölthető útmutatók és segédletek'),el('p','doc-lead','Áttekinthető, kereshető gyűjtemény ellenőrzött fájlhivatkozásokkal. A hivatalos iskolai dokumentumokat elkülönítve kezeljük.'));
- const list=el('div','doc-related-list');for(const d of registry.data.documents.filter(x=>x.status==='published').slice(0,3)){
+ const list=el('div','doc-related-list');for(const d of registry.data.documents.filter(x=>x.status==='published').slice(0,settingNumber('runtime.display.documentTeasers'))){
   const c=el('article','doc-related-item');c.append(el('span','doc-kicker','PDF SEGÉDLET'),el('h3',null,d.title),el('p',null,d.summary));c.append(htmlButton('Megtekintés →','doc-action',()=>openPreview(d)));list.append(c);
  }container.append(list);const a=el('a','doc-center-link','Dokumentumtár megnyitása →');a.href='#/informaciok/dokumentumtar';container.append(a);s.append(container);return s;
 }
-export function documentRefreshSeconds(){return registry?.data?.refreshSeconds||90;}
+export function documentRefreshSeconds(){return settingNumber('runtime.documents.refreshSeconds');}
+import {setting,settingNumber} from './site-settings-2026.js';

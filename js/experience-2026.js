@@ -7,11 +7,11 @@ const add=(target,...kids)=>{kids.filter(Boolean).forEach(k=>target.append(k));r
 const safe=(s)=>String(s||'').replace(/[^a-zA-Z0-9À-ž _.,!?–:()/-]/g,'').slice(0,220);
 async function dataJSON(path){const r=await fetch('json/adatok/'+path,{cache:'no-store'});if(!r.ok)throw new Error('A '+path+' nem tölthető be ('+r.status+')');return r.json();}
 const note=(txt)=>e('p','experience-data-note',txt);
-const timeZone='Europe/Budapest';
-const parts=d=>Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone,year:'numeric',month:'2-digit',day:'2-digit',weekday:'short',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).formatToParts(d).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
+const timeZone=()=>setting('modules2026.clock.timezone');
+const parts=d=>Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:timeZone(),year:'numeric',month:'2-digit',day:'2-digit',weekday:'short',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).formatToParts(d).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
 const isoDay=p=>p.year+'-'+p.month+'-'+p.day;
 const pad=n=>String(n).padStart(2,'0');
-const huDate=(date)=>new Intl.DateTimeFormat('hu-HU',{timeZone,year:'numeric',month:'long',day:'numeric',weekday:'long'}).format(date);
+const huDate=(date)=>new Intl.DateTimeFormat('hu-HU',{timeZone:timeZone(),year:'numeric',month:'long',day:'numeric',weekday:'long'}).format(date);
 const minuteTime=s=>/^([01]\d|2[0-3]):[0-5]\d$/.test(s)?Number(s.slice(0,2))*60+Number(s.slice(3)):null;
 const href=(url)=>typeof url==='string'&&(/^#\/[a-z0-9/-]*$/.test(url)||/^https:\/\/[^\s<>"']+$/.test(url))?url:'#/';
 const sectionHead=(overline,title,description)=>{const box=e('div','experience-section-head');add(box,e('span','experience-eyebrow',overline),e('h2','experience-title',title));if(description)box.append(e('p','experience-lead',description));return box;};
@@ -33,11 +33,11 @@ export function openEntrancePortal(){
  const skip=e('button','entry-portal-skip','Animáció átugrása');skip.type='button';
  add(copy,enter,skip);add(frame,left,right);add(screen,backdrop,frame,copy);document.body.append(screen);
  const before=document.activeElement;let ended=false;let timer1,timer2,timer3;
- function finish(){if(ended)return;ended=true;clearTimeout(timer1);clearTimeout(timer2);clearTimeout(timer3);screen.classList.add('is-finished');setTimeout(()=>{screen.remove();document.querySelector('.brand')?.focus?.();},450);}
- function open(){if(ended)return;screen.classList.add('is-opening');timer3=setTimeout(finish,2200);}
+ function finish(){if(ended)return;ended=true;clearTimeout(timer1);clearTimeout(timer2);clearTimeout(timer3);screen.classList.add('is-finished');setTimeout(()=>{screen.remove();document.querySelector('.brand')?.focus?.();},settingNumber('runtime.timing.entranceCleanupMs'));}
+ function open(){if(ended)return;screen.classList.add('is-opening');timer3=setTimeout(finish,settingNumber('runtime.timing.entranceOpenDurationMs'));}
  enter.addEventListener('click',open);skip.addEventListener('click',finish);
  screen.addEventListener('keydown',ev=>{if(ev.key==='Escape'){ev.preventDefault();finish();}});
- timer1=setTimeout(open,1250);timer2=setTimeout(finish,6500);skip.focus();
+ timer1=setTimeout(open,settingNumber('runtime.timing.entranceOpenDelayMs'));timer2=setTimeout(finish,settingNumber('runtime.timing.entranceFinishDelayMs'));skip.focus();
 }
 
 export function renderDigitalClock(){
@@ -45,7 +45,7 @@ export function renderDigitalClock(){
  add(panel,e('div','experience-panel-tag','PONTOS IDŐ · BUDAPEST'),e('div','seven-segment-clock','--:--:--'),e('p','clock-date',''));
  const digits=panel.querySelector('.seven-segment-clock'),date=panel.querySelector('.clock-date');
  const tick=()=>{const p=parts(new Date());digits.textContent=p.hour+':'+p.minute+':'+p.second;date.textContent=huDate(new Date());};tick();
- const timer=setInterval(()=>{if(!panel.isConnected){clearInterval(timer);return;}tick();},1000);
+ const timer=setInterval(()=>{if(!panel.isConnected){clearInterval(timer);return;}tick();},settingNumber('modules2026.clock.tickSeconds')*1000);
  return panel;
 }
 function validateBell(payload){
@@ -64,7 +64,7 @@ export function renderBellPanel({expanded=false}={}){
  const paint=()=>{
   if(!data||!panel.isConnected)return;
   const p=parts(new Date()),now=Number(p.hour)*60+Number(p.minute)+Number(p.second)/60;
-  const week=Number(new Intl.DateTimeFormat('en-US',{timeZone,weekday:'short'}).format(new Date()).replace(/.*/,x=>['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(x)))||0;
+  const week=Number(new Intl.DateTimeFormat('en-US',{timeZone:timeZone(),weekday:'short'}).format(new Date()).replace(/.*/,x=>['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(x)))||0;
   const isSchoolDay=week>=1&&week<=5;
   const current=isSchoolDay?data.periods.find(x=>now>=minuteTime(x.start)&&now<minuteTime(x.end)):null;
   const next=isSchoolDay?data.periods.find(x=>minuteTime(x.start)>now):null;
@@ -79,7 +79,7 @@ export function renderBellPanel({expanded=false}={}){
   data=validateBell(x);
   panel.querySelector('.bell-data-status').textContent=data.verifiedBySchool&&data.status==='verified'?'Ellenőrzött':'BEMUTATÓ · NEM HIVATALOS';
   if(!data.verifiedBySchool)panel.insertBefore(note('A látható időpontok szemléltető adatok. A valós csengetési rendet az iskola jóváhagyása után lehet feltölteni.'),hours);
-  hours.replaceChildren();(expanded?data.periods:data.periods.slice(0,5)).forEach(item=>{
+  hours.replaceChildren();(expanded?data.periods:data.periods.slice(0,settingNumber('runtime.display.galleryCollapsedPeriods'))).forEach(item=>{
    const row=e('div','bell-row');row.dataset.number=String(item.number);
    add(row,e('span','bell-row-nr',item.number+'. óra'),e('strong','',item.start+' – '+item.end));hours.append(row);
   });paint();
@@ -88,7 +88,7 @@ export function renderBellPanel({expanded=false}={}){
  return panel;
 }
 function validEvents(value){return Array.isArray(value?.items)?value.items.filter(x=>x&&typeof x.title==='string'&&x.verified===true&&typeof x.startsAt==='string'&&/^\d{4}-\d{2}-\d{2}/.test(x.startsAt)):[];}
-function monthInfo(date){return new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',timeZone}).format(date);}
+function monthInfo(date){return new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',timeZone:timeZone()}).format(date);}
 export function renderCalendarPanel({expanded=false}={}){
  const panel=e('section','experience-panel calendar-panel');panel.setAttribute('aria-label','Interaktív eseménynaptár');
  const header=e('div','calendar-control');const prev=e('button','calendar-nav','‹'),next=e('button','calendar-nav','›'),today=e('button','calendar-today','Ma');
@@ -128,9 +128,9 @@ export function renderLifeGallery(){
  const section=e('section','photo-wall-section section-wrap');section.id='eletkepek';const container=e('div','container-xxl');
  add(container,sectionHead('ÉLETKÉPEK ÉS PILLANATOK','Sport, tudás, közösség – képekben','Fedezd fel a sportágakat, a közös tanulás örömét és a közösségi élményeket sokféle tematikus képen.'));
  const controls=e('div','photo-wall-controls'),results=e('span','gallery-results'),grid=e('div','photo-wall-grid');const more=e('button','gallery-more','További képek mutatása');more.type='button';
- let entries=[],filter='mind',limit=24;
+ let entries=[],filter='mind',limit=settingNumber('runtime.display.galleryBatch');
  const choices=[['mind','Összes'],['sport','Sport'],['oktatas','Tanulás'],['kozosseg','Közösség']];
- choices.forEach(([key,label])=>{const b=e('button','gallery-filter',label);b.type='button';b.dataset.filter=key;b.setAttribute('aria-pressed',String(key===filter));b.addEventListener('click',()=>{filter=key;limit=24;draw();});controls.append(b);});controls.append(results);
+ choices.forEach(([key,label])=>{const b=e('button','gallery-filter',label);b.type='button';b.dataset.filter=key;b.setAttribute('aria-pressed',String(key===filter));b.addEventListener('click',()=>{filter=key;limit=settingNumber('runtime.display.galleryBatch');draw();});controls.append(b);});controls.append(results);
  const modal=document.createElement('dialog');modal.className='gallery-lightbox';const img=e('img'),caption=e('p','gallery-lightbox-title');const close=e('button','gallery-lightbox-close','Bezárás ×');close.type='button';close.addEventListener('click',()=>modal.close());add(modal,close,img,caption);modal.addEventListener('click',ev=>{if(ev.target===modal)modal.close();});
  function draw(){
   controls.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.filter===filter)));
@@ -141,7 +141,7 @@ export function renderLifeGallery(){
    add(tile,photo,e('span','photo-tile-caption',item.title));tile.addEventListener('click',()=>{img.src=item.src;img.alt=item.alt;caption.textContent=item.title;modal.showModal();});grid.append(tile);
   });more.hidden=items.length<=limit;
  }
- more.addEventListener('click',()=>{limit+=24;draw();});
+ more.addEventListener('click',()=>{limit+=settingNumber('runtime.display.galleryBatch');draw();});
  add(container,controls,grid,more,modal,document.createDocumentFragment());
  section.append(container);
  dataJSON('kepgaleria.json').then(v=>{if(v?.schemaVersion!=='1.0.0'||!Array.isArray(v.items))throw Error('A képgaléria JSON hibás.');entries=v.items.filter(x=>x.verifiedSchoolPhoto===false&&/^assets\/media\/web\/[a-z0-9-]+\.webp$/.test(x.src)&&typeof x.title==='string');draw();}).catch(err=>{grid.append(e('p','experience-error','Nem tölthető be a galéria: '+err.message));});
@@ -196,3 +196,4 @@ export function renderStaffCenter(){
  }).catch(err=>grid.append(e('p','experience-error',err.message)));
  return wrap;
 }
+import {setting,settingNumber} from './site-settings-2026.js';

@@ -7,12 +7,8 @@
   "required": [
     "schemaVersion",
     "collectionId",
-    "locale",
     "updatedAt",
     "description",
-    "defaultView",
-    "defaultSort",
-    "refreshSeconds",
     "categories",
     "documents"
   ],
@@ -23,9 +19,6 @@
     "collectionId": {
       "const": "collection:csanadi-public-documents"
     },
-    "locale": {
-      "const": "hu-HU"
-    },
     "updatedAt": {
       "type": "string",
       "format": "date"
@@ -33,26 +26,6 @@
     "description": {
       "type": "string",
       "minLength": 20
-    },
-    "defaultView": {
-      "enum": [
-        "cards",
-        "list",
-        "table"
-      ]
-    },
-    "defaultSort": {
-      "enum": [
-        "newest",
-        "oldest",
-        "title",
-        "size"
-      ]
-    },
-    "refreshSeconds": {
-      "type": "integer",
-      "minimum": 30,
-      "maximum": 3600
     },
     "categories": {
       "type": "array",

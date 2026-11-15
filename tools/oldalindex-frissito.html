@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="../css/tools-2026.css?v=20261114tool2">
 <script src="tool-ui-2026.js?v=20261114tool1" defer>
 </script>
+<script src="tool-settings-2026.js" defer></script>
 </head><body class="csanadi-tool"><a class="skip-link" href="#tool-main">Ugrás a szerkesztéshez</a>
 <header class="tool-header">
   <div class="tool-topbar">
@@ -44,7 +45,7 @@ document.getElementById('make').addEventListener('click',async()=>{
   const folder=[...document.getElementById('folder').files],direct=[...document.getElementById('files').files];
   const picked=folder.length?folder:direct;if(!picked.length)throw Error('Nincs kiválasztott oldal-JSON.');
   const pages={};
-  for(const file of picked){if(!file.name.endsWith('.json'))continue;if(file.size>500000)throw Error('Túl nagy fájl: '+file.name);
+  const config=await globalThis.csanadiToolSettings;for(const file of picked){if(!file.name.endsWith('.json'))continue;if(file.size>config.runtime.tools.pageJsonMaximumBytes)throw Error('Túl nagy fájl: '+file.name);
    const p=JSON.parse(await file.text());if(!/^page:\d{6}$/.test(p.id||'')||!Array.isArray(p.blocks)||!/^#\/[a-z0-9-/]*$/.test(p.schemaExtensions?.route||'')||p.lifecycle?.status!=='published')throw Error('Hibás vagy nem publikált oldal: '+file.name);
    const path=derivePath(file,p),texts=[];getTexts(p.blocks,texts);if(pages[path])throw Error('Ismétlődő útvonal: '+path);
    pages[path]={id:p.id,title:p.title,menuLabel:p.menuLabel||p.title,summary:p.summary||'',tags:p.tags||[],categories:p.categories||[],lifecycle:{status:'published'},schemaExtensions:p.schemaExtensions,searchText:texts.join(' ').slice(0,16000),blocks:[]};

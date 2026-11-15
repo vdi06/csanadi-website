@@ -18,7 +18,7 @@ export function renderDocumentCollections(){
  const manualPdf=node('a','','Teljes PDF-kézikönyv letöltése');manualPdf.href='assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf';manualPdf.download='csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf';
  manualActions.append(manualWeb,manualPdf);manual.append(manualTitle,manualLead,manualActions);
  toolbar.append(search,select);box.append(manual,title,text,toolbar,result,grid,more);
- let docs=[],categories=new Map(),limit=6;
+ let docs=[],categories=new Map(),limit=settingNumber('runtime.display.documentCollectionBatch');
  const display=()=>{
   if(!box.isConnected)return;
   const q=fold(search.value.trim()),cat=select.value;
@@ -31,7 +31,7 @@ export function renderDocumentCollections(){
   result.textContent=`${items.length} megfelelő segédlet · ${Math.min(limit,items.length)} megjelenítve`;
   more.hidden=items.length<=limit;
  };
- search.addEventListener('input',()=>{limit=6;display();});select.addEventListener('change',()=>{limit=6;display();});more.addEventListener('click',()=>{limit+=6;display();});
+ search.addEventListener('input',()=>{limit=settingNumber('runtime.display.documentCollectionBatch');display();});select.addEventListener('change',()=>{limit=settingNumber('runtime.display.documentCollectionBatch');display();});more.addEventListener('click',()=>{limit+=settingNumber('runtime.display.documentCollectionBatch');display();});
  fetch(STORE,{cache:'no-cache'}).then(x=>{if(!x.ok)throw Error('Dokumentumok nem elérhetők');return x.json();}).then(data=>{
   for(const c of data.categories||[])categories.set(c.id,c.label);
   docs=(data.documents||[]).filter(x=>x.filePath&&x.filePath.toLowerCase().endsWith('.pdf')&&x.status==='published');
@@ -40,3 +40,4 @@ export function renderDocumentCollections(){
  }).catch(err=>{result.textContent='A dokumentumtár nem tölthető be: '+err.message;});
  return box;
 }
+import {settingNumber} from './site-settings-2026.js';

@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../css/tools-2026.css?v=20261114tool2">
 <script src="tool-ui-2026.js?v=20261114tool1" defer>
 </script>
+<script src="tool-settings-2026.js" defer></script>
 </head>
 <body class="csanadi-tool"><a class="skip-link" href="#tool-main">Ugrás a szerkesztéshez</a>
 <header class="tool-header">
@@ -48,7 +49,8 @@ function addRow(entry={}){
  grid.append(field('Cikk címe','title'),field('Kategória','category'),field('Eredeti cikk URL-je','url','url'),field('Megjelenés időpontja (ISO)','publishedAt'));
  card.append(grid);const del=make('button','Bejegyzés törlése');del.type='button';del.style.marginTop='10px';del.addEventListener('click',()=>card.remove());card.append(del);list.append(card);
 }
-function collect(){
+async function collect(){
+ const config=await globalThis.csanadiToolSettings;
  const results=[];
  for(const [i,card] of [...list.querySelectorAll('.item')].entries()){
   const obj={};for(const input of card.querySelectorAll('[data-key]'))obj[input.dataset.key]=input.value.trim();
@@ -58,15 +60,15 @@ function collect(){
   if(Date.parse(obj.publishedAt)>Date.now()+120000)throw Error((i+1)+'. hír: jövőbeli időpont nem elfogadható.');
   obj.category=obj.category||'Sport';results.push(obj);
  }
- return results.sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt)).slice(0,18);
+ return results.sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt)).slice(0,config.runtime.news.maximumEditorRows);
 }
 document.getElementById('add').addEventListener('click',()=>addRow({category:'Sport',publishedAt:new Date().toISOString()}));
 document.getElementById('clear').addEventListener('click',()=>{if(window.confirm('Valóban üríted a szerkesztett hírlistát?')){list.replaceChildren();status.textContent='A helyi lista kiürítve.';}});
 document.getElementById('import').addEventListener('change',async e=>{
- try{const f=e.target.files[0];if(!f)return;if(f.size>1000000)throw Error('Túl nagy JSON-fájl.');const data=JSON.parse(await f.text());if(data.collectionId!=='collection:napi-sporthirek'||!Array.isArray(data.items))throw Error('Nem sporthír-adatállomány.');list.replaceChildren();for(const item of data.items.slice(0,18))addRow(item);status.textContent=`${list.children.length} hír betöltve. A szerkesztés még nincs közzétéve.`;}catch(err){status.textContent='Hiba: '+err.message;}
+ try{const f=e.target.files[0];if(!f)return;const config=await globalThis.csanadiToolSettings;if(f.size>config.runtime.tools.sportNewsJsonMaximumBytes)throw Error('Túl nagy JSON-fájl.');const data=JSON.parse(await f.text());if(data.collectionId!=='collection:napi-sporthirek'||!Array.isArray(data.items))throw Error('Nem sporthír-adatállomány.');list.replaceChildren();for(const item of data.items.slice(0,config.runtime.news.maximumEditorRows))addRow(item);status.textContent=`${list.children.length} hír betöltve. A szerkesztés még nincs közzétéve.`;}catch(err){status.textContent='Hiba: '+err.message;}
 });
-document.getElementById('save').addEventListener('click',()=>{
- try{const rows=collect();const payload={schemaVersion:'1.0.0',collectionId:'collection:napi-sporthirek',updatedAt:new Date().toISOString(),items:rows};
+document.getElementById('save').addEventListener('click',async()=>{
+ try{const rows=await collect();const payload={schemaVersion:'1.0.0',collectionId:'collection:napi-sporthirek',updatedAt:new Date().toISOString(),items:rows};
  const blob=new Blob([JSON.stringify(payload,null,2)+'\n'],{type:'application/json;charset=utf-8'});const url=URL.createObjectURL(blob);const a=make('a');a.href=url;a.download='napi-sporthirek.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);
  status.textContent=`${rows.length} sporthír JSON-ja letöltve. A fájlt ezután kézzel kell feltölteni az FTP-re.`;
  }catch(err){status.textContent='Hiba: '+err.message;}

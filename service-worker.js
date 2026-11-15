@@ -1,15 +1,54 @@
-const VERSION='csanadi-r13-20261115';
-const MEDIA_VERSION=VERSION+'-media';
-const MEDIA_LIMIT=100;
-const SHELL=['./','./index.html','./utmutato.html','./css/round13-accessibility.css','./js/round13-network.js','./assets/media/logo/csanadi-cimer-512.webp'];
-const isLocal=url=>url.origin===self.location.origin&&url.pathname.startsWith(new URL('./',self.registration.scope).pathname);
-self.addEventListener('install',event=>{event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()).catch(()=>self.skipWaiting()));});
-self.addEventListener('activate',event=>{event.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(name=>name.startsWith('csanadi-r')&&name!==VERSION&&name!==MEDIA_VERSION).map(name=>caches.delete(name)))),self.clients.claim()]));});
-self.addEventListener('fetch',event=>{
- const request=event.request;if(request.method!=='GET')return;
- const url=new URL(request.url);if(!isLocal(url))return;
- const isJson=/\.json$/i.test(url.pathname),isPage=request.mode==='navigate',isMedia=/\.(?:avif|webp|png|jpg|jpeg|svg|gif|mp4|webm|pdf)$/i.test(url.pathname);
- if(isPage||isJson){event.respondWith(fetch(request).then(response=>{if(response.ok){const copy=response.clone();caches.open(VERSION).then(cache=>cache.put(request,copy)).catch(()=>{});}return response;}).catch(async()=>{const cached=await caches.match(request);return cached||(isPage?await caches.match('./index.html'):Response.error());}));return;}
- if(isMedia){event.respondWith(caches.match(request).then(cached=>cached||fetch(request).then(response=>{if(response.ok){const copy=response.clone();caches.open(MEDIA_VERSION).then(async cache=>{await cache.put(request,copy);const keys=await cache.keys();if(keys.length>MEDIA_LIMIT)await Promise.all(keys.slice(0,keys.length-MEDIA_LIMIT).map(key=>cache.delete(key)));}).catch(()=>{});}return response;})));return;}
- event.respondWith(fetch(request).then(response=>{if(response.ok){const copy=response.clone();caches.open(VERSION).then(cache=>cache.put(request,copy)).catch(()=>{});}return response;}).catch(()=>caches.match(request)));
-});
+const scope=new URL('./',self.registration.scope);
+let configPromise=null,lastConfigAt=0,lastConfig=null;
+const local=url=>url.origin===scope.origin&&url.pathname.startsWith(scope.pathname);
+async function configuration(){
+ if(configPromise&&(!lastConfig||Date.now()-lastConfigAt<lastConfig.refresh.structureSeconds*1000))return configPromise;
+ configPromise=(async()=>{
+  const url=new URL('json/config.json',scope);
+  try{const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);return response.json();}
+  catch(error){const cached=await caches.match(url,{ignoreSearch:true});if(!cached)throw error;return cached.json();}
+ })();
+ configPromise=configPromise.then(value=>{lastConfig=value;lastConfigAt=Date.now();return value;}).catch(error=>{configPromise=null;throw error;});
+ return configPromise;
+}
+const names=config=>({shell:config.performance.cacheVersion,media:config.performance.cacheVersion+'-media'});
+async function precache(){
+ const config=await configuration(),cacheNames=names(config),cache=await caches.open(cacheNames.shell);
+ const start=['./','./index.html','./utmutato.html','./offline.html','./json/config.json','./service-worker.js','./release-manifest.json','./assets/media/logo/csanadi-cimer-512.webp'];
+ let paths=start;
+ try{
+  const response=await fetch(new URL('release-manifest.json',scope),{cache:'no-store'});
+  if(response.ok){const manifest=await response.json(),max=config.performance.offlinePrecacheFileMaxBytes,limit=config.performance.offlinePrecacheMaxEntries;
+   const selected=Object.entries(manifest.files||{}).filter(([path,meta])=>/^(?:css|js|json)\/.+\.(?:css|js|json)$/.test(path)&&meta.sizeBytes<=max).slice(0,limit).map(([path])=>'./'+path);
+   paths=[...new Set([...start,'./script.js',...selected])];
+  }
+ }catch{}
+ const concurrency=Math.max(1,config.refresh.maxConcurrentRequests),queue=[...paths];
+ await Promise.all(Array.from({length:concurrency},async()=>{
+  while(queue.length){const path=queue.shift();try{const request=new Request(new URL(path,scope),{cache:'reload'});const response=await fetch(request);if(response.ok)await cache.put(request,response);}catch{}}
+ }));
+}
+async function trimMedia(cache,config){
+ const count=config.performance.mediaCacheEntries,budget=config.performance.maxCacheMegabytes*1048576;
+ const keys=await cache.keys();let total=0;const sizes=[];
+ for(const request of keys){const response=await cache.match(request),size=Number(response?.headers.get('content-length'))||0;total+=size;sizes.push(size);}
+ for(let index=0;index<keys.length&&(keys.length-index>count||total>budget);index++){await cache.delete(keys[index]);total-=sizes[index];}
+}
+async function handle(request){
+ const url=new URL(request.url),config=await configuration(),n=names(config),isPage=request.mode==='navigate',json=/\.json$/i.test(url.pathname),media=/\.(?:avif|webp|png|jpg|jpeg|svg|gif|mp4|webm|pdf)$/i.test(url.pathname);
+ if(media){
+  const cache=await caches.open(n.media),old=await cache.match(request,{ignoreSearch:true});if(old)return old;
+  const response=await fetch(request);if(response.ok){await cache.put(request,response.clone());trimMedia(cache,config).catch(()=>{});}return response;
+ }
+ const cache=await caches.open(n.shell);
+ try{const response=await fetch(request);if(response.ok)await cache.put(request,response.clone());return response;}
+ catch(error){
+  const saved=await cache.match(request,{ignoreSearch:true});if(saved)return saved;
+  if(isPage)return await cache.match(new URL('index.html',scope),{ignoreSearch:true})||await cache.match(new URL('offline.html',scope),{ignoreSearch:true})||Response.error();
+  if(json)return new Response(JSON.stringify({offline:true,temporary:true}),{status:503,headers:{'Content-Type':'application/json'}});
+  throw error;
+ }
+}
+self.addEventListener('install',event=>{event.waitUntil(precache().catch(()=>{}).then(()=>self.skipWaiting()));});
+self.addEventListener('activate',event=>{event.waitUntil((async()=>{const config=await configuration(),current=names(config),keys=await caches.keys();await Promise.all(keys.filter(key=>key.startsWith('csanadi-r')&&key!==current.shell&&key!==current.media).map(key=>caches.delete(key)));await self.clients.claim();})().catch(()=>self.clients.claim()));});
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const url=new URL(event.request.url);if(!local(url))return;event.respondWith(handle(event.request).catch(()=>Response.error()));});

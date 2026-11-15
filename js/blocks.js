@@ -1,7 +1,8 @@
 import {renderSportsSuccesses} from './sports-successes.js?v=20261114orbit1';
-import {renderPremiumHero} from './hero-2026.js?v=20261115r13';
-import {renderLiveDashboard} from './home-live.js?v=20261114orbit1';
+import {renderPremiumHero} from './hero-2026.js?v=20261115r15sport';
+import {renderLiveDashboard} from './home-live.js?v=20261115r15sport';
 import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js?v=20261114v5';
+import {resolveConfiguredText,settingNumber} from './site-settings-2026.js';
  
 const dom=(tag,attrs={},text='')=>{
   const x=document.createElement(tag);
@@ -33,7 +34,7 @@ function inlineText(parent,text){
 }
 export function markdown(text){
   const el=dom('div',{class:'text-flow'});
-  const lines=String(text??'').split(/\n{2,}/g);
+ const lines=resolveConfiguredText(text).split(/\n{2,}/g);
   for(const part of lines){
     const trimmed=part.trim();if(!trimmed)continue;
     const tag=trimmed.startsWith('### ')?'h3':trimmed.startsWith('## ')?'h2':'p';
@@ -82,7 +83,7 @@ const styles={
     container.append(dom('h2',{class:'section-title'},block.title||'Fedezd fel az iskolát'));
     if(data.lead)container.append(dom('p',{class:'editorial-lead'},data.lead));
     const grid=dom('div',{class:'editorial-grid'});
-    (data.items||[]).slice(0,6).forEach(item=>{
+    (data.items||[]).slice(0,settingNumber('runtime.display.genericListCards')).forEach(item=>{
       const tile=dom('article',{class:'editorial-tile'});
       const header=dom('div',{class:'editorial-tile-head'});
       const icon=dom('span',{class:'editorial-icon'});icon.append(iconNode(item.icon||'study'));

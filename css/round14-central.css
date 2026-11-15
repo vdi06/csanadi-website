@@ -1,0 +1,39 @@
+#global-hero .csn26-visual-row{--csn-hole:var(--csn14-cutout-desktop);--csn-center:calc(var(--csn-hole) * 2)}
+#site-map-overlay .compass26-emblem{--csn-center:calc(var(--csn14-cutout-desktop) * 2);aspect-ratio:1}
+#global-hero .csn26-visual-row>.orbit-launch #orbit-open,#site-map-overlay .compass26-emblem #orbit-open{aspect-ratio:1;border-radius:50%!important}
+#site-map-overlay .compass26-emblem .orbit-launch{visibility:visible!important;opacity:1!important}
+body.site-map-is-open #site-map-overlay .compass26-emblem #orbit-open{visibility:visible!important;opacity:1!important;pointer-events:auto!important}
+#global-hero .csn26-wing-navigation{position:relative;z-index:8;min-height:var(--csn14-touch-min);gap:8px}
+#global-hero .csn26-wing-arrow,#global-hero .csn26-wing-pause,#global-hero .csn26-wing-number{min-width:var(--csn14-touch-min);min-height:var(--csn14-touch-min)}
+#global-hero .csn26-wing-number{font-size:12px}
+#global-hero .csn26-wing-pager{display:flex;gap:5px;flex-wrap:nowrap;overflow-x:auto;max-width:min(42vw,340px);padding:4px 2px;scrollbar-width:thin}
+#global-hero .csn26-wing-pager .csn26-wing-number:nth-child(n){display:grid}
+#global-hero .csn26-wing-surface .csn26-wing-copy{pointer-events:none}
+#global-hero .csn26-wing-surface .csn26-wing-copy a{pointer-events:auto}
+#global-hero .csn26-visual-wing--left .csn26-wing-copy{padding-right:12px}
+#global-hero .csn26-visual-wing--right .csn26-wing-copy{padding-left:12px}
+#global-hero .csn26-wing-arrow:focus-visible,#global-hero .csn26-wing-number:focus-visible,#global-hero .csn26-wing-pause:focus-visible,#global-hero #orbit-open:focus-visible,#site-map-overlay button:focus-visible,#site-map-overlay a:focus-visible{outline:var(--csn14-focus-width) solid #f3bb53!important;outline-offset:3px!important}
+.site-footer .cs-speed-row{grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr))}
+.doc-preview-dialog{max-width:min(96vw,1040px);max-height:92dvh;overflow:auto}
+.doc-preview-dialog .doc-iframe{width:100%;min-height:min(58dvh,600px)}
+@media(max-width:1050px){#global-hero .csn26-visual-row{--csn-hole:var(--csn14-cutout-tablet)}#site-map-overlay .compass26-emblem{--csn-center:calc(var(--csn14-cutout-tablet) * 2)}}
+@media(max-width:760px){
+ #global-hero .csn26-visual-row{--csn-hole:var(--csn14-cutout-mobile);display:flex;flex-direction:column;gap:0;width:min(100% - 16px,500px);min-height:0}
+ #global-hero .csn26-visual-wing{width:100%;gap:0}
+ #global-hero .csn26-wing-surface{min-height:225px;flex:0 0 225px}
+ #global-hero .csn26-visual-wing--left .csn26-wing-surface{border-radius:20px 20px 0 0;-webkit-mask-image:radial-gradient(circle at bottom center,transparent 0 calc(var(--csn-hole) - 1px),#000 var(--csn-hole));mask-image:radial-gradient(circle at bottom center,transparent 0 calc(var(--csn-hole) - 1px),#000 var(--csn-hole))}
+ #global-hero .csn26-visual-wing--right .csn26-wing-surface{border-radius:0 0 20px 20px;-webkit-mask-image:radial-gradient(circle at top center,transparent 0 calc(var(--csn-hole) - 1px),#000 var(--csn-hole));mask-image:radial-gradient(circle at top center,transparent 0 calc(var(--csn-hole) - 1px),#000 var(--csn-hole))}
+ #global-hero .csn26-visual-wing--left .csn26-wing-navigation{order:-1;margin-bottom:7px}
+ #global-hero .csn26-visual-wing--right .csn26-wing-navigation{margin-top:7px}
+ #global-hero .csn26-visual-row>.orbit-launch{top:50%!important}
+ #global-hero .csn26-wing-copy{max-width:70%;bottom:14px!important;padding:12px!important;gap:5px}
+ #global-hero .csn26-wing-title{font-size:clamp(16px,4.3vw,22px)}
+ #global-hero .csn26-wing-summary{font-size:11px}
+ #global-hero .csn26-wing-pager{max-width:min(53vw,350px)}
+ #site-map-overlay .compass26-emblem{--csn-center:calc(var(--csn14-cutout-mobile) * 2)}
+ #site-map-overlay .compass26-emblem .orbit-launch{width:100%!important;height:100%!important}
+ #site-map-overlay .compass26-stage{height:clamp(360px,94vw,510px)}
+ #site-map-overlay .compass26-choice{min-width:var(--csn14-touch-min)}
+}
+@media(max-width:390px){#global-hero .csn26-visual-row{--csn-hole:var(--csn14-cutout-small)}#site-map-overlay .compass26-emblem{--csn-center:calc(var(--csn14-cutout-small) * 2)}#global-hero .csn26-wing-navigation{gap:4px}#global-hero .csn26-wing-pager{max-width:155px}#global-hero .csn26-wing-copy{max-width:72%;padding:9px!important}#global-hero .csn26-wing-title{font-size:17px}}
+@media(prefers-reduced-motion:reduce){#global-hero .csn26-wing-picture,#global-hero .csn26-wing-number,#site-map-overlay .compass26-choice{animation:none!important;transition:none!important}}

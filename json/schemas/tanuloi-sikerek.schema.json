@@ -6,8 +6,6 @@
   "required": [
     "schemaVersion",
     "collectionId",
-    "featureDays",
-    "timezone",
     "items"
   ],
   "properties": {
@@ -22,12 +20,6 @@
     },
     "description": {
       "type": "string"
-    },
-    "featureDays": {
-      "const": 7
-    },
-    "timezone": {
-      "const": "Europe/Budapest"
     },
     "items": {
       "type": "array",

@@ -11,7 +11,7 @@ const safeRoute=s=>typeof s==='string'&&/^#\/[a-z0-9/-]*$/.test(s)?s:'#/';
 const safePDF=s=>typeof s==='string'&&/^assets\/documents\/[a-z0-9._-]+\.pdf$/.test(s)?s:null;
 function heading(eyebrow,title,desc){const h=make('header','ext26-heading');append(h,make('span','section-overline',eyebrow),make('h2','',title),make('p','',desc));return h;}
 function itemLink(title,desc,href,meta=''){const link=make('a','ext26-tile');link.href=href;append(link,meta?make('span','ext26-label',meta):null,make('strong','',title),make('small','',desc));return link;}
-const format=(d)=>new Intl.DateTimeFormat('hu-HU',{timeZone:'Europe/Budapest',year:'numeric',month:'short',day:'numeric'}).format(new Date(d));
+const format=(d)=>new Intl.DateTimeFormat('hu-HU',{timeZone:setting('modules2026.clock.timezone'),year:'numeric',month:'short',day:'numeric'}).format(new Date(d));
 
  
 export function renderSportsCharts(){
@@ -36,7 +36,7 @@ export function renderSportsCharts(){
   btn.addEventListener('click',async()=>{
    btn.disabled=true;btn.textContent='Diagram betöltése…';
    try{
-    if(!window.Chart){await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js';script.crossOrigin='anonymous';script.onload=resolve;script.onerror=()=>reject(Error('A CDN nem elérhető'));document.head.append(script);setTimeout(()=>{if(!window.Chart)reject(Error('Időtúllépés'))},4500);});}
+    if(!window.Chart){await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js';script.crossOrigin='anonymous';script.onload=resolve;script.onerror=()=>reject(Error('A CDN nem elérhető'));document.head.append(script);setTimeout(()=>{if(!window.Chart)reject(Error('Időtúllépés'))},settingNumber('runtime.timing.chartLoadTimeoutMs'));});}
     if(!window.Chart)throw Error('A diagramkönyvtár nem indult');
     canvas.hidden=false;btn.remove();new window.Chart(canvas,{type:'doughnut',data:{labels:rows.map(r=>r[0]),datasets:[{data:rows.map(r=>r[1]),backgroundColor:['#cfaa60','#264e70','#638b99','#8e7350','#9dbaab','#a4a0c3','#bd8f80','#d2c089']}]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{color:'#76879a'}}}}});
    }catch(e){canvas.hidden=true;btn.disabled=false;btn.textContent='A CDN nem elérhető – az oszlopos diagram továbbra is működik';state.textContent+=' · A külső diagram nem tölthető be, a helyi nézet változatlan.';}
@@ -106,10 +106,10 @@ export function renderSmartRelations(node,catalog){
   const sameParent=node.parent&&x.parent===node.parent?12:0;
   const sameBranch=route.split('/')[1]===x.page.schemaExtensions.route.split('/')[1]?5:0;
   return {x,rank:overlap*7+sameParent+sameBranch};
- }).filter(x=>x.rank>0).sort((a,b)=>b.rank-a.rank).slice(0,4);
+ }).filter(x=>x.rank>0).sort((a,b)=>b.rank-a.rank).slice(0,settingNumber('runtime.display.relatedCards'));
  const used=new Set();candidates.forEach(({x})=>{used.add(x.page.schemaExtensions.route);list.append(itemLink(x.page.title,x.page.summary||'Kapcsolódó oldal',x.page.schemaExtensions.route,'Oldal'));});
  const addFrom=async(kind,path,transform)=>{
-  try{const data=await getData(path);if(!root.isConnected)return;const options=transform(data).map(x=>({entry:x,rank:tokenize(x.title+' '+x.desc).filter(w=>words.has(w)).length})).filter(x=>x.rank>0).sort((a,b)=>b.rank-a.rank).slice(0,2);
+  try{const data=await getData(path);if(!root.isConnected)return;const options=transform(data).map(x=>({entry:x,rank:tokenize(x.title+' '+x.desc).filter(w=>words.has(w)).length})).filter(x=>x.rank>0).sort((a,b)=>b.rank-a.rank).slice(0,settingNumber('runtime.display.relatedPreviewCards'));
    for(const {entry} of options)if(!used.has(entry.href)){used.add(entry.href);list.append(itemLink(entry.title,entry.desc,entry.href,kind));}
   }catch(e){console.warn('Kapcsolódó adatok nem elérhetők',path,e);}
  };
@@ -137,3 +137,4 @@ export function enhanceGallery(root){
  image.addEventListener('load',()=>{const next=dialog.querySelector('.media26-lightbox-next');if(!next)return;   });
  const link=make('a','ext26-gallery-skip','Ugrás a galéria képrácsához ↓');link.href='#media26-library-tiles';library.querySelector('.media26-grid')?.setAttribute('id','media26-library-tiles');library.querySelector('.media26-heading')?.after(link);
 }
+import {setting,settingNumber} from './site-settings-2026.js';
