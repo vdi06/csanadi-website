@@ -7,17 +7,17 @@
       "path": "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
       "type": "document",
       "mimeType": "application/pdf",
-      "sizeBytes": 119834,
+      "sizeBytes": 140481,
       "title": "Csanádi Sportiskola 2026 – Teljes weboldal-használati útmutató",
       "alt": "",
-      "description": "Teljes 3.8-as kézikönyv, 66 tartalmi oldal, 13 helyi karbantartó eszköz, 10 új R22 nyilvános modul.",
+      "description": "3.12-es teljes kézikönyv: R21–R26 fejlesztések és mind a 66 JSON-tartalmi oldal.",
       "tags": [
         "kézikönyv",
         "weboldal",
         "használati útmutató"
       ],
       "mediaId": null,
-      "sha256": "4cfce0274126cefe05e0c6a6f138154958f3a487bb722ab8db5eb8c236a2d4f9"
+      "sha256": "1567d341d143d107216297569c70ad9783d4f39d71437a86d791871a6f25c924"
     },
     {
       "path": "assets/documents/digitalis-fajlok-es-beadas.pdf",

@@ -1,0 +1,23 @@
+/* 23. kiadás: az állapot- és sebességellenőrzés egy közös, két nézetű panelen. */
+.site-footer .cs-speed-panel{display:block;overflow:hidden;border-radius:20px}
+.cs-diag-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:2px 0 14px}
+.cs-diag-heading h2{font-size:clamp(19px,2.2vw,26px);font-weight:900;margin:0}.cs-diag-heading p{font-size:13px;margin:3px 0;color:inherit;opacity:.83}
+.cs-diag-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:10px 0 17px}
+.cs-diag-tab{min-height:47px;padding:9px 13px;border:1px solid currentColor;border-radius:12px;font-weight:850;font-size:13px;cursor:pointer;background:transparent;color:inherit;opacity:.8}
+.cs-diag-tab[aria-pressed=true]{opacity:1;background:linear-gradient(108deg,var(--sport-green,#94c89b),var(--sport-yellow,#f6db8b));color:#18344a;border-color:#96b8a0;box-shadow:0 4px 14px #0001}
+html[data-theme=dark] .cs-diag-tab[aria-pressed=true]{color:#f6f9ed;background:linear-gradient(108deg,#255743,#695c35);border-color:#8b9577}
+.site-footer .cs-speed-panel[data-diagnostic-view=speed] #cs-site-health{display:none!important}
+.site-footer .cs-speed-panel[data-diagnostic-view=health] .cs-diag-speed-view{display:none!important}
+.site-footer .cs-speed-panel #cs-site-health{margin:0;padding:12px 14px;border:1px solid var(--line, #728797);border-radius:12px;box-shadow:none;max-width:none;width:100%}
+.site-footer .cs-speed-panel #cs-site-health summary{font-size:14px;min-height:35px;display:flex;align-items:center}
+.site-footer .cs-speed-panel .ext26-health-results>*{line-height:1.5;overflow-wrap:anywhere}
+.site-footer .cs-speed-row{grid-template-columns:repeat(auto-fit,minmax(min(100%,165px),1fr))}
+.site-footer .cs-speed-metric:has([data-speed-version]){grid-column:span 2}
+.site-footer .cs-speed-metric [data-speed-version]{font-size:clamp(12px,1.3vw,16px);font-variant-numeric:normal;line-height:1.5;overflow-wrap:anywhere}
+.site-footer .cs-speed-details summary{font-size:13px;font-weight:750}
+.site-footer .cs-speed-details p{font-size:12px;line-height:1.6}
+html[data-theme=light] .site-footer .cs-diag-tab{border-color:#a4bca9;color:#263e50}
+html[data-theme=dark] .site-footer .cs-diag-tab{border-color:#627d8e;color:#e3edf5}
+html[data-theme=light] .site-footer .cs-diag-tab[aria-pressed=true]{color:#18344a}
+html[data-theme=dark] .site-footer .cs-diag-tab[aria-pressed=true]{color:#f6f9ed}
+@media(max-width:560px){.cs-diag-tabs{gap:6px}.cs-diag-tab{font-size:12px;padding:7px}.site-footer .cs-speed-metric:has([data-speed-version]){grid-column:1/-1}.cs-diag-heading p{width:100%}}

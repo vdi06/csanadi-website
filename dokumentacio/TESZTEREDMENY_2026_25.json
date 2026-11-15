@@ -1,0 +1,534 @@
+{
+  "release": 25,
+  "passed": 105,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "A R24 ZIP teljes fájlkészlete megmaradt",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Pontosan 66 regisztrált JSON-tartalmi oldal megmaradt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A korábbi 66 oldal bájtra változatlan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Az eredeti README.md bájtra változatlan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Mind a 13 karbantartó tools/ HTML megmaradt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R21 korábbi központ megmaradt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R22 korábbi központ megmaradt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R23 korábbi központ megmaradt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R24 korábbi központ megmaradt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Az R21–R24 adatforrások megmaradtak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Adatvédelmi központi beállítások változatlanok",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Világos színpaletta változatlan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Sötét színpaletta változatlan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A korábbi központi runtime beállításai változatlanok",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A cache-verzió R25-ös",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A teljes JSON-konfiguráció 276 paraméteres",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Új 11 központi runtime.round25 paraméter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Új adatútvonal helyes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Új JSON-séma és kiadás helyes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Az új modul külön mobil és desktop CSS-t használ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Mindkét témában külön megjelenési szabály",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Régi Honlapdiagnosztika két füle megmaradt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Oldalverzió csak a diagnosztikában, nincs duplikált főoldali kártya",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Régi helyi honlapállapot-ellenőrző változatlanul elérhető",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "10/10 új modul külön címmel és szakaszazonosítóval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "10/10 modulhoz működő ugróhivatkozás",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "10/10 modulhoz külön natív JS-kezelő",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Új modul központi JSON-t tölt, nem beégetett tartalmat",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Heti tervező 7 napból áll",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Heti tervező 4 kategóriás",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Heti tervező 80 bejegyzés maximummal működik",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Heti tervező 30 napos helyi megőrzése",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Heti tervező törölhető",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Heti tervező nyomtatható",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Öt sportági forrás és öt külön sportág",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Sportág és keresőkifejezés szűrhető",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Sportbiztonság érvényességére figyelmeztet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Panorámanéző WebGL programmal dolgozik",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Panorámanéző kezeli az egérhúzást és billentyűket",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A helyi panoráma File API-val és korláttal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Nincs kitalált, jóváhagyatlan iskolai panoráma",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Panoráma publikálása közzétételi és jogkapuval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Diákkörkatalógus cím és terület alapján kereshető",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A diákkörök csak friss, jóváhagyott rekordok",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Nincs kitalált 2026/27-es diákkör",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Két hivatalos ösztöndíjprogram tájékoztató",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Lejárt Útravaló határidő helyesen szerepel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Ösztöndíj szűrés és keresés",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Négy könnyen érthető iskolai téma",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Könnyen érthető nézet betűméretállítóval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Könnyen érthető oldalak SPA-hivatkozásai regisztráltak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Böngésző felolvasási vezérlő play/pause/stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Hangmotor támogatás hiánya kezelt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Olvasási fókuszmód bekapcsolható",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Öregdiákéletrajzok csak engedélyezettek",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Nincsen engedély nélkül publikált személyes profil",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Két hivatalos, külső, történeti alumni forrás",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Intézményi projektbeszámoló csak jóváhagyva",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Nincs kitalált lezárt pályázati beszámoló",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Pályázati felhívás elkülönül az eredménytől",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Interaktív GYIK 4 belső témacsomóponttal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GYIK kezeli az elágazást, visszalépést és újrakezdést",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GYIK helyi válasz mentése nélkül működik",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GYIK elágazások létező csomópontokra mutatnak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Az új modul nem tartalmaz FormData-uploadot vagy fetch POST-ot",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A R25 összes adatforrás-azonosítója egyedi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Minden belső, új SPA-adatkapcsolat regisztrált",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Új központ a kezdőlapon és mind a 4 korábbi központban",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Új központ a teljes webes kézikönyvben",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Az új oldal visszahivatkozik a korábbi központokra",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Az offline alaplista tartalmazza az új oldalt és JSON-t",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A régi offline előtöltött fájlok megmaradtak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A témaválasztó három módot kínál",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A PDF-kézikönyv 3.11.0 verziója szerepel a katalógusban",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A PDF-kézikönyv mérete egyezik a katalógussal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A PDF SHA-256 egyezik a katalógussal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A PDF verziótörténet tartalmazza az R25 kiadást",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A teljes PDF kézikönyv érvényes, legalább 30 oldalas",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A webes kézikönyv 3.11-es",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "276 tételes központi paraméter szerepel a leltárban",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Tételes R25 fejlesztési beszámoló elérhető",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "22 HTML-ban nincsen ismételt elem-azonosító",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "22 HTML összes helyi hivatkozása létezik",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Valamennyi JSON szintaktikailag helyes",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Az összes JavaScript fájl nyelvtanilag hibamentes",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Minden helyi JavaScript modulimport létezik",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Bootstrap csak verziózott 5.3.9 CDN-ről érkezik",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A kiadási manifest minden helyi állományt lefed",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Minden állományméret és SHA-256 helyes",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "A manifest R25 kiadásra és FTP-re készült",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 200 index.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 200 tanulas-es-kozosseg.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 200 js/round25-community.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 200 json/adatok/tanulas-kozosseg-25.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 200 json/config.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 200 css/round25-community.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 200 mobile/round25-community-mobile.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 200 desktop/round25-community-desktop.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 200 utmutato.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 200 assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 200 orokseg-es-tudastar.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 200 service-worker.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Teljes ZIP CRC-ellenőrzés sikeres",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ZIP pontosan a teljes FTP-gyökér összes fájlját tartalmazza",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ZIP gyökerében minden kötelező komponens",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "browserExecuted": false,
+  "note": "Automatizált fájl-, regressziós, JSON-, HTML-, JavaScript-szintaxis-, helyi HTTP-, SHA-256-, PDF-metadata- és ZIP-ellenőrzések. Valós WebGL megjelenítés, böngészős beszéd, 320 px mobilképernyő, WCAG 2.2 AA és CLS éles készüléken külön ellenőrizendő."
+}

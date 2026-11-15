@@ -1,8 +1,8 @@
 # Csanádi Sportiskola 2026 – a központi JSON összes paramétere
 
-**Forrás:** `json/config.json` · **Kiadás:** 22 · **Dátum:** 2026. november 15.
+**Forrás:** `json/config.json` · **Kiadás:** 26 · **Dátum:** 2026. november 15.
 
-**Összesen 247 beállítható, egy helyen tárolt mező.** A lista a tényleges kiadási JSON-ból származik; szerkesztéshez nyisd meg a `tools/parameterek-szerkeszto.html` felületet.
+**Összesen 290 beállítható, egy helyen tárolt mező.** A lista a tényleges kiadási JSON-ból származik; szerkesztéshez nyisd meg a `tools/parameterek-szerkeszto.html` felületet.
 
 A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést jelent. A darabszámok, időzítések, méretek és más globális kapcsolók a JSON-ból kerülnek a programokhoz. Az egyedi esemény, dokumentum és hír rekordjának saját dátuma a saját adatrekord egyetlen forrásértéke, nem másolat a globális konfigurációban.
 
@@ -148,7 +148,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
-| `performance.cacheVersion` | `"csanadi-r22-20261115"` | szöveg |
+| `performance.cacheVersion` | `"csanadi-r26-20261115"` | szöveg |
 | `performance.maxCacheMegabytes` | `50` | szám |
 | `performance.respectReducedMotion` | `true` | logikai |
 | `performance.mediaCacheEntries` | `100` | szám |
@@ -156,10 +156,53 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `performance.offlinePrecacheFileMaxBytes` | `300000` | szám |
 | `performance.offlinePrecacheMaxEntries` | `220` | szám |
 
-## Megjelenítés, körmenü, dátumablakok és diagnosztika (137 mező)
+## Megjelenítés, körmenü, dátumablakok és diagnosztika (180 mező)
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
+| `runtime.round26.dataPath` | `"adatok/megkozelites-fejlodes-26.json"` | szöveg |
+| `runtime.round26.mapRequireConsent` | `true` | logikai |
+| `runtime.round26.mapProvider` | `"openstreetmap"` | szöveg |
+| `runtime.round26.mapZoom` | `16` | szám |
+| `runtime.round26.admissionLocalOnly` | `true` | logikai |
+| `runtime.round26.admissionRetentionDays` | `60` | szám |
+| `runtime.round26.goalMaximumEntries` | `40` | szám |
+| `runtime.round26.goalRetentionDays` | `90` | szám |
+| `runtime.round26.mediaRequirePublicationPermission` | `true` | logikai |
+| `runtime.round26.consultationsRequireVerification` | `true` | logikai |
+| `runtime.round26.accessibilityEvidenceRequired` | `true` | logikai |
+| `runtime.round26.studyMaximumSessionMinutes` | `90` | szám |
+| `runtime.round26.ecoMaximumDailyKilometres` | `100` | szám |
+| `runtime.round26.changelogMaximumEntries` | `200` | szám |
+| `runtime.round25.dataPath` | `"adatok/tanulas-kozosseg-25.json"` | szöveg |
+| `runtime.round25.plannerMaximumEntries` | `80` | szám |
+| `runtime.round25.plannerRetentionDays` | `30` | szám |
+| `runtime.round25.plannerLocalOnly` | `true` | logikai |
+| `runtime.round25.panoramaMaximumBytes` | `12582912` | szám |
+| `runtime.round25.panoramaMinimumRatio` | `1.8` | szám |
+| `runtime.round25.speechMaximumCharacters` | `12000` | szám |
+| `runtime.round25.clubsRequireApproval` | `true` | logikai |
+| `runtime.round25.alumniRequireConsent` | `true` | logikai |
+| `runtime.round25.projectReportsRequirePublicSource` | `true` | logikai |
+| `runtime.round25.faqMaximumDepth` | `8` | szám |
+| `runtime.round24.dataPath` | `"adatok/orokseg-es-tudastar-24.json"` | szöveg |
+| `runtime.round24.diffMaximumBytes` | `131072` | szám |
+| `runtime.round24.diffMaximumLines` | `450` | szám |
+| `runtime.round24.summaryMaximumYears` | `30` | szám |
+| `runtime.round24.exportMaximumRecords` | `600` | szám |
+| `runtime.round24.publicOnly` | `true` | logikai |
+| `runtime.round24.privacyLocalOnly` | `true` | logikai |
+| `runtime.round24.verifiedSourcesRequired` | `true` | logikai |
+| `runtime.round24.historicalPartnersAreNotCurrentProof` | `true` | logikai |
+| `runtime.round23.dataPath` | `"adatok/kozossegi-muhely-23.json"` | szöveg |
+| `runtime.round23.volunteerMaxEntries` | `80` | szám |
+| `runtime.round23.volunteerPlannedGoalHours` | `50` | szám |
+| `runtime.round23.exportMaximumRecords` | `500` | szám |
+| `runtime.round23.publishProjectsOnlyAfterConsent` | `true` | logikai |
+| `runtime.round23.allowIllustrationsWithDisclaimer` | `true` | logikai |
+| `runtime.round23.privacyLocalOnly` | `true` | logikai |
+| `runtime.round23.verifiedSourcesRequired` | `true` | logikai |
+| `runtime.round23.bilingualInformationalOnly` | `true` | logikai |
 | `runtime.round22.dataPath` | `"adatok/iranytu-22.json"` | szöveg |
 | `runtime.round22.qrIndexPath` | `"adatok/qr-index-22.json"` | szöveg |
 | `runtime.round22.mediaPageSize` | `12` | szám |

@@ -1,0 +1,359 @@
+{
+  "release": 24,
+  "passed": 70,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Az R23 minden állománya megmaradt",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "A 66 korábbi oldal bájtra megegyezik",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Az eredeti README.md változatlan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Az R23-as dokumentált helyi tools/ segédoldalak megmaradtak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Az R21, R22, R23 három korábbi nagy központja megmaradt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Az R21, R22, R23 három korábbi adatforrása megmaradt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Központi adatvédelmi konfiguráció változatlan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Világos és sötét színpaletták változatlanok",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Központi cache-azonosító R24-re frissült",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "265 központi JSON-paraméter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R24 adatútvonal központilag konfigurált",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R24 helyi, publikus adatkezelési kapuk engedélyezve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A központi JSON-séma r24 száma helyes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A mobil és desktop R24 CSS külön állományban",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A régi, összevont Honlapdiagnosztika megmaradt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Az oldalverzió továbbra is kizárólag a diagnosztikában",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Régi minőségellenőrző megmaradt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Az új központ tíz külön részének azonosítója létezik",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A tíz rész navigációs szakaszhivatkozása létezik",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A tíz JS renderelő és feldolgozó modul létezik",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Olimpiai idővonal: legalább öt forrásolt tény",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Olimpiai idővonal év/téma/szöveg szűrő",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Díjtár: öt ellenőrzött archív díjrekord",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Díjtár év és szöveg szerint szűrhető",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Partnerkalauz: öt forrásolt, időben jelölt kapcsolat",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Partnerkalauz nem állít igazolatlan jelenlegi együttműködést",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Tanulmányi versenyarchívum anonim jóváhagyási kapu",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Nem készült kitalált tanulmányi versenyeredmény",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Kiadványarchívum két ténylegesen megnyitható dokumentummal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Jelenleg nincs kiadónak kitalált iskolai évkönyv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Évkönyv külön szűrhető, üres helyzete közérthető",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Öt különböző sportági szövetségi szabályforrás",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A sportszabályok érvényességi figyelmeztetése megjelenik",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Tehetséggondozás: két historikusan forrásolt programprofil",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Látogatói útvonal: 3 célközönség, 4-4 állomás",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Látogatói útvonal állomásjelölése csak memóriában",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A 12 útvonal-állomás közül minden belső SPA-cím regisztrált",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Dokumentumdiff: két helyi fájl, nincsen hálózati upload",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Dokumentumdiff: 128 KiB, 450 sor limit konfigurálva",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Éves összesítés: forrásolt bejegyzések és hozzáférhető táblázat",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Éves összesítés helyi, képletriasztott CSV letöltéssel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Éves összesítés nyomtatható nézettel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Új központ elérhető főoldalon és három korábbi központban",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Service Worker offline alaplistán az új központ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Minden új rekord egyedi azonosítót használ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A 3.10-es kézikönyv PDF érvényes és SHA-256-tal katalógusban",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Webes kézikönyv megemlíti a 24. kiadást",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Teljes központi JSON-leltár: 265 paraméter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "21 HTML-fájl: nincsen ismételt elem-azonosító",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "21 HTML-fájl: minden helyi hivatkozás feloldódik",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Az összes JSON megfelelően feldolgozható",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Valamennyi JavaScript fájl nyelvtanilag helyes",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Minden helyi JavaScript modulimport feloldódik",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Bootstrap kizárólag 5.3.9 CDN, helyi Bootstrap nem található",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "A manifest minden FTP-fájlt tartalmaz",
+      "passed": true,
+      "detail": "A fájlhalmazok egyeznek"
+    },
+    {
+      "name": "Minden fájl tényleges mérete és SHA-256-ja egyezik",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "FTP-manifest helyes verzióval és FTP-kompatibilitással",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Helyi HTTP 200 · index.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Helyi HTTP 200 · orokseg-es-tudastar.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Helyi HTTP 200 · js/round24-heritage.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Helyi HTTP 200 · json/adatok/orokseg-es-tudastar-24.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Helyi HTTP 200 · json/config.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Helyi HTTP 200 · css/round24-heritage.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Helyi HTTP 200 · mobile/round24-heritage-mobile.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Helyi HTTP 200 · desktop/round24-heritage-desktop.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Helyi HTTP 200 · utmutato.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Helyi HTTP 200 · assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ZIP minden tagja CRC-hibamentes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ZIP pontosan a teljes kiadást tartalmazza",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ZIP gyökerében az index, README, mobil, desktop és új modul",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "browserExecuted": false,
+  "note": "Automatizált fájl-, JSON-, JS-szintaxis-, HTML-, link-, HTTP-, SHA-256-, PDF-metaadat- és ZIP-regresszió. A vizuális böngészőtesztet külön kell jelölni, ha a környezet engedi. Valós CDN/tárhely, WCAG, CLS és külső források időbeli ellenőrzése külön éles ellenőrzést igényel."
+}

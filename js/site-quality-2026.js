@@ -1,4 +1,4 @@
-import {formatBytes} from './format-bytes.js?v=csanadi-r22-20261115';
+import {formatBytes} from './format-bytes.js?v=csanadi-r26-20261115';
 import {settingNumber} from './site-settings-2026.js';
  
 export const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -11,7 +11,7 @@ export function initDetailedDiagnostics(){
  const details=el('details','ext26-perf-details'),summary=el('summary','','Részletes betöltési adatok – CSS, JavaScript, JSON, képek');
  const hint=el('p','','A böngésző Performance API-jának mérései. Külső CDN esetén az átviteli méret és a pontos idő a böngésző engedélyeitől függ; ezek nem hálózati sebességmérések.');
  const target=el('div','ext26-perf-grid'),refresh=el('button','ext26-refresh','Mérés frissítése');refresh.type='button';
- details.append(summary,hint,refresh,target);panel.append(details);
+ details.append(summary,hint,refresh,target);(panel.querySelector('.cs-diag-speed-view')||panel).append(details);
  const draw=()=>{
   target.replaceChildren();
   const resources=performance.getEntriesByType?.('resource')||[];
@@ -35,13 +35,13 @@ const isLocalRef=href=>typeof href==='string'&&!/^(?:https?:|mailto:|tel:|data:|
 export function initSiteHealth(catalog){
  if(document.querySelector('#cs-site-health'))return;
  const footer=document.querySelector('.site-footer');if(!footer)return;
- const panel=el('details','ext26-health container-xxl');panel.id='cs-site-health';
- const title=el('summary','','Honlapállapot ellenőrzése · oldalak, média, JSON és hivatkozások');
+ const panel=el('details','ext26-health');panel.id='cs-site-health';panel.open=true;
+ const title=el('summary','','Oldalak, média, JSON és hivatkozások');
  const section=el('div','ext26-health-body'),desc=el('p','','Helyi, böngészős ellenőrzés: csak a saját tárhely fájljait vizsgálja. Az ellenőrzés nem helyettesíti a teljes biztonsági, akadálymentességi vagy böngészőközi auditot.');
  const button=el('button','ext26-run-check','Ellenőrzés indítása');button.type='button';
  const status=el('p','ext26-health-state','Készen áll'),results=el('div','ext26-health-results');status.setAttribute('role','status');status.setAttribute('aria-live','polite');
  section.append(desc,button,status,results);panel.append(title,section);
- const speed=footer.querySelector('.cs-speed-panel');speed?speed.after(panel):footer.prepend(panel);
+ const speed=footer.querySelector('.cs-speed-panel');speed?speed.append(panel):footer.prepend(panel);
  const mark=(ok,msg)=>{const item=el('div',ok?'ext26-check-pass':'ext26-check-fail',`${ok?'✓':'!'} ${msg}`);results.append(item);};
  button.addEventListener('click',async()=>{
   button.disabled=true;results.replaceChildren();status.textContent='Az ellenőrzés folyamatban…';

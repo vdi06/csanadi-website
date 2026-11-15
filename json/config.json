@@ -143,7 +143,7 @@
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r22-20261115",
+    "cacheVersion": "csanadi-r26-20261115",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,
@@ -152,6 +152,57 @@
     "offlinePrecacheMaxEntries": 220
   },
   "runtime": {
+    "round26": {
+      "dataPath": "adatok/megkozelites-fejlodes-26.json",
+      "mapRequireConsent": true,
+      "mapProvider": "openstreetmap",
+      "mapZoom": 16,
+      "admissionLocalOnly": true,
+      "admissionRetentionDays": 60,
+      "goalMaximumEntries": 40,
+      "goalRetentionDays": 90,
+      "mediaRequirePublicationPermission": true,
+      "consultationsRequireVerification": true,
+      "accessibilityEvidenceRequired": true,
+      "studyMaximumSessionMinutes": 90,
+      "ecoMaximumDailyKilometres": 100,
+      "changelogMaximumEntries": 200
+    },
+    "round25": {
+      "dataPath": "adatok/tanulas-kozosseg-25.json",
+      "plannerMaximumEntries": 80,
+      "plannerRetentionDays": 30,
+      "plannerLocalOnly": true,
+      "panoramaMaximumBytes": 12582912,
+      "panoramaMinimumRatio": 1.8,
+      "speechMaximumCharacters": 12000,
+      "clubsRequireApproval": true,
+      "alumniRequireConsent": true,
+      "projectReportsRequirePublicSource": true,
+      "faqMaximumDepth": 8
+    },
+    "round24": {
+      "dataPath": "adatok/orokseg-es-tudastar-24.json",
+      "diffMaximumBytes": 131072,
+      "diffMaximumLines": 450,
+      "summaryMaximumYears": 30,
+      "exportMaximumRecords": 600,
+      "publicOnly": true,
+      "privacyLocalOnly": true,
+      "verifiedSourcesRequired": true,
+      "historicalPartnersAreNotCurrentProof": true
+    },
+    "round23": {
+      "dataPath": "adatok/kozossegi-muhely-23.json",
+      "volunteerMaxEntries": 80,
+      "volunteerPlannedGoalHours": 50,
+      "exportMaximumRecords": 500,
+      "publishProjectsOnlyAfterConsent": true,
+      "allowIllustrationsWithDisclaimer": true,
+      "privacyLocalOnly": true,
+      "verifiedSourcesRequired": true,
+      "bilingualInformationalOnly": true
+    },
     "round22": {
       "dataPath": "adatok/iranytu-22.json",
       "qrIndexPath": "adatok/qr-index-22.json",

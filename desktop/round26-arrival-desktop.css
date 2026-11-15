@@ -1,0 +1,2 @@
+/* R26 asztali – elfér egymás mellett a cím, az útvonalak és a beleegyezéses térkép. */
+@media(min-width:1100px){.r26-location-grid{grid-template-columns:minmax(0,.87fr) minmax(0,1.13fr)}.r26-map-area{min-height:420px}#r26-map-frame,#r26-map-frame iframe{min-height:390px}.r26-form{gap:18px}}

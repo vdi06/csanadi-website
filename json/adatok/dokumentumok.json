@@ -86,7 +86,7 @@
     {
       "id": "document:csanadi-weboldal-kezikonyv-2026",
       "title": "Csanádi Sportiskola 2026 – Teljes weboldal-használati útmutató",
-      "summary": "Teljes, 3.8-as webes és PDF-kézikönyv, 66 tartalmi oldallal, 13 karbantartó eszközzel, a 21-es felfedezőközponttal, a 22-es iránytű tíz új eszközével és 247 központi JSON-paraméterrel.",
+      "summary": "Teljes, 3.12-es webes és PDF-kézikönyv: 66 megőrzött JSON-oldal, 13 helyi segédoldal, R21–R25 központok, a 26. kiadás tízmodulos térképes megközelítési és tanulástámogató központja; 290 központi paraméter.",
       "categoryId": "weboldal-utmutato",
       "tags": [
         "honlap",
@@ -114,9 +114,9 @@
       "mimeType": "application/pdf",
       "fileName": "csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
       "filePath": "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
-      "fileSizeBytes": 119834,
-      "sha256": "4cfce0274126cefe05e0c6a6f138154958f3a487bb722ab8db5eb8c236a2d4f9",
-      "version": "3.8.0",
+      "fileSizeBytes": 140481,
+      "sha256": "1567d341d143d107216297569c70ad9783d4f39d71437a86d791871a6f25c924",
+      "version": "3.12.0",
       "publishedAt": "2026-11-15",
       "validFrom": "2026-11-15",
       "validTo": null,
@@ -180,6 +180,26 @@
           "version": "3.8.0",
           "date": "2026-11-15",
           "change": "22. kiadás: tízrészes iskolai iránytű (digitális nyílt nap, tanulmányi utak, fenntarthatóság, sportesemény-követő, kétnyelvű fogalomtár, akadálymentes médiatár, ügyintézés, szülői központ, helyi QR-SVG, nyomtatási központ). Külön alapjavítás: kezdőlap-beállító, témaválasztó, sporthír-kártya és friss sporthír JSON, mobilmenü és diagnosztika/verzió témák, valamint felül megjelenő világos/sötét/automatikus témaváltási értesítés."
+        },
+        {
+          "version": "3.9.0",
+          "date": "2026-11-15",
+          "change": "23. kiadás: sportlétesítmény-kalauz; helyi közösségi szolgálat tervező; jóváhagyott sporteredmény- és iskolatörténeti idővonal; csak hozzájárulással megjeleníthető diákprojektek; beiratkozási ellenőrzőlista; archív rendezvényközpont; digitális tanulási segédletek; teljes kétnyelvű témalapok; nyilvános JSON/CSV export. Kötelező javítás: a kezdőlapi Oldalverzió: 5 kizárólag az egyesített Honlapdiagnosztika kártyájában; két nézetben sebesség és honlapállapot; CLS-forrásjelzések."
+        },
+        {
+          "version": "3.10.0",
+          "date": "2026-11-15",
+          "change": "24. kiadás: forrásolt olimpiai hagyományok; díjak; történetileg igazolt sportpartnerek; anonim tanulmányi versenyarchívum; jogszerű kiadványtár; sportszövetségi szabálytudástár; tehetségprogramok; három látogatói útvonal; kizárólag helyi szöveges dokumentum-összehasonlítás; ellenőrzött, aggregált rekordok éves összesítője. Megőrzött R23 alapfunkciók, frissített belső kapcsolatok és gyorsítótár-azonosítók. Hiányzó anonim versenyadatot vagy nyilvános évkönyvet nem állítunk elő mesterségesen."
+        },
+        {
+          "version": "3.11.0",
+          "date": "2026-11-15",
+          "change": "25. kiadás: kizárólag helyi edzés–tanulás heti tervező és nyomtatás; öt sportfelszerelési/fair play segédlet; WebGL panorámamegjelenítő helyi fájlelőképével; jóváhagyásra váró diákkörkatalógus; forrásolt ösztöndíj-kalauz; közérthető tájékoztatók; böngészős felolvasó és fókuszmód; engedélyköteles öregdiák-életút- és projektbeszámoló-tár; négyágú GYIK-döntési fa. Megőrzött összes korábbi R24 funkció; önkényesen létrehozott klubot, panorámafotót, személyes profilt és intézményi pályázati beszámolót nem publikálunk."
+        },
+        {
+          "version": "3.12.0",
+          "date": "2026-11-15",
+          "change": "26. kiadás: hivatalos iskolacím, hozzájáruláshoz kötött OpenStreetMap, külső útvonaltervezési linkek, öt felvételi lépés helyi pipákkal, 90 napig helyi tanulási célok, öt sportszövetségi mérföldkő, engedélyköteles diákmédia, ellenőrzött fogadóóra-központ, tanulási időmérő és felidézőkártya, adatbiztos akadálymentes útmutató, zöld utazási összevetés, kereshető JSON változásnapló; minden régi funkció megőrizve."
         }
       ]
     },

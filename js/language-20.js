@@ -1,4 +1,4 @@
-import {setting} from './site-settings-2026.js?v=csanadi-r22-20261115';
+import {setting} from './site-settings-2026.js?v=csanadi-r26-20261115';
 export async function installLanguageHighlights(){
  if(!setting('runtime.display.bilingualPanelEnabled'))return;
  const url=new URL('../json/'+setting('content.languagesPath'),import.meta.url),response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error('Nem elérhető a központi nyelvi JSON.');const data=await response.json(),hero=document.getElementById('global-hero');if(!hero||!data.notices)return;
