@@ -55,7 +55,7 @@ export function renderPremiumHero(block){
  const syncPreview=(view,i)=>{
   const slide=slides[(i+slides.length)%slides.length];
   view.title.textContent=slide.title||'Kiemelt tartalom';
-  const image=createPicture(slide.mediaId,{className:'csn26-hero-preview-picture',sizes:'(max-width:760px) 130px, 220px'});
+  const image=createPicture(slide.mediaId,{className:'csn26-hero-preview-picture',sizes:'(max-width:420px) 150px, (max-width:760px) 40vw, (max-width:1200px) 40vw, 550px'});
   view.photo.replaceChildren(...(image?[image]:[]));
  };
  const sync=()=>{
