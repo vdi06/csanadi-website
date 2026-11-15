@@ -2,7 +2,7 @@
  const byId=id=>document.getElementById(id);
  const state={base:null,working:null};
  const keyText={site:'Intézményi és globális adatok',navigation:'Navigáció',refresh:'Automatikus frissítés',theme:'Megjelenés és színek',content:'Tartalomforrások',privacy:'Adatvédelem',search:'Keresés',performance:'Gyorsítótár és teljesítmény',runtime:'Részletes beállítható paraméterek',modules2026:'Tartalmi modulok'};
- const translations={maxSlides:'Kiemelt diák legnagyobb száma',rotationDefaultMs:'Alapértelmezett képváltási idő (ms)',rotationMinimumMs:'Legkisebb képváltási idő (ms)',rotationMaximumMs:'Legnagyobb képváltási idő (ms)',swipeThresholdPx:'Lapozó érintésküszöb (px)',startsAt:'Megjelenítés kezdete',endsAt:'Megjelenítés vége',pageSize:'Találatok száma egy lapon',maxResults:'Összes keresési találat felső korlátja',suggestionLimit:'Keresési javaslatok száma',datalistLimit:'Keresési legördülő értékek száma',maxSavedFilters:'Menthető dokumentumszűrők száma',searchDelayMs:'Dokumentumkeresés késleltetése (ms)',previewCheckDelayMs:'PDF-előnézet tájékoztató késleltetése (ms)',mediaCacheEntries:'Médiagyorsítótár tételeinek száma',maxCacheMegabytes:'Gyorsítótár méretkerete (MiB)',structureSeconds:'Menürendszer frissítési ideje (s)',activePageSeconds:'Aktuális oldal frissítési ideje (s)',minimumSeconds:'Frissítések legrövidebb ideje (s)',maximumSeconds:'Frissítések leghosszabb ideje (s)',footerYear:'Lábléc éve',address:'Intézmény címe',email:'Intézményi e-mail',kretaUrl:'KRÉTA belépés címe',baseUrl:'Alap URL',locale:'Nyelvi beállítás',currentSchoolYear:'Aktuális tanév',offlineShellMaxAgeHours:'Offline alapcsomag frissítési korlátja (óra)',targetMinimumPx:'Érintési célméret minimuma (px)',focusOutlinePx:'Fókuszkeret vastagsága (px)'};
+ const translations={maxSlides:'Kiemelt diák legnagyobb száma',rotationDefaultMs:'Alapértelmezett képváltási idő (ms)',rotationMinimumMs:'Legkisebb képváltási idő (ms)',rotationMaximumMs:'Legnagyobb képváltási idő (ms)',swipeThresholdPx:'Lapozó érintésküszöb (px)',startsAt:'Megjelenítés kezdete',endsAt:'Megjelenítés vége',pageSize:'Találatok száma egy lapon',maxResults:'Összes keresési találat felső korlátja',suggestionLimit:'Keresési javaslatok száma',datalistLimit:'Keresési legördülő értékek száma',maxSavedFilters:'Menthető dokumentumszűrők száma',searchDelayMs:'Dokumentumkeresés késleltetése (ms)',previewCheckDelayMs:'PDF-előnézet tájékoztató késleltetése (ms)',mediaCacheEntries:'Médiagyorsítótár tételeinek száma',maxCacheMegabytes:'Gyorsítótár méretkerete (MiB)',structureSeconds:'Menürendszer frissítési ideje (s)',activePageSeconds:'Aktuális oldal frissítési ideje (s)',minimumSeconds:'Frissítések legrövidebb ideje (s)',maximumSeconds:'Frissítések leghosszabb ideje (s)',footerYear:'Lábléc éve',address:'Intézmény címe',email:'Intézményi e-mail',kretaUrl:'KRÉTA belépés címe',baseUrl:'Alap URL',locale:'Nyelvi beállítás',currentSchoolYear:'Aktuális tanév',offlineShellMaxAgeHours:'Offline alapcsomag frissítési korlátja (óra)',targetMinimumPx:'Érintési célméret minimuma (px)',focusOutlinePx:'Fókuszkeret vastagsága (px)',typeAheadResetMs:'Körmenü betűs keresési várakozása (ms)',slowestResourceCount:'Leglassabb fájlok listájának hossza',synonyms:'Keresési szinonimák'};
  const clone=value=>JSON.parse(JSON.stringify(value));
  const entries=(obj,prefix='')=>Object.entries(obj).flatMap(([key,value])=>{const path=prefix?prefix+'.'+key:key;return value&&typeof value==='object'&&!Array.isArray(value)?entries(value,path):[{path,key,value}];});
  const get=(obj,path)=>path.split('.').reduce((value,key)=>value?.[key],obj);
@@ -13,6 +13,8 @@
   return {name,type};
  };
  const message=(value,failed=false)=>{const status=byId('status');status.textContent=value;status.style.color=failed?'#9b2633':'#1e5944';};
+ const luminance=value=>{if(!/^#[0-9a-f]{6}$/i.test(value))return null;const rgb=[1,3,5].map(i=>parseInt(value.slice(i,i+2),16)/255).map(x=>x<=.04045?x/12.92:Math.pow((x+.055)/1.055,2.4));return rgb[0]*.2126+rgb[1]*.7152+rgb[2]*.0722;};
+ const contrast=(a,b)=>{const x=luminance(a),y=luminance(b);return x===null||y===null?null:(Math.max(x,y)+.05)/(Math.min(x,y)+.05);};
  function validate(){
   if(!state.base||!state.working)return ['Nincsenek betöltött adatok.'];
   const errors=[];
@@ -34,6 +36,16 @@
    const allColors=Array.isArray(color)?color:[color];
    if(!allColors.length||allColors.some(value=>typeof value!=='string'||!CSS.supports('color',value)))errors.push('theme.'+mode+'Colors.'+key+': érvényes CSS-szín vagy színlista szükséges');
   }
+  for(const mode of ['light','dark']){
+   const palette=state.working.theme?.[mode+'Colors']||{};
+   for(const accent of ['sportGreen','sportYellow']){
+    const ratio=contrast(palette.ink,palette[accent]);
+    if(ratio===null||ratio<4.5)errors.push('theme.'+mode+'Colors.'+accent+': olvasható címkéhez legalább 4,5:1 kontrasztú #RRGGBB szín kell az ink színhez képest');
+   }
+  }
+  const synonyms=state.working.search?.synonyms;
+  if(!synonyms||Object.entries(synonyms).some(([word,items])=>!/^[a-z0-9-]+$/.test(word)||!Array.isArray(items)||items.some(item=>typeof item!=='string'||!/^[a-z0-9-]+$/.test(item))))errors.push('search.synonyms: az értékek ékezetmentes kulcsokból és szöveglistákból álljanak');
+  if(state.working.runtime?.diagnostics?.slowestResourceCount>30)errors.push('runtime.diagnostics.slowestResourceCount: legfeljebb 30 fájl jeleníthető meg');
   return errors;
  }
  function render(){

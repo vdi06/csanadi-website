@@ -35,7 +35,7 @@ function refresh(){
  init.textContent=fmt(initialReadyMs);
  route.textContent=fmt(currentRouteMs);
  status.textContent=latestStatus;
- const size=panel.querySelector('[data-speed-size]'),fileCount=panel.querySelector('[data-speed-file-count]'),detail=panel.querySelector('[data-speed-file-detail]'),resources=panel.querySelector('[data-speed-resources]');
+ const size=panel.querySelector('[data-speed-size]'),fileCount=panel.querySelector('[data-speed-file-count]'),detail=panel.querySelector('[data-speed-file-detail]'),resources=panel.querySelector('[data-speed-resources]'),slow=panel.querySelector('[data-speed-slowest]');
  size.textContent=bundleStats?.error?'Nem elérhető':bundleStats?bytes(bundleStats.total):'Betöltés…';
  fileCount.textContent=bundleStats?.count===undefined?'—':bundleStats.count.toLocaleString('hu-HU')+' fájl';
  detail.textContent=bundleStats?.error?'A kiadási manifest nem olvasható: '+bundleStats.error:bundleStats?'A manifestben szereplő '+bundleStats.count+' állomány tömörítetlen összmérete: '+bytes(bundleStats.total)+'. '+Object.entries(bundleStats.kinds).map(([name,size])=>name+': '+bytes(size)).join(' · ')+'. A ZIP tömörített mérete ettől eltér, a manifest önmagát nem számolja.':'A fájlleltár kiolvasása folyamatban…';
@@ -43,11 +43,15 @@ function refresh(){
  const transferred=measured.reduce((sum,entry)=>sum+(entry.transferSize||0),0);
  const decoded=measured.reduce((sum,entry)=>sum+(entry.decodedBodySize||0),0);
  resources.textContent='Böngésző által mért erőforrások: '+measured.length+' kérés · hálózati átvitel: '+bytes(transferred)+' · feldolgozott válaszmennyiség: '+bytes(decoded)+'. A cache-ből betöltött és a külső források mérése hiányos lehet.';
+ let slowCount=0;try{slowCount=settingNumber('runtime.diagnostics.slowestResourceCount');}catch{}
+ const slower=performance.getEntriesByType('resource').filter(entry=>{try{return new URL(entry.name).origin===location.origin&&entry.duration>0;}catch{return false;}}).sort((a,b)=>b.duration-a.duration).slice(0,slowCount);
+ slow.textContent=slower.length?'Leglassabb helyi állományok: '+slower.map(entry=>{const url=new URL(entry.name);return decodeURIComponent(url.pathname.split('/').at(-1)||url.pathname)+' ('+fmt(entry.duration)+')';}).join(' · ')+'. Ezek a böngésző által mért letöltési idők, nem egy teljes hálózati sebességteszt.':'A helyi állományok részletes időmérése még nem elérhető.';
  const nav=performance.getEntriesByType?.('navigation')?.[0];
  if(nav){
   const dom=nav.domContentLoadedEventEnd>0?fmt(nav.domContentLoadedEventEnd):'Még folyamatban';
   const load=nav.loadEventEnd>0?fmt(nav.loadEventEnd):'Még folyamatban';
-  details.textContent=`HTML-feldolgozás (DOMContentLoaded): ${dom} · Böngésző load esemény: ${load}`;
+  const fcp=performance.getEntriesByType('paint').find(entry=>entry.name==='first-contentful-paint');
+  details.textContent=`HTML-feldolgozás (DOMContentLoaded): ${dom} · Böngésző load esemény: ${load} · Első tartalommegjelenés (FCP): ${fcp?fmt(fcp.startTime):'nem mérhető'}`;
  }else details.textContent='A böngésző nem ad részletes navigációs mérési adatokat.';
 }
 export function initPerformanceDiagnostics(){
@@ -67,7 +71,8 @@ export function initPerformanceDiagnostics(){
  const timings=el('p','cs-speed-timings','');timings.dataset.speedBrowser='';
  const files=el('p','cs-speed-timings','');files.dataset.speedFileDetail='';
  const resources=el('p','cs-speed-timings','');resources.dataset.speedResources='';
- disclosure.append(summary,explanation,timings,files,resources);
+ const slower=el('p','cs-speed-timings','');slower.dataset.speedSlowest='';
+ disclosure.append(summary,explanation,timings,files,resources,slower);
  panel.append(row,disclosure);
  const foot=footer.querySelector('.footer-bottom');foot?foot.before(panel):footer.append(panel);
  if(document.readyState==='complete')refresh();else window.addEventListener('load',refresh,{once:true});
@@ -97,3 +102,4 @@ function finish(route,ok){
 }
 export function markRouteRendered(route,{found=true}={}){finish(route,found);}
 export function markRouteError(route){finish(route,false);}
+import {settingNumber} from './site-settings-2026.js';

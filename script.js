@@ -10,4 +10,4 @@ function startupError(error){
   const hint=document.createElement('p');hint.textContent=location.protocol==='file:'?'Az oldal JSON-adatokkal működik, ezért HTTPS/HTTP-kiszolgáló szükséges. Indítsd HTTP/HTTPS kiszolgálón.':'Az index.html, script.js, js/, json/ és assets/ mappáknak a webkiszolgáló megfelelő gyökérkönyvtárában kell lenniük.';
   shell.append(h,p,detail,hint);target.replaceChildren(shell);
 }
-import('./js/app.js?v=20261115r15sport').then(({startApp})=>startApp()).catch(startupError);
+import('./js/app.js?v=20261115r16sport').then(({startApp})=>startApp()).catch(startupError);

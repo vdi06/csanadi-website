@@ -1,8 +1,8 @@
 # Csanádi Sportiskola 2026 – a központi JSON összes paramétere
 
-**Forrás:** `json/config.json` · **Kiadás:** 15 · **Dátum:** 2026. november 15.
+**Forrás:** `json/config.json` · **Kiadás:** 16 · **Dátum:** 2026. november 15.
 
-**Összesen 183 beállítható, egy helyen tárolt mező.** A lista a tényleges kiadási JSON-ból származik; szerkesztéshez nyisd meg a `tools/parameterek-szerkeszto.html` felületet.
+**Összesen 190 beállítható, egy helyen tárolt mező.** A lista a tényleges kiadási JSON-ból származik; szerkesztéshez nyisd meg a `tools/parameterek-szerkeszto.html` felületet.
 
 A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést jelent. A darabszámok, időzítések, méretek és más globális kapcsolók a JSON-ból kerülnek a programokhoz. Az egyedi esemény, dokumentum és hír rekordjának saját dátuma a saját adatrekord egyetlen forrásértéke, nem másolat a globális konfigurációban.
 
@@ -82,8 +82,8 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `theme.lightColors.footer` | `"#DBD1C0"` | szöveg |
 | `theme.lightColors.nav` | `"#E1D7C6"` | szöveg |
 | `theme.lightColors.veil` | `"rgba(216,208,194,.86)"` | szöveg |
-| `theme.lightColors.sportGreen` | `"#26734C"` | szöveg |
-| `theme.lightColors.sportYellow` | `"#D0A52F"` | szöveg |
+| `theme.lightColors.sportGreen` | `"#BFE8C9"` | szöveg |
+| `theme.lightColors.sportYellow` | `"#F6E5AA"` | szöveg |
 | `theme.lightColors.chartOtherColors` | `["#517993", "#548580", "#8A944E", "#B27F66", "#7B8EAA", "#A67146"]` | lista |
 | `theme.darkColors.page` | `"#0C1E31"` | szöveg |
 | `theme.darkColors.card` | `"#162B41"` | szöveg |
@@ -95,8 +95,8 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `theme.darkColors.footer` | `"#0A1A2B"` | szöveg |
 | `theme.darkColors.nav` | `"#112C43"` | szöveg |
 | `theme.darkColors.veil` | `"rgba(10,26,43,.86)"` | szöveg |
-| `theme.darkColors.sportGreen` | `"#68C994"` | szöveg |
-| `theme.darkColors.sportYellow` | `"#F3D265"` | szöveg |
+| `theme.darkColors.sportGreen` | `"#315F4A"` | szöveg |
+| `theme.darkColors.sportYellow` | `"#766236"` | szöveg |
 | `theme.darkColors.chartOtherColors` | `["#75A2C6", "#6AA7A0", "#ACB66C", "#C9947C", "#9CBBCA", "#D4A67D"]` | lista |
 
 ## Tartalomforrások (4 mező)
@@ -116,7 +116,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `privacy.analyticsEnabled` | `false` | logikai |
 | `privacy.externalOrigins` | `[]` | lista |
 
-## Kereső (13 mező)
+## Kereső (17 mező)
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
@@ -133,12 +133,16 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `search.jumpRetryMs` | `150` | szám |
 | `search.quickSuggestions` | `["Felvételi", "Sporteredmények", "Eseménynaptár", "Dokumentumtár", "Képgaléria"]` | lista |
 | `search.fuzzyWordLengthTolerance` | `6` | szám |
+| `search.synonyms.felveteli` | `["jelentkezes", "beiratkozas"]` | lista |
+| `search.synonyms.sporteredmenyek` | `["bajnoksag", "sportverseny"]` | lista |
+| `search.synonyms.esemeny` | `["program", "rendezveny"]` | lista |
+| `search.synonyms.dokumentum` | `["pdf", "letoltes"]` | lista |
 
 ## Teljesítmény és offline gyorsítótár (7 mező)
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
-| `performance.cacheVersion` | `"csanadi-r15-sport-20261115"` | szöveg |
+| `performance.cacheVersion` | `"csanadi-r16-sport-20261115"` | szöveg |
 | `performance.maxCacheMegabytes` | `50` | szám |
 | `performance.respectReducedMotion` | `true` | logikai |
 | `performance.mediaCacheEntries` | `100` | szám |
@@ -146,7 +150,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `performance.offlinePrecacheFileMaxBytes` | `300000` | szám |
 | `performance.offlinePrecacheMaxEntries` | `220` | szám |
 
-## Megjelenítés, körmenü, dátumablakok és diagnosztika (83 mező)
+## Megjelenítés, körmenü, dátumablakok és diagnosztika (86 mező)
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
@@ -169,6 +173,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `runtime.navigation.outerRingArcSpacingDegrees` | `34` | szám |
 | `runtime.navigation.mobileSubmenuMaxWidthPx` | `760` | szám |
 | `runtime.navigation.menuFocusDelayMs` | `90` | szám |
+| `runtime.navigation.typeAheadResetMs` | `800` | szám |
 | `runtime.documents.maxSavedFilters` | `20` | szám |
 | `runtime.documents.suggestionLimit` | `35` | szám |
 | `runtime.documents.searchDelayMs` | `130` | szám |
@@ -221,6 +226,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `runtime.display.documentRelated` | `4` | szám |
 | `runtime.display.documentTeasers` | `3` | szám |
 | `runtime.display.newsTeasers` | `3` | szám |
+| `runtime.display.newsPageSize` | `6` | szám |
 | `runtime.display.dailyNewsFull` | `18` | szám |
 | `runtime.display.dailyNewsCompact` | `6` | szám |
 | `runtime.display.mediaBatch` | `12` | szám |
@@ -233,6 +239,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `runtime.accessibility.motionReductionHonored` | `true` | logikai |
 | `runtime.diagnostics.maxErrorEntries` | `200` | szám |
 | `runtime.diagnostics.summaryRefreshSeconds` | `60` | szám |
+| `runtime.diagnostics.slowestResourceCount` | `5` | szám |
 
 ## Iskolai modulok (15 mező)
 

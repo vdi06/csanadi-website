@@ -45,9 +45,11 @@ label.search{flex:1 1 250px;display:grid;gap:5px;font-weight:700}
 footer{text-align:center;color:#52677c;padding:20px}
 @media(max-width:540px){.bar,.actions{display:grid}.bar button,.file-button{width:100%;justify-content:center}}
 </style>
+<link rel="stylesheet" href="../css/round16-standalone-tools.css?v=20261115r16theme">
+<script src="tool-ui-2026.js?v=20261115r16theme" defer></script>
 </head>
-<body>
-<header><div class="brand"><img src="../assets/media/logo/csanadi-cimer-512.webp" alt=""><div><strong>CSANÁDI SPORTISKOLA</strong><div>Központi honlapbeállítások · 2026</div></div></div><nav aria-label="Visszalépés"><a href="../index.html#/">Honlap</a> · <a href="../utmutato.html">Kézikönyv</a> · <a href="ftp-kiadas-ellenorzo.html">Kiadásellenőrző</a></nav></header>
+<body class="csn16-standalone-tool">
+<header><div class="brand"><img src="../assets/media/logo/csanadi-cimer-512.webp" alt=""><div><strong>CSANÁDI SPORTISKOLA</strong><div>Központi honlapbeállítások · 2026</div></div></div><nav aria-label="Visszalépés"><a href="../index.html#/">Honlap</a> · <a href="../utmutato.html">Kézikönyv</a> · <a href="ftp-kiadas-ellenorzo.html">Kiadásellenőrző</a> · <button id="tool-theme-toggle" type="button" aria-label="Megjelenés váltása">◐ Megjelenés</button></nav></header>
 <main>
 <section class="intro"><h1>Az összes központi paraméter szerkesztése</h1><p>A működést szabályozó időzítéseket, megjelenítési darabszámokat, korlátokat, felületi méreteket, láthatósági dátumokat és globális elérhetőségeket a <strong>json/config.json</strong> tárolja. A szerkesztő minden meglévő mezőjét megjeleníti.</p><p class="warning"><strong>Fontos:</strong> ez a felület a böngészőben szerkeszt, és a módosított <strong>config.json</strong> fájlt letölti. Az FTP-n lévő eredeti fájlt nem írja át. Kiadás előtt töltsd le a módosított JSON-t, ellenőrizd, majd a teljes csomagban a <code>json/config.json</code> fájlt cseréld le. Kezdő és záró időpontot ISO 8601 alakban adj meg, például 2026-12-01T08:00:00+01:00; a <code>null</code> nem korlátozza az időszakot.</p></section>
 <section class="bar" aria-label="Műveletek"><label class="search" for="query">Paraméter keresése<input id="query" type="search" placeholder="Például: darabszám, időzítés, dátum, keresés"></label><div class="actions"><button id="validate" type="button">Ellenőrzés</button><button id="download" type="button">config.json letöltése</button><label class="file-button">JSON betöltése<input id="import" type="file" accept="application/json,.json"></label><button id="reset" type="button">Eredeti visszaállítása</button></div></section>

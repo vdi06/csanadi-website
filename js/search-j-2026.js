@@ -49,7 +49,7 @@ function indexPayload(type,data){
  const result=[];
  for(const item of data?.items||[]){
   if(!item?.title)continue;
-  if(type==='news' && item.status!=='verified')continue;
+  if(type==='news' && !['verified','sample'].includes(item.status))continue;
   if(type==='event' && item.status!=='published')continue;
   let route='#/sport/sportgaleriak';
   if(type==='news')route='#/hirek-es-esemenyek/hirek';
@@ -63,7 +63,7 @@ function indexPayload(type,data){
  return result;
 }
 const normalizeTerm=(term,norm)=>norm(term||'').replace(/[^a-z0-9\u00e1-\u017e\s-]/g,' ').trim();
-function score(entry,query,tokens){
+function score(entry,query,tokens,synonyms){
  if(!query)return (entry.type==='page'?30:0)+(entry.href==='#/'?14:0);
  let points=0;
  for(const term of tokens){
@@ -76,7 +76,12 @@ function score(entry,query,tokens){
   if(entry.normalSection.includes(term))score+=9;
   if(entry.normalSummary.includes(term))score+=10;
   if(entry.normalBody.includes(term))score+=5;
-  if(score===0)return -1;  
+  if(score===0){
+   const alternatives=[...(synonyms[term]||[]),...Object.entries(synonyms).filter(([,values])=>values.includes(term)).map(([key])=>key)];
+   const matched=alternatives.some(word=>entry.normalTitle.includes(word)||entry.normalTags.includes(word)||entry.normalSummary.includes(word)||entry.normalBody.includes(word));
+   if(matched)score=7;
+  }
+  if(score===0)return -1;
   points+=score;
  }
  if(entry.normalTitle.includes(query))points+=36;
@@ -85,6 +90,7 @@ function score(entry,query,tokens){
 }
 export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,status,onNavigate}){
  const pageSize=settingNumber('search.pageSize'),suggestionLimit=settingNumber('search.suggestionLimit'),maxResults=settingNumber('search.maxResults');
+ const synonyms=setting('search.synonyms')||{};
  let all=[],query='',type='all',section='all',max=pageSize,rebuildSerial=0;
  const resultWrap=results;resultWrap.setAttribute('aria-label','Keresési találatok');status.setAttribute('role','status');status.setAttribute('aria-live','polite');
  const form=element('div','j-search-tools');
@@ -174,7 +180,7 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   results.replaceChildren();renderPicks();
   const q=normalizeTerm(query,norm),tokens=[...new Set(q.split(/\s+/).filter(Boolean))];
   let pool=all.filter(x=>(type==='all'||x.type===type)&&(section==='all'||x.section===section));
-  const matches=pool.map(x=>({x,score:score(x,q,tokens)})).filter(r=>r.score>=0);
+  const matches=pool.map(x=>({x,score:score(x,q,tokens,synonyms)})).filter(r=>r.score>=0);
   matches.sort((a,b)=>b.score-a.score||a.x.title.localeCompare(b.x.title,'hu'));
   const shown=matches.slice(0,Math.min(max,maxResults));
   status.textContent=`${matches.length} találat · ${shown.length} megjelenítve`;

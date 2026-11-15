@@ -126,8 +126,10 @@ function openPreview(doc){
  dialog.append(el('p','doc-preview-summary',doc.summary));
  dialog.append(el('p','doc-preview-explain',doc.official?'Jóváhagyott intézményi dokumentum.':'Önálló tanulási segédlet, nem intézményi szabályzat.'));
  if(doc.status!=='withdrawn'&&doc.filePath){
-  const iframe=el('iframe','doc-iframe');iframe.title=doc.title+' előnézete';iframe.loading='lazy';iframe.src=docURL(doc)+'#toolbar=1';dialog.append(iframe);
-  const fallback=el('p','doc-preview-fallback','Ha az előnézet üres, használd a Megnyitás új lapon vagy a Letöltés gombot.');fallback.setAttribute('role','status');dialog.append(fallback);
+  const browserHasViewer=navigator.pdfViewerEnabled!==false;
+  const fallback=el('p','doc-preview-fallback',browserHasViewer?'Ha az előnézet üres, használd a Megnyitás új lapon vagy a Letöltés gombot.':'A böngésző nem támogat beépített PDF-előnézetet. A dokumentumot új lapon megnyithatod vagy letöltheted.');fallback.setAttribute('role','status');
+  if(browserHasViewer){const iframe=el('iframe','doc-iframe');iframe.title=doc.title+' előnézete';iframe.loading='lazy';iframe.src=docURL(doc)+'#toolbar=1';iframe.addEventListener('error',()=>{fallback.textContent='A PDF-előnézet nem tölthető be. Nyisd meg új lapon vagy töltsd le.';});dialog.append(iframe);}
+  dialog.append(fallback);
   const actions=el('div','doc-preview-actions');const open=el('a','btn btn-outline-secondary','Megnyitás új lapon');open.href=docURL(doc);open.target='_blank';open.rel='noopener noreferrer';
   const download=el('a','btn btn-primary','Letöltés ('+formatSize(doc.fileSizeBytes)+')');download.href=docURL(doc);download.download=doc.fileName;actions.append(open,download);dialog.append(actions);
  }else dialog.append(el('p','doc-error','A dokumentumot visszavonták; nem elérhető letöltés.'));

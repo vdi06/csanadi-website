@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-sportiskola-2026-r15",
+  "release": "csanadi-sportiskola-2026-r16",
   "date": "2026-11-15",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
@@ -11,8 +11,8 @@
       "sha256": "0f8fe1484cf12c38044132545bebfb5615c1a3dbc70ab63555ef3ad687db407b"
     },
     "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf": {
-      "sizeBytes": 85243,
-      "sha256": "77135658d07b23f0d5de361af1191a442b3db2bb8c1448d1d041b4f7e21dda6f"
+      "sizeBytes": 89537,
+      "sha256": "ad61c0b5eef2aea0bd167e7a53565408589e9ef09e80b83d36738c2c6c02c75e"
     },
     "assets/documents/digitalis-fajlok-es-beadas.pdf": {
       "sizeBytes": 48220,
@@ -2310,6 +2310,22 @@
       "sizeBytes": 4792,
       "sha256": "039bc4bd47f6c15eafa14b4076bca44be7a77a51d3e61aa4cfa08d4276130043"
     },
+    "css/round16-paired-hero.css": {
+      "sizeBytes": 4425,
+      "sha256": "cbd67382f1a21af9cd8676890be0a3b4b1fe2c08164e617bfadda3b28cb7f193"
+    },
+    "css/round16-responsive.css": {
+      "sizeBytes": 1146,
+      "sha256": "2cf7212e6ef20da2211e7d8fab697edd79713f73e7c6ad5798caefef76506673"
+    },
+    "css/round16-sport-theme.css": {
+      "sizeBytes": 2663,
+      "sha256": "ea7a2df7621611e56fa1d038292a8e4ebd8de3e7a39605e0b0f23d69929ed972"
+    },
+    "css/round16-standalone-tools.css": {
+      "sizeBytes": 3293,
+      "sha256": "b70a741f9409cd942daeb31de71b732cb03175f486e3231d906aa9031bd37ce3"
+    },
     "css/style.css": {
       "sizeBytes": 75798,
       "sha256": "71840673db531aeabf7822f96f96b563e10fa6c662b678ed51e511add55efd74"
@@ -2323,16 +2339,16 @@
       "sha256": "1a2e2ac95e61a423137158b77589cb1ded55a451457a79204ee719502a308081"
     },
     "dokumentacio/FEJLESZTESI_ES_TESZTBESZAMOLO_2026.md": {
-      "sizeBytes": 22764,
-      "sha256": "d658c01fcdc26ae05ca3d68f02a1e6ae6058c9cb845cd919a53a4fcb2e113aad"
+      "sizeBytes": 16147,
+      "sha256": "9f716257d888f691af763472f30b7c99e07f552fc59a95fe4894adc52fd7698f"
     },
     "dokumentacio/FTP_ATALLAS_ES_VISSZAALLITAS.md": {
       "sizeBytes": 3724,
       "sha256": "204c5594ef42354876623256453337b27a6f73c59103872506eaa8c2f59487fd"
     },
     "dokumentacio/KOZPONTI_JSON_PARAMETEREK.md": {
-      "sizeBytes": 13224,
-      "sha256": "862f96ddc66fe8678bcd2107f975781d4c97506ba16362306044416bead0c4e4"
+      "sizeBytes": 13680,
+      "sha256": "dda342ded6369c7274eceebc22102a045f2006159b8115b50da9f6b96e9b148e"
     },
     "dokumentacio/MEDIA_FELHASZNALASI_JOGOK_FELULVIZSGALAT.csv": {
       "sizeBytes": 44003,
@@ -2343,16 +2359,16 @@
       "sha256": "00eb23c69e2889b2ede6073d3259a46c2ba4985a52ed5e8ee077adc7f45a77c3"
     },
     "index.html": {
-      "sizeBytes": 11523,
-      "sha256": "5d9e84ca4cb66c2b64a5c5abcdf23cc237527eacc8d1ef56e4880cadccf1eba4"
+      "sizeBytes": 11585,
+      "sha256": "f5a419c7cfd831afff08faac61ab05d0664b42f85656aec1c2ff3e7b69d57ba2"
     },
     "js/advanced-2026.js": {
-      "sizeBytes": 33875,
-      "sha256": "6304dfbd4b7ff0685e5c3fa9d6d80bac1cb549da9343c7fda3f462365b5af7fe"
+      "sizeBytes": 33992,
+      "sha256": "9ffcc5e2705809acc392dcfd842b043bb20f717ee15156ff071ada39b33bf504"
     },
     "js/app.js": {
-      "sizeBytes": 42915,
-      "sha256": "9f8ba2810e44d7e1b799620273fee1bcb6428a8aac4d7aa1b3f479d36311168c"
+      "sizeBytes": 42485,
+      "sha256": "537bea3d84e5807cac577ef6e188bf905c68951d2cd4726310dcd2567e0bf56e"
     },
     "js/blocks.js": {
       "sizeBytes": 8854,
@@ -2371,8 +2387,8 @@
       "sha256": "80283f4a2c00f8657caba6f82fd4c38f6584aa1ff39a8e798582cb943b6c63a6"
     },
     "js/documents.js": {
-      "sizeBytes": 27670,
-      "sha256": "cb599de9fa127d3e0d5441d5ba305717c88c854d9d636f2e4cfc417cd1650abf"
+      "sizeBytes": 28025,
+      "sha256": "2768d6f5585926bddd0c3828cc4cdcaff6fceb1c7b8a120e5632f39b22287c34"
     },
     "js/experience-2026.js": {
       "sizeBytes": 21323,
@@ -2382,9 +2398,13 @@
       "sizeBytes": 13637,
       "sha256": "bfd8cd19ff6ef7f8c4a3bbeedf8b7c1aa77652cf42258e7a0d8254272f375189"
     },
+    "js/guide-theme-2026.js": {
+      "sizeBytes": 1629,
+      "sha256": "4f981ec3658552e4779f652c75b999021d7633281c0c4c14c54fa2e7fd4530f6"
+    },
     "js/hero-2026.js": {
-      "sizeBytes": 7070,
-      "sha256": "9d290f5151b7778ac75443b51a308ffe519ae6a92bc73d17ec5d43d658cf42be"
+      "sizeBytes": 6145,
+      "sha256": "f7a394e036d15d0fbdd6d92a7595a413d75e18b898eb62b63b2df9be9358d89a"
     },
     "js/home-live.js": {
       "sizeBytes": 13997,
@@ -2407,8 +2427,8 @@
       "sha256": "d33706c3b3113317e8a8437d7e155f75a02ba84f68742bdf8de1162f44aa10ba"
     },
     "js/news-2026.js": {
-      "sizeBytes": 7995,
-      "sha256": "3a77be2b2b705b4e1ee9accc04249bfed715a784caedfd2f491df03946c9f4ee"
+      "sizeBytes": 8561,
+      "sha256": "f2f209ad585d92ad44488d60694af55744e248bc8982f15591a01d4dc3073e00"
     },
     "js/next10-2026.js": {
       "sizeBytes": 11299,
@@ -2419,16 +2439,16 @@
       "sha256": "3b9dafe2ec515e8f8f9cb22b0da3565ee9ed26dc441f11ffeb641d1915debf03"
     },
     "js/performance-diagnostics-2026.js": {
-      "sizeBytes": 6867,
-      "sha256": "81c6ec8898c032ecef4f6e5c3cf708a6ebcf8abca1e3901acaf5ce60a2bd3fd3"
+      "sizeBytes": 7953,
+      "sha256": "45c85fe54d684cc099b753f6ed2ab1b0f7d9ac87fe9247a76f42056a763173a3"
     },
     "js/premium-home-2026.js": {
       "sizeBytes": 3135,
       "sha256": "d212dc8a9a8bdfa05362193eabfdaaaae28e16c917099a4b96339768773b3d3c"
     },
     "js/round10-enhancements.js": {
-      "sizeBytes": 4222,
-      "sha256": "f1f7327583eb84a7da88c60846d57e8a660c060039798663950d7d8b8e9f9580"
+      "sizeBytes": 5051,
+      "sha256": "cdc3caac4fc69d74764a1b7a6d5255df17a256bdedd450d050a469195a4b844c"
     },
     "js/round12-media-performance.js": {
       "sizeBytes": 1099,
@@ -2439,8 +2459,8 @@
       "sha256": "35fdbe1539a20a9228c53dbd89a5cf0210760170f13a9540a26661fb97003fc8"
     },
     "js/search-j-2026.js": {
-      "sizeBytes": 12800,
-      "sha256": "6dbb1fb60f96e79eaf04e84df327162be540f5f1cb4bd11edefccce5bfe3ea8d"
+      "sizeBytes": 13244,
+      "sha256": "332f7d008381a7aaf4d5654a5ad5b45ce8ce23dac2c22f8237c0f129bae88a4f"
     },
     "js/site-quality-2026.js": {
       "sizeBytes": 8983,
@@ -2467,8 +2487,8 @@
       "sha256": "0f57a7ec39abc6169657b251943a50f689b0bf79865575950570d14a9882adf9"
     },
     "json/adatok/dokumentumok.json": {
-      "sizeBytes": 26730,
-      "sha256": "71f050fa34924c66c663d9f5d16b403c60831c5b00621a2bc97a0391991498a9"
+      "sizeBytes": 27066,
+      "sha256": "91ba53fe53da02ada5bebd00d916d2b265ee565adc32db5d83d385b2989ed4cd"
     },
     "json/adatok/esemenyek.json": {
       "sizeBytes": 1881,
@@ -2479,8 +2499,8 @@
       "sha256": "f1e75b64a66e10de30c0b4fe0cc4e4ae101dd3db7dbdfe07bc45a39902b374b3"
     },
     "json/adatok/hirek-hivatalos.json": {
-      "sizeBytes": 8959,
-      "sha256": "58ca894e7609632a11abdb649851077e9a13b5dcc9c0b8a3a5ebfa3584bc82c6"
+      "sizeBytes": 8567,
+      "sha256": "fa0934d8cf253628bbea78506974280e90b937eec2010c7fe0af6bb54f3a56f6"
     },
     "json/adatok/iskolatorteneti-idovonal.json": {
       "sizeBytes": 2115,
@@ -2515,16 +2535,16 @@
       "sha256": "893cfecd12a49d722f4bef665cf693adfa259174235298c912329c8d0f9a427c"
     },
     "json/assets-inventory.json": {
-      "sizeBytes": 304329,
-      "sha256": "5f2a54d07d3a361953102c7b38f3d1ec340169d9516e0c96539205b87d111d2f"
+      "sizeBytes": 304342,
+      "sha256": "2f89377a2920de04fbd6e78577ddd10be69970fb405ef957f216622bb956a42c"
     },
     "json/assets-project-index.json": {
       "sizeBytes": 104086,
       "sha256": "8f6dcdcc3161d4c1ecebf6d565bba96fda1b26c481f72a13be78ac8caaa7f996"
     },
     "json/config.json": {
-      "sizeBytes": 6960,
-      "sha256": "36e1037edbd68d10fa1cf824a2f5aaa10e6e621582ce3046d74d68593c7f21cc"
+      "sizeBytes": 7265,
+      "sha256": "e59518fb5e14be05e1241fcbe7582280bb0de5327b45ed75ff0380b0c51fed02"
     },
     "json/mediatar.json": {
       "sizeBytes": 218634,
@@ -2551,8 +2571,8 @@
       "sha256": "05dcca48e5d662c4ae411f22950ab6441b428479962b8c71f40dcfb38a12b8d7"
     },
     "json/oldalak/hirek-es-esemenyek/hirek/sporthirek.json": {
-      "sizeBytes": 2869,
-      "sha256": "ea25db12861d9a03794b4d81fd20e962079579ade2f1b3dff4e97f783a17e0b7"
+      "sizeBytes": 2905,
+      "sha256": "f7348aacd77f4ac30853d5df3bee16ab8e735944d8a9c3c807fd2a8547c832bd"
     },
     "json/oldalak/hirek-es-esemenyek/hirek.json": {
       "sizeBytes": 2316,
@@ -2787,8 +2807,8 @@
       "sha256": "6ac08cb9f99ea35388bc4ac3aa4815cb3f5c1397c73c24f57fcafa5f86cbd7de"
     },
     "json/oldalak/sport/sportolok.json": {
-      "sizeBytes": 3226,
-      "sha256": "28613f9608fa5cfc24155ce3c95a25ed59f3cbbce3b7358287077ad184405145"
+      "sizeBytes": 3233,
+      "sha256": "cba148f404974a12fe9ab027a6b5f26f30fb160dff632803ba5be60f0cf6ac88"
     },
     "json/oldalak/sport.json": {
       "sizeBytes": 2804,
@@ -2816,7 +2836,7 @@
     },
     "script.js": {
       "sizeBytes": 1183,
-      "sha256": "c4f2b1c4f4236bf59eb24507b507d5413e30da6d4c0195341ed411b5abe6bfab"
+      "sha256": "afedced10f3afe1f8158a408ca13787469b6bc0634b15e7a7355ad0484d8236a"
     },
     "service-worker.js": {
       "sizeBytes": 4479,
@@ -2839,12 +2859,12 @@
       "sha256": "92b3b0a51999a2d37abecf0726cb1354b48fff802a4a45074c7fdab1f21be14f"
     },
     "tools/ftp-kiadas-ellenorzo.js": {
-      "sizeBytes": 9987,
-      "sha256": "23fdbf81e714ba077008fd23d2067cb1df63c29908922ef0af6f2137dbbf6eed"
+      "sizeBytes": 10589,
+      "sha256": "b460296888c1b6cf3b44b300245100ee7e8b81bfc848611541be082459b59a6e"
     },
     "tools/media-manager-2026.js": {
-      "sizeBytes": 36330,
-      "sha256": "cfb178aff1f379ba9cf894fbdf4cb775d02b67db4f6f5fafb0c214300a881f52"
+      "sizeBytes": 36951,
+      "sha256": "d923c734e0398608704cb4dbd915dae19ce956d8b9a84b44b735cc7805a10085"
     },
     "tools/media-minoseg-2026.js": {
       "sizeBytes": 3773,
@@ -2859,20 +2879,20 @@
       "sha256": "10c6e4a7a8e75d6d1c7b637062627e8a119f1117a08f43b03aed45ce8386a7bc"
     },
     "tools/parameterek-szerkeszto.html": {
-      "sizeBytes": 5279,
-      "sha256": "316e772c5adc93532e026832f43af925c4c7ec90e9f665990ce8ae814cc3905a"
+      "sizeBytes": 5568,
+      "sha256": "0ce4efce0ad9f4ba7f44ff45d5cb2c7a21d720591cf86b4d3b64e172f92a587c"
     },
     "tools/parameterek-szerkeszto.js": {
-      "sizeBytes": 10647,
-      "sha256": "5dc6f77939027accdc99f1eec8f86c5a731c58c7fc3e8e08c2a6ab8e3e645f54"
+      "sizeBytes": 12064,
+      "sha256": "630c6d12220b176768fd8cf86522de18c5ab5acb61549de624ab324e2075ed50"
     },
     "tools/sporthirek-szerkeszto.html": {
       "sizeBytes": 7938,
       "sha256": "4a2d79b88fcd3979fc80ac056f2ac42cccb8cc18a7e981932aedd4c167b78e74"
     },
     "tools/tartalmi-hitelesites.html": {
-      "sizeBytes": 5040,
-      "sha256": "6d93c386af737cf0aab6c93db7a1e3ea447d222eac356dfdb688e44460cb33e3"
+      "sizeBytes": 5327,
+      "sha256": "fda97c7a24c56bf0497dea5af9d2ee93b8dc13e830bfcab12af02cf4be82fdcc"
     },
     "tools/tartalmi-hitelesites.js": {
       "sizeBytes": 7276,
@@ -2891,16 +2911,16 @@
       "sha256": "0543eb693c352917e2cdfe9b588bbd9535ad368e3c386f5c72d4dbf9bdaf7ffd"
     },
     "tools/tool-ui-2026.js": {
-      "sizeBytes": 1138,
-      "sha256": "4e8158555eb9bcdad6990b957a3ec96a09b036f17181b1cab1fffb338d37bc3e"
+      "sizeBytes": 1893,
+      "sha256": "a33cff030b36bd5cbe263c5ab6799519c5fc0ca317c941ef43449e8bb1157c97"
     },
     "tools/zip-native-2026.js": {
       "sizeBytes": 3556,
       "sha256": "b8860ea52dc614a1a88f8164116c586c3cbecda317d72c104a8b97aaea667258"
     },
     "utmutato.html": {
-      "sizeBytes": 72832,
-      "sha256": "94a3c488715cf14a259b93b0a273f1a468d213aea2fd911a7d0878699e5007fa"
+      "sizeBytes": 79811,
+      "sha256": "a421a1b23d523ad28e99fd77ba693b5730947796078c3be68925ad0ae43de755"
     }
   }
 }

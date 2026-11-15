@@ -3,7 +3,6 @@
 const SOURCE=new URL('../json/adatok/hirek-hivatalos.json',import.meta.url);
 const IMAGE_ROOT='assets/media/web/';
 const ILLUSTRATIONS={Sport:'sport-1600.webp',Felvételi:'felveteli-1600.webp',Oktatás:'oktatas-1600.webp',Közlemény:'kozosseg-1600.webp',Archívum:'iskolank-1600.webp',Iskolánk:'iskolank-1600.webp'};
-const PAGE_SIZE=6;
 const el=(tag,cls='',txt)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=String(txt);return n;};
 const add=(p,...nodes)=>{p.append(...nodes);return p;};
 const normal=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('hu-HU');
@@ -17,7 +16,9 @@ async function load(){
  if(x.schemaVersion!=='1.0.0'||x.collectionId!=='collection:hirek-hivatalos'||!Array.isArray(x.items))throw Error('A hírgyűjtemény felépítése hibás.');
  const seen=new Set();
  return x.items.filter(v=>{
-  if(!v||v.status!=='verified'||!validSource(v.url)||!validRoute(v.route)||typeof v.title!=='string'||typeof v.summary!=='string')return false;
+  if(!v||!['verified','sample'].includes(v.status)||!validRoute(v.route)||typeof v.title!=='string'||typeof v.summary!=='string')return false;
+  if(v.status==='verified'&&!validSource(v.url))return false;
+  if(v.status==='sample'&&(v.url!==null||!v.title.startsWith('MINTA – ')||v.date!==null))return false;
   if(seen.has(v.id))return false;seen.add(v.id);
   if(v.date&&(!/^\d{4}-\d{2}-\d{2}$/.test(v.date)||Number.isNaN(Date.parse(v.date+'T12:00:00Z'))))return false;
   return true;
@@ -28,20 +29,20 @@ function sourceLink(item){
  a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',item.title+' – hivatalos forrás megnyitása új lapon');return a;
 }
 function newsCard(item,compact=false){
- const card=el('article','cs-news-card dfg-news-card'+(compact?' dfg-news-compact':''));
+ const card=el('article','cs-news-card dfg-news-card'+(compact?' dfg-news-compact':'')+(item.status==='sample'?' cs-news-sample':''));
  const cover=el('div','dfg-news-cover');const img=el('img');img.src=IMAGE_ROOT+(ILLUSTRATIONS[item.category]||'iskolank-1600.webp');
  img.loading='lazy';img.decoding='async';img.width=480;img.height=270;img.alt='Iskolai témájú kép';cover.append(img);
  const copy=el('div','dfg-news-body'),meta=el('div','cs-news-meta');
- add(meta,el('span','cs-news-cat',item.category),el('time','dfg-news-date',item.date?formatDate(item.date):'Dátum nélküli közlemény'));
+ add(meta,el('span','cs-news-cat',item.status==='sample'?'FIKTÍV MINTA · '+item.category:item.category),el('time','dfg-news-date',item.status==='sample'?'Nem valós hír':item.date?formatDate(item.date):'Dátum nélküli közlemény'));
  if(item.date)meta.querySelector('time').dateTime=item.date;
  const title=el('h3','dfg-news-title',item.title),summary=el('p','dfg-news-summary',item.summary),details=el('details','cs-news-detail');
  add(details,el('summary','','További részletek'),el('p','',item.detail||item.summary));
  const link=el('a','cs-news-route','Kapcsolódó oldal →');link.href=item.route;
   
- const original=sourceLink(item);
- if(compact){original.textContent='Eredeti hír ↗';link.textContent='Részletek →';}
- if(compact)add(copy,meta,title,summary,add(el('div','cs-news-links'),original,link));
- else add(copy,meta,title,summary,details,add(el('div','cs-news-links'),original,link));
+ const original=item.status==='verified'?sourceLink(item):null;
+ if(compact){if(original)original.textContent='Eredeti hír ↗';link.textContent='Részletek →';}
+ if(compact)add(copy,meta,title,summary,add(el('div','cs-news-links'),...(original?[original]:[]),link));
+ else add(copy,meta,title,summary,details,add(el('div','cs-news-links'),...(original?[original]:[]),link));
  return add(card,cover,copy);
 }
 function safeArchive(items,route){
@@ -73,7 +74,7 @@ export function renderNewsTeasers(){
 }
 export function renderNewsCenter(route){
  const section=el('section','cs-news-center dfg-news-center');
- const intro=el('p','cs-news-intro','Ellenőrzött iskolai közlemények, az eredeti hírekre mutató hivatkozásokkal.');
+ const intro=el('p','cs-news-intro','Ellenőrzött intézményi közlemények és külön, jól jelölt, teljesen fiktív sporthírminták. A MINTA feliratú bejegyzések nem valós személyekről vagy megtörtént eredményekről szólnak.');
  const toolbar=el('div','cs-news-toolbar dfg-news-toolbar');
  const input=el('input','form-control'),category=el('select','form-select'),order=el('select','form-select');
  input.type='search';input.placeholder='Keress címben és leírásban…';input.setAttribute('aria-label','Hírek keresése');input.autocomplete='off';
@@ -88,9 +89,10 @@ export function renderNewsCenter(route){
  function draw(){
   grid.replaceChildren();pager.replaceChildren();
   const q=normal(input.value.trim());const matches=sorted(items.filter(x=>(!category.value||x.category===category.value)&&normal(x.title+' '+x.summary+' '+x.detail+' '+x.category).includes(q)),order.value);
-  const total=Math.max(1,Math.ceil(matches.length/PAGE_SIZE));page=Math.min(page,total);
-  count.textContent=matches.length+' ellenőrzött hír · '+(matches.length?`${page}. oldal / ${total}`:'nincs találat');
-  matches.slice((page-1)*PAGE_SIZE,page*PAGE_SIZE).forEach(x=>grid.append(newsCard(x)));
+  const pageSize=settingNumber('runtime.display.newsPageSize');
+  const total=Math.max(1,Math.ceil(matches.length/pageSize));page=Math.min(page,total);
+  count.textContent=matches.length+' bejegyzés (hírek és minták) · '+(matches.length?`${page}. oldal / ${total}`:'nincs találat');
+  matches.slice((page-1)*pageSize,page*pageSize).forEach(x=>grid.append(newsCard(x)));
   if(!matches.length)grid.append(el('p','dfg-empty','A keresés nem adott találatot. Módosítsd a szűrőket.'));
   if(total>1){
    const prev=el('button','','← Előző'),next=el('button','','Következő →');prev.type=next.type='button';prev.disabled=page===1;next.disabled=page===total;

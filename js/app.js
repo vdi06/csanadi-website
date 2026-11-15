@@ -556,7 +556,6 @@ function wireEvents(){
   window.addEventListener('resize',()=>{if(!siteMap.hidden)requestAnimationFrame(positionCompassSubmenu);});
   document.getElementById('site-map-close').addEventListener('click',()=>closeSiteMap());
   siteMap.addEventListener('click',e=>{if(e.target.closest('[data-site-map-dismiss]'))closeSiteMap();if(e.target.closest('a[href]'))closeSiteMap(false);});
-  siteMap.addEventListener('keydown',e=>{if(e.key==='Tab'){const focusables=[...siteMap.querySelectorAll('a[href],button:not([disabled]),summary')].filter(x=>x.getClientRects().length>0);if(focusables.length){const first=focusables[0],last=focusables.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}}});
   document.getElementById('search-open').addEventListener('click',openSearch);
   document.getElementById('search-close').addEventListener('click',closeSearch);
   dialog.addEventListener('click',e=>{if(e.target===dialog)closeSearch()});

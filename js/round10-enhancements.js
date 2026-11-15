@@ -1,3 +1,4 @@
+import {settingNumber} from './site-settings-2026.js';
 const ele=(tag,cls='',text)=>{const item=document.createElement(tag);if(cls)item.className=cls;if(text!==undefined)item.textContent=String(text);return item;};
 const norm=text=>String(text||'').toLocaleLowerCase('hu-HU').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
 function saveText(filename,content,type){const url=URL.createObjectURL(new Blob([content],{type}));const link=ele('a');link.href=url;link.download=filename;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);}
@@ -43,10 +44,17 @@ function enhancedMedia(){
 }
 function enhanceMenus(){
  const overlay=document.getElementById('site-map-overlay');if(!overlay)return;
+ let typed='',lastTypedAt=0;
  overlay.addEventListener('keydown',event=>{
+  const active=document.activeElement;
+  if(event.key.length===1&&!event.altKey&&!event.ctrlKey&&!event.metaKey&&active?.matches('.csn26-outer-link,.compass26-choice-link,.csn26-third-link,.compass26-sub-link')){
+   const now=performance.now();typed=now-lastTypedAt>settingNumber('runtime.navigation.typeAheadResetMs')?'':typed;lastTypedAt=now;typed+=norm(event.key);
+   const scope=active.matches('.csn26-outer-link,.csn26-third-link')?'#csn26-outer-ring':active.matches('.compass26-choice-link')?'#site-map-categories':'#site-map-subtopics';
+   const matching=[...overlay.querySelectorAll(scope+' a[href]')].filter(link=>link.getClientRects().length>0&&norm(link.textContent).trim().startsWith(typed));
+   if(matching.length){event.preventDefault();matching[0].focus();}return;
+  }
   const direction=event.key==='ArrowRight'||event.key==='ArrowDown'?1:event.key==='ArrowLeft'||event.key==='ArrowUp'?-1:0;
   if(!direction&&event.key!=='Home'&&event.key!=='End')return;
-  const active=document.activeElement;
   if(!active?.matches('.csn26-outer-link,.compass26-choice-link,.csn26-third-link,.compass26-sub-link'))return;
   const scope=active.matches('.csn26-outer-link,.csn26-third-link')?'#csn26-outer-ring':active.matches('.compass26-choice-link')?'#site-map-categories':'#site-map-subtopics';
   const buttons=[...overlay.querySelectorAll(scope+' a[href]')].filter(button=>button.getClientRects().length>0);

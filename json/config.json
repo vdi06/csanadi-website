@@ -49,8 +49,8 @@
       "footer": "#DBD1C0",
       "nav": "#E1D7C6",
       "veil": "rgba(216,208,194,.86)",
-      "sportGreen": "#26734C",
-      "sportYellow": "#D0A52F",
+      "sportGreen": "#BFE8C9",
+      "sportYellow": "#F6E5AA",
       "chartOtherColors": ["#517993", "#548580", "#8A944E", "#B27F66", "#7B8EAA", "#A67146"]
     },
     "darkColors": {
@@ -64,8 +64,8 @@
       "footer": "#0A1A2B",
       "nav": "#112C43",
       "veil": "rgba(10,26,43,.86)",
-      "sportGreen": "#68C994",
-      "sportYellow": "#F3D265",
+      "sportGreen": "#315F4A",
+      "sportYellow": "#766236",
       "chartOtherColors": ["#75A2C6", "#6AA7A0", "#ACB66C", "#C9947C", "#9CBBCA", "#D4A67D"]
     }
   },
@@ -93,10 +93,16 @@
     "jumpMaxAttempts": 22,
     "jumpRetryMs": 150,
     "quickSuggestions": ["Felvételi", "Sporteredmények", "Eseménynaptár", "Dokumentumtár", "Képgaléria"],
-    "fuzzyWordLengthTolerance": 6
+    "fuzzyWordLengthTolerance": 6,
+    "synonyms": {
+      "felveteli": ["jelentkezes", "beiratkozas"],
+      "sporteredmenyek": ["bajnoksag", "sportverseny"],
+      "esemeny": ["program", "rendezveny"],
+      "dokumentum": ["pdf", "letoltes"]
+    }
   },
   "performance": {
-    "cacheVersion": "csanadi-r15-sport-20261115",
+    "cacheVersion": "csanadi-r16-sport-20261115",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,
@@ -126,7 +132,8 @@
       "outerRingArcMaxDegrees": 135,
       "outerRingArcSpacingDegrees": 34,
       "mobileSubmenuMaxWidthPx": 760,
-      "menuFocusDelayMs": 90
+      "menuFocusDelayMs": 90,
+      "typeAheadResetMs": 800
     },
     "documents": {
       "maxSavedFilters": 20,
@@ -195,6 +202,7 @@
       "documentRelated": 4,
       "documentTeasers": 3,
       "newsTeasers": 3,
+      "newsPageSize": 6,
       "dailyNewsFull": 18,
       "dailyNewsCompact": 6,
       "mediaBatch": 12,
@@ -210,7 +218,8 @@
     },
     "diagnostics": {
       "maxErrorEntries": 200,
-      "summaryRefreshSeconds": 60
+      "summaryRefreshSeconds": 60,
+      "slowestResourceCount": 5
     }
   },
   "modules2026": {
