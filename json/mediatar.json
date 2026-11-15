@@ -1020,6 +1020,4326 @@
         "holder": "Csanádi Sportiskola – látványterv",
         "license": "Intézményi jóváhagyás szükséges."
       }
+    },
+    {
+      "id": "media:cs2026-001",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-001.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 65950,
+        "sha256": "dc17a59c5f973cd200d454f6117cd3ab12940a5c1ce2999fabdf7511df2155a0",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-001-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 14476,
+          "sha256": "cc8cfdfa4bbf3cf056919f3c4a8d5825cb0715b818388426172d6cfda8b79f5f",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-001-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 30310,
+          "sha256": "79d0191fd1565c6b1a0e1a46e080ecf65d79791719fc5eb725163a91c96da719",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-001-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 51698,
+          "sha256": "390940e9429f457a82d6ca613dd58d68222593e655837577c04c54d53ae608a5",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-001.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 65950,
+          "sha256": "dc17a59c5f973cd200d454f6117cd3ab12940a5c1ce2999fabdf7511df2155a0",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Kosárlabdacsarnok",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-002",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-002.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 33826,
+        "sha256": "8c6b26c3852abea43a813aeabd765e36edd90b923b6514d0821873ca0d2adcec",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-002-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 5898,
+          "sha256": "013e663d8198344a03edd6547692385c22ada646f949a87d156796d91e79569f",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-002-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 14484,
+          "sha256": "9470d006777eaf06d232b00b1b97a3b8aefad54b583c49d49d9c11a5e6a5e54e",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-002-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 25890,
+          "sha256": "eb3b773dd0fe02c4cfd809e6bc3b082aafe0830d7d7da348e91173ea0d29cee0",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-002.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 33826,
+          "sha256": "8c6b26c3852abea43a813aeabd765e36edd90b923b6514d0821873ca0d2adcec",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Kosárlabda a parketten",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-003",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-003.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 51862,
+        "sha256": "d121791d81baafbf2efdb16aec75adb05eef6199b71eeb15792541a75b150cf8",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-003-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11074,
+          "sha256": "e0394c2f318d74cb081898ac117ed985e4a0c9950c0772cd4bac17a59bfdcbbe",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-003-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23754,
+          "sha256": "ea78781f61bf41633126d3c7aa4ffe62284838119bdf7f5f6f87fd1e1c17751c",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-003-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 39640,
+          "sha256": "c93e4c95b1fe9601418062b259096295533bcd91873a60c2160a184c0bded494",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-003.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 51862,
+          "sha256": "d121791d81baafbf2efdb16aec75adb05eef6199b71eeb15792541a75b150cf8",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Kosárpalánk",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-004",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-004.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 51400,
+        "sha256": "6f509a392825c5f650efd45fd0405b835f4ea2ac08c45fb358e8b4cf92f78721",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-004-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10132,
+          "sha256": "7799962ae54e0488677f3cbafaa713dc4f663ab7a9e551024248b2d615fee577",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-004-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22670,
+          "sha256": "fbb03eb704b5498db3d3dfaf300425e2be345835cd1a80fda8536d18c0c9c813",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-004-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 39692,
+          "sha256": "a3b9ea90773e9d9fe5ff48501df83c2411a1ffb07b2eb961bf678b5346c50215",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-004.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 51400,
+          "sha256": "6f509a392825c5f650efd45fd0405b835f4ea2ac08c45fb358e8b4cf92f78721",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Eredményjelző",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-005",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-005.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 61268,
+        "sha256": "41addf7b570ce41ffe2e5fb36da436f46d0e09728c545203ccc6bfea9ca8944d",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-005-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11882,
+          "sha256": "eb360cba812367c29c4047e3abeabb9a2f67750e751a545743fb9e1a97023f28",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-005-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 27312,
+          "sha256": "7c325621f5881940900170c91ccf4ba6f4b80cebb2aa1a464c4e7eaab9543e98",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-005-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 47170,
+          "sha256": "15f83fa8fcde1d0ee94829e81b9f42057c155749033b0b886174c697d9e22162",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-005.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 61268,
+          "sha256": "41addf7b570ce41ffe2e5fb36da436f46d0e09728c545203ccc6bfea9ca8944d",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Futópálya",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-006",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-006.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 67398,
+        "sha256": "47aeeff5b231833ced9b19d3d2443a037ce18e36a1d1d1db85e4040b7b06957f",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-006-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11906,
+          "sha256": "fba772f7f53987afb3ce4ac7c992468f7c005ac0b1c22d2bd7d45fc3ad62620c",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-006-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 28954,
+          "sha256": "a658dcff9a07ebe568312a45bae137fdafac5f57878a46730394766d52ef2ddc",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-006-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 51986,
+          "sha256": "ba68598932e713978d2f4026929f4c0b5bdfb6ce8c6ba60c1c08cb2f7d8362a1",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-006.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 67398,
+          "sha256": "47aeeff5b231833ced9b19d3d2443a037ce18e36a1d1d1db85e4040b7b06957f",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Rajtvonalak",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-007",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-007.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 62170,
+        "sha256": "85fa4a00e359dfcd7ebdfb79771604b94d69c86f4054dade45464a7cbd92e2e5",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-007-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 12306,
+          "sha256": "396b68493e6eb0376180607227b5e0e2bdfb38d688dfa4fd0d923f2ecc39a9b5",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-007-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 27936,
+          "sha256": "572a63441cb11a8ff8e197a9f7f7b9558e52aa14078750ea634f9269be16b2a7",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-007-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 48344,
+          "sha256": "dec31d47bc21f685861ef1e5e6f992be3537a35fd9a566d98104480aaa50d2df",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-007.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 62170,
+          "sha256": "85fa4a00e359dfcd7ebdfb79771604b94d69c86f4054dade45464a7cbd92e2e5",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Magasugróhely",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-008",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-008.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 85352,
+        "sha256": "09224c9c483b6e4ffe9897fd87f0104a694d8c944224f9b3171578eeecb399e0",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-008-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16634,
+          "sha256": "4972aa89dc9ec88b2e3bb26cae16ed916696b4ebc2ea035302272016d55168e0",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-008-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 39088,
+          "sha256": "43fcbff91f420ca96fc872ace573e437da4455bcc8bae92498719dd0e7d85849",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-008-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 66440,
+          "sha256": "2dac01e67d1d68b0a7b69936c627bbf2eb273836ab429668950b090ea92e5388",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-008.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 85352,
+          "sha256": "09224c9c483b6e4ffe9897fd87f0104a694d8c944224f9b3171578eeecb399e0",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Labdarúgópálya",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-009",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-009.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 57560,
+        "sha256": "a5cd7b7e5371f7d31eb465349016bcd1602a2888a4a36ca8c724c32c1e4f0087",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-009-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 12196,
+          "sha256": "aec66c841344e8779f7d13d190744dc09d842cabdb8f0f86bbf6171f839f5152",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-009-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 26394,
+          "sha256": "326bd1a2371c4042031a37ff484d840b414f6847e43c90ef157b0dc66440e2cb",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-009-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 44388,
+          "sha256": "4334a7fd075fe6e348883816394c6aab492e2923f9fedb6896d94d9ff5c21e1e",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-009.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 57560,
+          "sha256": "a5cd7b7e5371f7d31eb465349016bcd1602a2888a4a36ca8c724c32c1e4f0087",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Úszómedence",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-010",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-010.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 71636,
+        "sha256": "49d3954c182e48ac2da6bed6f67b3a3106ed0e6d3e75bab25955027bf5fc6917",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-010-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 14482,
+          "sha256": "41464f7039d9efdaaec3ce90012619e8affb056fd42657b284b4aa136cb75d3d",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-010-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 32558,
+          "sha256": "4b021216d7f1fc190d39bbed0778c48e222081117f5ed7821ff32f0863c75a98",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-010-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 55370,
+          "sha256": "1f578de17d5361a545f58de3628a19467829a566fa0658e30431f252df20e393",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-010.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 71636,
+          "sha256": "49d3954c182e48ac2da6bed6f67b3a3106ed0e6d3e75bab25955027bf5fc6917",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Úszópályák",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-011",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-011.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 44160,
+        "sha256": "81ae78d54eb8e38a7120298c2126202e801402cb0905a407a6ed8e779f3adb80",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-011-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9042,
+          "sha256": "0308783b156f3a4751832d41941997b39aba64f62ae4e14814e30550a447f0f7",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-011-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 20242,
+          "sha256": "38c949ebe21273ef7e9559014277b6dabcc6640501775873a97f19e6bdffc55e",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-011-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 34604,
+          "sha256": "80febf8f8b0fe9df3a7ca9bcb4176c152d45dc8ec17339112da56364d7c66032",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-011.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 44160,
+          "sha256": "81ae78d54eb8e38a7120298c2126202e801402cb0905a407a6ed8e779f3adb80",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Röplabdaháló",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-012",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-012.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 26484,
+        "sha256": "5654f35034b7f24c9389cb2f4034277cb710c01826eff645ebcc249195cc4a99",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-012-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 5856,
+          "sha256": "1ccbcf542996f1e4a0995541f8ad44a8b4577c493c91dbba2d944317ddacf4e1",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-012-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11816,
+          "sha256": "99305234c349a417bfa50906e10e651016e7cd5715aabd03957e92816cdf9926",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-012-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 20310,
+          "sha256": "17107b3ecf5b9cb0359b01595f9e792a73060be8b1036445623535852d48fba5",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-012.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 26484,
+          "sha256": "5654f35034b7f24c9389cb2f4034277cb710c01826eff645ebcc249195cc4a99",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Asztalitenisz",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-013",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-013.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 40370,
+        "sha256": "872d6c3c1389c6adc586d0c2b6335c689cdbf1f130dff28c07e854f08c1fef18",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-013-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9140,
+          "sha256": "c242720f4dc4de9dce3a13786ed94b5e1e41cb13752db03b90171b5c17c09cef",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-013-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18558,
+          "sha256": "ab2b3a61b50eb418dc3e454482cf51ae15661c047ce3a47666f05485445053c5",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-013-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 32060,
+          "sha256": "12d048976fc50b059cc75447ffff5747d4a78266fed3ef38f44b42a733e71b4c",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-013.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 40370,
+          "sha256": "872d6c3c1389c6adc586d0c2b6335c689cdbf1f130dff28c07e854f08c1fef18",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Iskolai könyvtár",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-014",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-014.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 35516,
+        "sha256": "76165ddf964d398e7b1e59778cf857b959c1f26adf871dc1d4a41f00882f9a0a",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-014-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 8360,
+          "sha256": "b3c65354644b8268fc446456742993cd86715aa1e3e1a87135950405c03880dd",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-014-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16366,
+          "sha256": "5f4e68696b696c93fb5a3c84156bd63f193b4cd796706cc835fa6e201f791bc8",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-014-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 27522,
+          "sha256": "b204cf0c71377def2f4aec9ab8c4b344dd38af16d335c3198511262556175edb",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-014.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 35516,
+          "sha256": "76165ddf964d398e7b1e59778cf857b959c1f26adf871dc1d4a41f00882f9a0a",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Számítástechnikai terem",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-015",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-015.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 39010,
+        "sha256": "c4796e80e4dd374dfa2d67781f68abb9886925bf587d3988e6f1e3ccf6dfc164",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-015-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 8938,
+          "sha256": "15887043c7a63ba8b7f7b89de02388dd65ee4d939871ef23cea5a1170518a2cc",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-015-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17924,
+          "sha256": "87db79b25ea4199a05ccf76f0596026f49297bf7d270ee2ad3c804f30ed9bfdb",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-015-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 30746,
+          "sha256": "ec2ced6560bca2efeb4a0642daf562499547a717b7cd5c8dfba1039c1c62fe2c",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-015.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 39010,
+          "sha256": "c4796e80e4dd374dfa2d67781f68abb9886925bf587d3988e6f1e3ccf6dfc164",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Tanulási eszközök",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-016",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-016.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 44340,
+        "sha256": "e13aa25ac61a709ccdee3b712325a8e72b760554c644fc2576e150b176ad101a",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-016-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9800,
+          "sha256": "0998b19cc762e1e3c74076a943dbc5fb3013d962a62be54d50385778411a0ad4",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-016-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 20746,
+          "sha256": "17e5f3367ac92c0458cb5da0517a7db15e014ac38fd84682dd2e15b0857f4f10",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-016-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 35060,
+          "sha256": "af5a8e0e976ee71c170ee51999eb4b79fa49cc5adc5ed700495bbe5d42bd3a97",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-016.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 44340,
+          "sha256": "e13aa25ac61a709ccdee3b712325a8e72b760554c644fc2576e150b176ad101a",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Sporttrófeás folyosó",
+      "caption": "Fotójellegű tematikus kép sport- vagy iskolai környezetről.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-017",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-017.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 24672,
+        "sha256": "34eb0ce46a564b68bc06d49d5cf2703dcc6cb039f3ece37454b83ad23ce4e2bb",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-017-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4322,
+          "sha256": "fa7976a4e72b51caa7c3b54d039547e8ac4a5ad0c350cd164360bb7e088d0a70",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-017-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11220,
+          "sha256": "2083a20543b58e37de0e9b9d4f22014159e2f088d5395b7745dcb00a358f2118",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-017-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18602,
+          "sha256": "eb3de0c6fe8ef220fc94e5ef5e762912b9780b7d10c620e009e7c9608222a223",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-017.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 24672,
+          "sha256": "34eb0ce46a564b68bc06d49d5cf2703dcc6cb039f3ece37454b83ad23ce4e2bb",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Labdavezetés: A labda maradjon kontroll alatt a tempóváltás közben.",
+      "caption": "A labda maradjon kontroll alatt a tempóváltás közben.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-018",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-018.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 24544,
+        "sha256": "f20d58420b688be654fc21eafbb5f7babdde9481a8519221255755b0eb9d64d9",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-018-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4236,
+          "sha256": "dcbd971bbac71fb7617a6cf20d8b62474221ff12fb78c3f30a46f07396a67458",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-018-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10990,
+          "sha256": "45f2a7816f891d9099f3975b1fd70b639b8850e6b9f7d1daf5622a3a7a169f61",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-018-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18336,
+          "sha256": "e9430bea6b285dc625fe94422e301378e65de062ce9c4c1584b548174b2864fe",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-018.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 24544,
+          "sha256": "f20d58420b688be654fc21eafbb5f7babdde9481a8519221255755b0eb9d64d9",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Pontos passz: Passz előtt mérd fel a társ helyzetét és a védő mozgását.",
+      "caption": "Passz előtt mérd fel a társ helyzetét és a védő mozgását.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-019",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-019.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 25950,
+        "sha256": "fa55fd8f065e404756944d7a3d484bdab80a508bd3ab898a36e1f6cf6142003c",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-019-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4378,
+          "sha256": "341b82d7011f52c95668574bd48d37ab487025771df8292db948f2ce42f73ecd",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-019-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11492,
+          "sha256": "509c41dcc6443ad0d6baec8d9deb7b44acf1e3e1fccad73afdab7485a2d260db",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-019-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 19138,
+          "sha256": "59d69fdd30e3025659e1063e37310b48a6b6ccea845d0409f682e35bc30b50ea",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-019.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 25950,
+          "sha256": "fa55fd8f065e404756944d7a3d484bdab80a508bd3ab898a36e1f6cf6142003c",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Lepattanózás: Figyeld a dobás ívét, és helyezkedj stabil alapállásban.",
+      "caption": "Figyeld a dobás ívét, és helyezkedj stabil alapállásban.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-020",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-020.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 24332,
+        "sha256": "f8d1897422cf52bdb63e55297a02e5cd46fecb7c14d962300480aacc12685dd1",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-020-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4136,
+          "sha256": "385b4f458b1c986d047cfa4df1595e7348c424e53a7b75c860102c1a224d9782",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-020-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10920,
+          "sha256": "1d7ea355b660bd51c5d54df7d42f9ba0f8ebb0bf1c4191c881c8f122f02888e6",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-020-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18276,
+          "sha256": "3d96dfd7868d361795d1c1826318fb86db8efd30ec27e09b5350ea1f6f2ec593",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-020.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 24332,
+          "sha256": "f8d1897422cf52bdb63e55297a02e5cd46fecb7c14d962300480aacc12685dd1",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Passzsávok: Keress olyan helyet, ahol a társad akadály nélkül elér.",
+      "caption": "Keress olyan helyet, ahol a társad akadály nélkül elér.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-021",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-021.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23966,
+        "sha256": "5a8e92ccd47c21dd170b9608558cb3a36afdee7e5286243e1d71735efea4939f",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-021-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4084,
+          "sha256": "2d91610707c5837c3169228b2b89e9d0711dc54be86cc8efefaf3d248521e13e",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-021-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10566,
+          "sha256": "3d0b8dc140760c5ca13eb1c69004fb98d0ffc9c3d53daa1e739a2d115a9d4d9b",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-021-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17768,
+          "sha256": "8a33a5fb3cc132c2041da0cdc7e53b2c0a68a6b6b06801697222eaab6e8c14dd",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-021.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23966,
+          "sha256": "5a8e92ccd47c21dd170b9608558cb3a36afdee7e5286243e1d71735efea4939f",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Átvétel: Az első érintéssel készítsd elő a következő mozdulatot.",
+      "caption": "Az első érintéssel készítsd elő a következő mozdulatot.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-022",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-022.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 24184,
+        "sha256": "f9026858dd8b1fab1de01865559a196b7122de938d607079f032ac690ee5977c",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-022-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4148,
+          "sha256": "de15f77bc68c41e1061fd987a045fb60771d2753f0b011c85f9de15bc71b356e",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-022-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10568,
+          "sha256": "934216ae13b35f2562f77750da194ddd9ecef35d530275351b8975fe7e6f783d",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-022-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17980,
+          "sha256": "28e4c6e4708f4182982fece9f49316648649df3de3cf72849f6261ab7e976698",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-022.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 24184,
+          "sha256": "f9026858dd8b1fab1de01865559a196b7122de938d607079f032ac690ee5977c",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Védekezés: Maradj a labda és a kapu között, figyeld a mozgást.",
+      "caption": "Maradj a labda és a kapu között, figyeld a mozgást.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-023",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-023.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23602,
+        "sha256": "9b9b4c6adf353c81897811221a672090eeb22a1ee8b01fb79c9e12eba9579442",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-023-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4050,
+          "sha256": "096cba6b5aa2bd26a54bc716618e76ec7de45445b6e1ab27ce707a4211d961e5",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-023-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10472,
+          "sha256": "e78243ac5efb88a690af0fac2bed9417882a8f7a645d0e53be612bab5e9b4e02",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-023-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17448,
+          "sha256": "57befe53cb218bbdfa2c744bca3956f57216c035ecc691c2f3adc3d02493a861",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-023.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23602,
+          "sha256": "9b9b4c6adf353c81897811221a672090eeb22a1ee8b01fb79c9e12eba9579442",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Bemelegítés: Fokozatosan emeld a mozgás intenzitását.",
+      "caption": "Fokozatosan emeld a mozgás intenzitását.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-024",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-024.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 21580,
+        "sha256": "f51af6e0e54e46e29a132cab89eadecbd0226de4df9591d12c8b6e38c1776e69",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-024-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3798,
+          "sha256": "8bfdf418ac47f18a97bce1e2fe98dc9b5b61b9f824c3594afa0322d3c512e9bb",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-024-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9446,
+          "sha256": "e3fefbf32722641d694eb67f82af8f5a5b9b92efdbe1f7ab30a19b5457bbd0a1",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-024-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 15836,
+          "sha256": "dd39604fa55108b7b9c7fd80c11712ad8fa404faca5d38a73e493a01d53e0317",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-024.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 21580,
+          "sha256": "f51af6e0e54e46e29a132cab89eadecbd0226de4df9591d12c8b6e38c1776e69",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Futóritmus: Keress egyenletes, fenntartható tempót.",
+      "caption": "Keress egyenletes, fenntartható tempót.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-025",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-025.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23966,
+        "sha256": "a95b43dd6e8d0ea862bd2e3f12b520b2ad64153b3c5273b2091b520572d58027",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-025-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4192,
+          "sha256": "644c651b234e02fed744aa9a9ff66d6fdeb616049eee24c2957fc24cca1d1438",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-025-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10730,
+          "sha256": "df62bb81ad5a666f0fcd5bc4223275122c2f71c19c7dd86092781643a5a8881e",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-025-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17864,
+          "sha256": "f5857e1262dff455b545d26fc2f11b41d6eee982d76bc7a0b0f21de1f642d573",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-025.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23966,
+          "sha256": "a95b43dd6e8d0ea862bd2e3f12b520b2ad64153b3c5273b2091b520572d58027",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Ugrótechnika: A nekifutás és az elrugaszkodás összehangolt legyen.",
+      "caption": "A nekifutás és az elrugaszkodás összehangolt legyen.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-026",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-026.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 24702,
+        "sha256": "9ddea2def6d460d56acbe7cad4f5d67e470196ef3cd6e5b7eb299ad6ae2532ce",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-026-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4396,
+          "sha256": "cb5a5bfe2aee87631a6d5ee874607e434b3a73579100a9fad5c6f8b201c925b2",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-026-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10976,
+          "sha256": "fa0b8a6b6a84b58ad6cf9967dd8d684bde894506d6fc63f5297937a5c44a89c3",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-026-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18306,
+          "sha256": "a47add13e03a8d304334aa6e763afedb4bf53f9d6e522b79c34c004713c96ef7",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-026.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 24702,
+          "sha256": "9ddea2def6d460d56acbe7cad4f5d67e470196ef3cd6e5b7eb299ad6ae2532ce",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Légzésritmus: A kilégzés a vízben történik, a belégzés rövid és tudatos.",
+      "caption": "A kilégzés a vízben történik, a belégzés rövid és tudatos.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-027",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-027.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 21934,
+        "sha256": "03d31c6b325eeb287427655df32bae745ed6004c1fc16a4c19126b916fb7b41d",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-027-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3820,
+          "sha256": "0369c5d0cf1359cf1ae71dbab9381f36b5d6131b04383ed591972266c722095b",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-027-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9590,
+          "sha256": "3d9cf903eddd676053bb1622771a11ae1d2c4b60d3aff3cc26707cefa6834482",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-027-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16144,
+          "sha256": "1556e75a7fc3538f51e65f4ded9cab2016809d299cef85c7b9432b3602ed99e9",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-027.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 21934,
+          "sha256": "03d31c6b325eeb287427655df32bae745ed6004c1fc16a4c19126b916fb7b41d",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Siklás: A hosszú, rendezett testhelyzet segíti a haladást.",
+      "caption": "A hosszú, rendezett testhelyzet segíti a haladást.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-028",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-028.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 24372,
+        "sha256": "8ef9d731264f973bf4a86b04263d02c550b80f62730abea2a12a12f4314300f4",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-028-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4180,
+          "sha256": "75eb4ff75313bfc98034183a5dfee193af1a90ced666aeb63399bd78c51d69fd",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-028-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10708,
+          "sha256": "6545ef0515c67e4b902244d986f2c4b156055b01a3b7489033dfee0208d60abb",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-028-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18070,
+          "sha256": "58fccd26364f9efb7bbb6d3588d867095c63c5d7821d74fcd7a14bf746409c2f",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-028.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 24372,
+          "sha256": "8ef9d731264f973bf4a86b04263d02c550b80f62730abea2a12a12f4314300f4",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Forduló: Az irányváltás után őrizd meg a megfelelő testhelyzetet.",
+      "caption": "Az irányváltás után őrizd meg a megfelelő testhelyzetet.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-029",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-029.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 22650,
+        "sha256": "bfdefb04d0ceef944165ceeee16463485280d3f60189fc49b1ae8fc443e473c0",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-029-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3898,
+          "sha256": "09a3666e68d559d309b1f483d3c352e787ff1503c520e97dfbc1cef6881bb9c7",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-029-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9996,
+          "sha256": "e2dea9ec8618ce0095306bef0d76150e09e1aefba5318536826387f57acb16c8",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-029-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16710,
+          "sha256": "c33866a481541084cdbef04c06b6f906cc0ab8a73fd5b854a4389bc5e643cc38",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-029.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22650,
+          "sha256": "bfdefb04d0ceef944165ceeee16463485280d3f60189fc49b1ae8fc443e473c0",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Alkarérintés: Az alkarok szögével irányítható a labda.",
+      "caption": "Az alkarok szögével irányítható a labda.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-030",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-030.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 22202,
+        "sha256": "970551e6c532a82831f7143c8e717300c291d840ece9a1855811a0007756a48a",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-030-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3798,
+          "sha256": "fa1eeaf84b498a7e3494d374d93378c964df30014d30aee6e7111d72b98396a1",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-030-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9636,
+          "sha256": "bf9f782424f002284a21a41fab67f4ae3d35d9452866eb27b832a623ca5030e1",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-030-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16246,
+          "sha256": "0534e126bfbcbd9b3f9db94354dc98a107800f9e67d6f6cfdfddca311925b25e",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-030.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22202,
+          "sha256": "970551e6c532a82831f7143c8e717300c291d840ece9a1855811a0007756a48a",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Nyitás: Állandó labdafeldobás segíti a pontos nyitást.",
+      "caption": "Állandó labdafeldobás segíti a pontos nyitást.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-031",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-031.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 25740,
+        "sha256": "c4f6ea9d9dd6f1a8206095686ad174811a3b5ab014e7fb68ff04c6ae248f9512",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-031-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4556,
+          "sha256": "2c1d6e720203b2430295ba2c2cba73299d9cdf777865659c88786ea881441a01",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-031-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11630,
+          "sha256": "68f6c8caf35dfdc251acdca07370f744991c20171efad0e111d893385dee6635",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-031-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 19214,
+          "sha256": "466ec8749ed10aabbb59ecc5a22fa111af671559444d5db682cbd679d28fcbe2",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-031.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 25740,
+          "sha256": "c4f6ea9d9dd6f1a8206095686ad174811a3b5ab014e7fb68ff04c6ae248f9512",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Csapathelyezkedés: Figyelj a társak pozíciójára és a szabad területekre.",
+      "caption": "Figyelj a társak pozíciójára és a szabad területekre.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-032",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-032.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 22524,
+        "sha256": "36e8b9a8c2eff63991f10a6608c89a073379d5bfad2e08d4b13f1d45b4881358",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-032-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3916,
+          "sha256": "f831cbb9424ebd1e1c05a61262874b352f5da404808bae882f00c208da614013",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-032-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10086,
+          "sha256": "75c3f8f6bfd2a6be65bde74d87de2a9c861402fd2b1977547083fae5c2c9180b",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-032-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16762,
+          "sha256": "1a578535bbaba19ba69ed2a609ad487015165193c895f2427afcba96290dbbc0",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-032.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22524,
+          "sha256": "36e8b9a8c2eff63991f10a6608c89a073379d5bfad2e08d4b13f1d45b4881358",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Alapállás: Enyhén hajlított térd és aktív lábmunka kell.",
+      "caption": "Enyhén hajlított térd és aktív lábmunka kell.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-033",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-033.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 24188,
+        "sha256": "b66ee2e4ddf6ec01ac4a5017eaa2f88a17a8967c4a1dd6741ef7e462bf61f544",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-033-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4074,
+          "sha256": "e9b7df8c636f0bf515ab878d753053d50feea201f68386105cb0b88c68fd2eb5",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-033-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10596,
+          "sha256": "70d99d084297aa9d1298b70c97e55cc31e1e8016cf85e45e17bee84614a2238c",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-033-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17760,
+          "sha256": "c938c338d564e19ad7ec5c20e4b46c8aa8a5389faf0af435d264a34b47afdf5b",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-033.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 24188,
+          "sha256": "b66ee2e4ddf6ec01ac4a5017eaa2f88a17a8967c4a1dd6741ef7e462bf61f544",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Szerva: Törekedj az ismételhető mozdulatra és a szabályos végrehajtásra.",
+      "caption": "Törekedj az ismételhető mozdulatra és a szabályos végrehajtásra.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-034",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-034.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23392,
+        "sha256": "6f71ad1e6e649a8ec9cde94416ba90d82707bc5f84eed99357c3d00d50289e90",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-034-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3994,
+          "sha256": "7c04ad8dd03ee0456f8f82f3e6a9fe527e0c98a31cbd33efe9e64a677881d8f8",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-034-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10368,
+          "sha256": "30f255007b0496a7bc2e0c6019726a2d8a8ea16241052c620de4adf9a70588eb",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-034-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17260,
+          "sha256": "002316b7c506afc1678188340eea13cb88fc8c8362f68e58dd385ba93bcd900d",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-034.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23392,
+          "sha256": "6f71ad1e6e649a8ec9cde94416ba90d82707bc5f84eed99357c3d00d50289e90",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Pörgetés: Az ütő szöge és a találati pont együtt befolyásol.",
+      "caption": "Az ütő szöge és a találati pont együtt befolyásol.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-035",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-035.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23402,
+        "sha256": "c6d9d76207b64f615e71d876360607b9cd2e0a15b372e4b1a76623706b516c1a",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-035-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4060,
+          "sha256": "b6df23f59195df1b0cc7e4e0832271eea8fcc5c9763662e8bb207937c9e15746",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-035-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10410,
+          "sha256": "7f2584ef64f9f0cf85e2d3bdd582da2a16e94dd56adc93dbbfef81549153ddba",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-035-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17660,
+          "sha256": "199dd89c93719595f12cf14b7c737d2642ce3a5c88dc0ff1c42c688a2f3432c3",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-035.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23402,
+          "sha256": "c6d9d76207b64f615e71d876360607b9cd2e0a15b372e4b1a76623706b516c1a",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Fokozatosság: A terhelést a felkészültséghez kell igazítani.",
+      "caption": "A terhelést a felkészültséghez kell igazítani.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-036",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-036.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23018,
+        "sha256": "f950cf283e52915fc25da256318afcefe8fe1ac696507e097843d3ead68aa978",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-036-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3976,
+          "sha256": "c632889ba7be88ab6981439f6ae416cd9d6b867a29914cddffe8f2a1c9a334b5",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-036-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10068,
+          "sha256": "c9dfddaf1ad4cc2baf74845809aeb5fe642d35deb817c677ab0048733ace9cde",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-036-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17100,
+          "sha256": "dcc1f63b24063ff73f2709dbc6dcf07888ab7c1bd05410190e377b3126b9603f",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-036.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23018,
+          "sha256": "f950cf283e52915fc25da256318afcefe8fe1ac696507e097843d3ead68aa978",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Pihenőidő: Az alkalmazkodáshoz regeneráció is szükséges.",
+      "caption": "Az alkalmazkodáshoz regeneráció is szükséges.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-037",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-037.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 22996,
+        "sha256": "95e485d62438e74551c9d775a545b0e96521496fcb076b78d1fbe08bd9431d30",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-037-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3958,
+          "sha256": "b1863e4a2d95a15fb0b0559858d7f4d466ce86aa9307268c750712c54c6690f7",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-037-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10106,
+          "sha256": "42a93a89b7d06977044b2c11a9086fe842d34dceee606d68b4e0f9a3fed6abb2",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-037-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17060,
+          "sha256": "e4c7a0149190cd083f6450362f15eabd9fde4481bbb911537d0eaa09af6bf4ab",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-037.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22996,
+          "sha256": "95e485d62438e74551c9d775a545b0e96521496fcb076b78d1fbe08bd9431d30",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Mobilitás: Gondozd az ízületek kontrollált mozgástartományát.",
+      "caption": "Gondozd az ízületek kontrollált mozgástartományát.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-038",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-038.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 25796,
+        "sha256": "6eecaf95c6f7d65fc2d797753d4213fca82ed6700cb6ffa9c55c95aaf2c809d2",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-038-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4340,
+          "sha256": "72d33ac67bacce138711065464a0b5f6daeb91fe9395ed6cfea17d413d1eb52a",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-038-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11282,
+          "sha256": "7d41d7a9c5755cb8b7a78dd1338aceac53e8b6fe48fe6389b303f2433218e1fc",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-038-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18866,
+          "sha256": "350ca80b033ffd49fe99c011a540d387843b1161d2d9a28bd6c85460adf23ffa",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-038.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 25796,
+          "sha256": "6eecaf95c6f7d65fc2d797753d4213fca82ed6700cb6ffa9c55c95aaf2c809d2",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Sportszerűség: Tartsd tiszteletben az ellenfelet és a szabályokat.",
+      "caption": "Tartsd tiszteletben az ellenfelet és a szabályokat.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-039",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-039.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 25076,
+        "sha256": "de896008355e394b76f0adb0d09cfe0ff3be1c32be05aebcd3f1666687fb4bd2",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-039-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4352,
+          "sha256": "5b08da94ff9e7ef1bae74d8d35f97d043f196f5fc06cbd17ba6e3b0ff1a449ab",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-039-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11208,
+          "sha256": "6ce105b30c4ff62a8c68010037549994b63724508759017723193ff58be0a93d",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-039-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18630,
+          "sha256": "e319ca51ad26587e8e8e31c7eb7b9849dd6ffb825cbb2865f4acc527c68ce6de",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-039.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 25076,
+          "sha256": "de896008355e394b76f0adb0d09cfe0ff3be1c32be05aebcd3f1666687fb4bd2",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Együttműködés: A közös célhoz minden szerep hozzáad valamit.",
+      "caption": "A közös célhoz minden szerep hozzáad valamit.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-040",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-040.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 24782,
+        "sha256": "d9de898a8ed9d34ae560e44909b78ed955f5e895f16ebaaa268d808f9917bb0d",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-040-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4242,
+          "sha256": "16a1b471d3a63251cbdd1e290d2a8d44201118cb224dada570ba5601b43dcabc",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-040-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11082,
+          "sha256": "7a443988bd7bee34d002a02e7d3c29bebc37d1e09616cb7eaf80b87d7c3440b4",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-040-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18618,
+          "sha256": "4a996e6ebab7a0490086d8062bf3993414c9ce82f55f0f933ebeaeff9fba9520",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-040.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 24782,
+          "sha256": "d9de898a8ed9d34ae560e44909b78ed955f5e895f16ebaaa268d808f9917bb0d",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Biztonság: Ismerd a felszerelés és a helyszín használati szabályait.",
+      "caption": "Ismerd a felszerelés és a helyszín használati szabályait.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-041",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-041.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 25350,
+        "sha256": "95e2891c83df2f70a1dc8a926c2cf8ffa61577edf87543fdad4559def69fac6b",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-041-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4290,
+          "sha256": "ec70f60a756049ea9a2b21e3266b797a987bab38e4f56425ac86615d6b09d8c6",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-041-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11252,
+          "sha256": "b52252b1804b9c704a083713520e40edb368042fbe54d612fd3414c88eb72106",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-041-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 19142,
+          "sha256": "e4bbb4c8fd50f64de1fa5acfd7f3f3450e2167bb92c47c13cef5ce35196a3d03",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-041.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 25350,
+          "sha256": "95e2891c83df2f70a1dc8a926c2cf8ffa61577edf87543fdad4559def69fac6b",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Fájlrendszerezés: Használj érthető mappaneveket és következetes fájlneveket.",
+      "caption": "Használj érthető mappaneveket és következetes fájlneveket.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-042",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-042.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23744,
+        "sha256": "bf084f197a4d906f7fa0c8688b0e31bdc498defde5742a7b74d9ac15cfd6ca74",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-042-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3894,
+          "sha256": "1dfd7ea7aefe5b69658218d0f062f16b8528de11942fd94db1ecc7b26d415e77",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-042-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10268,
+          "sha256": "b32949ee9d39cf5cb40ffbb801c1052f9d5c65b5acf1f7632a657c22baab5248",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-042-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17614,
+          "sha256": "565094917a6e4266743df281dc81f2a5ccfb5d8fde9e6bfc0ab5c1136de6a2dd",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-042.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23744,
+          "sha256": "bf084f197a4d906f7fa0c8688b0e31bdc498defde5742a7b74d9ac15cfd6ca74",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Forráskritika: Ellenőrizd a szerzőt, a dátumot és a forrás célját.",
+      "caption": "Ellenőrizd a szerzőt, a dátumot és a forrás célját.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-043",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-043.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23784,
+        "sha256": "d54a9a856350e95db974af40a927201891f791716d51c5a6f9fd9059bd707fa9",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-043-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3876,
+          "sha256": "8669dac0108bcc29a4e0e5c8745afb4b2e88bdbc1e7301ccf3372fe55e4782e1",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-043-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10158,
+          "sha256": "b318fada9b833b59181278a586d982512be31bb770cb05818a95b6a0aced1282",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-043-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17286,
+          "sha256": "ef97e5dad969198a6e336a8c70772d7ef27b56faa892f22a865ed1cd45aa238e",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-043.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23784,
+          "sha256": "d54a9a856350e95db974af40a927201891f791716d51c5a6f9fd9059bd707fa9",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Adatvédelem: Csak a szükséges személyes adatot oszd meg.",
+      "caption": "Csak a szükséges személyes adatot oszd meg.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-044",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-044.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23608,
+        "sha256": "114a4c55b1da150212232fdc228c85f858746435615d8213d20a60bf0cb2fa9a",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-044-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4062,
+          "sha256": "276e4b0c50caf9c489c7c182cf480d800b2d4560db996f157595beaa0647363c",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-044-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10530,
+          "sha256": "58f16dde449f68b3c920ac9b3f8d10d1adb1bc48ca0e4de557c1bfc4111e5403",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-044-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17680,
+          "sha256": "c170b7473b47b8bad32929ff459af7ed12b7161c01676c3cb247153b1f993222",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-044.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23608,
+          "sha256": "114a4c55b1da150212232fdc228c85f858746435615d8213d20a60bf0cb2fa9a",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Biztonsági mentés: A fontos fájlokról legyen elkülönített másolat.",
+      "caption": "A fontos fájlokról legyen elkülönített másolat.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-045",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-045.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23366,
+        "sha256": "9994fc6d99f61d5a511c74c10db5fd32f7b984f4c403ff7e45d44f76f6f17b42",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-045-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3926,
+          "sha256": "14498fb31a481950632854033385659199cceb70189bcb2ad4e987b4ef84a1b0",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-045-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10104,
+          "sha256": "d638d282f1de293bf55dd408effa7ef5f60302623d04020af1816dea0e8faa6e",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-045-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17148,
+          "sha256": "3f4cf56eff71d780c36c4b3b2179e232120fd4b2d2e3d60d7eb33d25509b01dd",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-045.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23366,
+          "sha256": "9994fc6d99f61d5a511c74c10db5fd32f7b984f4c403ff7e45d44f76f6f17b42",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Időblokkok: Rövid, tervezett fókuszidő után tarts szünetet.",
+      "caption": "Rövid, tervezett fókuszidő után tarts szünetet.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-046",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-046.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 24958,
+        "sha256": "c31c3f589ed52fe57e1a09e38f6f5add9bb4b4df6497ab7bb71e95754119e3d2",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-046-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4178,
+          "sha256": "d13a538bd8a99da5ed10be7c2fffaed9c382c29ae58479be9939823d4695a44a",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-046-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11150,
+          "sha256": "8fa6413162a83969f2be5be80f763130970ce627a91c1c8f96d4f560be7637ba",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-046-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18598,
+          "sha256": "895eaf75c6c8994ead6d2bf472ddbee70c1ae7c11a723f3d0eee9baca9a0d513",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-046.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 24958,
+          "sha256": "c31c3f589ed52fe57e1a09e38f6f5add9bb4b4df6497ab7bb71e95754119e3d2",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Aktív felidézés: Olvasás után próbáld saját szavaiddal elmondani a lényeget.",
+      "caption": "Olvasás után próbáld saját szavaiddal elmondani a lényeget.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-047",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-047.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23692,
+        "sha256": "a81fd5516510a3817db9255ba778c697520e389f979c45263698a59bd768789d",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-047-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3900,
+          "sha256": "b7256d42ff79ab52870568cc37656139b25ad2a5888ab4de752dbd043d9c2384",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-047-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10280,
+          "sha256": "77c17b030af3359c7adf7c224fc7a009aa992e5eab54c678c77ec4740fc00f43",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-047-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17460,
+          "sha256": "da11bcd5793e3c5ad519e2c630c565c46a0af0c44cd004410cafe73094f640f0",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-047.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23692,
+          "sha256": "a81fd5516510a3817db9255ba778c697520e389f979c45263698a59bd768789d",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Jegyzetelés: Az alapfogalmat, példát és saját kérdést válaszd szét.",
+      "caption": "Az alapfogalmat, példát és saját kérdést válaszd szét.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-048",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-048.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 21428,
+        "sha256": "da119c01a4d1acbf96d7bb8b31a0d5a1ccc199969c142458cb1eaf144735b7cd",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-048-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3614,
+          "sha256": "7633e823c82d3ef5b1e070ed1551517ead80b649813809b3d53bb82531c9ad14",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-048-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9330,
+          "sha256": "8bdd469341144b3dc49bcf29db1754990dd825bf4e875d12e20a263c56b137c7",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-048-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 15918,
+          "sha256": "c07ef309bf1fb44e8b44c1a4692c82eb893e230bd6fe9dcf8e4cc155b5b9ca8d",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-048.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 21428,
+          "sha256": "da119c01a4d1acbf96d7bb8b31a0d5a1ccc199969c142458cb1eaf144735b7cd",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Önellenőrzés: Készíts rövid kérdéseket a tananyaghoz.",
+      "caption": "Készíts rövid kérdéseket a tananyaghoz.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-049",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-049.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23652,
+        "sha256": "db1a3f8fca856836bf80764e2b38df758831d21d3709366db0198388e7db4be4",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-049-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4098,
+          "sha256": "27eb975bd518654bc0778836630dbf1ddecf52f13668b89c0f7d0552bdba3e8c",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-049-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10654,
+          "sha256": "838f3e983f10d8b2c6b6e4326e71a6fad91eaba7e5e4988cbb371cbd38539ffd",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-049-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17866,
+          "sha256": "b7f6c77e718c3462ebc70d0ca669780b0b98a595a19db5e5b2b3750fb5c94d17",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-049.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23652,
+          "sha256": "db1a3f8fca856836bf80764e2b38df758831d21d3709366db0198388e7db4be4",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Feladatértelmezés: Jelöld az ismert adatokat és a keresett mennyiséget.",
+      "caption": "Jelöld az ismert adatokat és a keresett mennyiséget.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-050",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-050.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 22260,
+        "sha256": "cb6629bd354f16c0ab4a04eaeadef0c416a71b0a3fe03bda4ef27fce4c0c00d9",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-050-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3626,
+          "sha256": "07209c206864441c28f589090cda2e227503e4ac0e16d292b7ab3da6eda61008",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-050-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9498,
+          "sha256": "54f64c15e19a55200b855cff6da05ad3b6f49290598c6f9c0709d3400a7ebd50",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-050-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16218,
+          "sha256": "fd58a0304c0c9acc1a26494188f3c1b39c675596290ddbd87973ba56f0d79186",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-050.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22260,
+          "sha256": "cb6629bd354f16c0ab4a04eaeadef0c416a71b0a3fe03bda4ef27fce4c0c00d9",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Becslés: A számolás előtt gondold át a várható nagyságrendet.",
+      "caption": "A számolás előtt gondold át a várható nagyságrendet.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-051",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-051.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23388,
+        "sha256": "9ba7ad186c438827392255585598362880fbd6ed85f8edffd3065dfecedbb26d",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-051-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3870,
+          "sha256": "ac70e02c2b8afa4435ee853dcde4d8a895a8267ca77e0cc23f2c91c590df1833",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-051-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10128,
+          "sha256": "97a06d6ee91b13f4173be27528dc8ade1061383b70b06c2de0bdabcaea944581",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-051-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17164,
+          "sha256": "d45ed9438b494b70796f7d7cf9f2bb19f3b29fed5980e6d16f3c30986ddf0cc1",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-051.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23388,
+          "sha256": "9ba7ad186c438827392255585598362880fbd6ed85f8edffd3065dfecedbb26d",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Mértékegység: A műveleteknél azonos egységekkel számolj.",
+      "caption": "A műveleteknél azonos egységekkel számolj.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-052",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-052.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 21966,
+        "sha256": "1e8de3b0d1855ae3d88f830a17de414b5cbd1af8f6fec49f546343b8e715ac5f",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-052-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3582,
+          "sha256": "04a353b4bb596d9f02a86b9cb33ce6b688b6925aab9544fa6911aeaddb6790a3",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-052-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9362,
+          "sha256": "388c21300e8727b878289e3c50bef0c958e2b059871af893acd90dee7585e1ea",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-052-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 15884,
+          "sha256": "8647763e38385c0ef91874e767d9c612585572f4fc1742eb6f820f355e9f7161",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-052.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 21966,
+          "sha256": "1e8de3b0d1855ae3d88f830a17de414b5cbd1af8f6fec49f546343b8e715ac5f",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Ellenőrzés: Próbáld az eredményt visszahelyettesíteni.",
+      "caption": "Próbáld az eredményt visszahelyettesíteni.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-053",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-053.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 21656,
+        "sha256": "03fe3059b60d2248f74887d347b64b609d91fef6b78030d48eca1839f4853266",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-053-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3632,
+          "sha256": "d1e193818a90f00505aa5f3a0c04391fee276f0a9971d356847b8df706f07f57",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-053-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9282,
+          "sha256": "9cad23d527601ad0100bf340aa8b243025b14997a92bb1f138e5138d766f07af",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-053-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16096,
+          "sha256": "c2c95c351055f68518cd36e0474f44bcf2b6ac9d118999f2fafe1ae78bb0502a",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-053.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 21656,
+          "sha256": "03fe3059b60d2248f74887d347b64b609d91fef6b78030d48eca1839f4853266",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Vázlat: Írás előtt rendezd logikai sorrendbe a fő gondolatokat.",
+      "caption": "Írás előtt rendezd logikai sorrendbe a fő gondolatokat.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-054",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-054.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 22736,
+        "sha256": "6f7026f533b5477373125e6969f4f38bd9514b6eff82a5350da6e8bcc549fd73",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-054-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3766,
+          "sha256": "13254dcb90b80eaa24f9f2e31f83f94485fd149ebd8ca290143e9ebb8da89b59",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-054-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9610,
+          "sha256": "7841649451e8666336aa80e8c19b3740af17d202c266b400d959b1b40dbba868",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-054-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16430,
+          "sha256": "ab05722ce195585b91aebe77331ef57cf884dcfd7c35b764b568711e218ff17f",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-054.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22736,
+          "sha256": "6f7026f533b5477373125e6969f4f38bd9514b6eff82a5350da6e8bcc549fd73",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Közérthetőség: Használj pontos, rövid mondatokat.",
+      "caption": "Használj pontos, rövid mondatokat.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-055",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-055.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 22508,
+        "sha256": "d98e1ed5702e8bef3d4b151119efb73491015e06195274e9f191303d77e0f69a",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-055-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3762,
+          "sha256": "5d4b8c12d6ad3aeccdb8b2fa73c2de2aef1aef2d87708033ff96a032980ff9a0",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-055-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9646,
+          "sha256": "987439d1b41d53f5896d6d571396dc9563757e490107b4e32762169ebe87a3b6",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-055-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16574,
+          "sha256": "179535ba570977e37e1e937f0ab5729c3fb57622bdb751a9bdb22db60c8815c7",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-055.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22508,
+          "sha256": "d98e1ed5702e8bef3d4b151119efb73491015e06195274e9f191303d77e0f69a",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Hivatkozás: A felhasznált forrásokat jelöld egyértelműen.",
+      "caption": "A felhasznált forrásokat jelöld egyértelműen.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-056",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-056.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 22814,
+        "sha256": "b7adcb9e2cf3ff9f791ed9450bc9e8bc624193944015d76fbe0492ed0783a1a3",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-056-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3784,
+          "sha256": "9e93352a8fe8c8c2a73ffa4cff5386a1e679ce55a45fdfc8b4f4b044f36356bf",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-056-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9800,
+          "sha256": "88fd0511725c6773b40ce1de92c7074de81e433f9b9526a3ef015bbe238a309b",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-056-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16768,
+          "sha256": "50d6c73d35d88a02fbf4ea905cb1fd1949feb3cf2c26a2c527b12c7f5692112c",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-056.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22814,
+          "sha256": "b7adcb9e2cf3ff9f791ed9450bc9e8bc624193944015d76fbe0492ed0783a1a3",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Javítás: Olvasd át a szöveget tartalom és nyelvhelyesség szerint.",
+      "caption": "Olvasd át a szöveget tartalom és nyelvhelyesség szerint.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-057",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-057.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 22800,
+        "sha256": "cbd8364a298f61f509cf69a512f7151de6de4cb017d033b8a11009a63b97fd86",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-057-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3902,
+          "sha256": "ceda6884f84ba9e564fedea629aa7959efa5cb3e605942c86c2eafa37480b60d",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-057-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9940,
+          "sha256": "d84c83fab3655d31a47b8bbe7f6f43bd8dbc460675e1e720829938c12da97c6c",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-057-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16822,
+          "sha256": "d4f905d1e4962eeb4e82660b01e9eef6bec307922b109c3768e6056beea73687",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-057.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22800,
+          "sha256": "cbd8364a298f61f509cf69a512f7151de6de4cb017d033b8a11009a63b97fd86",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Célmeghatározás: Fogalmazd meg, milyen eredmény készüljön el.",
+      "caption": "Fogalmazd meg, milyen eredmény készüljön el.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-058",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-058.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23404,
+        "sha256": "5a4ac70804c3de4a97f37b77792b885ed51547b48eeb0f9a50ede633437ba4a4",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-058-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3916,
+          "sha256": "a0445c95febfdb4febc1d161c01b5552b318f974f8328c72374db09ee787a3d8",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-058-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10090,
+          "sha256": "7b6dd875b3131e9cbdc2d9dcc71f821f15383cc8362605bc236de60d6e8a5c7f",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-058-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17318,
+          "sha256": "2410cfdef9c0ada32b2675f848a96f94590ca40e1ccc6f425f80d80b487a5240",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-058.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23404,
+          "sha256": "5a4ac70804c3de4a97f37b77792b885ed51547b48eeb0f9a50ede633437ba4a4",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Feladatmegosztás: A közös projektben tisztázd a felelősségeket.",
+      "caption": "A közös projektben tisztázd a felelősségeket.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-059",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-059.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23760,
+        "sha256": "e65336e4333dedb4f21e5f9534856ed28b2e4c0bc2866857a540197bf978d222",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-059-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3982,
+          "sha256": "092187b7df799e535ef71a0a31253da4100a3f545cb8604471f20974520e5c37",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-059-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10372,
+          "sha256": "ae62a9fe263a278174f46c44de69d87e4bbda78a2c72980c65b2dd55e01854a4",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-059-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17652,
+          "sha256": "654f001b4405e72903897dfa774be37baeed0abfd078ac7c929186c7b9f4a965",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-059.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23760,
+          "sha256": "e65336e4333dedb4f21e5f9534856ed28b2e4c0bc2866857a540197bf978d222",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Verziózás: A fontos változtatásokról legyen visszakereshető előzmény.",
+      "caption": "A fontos változtatásokról legyen visszakereshető előzmény.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-060",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-060.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 21904,
+        "sha256": "9d0787e7648b82d19e674c7c0e8245ad7dad1a29e5dffc2e3d7a3d26e42e3a1c",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-060-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3648,
+          "sha256": "61fda2c58abf695055c29358093a42e752bd49b1e47eaed8e979e8dc04f7e3c1",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-060-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9374,
+          "sha256": "f1e4e1f79b00d9519a69586b441b992a81888e89fedb03c1c09e606453843a17",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-060-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16000,
+          "sha256": "304d755c9fc135747e7687e3cbb957dd534c7f876b7e3849edfc3cf39ec7ea54",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-060.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 21904,
+          "sha256": "9d0787e7648b82d19e674c7c0e8245ad7dad1a29e5dffc2e3d7a3d26e42e3a1c",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Bemutatás: Az eredmény mellett mutasd meg a módszert is.",
+      "caption": "Az eredmény mellett mutasd meg a módszert is.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-061",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-061.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23140,
+        "sha256": "05c29329e6dd511dd5156877d0ff1d7f2ee6c532b81740c9bf960c1760abe636",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-061-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3840,
+          "sha256": "fa8e1d90e679c5fdba2e5ae4e46f61902324ae9da62bf77fc16da26be8a1f561",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-061-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9908,
+          "sha256": "f25ca104abdabc48cfe67d3cf81aadeeda3c1ec1c74fbadeafb7ecc5811fb9f9",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-061-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17214,
+          "sha256": "497c5733c2e3aeb405df7a159dde7365a0c15a61208f58ef37cf41b954163520",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-061.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23140,
+          "sha256": "05c29329e6dd511dd5156877d0ff1d7f2ee6c532b81740c9bf960c1760abe636",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Érkezés: Tervezz időt az utazásra és a felkészülésre.",
+      "caption": "Tervezz időt az utazásra és a felkészülésre.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-062",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-062.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 25584,
+        "sha256": "39b17d635b2bf7f8b3d3d860efe1b2c63a98628e0b119f58396c13253d8c2f9c",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-062-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4444,
+          "sha256": "f1d21282464d721e1ff6cae822cc15f5c5b33f6154e57f6ec9c07288cbe253ea",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-062-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11276,
+          "sha256": "d8a906ff462a3c9a4a4dcea027c4298e1c673d3f6fa6030e739777a00916a7a1",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-062-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 19188,
+          "sha256": "ea448902551a52d1e7de94973f0c877a5709c9a4aefae9958e4daf1b4e901644",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-062.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 25584,
+          "sha256": "39b17d635b2bf7f8b3d3d860efe1b2c63a98628e0b119f58396c13253d8c2f9c",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Tanulási környezet: Rendezd áttekinthetően a szükséges eszközöket.",
+      "caption": "Rendezd áttekinthetően a szükséges eszközöket.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-063",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-063.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 25680,
+        "sha256": "b62506f8f9cdc75540855c2f279c039c8b33c8155b76c8e7811a2bc6fbb57f9a",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-063-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4486,
+          "sha256": "20738f750741456c279c306553a59ea6c0671a90c12ba3d3c18967218d00fbfa",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-063-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11224,
+          "sha256": "34a9be8fab3c07f63b4753f9f9c51ee07aa0a16477a36ddcecce124dcb34aa06",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-063-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 19276,
+          "sha256": "eebcb5f21a7f11469864e3ed95d9bfbb3dffc287629277d63d889a62bc5630cb",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-063.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 25680,
+          "sha256": "b62506f8f9cdc75540855c2f279c039c8b33c8155b76c8e7811a2bc6fbb57f9a",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Közös szabályok: A megállapodott szabályok mindenkire vonatkoznak.",
+      "caption": "A megállapodott szabályok mindenkire vonatkoznak.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-064",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-064.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23620,
+        "sha256": "27dedb17155cd54fedc4e6ae3b14a550791ec1890fb3d4a4e4ecc34e58ed2d68",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-064-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4116,
+          "sha256": "180f9efc752721e7d3ccd530a9e379655a74203fdf2fa01c3594212914919c5b",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-064-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10228,
+          "sha256": "c10d5756d86b4355f0b2809109df3162389da951963d16c8708ff8fc75515687",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-064-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17608,
+          "sha256": "9ff34a4b911ec6b358d42b39d52f313613eb55c298a2917f83c0f150893f518e",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-064.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23620,
+          "sha256": "27dedb17155cd54fedc4e6ae3b14a550791ec1890fb3d4a4e4ecc34e58ed2d68",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Értékelés: Fogalmazd meg, mi sikerült és min érdemes változtatni.",
+      "caption": "Fogalmazd meg, mi sikerült és min érdemes változtatni.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-065",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-065.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 24074,
+        "sha256": "633b833f2cddf66c244760fa510ada2488b6b725186003f7ce89a6197c826300",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-065-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4004,
+          "sha256": "dea4d8fdd8fe15b3548c092dda315d0e5e595118a15ec4ff56ed928316c1ab17",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-065-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10146,
+          "sha256": "f446aec6a51e14d872850386d819ce92bf3f889127e3c68e5bbe7f0c93e94b46",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-065-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17702,
+          "sha256": "867aca2147eeef8261a3626fea6a44996310104ce187b320d1469b339c874d6f",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-065.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 24074,
+          "sha256": "633b833f2cddf66c244760fa510ada2488b6b725186003f7ce89a6197c826300",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Ötletgyűjtés: Minden résztvevő javaslatát hallgasd meg.",
+      "caption": "Minden résztvevő javaslatát hallgasd meg.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-066",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-066.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 22638,
+        "sha256": "75b9e269e95db5a501010a89d795bd796d96f42bd315d565ebd243d8e63c9757",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-066-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3828,
+          "sha256": "3eb15587a386bb34ea97fed21a979a67afceb3139a9e72fa5b1c7305e758ef87",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-066-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9774,
+          "sha256": "400ed2c43cf57b870248b021cfe7c65f7c579500dce0636f7a31dfe50156a2ce",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-066-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16894,
+          "sha256": "941df6d952e5204382ff62a84bb9bc8fef0e47ed94a312f71705513c5b03e6d4",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-066.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22638,
+          "sha256": "75b9e269e95db5a501010a89d795bd796d96f42bd315d565ebd243d8e63c9757",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Tervezés: Rögzíts feladatokat, felelősöket és határidőket.",
+      "caption": "Rögzíts feladatokat, felelősöket és határidőket.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-067",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-067.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23646,
+        "sha256": "551e70a1c79d3d5ff77f3576a096d46d32123772c59cde4630b75f4ddbd895b9",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-067-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4150,
+          "sha256": "46aedf9b92ed420b3141b3893a36acf3f2a48fa8d6816198e011c0d1b4614144",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-067-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10288,
+          "sha256": "cb9c1465835f4d81de7e85d547d14f412c23fdcae52894c103e97d30f6263367",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-067-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17584,
+          "sha256": "32a3fc3054fea8df23384e82ca4d49b802d07edd94956e582b12dac6717e1ed3",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-067.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23646,
+          "sha256": "551e70a1c79d3d5ff77f3576a096d46d32123772c59cde4630b75f4ddbd895b9",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Megvalósítás: A munka során röviden egyeztessetek a változásokról.",
+      "caption": "A munka során röviden egyeztessetek a változásokról.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-068",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-068.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23938,
+        "sha256": "68e28fbb0ff88c15295b5f17d3bc844f47fd08302519fb1ac52139496b856212",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-068-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4072,
+          "sha256": "2dd6aedd766060015db36577e17fd61af9d40977dab511250c1c33ceee4ba51c",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-068-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10456,
+          "sha256": "68dea94f9e7901c99a084012205319967b784091e8858d599637aba9a03bc629",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-068-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17882,
+          "sha256": "33080336b50b9715538a62b6965f08181b0882b08d9a1364e0b8aba25ffe472b",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-068.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23938,
+          "sha256": "68e28fbb0ff88c15295b5f17d3bc844f47fd08302519fb1ac52139496b856212",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Bemutató: Mutassátok be a munkafolyamatot és az eredményeket.",
+      "caption": "Mutassátok be a munkafolyamatot és az eredményeket.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-069",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-069.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23770,
+        "sha256": "08872173dc051e8a65b1936a360ad66c6780824abc3d31d64a4df75509227383",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-069-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4232,
+          "sha256": "2cfa1fb03520698ed13627cb0d5ef7cea587cade72248345b0a981288b795935",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-069-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10588,
+          "sha256": "c235df6e615faedf7a5b60169d8c5cd84b44bd0ab208834deea3000cb1b21240",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-069-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18012,
+          "sha256": "b481e66ef37a55bbbcf0d1577cd5e11b4e26eee4beab16ab8e44019d51a27836",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-069.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23770,
+          "sha256": "08872173dc051e8a65b1936a360ad66c6780824abc3d31d64a4df75509227383",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Energiatudatosság: Kapcsold ki a nem használt eszközöket.",
+      "caption": "Kapcsold ki a nem használt eszközöket.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-070",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-070.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 25798,
+        "sha256": "e992f56f123fd5e70bb87183ea2ad0bba23934f08910398e6f2ad34928d7392a",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-070-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4544,
+          "sha256": "c66dbc267a2534e1e8516eea599072e308b414edffd2316f36cfb992bf23cbca",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-070-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 11422,
+          "sha256": "335345e1c1deff9160d2463b7924b6a381ce650580961b1dfd8f41df41f6d041",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-070-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 19324,
+          "sha256": "d1553c7bd57f691431c370a3501b684a97bf09cc8165a45076976fe1ff0870ee",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-070.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 25798,
+          "sha256": "e992f56f123fd5e70bb87183ea2ad0bba23934f08910398e6f2ad34928d7392a",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Hulladékkezelés: A hulladékot a helyi gyűjtési szabály szerint válogasd.",
+      "caption": "A hulladékot a helyi gyűjtési szabály szerint válogasd.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-071",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-071.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23596,
+        "sha256": "7bab5a0cd045e43063e3858a72182e2e1e2760100e63e4eb008ce3607dc041ed",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-071-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4042,
+          "sha256": "4dc729a89b29c9f2a6523f63821307b6d261b44e9ad20f44d0a9a9b34a07bbb5",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-071-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10258,
+          "sha256": "b9346897e09bb2cc9ba7ccb8309f7760db653e09941af3e7b6391edc3144e355",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-071-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17584,
+          "sha256": "1f50e792728dda6e68e288fc470e20a27e016f6e77fdfbdfbe8911a5fdb63b16",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-071.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23596,
+          "sha256": "7bab5a0cd045e43063e3858a72182e2e1e2760100e63e4eb008ce3607dc041ed",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Vízhasználat: Figyelj a felesleges vízfolyatás elkerülésére.",
+      "caption": "Figyelj a felesleges vízfolyatás elkerülésére.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-072",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-072.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 22956,
+        "sha256": "dc131728ccace79cbee11d42ea82e6ac425196a169aacb2fdaf5666a83c5355b",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-072-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3948,
+          "sha256": "f7b3446e57263196db38cab9082ffcd78239d1c3224ead16e074e6b85279890f",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-072-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9924,
+          "sha256": "e9ebe846e9290f5a8092383a25558ac13c4abf083c169a32bf56769a45c59c84",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-072-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17062,
+          "sha256": "a301d8551c03781490a9c2763f4fca2a31566cafd0edebd3bff239fde273158e",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-072.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22956,
+          "sha256": "dc131728ccace79cbee11d42ea82e6ac425196a169aacb2fdaf5666a83c5355b",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Közös terek: Vigyázz a sport- és tanulóterek rendjére.",
+      "caption": "Vigyázz a sport- és tanulóterek rendjére.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-073",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-073.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 22880,
+        "sha256": "8c1749515d4c5b7536ef43853dbfb1a437e4a6704f65531720fbb389f0375b14",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-073-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3956,
+          "sha256": "98c83cf27bb32a6f0b7e50885759fdcf3ba79e1ec6bed26532ec7a4eeab64c01",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-073-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9892,
+          "sha256": "ebabcd44e6d6daccd683b8a738f97cda20e564448bd49758a01ab2ee6fab7330",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-073-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17162,
+          "sha256": "30a61897f9cb2a30c43e49476b4651b20d57c08b218f9c716210807135a00e67",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-073.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22880,
+          "sha256": "8c1749515d4c5b7536ef43853dbfb1a437e4a6704f65531720fbb389f0375b14",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Aktív figyelem: Hagyd végigmondani a másik fél gondolatát.",
+      "caption": "Hagyd végigmondani a másik fél gondolatát.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-074",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-074.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 24710,
+        "sha256": "9888bdc6b7f32489881b5f117ecbc168f93e85a682e5aff10e1046171947ca05",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-074-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4388,
+          "sha256": "2519e83956d6ffb361c10247309dfc9a5c6ed0308afd539f9dae7876c7164f99",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-074-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10930,
+          "sha256": "7cabe2f2a50d19949500a14d52fb0c49cbdb0ece1194c31e3d0a02319ad74ccb",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-074-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18680,
+          "sha256": "484871758db7b8b308407a87dda90ec2dce80263eb3f2364884bafc8a4e676ab",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-074.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 24710,
+          "sha256": "9888bdc6b7f32489881b5f117ecbc168f93e85a682e5aff10e1046171947ca05",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Építő visszajelzés: A helyzetet és a megoldási javaslatot különítsd el.",
+      "caption": "A helyzetet és a megoldási javaslatot különítsd el.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-075",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-075.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 24492,
+        "sha256": "be7504e3b388c991fb91a8e6be1ea9035b03edb2395e320eea833010933e730c",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-075-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4388,
+          "sha256": "485c0aa3fb69dbce8e2459708b111fe92eae563c21f0143c0eb4f90c60ef9c15",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-075-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10974,
+          "sha256": "9c399fc3aa47c0194ef52c85e47c292eeba5c9f05e8848209b4b7d6be5ea89b1",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-075-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18564,
+          "sha256": "3258c1cf79ef4486d178a3840b4fac607965d93dca88a1577f00d8495cd6894c",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-075.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 24492,
+          "sha256": "be7504e3b388c991fb91a8e6be1ea9035b03edb2395e320eea833010933e730c",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Konfliktuskezelés: Előbb tisztázd a tényeket és a különböző nézőpontokat.",
+      "caption": "Előbb tisztázd a tényeket és a különböző nézőpontokat.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-076",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-076.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 24484,
+        "sha256": "0db9ca3968f2090463204d35bd879338bb2b7c12dd7aed9db13a367dab3be71f",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-076-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4212,
+          "sha256": "67a1df1e9b8e239c5bd64cd2a0b60c5ceb4e36cdf5b9cc38f505d65023056715",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-076-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10760,
+          "sha256": "a71f6f62bfa411c273fef3087153b9f8fab3af92d7e7de198ed87a524c1369dd",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-076-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18510,
+          "sha256": "227d836c8eb0394a12d2751f83a8e1efc0fd7a81e4072049e2dcdae363dc9241",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-076.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 24484,
+          "sha256": "0db9ca3968f2090463204d35bd879338bb2b7c12dd7aed9db13a367dab3be71f",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Online jelenlét: Nyilvános hozzászólás előtt gondold át a hatását.",
+      "caption": "Nyilvános hozzászólás előtt gondold át a hatását.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-077",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-077.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23512,
+        "sha256": "0bb02896650765646f212c1dce42b697b9abd6545382476a08197794b2fdcd64",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-077-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4040,
+          "sha256": "c42f46a66d4a9eaa008e7d75c0991316988e3e22a1c1333f2ac4a15ec22d1335",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-077-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10082,
+          "sha256": "272cc4c3110537d1451f388147ea38c920ecdc343c7d2a564693c96802c76a06",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-077-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17280,
+          "sha256": "e3d30c4168a086942bbffd80dc01a18a3f342004776749ae5fae8a00e2ecd728",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-077.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23512,
+          "sha256": "0bb02896650765646f212c1dce42b697b9abd6545382476a08197794b2fdcd64",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Napirend: A tervezésben legyen helye tanulásnak és pihenésnek.",
+      "caption": "A tervezésben legyen helye tanulásnak és pihenésnek.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-078",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-078.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 23744,
+        "sha256": "4c1d42cec88149cdf573cc484966c4adc478bbf0685cb54c12832bec4db4ac69",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-078-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4102,
+          "sha256": "9aafafab6e517a01f0e017b16fdb12a23c59758e35de92632645a0679c156e76",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-078-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10282,
+          "sha256": "67a6be37434245c6a730dfcdd53901080b100c3352e3ed0ea71922728330544c",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-078-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 17660,
+          "sha256": "a3c4d931aa88a25684b5fc9227a5ee13c9c83db749c0e38d5463a991e78beef6",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-078.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 23744,
+          "sha256": "4c1d42cec88149cdf573cc484966c4adc478bbf0685cb54c12832bec4db4ac69",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Mozgásszünet: Hosszú ülőmunka után állj fel és mozogj át.",
+      "caption": "Hosszú ülőmunka után állj fel és mozogj át.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-079",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-079.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 22200,
+        "sha256": "53dffaa44104c8e2ca9d089ef6edd8493827676ef7f16cd2f25cf3eebe34d251",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-079-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 3652,
+          "sha256": "b07fc19cbe3937e8363e7c2e77f77089dc39270413bbb2153654d689e86cca60",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-079-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 9436,
+          "sha256": "3d0666fbfb6dbefff49a64406d83978fd852dc708402f7ae9094b1c61ec398c8",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-079-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 16348,
+          "sha256": "f3677e34a7064f820fb16ff707fb596c463672558423c059f012f705094e955d",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-079.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 22200,
+          "sha256": "53dffaa44104c8e2ca9d089ef6edd8493827676ef7f16cd2f25cf3eebe34d251",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Alvás: A pihenés a fejlődés és az összpontosítás része.",
+      "caption": "A pihenés a fejlődés és az összpontosítás része.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:cs2026-080",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/cs2026-080.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 25058,
+        "sha256": "b1bec2bacbce23e73772313a55bc33b8763e3c83dc80f579550a675ff3de3519",
+        "width": 1200,
+        "height": 675
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/responsive/cs2026-080-320.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 4302,
+          "sha256": "b7b1849b1b506964b7460f6279b8c60f4ae8e082c14e5ec5add4bcf16b49ec21",
+          "width": 320,
+          "height": 180
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-080-640.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 10988,
+          "sha256": "c1a8c0cd917107db7e2e79b133461fb307dff8cf900eeea5e3ba69b34517bbe5",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "path": "assets/media/web/responsive/cs2026-080-960.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 18826,
+          "sha256": "548820fca15a9cea84d1dc226efe2c9538b3f59cf1576af28077dc6de407cc0a",
+          "width": 960,
+          "height": 540
+        },
+        {
+          "path": "assets/media/web/cs2026-080.webp",
+          "mimeType": "image/webp",
+          "sizeBytes": 25058,
+          "sha256": "b1bec2bacbce23e73772313a55bc33b8763e3c83dc80f579550a675ff3de3519",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "alt": "Segítségkérés: Ha elakadsz, keresd a megfelelő segítő személyt.",
+      "caption": "Ha elakadsz, keresd a megfelelő segítő személyt.",
+      "decorative": false,
+      "rights": {
+        "clearance": "generated",
+        "holder": "Csanádi weboldal – új, digitálisan létrehozott tematikus tartalom",
+        "license": "Fiktív, személyes vagy intézményi eseményt nem igazoló anyag; nyilvános közzététel előtt intézményi jóváhagyás szükséges."
+      }
     }
   ]
 }

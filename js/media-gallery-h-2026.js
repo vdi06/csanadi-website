@@ -13,7 +13,7 @@ const albums = [
 const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 const add=(parent,...children)=>{children.filter(Boolean).forEach(c=>parent.append(c));return parent;};
 const normal=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-const validPhoto=x=>x&&typeof x.title==='string'&&typeof x.alt==='string'&&['sport','oktatas','kozosseg'].includes(x.category)&&x.verifiedSchoolPhoto===false&&/^assets\/media\/web\/[a-z0-9-]+\.webp$/.test(x.src);
+const validPhoto=x=>x&&typeof x.title==='string'&&typeof x.alt==='string'&&['sport','oktatas','kozosseg'].includes(x.category)&&x.verifiedSchoolPhoto===false&&(/^(?:assets\/media\/web\/[a-z0-9-]+\.webp|assets\/graphics\/ikon-[a-z0-9-]+\.svg)$/.test(x.src));
 const validVideo=x=>x&&typeof x.title==='string'&&typeof x.description==='string'&&['sport','oktatas','kozosseg'].includes(x.category)&&x.type==='illustrative-montage'&&/^assets\/media\/video\/[a-z0-9-]+\.mp4$/.test(x.src)&&/^assets\/media\/web\/[a-z0-9-]+\.webp$/.test(x.poster);
 async function getJSON(url){const res=await fetch(url,{cache:'no-store'});if(!res.ok)throw Error('HTTP '+res.status);return res.json();}
 function galleryButton(label,cls,handler){const b=el('button',cls,label);b.type='button';b.addEventListener('click',handler);return b;}
@@ -61,7 +61,7 @@ export function renderMediaGallery({compact=false}={}){
   grid.hidden=type!=='photo';videoGrid.hidden=type!=='video';grid.replaceChildren();videoGrid.replaceChildren();
   if(type==='photo'){
     filtered.slice(0,limit).forEach((item,index)=>{const tile=galleryButton('','media26-tile',()=>openImage(filtered,index,tile));tile.setAttribute('aria-label',item.title+' – kép megnyitása');
-      const photo=el('img');photo.src=item.src;photo.alt=item.alt;photo.loading=index<3?'eager':'lazy';photo.decoding='async';
+      const photo=el('img');photo.src=item.thumb||item.src;if(item.srcset&&typeof item.srcset==='string'){photo.srcset=item.srcset;photo.sizes='(max-width: 600px) 45vw, (max-width: 1024px) 30vw, 24vw';}photo.alt=item.alt;photo.loading=index<3?'eager':'lazy';photo.decoding='async';
       add(tile,photo,el('span','media26-tile-overlay'),el('span','media26-tile-label',item.title),el('span','media26-tile-zoom','＋'));grid.append(tile);});
     loadMore.hidden=filtered.length<=limit;info.textContent=`${filtered.length} kép található · ${Math.min(limit,filtered.length)} megjelenítve`;
     if(!filtered.length)grid.append(el('p','media26-empty','Nincs találat. Válassz másik albumot vagy keresőkifejezést.'));
@@ -77,7 +77,7 @@ export function renderMediaGallery({compact=false}={}){
  draw();
  Promise.all([getJSON(PHOTO_URL),getJSON(VIDEO_URL)]).then(([p,v])=>{
   if(p?.schemaVersion!=='1.0.0'||!Array.isArray(p.items)||v?.schemaVersion!=='1.0.0'||!Array.isArray(v.items))throw Error('A galéria adatformátuma hibás.');
-  photos=p.items.filter(validPhoto).slice(0,100);videos=v.items.filter(validVideo).slice(0,15);draw();
+  photos=p.items.filter(validPhoto);videos=v.items.filter(validVideo).slice(0,15);draw();
  }).catch(error=>{info.textContent='A galéria pillanatnyilag nem tölthető be: '+error.message;});
  return section;
 }

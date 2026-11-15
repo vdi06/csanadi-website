@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "collectionId": "collection:csanadi-public-documents",
   "locale": "hu-HU",
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-15",
   "description": "Publikusan hozzáférhető, ellenőrzött elérhetőségű fejlesztési segédletek; nem intézményi szabályzatok.",
   "defaultView": "cards",
   "defaultSort": "newest",
@@ -200,6 +200,576 @@
           "version": "1.0.0",
           "date": "2026-11-14",
           "change": "Első fejlesztési kiadás; általános, nem hivatalos tájékoztató."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-01",
+      "title": "Sportolói heti terv",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő sport témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "sport-idobeosztas",
+      "tags": [
+        "sport",
+        "sportolói heti terv",
+        "segédlet"
+      ],
+      "keywords": [
+        "sportolói heti terv",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-01.pdf",
+      "filePath": "assets/documents/segedlet-2026-01.pdf",
+      "fileSizeBytes": 46582,
+      "sha256": "1c8809c1a235eea5838afb55f01cdc792e6d5a1c93b64bc09829c9d9be8609e0",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/sport"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-02",
+      "title": "Edzésnapló – mintalap",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő sport témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "sport",
+      "tags": [
+        "sport",
+        "edzésnapló – mintalap",
+        "segédlet"
+      ],
+      "keywords": [
+        "edzésnapló – mintalap",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-02.pdf",
+      "filePath": "assets/documents/segedlet-2026-02.pdf",
+      "fileSizeBytes": 46721,
+      "sha256": "32ebaca81e5ec33eb81dbd9e578d2371eb1bcc14d510d9635a13d029e8a68676",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/sport"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-03",
+      "title": "Kosárlabda alapfogalmak",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő sport témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "sport",
+      "tags": [
+        "sport",
+        "kosárlabda alapfogalmak",
+        "segédlet"
+      ],
+      "keywords": [
+        "kosárlabda alapfogalmak",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-03.pdf",
+      "filePath": "assets/documents/segedlet-2026-03.pdf",
+      "fileSizeBytes": 46656,
+      "sha256": "782c200fddb49af2439fcdb2cfd659e70f6053756860c1512512dac1f8a8ccd1",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/sport"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-04",
+      "title": "Atlétikai feladatlap",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő sport témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "sport",
+      "tags": [
+        "sport",
+        "atlétikai feladatlap",
+        "segédlet"
+      ],
+      "keywords": [
+        "atlétikai feladatlap",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-04.pdf",
+      "filePath": "assets/documents/segedlet-2026-04.pdf",
+      "fileSizeBytes": 46632,
+      "sha256": "a2a3c25e7aac820232b6d535e2accd2cf7d294f3ca429710aa13dfc1e0e112cf",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/sport"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-05",
+      "title": "Úszási biztonsági segédlet",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő sport témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "sport",
+      "tags": [
+        "sport",
+        "úszási biztonsági segédlet",
+        "segédlet"
+      ],
+      "keywords": [
+        "úszási biztonsági segédlet",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-05.pdf",
+      "filePath": "assets/documents/segedlet-2026-05.pdf",
+      "fileSizeBytes": 46718,
+      "sha256": "47615c78cb268f3314726d3b05faa6a53c411c0acb28be836ad9cb42940c16ea",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/sport"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-06",
+      "title": "Csapatmunka a sportban",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő sport témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "sport",
+      "tags": [
+        "sport",
+        "csapatmunka a sportban",
+        "segédlet"
+      ],
+      "keywords": [
+        "csapatmunka a sportban",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-06.pdf",
+      "filePath": "assets/documents/segedlet-2026-06.pdf",
+      "fileSizeBytes": 46652,
+      "sha256": "0c6358e85bed05a7d19e91ae3645474b4a2c11c7239bb3bbc5872198920fcd55",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/sport"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-07",
+      "title": "Tanulási időbeosztás",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő oktatas témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "tanulas",
+      "tags": [
+        "oktatas",
+        "tanulási időbeosztás",
+        "segédlet"
+      ],
+      "keywords": [
+        "tanulási időbeosztás",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-07.pdf",
+      "filePath": "assets/documents/segedlet-2026-07.pdf",
+      "fileSizeBytes": 46655,
+      "sha256": "ffad2a8d9d1bc41e2e3070174b71a6346ebc9aa61cc06b6d837be7d648fc2261",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/oktatas"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-08",
+      "title": "Digitális fájlnevek",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő oktatas témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "tanulas-digitalis",
+      "tags": [
+        "oktatas",
+        "digitális fájlnevek",
+        "segédlet"
+      ],
+      "keywords": [
+        "digitális fájlnevek",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-08.pdf",
+      "filePath": "assets/documents/segedlet-2026-08.pdf",
+      "fileSizeBytes": 46647,
+      "sha256": "250edd9cf8aaac6a0bf16de7bc73afc355fcb9b211265406399736847ab4425d",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/oktatas"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-09",
+      "title": "Forráskritikai ellenőrzőlista",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő oktatas témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "tanulas-digitalis",
+      "tags": [
+        "oktatas",
+        "forráskritikai ellenőrzőlista",
+        "segédlet"
+      ],
+      "keywords": [
+        "forráskritikai ellenőrzőlista",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-09.pdf",
+      "filePath": "assets/documents/segedlet-2026-09.pdf",
+      "fileSizeBytes": 46628,
+      "sha256": "b9720741c7b8be20aec2ca401809bc992a8c91ff7c8a3f58dc2da1a94d5e2db3",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/oktatas"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-10",
+      "title": "Biztonságos online munka",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő oktatas témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "tanulas-digitalis",
+      "tags": [
+        "oktatas",
+        "biztonságos online munka",
+        "segédlet"
+      ],
+      "keywords": [
+        "biztonságos online munka",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-10.pdf",
+      "filePath": "assets/documents/segedlet-2026-10.pdf",
+      "fileSizeBytes": 46663,
+      "sha256": "01bbfefd0abced8be6a4030b6d97f3682ebf388d31a920ec0f1fe9bf44de284d",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/oktatas"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-11",
+      "title": "Projektfeladat tervező",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő oktatas témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "tanulas",
+      "tags": [
+        "oktatas",
+        "projektfeladat tervező",
+        "segédlet"
+      ],
+      "keywords": [
+        "projektfeladat tervező",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-11.pdf",
+      "filePath": "assets/documents/segedlet-2026-11.pdf",
+      "fileSizeBytes": 46574,
+      "sha256": "4af6013d019f7bb259ce2964d92e74338b211b202e7976992e9322cee8ae0d45",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/oktatas"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-12",
+      "title": "Felvételi felkészülési lista",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő oktatas témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "felveteli-tervezes",
+      "tags": [
+        "oktatas",
+        "felvételi felkészülési lista",
+        "segédlet"
+      ],
+      "keywords": [
+        "felvételi felkészülési lista",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-12.pdf",
+      "filePath": "assets/documents/segedlet-2026-12.pdf",
+      "fileSizeBytes": 46668,
+      "sha256": "b1b1bc24284de27f0eb55de75033dca25557a4cf78bf561c192956f60dbe9bcf",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/oktatas"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-13",
+      "title": "Iskolai közösségi projekt",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő kozosseg témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "tanulas",
+      "tags": [
+        "kozosseg",
+        "iskolai közösségi projekt",
+        "segédlet"
+      ],
+      "keywords": [
+        "iskolai közösségi projekt",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-13.pdf",
+      "filePath": "assets/documents/segedlet-2026-13.pdf",
+      "fileSizeBytes": 46668,
+      "sha256": "267963816a743f11a94f26dd4a26ec6297e9c5a209c554d23ca5dd026d4813d0",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/iskolank"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-14",
+      "title": "Tudatos médiahasználat",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő kozosseg témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "tanulas-digitalis",
+      "tags": [
+        "kozosseg",
+        "tudatos médiahasználat",
+        "segédlet"
+      ],
+      "keywords": [
+        "tudatos médiahasználat",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-14.pdf",
+      "filePath": "assets/documents/segedlet-2026-14.pdf",
+      "fileSizeBytes": 46664,
+      "sha256": "45ea1fbc14798dafec1cd7cc2178999913d2ed81e1c5db1278fa61678643c9dd",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/iskolank"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
+        }
+      ]
+    },
+    {
+      "id": "document:segedlet-2026-15",
+      "title": "Sport és tanulás reflektív lap",
+      "summary": "Kétoldalas, gyakorlati, önálló feldolgozást segítő kozosseg témájú segédanyag. Nem hivatalos iskolai irat.",
+      "categoryId": "sport-idobeosztas",
+      "tags": [
+        "kozosseg",
+        "sport és tanulás reflektív lap",
+        "segédlet"
+      ],
+      "keywords": [
+        "sport és tanulás reflektív lap",
+        "minta",
+        "tervezés"
+      ],
+      "status": "published",
+      "documentKind": "guide",
+      "mimeType": "application/pdf",
+      "fileName": "segedlet-2026-15.pdf",
+      "filePath": "assets/documents/segedlet-2026-15.pdf",
+      "fileSizeBytes": 46690,
+      "sha256": "31eaa3af7b0b145b1286407e6871cb125fd266f19b85310e2fa9219478244ef9",
+      "version": "1.0.0",
+      "publishedAt": "2026-11-15",
+      "validFrom": "2026-11-15",
+      "validTo": null,
+      "relatedRoutes": [
+        "#/iskolank"
+      ],
+      "official": false,
+      "versionHistory": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-15",
+          "change": "Általános, digitálisan összeállított, nem hivatalos segédlet."
         }
       ]
     }

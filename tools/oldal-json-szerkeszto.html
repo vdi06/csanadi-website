@@ -9,16 +9,15 @@
 </head><body class="csanadi-tool"><a class="skip-link" href="#tool-main">Ugrás a szerkesztéshez</a>
 <header class="tool-header">
   <div class="tool-topbar">
-    <a class="tool-brand" href="../index.html#/" aria-label="Csanádi Sportiskola – honlap">
+    <div class="tool-brand" role="img" aria-label="Csanádi Árpád Sportiskola – eszközök">
       <img src="../assets/media/logo/csanadi-cimer-512.webp" alt="" width="51" height="51">
       <span class="tool-brand-text"><strong>CSANÁDI</strong><small>ÁRPÁD SPORTISKOLA · ESZKÖZÖK</small></span>
-    </a>
+    </div>
     <div class="tool-header-actions">
-      <a class="tool-return" href="../index.html#/">← Vissza a honlapra</a>
       <button id="tool-theme-toggle" class="tool-theme-toggle" type="button" aria-label="Megjelenési mód váltása">◐ Megjelenés</button>
     </div>
   </div>
-  <nav class="tool-breadcrumb" aria-label="Morzsamenü"><div class="tool-breadcrumb-inner"><a href="../index.html#/">Kezdőlap</a><span aria-hidden="true">›</span><span>Eszközök</span><span aria-hidden="true">›</span><span aria-current="page">Oldal-JSON szerkesztése</span></div></nav>
+  <nav class="tool-breadcrumb" aria-label="Morzsamenü"><div class="tool-breadcrumb-inner"><span>Eszközök</span><span aria-hidden="true">›</span><span aria-current="page">Oldal-JSON szerkesztése</span></div></nav>
 </header>
 <main id="tool-main" class="tool-main"><div class="tool-lead"><span class="tool-eyebrow">Csanádi · helyi szerkesztőeszközök</span><h1>Oldal-JSON szerkesztése</h1><p>JSON-oldalak biztonságos módosítása a saját böngészőben. Az adatok csak a böngésződben kerülnek feldolgozásra; az eszköz nem tölti fel őket automatikusan.</p></div>
 <nav class="tool-tabs" aria-label="Szerkesztőeszközök közötti navigáció"><a href="oldal-json-szerkeszto.html" aria-current="page">Oldal-JSON szerkesztése</a>
@@ -45,5 +44,5 @@ $('file').addEventListener('change',async()=>{try{const f=$('file').files[0];if(
 $('save').addEventListener('click',()=>{try{if(!original)throw Error('Előbb válassz ki egy fájlt.');const doc=JSON.parse(JSON.stringify(original));doc.title=$('title').value.trim();doc.menuLabel=$('menu').value.trim();doc.summary=$('summary').value.trim();let targets=[];const saveRef=(node)=>{if(!node||typeof node!=='object')return;if(Array.isArray(node)){node.forEach(saveRef);return;}if(node.type==='markdown'&&typeof node.data?.text==='string')targets.push(node.data);for(const [k,v] of Object.entries(node)){if(k==='data'&&node.type==='markdown')continue;if(Array.isArray(v)||(v&&typeof v==='object'))saveRef(v);}};saveRef(doc.blocks);
  if(targets.length!==editors.length)throw Error('Nem egyezik a szövegblokkok száma.');editors.forEach((ed,i)=>targets[i].text=ed.element.value);validate(doc);if(JSON.stringify(doc).length>500000)throw Error('A módosított JSON túl nagy.');const blob=new Blob([JSON.stringify(doc,null,2)+'\n'],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),a=field('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000);status.textContent='A JSON érvényes és letöltve. A módosítást jóváhagyás után töltsd fel FTP-n.';
  }catch(err){status.textContent='Hiba: '+err.message;}});
-</script><footer class="tool-footer"><div class="tool-footer-inner"><div><strong>CSANÁDI SPORTISKOLA · 2026</strong><span> · Helyi, FTP-kompatibilis eszközök</span></div><div><a href="../index.html#/">Vissza a kezdőoldalra</a> · <span>A letöltött fájlok közzététel előtt ellenőrzendők.</span></div></div></footer>
+</script><footer class="tool-footer"><div class="tool-footer-inner"><div><strong>CSANÁDI SPORTISKOLA · 2026</strong><span> · Helyi, FTP-kompatibilis eszközök</span></div><div><span>A letöltött fájlok közzététel előtt ellenőrzendők.</span></div></div></footer>
 </body></html>
