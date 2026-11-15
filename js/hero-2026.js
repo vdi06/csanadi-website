@@ -23,7 +23,8 @@ export function renderPremiumHero(block){
    if(mobile.matches&&wing.side==='right'){wing.pictureMount.replaceChildren();continue;}
    const slideIndex=(mobile.matches?activeIndex:activeIndex*2+(wing.side==='right'?1:0))%slides.length;
    const slide=slides[slideIndex];
-   const picture=createPicture(slide.mediaId,{className:'csn26-wing-picture',eager:activeIndex===0,sizes:'(max-width:768px) 100vw, 50vw'});
+   let picture=wing.cache.get(slideIndex);
+   if(!picture){picture=createPicture(slide.mediaId,{className:'csn26-wing-picture',eager:activeIndex===0,sizes:'(max-width:768px) 100vw, 50vw'});if(picture){wing.cache.set(slideIndex,picture);if(wing.cache.size>settingNumber('runtime.hero.pictureCacheEntries'))wing.cache.delete(wing.cache.keys().next().value);}}
    wing.pictureMount.replaceChildren(...(picture?[picture]:[]));
    wing.overline.textContent=slide.eyebrow||'CSANÁDI SPORTISKOLA';wing.title.textContent=slide.title||'Iskolai pillanatok';wing.summary.textContent=slide.subtitle||'Fedezd fel iskolánk világát.';
    wing.surface.href=safeRoute(slide.buttons?.[0]?.href||(wing.side==='left'?'#/sport':'#/iskolank'));
@@ -34,7 +35,7 @@ export function renderPremiumHero(block){
  }
  const buildWing=side=>{
   const wing=el('section','csn26-visual-wing csn26-visual-wing--'+side);
-  wing.setAttribute('aria-label',side==='left'?'Bal oldali, mobilon felső képes tartalom':'Jobb oldali, mobilon alsó képes tartalom');
+  wing.setAttribute('aria-label',side==='left'?'Bal oldali, mobilon egyetlen képes tartalom':'Jobb oldali képes tartalom');
   const surface=el('a','csn26-wing-surface csn26-wing-target');const copy=el('div','csn26-wing-copy');
   const overline=el('span','csn26-wing-kicker');const title=el('h2','csn26-wing-title');const summary=el('p','csn26-wing-summary');
   copy.append(overline,title,summary);
@@ -43,7 +44,7 @@ export function renderPremiumHero(block){
   surface.addEventListener('touchstart',event=>{if(event.touches.length===1)startX=event.touches[0].clientX;},{passive:true});
   surface.addEventListener('touchend',event=>{if(startX===null||!event.changedTouches.length)return;const delta=event.changedTouches[0].clientX-startX;startX=null;if(Math.abs(delta)>settingNumber('runtime.hero.swipeThresholdPx')){event.preventDefault();showPair(activeIndex+(delta<0?1:-1),true);}},{passive:false});
   wing.addEventListener('keydown',event=>{if(event.target.matches('input,textarea,select'))return;if(event.key==='ArrowLeft'||event.key==='ArrowUp'){event.preventDefault();showPair(activeIndex-1,true);}if(event.key==='ArrowRight'||event.key==='ArrowDown'){event.preventDefault();showPair(activeIndex+1,true);}});
-  wingStates.push({element:wing,side,surface,pictureMount,overline,title,summary});
+  wingStates.push({element:wing,side,surface,pictureMount,overline,title,summary,cache:new Map()});
   return wing;
  };
  row.append(buildWing('left'),buildWing('right'));

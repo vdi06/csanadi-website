@@ -18,7 +18,8 @@ export async function loadJSON(path,{fresh=false}={}) {
   const url=jsonURL(path),now=Date.now(),prior=jsonCache.get(url);
   if(!fresh&&prior&&(prior.pending||now<prior.validUntil))return prior.pending||prior.value;
   const entry={value:null,validUntil:now+CACHE_TTL,pending:null};
-  entry.pending=fetch(url,{cache:'no-cache'}).then(async res=>{
+  // Kiadásváltás után sem a böngésző HTTP-gyorsítótárából olvasunk JSON-t.
+  entry.pending=fetch(url,{cache:'no-store'}).then(async res=>{
     if(!res.ok)throw new Error(`Nem elérhető: ${path} (${res.status})`);
     const data=await res.json();entry.value=data;entry.pending=null;entry.validUntil=Date.now()+CACHE_TTL;return data;
   }).catch(error=>{if(jsonCache.get(url)===entry)jsonCache.delete(url);throw error;});

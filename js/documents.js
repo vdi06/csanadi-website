@@ -1,4 +1,4 @@
-
+import {formatBytes as formatSize} from './format-bytes.js?v=20261115r19';
  
 const ROOT = new URL('../', import.meta.url);
 const REGISTRY = new URL('../json/adatok/dokumentumok.json', import.meta.url);
@@ -95,7 +95,6 @@ export function documentRegistryError(){return error;}
 function loadState(){const defaults=initialFilters(),stored=localRead(STATE_KEY,{});return {...defaults,...Object.fromEntries(Object.keys(defaults).filter(k=>Object.hasOwn(stored,k)).map(k=>[k,stored[k]]))};}
 function saveState(s){localWrite(STATE_KEY,s);}
 const formatDate=(s)=>{try{return new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',day:'numeric'}).format(new Date(s+'T12:00:00'));}catch{return s;}};
-const formatSize=n=>n===null?'—':(n/1024).toLocaleString('hu-HU',{maximumFractionDigits:1})+' KB';
 const docURL=(d)=>d.filePath?new URL(d.filePath,ROOT).href:'';
 const safeText=x=>String(x||'');
 function routeCategory(route){

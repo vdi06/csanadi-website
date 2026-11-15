@@ -9,7 +9,10 @@
     "footerYear": 2026,
     "address": "1143 Budapest, Őrnagy utca 5–7.",
     "email": "csanadi@csanadiiskola.hu",
-    "secretariatPhones": ["+36 30 267 82 08", "+36 30 427 82 30"],
+    "secretariatPhones": [
+      "+36 30 267 82 08",
+      "+36 30 427 82 30"
+    ],
     "omIdentifier": "200346",
     "directorName": "Rúzsa Sándor",
     "maintainerName": "Közép-Pesti Tankerületi Központ",
@@ -51,7 +54,14 @@
       "veil": "rgba(216,208,194,.86)",
       "sportGreen": "#BFE8C9",
       "sportYellow": "#F6E5AA",
-      "chartOtherColors": ["#517993", "#548580", "#8A944E", "#B27F66", "#7B8EAA", "#A67146"]
+      "chartOtherColors": [
+        "#517993",
+        "#548580",
+        "#8A944E",
+        "#B27F66",
+        "#7B8EAA",
+        "#A67146"
+      ]
     },
     "darkColors": {
       "page": "#0C1E31",
@@ -66,14 +76,22 @@
       "veil": "rgba(10,26,43,.86)",
       "sportGreen": "#315F4A",
       "sportYellow": "#766236",
-      "chartOtherColors": ["#75A2C6", "#6AA7A0", "#ACB66C", "#C9947C", "#9CBBCA", "#D4A67D"]
+      "chartOtherColors": [
+        "#75A2C6",
+        "#6AA7A0",
+        "#ACB66C",
+        "#C9947C",
+        "#9CBBCA",
+        "#D4A67D"
+      ]
     }
   },
   "content": {
     "structurePath": "structure.json",
     "mediaRegistryPath": "mediatar.json",
     "collectionRoot": "entitasok",
-    "componentRoot": "komponensek"
+    "componentRoot": "komponensek",
+    "languagesPath": "nyelvek.json"
   },
   "privacy": {
     "requireConsentForExternalEmbeds": true,
@@ -91,20 +109,41 @@
     "datalistLimit": 120,
     "textCharacterLimit": 24000,
     "minimumFuzzyLength": 3,
+    "typoMaxDistance": 1,
+    "typoMinimumLength": 5,
+    "statsSessionLimit": 20,
     "highlightDurationMs": 3200,
     "jumpMaxAttempts": 22,
     "jumpRetryMs": 150,
-    "quickSuggestions": ["Felvételi", "Sporteredmények", "Eseménynaptár", "Dokumentumtár", "Képgaléria"],
+    "quickSuggestions": [
+      "Felvételi",
+      "Sporteredmények",
+      "Eseménynaptár",
+      "Dokumentumtár",
+      "Képgaléria"
+    ],
     "fuzzyWordLengthTolerance": 6,
     "synonyms": {
-      "felveteli": ["jelentkezes", "beiratkozas"],
-      "sporteredmenyek": ["bajnoksag", "sportverseny"],
-      "esemeny": ["program", "rendezveny"],
-      "dokumentum": ["pdf", "letoltes"]
+      "felveteli": [
+        "jelentkezes",
+        "beiratkozas"
+      ],
+      "sporteredmenyek": [
+        "bajnoksag",
+        "sportverseny"
+      ],
+      "esemeny": [
+        "program",
+        "rendezveny"
+      ],
+      "dokumentum": [
+        "pdf",
+        "letoltes"
+      ]
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r17-20261115",
+    "cacheVersion": "csanadi-r20-20261115",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,
@@ -119,6 +158,7 @@
       "rotationMinimumMs": 5000,
       "rotationMaximumMs": 12000,
       "swipeThresholdPx": 55,
+      "pictureCacheEntries": 20,
       "startsAt": null,
       "endsAt": null,
       "mobileCutoutRadiusPx": 68,
@@ -135,7 +175,8 @@
       "outerRingArcSpacingDegrees": 34,
       "mobileSubmenuMaxWidthPx": 760,
       "menuFocusDelayMs": 90,
-      "typeAheadResetMs": 800
+      "typeAheadResetMs": 800,
+      "mobileMenuDefaultMode": "orbit"
     },
     "documents": {
       "maxSavedFilters": 20,
@@ -145,6 +186,13 @@
       "defaultView": "cards",
       "defaultSort": "newest",
       "refreshSeconds": 75
+    },
+    "calendar": {
+      "defaultView": "month",
+      "maximumVisibleEvents": 30
+    },
+    "sportsResults": {
+      "maximumPreviewCards": 12
     },
     "timing": {
       "toastDurationMs": 2800,
@@ -183,13 +231,28 @@
       "officialSourceHost": "csanadi-bp.edu.hu"
     },
     "tools": {
+      "visualPreviewMaximumBlocks": 50,
+      "imageMaximumFiles": 24,
+      "imageTargetWidths": [480, 960, 1440],
+      "imageQuality": 0.78,
+      "imageFormats": ["image/webp", "image/avif"],
+      "imageMaximumInputBytes": 20971520,
+      "relationshipMaximumNodes": 90,
+      "releaseMaximumZipBytes": 104857600,
+      "accessibilityMaximumResults": 160,
       "mediaImportMaximumBytes": 104857600,
       "pageJsonMaximumBytes": 500000,
       "sportNewsJsonMaximumBytes": 1000000,
       "auditMaximumIssues": 150,
-      "auditConcurrentRequests": 4
+      "auditConcurrentRequests": 4,
+      "mediaReportTopEntries": 12,
+      "releaseDiffMaximumRows": 200,
+      "mediaWarningThresholdBytes": 300000,
+      "minimumTextContrast": 4.5
     },
     "display": {
+      "bilingualPanelEnabled": true,
+      "bilingualDefaultLanguage": "hu",
       "relatedPages": 8,
       "homepageUpcomingEvents": 3,
       "homepagePreviewEvents": 4,
@@ -233,7 +296,14 @@
     },
     "release": {
       "minimumManifestEntries": 700,
-      "expectedPageCount": 66
+      "expectedPageCount": 66,
+      "updateCheckSeconds": 300
+    },
+    "offlineReader": {
+      "maxSelectedPages": 20,
+      "maximumStorageBytes": 52428800,
+      "maxFileBytes": 524288,
+      "maxParallelFetches": 3
     }
   },
   "modules2026": {

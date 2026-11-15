@@ -1,8 +1,8 @@
 # Csanádi Sportiskola 2026 – a központi JSON összes paramétere
 
-**Forrás:** `json/config.json` · **Kiadás:** 17 · **Dátum:** 2026. november 15.
+**Forrás:** `json/config.json` · **Kiadás:** 20 · **Dátum:** 2026. november 15.
 
-**Összesen 202 beállítható, egy helyen tárolt mező.** A lista a tényleges kiadási JSON-ból származik; szerkesztéshez nyisd meg a `tools/parameterek-szerkeszto.html` felületet.
+**Összesen 231 beállítható, egy helyen tárolt mező.** A lista a tényleges kiadási JSON-ból származik; szerkesztéshez nyisd meg a `tools/parameterek-szerkeszto.html` felületet.
 
 A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést jelent. A darabszámok, időzítések, méretek és más globális kapcsolók a JSON-ból kerülnek a programokhoz. Az egyedi esemény, dokumentum és hír rekordjának saját dátuma a saját adatrekord egyetlen forrásértéke, nem másolat a globális konfigurációban.
 
@@ -99,7 +99,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `theme.darkColors.sportYellow` | `"#766236"` | szöveg |
 | `theme.darkColors.chartOtherColors` | `["#75A2C6", "#6AA7A0", "#ACB66C", "#C9947C", "#9CBBCA", "#D4A67D"]` | lista |
 
-## Tartalomforrások (4 mező)
+## Tartalomforrások (5 mező)
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
@@ -107,6 +107,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `content.mediaRegistryPath` | `"mediatar.json"` | szöveg |
 | `content.collectionRoot` | `"entitasok"` | szöveg |
 | `content.componentRoot` | `"komponensek"` | szöveg |
+| `content.languagesPath` | `"nyelvek.json"` | szöveg |
 
 ## Adatvédelem (5 mező)
 
@@ -118,7 +119,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `privacy.requireExplicitApprovalForStudentNews` | `true` | logikai |
 | `privacy.allowFictionalStudentSamples` | `true` | logikai |
 
-## Kereső (17 mező)
+## Kereső (20 mező)
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
@@ -130,6 +131,9 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `search.datalistLimit` | `120` | szám |
 | `search.textCharacterLimit` | `24000` | szám |
 | `search.minimumFuzzyLength` | `3` | szám |
+| `search.typoMaxDistance` | `1` | szám |
+| `search.typoMinimumLength` | `5` | szám |
+| `search.statsSessionLimit` | `20` | szám |
 | `search.highlightDurationMs` | `3200` | szám |
 | `search.jumpMaxAttempts` | `22` | szám |
 | `search.jumpRetryMs` | `150` | szám |
@@ -144,7 +148,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
-| `performance.cacheVersion` | `"csanadi-r17-20261115"` | szöveg |
+| `performance.cacheVersion` | `"csanadi-r20-20261115"` | szöveg |
 | `performance.maxCacheMegabytes` | `50` | szám |
 | `performance.respectReducedMotion` | `true` | logikai |
 | `performance.mediaCacheEntries` | `100` | szám |
@@ -152,7 +156,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `performance.offlinePrecacheFileMaxBytes` | `300000` | szám |
 | `performance.offlinePrecacheMaxEntries` | `220` | szám |
 
-## Megjelenítés, körmenü, dátumablakok és diagnosztika (96 mező)
+## Megjelenítés, körmenü, dátumablakok és diagnosztika (121 mező)
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
@@ -161,6 +165,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `runtime.hero.rotationMinimumMs` | `5000` | szám |
 | `runtime.hero.rotationMaximumMs` | `12000` | szám |
 | `runtime.hero.swipeThresholdPx` | `55` | szám |
+| `runtime.hero.pictureCacheEntries` | `20` | szám |
 | `runtime.hero.startsAt` | `null` | null/dátum |
 | `runtime.hero.endsAt` | `null` | null/dátum |
 | `runtime.hero.mobileCutoutRadiusPx` | `68` | szám |
@@ -176,6 +181,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `runtime.navigation.mobileSubmenuMaxWidthPx` | `760` | szám |
 | `runtime.navigation.menuFocusDelayMs` | `90` | szám |
 | `runtime.navigation.typeAheadResetMs` | `800` | szám |
+| `runtime.navigation.mobileMenuDefaultMode` | `"orbit"` | szöveg |
 | `runtime.documents.maxSavedFilters` | `20` | szám |
 | `runtime.documents.suggestionLimit` | `35` | szám |
 | `runtime.documents.searchDelayMs` | `130` | szám |
@@ -183,6 +189,9 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `runtime.documents.defaultView` | `"cards"` | szöveg |
 | `runtime.documents.defaultSort` | `"newest"` | szöveg |
 | `runtime.documents.refreshSeconds` | `75` | szám |
+| `runtime.calendar.defaultView` | `"month"` | szöveg |
+| `runtime.calendar.maximumVisibleEvents` | `30` | szám |
+| `runtime.sportsResults.maximumPreviewCards` | `12` | szám |
 | `runtime.timing.toastDurationMs` | `2800` | szám |
 | `runtime.timing.searchFocusDelayMs` | `0` | szám |
 | `runtime.timing.searchJumpDelayMs` | `90` | szám |
@@ -209,11 +218,26 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `runtime.news.maximumEditorRows` | `18` | szám |
 | `runtime.news.sampleTitlePrefix` | `"MINTA – "` | szöveg |
 | `runtime.news.officialSourceHost` | `"csanadi-bp.edu.hu"` | szöveg |
+| `runtime.tools.visualPreviewMaximumBlocks` | `50` | szám |
+| `runtime.tools.imageMaximumFiles` | `24` | szám |
+| `runtime.tools.imageTargetWidths` | `[480, 960, 1440]` | lista |
+| `runtime.tools.imageQuality` | `0.78` | szám |
+| `runtime.tools.imageFormats` | `["image/webp", "image/avif"]` | lista |
+| `runtime.tools.imageMaximumInputBytes` | `20971520` | szám |
+| `runtime.tools.relationshipMaximumNodes` | `90` | szám |
+| `runtime.tools.releaseMaximumZipBytes` | `104857600` | szám |
+| `runtime.tools.accessibilityMaximumResults` | `160` | szám |
 | `runtime.tools.mediaImportMaximumBytes` | `104857600` | szám |
 | `runtime.tools.pageJsonMaximumBytes` | `500000` | szám |
 | `runtime.tools.sportNewsJsonMaximumBytes` | `1000000` | szám |
 | `runtime.tools.auditMaximumIssues` | `150` | szám |
 | `runtime.tools.auditConcurrentRequests` | `4` | szám |
+| `runtime.tools.mediaReportTopEntries` | `12` | szám |
+| `runtime.tools.releaseDiffMaximumRows` | `200` | szám |
+| `runtime.tools.mediaWarningThresholdBytes` | `300000` | szám |
+| `runtime.tools.minimumTextContrast` | `4.5` | szám |
+| `runtime.display.bilingualPanelEnabled` | `true` | logikai |
+| `runtime.display.bilingualDefaultLanguage` | `"hu"` | szöveg |
 | `runtime.display.relatedPages` | `8` | szám |
 | `runtime.display.homepageUpcomingEvents` | `3` | szám |
 | `runtime.display.homepagePreviewEvents` | `4` | szám |
@@ -252,6 +276,11 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `runtime.diagnostics.targetFcpMs` | `1800` | szám |
 | `runtime.release.minimumManifestEntries` | `700` | szám |
 | `runtime.release.expectedPageCount` | `66` | szám |
+| `runtime.release.updateCheckSeconds` | `300` | szám |
+| `runtime.offlineReader.maxSelectedPages` | `20` | szám |
+| `runtime.offlineReader.maximumStorageBytes` | `52428800` | szám |
+| `runtime.offlineReader.maxFileBytes` | `524288` | szám |
+| `runtime.offlineReader.maxParallelFetches` | `3` | szám |
 
 ## Iskolai modulok (15 mező)
 
@@ -281,4 +310,4 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 4. Az új kiadáshoz számítsd újra a `release-manifest.json` méret- és SHA-256 adatait, ellenőrizd, majd tesztkörnyezetben próbáld ki.
 5. Az éles FTP-re semmilyen szerkesztő nem tölt fel automatikusan.
 
-A PDF- és webes kézikönyv a 66 oldalt, tíz szerkesztőeszközt és minden jelenlegi paramétert külön-külön tartalmaz.
+A PDF- és webes kézikönyv a 66 oldalt, tizenhárom szerkesztőeszközt és minden jelenlegi paramétert külön-külön tartalmaz.

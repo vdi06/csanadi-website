@@ -1,5 +1,5 @@
 import {renderSportsSuccesses} from './sports-successes.js?v=20261114orbit1';
-import {renderPremiumHero} from './hero-2026.js?v=20261115r17hero';
+import {renderPremiumHero} from './hero-2026.js?v=20261115r19';
 import {renderLiveDashboard} from './home-live.js?v=20261115r15sport';
 import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js?v=20261114v5';
 import {resolveConfiguredText,settingNumber} from './site-settings-2026.js';

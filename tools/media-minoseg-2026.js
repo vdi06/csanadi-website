@@ -1,3 +1,4 @@
+import {formatBytes} from '../js/format-bytes.js?v=20261115r19';
 'use strict';
 (function(){
  const space=document.querySelector('.mm-bulk')||document.querySelector('.mm-workspace');if(!space)return;
@@ -23,8 +24,8 @@
    }
    matches=[...groups].filter(([,paths])=>paths.length>1).map(([hash,paths])=>({hash,paths}));
    const card=(label,value)=>{const node=document.createElement('div');node.className='r10-media-metric';const count=document.createElement('strong');count.textContent=String(value);const text=document.createElement('span');text.textContent=label;node.append(count,text);content.append(node);};
-   card('Állomány a nyilvántartásban',items.length);card('Összes fájlméret',(items.reduce((sum,item)=>sum+(Number(item.sizeBytes)||0),0)/1048576).toFixed(2)+' MiB');card('Egyező SHA-256-csoport',matches.length);card('Médiatípus',types.size);
-   const list=document.createElement('ul');list.className='r10-media-types';for(const [name,group] of [...types].sort((a,b)=>b[1].count-a[1].count)){const li=document.createElement('li');li.textContent=`${name}: ${group.count} állomány · ${(group.bytes/1048576).toFixed(2)} MiB`;list.append(li);}content.append(list);
+   card('Állomány a nyilvántartásban',items.length);card('Összes fájlméret',formatBytes(items.reduce((sum,item)=>sum+(Number(item.sizeBytes)||0),0)));card('Egyező SHA-256-csoport',matches.length);card('Médiatípus',types.size);
+   const list=document.createElement('ul');list.className='r10-media-types';for(const [name,group] of [...types].sort((a,b)=>b[1].count-a[1].count)){const li=document.createElement('li');li.textContent=`${name}: ${group.count} állomány · ${formatBytes(group.bytes)}`;list.append(li);}content.append(list);
    state.textContent=`${items.length} állomány ellenőrizve. ${matches.length} egyező tartalmú fájlcsoport. Az egyezés nem feltétlenül hiba, törlés előtt a felhasználást is ellenőrizni kell.`;
    download.disabled=false;
   }catch(error){state.textContent='Hiba: '+error.message;}finally{button.disabled=false;}

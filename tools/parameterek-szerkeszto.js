@@ -1,6 +1,6 @@
 (function(){
  const byId=id=>document.getElementById(id);
- const state={base:null,working:null};
+ const state={base:null,working:null,snapshot:null};
  const keyText={site:'Intézményi és globális adatok',navigation:'Navigáció',refresh:'Automatikus frissítés',theme:'Megjelenés és színek',content:'Tartalomforrások',privacy:'Adatvédelem',search:'Keresés',performance:'Gyorsítótár és teljesítmény',runtime:'Részletes beállítható paraméterek',modules2026:'Tartalmi modulok'};
  const translations={maxSlides:'Kiemelt diák legnagyobb száma',rotationDefaultMs:'Alapértelmezett képváltási idő (ms)',rotationMinimumMs:'Legkisebb képváltási idő (ms)',rotationMaximumMs:'Legnagyobb képváltási idő (ms)',swipeThresholdPx:'Lapozó érintésküszöb (px)',startsAt:'Megjelenítés kezdete',endsAt:'Megjelenítés vége',pageSize:'Találatok száma egy lapon',maxResults:'Összes keresési találat felső korlátja',suggestionLimit:'Keresési javaslatok száma',datalistLimit:'Keresési legördülő értékek száma',maxSavedFilters:'Menthető dokumentumszűrők száma',searchDelayMs:'Dokumentumkeresés késleltetése (ms)',previewCheckDelayMs:'PDF-előnézet tájékoztató késleltetése (ms)',mediaCacheEntries:'Médiagyorsítótár tételeinek száma',maxCacheMegabytes:'Gyorsítótár méretkerete (MiB)',structureSeconds:'Menürendszer frissítési ideje (s)',activePageSeconds:'Aktuális oldal frissítési ideje (s)',minimumSeconds:'Frissítések legrövidebb ideje (s)',maximumSeconds:'Frissítések leghosszabb ideje (s)',footerYear:'Lábléc éve',address:'Intézmény címe',email:'Intézményi e-mail',kretaUrl:'KRÉTA belépés címe',baseUrl:'Alap URL',locale:'Nyelvi beállítás',currentSchoolYear:'Aktuális tanév',offlineShellMaxAgeHours:'Offline alapcsomag frissítési korlátja (óra)',targetMinimumPx:'Érintési célméret minimuma (px)',focusOutlinePx:'Fókuszkeret vastagsága (px)',typeAheadResetMs:'Körmenü betűs keresési várakozása (ms)',slowestResourceCount:'Leglassabb fájlok listájának hossza',synonyms:'Keresési szinonimák'};
  const clone=value=>JSON.parse(JSON.stringify(value));
@@ -112,6 +112,15 @@
   render();summary();
  }
  byId('query').addEventListener('input',render);
+ byId('compare').addEventListener('click',()=>{
+  if(!state.base||!state.working)return;
+  const changes=entries(state.working).filter(item=>JSON.stringify(item.value)!==JSON.stringify(get(state.base,item.path)));
+  const panel=byId('changes');panel.hidden=false;
+  panel.textContent=changes.length?changes.map(item=>`${item.path}\n  Eredeti: ${JSON.stringify(get(state.base,item.path))}\n  Jelenlegi: ${JSON.stringify(item.value)}`).join('\n\n'):'Nincs eltérés az eredeti JSON-hoz képest.';
+  message(`${changes.length} központi paraméter eltérése megjelenítve. Az összehasonlítás nem módosítja a fájlt.`);
+ });
+ byId('backup').addEventListener('click',()=>{if(!state.working)return;state.snapshot=clone(state.working);message('Helyi pillanatkép mentve erre a böngészőlapra. Az FTP nem változott.');});
+ byId('undo').addEventListener('click',()=>{if(!state.snapshot){message('Nincs még elmentett helyi pillanatkép.',true);return;}state.working=clone(state.snapshot);render();summary();message('A szerkesztés korábbi pillanatképe helyben visszaállt.');});
  byId('validate').addEventListener('click',()=>{const errors=validate();message(errors.length?errors.join(' | '):'A központi JSON ellenőrzése sikeres.',!!errors.length);});
  byId('download').addEventListener('click',()=>{
   const errors=validate();if(errors.length){message('A JSON nem menthető: '+errors.join(' | '),true);return;}

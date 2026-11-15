@@ -1,4 +1,4 @@
-
+import {formatBytes as bytes} from './format-bytes.js?v=20261115r19';
  
 let panel=null;
 let pending=null;
@@ -10,8 +10,7 @@ let bundleStats=null;
 const webVitals={lcp:null,cls:0};
 let observersStarted=false;
 const clock=()=>Math.max(0,performance.now());
-const fmt=(ms)=> Number.isFinite(ms)?(ms<1000?`${Math.round(ms)} ms`:`${(ms/1000).toLocaleString('hu-HU',{minimumFractionDigits:2,maximumFractionDigits:2})} s`):'—';
-const bytes=value=>Number.isFinite(value)?(value/1048576).toLocaleString('hu-HU',{maximumFractionDigits:2,minimumFractionDigits:2})+' MiB':'—';
+const fmt=(ms)=>Number.isFinite(ms)?Math.round(ms).toLocaleString('hu-HU')+' ms':'—';
 async function measureBundle(){
  try{
   const response=await fetch('release-manifest.json',{cache:'no-store'});
@@ -44,12 +43,11 @@ function refresh(){
  const measured=[...performance.getEntriesByType('resource'),...performance.getEntriesByType('navigation')];
  const transferred=measured.reduce((sum,entry)=>sum+(entry.transferSize||0),0);
  const decoded=measured.reduce((sum,entry)=>sum+(entry.decodedBodySize||0),0);
- resources.textContent='Böngésző által mért erőforrások: '+measured.length+' kérés · hálózati átvitel: '+bytes(transferred)+' · feldolgozott válaszmennyiség: '+bytes(decoded)+'. A cache-ből betöltött és a külső források mérése hiányos lehet.';
- let slowCount=0;try{slowCount=settingNumber('runtime.diagnostics.slowestResourceCount');}catch{}
+ resources.textContent='Böngésző által mért erőforrások: '+measured.length+' kérés · hálózati átvitel: '+(transferred?bytes(transferred):'nem mérhető')+' · feldolgozott válaszmennyiség: '+(decoded?bytes(decoded):'nem mérhető')+'. A cache-ből betöltött és a külső források mérése hiányos lehet.';
+ const slowCount=settingNumber('runtime.diagnostics.slowestResourceCount');
  const slower=performance.getEntriesByType('resource').filter(entry=>{try{return new URL(entry.name).origin===location.origin&&entry.duration>0;}catch{return false;}}).sort((a,b)=>b.duration-a.duration).slice(0,slowCount);
  slow.textContent=slower.length?'Leglassabb helyi állományok: '+slower.map(entry=>{const url=new URL(entry.name);return decodeURIComponent(url.pathname.split('/').at(-1)||url.pathname)+' ('+fmt(entry.duration)+')';}).join(' · ')+'. Ezek a böngésző által mért letöltési idők, nem egy teljes hálózati sebességteszt.':'A helyi állományok részletes időmérése még nem elérhető.';
- let largestCount=5,targetLcpMs=2500,targetCls=.1,targetFcpMs=1800;
- try{largestCount=settingNumber('runtime.diagnostics.largestResourceCount');targetLcpMs=settingNumber('runtime.diagnostics.targetLcpMs');targetCls=settingNumber('runtime.diagnostics.targetCls');targetFcpMs=settingNumber('runtime.diagnostics.targetFcpMs');}catch{}
+ const largestCount=settingNumber('runtime.diagnostics.largestResourceCount'),targetLcpMs=settingNumber('runtime.diagnostics.targetLcpMs'),targetCls=settingNumber('runtime.diagnostics.targetCls'),targetFcpMs=settingNumber('runtime.diagnostics.targetFcpMs');
  const big=measured.filter(entry=>entry.decodedBodySize>0).sort((a,b)=>b.decodedBodySize-a.decodedBodySize).slice(0,largestCount);
  panel.querySelector('[data-speed-largest]').textContent=big.length?'Legnagyobb feldolgozott erőforrások: '+big.map(entry=>{const url=new URL(entry.name);return decodeURIComponent(url.pathname.split('/').at(-1)||url.hostname)+' ('+bytes(entry.decodedBodySize)+')';}).join(' · ')+'. A cross-origin és gyorsítótári mérések hiányosak lehetnek.':'A böngésző nem szolgáltat dekódolt méretadatot az erőforrásokhoz.';
  const fcpEntry=performance.getEntriesByType('paint').find(entry=>entry.name==='first-contentful-paint');

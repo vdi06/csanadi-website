@@ -86,7 +86,7 @@
     {
       "id": "document:csanadi-weboldal-kezikonyv-2026",
       "title": "Csanádi Sportiskola 2026 – Teljes weboldal-használati útmutató",
-      "summary": "Teljes webes és PDF-kézikönyv a 66 tartalmi oldalhoz, 10 karbantartó felülethez, a központi JSON mind a 202 beállításához és az összes fő funkcióhoz.",
+      "summary": "Teljes webes és PDF-kézikönyv a 66 tartalmi oldalhoz, 13 karbantartó felülethez, a központi JSON mind a 231 beállításához és az összes fő funkcióhoz.",
       "categoryId": "weboldal-utmutato",
       "tags": [
         "honlap",
@@ -114,9 +114,9 @@
       "mimeType": "application/pdf",
       "fileName": "csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
       "filePath": "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
-      "fileSizeBytes": 94108,
-      "sha256": "2cb428224977351d490ee6ba3e0eed2981f391e004dc881fbd76ff184a2a23b3",
-      "version": "3.3.0",
+      "fileSizeBytes": 108939,
+      "sha256": "dfc058af1a7cb52da280668f7db9bbb5d1f3d384c9947f02187625855261ff4c",
+      "version": "3.6.0",
       "publishedAt": "2026-11-15",
       "validFrom": "2026-11-15",
       "validTo": null,
@@ -155,6 +155,21 @@
           "version": "3.3.0",
           "date": "2026-11-15",
           "change": "202 központi paraméter; elkülönített szerkesztői munkaközpont, közös hír-közzétételi szabály, átfogó minőségkapu, finomított mobilos képlapozás, LCP/CLS mérés és FTP-manifest kapu. A README és a fiktív hírek megmaradtak."
+        },
+        {
+          "version": "3.4.0",
+          "date": "2026-11-15",
+          "change": "212 központi paraméter; oldalverziók, hálózatelső frissítési stratégia, naptár- és sporteredményszűrők, dokumentumrendezés, új média- és verzióelemző, közös hírvalidálás, valamint központi paraméterek pillanatképes visszaállítása. A README és a fiktív hírek megmaradtak."
+        },
+        {
+          "version": "3.5.0",
+          "date": "2026-11-15",
+          "change": "212 központi paraméter; nap/hét/hónap naptárrács, dinamikusan szűrt sportdiagram, kibővített PDF-adatlap, automatikus fájlméret-egység, több forrásból épülő kapcsolódó tartalmak és manifestes állapotellenőrzés. A README és a fiktív hírek megmaradtak."
+        },
+        {
+          "version": "3.6.0",
+          "date": "2026-11-15",
+          "change": "231 központi paraméter; helyi vizuális JSON-szerkesztés és képkonverzió, publikálási állapotgép, intelligens keresés, választható offline olvasás, ICS-export, magyar–angol kiemelések, akadálymentességi riport, tartalomkapcsolati térkép és két ZIP-es visszaállítás. A README és a fiktív hírek megmaradtak."
         }
       ]
     },

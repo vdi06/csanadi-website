@@ -11,7 +11,7 @@ async function configuration(){
  configPromise=configPromise.then(value=>{lastConfig=value;lastConfigAt=Date.now();return value;}).catch(error=>{configPromise=null;throw error;});
  return configPromise;
 }
-const names=config=>({shell:config.performance.cacheVersion,media:config.performance.cacheVersion+'-media'});
+const names=config=>({shell:config.performance.cacheVersion,media:config.performance.cacheVersion+'-media',reader:config.performance.cacheVersion+'-offline'});
 async function precache(){
  const config=await configuration(),cacheNames=names(config),cache=await caches.open(cacheNames.shell);
  const start=['./','./index.html','./utmutato.html','./offline.html','./json/config.json','./service-worker.js','./release-manifest.json','./assets/media/logo/csanadi-cimer-512.webp'];
@@ -19,7 +19,7 @@ async function precache(){
  try{
   const response=await fetch(new URL('release-manifest.json',scope),{cache:'no-store'});
   if(response.ok){const manifest=await response.json(),max=config.performance.offlinePrecacheFileMaxBytes,limit=config.performance.offlinePrecacheMaxEntries;
-   const selected=Object.entries(manifest.files||{}).filter(([path,meta])=>/^(?:css|js|json)\/.+\.(?:css|js|json)$/.test(path)&&meta.sizeBytes<=max).slice(0,limit).map(([path])=>'./'+path);
+   const selected=Object.entries(manifest.files||{}).filter(([path,meta])=>/^(?:css|js|json|mobile|desktop)\/.+\.(?:css|js|json)$/.test(path)&&meta.sizeBytes<=max).slice(0,limit).map(([path])=>'./'+path);
    paths=[...new Set([...start,'./script.js',...selected])];
   }
  }catch{}
@@ -36,19 +36,18 @@ async function trimMedia(cache,config){
 }
 async function handle(request){
  const url=new URL(request.url),config=await configuration(),n=names(config),isPage=request.mode==='navigate',json=/\.json$/i.test(url.pathname),media=/\.(?:avif|webp|png|jpg|jpeg|svg|gif|mp4|webm|pdf)$/i.test(url.pathname);
- if(media){
-  const cache=await caches.open(n.media),old=await cache.match(request,{ignoreSearch:true});if(old)return old;
-  const response=await fetch(request);if(response.ok){await cache.put(request,response.clone());trimMedia(cache,config).catch(()=>{});}return response;
- }
- const cache=await caches.open(n.shell);
- try{const response=await fetch(request);if(response.ok)await cache.put(request,response.clone());return response;}
+ // Online MINDEN helyi erőforrás hálózatról érkezik, képek és PDF-ek is.
+ // A korábbi média-cache-first módszer egy módosított képet régi változatban tarthatott.
+ const cache=await caches.open(media?n.media:n.shell);
+ try{const response=await fetch(request,{cache:'no-store'});if(response.ok){await cache.put(request,response.clone());if(media)trimMedia(cache,config).catch(()=>{});}return response;}
  catch(error){
   const saved=await cache.match(request,{ignoreSearch:true});if(saved)return saved;
+  const reader=await caches.open(n.reader),selected=await reader.match(request,{ignoreSearch:true});if(selected)return selected;
   if(isPage)return await cache.match(new URL('index.html',scope),{ignoreSearch:true})||await cache.match(new URL('offline.html',scope),{ignoreSearch:true})||Response.error();
   if(json)return new Response(JSON.stringify({offline:true,temporary:true}),{status:503,headers:{'Content-Type':'application/json'}});
   throw error;
  }
 }
 self.addEventListener('install',event=>{event.waitUntil(precache().catch(()=>{}).then(()=>self.skipWaiting()));});
-self.addEventListener('activate',event=>{event.waitUntil((async()=>{const config=await configuration(),current=names(config),keys=await caches.keys();await Promise.all(keys.filter(key=>key.startsWith('csanadi-r')&&key!==current.shell&&key!==current.media).map(key=>caches.delete(key)));await self.clients.claim();})().catch(()=>self.clients.claim()));});
+self.addEventListener('activate',event=>{event.waitUntil((async()=>{const config=await configuration(),current=names(config),keys=await caches.keys();await Promise.all(keys.filter(key=>key.startsWith('csanadi-r')&&key!==current.shell&&key!==current.media&&key!==current.reader).map(key=>caches.delete(key)));await self.clients.claim();})().catch(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const url=new URL(event.request.url);if(!local(url))return;event.respondWith(handle(event.request).catch(()=>Response.error()));});

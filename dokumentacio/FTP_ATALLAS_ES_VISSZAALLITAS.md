@@ -17,6 +17,10 @@ A csomag teljes statikus honlap: az `index.html` a webgyökérbe kerül, a `css/
 
 ## Visszaállás hibás kiadás esetén
 
+**20. kiadás – teljes ZIP-ek különbsége:** a `tools/fejlesztoi-munkakozpont-20.html` oldalon két teljes ZIP összevethető. A letölthető visszaállító ZIP a korábbi kiadásból helyreállítandó állományokat tartalmazza. A `dokumentacio/rollback20_torlendo.json` a kizárólag az új kiadásban lévő fájlokat sorolja fel, amelyeket külön, ellenőrzötten kell eltávolítani. A böngésző sem feltöltést, sem törlést nem hajt végre az FTP-n. A ZIP32, nem titkosított csomag és böngészős deflate-raw támogatás előfeltétel.
+
+Az új cache-verzió `csanadi-r20-20261115`; a módosított JS/CSS hivatkozások verziózottak. A `offline-olvaso.html` csak HTTPS/localhost mellett tud kiválasztott, előzőleg letöltött oldaltartalmakat menteni a kiadáshoz kötött böngészőtárba. Éles váltás után az offline másolatokat és a szolgáltató HTTP-cache beállításait is ellenőrizd.
+
 1. Azonnal állítsd le a hibás feltöltést, és azonosítsd az utolsó teljes, jóváhagyott mentést.
 2. A mentett fájlokat az eredeti pontos elérési utakra helyezd vissza. Ha a szolgáltató verziózott kiadási könyvtárat és központi aktiválási mutatót biztosít, csak az igazoltan működő kiadásra mutass vissza.
 3. A böngésző esetleges service worker gyorsítótárát frissítsd; a service worker verziója megváltozik új kiadáskor. Egyszerű böngészőfrissítés nem mindig törli az offline fájlokat.

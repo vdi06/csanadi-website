@@ -1,27 +1,31 @@
 import {initRound10Enhancements} from './round10-enhancements.js?v=20261115round10a';
 import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=20261115r15sport';
 import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=20261115r17metrics';
-import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=20261114ext1';
-import {initDetailedDiagnostics,initSiteHealth,initMobileQuickNav} from './site-quality-2026.js?v=20261114ext1';
+import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=20261115r19';
+import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=20261115r19';
+import {initMobileQuickNav} from '../mobile/quick-nav.js?v=20261115r19';
 import {setupSmartSearch} from './search-j-2026.js?v=20261115r15';
+import {installLanguageHighlights} from './language-20.js?v=csanadi-r20-20261115';
 import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=20261114ten1';
 import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=20261114kmil2';
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=20261114be1';
 import {renderMediaGallery} from './media-gallery-h-2026.js?v=20261115round10b';
 import {renderDocumentCollections} from './document-collections-2026.js?v=20261115d1';
 import {renderPageMedia} from './page-media-2026.js?v=20261115m1';
-import {useSiteSettings,settingNumber} from './site-settings-2026.js';
+import {useSiteSettings,settingNumber,setting} from './site-settings-2026.js';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=20261114premium1';
 import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=20261115r15sport';
 import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=20261114v5';
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=20261115r15';
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=20261114ten2';
-import {renderBlock,dom,listCards} from './blocks.js?v=20261115r15sport';
+import {renderBlock,dom,listCards} from './blocks.js?v=20261115r19';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=20261115r17policy';
 import {renderSportsSuccesses} from './sports-successes.js?v=20261114v5';
 import {renderStudentAchievements} from './student-achievements.js?v=20261114navs3';
 import {renderDailySportsNews} from './daily-sport-news.js?v=20261114ten2';
+import {renderDesktopTree} from '../desktop/navigation.js?v=20261115r19';
+import {renderMobileTree,createMobileMenuSwitcher} from '../mobile/navigation.js?v=20261115r19';
 const app=document.getElementById('app');
 const desktop=document.getElementById('desktop-navigation');
 const mobile=document.getElementById('mobile-navigation');
@@ -46,6 +50,17 @@ const siteMapCats=document.getElementById('site-map-categories');
 const siteMapSubtopics=document.getElementById('site-map-subtopics');
 const siteMapDetails=document.getElementById('site-map-details');
 const siteMapPanel=document.getElementById('compass26-panel');
+const mobileModeBar=document.getElementById('mobile-menu-mode-switch');
+const mobileList=document.getElementById('mobile-conventional-navigation');
+const orbitModeButton=document.getElementById('mobile-menu-mode-orbit');
+const listModeButton=document.getElementById('mobile-menu-mode-list');
+const mobileSwitcher=createMobileMenuSwitcher({
+ overlay:siteMap,modeBar:mobileModeBar,list:mobileList,
+ orbitButton:orbitModeButton,listButton:listModeButton,
+ defaultMode:()=>setting('runtime.navigation.mobileMenuDefaultMode'),
+ renderList:()=>{if(catalog)renderMobileTree(mobileList,catalog.roots,{dom,navLink,titleOf,hrefOf,pageChildren,currentRoute},'overlay');},
+ orbitFocus:()=>siteMapCats.querySelector('.compass26-choice-link')
+});
 let siteMapSelected=null,siteMapReturnFocus=null;
 let siteMapLauncherHome=null;
 function relocateSiteMapButton(open){
@@ -200,9 +215,10 @@ function openSiteMap(){
  if(!catalog)return;
  siteMapReturnFocus=document.activeElement;
  renderSiteMap(null);siteMap.hidden=false;relocateSiteMapButton(true);
+ mobileSwitcher.apply(mobileSwitcher.preference());
  document.body.classList.add('site-map-is-open');
  for(const node of document.body.children)if(node!==siteMap&&node!==outerRing&&node!==document.getElementById('toast')&&node!==document.querySelector('script'))if(['HEADER','MAIN','FOOTER'].includes(node.tagName)||node.id==='global-hero')node.inert=true;
- (siteMapCats.querySelector('.compass26-choice-link')||document.getElementById('site-map-close')).focus();
+ (mobileSwitcher.getMode()==='list'&&!mobileModeBar.hidden?mobileList.querySelector('summary'):siteMapCats.querySelector('.compass26-choice-link'))?.focus();
 }
 siteMap.addEventListener('keydown',event=>{
  if(event.key!=='Tab'||siteMap.hidden)return;
@@ -219,43 +235,9 @@ function closeSiteMap(restoreFocus=true){
  if(restoreFocus)siteMapReturnFocus?.focus?.();
 }
 function renderMenu(){
- desktop.replaceChildren();mobile.replaceChildren();
- for(const root of catalog.roots){
-  const rootRoute=hrefOf(root),active=currentRoute===rootRoute||currentRoute?.startsWith(rootRoute+'/');
-  const children=pageChildren(root);
-  const group=dom('details',{class:'nav-mega-root'+(active?' active':'')});
-  const summary=dom('summary',{class:'nav-mega-button'});summary.append(dom('span',{},titleOf(root)),dom('span',{class:'nav-mega-caret','aria-hidden':'true'},'⌄'));
-  group.append(summary);
-  const pane=dom('div',{class:'nav-mega-panel'}),intro=dom('div',{class:'nav-mega-intro'});
-  intro.append(dom('strong',{},root.page.title),dom('p',{},root.page.summary||''));
-  const overview=navLink(root);overview.className='nav-mega-overview';overview.textContent='Témakör áttekintése →';intro.append(overview);pane.append(intro);
-  const columns=dom('div',{class:'nav-mega-columns'});
-  for(const child of children){
-   const column=dom('div',{class:'nav-mega-column'});const link=navLink(child);link.className='nav-mega-heading';column.append(link);
-   for(const third of pageChildren(child)){const a=navLink(third);a.className='nav-mega-sublink';column.append(a);}
-   columns.append(column);
-  }
-  if(children.length)pane.append(columns);
-  group.append(pane);
-  group.addEventListener('toggle',()=>{if(group.open){for(const other of desktop.querySelectorAll('.nav-mega-root'))if(other!==group)other.open=false;}});
-  pane.addEventListener('click',e=>{if(e.target.closest('a[href]'))group.open=false;});
-  desktop.append(group);
-  const mobileRoot=dom('details',{class:'mobile-root'});
-  mobileRoot.open=!!(active);
-  mobileRoot.append(dom('summary',{},titleOf(root)));
-  const rootLink=navLink(root);rootLink.textContent='Témakör áttekintése';rootLink.className='mobile-overview';mobileRoot.append(rootLink);
-  for(const child of children){
-   const sub=pageChildren(child);
-   if(sub.length){const childDetails=dom('details',{class:'mobile-sub'});
-    childDetails.open=!!(currentRoute&&(currentRoute===hrefOf(child)||currentRoute.startsWith(hrefOf(child)+'/')));
-    childDetails.append(dom('summary',{},titleOf(child)));const overview=navLink(child);overview.textContent='Áttekintés: '+titleOf(child);childDetails.append(overview);
-    for(const third of sub)childDetails.append(navLink(third));mobileRoot.append(childDetails);
-   }else mobileRoot.append(navLink(child));
-  }
-  mobileRoot.addEventListener('toggle',()=>{if(mobileRoot.open)for(const other of mobile.querySelectorAll('details.mobile-root'))if(other!==mobileRoot)other.open=false;});
-  mobile.append(mobileRoot);
- }
- for(const a of mobile.querySelectorAll('a'))if(a.getAttribute('href')===currentRoute)a.classList.add('active');
+ const context={dom,navLink,titleOf,hrefOf,pageChildren,currentRoute};
+ renderDesktopTree(desktop,catalog.roots,context);
+ renderMobileTree(mobile,catalog.roots,context);
  document.getElementById('footer-page-count').textContent=`${catalog.items.length} tartalmi oldal`;
 }
 function closeMobile(){mobile.hidden=true;menuBtn.setAttribute('aria-expanded','false');menuBtn.setAttribute('aria-label','Mobilmenü megnyitása');}
@@ -277,6 +259,17 @@ function contentPage(node){
   const bannerMedia=createPicture(page.schemaExtensions?.bannerMediaId,{className:'page-banner-media',eager:true,sizes:'100vw'});
   if(bannerMedia){banner.classList.add('has-photo');banner.append(bannerMedia,imageDisclaimer());}
   bannerInner.append(breadcrumb(node),dom('h1',{},page.title),dom('p',{},page.summary||''));
+  // A verzió forrása az oldal meglévő lifecycle.revision mezője; nincs második másolat.
+  const version=Number(page.lifecycle?.revision);
+  if(Number.isSafeInteger(version)&&version>0){
+   const details=dom('p',{class:'page-release-badge'});
+   details.append(dom('span',{},`Oldalverzió: ${version}`));
+   if(page.updatedAt&&Number.isFinite(Date.parse(page.updatedAt))){
+    const time=dom('time',{datetime:page.updatedAt},` · Frissítve: ${new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(page.updatedAt))}`);
+    details.append(time);
+   }
+   bannerInner.append(details);
+  }
   banner.append(bannerInner);fragment.append(banner);
 
    
@@ -398,6 +391,10 @@ function homePage(node){
    
   for(const unit of units)if(!canvas.contains(unit))canvas.append(unit);
   enhanceHomeInterests(canvas);
+  if(Number.isSafeInteger(node.page.lifecycle?.revision)&&node.page.lifecycle.revision>0){
+   const marker=dom('p',{class:'page-release-badge'},`Kezdőlap · Oldalverzió: ${node.page.lifecycle.revision}`);
+   canvas.append(marker);
+  }
   frag.append(canvas);
   return frag;
 }
@@ -606,6 +603,7 @@ export async function startApp(){
   registerMedia(await loadJSON('mediatar.json'));
   catalog=await buildCatalog();
   useSiteSettings(catalog.config);
+  installLanguageHighlights().catch(error=>console.warn('A kétnyelvű tájékoztatók nem tölthetők be:',error));
   smartSearch=setupSmartSearch({catalog,loadJSON,norm,dialog,input:searchInput,results:searchResults,status:searchStatus,onNavigate:handleSearchNavigation});
   await smartSearch.rebuild(catalog);
   await loadDocumentRegistry();  

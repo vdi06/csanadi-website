@@ -1,5 +1,6 @@
 'use strict';
 import {createZip,downloadBlob} from './zip-native-2026.js';
+import {formatBytes as bytes} from '../js/format-bytes.js?v=20261115r19';
 const $ = id => document.getElementById(id);
 const enc = new TextEncoder();
 const decode = new TextDecoder();
@@ -14,7 +15,6 @@ function typeFor(path){const ext=extension(path);if(ext==='.svg')return 'graphic
 function canonical(path){if(!/^assets\/(?:media\/(?:web|video|logo)|graphics|documents)\/[a-zA-Z0-9_.-]+$/.test(path)||path.includes('..'))throw Error('Érvénytelen vagy nem engedélyezett assets-útvonal: '+path);return path;}
 function mimeFor(path){return allowedTypes.get(extension(path))||'application/octet-stream';}
 function parentFor(path){return path.split('/').slice(0,-1).join('/');}
-function bytes(n){return n>1024*1024?(n/1024/1024).toFixed(2)+' MB':n>1024?(n/1024).toFixed(1)+' KB':n+' B';}
 function token(path){return String(path).split('/').at(-1).replace(/\.[^.]+$/,'').replace(/[^a-zA-Z0-9-]+/g,'-').toLowerCase().slice(0,80);}
 function setBusy(value){state.locked=value;for(const id of ['mm-export-changes','mm-export-full','mm-local-save','mm-save','mm-delete'])$(id).disabled=value;}
 function mark(item){item._dirty=true;state.edited=true;renderList();renderStats();}

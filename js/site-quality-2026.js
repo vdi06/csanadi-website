@@ -1,9 +1,9 @@
-
+import {formatBytes} from './format-bytes.js?v=20261115r19';
+import {settingNumber} from './site-settings-2026.js';
  
-const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
-const append=(to,...nodes)=>{nodes.filter(Boolean).forEach(n=>to.append(n));return to;};
-const formatted=(n)=>Number.isFinite(n)?(n<1000?Math.round(n)+' ms':(n/1000).toFixed(2).replace('.',',')+' s'):'—';
-const MAX_CHECKS=110;
+export const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
+export const append=(to,...nodes)=>{nodes.filter(Boolean).forEach(n=>to.append(n));return to;};
+const formatted=(n)=>Number.isFinite(n)?Math.round(n).toLocaleString('hu-HU')+' ms':'—';
 let diagnosticsReady=false;
 export function initDetailedDiagnostics(){
  if(diagnosticsReady)return;diagnosticsReady=true;
@@ -23,7 +23,7 @@ export function initDetailedDiagnostics(){
    const measured=items.map(x=>Math.max(0,x.responseEnd-x.startTime));
    const bytes=items.reduce((total,x)=>total+(x.transferSize||0),0);
    const card=el('div','ext26-perf-card');const speed=items.length?Math.max(...measured):null;
-   const label=`${items.length} kérés · leghosszabb ${formatted(speed)} · ${bytes>0?(bytes/1024).toFixed(0)+' KB mért átvitel':'átviteli méret nem ismert'}`;
+   const label=`${items.length} kérés · leghosszabb ${formatted(speed)} · ${bytes>0?formatBytes(bytes)+' mért átvitel':'átviteli méret nem ismert'}`;
    card.append(el('strong','',name),el('span','',label));target.append(card);
   }
   const nav=performance.getEntriesByType?.('navigation')?.[0];if(nav){const row=el('p','ext26-perf-final',`HTML válasz (TTFB): ${formatted(nav.responseStart-nav.requestStart)} · DOM feldolgozás: ${formatted(nav.domContentLoadedEventEnd)} · böngészőbetöltés: ${formatted(nav.loadEventEnd||null)}`);target.append(row);}
@@ -60,9 +60,27 @@ export function initSiteHealth(catalog){
     ...[...document.querySelectorAll('img[src],video[poster],iframe[src],a[download][href]')].map(e=>e.getAttribute('src')||e.getAttribute('poster')||e.getAttribute('href')).filter(isLocalRef).map(x=>x.split('#')[0].split('?')[0]),
     'json/structure.json','json/config.json','json/oldalindex.json','json/mediatar.json','json/adatok/esemenyek.json','json/adatok/dokumentumok.json'
    ])].filter(x=>/^(?:assets\/|json\/)/.test(x));
-   if(list.length>MAX_CHECKS){skipped=list.length-MAX_CHECKS;list.length=MAX_CHECKS;}
+   try{
+    const response=await fetch('release-manifest.json',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
+    const manifest=await response.json(),files=manifest.files||{},paths=Object.keys(files);
+    check(manifest.ftpCompatible===true&&paths.length>=settingNumber('runtime.release.minimumManifestEntries'),
+     `FTP-manifest: ${paths.length} fájl, kiadás ${manifest.release||'ismeretlen'}`);
+    const absent=list.filter(path=>!Object.hasOwn(files,path));
+    check(!absent.length,absent.length?`A manifestből hiányzó hivatkozott fájlok: ${absent.slice(0,6).join(', ')}`:'Minden vizsgált hivatkozott állomány szerepel a manifestben');
+    const invalid=paths.filter(path=>!Number.isSafeInteger(files[path]?.sizeBytes)||files[path].sizeBytes<0||!/^[a-f0-9]{64}$/.test(files[path]?.sha256||''));
+    check(!invalid.length,invalid.length?`Érvénytelen méret vagy SHA-256: ${invalid.slice(0,5).join(', ')}`:'A manifest valamennyi méret- és SHA-256 mezője szabályos');
+   }catch(e){check(false,'A kiadási manifest nem ellenőrizhető: '+e.message);}
+   try{
+    const sources=['json/adatok/esemenyek.json','json/adatok/dokumentumok.json','json/adatok/kepgaleria.json'];
+    for(const path of sources){const response=await fetch(path,{cache:'no-store'});if(!response.ok)throw Error(path+' HTTP '+response.status);
+     const data=await response.json(),rows=data.items||data.documents||[],ids=rows.map(x=>x.id);
+     check(ids.length===new Set(ids).size,`${path}: ${ids.length} rekord, ${ids.length===new Set(ids).size?'egyedi':'ütköző'} azonosítók`);
+    }
+   }catch(e){check(false,'Tartalmi JSON-azonosítók ellenőrzése megszakadt: '+e.message);}
+   const maxChecks=settingNumber('runtime.tools.auditMaximumIssues');
+   if(list.length>maxChecks){skipped=list.length-maxChecks;list.length=maxChecks;}
    let cursor=0,good=0,bad=[];
-   await Promise.all(Array.from({length:Math.min(6,list.length)},async()=>{
+   await Promise.all(Array.from({length:Math.min(settingNumber('runtime.tools.auditConcurrentRequests'),list.length)},async()=>{
     while(cursor<list.length){const path=list[cursor++];try{const response=await fetch(path,{method:'HEAD',cache:'no-store'});if(response.ok)good++;else if([405,501].includes(response.status)){const fallback=await fetch(path,{cache:'no-store'});if(fallback.ok)good++;else bad.push(path+' ('+fallback.status+')');}else bad.push(path+' ('+response.status+')');}catch(e){bad.push(path+' (hálózati hiba)');}}
    }));
    check(bad.length===0,`${good}/${list.length} belső fájl elérhető${bad.length?' · hibák: '+bad.slice(0,6).join(', '):''}`);
@@ -73,21 +91,4 @@ export function initSiteHealth(catalog){
   }catch(e){fail++;mark(false,'Az ellenőrzés megszakadt: '+e.message);}
   status.textContent=`Ellenőrzés vége: ${ok} sikeres, ${fail} hibás ellenőrzési csoport${skipped?', '+skipped+' nem vizsgált fájl':''}.`;button.disabled=false;
  });
-}
-export function initMobileQuickNav(){
- if(document.getElementById('ext26-mobile-nav'))return;
- const nav=el('nav','ext26-mobile-nav');nav.id='ext26-mobile-nav';nav.setAttribute('aria-label','Mobilos gyorsnavigáció');
- const icon=kind=>{
-  if(kind==='menu'){
-   const image=el('img','ext26-nav-logo');image.src='assets/media/logo/csanadi-cimer-512.webp';image.alt='';image.width=35;image.height=35;image.decoding='async';image.setAttribute('aria-hidden','true');return image;
-  }
-  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('class','ext26-nav-icon');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('fill','none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','2.2');svg.setAttribute('stroke-linecap','round');svg.setAttribute('stroke-linejoin','round');svg.setAttribute('aria-hidden','true');
-  const shape=kind==='home'?'M3 10.5 12 3l9 7.5V21h-6v-7H9v7H3V10.5':'M21 21l-4.3-4.3M19 10.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0';
-  const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',shape);svg.append(path);return svg;
- };
- const entries=[['home','Kezdőlap',()=>location.hash='#/'],['menu','Menü',()=>document.getElementById('orbit-open')?.click()],['search','Keresés',()=>document.getElementById('search-open')?.click()]];
- entries.forEach(([kind,label,action])=>{const b=el('button','ext26-nav-icon-button');b.type='button';b.dataset.navId=kind;b.setAttribute('aria-label',label);b.title=label;append(b,icon(kind));b.addEventListener('click',action);nav.append(b);});
- document.body.append(nav);
- const update=()=>{const route=location.hash||'#/';nav.querySelector('[data-nav-id="home"]')?.setAttribute('aria-current',route==='#/'?'page':'false');};
- window.addEventListener('hashchange',update);update();
 }
