@@ -1,8 +1,8 @@
 # Csanádi Sportiskola 2026 – a központi JSON összes paramétere
 
-**Forrás:** `json/config.json` · **Kiadás:** 20 · **Dátum:** 2026. november 15.
+**Forrás:** `json/config.json` · **Kiadás:** 21 · **Dátum:** 2026. november 15.
 
-**Összesen 231 beállítható, egy helyen tárolt mező.** A lista a tényleges kiadási JSON-ból származik; szerkesztéshez nyisd meg a `tools/parameterek-szerkeszto.html` felületet.
+**Összesen 239 beállítható, egy helyen tárolt mező.** A lista a tényleges kiadási JSON-ból származik; szerkesztéshez nyisd meg a `tools/parameterek-szerkeszto.html` felületet.
 
 A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést jelent. A darabszámok, időzítések, méretek és más globális kapcsolók a JSON-ból kerülnek a programokhoz. Az egyedi esemény, dokumentum és hír rekordjának saját dátuma a saját adatrekord egyetlen forrásértéke, nem másolat a globális konfigurációban.
 
@@ -148,7 +148,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
-| `performance.cacheVersion` | `"csanadi-r20-20261115"` | szöveg |
+| `performance.cacheVersion` | `"csanadi-r21-20261115"` | szöveg |
 | `performance.maxCacheMegabytes` | `50` | szám |
 | `performance.respectReducedMotion` | `true` | logikai |
 | `performance.mediaCacheEntries` | `100` | szám |
@@ -156,10 +156,18 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `performance.offlinePrecacheFileMaxBytes` | `300000` | szám |
 | `performance.offlinePrecacheMaxEntries` | `220` | szám |
 
-## Megjelenítés, körmenü, dátumablakok és diagnosztika (121 mező)
+## Megjelenítés, körmenü, dátumablakok és diagnosztika (129 mező)
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
+| `runtime.round21.maxAdmissionCompare` | `3` | szám |
+| `runtime.round21.maxBundleFiles` | `12` | szám |
+| `runtime.round21.maxBundleBytes` | `24000000` | szám |
+| `runtime.round21.kioskMaxSlides` | `14` | szám |
+| `runtime.round21.kioskRotationMs` | `8500` | szám |
+| `runtime.round21.explorerDataPath` | `"adatok/felfedezo-21.json"` | szöveg |
+| `runtime.round21.homePreferencesStorageVersion` | `1` | szám |
+| `runtime.round21.privacyLocalOnly` | `true` | logikai |
 | `runtime.hero.maxSlides` | `20` | szám |
 | `runtime.hero.rotationDefaultMs` | `7500` | szám |
 | `runtime.hero.rotationMinimumMs` | `5000` | szám |

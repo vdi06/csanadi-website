@@ -86,7 +86,7 @@
     {
       "id": "document:csanadi-weboldal-kezikonyv-2026",
       "title": "Csanádi Sportiskola 2026 – Teljes weboldal-használati útmutató",
-      "summary": "Teljes webes és PDF-kézikönyv a 66 tartalmi oldalhoz, 13 karbantartó felülethez, a központi JSON mind a 231 beállításához és az összes fő funkcióhoz.",
+      "summary": "Teljes webes és PDF-kézikönyv a 66 tartalmi oldalhoz, 13 helyi karbantartó felülethez, a nyilvános felfedezőközpont tíz funkciójához és a központi JSON 239 paraméteréhez.",
       "categoryId": "weboldal-utmutato",
       "tags": [
         "honlap",
@@ -114,9 +114,9 @@
       "mimeType": "application/pdf",
       "fileName": "csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
       "filePath": "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
-      "fileSizeBytes": 108939,
-      "sha256": "dfc058af1a7cb52da280668f7db9bbb5d1f3d384c9947f02187625855261ff4c",
-      "version": "3.6.0",
+      "fileSizeBytes": 114531,
+      "sha256": "b934648b2edb6bfa5816bb08b9a9bb9d1299c72e9a8d4ddc09d8eaa09098548c",
+      "version": "3.7.0",
       "publishedAt": "2026-11-15",
       "validFrom": "2026-11-15",
       "validTo": null,
@@ -170,6 +170,11 @@
           "version": "3.6.0",
           "date": "2026-11-15",
           "change": "231 központi paraméter; helyi vizuális JSON-szerkesztés és képkonverzió, publikálási állapotgép, intelligens keresés, választható offline olvasás, ICS-export, magyar–angol kiemelések, akadálymentességi riport, tartalomkapcsolati térkép és két ZIP-es visszaállítás. A README és a fiktív hírek megmaradtak."
+        },
+        {
+          "version": "3.7.0",
+          "date": "2026-11-15",
+          "change": "10 nyilvános interaktív felfedezőeszköz; felvételi összehasonlítás, tanévtervező, sportágválasztó, sematikus térkép, túra, kedvenc kezdőlap, PDF-ZIP, helyi újdonságfigyelő, mini-kvíz és digitális faliújság. Külön alapjavításként a diagnosztikai indulási hiba, két színtéma és hero-CLS csökkentés. A 66 oldal és README megmaradt."
         }
       ]
     },

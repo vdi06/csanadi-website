@@ -11,6 +11,12 @@ const webVitals={lcp:null,cls:0};
 let observersStarted=false;
 const clock=()=>Math.max(0,performance.now());
 const fmt=(ms)=>Number.isFinite(ms)?Math.round(ms).toLocaleString('hu-HU')+' ms':'—';
+// A diagnosztika nem akadályozhatja meg a honlap indulását, akkor sem,
+// ha a settings modul még nem inicializálódott, vagy egy régi config él a cache-ben.
+export const diagnosticNumber=(key,fallback)=>{
+ try{const value=settingNumber('runtime.diagnostics.'+key);return value>0?value:fallback;}
+ catch{return fallback;}
+};
 async function measureBundle(){
  try{
   const response=await fetch('release-manifest.json',{cache:'no-store'});
@@ -44,10 +50,10 @@ function refresh(){
  const transferred=measured.reduce((sum,entry)=>sum+(entry.transferSize||0),0);
  const decoded=measured.reduce((sum,entry)=>sum+(entry.decodedBodySize||0),0);
  resources.textContent='Böngésző által mért erőforrások: '+measured.length+' kérés · hálózati átvitel: '+(transferred?bytes(transferred):'nem mérhető')+' · feldolgozott válaszmennyiség: '+(decoded?bytes(decoded):'nem mérhető')+'. A cache-ből betöltött és a külső források mérése hiányos lehet.';
- const slowCount=settingNumber('runtime.diagnostics.slowestResourceCount');
+ const slowCount=diagnosticNumber('slowestResourceCount',5);
  const slower=performance.getEntriesByType('resource').filter(entry=>{try{return new URL(entry.name).origin===location.origin&&entry.duration>0;}catch{return false;}}).sort((a,b)=>b.duration-a.duration).slice(0,slowCount);
  slow.textContent=slower.length?'Leglassabb helyi állományok: '+slower.map(entry=>{const url=new URL(entry.name);return decodeURIComponent(url.pathname.split('/').at(-1)||url.pathname)+' ('+fmt(entry.duration)+')';}).join(' · ')+'. Ezek a böngésző által mért letöltési idők, nem egy teljes hálózati sebességteszt.':'A helyi állományok részletes időmérése még nem elérhető.';
- const largestCount=settingNumber('runtime.diagnostics.largestResourceCount'),targetLcpMs=settingNumber('runtime.diagnostics.targetLcpMs'),targetCls=settingNumber('runtime.diagnostics.targetCls'),targetFcpMs=settingNumber('runtime.diagnostics.targetFcpMs');
+ const largestCount=diagnosticNumber('largestResourceCount',5),targetLcpMs=diagnosticNumber('targetLcpMs',2500),targetCls=diagnosticNumber('targetCls',0.1),targetFcpMs=diagnosticNumber('targetFcpMs',1800);
  const big=measured.filter(entry=>entry.decodedBodySize>0).sort((a,b)=>b.decodedBodySize-a.decodedBodySize).slice(0,largestCount);
  panel.querySelector('[data-speed-largest]').textContent=big.length?'Legnagyobb feldolgozott erőforrások: '+big.map(entry=>{const url=new URL(entry.name);return decodeURIComponent(url.pathname.split('/').at(-1)||url.hostname)+' ('+bytes(entry.decodedBodySize)+')';}).join(' · ')+'. A cross-origin és gyorsítótári mérések hiányosak lehetnek.':'A böngésző nem szolgáltat dekódolt méretadatot az erőforrásokhoz.';
  const fcpEntry=performance.getEntriesByType('paint').find(entry=>entry.name==='first-contentful-paint');

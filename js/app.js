@@ -5,7 +5,8 @@ import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmar
 import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=20261115r19';
 import {initMobileQuickNav} from '../mobile/quick-nav.js?v=20261115r19';
 import {setupSmartSearch} from './search-j-2026.js?v=20261115r15';
-import {installLanguageHighlights} from './language-20.js?v=csanadi-r20-20261115';
+import {installLanguageHighlights} from './language-20.js?v=csanadi-r21-20261115';
+import {enhancePersonalizedHome} from './round21-personalize.js?v=csanadi-r21-20261115';
 import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=20261114ten1';
 import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=20261114kmil2';
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=20261114be1';
@@ -364,6 +365,7 @@ function homePage(node){
   }
   const searchShortcut=dom('button',{type:'button',class:'home-j-search'},'Keresés a honlapon ⌕');
   searchShortcut.addEventListener('click',openSearch);nav.append(searchShortcut);
+  nav.append(dom('a',{href:'felfedezo.html',class:'csn21-explorer-link'},'Interaktív felfedezőközpont ↗'));
   const rails=dom('div',{class:'home-j-navrail-unit'});rails.append(nav);
   const visibleRoles=['premium-showcase','school-news','sports-news'];
   canvas.replaceChildren();
@@ -391,6 +393,7 @@ function homePage(node){
    
   for(const unit of units)if(!canvas.contains(unit))canvas.append(unit);
   enhanceHomeInterests(canvas);
+  enhancePersonalizedHome(canvas);
   if(Number.isSafeInteger(node.page.lifecycle?.revision)&&node.page.lifecycle.revision>0){
    const marker=dom('p',{class:'page-release-badge'},`Kezdőlap · Oldalverzió: ${node.page.lifecycle.revision}`);
    canvas.append(marker);

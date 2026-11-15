@@ -14,7 +14,7 @@ async function configuration(){
 const names=config=>({shell:config.performance.cacheVersion,media:config.performance.cacheVersion+'-media',reader:config.performance.cacheVersion+'-offline'});
 async function precache(){
  const config=await configuration(),cacheNames=names(config),cache=await caches.open(cacheNames.shell);
- const start=['./','./index.html','./utmutato.html','./offline.html','./json/config.json','./service-worker.js','./release-manifest.json','./assets/media/logo/csanadi-cimer-512.webp'];
+ const start=['./','./index.html','./felfedezo.html','./utmutato.html','./offline.html','./json/config.json','./service-worker.js','./release-manifest.json','./assets/media/logo/csanadi-cimer-512.webp'];
  let paths=start;
  try{
   const response=await fetch(new URL('release-manifest.json',scope),{cache:'no-store'});

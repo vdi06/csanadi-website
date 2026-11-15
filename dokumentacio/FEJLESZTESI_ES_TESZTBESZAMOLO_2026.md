@@ -1,83 +1,148 @@
-# Csanádi Sportiskola 2026 – 20. kiadás: fejlesztési és tesztbeszámoló
+# Csanádi Sportiskola 2026 – 21. kiadás részletes fejlesztési és tesztbeszámoló
 
-**Dátum:** 2026. november 15.  
-**A felhasználó utolsó letöltött kiadása:** a csatolt `csanadi-website(5).zip`, amelynek belső kiadási azonosítója `csanadi-r17-20261115`.  
-**Közvetlen fejlesztési alap:** `Csanadi_Sportiskola_2026_19_TELJES_WEBOLDAL_FTP_ES_KEZIKONYV.zip`; a 18-as és 19-es módosításokat is hordozza.  
-**Teljes átadandó kiadás:** `Csanadi_Sportiskola_2026_20_TELJES_WEBOLDAL_FTP_ES_KEZIKONYV.zip`.  
-**Központi verzió:** `csanadi-r20-20261115`; webes/PDF-kézikönyv: **3.6.0**, 26 oldalas A4 PDF.  
-**Közzététel:** sem iskolai FTP-, sem GitHub-feltöltés nem történt.
+**Dátum:** 2026. november 15.  \n**Forrás:** `Csanadi_Sportiskola_2026_20_TELJES_WEBOLDAL_FTP_ES_KEZIKONYV.zip` – a megőrzött 20-as munkafa azonos fájljaival.  \n**Eredmény:** `Csanadi_Sportiskola_2026_21_TELJES_WEBOLDAL_FTP_ES_KEZIKONYV.zip`  \n**Közzététel:** nem történt FTP- vagy GitHub-feltöltés.
 
-## 1. Mi volt a kérés?
+## 1. A felhasználó tíz kiválasztott új fejlesztése
 
-Az összes előző működő funkció, oldal, média, dokumentum, a README.md, a háromikonos mobilmenü, a `mobile/` és `desktop/` elválasztás, a két sportos színtéma és a központi JSON-paraméterek megőrzésével **tíz új funkcionális fejlesztést** kértél. A fiktív MINTA diákhírek nem helyettesíthetők valódi diákhírekkel külön adatvédelmi és intézményi jóváhagyás nélkül. A nyilvános lábléc nem tartalmazhat szerkesztőlinket. A fájlméretek automatikusan bájt/KiB/MiB/GiB értékekben, az idők ms-ban jelenjenek meg. Külön webes és PDF-dokumentáció, teljes statikus ZIP, tesztjelentés és új működő fejlesztési választó jár a kiadáshoz.
+Minden kiválasztott új képesség a `felfedezo.html` nyilvános felfedezőközpontból érhető el. A kezdőlap kártyái külön a régi SPA-n belül is személyre szabhatók. A meglévő, korábbi funkciók fejlesztését külön fejezet tartalmazza.
 
-**Állandó szabály:** a meglévő oldalak és funkciók rendszeres csiszolása **külön kötelező alapjavítás**, nem foglalhat helyet a következő tíz új választható funkció között. Ezt a 3. részben külön számoltuk el.
+### 1. Felvételi összehasonlító
 
-## 2. A tíz kiválasztott fejlesztés – megvalósítás és korlát
+**Elkészült forrásfunkció:** A felfedezőközpontban három, személyes adatot nem kérő képzési irány több oszlopos összevetése: képzési profil, követelmény, határidő és a forrásoldalra mutató kapcsolat. A bizonytalan határidők elkülönítettek.
 
-| # | Funkció | Ami bekerült a 20-as kiadásba | Fontos nyitott feltétel |
-|---|---|---|---|
-| 1 | Vizuális JSON-oldalszerkesztő | Új helyi `tools/fejlesztoi-munkakozpont-20.html`: cím, menünév, összefoglaló és Markdown-blokkok szerkesztése; élő, biztonságos szöveges előnézet; kötelező azonosító/útvonal/státusz ellenőrzés; fájlexport. | A speciális blokkok és médiák nem teljes WYSIWYG nézetben szerkeszthetők; a központi menüregiszter frissítése külön feladat. |
-| 2 | Képoptimalizáló | Helyi, többképes konverzió böngészős Canvas API-val, 480/960/1440 px célméret, WebP és támogatott esetben AVIF, aránymegőrzés; méretlista, leltár-JSON és ZIP. | Az AVIF-kódolás, memória és képminőség böngészőfüggő; a tényleges képek felhasználási jogát külön kell ellenőrizni. |
-| 3 | Hír-/eseménypublikálási folyamat | Tervezet, ellenőrzés, jóváhagyás, időzítés, visszavonás; jóváhagyó és időablak; külön **NEM NYILVÁNOS** munkanapló és külön ellenőrzött publikus JSON-export, közös hír-adatvédelmi validatorral. | A helyi jelölés nem intézményi engedély, automatikus FTP-publikálás nincs. |
-| 4 | Keresés | Ékezet- és szinonimakezelés megtartása, a hosszabb cím-/címkeszavaknál legfeljebb egy karakteres elírástűrés, súlyozás, csak memóriában élő anonim darabszám-statisztika. | Nem tároljuk a keresőszavakat, nincs szerveroldali napló vagy teljes nyelvi modell. |
-| 5 | Offline olvasás | `offline-olvaso.html`: publikált oldalak egyenként kijelölhető JSON-másolata, mentés/frissítés/törlés, becsült méret és böngészőkvóta, kiadáshoz kötött CacheStorage. | HTTPS/localhost és előzetes online letöltés szükséges. A teljes offline médiakészlet nem garantált. |
-| 6 | Naptár | ICS-eseményexport UTC-vel, böngészős nyomtatás és külön mobilos napirend; a régi nap/hét/hónapnézet és szűrők megmaradtak. | Az eseményforrás jelenleg csak két hiteles tételt tartalmaz; a nyomtató és a böngésző megjelenése eltérhet. |
-| 7 | Magyar–angol tájékoztatás | Központi `json/nyelvek.json` és részlegesen fordított kiemelt információk, nyelvváltás, fordítási státusz és a látogató helyi preferenciája. | **Nem teljes honlapfordítás**, az angol szöveg intézményi ellenőrzést igényel (`review_required`). |
-| 8 | Akadálymentességi központ | A helyi fejlesztői munkaközpont a manifest HTML-jeit szerkezetileg vizsgálja: kép-alt, címke, név nélküli gomb, H1, duplikált ID és mindkét téma számított kontrasztja; JSON-riport. | A képernyőolvasó, billentyűzetes navigáció és WCAG AA emberi ellenőrzése külön szükséges. |
-| 9 | Tartalomkapcsolati térkép | Az oldalindex és a **66 tényleges oldalfájl**, hírek, események és dokumentumok belső hivatkozásainak feltérképezése; SVG-ábra, hiányzó utak és duplikált rekordazonosítók, export. | A diagramon a konfigurált maximális csomópontszám látszik, a teljes lista a jelentésben van. |
-| 10 | Két ZIP kiadáskezelő | Régi és új teljes ZIP32 helyi összehasonlítása fájlnév, CRC32 és méret alapján; új/módosult/törölt állományok, letölthető változásjelentés és visszaállító ZIP, külön újfájl-törlési jegyzékkel. | ZIP64/jelszavas ZIP nem támogatott; deflate-raw kitömörítéshez megfelelő böngésző kell. Nincs FTP-írás. |
+### 2. Interaktív tanévtervező
 
-## 3. Kötelező alapjavítások – nem a következő tíz opció részei
+**Elkészült forrásfunkció:** Helyi JSON-ból készülő, kategóriák szerint szűrhető idővonal a korábban közzétett tanévnyitóval, két nyílt nappal, az őszi vizsgával és egy országos írásbelivel. Az ellenőrizetlen szünetek és kivételes napok dátum nélkül szerepelnek.
 
-### A nálad lévő 17-es ZIP óta történt kiadásközi fejlesztések
+### 3. Sportágválasztó
 
-**A 18-as kiadásban:** külön `mobile/` és `desktop/` mappák, a mobil körmenü/hagyományos menü váltó finomítása, a háromikones navigáció stabilizálása, központi paraméterbővítés, ZIP-/manifest-változások előnézete, PDF- és dokumentumgyorskereső, helyi hír- és médiaeszközök, fájlméret- és betöltésidiagnosztika, automatikus betöltési cache-frissítés.
+**Elkészült forrásfunkció:** Hat ismertető sportág egyéni/csapat és érdeklődési kategóriák szerinti keresésével, kapcsolódó sportoldallal. A jelenlegi intézményi edzés- és helyszínkínálat nem minősül igazoltnak.
 
-**A 19-es kiadásban:** részletes ms és automatikus KiB/MiB/GiB teljesítményadatok, keskenyebb mobilmenü-stílusok, sporteredmény-szűréshez kapcsolt interaktív diagramok, billentyűzettel lapozható fotógaléria, nap/hét/hónap naptárrács, PDF-verziótörténet és közvetlen letöltés, zöld-sárga színátmenetek két témában, öt forrástípusból kapcsolódó tartalmak, duplikáció-/manifest-alapú honlapállapot-ellenőrzés és teljes FTP-kiadási minőségkapu.
+### 4. Iskolai térképközpont
 
-**A 20-as kiadásban:** a fenti 2. fejezet mind a tíz új modulja, a kibővített webes/PDF-kézikönyv és a jelen teljes ZIP.
+**Elkészült forrásfunkció:** Négy érinthető, szemléltető tájékozódási zóna mobilos egyoszlopos nézettel és kapcsolódó oldallal. Az intézmény hiteles belső alaprajza nem áll rendelkezésre, ezért nincs kitalált teremszám vagy iránymutatás.
 
-A csatolt 17-es csomag `csanadi-website/` almappás Git-forrásarchívum volt. A 20-as átadott ZIP közvetlenül a **webhely gyökerébe** kibontható, ezért nincs benne a fejlesztési `.git/` metaadat: a honlap működéséhez nem szükséges. A korábbi három mobil-CSS az új `mobile/` helyén bájtpontosan megmaradt.
+### 5. Vezetett honlapbemutató
 
-1. A 19-es kiadásból a teljes honlap és az eredeti **66 oldal** átvétele; a nálad lévő r17 kiadás mindhárom, azóta `mobile/` alá rendezett korábbi mobil-CSS-e **bájtpontosan megmaradt**.
-2. A **README.md** a 19-es verzióhoz képest bájtpontosan ugyanaz; az eredeti címeres mobilmenü **házikó – címer – nagyító**, körmenü/hagyományos mód és asztali képváltó megőrzése.
-3. A meglévő naptár, sportdiagram, képgaléria, PDF-dokumentumtár, kereső, kapcsolódó tartalmak, állapot- és teljesítménydiagnosztika továbbfejlesztése egyben, nem újrakezdve.
-4. Az eredeti világos/sötét **sportGreen** és **sportYellow** paletta követése az új nyelvi panelben, naptárban és fejlesztői felületen, csökkentett mozgás támogatásával.
-5. **Nyilvános lábléc:** továbbra sincs szerkesztő- vagy külön kézikönyv-hivatkozás. **Adatvédelem:** a 8 névtelen MINTA sporthír változatlan, valódi diákhír nem került bele.
-6. Belső JS/CSS `?v=` URL-ek 20-as verzióra váltása, központi `performance.cacheVersion` frissítése; az offline mentés külön verzióhoz kötött. A külső szolgáltatói cache viselkedése továbbra is külön ellenőrizendő.
-7. A korábbi 212 központi paraméter megtartása és bővítése **231 levélmezőre**, kézzel duplán vezetett beállítási adatforrás nélkül.
-8. A teljes webes/PDF-kézikönyv újragenerálása az aktuális 66 oldal, 13 eszköz és 231 paraméter szerint, dokumentumhash és teljes SHA-manifest frissítése.
+**Elkészült forrásfunkció:** Ötlépéses, párbeszédablakos bemutató Előző/Tovább/Bezárás vezérlőkkel; a megtekintettséget a böngésző helyben tárolhatja.
 
-## 4. Teljes csomagleltár
+### 6. Személyre szabható kezdőlap
 
-- **66** tartalmi JSON-oldal; **89** érvényes JSON-fájl; **53** JavaScript-fájl; **17** HTML-fájl, közülük **13** helyi karbantartói HTML-felület; **231** központi paraméter.
-- `utmutato.html` – webes, kereshető **3.6-os** kézikönyv mind a 66 oldallal, 13 eszközzel és valamennyi paraméterrel.
-- `assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf` – **26 oldal, A4**, kereshető szöveg, azonos verzió.
-- `dokumentacio/KOZPONTI_JSON_PARAMETEREK.md` – aktuális paraméterjegyzék.
-- `dokumentacio/FTP_ATALLAS_ES_VISSZAALLITAS.md` – élesítés és visszaállítás kiegészített leírása.
-- `release-manifest.json` – a ZIP-ben található további **757** fájl név, pontos bájtméret és SHA-256 lenyomata; a ZIP teljes állományszáma **758**.
+**Elkészült forrásfunkció:** A tényleges kezdőlapon a kártyacsoportok megjelenítése és sorrendje módosítható, visszaállítható; a választás kizárólag localStorage-ban marad.
 
-## 5. Ténylegesen elvégzett vizsgálatok
+### 7. Dokumentumcsomag-készítő
 
-**Célzott automatikus ellenőrzések: 46/46 sikeres**, ebből 43 előzetes regressziós/szerkezeti ellenőrzés és 3 végső ZIP-integritási próba.
+**Elkészült forrásfunkció:** A publikált, helyi PDF-ek többes kijelölése; HTTP letöltés, PDF-fejléc ellenőrzés, központi korlátok és helyben előállított ZIP32-fájl.
 
-1. **Regresszió:** 66 oldal, eredeti README azonossága, mobil/desktop mappák, háromikonos mobilmenü, a nyilvános szerkesztőlinkek hiánya és MINTA sporthírek. A felhasználó által csatolt r17 ZIP **737 nem-Git fájljának** megléte vagy azonos tartalmú, tudatos új helye is külön ellenőrizve.
-2. **Szintaxis:** mind a **89 JSON** parse-olható; mind az **53 JS** szintaktikailag érvényes Node.js `--check` szerint.
-3. **HTML:** mind a **17 HTML** helyi `href`/`src` útvonala létező fájlra mutat, duplikált HTML-ID nincs; a 20-as munkaközpont összes JavaScriptből hivatkozott mezőazonosítója létezik.
-4. **Funkcióbekötés:** szerkesztő, konvertálás, munkafolyamat, fuzzy kereső, offline CacheStorage, ICS/nyomtatás/mobil napirend, nyelvi JSON, akadálymentességi audit, teljes oldal-JSON kapcsolatvizsgálat és ZIP-különbség kódjának célzott statikus ellenőrzése.
-5. **Tényleges ZIP-modulpróba:** az új böngésző-kompatibilis ZIP-olvasó a 19-es ZIP **749** állományát beolvasta, majd a `README.md` tömörített bejegyzésének adatait ténylegesen kibontotta és **CRC32-t ellenőrzött**.
-6. **PDF:** A4-es, **26 oldalas**, kereshető; 3.6 és offline/ZIP szövegek megtalálhatók; az első oldalt képként megvizsgáltuk.
-7. **Kiadás:** a teljes, **757** állományos SHA-256/byte manifest egyezik a munkamappával. A ZIP **758** fájlt tartalmaz, a teljes archívum CRC-próbája sikeres; a README és `json/config.json` bájtra egyeznek a forrással.
+### 8. Helyi újdonságfigyelő
 
-### Ami még NEM bizonyított böngészőben
+**Elkészült forrásfunkció:** A megadott témákat követi; a saját korábbi megtekintéshez képest új vagy módosult, ellenőrzött hírek jelennek meg, adatküldés és push-szolgáltatás nélkül.
 
-A Playwright/Chromium indítás `socket() failed: Operation not permitted` környezeti hibával megállt, a helyi HTTP-próba is blokkolt. **Nem állítunk sikeres kattintásos böngésző- vagy valódi mobiltesztet.** Teszt-HTTPS környezetben külön szükséges: 320–768 px-es menü és panel, témaátváltás, teljes eseménynaptár, képszerkesztő és AVIF, offline mentés/frissítés, fordítások, ZIP-rollback, nyomtatás/PDF, billentyűzetes és képernyőolvasós akadálymentes használat. A sikeres szintaktikai és forrásszerkezeti ellenőrzés **önmagában nem teljes UI-teszt**.
+### 9. Interaktív önellenőrző feladatok
 
-## 6. Kiadás és külső feltételek
+**Elkészült forrásfunkció:** Négy JSON-alapú iskolai kvízkérdés, azonnali magyarázattal és újrakezdéssel. A választ nem tárolja és nem küldi el.
 
-Az elkészült csomag **kizárólag statikus HTML/CSS/JS/JSON és média/dokumentum fájlokat** szolgáltató FTP-tárhelyre alkalmas; szerveroldali PHP/Node/GitHub Actions nincs. A Bootstrap 5.3.9 rögzített CDN-ről jön, helyi Bootstrap nincs. Külső CDN és választható diagramkiegészítések online kapcsolatot igényelhetnek. Az offline CacheStorage HTTPS/localhost mellett működik, de nem garantálja a még soha le nem töltött oldalak és külső médiák rendelkezésre állását.
+### 10. Digitális faliújság mód
 
-Publikálás előtt az intézmény feladata minden valós hír, kép, sporteredmény, fordítás és dokumentum forrásának, aktualitásának és jogszerűségének ellenőrzése. A nem nyilvános munkanapló és tervezet nem kerülhet éles tárhelyre; a noindex nem hozzáférés-védelem. A teljes ZIP-helyreállítás kézi, külön jóváhagyást igénylő eljárás; a cache-verziózás nem kényszeríthet rá frissítést valamennyi offline készülékre.
+**Elkészült forrásfunkció:** Csak dátummal rendelkező, ellenőrzött hivatalos hírek és események, teljes képernyő kéréssel, automatikus időzített lapozással, szüneteltetéssel és kézi léptetéssel.
 
-**Nem történt iskolai FTP- vagy GitHub-feltöltés.** A következő fejlesztési körben az új tíz kiválasztható fejlesztés mellett a meglévő funkciók javítása mindig külön kötelező munkakör marad.
+## 2. Kötelező alapfeladatként elvégzett hibajavítások (nem új választási pontok)
+
+1. **Sürgős asztali és mobil indulási hiba:** a betöltési diagnosztika a `runtime.diagnostics.slowestResourceCount` és társai kiolvasását a központi `useSiteSettings()` betöltése előtt indította. A közös `js/performance-diagnostics-2026.js` modulban minden diagnosztikai beállítás biztonságos alapértéket kap, ha a beállítás még nem olvasható vagy a böngésző régi konfigurációt használ. A mérőpanel nem állíthatja le emiatt az egész honlapot.
+2. **Világos/sötét diagnosztika:** a `css/round21-public.css` megkülönböztetett világos és sötét hátteret, keretet, feliratot, számot, részletező panelt és fókuszjelölést rendel a lábléc mérőfelületéhez.
+3. **Magas CLS vizsgálata:** a felhasználó 0,656-os CLS-értéket jelentett (cél 0,1). A megjelenés előtt üresen `display:none` hero már megfelelő helyet tart fenn, ezért a képes főszekció későbbi JSON-betöltése kevesebbet tolhat a tartalmon. **A tényleges javulást ellenőrzött, több eszközön végzett böngészőmérés nélkül nem lehet kijelenteni.**
+4. **Verzióváltás és cache:** a központi `performance.cacheVersion` új értéke `csanadi-r21-20261115`; a belépő modul és az érintett CSS/JS-fájlok verziózott hivatkozást használnak; a service worker új kiadási tárolót nyit és a régi helyi cache-t törli az aktiváláskor.
+5. **Megőrzés:** az eredeti 66 JSON-oldal és `README.md` változatlan, a `mobile/` és `desktop/` fájljai és a fiktív MINTA sporthírek bitazonosak. A nyilvános lábléc továbbra sem mutat szerkesztőoldalra.
+
+## 3. Dokumentáció, csomagolás és konfiguráció
+
+- Új, közös JSON-forrás: `json/adatok/felfedezo-21.json` (felvételi, tanév, sport, sematikus térkép, kvíz és bemutató).
+- Új JS: `js/round21-explorer.js` és `js/round21-personalize.js`; új CSS: `css/round21-explorer.css` és `css/round21-public.css`.
+- Teljes webes kézikönyv: `utmutato.html`, PDF-kézikönyv: `assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf`, 3.7.0 verzióban.
+- A központi paraméterek aktuális listája: `dokumentacio/KOZPONTI_JSON_PARAMETEREK.md`. Összesen **239 központi paraméter**.
+- Teljes állományleltár SHA-256 és pontos bájtmérettel: `release-manifest.json`; statikus FTP-re közvetlenül kibontandó teljes ZIP.
+
+## 4. Tételes teszteredmények
+
+**Automatizált ellenőrzések:** 55 sikeres, 0 sikertelen, összesen 55. **Valós böngészős vizuális mérés:** nem történt, a futtatókörnyezetben a headless Chromium böngészőhöz szükséges socket működés korlátozott.
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Mind a 66 korábbi JSON-oldal változatlan | Sikeres |
+| README.md bitazonos | Sikeres |
+| A 20-as kiadás minden fájlja megmaradt | Sikeres |
+| mobile/ és desktop/ források bitazonosak | Sikeres |
+| Háromikones alsó mobilmenü | Sikeres |
+| A nyilvános láblécből hiányoznak a karbantartóhivatkozások | Sikeres |
+| MINTA hírek és közös adatvédelmi szabályok megmaradtak | Sikeres |
+| Központi light/dark színpaletták | Sikeres |
+| Kiadás azonosító és verzióváltás | Sikeres |
+| Saját felfedezőközpont HTML/JS/CSS működési források | Sikeres |
+| Tíz felület címke és célpont egyedi | Sikeres |
+| Felfedezőközpont a főoldalról elérhető | Sikeres |
+| Felvételi összevetés: legalább három eltérő profil | Sikeres |
+| Felvételi: nincs profilban kéretlen személyes adat | Sikeres |
+| Tanévtervező: dátumos és dátum nélküli időszakok | Sikeres |
+| Sportágválasztó: érdeklődési szűrhető tartalom | Sikeres |
+| Iskolai térkép: sematikus, nem állít alaprajzot | Sikeres |
+| Bemutató: 5 lépés, dialógusvezérlők | Sikeres |
+| Kezdőlap: helyi rendezés, rejtés, visszaállítás | Sikeres |
+| Kezdőlap testreszabás a valódi SPA-ban | Sikeres |
+| PDF ZIP: helyi összeállítás és PDF-aláírás | Sikeres |
+| Újdonságfigyelő: kizárólag ellenőrzött hírek és localStorage | Sikeres |
+| Kvíz: az összes helyes válasz tartományon belüli | Sikeres |
+| Kvíz: nem ment választ szerverre | Sikeres |
+| Faliújság: kizárólag hiteles hírek és események | Sikeres |
+| Faliújság: indítás/szünet/lapozás/teljes képernyő | Sikeres |
+| Központi R21 paraméterek tárolása | Sikeres |
+| Központi R21 adatforrás biztonságos útvonala | Sikeres |
+| Diagnosztika: inicializálás előtti hiányzó érték kezelve | Sikeres |
+| Diagnosztika: mindkét téma részletes kontrasztja | Sikeres |
+| CLS enyhítés: betöltés előtti hero helyfoglalás | Sikeres |
+| Ms és automatikus fájlméretegység megmaradt | Sikeres |
+| Betöltési alapadatok service worker előtárazása | Sikeres |
+| Nincsen lokális Bootstrap-állomány | Sikeres |
+| 18 HTML egyedi ID | Sikeres |
+| 18 HTML helyi hivatkozások | Sikeres |
+| 90 JSON-fájl feldolgozható | Sikeres |
+| 55 JavaScript szintaxis | Sikeres |
+| JS modulimportok helyi céljai | Sikeres |
+| PDF kézikönyv dátum/verzió és SHA | Sikeres |
+| Webes kézikönyv mind a 10 fejlesztési témakört tartalmazza | Sikeres |
+| A kézikönyv 66 oldalt, 13 karbantartót és 239 paramétert sorol | Sikeres |
+| Dokumentum PDF-ek valóban a helyi leltárban találhatók | Sikeres |
+| Manifest tételes teljesség | Sikeres |
+| Minden manifest SHA-256 és bájtméret pontos | Sikeres |
+| Statikus FTP, külső Bootstrap CDN | Sikeres |
+| Az iskolai FTP-re nincs automatikus feltöltőkód | Sikeres |
+| HTTP 200 / index.html | Sikeres |
+| HTTP 200 / felfedezo.html | Sikeres |
+| HTTP 200 / js/round21-explorer.js | Sikeres |
+| HTTP 200 / json/config.json | Sikeres |
+| HTTP 200 / json/adatok/felfedezo-21.json | Sikeres |
+| Teljes ZIP CRC vizsgálat | Sikeres |
+| ZIP gyökérszerkezet és pontos fájllista | Sikeres |
+| ZIP README és felfedezőközpont | Sikeres |
+
+## 5. Pontosan mi nem igazolt vagy maradt nyitott?
+
+- **Vizuális kompatibilitás:** nem történt valódi Android, iOS, Safari, Firefox és Chromium felhasználói interakciós teszt. Emiatt nem állítható, hogy minden képernyőn tökéletes a megjelenés.
+- **A 0,656-os CLS újramérése:** a helyfoglalásra kódjavítás készült, a konkrét valós javulás mértéke ismeretlen. Teszteld 320, 375, 768 és 1440 px szélességen, világos/sötét módban.
+- **Hivatalos tanévadatok:** a tanítási szünetek, rendkívüli napok, minden intézményi felvételi feltétel és konkrét belső alaprajz jóváhagyott forrás hiányában szándékosan nem lett kitalálva. Az idővonalban ezek dátum nélkül szerepelnek.
+- **Dokumentumok:** csak a ZIP-be ténylegesen bekerült, közzétett, helyi PDF-ek választhatók. Az intézményi hitelesítés és szerzői jog külön feladat.
+- **Kliensoldali környezet:** a helyi ZIP fájlkészítés, localStorage, full screen és a service worker működése a böngészőtől, tárhely-kvótától és HTTPS-től függ. A Bootstrap továbbra is verziózott külső CDN-ről töltődik.
+- **Nem történt közzététel:** az iskola FTP-jére semmit nem töltöttünk fel. A ZIP kibontása és intézményi jóváhagyása külön későbbi lépés.
+
+## 6. Ajánlott kézi átadási ellenőrzési sorrend
+
+1. Teljes ZIP kibontása egy üres tesztkönyvtárba, a mappastruktúra gyökerébe.
+2. HTTPS-es tesztoldal vagy helyi HTTP-kiszolgáló megnyitása; asztali és mobil indulás ellenőrzése a korábban jelzett `slowestResourceCount` hiba nélkül.
+3. Világos/sötét diagnosztikai panel, háromikones mobilmenü és a kör/hagyományos menü kapcsolójának vizuális tesztje.
+4. Kezdőlapi kártyatestreszabás és mind a tíz felfedezőeszköz interaktív kipróbálása.
+5. 2–3 PDF kijelölése; ZIP helyi letöltés és a benne lévő PDF-ek megnyithatóságának vizsgálata.
+6. Kvíz és újdonságfigyelő adatvédelmi ellenőrzése (nincs kimenő adatküldés), faliújság teljes képernyő kipróbálása.
+7. Friss CLS, FCP, LCP mérés több eszközön és hálózati körülménnyel; intézményi adattartalom szakmai jóváhagyása.
+
+## 7. Következő kör választója
+
+A következő tíz választható fejlesztés a beszélgetésben külön, interaktív választóban jelenik meg. A meglévő funkciók folyamatos hibajavítása továbbra is automatikus alapfeladat, nem foglal új választási pontot.
