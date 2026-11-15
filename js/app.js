@@ -7,6 +7,8 @@ import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumen
 import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=20261114kmil2';
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=20261114be1';
 import {renderMediaGallery} from './media-gallery-h-2026.js?v=20261114h1';
+import {renderDocumentCollections} from './document-collections-2026.js?v=20261115d1';
+import {renderPageMedia} from './page-media-2026.js?v=20261115m1';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=20261114premium1';
 import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=20261114dfg1';
 import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=20261114v5';
@@ -278,7 +280,7 @@ function contentPage(node){
   if(article.children.length)body.append(article);
 
   const docRoute=route.startsWith('#/informaciok/dokumentumtar');
-  if(docRoute){body.prepend(renderDocumentCenter(route));body.prepend(renderDocumentFinder());body.prepend(renderDocumentIndexExport());}
+  if(docRoute){body.prepend(renderDocumentCenter(route));body.prepend(renderDocumentFinder());body.prepend(renderDocumentIndexExport());body.prepend(renderDocumentCollections());}
   if(['#/oktatas','#/oktatas/felveteli','#/oktatas/kepzeseink','#/oktatas/tanevek','#/oktatas/vizsgak'].includes(route))body.prepend(learningNavigator());
   if(route==='#/oktatas'||route==='#/oktatas/felveteli')body.prepend(renderEducationPath());
   if(route==='#/sport'||route==='#/sport/sportagak')body.prepend(renderSportsPortal());
@@ -294,6 +296,7 @@ function contentPage(node){
   if(['#/hirek-es-esemenyek/hirek','#/hirek-es-esemenyek/hirek/iskolai-hirek','#/hirek-es-esemenyek/hirek/sporthirek','#/hirek-es-esemenyek/hirek/hirarchivum','#/hirek-es-esemenyek/kozlemenyek'].includes(route))body.prepend(renderNewsCenter(route));
   if(route==='#/hirek-es-esemenyek/hirek/sporthirek')body.prepend(renderDailySportsNews('full'));
   const relatedDocs=renderRelatedDocuments(route);if(relatedDocs)body.append(relatedDocs);
+  body.append(renderPageMedia(route));
 
    
   body.append(renderSmartRelations(node,catalog));

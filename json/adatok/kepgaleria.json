@@ -3,7 +3,7 @@
   "collectionId": "collection:eletkepek-2026",
   "status": "development",
   "title": "Sport, tudás és közösség – képes történetek",
-  "description": "Sportági, oktatási és közösségi tematikus galéria. A digitális látványanyag nem dokumentál konkrét iskolai eseményt.",
+  "description": "Tematikus sport-, oktatási és közösségi képek. A képek nem igazolják valódi iskolai esemény megtörténtét.",
   "items": [
     {
       "id": "photo:cs2026-001",
@@ -20,7 +20,8 @@
         "sport",
         "Kosárlabdacsarnok",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "kosarlabda"
     },
     {
       "id": "photo:cs2026-002",
@@ -37,7 +38,8 @@
         "sport",
         "Kosárlabda a parketten",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "kosarlabda"
     },
     {
       "id": "photo:cs2026-003",
@@ -54,7 +56,8 @@
         "sport",
         "Kosárpalánk",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "kosarlabda"
     },
     {
       "id": "photo:cs2026-004",
@@ -71,7 +74,8 @@
         "sport",
         "Eredményjelző",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:cs2026-005",
@@ -88,7 +92,8 @@
         "sport",
         "Futópálya",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "atletika"
     },
     {
       "id": "photo:cs2026-006",
@@ -105,7 +110,8 @@
         "sport",
         "Rajtvonalak",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "atletika"
     },
     {
       "id": "photo:cs2026-007",
@@ -122,7 +128,8 @@
         "sport",
         "Magasugróhely",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "atletika"
     },
     {
       "id": "photo:cs2026-008",
@@ -139,7 +146,8 @@
         "sport",
         "Labdarúgópálya",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "labdarugas"
     },
     {
       "id": "photo:cs2026-009",
@@ -156,7 +164,8 @@
         "sport",
         "Úszómedence",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "uszas"
     },
     {
       "id": "photo:cs2026-010",
@@ -173,7 +182,8 @@
         "sport",
         "Úszópályák",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "uszas"
     },
     {
       "id": "photo:cs2026-011",
@@ -190,7 +200,8 @@
         "sport",
         "Röplabdaháló",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "roplabda"
     },
     {
       "id": "photo:cs2026-012",
@@ -207,7 +218,8 @@
         "sport",
         "Asztalitenisz",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "asztalitenisz"
     },
     {
       "id": "photo:cs2026-013",
@@ -283,7 +295,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-01.webp",
       "alt": "Életszerű kép: kosárlabdaedzés a tornateremben",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "kosarlabda"
     },
     {
       "id": "photo:002",
@@ -291,7 +304,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-02.webp",
       "alt": "Életszerű kép: diadal a célvonalnál",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "atletika"
     },
     {
       "id": "photo:003",
@@ -299,7 +313,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-03.webp",
       "alt": "Életszerű kép: csapatöröm az uszodában",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:004",
@@ -307,7 +322,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-04.webp",
       "alt": "Életszerű kép: röplabdaakció a csarnokban",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "roplabda"
     },
     {
       "id": "photo:005",
@@ -347,7 +363,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-09.webp",
       "alt": "Életszerű kép: fociedzés az akadémián",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "labdarugas"
     },
     {
       "id": "photo:010",
@@ -363,7 +380,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-11.webp",
       "alt": "Tematikus kép: tenisz – ütésgyakorlat",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:012",
@@ -371,7 +389,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-12.webp",
       "alt": "Tematikus kép: evezés – közös ritmus",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:013",
@@ -411,7 +430,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-17.webp",
       "alt": "Tematikus kép: küzdősport és önfegyelem",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:018",
@@ -419,7 +439,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-18.webp",
       "alt": "Tematikus kép: torna – mozgáskultúra",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:cs2026-017",
@@ -436,7 +457,8 @@
         "Kosárlabda",
         "Labdavezetés",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "kosarlabda"
     },
     {
       "id": "photo:cs2026-018",
@@ -453,7 +475,8 @@
         "Kosárlabda",
         "Pontos passz",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "kosarlabda"
     },
     {
       "id": "photo:cs2026-019",
@@ -470,7 +493,8 @@
         "Kosárlabda",
         "Lepattanózás",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "kosarlabda"
     },
     {
       "id": "photo:cs2026-020",
@@ -487,7 +511,8 @@
         "Labdarúgás",
         "Passzsávok",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "kosarlabda"
     },
     {
       "id": "photo:cs2026-021",
@@ -504,7 +529,8 @@
         "Labdarúgás",
         "Átvétel",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:cs2026-022",
@@ -521,7 +547,8 @@
         "Labdarúgás",
         "Védekezés",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:cs2026-023",
@@ -538,7 +565,8 @@
         "Atlétika",
         "Bemelegítés",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:cs2026-024",
@@ -555,7 +583,8 @@
         "Atlétika",
         "Futóritmus",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "atletika"
     },
     {
       "id": "photo:cs2026-025",
@@ -572,7 +601,8 @@
         "Atlétika",
         "Ugrótechnika",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "atletika"
     },
     {
       "id": "photo:cs2026-026",
@@ -589,7 +619,8 @@
         "Úszás",
         "Légzésritmus",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "uszas"
     },
     {
       "id": "photo:cs2026-027",
@@ -606,7 +637,8 @@
         "Úszás",
         "Siklás",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "uszas"
     },
     {
       "id": "photo:cs2026-028",
@@ -623,7 +655,8 @@
         "Úszás",
         "Forduló",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "uszas"
     },
     {
       "id": "photo:cs2026-029",
@@ -640,7 +673,8 @@
         "Röplabda",
         "Alkarérintés",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "roplabda"
     },
     {
       "id": "photo:cs2026-030",
@@ -657,7 +691,8 @@
         "Röplabda",
         "Nyitás",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "roplabda"
     },
     {
       "id": "photo:cs2026-031",
@@ -674,7 +709,8 @@
         "Röplabda",
         "Csapathelyezkedés",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "roplabda"
     },
     {
       "id": "photo:cs2026-032",
@@ -691,7 +727,8 @@
         "Asztalitenisz",
         "Alapállás",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:cs2026-033",
@@ -708,7 +745,8 @@
         "Asztalitenisz",
         "Szerva",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "asztalitenisz"
     },
     {
       "id": "photo:cs2026-034",
@@ -725,7 +763,8 @@
         "Asztalitenisz",
         "Pörgetés",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "asztalitenisz"
     },
     {
       "id": "photo:cs2026-035",
@@ -742,7 +781,8 @@
         "Erőnlét",
         "Fokozatosság",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:cs2026-036",
@@ -759,7 +799,8 @@
         "Erőnlét",
         "Pihenőidő",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:cs2026-037",
@@ -776,7 +817,8 @@
         "Erőnlét",
         "Mobilitás",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:cs2026-038",
@@ -793,7 +835,8 @@
         "Sportközösség",
         "Sportszerűség",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:cs2026-039",
@@ -810,7 +853,8 @@
         "Sportközösség",
         "Együttműködés",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:cs2026-040",
@@ -827,7 +871,8 @@
         "Sportközösség",
         "Biztonság",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:cs2026-041",
@@ -1523,7 +1568,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-20.webp",
       "alt": "Tematikus kép: sportolói elismerés",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:021",
@@ -1539,7 +1585,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-22.webp",
       "alt": "Tematikus kép: sportrehabilitáció",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:023",
@@ -1547,7 +1594,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-23.webp",
       "alt": "Tematikus kép: falmászás",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:024",
@@ -1555,7 +1603,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-24.webp",
       "alt": "Tematikus kép: kerékpáros közösség",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:025",
@@ -1595,7 +1644,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-29.webp",
       "alt": "Tematikus kép: kosárlabda – dobás",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "kosarlabda"
     },
     {
       "id": "photo:030",
@@ -1603,7 +1653,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-30.webp",
       "alt": "Tematikus kép: atlétika – rajt",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "atletika"
     },
     {
       "id": "photo:031",
@@ -1611,7 +1662,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-31.webp",
       "alt": "Tematikus kép: úszás – gyorsúszás",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "uszas"
     },
     {
       "id": "photo:032",
@@ -1619,7 +1671,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-32.webp",
       "alt": "Tematikus kép: röplabda – háló fölött",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "roplabda"
     },
     {
       "id": "photo:033",
@@ -1659,7 +1712,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-37.webp",
       "alt": "Tematikus kép: kézilabdameccs",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:038",
@@ -1667,7 +1721,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-38.webp",
       "alt": "Tematikus kép: labdarúgás – edzés",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "labdarugas"
     },
     {
       "id": "photo:039",
@@ -1675,7 +1730,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-39.webp",
       "alt": "Tematikus kép: tenisz – koncentráció",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:040",
@@ -1683,7 +1739,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-40.webp",
       "alt": "Tematikus kép: evezőscsapat",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:041",
@@ -1691,7 +1748,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-41.webp",
       "alt": "Tematikus kép: bemelegítés a futópályán",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "atletika"
     },
     {
       "id": "photo:042",
@@ -1699,7 +1757,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-42.webp",
       "alt": "Tematikus kép: úszócsapat és közösség",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "uszas"
     },
     {
       "id": "photo:043",
@@ -1707,7 +1766,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-43.webp",
       "alt": "Tematikus kép: röplabdacsapat – együttműködés",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "roplabda"
     },
     {
       "id": "photo:044",
@@ -1715,7 +1775,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-44.webp",
       "alt": "Tematikus kép: labdarúgóedzés",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "labdarugas"
     },
     {
       "id": "photo:045",
@@ -1723,7 +1784,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-45.webp",
       "alt": "Tematikus kép: karate és önfegyelem",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:046",
@@ -1731,7 +1793,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-46.webp",
       "alt": "Tematikus kép: torna – egyensúlygyakorlat",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "photo:047",
@@ -1747,7 +1810,8 @@
       "category": "sport",
       "src": "assets/media/web/eletkep-48.webp",
       "alt": "Tematikus kép: díjátadás és sportelismerés",
-      "verifiedSchoolPhoto": false
+      "verifiedSchoolPhoto": false,
+      "sportDiscipline": "egyeb"
     },
     {
       "id": "graphic:kosarlabda",
@@ -1761,7 +1825,8 @@
         "Kosárlabda",
         "ikon",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "kosarlabda"
     },
     {
       "id": "graphic:labdarugas",
@@ -1775,7 +1840,8 @@
         "Labdarúgás",
         "ikon",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "labdarugas"
     },
     {
       "id": "graphic:atletika",
@@ -1789,7 +1855,8 @@
         "Atlétika",
         "ikon",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "atletika"
     },
     {
       "id": "graphic:uszas",
@@ -1803,7 +1870,8 @@
         "Úszás",
         "ikon",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "uszas"
     },
     {
       "id": "graphic:roplabda",
@@ -1817,7 +1885,8 @@
         "Röplabda",
         "ikon",
         "sport"
-      ]
+      ],
+      "sportDiscipline": "roplabda"
     },
     {
       "id": "graphic:konyv",

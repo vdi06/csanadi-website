@@ -9,40 +9,39 @@
     "json/adatok/iskolatorteneti-idovonal.json",
     "json/adatok/kepgaleria.json",
     "json/adatok/napi-sporthirek.json",
+    "json/adatok/oldalmedia-2026.json",
     "json/adatok/social.json",
     "json/adatok/sportsikerek.json",
     "json/adatok/tantestulet.json",
     "json/adatok/tanuloi-sikerek.json",
     "json/assets-inventory.json",
-    "json/assets-project-index.json",
     "json/config.json",
     "json/mediatar.json",
-    "json/oldalak/hirek-es-esemenyek.json",
-    "json/oldalak/hirek-es-esemenyek/esemenynaptar.json",
     "json/oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json",
     "json/oldalak/hirek-es-esemenyek/esemenynaptar/sportesemenyek.json",
-    "json/oldalak/hirek-es-esemenyek/hirek.json",
+    "json/oldalak/hirek-es-esemenyek/esemenynaptar.json",
     "json/oldalak/hirek-es-esemenyek/hirek/hirarchivum.json",
     "json/oldalak/hirek-es-esemenyek/hirek/iskolai-hirek.json",
     "json/oldalak/hirek-es-esemenyek/hirek/sporthirek.json",
+    "json/oldalak/hirek-es-esemenyek/hirek.json",
     "json/oldalak/hirek-es-esemenyek/kozlemenyek.json",
-    "json/oldalak/informaciok.json",
+    "json/oldalak/hirek-es-esemenyek.json",
     "json/oldalak/informaciok/adatvedelem.json",
     "json/oldalak/informaciok/allaspalyazatok.json",
     "json/oldalak/informaciok/digitalis-ugyintezes.json",
-    "json/oldalak/informaciok/dokumentumtar.json",
     "json/oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json",
     "json/oldalak/informaciok/dokumentumtar/nyomtatvanyok.json",
     "json/oldalak/informaciok/dokumentumtar/szabalyzatok.json",
-    "json/oldalak/informaciok/kozossegi-szolgalat.json",
+    "json/oldalak/informaciok/dokumentumtar.json",
     "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json",
     "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok.json",
     "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok.json",
-    "json/oldalak/informaciok/mindennapi-tudnivalok.json",
+    "json/oldalak/informaciok/kozossegi-szolgalat.json",
     "json/oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json",
     "json/oldalak/informaciok/mindennapi-tudnivalok/etkezes.json",
     "json/oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json",
-    "json/oldalak/iskolank.json",
+    "json/oldalak/informaciok/mindennapi-tudnivalok.json",
+    "json/oldalak/informaciok.json",
     "json/oldalak/iskolank/a-honlap-szuletese.json",
     "json/oldalak/iskolank/alapitvany.json",
     "json/oldalak/iskolank/bemutatkozas.json",
@@ -53,36 +52,37 @@
     "json/oldalak/iskolank/partnerek.json",
     "json/oldalak/iskolank/tantestulet.json",
     "json/oldalak/iskolank/tortenet.json",
+    "json/oldalak/iskolank.json",
     "json/oldalak/kapcsolat.json",
     "json/oldalak/kezdolap.json",
-    "json/oldalak/oktatas.json",
     "json/oldalak/oktatas/digitalis-kultura.json",
-    "json/oldalak/oktatas/felveteli.json",
     "json/oldalak/oktatas/felveteli/elso-evfolyam.json",
     "json/oldalak/oktatas/felveteli/felveteli-hataridok.json",
     "json/oldalak/oktatas/felveteli/kilencedik-evfolyam.json",
     "json/oldalak/oktatas/felveteli/nyilt-napok.json",
-    "json/oldalak/oktatas/kepzeseink.json",
+    "json/oldalak/oktatas/felveteli.json",
     "json/oldalak/oktatas/kepzeseink/altalanos-iskola.json",
     "json/oldalak/oktatas/kepzeseink/gimnazium.json",
     "json/oldalak/oktatas/kepzeseink/sportiskolai-neveles.json",
-    "json/oldalak/oktatas/konyvtar.json",
+    "json/oldalak/oktatas/kepzeseink.json",
     "json/oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json",
+    "json/oldalak/oktatas/konyvtar.json",
     "json/oldalak/oktatas/tananyagok-es-jegyzetek.json",
-    "json/oldalak/oktatas/tanevek.json",
     "json/oldalak/oktatas/tanevek/aktualis-tanev.json",
     "json/oldalak/oktatas/tanevek/korabbi-tanevek.json",
-    "json/oldalak/oktatas/vizsgak.json",
+    "json/oldalak/oktatas/tanevek.json",
     "json/oldalak/oktatas/vizsgak/egyeb-vizsgak.json",
     "json/oldalak/oktatas/vizsgak/erettsegi.json",
     "json/oldalak/oktatas/vizsgak/osztalyozo-vizsgak.json",
-    "json/oldalak/sport.json",
+    "json/oldalak/oktatas/vizsgak.json",
+    "json/oldalak/oktatas.json",
     "json/oldalak/sport/csapatok.json",
     "json/oldalak/sport/edzok.json",
     "json/oldalak/sport/sportagak.json",
     "json/oldalak/sport/sporteredmenyek.json",
     "json/oldalak/sport/sportgaleriak.json",
     "json/oldalak/sport/sportolok.json",
+    "json/oldalak/sport.json",
     "json/oldalindex.json",
     "json/schemas/dokumentumok.schema.json",
     "json/schemas/tanuloi-sikerek.schema.json",
@@ -94,6 +94,7 @@
     "css/dfg-2026.css",
     "css/extended-hubs-2026.css",
     "css/gallery-h-2026.css",
+    "css/gate-key-2026.css",
     "css/home-gallery-news-gate-2026.css",
     "css/interactions-be-2026.css",
     "css/j-home-layout-2026.css",
@@ -101,6 +102,7 @@
     "css/j-search-2026.css",
     "css/kmil-2026.css",
     "css/layout-2026.css",
+    "css/media-experience-2026.css",
     "css/media-manager-2026.css",
     "css/menu-backdrop-guaranteed-2026.css",
     "css/mobile-compact-h2-2026.css",
@@ -115,12 +117,12 @@
     "css/style.css",
     "css/tenway-2026.css",
     "css/tools-2026.css",
-    "index.html",
     "js/advanced-2026.js",
     "js/app.js",
     "js/blocks.js",
     "js/content.js",
     "js/daily-sport-news.js",
+    "js/document-collections-2026.js",
     "js/documents.js",
     "js/experience-2026.js",
     "js/extended-hubs-2026.js",
@@ -132,6 +134,7 @@
     "js/media.js",
     "js/news-2026.js",
     "js/next10-2026.js",
+    "js/page-media-2026.js",
     "js/performance-diagnostics-2026.js",
     "js/premium-home-2026.js",
     "js/search-j-2026.js",
@@ -139,1674 +142,2250 @@
     "js/sports-successes.js",
     "js/student-achievements.js",
     "js/tenway-2026.js",
-    "script.js",
     "tools/eszkoz-mediator.html",
     "tools/media-manager-2026.js",
     "tools/oldal-json-szerkeszto.html",
     "tools/oldalindex-frissito.html",
     "tools/sporthirek-szerkeszto.html",
     "tools/tool-ui-2026.js",
-    "tools/zip-native-2026.js"
+    "tools/zip-native-2026.js",
+    "script.js",
+    "index.html"
   ],
   "assetReferences": {
-    "assets/documents/digitalis-fajlok-es-beadas.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/graphics/ikon-labdarugas.svg": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
     ],
-    "assets/documents/felveteli-tajekozodasi-segedlet-2026.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/graphics/ikon-atletika.svg": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
     ],
-    "assets/documents/tanulas-sport-idogazdalkodas.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/graphics/ikon-kosarlabda.svg": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
     ],
-    "assets/graphics/sports-pattern-dark.svg": [
-      "css/next-2026.css",
-      "css/orbit-2026.css",
-      "css/style.css"
+    "assets/graphics/ikon-roplabda.svg": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/ikon-uszas.svg": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
     ],
     "assets/graphics/sports-pattern-light.svg": [
+      "json/assets-inventory.json",
       "css/next-2026.css",
       "css/orbit-2026.css",
       "css/style.css"
     ],
+    "assets/graphics/ikon-naptar.svg": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/ikon-laptop.svg": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/sports-pattern-dark.svg": [
+      "json/assets-inventory.json",
+      "css/next-2026.css",
+      "css/orbit-2026.css",
+      "css/style.css"
+    ],
+    "assets/graphics/ikon-konyv.svg": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/ikon-kozosseg.svg": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/ikon-fenntarthatosag.svg": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-13.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-08.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-03.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-15.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-01.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-05.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-04.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/felveteli-tajekozodasi-segedlet-2026.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/tanulas-sport-idogazdalkodas.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-02.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-11.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-12.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/digitalis-fajlok-es-beadas.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-14.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-06.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-10.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-07.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/segedlet-2026-09.pdf": [
+      "json/adatok/dokumentumok.json",
+      "json/assets-inventory.json"
+    ],
     "assets/media/logo/csanadi-cimer-512.webp": [
-      "index.html",
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "js/advanced-2026.js",
       "js/next10-2026.js",
-      "json/mediatar.json",
       "tools/eszkoz-mediator.html",
       "tools/oldal-json-szerkeszto.html",
       "tools/oldalindex-frissito.html",
-      "tools/sporthirek-szerkeszto.html"
+      "tools/sporthirek-szerkeszto.html",
+      "index.html"
     ],
-    "assets/media/video/sport-pillanatok.mp4": [
-      "json/adatok/galeriavideok.json"
-    ],
-    "assets/media/video/tudas-kozosseg.mp4": [
-      "json/adatok/galeriavideok.json"
-    ],
-    "assets/media/web/belepes-kapu.webp": [
-      "css/interactions-be-2026.css",
-      "css/next-2026.css",
-      "css/style.css"
-    ],
-    "assets/media/web/belepes-nyitott.webp": [
-      "css/home-gallery-news-gate-2026.css"
-    ],
-    "assets/media/web/eletkep-01.webp": [
-      "json/adatok/galeriavideok.json",
+    "assets/media/web/eletkep-25.webp": [
       "json/adatok/kepgaleria.json",
-      "json/adatok/tanuloi-sikerek.json",
-      "json/mediatar.json"
+      "json/assets-inventory.json"
     ],
-    "assets/media/web/eletkep-02.webp": [
+    "assets/media/web/cs2026-044.webp": [
       "json/adatok/kepgaleria.json",
-      "json/adatok/tanuloi-sikerek.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/eletkep-03.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/eletkep-04.webp": [
       "json/adatok/kepgaleria.json",
       "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/eletkep-05.webp": [
+    "assets/media/web/eletkep-24.webp": [
       "json/adatok/kepgaleria.json",
-      "json/adatok/tanuloi-sikerek.json",
-      "json/mediatar.json"
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
     ],
-    "assets/media/web/eletkep-06.webp": [
+    "assets/media/web/eletkep-29.webp": [
       "json/adatok/kepgaleria.json",
-      "json/adatok/tanuloi-sikerek.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/eletkep-07.webp": [
-      "json/adatok/galeriavideok.json",
-      "json/adatok/kepgaleria.json",
-      "json/adatok/tanuloi-sikerek.json",
-      "json/mediatar.json"
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
     ],
     "assets/media/web/eletkep-08.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
       "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/eletkep-09.webp": [
+    "assets/media/web/belepes-nyitott.webp": [
+      "json/assets-inventory.json",
+      "css/home-gallery-news-gate-2026.css"
+    ],
+    "assets/media/web/cs2026-030.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/eletkep-10.webp": [
+    "assets/media/web/cs2026-070.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/eletkep-11.webp": [
+    "assets/media/web/cs2026-078.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/eletkep-12.webp": [
+    "assets/media/web/cs2026-020.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/eletkep-13.webp": [
+    "assets/media/web/cs2026-015.webp": [
       "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/eletkep-14.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/eletkep-15.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/eletkep-16.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/eletkep-17.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/eletkep-18.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/eletkep-19.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/eletkep-20.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/eletkep-21.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-22.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-23.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-24.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-25.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-26.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-27.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-28.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-29.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-30.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-31.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-32.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-33.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-34.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-35.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-36.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-37.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-38.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-39.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-40.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-41.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-42.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-43.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-44.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-45.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-46.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-47.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eletkep-48.webp": [
-      "json/adatok/kepgaleria.json"
-    ],
-    "assets/media/web/eredmenyek-1600.webp": [
-      "json/mediatar.json"
-    ],
-    "assets/media/web/esemenyek-1600.webp": [
-      "json/mediatar.json"
-    ],
-    "assets/media/web/felveteli-1600.webp": [
-      "json/mediatar.json"
-    ],
-    "assets/media/web/hero-1600.webp": [
-      "json/mediatar.json"
-    ],
-    "assets/media/web/iskolank-1600.webp": [
-      "json/mediatar.json"
-    ],
-    "assets/media/web/kapcsolat-1600.webp": [
-      "json/mediatar.json"
-    ],
-    "assets/media/web/kozosseg-1600.webp": [
-      "json/mediatar.json"
-    ],
-    "assets/media/web/oktatas-1600.webp": [
-      "json/mediatar.json"
-    ],
-    "assets/media/web/siker-atletika.webp": [
-      "json/mediatar.json"
-    ],
-    "assets/media/web/siker-kosarlabda.webp": [
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/siker-roplabda.webp": [
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/siker-uszas.webp": [
-      "json/mediatar.json"
-    ],
-    "assets/media/web/sport-1600.webp": [
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-001.webp": [
-      "json/adatok/galeriavideok.json",
+    "assets/media/web/cs2026-048.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-001-320.webp": [
+    "assets/media/web/cs2026-071.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-001-640.webp": [
+    "assets/media/web/cs2026-080.webp": [
       "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-001-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-002.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-002-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-002-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-002-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-003.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-003-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-003-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-003-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-004.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-004-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-004-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-004-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-005.webp": [
-      "json/adatok/galeriavideok.json",
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-005-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-005-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-005-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-006.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-006-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-006-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-006-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-007.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-007-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-007-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-007-960.webp": [
-      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/cs2026-008.webp": [
       "json/adatok/galeriavideok.json",
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-008-320.webp": [
-      "json/adatok/kepgaleria.json",
+    "assets/media/web/hero-1600.webp": [
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-008-640.webp": [
+    "assets/media/web/cs2026-052.webp": [
       "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-008-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-009.webp": [
-      "json/adatok/galeriavideok.json",
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-009-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-009-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-009-960.webp": [
-      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/cs2026-010.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-010-320.webp": [
+    "assets/media/web/cs2026-058.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-010-640.webp": [
+    "assets/media/web/eletkep-43.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/felveteli-1600.webp": [
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-010-960.webp": [
+    "assets/media/web/eletkep-13.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/cs2026-011.webp": [
-      "json/adatok/galeriavideok.json",
+    "assets/media/web/cs2026-038.webp": [
       "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-011-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-011-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-011-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-012.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-012-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-012-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-012-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-013.webp": [
-      "json/adatok/galeriavideok.json",
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-013-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-013-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-013-960.webp": [
-      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/cs2026-014.webp": [
       "json/adatok/galeriavideok.json",
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-014-320.webp": [
+    "assets/media/web/eletkep-23.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-42.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-40.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-009.webp": [
+      "json/adatok/galeriavideok.json",
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-014-640.webp": [
+    "assets/media/web/eletkep-12.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-014-960.webp": [
-      "json/adatok/kepgaleria.json",
+    "assets/media/web/sport-1600.webp": [
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/cs2026-015.webp": [
+    "assets/media/web/eletkep-31.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-36.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-10.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-015-320.webp": [
+    "assets/media/web/cs2026-003.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-015-640.webp": [
+    "assets/media/web/cs2026-041.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-015-960.webp": [
+    "assets/media/web/cs2026-045.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-077.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-47.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-054.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-047.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-072.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-051.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-066.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-022.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-48.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-17.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-37.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-004.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/kapcsolat-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-30.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-001.webp": [
+      "json/adatok/galeriavideok.json",
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-067.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-043.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-33.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-036.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-32.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-063.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-076.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/siker-atletika.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-16.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-059.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-062.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-074.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-064.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-031.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-069.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-20.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-41.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-019.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-07.webp": [
+      "json/adatok/galeriavideok.json",
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-35.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-040.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-11.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-032.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-18.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-21.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-002.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-039.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-013.webp": [
+      "json/adatok/galeriavideok.json",
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-26.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-057.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-055.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-14.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/siker-uszas.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/siker-kosarlabda.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-03.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-012.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/cs2026-016.webp": [
       "json/adatok/galeriavideok.json",
       "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-016-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-016-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-016-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-017.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-017-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-017-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-017-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-018.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-018-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-018-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-018-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-019.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-019-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-019-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-019-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-020.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-020-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-020-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-020-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-021.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-021-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-021-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-021-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-022.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-022-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-022-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-022-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-023.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-023-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-023-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-023-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-024.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-024-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-024-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-024-960.webp": [
-      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/cs2026-025.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-025-320.webp": [
+    "assets/media/web/cs2026-005.webp": [
+      "json/adatok/galeriavideok.json",
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-025-640.webp": [
+    "assets/media/web/eletkep-44.webp": [
       "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-025-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-026.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-026-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-026-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-026-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-027.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-027-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-027-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-027-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-028.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-028-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-028-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-028-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-029.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-029-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-029-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-029-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-030.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-030-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-030-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-030-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-031.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-031-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-031-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-031-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-032.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-032-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-032-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-032-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-033.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-033-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-033-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-033-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-034.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-034-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-034-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-034-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-035.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-035-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-035-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-035-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-036.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-036-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-036-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-036-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-037.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-037-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-037-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-037-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-038.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-038-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-038-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-038-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-039.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-039-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-039-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-039-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-040.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-040-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-040-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-040-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-041.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-041-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-041-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-041-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-042.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-042-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-042-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-042-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-043.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-043-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-043-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-043-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-044.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-044-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-044-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-044-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-045.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-045-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-045-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-045-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-046.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-046-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-046-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-046-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-047.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-047-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-047-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-047-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-048.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-048-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-048-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-048-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-049.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-049-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-049-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-049-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-050.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-050-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-050-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-050-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-051.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-051-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-051-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-051-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-052.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-052-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-052-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-052-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-053.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-053-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-053-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-053-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-054.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-054-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-054-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-054-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-055.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-055-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-055-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
+      "json/assets-inventory.json"
     ],
-    "assets/media/web/responsive/cs2026-055-960.webp": [
+    "assets/media/web/cs2026-079.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/cs2026-056.webp": [
+    "assets/media/web/eletkep-02.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-056-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-056-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-056-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-057.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-057-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-057-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-057-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-058.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-058-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-058-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-058-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-059.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-059-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-059-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-059-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-060.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-060-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-060-640.webp": [
-      "json/adatok/kepgaleria.json",
+    "assets/media/web/iskolank-1600.webp": [
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-060-960.webp": [
+    "assets/media/web/cs2026-024.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/cs2026-061.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-061-320.webp": [
+    "assets/media/web/eletkep-38.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-021.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-061-640.webp": [
+    "assets/media/web/cs2026-011.webp": [
+      "json/adatok/galeriavideok.json",
       "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-061-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-062.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-062-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-062-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-062-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-063.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-063-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-063-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-063-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-064.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-064-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-064-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-064-960.webp": [
-      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/cs2026-065.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-065-320.webp": [
+    "assets/media/web/cs2026-026.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-065-640.webp": [
+    "assets/media/web/cs2026-034.webp": [
       "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-065-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-066.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-066-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-066-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-066-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-067.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-067-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-067-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-067-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-068.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-068-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-068-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-068-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-069.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-069-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-069-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-069-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-070.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-070-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-070-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-070-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-071.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-071-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-071-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-071-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-072.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-072-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-072-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-072-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-073.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-073-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-073-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-073-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-074.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-074-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-074-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-074-960.webp": [
-      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/cs2026-075.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-075-320.webp": [
+    "assets/media/web/cs2026-007.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-075-640.webp": [
+    "assets/media/web/cs2026-029.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-075-960.webp": [
+    "assets/media/web/cs2026-046.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/cs2026-076.webp": [
+    "assets/media/web/eletkep-46.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-018.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-076-320.webp": [
+    "assets/media/web/cs2026-053.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-076-640.webp": [
+    "assets/media/web/belepes-kapu.webp": [
+      "json/assets-inventory.json",
+      "css/interactions-be-2026.css",
+      "css/next-2026.css",
+      "css/style.css"
+    ],
+    "assets/media/web/eletkep-01.webp": [
+      "json/adatok/galeriavideok.json",
       "json/adatok/kepgaleria.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-076-960.webp": [
+    "assets/media/web/eletkep-45.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-15.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/cs2026-077.webp": [
+    "assets/media/web/cs2026-006.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-077-320.webp": [
+    "assets/media/web/eletkep-19.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-077-640.webp": [
+    "assets/media/web/cs2026-037.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-077-960.webp": [
+    "assets/media/web/cs2026-060.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/cs2026-078.webp": [
+    "assets/media/web/kozosseg-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-049.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-39.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-033.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/esemenyek-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-27.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-09.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-22.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-34.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-027.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-017.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-28.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/eletkep-05.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-056.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-023.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-028.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-042.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-073.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eredmenyek-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-035.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-050.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/oktatas-1600.webp": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/eletkep-06.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/adatok/tanuloi-sikerek.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/cs2026-068.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/video/montazs-2026-07.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-05.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/tudas-kozosseg.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-01.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-08.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-04.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-06.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-10.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/sport-pillanatok.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-09.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-02.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-03.mp4": [
+      "json/adatok/galeriavideok.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/cs2026-064-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-035-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-004-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-025-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-044-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-065-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-038-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-010-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-013-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-071-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-020-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-032-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-010-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-069-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-059-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-011-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/responsive/cs2026-078-320.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-078-640.webp": [
+    "assets/media/web/responsive/cs2026-046-640.webp": [
       "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/media/web/responsive/cs2026-078-960.webp": [
+    "assets/media/web/responsive/cs2026-026-320.webp": [
       "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-079.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-079-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-079-640.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-079-960.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/cs2026-080.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-080-320.webp": [
-      "json/adatok/kepgaleria.json",
-      "json/mediatar.json"
-    ],
-    "assets/media/web/responsive/cs2026-080-640.webp": [
-      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/responsive/cs2026-080-960.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/graphics/ikon-kosarlabda.svg": [
-      "json/adatok/kepgaleria.json"
+    "assets/media/web/responsive/cs2026-058-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/graphics/ikon-labdarugas.svg": [
-      "json/adatok/kepgaleria.json"
+    "assets/media/web/responsive/cs2026-003-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/graphics/ikon-atletika.svg": [
-      "json/adatok/kepgaleria.json"
+    "assets/media/web/responsive/cs2026-029-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/graphics/ikon-uszas.svg": [
-      "json/adatok/kepgaleria.json"
+    "assets/media/web/responsive/cs2026-023-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/graphics/ikon-roplabda.svg": [
-      "json/adatok/kepgaleria.json"
+    "assets/media/web/responsive/cs2026-052-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/graphics/ikon-konyv.svg": [
-      "json/adatok/kepgaleria.json"
+    "assets/media/web/responsive/cs2026-077-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/graphics/ikon-laptop.svg": [
-      "json/adatok/kepgaleria.json"
+    "assets/media/web/responsive/cs2026-011-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/graphics/ikon-naptar.svg": [
-      "json/adatok/kepgaleria.json"
+    "assets/media/web/responsive/cs2026-059-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/graphics/ikon-kozosseg.svg": [
-      "json/adatok/kepgaleria.json"
+    "assets/media/web/responsive/cs2026-079-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/graphics/ikon-fenntarthatosag.svg": [
-      "json/adatok/kepgaleria.json"
+    "assets/media/web/responsive/cs2026-025-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-01.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-040-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-02.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-056-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-03.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-075-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-04.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-061-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-05.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-013-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-06.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-068-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-07.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-037-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-08.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-037-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-09.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-005-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-10.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-076-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-11.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-053-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-12.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-033-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-13.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-072-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-14.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-023-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/documents/segedlet-2026-15.pdf": [
-      "json/adatok/dokumentumok.json"
+    "assets/media/web/responsive/cs2026-051-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/media/video/montazs-2026-01.mp4": [
-      "json/adatok/galeriavideok.json"
+    "assets/media/web/responsive/cs2026-067-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/media/video/montazs-2026-02.mp4": [
-      "json/adatok/galeriavideok.json"
+    "assets/media/web/responsive/cs2026-030-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/media/video/montazs-2026-03.mp4": [
-      "json/adatok/galeriavideok.json"
+    "assets/media/web/responsive/cs2026-065-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/media/video/montazs-2026-04.mp4": [
-      "json/adatok/galeriavideok.json"
+    "assets/media/web/responsive/cs2026-074-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/media/video/montazs-2026-05.mp4": [
-      "json/adatok/galeriavideok.json"
+    "assets/media/web/responsive/cs2026-055-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/media/video/montazs-2026-06.mp4": [
-      "json/adatok/galeriavideok.json"
+    "assets/media/web/responsive/cs2026-034-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/media/video/montazs-2026-07.mp4": [
-      "json/adatok/galeriavideok.json"
+    "assets/media/web/responsive/cs2026-027-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/media/video/montazs-2026-08.mp4": [
-      "json/adatok/galeriavideok.json"
+    "assets/media/web/responsive/cs2026-038-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/media/video/montazs-2026-09.mp4": [
-      "json/adatok/galeriavideok.json"
+    "assets/media/web/responsive/cs2026-078-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
-    "assets/media/video/montazs-2026-10.mp4": [
-      "json/adatok/galeriavideok.json"
+    "assets/media/web/responsive/cs2026-045-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-047-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-069-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-067-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-073-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-004-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-016-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-026-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-047-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-033-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-066-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-059-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-036-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-071-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-025-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-034-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-039-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-054-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-052-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-055-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-062-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-005-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-043-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-015-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-018-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-052-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-021-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-013-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-015-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-035-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-043-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-012-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-057-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-029-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-061-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-075-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-054-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-050-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-054-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-018-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-072-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-060-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-020-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-051-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-047-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-068-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-017-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-077-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-015-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-007-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-014-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-005-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-037-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-026-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-022-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-008-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-061-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-003-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-060-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-039-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-064-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-050-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-001-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-012-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-058-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-063-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-055-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-007-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-075-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-009-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-011-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-070-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-046-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-031-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-028-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-019-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-048-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-049-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-079-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-041-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-048-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-009-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-019-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-040-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-003-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-064-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-053-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-042-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-042-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-030-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-065-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-051-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-007-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-016-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-073-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-009-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-022-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-031-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-030-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-044-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-031-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-008-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-041-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-074-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-027-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-056-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-078-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-006-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-057-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-019-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-042-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-020-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-046-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-017-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-079-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-045-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-049-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-053-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-034-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-040-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-043-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-066-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-014-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-021-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-070-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-070-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-068-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-045-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-004-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-036-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-066-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-006-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-032-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-074-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-008-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-023-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-056-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-069-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-049-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-058-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-080-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-048-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-036-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-072-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-071-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-050-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-010-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-035-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-021-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-073-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-062-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-001-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-077-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-060-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-002-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-006-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-027-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-029-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-017-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-076-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-001-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-022-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-033-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-032-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-024-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-063-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-012-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-002-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-002-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-044-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-057-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-024-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-067-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-028-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-080-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-024-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-076-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-016-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-038-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-028-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-018-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-014-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-062-320.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-041-640.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-039-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/adatok/oldalmedia-2026.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "assets/media/web/responsive/cs2026-063-960.webp": [
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ]
   },
   "mediaIdReferences": {
-    "media:logo": [],
+    "media:logo": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
     "media:hero": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json",
       "json/oldalindex.json"
     ],
     "media:iskolank": [
-      "json/oldalak/iskolank.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/iskolank/a-honlap-szuletese.json",
       "json/oldalak/iskolank/alapitvany.json",
       "json/oldalak/iskolank/bemutatkozas.json",
@@ -1815,68 +2394,79 @@
       "json/oldalak/iskolank/oko-iskola.json",
       "json/oldalak/iskolank/partnerek.json",
       "json/oldalak/iskolank/tortenet.json",
+      "json/oldalak/iskolank.json",
       "json/oldalak/kezdolap.json",
       "json/oldalindex.json"
     ],
     "media:oktatas": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/iskolank/tantestulet.json",
       "json/oldalak/kezdolap.json",
-      "json/oldalak/oktatas.json",
       "json/oldalak/oktatas/digitalis-kultura.json",
-      "json/oldalak/oktatas/kepzeseink.json",
       "json/oldalak/oktatas/kepzeseink/altalanos-iskola.json",
       "json/oldalak/oktatas/kepzeseink/gimnazium.json",
       "json/oldalak/oktatas/kepzeseink/sportiskolai-neveles.json",
-      "json/oldalak/oktatas/konyvtar.json",
+      "json/oldalak/oktatas/kepzeseink.json",
       "json/oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json",
+      "json/oldalak/oktatas/konyvtar.json",
       "json/oldalak/oktatas/tananyagok-es-jegyzetek.json",
-      "json/oldalak/oktatas/tanevek.json",
       "json/oldalak/oktatas/tanevek/aktualis-tanev.json",
       "json/oldalak/oktatas/tanevek/korabbi-tanevek.json",
-      "json/oldalak/oktatas/vizsgak.json",
+      "json/oldalak/oktatas/tanevek.json",
       "json/oldalak/oktatas/vizsgak/egyeb-vizsgak.json",
       "json/oldalak/oktatas/vizsgak/erettsegi.json",
       "json/oldalak/oktatas/vizsgak/osztalyozo-vizsgak.json",
+      "json/oldalak/oktatas/vizsgak.json",
+      "json/oldalak/oktatas.json",
       "json/oldalindex.json"
     ],
     "media:sport": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json",
-      "json/oldalak/sport.json",
       "json/oldalak/sport/sportagak.json",
       "json/oldalak/sport/sportgaleriak.json",
+      "json/oldalak/sport.json",
       "json/oldalindex.json"
     ],
     "media:kozosseg": [
-      "json/oldalak/informaciok.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/informaciok/adatvedelem.json",
       "json/oldalak/informaciok/allaspalyazatok.json",
       "json/oldalak/informaciok/digitalis-ugyintezes.json",
-      "json/oldalak/informaciok/dokumentumtar.json",
       "json/oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json",
       "json/oldalak/informaciok/dokumentumtar/nyomtatvanyok.json",
       "json/oldalak/informaciok/dokumentumtar/szabalyzatok.json",
-      "json/oldalak/informaciok/kozossegi-szolgalat.json",
+      "json/oldalak/informaciok/dokumentumtar.json",
       "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json",
       "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok.json",
       "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok.json",
-      "json/oldalak/informaciok/mindennapi-tudnivalok.json",
+      "json/oldalak/informaciok/kozossegi-szolgalat.json",
       "json/oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json",
       "json/oldalak/informaciok/mindennapi-tudnivalok/etkezes.json",
       "json/oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json",
+      "json/oldalak/informaciok/mindennapi-tudnivalok.json",
+      "json/oldalak/informaciok.json",
       "json/oldalak/kezdolap.json",
       "json/oldalindex.json"
     ],
     "media:felveteli": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json",
-      "json/oldalak/oktatas/felveteli.json",
       "json/oldalak/oktatas/felveteli/elso-evfolyam.json",
       "json/oldalak/oktatas/felveteli/felveteli-hataridok.json",
       "json/oldalak/oktatas/felveteli/kilencedik-evfolyam.json",
       "json/oldalak/oktatas/felveteli/nyilt-napok.json",
+      "json/oldalak/oktatas/felveteli.json",
       "json/oldalindex.json"
     ],
     "media:eredmenyek": [
       "json/adatok/sportsikerek.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/iskolank/buszkesegeink.json",
       "json/oldalak/kezdolap.json",
       "json/oldalak/sport/csapatok.json",
@@ -1886,312 +2476,535 @@
       "json/oldalindex.json"
     ],
     "media:esemenyek": [
-      "json/oldalak/hirek-es-esemenyek.json",
-      "json/oldalak/hirek-es-esemenyek/esemenynaptar.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json",
       "json/oldalak/hirek-es-esemenyek/esemenynaptar/sportesemenyek.json",
-      "json/oldalak/hirek-es-esemenyek/hirek.json",
+      "json/oldalak/hirek-es-esemenyek/esemenynaptar.json",
       "json/oldalak/hirek-es-esemenyek/hirek/hirarchivum.json",
       "json/oldalak/hirek-es-esemenyek/hirek/iskolai-hirek.json",
       "json/oldalak/hirek-es-esemenyek/hirek/sporthirek.json",
+      "json/oldalak/hirek-es-esemenyek/hirek.json",
       "json/oldalak/hirek-es-esemenyek/kozlemenyek.json",
+      "json/oldalak/hirek-es-esemenyek.json",
       "json/oldalak/kezdolap.json",
       "json/oldalindex.json"
     ],
     "media:kapcsolat": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kapcsolat.json",
       "json/oldalak/kezdolap.json",
       "json/oldalindex.json"
     ],
     "media:siker-atletika": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json"
     ],
     "media:siker-kosarlabda": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json"
     ],
     "media:siker-uszas": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json"
     ],
     "media:siker-roplabda": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json"
     ],
     "media:eletkep-01": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json"
     ],
     "media:eletkep-02": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json"
     ],
     "media:eletkep-03": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json"
     ],
     "media:eletkep-04": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json"
     ],
     "media:eletkep-05": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json"
     ],
     "media:eletkep-06": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json"
     ],
     "media:eletkep-07": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json"
     ],
     "media:eletkep-08": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json"
     ],
     "media:eletkep-09": [
+      "json/assets-inventory.json",
+      "json/mediatar.json",
       "json/oldalak/kezdolap.json"
     ],
-    "media:eletkep-10": [],
-    "media:eletkep-11": [],
-    "media:eletkep-12": [],
-    "media:eletkep-13": [],
-    "media:eletkep-14": [],
-    "media:eletkep-15": [],
-    "media:eletkep-16": [],
-    "media:eletkep-17": [],
-    "media:eletkep-18": [],
-    "media:eletkep-19": [],
-    "media:eletkep-20": [],
+    "media:eletkep-10": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "media:eletkep-11": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "media:eletkep-12": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "media:eletkep-13": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "media:eletkep-14": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "media:eletkep-15": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "media:eletkep-16": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "media:eletkep-17": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "media:eletkep-18": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "media:eletkep-19": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
+    "media:eletkep-20": [
+      "json/assets-inventory.json",
+      "json/mediatar.json"
+    ],
     "media:cs2026-001": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-002": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-003": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-004": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-005": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-006": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-007": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-008": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-009": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-010": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-011": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-012": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-013": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-014": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-015": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-016": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-017": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-018": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-019": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-020": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-021": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-022": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-023": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-024": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-025": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-026": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-027": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-028": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-029": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-030": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-031": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-032": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-033": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-034": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-035": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-036": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-037": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-038": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-039": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-040": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-041": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-042": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-043": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-044": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-045": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-046": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-047": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-048": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-049": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-050": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-051": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-052": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-053": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-054": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-055": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-056": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-057": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-058": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-059": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-060": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-061": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-062": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-063": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-064": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-065": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-066": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-067": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-068": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-069": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-070": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-071": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-072": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-073": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-074": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-075": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-076": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-077": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-078": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-079": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ],
     "media:cs2026-080": [
-      "json/adatok/kepgaleria.json"
+      "json/adatok/kepgaleria.json",
+      "json/assets-inventory.json",
+      "json/mediatar.json"
     ]
   }
 }

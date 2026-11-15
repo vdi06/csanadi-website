@@ -56,6 +56,18 @@
           <label class="mm-file-action">+ Új fájlok hozzáadása<input id="mm-add" type="file" multiple accept="image/png,image/jpeg,image/webp,image/avif,image/gif,image/svg+xml,video/mp4,video/webm,application/pdf,.doc,.docx,.odt,.csv,.txt,.svg,.mp3,.wav"></label>
           <label class="mm-file-action mm-secondary">Mappa importálása<input id="mm-folder" type="file" multiple webkitdirectory directory></label>
         </div>
+        <section class="mm-bulk" aria-label="Tömeges fájlműveletek">
+          <h3>Gyors csoportos szerkesztés</h3>
+          <p id="mm-bulk-count" aria-live="polite">0 fájl kijelölve</p>
+          <div class="mm-bulk-controls">
+            <button type="button" id="mm-select-visible">Látható fájlok kijelölése</button>
+            <button type="button" id="mm-clear-visible">Kijelölés törlése</button>
+            <label for="mm-bulk-category">Kategória<input id="mm-bulk-category" placeholder="sport, oktatas, kozosseg"></label>
+            <label for="mm-bulk-tags">Új közös címkék<input id="mm-bulk-tags" placeholder="például: kosárlabda, archívum"></label>
+            <button type="button" class="primary" id="mm-bulk-apply">Kategória és címkék alkalmazása</button>
+            <button type="button" id="mm-usage-report">Hivatkozási jegyzék CSV</button>
+          </div>
+        </section>
         <p class="mm-small" id="mm-list-count" role="status" aria-live="polite"></p>
         <div id="mm-list" class="mm-list" aria-label="Médiafájlok listája"></div>
       </section>
