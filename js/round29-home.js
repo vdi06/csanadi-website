@@ -9,6 +9,10 @@ const sections=[
 const create=(tag,cls,content)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(content!==undefined)n.textContent=content;return n;};
 let drawer,trigger,lastFocus;
 let activeObserver;
+let mobileBar,mobileSheet,mobileBackdrop,mobileList,mobileCurrent,mobilePrevious,mobileNext;
+let mobileTargets=[],mobileIndex=0,mobileLastFocus=null,mobileOldOverflow='';
+const mobileMode=()=>window.matchMedia('(max-width:768px)').matches;
+const motion=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth';
 function getCards(canvas){
  const folds=[...canvas.querySelectorAll(':scope > .home-j-fold')];
  const byTitle=part=>folds.find(fold=>fold.querySelector('summary strong')?.textContent.includes(part));
@@ -33,6 +37,78 @@ function toggle(open){
  if(!drawer)return;
  drawer.hidden=!open;trigger.setAttribute('aria-expanded',String(open));trigger.setAttribute('aria-label',open?'Kezdőoldali szakasznavigátor bezárása':'Kezdőoldali szakasznavigátor megnyitása');
  if(open){lastFocus=document.activeElement;drawer.querySelector('button')?.focus();}else if(lastFocus?.isConnected)lastFocus.focus();
+}
+function closeMobileSheet(restoreFocus=true){
+ if(!mobileSheet||mobileSheet.hidden)return;
+ mobileSheet.hidden=true;mobileBackdrop.hidden=true;
+ document.body.style.overflow=mobileOldOverflow;
+ mobileBar.querySelector('[data-action="sections"]')?.setAttribute('aria-expanded','false');
+ if(restoreFocus&&mobileLastFocus?.isConnected)mobileLastFocus.focus();
+}
+function openMobileSheet(){
+ if(!mobileMode()||!mobileSheet||mobileBar.hidden)return;
+ if(drawer&&!drawer.hidden)toggle(false);
+ mobileLastFocus=document.activeElement;mobileOldOverflow=document.body.style.overflow;
+ mobileBackdrop.hidden=false;mobileSheet.hidden=false;document.body.style.overflow='hidden';
+ mobileBar.querySelector('[data-action="sections"]')?.setAttribute('aria-expanded','true');
+ const focusTarget=mobileList.querySelector('[aria-current="location"]')||mobileSheet.querySelector('button');focusTarget?.focus();
+}
+function updateMobilePosition(){
+ if(!mobileBar||mobileBar.hidden||!mobileTargets.length)return;
+ const threshold=window.innerHeight*.36;
+ let active=0;
+ mobileTargets.forEach((entry,index)=>{if(!entry.target.hidden&&entry.target.getBoundingClientRect().top<=threshold)active=index;});
+ mobileIndex=active;
+ mobileCurrent.textContent=mobileTargets[active]?.label||'Kezdőlap';
+ mobilePrevious.disabled=active===0;mobileNext.disabled=active===mobileTargets.length-1;
+ for(const b of mobileList.querySelectorAll('[data-mobile-index]')){
+  if(Number(b.dataset.mobileIndex)===active)b.setAttribute('aria-current','location');else b.removeAttribute('aria-current');
+ }
+}
+function jumpMobile(index){
+ const item=mobileTargets[index];if(!item)return;
+ closeMobileSheet(false);
+ if(item.target.tagName==='DETAILS')item.target.open=true;
+ item.target.scrollIntoView({behavior:motion(),block:'start'});
+ mobileIndex=index;mobileCurrent.textContent=item.label;
+ updateMobilePosition();
+}
+function mountMobileNavigator(){
+ if(mobileBar)return;
+ mobileBar=create('nav','cs32-mobile-bar');mobileBar.setAttribute('aria-label','Kezdőoldali szakasznavigáció');mobileBar.hidden=true;
+ const actions=[['top','⌂','Eleje'],['previous','↑','Előző'],['next','↓','Következő'],['sections','☷','Szakaszok']];
+ for(const [id,glyph,label] of actions){
+  const b=create('button','cs32-mobile-action');b.type='button';b.dataset.action=id;
+  b.append(create('span','cs32-mobile-glyph',glyph),create('span','cs32-mobile-label',label));b.setAttribute('aria-label',label);
+  if(id==='sections'){b.setAttribute('aria-controls','cs32-mobile-sheet');b.setAttribute('aria-expanded','false');}
+  b.addEventListener('click',()=>{
+   if(id==='top'){closeMobileSheet(false);window.scrollTo({top:0,behavior:motion()});}
+   if(id==='previous')jumpMobile(Math.max(0,mobileIndex-1));
+   if(id==='next')jumpMobile(Math.min(mobileTargets.length-1,mobileIndex+1));
+   if(id==='sections')openMobileSheet();
+  });mobileBar.append(b);
+ }
+ mobilePrevious=mobileBar.querySelector('[data-action="previous"]');mobileNext=mobileBar.querySelector('[data-action="next"]');
+ mobileCurrent=create('span','cs32-mobile-current','Kezdőlap');mobileCurrent.setAttribute('aria-live','off');
+ mobileBar.append(mobileCurrent);
+ mobileBackdrop=create('button','cs32-mobile-backdrop');mobileBackdrop.type='button';mobileBackdrop.hidden=true;mobileBackdrop.setAttribute('aria-label','Szakaszlista bezárása');mobileBackdrop.addEventListener('click',()=>closeMobileSheet());
+ mobileSheet=create('aside','cs32-mobile-sheet');mobileSheet.hidden=true;mobileSheet.id='cs32-mobile-sheet';mobileSheet.setAttribute('role','dialog');mobileSheet.setAttribute('aria-modal','true');mobileSheet.setAttribute('aria-label','Kezdőoldali szakaszok');
+ const head=create('div','cs32-mobile-sheet-head');head.append(create('h2','','Ugrás a kezdőoldalon'));
+ const close=create('button','cs32-mobile-close','×');close.type='button';close.setAttribute('aria-label','Szakaszlista bezárása');close.addEventListener('click',()=>closeMobileSheet());head.append(close);
+ mobileList=create('div','cs32-mobile-list');mobileSheet.append(head,mobileList);
+ document.body.append(mobileBackdrop,mobileSheet,mobileBar);
+ document.addEventListener('keydown',event=>{
+  if(!mobileSheet||mobileSheet.hidden)return;
+  if(event.key==='Escape'){event.preventDefault();closeMobileSheet();}
+  if(event.key==='Tab'){
+   const items=[...mobileSheet.querySelectorAll('button:not(:disabled)')];const first=items[0],last=items.at(-1);
+   if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+   else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+  }
+ });
+ let pending=false;
+ window.addEventListener('scroll',()=>{if(pending||!mobileMode()||mobileBar.hidden)return;pending=true;requestAnimationFrame(()=>{pending=false;updateMobilePosition();});},{passive:true});
+ window.addEventListener('resize',()=>{if(mobileMode()&&drawer&&!drawer.hidden)toggle(false);if(!mobileMode())closeMobileSheet(false);updateMobilePosition();});
 }
 function makeApproach(){
  const section=create('section','cs29-approach');section.id='cs29-section-approach';
@@ -113,18 +189,20 @@ function buildLinks(canvas){
  visible.sort((a,b)=>{const x=cards[a[0]].compareDocumentPosition(cards[b[0]]);return x&Node.DOCUMENT_POSITION_FOLLOWING?-1:x&Node.DOCUMENT_POSITION_PRECEDING?1:0;});
  const targets=[];
  for(const [id,label] of visible){const target=cards[id];target.id='cs29-section-'+id;const link=create('button','cs29-nav-item',label);link.type='button';link.addEventListener('click',()=>{toggle(false);target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});});link.dataset.section=id;nav.append(link);targets.push(target);}
+ mobileTargets=visible.map(([id,label])=>({id,label,target:cards[id]}));
+ if(mobileList){mobileList.replaceChildren();mobileTargets.forEach(({label},index)=>{const button=create('button','cs32-mobile-list-item',label);button.type='button';button.dataset.mobileIndex=String(index);button.addEventListener('click',()=>jumpMobile(index));mobileList.append(button);});updateMobilePosition();}
  if('IntersectionObserver' in window){activeObserver=new IntersectionObserver(entries=>{const current=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!current)return;for(const button of nav.querySelectorAll('button')){if(button.dataset.section===current.target.id.replace('cs29-section-',''))button.setAttribute('aria-current','location');else button.removeAttribute('aria-current');}},{rootMargin:'-10% 0px -65% 0px',threshold:[0,.1,.3]});targets.forEach(target=>activeObserver.observe(target));}
 }
 export function enhanceRound29Home(canvas){
- mountNavigator();const approach=makeApproach();canvas.append(approach);
+ mountNavigator();mountMobileNavigator();const approach=makeApproach();canvas.append(approach);
  const folds=[...canvas.querySelectorAll(':scope > .home-j-fold')];folds.forEach(enhanceFold);
  enhanceQuicklinks(canvas);
  canvas.querySelectorAll('.home-j-fold-grid > .home-unit').forEach((card,i)=>card.style.setProperty('--cs29-stagger',Math.min(i,8)*85+'ms'));
  const personalizer=canvas.querySelector('.csn21-personalizer');
  if(personalizer){personalizer.addEventListener('click',()=>queueMicrotask(()=>buildLinks(canvas)));personalizer.addEventListener('change',()=>queueMicrotask(()=>buildLinks(canvas)));}
- buildLinks(canvas);trigger.hidden=false;
+ buildLinks(canvas);trigger.hidden=false;mobileBar.hidden=false;updateMobilePosition();
 }
-export function syncRound29HomeNavigation(isHome){if(trigger){trigger.hidden=!isHome;if(!isHome)toggle(false);}}
+export function syncRound29HomeNavigation(isHome){if(trigger){trigger.hidden=!isHome;if(!isHome)toggle(false);}if(mobileBar){mobileBar.hidden=!isHome;if(!isHome)closeMobileSheet(false);}}
 export function initRound29Diagnostics(){
  const details=document.getElementById('footer-diagnostics-disclosure');if(!details||details.dataset.cs29Ready)return;details.dataset.cs29Ready='yes';
  const mount=details.querySelector('#footer-diagnostics-mount');const close=create('button','cs29-diagnostics-close','×');close.type='button';close.setAttribute('aria-label','Honlapdiagnosztika bezárása');mount.before(close);

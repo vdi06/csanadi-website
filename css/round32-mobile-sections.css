@@ -1,0 +1,24 @@
+/* Mobilos kezdőoldali szakasznavigáció: a meglévő általános mobil-menüsáv felett. */
+.cs32-mobile-bar,.cs32-mobile-sheet,.cs32-mobile-backdrop{display:none}
+@media(max-width:768px){
+ .cs29-nav-trigger,.cs29-nav-drawer{display:none!important}
+ .cs32-mobile-bar:not([hidden]){position:fixed;z-index:1120;left:0;right:0;bottom:calc(66px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;padding:7px 9px 17px;background:color-mix(in srgb,var(--card) 94%,transparent);color:var(--ink);border-top:1px solid var(--gold);box-shadow:0 -8px 28px rgba(0,0,0,.16);backdrop-filter:blur(13px)}
+ .cs32-mobile-action{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:0;min-height:49px;padding:3px 2px;border:0;border-radius:10px;background:transparent;color:var(--ink);font-weight:800;cursor:pointer}
+ .cs32-mobile-action:hover:not(:disabled),.cs32-mobile-action:focus-visible{background:color-mix(in srgb,var(--gold) 16%,var(--card))}
+ .cs32-mobile-action:disabled{opacity:.36;cursor:default}
+ .cs32-mobile-glyph{font-size:23px;line-height:1;min-height:23px}
+ .cs32-mobile-label{font-size:10px;line-height:1.2}
+ .cs32-mobile-current{position:absolute;bottom:3px;left:8px;right:8px;display:block;text-align:center;font-size:10px;line-height:1.1;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none}
+ .cs32-mobile-backdrop:not([hidden]){display:block;position:fixed;inset:0;z-index:1220;border:0;border-radius:0;background:rgba(3,14,28,.65);cursor:pointer}
+ .cs32-mobile-sheet:not([hidden]){position:fixed;display:flex;flex-direction:column;z-index:1230;left:0;right:0;bottom:0;max-height:min(78dvh,680px);padding:16px 16px calc(18px + env(safe-area-inset-bottom));border-radius:22px 22px 0 0;background:var(--card);color:var(--ink);box-shadow:0 -20px 60px rgba(0,0,0,.4);animation:cs32-sheet-in .34s cubic-bezier(.22,.8,.22,1) both}
+ @keyframes cs32-sheet-in{from{opacity:.75;transform:translateY(100%)}to{opacity:1;transform:translateY(0)}}
+ .cs32-mobile-sheet-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+ .cs32-mobile-sheet-head h2{margin:0;font-size:20px}
+ .cs32-mobile-close{width:44px;height:44px;flex:none;border:1px solid var(--line);border-radius:12px;background:var(--light);color:var(--ink);font-size:26px;cursor:pointer}
+ .cs32-mobile-list{display:grid;gap:8px;overflow-y:auto;overscroll-behavior:contain;min-height:0}
+ .cs32-mobile-list-item{display:block;width:100%;min-height:48px;padding:11px 14px;text-align:left;border:1px solid var(--line);border-radius:12px;background:var(--light);color:var(--ink);font-weight:750;cursor:pointer}
+ .cs32-mobile-list-item[aria-current="location"]{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 18%,var(--card))}
+ .cs32-mobile-bar button:focus-visible,.cs32-mobile-sheet button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+ body:not(.cs-inner-page){padding-bottom:calc(155px + env(safe-area-inset-bottom))}
+}
+@media(prefers-reduced-motion:reduce){.cs32-mobile-sheet:not([hidden]){animation:none!important}}

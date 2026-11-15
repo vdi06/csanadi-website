@@ -163,3 +163,17 @@ A teljes örökölt gépi regressziós csomag az R26 korábbi tartalmi központj
 
 - A „NEKED AJÁNLJUK” rész hivatkozásgombjai minden szélességen vízszintesen középre kerülnek. Keskeny mobilon új sorba törhetnek, de a sorok is középre igazítottak.
 
+# Első kapunyitás: nem kívánt négyzetes fókuszkeret
+
+- Az első belépéskor a kulcs gombja programból fókuszt kap, ezért a korábbi `:focus-visible` szabály téglalap alakú körvonalat rajzolt. Újrajátszáskor az eltérő fókuszmód miatt a hiba nem mindig jelentkezett.
+- A téglalap alakú fókuszkeretet eltávolítottuk; a billentyűzetes fókuszt a kulcs körüli arany fényhatás jelzi. A korábban jóváhagyott fekete kulcsárnyék mindkét esetben megmarad.
+
+# Mobilos kezdőoldali alsó szakasznavigáció – elfogadott B változat
+
+- A korábbi jobb oldali lebegő kezdőoldali szakasznavigátor mobilon rejtett; **asztali nézetben változatlan**.
+- Mobilos kezdőoldalon állandó, négygombos sáv: Eleje, Előző, Következő, Szakaszok. A meglévő általános mobilos menüsáv és a hamburgeres/körmenüs főnavigáció továbbra is használható.
+- A Szakaszok gomb alulról felcsúszó, külön bezárható, billentyűzetes Escape és fókuszkezeléssel ellátott panelt nyit. Egy szakasz kiválasztása után a panel bezárul.
+- A navigálás az aktív kezdőoldali szakaszhoz igazodik, az aktuális személyre szabott sorrendet és rejtett szakaszokat követi. A bezárt csoportok a kiválasztáskor kinyílnak.
+- Az előző/következő léptetés animált, kivéve a csökkentett mozgás beállítását. Az alsó térköz a láblécet is görgethetővé teszi.
+- A tesztek forrás- és csomagszintűek; valós mobilos érintéses, billentyűzetes és vizuális teszt a feltöltés után még szükséges.
+

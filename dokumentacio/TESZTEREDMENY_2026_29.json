@@ -32,6 +32,26 @@
       "details": ""
     },
     {
+      "name": "Mobilon a régi oldalsó szakasznavigátor rejtve, az asztali változat marad",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Mobilos négygombos alsó szakasznavigáció",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Felcsúszó panel, görgetés és kiválasztás utáni zárás",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A mobilos navigáció a főmenüsáv felett, lábléctakarást kerülve",
+      "passed": true,
+      "details": ""
+    },
+    {
       "name": "A kezdőoldali személyre szabó maradt",
       "passed": true,
       "details": ""
@@ -53,6 +73,11 @@
     },
     {
       "name": "Kulcs alakú nem kerek kapunyitó, fekete árnyékkal",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Első kapunyitáskor a fókuszkeret nem rajzol négyzetet",
       "passed": true,
       "details": ""
     },
@@ -262,7 +287,7 @@
       "details": ""
     }
   ],
-  "passed": 52,
+  "passed": 57,
   "failed": 0,
   "browserAndDeviceTests": "Nem futott: a Chromium környezet socket engedélyhiánnyal megszakadt. Valós mobil, képernyőolvasó, CLS/LCP és offline teszt nyitott.",
   "ftpUpload": false

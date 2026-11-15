@@ -1,4 +1,4 @@
-import {formatBytes} from './format-bytes.js?v=csanadi-r29l-20261115';
+import {formatBytes} from './format-bytes.js?v=csanadi-r29n-20261115';
 const $=id=>document.getElementById(id);const root=new URL('../',import.meta.url),selected=new Set();let cfg=null,pages=[],manifest=null;
 const status=message=>$('offline-status').textContent=message;
 async function load(path){const url=new URL(path,root);try{const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);return response.json();}catch(error){const cached=await caches.match(url,{ignoreSearch:true});if(cached)return cached.json();throw error;}}
