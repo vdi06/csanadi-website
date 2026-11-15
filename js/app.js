@@ -1,12 +1,13 @@
+import {initRound10Enhancements} from './round10-enhancements.js?v=20261115round10a';
 import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=20261114n10final3';
 import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=20261114speed1';
 import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=20261114ext1';
 import {initDetailedDiagnostics,initSiteHealth,initMobileQuickNav} from './site-quality-2026.js?v=20261114ext1';
-import {setupSmartSearch} from './search-j-2026.js?v=20261114ten2';
+import {setupSmartSearch} from './search-j-2026.js?v=20261115round10b';
 import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=20261114ten1';
 import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=20261114kmil2';
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=20261114be1';
-import {renderMediaGallery} from './media-gallery-h-2026.js?v=20261114h1';
+import {renderMediaGallery} from './media-gallery-h-2026.js?v=20261115round10b';
 import {renderDocumentCollections} from './document-collections-2026.js?v=20261115d1';
 import {renderPageMedia} from './page-media-2026.js?v=20261115m1';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=20261114premium1';
@@ -15,7 +16,7 @@ import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=20261114
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=20261114verified1';
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=20261114ten2';
-import {renderBlock,dom,listCards} from './blocks.js?v=20261115dock1';
+import {renderBlock,dom,listCards} from './blocks.js?v=20261115round10b';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=20261114dfg1';
 import {renderSportsSuccesses} from './sports-successes.js?v=20261114v5';
 import {renderStudentAchievements} from './student-achievements.js?v=20261114navs3';
@@ -579,6 +580,7 @@ export async function startApp(){
   initPerformanceDiagnostics();
   initDetailedDiagnostics();
   initNext10();
+  initRound10Enhancements();
   markNavigationStart(getRoute(),{initial:true});
   wireEvents();
   if(location.protocol==='file:')throw new Error('A JSON-alapú weboldal HTTP/HTTPS kiszolgálást igényel, például helyi localhost szervert vagy az iskola webtárhelyét.');

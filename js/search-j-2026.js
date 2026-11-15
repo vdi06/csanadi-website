@@ -187,6 +187,8 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
  input.addEventListener('keydown',e=>{
   if(e.key==='ArrowDown'){
    const first=results.querySelector('a.search-result');if(first){e.preventDefault();first.focus();}
+  }else if(e.key==='Enter'){
+   const first=results.querySelector('a.search-result');if(first){e.preventDefault();first.click();}
   }
  });
  results.addEventListener('keydown',e=>{

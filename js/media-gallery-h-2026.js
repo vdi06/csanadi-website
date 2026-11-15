@@ -20,6 +20,7 @@ export function renderMediaGallery({compact=false}={}){
  inner.append(header);
  const albumsBar=el('div','media26-albums');albumsBar.setAttribute('role','group');albumsBar.setAttribute('aria-label','Galéria témakörének kiválasztása');
  const sportBar=el('div','media26-sport-filters');sportBar.setAttribute('role','group');sportBar.setAttribute('aria-label','Sportágak szerinti szűrés');
+ const videoPlaylists=el('div','r10-video-playlists');videoPlaylists.setAttribute('role','group');videoPlaylists.setAttribute('aria-label','Tematikus videólejátszási listák');
  const toolbar=el('div','media26-toolbar');
  const tabs=el('div','media26-tabs');tabs.setAttribute('role','group');tabs.setAttribute('aria-label','Médiatípus kiválasztása');
  const searchWrap=el('label','media26-search-label');add(searchWrap,el('span','visually-hidden','Keresés a galériában'));
@@ -30,7 +31,7 @@ export function renderMediaGallery({compact=false}={}){
  const visual=el('div','media26-content');add(visual,grid,videoGrid,loadMore);
  const foot=document.createDocumentFragment();
  const direct=compact?el('a','media26-full-link','A teljes galériaközpont megnyitása ↗'):null;if(direct)direct.href='#/sport/sportgaleriak';
- add(toolbar,tabs,searchWrap);const sorting=el('select','media26-sort');sorting.setAttribute('aria-label','Képek rendezése');[['original','Alapértelmezett sorrend'],['az','Cím szerint A–Z'],['za','Cím szerint Z–A']].forEach(([value,text])=>{const option=el('option','',text);option.value=value;sorting.append(option);});toolbar.append(sorting);add(inner,albumsBar,sportBar,toolbar,info,visual,foot,direct);section.append(inner);
+ add(toolbar,tabs,searchWrap);const sorting=el('select','media26-sort');sorting.setAttribute('aria-label','Képek rendezése');[['original','Alapértelmezett sorrend'],['az','Cím szerint A–Z'],['za','Cím szerint Z–A']].forEach(([value,text])=>{const option=el('option','',text);option.value=value;sorting.append(option);});toolbar.append(sorting);add(inner,albumsBar,sportBar,videoPlaylists,toolbar,info,visual,foot,direct);section.append(inner);
  const modal=el('dialog','media26-lightbox');modal.setAttribute('aria-label','Képnézegető');
  const modalFrame=el('div','media26-lightbox-frame');
  const close=galleryButton('×','media26-lightbox-close',()=>modal.close());close.setAttribute('aria-label','Kép bezárása');
@@ -61,6 +62,15 @@ export function renderMediaGallery({compact=false}={}){
    b.setAttribute('aria-pressed',String(album===id));const cover=photos.find(x=>id==='mind'||x.category===id);if(cover){const preview=el('img','media26-album-image');preview.src=cover.thumb||cover.src;preview.alt='';preview.loading='lazy';b.append(preview);}
    add(b,el('span','media26-album-icon',mark),el('strong','media26-album-label',label),el('span','media26-album-count',`${id==='mind'?photos.length:photos.filter(x=>x.category===id).length} kép`));albumsBar.append(b);}
   sportBar.replaceChildren();sportBar.hidden=album!=='sport';if(album==='sport'){for(const [id,label] of disciplines){const total=photos.filter(x=>x.category==='sport'&&(id==='mind'||x.sportDiscipline===id)).length;if(!total&&id!=='mind')continue;const b=galleryButton(label+' · '+total,'media26-discipline'+(discipline===id?' is-active':''),()=>{discipline=id;limit=compact?9:18;draw();});b.setAttribute('aria-pressed',String(discipline===id));sportBar.append(b);}}
+  videoPlaylists.replaceChildren();videoPlaylists.hidden=type!=='video';
+  if(type==='video'){
+   videoPlaylists.append(el('span','r10-video-playlist-title','Videós tematikus listák'));
+   for(const [id,label] of [['mind','Összes videó'],['sport','Sportos összeállítások'],['oktatas','Tanulás és tudás'],['kozosseg','Iskolai közösség']]){
+    const amount=videos.filter(x=>id==='mind'||x.category===id).length;
+    const entry=galleryButton(`${label} · ${amount}`,'r10-video-playlist'+(album===id?' is-active':''),()=>{album=id;discipline='mind';draw();});
+    entry.setAttribute('aria-pressed',String(album===id));videoPlaylists.append(entry);
+   }
+  }
   tabs.replaceChildren();for(const [t,label] of [['photo','Képek'],['video','Videók · képmontázsok']]){const b=galleryButton(label,'media26-tab'+(type===t?' is-active':''),()=>{type=t;draw();});b.setAttribute('aria-pressed',String(type===t));tabs.append(b);}
   const filtered=matching(photos),matchedVideos=matching(videos);
   grid.hidden=type!=='photo';videoGrid.hidden=type!=='video';grid.replaceChildren();videoGrid.replaceChildren();
