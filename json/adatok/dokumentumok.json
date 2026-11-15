@@ -86,7 +86,7 @@
     {
       "id": "document:csanadi-weboldal-kezikonyv-2026",
       "title": "Csanádi Sportiskola 2026 – Teljes weboldal-használati útmutató",
-      "summary": "Teljes, 3.12-es webes és PDF-kézikönyv: 66 megőrzött JSON-oldal, 13 helyi segédoldal, R21–R25 központok, a 26. kiadás tízmodulos térképes megközelítési és tanulástámogató központja; 290 központi paraméter.",
+      "summary": "Teljes, 3.14-as webes és PDF-kézikönyv: 66 megőrzött JSON-oldal, 13 helyi segédoldal és minden korábbi R21–R27 funkció; a 28. kör csak karbantartás: a körmenü szélsőséges méretei, keresőfókusz, témaszinkron, sporthírek visszaállása, PDF-előnézet, offline kvóta és késleltetett diagnosztika; 290 központi paraméter.",
       "categoryId": "weboldal-utmutato",
       "tags": [
         "honlap",
@@ -114,9 +114,9 @@
       "mimeType": "application/pdf",
       "fileName": "csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
       "filePath": "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
-      "fileSizeBytes": 140481,
-      "sha256": "1567d341d143d107216297569c70ad9783d4f39d71437a86d791871a6f25c924",
-      "version": "3.12.0",
+      "fileSizeBytes": 145833,
+      "sha256": "5b9f608b503b71fb7750ec54d65efd63bc8d81762c3fe0cf33522fc835f7a5a8",
+      "version": "3.14.0",
       "publishedAt": "2026-11-15",
       "validFrom": "2026-11-15",
       "validTo": null,
@@ -200,6 +200,16 @@
           "version": "3.12.0",
           "date": "2026-11-15",
           "change": "26. kiadás: hivatalos iskolacím, hozzájáruláshoz kötött OpenStreetMap, külső útvonaltervezési linkek, öt felvételi lépés helyi pipákkal, 90 napig helyi tanulási célok, öt sportszövetségi mérföldkő, engedélyköteles diákmédia, ellenőrzött fogadóóra-központ, tanulási időmérő és felidézőkártya, adatbiztos akadálymentes útmutató, zöld utazási összevetés, kereshető JSON változásnapló; minden régi funkció megőrizve."
+        },
+        {
+          "version": "3.13.0",
+          "date": "2026-11-15",
+          "change": "27. kiadás: tíz új funkció helyett kizárólag meglévő rendszerkarbantartás; kezdőlapi kártyák helyi rendezésének fókusz-, mentési és mobilgomb-javítása; sporthír-hibaállapotok és párhuzamos frissítések rendezése; hőskép-helyfoglalás finomítása; tágasabb mobil körmenü törésmentes címkékkel; intézményi lábléc és alapból csukott, szerelőkulcsos diagnosztika; diagnosztikai fókuszjelölés, R27 cache és teljes kézikönyvfrissítés. Nem történt FTP-feltöltés."
+        },
+        {
+          "version": "3.14.0",
+          "date": "2026-11-15",
+          "change": "28. kiadás: kizárólag karbantartás a teljes R27 alapcsomagon; keskeny és fekvő mobilos körmenü-, tablet- és kártyarács-finomítások; megjelenési módok lapok közötti állapotkövetése; kereső billentyűzetfókusz; sporthírek helyreálló bevezetője és gépi dátuma; fájltípusnak megfelelő dokumentum-előnézet; korábbi offline mentéseket is figyelembe vevő kvóta; csak megnyitáskor induló fájlmanifest-diagnosztika; kisebb animációk és fókuszjelölés; cache-frissítés és teljes dokumentáció. FTP-feltöltés nélkül."
         }
       ]
     },

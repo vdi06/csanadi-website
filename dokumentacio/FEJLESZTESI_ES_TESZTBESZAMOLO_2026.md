@@ -1,58 +1,59 @@
-# Csanádi Sportiskola 2026 · 26. fejlesztési kör
+# Csanádi Sportiskola 2026 · 28. fejlesztési kör – kizárólag karbantartás
 
-**Kiadás:** `csanadi-sportiskola-2026-r26` · **Dátum:** 2026. november 15. · **Alapcsomag:** `Csanadi_Sportiskola_2026_25_TELJES_WEBOLDAL_FTP_ES_KEZIKONYV.zip`. Az iskolai FTP-re nem történt feltöltés.
+**Kiadás:** `csanadi-sportiskola-2026-r28` · **Dátum:** 2026. november 15. · **Alapcsomag:** `Csanadi_Sportiskola_2026_27_TELJES_WEBOLDAL_FTP_ES_KEZIKONYV.zip`.
 
-## 1. A kérésed: mind a tíz új fejlesztési pont
+## 1. A kérésed
 
-| # | Kérés | Megvalósítás | Korlát / feltétel |
-|---|---|---|---|
-| 1 | Közlekedési és érkezési kalauz | `megkozelites-es-tanulas.html#terkep`: hivatalos cím, megállókörnyékek, érkezési tippek, BKK, három útvonalmód és külön gombbal betöltött OpenStreetMap; a főoldalon külön térképes gyorselérés. | A térképtű közelítő; pontos kapu nem hitelesített. A külső térképhez internet és külön kattintás kell. |
-| 2 | Felvételi folyamatábra és lépéskövető | Öt összefüggő, kipipálható folyamatlépés; 60 napig helyi mentés, törlés. | Nem közöl ellenőrizetlen határidőt, nem ad be jelentkezést. |
-| 3 | Tanulási cél- és szokáskövető | Kategória, rövid cél, teljesítés jelölése, törlés; legfeljebb 40 cél és 90 napos helyi lejárat. | Ne szerepeljenek személyes adatok a bejegyzésekben. |
-| 4 | Sportolói fejlődési mérföldkövek | Öt sportág: labdarúgás, kézilabda, vívás, kajak-kenu, birkózás; kereső, sportszövetségi forráslinkek. | Általános tudnivalók, nem egyéni edzésterv vagy egészségügyi döntés. |
-| 5 | Diákújság- és iskolarádió-archívum | Típus- és szövegszűrés; jóváhagyási, publikálási, jogengedélyezési kapu. | **0 igazolt, közzétehető lapszám/hanganyag**; nincs kitalált archívum. |
-| 6 | Fogadóórák és kapcsolattartás | Hivatalos kapcsolati út, jóváhagyott fogadóórák listázását fogadó felület. | **0 igazolt 2026/27-es fogadóóra**, időpontot az iskolánál kell egyeztetni. |
-| 7 | Tanulásmódszertani eszköztár | Három módszerkártya, helyi fókuszidő-mérő, aktív felidéző kérdéskártyák. | Az időmérő csak megnyitott lapon fut. |
-| 8 | Akadálymentes megközelítés | Külön útmutató és ellenőrzött útvonalrekordokat fogadó megjelenítő. | **0 igazolt rámpa, lift, parkoló, bejárat**; tény nélküli ígéret nincs. |
-| 9 | Környezettudatos iskolába járás | Önként megadott becsült távolság és heti napok alapján helyi úthosszszámítás, négy közlekedési mód összevetése. | Nem kér geolokációt, nem ad bizonyítatlan CO₂-értéket. |
-| 10 | Nyilvános fejlesztési változásnapló | Kereshető és kiadásonként szűrhető, JSON-ból épített R23–R26 kiadásnapló. | Csak dokumentált bejegyzéseket jelenít meg; új hibajavítás-kategóriával bővíthető. |
+A 28. fejlesztési körben **mind a tíz karbantartási lehetőséget (1–10)** kiválasztottad, új tematikus modul és új tartalmi központ nélkül. A teljes 27. kiadás valamennyi oldalát, korábban működő funkcióját, a `README.md` állományt, a külön `mobile/` és `desktop/` rendszert, a központi JSON-paramétereket, színtémákat és adatvédelmi szabályokat meg kell őrizni. Kérted a teljes statikus FTP-kompatibilis ZIP-et, a frissített webes és PDF-kézikönyvet, a tételes tesztbeszámolót és a következő működő, tízpontos karbantartási választót. Az iskolai FTP-re nem szabad feltölteni semmit.
 
-### Térképhasználat
+## 2. Elvégzett javítások és jobbítások – külön, új funkciók nélkül
 
-A **Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium** hivatalosan közzétett címe **1143 Budapest, Őrnagy utca 5–7.**; forrás [Zugló Önkormányzata](https://www.zuglo.hu/altalanos-iskolak/7/). A főoldal statikus címkártyája nem tölt be külső adatforrást. A részletes oldal *Térkép betöltése* gombja kattintás után hoz létre egy OpenStreetMap iframe-et, amely az *Elrejtés* gombbal ténylegesen eltávolítható. Az útvonaltervezők új lapon nyílnak, a szolgáltatók saját adatvédelmi szabályaival. A megjelölt koordináta csak hozzávetőleges helyet jelent, **nem ellenőrzött belépési vagy akadálymentes pontot**. A térkép mellett a teljes cím, a szöveges érkezési tudnivalók és a BKK hivatalos menetrendjének linkje térkép nélkül is használható.
+| # | Kiválasztott terület | Tényleges R28 módosítás és eredmény | Fájl | Korlát / nyitott teszt |
+|---|---|---|---|---|
+| 1 | Mobilos körmenü | Külön stílus a nagyon keskeny (≤300 px), illetve fekvő, alacsony telefonokhoz; a körméret, gombok és scrollozható almenü igazítása, meglévő egysoros menüfeliratok megőrzésével. **A felhasználó utólagos pontosítása alapján a felső mobilos hamburger- és keresőgomb rejtett; csak az alsó három ikon (Kezdőlap, Menü, Keresés) látható.** Az alsó gombok továbbra is a körmenüt és keresőközpontot nyitják, asztalon a fejléc nem változik. | `mobile/round28-maintenance-mobile.css`, megőrzött `mobile/quick-nav.js` | Eszközön meg kell nézni a tényleges gombtávolságokat és a megnyitást. |
+| 2 | Mobil/asztali megjelenés | Rugalmasabb kártya-, lábléc-, kép- és dokumentumméret, külön desktop/tablet finomhangolás. | `css/round28-maintenance.css`, `desktop/round28-maintenance-desktop.css` | Valós kijelzős képernyő- és átfedésvizsgálat még szükséges. |
+| 3 | Betöltési sebesség és CLS | A diagnosztika nagy kiadási manifestje csak a szerelőkulcsos panel kinyitásakor kérődik le, és a zárt panel nem rajzol újra erőforráslistát; az R27 fejléc-helyfoglalása megmarad. | `js/performance-diagnostics-2026.js` | **Nem készült új CLS-, FCP- vagy LCP-mérés.** Nincs igazolt CLS-célérték. |
+| 4 | Három téma | Világos/sötét/automatikus mód közötti választás változatlan; egy másik böngészőlapon átállított, tárolt megjelenési mód most már szinkronizálható. | `js/app.js` | Két valódi böngészőlapon ellenőrizendő. |
+| 5 | Kereső és navigáció | Ismételt keresőmegnyitáskor megmarad az eredeti visszalépési fókusz; bezárás után a késleltetett fókusz nem ugrik vissza a rejtett mezőre. A korábbi megamenü és mobil almenük megmaradnak. | `js/app.js` | Manuális billentyűzetes és mobilnavigációs teszt szükséges. |
+| 6 | Hírek és kártyák | A sporthírek hálózati hiba utáni sikeres lekérésénél visszaáll az eredeti bevezető; a dátumok szabványos, géppel olvasható `datetime` értéket kapnak. A korábbi üresállapot-kezelés megmarad. | `js/daily-sport-news.js` | A külső híradatok változékonyságát külön kell vizsgálni. |
+| 7 | Képek, videók, dokumentumok | A dokumentumok előnézete csak PDF-re használ PDF-beágyazást; más fájltípusnál megnyitási/letöltési útmutatás jelenik meg. Képek és videók maximális szélessége alkalmazkodik az elrendezéshez. | `js/documents.js`, `css/round28-maintenance.css` | **Nincs új képtömörítés vagy videókódolás**; médiatartalmak jogosultsága nem változott. |
+| 8 | Offline és cache | A helyi mentési kvóta a már mentett oldalakat is beleszámolja az új mentésbe; az eltávolítás nem akad el betelt kvóta miatt. Új cache-token: `csanadi-r28-20261115`. | `js/offline-reader-20.js`, `json/config.json`, verziózott URL-ek | Service Worker és Cache API valódi böngészőben még tesztelendő. |
+| 9 | Akadálymentesség | Erősebb fókuszkörvonal a navigáción és láblécben, csökkentett mozgás kérésének figyelembevétele; időelem gépi dátuma. Korábbi felolvasó mód megmarad. | R28 CSS, `js/daily-sport-news.js` | **WCAG 2.2 AA megfelelőség nincs tanúsítva**; képernyőolvasós próba nyitott. |
+| 10 | Regresszió és adatvédelem | Minden korábbi útvonal megőrzése, a 66 eredeti JSON-oldal változatlanságának, 290 központi paraméternek, témáknak, adatvédelmi JSON-nak, PDF-metaadatnak, statikus HTTP-nak, manifestnek és ZIP CRC-nek gépi ellenőrzése. | `test28.py`, `release-manifest.json`, `dokumentacio/TESZTEREDMENY_2026_28.json` | A program által végzett statikus ellenőrzés **nem** teljes böngészős integrációs teszt. |
 
-## 2. Külön elszámolt folyamatos hibajavítás és karbantartás
+**Új tematikus funkciók száma: 0.** Az R28 az eddigi karbantartást egészíti ki; az R21–R27 funkciók és a korábbi térképes bejárási tájékoztató megmaradnak.
 
-Ezek **nem számítanak a tíz új pont közé**:
+## 3. Mit tartalmaz a teljes csomag?
 
-1. A teljes R25 ZIP fájlkészletének megőrzése és az eredeti állományok eltűnésének ellenőrzése.
-2. A 66 eredeti JSON-oldal és a `README.md` bájtra azonos megtartása.
-3. A `mobile/` és `desktop/` elkülönítés és minden korábbi központ megőrzése.
-4. A központi JSON korábbi paramétereinek, világos/sötét/automatikus témájának és adatvédelmi szabályainak megőrzése.
-5. A cache-token `csanadi-r26-20261115` egységesítése, az offline előtöltési lista frissítése.
-6. Az új központ elérése a kezdőlapról, a korábbi iránytűről és felfedezőközpontból, valamint a 3.12-es webes kézikönyvből.
-7. A PDF-adatlap, SHA-256, fájlméret és a teljes `release-manifest.json` újragenerálása.
-8. A meglévő Honlapdiagnosztika és a verziómegjelölések megőrzése. Az eddig jelzett, valós böngészőben magas CLS (~0,427) további mérésre vár; ennek megszűnését statikus teszt nem bizonyítja.
+- A 27. kiadás minden fájlútvonalát és változatlan `README.md` fájlját, mind a **66 eredeti JSON tartalmi oldalt**.
+- A 13 korábbi `tools/` segédoldalt, külön `mobile/` és `desktop/` mappákat, minden korábbi médiát, dokumentumot és adatot.
+- A meglévő **290 központi JSON-beállítást**, amelyekből csak a `performance.cacheVersion` értéke változott.
+- Három új, célzott R28 stíluslapot; a meglévő R27 stíluslapokat is.
+- A **3.14-es webes kézikönyvet** (`utmutato.html`), a **3.14-es PDF-et** (`assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf`), a központi JSON-leltárt, valamint a tesztadatokat.
+- A teljes fájlméretet és SHA-256 ellenőrzőösszeget tartalmazó `release-manifest.json` fájlt, amely önmagát nem számolja bele.
 
-## 3. Adatvédelem, külső feltételek, FTP
+## 4. Ellenőrzések és tesztek
 
-- Az összes új szerkeszthető adat **helyben, a böngészőben** kezelhető; nincs geolokáció, saját szerverre küldött tanulási cél vagy felvételi állapot.
-- A Google Maps útvonaltervező és az OpenStreetMap kizárólag külön felhasználói megnyitással hívódik meg. Külső hálózat hiányában a cím és a szöveges leírás továbbra is rendelkezésre áll.
-- Diákújság, hanganyag, konkrét akadálymentes bejárat és fogadóóra **csak forrás- és jogosultságellenőrzés után** publikálható. A megfelelő üres adatlisták nem programhibát jelentenek.
-- Az oldal statikus FTP-n működik; nincs PHP, Node.js vagy kizárólag GitHub Actions-függő szolgáltatás. Bootstrap 5.3.9 továbbra is verzióhoz kötött CDN, nem került helyi példány a csomagba.
+A teljes örökölt gépi regressziós csomag az R26 korábbi tartalmi központjainak szerkezeti vizsgálatát, helyi JSON-olvasást, a statikus FTP-szerkezet és HTML-hivatkozások ellenőrzését, Node.js szintaxisvizsgálatot, helyi HTTP-kéréseket, PDF- és manifest-metaadatokat, ZIP-fájlok meglétét és CRC-értékeit ellenőrzi. Ezt kiegészítik az R27 megőrzési/karbantartási és az R28 új módosításait célzó feltételvizsgálatok.
 
-## 4. Ellenőrzések és tesztkorlátok
+**A pontos gépi sikeres/összes tesztszámot és egyenkénti eredményeket a `dokumentacio/TESZTEREDMENY_2026_28.json` tartalmazza.** A közvetlenül a ZIP mellett átadott tesztbeszámoló jelen dokumentum másolata.
 
-A géppel olvasható, egyedi ellenőrzések eredménye a `dokumentacio/TESZTEREDMENY_2026_26.json` állományban lesz a kiadási ZIP-ben. A vizsgálatok kiterjednek az eredeti fájlkészlet és központi paraméterek megőrzésére, a 10 szakaszra és funkciókezelőre, az adatvédelmi kapukra, a gombnyomáshoz kötött iframe-re, a HTML-azonosítókra és relatív hivatkozásokra, a JSON- és JS-szintaxisra, a helyi HTTP-kiszolgálásra, a PDF-re és a ZIP CRC/SHA-manifestre.
+**Fontos vizsgálati határ:** a Chromium grafikus indítását ebben a környezetben `socket() failed: Operation not permitted` hiba akadályozta meg. Emiatt valós telefonos vagy asztali képernyőteszt, interaktív böngészős teszt, új Web Vitals/CLS-mérés, iOS/Android-, Firefox/Safari- és képernyőolvasós hitelesítés **nem történt**. A CSS és statikus JavaScript ellenőrzése nem bizonyítja automatikusan a vizuális hibák megszűnését. E tesztek továbbra is nyitott teendők.
 
-**Fontos határ:** a helyi, statikus tesztek nem helyettesítik a tényleges Android/iOS, asztali böngésző, képernyőolvasó és akadálymentességi felhasználói vizsgálatot. Külső térképszolgáltatások elérhetőségét nem garantálják.
+## 5. Nyitott feltételek, adatvédelem és élesítés
 
-## 5. Teljes kiadás és nyitott tételek
+- A korábbi CLS 0,427-es értékének csökkenését a betöltési diagnosztika megnyitásával valódi böngészőben újra kell mérni; a 0,1 alatti célérték **nem igazolt**.
+- A mobil körmenüt legalább 280/320/360/375/390/430 px telefonokon, 768–1024 px tableten, fekvő telefonon és asztali képernyőn ellenőrizni kell; a fő- és almenü ne fedje egymást és ne vágja le a feliratokat.
+- A kereső, visszalépés, Ctrl+K, menü billentyűzet, képernyőolvasó, felolvasás, fókusz, témák közti váltás, offline tárolás és frissítés külön végponttól végpontig kipróbálandó.
+- Az eredeti jóváhagyási szabályok szerint személyes és intézményi tartalom csak engedéllyel, valós dokumentummal és ellenőrzött forrással jelenhet meg. Nem töltöttünk fel új, ellenőrizetlen fényképet, kontaktot, panorámát vagy bejáratot.
+- A Bootstrap korábban elfogadott, rögzített CDN-verziót igényel; az OpenStreetMap és útvonaltervező külső kapcsolatok hozzájárulás/aktiválás után internetet használhatnak. A statikus FTP-csomaghoz nincs PHP, Node szerver vagy GitHub Actions-kényszer.
+- **Az iskolai FTP-re, GitHub Pages-re és más nyilvános tárhelyre ebben a körben nem töltöttünk fel semmit.** Az új ZIP-et a felhasználó kapja meg.
 
-- ZIP: `Csanadi_Sportiskola_2026_26_TELJES_WEBOLDAL_FTP_ES_KEZIKONYV.zip`, az FTP-re a **ZIP tartalmát** kellene később a megfelelő gyökérmappába kibontani (jelenleg semmi nincs feltöltve).
-- Webes kézikönyv: `utmutato.html`; PDF: `assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf`, 3.12.0.
-- Paraméterleltár: `dokumentacio/KOZPONTI_JSON_PARAMETEREK.md`, összesen **290** központi mező.
-- JSON-adatok: `json/adatok/megkozelites-fejlodes-26.json`; központi beállítások: `json/config.json` `runtime.round26` (14 mező).
-- **Nyitott tartalmi igények:** intézményileg jóváhagyott diákújság/hanganyag, fogadóóra és pontos akadálymentes bejáratok. Ezek műszaki felületei működnek, a valós intézményi adatokat nem lehet helyettesíteni kitalált példákkal.
+## 6. Átadandó fájlok
+
+1. `Csanadi_Sportiskola_2026_28_TELJES_WEBOLDAL_FTP_ES_KEZIKONYV.zip` – teljes statikus honlap.
+2. `Csanadi_Sportiskola_2026_28_RESZLETES_TESZTBESZAMOLO.md` – ez a tételes beszámoló külön is.
+3. `Csanadi_Sportiskola_2026_TELJES_HASZNALATI_UTMUTATO_3_14.pdf` – önálló PDF-kézikönyv.
+4. `Csanadi_Sportiskola_2026_28_KOZPONTI_JSON_PARAMETEREK.md` – mind a 290 mező leltára.
 
 **FTP-feltöltés: nem történt.**

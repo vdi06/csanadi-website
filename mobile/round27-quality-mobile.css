@@ -1,0 +1,47 @@
+/* A kezdőlap rendezőgombjai mobilon egymás mellett, külön műveleti sorban. */
+@media(max-width:768px){
+  #app[data-page-kind="home"] .csn21-home-row{
+    grid-template-columns:24px minmax(0,1fr)!important;gap:10px!important;
+  }
+  #app[data-page-kind="home"] .csn21-card-actions{
+    grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;width:100%;
+  }
+  #app[data-page-kind="home"] .csn21-card-actions button{
+    width:100%!important;min-width:0!important;
+  }
+  #global-hero:empty{
+    min-height:calc(clamp(170px,53vw,235px) + 128px)!important;
+  }
+  html .toast-info{top:calc(env(safe-area-inset-top,0px) + 72px);max-width:calc(100vw - 24px)}
+  /* A szűk körmenüben nincs szóközepi elválasztás vagy több soros címke. */
+  /* A korábbi 94–119 px-es körsugár kihasználatlan helyet hagyott.
+     A hat címkét a valóban rendelkezésre álló szélességre terítjük,
+     a szomszédos gombok átfedését is mérsékelve. */
+  #site-map-overlay .compass26-stage{
+    --radius:clamp(108px,34vw,260px)!important;
+    height:calc(2 * var(--radius) + 118px)!important;
+    margin-bottom:12px!important;
+  }
+  #site-map-overlay .compass26-choice{
+    width:clamp(100px,31vw,168px)!important;
+    height:clamp(54px,16.5vw,72px)!important;
+    gap:3px!important;
+  }
+  #site-map-overlay .compass26-choice-toggle{
+    flex:0 0 28px!important;width:28px!important;min-width:28px!important;
+  }
+  #site-map-overlay .compass26-choice-link{
+    hyphens:none!important;overflow-wrap:normal!important;word-break:normal!important;
+    white-space:nowrap!important;font-size:clamp(10px,2.7vw,12px)!important;
+    letter-spacing:-.01em!important;padding:4px 2px!important;
+  }
+  #site-map-overlay .compass26-choice-link .csn27-menu-full{display:none!important}
+  #site-map-overlay .compass26-choice-link .csn27-menu-short{display:inline!important;white-space:nowrap!important}
+  #site-map-overlay .compass26-subtopics{grid-template-columns:minmax(0,1fr)!important}
+  #site-map-overlay :is(.compass26-sub-link,.compass26-panel-head h3,#mobile-conventional-navigation a,#mobile-conventional-navigation summary){
+    hyphens:none!important;overflow-wrap:normal!important;word-break:normal!important;
+  }
+  #site-map-overlay .csn18-mobile-conventional:not([hidden]){min-width:0}
+}
+@media(max-width:360px){#global-hero:empty{min-height:calc(180px + 120px)!important}}

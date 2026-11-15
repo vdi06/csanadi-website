@@ -1,4 +1,4 @@
-import {formatBytes as formatSize} from './format-bytes.js?v=csanadi-r26-20261115';
+import {formatBytes as formatSize} from './format-bytes.js?v=csanadi-r28-20261115';
  
 const ROOT = new URL('../', import.meta.url);
 const REGISTRY = new URL('../json/adatok/dokumentumok.json', import.meta.url);
@@ -125,8 +125,9 @@ function openPreview(doc){
  dialog.append(el('p','doc-preview-summary',doc.summary));
  dialog.append(el('p','doc-preview-explain',doc.official?'Jóváhagyott intézményi dokumentum.':'Önálló tanulási segédlet, nem intézményi szabályzat.'));
  if(doc.status!=='withdrawn'&&doc.filePath){
-  const browserHasViewer=navigator.pdfViewerEnabled!==false;
-  const fallback=el('p','doc-preview-fallback',browserHasViewer?'Ha az előnézet üres, használd a Megnyitás új lapon vagy a Letöltés gombot.':'A böngésző nem támogat beépített PDF-előnézetet. A dokumentumot új lapon megnyithatod vagy letöltheted.');fallback.setAttribute('role','status');
+  const isPdf=doc.mimeType==='application/pdf';
+  const browserHasViewer=isPdf&&navigator.pdfViewerEnabled!==false;
+  const fallback=el('p','doc-preview-fallback',browserHasViewer?'Ha az előnézet üres, használd a Megnyitás új lapon vagy a Letöltés gombot.':isPdf?'A böngésző nem támogat beépített PDF-előnézetet. A dokumentumot új lapon megnyithatod vagy letöltheted.':'Ehhez a fájltípushoz nincs beágyazott PDF-előnézet. A fájlt új lapon megnyithatod vagy letöltheted.');fallback.setAttribute('role','status');
   if(browserHasViewer){const iframe=el('iframe','doc-iframe');iframe.title=doc.title+' előnézete';iframe.loading='lazy';iframe.src=docURL(doc)+'#toolbar=1';iframe.addEventListener('error',()=>{fallback.textContent='A PDF-előnézet nem tölthető be. Nyisd meg új lapon vagy töltsd le.';});dialog.append(iframe);}
   dialog.append(fallback);
   const actions=el('div','doc-preview-actions');const open=el('a','btn btn-outline-secondary','Megnyitás új lapon');open.href=docURL(doc);open.target='_blank';open.rel='noopener noreferrer';

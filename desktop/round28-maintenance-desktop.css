@@ -1,0 +1,10 @@
+/* A széles nézetben a tartalmi kártyák és a lábléc ne növeljék túl a rácsot. */
+@media(min-width:769px){
+ .site-footer .footer-grid>div{min-width:0}
+ #app :is(.doc-results,.daily-sports-cards){min-width:0}
+ #site-map-overlay .compass26-choice:has(:focus-visible){z-index:8}
+}
+@media(min-width:769px) and (max-width:1024px){
+ #site-map-overlay .compass26-choice-link{hyphens:none;overflow-wrap:normal}
+ #site-map-overlay .compass26-stage{max-width:100%}
+}

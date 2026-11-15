@@ -1,4 +1,4 @@
-import {formatBytes as bytes} from './format-bytes.js?v=csanadi-r26-20261115';
+import {formatBytes as bytes} from './format-bytes.js?v=csanadi-r28-20261115';
  
 let panel=null;
 let pending=null;
@@ -7,6 +7,7 @@ let currentRouteMs=null;
 let latestStatus='Betöltés…';
 let lastRoute='';
 let bundleStats=null;
+let bundleRequested=false;
 const webVitals={lcp:null,cls:0,shiftSources:[]};
 let observersStarted=false;
 const clock=()=>Math.max(0,performance.now());
@@ -37,7 +38,7 @@ async function measureBundle(){
 }
 function el(name,classes,text){const node=document.createElement(name);if(classes)node.className=classes;if(text!==undefined)node.textContent=text;return node;}
 function refresh(){
- if(!panel)return;
+ if(!panel||panel.closest('#footer-diagnostics-disclosure:not([open])'))return;
  const init=panel.querySelector('[data-speed-init]'),route=panel.querySelector('[data-speed-route]'),status=panel.querySelector('[data-speed-status]'),details=panel.querySelector('[data-speed-browser]');
  init.textContent=fmt(initialReadyMs);
  route.textContent=fmt(currentRouteMs);
@@ -74,6 +75,17 @@ function refresh(){
 export function initPerformanceDiagnostics(){
  if(panel)return;
  const footer=document.querySelector('.site-footer');if(!footer)return;
+ const footerDisclosure=footer.querySelector('#footer-diagnostics-disclosure');
+ if(footerDisclosure){
+  const label=footerDisclosure.querySelector('#footer-diagnostics-label');
+  footerDisclosure.addEventListener('toggle',()=>{
+   if(label)label.textContent=footerDisclosure.open?'Honlapdiagnosztika bezárása':'Honlapdiagnosztika megnyitása';
+   if(footerDisclosure.open){
+    if(!bundleRequested){bundleRequested=true;measureBundle();}
+    refresh();
+   }
+  });
+ }
  panel=el('section','cs-speed-panel container-xxl');panel.setAttribute('aria-label','Honlapdiagnosztika');panel.dataset.diagnosticView='speed';
  const heading=el('div','cs-diag-heading');heading.append(el('h2','','Honlapdiagnosztika'),el('p','','Betöltési sebesség, fájlméretek és honlapállapot egy helyen.'));
  const tabs=el('div','cs-diag-tabs');tabs.setAttribute('role','group');tabs.setAttribute('aria-label','Diagnosztikai nézet');
@@ -99,9 +111,12 @@ export function initPerformanceDiagnostics(){
  const shifts=el('p','cs-speed-timings','');shifts.dataset.speedShiftSources='';
  disclosure.append(summary,explanation,timings,files,resources,slower,largest,vitals,shifts);
  speedView.append(row,disclosure);panel.append(heading,tabs,speedView);
- const foot=footer.querySelector('.footer-bottom');foot?foot.before(panel):footer.append(panel);
+ const mount=footer.querySelector('#footer-diagnostics-mount');
+ if(mount)mount.append(panel);
+ else{const foot=footer.querySelector('.footer-bottom');foot?foot.before(panel):footer.append(panel);}
  if(document.readyState==='complete')refresh();else window.addEventListener('load',refresh,{once:true});
- measureBundle();
+ // A 150+ KiB manifestet csak akkor kérjük le, ha a látogató kinyitja a diagnosztikát.
+ if(!footerDisclosure){bundleRequested=true;measureBundle();}
  if(!observersStarted && typeof PerformanceObserver==='function'){
   observersStarted=true;
   for(const [type,handler] of [

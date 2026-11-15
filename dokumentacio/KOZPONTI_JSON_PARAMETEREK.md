@@ -1,6 +1,6 @@
 # Csanádi Sportiskola 2026 – a központi JSON összes paramétere
 
-**Forrás:** `json/config.json` · **Kiadás:** 26 · **Dátum:** 2026. november 15.
+**Forrás:** `json/config.json` · **Kiadás:** 28 · **Dátum:** 2026. november 15.
 
 **Összesen 290 beállítható, egy helyen tárolt mező.** A lista a tényleges kiadási JSON-ból származik; szerkesztéshez nyisd meg a `tools/parameterek-szerkeszto.html` felületet.
 
@@ -148,7 +148,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
-| `performance.cacheVersion` | `"csanadi-r26-20261115"` | szöveg |
+| `performance.cacheVersion` | `"csanadi-r28-20261115"` | szöveg |
 | `performance.maxCacheMegabytes` | `50` | szám |
 | `performance.respectReducedMotion` | `true` | logikai |
 | `performance.mediaCacheEntries` | `100` | szám |

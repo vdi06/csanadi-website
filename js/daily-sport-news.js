@@ -9,27 +9,30 @@ export function renderDailySportsNews(mode='home'){
  const section=make('section','daily-sports-news section-wrap');const container=make('div','container-xxl');
  const h=make('div','daily-sports-head');h.append(make('div','section-overline','MAGYAR ÉS NEMZETKÖZI SPORT'),make('h2','section-title','Napi sporthírek'));
  const all=make('a','daily-sports-more','Sporthírközpont →');all.href='#/hirek-es-esemenyek/hirek/sporthirek';h.append(all);container.append(h);
- const note=make('p','daily-sports-intro',`A sportvilág ellenőrzött, legfeljebb ${settingNumber('runtime.news.maximumAgeHours')} órás cikkei. A lista kizárólag az FTP-re feltöltött saját JSON-fájlból frissül. Nincs automatikus hírbegyűjtés és nincs külső futtatási szolgáltatás.`);container.append(note);
+ const note=make('p','daily-sports-intro',`A sportvilág ellenőrzött, legfeljebb ${settingNumber('runtime.news.maximumAgeHours')} órás cikkei. A lista kizárólag az FTP-re feltöltött saját JSON-fájlból frissül. Nincs automatikus hírbegyűjtés és nincs külső futtatási szolgáltatás.`);const originalIntro=note.textContent;container.append(note);
  const grid=make('div','daily-sports-cards');container.append(grid);section.append(container);
- function load(){fetch(SOURCE,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Hírek nem elérhetők');return r.json();}).then(x=>{
-   if(!section.isConnected)return;grid.replaceChildren();const items=checkedNews(x).slice(0,mode==='full'?settingNumber('runtime.display.dailyNewsFull'):settingNumber('runtime.display.dailyNewsCompact'));
+ let latestRequest=0;
+ function clearStamp(){if(grid.nextElementSibling?.classList.contains('daily-sports-stamp'))grid.nextElementSibling.remove();}
+ function showEmpty(title,description){
+   grid.replaceChildren();clearStamp();
+   const card=make('article','daily-sports-card daily-sports-empty-card');
+   card.append(make('h3','',title),make('p','daily-sports-meta',description));
+   const link=make('a','daily-sports-link','Iskolai sporthírek →');link.href='#/hirek-es-esemenyek/hirek/sporthirek';card.append(link);grid.append(card);
+ }
+ function load(){const request=++latestRequest;fetch(SOURCE,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Hírek nem elérhetők');return r.json();}).then(x=>{
+   if(!section.isConnected||request!==latestRequest)return;const items=checkedNews(x).slice(0,mode==='full'?settingNumber('runtime.display.dailyNewsFull'):settingNumber('runtime.display.dailyNewsCompact'));grid.replaceChildren();clearStamp();note.textContent=originalIntro;
    if(!items.length){
       note.textContent=`Jelenleg nem szerepel friss, ${settingNumber('runtime.news.maximumAgeHours')} órán belüli bejegyzés a honlap saját sporthír-adatállományában. A hírek közzétételét a szerkesztő által feltöltött JSON biztosítja.`;
-      const card=make('article','daily-sports-card daily-sports-empty-card');
-      card.append(make('h3','','Jelenleg nincs friss helyi hírlista'));
-      card.append(make('p','daily-sports-meta','Az aktuális hírek közvetlenül, az eredeti sportportálon tekinthetők meg.'));
-      const link=make('a','daily-sports-link','Iskolai sporthírek →');
-      link.href='#/hirek-es-esemenyek/hirek/sporthirek';
-      card.append(link);grid.append(card);
+      showEmpty('Jelenleg nincs friss helyi hírlista','Az aktuális hírek közvetlenül, az eredeti sportportálon tekinthetők meg.');
       return;
     }
    for(const item of items){const card=make('article','daily-sports-card');const header=make('p','daily-sports-meta',item.category||'Sporthír');const title=make('h3','',item.title);
-    const date=make('time','daily-sports-date',new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'short',day:'numeric',timeZone:setting('modules2026.clock.timezone')}).format(new Date(item.publishedAt)));
+    const date=make('time','daily-sports-date',new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'short',day:'numeric',timeZone:setting('modules2026.clock.timezone')}).format(new Date(item.publishedAt)));date.dateTime=new Date(item.publishedAt).toISOString();
     const link=make('a','daily-sports-link','Teljes sporthír megnyitása ↗');link.href=item.url;link.target='_blank';link.rel='noopener noreferrer';
     card.append(header,title,date,link);grid.append(card);
    }
-   grid.nextElementSibling?.classList.contains('daily-sports-stamp')&&grid.nextElementSibling.remove();const stamp=make('p','daily-sports-stamp',`Utolsó frissítés: ${x.updatedAt?new Intl.DateTimeFormat('hu-HU',{dateStyle:'short',timeStyle:'short',timeZone:setting('modules2026.clock.timezone')}).format(new Date(x.updatedAt)):'még nincs adat'}`);grid.after(stamp);
-  }).catch(()=>{if(!section.isConnected)return;grid.replaceChildren();const a=make('a','daily-sports-link','Iskolai sporthírek →');a.href='#/hirek-es-esemenyek/hirek/sporthirek';grid.append(make('p','daily-sports-empty','A helyi hírlista jelenleg nem érhető el.'),a);});}
+   const stamp=make('p','daily-sports-stamp',`Utolsó frissítés: ${x.updatedAt&&!Number.isNaN(Date.parse(x.updatedAt))?new Intl.DateTimeFormat('hu-HU',{dateStyle:'short',timeStyle:'short',timeZone:setting('modules2026.clock.timezone')}).format(new Date(x.updatedAt)):'még nincs adat'}`);grid.after(stamp);
+  }).catch(()=>{if(!section.isConnected||request!==latestRequest)return;note.textContent='A helyi hírlista most nem tölthető be. Próbáld újra később; a többi honlaptartalom használható.';showEmpty('A helyi sporthírek nem érhetők el','A hírközpont továbbra is megnyitható, a hálózati hiba nem állítja le az oldalt.');});}
  load();const interval=setInterval(()=>{if(!section.isConnected){clearInterval(interval);return;}if(!document.hidden)load();},settingNumber('runtime.timing.dailySportNewsRefreshMs'));
  return section;
 }

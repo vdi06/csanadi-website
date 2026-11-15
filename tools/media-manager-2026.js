@@ -1,6 +1,6 @@
 'use strict';
 import {createZip,downloadBlob} from './zip-native-2026.js';
-import {formatBytes as bytes} from '../js/format-bytes.js?v=csanadi-r26-20261115';
+import {formatBytes as bytes} from '../js/format-bytes.js?v=csanadi-r28-20261115';
 const $ = id => document.getElementById(id);
 const enc = new TextEncoder();
 const decode = new TextDecoder();

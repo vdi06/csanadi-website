@@ -1,4 +1,4 @@
-import {createPicture} from './media.js?v=csanadi-r26-20261115';
+import {createPicture} from './media.js?v=csanadi-r28-20261115';
 import {settingNumber,isWithinConfiguredWindow} from './site-settings-2026.js';
 const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 const safeRoute=value=>typeof value==='string'&&/^#\/[a-z0-9/\-]*$/i.test(value)?value:'#/';
