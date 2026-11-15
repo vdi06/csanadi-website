@@ -47,10 +47,59 @@ function makeApproach(){
  }
  layout.append(preview,cards);section.append(layout);return section;
 }
+const CUSTOM_SHORTCUTS_KEY='csanadi-home-custom-shortcuts-v1';
+function safeShortcutUrl(raw){
+ const input=String(raw||'').trim();
+ if(!input||input.startsWith('//')||input.includes('\\')||/[\u0000-\u001f\u007f]/.test(input))return null;
+ if(input.startsWith('#/'))return input;
+ try{
+  const resolved=new URL(input,document.baseURI);
+  if(resolved.protocol!=='https:'&&resolved.origin!==location.origin)return null;
+  if(!['https:','http:'].includes(resolved.protocol))return null;
+  return resolved.origin===location.origin?(resolved.pathname+resolved.search+resolved.hash).replace(new URL('.',document.baseURI).pathname,'')||'./':resolved.href;
+ }catch{return null;}
+}
+function readCustomShortcuts(){
+ try{const rows=JSON.parse(localStorage.getItem(CUSTOM_SHORTCUTS_KEY));return Array.isArray(rows)?rows.slice(0,24).filter(item=>item&&typeof item.title==='string'&&item.title.trim()&&safeShortcutUrl(item.url)).map(item=>({id:String(item.id||''),title:item.title.trim().slice(0,60),url:safeShortcutUrl(item.url)})):[];}catch{return [];}
+}
+function storeCustomShortcuts(entries){try{localStorage.setItem(CUSTOM_SHORTCUTS_KEY,JSON.stringify(entries));return true;}catch{return false;}}
 function enhanceQuicklinks(canvas){
  const nav=canvas.querySelector('.home-j-navrail');if(!nav||nav.dataset.cs29Ready)return;nav.dataset.cs29Ready='yes';
- const items=[...nav.children];items.forEach((a,index)=>{a.classList.add('cs29-quicklink');const label=a.textContent.replace(/\s*↗/g,'').trim();const glyph=create('span','cs29-quicklink-glyph',['✦','⚑','◫','⌕','◎','➤'][index%6]);glyph.setAttribute('aria-hidden','true');const txt=create('span','cs29-quicklink-label',label);a.replaceChildren(glyph,txt);if(index>=4)a.classList.add('cs29-more-quicklink');});
- if(items.length>4){const more=create('button','cs29-quick-more','További gyorselérések +');more.type='button';more.setAttribute('aria-expanded','false');more.addEventListener('click',()=>{const open=nav.classList.toggle('cs29-show-all');more.setAttribute('aria-expanded',String(open));more.textContent=open?'Kevesebb gyorselérés −':'További gyorselérések +';});nav.after(more);}
+ const items=[...nav.children];items.forEach((a,index)=>{a.classList.add('cs29-quicklink');const label=a.textContent.replace(/\s*↗/g,'').trim();const glyph=create('span','cs29-quicklink-glyph',['✦','⚑','◫','⌕','◎','➤'][index%6]);glyph.setAttribute('aria-hidden','true');const txt=create('span','cs29-quicklink-label',label);a.replaceChildren(glyph,txt);});
+ let custom=readCustomShortcuts();
+ const status=create('p','cs30-shortcut-status');status.setAttribute('role','status');status.setAttribute('aria-live','polite');
+ const editor=create('div','cs30-shortcut-editor');
+ const open=create('button','cs30-shortcut-add','＋ Saját gyorselérés létrehozása');open.type='button';open.setAttribute('aria-expanded','false');
+ const form=create('form','cs30-shortcut-form');form.hidden=true;
+ const nameLabel=create('label','','Csempe felirata');const name=create('input','cs30-shortcut-name');name.type='text';name.required=true;name.maxLength=60;name.placeholder='Például: Órarend';nameLabel.append(name);
+ const linkLabel=create('label','','Hivatkozás');const link=create('input','cs30-shortcut-url');link.type='text';link.required=true;link.maxLength=600;link.placeholder='Például: #/oktatas vagy https://…';linkLabel.append(link);
+ const actions=create('div','cs30-shortcut-form-actions');const submit=create('button','cs30-shortcut-save','Gyorselérés mentése');submit.type='submit';const cancel=create('button','cs30-shortcut-cancel','Mégse');cancel.type='button';actions.append(submit,cancel);form.append(nameLabel,linkLabel,actions);
+ editor.append(open,form,status);nav.after(editor);
+ const close=()=>{form.hidden=true;open.setAttribute('aria-expanded','false');open.focus();};
+ open.addEventListener('click',()=>{form.hidden=!form.hidden;open.setAttribute('aria-expanded',String(!form.hidden));if(!form.hidden)name.focus();});
+ cancel.addEventListener('click',close);
+ function renderCustom(){
+  nav.querySelectorAll('.cs30-custom-tile').forEach(tile=>tile.remove());
+  for(const item of custom){
+   const tile=create('div','cs30-custom-tile');
+   const a=create('a','cs29-quicklink cs30-custom-link');a.href=item.url;
+   if(new URL(item.url,location.href).origin!==location.origin){a.target='_blank';a.rel='noopener noreferrer';}
+   const glyph=create('span','cs29-quicklink-glyph','★');glyph.setAttribute('aria-hidden','true');a.append(glyph,create('span','cs29-quicklink-label',item.title));
+   const remove=create('button','cs30-custom-remove','×');remove.type='button';remove.title='Saját gyorselérés törlése';remove.setAttribute('aria-label',item.title+' gyorselérés törlése');
+   remove.addEventListener('click',()=>{custom=custom.filter(row=>row.id!==item.id);status.textContent=storeCustomShortcuts(custom)?'A saját gyorselérés törölve.':'A böngésző nem engedte a módosítás mentését.';renderCustom();});
+   tile.append(a,remove);nav.append(tile);
+  }
+  nav.classList.toggle('cs30-odd-quicklinks',nav.children.length%2===1);
+ }
+ form.addEventListener('submit',event=>{
+  event.preventDefault();const title=name.value.trim(),url=safeShortcutUrl(link.value);
+  if(!title||!url){status.textContent='Adj meg egy feliratot és egy biztonságos HTTPS- vagy belső hivatkozást.';return;}
+  if(custom.length>=24){status.textContent='Legfeljebb 24 saját gyorselérés menthető.';return;}
+  const next=[...custom,{id:'custom-'+Date.now()+'-'+Math.random().toString(36).slice(2,8),title:title.slice(0,60),url}];
+  if(!storeCustomShortcuts(next)){status.textContent='A böngésző nem engedte a mentést.';return;}
+  custom=next;renderCustom();form.reset();close();status.textContent='A saját gyorselérés elkészült, és a többi mellett látható.';
+ });
+ renderCustom();
 }
 function enhanceFold(fold,index){
  if(!fold||fold.dataset.cs29Ready)return;fold.dataset.cs29Ready='yes';fold.classList.add('cs29-reveal-fold');

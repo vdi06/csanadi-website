@@ -19,6 +19,8 @@ export function enhancePersonalizedHome(canvas){
  if(!state||!Array.isArray(state.order)||!Array.isArray(state.visible))state={order:all,visible:all};
  state.order=[...new Set([...state.order.filter(id=>typeof id==='string'&&blocks.has(id)),...all])];
  state.visible=[...new Set(state.visible.filter(id=>typeof id==='string'&&blocks.has(id)))];
+ // A gyorselérések kötelező, mindig látható kezdőlapi területet alkotnak.
+ if(blocks.has('shortcuts')&&!state.visible.includes('shortcuts'))state.visible.push('shortcuts');
  const panel=el('details','csn21-personalizer csn29-personalizer');
  const summary=el('summary','csn29-personalizer-summary','⚙ Kezdőlap beállítása · kedvenc kártyák és sorrend');
  const body=el('div','csn29-personalizer-body');
@@ -41,16 +43,16 @@ export function enhancePersonalizedHome(canvas){
   persist((TAGS.find(item=>item.id===id)?.label||id)+' új helyre került.');render(id);return true;
  };
  function render(focusId){
-  for(const id of state.order){const block=blocks.get(id);block.hidden=!state.visible.includes(id);canvas.append(block);}
+  for(const id of state.order){const block=blocks.get(id);block.hidden=id==='shortcuts'?false:!state.visible.includes(id);canvas.append(block);}
   counter.textContent=`${state.visible.length} / ${all.length} kártya látható`;
   rows.replaceChildren();
   state.order.forEach((id,index)=>{
    const label=TAGS.find(item=>item.id===id)?.label||id;
    const row=el('div','csn21-home-row csn29-home-row');row.dataset.cardId=id;
    const grip=el('button','csn29-drag-handle','⠿');grip.type='button';grip.draggable=true;grip.title='Húzással rendezhető';grip.setAttribute('aria-label',label+' · sorrend módosítása húzással');
-   const check=el('input');check.type='checkbox';check.checked=state.visible.includes(id);check.id='csn21-card-'+id;
+   const check=el('input');check.type='checkbox';check.checked=id==='shortcuts'||state.visible.includes(id);check.disabled=id==='shortcuts';check.id='csn21-card-'+id;if(check.disabled)check.title='A gyorselérések mindig láthatók';
    const caption=el('label','csn29-card-name',label);caption.htmlFor=check.id;
-   const badge=el('span','csn29-visibility',check.checked?'Látható':'Rejtett');
+   const badge=el('span','csn29-visibility',id==='shortcuts'?'Mindig látható':check.checked?'Látható':'Rejtett');
    check.addEventListener('change',()=>{state.visible=check.checked?[...state.visible,id]:state.visible.filter(value=>value!==id);persist(label+(check.checked?' megjelenítve.':' elrejtve.'));render();rows.querySelector('#'+check.id)?.focus();});
    const actions=el('div','csn21-card-actions');
    for(const [direction,title,offset] of [['up','Feljebb',-1],['down','Lejjebb',1]]){

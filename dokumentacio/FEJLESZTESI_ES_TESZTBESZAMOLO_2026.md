@@ -1,5 +1,13 @@
 # Csanádi Sportiskola 2026 · 29. fejlesztési kör – jóváhagyott kezdőoldal
 
+## Állandó, középre rendezett és személyre szabható gyorselérések
+
+- A kezdőlapi gyorselérések **mindig mind láthatók**: a „További gyorselérések” kibontógomb megszűnt. A gyári hivatkozások továbbra is megmaradtak.
+- Asztalon a csempék középre rendezett, több sorba törő flex-elrendezést kapnak; mobilon a jóváhagyott kétoszlopos grid marad, az esetleges utolsó páratlan csempe középre kerül.
+- Új „Saját gyorselérés létrehozása” felület: legfeljebb 24 felirat és biztonságos hivatkozás helyben tárolható, az új csempék azonnal megjelennek és külön törölhetők. A tárolás böngészőnkénti `localStorage`, nem a közös honlap JSON-állományának módosítása. Az önálló gyorselérési blokk a kezdőlap-kártyák rendezőfelületében sem rejthető el.
+- A felső képváltó két peremsávjának pozícióját asztalon és mobilon külön, szigorúan a képes tartalmon kívül rögzítettük (`css/round30-hero-rails.css`).
+- A JavaScript-, CSS-, JSON- és ZIP-statikus ellenőrzés mellett az érintéses/valódi böngészős működés manuális ellenőrzése továbbra is szükséges.
+
 ## Gyorselérési csempék középre igazítása
 
 Az összes kezdőlapi gyorselérési csempénél egységes középre igazítást alkalmazunk: a csempék rácsának középre helyezése, az ikonok és feliratok vízszintes középre rendezése, valamint a további csempéket nyitó gomb középre igazítása. A mobilos kétoszlopos grid és az ikon+felirat megjelenés, továbbá a további elemek inline kibontása megmarad. A módosítás a `css/round29-home.css` végén van, a régebbi stílusokat felülírva.
@@ -138,3 +146,16 @@ A teljes örökölt gépi regressziós csomag az R26 korábbi tartalmi központj
 4. `Csanadi_Sportiskola_2026_28_KOZPONTI_JSON_PARAMETEREK.md` – mind a 290 mező leltára.
 
 **FTP-feltöltés: nem történt.**
+# Új témaválasztó központ (2026. november 15.)
+
+- A kezdőoldali „Melyik téma érdekel?” szűrősor teljesen új, három nagyméretű témakártyás felületet kapott: Sport, Tanulás, Iskolai élet.
+- A kártyák címmel, rövid leírással, jelképpel és külön felfedezési felhívással működnek; mobilon egymás alatt jelennek meg.
+- A kiválasztott téma a kapcsolódó kezdőoldali részeket változatlan logikával előre rendezi és kinyitja. A „Minden témakör megjelenítése” visszaállítja az alapnézetet. A korábbi témaspecifikus hivatkozások megmaradtak.
+- A felület a világos és sötét témához igazodó színeket használ, és figyelembe veszi a csökkentett mozgás beállítását.
+
+# Aktuális oldalra mutató fölösleges fejléc-hivatkozások (2026. november 15.)
+
+- A Napi sporthírek teljes aloldali nézetében nem jelenik meg az ugyanoda vezető „Sporthírközpont” fejlécgomb; a kezdőoldali előnézetből továbbra is elérhető.
+- Általános szabály: a tartalmi szekciók fejléceiben az aktuálisan megnyitott SPA-útvonalra mutató gomb elrejtődik. Más útvonalakat megnyitó gombok változatlanul láthatók, a főmenü és az egyéb navigáció érintetlen.
+- A később betöltött szekciókra is érvényesül a szabály. Az ellenőrzés strukturális, a tényleges böngészős és mobileszközös megjelenítés még külön ellenőrzendő.
+

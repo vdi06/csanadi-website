@@ -1,0 +1,11 @@
+/* A képváltó peremsávjai a képpár valódi külső területén helyezkednek el. */
+#global-hero .csn26-visual-row{position:relative!important;width:calc(100% - 170px)!important;max-width:1660px!important;margin-inline:auto!important;overflow:visible!important}
+#global-hero .csn26-visual-row>.csn26-edge-arrow{position:absolute!important;top:0!important;bottom:0!important;height:100%!important;width:clamp(42px,5vw,76px)!important;transform:none!important}
+#global-hero .csn26-visual-row>.csn26-edge-arrow--left{left:-84px!important;right:auto!important}
+#global-hero .csn26-visual-row>.csn26-edge-arrow--right{right:-84px!important;left:auto!important}
+@media(max-width:768px){
+ #global-hero .csn26-visual-row{width:calc(100% - 108px)!important;max-width:500px!important}
+ #global-hero .csn26-visual-row>.csn26-edge-arrow{width:44px!important;min-width:44px!important}
+ #global-hero .csn26-visual-row>.csn26-edge-arrow--left{left:-51px!important;right:auto!important}
+ #global-hero .csn26-visual-row>.csn26-edge-arrow--right{right:-51px!important;left:auto!important}
+}

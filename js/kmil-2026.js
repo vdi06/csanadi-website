@@ -35,10 +35,16 @@ export function learningNavigator(){
  root.append(controls,grid);render('felveteli');return root;
 }
 export function enhanceHomeInterests(canvas){
- const filters=e('section','kmil-interest');filters.append(e('h2','','Melyik téma érdekel?'),e('p','','A kiválasztott témát előre rendezzük és kinyitjuk. A többi tartalom továbbra is elérhető marad.'));
- const controls=e('div','kmil-interest-controls');filters.append(controls);
+ const filters=e('section','kmil-interest kmil-interest-hub');filters.setAttribute('aria-label','Témaválasztó központ');
+ const intro=e('div','kmil-hub-intro');intro.append(e('span','kmil-hub-eyebrow','A TE CSANÁDID'),e('h2','','Indulj arra, ami érdekel!'),e('p','','Három világ, egy iskola. Válassz egy irányt: a hozzá tartozó tartalmak előre kerülnek, a többi továbbra is elérhető.'));
+ const reset=e('button','kmil-hub-reset','Minden témakör megjelenítése');reset.type='button';intro.append(reset);filters.append(intro);
+ const controls=e('div','kmil-interest-controls kmil-hub-cards');controls.setAttribute('role','group');controls.setAttribute('aria-label','Válassz témát');filters.append(controls);
  const preview=e('div','kmil-interest-preview');preview.setAttribute('role','status');preview.setAttribute('aria-live','polite');filters.append(preview);
- const options=[['all','Mindegyik'],['sport','Sport'],['study','Tanulás'],['community','Iskolai élet']];
+ const options=[
+  ['sport','SPORT','Sport','Versenyek, sportágak, eredmények és sporthírek','01','⚡'],
+  ['study','TANULÁS','Tanulás','Felvételi, képzések, tanév és tanulási lehetőségek','02','✦'],
+  ['community','KÖZÖSSÉG','Iskolai élet','Programok, közös pillanatok és az iskola mindennapjai','03','◈']
+ ];
  const buttons=[];
  const folds=[...canvas.querySelectorAll(':scope > details.home-j-fold')];
  const initialOrder=new Map(folds.map((node,i)=>[node,i]));
@@ -51,6 +57,7 @@ export function enhanceHomeInterests(canvas){
  };
  const pick=(id)=>{
   buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.interest===id)));
+  reset.setAttribute('aria-pressed',String(id==='all'));
   let priority;
   if(id==='sport')priority=['Sporteredmények és statisztikák','Sport és iskolai élet – képekben'];
   else if(id==='study')priority=['Fedezd fel az iskolát','Napi központ és interaktív információk'];
@@ -61,11 +68,12 @@ export function enhanceHomeInterests(canvas){
   });
   for(const node of ordered)canvas.append(node);
   if(id!=='all'){for(const node of folds)if(!node.hidden)node.open=priority[0]===groupName(node);}
-  preview.replaceChildren();preview.append(e('strong','',id==='all'?'Összes témakör':'Ajánlott témák: '+titlesForInterest[id]));
+  preview.replaceChildren();const head=e('div','kmil-hub-result-heading');head.append(e('span','kmil-hub-result-kicker',id==='all'?'FELFEDEZÉS':'NEKED AJÁNLJUK'),e('strong','',id==='all'?'Népszerű útvonalak':'Fedezd fel: '+titlesForInterest[id]));preview.append(head);
   const list=e('div','kmil-interest-links');for(const [label,route] of suggestions[id]){const a=e('a','',label+' →');a.href=route;list.append(a);}preview.append(list);
  };
  const titlesForInterest={sport:'Sport',study:'Tanulás',community:'Iskolai élet'};
- for(const [id,label] of options){const b=e('button','kmil-interest-button',label);b.type='button';b.dataset.interest=id;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>pick(id));controls.append(b);buttons.push(b);}
+ for(const [id,kicker,label,description,number,symbol] of options){const b=e('button','kmil-interest-button kmil-hub-card',undefined);b.type='button';b.dataset.interest=id;b.setAttribute('aria-pressed','false');b.append(e('span','kmil-hub-card-number',number),e('span','kmil-hub-card-symbol',symbol),e('span','kmil-hub-card-kicker',kicker),e('strong','',label),e('span','kmil-hub-card-description',description),e('span','kmil-hub-card-action','Felfedezem →'));b.addEventListener('click',()=>pick(id));controls.append(b);buttons.push(b);}
+ reset.addEventListener('click',()=>pick('all'));
  const nav=canvas.querySelector('.home-j-navrail-unit');if(nav)nav.insertAdjacentElement('afterend',filters);else canvas.prepend(filters);
  pick('all');return filters;
 }

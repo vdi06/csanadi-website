@@ -117,7 +117,52 @@
       "details": ""
     },
     {
-      "name": "A kezdőoldali gyorselérések minden nézetben középre igazítottak",
+      "name": "Minden gyorselérés azonnal látható, nincs kibontógomb",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A gyorselérések sorai vízszintesen középre rendezettek",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Saját gyorselérés létrehozás, tárolás és törlés",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A gyorselérési blokk nem rejthető el a személyre szabóban",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A képváltó oldalsávjai a tartalmon kívül vannak",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Új témaválasztó központ három témakártyával",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Napi sporthír aloldal nem mutat saját fejléc-linket",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Az aktuális aloldalra mutató fejléc-CTA általánosan rejtett",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Témaválasztás megtartja a rendezést és a hivatkozásokat",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Asztali és mobilos témakártya-elrendezés",
       "passed": true,
       "details": ""
     },
@@ -212,7 +257,7 @@
       "details": ""
     }
   ],
-  "passed": 42,
+  "passed": 51,
   "failed": 0,
   "browserAndDeviceTests": "Nem futott: a Chromium környezet socket engedélyhiánnyal megszakadt. Valós mobil, képernyőolvasó, CLS/LCP és offline teszt nyitott.",
   "ftpUpload": false

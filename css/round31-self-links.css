@@ -1,0 +1,2 @@
+/* Az aktuális aloldalra visszamutató fejléc-hivatkozást elrejtjük. */
+#app a.cs-self-header-link,#app a.cs-self-header-link[hidden]{display:none!important}
