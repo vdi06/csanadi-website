@@ -1,5 +1,14 @@
 # Csanádi Sportiskola 2026 · 29. fejlesztési kör – jóváhagyott kezdőoldal
 
+## A 29. kiadás utólagos javításai (a legújabb ZIP-ben)
+
+- **Kapunyitás:** a belépést valódi kulcsformájú SVG indítja, kerek gombháttér nélkül. A fejléc jobb felső sarkában külön, nyitott kaput ábrázoló ikon indítja újra a kapunyitást.
+- **Képváltó:** az eredeti kétképes kompozíció és a középső főmenüikon változatlan; a váltónyilak a képek két külső szélén teljes magasságú, áttetsző sávokként láthatók, mindkét témában és mobilon is.
+- **Lap tetejére:** a kezdőoldalon eltűnik a külön lebegő vissza-a-tetejére gomb. Az oldalsó szakasznavigátor paneljébe került egy külön „Ugrás a lap tetejére” gomb. Az aloldalakon a korábbi gomb változatlan.
+- **Ellenőrzés:** az új CSS- és JS-feltételeket is vizsgálja a `TESZTEREDMENY_2026_29.json`. Az újabb webes és PDF-kézikönyv ugyanezt rögzíti. A vizuális és érintéses viselkedés valós böngészőben továbbra is tesztelendő.
+
+---
+
 **Kiadás:** `csanadi-sportiskola-2026-r29` · **Dátum:** 2026. november 15. · **Alap:** a 28. teljes változat, az utóbb előkészített megközelítési és témakezelési javításokkal.
 
 ## Mit kértél a 29. körre?

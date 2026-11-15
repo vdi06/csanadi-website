@@ -2,7 +2,7 @@
 
 
  
-import {renderDigitalClock} from './experience-2026.js?v=csanadi-r29-20261115';
+import {renderDigitalClock} from './experience-2026.js?v=csanadi-r29b-20261115';
 const BASE='json/adatok/';
 const ZONE=()=>setting('modules2026.clock.timezone');
 const e=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -39,7 +39,7 @@ export function openEntrancePortal({force=false}={}){
  const content=e('div','gate26-content');const logo=e('img','gate26-logo');logo.src='assets/media/logo/csanadi-cimer-512.webp';logo.alt='Csanádi Sportiskola címer';logo.width=76;logo.height=76;
  const title=e('h2','', 'Lépj be a sport és a tudás világába');title.id='gate26-title';const desc=e('p','','Nyitva áll a Csanádi Sportiskola kapuja.');desc.id='gate26-description';
  const enter=btn('','gate26-enter gate26-key',()=>open());const skip=btn('Kihagyás','gate26-skip',()=>finish());skip.setAttribute('aria-label','Belépőanimáció kihagyása');
- const keyIcon=document.createElementNS('http://www.w3.org/2000/svg','svg');keyIcon.setAttribute('viewBox','0 0 120 120');keyIcon.setAttribute('width','77');keyIcon.setAttribute('height','77');keyIcon.setAttribute('aria-hidden','true');keyIcon.innerHTML='<path d="M13 103V21h43v82M56 21h51v82M13 103h94" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M56 27 24 42v56l32-12V27Zm0 0 35 16v57L56 86V27Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/><path d="M68 61h7M41 61h5" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>';
+ const keyIcon=document.createElementNS('http://www.w3.org/2000/svg','svg');keyIcon.setAttribute('viewBox','0 0 120 120');keyIcon.setAttribute('width','92');keyIcon.setAttribute('height','92');keyIcon.setAttribute('aria-hidden','true');keyIcon.innerHTML='<circle cx="35" cy="35" r="23" fill="none" stroke="currentColor" stroke-width="9"/><circle cx="35" cy="35" r="8" fill="none" stroke="currentColor" stroke-width="4"/><path d="M52 52 105 105 93 116 80 103 72 111 62 101 70 93 43 66" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="11"/>';
  enter.append(keyIcon);enter.setAttribute('aria-label','Nyisd meg a kaput');enter.setAttribute('title','Nyisd meg a kaput');
  add(content,logo,e('span','gate26-eyebrow','CSANÁDI SPORTISKOLA · 2026'),title,desc,document.createDocumentFragment(),enter);
  add(layer,scenery,glow,doors,content,skip);document.body.append(layer);

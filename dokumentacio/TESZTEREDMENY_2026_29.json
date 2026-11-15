@@ -52,6 +52,26 @@
       "details": ""
     },
     {
+      "name": "Kulcs alakú nem kerek kapunyitó",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Jobb felső kapuikon kizárólag az újrajátszáshoz",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A képváltó sávok képmagasságban a kép szélén",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Lap tetejére csak a kezdőoldali navigátorban",
+      "passed": true,
+      "details": ""
+    },
+    {
       "name": "A kapu közelítési képe helyben megvan",
       "passed": true,
       "details": ""
@@ -84,10 +104,10 @@
     {
       "name": "PDF kézikönyv olvasható és bővült",
       "passed": true,
-      "details": "44"
+      "details": "45"
     },
     {
-      "name": "Gyorsítótár-token R29",
+      "name": "Gyorsítótár-token R29 javított",
       "passed": true,
       "details": ""
     },
@@ -97,7 +117,7 @@
       "details": ""
     }
   ],
-  "passed": 19,
+  "passed": 23,
   "failed": 0,
   "browserAndDeviceTests": "Nem futott: a Chromium környezet socket engedélyhiánnyal megszakadt. Valós mobil, képernyőolvasó, CLS/LCP és offline teszt nyitott.",
   "ftpUpload": false

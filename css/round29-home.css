@@ -27,3 +27,33 @@
 html[data-theme="light"] .cs29-route-card,html[data-theme="light"] .cs29-nav-item,html[data-theme="light"] .cs29-nav-trigger,html[data-theme="light"] .cs29-nav-drawer{color:#142f42;background:#fffdf7}
 @media(max-width:767px){.cs29-nav-trigger{top:auto;bottom:82px;right:12px;width:48px;height:48px}.cs29-nav-drawer{top:auto;bottom:76px;right:9px;transform:none;max-height:72vh}.cs29-approach-grid{grid-template-columns:1fr}.cs29-route-cards{min-height:0;grid-template-rows:none}.cs29-map-preview{min-height:235px}#app[data-page-kind="home"] .home-j-navrail{grid-template-columns:repeat(2,minmax(0,1fr))}#app[data-page-kind="home"] .home-j-navrail .cs29-quicklink{min-height:86px}}
 @media(prefers-reduced-motion:reduce){.cs29-reveal-fold .home-unit{animation:none!important}.cs29-route-card,.cs29-quicklink{transition:none!important}}
+
+/* A jóváhagyás utáni pontosítások: a kulcs nem kerek gomb, a kapu a fejlécben újrajátszó. */
+.gate26 .gate26-key,.gate26 .gate26-key:hover,.gate26 .gate26-key:focus-visible{width:136px;height:136px;border:0;border-radius:0;background:transparent;box-shadow:none;color:#f1c568;padding:9px;filter:drop-shadow(0 7px 12px #031527bb)}
+.gate26 .gate26-key::before{content:none}.gate26 .gate26-key svg{height:108px;width:108px;transform:rotate(-20deg);filter:drop-shadow(0 2px 4px #0009)}
+.gate26 .gate26-key:hover,.gate26 .gate26-key:focus-visible{transform:scale(1.09)}
+.gate26 .gate26-key:focus-visible{outline:3px solid #ffe6ab;outline-offset:4px}
+#site-header .portal-replay-btn{display:grid;place-items:center;width:44px;min-width:44px;height:44px;padding:6px;border-radius:12px}
+#site-header .portal-replay-btn svg{display:block;max-width:100%;max-height:100%;fill:none}
+
+/* Képpáron kívüli arany körök helyett teljes képmagasságú áttetsző peremsávok. */
+#global-hero .csn26-visual-row{position:relative!important}
+#global-hero .csn26-visual-row>.csn26-edge-arrow{position:absolute!important;z-index:18!important;top:0!important;bottom:0!important;transform:none!important;width:clamp(42px,5vw,76px)!important;height:100%!important;min-height:0!important;min-width:42px!important;border-radius:0!important;border:1px solid rgba(255,227,170,.33)!important;background:linear-gradient(90deg,rgba(5,21,36,.54),rgba(5,21,36,.19))!important;color:#fff9e9!important;font-size:clamp(30px,3vw,44px)!important;box-shadow:none!important;backdrop-filter:blur(3px);transition:background .2s ease!important;display:grid!important;place-items:center!important}
+#global-hero .csn26-visual-row>.csn26-edge-arrow--left{left:0!important;right:auto!important;border-radius:18px 0 0 18px!important}
+#global-hero .csn26-visual-row>.csn26-edge-arrow--right{right:0!important;left:auto!important;border-radius:0 18px 18px 0!important;background:linear-gradient(270deg,rgba(5,21,36,.54),rgba(5,21,36,.19))!important}
+#global-hero .csn26-visual-row>.csn26-edge-arrow::after{content:none!important}
+#global-hero .csn26-visual-row>.csn26-edge-arrow:hover{background:rgba(11,35,56,.67)!important}
+html[data-theme="light"] #global-hero .csn26-visual-row>.csn26-edge-arrow{background:linear-gradient(90deg,rgba(255,252,244,.65),rgba(255,252,244,.22))!important;color:#18364b!important;border-color:rgba(24,54,75,.35)!important}
+html[data-theme="light"] #global-hero .csn26-visual-row>.csn26-edge-arrow--right{background:linear-gradient(270deg,rgba(255,252,244,.65),rgba(255,252,244,.22))!important}
+html[data-theme="light"] #global-hero .csn26-visual-row>.csn26-edge-arrow:hover{background:rgba(255,252,244,.86)!important}
+.cs29-drawer-top{display:block;margin-top:16px;padding:12px;width:100%;min-height:46px;border:1px solid var(--gold);border-radius:12px;background:var(--light);color:var(--ink);font-weight:800;cursor:pointer}
+.cs29-drawer-top:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+body:not(.cs-inner-page) #be2026-top{display:none!important}
+@media(max-width:768px){
+ .gate26 .gate26-key{width:112px;height:112px}.gate26 .gate26-key svg{height:92px;width:92px}
+ #global-hero .csn26-visual-row{width:calc(100% - 12px)!important}
+ #global-hero .csn26-visual-row>.csn26-edge-arrow{top:0!important;bottom:0!important;height:100%!important;width:clamp(38px,10vw,55px)!important;transform:none!important;font-size:35px!important}
+ #global-hero .csn26-visual-row>.csn26-edge-arrow--left{left:0!important;right:auto!important}
+ #global-hero .csn26-visual-row>.csn26-edge-arrow--right{right:0!important;left:auto!important}
+}
+@media(prefers-reduced-motion:reduce){#global-hero .csn26-visual-row>.csn26-edge-arrow{transition:none!important}}
