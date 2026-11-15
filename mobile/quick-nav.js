@@ -1,5 +1,5 @@
 /** Kizárólag telefonos, háromikonos alsó sáv. A DOM-segítők közös modulból jönnek. */
-import {el,append} from '../js/site-quality-2026.js?v=csanadi-r29k-20261115';
+import {el,append} from '../js/site-quality-2026.js?v=csanadi-r29l-20261115';
 
 export function initMobileQuickNav(){
  if(document.getElementById('ext26-mobile-nav'))return;

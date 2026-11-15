@@ -159,3 +159,7 @@ A teljes örökölt gépi regressziós csomag az R26 korábbi tartalmi központj
 - Általános szabály: a tartalmi szekciók fejléceiben az aktuálisan megnyitott SPA-útvonalra mutató gomb elrejtődik. Más útvonalakat megnyitó gombok változatlanul láthatók, a főmenü és az egyéb navigáció érintetlen.
 - A később betöltött szekciókra is érvényesül a szabály. Az ellenőrzés strukturális, a tényleges böngészős és mobileszközös megjelenítés még külön ellenőrzendő.
 
+# Ajánlott témák hivatkozásainak igazítása
+
+- A „NEKED AJÁNLJUK” rész hivatkozásgombjai minden szélességen vízszintesen középre kerülnek. Keskeny mobilon új sorba törhetnek, de a sorok is középre igazítottak.
+

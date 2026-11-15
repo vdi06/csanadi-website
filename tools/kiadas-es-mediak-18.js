@@ -1,4 +1,4 @@
-import {formatBytes as size} from '../js/format-bytes.js?v=csanadi-r29k-20261115';
+import {formatBytes as size} from '../js/format-bytes.js?v=csanadi-r29l-20261115';
 const id=name=>document.getElementById(name);
 let current=null,config=null,report=null;
 const text=(tag,value)=>{const el=document.createElement(tag);el.textContent=String(value);return el;};

@@ -22,8 +22,8 @@
 #app .kmil-interest-hub .kmil-interest-preview{max-width:none;margin:18px 0 0;border-radius:18px;padding:20px;text-align:left;background:color-mix(in srgb,var(--card) 92%,var(--gold))}
 #app .kmil-hub-result-heading{display:flex;flex-direction:column;gap:5px}
 #app .kmil-hub-result-heading strong{font-size:20px}
-#app .kmil-interest-hub .kmil-interest-links{justify-content:flex-start;gap:10px;margin-top:14px}
+#app .kmil-interest-hub .kmil-interest-links{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin-top:14px}
 #app .kmil-interest-hub .kmil-interest-links a{border-radius:12px;background:var(--card);color:var(--ink);padding:12px 16px}
 #app .kmil-hub-card:focus-visible,#app .kmil-hub-reset:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-@media(max-width:760px){#app .kmil-interest-hub{padding:18px;border-radius:18px}#app .kmil-hub-cards{grid-template-columns:1fr;gap:10px}#app .kmil-hub-card{min-height:0;padding:18px 20px}#app .kmil-hub-card[aria-pressed="true"]{padding:17px 19px}#app .kmil-hub-card-symbol{margin-bottom:10px;width:44px;height:44px}#app .kmil-hub-card-description{margin-bottom:13px}#app .kmil-interest-hub .kmil-interest-links{display:grid;grid-template-columns:1fr}#app .kmil-interest-hub .kmil-interest-links a{display:block}}
+@media(max-width:760px){#app .kmil-interest-hub{padding:18px;border-radius:18px}#app .kmil-hub-cards{grid-template-columns:1fr;gap:10px}#app .kmil-hub-card{min-height:0;padding:18px 20px}#app .kmil-hub-card[aria-pressed="true"]{padding:17px 19px}#app .kmil-hub-card-symbol{margin-bottom:10px;width:44px;height:44px}#app .kmil-hub-card-description{margin-bottom:13px}#app .kmil-interest-hub .kmil-interest-links{display:flex;justify-content:center;flex-wrap:wrap}#app .kmil-interest-hub .kmil-interest-links a{display:inline-flex;justify-content:center;text-align:center}}
 @media(prefers-reduced-motion:reduce){#app .kmil-hub-card{transition:none}#app .kmil-hub-card:hover{transform:none}}

@@ -167,6 +167,11 @@
       "details": ""
     },
     {
+      "name": "Ajánlott témák gombjai vízszintesen középre rendezettek",
+      "passed": true,
+      "details": ""
+    },
+    {
       "name": "Kezdőlap-beállító megőrzi a korábbi mentés azonosítóját",
       "passed": true,
       "details": ""
@@ -257,7 +262,7 @@
       "details": ""
     }
   ],
-  "passed": 51,
+  "passed": 52,
   "failed": 0,
   "browserAndDeviceTests": "Nem futott: a Chromium környezet socket engedélyhiánnyal megszakadt. Valós mobil, képernyőolvasó, CLS/LCP és offline teszt nyitott.",
   "ftpUpload": false
