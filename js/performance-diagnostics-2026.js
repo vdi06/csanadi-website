@@ -7,6 +7,8 @@ let currentRouteMs=null;
 let latestStatus='Betöltés…';
 let lastRoute='';
 let bundleStats=null;
+const webVitals={lcp:null,cls:0};
+let observersStarted=false;
 const clock=()=>Math.max(0,performance.now());
 const fmt=(ms)=> Number.isFinite(ms)?(ms<1000?`${Math.round(ms)} ms`:`${(ms/1000).toLocaleString('hu-HU',{minimumFractionDigits:2,maximumFractionDigits:2})} s`):'—';
 const bytes=value=>Number.isFinite(value)?(value/1048576).toLocaleString('hu-HU',{maximumFractionDigits:2,minimumFractionDigits:2})+' MiB':'—';
@@ -46,12 +48,19 @@ function refresh(){
  let slowCount=0;try{slowCount=settingNumber('runtime.diagnostics.slowestResourceCount');}catch{}
  const slower=performance.getEntriesByType('resource').filter(entry=>{try{return new URL(entry.name).origin===location.origin&&entry.duration>0;}catch{return false;}}).sort((a,b)=>b.duration-a.duration).slice(0,slowCount);
  slow.textContent=slower.length?'Leglassabb helyi állományok: '+slower.map(entry=>{const url=new URL(entry.name);return decodeURIComponent(url.pathname.split('/').at(-1)||url.pathname)+' ('+fmt(entry.duration)+')';}).join(' · ')+'. Ezek a böngésző által mért letöltési idők, nem egy teljes hálózati sebességteszt.':'A helyi állományok részletes időmérése még nem elérhető.';
+ let largestCount=5,targetLcpMs=2500,targetCls=.1,targetFcpMs=1800;
+ try{largestCount=settingNumber('runtime.diagnostics.largestResourceCount');targetLcpMs=settingNumber('runtime.diagnostics.targetLcpMs');targetCls=settingNumber('runtime.diagnostics.targetCls');targetFcpMs=settingNumber('runtime.diagnostics.targetFcpMs');}catch{}
+ const big=measured.filter(entry=>entry.decodedBodySize>0).sort((a,b)=>b.decodedBodySize-a.decodedBodySize).slice(0,largestCount);
+ panel.querySelector('[data-speed-largest]').textContent=big.length?'Legnagyobb feldolgozott erőforrások: '+big.map(entry=>{const url=new URL(entry.name);return decodeURIComponent(url.pathname.split('/').at(-1)||url.hostname)+' ('+bytes(entry.decodedBodySize)+')';}).join(' · ')+'. A cross-origin és gyorsítótári mérések hiányosak lehetnek.':'A böngésző nem szolgáltat dekódolt méretadatot az erőforrásokhoz.';
+ const fcpEntry=performance.getEntriesByType('paint').find(entry=>entry.name==='first-contentful-paint');
+ const fcp=fcpEntry?.startTime;
+ const metric=(name,value,target,unit)=>name+': '+(Number.isFinite(value)?(unit==='ms'?fmt(value):value.toLocaleString('hu-HU',{maximumFractionDigits:3}))+(value<=target?' (célon belül)':' (cél fölött)'):'nem mérhető')+' · cél: '+(unit==='ms'?fmt(target):target);
+ panel.querySelector('[data-speed-vitals]').textContent=[metric('FCP',fcp,targetFcpMs,'ms'),metric('LCP',webVitals.lcp,targetLcpMs,'ms'),metric('CLS',webVitals.cls,targetCls,'score')].join(' | ')+'. A webes vitális mutatók eszközfüggők; az LCP a betöltés végéig változhat.';
  const nav=performance.getEntriesByType?.('navigation')?.[0];
  if(nav){
   const dom=nav.domContentLoadedEventEnd>0?fmt(nav.domContentLoadedEventEnd):'Még folyamatban';
   const load=nav.loadEventEnd>0?fmt(nav.loadEventEnd):'Még folyamatban';
-  const fcp=performance.getEntriesByType('paint').find(entry=>entry.name==='first-contentful-paint');
-  details.textContent=`HTML-feldolgozás (DOMContentLoaded): ${dom} · Böngésző load esemény: ${load} · Első tartalommegjelenés (FCP): ${fcp?fmt(fcp.startTime):'nem mérhető'}`;
+  details.textContent=`HTML-feldolgozás (DOMContentLoaded): ${dom} · Böngésző load esemény: ${load} · Első tartalommegjelenés (FCP): ${fcpEntry?fmt(fcpEntry.startTime):'nem mérhető'}`;
  }else details.textContent='A böngésző nem ad részletes navigációs mérési adatokat.';
 }
 export function initPerformanceDiagnostics(){
@@ -72,11 +81,22 @@ export function initPerformanceDiagnostics(){
  const files=el('p','cs-speed-timings','');files.dataset.speedFileDetail='';
  const resources=el('p','cs-speed-timings','');resources.dataset.speedResources='';
  const slower=el('p','cs-speed-timings','');slower.dataset.speedSlowest='';
- disclosure.append(summary,explanation,timings,files,resources,slower);
+ const largest=el('p','cs-speed-timings','');largest.dataset.speedLargest='';
+ const vitals=el('p','cs-speed-timings','');vitals.dataset.speedVitals='';
+ disclosure.append(summary,explanation,timings,files,resources,slower,largest,vitals);
  panel.append(row,disclosure);
  const foot=footer.querySelector('.footer-bottom');foot?foot.before(panel):footer.append(panel);
  if(document.readyState==='complete')refresh();else window.addEventListener('load',refresh,{once:true});
  measureBundle();
+ if(!observersStarted && typeof PerformanceObserver==='function'){
+  observersStarted=true;
+  for(const [type,handler] of [
+   ['largest-contentful-paint',entry=>{webVitals.lcp=entry.startTime;}],
+   ['layout-shift',entry=>{if(!entry.hadRecentInput)webVitals.cls+=entry.value||0;}]
+  ]){
+   try{const observer=new PerformanceObserver(list=>{for(const entry of list.getEntries())handler(entry);refresh();});observer.observe({type,buffered:true});}catch{}
+  }
+ }
  refresh();
 }
 export function markNavigationStart(route,{initial=false}={}){

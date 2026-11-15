@@ -7,17 +7,17 @@
       "path": "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
       "type": "document",
       "mimeType": "application/pdf",
-      "sizeBytes": 89537,
+      "sizeBytes": 94108,
       "title": "Csanádi Sportiskola 2026 – Teljes weboldal-használati útmutató",
       "alt": "",
-      "description": "A 66 tartalmi oldal, nyolc karbantartó eszköz, 190 központi paraméter és a honlap összes fő funkciójának frissített, 3.2-es útmutatója.",
+      "description": "A 66 tartalmi oldal, tíz karbantartó eszköz, 202 központi paraméter és a honlap összes fő funkciójának frissített, 3.3-es útmutatója.",
       "tags": [
         "kézikönyv",
         "weboldal",
         "használati útmutató"
       ],
       "mediaId": null,
-      "sha256": "ad61c0b5eef2aea0bd167e7a53565408589e9ef09e80b83d36738c2c6c02c75e"
+      "sha256": "2cb428224977351d490ee6ba3e0eed2981f391e004dc881fbd76ff184a2a23b3"
     },
     {
       "path": "assets/documents/digitalis-fajlok-es-beadas.pdf",

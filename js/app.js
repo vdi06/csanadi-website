@@ -1,6 +1,6 @@
 import {initRound10Enhancements} from './round10-enhancements.js?v=20261115round10a';
 import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=20261115r15sport';
-import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=20261114speed1';
+import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=20261115r17metrics';
 import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=20261114ext1';
 import {initDetailedDiagnostics,initSiteHealth,initMobileQuickNav} from './site-quality-2026.js?v=20261114ext1';
 import {setupSmartSearch} from './search-j-2026.js?v=20261115r15';
@@ -18,7 +18,7 @@ import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderD
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=20261114ten2';
 import {renderBlock,dom,listCards} from './blocks.js?v=20261115r15sport';
-import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=20261114dfg1';
+import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=20261115r17policy';
 import {renderSportsSuccesses} from './sports-successes.js?v=20261114v5';
 import {renderStudentAchievements} from './student-achievements.js?v=20261114navs3';
 import {renderDailySportsNews} from './daily-sport-news.js?v=20261114ten2';
@@ -52,8 +52,8 @@ function relocateSiteMapButton(open){
  const emblem=siteMap.querySelector('.compass26-emblem');
  const launcher=document.querySelector('.csn26-visual-launch');
  if(!emblem||!launcher)return;
- if(open){siteMapLauncherHome=launcher.parentElement;emblem.replaceChildren(launcher);launcher.querySelector('button')?.setAttribute('aria-expanded','true');launcher.querySelector('button')?.setAttribute('aria-label','Csanádi körmenü bezárása');}
- else if(siteMapLauncherHome){siteMapLauncherHome.append(launcher);launcher.querySelector('button')?.setAttribute('aria-expanded','false');launcher.querySelector('button')?.setAttribute('aria-label','Csanádi körmenü megnyitása');}
+ if(open){siteMapLauncherHome=launcher.parentElement;emblem.replaceChildren(launcher);launcher.querySelector('button')?.setAttribute('aria-expanded','true');launcher.querySelector('button')?.setAttribute('aria-label','Főmenü bezárása');}
+ else if(siteMapLauncherHome){siteMapLauncherHome.append(launcher);launcher.querySelector('button')?.setAttribute('aria-expanded','false');launcher.querySelector('button')?.setAttribute('aria-label','Főmenü megnyitása');}
 }
 
 const outerRing=document.createElement('nav');

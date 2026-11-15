@@ -78,7 +78,9 @@
   "privacy": {
     "requireConsentForExternalEmbeds": true,
     "analyticsEnabled": false,
-    "externalOrigins": []
+    "externalOrigins": [],
+    "requireExplicitApprovalForStudentNews": true,
+    "allowFictionalStudentSamples": true
   },
   "search": {
     "enabled": true,
@@ -102,7 +104,7 @@
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r16-sport-20261115",
+    "cacheVersion": "csanadi-r17-20261115",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,
@@ -176,12 +178,16 @@
     },
     "news": {
       "maximumAgeHours": 72,
-      "maximumEditorRows": 18
+      "maximumEditorRows": 18,
+      "sampleTitlePrefix": "MINTA – ",
+      "officialSourceHost": "csanadi-bp.edu.hu"
     },
     "tools": {
       "mediaImportMaximumBytes": 104857600,
       "pageJsonMaximumBytes": 500000,
-      "sportNewsJsonMaximumBytes": 1000000
+      "sportNewsJsonMaximumBytes": 1000000,
+      "auditMaximumIssues": 150,
+      "auditConcurrentRequests": 4
     },
     "display": {
       "relatedPages": 8,
@@ -219,7 +225,15 @@
     "diagnostics": {
       "maxErrorEntries": 200,
       "summaryRefreshSeconds": 60,
-      "slowestResourceCount": 5
+      "slowestResourceCount": 5,
+      "largestResourceCount": 5,
+      "targetLcpMs": 2500,
+      "targetCls": 0.1,
+      "targetFcpMs": 1800
+    },
+    "release": {
+      "minimumManifestEntries": 700,
+      "expectedPageCount": 66
     }
   },
   "modules2026": {

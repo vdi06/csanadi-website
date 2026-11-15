@@ -68,7 +68,7 @@
     "oldalak/informaciok.json": {
       "id": "page:000047",
       "title": "Iskolai információk",
-      "menuLabel": "Iskolai információk",
+      "menuLabel": "Tudnivalók",
       "summary": "Csengetési rend, dokumentumok, közösségi szolgálat és ügyintézés.",
       "tags": [],
       "categories": [
@@ -110,7 +110,7 @@
     "oldalak/hirek-es-esemenyek.json": {
       "id": "page:000038",
       "title": "Hírek és események",
-      "menuLabel": "Hírek és események",
+      "menuLabel": "Hírek, programok",
       "summary": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum.",
       "tags": [],
       "categories": [
@@ -131,7 +131,7 @@
     "oldalak/oktatas.json": {
       "id": "page:000011",
       "title": "Oktatás és felvételi",
-      "menuLabel": "Oktatás és felvételi",
+      "menuLabel": "Oktatás, felvételi",
       "summary": "Képzési utak, felvételi, vizsgák, tanévi tudnivalók és tanulási segédletek.",
       "tags": [],
       "categories": [
@@ -278,7 +278,7 @@
     "oldalak/informaciok/digitalis-ugyintezes.json": {
       "id": "page:000056",
       "title": "Digitális ügyintézés",
-      "menuLabel": "Digitális ügyintézés",
+      "menuLabel": "Ügyintézés",
       "summary": "Iskolai digitális rendszerek és az elektronikus ügyintézés tájékozódási oldala.",
       "tags": [],
       "categories": [
@@ -299,7 +299,7 @@
     "oldalak/informaciok/mindennapi-tudnivalok.json": {
       "id": "page:000048",
       "title": "Mindennapi tudnivalók",
-      "menuLabel": "Mindennapi tudnivalók",
+      "menuLabel": "Napi tudnivalók",
       "summary": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez.",
       "tags": [],
       "categories": [
@@ -320,7 +320,7 @@
     "oldalak/informaciok/allaspalyazatok.json": {
       "id": "page:000061",
       "title": "Álláspályázatok",
-      "menuLabel": "Álláspályázatok",
+      "menuLabel": "Állások",
       "summary": "A nyilvánosan meghirdetett, intézmény által jóváhagyott álláspályázatok megjelenítési helye.",
       "tags": [],
       "categories": [
@@ -341,7 +341,7 @@
     "oldalak/oktatas/felveteli.json": {
       "id": "page:000016",
       "title": "Felvételi központ",
-      "menuLabel": "Felvételi központ",
+      "menuLabel": "Felvételi",
       "summary": "Tájékozódás az általános iskolai beiratkozás és a gimnáziumi jelentkezés előtt.",
       "tags": [],
       "categories": [
@@ -383,7 +383,7 @@
     "oldalak/oktatas/konyvtar.json": {
       "id": "page:000028",
       "title": "Könyvtár és tanulás",
-      "menuLabel": "Könyvtár és tanulás",
+      "menuLabel": "Könyvtár",
       "summary": "Olvasás, információkeresés és önálló tudásszerzés.",
       "tags": [],
       "categories": [
@@ -446,7 +446,7 @@
     "oldalak/oktatas/tananyagok-es-jegyzetek.json": {
       "id": "page:000030",
       "title": "Digitális tananyagközpont",
-      "menuLabel": "Digitális tananyagközpont",
+      "menuLabel": "Tananyagok",
       "summary": "Önálló tanulás, digitális fájlkezelés és felkészülési módszerek.",
       "tags": [],
       "categories": [
@@ -535,7 +535,7 @@
     "oldalak/iskolank/kuldetes-es-ertekek.json": {
       "id": "page:000004",
       "title": "Küldetésünk és értékeink",
-      "menuLabel": "Küldetésünk és értékeink",
+      "menuLabel": "Céljaink",
       "summary": "Az iskola küldetése a tanulás és a sport összehangolása, az egyéni fejlődés és a közösségi felelősség támogatása.",
       "tags": [],
       "categories": [
@@ -577,7 +577,7 @@
     "oldalak/iskolank/tortenet.json": {
       "id": "page:000005",
       "title": "Iskolánk története",
-      "menuLabel": "Iskolánk története",
+      "menuLabel": "Iskolatörténet",
       "summary": "A törökőri iskola története a sportiskolai hagyományokig.",
       "tags": [],
       "categories": [
@@ -625,7 +625,7 @@
     "oldalak/iskolank/hagyomanyok-es-elismeresek.json": {
       "id": "page:000006",
       "title": "Hagyományok és elismerések",
-      "menuLabel": "Hagyományok és elismerések",
+      "menuLabel": "Hagyományok, díjak",
       "summary": "Az iskolai közösség hagyományainak és elismeréseinek áttekintő oldala.",
       "tags": [],
       "categories": [
@@ -646,7 +646,7 @@
     "oldalak/iskolank/oko-iskola.json": {
       "id": "page:000008",
       "title": "Ökoiskolai szemlélet",
-      "menuLabel": "Ökoiskolai szemlélet",
+      "menuLabel": "Ökoiskola",
       "summary": "Környezettudatosság, egészséges életmód és felelős közösség.",
       "tags": [],
       "categories": [
@@ -693,7 +693,7 @@
     "oldalak/iskolank/alapitvany.json": {
       "id": "page:000009",
       "title": "Iskolai alapítvány",
-      "menuLabel": "Iskolai alapítvány",
+      "menuLabel": "Alapítvány",
       "summary": "Tanulás és sport: támogatás a fejlődési lehetőségekhez.",
       "tags": [],
       "categories": [
@@ -882,7 +882,7 @@
     "oldalak/oktatas/felveteli/elso-evfolyam.json": {
       "id": "page:000017",
       "title": "Első évfolyamos beiratkozás",
-      "menuLabel": "Első évfolyamos beiratkozás",
+      "menuLabel": "1. osztályos beiratkozás",
       "summary": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források.",
       "tags": [],
       "categories": [
@@ -903,7 +903,7 @@
     "oldalak/oktatas/felveteli/kilencedik-evfolyam.json": {
       "id": "page:000018",
       "title": "Kilencedik évfolyamos felvételi",
-      "menuLabel": "Kilencedik évfolyamos felvételi",
+      "menuLabel": "9. osztályos felvételi",
       "summary": "Középiskola-választás, jelentkezés, tájékoztatók és kapcsolódó dokumentumok.",
       "tags": [],
       "categories": [
@@ -1092,7 +1092,7 @@
     "oldalak/oktatas/tanevek/aktualis-tanev.json": {
       "id": "page:000026",
       "title": "Aktuális tanév – 2026/2027",
-      "menuLabel": "Aktuális tanév – 2026/2027",
+      "menuLabel": "Aktuális tanév",
       "summary": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi.",
       "tags": [],
       "categories": [
@@ -1113,7 +1113,7 @@
     "oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json": {
       "id": "page:000060",
       "title": "Közösségi szolgálat dokumentumai",
-      "menuLabel": "Közösségi szolgálat dokumentumai",
+      "menuLabel": "Szolgálati dokumentumok",
       "summary": "Közösségi szolgálathoz kapcsolódó igazolások és űrlapok gyűjtőhelye.",
       "tags": [],
       "categories": [

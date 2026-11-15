@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "id": "page:000005",
   "pageType": "standard",
-  "menuLabel": "Iskolánk története",
+  "menuLabel": "Iskolatörténet",
   "title": "Iskolánk története",
   "slug": "tortenet",
   "locale": "hu-HU",

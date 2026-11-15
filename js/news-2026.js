@@ -1,13 +1,13 @@
 
  
 const SOURCE=new URL('../json/adatok/hirek-hivatalos.json',import.meta.url);
+import {inspectNewsRecord} from './news-policy-2026.js';
+import {setting} from './site-settings-2026.js';
 const IMAGE_ROOT='assets/media/web/';
 const ILLUSTRATIONS={Sport:'sport-1600.webp',Felvételi:'felveteli-1600.webp',Oktatás:'oktatas-1600.webp',Közlemény:'kozosseg-1600.webp',Archívum:'iskolank-1600.webp',Iskolánk:'iskolank-1600.webp'};
 const el=(tag,cls='',txt)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=String(txt);return n;};
 const add=(p,...nodes)=>{p.append(...nodes);return p;};
 const normal=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('hu-HU');
-const validSource=s=>typeof s==='string'&&/^https:\/\/csanadi-bp\.edu\.hu\/[a-z0-9/.-]+$/.test(s);
-const validRoute=s=>typeof s==='string'&&/^#\/[a-z0-9/-]+$/.test(s);
 const formatDate=s=>s?new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'}).format(new Date(s+'T12:00:00Z')):'Dátum nélkül';
 async function load(){
  const r=await fetch(SOURCE,{cache:'no-cache'});
@@ -16,9 +16,7 @@ async function load(){
  if(x.schemaVersion!=='1.0.0'||x.collectionId!=='collection:hirek-hivatalos'||!Array.isArray(x.items))throw Error('A hírgyűjtemény felépítése hibás.');
  const seen=new Set();
  return x.items.filter(v=>{
-  if(!v||!['verified','sample'].includes(v.status)||!validRoute(v.route)||typeof v.title!=='string'||typeof v.summary!=='string')return false;
-  if(v.status==='verified'&&!validSource(v.url))return false;
-  if(v.status==='sample'&&(v.url!==null||!v.title.startsWith('MINTA – ')||v.date!==null))return false;
+  if(!inspectNewsRecord(v,{privacy:setting('privacy'),runtime:{news:setting('runtime.news')}}).ok)return false;
   if(seen.has(v.id))return false;seen.add(v.id);
   if(v.date&&(!/^\d{4}-\d{2}-\d{2}$/.test(v.date)||Number.isNaN(Date.parse(v.date+'T12:00:00Z'))))return false;
   return true;

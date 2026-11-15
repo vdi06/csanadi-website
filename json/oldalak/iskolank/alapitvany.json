@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "id": "page:000009",
   "pageType": "standard",
-  "menuLabel": "Iskolai alapítvány",
+  "menuLabel": "Alapítvány",
   "title": "Iskolai alapítvány",
   "slug": "alapitvany",
   "locale": "hu-HU",

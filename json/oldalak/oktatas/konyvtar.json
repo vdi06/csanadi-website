@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "id": "page:000028",
   "pageType": "hub",
-  "menuLabel": "Könyvtár és tanulás",
+  "menuLabel": "Könyvtár",
   "title": "Könyvtár és tanulás",
   "slug": "konyvtar",
   "locale": "hu-HU",

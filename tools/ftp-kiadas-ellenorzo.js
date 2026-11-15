@@ -19,12 +19,17 @@ run.addEventListener('click',async()=>{
  run.disabled=true;report.disabled=true;results=[];findings.replaceChildren();totals.replaceChildren();state.textContent='Az oldalindex betöltése…';
  let pages={},media=[],totalPaths=0;
  try{
-  const [index,structure,inventory,mediaRegistry,docs]=await Promise.all([json('json/oldalindex.json'),json('json/structure.json'),json('json/assets-inventory.json'),json('json/mediatar.json'),json('json/adatok/dokumentumok.json')]);
+  const [index,structure,inventory,mediaRegistry,docs,config,news]=await Promise.all([json('json/oldalindex.json'),json('json/structure.json'),json('json/assets-inventory.json'),json('json/mediatar.json'),json('json/adatok/dokumentumok.json'),json('json/config.json'),json('json/adatok/hirek-hivatalos.json')]);
   pages=index.pages||{};media=inventory.items||[];
   const pageEntries=Object.entries(pages);
   const routes=pageEntries.map(([,p])=>p.schemaExtensions?.route).filter(Boolean);
   const routeUnique=new Set(routes);
-  add(routes.length===routeUnique.size&&routes.length===66?'ok':'fail','Oldalindex és útvonalak',`${routes.length} regisztrált oldal; ${routeUnique.size} különböző útvonal.`, 'json/oldalindex.json');
+  const expectedPages=config.runtime?.release?.expectedPageCount;
+  add(routes.length===routeUnique.size&&routes.length===expectedPages?'ok':'fail','Oldalindex és útvonalak',`${routes.length} regisztrált oldal; ${routeUnique.size} különböző útvonal; elvárt: ${expectedPages}.`, 'json/oldalindex.json');
+  const newsItems=Array.isArray(news.items)?news.items:[];
+  const samplePrefix=config.runtime?.news?.sampleTitlePrefix;
+  const questionable=newsItems.filter(item=>item.status==='sample'&&(!String(item.title||'').startsWith(samplePrefix)||item.studentName||item.verified));
+  add(questionable.length?'fail':'ok','Fiktív diákhírek elkülönítése',questionable.length?`${questionable.length} minta nem felel meg a közzétételi jelzésnek.`:`${newsItems.filter(item=>item.status==='sample').length} jelölt minta; a minták nem minősülnek hiteles híreknek.`,'json/adatok/hirek-hivatalos.json');
   add(structure.schemaVersion===index.schemaVersion?'ok':'warn','JSON-séma','Az oldalstruktúra és az oldalindex sémaváltozata: '+structure.schemaVersion+' / '+index.schemaVersion);
   const accepted=pageEntries.filter(([,p])=>p.schemaExtensions?.verifiedContent===true).length;
   add(accepted===pageEntries.length?'ok':'warn','Tartalmi jóváhagyások',`${accepted}/${pageEntries.length} oldal tartalmaz intézményi ellenőrzési jelölést. A jelölés nem helyettesíti a tényleges ellenőrzést.`);
@@ -46,12 +51,13 @@ run.addEventListener('click',async()=>{
   }else add('warn','Médiaellenőrzés kihagyva','A teljes állományellenőrzést nem kérted.');
   try{
    const manifest=await json('release-manifest.json'),items=manifest.files||{},paths=Object.keys(items);
-   add(paths.length>600?'ok':'warn','Kiadási állományjegyzék',paths.length+' állomány SHA-256 metaadattal a release-manifest.json fájlban.');
-   const rollbackFiles=['README.md','index.html','json/config.json','json/structure.json','json/oldalindex.json','assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf'];
+   const minEntries=config.runtime?.release?.minimumManifestEntries;
+   add(paths.length>=minEntries?'ok':'warn','Kiadási állományjegyzék',`${paths.length} állomány SHA-256 metaadattal a release-manifest.json fájlban; minimum ${minEntries}.`);
+   const rollbackFiles=['README.md','index.html','json/config.json','json/structure.json','json/oldalindex.json','utmutato.html','tools/index.html','tools/minosegkapu.html','js/news-policy-2026.js','assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf'];
    const missingRollback=rollbackFiles.filter(path=>!items[path]);
    add(missingRollback.length?'fail':'ok','Visszaállítási alapcsomag',missingRollback.length?'A kiadásból hiányzik: '+missingRollback.join(', '):'A README, a belépési pont, a központi JSON-ok és a PDF-kézikönyv kiadási integritásadatai rendelkezésre állnak. A korábbi ZIP-et az FTP-visszaállításhoz külön meg kell őrizni.');
    if(crypto?.subtle){
-    const critical=['index.html','utmutato.html','service-worker.js','js/app.js','js/hero-2026.js','json/oldalindex.json','json/adatok/dokumentumok.json','assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf'];
+    const critical=['README.md','index.html','utmutato.html','service-worker.js','js/app.js','js/hero-2026.js','js/news-policy-2026.js','json/config.json','json/oldalindex.json','json/adatok/dokumentumok.json','tools/minosegkapu.html','assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf'];
     const checked=[];for(const path of critical){const entry=items[path];if(!entry){checked.push(path+' hiányzik a manifestből');continue;}const response=await fetch('../'+path,{cache:'no-store'});if(!response.ok){checked.push(path+' HTTP '+response.status);continue;}const buffer=await response.arrayBuffer(),hash=await crypto.subtle.digest('SHA-256',buffer),hex=[...new Uint8Array(hash)].map(x=>x.toString(16).padStart(2,'0')).join('');if(hex!==entry.sha256||buffer.byteLength!==entry.sizeBytes)checked.push(path+' hash-/méreteltérés');}
     add(checked.length?'fail':'ok','Kritikus fájlok hash-ellenőrzése',checked.length?checked.join('; '):critical.length+' kritikus fájl tartalma és mérete egyezik a kiadási manifeszttel.');
    }else add('warn','Kiadási hash-ellenőrzés','A WebCrypto API nem elérhető ebben a környezetben. Használj HTTPS-t vagy helyi biztonságos kiszolgálást.');
@@ -59,6 +65,10 @@ run.addEventListener('click',async()=>{
   const html=await fetch('../index.html',{cache:'no-store'}).then(r=>r.text());
   add(/<meta\s+name="robots"\s+content="noindex,nofollow"/.test(html)?'warn':'ok','Keresőmotoros indexelés',/noindex,nofollow/.test(html)?'A fejlesztési noindex,nofollow beállítás aktív; élesítés előtt tudatos döntést igényel.':'A fejlesztési noindex jelölés nem található a főoldalon.');
   const parsed=new DOMParser().parseFromString(html,'text/html');
+  const footer=parsed.querySelector('.site-footer');
+  const publicLinks=[...(footer?.querySelectorAll('a')||[])].map(link=>link.getAttribute('href')||'');
+  const exposed=publicLinks.filter(url=>/(?:tools\/|utmutato\.html)/i.test(url));
+  add(exposed.length?'fail':'ok','Publikus lábléc és szerkesztők elválasztása',exposed.length?`Nem kívánt hivatkozások: ${exposed.join(', ')}`:'Nincs eszköz- vagy kézikönyvhivatkozás a nyilvános láblécben. A karbantartás továbbra is külön címen érhető el.');
   const images=[...parsed.querySelectorAll('img')];
   const lackingAlt=images.filter(image=>!image.hasAttribute('alt'));
   add(lackingAlt.length?'warn':'ok','Kezdőlap HTML-képek alternatív szövege',lackingAlt.length?`${lackingAlt.length} képnél hiányzik az alt attribútum. Az üres alt külön elfogadható lehet dekoratív képnél.`:`${images.length} HTML-kép rendelkezik alt attribútummal.`);

@@ -86,14 +86,14 @@
     {
       "id": "document:csanadi-weboldal-kezikonyv-2026",
       "title": "Csanádi Sportiskola 2026 – Teljes weboldal-használati útmutató",
-      "summary": "Teljes webes és PDF-kézikönyv a 66 tartalmi oldalhoz, 8 karbantartó felülethez, a központi JSON mind a 190 beállításához és az összes fő funkcióhoz.",
+      "summary": "Teljes webes és PDF-kézikönyv a 66 tartalmi oldalhoz, 10 karbantartó felülethez, a központi JSON mind a 202 beállításához és az összes fő funkcióhoz.",
       "categoryId": "weboldal-utmutato",
       "tags": [
         "honlap",
         "használati útmutató",
         "dokumentáció",
         "kézikönyv",
-        "oldaltérkép",
+        "főmenü",
         "ftp",
         "médiakezelés"
       ],
@@ -114,9 +114,9 @@
       "mimeType": "application/pdf",
       "fileName": "csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
       "filePath": "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
-      "fileSizeBytes": 89537,
-      "sha256": "ad61c0b5eef2aea0bd167e7a53565408589e9ef09e80b83d36738c2c6c02c75e",
-      "version": "3.2.0",
+      "fileSizeBytes": 94108,
+      "sha256": "2cb428224977351d490ee6ba3e0eed2981f391e004dc881fbd76ff184a2a23b3",
+      "version": "3.3.0",
       "publishedAt": "2026-11-15",
       "validFrom": "2026-11-15",
       "validTo": null,
@@ -150,6 +150,11 @@
           "version": "3.2.0",
           "date": "2026-11-15",
           "change": "190 központi paraméter; világos témában pasztell, sötét témában tompított sportos zöld/sárga; menübetűzés, keresési szinonimák, PDF-tartalékút, médiaaudit és részletesebb sebességmérés. A README megmaradt."
+        },
+        {
+          "version": "3.3.0",
+          "date": "2026-11-15",
+          "change": "202 központi paraméter; elkülönített szerkesztői munkaközpont, közös hír-közzétételi szabály, átfogó minőségkapu, finomított mobilos képlapozás, LCP/CLS mérés és FTP-manifest kapu. A README és a fiktív hírek megmaradtak."
         }
       ]
     },

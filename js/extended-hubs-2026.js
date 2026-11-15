@@ -115,7 +115,7 @@ export function renderSmartRelations(node,catalog){
  };
  addFrom('Hír','adatok/hirek-hivatalos.json',data=>(data.items||[]).filter(d=>d.status==='verified'&&d.title).map(d=>({title:d.title,desc:d.summary||'',href:'#/hirek-es-esemenyek/hirek'})));
  addFrom('Dokumentum','adatok/dokumentumok.json',data=>(data.documents||[]).filter(d=>d.status==='published'&&d.title).map(d=>({title:d.title,desc:d.summary||'',href:safePDF(d.filePath)||'#/informaciok/dokumentumtar'})));
- if(!candidates.length)list.append(itemLink('Oldaltérkép','Fedezd fel az intézmény témaköreit','#/','Navigáció'));
+ if(!candidates.length)list.append(itemLink('Főmenü','Fedezd fel az iskola témaköreit','#/','Navigáció'));
  return root;
 }
 

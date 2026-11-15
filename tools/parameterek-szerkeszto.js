@@ -46,6 +46,13 @@
   const synonyms=state.working.search?.synonyms;
   if(!synonyms||Object.entries(synonyms).some(([word,items])=>!/^[a-z0-9-]+$/.test(word)||!Array.isArray(items)||items.some(item=>typeof item!=='string'||!/^[a-z0-9-]+$/.test(item))))errors.push('search.synonyms: az értékek ékezetmentes kulcsokból és szöveglistákból álljanak');
   if(state.working.runtime?.diagnostics?.slowestResourceCount>30)errors.push('runtime.diagnostics.slowestResourceCount: legfeljebb 30 fájl jeleníthető meg');
+  if(state.working.runtime?.diagnostics?.largestResourceCount>30)errors.push('runtime.diagnostics.largestResourceCount: legfeljebb 30 fájl jeleníthető meg');
+  if(state.working.runtime?.diagnostics?.targetCls>1)errors.push('runtime.diagnostics.targetCls: 0 és 1 közötti érték szükséges');
+  if(!/^[a-z0-9-]+(?:\.[a-z0-9-]+)+$/.test(state.working.runtime?.news?.officialSourceHost||''))errors.push('runtime.news.officialSourceHost: érvényes intézményi domain szükséges');
+  if(!String(state.working.runtime?.news?.sampleTitlePrefix||'').trim())errors.push('runtime.news.sampleTitlePrefix: a bemutató jelölés nem lehet üres');
+  if(state.working.runtime?.tools?.auditMaximumIssues<1||state.working.runtime?.tools?.auditMaximumIssues>500)errors.push('runtime.tools.auditMaximumIssues: 1 és 500 közötti érték szükséges');
+  if(state.working.runtime?.tools?.auditConcurrentRequests<1||state.working.runtime?.tools?.auditConcurrentRequests>20)errors.push('runtime.tools.auditConcurrentRequests: 1 és 20 közötti érték szükséges');
+  if(state.working.runtime?.release?.expectedPageCount<1||state.working.runtime?.release?.minimumManifestEntries<1)errors.push('runtime.release: pozitív oldalszám és minimális állományszám szükséges');
   return errors;
  }
  function render(){

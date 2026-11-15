@@ -1,8 +1,8 @@
 # Csanádi Sportiskola 2026 – a központi JSON összes paramétere
 
-**Forrás:** `json/config.json` · **Kiadás:** 16 · **Dátum:** 2026. november 15.
+**Forrás:** `json/config.json` · **Kiadás:** 17 · **Dátum:** 2026. november 15.
 
-**Összesen 190 beállítható, egy helyen tárolt mező.** A lista a tényleges kiadási JSON-ból származik; szerkesztéshez nyisd meg a `tools/parameterek-szerkeszto.html` felületet.
+**Összesen 202 beállítható, egy helyen tárolt mező.** A lista a tényleges kiadási JSON-ból származik; szerkesztéshez nyisd meg a `tools/parameterek-szerkeszto.html` felületet.
 
 A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést jelent. A darabszámok, időzítések, méretek és más globális kapcsolók a JSON-ból kerülnek a programokhoz. Az egyedi esemény, dokumentum és hír rekordjának saját dátuma a saját adatrekord egyetlen forrásértéke, nem másolat a globális konfigurációban.
 
@@ -108,13 +108,15 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `content.collectionRoot` | `"entitasok"` | szöveg |
 | `content.componentRoot` | `"komponensek"` | szöveg |
 
-## Adatvédelem (3 mező)
+## Adatvédelem (5 mező)
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
 | `privacy.requireConsentForExternalEmbeds` | `true` | logikai |
 | `privacy.analyticsEnabled` | `false` | logikai |
 | `privacy.externalOrigins` | `[]` | lista |
+| `privacy.requireExplicitApprovalForStudentNews` | `true` | logikai |
+| `privacy.allowFictionalStudentSamples` | `true` | logikai |
 
 ## Kereső (17 mező)
 
@@ -142,7 +144,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
-| `performance.cacheVersion` | `"csanadi-r16-sport-20261115"` | szöveg |
+| `performance.cacheVersion` | `"csanadi-r17-20261115"` | szöveg |
 | `performance.maxCacheMegabytes` | `50` | szám |
 | `performance.respectReducedMotion` | `true` | logikai |
 | `performance.mediaCacheEntries` | `100` | szám |
@@ -150,7 +152,7 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `performance.offlinePrecacheFileMaxBytes` | `300000` | szám |
 | `performance.offlinePrecacheMaxEntries` | `220` | szám |
 
-## Megjelenítés, körmenü, dátumablakok és diagnosztika (86 mező)
+## Megjelenítés, körmenü, dátumablakok és diagnosztika (96 mező)
 
 | Pontos JSON-útvonal | Jelenlegi érték | Típus |
 |---|---|---|
@@ -205,9 +207,13 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `runtime.sports.refreshSeconds` | `60` | szám |
 | `runtime.news.maximumAgeHours` | `72` | szám |
 | `runtime.news.maximumEditorRows` | `18` | szám |
+| `runtime.news.sampleTitlePrefix` | `"MINTA – "` | szöveg |
+| `runtime.news.officialSourceHost` | `"csanadi-bp.edu.hu"` | szöveg |
 | `runtime.tools.mediaImportMaximumBytes` | `104857600` | szám |
 | `runtime.tools.pageJsonMaximumBytes` | `500000` | szám |
 | `runtime.tools.sportNewsJsonMaximumBytes` | `1000000` | szám |
+| `runtime.tools.auditMaximumIssues` | `150` | szám |
+| `runtime.tools.auditConcurrentRequests` | `4` | szám |
 | `runtime.display.relatedPages` | `8` | szám |
 | `runtime.display.homepageUpcomingEvents` | `3` | szám |
 | `runtime.display.homepagePreviewEvents` | `4` | szám |
@@ -240,6 +246,12 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 | `runtime.diagnostics.maxErrorEntries` | `200` | szám |
 | `runtime.diagnostics.summaryRefreshSeconds` | `60` | szám |
 | `runtime.diagnostics.slowestResourceCount` | `5` | szám |
+| `runtime.diagnostics.largestResourceCount` | `5` | szám |
+| `runtime.diagnostics.targetLcpMs` | `2500` | szám |
+| `runtime.diagnostics.targetCls` | `0.1` | szám |
+| `runtime.diagnostics.targetFcpMs` | `1800` | szám |
+| `runtime.release.minimumManifestEntries` | `700` | szám |
+| `runtime.release.expectedPageCount` | `66` | szám |
 
 ## Iskolai modulok (15 mező)
 
@@ -269,4 +281,4 @@ A dátumértékek ISO 8601 formátumúak; a `null` korlátlan megjelenítést je
 4. Az új kiadáshoz számítsd újra a `release-manifest.json` méret- és SHA-256 adatait, ellenőrizd, majd tesztkörnyezetben próbáld ki.
 5. Az éles FTP-re semmilyen szerkesztő nem tölt fel automatikusan.
 
-A PDF- és webes kézikönyv a 66 oldalt, nyolc szerkesztőeszközt és minden jelenlegi paramétert külön-külön tartalmaz.
+A PDF- és webes kézikönyv a 66 oldalt, tíz szerkesztőeszközt és minden jelenlegi paramétert külön-külön tartalmaz.
