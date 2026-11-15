@@ -1,4 +1,4 @@
-import {formatBytes as bytes} from './format-bytes.js?v=csanadi-r28-20261115';
+import {formatBytes as bytes} from './format-bytes.js?v=csanadi-r29-20261115';
  
 let panel=null;
 let pending=null;

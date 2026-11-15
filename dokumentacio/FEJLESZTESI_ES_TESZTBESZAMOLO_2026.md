@@ -1,4 +1,34 @@
-# Csanádi Sportiskola 2026 · 28. fejlesztési kör – kizárólag karbantartás
+# Csanádi Sportiskola 2026 · 29. fejlesztési kör – jóváhagyott kezdőoldal
+
+**Kiadás:** `csanadi-sportiskola-2026-r29` · **Dátum:** 2026. november 15. · **Alap:** a 28. teljes változat, az utóbb előkészített megközelítési és témakezelési javításokkal.
+
+## Mit kértél a 29. körre?
+
+A teljes kezdőoldali látványterv megvalósítását a meglévő tartalmak, összes oldal, főmenü, körmenü, mobilos menüváltás, képváltó, helyi kezdőlap-testreszabó, színtémák, JSON-adatok, adatvédelmi beállítások, dokumentáció és FTP-kompatibilitás megőrzésével. Külön kérted, hogy a régebben jelzett hibajavítások se maradjanak el.
+
+## Mi került ténylegesen a csomagba?
+
+1. **Kapunyitó ikon:** a korábbi kulcsalak és felirat helyett kizárólag nyitott kaput ábrázoló SVG-ikon; a hozzáférhető gombnév megmarad. A nyitott kapu képe három közelítési fázisban látható; mobilra külön megjelenítés készült.
+2. **Kezdőoldali szakasznavigátor:** jobb oldali ikonból nyíló, csak kezdőoldali panel. Szakaszválasztáskor a panel bezárul, és a kijelölt szakaszhoz görget. A nyitott/becsukott állapotot nem írja át, a személyre szabott sorrendet DOM-sorrend alapján követi, Esc és billentyűzetes fókuszkör támogatott.
+3. **Gyorselérések:** ikon+felirat, mobilon két oszlop, a negyedik után a további hivatkozások külön gombbal helyben kibontva. Az eredeti gyorselérési célokat megtartja.
+4. **Becsukható tartalmi csoportok:** a Napi központ, Sporteredmények, Képekben és Fedezd fel blokkok megőrzése, lépcsőzetes megjelenési animációval. Az elérhető diagramokhoz külön kibontó keret került.
+5. **Megközelítés a kezdőlapon:** önálló térkép-előnézeti felület három teljes magasságot kitöltő kapcsolódó kártyával; mobilon egymás alá kerülnek. Az interaktív tartalom csak kattintás után nyílik.
+6. **Megközelítési oldal javítása:** az önálló `megkozelites-es-tanulas.html#terkep` közös SPA-útvonalra vezeti a látogatót, és a tartalom beágyazva tartja a honlap fejlécét, menüjét és láblécét.
+7. **Témák:** célzott R29 világos/sötét stílusok a kiegészítő felületeken; a korábbi automatikus és kézi témaváltó érintetlen.
+8. **Honlapdiagnosztika:** szerelőikon a lábléc fölött; a korábbi diagnosztikai tartalom modális felületen nyílik meg, kezdetben becsukva, bezárógombbal és Esc-kezeléssel.
+9. **Főmenü/képváltó megőrzése:** a középső főmenüindító, a két szélső képváltó és az asztali/mobilos menürendszer eredeti forrását nem cseréltük le. Az R28 mobilos duplikált felső menü- és keresőgomb javítása maradt.
+10. **Dokumentáció és csomag:** a teljes webes útmutató új R29 fejezettel bővült, a PDF 3.15-ös kiegészítést kapott; a teljes ZIP és SHA-256 fájlmanifest frissült.
+
+## Ellenőrzési eredmény és nyitott pontok
+
+- **Sikeres statikus próbák:** a korábbi fájlok megléte; minden JSON értelmezhetősége; minden JavaScript szintaxisa; a szükséges fájlok és hivatkozások megléte; a PDF megnyithatósága; a ZIP CRC-ellenőrzése. A tételes gépi eredmény: `dokumentacio/TESZTEREDMENY_2026_29.json`.
+- **Nem igazolt:** valódi böngészős animációk, telefonos méretek, képernyőolvasó, valós CLS/LCP, offline és gyorsítótár-frissítés. A helyi Chromium indítását környezeti socket-engedélyhiba megakadályozta. A forrásellenőrzés önmagában **nem bizonyítja** a fenti felhasználói élményt.
+- **További kidolgozásra vár:** a jóváhagyott egyedi sporthír-/iskolai hírkártya-kompozíciók minden részlete, a harmadik szintű Tetris-almenü teljes működése és a tartalmi JSON-ok szigorú igény szerinti betöltése. A meglévő rendszerek megmaradtak, de ezeket nem állítjuk teljesen késznek.
+- Az iskolai FTP-re **semmit nem töltöttünk fel**. A teljes csomag helyben ellenőrzött, de élesítés előtt böngészős teszt és biztonsági másolat indokolt.
+
+---
+
+# Előző kiadás – 28. fejlesztési kör (megőrzött beszámoló)
 
 **Kiadás:** `csanadi-sportiskola-2026-r28` · **Dátum:** 2026. november 15. · **Alapcsomag:** `Csanadi_Sportiskola_2026_27_TELJES_WEBOLDAL_FTP_ES_KEZIKONYV.zip`.
 

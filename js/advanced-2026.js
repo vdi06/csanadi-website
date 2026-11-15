@@ -2,7 +2,7 @@
 
 
  
-import {renderDigitalClock} from './experience-2026.js?v=csanadi-r28-20261115';
+import {renderDigitalClock} from './experience-2026.js?v=csanadi-r29-20261115';
 const BASE='json/adatok/';
 const ZONE=()=>setting('modules2026.clock.timezone');
 const e=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -39,8 +39,8 @@ export function openEntrancePortal({force=false}={}){
  const content=e('div','gate26-content');const logo=e('img','gate26-logo');logo.src='assets/media/logo/csanadi-cimer-512.webp';logo.alt='Csanádi Sportiskola címer';logo.width=76;logo.height=76;
  const title=e('h2','', 'Lépj be a sport és a tudás világába');title.id='gate26-title';const desc=e('p','','Nyitva áll a Csanádi Sportiskola kapuja.');desc.id='gate26-description';
  const enter=btn('','gate26-enter gate26-key',()=>open());const skip=btn('Kihagyás','gate26-skip',()=>finish());skip.setAttribute('aria-label','Belépőanimáció kihagyása');
- const keyIcon=document.createElementNS('http://www.w3.org/2000/svg','svg');keyIcon.setAttribute('viewBox','0 0 120 120');keyIcon.setAttribute('width','77');keyIcon.setAttribute('height','77');keyIcon.setAttribute('aria-hidden','true');keyIcon.innerHTML='<circle cx="40" cy="38" r="23" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="40" cy="38" r="8" fill="none" stroke="currentColor" stroke-width="3"/><path d="M57 54 L101 98 L89 108 L78 96 L69 105 L59 95 L68 86 L49 66" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>';
- enter.append(keyIcon,e('span','gate26-key-label','Nyisd meg a kaput'));enter.setAttribute('aria-label','Nyisd meg a kaput');
+ const keyIcon=document.createElementNS('http://www.w3.org/2000/svg','svg');keyIcon.setAttribute('viewBox','0 0 120 120');keyIcon.setAttribute('width','77');keyIcon.setAttribute('height','77');keyIcon.setAttribute('aria-hidden','true');keyIcon.innerHTML='<path d="M13 103V21h43v82M56 21h51v82M13 103h94" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M56 27 24 42v56l32-12V27Zm0 0 35 16v57L56 86V27Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/><path d="M68 61h7M41 61h5" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>';
+ enter.append(keyIcon);enter.setAttribute('aria-label','Nyisd meg a kaput');enter.setAttribute('title','Nyisd meg a kaput');
  add(content,logo,e('span','gate26-eyebrow','CSANÁDI SPORTISKOLA · 2026'),title,desc,document.createDocumentFragment(),enter);
  add(layer,scenery,glow,doors,content,skip);document.body.append(layer);
  const oldFocus=document.activeElement;let done=false,opening=false,finishTimer;
@@ -55,6 +55,15 @@ export function openEntrancePortal({force=false}={}){
   enter.disabled=true;
   enter.setAttribute('aria-label','A kapu nyílik');
   if(reduced){finish();return;}
+  // A nyitott kapu a mobilos várakozás alatt is felismerhető marad.
+  // A három közelítés csak a belépéskor kap képeket: induláskor nem terheli a hálózatot.
+  const approach=e('div','gate29-approach');approach.setAttribute('aria-hidden','true');
+  for(let i=0;i<3;i++){
+   const img=e('img','gate29-approach-image gate29-approach-'+(i+1));
+   img.src='assets/media/web/belepes-nyitott.webp';img.alt='';img.decoding='async';
+   approach.append(img);
+  }
+  layer.insertBefore(approach,glow);
   layer.classList.add('gate26-open');
    
   finishTimer=setTimeout(finish,settingNumber('runtime.timing.portalOpenDurationMs'));

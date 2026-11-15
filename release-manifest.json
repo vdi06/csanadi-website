@@ -1,18 +1,18 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-sportiskola-2026-r28",
+  "release": "csanadi-sportiskola-2026-r29",
   "date": "2026-11-15",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "Minden R27 fájlútvonal, honlapoldal és funkció megmaradt. A 28. kör kizárólag a meglévő honlap javítása, új modul nélkül. A manifest önmagát nem tartalmazza. Iskolai FTP-feltöltés nem történt.",
+  "notes": "A korábbi funkciókat megtartó kezdőoldali R29 és a kijelölt hibajavítások. FTP-feltöltés nem történt.",
   "files": {
     "README.md": {
       "sizeBytes": 42,
       "sha256": "0f8fe1484cf12c38044132545bebfb5615c1a3dbc70ab63555ef3ad687db407b"
     },
     "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf": {
-      "sizeBytes": 145833,
-      "sha256": "5b9f608b503b71fb7750ec54d65efd63bc8d81762c3fe0cf33522fc835f7a5a8"
+      "sizeBytes": 173523,
+      "sha256": "9587859d208cff5989103e634e1b6f414fe99e696684319530cb5deb8e2fc3c7"
     },
     "assets/documents/digitalis-fajlok-es-beadas.pdf": {
       "sizeBytes": 48220,
@@ -2904,7 +2904,7 @@
     },
     "css/home-gallery-news-gate-2026.css": {
       "sizeBytes": 5561,
-      "sha256": "f668321b7c0f624d4ffccccbd7bd964a1303f11e46dd77870a84f0f3fc537d29"
+      "sha256": "ab7b14a4739839c7c5109d58a18ca4727e2275539c4e7001561923021dea52f0"
     },
     "css/interactions-be-2026.css": {
       "sizeBytes": 5701,
@@ -3086,6 +3086,14 @@
       "sizeBytes": 972,
       "sha256": "47291ec40a4b5fe32d85181484acd1306a543a18c5bf0c2077b2e7ca23897ead"
     },
+    "css/round29-home.css": {
+      "sizeBytes": 6440,
+      "sha256": "079097f7ef18d0993cf2cd423657821e9b77295537878f766356e1912f81a50d"
+    },
+    "css/round29-integration.css": {
+      "sizeBytes": 4703,
+      "sha256": "ea38cffdd8525dc90277991ca044d5f7097a7d4d0d23e8dc2fea1953037e4059"
+    },
     "css/style.css": {
       "sizeBytes": 75798,
       "sha256": "71840673db531aeabf7822f96f96b563e10fa6c662b678ed51e511add55efd74"
@@ -3135,8 +3143,8 @@
       "sha256": "d699af49beee4cb9af24350bdf8a3092e82dcb83cdd40a46554c50880a6bae9c"
     },
     "dokumentacio/FEJLESZTESI_ES_TESZTBESZAMOLO_2026.md": {
-      "sizeBytes": 8900,
-      "sha256": "fde984079eb19a97797a9afa0b86119840a87965666c76bb5ea5ed1ade53fc6c"
+      "sizeBytes": 12944,
+      "sha256": "6f5deac3ebf8b916d07d3ea9dc29d9251444eb8b3d3f237d98ed23338ed37652"
     },
     "dokumentacio/FTP_ATALLAS_ES_VISSZAALLITAS.md": {
       "sizeBytes": 4648,
@@ -3174,33 +3182,37 @@
       "sizeBytes": 19543,
       "sha256": "08c42499fc8cd3d4ec64e7afbdbd5650b59c5c95dbb65ac133a651e832224adb"
     },
+    "dokumentacio/TESZTEREDMENY_2026_29.json": {
+      "sizeBytes": 2528,
+      "sha256": "a94fd278e7655ac7173052e7d9efbd7fc36923190c4d5ba433740a0020ae0f5a"
+    },
     "felfedezo.html": {
       "sizeBytes": 8892,
-      "sha256": "60f0faef8c28f29c94048bc916cde44ab27a4f2a2c6ed01bc334592c1ca22569"
+      "sha256": "210df087246bdb7c56b369b09f4a2a7b869ea8cdbdc7b85163a3b972ad1dddd0"
     },
     "index.html": {
-      "sizeBytes": 15821,
-      "sha256": "07d1695c95e86ef7878892796178076d4466ba85d3da76acb190fe9f2add79b7"
+      "sizeBytes": 15976,
+      "sha256": "f78ac42a9fc7dd12ec8c080e6d1416b2c5f63ed2c227edde2e0bdb498b852456"
     },
     "iranytu.html": {
       "sizeBytes": 9896,
-      "sha256": "817bb542784cc6f82f82c5b0c8f99aecae221858d6893e8ed88c51f1b75ddf69"
+      "sha256": "3aeacd8f930add9ae286cf2174b044e5435f4e60a6c5efe2b4e32d2cd6bd10ff"
     },
     "iskolai-muhely.html": {
       "sizeBytes": 11172,
-      "sha256": "d7d4813c4e81e5bb61233d9ee3956c05b05437c243e6bb47606c05f19a57e16f"
+      "sha256": "8758737cb6299ff40df23e20c4e2ee51369b006998bd9647fdeeb2d6e367d041"
     },
     "js/advanced-2026.js": {
-      "sizeBytes": 33998,
-      "sha256": "c52fa2015a3f252255519492eb595c447ccd495ae67a73e181591db5f4ac7a74"
+      "sizeBytes": 34541,
+      "sha256": "3f068719a7ead2ea328bc1247d9686fe38bb926105992c8f0fbaf0ac05ac556a"
     },
     "js/app.js": {
-      "sizeBytes": 43423,
-      "sha256": "5d199682e771c4d12792907f2e6ace4cc0fdc41ca8f50d818b94652d3ad285ad"
+      "sizeBytes": 46339,
+      "sha256": "dbdd4428fe0a072509dbf8723aed0edbe4ba662dc210914df59b0aa560bc7750"
     },
     "js/blocks.js": {
       "sizeBytes": 8878,
-      "sha256": "df0daf59d67a61b0ade3e980dc067fa6db9c31871fad216b801e0687007f407c"
+      "sha256": "cc6a1c797ec25346dac63a7473f75d0c74ed1b845f81bd6e17bd9ed36a359c16"
     },
     "js/content.js": {
       "sizeBytes": 5050,
@@ -3216,7 +3228,7 @@
     },
     "js/documents.js": {
       "sizeBytes": 28180,
-      "sha256": "dde07b750696374ad181da8c02512dd5c8974ca4073bcbd0e6230713f5942412"
+      "sha256": "1ba62363a4bd8decf3e044b69a4a9b5e03a62735002aebbf512fd8e25447b2f5"
     },
     "js/experience-2026.js": {
       "sizeBytes": 21323,
@@ -3224,7 +3236,7 @@
     },
     "js/extended-hubs-2026.js": {
       "sizeBytes": 25851,
-      "sha256": "f18bcda4d37d41df06b65e94272b84c14d933539025a1973903f64588518c846"
+      "sha256": "d8eba1a6dd3779d0bf8539892bc66f013aca6c4c46c05e4ca5c72c137707c0be"
     },
     "js/format-bytes.js": {
       "sizeBytes": 481,
@@ -3236,7 +3248,7 @@
     },
     "js/hero-2026.js": {
       "sizeBytes": 6951,
-      "sha256": "be0414033b7f97a472b746139bf196ac25757a1152b27cb54e463e49e127137f"
+      "sha256": "15d189c6c5e5297ea90dd947f139cc81d4d119325b4d817655b3a02704318eaa"
     },
     "js/home-live.js": {
       "sizeBytes": 13997,
@@ -3252,7 +3264,7 @@
     },
     "js/language-20.js": {
       "sizeBytes": 2194,
-      "sha256": "408802f50d1e28431dd90fc4a3e4469770c814423cd8d8cbe43a3124d665d2d9"
+      "sha256": "b923901e79e1d7f23037d04f1901277ecc481927495a91c9ff91e82136dc033f"
     },
     "js/media-gallery-h-2026.js": {
       "sizeBytes": 16471,
@@ -3276,7 +3288,7 @@
     },
     "js/offline-reader-20.js": {
       "sizeBytes": 5259,
-      "sha256": "44832d467b82d6b3da72edc7145fd3e87f2aa13d0de602e3b804f4ee97f6481e"
+      "sha256": "0f9e061e7eabd9d2b07f482a12efe76d10990f64f18c43d703b1890b2977b113"
     },
     "js/page-media-2026.js": {
       "sizeBytes": 2136,
@@ -3284,11 +3296,11 @@
     },
     "js/performance-diagnostics-2026.js": {
       "sizeBytes": 13409,
-      "sha256": "332a07c8c655030cfcc24d39845b33b873505f7daa3b9489c0b4e9765fd54548"
+      "sha256": "f3f726931780e88a0d91a66dfb5b4a68d19d7c31eb5ffd493f5ad6759e88537a"
     },
     "js/premium-home-2026.js": {
       "sizeBytes": 3145,
-      "sha256": "56fb352dc730a536de11bc98e1e637f9bc326367eb97465634c5551efda9059e"
+      "sha256": "f927f71ac6e8de0e5d86897bd73cb63f1b61c89c14a8a7b7d2e166b0b71c15ad"
     },
     "js/round10-enhancements.js": {
       "sizeBytes": 5051,
@@ -3304,7 +3316,7 @@
     },
     "js/round21-explorer.js": {
       "sizeBytes": 16218,
-      "sha256": "2766a76d992f3f1a6e609bed4a6d76d0852768eec6dea7b0cf86b391a177a48b"
+      "sha256": "70b8bacbe3142cbd6d5bd2be767ba749676d477dc95fc6612a8713b1c68c69b0"
     },
     "js/round21-personalize.js": {
       "sizeBytes": 4479,
@@ -3330,13 +3342,17 @@
       "sizeBytes": 14341,
       "sha256": "4053f8bd9b4446f410f47b1f73540be32f9fba5ddf62d11d208250b4af68ec57"
     },
+    "js/round29-home.js": {
+      "sizeBytes": 9959,
+      "sha256": "7c418702900d1337e700d6968e42f9ea2ebd0958942840810cf22da47b104643"
+    },
     "js/search-j-2026.js": {
       "sizeBytes": 15093,
       "sha256": "14269e755d6ea71b912281f0c9df1057bb67feeeaa5b299aed90755ff649e1f9"
     },
     "js/site-quality-2026.js": {
       "sizeBytes": 9772,
-      "sha256": "7a02425dda24242ee84a2d1296de58f46d85952dab10c784b8ef279f6bb264d8"
+      "sha256": "df6f6e4d8d72971752b98d0dc71eea270a879055348cd8a236d3d5071136989c"
     },
     "js/site-settings-2026.js": {
       "sizeBytes": 3539,
@@ -3444,7 +3460,7 @@
     },
     "json/config.json": {
       "sizeBytes": 11527,
-      "sha256": "5e03c44bc196dd2f104ba610a218f6fd4da7f3531eb55691a053a4046aa875d3"
+      "sha256": "5c35762e0d958d5795d336bb4332699ce37421a905ee9c15ed26b789ebb1659d"
     },
     "json/mediatar.json": {
       "sizeBytes": 218634,
@@ -3735,8 +3751,8 @@
       "sha256": "9f1ac23f828fc3c4af582a713fb5af83ad36c283447b7b1b1934e7634797d293"
     },
     "megkozelites-es-tanulas.html": {
-      "sizeBytes": 12972,
-      "sha256": "f40e6439612fcb45ca57c115c1c66a082eebded2159000b0b3aa2a5c3d47471e"
+      "sizeBytes": 14671,
+      "sha256": "93ccd02c2e2533e067247b45eb6c128a097ea4bc66744722c24006f91cec89dc"
     },
     "mobile/j-mobile-home-2026.css": {
       "sizeBytes": 4226,
@@ -3752,7 +3768,7 @@
     },
     "mobile/quick-nav.js": {
       "sizeBytes": 2597,
-      "sha256": "0ce92f225a4a80b529d8912b083e72c26eff4d3e5e0a42729aef4e1e91c75297"
+      "sha256": "deaf5afb59cb50d1a3ed58901a26447a604097f929be3b721e7fc6c1fa3e1686"
     },
     "mobile/round16-responsive.css": {
       "sizeBytes": 1146,
@@ -3796,7 +3812,7 @@
     },
     "offline-olvaso.html": {
       "sizeBytes": 1988,
-      "sha256": "b515867a9a2ee26d94eaa7549153025fd76b6642a4abb987d5f039de0aea11e8"
+      "sha256": "31b1669fc0740787794dd002c0cbdd72c168673551a5305a932150e95d8ec0f3"
     },
     "offline.html": {
       "sizeBytes": 1532,
@@ -3804,11 +3820,11 @@
     },
     "orokseg-es-tudastar.html": {
       "sizeBytes": 11034,
-      "sha256": "fe8135d03757cdd4056ff64fd599047e80a16508a7d437f01d29d052f9224faf"
+      "sha256": "2dde191778ef310ee73ca192e88852bbafbebcb1cb274fa672584f29d7c8b3d7"
     },
     "script.js": {
       "sizeBytes": 1187,
-      "sha256": "c90e2a8a31ed4dbdf3065d58987bc93acd47c78e0dc40e3622f3032404855835"
+      "sha256": "32c7113f63af1778c97b22d1c5a4fd9178b32035efdf039caab69c8417517d47"
     },
     "service-worker.js": {
       "sizeBytes": 5002,
@@ -3816,11 +3832,11 @@
     },
     "tanulas-es-kozosseg.html": {
       "sizeBytes": 12961,
-      "sha256": "232eb92d5c599d5ba9fc0b24ee3659af7b49a039c96015f5b5a41e6898dcae55"
+      "sha256": "98a277d76689b65e7d0762ea9ec9e7672a56e6fb9dabe585100ce757eec23705"
     },
     "tools/dokumentum-szerkeszto.html": {
       "sizeBytes": 4577,
-      "sha256": "85a78bb6be0ba0c151af18267e8bbc37421800e16c4a94648a87e9635deb8f38"
+      "sha256": "445cd0c3756297122b850f1e5582f5f2bf19e7afb86f8e5e6d3b044e77da0167"
     },
     "tools/dokumentum-szerkeszto.js": {
       "sizeBytes": 4523,
@@ -3828,15 +3844,15 @@
     },
     "tools/eszkoz-mediator.html": {
       "sizeBytes": 11360,
-      "sha256": "9efdf25e0c6ee2768a1f2a5635c3c5f14836300c7c698d0f4040a65b08d3b8dd"
+      "sha256": "d6a6ab80e7a6b77ea7c4c81bcd4659fd30e683b5585a10057b7f6d1a6fe8d032"
     },
     "tools/fejlesztoi-munkakozpont-20.html": {
       "sizeBytes": 7235,
-      "sha256": "d87d08ce420d2631d8e5dcb8f87f6f5454dd17ac1ac18f6a3ad2352662949f1a"
+      "sha256": "b8dc0a5af7598dfaacff92cbc88af13cdd15f5f4d68fb31c71f26361822ad73a"
     },
     "tools/ftp-kiadas-ellenorzo.html": {
       "sizeBytes": 3792,
-      "sha256": "0570211495728985211374f8d68e2d7db59db985439ca53d4292c538bb3d3937"
+      "sha256": "9ffe448ad7b88fd5d4ce9b26e61d974b5a17edf4be7c3be62a83ebc7cd09ab9a"
     },
     "tools/ftp-kiadas-ellenorzo.js": {
       "sizeBytes": 12162,
@@ -3844,31 +3860,31 @@
     },
     "tools/hirek-mintaeditor-18.html": {
       "sizeBytes": 2282,
-      "sha256": "a312a9456916e5a6e0fb89bbc88fa252677304df5c4aee07b918dbaebf3ac0ef"
+      "sha256": "920f5b1bf5f4b3382fd8562383d3c125347e106815f6a0b80faef2b054debbca"
     },
     "tools/hirek-mintaeditor-18.js": {
       "sizeBytes": 3072,
-      "sha256": "fbb25f469c0dea9ffbfdd1a54dd1ec4386442504f4f932c23a06d52895f674d5"
+      "sha256": "e047b177baa72c22b3c080f8af25193c89b75e19ac13bcfa25ec65d6efbb5223"
     },
     "tools/index.html": {
       "sizeBytes": 3717,
-      "sha256": "f0705853847963ee2103bdf18090e9ed722a873991ca8dc1a5cd0f70b80aad4a"
+      "sha256": "7af7334cd3d573ad633845e7e653de83516bbcfc2b0b2a80283792f94a4f805f"
     },
     "tools/kiadas-es-mediak-18.html": {
       "sizeBytes": 2579,
-      "sha256": "f4ed52303d9c5b83c1df1e74ae0e9be75e758e6732dc12b69400c16dbc4504fd"
+      "sha256": "734d5ecdb9a5dddf80f9896f30ff63d534b49c8b08ab85bcb0e7737f4678bcba"
     },
     "tools/kiadas-es-mediak-18.js": {
       "sizeBytes": 7739,
-      "sha256": "56192446c1972a58a7f1103132a6295768b89673c1176d4a547a7b6e2b2500c0"
+      "sha256": "9887c27a7e8c0b29191207194430ef65f967edfa2e4eaf5e8b6fcce5ad466dc0"
     },
     "tools/media-manager-2026.js": {
       "sizeBytes": 36924,
-      "sha256": "e507fe780f19d260a6e5f8e6b78c040c6bd812e8e26c500e5cbfb77eeb56d2cc"
+      "sha256": "89b868d9360088467d2a8a2e48214769be06cfa15e3283f3523f1c070924ec89"
     },
     "tools/media-minoseg-2026.js": {
       "sizeBytes": 3820,
-      "sha256": "78ce6be867f8f40d551e43e24d7ad02658f04b5115a3fad3bab1a78eb7ad44b7"
+      "sha256": "f9a27d50f8fccd89b21fc1861108905e4310beb78401a481994193c8963797d5"
     },
     "tools/minosegkapu-2026.js": {
       "sizeBytes": 9307,
@@ -3876,19 +3892,19 @@
     },
     "tools/minosegkapu.html": {
       "sizeBytes": 2299,
-      "sha256": "c9d9087af1e9868fe83f1155010b5c16cceca033dcdd9837b1ab8ddb56b7e124"
+      "sha256": "d0c08a2299a37711a216cc7c4fbae3fb4240b9a97f5c616b6e111dc2035f364c"
     },
     "tools/oldal-json-szerkeszto.html": {
       "sizeBytes": 8869,
-      "sha256": "bba47238d153c6c79b7c1cfe1517f1fb77ad3f662a438b3b27854eecff161c10"
+      "sha256": "58f5e28e42d747975c948120386ed629ff77bf43bd888bd8169442dd60c830e2"
     },
     "tools/oldalindex-frissito.html": {
       "sizeBytes": 6969,
-      "sha256": "71d238aa32884c360931514f37e8917aa8a0de8f8ecf4f02e37977566afdf11f"
+      "sha256": "535d3e1e909393475e9a86d9a5dae69234589bf5828571d853ce47b15912dca5"
     },
     "tools/parameterek-szerkeszto.html": {
       "sizeBytes": 6034,
-      "sha256": "79448f1fc9b2cd3a81c90d01f08132c7c7f8456d0ebd64e8f61c96bd643d0ca0"
+      "sha256": "abbc85d9b1e8c34847d76e9c6c32065cda9b7225b31acb0ef06cb24f8b86d5c0"
     },
     "tools/parameterek-szerkeszto.js": {
       "sizeBytes": 14428,
@@ -3896,15 +3912,15 @@
     },
     "tools/round20-suite.js": {
       "sizeBytes": 22605,
-      "sha256": "3363184c6d9457caa63cc382305e9ea4f303a6081e297231a2b5e26361eac1ed"
+      "sha256": "0280d8feddf76ae67d7f471bfc32fd7341330f07c6984e5672d48a6d94a1d046"
     },
     "tools/sporthirek-szerkeszto.html": {
       "sizeBytes": 7962,
-      "sha256": "ba932e82220833749231e96b0ec48f5f34d8c67e697f0c3d8402d074ce386f68"
+      "sha256": "6162d96685fb3ad2fdb6505bb251bdd2ef7446d0644f70f4717f23a2ab6ee7ee"
     },
     "tools/tartalmi-hitelesites.html": {
       "sizeBytes": 5335,
-      "sha256": "515c7f0abf35eb572ae1908fa8b414ea7c9f6a63ffece5c9763074c4a46c05cd"
+      "sha256": "fa326d385db686c60f467ed0a43173f3d48d48d2b6887485958cbe1f95379e00"
     },
     "tools/tartalmi-hitelesites.js": {
       "sizeBytes": 7276,
@@ -3935,8 +3951,8 @@
       "sha256": "f83cf15aded6a2e28ee3dab09f35d5263270c2dbd71c02d0e3cef9f747ef4384"
     },
     "utmutato.html": {
-      "sizeBytes": 150547,
-      "sha256": "9440ae98a38c103f573002b974a2836f499465717e6c77ce4018129811dca257"
+      "sizeBytes": 153036,
+      "sha256": "08ae556658f01391ccb96b66c567f25f3c2d5a150df8fe57338b9634a2f13813"
     }
   }
 }

@@ -1,32 +1,33 @@
-import {initRound10Enhancements} from './round10-enhancements.js?v=csanadi-r28-20261115';
-import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=csanadi-r28-20261115';
-import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=csanadi-r28-20261115';
-import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=csanadi-r28-20261115';
-import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=csanadi-r28-20261115';
-import {initMobileQuickNav} from '../mobile/quick-nav.js?v=csanadi-r28-20261115';
-import {setupSmartSearch} from './search-j-2026.js?v=csanadi-r28-20261115';
-import {installLanguageHighlights} from './language-20.js?v=csanadi-r28-20261115';
-import {enhancePersonalizedHome} from './round21-personalize.js?v=csanadi-r28-20261115';
-import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=csanadi-r28-20261115';
-import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=csanadi-r28-20261115';
-import {initEnhancedInteractions} from './interactions-be-2026.js?v=csanadi-r28-20261115';
-import {renderMediaGallery} from './media-gallery-h-2026.js?v=csanadi-r28-20261115';
-import {renderDocumentCollections} from './document-collections-2026.js?v=csanadi-r28-20261115';
-import {renderPageMedia} from './page-media-2026.js?v=csanadi-r28-20261115';
+import {initRound10Enhancements} from './round10-enhancements.js?v=csanadi-r29-20261115';
+import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=csanadi-r29-20261115';
+import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=csanadi-r29-20261115';
+import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=csanadi-r29-20261115';
+import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=csanadi-r29-20261115';
+import {initMobileQuickNav} from '../mobile/quick-nav.js?v=csanadi-r29-20261115';
+import {setupSmartSearch} from './search-j-2026.js?v=csanadi-r29-20261115';
+import {installLanguageHighlights} from './language-20.js?v=csanadi-r29-20261115';
+import {enhancePersonalizedHome} from './round21-personalize.js?v=csanadi-r29-20261115';
+import {enhanceRound29Home,syncRound29HomeNavigation,initRound29Diagnostics} from './round29-home.js?v=csanadi-r29-20261115';
+import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=csanadi-r29-20261115';
+import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=csanadi-r29-20261115';
+import {initEnhancedInteractions} from './interactions-be-2026.js?v=csanadi-r29-20261115';
+import {renderMediaGallery} from './media-gallery-h-2026.js?v=csanadi-r29-20261115';
+import {renderDocumentCollections} from './document-collections-2026.js?v=csanadi-r29-20261115';
+import {renderPageMedia} from './page-media-2026.js?v=csanadi-r29-20261115';
 import {useSiteSettings,settingNumber,setting} from './site-settings-2026.js';
-import {renderHomeSportSpotlight} from './premium-home-2026.js?v=csanadi-r28-20261115';
-import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=csanadi-r28-20261115';
-import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=csanadi-r28-20261115';
-import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r28-20261115';
+import {renderHomeSportSpotlight} from './premium-home-2026.js?v=csanadi-r29-20261115';
+import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=csanadi-r29-20261115';
+import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=csanadi-r29-20261115';
+import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r29-20261115';
  
-import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=csanadi-r28-20261115';
-import {renderBlock,dom,listCards} from './blocks.js?v=csanadi-r28-20261115';
-import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=csanadi-r28-20261115';
-import {renderSportsSuccesses} from './sports-successes.js?v=csanadi-r28-20261115';
-import {renderStudentAchievements} from './student-achievements.js?v=csanadi-r28-20261115';
-import {renderDailySportsNews} from './daily-sport-news.js?v=csanadi-r28-20261115';
-import {renderDesktopTree} from '../desktop/navigation.js?v=csanadi-r28-20261115';
-import {renderMobileTree,createMobileMenuSwitcher} from '../mobile/navigation.js?v=csanadi-r28-20261115';
+import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=csanadi-r29-20261115';
+import {renderBlock,dom,listCards} from './blocks.js?v=csanadi-r29-20261115';
+import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=csanadi-r29-20261115';
+import {renderSportsSuccesses} from './sports-successes.js?v=csanadi-r29-20261115';
+import {renderStudentAchievements} from './student-achievements.js?v=csanadi-r29-20261115';
+import {renderDailySportsNews} from './daily-sport-news.js?v=csanadi-r29-20261115';
+import {renderDesktopTree} from '../desktop/navigation.js?v=csanadi-r29-20261115';
+import {renderMobileTree,createMobileMenuSwitcher} from '../mobile/navigation.js?v=csanadi-r29-20261115';
 const app=document.getElementById('app');
 const desktop=document.getElementById('desktop-navigation');
 const mobile=document.getElementById('mobile-navigation');
@@ -399,12 +400,54 @@ function homePage(node){
   for(const unit of units)if(!canvas.contains(unit))canvas.append(unit);
   enhanceHomeInterests(canvas);
   enhancePersonalizedHome(canvas);
+  enhanceRound29Home(canvas);
   // Az oldalverzió a betöltési diagnosztikában jelenik meg, nem a tartalomkártyák alatt.
   frag.append(canvas);
   return frag;
 }
 function errorPage(){const section=dom('section',{class:'not-found container-xxl'});section.append(dom('h1',{},'404'),dom('h2',{class:'section-title'},'Ez az oldal nem érhető el'),dom('p',{},'Az útvonal nem szerepel az ellenőrzött menüben, vagy a hozzá tartozó JSON hibás.'),dom('a',{class:'btn-gold',href:'#/'},'Vissza a kezdőoldalra'));return section;}
 function pageForRoute(route){return catalog.routes.get(route)||null;}
+const arrivalPrefix='#/megkozelites-es-tanulas';
+function arrivalSection(route){
+ if(route===arrivalPrefix)return '';
+ const section=route.startsWith(arrivalPrefix+'/')?route.slice(arrivalPrefix.length+1):null;
+ return section!==null&&/^[a-z0-9-]+$/.test(section)?section:null;
+}
+function embeddedArrival(route,options){
+ const section=arrivalSection(route);
+ if(section===null)return false;
+ const previous=currentRoute;
+ if(previous!==null&&previous!==route)historyScroll.set(previous,window.scrollY);
+ currentRoute=route;
+ document.body.classList.add('cs-inner-page','cs-embedded-arrival');
+ document.documentElement.dataset.csanadiPageRevision='29';
+ app.dataset.pageKind='general';
+ const wrapper=dom('section',{class:'cs-arrival-shell container-xxl'});
+ const heading=dom('div',{class:'cs-arrival-shell-heading'});
+ heading.append(dom('span',{class:'eyebrow'},'CSANÁDI · MEGKÖZELÍTÉS ÉS TANULÁS'),dom('h1',{},'Iskolai megközelítés és tanulástámogatás'),dom('a',{href:'#/',class:'cs-arrival-return'},'← Vissza a kezdőlapra'));
+ const iframe=dom('iframe',{class:'cs-arrival-frame'});
+ iframe.title='Megközelítés és tanulástámogatás – iskolai útmutató';
+ iframe.src='megkozelites-es-tanulas.html?embedded=1'+(section?'#'+section:'');
+ iframe.loading='eager';
+ iframe.setAttribute('referrerpolicy','same-origin');
+ wrapper.append(heading,iframe);app.replaceChildren(wrapper);
+ const onMessage=event=>{
+   if(event.origin!==location.origin||event.source!==iframe.contentWindow||event.data?.source!=='csanadi-r26-embed')return;
+   const height=Number(event.data.height);
+   if(Number.isFinite(height)&&height>200&&height<200000)iframe.style.height=Math.ceil(height)+'px';
+   if(section&&event.data.section===section&&Number.isFinite(event.data.offset)&&!iframe.dataset.anchorDone){
+     iframe.dataset.anchorDone='true';requestAnimationFrame(()=>window.scrollTo({top:iframe.getBoundingClientRect().top+scrollY+event.data.offset-16,behavior:'instant'}));
+   }
+ };
+ if(window.__csArrivalMessage)window.removeEventListener('message',window.__csArrivalMessage);
+ window.__csArrivalMessage=onMessage;window.addEventListener('message',onMessage);
+ document.title='Megközelítés és tanulástámogatás | Csanádi Árpád Sportiskola';
+ renderMenu();closeMobile();closeSiteMap(false);
+ if(previous!==route&&!section)requestAnimationFrame(()=>window.scrollTo({top:0,behavior:'instant'}));
+ if(options.focus)app.focus({preventScroll:true});
+ markRouteRendered(route,{found:true});
+ return true;
+}
 function wireReveal(){
   revealObserver?.disconnect();
   const targets=[...app.querySelectorAll('.feature-card,.editorial-tile,.gallery-item,.section-title,.premium26-visual-card,.premium26-discover-link,.student-success-card,.cs-achievement')];
@@ -416,6 +459,9 @@ function wireReveal(){
 }
 function renderRoute(options={}){
   if(!catalog)return;
+  const requested=getRoute();
+  if(arrivalSection(requested)!==null){embeddedArrival(requested,options);return;}
+  document.body.classList.remove('cs-embedded-arrival');
   const route=getRoute();const node=pageForRoute(route);
   if(node && !node._fullLoaded){
     if(!node._pagePromise){
@@ -438,6 +484,7 @@ function renderRoute(options={}){
   if(isNew)lastRawPage=node?JSON.stringify(node.page):null;
   const kind=route==='#/'?'home':route.startsWith('#/sport')?'sport':route.startsWith('#/oktatas')?'education':route.startsWith('#/hirek-es-esemenyek')?'news':route.startsWith('#/iskolank')?'school':'general';
   app.dataset.pageKind=kind;
+  syncRound29HomeNavigation(kind==='home');
   document.body.classList.toggle('cs-inner-page',kind!=='home');
   app.replaceChildren(node?(node.depth===0?homePage(node):contentPage(node)):errorPage());
   wireReveal();
@@ -607,6 +654,7 @@ function beginPolling(){
 }
 export async function startApp(){
   initPerformanceDiagnostics();
+  initRound29Diagnostics();
   initDetailedDiagnostics();
   initNext10();
   initRound10Enhancements();

@@ -1,7 +1,7 @@
-import {createZip,downloadBlob} from './zip-native-2026.js?v=csanadi-r28-20261115';
-import {readZip,extractZipEntry} from './zip-compare-20.js?v=csanadi-r28-20261115';
-import {inspectNewsCollection} from '../js/news-policy-2026.js?v=csanadi-r28-20261115';
-import {formatBytes} from '../js/format-bytes.js?v=csanadi-r28-20261115';
+import {createZip,downloadBlob} from './zip-native-2026.js?v=csanadi-r29-20261115';
+import {readZip,extractZipEntry} from './zip-compare-20.js?v=csanadi-r29-20261115';
+import {inspectNewsCollection} from '../js/news-policy-2026.js?v=csanadi-r29-20261115';
+import {formatBytes} from '../js/format-bytes.js?v=csanadi-r29-20261115';
 
 const $=id=>document.getElementById(id);
 const create=(tag,text,cls)=>{const node=document.createElement(tag);if(text!==undefined)node.textContent=String(text);if(cls)node.className=cls;return node;};

@@ -1,0 +1,104 @@
+{
+  "release": "csanadi-sportiskola-2026-r29",
+  "checks": [
+    {
+      "name": "Az előző teljes ZIP állományai megmaradtak",
+      "passed": true,
+      "details": "set()"
+    },
+    {
+      "name": "Az előző összes eredeti JSON-oldal megmaradt",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A mobile/ és desktop/ mappák, README megmaradtak",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Minden JSON szintaktikailag érvényes",
+      "passed": true,
+      "details": "102 fájl, hibák: []"
+    },
+    {
+      "name": "Minden JavaScript szintaktikailag érvényes",
+      "passed": true,
+      "details": "61 fájl, hibák: []"
+    },
+    {
+      "name": "Új szakasznavigátor jobb oldali, zárás és Esc",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A kezdőoldali személyre szabó maradt",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Képváltó és középső főmenü elem megmaradt",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A külön R29 implementáció ténylegesen betöltődik",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A kapunyitó csak SVG ikont kap",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A kapu közelítési képe helyben megvan",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A térkép az SPA fejlécében nyílik",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Diagnosztika modal, zárt és szerelőikonos",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Az iskolai elérhetőségek és gyorshivatkozások megmaradtak",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A Bootstrap változat kötött CDN-ről érkezik",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Megújult webes útmutató",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "PDF kézikönyv olvasható és bővült",
+      "passed": true,
+      "details": "44"
+    },
+    {
+      "name": "Gyorsítótár-token R29",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Az előző README bájtra azonos",
+      "passed": true,
+      "details": ""
+    }
+  ],
+  "passed": 19,
+  "failed": 0,
+  "browserAndDeviceTests": "Nem futott: a Chromium környezet socket engedélyhiánnyal megszakadt. Valós mobil, képernyőolvasó, CLS/LCP és offline teszt nyitott.",
+  "ftpUpload": false
+}
