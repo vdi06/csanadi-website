@@ -1,4 +1,4 @@
-import {formatBytes as formatSize} from './format-bytes.js?v=csanadi-r29e-20261115';
+import {formatBytes as formatSize} from './format-bytes.js?v=csanadi-r29h-20261115';
  
 const ROOT = new URL('../', import.meta.url);
 const REGISTRY = new URL('../json/adatok/dokumentumok.json', import.meta.url);

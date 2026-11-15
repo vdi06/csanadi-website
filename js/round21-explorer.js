@@ -1,4 +1,4 @@
-import {createZip,downloadBlob} from '../tools/zip-native-2026.js?v=csanadi-r29e-20261115';
+import {createZip,downloadBlob} from '../tools/zip-native-2026.js?v=csanadi-r29h-20261115';
 
 const byId=id=>document.getElementById(id);
 const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};

@@ -112,6 +112,51 @@
       "details": ""
     },
     {
+      "name": "Megközelítési aloldal a közös felső képváltót láthatón hagyja",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "A kezdőoldali gyorselérések minden nézetben középre igazítottak",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Kezdőlap-beállító megőrzi a korábbi mentés azonosítóját",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Kezdőlap-beállító húzható asztalon és mobilon",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Kezdőlap-beállító egymás alatti kártyákkal",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Kezdőlap-beállító láthatóság és billentyűzetes sorrend",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Az R26 kezdőlapi térképhivatkozás témát követ",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Dekoratív lenyílónyilak eltűntek",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Diagnosztikai háttér-téglalap világos/sötét módban kikapcsolva",
+      "passed": true,
+      "details": ""
+    },
+    {
       "name": "Verzióértesítés csak kiadásazonosító-változásra",
       "passed": true,
       "details": ""
@@ -167,7 +212,7 @@
       "details": ""
     }
   ],
-  "passed": 33,
+  "passed": 42,
   "failed": 0,
   "browserAndDeviceTests": "Nem futott: a Chromium környezet socket engedélyhiánnyal megszakadt. Valós mobil, képernyőolvasó, CLS/LCP és offline teszt nyitott.",
   "ftpUpload": false

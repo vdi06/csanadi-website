@@ -1,5 +1,25 @@
 # Csanádi Sportiskola 2026 · 29. fejlesztési kör – jóváhagyott kezdőoldal
 
+## Gyorselérési csempék középre igazítása
+
+Az összes kezdőlapi gyorselérési csempénél egységes középre igazítást alkalmazunk: a csempék rácsának középre helyezése, az ikonok és feliratok vízszintes középre rendezése, valamint a további csempéket nyitó gomb középre igazítása. A mobilos kétoszlopos grid és az ikon+felirat megjelenés, továbbá a további elemek inline kibontása megmarad. A módosítás a `css/round29-home.css` végén van, a régebbi stílusokat felülírva.
+
+## Megközelítés és tanulástámogatás: a közös felső képváltó megőrzése
+
+A `#/megkozelites-es-tanulas` és `#/megkozelites-es-tanulas/terkep` útvonalak közös honlapkerete eddig megtartotta ugyan a `#global-hero` HTML-elemet, de a `css/round29-integration.css` szabálya `.cs-embedded-arrival #global-hero{display:none!important}` elrejtette. Ezt a hibás rejtést eltávolítottuk. A felső képes váltakozó, bal/jobb léptetők, középső főmenüikon és a fejléc a térképes aloldalon is megmarad; csak az iframe belső, ismétlődő navigációs elemeit korlátozzuk. A statikus regressziós teszt ellenőrzi, hogy a tiltó szabály nem szerepel. Valódi böngészős útvonalteszt még szükséges.
+
+## Diagnosztikai panel háttere és egységes lenyílójelzések
+
+- A becsukott diagnosztika külső keretének világos témában látható téglalapját megszüntettük: a teljes külső `<details>` háttér, keret és árnyék nélkül jelenik meg; a megnyitott diagnosztika saját modális panelje változatlanul olvasható marad.
+- Eltűnt a diagnosztika melletti `⌄` és a kezdőoldali kibontók dekoratív lenyíló nyila. A natív `<summary>` markerjelöléseket mindkét témában egységesen elrejtettük. A képek tényleges bal/jobb léptetőgombjait, a kezdőlap-rendező fel/le gombjait és a letöltési műveletek iránynyilait nem módosítottuk, mert ezek szükséges funkcionális jelzések.
+- Statikus ellenőrzés sikeres; valódi világos/sötét böngészős képernyővizsgálat még hátravan.
+
+## Kezdőlap személyre szabása és térképhivatkozás – utólagos javítás
+
+- A „⚙ Kezdőlap beállítása · kedvenc kártyák és sorrend” kezelője teljesen új, **egyoszlopos** elrendezést kapott: a kártyák asztali és mobilos nézetben is egymás alatt szerepelnek. Külön húzófogantyúval egérrel (HTML5 drag-and-drop) és érintőképernyőn (pointer-mozgatás) átrendezhetők. Láthatósági jelölőnégyzet, „Látható/Rejtett” állapot, összes kártya megjelenítése, eredeti elrendezés visszaállítása és akadálymentes fel/le tartalékgombok is vannak. A korábbi `csanadi-r21-home-preferences` tárolási kulcs megmaradt; a felhasználó régi sorrendje és láthatósági döntései nem törlődnek.
+- A pontosan megnevezett **„Térkép és megközelítés →”** hivatkozás nem a korábban javított `.cs29-map-button`, hanem a régi `.r26-home-map-link a` szabályt használta, amely világos témában fix sötétkék színt adott. Mindkét téma, valamint a hover/fókusz állapot külön CSS-felülírást kapott.
+- Az összes korábbi oldal és JSON-fájl megmaradt. Az új interakciók valódi mobilos és asztali próbája kiadás előtt továbbra is szükséges.
+
 ## Hibás honlapverzió-értesítés javítása
 
 A korábbi értesítés a service worker minden `controllerchange` eseményére megjelent, ezért akár az első látogatáskor is tévesen új honlapverziót jelzett. Az új megoldás a betöltött HTML `v` kiadásazonosítóját veti össze a hálózatról frissen lekért `json/config.json` `performance.cacheVersion` értékével. Azonos verziónál nincs üzenet; eltérő, tényleges kiadásnál jelenik meg a témához illeszkedő „Később” és „Frissítés” művelettel. A vizsgálat induláskor, visszatéréskor és a konfigurált (jelenleg 300 másodperces) időközönként működik; HTTP-s FTP-környezetben service worker nélkül is elérhető. Írásban végzett teszt mellett a frissítéses élő helyzetet valódi böngészőben még ellenőrizni kell.

@@ -2,7 +2,7 @@
 
 
  
-import {renderDigitalClock} from './experience-2026.js?v=csanadi-r29e-20261115';
+import {renderDigitalClock} from './experience-2026.js?v=csanadi-r29h-20261115';
 const BASE='json/adatok/';
 const ZONE=()=>setting('modules2026.clock.timezone');
 const e=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};

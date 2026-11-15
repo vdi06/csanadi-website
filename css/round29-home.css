@@ -50,6 +50,11 @@ html[data-theme="light"] #global-hero .csn26-visual-row>.csn26-edge-arrow:hover{
 .cs29-drawer-top{display:block;margin-top:16px;padding:12px;width:100%;min-height:46px;border:1px solid var(--gold);border-radius:12px;background:var(--light);color:var(--ink);font-weight:800;cursor:pointer}
 .cs29-drawer-top:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 body:not(.cs-inner-page) #be2026-top{display:none!important}
+/* Gyorselérések: a kártyák és a kártyatartalom minden nézetben középen áll. */
+#app[data-page-kind="home"] .home-j-navrail{max-width:1120px!important;margin-inline:auto!important;justify-content:center!important;justify-items:center!important;align-items:stretch!important}
+#app[data-page-kind="home"] .home-j-navrail>.cs29-quicklink{width:100%!important;align-items:center!important;justify-content:center!important;text-align:center!important}
+#app[data-page-kind="home"] .home-j-navrail>.cs29-quicklink :is(.cs29-quicklink-glyph,.cs29-quicklink-label){display:block;width:100%;text-align:center!important}
+#app[data-page-kind="home"] .cs29-quick-more{display:block;margin-inline:auto!important;text-align:center!important}
 @media(max-width:768px){
  .gate26 .gate26-key{width:112px;height:112px}.gate26 .gate26-key svg{height:92px;width:92px}
  /* A teljes magasságú léptetők a mobilos képpár KÜLSŐ oldalán futnak. */

@@ -21,7 +21,9 @@ html[data-theme="dark"] {
   --cs29-button-bg: #263d53;
   --cs29-button-text: #f9f7ee;
 }
-.cs-embedded-arrival #global-hero,.cs-embedded-arrival>.orbit-launch{display:none!important}
+/* A közös felső képes váltakozó menü a megközelítési aloldalon is maradjon látható.
+   Csak az iframe esetleges külön indítógombja maradjon rejtve. */
+.cs-embedded-arrival>.orbit-launch{display:none!important}
 .cs-embedded-arrival .r26-home-map-link{display:none!important}
 .cs-arrival-shell{padding-top:clamp(20px,3vw,40px);padding-bottom:16px}
 .cs-arrival-shell-heading{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;padding:18px 23px;border:1px solid var(--cs29-border);background:var(--cs29-surface);border-radius:20px;color:var(--cs29-text)}

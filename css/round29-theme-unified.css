@@ -7,6 +7,11 @@ html[data-theme="light"]{
  --cs29-action-border:#9e906e;
  --cs29-action-focus:#95600d;
 }
+/* Korábbi R26 kezdőlapi sáv: ez a link nem a cs29-map-button osztályt használja. */
+html[data-theme="light"] .r26-home-map-link a{background:#fff8e8!important;color:#173348!important;border:1px solid #9e906e!important}
+html[data-theme="light"] .r26-home-map-link a:is(:hover,:focus-visible){background:#f5ead1!important;color:#173348!important}
+html[data-theme="dark"] .r26-home-map-link a{background:#263e55!important;color:#f5f5ee!important;border:1px solid #8499a9!important}
+html[data-theme="dark"] .r26-home-map-link a:is(:hover,:focus-visible){background:#36546b!important;color:#f5f5ee!important}
 html[data-theme="dark"]{
  --cs29-action-bg:#263e55;
  --cs29-action-hover:#36546b;
@@ -60,3 +65,13 @@ html[data-theme="dark"] :is(.r26-action-line a,.r26-section-link,.r26-map-consen
 .toast-info .cs-release-actions button{min-height:40px;padding:8px 15px;border-radius:10px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer;font-weight:750}
 .toast-info .cs-release-actions button:last-child{background:var(--gold);border-color:var(--gold);color:#172c3e}
 .toast-info .cs-release-actions button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+/* Minden natív lenyíló jelölő és a dekoratív lefelé mutató chevron eltűnik.
+   A funkcionális képléptető, rendező és letöltési nyilak megmaradnak. */
+details>summary{list-style:none!important}
+details>summary::marker{content:''!important;font-size:0!important}
+details>summary::-webkit-details-marker{display:none!important}
+:is(.footer-diagnostics-chevron,.home-j-fold-arrow,.nav-caret){display:none!important}
+/* A lábléc diagnosztikai vezérlője körül világos módban sem jelenhet meg háttér-téglalap. */
+html[data-theme="light"] .site-footer .footer-diagnostics-disclosure:not([open]),
+html[data-theme="dark"] .site-footer .footer-diagnostics-disclosure:not([open]){background:transparent!important;border:0!important;box-shadow:none!important}
+.site-footer .footer-diagnostics-disclosure:not([open])>summary{border-radius:999px!important;border:0!important;box-shadow:none!important}
