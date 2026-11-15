@@ -37,11 +37,18 @@ export function learningNavigator(){
 export function enhanceHomeInterests(canvas){
  const filters=e('section','kmil-interest');filters.append(e('h2','','Melyik téma érdekel?'),e('p','','A kiválasztott témát előre rendezzük és kinyitjuk. A többi tartalom továbbra is elérhető marad.'));
  const controls=e('div','kmil-interest-controls');filters.append(controls);
+ const preview=e('div','kmil-interest-preview');preview.setAttribute('role','status');preview.setAttribute('aria-live','polite');filters.append(preview);
  const options=[['all','Mindegyik'],['sport','Sport'],['study','Tanulás'],['community','Iskolai élet']];
  const buttons=[];
  const folds=[...canvas.querySelectorAll(':scope > details.home-j-fold')];
  const initialOrder=new Map(folds.map((node,i)=>[node,i]));
  const groupName=node=>node.querySelector('summary strong')?.textContent||'';
+ const suggestions={
+  all:[['Felvételi','#/oktatas/felveteli'],['Sportágak','#/sport/sportagak'],['Iskolai hírek','#/hirek-es-esemenyek/hirek']],
+  sport:[['Sportágak','#/sport/sportagak'],['Sporteredmények','#/sport'],['Sporthírek','#/hirek-es-esemenyek/hirek/sporthirek']],
+  study:[['Képzéseink','#/oktatas/kepzeseink'],['Felvételi','#/oktatas/felveteli'],['Tanév és vizsgák','#/oktatas/tanevek/aktualis-tanev']],
+  community:[['Iskolánk','#/iskolank'],['Ökoiskola','#/iskolank/oko-iskola'],['Események','#/esemenyek']]
+ };
  const pick=(id)=>{
   buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.interest===id)));
   let priority;
@@ -53,10 +60,12 @@ export function enhanceHomeInterests(canvas){
    const ix=n=>{const i=priority.indexOf(groupName(n));return i<0?100+initialOrder.get(n):i;};return ix(a)-ix(b);
   });
   for(const node of ordered)canvas.append(node);
-   
-  if(id!=='all'){for(const node of folds)node.open=priority[0]===groupName(node);}
+  if(id!=='all'){for(const node of folds)if(!node.hidden)node.open=priority[0]===groupName(node);}
+  preview.replaceChildren();preview.append(e('strong','',id==='all'?'Összes témakör':'Ajánlott témák: '+titlesForInterest[id]));
+  const list=e('div','kmil-interest-links');for(const [label,route] of suggestions[id]){const a=e('a','',label+' →');a.href=route;list.append(a);}preview.append(list);
  };
+ const titlesForInterest={sport:'Sport',study:'Tanulás',community:'Iskolai élet'};
  for(const [id,label] of options){const b=e('button','kmil-interest-button',label);b.type='button';b.dataset.interest=id;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>pick(id));controls.append(b);buttons.push(b);}
  const nav=canvas.querySelector('.home-j-navrail-unit');if(nav)nav.insertAdjacentElement('afterend',filters);else canvas.prepend(filters);
- buttons[0].setAttribute('aria-pressed','true');return filters;
+ pick('all');return filters;
 }

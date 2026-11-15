@@ -1,6 +1,6 @@
 
  
-import {createPicture} from './media.js?v=20261114v5';
+import {createPicture} from './media.js?v=csanadi-r22-20261115';
 
 const node=(tag,klass='',value)=>{
   const e=document.createElement(tag);

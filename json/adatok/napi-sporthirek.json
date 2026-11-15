@@ -1,6 +1,35 @@
 {
   "schemaVersion": "1.0.0",
   "collectionId": "collection:napi-sporthirek",
-  "updatedAt": null,
-  "items": []
+  "updatedAt": "2026-11-15T17:00:00+01:00",
+  "sourceNotice": "A 2026. november 15-i fejlesztési pillanatkép forrása a Nemzeti Sport nyilvános cikkei. Nincs automatikus szerveroldali begyűjtés; 72 óra elteltével a lejárt cikkek a nyilvános kártyákból kiszűrődnek.",
+  "items": [
+    {
+      "id": "ns-20261114-szoboszlai",
+      "title": "Szoboszlai a bemelegítésnél közel járt ahhoz, hogy ne vállalja a játékot",
+      "url": "https://www.nemzetisport.hu/magyar-valogatott/2026/11/szoboszlai-a-bemelegitesnel-kozel-jart-ahhoz-hogy-ne-vallalja-a-jatekot",
+      "category": "Magyar válogatott",
+      "publishedAt": "2026-11-14T20:37:00+01:00",
+      "source": "Nemzeti Sport",
+      "verified": true
+    },
+    {
+      "id": "ns-20261114-northern-ireland",
+      "title": "Észak-Írország legyőzte Ukrajnát, és ismét a csoport élére állt",
+      "url": "https://www.nemzetisport.hu/minden-mas-foci/2026/11/eszak-irorszag-legyozte-ukrajnat-es-ismet-a-csoport-elere-allt",
+      "category": "Nemzetek Ligája",
+      "publishedAt": "2026-11-14T22:40:00+01:00",
+      "source": "Nemzeti Sport",
+      "verified": true
+    },
+    {
+      "id": "ns-20261114-gruzia",
+      "title": "Nagyjából 200 magyar járta Tbiliszi belvárosát a grúzok elleni meccs előtt",
+      "url": "https://www.nemzetisport.hu/magyar-valogatott/2026/11/tbilisziben-folytatodik-az-nl-a-magyar-valogatottnak-elo-felvezetes-a-gruzia-elleni-meccs-elott",
+      "category": "Magyar válogatott",
+      "publishedAt": "2026-11-14T12:00:00+01:00",
+      "source": "Nemzeti Sport",
+      "verified": true
+    }
+  ]
 }

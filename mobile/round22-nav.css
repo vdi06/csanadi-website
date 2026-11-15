@@ -1,0 +1,5 @@
+/* R22: a felhasználó nem kéri a zöld–sárga gombhátteret a mobilos alsó menü két vezérlőjén. */
+@media(max-width:768px){
+  #ext26-mobile-nav :is(button[data-nav-id="home"],button[data-nav-id="menu"],button[aria-current="page"]){background:var(--card)!important;background-image:none!important;color:var(--ink)!important;border:1px solid var(--line)!important;box-shadow:0 2px 10px color-mix(in srgb,var(--ink) 13%,transparent)!important}
+  #ext26-mobile-nav :is(button[data-nav-id="home"],button[data-nav-id="menu"]):focus-visible{outline:3px solid var(--sport-yellow)!important;outline-offset:2px!important}
+}

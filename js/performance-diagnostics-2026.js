@@ -1,4 +1,4 @@
-import {formatBytes as bytes} from './format-bytes.js?v=20261115r19';
+import {formatBytes as bytes} from './format-bytes.js?v=csanadi-r22-20261115';
  
 let panel=null;
 let pending=null;
@@ -31,7 +31,7 @@ async function measureBundle(){
    const key=/\.(webp|avif|png|jpg|jpeg|gif|svg)$/i.test(path)?'Képek':/\.(mp4|webm)$/i.test(path)?'Videók':/\.(pdf|docx|txt)$/i.test(path)?'Dokumentumok':'Kód és adatok';
    kinds[key]+=meta.sizeBytes;
   }
-  bundleStats={total,count:entries.length,kinds,error:null};
+  bundleStats={total,count:entries.length,kinds,release:manifest.release,error:null};
  }catch(error){bundleStats={error:String(error.message||error)};}
  refresh();
 }
@@ -42,6 +42,8 @@ function refresh(){
  init.textContent=fmt(initialReadyMs);
  route.textContent=fmt(currentRouteMs);
  status.textContent=latestStatus;
+ const version=panel.querySelector('[data-speed-version]');
+ if(version){const release=bundleStats?.release||'Kiadás ellenőrzése…',page=document.documentElement.dataset.csanadiPageRevision||'—';version.textContent=`Honlapverzió: ${release} · Aktuális oldalverzió: ${page}`;}
  const size=panel.querySelector('[data-speed-size]'),fileCount=panel.querySelector('[data-speed-file-count]'),detail=panel.querySelector('[data-speed-file-detail]'),resources=panel.querySelector('[data-speed-resources]'),slow=panel.querySelector('[data-speed-slowest]');
  size.textContent=bundleStats?.error?'Nem elérhető':bundleStats?bytes(bundleStats.total):'Betöltés…';
  fileCount.textContent=bundleStats?.count===undefined?'—':bundleStats.count.toLocaleString('hu-HU')+' fájl';
@@ -78,7 +80,8 @@ export function initPerformanceDiagnostics(){
  const state=el('div','cs-speed-state');state.append(el('span','','Állapot: '),el('strong','','Betöltés…'));state.lastChild.dataset.speedStatus='';
  const size=el('div','cs-speed-metric');size.append(el('span','','Teljes kiadási fájlméret'),el('strong','','—'));size.lastChild.dataset.speedSize='';
  const count=el('div','cs-speed-metric');count.append(el('span','','Állományok száma'),el('strong','','—'));count.lastChild.dataset.speedFileCount='';
- row.append(lead,initial,route,size,count,state);
+ const version=el('div','cs-speed-metric');version.append(el('span','','Honlap és oldal verziója'),el('strong','','Kiadás ellenőrzése…'));version.lastChild.dataset.speedVersion='';
+ row.append(lead,initial,route,size,count,state,version);
  const disclosure=el('details','cs-speed-details');const summary=el('summary','','Mit jelentenek ezek az adatok?');
  const explanation=el('p','','Az indulás a webalkalmazás első megjelenítéséig eltelt idő; az aktuális oldal értéke az oldalváltástól a megjelenítésig tartó idő. A mérések a böngészőben történnek, gyorsítótár és eszközteljesítmény is befolyásolhatja őket. Nem internetsebesség-teszt és nem PageSpeed-pontszám.');
  const timings=el('p','cs-speed-timings','');timings.dataset.speedBrowser='';

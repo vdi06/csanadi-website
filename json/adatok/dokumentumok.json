@@ -86,7 +86,7 @@
     {
       "id": "document:csanadi-weboldal-kezikonyv-2026",
       "title": "Csanádi Sportiskola 2026 – Teljes weboldal-használati útmutató",
-      "summary": "Teljes webes és PDF-kézikönyv a 66 tartalmi oldalhoz, 13 helyi karbantartó felülethez, a nyilvános felfedezőközpont tíz funkciójához és a központi JSON 239 paraméteréhez.",
+      "summary": "Teljes, 3.8-as webes és PDF-kézikönyv, 66 tartalmi oldallal, 13 karbantartó eszközzel, a 21-es felfedezőközponttal, a 22-es iránytű tíz új eszközével és 247 központi JSON-paraméterrel.",
       "categoryId": "weboldal-utmutato",
       "tags": [
         "honlap",
@@ -114,9 +114,9 @@
       "mimeType": "application/pdf",
       "fileName": "csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
       "filePath": "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
-      "fileSizeBytes": 114531,
-      "sha256": "b934648b2edb6bfa5816bb08b9a9bb9d1299c72e9a8d4ddc09d8eaa09098548c",
-      "version": "3.7.0",
+      "fileSizeBytes": 119834,
+      "sha256": "4cfce0274126cefe05e0c6a6f138154958f3a487bb722ab8db5eb8c236a2d4f9",
+      "version": "3.8.0",
       "publishedAt": "2026-11-15",
       "validFrom": "2026-11-15",
       "validTo": null,
@@ -175,6 +175,11 @@
           "version": "3.7.0",
           "date": "2026-11-15",
           "change": "10 nyilvános interaktív felfedezőeszköz; felvételi összehasonlítás, tanévtervező, sportágválasztó, sematikus térkép, túra, kedvenc kezdőlap, PDF-ZIP, helyi újdonságfigyelő, mini-kvíz és digitális faliújság. Külön alapjavításként a diagnosztikai indulási hiba, két színtéma és hero-CLS csökkentés. A 66 oldal és README megmaradt."
+        },
+        {
+          "version": "3.8.0",
+          "date": "2026-11-15",
+          "change": "22. kiadás: tízrészes iskolai iránytű (digitális nyílt nap, tanulmányi utak, fenntarthatóság, sportesemény-követő, kétnyelvű fogalomtár, akadálymentes médiatár, ügyintézés, szülői központ, helyi QR-SVG, nyomtatási központ). Külön alapjavítás: kezdőlap-beállító, témaválasztó, sporthír-kártya és friss sporthír JSON, mobilmenü és diagnosztika/verzió témák, valamint felül megjelenő világos/sötét/automatikus témaváltási értesítés."
         }
       ]
     },

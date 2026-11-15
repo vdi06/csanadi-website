@@ -1,4 +1,4 @@
-import {inspectNewsCollection,inspectNewsRecord} from '../js/news-policy-2026.js?v=r18';
+import {inspectNewsCollection,inspectNewsRecord} from '../js/news-policy-2026.js?v=csanadi-r22-20261115';
 const id=key=>document.getElementById(key);
 let original=null,config=null;
 const notice=value=>id('status').textContent=value;

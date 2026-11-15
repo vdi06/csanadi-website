@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": 22,
+  "disclaimer": "A tematikus útmutatók nem minősülnek új intézményi szabályzatnak. Kizárólag ellenőrzött nyilvános tartalmak hivatkozásai és általános, tájékozódást segítő magyarázatok szerepelnek.",
+  "openDayStations": [
+    {"id":"bemutatkozas","title":"Ismerd meg az iskolát","lead":"Az intézmény küldetése és bemutatkozása.","route":"#/iskolank/bemutatkozas","type":"Iskolánk"},
+    {"id":"tortenet","title":"Hagyományok és történet","lead":"Iskolatörténet és közösségi értékek.","route":"#/iskolank/tortenet","type":"Iskolánk"},
+    {"id":"oktatas","title":"Oktatás és képzések","lead":"Általános iskola, gimnázium, sportiskolai szemlélet.","route":"#/oktatas/kepzeseink","type":"Oktatás"},
+    {"id":"sport","title":"Sport és fejlődés","lead":"Sportági és sportéleti tájékoztatók.","route":"#/sport/sportagak","type":"Sport"},
+    {"id":"felveteli","title":"Felvételi tájékozódás","lead":"Jelentkezési tudnivalók és külön intézményi közlések.","route":"#/oktatas/felveteli","type":"Felvételi"},
+    {"id":"mindennapok","title":"Mindennapok és közösség","lead":"Iskolai élet és események.","route":"#/iskolank","type":"Közösség"},
+    {"id":"kapcsolat","title":"Kérdezz az iskolától","lead":"Az aktuális elérhetőségek a kapcsolat oldalon találhatók.","route":"#/kapcsolat","type":"Kapcsolat"}
+  ],
+  "pathways": [
+    {"id":"altalanos","stage":"Általános iskola","interest":["tanulas","sport","kozosseg"],"title":"Általános iskolai tanulási út","description":"Az alapfokú oktatás és a közösségi nevelés tájékozódási pontjai.","routes":[{"label":"Általános iskolai képzés","route":"#/oktatas/kepzeseink/altalanos-iskola"},{"label":"Első évfolyamos felvételi","route":"#/oktatas/felveteli/elso-evfolyam"}]},
+    {"id":"gimnazium","stage":"Gimnázium","interest":["tanulas","sport"],"title":"Gimnáziumi tanulmányi út","description":"Gimnáziumi képzés, felvételi és vizsgák egymás mellett.","routes":[{"label":"Gimnáziumi képzés","route":"#/oktatas/kepzeseink/gimnazium"},{"label":"Kilencedik évfolyamos felvételi","route":"#/oktatas/felveteli/kilencedik-evfolyam"},{"label":"Érettségi","route":"#/oktatas/vizsgak/erettsegi"}]},
+    {"id":"sport","stage":"Bármely évfolyam","interest":["sport"],"title":"Sport és tanulás összehangolása","description":"Sportiskolai nevelés, sportágak és napi tanulás; nem automatikus sportági felvételi ígéret.","routes":[{"label":"Sportiskolai nevelés","route":"#/oktatas/kepzeseink/sportiskolai-neveles"},{"label":"Sportágak","route":"#/sport/sportagak"}]},
+    {"id":"kozosseg","stage":"Bármely évfolyam","interest":["kozosseg"],"title":"Közösségi és fenntartható részvétel","description":"Iskolai közösség, környezeti nevelés és nyilvános események.","routes":[{"label":"Ökoiskolai szemlélet","route":"#/iskolank/oko-iskola"},{"label":"Események","route":"#/esemenyek"}]}
+  ],
+  "sustainability": [
+    {"id":"szemlelet","title":"Ökoiskolai szemlélet","detail":"A környezettudatos döntések szerepét az iskola közzétett ÖKO-iskola oldala ismerteti.","route":"#/iskolank/oko-iskola","status":"Közzétett ismertető","metrics":null},
+    {"id":"takarékosság","title":"Erőforrások tudatos használata","detail":"A takarékosság és a fenntarthatóság általános iskolai nevelési témája.","route":"#/iskolank/oko-iskola","status":"Közzétett szemlélet","metrics":null},
+    {"id":"kozosseg","title":"Környezeti közösségi programok","detail":"Programok és eredmények kizárólag intézményi igazolást követően jelenhetnek meg számszerű mutatóval.","route":"#/iskolank/oko-iskola","status":"Eredményszám nem ellenőrzött","metrics":null}
+  ],
+  "glossary": [
+    {"hu":"Felvételi","en":"admission","definition":"Az adott képzésbe való jelentkezés és elbírálás folyamata.","topic":"oktatás"},
+    {"hu":"Jelentkezési határidő","en":"application deadline","definition":"Az az időpont, ameddig a jelentkezést az érvényes szabályok szerint be kell nyújtani.","topic":"oktatás"},
+    {"hu":"Általános iskola","en":"primary school","definition":"Az alapfokú köznevelés intézményi szakasza.","topic":"oktatás"},
+    {"hu":"Gimnázium","en":"secondary grammar school","definition":"Érettségi vizsgára felkészítő középfokú iskolatípus.","topic":"oktatás"},
+    {"hu":"Érettségi vizsga","en":"school-leaving examination","definition":"A középiskolai tanulmányokat lezáró, jogszabályok szerinti vizsga.","topic":"oktatás"},
+    {"hu":"Tanév","en":"school year","definition":"A tanulás és az iskolai szervezés éves időszaka.","topic":"oktatás"},
+    {"hu":"Órarend","en":"timetable","definition":"A tanórák és foglalkozások időbeli beosztása.","topic":"oktatás"},
+    {"hu":"Házirend","en":"school rules","definition":"Az iskolai együttélés helyi, hivatalos szabályzatának közismert neve.","topic":"ügyintézés"},
+    {"hu":"Igazolás","en":"certificate / confirmation","definition":"Egy tény vagy körülmény dokumentált megerősítése; pontos típusa ügyfüggő.","topic":"ügyintézés"},
+    {"hu":"Osztályfőnök","en":"form teacher","definition":"Egy tanulócsoporthoz rendelt pedagógus; az angol megnevezés tájékoztató fordítás.","topic":"ügyintézés"},
+    {"hu":"Sportág","en":"sport / discipline","definition":"A sporttevékenység elkülönülő fajtája vagy versenyszáma.","topic":"sport"},
+    {"hu":"Edzés","en":"training session","definition":"A sportolói készségeket fejlesztő, megszervezett gyakorlás.","topic":"sport"},
+    {"hu":"Verseny","en":"competition","definition":"Előre meghatározott szabályok szerinti sportesemény.","topic":"sport"},
+    {"hu":"Csapat","en":"team","definition":"Együttműködő sportolók csoportja.","topic":"sport"},
+    {"hu":"Bemelegítés","en":"warm-up","definition":"Mozgásos ráhangolódás a sporttevékenység megkezdése előtt.","topic":"sport"},
+    {"hu":"Sportszerűség","en":"fair play","definition":"A szabályok és a másik fél tisztelete a sportban.","topic":"sport"}
+  ],
+  "affairs": [
+    {"title":"Felvételi tájékozódás","topic":"felvételi","steps":["Válaszd ki az érintett évfolyam felvételi oldalát.","Ellenőrizd a közzétett követelményeket és határidőket.","Kérdés esetén használd a hivatalos kapcsolati elérhetőséget."],"route":"#/oktatas/felveteli","notice":"A jelentkezés tényleges módját mindig az aktuális felvételi tájékoztató szabályozza."},
+    {"title":"Iskolai dokumentum keresése","topic":"dokumentum","steps":["Nyisd meg a dokumentumtárat.","Keress a dokumentum címe vagy témája szerint.","Változat és dátum ellenőrzése után töltsd le a megfelelő fájlt."],"route":"#/informaciok/dokumentumtar","notice":"A nyilvános segédlet nem helyettesíti a hatályos intézményi szabályzatot."},
+    {"title":"Vizsgainformáció ellenőrzése","topic":"tanulmányok","steps":["Nyisd meg a vizsgaközpontot.","Válaszd a megfelelő vizsgatípust.","Ellenőrizd az időpontot és a követelmények aktuális közzétételét."],"route":"#/oktatas/vizsgak","notice":"Egyedi vizsgával kapcsolatos ügyben hivatalos intézményi egyeztetés szükséges."},
+    {"title":"Kapcsolatfelvétel az iskolával","topic":"kapcsolat","steps":["Nyisd meg a kapcsolat oldalt.","Válaszd az adott ügyhöz megadott hivatalos csatornát.","Személyes adatot csak szükséges, megfelelően védett felületen adj meg."],"route":"#/kapcsolat","notice":"Ez az oldal nem tartalmaz üzenetküldő űrlapot és nem gyűjt adatot."},
+    {"title":"Tanévi esemény keresése","topic":"tanulmányok","steps":["Nyisd meg az eseménynaptárat.","Szűrj időpontra vagy kategóriára.","A részleteket a kapcsolódó hivatalos közleményben ellenőrizd."],"route":"#/esemenyek","notice":"A naptár csak közzétett és érvényes eseményadatokat mutathat."}
+  ],
+  "parentSections": [
+    {"title":"Felvételi és beiskolázás","summary":"Évfolyamonkénti tudnivalók, tájékoztatók, közzétett határidők.","route":"#/oktatas/felveteli","category":"felvételi"},
+    {"title":"Tanév és vizsgák","summary":"Tanévi szervezés, vizsgatípusok és kapcsolódó információk.","route":"#/oktatas/tanevek/aktualis-tanev","category":"tanulmányok"},
+    {"title":"Dokumentumok","summary":"Nyilvános tájékoztatók, segédletek és aktuális változatok.","route":"#/informaciok/dokumentumtar","category":"ügyintézés"},
+    {"title":"Kapcsolat és elérhetőségek","summary":"Az aktuális, intézmény által közzétett kapcsolatfelvételi módok.","route":"#/kapcsolat","category":"ügyintézés"},
+    {"title":"Sport és közösség","summary":"Sportági lehetőségek és iskolai közösségi információk.","route":"#/sport","category":"sport"},
+    {"title":"Adatvédelem","summary":"A nyilvános honlap és a helyi böngészőbeállítások alapelvei.","route":"#/informaciok/adatvedelem","category":"ügyintézés"}
+  ]
+}

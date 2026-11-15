@@ -1,18 +1,18 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-sportiskola-2026-r21",
+  "release": "csanadi-sportiskola-2026-r22",
   "date": "2026-11-15",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "A teljes statikus kiadás minden fájlja, a manifest önmagát nem tartalmazza. Az iskolai FTP-re semmi nem került.",
+  "notes": "Minden statikus fájl és helyi QR-SVG a teljes kiadásban; a manifest önmagát nem számolja. Az iskolai FTP-re semmi nem lett feltöltve.",
   "files": {
     "README.md": {
       "sizeBytes": 42,
       "sha256": "0f8fe1484cf12c38044132545bebfb5615c1a3dbc70ab63555ef3ad687db407b"
     },
     "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf": {
-      "sizeBytes": 114531,
-      "sha256": "b934648b2edb6bfa5816bb08b9a9bb9d1299c72e9a8d4ddc09d8eaa09098548c"
+      "sizeBytes": 119834,
+      "sha256": "4cfce0274126cefe05e0c6a6f138154958f3a487bb722ab8db5eb8c236a2d4f9"
     },
     "assets/documents/digitalis-fajlok-es-beadas.pdf": {
       "sizeBytes": 48220,
@@ -2170,6 +2170,702 @@
       "sizeBytes": 191108,
       "sha256": "828879404d355ea47a037faccac9471d5b4babcefec2cc12ba727e6011c4b221"
     },
+    "assets/qr/csanadi-qr-054d5072a2cbe3b8.svg": {
+      "sizeBytes": 4407,
+      "sha256": "395f92f2a931cbd4ba7e3aa9a65e0c11934d129356ac41ab688cb780ee6a45c6"
+    },
+    "assets/qr/csanadi-qr-06b6013647d5dabb.svg": {
+      "sizeBytes": 3353,
+      "sha256": "14a6fbb3a5cfc83693f26eaf23c22bd65e4ddae60113eb9b965b3da1803237f9"
+    },
+    "assets/qr/csanadi-qr-0766f8c81dd55b77.svg": {
+      "sizeBytes": 4238,
+      "sha256": "5bd62f7399cbac3321a20f599802a69049cf4e70b28b1553b4da01146b430aa1"
+    },
+    "assets/qr/csanadi-qr-0af19f3c8225c80d.svg": {
+      "sizeBytes": 4477,
+      "sha256": "7254373b8c71601ff4d98724b2cbacb7f00b8ff646f09b9dec7e1acb386216cc"
+    },
+    "assets/qr/csanadi-qr-0b9adceafe0db476.svg": {
+      "sizeBytes": 4475,
+      "sha256": "47210f55181802498e0ae180ddfff3434c427331f0a8088cb6879dd868d31135"
+    },
+    "assets/qr/csanadi-qr-0bcf56ffaf451cb2.svg": {
+      "sizeBytes": 5520,
+      "sha256": "1c3df4c44b0e4cfb2f031280ff8920a6e9bf3576acef50bb7eb94d6175b71d4b"
+    },
+    "assets/qr/csanadi-qr-0c60a6f63259e261.svg": {
+      "sizeBytes": 4474,
+      "sha256": "ae53cbc5859c75543d12faff65ca22906b65428f837f0cdcd6e8386e6c77f068"
+    },
+    "assets/qr/csanadi-qr-0d84a1df3c10958a.svg": {
+      "sizeBytes": 5564,
+      "sha256": "a0e1aa863446d6b7f9dcadb4c081a54b3a6bb45517777d57fd0f49ba66472155"
+    },
+    "assets/qr/csanadi-qr-0eb89f7bb821b763.svg": {
+      "sizeBytes": 5608,
+      "sha256": "c73f913d3f2272c43ee7687c907877098b60f0b1c49925eac3dd47d773f18823"
+    },
+    "assets/qr/csanadi-qr-113ea2d36034c9f3.svg": {
+      "sizeBytes": 3488,
+      "sha256": "41fc09eaa4e142b902420a34cc788aa1a6cf6c0e10086380f3f183d2c0a87d99"
+    },
+    "assets/qr/csanadi-qr-13070e358bf73678.svg": {
+      "sizeBytes": 3393,
+      "sha256": "e79f516c9c2476d303d2c147766f578445ea70eadd84cd0e24e756c7fa0f6030"
+    },
+    "assets/qr/csanadi-qr-138e9367725e323e.svg": {
+      "sizeBytes": 4242,
+      "sha256": "ac1ee06f4e5cb361fd43bfb3484c0926456ec071610602f46fd3e63cc449683c"
+    },
+    "assets/qr/csanadi-qr-159946607e6ce5e6.svg": {
+      "sizeBytes": 5561,
+      "sha256": "8defa7110e3fda771003cd9b3e30835f3dced5b48942dea4f4438f0a14bf2296"
+    },
+    "assets/qr/csanadi-qr-16a888ce4a240a69.svg": {
+      "sizeBytes": 3479,
+      "sha256": "97143804015708cdb58420525e353f31b2fbe21493363f57ec97ffa463c920b3"
+    },
+    "assets/qr/csanadi-qr-176b4e6402a6c4dd.svg": {
+      "sizeBytes": 4385,
+      "sha256": "bb2040c9d9f745b0e9c9ea31f44563316d7df3c79ed36ca37b362925b1cda57f"
+    },
+    "assets/qr/csanadi-qr-187d5ea24b7263f2.svg": {
+      "sizeBytes": 4460,
+      "sha256": "4f4bc8db58a2cbbf29ba998d1a00608aee8481fdf5c6c520d563eecb6419b859"
+    },
+    "assets/qr/csanadi-qr-1a1d77cb9f6656bf.svg": {
+      "sizeBytes": 4566,
+      "sha256": "d9f671af482b4a7ddb87dad96278f51270fd4799d541bceb4e780e4b323d3e93"
+    },
+    "assets/qr/csanadi-qr-1ac4ce68d2d46d6f.svg": {
+      "sizeBytes": 5556,
+      "sha256": "1e413e0a43ec163cb699d983bf29762b0762dde4d74e0b2d8e2c6d6cd23c7b9c"
+    },
+    "assets/qr/csanadi-qr-20a5c9a47b295209.svg": {
+      "sizeBytes": 4254,
+      "sha256": "0bd6eb88edc55ad4be100bbaad82061dcc781c39a7166dd865b6845927f8f817"
+    },
+    "assets/qr/csanadi-qr-210b5a8fdd91c4c6.svg": {
+      "sizeBytes": 4432,
+      "sha256": "ca0a86d90086b1c94db858b335bd9baa1a49b6a48706022448fa9376f831640c"
+    },
+    "assets/qr/csanadi-qr-21773bbaa9b2b28a.svg": {
+      "sizeBytes": 5498,
+      "sha256": "70c6703800b15c0ae33105878ff5e1431ed58462a5b5ac312036ccb5eb5e957d"
+    },
+    "assets/qr/csanadi-qr-237a68ef7daf842d.svg": {
+      "sizeBytes": 4477,
+      "sha256": "05b500360eb1b4063e0ce7af79e2fed51f6de21a23d2c7db2cfa1001f5828236"
+    },
+    "assets/qr/csanadi-qr-23cb785e3811f230.svg": {
+      "sizeBytes": 4354,
+      "sha256": "acad5d884e93fb4fac00f7e4f9c985b8a6c8e76d8976afa71da73dc53e36aeb0"
+    },
+    "assets/qr/csanadi-qr-263990dcdf95e979.svg": {
+      "sizeBytes": 4242,
+      "sha256": "3384780a02ee5908d4ad7c6effafa22d4ad33cd229488316875680286124b980"
+    },
+    "assets/qr/csanadi-qr-2aed20e9088c3589.svg": {
+      "sizeBytes": 4449,
+      "sha256": "f4cdf4d980f5c88c20819190a51453271be7e3d16cadc3657cde1452cd0248a7"
+    },
+    "assets/qr/csanadi-qr-2d2caec6a51d6205.svg": {
+      "sizeBytes": 5459,
+      "sha256": "13a52d2d3d3cf960586d66671a5839d2ff8edf94c90fc56f81fc5fd059bf186a"
+    },
+    "assets/qr/csanadi-qr-3075a04f32904c76.svg": {
+      "sizeBytes": 5488,
+      "sha256": "53297ac9532f8ad219ed040f1ad983d85082aad57662d9e196cefc8117abe02d"
+    },
+    "assets/qr/csanadi-qr-32162238a7890c28.svg": {
+      "sizeBytes": 5354,
+      "sha256": "2df4eeea25b501625e31889d0db2d8913fc1bf06d28b9df3c63b1a0fb66c3f10"
+    },
+    "assets/qr/csanadi-qr-33b8fa9654966c4f.svg": {
+      "sizeBytes": 4169,
+      "sha256": "7cc310d001523bef8af61af945e8eb86eb8528da7e996b198323583efea7ae60"
+    },
+    "assets/qr/csanadi-qr-34e106427eb427a2.svg": {
+      "sizeBytes": 4388,
+      "sha256": "624631ae7b9063dcfc3a41d7e697ce5a801f04eebd6c39254a2c670f8c63863a"
+    },
+    "assets/qr/csanadi-qr-3536b69c09e2b441.svg": {
+      "sizeBytes": 4454,
+      "sha256": "841cef09aad5224f04f9b2807b7ee6324c9d7ff8ba67381601aa8d04b18acda3"
+    },
+    "assets/qr/csanadi-qr-36bf8d202c00ce1b.svg": {
+      "sizeBytes": 5414,
+      "sha256": "9e64aeaf11c2b9baa3eea0b237d01d50ec11dcfffacc694931fdbf61e179a989"
+    },
+    "assets/qr/csanadi-qr-3771af713a19879a.svg": {
+      "sizeBytes": 4420,
+      "sha256": "55fdc92630b41d6c737683ed1337e89473f09ac274efa0f092511f192072a25a"
+    },
+    "assets/qr/csanadi-qr-396da0aaa28e4c37.svg": {
+      "sizeBytes": 5490,
+      "sha256": "6074adac0e1fbbb7cff4ba8b6405afcb40df9498276ea42d3ad8a70f5271e78b"
+    },
+    "assets/qr/csanadi-qr-3975192951e5a24c.svg": {
+      "sizeBytes": 4403,
+      "sha256": "57b7deb162d9d29c97c78cb18be1f0257ad2fa9f28d0cd579ef4bb8cdc1b45d3"
+    },
+    "assets/qr/csanadi-qr-3c61cea56b095f6f.svg": {
+      "sizeBytes": 4255,
+      "sha256": "018e6056360118acc589a826eb46430721f90ad649032a5fe8d0f9602af3a80a"
+    },
+    "assets/qr/csanadi-qr-3c79a1ff31e1bc11.svg": {
+      "sizeBytes": 4476,
+      "sha256": "de06e3f93c8ba3f3b2b5f07000c598bb784bc092178f4c957fa1ce51e10b9cd9"
+    },
+    "assets/qr/csanadi-qr-3e5a714c011446fc.svg": {
+      "sizeBytes": 4197,
+      "sha256": "e6234dd5f7bb5c734f5f556bcaa2aa1e13c205cbbdb20b1a6dc2e0682418209e"
+    },
+    "assets/qr/csanadi-qr-3ff2c1ee7730fd07.svg": {
+      "sizeBytes": 3441,
+      "sha256": "938e12ddb3468a35971f064fdd5c674dbb0b974d0936ae193724ede4391a811e"
+    },
+    "assets/qr/csanadi-qr-41b847a9fc8c3bf0.svg": {
+      "sizeBytes": 4435,
+      "sha256": "578ba28c7283026bbb795f5cc169d3d644125a9f1fc2d3e773d0d8603d5f50d7"
+    },
+    "assets/qr/csanadi-qr-41d9735ae0b02029.svg": {
+      "sizeBytes": 4329,
+      "sha256": "6cb51e3a01c314d6b8d67ec0ddbcbfede6b337c0d41d1ccc29eaef57033b3fc9"
+    },
+    "assets/qr/csanadi-qr-445755411d780557.svg": {
+      "sizeBytes": 4359,
+      "sha256": "6a2d9620a25456c5b86afa4f182e7fa853cfb64a0f19f845a79a053438aa4a5e"
+    },
+    "assets/qr/csanadi-qr-44ec575af7aaa7f7.svg": {
+      "sizeBytes": 4179,
+      "sha256": "12cc5b12694dbc53bf69cdafb915d1eb6aaba97ad934219ce1eacfb5cabc30b1"
+    },
+    "assets/qr/csanadi-qr-4b17b7b0af0826de.svg": {
+      "sizeBytes": 5456,
+      "sha256": "fa9d24f28a6a901c7583adb8d131ca1f24affc4e7902d57aebcb44b5bf0516e8"
+    },
+    "assets/qr/csanadi-qr-4b783c441f7933e3.svg": {
+      "sizeBytes": 3322,
+      "sha256": "fd792645b835b6539fa6dd499099262deeaa9a56c3ed3dd8ea476b8d802c838d"
+    },
+    "assets/qr/csanadi-qr-4c54fef661fff16d.svg": {
+      "sizeBytes": 4345,
+      "sha256": "2a6fcd908e31b2d6375f3712898fcb2d0ff0561069174bbaad24ab424492bfd1"
+    },
+    "assets/qr/csanadi-qr-4cdc25ba798bc31e.svg": {
+      "sizeBytes": 4452,
+      "sha256": "4a6993463582a0412c59076c1b22f41f6d0cfa2ac2f416ed9a945e65cf74f111"
+    },
+    "assets/qr/csanadi-qr-4d08be96f3530954.svg": {
+      "sizeBytes": 4457,
+      "sha256": "eed5d72b010643f96c858b4c7c0ebabd60ccb9e9032dd99562f5749215b0af20"
+    },
+    "assets/qr/csanadi-qr-4ef4392514ad36cd.svg": {
+      "sizeBytes": 4493,
+      "sha256": "2b9b48f528ce6d2c1e2e1f61f6f81fe5b828b160bd197eb724175700dec40ab4"
+    },
+    "assets/qr/csanadi-qr-506436f1a662641c.svg": {
+      "sizeBytes": 4375,
+      "sha256": "d00b029a498428e940d34ab1134e75efc315162afbb123f7132265a171ff4583"
+    },
+    "assets/qr/csanadi-qr-514eae61749ce1bd.svg": {
+      "sizeBytes": 5608,
+      "sha256": "568f93ca6c97b930d089896aafb15d6260ebc72a83ca49e383a030d4cdfed14e"
+    },
+    "assets/qr/csanadi-qr-535f37604dac513a.svg": {
+      "sizeBytes": 4526,
+      "sha256": "2e623a1e6758a0749975130553b7e26ce0e2f0ed0b3e813f28f2c9db83dfff67"
+    },
+    "assets/qr/csanadi-qr-5372f5709cb9736d.svg": {
+      "sizeBytes": 5572,
+      "sha256": "5805f3f570888b2fdad86ada04165fe0ecbc5d05e9bd07324a0f18f8a2f340b0"
+    },
+    "assets/qr/csanadi-qr-549112a531d270f0.svg": {
+      "sizeBytes": 6404,
+      "sha256": "b28abf6f339cfec7ea8d7c32743374b94e53f1759e9159c3ca01d4fecbcc1f83"
+    },
+    "assets/qr/csanadi-qr-559ca2e357b86598.svg": {
+      "sizeBytes": 3383,
+      "sha256": "73c1ece9fdc156b53fa20bb867ff079bd92058e2083451fbfc9b7660724b054c"
+    },
+    "assets/qr/csanadi-qr-5a1210dbca644112.svg": {
+      "sizeBytes": 4509,
+      "sha256": "69f6167785d60c3a731558e164980d516a8ff58a3baac71f418c85e014ff231b"
+    },
+    "assets/qr/csanadi-qr-5adf5e82f502e1b9.svg": {
+      "sizeBytes": 3394,
+      "sha256": "5d5c01ac86219efb8c4043b33d1775ab0741ef36f86d8e12bf5c3c598c44dcf9"
+    },
+    "assets/qr/csanadi-qr-5c09692eaae4992e.svg": {
+      "sizeBytes": 5682,
+      "sha256": "cdd0e09eb2e36101eb6527c52a09dce3e71cd7d6a3cfa9d7b8fd3a380ed7e0cf"
+    },
+    "assets/qr/csanadi-qr-60187cd5d8ae5972.svg": {
+      "sizeBytes": 4383,
+      "sha256": "9f2635584e85279f16ed39c4c47f4d2210135f420ab3279b73ab880dafc95889"
+    },
+    "assets/qr/csanadi-qr-62d9ee5413d82888.svg": {
+      "sizeBytes": 4420,
+      "sha256": "991fcadec97f1005e1398699f81a80e0db09881861f3d9ff7a4e60445f3c7881"
+    },
+    "assets/qr/csanadi-qr-68df1cba754e9288.svg": {
+      "sizeBytes": 4426,
+      "sha256": "b7163b3aa115c048517e7ff39725185657b21991177fcc59e1be83c31ec91121"
+    },
+    "assets/qr/csanadi-qr-6c31597b7b12ce10.svg": {
+      "sizeBytes": 4398,
+      "sha256": "0397f9c0d75c880ed1546158b32e8c9c9475afeed77899d55ff0cf9c9b11a613"
+    },
+    "assets/qr/csanadi-qr-6c9334e5d6b059f3.svg": {
+      "sizeBytes": 5547,
+      "sha256": "45271137bd378bbea56705d16634b3711b0e78fbca1e7129eb73b7a4b042ce9d"
+    },
+    "assets/qr/csanadi-qr-6d7f6776dd94f4df.svg": {
+      "sizeBytes": 4431,
+      "sha256": "cc1ab935ddd744678b020db5f9c5ca652cea7940ea17007d2f12cf22a59579ea"
+    },
+    "assets/qr/csanadi-qr-6eacabd785a68b59.svg": {
+      "sizeBytes": 4375,
+      "sha256": "8bcc3be479916c2fae7184cb5734b16c9e328e3da469f865748d2956b7ba1f00"
+    },
+    "assets/qr/csanadi-qr-708fe79585cb58c2.svg": {
+      "sizeBytes": 4450,
+      "sha256": "f3af668a645bf73815626f3996fa098d6f13133936816ba9cee3bc48167b6520"
+    },
+    "assets/qr/csanadi-qr-71ddc97f33c5f794.svg": {
+      "sizeBytes": 5267,
+      "sha256": "3f382fb3035d5e3101764ddd55bb0cde8bb831cd9dc48c861d7de09717b448a4"
+    },
+    "assets/qr/csanadi-qr-720d4f1f6672ae3b.svg": {
+      "sizeBytes": 4341,
+      "sha256": "0b9cc5fbe5ce5dcfb4929e6c2955b57c0254ca7615cf206c91a7d1c2d689b21b"
+    },
+    "assets/qr/csanadi-qr-727f4683fde42954.svg": {
+      "sizeBytes": 5400,
+      "sha256": "4ec56d98672a5fe46b8706f70bff893e50e18e5609dd82f8972e3307023c20c7"
+    },
+    "assets/qr/csanadi-qr-72b5a08dd496a99a.svg": {
+      "sizeBytes": 4169,
+      "sha256": "383c2c45c03cf0d995c9da09f7287cd9e331fad11397df8a68bb770572bd53e9"
+    },
+    "assets/qr/csanadi-qr-74b265f0c2eddf09.svg": {
+      "sizeBytes": 4378,
+      "sha256": "f9da503b8f2353d352b93a4110f10a2a16202523ae219cdaf89ecaeadb648b46"
+    },
+    "assets/qr/csanadi-qr-74e979fb17bc87ce.svg": {
+      "sizeBytes": 4254,
+      "sha256": "cff419680ca9e36d6f1ed337f13932d43f68571b190b45ce560df937321be579"
+    },
+    "assets/qr/csanadi-qr-75634dafe6e75407.svg": {
+      "sizeBytes": 4407,
+      "sha256": "cc3dde76cc2d57e751c249ed83042a0cf6f900dafb4149ae973315c370ceafb9"
+    },
+    "assets/qr/csanadi-qr-77162e1e7ae8c535.svg": {
+      "sizeBytes": 5446,
+      "sha256": "6dcba269c17a20f0013606e87aed8d15048aeef59786cf8bde220a7454914661"
+    },
+    "assets/qr/csanadi-qr-782c01b9974d5956.svg": {
+      "sizeBytes": 4478,
+      "sha256": "c234252f103b08dffc576e6a72ca913ace1f51c6a7c892e26fcf47304cb9fb7d"
+    },
+    "assets/qr/csanadi-qr-7850cc51e0a814b4.svg": {
+      "sizeBytes": 4480,
+      "sha256": "b08676796109c52dd707c3c51269d0a59ea6cf882ea94126bd772d8407deb8c1"
+    },
+    "assets/qr/csanadi-qr-79a675a8ae6f0a50.svg": {
+      "sizeBytes": 5424,
+      "sha256": "bbe898d4ad6370176924dfbf60c8d8cc1bd39390a3464199e0e7f4e8bb8ba3b0"
+    },
+    "assets/qr/csanadi-qr-7a0b9d01243627e4.svg": {
+      "sizeBytes": 3350,
+      "sha256": "decdc9df73338a09c2772b1849a9616d4a5a42f281dea55c56d8f89113de7f04"
+    },
+    "assets/qr/csanadi-qr-7a545988a54801a8.svg": {
+      "sizeBytes": 4377,
+      "sha256": "ba2218652e1b4d6a3b6466c726b0f45b0fe407a1430d205eee4fd484b9ce2876"
+    },
+    "assets/qr/csanadi-qr-7bee5b30b30758f1.svg": {
+      "sizeBytes": 4299,
+      "sha256": "02cfdc42a6067c3b3fec2a5f90dd70aa5c24b5998c886016ed351fb4a25f7340"
+    },
+    "assets/qr/csanadi-qr-8111b25cc07d8be4.svg": {
+      "sizeBytes": 4148,
+      "sha256": "3ab14936a8298bea4d7d7bf2408996d8e3ae64b7909e3f9717aa4ed3982bcc5e"
+    },
+    "assets/qr/csanadi-qr-81ebf6d37a94856a.svg": {
+      "sizeBytes": 5424,
+      "sha256": "22f010e52fa79a52900c15e2249145049969866eb36c91593f096cadb2e7c978"
+    },
+    "assets/qr/csanadi-qr-8652dd26e8662ab3.svg": {
+      "sizeBytes": 5398,
+      "sha256": "b960f70c257115a228adb4216197f9e8ab4dbfd42e5d71ec67adc25a33fb9db8"
+    },
+    "assets/qr/csanadi-qr-870af2cf6e1ab453.svg": {
+      "sizeBytes": 4267,
+      "sha256": "fa4f518b7a47db7cdc7361c5298398a9deb05308e7d10054a29fc20751c1f7e5"
+    },
+    "assets/qr/csanadi-qr-884dd64bf43e1d2b.svg": {
+      "sizeBytes": 4445,
+      "sha256": "bfd5fb88bf9eaf77760a85f86867530c388d8ed0121f26503a8aa950b6b677d0"
+    },
+    "assets/qr/csanadi-qr-891d35fbf23ff980.svg": {
+      "sizeBytes": 5604,
+      "sha256": "e1e56265cb38be58b8b93460c2a45580c98e19b6e8c2b380fcef7148ca5a40dc"
+    },
+    "assets/qr/csanadi-qr-8a0c078a6b1f122f.svg": {
+      "sizeBytes": 4431,
+      "sha256": "c2ba017da5eff9a15693c877f21bf2bfa1741bdf917ddcf38534ec5db0b1470f"
+    },
+    "assets/qr/csanadi-qr-8a90e21f33bb7ef2.svg": {
+      "sizeBytes": 4345,
+      "sha256": "ee950fc81fca74c67359568a87636048e2c8c1a77dfe70bb945a912cc6bbfdc0"
+    },
+    "assets/qr/csanadi-qr-8fc7a0d67df8fe34.svg": {
+      "sizeBytes": 4210,
+      "sha256": "7f3e43bf9db7097df693d03eee99ea115d91def8a8803e1636f5fba6077f3e21"
+    },
+    "assets/qr/csanadi-qr-914b7b862426c7e3.svg": {
+      "sizeBytes": 5574,
+      "sha256": "a138e5d95d59752b00589458eb48b6e9bff6a255a2343284d0960ccc22f34685"
+    },
+    "assets/qr/csanadi-qr-9181b16ee2fb1a31.svg": {
+      "sizeBytes": 5529,
+      "sha256": "8e167aed0cd8fe641c5e98541ad9c64837dd155774959352d036a3354f309328"
+    },
+    "assets/qr/csanadi-qr-93a632e4539c1ff9.svg": {
+      "sizeBytes": 5598,
+      "sha256": "893ecc1f76b69fb1d364235d0ed777ec84cff2bb00bf7b935ae41d91a6f7d77d"
+    },
+    "assets/qr/csanadi-qr-96086466d03342ed.svg": {
+      "sizeBytes": 4472,
+      "sha256": "ea6a3e7c6725b1b56ce925cfba55049ac5abf59a013f2722fb9d2c71a6c048b0"
+    },
+    "assets/qr/csanadi-qr-96ab7606f9a9babd.svg": {
+      "sizeBytes": 4327,
+      "sha256": "2e8214bb71392f808b7d532f70360b23a727b30a6d956b053618a90c34b72b14"
+    },
+    "assets/qr/csanadi-qr-98382a2df9ad70b5.svg": {
+      "sizeBytes": 4406,
+      "sha256": "a502e29a65a281428055de52c5173933bfd567c5eebed88e424b9eaf58eed3c9"
+    },
+    "assets/qr/csanadi-qr-9855cfd079eace94.svg": {
+      "sizeBytes": 5297,
+      "sha256": "463d78bbdf60f9987c6d42827fd16eb3f7631bd4822cb388dcea7a986a4e26db"
+    },
+    "assets/qr/csanadi-qr-988ffe5985800ec2.svg": {
+      "sizeBytes": 5454,
+      "sha256": "5a5940a887d5ae72e2ab58e33f7f9af39bfbba210fc265eccdf178b487b77847"
+    },
+    "assets/qr/csanadi-qr-98b5e8ec1dd4a6b3.svg": {
+      "sizeBytes": 4402,
+      "sha256": "99344bed03125e4027f121f092be533966ce031ad0f145105c48c8a02e5dd870"
+    },
+    "assets/qr/csanadi-qr-99c30ab5055d528c.svg": {
+      "sizeBytes": 4360,
+      "sha256": "71ad0c0245442393086bc7686b0e92013f6d9628fc735593c771b01404cf1811"
+    },
+    "assets/qr/csanadi-qr-9a3838207cd92cd6.svg": {
+      "sizeBytes": 5517,
+      "sha256": "0e6a9d8d8fc0eebde5e6792871c75758ee2190345a21473a86d56fd71c765d0b"
+    },
+    "assets/qr/csanadi-qr-9b11dfa6987299bf.svg": {
+      "sizeBytes": 5412,
+      "sha256": "35fe6a9195bc6e908e92ab71b1f78dd6e35eecc73802acaadbcd2d624ad6a162"
+    },
+    "assets/qr/csanadi-qr-9d714275b7418517.svg": {
+      "sizeBytes": 4180,
+      "sha256": "d640948bd5bb6fbe6e0e21ac7e05a4efe5a14a72e23cdc1fae980e4b2d06383f"
+    },
+    "assets/qr/csanadi-qr-9f6b35e6b66bbb8b.svg": {
+      "sizeBytes": 5414,
+      "sha256": "c6cff39323f780d48ec1b393657b33e735f43bde8a71b3df3f1b54239df75394"
+    },
+    "assets/qr/csanadi-qr-a10ebcb6f9bd7de4.svg": {
+      "sizeBytes": 4398,
+      "sha256": "292990ce90663a352945dcd9d568cd1700c908d7a6300ee9b454955bdabea764"
+    },
+    "assets/qr/csanadi-qr-a10f7aa201031c9c.svg": {
+      "sizeBytes": 4338,
+      "sha256": "235a4e00ea260162a219c91ab967b7e4d4b84149d092a1e2c00d5ae792466772"
+    },
+    "assets/qr/csanadi-qr-a12ec18095e2955c.svg": {
+      "sizeBytes": 5401,
+      "sha256": "0a76382c245301266cf155ccfe277adec1de5866e9bca39f93f974d3dd7d7646"
+    },
+    "assets/qr/csanadi-qr-a53e73bf660347a4.svg": {
+      "sizeBytes": 5535,
+      "sha256": "abb2959095aa2f8f71ad9fe2f805afa69ff52d6ac3e4e9239948e8b948b1f2cd"
+    },
+    "assets/qr/csanadi-qr-a684d2e677fbbedd.svg": {
+      "sizeBytes": 5343,
+      "sha256": "9d45828d5269f86bc3aaebe199f84d8c05272434165b2207ddcacf9fe844bdd1"
+    },
+    "assets/qr/csanadi-qr-a83158c4a0c9e9a3.svg": {
+      "sizeBytes": 4463,
+      "sha256": "93067b7dac4db3de77dc0d05547c847b65b017cb604b854c4810d03b3705f1ae"
+    },
+    "assets/qr/csanadi-qr-a855fb01418cea87.svg": {
+      "sizeBytes": 4447,
+      "sha256": "7106cfbf7c32f6719efab4797ccd91c719c474aad5cf8598a1d1e13ad918ece1"
+    },
+    "assets/qr/csanadi-qr-a8ee1624f434d1bf.svg": {
+      "sizeBytes": 4502,
+      "sha256": "23e5119b3f737db468a6ef84885287014be85b57a111d6c5572484adc8c62171"
+    },
+    "assets/qr/csanadi-qr-a91c104c52f596f6.svg": {
+      "sizeBytes": 4323,
+      "sha256": "010ec804ba02b57b96c1eb8b041a51404a728d4446e6b7e7dd9c426ba05a907c"
+    },
+    "assets/qr/csanadi-qr-ad5971106c885b90.svg": {
+      "sizeBytes": 4362,
+      "sha256": "e98b28b66dd17a560bd95d372c9036da48cb0a6d350b0a9c6acc0e69f0984596"
+    },
+    "assets/qr/csanadi-qr-af74ec7de14859f5.svg": {
+      "sizeBytes": 5449,
+      "sha256": "a9f6d0af81f558cea2e6a17ac0ddacf5023983292e9c4ca74925acc2f80fa168"
+    },
+    "assets/qr/csanadi-qr-b02dc0a3150c685f.svg": {
+      "sizeBytes": 5428,
+      "sha256": "97cd4ef86bef162f702578064832192ed520a03bf4909a94dc84ba7688a261d4"
+    },
+    "assets/qr/csanadi-qr-b37c940608c0cd8c.svg": {
+      "sizeBytes": 4213,
+      "sha256": "8e57a4c1771647435e71ca491b7848ae6261accc2f15a9092c1a5c9574b2dbff"
+    },
+    "assets/qr/csanadi-qr-b38a4af88fe8538f.svg": {
+      "sizeBytes": 4358,
+      "sha256": "b891b415771731b20e6fc5a9c332cb13be3fd756328c825e3896605ceef1e639"
+    },
+    "assets/qr/csanadi-qr-b4ed903f0a3e98ea.svg": {
+      "sizeBytes": 4355,
+      "sha256": "c6e178ffc577770ebf4c583e9f60cf37be3183faaa860becd3c34db2ffb42068"
+    },
+    "assets/qr/csanadi-qr-b58a5ab9ac20e679.svg": {
+      "sizeBytes": 5513,
+      "sha256": "57c0bc509ff4a39f23cbec9f29c3bd4af3a212006cb003a6962a23bc119c5e60"
+    },
+    "assets/qr/csanadi-qr-b654b9e8e3ebdeff.svg": {
+      "sizeBytes": 5474,
+      "sha256": "dbffa8ba6459eb468703753e6c99ace250deed675ddd517e8685330319a4b33a"
+    },
+    "assets/qr/csanadi-qr-bb1b37b3796dbd31.svg": {
+      "sizeBytes": 3430,
+      "sha256": "f3972857d982cb5eafdc7519ec715c41fc7b0972f74f990156b2a15b210d6463"
+    },
+    "assets/qr/csanadi-qr-bc73aead899a70af.svg": {
+      "sizeBytes": 4193,
+      "sha256": "c66edbf456c71adb1e870b4250d20e7a5c1541e20c00cdacb785d4292be6292e"
+    },
+    "assets/qr/csanadi-qr-c08ca21ec3b11464.svg": {
+      "sizeBytes": 5535,
+      "sha256": "ced67250bfb2ea37736ed825552bd4d9f0fbb5a6c1699fcc3974468ffbb343aa"
+    },
+    "assets/qr/csanadi-qr-c0a0c3074fae237b.svg": {
+      "sizeBytes": 4473,
+      "sha256": "03cca386cb2aff332e8c864aa3b888beb7870745e7d4144db7f8047977e62b2a"
+    },
+    "assets/qr/csanadi-qr-c14194e89fc7d2a8.svg": {
+      "sizeBytes": 4428,
+      "sha256": "124b00383ea0fe9c8628a6b13908423b0f0fe01773c91dca729252f287ad2886"
+    },
+    "assets/qr/csanadi-qr-c28888b0f73ce272.svg": {
+      "sizeBytes": 5487,
+      "sha256": "40026f0413e4eb186124ea195f4095fe056b27909b81f306a1c3e9da62ec2164"
+    },
+    "assets/qr/csanadi-qr-c29603433f3cfa7f.svg": {
+      "sizeBytes": 4419,
+      "sha256": "384cbc55a39598e0e573335c9b9886ea34a9927fbd272386ca76f92a922a6b21"
+    },
+    "assets/qr/csanadi-qr-c2c5dd073f9fc58c.svg": {
+      "sizeBytes": 4267,
+      "sha256": "5503ce38805c15e61c97b39fd0ed1e0aa9c75e9d41df9b61d5c5ea500b5b82e3"
+    },
+    "assets/qr/csanadi-qr-c4e0890b687fca7a.svg": {
+      "sizeBytes": 3382,
+      "sha256": "925dd26fb0a86dceb30f36ba2590f3dc21da3b2c06698db59e28ab6167dad4c3"
+    },
+    "assets/qr/csanadi-qr-c5a789010b39e930.svg": {
+      "sizeBytes": 4341,
+      "sha256": "e7f0dc6ac4e1926aa929e99fb628871798c7be96261d2a9d920d63a6064c80b1"
+    },
+    "assets/qr/csanadi-qr-c66111646dc64645.svg": {
+      "sizeBytes": 3350,
+      "sha256": "a06e366ba613a234f117ca9829ffae92b8fe761e09000e5cc5497f89e2f4653f"
+    },
+    "assets/qr/csanadi-qr-c6b1615395f37ae1.svg": {
+      "sizeBytes": 4626,
+      "sha256": "95558f3b5540c094edaef1fa63cf9703d1ac9710161a7400b06a5f7f07b0c204"
+    },
+    "assets/qr/csanadi-qr-c7d23a5f9ac34c49.svg": {
+      "sizeBytes": 5594,
+      "sha256": "ed497b1bd90bc4ef3e54efc47caf6f3453f102f4a77861c81f523cc5e88757be"
+    },
+    "assets/qr/csanadi-qr-c8ad80a83c3bae84.svg": {
+      "sizeBytes": 4255,
+      "sha256": "803f36662b7ddc0dbe5879555a26ec94a107c8eb80f790d89643389b0aaa16c7"
+    },
+    "assets/qr/csanadi-qr-c94132ac60962a66.svg": {
+      "sizeBytes": 5395,
+      "sha256": "226afe8f471a3b3d7bb7278c09c8c6a908b3b33ec3f3ce9e47bbc9a3b6cb1361"
+    },
+    "assets/qr/csanadi-qr-ca44a7cc800b4936.svg": {
+      "sizeBytes": 4451,
+      "sha256": "ba124060275a89c9066af0ae2deb9e3f2f4f8210d6b7c1070616acbe2c27782a"
+    },
+    "assets/qr/csanadi-qr-cb6c4b7dacd9eddd.svg": {
+      "sizeBytes": 5471,
+      "sha256": "0a2956a4283e2c7635d5ab4fc95af24da6d5916aeb4085ba69cb8ae14c0508d8"
+    },
+    "assets/qr/csanadi-qr-ccf643fdda0a8241.svg": {
+      "sizeBytes": 4317,
+      "sha256": "d44636fa2e574f3e0377211dd9168732d7d932c1c17894e1ef59dce1bb109f68"
+    },
+    "assets/qr/csanadi-qr-cdaf7f0281feafd0.svg": {
+      "sizeBytes": 3450,
+      "sha256": "c381f82757564d313c43d594936b0011b9f14e4aad211edf7feb2fc9951a9670"
+    },
+    "assets/qr/csanadi-qr-cf6ae3279994dc7c.svg": {
+      "sizeBytes": 4151,
+      "sha256": "fba927b5b92d3cd3a55d829596e5944794ac9dc063f2569e0ce43a6867a7646f"
+    },
+    "assets/qr/csanadi-qr-cf7a5c62ff803b37.svg": {
+      "sizeBytes": 5442,
+      "sha256": "724b556f5a9c0a49fd295878d047ee0466b2652f17e9a1ed9eecf73c2cbc9dc6"
+    },
+    "assets/qr/csanadi-qr-d1481ecf03061d64.svg": {
+      "sizeBytes": 5352,
+      "sha256": "812b8fe944ceeb462f266d591ea8d098cf8140d8aef3c2629751a69e969095dc"
+    },
+    "assets/qr/csanadi-qr-d3629657e62f6368.svg": {
+      "sizeBytes": 5688,
+      "sha256": "ecab0bc460dd971d702bd73741fd5b97cb6265014dabdaf0d5fd84bc89d42cf0"
+    },
+    "assets/qr/csanadi-qr-d3d4b2037a08b48e.svg": {
+      "sizeBytes": 4424,
+      "sha256": "a366f223d38cdaadf22d6aed05ce9a1513e339862654dcc9fcda0921453f77c7"
+    },
+    "assets/qr/csanadi-qr-d5316123ad0159d5.svg": {
+      "sizeBytes": 5456,
+      "sha256": "9e49ae14cd66b01b6f40c82774014761c442df8244cf786529c9555f50cac9df"
+    },
+    "assets/qr/csanadi-qr-d63cbe1e6596e1ec.svg": {
+      "sizeBytes": 5622,
+      "sha256": "9704dca99da994df317240d57b82980b36c18ae84cd0a22442dfa917b7458a4d"
+    },
+    "assets/qr/csanadi-qr-dc424d1e151d96db.svg": {
+      "sizeBytes": 4223,
+      "sha256": "5b187c2589f595a671480e30b3e09c9931846ae08cf28bab551f581347a65ce2"
+    },
+    "assets/qr/csanadi-qr-dcce263f08ae2b11.svg": {
+      "sizeBytes": 4397,
+      "sha256": "ff3291480747cdd26c07497c8eeee59994453ebbbb524ad75da8ac923d1a85b1"
+    },
+    "assets/qr/csanadi-qr-df014648b332e367.svg": {
+      "sizeBytes": 4314,
+      "sha256": "0f86136543ea690c172b21204b43097f50ea076e22093ad86fdc407413146054"
+    },
+    "assets/qr/csanadi-qr-e725b3c893965c6e.svg": {
+      "sizeBytes": 4355,
+      "sha256": "1f4fa203b27c0fa3527be5525c43a9b986c23b6667f3cd0836b25df83cf084cb"
+    },
+    "assets/qr/csanadi-qr-e77214c7fcc2235b.svg": {
+      "sizeBytes": 4332,
+      "sha256": "c15f28033d6cf88220370ad41a320b810708d0121858e0596ffecc6a476a98a0"
+    },
+    "assets/qr/csanadi-qr-e7f4d7543ec3ad99.svg": {
+      "sizeBytes": 3347,
+      "sha256": "5c04d7b2bf67006fadba9e5fe21165494230b3952bee567f58fc454332cb8d19"
+    },
+    "assets/qr/csanadi-qr-e9eaac4335f763cd.svg": {
+      "sizeBytes": 4253,
+      "sha256": "41d9bb591d33d74b9a5046647f6bcd105bb944f171638294388819aa6ed67f56"
+    },
+    "assets/qr/csanadi-qr-e9fb2c9139b491d4.svg": {
+      "sizeBytes": 4380,
+      "sha256": "8f071a85e07671a2520c3749bb2bbbb2dbf9b9e936769e4f6aad471544c3eeb2"
+    },
+    "assets/qr/csanadi-qr-eaea32bfa8e2a9c1.svg": {
+      "sizeBytes": 4520,
+      "sha256": "8d467f795c346270db75597f02e3f05465f946c90f3819d5696985020fa46fd8"
+    },
+    "assets/qr/csanadi-qr-ecc8b97e9ac7f4a8.svg": {
+      "sizeBytes": 4374,
+      "sha256": "a986709d368a8833466baf5fb48ef499f9f253007ff07fd617a0f7be7f612456"
+    },
+    "assets/qr/csanadi-qr-eef6eab88fd8eba3.svg": {
+      "sizeBytes": 3401,
+      "sha256": "57f940ca0832efb1340dcba46526c3992ab9bc9854f74ee6a1bb969438aae806"
+    },
+    "assets/qr/csanadi-qr-eef79bcdcaf8420f.svg": {
+      "sizeBytes": 4140,
+      "sha256": "c6f9bfe03691b1dc164484945ab0da07c2bf4c06940b33d3e6bc7ec6c66d344b"
+    },
+    "assets/qr/csanadi-qr-efa963a1cd50a151.svg": {
+      "sizeBytes": 5605,
+      "sha256": "d84a2a4bd6053a5b4574c23777075dc8880362b37dd69a81293e768fdea64e64"
+    },
+    "assets/qr/csanadi-qr-f042853f1fdff160.svg": {
+      "sizeBytes": 5703,
+      "sha256": "56895f4db5b4694c01dbbcb41dbc9ad6484f98d9f6e08b24377ccd739f9049c5"
+    },
+    "assets/qr/csanadi-qr-f12490a17e5451c0.svg": {
+      "sizeBytes": 4391,
+      "sha256": "791908b74a5bd046e2620569d895c93ad532e5e3a46101795ae459e50b60019a"
+    },
+    "assets/qr/csanadi-qr-f2475368b48da45d.svg": {
+      "sizeBytes": 4340,
+      "sha256": "b8a31d542bec9a0f05bd9ef61b8a4798428f416412eb91b448fd9a16b096a256"
+    },
+    "assets/qr/csanadi-qr-f31e7f52b6a31ed2.svg": {
+      "sizeBytes": 4315,
+      "sha256": "24d467fecb06af9147dc26814b2cb40fd1f7054e5514088c934e9bba4b6ee0d7"
+    },
+    "assets/qr/csanadi-qr-f3baef66a15631d9.svg": {
+      "sizeBytes": 4323,
+      "sha256": "416f73131c9f214274fe4d187ede292f56d5072d707f416516dbf66740b01937"
+    },
+    "assets/qr/csanadi-qr-f446a262cd49324c.svg": {
+      "sizeBytes": 4262,
+      "sha256": "18d804793471c3a7ba23ace28a18fdca40762b76951a9aacb3f16dd7b5b0214f"
+    },
+    "assets/qr/csanadi-qr-f509830cd6bc58f3.svg": {
+      "sizeBytes": 4420,
+      "sha256": "d80956ee1d27801b73cd6ae98f1031732908d827f09400ce3ddadfad7273cd85"
+    },
+    "assets/qr/csanadi-qr-f593a0d1141c37c8.svg": {
+      "sizeBytes": 4184,
+      "sha256": "7f6633a4f0f70be38a2b6a2a15bd15642d662c1930e6e79c04bc8ef4ccac76e5"
+    },
+    "assets/qr/csanadi-qr-f6256d2687b152dc.svg": {
+      "sizeBytes": 4373,
+      "sha256": "c8c014e87a88e50cf3aebbaabd33efcbcd594a4745699153cb1710462c46354a"
+    },
+    "assets/qr/csanadi-qr-f70fc1f648bce422.svg": {
+      "sizeBytes": 4532,
+      "sha256": "b4ac44163570e27bfb628cc771826ff67530dd899730e37b11a3088a8eecd973"
+    },
+    "assets/qr/csanadi-qr-f7509d0870715b4f.svg": {
+      "sizeBytes": 3454,
+      "sha256": "27e668bf012144fd29580b8c68358c5252e281175be21a192a899bcb2c424edf"
+    },
+    "assets/qr/csanadi-qr-fdd5b6218adeedfa.svg": {
+      "sizeBytes": 4313,
+      "sha256": "96ecf002611cbccb977452f77b2d40f255e39d5ef20907b97ba3c1f7f6cd985a"
+    },
+    "assets/qr/csanadi-qr-fdde03c49be816a7.svg": {
+      "sizeBytes": 5751,
+      "sha256": "dec136f02a052fd22adaabce304dae016f38c6ee106e42cfa4bb9461b5d5c862"
+    },
+    "assets/qr/csanadi-qr-fe6cb35447110140.svg": {
+      "sizeBytes": 4296,
+      "sha256": "4b766944a977a5e8edf9f51efa5fe93b4717b3775f930f3d5fd17edfd5873622"
+    },
+    "assets/qr/csanadi-qr-ff85910ffb025ef3.svg": {
+      "sizeBytes": 4537,
+      "sha256": "3e525efd0fd93a135cda05ed503cfd70fd5a6c9a2a01d266de91f81cf7f18dd6"
+    },
     "css/compass-2026.css": {
       "sizeBytes": 18794,
       "sha256": "c7f3579a5ff9570b9aea633383edd0edcdf287fa22ec72fb6459bc451acd9cc9"
@@ -2207,8 +2903,8 @@
       "sha256": "de078c1867bef12d5c568205937536ae0468c1a8ef3f1a3904422b9af1831fa7"
     },
     "css/home-gallery-news-gate-2026.css": {
-      "sizeBytes": 5557,
-      "sha256": "bf3de52855f2a3ac9819071c7514293d6b119a029804c24a1c6aa6acd47fb642"
+      "sizeBytes": 5561,
+      "sha256": "f28578a597b59694667ada2bd2ee9c59165d4716ab7ad1a11370365ee3e6597f"
     },
     "css/interactions-be-2026.css": {
       "sizeBytes": 5701,
@@ -2350,6 +3046,14 @@
       "sizeBytes": 4289,
       "sha256": "a88371e3774ce544b3253d36ce054e43179d9ff39b419d924cd392c0a9a8f4a2"
     },
+    "css/round22-center.css": {
+      "sizeBytes": 8852,
+      "sha256": "9089083b9b720191308d7c5196d422796e24671f205d6f4e55311fbe93db36f6"
+    },
+    "css/round22-public.css": {
+      "sizeBytes": 6281,
+      "sha256": "46fa9016c72aef6fc9a131e1671e7654f5d2ca3de84c9d3c8379f391d7feed2a"
+    },
     "css/style.css": {
       "sizeBytes": 75798,
       "sha256": "71840673db531aeabf7822f96f96b563e10fa6c662b678ed51e511add55efd74"
@@ -2366,21 +3070,25 @@
       "sizeBytes": 1754,
       "sha256": "271c3926985eefc7681300e2546a47b4095b38a4779b75d55ed4f7f04b9a0842"
     },
+    "desktop/round22-center-desktop.css": {
+      "sizeBytes": 293,
+      "sha256": "5b79df73c6277d93b92a6aabcdc3b8546b258348cbf6e4c12c0de0744e53980c"
+    },
     "desktop/styles.css": {
       "sizeBytes": 484,
       "sha256": "d699af49beee4cb9af24350bdf8a3092e82dcb83cdd40a46554c50880a6bae9c"
     },
     "dokumentacio/FEJLESZTESI_ES_TESZTBESZAMOLO_2026.md": {
-      "sizeBytes": 11733,
-      "sha256": "7a956d59c5cf2e1e34a05e893aee0ef2c9bd508b9138353230c6f883a030baf7"
+      "sizeBytes": 13420,
+      "sha256": "3a31b116ececb24a4e2a35604fbd59d5da28e2b030b9fa97efc69c6488149462"
     },
     "dokumentacio/FTP_ATALLAS_ES_VISSZAALLITAS.md": {
       "sizeBytes": 4648,
       "sha256": "20eeaf99b3e5ebb2999fd49f4ab40a4bcda821c9856cd92609c9926a2576ffc7"
     },
     "dokumentacio/KOZPONTI_JSON_PARAMETEREK.md": {
-      "sizeBytes": 16605,
-      "sha256": "071ca6213f08156c7d63cbe98800dcde802c875c64c595510509051460617f41"
+      "sizeBytes": 17152,
+      "sha256": "101c52c7403d575d7c5d594272aee1adee579ce7defc53200e02226b6ac31148"
     },
     "dokumentacio/MEDIA_FELHASZNALASI_JOGOK_FELULVIZSGALAT.csv": {
       "sizeBytes": 44003,
@@ -2391,24 +3099,28 @@
       "sha256": "00eb23c69e2889b2ede6073d3259a46c2ba4985a52ed5e8ee077adc7f45a77c3"
     },
     "felfedezo.html": {
-      "sizeBytes": 8594,
-      "sha256": "9626557bbeb73ff4e282f90484cd6ebbf3fd8e2b0ea987a5eec8072a7e6ad75d"
+      "sizeBytes": 8638,
+      "sha256": "8a91ca53f57dfa0a824a374d51f5c1557fad78a6f2ba0de6d5bf9e0a33abc6a3"
     },
     "index.html": {
-      "sizeBytes": 13156,
-      "sha256": "dd49f8fe2c826cb02c3918760ad6af8c7506fc4d979cbdb033e8821de731bdb3"
+      "sizeBytes": 13666,
+      "sha256": "696723f7f28e277032856de88b6cdc9b3b1d3e58a07555f02819066804dc42d1"
+    },
+    "iranytu.html": {
+      "sizeBytes": 9642,
+      "sha256": "fc3ab3534605368665d7df3f922e47627857b57f0c7ed71d3be2883bd982ef5a"
     },
     "js/advanced-2026.js": {
-      "sizeBytes": 33992,
-      "sha256": "9ffcc5e2705809acc392dcfd842b043bb20f717ee15156ff071ada39b33bf504"
+      "sizeBytes": 33998,
+      "sha256": "c88b11e04c697b371943c8fb6f7c8199a7eaa5a66251793385f7454a149abc75"
     },
     "js/app.js": {
-      "sizeBytes": 42303,
-      "sha256": "4561f1385d66c7d13ddb07693dece454201ab7960133ef6774e4a382e144912f"
+      "sizeBytes": 43015,
+      "sha256": "f578d0fbbb071f2fadf622a17ae14b9f0cb7a69b73bd8c47cc1f3e9c30c7db5f"
     },
     "js/blocks.js": {
-      "sizeBytes": 8849,
-      "sha256": "4648b3ff6238cd149c1dc5ae149844932a449492aff21fa39cab3b5fdac32439"
+      "sizeBytes": 8878,
+      "sha256": "2225d3691ff09ae95aed44a5a6df92f5fbeca657642e404c6f5aab8639c52a67"
     },
     "js/content.js": {
       "sizeBytes": 5050,
@@ -2423,16 +3135,16 @@
       "sha256": "d0f2dbf18cb1ef4ebdd2ba99a54a4fd818f3fa9d14daf7f1026a21dc9e903e17"
     },
     "js/documents.js": {
-      "sizeBytes": 28000,
-      "sha256": "3c3390ea5a309d3d89eb1715dd0791ebf1b88b1984f0710c6d1046f0cef12368"
+      "sizeBytes": 28009,
+      "sha256": "603a7b8faff84e3edfd233fc759a71fb789d74efff47afda3d6d8346a9b9bb67"
     },
     "js/experience-2026.js": {
       "sizeBytes": 21323,
       "sha256": "0c29675a67fb97ad736536392c1cc781458a082322532ba3e9b4f193fe5e797b"
     },
     "js/extended-hubs-2026.js": {
-      "sizeBytes": 25842,
-      "sha256": "27bfbc90efe9241c0d4bade4377100f858f9130ccfef8ab8fb3d3f423d54f92f"
+      "sizeBytes": 25851,
+      "sha256": "95982c309fc6c3e9fc47fab204f7e24d1f4c2825be5a70fd363abf453e8b0bf9"
     },
     "js/format-bytes.js": {
       "sizeBytes": 481,
@@ -2443,8 +3155,8 @@
       "sha256": "4f981ec3658552e4779f652c75b999021d7633281c0c4c14c54fa2e7fd4530f6"
     },
     "js/hero-2026.js": {
-      "sizeBytes": 6941,
-      "sha256": "7f6ee9955a37845d9f2a1fcfe8d83b2bfea9b43c6c2187e95bca5f0cbacbdb2f"
+      "sizeBytes": 6951,
+      "sha256": "59ccaf98e6499fa9c142f32d069534b56e3ec0fcc52268f8ecb70fd94ecc80dd"
     },
     "js/home-live.js": {
       "sizeBytes": 13997,
@@ -2455,12 +3167,12 @@
       "sha256": "7d15b886ab003ddc5e887ff363d67138120173fa90b559e6fe86ef97e5027a53"
     },
     "js/kmil-2026.js": {
-      "sizeBytes": 4886,
-      "sha256": "dcee841516906d292e7d2bfa8efd5ebb7913f6f853b920e758f1ac32dd23b858"
+      "sizeBytes": 5950,
+      "sha256": "1dcbce90b85617409c43ae08038e8483cd99535d62f9b444545390090d1e9363"
     },
     "js/language-20.js": {
       "sizeBytes": 2194,
-      "sha256": "e265b207d955262e4afc882b9b0abcfda23eb71a7d44c6e08f41193f2ca209a3"
+      "sha256": "eb1cbed7f1d5aaf8b012afb3a2b1c5422a85a8c0782b28147734c8de2e6611f1"
     },
     "js/media-gallery-h-2026.js": {
       "sizeBytes": 16471,
@@ -2484,19 +3196,19 @@
     },
     "js/offline-reader-20.js": {
       "sizeBytes": 4617,
-      "sha256": "5f28bde40d9cee4ab36b078f21786b5c775fc79a98422fd196228c88600d64db"
+      "sha256": "9a3f0b4026ffad6169b935b062bbf586be7bb7c35572527c668b5fc0e1f25584"
     },
     "js/page-media-2026.js": {
       "sizeBytes": 2136,
       "sha256": "3b9dafe2ec515e8f8f9cb22b0da3565ee9ed26dc441f11ffeb641d1915debf03"
     },
     "js/performance-diagnostics-2026.js": {
-      "sizeBytes": 10209,
-      "sha256": "318ac6b5dda9298653ea72ec722d5fdf9d27992bb19eb3f0052503cee51a9228"
+      "sizeBytes": 10725,
+      "sha256": "7fe3bcd8cac1112527d150140f562c51e81e2d435e431a6fb3556299ca166e31"
     },
     "js/premium-home-2026.js": {
-      "sizeBytes": 3135,
-      "sha256": "d212dc8a9a8bdfa05362193eabfdaaaae28e16c917099a4b96339768773b3d3c"
+      "sizeBytes": 3145,
+      "sha256": "0d772a5296da034bd5b7239af46d4bc7ce533b902f04af3f5210cd88dbf88686"
     },
     "js/round10-enhancements.js": {
       "sizeBytes": 5051,
@@ -2512,19 +3224,23 @@
     },
     "js/round21-explorer.js": {
       "sizeBytes": 16218,
-      "sha256": "e51fce6c5ec7bca10e5a415aac04708d9c73e187d88bc7f518c81a8ab44334ae"
+      "sha256": "a2a23969e18e2a7d31c32a557b9f2f37b42d5fe97f5b1214cfee1e3a627b6da8"
     },
     "js/round21-personalize.js": {
       "sizeBytes": 3657,
       "sha256": "8655bac5f4c69b0e6f8a3b0dcd582926701e6b7ad9d0dfea00409f8bf9ad2aa3"
+    },
+    "js/round22-center.js": {
+      "sizeBytes": 16238,
+      "sha256": "1fb93865be5a16b30584dc6318d9a97b63fdee8657b9f75e541280c9c998fd24"
     },
     "js/search-j-2026.js": {
       "sizeBytes": 15093,
       "sha256": "14269e755d6ea71b912281f0c9df1057bb67feeeaa5b299aed90755ff649e1f9"
     },
     "js/site-quality-2026.js": {
-      "sizeBytes": 9746,
-      "sha256": "0ae7b5c03f3f68c01100945eba4c5f1f9ff6b3831c74fac2c7970924c0bed3be"
+      "sizeBytes": 9755,
+      "sha256": "ca6f2bde3b2040c28c6733be8cff41620e382deae85483eb892db1b1b6231a6d"
     },
     "js/site-settings-2026.js": {
       "sizeBytes": 3539,
@@ -2547,8 +3263,8 @@
       "sha256": "0f57a7ec39abc6169657b251943a50f689b0bf79865575950570d14a9882adf9"
     },
     "json/adatok/dokumentumok.json": {
-      "sizeBytes": 29143,
-      "sha256": "1d966cdf8b64e10b96a9ec5b5787ad79cf874f48965e49669d836298f45a4f19"
+      "sizeBytes": 29751,
+      "sha256": "da90b800afbd444c2e8935de74b3765432705fbc5a3730f466a2706a0a91e0b6"
     },
     "json/adatok/esemenyek.json": {
       "sizeBytes": 1881,
@@ -2566,6 +3282,10 @@
       "sizeBytes": 8567,
       "sha256": "fa0934d8cf253628bbea78506974280e90b937eec2010c7fe0af6bb54f3a56f6"
     },
+    "json/adatok/iranytu-22.json": {
+      "sizeBytes": 9126,
+      "sha256": "e56f54ea49bc8c114da730dcf8536905049f7994908ccd334b27c0a7a01797c4"
+    },
     "json/adatok/iskolatorteneti-idovonal.json": {
       "sizeBytes": 2115,
       "sha256": "12b7ae10f8c5ce9b094f68fd5cf99f9ae2edb233c95eeee5b822f145f49efea8"
@@ -2575,12 +3295,16 @@
       "sha256": "fb76fac641d6e4bb2ced60c3008732a627d75a37d816620d80621f916e25aa23"
     },
     "json/adatok/napi-sporthirek.json": {
-      "sizeBytes": 115,
-      "sha256": "62fae825e6451cf00f888c6b319eaa149389c7dc7931eeea7d85d9824449c384"
+      "sizeBytes": 1698,
+      "sha256": "8024bd5807ce352a77fc8046dd8af2284435be97d25bfb27be1ed037b9a29639"
     },
     "json/adatok/oldalmedia-2026.json": {
       "sizeBytes": 76821,
       "sha256": "020d01e4c6d1ff443f1d4fa27f9ec5da4b67e37e09986a5f65c8286454229425"
+    },
+    "json/adatok/qr-index-22.json": {
+      "sizeBytes": 42829,
+      "sha256": "c52393b1e7c35653ba2127b9d6d6b380b2163c962d3745ba39ba08b6ea792751"
     },
     "json/adatok/social.json": {
       "sizeBytes": 631,
@@ -2599,16 +3323,16 @@
       "sha256": "893cfecd12a49d722f4bef665cf693adfa259174235298c912329c8d0f9a427c"
     },
     "json/assets-inventory.json": {
-      "sizeBytes": 304329,
-      "sha256": "5324f3dd8e4a92de75cd0b396120c39742eaa8609971c2b13aeb95f057b2ff55"
+      "sizeBytes": 304301,
+      "sha256": "a259c5d41e1e53c3deb97053e0f88aca5d95592d4f489e681398efe251127232"
     },
     "json/assets-project-index.json": {
       "sizeBytes": 104322,
       "sha256": "d370fbf4cc093cbe93410e02969f1f96727027a879cf1b3a0c94e3c33e3c6a3b"
     },
     "json/config.json": {
-      "sizeBytes": 9402,
-      "sha256": "8b788760ec728bd94bdce3b49e4ec75c43c014d3ac490b1a669c10f1bc6144e3"
+      "sizeBytes": 9768,
+      "sha256": "c9a807183c1bc3384b1b1899fe88e266b088ee1d9117c764d31d7ea6ab94352f"
     },
     "json/mediatar.json": {
       "sizeBytes": 218634,
@@ -2911,12 +3635,20 @@
       "sha256": "a0dcad177ad7fe2224102de4cd5e0da7be2009507d4984e2a1af29c33fecab9c"
     },
     "mobile/quick-nav.js": {
-      "sizeBytes": 2588,
-      "sha256": "0a739b57329d7b04b7316e25abffb5af11903b69a5ea64774d8e5dbd2ce5442e"
+      "sizeBytes": 2597,
+      "sha256": "09d9807614fe646a1cd4da205ce98bc39ec3f1e6a6afeffd4e43de0d4641cc73"
     },
     "mobile/round16-responsive.css": {
       "sizeBytes": 1146,
       "sha256": "2cf7212e6ef20da2211e7d8fab697edd79713f73e7c6ad5798caefef76506673"
+    },
+    "mobile/round22-center-mobile.css": {
+      "sizeBytes": 844,
+      "sha256": "7603f11d0ba7b68c9da03c5cd5a55842b2d5f30a5afe0024f5aaf7b9da845da2"
+    },
+    "mobile/round22-nav.css": {
+      "sizeBytes": 625,
+      "sha256": "4986751f2d12a09e6a07bdb1978f91f2f78a25ee8933730e6122c0d33bc0a24d"
     },
     "mobile/styles.css": {
       "sizeBytes": 8100,
@@ -2924,7 +3656,7 @@
     },
     "offline-olvaso.html": {
       "sizeBytes": 1988,
-      "sha256": "81feb0e7ae5f0ca53551dd723477b1d2b825395f8a2d121656fb44f4d1461263"
+      "sha256": "cd535e60dbe997cc73d8fec6b664ca12d3fabef96b3fc821a257033eda152dc4"
     },
     "offline.html": {
       "sizeBytes": 1532,
@@ -2932,83 +3664,83 @@
     },
     "script.js": {
       "sizeBytes": 1187,
-      "sha256": "7d91a5d6b1fb104f57ba4c9f4aac55f4d64afc0144e6512315bfd79870f4b2ac"
+      "sha256": "4870762b4d134ea8ebe5bb85f2d3a6d92e7d9b521a885de31e48617c556b9ef1"
     },
     "service-worker.js": {
-      "sizeBytes": 4698,
-      "sha256": "aee914c7fbd789ab21dd87eea8a4a939ea4bf5b362ae1aa64b22fcd8916003b1"
+      "sizeBytes": 4715,
+      "sha256": "14c01e5ef54c6cf8b66ae9bc9cb55995f0d383a150e56c7f24d2d49bc19bcf7c"
     },
     "tools/dokumentum-szerkeszto.html": {
-      "sizeBytes": 4546,
-      "sha256": "763ebb0f34e8969ac5af31aaefe382dac1649af0797d8ce092e7b12279482f3b"
+      "sizeBytes": 4577,
+      "sha256": "fa615a91c59c6ea03e9b23d9761f0304a3389390b3ad37d663450ec13b3f7560"
     },
     "tools/dokumentum-szerkeszto.js": {
       "sizeBytes": 4523,
       "sha256": "bc9426965d65e4795425a12e63c5feb34d3813beea70f10562f3c35de0f1efa2"
     },
     "tools/eszkoz-mediator.html": {
-      "sizeBytes": 11320,
-      "sha256": "fcc47c8c0c8da344437711295ea05f6017809434da256985acbb72b79cf26072"
+      "sizeBytes": 11360,
+      "sha256": "164b26019933f260bd3ff3f71d335658d5586253f3bcdf8e997bddee1ae8db89"
     },
     "tools/fejlesztoi-munkakozpont-20.html": {
       "sizeBytes": 7235,
-      "sha256": "6c9aab836626c3925ed6a191a540a0c1ca6e8fc771680e635a0b08dc0722837c"
+      "sha256": "acaa400121990e693732ff20efd1d0e8c934b394b42199f88dd7b0660b763ae6"
     },
     "tools/ftp-kiadas-ellenorzo.html": {
-      "sizeBytes": 3756,
-      "sha256": "92b3b0a51999a2d37abecf0726cb1354b48fff802a4a45074c7fdab1f21be14f"
+      "sizeBytes": 3792,
+      "sha256": "960876348c133941a2881c4c6524df572f13d6a7bee2150d571e6a6646b992f6"
     },
     "tools/ftp-kiadas-ellenorzo.js": {
       "sizeBytes": 12162,
       "sha256": "d6ab3df26e26586e23ecb08cb0351c616f322e39caed41749ddc9d81769af79e"
     },
     "tools/hirek-mintaeditor-18.html": {
-      "sizeBytes": 2248,
-      "sha256": "bb3e0fd06be04114bb331ce4ceae1f0272eca28fa7869e11c5acfe7516b1c451"
+      "sizeBytes": 2282,
+      "sha256": "ac6adc7fb80daa71be12aa1d620c10242803c54136a328fa905ef3fdd09d67bf"
     },
     "tools/hirek-mintaeditor-18.js": {
-      "sizeBytes": 3055,
-      "sha256": "efbf8535f780f69a80888b0242e7e617901aeff06097088d43bd00f9ca100a59"
+      "sizeBytes": 3072,
+      "sha256": "099876ab461418640ed301ea99a4d3b76edaefbc9e0e10cd1b3d4b4f2f86182f"
     },
     "tools/index.html": {
-      "sizeBytes": 3700,
-      "sha256": "5b0b4f95e27711bd257340f97092d4e6922536c4d819e203fba375a2dffc958b"
+      "sizeBytes": 3717,
+      "sha256": "2358f4e340533237e161d118282a531fcaa1e7d7b875522d83ba96aded52ecc8"
     },
     "tools/kiadas-es-mediak-18.html": {
-      "sizeBytes": 2545,
-      "sha256": "16080806b1e846199b511a24a50fdb4aae70566a7b9a91303c8566ee3330516d"
+      "sizeBytes": 2579,
+      "sha256": "ea27968c307b9a6669d7886b46792d5873f3edf59446c8e3bc03858d09355db2"
     },
     "tools/kiadas-es-mediak-18.js": {
-      "sizeBytes": 7730,
-      "sha256": "c5410740a4b3ba78083d0c77caa380e7301893e7c505c085700cc267ff887cda"
+      "sizeBytes": 7739,
+      "sha256": "84b631d0012de4d24879e411dd6311038de90decd7e04b02b27340c9f890c68c"
     },
     "tools/media-manager-2026.js": {
-      "sizeBytes": 36915,
-      "sha256": "642922a1fc55c875ffe3fd7d37961869d27c2141ac7a56d2b0f3640e12637271"
+      "sizeBytes": 36924,
+      "sha256": "0ebf7f6e83716baa3dba6b14a6a56a497c81c653f5a922c2e3336bca31afc0c7"
     },
     "tools/media-minoseg-2026.js": {
-      "sizeBytes": 3811,
-      "sha256": "363ba0d28a01d2c5a2287061938c691aef5a08253dec593a15c2edf38e01933b"
+      "sizeBytes": 3820,
+      "sha256": "60fdb8a0d5f8a04ccd183a32277d5d030d130a46282caaaa118626d9e4bbb804"
     },
     "tools/minosegkapu-2026.js": {
       "sizeBytes": 9307,
       "sha256": "d9a65fd6579149b9ca1ea1612b964149f22807e3b4b3e96a865b2890cd85bbb8"
     },
     "tools/minosegkapu.html": {
-      "sizeBytes": 2265,
-      "sha256": "d66806bbaa0128e412ea81965773130861dfa8df9e51525d518b918aee667ab3"
+      "sizeBytes": 2299,
+      "sha256": "394277e4161b09571fcf6728d497949cab3a25834cc89640c302395134b752e7"
     },
     "tools/oldal-json-szerkeszto.html": {
-      "sizeBytes": 8845,
-      "sha256": "ed28ccb9a443b100c219315e2f8c144d1b52d87ff390225bd719e1b522cc7787"
+      "sizeBytes": 8869,
+      "sha256": "18f3c107cd8d0b4ce648e654b258941437b51f873689ced41e6d433af02acfbc"
     },
     "tools/oldalindex-frissito.html": {
-      "sizeBytes": 6945,
-      "sha256": "10c6e4a7a8e75d6d1c7b637062627e8a119f1117a08f43b03aed45ce8386a7bc"
+      "sizeBytes": 6969,
+      "sha256": "40b89a5d151ad7a281dde44d907f0aac93c62d95ff15a91c684b81ca29bbf419"
     },
     "tools/parameterek-szerkeszto.html": {
-      "sizeBytes": 6026,
-      "sha256": "f3b8cf388b09781efbf1b472c5e436213ef6aee017ec8bfc5e041787150d0aed"
+      "sizeBytes": 6034,
+      "sha256": "db8457a70fd11cec193b99d2c24e3c7d2f991a2292fffce4a252638c6a04d8e5"
     },
     "tools/parameterek-szerkeszto.js": {
       "sizeBytes": 14428,
@@ -3016,15 +3748,15 @@
     },
     "tools/round20-suite.js": {
       "sizeBytes": 22605,
-      "sha256": "d9cacccd237c48dc102a14d27ae3303b6accefafa1316f480484b8f0c5ce54f9"
+      "sha256": "6866446bc9e0e823d45a1bdee78121eaa2307e77368c190836c2b1288d44fcc0"
     },
     "tools/sporthirek-szerkeszto.html": {
-      "sizeBytes": 7938,
-      "sha256": "4a2d79b88fcd3979fc80ac056f2ac42cccb8cc18a7e981932aedd4c167b78e74"
+      "sizeBytes": 7962,
+      "sha256": "a8bbedee078f67bff270eff21b6512b8d15332b583e6ec6491c5cb417a82d117"
     },
     "tools/tartalmi-hitelesites.html": {
-      "sizeBytes": 5327,
-      "sha256": "fda97c7a24c56bf0497dea5af9d2ee93b8dc13e830bfcab12af02cf4be82fdcc"
+      "sizeBytes": 5335,
+      "sha256": "6a5632cc1bb0c162e920fc1886f4eaa9e29e13e03579918957707f3492481ada"
     },
     "tools/tartalmi-hitelesites.js": {
       "sizeBytes": 7276,
@@ -3055,8 +3787,8 @@
       "sha256": "f83cf15aded6a2e28ee3dab09f35d5263270c2dbd71c02d0e3cef9f747ef4384"
     },
     "utmutato.html": {
-      "sizeBytes": 110825,
-      "sha256": "c29e2e14eaebda12fdbcf09a02ce4f686b77a3729bc3d1cc96a388fdc6187a37"
+      "sizeBytes": 118024,
+      "sha256": "849a3e7b4bae63f299b3187a1cd6c3efe7186b33b86622f11a867bd234e6c1f6"
     }
   }
 }

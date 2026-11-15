@@ -1,0 +1,51 @@
+/* R22: a felhasználó által jelzett kezdőlap-beállító összecsúszás javítása. */
+#app[data-page-kind="home"] .csn21-personalizer{grid-column:1/-1!important;max-width:100%!important;min-width:0!important;width:100%!important;overflow-wrap:anywhere;box-sizing:border-box}
+#app[data-page-kind="home"] .csn21-home-rows{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))!important;align-items:stretch!important;gap:12px!important}
+#app[data-page-kind="home"] .csn21-home-row{display:grid!important;grid-template-columns:24px minmax(0,1fr) auto auto!important;align-items:center!important;gap:8px!important;padding:12px!important;min-width:0!important;max-width:100%!important;white-space:normal!important}
+#app[data-page-kind="home"] .csn21-home-row label{min-width:0!important;max-width:100%;overflow-wrap:break-word;line-height:1.32!important;margin:0!important}
+#app[data-page-kind="home"] .csn21-home-row button{min-width:64px!important;min-height:42px!important;padding:6px 9px!important;white-space:nowrap!important;text-align:center!important;font-size:.82rem!important}
+#app[data-page-kind="home"] .csn21-home-row input[type="checkbox"]{margin:0!important;min-width:19px;width:19px;min-height:19px;height:19px}
+@media(max-width:560px){#app[data-page-kind="home"] .csn21-home-row{grid-template-columns:24px minmax(0,1fr)!important}#app[data-page-kind="home"] .csn21-home-row button{grid-column:auto;min-width:0!important;width:100%;font-size:.82rem!important}#app[data-page-kind="home"] .csn21-home-row button:nth-of-type(1){grid-column:1/-1}#app[data-page-kind="home"] .csn21-home-row button:nth-of-type(2){grid-column:1/-1}}
+/* A témaválasztó azonnali, látható eredménye. */
+#app .kmil-interest-preview{margin:14px auto 5px;padding:12px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(125deg,var(--card),color-mix(in srgb,var(--sport-green) 27%,var(--card)));color:var(--ink);max-width:850px}
+#app .kmil-interest-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:9px;margin-top:10px}
+#app .kmil-interest-links a{border:1px solid var(--line);padding:8px 12px;min-height:40px;border-radius:9px;background:color-mix(in srgb,var(--sport-yellow) 45%,var(--card));color:var(--ink);font-weight:800;text-decoration:none}
+#app .kmil-interest-links a:hover{text-decoration:underline}
+/* A 0 találatos sporthírkártya pontosan a rendelkezésre álló terület közepén marad. */
+#app .home-unit--sports-news .daily-sports-cards:has(>.daily-sports-empty-card){display:flex!important;align-items:center!important;justify-content:center!important;min-height:180px!important;width:100%!important}
+#app .home-unit--sports-news .daily-sports-empty-card{width:min(100%,540px)!important;max-width:540px!important;min-width:0!important;text-align:center!important;margin-inline:auto!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important}
+#app .home-unit--sports-news .daily-sports-empty-card a{align-self:center}
+/* A honlapállapot-ellenőrző ugyanazt a két témás rendszert követi, mint a diagnosztika. */
+html[data-theme="light"] .site-footer .ext26-health{background:#fffdf2!important;color:#183149!important;border-color:#9baea1!important}
+html[data-theme="light"] .site-footer .ext26-health summary{color:#425a35!important}
+html[data-theme="light"] .site-footer .ext26-health :is(.ext26-health-body,.ext26-health-body p,.ext26-health-state,.ext26-health-results,.ext26-health-results *){color:#233d50!important}
+html[data-theme="light"] .site-footer .ext26-health .ext26-health-results>*{background:#eff7ed!important;border-color:#bdd1bc!important}
+html[data-theme="dark"] .site-footer .ext26-health{background:#10263f!important;color:#f4f8fd!important;border-color:#658098!important}
+html[data-theme="dark"] .site-footer .ext26-health summary{color:#ffebb4!important}
+html[data-theme="dark"] .site-footer .ext26-health :is(.ext26-health-body,.ext26-health-body p,.ext26-health-state,.ext26-health-results,.ext26-health-results *){color:#e4edf8!important}
+html[data-theme="dark"] .site-footer .ext26-health .ext26-health-results>*{background:#183b59!important;border-color:#4f7287!important}
+.site-footer .ext26-health :is(button,a,summary):focus-visible{outline:3px solid var(--sport-yellow)!important;outline-offset:3px}
+/* Azonos felület: verzió a mérés és az állapot-ellenőrzés mellett. */
+.site-footer .csn22-build-version{margin:12px auto;padding:10px 14px;width:min(100%,1140px);font-weight:850;border-radius:12px;border:1px solid var(--line);background:linear-gradient(100deg,var(--card),var(--sport-green));color:var(--ink);font-size:.85rem}
+/* A témaváltás visszajelzése az oldal tetejéhez közel van, és a kiválasztott módhoz igazodik. */
+html .toast-info{
+  position:fixed;top:clamp(84px,12vh,124px);bottom:auto;left:50%;right:auto;
+  transform:translateX(-50%);width:max-content;max-width:calc(100vw - 28px);
+  padding:14px 22px;border:2px solid var(--line);border-radius:14px;
+  box-shadow:0 12px 35px rgba(9,26,41,.24);text-align:center;text-wrap:balance;
+  font-size:.92rem;font-weight:800;line-height:1.45;z-index:1300;
+  background:var(--card);color:var(--ink);
+}
+html[data-theme="light"] .toast-info{background:#fffdf4;color:#203a4d;border-color:#9fb6a7}
+html[data-theme="dark"] .toast-info{background:#132d47;color:#f6f8fc;border-color:#64879e}
+html[data-theme="light"] .toast-info[data-theme-notification="light"]{background:#fffdf4;color:#203a4d;border-color:#9fb6a7}
+html[data-theme="dark"] .toast-info[data-theme-notification="dark"]{background:#132d47;color:#f6f8fc;border-color:#64879e}
+html[data-theme="light"] .toast-info[data-theme-notification="system"]{
+  background:linear-gradient(110deg,var(--sport-green),var(--sport-yellow));
+  color:#173b31;border-color:#668d64;
+}
+html[data-theme="dark"] .toast-info[data-theme-notification="system"]{
+  background:linear-gradient(110deg,var(--sport-green),var(--sport-yellow));
+  color:#fffdf2;border-color:#b1aa70;text-shadow:0 1px 2px rgba(0,0,0,.48);
+}
+@media(max-width:768px){html .toast-info{top:calc(env(safe-area-inset-top,0px) + 86px);padding:13px 17px;max-width:calc(100vw - 24px);font-size:.88rem}}

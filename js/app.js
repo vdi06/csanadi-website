@@ -1,32 +1,32 @@
-import {initRound10Enhancements} from './round10-enhancements.js?v=20261115round10a';
-import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=20261115r15sport';
-import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=20261115r17metrics';
-import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=20261115r19';
-import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=20261115r19';
-import {initMobileQuickNav} from '../mobile/quick-nav.js?v=20261115r19';
-import {setupSmartSearch} from './search-j-2026.js?v=20261115r15';
-import {installLanguageHighlights} from './language-20.js?v=csanadi-r21-20261115';
-import {enhancePersonalizedHome} from './round21-personalize.js?v=csanadi-r21-20261115';
-import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=20261114ten1';
-import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=20261114kmil2';
-import {initEnhancedInteractions} from './interactions-be-2026.js?v=20261114be1';
-import {renderMediaGallery} from './media-gallery-h-2026.js?v=20261115round10b';
-import {renderDocumentCollections} from './document-collections-2026.js?v=20261115d1';
-import {renderPageMedia} from './page-media-2026.js?v=20261115m1';
+import {initRound10Enhancements} from './round10-enhancements.js?v=csanadi-r22-20261115';
+import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=csanadi-r22-20261115';
+import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=csanadi-r22-20261115';
+import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=csanadi-r22-20261115';
+import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=csanadi-r22-20261115';
+import {initMobileQuickNav} from '../mobile/quick-nav.js?v=csanadi-r22-20261115';
+import {setupSmartSearch} from './search-j-2026.js?v=csanadi-r22-20261115';
+import {installLanguageHighlights} from './language-20.js?v=csanadi-r22-20261115';
+import {enhancePersonalizedHome} from './round21-personalize.js?v=csanadi-r22-20261115';
+import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=csanadi-r22-20261115';
+import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=csanadi-r22-20261115';
+import {initEnhancedInteractions} from './interactions-be-2026.js?v=csanadi-r22-20261115';
+import {renderMediaGallery} from './media-gallery-h-2026.js?v=csanadi-r22-20261115';
+import {renderDocumentCollections} from './document-collections-2026.js?v=csanadi-r22-20261115';
+import {renderPageMedia} from './page-media-2026.js?v=csanadi-r22-20261115';
 import {useSiteSettings,settingNumber,setting} from './site-settings-2026.js';
-import {renderHomeSportSpotlight} from './premium-home-2026.js?v=20261114premium1';
-import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=20261115r15sport';
-import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=20261114v5';
-import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=20261115r15';
+import {renderHomeSportSpotlight} from './premium-home-2026.js?v=csanadi-r22-20261115';
+import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=csanadi-r22-20261115';
+import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=csanadi-r22-20261115';
+import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r22-20261115';
  
-import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=20261114ten2';
-import {renderBlock,dom,listCards} from './blocks.js?v=20261115r19';
-import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=20261115r17policy';
-import {renderSportsSuccesses} from './sports-successes.js?v=20261114v5';
-import {renderStudentAchievements} from './student-achievements.js?v=20261114navs3';
-import {renderDailySportsNews} from './daily-sport-news.js?v=20261114ten2';
-import {renderDesktopTree} from '../desktop/navigation.js?v=20261115r19';
-import {renderMobileTree,createMobileMenuSwitcher} from '../mobile/navigation.js?v=20261115r19';
+import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=csanadi-r22-20261115';
+import {renderBlock,dom,listCards} from './blocks.js?v=csanadi-r22-20261115';
+import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=csanadi-r22-20261115';
+import {renderSportsSuccesses} from './sports-successes.js?v=csanadi-r22-20261115';
+import {renderStudentAchievements} from './student-achievements.js?v=csanadi-r22-20261115';
+import {renderDailySportsNews} from './daily-sport-news.js?v=csanadi-r22-20261115';
+import {renderDesktopTree} from '../desktop/navigation.js?v=csanadi-r22-20261115';
+import {renderMobileTree,createMobileMenuSwitcher} from '../mobile/navigation.js?v=csanadi-r22-20261115';
 const app=document.getElementById('app');
 const desktop=document.getElementById('desktop-navigation');
 const mobile=document.getElementById('mobile-navigation');
@@ -41,7 +41,14 @@ const historyScroll=new Map();
 const noticeNode=document.getElementById('toast');
 let toastClear=null;
 let revealObserver=null;
-function notify(s){clearTimeout(toastClear);noticeNode.textContent=s;noticeNode.hidden=false;toastClear=setTimeout(()=>noticeNode.hidden=true,settingNumber('runtime.timing.toastDurationMs'));}
+function notify(s,{themePreference=null}={}){
+  clearTimeout(toastClear);
+  noticeNode.textContent=s;
+  if(['light','dark','system'].includes(themePreference))noticeNode.dataset.themeNotification=themePreference;
+  else delete noticeNode.dataset.themeNotification;
+  noticeNode.hidden=false;
+  toastClear=setTimeout(()=>{noticeNode.hidden=true;delete noticeNode.dataset.themeNotification;},settingNumber('runtime.timing.toastDurationMs'));
+}
 function titleOf(x){return routeTitle(x)}
 function hrefOf(x){return x?.page?.schemaExtensions?.route||'#/'}
 function navLink(x){return dom('a',{href:hrefOf(x)},titleOf(x));}
@@ -366,6 +373,7 @@ function homePage(node){
   const searchShortcut=dom('button',{type:'button',class:'home-j-search'},'Keresés a honlapon ⌕');
   searchShortcut.addEventListener('click',openSearch);nav.append(searchShortcut);
   nav.append(dom('a',{href:'felfedezo.html',class:'csn21-explorer-link'},'Interaktív felfedezőközpont ↗'));
+  nav.append(dom('a',{href:'iranytu.html',class:'csn21-explorer-link'},'Iskolai iránytű ↗'));
   const rails=dom('div',{class:'home-j-navrail-unit'});rails.append(nav);
   const visibleRoles=['premium-showcase','school-news','sports-news'];
   canvas.replaceChildren();
@@ -432,6 +440,7 @@ function renderRoute(options={}){
   if(currentRoute!==null && currentRoute!==route)historyScroll.set(currentRoute,window.scrollY);
   const isNew=currentRoute!==route;
   currentRoute=route;
+  document.documentElement.dataset.csanadiPageRevision=Number.isSafeInteger(node?.page?.lifecycle?.revision)?String(node.page.lifecycle.revision):'—';
   if(isNew)lastRawPage=node?JSON.stringify(node.page):null;
   const kind=route==='#/'?'home':route.startsWith('#/sport')?'sport':route.startsWith('#/oktatas')?'education':route.startsWith('#/hirek-es-esemenyek')?'news':route.startsWith('#/iskolank')?'school':'general';
   app.dataset.pageKind=kind;
@@ -548,7 +557,7 @@ function applyTheme(){
 function changeTheme(){
   themeMode=THEME_MODES[(THEME_MODES.indexOf(themeMode)+1)%3];
   try{localStorage.setItem('csanadi-theme',themeMode);}catch{}
-  applyTheme();notify('Megjelenés: '+THEME_LABELS[themeMode]);
+  applyTheme();notify('Megjelenés: '+THEME_LABELS[themeMode],{themePreference:themeMode});
 }
 function wireEvents(){
   window.addEventListener('hashchange',()=>{markNavigationStart(getRoute());renderRoute({focus:true});});
