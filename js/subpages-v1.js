@@ -74,6 +74,14 @@ function syncSelfLinks(root=document) {
   }
 }
 
+// A képváltónak valóban ki kell gördülnie a látómezőből, mielőtt a fejléc
+// összecsukódik. A két eltérő határ kiszűri az oda-vissza villogást.
+export function shouldCondenseSubpageHeader({inner,scroll,heroBottom,hasHero,alreadyCondensed}) {
+  if (!inner) return false;
+  if (hasHero) return heroBottom <= (alreadyCondensed ? 26 : 0);
+  return scroll > (alreadyCondensed ? 88 : 112);
+}
+
 export function initSubpageEnhancements() {
   const header = document.getElementById('site-header');
   const actions = header?.querySelector('.header-actions');
@@ -86,9 +94,9 @@ export function initSubpageEnhancements() {
   menu.setAttribute('aria-controls', 'site-map-overlay');
   menu.setAttribute('aria-haspopup', 'dialog');
   menu.setAttribute('aria-expanded', 'false');
-  // Teljes fejlécben egyszerű, arculatos szöveges gomb; összecsukva a
-  // vízszintesen középre kerülő iskolai címer nyitja meg ugyanazt a menüt.
-  menu.innerHTML = '<img class="cs-subpage-menu-logo" src="assets/media/logo/csanadi-cimer-512.webp" width="42" height="42" alt="" aria-hidden="true"><span class="cs-subpage-menu-label">Menü</span>';
+  // Az eredeti iskolai címer a lap tetején és összecsukva egyaránt középen
+  // nyitja meg a főmenüt. A funkció neve az akadálymentes aria-labelben marad.
+  menu.innerHTML = '<img class="cs-subpage-menu-logo" src="assets/media/logo/csanadi-cimer-512.webp" width="46" height="46" alt="" aria-hidden="true">';
   // Nem hivatkozunk a kezdőlapi vizuális indítógombra: az oldalváltás
   // ideiglenesen áthelyezheti, az aloldali menünek ettől függetlenül működnie kell.
   menu.addEventListener('click', () => document.dispatchEvent(new Event('csanadi:menu-toggle')));
@@ -108,8 +116,15 @@ export function initSubpageEnhancements() {
   const update = () => {
     scheduled = false;
     const inner = document.body.classList.contains('cs-inner-page');
-    const heroHeight = document.getElementById('global-hero')?.offsetHeight || 0;
-    document.body.classList.toggle('cs-header-condensed', inner && scrollY > Math.max(110, Math.min(heroHeight, 240)));
+    const hero = document.getElementById('global-hero');
+    const hasHero = Boolean(hero && hero.offsetHeight > 48);
+    document.body.classList.toggle('cs-header-condensed', shouldCondenseSubpageHeader({
+      inner,
+      scroll:window.scrollY,
+      heroBottom:hasHero?hero.getBoundingClientRect().bottom:0,
+      hasHero,
+      alreadyCondensed:document.body.classList.contains('cs-header-condensed')
+    }));
   };
   const queueUpdate = () => {
     if (scheduled) return;

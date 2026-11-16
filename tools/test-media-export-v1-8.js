@@ -77,6 +77,8 @@ async function main(){
     element('mm-title').value='Tesztmédia';element('mm-name').value='csanadi-test-media.webp';element('mm-parent').value='assets/media/web';
     element('mm-alt').value='Szimulált tesztkép';element('mm-description').value='Helyi regressziós próba, nem publikálandó';
     element('mm-category').value='teszt';element('mm-tags').value='regresszio';
+    element('mm-rights-holder').value='Intézményi archívum';element('mm-rights-license').value='Intézményi belső engedély';
+    element('mm-rights-source').value='irat-2026-teszt';element('mm-rights-reviewer').value='Helyi teszt';
     element('mm-publish').checked=true;element('mm-rights-ok').checked=true;
     vm.runInContext('applyForm()',context);
     assert.equal(added._publish,true);assert.equal(added._rightsChecked,true);
@@ -92,6 +94,7 @@ async function main(){
     assert(gallery.items.some(x=>x.src==='assets/media/web/csanadi-test-media.webp'));
     const mediatar=JSON.parse(result.output.get('json/mediatar.json'));
     assert(mediatar.items.some(x=>x.original?.path==='assets/media/web/csanadi-test-media.webp'&&x.rights?.clearance==='editor-confirmed'));
+    assert(mediatar.items.some(x=>x.original?.path==='assets/media/web/csanadi-test-media.webp'&&x.rights?.source==='irat-2026-teszt'&&x.rights?.institutionallyApproved===false));
   });
   await run('Törlésre jelölés és tiszta, újrakészíthető kiadás',async()=>{
     vm.runInContext('deleteItem()',context);

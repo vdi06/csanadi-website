@@ -29,11 +29,11 @@ for(const m of media){
 }
 const pageRows=Object.entries(pages).map(([file,p])=>({file,title:p.title||'',status:p.lifecycle?.status||'unknown',route:p.schemaExtensions?.route||''}));
 const countBySeverity={};for(const i of issues)countBySeverity[i.severity]=(countBySeverity[i.severity]||0)+1;
-const findings={release:'v1.7.0',generatedAt:'2026-11-16',assets:assets.length,media:media.length,pages:pageRows.length,publishedWithoutDirectRightsRegistry:unregistered,rightsPending:media.filter(m=>m.rights?.clearance==='pending').length,rightsPreviewOnly:media.filter(m=>m.rights?.clearance==='preview-only').length,missingAlternativeText:issues.filter(i=>i.kind==='accessibility').length,countsBySeverity:countBySeverity,issues,pageRows,notes:['A puszta státusz nem bizonyítja a szerzői jogi vagy adatvédelmi megfelelést.','Az állományjogok és az iskolai tények intézményi döntés nélkül nem hitelesíthetők.','A korábban elfogadott 65×31 részletes követelménymátrix külön CSV-ben továbbra is megtalálható.']};
+const findings={release:'v1.8.0',generatedAt:'2026-11-16',assets:assets.length,media:media.length,pages:pageRows.length,publishedWithoutDirectRightsRegistry:unregistered,rightsPending:media.filter(m=>m.rights?.clearance==='pending').length,rightsPreviewOnly:media.filter(m=>m.rights?.clearance==='preview-only').length,missingAlternativeText:issues.filter(i=>i.kind==='accessibility').length,countsBySeverity:countBySeverity,issues,pageRows,notes:['A puszta státusz nem bizonyítja a szerzői jogi vagy adatvédelmi megfelelést.','Az állományjogok és az iskolai tények intézményi döntés nélkül nem hitelesíthetők.','A korábban elfogadott 65×31 részletes követelménymátrix külön CSV-ben továbbra is megtalálható.']};
 const out='dokumentacio';
-fs.writeFileSync(path.join(root,out,'TARTALMI_MEDIA_AUDIT_V1_7.json'),JSON.stringify(findings,null,2)+'\n');
+fs.writeFileSync(path.join(root,out,'TARTALMI_MEDIA_AUDIT_V1_8.json'),JSON.stringify(findings,null,2)+'\n');
 const header=['Terület','Súlyosság','Fájl','Megállapítás','Hivatkozások','Szükséges intézkedés'];
 const csv=[header,...issues.map(i=>[i.kind,i.severity,i.path,i.issue,i.references,i.action])]
  .map(cols=>cols.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n');
-fs.writeFileSync(path.join(root,out,'TARTALMI_MEDIA_AUDIT_V1_7.csv'),'\ufeff'+csv,'utf8');
+fs.writeFileSync(path.join(root,out,'TARTALMI_MEDIA_AUDIT_V1_8.csv'),'\ufeff'+csv,'utf8');
 console.log(JSON.stringify({assets:findings.assets,media:findings.media,pages:findings.pages,rightsPending:findings.rightsPending,rightsPreviewOnly:findings.rightsPreviewOnly,missingAlternativeText:findings.missingAlternativeText,publishedWithoutDirectRightsRegistry:unregistered,countBySeverity,issueRows:issues.length}));

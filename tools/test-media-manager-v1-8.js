@@ -38,12 +38,20 @@ check('Új közzététel nem lehetséges jogosultsági jóváhagyás nélkül',(
 });
 check('Új grafika nem tehető közzé alternatív szöveg nélkül',()=>{
   field('mm-rights-ok').checked=true;
+  for(const [id,value] of Object.entries({'mm-rights-holder':'Sportiskola','mm-rights-license':'Belső engedély','mm-rights-source':'irat-2026-001','mm-rights-reviewer':'Ellenőrző'}))field(id).value=value;
   assert.throws(()=>vm.runInContext('applyForm()',ctx),/alternatív szöveget/);
   assert.equal(state.undoStack.length,0);
 });
+check('Új publikálás bizonyíték és ellenőrző nélkül megáll',()=>{
+  field('mm-alt').value='Kísérleti QR-kód';field('mm-rights-source').value='';
+  assert.throws(()=>vm.runInContext('applyForm()',ctx),/bizonyítékot/);
+  field('mm-rights-source').value='irat-2026-001';
+  assert.equal(state.undoStack.length,0);
+});
 check('Érvényes adatlap szerkesztése visszavonható állapottal',()=>{
-  field('mm-alt').value='Kísérleti QR-kód';vm.runInContext('applyForm()',ctx);
+  vm.runInContext('applyForm()',ctx);
   assert.equal(state.items[0]._publish,true);assert.equal(state.items[0]._rightsChecked,true);
+  assert.equal(state.items[0]._rightsHolder,'Sportiskola');assert.equal(state.items[0]._rightsSource,'irat-2026-001');
   assert.equal(state.undoStack.length,1);
 });
 check('A közzététel futtatáskor is ellenőrzi a jogosultságot',()=>{

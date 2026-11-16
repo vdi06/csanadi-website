@@ -1,4 +1,4 @@
-/* Csanádi v1.7 – teljes statikus forrásvizsgálat és helyi interakció-próba. */
+/* Csanádi v1.8 – teljes statikus forrásvizsgálat és helyi interakció-próba. */
 'use strict';
 const fs=require('node:fs');
 const path=require('node:path');
@@ -78,18 +78,23 @@ const pageHtml=read('index.html');const mapHtml=read('megkozelites-es-tanulas.ht
 const mainJS=read('js/app.js');const subJS=read('js/subpages-v1.js');
 const headerCSS=read('css/subpage-header-fix.css');const qualityCSS=read('css/quality-polish-v1.css');
 const configuration=JSON.parse(read('json/config.json'));
-set('versionedEntryPoints',pageHtml.includes('script.js?v=1.7.0')&&pageHtml.includes('subpage-header-fix.css?v=1.7.0')&&pageHtml.includes('quality-polish-v1.css?v=1.7.0')&&read('script.js').includes('app.js?v=1.7.0'));
-set('versionedCache',configuration.performance?.cacheVersion==='csanadi-r-v1.7.0'&&pageHtml.includes('csanadi-r-v1.7.0'));
+set('versionedEntryPoints',pageHtml.includes('script.js?v=1.8.0')&&pageHtml.includes('subpage-header-fix.css?v=1.8.0')&&pageHtml.includes('quality-polish-v1.css?v=1.8.0')&&read('script.js').includes('app.js?v=1.8.0'));
+set('versionedCache',configuration.performance?.cacheVersion==='csanadi-r-v1.8.0'&&pageHtml.includes('csanadi-r-v1.8.0'));
 set('bootstrapCDNOnly',pageHtml.includes('cdn.jsdelivr.net/npm/bootstrap@5.3.9/')&&!files.some(p=>/(?:bootstrap\.min\.(?:css|js)|bootstrap\.bundle\.min\.js)$/.test(p)));
 set('realSubpageMenuToggle',mainJS.includes("document.addEventListener('csanadi:menu-toggle',toggleSiteMap)")&&subJS.includes("document.dispatchEvent(new Event('csanadi:menu-toggle'))"));
 set('compactSubpageMenuUsesCenteredSchoolLogo',subJS.includes('cs-subpage-menu-logo')&&subJS.includes('assets/media/logo/csanadi-cimer-512.webp')&&!subJS.includes('aria-hidden="true">☰')&&headerCSS.includes('left:50%!important;top:50%!important')&&headerCSS.includes('transform:translate(-50%,-50%)!important')&&headerCSS.includes('.cs-subpage-menu-label{display:none!important}'));
+set('fullSubpageHeaderAlsoCentersLogo',headerCSS.includes('body.cs-inner-page #site-header .brand,')&&headerCSS.includes('body.cs-inner-page #site-header .header-tag,')&&headerCSS.includes('body.cs-inner-page #site-header .cs-subpage-menu-logo{display:block!important')&&subJS.includes('shouldCondenseSubpageHeader'));
 set('compactSubpageHeaderHidesRedundantText',headerCSS.includes('.brand{display:none!important}')&&headerCSS.includes('.header-kreta,')&&headerCSS.includes('.theme-label,'));
+const rule31=JSON.parse(read('dokumentacio/SZABALYOK_31_ALOLDAL_V1_8.json'));
+set('all31RulesHavePageBasedWorklist',rule31.pages===65&&rule31.criteria===31&&rule31.openItems===55&&rule31.open.every(x=>x.ruleNumber===28));
+set('newMediaPublicationRequiresEvidence',read('tools/media-manager-2026.js').includes('rightsEvidence')&&read('tools/media-manager-2026.js').includes('institutionallyApproved:false')&&read('tools/eszkoz-mediator.html').includes('id="mm-rights-reviewer"'));
+set('mediaWorklistExportExists',read('tools/media-manager-2026.js').includes('function reviewWorklist()')&&read('tools/eszkoz-mediator.html').includes('id="mm-review-report"'));
 set('launcherPreservedAcrossNavigation',mainJS.includes("container.insertAdjacentElement('afterend',launcher)")&&mainJS.includes("homeHeroElement.querySelector('.csn26-visual-row')?.append(launcher)"));
 set('compactHeaderAccessible',headerCSS.includes('position:sticky!important')&&headerCSS.includes('#site-header #search-open{display:grid!important')&&headerCSS.includes('.cs-header-condensed'));
 set('emptyEmbeddedHeroHidden',headerCSS.includes('cs-embedded-arrival #global-hero:empty')&&headerCSS.includes('min-height:0!important'));
 set('centeredCommonContent',qualityCSS.includes('.section-title')&&qualityCSS.includes('.section-actions')&&qualityCSS.includes('.cs-arrival-shell-heading'));
-set('centeredMapExperience',qualityCSS.includes('body.arrival2 .arrival2-hero')&&qualityCSS.includes('body.arrival2 .arrival2-route-actions a')&&mapHtml.includes('quality-polish-v1.css?v=1.7.0'));
-set('correctMapInteractionVersion',mapHtml.includes('round26-arrival.js?v=1.7.0'));
+set('centeredMapExperience',qualityCSS.includes('body.arrival2 .arrival2-hero')&&qualityCSS.includes('body.arrival2 .arrival2-route-actions a')&&mapHtml.includes('quality-polish-v1.css?v=1.8.0'));
+set('correctMapInteractionVersion',mapHtml.includes('round26-arrival.js?v=1.8.0'));
 set('releaseBannerOnlyForNewerVersion',read('js/round13-network.js').includes('actuallyNewer(version,loadedVersion)'));
 set('logoReturnsHome',pageHtml.includes('class="brand" href="#/"'));
 const assetInventory=JSON.parse(read('json/assets-inventory.json'));
@@ -99,7 +104,7 @@ set('all628AssetsCatalogued',physicalAssets.length===628&&assetInventory.items.l
 set('all87QRCodesManaged',assetInventory.items.filter(item=>item.path.startsWith('assets/qr/')).length===87&&read('tools/media-manager-2026.js').includes('graphics|documents|qr'));
 set('responsiveAssetsEditable',read('tools/eszkoz-mediator.html').includes('value="assets/media/web/responsive"')&&read('tools/media-manager-2026.js').includes('web(?:\\/responsive)'));
 set('newPublicMediaRequiresRightsReview',read('tools/media-manager-2026.js').includes('publish&&!item._wasPublished&&!rights')&&read('tools/media-manager-2026.js').includes('!item._rightsChecked')&&read('tools/eszkoz-mediator.html').includes('id="mm-rights-ok"'));
-set('allToolsShareUnifiedTheme',files.filter(p=>p.startsWith('tools/')&&p.endsWith('.html')).every(p=>read(p).includes('tool-ui-2026.js?v=1.7.0'))&&read('tools/tool-ui-2026.js').includes('tools-unified-v1.css?v=1.7.0'));
+set('allToolsShareUnifiedTheme',files.filter(p=>p.startsWith('tools/')&&p.endsWith('.html')).every(p=>read(p).includes('tool-ui-2026.js?v=1.8.0'))&&read('tools/tool-ui-2026.js').includes('tools-unified-v1.css?v=1.8.0'));
 const refsIndex=JSON.parse(read('json/assets-project-index.json'));
 set('allJsonSourcesIndexed',refsIndex.jsonFiles.length===json.filter(p=>p.startsWith('json/')&&p!=='json/assets-project-index.json').length);
 set('qrReferencesIndexed',refsIndex.jsonFiles.includes('json/adatok/qr-index-22.json')&&refsIndex.assetReferences['assets/qr/csanadi-qr-06b6013647d5dabb.svg']?.includes('json/adatok/qr-index-22.json'));
@@ -155,12 +160,12 @@ for(const line of statusCsv.slice(1)){
 }
 set('all31RuleCategoriesMapped',Object.values(count).reduce((a,b)=>a+b,0)===65*31);
 const failures=Object.entries(checks).filter(([,passed])=>!passed).map(([name])=>name);
-const report={version:'1.7.0',createdAt:new Date().toISOString(),pages:records.length,htmlFiles:html.length,jsonFiles:json.length,jsFiles:javascript.length,oldDomainUrls,criteriaStatuses:count,checks,failures,jsonProblems,jsProblems,fileProblems,warnings,limitations:[
+const report={version:'1.8.0',createdAt:new Date().toISOString(),pages:records.length,htmlFiles:html.length,jsonFiles:json.length,jsFiles:javascript.length,oldDomainUrls,criteriaStatuses:count,checks,failures,jsonProblems,jsProblems,fileProblems,warnings,limitations:[
   'A 31 korábbi C változat részletes szövege nem mind áll rendelkezésre; a meglévő 65×31 mátrix részben forrásalapú.',
-  'A v1.7.0 ZIP helyi és automatizált vizsgálata nem azonos a fel nem töltött új verzió valódi böngészős, eszközönkénti tesztjével.',
+  'A v1.8.0 ZIP helyi és automatizált vizsgálata nem azonos a fel nem töltött új verzió valódi böngészős, eszközönkénti tesztjével.',
   'A webes UI kattintási mintája a nyilvános v1.2.0 verzión történt; az új ZIP-et még nem telepítettük.',
   'Az 55 nem hitelesített tartalmi oldal, a médiák jogállása és a külső térképszolgáltatás elérhetősége külön intézményi ellenőrzést kíván.'
 ]};
-fs.writeFileSync(path.join(root,'dokumentacio','AUDIT_V1_7.json'),JSON.stringify(report,null,2)+'\n');
+fs.writeFileSync(path.join(root,'dokumentacio','AUDIT_V1_8.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({pages:records.length,html:html.length,json:json.length,javascript:javascript.length,checks:Object.keys(checks).length,passed:Object.keys(checks).length-failures.length,failures,oldDomainUrls,fileProblems:fileProblems.slice(0,12),statuses:count}));
 if(failures.length)process.exitCode=1;

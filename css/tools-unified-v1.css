@@ -1,4 +1,4 @@
-/* v1.7 – közös, FTP-kompatibilis prémium arculat minden tools/ segédoldalhoz. */
+/* v1.8 – közös, FTP-kompatibilis prémium arculat minden tools/ segédoldalhoz. */
 html.cs-tools-modern{--cs-tools-navy:#102b45;--cs-tools-navy-2:#183b59;--cs-tools-gold:#d7b474;--cs-tools-focus:#eebd5d;scroll-padding-top:24px}
 html.cs-tools-modern .cs-tools-skip{position:fixed;top:8px;left:50%;transform:translate(-50%,-170%);z-index:100000;background:#fff2d4;color:#0a2238;padding:12px 18px;border:3px solid #b78832;border-radius:12px;font-weight:850;text-decoration:none;transition:transform .15s ease}
 html.cs-tools-modern .cs-tools-skip:focus-visible{transform:translate(-50%,0);outline:3px solid #0a2238;outline-offset:2px}
@@ -40,3 +40,8 @@ html.cs-tools-modern .csanadi-tool .mm-item.needs-review .mm-item-body small:fir
 }
 @media(prefers-reduced-motion:reduce){html.cs-tools-modern *,html.cs-tools-modern *::before,html.cs-tools-modern *::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 @media(prefers-contrast:more){html.cs-tools-modern :is(.admin-grid>a,.csanadi-tool .tool-tabs a,.csanadi-tool .mm-item){border-width:2px}html.cs-tools-modern :is(button,a):focus-visible{outline-width:4px!important}}
+/* Dokumentált forrású médiaközzététel: a kitöltendő bizonyítékmezők
+   vizuálisan elkülönülnek, de ugyanazokat a billentyűzetes alapokat követik. */
+.cs-tools-modern .mm-rights-evidence{border:1px solid var(--line,#bcc7d8);border-radius:14px;padding:clamp(12px,2vw,20px);margin:14px 0;background:color-mix(in srgb,var(--card,#fff) 92%,#d2b26f)}
+.cs-tools-modern .mm-rights-evidence legend{font-weight:750;font-size:1rem;padding:0 8px}
+.cs-tools-modern .mm-rights-evidence input{max-width:100%;min-height:44px}

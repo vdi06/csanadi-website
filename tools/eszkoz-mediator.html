@@ -11,10 +11,10 @@
   <link rel="stylesheet" href="../css/tools-2026.css?v=csanadi-r29n-20261115">
   <link rel="stylesheet" href="../css/media-manager-2026.css?v=csanadi-r29n-20261115">
   <link rel="stylesheet" href="../css/round10-quality-2026.css?v=csanadi-r29n-20261115">
-  <script src="tool-ui-2026.js?v=1.7.0" defer>
+  <script src="tool-ui-2026.js?v=1.8.0" defer>
 </script>
-  <script type="module" src="media-minoseg-2026.js?v=1.7.0"></script>
-  <script type="module" src="media-manager-2026.js?v=1.7.0">
+  <script type="module" src="media-minoseg-2026.js?v=1.8.0"></script>
+  <script type="module" src="media-manager-2026.js?v=1.8.0">
 </script>
 </head>
 <body class="csanadi-tool">
@@ -68,6 +68,7 @@
             <label for="mm-bulk-tags">Új közös címkék<input id="mm-bulk-tags" placeholder="például: kosárlabda, archívum"></label>
             <button type="button" class="primary" id="mm-bulk-apply">Kategória és címkék alkalmazása</button>
             <button type="button" id="mm-usage-report">Hivatkozási jegyzék CSV</button><button type="button" id="mm-duplicates-report">Duplikátum-ellenőrzési CSV</button><button type="button" id="mm-undo" disabled>Legutóbbi szerkesztés visszavonása</button><label class="mm-file-action mm-secondary">Csoportos fájlcsere, név alapján<input id="mm-bulk-replace" type="file" multiple accept="image/webp,image/jpeg,image/png,image/avif,image/svg+xml,video/mp4,application/pdf"></label>
+            <button type="button" id="mm-review-report">Jog- és akadálymentességi munkalap CSV</button>
           </div>
         </section>
         <p class="mm-small" id="mm-list-count" role="status" aria-live="polite"></p>
@@ -92,6 +93,15 @@
           </div>
           <label class="mm-check"><input id="mm-publish" type="checkbox"><span>Új fájl megjelenítése a megfelelő nyilvános gyűjteményben (képgaléria, videók vagy PDF-dokumentumtár). Csak jóváhagyott tartalomra használd.</span></label>
           <label class="mm-check"><input id="mm-rights-ok" type="checkbox"><span>A fájl nyilvános felhasználásának jogosultságát és az esetleges személyes adatok közzétételének jogalapját ellenőriztem. Új elem publikálásához kötelező.</span></label>
+          <fieldset class="mm-rights-evidence"><legend>Felhasználási jog dokumentálása – új publikálás előtt kötelező</legend>
+            <div class="mm-form-grid">
+              <label for="mm-rights-holder">Jogosult / forrásgazda<input id="mm-rights-holder" maxlength="180" placeholder="Jogosult vagy intézményi forrásgazda"></label>
+              <label for="mm-rights-license">Engedély vagy licenc<input id="mm-rights-license" maxlength="180" placeholder="Pl. saját felvétel, intézményi engedély"></label>
+              <label for="mm-rights-source">Bizonyíték azonosítója<input id="mm-rights-source" maxlength="250" placeholder="Engedély hivatkozása, iktatószám vagy belső forrás"></label>
+              <label for="mm-rights-reviewer">Ellenőrző személy<input id="mm-rights-reviewer" maxlength="120" placeholder="Név vagy felelős szerepkör"></label>
+            </div>
+            <p class="mm-small">A kitöltés és a szerkesztői nyilatkozat nem helyettesíti az intézményi jogi és adatvédelmi jóváhagyást.</p>
+          </fieldset>
           <p class="mm-small" id="mm-refs"></p>
           <div class="mm-form-actions"><button class="primary" type="submit" id="mm-save">Módosítás mentése</button><label class="mm-file-action mm-secondary">Fájl cseréje<input type="file" id="mm-replace" accept="image/png,image/jpeg,image/webp,image/avif,image/gif,image/svg+xml,video/mp4,video/webm,application/pdf,.doc,.docx,.odt,.csv,.txt,.svg,.mp3,.wav"></label><button id="mm-delete" class="mm-danger" type="button">Törlés</button></div>
         </form>
