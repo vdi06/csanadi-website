@@ -10,4 +10,10 @@ function startupError(error){
   const hint=document.createElement('p');hint.textContent=location.protocol==='file:'?'Az oldal JSON-adatokkal működik, ezért HTTPS/HTTP-kiszolgáló szükséges. Indítsd HTTP/HTTPS kiszolgálón.':'Az index.html, script.js, js/, json/ és assets/ mappáknak a webkiszolgáló megfelelő gyökérkönyvtárában kell lenniük.';
   shell.append(h,p,detail,hint);target.replaceChildren(shell);
 }
-import('./js/app.js?v=csanadi-r29n-20261115').then(({startApp})=>startApp()).catch(startupError);
+Promise.all([
+  import('./js/app.js?v=1.1.0'),
+  import('./js/subpages-v1.js?v=1.1.0')
+]).then(([{startApp},{initSubpageEnhancements}])=>{
+  initSubpageEnhancements();
+  return startApp();
+}).catch(startupError);

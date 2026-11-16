@@ -34,7 +34,7 @@ export function renderHistoryTimeline(){
   const draw=()=>{list.replaceChildren();let visible=entries.filter(x=>select.value==='all'||(select.value==='before1980'?x.year<1980:x.year>=1980));
    for(const item of visible){const li=e('li','next10-milestone');const date=e('time','next10-year',item.year);date.dateTime=String(item.year);
     const content=e('div','next10-milestone-body');add(content,e('h3','',item.title),e('p','',item.description));
-    if(item.url?.startsWith('https://csanadi-bp.edu.hu/')){const link=e('a','next10-official-link','Hivatalos történet ↗');link.href=item.url;link.target='_blank';link.rel='noopener noreferrer';content.append(link);}
+    if(item.url?.startsWith('#/')){const link=e('a','next10-official-link','Kapcsolódó iskolai tartalom');link.href=item.url;content.append(link);}
     li.append(date,content);list.append(li);}
    state.textContent=`${visible.length} történelmi mérföldkő. A dátumok az eredeti intézményi leírás alapján szerepelnek.`;
   };

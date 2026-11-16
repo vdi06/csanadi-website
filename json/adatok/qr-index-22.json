@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "release": 22,
-  "notice": "Az előnézeti cím és a tervezett intézményi webcím az előre készített QR-kódokhoz tartozik. Más domainen nem hoz létre automatikusan új QR-kódot.",
+  "notice": "A közzétett QR-kódok jelenleg a működő, új GitHub Pages-honlapra vezetnek. FTP-domainváltáskor külön új QR-kódokat kell készíteni.",
   "entries": [
     {
       "id": "home",
@@ -12,8 +12,8 @@
           "svg": "assets/qr/csanadi-qr-3ff2c1ee7730fd07.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/",
-          "svg": "assets/qr/csanadi-qr-c66111646dc64645.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/",
+          "svg": "assets/qr/csanadi-qr-3ff2c1ee7730fd07.svg"
         }
       }
     },
@@ -26,8 +26,8 @@
           "svg": "assets/qr/csanadi-qr-fe6cb35447110140.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/felfedezo.html",
-          "svg": "assets/qr/csanadi-qr-eef6eab88fd8eba3.svg"
+          "url": "https://vdi06.github.io/csanadi-website/felfedezo.html",
+          "svg": "assets/qr/csanadi-qr-fe6cb35447110140.svg"
         }
       }
     },
@@ -40,8 +40,8 @@
           "svg": "assets/qr/csanadi-qr-06b6013647d5dabb.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/iranytu.html",
-          "svg": "assets/qr/csanadi-qr-bb1b37b3796dbd31.svg"
+          "url": "https://vdi06.github.io/csanadi-website/iranytu.html",
+          "svg": "assets/qr/csanadi-qr-06b6013647d5dabb.svg"
         }
       }
     },
@@ -54,8 +54,8 @@
           "svg": "assets/qr/csanadi-qr-77162e1e7ae8c535.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek",
-          "svg": "assets/qr/csanadi-qr-81ebf6d37a94856a.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek",
+          "svg": "assets/qr/csanadi-qr-77162e1e7ae8c535.svg"
         }
       }
     },
@@ -68,8 +68,8 @@
           "svg": "assets/qr/csanadi-qr-c28888b0f73ce272.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/hirek-es-esemenyek/esemenynaptar/sportesemenyek",
-          "svg": "assets/qr/csanadi-qr-36bf8d202c00ce1b.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/hirek-es-esemenyek/esemenynaptar/sportesemenyek",
+          "svg": "assets/qr/csanadi-qr-c28888b0f73ce272.svg"
         }
       }
     },
@@ -82,8 +82,8 @@
           "svg": "assets/qr/csanadi-qr-8652dd26e8662ab3.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/hirek-es-esemenyek/esemenynaptar",
-          "svg": "assets/qr/csanadi-qr-210b5a8fdd91c4c6.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/hirek-es-esemenyek/esemenynaptar",
+          "svg": "assets/qr/csanadi-qr-8652dd26e8662ab3.svg"
         }
       }
     },
@@ -96,8 +96,8 @@
           "svg": "assets/qr/csanadi-qr-9181b16ee2fb1a31.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/hirek-es-esemenyek/hirek/hirarchivum",
-          "svg": "assets/qr/csanadi-qr-0b9adceafe0db476.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/hirek-es-esemenyek/hirek/hirarchivum",
+          "svg": "assets/qr/csanadi-qr-9181b16ee2fb1a31.svg"
         }
       }
     },
@@ -110,8 +110,8 @@
           "svg": "assets/qr/csanadi-qr-af74ec7de14859f5.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/hirek-es-esemenyek/hirek/iskolai-hirek",
-          "svg": "assets/qr/csanadi-qr-3771af713a19879a.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/hirek-es-esemenyek/hirek/iskolai-hirek",
+          "svg": "assets/qr/csanadi-qr-af74ec7de14859f5.svg"
         }
       }
     },
@@ -124,8 +124,8 @@
           "svg": "assets/qr/csanadi-qr-c94132ac60962a66.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/hirek-es-esemenyek/hirek/sporthirek",
-          "svg": "assets/qr/csanadi-qr-eaea32bfa8e2a9c1.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/hirek-es-esemenyek/hirek/sporthirek",
+          "svg": "assets/qr/csanadi-qr-c94132ac60962a66.svg"
         }
       }
     },
@@ -138,8 +138,8 @@
           "svg": "assets/qr/csanadi-qr-c2c5dd073f9fc58c.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/hirek-es-esemenyek/hirek",
-          "svg": "assets/qr/csanadi-qr-f70fc1f648bce422.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/hirek-es-esemenyek/hirek",
+          "svg": "assets/qr/csanadi-qr-c2c5dd073f9fc58c.svg"
         }
       }
     },
@@ -152,8 +152,8 @@
           "svg": "assets/qr/csanadi-qr-d3629657e62f6368.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/hirek-es-esemenyek/kozlemenyek",
-          "svg": "assets/qr/csanadi-qr-60187cd5d8ae5972.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/hirek-es-esemenyek/kozlemenyek",
+          "svg": "assets/qr/csanadi-qr-d3629657e62f6368.svg"
         }
       }
     },
@@ -166,8 +166,8 @@
           "svg": "assets/qr/csanadi-qr-a10f7aa201031c9c.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/hirek-es-esemenyek",
-          "svg": "assets/qr/csanadi-qr-445755411d780557.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/hirek-es-esemenyek",
+          "svg": "assets/qr/csanadi-qr-a10f7aa201031c9c.svg"
         }
       }
     },
@@ -180,8 +180,8 @@
           "svg": "assets/qr/csanadi-qr-20a5c9a47b295209.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/adatvedelem",
-          "svg": "assets/qr/csanadi-qr-4d08be96f3530954.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/adatvedelem",
+          "svg": "assets/qr/csanadi-qr-20a5c9a47b295209.svg"
         }
       }
     },
@@ -194,8 +194,8 @@
           "svg": "assets/qr/csanadi-qr-93a632e4539c1ff9.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/allaspalyazatok",
-          "svg": "assets/qr/csanadi-qr-c5a789010b39e930.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/allaspalyazatok",
+          "svg": "assets/qr/csanadi-qr-93a632e4539c1ff9.svg"
         }
       }
     },
@@ -208,8 +208,8 @@
           "svg": "assets/qr/csanadi-qr-914b7b862426c7e3.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/digitalis-ugyintezes",
-          "svg": "assets/qr/csanadi-qr-054d5072a2cbe3b8.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/digitalis-ugyintezes",
+          "svg": "assets/qr/csanadi-qr-914b7b862426c7e3.svg"
         }
       }
     },
@@ -222,8 +222,8 @@
           "svg": "assets/qr/csanadi-qr-514eae61749ce1bd.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/dokumentumtar/kozzeteteli-lista",
-          "svg": "assets/qr/csanadi-qr-71ddc97f33c5f794.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/dokumentumtar/kozzeteteli-lista",
+          "svg": "assets/qr/csanadi-qr-514eae61749ce1bd.svg"
         }
       }
     },
@@ -236,8 +236,8 @@
           "svg": "assets/qr/csanadi-qr-3075a04f32904c76.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/dokumentumtar/nyomtatvanyok",
-          "svg": "assets/qr/csanadi-qr-6eacabd785a68b59.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/dokumentumtar/nyomtatvanyok",
+          "svg": "assets/qr/csanadi-qr-3075a04f32904c76.svg"
         }
       }
     },
@@ -250,8 +250,8 @@
           "svg": "assets/qr/csanadi-qr-d63cbe1e6596e1ec.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/dokumentumtar/szabalyzatok",
-          "svg": "assets/qr/csanadi-qr-0af19f3c8225c80d.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/dokumentumtar/szabalyzatok",
+          "svg": "assets/qr/csanadi-qr-d63cbe1e6596e1ec.svg"
         }
       }
     },
@@ -264,8 +264,8 @@
           "svg": "assets/qr/csanadi-qr-8a90e21f33bb7ef2.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/dokumentumtar",
-          "svg": "assets/qr/csanadi-qr-c29603433f3cfa7f.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/dokumentumtar",
+          "svg": "assets/qr/csanadi-qr-8a90e21f33bb7ef2.svg"
         }
       }
     },
@@ -278,8 +278,8 @@
           "svg": "assets/qr/csanadi-qr-0bcf56ffaf451cb2.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok",
-          "svg": "assets/qr/csanadi-qr-32162238a7890c28.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok",
+          "svg": "assets/qr/csanadi-qr-0bcf56ffaf451cb2.svg"
         }
       }
     },
@@ -292,8 +292,8 @@
           "svg": "assets/qr/csanadi-qr-0d84a1df3c10958a.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok",
-          "svg": "assets/qr/csanadi-qr-f042853f1fdff160.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok",
+          "svg": "assets/qr/csanadi-qr-0d84a1df3c10958a.svg"
         }
       }
     },
@@ -306,8 +306,8 @@
           "svg": "assets/qr/csanadi-qr-0eb89f7bb821b763.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok",
-          "svg": "assets/qr/csanadi-qr-9855cfd079eace94.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok",
+          "svg": "assets/qr/csanadi-qr-0eb89f7bb821b763.svg"
         }
       }
     },
@@ -320,8 +320,8 @@
           "svg": "assets/qr/csanadi-qr-5c09692eaae4992e.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/kozossegi-szolgalat",
-          "svg": "assets/qr/csanadi-qr-8a0c078a6b1f122f.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/kozossegi-szolgalat",
+          "svg": "assets/qr/csanadi-qr-5c09692eaae4992e.svg"
         }
       }
     },
@@ -334,8 +334,8 @@
           "svg": "assets/qr/csanadi-qr-2d2caec6a51d6205.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/mindennapi-tudnivalok/csengetesi-rend",
-          "svg": "assets/qr/csanadi-qr-a12ec18095e2955c.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/mindennapi-tudnivalok/csengetesi-rend",
+          "svg": "assets/qr/csanadi-qr-2d2caec6a51d6205.svg"
         }
       }
     },
@@ -348,8 +348,8 @@
           "svg": "assets/qr/csanadi-qr-c7d23a5f9ac34c49.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/mindennapi-tudnivalok/etkezes",
-          "svg": "assets/qr/csanadi-qr-d1481ecf03061d64.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/mindennapi-tudnivalok/etkezes",
+          "svg": "assets/qr/csanadi-qr-c7d23a5f9ac34c49.svg"
         }
       }
     },
@@ -362,8 +362,8 @@
           "svg": "assets/qr/csanadi-qr-159946607e6ce5e6.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/mindennapi-tudnivalok/szuloi-informaciok",
-          "svg": "assets/qr/csanadi-qr-a684d2e677fbbedd.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/mindennapi-tudnivalok/szuloi-informaciok",
+          "svg": "assets/qr/csanadi-qr-159946607e6ce5e6.svg"
         }
       }
     },
@@ -376,8 +376,8 @@
           "svg": "assets/qr/csanadi-qr-a53e73bf660347a4.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok/mindennapi-tudnivalok",
-          "svg": "assets/qr/csanadi-qr-98382a2df9ad70b5.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok/mindennapi-tudnivalok",
+          "svg": "assets/qr/csanadi-qr-a53e73bf660347a4.svg"
         }
       }
     },
@@ -390,8 +390,8 @@
           "svg": "assets/qr/csanadi-qr-68df1cba754e9288.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/informaciok",
-          "svg": "assets/qr/csanadi-qr-4b783c441f7933e3.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/informaciok",
+          "svg": "assets/qr/csanadi-qr-68df1cba754e9288.svg"
         }
       }
     },
@@ -404,8 +404,8 @@
           "svg": "assets/qr/csanadi-qr-6c9334e5d6b059f3.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/iskolank/a-honlap-szuletese",
-          "svg": "assets/qr/csanadi-qr-ad5971106c885b90.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/iskolank/a-honlap-szuletese",
+          "svg": "assets/qr/csanadi-qr-6c9334e5d6b059f3.svg"
         }
       }
     },
@@ -418,8 +418,8 @@
           "svg": "assets/qr/csanadi-qr-98b5e8ec1dd4a6b3.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/iskolank/alapitvany",
-          "svg": "assets/qr/csanadi-qr-c6b1615395f37ae1.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/iskolank/alapitvany",
+          "svg": "assets/qr/csanadi-qr-98b5e8ec1dd4a6b3.svg"
         }
       }
     },
@@ -432,8 +432,8 @@
           "svg": "assets/qr/csanadi-qr-4ef4392514ad36cd.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/iskolank/bemutatkozas",
-          "svg": "assets/qr/csanadi-qr-62d9ee5413d82888.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/iskolank/bemutatkozas",
+          "svg": "assets/qr/csanadi-qr-4ef4392514ad36cd.svg"
         }
       }
     },
@@ -446,8 +446,8 @@
           "svg": "assets/qr/csanadi-qr-f6256d2687b152dc.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/iskolank/buszkesegeink",
-          "svg": "assets/qr/csanadi-qr-884dd64bf43e1d2b.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/iskolank/buszkesegeink",
+          "svg": "assets/qr/csanadi-qr-f6256d2687b152dc.svg"
         }
       }
     },
@@ -460,8 +460,8 @@
           "svg": "assets/qr/csanadi-qr-4b17b7b0af0826de.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/iskolank/hagyomanyok-es-elismeresek",
-          "svg": "assets/qr/csanadi-qr-1a1d77cb9f6656bf.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/iskolank/hagyomanyok-es-elismeresek",
+          "svg": "assets/qr/csanadi-qr-4b17b7b0af0826de.svg"
         }
       }
     },
@@ -474,8 +474,8 @@
           "svg": "assets/qr/csanadi-qr-fdde03c49be816a7.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/iskolank/kuldetes-es-ertekek",
-          "svg": "assets/qr/csanadi-qr-a83158c4a0c9e9a3.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/iskolank/kuldetes-es-ertekek",
+          "svg": "assets/qr/csanadi-qr-fdde03c49be816a7.svg"
         }
       }
     },
@@ -488,8 +488,8 @@
           "svg": "assets/qr/csanadi-qr-535f37604dac513a.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/iskolank/oko-iskola",
-          "svg": "assets/qr/csanadi-qr-99c30ab5055d528c.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/iskolank/oko-iskola",
+          "svg": "assets/qr/csanadi-qr-535f37604dac513a.svg"
         }
       }
     },
@@ -502,8 +502,8 @@
           "svg": "assets/qr/csanadi-qr-ecc8b97e9ac7f4a8.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/iskolank/partnerek",
-          "svg": "assets/qr/csanadi-qr-3536b69c09e2b441.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/iskolank/partnerek",
+          "svg": "assets/qr/csanadi-qr-ecc8b97e9ac7f4a8.svg"
         }
       }
     },
@@ -516,8 +516,8 @@
           "svg": "assets/qr/csanadi-qr-dcce263f08ae2b11.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/iskolank/tantestulet",
-          "svg": "assets/qr/csanadi-qr-ff85910ffb025ef3.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/iskolank/tantestulet",
+          "svg": "assets/qr/csanadi-qr-dcce263f08ae2b11.svg"
         }
       }
     },
@@ -530,8 +530,8 @@
           "svg": "assets/qr/csanadi-qr-41d9735ae0b02029.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/iskolank/tortenet",
-          "svg": "assets/qr/csanadi-qr-e725b3c893965c6e.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/iskolank/tortenet",
+          "svg": "assets/qr/csanadi-qr-41d9735ae0b02029.svg"
         }
       }
     },
@@ -544,8 +544,8 @@
           "svg": "assets/qr/csanadi-qr-ca44a7cc800b4936.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/iskolank",
-          "svg": "assets/qr/csanadi-qr-c4e0890b687fca7a.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/iskolank",
+          "svg": "assets/qr/csanadi-qr-ca44a7cc800b4936.svg"
         }
       }
     },
@@ -558,8 +558,8 @@
           "svg": "assets/qr/csanadi-qr-f2475368b48da45d.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/kapcsolat",
-          "svg": "assets/qr/csanadi-qr-7a0b9d01243627e4.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/kapcsolat",
+          "svg": "assets/qr/csanadi-qr-f2475368b48da45d.svg"
         }
       }
     },
@@ -572,8 +572,8 @@
           "svg": "assets/qr/csanadi-qr-3ff2c1ee7730fd07.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/",
-          "svg": "assets/qr/csanadi-qr-c66111646dc64645.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/",
+          "svg": "assets/qr/csanadi-qr-3ff2c1ee7730fd07.svg"
         }
       }
     },
@@ -586,8 +586,8 @@
           "svg": "assets/qr/csanadi-qr-138e9367725e323e.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/digitalis-kultura",
-          "svg": "assets/qr/csanadi-qr-a855fb01418cea87.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/digitalis-kultura",
+          "svg": "assets/qr/csanadi-qr-138e9367725e323e.svg"
         }
       }
     },
@@ -600,8 +600,8 @@
           "svg": "assets/qr/csanadi-qr-cf7a5c62ff803b37.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/felveteli/elso-evfolyam",
-          "svg": "assets/qr/csanadi-qr-96ab7606f9a9babd.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/felveteli/elso-evfolyam",
+          "svg": "assets/qr/csanadi-qr-cf7a5c62ff803b37.svg"
         }
       }
     },
@@ -614,8 +614,8 @@
           "svg": "assets/qr/csanadi-qr-1ac4ce68d2d46d6f.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/felveteli/felveteli-hataridok",
-          "svg": "assets/qr/csanadi-qr-7a545988a54801a8.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/felveteli/felveteli-hataridok",
+          "svg": "assets/qr/csanadi-qr-1ac4ce68d2d46d6f.svg"
         }
       }
     },
@@ -628,8 +628,8 @@
           "svg": "assets/qr/csanadi-qr-79a675a8ae6f0a50.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/felveteli/kilencedik-evfolyam",
-          "svg": "assets/qr/csanadi-qr-4cdc25ba798bc31e.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/felveteli/kilencedik-evfolyam",
+          "svg": "assets/qr/csanadi-qr-79a675a8ae6f0a50.svg"
         }
       }
     },
@@ -642,8 +642,8 @@
           "svg": "assets/qr/csanadi-qr-21773bbaa9b2b28a.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/felveteli/nyilt-napok",
-          "svg": "assets/qr/csanadi-qr-34e106427eb427a2.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/felveteli/nyilt-napok",
+          "svg": "assets/qr/csanadi-qr-21773bbaa9b2b28a.svg"
         }
       }
     },
@@ -656,8 +656,8 @@
           "svg": "assets/qr/csanadi-qr-f593a0d1141c37c8.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/felveteli",
-          "svg": "assets/qr/csanadi-qr-6d7f6776dd94f4df.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/felveteli",
+          "svg": "assets/qr/csanadi-qr-f593a0d1141c37c8.svg"
         }
       }
     },
@@ -670,8 +670,8 @@
           "svg": "assets/qr/csanadi-qr-b58a5ab9ac20e679.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/kepzeseink/altalanos-iskola",
-          "svg": "assets/qr/csanadi-qr-75634dafe6e75407.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/kepzeseink/altalanos-iskola",
+          "svg": "assets/qr/csanadi-qr-b58a5ab9ac20e679.svg"
         }
       }
     },
@@ -684,8 +684,8 @@
           "svg": "assets/qr/csanadi-qr-9a3838207cd92cd6.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/kepzeseink/gimnazium",
-          "svg": "assets/qr/csanadi-qr-782c01b9974d5956.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/kepzeseink/gimnazium",
+          "svg": "assets/qr/csanadi-qr-9a3838207cd92cd6.svg"
         }
       }
     },
@@ -698,8 +698,8 @@
           "svg": "assets/qr/csanadi-qr-891d35fbf23ff980.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/kepzeseink/sportiskolai-neveles",
-          "svg": "assets/qr/csanadi-qr-3c79a1ff31e1bc11.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/kepzeseink/sportiskolai-neveles",
+          "svg": "assets/qr/csanadi-qr-891d35fbf23ff980.svg"
         }
       }
     },
@@ -712,8 +712,8 @@
           "svg": "assets/qr/csanadi-qr-ccf643fdda0a8241.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/kepzeseink",
-          "svg": "assets/qr/csanadi-qr-187d5ea24b7263f2.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/kepzeseink",
+          "svg": "assets/qr/csanadi-qr-ccf643fdda0a8241.svg"
         }
       }
     },
@@ -726,8 +726,8 @@
           "svg": "assets/qr/csanadi-qr-efa963a1cd50a151.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/konyvtar/konyvtari-szolgaltatasok",
-          "svg": "assets/qr/csanadi-qr-396da0aaa28e4c37.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/konyvtar/konyvtari-szolgaltatasok",
+          "svg": "assets/qr/csanadi-qr-efa963a1cd50a151.svg"
         }
       }
     },
@@ -740,8 +740,8 @@
           "svg": "assets/qr/csanadi-qr-4c54fef661fff16d.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/konyvtar",
-          "svg": "assets/qr/csanadi-qr-2aed20e9088c3589.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/konyvtar",
+          "svg": "assets/qr/csanadi-qr-4c54fef661fff16d.svg"
         }
       }
     },
@@ -754,8 +754,8 @@
           "svg": "assets/qr/csanadi-qr-9f6b35e6b66bbb8b.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/tananyagok-es-jegyzetek",
-          "svg": "assets/qr/csanadi-qr-f12490a17e5451c0.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/tananyagok-es-jegyzetek",
+          "svg": "assets/qr/csanadi-qr-9f6b35e6b66bbb8b.svg"
         }
       }
     },
@@ -768,8 +768,8 @@
           "svg": "assets/qr/csanadi-qr-cb6c4b7dacd9eddd.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/tanevek/aktualis-tanev",
-          "svg": "assets/qr/csanadi-qr-237a68ef7daf842d.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/tanevek/aktualis-tanev",
+          "svg": "assets/qr/csanadi-qr-cb6c4b7dacd9eddd.svg"
         }
       }
     },
@@ -782,8 +782,8 @@
           "svg": "assets/qr/csanadi-qr-d5316123ad0159d5.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/tanevek/korabbi-tanevek",
-          "svg": "assets/qr/csanadi-qr-96086466d03342ed.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/tanevek/korabbi-tanevek",
+          "svg": "assets/qr/csanadi-qr-d5316123ad0159d5.svg"
         }
       }
     },
@@ -796,8 +796,8 @@
           "svg": "assets/qr/csanadi-qr-f31e7f52b6a31ed2.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/tanevek",
-          "svg": "assets/qr/csanadi-qr-559ca2e357b86598.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/tanevek",
+          "svg": "assets/qr/csanadi-qr-f31e7f52b6a31ed2.svg"
         }
       }
     },
@@ -810,8 +810,8 @@
           "svg": "assets/qr/csanadi-qr-b654b9e8e3ebdeff.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/vizsgak/egyeb-vizsgak",
-          "svg": "assets/qr/csanadi-qr-708fe79585cb58c2.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/vizsgak/egyeb-vizsgak",
+          "svg": "assets/qr/csanadi-qr-b654b9e8e3ebdeff.svg"
         }
       }
     },
@@ -824,8 +824,8 @@
           "svg": "assets/qr/csanadi-qr-e9eaac4335f763cd.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/vizsgak/erettsegi",
-          "svg": "assets/qr/csanadi-qr-0c60a6f63259e261.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/vizsgak/erettsegi",
+          "svg": "assets/qr/csanadi-qr-e9eaac4335f763cd.svg"
         }
       }
     },
@@ -838,8 +838,8 @@
           "svg": "assets/qr/csanadi-qr-5372f5709cb9736d.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/vizsgak/osztalyozo-vizsgak",
-          "svg": "assets/qr/csanadi-qr-a8ee1624f434d1bf.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/vizsgak/osztalyozo-vizsgak",
+          "svg": "assets/qr/csanadi-qr-5372f5709cb9736d.svg"
         }
       }
     },
@@ -852,8 +852,8 @@
           "svg": "assets/qr/csanadi-qr-c8ad80a83c3bae84.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas/vizsgak",
-          "svg": "assets/qr/csanadi-qr-16a888ce4a240a69.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas/vizsgak",
+          "svg": "assets/qr/csanadi-qr-c8ad80a83c3bae84.svg"
         }
       }
     },
@@ -866,8 +866,8 @@
           "svg": "assets/qr/csanadi-qr-e77214c7fcc2235b.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/oktatas",
-          "svg": "assets/qr/csanadi-qr-e7f4d7543ec3ad99.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/oktatas",
+          "svg": "assets/qr/csanadi-qr-e77214c7fcc2235b.svg"
         }
       }
     },
@@ -880,8 +880,8 @@
           "svg": "assets/qr/csanadi-qr-7bee5b30b30758f1.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/sport/csapatok",
-          "svg": "assets/qr/csanadi-qr-13070e358bf73678.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/sport/csapatok",
+          "svg": "assets/qr/csanadi-qr-7bee5b30b30758f1.svg"
         }
       }
     },
@@ -894,8 +894,8 @@
           "svg": "assets/qr/csanadi-qr-263990dcdf95e979.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/sport/edzok",
-          "svg": "assets/qr/csanadi-qr-5adf5e82f502e1b9.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/sport/edzok",
+          "svg": "assets/qr/csanadi-qr-263990dcdf95e979.svg"
         }
       }
     },
@@ -908,8 +908,8 @@
           "svg": "assets/qr/csanadi-qr-5a1210dbca644112.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/sport/sportagak",
-          "svg": "assets/qr/csanadi-qr-cdaf7f0281feafd0.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/sport/sportagak",
+          "svg": "assets/qr/csanadi-qr-5a1210dbca644112.svg"
         }
       }
     },
@@ -922,8 +922,8 @@
           "svg": "assets/qr/csanadi-qr-b37c940608c0cd8c.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/sport/sporteredmenyek",
-          "svg": "assets/qr/csanadi-qr-7850cc51e0a814b4.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/sport/sporteredmenyek",
+          "svg": "assets/qr/csanadi-qr-b37c940608c0cd8c.svg"
         }
       }
     },
@@ -936,8 +936,8 @@
           "svg": "assets/qr/csanadi-qr-fdd5b6218adeedfa.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/sport/sportgaleriak",
-          "svg": "assets/qr/csanadi-qr-506436f1a662641c.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/sport/sportgaleriak",
+          "svg": "assets/qr/csanadi-qr-fdd5b6218adeedfa.svg"
         }
       }
     },
@@ -950,8 +950,8 @@
           "svg": "assets/qr/csanadi-qr-b4ed903f0a3e98ea.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/sport/sportolok",
-          "svg": "assets/qr/csanadi-qr-113ea2d36034c9f3.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/sport/sportolok",
+          "svg": "assets/qr/csanadi-qr-b4ed903f0a3e98ea.svg"
         }
       }
     },
@@ -964,8 +964,8 @@
           "svg": "assets/qr/csanadi-qr-41b847a9fc8c3bf0.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/index.html#/sport",
-          "svg": "assets/qr/csanadi-qr-f7509d0870715b4f.svg"
+          "url": "https://vdi06.github.io/csanadi-website/index.html#/sport",
+          "svg": "assets/qr/csanadi-qr-41b847a9fc8c3bf0.svg"
         }
       }
     },
@@ -978,8 +978,8 @@
           "svg": "assets/qr/csanadi-qr-549112a531d270f0.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
-          "svg": "assets/qr/csanadi-qr-988ffe5985800ec2.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
+          "svg": "assets/qr/csanadi-qr-549112a531d270f0.svg"
         }
       }
     },
@@ -992,8 +992,8 @@
           "svg": "assets/qr/csanadi-qr-c08ca21ec3b11464.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/felveteli-tajekozodasi-segedlet-2026.pdf",
-          "svg": "assets/qr/csanadi-qr-b02dc0a3150c685f.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/felveteli-tajekozodasi-segedlet-2026.pdf",
+          "svg": "assets/qr/csanadi-qr-c08ca21ec3b11464.svg"
         }
       }
     },
@@ -1006,8 +1006,8 @@
           "svg": "assets/qr/csanadi-qr-727f4683fde42954.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/tanulas-sport-idogazdalkodas.pdf",
-          "svg": "assets/qr/csanadi-qr-f446a262cd49324c.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/tanulas-sport-idogazdalkodas.pdf",
+          "svg": "assets/qr/csanadi-qr-727f4683fde42954.svg"
         }
       }
     },
@@ -1020,8 +1020,8 @@
           "svg": "assets/qr/csanadi-qr-9b11dfa6987299bf.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/digitalis-fajlok-es-beadas.pdf",
-          "svg": "assets/qr/csanadi-qr-f509830cd6bc58f3.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/digitalis-fajlok-es-beadas.pdf",
+          "svg": "assets/qr/csanadi-qr-9b11dfa6987299bf.svg"
         }
       }
     },
@@ -1034,8 +1034,8 @@
           "svg": "assets/qr/csanadi-qr-df014648b332e367.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-01.pdf",
-          "svg": "assets/qr/csanadi-qr-eef79bcdcaf8420f.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-01.pdf",
+          "svg": "assets/qr/csanadi-qr-df014648b332e367.svg"
         }
       }
     },
@@ -1048,8 +1048,8 @@
           "svg": "assets/qr/csanadi-qr-b38a4af88fe8538f.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-02.pdf",
-          "svg": "assets/qr/csanadi-qr-8fc7a0d67df8fe34.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-02.pdf",
+          "svg": "assets/qr/csanadi-qr-b38a4af88fe8538f.svg"
         }
       }
     },
@@ -1062,8 +1062,8 @@
           "svg": "assets/qr/csanadi-qr-e9fb2c9139b491d4.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-03.pdf",
-          "svg": "assets/qr/csanadi-qr-3c61cea56b095f6f.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-03.pdf",
+          "svg": "assets/qr/csanadi-qr-e9fb2c9139b491d4.svg"
         }
       }
     },
@@ -1076,8 +1076,8 @@
           "svg": "assets/qr/csanadi-qr-d3d4b2037a08b48e.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-04.pdf",
-          "svg": "assets/qr/csanadi-qr-bc73aead899a70af.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-04.pdf",
+          "svg": "assets/qr/csanadi-qr-d3d4b2037a08b48e.svg"
         }
       }
     },
@@ -1090,8 +1090,8 @@
           "svg": "assets/qr/csanadi-qr-f3baef66a15631d9.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-05.pdf",
-          "svg": "assets/qr/csanadi-qr-33b8fa9654966c4f.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-05.pdf",
+          "svg": "assets/qr/csanadi-qr-f3baef66a15631d9.svg"
         }
       }
     },
@@ -1104,8 +1104,8 @@
           "svg": "assets/qr/csanadi-qr-74e979fb17bc87ce.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-06.pdf",
-          "svg": "assets/qr/csanadi-qr-cf6ae3279994dc7c.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-06.pdf",
+          "svg": "assets/qr/csanadi-qr-74e979fb17bc87ce.svg"
         }
       }
     },
@@ -1118,8 +1118,8 @@
           "svg": "assets/qr/csanadi-qr-c0a0c3074fae237b.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-07.pdf",
-          "svg": "assets/qr/csanadi-qr-72b5a08dd496a99a.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-07.pdf",
+          "svg": "assets/qr/csanadi-qr-c0a0c3074fae237b.svg"
         }
       }
     },
@@ -1132,8 +1132,8 @@
           "svg": "assets/qr/csanadi-qr-23cb785e3811f230.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-08.pdf",
-          "svg": "assets/qr/csanadi-qr-44ec575af7aaa7f7.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-08.pdf",
+          "svg": "assets/qr/csanadi-qr-23cb785e3811f230.svg"
         }
       }
     },
@@ -1146,8 +1146,8 @@
           "svg": "assets/qr/csanadi-qr-a91c104c52f596f6.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-09.pdf",
-          "svg": "assets/qr/csanadi-qr-3e5a714c011446fc.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-09.pdf",
+          "svg": "assets/qr/csanadi-qr-a91c104c52f596f6.svg"
         }
       }
     },
@@ -1160,8 +1160,8 @@
           "svg": "assets/qr/csanadi-qr-a10ebcb6f9bd7de4.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-10.pdf",
-          "svg": "assets/qr/csanadi-qr-870af2cf6e1ab453.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-10.pdf",
+          "svg": "assets/qr/csanadi-qr-a10ebcb6f9bd7de4.svg"
         }
       }
     },
@@ -1174,8 +1174,8 @@
           "svg": "assets/qr/csanadi-qr-176b4e6402a6c4dd.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-11.pdf",
-          "svg": "assets/qr/csanadi-qr-dc424d1e151d96db.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-11.pdf",
+          "svg": "assets/qr/csanadi-qr-176b4e6402a6c4dd.svg"
         }
       }
     },
@@ -1188,8 +1188,8 @@
           "svg": "assets/qr/csanadi-qr-74b265f0c2eddf09.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-12.pdf",
-          "svg": "assets/qr/csanadi-qr-0766f8c81dd55b77.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-12.pdf",
+          "svg": "assets/qr/csanadi-qr-74b265f0c2eddf09.svg"
         }
       }
     },
@@ -1202,8 +1202,8 @@
           "svg": "assets/qr/csanadi-qr-720d4f1f6672ae3b.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-13.pdf",
-          "svg": "assets/qr/csanadi-qr-9d714275b7418517.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-13.pdf",
+          "svg": "assets/qr/csanadi-qr-720d4f1f6672ae3b.svg"
         }
       }
     },
@@ -1216,8 +1216,8 @@
           "svg": "assets/qr/csanadi-qr-6c31597b7b12ce10.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-14.pdf",
-          "svg": "assets/qr/csanadi-qr-3975192951e5a24c.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-14.pdf",
+          "svg": "assets/qr/csanadi-qr-6c31597b7b12ce10.svg"
         }
       }
     },
@@ -1230,8 +1230,8 @@
           "svg": "assets/qr/csanadi-qr-c14194e89fc7d2a8.svg"
         },
         "ftp": {
-          "url": "https://csanadi-bp.edu.hu/assets/documents/segedlet-2026-15.pdf",
-          "svg": "assets/qr/csanadi-qr-8111b25cc07d8be4.svg"
+          "url": "https://vdi06.github.io/csanadi-website/assets/documents/segedlet-2026-15.pdf",
+          "svg": "assets/qr/csanadi-qr-c14194e89fc7d2a8.svg"
         }
       }
     }

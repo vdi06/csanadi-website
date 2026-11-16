@@ -92,7 +92,7 @@
           "id": "block:content-review-text-20261114",
           "type": "markdown",
           "data": {
-            "text": "A {{site.name}} címe: {{site.address}}. OM azonosítója {{site.omIdentifier}}. A főigazgató a jelenlegi intézményi nyitóoldal szerint {{site.directorName}}. A sportiskolai és általános közismereti nevelést közös intézményi keretben szervezik.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](https://csanadi-bp.edu.hu/kapcsolat.html)"
+            "text": "A {{site.name}} címe: {{site.address}}. OM azonosítója {{site.omIdentifier}}. A főigazgató a jelenlegi intézményi nyitóoldal szerint {{site.directorName}}. A sportiskolai és általános közismereti nevelést közös intézményi keretben szervezik.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/kapcsolat)"
           }
         }
       ]

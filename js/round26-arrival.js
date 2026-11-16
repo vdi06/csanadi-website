@@ -4,7 +4,7 @@ const make=(tag,value,cls)=>{const n=document.createElement(tag);if(value!==unde
 const clean=n=>n.replaceChildren();
 const plain=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 const opts=(sel,items)=>items.forEach(item=>{const o=make('option',item);o.value=item;sel.append(o);});
-const approvedUrl=s=>{try{const u=new URL(s);return u.protocol==='https:'&&['www.zuglo.hu','bkk.hu','www.mlsz.hu','www.mksz.hu','www.hunfencing.hu','kajakkenusport.hu','birkozoszov.hu','www.csanadi-bp.edu.hu','csanadi-bp.edu.hu'].includes(u.hostname);}catch{return false;}};
+const approvedUrl=s=>{try{const u=new URL(s);return u.protocol==='https:'&&['www.zuglo.hu','bkk.hu','www.mlsz.hu','www.mksz.hu','www.hunfencing.hu','kajakkenusport.hu','birkozoszov.hu'].includes(u.hostname);}catch{return false;}};
 const safeInternal=s=>/^(?:index\.html#\/(?:[a-z0-9/-]*)|utmutato\.html)$/.test(s||'');
 const link=(url,label,isInternal=false)=>{const a=make('a',label,'r26-source');if((isInternal?safeInternal:approvedUrl)(url)){a.href=url;if(!isInternal){a.target='_blank';a.rel='noopener noreferrer';}}else a.textContent='Forrás ellenőrzésre vár';return a;};
 const badge=(value)=>make('span',value,'r26-badge');

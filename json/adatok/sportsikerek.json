@@ -27,7 +27,7 @@
         "news": "#/hirek-es-esemenyek/hirek/sporthirek"
       },
       "verified": true,
-      "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      "url": "#/iskolank/buszkesegeink"
     },
     {
       "id": "success:szabo-gabriella",
@@ -46,7 +46,7 @@
         "news": "#/hirek-es-esemenyek/hirek/sporthirek"
       },
       "verified": true,
-      "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      "url": "#/iskolank/buszkesegeink"
     },
     {
       "id": "success:liu-shaoang",
@@ -65,7 +65,7 @@
         "news": "#/hirek-es-esemenyek/hirek/sporthirek"
       },
       "verified": true,
-      "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      "url": "#/iskolank/buszkesegeink"
     },
     {
       "id": "success:vari-attila",
@@ -84,7 +84,7 @@
         "news": "#/hirek-es-esemenyek/hirek/sporthirek"
       },
       "verified": true,
-      "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      "url": "#/iskolank/buszkesegeink"
     },
     {
       "id": "success:berki-krisztian",
@@ -103,7 +103,7 @@
         "news": "#/hirek-es-esemenyek/hirek/sporthirek"
       },
       "verified": true,
-      "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      "url": "#/iskolank/buszkesegeink"
     },
     {
       "id": "success:lorincz-tamas",
@@ -122,7 +122,7 @@
         "news": "#/hirek-es-esemenyek/hirek/sporthirek"
       },
       "verified": true,
-      "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      "url": "#/iskolank/buszkesegeink"
     },
     {
       "id": "success:toth-krisztian",
@@ -141,7 +141,7 @@
         "news": "#/hirek-es-esemenyek/hirek/sporthirek"
       },
       "verified": true,
-      "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      "url": "#/iskolank/buszkesegeink"
     },
     {
       "id": "success:erdei-zsolt",
@@ -160,7 +160,7 @@
         "news": "#/hirek-es-esemenyek/hirek/sporthirek"
       },
       "verified": true,
-      "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      "url": "#/iskolank/buszkesegeink"
     },
     {
       "id": "success:erdi-maria",
@@ -179,7 +179,7 @@
         "news": "#/hirek-es-esemenyek/hirek/sporthirek"
       },
       "verified": true,
-      "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      "url": "#/iskolank/buszkesegeink"
     },
     {
       "id": "success:lorincz-viktor",
@@ -198,7 +198,7 @@
         "news": "#/hirek-es-esemenyek/hirek/sporthirek"
       },
       "verified": true,
-      "url": "https://csanadi-bp.edu.hu/buszkeseg.html"
+      "url": "#/iskolank/buszkesegeink"
     }
   ]
 }

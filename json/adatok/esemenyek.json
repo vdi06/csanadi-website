@@ -33,7 +33,7 @@
       "route": "#/oktatas/felveteli/kilencedik-evfolyam",
       "priority": 100,
       "verified": true,
-      "url": "https://csanadi-bp.edu.hu/def.html"
+      "url": "#/hirek-es-esemenyek"
     },
     {
       "id": "esemeny:nyilt-nap-19",
@@ -47,7 +47,7 @@
       "route": "#/oktatas/felveteli/kilencedik-evfolyam",
       "priority": 100,
       "verified": true,
-      "url": "https://csanadi-bp.edu.hu/def.html"
+      "url": "#/hirek-es-esemenyek"
     }
   ]
 }

@@ -85,7 +85,7 @@ function qrShare(){
  for(const x of qrData.entries||[]){const o=make('option','',x.label);o.value=x.id;select.append(o);}
  function draw(){empty(out);const entry=qrData.entries.find(x=>x.id===select.value),host=environment.value;
   if(!entry){out.append(make('p','','Jelenleg nincs közzétett cél.'));return;}
-  const payload=entry.targets?.[host];if(!payload||!/^assets\/qr\/csanadi-qr-[a-f0-9]{16}\.svg$/.test(payload.svg||'')||!/^https:\/\/(vdi06\.github\.io\/csanadi-website\/|csanadi-bp\.edu\.hu\/)/.test(payload.url||'')){out.append(make('p','','Az adott címhez nem készült ellenőrzött helyi QR-kód.'));return;}
+  const payload=entry.targets?.[host];if(!payload||!/^assets\/qr\/csanadi-qr-[a-f0-9]{16}\.svg$/.test(payload.svg||'')||!/^https:\/\/vdi06\.github\.io\/csanadi-website\//.test(payload.url||'')){out.append(make('p','','Az adott címhez nem készült ellenőrzött helyi QR-kód.'));return;}
   const wrap=make('div','r22-qr-layout'),image=make('img');image.src=payload.svg;image.alt='QR-kód ehhez: '+entry.label;image.width=250;image.height=250;
   const info=make('div'),url=make('input');url.type='text';url.readOnly=true;url.value=payload.url;url.setAttribute('aria-label','Megosztási webcím');url.addEventListener('focus',()=>url.select());
   const note=make('p','',host==='ftp'?'Az intézményi webcím csak az új változat ellenőrzött élesítése után használható.':'A jelenleg ismert, nyilvános GitHub Pages-előnézet címe.');

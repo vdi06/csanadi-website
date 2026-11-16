@@ -12,7 +12,7 @@
       "dateType": "esemény kezdőnapja",
       "status": "verified",
       "route": "#/oktatas/felveteli/kilencedik-evfolyam",
-      "url": "https://csanadi-bp.edu.hu/def.html"
+      "url": "#/hirek-es-esemenyek"
     },
     {
       "id": "hir:erettsegi-2026",
@@ -24,7 +24,7 @@
       "dateType": "szóbeli vizsga napja",
       "status": "verified",
       "route": "#/oktatas/vizsgak/erettsegi",
-      "url": "https://csanadi-bp.edu.hu/erettsegi.html"
+      "url": "#/oktatas/vizsgak/erettsegi"
     },
     {
       "id": "hir:etkeztetes-2026",
@@ -36,7 +36,7 @@
       "dateType": "jelzett szünet kezdete",
       "status": "verified",
       "route": "#/informaciok/mindennapi-tudnivalok/etkezes",
-      "url": "https://csanadi-bp.edu.hu/def.html"
+      "url": "#/hirek-es-esemenyek"
     },
     {
       "id": "hir:tanevnyito-2026",
@@ -48,7 +48,7 @@
       "dateType": "tanévkezdés",
       "status": "verified",
       "route": "#/oktatas/tanevek/aktualis-tanev",
-      "url": "https://csanadi-bp.edu.hu/def.html"
+      "url": "#/hirek-es-esemenyek"
     },
     {
       "id": "hir:iskolatortenet",
@@ -60,7 +60,7 @@
       "dateType": "történeti összefoglaló",
       "status": "verified",
       "route": "#/iskolank/tortenet",
-      "url": "https://csanadi-bp.edu.hu/tortenet.html"
+      "url": "#/iskolank/tortenet"
     },
     {
       "id": "minta:birkozas-iskolai-sportnap",

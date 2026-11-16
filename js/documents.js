@@ -175,11 +175,11 @@ function renderCenterContents(mount,route,initial){
  const pdf=el('a','doc-center-link','PDF-kézikönyv letöltése');pdf.href=new URL('assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf',ROOT).href;pdf.download='csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf';
  const pdfView=el('a','doc-center-link','PDF megnyitása új lapon');pdfView.href=new URL('assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf',ROOT).href;pdfView.target='_blank';pdfView.rel='noopener noreferrer';manualLinks.append(online,pdfView,pdf);manual.append(manualLinks);mount.append(manual);
  const officialLinks=[
-  ['Intézményi alapdokumentumok','https://csanadi-bp.edu.hu/docs.html','intezmenyi-szabalyzat'],
-  ['Szülői nyomtatványok','https://csanadi-bp.edu.hu/szulok.html','intezmenyi-nyomtatvany'],
-  ['Különös közzétételi lista','https://csanadi-bp.edu.hu/kozzetetel.html','intezmenyi-kozzetetel'],
-  ['Felvételi dokumentumok','https://csanadi-bp.edu.hu/felveteli.html','felveteli'],
-  ['Közösségi szolgálati nyomtatványok','https://csanadi-bp.edu.hu/kozszoldokuk.html','kozossegi']
+  ['Intézményi alapdokumentumok','#/informaciok/dokumentumtar','intezmenyi-szabalyzat'],
+  ['Szülői nyomtatványok','#/informaciok/mindennapi-tudnivalok/szuloi-informaciok','intezmenyi-nyomtatvany'],
+  ['Különös közzétételi lista','#/informaciok/dokumentumtar/kozzeteteli-lista','intezmenyi-kozzetetel'],
+  ['Felvételi dokumentumok','#/oktatas/felveteli','felveteli'],
+  ['Közösségi szolgálati nyomtatványok','#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok','kozossegi']
  ];
  const officialBox=el('section','csanadi-official-doc-links');
  officialBox.append(el('h3',null,'Hivatalos intézményi dokumentumok'),el('p',null,'A közzétett, hiteles dokumentumok az iskola saját honlapján érhetők el. A linkek a jelenlegi hivatalos gyűjtőoldalakra vezetnek.'));

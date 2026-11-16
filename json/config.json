@@ -143,7 +143,7 @@
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r29n-20261115",
+    "cacheVersion": "csanadi-r-v1.1.0",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,
@@ -152,6 +152,11 @@
     "offlinePrecacheMaxEntries": 220
   },
   "runtime": {
+    "subpageHero": {
+      "intervalMs": 6500,
+      "maxSlides": 3,
+      "enableAutoplay": true
+    },
     "round26": {
       "dataPath": "adatok/megkozelites-fejlodes-26.json",
       "mapRequireConsent": true,
@@ -209,7 +214,7 @@
       "mediaPageSize": 12,
       "parentEventLimit": 4,
       "previewBaseUrl": "https://vdi06.github.io/csanadi-website/",
-      "plannedFtpBaseUrl": "https://csanadi-bp.edu.hu/",
+      "plannedFtpBaseUrl": "https://vdi06.github.io/csanadi-website/",
       "privacyLocalOnly": true,
       "verifyBeforePublishing": true
     },
@@ -304,9 +309,16 @@
     "tools": {
       "visualPreviewMaximumBlocks": 50,
       "imageMaximumFiles": 24,
-      "imageTargetWidths": [480, 960, 1440],
+      "imageTargetWidths": [
+        480,
+        960,
+        1440
+      ],
       "imageQuality": 0.78,
-      "imageFormats": ["image/webp", "image/avif"],
+      "imageFormats": [
+        "image/webp",
+        "image/avif"
+      ],
       "imageMaximumInputBytes": 20971520,
       "relationshipMaximumNodes": 90,
       "releaseMaximumZipBytes": 104857600,

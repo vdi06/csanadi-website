@@ -17,7 +17,7 @@ import {renderPageMedia} from './page-media-2026.js?v=csanadi-r29n-20261115';
 import {useSiteSettings,settingNumber,setting} from './site-settings-2026.js';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=csanadi-r29n-20261115';
 import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=csanadi-r29n-20261115';
-import {registerMedia,createPicture,imageDisclaimer} from './media.js?v=csanadi-r29n-20261115';
+import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=csanadi-r29n-20261115';
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r29n-20261115';
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=csanadi-r29n-20261115';
@@ -28,7 +28,29 @@ import {renderStudentAchievements} from './student-achievements.js?v=csanadi-r29
 import {renderDailySportsNews} from './daily-sport-news.js?v=csanadi-r29n-20261115';
 import {renderDesktopTree} from '../desktop/navigation.js?v=csanadi-r29n-20261115';
 import {renderMobileTree,createMobileMenuSwitcher} from '../mobile/navigation.js?v=csanadi-r29n-20261115';
+import {createSubpageHero} from './subpages-v1.js?v=1.1.0';
 const app=document.getElementById('app');
+let homeHeroElement=null;
+function syncRouteHero(node,kind){
+ const container=document.getElementById('global-hero');if(!container)return;
+ if(kind==='home'){
+  document.body.classList.remove('cs-has-subhero');
+  if(homeHeroElement && container.firstElementChild!==homeHeroElement)container.replaceChildren(homeHeroElement);
+  return;
+ }
+ const candidates=[];
+ for(let item=node;item;item=item.parent){
+  const id=item.page?.schemaExtensions?.bannerMediaId;
+  if(typeof id==='string'&&!candidates.includes(id))candidates.push(id);
+ }
+ if(!candidates.length && node)candidates.push(mediaForRoute(node.page?.schemaExtensions?.route||''));
+ const options=catalog?.config?.runtime?.subpageHero||{};
+ const maxSlides=Math.min(5,Math.max(1,Number(options.maxSlides)||3));
+ const hero=createSubpageHero({title:node?.page?.title||'Csanádi Sportiskola',mediaIds:candidates.slice(0,maxSlides),createPicture,
+  intervalMs:options.intervalMs,enableAutoplay:options.enableAutoplay!==false});
+ document.body.classList.toggle('cs-has-subhero',!!hero);
+ container.replaceChildren(...(hero?[hero]:[]));
+}
 // Az oldal aktuális címére mutató, ismétlődő fejléc-CTA nem hasznos navigáció.
 // A menürendszer és a tartalmi hivatkozások változatlanul megmaradnak.
 function syncHeaderSelfLinks(){
@@ -55,6 +77,7 @@ const searchStatus=document.getElementById('search-status');
 let catalog=null,currentRoute=null,previousSearchFocus=null,lastRawStructure='',refreshTimer=null,smartSearch=null;
 let lastRawPage=null;
 const historyScroll=new Map();
+let navigatingHistory=false;
 const noticeNode=document.getElementById('toast');
 let toastClear=null;
 let revealObserver=null;
@@ -287,7 +310,12 @@ function contentPage(node){
   const banner=dom('section',{class:'page-banner'}),bannerInner=dom('div',{class:'container-xxl'});
   const bannerMedia=createPicture(page.schemaExtensions?.bannerMediaId,{className:'page-banner-media',eager:true,sizes:'100vw'});
   if(bannerMedia){banner.classList.add('has-photo');banner.append(bannerMedia,imageDisclaimer());}
-  bannerInner.append(breadcrumb(node),dom('h1',{},page.title),dom('p',{},page.summary||''));
+  bannerInner.append(breadcrumb(node),dom('h1',{},page.title));
+  if(page.summary?.trim())bannerInner.append(dom('p',{},page.summary));
+  if(page.schemaExtensions?.verifiedContent===false){
+    const note=dom('p',{class:'cs-content-review-notice',role:'note'},'Az oldal egyes intézményi adatai még ellenőrzés alatt állnak. Határidő vagy hivatalos ügyintézés előtt kérjük az aktuális intézményi tájékoztatás megerősítését.');
+    bannerInner.append(note);
+  }
   // Az oldalverziót egységesen a lábléc Honlapdiagnosztika panelje mutatja.
   banner.append(bannerInner);fragment.append(banner);
 
@@ -302,9 +330,9 @@ function contentPage(node){
     if(!block||typeof block!=='object')continue;
     if(block.type==='section'){
       const section=dom('section',{class:'article-section'});
-      if(block.title)section.append(dom('h2',{},block.title));
-      for(const sub of block.children||[]){const el=renderBlock(sub);if(el)section.append(el);}
-      if(section.children.length)article.append(section);
+      let usefulChildren=0;
+      for(const sub of block.children||[]){const el=renderBlock(sub);if(el){section.append(el);usefulChildren++;}}
+      if(usefulChildren){if(block.title)section.prepend(dom('h2',{},block.title));article.append(section);}
     } else {
       const el=renderBlock(block);
       if(el){const section=dom('section',{class:'article-section article-section--module'});section.append(el);article.append(section);}
@@ -440,13 +468,14 @@ function embeddedArrival(route,options){
  app.dataset.pageKind='general';
  const wrapper=dom('section',{class:'cs-arrival-shell container-xxl'});
  const heading=dom('div',{class:'cs-arrival-shell-heading'});
- heading.append(dom('span',{class:'eyebrow'},'CSANÁDI · MEGKÖZELÍTÉS ÉS TANULÁS'),dom('h1',{},'Iskolai megközelítés és tanulástámogatás'),dom('a',{href:'#/',class:'cs-arrival-return'},'← Vissza a kezdőlapra'));
+ heading.append(dom('span',{class:'eyebrow'},'CSANÁDI · MEGKÖZELÍTÉS ÉS TANULÁS'),dom('h1',{},'Iskolai megközelítés és tanulástámogatás'));
  const iframe=dom('iframe',{class:'cs-arrival-frame'});
  iframe.title='Megközelítés és tanulástámogatás – iskolai útmutató';
  iframe.src='megkozelites-es-tanulas.html?embedded=1'+(section?'#'+section:'');
  iframe.loading='eager';
  iframe.setAttribute('referrerpolicy','same-origin');
  wrapper.append(heading,iframe);app.replaceChildren(wrapper);
+ syncRouteHero(null,'general');
  const onMessage=event=>{
    if(event.origin!==location.origin||event.source!==iframe.contentWindow||event.data?.source!=='csanadi-r26-embed')return;
    const height=Number(event.data.height);
@@ -503,6 +532,7 @@ function renderRoute(options={}){
   syncRound29HomeNavigation(kind==='home');
   document.body.classList.toggle('cs-inner-page',kind!=='home');
   app.replaceChildren(node?(node.depth===0?homePage(node):contentPage(node)):errorPage());
+  syncRouteHero(node,kind);
   syncHeaderSelfLinks();
   wireReveal();
   enhanceGallery(app);
@@ -512,7 +542,7 @@ function renderRoute(options={}){
   if(pendingSearchJump && pendingSearchJump.route===route)setTimeout(trySearchJump,settingNumber('runtime.timing.searchJumpDelayMs'));
   const title=node?.page?.title||'Az oldal nem található';document.title=title+' | Csanádi Árpád Sportiskola';
   renderMenu();closeMobile();closeSiteMap(false);
-  const target=options.keepScroll?window.scrollY:(historyScroll.get(route)||0);
+ const target=options.keepScroll?window.scrollY:(options.restoreScroll?(historyScroll.get(route)||0):0);
   if(isNew)requestAnimationFrame(()=>window.scrollTo({top:target,behavior:'instant'}));
   if(options.focus)app.focus({preventScroll:true});
   markRouteRendered(route,{found:!!node});
@@ -623,7 +653,11 @@ function changeTheme(){
   applyTheme();notify('Megjelenés: '+THEME_LABELS[themeMode],{themePreference:themeMode});
 }
 function wireEvents(){
-  window.addEventListener('hashchange',()=>{markNavigationStart(getRoute());renderRoute({focus:true});});
+  window.addEventListener('popstate',()=>{navigatingHistory=true;});
+  window.addEventListener('hashchange',()=>{
+    const restoreScroll=navigatingHistory;navigatingHistory=false;
+    markNavigationStart(getRoute());renderRoute({focus:true,restoreScroll});
+  });
   document.getElementById('orbit-open').addEventListener('click',()=>{if(siteMap.hidden)openSiteMap();else closeSiteMap();});
   window.addEventListener('resize',()=>{if(!siteMap.hidden)requestAnimationFrame(positionCompassSubmenu);});
   document.getElementById('site-map-close').addEventListener('click',()=>closeSiteMap());
@@ -695,7 +729,7 @@ export async function startApp(){
   const homeHero=homeNode?.page?.blocks?.find(b=>b.id==='block:home-hero');
   if(sharedHero&&homeHero){
     const carousel=renderBlock(homeHero);
-    if(carousel)sharedHero.replaceChildren(carousel);
+    if(carousel){homeHeroElement=carousel;sharedHero.replaceChildren(carousel);}
   }
   lastRawStructure=JSON.stringify(catalog.structure);
   if(catalog.items.length===0)throw new Error('Nem található érvényes JSON-oldal.');
