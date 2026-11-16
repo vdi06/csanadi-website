@@ -19,16 +19,16 @@ html[data-theme="dark"]{
  --cs29-action-border:#8499a9;
  --cs29-action-focus:#f1ce81;
 }
-html[data-theme="light"] :is(.cs29-map-button,.cs29-route-card,.cs29-quick-more,.cs29-drawer-top,.cs29-nav-close,.cs29-nav-item,.cs29-nav-trigger){
+html[data-theme="light"] :is(.cs29-map-button,.cs29-route-card,.cs29-quick-more,.cs29-nav-close,.cs29-nav-item,.cs29-nav-trigger){
  background:var(--cs29-action-bg)!important;color:var(--cs29-action-fg)!important;border-color:var(--cs29-action-border)!important;
 }
-html[data-theme="light"] :is(.cs29-map-button,.cs29-route-card,.cs29-quick-more,.cs29-drawer-top,.cs29-nav-close,.cs29-nav-item,.cs29-nav-trigger):is(:hover,:focus-visible){
+html[data-theme="light"] :is(.cs29-map-button,.cs29-route-card,.cs29-quick-more,.cs29-nav-close,.cs29-nav-item,.cs29-nav-trigger):is(:hover,:focus-visible){
  background:var(--cs29-action-hover)!important;color:var(--cs29-action-fg)!important;
 }
-html[data-theme="dark"] :is(.cs29-map-button,.cs29-route-card,.cs29-quick-more,.cs29-drawer-top,.cs29-nav-close,.cs29-nav-item,.cs29-nav-trigger){
+html[data-theme="dark"] :is(.cs29-map-button,.cs29-route-card,.cs29-quick-more,.cs29-nav-close,.cs29-nav-item,.cs29-nav-trigger){
  background:var(--cs29-action-bg)!important;color:var(--cs29-action-fg)!important;border-color:var(--cs29-action-border)!important;
 }
-html[data-theme="dark"] :is(.cs29-map-button,.cs29-route-card,.cs29-quick-more,.cs29-drawer-top,.cs29-nav-close,.cs29-nav-item,.cs29-nav-trigger):is(:hover,:focus-visible){
+html[data-theme="dark"] :is(.cs29-map-button,.cs29-route-card,.cs29-quick-more,.cs29-nav-close,.cs29-nav-item,.cs29-nav-trigger):is(:hover,:focus-visible){
  background:var(--cs29-action-hover)!important;
 }
 html[data-theme="light"] :is(.cs29-approach,.cs29-nav-drawer,.cs29-map-preview,.cs29-route-card){

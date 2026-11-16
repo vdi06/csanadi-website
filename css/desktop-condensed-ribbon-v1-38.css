@@ -1,0 +1,26 @@
+/* Átlátható, nem eltűnő asztali aloldali menüszalag. */
+@media (min-width:769px){
+ body.cs-inner-page #site-header .cs-subpage-ribbon-title{
+  position:absolute;left:clamp(15px,3vw,42px);top:50%;transform:translateY(-50%);
+  max-width:min(34vw,410px);font-size:clamp(12px,1.15vw,15px);line-height:1.2;
+  color:var(--ink);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  opacity:0;visibility:hidden;transition:opacity .16s ease;
+ }
+ body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-ribbon-title{opacity:1;visibility:visible}
+ body.cs-inner-page #site-header .cs-subpage-reading-progress{
+  position:absolute;left:0;right:0;bottom:0;height:3px;overflow:hidden;pointer-events:none;
+  background:color-mix(in srgb,var(--gold) 16%,transparent);display:none;
+ }
+ body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-reading-progress{display:block}
+ body.cs-inner-page #site-header .cs-subpage-reading-progress>span{
+  display:block;height:100%;width:0;background:linear-gradient(90deg,#a57a31,#e6c477);
+  box-shadow:0 0 7px #d3aa58aa;
+ }
+ body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-menu{box-shadow:0 4px 14px #091e3738!important}
+}
+@media (max-width:768px){
+ .cs-subpage-ribbon-title,.cs-subpage-reading-progress{display:none!important}
+}
+@media (prefers-reduced-motion:reduce){
+ .cs-subpage-ribbon-title{transition:none!important}
+}

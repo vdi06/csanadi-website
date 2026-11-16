@@ -82,6 +82,34 @@
           }
         }
       ]
+    },
+    {
+      "id": "block:000029-section-1",
+      "type": "section",
+      "title": "Miben segíthet a könyvtár?",
+      "children": [
+        {
+          "id": "block:000029-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A könyvtári szolgáltatások a tanulást, az olvasást, az információkeresést és az önálló kutatómunkát támogathatják. A kölcsönzési feltételeket és az elérhető állományt a helyi könyvtári szabályzat rögzíti."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000029-section-2",
+      "type": "section",
+      "title": "Kölcsönzés és tájékozódás",
+      "children": [
+        {
+          "id": "block:000029-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A nyitvatartásra, beiratkozásra, könyvkölcsönzésre és tanulói hozzáférésre vonatkozó aktuális feltételek intézményi ellenőrzés után jeleníthetők meg.\n\n[Könyvtár](#/oktatas/konyvtar) · [Tananyagok és jegyzetek](#/oktatas/tananyagok-es-jegyzetek)"
+          }
+        }
+      ]
     }
   ],
   "related": [],

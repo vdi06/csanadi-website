@@ -19,9 +19,6 @@ export function renderDesktopTree(container,roots,{dom,navLink,titleOf,hrefOf,pa
   for(const child of children){
    const column=dom('div',{class:'nav-mega-column'});
    const link=navLink(child);link.className='nav-mega-heading';column.append(link);
-   for(const third of pageChildren(child)){
-    const a=navLink(third);a.className='nav-mega-sublink';column.append(a);
-   }
    columns.append(column);
   }
   if(children.length)pane.append(columns);

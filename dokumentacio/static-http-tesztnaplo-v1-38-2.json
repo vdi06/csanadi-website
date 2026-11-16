@@ -1,0 +1,12 @@
+{
+  "version": "1.38.2",
+  "testedAt": "2026-11-16T19:54:11.172Z",
+  "mode": "Önálló helyi HTTP statikus fájlkiszolgáló, HEAD+GET",
+  "registeredPages": 65,
+  "assets": 628,
+  "sourceFiles": 1195,
+  "passed": 1201,
+  "failed": 0,
+  "failures": [],
+  "methodDetail": "A v1.38.1 teljes statikus HTTP-tesztje, v1.38.2-es fájlkészleten (az új helyi SVG/CSS-animációval együtt)."
+}

@@ -15,7 +15,32 @@ const localSave=(key,items,status)=>{try{localStorage.setItem(key,JSON.stringify
 const uniq=xs=>[...new Set(xs)].filter(Boolean).sort((a,b)=>String(a).localeCompare(String(b),'hu'));
 let data,settings;
 
-function theme(){const modes=['system','light','dark'],labels={system:'Automatikus',light:'Világos',dark:'Sötét'};let selected='system';try{selected=localStorage.getItem('csanadi-theme')||'system';}catch{}if(!modes.includes(selected))selected='system';const apply=()=>{document.documentElement.dataset.theme=selected==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):selected;$('r26-theme').textContent='◐ '+labels[selected];};$('r26-theme').addEventListener('click',()=>{selected=modes[(modes.indexOf(selected)+1)%3];try{localStorage.setItem('csanadi-theme',selected);}catch{}apply();});try{matchMedia('(prefers-color-scheme:dark)').addEventListener('change',()=>{if(selected==='system')apply();});}catch{}apply();}
+function theme(){
+ const modes=['system','light','dark'],labels={system:'Automatikus',light:'Világos',dark:'Sötét'};
+ const query=matchMedia('(prefers-color-scheme: dark)');
+ const read=(fallback='system')=>{try{const mode=localStorage.getItem('csanadi-theme');return modes.includes(mode)?mode:'system';}catch{try{const parentMode=parent?.document?.documentElement?.dataset?.themePreference;return modes.includes(parentMode)?parentMode:fallback;}catch{return fallback;}}};
+ let selected=read();
+ const apply=()=>{
+  const actual=selected==='system'?(query.matches?'dark':'light'):selected;
+  document.documentElement.dataset.theme=actual;
+  document.documentElement.setAttribute('data-bs-theme',actual);
+  document.documentElement.dataset.themePreference=selected;
+  const themeColor=document.querySelector?.('meta[name="theme-color"]');if(themeColor)themeColor.content=actual==='dark'?'#0d1b2d':'#fffaf0';
+  $('r26-theme').textContent='◐ '+labels[selected];
+  $('r26-theme').setAttribute('aria-label','Megjelenés: '+labels[selected]);
+ };
+ $('r26-theme').addEventListener('click',()=>{selected=modes[(modes.indexOf(selected)+1)%3];try{localStorage.setItem('csanadi-theme',selected);}catch{}apply();try{if(parent!==window)parent.postMessage({source:'csanadi-theme-select',preference:selected},location.origin);}catch{}});
+ const systemChanged=()=>{if(selected==='system')apply();};
+ if(query.addEventListener)query.addEventListener('change',systemChanged);
+ else query.addListener?.(systemChanged);
+ addEventListener('storage',event=>{if(event.key==='csanadi-theme'||event.key===null){selected=read();apply();}});
+ addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==parent||event.data?.source!=='csanadi-theme-sync')return;if(!modes.includes(event.data.preference))return;selected=event.data.preference;apply();});
+ const restore=()=>{selected=read(selected);apply();};
+ addEventListener('pageshow',restore);
+ addEventListener('focus',restore);
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)restore();});
+ apply();
+}
 
 function mapAndArrival(){const s=data.school; $('r26-school-address').textContent=s.address;const map=$('r26-map-frame'),pre=$('r26-map-consent');const pos=s.mapLatApprox,lon=s.mapLonApprox;
   $('r26-map-load').addEventListener('click',()=>{if(map.children.length)return;const iframe=document.createElement('iframe');iframe.title='OpenStreetMap – Csanádi Sportiskola hozzávetőleges helye';iframe.loading='lazy';iframe.referrerPolicy='no-referrer';iframe.allowFullscreen=false;const margin=.006;const bbox=[lon-margin,pos-margin*.65,lon+margin,pos+margin*.65].map(x=>x.toFixed(6)).join(',');iframe.src=`https://www.openstreetmap.org/export/embed.html?bbox=${encodeURIComponent(bbox)}&layer=mapnik&marker=${encodeURIComponent(pos+','+lon)}`;map.append(iframe);map.hidden=false;pre.hidden=true;const close=make('button','Térkép elrejtése','r26-map-close');close.type='button';close.addEventListener('click',()=>{map.replaceChildren();map.hidden=true;pre.hidden=false;});map.append(close);});

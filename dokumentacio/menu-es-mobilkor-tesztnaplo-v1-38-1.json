@@ -1,0 +1,154 @@
+{
+  "version": "1.38.1",
+  "testedAt": "2026-11-16T19:53:34.307Z",
+  "method": "Fájlrendszer, JavaScript-szintaxis, adatséma, tartalmi hivatkozások, körmenüállapotok és célzott CSS/DOM ütközésvizsgálat",
+  "results": [
+    {
+      "label": "01 · Pontosan 6 főmenü és 28 látható almenü",
+      "status": "OK"
+    },
+    {
+      "label": "02 · Főmenük neve és sorrendje pontos",
+      "status": "OK"
+    },
+    {
+      "label": "03 · A menüben nincs harmadik szint",
+      "status": "OK"
+    },
+    {
+      "label": "04 · A teljes 1.37-es 65 oldalfájl regisztrációja megmaradt",
+      "status": "OK"
+    },
+    {
+      "label": "05 · A korábbi harmadik szint mind a 27 oldala elérhető",
+      "status": "OK"
+    },
+    {
+      "label": "06 · A régi 27 harmadik szintű oldal közül 22 tartalmi, 5 közvetlen almenü lett",
+      "status": "OK"
+    },
+    {
+      "label": "07 · Valamennyi JSON-oldalfájl valóban létezik",
+      "status": "OK"
+    },
+    {
+      "label": "08 · Nem ismétlődik oldalfájl, oldalazonosító vagy útvonal",
+      "status": "OK"
+    },
+    {
+      "label": "09 · Minden indexelt oldal szabályos és közzétett",
+      "status": "OK"
+    },
+    {
+      "label": "10 · Felvételi áttekintés főmenüként megmaradt régi URL-en",
+      "status": "OK"
+    },
+    {
+      "label": "11 · Sportolók, Csapatok és Edzők tartalmi oldalak, nem menük",
+      "status": "OK"
+    },
+    {
+      "label": "12 · A lábléc három céloldala nem jelenik meg menüpontként",
+      "status": "OK"
+    },
+    {
+      "label": "13 · Könyvtári szolgáltatások minden blokkja átkerült a Könyvtár oldalra",
+      "status": "OK"
+    },
+    {
+      "label": "14 · Az elrejtett részletes oldalak tartalmi csempéken jelennek meg",
+      "status": "OK"
+    },
+    {
+      "label": "15 · A kereső és a route-katalógus nem dobja el a rejtett oldalt",
+      "status": "OK"
+    },
+    {
+      "label": "16 · Az asztali megamenü nem hoz létre harmadik szintet",
+      "status": "OK"
+    },
+    {
+      "label": "17 · A mobil menü a második szintnél megáll",
+      "status": "OK"
+    },
+    {
+      "label": "18 · Telefonos módválasztó DOM-elemek törölve",
+      "status": "OK"
+    },
+    {
+      "label": "19 · A telefonos gyűrű kizárólag telefonos médiakérdésben jelenik meg",
+      "status": "OK"
+    },
+    {
+      "label": "20 · Középső iskolai címer és akadálymentes visszalépés",
+      "status": "OK"
+    },
+    {
+      "label": "21 · A körmenüben mind a hat ikon 360 fokon helyezkedik el",
+      "status": "OK"
+    },
+    {
+      "label": "22 · 320px kijelzőn a 66px célpontok geometriája nem ütközik",
+      "status": "OK"
+    },
+    {
+      "label": "23 · Asztali aloldalon megmarad a középre igazított körmenünyitó",
+      "status": "OK"
+    },
+    {
+      "label": "24 · Kompakt asztali szalag oldalnévvel és görgetési jelzéssel",
+      "status": "OK"
+    },
+    {
+      "label": "25 · A kompakt oldalcím nem takarja a középen lévő címert",
+      "status": "OK"
+    },
+    {
+      "label": "26 · Az új fájlokat a dokumentum és modulszerkezet tényleg betölti",
+      "status": "OK"
+    },
+    {
+      "label": "27 · Bootstrap külső, verzióhoz kötött CDN; nincs új backend",
+      "status": "OK"
+    },
+    {
+      "label": "28 · JSON-szintaxis és az összes JavaScript-fájl szintaktikailag érvényes",
+      "status": "OK"
+    },
+    {
+      "label": "29 · Telefonos körmenü állapotgép: fő kör → négy almenü → vissza → bezárásra kész",
+      "status": "OK"
+    },
+    {
+      "label": "30 · A telefonos körmenügombok kivételek az általános lekerekítési szabályból",
+      "status": "OK"
+    },
+    {
+      "label": "31 · A középső címer letiltott állapotban sem veszti el a körpozícióját",
+      "status": "OK"
+    },
+    {
+      "label": "32 · Csökkentett mozgáskor a gombok helyben maradnak",
+      "status": "OK"
+    },
+    {
+      "label": "33 · Közepes asztali szélességnél az almenü nem lebeg a főmenü felett",
+      "status": "OK"
+    },
+    {
+      "label": "34 · A kör sugara és magassága nem ütközik az alatta megjelenő panellel",
+      "status": "OK"
+    },
+    {
+      "label": "35 · Az almenük nyíljele általánosan támogatott karakter",
+      "status": "OK"
+    }
+  ],
+  "browser": {
+    "status": "PENDING",
+    "reason": "Az automatizált forráskódteszt önmagában nem helyettesíti az asztali, telefonos és segédtechnológiás böngészőpróbát."
+  },
+  "passed": 35,
+  "failed": 0,
+  "total": 35
+}

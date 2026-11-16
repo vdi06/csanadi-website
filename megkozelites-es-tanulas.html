@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="hu" data-theme="light">
+<html lang="hu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0d1b2d">
   <meta name="robots" content="noindex,nofollow">
   <meta name="description" content="A Csanádi Sportiskola megközelítése és tanulástámogatási eszközei – térkép, felvételi tervező, tanulási célok és kapcsolattartás.">
   <title>Iskolai megközelítés és tanulástámogatás – Csanádi Sportiskola</title>
@@ -11,7 +12,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
   <link rel="stylesheet" href="css/arrival-reimagined.css?v=1.2.0">
   <link rel="stylesheet" href="css/unified-actions-v1.css?v=1.2.0">
-  <link rel="stylesheet" href="css/quality-polish-v1.css?v=1.18.0">
+  <link rel="stylesheet" href="css/quality-polish-v1.css?v=1.37.0">
   <script>
     (()=>{
       const params=new URLSearchParams(location.search);
@@ -22,7 +23,11 @@
         const resolved=mode==='system'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):mode;
         document.documentElement.dataset.theme=resolved;
         document.documentElement.setAttribute('data-bs-theme',resolved);
-      }catch{document.documentElement.dataset.theme='light';}
+      }catch{
+        let preferred='system';try{const mode=parent?.document?.documentElement?.dataset?.themePreference;if(['system','light','dark'].includes(mode))preferred=mode;}catch{}
+        const fallback=preferred==='system'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):preferred;
+        document.documentElement.dataset.theme=fallback;document.documentElement.setAttribute('data-bs-theme',fallback);
+      }
     })();
   </script>
 </head>
@@ -105,18 +110,32 @@
   <script>
     (()=>{
       if(document.documentElement.dataset.embedded!=='true')return;
+      let lastPayload='',sequence=0;
       const send=()=>{
         const section=location.hash.slice(1),target=section&&document.getElementById(section);
-        parent.postMessage({source:'csanadi-r26-embed',height:Math.ceil(document.documentElement.scrollHeight)+12,section,offset:target?Math.round(target.getBoundingClientRect().top+scrollY):0},location.origin);
+        const sections=[...document.querySelectorAll('#arrival-main .arrival2-section[id]')].filter(element=>element.getClientRects().length).map(element=>({
+          id:element.id,label:element.querySelector('.arrival2-section-head h2')?.textContent?.trim()||element.id,
+          offset:Math.round(element.getBoundingClientRect().top+scrollY)
+        }));
+        const payload={source:'csanadi-r26-embed',height:Math.ceil(document.documentElement.scrollHeight)+12,section,offset:target?Math.round(target.getBoundingClientRect().top+scrollY):0,sections};
+        const signature=JSON.stringify(payload);
+        if(signature!==lastPayload){lastPayload=signature;payload.sequence=++sequence;parent.postMessage(payload,location.origin);}
       };
-      addEventListener('load',send);addEventListener('hashchange',send);
-      if('ResizeObserver' in window)new ResizeObserver(send).observe(document.body);
-      addEventListener('storage',event=>{if(event.key==='csanadi-theme'){
-        const mode=event.newValue||'system',value=mode==='system'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):mode;
-        document.documentElement.dataset.theme=value;document.documentElement.setAttribute('data-bs-theme',value);
-      }});
+      let queued=false;
+      const schedule=()=>{if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;send();});};
+      addEventListener('load',schedule);addEventListener('hashchange',schedule);
+      if('ResizeObserver' in window){
+        const observer=new ResizeObserver(schedule);
+        observer.observe(document.body);
+        observer.observe(document.documentElement);
+      }
+      addEventListener('orientationchange',schedule);
+      visualViewport?.addEventListener?.('resize',schedule);
+      addEventListener('pageshow',schedule);
+      document.fonts?.ready?.then(schedule).catch(()=>{});
+      // A témát az aloldal közös round26 témavezérlője kezeli; ne írjuk felül párhuzamosan.
     })();
   </script>
-  <script type="module" src="js/round26-arrival.js?v=1.18.0"></script>
+  <script type="module" src="js/round26-arrival.js?v=1.37.0"></script>
 </body>
 </html>

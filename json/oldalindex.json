@@ -68,7 +68,7 @@
     "oldalak/informaciok.json": {
       "id": "page:000047",
       "title": "Iskolai információk",
-      "menuLabel": "Tudnivalók",
+      "menuLabel": "Információk",
       "summary": "Csengetési rend, dokumentumok, közösségi szolgálat és ügyintézés.",
       "tags": [],
       "categories": [
@@ -110,7 +110,7 @@
     "oldalak/hirek-es-esemenyek.json": {
       "id": "page:000038",
       "title": "Hírek és események",
-      "menuLabel": "Hírek, programok",
+      "menuLabel": "Hírek és események",
       "summary": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum.",
       "tags": [],
       "categories": [
@@ -131,7 +131,7 @@
     "oldalak/oktatas.json": {
       "id": "page:000011",
       "title": "Oktatás és felvételi",
-      "menuLabel": "Oktatás, felvételi",
+      "menuLabel": "Oktatás",
       "summary": "Képzési utak, felvételi, vizsgák, tanévi tudnivalók és tanulási segédletek.",
       "tags": [],
       "categories": [
@@ -299,7 +299,7 @@
     "oldalak/informaciok/mindennapi-tudnivalok.json": {
       "id": "page:000048",
       "title": "Mindennapi tudnivalók",
-      "menuLabel": "Napi tudnivalók",
+      "menuLabel": "Mindennapi tudnivalók",
       "summary": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez.",
       "tags": [],
       "categories": [
@@ -446,7 +446,7 @@
     "oldalak/oktatas/tananyagok-es-jegyzetek.json": {
       "id": "page:000030",
       "title": "Digitális tananyagközpont",
-      "menuLabel": "Tananyagok",
+      "menuLabel": "Tananyagok és segédletek",
       "summary": "Önálló tanulás, digitális fájlkezelés és felkészülési módszerek.",
       "tags": [],
       "categories": [
@@ -493,7 +493,7 @@
     "oldalak/iskolank/partnerek.json": {
       "id": "page:000010",
       "title": "Partnereink",
-      "menuLabel": "Partnereink",
+      "menuLabel": "Partnereink és alapítványunk",
       "summary": "Az iskola együttműködéseinek és lehetséges kapcsolódási területeinek áttekintése.",
       "tags": [],
       "categories": [
@@ -535,7 +535,7 @@
     "oldalak/iskolank/kuldetes-es-ertekek.json": {
       "id": "page:000004",
       "title": "Küldetésünk és értékeink",
-      "menuLabel": "Céljaink",
+      "menuLabel": "Céljaink és értékeink",
       "summary": "Az iskola küldetése a tanulás és a sport összehangolása, az egyéni fejlődés és a közösségi felelősség támogatása.",
       "tags": [],
       "categories": [
@@ -577,7 +577,7 @@
     "oldalak/iskolank/tortenet.json": {
       "id": "page:000005",
       "title": "Iskolánk története",
-      "menuLabel": "Iskolatörténet",
+      "menuLabel": "Történetünk és büszkeségeink",
       "summary": "A törökőri iskola története a sportiskolai hagyományokig.",
       "tags": [],
       "categories": [
@@ -903,7 +903,7 @@
     "oldalak/oktatas/felveteli/kilencedik-evfolyam.json": {
       "id": "page:000018",
       "title": "Kilencedik évfolyamos felvételi",
-      "menuLabel": "9. osztályos felvételi",
+      "menuLabel": "9. évfolyamos felvételi",
       "summary": "Középiskola-választás, jelentkezés, tájékoztatók és kapcsolódó dokumentumok.",
       "tags": [],
       "categories": [

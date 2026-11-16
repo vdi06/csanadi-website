@@ -15,7 +15,7 @@ function walk(dir){
  }
 }
 walk(root);
-const manifest={schemaVersion:'1.0.0',release:'csanadi-website-v1.18.0',date:'2026-11-16',ftpCompatible:true,
- bootstrap:'CDN bootstrap@5.3.9',notes:'v1.13–1.15: meglévő navigáció, keresés, galéria és média-infrastruktúra javítása. v1.16: a meglévő mobil szakaszmenü az aloldalakon is működik. v1.17: dinamikus meglévő modulok, tartalomhossz szerinti láthatóság és átméretezés. v1.18: akadálymentes fókuszkezelés, célzott tesztek és FTP-ellenőrzés. Nem került be új szolgáltatás vagy szerveroldali függőség.',files};
+const manifest={schemaVersion:'1.0.0',release:'csanadi-website-v1.38.2',date:'2026-11-16',ftpCompatible:true,
+ bootstrap:'CDN bootstrap@5.3.9',notes:'A v1.38.1 teljes tartalma megmaradt; asztali aloldali fejlécben JSON-útvonalhoz illő, vicces sportmozdulatot ábrázoló, helyi SVG/CSS animáció, szüneteltetéssel és csökkentett mozgási móddal; görgetésre ugyanott az oldalcím. Telefonos körmenü és statikus FTP-kompatibilitás változatlan.',files};
 fs.writeFileSync(path.join(root,'release-manifest.json'),JSON.stringify(manifest,null,2)+'\n');
 console.log(JSON.stringify({files:Object.keys(files).length,release:manifest.release}));

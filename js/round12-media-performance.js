@@ -9,11 +9,12 @@
    watched.add(node);
    if(node.localName==='img'){
     if(!node.hasAttribute('decoding'))node.decoding='async';
-    const firstScreen=!!node.closest('.brand,.csn26-visual-map .csn26-wing-surface,.compass26-emblem,.gate26');
+    const firstScreen=!!node.closest('.brand,.site-header,.global-hero,.subpage-hero,.page-hero,.csn26-visual-map .csn26-wing-surface,.compass26-emblem,.gate26');
     if(!firstScreen&&!node.hasAttribute('loading'))node.loading='lazy';
     if(firstScreen&&node.closest('.csn26-visual-map')&&!node.hasAttribute('fetchpriority'))node.fetchPriority='high';
+    if(!firstScreen&&!node.hasAttribute('fetchpriority'))node.fetchPriority='low';
    }else{
-    if(!node.hasAttribute('preload'))node.preload='metadata';
+    if(!node.hasAttribute('preload'))node.preload=node.autoplay?'metadata':'none';
     if(!node.hasAttribute('playsinline'))node.playsInline=true;
    }
   }

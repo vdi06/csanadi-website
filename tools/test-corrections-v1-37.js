@@ -1,0 +1,271 @@
+'use strict';
+// A–J célzott javítások: regressziós és hibásbemeneti vizsgálatok.
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const vm=require('node:vm');
+const path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const read=name=>fs.readFileSync(path.join(root,name),'utf8');
+const app=read('js/app.js'),nav=read('mobile/navigation.js'),sections=read('js/round29-home.js');
+const search=read('js/search-j-2026.js'),docs=read('js/documents.js');
+const gallery=read('js/media-gallery-h-2026.js'),diag=read('js/performance-diagnostics-2026.js');
+const results=[];
+function check(name,fn){try{fn();results.push({name,ok:true});}catch(error){results.push({name,ok:false,error:error.message});}}
+check('A: azonos útvonal újrarajzolásakor a megnyitott menüág megmarad',()=>{
+ assert.ok(nav.includes("const previousRoute=container.getAttribute('data-cs-navigation-route')"));
+ assert.ok(nav.includes("expanded.get(group.getAttribute('data-nav-key'))===true"));
+ assert.ok(nav.includes("expanded.get(nested.getAttribute('data-nav-key'))===true"));
+});
+check('B: tárolóhibánál a már választott kézi téma nem vész el',()=>{
+ const code=app.slice(app.indexOf('function storedTheme('),app.indexOf('let themeMode=storedTheme();'));
+ const context=vm.createContext({localStorage:{getItem(){throw new Error('blocked')}},THEME_MODES:['system','light','dark']});
+ vm.runInContext(code,context);assert.equal(vm.runInContext("storedTheme('dark')",context),'dark');
+});
+check('C: a beágyazott üzenet forrása, útvonala és adatalakja ellenőrzött',()=>{
+ assert.ok(app.includes('event.source!==iframe.contentWindow'));
+ assert.ok(app.includes('Array.isArray(event.data)'));
+ assert.ok(app.includes('event.data.offset<200000'));
+});
+check('D: az oldal végén túlra mutató szakaszugrás korlátozott',()=>{
+ const code=sections.slice(sections.indexOf('function sectionHeaderOffset'),sections.indexOf('function getCards'));
+ const calls=[];
+ const context=vm.createContext({window:{innerHeight:800,scrollY:1000,scrollTo:o=>calls.push(o),visualViewport:{offsetTop:0}},document:{getElementById:()=>null,scrollingElement:{scrollHeight:1400}},motion:()=> 'instant'});
+ vm.runInContext(code,context);
+ vm.runInContext("scrollToSection({isConnected:true,getClientRects:()=>[1],getBoundingClientRect:()=>({top:800})})",context);
+ assert.equal(calls[0].top,600);
+});
+check('E: rejtett panelre nem áll vissza billentyűzetfókusz',()=>{
+ assert.ok(sections.includes('mobileLastFocus.getClientRects?.().length'));
+ assert.ok(sections.includes("focus({preventScroll:true})"));
+ assert.ok(sections.includes("aria-labelledby','cs32-mobile-sheet-title"));
+});
+check('F: keresés útvonalanként csak memóriában, visszaállítható',()=>{
+ assert.ok(app.includes('const searchRouteStates=new Map()'));
+ assert.ok(app.includes('searchRouteStates.set(searchOpenRoute||getRoute(),smartSearch.snapshot())'));
+ assert.ok(app.includes('smartSearch?.restore(saved)'));
+ assert.ok(search.includes('snapshot(){return {query,type,section,max};}'));
+});
+check('F: hibás visszaállított szűrés nem jut a felületre',()=>{
+ assert.ok(search.includes("Object.hasOwn(TYPES,state?.type)?state.type:'all'"));
+ assert.ok(search.includes("Object.hasOwn(SECTIONS,state?.section)?state.section:'all'"));
+ assert.ok(search.includes('Math.min(maxResults,Math.max(pageSize,state.max))'));
+});
+check('G: verziószámok összehasonlítása számszerű, nem karakterenkénti',()=>{
+ const code=docs.slice(docs.indexOf('const compareSemver='),docs.indexOf('function validateDocument(',docs.indexOf('const compareSemver=')));
+ const c=vm.createContext({});vm.runInContext(code,c);
+ assert.equal(vm.runInContext("compareSemver('3.10.0','3.9.0')>0",c),true);
+ assert.equal(vm.runInContext("compareSemver('2.0.0','2.0.0')",c),0);
+});
+check('G: dokumentumverzió és dátum szigorúan növekvő',()=>{
+ assert.ok(docs.includes('compareSemver(earlier.version,later.version)>=0'));
+ assert.ok(docs.includes('earlier.date>later.date'));
+ assert.ok(docs.includes("iframe.removeAttribute('src')"));
+});
+check('H: lassú adatkapcsolat és adatforgalom-kímélés esetén nincs képelőtöltés',()=>{
+ assert.ok(gallery.includes('conn.downlink<1.5'));
+ assert.ok(gallery.includes('conn.rtt>650'));
+ assert.ok(gallery.includes('!navigator.connection?.saveData'));
+ assert.ok(gallery.includes('if(prefetched.get(upcoming.src)===preload)prefetched.delete'));
+});
+check('I: azonos című szakaszok több bekezdésével különülnek el',()=>{
+ assert.ok(sections.includes("slice(0,4).map(node=>node.textContent)"));
+ assert.ok(app.includes("slice(0,3).map(node=>node.textContent)"));
+ assert.ok(sections.includes('textHash:shortHash(distinguishingText)'));
+});
+check('J: részleges és rossz manifest adatalak ellenőrzése',()=>{
+ assert.ok(diag.includes("!manifest.files||typeof manifest.files!=='object'"));
+ assert.ok(diag.includes('entries.length<4||entries.length>10000'));
+ assert.ok(diag.includes("!meta||typeof meta!=='object'"));
+ assert.ok(diag.includes('if(run===bundleRun)bundleStats='));
+});
+check('A2: képernyőméret-váltásnál a rejtett mobil menüből kikerül a fókusz',()=>{
+ assert.ok(nav.includes("list.contains?.(document.activeElement)"));
+ assert.ok(nav.includes("orbitFocus()?.focus?.({preventScroll:true})"));
+});
+check('B2: beágyazott megközelítés kétirányú témaszinkronja eredetellenőrzött',()=>{
+ assert.ok(app.includes("source:'csanadi-theme-sync',preference:themeMode"));
+ assert.ok(app.includes("event.data?.source!=='csanadi-theme-select'"));
+ assert.ok(read('js/round26-arrival.js').includes("event.source!==parent"));
+});
+check('C2: elavult vagy hibás frame-válasz sorszám alapján elutasítható',()=>{
+ assert.ok(app.includes('event.data.sequence<=lastMessageSequence'));
+ assert.ok(app.includes('Number.isSafeInteger(event.data.sequence)'));
+ assert.ok(read('megkozelites-es-tanulas.html').includes('payload.sequence=++sequence'));
+});
+check('D2: CSS scroll-margin figyelembevétele a szakaszugrásnál',()=>{
+ assert.ok(sections.includes('window.getComputedStyle?.(target)?.scrollMarginTop'));
+});
+check('E2: dokumentum előnézet fókusza csak látható célra kerül vissza',()=>{
+ assert.ok(docs.includes('openingTrigger?.isConnected&&openingTrigger.getClientRects?.().length'));
+});
+check('F2: navigációkor a keresést a korábbi útvonalhoz rögzíti',()=>{
+ assert.ok(app.includes('searchOpenRoute=getRoute()'));
+ assert.ok(app.includes('searchRouteStates.set(searchOpenRoute||getRoute(),smartSearch.snapshot())'));
+});
+check('G2: lezárt PDF-előnézet megszünteti az iframe-kérést',()=>{
+ assert.ok(docs.includes("dialog.addEventListener('close',()=>iframe.removeAttribute('src')"));
+});
+check('H2: késői képbetöltési callback nem töröl másik kérést',()=>{
+ assert.ok(gallery.includes('if(prefetched.get(upcoming.src)===preload)dropPrefetched'));
+ assert.ok(gallery.includes('pending.onload=null'));
+});
+check('I2: élő JSON-csere nem mozgat, ha közben a felhasználó görgetett',()=>{
+ assert.ok(app.includes('Math.abs(window.scrollY-beforeY)>40'));
+ assert.ok(app.includes('currentRoute!==route||!after.isConnected'));
+});
+check('J2: manifest fájlnevek és teljes méret szigorú ellenőrzése',()=>{
+ assert.ok(diag.includes("file.includes('\\\\')"));
+ assert.ok(diag.includes('Number.isSafeInteger(total)'));
+});
+check('A3: régebbi Safari nézetváltási listener is kezelt',()=>{
+ assert.ok(nav.includes("viewport.addEventListener('change',viewportChanged)"));
+ assert.ok(nav.includes('viewport.addListener?.(viewportChanged)'));
+});
+check('B3: témamód visszaellenőrzése fókusz-visszatéréskor is megvan',()=>{
+ assert.ok(app.includes("window.addEventListener('focus',recheckTheme)"));
+ assert.ok(app.includes('storedTheme(themeMode)'));
+});
+check('C3: nem numerikus térképmagasságot és túl nagy szakaszlistát elutasít',()=>{
+ assert.ok(app.includes("typeof height!=='number'||!Number.isFinite(height)"));
+ assert.ok(app.includes('event.data.sections.length<=128'));
+});
+check('D3: negatív CSS-szakaszeltolásra sem görget rossz helyre',()=>{
+ assert.ok(sections.includes('const margin=Math.max(0,Number.parseFloat('));
+});
+check('E3: szakaszmenü bezárásának fókusza csak megjelenő célra kerül',()=>{
+ assert.ok(sections.includes('lastFocus.getClientRects?.().length'));
+ assert.ok(sections.includes('lastFocus.focus({preventScroll:true})'));
+});
+check('F3: kereső bezárása nem fókuszál rejtett vagy levált elemre',()=>{
+ assert.ok(app.includes('previousSearchFocus.getClientRects?.().length'));
+});
+check('G3: dokumentum-MIME ellenőrzés minden ismert kiterjesztésre teljes',()=>{
+ assert.ok(docs.includes("expectedMime={pdf:'application/pdf'"));
+ assert.ok(docs.includes('!Object.hasOwn(expectedMime,ext)||expectedMime[ext]!==d.mimeType'));
+});
+check('H3: 3G hálózaton is kíméli a galéria az előtöltést',()=>{
+ assert.ok(gallery.includes('/^(slow-2g|2g|3g)$/'));
+});
+check('I3: azonos címszakasz visszaállítása stabil azonosítóval kezdődik',()=>{
+ assert.ok(app.includes("id:heading.id||''"));
+ assert.ok(app.includes('same.find(heading=>heading.id===reading.id)'));
+});
+check('J3: érvénytelen verzió és túlméretes manifest kiszűrése',()=>{
+ assert.ok(diag.includes("!/^[a-z0-9-]+-v\\d+\\.\\d+\\.\\d+$/.test(manifest.release||'')"));
+ assert.ok(diag.includes('total>100000000000'));
+});
+check('A4: megamenü megnyitása lezárja az esetleges mobil fejléclistát',()=>{
+ assert.ok(app.includes('const cameFromMobile=mobile.contains(openingFocus);\n closeMobile();'));
+ assert.ok(app.includes('if(window.innerWidth>768&&!mobile.hidden){const focusWasMobile='));
+});
+check('B4: törölt tématárolónál a rendszerbeállítás tér vissza',()=>{
+ const code=app.slice(app.indexOf('function storedTheme('),app.indexOf('let themeMode=storedTheme();'));
+ const context=vm.createContext({localStorage:{getItem:()=>null},THEME_MODES:['system','light','dark']});
+ vm.runInContext(code,context);assert.equal(vm.runInContext("storedTheme('dark')",context),'system');
+});
+check('C4: érvénytelen magasság nem fogyasztja el a frame üzenetsorszámát',()=>{
+ assert.ok(app.indexOf("if(typeof height!=='number'")<app.indexOf('event.data.sequence<=lastMessageSequence'));
+});
+check('D4: a szakaszugrás méretezése a mobil vizuális nézetmagasságát követi',()=>{
+ assert.ok(sections.includes('const visualHeight=window.visualViewport?.height'));
+ assert.ok(sections.includes('Number.isFinite(visualHeight)&&visualHeight>0'));
+});
+check('E4: a mobil szakaszpanel fókusza látható menügombra áll vissza',()=>{
+ assert.ok(sections.includes('const fallback=mobileBar.querySelector'));
+ assert.ok(sections.includes('!mobileBar.hidden&&fallback?.getClientRects?.().length'));
+});
+check('F4: lapváltás alatt a kereső nem viszi vissza a fókuszt',()=>{
+ assert.ok(app.includes('function closeSearch(restoreFocus=true)'));
+ assert.ok(app.includes('if(!dialog.hidden)closeSearch(false)'));
+});
+check('G4: előnézet nyitó fókuszcélja dialógusonként külön rögzített',()=>{
+ assert.ok(docs.includes('const openingTrigger=lastTrigger'));
+ assert.ok(docs.includes('openingTrigger:document.querySelector')||docs.includes('openingTrigger?.isConnected&&openingTrigger.getClientRects?.().length?openingTrigger'));
+});
+check('H4: hálózatszakadás megszakítja a képelőtöltéseket',()=>{
+ assert.ok(gallery.includes("window.addEventListener('offline',releasePrefetched)"));
+});
+check('I4: élő JSON-csere megtartja a nyitott details állapotokat',()=>{
+ assert.ok(app.includes('const expandedDetails=options.keepScroll&&!isNew?'));
+ assert.ok(app.includes('if(match)match.open=true;'));
+});
+check('J4: a fájlleltár sémaazonosítója kötelező',()=>{
+ assert.ok(diag.includes("manifest.schemaVersion!=='1.0.0'"));
+});
+check('A5: térképes főmenü a becsukott mobilmenü helyett elérhető gombra fókuszál',()=>{
+ assert.ok(app.includes('siteMapReturnFocus=cameFromMobile?document.getElementById(\'orbit-open\'):openingFocus'));
+});
+check('B5: megközelítés oldal témája böngészőfókusz-visszatéréskor újraellenőrzött',()=>{
+ assert.ok(read('js/round26-arrival.js').includes("addEventListener('focus',restore)"));
+});
+check('C5: hibás vagy túl hosszú beágyazott szakaszlista a sorrendet sem módosítja',()=>{
+ assert.ok(app.includes('event.data.sections.length>128'));
+ assert.ok(app.indexOf('event.data.sections.length>128')<app.indexOf('lastMessageSequence=event.data.sequence'));
+});
+check('D5: eltűnt szakaszcélnál a mobil szakaszlista első működő elemre áll',()=>{
+ assert.ok(sections.includes('const restoredIndex=focusedId?mobileTargets.findIndex'));
+ assert.ok(sections.includes("mobileList.querySelector('.cs32-mobile-list-item')"));
+});
+check('E5: képernyőméret-váltó fókuszváltása nem görget automatikusan',()=>{
+ assert.ok(nav.includes('target.getClientRects?.().length)target.focus({preventScroll:true})'));
+});
+check('F5: ismételten használt keresőállapot a memóriás korlátban marad',()=>{
+ assert.ok(app.includes('searchRouteStates.delete(route);searchRouteStates.set(route,saved)'));
+});
+check('G5: dokumentumverzió csak pontos, nem túlméretes számrészekkel érvényes',()=>{
+ const segment=docs.slice(docs.indexOf('const validSemver='),docs.indexOf('function validateVersion('));
+ const context=vm.createContext({});vm.runInContext(segment,context);
+ assert.equal(vm.runInContext("validSemver('1.24.0')",context),true);
+ assert.equal(vm.runInContext("validSemver('1.00000000000.0')",context),false);
+ assert.equal(vm.runInContext("validSemver('1.02.0')",context),false);
+});
+check('H5: galéria mozgó adatkapcsolaton törli a már nem indokolt előtöltést',()=>{
+ assert.ok(gallery.includes("navigator.connection?.addEventListener?.('change'"));
+ assert.ok(gallery.includes('releasePrefetched();});'));
+});
+check('I5: azonos című details elemek előfordulási index alapján állnak vissza',()=>{
+ assert.ok(app.includes('const occurrence=(seen.get(summary)||0)+1'));
+ assert.ok(app.includes('saved.occurrence-1'));
+});
+check('J5: üres kötelező kiadási erőforrás hibaként kerül a diagnosztikába',()=>{
+ assert.ok(diag.includes('manifest.files[file].sizeBytes===0'));
+});
+check('A6: asztali képernyőforgatáskor a bezárt mobilmenü fókusza elérhető gombra kerül',()=>{
+ assert.ok(app.includes('const focusWasMobile=mobile.contains(document.activeElement)'));
+ assert.ok(app.includes("if(focusWasMobile)document.getElementById('orbit-open')?.focus({preventScroll:true})"));
+});
+check('B6: a szülőoldal láthatóvá váláskor megőrzi a kézi témamódot',()=>{
+ assert.ok(app.includes("document.addEventListener('visibilitychange',()=>{if(!document.hidden)recheckTheme();})"));
+ assert.ok(app.includes("const next=storedTheme(themeMode)"));
+});
+check('C6: a beágyazott szakaszugrás két elrendezési ciklust vár az iframe méretezése után',()=>{
+ assert.ok(app.includes('requestAnimationFrame(()=>requestAnimationFrame(()=>{if(currentRoute===route&&iframe.isConnected)window.scrollTo'));
+});
+check('D6: aktív mobil szakasz figyelése a megjelenő fejléc magasságát figyelembe veszi',()=>{
+ assert.ok(sections.includes('Math.max(sectionHeaderOffset()+24,Math.min(viewportHeight()*.36,340))'));
+});
+check('E6: a dokumentum párbeszédablaka a bezáráskor biztonságos pótfókuszt választ',()=>{
+ assert.ok(docs.includes("document.querySelector('.doc-center button,.doc-center input')"));
+ assert.ok(docs.includes('target.getClientRects?.().length)target.focus?.({preventScroll:true})'));
+});
+check('F6: korábbi keresőállapotból visszaálló lekérdezés normalizált, legfeljebb 300 karakter',()=>{
+ assert.ok(search.includes("state.query.trim().slice(0,300)"));
+ assert.ok(app.includes('searchRouteStates.delete(route);searchRouteStates.set(route,saved)'));
+});
+check('G6: lezárt PDF előnézet késői hibaüzenete nem írja felül a bezárt panelt',()=>{
+ assert.ok(docs.includes('if(dialog.open&&iframe.isConnected)fallback.textContent'));
+});
+check('H6: visszacsatlakozás után a nyitott galéria meglévő megjelenítése újrapróbálható',()=>{
+ assert.ok(gallery.includes("window.addEventListener('online',()=>{if(modal.open&&activeImages.length)showImage();})"));
+});
+check('I6: duplikált azonosító esetén nem választ találomra hibás részletállapotot',()=>{
+ assert.ok(app.includes('const matchingIds=nextById.get(saved.id)||[]'));
+ assert.ok(app.includes('matchingIds.length===1?matchingIds[0]:null'));
+});
+check('J6: érvénytelenítés után a régi fájlleltár-kérések azonnal megszakítják a feldolgozást',()=>{
+ assert.equal(diag.split('if(run!==bundleRun)return;').length-1,2);
+ assert.ok(diag.includes('if(run===bundleRun)bundleStats='));
+});
+const failed=results.filter(r=>!r.ok);
+console.log(JSON.stringify({release:'1.37.0',passed:results.length-failed.length,total:results.length,failed},null,2));
+if(failed.length)process.exitCode=1;

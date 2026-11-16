@@ -41,7 +41,9 @@ function verifiedCategoryTree(categories){
  }
  return map;
 }
-function validateVersion(v,did){if(!v||!/^\d+\.\d+\.\d+$/.test(v.version)||!dateIsValid(v.date)||!cleanText(v.change,5,500)||Object.keys(v).sort().join('|')!=='change|date|version')stop('hibás verziótörténet: '+did);}
+const validSemver=value=>typeof value==='string'&&/^(?:0|[1-9]\d{0,8})\.(?:0|[1-9]\d{0,8})\.(?:0|[1-9]\d{0,8})$/.test(value);
+function validateVersion(v,did){if(!v||!validSemver(v.version)||!dateIsValid(v.date)||!cleanText(v.change,5,500)||Object.keys(v).sort().join('|')!=='change|date|version')stop('hibás verziótörténet: '+did);}
+const compareSemver=(a,b)=>{const left=a.split('.').map(Number),right=b.split('.').map(Number);for(let i=0;i<3;i++){if(left[i]!==right[i])return left[i]-right[i];}return 0;};
 function validateDocument(d,categoryMap,allowedFields){
  if(!d||typeof d!=='object')stop('hibás dokumentumrekord');
  const required=allowedFields;const names=Object.keys(d);
@@ -50,17 +52,22 @@ function validateDocument(d,categoryMap,allowedFields){
  if(!Array.isArray(d.tags)||!Array.isArray(d.keywords)||d.tags.some(t=>!cleanText(t,1,60))||d.keywords.some(t=>!cleanText(t,1,80)))stop('hibás címkézés: '+d.id);
  if(new Set(d.tags).size!==d.tags.length||new Set(d.keywords).size!==d.keywords.length)stop('ismétlődő címkék: '+d.id);
  if(!Object.hasOwn(STATUS,d.status)||!Object.hasOwn(KIND,d.documentKind)||!['application/pdf','application/vnd.openxmlformats-officedocument.wordprocessingml.document','text/plain'].includes(d.mimeType))stop('ismeretlen dokumentumállapot vagy fájltípus');
- if(!/^\d+\.\d+\.\d+$/.test(d.version)||!dateIsValid(d.publishedAt)||!dateIsValid(d.validFrom)||(d.validTo!==null&&!dateIsValid(d.validTo))||d.validTo&&d.validTo<d.validFrom)stop('hibás dátum vagy verzió: '+d.id);
+ if(!validSemver(d.version)||!dateIsValid(d.publishedAt)||!dateIsValid(d.validFrom)||(d.validTo!==null&&!dateIsValid(d.validTo))||d.validTo&&d.validTo<d.validFrom)stop('hibás dátum vagy verzió: '+d.id);
  if(!Array.isArray(d.relatedRoutes)||d.relatedRoutes.some(r=>!ROUTE_RE.test(r))||new Set(d.relatedRoutes).size!==d.relatedRoutes.length)stop('hibás oldalkapcsolat: '+d.id);
  if(typeof d.official!=='boolean')stop('érvénytelen hivatalossági állapot: '+d.id);
  if(!Array.isArray(d.versionHistory)||!d.versionHistory.length)stop('hiányzó verziótörténet: '+d.id);
  d.versionHistory.forEach(v=>validateVersion(v,d.id));
+ for(let i=1;i<d.versionHistory.length;i++){
+  const earlier=d.versionHistory[i-1],later=d.versionHistory[i];
+  if(compareSemver(earlier.version,later.version)>=0||earlier.date>later.date)stop('nem növekvő vagy ismételt dokumentumverzió: '+d.id);
+ }
  if(d.versionHistory.at(-1).version!==d.version)stop('aktuális verzió nem egyezik a történettel: '+d.id);
  if(d.status==='withdrawn'){
   if(d.filePath!==null||d.fileName!==null||d.fileSizeBytes!==null||d.sha256!==null)stop('visszavont dokumentumhoz nem adható publikus fájllink: '+d.id);
  }else{
   if(!PATH_RE.test(d.filePath)||!cleanText(d.fileName,5,120)||d.filePath.split('/').at(-1)!==d.fileName||!Number.isSafeInteger(d.fileSizeBytes)||d.fileSizeBytes<=0||!(/^[0-9a-f]{64}$/.test(d.sha256)))stop('nem biztonságos vagy hibás állományhivatkozás: '+d.id);
-  const ext=d.fileName.split('.').at(-1);if((ext==='pdf'&&d.mimeType!=='application/pdf')||(ext==='txt'&&d.mimeType!=='text/plain')||(ext==='docx'&&!d.mimeType.includes('wordprocessingml')))stop('eltérő fájlkiterjesztés és MIME-típus: '+d.id);
+  const ext=d.fileName.split('.').at(-1)?.toLowerCase();const expectedMime={pdf:'application/pdf',txt:'text/plain',docx:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'};
+  if(!Object.hasOwn(expectedMime,ext)||expectedMime[ext]!==d.mimeType)stop('eltérő fájlkiterjesztés és MIME-típus: '+d.id);
  }
 }
 function validateRegistry(data,schema){
@@ -119,6 +126,7 @@ function categoryOptions(){const out=[['all','Összes kategória']];const list=[
 function statusLabel(d){return STATUS[d.status]||d.status;}
 function openPreview(doc){
  lastTrigger=document.activeElement;
+ const openingTrigger=lastTrigger;
  const dialog=el('dialog','doc-preview-dialog');set(dialog,'aria-label','Dokumentum részletei: '+doc.title);
  const head=el('div','doc-preview-head');head.append(el('div','doc-preview-title',doc.title),htmlButton('Bezárás ×','doc-close',()=>dialog.close()));dialog.append(head);
  const meta=el('div','doc-preview-meta');meta.append(makeTag(statusLabel(doc)),makeTag(KIND[doc.documentKind]),makeTag('Verzió '+doc.version),makeTag(formatDate(doc.publishedAt)));dialog.append(meta);
@@ -128,7 +136,7 @@ function openPreview(doc){
   const isPdf=doc.mimeType==='application/pdf';
   const browserHasViewer=isPdf&&navigator.pdfViewerEnabled!==false;
   const fallback=el('p','doc-preview-fallback',browserHasViewer?'Ha az előnézet üres, használd a Megnyitás új lapon vagy a Letöltés gombot.':isPdf?'A böngésző nem támogat beépített PDF-előnézetet. A dokumentumot új lapon megnyithatod vagy letöltheted.':'Ehhez a fájltípushoz nincs beágyazott PDF-előnézet. A fájlt új lapon megnyithatod vagy letöltheted.');fallback.setAttribute('role','status');
-  if(browserHasViewer){const iframe=el('iframe','doc-iframe');iframe.title=doc.title+' előnézete';iframe.loading='lazy';iframe.src=docURL(doc)+'#toolbar=1';iframe.addEventListener('error',()=>{fallback.textContent='A PDF-előnézet nem tölthető be. Nyisd meg új lapon vagy töltsd le.';});dialog.append(iframe);}
+  if(browserHasViewer){const iframe=el('iframe','doc-iframe');iframe.title=doc.title+' előnézete';iframe.loading='lazy';iframe.referrerPolicy='same-origin';iframe.src=docURL(doc)+'#toolbar=1';iframe.addEventListener('error',()=>{if(dialog.open&&iframe.isConnected)fallback.textContent='A PDF-előnézet nem tölthető be. Nyisd meg új lapon vagy töltsd le.';});dialog.append(iframe);dialog.addEventListener('close',()=>iframe.removeAttribute('src'),{once:true});}
   dialog.append(fallback);
   const actions=el('div','doc-preview-actions');const open=el('a','btn btn-outline-secondary','Megnyitás új lapon');open.href=docURL(doc);open.target='_blank';open.rel='noopener noreferrer';
   const download=el('a','btn btn-primary','Letöltés ('+formatSize(doc.fileSizeBytes)+')');download.href=docURL(doc);download.download=doc.fileName;actions.append(open,download);dialog.append(actions);
@@ -138,7 +146,7 @@ function openPreview(doc){
  if(doc.versionHistory.length>1){const compare=el('div','doc-version-comparison');compare.append(el('strong',null,'Verziók változásnaplója'));for(let i=1;i<doc.versionHistory.length;i++){const older=doc.versionHistory[i-1],newer=doc.versionHistory[i];compare.append(el('p',null,older.version+' → '+newer.version+' · '+newer.change));}compare.append(el('p',null,'Ez metaadat-alapú összehasonlítás, nem a PDF-oldalak automatikus szöveges összevetése.'));detail.append(compare);}
  detail.append(el('p',null,'Azonosító: '+doc.id+' · SHA-256: '+(doc.sha256||'nem elérhető')));
  dialog.append(detail);
- dialog.addEventListener('close',()=>{dialog.remove();lastTrigger?.focus?.();});
+ dialog.addEventListener('close',()=>{dialog.remove();const target=openingTrigger?.isConnected&&openingTrigger.getClientRects?.().length?openingTrigger:document.querySelector('.doc-center button,.doc-center input');if(target?.isConnected&&target.getClientRects?.().length)target.focus?.({preventScroll:true});});
  document.body.append(dialog);dialog.showModal();
 }
 function documentCard(d,view){

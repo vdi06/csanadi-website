@@ -30,7 +30,7 @@ export function walkStructure(nodes, parent=null, depth=1, target=[]) {
   if(!Array.isArray(nodes)) return target;
   for(const node of [...nodes].sort((a,b)=>(a.order??999)-(b.order??999))) {
     if(!node || !PATH_RE.test(node.path) || depth>3) {console.warn('Hibás vagy túl mély menüelem',node);continue;}
-    const item={path:node.path,order:node.order??999,parent,depth,children:[]};
+    const item={path:node.path,order:node.order??999,parent,depth,children:[],menuVisible:node.menuVisible!==false};
     target.push(item);
     if(parent)parent.children.push(item);
     walkStructure(node.children || [], item, depth+1,target);
@@ -77,6 +77,9 @@ export async function buildCatalog() {
   const byId=new Map(available.map(x=>[x.page.id,x]));
   return {config,structure,items:available,routes,byId,roots:available.filter(x=>x.depth===1),home:available.find(x=>x.depth===0),loadedAt:Date.now()};
 }
-export function childrenOf(catalog,parent){return catalog.items.filter(x=>x.parent===parent).sort((a,b)=>a.order-b.order);}
+// A tartalomkatalógus a nem menüben szereplő oldalakhoz is megtartja az útvonalat.
+// Menükben kizárólag a kifejezetten látható, legfeljebb második szint jelenik meg.
+export function childrenOf(catalog,parent){return catalog.items.filter(x=>x.parent===parent&&x.menuVisible&&x.depth<=2).sort((a,b)=>a.order-b.order);}
+export function contentChildrenOf(catalog,parent){return catalog.items.filter(x=>x.parent===parent&&!x.menuVisible).sort((a,b)=>a.order-b.order);}
 export function routeTitle(item){return item?.page?.menuLabel||item?.page?.title||'';}
 export function getRoute(){return safeRoute((location.hash||'#/').split('?')[0]);}

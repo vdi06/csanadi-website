@@ -1,10 +1,10 @@
 {
-  "version": "1.18.0",
-  "createdAt": "2026-11-16T05:41:16.961Z",
+  "version": "1.37.0",
+  "createdAt": "2026-11-16T14:55:29.273Z",
   "pages": 65,
   "htmlFiles": 23,
   "jsonFiles": 124,
-  "jsFiles": 114,
+  "jsFiles": 308,
   "oldDomainUrls": 0,
   "criteriaStatuses": {
     "F": 260,
@@ -68,7 +68,7 @@
   "warnings": [],
   "limitations": [
     "A 31 korábbi C változat részletes szövege nem mind áll rendelkezésre; a meglévő 65×31 mátrix részben forrásalapú.",
-    "A v1.18.0 helyi és automatizált vizsgálata nem egyenértékű a valódi mobilos, asztali, érintéses és vizuális böngészős ellenőrzéssel.",
+    "A v1.37.0 helyi és automatizált vizsgálata nem egyenértékű a valódi mobilos, asztali, érintéses és vizuális böngészős ellenőrzéssel.",
     "A korábbi felhőböngészős teszt biztonsági korlátozás miatt nem érte el a helyi oldalt. Az új kiadást nem telepítettük, a valódi böngészős ellenőrzés eredményét külön kell jelezni.",
     "Az 55 nyitott minőségellenőrzési tétel, a médiák jogállása és a külső térképszolgáltatás elérhetősége külön intézményi ellenőrzést kíván."
   ]

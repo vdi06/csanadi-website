@@ -23,12 +23,7 @@ export function initEnhancedInteractions(){
     overlay.querySelectorAll('.compass26-choice.is-keyfocus').forEach(n=>n.classList.remove('is-keyfocus'));
     if(choice)choice.classList.add('is-keyfocus');
   });
-  const top=document.createElement('button');top.id='be2026-top';top.type='button';top.className='be2026-top';
-  top.textContent='↑';top.title='Vissza az oldal tetejére';top.setAttribute('aria-label','Vissza az oldal tetejére');top.hidden=true;
-  top.addEventListener('click',()=>window.scrollTo({top:0,behavior:reduced.matches?'instant':'smooth'}));
-  document.body.append(top);
-  let scheduled=false;
-  window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(()=>{top.hidden=window.scrollY<650;scheduled=false;});}},{passive:true});
+  // Nincs külön, felúszó „Lap tetejére” gomb. Ahol indokolt, a szakaszmenü navigál.
   const previewHero=()=>hero?.querySelector('.hero2026');
    
   let swipe=null;

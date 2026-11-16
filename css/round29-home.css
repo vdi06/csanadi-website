@@ -48,9 +48,6 @@ html[data-theme="light"] .cs29-route-card,html[data-theme="light"] .cs29-nav-ite
 html[data-theme="light"] #global-hero .csn26-visual-row>.csn26-edge-arrow{background:linear-gradient(90deg,rgba(255,252,244,.65),rgba(255,252,244,.22))!important;color:#18364b!important;border-color:rgba(24,54,75,.35)!important}
 html[data-theme="light"] #global-hero .csn26-visual-row>.csn26-edge-arrow--right{background:linear-gradient(270deg,rgba(255,252,244,.65),rgba(255,252,244,.22))!important}
 html[data-theme="light"] #global-hero .csn26-visual-row>.csn26-edge-arrow:hover{background:rgba(255,252,244,.86)!important}
-.cs29-drawer-top{display:block;margin-top:16px;padding:12px;width:100%;min-height:46px;border:1px solid var(--gold);border-radius:12px;background:var(--light);color:var(--ink);font-weight:800;cursor:pointer}
-.cs29-drawer-top:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-body:not(.cs-inner-page) #be2026-top{display:none!important}
 /* Gyorselérések: a kártyák és a kártyatartalom minden nézetben középen áll. */
 #app[data-page-kind="home"] .home-j-navrail{max-width:1120px!important;margin-inline:auto!important;justify-content:center!important;justify-items:center!important;align-items:stretch!important}
 #app[data-page-kind="home"] .home-j-navrail>.cs29-quicklink{width:100%!important;align-items:center!important;justify-content:center!important;text-align:center!important}

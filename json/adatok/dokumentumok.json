@@ -194,7 +194,7 @@
         {
           "version": "3.11.0",
           "date": "2026-11-15",
-          "change": "25. kiadás: kizárólag helyi edzés–tanulás heti tervező és nyomtatás; öt sportfelszerelési/fair play segédlet; WebGL panorámamegjelenítő helyi fájlelőképével; jóváhagyásra váró diákkörkatalógus; forrásolt ösztöndíj-kalauz; közérthető tájékoztatók; böngészős felolvasó és fókuszmód; engedélyköteles öregdiák-életút- és projektbeszámoló-tár; négyágú GYIK-döntési fa. Megőrzött összes korábbi R24 funkció; önkényesen létrehozott klubot, panorámafotót, személyes profilt és intézményi pályázati beszámolót nem publikálunk."
+          "change": "25. kiadás: kizárólag helyi edzés–tanulás heti tervező és nyomtatás; öt sportfelszerelési/fair play segédlet; WebGL panoráma helyi előképpel; jóváhagyásra váró diákkörkatalógus; forrásolt ösztöndíj-kalauz; közérthető tájékoztatók; böngészős felolvasó és fókuszmód; engedélyköteles öregdiák-életút- és projektbeszámoló-tár; négyágú GYIK-döntési fa. Korábbi R24 funkciók megőrizve; önkényesen létrehozott klubot, panorámafotót, személyes profilt és intézményi pályázati beszámolót nem publikálunk."
         },
         {
           "version": "3.12.0",
@@ -209,7 +209,7 @@
         {
           "version": "3.14.0",
           "date": "2026-11-15",
-          "change": "28. kiadás: kizárólag karbantartás a teljes R27 alapcsomagon; keskeny és fekvő mobilos körmenü-, tablet- és kártyarács-finomítások; megjelenési módok lapok közötti állapotkövetése; kereső billentyűzetfókusz; sporthírek helyreálló bevezetője és gépi dátuma; fájltípusnak megfelelő dokumentum-előnézet; korábbi offline mentéseket is figyelembe vevő kvóta; csak megnyitáskor induló fájlmanifest-diagnosztika; kisebb animációk és fókuszjelölés; cache-frissítés és teljes dokumentáció. FTP-feltöltés nélkül."
+          "change": "28. kiadás: kizárólag karbantartás a teljes R27 alapcsomagon; keskeny és fekvő mobilos körmenü-, tablet- és kártyarács-finomítások; megjelenési módok lapok közötti állapotkövetése; kereső billentyűzetfókusz; sporthírek helyreálló bevezetője és gépi dátuma; fájltípusnak megfelelő dokumentum-előnézet; offline mentéseket figyelő kvóta; csak megnyitáskor induló fájlmanifest-diagnosztika; kisebb animációk és fókuszjelölés; cache-frissítés és teljes dokumentáció. FTP-feltöltés nélkül."
         }
       ]
     },

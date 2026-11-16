@@ -6,7 +6,7 @@
   if(!document.querySelector('link[data-csanadi-tools-unified]')){
     const stylesheet=document.createElement('link');
     stylesheet.rel='stylesheet';
-    stylesheet.href='../css/tools-unified-v1.css?v=1.18.0';
+    stylesheet.href='../css/tools-unified-v1.css?v=1.37.0';
     stylesheet.dataset.csanadiToolsUnified='true';
     document.head.append(stylesheet);
   }
@@ -41,6 +41,7 @@
   const update=()=>{
     const theme=resolve();
     document.documentElement.dataset.theme=theme;
+    document.documentElement.dataset.themePreference=selected;
     document.documentElement.setAttribute('data-bs-theme',theme);
     button.textContent='◐ '+labels[selected]+' mód';
     button.setAttribute('aria-label','Megjelenés: '+labels[selected]+'. Váltás a következő megjelenésre');
@@ -48,7 +49,15 @@
     applyPalette();
   };
   button.addEventListener('click',()=>{selected=selected==='system'?'light':selected==='light'?'dark':'system';try{localStorage.setItem('csanadi-theme',selected);}catch{}update();});
-  media.addEventListener?.('change',()=>{if(selected==='system')update();});
+  const changed=()=>{if(selected==='system')update();};
+  if(media.addEventListener)media.addEventListener('change',changed);else media.addListener?.(changed);
+  window.addEventListener('storage',event=>{
+    if(event.key!=='csanadi-theme'&&event.key!==null)return;
+    selected=['system','light','dark'].includes(event.newValue)?event.newValue:'system';update();
+  });
+  const restore=()=>{try{const value=localStorage.getItem('csanadi-theme');selected=['system','light','dark'].includes(value)?value:'system';}catch{/* A memória szerinti kézi választás marad érvényben. */}update();};
+  window.addEventListener('pageshow',restore);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)restore();});
   fetch('../json/config.json',{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}).then(config=>{palette=config;applyPalette();}).catch(error=>console.warn('A központi színpaletta nem érhető el a segédoldalon:',error));
   update();
 })();

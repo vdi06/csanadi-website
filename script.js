@@ -11,8 +11,8 @@ function startupError(error){
   shell.append(h,p,detail,hint);target.replaceChildren(shell);
 }
 Promise.all([
-  import('./js/app.js?v=1.18.0'),
-  import('./js/subpages-v1.js?v=1.18.0')
+  import('./js/app.js?v=1.38.2'),
+  import('./js/subpages-v1.js?v=1.38.2')
 ]).then(([{startApp},{initSubpageEnhancements}])=>{
   initSubpageEnhancements();
   return startApp();

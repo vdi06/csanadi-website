@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "id": "page:000005",
   "pageType": "standard",
-  "menuLabel": "Iskolatörténet",
+  "menuLabel": "Történetünk és büszkeségeink",
   "title": "Iskolánk története",
   "slug": "tortenet",
   "locale": "hu-HU",

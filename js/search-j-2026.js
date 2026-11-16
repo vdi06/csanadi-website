@@ -32,6 +32,7 @@ function buildEntry(x,norm){
  entry.title=resolveConfiguredText(x.title||'');entry.summary=resolveConfiguredText(x.summary||'');entry.body=resolveConfiguredText(x.body||'');
  entry.normalTitle=norm(entry.title);entry.normalSummary=norm(entry.summary);
  entry.normalTags=norm(labelsFrom(null,Array.isArray(x.tags)?x.tags.filter(value=>typeof value==='string'):[]));entry.normalBody=norm(entry.body||'');
+ entry.fuzzyWords=(entry.normalTitle+' '+entry.normalTags).split(/[^a-z0-9]+/).filter(Boolean);
  entry.normalSection=norm(SECTIONS[entry.section]||'');
  return entry;
 }
@@ -79,13 +80,12 @@ function score(entry,query,tokens,synonyms,typoMaximum,typoMinimum){
   if(entry.normalSummary.includes(term))score+=10;
   if(entry.normalBody.includes(term))score+=5;
   if(score===0){
-   const alternatives=[...(synonyms[term]||[]),...Object.entries(synonyms).filter(([,values])=>values.includes(term)).map(([key])=>key)];
+   const alternatives=synonyms[term]||[];
    const matched=alternatives.some(word=>entry.normalTitle.includes(word)||entry.normalTags.includes(word)||entry.normalSummary.includes(word)||entry.normalBody.includes(word));
    if(matched)score=7;
   }
   if(score===0&&term.length>=typoMinimum&&typoMaximum>0){
-   const words=(entry.normalTitle+' '+entry.normalTags).split(/[^a-z0-9]+/).filter(Boolean);
-   if(words.some(word=>word.length>=typoMinimum&&boundedDistance(term,word,typoMaximum)<=typoMaximum))score=4;
+   if(entry.fuzzyWords.some(word=>word.length>=typoMinimum&&boundedDistance(term,word,typoMaximum)<=typoMaximum))score=4;
   }
   if(score===0)return -1;
   points+=score;
@@ -96,7 +96,13 @@ function score(entry,query,tokens,synonyms,typoMaximum,typoMinimum){
 }
 export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,status,onNavigate}){
  const pageSize=settingNumber('search.pageSize'),suggestionLimit=settingNumber('search.suggestionLimit'),maxResults=settingNumber('search.maxResults');
- const synonyms=setting('search.synonyms')||{};
+ // A szinonimák oda-vissza kereshető indexe csak egyszer készül el.
+ const synonyms=Object.create(null);
+ for(const [key,alternatives] of Object.entries(setting('search.synonyms')||{})){
+  if(!Array.isArray(alternatives))continue;
+  (synonyms[key]??=[]).push(...alternatives);
+  for(const alternative of alternatives)(synonyms[alternative]??=[]).push(key);
+ }
  const typoMaximum=settingNumber('search.typoMaxDistance'),typoMinimum=settingNumber('search.typoMinimumLength'),statsLimit=settingNumber('search.statsSessionLimit');
  const sessionStats={searches:0,opened:0,empty:0};
  let all=[],query='',type='all',section='all',max=pageSize,rebuildSerial=0,unavailableSources=0;
@@ -154,13 +160,20 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   const btn=element('button','j-search-chip',text);btn.type='button';
   btn.addEventListener('click',()=>{input.value=text;query=text;max=pageSize;render();input.focus();});return btn;
  }
+ function firstMatchingTitles(predicate,limit){
+  const titles=[];
+  if(limit<=0)return titles;
+  for(const entry of all){if(predicate(entry)){titles.push(entry.title);if(titles.length>=limit)break;}}
+  return titles;
+ }
  function renderPicks(){
   picks.replaceChildren(element('span','j-search-picks-label',query.trim()?'Kapcsolódó keresések:':'Gyorskeresések:'));
-  const suggestions=query.trim()
-   ? all.filter(x=>x.normalTitle.includes(norm(query))&&x.normalTitle!==norm(query)).slice(0,suggestionLimit).map(x=>x.title)
+  const normalizedQuery=query.trim()?norm(query):'';
+  const suggestions=normalizedQuery
+   ? firstMatchingTitles(x=>x.normalTitle.includes(normalizedQuery)&&x.normalTitle!==normalizedQuery,suggestionLimit)
    : setting('search.quickSuggestions');
   let picksList=[...new Set(suggestions)];
-  if(query.trim()&&!picksList.length){const term=norm(query);picksList=all.filter(x=>x.normalTitle.split(' ').some(word=>word.startsWith(term.slice(0,Math.min(settingNumber('search.minimumFuzzyLength'),term.length)))&&Math.abs(word.length-term.length)<=settingNumber('search.fuzzyWordLengthTolerance'))).slice(0,suggestionLimit).map(x=>x.title);}
+  if(normalizedQuery&&!picksList.length){const prefix=normalizedQuery.slice(0,Math.min(settingNumber('search.minimumFuzzyLength'),normalizedQuery.length)),tolerance=settingNumber('search.fuzzyWordLengthTolerance');picksList=firstMatchingTitles(x=>x.normalTitle.split(' ').some(word=>word.startsWith(prefix)&&Math.abs(word.length-normalizedQuery.length)<=tolerance),suggestionLimit);}
   for(const s of [...new Set(picksList)].slice(0,suggestionLimit))picks.append(suggestion(s));
   if(query.trim()||type!=='all'||section!=='all')picks.append(resetBtn);
  }
@@ -190,8 +203,12 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
  function render(){
   results.replaceChildren();renderPicks();
   const q=normalizeTerm(query,norm),tokens=[...new Set(q.split(/\s+/).filter(Boolean))];
-  let pool=all.filter(x=>(type==='all'||x.type===type)&&(section==='all'||x.section===section));
-  const matches=pool.map(x=>({x,score:score(x,q,tokens,synonyms,typoMaximum,typoMinimum)})).filter(r=>r.score>=0);
+  const matches=[];
+  for(const x of all){
+   if(type!=='all'&&x.type!==type||section!=='all'&&x.section!==section)continue;
+   const points=score(x,q,tokens,synonyms,typoMaximum,typoMinimum);
+   if(points>=0)matches.push({x,score:points});
+  }
   matches.sort((a,b)=>b.score-a.score||a.x.title.localeCompare(b.x.title,'hu'));
   const shown=matches.slice(0,Math.min(max,maxResults));
   status.textContent=`${matches.length} találat · ${shown.length} megjelenítve`+(unavailableSources?` · ${unavailableSources} kiegészítő adatforrás átmenetileg nem érhető el`:'');
@@ -223,5 +240,14 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
     if(next<0)input.focus();else arr[next].focus();}
   }
  });
- return {rebuild,render,reset(){query='';type='all';section='all';max=pageSize;input.value='';typeSelect.value='all';sectionSelect.value='all';render();}};
+ return {rebuild,render,
+  snapshot(){return {query,type,section,max};},
+  restore(state){
+   query=typeof state?.query==='string'?state.query.trim().slice(0,300):'';
+   type=Object.hasOwn(TYPES,state?.type)?state.type:'all';
+   section=Object.hasOwn(SECTIONS,state?.section)?state.section:'all';
+   max=Number.isSafeInteger(state?.max)?Math.min(maxResults,Math.max(pageSize,state.max)):pageSize;
+   input.value=query;typeSelect.value=type;sectionSelect.value=section;render();
+  },
+  reset(){query='';type='all';section='all';max=pageSize;input.value='';typeSelect.value='all';sectionSelect.value='all';render();}};
 }

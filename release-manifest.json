@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.18.0",
+  "release": "csanadi-website-v1.38.2",
   "date": "2026-11-16",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "v1.13–1.15: meglévő navigáció, keresés, galéria és média-infrastruktúra javítása. v1.16: a meglévő mobil szakaszmenü az aloldalakon is működik. v1.17: dinamikus meglévő modulok, tartalomhossz szerinti láthatóság és átméretezés. v1.18: akadálymentes fókuszkezelés, célzott tesztek és FTP-ellenőrzés. Nem került be új szolgáltatás vagy szerveroldali függőség.",
+  "notes": "A v1.38.1 teljes tartalma megmaradt; asztali aloldali fejlécben JSON-útvonalhoz illő, vicces sportmozdulatot ábrázoló, helyi SVG/CSS animáció, szüneteltetéssel és csökkentett mozgási móddal; görgetésre ugyanott az oldalcím. Telefonos körmenü és statikus FTP-kompatibilitás változatlan.",
   "files": {
     "README.md": {
       "sizeBytes": 42,
@@ -2534,6 +2534,10 @@
       "sizeBytes": 7788,
       "sha256": "ff8e57e7c01864bb137ac6e0fc462a6ea5fb6b02361d635652923a6f060e237f"
     },
+    "css/desktop-condensed-ribbon-v1-38.css": {
+      "sizeBytes": 1410,
+      "sha256": "491d228b3f695e5f2f59a68aa4cee12511a790903049fecc054714bde54f7aac"
+    },
     "css/dfg-2026.css": {
       "sizeBytes": 11832,
       "sha256": "5a7b369526399fdda62d617e2107ddfdfd96d25918fe54a560538eed524c5912"
@@ -2567,8 +2571,8 @@
       "sha256": "7e84a90627e854afe592e3d56d0c2a128b186d3ada8ab128b9a79ceb655f79b8"
     },
     "css/interactions-be-2026.css": {
-      "sizeBytes": 5701,
-      "sha256": "50970d82ddbb1b2194b09a9078c122857b981276d4a449911986625a8cc0fda8"
+      "sizeBytes": 4902,
+      "sha256": "7b9705d8391ef92833b0525bd4f96a7933e6d5d1dd535261a190d0386b16a116"
     },
     "css/j-home-layout-2026.css": {
       "sizeBytes": 4299,
@@ -2603,8 +2607,8 @@
       "sha256": "d3fddc18b94ea35854eda4c9856ac29d42a98b487303477d7935cdfed89730cf"
     },
     "css/navigation-student-search-2026.css": {
-      "sizeBytes": 5282,
-      "sha256": "1063a2ed135e68a4b2f89f68ec47188b866266fd43fc436db297a213bece4be0"
+      "sizeBytes": 6176,
+      "sha256": "ca3a36d2c938150b246c8252a9bdfd971e62b671bdfc4053599f20bc39fe5646"
     },
     "css/next-2026.css": {
       "sizeBytes": 26091,
@@ -2755,8 +2759,8 @@
       "sha256": "47291ec40a4b5fe32d85181484acd1306a543a18c5bf0c2077b2e7ca23897ead"
     },
     "css/round29-home.css": {
-      "sizeBytes": 11435,
-      "sha256": "5e06b74779ecc8aa308a3578b376e45a5d8ee262adf91af0160cca703c539af3"
+      "sizeBytes": 11085,
+      "sha256": "3d763f1ba49a2b82ae51a3599ec132e4bd97bed3f919f2fc5659ef27f477435f"
     },
     "css/round29-integration.css": {
       "sizeBytes": 4782,
@@ -2767,8 +2771,8 @@
       "sha256": "51b35cd2424383d11830cdb00f60fae35aa5431363edba8652324a67bda20c67"
     },
     "css/round29-theme-unified.css": {
-      "sizeBytes": 7075,
-      "sha256": "310e4cacb2931dad18424219d320604f0f66d51c26f689c3e84d3362a0aa0334"
+      "sizeBytes": 7007,
+      "sha256": "12f0526f017aafab0e12ed5415c56db2cec997d903218f60e0f6e1df555f8373"
     },
     "css/round30-hero-rails.css": {
       "sizeBytes": 1078,
@@ -2787,8 +2791,8 @@
       "sha256": "5aadbfc29e8c6793cb5060ad5df6def1c5a11d7d04ad362e90fa1e8813f8e7b2"
     },
     "css/round32-mobile-sections.css": {
-      "sizeBytes": 3364,
-      "sha256": "f918033353fb17d91b17e42c99c2de261af350b085c84a22b37b253c8f6b0a56"
+      "sizeBytes": 4720,
+      "sha256": "c86c04acf616605e5777c5839a2c3282baec844c73ae425095d6f99df57ad792"
     },
     "css/style.css": {
       "sizeBytes": 75798,
@@ -2797,6 +2801,10 @@
     "css/subpage-header-fix.css": {
       "sizeBytes": 6886,
       "sha256": "918f2d000e184bc59792a5e33e5fe7bdcf9a3da07b0d847c2037fea39eaca940"
+    },
+    "css/subpage-header-motion-v1-38-2.css": {
+      "sizeBytes": 6853,
+      "sha256": "b1dace08f5296afde99561c1832ee162e6b19ce1ac8722829065d186404cdab5"
     },
     "css/subpages-v1.css": {
       "sizeBytes": 4777,
@@ -2815,12 +2823,12 @@
       "sha256": "fd6142c95a0eacd310d45f433e0a4c17d4318b4c11f626a4a1b4917f41243db7"
     },
     "css/unified-actions-v1.css": {
-      "sizeBytes": 1909,
-      "sha256": "1710bae71831c27bfe9a64ed2680efcee4ae747566e296135de3d01cbd8d9b85"
+      "sizeBytes": 2045,
+      "sha256": "73a83f66815c01f1f3c95b521e434a73a0c7abd04ba16e6bc12edaecc2d6cdd6"
     },
     "desktop/navigation.js": {
-      "sizeBytes": 1754,
-      "sha256": "271c3926985eefc7681300e2546a47b4095b38a4779b75d55ed4f7f04b9a0842"
+      "sizeBytes": 1629,
+      "sha256": "307144b7fd9c967907f6872ec278c08bb8f8eb8dd5ea3fa3ddc92d97b33dedeb"
     },
     "desktop/round22-center-desktop.css": {
       "sizeBytes": 293,
@@ -2867,16 +2875,16 @@
       "sha256": "ae73ea93624ba10e8da299a6ccc450ce87c02149b14d4a535699a81a24aab5d5"
     },
     "dokumentacio/AUDIT_V1_10.json": {
-      "sizeBytes": 2886,
-      "sha256": "64d19b237587bacdea86e504157b9ca81fb06fe33da4f3a5dcc0ae083773ecfe"
+      "sizeBytes": 3080,
+      "sha256": "55fc453660f6cafd479f6dab7f052f56cad09a47f76871dae7870508fd411e41"
     },
     "dokumentacio/AUDIT_V1_11.json": {
-      "sizeBytes": 2886,
-      "sha256": "b604686b04c12e148a8e70a2cef9f46116731568ab30dacd2222bdaf717a9704"
+      "sizeBytes": 3080,
+      "sha256": "6995cf413f64620162efc8701326361bc27293dbe90b329d8a59b3fb4e0767f4"
     },
     "dokumentacio/AUDIT_V1_12.json": {
-      "sizeBytes": 2891,
-      "sha256": "0641a4e6fb74a90ac5ebf31b87fe5cbeac3a903509a5fd9978cde4edcdc48ac4"
+      "sizeBytes": 3085,
+      "sha256": "7e6f4179014ef49142e7e609e69312204cd8fddb30e8574749a00a3c22279f24"
     },
     "dokumentacio/AUDIT_V1_13.json": {
       "sizeBytes": 2891,
@@ -2888,7 +2896,7 @@
     },
     "dokumentacio/AUDIT_V1_15.json": {
       "sizeBytes": 2892,
-      "sha256": "ba5a1388cde13d325d6ba1366134f42146b5416eb885fe76ddaa37e5f10b2b34"
+      "sha256": "3c7276bfab78af5165b96c65c46d95539a15e3948e64d802597e71aeac40d461"
     },
     "dokumentacio/AUDIT_V1_5.json": {
       "sizeBytes": 1881,
@@ -2922,6 +2930,10 @@
       "sizeBytes": 489,
       "sha256": "27c554945d5f438de61f74da045442a6713ce9cb5822b28c6345597a9f5a2918"
     },
+    "dokumentacio/BONGESZOS_PROBA_V1_33.md": {
+      "sizeBytes": 1128,
+      "sha256": "9bca040dc3f251d5f1cd6db0434e5300e1023c948382706f3a3892c3b245662b"
+    },
     "dokumentacio/FEJLESZTESI_ES_TESZTBESZAMOLO_2026.md": {
       "sizeBytes": 25243,
       "sha256": "a8793c51af8bb062223bccd44d879309f3f2360edada7ed45840d0c109a89b77"
@@ -2933,6 +2945,18 @@
     "dokumentacio/KEZDOLAP_JOVAHAGYAS_ES_ELTERESEK_2026.md": {
       "sizeBytes": 6503,
       "sha256": "5261d3c23ed1be725412e3dba23e1c591cbc6c9088f1fd1614417bfdd02685d4"
+    },
+    "dokumentacio/KIADASI_TESZTBESZAMOLO_V1_24.md": {
+      "sizeBytes": 10364,
+      "sha256": "eb7a236475f0bd51abdc95f78bbe3020aa0c1d4532b39cd4f45908c5b7b5a1c3"
+    },
+    "dokumentacio/KIADASI_TESZTBESZAMOLO_V1_27.md": {
+      "sizeBytes": 12180,
+      "sha256": "bfd7b3c7c59f5b86824fdf7b302d591e260cfb6f9eb6cea2a474fb09800202dc"
+    },
+    "dokumentacio/KIADASI_TESZTBESZAMOLO_V1_30.md": {
+      "sizeBytes": 11001,
+      "sha256": "29ca69fae704c26cb2771e22ad9ca1e75721781271d4454b1fdc5a9e683ca08b"
     },
     "dokumentacio/KOZPONTI_JSON_PARAMETEREK.md": {
       "sizeBytes": 19897,
@@ -3038,6 +3062,66 @@
       "sizeBytes": 6536,
       "sha256": "62daea23679b40e6b1d73a57656ba156a05749c64726fa9fef46930382e1c680"
     },
+    "dokumentacio/TESZTNAPLO_V1_21.md": {
+      "sizeBytes": 6706,
+      "sha256": "6720528606bed53c19f5bf478934191a854b6a86fe43ba11632b103c78fb71c1"
+    },
+    "dokumentacio/TESZTNAPLO_V1_24.md": {
+      "sizeBytes": 8002,
+      "sha256": "cc66b84a1cb763fd700c4657cd1560e4a334d2b18d1c04eb82f0446e79fef49c"
+    },
+    "dokumentacio/TESZTNAPLO_V1_25.md": {
+      "sizeBytes": 6723,
+      "sha256": "d1b6b207f08472879fb3eb7d8b842eb30e7fdb9981c82aa0bed6352fc9a866e9"
+    },
+    "dokumentacio/TESZTNAPLO_V1_26.md": {
+      "sizeBytes": 6723,
+      "sha256": "859107aae7dd805555c94a864c544a73552b19aba9d4d5586461d79e1ef85526"
+    },
+    "dokumentacio/TESZTNAPLO_V1_27.md": {
+      "sizeBytes": 6724,
+      "sha256": "a1deecea338feae390c0bbe783d55abbce664337d34d1fbb46a81a43d0094113"
+    },
+    "dokumentacio/TESZTNAPLO_V1_28.md": {
+      "sizeBytes": 6729,
+      "sha256": "bea2fa899090009c374c9695e226beb1ea51ebcdb0323af4c985e81d5aece84e"
+    },
+    "dokumentacio/TESZTNAPLO_V1_29.md": {
+      "sizeBytes": 6727,
+      "sha256": "83ff52cf4d6755117f616f191c372fa81c3cd474c5c83b5ea701ee9636fabdb8"
+    },
+    "dokumentacio/TESZTNAPLO_V1_30.md": {
+      "sizeBytes": 7176,
+      "sha256": "c0a8c7ef33215a959837e91fab1bafc3cc2e266c7ec3b2f6260c55b919490e12"
+    },
+    "dokumentacio/TESZTNAPLO_V1_31.md": {
+      "sizeBytes": 7324,
+      "sha256": "048fc1b0529d7fdf80accaeecec50d34b6be3aa22f864d7a8275a4bd1df86077"
+    },
+    "dokumentacio/TESZTNAPLO_V1_32.md": {
+      "sizeBytes": 7325,
+      "sha256": "9b0135c8e290e35a82370055bf11fe4c0ca0ab4a31deaa88a5317e2cc198ff17"
+    },
+    "dokumentacio/TESZTNAPLO_V1_33.md": {
+      "sizeBytes": 7326,
+      "sha256": "bf32d0b70051adc81e77f3ca5a1affb567947cc84e7b75fa8fe5c76d093d0628"
+    },
+    "dokumentacio/TESZTNAPLO_V1_34.md": {
+      "sizeBytes": 7327,
+      "sha256": "c08232b72ea08422cdfb110778ac5bd571d09d49028f399f2fb3ebd606769874"
+    },
+    "dokumentacio/TESZTNAPLO_V1_35.md": {
+      "sizeBytes": 7326,
+      "sha256": "139b056ebf64f7598152c43c3ca2dc5959437686986f771bd708a1e851de00f0"
+    },
+    "dokumentacio/TESZTNAPLO_V1_36.md": {
+      "sizeBytes": 7325,
+      "sha256": "a3137072170d6ab5bed4e607cead12fc6641fd5d3b59a1fb2aaf63c4a81f4c11"
+    },
+    "dokumentacio/TESZTNAPLO_V1_37.md": {
+      "sizeBytes": 7577,
+      "sha256": "d69a8f9f44fd67c85998641858060ec0e04486c659b0b4066693cbcfd45154f0"
+    },
     "dokumentacio/VALTOZASOK_ES_TESZTEK_V1.md": {
       "sizeBytes": 3653,
       "sha256": "e521077070a2e091aa5726ac5b658bbb37dbab65fa293c32386ad91c0b26ee0d"
@@ -3054,9 +3138,61 @@
       "sizeBytes": 4262,
       "sha256": "a52511912b44f6118329b5b649bdc48ab727b2689e7a90e7bda6618e541d93f5"
     },
+    "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_25.md": {
+      "sizeBytes": 1806,
+      "sha256": "136bf8ccec936743b325d0489d462ec5731d8ad0042a7dffd32fe81cab5fefb7"
+    },
+    "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_26.md": {
+      "sizeBytes": 2084,
+      "sha256": "bd6c63ba5ca635a07d50f15143892d15f11ec5cc8b2138752bd8bd03252fa8fc"
+    },
+    "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_27.md": {
+      "sizeBytes": 3645,
+      "sha256": "b581f8c1380eb204ff98e76a3552ba692f9bcd3dcc48c1d9f344878f01fb2fe7"
+    },
+    "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_28.md": {
+      "sizeBytes": 2824,
+      "sha256": "aab78327b57fa7051e2986a4f2ff32f6fd23ba4f386f2524cee0551bd01c6696"
+    },
+    "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_29.md": {
+      "sizeBytes": 3136,
+      "sha256": "abc588e1458161ee5defffa47fb044561a8e03b48f655bc93306129749ded029"
+    },
     "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_3.md": {
       "sizeBytes": 4319,
       "sha256": "6d6bc54269bc345b754e75ccce615bda059aadeb335ae85fd5ef9f6c58d03876"
+    },
+    "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_30.md": {
+      "sizeBytes": 3828,
+      "sha256": "bb6d9f12b0ec22c2eb368d90fa540c7c8dfeede3dd5adc82bd8eb712be658512"
+    },
+    "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_31.md": {
+      "sizeBytes": 2566,
+      "sha256": "e2579563ec15a0cc28a596d3390a38ff58b6eae1af5a1b02127a4942820e2e62"
+    },
+    "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_32.md": {
+      "sizeBytes": 3321,
+      "sha256": "c0166c869f51f5db0c014b5c2840f1711a3b0e636e67394c418c26d489fc825e"
+    },
+    "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_33.md": {
+      "sizeBytes": 3970,
+      "sha256": "260e35b04e644938beda35ba436aef2e12721925eee33b0d8551968e5d12779b"
+    },
+    "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_34.md": {
+      "sizeBytes": 2578,
+      "sha256": "c3b15ef0b1facf4bdff465b1fe823a3d40d975f62f7d8472f9996b5b5372bdc8"
+    },
+    "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_35.md": {
+      "sizeBytes": 2460,
+      "sha256": "8d68339aa39225f0fe5aa85b49b060b6b6f5f10aab3d043609dcbe81832ce275"
+    },
+    "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_36.md": {
+      "sizeBytes": 2502,
+      "sha256": "d5617dff0a8b18fb812de8456cff115e3c1140c81a7113ca4ca7e88ecd3a8f62"
+    },
+    "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_37.md": {
+      "sizeBytes": 3657,
+      "sha256": "7cc61dfaf4fd1f6ab9bb15ae601c03cec4fe9dfe598965623a6046e694a36f85"
     },
     "dokumentacio/VALTOZASOK_ES_TESZTEK_V1_4.md": {
       "sizeBytes": 3357,
@@ -3082,37 +3218,69 @@
       "sizeBytes": 8352,
       "sha256": "5c000ba2fc4bea0aa63abf6afb42f85820960c0d642712cdcd2608d74071f1f7"
     },
+    "dokumentacio/menu-es-mobilkor-tesztnaplo-v1-38-1.json": {
+      "sizeBytes": 4636,
+      "sha256": "090cae0a76fcfb3e5565abe9bbb9738dfe0912aa2c416a4d7573d7cf5dd83609"
+    },
+    "dokumentacio/menu-es-mobilkor-tesztnaplo-v1-38.json": {
+      "sizeBytes": 3887,
+      "sha256": "e20fbe13974ebb24d65999ff62d16843a6d712a4905a06cced3b0e8bb9d46871"
+    },
+    "dokumentacio/sportanimacio-tesztnaplo-v1-38-2.json": {
+      "sizeBytes": 3751,
+      "sha256": "3b70b8225fbbb691b1c7b4329f475f6ee25f0c7be340693dedda515cb0a8ea11"
+    },
+    "dokumentacio/static-http-tesztnaplo-v1-38-1.json": {
+      "sizeBytes": 255,
+      "sha256": "816930a5db226f66a673a7b0f6e25c16e0e8b1d39abde8e3fdba636a000c4690"
+    },
+    "dokumentacio/static-http-tesztnaplo-v1-38-2.json": {
+      "sizeBytes": 389,
+      "sha256": "db65ad64b4c66aa174a9d1334dd6a6e3da0038575b01c10900d98da4099b62a1"
+    },
+    "dokumentacio/static-http-tesztnaplo-v1-38.json": {
+      "sizeBytes": 255,
+      "sha256": "8a7e3a424d7c673eca17a573e33cba7a8ed9dfbc1b39578f8cd96ff474b3bb6c"
+    },
+    "dokumentacio/tesztbeszamolo-v1-38-1.md": {
+      "sizeBytes": 4328,
+      "sha256": "bef36cee6e6217460b9e738c07d189fe96d6d51272aafaf7ae5e934d5e460dde"
+    },
+    "dokumentacio/tesztbeszamolo-v1-38-2.md": {
+      "sizeBytes": 6797,
+      "sha256": "8ae03e7f5c4ab13a4fb59c95cabd666e2f9dd2e9bf694a25540395b1f422d6c1"
+    },
     "felfedezo.html": {
-      "sizeBytes": 9027,
-      "sha256": "af00d04c5861a88d4762bde22424389290352ac53eb2653ec4b068d265d450a9"
+      "sizeBytes": 9075,
+      "sha256": "75001b42d45bd4cc29f9e97a38c696997d1452c84cc64923f87af8cc4e60a6ca"
     },
     "index.html": {
-      "sizeBytes": 17491,
-      "sha256": "e6a30db8dde79da0df41ebba9bfb7ac9a94cca4bae84ac679227754e3e2a9b5c"
+      "sizeBytes": 18079,
+      "sha256": "69d2c61dc115df27464352ed6c4da995adbb4f3d9a1de0766d0432ec49b3a2a1"
     },
     "iranytu.html": {
-      "sizeBytes": 10033,
-      "sha256": "05c66f225047fc48282b8d085e86a2a740931701c622dd1dc3371b8da9ba67a2"
+      "sizeBytes": 10082,
+      "sha256": "0292db0b935668f913eb4d48a54f3eebfa3c7cd2e4a25f5575f2f888016015df"
     },
     "iskolai-muhely.html": {
-      "sizeBytes": 11309,
-      "sha256": "12f4d7c72fca4d0101de24dfd4797920a286477e2b6625dd6cebb8b59c1ad8b3"
+      "sizeBytes": 11362,
+      "sha256": "e54eeac0f426d39ee84340ff0a9991cad81b6e6db51e7d79c7775565ceb5ebad"
     },
     "js/advanced-2026.js": {
       "sizeBytes": 34623,
       "sha256": "5d126b815ce883d1e9e535175040a0cd05efbcde7beabce5cc0b14850225a37a"
     },
     "js/app.js": {
-      "sizeBytes": 51299,
-      "sha256": "f2ac003d2bc69c78fb34b50b763cb9f33d83b8c1220905a38a5294accbcc728e"
+      "sizeBytes": 58584,
+      "sha256": "395d9c0aac6553a2cf744b8a13cc3ff688627fdaec5f5ba2fe1ddaad202dd281"
     },
     "js/blocks.js": {
       "sizeBytes": 8882,
       "sha256": "40e222247a402993a05b4b3e54fb7301a6beb9c183b560ac3c1e9501df030c7c"
     },
     "js/content.js": {
-      "sizeBytes": 5076,
-      "sha256": "b3a33990bc674e77b699c0bfc609141063a454455b44c974f449089de762acdb"
+      "sizeBytes": 5465,
+      "sha256": "0a22b3b5b3796fa86b0a2020f8338d4548381b709532a5c74893f9c1961bc10d"
     },
     "js/daily-sport-news.js": {
       "sizeBytes": 4746,
@@ -3123,8 +3291,8 @@
       "sha256": "d0f2dbf18cb1ef4ebdd2ba99a54a4fd818f3fa9d14daf7f1026a21dc9e903e17"
     },
     "js/documents.js": {
-      "sizeBytes": 28186,
-      "sha256": "7eb93aa2d15a809fd0703bba9836f4c65b45be468fd58b3f36479bea50436dac"
+      "sizeBytes": 29212,
+      "sha256": "974827c0e857b0bc4d165fc677e327321454fa1a33a29db9a4d66fdf4b141f23"
     },
     "js/experience-2026.js": {
       "sizeBytes": 21323,
@@ -3139,8 +3307,8 @@
       "sha256": "463cbfbf2dbc714049c32ddf872b024f94ae2b148df1902a3e18a108dcd0fd1d"
     },
     "js/guide-theme-2026.js": {
-      "sizeBytes": 1629,
-      "sha256": "4f981ec3658552e4779f652c75b999021d7633281c0c4c14c54fa2e7fd4530f6"
+      "sizeBytes": 2322,
+      "sha256": "8ade3625d970b550b7d066ee899838da54e951faa8556e7164c9c33d37cba8b5"
     },
     "js/hero-2026.js": {
       "sizeBytes": 6952,
@@ -3151,8 +3319,8 @@
       "sha256": "61386f50453881343b336016fcdc64bb0273e886c6ef0dcf81d917e789862fa4"
     },
     "js/interactions-be-2026.js": {
-      "sizeBytes": 4428,
-      "sha256": "7d15b886ab003ddc5e887ff363d67138120173fa90b559e6fe86ef97e5027a53"
+      "sizeBytes": 3951,
+      "sha256": "0c961674bb9a283ea9afca0afbfa0d35904687db6abd70250f3863a6d929795b"
     },
     "js/kmil-2026.js": {
       "sizeBytes": 7167,
@@ -3163,8 +3331,8 @@
       "sha256": "26bd9c2cee00512ae83f5eea10a68c6c7464af42daecb304c0bfdc9f3a9e194c"
     },
     "js/media-gallery-h-2026.js": {
-      "sizeBytes": 16849,
-      "sha256": "9cb419bbac64a0044a2debeaf5a88354e2f1fcb13c6c9ebbfbcf78716b615d28"
+      "sizeBytes": 18338,
+      "sha256": "17ae80ce5da43ecc3ba7deffaa89bff6c5257b2d6331cad00ec5c8860a93c192"
     },
     "js/media.js": {
       "sizeBytes": 2327,
@@ -3191,8 +3359,8 @@
       "sha256": "3b9dafe2ec515e8f8f9cb22b0da3565ee9ed26dc441f11ffeb641d1915debf03"
     },
     "js/performance-diagnostics-2026.js": {
-      "sizeBytes": 13410,
-      "sha256": "97291407f0fd053fd103967f21d4bdcb8b04175763c24b8505c86b536cc7cb57"
+      "sizeBytes": 15457,
+      "sha256": "6959c4e7580f6afb1b7e03a5fd609e01317a68ea5a0e511b7394507098d31181"
     },
     "js/premium-home-2026.js": {
       "sizeBytes": 3146,
@@ -3203,8 +3371,8 @@
       "sha256": "cdc3caac4fc69d74764a1b7a6d5255df17a256bdedd450d050a469195a4b844c"
     },
     "js/round12-media-performance.js": {
-      "sizeBytes": 1099,
-      "sha256": "5e8e5ab0680dff3515cf506460f47d5b087ff9af8d9cc31e2ea222d87310f793"
+      "sizeBytes": 1254,
+      "sha256": "33d84135a0144efd41a457514af5fd826e1e10e150992e5549fd39f8af0fdf4b"
     },
     "js/round13-network.js": {
       "sizeBytes": 3400,
@@ -3235,16 +3403,16 @@
       "sha256": "5dda16c37c55c2c88c32a0ec046eedec2ad5caf5fea60be23de2ca3d1246d9aa"
     },
     "js/round26-arrival.js": {
-      "sizeBytes": 14394,
-      "sha256": "626d9d1fd2b094dc7b149ac549ad77f51408ac9bede2137a022de6e97aaad9f0"
+      "sizeBytes": 15725,
+      "sha256": "da50597657b8bdb752472bbf10ccbc441606fc6b363ec120cd3e2836f96abad6"
     },
     "js/round29-home.js": {
-      "sizeBytes": 23764,
-      "sha256": "8425deea2529bf6854991a5deb24896ed6528cf3c2727aa0f9f9bebc688f7a5b"
+      "sizeBytes": 36124,
+      "sha256": "f296e0db5b86ba95df66bafdcd9519bef8efa872119d857feb9cf58764a122df"
     },
     "js/search-j-2026.js": {
-      "sizeBytes": 15375,
-      "sha256": "9f295ad4ce1ddc177092cd2bfd4c64701dd06b89b76da25b7f3ee25ea80a9ba5"
+      "sizeBytes": 16410,
+      "sha256": "933a27949e4cbe0d769b93223a14a05329bd2bd9c2211b9b9c696f1327d3463a"
     },
     "js/site-quality-2026.js": {
       "sizeBytes": 9773,
@@ -3262,9 +3430,13 @@
       "sizeBytes": 8909,
       "sha256": "87f01af9d31ffb59aedacf97c3261d6d9b681d21ca8a81df5d3a35d80dddead6"
     },
+    "js/subpage-header-motion.js": {
+      "sizeBytes": 7474,
+      "sha256": "d77448f2871f93185345b1ae14388f48611d6ef17ae120aa919e50a9a055d9fc"
+    },
     "js/subpages-v1.js": {
-      "sizeBytes": 10695,
-      "sha256": "0faf0e151465f4dca5330422b80138a4127e256501539814d57d392392df7e1e"
+      "sizeBytes": 12164,
+      "sha256": "c96f374de664adf07f5e707f11c88b3f8924221c5ff6fc855bbda354baab8daf"
     },
     "js/tenway-2026.js": {
       "sizeBytes": 7419,
@@ -3275,8 +3447,8 @@
       "sha256": "0f57a7ec39abc6169657b251943a50f689b0bf79865575950570d14a9882adf9"
     },
     "json/adatok/dokumentumok.json": {
-      "sizeBytes": 33752,
-      "sha256": "a4be2470ae0b982f341dacd38c6e134a6a12bf602fa9bf9ced9376c173d5e731"
+      "sizeBytes": 33704,
+      "sha256": "bcd2517a23808a46baf9ef7c80f15487a3aff0fa2490c037b190e41a6047a25f"
     },
     "json/adatok/esemenyek.json": {
       "sizeBytes": 1853,
@@ -3359,8 +3531,8 @@
       "sha256": "94b4ec00171367d6da15f2754c3972b7eddffe743b6558996da2c61e1899ccf9"
     },
     "json/config.json": {
-      "sizeBytes": 11699,
-      "sha256": "7873854f18736341e97bea691a1e23db171a5d199d4b637811d29744e3e65d04"
+      "sizeBytes": 14537,
+      "sha256": "6ffeb7166ba28a0a50a454a5ed744344248cf1f3d214cca599ae434cde369dbf"
     },
     "json/mediatar.json": {
       "sizeBytes": 218634,
@@ -3403,8 +3575,8 @@
       "sha256": "f8582bd0a276ceed9392d6f158b516ae1f0431792881b51939b34a18fc9b5df7"
     },
     "json/oldalak/hirek-es-esemenyek.json": {
-      "sizeBytes": 2422,
-      "sha256": "b3d8efeebca903b5ef913141f07bf5ea65f4990d809ad4ea4d3ba84336d0081c"
+      "sizeBytes": 2426,
+      "sha256": "858f1a97a61ee9d9b5e18838ff16b57759b7f46b6ca9c97262b02d174f58a9d2"
     },
     "json/oldalak/informaciok/adatvedelem.json": {
       "sizeBytes": 2761,
@@ -3463,12 +3635,12 @@
       "sha256": "1990677f081756b241c49736b0028486d2f68ffc1f6958c2dee6b7cfe3049a37"
     },
     "json/oldalak/informaciok/mindennapi-tudnivalok.json": {
-      "sizeBytes": 2444,
-      "sha256": "3c56ed21ecf2abc8c627d982430085a53442988ec630cbba064658d4f3f8e17a"
+      "sizeBytes": 2450,
+      "sha256": "44085af9c420cd6c10d257ee4aef6681d08c751053a8a9c3873bb32a2964b948"
     },
     "json/oldalak/informaciok.json": {
-      "sizeBytes": 2818,
-      "sha256": "d6f2ebeddadbd13f5134627855e1ac808adace966844263f6542914c8583df53"
+      "sizeBytes": 2820,
+      "sha256": "0e5f568fb74fa840938f6e166c1d8a73db852c203fbc7fdaa0f43d81f7e7ef7a"
     },
     "json/oldalak/iskolank/a-honlap-szuletese.json": {
       "sizeBytes": 13372,
@@ -3491,24 +3663,24 @@
       "sha256": "953a3363ec2579b0d56337873ae84e550de3845694fd2fb36a5e24777245e6ed"
     },
     "json/oldalak/iskolank/kuldetes-es-ertekek.json": {
-      "sizeBytes": 3181,
-      "sha256": "7bef679520ab8dd84287bb7399a73c5d20b0c48080b636a0ff30c52528dd9a24"
+      "sizeBytes": 3197,
+      "sha256": "04f65a6a2951daf4f31baff23a6242be740f19bb0a9f4dd70a68b410364cc5ea"
     },
     "json/oldalak/iskolank/oko-iskola.json": {
       "sizeBytes": 2748,
       "sha256": "68b12d4553ab4590a0ff295b148895a292cd28d8c9f9db93d74cac96232d510c"
     },
     "json/oldalak/iskolank/partnerek.json": {
-      "sizeBytes": 2764,
-      "sha256": "858581fd155f455dc1831409c0330765688f08e02217d142fbaea51ee7b6e5a7"
+      "sizeBytes": 2784,
+      "sha256": "ca819aaa928d86a541e0e4d6ee11f9648b953ea3a4e9b60ae0c97ca06d0cd0d7"
     },
     "json/oldalak/iskolank/tantestulet.json": {
       "sizeBytes": 2639,
       "sha256": "9c79311766d8b352d447c35debe55758edd030631b20abeeee319862ef5947ac"
     },
     "json/oldalak/iskolank/tortenet.json": {
-      "sizeBytes": 3823,
-      "sha256": "98594790754305e95a53c5aec2f3940e48c1c85787863a62091c7c100ed90751"
+      "sizeBytes": 3841,
+      "sha256": "8cd32c316e6e2323b432a74ae2a6b8fc5f6ef04b3cc1c0bf2189896c848724f5"
     },
     "json/oldalak/iskolank.json": {
       "sizeBytes": 3883,
@@ -3535,8 +3707,8 @@
       "sha256": "83744d9ea86e2435e146993ca1c02875edc7bca7bd09176b52514ae2dbab8a6b"
     },
     "json/oldalak/oktatas/felveteli/kilencedik-evfolyam.json": {
-      "sizeBytes": 3092,
-      "sha256": "13812889513616668832e8610fa0c2388a7f89c11c92b73e4cabd26db2be792e"
+      "sizeBytes": 3093,
+      "sha256": "1ec561ca5d60afbd686b25ba2cc09e853c6fa14c22eacfe09c8b831f308643f1"
     },
     "json/oldalak/oktatas/felveteli/nyilt-napok.json": {
       "sizeBytes": 3321,
@@ -3567,12 +3739,12 @@
       "sha256": "e0f470e31342ef321d23956fda12c65c2802dd3eeafc82119a0c05ffc09bef81"
     },
     "json/oldalak/oktatas/konyvtar.json": {
-      "sizeBytes": 3428,
-      "sha256": "6f9d4b811bd9635d6a52b3f9f9f6a96c72bd6cb2c9023aab4b8b523843e1c441"
+      "sizeBytes": 4530,
+      "sha256": "2e126eaaa2435746283d0bd51622d69725b61fd6f57077b5acbb8dd0e200c5b8"
     },
     "json/oldalak/oktatas/tananyagok-es-jegyzetek.json": {
-      "sizeBytes": 3074,
-      "sha256": "1e063f8e56a3a66653d97950892e8984a62d89050c32b66628a29769cd41e60f"
+      "sizeBytes": 3090,
+      "sha256": "3b476cbe92163d2d80ebe683719024c3b72b8c0b8a2345fbf61ef7eccdc1c3d3"
     },
     "json/oldalak/oktatas/tanevek/aktualis-tanev.json": {
       "sizeBytes": 2789,
@@ -3603,8 +3775,8 @@
       "sha256": "43064560e7ed754885f033329396d571383c42f9c5bd0e8f83db772c1be625a1"
     },
     "json/oldalak/oktatas.json": {
-      "sizeBytes": 3034,
-      "sha256": "84f4e79c397489eab4b7d7d77e1bc4df3169a2ce1b758b8164ec380354a730f1"
+      "sizeBytes": 3022,
+      "sha256": "b8062a310faa7ae527ae8ff55ca980cc1a88d8743b493cafd284ecb840ee3fae"
     },
     "json/oldalak/sport/csapatok.json": {
       "sizeBytes": 3193,
@@ -3635,8 +3807,8 @@
       "sha256": "8489784b624eeb7652024690e21a255693e5f0d9d9aadd09ae9df3cda80fbfee"
     },
     "json/oldalindex.json": {
-      "sizeBytes": 48636,
-      "sha256": "efb34cdfeaee34e05fdbef194a6072a3a321a800f53ccd87dd2388ef8f5afd2a"
+      "sizeBytes": 48707,
+      "sha256": "8a84cd53a25dfcf7b2fcdfe2f90ddfd9876ad1f7bcd64c0cefa4b498ff3e262e"
     },
     "json/schemas/dokumentumok.schema.json": {
       "sizeBytes": 5536,
@@ -3647,12 +3819,12 @@
       "sha256": "bcee1e729212c914726c08eb06554d5a3d4882b6aa07a74c9a0a32e18a1713bb"
     },
     "json/structure.json": {
-      "sizeBytes": 7717,
-      "sha256": "9f1ac23f828fc3c4af582a713fb5af83ad36c283447b7b1b1934e7634797d293"
+      "sizeBytes": 8956,
+      "sha256": "c4ad08dcf72649798595c9987d66cb49cb33f3dab161775d46a95dc68362d5b2"
     },
     "megkozelites-es-tanulas.html": {
-      "sizeBytes": 15400,
-      "sha256": "a4533ea3b115de02e8d6244b60e36d0c8c85c0998fb0b8ad2662086363b64b8a"
+      "sizeBytes": 16598,
+      "sha256": "443cba126ecebbc964ba1cee1c573176578da378a7ae8bd5eb51fa9e424e5426"
     },
     "mobile/j-mobile-home-2026.css": {
       "sizeBytes": 4226,
@@ -3663,12 +3835,20 @@
       "sha256": "55835b1bd18061aa0b41e87ba2f9a9f2e14471db79d0b414fe72221aef088595"
     },
     "mobile/navigation.js": {
-      "sizeBytes": 3370,
-      "sha256": "d8ece1fcffde70bb33c7e26ee350d6ed2259e7dde7deb48e6f6cde4cfefe421f"
+      "sizeBytes": 1886,
+      "sha256": "29a7f3d09d77424f77e455b645a857435224e85e37fa3aa512e2f3a23e6058bf"
     },
     "mobile/quick-nav.js": {
       "sizeBytes": 3084,
       "sha256": "ab15c848ea0c2d7d5356d44ddaa0c10bb5c7c30a4cabead59c551c16ea87dc95"
+    },
+    "mobile/radial-wheel-v1-38.css": {
+      "sizeBytes": 5696,
+      "sha256": "bb4d5593751070b153d0c0253f8d41d1eb278c02b002636e8d8d49a5cc2a8db0"
+    },
+    "mobile/radial-wheel-v1-38.js": {
+      "sizeBytes": 3660,
+      "sha256": "a2c2afd55a6de0d3184bf356443cfa965419e52ef4801b253b08829ed0cfd99c"
     },
     "mobile/round16-responsive.css": {
       "sizeBytes": 1146,
@@ -3712,7 +3892,7 @@
     },
     "offline-olvaso.html": {
       "sizeBytes": 2109,
-      "sha256": "052da1f99b36791035d28cb3fe77a06b5517f9b9e9c23baea2361bd2ec45dfbc"
+      "sha256": "073d5a83e09ae6df70a48b233c7c2b6134af82e0095db2be15bc10f07d84b98d"
     },
     "offline.html": {
       "sizeBytes": 1665,
@@ -3724,15 +3904,15 @@
     },
     "script.js": {
       "sizeBytes": 1305,
-      "sha256": "ec1264d0efb411d41fac99974e0d88f102ba9b45672645537d91504d729f4846"
+      "sha256": "8ec8d074e375f9af2a1de520df26b45edfbe945a2714988fc857a7d31bbfa708"
     },
     "service-worker.js": {
       "sizeBytes": 5975,
       "sha256": "f3d93b16b5b3b9b4a92c242ddd33438a1a49a14e168a1b211e570cde4e2aa1d1"
     },
     "tanulas-es-kozosseg.html": {
-      "sizeBytes": 13099,
-      "sha256": "279a9496edf453bde8863b70ac108d0d8c8e7ba39219d377760d31d570190550"
+      "sizeBytes": 13152,
+      "sha256": "b27d4c8540d809b7b8eecb173b94140aeb1f223878711921128bb9d5e08e46b0"
     },
     "tools/apply-global-actions.js": {
       "sizeBytes": 688,
@@ -3759,8 +3939,8 @@
       "sha256": "8a6989724e0c03d857240fbb96a8fc593146122e9bb319b71fe3710e36c3997a"
     },
     "tools/build-release-manifest.js": {
-      "sizeBytes": 1529,
-      "sha256": "d5da59465b9b8cd4b7f8ec93c000a2a1b97a4ec9c59c7533dcddacc5dc51776e"
+      "sizeBytes": 1438,
+      "sha256": "6deeb625e42e300e0ce3ba0aba7652fcb43ad2ab7efff66edfa79de1405eb319"
     },
     "tools/build-rule31-worklist-v1-8.js": {
       "sizeBytes": 3230,
@@ -3772,7 +3952,7 @@
     },
     "tools/dokumentum-szerkeszto.html": {
       "sizeBytes": 4566,
-      "sha256": "029f80b0a7a23224da3733510cd7be13ecd9a144dbd5e629ac3a292c1e642e59"
+      "sha256": "d61380bbd99d20bd5c48315a7be520d93128b0de5ddd348af0eaa5439b22b282"
     },
     "tools/dokumentum-szerkeszto.js": {
       "sizeBytes": 4523,
@@ -3780,15 +3960,15 @@
     },
     "tools/eszkoz-mediator.html": {
       "sizeBytes": 13246,
-      "sha256": "0f5ce555a8ddc925eca4f5a0f384aca85cfcf1d7891e86b44634682be0ab00ef"
+      "sha256": "2229af20b20c70697181b637afd9e9115d19d10ea50aa324ee11f3db3a0bf17c"
     },
     "tools/fejlesztoi-munkakozpont-20.html": {
       "sizeBytes": 7225,
-      "sha256": "93f0f34d74ec1ff958bbcc1e672d9c3a7b33706a8cc701a41ff1c78be01a66b4"
+      "sha256": "a0b898570c346f38f1ed44fc790319337a7d4975d561685d2c7a5047a97bf5ad"
     },
     "tools/ftp-kiadas-ellenorzo.html": {
       "sizeBytes": 3783,
-      "sha256": "84be8d156a5190651e1ac80e601c69594bb568e756109a1b564fb7fb6af17efa"
+      "sha256": "675376b9cd158ae26714d8066698071bf536bb6671cddc2dca5938a485f4665b"
     },
     "tools/ftp-kiadas-ellenorzo.js": {
       "sizeBytes": 12162,
@@ -3796,7 +3976,7 @@
     },
     "tools/hirek-mintaeditor-18.html": {
       "sizeBytes": 2269,
-      "sha256": "642abe92c07ee68a0ce1453a31351d53aaa6e80429f6585a7c8574faa2833bdb"
+      "sha256": "3107d6a8f28451a6b9fa6a390cda57b2c19f4ef189a599c454788cc949a83e4f"
     },
     "tools/hirek-mintaeditor-18.js": {
       "sizeBytes": 3073,
@@ -3804,11 +3984,11 @@
     },
     "tools/index.html": {
       "sizeBytes": 3783,
-      "sha256": "49f3ba15e1d2e699f1ccfce55c617f44baa5657d6d0b4bf1df61e163bd09f08f"
+      "sha256": "f65de30c0371c4d8ffcb86681b5a6bc8a8b2250db73eb6b92c433b8c3fda5e21"
     },
     "tools/kiadas-es-mediak-18.html": {
       "sizeBytes": 2566,
-      "sha256": "6e4ef3000eb474a0bbfcfe30adc932ac7ff542e86cb2fcd972020eddcf6fb6fc"
+      "sha256": "98a157f554387551d35e8357bab6a841417e822823127f85b9530d2431aab3db"
     },
     "tools/kiadas-es-mediak-18.js": {
       "sizeBytes": 7740,
@@ -3828,23 +4008,27 @@
     },
     "tools/minosegkapu.html": {
       "sizeBytes": 2286,
-      "sha256": "a794166cb7aa1d19ac9de26f2892d5c4bb2ca80b4f48bac58237b332242fd14b"
+      "sha256": "ffc5654336f284005b56acd72e9d9ece1f5b06c6fb55437bef6724e36a7919c5"
     },
     "tools/oldal-json-szerkeszto.html": {
       "sizeBytes": 8857,
-      "sha256": "22bb5774ac67bf9d7fbf4b4b97ec324987ffc6c2239d955a2321b9e7d5e71cfc"
+      "sha256": "506b9d5066bdc5f434a1614e7a9d7d720e8eb487ea49eef454ee8c1d4cf6fd06"
     },
     "tools/oldalindex-frissito.html": {
       "sizeBytes": 6957,
-      "sha256": "3e1c3bf7095a305a6304a300763ccd1b8be3f9febc8e98132746b69f6f043576"
+      "sha256": "46a44fc0c6c3f86e1ad434c77571a679c62a4d4e81f4c31ce3250f220bcf7f91"
     },
     "tools/parameterek-szerkeszto.html": {
       "sizeBytes": 6021,
-      "sha256": "879ee311f7f36e5dda19b2877550f4e49a0b7a86d7fb1cf00f13005ec1a8baf4"
+      "sha256": "edc891f3c7aa135380f9329957e5ddab142102ad62a99027ab4027dff441d319"
     },
     "tools/parameterek-szerkeszto.js": {
       "sizeBytes": 14428,
       "sha256": "fcd0f6ab257833c7724707c5f111401aee5b31f03595e3a3956136e1b2d46a8e"
+    },
+    "tools/rebuild-two-level-menu-v1-38.js": {
+      "sizeBytes": 5881,
+      "sha256": "7dc067e1921426c905c214f232923109a12d5ee9571d453de3e1ac831a03d039"
     },
     "tools/reconcile-assets-catalog.js": {
       "sizeBytes": 5109,
@@ -3858,13 +4042,69 @@
       "sizeBytes": 22609,
       "sha256": "d78e30efd9080a877d0d74f0f42c9184acda06e638cefca8c0961c9ce8e4b6ef"
     },
+    "tools/run-full-regression-v1-24.js": {
+      "sizeBytes": 2379,
+      "sha256": "74c4d8dd39c39fbb76f1b11578ff3a5913e01b6431761dc374f79d9ad02a3b49"
+    },
+    "tools/run-full-regression-v1-25.js": {
+      "sizeBytes": 2762,
+      "sha256": "8cba99f10119ebac13f0e751619ec0591f5c89a99aac8640d10632201387cb13"
+    },
+    "tools/run-full-regression-v1-26.js": {
+      "sizeBytes": 2762,
+      "sha256": "f5b04c03832e67240906e09a4eedb4959fcdf4ec4fe20ba07689200a3fe80618"
+    },
+    "tools/run-full-regression-v1-27.js": {
+      "sizeBytes": 2762,
+      "sha256": "4db6d19d49b73cb9299372ae587b9074d92f5df449414bb0ea195ca8023c61c4"
+    },
+    "tools/run-full-regression-v1-28.js": {
+      "sizeBytes": 2762,
+      "sha256": "45d159d246830354e26918d162d951a54ea5116a2f021771b3e08e7d6fdf126c"
+    },
+    "tools/run-full-regression-v1-29.js": {
+      "sizeBytes": 2762,
+      "sha256": "59598f48cd24606d8bf264118654647e507162a53d87e9428898e3d97568614a"
+    },
+    "tools/run-full-regression-v1-30.js": {
+      "sizeBytes": 2839,
+      "sha256": "c2e19a841959f9c2ae72c5bcf8c3f048e86f785b96056dacff9bf5560abcfd3e"
+    },
+    "tools/run-full-regression-v1-31.js": {
+      "sizeBytes": 2869,
+      "sha256": "b56cf998129f9653c36423c82675eb7520aebb81b911c6525cf65c801ed30e92"
+    },
+    "tools/run-full-regression-v1-32.js": {
+      "sizeBytes": 2869,
+      "sha256": "adc58331e2e219213ee105eef5b36b0e56c4382a167b1d7aaa463f8a9ffb70e8"
+    },
+    "tools/run-full-regression-v1-33.js": {
+      "sizeBytes": 2869,
+      "sha256": "c1160f4e12a716564db40bc04dba05b1973f34f909a8cb8a2edb930cc96c8253"
+    },
+    "tools/run-full-regression-v1-34.js": {
+      "sizeBytes": 2869,
+      "sha256": "cfef451b86226b34cfd60cb5e2ebaf843b7a30c8df0a8448f689d23179cc5c44"
+    },
+    "tools/run-full-regression-v1-35.js": {
+      "sizeBytes": 2869,
+      "sha256": "7e84ce68329c8a040999b0165e3caf5ca1324c5592c7a07e85df7e1f09dce205"
+    },
+    "tools/run-full-regression-v1-36.js": {
+      "sizeBytes": 2869,
+      "sha256": "992b2d57f3221fcc8d39c0f7f216d1a00d21d5807489dd5f8577157238a7b015"
+    },
+    "tools/run-full-regression-v1-37.js": {
+      "sizeBytes": 2900,
+      "sha256": "7c38ff0c119e61ac493598f02240804d7e2e69371763a615768c20057c4ff845"
+    },
     "tools/sporthirek-szerkeszto.html": {
       "sizeBytes": 7950,
-      "sha256": "36399c22fcd87024d50892ede64caaa1de0ecfb347841d3d8542febb083220cd"
+      "sha256": "292c13117b98593039e9ae9750bbfd2a1e607c627fd2fe95f340e636788e2cd5"
     },
     "tools/tartalmi-hitelesites.html": {
       "sizeBytes": 6832,
-      "sha256": "6d561dd3e7c4de7ec441fadcc961bad7732a23444c322d00530421a0cf2ca635"
+      "sha256": "3389a4c8f1b4ba035ab6a75da326a50129b81ef1d0794d8b0a8e56f656b4d28b"
     },
     "tools/tartalmi-hitelesites.js": {
       "sizeBytes": 11483,
@@ -3878,9 +4118,273 @@
       "sizeBytes": 25241,
       "sha256": "48e0e38bd9456662eed95e239b0d6af3fc65f29c999186eaad46ddbd404fc617"
     },
+    "tools/test-browser-v1-25.js": {
+      "sizeBytes": 6518,
+      "sha256": "6bcc305883ffd3d58b1015b427a83b29efeaf035dba4c3e5ffc59ce4c9238d0a"
+    },
+    "tools/test-browser-v1-26.js": {
+      "sizeBytes": 6518,
+      "sha256": "6a5b6df7314606049f6d53d36e3ef8f496c4b8bb80d26aa1f7ccae5d859801eb"
+    },
+    "tools/test-browser-v1-27.js": {
+      "sizeBytes": 6518,
+      "sha256": "96072b08149869bffadf8967180a7cfe58f44dc3ff068152c714c7b20d5baad8"
+    },
+    "tools/test-browser-v1-28.js": {
+      "sizeBytes": 6518,
+      "sha256": "cb574474708147f11c5b9d24d1843866cb0cabe55d5a3c5cdf57a5ed0ebb1605"
+    },
+    "tools/test-browser-v1-29.js": {
+      "sizeBytes": 6518,
+      "sha256": "cdf0b0f7b8833e5945a75274fc3fa06eff070fe24f07a21db86551e6ceb5aeeb"
+    },
+    "tools/test-browser-v1-30.js": {
+      "sizeBytes": 6518,
+      "sha256": "03296e3729f6b7dfd0cfdfc916264d3c84de4ba36c6a2d09d0ec161f8237de72"
+    },
+    "tools/test-browser-v1-31.js": {
+      "sizeBytes": 6518,
+      "sha256": "22f0ef725aa595cda66610ac153c0b267ea14c7b5432fb7e21395e835651f6df"
+    },
+    "tools/test-browser-v1-32.js": {
+      "sizeBytes": 6518,
+      "sha256": "7699d5f31b02776cf18c3046ca2101052af0e670efdbb99393967693bfb51de4"
+    },
+    "tools/test-browser-v1-33.js": {
+      "sizeBytes": 6518,
+      "sha256": "1611f78ea21be52f771c7851ade1f4b6ad1cb7a2fa403bc7ac0ccd5ca15631c0"
+    },
+    "tools/test-browser-v1-34.js": {
+      "sizeBytes": 6518,
+      "sha256": "a6b7be97f345de32d40f848609d88c5014249d4b5f8c59981b38e0bf43e64f55"
+    },
+    "tools/test-browser-v1-35.js": {
+      "sizeBytes": 6518,
+      "sha256": "791584e28a2d4cf0f640f29971c286805d2b4a1ce6374f24f041b3a8bd019e8b"
+    },
+    "tools/test-browser-v1-36.js": {
+      "sizeBytes": 6518,
+      "sha256": "df3ff9c53e78c07bad141f9f200e514c1177d97a6438b2d082614997a6031c88"
+    },
+    "tools/test-browser-v1-37.js": {
+      "sizeBytes": 6518,
+      "sha256": "a599ab101cd2b01232bc5711c800d8a89b0d88c3096149ee25ecfbd8e043f737"
+    },
     "tools/test-cache-resilience-v1-12.js": {
       "sizeBytes": 5972,
       "sha256": "27ecf98b7d6aabad4c08fe6b2316145ca054129b901e57b99f2e09170e6598d8"
+    },
+    "tools/test-corrections-v1-31.js": {
+      "sizeBytes": 5262,
+      "sha256": "df71a016e2d440ed563e5ae8f5b90d8d3022dd54c0d23088c580439193c4ed72"
+    },
+    "tools/test-corrections-v1-32.js": {
+      "sizeBytes": 7591,
+      "sha256": "d783c6b9daaab6ff1882d425b3eb9debc454eb4735c546944fdb095bb1f2a0cb"
+    },
+    "tools/test-corrections-v1-33.js": {
+      "sizeBytes": 9630,
+      "sha256": "6c6b4b3a906bbca191c4d5f36e8026f5c2cdc92d715a22f0ad867e802ad411fe"
+    },
+    "tools/test-corrections-v1-34.js": {
+      "sizeBytes": 11963,
+      "sha256": "c1c148cccf46f3e8168e5b9b1a4b177eb020ca82b3420a1e34933ec3df1afcd1"
+    },
+    "tools/test-corrections-v1-35.js": {
+      "sizeBytes": 14381,
+      "sha256": "80062d9937fd19bed87cb33cb8b4a2f6993dc7603d9540e9f5a418c6eb26da24"
+    },
+    "tools/test-corrections-v1-36.js": {
+      "sizeBytes": 17045,
+      "sha256": "64629d8fabd04b3c2a7a4e5f56d6ea7d2b29adf36ff5ba3216f4df0adb448e34"
+    },
+    "tools/test-corrections-v1-37.js": {
+      "sizeBytes": 17021,
+      "sha256": "2f6c18903a174d79d075428bc8ab4325a6ba85732c97f46dc0abf71b81557117"
+    },
+    "tools/test-current-hardening-v1-25.js": {
+      "sizeBytes": 3459,
+      "sha256": "1a58bf41ee53ce07bb10b4a5deaebebe7c4c642efbf910d74e6e46e068b5fc06"
+    },
+    "tools/test-current-hardening-v1-26.js": {
+      "sizeBytes": 5447,
+      "sha256": "b5043ffba8859e3f35daf4a2e2cb672083de7fbcab233d2198ad2f37187a4907"
+    },
+    "tools/test-current-hardening-v1-27.js": {
+      "sizeBytes": 7114,
+      "sha256": "11c90da893fa239bb27ee05275026229df78f79b43d65903d665a3be86e1cd65"
+    },
+    "tools/test-current-hardening-v1-28.js": {
+      "sizeBytes": 9875,
+      "sha256": "3b786463c690e4aa098d9c7da6d7462e2cc08c1499a6fca5610c98040e044f64"
+    },
+    "tools/test-current-hardening-v1-29.js": {
+      "sizeBytes": 12688,
+      "sha256": "2ca9ef6ddcad3423976ea4e789825211a0c0a76b619f0cb22491f716b9df10f1"
+    },
+    "tools/test-current-hardening-v1-30.js": {
+      "sizeBytes": 16584,
+      "sha256": "7c7f08685dc3110d3957b1fe010cbdeaa61c79d9bde2f2f5f7be178ff1221e74"
+    },
+    "tools/test-current-hardening-v1-31.js": {
+      "sizeBytes": 16584,
+      "sha256": "eec0b0b9cdacc4b492c233a66a8eef462ce8f7b08ff5e96aa7bb9525b73cd3fb"
+    },
+    "tools/test-current-hardening-v1-32.js": {
+      "sizeBytes": 16584,
+      "sha256": "351acd09f00e61bb66af119a2d565ecf8c473016ce38e52e9e628209d545224e"
+    },
+    "tools/test-current-hardening-v1-33.js": {
+      "sizeBytes": 16584,
+      "sha256": "bcc96c7424c1731049a924d0e202d055c3518cd6ca16a64c3a2ddd898914214e"
+    },
+    "tools/test-current-hardening-v1-34.js": {
+      "sizeBytes": 16584,
+      "sha256": "5fa981d968f66457dce82e5c4a5220277d5637fe1c2f59ebac354a6ab9edb72a"
+    },
+    "tools/test-current-hardening-v1-35.js": {
+      "sizeBytes": 16584,
+      "sha256": "38e89fda4052a2c72c15395eac228764acc91c1795e5443f61f83e561fd44d61"
+    },
+    "tools/test-current-hardening-v1-36.js": {
+      "sizeBytes": 16584,
+      "sha256": "5ec7360eeead34670b2ef796fe13a8a1bfdba6c3b14a22b614530ec43fa4744e"
+    },
+    "tools/test-current-hardening-v1-37.js": {
+      "sizeBytes": 16594,
+      "sha256": "f88bcbb9e275db95fca6b4931d55cb9d6cc8b0bc5b9a823c0bb065e7bea6e153"
+    },
+    "tools/test-diagnostics-concurrency-v1-30.js": {
+      "sizeBytes": 2097,
+      "sha256": "4d6b3c59074c940677f9b52eca16fc437ea249781367752253d5f28a8d1df48e"
+    },
+    "tools/test-diagnostics-concurrency-v1-31.js": {
+      "sizeBytes": 2097,
+      "sha256": "6f59f50b0a536cdd6fd7e69e39be8ebd261bfbe8cb6af617936d2a2f9d2e6a83"
+    },
+    "tools/test-diagnostics-concurrency-v1-32.js": {
+      "sizeBytes": 2097,
+      "sha256": "7bc78f51df492cd2cbb6fba071cfcb917144d95730a9ac19783a52cbe3d14395"
+    },
+    "tools/test-diagnostics-concurrency-v1-33.js": {
+      "sizeBytes": 2097,
+      "sha256": "57b88d04b7dc7c9126dd8c3564bd4b48689e2ed873ef5f1856c85e2933f8e763"
+    },
+    "tools/test-diagnostics-concurrency-v1-34.js": {
+      "sizeBytes": 2119,
+      "sha256": "c147dc2c9e77e808d7b33c3db06bc07983c515f15c1117a7afdf95486ae45c4f"
+    },
+    "tools/test-diagnostics-concurrency-v1-35.js": {
+      "sizeBytes": 2119,
+      "sha256": "673b595b6647e39948c43bd197635b6643f7e7a23c584ded9c3c8c69e53fd9a9"
+    },
+    "tools/test-diagnostics-concurrency-v1-36.js": {
+      "sizeBytes": 2119,
+      "sha256": "d89ca8022fd9cb905b85bf460990f49c5d9aa05230e73615d0629e9ffb26adfb"
+    },
+    "tools/test-diagnostics-concurrency-v1-37.js": {
+      "sizeBytes": 2119,
+      "sha256": "8809754c2797f4f8cb7c3e1d63eb14a3979a53b926ba0ef3ba761ee00edd39f2"
+    },
+    "tools/test-document-history-v1-30.js": {
+      "sizeBytes": 1172,
+      "sha256": "19c06d50fe38b954ce2c16bca4269bd58e19fb0ac30335371b9c4cb8714aa16f"
+    },
+    "tools/test-document-history-v1-31.js": {
+      "sizeBytes": 1172,
+      "sha256": "5e0dadc0a5367c709b4607ae7684dfd1ad02d40b4bcbef0852acdf8972f533fa"
+    },
+    "tools/test-document-history-v1-32.js": {
+      "sizeBytes": 1172,
+      "sha256": "abc681882a1def96dba2c0776ba97336a63aa499726d3c7542f5da9fc249218f"
+    },
+    "tools/test-document-history-v1-33.js": {
+      "sizeBytes": 1172,
+      "sha256": "47a5f0aca782bdcc536dc89429585a9f85ab88a11ac8aa086eefe9062bf45d02"
+    },
+    "tools/test-document-history-v1-34.js": {
+      "sizeBytes": 1172,
+      "sha256": "77b7cb69eb3cdbb5e7c369b31350bc670a6cb083014565d32e38f876ee7ec7f4"
+    },
+    "tools/test-document-history-v1-35.js": {
+      "sizeBytes": 1172,
+      "sha256": "425a113853d6a0832ba7d5cdeee4ae8eb63d5b20ac52a9aeec665c1b00674db2"
+    },
+    "tools/test-document-history-v1-36.js": {
+      "sizeBytes": 1172,
+      "sha256": "4120d593c10227d957de028ddf09cc1dc9170a730d65b63944066198693d205a"
+    },
+    "tools/test-document-history-v1-37.js": {
+      "sizeBytes": 1172,
+      "sha256": "3a649c854f5334e28eb9e367b2a317301bc99e756dbb2ec771020a49d3ee494c"
+    },
+    "tools/test-embedded-arrival-v1-21.js": {
+      "sizeBytes": 4913,
+      "sha256": "c366e9d3bf951fca7f2b57bd725d42109f961d74ec40de17122a80b70ce2a79d"
+    },
+    "tools/test-embedded-arrival-v1-22.js": {
+      "sizeBytes": 4913,
+      "sha256": "3411de5a21d62d798ee61e9de424a2240a19b80cb0b7ff53d2273e6bf90b3ed3"
+    },
+    "tools/test-embedded-arrival-v1-23.js": {
+      "sizeBytes": 4913,
+      "sha256": "494821fe952f51e6cf53b64871b18bf8b8d06e7bc11b9c60146273b8039e6255"
+    },
+    "tools/test-embedded-arrival-v1-24.js": {
+      "sizeBytes": 4913,
+      "sha256": "6f0f8e171c5134b26c3dc609efe5fe59d5e23321a4959f565925e8b22af889e4"
+    },
+    "tools/test-embedded-arrival-v1-25.js": {
+      "sizeBytes": 4913,
+      "sha256": "16d66e4819c7711bb6d1de175e51341b9138b312e9b230c916cbcac1a681ed73"
+    },
+    "tools/test-embedded-arrival-v1-26.js": {
+      "sizeBytes": 4913,
+      "sha256": "e7048cb72cad6375454bb1444a55d3443fc093245e5b9c831b60d9e0354ba363"
+    },
+    "tools/test-embedded-arrival-v1-27.js": {
+      "sizeBytes": 4913,
+      "sha256": "8115bc4ddfe7392506f0fa5eced9a4c6d5cc344cc939cceb64ab424214f12ff2"
+    },
+    "tools/test-embedded-arrival-v1-28.js": {
+      "sizeBytes": 4913,
+      "sha256": "6d3cecfbd899a8681a4fd3f6503fb026697f60009013e3a178bea45beeac2f0e"
+    },
+    "tools/test-embedded-arrival-v1-29.js": {
+      "sizeBytes": 4913,
+      "sha256": "dfad76f36e3e422928f855483b3b1b64b405f55406cf251f6dde80cde2a2f1b8"
+    },
+    "tools/test-embedded-arrival-v1-30.js": {
+      "sizeBytes": 4913,
+      "sha256": "11a2dbbfa25350ba26f1b5100a1d16063dfd041b1c26001b6412fa922ee01f85"
+    },
+    "tools/test-embedded-arrival-v1-31.js": {
+      "sizeBytes": 4913,
+      "sha256": "c4c623318028de4d661dd1533fd88f07069c25cc4dffa2f21cea02e02ba657d9"
+    },
+    "tools/test-embedded-arrival-v1-32.js": {
+      "sizeBytes": 4959,
+      "sha256": "fb48733636184283843e23dbc42b056f46328328a6aae6dca308c9454c5a553c"
+    },
+    "tools/test-embedded-arrival-v1-33.js": {
+      "sizeBytes": 4959,
+      "sha256": "d2e4c2d1ddab72ea7033b5b5145df5e773b2a25abb155eb8e6dc49eef23f46d9"
+    },
+    "tools/test-embedded-arrival-v1-34.js": {
+      "sizeBytes": 4959,
+      "sha256": "69141606fc009a1662f1da5db34a5b283633a352e019eca6d2f6670daa9e8cf0"
+    },
+    "tools/test-embedded-arrival-v1-35.js": {
+      "sizeBytes": 4959,
+      "sha256": "94a210bc1e3d59e206c90ef9dcf62497861571032849f4a4ffe9078f29795434"
+    },
+    "tools/test-embedded-arrival-v1-36.js": {
+      "sizeBytes": 4959,
+      "sha256": "827886ac24fd524146d1c52052aaf115b84d21517bb4f1480256ca3cc9bc7353"
+    },
+    "tools/test-embedded-arrival-v1-37.js": {
+      "sizeBytes": 4959,
+      "sha256": "836e98e3f27dd6886234c1ddf86bb4991e315c29529462d49ec4733c3a8812d5"
     },
     "tools/test-existing-features-v1-13.js": {
       "sizeBytes": 4934,
@@ -3906,6 +4410,86 @@
       "sizeBytes": 8582,
       "sha256": "29a3baa233fd830c4ac26f45351e1d458f4b388adcfaf555bbfb30e11d766c37"
     },
+    "tools/test-existing-features-v1-19.js": {
+      "sizeBytes": 8582,
+      "sha256": "d80ff418fdc2e6f9e7aa6eef59ab46cc0a0cf162d0bf22d1866f33187c3c3cc6"
+    },
+    "tools/test-existing-features-v1-20.js": {
+      "sizeBytes": 8582,
+      "sha256": "c9e00849af691b9420ba7573f7bbd0ffdb781c724643ac8b598e1c14c2e3a260"
+    },
+    "tools/test-existing-features-v1-21.js": {
+      "sizeBytes": 8582,
+      "sha256": "e9e3e0299666ac7c077b453c83744431f199e95f60b9ec543fd3c68502aa71dd"
+    },
+    "tools/test-existing-features-v1-22.js": {
+      "sizeBytes": 8582,
+      "sha256": "4d0fd7f4a29199fae43c787c83b8fbc1586c2511ae908040d50c9895bda4896c"
+    },
+    "tools/test-existing-features-v1-23.js": {
+      "sizeBytes": 8582,
+      "sha256": "e2ff729ae3c13f7b0fb6e12f8aee01f371c14f8fb0bfdf50b49a929549834d92"
+    },
+    "tools/test-existing-features-v1-24.js": {
+      "sizeBytes": 8582,
+      "sha256": "24b79b7e7432fb4a0cd72bd18de50f502ed36ba9f9431340c394627a8c99c831"
+    },
+    "tools/test-existing-features-v1-25.js": {
+      "sizeBytes": 8582,
+      "sha256": "79ae935536c84d081d57e786bcc516c5507e89edfb00a62badaa106ca2cfdf21"
+    },
+    "tools/test-existing-features-v1-26.js": {
+      "sizeBytes": 8582,
+      "sha256": "07a3db5beb439e74d6cc41a04acbd5ec7122e0b1661b9598dd6c2cc1ac0e8b03"
+    },
+    "tools/test-existing-features-v1-27.js": {
+      "sizeBytes": 8582,
+      "sha256": "fb01aacdeb7a26267d9f16fb61751088b0d89a7a38ea7a8b76a34efd2786a187"
+    },
+    "tools/test-existing-features-v1-28.js": {
+      "sizeBytes": 8582,
+      "sha256": "24356243f881e2e97212b23eaa4602bbcbad51eeaffc5a78d8b9b39d7f7754b0"
+    },
+    "tools/test-existing-features-v1-29.js": {
+      "sizeBytes": 8582,
+      "sha256": "e2bc359b3e348a1c21dc75d6c17d1397ae057c4041a79c73999fe654a19f1b5d"
+    },
+    "tools/test-existing-features-v1-30.js": {
+      "sizeBytes": 8582,
+      "sha256": "b2624e80d81ee5861d47a9748a299ad58f53a035fb5a366d40225c50919ccdb8"
+    },
+    "tools/test-existing-features-v1-31.js": {
+      "sizeBytes": 8582,
+      "sha256": "ca4772b5fc6a29fd738c434dbb2f966bc6d1721f6555483de3697a396c05dae3"
+    },
+    "tools/test-existing-features-v1-32.js": {
+      "sizeBytes": 8582,
+      "sha256": "90186b38eb106bcd1c752a7ce014ace47f38100ab479b4b8bdc12616c5795ce0"
+    },
+    "tools/test-existing-features-v1-33.js": {
+      "sizeBytes": 8582,
+      "sha256": "8015c1d984ff84a427ad3f9419b478752dcffdb61c08f517e48e2955bcd3e9d0"
+    },
+    "tools/test-existing-features-v1-34.js": {
+      "sizeBytes": 8582,
+      "sha256": "8ce24ccf30ee0f90b8beb212a7d635db865b6d8e337f7e7d0805a69ec1fea93d"
+    },
+    "tools/test-existing-features-v1-35.js": {
+      "sizeBytes": 8582,
+      "sha256": "b50c15158b6bd5903820420c099e450d3345e7453b816998c781b39d8f430ec1"
+    },
+    "tools/test-existing-features-v1-36.js": {
+      "sizeBytes": 8582,
+      "sha256": "e16245646d76abbbd7e42df3760fca11909556f9d2ad793b94591ecbd0cd53e1"
+    },
+    "tools/test-existing-features-v1-37.js": {
+      "sizeBytes": 8582,
+      "sha256": "b1460ab0bf95ceb1606386cc42cb7bacfabaae3cafa0c6337ec89b03aff4741b"
+    },
+    "tools/test-header-motion-v1-38-2.js": {
+      "sizeBytes": 11045,
+      "sha256": "e03915acd4e161aae4649188b0de2d93b285aed646219d36a7152002d032ac89"
+    },
     "tools/test-media-export-v1-8.js": {
       "sizeBytes": 6904,
       "sha256": "a9429479e76d1ff34dc6e8a1b1bd96c0eabe6ad82aeb64ad2d28c62ced34fb71"
@@ -3922,13 +4506,97 @@
       "sizeBytes": 5991,
       "sha256": "1f34152b6dd3c305a5ed4f28eebfc873036bea13dafd1eebd5b0dc6c87da16da"
     },
+    "tools/test-menu-release-v1-38-1.js": {
+      "sizeBytes": 16399,
+      "sha256": "9cf88f5d3c0c6181d905dc2b59cf92bb4a103512ab6dd4ac731088a6f48e51e9"
+    },
+    "tools/test-menu-release-v1-38.js": {
+      "sizeBytes": 13520,
+      "sha256": "f9df81ee7f0ba24cb2a1a4b7cff67cb4d683d81f948a1badf2cbd56797aa74bb"
+    },
     "tools/test-mobile-navigation-v1-11.js": {
-      "sizeBytes": 4137,
-      "sha256": "0d27168ef8a26b6d25ab7beaf688922bd993a83aaa40cbf2c47116e3e4edc5d3"
+      "sizeBytes": 4135,
+      "sha256": "3c419810b30295b4e7371e6378218f0b87c7b941fc4b991975dd5c976176244f"
     },
     "tools/test-mobile-sections-v1-18.js": {
       "sizeBytes": 8699,
       "sha256": "26b794ad68369ef779046cd9d5117961fdc9daf086415bd4cf4ec7c61d14635c"
+    },
+    "tools/test-mobile-sections-v1-19.js": {
+      "sizeBytes": 11925,
+      "sha256": "f3ba7ef590d1c597defa9f6df9c77ec06b6745314dd0325ee0c553fe5a918e14"
+    },
+    "tools/test-mobile-sections-v1-20.js": {
+      "sizeBytes": 13077,
+      "sha256": "1fb347649aec90003462fb5bebce9e1029d0bf121c959b720fa4fdd148259cd6"
+    },
+    "tools/test-mobile-sections-v1-21.js": {
+      "sizeBytes": 13191,
+      "sha256": "abeb7324b47400a67980b50b6c877e366715112e6cde33f1757a98aa762792ad"
+    },
+    "tools/test-mobile-sections-v1-22.js": {
+      "sizeBytes": 17243,
+      "sha256": "05f2da8154130d35d6539274d7b483cbcba914c3b8b8413c68211e8201476c19"
+    },
+    "tools/test-mobile-sections-v1-23.js": {
+      "sizeBytes": 17975,
+      "sha256": "f0b1d9851e13a1c622e1c9b0d7ed734e3406e4dd3716a085b2a3f058f63b2885"
+    },
+    "tools/test-mobile-sections-v1-24.js": {
+      "sizeBytes": 18486,
+      "sha256": "74d33dcb4e11c28f972e4f6d5cbc86124f0cf92a12e9d882d9e07d6ced1e5341"
+    },
+    "tools/test-mobile-sections-v1-25.js": {
+      "sizeBytes": 18485,
+      "sha256": "4a47a12b8b5668198fdb3246582b9653d7a589dadbe0fcc76029260fd19bc02c"
+    },
+    "tools/test-mobile-sections-v1-26.js": {
+      "sizeBytes": 18485,
+      "sha256": "78a28da9ec3250eb1bf61226671fe4757842115a5b6b9ec83abc214d0b90d141"
+    },
+    "tools/test-mobile-sections-v1-27.js": {
+      "sizeBytes": 19292,
+      "sha256": "d4c2bc7a9820740199a6a29e62200c31169b21414041c83cb34654d0104ffc1c"
+    },
+    "tools/test-mobile-sections-v1-28.js": {
+      "sizeBytes": 19405,
+      "sha256": "314227065a043280c3a672667b64bb5f249a0c8eeea48c0318fee869832543d2"
+    },
+    "tools/test-mobile-sections-v1-29.js": {
+      "sizeBytes": 19454,
+      "sha256": "ab24c0e1e95ea907b6db404e2ba61e3f48a76a3ab6af41ff8882bd4b83f41122"
+    },
+    "tools/test-mobile-sections-v1-30.js": {
+      "sizeBytes": 19451,
+      "sha256": "34f877d4b60e1730bc3605a9bba59ffccdc8ebd8620a22ee73636520ccd0447c"
+    },
+    "tools/test-mobile-sections-v1-31.js": {
+      "sizeBytes": 19451,
+      "sha256": "11e81461bd37af685e7dd7a7d547e61f6b3c55165b25e5706aadb4b8fc623af3"
+    },
+    "tools/test-mobile-sections-v1-32.js": {
+      "sizeBytes": 19451,
+      "sha256": "402719cd8e52bb1313bcd1d05246246f53faaa1f10de508ee22f9a868ebd3f85"
+    },
+    "tools/test-mobile-sections-v1-33.js": {
+      "sizeBytes": 19451,
+      "sha256": "1472bff9e8c015ab4cce5216fd08bb12e5d6ca5543d4b2c500666a0489d41928"
+    },
+    "tools/test-mobile-sections-v1-34.js": {
+      "sizeBytes": 19451,
+      "sha256": "98ac2b4e0ba3368c017b3b654a581337745cf4ba4bd743a660067257a961f9e8"
+    },
+    "tools/test-mobile-sections-v1-35.js": {
+      "sizeBytes": 19451,
+      "sha256": "3dba5c738ceb4b8f67d47abc4f6c6bb2b85dbcce1a014a88c14c7ae167dc0e1c"
+    },
+    "tools/test-mobile-sections-v1-36.js": {
+      "sizeBytes": 19451,
+      "sha256": "78b9f260456fcc54abad146c6d699672acb9a878c13ed3ab7b14d3d33299a468"
+    },
+    "tools/test-mobile-sections-v1-37.js": {
+      "sizeBytes": 19451,
+      "sha256": "4158889209ba7d3dd7324b0b4251f21122c24f28b8227d3fe76561de0edbde42"
     },
     "tools/test-mobile-tree-v1-15.js": {
       "sizeBytes": 3216,
@@ -3945,6 +4613,90 @@
     "tools/test-mobile-tree-v1-18.js": {
       "sizeBytes": 3216,
       "sha256": "5b5db4fb84b186f7fb488d93dd0853dc9744b02bb9c13d4657a8bc2692e92998"
+    },
+    "tools/test-mobile-tree-v1-19.js": {
+      "sizeBytes": 3216,
+      "sha256": "fe4673e9a9bc8acc43814fe85c3b5250ca197f77ef14f4006eecbad9393331d5"
+    },
+    "tools/test-mobile-tree-v1-20.js": {
+      "sizeBytes": 3216,
+      "sha256": "36b99b9fa81c784cb7ccbf66ba3e3dcb49af0ddb7d2955db1ca1762fdef37c07"
+    },
+    "tools/test-mobile-tree-v1-21.js": {
+      "sizeBytes": 3216,
+      "sha256": "cd417e22e0d371409fe53e9d1dbc0430608779edd39930c1913b301e7b6a2f83"
+    },
+    "tools/test-mobile-tree-v1-22.js": {
+      "sizeBytes": 3216,
+      "sha256": "77d0bfa8ac49a152764e9ba4e622819c02361b659f5e79c19168ab2ed2b2a45e"
+    },
+    "tools/test-mobile-tree-v1-23.js": {
+      "sizeBytes": 3216,
+      "sha256": "cf975fc9c91c33100e04f3c6dedacf9ae2e9b2e42ca0873fa08b893a9ae42303"
+    },
+    "tools/test-mobile-tree-v1-24.js": {
+      "sizeBytes": 3216,
+      "sha256": "0caf83a8b20227263c6ef0471c5e9ed366df74d36d9e7ec7a5686d26ab0efb12"
+    },
+    "tools/test-mobile-tree-v1-25.js": {
+      "sizeBytes": 3216,
+      "sha256": "4b431771dd170b3a635652b54c966f0a56bf3a1050287784ffcbf8bfe21cd7de"
+    },
+    "tools/test-mobile-tree-v1-26.js": {
+      "sizeBytes": 3216,
+      "sha256": "ea7156e9bb98b341ba2610725fff82aed098f39ed9b4d35454f356dd16ad3149"
+    },
+    "tools/test-mobile-tree-v1-27.js": {
+      "sizeBytes": 3216,
+      "sha256": "8a4ca61c2aec79117f210f2ac49c84105815dec3dec1f0b6a8fa5266cc7ce3c7"
+    },
+    "tools/test-mobile-tree-v1-28.js": {
+      "sizeBytes": 3216,
+      "sha256": "32a4db176f66c20efa92fd6f487e89aeedcdbba9cdc22c66049de669e35cdda0"
+    },
+    "tools/test-mobile-tree-v1-29.js": {
+      "sizeBytes": 3216,
+      "sha256": "1aece5dd66ebdf1341a07e74df59158c61f7687cd06534d44148dc28ac9baf1d"
+    },
+    "tools/test-mobile-tree-v1-30.js": {
+      "sizeBytes": 3216,
+      "sha256": "885262bf836f7e7590cf9d98cc98069b493714d7cc8f6612de15b83b8477da19"
+    },
+    "tools/test-mobile-tree-v1-31.js": {
+      "sizeBytes": 3216,
+      "sha256": "9e5d4d08e0d5064f7a01f492995d5a39474e1decbaccedc02587fb4ac3248bfe"
+    },
+    "tools/test-mobile-tree-v1-32.js": {
+      "sizeBytes": 3216,
+      "sha256": "0681e58dd3b14287a7741737a6d65774505c32861d86d14204f9c09e693c830f"
+    },
+    "tools/test-mobile-tree-v1-33.js": {
+      "sizeBytes": 3216,
+      "sha256": "64db759ff001721e98154831ac2febd086802e1d43674321751bbcd5284a64a6"
+    },
+    "tools/test-mobile-tree-v1-34.js": {
+      "sizeBytes": 3216,
+      "sha256": "f49d4af9d81c03d77c63686537e4278f3dd9c2b575a20a147df78a02a37953cf"
+    },
+    "tools/test-mobile-tree-v1-35.js": {
+      "sizeBytes": 3216,
+      "sha256": "7920588f04bab0e12a8f6610be206fd0277ffe4aa7701d875af4aa431367c76e"
+    },
+    "tools/test-mobile-tree-v1-36.js": {
+      "sizeBytes": 3216,
+      "sha256": "2676d97c30b5c28f1b4bc81a61559fc59e0301e27f909fe9f6420f1ae73f2f82"
+    },
+    "tools/test-mobile-tree-v1-37.js": {
+      "sizeBytes": 3216,
+      "sha256": "1081a25d874387de53447146b209e23d660a931e886c9afa1cab095c39bd3d89"
+    },
+    "tools/test-navigation-v1-38.js": {
+      "sizeBytes": 8484,
+      "sha256": "ba98d1986b146f117a9fa741e78b7dc87a5517f7f9c75f9f8136abf9c7bd7c16"
+    },
+    "tools/test-optimization-v1-37.js": {
+      "sizeBytes": 5300,
+      "sha256": "c862a4459ec4da69646ad868d6dc3490ee636683d35a32b13df6d3aed375c41c"
     },
     "tools/test-regressions-v1-10.js": {
       "sizeBytes": 3751,
@@ -3986,13 +4738,89 @@
       "sizeBytes": 15400,
       "sha256": "08d3ff279218234b56b4fd0ef5babbaf272afe9c76cfd2d5960ce386e68d63f3"
     },
+    "tools/test-release-v1-19.js": {
+      "sizeBytes": 15400,
+      "sha256": "753fe8dd2ad28671e84d5e518703281acf05cfd38a5ae605f615d2179e50eada"
+    },
     "tools/test-release-v1-2.js": {
       "sizeBytes": 3954,
       "sha256": "524c047e6f1dcbe44b868a41e212f905263379ac2ebc0a3273f51b989472e070"
     },
+    "tools/test-release-v1-20.js": {
+      "sizeBytes": 15400,
+      "sha256": "38ec7db225818a856e360d536149253eadf0ffb12b59be01e66fc2b4f3d35cfa"
+    },
+    "tools/test-release-v1-21.js": {
+      "sizeBytes": 15400,
+      "sha256": "ce528602a7d0163dc9c37decb2612af5fcced3efd3b7716f498c8e36e617da78"
+    },
+    "tools/test-release-v1-22.js": {
+      "sizeBytes": 15400,
+      "sha256": "60b3260fc2995254be15665c82e27e9886ed09827c3758125e948329ac7c105b"
+    },
+    "tools/test-release-v1-23.js": {
+      "sizeBytes": 15400,
+      "sha256": "0f1ded892a9211c2859aa71e38a9f4e2991454ff2c2dec570640783c9c0d9bcb"
+    },
+    "tools/test-release-v1-24.js": {
+      "sizeBytes": 15400,
+      "sha256": "deb97a233ee348eddef2697467969f07baa4536eea57c217713210e48bd735ca"
+    },
+    "tools/test-release-v1-25.js": {
+      "sizeBytes": 15400,
+      "sha256": "20e295e431c6dccfa1bd1f49fb4704266cd653736026212e7f8e357af9753517"
+    },
+    "tools/test-release-v1-26.js": {
+      "sizeBytes": 15400,
+      "sha256": "90184559ef21b5fa992559b7385680d6680472b59f589b44244413935a208230"
+    },
+    "tools/test-release-v1-27.js": {
+      "sizeBytes": 15400,
+      "sha256": "bb61257bffdbe20bd40afe08af7ebb5c2aca7d390eb910313bdf4bffdcf0059c"
+    },
+    "tools/test-release-v1-28.js": {
+      "sizeBytes": 15400,
+      "sha256": "8512f7f50e926dfc64fd7503dfbbf7936a27851392f157531dea1f3041137b82"
+    },
+    "tools/test-release-v1-29.js": {
+      "sizeBytes": 15400,
+      "sha256": "8db72761b5146b91c216b0c8961a26373948352e8cd35118e8446670dafbf5a7"
+    },
     "tools/test-release-v1-3.js": {
       "sizeBytes": 4139,
       "sha256": "e846467267a8ba4390799a2ca6299961f9a777b4ad21c02e3b9eaddca9d870b6"
+    },
+    "tools/test-release-v1-30.js": {
+      "sizeBytes": 15400,
+      "sha256": "bfac282e0e39684f5c1ce116ab3ce4dddd754f0638f68e319c89919d3551199f"
+    },
+    "tools/test-release-v1-31.js": {
+      "sizeBytes": 15400,
+      "sha256": "f2ee92bea893d8b4ec8962d9cddb3815320e6981ba8b7b7ca392e77f7950a10a"
+    },
+    "tools/test-release-v1-32.js": {
+      "sizeBytes": 15400,
+      "sha256": "8d37e349e9471a91c46bec1f573e197d2592f7b71b1d8894e17d84b0edf60018"
+    },
+    "tools/test-release-v1-33.js": {
+      "sizeBytes": 15400,
+      "sha256": "7b4fd558c6acc40fa55b7e502140d335c442c3dc13deb3dfdbe202552f5f5e95"
+    },
+    "tools/test-release-v1-34.js": {
+      "sizeBytes": 15400,
+      "sha256": "5d53befa24092ee02f5fe2d3b07010fab4abe61f880ca66a7b57090a72912a52"
+    },
+    "tools/test-release-v1-35.js": {
+      "sizeBytes": 15400,
+      "sha256": "a45251a623bfe839a61c9208d1a2b189fa52a4fe86233c4139f2135947839d1e"
+    },
+    "tools/test-release-v1-36.js": {
+      "sizeBytes": 15400,
+      "sha256": "2785f20081725249c52455d482da7e922aafa98b93945db6cfee07e75f176777"
+    },
+    "tools/test-release-v1-37.js": {
+      "sizeBytes": 15400,
+      "sha256": "9dc28d6fa1f42db17fcab13a163e83dc87e017a661439fccc05053a0751fdf5f"
     },
     "tools/test-release-v1-5.js": {
       "sizeBytes": 10068,
@@ -4030,6 +4858,94 @@
       "sizeBytes": 2997,
       "sha256": "998882f6a9444fd665336c951dd69c5c8eddb7721dfa29600c4656295b2ef16a"
     },
+    "tools/test-static-http-v1-19.js": {
+      "sizeBytes": 2997,
+      "sha256": "f8247a6cdadf49a0fda9f600e626629c2ea8e3c9ce1de54331658400270a2564"
+    },
+    "tools/test-static-http-v1-20.js": {
+      "sizeBytes": 2997,
+      "sha256": "23eb14ca444d7a7afecd83dd19114bb57ff2d814ca24fb5de4c9e4531748722d"
+    },
+    "tools/test-static-http-v1-21.js": {
+      "sizeBytes": 2997,
+      "sha256": "6799bbdf8ce480b696264a00b2113f275406e5e479d1543f86fd2d8357250745"
+    },
+    "tools/test-static-http-v1-22.js": {
+      "sizeBytes": 2997,
+      "sha256": "aa6eb2bde3870eec8f3883b579d4a5c1d5aa62db2d581a848cebac28425bda6e"
+    },
+    "tools/test-static-http-v1-23.js": {
+      "sizeBytes": 2997,
+      "sha256": "b61d1793d84370dc00ab4e4ea141a0fc8c47d2e636006edb41d408c25b393c7d"
+    },
+    "tools/test-static-http-v1-24.js": {
+      "sizeBytes": 2994,
+      "sha256": "2d789fa109476e40f020b8fb2cdc17c54c2e77524b9c81fab9605d44241c7956"
+    },
+    "tools/test-static-http-v1-25.js": {
+      "sizeBytes": 2994,
+      "sha256": "44a2bb5bd7ffc94cc3727c33435b4b450afb6343e3bdd1e48ec643aa5d022004"
+    },
+    "tools/test-static-http-v1-26.js": {
+      "sizeBytes": 3038,
+      "sha256": "d471e6161dc4d5c97d0d5cd26c3df3e99cd374d03369c9bda2593faa371e978e"
+    },
+    "tools/test-static-http-v1-27.js": {
+      "sizeBytes": 3038,
+      "sha256": "2b58333a21cebf194b54ff36620fecc114d1f05782dbf6f5184d99ffc0826d61"
+    },
+    "tools/test-static-http-v1-28.js": {
+      "sizeBytes": 3038,
+      "sha256": "bb76c4ca61a046685598341dbc4e763644722f39979ed8235571a747671454a7"
+    },
+    "tools/test-static-http-v1-29.js": {
+      "sizeBytes": 3038,
+      "sha256": "d995aa795b443782903530dfdbaefcda269dfa0ec4396202611f9fe94f2436da"
+    },
+    "tools/test-static-http-v1-30.js": {
+      "sizeBytes": 3038,
+      "sha256": "ee23ba1edc593a245a1a85349a4bdbb29a19a7c98c3d4310503f212415766f59"
+    },
+    "tools/test-static-http-v1-31.js": {
+      "sizeBytes": 3038,
+      "sha256": "88c736915b53fcd6ca4029dd553333143795aa8cc908884355cb189e7121c263"
+    },
+    "tools/test-static-http-v1-32.js": {
+      "sizeBytes": 3038,
+      "sha256": "51a486e1a1456b2d7434018da265f5461a006fcf345c9074e0af9a35e7827c63"
+    },
+    "tools/test-static-http-v1-33.js": {
+      "sizeBytes": 3038,
+      "sha256": "b44ddd72e3e94bb3999f554be994883bde7ad435681859236ca7b883a4e9c358"
+    },
+    "tools/test-static-http-v1-34.js": {
+      "sizeBytes": 3038,
+      "sha256": "827334d22a93b0e594180ba35b90b1ce856ee879732e8fcd95e1b6f5b2686199"
+    },
+    "tools/test-static-http-v1-35.js": {
+      "sizeBytes": 3038,
+      "sha256": "36a8a8af71f60a052b466ab2b1ef6547a6e05b4cae83fc71cdaa8417f8dd9e15"
+    },
+    "tools/test-static-http-v1-36.js": {
+      "sizeBytes": 3038,
+      "sha256": "69344c16227900e753cc3a424039c7d4c92dfaa93acf668a867c0187b9c2230d"
+    },
+    "tools/test-static-http-v1-37.js": {
+      "sizeBytes": 3038,
+      "sha256": "bdf75736aa9d8eb29eb1c63e732acc4fea0076b46cfb2eef70a54518777705e8"
+    },
+    "tools/test-static-http-v1-38-1.js": {
+      "sizeBytes": 3762,
+      "sha256": "7d8e14528bbfb649b292897aa2ed72b5a074f085b88142dfb844e235c66f8370"
+    },
+    "tools/test-static-http-v1-38-2.js": {
+      "sizeBytes": 968,
+      "sha256": "4e110c2d8368597d829bb1555a41e6ec6546f124444ee6feea4f59481ab71d04"
+    },
+    "tools/test-static-http-v1-38.js": {
+      "sizeBytes": 3760,
+      "sha256": "37d3ff38ea1be31fbdfab2e19d10b1b2ccb016dc832746d1312c7e5c99e1d1f8"
+    },
     "tools/test-subpage-header-v1-8.js": {
       "sizeBytes": 1581,
       "sha256": "63341abd74065cc82183c57672219c35798e1f2ce027f31fb713f0ffa7645d58"
@@ -4042,13 +4958,85 @@
       "sizeBytes": 2369,
       "sha256": "27e0aabdff3a248b4a3c5a703dcedfe4fb48ab93d9176ab8bbde1c8a7cab4e9d"
     },
+    "tools/test-theme-sync-v1-20.js": {
+      "sizeBytes": 3357,
+      "sha256": "e8829eceeb806520dd32682c0e374603e3daa6064140d5cea9f7bb015f363ccd"
+    },
+    "tools/test-theme-sync-v1-21.js": {
+      "sizeBytes": 3357,
+      "sha256": "d3e2db36d02aeaca6318e96ac01b8cce9f7668c83a438505d4e2a8b1d47941be"
+    },
+    "tools/test-theme-sync-v1-22.js": {
+      "sizeBytes": 3748,
+      "sha256": "87b54adf09fc48b2b693b9c9ae467507d0c08e41970efc963ba94362a1f3b233"
+    },
+    "tools/test-theme-sync-v1-23.js": {
+      "sizeBytes": 3748,
+      "sha256": "2b880376623bc18a377fefaada9e6f9f3bed889b08b12d3fa03ff5e8d36c72a0"
+    },
+    "tools/test-theme-sync-v1-24.js": {
+      "sizeBytes": 3748,
+      "sha256": "f77e4027b9ea797af110b9d1ff977e885273a5851d2853d74880a26100c7d571"
+    },
+    "tools/test-theme-sync-v1-25.js": {
+      "sizeBytes": 3748,
+      "sha256": "73c375635d54cc44cf3823869d82cc73d2c0d8be68a1b512fdd344bf5ac60ce2"
+    },
+    "tools/test-theme-sync-v1-26.js": {
+      "sizeBytes": 3748,
+      "sha256": "7d2ba4b06d8d9f62c346ae0d7a0264f6bad1cc40d3a564dc5e05e86d5391ca8a"
+    },
+    "tools/test-theme-sync-v1-27.js": {
+      "sizeBytes": 3748,
+      "sha256": "e2951f3cbb19ee3b63dec58f3b28c8b14a8401e6702d02909f9be6c87895e856"
+    },
+    "tools/test-theme-sync-v1-28.js": {
+      "sizeBytes": 3748,
+      "sha256": "ee1bfb7378260038909038ef97de471f2da68591ab2d37fb32af58e0fce69762"
+    },
+    "tools/test-theme-sync-v1-29.js": {
+      "sizeBytes": 3748,
+      "sha256": "abf9eeb2309b6d74068b39f5b67c629639dbb494065ca0f8848285f9a0d94f7f"
+    },
+    "tools/test-theme-sync-v1-30.js": {
+      "sizeBytes": 3748,
+      "sha256": "2ca7084da0a77bd6804c0f867c0c7d7702e56534770ac85adc314a98b2b8c446"
+    },
+    "tools/test-theme-sync-v1-31.js": {
+      "sizeBytes": 3748,
+      "sha256": "a906c7cf4207d768d6950b9e6fbba2037346834323e9319fd1d6a25fae3e9ddf"
+    },
+    "tools/test-theme-sync-v1-32.js": {
+      "sizeBytes": 3748,
+      "sha256": "6a1dbb0cb219688e15f9de819e6cdcda9ab9d3b5b2f86a8032710db3310e0b83"
+    },
+    "tools/test-theme-sync-v1-33.js": {
+      "sizeBytes": 3748,
+      "sha256": "caa207a71bf9990183efc2175820f963bb6b291e8f53e5d94eb76a98e634b866"
+    },
+    "tools/test-theme-sync-v1-34.js": {
+      "sizeBytes": 3748,
+      "sha256": "49ecfcfbebaa5207d8c4e6142b714d178f7c23b002b740a71c84b3b82a941313"
+    },
+    "tools/test-theme-sync-v1-35.js": {
+      "sizeBytes": 3748,
+      "sha256": "f2572a063eb3c668381a719e6b4313f51a49efa58804b9afa2f7d3e9064ee3dd"
+    },
+    "tools/test-theme-sync-v1-36.js": {
+      "sizeBytes": 3748,
+      "sha256": "d9e0f4a571c7e2b2c19474f09a7107012913f25c6abbe04926738cec09005f52"
+    },
+    "tools/test-theme-sync-v1-37.js": {
+      "sizeBytes": 3748,
+      "sha256": "3bc77c055d202fcd5f2a8939b1c85dbc18a216ff8a69ada9d668ee923126f041"
+    },
     "tools/tool-settings-2026.js": {
       "sizeBytes": 211,
       "sha256": "0543eb693c352917e2cdfe9b588bbd9535ad368e3c386f5c72d4dbf9bdaf7ffd"
     },
     "tools/tool-ui-2026.js": {
-      "sizeBytes": 3010,
-      "sha256": "2820af009507f4962dd1df653c6e5d5ce424a1f41baa066b565cdaa77848ef13"
+      "sizeBytes": 3722,
+      "sha256": "6aeab354161b308e7dc37add135f3e97edd5dc3f0048472567b8b781e8a2ae41"
     },
     "tools/zip-compare-20.js": {
       "sizeBytes": 3460,
@@ -4059,8 +5047,8 @@
       "sha256": "f83cf15aded6a2e28ee3dab09f35d5263270c2dbd71c02d0e3cef9f747ef4384"
     },
     "utmutato.html": {
-      "sizeBytes": 155049,
-      "sha256": "49360e822266f0f7c73f7badc505a265d8a42ec8b645ff4e3af0921fe75f3ed4"
+      "sizeBytes": 155040,
+      "sha256": "59f98b5841bd657ca66d6959ae9f26afb10dd8b35842b692f3e455ddacbba1e7"
     }
   }
 }

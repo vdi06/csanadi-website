@@ -29,6 +29,20 @@
  #site-map-overlay .compass26-choice{width:132px ;height:75px ;}
  #site-map-overlay .compass26-panel:not([hidden]){max-width:360px ;}
 }
+/* v1.38.1: a 761–1099 px-es asztali almenü a kör alatt, nem a főmenüre fedve jelenik meg. */
+@media (min-width:761px) and (max-width:1099px){
+ #site-map-overlay .site-map-dialog{max-height:calc(100dvh - 24px)!important;overflow-y:auto!important;overflow-x:hidden!important}
+ #site-map-overlay .compass26-stage{--radius:clamp(192px,24vw,255px);height:max(600px,62dvh)}
+ #site-map-overlay .compass26-panel[data-anchor-side="inline"]:not([hidden]){
+  position:relative!important;inset:auto!important;z-index:8;
+  width:min(100%,860px)!important;max-width:min(100%,860px)!important;
+  max-height:none!important;overflow:visible!important;box-sizing:border-box;
+  margin:0 auto 20px!important;padding:12px!important;scroll-margin-top:12px;
+ }
+ #site-map-overlay .compass26-panel[data-anchor-side="inline"] .compass26-subtopics{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ }
+}
  
 @media (max-width:760px){
  #site-map-overlay .compass26-panel:not([hidden]){

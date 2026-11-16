@@ -1,4 +1,5 @@
 // Közös, statikus tárhelyen is működő aloldali finomítások.
+import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.38.2';
 const forbiddenHost = /(^|\.)csanadi-bp\.edu\.hu$/i;
 const legacyRoutes = new Map([
   ['tortenet.html','#/iskolank/tortenet'],
@@ -102,6 +103,18 @@ export function initSubpageEnhancements() {
   // ideiglenesen áthelyezheti, az aloldali menünek ettől függetlenül működnie kell.
   menu.addEventListener('click', () => document.dispatchEvent(new Event('csanadi:menu-toggle')));
   actions.insertBefore(menu, actions.firstChild);
+  // Asztali aloldalon a középre tett körmenügomb megmarad; a kompakt szalag
+  // az aktuális oldal nevét és a tényleges olvasási előrehaladást is jelzi.
+  const brandRow=header.querySelector('.brand-row');
+  const headerMotion=createSubpageHeaderMotion(brandRow);
+  const ribbonLabel=document.createElement('span');
+  ribbonLabel.className='cs-subpage-ribbon-title';
+  ribbonLabel.setAttribute('aria-hidden','true');
+  brandRow?.prepend(ribbonLabel);
+  const progress=document.createElement('div');
+  progress.className='cs-subpage-reading-progress';
+  progress.setAttribute('aria-hidden','true');
+  const progressFill=document.createElement('span');progress.append(progressFill);header.append(progress);
   const mapOverlay = document.getElementById('site-map-overlay');
   if(mapOverlay){
     const syncMenuState=()=>{
@@ -126,6 +139,14 @@ export function initSubpageEnhancements() {
       hasHero,
       alreadyCondensed:document.body.classList.contains('cs-header-condensed')
     }));
+    headerMotion.sync();
+    const title=document.querySelector('#app .page-banner h1,#app .cs-arrival-shell h1,#app .not-found h1');
+    const current=title?.textContent?.trim()||document.title.split(' | ')[0];
+    if(ribbonLabel.textContent!==current)ribbonLabel.textContent=current;
+    const scroller=document.scrollingElement;
+    const extent=Math.max(0,(scroller?.scrollHeight||0)-window.innerHeight);
+    const read=extent?Math.min(100,Math.max(0,window.scrollY/extent*100)):100;
+    progressFill.style.width=read.toFixed(1)+'%';
   };
   const queueUpdate = () => {
     if (scheduled) return;
@@ -134,7 +155,11 @@ export function initSubpageEnhancements() {
   };
   window.addEventListener('scroll', queueUpdate, {passive:true});
   window.addEventListener('resize', queueUpdate, {passive:true});
-  document.addEventListener('csanadi:route-rendered', ()=>{queueUpdate();syncSelfLinks();});
+  document.addEventListener('csanadi:route-rendered', event=>{
+    headerMotion.render(event.detail?.headerMotion);
+    queueUpdate();syncSelfLinks();
+  });
+  window.addEventListener('hashchange',()=>headerMotion.render(null));
   queueUpdate();
 
   sanitizeLinks(document);

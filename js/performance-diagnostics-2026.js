@@ -8,10 +8,17 @@ let latestStatus='Betöltés…';
 let lastRoute='';
 let bundleStats=null;
 let bundleRequested=false;
+let bundleRun=0;
 const webVitals={lcp:null,cls:0,shiftSources:[]};
 let observersStarted=false;
 const clock=()=>Math.max(0,performance.now());
 const fmt=(ms)=>Number.isFinite(ms)?Math.round(ms).toLocaleString('hu-HU')+' ms':'—';
+const resourceName=(value)=>{
+ try{
+  const url=new URL(value,location.href),name=url.pathname.split('/').at(-1)||url.hostname;
+  try{return decodeURIComponent(name);}catch{return name;}
+ }catch{return 'ismeretlen erőforrás';}
+};
 // A diagnosztika nem akadályozhatja meg a honlap indulását, akkor sem,
 // ha a settings modul még nem inicializálódott, vagy egy régi config él a cache-ben.
 export const diagnosticNumber=(key,fallback)=>{
@@ -19,22 +26,37 @@ export const diagnosticNumber=(key,fallback)=>{
  catch{return fallback;}
 };
 async function measureBundle(){
+ const run=++bundleRun;
  try{
   const response=await fetch('release-manifest.json',{cache:'no-store'});
   if(!response.ok)throw new Error('HTTP '+response.status);
   const manifest=await response.json();
+  if(run!==bundleRun)return;
+  if(!manifest||typeof manifest!=='object'||Array.isArray(manifest)||manifest.schemaVersion!=='1.0.0'||!manifest.files||typeof manifest.files!=='object'||Array.isArray(manifest.files)||!/^[a-z0-9-]+-v\d+\.\d+\.\d+$/.test(manifest.release||''))throw new Error('Hibás kiadási manifest');
+  const configResponse=await fetch('json/config.json',{cache:'no-store'});
+  if(!configResponse.ok)throw new Error('Konfiguráció HTTP '+configResponse.status);
+  const config=await configResponse.json();
+  if(run!==bundleRun)return;
+  const manifestVersion=/v\d+\.\d+\.\d+$/.exec(manifest.release||'')?.[0]||null;
+  const runtimeVersion=/v\d+\.\d+\.\d+$/.exec(config.performance?.cacheVersion||'')?.[0]||null;
   const entries=Object.entries(manifest.files||{});
+  if(entries.length<4||entries.length>10000)throw new Error('Hiányos vagy túlméretes kiadási manifest');
   const kinds={Képek:0,Videók:0,Dokumentumok:0,'Kód és adatok':0};
   let total=0;
   for(const [path,meta] of entries){
-   if(!Number.isSafeInteger(meta.sizeBytes)||meta.sizeBytes<0)throw new Error('Hibás fájlméret: '+path);
+   if(!meta||typeof meta!=='object'||!Number.isSafeInteger(meta.sizeBytes)||meta.sizeBytes<0)throw new Error('Hibás fájlméret: '+path);
    total+=meta.sizeBytes;
    const key=/\.(webp|avif|png|jpg|jpeg|gif|svg)$/i.test(path)?'Képek':/\.(mp4|webm)$/i.test(path)?'Videók':/\.(pdf|docx|txt)$/i.test(path)?'Dokumentumok':'Kód és adatok';
    kinds[key]+=meta.sizeBytes;
   }
-  bundleStats={total,count:entries.length,kinds,release:manifest.release,error:null};
- }catch(error){bundleStats={error:String(error.message||error)};}
- refresh();
+  const invalid=entries.filter(([file,meta])=>!file||file.startsWith('/')||file.includes('..')||file.includes('\\')||/[\u0000-\u001f]/.test(file)||!/^[a-f0-9]{64}$/.test(meta.sha256||''));
+  if(!Number.isSafeInteger(total)||total<=0||total>100000000000)throw new Error('Érvénytelen teljes kiadási fájlméret');
+  if(invalid.length)throw new Error('Érvénytelen kiadási tétel: '+invalid.length);
+  const required=['index.html','json/config.json','json/structure.json','script.js'];
+  if(required.some(file=>!manifest.files?.[file]||manifest.files[file].sizeBytes===0))throw new Error('Hiányzó vagy üres kötelező kiadási állomány');
+  if(run===bundleRun)bundleStats={total,count:entries.length,kinds,release:manifest.release,cacheConsistent:!!manifestVersion&&manifestVersion===runtimeVersion&&manifest.bootstrap==='CDN bootstrap@5.3.9',error:null};
+ }catch(error){if(run===bundleRun)bundleStats={error:String(error.message||error)};}
+ if(run===bundleRun)refresh();
 }
 function el(name,classes,text){const node=document.createElement(name);if(classes)node.className=classes;if(text!==undefined)node.textContent=text;return node;}
 function refresh(){
@@ -48,17 +70,17 @@ function refresh(){
  const size=panel.querySelector('[data-speed-size]'),fileCount=panel.querySelector('[data-speed-file-count]'),detail=panel.querySelector('[data-speed-file-detail]'),resources=panel.querySelector('[data-speed-resources]'),slow=panel.querySelector('[data-speed-slowest]');
  size.textContent=bundleStats?.error?'Nem elérhető':bundleStats?bytes(bundleStats.total):'Betöltés…';
  fileCount.textContent=bundleStats?.count===undefined?'—':bundleStats.count.toLocaleString('hu-HU')+' fájl';
- detail.textContent=bundleStats?.error?'A kiadási manifest nem olvasható: '+bundleStats.error:bundleStats?'A manifestben szereplő '+bundleStats.count+' állomány tömörítetlen összmérete: '+bytes(bundleStats.total)+'. '+Object.entries(bundleStats.kinds).map(([name,size])=>name+': '+bytes(size)).join(' · ')+'. A ZIP tömörített mérete ettől eltér, a manifest önmagát nem számolja.':'A fájlleltár kiolvasása folyamatban…';
+ detail.textContent=bundleStats?.error?'A kiadási manifest nem olvasható: '+bundleStats.error:bundleStats?'A manifestben szereplő '+bundleStats.count+' állomány tömörítetlen összmérete: '+bytes(bundleStats.total)+'. '+Object.entries(bundleStats.kinds).map(([name,size])=>name+': '+bytes(size)).join(' · ')+'. Verzió- és gyorsítótár-egyezés: '+(bundleStats.cacheConsistent?'rendben':'ELTÉRÉS – frissítés szükséges')+'. A ZIP tömörített mérete ettől eltér, a manifest önmagát nem számolja.':'A fájlleltár kiolvasása folyamatban…';
  const measured=[...performance.getEntriesByType('resource'),...performance.getEntriesByType('navigation')];
  const transferred=measured.reduce((sum,entry)=>sum+(entry.transferSize||0),0);
  const decoded=measured.reduce((sum,entry)=>sum+(entry.decodedBodySize||0),0);
  resources.textContent='Böngésző által mért erőforrások: '+measured.length+' kérés · hálózati átvitel: '+(transferred?bytes(transferred):'nem mérhető')+' · feldolgozott válaszmennyiség: '+(decoded?bytes(decoded):'nem mérhető')+'. A cache-ből betöltött és a külső források mérése hiányos lehet.';
  const slowCount=diagnosticNumber('slowestResourceCount',5);
  const slower=performance.getEntriesByType('resource').filter(entry=>{try{return new URL(entry.name).origin===location.origin&&entry.duration>0;}catch{return false;}}).sort((a,b)=>b.duration-a.duration).slice(0,slowCount);
- slow.textContent=slower.length?'Leglassabb helyi állományok: '+slower.map(entry=>{const url=new URL(entry.name);return decodeURIComponent(url.pathname.split('/').at(-1)||url.pathname)+' ('+fmt(entry.duration)+')';}).join(' · ')+'. Ezek a böngésző által mért letöltési idők, nem egy teljes hálózati sebességteszt.':'A helyi állományok részletes időmérése még nem elérhető.';
+ slow.textContent=slower.length?'Leglassabb helyi állományok: '+slower.map(entry=>resourceName(entry.name)+' ('+fmt(entry.duration)+')').join(' · ')+'. Ezek a böngésző által mért letöltési idők, nem egy teljes hálózati sebességteszt.':'A helyi állományok részletes időmérése még nem elérhető.';
  const largestCount=diagnosticNumber('largestResourceCount',5),targetLcpMs=diagnosticNumber('targetLcpMs',2500),targetCls=diagnosticNumber('targetCls',0.1),targetFcpMs=diagnosticNumber('targetFcpMs',1800);
  const big=measured.filter(entry=>entry.decodedBodySize>0).sort((a,b)=>b.decodedBodySize-a.decodedBodySize).slice(0,largestCount);
- panel.querySelector('[data-speed-largest]').textContent=big.length?'Legnagyobb feldolgozott erőforrások: '+big.map(entry=>{const url=new URL(entry.name);return decodeURIComponent(url.pathname.split('/').at(-1)||url.hostname)+' ('+bytes(entry.decodedBodySize)+')';}).join(' · ')+'. A cross-origin és gyorsítótári mérések hiányosak lehetnek.':'A böngésző nem szolgáltat dekódolt méretadatot az erőforrásokhoz.';
+ panel.querySelector('[data-speed-largest]').textContent=big.length?'Legnagyobb feldolgozott erőforrások: '+big.map(entry=>resourceName(entry.name)+' ('+bytes(entry.decodedBodySize)+')').join(' · ')+'. A cross-origin és gyorsítótári mérések hiányosak lehetnek.':'A böngésző nem szolgáltat dekódolt méretadatot az erőforrásokhoz.';
  const fcpEntry=performance.getEntriesByType('paint').find(entry=>entry.name==='first-contentful-paint');
  const fcp=fcpEntry?.startTime;
  const metric=(name,value,target,unit)=>name+': '+(Number.isFinite(value)?(unit==='ms'?fmt(value):value.toLocaleString('hu-HU',{maximumFractionDigits:3}))+(value<=target?' (célon belül)':' (cél fölött)'):'nem mérhető')+' · cél: '+(unit==='ms'?fmt(target):target);
@@ -81,7 +103,7 @@ export function initPerformanceDiagnostics(){
   footerDisclosure.addEventListener('toggle',()=>{
    if(label)label.textContent=footerDisclosure.open?'Honlapdiagnosztika bezárása':'Honlapdiagnosztika megnyitása';
    if(footerDisclosure.open){
-    if(!bundleRequested){bundleRequested=true;measureBundle();}
+    if(!bundleRequested||bundleStats?.error){bundleRequested=true;measureBundle();}
     refresh();
    }
   });
@@ -117,6 +139,7 @@ export function initPerformanceDiagnostics(){
  if(document.readyState==='complete')refresh();else window.addEventListener('load',refresh,{once:true});
  // A 150+ KiB manifestet csak akkor kérjük le, ha a látogató kinyitja a diagnosztikát.
  if(!footerDisclosure){bundleRequested=true;measureBundle();}
+ window.addEventListener('pageshow',event=>{if(event.persisted&&footerDisclosure?.open)measureBundle();});
  if(!observersStarted && typeof PerformanceObserver==='function'){
   observersStarted=true;
   for(const [type,handler] of [
