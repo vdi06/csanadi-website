@@ -86,7 +86,9 @@ export function initSubpageEnhancements() {
   menu.setAttribute('aria-controls', 'site-map-overlay');
   menu.setAttribute('aria-haspopup', 'dialog');
   menu.setAttribute('aria-expanded', 'false');
-  menu.innerHTML = '<span aria-hidden="true">☰</span><span class="cs-subpage-menu-label">Menü</span>';
+  // Teljes fejlécben egyszerű, arculatos szöveges gomb; összecsukva a
+  // vízszintesen középre kerülő iskolai címer nyitja meg ugyanazt a menüt.
+  menu.innerHTML = '<img class="cs-subpage-menu-logo" src="assets/media/logo/csanadi-cimer-512.webp" width="42" height="42" alt="" aria-hidden="true"><span class="cs-subpage-menu-label">Menü</span>';
   // Nem hivatkozunk a kezdőlapi vizuális indítógombra: az oldalváltás
   // ideiglenesen áthelyezheti, az aloldali menünek ettől függetlenül működnie kell.
   menu.addEventListener('click', () => document.dispatchEvent(new Event('csanadi:menu-toggle')));

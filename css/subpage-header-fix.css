@@ -4,7 +4,7 @@ body.cs-inner-page #site-header{
   width:100%;box-shadow:0 3px 12px rgba(8,20,37,.13);
 }
 body.cs-inner-page #site-header .brand-row{
-  display:flex;align-items:center;justify-content:space-between;gap:clamp(8px,2vw,20px);
+  display:flex;position:relative;align-items:center;justify-content:space-between;gap:clamp(8px,2vw,20px);
   min-height:76px;max-width:100%;
 }
 body.cs-inner-page #site-header .brand{min-width:0;flex:0 1 auto}
@@ -18,6 +18,7 @@ body.cs-inner-page #site-header .cs-subpage-menu{
 }
 body.cs-inner-page #site-header .cs-subpage-menu:hover,
 body.cs-inner-page #site-header .cs-subpage-menu[aria-expanded=true]{background:rgba(215,182,110,.27);border-color:#dbb66e}
+body.cs-inner-page #site-header .cs-subpage-menu-logo{display:none}
 body.cs-inner-page #site-header #search-open{display:grid!important;visibility:visible!important;flex:0 0 auto}
 body.cs-inner-page #site-header #mobile-menu-toggle{display:none!important}
 body.cs-inner-page > .orbit-launch{display:none!important}
@@ -36,11 +37,29 @@ body.cs-inner-page #global-hero .cs-sub-hero-shade{
   background:linear-gradient(90deg,rgba(2,15,29,.42),rgba(2,15,29,.69),rgba(2,15,29,.42));
 }
 body.cs-inner-page.cs-header-condensed #site-header .brand-row{min-height:58px!important;padding-block:5px!important}
-body.cs-inner-page.cs-header-condensed #site-header .brand-logo{width:39px!important;height:39px!important}
+/* A kompakt fejlécben nem marad oldalt a már elrejtett menü felirata vagy
+   az iskola neve: kizárólag a középre igazított, kattintható címer a menüvezérlő. */
+body.cs-inner-page.cs-header-condensed #site-header .brand{display:none!important}
+body.cs-inner-page.cs-header-condensed #site-header .brand-row{justify-content:flex-end}
+body.cs-inner-page.cs-header-condensed #site-header .header-actions{margin-left:auto}
 body.cs-inner-page.cs-header-condensed #site-header .header-tag,
 body.cs-inner-page.cs-header-condensed #site-header .header-social,
-body.cs-inner-page.cs-header-condensed #site-header .portal-replay-btn{display:none!important}
-body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-menu{min-height:42px;min-width:86px}
+body.cs-inner-page.cs-header-condensed #site-header .header-kreta,
+body.cs-inner-page.cs-header-condensed #site-header .theme-label,
+body.cs-inner-page.cs-header-condensed #site-header .portal-replay-btn,
+body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-menu-label{display:none!important}
+body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-menu{
+  position:absolute!important;left:50%!important;top:50%!important;
+  transform:translate(-50%,-50%)!important;margin:0!important;
+  width:48px!important;height:48px!important;min-width:48px!important;min-height:48px!important;
+  padding:3px!important;border-radius:50%!important;z-index:2;
+}
+body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-menu-logo{
+  display:block!important;width:40px;height:40px;object-fit:contain;
+}
+body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-menu:focus-visible{
+  outline:3px solid #bd9555!important;outline-offset:3px;
+}
 body.cs-inner-page #app :is(h1,h2,h3,h4,section,[id]){scroll-margin-top:90px}
 @media(max-width:1000px){
   body.cs-inner-page #site-header .header-tag,
@@ -63,7 +82,6 @@ body.cs-inner-page #app :is(h1,h2,h3,h4,section,[id]){scroll-margin-top:90px}
   body.cs-inner-page #site-header .brand-copy strong{font-size:clamp(13px,4vw,17px)!important;letter-spacing:.05em}
   body.cs-inner-page #site-header .brand{gap:7px}
   body.cs-inner-page #site-header .cs-subpage-menu{min-width:43px;padding-inline:7px;gap:0}
-  body.cs-inner-page #site-header .cs-subpage-menu-label{display:none}
 }
 @media(max-width:345px){
   body.cs-inner-page #site-header .brand-copy{display:none}

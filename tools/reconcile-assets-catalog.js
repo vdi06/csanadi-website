@@ -31,7 +31,21 @@ for(const file of missing){
   inventory.items.push({path:file,type:typeFor(file),mimeType:mime[ext]||'application/octet-stream',sizeBytes:data.byteLength,title:path.basename(file,path.extname(file)).replace(/[-_]/g,' '),alt:'',description:'',category:file.startsWith('assets/qr/')?'qr':'',tags:[],mediaId:null,sha256:crypto.createHash('sha256').update(data).digest('hex'),published:false,rightsConfirmed:false});
 }
 inventory.items.sort((a,b)=>a.path.localeCompare(b.path,'hu'));
-const sources=[...new Set([...(index.jsonFiles||[]),...(index.codeFiles||[])])].filter(p=>fs.existsSync(path.join(root,p)));
+// A jegyzék minden aktuális JSON-fájlt tartalmazzon: korábban kilenc fájl,
+// köztük a QR-célok indexe kimaradt, így átnevezéskor rejtett hivatkozások
+// maradhattak volna meg. A jegyzék saját fájlját nem lehet önreferenciaként kezelni.
+const jsonFiles=[];
+function findJson(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
+  const full=path.join(dir,entry.name);
+  if(entry.isDirectory())findJson(full);
+  else if(entry.isFile()&&entry.name.endsWith('.json')){
+    const rel=posix(path.relative(root,full));
+    if(rel!=='json/assets-project-index.json')jsonFiles.push(rel);
+  }
+}}
+findJson(path.join(root,'json'));
+jsonFiles.sort();
+const sources=[...new Set([...jsonFiles,...(index.codeFiles||[])])].filter(p=>fs.existsSync(path.join(root,p)));
 const sourceText=new Map(sources.map(p=>[p,fs.readFileSync(path.join(root,p),'utf8')]));
 const references={};
 for(const item of inventory.items){
@@ -39,8 +53,8 @@ for(const item of inventory.items){
   const detected=sources.filter(p=>sourceText.get(p).includes(item.path));
   references[item.path]=[...new Set([...previous,...detected])].filter(p=>fs.existsSync(path.join(root,p))).sort();
 }
-const updated={...index,assetReferences:references};
-const report={physicalAssets:files.length,indexedAssets:inventory.items.length,previouslyMissing:missing.length,orphanedRecords:obsolete.length,unindexed:files.filter(file=>!inventory.items.some(item=>item.path===file)).length,qrAssets:inventory.items.filter(item=>item.path.startsWith('assets/qr/')).length};
+const updated={...index,jsonFiles,assetReferences:references};
+const report={physicalAssets:files.length,indexedAssets:inventory.items.length,previouslyMissing:missing.length,orphanedRecords:obsolete.length,unindexed:files.filter(file=>!inventory.items.some(item=>item.path===file)).length,qrAssets:inventory.items.filter(item=>item.path.startsWith('assets/qr/')).length,jsonSources:jsonFiles.length,addedJsonSources:jsonFiles.filter(p=>!index.jsonFiles.includes(p)).length};
 if(process.argv.includes('--write')&&!obsolete.length){
   inventory.updatedAt='2026-11-16';
   fs.writeFileSync(inventoryPath,JSON.stringify(inventory,null,2)+'\n');

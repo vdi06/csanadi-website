@@ -4,44 +4,53 @@
     "json/adatok/csengetesi-rend.json",
     "json/adatok/dokumentumok.json",
     "json/adatok/esemenyek.json",
+    "json/adatok/felfedezo-21.json",
     "json/adatok/galeriavideok.json",
     "json/adatok/hirek-hivatalos.json",
+    "json/adatok/iranytu-22.json",
     "json/adatok/iskolatorteneti-idovonal.json",
     "json/adatok/kepgaleria.json",
+    "json/adatok/kozossegi-muhely-23.json",
+    "json/adatok/megkozelites-fejlodes-26.json",
     "json/adatok/napi-sporthirek.json",
     "json/adatok/oldalmedia-2026.json",
+    "json/adatok/orokseg-es-tudastar-24.json",
+    "json/adatok/qr-index-22.json",
     "json/adatok/social.json",
     "json/adatok/sportsikerek.json",
     "json/adatok/tantestulet.json",
+    "json/adatok/tanulas-kozosseg-25.json",
     "json/adatok/tanuloi-sikerek.json",
     "json/assets-inventory.json",
     "json/config.json",
     "json/mediatar.json",
+    "json/nyelvek.json",
+    "json/oldalak/hirek-es-esemenyek.json",
+    "json/oldalak/hirek-es-esemenyek/esemenynaptar.json",
     "json/oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json",
     "json/oldalak/hirek-es-esemenyek/esemenynaptar/sportesemenyek.json",
-    "json/oldalak/hirek-es-esemenyek/esemenynaptar.json",
+    "json/oldalak/hirek-es-esemenyek/hirek.json",
     "json/oldalak/hirek-es-esemenyek/hirek/hirarchivum.json",
     "json/oldalak/hirek-es-esemenyek/hirek/iskolai-hirek.json",
     "json/oldalak/hirek-es-esemenyek/hirek/sporthirek.json",
-    "json/oldalak/hirek-es-esemenyek/hirek.json",
     "json/oldalak/hirek-es-esemenyek/kozlemenyek.json",
-    "json/oldalak/hirek-es-esemenyek.json",
+    "json/oldalak/informaciok.json",
     "json/oldalak/informaciok/adatvedelem.json",
     "json/oldalak/informaciok/allaspalyazatok.json",
     "json/oldalak/informaciok/digitalis-ugyintezes.json",
+    "json/oldalak/informaciok/dokumentumtar.json",
     "json/oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json",
     "json/oldalak/informaciok/dokumentumtar/nyomtatvanyok.json",
     "json/oldalak/informaciok/dokumentumtar/szabalyzatok.json",
-    "json/oldalak/informaciok/dokumentumtar.json",
+    "json/oldalak/informaciok/kozossegi-szolgalat.json",
     "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json",
     "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok.json",
     "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok.json",
-    "json/oldalak/informaciok/kozossegi-szolgalat.json",
+    "json/oldalak/informaciok/mindennapi-tudnivalok.json",
     "json/oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json",
     "json/oldalak/informaciok/mindennapi-tudnivalok/etkezes.json",
     "json/oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json",
-    "json/oldalak/informaciok/mindennapi-tudnivalok.json",
-    "json/oldalak/informaciok.json",
+    "json/oldalak/iskolank.json",
     "json/oldalak/iskolank/a-honlap-szuletese.json",
     "json/oldalak/iskolank/alapitvany.json",
     "json/oldalak/iskolank/bemutatkozas.json",
@@ -52,37 +61,36 @@
     "json/oldalak/iskolank/partnerek.json",
     "json/oldalak/iskolank/tantestulet.json",
     "json/oldalak/iskolank/tortenet.json",
-    "json/oldalak/iskolank.json",
     "json/oldalak/kapcsolat.json",
     "json/oldalak/kezdolap.json",
+    "json/oldalak/oktatas.json",
     "json/oldalak/oktatas/digitalis-kultura.json",
+    "json/oldalak/oktatas/felveteli.json",
     "json/oldalak/oktatas/felveteli/elso-evfolyam.json",
     "json/oldalak/oktatas/felveteli/felveteli-hataridok.json",
     "json/oldalak/oktatas/felveteli/kilencedik-evfolyam.json",
     "json/oldalak/oktatas/felveteli/nyilt-napok.json",
-    "json/oldalak/oktatas/felveteli.json",
+    "json/oldalak/oktatas/kepzeseink.json",
     "json/oldalak/oktatas/kepzeseink/altalanos-iskola.json",
     "json/oldalak/oktatas/kepzeseink/gimnazium.json",
     "json/oldalak/oktatas/kepzeseink/sportiskolai-neveles.json",
-    "json/oldalak/oktatas/kepzeseink.json",
-    "json/oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json",
     "json/oldalak/oktatas/konyvtar.json",
+    "json/oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json",
     "json/oldalak/oktatas/tananyagok-es-jegyzetek.json",
+    "json/oldalak/oktatas/tanevek.json",
     "json/oldalak/oktatas/tanevek/aktualis-tanev.json",
     "json/oldalak/oktatas/tanevek/korabbi-tanevek.json",
-    "json/oldalak/oktatas/tanevek.json",
+    "json/oldalak/oktatas/vizsgak.json",
     "json/oldalak/oktatas/vizsgak/egyeb-vizsgak.json",
     "json/oldalak/oktatas/vizsgak/erettsegi.json",
     "json/oldalak/oktatas/vizsgak/osztalyozo-vizsgak.json",
-    "json/oldalak/oktatas/vizsgak.json",
-    "json/oldalak/oktatas.json",
+    "json/oldalak/sport.json",
     "json/oldalak/sport/csapatok.json",
     "json/oldalak/sport/edzok.json",
     "json/oldalak/sport/sportagak.json",
     "json/oldalak/sport/sporteredmenyek.json",
     "json/oldalak/sport/sportgaleriak.json",
     "json/oldalak/sport/sportolok.json",
-    "json/oldalak/sport.json",
     "json/oldalindex.json",
     "json/schemas/dokumentumok.schema.json",
     "json/schemas/tanuloi-sikerek.schema.json",
@@ -168,79 +176,99 @@
       "js/document-collections-2026.js",
       "js/documents.js",
       "json/adatok/dokumentumok.json",
+      "json/adatok/orokseg-es-tudastar-24.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json",
       "utmutato.html"
     ],
     "assets/documents/digitalis-fajlok-es-beadas.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/felveteli-tajekozodasi-segedlet-2026.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-01.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-02.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-03.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-04.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-05.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-06.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-07.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-08.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-09.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-10.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-11.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-12.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-13.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-14.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/segedlet-2026-15.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/documents/tanulas-sport-idogazdalkodas.pdf": [
       "json/adatok/dokumentumok.json",
+      "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
     "assets/graphics/ikon-atletika.svg": [
@@ -367,7 +395,8 @@
       "json/assets-inventory.json"
     ],
     "assets/media/web/belepes-nyitott-mobil.webp": [
-      "js/advanced-2026.js"
+      "js/advanced-2026.js",
+      "json/assets-inventory.json"
     ],
     "assets/media/web/belepes-nyitott.webp": [
       "css/home-gallery-news-gate-2026.css",
@@ -377,23 +406,27 @@
     "assets/media/web/cs2026-001.webp": [
       "json/adatok/galeriavideok.json",
       "json/adatok/kepgaleria.json",
+      "json/adatok/kozossegi-muhely-23.json",
       "json/adatok/oldalmedia-2026.json",
       "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/cs2026-002.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/kozossegi-muhely-23.json",
       "json/adatok/oldalmedia-2026.json",
       "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/cs2026-003.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/kozossegi-muhely-23.json",
       "json/assets-inventory.json",
       "json/mediatar.json"
     ],
     "assets/media/web/cs2026-004.webp": [
       "json/adatok/kepgaleria.json",
+      "json/adatok/kozossegi-muhely-23.json",
       "json/assets-inventory.json",
       "json/mediatar.json"
     ],
@@ -3018,93 +3051,354 @@
       "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/qr/csanadi-qr-06b6013647d5dabb.svg": [],
-    "assets/qr/csanadi-qr-0bcf56ffaf451cb2.svg": [],
-    "assets/qr/csanadi-qr-0d84a1df3c10958a.svg": [],
-    "assets/qr/csanadi-qr-0eb89f7bb821b763.svg": [],
-    "assets/qr/csanadi-qr-138e9367725e323e.svg": [],
-    "assets/qr/csanadi-qr-159946607e6ce5e6.svg": [],
-    "assets/qr/csanadi-qr-176b4e6402a6c4dd.svg": [],
-    "assets/qr/csanadi-qr-1ac4ce68d2d46d6f.svg": [],
-    "assets/qr/csanadi-qr-20a5c9a47b295209.svg": [],
-    "assets/qr/csanadi-qr-21773bbaa9b2b28a.svg": [],
-    "assets/qr/csanadi-qr-23cb785e3811f230.svg": [],
-    "assets/qr/csanadi-qr-263990dcdf95e979.svg": [],
-    "assets/qr/csanadi-qr-2d2caec6a51d6205.svg": [],
-    "assets/qr/csanadi-qr-3075a04f32904c76.svg": [],
-    "assets/qr/csanadi-qr-3ff2c1ee7730fd07.svg": [],
-    "assets/qr/csanadi-qr-41b847a9fc8c3bf0.svg": [],
-    "assets/qr/csanadi-qr-41d9735ae0b02029.svg": [],
-    "assets/qr/csanadi-qr-4b17b7b0af0826de.svg": [],
-    "assets/qr/csanadi-qr-4c54fef661fff16d.svg": [],
-    "assets/qr/csanadi-qr-4ef4392514ad36cd.svg": [],
-    "assets/qr/csanadi-qr-514eae61749ce1bd.svg": [],
-    "assets/qr/csanadi-qr-535f37604dac513a.svg": [],
-    "assets/qr/csanadi-qr-5372f5709cb9736d.svg": [],
-    "assets/qr/csanadi-qr-549112a531d270f0.svg": [],
-    "assets/qr/csanadi-qr-5a1210dbca644112.svg": [],
-    "assets/qr/csanadi-qr-5c09692eaae4992e.svg": [],
-    "assets/qr/csanadi-qr-68df1cba754e9288.svg": [],
-    "assets/qr/csanadi-qr-6c31597b7b12ce10.svg": [],
-    "assets/qr/csanadi-qr-6c9334e5d6b059f3.svg": [],
-    "assets/qr/csanadi-qr-720d4f1f6672ae3b.svg": [],
-    "assets/qr/csanadi-qr-727f4683fde42954.svg": [],
-    "assets/qr/csanadi-qr-74b265f0c2eddf09.svg": [],
-    "assets/qr/csanadi-qr-74e979fb17bc87ce.svg": [],
-    "assets/qr/csanadi-qr-77162e1e7ae8c535.svg": [],
-    "assets/qr/csanadi-qr-79a675a8ae6f0a50.svg": [],
-    "assets/qr/csanadi-qr-7bee5b30b30758f1.svg": [],
-    "assets/qr/csanadi-qr-8652dd26e8662ab3.svg": [],
-    "assets/qr/csanadi-qr-891d35fbf23ff980.svg": [],
-    "assets/qr/csanadi-qr-8a90e21f33bb7ef2.svg": [],
-    "assets/qr/csanadi-qr-914b7b862426c7e3.svg": [],
-    "assets/qr/csanadi-qr-9181b16ee2fb1a31.svg": [],
-    "assets/qr/csanadi-qr-93a632e4539c1ff9.svg": [],
-    "assets/qr/csanadi-qr-98b5e8ec1dd4a6b3.svg": [],
-    "assets/qr/csanadi-qr-9a3838207cd92cd6.svg": [],
-    "assets/qr/csanadi-qr-9b11dfa6987299bf.svg": [],
-    "assets/qr/csanadi-qr-9f6b35e6b66bbb8b.svg": [],
-    "assets/qr/csanadi-qr-a10ebcb6f9bd7de4.svg": [],
-    "assets/qr/csanadi-qr-a10f7aa201031c9c.svg": [],
-    "assets/qr/csanadi-qr-a53e73bf660347a4.svg": [],
-    "assets/qr/csanadi-qr-a91c104c52f596f6.svg": [],
-    "assets/qr/csanadi-qr-af74ec7de14859f5.svg": [],
-    "assets/qr/csanadi-qr-b37c940608c0cd8c.svg": [],
-    "assets/qr/csanadi-qr-b38a4af88fe8538f.svg": [],
-    "assets/qr/csanadi-qr-b4ed903f0a3e98ea.svg": [],
-    "assets/qr/csanadi-qr-b58a5ab9ac20e679.svg": [],
-    "assets/qr/csanadi-qr-b654b9e8e3ebdeff.svg": [],
-    "assets/qr/csanadi-qr-c08ca21ec3b11464.svg": [],
-    "assets/qr/csanadi-qr-c0a0c3074fae237b.svg": [],
-    "assets/qr/csanadi-qr-c14194e89fc7d2a8.svg": [],
-    "assets/qr/csanadi-qr-c28888b0f73ce272.svg": [],
-    "assets/qr/csanadi-qr-c2c5dd073f9fc58c.svg": [],
-    "assets/qr/csanadi-qr-c7d23a5f9ac34c49.svg": [],
-    "assets/qr/csanadi-qr-c8ad80a83c3bae84.svg": [],
-    "assets/qr/csanadi-qr-c94132ac60962a66.svg": [],
-    "assets/qr/csanadi-qr-ca44a7cc800b4936.svg": [],
-    "assets/qr/csanadi-qr-cb6c4b7dacd9eddd.svg": [],
-    "assets/qr/csanadi-qr-ccf643fdda0a8241.svg": [],
-    "assets/qr/csanadi-qr-cf7a5c62ff803b37.svg": [],
-    "assets/qr/csanadi-qr-d3629657e62f6368.svg": [],
-    "assets/qr/csanadi-qr-d3d4b2037a08b48e.svg": [],
-    "assets/qr/csanadi-qr-d5316123ad0159d5.svg": [],
-    "assets/qr/csanadi-qr-d63cbe1e6596e1ec.svg": [],
-    "assets/qr/csanadi-qr-dcce263f08ae2b11.svg": [],
-    "assets/qr/csanadi-qr-df014648b332e367.svg": [],
-    "assets/qr/csanadi-qr-e77214c7fcc2235b.svg": [],
-    "assets/qr/csanadi-qr-e9eaac4335f763cd.svg": [],
-    "assets/qr/csanadi-qr-e9fb2c9139b491d4.svg": [],
-    "assets/qr/csanadi-qr-ecc8b97e9ac7f4a8.svg": [],
-    "assets/qr/csanadi-qr-efa963a1cd50a151.svg": [],
-    "assets/qr/csanadi-qr-f2475368b48da45d.svg": [],
-    "assets/qr/csanadi-qr-f31e7f52b6a31ed2.svg": [],
-    "assets/qr/csanadi-qr-f3baef66a15631d9.svg": [],
-    "assets/qr/csanadi-qr-f593a0d1141c37c8.svg": [],
-    "assets/qr/csanadi-qr-f6256d2687b152dc.svg": [],
-    "assets/qr/csanadi-qr-fdd5b6218adeedfa.svg": [],
-    "assets/qr/csanadi-qr-fdde03c49be816a7.svg": [],
-    "assets/qr/csanadi-qr-fe6cb35447110140.svg": []
+    "assets/qr/csanadi-qr-06b6013647d5dabb.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-0bcf56ffaf451cb2.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-0d84a1df3c10958a.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-0eb89f7bb821b763.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-138e9367725e323e.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-159946607e6ce5e6.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-176b4e6402a6c4dd.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-1ac4ce68d2d46d6f.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-20a5c9a47b295209.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-21773bbaa9b2b28a.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-23cb785e3811f230.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-263990dcdf95e979.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-2d2caec6a51d6205.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-3075a04f32904c76.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-3ff2c1ee7730fd07.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-41b847a9fc8c3bf0.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-41d9735ae0b02029.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-4b17b7b0af0826de.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-4c54fef661fff16d.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-4ef4392514ad36cd.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-514eae61749ce1bd.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-535f37604dac513a.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-5372f5709cb9736d.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-549112a531d270f0.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-5a1210dbca644112.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-5c09692eaae4992e.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-68df1cba754e9288.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-6c31597b7b12ce10.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-6c9334e5d6b059f3.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-720d4f1f6672ae3b.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-727f4683fde42954.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-74b265f0c2eddf09.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-74e979fb17bc87ce.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-77162e1e7ae8c535.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-79a675a8ae6f0a50.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-7bee5b30b30758f1.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-8652dd26e8662ab3.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-891d35fbf23ff980.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-8a90e21f33bb7ef2.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-914b7b862426c7e3.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-9181b16ee2fb1a31.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-93a632e4539c1ff9.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-98b5e8ec1dd4a6b3.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-9a3838207cd92cd6.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-9b11dfa6987299bf.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-9f6b35e6b66bbb8b.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-a10ebcb6f9bd7de4.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-a10f7aa201031c9c.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-a53e73bf660347a4.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-a91c104c52f596f6.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-af74ec7de14859f5.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-b37c940608c0cd8c.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-b38a4af88fe8538f.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-b4ed903f0a3e98ea.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-b58a5ab9ac20e679.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-b654b9e8e3ebdeff.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c08ca21ec3b11464.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c0a0c3074fae237b.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c14194e89fc7d2a8.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c28888b0f73ce272.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c2c5dd073f9fc58c.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c7d23a5f9ac34c49.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c8ad80a83c3bae84.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c94132ac60962a66.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-ca44a7cc800b4936.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-cb6c4b7dacd9eddd.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-ccf643fdda0a8241.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-cf7a5c62ff803b37.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-d3629657e62f6368.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-d3d4b2037a08b48e.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-d5316123ad0159d5.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-d63cbe1e6596e1ec.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-dcce263f08ae2b11.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-df014648b332e367.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-e77214c7fcc2235b.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-e9eaac4335f763cd.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-e9fb2c9139b491d4.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-ecc8b97e9ac7f4a8.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-efa963a1cd50a151.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-f2475368b48da45d.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-f31e7f52b6a31ed2.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-f3baef66a15631d9.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-f593a0d1141c37c8.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-f6256d2687b152dc.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-fdd5b6218adeedfa.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-fdde03c49be816a7.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-fe6cb35447110140.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ]
   },
   "mediaIdReferences": {
     "media:logo": [

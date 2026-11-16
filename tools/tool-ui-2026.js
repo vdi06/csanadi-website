@@ -6,9 +6,24 @@
   if(!document.querySelector('link[data-csanadi-tools-unified]')){
     const stylesheet=document.createElement('link');
     stylesheet.rel='stylesheet';
-    stylesheet.href='../css/tools-unified-v1.css?v=1.6.0';
+    stylesheet.href='../css/tools-unified-v1.css?v=1.7.0';
     stylesheet.dataset.csanadiToolsUnified='true';
     document.head.append(stylesheet);
+  }
+  const main=document.querySelector('main');
+  if(main){
+    if(!main.id)main.id='cs-tools-main';
+    if(!document.querySelector('.cs-tools-skip')){
+      const skip=document.createElement('a');
+      skip.href='#'+main.id;
+      skip.className='cs-tools-skip';
+      skip.textContent='Ugrás a segédprogram tartalmára';
+      document.body.insertBefore(skip,document.body.firstChild);
+    }
+  }
+  const currentPage=location.pathname.split('/').pop();
+  for(const link of document.querySelectorAll('nav a[href]')){
+    try{if(new URL(link.href,location.href).pathname.split('/').pop()===currentPage)link.setAttribute('aria-current','page');}catch{}
   }
   const button=document.getElementById('tool-theme-toggle');
   if(!button)return;

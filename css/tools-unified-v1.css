@@ -1,5 +1,7 @@
-/* v1.6 – közös, FTP-kompatibilis prémium arculat minden tools/ segédoldalhoz. */
+/* v1.7 – közös, FTP-kompatibilis prémium arculat minden tools/ segédoldalhoz. */
 html.cs-tools-modern{--cs-tools-navy:#102b45;--cs-tools-navy-2:#183b59;--cs-tools-gold:#d7b474;--cs-tools-focus:#eebd5d;scroll-padding-top:24px}
+html.cs-tools-modern .cs-tools-skip{position:fixed;top:8px;left:50%;transform:translate(-50%,-170%);z-index:100000;background:#fff2d4;color:#0a2238;padding:12px 18px;border:3px solid #b78832;border-radius:12px;font-weight:850;text-decoration:none;transition:transform .15s ease}
+html.cs-tools-modern .cs-tools-skip:focus-visible{transform:translate(-50%,0);outline:3px solid #0a2238;outline-offset:2px}
 html.cs-tools-modern body{max-width:100%;overflow-x:clip}
 html.cs-tools-modern :is(.admin-head,.csanadi-tool .tool-header){background:linear-gradient(115deg,#091d33 0%,#1b4667 100%);border-bottom:3px solid var(--cs-tools-gold);color:#fff;box-shadow:0 9px 25px rgb(7 29 50 / 12%)}
 html.cs-tools-modern .admin-head{min-height:96px}
@@ -21,8 +23,12 @@ html.cs-tools-modern [hidden]{display:none!important}
 html.cs-tools-modern [role=status]{overflow-wrap:anywhere}
 html.cs-tools-modern .csanadi-tool .tool-header-actions{justify-content:center}
 html.cs-tools-modern .csanadi-tool .tool-tabs{justify-items:stretch}
+html.cs-tools-modern .csn16-standalone-tool :is(.bar,.toolbar,.actions){justify-content:center}
+html.cs-tools-modern .csn16-standalone-tool :is(button,.btn){min-height:44px}
 html.cs-tools-modern .csanadi-tool .mm-stat{text-align:center}
 html.cs-tools-modern .csanadi-tool :is(.mm-form-actions,.mm-bulk-actions){justify-content:center}
+html.cs-tools-modern .csanadi-tool .mm-item.needs-review{border-left:4px solid #bd8b35}
+html.cs-tools-modern .csanadi-tool .mm-item.needs-review .mm-item-body small:first-of-type{font-weight:750}
 @media(max-width:720px){
  html.cs-tools-modern .admin-head{padding:17px 16px;gap:12px}
  html.cs-tools-modern .admin-head nav{width:100%;justify-content:center}
@@ -33,3 +39,4 @@ html.cs-tools-modern .csanadi-tool :is(.mm-form-actions,.mm-bulk-actions){justif
  html.cs-tools-modern .admin-grid{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){html.cs-tools-modern *,html.cs-tools-modern *::before,html.cs-tools-modern *::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+@media(prefers-contrast:more){html.cs-tools-modern :is(.admin-grid>a,.csanadi-tool .tool-tabs a,.csanadi-tool .mm-item){border-width:2px}html.cs-tools-modern :is(button,a):focus-visible{outline-width:4px!important}}

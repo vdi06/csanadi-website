@@ -1,0 +1,2828 @@
+{
+  "release": "v1.7.0",
+  "generatedAt": "2026-11-16",
+  "assets": 628,
+  "media": 114,
+  "pages": 66,
+  "publishedWithoutDirectRightsRegistry": 35,
+  "rightsPending": 29,
+  "rightsPreviewOnly": 4,
+  "missingAlternativeText": 233,
+  "countsBySeverity": {
+    "review": 272,
+    "high": 29
+  },
+  "issues": [
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-01.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-02.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-03.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-04.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-05.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-06.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-07.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-08.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-09.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-10.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-11.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-12.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-13.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-14.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/documents/segedlet-2026-15.pdf",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/dokumentumok.json | json/adatok/qr-index-22.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/graphics/ikon-atletika.svg",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/graphics/ikon-fenntarthatosag.svg",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/graphics/ikon-konyv.svg",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/graphics/ikon-kosarlabda.svg",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/graphics/ikon-kozosseg.svg",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/graphics/ikon-labdarugas.svg",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/graphics/ikon-laptop.svg",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/graphics/ikon-naptar.svg",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/graphics/ikon-roplabda.svg",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/graphics/ikon-uszas.svg",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/graphics/sports-pattern-dark.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "css/next-2026.css | css/orbit-2026.css | css/style.css",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/graphics/sports-pattern-light.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "css/next-2026.css | css/orbit-2026.css | css/style.css",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/video/montazs-2026-01.mp4",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/galeriavideok.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/video/montazs-2026-02.mp4",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/galeriavideok.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/video/montazs-2026-03.mp4",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/galeriavideok.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/video/montazs-2026-04.mp4",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/galeriavideok.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/video/montazs-2026-05.mp4",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/galeriavideok.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/video/montazs-2026-06.mp4",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/galeriavideok.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/video/montazs-2026-07.mp4",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/galeriavideok.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/video/montazs-2026-08.mp4",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/galeriavideok.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/video/montazs-2026-09.mp4",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/galeriavideok.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/video/montazs-2026-10.mp4",
+      "issue": "Publikáltként jelölt, de nincs közvetlen médiatár-jogállás.",
+      "references": "json/adatok/galeriavideok.json",
+      "action": "Intézményi felhasználási jog és tartalmi hely ellenőrzése."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/belepes-kapu.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "css/interactions-be-2026.css | css/next-2026.css | css/style.css",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/belepes-nyitott-mobil.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "js/advanced-2026.js",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/belepes-nyitott.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "css/home-gallery-news-gate-2026.css | js/advanced-2026.js",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-21.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-22.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-23.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-24.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-25.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-26.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-27.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-28.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-29.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-30.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-31.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-32.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-33.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-34.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-35.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-36.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-37.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-38.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-39.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-40.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-41.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-42.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-43.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-44.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-45.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-46.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-47.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/eletkep-48.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/belepes-kapu-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/belepes-kapu-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/belepes-kapu-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/belepes-nyitott-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/belepes-nyitott-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/belepes-nyitott-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-01-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-01-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-01-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-02-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-02-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-02-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-03-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-03-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-03-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-04-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-04-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-04-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-05-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-05-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-05-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-06-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-06-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-06-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-07-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-07-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-07-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-08-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-08-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-08-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-09-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-09-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-09-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-10-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-10-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-10-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-11-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-12-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-13-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-14-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-15-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-16-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-17-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-18-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-19-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-20-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-21-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-22-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-23-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-24-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-25-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-26-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-27-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-28-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-29-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-30-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-31-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-32-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-33-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-34-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-35-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-36-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-37-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-38-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-39-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-40-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-41-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-42-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-43-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-44-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-45-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-46-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-47-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eletkep-48-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eredmenyek-1600-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eredmenyek-1600-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/eredmenyek-1600-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/esemenyek-1600-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/esemenyek-1600-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/esemenyek-1600-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/felveteli-1600-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/felveteli-1600-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/felveteli-1600-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/hero-1600-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/hero-1600-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/hero-1600-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/iskolank-1600-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/iskolank-1600-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/iskolank-1600-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/kapcsolat-1600-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/kapcsolat-1600-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/kapcsolat-1600-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/kozosseg-1600-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/kozosseg-1600-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/kozosseg-1600-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/oktatas-1600-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/oktatas-1600-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/oktatas-1600-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/siker-atletika-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/siker-atletika-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/siker-atletika-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/siker-kosarlabda-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/siker-kosarlabda-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/siker-kosarlabda-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/siker-roplabda-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/siker-roplabda-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/siker-roplabda-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/siker-uszas-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/siker-uszas-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/siker-uszas-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/sport-1600-320.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/sport-1600-640.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/media/web/responsive/sport-1600-960.webp",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/mediatar.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-06b6013647d5dabb.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-0bcf56ffaf451cb2.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-0d84a1df3c10958a.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-0eb89f7bb821b763.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-138e9367725e323e.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-159946607e6ce5e6.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-176b4e6402a6c4dd.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-1ac4ce68d2d46d6f.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-20a5c9a47b295209.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-21773bbaa9b2b28a.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-23cb785e3811f230.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-263990dcdf95e979.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-2d2caec6a51d6205.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-3075a04f32904c76.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-3ff2c1ee7730fd07.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-41b847a9fc8c3bf0.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-41d9735ae0b02029.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-4b17b7b0af0826de.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-4c54fef661fff16d.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-4ef4392514ad36cd.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-514eae61749ce1bd.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-535f37604dac513a.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-5372f5709cb9736d.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-549112a531d270f0.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-5a1210dbca644112.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-5c09692eaae4992e.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-68df1cba754e9288.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-6c31597b7b12ce10.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-6c9334e5d6b059f3.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-720d4f1f6672ae3b.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-727f4683fde42954.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-74b265f0c2eddf09.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-74e979fb17bc87ce.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-77162e1e7ae8c535.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-79a675a8ae6f0a50.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-7bee5b30b30758f1.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-8652dd26e8662ab3.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-891d35fbf23ff980.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-8a90e21f33bb7ef2.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-914b7b862426c7e3.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-9181b16ee2fb1a31.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-93a632e4539c1ff9.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-98b5e8ec1dd4a6b3.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-9a3838207cd92cd6.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-9b11dfa6987299bf.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-9f6b35e6b66bbb8b.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-a10ebcb6f9bd7de4.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-a10f7aa201031c9c.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-a53e73bf660347a4.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-a91c104c52f596f6.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-af74ec7de14859f5.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-b37c940608c0cd8c.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-b38a4af88fe8538f.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-b4ed903f0a3e98ea.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-b58a5ab9ac20e679.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-b654b9e8e3ebdeff.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-c08ca21ec3b11464.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-c0a0c3074fae237b.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-c14194e89fc7d2a8.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-c28888b0f73ce272.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-c2c5dd073f9fc58c.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-c7d23a5f9ac34c49.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-c8ad80a83c3bae84.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-c94132ac60962a66.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-ca44a7cc800b4936.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-cb6c4b7dacd9eddd.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-ccf643fdda0a8241.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-cf7a5c62ff803b37.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-d3629657e62f6368.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-d3d4b2037a08b48e.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-d5316123ad0159d5.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-d63cbe1e6596e1ec.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-dcce263f08ae2b11.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-df014648b332e367.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-e77214c7fcc2235b.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-e9eaac4335f763cd.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-e9fb2c9139b491d4.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-ecc8b97e9ac7f4a8.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-efa963a1cd50a151.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-f2475368b48da45d.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-f31e7f52b6a31ed2.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-f3baef66a15631d9.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-f593a0d1141c37c8.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-f6256d2687b152dc.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-fdd5b6218adeedfa.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-fdde03c49be816a7.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "accessibility",
+      "severity": "review",
+      "path": "assets/qr/csanadi-qr-fe6cb35447110140.svg",
+      "issue": "Nincs külön alternatív szöveg.",
+      "references": "json/adatok/qr-index-22.json",
+      "action": "Ellenőrizni, hogy dekoratív-e; ha nem, rövid leírást készíteni."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/hero-1600.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/iskolank-1600.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/oktatas-1600.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/sport-1600.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/kozosseg-1600.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/felveteli-1600.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eredmenyek-1600.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/esemenyek-1600.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/kapcsolat-1600.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/web/siker-atletika.webp",
+      "issue": "Jogállás: preview-only.",
+      "references": "json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/web/siker-kosarlabda.webp",
+      "issue": "Jogállás: preview-only.",
+      "references": "json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/web/siker-uszas.webp",
+      "issue": "Jogállás: preview-only.",
+      "references": "json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "review",
+      "path": "assets/media/web/siker-roplabda.webp",
+      "issue": "Jogállás: preview-only.",
+      "references": "json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-01.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/galeriavideok.json | json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/adatok/tanuloi-sikerek.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-02.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/adatok/tanuloi-sikerek.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-03.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/tanuloi-sikerek.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-04.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/tanuloi-sikerek.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-05.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/adatok/tanuloi-sikerek.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-06.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/adatok/tanuloi-sikerek.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-07.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/galeriavideok.json | json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/adatok/tanuloi-sikerek.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-08.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/adatok/tanuloi-sikerek.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-09.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-10.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-11.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-12.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-13.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-14.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-15.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-16.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-17.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-18.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-19.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    },
+    {
+      "kind": "rights",
+      "severity": "high",
+      "path": "assets/media/web/eletkep-20.webp",
+      "issue": "Jogállás: pending.",
+      "references": "json/adatok/kepgaleria.json | json/adatok/oldalmedia-2026.json | json/mediatar.json",
+      "action": "Jogosult, licenc, felhasználási engedély és szükség esetén érintetti hozzájárulás tételes ellenőrzése."
+    }
+  ],
+  "pageRows": [
+    {
+      "file": "oldalak/kapcsolat.json",
+      "title": "Kapcsolat",
+      "status": "published",
+      "route": "#/kapcsolat"
+    },
+    {
+      "file": "oldalak/sport.json",
+      "title": "Sportélet",
+      "status": "published",
+      "route": "#/sport"
+    },
+    {
+      "file": "oldalak/kezdolap.json",
+      "title": "Csanádi Sportiskola – Sport, tanulás, közösség",
+      "status": "published",
+      "route": "#/"
+    },
+    {
+      "file": "oldalak/informaciok.json",
+      "title": "Iskolai információk",
+      "status": "published",
+      "route": "#/informaciok"
+    },
+    {
+      "file": "oldalak/iskolank.json",
+      "title": "Iskolánk",
+      "status": "published",
+      "route": "#/iskolank"
+    },
+    {
+      "file": "oldalak/hirek-es-esemenyek.json",
+      "title": "Hírek és események",
+      "status": "published",
+      "route": "#/hirek-es-esemenyek"
+    },
+    {
+      "file": "oldalak/oktatas.json",
+      "title": "Oktatás és felvételi",
+      "status": "published",
+      "route": "#/oktatas"
+    },
+    {
+      "file": "oldalak/hirek-es-esemenyek/kozlemenyek.json",
+      "title": "Közlemények",
+      "status": "published",
+      "route": "#/hirek-es-esemenyek/kozlemenyek"
+    },
+    {
+      "file": "oldalak/hirek-es-esemenyek/hirek.json",
+      "title": "Hírek",
+      "status": "published",
+      "route": "#/hirek-es-esemenyek/hirek"
+    },
+    {
+      "file": "oldalak/hirek-es-esemenyek/esemenynaptar.json",
+      "title": "Eseménynaptár",
+      "status": "published",
+      "route": "#/hirek-es-esemenyek/esemenynaptar"
+    },
+    {
+      "file": "oldalak/informaciok/dokumentumtar.json",
+      "title": "Dokumentumtár",
+      "status": "published",
+      "route": "#/informaciok/dokumentumtar"
+    },
+    {
+      "file": "oldalak/informaciok/kozossegi-szolgalat.json",
+      "title": "Közösségi szolgálat",
+      "status": "published",
+      "route": "#/informaciok/kozossegi-szolgalat"
+    },
+    {
+      "file": "oldalak/informaciok/adatvedelem.json",
+      "title": "Adatvédelem",
+      "status": "published",
+      "route": "#/informaciok/adatvedelem"
+    },
+    {
+      "file": "oldalak/informaciok/digitalis-ugyintezes.json",
+      "title": "Digitális ügyintézés",
+      "status": "published",
+      "route": "#/informaciok/digitalis-ugyintezes"
+    },
+    {
+      "file": "oldalak/informaciok/mindennapi-tudnivalok.json",
+      "title": "Mindennapi tudnivalók",
+      "status": "published",
+      "route": "#/informaciok/mindennapi-tudnivalok"
+    },
+    {
+      "file": "oldalak/informaciok/allaspalyazatok.json",
+      "title": "Álláspályázatok",
+      "status": "published",
+      "route": "#/informaciok/allaspalyazatok"
+    },
+    {
+      "file": "oldalak/oktatas/felveteli.json",
+      "title": "Felvételi központ",
+      "status": "published",
+      "route": "#/oktatas/felveteli"
+    },
+    {
+      "file": "oldalak/oktatas/tanevek.json",
+      "title": "Tanévek",
+      "status": "published",
+      "route": "#/oktatas/tanevek"
+    },
+    {
+      "file": "oldalak/oktatas/konyvtar.json",
+      "title": "Könyvtár és tanulás",
+      "status": "published",
+      "route": "#/oktatas/konyvtar"
+    },
+    {
+      "file": "oldalak/oktatas/kepzeseink.json",
+      "title": "Képzéseink",
+      "status": "published",
+      "route": "#/oktatas/kepzeseink"
+    },
+    {
+      "file": "oldalak/oktatas/vizsgak.json",
+      "title": "Vizsgák",
+      "status": "published",
+      "route": "#/oktatas/vizsgak"
+    },
+    {
+      "file": "oldalak/oktatas/tananyagok-es-jegyzetek.json",
+      "title": "Digitális tananyagközpont",
+      "status": "published",
+      "route": "#/oktatas/tananyagok-es-jegyzetek"
+    },
+    {
+      "file": "oldalak/oktatas/digitalis-kultura.json",
+      "title": "Digitális kultúra – értsük és használjuk jól a technológiát",
+      "status": "published",
+      "route": "#/oktatas/digitalis-kultura"
+    },
+    {
+      "file": "oldalak/iskolank/partnerek.json",
+      "title": "Partnereink",
+      "status": "published",
+      "route": "#/iskolank/partnerek"
+    },
+    {
+      "file": "oldalak/iskolank/bemutatkozas.json",
+      "title": "Bemutatkozás",
+      "status": "published",
+      "route": "#/iskolank/bemutatkozas"
+    },
+    {
+      "file": "oldalak/iskolank/kuldetes-es-ertekek.json",
+      "title": "Küldetésünk és értékeink",
+      "status": "published",
+      "route": "#/iskolank/kuldetes-es-ertekek"
+    },
+    {
+      "file": "oldalak/iskolank/buszkesegeink.json",
+      "title": "Büszkeségeink",
+      "status": "published",
+      "route": "#/iskolank/buszkesegeink"
+    },
+    {
+      "file": "oldalak/iskolank/tortenet.json",
+      "title": "Iskolánk története",
+      "status": "published",
+      "route": "#/iskolank/tortenet"
+    },
+    {
+      "file": "oldalak/iskolank/tantestulet.json",
+      "title": "Tantestület",
+      "status": "published",
+      "route": "#/iskolank/tantestulet"
+    },
+    {
+      "file": "oldalak/iskolank/hagyomanyok-es-elismeresek.json",
+      "title": "Hagyományok és elismerések",
+      "status": "published",
+      "route": "#/iskolank/hagyomanyok-es-elismeresek"
+    },
+    {
+      "file": "oldalak/iskolank/oko-iskola.json",
+      "title": "Ökoiskolai szemlélet",
+      "status": "published",
+      "route": "#/iskolank/oko-iskola"
+    },
+    {
+      "file": "oldalak/iskolank/a-honlap-szuletese.json",
+      "title": "A honlap születése – emberi döntések és digitális segítség",
+      "status": "published",
+      "route": "#/iskolank/a-honlap-szuletese"
+    },
+    {
+      "file": "oldalak/iskolank/alapitvany.json",
+      "title": "Iskolai alapítvány",
+      "status": "published",
+      "route": "#/iskolank/alapitvany"
+    },
+    {
+      "file": "oldalak/sport/sporteredmenyek.json",
+      "title": "Sporteredmények",
+      "status": "published",
+      "route": "#/sport/sporteredmenyek"
+    },
+    {
+      "file": "oldalak/sport/sportagak.json",
+      "title": "Sportágak",
+      "status": "published",
+      "route": "#/sport/sportagak"
+    },
+    {
+      "file": "oldalak/sport/sportolok.json",
+      "title": "Sportolók",
+      "status": "published",
+      "route": "#/sport/sportolok"
+    },
+    {
+      "file": "oldalak/sport/csapatok.json",
+      "title": "Csapatok",
+      "status": "published",
+      "route": "#/sport/csapatok"
+    },
+    {
+      "file": "oldalak/sport/sportgaleriak.json",
+      "title": "Képgaléria",
+      "status": "published",
+      "route": "#/sport/sportgaleriak"
+    },
+    {
+      "file": "oldalak/sport/edzok.json",
+      "title": "Edzők",
+      "status": "published",
+      "route": "#/sport/edzok"
+    },
+    {
+      "file": "oldalak/oktatas/felveteli/nyilt-napok.json",
+      "title": "Nyílt napok",
+      "status": "published",
+      "route": "#/oktatas/felveteli/nyilt-napok"
+    },
+    {
+      "file": "oldalak/oktatas/felveteli/felveteli-hataridok.json",
+      "title": "Felvételi határidők",
+      "status": "published",
+      "route": "#/oktatas/felveteli/felveteli-hataridok"
+    },
+    {
+      "file": "oldalak/oktatas/felveteli/elso-evfolyam.json",
+      "title": "Első évfolyamos beiratkozás",
+      "status": "published",
+      "route": "#/oktatas/felveteli/elso-evfolyam"
+    },
+    {
+      "file": "oldalak/oktatas/felveteli/kilencedik-evfolyam.json",
+      "title": "Kilencedik évfolyamos felvételi",
+      "status": "published",
+      "route": "#/oktatas/felveteli/kilencedik-evfolyam"
+    },
+    {
+      "file": "oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json",
+      "title": "Könyvtári szolgáltatások",
+      "status": "published",
+      "route": "#/oktatas/konyvtar/konyvtari-szolgaltatasok"
+    },
+    {
+      "file": "oldalak/oktatas/vizsgak/erettsegi.json",
+      "title": "Érettségi",
+      "status": "published",
+      "route": "#/oktatas/vizsgak/erettsegi"
+    },
+    {
+      "file": "oldalak/oktatas/vizsgak/egyeb-vizsgak.json",
+      "title": "Egyéb vizsgák",
+      "status": "published",
+      "route": "#/oktatas/vizsgak/egyeb-vizsgak"
+    },
+    {
+      "file": "oldalak/oktatas/vizsgak/osztalyozo-vizsgak.json",
+      "title": "Osztályozó vizsgák",
+      "status": "published",
+      "route": "#/oktatas/vizsgak/osztalyozo-vizsgak"
+    },
+    {
+      "file": "oldalak/oktatas/kepzeseink/gimnazium.json",
+      "title": "Gimnázium",
+      "status": "published",
+      "route": "#/oktatas/kepzeseink/gimnazium"
+    },
+    {
+      "file": "oldalak/oktatas/kepzeseink/altalanos-iskola.json",
+      "title": "Általános iskola",
+      "status": "published",
+      "route": "#/oktatas/kepzeseink/altalanos-iskola"
+    },
+    {
+      "file": "oldalak/oktatas/kepzeseink/sportiskolai-neveles.json",
+      "title": "Sportiskolai nevelés",
+      "status": "published",
+      "route": "#/oktatas/kepzeseink/sportiskolai-neveles"
+    },
+    {
+      "file": "oldalak/oktatas/tanevek/korabbi-tanevek.json",
+      "title": "Korábbi tanévek",
+      "status": "published",
+      "route": "#/oktatas/tanevek/korabbi-tanevek"
+    },
+    {
+      "file": "oldalak/oktatas/tanevek/aktualis-tanev.json",
+      "title": "Aktuális tanév – 2026/2027",
+      "status": "published",
+      "route": "#/oktatas/tanevek/aktualis-tanev"
+    },
+    {
+      "file": "oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json",
+      "title": "Közösségi szolgálat dokumentumai",
+      "status": "published",
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok"
+    },
+    {
+      "file": "oldalak/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok.json",
+      "title": "Jogszabályok",
+      "status": "published",
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok"
+    },
+    {
+      "file": "oldalak/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok.json",
+      "title": "Tudnivalók",
+      "status": "published",
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok"
+    },
+    {
+      "file": "oldalak/informaciok/dokumentumtar/szabalyzatok.json",
+      "title": "Szabályzatok",
+      "status": "published",
+      "route": "#/informaciok/dokumentumtar/szabalyzatok"
+    },
+    {
+      "file": "oldalak/informaciok/dokumentumtar/nyomtatvanyok.json",
+      "title": "Nyomtatványok",
+      "status": "published",
+      "route": "#/informaciok/dokumentumtar/nyomtatvanyok"
+    },
+    {
+      "file": "oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json",
+      "title": "Közzétételi lista",
+      "status": "published",
+      "route": "#/informaciok/dokumentumtar/kozzeteteli-lista"
+    },
+    {
+      "file": "oldalak/informaciok/mindennapi-tudnivalok/etkezes.json",
+      "title": "Étkezés",
+      "status": "published",
+      "route": "#/informaciok/mindennapi-tudnivalok/etkezes"
+    },
+    {
+      "file": "oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json",
+      "title": "Csengetési rend",
+      "status": "published",
+      "route": "#/informaciok/mindennapi-tudnivalok/csengetesi-rend"
+    },
+    {
+      "file": "oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json",
+      "title": "Szülői információk",
+      "status": "published",
+      "route": "#/informaciok/mindennapi-tudnivalok/szuloi-informaciok"
+    },
+    {
+      "file": "oldalak/hirek-es-esemenyek/hirek/iskolai-hirek.json",
+      "title": "Iskolai hírek",
+      "status": "published",
+      "route": "#/hirek-es-esemenyek/hirek/iskolai-hirek"
+    },
+    {
+      "file": "oldalak/hirek-es-esemenyek/hirek/sporthirek.json",
+      "title": "Sporthírek",
+      "status": "published",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek"
+    },
+    {
+      "file": "oldalak/hirek-es-esemenyek/hirek/hirarchivum.json",
+      "title": "Hírarchívum",
+      "status": "published",
+      "route": "#/hirek-es-esemenyek/hirek/hirarchivum"
+    },
+    {
+      "file": "oldalak/hirek-es-esemenyek/esemenynaptar/sportesemenyek.json",
+      "title": "Sportesemények",
+      "status": "published",
+      "route": "#/hirek-es-esemenyek/esemenynaptar/sportesemenyek"
+    },
+    {
+      "file": "oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json",
+      "title": "Iskolai események",
+      "status": "published",
+      "route": "#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek"
+    }
+  ],
+  "notes": [
+    "A puszta státusz nem bizonyítja a szerzői jogi vagy adatvédelmi megfelelést.",
+    "Az állományjogok és az iskolai tények intézményi döntés nélkül nem hitelesíthetők.",
+    "A korábban elfogadott 65×31 részletes követelménymátrix külön CSV-ben továbbra is megtalálható."
+  ]
+}
