@@ -11,10 +11,10 @@
   <link rel="stylesheet" href="../css/tools-2026.css?v=csanadi-r29n-20261115">
   <link rel="stylesheet" href="../css/media-manager-2026.css?v=csanadi-r29n-20261115">
   <link rel="stylesheet" href="../css/round10-quality-2026.css?v=csanadi-r29n-20261115">
-  <script src="tool-ui-2026.js?v=csanadi-r29n-20261115" defer>
+  <script src="tool-ui-2026.js?v=1.6.0" defer>
 </script>
-  <script type="module" src="media-minoseg-2026.js?v=csanadi-r29n-20261115"></script>
-  <script type="module" src="media-manager-2026.js?v=csanadi-r29n-20261115">
+  <script type="module" src="media-minoseg-2026.js?v=1.6.0"></script>
+  <script type="module" src="media-manager-2026.js?v=1.6.0">
 </script>
 </head>
 <body class="csanadi-tool">
@@ -82,7 +82,7 @@
           <label for="mm-title">Megjelenített cím</label><input id="mm-title" maxlength="180" required>
           <div class="mm-form-grid">
             <label for="mm-name">Fájlnév<input id="mm-name" maxlength="160" required></label>
-            <label for="mm-parent">Célmappa<select id="mm-parent"><option value="assets/media/web">Képek – media/web</option><option value="assets/media/video">Videók – media/video</option><option value="assets/documents">Dokumentumok</option><option value="assets/graphics">Grafikák</option><option value="assets/media/logo">Logók</option></select></label>
+            <label for="mm-parent">Célmappa<select id="mm-parent"><option value="assets/media/web">Képek – media/web</option><option value="assets/media/web/responsive">Reszponzív képek – media/web/responsive</option><option value="assets/media/video">Videók – media/video</option><option value="assets/documents">Dokumentumok</option><option value="assets/graphics">Grafikák</option><option value="assets/qr">QR-kódok</option><option value="assets/media/logo">Logók</option></select></label>
           </div>
           <label for="mm-alt">Alternatív szöveg / rövid leírás</label><input id="mm-alt" maxlength="280" placeholder="Például: sportpályán lévő kosárlabda">
           <label for="mm-description">Képaláírás / dokumentumismertető</label><textarea id="mm-description" rows="3"></textarea>
@@ -91,6 +91,7 @@
             <label for="mm-tags">Címkék, vesszővel<input id="mm-tags" maxlength="250" placeholder="kosárlabda, edzés"></label>
           </div>
           <label class="mm-check"><input id="mm-publish" type="checkbox"><span>Új fájl megjelenítése a megfelelő nyilvános gyűjteményben (képgaléria, videók vagy PDF-dokumentumtár). Csak jóváhagyott tartalomra használd.</span></label>
+          <label class="mm-check"><input id="mm-rights-ok" type="checkbox"><span>A fájl nyilvános felhasználásának jogosultságát és az esetleges személyes adatok közzétételének jogalapját ellenőriztem. Új elem publikálásához kötelező.</span></label>
           <p class="mm-small" id="mm-refs"></p>
           <div class="mm-form-actions"><button class="primary" type="submit" id="mm-save">Módosítás mentése</button><label class="mm-file-action mm-secondary">Fájl cseréje<input type="file" id="mm-replace" accept="image/png,image/jpeg,image/webp,image/avif,image/gif,image/svg+xml,video/mp4,video/webm,application/pdf,.doc,.docx,.odt,.csv,.txt,.svg,.mp3,.wav"></label><button id="mm-delete" class="mm-danger" type="button">Törlés</button></div>
         </form>

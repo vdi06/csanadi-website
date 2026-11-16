@@ -3,9 +3,20 @@
  // A megnyitott HTML verzióját hasonlítjuk az aktuális kiadáshoz.
  const source=document.currentScript?.src;
  const loadedVersion=source?new URL(source,location.href).searchParams.get('v'):null;
+ const parseVersion=value=>{
+  const match=/^csanadi-r-v(\d+)\.(\d+)\.(\d+)$/.exec(value||'');
+  return match?match.slice(1).map(Number):null;
+ };
+ const actuallyNewer=(candidate,current)=>{
+  const a=parseVersion(candidate),b=parseVersion(current);
+  if(!a||!b)return false;
+  for(let i=0;i<3;i++){if(a[i]!==b[i])return a[i]>b[i];}
+  return false;
+ };
  let notifiedVersion=null,checking=null,dismissTimer=null;
  const notify=(version)=>{
-  if(!loadedVersion||version===loadedVersion||version===notifiedVersion)return;
+  // Eltérő/korábban gyorsítótárazott konfiguráció nem jelent új kiadást.
+  if(!actuallyNewer(version,loadedVersion)||version===notifiedVersion)return;
   try { if(sessionStorage.getItem('csanadi-dismissed-release')===version)return; }catch{}
   notifiedVersion=version;
   const toast=document.getElementById('toast');if(!toast)return;

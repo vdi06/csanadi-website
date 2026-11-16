@@ -1,6 +1,15 @@
  
 (()=>{
   'use strict';
+  // Egységes megjelenés minden statikus karbantartó oldalon, külső függőség nélkül.
+  document.documentElement.classList.add('cs-tools-modern');
+  if(!document.querySelector('link[data-csanadi-tools-unified]')){
+    const stylesheet=document.createElement('link');
+    stylesheet.rel='stylesheet';
+    stylesheet.href='../css/tools-unified-v1.css?v=1.6.0';
+    stylesheet.dataset.csanadiToolsUnified='true';
+    document.head.append(stylesheet);
+  }
   const button=document.getElementById('tool-theme-toggle');
   if(!button)return;
   const media=window.matchMedia('(prefers-color-scheme: dark)');

@@ -1,0 +1,24 @@
+{
+  "version": "1.4.0",
+  "checkedAt": "2026-11-16T00:58:09.437Z",
+  "checks": {
+    "scriptSyntax": true,
+    "launcherProtectedDuringHeroChange": true,
+    "launcherRestoredToHome": true,
+    "launcherRestoredAfterOverlay": true,
+    "menuDelegatesToWorkingTrigger": true,
+    "ariaStateSynced": true,
+    "headerSticky": true,
+    "searchVisibleOnSubpage": true,
+    "menuVisibleOnSubpage": true,
+    "duplicateMobileMenuHidden": true,
+    "newCssLoaded": true,
+    "freshCodeLoaded": true,
+    "cacheVersionMatches": true
+  },
+  "passed": true,
+  "failures": [],
+  "limitations": [
+    "A valós böngészős útvonalváltás és a reszponzív látvány ellenőrzése nem hajtható végre ebben a futtatási környezetben."
+  ]
+}

@@ -28,16 +28,22 @@ import {renderStudentAchievements} from './student-achievements.js?v=csanadi-r29
 import {renderDailySportsNews} from './daily-sport-news.js?v=csanadi-r29n-20261115';
 import {renderDesktopTree} from '../desktop/navigation.js?v=csanadi-r29n-20261115';
 import {renderMobileTree,createMobileMenuSwitcher} from '../mobile/navigation.js?v=csanadi-r29n-20261115';
-import {createSubpageHero} from './subpages-v1.js?v=1.2.0';
+import {createSubpageHero} from './subpages-v1.js?v=1.6.0';
 const app=document.getElementById('app');
 let homeHeroElement=null;
 function syncRouteHero(node,kind){
  const container=document.getElementById('global-hero');if(!container)return;
+ // A főmenü indítógombját a kezdőlapi képváltó is használja. Az aloldali
+ // képváltó cseréje előtt ki kell emelni, különben vele együtt törlődik a DOM-ból.
+ const launcher=document.querySelector('.csn26-visual-launch');
  if(kind==='home'){
   document.body.classList.remove('cs-has-subhero');
   if(homeHeroElement && container.firstElementChild!==homeHeroElement)container.replaceChildren(homeHeroElement);
+  if(launcher && homeHeroElement && !homeHeroElement.contains(launcher))
+   homeHeroElement.querySelector('.csn26-visual-row')?.append(launcher);
   return;
  }
+ if(launcher && container.contains(launcher))container.insertAdjacentElement('afterend',launcher);
  const candidates=[];
  for(let item=node;item;item=item.parent){
   const id=item.page?.schemaExtensions?.bannerMediaId;
@@ -116,7 +122,16 @@ function relocateSiteMapButton(open){
  const launcher=document.querySelector('.csn26-visual-launch');
  if(!emblem||!launcher)return;
  if(open){siteMapLauncherHome=launcher.parentElement;emblem.replaceChildren(launcher);launcher.querySelector('button')?.setAttribute('aria-expanded','true');launcher.querySelector('button')?.setAttribute('aria-label','Főmenü bezárása');}
- else if(siteMapLauncherHome){siteMapLauncherHome.append(launcher);launcher.querySelector('button')?.setAttribute('aria-expanded','false');launcher.querySelector('button')?.setAttribute('aria-label','Főmenü megnyitása');}
+ else if(siteMapLauncherHome){
+  const hero=document.getElementById('global-hero');
+  const target=document.body.classList.contains('cs-inner-page')?null:homeHeroElement?.querySelector('.csn26-visual-row');
+  if(target)target.append(launcher);
+  else if(hero)hero.insertAdjacentElement('afterend',launcher);
+  else if(siteMapLauncherHome.isConnected)siteMapLauncherHome.append(launcher);
+  launcher.querySelector('button')?.setAttribute('aria-expanded','false');
+  launcher.querySelector('button')?.setAttribute('aria-label','Főmenü megnyitása');
+  siteMapLauncherHome=null;
+ }
 }
 
 const outerRing=document.createElement('nav');
@@ -658,7 +673,11 @@ function wireEvents(){
     const restoreScroll=navigatingHistory;navigatingHistory=false;
     markNavigationStart(getRoute());renderRoute({focus:true,restoreScroll});
   });
-  document.getElementById('orbit-open').addEventListener('click',()=>{if(siteMap.hidden)openSiteMap();else closeSiteMap();});
+  const toggleSiteMap=()=>{if(siteMap.hidden)openSiteMap();else closeSiteMap();};
+  document.getElementById('orbit-open').addEventListener('click',toggleSiteMap);
+  // Az aloldali fejléc önállóan is nyithassa a menüt, akkor is, ha a
+  // kezdőlapi, képes menüindító átmenetileg nincs jelen.
+  document.addEventListener('csanadi:menu-toggle',toggleSiteMap);
   window.addEventListener('resize',()=>{if(!siteMap.hidden)requestAnimationFrame(positionCompassSubmenu);});
   document.getElementById('site-map-close').addEventListener('click',()=>closeSiteMap());
   siteMap.addEventListener('click',e=>{if(e.target.closest('[data-site-map-dismiss]'))closeSiteMap();if(e.target.closest('a[href]'))closeSiteMap(false);});

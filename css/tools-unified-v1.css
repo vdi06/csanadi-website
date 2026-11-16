@@ -1,0 +1,35 @@
+/* v1.6 – közös, FTP-kompatibilis prémium arculat minden tools/ segédoldalhoz. */
+html.cs-tools-modern{--cs-tools-navy:#102b45;--cs-tools-navy-2:#183b59;--cs-tools-gold:#d7b474;--cs-tools-focus:#eebd5d;scroll-padding-top:24px}
+html.cs-tools-modern body{max-width:100%;overflow-x:clip}
+html.cs-tools-modern :is(.admin-head,.csanadi-tool .tool-header){background:linear-gradient(115deg,#091d33 0%,#1b4667 100%);border-bottom:3px solid var(--cs-tools-gold);color:#fff;box-shadow:0 9px 25px rgb(7 29 50 / 12%)}
+html.cs-tools-modern .admin-head{min-height:96px}
+html.cs-tools-modern .admin-head .admin-logo h1{color:#fff}
+html.cs-tools-modern .admin-head .admin-logo span{color:#f0d7a6}
+html.cs-tools-modern .admin-head nav{justify-content:center;gap:9px}
+html.cs-tools-modern .admin-head nav :is(a,button),html.cs-tools-modern .csanadi-tool .tool-header-actions :is(a,button){display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:9px 14px;color:#fbeacc;background:rgb(255 255 255 / 8%);border:1px solid #ba9860;border-radius:12px;font-weight:800;text-decoration:none}
+html.cs-tools-modern .admin-head nav :is(a,button):hover,html.cs-tools-modern .csanadi-tool .tool-header-actions :is(a,button):hover{background:#f0d8a9;color:#132b43}
+html.cs-tools-modern :is(.admin-layout,.csanadi-tool .tool-main,.csn16-standalone-tool main){width:min(1180px,calc(100% - 32px));max-width:1180px;margin-inline:auto;min-width:0}
+html.cs-tools-modern .admin-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,255px),1fr));gap:16px}
+html.cs-tools-modern .admin-grid>a{border-top:3px solid var(--cs-tools-gold);box-shadow:0 9px 26px rgb(10 37 61 / 9%);border-radius:18px;min-width:0;transition:transform .18s ease,box-shadow .18s ease}
+html.cs-tools-modern .admin-grid>a:hover{transform:translateY(-3px);box-shadow:0 16px 28px rgb(10 37 61 / 14%)}
+html.cs-tools-modern :is(.admin-actions,.csanadi-tool .toolbar,.csanadi-tool .mm-export-actions){justify-content:center;align-items:center}
+html.cs-tools-modern :is(.admin-actions button,.admin-head button,.csanadi-tool button){min-height:44px}
+html.cs-tools-modern :is(a,button,input,select,textarea,summary):focus-visible{outline:3px solid var(--cs-tools-focus)!important;outline-offset:3px!important}
+html.cs-tools-modern :is(.admin-layout,.csanadi-tool .tool-main) :is(input,select,textarea){min-width:0}
+html.cs-tools-modern :is(.admin-layout,.csanadi-tool .tool-main) :is(.panel,.group,.admin-note,.admin-alert){overflow-wrap:anywhere}
+html.cs-tools-modern [hidden]{display:none!important}
+html.cs-tools-modern [role=status]{overflow-wrap:anywhere}
+html.cs-tools-modern .csanadi-tool .tool-header-actions{justify-content:center}
+html.cs-tools-modern .csanadi-tool .tool-tabs{justify-items:stretch}
+html.cs-tools-modern .csanadi-tool .mm-stat{text-align:center}
+html.cs-tools-modern .csanadi-tool :is(.mm-form-actions,.mm-bulk-actions){justify-content:center}
+@media(max-width:720px){
+ html.cs-tools-modern .admin-head{padding:17px 16px;gap:12px}
+ html.cs-tools-modern .admin-head nav{width:100%;justify-content:center}
+ html.cs-tools-modern .admin-head nav :is(a,button){flex:1 1 150px}
+ html.cs-tools-modern :is(.admin-layout,.csanadi-tool .tool-main,.csn16-standalone-tool main){width:calc(100% - 24px)}
+ html.cs-tools-modern .csanadi-tool .tool-topbar{justify-content:center}
+ html.cs-tools-modern .csanadi-tool .tool-header-actions{width:100%;justify-content:center}
+ html.cs-tools-modern .admin-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){html.cs-tools-modern *,html.cs-tools-modern *::before,html.cs-tools-modern *::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

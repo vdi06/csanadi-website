@@ -15,7 +15,7 @@ function walk(dir){
  }
 }
 walk(root);
-const manifest={schemaVersion:'1.0.0',release:'csanadi-website-v1.2.0',date:'2026-11-16',ftpCompatible:true,
- bootstrap:'CDN bootstrap@5.3.9',notes:'Teljesen új megközelítési és tanulástámogatási aloldal, egységes gombok, frissítésjelző javítása. Éles feltöltés nem történt.',files};
+const manifest={schemaVersion:'1.0.0',release:'csanadi-website-v1.6.0',date:'2026-11-16',ftpCompatible:true,
+ bootstrap:'CDN bootstrap@5.3.9',notes:'v1.6: 13 karbantartó oldal egységes megjelenése; 628 assets-fájl teljes katalógusa (87 QR-kód); médiakezelő űrlapvalidálás és közzétételi jogosultsági kapu; forrás-, hivatkozás- és FTP-ellenőrzés. Éles feltöltés nem történt.',files};
 fs.writeFileSync(path.join(root,'release-manifest.json'),JSON.stringify(manifest,null,2)+'\n');
 console.log(JSON.stringify({files:Object.keys(files).length,release:manifest.release}));

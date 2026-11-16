@@ -1,0 +1,74 @@
+/* v1.4 – az aloldali fejléc menüjének és kompakt állapotának célzott javítása. */
+body.cs-inner-page #site-header{
+  position:sticky!important;top:0!important;z-index:950!important;
+  width:100%;box-shadow:0 3px 12px rgba(8,20,37,.13);
+}
+body.cs-inner-page #site-header .brand-row{
+  display:flex;align-items:center;justify-content:space-between;gap:clamp(8px,2vw,20px);
+  min-height:76px;max-width:100%;
+}
+body.cs-inner-page #site-header .brand{min-width:0;flex:0 1 auto}
+body.cs-inner-page #site-header .brand-copy{min-width:0}
+body.cs-inner-page #site-header .header-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex:0 0 auto;min-width:0}
+body.cs-inner-page #site-header .cs-subpage-menu{
+  display:inline-flex!important;align-items:center;justify-content:center;gap:8px;
+  min-width:94px;min-height:44px;padding:8px 13px;border-radius:12px!important;
+  color:inherit;border:1px solid #bd9555;background:rgba(215,182,110,.12);
+  font-size:15px;line-height:1.15;font-weight:800;white-space:nowrap;
+}
+body.cs-inner-page #site-header .cs-subpage-menu:hover,
+body.cs-inner-page #site-header .cs-subpage-menu[aria-expanded=true]{background:rgba(215,182,110,.27);border-color:#dbb66e}
+body.cs-inner-page #site-header #search-open{display:grid!important;visibility:visible!important;flex:0 0 auto}
+body.cs-inner-page #site-header #mobile-menu-toggle{display:none!important}
+body.cs-inner-page > .orbit-launch{display:none!important}
+/* A beágyazott útmutatónál nincs felső képváltó: a régi CSS 458 px-es
+   üres helyét sem asztali, sem mobil nézetben nem tartjuk fenn. */
+body.cs-inner-page.cs-embedded-arrival #global-hero:empty{
+  display:none!important;height:0!important;min-height:0!important;
+  padding:0!important;margin:0!important;
+}
+body.cs-inner-page #global-hero .cs-sub-hero-caption{
+  left:50%!important;right:auto!important;transform:translateX(-50%);
+  width:max-content;max-width:calc(100% - 150px);
+  text-align:center;
+}
+body.cs-inner-page #global-hero .cs-sub-hero-shade{
+  background:linear-gradient(90deg,rgba(2,15,29,.42),rgba(2,15,29,.69),rgba(2,15,29,.42));
+}
+body.cs-inner-page.cs-header-condensed #site-header .brand-row{min-height:58px!important;padding-block:5px!important}
+body.cs-inner-page.cs-header-condensed #site-header .brand-logo{width:39px!important;height:39px!important}
+body.cs-inner-page.cs-header-condensed #site-header .header-tag,
+body.cs-inner-page.cs-header-condensed #site-header .header-social,
+body.cs-inner-page.cs-header-condensed #site-header .portal-replay-btn{display:none!important}
+body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-menu{min-height:42px;min-width:86px}
+body.cs-inner-page #app :is(h1,h2,h3,h4,section,[id]){scroll-margin-top:90px}
+@media(max-width:1000px){
+  body.cs-inner-page #site-header .header-tag,
+  body.cs-inner-page #site-header .header-social,
+  body.cs-inner-page #site-header .header-kreta{display:none!important}
+}
+@media(max-width:768px){
+  body.cs-inner-page #site-header .brand-row{min-height:64px!important;padding-block:6px!important;gap:8px}
+  body.cs-inner-page #site-header .portal-replay-btn{display:none!important}
+  body.cs-inner-page #site-header .header-actions{gap:6px}
+  body.cs-inner-page #site-header .cs-subpage-menu{min-width:80px;min-height:42px;padding:7px 10px;font-size:13px}
+  body.cs-inner-page #site-header .icon-btn{min-width:40px;min-height:40px}
+  body.cs-inner-page.cs-header-condensed #site-header .brand-row{min-height:54px!important;padding-block:4px!important}
+}
+@media(max-width:530px){
+  body.cs-inner-page #site-header .brand-copy small,
+  body.cs-inner-page #site-header #theme-label,
+  body.cs-inner-page #site-header .theme-label{display:none!important}
+  body.cs-inner-page #site-header .brand-logo{width:38px!important;height:38px!important}
+  body.cs-inner-page #site-header .brand-copy strong{font-size:clamp(13px,4vw,17px)!important;letter-spacing:.05em}
+  body.cs-inner-page #site-header .brand{gap:7px}
+  body.cs-inner-page #site-header .cs-subpage-menu{min-width:43px;padding-inline:7px;gap:0}
+  body.cs-inner-page #site-header .cs-subpage-menu-label{display:none}
+}
+@media(max-width:345px){
+  body.cs-inner-page #site-header .brand-copy{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  body.cs-inner-page #site-header,
+  body.cs-inner-page #site-header .brand-row{transition:none!important}
+}

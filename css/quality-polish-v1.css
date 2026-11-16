@@ -1,0 +1,105 @@
+/* v1.3: egységes felületi finomhangolás, a komponensek eredeti logikájának módosítása nélkül. */
+html{scroll-padding-top:clamp(78px,11vh,136px)}
+body{overflow-x:clip}
+body :is(main,article,section,.container,.container-fluid){min-width:0}
+body :is(h1,h2,h3,h4,p,li,td,th,figcaption){overflow-wrap:break-word}
+body :is(a,button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid #d9b96d!important;outline-offset:3px!important}
+body :is(button,.btn,a.btn,[role=button]){touch-action:manipulation}
+body :is(button,.btn,a.btn,[role=button]):disabled,
+body :is(button,.btn,a.btn,[role=button])[aria-disabled=true]{cursor:not-allowed;opacity:.6}
+body :is(.card,.accordion,.alert,.modal-content){min-width:0}
+body :is(.card,.accordion,.alert) :is(a,button){max-width:100%}
+body :is(img,video,iframe,svg){max-width:100%}
+body :is(article img,.markdown-content img,.rich-content img){height:auto}
+body :is(.table-responsive,[role=region][aria-label*=táblázat]){max-width:100%;overflow-x:auto}
+body :is(input,select,textarea){max-width:100%}
+body :is(.btn,button){text-wrap:balance}
+body :is(.btn-primary,.btn-gold){box-shadow:0 3px 12px rgba(8,23,43,.14)}
+body :is(.btn-primary,.btn-gold):hover:not(:disabled){box-shadow:0 5px 16px rgba(8,23,43,.2)}
+@media(max-width:575.98px){
+  body :is(.container,.container-fluid){padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}
+  body :is(.btn,button){white-space:normal}
+  body :is(h1,h2){hyphens:auto}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  body :is(.btn,button){transition:none!important}
+}
+
+/* v1.5: közös vízszintes középvonal; a hosszú szövegek és listák maradnak
+   balra zártak, hogy könnyű legyen őket olvasni. */
+#app :is(.section-title,.section-heading,.section-subtitle,.block-title,.content-tile>h2,.content-tile>h3,.not-found,.cs-page-loading){
+  text-align:center;
+}
+#app :is(.page-banner .breadcrumbs,.section-actions,.action-row,.button-row,.filter-bar,.filter-actions,.toolbar,.quick-links,.related-links,.share-actions,.pagination){
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+}
+#app :is(.content-shell,.content-layout,.content-tiles,.home-canvas,.section-wrap,.cs-content-review-notice){
+  margin-inline:auto;
+}
+#app :is(.quick-grid,.features-grid,.cs-news-grid,.daily-sports-cards,.student-success-grid,.gallery-grid,.document-grid){
+  justify-content:center;
+}
+#app :is(.section-intro,.section-lead,.section-description){
+  margin-inline:auto;
+  text-align:center;
+  max-width:78ch;
+}
+#app .cs-arrival-shell-heading{
+  justify-content:center;
+  text-align:center;
+}
+#app .cs-arrival-shell-heading h1{
+  flex:0 1 100%;
+  text-align:center;
+}
+#app .cs-arrival-shell-heading .eyebrow{text-align:center}
+.site-footer .footer-grid{text-align:center;justify-content:center}
+.site-footer .footer-grid :is(.footer-school-contact,.footer-bottom){margin-inline:auto}
+
+/* A térképes és tanulástámogató útmutató saját felületének központosítása. */
+body.arrival2 .arrival2-shell{margin-inline:auto}
+body.arrival2 .arrival2-hero{
+  grid-template-columns:minmax(0,1fr);
+  justify-items:center;
+  text-align:center;
+  gap:22px;
+  padding-block:clamp(32px,4vw,54px);
+}
+body.arrival2 .arrival2-hero-copy{width:min(100%,880px);min-width:0}
+body.arrival2 .arrival2-hero h1{max-width:22ch;margin:14px auto}
+body.arrival2 .arrival2-hero-copy>p{margin-inline:auto}
+body.arrival2 .arrival2-hero-chips{justify-content:center}
+body.arrival2 .arrival2-address-card{
+  width:min(100%,550px);
+  max-width:550px;
+  text-align:center;
+}
+body.arrival2 .arrival2-address-symbol{margin:0 auto 16px}
+body.arrival2 .arrival2-section-head{text-align:center}
+body.arrival2 .arrival2-section-head p{margin-inline:auto}
+body.arrival2 .arrival2-eyebrow,
+body.arrival2 .arrival2-kicker{justify-content:center}
+body.arrival2 .arrival2-toolbar{justify-content:center;text-align:center}
+body.arrival2 .arrival2-subtitle{text-align:center}
+body.arrival2 .arrival2-route-card{text-align:center;align-items:center}
+body.arrival2 .arrival2-route-actions{width:100%}
+body.arrival2 .arrival2-route-actions a{justify-content:center;text-align:center}
+body.arrival2 .arrival2-info-box>h3{text-align:center}
+body.arrival2 .arrival2-form,
+body.arrival2 .arrival2-fields{width:min(100%,980px);margin-inline:auto}
+body.arrival2 .arrival2-tool{text-align:center}
+body.arrival2 .arrival2-tool>label{max-width:420px;margin-inline:auto;text-align:left}
+body.arrival2 .arrival2-timer{margin-inline:auto}
+body.arrival2 .arrival2-tool>.arrival2-button{margin-inline:auto}
+body.arrival2 .r23-card-content{text-align:center}
+body.arrival2 .r23-card-content>.r26-badge{justify-self:center}
+body.arrival2 .arrival2-card-grid{justify-content:center}
+body.arrival2 .arrival2-footer>.arrival2-shell{justify-content:center;text-align:center}
+@media(max-width:560px){
+  body.arrival2 .arrival2-hero{padding:28px 18px}
+  body.arrival2 .arrival2-route-actions a{min-width:0}
+  body.arrival2 .arrival2-toolbar{gap:10px}
+}

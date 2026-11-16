@@ -1,0 +1,1037 @@
+{
+  "version": "1.3.0",
+  "checkedAt": "2026-11-16T00:57:39.736Z",
+  "pages": 65,
+  "spaLinkReferences": 193,
+  "oldDomainReferences": 0,
+  "unverifiedContentPages": 55,
+  "sourceBasedRuleStatuses": {
+    "F": 260,
+    "K": 260,
+    "V": 1241,
+    "N": 199,
+    "H": 55
+  },
+  "ruleColumns": [
+    "1. Általános elrendezés",
+    "2. Oldalbevezető",
+    "3. Tartalmi szerkezet",
+    "4. Szakasznavigáció",
+    "5. Kártyák és panelek",
+    "6. Képek és videók",
+    "7. Szöveges tartalom",
+    "8. Gombok és linkek",
+    "9. Animációk",
+    "10. Mobilos elrendezés",
+    "11. Kapcsolódó tartalmak",
+    "12. Keresés és szűrés",
+    "13. Oldalak felosztása",
+    "14. Aloldalak közötti navigáció",
+    "15. Oldalváltás",
+    "16. Dokumentumok",
+    "17. Események",
+    "18. Táblázatok",
+    "19. Közlemények",
+    "20. Hosszú listák",
+    "21. Hiányzó tartalom",
+    "22. Frissítések",
+    "23. Részletes tartalmak",
+    "24. Külső tartalmak",
+    "25. Űrlapok",
+    "26. Oldalműveletek",
+    "27. Tanévek és archívumok",
+    "28. Minőségellenőrzés",
+    "29. Rövid áttekintés és teljes dokumentumnézet",
+    "30. Intelligens felső képváltó",
+    "31. Összecsukódó fejléc"
+  ],
+  "perPage": [
+    {
+      "route": "#/iskolank",
+      "title": "Iskolánk",
+      "verifiedContent": "igen",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 5,
+      "H": 0
+    },
+    {
+      "route": "#/iskolank/bemutatkozas",
+      "title": "Bemutatkozás",
+      "verifiedContent": "igen",
+      "F": 4,
+      "K": 4,
+      "V": 21,
+      "N": 2,
+      "H": 0
+    },
+    {
+      "route": "#/iskolank/kuldetes-es-ertekek",
+      "title": "Küldetésünk és értékeink",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/iskolank/tortenet",
+      "title": "Iskolánk története",
+      "verifiedContent": "igen",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 5,
+      "H": 0
+    },
+    {
+      "route": "#/iskolank/hagyomanyok-es-elismeresek",
+      "title": "Hagyományok és elismerések",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/iskolank/buszkesegeink",
+      "title": "Büszkeségeink",
+      "verifiedContent": "igen",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 5,
+      "H": 0
+    },
+    {
+      "route": "#/iskolank/oko-iskola",
+      "title": "Ökoiskolai szemlélet",
+      "verifiedContent": "igen",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 5,
+      "H": 0
+    },
+    {
+      "route": "#/iskolank/alapitvany",
+      "title": "Iskolai alapítvány",
+      "verifiedContent": "igen",
+      "F": 4,
+      "K": 4,
+      "V": 19,
+      "N": 4,
+      "H": 0
+    },
+    {
+      "route": "#/iskolank/partnerek",
+      "title": "Partnereink",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 17,
+      "N": 5,
+      "H": 1
+    },
+    {
+      "route": "#/iskolank/tantestulet",
+      "title": "Tantestület",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 17,
+      "N": 5,
+      "H": 1
+    },
+    {
+      "route": "#/iskolank/a-honlap-szuletese",
+      "title": "A honlap születése – emberi döntések és digitális segítség",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 21,
+      "N": 1,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas",
+      "title": "Oktatás és felvételi",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/kepzeseink",
+      "title": "Képzéseink",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/kepzeseink/altalanos-iskola",
+      "title": "Általános iskola",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 19,
+      "N": 3,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/kepzeseink/gimnazium",
+      "title": "Gimnázium",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/kepzeseink/sportiskolai-neveles",
+      "title": "Sportiskolai nevelés",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/felveteli",
+      "title": "Felvételi központ",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 19,
+      "N": 3,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/felveteli/elso-evfolyam",
+      "title": "Első évfolyamos beiratkozás",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 19,
+      "N": 3,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/felveteli/kilencedik-evfolyam",
+      "title": "Kilencedik évfolyamos felvételi",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/felveteli/nyilt-napok",
+      "title": "Nyílt napok",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/felveteli/felveteli-hataridok",
+      "title": "Felvételi határidők",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/vizsgak",
+      "title": "Vizsgák",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 19,
+      "N": 3,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/vizsgak/erettsegi",
+      "title": "Érettségi",
+      "verifiedContent": "igen",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 5,
+      "H": 0
+    },
+    {
+      "route": "#/oktatas/vizsgak/osztalyozo-vizsgak",
+      "title": "Osztályozó vizsgák",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/vizsgak/egyeb-vizsgak",
+      "title": "Egyéb vizsgák",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/tanevek",
+      "title": "Tanévek",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 21,
+      "N": 1,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/tanevek/aktualis-tanev",
+      "title": "Aktuális tanév – 2026/2027",
+      "verifiedContent": "igen",
+      "F": 4,
+      "K": 4,
+      "V": 22,
+      "N": 1,
+      "H": 0
+    },
+    {
+      "route": "#/oktatas/tanevek/korabbi-tanevek",
+      "title": "Korábbi tanévek",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/konyvtar",
+      "title": "Könyvtár és tanulás",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/konyvtar/konyvtari-szolgaltatasok",
+      "title": "Könyvtári szolgáltatások",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/tananyagok-es-jegyzetek",
+      "title": "Digitális tananyagközpont",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 21,
+      "N": 1,
+      "H": 1
+    },
+    {
+      "route": "#/oktatas/digitalis-kultura",
+      "title": "Digitális kultúra – értsük és használjuk jól a technológiát",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 21,
+      "N": 1,
+      "H": 1
+    },
+    {
+      "route": "#/sport",
+      "title": "Sportélet",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 17,
+      "N": 5,
+      "H": 1
+    },
+    {
+      "route": "#/sport/sportagak",
+      "title": "Sportágak",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/sport/sporteredmenyek",
+      "title": "Sporteredmények",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 17,
+      "N": 5,
+      "H": 1
+    },
+    {
+      "route": "#/sport/sportolok",
+      "title": "Sportolók",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/sport/csapatok",
+      "title": "Csapatok",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 19,
+      "N": 3,
+      "H": 1
+    },
+    {
+      "route": "#/sport/edzok",
+      "title": "Edzők",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 17,
+      "N": 5,
+      "H": 1
+    },
+    {
+      "route": "#/sport/sportgaleriak",
+      "title": "Képgaléria",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/hirek-es-esemenyek",
+      "title": "Hírek és események",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 19,
+      "N": 3,
+      "H": 1
+    },
+    {
+      "route": "#/hirek-es-esemenyek/hirek",
+      "title": "Hírek",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/hirek-es-esemenyek/hirek/iskolai-hirek",
+      "title": "Iskolai hírek",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "title": "Sporthírek",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/hirek-es-esemenyek/hirek/hirarchivum",
+      "title": "Hírarchívum",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 19,
+      "N": 3,
+      "H": 1
+    },
+    {
+      "route": "#/hirek-es-esemenyek/kozlemenyek",
+      "title": "Közlemények",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/hirek-es-esemenyek/esemenynaptar",
+      "title": "Eseménynaptár",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek",
+      "title": "Iskolai események",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/hirek-es-esemenyek/esemenynaptar/sportesemenyek",
+      "title": "Sportesemények",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok",
+      "title": "Iskolai információk",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/mindennapi-tudnivalok",
+      "title": "Mindennapi tudnivalók",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/mindennapi-tudnivalok/csengetesi-rend",
+      "title": "Csengetési rend",
+      "verifiedContent": "igen",
+      "F": 4,
+      "K": 4,
+      "V": 19,
+      "N": 4,
+      "H": 0
+    },
+    {
+      "route": "#/informaciok/mindennapi-tudnivalok/etkezes",
+      "title": "Étkezés",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 4,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/mindennapi-tudnivalok/szuloi-informaciok",
+      "title": "Szülői információk",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/dokumentumtar",
+      "title": "Dokumentumtár",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/dokumentumtar/szabalyzatok",
+      "title": "Szabályzatok",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/dokumentumtar/nyomtatvanyok",
+      "title": "Nyomtatványok",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/dokumentumtar/kozzeteteli-lista",
+      "title": "Közzétételi lista",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/digitalis-ugyintezes",
+      "title": "Digitális ügyintézés",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/kozossegi-szolgalat",
+      "title": "Közösségi szolgálat",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok",
+      "title": "Tudnivalók",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok",
+      "title": "Jogszabályok",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok",
+      "title": "Közösségi szolgálat dokumentumai",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/allaspalyazatok",
+      "title": "Álláspályázatok",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/informaciok/adatvedelem",
+      "title": "Adatvédelem",
+      "verifiedContent": "nem",
+      "F": 4,
+      "K": 4,
+      "V": 20,
+      "N": 2,
+      "H": 1
+    },
+    {
+      "route": "#/kapcsolat",
+      "title": "Kapcsolat",
+      "verifiedContent": "igen",
+      "F": 4,
+      "K": 4,
+      "V": 18,
+      "N": 5,
+      "H": 0
+    }
+  ],
+  "problems": [
+    {
+      "route": "#/iskolank/kuldetes-es-ertekek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/iskolank/hagyomanyok-es-elismeresek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/iskolank/partnerek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/iskolank/tantestulet",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/iskolank/a-honlap-szuletese",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/kepzeseink",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/kepzeseink/altalanos-iskola",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/kepzeseink/gimnazium",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/kepzeseink/sportiskolai-neveles",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/felveteli",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/felveteli/elso-evfolyam",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/felveteli/kilencedik-evfolyam",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/felveteli/nyilt-napok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/felveteli/felveteli-hataridok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/vizsgak",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/vizsgak/osztalyozo-vizsgak",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/vizsgak/egyeb-vizsgak",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/tanevek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/tanevek/korabbi-tanevek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/konyvtar",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/konyvtar/konyvtari-szolgaltatasok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/tananyagok-es-jegyzetek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/oktatas/digitalis-kultura",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/sport",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/sport/sportagak",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/sport/sporteredmenyek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/sport/sportolok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/sport/csapatok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/sport/edzok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/sport/sportgaleriak",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/hirek-es-esemenyek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/hirek-es-esemenyek/hirek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/hirek-es-esemenyek/hirek/iskolai-hirek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/hirek-es-esemenyek/hirek/hirarchivum",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/hirek-es-esemenyek/kozlemenyek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/hirek-es-esemenyek/esemenynaptar",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/hirek-es-esemenyek/esemenynaptar/sportesemenyek",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/mindennapi-tudnivalok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/mindennapi-tudnivalok/etkezes",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/mindennapi-tudnivalok/szuloi-informaciok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/dokumentumtar",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/dokumentumtar/szabalyzatok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/dokumentumtar/nyomtatvanyok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/dokumentumtar/kozzeteteli-lista",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/digitalis-ugyintezes",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/kozossegi-szolgalat",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/allaspalyazatok",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    },
+    {
+      "route": "#/informaciok/adatvedelem",
+      "type": "content",
+      "detail": "Az intézményi tartalom nincs hitelesítettként jelölve.",
+      "severity": "warning"
+    }
+  ],
+  "limitations": [
+    "A forráskód ellenőrzése nem helyettesíti a böngészős vizuális, működés- és akadálymentességi tesztet.",
+    "A 31 korábbi C döntés teljes szövegének hiányában a státuszok a korábban összeállított vizsgálati vázlatra vonatkoznak.",
+    "A szerkesztői tartalmak valódiságát, aktualitását és a médiajogokat emberi hitelesítés nélkül nem lehet igazolni."
+  ]
+}

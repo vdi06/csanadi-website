@@ -84,9 +84,23 @@ export function initSubpageEnhancements() {
   menu.className = 'icon-btn cs-subpage-menu';
   menu.setAttribute('aria-label', 'Főmenü megnyitása');
   menu.setAttribute('aria-controls', 'site-map-overlay');
-  menu.textContent = '☰';
-  menu.addEventListener('click', () => document.getElementById('orbit-open')?.click());
+  menu.setAttribute('aria-haspopup', 'dialog');
+  menu.setAttribute('aria-expanded', 'false');
+  menu.innerHTML = '<span aria-hidden="true">☰</span><span class="cs-subpage-menu-label">Menü</span>';
+  // Nem hivatkozunk a kezdőlapi vizuális indítógombra: az oldalváltás
+  // ideiglenesen áthelyezheti, az aloldali menünek ettől függetlenül működnie kell.
+  menu.addEventListener('click', () => document.dispatchEvent(new Event('csanadi:menu-toggle')));
   actions.insertBefore(menu, actions.firstChild);
+  const mapOverlay = document.getElementById('site-map-overlay');
+  if(mapOverlay){
+    const syncMenuState=()=>{
+      const open=!mapOverlay.hidden;
+      menu.setAttribute('aria-expanded',String(open));
+      menu.setAttribute('aria-label',open?'Főmenü bezárása':'Főmenü megnyitása');
+    };
+    new MutationObserver(syncMenuState).observe(mapOverlay,{attributes:true,attributeFilter:['hidden']});
+    syncMenuState();
+  }
 
   let scheduled = false;
   const update = () => {
