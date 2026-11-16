@@ -3,16 +3,20 @@
  // A megnyitott HTML verzióját hasonlítjuk az aktuális kiadáshoz.
  const source=document.currentScript?.src;
  const loadedVersion=source?new URL(source,location.href).searchParams.get('v'):null;
- let notifiedVersion=null,checking=null;
+ let notifiedVersion=null,checking=null,dismissTimer=null;
  const notify=(version)=>{
   if(!loadedVersion||version===loadedVersion||version===notifiedVersion)return;
+  try { if(sessionStorage.getItem('csanadi-dismissed-release')===version)return; }catch{}
   notifiedVersion=version;
   const toast=document.getElementById('toast');if(!toast)return;
   const message=document.createElement('span');message.textContent='Elérhető a honlap új verziója. Frissítsd az oldalt a legújabb fejlesztésekhez és tartalmakhoz.';
   const actions=document.createElement('span');actions.className='cs-release-actions';
-  const later=document.createElement('button');later.type='button';later.textContent='Később';later.addEventListener('click',()=>{toast.hidden=true;});
+  const dismiss=()=>{toast.hidden=true;clearTimeout(dismissTimer);try{sessionStorage.setItem('csanadi-dismissed-release',version);}catch{}};
+  const later=document.createElement('button');later.type='button';later.textContent='Később';later.addEventListener('click',dismiss);
   const reload=document.createElement('button');reload.type='button';reload.textContent='Frissítés';reload.addEventListener('click',()=>location.reload());
   actions.append(later,reload);toast.replaceChildren(message,actions);toast.hidden=false;
+  clearTimeout(dismissTimer);
+  dismissTimer=setTimeout(()=>{if(!toast.hidden&&toast.contains(actions))dismiss();},12000);
  };
  const checkVersion=()=>{
   if(checking)return checking;

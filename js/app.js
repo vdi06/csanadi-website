@@ -28,7 +28,7 @@ import {renderStudentAchievements} from './student-achievements.js?v=csanadi-r29
 import {renderDailySportsNews} from './daily-sport-news.js?v=csanadi-r29n-20261115';
 import {renderDesktopTree} from '../desktop/navigation.js?v=csanadi-r29n-20261115';
 import {renderMobileTree,createMobileMenuSwitcher} from '../mobile/navigation.js?v=csanadi-r29n-20261115';
-import {createSubpageHero} from './subpages-v1.js?v=1.1.0';
+import {createSubpageHero} from './subpages-v1.js?v=1.2.0';
 const app=document.getElementById('app');
 let homeHeroElement=null;
 function syncRouteHero(node,kind){

@@ -1,0 +1,15 @@
+{
+  "version": "1.2.0",
+  "checkedAt": "2026-11-16T00:44:27.845Z",
+  "jsonFiles": 95,
+  "jsSyntaxChecks": 50,
+  "spaPages": 65,
+  "arrivalControllers": 41,
+  "missingArrivalControllers": [],
+  "failures": [],
+  "passed": true,
+  "limitations": [
+    "A tényleges böngészős vizuális tesztet a futtatási környezetben nem sikerült elvégezni.",
+    "A dinamikus szolgáltatások és a valós térkép külső hálózati működése külön böngészős ellenőrzést igényel."
+  ]
+}

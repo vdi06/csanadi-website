@@ -1,52 +1,121 @@
 <!doctype html>
 <html lang="hu" data-theme="light">
 <head>
- <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="robots" content="noindex,nofollow">
- <meta name="description" content="Csanádi Sportiskola: térképes megközelítés, felvételi lépések, tanulási célok, sportszakmai tudástár, fogadóórák és akadálymentes útmutató.">
- <title>Megközelítés és tanulástámogatás – Csanádi Sportiskola</title>
- <link rel="icon" type="image/webp" href="assets/media/logo/csanadi-cimer-512.webp">
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
- <link rel="stylesheet" href="css/round23-workshop.css?v=csanadi-r29n-20261115">
- <link rel="stylesheet" href="css/round26-arrival.css?v=csanadi-r29n-20261115">
- <link rel="stylesheet" href="mobile/round26-arrival-mobile.css?v=csanadi-r29n-20261115" media="screen and (max-width:767px)">
- <link rel="stylesheet" href="desktop/round26-arrival-desktop.css?v=csanadi-r29n-20261115" media="screen and (min-width:768px)">
- <link rel="stylesheet" href="css/round29-theme-unified.css?v=csanadi-r29n-20261115">
- <script>(function(){const p=new URLSearchParams(location.search);if(p.get('embedded')==='1'){document.documentElement.dataset.embedded='true';}else{const section=location.hash.replace(/^#/,'');const safe=/^[a-z0-9-]+$/.test(section)?'/'+section:'';location.replace('index.html#/megkozelites-es-tanulas'+safe);}try{let t=localStorage.getItem('csanadi-theme')||'system';document.documentElement.dataset.theme=t==='system'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):t;document.documentElement.setAttribute('data-bs-theme',document.documentElement.dataset.theme);}catch{document.documentElement.dataset.theme='light';}})();</script>
- <style>html[data-embedded=true] .r23-header,html[data-embedded=true] .r23-footer,html[data-embedded=true] .r23-skip{display:none!important}html[data-embedded=true] body{background:transparent;margin:0}html[data-embedded=true] main.r23-width{width:100%;max-width:1320px;margin:auto;padding-inline:clamp(12px,2vw,28px)}html[data-embedded=true] .r23-intro{margin-top:15px}html[data-embedded=true] .r23-panel{scroll-margin-top:18px}</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="A Csanádi Sportiskola megközelítése és tanulástámogatási eszközei – térkép, felvételi tervező, tanulási célok és kapcsolattartás.">
+  <title>Iskolai megközelítés és tanulástámogatás – Csanádi Sportiskola</title>
+  <link rel="icon" type="image/webp" href="assets/media/logo/csanadi-cimer-512.webp">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/arrival-reimagined.css?v=1.2.0">
+  <link rel="stylesheet" href="css/unified-actions-v1.css?v=1.2.0">
+  <script>
+    (()=>{
+      const params=new URLSearchParams(location.search);
+      if(params.get('embedded')==='1')document.documentElement.dataset.embedded='true';
+      else location.replace('index.html#/megkozelites-es-tanulas');
+      try{
+        const mode=localStorage.getItem('csanadi-theme')||'system';
+        const resolved=mode==='system'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):mode;
+        document.documentElement.dataset.theme=resolved;
+        document.documentElement.setAttribute('data-bs-theme',resolved);
+      }catch{document.documentElement.dataset.theme='light';}
+    })();
+  </script>
 </head>
-<body>
- <a class="r23-skip" href="#main">Ugrás a tartalomra</a>
- <header class="r23-header"><div class="r23-width r23-header-inner"><a class="r23-logo" href="index.html#/"><img src="assets/media/logo/csanadi-cimer-512.webp" width="54" height="54" alt=""><span><strong>CSANÁDI SPORTISKOLA</strong><small>Megközelítés · tanulás | 26. kiadás</small></span></a><nav class="r23-top-actions" aria-label="Fő navigáció"><a href="index.html#/">⌂ Kezdőlap</a><a href="iranytu.html">Iskolai iránytű</a><a href="tanulas-es-kozosseg.html">Tanulás és közösség</a><button id="r26-theme" type="button">◐ Téma</button></nav></div></header>
- <main class="r23-width" id="main">
-  <section class="r23-intro r26-intro"><p class="r23-overline">26. FEJLESZTÉSI KÖR · 10 FUNKCIÓ</p><h1>Találd meg az iskolát, tervezd meg a következő lépést!</h1><p>Iskolai megközelítés térképpel és útvonaltervezővel, felvételi és tanulási tervek, sportos útmutatók és nyilvános intézményi információk – személyesadat-küldés nélkül.</p><p class="r23-caution">Csak igazolt helyszín- és intézményi adatot jelölünk tényként. Akadálymentes bejárat, fogadóóra vagy diákújság-hitelesítés hiányában az adatok közzétételre várnak.</p></section>
-  <p class="r23-status" id="r26-status" role="status" aria-live="polite">Az adatok betöltése…</p>
+<body class="arrival2">
+  <a class="arrival2-skip" href="#arrival-main">Ugrás a tartalomra</a>
+  <header class="arrival2-topbar">
+    <div class="arrival2-shell arrival2-topbar-inner">
+      <div class="arrival2-brand"><img src="assets/media/logo/csanadi-cimer-512.webp" width="46" height="46" alt=""><span><strong>CSANÁDI</strong><small>ÁRPÁD SPORTISKOLA</small></span></div>
+      <div class="arrival2-top-actions"><a href="index.html#/kapcsolat">Kapcsolat</a><button id="r26-theme" type="button" class="arrival2-button arrival2-button-outline">Megjelenés</button></div>
+    </div>
+  </header>
 
-  <section class="r23-panel" id="terkep"><div class="r23-panel-title"><span>01 / 10</span><h2>Iskolai közlekedési és érkezési kalauz</h2></div>
-   <div class="r26-location-grid"><div class="r26-location-info"><p class="r26-address-label">Az iskola hivatalos címe</p><p class="r26-big-address" id="r26-school-address">1143 Budapest, Őrnagy utca 5–7.</p><p class="r23-footnote">A térképtű az iskola hozzávetőleges elhelyezkedését jelöli, nem ellenőrzött kaput.</p><div class="r26-action-line"><a id="r26-route-transit" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=1143%20Budapest%2C%20%C5%90rnagy%20utca%205-7&amp;travelmode=transit">🚌 Útvonal tömegközlekedéssel</a><a id="r26-route-walk" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=1143%20Budapest%2C%20%C5%90rnagy%20utca%205-7&amp;travelmode=walking">🚶 Gyalogos útvonal</a><a id="r26-route-cycle" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=1143%20Budapest%2C%20%C5%90rnagy%20utca%205-7&amp;travelmode=bicycling">🚲 Kerékpáros útvonal</a><a id="r26-open-osm" target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/?mlat=47.50155&amp;mlon=19.11147#map=16/47.50155/19.11147">🗺 Megnyitás OpenStreetMapen</a></div></div>
-    <div class="r26-map-area" id="r26-map-area" aria-label="Az iskola térképének helye"><div id="r26-map-consent" class="r26-map-consent"><div class="r26-map-icon" aria-hidden="true">🗺</div><strong>A Csanádi Sportiskola térképe</strong><p>A beágyazott OpenStreetMap kizárólag a gomb megnyomásakor töltődik be, és ekkor technikai adatokat továbbíthat a térképszolgáltatónak.</p><button id="r26-map-load" type="button">Térkép betöltése</button></div><div id="r26-map-frame" hidden></div></div></div>
-   <h3 class="r26-small-title">Közeli megállók és érkezési tudnivalók</h3><div class="r23-grid" id="r26-stop-results"></div><ul class="r26-tips" id="r26-arrival-tips"></ul><p class="r23-footnote">A forgalmi információk időközben változhatnak. <a href="https://bkk.hu/menetrendek/" target="_blank" rel="noopener noreferrer">BKK aktuális menetrendek ↗</a> · <a href="https://www.zuglo.hu/altalanos-iskolak/7/" target="_blank" rel="noopener noreferrer">Hivatalos címforrás ↗</a></p>
-  </section>
+  <main id="arrival-main" class="arrival2-shell">
+    <div class="arrival2-hero">
+      <div class="arrival2-hero-copy">
+        <span class="arrival2-kicker"><span class="arrival2-kicker-dot"></span> CSANÁDI · HASZNOS TUDNIVALÓK</span>
+        <h1>Ismerd meg az utat.<span>Tervezd meg a napod.</span></h1>
+        <p>Egy helyen minden, ami az iskolába érkezéshez, a felvételi tájékozódáshoz és a tudatos tanuláshoz szükséges.</p>
+        <div class="arrival2-hero-chips" aria-label="A szolgáltatások fő jellemzői"><span><span aria-hidden="true">●</span> Ellenőrzött helyadat</span><span><span aria-hidden="true">●</span> Helyben működő eszközök</span><span><span aria-hidden="true">●</span> Adatküldés nélkül</span></div>
+      </div>
+      <aside class="arrival2-address-card" aria-label="Az iskola címe">
+        <div class="arrival2-address-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+        <span class="arrival2-address-label">ITT TALÁLSZ MEG MINKET</span>
+        <strong id="r26-school-address">1143 Budapest, Őrnagy utca 5–7.</strong>
+        <p>Budapest XIV. kerület, Zugló</p>
+        <span class="arrival2-address-foot">A térképtű tájékoztató jellegű, nem konkrét bejáratot jelöl.</span>
+      </aside>
+    </div>
 
-  <section class="r23-panel" id="felveteli"><div class="r23-panel-title"><span>02 / 10</span><h2>Felvételi folyamatábra és helyi lépéskövető</h2></div><p>Az általános folyamat segít a tervezésben, de nem helyettesíti az adott tanév hivatalos felvételi tájékoztatóját, és nem ad be jelentkezést.</p><ol id="r26-admission-steps" class="r26-steps"></ol><div class="r26-toolbar"><button id="r26-admission-reset" type="button">Kipipálások törlése</button><span id="r26-admission-status" role="status" aria-live="polite"></span></div></section>
+    <p id="r26-status" class="arrival2-status" role="status" aria-live="polite">Az intézményi adatok betöltése…</p>
 
-  <section class="r23-panel" id="celok"><div class="r23-panel-title"><span>03 / 10</span><h2>Tanulási cél- és szokáskövető</h2></div><p>Rövid, személyes adat nélküli célokat rögzíthetsz. A bejegyzések csak ebben a böngészőben maradnak, és automatikusan lejárnak.</p><form id="r26-goal-form" class="r26-form"><label>Kategória<select id="r26-goal-category"></select></label><label>Cél megnevezése (max. 70 karakter)<input id="r26-goal-title" type="text" maxlength="70" required placeholder="Például hetente háromszor ismétlek"></label><button type="submit">Cél felvétele</button></form><div id="r26-goal-results" class="r26-goal-list"></div><div class="r26-toolbar"><button id="r26-goal-reset" type="button">Helyi célok törlése</button><span id="r26-goal-status" role="status" aria-live="polite"></span></div></section>
+    <section class="arrival2-section arrival2-map-section" id="terkep" aria-labelledby="arrival-map-title">
+      <div class="arrival2-section-head"><span class="arrival2-eyebrow">01 / HELYSZÍN ÉS ÚTVONAL</span><h2 id="arrival-map-title">Érkezz magabiztosan az iskolába</h2><p>Válassz közlekedési módot, nézd meg a környéket, és készülj fel az érkezésre.</p></div>
+      <div class="arrival2-map-layout">
+        <div class="arrival2-map-frame" id="r26-map-area" aria-label="Az iskola térképe">
+          <div id="r26-map-consent" class="arrival2-map-consent">
+            <div class="arrival2-map-grid" aria-hidden="true"></div>
+            <div class="arrival2-map-consent-content"><span class="arrival2-map-pin" aria-hidden="true">⌖</span><h3>A térkép csak kérésre töltődik be</h3><p>Az OpenStreetMap beágyazása technikai adatokat továbbíthat a térképszolgáltatónak. A betöltéshez kattints a gombra.</p><button id="r26-map-load" type="button" class="arrival2-button arrival2-button-primary">Térkép megjelenítése</button></div>
+          </div>
+          <div id="r26-map-frame" hidden></div>
+        </div>
+        <div class="arrival2-route-card">
+          <h3>Tervezd meg az utad</h3>
+          <p>A következő lehetőségek külső útvonaltervezőben nyílnak meg.</p>
+          <div class="arrival2-route-actions">
+            <a id="r26-route-transit" href="https://www.google.com/maps/dir/?api=1&amp;destination=1143%20Budapest%2C%20%C5%90rnagy%20utca%205-7&amp;travelmode=transit" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🚌</span><span>Tömegközlekedés</span></a>
+            <a id="r26-route-walk" href="https://www.google.com/maps/dir/?api=1&amp;destination=1143%20Budapest%2C%20%C5%90rnagy%20utca%205-7&amp;travelmode=walking" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🚶</span><span>Gyalogos útvonal</span></a>
+            <a id="r26-route-cycle" href="https://www.google.com/maps/dir/?api=1&amp;destination=1143%20Budapest%2C%20%C5%90rnagy%20utca%205-7&amp;travelmode=bicycling" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🚲</span><span>Kerékpáros útvonal</span></a>
+            <a id="r26-open-osm" href="https://www.openstreetmap.org/?mlat=47.50155&amp;mlon=19.11147#map=16/47.50155/19.11147" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🗺</span><span>OpenStreetMap</span></a>
+          </div>
+          <div class="arrival2-route-note"><strong>Indulás előtt</strong><span>A menetrendek és a forgalmi viszonyok változhatnak.</span><a href="https://bkk.hu/menetrendek/" target="_blank" rel="noopener noreferrer">BKK-menetrendek</a></div>
+        </div>
+      </div>
+      <div class="arrival2-info-grid"><div class="arrival2-info-box"><h3>Közeli megállók</h3><div id="r26-stop-results" class="arrival2-card-grid"></div></div><div class="arrival2-info-box"><h3>Érkezési tippek</h3><ul id="r26-arrival-tips" class="arrival2-tips"></ul></div></div>
+    </section>
 
-  <section class="r23-panel" id="merfoldko"><div class="r23-panel-title"><span>04 / 10</span><h2>Sportolói fejlődési mérföldkő-kalauz</h2></div><p>Általános, sportszövetségi forrásokra mutató gyakorlási témák. Nem egészségügyi alkalmassági teszt, nem egyéni edzésterv és nem életkor szerinti kötelező követelmény.</p><div class="r23-fields"><label>Sportág<select id="r26-sport-filter"><option value="all">Összes sportág</option></select></label><label>Szabály vagy készség keresése<input type="search" id="r26-sport-search" placeholder="Például biztonság, labda"></label></div><div class="r23-grid" id="r26-sport-results"></div></section>
+    <div class="arrival2-duo">
+      <section class="arrival2-section" id="felveteli" aria-labelledby="arrival-admission-title"><div class="arrival2-section-head"><span class="arrival2-eyebrow">02 / FELVÉTELI</span><h2 id="arrival-admission-title">A következő lépésed</h2><p>Áttekinthető felvételi lépések, helyben megjegyezhető pipákkal. A jelölés nem jelent hivatalos jelentkezést.</p></div><ol id="r26-admission-steps" class="arrival2-checklist"></ol><div class="arrival2-toolbar"><button id="r26-admission-reset" type="button" class="arrival2-button arrival2-button-outline">Pipák törlése</button><span id="r26-admission-status" role="status" aria-live="polite"></span></div></section>
+      <section class="arrival2-section" id="celok" aria-labelledby="arrival-goals-title"><div class="arrival2-section-head"><span class="arrival2-eyebrow">03 / TANULÁSI CÉLOK</span><h2 id="arrival-goals-title">Apró lépések, biztos haladás</h2><p>Írj fel egy rövid célt. A lista csak ebben a böngészőben tárolódik, lejárati idővel.</p></div><form id="r26-goal-form" class="arrival2-form"><label>Kategória<select id="r26-goal-category"></select></label><label>Cél megnevezése<input id="r26-goal-title" type="text" maxlength="70" required placeholder="Mit szeretnél elérni?"></label><button type="submit" class="arrival2-button arrival2-button-primary">Cél hozzáadása</button></form><div id="r26-goal-results" class="arrival2-card-grid"></div><div class="arrival2-toolbar"><button id="r26-goal-reset" type="button" class="arrival2-button arrival2-button-outline">Helyi célok törlése</button><span id="r26-goal-status" role="status" aria-live="polite"></span></div></section>
+    </div>
 
-  <section class="r23-panel" id="diakmedia"><div class="r23-panel-title"><span>05 / 10</span><h2>Diákújság- és iskolarádió-archívum</h2></div><p>Diákírás, lapszám, hangfelvétel és egyéb közösségi média csak a szükséges közlési jog és intézményi jóváhagyás birtokában jelenhet meg. A kereső felkészült a feltöltött, ellenőrzött anyagokra.</p><div class="r23-fields"><label>Médiatípus<select id="r26-media-type"><option value="all">Minden típus</option><option value="ujsag">Diákújság</option><option value="radio">Iskolarádió</option></select></label><label>Keresés<input id="r26-media-search" type="search" placeholder="Lapszám, téma"></label></div><div id="r26-media-results" class="r23-grid"></div></section>
+    <section class="arrival2-section" id="merfoldko" aria-labelledby="arrival-sport-title"><div class="arrival2-section-head"><span class="arrival2-eyebrow">04 / SPORT ÉS FEJLŐDÉS</span><h2 id="arrival-sport-title">Sportos tudástár</h2><p>Sportszövetségi tájékozódási témák, szűrhető formában. Nem személyre szabott edzésterv.</p></div><div class="arrival2-fields"><label>Sportág<select id="r26-sport-filter"><option value="all">Összes sportág</option></select></label><label>Keresés<input id="r26-sport-search" type="search" placeholder="Készség vagy téma"></label></div><div id="r26-sport-results" class="arrival2-card-grid arrival2-card-grid-three"></div></section>
 
-  <section class="r23-panel" id="fogadora"><div class="r23-panel-title"><span>06 / 10</span><h2>Fogadóórák és kapcsolattartás központja</h2></div><p>Hivatalosan ellenőrzött tájékoztatók és intézményi elérhetőségek. Az ismeretlen tanári időpontokat nem pótoljuk becsléssel.</p><div id="r26-contact-results" class="r23-grid"></div><h3 class="r26-small-title">Jóváhagyott fogadóórák</h3><div id="r26-consultation-results" class="r23-grid"></div></section>
+    <div class="arrival2-duo">
+      <section class="arrival2-section" id="diakmedia" aria-labelledby="arrival-media-title"><div class="arrival2-section-head"><span class="arrival2-eyebrow">05 / DIÁKMÉDIA</span><h2 id="arrival-media-title">Diákhangok és történetek</h2><p>Jóváhagyott diákújság- és iskolarádió-anyagok kereshető gyűjteménye.</p></div><div class="arrival2-fields"><label>Médiatípus<select id="r26-media-type"><option value="all">Minden típus</option><option value="ujsag">Diákújság</option><option value="radio">Iskolarádió</option></select></label><label>Keresés<input id="r26-media-search" type="search" placeholder="Cím vagy téma"></label></div><div id="r26-media-results" class="arrival2-card-grid"></div></section>
+      <section class="arrival2-section" id="fogadora" aria-labelledby="arrival-contact-title"><div class="arrival2-section-head"><span class="arrival2-eyebrow">06 / KAPCSOLATTARTÁS</span><h2 id="arrival-contact-title">Kérdezz, egyeztess</h2><p>Intézményi elérhetőségek és kizárólag jóváhagyott fogadóórák.</p></div><div id="r26-contact-results" class="arrival2-card-grid"></div><h3 class="arrival2-subtitle">Fogadóórák</h3><div id="r26-consultation-results" class="arrival2-card-grid"></div></section>
+    </div>
 
-  <section class="r23-panel" id="modszerek"><div class="r23-panel-title"><span>07 / 10</span><h2>Tanulásmódszertani interaktív eszköztár</h2></div><div class="r23-grid" id="r26-method-results"></div><div class="r26-tool"><h3>Fókuszidő-mérő</h3><p>A visszaszámlálás a böngészőben zajlik. Bezárás után nem küld értesítést és nem rögzít adatot.</p><div class="r26-toolbar"><label>Időtartam, perc<input type="number" id="r26-timer-minutes" min="1" max="90" value="20"></label><button type="button" id="r26-timer-start">▶ Indítás</button><button type="button" id="r26-timer-stop">■ Leállítás</button><output id="r26-timer-output" aria-live="off">20:00</output></div></div><div class="r26-tool"><h3>Aktív felidézés – kérdéskártya</h3><p id="r26-flash-question">Mi az a három legfontosabb gondolat, amit most megértettél?</p><button type="button" id="r26-flash-next">Következő kérdés</button></div></section>
+    <section class="arrival2-section arrival2-learning" id="modszerek" aria-labelledby="arrival-learning-title"><div class="arrival2-section-head"><span class="arrival2-eyebrow">07 / TANULÁSI MŰHELY</span><h2 id="arrival-learning-title">Próbálj ki egy módszert!</h2><p>Gyakorlati tanulási ötletek és két egyszerű, helyben működő eszköz.</p></div><div id="r26-method-results" class="arrival2-card-grid arrival2-card-grid-three"></div><div class="arrival2-tools"><div class="arrival2-tool"><h3>Fókuszidő</h3><p>Dolgozz egy meghatározott ideig, majd tarts szünetet.</p><label>Időtartam percben<input id="r26-timer-minutes" type="number" min="1" max="90" value="20"></label><output id="r26-timer-output" class="arrival2-timer" aria-live="off">20:00</output><div class="arrival2-toolbar"><button id="r26-timer-start" type="button" class="arrival2-button arrival2-button-primary">Indítás</button><button id="r26-timer-stop" type="button" class="arrival2-button arrival2-button-outline">Leállítás</button></div></div><div class="arrival2-tool"><h3>Gondolatébresztő</h3><p id="r26-flash-question" class="arrival2-question">Mi az a három legfontosabb gondolat, amit most megértettél?</p><button id="r26-flash-next" type="button" class="arrival2-button arrival2-button-primary">Új kérdés</button></div></div></section>
 
-  <section class="r23-panel" id="akadalymentes"><div class="r23-panel-title"><span>08 / 10</span><h2>Akadálymentes megközelítési útmutató</h2></div><p>Az iskola címe igazolt; a bejáratok akadálymentességére, liftre vagy akadálymentes parkolóra vonatkozó állítások csak dokumentált és friss intézményi ellenőrzéssel jelenhetnek meg.</p><div id="r26-access-results"></div><p class="r23-footnote">A pontos belépés és szükséges segítség megerősítéséhez keresd az intézményt a <a href="index.html#/kapcsolat">Kapcsolat</a> oldalon. A külső térképek nem garantálnak akadálymentes útvonalat.</p></section>
+    <div class="arrival2-duo">
+      <section class="arrival2-section" id="akadalymentes" aria-labelledby="arrival-access-title"><div class="arrival2-section-head"><span class="arrival2-eyebrow">08 / BIZTONSÁGOS ÉRKEZÉS</span><h2 id="arrival-access-title">Akadálymentes megközelítés</h2><p>Nem állítunk ellenőrizetlen információt bejáratokról, liftről vagy parkolásról.</p></div><div id="r26-access-results"></div><p class="arrival2-footnote">A pontos belépés és segítség egyeztetéséhez keresd az intézményt a <a href="index.html#/kapcsolat">Kapcsolat</a> oldalon.</p></section>
+      <section class="arrival2-section" id="zoldut" aria-labelledby="arrival-eco-title"><div class="arrival2-section-head"><span class="arrival2-eyebrow">09 / TUDATOS KÖZLEKEDÉS</span><h2 id="arrival-eco-title">Zöldebb iskolába járás</h2><p>Egyszerű távolság-összehasonlítás. Személyes útvonaladat nem kerül továbbításra.</p></div><div class="arrival2-form"><label>Egy út hossza (km)<input id="r26-eco-km" type="number" min="0.1" max="100" step="0.1" value="3"></label><label>Heti napok<input id="r26-eco-days" type="number" min="1" max="7" value="5"></label><button id="r26-eco-update" type="button" class="arrival2-button arrival2-button-primary">Újraszámítás</button></div><p id="r26-eco-summary" class="arrival2-result" role="status"></p><div id="r26-eco-results" class="arrival2-card-grid"></div></section>
+    </div>
 
-  <section class="r23-panel" id="zoldut"><div class="r23-panel-title"><span>09 / 10</span><h2>Környezettudatos iskolába járás tervező</h2></div><p>Hasonlítsd össze a lehetőségeket útvonal és személyes helyadat beküldése nélkül. A napi távolságot csak helyben számolja a lap; nem készül személyre szabott kibocsátási tanúsítvány.</p><div class="r26-form"><label>Egy út hozzávetőleges hossza, km<input type="number" min="0.1" max="100" step="0.1" value="3" id="r26-eco-km"></label><label>Heti iskolába járási napok<input type="number" min="1" max="7" value="5" id="r26-eco-days"></label><button id="r26-eco-update" type="button">Összehasonlítás frissítése</button></div><p id="r26-eco-summary" class="r23-stat" role="status"></p><div class="r23-grid" id="r26-eco-results"></div></section>
+    <section class="arrival2-section arrival2-changes" id="valtozasok" aria-labelledby="arrival-changes-title"><div class="arrival2-section-head"><span class="arrival2-eyebrow">10 / FEJLESZTÉSEK</span><h2 id="arrival-changes-title">Mi változott a rendszerben?</h2><p>A nyilvános fejlesztési bejegyzések kereshető listája.</p></div><div class="arrival2-fields"><label>Kiadás<select id="r26-change-release"><option value="all">Összes kiadás</option></select></label><label>Keresés<input id="r26-change-search" type="search" placeholder="Változás vagy hibajavítás"></label></div><div id="r26-change-results" class="arrival2-card-grid arrival2-card-grid-three"></div></section>
+  </main>
 
-  <section class="r23-panel" id="valtozasok"><div class="r23-panel-title"><span>10 / 10</span><h2>Nyilvános fejlesztési változásnapló</h2></div><p>Kiadásonként kereshetők az új modulok és a fontos módosítások. A napló a közzétett JSON-bejegyzésekből áll össze; a hibajavítások külön kategóriát kapnak.</p><div class="r23-fields"><label>Kiadás<select id="r26-change-release"><option value="all">Összes kiadás</option></select></label><label>Keresés<input type="search" id="r26-change-search" placeholder="Funkció, kiadás, hibajavítás"></label></div><div class="r23-grid" id="r26-change-results"></div><p class="r23-footnote">Részletes korábbi fejlesztések: <a href="utmutato.html">Teljes webes kézikönyv</a> · <a href="dokumentacio/FEJLESZTESI_ES_TESZTBESZAMOLO_2026.md">Tételes tesztbeszámoló</a>.</p></section>
- </main>
- <footer class="r23-footer"><div class="r23-width"><strong>Csanádi Sportiskola · 26. kiadás</strong><span>Statikus FTP · világos és sötét téma · helyi adatok</span><a href="index.html#/informaciok/adatvedelem">Adatvédelem</a><a href="utmutato.html">Kézikönyv</a><a href="index.html#/">Kezdőlap ↑</a></div></footer>
- <script>(function(){if(document.documentElement.dataset.embedded!=='true')return;const notify=()=>{const section=location.hash.slice(1);const target=section&&document.getElementById(section);parent.postMessage({source:'csanadi-r26-embed',height:Math.ceil(document.documentElement.scrollHeight)+12,section,offset:target?Math.round(target.getBoundingClientRect().top+scrollY):0},location.origin);};addEventListener('load',notify);addEventListener('hashchange',notify);if('ResizeObserver'in window)new ResizeObserver(notify).observe(document.body);addEventListener('storage',event=>{if(event.key==='csanadi-theme'){const mode=event.newValue||'system';const actual=mode==='system'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):mode;document.documentElement.dataset.theme=actual;document.documentElement.setAttribute('data-bs-theme',actual);}});})();</script>
- <script type="module" src="js/round26-arrival.js?v=csanadi-r29n-20261115"></script>
+  <footer class="arrival2-footer"><div class="arrival2-shell"><strong>Csanádi Árpád Sportiskola</strong><span>Hivatalos ügyekben az intézményi tájékoztatás az irányadó.</span><a href="index.html#/informaciok/adatvedelem">Adatvédelem</a></div></footer>
+  <script>
+    (()=>{
+      if(document.documentElement.dataset.embedded!=='true')return;
+      const send=()=>{
+        const section=location.hash.slice(1),target=section&&document.getElementById(section);
+        parent.postMessage({source:'csanadi-r26-embed',height:Math.ceil(document.documentElement.scrollHeight)+12,section,offset:target?Math.round(target.getBoundingClientRect().top+scrollY):0},location.origin);
+      };
+      addEventListener('load',send);addEventListener('hashchange',send);
+      if('ResizeObserver' in window)new ResizeObserver(send).observe(document.body);
+      addEventListener('storage',event=>{if(event.key==='csanadi-theme'){
+        const mode=event.newValue||'system',value=mode==='system'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):mode;
+        document.documentElement.dataset.theme=value;document.documentElement.setAttribute('data-bs-theme',value);
+      }});
+    })();
+  </script>
+  <script type="module" src="js/round26-arrival.js?v=1.2.0"></script>
 </body>
 </html>
