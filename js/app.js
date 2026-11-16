@@ -3,15 +3,15 @@ import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,en
 import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=csanadi-r29n-20261115';
 import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=csanadi-r29n-20261115';
 import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=csanadi-r29n-20261115';
-import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.12.0';
-import {setupSmartSearch} from './search-j-2026.js?v=csanadi-r29n-20261115';
+import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.18.0';
+import {setupSmartSearch} from './search-j-2026.js?v=1.18.0';
 import {installLanguageHighlights} from './language-20.js?v=csanadi-r29n-20261115';
 import {enhancePersonalizedHome} from './round21-personalize.js?v=csanadi-r29n-20261115';
-import {enhanceRound29Home,syncRound29HomeNavigation,initRound29Diagnostics} from './round29-home.js?v=csanadi-r29n-20261115';
+import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,initRound29Diagnostics} from './round29-home.js?v=csanadi-v118-20261116';
 import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=csanadi-r29n-20261115';
 import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=csanadi-r29n-20261115';
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=csanadi-r29n-20261115';
-import {renderMediaGallery} from './media-gallery-h-2026.js?v=csanadi-r29n-20261115';
+import {renderMediaGallery} from './media-gallery-h-2026.js?v=1.18.0';
 import {renderDocumentCollections} from './document-collections-2026.js?v=csanadi-r29n-20261115';
 import {renderPageMedia} from './page-media-2026.js?v=csanadi-r29n-20261115';
 import {useSiteSettings,settingNumber,setting} from './site-settings-2026.js';
@@ -20,15 +20,15 @@ import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialS
 import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=csanadi-r29n-20261115';
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r29n-20261115';
  
-import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=1.12.0';
+import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=1.18.0';
 import {renderBlock,dom,listCards} from './blocks.js?v=csanadi-r29n-20261115';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=csanadi-r29n-20261115';
 import {renderSportsSuccesses} from './sports-successes.js?v=csanadi-r29n-20261115';
 import {renderStudentAchievements} from './student-achievements.js?v=csanadi-r29n-20261115';
 import {renderDailySportsNews} from './daily-sport-news.js?v=csanadi-r29n-20261115';
 import {renderDesktopTree} from '../desktop/navigation.js?v=csanadi-r29n-20261115';
-import {renderMobileTree,createMobileMenuSwitcher} from '../mobile/navigation.js?v=csanadi-r29n-20261115';
-import {createSubpageHero} from './subpages-v1.js?v=1.12.0';
+import {renderMobileTree,createMobileMenuSwitcher} from '../mobile/navigation.js?v=1.18.0';
+import {createSubpageHero} from './subpages-v1.js?v=1.18.0';
 const app=document.getElementById('app');
 let homeHeroElement=null;
 function syncRouteHero(node,kind){
@@ -479,6 +479,7 @@ function embeddedArrival(route,options){
  const previous=currentRoute;
  if(previous!==null&&previous!==route)historyScroll.set(previous,window.scrollY);
  currentRoute=route;
+ syncRound29HomeNavigation(false);
  document.body.classList.add('cs-inner-page','cs-embedded-arrival');
  document.documentElement.dataset.csanadiPageRevision='29';
  app.dataset.pageKind='general';
@@ -525,6 +526,7 @@ function renderRoute(options={}){
   document.body.classList.remove('cs-embedded-arrival');
   const route=getRoute();const node=pageForRoute(route);
   if(node && !node._fullLoaded){
+    syncRound29HomeNavigation(false);
     if(!node._pagePromise){
       node._pagePromise=loadJSON(node.path).then(page=>{
         if(page?.id!==node.page?.id || page?.schemaExtensions?.route!==route || !Array.isArray(page.blocks) || page.lifecycle?.status!=='published')throw Error('Eltérő vagy nem publikált oldaladat');
@@ -558,6 +560,7 @@ function renderRoute(options={}){
   wireReveal();
   enhanceGallery(app);
   enhanceNext10Route(node,app);
+  if(kind!=='home')syncMobileSubpageSections(app);
   if(node)updatePageMeta(node.page,route);
   document.dispatchEvent(new CustomEvent('csanadi:route-rendered',{detail:{route}}));
   if(pendingSearchJump && pendingSearchJump.route===route)setTimeout(trySearchJump,settingNumber('runtime.timing.searchJumpDelayMs'));
@@ -579,7 +582,7 @@ function markSearchTarget(element){
  setTimeout(()=>target.classList.remove('cs-search-found'),settingNumber('search.highlightDurationMs'));
 }
 function searchTargetMatch(root,entry,phrase){
- const normalize=s=>norm(s).replace(/\\s+/g,' ').trim();
+ const normalize=s=>norm(s).replace(/\s+/g,' ').trim();
  const title=normalize(entry.title),query=normalize(phrase);
  const nodes=[...root.querySelectorAll('h1,h2,h3,h4,.media26-tile-label,.dfg-news-title,.cs-news-title,.doc-title,.hub26-event-card,.gallery-item,button[aria-label],p,li,.text-flow,.card-title')];
  let heading=null,match=null;
@@ -713,7 +716,7 @@ async function checkStructure(){
       if(lastRawStructure&&value!==lastRawStructure){
         const next=await buildCatalog();
         if(!next.items.length)throw Error('Az új menü nem tartalmaz érvényes oldalt');
-        catalog=next;await smartSearch?.rebuild(catalog);
+        catalog=next;useSiteSettings(next.config);await smartSearch?.rebuild(catalog);
         const scroll=window.scrollY;renderRoute({keepScroll:true});window.scrollTo({top:scroll,behavior:'instant'});
         notify('A menürendszer újratöltve.');
       }
@@ -734,7 +737,9 @@ async function checkActivePage(){
       }
       if(lastRawPage!==null&&raw!==lastRawPage){
         const scroll=window.scrollY;
-        item.page=latest;item._fullLoaded=true;renderRoute({keepScroll:true});window.scrollTo({top:scroll,behavior:'instant'});
+        item.page=latest;item._fullLoaded=true;
+        smartSearch?.rebuild(catalog).catch(error=>console.warn('A keresőindex újraépítése ideiglenesen nem sikerült:',error));
+        renderRoute({keepScroll:true});window.scrollTo({top:scroll,behavior:'instant'});
         notify('A megnyitott oldal frissült.');
       }
       lastRawPage=raw;

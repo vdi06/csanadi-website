@@ -54,22 +54,21 @@ function syncSelfLinks(root=document) {
   for(const link of links){
     const prior=link.dataset.selfHref;
     if(prior){
-      const priorRoute=prior.split('?')[0].replace(/\/+$/,'')||'#/';
-      if(priorRoute!==route){
-        link.setAttribute('href',prior);delete link.dataset.selfHref;link.removeAttribute('aria-current');
-        if('selfTitle' in link.dataset){if(link.dataset.selfTitle)link.title=link.dataset.selfTitle;else link.removeAttribute('title');delete link.dataset.selfTitle;}
-      }
-      continue;
+      link.setAttribute('href',prior);delete link.dataset.selfHref;
+      link.removeAttribute('aria-current');
+      if('selfTitle' in link.dataset){if(link.dataset.selfTitle)link.title=link.dataset.selfTitle;else link.removeAttribute('title');delete link.dataset.selfTitle;}
     }
     const raw=link.getAttribute('href');
-    if(!raw?.startsWith('#/'))continue;
+    if(!raw?.startsWith('#/')){
+      if(link.dataset.routeCurrent==='true'){link.removeAttribute('aria-current');delete link.dataset.routeCurrent;}
+      continue;
+    }
     const target=(raw.split('?')[0].replace(/\/+$/,'')||'#/');
     if(target===route){
-      link.dataset.selfHref=raw;
-      link.dataset.selfTitle=link.getAttribute('title')||'';
-      link.removeAttribute('href');
       link.setAttribute('aria-current','page');
-      link.setAttribute('title','Ez a jelenlegi oldal');
+      link.dataset.routeCurrent='true';
+    }else if(link.dataset.routeCurrent==='true'){
+      link.removeAttribute('aria-current');delete link.dataset.routeCurrent;
     }
   }
 }

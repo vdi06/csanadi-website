@@ -27,15 +27,17 @@ export function renderMobileTree(container,roots,{dom,navLink,titleOf,hrefOf,pag
    }else contents.append(navLink(child));
   }
   if(overlay)group.append(contents);
-  else group.addEventListener('toggle',()=>{
-   if(group.open)for(const other of container.querySelectorAll('details.mobile-root'))if(other!==group)other.open=false;
+  group.addEventListener('toggle',()=>{
+   if(group.open)for(const other of container.querySelectorAll('details')){
+    if(other!==group&&(other.classList.contains('mobile-root')||other.classList.contains('csn18-mobile-list-root')))other.open=false;
+   }
   });
   container.append(group);
  }
  for(const anchor of container.querySelectorAll('a')){
   if(anchor.getAttribute('href')===currentRoute){
-   if(overlay)anchor.setAttribute('aria-current','page');
-   else anchor.classList.add('active');
+   anchor.setAttribute('aria-current','page');
+   if(!overlay)anchor.classList.add('active');
   }
  }
 }

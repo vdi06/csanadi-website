@@ -79,4 +79,4 @@ export async function buildCatalog() {
 }
 export function childrenOf(catalog,parent){return catalog.items.filter(x=>x.parent===parent).sort((a,b)=>a.order-b.order);}
 export function routeTitle(item){return item?.page?.menuLabel||item?.page?.title||'';}
-export function getRoute(){return safeRoute(location.hash||'#/');}
+export function getRoute(){return safeRoute((location.hash||'#/').split('?')[0]);}

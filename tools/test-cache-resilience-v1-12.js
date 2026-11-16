@@ -15,13 +15,13 @@ function harness({failShellPut=false,failReaderPut=false,failNetwork=false}={}){
   const records=cacheMap.get(name);
   return {
    async match(request){return records.get(key(request))||null;},
-   async put(request,response){if((name==='csanadi-r-v1.12.0'&&failShellPut)||(name==='csanadi-user-offline-pages'&&failReaderPut))throw Error('QuotaExceededError');records.set(key(request),response);},
+   async put(request,response){if((name==='csanadi-r-v1.18.0'&&failShellPut)||(name==='csanadi-user-offline-pages'&&failReaderPut))throw Error('QuotaExceededError');records.set(key(request),response);},
    async keys(){return [...records.keys()].map(url=>({url}));},
    async delete(request){return records.delete(key(request));}
   };
  }
  const caches={async open(name){return cache(name);},async keys(){return [...cacheMap.keys()];},async delete(name){return cacheMap.delete(name);},async match(request){for(const name of cacheMap.keys()){const item=cacheMap.get(name).get(key(request));if(item)return item;}return null;}};
- const cfg={performance:{cacheVersion:'csanadi-r-v1.12.0',offlinePrecacheFileMaxBytes:1000,offlinePrecacheMaxEntries:1,mediaCacheEntries:20,maxCacheMegabytes:10},refresh:{structureSeconds:60,maxConcurrentRequests:2}};
+ const cfg={performance:{cacheVersion:'csanadi-r-v1.18.0',offlinePrecacheFileMaxBytes:1000,offlinePrecacheMaxEntries:1,mediaCacheEntries:20,maxCacheMegabytes:10},refresh:{structureSeconds:60,maxConcurrentRequests:2}};
  const configResponse={ok:true,json:async()=>cfg,clone(){return this;}};
  const fetch=async request=>{calls.push(key(request));if(key(request).includes('json/config.json'))return configResponse;if(key(request).includes('release-manifest.json'))return {ok:false,status:404};if(failNetwork)throw Error('offline');return {ok:true,status:200,source:'online',clone(){return this;}};};
  const self={registration:{scope:'https://school.example/website/'},addEventListener(name,fn){events.set(name,fn);},skipWaiting:async()=>{},clients:{claim:async()=>{}}};
@@ -37,7 +37,7 @@ async function main(){
   assert.equal(res.source,'online');
  });
  await check('Az offline mentés neve nem módosul minden kiadásnál',async()=>{
-  const actual=vm.runInNewContext('names({performance:{cacheVersion:"csanadi-r-v1.12.0"}}).reader',stable.ctx);
+  const actual=vm.runInNewContext('names({performance:{cacheVersion:"csanadi-r-v1.18.0"}}).reader',stable.ctx);
   assert.equal(actual,'csanadi-user-offline-pages');
   assert.match(fs.readFileSync(path.join(root,'js/offline-reader-20.js'),'utf8'),/return 'csanadi-user-offline-pages'/);
  });
@@ -76,6 +76,6 @@ async function main(){
  await check('A kézzel kért újabb ellenőrzés elindítja a valóban friss hálózati kérést',async()=>assert.equal(count,2));
  deferred.shift()({ok:true,json:async()=>({nodes:[{path:'x'}]})});
  await refetch;
- console.log(JSON.stringify({stage:'v1.12.0',passed:names.length,total:names.length,checks:names}));
+ console.log(JSON.stringify({stage:'v1.18.0',passed:names.length,total:names.length,checks:names}));
 }
 main().catch(error=>{console.error(error);process.exitCode=1;});

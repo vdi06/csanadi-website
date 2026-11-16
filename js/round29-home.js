@@ -11,6 +11,8 @@ let drawer,trigger,lastFocus;
 let activeObserver;
 let mobileBar,mobileSheet,mobileBackdrop,mobileList,mobileCurrent,mobilePrevious,mobileNext;
 let mobileTargets=[],mobileIndex=0,mobileLastFocus=null,mobileOldOverflow='';
+let mobilePageKind='home';
+let mobileSubpageRoot=null,mobileSubpageObserver=null,mobileEligibilityFrame=0;
 const mobileMode=()=>window.matchMedia('(max-width:768px)').matches;
 const motion=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth';
 function getCards(canvas){
@@ -59,7 +61,7 @@ function updateMobilePosition(){
  let active=0;
  mobileTargets.forEach((entry,index)=>{if(!entry.target.hidden&&entry.target.getBoundingClientRect().top<=threshold)active=index;});
  mobileIndex=active;
- mobileCurrent.textContent=mobileTargets[active]?.label||'Kezdőlap';
+ mobileCurrent.textContent=mobileTargets[active]?.label||(mobilePageKind==='home'?'Kezdőlap':'Az oldal eleje');
  mobilePrevious.disabled=active===0;mobileNext.disabled=active===mobileTargets.length-1;
  for(const b of mobileList.querySelectorAll('[data-mobile-index]')){
   if(Number(b.dataset.mobileIndex)===active)b.setAttribute('aria-current','location');else b.removeAttribute('aria-current');
@@ -67,15 +69,23 @@ function updateMobilePosition(){
 }
 function jumpMobile(index){
  const item=mobileTargets[index];if(!item)return;
+ const wasSheetOpen=Boolean(mobileSheet&&!mobileSheet.hidden);
  closeMobileSheet(false);
- if(item.target.tagName==='DETAILS')item.target.open=true;
+ for(let parent=item.target;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;
  item.target.scrollIntoView({behavior:motion(),block:'start'});
+ // A szakaszlistából választva a billentyűzetes fókusz se maradjon a rejtett panelen.
+ if(wasSheetOpen){
+  const hadTabIndex=item.target.hasAttribute('tabindex');
+  if(!hadTabIndex)item.target.tabIndex=-1;
+  item.target.focus({preventScroll:true});
+  if(!hadTabIndex)item.target.addEventListener('blur',()=>item.target.removeAttribute('tabindex'),{once:true});
+ }
  mobileIndex=index;mobileCurrent.textContent=item.label;
  updateMobilePosition();
 }
 function mountMobileNavigator(){
  if(mobileBar)return;
- mobileBar=create('nav','cs32-mobile-bar');mobileBar.setAttribute('aria-label','Kezdőoldali szakasznavigáció');mobileBar.hidden=true;
+ mobileBar=create('nav','cs32-mobile-bar');mobileBar.setAttribute('aria-label','Oldalszakaszok navigációja');mobileBar.hidden=true;
  const actions=[['top','⌂','Eleje'],['previous','↑','Előző'],['next','↓','Következő'],['sections','☷','Szakaszok']];
  for(const [id,glyph,label] of actions){
   const b=create('button','cs32-mobile-action');b.type='button';b.dataset.action=id;
@@ -92,8 +102,8 @@ function mountMobileNavigator(){
  mobileCurrent=create('span','cs32-mobile-current','Kezdőlap');mobileCurrent.setAttribute('aria-live','off');
  mobileBar.append(mobileCurrent);
  mobileBackdrop=create('button','cs32-mobile-backdrop');mobileBackdrop.type='button';mobileBackdrop.hidden=true;mobileBackdrop.setAttribute('aria-label','Szakaszlista bezárása');mobileBackdrop.addEventListener('click',()=>closeMobileSheet());
- mobileSheet=create('aside','cs32-mobile-sheet');mobileSheet.hidden=true;mobileSheet.id='cs32-mobile-sheet';mobileSheet.setAttribute('role','dialog');mobileSheet.setAttribute('aria-modal','true');mobileSheet.setAttribute('aria-label','Kezdőoldali szakaszok');
- const head=create('div','cs32-mobile-sheet-head');head.append(create('h2','','Ugrás a kezdőoldalon'));
+ mobileSheet=create('aside','cs32-mobile-sheet');mobileSheet.hidden=true;mobileSheet.id='cs32-mobile-sheet';mobileSheet.setAttribute('role','dialog');mobileSheet.setAttribute('aria-modal','true');mobileSheet.setAttribute('aria-label','Az oldal szakaszai');
+ const head=create('div','cs32-mobile-sheet-head');head.append(create('h2','','Ugrás az oldal szakaszaihoz'));
  const close=create('button','cs32-mobile-close','×');close.type='button';close.setAttribute('aria-label','Szakaszlista bezárása');close.addEventListener('click',()=>closeMobileSheet());head.append(close);
  mobileList=create('div','cs32-mobile-list');mobileSheet.append(head,mobileList);
  document.body.append(mobileBackdrop,mobileSheet,mobileBar);
@@ -108,7 +118,73 @@ function mountMobileNavigator(){
  });
  let pending=false;
  window.addEventListener('scroll',()=>{if(pending||!mobileMode()||mobileBar.hidden)return;pending=true;requestAnimationFrame(()=>{pending=false;updateMobilePosition();});},{passive:true});
- window.addEventListener('resize',()=>{if(mobileMode()&&drawer&&!drawer.hidden)toggle(false);if(!mobileMode())closeMobileSheet(false);updateMobilePosition();});
+ window.addEventListener('resize',()=>{if(mobileMode()&&drawer&&!drawer.hidden)toggle(false);if(!mobileMode())closeMobileSheet(false);scheduleMobileEligibility();updateMobilePosition();});
+}
+function setMobileTargets(entries,kind){
+ closeMobileSheet(false);
+ mobilePageKind=kind;
+ mobileTargets=entries;
+ mobileIndex=0;
+ mobileList.replaceChildren();
+ for(const [index,item] of entries.entries()){
+  const button=create('button','cs32-mobile-list-item',item.label);
+  button.type='button';button.dataset.mobileIndex=String(index);
+  button.addEventListener('click',()=>jumpMobile(index));mobileList.append(button);
+ }
+ mobileBar.hidden=entries.length<2;
+ updateMobilePosition();
+}
+function subpageTargets(root){
+ const result=[];
+ const content=root.querySelector('.content-tiles');
+ if(!content)return result;
+ function addSection(section,heading){
+  if(!heading||section.hidden||heading.hidden||section.closest('[hidden]')||heading.closest('[hidden]'))return;
+  const label=heading.textContent.replace(/\s+/g,' ').trim();
+  if(label)result.push({id:'subpage-'+result.length,label:label.slice(0,100),target:section});
+ }
+ for(const block of content.children){
+  if(block.classList.contains('article-flow')){
+   for(const section of block.querySelectorAll(':scope > .article-section'))addSection(section,section.querySelector(':scope > h2'));
+  }else{
+   // A már létező hír-, sport-, dokumentum- és eseménymodulok saját főcíme.
+   addSection(block,block.querySelector('h2'));
+  }
+ }
+ return result;
+}
+function scheduleMobileEligibility(){
+ if(!mobileSubpageRoot||mobileEligibilityFrame)return;
+ mobileEligibilityFrame=requestAnimationFrame(()=>{
+  mobileEligibilityFrame=0;
+  if(!mobileSubpageRoot?.isConnected||mobilePageKind!=='subpage')return;
+  const first=mobileTargets[0]?.target,last=mobileTargets.at(-1)?.target;
+  const span=first&&last?last.getBoundingClientRect().bottom-first.getBoundingClientRect().top:0;
+  const sufficient=mobileTargets.length>=2&&first.getClientRects().length>0&&last.getClientRects().length>0&&span>=Math.min(440,window.innerHeight*.55);
+  mobileBar.hidden=!sufficient;
+  if(!sufficient)closeMobileSheet(false);
+  else updateMobilePosition();
+ });
+}
+function stopMobileSubpageTracking(){
+ mobileSubpageRoot=null;
+ mobileSubpageObserver?.disconnect();mobileSubpageObserver=null;
+ if(mobileEligibilityFrame)cancelAnimationFrame(mobileEligibilityFrame);
+ mobileEligibilityFrame=0;
+}
+export function syncMobileSubpageSections(root){
+ mountMobileNavigator();
+ stopMobileSubpageTracking();
+ const targets=subpageTargets(root);
+ setMobileTargets(targets,'subpage');
+ mobileBar.hidden=true; // A láthatóság a valódi, megjelenített tartalomhosszhoz igazodik.
+ mobileSubpageRoot=root;
+ if('ResizeObserver' in window){
+  mobileSubpageObserver=new ResizeObserver(()=>scheduleMobileEligibility());
+  const container=root.querySelector('.content-tiles');
+  if(container)mobileSubpageObserver.observe(container);
+ }
+ scheduleMobileEligibility();
 }
 function makeApproach(){
  const section=create('section','cs29-approach');section.id='cs29-section-approach';
@@ -202,7 +278,7 @@ export function enhanceRound29Home(canvas){
  if(personalizer){personalizer.addEventListener('click',()=>queueMicrotask(()=>buildLinks(canvas)));personalizer.addEventListener('change',()=>queueMicrotask(()=>buildLinks(canvas)));}
  buildLinks(canvas);trigger.hidden=false;mobileBar.hidden=false;updateMobilePosition();
 }
-export function syncRound29HomeNavigation(isHome){if(trigger){trigger.hidden=!isHome;if(!isHome)toggle(false);}if(mobileBar){mobileBar.hidden=!isHome;if(!isHome)closeMobileSheet(false);}}
+export function syncRound29HomeNavigation(isHome){stopMobileSubpageTracking();mobilePageKind=isHome?'home':'subpage';if(trigger){trigger.hidden=!isHome;if(!isHome)toggle(false);}if(mobileBar&&!isHome){mobileBar.hidden=true;closeMobileSheet(false);}}
 export function initRound29Diagnostics(){
  const details=document.getElementById('footer-diagnostics-disclosure');if(!details||details.dataset.cs29Ready)return;details.dataset.cs29Ready='yes';
  const mount=details.querySelector('#footer-diagnostics-mount');const close=create('button','cs29-diagnostics-close','×');close.type='button';close.setAttribute('aria-label','Honlapdiagnosztika bezárása');mount.before(close);

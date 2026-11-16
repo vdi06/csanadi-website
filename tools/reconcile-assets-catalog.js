@@ -24,6 +24,16 @@ const existing=new Map(inventory.items.map(item=>[item.path,item]));
 const missing=files.filter(file=>!existing.has(file));
 const obsolete=inventory.items.filter(item=>!fs.existsSync(path.join(root,item.path))).map(item=>item.path);
 if(obsolete.length){console.error('Hiányzó, de még regisztrált fájlok:',obsolete);process.exitCode=1;}
+const integrityIssues=[];
+for(const file of files){
+ const item=existing.get(file);if(!item)continue;
+ const bytes=fs.readFileSync(path.join(root,file));
+ const sha=crypto.createHash('sha256').update(bytes).digest('hex');
+ if(item.sizeBytes!==bytes.length||item.sha256!==sha){
+  integrityIssues.push(file);
+  if(process.argv.includes('--write')){item.sizeBytes=bytes.length;item.sha256=sha;}
+ }
+}
 const mime={webp:'image/webp',jpg:'image/jpeg',jpeg:'image/jpeg',png:'image/png',svg:'image/svg+xml',avif:'image/avif',gif:'image/gif',mp4:'video/mp4',webm:'video/webm',pdf:'application/pdf',doc:'application/msword',docx:'application/vnd.openxmlformats-officedocument.wordprocessingml.document',odt:'application/vnd.oasis.opendocument.text',txt:'text/plain',csv:'text/csv',mp3:'audio/mpeg',wav:'audio/wav'};
 function typeFor(p){const ext=path.extname(p).slice(1).toLowerCase();return ext==='svg'?'graphic':['mp4','webm'].includes(ext)?'video':p.startsWith('assets/documents/')?'document':['webp','jpg','jpeg','png','avif','gif'].includes(ext)?'image':'file';}
 for(const file of missing){
@@ -54,7 +64,7 @@ for(const item of inventory.items){
   references[item.path]=[...new Set([...previous,...detected])].filter(p=>fs.existsSync(path.join(root,p))).sort();
 }
 const updated={...index,jsonFiles,assetReferences:references};
-const report={physicalAssets:files.length,indexedAssets:inventory.items.length,previouslyMissing:missing.length,orphanedRecords:obsolete.length,unindexed:files.filter(file=>!inventory.items.some(item=>item.path===file)).length,qrAssets:inventory.items.filter(item=>item.path.startsWith('assets/qr/')).length,jsonSources:jsonFiles.length,addedJsonSources:jsonFiles.filter(p=>!index.jsonFiles.includes(p)).length};
+const report={physicalAssets:files.length,indexedAssets:inventory.items.length,previouslyMissing:missing.length,orphanedRecords:obsolete.length,unindexed:files.filter(file=>!inventory.items.some(item=>item.path===file)).length,integrityMismatches:integrityIssues.length,qrAssets:inventory.items.filter(item=>item.path.startsWith('assets/qr/')).length,jsonSources:jsonFiles.length,addedJsonSources:jsonFiles.filter(p=>!index.jsonFiles.includes(p)).length};
 if(process.argv.includes('--write')&&!obsolete.length){
   inventory.updatedAt='2026-11-16';
   fs.writeFileSync(inventoryPath,JSON.stringify(inventory,null,2)+'\n');
@@ -62,6 +72,6 @@ if(process.argv.includes('--write')&&!obsolete.length){
   report.written=true;
 }else{
   report.written=false;
-  if(missing.length)process.exitCode=1;
+  if(missing.length||integrityIssues.length)process.exitCode=1;
 }
 console.log(JSON.stringify(report));

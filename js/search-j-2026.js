@@ -31,7 +31,7 @@ function buildEntry(x,norm){
  const entry={...x,section:sectionOf(x.href,x.type)};
  entry.title=resolveConfiguredText(x.title||'');entry.summary=resolveConfiguredText(x.summary||'');entry.body=resolveConfiguredText(x.body||'');
  entry.normalTitle=norm(entry.title);entry.normalSummary=norm(entry.summary);
- entry.normalTags=norm(labelsFrom(null,x.tags||[]));entry.normalBody=norm(entry.body||'');
+ entry.normalTags=norm(labelsFrom(null,Array.isArray(x.tags)?x.tags.filter(value=>typeof value==='string'):[]));entry.normalBody=norm(entry.body||'');
  entry.normalSection=norm(SECTIONS[entry.section]||'');
  return entry;
 }
@@ -99,7 +99,7 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
  const synonyms=setting('search.synonyms')||{};
  const typoMaximum=settingNumber('search.typoMaxDistance'),typoMinimum=settingNumber('search.typoMinimumLength'),statsLimit=settingNumber('search.statsSessionLimit');
  const sessionStats={searches:0,opened:0,empty:0};
- let all=[],query='',type='all',section='all',max=pageSize,rebuildSerial=0;
+ let all=[],query='',type='all',section='all',max=pageSize,rebuildSerial=0,unavailableSources=0;
  const resultWrap=results;resultWrap.setAttribute('aria-label','Keresési találatok');status.setAttribute('role','status');status.setAttribute('aria-live','polite');
  const form=element('div','j-search-tools');
  const typeLabel=element('label','j-search-field','Tartalomtípus');
@@ -130,11 +130,13 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
  async function rebuild(pages){
   const serial=++rebuildSerial;
   const pageEntries=rebuildPages(pages);
+  unavailableSources=0;
   all=pageEntries.map(e=>buildEntry(e,norm));
   if(!dialog.hidden)render();
   const settled=await Promise.allSettled(DATASETS.map(async ([t,path])=>({t,data:await loadJSON(path)})));
   if(serial!==rebuildSerial)return;
   const indexed=[...pageEntries];
+  unavailableSources=settled.filter(r=>r.status==='rejected').length;
   for(const r of settled){
    if(r.status==='fulfilled')indexed.push(...indexPayload(r.value.t,r.value.data));
    else console.warn('Kereső: adatforrás átmenetileg nem elérhető:',r.reason);
@@ -192,7 +194,7 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   const matches=pool.map(x=>({x,score:score(x,q,tokens,synonyms,typoMaximum,typoMinimum)})).filter(r=>r.score>=0);
   matches.sort((a,b)=>b.score-a.score||a.x.title.localeCompare(b.x.title,'hu'));
   const shown=matches.slice(0,Math.min(max,maxResults));
-  status.textContent=`${matches.length} találat · ${shown.length} megjelenítve`;
+  status.textContent=`${matches.length} találat · ${shown.length} megjelenítve`+(unavailableSources?` · ${unavailableSources} kiegészítő adatforrás átmenetileg nem érhető el`:'');
   for(const hit of shown)results.append(makeCard(hit.x,tokens));
   if(!matches.length)results.append(element('p','j-search-empty','Nincs pontos találat. Válassz egy javaslatot, egyszerűsítsd a kifejezést, vagy módosítsd a témakör szűrőjét.'));
   if(matches.length && query.trim())results.setAttribute('aria-label',`${matches.length} találat a(z) ${query} keresésre`);

@@ -1,4 +1,4 @@
-/* Mobilos kezdőoldali szakasznavigáció: a meglévő általános mobil-menüsáv felett. */
+/* Mobilos oldalszakasz-navigáció: a meglévő általános mobil-menüsáv felett. */
 .cs32-mobile-bar,.cs32-mobile-sheet,.cs32-mobile-backdrop{display:none}
 @media(max-width:768px){
  .cs29-nav-trigger,.cs29-nav-drawer{display:none!important}
@@ -20,5 +20,7 @@
  .cs32-mobile-list-item[aria-current="location"]{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 18%,var(--card))}
  .cs32-mobile-bar button:focus-visible,.cs32-mobile-sheet button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
  body:not(.cs-inner-page){padding-bottom:calc(155px + env(safe-area-inset-bottom))}
+ body.cs-inner-page:has(.cs32-mobile-bar:not([hidden])){padding-bottom:calc(155px + env(safe-area-inset-bottom))}
+ body:has(.cs32-mobile-bar:not([hidden])) #be2026-top{display:none!important}
 }
 @media(prefers-reduced-motion:reduce){.cs32-mobile-sheet:not([hidden]){animation:none!important}}

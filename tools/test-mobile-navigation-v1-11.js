@@ -33,5 +33,5 @@ check('A menü és keresés helyes aria-controls hivatkozást kap',()=>{assert.e
 check('A címerrel a főmenü önállóan nyitható',()=>{menu.click();assert.equal(toggleCount,1);});
 check('Menünyitás és bezárás szövege az állapottal együtt változik',()=>{overlay.hidden=false;observers.find(o=>o.target===overlay).fn();assert.equal(menu.getAttribute('aria-expanded'),'true');assert.equal(menu.getAttribute('aria-label'),'Főmenü bezárása');overlay.hidden=true;observers.find(o=>o.target===overlay).fn();assert.equal(menu.getAttribute('aria-label'),'Főmenü megnyitása');});
 check('A keresés gomb megőrzi a korábbi kereső megnyitását',()=>{searchButton.click();assert.equal(searchCount,1);search.hidden=false;observers.find(o=>o.target===search).fn();assert.equal(searchButton.getAttribute('aria-label'),'Keresés bezárása');});
-check('Az új CSS megfelelő mobilos cache-verzióval van bekötve',()=>assert.ok(index.includes('mobile-header-unified-v1-11.css?v=1.12.0')));
-console.log(JSON.stringify({stage:'v1.12.0',passed:count,total:count}));
+check('Az új CSS megfelelő mobilos cache-verzióval van bekötve',()=>assert.ok(index.includes('mobile-header-unified-v1-11.css?v=1.18.0')));
+console.log(JSON.stringify({stage:'v1.18.0',passed:count,total:count}));

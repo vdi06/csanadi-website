@@ -55,12 +55,13 @@ export function renderMediaGallery({compact=false}={}){
  let swipeStart=null;
  modal.addEventListener('touchstart',evt=>{swipeStart=evt.touches.length===1?evt.touches[0].clientX:null;},{passive:true});
  modal.addEventListener('touchend',evt=>{if(swipeStart===null||!evt.changedTouches.length)return;const diff=evt.changedTouches[0].clientX-swipeStart;if(Math.abs(diff)>45)move(diff<0?1:-1);swipeStart=null;},{passive:true});
- modal.addEventListener('close',()=>{directShare.href=shareUrl().href;image.removeAttribute('src');if(oldFocus?.isConnected)oldFocus.focus();});
+ modal.addEventListener('close',()=>{if(!compact)syncLink();directShare.href=shareUrl().href;image.removeAttribute('src');if(oldFocus?.isConnected)oldFocus.focus();});
  function matching(rows){const q=normal(search.value.trim());const found=rows.filter(item=>(album==='mind'||item.category===album)&&(discipline==='mind'||album!=='sport'||type==='video'||item.sportDiscipline===discipline)&&(!q||normal([item.title,item.alt||'',item.description||'',item.sportDiscipline||''].join(' ')).includes(q)));if(sorting.value==='az')found.sort((a,b)=>a.title.localeCompare(b.title,'hu'));if(sorting.value==='za')found.sort((a,b)=>b.title.localeCompare(a.title,'hu'));return found;}
  function draw(){
   albumsBar.replaceChildren();for(const [id,label,mark] of albums){const b=galleryButton('','media26-album'+(album===id?' is-active':''),()=>{album=id;discipline='mind';limit=compact?settingNumber('runtime.display.mediaCompactInitial'):settingNumber('runtime.display.mediaFullInitial');draw();});
    b.setAttribute('aria-pressed',String(album===id));const cover=photos.find(x=>id==='mind'||x.category===id);if(cover){const preview=el('img','media26-album-image');preview.src=cover.thumb||cover.src;preview.alt='';preview.loading='lazy';b.append(preview);}
-   add(b,el('span','media26-album-icon',mark),el('strong','media26-album-label',label),el('span','media26-album-count',`${id==='mind'?photos.length:photos.filter(x=>x.category===id).length} kép`));albumsBar.append(b);}
+   const source=type==='video'?videos:photos;
+   add(b,el('span','media26-album-icon',mark),el('strong','media26-album-label',label),el('span','media26-album-count',`${id==='mind'?source.length:source.filter(x=>x.category===id).length} ${type==='video'?'videó':'kép'}`));albumsBar.append(b);}
   sportBar.replaceChildren();sportBar.hidden=album!=='sport';if(album==='sport'){for(const [id,label] of disciplines){const total=photos.filter(x=>x.category==='sport'&&(id==='mind'||x.sportDiscipline===id)).length;if(!total&&id!=='mind')continue;const b=galleryButton(label+' · '+total,'media26-discipline'+(discipline===id?' is-active':''),()=>{discipline=id;limit=compact?settingNumber('runtime.display.mediaCompactInitial'):settingNumber('runtime.display.mediaFullInitial');draw();});b.setAttribute('aria-pressed',String(discipline===id));sportBar.append(b);}}
   videoPlaylists.replaceChildren();videoPlaylists.hidden=type!=='video';
   if(type==='video'){
@@ -77,6 +78,7 @@ export function renderMediaGallery({compact=false}={}){
   if(type==='photo'){
     filtered.slice(0,limit).forEach((item,index)=>{const tile=galleryButton('','media26-tile',()=>openImage(filtered,index,tile));tile.setAttribute('aria-label',item.title+' – kép megnyitása');
       const photo=el('img');photo.src=item.thumb||item.src;if(item.srcset&&typeof item.srcset==='string'){photo.srcset=item.srcset;photo.sizes='(max-width: 600px) 45vw, (max-width: 1024px) 30vw, 24vw';}photo.alt=item.alt;photo.loading=index<3?'eager':'lazy';photo.decoding='async';
+      photo.addEventListener('error',()=>{if(!photo.dataset.fullSourceTried){photo.dataset.fullSourceTried='true';photo.removeAttribute('srcset');photo.src=item.src;}else{photo.alt=item.title+' – kép átmenetileg nem érhető el';photo.classList.add('media26-load-error');}});
       add(tile,photo,el('span','media26-tile-overlay'),el('span','media26-tile-label',item.title),el('span','media26-tile-zoom','＋'));grid.append(tile);});
     loadMore.hidden=filtered.length<=limit;info.textContent=`${filtered.length} kép található · ${Math.min(limit,filtered.length)} megjelenítve`;
     if(!filtered.length)grid.append(el('p','media26-empty','Nincs találat. Válassz másik albumot vagy keresőkifejezést.'));if(!compact&&!modal.open)syncLink();directShare.href=shareUrl().href;
