@@ -87,6 +87,11 @@ body.cs-inner-page #app :is(h1,h2,h3,h4,section,[id]){scroll-margin-top:90px}
   body.cs-inner-page #site-header .cs-subpage-menu{min-width:80px;min-height:42px;padding:7px 10px;font-size:13px}
   body.cs-inner-page #site-header .icon-btn{min-width:40px;min-height:40px}
   body.cs-inner-page.cs-header-condensed #site-header .brand-row{min-height:54px!important;padding-block:4px!important}
+  /* Telefonon az alsó, rögzített háromikonos sáv középső iskolai címere
+     nyitja a főmenüt. Ha a sáv JS-hiba miatt nem jön létre, a fejlécben
+     megmarad a tartalék gomb: a menü ekkor sem válik elérhetetlenné. */
+  body.cs-inner-page:has(#ext26-mobile-nav) #site-header .cs-subpage-menu{display:none!important}
+  body.cs-inner-page:has(#ext26-mobile-nav) #site-header .brand-row{justify-content:flex-end}
 }
 @media(max-width:530px){
   body.cs-inner-page #site-header .brand-copy small,

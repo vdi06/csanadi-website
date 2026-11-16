@@ -1,1 +1,103 @@
-<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Csanádi – Tartalmi és média-hitelesítési munkalap</title><link rel="icon" href="../assets/media/logo/csanadi-cimer-512.webp"><link rel="stylesheet" href="../css/tools-2026.css"><style>:root{--ink:#122c44;--line:#bac8ce}*{box-sizing:border-box}body{font-family:system-ui,sans-serif;background:#f3f5f4;color:var(--ink);margin:0;line-height:1.6}header{background:linear-gradient(120deg,#0c2942,#284e6c);color:white;padding:26px max(20px,calc((100% - 1180px)/2));border-bottom:5px solid #d8ae57}header a{color:#ffe4a8}main{width:min(1180px,calc(100% - 24px));margin:25px auto 50px}.intro,.filters,.table-wrap{background:white;border:1px solid var(--line);border-radius:17px;padding:18px;margin:14px 0}.intro h1{margin:0 0 10px;font-size:clamp(23px,3vw,34px)}.warning{background:#fff2d8;border-left:5px solid #b18c3b;padding:12px 15px;border-radius:9px}button,input,select,textarea{font:inherit}button{cursor:pointer;border-radius:10px;background:#173b56;color:white;padding:10px 15px;border:1px solid #28485d}button:hover{background:#295872}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #b88728;outline-offset:3px}.filters{display:flex;align-items:end;flex-wrap:wrap;gap:12px}.filters label{display:grid;font-weight:700;font-size:13px;gap:5px;min-width:min(220px,100%)}.filters input,.filters select,.table-wrap input,.table-wrap select{padding:9px;border:1px solid #91a6b4;border-radius:9px;background:white;color:#122c44}.table-wrap{overflow:auto}.table-wrap table{width:100%;border-collapse:collapse;min-width:1450px;font-size:13px}.table-wrap th,.table-wrap td{padding:10px;border-bottom:1px solid #dde3e5;text-align:left;vertical-align:top}.table-wrap th{background:#ecf2f4;position:sticky;top:0}.table-wrap td a{overflow-wrap:anywhere}.table-wrap td input{width:100%;min-width:160px}.table-wrap td select{min-width:135px}#status{font-weight:700}#summary{font-size:15px;font-weight:700}.actions{display:flex;gap:10px;flex-wrap:wrap}.help{font-size:13px;color:#415d71}footer{text-align:center;padding:28px;color:#425b70}@media(max-width:600px){.filters{display:grid}.filters>*{width:100%}.actions{display:grid}.actions button{width:100%}}</style><link rel="stylesheet" href="../css/round16-standalone-tools.css?v=csanadi-r29n-20261115"><script src="tool-ui-2026.js?v=1.8.0" defer></script></head><body class="csn16-standalone-tool"><header><strong>CSANÁDI SPORTISKOLA · 2026</strong><div><a href="../index.html#/">Honlap</a> · <a href="../utmutato.html">Használati kézikönyv</a> · <a href="ftp-kiadas-ellenorzo.html">Kiadásellenőrző</a> · <button id="tool-theme-toggle" type="button" aria-label="Megjelenés váltása">◐ Megjelenés</button></div></header><main><div class="intro"><h1>Tartalmi és médiák ellenőrzési munkalapja</h1><p>A 66 tartalmi oldal, a dokumentumok és a médiafájlok egyenként áttekinthetők, megjegyzéssel és helyi munkastátusszal láthatók el. A megjelölt tételek CSV/JSON állományként exportálhatók.</p><p class="warning"><strong>Fontos:</strong> az „ellenőrizve” itt csak helyi munkastátusz. Nem igazolja az intézményi jóváhagyást, képhasználati jogot vagy a valós állítások hitelességét. A böngésző nem módosítja az FTP-fájlokat, az ellenőrző személye, az alátámasztó forrás és a médiaszerzői jog mezői is csak a böngészőben tárolódnak, majd exportálhatók. A rögzített állapot önmagában továbbra sem helyettesít intézményi jóváhagyást.</p></div><section class="filters" aria-label="Szűrés"><label>Adatkör<select id="kind"><option value="pages">66 tartalmi oldal</option><option value="documents">Dokumentumok</option><option value="assets">Média és más assets-fájlok</option></select></label><label>Keresés<input type="search" id="filter" placeholder="Cím, útvonal, megjegyzés"></label><label>Állapot<select id="state"><option value="all">Minden állapot</option><option value="pending">Felülvizsgálandó</option><option value="review">Javítandó</option><option value="ready">Helyben ellenőrizve</option><option value="approved">Jóváhagyási adat rögzítve</option></select></label><div class="actions"><button type="button" id="exportcsv">CSV export</button><button type="button" id="exportjson">JSON export</button></div></section><div class="table-wrap"><p id="status" role="status" aria-live="polite">Betöltés…</p><p id="summary"></p><table><thead><tr><th>Tétel</th><th>Forrás / hivatkozás</th><th>Állapot</th><th>Ellenőrzési megjegyzés</th><th>Ellenőrző neve</th><th>Bizonyíték / forrás</th><th>Felhasználási jog / jogosult</th></tr></thead><tbody id="items"></tbody></table></div><p class="help">Kezelés: válassz adatkört, állíts be státuszt, írj megjegyzést, majd töltsd le a CSV/JSON jegyzéket. Az FTP-s publikáláshoz külön, intézményi jóváhagyással rendelkező szerkesztési folyamat szükséges.</p></main><footer>Csanádi Sportiskola 2026 · Helyi ellenőrzési segédprogram, statikus FTP-kompatibilis</footer><script src="tartalmi-hitelesites.js" defer></script></body></html>
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Csanádi – Tartalmi és média-hitelesítési munkalap</title>
+  <link rel="icon" href="../assets/media/logo/csanadi-cimer-512.webp">
+  <link rel="stylesheet" href="../css/tools-2026.css">
+  <style>
+    *{box-sizing:border-box}
+    body{font-family:system-ui,sans-serif;background:#f3f5f4;color:#122c44;margin:0;line-height:1.6}
+    header{background:linear-gradient(120deg,#0c2942,#284e6c);color:white;padding:26px max(20px,calc((100% - 1180px)/2));border-bottom:5px solid #d8ae57}
+    header a{color:#ffe4a8}
+    main{width:min(1180px,calc(100% - 24px));margin:25px auto 50px}
+    .intro,.filters,.table-wrap{background:white;border:1px solid #bac8ce;border-radius:17px;padding:18px;margin:14px 0}
+    .intro h1{margin:0 0 10px;font-size:clamp(23px,3vw,34px)}
+    .warning{background:#fff2d8;border-left:5px solid #b18c3b;padding:12px 15px;border-radius:9px}
+    button,input,select,textarea{font:inherit}
+    button,.import-button{cursor:pointer;border-radius:10px;background:#173b56;color:white;padding:10px 15px;border:1px solid #28485d;font-weight:650}
+    button:hover,.import-button:hover{background:#295872}
+    :is(button,.import-button,a,select,input,textarea):focus-visible{outline:3px solid #b88728;outline-offset:3px}
+    .filters{display:flex;align-items:end;flex-wrap:wrap;gap:12px}
+    .filters>label{display:grid;font-weight:700;font-size:13px;gap:5px;min-width:min(220px,100%)}
+    .filters input,.filters select,.table-wrap input,.table-wrap select{padding:9px;border:1px solid #91a6b4;border-radius:9px;background:white;color:#122c44}
+    .table-wrap{overflow-x:auto}
+    .table-wrap table{width:100%;border-collapse:collapse;min-width:1560px;font-size:13px}
+    .table-wrap th,.table-wrap td{padding:10px;border-bottom:1px solid #dde3e5;text-align:left;vertical-align:top}
+    .table-wrap th{background:#ecf2f4;position:sticky;top:0}
+    .table-wrap td a{overflow-wrap:anywhere}
+    .table-wrap td input{width:100%;min-width:145px}
+    .table-wrap td select{min-width:140px}
+    #status,#summary{font-weight:700}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .import-button{display:inline-flex;align-items:center;justify-content:center;min-height:44px}
+    .import-button input{position:absolute;width:1px;height:1px;opacity:0}
+    .help{font-size:13px;color:#415d71}
+    footer{text-align:center;padding:28px;color:#425b70}
+    @media(max-width:850px){
+      .table-wrap{overflow-x:hidden}
+      .table-wrap table{display:block;min-width:0}
+      .table-wrap thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+      .table-wrap tbody{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+      .table-wrap tr{display:grid;min-width:0;border:1px solid #bac8ce;border-radius:13px;padding:10px;gap:7px}
+      .table-wrap td{display:grid;border:0;padding:3px;gap:3px;min-width:0;overflow-wrap:anywhere}
+      .table-wrap td::before{content:attr(data-label);font-weight:800;color:#415d71}
+      .table-wrap td input,.table-wrap td select{width:100%;min-width:0;max-width:100%}
+    }
+    @media(max-width:600px){.filters{display:grid}.filters>*{width:100%}.actions{display:grid}.actions button,.import-button{width:100%}}
+  </style>
+  <link rel="stylesheet" href="../css/round16-standalone-tools.css?v=csanadi-r29n-20261115">
+  <script src="tool-ui-2026.js?v=1.12.0" defer></script>
+</head>
+<body class="csn16-standalone-tool">
+  <header>
+    <strong>CSANÁDI SPORTISKOLA · 2026</strong>
+    <div><a href="../index.html#/">Honlap</a> · <a href="../utmutato.html">Használati kézikönyv</a> · <a href="ftp-kiadas-ellenorzo.html">Kiadásellenőrző</a> · <button id="tool-theme-toggle" type="button" aria-label="Megjelenés váltása">◐ Megjelenés</button></div>
+  </header>
+  <main>
+    <div class="intro">
+      <h1>Tartalmi, szabály- és média-hitelesítési munkalap</h1>
+      <p>A 66 tartalmi indexbejegyzés, a 65 aloldal 31 szabályából kiemelt <strong>55 nyitott tartalmi ellenőrzés</strong>, a dokumentumok és a médiafájlok külön kezelhetők.</p>
+      <p class="warning"><strong>Fontos:</strong> minden itt megadott státusz és döntési adat helyi munkajegyzet. Nem módosítja a nyilvános JSON-t vagy az FTP-fájlokat, nem jelenti a hitelesítést, és nem helyettesíti az intézmény tényleges jóváhagyását. Mentsd el az exportált JSON-t a munka folytatásához.</p>
+    </div>
+    <section class="filters" aria-label="Szűrés és mentés">
+      <label>Adatkör
+        <select id="kind">
+          <option value="criteria">31 szabály · 55 nyitott tétel</option>
+          <option value="pages">66 tartalmi indexbejegyzés</option>
+          <option value="documents">Dokumentumok</option>
+          <option value="assets">Média és más assets-fájlok</option>
+        </select>
+      </label>
+      <label>Keresés<input type="search" id="filter" placeholder="Cím, útvonal, megjegyzés"></label>
+      <label>Állapot
+        <select id="state">
+          <option value="all">Minden állapot</option>
+          <option value="pending">Felülvizsgálandó</option>
+          <option value="review">Javítandó</option>
+          <option value="ready">Helyben ellenőrizve</option>
+          <option value="approved">Jóváhagyási adat rögzítve</option>
+        </select>
+      </label>
+      <div class="actions">
+        <button type="button" id="exportcsv">CSV export</button>
+        <button type="button" id="exportjson">JSON export</button>
+        <label class="import-button">JSON visszaolvasása<input type="file" id="importjson" accept=".json,application/json" aria-label="Korábban exportált helyi munkalap JSON visszaolvasása"></label>
+      </div>
+    </section>
+    <div class="table-wrap">
+      <p id="status" role="status" aria-live="polite">Betöltés…</p>
+      <p id="summary"></p>
+      <table>
+        <thead><tr><th>Tétel</th><th>Forrás / hivatkozás</th><th>Állapot</th><th>Megjegyzés</th><th>Ellenőrző</th><th>Bizonyíték</th><th>Jogalap</th><th>Intézményi döntés</th></tr></thead>
+        <tbody id="items"></tbody>
+      </table>
+    </div>
+    <p class="help">A 31 szabály ellenőrzése nem nyit meg új aloldalt; minden tételhez az eredeti JSON-fájlra mutató forráshivatkozás tartozik. A munkalap státuszait és bizonyítékait exportáld; a tényleges jóváhagyás elkülönített kiadási folyamatban történhet.</p>
+  </main>
+  <footer>Csanádi Sportiskola 2026 · Helyi ellenőrzési segédprogram, statikus FTP-kompatibilis</footer>
+  <script src="tartalmi-hitelesites.js?v=1.12.0" defer></script>
+</body>
+</html>

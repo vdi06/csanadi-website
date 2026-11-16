@@ -3,7 +3,7 @@ import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,en
 import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=csanadi-r29n-20261115';
 import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=csanadi-r29n-20261115';
 import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=csanadi-r29n-20261115';
-import {initMobileQuickNav} from '../mobile/quick-nav.js?v=csanadi-r29n-20261115';
+import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.12.0';
 import {setupSmartSearch} from './search-j-2026.js?v=csanadi-r29n-20261115';
 import {installLanguageHighlights} from './language-20.js?v=csanadi-r29n-20261115';
 import {enhancePersonalizedHome} from './round21-personalize.js?v=csanadi-r29n-20261115';
@@ -20,7 +20,7 @@ import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialS
 import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=csanadi-r29n-20261115';
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r29n-20261115';
  
-import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=csanadi-r29n-20261115';
+import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,norm,safeRoute} from './content.js?v=1.12.0';
 import {renderBlock,dom,listCards} from './blocks.js?v=csanadi-r29n-20261115';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=csanadi-r29n-20261115';
 import {renderSportsSuccesses} from './sports-successes.js?v=csanadi-r29n-20261115';
@@ -28,7 +28,7 @@ import {renderStudentAchievements} from './student-achievements.js?v=csanadi-r29
 import {renderDailySportsNews} from './daily-sport-news.js?v=csanadi-r29n-20261115';
 import {renderDesktopTree} from '../desktop/navigation.js?v=csanadi-r29n-20261115';
 import {renderMobileTree,createMobileMenuSwitcher} from '../mobile/navigation.js?v=csanadi-r29n-20261115';
-import {createSubpageHero} from './subpages-v1.js?v=1.8.0';
+import {createSubpageHero} from './subpages-v1.js?v=1.12.0';
 const app=document.getElementById('app');
 let homeHeroElement=null;
 function syncRouteHero(node,kind){
@@ -81,6 +81,7 @@ const searchInput=document.getElementById('search-input');
 const searchResults=document.getElementById('search-results');
 const searchStatus=document.getElementById('search-status');
 let catalog=null,currentRoute=null,previousSearchFocus=null,lastRawStructure='',refreshTimer=null,smartSearch=null;
+let structureChecking=null,activePageChecking=null;
 let lastRawPage=null;
 const historyScroll=new Map();
 let navigatingHistory=false;
@@ -533,7 +534,12 @@ function renderRoute(options={}){
     app.replaceChildren(dom('div',{class:'cs-page-loading container-xxl','role':'status','aria-live':'polite'},'A kiválasztott oldal betöltése…'));
     node._pagePromise.then(()=>{if(getRoute()===route)renderRoute(options);}).catch(error=>{
       console.error('Oldalbetöltési hiba:',error);
-      if(getRoute()===route){app.replaceChildren(dom('div',{class:'cs-page-load-error container-xxl',role:'alert'},'Az oldal tartalma átmenetileg nem érhető el. Frissítsd az oldalt a próbálkozáshoz.'));markRouteError(route);}
+      if(getRoute()===route){
+        const failure=dom('div',{class:'cs-page-load-error container-xxl',role:'alert'},'Az oldal tartalma átmenetileg nem érhető el.');
+        const retry=dom('button',{type:'button',class:'btn-gold'},'Újrapróbálkozás');
+        retry.addEventListener('click',()=>renderRoute(options));failure.append(retry);
+        app.replaceChildren(failure);markRouteError(route);
+      }
     });
     return;
   }
@@ -700,20 +706,41 @@ function wireEvents(){
   applyTheme();
 }
 async function checkStructure(){
-  try{const value=JSON.stringify(await loadJSON('structure.json',{fresh:true}));
-    if(lastRawStructure&&value!==lastRawStructure){const before=currentRoute;const scroll=window.scrollY;catalog=await buildCatalog();smartSearch?.rebuild(catalog);renderRoute({keepScroll:true});window.scrollTo({top:scroll,behavior:'instant'});notify('A menürendszer újratöltve.');}
-    lastRawStructure=value;
-  }catch(e){console.warn('Ideiglenes struktúrafrissítési hiba, korábbi állapot megtartva:',e);}
+  if(structureChecking)return structureChecking;
+  structureChecking=(async()=>{
+    try{
+      const value=JSON.stringify(await loadJSON('structure.json',{fresh:true}));
+      if(lastRawStructure&&value!==lastRawStructure){
+        const next=await buildCatalog();
+        if(!next.items.length)throw Error('Az új menü nem tartalmaz érvényes oldalt');
+        catalog=next;await smartSearch?.rebuild(catalog);
+        const scroll=window.scrollY;renderRoute({keepScroll:true});window.scrollTo({top:scroll,behavior:'instant'});
+        notify('A menürendszer újratöltve.');
+      }
+      lastRawStructure=value;
+    }catch(e){console.warn('Ideiglenes struktúrafrissítési hiba, korábbi állapot megtartva:',e);}
+  })().finally(()=>{structureChecking=null;});
+  return structureChecking;
 }
 async function checkActivePage(){
-  const item=catalog?.routes?.get(getRoute());if(!item)return;
-  try{const latest=await loadJSON(item.path,{fresh:true}),raw=JSON.stringify(latest);
-    if(lastRawPage!==null&&raw!==lastRawPage){
-      const scroll=window.scrollY;
-      if(latest?.id===item.page.id&&Array.isArray(latest.blocks)){item.page=latest;item._fullLoaded=true;renderRoute({keepScroll:true});window.scrollTo({top:scroll,behavior:'instant'});notify('A megnyitott oldal frissült.');}
-    }
-    lastRawPage=raw;
-  }catch(e){console.warn('Az aktív oldal ideiglenesen nem frissíthető:',e);}
+  if(activePageChecking)return activePageChecking;
+  const route=getRoute(),item=catalog?.routes?.get(route);if(!item)return;
+  activePageChecking=(async()=>{
+    try{
+      const latest=await loadJSON(item.path,{fresh:true}),raw=JSON.stringify(latest);
+      if(getRoute()!==route||catalog?.routes?.get(route)!==item)return;
+      if(latest?.id!==item.page.id||latest.schemaExtensions?.route!==route||latest.lifecycle?.status!=='published'||!Array.isArray(latest.blocks)){
+        console.warn('Az aktív oldal érvénytelen frissítését kihagytuk:',item.path);return;
+      }
+      if(lastRawPage!==null&&raw!==lastRawPage){
+        const scroll=window.scrollY;
+        item.page=latest;item._fullLoaded=true;renderRoute({keepScroll:true});window.scrollTo({top:scroll,behavior:'instant'});
+        notify('A megnyitott oldal frissült.');
+      }
+      lastRawPage=raw;
+    }catch(e){console.warn('Az aktív oldal ideiglenesen nem frissíthető:',e);}
+  })().finally(()=>{activePageChecking=null;});
+  return activePageChecking;
 }
 function beginPolling(){
   const seconds=Math.min(settingNumber('refresh.maximumSeconds'),Math.max(settingNumber('refresh.minimumSeconds'),settingNumber('refresh.structureSeconds')));

@@ -16,7 +16,8 @@ const jsonCache=new Map();
 const CACHE_TTL=8000;
 export async function loadJSON(path,{fresh=false}={}) {
   const url=jsonURL(path),now=Date.now(),prior=jsonCache.get(url);
-  if(!fresh&&prior&&(prior.pending||now<prior.validUntil))return prior.pending||prior.value;
+  if(prior?.pending)return prior.pending;
+  if(!fresh&&prior&&now<prior.validUntil)return prior.value;
   const entry={value:null,validUntil:now+CACHE_TTL,pending:null};
   // Kiadásváltás után sem a böngésző HTTP-gyorsítótárából olvasunk JSON-t.
   entry.pending=fetch(url,{cache:'no-store'}).then(async res=>{

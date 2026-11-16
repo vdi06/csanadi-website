@@ -1,0 +1,79 @@
+{
+  "release": "v1.9.0",
+  "mode": "planning-only",
+  "multiplier": 6,
+  "originalFileCount": 628,
+  "derivativeImages": 353,
+  "existingQrGraphics": 87,
+  "source": "json/assets-inventory.json",
+  "generatedAt": "2026-11-16",
+  "categories": [
+    {
+      "id": "original-images",
+      "label": "Egyedi képek – reszponzív variánsok nélkül",
+      "baseline": 147,
+      "indicativeTarget": 882,
+      "indicativeNewApprovedItemsNeeded": 735,
+      "status": "várakozik",
+      "conditions": [
+        "forrás és jogosult igazolása",
+        "intézményi döntés",
+        "tartalmi aktualitás",
+        "alt vagy dekoratív indok",
+        "méret és teljesítmény",
+        "helyi böngészős próbák"
+      ]
+    },
+    {
+      "id": "videos",
+      "label": "Videók",
+      "baseline": 12,
+      "indicativeTarget": 72,
+      "indicativeNewApprovedItemsNeeded": 60,
+      "status": "várakozik",
+      "conditions": [
+        "forrás és jogosult igazolása",
+        "intézményi döntés",
+        "tartalmi aktualitás",
+        "alt vagy dekoratív indok",
+        "méret és teljesítmény",
+        "helyi böngészős próbák"
+      ]
+    },
+    {
+      "id": "documents",
+      "label": "Dokumentumok",
+      "baseline": 19,
+      "indicativeTarget": 114,
+      "indicativeNewApprovedItemsNeeded": 95,
+      "status": "várakozik",
+      "conditions": [
+        "forrás és jogosult igazolása",
+        "intézményi döntés",
+        "tartalmi aktualitás",
+        "alt vagy dekoratív indok",
+        "méret és teljesítmény",
+        "helyi böngészős próbák"
+      ]
+    },
+    {
+      "id": "nonqr-graphics",
+      "label": "Egyéb grafikák – QR-kódok nélkül",
+      "baseline": 10,
+      "indicativeTarget": 60,
+      "indicativeNewApprovedItemsNeeded": 50,
+      "status": "várakozik",
+      "conditions": [
+        "forrás és jogosult igazolása",
+        "intézményi döntés",
+        "tartalmi aktualitás",
+        "alt vagy dekoratív indok",
+        "méret és teljesítmény",
+        "helyi böngészős próbák"
+      ]
+    }
+  ],
+  "warning": "A számok tervezési viszonyítási alapok, nem megrendelések és nem nyilvános tartalmak. A reszponzív variánsok és QR-kódok nem önálló új fotók.",
+  "uniqueBaselineEstimate": 188,
+  "indicativeTotalNew": 940
+}

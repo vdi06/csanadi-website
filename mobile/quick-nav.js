@@ -12,14 +12,15 @@ export function initMobileQuickNav(){
   const shape=kind==='home'?'M3 10.5 12 3l9 7.5V21h-6v-7H9v7H3V10.5':'M21 21l-4.3-4.3M19 10.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0';
   const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',shape);svg.append(path);return svg;
  };
- const entries=[['home','Kezdőlap',()=>location.hash='#/'],['menu','Menü',()=>document.getElementById('orbit-open')?.click()],['search','Keresés',()=>document.getElementById('search-open')?.click()]];
- entries.forEach(([kind,label,action])=>{const b=el('button','ext26-nav-icon-button');b.type='button';b.dataset.navId=kind;b.setAttribute('aria-label',label);b.title=label;append(b,icon(kind));b.addEventListener('click',action);nav.append(b);});
+ // A mobilos alsó címer független a kezdőlapi képváltóba áthelyezett indítótól.
+ const entries=[['home','Kezdőlap',()=>location.hash='#/'],['menu','Menü',()=>document.dispatchEvent(new Event('csanadi:menu-toggle'))],['search','Keresés',()=>document.getElementById('search-open')?.click()]];
+ entries.forEach(([kind,label,action])=>{const b=el('button','ext26-nav-icon-button');b.type='button';b.dataset.navId=kind;b.setAttribute('aria-label',label);b.title=label;if(kind==='menu')b.setAttribute('aria-controls','site-map-overlay');if(kind==='search')b.setAttribute('aria-controls','search-panel');append(b,icon(kind));b.addEventListener('click',action);nav.append(b);});
  document.body.append(nav);
  const update=()=>{const route=location.hash||'#/';nav.querySelector('[data-nav-id="home"]')?.setAttribute('aria-current',route==='#/'?'page':'false');
   const menuOpen=!document.getElementById('site-map-overlay')?.hidden;
-  nav.querySelector('[data-nav-id="menu"]')?.setAttribute('aria-expanded',String(menuOpen));
+  const menuButton=nav.querySelector('[data-nav-id="menu"]');menuButton?.setAttribute('aria-expanded',String(menuOpen));menuButton?.setAttribute('aria-label',menuOpen?'Főmenü bezárása':'Főmenü megnyitása');
   const searchOpen=!document.getElementById('search-panel')?.hidden;
-  nav.querySelector('[data-nav-id="search"]')?.setAttribute('aria-expanded',String(searchOpen));
+  const searchButton=nav.querySelector('[data-nav-id="search"]');searchButton?.setAttribute('aria-expanded',String(searchOpen));searchButton?.setAttribute('aria-label',searchOpen?'Keresés bezárása':'Keresés megnyitása');
  };
  window.addEventListener('hashchange',update);update();
  for(const overlay of ['site-map-overlay','search-panel']){

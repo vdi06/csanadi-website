@@ -86,6 +86,8 @@ export function initSubpageEnhancements() {
   const header = document.getElementById('site-header');
   const actions = header?.querySelector('.header-actions');
   if (!header || !actions) return;
+  // SPA-újrainicializáláskor ne keletkezzen két egymásra fedő, középre tett címer.
+  if (document.getElementById('cs-subpage-menu')) return;
   const menu = document.createElement('button');
   menu.type = 'button';
   menu.id = 'cs-subpage-menu';

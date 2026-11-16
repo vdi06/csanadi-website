@@ -1,0 +1,11 @@
+@media(max-width:768px){
+ body:has(#ext26-mobile-nav) #site-header .brand,
+ body:has(#ext26-mobile-nav) #site-header .cs-subpage-menu,
+ body:has(#ext26-mobile-nav) #site-header #search-open,
+ body:has(#ext26-mobile-nav) #site-header #mobile-menu-toggle{display:none!important}
+ body:has(#ext26-mobile-nav) #site-header .brand-row{justify-content:flex-end!important}
+ body:has(#ext26-mobile-nav) #site-header .header-actions{margin-left:auto!important}
+ #ext26-mobile-nav button[data-nav-id="menu"]:not([aria-expanded="true"]){background:transparent!important;background-image:none!important;border-color:transparent!important;box-shadow:none!important}
+ #ext26-mobile-nav button[data-nav-id="menu"][aria-expanded="true"],
+ #ext26-mobile-nav button[data-nav-id="search"][aria-expanded="true"]{background:linear-gradient(135deg,var(--sport-green),var(--sport-yellow))!important;color:var(--ink)!important}
+}

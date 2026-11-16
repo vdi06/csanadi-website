@@ -24,7 +24,7 @@
   const actions=document.createElement('span');actions.className='cs-release-actions';
   const dismiss=()=>{toast.hidden=true;clearTimeout(dismissTimer);try{sessionStorage.setItem('csanadi-dismissed-release',version);}catch{}};
   const later=document.createElement('button');later.type='button';later.textContent='Később';later.addEventListener('click',dismiss);
-  const reload=document.createElement('button');reload.type='button';reload.textContent='Frissítés';reload.addEventListener('click',()=>location.reload());
+  const reload=document.createElement('button');reload.type='button';reload.textContent='Frissítés';reload.addEventListener('click',()=>{dismiss();location.reload();});
   actions.append(later,reload);toast.replaceChildren(message,actions);toast.hidden=false;
   clearTimeout(dismissTimer);
   dismissTimer=setTimeout(()=>{if(!toast.hidden&&toast.contains(actions))dismiss();},12000);

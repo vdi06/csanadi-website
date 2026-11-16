@@ -11,7 +11,26 @@ async function configuration(){
  configPromise=configPromise.then(value=>{lastConfig=value;lastConfigAt=Date.now();return value;}).catch(error=>{configPromise=null;throw error;});
  return configPromise;
 }
-const names=config=>({shell:config.performance.cacheVersion,media:config.performance.cacheVersion+'-media',reader:config.performance.cacheVersion+'-offline'});
+const names=config=>({shell:config.performance.cacheVersion,media:config.performance.cacheVersion+'-media',reader:'csanadi-user-offline-pages'});
+async function migrateReaderCaches(keys,destination){
+ const oldNames=keys.filter(key=>/^csanadi-r-v\d+\.\d+\.\d+-offline$/.test(key));
+ const migrated=[];
+ if(!oldNames.length)return migrated;
+ const active=await caches.open(destination);
+ for(const name of oldNames){
+  const old=await caches.open(name);
+  let complete=true;
+  for(const request of await old.keys()){
+   try{
+    if(await active.match(request))continue;
+    const response=await old.match(request);
+    if(response)await active.put(request,response);
+   }catch(error){complete=false;console.warn('Egy korábbi offline mentés egyelőre nem vihető át:',error);}
+  }
+  if(complete)migrated.push(name);
+ }
+ return migrated;
+}
 async function precache(){
  const config=await configuration(),cacheNames=names(config),cache=await caches.open(cacheNames.shell);
  const start=['./','./index.html','./felfedezo.html','./iranytu.html','./iskolai-muhely.html','./orokseg-es-tudastar.html','./tanulas-es-kozosseg.html','./megkozelites-es-tanulas.html','./utmutato.html','./offline.html','./json/config.json','./json/adatok/kozossegi-muhely-23.json','./json/adatok/orokseg-es-tudastar-24.json','./json/adatok/tanulas-kozosseg-25.json','./json/adatok/megkozelites-fejlodes-26.json','./service-worker.js','./release-manifest.json','./assets/media/logo/csanadi-cimer-512.webp'];
@@ -38,16 +57,25 @@ async function handle(request){
  const url=new URL(request.url),config=await configuration(),n=names(config),isPage=request.mode==='navigate',json=/\.json$/i.test(url.pathname),media=/\.(?:avif|webp|png|jpg|jpeg|svg|gif|mp4|webm|pdf)$/i.test(url.pathname);
  // Online MINDEN helyi erőforrás hálózatról érkezik, képek és PDF-ek is.
  // A korábbi média-cache-first módszer egy módosított képet régi változatban tarthatott.
- const cache=await caches.open(media?n.media:n.shell);
- try{const response=await fetch(request,{cache:'no-store'});if(response.ok){await cache.put(request,response.clone());if(media)trimMedia(cache,config).catch(()=>{});}return response;}
+ let response;
+ try{response=await fetch(request,{cache:'no-store'});}
  catch(error){
+  const cache=await caches.open(media?n.media:n.shell);
   const saved=await cache.match(request,{ignoreSearch:true});if(saved)return saved;
   const reader=await caches.open(n.reader),selected=await reader.match(request,{ignoreSearch:true});if(selected)return selected;
   if(isPage)return await cache.match(new URL('index.html',scope),{ignoreSearch:true})||await cache.match(new URL('offline.html',scope),{ignoreSearch:true})||Response.error();
   if(json)return new Response(JSON.stringify({offline:true,temporary:true}),{status:503,headers:{'Content-Type':'application/json'}});
   throw error;
  }
+ if(response.ok){
+  try{
+   const cache=await caches.open(media?n.media:n.shell);
+   await cache.put(request,response.clone());
+   if(media)trimMedia(cache,config).catch(()=>{});
+  }catch(error){console.warn('Az online válasz megérkezett, de a gyorsítótárazás nem sikerült:',error);}
+ }
+ return response;
 }
 self.addEventListener('install',event=>{event.waitUntil(precache().catch(()=>{}).then(()=>self.skipWaiting()));});
-self.addEventListener('activate',event=>{event.waitUntil((async()=>{const config=await configuration(),current=names(config),keys=await caches.keys();await Promise.all(keys.filter(key=>key.startsWith('csanadi-r')&&key!==current.shell&&key!==current.media&&key!==current.reader).map(key=>caches.delete(key)));await self.clients.claim();})().catch(()=>self.clients.claim()));});
+self.addEventListener('activate',event=>{event.waitUntil((async()=>{const config=await configuration(),current=names(config),keys=await caches.keys();const migrated=await migrateReaderCaches(keys,current.reader);await Promise.all(keys.filter(key=>key.startsWith('csanadi-r')&&key!==current.shell&&key!==current.media&&(!key.endsWith('-offline')||migrated.includes(key))).map(key=>caches.delete(key)));await self.clients.claim();})().catch(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const url=new URL(event.request.url);if(!local(url))return;event.respondWith(handle(event.request).catch(()=>Response.error()));});

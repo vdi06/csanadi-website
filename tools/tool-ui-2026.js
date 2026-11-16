@@ -6,7 +6,7 @@
   if(!document.querySelector('link[data-csanadi-tools-unified]')){
     const stylesheet=document.createElement('link');
     stylesheet.rel='stylesheet';
-    stylesheet.href='../css/tools-unified-v1.css?v=1.8.0';
+    stylesheet.href='../css/tools-unified-v1.css?v=1.12.0';
     stylesheet.dataset.csanadiToolsUnified='true';
     document.head.append(stylesheet);
   }
