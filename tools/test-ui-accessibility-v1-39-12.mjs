@@ -83,9 +83,9 @@ check('71 oldal és 748 nyilvántartott fájl továbbra is megmaradt',()=>{
  assert.equal(json('json/assets-inventory.json').items.length,748);
 });
 check('Kiadási azonosító és fő belépőverzió konzisztens',()=>{
- assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.39\.(?:12|13|14)$/);
- assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:12|13|14)/);
- assert.match(read('tools/tartalmi-hitelesites.html'),/tartalmi-hitelesites\.js\?v=1\.39\.(?:12|14)/);
+ assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.39\.(?:12|13|14|15|16)$/);
+ assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:12|13|14|15|16)/);
+ assert.match(read('tools/tartalmi-hitelesites.html'),/tartalmi-hitelesites\.js\?v=1\.39\.(?:12|14|15|16)/);
 });
 const failed=results.filter(item=>!item.ok);
 console.log(JSON.stringify({release:'1.39.12',checks:results.length,passed:results.length-failed.length,failed},null,2));

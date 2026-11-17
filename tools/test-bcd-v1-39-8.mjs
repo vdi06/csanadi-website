@@ -16,8 +16,8 @@ const media=json('json/mediatar.json').items;
 const report=json('dokumentacio/TARTALMI_MINOSEG_V1_39_8.json');
 const newItems=inventory.filter(item=>item.path.startsWith('assets/media/illustrations/'));
 test('Az új kiadás azonosítója és a statikus HTML belépő',()=>{
- assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.39\.(?:9|10|11|12)$/);
- assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:9|10|11|12)/);
+ assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.39\.(?:9|10|11|12|13|14|15|16)$/);
+ assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:9|10|11|12|13|14|15|16)/);
  assert.match(read('tools/eszkoz-mediator.html'),/media-manager-2026\.js\?v=1\.39\.9/);
 });
 test('A 71 oldal, 628 eredeti média és 60 új grafika nyilvántartva',()=>{

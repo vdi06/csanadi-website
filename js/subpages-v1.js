@@ -1,5 +1,5 @@
 // Közös, statikus tárhelyen is működő aloldali finomítások.
-import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.39.14';
+import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.39.16';
 const forbiddenHost = /(^|\.)csanadi-bp\.edu\.hu$/i;
 const legacyRoutes = new Map([
   ['tortenet.html','#/iskolank/tortenet'],
@@ -116,7 +116,12 @@ export function initSubpageEnhancements() {
   // Asztali aloldalon a középre tett körmenügomb megmarad; a kompakt szalag
   // az aktuális oldal nevét és a tényleges olvasási előrehaladást is jelzi.
   const brandRow=header.querySelector('.brand-row');
-  const headerMotion=createSubpageHeaderMotion(brandRow);
+  // A sportjelenet nem része a kért fejlécnek. Nem készül hozzá SVG, gomb,
+  // animációs DOM vagy eseménykezelő; a menü és olvasási jelzés működik tovább.
+  const sportAnimationEnabled=false;
+  const headerMotion=sportAnimationEnabled
+    ? createSubpageHeaderMotion(brandRow)
+    : {render(){},sync(){},updateReading(){}};
   const ribbonLabel=document.createElement('span');
   ribbonLabel.className='cs-subpage-ribbon-title';
   ribbonLabel.setAttribute('aria-hidden','true');

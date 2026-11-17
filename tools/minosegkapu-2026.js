@@ -12,7 +12,8 @@ function localReviewEvidence(items){
  return items.reduce((summary,item)=>{
   const entry=stored[item.key];
   if(entry?.status==='ready')summary.checked++;
-  if(entry?.status==='approved'&&entry.reviewer&&entry.evidence&&entry.decision&&(!item.media||entry.permission))summary.recorded++;
+  const officialSource=(()=>{try{const url=new URL(String(entry?.sourceUrl||''));return url.protocol==='https:'&&url.hostname==='csanadi-bp.edu.hu'&&url.pathname!=='/';}catch{return false;}})();
+  if(entry?.status==='approved'&&entry.reviewer&&entry.evidence&&entry.decision&&(!item.media||entry.permission)&&(!item.news||(officialSource&&/\b\d{4}-\d{2}-\d{2}\b/.test(entry.evidence))))summary.recorded++;
   return summary;
  },{checked:0,recorded:0});
 }
@@ -31,7 +32,7 @@ function summarize(){
  pick('quality-status').textContent=`Ellenőrzés lezárva: ${totals.ok} sikeres, ${totals.warning} figyelmeztetés, ${totals.error} hiba. A figyelmeztetések kézi jóváhagyást igényelhetnek.`;
  const readiness=state.readiness;
  pick('publication-gate-status').textContent=readiness
-  ?`Nem tekinthető automatikusan közzétételre jóváhagyottnak. Intézményi ellenőrzést igényel: ${readiness.priorityPages} oldal és ${readiness.pendingMediaRights} médiajog. Helyi munkalapon igazoló mezőkkel rögzítve: ${readiness.localPageEvidence}/${readiness.priorityPages} oldal, ${readiness.localMediaEvidence}/${readiness.pendingMediaRights} média. Fájl-/kapcsolati hiba: ${totals.error}. A feltöltéshez külön intézményi jóváhagyás szükséges.`
+  ?`Nem tekinthető automatikusan közzétételre jóváhagyottnak. Ellenőrizendő: ${readiness.priorityPages} oldal, ${readiness.pendingMediaRights} médiajog, ${readiness.newsWithoutOfficialSources} hírforrás. Helyben igazoló mezőkkel rögzítve: ${readiness.localPageEvidence}/${readiness.priorityPages} oldal, ${readiness.localMediaEvidence}/${readiness.pendingMediaRights} média és ${readiness.localNewsEvidence}/${readiness.newsWithoutOfficialSources} hír. Hír-HTTPS-források ellenőrzési hiányosságai: ${readiness.newsWithoutOfficialSources}. Fájl-/kapcsolati hiba: ${totals.error}. A feltöltéshez külön intézményi jóváhagyás szükséges.`
   :'Kiadási döntés nem hozható: az ellenőrzés hiányos vagy megszakadt.';
  pick('quality-download').disabled=false;pick('quality-csv').disabled=false;
 }
@@ -90,10 +91,13 @@ async function audit(){
   const pendingItems=registry.filter(item=>item.rights?.clearance==='pending');
   const reviewedPages=localReviewEvidence(priorities.map(item=>({key:'page:'+String(item.file||'').replace(/^json\//,'')})));
   const reviewedMedia=localReviewEvidence(pendingItems.map(item=>({key:'media:'+item.id,media:true})));
+  const newsMissing=(news.items||[]).filter(item=>item.status==='verified'&&newsFailures.some(failure=>failure.id===item.id));
+  const reviewedNews=localReviewEvidence(newsMissing.map(item=>({key:'news:'+item.id,news:true})));
   state.readiness={priorityPages:priorities.length,pendingMediaRights:pending,
-   localPageEvidence:reviewedPages.recorded,localMediaEvidence:reviewedMedia.recorded,
+   newsWithoutOfficialSources:newsMissing.length,
+   localPageEvidence:reviewedPages.recorded,localMediaEvidence:reviewedMedia.recorded,localNewsEvidence:reviewedNews.recorded,
    institutionalApprovalVerified:false,ftpPublished:false};
-  add('warning','Közzététel jóváhagyása',`A helyi munkalap kitöltése nem jelent szerzői jogi vagy intézményi döntést; ${priorities.length} kiemelt oldal és ${pending} felhasználási jog továbbra is függőben.`);
+  add('warning','Közzététel jóváhagyása',`A helyi munkalap kitöltése nem jelent szerzői jogi vagy intézményi döntést; ${priorities.length} kiemelt oldal, ${pending} felhasználási jog és ${newsMissing.length} hivatalos hírforrás továbbra is ellenőrzendő.`);
   const minimum=config.runtime.release.minimumManifestEntries;const manifestCount=Object.keys(source).length;
   add(manifestCount>=minimum?'ok':'error','FTP-manifest',`${manifestCount} állomány, az elvárt minimum: ${minimum}.`,'release-manifest.json');
   const html=await fetch('../index.html',{cache:'no-store'}).then(response=>{if(!response.ok)throw Error('Kezdőlap nem érhető el.');return response.text();});

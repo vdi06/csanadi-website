@@ -16,6 +16,8 @@ function updateHomeHeader(){
  else{
   const hero=select('#global-hero');
   const bottom=hero?.getBoundingClientRect().bottom??Infinity;
+  // A 30 px-es holtsáv a valóban kigördülő képsávhoz kötődik; az egyetlen
+  // meglévő menüsor magasságváltozásától a váltás nem pattan vissza.
   if(!homeHeroFolded&&bottom<=84)homeHeroFolded=true;
   else if(homeHeroFolded&&bottom>=114)homeHeroFolded=false;
  }

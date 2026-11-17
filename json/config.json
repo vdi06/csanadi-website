@@ -168,7 +168,7 @@
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r-v1.39.14",
+    "cacheVersion": "csanadi-r-v1.39.16",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,
@@ -183,8 +183,8 @@
       "enableAutoplay": true
     },
     "subpageHeaderMotion": {
-      "enabled": true,
-      "autoplay": true,
+      "enabled": false,
+      "autoplay": false,
       "profiles": {
         "#/iskolank": { "scene": "dribble", "label": "ISKOLÁNK", "caption": "Sport és közösség, egy ritmusban" },
         "#/iskolank/tortenet": { "scene": "relay", "label": "ISKOLATÖRTÉNET", "caption": "A hagyomány stafétája" },

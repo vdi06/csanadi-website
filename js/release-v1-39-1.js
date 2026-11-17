@@ -37,15 +37,12 @@ function installHomeShell(){
   if(lastSource!==url){image.src=url;lastSource=url;}
   preview.href=link?.getAttribute('href')||'#/sport';
   preview.setAttribute('aria-label','Kiemelt tartalom: '+title);
-  if(!document.body.classList.contains('cs-home-condensed')){
-   // Természetes magasságot tárolunk a pontos, animálható összecsukáshoz.
-   const height=Math.max(hero.scrollHeight,hero.getBoundingClientRect().height);
-   if(height>70)hero.style.setProperty('--cs39-hero-expanded',Math.ceil(height)+'px');
-  }
+  // A nagyméretű képváltó mindig a dokumentum természetes folyamatában marad.
+  // A képmagasság scroll közbeni írása ResizeObserver-visszacsatolást és
+  // átmeneti elcsúszást okozhatna, ezért itt csak a kis előnézetet szinkronizáljuk.
  };
  const queue=()=>{if(queued)return;queued=true;requestAnimationFrame(sync);};
  if('MutationObserver'in window)new MutationObserver(queue).observe(hero,{childList:true,subtree:true,characterData:true});
- if('ResizeObserver'in window)new ResizeObserver(queue).observe(hero);
  const syncAccessibility=()=>{
   const condensed=document.body.classList.contains('cs-home-header')&&document.body.classList.contains('cs-home-condensed');
   // A vizuálisan összecsukott képváltó nem maradhat billentyűzettel fókuszálható.

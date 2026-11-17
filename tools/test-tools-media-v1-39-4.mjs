@@ -13,8 +13,8 @@ const tests=[];
 function check(name,fn){try{fn();tests.push({name,ok:true});}catch(error){tests.push({name,ok:false,error:error.message});}}
 
 check('Az új változat verziója és a statikus FTP-működés',()=>{
-  assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.39\.(?:9|10|11|12)$/);
-  assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:9|10|11|12)/);
+  assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.39\.(?:9|10|11|12|13|14|15|16)$/);
+  assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:9|10|11|12|13|14|15|16)/);
   assert.equal(json('json/oldalindex.json').searchIndexRevision,'1.39.9');
 });
 check('A 71 oldalt, a 628 alapfájlt és a 120 új grafikát megtartottuk',()=>{

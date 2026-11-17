@@ -10,6 +10,7 @@
     documents: '../json/adatok/dokumentumok.json',
     assets: '../json/assets-inventory.json',
     mediaRights: '../json/mediatar.json',
+    newsSources: '../json/adatok/hirek-hivatalos.json',
     criteria: '../dokumentacio/SZABALYOK_31_ALOLDAL_V1_9.json'
   };
   const statuses = ['pending', 'review', 'ready', 'approved'];
@@ -27,6 +28,10 @@
     return '"'+inert.replace(/"/g,'""')+'"';
   };
   const clean = (value, limit) => String(value ?? '').trim().slice(0, limit);
+  function officialSourceUrl(value){
+    try{const url=new URL(String(value||''));return url.protocol==='https:'&&url.hostname==='csanadi-bp.edu.hu'&&url.pathname!=='/';}
+    catch{return false;}
+  }
   try {
     const data = JSON.parse(localStorage.getItem(storageKey) || '{}');
     if (data && typeof data === 'object' && !Array.isArray(data)) state.changes = data;
@@ -50,12 +55,16 @@
     const missing=[];
     if(!entry.reviewer)missing.push('ellenőrző');
     if(!entry.evidence)missing.push('forrás és dátum');
+    if(kind==='newsSources'){
+      if(!officialSourceUrl(entry.sourceUrl))missing.push('intézményi HTTPS-forráscím');
+      if(!/\b\d{4}-\d{2}-\d{2}\b/.test(String(entry.evidence||'')))missing.push('ellenőrzés dátuma (ÉÉÉÉ-HH-NN)');
+    }
     if(['assets','mediaRights'].includes(kind)&&!entry.permission)missing.push('felhasználási jogosultság');
     if(!entry.decision)missing.push('intézményi döntés');
     return missing;
   }
   function currentFor(kind,row) {
-    const entry=state.changes[row.key] || { status: 'pending', note: '', reviewer: '', evidence: '', permission: '', decision: '' };
+    const entry=state.changes[row.key] || { status: 'pending', note: '', reviewer: '', evidence: '', sourceUrl:'',permission: '', decision: '' };
     return entry.status==='approved'&&missingApprovalFields(kind,entry).length?{...entry,status:'review'}:entry;
   }
   function current(row){return currentFor(state.kind,row);}
@@ -99,6 +108,10 @@
         key: 'media:' + item.id, title: item.id, path: item.original?.path || '',
         description: [item.alt, item.caption, item.rights?.license].filter(Boolean).join(' · '),
         sourceStatus: 'Felhasználási jog még nincs igazolva · ' + (item.rights?.holder || 'Ismeretlen jogosult')
+      }));
+      if(state.kind==='newsSources')state.rows=(data.items||[]).filter(item=>item.status==='verified').map(item=>({
+        key:'news:'+item.id,title:item.title||item.id,path:'json/adatok/hirek-hivatalos.json',
+        description:item.summary||'',sourceStatus:'A verified jelölés NEM igazolás: a hír jelenleg csak helyi #/ útvonalat tartalmaz, hivatalos HTTPS-forrás nélkül.'
       }));
       if (state.kind === 'criteria') {
         if (data.pages !== 65 || data.criteria !== 31 || !Array.isArray(data.open)) throw Error('A 31 szabályos munkalap formátuma hibás.');
@@ -173,7 +186,7 @@
         source.append(link);
       } else source.append(text('span', row.path));
       source.append(text('p', row.sourceStatus));
-      if(['priority','mediaRights'].includes(state.kind)){
+      if(['priority','mediaRights','newsSources'].includes(state.kind)){
         const hint=text('p',approvalHint(state.kind,item));
         hint.className='approval-requirements';source.append(hint);
       }
@@ -206,9 +219,10 @@
         makeField(row, 'reviewer', 'Ellenőrző neve', 120),
         makeField(row, 'evidence', 'Forrás és dátum'),
         makeField(row, 'permission', ['assets','mediaRights'].includes(state.kind) ? 'Felhasználási jog, jogosult' : 'Jogalap / megjegyzés', 300),
-        makeField(row, 'decision', 'Intézményi döntés azonosítója / megjegyzés', 300)
+        makeField(row, 'decision', 'Intézményi döntés azonosítója / megjegyzés', 300),
+        state.kind==='newsSources'?makeField(row,'sourceUrl','Hivatalos HTTPS-forrás URL',350):text('span','–')
       ];
-      const columnTitles = ['Állapot', 'Megjegyzés', 'Ellenőrző', 'Bizonyíték', 'Jogalap', 'Intézményi döntés'];
+      const columnTitles = ['Állapot', 'Megjegyzés', 'Ellenőrző', 'Bizonyíték', 'Jogalap', 'Intézményi döntés', 'HTTPS-forrás'];
       for (const [index, control] of controls.entries()) {
         const td = document.createElement('td');
         td.dataset.label = columnTitles[index];
@@ -233,13 +247,13 @@
   $('state').addEventListener('change', render);
   $('exportcsv').addEventListener('click', () => {
     const rows = [
-      ['Kulcs', 'Cím', 'Útvonal', 'Forrásstátusz', 'Helyi munkastátusz', 'Megjegyzés', 'Ellenőrző', 'Bizonyíték', 'Jogalap', 'Intézményi döntés', 'Módosítva'],
-      ...payload().map(row => [row.key, row.title, row.path, row.sourceStatus, row.status, row.note, row.reviewer, row.evidence, row.permission, row.decision, row.date || ''])
+      ['Kulcs', 'Cím', 'Útvonal', 'Forrásstátusz', 'Helyi munkastátusz', 'Megjegyzés', 'Ellenőrző', 'Bizonyíték', 'Hivatalos HTTPS-forrás', 'Jogalap', 'Intézményi döntés', 'Módosítva'],
+      ...payload().map(row => [row.key, row.title, row.path, row.sourceStatus, row.status, row.note, row.reviewer, row.evidence, row.sourceUrl, row.permission, row.decision, row.date || ''])
     ];
     download('csanadi_hitelesitesi_munkalap_' + state.kind + '.csv', '\ufeff' + rows.map(cols => cols.map(quote).join(';')).join('\r\n'), 'text/csv;charset=utf-8');
   });
   $('exportjson').addEventListener('click', () => download('csanadi_hitelesitesi_munkalap_' + state.kind + '.json',
-    JSON.stringify({ schemaVersion: '1.1.0', kind: state.kind, generatedAt: new Date().toISOString(), records: payload() }, null, 2), 'application/json'));
+    JSON.stringify({ schemaVersion: '1.2.0', kind: state.kind, generatedAt: new Date().toISOString(), records: payload() }, null, 2), 'application/json'));
   $('exportfocus').addEventListener('click',async()=>{
     const button=$('exportfocus');button.disabled=true;
     $('status').textContent='A 23+69 tételes összesített munkalap összeállítása…';
@@ -264,6 +278,60 @@
     }catch(error){$('status').textContent='Az összesített export nem sikerült: '+error.message;}
     finally{button.disabled=false;}
   });
+  $('exportall').addEventListener('click',async()=>{
+    const button=$('exportall');button.disabled=true;
+    $('status').textContent='A 23+69+5 feladatból álló hitelesítési munkalap összeállítása…';
+    try{
+      const responses=await Promise.all([kinds.priority,kinds.mediaRights,kinds.newsSources].map(url=>fetch(url,{cache:'no-store'})));
+      if(responses.some(response=>!response.ok))throw Error('Legalább egy forrásadat nem érhető el.');
+      const [report,library,news]=await Promise.all(responses.map(response=>response.json()));
+      const priorities=report.priorities||[],media=(library.items||[]).filter(item=>item.rights?.clearance==='pending'),newsItems=(news.items||[]).filter(item=>item.status==='verified');
+      if(priorities.length!==23||media.length!==69||newsItems.length!==5)throw Error('A munkalisták elemszáma eltér (23+69+5); ismételt ellenőrzés szükséges.');
+      const worklist=[
+        ...priorities.map(item=>({kind:'priority',key:'page:'+item.file.replace(/^json\//,''),title:item.title,path:item.file})),
+        ...media.map(item=>({kind:'mediaRights',key:'media:'+item.id,title:item.id,path:item.original?.path||''})),
+        ...newsItems.map(item=>({kind:'newsSources',key:'news:'+item.id,title:item.title,path:'json/adatok/hirek-hivatalos.json'}))
+      ];
+      const rows=[['Adatkör','Kulcs','Cím','Forrásfájl','Helyi munkastátusz','Hiányzó igazoló adatok','Ellenőrző','Forrás és dátum','Intézményi HTTPS-forrás','Jogalap','Intézményi döntés','Megjegyzés','Módosítva']];
+      for(const item of worklist){
+        const entry=currentFor(item.kind,item);
+        rows.push([item.kind,item.key,item.title,item.path,entry.status||'pending',missingApprovalFields(item.kind,entry).join(', '),entry.reviewer,entry.evidence,entry.sourceUrl,entry.permission,entry.decision,entry.note,entry.date||'']);
+      }
+      download('csanadi_23_oldal_69_media_5_hir_jovahagyasi_lista.csv','\ufeff'+rows.map(cells=>cells.map(quote).join(';')).join('\r\n'),'text/csv;charset=utf-8');
+      $('status').textContent='97 tételes CSV kész. A helyi munkastátuszok és forráscímek nem jelentik az intézményi jóváhagyást.';
+    }catch(error){$('status').textContent='Az összesített export nem sikerült: '+error.message;}
+    finally{button.disabled=false;}
+  });
+  $('exportaudit').addEventListener('click',async()=>{
+    const button=$('exportaudit');button.disabled=true;
+    $('status').textContent='A három adatkör géppel feldolgozható audit-JSON-ja készül…';
+    try{
+      const responses=await Promise.all([kinds.priority,kinds.mediaRights,kinds.newsSources].map(url=>fetch(url,{cache:'no-store'})));
+      if(responses.some(response=>!response.ok))throw Error('A három forráslista egyike nem érhető el.');
+      const [priority,media,news]=await Promise.all(responses.map(response=>response.json()));
+      const sourceRows=[
+        ...(priority.priorities||[]).map(entry=>({kind:'priority',key:'page:'+entry.file.replace(/^json\//,''),title:entry.title,path:entry.file})),
+        ...(media.items||[]).filter(entry=>entry.rights?.clearance==='pending').map(entry=>({kind:'mediaRights',key:'media:'+entry.id,title:entry.id,path:entry.original?.path||''})),
+        ...(news.items||[]).filter(entry=>entry.status==='verified').map(entry=>({kind:'newsSources',key:'news:'+entry.id,title:entry.title,path:'json/adatok/hirek-hivatalos.json'}))
+      ];
+      if(sourceRows.length!==97)throw Error('A 23+69+5 munkalap megváltozott; ismételt vizsgálat szükséges.');
+      const counts={priority:{total:0,locallyComplete:0},mediaRights:{total:0,locallyComplete:0},newsSources:{total:0,locallyComplete:0}};
+      const records=sourceRows.map(source=>{
+        const current=currentFor(source.kind,source),missing=missingApprovalFields(source.kind,current),complete=!missing.length;
+        counts[source.kind].total++;if(complete)counts[source.kind].locallyComplete++;
+        return {...source,localStatus:current.status||'pending',localFieldsComplete:complete,
+          missingEvidence:missing,reviewer:current.reviewer||'',evidence:current.evidence||'',
+          sourceUrl:current.sourceUrl||'',permission:current.permission||'',decision:current.decision||'',
+          note:current.note||'',updatedAt:current.date||''};
+      });
+      const report={schemaVersion:'1.0.0',type:'csanadi-local-content-audit',release:'1.39.16',
+        generatedAt:new Date().toISOString(),institutionalApprovalVerified:false,ftpPublished:false,
+        warning:'A helyi igazoló mezők kitöltése és az URL alakjának ellenőrzése NEM bizonyít valódi intézményi jóváhagyást vagy a forrás ténybeli helyességét.',counts,records};
+      download('csanadi_97_teteles_helyi_audit_v1_39_16.json',JSON.stringify(report,null,2),'application/json');
+      $('status').textContent='A 97 tételes helyi audit-JSON exportálva. Közzététel és jóváhagyás nem történt.';
+    }catch(error){$('status').textContent='Audit-JSON nem készült: '+error.message;}
+    finally{button.disabled=false;}
+  });
   $('importjson').addEventListener('change', async event => {
     const file = event.target.files?.[0];
     event.target.value = '';
@@ -279,7 +347,7 @@
         if (!row || !allowed.has(row.key) || !statuses.includes(row.status)) continue;
         const entry = {
           status: row.status, note: clean(row.note, 350), reviewer: clean(row.reviewer, 120),
-          evidence: clean(row.evidence, 350), permission: clean(row.permission, 300),
+          evidence: clean(row.evidence, 350),sourceUrl:clean(row.sourceUrl,350),permission: clean(row.permission, 300),
           decision: clean(row.decision, 300), date: clean(row.date, 40)
         };
         if (entry.status === 'approved' && !completeApproval(row, entry)) entry.status = 'review';

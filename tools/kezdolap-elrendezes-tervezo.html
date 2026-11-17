@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Kezdőoldal-elrendezés tervező · Csanádi Sportiskola</title>
+  <link rel="icon" href="../assets/media/logo/csanadi-cimer-512.webp">
+  <link rel="stylesheet" href="../css/round17-tools.css">
+  <link rel="stylesheet" href="kezdolap-elrendezes-tervezo.css?v=1.39.16">
+  <script src="tool-ui-2026.js?v=1.39.16" defer></script>
+  <script src="kezdolap-elrendezes-tervezo.js?v=1.39.16" defer></script>
+</head>
+<body>
+  <header class="admin-head">
+    <div class="admin-logo"><img src="../assets/media/logo/csanadi-cimer-512.webp" width="56" height="56" alt=""><div><span>CSANÁDI SPORTISKOLA</span><h1>Kezdőoldal-elrendezés tervező</h1></div></div>
+    <nav aria-label="Visszalépés"><a href="index.html">Munkaközpont</a><a href="../index.html#/">Honlap</a><button id="tool-theme-toggle" type="button">◐ Megjelenés</button></nav>
+  </header>
+  <main class="admin-layout planner-layout" id="cs-tools-main">
+    <p class="admin-alert"><strong>Így tudod megmutatni, mit hova szeretnél:</strong> válaszd a normál vagy a legörgetett nézetet, fogd meg és húzd a képernyőn az elemeket. Kattintással kijelölheted őket, a jobb oldali mezőkben pontosíthatod a feliratukat és méretüket. A két nézet külön szerkeszthető, majd a terv másolható vagy JSON-fájlként letölthető és elküldhető nekem.</p>
+    <p class="planner-warning"><strong>Csak tervező:</strong> az elrendezés itt nem módosítja az éles kezdőoldalt, nem küld adatot szerverre. A tervet a böngésződ helyben megőrzi. Ne írj bele személyes vagy titkos információt.</p>
+    <div class="planner-toolbar" role="group" aria-label="Tervezési nézetek">
+      <button type="button" data-view="normal" aria-pressed="true">① Normál kezdőoldal</button>
+      <button type="button" data-view="scrolled" aria-pressed="false">② Legörgetett fejléc</button>
+      <button type="button" data-view="compare" aria-pressed="false">⇄ Mindkettő összehasonlítása</button>
+    </div>
+    <div class="planner-body">
+      <section class="planner-workspace" aria-label="Elrendezéstervek">
+        <div class="plan-stages" id="plan-stages">
+          <section class="plan-stage" data-mode="normal" aria-label="Normál kezdőoldal látványterve">
+            <div class="plan-stage-head"><h2>Normál nézet</h2><span>Kezdőoldal, görgetés előtt</span></div>
+            <div class="plan-stage-frame"><div class="plan-screen" id="screen-normal" aria-label="Normál elrendezés: az elemek húzással vagy nyílbillentyűkkel helyezhetők át">
+              <div class="plan-backdrop plan-backdrop-normal" aria-hidden="true"><div class="plan-backdrop-head"></div><div class="plan-backdrop-hero"></div><div class="plan-backdrop-content"><span>Hírek és további kezdőoldali tartalmak</span></div></div>
+            </div></div>
+          </section>
+          <section class="plan-stage" data-mode="scrolled" aria-label="Legörgetett fejléc látványterve" hidden>
+            <div class="plan-stage-head"><h2>Legörgetett nézet</h2><span>Amikor a képváltó már eltűnt</span></div>
+            <div class="plan-stage-frame"><div class="plan-screen" id="screen-scrolled" aria-label="Legörgetett elrendezés: az elemek húzással vagy nyílbillentyűkkel helyezhetők át">
+              <div class="plan-backdrop plan-backdrop-scrolled" aria-hidden="true"><div class="plan-backdrop-head"></div><div class="plan-backdrop-content"><span>Az oldal tartalma tovább görgethető</span></div></div>
+            </div></div>
+          </section>
+        </div>
+        <p class="plan-stage-help">Tipp: a nyílbillentyűkkel 1%-os, Shift + nyílbillentyűkkel 5%-os lépésekben mozgathatsz. A „Mindkettő” nézetben is szerkeszthetsz.</p>
+        <label for="plan-note" class="planner-label">Magyarázat a kért módosításhoz</label>
+        <textarea id="plan-note" rows="3" maxlength="2500" placeholder="Pl.: a normál fejlécben maradjon a logó balra, a képváltó közvetlenül alatta; legörgetve csak a középső képes gomb jelenjen meg…"></textarea>
+        <div class="planner-export">
+          <button type="button" id="plan-copy">📋 Terv másolása a ChatGPT-nek</button>
+          <button type="button" id="plan-download">↓ Terv letöltése JSON-ként</button>
+          <button type="button" id="plan-import">↑ Korábbi terv betöltése</button>
+          <button type="button" id="plan-print">Nyomtatható nézet</button>
+          <button type="button" id="plan-reset" class="planner-quiet">Alaphelyzet</button>
+          <input id="plan-file" type="file" accept=".json,application/json" hidden aria-label="Korábban elmentett elrendezésterv JSON-fájlja">
+        </div>
+        <label for="plan-output" class="planner-label">Másolható tervadat – a másolás után ezt ide is kiírjuk</label>
+        <textarea id="plan-output" rows="4" readonly placeholder="A terv másolásakor itt is megjelenik a teljes leírás, amit elküldhetsz nekem."></textarea>
+        <p class="planner-status" id="plan-status" role="status" aria-live="polite">A két kezdőoldali állapot készen áll a szerkesztésre.</p>
+      </section>
+      <aside class="planner-controls" aria-label="Kijelölt elem beállításai">
+        <h2>Elemek elhelyezése</h2>
+        <label for="plan-add-type">Új elem típusa</label>
+        <select id="plan-add-type">
+          <option value="brand">Iskolai logó és név</option>
+          <option value="nav">Menüsáv</option>
+          <option value="mini">Középső, képes gomb</option>
+          <option value="hero">Képváltó képe</option>
+          <option value="arrow">Képváltó nyílgomb</option>
+          <option value="button">Egyéb gomb / KRÉTA / keresés</option>
+          <option value="text">Szöveg / cím</option>
+        </select>
+        <button type="button" id="plan-add" class="plan-wide">+ Elem hozzáadása az aktív nézethez</button>
+        <div id="plan-inspector-empty" class="plan-inspector-empty">Kattints egy elemre a látványterven, és itt módosíthatod.</div>
+        <div id="plan-inspector" hidden>
+          <div class="plan-inspector-title" id="plan-inspector-title"></div>
+          <label for="plan-label">Megjelenő felirat</label><input id="plan-label" maxlength="120">
+          <div class="plan-input-grid">
+            <label for="plan-x">Balról (%)<input id="plan-x" type="number" min="0" max="99" step="1"></label>
+            <label for="plan-y">Fentről (%)<input id="plan-y" type="number" min="0" max="99" step="1"></label>
+            <label for="plan-w">Szélesség (%)<input id="plan-w" type="number" min="4" max="100" step="1"></label>
+            <label for="plan-h">Magasság (%)<input id="plan-h" type="number" min="5" max="100" step="1"></label>
+          </div>
+          <label class="plan-checkbox"><input id="plan-visible" type="checkbox" checked> Elem megjelenítése</label>
+          <div class="plan-inspector-actions"><button type="button" id="plan-duplicate">Másolás</button><button type="button" id="plan-delete" class="planner-danger">Eltávolítás</button></div>
+        </div>
+        <h3>Az aktív nézet elemei</h3>
+        <ul id="plan-items" class="plan-list" aria-label="Elemek listája"></ul>
+        <p class="plan-privacy">A mentett terv csupán elhelyezési javaslat; a tényleges honlapkódot a terv jóváhagyása után készítem el.</p>
+      </aside>
+    </div>
+  </main>
+  <footer class="admin-foot">Csanádi Sportiskola · Helyi elrendezéstervező · v1.39.16</footer>
+</body>
+</html>

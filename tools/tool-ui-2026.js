@@ -29,6 +29,7 @@
   // a korábbi saját menüiket és szerkesztési folyamatukat is megtartják.
   const pages=[
     ['index.html','Munkaközpont'],
+    ['kezdolap-elrendezes-tervezo.html','Kezdőlap tervezése'],
     ['eszkoz-mediator.html','Média és fájlok'],
     ['dokumentum-szerkeszto.html','Dokumentumadatok'],
     ['oldal-json-szerkeszto.html','Oldalszerkesztő'],

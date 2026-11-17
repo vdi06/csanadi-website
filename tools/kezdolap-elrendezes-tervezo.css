@@ -1,0 +1,62 @@
+/* v1.39.16 · Kétállapotú, helyi kezdőoldal-elrendezéstervező. */
+.planner-layout{width:min(1510px,calc(100% - 28px))}
+.planner-layout h2{margin:0;font-size:1.1rem}
+.planner-warning{padding:12px 15px;background:color-mix(in srgb,var(--sport-yellow),transparent 88%);border:1px solid var(--line);border-radius:12px;font-size:.91rem}
+.planner-toolbar,.planner-export{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:16px 0}
+.planner-toolbar button{border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:700;min-height:46px}
+.planner-toolbar button[aria-pressed="true"]{background:#153553;color:#fff;border-color:#7cb4da}
+.planner-body{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:17px;align-items:start}
+.planner-workspace,.planner-controls{min-width:0}
+.plan-stages{display:grid;gap:14px}
+.plan-stages.is-compare{grid-template-columns:repeat(2,minmax(0,1fr))}
+.plan-stage[hidden],#plan-inspector[hidden],#plan-inspector-empty[hidden]{display:none!important}
+.plan-stage{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.plan-stage-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:5px;padding:11px 14px}
+.plan-stage-head h2{font-size:1rem}.plan-stage-head span{font-size:.81rem;color:var(--muted)}
+.plan-stage-frame{overflow-x:auto;overscroll-behavior-x:contain;padding:0 8px 10px}
+.plan-screen{position:relative;min-width:690px;aspect-ratio:1140/490;overflow:hidden;isolation:isolate;background:#fffdf7;border:1px solid #b8c7d3;border-radius:4px;user-select:none;-webkit-user-select:none}
+.plan-stages.is-compare .plan-screen{min-width:690px}
+.plan-backdrop{position:absolute;inset:0;z-index:0;pointer-events:none}
+.plan-backdrop-head{height:23%;background:linear-gradient(110deg,#15385b,#275c83);border-bottom:5px solid #e5b94a}
+.plan-backdrop-hero{height:56%;background:linear-gradient(125deg,#7faec9,#c9e2d2 45%,#e9cba1);border:1px solid #a6bac6}
+.plan-backdrop-content{display:flex;align-items:center;justify-content:center;height:21%;background:#f9f1df;color:#576679;font-size:.87rem}
+.plan-backdrop-scrolled .plan-backdrop-head{height:22%}
+.plan-backdrop-scrolled .plan-backdrop-content{height:78%;background:repeating-linear-gradient(180deg,#f9f3e5 0,#f9f3e5 80px,#f3e8d5 80px,#f3e8d5 90px)}
+.plan-screen .plan-piece{position:absolute;z-index:3;display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;padding:5px 8px;overflow:hidden;text-overflow:ellipsis;white-space:normal;text-align:center;line-height:1.15;font-size:clamp(.71rem,1.2vw,.94rem);font-weight:750;border:2px solid #e7edf7;border-radius:9px;color:#fdfdfc;background:#113b5d;box-shadow:0 3px 8px #091d3255;cursor:grab;touch-action:none;transition:box-shadow .12s ease;outline-offset:1px}
+.plan-screen .plan-piece:focus-visible,.plan-screen .plan-piece.is-selected{outline:3px solid #ffca4d;outline-offset:0;z-index:10}
+.plan-screen .plan-piece:active{cursor:grabbing}
+.plan-screen .plan-piece[data-type="brand"]{justify-content:flex-start;background:#f6dfaa;color:#1f3850;border-color:#e5b847}
+.plan-screen .plan-piece[data-type="nav"]{background:#1d5270}
+.plan-screen .plan-piece[data-type="hero"]{border-radius:0;border-color:#c0d5d9;background:linear-gradient(128deg,#589eb2,#b2d1c9 48%,#bfae83);color:#142d43;text-shadow:0 1px 2px #fff9;box-shadow:none}
+.plan-screen .plan-piece[data-type="mini"]{background:linear-gradient(115deg,#4c829c 0 29%,#123e5b 30% 100%);border-color:#dfbb58;border-radius:5px}
+.plan-screen .plan-piece[data-type="arrow"]{background:#1b355a;color:#ffe6a4;border-radius:2px;padding:2px}
+.plan-screen .plan-piece[data-type="text"]{background:#fff1cb;color:#173c53;border-color:#a7bfcb}
+.plan-screen .plan-piece[data-visible="false"]{opacity:.24;outline:2px dashed #b03c54;outline-offset:-2px;box-shadow:none}
+.plan-screen .plan-piece .plan-piece-name{display:block;overflow:hidden;text-overflow:ellipsis;max-height:100%;overflow-wrap:anywhere}
+.plan-stage-help{font-size:.86rem;margin:10px 0 17px;color:var(--muted)}
+.planner-label{display:block;font-weight:750;margin:10px 0 5px}
+#plan-note,#plan-output,.planner-controls input,.planner-controls select{display:block;width:100%;min-width:0;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px;font:inherit}
+#plan-note,#plan-output{resize:vertical}
+.planner-export button{min-height:44px}.planner-export button:first-child{background:#174e73;color:white}.planner-quiet{background:transparent!important}
+.planner-status{border-radius:10px;border:1px solid var(--line);padding:11px 13px;background:var(--card);font-size:.87rem}
+.planner-controls{border:1px solid var(--line);background:var(--card);padding:15px;border-radius:13px;position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto}
+.planner-controls label{display:block;margin:10px 0 5px;font-size:.87rem;font-weight:700}
+.planner-controls h3{font-size:.95rem;margin:20px 0 7px}
+.planner-controls button{min-height:42px}
+.planner-controls .plan-wide{width:100%;margin-top:9px;background:#194d6d;color:#fff}
+.plan-inspector-empty{padding:12px;margin:16px 0;background:var(--light);border:1px dashed var(--line);border-radius:9px;font-size:.88rem}
+.plan-inspector-title{font-size:.95rem;font-weight:800;margin-top:17px;padding-top:10px;border-top:1px solid var(--line)}
+.plan-input-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.plan-input-grid label{margin:0}.plan-input-grid input{margin-top:3px}
+.plan-checkbox{display:flex!important;align-items:center;gap:9px}.plan-checkbox input{width:auto;accent-color:#224d73}
+.plan-inspector-actions{display:flex;gap:8px;margin-top:12px}.plan-inspector-actions button{flex:1}
+.planner-danger{color:#fff;background:#9d3140!important;border-color:#9d3140!important}
+.plan-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.plan-list button{display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;gap:8px;background:var(--light);border:1px solid var(--line);font-size:.83rem;padding:8px}
+.plan-list button[aria-current="true"]{outline:2px solid #d6a73f}
+.plan-list span{flex:1;overflow-wrap:anywhere}.plan-list small{font-size:.71rem;opacity:.8}
+.plan-privacy{font-size:.78rem;color:var(--muted);margin:14px 0 0}
+@media(max-width:1170px){.planner-body{grid-template-columns:1fr}.planner-controls{position:static;max-height:none}.plan-stages.is-compare{grid-template-columns:1fr}}
+@media(max-width:590px){.planner-layout{width:calc(100% - 16px)}.planner-toolbar button{flex:1 1 100%}.planner-export button{flex:1 1 100%}.plan-stage-head{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.plan-screen .plan-piece{transition:none}}
+@media print{.admin-head,.cs-tools-global-nav,.admin-alert,.planner-warning,.planner-toolbar,.planner-controls,.planner-export,.planner-status,.planner-label,#plan-note,#plan-output,.plan-stage-help,.admin-foot{display:none!important}.planner-body,.plan-stages{display:block}.plan-stage{break-inside:avoid;margin-bottom:16px}.plan-stage[hidden]{display:block!important}.plan-screen{min-width:0;width:100%}.plan-stage-frame{overflow:visible}}

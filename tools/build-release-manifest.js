@@ -15,7 +15,7 @@ function walk(dir){
  }
 }
 walk(root);
-const manifest={schemaVersion:'1.0.0',release:'csanadi-website-v1.39.14',date:'2026-11-17',ftpCompatible:true,
- bootstrap:'CDN bootstrap@5.3.9',notes:'A+B+C+D: tematikus, görgetéskor is stabil aloldali sportanimációk; mobilon legalább 44 px-es, teljes animációfelületre kiterjedő szünet/folytatás gomb és billentyűzetes/fókuszos vezérlés, kontraszt- és csökkentettmozgás-alkalmazkodás. A kiadás előtti minőségkapu külön listázza a 23 intézményi oldalt és a 69 függő médiajogot, elkülöníti a helyi munkalapot az intézményi jóváhagyástól és biztonságosabb CSV-exportot ad. A 71 JSON-oldal, a kezdőlapi képváltó és a statikus FTP-közzététel megmaradt. Nyilvános URL nem azonosítható hitelesen; publikus böngészőteszt külön közzététel után.',files};
+const manifest={schemaVersion:'1.0.0',release:'csanadi-website-v1.39.16',date:'2026-11-17',ftpCompatible:true,
+ bootstrap:'CDN bootstrap@5.3.9',notes:'A+B+C+D: teljes v1.39.16 statikus kiadás; 71 oldal és 748 médiatétel elérhetőségi ellenőrzése, manifest-összevetés és 10 kritikus kódállomány SHA-256 vizsgálata; az egysoros, görgetéskor stabil fejléc. A javított változatban az aloldali sportanimáció kikapcsolva, nem hoz létre látható vagy rejtett jelenetet. 320–768 px mérettartomány és billentyűzetes fókusz javításai; 97 tételes tartalmi audit JSON és CSV helyi export. Külön új, két nézetes, húzható kezdőoldal-elrendezéstervező normál és legörgetett állapotra, JSON-mentéssel és másolással. Nem történik automatikus közzététel vagy intézményi jóváhagyás; statikus FTP-kompatibilis, Bootstrap kizárólag CDN.',files};
 fs.writeFileSync(path.join(root,'release-manifest.json'),JSON.stringify(manifest,null,2)+'\n');
 console.log(JSON.stringify({files:Object.keys(files).length,release:manifest.release}));

@@ -37,9 +37,9 @@ test('Telefonos és kis telefonos méretezések léteznek',()=>{
 });
 test('A v1.39.10 eszközök mind bekötve, a cache megújult',()=>{
  assert.match(read('index.html'),/home-header-ribbon-v1-39-10\.css\?v=1\.39\.10/);
- assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:10|11|12|13)/);
- assert.match(read('js/blocks.js'),/hero-2026\.js\?v=1\.39\.(?:10|11|12|13)/);
- assert.match(JSON.parse(read('json/config.json')).performance.cacheVersion,/^csanadi-r-v1\.39\.(?:10|11|12|13)$/);
+ assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:10|11|12|13|14|15|16)/);
+ assert.match(read('js/blocks.js'),/hero-2026\.js\?v=1\.39\.(?:10|11|12|13|14|15|16)/);
+ assert.match(JSON.parse(read('json/config.json')).performance.cacheVersion,/^csanadi-r-v1\.39\.(?:10|11|12|13|14|15|16)$/);
 });
 test('71 oldal és 748 média továbbra is elérhető',()=>{
  assert.equal(Object.keys(JSON.parse(read('json/oldalindex.json')).pages).length,71);

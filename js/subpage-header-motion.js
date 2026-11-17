@@ -64,6 +64,7 @@ export function createSubpageHeaderMotion(brandRow){
   const stopped=userPaused||!autoplay||motionPreference.matches||document.hidden;
   const sceneControl=mobilePreference.matches&&autoplay&&!motionPreference.matches&&!region.hidden;
   region.classList.toggle('is-paused',stopped);
+  region.dataset.motionState=stopped?'paused':'playing';
   scene.tabIndex=sceneControl?0:-1;
   scene.setAttribute('aria-hidden',String(!sceneControl));
   scene.setAttribute('aria-pressed',String(userPaused));
@@ -78,6 +79,11 @@ export function createSubpageHeaderMotion(brandRow){
  const togglePause=()=>{userPaused=!userPaused;sync();};
  pause.addEventListener('click',togglePause);
  scene.addEventListener('click',()=>{if(mobilePreference.matches&&autoplay&&!motionPreference.matches)togglePause();});
+ scene.addEventListener('keydown',event=>{
+  // A natív button az Enter/Space aktiválást kezeli; a nyilak a jelenet
+  // vezérlésére nem foglalnak le globális böngésző-parancsot.
+  if(event.key==='Escape'&&mobilePreference.matches&&userPaused){event.stopPropagation();userPaused=false;sync();}
+ });
  document.addEventListener('visibilitychange',sync);
  motionPreference.addEventListener('change',sync);
  mobilePreference.addEventListener('change',sync);

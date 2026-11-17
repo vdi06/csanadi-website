@@ -88,10 +88,10 @@ check('A 71 oldal, 748 fájl és a 23+69 munkalapállapot változatlan',()=>{
  assert.equal(json('json/mediatar.json').items.filter(i=>i.rights?.clearance==='pending').length,69);
 });
 check('A 1.39.13 sportfejléc az újabb alverzióban is betöltődik',()=>{
- assert.match(html,/script\.js\?v=1\.39\.1[34]/);
- assert.match(read('script.js'),/subpages-v1\.js\?v=1\.39\.1[34]/);
- assert.match(subpages,/subpage-header-motion\.js\?v=1\.39\.1[34]/);
- assert.ok(['csanadi-r-v1.39.13','csanadi-r-v1.39.14'].includes(json('json/config.json').performance.cacheVersion));
+ assert.match(html,/script\.js\?v=1\.39\.1[3456]/);
+ assert.match(read('script.js'),/subpages-v1\.js\?v=1\.39\.1[3456]/);
+ assert.match(subpages,/subpage-header-motion\.js\?v=1\.39\.1[3456]/);
+ assert.ok(['csanadi-r-v1.39.13','csanadi-r-v1.39.14','csanadi-r-v1.39.16'].includes(json('json/config.json').performance.cacheVersion));
 });
 
 const failed=results.filter(x=>!x.ok);

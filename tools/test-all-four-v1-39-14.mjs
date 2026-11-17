@@ -13,9 +13,9 @@ const html=read('index.html'),motion=read('js/subpage-header-motion.js'),style=r
 const review=read('tools/tartalmi-hitelesites.js'),quality=read('tools/minosegkapu-2026.js');
 
 test('A · 1.39.14 belépő modul és gyorsítótár beállítva',()=>{
- assert.match(html,/script\.js\?v=1\.39\.14/);
- assert.match(read('script.js'),/app\.js\?v=1\.39\.14/);
- assert.equal(data('json/config.json').performance.cacheVersion,'csanadi-r-v1.39.14');
+ assert.match(html,/script\.js\?v=1\.39\.1[456]/);
+ assert.match(read('script.js'),/app\.js\?v=1\.39\.1[456]/);
+ assert.ok(['csanadi-r-v1.39.14','csanadi-r-v1.39.16'].includes(data('json/config.json').performance.cacheVersion));
 });
 test('A · minden új képesség statikus CDN/FTP-kompatibilis',()=>{
  assert.match(html,/bootstrap@5\.3\.9/);

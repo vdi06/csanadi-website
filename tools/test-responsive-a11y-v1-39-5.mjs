@@ -15,17 +15,17 @@ function test(name,run){try{run();results.push({name,ok:true});}catch(error){res
 test('71 oldal, megőrzött médiák, 60 új grafika és konzisztens aktuális cache',()=>{
  assert.equal(Object.keys(json('json/oldalindex.json').pages).length,71);
  assert.equal(json('json/assets-inventory.json').items.length,748);
- assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.39\.(?:9|10|11|12|13)$/);
+ assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.39\.(?:9|10|11|12|13|14|15|16)$/);
  for(const asset of json('json/assets-inventory.json').items)assert.ok(fs.existsSync(path.join(root,asset.path)),asset.path);
 });
-test('Mind a 16 karbantartó nézet nyelve, viewportja és közös arculata',()=>{
+test('A kibővített karbantartó nézetek nyelve, viewportja és közös arculata',()=>{
  const pages=fs.readdirSync(path.join(root,'tools')).filter(name=>name.endsWith('.html'));
- assert.equal(pages.length,16);
+ assert.equal(pages.length,17);
  for(const page of pages){
   const html=read('tools/'+page);
   assert.match(html,/<html[^>]+lang="hu"/i,page);
   assert.match(html,/<meta[^>]+name="viewport"/i,page);
-  assert.match(html,/tool-ui-2026\.js\?v=1\.39\.5/,page);
+  assert.match(html,/tool-ui-2026\.js\?v=1\.39\.(?:5|16)/,page);
  }
 });
 test('Valamennyi segédoldal kap fókuszálható, működő tartalmi ugrópontot',()=>{

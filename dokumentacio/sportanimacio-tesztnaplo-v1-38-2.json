@@ -1,12 +1,13 @@
 {
   "version": "1.38.2",
-  "testedAt": "2026-11-16T19:53:57.090Z",
-  "passed": 32,
-  "failed": 0,
+  "testedAt": "2026-11-17T19:47:53.724Z",
+  "passed": 28,
+  "failed": 4,
   "results": [
     {
       "label": "01 · Konfiguráció aktivált, 23 személyre szabott útvonalprofillal",
-      "status": "OK"
+      "status": "FAIL",
+      "reason": "Expected values to be strictly equal:\n\n25 !== 23\n"
     },
     {
       "label": "02 · A profilok csak helyi, előre definiált SVG-jeleneteket használnak",
@@ -50,7 +51,8 @@
     },
     {
       "label": "12 · Mind a 65 nyilvántartott oldal betölthető jelenetet kap",
-      "status": "OK"
+      "status": "FAIL",
+      "reason": "Expected values to be strictly equal:\n\n70 !== 65\n"
     },
     {
       "label": "13 · A hat főmenü és a 28 almenü továbbra is változatlan",
@@ -74,7 +76,8 @@
     },
     {
       "label": "18 · Lefelé görgetve az animáció leáll és elhagyja a helyét",
-      "status": "OK"
+      "status": "FAIL",
+      "reason": "Expected values to be strictly equal:\n\nfalse !== true\n"
     },
     {
       "label": "19 · Felgörgetve ismét megjelenhet és elindulhat",
@@ -118,7 +121,8 @@
     },
     {
       "label": "29 · Az erőforrásokat a weboldal helyben tölti be",
-      "status": "OK"
+      "status": "FAIL",
+      "reason": "The expression evaluated to a falsy value:\n\n  assert.ok(read('script.js').includes('js/subpages-v1.js?v=1.38.2'))\n"
     },
     {
       "label": "30 · Csökkentett mozgás és print-stílus támogatott",
