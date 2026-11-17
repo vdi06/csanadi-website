@@ -15,9 +15,9 @@ assert.doesNotMatch(app,/renderDailySportsNews\(['"]home['"]\)/,'A kezdőlap nem
 assert.doesNotMatch(app,/place\([^\n]*['"]sports-news['"]\)/,'A kezdőlap nem hozhat létre sporthírszekciót');
 assert.doesNotMatch(app,/visibleRoles=[^\n]*['"]sports-news['"]/,'Az elrendezés ne tartson fenn helyet a kivett szekciónak');
 assert.match(app,/renderDailySportsNews\(['"]full['"]\)/,'Az önálló Sporthírek oldal egyelőre megmarad');
-assert.equal(homepage.lifecycle.revision,8,'A kezdőlap verziója legyen 8');
-assert.equal(config.performance.cacheVersion,'csanadi-r-v1.40.1','A böngészőgyorsítótár kiadási azonosítója');
-assert.match(index,/script\.js\?v=1\.40\.1/,'Az új alkalmazáskódot kell betölteni');
-assert.match(entry,/\.\/js\/app\.js\?v=1\.40\.1/,'Az új kezdőlaplogikát kell betölteni');
+assert.ok(homepage.lifecycle.revision>=8,'A kezdőlap újabb revíziója megőrizze a törlést');
+assert.match(config.performance.cacheVersion,/^csanadi-r-v1\.40\./,'Az újabb kiadás cache-azonosítója');
+assert.match(index,/script\.js\?v=1\.40\./,'Az új alkalmazáskódot kell betölteni');
+assert.match(entry,/\.\/js\/app\.js\?v=1\.40\./,'Az új kezdőlaplogikát kell betölteni');
 
 console.log('v1.40.1: a Napi sporthírek eltűnt a kezdőlapról; a külön Sporthírek oldal és a többi blokk megmaradt.');

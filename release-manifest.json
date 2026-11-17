@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.40.1",
+  "release": "csanadi-website-v1.40.2",
   "date": "2026-11-17",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "v1.40.1: a kezdőlapról eltávolítottuk a Napi sporthírek modult és a kezdőlapi sorrendnyilvántartásból is kivettük. Az aloldali képes fejlécekről levettük az ismétlődő feliratot, és az aloldali címek, összefoglalók és szerkesztett szöveges szakaszok középre igazodnak. Az egyenrangú kártyák minden befejezetlen sorban is középre kerülnek; a tanulmányi és sportútvonalak kártyáit belső térköz választja el a háttérkerettől. A felső menüsor világos és sötét módban egységes, folyamatos hátteret, kontrasztos feliratokat és határvonalak nélküli gombokat kapott; a görgetésre megjelenő középső előnézet is keretmentes. A Sporthírek önálló oldala és a kapcsolódó karbantartóeszközök egyelőre változatlanok. A v1.40.0 teljes szélességű, három váltakozó képe, kétoldali szövege, reszponzív képkivágásai és a korábbi fejléc-, főmenü- és nyitókapu-működés megmaradt. A megjelenítés statikus FTP-kompatibilis; a Bootstrap kizárólag verziózott CDN-ről jön. A generált képek látványtervek, nyilvános intézményi használatuk jóváhagyást igényel.",
+  "notes": "v1.40.2: a kezdőlapi teljes szélességű képsor 3-ról 30 különböző képre bővült, kétoldali feliratokkal és az egyetlen kép egyszerre elv megtartásával. A 27 új dia már meglévő, WebP-re optimalizált és reszponzív médiatári képet használ. A feliratok és vezérlők világos/sötét témájához kifejezett kontrasztszínek tartoznak. A SPORT · TUDÁS · KÖZÖSSÉG felirat görgetés után és mobilon is megmarad a fejlécben. A görgetés utáni középső keretmentes címer a főmenüt nyitja meg. A képváltó legfeljebb öt képelemet gyorsítótáraz, és takarékosan előkészíti a következő reszponzív képet; adatkorlátos vagy lassú kapcsolaton nem indít előtöltést. A korábbi v1.40.1 kártya-, szekció- és fejlécjavítások megmaradtak. A kiadás statikus FTP-kompatibilis, Bootstrap csak verziózott CDN-ről. A látványtervképek nyilvános intézményi felhasználásához jóváhagyás szükséges.",
   "files": {
     "README.md": {
       "sizeBytes": 42,
@@ -3146,6 +3146,10 @@
       "sizeBytes": 2435,
       "sha256": "fc7d5966d609920542b1a7d8510b28db1695b1d0026bbcee22046e90bd353906"
     },
+    "css/header-responsive-v1-40-2.css": {
+      "sizeBytes": 6298,
+      "sha256": "fdfaffb25126cc1c60ca3829b0f30afd12606818128a4391d5f237e91b3ef834"
+    },
     "css/header-seamless-v1-40-1.css": {
       "sizeBytes": 2944,
       "sha256": "4a4587498779d9815830f5ae654cbfb0af80d59ea7c78e097e100b9a93008744"
@@ -3975,8 +3979,8 @@
       "sha256": "75001b42d45bd4cc29f9e97a38c696997d1452c84cc64923f87af8cc4e60a6ca"
     },
     "index.html": {
-      "sizeBytes": 21673,
-      "sha256": "1d7cad96737fe523f9c5d8398d87ba7c5b858c67ce9d098fb8fdd7295a2c42aa"
+      "sizeBytes": 21749,
+      "sha256": "4ef8393f850c18d7392b7313a6c41604b1e7aa632fd8a9b8801830e2c45d8890"
     },
     "iranytu.html": {
       "sizeBytes": 10082,
@@ -3992,11 +3996,11 @@
     },
     "js/app.js": {
       "sizeBytes": 60667,
-      "sha256": "d1066de39e5ee9f707baf20d3038bf5d7ff326f284e9a7f9cc9d591583816294"
+      "sha256": "85b90af591846580b756d4306e37149f3fd42f591dda847a59173e80c41de87a"
     },
     "js/blocks.js": {
       "sizeBytes": 9230,
-      "sha256": "9689af06bf05cef71bb8ff6e161ebd1c0aeddb7f3d8c8524e640cef0e4c95ac4"
+      "sha256": "687984f91ffb8e019a6c09fc45cabd09ebc2fc5ce7175684c011cd1f4fb2e651"
     },
     "js/content.js": {
       "sizeBytes": 5925,
@@ -4039,8 +4043,8 @@
       "sha256": "370e57413f01ae10a978a6be5f4a2b2e1040b7566ad30a14a662dd2c94accdee"
     },
     "js/hero-2026.js": {
-      "sizeBytes": 8013,
-      "sha256": "036fa5b33c1ff2605417d84f1a182fe2e72d7354bf2e43ee387d704ef09ef207"
+      "sizeBytes": 9523,
+      "sha256": "71274bbf3a4fbbc3ed3616748c42b706c58fa30be4ed3e8b6102923aa7b1a619"
     },
     "js/home-live.js": {
       "sizeBytes": 13997,
@@ -4103,8 +4107,8 @@
       "sha256": "462d6a180f249239f47f4853fd625a6a1f364363ac2f1ffb295527a1dc2af356"
     },
     "js/release-v1-39-1.js": {
-      "sizeBytes": 7472,
-      "sha256": "09bf2605a62dacccd382d38be5ddf65ee51468a6ec5c3b2668d74b21cf6d8744"
+      "sizeBytes": 6902,
+      "sha256": "54c00204b2a2a72f4593be50c564bb381c1b931d0fad81cf672f0031d5eb0774"
     },
     "js/round10-enhancements.js": {
       "sizeBytes": 5054,
@@ -4275,12 +4279,12 @@
       "sha256": "94b4ec00171367d6da15f2754c3972b7eddffe743b6558996da2c61e1899ccf9"
     },
     "json/config.json": {
-      "sizeBytes": 15288,
-      "sha256": "423f911e9624bfcb0317eebf6c4b998632035239390e11cad766b18e7d8110d2"
+      "sizeBytes": 15287,
+      "sha256": "2e7844348b356e2085192e0ffd0253e269a9e9c31b6f4b0492a8f48aa1616004"
     },
     "json/mediatar.json": {
-      "sizeBytes": 288353,
-      "sha256": "6876a5cee99a3bfbd9fe86ff495ace86ac0eb33f6bf2ee0da7d3d47a57fc96f0"
+      "sizeBytes": 305926,
+      "sha256": "d5da14ff3e442190ae09530379623836dd7971f526b16adf7232b56b60747cf2"
     },
     "json/nyelvek.json": {
       "sizeBytes": 1785,
@@ -4443,8 +4447,8 @@
       "sha256": "e35f67bcfab755b338f1ab5dff4ef1cdd328a9f0a60c046d5cd6c0894b47b9d3"
     },
     "json/oldalak/kezdolap.json": {
-      "sizeBytes": 11877,
-      "sha256": "c5b690a5a46aa8e4bbad0658cf43941dc3ce0141f434da943986ea1de03bb6fe"
+      "sizeBytes": 28038,
+      "sha256": "2363824256bdd07913e673ce8198bbbbf2aecef9673dfaec4b9e147dca67b4f9"
     },
     "json/oldalak/oktatas/digitalis-kultura/mesterseges-intelligencia.json": {
       "sizeBytes": 3357,
@@ -4668,7 +4672,7 @@
     },
     "script.js": {
       "sizeBytes": 1615,
-      "sha256": "bde6da6e3af38389fa7f5f322634c60ec7a08156d794506d04edcf9f7d465246"
+      "sha256": "12c2640a165ddab96e89e791cbaa120d3b3eae380d6fd5a519acc8d7d7044167"
     },
     "service-worker.js": {
       "sizeBytes": 5975,
@@ -4731,8 +4735,8 @@
       "sha256": "79e2ab86045194652aeddde5318328a5a904c55abf861e53875dba9de5983afa"
     },
     "tools/build-release-manifest.js": {
-      "sizeBytes": 2280,
-      "sha256": "ce25e6c66a36311852a204f39a2c4be43e8f1197d9f35a99c2590b37883cbd37"
+      "sizeBytes": 2089,
+      "sha256": "34e8a19331b416c8e66cb8d36cdb21d284d58a931924d4076297c307911f663a"
     },
     "tools/build-rule31-worklist-v1-8.js": {
       "sizeBytes": 3230,
@@ -5979,24 +5983,28 @@
       "sha256": "c8fad966a770859e3a5fe473470743c5cde97ec8b518d15d782e2af66b50c82d"
     },
     "tools/test-v140-single-hero.mjs": {
-      "sizeBytes": 3367,
-      "sha256": "69af4e84861c42582368ef84515300bebb7326239e5948b0da9a2ea086590e3a"
+      "sizeBytes": 3528,
+      "sha256": "0d1efc8fa863bcc4cac188abc0d6a2539d051c09f2671dfcde01924ad5ea2591"
     },
     "tools/test-v1401-cards-no-overlap.mjs": {
       "sizeBytes": 1393,
       "sha256": "405f9437a88d4d9bc3ea9ea2d7a34d0b51cd8035ea2ecd7da3b2af8844252b67"
     },
     "tools/test-v1401-no-home-daily-news.mjs": {
-      "sizeBytes": 1472,
-      "sha256": "111b943204782eb98ffba4f47a5880bb90537b09651d0610c2eff48549a7fed9"
+      "sizeBytes": 1480,
+      "sha256": "99157a518026d5cb0486f1b3f86e746a35e7dcf482bb5a60bd226b1c416ba69d"
     },
     "tools/test-v1401-seamless-header.mjs": {
       "sizeBytes": 1413,
       "sha256": "b1c9a6d344c66ee2e769f577744a10d8b48746d4c3f157d473e0219a586fbc93"
     },
     "tools/test-v1401-subpage-center.mjs": {
-      "sizeBytes": 1301,
-      "sha256": "ae7b84a1fbe238b5269fb7596388891a4c50f8047e4881ac584ce906edae0795"
+      "sizeBytes": 1305,
+      "sha256": "ffc492ffe9e41f402067295c58bc79650c3a21f48c81eff5bce842be639c6e0e"
+    },
+    "tools/test-v1402-header-images-contrast.mjs": {
+      "sizeBytes": 3023,
+      "sha256": "d8eb68b2e29c99fe36af29436cba3d4c970137a494b20b253f574bc5c85b45ab"
     },
     "tools/test-workflow-v1-39-12.js": {
       "sizeBytes": 5062,

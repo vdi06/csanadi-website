@@ -1,0 +1,178 @@
+/* v1.40.2 – Megmaradó jelmondat, keretmentes címeres menü és témakontraszt.
+   Az egyetlen háttér a #site-header-en marad; belső színes panelek nincsenek. */
+:root,html[data-theme="dark"]{
+ --cs1402-header-text:#f7f1e6;
+ --cs1402-header-sub:#e0e8f0;
+ --cs1402-header-accent:#f4d89a;
+ --cs1402-hero-text:#fffdf6;
+}
+html[data-theme="light"]{
+ --cs1402-header-text:#142d43;
+ --cs1402-header-sub:#344e63;
+ --cs1402-header-accent:#674712;
+ --cs1402-hero-text:#fffdf6;
+}
+body.cs-home-header #site-header .brand-row{
+ position:relative!important;
+ min-height:96px!important;
+ padding:9px 12px 30px!important;
+}
+body.cs-home-header.cs-home-condensed #site-header .brand-row{
+ min-height:85px!important;
+ padding:5px 12px 27px!important;
+}
+body.cs-home-header #site-header .brand-row > .cs1402-persistent-motto{
+ display:flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+ position:absolute!important;
+ left:50%!important;
+ bottom:4px!important;
+ top:auto!important;
+ transform:translateX(-50%)!important;
+ width:max-content;
+ max-width:calc(100% - 14px);
+ height:21px;
+ margin:0!important;
+ padding:0!important;
+ z-index:6;
+ gap:clamp(5px,1vw,11px)!important;
+ color:var(--cs1402-header-text)!important;
+ font-size:clamp(10px,1.15vw,13px)!important;
+ font-weight:850!important;
+ letter-spacing:.13em!important;
+ white-space:nowrap;
+ opacity:1!important;
+ visibility:visible!important;
+ text-shadow:none!important;
+ background:transparent!important;
+ border:0!important;
+ box-shadow:none!important;
+}
+body.cs-home-header #site-header .cs1402-persistent-motto i{
+ display:inline-block;
+ width:4px;
+ height:4px;
+ min-width:4px;
+ border-radius:50%;
+ background:var(--cs1402-header-accent)!important;
+ opacity:1;
+}
+body.cs-home-header #site-header #cs39-mini-hero{
+ /* A kis címer kizárólag a fő menüsor területében helyezkedik el. */
+ top:calc(50% - 11px)!important;
+ border:0!important;
+ min-height:46px!important;
+ padding:0!important;
+}
+body.cs-home-header #site-header #cs39-mini-hero > .cs39-mini-preview{
+ display:flex!important;
+ justify-content:center!important;
+ align-items:center!important;
+ gap:8px!important;
+ padding:0 4px!important;
+ min-height:44px!important;
+ min-width:44px!important;
+ max-width:100%!important;
+ color:var(--cs1402-header-text)!important;
+ background:transparent!important;
+ border:0!important;
+ box-shadow:none!important;
+ cursor:pointer;
+ font:inherit;
+ text-decoration:none;
+}
+body.cs-home-header #site-header #cs39-mini-hero .cs39-mini-image{
+ display:block;
+ width:43px!important;
+ height:43px!important;
+ flex:0 0 43px!important;
+ object-fit:contain!important;
+ border:0!important;
+ border-radius:0!important;
+ background:transparent!important;
+}
+body.cs-home-header #site-header #cs39-mini-hero :is(.cs39-mini-label,.cs39-mini-hint){
+ color:var(--cs1402-header-text)!important;
+ text-shadow:none!important;
+}
+body.cs-home-header #site-header #cs39-mini-hero .cs39-mini-hint{
+ color:var(--cs1402-header-sub)!important;
+}
+body.cs-home-header #site-header .brand-copy :is(strong,small),
+body.cs-home-header #site-header :is(.header-kreta,.icon-btn,.header-social a){
+ color:var(--cs1402-header-text)!important;
+}
+body.cs-home-header #site-header .brand-copy small{color:var(--cs1402-header-sub)!important}
+body.cs-home-header #site-header :is(.icon-btn,.header-kreta,.cs39-mini-preview):focus-visible{
+ outline:3px solid var(--cs1402-header-accent)!important;
+ outline-offset:2px!important;
+}
+/* A fényképek fölötti, sötét árnyalóhoz világos szöveg tartozik a
+   világos és a sötét felületi témában is; nem öröklik a kártyaszíneket. */
+html[data-theme="light"] #global-hero .csn26-single-image .csn26-wing-copy,
+html[data-theme="dark"] #global-hero .csn26-single-image .csn26-wing-copy{
+ color:var(--cs1402-hero-text)!important;
+ text-shadow:0 1px 5px rgba(0,9,20,.9),0 1px 2px rgba(0,9,20,.85)!important;
+}
+#global-hero .csn26-single-image .csn26-wing-copy :is(h2,h3,p){
+ color:var(--cs1402-hero-text)!important;
+}
+#global-hero .csn26-single-image .csn26-wing-copy .csn26-wing-kicker{
+ color:#ffe4a9!important;
+}
+#global-hero .csn26-single-image .csn26-wing-shade{
+ background:linear-gradient(90deg,rgba(3,18,33,.79),rgba(3,18,33,.06) 43%,rgba(3,18,33,.06) 58%,rgba(3,18,33,.77)),
+            linear-gradient(0deg,rgba(3,18,33,.53),transparent 62%)!important;
+}
+#global-hero .csn26-single-image .csn26-wing-photo picture{
+ animation:cs1402-photo-reveal .32s ease-out both;
+}
+@keyframes cs1402-photo-reveal{from{opacity:.88}to{opacity:1}}
+@media(max-width:768px){
+ body.cs-home-header #site-header .brand-row{
+  min-height:91px!important;
+  padding:6px 8px 28px!important;
+  gap:3px!important;
+ }
+ body.cs-home-header.cs-home-condensed #site-header .brand-row{
+  min-height:83px!important;
+  padding:4px 8px 25px!important;
+ }
+ body.cs-home-header #site-header .brand-row > .cs1402-persistent-motto{
+  font-size:clamp(10px,2.8vw,12px)!important;
+  gap:clamp(4px,1.5vw,10px)!important;
+  letter-spacing:.08em!important;
+  bottom:2px!important;
+ }
+ body.cs-home-header #site-header #cs39-mini-hero{
+  top:calc(50% - 9px)!important;
+ }
+ body.cs-home-header #site-header #cs39-mini-hero .cs39-mini-description{
+  display:none!important;
+ }
+ body.cs-home-header #site-header #cs39-mini-hero .cs39-mini-image{
+  width:39px!important;height:39px!important;flex-basis:39px!important;
+ }
+ /* A mobilképek két feliratát külön sötét hátterek választják el a fotótól. */
+ #global-hero .csn26-single-image .csn26-wing-copy--left{
+  background:linear-gradient(0deg,rgba(2,16,32,.84),rgba(2,16,32,.1))!important;
+ }
+ #global-hero .csn26-single-image .csn26-wing-copy--right{
+  background:linear-gradient(270deg,rgba(2,16,32,.82),rgba(2,16,32,.24))!important;
+ }
+}
+@media(max-width:390px){
+ body.cs-home-header #site-header .brand-row > .cs1402-persistent-motto{
+  letter-spacing:.04em!important;
+ }
+ body.cs-home-header #site-header .brand-copy small{font-size:7px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #global-hero .csn26-single-image .csn26-wing-photo picture{animation:none!important}
+}
+@media(forced-colors:active){
+ body.cs-home-header #site-header #cs39-mini-hero>.cs39-mini-preview{
+  forced-color-adjust:auto;border:1px solid ButtonText!important;color:ButtonText!important;
+ }
+}

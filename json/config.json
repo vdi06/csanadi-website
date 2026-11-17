@@ -168,7 +168,7 @@
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r-v1.40.1",
+    "cacheVersion": "csanadi-r-v1.40.2",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,
@@ -285,12 +285,12 @@
       "privacyLocalOnly": true
     },
     "hero": {
-      "maxSlides": 20,
+      "maxSlides": 30,
       "rotationDefaultMs": 7500,
       "rotationMinimumMs": 5000,
       "rotationMaximumMs": 12000,
       "swipeThresholdPx": 55,
-      "pictureCacheEntries": 20,
+      "pictureCacheEntries": 5,
       "startsAt": null,
       "endsAt": null,
       "mobileCutoutRadiusPx": 68,

@@ -1,4 +1,4 @@
-import {createPicture} from './media.js?v=1.40.0';
+import {createPicture,mediaItem} from './media.js?v=1.40.0';
 import {settingNumber,isWithinConfiguredWindow} from './site-settings-2026.js';
 const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 const safeRoute=value=>typeof value==='string'&&/^#\/[a-z0-9/\-]*$/i.test(value)?value:'#/';
@@ -16,13 +16,37 @@ export function renderPremiumHero(block){
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const wingStates=[];
  let activeIndex=0,changeToken=0,hovered=false,focused=false,visible=true,startX=null;
+ // A 30 képből kizárólag a következő mérethelyes állományt készítjük elő.
+ // Lassú / adatkorlátos kapcsolaton nincs előtöltés; egy dia sem kér le 30 képet.
+ const prepared=new Set();
+ function prepareNext(index){
+  if(slides.length<2||reduced.matches||document.hidden||navigator.connection?.saveData||/2g/.test(navigator.connection?.effectiveType||''))return;
+  const next=(index+1)%slides.length;if(prepared.has(next))return;
+  const entry=mediaItem((innerWidth<=768&&slides[next].mobileMediaId)||slides[next].mediaId);
+  if(!entry)return;
+  const variants=Array.isArray(entry.variants)?entry.variants.filter(v=>v.mimeType==='image/webp'&&v.path):[];
+  const needed=Math.max(320,innerWidth*(Math.min(devicePixelRatio||1,2)));
+  const source=variants.sort((a,b)=>a.width-b.width).find(v=>v.width>=needed)||variants.at(-1)||entry.original;
+  if(!source?.path)return;
+  prepared.add(next);
+  const preload=new Image();preload.decoding='async';preload.fetchPriority='low';preload.src=source.path;
+  preload.addEventListener('error',()=>prepared.delete(next),{once:true});
+  // A böngésző gyorsítótára őrzi a kész állományt, nem tartunk 30 DOM-képet.
+ }
+ function queuePreparation(index){
+  if('requestIdleCallback'in window)requestIdleCallback(()=>{if(row.isConnected)prepareNext(index);},{timeout:1600});
+  else setTimeout(()=>{if(row.isConnected)prepareNext(index);},300);
+ }
  function showSlide(index,announce=false){
   const nextIndex=(index%slides.length+slides.length)%slides.length;
   const slide=slides[nextIndex],wing=wingStates[0],token=++changeToken;
   let picture=wing.cache.get(nextIndex);
   if(!picture){
    picture=createPicture(slide.mediaId,{className:'csn26-wing-picture',eager:true,sizes:'100vw',mobileId:slide.mobileMediaId});
-   if(picture){wing.cache.set(nextIndex,picture);if(wing.cache.size>settingNumber('runtime.hero.pictureCacheEntries'))wing.cache.delete(wing.cache.keys().next().value);}
+   if(picture){wing.cache.set(nextIndex,picture);if(wing.cache.size>settingNumber('runtime.hero.pictureCacheEntries')){
+    const oldest=wing.cache.keys().next().value;
+    if(oldest!==nextIndex)wing.cache.delete(oldest);
+   }}
   }
   const commit=()=>{
    if(token!==changeToken)return;
@@ -35,6 +59,7 @@ export function renderPremiumHero(block){
    wing.surface.setAttribute('aria-label',`${activeIndex+1}. képes tartalom a(z) ${slides.length} közül: ${slide.title||'Iskolai pillanatok'} – megnyitás`);
    wing.element.dataset.slide=String(activeIndex+1);
    if(status){status.setAttribute('aria-live',announce?'polite':'off');status.textContent=`${activeIndex+1}. képes tartalom a(z) ${slides.length} közül`;}
+   queuePreparation(activeIndex);
   };
   const image=picture?.querySelector('img');
   if(image?.complete&&image.naturalWidth===0){console.warn('[Csanádi hero] Nem sikerült betölteni a képet:',slide.mediaId);return;}

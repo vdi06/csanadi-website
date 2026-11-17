@@ -15,5 +15,5 @@ assert.match(subpages,/root\.append\(track\)/,'Az aloldali kép megmaradjon');
 assert.match(css,/body\.cs-inner-page #app \.page-banner :is\(h1,p\)/,'A cím és bevezető legyen középen');
 assert.match(css,/body\.cs-inner-page #app \.cs92-article \.article-section/,'A szakaszok is középre kerüljenek');
 assert.match(html,/css\/subpage-centered-v1-40-1\.css\?v=1\.40\.1/,'Az új stílus töltődjön be');
-assert.match(entry,/subpages-v1\.js\?v=1\.40\.1/,'Az új képfelirat-kezelést gyorsítótárból is frissítsük');
+assert.match(entry,/subpages-v1\.js\?v=1\.40\./,'Az újabb kiadások továbbra is frissítsék az aloldali képkódot');
 console.log('v1.40.1: aloldali képek felirat nélkül, oldalcímek és szöveges szakaszok középen.');

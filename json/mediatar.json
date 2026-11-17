@@ -7792,6 +7792,500 @@
         "holder": "Egyedileg létrehozott, mesterségesen generált látványkép",
         "license": "Illusztráció, nem valódi iskolai fotó; intézményi jóváhagyás szükséges a végleges nyilvános közzétételhez."
       }
+    },
+    {
+      "id": "media:eletkep-23",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-23.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 22412,
+        "sha256": "1c8f4ed41a43387feb8a80ebc0c5f02151804a2c390d42092c1ff60d25cb43b2"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-23.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 22412,
+          "sha256": "1c8f4ed41a43387feb8a80ebc0c5f02151804a2c390d42092c1ff60d25cb43b2"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-23-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 9040,
+          "sha256": "70b265b14c4c8a7caa7a6c49bc954f538f78aeaf674fe6e48ce01bde2cdad669"
+        }
+      ],
+      "alt": "Illusztratív, generált sport- vagy iskolai életkép.",
+      "caption": "Sport, tanulás és közösségi pillanatok – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-24",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-24.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 31066,
+        "sha256": "d789189c6fa57d865cfcf5e53be25a6630ebaa5591c7d8fa67016e0b9d6ec4c5"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-24.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 31066,
+          "sha256": "d789189c6fa57d865cfcf5e53be25a6630ebaa5591c7d8fa67016e0b9d6ec4c5"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-24-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 13074,
+          "sha256": "8e4cd5f8b92ff5ec0d450b1bb82b95b09e262b02b2efe270683ab0f920c9b4f8"
+        }
+      ],
+      "alt": "Illusztratív, generált sport- vagy iskolai életkép.",
+      "caption": "Sport, tanulás és közösségi pillanatok – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-25",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-25.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 35012,
+        "sha256": "10b0d1d3091bfae0a8a223478c6c3a5b4304275c8704f10580f7602f9839ae0b"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-25.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 35012,
+          "sha256": "10b0d1d3091bfae0a8a223478c6c3a5b4304275c8704f10580f7602f9839ae0b"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-25-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 13518,
+          "sha256": "7a06c18879f33925787bcba2ef6f35572c4cb41a296e7303c4b0d9819aad8ec0"
+        }
+      ],
+      "alt": "Illusztratív, generált sport- vagy iskolai életkép.",
+      "caption": "Sport, tanulás és közösségi pillanatok – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-34",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-34.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 38450,
+        "sha256": "40644b90a497c471301b72a675d81429e40af3edda2297f532c8c695e981f93e"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-34.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 38450,
+          "sha256": "40644b90a497c471301b72a675d81429e40af3edda2297f532c8c695e981f93e"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-34-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 16542,
+          "sha256": "30a9e905cc171bbc79faa8a1746a4543d54e3e066d6766ab026991f15e2c0fda"
+        }
+      ],
+      "alt": "Illusztratív, generált sport- vagy iskolai életkép.",
+      "caption": "Sport, tanulás és közösségi pillanatok – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-31",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-31.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 22830,
+        "sha256": "f49cec3c82cda5d7f886a9f0664aea8840d55869fd8c6abfa2fcea1c249bdce1"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-31.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 22830,
+          "sha256": "f49cec3c82cda5d7f886a9f0664aea8840d55869fd8c6abfa2fcea1c249bdce1"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-31-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 9108,
+          "sha256": "16ace2282427e2402edaa5c2d63b8ebc03e93b1842256e7e0b68bbfa32f9f9f0"
+        }
+      ],
+      "alt": "Illusztratív, generált sport- vagy iskolai életkép.",
+      "caption": "Sport, tanulás és közösségi pillanatok – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-26",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-26.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 25996,
+        "sha256": "6b1a2c8c7daa881ecb52938619b2db721e292509050eb8287eac94180a043688"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-26.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 25996,
+          "sha256": "6b1a2c8c7daa881ecb52938619b2db721e292509050eb8287eac94180a043688"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-26-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 10366,
+          "sha256": "4f8cf286f5916311c15a2e96ead2a3d411fd697cfe6e87fe82700245cdb1553b"
+        }
+      ],
+      "alt": "Illusztratív, generált sport- vagy iskolai életkép.",
+      "caption": "Sport, tanulás és közösségi pillanatok – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-37",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-37.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 35852,
+        "sha256": "29484fb96d754691c36aff0d8bd7f92d8562877cff6ed5bfa47cd4e44d8f63dc"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-37.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 35852,
+          "sha256": "29484fb96d754691c36aff0d8bd7f92d8562877cff6ed5bfa47cd4e44d8f63dc"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-37-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 13012,
+          "sha256": "b2faa16fd569a79a00686d8ab9ddddc597293494bcff18928ddcf88b7a69fdd7"
+        }
+      ],
+      "alt": "Illusztratív, generált sport- vagy iskolai életkép.",
+      "caption": "Sport, tanulás és közösségi pillanatok – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-38",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-38.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 24906,
+        "sha256": "397fce672edadc5e2a51f3df45909d783314f5f42fccf50cc88a3bc50984318a"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-38.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 24906,
+          "sha256": "397fce672edadc5e2a51f3df45909d783314f5f42fccf50cc88a3bc50984318a"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-38-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 9982,
+          "sha256": "bd9ff888af47d1e3f8988ee8705f128531f492838b76f014c57d798f294d046d"
+        }
+      ],
+      "alt": "Illusztratív, generált sport- vagy iskolai életkép.",
+      "caption": "Sport, tanulás és közösségi pillanatok – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-27",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-27.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 27620,
+        "sha256": "721dd9c8121d2761ab8366069cf0b2b946cda273589e2d77b4b0adfb69f0a073"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-27.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 27620,
+          "sha256": "721dd9c8121d2761ab8366069cf0b2b946cda273589e2d77b4b0adfb69f0a073"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-27-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 11028,
+          "sha256": "d425b5e79e161735b36c1e81b5900acaf5bca64993c13669418cc4330742d731"
+        }
+      ],
+      "alt": "Illusztratív, generált sport- vagy iskolai életkép.",
+      "caption": "Sport, tanulás és közösségi pillanatok – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-44",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-44.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 33702,
+        "sha256": "a2243398d758b731abfc89b5b2805451dfff50b1daddd6127e98d0220096b128"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-44.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 33702,
+          "sha256": "a2243398d758b731abfc89b5b2805451dfff50b1daddd6127e98d0220096b128"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-44-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 14238,
+          "sha256": "c75f56f590ece2cb49b10497ed8bd8459f801a706e83496824962a7a4cf78965"
+        }
+      ],
+      "alt": "Illusztratív, generált sport- vagy iskolai életkép.",
+      "caption": "Sport, tanulás és közösségi pillanatok – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-42",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-42.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 31696,
+        "sha256": "afd9294c827877ba010c97e5927525e487a33c59133046528f212c877d3155c7"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-42.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 31696,
+          "sha256": "afd9294c827877ba010c97e5927525e487a33c59133046528f212c877d3155c7"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-42-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 12930,
+          "sha256": "029c3e007159933fc4146eafe77539f77e454ca262c38d486ca3e5f85d30f19a"
+        }
+      ],
+      "alt": "Illusztratív, generált sport- vagy iskolai életkép.",
+      "caption": "Sport, tanulás és közösségi pillanatok – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-36",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-36.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 27620,
+        "sha256": "721dd9c8121d2761ab8366069cf0b2b946cda273589e2d77b4b0adfb69f0a073"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-36.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 27620,
+          "sha256": "721dd9c8121d2761ab8366069cf0b2b946cda273589e2d77b4b0adfb69f0a073"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-36-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 11028,
+          "sha256": "d425b5e79e161735b36c1e81b5900acaf5bca64993c13669418cc4330742d731"
+        }
+      ],
+      "alt": "Illusztratív, generált sport- vagy iskolai életkép.",
+      "caption": "Sport, tanulás és közösségi pillanatok – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
+      }
+    },
+    {
+      "id": "media:eletkep-48",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/eletkep-48.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 44598,
+        "sha256": "422b2f9e726817f2f098874c40cb5fa43a8921896a83d9ad589a7c0633d4802c"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/eletkep-48.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 44598,
+          "sha256": "422b2f9e726817f2f098874c40cb5fa43a8921896a83d9ad589a7c0633d4802c"
+        },
+        {
+          "path": "assets/media/web/responsive/eletkep-48-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 16082,
+          "sha256": "3565951fd2d5ee703decb007ba1a77a1a20089e75e4783f807b1d144d5902e10"
+        }
+      ],
+      "alt": "Illusztratív, generált sport- vagy iskolai életkép.",
+      "caption": "Sport, tanulás és közösségi pillanatok – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
+      }
     }
   ]
 }

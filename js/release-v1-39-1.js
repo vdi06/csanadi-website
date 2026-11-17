@@ -13,36 +13,30 @@ function installHomeShell(){
  // és nem rántja meg a görgetési pozíciót.
  header.before(shell);shell.append(header);shell.after(hero);
  const compact=el('div','cs39-mini-hero');compact.id='cs39-mini-hero';
- compact.setAttribute('role','group');compact.setAttribute('aria-label','A kezdőlapi képes tartalom középső előnézete');
- const preview=el('a','cs39-mini-preview');preview.href='#/sport';preview.setAttribute('aria-label','Kiemelt tartalom megnyitása');
- const image=el('img','cs39-mini-image');image.alt='';image.width=70;image.height=47;
+ compact.setAttribute('role','group');compact.setAttribute('aria-label','Középső főmenünyitó címer');
+ const preview=el('button','cs39-mini-preview');preview.type='button';preview.setAttribute('aria-label','Főmenü megnyitása');
+ preview.setAttribute('aria-controls','site-map-overlay');preview.setAttribute('aria-haspopup','dialog');
+ preview.setAttribute('aria-expanded','false');
+ const image=el('img','cs39-mini-image');image.alt='';image.width=47;image.height=47;
+ image.src='assets/media/logo/csanadi-cimer-512.webp';
  const description=el('span','cs39-mini-description');
- description.append(el('strong','cs39-mini-label','Kiemelt sportos tartalom'),el('small','cs39-mini-hint','Kattints a megnyitáshoz'));
+ description.append(el('strong','cs39-mini-label','FŐMENÜ'),el('small','cs39-mini-hint','Kattints a megnyitáshoz'));
  preview.append(image,description);
- // A zsugorodó fejlécben kizárólag ez az EGY középső link látszik és fókuszálható.
+ preview.addEventListener('click',()=>document.dispatchEvent(new Event('csanadi:menu-toggle')));
+ // A zsugorodó fejlécben ez az egyetlen középső, címeres főmenügomb látszik.
  compact.append(preview);
  // Görgetéskor a kis kép nem kap új sort: a meglévő brand-row közepére kerül.
  const brandRow=header.querySelector('.brand-row');
  (brandRow||header).append(compact);
- let lastLabel='',lastSource='',queued=false;
- const sync=()=>{
-  queued=false;
-  if(!document.body.classList.contains('cs-home-header'))return;
-  const wing=hero.querySelector('.csn26-visual-wing--left');
-  const link=wing?.querySelector('a.csn26-wing-surface,a.csn26-wing-target');
-  const title=wing?.querySelector('.csn26-wing-title')?.textContent?.trim()||'Kiemelt sportos tartalom';
-  const picture=wing?.querySelector('.csn26-wing-photo img')||wing?.querySelector('img');
-  const url=picture?.currentSrc||picture?.getAttribute('src')||'assets/media/logo/csanadi-cimer-512.webp';
-  if(lastLabel!==title){description.querySelector('strong').textContent=title;lastLabel=title;}
-  if(lastSource!==url){image.src=url;lastSource=url;}
-  preview.href=link?.getAttribute('href')||'#/sport';
-  preview.setAttribute('aria-label','Kiemelt tartalom: '+title);
-  // A nagyméretű képváltó mindig a dokumentum természetes folyamatában marad.
-  // A képmagasság scroll közbeni írása ResizeObserver-visszacsatolást és
-  // átmeneti elcsúszást okozhatna, ezért itt csak a kis előnézetet szinkronizáljuk.
+ // A háromszavas jelmondat a valódi fejléc része, nem a cserélődő képé.
+ const motto=header.querySelector('.header-tag');
+ if(motto&&brandRow){motto.classList.add('cs1402-persistent-motto');brandRow.append(motto);}
+ const syncMenuState=()=>{
+  const open=document.body.classList.contains('site-map-is-open');
+  preview.setAttribute('aria-expanded',String(open));
+  preview.setAttribute('aria-label',open?'Főmenü bezárása':'Főmenü megnyitása');
  };
- const queue=()=>{if(queued)return;queued=true;requestAnimationFrame(sync);};
- if('MutationObserver'in window)new MutationObserver(queue).observe(hero,{childList:true,subtree:true,characterData:true});
+ if('MutationObserver'in window)new MutationObserver(syncMenuState).observe(document.body,{attributes:true,attributeFilter:['class']});
  const syncAccessibility=()=>{
   const condensed=document.body.classList.contains('cs-home-header')&&document.body.classList.contains('cs-home-condensed');
   // A vizuálisan összecsukott képváltó nem maradhat billentyűzettel fókuszálható.
@@ -69,9 +63,7 @@ function installHomeShell(){
   else compact.setAttribute('aria-hidden','true');
  };
  if('MutationObserver'in window)new MutationObserver(syncAccessibility).observe(document.body,{attributes:true,attributeFilter:['class']});
- document.addEventListener('csanadi:route-rendered',queue);
- window.addEventListener('resize',queue,{passive:true});
- syncAccessibility();queue();
+ syncAccessibility();syncMenuState();
 }
 
 function installMobileSubpage(){

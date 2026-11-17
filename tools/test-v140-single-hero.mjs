@@ -11,9 +11,10 @@ const page=json('json/oldalak/kezdolap.json');
 const library=json('json/mediatar.json');
 const entries=new Map(library.items.map(item=>[item.id,item]));
 const hero=page.blocks.find(block=>block.id==='block:home-hero');
-assert.equal(page.lifecycle.revision,8,'A kezdőlap tartalmi revíziója');
+assert.ok(page.lifecycle.revision>=9,'A kezdőlap v1.40.2-es tartalmi revíziója');
 assert.ok(hero,'Hiányzik a kezdőlap hero blokkja');
-assert.equal(hero.data.slides.length,3,'Három, egymás után megjelenő képkocka szükséges');
+assert.equal(hero.data.slides.length,30,'Pontosan 30, egymás után megjelenő képkocka szükséges');
+assert.equal(new Set(hero.data.slides.map(slide=>slide.mediaId)).size,30,'Mind a 30 kép különböző legyen');
 assert.equal(hero.data.intervalMs,7500,'A beállított automatikus váltási idő');
 
 const imagePaths=new Set();
@@ -21,7 +22,7 @@ for(const slide of hero.data.slides){
  for(const field of ['eyebrow','title','subtitle','rightEyebrow','rightTitle','rightSubtitle']){
   assert.ok(typeof slide[field]==='string'&&slide[field].trim(),`${slide.id}: hiányzik a(z) ${field}`);
  }
- for(const id of [slide.mediaId,slide.mobileMediaId]){
+ for(const id of [slide.mediaId,slide.mobileMediaId].filter(Boolean)){
   const item=entries.get(id);
   assert.ok(item,`${slide.id}: nincs bejegyezve: ${id}`);
   assert.ok(item.original?.path,`${id}: hiányzik az eredeti kép`);
@@ -36,7 +37,7 @@ for(const slide of hero.data.slides){
   }
  }
 }
-assert.equal(imagePaths.size,21,'A hat eredeti és a reszponzív képek összesen 21 állományt igényelnek');
+assert.ok(imagePaths.size>=90,'A 30 eltérő képhez legalább 90 eredeti és reszponzív médiaállomány tartozzon');
 
 const javascript=read('js/hero-2026.js');
 const css=read('css/single-hero-v1-40.css');
@@ -53,4 +54,4 @@ assert.match(css,/radial-gradient\(circle at 50% 50%/,'A címernek maradjon köz
 assert.match(media,/mobileSource\.media='\(max-width: 768px\)'/,'Mobil képkivágások legyenek');
 assert.match(html,/single-hero-v1-40\.css/,'A v1.40 stíluslap legyen bekötve');
 
-console.log(`v1.40.0 hero: ${hero.data.slides.length} váltakozó teljes szélességű kép; kétoldali felirat; ${imagePaths.size} hibátlan médiaállomány; címer és mobil képek megőrizve.`);
+console.log(`v1.40.2 hero: ${hero.data.slides.length} eltérő váltakozó teljes szélességű kép; kétoldali felirat; ${imagePaths.size} hibátlan médiaállomány; címer és mobil képek megőrizve.`);
