@@ -1,0 +1,78 @@
+/* v1.39.14 – Tematikus aloldali mini sportjelenetek, valódi mobil vezérlő,
+   stabil fejléc és erős fókusz-/kontrasztállapotok. */
+body.cs-inner-page #site-header .cs-mini-scene{
+ appearance:none;-webkit-appearance:none;box-sizing:border-box;padding:0;
+ font:inherit;color:inherit;
+}
+body.cs-inner-page #site-header .cs-subpage-motion-pause{
+ min-width:44px!important;min-height:44px!important;
+ width:44px!important;height:44px!important;
+}
+body.cs-inner-page #site-header .cs-mini-scene:focus-visible,
+body.cs-inner-page #site-header .cs-subpage-motion-pause:focus-visible{
+ outline:3px solid #ffe39d!important;outline-offset:3px!important;
+ box-shadow:0 0 0 5px #09293c!important;
+}
+/* Minden témához a jelenetben látható sportszerhez illő háttér tartozik. */
+body.cs-inner-page #site-header .cs-subpage-motion[data-scene="digital"] .cs-mini-scene{
+ background:radial-gradient(circle at 65% 30%,#226b85,#0a2a48 75%)!important;
+ border-color:#65d5e7!important;
+}
+body.cs-inner-page #site-header .cs-subpage-motion[data-scene="eco"] .cs-mini-scene{
+ background:radial-gradient(circle at 65% 30%,#35775f,#103c47 78%)!important;
+ border-color:#98d7a4!important;
+}
+body.cs-inner-page #site-header .cs-subpage-motion[data-scene="medal"] .cs-mini-scene,
+body.cs-inner-page #site-header .cs-subpage-motion[data-scene="sprint"] .cs-mini-scene{
+ background:radial-gradient(circle at 65% 30%,#6f5734,#16314c 78%)!important;
+ border-color:#e6c46e!important;
+}
+body.cs-inner-page #site-header .cs-subpage-motion[data-scene="contact"] .cs-mini-scene,
+body.cs-inner-page #site-header .cs-subpage-motion[data-scene="news"] .cs-mini-scene{
+ background:radial-gradient(circle at 65% 30%,#325a73,#102d4d 76%)!important;
+ border-color:#a8cad9!important;
+}
+@media(max-width:768px){
+ body.cs-inner-page #site-header .cs-mini-scene{
+  cursor:pointer!important;min-height:44px!important;
+  outline-offset:2px;
+ }
+ body.cs-inner-page #site-header .cs-subpage-motion-pause{display:none!important}
+ body.cs-inner-page #site-header .cs-subpage-motion:not([hidden]){
+  min-height:48px!important;isolation:isolate;
+ }
+ body.cs-inner-page #site-header .cs-mini-scene svg{pointer-events:none}
+ body.cs-inner-page #site-header .cs-mini-scene[aria-hidden="true"]{cursor:default!important}
+ body.cs-inner-page #site-header .cs-mini-scene[aria-pressed="true"]{
+  outline:2px solid #e8c173;outline-offset:-2px;
+ }
+}
+@media(min-width:769px){
+ body.cs-inner-page #site-header .cs-mini-scene{pointer-events:none!important}
+}
+@media(max-width:540px){
+ /* Nincs külön mozgó szalag: ugyanazon márkasorban marad a sportjelenet. */
+ body.cs-inner-page #site-header .cs-subpage-motion:not([hidden]){
+  min-width:44px!important;
+ }
+ body.cs-inner-page #site-header .cs-mini-scene{height:48px!important}
+ body.cs-inner-page.cs-header-condensed #site-header .cs-mini-scene{height:44px!important}
+}
+@media(prefers-contrast:more){
+ body.cs-inner-page #site-header .cs-mini-scene{border:2px solid currentColor!important}
+ body.cs-inner-page #site-header .cs-subpage-motion-pause{border:2px solid currentColor!important}
+}
+@media(forced-colors:active){
+ body.cs-inner-page #site-header .cs-mini-scene,
+ body.cs-inner-page #site-header .cs-subpage-motion-pause{
+  border:2px solid ButtonText!important;color:ButtonText!important;
+  forced-color-adjust:auto;
+ }
+ body.cs-inner-page #site-header .cs-mini-scene:focus-visible{outline:3px solid Highlight!important}
+}
+@media(prefers-reduced-motion:reduce){
+ body.cs-inner-page #site-header .cs-mini-scene *,
+ body.cs-inner-page #site-header .cs-subpage-motion *{
+  animation:none!important;transition:none!important;
+ }
+}

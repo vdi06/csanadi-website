@@ -1,0 +1,127 @@
+/* v1.39.13 – Egyetlen, stabil aloldali fejlécsor, helyben maradó sportanimáció.
+   Az új szabályok csak az aloldalakat érintik; a kezdőlapi képes sáv változatlan. */
+body.cs-inner-page #cs39-mobile-route{display:none!important}
+body.cs-inner-page #site-header .cs-subpage-ribbon-title,
+body.cs-inner-page #site-header .cs-subpage-ribbon-section{display:none!important}
+body.cs-inner-page #site-header .cs-subpage-motion:not([hidden]){
+ display:flex!important;opacity:1!important;visibility:visible!important;
+ pointer-events:auto!important;transition:none!important;
+}
+body.cs-inner-page #site-header .cs-subpage-motion[hidden]{display:none!important}
+body.cs-inner-page #site-header .cs-subpage-motion-copy{
+ min-width:0!important;overflow:hidden!important;
+}
+body.cs-inner-page #site-header .cs-subpage-motion-kicker,
+body.cs-inner-page #site-header .cs-subpage-motion-caption{
+ max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+body.cs-inner-page #site-header .cs-subpage-reading-progress{
+ pointer-events:none;z-index:5;
+}
+/* A fókusz és az egérmutató ne írja felül a Folytatás gombot: a tényleges
+   szünetállapotot kizárólag az is-paused osztály (és a reduced-motion) vezérli. */
+body.cs-inner-page #site-header .cs-subpage-motion:not(.is-paused):hover .cs-mini-scene *,
+body.cs-inner-page #site-header .cs-subpage-motion:not(.is-paused):focus-within .cs-mini-scene *{
+ animation-play-state:running!important;
+}
+
+@media(min-width:769px){
+ body.cs-inner-page #site-header .cs-subpage-motion:not([hidden]){
+  left:clamp(12px,1.5vw,26px)!important;
+  width:calc(50% - 88px)!important;
+  height:56px!important;gap:8px!important;
+ }
+ body.cs-inner-page #site-header .cs-mini-scene{
+  flex:0 0 clamp(88px,12vw,160px)!important;
+  width:clamp(88px,12vw,160px)!important;height:52px!important;
+ }
+ body.cs-inner-page #site-header .cs-subpage-motion-copy{flex:1 1 auto!important}
+ body.cs-inner-page #site-header .cs-subpage-motion-pause{
+  flex:0 0 36px!important;min-width:36px!important;min-height:36px!important;
+  width:36px!important;height:36px!important;
+ }
+ body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-motion:not([hidden]){height:48px!important}
+ body.cs-inner-page.cs-header-condensed #site-header .cs-mini-scene{height:43px!important}
+ body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-motion-caption{
+  font-size:clamp(10px,1vw,13px)!important;
+ }
+}
+
+@media(max-width:768px){
+ body.cs-inner-page #site-header .brand-row{
+  position:relative!important;flex-wrap:nowrap!important;
+ }
+ body.cs-inner-page #site-header .cs-subpage-motion:not([hidden]){
+  position:absolute!important;left:50%!important;top:50%!important;
+  transform:translate(-50%,-50%)!important;z-index:1!important;
+  width:clamp(74px,28vw,190px)!important;max-width:none!important;
+  height:52px!important;margin:0!important;padding:0!important;
+  gap:0!important;border:0!important;border-radius:0!important;
+  background:transparent!important;overflow:visible!important;
+ }
+ body.cs-inner-page #site-header .cs-mini-scene{
+  flex:1 1 auto!important;display:grid!important;place-items:center!important;
+  min-width:0!important;width:auto!important;height:50px!important;
+  border:0!important;border-radius:0!important;background:transparent!important;
+ }
+ body.cs-inner-page #site-header .cs-mini-scene svg{
+  display:block!important;width:100%!important;height:100%!important;
+ }
+ body.cs-inner-page #site-header .cs-subpage-motion-copy{display:none!important}
+ body.cs-inner-page #site-header .cs-subpage-motion-pause{
+  position:absolute!important;right:0;bottom:0;z-index:2;
+  flex:0 0 30px!important;min-width:30px!important;min-height:30px!important;
+  width:30px!important;height:30px!important;border-radius:50%!important;
+ }
+ body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-motion:not([hidden]){
+  height:43px!important;
+ }
+ body.cs-inner-page.cs-header-condensed #site-header .cs-mini-scene{height:42px!important}
+ /* Az eredeti CSS-ben az SVG animációk csak az asztali media queryben voltak. */
+ .cs-mini-runner{transform-origin:40px 37px;animation:cs-mini-bob .65s ease-in-out infinite alternate}
+ .cs-mini-arm-a{transform-origin:40px 26px;animation:cs-mini-swing .62s ease-in-out infinite alternate}
+ .cs-mini-arm-b{transform-origin:40px 26px;animation:cs-mini-swing .62s ease-in-out infinite alternate-reverse}
+ .cs-mini-leg-a{transform-origin:45px 39px;animation:cs-mini-stride .58s ease-in-out infinite alternate}
+ .cs-mini-leg-b{transform-origin:45px 39px;animation:cs-mini-stride .58s ease-in-out infinite alternate-reverse}
+ .cs-mini-speed{animation:cs-mini-track .8s linear infinite}
+ .cs-mini-ball{transform-origin:77px 47px;animation:cs-mini-ball-bounce 1s ease-in-out infinite}
+ .cs-mini-kickball{animation:cs-mini-goal 2.4s ease-in-out infinite}
+ .cs-mini-medal{transform-origin:87px 28px;animation:cs-mini-win 1.8s ease-in-out infinite}
+ .cs-mini-book,.cs-mini-hurdle,.cs-mini-pixels{animation:cs-mini-obstacle 1.3s ease-in-out infinite alternate}
+ .cs-mini-news,.cs-mini-calendar,.cs-mini-whistle,.cs-mini-bubble,
+ .cs-mini-leaf,.cs-mini-relay,.cs-mini-finish{animation:cs-mini-prop 1.8s ease-in-out infinite alternate}
+ .cs-subpage-motion[data-scene="bookjump"] .cs-mini-runner,
+ .cs-subpage-motion[data-scene="hurdle"] .cs-mini-runner,
+ .cs-subpage-motion[data-scene="digital"] .cs-mini-runner,
+ .cs-subpage-motion[data-scene="eco"] .cs-mini-runner{animation:cs-mini-jump 1.3s ease-in-out infinite}
+ .cs-subpage-motion[data-scene="medal"] .cs-mini-runner{animation:cs-mini-celebrate 1s ease-in-out infinite alternate}
+ .cs-subpage-motion.is-paused .cs-mini-scene *{animation-play-state:paused!important}
+ body.cs-inner-page.cs-header-condensed:has(#ext26-mobile-nav) #site-header .brand-row{
+  min-height:60px!important;padding:5px 10px!important;
+ }
+}
+@media(min-width:541px) and (max-width:768px){
+ body.cs-inner-page #site-header .cs-subpage-motion:not([hidden]){max-width:calc(100% - 348px)!important}
+}
+@media(max-width:540px){
+ /* 320 px-en is ugyanabba a sorba fér: a bal oldali címer és a jobb oldali
+    KRÉTA / keresés / téma / főmenü gomb változatlanul elérhető marad. */
+ body.cs-inner-page #site-header .brand{
+  flex:0 0 40px!important;max-width:40px!important;width:40px!important;
+ }
+ body.cs-inner-page #site-header .brand-copy{display:none!important}
+ body.cs-inner-page #site-header .cs-subpage-motion:not([hidden]){
+  left:60px!important;transform:translateY(-50%)!important;
+  width:clamp(44px,calc(100vw - 254px),116px)!important;
+ }
+ body.cs-inner-page #site-header .cs-subpage-motion-pause{
+  width:28px!important;height:28px!important;min-width:28px!important;min-height:28px!important;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ body.cs-inner-page #site-header .cs-mini-scene *,
+ body.cs-inner-page #site-header .cs-subpage-motion *{
+  animation:none!important;transition:none!important;
+ }
+}
+@media print{body.cs-inner-page #site-header .cs-subpage-motion{display:none!important}}

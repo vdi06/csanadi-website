@@ -8,25 +8,22 @@ function installHomeShell(){
  const header=byId('site-header'),hero=byId('global-hero');
  if(!header||!hero||byId('cs39-home-shell'))return;
  const shell=el('div','cs39-home-shell');shell.id='cs39-home-shell';
- header.before(shell);shell.append(header,hero);
+ // Csak a felső menüsor tapad: a nagy váltakozó természetesen kigördül alóla.
+ // Így az elrejtés soha nem vonja ki a képváltó magasságát a dokumentumfolyamból,
+ // és nem rántja meg a görgetési pozíciót.
+ header.before(shell);shell.append(header);shell.after(hero);
  const compact=el('div','cs39-mini-hero');compact.id='cs39-mini-hero';
  compact.setAttribute('role','group');compact.setAttribute('aria-label','A kezdőlapi képes tartalom középső előnézete');
- const previous=el('button','cs39-mini-step','‹');previous.type='button';previous.setAttribute('aria-label','Előző kiemelt kép');previous.setAttribute('aria-controls','csn26-visual-carousel');
  const preview=el('a','cs39-mini-preview');preview.href='#/sport';preview.setAttribute('aria-label','Kiemelt tartalom megnyitása');
  const image=el('img','cs39-mini-image');image.alt='';image.width=70;image.height=47;
  const description=el('span','cs39-mini-description');
  description.append(el('strong','cs39-mini-label','Kiemelt sportos tartalom'),el('small','cs39-mini-hint','Kattints a megnyitáshoz'));
  preview.append(image,description);
- const next=el('button','cs39-mini-step','›');next.type='button';next.setAttribute('aria-label','Következő kiemelt kép');next.setAttribute('aria-controls','csn26-visual-carousel');
- const menu=el('button','cs39-mini-menu','Főmenü');menu.type='button';menu.setAttribute('aria-label','Főmenü megnyitása');
- const top=el('button','cs39-mini-top','↑');top.type='button';top.setAttribute('aria-label','Teljes kezdőlapi fejléc megjelenítése');
- for(const node of [previous,preview,next,menu,top])compact.append(node);
- // Görgetéskor a kis képváltó ugyanannak a menüfejlécnek a része.
- header.append(compact);
- previous.addEventListener('click',()=>hero.querySelector('.csn26-edge-arrow--left')?.click());
- next.addEventListener('click',()=>hero.querySelector('.csn26-edge-arrow--right')?.click());
- menu.addEventListener('click',()=>byId('orbit-open')?.click());
- top.addEventListener('click',()=>window.scrollTo({top:0,behavior:reduce.matches?'instant':'smooth'}));
+ // A zsugorodó fejlécben kizárólag ez az EGY középső link látszik és fókuszálható.
+ compact.append(preview);
+ // Görgetéskor a kis kép nem kap új sort: a meglévő brand-row közepére kerül.
+ const brandRow=header.querySelector('.brand-row');
+ (brandRow||header).append(compact);
  let lastLabel='',lastSource='',queued=false;
  const sync=()=>{
   queued=false;
@@ -53,9 +50,15 @@ function installHomeShell(){
   const condensed=document.body.classList.contains('cs-home-header')&&document.body.classList.contains('cs-home-condensed');
   // A vizuálisan összecsukott képváltó nem maradhat billentyűzettel fókuszálható.
   if(condensed&&hero.contains(document.activeElement))preview.focus({preventScroll:true});
+  if(!condensed&&compact.contains(document.activeElement)){
+   (hero.querySelector('.csn26-visual-wing--left .csn26-wing-surface')||header.querySelector('a[href]'))?.focus({preventScroll:true});
+  }
   hero.inert=condensed;
   if(condensed)hero.setAttribute('aria-hidden','true');
   else hero.removeAttribute('aria-hidden');
+  compact.inert=!condensed;
+  if(condensed)compact.removeAttribute('aria-hidden');
+  else compact.setAttribute('aria-hidden','true');
  };
  if('MutationObserver'in window)new MutationObserver(syncAccessibility).observe(document.body,{attributes:true,attributeFilter:['class']});
  document.addEventListener('csanadi:route-rendered',queue);
@@ -109,5 +112,6 @@ function installMobileSubpage(){
 
 export function initV1391Enhancements(){
  installHomeShell();
- installMobileSubpage();
+ // v1.39.13: az aloldali animáció is közvetlenül a meglévő brand-row-ban él.
+ // Nem készítünk hozzá külön mobil fejlécsort, így az nem villan fel görgetéskor.
 }

@@ -31,11 +31,15 @@ const state=vm.runInContext('state',context);
 const checks={};
 async function run(name,fn){await fn();checks[name]=true;console.log('OK',name);}
 async function main(){
+  Object.assign(context,await import('./media-project-ops-v1-39-4.mjs'));
+  Object.assign(context,await import('./media-validation-v1-39-7.mjs'));
+  context.bytes=value=>String(value)+' bájt';
   element('mm-filter').value='';
   for(const id of ['mm-type','mm-usage','mm-review','mm-order'])element(id).value='all';
-  await run('628 fájl és jogállás betöltése',async()=>{
+  await run('Aktuális fájlkatalógus és jogállás betöltése',async()=>{
     await vm.runInContext('start()',context);
-    assert.equal(state.items.length,628);
+    const expected=JSON.parse(fs.readFileSync(path.join(root,'json/assets-inventory.json'),'utf8')).items.length;
+    assert.equal(state.items.length,expected);
     assert(state.items.some(x=>x._rightsStatus==='pending'));
   });
   await run('Jogállás szűrő éles indexen',async()=>{
@@ -73,7 +77,9 @@ async function main(){
     }
   });
   await run('Új kép létrehozása és szerkesztői metaadat',async()=>{
-    const file={name:'csanadi-test-media.webp',size:6,arrayBuffer:async()=>new Uint8Array([82,73,70,70,0,1]).buffer};
+    const bytes=new Uint8Array([82,73,70,70,0,0,0,0,87,69,66,80]);
+    const file={name:'csanadi-test-media.webp',type:'image/webp',size:bytes.length,
+      arrayBuffer:async()=>bytes.buffer,slice:()=>({arrayBuffer:async()=>bytes.buffer})};
     context.__newFile=file;
     await vm.runInContext('fileArray([__newFile])',context);
     const added=state.items.find(x=>x._new);
@@ -86,6 +92,9 @@ async function main(){
     element('mm-publish').checked=true;element('mm-rights-ok').checked=true;
     vm.runInContext('applyForm()',context);
     assert.equal(added._publish,true);assert.equal(added._rightsChecked,true);
+    await assert.rejects(()=>vm.runInContext('prepareExport(false)',context),/intézményi jóváhagyás szükséges/);
+    // Szimulált, kizárólag a memóriában szereplő tesztjóváhagyás; a kiadott JSON-ban nincs változás.
+    added._institutionallyApproved=true;
   });
   await run('Kiadási ZIP tartalmának előkészítése valódi JSON-okkal',async()=>{
     const result=await vm.runInContext('prepareExport(false)',context);
@@ -98,7 +107,7 @@ async function main(){
     assert(gallery.items.some(x=>x.src==='assets/media/web/csanadi-test-media.webp'));
     const mediatar=JSON.parse(result.output.get('json/mediatar.json'));
     assert(mediatar.items.some(x=>x.original?.path==='assets/media/web/csanadi-test-media.webp'&&x.rights?.clearance==='editor-confirmed'));
-    assert(mediatar.items.some(x=>x.original?.path==='assets/media/web/csanadi-test-media.webp'&&x.rights?.source==='irat-2026-teszt'&&x.rights?.institutionallyApproved===false));
+    assert(mediatar.items.some(x=>x.original?.path==='assets/media/web/csanadi-test-media.webp'&&x.rights?.source==='irat-2026-teszt'&&x.rights?.institutionallyApproved===true));
   });
   await run('Törlésre jelölés és tiszta, újrakészíthető kiadás',async()=>{
     vm.runInContext('deleteItem()',context);

@@ -1,5 +1,5 @@
 // Közös, statikus tárhelyen is működő aloldali finomítások.
-import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.38.2';
+import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.39.14';
 const forbiddenHost = /(^|\.)csanadi-bp\.edu\.hu$/i;
 const legacyRoutes = new Map([
   ['tortenet.html','#/iskolank/tortenet'],
@@ -169,6 +169,7 @@ export function initSubpageEnhancements() {
     const last=headings.filter(heading=>heading.getBoundingClientRect().top<=header.getBoundingClientRect().bottom+60).at(-1);
     const section=last?.textContent?.trim()||'Az oldal áttekintése';
     ribbonSection.textContent=section+' · '+Math.round(read)+'%';
+    headerMotion.updateReading(current,section+' · '+Math.round(read)+'%');
   };
   const queueUpdate = () => {
     if (scheduled) return;

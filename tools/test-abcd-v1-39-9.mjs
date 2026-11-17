@@ -87,8 +87,8 @@ test('A témaválasztó a beágyazott szakaszcímet is kezeli',()=>{
  assert.match(src,/heading\.focus\(\{preventScroll:true\}\)/);
 });
 test('Az oldalak és az erőforrások verziója egységes',()=>{
- assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.39\.(?:9|10|11)$/);
- assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:9|10|11)/);
+ assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.39\.(?:9|10|11|12)$/);
+ assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:9|10|11|12)/);
  assert.match(read('tools/eszkoz-mediator.html'),/media-manager-2026\.js\?v=1\.39\.9/);
  for(const p of report.pageResults){const page=json(p.file);assert.equal(page.seo.robots,'noindex,nofollow');}
 });

@@ -15,12 +15,12 @@ test('Új JavaScript-modul bekötve',()=>{
 test('A javítóstílus a régi réteg után töltődik',()=>{
  const html=read('index.html');
  assert.ok(html.indexOf('liquid-glass-v1-39-0.css')<html.indexOf('corrections-v1-39-1.css'));
- assert.match(html,/script\.js\?v=1\.39\.(?:[123456789]|10|11)/);
+ assert.match(html,/script\.js\?v=1\.39\.(?:[123456789]|10|11|12)/);
 });
 test('A teljes főoldali felső egység együtt rögzül',()=>{
  const js=read('js/release-v1-39-1.js');
  const css=read('css/corrections-v1-39-1.css');
- assert.match(js,/shell\.append\(header,hero\)/);
+ assert.match(js,/shell\.append\(header\);shell\.after\(hero\)/);
  assert.match(css,/body\.cs-home-header #cs39-home-shell\s*\{[^}]*position:sticky/s);
  assert.match(css,/body\.cs-home-header\.cs-home-condensed #cs39-mini-hero\{display:flex\}/);
  assert.match(js,/hero\.inert=condensed/);
@@ -48,7 +48,7 @@ test('A kereső egyesíti az index és a tényleges blokkok szövegét',()=>{
 });
 test('Az FTP cache kiadási verziója egységes',()=>{
  const version=json('json/config.json').performance.cacheVersion;
- assert.match(version,/^csanadi-r-v1\.39\.(?:[123456789]|10|11)$/);
+ assert.match(version,/^csanadi-r-v1\.39\.(?:[123456789]|10|11|12|13)$/);
  assert.ok(read('index.html').includes('round13-network.js?v='+version));
 });
 console.log(JSON.stringify({version:'1.39.1',passed,total:7}));

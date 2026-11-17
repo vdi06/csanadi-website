@@ -13,7 +13,7 @@ function walk(folder){for(const item of fs.readdirSync(path.join(root,folder),{w
 }}
 walk('');
 const failures=[];
-if(manifest.release!=='csanadi-website-v1.39.11'||!manifest.ftpCompatible)failures.push('Kiadásjel vagy FTP-státusz hibás');
+if(manifest.release!=='csanadi-website-v1.39.14'||!manifest.ftpCompatible)failures.push('Kiadásjel vagy FTP-státusz hibás');
 if(manifest.date!=='2026-11-17')failures.push('A kiadási dátum eltér');
 for(const relative of files){
  const meta=manifest.files?.[relative];
@@ -25,6 +25,6 @@ for(const relative of files){
 }
 for(const extra of Object.keys(manifest.files||{}))if(!files.includes(extra))failures.push('Hiányzó vagy kizárt fájl szerepel: '+extra);
 const config=JSON.parse(fs.readFileSync(path.join(root,'json/config.json'),'utf8'));
-if(config.performance?.cacheVersion!=='csanadi-r-v1.39.11')failures.push('Eltérő gyorsítótár-verzió');
+if(config.performance?.cacheVersion!=='csanadi-r-v1.39.14')failures.push('Eltérő gyorsítótár-verzió');
 console.log(JSON.stringify({release:manifest.release,checked:files.length,manifestFiles:Object.keys(manifest.files||{}).length,passed:files.length-failures.length,failed:failures.slice(0,20)},null,2));
 if(failures.length)process.exitCode=1;

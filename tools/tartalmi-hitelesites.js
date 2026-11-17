@@ -20,7 +20,12 @@
     return element;
   };
   const safe = value => String(value || '').toLocaleLowerCase('hu-HU').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  const quote = value => '"' + String(value ?? '').replace(/"/g, '""') + '"';
+  // A munkalap szabad szövege CSV-olvasóban ne válhasson képletté.
+  const quote = value => {
+    const raw=String(value??'');
+    const inert=/^[\s\uFEFF]*[=+\-@]/.test(raw)?"'"+raw:raw;
+    return '"'+inert.replace(/"/g,'""')+'"';
+  };
   const clean = (value, limit) => String(value ?? '').trim().slice(0, limit);
   try {
     const data = JSON.parse(localStorage.getItem(storageKey) || '{}');
@@ -41,17 +46,25 @@
     a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 3000);
   }
-  function current(row) {
-    const entry=state.changes[row.key] || { status: 'pending', note: '', reviewer: '', evidence: '', permission: '', decision: '' };
-    return entry.status==='approved'&&!completeApproval(row,entry)?{...entry,status:'review'}:entry;
+  function missingApprovalFields(kind,entry) {
+    const missing=[];
+    if(!entry.reviewer)missing.push('ellenőrző');
+    if(!entry.evidence)missing.push('forrás és dátum');
+    if(['assets','mediaRights'].includes(kind)&&!entry.permission)missing.push('felhasználási jogosultság');
+    if(!entry.decision)missing.push('intézményi döntés');
+    return missing;
   }
+  function currentFor(kind,row) {
+    const entry=state.changes[row.key] || { status: 'pending', note: '', reviewer: '', evidence: '', permission: '', decision: '' };
+    return entry.status==='approved'&&missingApprovalFields(kind,entry).length?{...entry,status:'review'}:entry;
+  }
+  function current(row){return currentFor(state.kind,row);}
   function change(row, key, value) {
     state.changes[row.key] = { ...current(row), [key]: value, date: new Date().toISOString() };
     save();
   }
   function completeApproval(row, entry) {
-    return !!(entry.reviewer && entry.evidence && entry.decision &&
-      (!['assets', 'mediaRights'].includes(state.kind) || entry.permission));
+    return missingApprovalFields(state.kind,entry).length===0;
   }
   async function load() {
     state.kind = $('kind').value;
@@ -115,8 +128,18 @@
     input.placeholder = placeholder;
     input.value = current(row)[property] || '';
     input.setAttribute('aria-label', row.title + ' – ' + placeholder);
-    input.addEventListener('change', () => change(row, property, input.value.trim()));
+    input.addEventListener('change', () => {
+      change(row, property, input.value.trim());
+      const hint=input.closest?.('tr')?.querySelector('.approval-requirements');
+      if(hint)hint.textContent=approvalHint(state.kind,current(row));
+      if($('state').value==='missing')render();else updateSummary();
+    });
     return input;
+  }
+  function approvalHint(kind,item){
+    const missing=missingApprovalFields(kind,item);
+    return missing.length?'Hiányzó igazoló adatok: '+missing.join(', ')+'.':
+      'A helyi mezők kitöltve; az intézményi jóváhagyás ettől még nem igazolt.';
   }
   function render() {
     const search = safe($('filter').value);
@@ -126,7 +149,9 @@
     let shown = 0;
     for (const row of state.rows) {
       const item = current(row);
-      if (statusFilter !== 'all' && item.status !== statusFilter) continue;
+      if (statusFilter==='missing'){
+        if(!missingApprovalFields(state.kind,item).length)continue;
+      }else if (statusFilter !== 'all' && item.status !== statusFilter) continue;
       if (search && !safe([row.title, row.path, row.description, row.route, item.note].join(' ')).includes(search)) continue;
       shown++;
       const tr = document.createElement('tr');
@@ -148,6 +173,10 @@
         source.append(link);
       } else source.append(text('span', row.path));
       source.append(text('p', row.sourceStatus));
+      if(['priority','mediaRights'].includes(state.kind)){
+        const hint=text('p',approvalHint(state.kind,item));
+        hint.className='approval-requirements';source.append(hint);
+      }
       tr.append(info, source);
 
       const select = document.createElement('select');
@@ -193,8 +222,9 @@
   }
   function updateSummary() {
     const counts = { pending: 0, review: 0, ready: 0, approved: 0 };
-    for (const row of state.rows) counts[current(row).status || 'pending']++;
-    $('summary').textContent = `Felülvizsgálandó: ${counts.pending} · Javítandó: ${counts.review} · Helyben ellenőrizve: ${counts.ready} · Jóváhagyási adat rögzítve: ${counts.approved}`;
+    let complete=0;
+    for (const row of state.rows){const item=current(row);counts[item.status || 'pending']++;if(!missingApprovalFields(state.kind,item).length)complete++;}
+    $('summary').textContent = `Felülvizsgálandó: ${counts.pending} · Javítandó: ${counts.review} · Helyben ellenőrizve: ${counts.ready} · Jóváhagyási adat rögzítve: ${counts.approved} · Igazoló mezők kitöltve: ${complete}/${state.rows.length} (nem jelent hivatalos jóváhagyást)`;
   }
   function payload() { return state.rows.map(row => ({ ...row, ...current(row) })); }
 
@@ -210,6 +240,30 @@
   });
   $('exportjson').addEventListener('click', () => download('csanadi_hitelesitesi_munkalap_' + state.kind + '.json',
     JSON.stringify({ schemaVersion: '1.1.0', kind: state.kind, generatedAt: new Date().toISOString(), records: payload() }, null, 2), 'application/json'));
+  $('exportfocus').addEventListener('click',async()=>{
+    const button=$('exportfocus');button.disabled=true;
+    $('status').textContent='A 23+69 tételes összesített munkalap összeállítása…';
+    try{
+      const responses=await Promise.all([kinds.priority,kinds.mediaRights].map(url=>fetch(url,{cache:'no-store'})));
+      if(responses.some(response=>!response.ok))throw Error('A forráslisták egyike nem érhető el.');
+      const [report,library]=await Promise.all(responses.map(response=>response.json()));
+      const priorities=report.priorities||[];
+      const media=(library.items||[]).filter(item=>item.rights?.clearance==='pending');
+      if(priorities.length!==23||media.length!==69)throw Error('A 23+69 tételes forráslista megváltozott; új ellenőrzés szükséges.');
+      const worklist=[
+        ...priorities.map(item=>({kind:'priority',key:'page:'+item.file.replace(/^json\//,''),title:item.title,path:item.file})),
+        ...media.map(item=>({kind:'mediaRights',key:'media:'+item.id,title:item.id,path:item.original?.path||''}))
+      ];
+      const rows=[['Adatkör','Kulcs','Cím','Forrásfájl','Helyi munkastátusz','Hiányzó igazoló adatok','Ellenőrző','Forrás és dátum','Jogalap','Intézményi döntés','Megjegyzés','Módosítva']];
+      for(const item of worklist){
+        const entry=currentFor(item.kind,item);
+        rows.push([item.kind,item.key,item.title,item.path,entry.status||'pending',missingApprovalFields(item.kind,entry).join(', '),entry.reviewer,entry.evidence,entry.permission,entry.decision,entry.note,entry.date||'']);
+      }
+      download('csanadi_23_oldal_69_media_hitelesitesi_lista.csv','\ufeff'+rows.map(cells=>cells.map(quote).join(';')).join('\r\n'),'text/csv;charset=utf-8');
+      $('status').textContent='92 helyi ellenőrzési tétel exportálva. A fájl nem jelent intézményi engedélyezést.';
+    }catch(error){$('status').textContent='Az összesített export nem sikerült: '+error.message;}
+    finally{button.disabled=false;}
+  });
   $('importjson').addEventListener('change', async event => {
     const file = event.target.files?.[0];
     event.target.value = '';

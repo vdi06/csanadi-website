@@ -38,12 +38,15 @@ const miniSvg=scene=>`<svg viewBox="0 0 126 68" aria-hidden="true" focusable="fa
 export const availableHeaderScenes=Object.freeze(Object.keys(PROPS));
 
 export function createSubpageHeaderMotion(brandRow){
- if(!brandRow)return {render:()=>{},sync:()=>{}};
+ if(!brandRow)return {render:()=>{},sync:()=>{},updateReading:()=>{}};
  const region=document.createElement('aside');
  region.className='cs-subpage-motion';
  region.setAttribute('aria-label','Az aloldalhoz kapcsolódó játékos sportanimáció');
  region.hidden=true;
- const scene=document.createElement('span');scene.className='cs-mini-scene';scene.setAttribute('aria-hidden','true');
+ // Mobilon maga a nagy, animált jelenet a szünet/folytatás gomb; így nincs
+ // az ábra sarkába zsúfolt, 28 px-es második érintési célpont.
+ const scene=document.createElement('button');scene.type='button';scene.className='cs-mini-scene';
+ scene.tabIndex=-1;scene.setAttribute('aria-hidden','true');
  const copy=document.createElement('span');copy.className='cs-subpage-motion-copy';
  const kicker=document.createElement('span');kicker.className='cs-subpage-motion-kicker';
  const caption=document.createElement('span');caption.className='cs-subpage-motion-caption';
@@ -53,30 +56,51 @@ export function createSubpageHeaderMotion(brandRow){
  region.append(scene,copy,pause);
  brandRow.prepend(region);
  const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
- let userPaused=false,autoplay=true;
+ const mobilePreference=matchMedia('(max-width: 768px)');
+ let userPaused=false,autoplay=true,initialKicker='CSANÁDI',initialCaption='Sport és tanulás';
+ let readingTitle='',readingSection='';
  const sync=()=>{
-  const stopped=userPaused||!autoplay||motionPreference.matches||document.hidden||
-   document.body.classList.contains('cs-header-condensed');
+  // A kompakt fejlécben is ugyanaz a sportmozdulat marad életben.
+  const stopped=userPaused||!autoplay||motionPreference.matches||document.hidden;
+  const sceneControl=mobilePreference.matches&&autoplay&&!motionPreference.matches&&!region.hidden;
   region.classList.toggle('is-paused',stopped);
+  scene.tabIndex=sceneControl?0:-1;
+  scene.setAttribute('aria-hidden',String(!sceneControl));
+  scene.setAttribute('aria-pressed',String(userPaused));
+  scene.setAttribute('aria-label',userPaused?'Sportanimáció folytatása':'Sportanimáció szüneteltetése');
+  scene.title=userPaused?'Sportanimáció folytatása':'Sportanimáció szüneteltetése';
   pause.classList.toggle('is-resumable',userPaused);
-  pause.hidden=!autoplay||motionPreference.matches;
+  pause.hidden=!autoplay||motionPreference.matches||mobilePreference.matches;
   pause.title=userPaused?'Animáció folytatása':'Animáció szüneteltetése';
   pause.setAttribute('aria-label',userPaused?'Animáció folytatása':'Animáció szüneteltetése');
   pause.setAttribute('aria-pressed',String(userPaused));
  };
- pause.addEventListener('click',()=>{userPaused=!userPaused;sync();});
+ const togglePause=()=>{userPaused=!userPaused;sync();};
+ pause.addEventListener('click',togglePause);
+ scene.addEventListener('click',()=>{if(mobilePreference.matches&&autoplay&&!motionPreference.matches)togglePause();});
  document.addEventListener('visibilitychange',sync);
  motionPreference.addEventListener('change',sync);
+ mobilePreference.addEventListener('change',sync);
+ const updateReading=(title,section)=>{
+  readingTitle=String(title||'Csanádi Sportiskola').slice(0,105);
+  readingSection=String(section||'Az oldal áttekintése').slice(0,105);
+  const condensed=document.body.classList.contains('cs-header-condensed');
+  const nextKicker=condensed?readingTitle:initialKicker;
+  const nextCaption=condensed?readingSection:initialCaption;
+  if(kicker.textContent!==nextKicker)kicker.textContent=nextKicker;
+  if(caption.textContent!==nextCaption)caption.textContent=nextCaption;
+ };
  const render=payload=>{
   if(!payload){region.hidden=true;scene.replaceChildren();return;}
   const name=Object.hasOwn(PROPS,payload.scene)?payload.scene:'dribble';
   region.dataset.scene=name;
   scene.innerHTML=miniSvg(name);
-  kicker.textContent=String(payload.label||'CSANÁDI').slice(0,45);
-  caption.textContent=String(payload.caption||'Sport és tanulás').slice(0,95);
+  initialKicker=String(payload.label||'CSANÁDI').slice(0,45);
+  initialCaption=String(payload.caption||'Sport és tanulás').slice(0,95);
+  updateReading(readingTitle,readingSection);
   autoplay=payload.autoplay!==false;
   region.hidden=false;
   sync();
  };
- return {render,sync};
+ return {render,sync,updateReading};
 }

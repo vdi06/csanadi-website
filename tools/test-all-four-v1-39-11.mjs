@@ -63,13 +63,14 @@ test('A mobilnyilak és a fókuszjelölések érinthetők és láthatók',()=>{
 test('Csak a középső gomb jelenik meg összehúzott fejlécben',()=>{
  assert.match(css,/#cs39-mini-hero > :not\(\.cs39-mini-preview\)\{display:none!important\}/);
  assert.match(css,/justify-self:center/);
- assert.match(compact,/header\.append\(compact\)/);
+ assert.match(compact,/\(brandRow\|\|header\)\.append\(compact\)/);
 });
 test('A villódzás elleni hiszterézis két külön küszöböt használ',()=>{
  assert.match(header,/homeHeroFolded/);
- assert.match(header,/Math\.max\(390,expanded\+145\)/);
- assert.match(header,/scrollY<=18/);
- assert.match(css,/max-height \.18s ease-out/);
+ assert.match(header,/bottom<=84/);
+ assert.match(header,/bottom>=114/);
+ assert.match(compact,/shell\.append\(header\);shell\.after\(hero\)/);
+ assert.match(read('css/hero-morph-v1-39-12.css'),/max-height:none!important/);
 });
 test('Az eltűnő képsor billentyűzetről nem fókuszálható',()=>{
  assert.match(compact,/hero\.inert=condensed/);
@@ -83,17 +84,17 @@ test('A helyi hitelesítő két új forráslistát is megjelenít',()=>{
  }
 });
 test('Az engedély nélküli jóváhagyási állapot nem fogadható el',()=>{
- assert.match(tool,/completeApproval\(row,entry\)/);
- assert.match(tool,/entry\.reviewer && entry\.evidence && entry\.decision/);
- assert.match(tool,/\['assets', 'mediaRights'\]\.includes\(state\.kind\)/);
- assert.match(tool,/entry\.status==='approved'&&!completeApproval/);
+ assert.match(tool,/function completeApproval\(row, entry\)/);
+ assert.match(tool,/missingApprovalFields/);
+ assert.match(tool,/\['assets','mediaRights'\]\.includes\(kind\)/);
+ assert.match(tool,/entry\.status==='approved'&&missingApprovalFields/);
 });
 test('A kiadás saját CSS-ét és új modulverzióit tölti',()=>{
  const html=read('index.html');
  assert.match(html,/home-header-polish-v1-39-11\.css\?v=1\.39\.11/);
- assert.match(html,/script\.js\?v=1\.39\.11/);
- assert.match(read('js/blocks.js'),/hero-2026\.js\?v=1\.39\.11/);
- assert.equal(json('json/config.json').performance.cacheVersion,'csanadi-r-v1.39.11');
+ assert.match(html,/script\.js\?v=1\.39\.(?:11|12|13)/);
+ assert.match(read('js/blocks.js'),/hero-2026\.js\?v=1\.39\.(?:11|12|13)/);
+ assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.39\.(?:11|12|13)$/);
 });
 
 const failed=results.filter(item=>!item.ok);

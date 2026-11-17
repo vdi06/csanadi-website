@@ -18,7 +18,7 @@ test('A képernyőolvasó számára maradt szemantikus H1',()=>{
  assert.match(hero,/section\.append\(accessibleHeading,row\)/);
 });
 test('A zsugorított váltó a menüfejléc gyereke',()=>{
- assert.match(shell,/header\.append\(compact\)/);
+ assert.match(shell,/\(brandRow\|\|header\)\.append\(compact\)/);
  assert.match(shell,/hero\.inert=condensed/);
  assert.match(shell,/hero\.setAttribute\('aria-hidden','true'\)/);
  assert.match(css,/#site-header #cs39-mini-hero/);
@@ -37,9 +37,9 @@ test('Telefonos és kis telefonos méretezések léteznek',()=>{
 });
 test('A v1.39.10 eszközök mind bekötve, a cache megújult',()=>{
  assert.match(read('index.html'),/home-header-ribbon-v1-39-10\.css\?v=1\.39\.10/);
- assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:10|11)/);
- assert.match(read('js/blocks.js'),/hero-2026\.js\?v=1\.39\.(?:10|11)/);
- assert.match(JSON.parse(read('json/config.json')).performance.cacheVersion,/^csanadi-r-v1\.39\.(?:10|11)$/);
+ assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:10|11|12|13)/);
+ assert.match(read('js/blocks.js'),/hero-2026\.js\?v=1\.39\.(?:10|11|12|13)/);
+ assert.match(JSON.parse(read('json/config.json')).performance.cacheVersion,/^csanadi-r-v1\.39\.(?:10|11|12|13)$/);
 });
 test('71 oldal és 748 média továbbra is elérhető',()=>{
  assert.equal(Object.keys(JSON.parse(read('json/oldalindex.json')).pages).length,71);

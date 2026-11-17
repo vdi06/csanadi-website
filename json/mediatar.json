@@ -39,8 +39,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 286734,
-        "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
+        "sizeBytes": 155646,
+        "sha256": "09d62b3144c3638fd3614bb6eb42c1e67d09618a1fb3744655854254df3aa79c"
       },
       "variants": [
         {
@@ -48,8 +48,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 286734,
-          "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
+          "sizeBytes": 155646,
+          "sha256": "09d62b3144c3638fd3614bb6eb42c1e67d09618a1fb3744655854254df3aa79c"
         },
         {
           "path": "assets/media/web/responsive/hero-1600-320.webp",
@@ -93,8 +93,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 266314,
-        "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
+        "sizeBytes": 147856,
+        "sha256": "dd3d9f4b6bb579e5d5b34b8a5921d6a75689404e7b921b9159dedac49517cb4e"
       },
       "variants": [
         {
@@ -102,8 +102,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 266314,
-          "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
+          "sizeBytes": 147856,
+          "sha256": "dd3d9f4b6bb579e5d5b34b8a5921d6a75689404e7b921b9159dedac49517cb4e"
         },
         {
           "path": "assets/media/web/responsive/iskolank-1600-320.webp",
@@ -147,8 +147,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 229154,
-        "sha256": "786744eb3f3c97e706da0b899719076b1d320c273950c20a086a54d59500f9eb"
+        "sizeBytes": 124066,
+        "sha256": "f543aa280151c768f51847b3d03e6b38519dabd7599f5f81ad44f92a1da97944"
       },
       "variants": [
         {
@@ -156,8 +156,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 229154,
-          "sha256": "786744eb3f3c97e706da0b899719076b1d320c273950c20a086a54d59500f9eb"
+          "sizeBytes": 124066,
+          "sha256": "f543aa280151c768f51847b3d03e6b38519dabd7599f5f81ad44f92a1da97944"
         },
         {
           "path": "assets/media/web/responsive/oktatas-1600-320.webp",
@@ -201,8 +201,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 342632,
-        "sha256": "461395c1deda2d731b68339921526d8e25d79dc20609123e6ca53ec46b0e734a"
+        "sizeBytes": 191108,
+        "sha256": "828879404d355ea47a037faccac9471d5b4babcefec2cc12ba727e6011c4b221"
       },
       "variants": [
         {
@@ -210,8 +210,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 342632,
-          "sha256": "461395c1deda2d731b68339921526d8e25d79dc20609123e6ca53ec46b0e734a"
+          "sizeBytes": 191108,
+          "sha256": "828879404d355ea47a037faccac9471d5b4babcefec2cc12ba727e6011c4b221"
         },
         {
           "path": "assets/media/web/responsive/sport-1600-320.webp",
@@ -255,8 +255,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 254656,
-        "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
+        "sizeBytes": 136694,
+        "sha256": "03fc8def51c72cb5f6717010021c19cf87f4242f272269a275f6696af66c06bc"
       },
       "variants": [
         {
@@ -264,8 +264,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 254656,
-          "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
+          "sizeBytes": 136694,
+          "sha256": "03fc8def51c72cb5f6717010021c19cf87f4242f272269a275f6696af66c06bc"
         },
         {
           "path": "assets/media/web/responsive/kozosseg-1600-320.webp",
@@ -309,8 +309,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 286734,
-        "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
+        "sizeBytes": 155646,
+        "sha256": "09d62b3144c3638fd3614bb6eb42c1e67d09618a1fb3744655854254df3aa79c"
       },
       "variants": [
         {
@@ -318,8 +318,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 286734,
-          "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
+          "sizeBytes": 155646,
+          "sha256": "09d62b3144c3638fd3614bb6eb42c1e67d09618a1fb3744655854254df3aa79c"
         },
         {
           "path": "assets/media/web/responsive/felveteli-1600-320.webp",
@@ -363,8 +363,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 169604,
-        "sha256": "8566576bd8c959c40d6ad92e99f5795cd13c3ff3fb7e1c1620186616b84055ba"
+        "sizeBytes": 89440,
+        "sha256": "5929ca73bf8033e26be8d24d0d1a28f2cdfeb5f95b1f41ada51a5edc1eb33d3d"
       },
       "variants": [
         {
@@ -372,8 +372,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 169604,
-          "sha256": "8566576bd8c959c40d6ad92e99f5795cd13c3ff3fb7e1c1620186616b84055ba"
+          "sizeBytes": 89440,
+          "sha256": "5929ca73bf8033e26be8d24d0d1a28f2cdfeb5f95b1f41ada51a5edc1eb33d3d"
         },
         {
           "path": "assets/media/web/responsive/eredmenyek-1600-320.webp",
@@ -417,8 +417,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 266314,
-        "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
+        "sizeBytes": 147856,
+        "sha256": "dd3d9f4b6bb579e5d5b34b8a5921d6a75689404e7b921b9159dedac49517cb4e"
       },
       "variants": [
         {
@@ -426,8 +426,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 266314,
-          "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
+          "sizeBytes": 147856,
+          "sha256": "dd3d9f4b6bb579e5d5b34b8a5921d6a75689404e7b921b9159dedac49517cb4e"
         },
         {
           "path": "assets/media/web/responsive/esemenyek-1600-320.webp",
@@ -471,8 +471,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 254656,
-        "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
+        "sizeBytes": 136694,
+        "sha256": "03fc8def51c72cb5f6717010021c19cf87f4242f272269a275f6696af66c06bc"
       },
       "variants": [
         {
@@ -480,8 +480,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 254656,
-          "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
+          "sizeBytes": 136694,
+          "sha256": "03fc8def51c72cb5f6717010021c19cf87f4242f272269a275f6696af66c06bc"
         },
         {
           "path": "assets/media/web/responsive/kapcsolat-1600-320.webp",
@@ -525,8 +525,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 229260,
-        "sha256": "b16a3377340e805f424483fce6018ae609a215304ad151bb73cfdc0ad46e3e1a"
+        "sizeBytes": 122184,
+        "sha256": "0e122c95484fb74a7030ea39fd392b7c3d3ee10367c333346f335821f5c3442d"
       },
       "variants": [
         {
@@ -534,8 +534,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 229260,
-          "sha256": "b16a3377340e805f424483fce6018ae609a215304ad151bb73cfdc0ad46e3e1a"
+          "sizeBytes": 122184,
+          "sha256": "0e122c95484fb74a7030ea39fd392b7c3d3ee10367c333346f335821f5c3442d"
         },
         {
           "path": "assets/media/web/responsive/siker-atletika-320.webp",
@@ -579,8 +579,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 219684,
-        "sha256": "1474a09b8adfb3830bdded2f4029b7e09341034ad3fd2f886765d9fd8be18123"
+        "sizeBytes": 115026,
+        "sha256": "1788f50b18f8d95b103b81278e27c6a172edf28738f6d6e999a9f7b227c5b291"
       },
       "variants": [
         {
@@ -588,8 +588,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 219684,
-          "sha256": "1474a09b8adfb3830bdded2f4029b7e09341034ad3fd2f886765d9fd8be18123"
+          "sizeBytes": 115026,
+          "sha256": "1788f50b18f8d95b103b81278e27c6a172edf28738f6d6e999a9f7b227c5b291"
         },
         {
           "path": "assets/media/web/responsive/siker-kosarlabda-320.webp",
@@ -633,8 +633,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 276394,
-        "sha256": "63c099895ead15acee5b9b491dd15d37aa27629e5468e1bc70ce90b96cc898ba"
+        "sizeBytes": 150494,
+        "sha256": "1dd7795f03f0235385b44ad297d3af0de89cd0d12332513439789685408dd0bc"
       },
       "variants": [
         {
@@ -642,8 +642,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 276394,
-          "sha256": "63c099895ead15acee5b9b491dd15d37aa27629e5468e1bc70ce90b96cc898ba"
+          "sizeBytes": 150494,
+          "sha256": "1dd7795f03f0235385b44ad297d3af0de89cd0d12332513439789685408dd0bc"
         },
         {
           "path": "assets/media/web/responsive/siker-uszas-320.webp",
@@ -687,8 +687,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 165954,
-        "sha256": "623f6ef3ae6ca9550d4c8b8b884974749d0aa74ef93cae46f7e2e0f041c732b7"
+        "sizeBytes": 86222,
+        "sha256": "83e30728117fd15810ea002e5fd88ad0c52adcffadd3f9eea1ba675fcbce55f0"
       },
       "variants": [
         {
@@ -696,8 +696,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 165954,
-          "sha256": "623f6ef3ae6ca9550d4c8b8b884974749d0aa74ef93cae46f7e2e0f041c732b7"
+          "sizeBytes": 86222,
+          "sha256": "83e30728117fd15810ea002e5fd88ad0c52adcffadd3f9eea1ba675fcbce55f0"
         },
         {
           "path": "assets/media/web/responsive/siker-roplabda-320.webp",
@@ -741,8 +741,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 219684,
-        "sha256": "1474a09b8adfb3830bdded2f4029b7e09341034ad3fd2f886765d9fd8be18123"
+        "sizeBytes": 115026,
+        "sha256": "1788f50b18f8d95b103b81278e27c6a172edf28738f6d6e999a9f7b227c5b291"
       },
       "variants": [
         {
@@ -750,8 +750,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 219684,
-          "sha256": "1474a09b8adfb3830bdded2f4029b7e09341034ad3fd2f886765d9fd8be18123"
+          "sizeBytes": 115026,
+          "sha256": "1788f50b18f8d95b103b81278e27c6a172edf28738f6d6e999a9f7b227c5b291"
         },
         {
           "path": "assets/media/web/responsive/eletkep-01-320.webp",
@@ -795,8 +795,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 229260,
-        "sha256": "b16a3377340e805f424483fce6018ae609a215304ad151bb73cfdc0ad46e3e1a"
+        "sizeBytes": 122184,
+        "sha256": "0e122c95484fb74a7030ea39fd392b7c3d3ee10367c333346f335821f5c3442d"
       },
       "variants": [
         {
@@ -804,8 +804,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 229260,
-          "sha256": "b16a3377340e805f424483fce6018ae609a215304ad151bb73cfdc0ad46e3e1a"
+          "sizeBytes": 122184,
+          "sha256": "0e122c95484fb74a7030ea39fd392b7c3d3ee10367c333346f335821f5c3442d"
         },
         {
           "path": "assets/media/web/responsive/eletkep-02-320.webp",
@@ -849,8 +849,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 276394,
-        "sha256": "63c099895ead15acee5b9b491dd15d37aa27629e5468e1bc70ce90b96cc898ba"
+        "sizeBytes": 150494,
+        "sha256": "1dd7795f03f0235385b44ad297d3af0de89cd0d12332513439789685408dd0bc"
       },
       "variants": [
         {
@@ -858,8 +858,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 276394,
-          "sha256": "63c099895ead15acee5b9b491dd15d37aa27629e5468e1bc70ce90b96cc898ba"
+          "sizeBytes": 150494,
+          "sha256": "1dd7795f03f0235385b44ad297d3af0de89cd0d12332513439789685408dd0bc"
         },
         {
           "path": "assets/media/web/responsive/eletkep-03-320.webp",
@@ -903,8 +903,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 165954,
-        "sha256": "623f6ef3ae6ca9550d4c8b8b884974749d0aa74ef93cae46f7e2e0f041c732b7"
+        "sizeBytes": 86222,
+        "sha256": "83e30728117fd15810ea002e5fd88ad0c52adcffadd3f9eea1ba675fcbce55f0"
       },
       "variants": [
         {
@@ -912,8 +912,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 165954,
-          "sha256": "623f6ef3ae6ca9550d4c8b8b884974749d0aa74ef93cae46f7e2e0f041c732b7"
+          "sizeBytes": 86222,
+          "sha256": "83e30728117fd15810ea002e5fd88ad0c52adcffadd3f9eea1ba675fcbce55f0"
         },
         {
           "path": "assets/media/web/responsive/eletkep-04-320.webp",
@@ -957,8 +957,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 254656,
-        "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
+        "sizeBytes": 136694,
+        "sha256": "03fc8def51c72cb5f6717010021c19cf87f4242f272269a275f6696af66c06bc"
       },
       "variants": [
         {
@@ -966,8 +966,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 254656,
-          "sha256": "8c08e37d9760f2beaf2a8569bdf8a71aa8782f4a00cd169282bcf7c091fcc6b3"
+          "sizeBytes": 136694,
+          "sha256": "03fc8def51c72cb5f6717010021c19cf87f4242f272269a275f6696af66c06bc"
         },
         {
           "path": "assets/media/web/responsive/eletkep-05-320.webp",
@@ -1011,8 +1011,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 229154,
-        "sha256": "786744eb3f3c97e706da0b899719076b1d320c273950c20a086a54d59500f9eb"
+        "sizeBytes": 124066,
+        "sha256": "f543aa280151c768f51847b3d03e6b38519dabd7599f5f81ad44f92a1da97944"
       },
       "variants": [
         {
@@ -1020,8 +1020,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 229154,
-          "sha256": "786744eb3f3c97e706da0b899719076b1d320c273950c20a086a54d59500f9eb"
+          "sizeBytes": 124066,
+          "sha256": "f543aa280151c768f51847b3d03e6b38519dabd7599f5f81ad44f92a1da97944"
         },
         {
           "path": "assets/media/web/responsive/eletkep-06-320.webp",
@@ -1065,8 +1065,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 266314,
-        "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
+        "sizeBytes": 147856,
+        "sha256": "dd3d9f4b6bb579e5d5b34b8a5921d6a75689404e7b921b9159dedac49517cb4e"
       },
       "variants": [
         {
@@ -1074,8 +1074,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 266314,
-          "sha256": "eb40254f8aa5da9d7938d5c64772232246af684663a651c373d6c37ba81d2e2c"
+          "sizeBytes": 147856,
+          "sha256": "dd3d9f4b6bb579e5d5b34b8a5921d6a75689404e7b921b9159dedac49517cb4e"
         },
         {
           "path": "assets/media/web/responsive/eletkep-07-320.webp",
@@ -1119,8 +1119,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 169604,
-        "sha256": "8566576bd8c959c40d6ad92e99f5795cd13c3ff3fb7e1c1620186616b84055ba"
+        "sizeBytes": 89440,
+        "sha256": "5929ca73bf8033e26be8d24d0d1a28f2cdfeb5f95b1f41ada51a5edc1eb33d3d"
       },
       "variants": [
         {
@@ -1128,8 +1128,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 169604,
-          "sha256": "8566576bd8c959c40d6ad92e99f5795cd13c3ff3fb7e1c1620186616b84055ba"
+          "sizeBytes": 89440,
+          "sha256": "5929ca73bf8033e26be8d24d0d1a28f2cdfeb5f95b1f41ada51a5edc1eb33d3d"
         },
         {
           "path": "assets/media/web/responsive/eletkep-08-320.webp",
@@ -1173,8 +1173,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 342632,
-        "sha256": "461395c1deda2d731b68339921526d8e25d79dc20609123e6ca53ec46b0e734a"
+        "sizeBytes": 191108,
+        "sha256": "828879404d355ea47a037faccac9471d5b4babcefec2cc12ba727e6011c4b221"
       },
       "variants": [
         {
@@ -1182,8 +1182,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 342632,
-          "sha256": "461395c1deda2d731b68339921526d8e25d79dc20609123e6ca53ec46b0e734a"
+          "sizeBytes": 191108,
+          "sha256": "828879404d355ea47a037faccac9471d5b4babcefec2cc12ba727e6011c4b221"
         },
         {
           "path": "assets/media/web/responsive/eletkep-09-320.webp",
@@ -1227,8 +1227,8 @@
         "mimeType": "image/webp",
         "width": 1600,
         "height": 900,
-        "sizeBytes": 286734,
-        "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
+        "sizeBytes": 155646,
+        "sha256": "09d62b3144c3638fd3614bb6eb42c1e67d09618a1fb3744655854254df3aa79c"
       },
       "variants": [
         {
@@ -1236,8 +1236,8 @@
           "mimeType": "image/webp",
           "width": 1600,
           "height": 900,
-          "sizeBytes": 286734,
-          "sha256": "f76fa5c1a94e9213376b52a52e6b34368279788a7d2e6d38bd9cb2787971a399"
+          "sizeBytes": 155646,
+          "sha256": "09d62b3144c3638fd3614bb6eb42c1e67d09618a1fb3744655854254df3aa79c"
         },
         {
           "path": "assets/media/web/responsive/eletkep-10-320.webp",

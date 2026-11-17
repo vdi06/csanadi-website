@@ -1,10 +1,21 @@
 import {inspectNewsCollection} from '../js/news-policy-2026.js';
 const pick=id=>document.getElementById(id);
 const make=(tag,cls='',value='')=>{const node=document.createElement(tag);if(cls)node.className=cls;if(value)node.textContent=String(value);return node;};
-const state={records:[],finishedAt:null,configuration:null};
+const state={records:[],finishedAt:null,configuration:null,readiness:null};
 const data=async path=>{const response=await fetch('../'+path,{cache:'no-store'});if(!response.ok)throw Error(path+' HTTP '+response.status);return response.json();};
 const add=(severity,area,message,path='')=>state.records.push({severity,area,message,path});
 const safePath=value=>typeof value==='string'&&!value.split('/').includes('..')&&/^[a-z0-9][a-z0-9/._-]+$/i.test(value);
+const csvSafe=value=>{const raw=String(value??'');return '"'+(/^[\s\uFEFF]*[=+\-@]/.test(raw)?"'"+raw:raw).replace(/"/g,'""')+'"';};
+function localReviewEvidence(items){
+ let stored={};try{stored=JSON.parse(localStorage.getItem('csanadi-content-review-r13')||'{}');}catch{/* helyi beállítás nem kötelező */}
+ if(!stored||typeof stored!=='object'||Array.isArray(stored))stored={};
+ return items.reduce((summary,item)=>{
+  const entry=stored[item.key];
+  if(entry?.status==='ready')summary.checked++;
+  if(entry?.status==='approved'&&entry.reviewer&&entry.evidence&&entry.decision&&(!item.media||entry.permission))summary.recorded++;
+  return summary;
+ },{checked:0,recorded:0});
+}
 const save=(name,content,type)=>{const url=URL.createObjectURL(new Blob([content],{type})),a=make('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);};
 function summarize(){
  const totals={ok:0,warning:0,error:0};for(const record of state.records)totals[record.severity]++;
@@ -18,13 +29,17 @@ function summarize(){
  }
  if(state.records.length>max)list.append(make('p','',`A képernyőn ${max} tétel látható a ${state.records.length} közül. A letöltött jelentés minden bejegyzést tartalmaz.`));
  pick('quality-status').textContent=`Ellenőrzés lezárva: ${totals.ok} sikeres, ${totals.warning} figyelmeztetés, ${totals.error} hiba. A figyelmeztetések kézi jóváhagyást igényelhetnek.`;
+ const readiness=state.readiness;
+ pick('publication-gate-status').textContent=readiness
+  ?`Nem tekinthető automatikusan közzétételre jóváhagyottnak. Intézményi ellenőrzést igényel: ${readiness.priorityPages} oldal és ${readiness.pendingMediaRights} médiajog. Helyi munkalapon igazoló mezőkkel rögzítve: ${readiness.localPageEvidence}/${readiness.priorityPages} oldal, ${readiness.localMediaEvidence}/${readiness.pendingMediaRights} média. Fájl-/kapcsolati hiba: ${totals.error}. A feltöltéshez külön intézményi jóváhagyás szükséges.`
+  :'Kiadási döntés nem hozható: az ellenőrzés hiányos vagy megszakadt.';
  pick('quality-download').disabled=false;pick('quality-csv').disabled=false;
 }
 async function audit(){
- state.records=[];state.finishedAt=null;pick('quality-run').disabled=true;pick('quality-download').disabled=true;pick('quality-csv').disabled=true;
+ state.records=[];state.finishedAt=null;state.readiness=null;pick('quality-run').disabled=true;pick('quality-download').disabled=true;pick('quality-csv').disabled=true;
  pick('quality-status').textContent='A központi JSON-források ellenőrzése…';
  try{
-  const [config,index,structure,news,docs,media,inventory,manifest]=await Promise.all(['json/config.json','json/oldalindex.json','json/structure.json','json/adatok/hirek-hivatalos.json','json/adatok/dokumentumok.json','json/mediatar.json','json/assets-inventory.json','release-manifest.json'].map(data));
+  const [config,index,structure,news,docs,media,inventory,manifest,contentReview]=await Promise.all(['json/config.json','json/oldalindex.json','json/structure.json','json/adatok/hirek-hivatalos.json','json/adatok/dokumentumok.json','json/mediatar.json','json/assets-inventory.json','release-manifest.json','dokumentacio/TARTALMI_MINOSEG_V1_39_9.json'].map(data));
   state.configuration=config;
   const source=manifest.files||{},pages=index.pages||{},pageNames=Object.keys(pages),actualRoutes=new Set(),ids=new Set(),paths=new Set();
   const expected=config.runtime.release.expectedPageCount;
@@ -41,6 +56,13 @@ async function audit(){
   walk(structure.nodes);
   for(const path of menuPaths){if(paths.has(path))add('error','Ismételt menühivatkozás',path);if(!pages[path])add('error','Hiányzó menüoldal',path);paths.add(path);}
   add('ok','Navigáció',`${menuPaths.length} menühivatkozás, ${actualRoutes.size} egyedi oldalútvonal, ${ids.size} egyedi oldalazonosító.`);
+  const priorities=contentReview.priorities||[];
+  if(!Array.isArray(priorities)||priorities.length!==contentReview.manualPriorityPages)add('error','Kiemelt oldalak munkalistája','A hitelesítési jelentésben szereplő oldalszám vagy munkalap eltér.','dokumentacio/TARTALMI_MINOSEG_V1_39_9.json');
+  for(const item of priorities){
+   const path=String(item.file||'').replace(/^json\//,'');
+   if(!pages[path])add('error','Kiemelt oldal hiányzik az indexből',String(item.title||path),item.file||'');
+   else add('warning','Tartalmi jóváhagyás még szükséges',String(item.title||path),item.file||'');
+  }
   const newsFailures=inspectNewsCollection(news,config);
   for(const failure of newsFailures)for(const message of failure.findings)add('error','Hírek közzétételi kapuja',message,failure.id);
   const samples=(news.items||[]).filter(item=>item.status==='sample'),verified=(news.items||[]).filter(item=>item.status==='verified');
@@ -64,7 +86,14 @@ async function audit(){
    if(item.decorative!==true&&!item.alt?.trim())add('warning','Kép akadálymentessége','A nem dekoratív kép alternatív szövege hiányzik.',item.id);
    for(const variant of [item.original,...(item.variants||[])]){if(!variant?.path)continue;mediaPaths++;if(!source[variant.path])add('error','Médiaváltozat hiányzik',variant.path,item.id);else if(variant.sha256&&source[variant.path].sha256!==variant.sha256)add('error','Médiaváltozat hash-eltérés',variant.path,item.id);}
   }
-  add('ok','Médiatár-láthatóság',`${registry.length} médiaazonosító, ${mediaPaths} médiaútvonal; ${pending} jóváhagyásra vár, ${rightsMissing} hiányos jogi nyilvántartás.`);
+  add(pending||rightsMissing?'warning':'ok','Médiatár-láthatóság',`${registry.length} médiaazonosító, ${mediaPaths} médiaútvonal; ${pending} jóváhagyásra vár, ${rightsMissing} hiányos jogi nyilvántartás.`);
+  const pendingItems=registry.filter(item=>item.rights?.clearance==='pending');
+  const reviewedPages=localReviewEvidence(priorities.map(item=>({key:'page:'+String(item.file||'').replace(/^json\//,'')})));
+  const reviewedMedia=localReviewEvidence(pendingItems.map(item=>({key:'media:'+item.id,media:true})));
+  state.readiness={priorityPages:priorities.length,pendingMediaRights:pending,
+   localPageEvidence:reviewedPages.recorded,localMediaEvidence:reviewedMedia.recorded,
+   institutionalApprovalVerified:false,ftpPublished:false};
+  add('warning','Közzététel jóváhagyása',`A helyi munkalap kitöltése nem jelent szerzői jogi vagy intézményi döntést; ${priorities.length} kiemelt oldal és ${pending} felhasználási jog továbbra is függőben.`);
   const minimum=config.runtime.release.minimumManifestEntries;const manifestCount=Object.keys(source).length;
   add(manifestCount>=minimum?'ok':'error','FTP-manifest',`${manifestCount} állomány, az elvárt minimum: ${minimum}.`,'release-manifest.json');
   const html=await fetch('../index.html',{cache:'no-store'}).then(response=>{if(!response.ok)throw Error('Kezdőlap nem érhető el.');return response.text();});
@@ -80,5 +109,5 @@ async function audit(){
  summarize();pick('quality-run').disabled=false;
 }
 pick('quality-run').addEventListener('click',audit);
-pick('quality-download').addEventListener('click',()=>save('csanadi_minosegkapu.json',JSON.stringify({generatedAt:state.finishedAt,records:state.records},null,2),'application/json;charset=utf-8'));
-pick('quality-csv').addEventListener('click',()=>{const quote=x=>'"'+String(x??'').replace(/"/g,'""')+'"';const rows=[['Súlyosság','Terület','Megjegyzés','Útvonal'],...state.records.map(x=>[x.severity,x.area,x.message,x.path])];save('csanadi_minosegkapu.csv','\ufeff'+rows.map(row=>row.map(quote).join(';')).join('\r\n'),'text/csv;charset=utf-8');});
+pick('quality-download').addEventListener('click',()=>save('csanadi_minosegkapu.json',JSON.stringify({generatedAt:state.finishedAt,readiness:state.readiness,records:state.records},null,2),'application/json;charset=utf-8'));
+pick('quality-csv').addEventListener('click',()=>{const rows=[['Súlyosság','Terület','Megjegyzés','Útvonal'],...state.records.map(x=>[x.severity,x.area,x.message,x.path])];save('csanadi_minosegkapu.csv','\ufeff'+rows.map(row=>row.map(csvSafe).join(';')).join('\r\n'),'text/csv;charset=utf-8');});
