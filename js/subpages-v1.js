@@ -106,6 +106,7 @@ export function initSubpageEnhancements() {
   menu.setAttribute('aria-controls', 'site-map-overlay');
   menu.setAttribute('aria-haspopup', 'dialog');
   menu.setAttribute('aria-expanded', 'false');
+  menu.setAttribute('title','Főmenü');
   // Az eredeti iskolai címer a lap tetején és összecsukva egyaránt középen
   // nyitja meg a főmenüt. A funkció neve az akadálymentes aria-labelben marad.
   menu.innerHTML = '<img class="cs-subpage-menu-logo" src="assets/media/logo/csanadi-cimer-512.webp" width="46" height="46" alt="" aria-hidden="true">';

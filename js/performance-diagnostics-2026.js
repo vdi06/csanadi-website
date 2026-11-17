@@ -66,7 +66,7 @@ function refresh(){
  route.textContent=fmt(currentRouteMs);
  status.textContent=latestStatus;
  const version=panel.querySelector('[data-speed-version]');
- if(version){const release=bundleStats?.release||'Kiadás ellenőrzése…',page=document.documentElement.dataset.csanadiPageRevision||'—',home=!location.hash||location.hash==='#/'||location.hash==='#';version.textContent=`Honlapverzió: ${release} · ${home?'Kezdőlap':'Aktuális oldal'} · Oldalverzió: ${page}`;}
+ if(version){const release=bundleStats?.release||'Kiadás ellenőrzése…',page=document.documentElement.dataset.csanadiPageRevision||'—',home=!location.hash||location.hash==='#/'||location.hash==='#';version.replaceChildren(el('span','cs-speed-version-line',`Honlapverzió: ${release}`),el('span','cs-speed-version-line',`${home?'Kezdőlap':'Aktuális oldal'} · Oldalverzió: ${page}`));}
  const size=panel.querySelector('[data-speed-size]'),fileCount=panel.querySelector('[data-speed-file-count]'),detail=panel.querySelector('[data-speed-file-detail]'),resources=panel.querySelector('[data-speed-resources]'),slow=panel.querySelector('[data-speed-slowest]');
  size.textContent=bundleStats?.error?'Nem elérhető':bundleStats?bytes(bundleStats.total):'Betöltés…';
  fileCount.textContent=bundleStats?.count===undefined?'—':bundleStats.count.toLocaleString('hu-HU')+' fájl';

@@ -7,6 +7,27 @@
   <meta name="theme-color" id="theme-color" content="#FFF8E9">
   <script>(function(){var m="system";try{var saved=localStorage.getItem("csanadi-theme");if(["system","light","dark"].includes(saved))m=saved;}catch(e){}var actual=m==="system"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):m;document.documentElement.dataset.theme=actual;document.documentElement.dataset.themePreference=m;document.documentElement.setAttribute("data-bs-theme",actual);var bar=document.getElementById("theme-color");if(bar)bar.content=actual==="dark"?"#0d1b2d":"#fffaf0";})();
 </script>
+  <!-- A kapu első látogatáskor a HTML legelső megjelenítési pillanatától takar. -->
+  <style>
+    #cs-gate-prelude{display:none}
+    html.cs-gate-pending #cs-gate-prelude{position:fixed;inset:0;z-index:2601;display:grid;place-items:center;overflow:hidden;background:#07182a;color:#fff;isolation:isolate;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    html.cs-gate-pending #cs-gate-prelude .cs-gate-prelude-door{position:absolute;inset-block:0;width:50%;background:linear-gradient(90deg,rgba(1,10,23,.45),rgba(1,10,23,.1)),url('assets/media/web/belepes-kapu.webp') center/200% 100% no-repeat}
+    #cs-gate-prelude .cs-gate-prelude-left{left:0;background-position:left center!important;border-right:2px solid #c69e5d}
+    #cs-gate-prelude .cs-gate-prelude-right{right:0;background-position:right center!important;border-left:2px solid #c69e5d}
+    #cs-gate-prelude .cs-gate-prelude-copy{position:relative;z-index:1;text-align:center;padding:24px;max-width:700px;text-shadow:0 3px 20px #061323}
+    #cs-gate-prelude .cs-gate-prelude-copy strong{display:block;color:#f8db99;letter-spacing:.18em;font-size:clamp(11px,1.2vw,15px);margin-bottom:16px}
+    #cs-gate-prelude .cs-gate-prelude-copy p{font-size:clamp(24px,4vw,54px);font-weight:850;line-height:1.12;margin:0}
+  </style>
+  <script>(function(){
+    try{
+      var route=location.hash||'#/';if(route!=='#/'&&route!=='#')return;
+      var dates=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Budapest',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).filter(function(x){return x.type!=='literal';}).map(function(x){return [x.type,x.value];}));
+      var today=dates.year+'-'+dates.month+'-'+dates.day;
+      if(localStorage.getItem('csanadi-portal-visit-v3')===today)return;
+    }catch(_error){}
+    document.documentElement.classList.add('cs-gate-pending');
+    setTimeout(function(){document.documentElement.classList.remove('cs-gate-pending');document.getElementById('cs-gate-prelude')?.remove();},20000);
+  })();</script>
   <meta name="description" content="Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium – sport, tanulás, közösség, iskolai információk.">
   <meta name="robots" content="noindex,nofollow">
   <title>Csanádi Árpád Sportiskola – 2026</title>
@@ -99,8 +120,15 @@
   <link rel="stylesheet" href="css/header-mobile-polish-v1-39-15.css?v=1.39.16">
   <link rel="stylesheet" href="css/header-polish-v1-39-16.css?v=1.39.16">
   <link rel="stylesheet" href="css/home-menu-scroll-v1-39-17.css?v=1.39.17">
+  <link rel="stylesheet" href="css/header-interaction-v1-39-18.css?v=1.39.18">
+  <link rel="stylesheet" href="css/single-hero-v1-40.css?v=1.40.0">
 </head>
 <body>
+  <div id="cs-gate-prelude" role="status" aria-label="A Csanádi Sportiskola nyitókapuja betöltődik">
+    <span class="cs-gate-prelude-door cs-gate-prelude-left" aria-hidden="true"></span>
+    <span class="cs-gate-prelude-door cs-gate-prelude-right" aria-hidden="true"></span>
+    <div class="cs-gate-prelude-copy"><strong>CSANÁDI SPORTISKOLA · 2026</strong><p>Lépj be a sport és a tudás világába</p></div>
+  </div>
   <a class="skip-link" href="#app">Ugrás a tartalomra</a>
   <header class="site-header" id="site-header">
     <div class="container-xxl brand-row">
@@ -198,8 +226,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous" defer>
 </script>
   <script src="js/round12-media-performance.js?v=csanadi-r29n-20261115" defer></script>
-  <script src="js/round13-network.js?v=csanadi-r-v1.39.17" defer></script>
-  <script type="module" src="script.js?v=1.39.17">
+  <script src="js/round13-network.js?v=csanadi-r-v1.40.0" defer></script>
+  <script type="module" src="script.js?v=1.40.0">
 </script>
 </body>
 </html>

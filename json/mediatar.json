@@ -7492,6 +7492,306 @@
         "holder": "Csanádi Sportiskola – szerkesztői grafika",
         "license": "Intézményi elfogadásig kizárólag belső előnézet."
       }
+    },
+    {
+      "id": "media:v140-sport",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/v1-40/sport-1600.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 232378,
+        "sha256": "c752f826b7661e29215cbe49c332c1e5b0f9233e6bb07a5f70aff3543c62d238"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/v1-40/responsive/sport-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 11072,
+          "sha256": "84034e7480ec3587a50d7dfaf37df2995a3fe0bdb643455588e9cd29f88caa30"
+        },
+        {
+          "path": "assets/media/web/v1-40/responsive/sport-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 38186,
+          "sha256": "b0c6d22c8224dd24bfd6e70ae9ce35399a9257d13471434727b623097beb2336"
+        },
+        {
+          "path": "assets/media/web/v1-40/responsive/sport-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 81480,
+          "sha256": "1b02dacdc7c8e65579cc08116f1902a2070fdf861ab790b81a54c0ba986cb2b3"
+        },
+        {
+          "path": "assets/media/web/v1-40/sport-1600.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 232378,
+          "sha256": "c752f826b7661e29215cbe49c332c1e5b0f9233e6bb07a5f70aff3543c62d238"
+        }
+      ],
+      "alt": "Illusztratív sportiskolai kosárlabdapálya, a játékosok a kép két oldalán.",
+      "caption": "A sport témájú, kifejezetten a címer szabad középzónájához tervezett asztali látványkép.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Egyedileg létrehozott, mesterségesen generált látványkép",
+        "license": "Illusztráció, nem valódi iskolai fotó; intézményi jóváhagyás szükséges a végleges nyilvános közzétételhez."
+      }
+    },
+    {
+      "id": "media:v140-sport-mobile",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/v1-40/sport-mobile-800.webp",
+        "mimeType": "image/webp",
+        "width": 800,
+        "height": 1000,
+        "sizeBytes": 82270,
+        "sha256": "1b0dc023c7fa4099536e95f45654c4211982af0bc76364cb64dcf718b7f99c94"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/v1-40/responsive/sport-mobile-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 400,
+          "sizeBytes": 16574,
+          "sha256": "51a14f26966dc26bd037ca41f29732cfbd854cf728fb566e41ce829c747fbd82"
+        },
+        {
+          "path": "assets/media/web/v1-40/responsive/sport-mobile-480.webp",
+          "mimeType": "image/webp",
+          "width": 480,
+          "height": 600,
+          "sizeBytes": 30686,
+          "sha256": "09540a27ec73b907bb3e723336ff9207c0162a417ede7fe1d111bb740d28e4ad"
+        },
+        {
+          "path": "assets/media/web/v1-40/sport-mobile-800.webp",
+          "mimeType": "image/webp",
+          "width": 800,
+          "height": 1000,
+          "sizeBytes": 82270,
+          "sha256": "1b0dc023c7fa4099536e95f45654c4211982af0bc76364cb64dcf718b7f99c94"
+        }
+      ],
+      "alt": "Illusztratív sportiskolai kosárlabdapálya, a játékosok a kép két oldalán.",
+      "caption": "A sport témájú, kifejezetten a címer szabad középzónájához tervezett mobil látványkép.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Egyedileg létrehozott, mesterségesen generált látványkép",
+        "license": "Illusztráció, nem valódi iskolai fotó; intézményi jóváhagyás szükséges a végleges nyilvános közzétételhez."
+      }
+    },
+    {
+      "id": "media:v140-tudas",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/v1-40/tudas-1600.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 109380,
+        "sha256": "30d510f5ea461a121d8d58cc30f6e2e055e249f7f531a51f656346e0f237c79c"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/v1-40/responsive/tudas-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 10508,
+          "sha256": "3ec122a87e0096fcf6688cdb37063863a47400f09ce2280cf58bdab588047ad5"
+        },
+        {
+          "path": "assets/media/web/v1-40/responsive/tudas-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 27822,
+          "sha256": "1ad8ca79c36b32c4ef198c5e13da8972f262869bd0876860c9abdab436887f7f"
+        },
+        {
+          "path": "assets/media/web/v1-40/responsive/tudas-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 48194,
+          "sha256": "542c85bb08be9c8371d977d1f1b9d7da85a3517b3cb0f46d6f1e439d8f28793b"
+        },
+        {
+          "path": "assets/media/web/v1-40/tudas-1600.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 109380,
+          "sha256": "30d510f5ea461a121d8d58cc30f6e2e055e249f7f531a51f656346e0f237c79c"
+        }
+      ],
+      "alt": "Illusztratív, napfényes iskolai könyvtár; tanuló diákok a széleken.",
+      "caption": "A tudas témájú, kifejezetten a címer szabad középzónájához tervezett asztali látványkép.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Egyedileg létrehozott, mesterségesen generált látványkép",
+        "license": "Illusztráció, nem valódi iskolai fotó; intézményi jóváhagyás szükséges a végleges nyilvános közzétételhez."
+      }
+    },
+    {
+      "id": "media:v140-tudas-mobile",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/v1-40/tudas-mobile-800.webp",
+        "mimeType": "image/webp",
+        "width": 800,
+        "height": 1000,
+        "sizeBytes": 95378,
+        "sha256": "f57324d58a87f779f5f6b4e30744a2d31dbeaa3d805e6e55dca5f642293074f4"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/v1-40/responsive/tudas-mobile-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 400,
+          "sizeBytes": 25880,
+          "sha256": "2a44c6d5d810058464f53f81c7b8fa908e91349042d2c40857d54ee3648ce227"
+        },
+        {
+          "path": "assets/media/web/v1-40/responsive/tudas-mobile-480.webp",
+          "mimeType": "image/webp",
+          "width": 480,
+          "height": 600,
+          "sizeBytes": 44406,
+          "sha256": "eae0661de34d07c49c9299ed05443cb0348ed07147032ea90fe6570f89b0008c"
+        },
+        {
+          "path": "assets/media/web/v1-40/tudas-mobile-800.webp",
+          "mimeType": "image/webp",
+          "width": 800,
+          "height": 1000,
+          "sizeBytes": 95378,
+          "sha256": "f57324d58a87f779f5f6b4e30744a2d31dbeaa3d805e6e55dca5f642293074f4"
+        }
+      ],
+      "alt": "Illusztratív, napfényes iskolai könyvtár; tanuló diákok a széleken.",
+      "caption": "A tudas témájú, kifejezetten a címer szabad középzónájához tervezett mobil látványkép.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Egyedileg létrehozott, mesterségesen generált látványkép",
+        "license": "Illusztráció, nem valódi iskolai fotó; intézményi jóváhagyás szükséges a végleges nyilvános közzétételhez."
+      }
+    },
+    {
+      "id": "media:v140-kozosseg",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/v1-40/kozosseg-1600.webp",
+        "mimeType": "image/webp",
+        "width": 1600,
+        "height": 900,
+        "sizeBytes": 166198,
+        "sha256": "1bbeb00ac536652963f7e0e142fededa8263dccf9455e1453b31b70d2b8a810b"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/v1-40/responsive/kozosseg-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 11282,
+          "sha256": "69bc3f7e216fc2d35573e9cb3995ce22f3bc1cfb7c18fdf9eba7c13f36655ba0"
+        },
+        {
+          "path": "assets/media/web/v1-40/responsive/kozosseg-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 35142,
+          "sha256": "574cd1648e74d2488fa59a3a9457adb016a04ba1cbfb36069612c0dbeebf2de3"
+        },
+        {
+          "path": "assets/media/web/v1-40/responsive/kozosseg-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 68400,
+          "sha256": "56d9a0527f3c3198b2c98d9cc7259b88fd333562ee3e4d5004a0e82c0b57c883"
+        },
+        {
+          "path": "assets/media/web/v1-40/kozosseg-1600.webp",
+          "mimeType": "image/webp",
+          "width": 1600,
+          "height": 900,
+          "sizeBytes": 166198,
+          "sha256": "1bbeb00ac536652963f7e0e142fededa8263dccf9455e1453b31b70d2b8a810b"
+        }
+      ],
+      "alt": "Illusztratív iskolai átrium, beszélgető diákok kétoldalt, szabad középrésszel.",
+      "caption": "A kozosseg témájú, kifejezetten a címer szabad középzónájához tervezett asztali látványkép.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Egyedileg létrehozott, mesterségesen generált látványkép",
+        "license": "Illusztráció, nem valódi iskolai fotó; intézményi jóváhagyás szükséges a végleges nyilvános közzétételhez."
+      }
+    },
+    {
+      "id": "media:v140-kozosseg-mobile",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/v1-40/kozosseg-mobile-800.webp",
+        "mimeType": "image/webp",
+        "width": 800,
+        "height": 1000,
+        "sizeBytes": 113436,
+        "sha256": "8478941213e8d4afe8400ec4b9c4a7299dc25c454a2df54ade7ada780ea9f059"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/v1-40/responsive/kozosseg-mobile-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 400,
+          "sizeBytes": 23474,
+          "sha256": "b0bf60625e2bfa6d4acfc687cbc57380b9a9f818af4c8b225b749fde39455da0"
+        },
+        {
+          "path": "assets/media/web/v1-40/responsive/kozosseg-mobile-480.webp",
+          "mimeType": "image/webp",
+          "width": 480,
+          "height": 600,
+          "sizeBytes": 44804,
+          "sha256": "9589270b29298c1fbd7b089924b75f760a0eadb5c0eeeabc5caaaff48d8dc7d3"
+        },
+        {
+          "path": "assets/media/web/v1-40/kozosseg-mobile-800.webp",
+          "mimeType": "image/webp",
+          "width": 800,
+          "height": 1000,
+          "sizeBytes": 113436,
+          "sha256": "8478941213e8d4afe8400ec4b9c4a7299dc25c454a2df54ade7ada780ea9f059"
+        }
+      ],
+      "alt": "Illusztratív iskolai átrium, beszélgető diákok kétoldalt, szabad középrésszel.",
+      "caption": "A kozosseg témájú, kifejezetten a címer szabad középzónájához tervezett mobil látványkép.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Egyedileg létrehozott, mesterségesen generált látványkép",
+        "license": "Illusztráció, nem valódi iskolai fotó; intézményi jóváhagyás szükséges a végleges nyilvános közzétételhez."
+      }
     }
   ]
 }

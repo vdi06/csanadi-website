@@ -26,11 +26,15 @@ const heading=(over,title,desc)=>{const box=e('div','experience-section-head');a
 
  
 let gateShowing=false;
+function clearEntrancePrelude(){
+ document.documentElement.classList.remove('cs-gate-pending');
+ document.getElementById('cs-gate-prelude')?.remove();
+}
 export function openEntrancePortal({force=false}={}){
- if(gateShowing)return;
- if(!force&&!['','#','#/'].includes(location.hash))return;
+ if(gateShowing){clearEntrancePrelude();return;}
+ if(!force&&!['','#','#/'].includes(location.hash)){clearEntrancePrelude();return;}
  const key='csanadi-portal-visit-v3';const today=dayISO(new Date());
- if(!force&&getStore(key)===today)return;
+ if(!force&&getStore(key)===today){clearEntrancePrelude();return;}
  if(!force)setStore(key,today);
  gateShowing=true;
  const layer=e('div','gate26');layer.id='gate26';layer.setAttribute('role','dialog');layer.setAttribute('aria-modal','true');layer.setAttribute('aria-labelledby','gate26-title');layer.setAttribute('aria-describedby','gate26-description');
@@ -42,7 +46,7 @@ export function openEntrancePortal({force=false}={}){
  const keyIcon=document.createElementNS('http://www.w3.org/2000/svg','svg');keyIcon.setAttribute('viewBox','0 0 120 120');keyIcon.setAttribute('width','92');keyIcon.setAttribute('height','92');keyIcon.setAttribute('aria-hidden','true');keyIcon.innerHTML='<circle cx="35" cy="35" r="23" fill="none" stroke="currentColor" stroke-width="9"/><circle cx="35" cy="35" r="8" fill="none" stroke="currentColor" stroke-width="4"/><path d="M52 52 105 105 93 116 80 103 72 111 62 101 70 93 43 66" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="11"/>';
  enter.append(keyIcon);enter.setAttribute('aria-label','Nyisd meg a kaput');enter.setAttribute('title','Nyisd meg a kaput');
  add(content,logo,e('span','gate26-eyebrow','CSANÁDI SPORTISKOLA · 2026'),title,desc,document.createDocumentFragment(),enter);
- add(layer,scenery,glow,doors,content,skip);document.body.append(layer);
+ add(layer,scenery,glow,doors,content,skip);document.body.append(layer);clearEntrancePrelude();
  const oldFocus=document.activeElement;let done=false,opening=false,finishTimer;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const previousOverflow=document.body.style.overflow;

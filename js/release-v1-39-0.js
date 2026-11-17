@@ -16,10 +16,12 @@ function updateHomeHeader(){
  else{
   const hero=select('#global-hero');
   const bottom=hero?.getBoundingClientRect().bottom??Infinity;
-  // A 30 px-es holtsáv a valóban kigördülő képsávhoz kötődik; az egyetlen
-  // meglévő menüsor magasságváltozásától a váltás nem pattan vissza.
-  if(!homeHeroFolded&&bottom<=84)homeHeroFolded=true;
-  else if(homeHeroFolded&&bottom>=114)homeHeroFolded=false;
+  // A képsáv eltűnésének küszöbét a tényleges fejlécmagasság határozza meg.
+  // A két állapot közti holtsáv megakadályozza a rövid oda-vissza villanást.
+  const headerHeight=select('#site-header')?.getBoundingClientRect().height||60;
+  const threshold=Math.max(40,headerHeight-4);
+  if(!homeHeroFolded&&bottom<=threshold)homeHeroFolded=true;
+  else if(homeHeroFolded&&bottom>=threshold+36)homeHeroFolded=false;
  }
  document.body.classList.toggle('cs-home-condensed',isHome&&homeHeroFolded);
  document.body.classList.toggle('cs-home-header',isHome);

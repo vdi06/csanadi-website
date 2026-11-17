@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-17T15:00:00+01:00",
+  "updatedAt": "2026-11-17T21:16:03.473Z",
   "lifecycle": {
     "status": "published",
-    "revision": 6
+    "revision": 7
   },
   "seo": {
     "title": "Kezdőoldal – Csanádi Sportiskola",
@@ -44,282 +44,57 @@
             "href": "#/sport/sporteredmenyek"
           }
         ],
-        "imageId": "media:hero",
+        "imageId": "media:v140-sport",
         "intervalMs": 7500,
         "slides": [
           {
-            "id": "hero-2026-plus-13",
-            "mediaId": "media:sport",
-            "eyebrow": "CSANÁDI · MOZGÁS · LENDÜLET",
+            "id": "hero-v140-sport",
+            "mediaId": "media:v140-sport",
+            "mobileMediaId": "media:v140-sport-mobile",
+            "eyebrow": "CSANÁDI · SPORT",
             "title": "A pályán kezdődik a történet",
-            "subtitle": "Sport, tudás és közösség: együtt a következő cél felé.",
+            "subtitle": "Kitartás, mozgás és új célok a sport világában.",
+            "rightEyebrow": "EGYÜTT A SIKEREKÉRT",
+            "rightTitle": "Minden nap egy új lehetőség",
+            "rightSubtitle": "Tehetség, csapatszellem és inspiráló kihívások.",
             "buttons": [
               {
-                "label": "Sportágak felfedezése",
+                "label": "Tovább",
                 "href": "#/sport/sportagak"
-              },
-              {
-                "label": "Iskolánk bemutatása",
-                "href": "#/iskolank/bemutatkozas"
               }
             ]
           },
           {
-            "id": "hero-2026-sport",
-            "mediaId": "media:hero",
-            "eyebrow": "BUDAPEST · ZUGLÓ · SPORTISKOLA",
-            "title": "Csanádi Sportiskola – minden nap új lehetőség",
-            "subtitle": "A sport, a tudás és a közösség találkozása Zuglóban.",
+            "id": "hero-v140-tudas",
+            "mediaId": "media:v140-tudas",
+            "mobileMediaId": "media:v140-tudas-mobile",
+            "eyebrow": "CSANÁDI · TUDÁS",
+            "title": "A tudás új lehetőségeket nyit",
+            "subtitle": "Kíváncsiság, felfedezés és közös tanulás.",
+            "rightEyebrow": "FEJLŐDÉS ÉS TUDÁS",
+            "rightTitle": "A jövőt ma építjük",
+            "rightSubtitle": "Biztos alapok a tanteremben és azon túl.",
             "buttons": [
               {
-                "label": "Iskolánk bemutatása",
-                "href": "#/iskolank/bemutatkozas"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-01",
-            "mediaId": "media:eletkep-01",
-            "eyebrow": "ISKOLAI KÖZÖSSÉG",
-            "title": "Iskolánk mindennapjai",
-            "subtitle": "Együtt a mindennapokban.",
-            "buttons": [
-              {
-                "label": "Részletek",
-                "href": "#/iskolank"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-02",
-            "mediaId": "media:eletkep-02",
-            "eyebrow": "SPORTÉLET",
-            "title": "A sport szeretete",
-            "subtitle": "A mozgás része a történetünknek.",
-            "buttons": [
-              {
-                "label": "Részletek",
-                "href": "#/sport"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-03",
-            "mediaId": "media:siker-atletika",
-            "eyebrow": "SPORTEREDMÉNYEK",
-            "title": "Új kihívások",
-            "subtitle": "Kitartás, fejlődés, élmények.",
-            "buttons": [
-              {
-                "label": "Részletek",
-                "href": "#/sport/sporteredmenyek"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-siker",
-            "mediaId": "media:eredmenyek",
-            "eyebrow": "SPORTOLÓI TÖRTÉNETEK",
-            "title": "Minden eredmény mögött történet áll.",
-            "subtitle": "A sport, a tudás és a közösség találkozása Zuglóban.",
-            "buttons": [
-              {
-                "label": "Sporteredmények",
-                "href": "#/sport/sporteredmenyek"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-04",
-            "mediaId": "media:siker-kosarlabda",
-            "eyebrow": "CSAPATOK",
-            "title": "Csapatban erősebbek",
-            "subtitle": "Egy csapat, sok közös cél.",
-            "buttons": [
-              {
-                "label": "Részletek",
-                "href": "#/sport/csapatok"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-05",
-            "mediaId": "media:eletkep-03",
-            "eyebrow": "OKTATÁS",
-            "title": "Minden nap tanulunk",
-            "subtitle": "Kérdések, válaszok, felfedezések.",
-            "buttons": [
-              {
-                "label": "Részletek",
+                "label": "Tovább",
                 "href": "#/oktatas"
               }
             ]
           },
           {
-            "id": "hero-2026-plus-06",
-            "mediaId": "media:eletkep-04",
-            "eyebrow": "DIÁKÉLET",
-            "title": "A pályán és azon túl",
-            "subtitle": "Fontos pillanatok együtt.",
+            "id": "hero-v140-kozosseg",
+            "mediaId": "media:v140-kozosseg",
+            "mobileMediaId": "media:v140-kozosseg-mobile",
+            "eyebrow": "CSANÁDI · KÖZÖSSÉG",
+            "title": "Együtt formáljuk a közösséget",
+            "subtitle": "A közösség ott kezdődik, ahol egymásra figyelünk.",
+            "rightEyebrow": "KÖZÖS ÉLMÉNYEK",
+            "rightTitle": "Ide jó tartozni",
+            "rightSubtitle": "Barátságok, találkozások, együtt megélt pillanatok.",
             "buttons": [
               {
-                "label": "Részletek",
-                "href": "#/iskolank"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-oktatas",
-            "mediaId": "media:oktatas",
-            "eyebrow": "OKTATÁS • FELFEDEZÉS",
-            "title": "A tudás új lehetőségeket nyit.",
-            "subtitle": "A sport, a tudás és a közösség találkozása Zuglóban.",
-            "buttons": [
-              {
-                "label": "Oktatási központ",
-                "href": "#/oktatas"
-              },
-              {
-                "label": "Felvételi tájékoztató",
-                "href": "#/oktatas/felveteli"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-07",
-            "mediaId": "media:eletkep-05",
-            "eyebrow": "KÖZÖSSÉG",
-            "title": "A közösség lendülete",
-            "subtitle": "Élmények, amelyek összekötnek.",
-            "buttons": [
-              {
-                "label": "Részletek",
-                "href": "#/hirek-es-esemenyek"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-08",
-            "mediaId": "media:eletkep-06",
-            "eyebrow": "FELVÉTELI",
-            "title": "Az első lépések",
-            "subtitle": "Ismerd meg a lehetőségeket.",
-            "buttons": [
-              {
-                "label": "Részletek",
-                "href": "#/oktatas/felveteli"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-09",
-            "mediaId": "media:siker-roplabda",
-            "eyebrow": "SPORTISKOLA",
-            "title": "Egymást támogatva",
-            "subtitle": "Fejlődés közös munkával.",
-            "buttons": [
-              {
-                "label": "Részletek",
-                "href": "#/sport"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-kozosseg",
-            "mediaId": "media:kozosseg",
-            "eyebrow": "DIÁKÉLET • ÖSSZETARTOZÁS",
-            "title": "Együtt többek lehetünk.",
-            "subtitle": "A sport, a tudás és a közösség találkozása Zuglóban.",
-            "buttons": [
-              {
-                "label": "Iskolánk világa",
-                "href": "#/iskolank"
-              },
-              {
-                "label": "Hírek és események",
-                "href": "#/hirek-es-esemenyek"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-10",
-            "mediaId": "media:siker-uszas",
-            "eyebrow": "SPORTOLÓI SIKEREK",
-            "title": "Több mint eredmény",
-            "subtitle": "A befektetett munka értéke.",
-            "buttons": [
-              {
-                "label": "Részletek",
-                "href": "#/sport/sporteredmenyek"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-11",
-            "mediaId": "media:eletkep-07",
-            "eyebrow": "ISKOLÁNK",
-            "title": "Élet az iskolában",
-            "subtitle": "Nézz körül az iskola világában.",
-            "buttons": [
-              {
-                "label": "Részletek",
-                "href": "#/iskolank"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-12",
-            "mediaId": "media:esemenyek",
-            "eyebrow": "ESEMÉNYNAPTÁR",
-            "title": "Találkozások és események",
-            "subtitle": "Kövesd az iskolai programokat.",
-            "buttons": [
-              {
-                "label": "Részletek",
-                "href": "#/hirek-es-esemenyek/esemenynaptar"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-jovo",
-            "mediaId": "media:felveteli",
-            "eyebrow": "JÖVŐ • LEHETŐSÉGEK",
-            "title": "A következő lépés itt kezdődik.",
-            "subtitle": "A sport, a tudás és a közösség találkozása Zuglóban.",
-            "buttons": [
-              {
-                "label": "Felvételi központ",
-                "href": "#/oktatas/felveteli"
-              },
-              {
-                "label": "Tanévi információk",
-                "href": "#/oktatas/tanevek"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-14",
-            "mediaId": "media:eletkep-08",
-            "eyebrow": "ISKOLÁNK",
-            "title": "A mindennapok mögött",
-            "subtitle": "Sok történet, egy közösség.",
-            "buttons": [
-              {
-                "label": "Részletek",
-                "href": "#/iskolank"
-              }
-            ]
-          },
-          {
-            "id": "hero-2026-plus-15",
-            "mediaId": "media:eletkep-09",
-            "eyebrow": "SPORT ÉS TANULÁS",
-            "title": "Közösen a célokért",
-            "subtitle": "A fejlődés számtalan formája.",
-            "buttons": [
-              {
-                "label": "Részletek",
-                "href": "#/oktatas"
+                "label": "Tovább",
+                "href": "#/iskolank/kozosseg"
               }
             ]
           }

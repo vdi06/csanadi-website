@@ -46,9 +46,20 @@ function installHomeShell(){
  const syncAccessibility=()=>{
   const condensed=document.body.classList.contains('cs-home-header')&&document.body.classList.contains('cs-home-condensed');
   // A vizuálisan összecsukott képváltó nem maradhat billentyűzettel fókuszálható.
-  if(condensed&&hero.contains(document.activeElement))preview.focus({preventScroll:true});
+  if(condensed&&hero.contains(document.activeElement)){
+   const focused=document.activeElement;
+   const menu=byId('mobile-menu-toggle');
+   if((focused.id==='orbit-open'||focused.closest('.orbit-launch'))&&menu)menu.focus({preventScroll:true});
+   else preview.focus({preventScroll:true});
+  }
   if(!condensed&&compact.contains(document.activeElement)){
    (hero.querySelector('.csn26-visual-wing--left .csn26-wing-surface')||header.querySelector('a[href]'))?.focus({preventScroll:true});
+  }
+  // A csak görgetve látható asztali menü elrejtése előtt visszaadjuk a fókuszt
+  // az eredeti, nagy címeres menünek. Mobilon a felső menügomb nem tűnik el.
+  const smallMenu=byId('mobile-menu-toggle');
+  if(!condensed&&document.activeElement===smallMenu&&matchMedia('(min-width:769px)').matches){
+   byId('orbit-open')?.focus({preventScroll:true});
   }
   hero.inert=condensed;
   if(condensed)hero.setAttribute('aria-hidden','true');

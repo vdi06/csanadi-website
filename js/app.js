@@ -1,6 +1,6 @@
 import {initRound10Enhancements} from './round10-enhancements.js?v=1.39.5';
 import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.39.16';
-import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.37.0';
+import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.40.0';
 import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=csanadi-r29n-20261115';
 import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=csanadi-r29n-20261115';
 import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.39.5';
@@ -15,13 +15,13 @@ import {renderMediaGallery} from './media-gallery-h-2026.js?v=1.37.0';
 import {renderDocumentCollections} from './document-collections-2026.js?v=csanadi-r29n-20261115';
 import {renderPageMedia} from './page-media-2026.js?v=csanadi-r29n-20261115';
 import {useSiteSettings,settingNumber} from './site-settings-2026.js';
-import {renderHomeSportSpotlight} from './premium-home-2026.js?v=csanadi-r29n-20261115';
-import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=csanadi-r29n-20261115';
-import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=csanadi-r29n-20261115';
+import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.40.0';
+import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.40.0';
+import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.40.0';
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r29n-20261115';
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.39.16';
-import {renderBlock,dom,listCards} from './blocks.js?v=csanadi-r29n-20261115';
+import {renderBlock,dom,listCards} from './blocks.js?v=1.40.0';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=csanadi-r29n-20261115';
 import {renderSportsSuccesses} from './sports-successes.js?v=csanadi-r29n-20261115';
 import {renderStudentAchievements} from './student-achievements.js?v=csanadi-r29n-20261115';

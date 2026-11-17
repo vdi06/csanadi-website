@@ -19,11 +19,20 @@ export function mediaForRoute(route='') {
   if (route.startsWith('#/kapcsolat')) return 'media:kapcsolat';
   return 'media:hero';
 }
-export function createPicture(id,{className='',eager=false,sizes='100vw',decorative=false}={}) {
+export function createPicture(id,{className='',eager=false,sizes='100vw',decorative=false,mobileId=null}={}) {
   const entry = mediaItem(id);
   if (!entry) return null;
   const picture=document.createElement('picture');
   if (className) picture.className=className;
+  const mobileEntry=mobileId?mediaItem(mobileId):null;
+  if(mobileEntry){
+    const mobileVariants=(mobileEntry.variants||[]).filter(v=>v.mimeType==='image/webp'&&safePath(v.path)).sort((a,b)=>a.width-b.width);
+    if(mobileVariants.length){
+      const mobileSource=document.createElement('source');mobileSource.type='image/webp';mobileSource.media='(max-width: 768px)';
+      mobileSource.sizes='100vw';mobileSource.srcset=mobileVariants.map(v=>`${v.path} ${v.width}w`).join(', ');
+      picture.append(mobileSource);
+    }
+  }
   const variants=(entry.variants||[]).filter(v=>v.mimeType==='image/webp' && safePath(v.path)).sort((a,b)=>a.width-b.width);
   if(variants.length){
     const source=document.createElement('source');source.type='image/webp';
