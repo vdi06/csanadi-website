@@ -6,8 +6,10 @@
   const storageKey = 'csanadi-content-review-r13';
   const kinds = {
     pages: '../json/oldalindex.json',
+    priority: '../dokumentacio/TARTALMI_MINOSEG_V1_39_9.json',
     documents: '../json/adatok/dokumentumok.json',
     assets: '../json/assets-inventory.json',
+    mediaRights: '../json/mediatar.json',
     criteria: '../dokumentacio/SZABALYOK_31_ALOLDAL_V1_9.json'
   };
   const statuses = ['pending', 'review', 'ready', 'approved'];
@@ -40,11 +42,16 @@
     setTimeout(() => URL.revokeObjectURL(url), 3000);
   }
   function current(row) {
-    return state.changes[row.key] || { status: 'pending', note: '', reviewer: '', evidence: '', permission: '', decision: '' };
+    const entry=state.changes[row.key] || { status: 'pending', note: '', reviewer: '', evidence: '', permission: '', decision: '' };
+    return entry.status==='approved'&&!completeApproval(row,entry)?{...entry,status:'review'}:entry;
   }
   function change(row, key, value) {
     state.changes[row.key] = { ...current(row), [key]: value, date: new Date().toISOString() };
     save();
+  }
+  function completeApproval(row, entry) {
+    return !!(entry.reviewer && entry.evidence && entry.decision &&
+      (!['assets', 'mediaRights'].includes(state.kind) || entry.permission));
   }
   async function load() {
     state.kind = $('kind').value;
@@ -58,6 +65,14 @@
         description: item.summary || '',
         sourceStatus: item.schemaExtensions?.verifiedContent === true ? 'verifiedContent=true' : 'verifiedContent=false'
       }));
+      if (state.kind === 'priority') {
+        if (!Array.isArray(data.priorities) || data.priorities.length !== data.manualPriorityPages) throw Error('A kézi intézményi ellenőrzési lista nem egyezik a jelentéssel.');
+        state.rows = data.priorities.map(item => ({
+          key: 'page:' + item.file.replace(/^json\//, ''), title: item.title, path: item.file,
+          route: item.route, description: (item.manualApproval || []).join(' '),
+          sourceStatus: 'Intézményi jóváhagyás szükséges · ' + item.route
+        }));
+      }
       if (state.kind === 'documents') state.rows = (data.documents || []).map(item => ({
         key: 'doc:' + item.id, title: item.title || item.id, path: item.filePath || '',
         description: item.summary || '', sourceStatus: 'official=' + String(item.official)
@@ -66,6 +81,11 @@
         key: 'asset:' + item.path, title: item.path.split('/').at(-1), path: item.path,
         description: (item.category || '') + ' ' + (item.tags || []).join(','),
         sourceStatus: item.sha256 ? 'SHA-256 nyilvántartva' : 'SHA-256 nélkül'
+      }));
+      if (state.kind === 'mediaRights') state.rows = (data.items || []).filter(item => item.rights?.clearance === 'pending').map(item => ({
+        key: 'media:' + item.id, title: item.id, path: item.original?.path || '',
+        description: [item.alt, item.caption, item.rights?.license].filter(Boolean).join(' · '),
+        sourceStatus: 'Felhasználási jog még nincs igazolva · ' + (item.rights?.holder || 'Ismeretlen jogosult')
       }));
       if (state.kind === 'criteria') {
         if (data.pages !== 65 || data.criteria !== 31 || !Array.isArray(data.open)) throw Error('A 31 szabályos munkalap formátuma hibás.');
@@ -143,11 +163,9 @@
       select.value = item.status || 'pending';
       select.addEventListener('change', () => {
         const previous = current(row);
-        if (select.value === 'approved' && (!previous.reviewer || !previous.evidence ||
-          (state.kind === 'assets' && !previous.permission) ||
-          (state.kind === 'criteria' && !previous.decision))) {
+        if (select.value === 'approved' && !completeApproval(row, previous)) {
           select.value = previous.status || 'pending';
-          $('status').textContent = 'A jóváhagyási ADAT rögzítéséhez ellenőrző, bizonyíték és a megfelelő jogi/intézményi döntés mezők szükségesek.';
+          $('status').textContent = 'A jóváhagyási ADAT rögzítéséhez ellenőrző, bizonyíték, intézményi döntés és média esetén jogosultsági adat szükséges.';
           return;
         }
         change(row, 'status', select.value);
@@ -158,7 +176,7 @@
         makeField(row, 'note', 'Ellenőrzési megjegyzés'),
         makeField(row, 'reviewer', 'Ellenőrző neve', 120),
         makeField(row, 'evidence', 'Forrás és dátum'),
-        makeField(row, 'permission', state.kind === 'assets' ? 'Felhasználási jog, jogosult' : 'Jogalap / megjegyzés', 300),
+        makeField(row, 'permission', ['assets','mediaRights'].includes(state.kind) ? 'Felhasználási jog, jogosult' : 'Jogalap / megjegyzés', 300),
         makeField(row, 'decision', 'Intézményi döntés azonosítója / megjegyzés', 300)
       ];
       const columnTitles = ['Állapot', 'Megjegyzés', 'Ellenőrző', 'Bizonyíték', 'Jogalap', 'Intézményi döntés'];
@@ -210,9 +228,7 @@
           evidence: clean(row.evidence, 350), permission: clean(row.permission, 300),
           decision: clean(row.decision, 300), date: clean(row.date, 40)
         };
-        if (entry.status === 'approved' && (!entry.reviewer || !entry.evidence ||
-          (state.kind === 'assets' && !entry.permission) ||
-          (state.kind === 'criteria' && !entry.decision))) entry.status = 'review';
+        if (entry.status === 'approved' && !completeApproval(row, entry)) entry.status = 'review';
         changes[row.key] = entry;
         accepted++;
       }

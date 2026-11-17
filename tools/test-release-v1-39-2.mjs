@@ -46,8 +46,8 @@ test('Az új stílusok a korábbi felülírások után töltődnek',()=>{
  assert.ok(old>=0&&old<html.indexOf('page-templates-v1-39-2.css')&&old<html.indexOf('mobile-navigation-v1-39-2.css'));
 });
 test('A v1.39.2 sablonrendszer az újabb FTP-kiadásban is megmaradt',()=>{
- assert.ok(['csanadi-r-v1.39.2','csanadi-r-v1.39.3','csanadi-r-v1.39.4','csanadi-r-v1.39.5','csanadi-r-v1.39.6','csanadi-r-v1.39.7','csanadi-r-v1.39.8','csanadi-r-v1.39.9','csanadi-r-v1.39.10'].includes(json('json/config.json').performance.cacheVersion));
- assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:[23456789]|10)/);
+ assert.ok(['csanadi-r-v1.39.2','csanadi-r-v1.39.3','csanadi-r-v1.39.4','csanadi-r-v1.39.5','csanadi-r-v1.39.6','csanadi-r-v1.39.7','csanadi-r-v1.39.8','csanadi-r-v1.39.9','csanadi-r-v1.39.10','csanadi-r-v1.39.11'].includes(json('json/config.json').performance.cacheVersion));
+ assert.match(read('index.html'),/script\.js\?v=1\.39\.(?:[23456789]|10|11)/);
 });
 
 const failed=tests.filter(x=>!x.passed);

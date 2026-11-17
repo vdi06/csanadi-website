@@ -1,10 +1,10 @@
 import {initRound10Enhancements} from './round10-enhancements.js?v=1.39.5';
-import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.39.10';
+import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.39.11';
 import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.37.0';
 import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=csanadi-r29n-20261115';
 import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=csanadi-r29n-20261115';
 import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.39.5';
-import {setupSmartSearch} from './search-j-2026.js?v=1.39.10';
+import {setupSmartSearch} from './search-j-2026.js?v=1.39.11';
 import {installLanguageHighlights} from './language-20.js?v=csanadi-r29n-20261115';
 import {enhancePersonalizedHome} from './round21-personalize.js?v=csanadi-r29n-20261115';
 import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,syncMobileEmbeddedSections,initRound29Diagnostics} from './round29-home.js?v=1.37.0';
@@ -20,7 +20,7 @@ import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialS
 import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=csanadi-r29n-20261115';
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r29n-20261115';
  
-import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.39.10';
+import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.39.11';
 import {renderBlock,dom,listCards} from './blocks.js?v=csanadi-r29n-20261115';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=csanadi-r29n-20261115';
 import {renderSportsSuccesses} from './sports-successes.js?v=csanadi-r29n-20261115';

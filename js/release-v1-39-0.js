@@ -5,13 +5,25 @@ const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
 let currentRoute='#/';
 let progressTask=0;
 let arrivalRequest=0;
+let homeHeroFolded=false;
 
 function updateHomeHeader(){
  const isHome=currentRoute==='#/';
- // Az új teljes felső egység állandó küszöböt kap; összehúzott magasság
- // alapján új küszöböt számolni oda-vissza villogást okozna.
- const threshold=150;
- document.body.classList.toggle('cs-home-condensed',isHome&&window.scrollY>threshold);
+ // A képváltó összecsukása csökkenti a dokumentum magasságát és a scrollY-t.
+ // Eltérő nyitó/záró küszöb nélkül ettől ugyanannál a görgetésnél villogna.
+ // A magasságot még nyitott állapotból mérjük; összecsukva nem számoljuk újra.
+ if(!isHome)homeHeroFolded=false;
+ else{
+  const hero=select('#global-hero');
+  if(!homeHeroFolded){
+   const expanded=Number.parseFloat(hero?.style.getPropertyValue('--cs39-hero-expanded'))||
+    hero?.scrollHeight||360;
+   // Csak a képváltó elhagyása után zsugorítunk; a változás után is a
+   // felengedési küszöb fölött maradunk, ezért nincs oda-vissza váltás.
+   if(window.scrollY>Math.max(390,expanded+145))homeHeroFolded=true;
+  }else if(window.scrollY<=18)homeHeroFolded=false;
+ }
+ document.body.classList.toggle('cs-home-condensed',isHome&&homeHeroFolded);
  document.body.classList.toggle('cs-home-header',isHome);
 }
 

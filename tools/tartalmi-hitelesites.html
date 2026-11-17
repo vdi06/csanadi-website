@@ -59,14 +59,16 @@
   <main>
     <div class="intro">
       <h1>Tartalmi, szabály- és média-hitelesítési munkalap</h1>
-      <p>A 66 tartalmi indexbejegyzés, a 65 aloldal 31 szabályából kiemelt <strong>55 nyitott tartalmi ellenőrzés</strong>, a dokumentumok és a médiafájlok külön kezelhetők.</p>
+      <p>A <strong>23 kiemelt intézményi jóváhagyást igénylő oldal</strong> és a <strong>69 rendezetlen felhasználási jogú médiaazonosító</strong> önálló listában ellenőrizhető. Az összes oldal, a 31 szabályból nyitott tételek, a dokumentumok és a médiafájlok is elérhetők.</p>
       <p class="warning"><strong>Fontos:</strong> minden itt megadott státusz és döntési adat helyi munkajegyzet. Nem módosítja a nyilvános JSON-t vagy az FTP-fájlokat, nem jelenti a hitelesítést, és nem helyettesíti az intézmény tényleges jóváhagyását. Mentsd el az exportált JSON-t a munka folytatásához.</p>
     </div>
     <section class="filters" aria-label="Szűrés és mentés">
       <label>Adatkör
         <select id="kind">
+          <option value="priority">23 intézményi ellenőrzést igénylő oldal</option>
+          <option value="mediaRights">69 médiatétel · felhasználási jog függőben</option>
           <option value="criteria">31 szabály · 55 nyitott tétel</option>
-          <option value="pages">66 tartalmi indexbejegyzés</option>
+          <option value="pages">71 tartalmi indexbejegyzés</option>
           <option value="documents">Dokumentumok</option>
           <option value="assets">Média és más assets-fájlok</option>
         </select>
@@ -98,6 +100,6 @@
     <p class="help">A 31 szabály ellenőrzése nem nyit meg új aloldalt; minden tételhez az eredeti JSON-fájlra mutató forráshivatkozás tartozik. A munkalap státuszait és bizonyítékait exportáld; a tényleges jóváhagyás elkülönített kiadási folyamatban történhet.</p>
   </main>
   <footer>Csanádi Sportiskola 2026 · Helyi ellenőrzési segédprogram, statikus FTP-kompatibilis</footer>
-  <script src="tartalmi-hitelesites.js?v=1.37.0" defer></script>
+  <script src="tartalmi-hitelesites.js?v=1.39.11" defer></script>
 </body>
 </html>

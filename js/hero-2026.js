@@ -8,8 +8,11 @@ export function renderPremiumHero(block){
  const slides=(Array.isArray(data.slides)&&data.slides.length?data.slides:[data]).filter(slide=>slide&&typeof slide.mediaId==='string').slice(0,settingNumber('runtime.hero.maxSlides'));
  if(!slides.length)return null;
  const section=el('section','csn26-visual-map');section.setAttribute('aria-label','Képes kezdőlap és főmenü');
- const row=el('div','csn26-visual-row');
+ const row=el('div','csn26-visual-row');row.id='csn26-visual-carousel';
+ row.setAttribute('role','group');
  row.setAttribute('aria-roledescription','képes tartalomváltó');
+ const instructions=el('p','visually-hidden','A képek hivatkozások. A nyílgombokkal vagy a bal és jobb nyílbillentyűvel válthatsz közöttük.');
+ instructions.id='csn26-carousel-help';row.setAttribute('aria-describedby',instructions.id);
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const mobile=matchMedia('(max-width: 768px)');
  const pairCount=Math.ceil(slides.length/2);
@@ -27,7 +30,7 @@ export function renderPremiumHero(block){
    wing.pictureMount.replaceChildren(...(picture?[picture]:[]));
    wing.overline.textContent=slide.eyebrow||'CSANÁDI SPORTISKOLA';wing.title.textContent=slide.title||'Iskolai pillanatok';wing.summary.textContent=slide.subtitle||'Fedezd fel iskolánk világát.';
    wing.surface.href=safeRoute(slide.buttons?.[0]?.href||(wing.side==='left'?'#/sport':'#/iskolank'));
-   wing.surface.setAttribute('aria-label',`${slideIndex+1}. képes tartalom: ${slide.title||'Iskolai pillanatok'} – megnyitás`);
+   wing.surface.setAttribute('aria-label',`${slideIndex+1}. képes tartalom a(z) ${slides.length} közül: ${slide.title||'Iskolai pillanatok'} – megnyitás`);
    wing.element.dataset.slide=String(slideIndex+1);
   }
   if(status){status.setAttribute('aria-live',announce?'polite':'off');status.textContent=mobile.matches?`${activeIndex+1}. képes tartalom a(z) ${slides.length} közül`:`${activeIndex+1}. képpár a(z) ${pairCount} közül`;}
@@ -50,10 +53,11 @@ export function renderPremiumHero(block){
  const makeArrow=side=>{
   const arrow=el('button','csn26-edge-arrow csn26-edge-arrow--'+side,side==='left'?'‹':'›');arrow.type='button';
   arrow.setAttribute('aria-label',side==='left'?'Előző képes tartalom':'Következő képes tartalom');
+  arrow.setAttribute('aria-controls',row.id);
   arrow.addEventListener('click',()=>showPair(activeIndex+(side==='left'?-1:1),true));return arrow;
  };
- const status=el('span','csn26-pair-status visually-hidden');status.setAttribute('aria-live','polite');
- row.append(makeArrow('left'),makeArrow('right'),status);showPair(0);
+ const status=el('span','csn26-pair-status visually-hidden');status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.setAttribute('aria-atomic','true');
+ row.append(makeArrow('left'),makeArrow('right'),instructions,status);showPair(0);
  mobile.addEventListener?.('change',()=>showPair(0));
  row.addEventListener('mouseenter',()=>hovered=true);row.addEventListener('mouseleave',()=>hovered=false);
  row.addEventListener('focusin',()=>focused=true);row.addEventListener('focusout',()=>{focused=row.contains(document.activeElement);});

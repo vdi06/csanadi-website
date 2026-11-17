@@ -15,7 +15,7 @@ function test(name,run){try{run();results.push({name,ok:true});}catch(error){res
 test('71 oldal, megőrzött médiák, 60 új grafika és konzisztens aktuális cache',()=>{
  assert.equal(Object.keys(json('json/oldalindex.json').pages).length,71);
  assert.equal(json('json/assets-inventory.json').items.length,748);
- assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.39\.(?:9|10)$/);
+ assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.39\.(?:9|10|11)$/);
  for(const asset of json('json/assets-inventory.json').items)assert.ok(fs.existsSync(path.join(root,asset.path)),asset.path);
 });
 test('Mind a 16 karbantartó nézet nyelve, viewportja és közös arculata',()=>{

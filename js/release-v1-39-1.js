@@ -10,14 +10,14 @@ function installHomeShell(){
  const shell=el('div','cs39-home-shell');shell.id='cs39-home-shell';
  header.before(shell);shell.append(header,hero);
  const compact=el('div','cs39-mini-hero');compact.id='cs39-mini-hero';
- compact.setAttribute('role','group');compact.setAttribute('aria-label','Kompakt kezdőlapi képes tartalomváltó');
- const previous=el('button','cs39-mini-step','‹');previous.type='button';previous.setAttribute('aria-label','Előző kiemelt kép');
+ compact.setAttribute('role','group');compact.setAttribute('aria-label','A kezdőlapi képes tartalom középső előnézete');
+ const previous=el('button','cs39-mini-step','‹');previous.type='button';previous.setAttribute('aria-label','Előző kiemelt kép');previous.setAttribute('aria-controls','csn26-visual-carousel');
  const preview=el('a','cs39-mini-preview');preview.href='#/sport';preview.setAttribute('aria-label','Kiemelt tartalom megnyitása');
  const image=el('img','cs39-mini-image');image.alt='';image.width=70;image.height=47;
  const description=el('span','cs39-mini-description');
  description.append(el('strong','cs39-mini-label','Kiemelt sportos tartalom'),el('small','cs39-mini-hint','Kattints a megnyitáshoz'));
  preview.append(image,description);
- const next=el('button','cs39-mini-step','›');next.type='button';next.setAttribute('aria-label','Következő kiemelt kép');
+ const next=el('button','cs39-mini-step','›');next.type='button';next.setAttribute('aria-label','Következő kiemelt kép');next.setAttribute('aria-controls','csn26-visual-carousel');
  const menu=el('button','cs39-mini-menu','Főmenü');menu.type='button';menu.setAttribute('aria-label','Főmenü megnyitása');
  const top=el('button','cs39-mini-top','↑');top.type='button';top.setAttribute('aria-label','Teljes kezdőlapi fejléc megjelenítése');
  for(const node of [previous,preview,next,menu,top])compact.append(node);
@@ -52,6 +52,7 @@ function installHomeShell(){
  const syncAccessibility=()=>{
   const condensed=document.body.classList.contains('cs-home-header')&&document.body.classList.contains('cs-home-condensed');
   // A vizuálisan összecsukott képváltó nem maradhat billentyűzettel fókuszálható.
+  if(condensed&&hero.contains(document.activeElement))preview.focus({preventScroll:true});
   hero.inert=condensed;
   if(condensed)hero.setAttribute('aria-hidden','true');
   else hero.removeAttribute('aria-hidden');
