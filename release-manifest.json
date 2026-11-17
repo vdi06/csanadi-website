@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.40.0",
+  "release": "csanadi-website-v1.40.1",
   "date": "2026-11-17",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "v1.40.0: egyetlen teljes szélességű, automatikusan váltakozó kezdőlapi kép három egyedileg generált témával (sport, tudás, közösség), témánként széles és külön mobilkompozícióval. A címer mindkét oldalán dinamikus feliratok, mobilon helytakarékos elrendezéssel. Új kép csak sikeres betöltés után váltja le az előzőt, így nem villan fel az üres háttér. A címer területe az összes látványképen szabad, központi kimaszkolással. Megmaradnak a korábbi görgetésfüggő fejléc- és menüműködések, az akadálymentes nyílnavigáció, a nyitókapu, a két soros verziódiagnosztika és az aloldalak animációmentes főmenüje. A megjelenítés statikus FTP-kompatibilis; a Bootstrap kizárólag verziózott CDN-ről jön. A generált képek látványtervek, nyilvános intézményi használatuk jóváhagyást igényel.",
+  "notes": "v1.40.1: a kezdőlapról eltávolítottuk a Napi sporthírek modult és a kezdőlapi sorrendnyilvántartásból is kivettük. Az aloldali képes fejlécekről levettük az ismétlődő feliratot, és az aloldali címek, összefoglalók és szerkesztett szöveges szakaszok középre igazodnak. Az egyenrangú kártyák minden befejezetlen sorban is középre kerülnek; a tanulmányi és sportútvonalak kártyáit belső térköz választja el a háttérkerettől. A felső menüsor világos és sötét módban egységes, folyamatos hátteret, kontrasztos feliratokat és határvonalak nélküli gombokat kapott; a görgetésre megjelenő középső előnézet is keretmentes. A Sporthírek önálló oldala és a kapcsolódó karbantartóeszközök egyelőre változatlanok. A v1.40.0 teljes szélességű, három váltakozó képe, kétoldali szövege, reszponzív képkivágásai és a korábbi fejléc-, főmenü- és nyitókapu-működés megmaradt. A megjelenítés statikus FTP-kompatibilis; a Bootstrap kizárólag verziózott CDN-ről jön. A generált képek látványtervek, nyilvános intézményi használatuk jóváhagyást igényel.",
   "files": {
     "README.md": {
       "sizeBytes": 42,
@@ -3090,6 +3090,10 @@
       "sizeBytes": 14147,
       "sha256": "5972f1f7c000403a5f8b1d6bf69cf3d555a89ef90b5a463bc12ad3567cdc6912"
     },
+    "css/card-centering-v1-40-1.css": {
+      "sizeBytes": 4256,
+      "sha256": "88b8515494e519d40391b5aaf0b9bc93cc60bfc17a653ce768cdf06fc2421d2e"
+    },
     "css/compass-2026.css": {
       "sizeBytes": 18794,
       "sha256": "c7f3579a5ff9570b9aea633383edd0edcdf287fa22ec72fb6459bc451acd9cc9"
@@ -3141,6 +3145,10 @@
     "css/header-polish-v1-39-16.css": {
       "sizeBytes": 2435,
       "sha256": "fc7d5966d609920542b1a7d8510b28db1695b1d0026bbcee22046e90bd353906"
+    },
+    "css/header-seamless-v1-40-1.css": {
+      "sizeBytes": 2944,
+      "sha256": "4a4587498779d9815830f5ae654cbfb0af80d59ea7c78e097e100b9a93008744"
     },
     "css/hero-map-dock-2026.css": {
       "sizeBytes": 6891,
@@ -3409,6 +3417,10 @@
     "css/style.css": {
       "sizeBytes": 75798,
       "sha256": "71840673db531aeabf7822f96f96b563e10fa6c662b678ed51e511add55efd74"
+    },
+    "css/subpage-centered-v1-40-1.css": {
+      "sizeBytes": 1063,
+      "sha256": "9492c20ebc948f042ffb7d1684f494e4a2dfe2455b4bfdabf895d71b4d7c03e4"
     },
     "css/subpage-header-fix.css": {
       "sizeBytes": 6886,
@@ -3963,8 +3975,8 @@
       "sha256": "75001b42d45bd4cc29f9e97a38c696997d1452c84cc64923f87af8cc4e60a6ca"
     },
     "index.html": {
-      "sizeBytes": 21451,
-      "sha256": "70140b22f264e77569254390b38a134be8f70293950ef2411f5706dbe81eb225"
+      "sizeBytes": 21673,
+      "sha256": "1d7cad96737fe523f9c5d8398d87ba7c5b858c67ce9d098fb8fdd7295a2c42aa"
     },
     "iranytu.html": {
       "sizeBytes": 10082,
@@ -3979,8 +3991,8 @@
       "sha256": "a7dbdec737fb599d6d4f87b6ef3d8e685480e748c47d116a8ac16aa8987b9842"
     },
     "js/app.js": {
-      "sizeBytes": 60739,
-      "sha256": "d70df4e1627f89191f6c02ad341c8ff98306e9de06b9dee60651b75589049132"
+      "sizeBytes": 60667,
+      "sha256": "d1066de39e5ee9f707baf20d3038bf5d7ff326f284e9a7f9cc9d591583816294"
     },
     "js/blocks.js": {
       "sizeBytes": 9230,
@@ -4163,8 +4175,8 @@
       "sha256": "8370237b62f4002e2fce7f5770c1ebc6af842e35ac5477ad84f9fc29610d6b95"
     },
     "js/subpages-v1.js": {
-      "sizeBytes": 14182,
-      "sha256": "2c3e0f0f7f79b19979766be33952085a7efebf958d46942f5b8fd0129bda445a"
+      "sizeBytes": 14106,
+      "sha256": "77a74c4ee234920b7a4d84372ac1fb0b4f9fcceaebfeda45d619e48cbd87c16d"
     },
     "js/tenway-2026.js": {
       "sizeBytes": 7419,
@@ -4264,7 +4276,7 @@
     },
     "json/config.json": {
       "sizeBytes": 15288,
-      "sha256": "780721281bece5f463ee6b89f018b40464d2f3ff962bde6ecbcac2a0e44a6f12"
+      "sha256": "423f911e9624bfcb0317eebf6c4b998632035239390e11cad766b18e7d8110d2"
     },
     "json/mediatar.json": {
       "sizeBytes": 288353,
@@ -4431,8 +4443,8 @@
       "sha256": "e35f67bcfab755b338f1ab5dff4ef1cdd328a9f0a60c046d5cd6c0894b47b9d3"
     },
     "json/oldalak/kezdolap.json": {
-      "sizeBytes": 11881,
-      "sha256": "7564b698342103f5026fdef8b5b4247f1909ff0a459dbc3db05db1a20335846e"
+      "sizeBytes": 11877,
+      "sha256": "c5b690a5a46aa8e4bbad0658cf43941dc3ce0141f434da943986ea1de03bb6fe"
     },
     "json/oldalak/oktatas/digitalis-kultura/mesterseges-intelligencia.json": {
       "sizeBytes": 3357,
@@ -4656,7 +4668,7 @@
     },
     "script.js": {
       "sizeBytes": 1615,
-      "sha256": "dd39e54ab89ee3c26cf1f07ee051396bb6b6c79259e4ed74c5e3882ccb1a5ba5"
+      "sha256": "bde6da6e3af38389fa7f5f322634c60ec7a08156d794506d04edcf9f7d465246"
     },
     "service-worker.js": {
       "sizeBytes": 5975,
@@ -4719,8 +4731,8 @@
       "sha256": "79e2ab86045194652aeddde5318328a5a904c55abf861e53875dba9de5983afa"
     },
     "tools/build-release-manifest.js": {
-      "sizeBytes": 1999,
-      "sha256": "11ada5c2d2e5209daaa5fa536a8fe2b06aa55b15237502734dc59079f20d1ef7"
+      "sizeBytes": 2280,
+      "sha256": "ce25e6c66a36311852a204f39a2c4be43e8f1197d9f35a99c2590b37883cbd37"
     },
     "tools/build-rule31-worklist-v1-8.js": {
       "sizeBytes": 3230,
@@ -5968,7 +5980,23 @@
     },
     "tools/test-v140-single-hero.mjs": {
       "sizeBytes": 3367,
-      "sha256": "8c390f6084f67ebc9503133c51c491b85f5e93d55ad3a79de296880e36d10e05"
+      "sha256": "69af4e84861c42582368ef84515300bebb7326239e5948b0da9a2ea086590e3a"
+    },
+    "tools/test-v1401-cards-no-overlap.mjs": {
+      "sizeBytes": 1393,
+      "sha256": "405f9437a88d4d9bc3ea9ea2d7a34d0b51cd8035ea2ecd7da3b2af8844252b67"
+    },
+    "tools/test-v1401-no-home-daily-news.mjs": {
+      "sizeBytes": 1472,
+      "sha256": "111b943204782eb98ffba4f47a5880bb90537b09651d0610c2eff48549a7fed9"
+    },
+    "tools/test-v1401-seamless-header.mjs": {
+      "sizeBytes": 1413,
+      "sha256": "b1c9a6d344c66ee2e769f577744a10d8b48746d4c3f157d473e0219a586fbc93"
+    },
+    "tools/test-v1401-subpage-center.mjs": {
+      "sizeBytes": 1301,
+      "sha256": "ae7b84a1fbe238b5269fb7596388891a4c50f8047e4881ac584ce906edae0795"
     },
     "tools/test-workflow-v1-39-12.js": {
       "sizeBytes": 5062,

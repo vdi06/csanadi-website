@@ -1,0 +1,77 @@
+/* v1.40.1 – Egységes felső sáv mindkét témában.
+   A teljes fejléc egyetlen háttérfelület: a benne lévő elemek nem rajzolnak
+   külön, eltérő színű téglalapokat, kereteket vagy belső árnyékokat. */
+:root,
+html[data-theme="dark"]{
+ --cs-header-seamless-bg:linear-gradient(105deg,#102941 0%,#0c2136 54%,#102941 100%);
+ --cs-header-seamless-fg:#f6efdf;
+ --cs-header-seamless-muted:#dce6f2;
+ --cs-header-seamless-hover:rgba(236,203,143,.14);
+}
+html[data-theme="light"]{
+ --cs-header-seamless-bg:linear-gradient(105deg,#e9e1d2 0%,#f2eadb 54%,#e9e1d2 100%);
+ --cs-header-seamless-fg:#173149;
+ --cs-header-seamless-muted:#344b60;
+ --cs-header-seamless-hover:rgba(30,58,84,.10);
+}
+#site-header{
+ background:var(--cs-header-seamless-bg)!important;
+ color:var(--cs-header-seamless-fg)!important;
+ border:0!important;
+ box-shadow:none!important;
+ backdrop-filter:none!important;
+ -webkit-backdrop-filter:none!important;
+}
+#site-header .brand-row,
+#site-header .brand,
+#site-header .brand-copy,
+#site-header .header-actions,
+#site-header .header-social,
+#site-header .header-social .social-chip-group,
+#site-header .header-tag{
+ background:transparent!important;
+ border:0!important;
+ box-shadow:none!important;
+ backdrop-filter:none!important;
+ -webkit-backdrop-filter:none!important;
+}
+#site-header .brand,
+#site-header .brand:hover,
+#site-header .brand-copy strong,
+#site-header .header-tag,
+#site-header .header-actions{
+ color:var(--cs-header-seamless-fg)!important;
+}
+#site-header .brand-copy small{color:var(--cs-header-seamless-muted)!important}
+#site-header :is(.icon-btn,.header-kreta,.header-social .social-chip){
+ color:var(--cs-header-seamless-fg)!important;
+ background:transparent!important;
+ border:0!important;
+ box-shadow:none!important;
+ backdrop-filter:none!important;
+ -webkit-backdrop-filter:none!important;
+}
+#site-header :is(.icon-btn,.header-kreta,.header-social .social-chip):is(:hover,:active),
+#site-header :is(.icon-btn,.header-kreta,.header-social .social-chip):focus-visible{
+ background:transparent!important;
+ box-shadow:none!important;
+}
+#site-header :is(.icon-btn,.header-kreta,.header-social .social-chip):hover{
+ text-shadow:0 0 8px var(--cs-header-seamless-hover);
+}
+#site-header :is(.icon-btn,.header-kreta,.header-social .social-chip):focus-visible{
+ background:var(--cs-header-seamless-hover)!important;
+}
+/* A kép/menü előnézet az összement fejléc része; a korábbi 1px-es
+   szegély nem mutathatja meg, meddig ér a középső komponens. */
+body.cs-home-header #site-header #cs39-mini-hero,
+body.cs-home-header.cs-home-condensed #site-header #cs39-mini-hero,
+body.cs-home-header #site-header #cs39-mini-hero>.cs39-mini-preview{
+ background:transparent!important;
+ border:0!important;
+ box-shadow:none!important;
+}
+body.cs-home-header #site-header #cs39-mini-hero>.cs39-mini-preview:is(:hover,:active){
+ background:var(--cs-header-seamless-hover)!important;
+ border:0!important;
+}

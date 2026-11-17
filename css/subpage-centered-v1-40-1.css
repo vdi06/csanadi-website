@@ -1,0 +1,25 @@
+/* v1.40.1 – valamennyi belső oldal egységes, középre igazított szöveghierarchiája.
+   A főoldal, a táblázatok, a beviteli vezérlők és a menük külön maradnak. */
+body.cs-inner-page #app .page-banner > .container-xxl,
+body.cs-inner-page #app .cs-arrival-shell-heading {
+  text-align: center;
+}
+body.cs-inner-page #app .page-banner :is(h1,p),
+body.cs-inner-page #app .cs-arrival-shell-heading :is(h1,p) {
+  text-align: center;
+  margin-inline: auto;
+  text-wrap: pretty;
+}
+body.cs-inner-page #app .page-banner .breadcrumbs {
+  justify-content: center;
+}
+body.cs-inner-page #app .cs92-article .article-section,
+body.cs-inner-page #app .cs92-article .article-section :is(h2,h3,h4),
+body.cs-inner-page #app .cs92-article .article-section .text-flow,
+body.cs-inner-page #app .cs92-article .article-section .text-flow p {
+  text-align: center;
+}
+/* Összetett adatok és szerkesztői elemek megőrzik az olvasható elrendezést. */
+body.cs-inner-page #app .cs92-article .article-section :is(table,th,td,input,textarea,select) {
+  text-align: revert;
+}

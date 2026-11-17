@@ -11,7 +11,7 @@ const page=json('json/oldalak/kezdolap.json');
 const library=json('json/mediatar.json');
 const entries=new Map(library.items.map(item=>[item.id,item]));
 const hero=page.blocks.find(block=>block.id==='block:home-hero');
-assert.equal(page.lifecycle.revision,7,'A kezdőlap tartalmi revíziója');
+assert.equal(page.lifecycle.revision,8,'A kezdőlap tartalmi revíziója');
 assert.ok(hero,'Hiányzik a kezdőlap hero blokkja');
 assert.equal(hero.data.slides.length,3,'Három, egymás után megjelenő képkocka szükséges');
 assert.equal(hero.data.intervalMs,7500,'A beállított automatikus váltási idő');

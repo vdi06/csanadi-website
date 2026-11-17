@@ -223,9 +223,9 @@ export function createSubpageHero({title,mediaIds,createPicture,intervalMs=6500,
     const slide=document.createElement('div');slide.className='cs-sub-hero-slide';
     slide.hidden=i!==0;slide.append(picture);track.append(slide);
   });
-  const shade=document.createElement('div');shade.className='cs-sub-hero-shade';shade.setAttribute('aria-hidden','true');
-  const caption=document.createElement('p');caption.className='cs-sub-hero-caption';caption.textContent=title;
-  root.append(track,shade,caption);
+  // A képes oldalbevezetőn nem ismételjük meg az alatta, a tartalmi
+  // fejlécben már szereplő címet. A kép felirat és sötétítő fátyol nélkül látszik.
+  root.append(track);
   if(pictures.length===1)return root;
   let index=0,paused=false,timer=null;
   const prev=document.createElement('button'),next=document.createElement('button'),pause=document.createElement('button');

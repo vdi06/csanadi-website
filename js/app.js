@@ -443,7 +443,6 @@ function homePage(node){
     else if(block.id==='block:home-sports-successes'){
       place(renderStudentAchievements('home'),'students');
       place(rendered,'sports-story');
-      place(renderDailySportsNews('home'),'sports-news');
       place(renderNewsTeasers(),'school-news');
     }else if(block.id==='block:home-gallery-section'){
       place(rendered,'gallery');
@@ -476,7 +475,7 @@ function homePage(node){
   nav.append(dom('a',{href:'orokseg-es-tudastar.html',class:'csn21-explorer-link'},'Olimpiai örökség és tudástár · 24. kiadás ↗'));
   nav.append(dom('a',{href:'tanulas-es-kozosseg.html',class:'csn21-explorer-link'},'Tanulás, sport és közösség · 25. kiadás ↗'));
   const rails=dom('div',{class:'home-j-navrail-unit'});rails.append(nav);
-  const visibleRoles=['premium-showcase','school-news','sports-news'];
+  const visibleRoles=['premium-showcase','school-news'];
   canvas.replaceChildren();
   for(const role of visibleRoles){const unit=roleMap.get(role);if(unit)canvas.append(unit);if(role==='premium-showcase')canvas.append(rails);}
   const foldGroups=[
