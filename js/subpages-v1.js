@@ -111,6 +111,10 @@ export function initSubpageEnhancements() {
   ribbonLabel.className='cs-subpage-ribbon-title';
   ribbonLabel.setAttribute('aria-hidden','true');
   brandRow?.prepend(ribbonLabel);
+  const ribbonSection=document.createElement('span');
+  ribbonSection.className='cs-subpage-ribbon-section';
+  ribbonSection.setAttribute('aria-hidden','true');
+  brandRow?.prepend(ribbonSection);
   const progress=document.createElement('div');
   progress.className='cs-subpage-reading-progress';
   progress.setAttribute('aria-hidden','true');
@@ -143,10 +147,18 @@ export function initSubpageEnhancements() {
     const title=document.querySelector('#app .page-banner h1,#app .cs-arrival-shell h1,#app .not-found h1');
     const current=title?.textContent?.trim()||document.title.split(' | ')[0];
     if(ribbonLabel.textContent!==current)ribbonLabel.textContent=current;
-    const scroller=document.scrollingElement;
-    const extent=Math.max(0,(scroller?.scrollHeight||0)-window.innerHeight);
-    const read=extent?Math.min(100,Math.max(0,window.scrollY/extent*100)):100;
+    const content=document.getElementById('app');
+    const pageBottom=window.scrollY+(content?.getBoundingClientRect().bottom||window.innerHeight);
+    const banner=document.querySelector('#app .page-banner,#app .cs-arrival-shell-heading');
+    const pageStart=window.scrollY+(banner?.getBoundingClientRect().bottom||content?.getBoundingClientRect().top||0);
+    const visibleBottom=window.scrollY+window.innerHeight;
+    const extent=Math.max(1,pageBottom-pageStart);
+    const read=Math.min(100,Math.max(0,(visibleBottom-pageStart)/extent*100));
     progressFill.style.width=read.toFixed(1)+'%';
+    const headings=[...document.querySelectorAll('#app .article-section > h2,#app .cs-arrival-shell h2')];
+    const last=headings.filter(heading=>heading.getBoundingClientRect().top<=header.getBoundingClientRect().bottom+60).at(-1);
+    const section=last?.textContent?.trim()||'Az oldal áttekintése';
+    ribbonSection.textContent=section+' · '+Math.round(read)+'%';
   };
   const queueUpdate = () => {
     if (scheduled) return;
@@ -155,6 +167,8 @@ export function initSubpageEnhancements() {
   };
   window.addEventListener('scroll', queueUpdate, {passive:true});
   window.addEventListener('resize', queueUpdate, {passive:true});
+  const main=document.getElementById('app');
+  if(main&&'ResizeObserver' in window)new ResizeObserver(queueUpdate).observe(main);
   document.addEventListener('csanadi:route-rendered', event=>{
     headerMotion.render(event.detail?.headerMotion);
     queueUpdate();syncSelfLinks();

@@ -11,6 +11,8 @@ const DATASETS=[
 const element=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!=null)el.textContent=String(text);return el;};
 const sectionOf=(route,type)=>{
  const base=String(route||'').replace(/^#\//,'').split('/')[0];
+ if(base==='megkozelites-es-erkezes')return 'informaciok';
+ if(base==='tanulastamogatas')return 'oktatas';
  if(base in SECTIONS)return base;
  if(type==='image'||type==='video')return 'sport';
  if(type==='document')return 'informaciok';

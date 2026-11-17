@@ -336,18 +336,25 @@ function contentPage(node){
 
    
    
-  const shell=dom('div',{class:'container-xxl content-shell'});
+  const template=route.includes('hirek')||route.includes('kozlemenyek')?'news':route.includes('sport')?'sport':route.includes('dokumentum')||route.includes('szabalyzat')?'documents':route.includes('esemeny')?'events':route.includes('megkozelites')||route.includes('terkep')?'arrival':route.includes('tanulas')||route.includes('digitalis-kultura')?'guide':'school';
+  const shell=dom('div',{class:'container-xxl content-shell cs-template--'+template});
   const layout=dom('div',{class:'content-layout content-no-aside'});
   const body=dom('div',{class:'content-tiles content-tiles--editorial'});
   const blocks=Array.isArray(page.blocks)?page.blocks:[];
   const article=dom('article',{class:'body-card content-tile tile-wide article-flow'+(blocks.length>=5?' article-flow--long':'')});
+  const sectionTitles=new Map();
   for(const block of blocks){
     if(!block||typeof block!=='object')continue;
     if(block.type==='section'){
       const section=dom('section',{class:'article-section'});
       let usefulChildren=0;
       for(const sub of block.children||[]){const el=renderBlock(sub);if(el){section.append(el);usefulChildren++;}}
-      if(usefulChildren){if(block.title)section.prepend(dom('h2',{},block.title));article.append(section);}
+      if(usefulChildren){
+        const key=String(block.title||'').trim().toLocaleLowerCase('hu-HU');
+        const prior=key?sectionTitles.get(key):null;
+        if(prior)prior.append(...section.childNodes);
+        else{if(block.title)section.prepend(dom('h2',{},block.title));article.append(section);if(key)sectionTitles.set(key,section);}
+      }
     } else {
       const el=renderBlock(block);
       if(el){const section=dom('section',{class:'article-section article-section--module'});section.append(el);article.append(section);}
@@ -554,7 +561,12 @@ function wireReveal(){
 function renderRoute(options={}){
   if(!catalog)return;
   const requested=getRoute();
-  if(arrivalSection(requested)!==null){embeddedArrival(requested,options);return;}
+  if(arrivalSection(requested)!==null){
+    const destination='#/megkozelites-es-erkezes'+(arrivalSection(requested)==='terkep'?'/terkep':'');
+    history.replaceState(history.state,'',location.pathname+location.search+destination);
+    renderRoute(options);
+    return;
+  }
   if(window.__csArrivalMessage){window.removeEventListener('message',window.__csArrivalMessage);window.__csArrivalMessage=null;}
   document.body.classList.remove('cs-embedded-arrival');
   const route=getRoute();const node=pageForRoute(route);

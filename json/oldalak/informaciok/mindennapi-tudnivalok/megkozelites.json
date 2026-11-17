@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000070",
+  "pageType": "standard",
+  "menuLabel": "Megközelítés",
+  "title": "Megközelítés és érkezés",
+  "slug": "megkozelites",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-17T12:00:00+01:00",
+  "updatedAt": "2026-11-17T12:00:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Megközelítés és érkezés – Csanádi Sportiskola",
+    "description": "Az iskola címe, utazási lehetőségek és ellenőrzött érkezési tudnivalók egy helyen.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [
+    "megközelítés",
+    "érkezés",
+    "közlekedés",
+    "iskola címe"
+  ],
+  "summary": "Az iskola címe, utazási lehetőségek és ellenőrzött érkezési tudnivalók egy helyen.",
+  "blocks": [
+    {
+      "id": "block:erkezes-cim",
+      "type": "section",
+      "title": "Hol található az iskola?",
+      "children": [
+        {
+          "id": "block:erkezes-cim-text",
+          "type": "markdown",
+          "data": {
+            "text": "**Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium**\n\n1143 Budapest, Őrnagy utca 5–7.\n\n[A térkép és az útvonaltervezés megnyitása](#/megkozelites-es-erkezes/terkep)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:erkezes-kozlekedes",
+      "type": "section",
+      "title": "Tömegközlekedés és érkezés",
+      "children": [
+        {
+          "id": "block:erkezes-kozlekedes-text",
+          "type": "markdown",
+          "data": {
+            "text": "A környéken az Őrnagy utca, a Várna utca és a Puskás Ferenc Stadion M megálló felől tervezhető útvonal. Az aktuális járatokat, átszállásokat és forgalmi változásokat a [BKK hivatalos menetrendjében](https://bkk.hu/menetrendek/) ellenőrizd.\n\nA pontos belépési pontot és a látogatói fogadás rendjét indulás előtt egyeztesd az iskolával."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:erkezes-akadalymentes",
+      "type": "section",
+      "title": "Akadálymentes érkezés",
+      "children": [
+        {
+          "id": "block:erkezes-akadalymentes-text",
+          "type": "markdown",
+          "data": {
+            "text": "Az akadálymentes bejárat, lépcsőmentes útvonal, lift vagy parkoló részleteiről jelenleg nincs intézményileg igazolt, közzétehető adat. Az útvonal megtervezése előtt kérj közvetlen tájékoztatást az [iskolától](#/kapcsolat)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:erkezes-szetszedes",
+      "type": "section",
+      "title": "Tanulási eszközöket keresel?",
+      "children": [
+        {
+          "id": "block:erkezes-szetszedes-text",
+          "type": "markdown",
+          "data": {
+            "text": "A tanulási időzítő, a céltervező és a tanulókártyák külön, a [Tanulástámogatás](#/tanulastamogatas) oldalon érhetők el."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/megkozelites-es-erkezes",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kapcsolat"
+  }
+}

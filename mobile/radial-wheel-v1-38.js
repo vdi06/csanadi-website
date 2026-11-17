@@ -1,5 +1,5 @@
 /** Telefonra tervezett, kizárólag kétszintű, teljes kör alakú navigáció. */
-export const PHONE_QUERY='(max-width: 700px), (max-height: 500px) and (max-width: 960px) and (pointer: coarse)';
+export const PHONE_QUERY='(max-width: 768px), (max-height: 500px) and (max-width: 960px) and (pointer: coarse)';
 const icons=['✦','◈','◆','★','▤','✧'];
 const shortLabels=new Map([
  ['Hírek és események','Hírek'],['Információk','Infók'],
@@ -28,7 +28,7 @@ export function createPhoneRadial({container,title,description,overview,center,m
   title.textContent=activeRoot?titleOf(activeRoot):'Hat főmenüpont';
   description.textContent=activeRoot?`${count} almenüpont • érintsd meg a megnyitáshoz`:'Válassz a kör mentén elhelyezkedő témakörök közül';
   overview.hidden=!activeRoot;
-  if(activeRoot){overview.href=hrefOf(activeRoot);overview.textContent=titleOf(activeRoot)+' áttekintése →';}
+  if(activeRoot){overview.href=hrefOf(activeRoot);overview.textContent=titleOf(activeRoot)+' áttekintése';}
   center.disabled=!activeRoot;
   center.setAttribute('aria-label',activeRoot?'Vissza a hat főmenüponthoz':'Csanádi – hat főmenüpont');
   center.querySelector('.cs-phone-wheel-center-label').textContent=activeRoot?'Vissza':'Főmenü';
@@ -41,7 +41,7 @@ export function createPhoneRadial({container,title,description,overview,center,m
    node.setAttribute('aria-label',label);
    node.title=label;
    const symbol=document.createElement('span');symbol.className='cs-phone-wheel-item-icon';
-   symbol.setAttribute('aria-hidden','true');symbol.textContent=activeRoot?'→':icons[index%icons.length];
+   symbol.setAttribute('aria-hidden','true');symbol.textContent=activeRoot?'':icons[index%icons.length];
    const name=document.createElement('span');name.className='cs-phone-wheel-item-name';
    name.textContent=shortLabels.get(label)||label;
    node.append(symbol,name);

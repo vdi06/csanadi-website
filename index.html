@@ -87,6 +87,7 @@
   <link rel="stylesheet" href="mobile/radial-wheel-v1-38.css?v=1.38.1">
   <link rel="stylesheet" href="css/desktop-condensed-ribbon-v1-38.css?v=1.38.1">
   <link rel="stylesheet" href="css/subpage-header-motion-v1-38-2.css?v=1.38.2">
+  <link rel="stylesheet" href="css/liquid-glass-v1-39-0.css?v=1.39.0">
 </head>
 <body>
   <a class="skip-link" href="#app">Ugrás a tartalomra</a>
@@ -98,7 +99,7 @@
       </a>
       <div class="header-actions">
         <span class="header-tag">SPORT <i aria-hidden="true"></i> TUDÁS <i aria-hidden="true"></i> KÖZÖSSÉG</span><div id="social-header" class="header-social" aria-label="Közösségi felületek"></div>
-        <a class="header-kreta" href="https://klik200346001.e-kreta.hu/" target="_blank" rel="noopener noreferrer" title="Intézményi KRÉTA belépés – külső rendszer">KRÉTA belépés ↗</a>
+        <a class="header-kreta" href="https://klik200346001.e-kreta.hu/" target="_blank" rel="noopener noreferrer" title="Intézményi KRÉTA belépés – külső rendszer">KRÉTA</a>
         <button class="icon-btn" id="search-open" type="button" aria-label="Keresés megnyitása" title="Keresés"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></button>
         <button class="icon-btn theme-switch" id="theme-toggle" type="button" aria-label="Megjelenés: automatikus. Következő: világos" title="Megjelenési mód váltása: automatikus, világos, sötét"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span id="theme-label" class="theme-label">Automatikus</span></button>
         <button class="icon-btn portal-replay-btn" id="portal-replay" type="button" title="Kapunyitás újrajátszása" aria-label="Kapunyitás újrajátszása"><svg viewBox="0 0 120 120" width="28" height="28" aria-hidden="true" focusable="false"><path d="M12 105V19h42v86M54 19h54v86M12 105h96" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/><path d="M54 26 24 40v61l30-15V26Zm0 0 38 17v59L54 86V26Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/><path d="M39 63h6m24 0h6" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></button>
@@ -142,7 +143,7 @@
   <main id="app" tabindex="-1" aria-live="polite" class="main-content" data-page-kind="home">
     <div class="container-xxl loading-area"><div class="spinner-border" role="status"><span class="visually-hidden">Betöltés…</span></div><p>A tartalmak betöltése…</p></div>
   </main>
-  <aside class="r26-home-map-link container-xxl" aria-label="Az iskola megtalálása"><div class="r26-home-map-icon" aria-hidden="true">📍</div><div><strong>Merre található a Csanádi Sportiskola?</strong><p>1143 Budapest, Őrnagy utca 5–7. · Térkép, tömegközlekedési, gyalogos és kerékpáros útvonalak.</p></div><a href="#/megkozelites-es-tanulas/terkep">Térkép és megközelítés →</a></aside>
+  <aside class="r26-home-map-link container-xxl" aria-label="Az iskola megtalálása"><div class="r26-home-map-icon" aria-hidden="true">📍</div><div><strong>Merre található a Csanádi Sportiskola?</strong><p>1143 Budapest, Őrnagy utca 5–7. · Térkép, tömegközlekedési, gyalogos és kerékpáros útvonalak.</p></div><a href="#/megkozelites-es-erkezes/terkep">Térkép és megközelítés</a></aside>
   <footer class="site-footer">
     <details class="footer-diagnostics-disclosure container-xxl" id="footer-diagnostics-disclosure">
       <summary><span aria-hidden="true" class="footer-diagnostics-icon">🔧</span><span id="footer-diagnostics-label">Honlapdiagnosztika megnyitása</span></summary>
@@ -154,7 +155,6 @@
         <p>1143 Budapest, Őrnagy utca 5–7. · csanadi@csanadiiskola.hu · Sport, tanulás, közösség.</p>
         <div class="footer-bottom"><span id="footer-page-count"></span></div>
       </div>
-      <div><strong>Gyorselérés</strong><a href="#/oktatas/felveteli">Felvételi</a><a href="#/sport">Sport</a><a href="#/informaciok/dokumentumtar">Dokumentumok</a><a href="offline-olvaso.html">Offline olvasás</a><a href="felfedezo.html">Felfedezőközpont</a><a href="iranytu.html">Iskolai iránytű</a><a href="iskolai-muhely.html">Iskolai műhely (23)</a><a href="orokseg-es-tudastar.html">Olimpiai örökség (24)</a><a href="tanulas-es-kozosseg.html">Tanulás és közösség (25)</a><a href="#/megkozelites-es-tanulas">Térképes megközelítés és tanulás (26)</a></div>
       <div><strong>Tájékoztatás</strong><a href="#/informaciok/adatvedelem">Adatvédelem</a><a href="#/informaciok/allaspalyazatok">Álláspályázatok</a><a href="#/iskolank/a-honlap-szuletese">A honlap születése</a><a href="#/kapcsolat">Kapcsolat</a><span class="footer-note"></span><div id="social-footer" aria-label="Közösségi média"></div></div>
     </div>
   </footer>
@@ -179,8 +179,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous" defer>
 </script>
   <script src="js/round12-media-performance.js?v=csanadi-r29n-20261115" defer></script>
-  <script src="js/round13-network.js?v=csanadi-r-v1.38.2" defer></script>
-  <script type="module" src="script.js?v=1.38.2">
+  <script src="js/round13-network.js?v=csanadi-r-v1.39.0" defer></script>
+  <script type="module" src="script.js?v=1.39.0">
 </script>
 </body>
 </html>

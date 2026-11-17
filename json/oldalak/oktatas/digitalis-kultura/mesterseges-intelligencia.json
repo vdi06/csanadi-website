@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000068",
+  "pageType": "standard",
+  "menuLabel": "Mesterséges intelligencia",
+  "title": "Mesterséges intelligencia tudatos használata",
+  "slug": "mesterseges-intelligencia",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-17T12:00:00+01:00",
+  "updatedAt": "2026-11-17T12:00:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 1
+  },
+  "seo": {
+    "title": "Mesterséges intelligencia tudatos használata – Csanádi Sportiskola",
+    "description": "Az MI mint segédeszköz: forráskritika, önálló gondolkodás és felelős felhasználás.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [
+    "mesterséges intelligencia",
+    "digitális kultúra"
+  ],
+  "summary": "Az MI mint segédeszköz: forráskritika, önálló gondolkodás és felelős felhasználás.",
+  "blocks": [
+    {
+      "id": "block:000065-section-7",
+      "type": "section",
+      "title": "A mesterséges intelligencia mint eszköz, nem mint felmentés",
+      "children": [
+        {
+          "id": "block:000065-text-7",
+          "type": "markdown",
+          "data": {
+            "text": "A mesterséges intelligenciára épülő alkalmazások képesek ötleteket rendszerezni, szövegtervezeteket készíteni, adatokat feldolgozni vagy különböző megoldási lehetőségeket javasolni. Segíthetnek az indulásban, a gyakorlásban, az összefoglalásban és az ismétlődő feladatok egyszerűsítésében. Ettől azonban az általuk előállított válasz még nem válik automatikusan helyessé.\n\nA felhasználónak kell eldöntenie, **mire kér segítséget, mit fogad el, mit ellenőriz és miért használja fel az eredményt**. Különösen fontos ez akkor, ha egy válasz személyes adatokat, tudományos állításokat, iskolai tájékoztatást vagy másokat érintő döntéseket befolyásol. A jó kérdésfeltevés, a forráskritika és az önálló értékelés a mesterséges intelligencia használatával nem veszít, hanem új jelentőséget kap."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:mi-ellenorzes",
+      "type": "section",
+      "title": "Négy kérdés az MI-válaszokhoz",
+      "children": [
+        {
+          "id": "block:mi-ellenorzes-text",
+          "type": "markdown",
+          "data": {
+            "text": "**Mire használom?** Pontosan nevezd meg, milyen segítséget kérsz.\n\n**Honnan származik?** Ellenőrizd az állításokat megbízható forrásokból.\n\n**Mit osztok meg?** Személyes vagy bizalmas adatot ne adj meg a szolgáltatásnak.\n\n**Mi az én munkám?** A végső döntést, megértést és felelősséget ne add át az alkalmazásnak.\n\n[Vissza a digitális kultúrához](#/oktatas/digitalis-kultura)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/oktatas/digitalis-kultura/mesterseges-intelligencia",
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas"
+  }
+}

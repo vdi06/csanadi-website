@@ -370,10 +370,10 @@ function makeApproach(){
  const heading=create('div','cs29-block-heading');heading.append(create('span','cs29-overline','TALÁLKOZZUNK'),create('h2','','Így találsz el hozzánk'));section.append(heading);
  const layout=create('div','cs29-approach-grid');const preview=create('div','cs29-map-preview');
  const title=create('strong','','Csanádi Sportiskola');const address=create('p','','1143 Budapest, Őrnagy utca 5–7.');
- const mapButton=create('a','cs29-map-button','Interaktív térkép megnyitása →');mapButton.href='#/megkozelites-es-tanulas/terkep';
+ const mapButton=create('a','cs29-map-button','Interaktív térkép megnyitása');mapButton.href='#/megkozelites-es-erkezes/terkep';
  preview.append(create('span','cs29-map-pin','⌖'),title,address,mapButton);
  const cards=create('div','cs29-route-cards');
- for(const [icon,title,copy,url] of [['⌖','Cím és elérhetőség','Őrnagy utca 5–7.','#/kapcsolat'],['↗','Útvonaltervezés','Keresd meg a számodra megfelelő útvonalat.','#/megkozelites-es-tanulas/terkep'],['⇄','Közlekedési lehetőségek','Gyalog, tömegközlekedéssel, kerékpárral vagy autóval.','#/megkozelites-es-tanulas']]){
+ for(const [icon,title,copy,url] of [['⌖','Cím és elérhetőség','Őrnagy utca 5–7.','#/kapcsolat'],['↗','Útvonaltervezés','Keresd meg a számodra megfelelő útvonalat.','#/megkozelites-es-erkezes/terkep'],['⇄','Közlekedési lehetőségek','Gyalog, tömegközlekedéssel, kerékpárral vagy autóval.','#/megkozelites-es-erkezes']]){
   const a=create('a','cs29-route-card');a.href=url;a.append(create('span','',icon),create('strong','',title),create('small','',copy));cards.append(a);
  }
  layout.append(preview,cards);section.append(layout);return section;

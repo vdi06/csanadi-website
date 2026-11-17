@@ -119,7 +119,14 @@
         },
         {
           "path": "oldalak/oktatas/tananyagok-es-jegyzetek.json",
-          "order": 4
+          "order": 4,
+          "children": [
+            {
+              "path": "oldalak/oktatas/tananyagok-es-jegyzetek/tanulastamogatas.json",
+              "order": 1,
+              "menuVisible": false
+            }
+          ]
         },
         {
           "path": "oldalak/oktatas/konyvtar.json",
@@ -134,7 +141,19 @@
         },
         {
           "path": "oldalak/oktatas/digitalis-kultura.json",
-          "order": 6
+          "order": 6,
+          "children": [
+            {
+              "path": "oldalak/oktatas/digitalis-kultura/online-biztonsag.json",
+              "order": 1,
+              "menuVisible": false
+            },
+            {
+              "path": "oldalak/oktatas/digitalis-kultura/mesterseges-intelligencia.json",
+              "order": 2,
+              "menuVisible": false
+            }
+          ]
         }
       ]
     },
@@ -262,6 +281,16 @@
             {
               "path": "oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json",
               "order": 3,
+              "menuVisible": false
+            },
+            {
+              "path": "oldalak/informaciok/mindennapi-tudnivalok/megkozelites.json",
+              "order": 4,
+              "menuVisible": false
+            },
+            {
+              "path": "oldalak/informaciok/mindennapi-tudnivalok/terkep.json",
+              "order": 5,
               "menuVisible": false
             }
           ]

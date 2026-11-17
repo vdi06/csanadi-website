@@ -143,7 +143,7 @@
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r-v1.38.2",
+    "cacheVersion": "csanadi-r-v1.39.0",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,
@@ -169,6 +169,7 @@
         "#/oktatas": { "scene": "bookjump", "label": "OKTATÁS", "caption": "Egy ugrásnyi tudás" },
         "#/oktatas/konyvtar": { "scene": "bookjump", "label": "KÖNYVTÁR", "caption": "Könyv fölött, cél felé" },
         "#/oktatas/digitalis-kultura": { "scene": "digital", "label": "DIGITÁLIS KULTÚRA", "caption": "Pixelakadályok között" },
+        "#/tanulastamogatas": { "scene": "bookjump", "label": "TANULÁSTÁMOGATÁS", "caption": "Egy könyvvel is célba érünk" },
         "#/oktatas/felveteli": { "scene": "sprint", "label": "FELVÉTELI", "caption": "Rajt a Csanádi felé!" },
         "#/oktatas/vizsgak": { "scene": "hurdle", "label": "VIZSGÁK", "caption": "Akadály? Átugorjuk!" },
         "#/oktatas/tanevek": { "scene": "calendar", "label": "TANÉVEK", "caption": "Rajt az új tanévhez" },
@@ -182,6 +183,7 @@
         "#/informaciok": { "scene": "relay", "label": "INFORMÁCIÓK", "caption": "Hasznos infók stafétában" },
         "#/informaciok/dokumentumtar": { "scene": "document", "label": "DOKUMENTUMTÁR", "caption": "A papírok is célba érnek" },
         "#/informaciok/mindennapi-tudnivalok": { "scene": "whistle", "label": "MINDENNAPI TUDNIVALÓK", "caption": "Indul a nap!" },
+        "#/megkozelites-es-erkezes": { "scene": "relay", "label": "MEGKÖZELÍTÉS", "caption": "Együtt célba érünk!" },
         "#/informaciok/kozossegi-szolgalat": { "scene": "relay", "label": "KÖZÖSSÉGI SZOLGÁLAT", "caption": "Segítség kézről kézre" },
         "#/kapcsolat": { "scene": "contact", "label": "KAPCSOLAT", "caption": "Egy üzenet célba ér" }
       }

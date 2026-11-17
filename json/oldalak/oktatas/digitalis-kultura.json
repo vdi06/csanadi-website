@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T12:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 3
   },
   "seo": {
     "title": "Digitális kultúra – értsük és használjuk jól a technológiát – Csanádi Sportiskola",
@@ -103,29 +103,15 @@
       ]
     },
     {
-      "id": "block:000065-section-6",
+      "id": "block:digitalis-szakteruletek",
       "type": "section",
-      "title": "Biztonság és felelősség az online térben",
+      "title": "Önálló digitális útmutatók",
       "children": [
         {
-          "id": "block:000065-text-6",
+          "id": "block:digitalis-szakteruletek-linkek",
           "type": "markdown",
           "data": {
-            "text": "A hasznos technológiahasználathoz hozzátartozik a személyes adatok védelme. Nem minden információ való nyilvános felületre, és nem minden alkalmazásnak van szüksége ugyanazokra az engedélyekre. Az erős jelszavak, a többfaktoros azonosítás, a frissítések, a gyanús üzenetek felismerése és a tudatos megosztás a mindennapi digitális önvédelem részei.\n\nLegalább ilyen fontos a mások iránti felelősség. Egy fénykép, egy üzenet vagy egy továbbosztott információ másokra is hatással lehet. A digitális kultúra ezért a tiszteletteljes kommunikációt, a források megjelölését, a szerzői jogok figyelembevételét és a segítségkérés lehetőségét is tanítja. **A képernyő mögött is emberek vannak**, akiket ugyanúgy megillet a méltóság és a biztonság."
-          }
-        }
-      ]
-    },
-    {
-      "id": "block:000065-section-7",
-      "type": "section",
-      "title": "A mesterséges intelligencia mint eszköz, nem mint felmentés",
-      "children": [
-        {
-          "id": "block:000065-text-7",
-          "type": "markdown",
-          "data": {
-            "text": "A mesterséges intelligenciára épülő alkalmazások képesek ötleteket rendszerezni, szövegtervezeteket készíteni, adatokat feldolgozni vagy különböző megoldási lehetőségeket javasolni. Segíthetnek az indulásban, a gyakorlásban, az összefoglalásban és az ismétlődő feladatok egyszerűsítésében. Ettől azonban az általuk előállított válasz még nem válik automatikusan helyessé.\n\nA felhasználónak kell eldöntenie, **mire kér segítséget, mit fogad el, mit ellenőriz és miért használja fel az eredményt**. Különösen fontos ez akkor, ha egy válasz személyes adatokat, tudományos állításokat, iskolai tájékoztatást vagy másokat érintő döntéseket befolyásol. A jó kérdésfeltevés, a forráskritika és az önálló értékelés a mesterséges intelligencia használatával nem veszít, hanem új jelentőséget kap."
+            "text": "Két önálló témához részletes útmutató készült. Az [online biztonság és felelős kommunikáció](#/oktatas/digitalis-kultura/online-biztonsag) a személyes adatok és digitális viselkedés kérdéseit tárgyalja. A [mesterséges intelligencia tudatos használata](#/oktatas/digitalis-kultura/mesterseges-intelligencia) a lehetőségekre, az ellenőrzésre és az önálló döntésekre összpontosít."
           }
         }
       ]
