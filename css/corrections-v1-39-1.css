@@ -1,0 +1,94 @@
+/* v1.39.1 – a teljes kezdőlapi fejlécegység és a telefonos aloldali animáció. */
+body.cs-home-header #cs39-home-shell{
+ position:sticky;top:0;z-index:950;
+ background:var(--page);
+ isolation:isolate;
+ box-shadow:0 8px 22px rgba(8,26,46,.15);
+}
+/* Aloldalon a wrappernek nincs doboza: az eredeti sticky fejléc változatlanul
+   a teljes dokumentumon tud végigfutni. */
+body:not(.cs-home-header) #cs39-home-shell{display:contents}
+body.cs-home-header #cs39-home-shell #site-header{position:relative!important;top:auto!important}
+#cs39-home-shell #global-hero{
+ max-height:var(--cs39-hero-expanded,1000px);
+ overflow:clip!important;
+ transition:max-height .38s cubic-bezier(.25,.78,.24,1),opacity .28s ease;
+ opacity:1;
+}
+body.cs-home-header.cs-home-condensed #cs39-home-shell #global-hero{
+ max-height:0!important;opacity:0;visibility:hidden;pointer-events:none;
+}
+body.cs-home-header #site-header .cs-compact-hero-controls{display:none!important}
+#cs39-mini-hero{display:none;align-items:center;justify-content:center;gap:9px;
+ min-height:68px;padding:8px clamp(10px,3vw,32px);
+ border-top:1px solid rgba(238,203,125,.24);
+ background:linear-gradient(125deg,rgba(13,40,67,.98),rgba(25,58,87,.98));color:#fff5e1;
+}
+body.cs-home-header.cs-home-condensed #cs39-mini-hero{display:flex}
+#cs39-mini-hero :is(button,a){min-height:44px;border-radius:12px;border:1px solid rgba(226,196,131,.52);color:#fff3d8;
+ background:rgba(255,255,255,.09);cursor:pointer;text-decoration:none}
+#cs39-mini-hero button{min-width:44px;padding:5px 9px;font-size:16px;font-weight:850}
+#cs39-mini-hero :is(button,a):focus-visible{outline:3px solid #f0cb77;outline-offset:2px}
+#cs39-mini-hero .cs39-mini-preview{flex:0 1 530px;min-width:0;display:flex;align-items:center;gap:12px;
+ padding:4px 12px 4px 5px;text-align:left}
+.cs39-mini-image{width:70px;height:47px;object-fit:cover;border-radius:8px;flex:none}
+.cs39-mini-description{display:flex;flex-direction:column;min-width:0;line-height:1.28}
+.cs39-mini-description strong,.cs39-mini-description small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cs39-mini-description strong{font-size:14px}.cs39-mini-description small{font-size:11px;color:#eed4a6}
+#cs39-mini-hero .cs39-mini-step{font-size:29px;line-height:1}
+#cs39-mini-hero .cs39-mini-menu{font-size:12px;letter-spacing:.03em}
+
+#cs39-mobile-route{display:none}
+@media(max-width:768px){
+ #cs39-mini-hero{gap:5px;min-height:58px;padding:5px 8px}
+ #cs39-mini-hero .cs39-mini-preview{flex:1 1 auto;gap:6px;padding:3px 5px;max-width:none}
+ .cs39-mini-image{width:43px;height:38px}
+ .cs39-mini-description strong{font-size:11px}
+ .cs39-mini-description small{font-size:9px}
+ #cs39-mini-hero button{min-width:35px;min-height:44px;padding:4px 6px}
+ #cs39-mini-hero .cs39-mini-step{font-size:24px}
+ #cs39-mini-hero .cs39-mini-menu{font-size:10px}
+ #cs39-mobile-route:not([hidden]){
+  display:flex;align-items:center;gap:8px;min-height:68px;max-height:68px;
+  padding:5px 12px 7px;position:relative;z-index:3;
+  color:#fff5e0;background:linear-gradient(90deg,rgba(17,50,82,.97),rgba(24,64,93,.96));
+  border-top:1px solid rgba(236,199,125,.35);transition:min-height .22s ease,max-height .22s ease;
+ }
+ #cs39-mobile-route .cs39-mobile-scene{flex:0 0 clamp(78px,28vw,148px);height:54px;min-width:0;display:grid;place-items:center;overflow:hidden}
+ #cs39-mobile-route .cs39-mobile-scene svg{width:100%;height:100%}
+ #cs39-mobile-route .cs39-mobile-copy{min-width:0;flex:1;display:flex;flex-direction:column;gap:3px;align-items:flex-start}
+ #cs39-mobile-route .cs39-mobile-title{font-size:clamp(11px,3vw,15px);line-height:1.2;max-width:100%;display:-webkit-box;
+  -webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ #cs39-mobile-route .cs39-mobile-section{font-size:10px;color:#ead099;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ #cs39-mobile-route .cs39-mobile-pause{width:33px;height:36px;min-width:33px;flex:none;border:1px solid rgba(231,193,116,.54);
+  border-radius:10px;color:#fff0d2;background:rgba(255,255,255,.08);font-size:14px}
+ body.cs-inner-page.cs-header-condensed #cs39-mobile-route:not([hidden]){min-height:43px;max-height:43px;padding-block:4px}
+ body.cs-inner-page.cs-header-condensed #cs39-mobile-route .cs39-mobile-scene,
+ body.cs-inner-page.cs-header-condensed #cs39-mobile-route .cs39-mobile-pause{display:none!important}
+ body.cs-inner-page.cs-header-condensed #cs39-mobile-route .cs39-mobile-copy{gap:0}
+ body.cs-inner-page.cs-header-condensed #cs39-mobile-route .cs39-mobile-title{-webkit-line-clamp:1}
+ /* A korábbi CSS az eredeti SVG-t csak desktopon animálta. */
+ #cs39-mobile-route:not(.is-paused) .cs-mini-runner{transform-origin:40px 37px;animation:cs-mini-bob .65s ease-in-out infinite alternate}
+ #cs39-mobile-route:not(.is-paused) .cs-mini-arm-a{transform-origin:40px 26px;animation:cs-mini-swing .62s ease-in-out infinite alternate}
+ #cs39-mobile-route:not(.is-paused) .cs-mini-arm-b{transform-origin:40px 26px;animation:cs-mini-swing .62s ease-in-out infinite alternate-reverse}
+ #cs39-mobile-route:not(.is-paused) .cs-mini-leg-a{transform-origin:45px 39px;animation:cs-mini-stride .58s ease-in-out infinite alternate}
+ #cs39-mobile-route:not(.is-paused) .cs-mini-leg-b{transform-origin:45px 39px;animation:cs-mini-stride .58s ease-in-out infinite alternate-reverse}
+ #cs39-mobile-route:not(.is-paused) .cs-mini-ball{animation:cs-mini-ball-bounce 1s ease-in-out infinite}
+ #cs39-mobile-route:not(.is-paused) .cs-mini-speed{animation:cs-mini-track .8s linear infinite}
+ #cs39-mobile-route:not(.is-paused) .cs-mini-medal{animation:cs-mini-win 1.8s ease-in-out infinite}
+ #cs39-mobile-route:not(.is-paused) .cs-mini-kickball{animation:cs-mini-goal 2.4s ease-in-out infinite}
+ #cs39-mobile-route:not(.is-paused) :is(.cs-mini-book,.cs-mini-hurdle,.cs-mini-pixels){animation:cs-mini-obstacle 1.3s ease-in-out infinite alternate}
+ #cs39-mobile-route:not(.is-paused) :is(.cs-mini-news,.cs-mini-calendar,.cs-mini-whistle,.cs-mini-bubble,.cs-mini-leaf,.cs-mini-relay,.cs-mini-finish){animation:cs-mini-prop 1.8s ease-in-out infinite alternate}
+}
+@media(max-width:355px){
+ #cs39-mini-hero{gap:3px;padding-inline:5px}
+ #cs39-mini-hero .cs39-mini-menu{display:none}
+ #cs39-mobile-route:not([hidden]){gap:5px;padding-inline:7px}
+ #cs39-mobile-route .cs39-mobile-scene{flex-basis:82px}
+ #cs39-mobile-route .cs39-mobile-pause{width:30px;min-width:30px}
+}
+@media(prefers-reduced-motion:reduce){
+ #cs39-home-shell #global-hero,#cs39-mobile-route{transition:none!important}
+ #cs39-mobile-route .cs39-mobile-scene *{animation:none!important}
+}
+@media print{#cs39-mini-hero,#cs39-mobile-route{display:none!important}#cs39-home-shell{position:static!important}}

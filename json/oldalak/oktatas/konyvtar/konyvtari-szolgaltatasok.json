@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Könyvtári szolgáltatások – Csanádi Sportiskola",
-    "description": "Iskolai könyvtári lehetőségek és tájékozódási útmutató.",
+    "description": "Iskolai könyvtári lehetőségek és tájékozódási útmutató. A kölcsönzés és a könyvtári tájékozódás lehetőségeiről, valamint további forrásokról olvashatsz.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "Iskolai könyvtári lehetőségek és tájékozódási útmutató.",
+  "summary": "Iskolai könyvtári lehetőségek és tájékozódási útmutató. A kölcsönzés és a könyvtári tájékozódás lehetőségeiről, valamint további forrásokról olvashatsz.",
   "blocks": [
     {
       "id": "block:000029-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000029",
       "type": "section",
       "title": "Könyvtári szolgáltatások",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000029",
           "type": "markdown",
           "data": {
-            "text": "A dokumentumkeresés, a szakirodalom és az iskolai tananyagok tudatos használata a könyvtári tanulás része. A beiratkozás, a helyben használat és a kölcsönzés intézményi feltételei a könyvtáros vagy a titkárság aktuális tájékoztatásából ismerhetők meg.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/kapcsolat)"
+            "text": "A dokumentumkeresés, a szakirodalom és az iskolai tananyagok tudatos használata a könyvtári tanulás része. A beiratkozás, a helyben használat és a kölcsönzés intézményi feltételei a könyvtáros vagy a titkárság aktuális tájékoztatásából ismerhetők meg.\n\n[Kapcsolati adatok](#/kapcsolat)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/oktatas/konyvtar/konyvtari-szolgaltatasok",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
   }
 }

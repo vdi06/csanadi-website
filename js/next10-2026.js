@@ -9,15 +9,19 @@ function makeMeta(attr,key,value){let node=document.head.querySelector(`meta[${a
 export function updatePageMeta(page,route){
  if(!page)return;
  const title=page.seo?.title||page.title||'Csanádi Árpád Sportiskola';
- const summary=String(page.seo?.description||page.summary||'Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium').slice(0,200);
- document.title=title+' | Csanádi Árpád Sportiskola';
- makeMeta('name','description',summary);makeMeta('property','og:type','website');makeMeta('property','og:title',title);
+ const summary=String(page.seo?.description||page.summary||'Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium').trim().slice(0,200);
+ const fullTitle=title.endsWith('Csanádi Sportiskola')||title.endsWith('Csanádi Árpád Sportiskola')?title:title+' | Csanádi Árpád Sportiskola';
+ document.title=fullTitle;
+ makeMeta('name','description',summary);makeMeta('property','og:type','website');makeMeta('property','og:title',fullTitle);
  makeMeta('property','og:description',summary);makeMeta('property','og:url',new URL(route||'#/',document.baseURI).href);
+ makeMeta('property','og:site_name','Csanádi Árpád Sportiskola');makeMeta('property','og:locale','hu_HU');
  makeMeta('property','og:image',new URL('assets/media/logo/csanadi-cimer-512.webp',document.baseURI).href);
- makeMeta('name','twitter:card','summary');
+ makeMeta('name','twitter:card','summary');makeMeta('name','twitter:title',fullTitle);
+ makeMeta('name','twitter:description',summary);
+ // A közzététel előtti noindex állapotot nem módosítjuk automatikusan.
   
  let canonical=document.head.querySelector('link[rel="canonical"]');if(!canonical){canonical=e('link');canonical.rel='canonical';document.head.append(canonical);}
- canonical.href=location.href.split('#')[0];  
+ canonical.href=location.href.split('#')[0];
 }
 function section(kicker,title,lead,cls=''){
  const s=e('section','next10-section '+cls),head=e('header','next10-head');

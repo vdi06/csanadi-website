@@ -86,7 +86,7 @@
     {
       "id": "document:csanadi-weboldal-kezikonyv-2026",
       "title": "Csanádi Sportiskola 2026 – Teljes weboldal-használati útmutató",
-      "summary": "Teljes, 3.14-as webes és PDF-kézikönyv: 66 megőrzött JSON-oldal, 13 helyi segédoldal és minden korábbi R21–R27 funkció; a 28. kör csak karbantartás: a körmenü szélsőséges méretei, keresőfókusz, témaszinkron, sporthírek visszaállása, PDF-előnézet, offline kvóta és késleltetett diagnosztika; 290 központi paraméter.",
+      "summary": "Archív 3.14-es webes és PDF-kézikönyv a honlap egy korábbi, 66 JSON-oldalas állapotáról. Az időközben elkészült v1.39-es kiadásnak már 71 oldala van; az egykori funkció- és paraméterszámokat ezért nem szabad mai állapotként értelmezni. A fájl történeti használati útmutatóként marad elérhető.",
       "categoryId": "weboldal-utmutato",
       "tags": [
         "honlap",

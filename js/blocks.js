@@ -1,5 +1,5 @@
 import {renderSportsSuccesses} from './sports-successes.js?v=csanadi-r29n-20261115';
-import {renderPremiumHero} from './hero-2026.js?v=csanadi-r29n-20261115';
+import {renderPremiumHero} from './hero-2026.js?v=1.39.10';
 import {renderLiveDashboard} from './home-live.js?v=csanadi-r29n-20261115';
 import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js?v=csanadi-r29n-20261115';
 import {resolveConfiguredText,settingNumber} from './site-settings-2026.js';
@@ -8,7 +8,7 @@ const dom=(tag,attrs={},text='')=>{
   const x=document.createElement(tag);
   for(const [key,value] of Object.entries(attrs)){
     if(key==='class')x.className=value;
-    else if(key==='href' && /^(#\/[a-z0-9\-/]*|https:\/\/[^\s]+)$/.test(String(value))) x.href=value;
+    else if(key==='href' && /^(#\/[a-z0-9\-/]*|[a-z0-9-]+\.html(?:\?embedded=1)?(?:#[a-z0-9-]+)?|https:\/\/[^\s]+)$/.test(String(value))) x.href=value;
     else if(key==='target' && value==='_blank')x.target='_blank';
     else if(key==='rel')x.rel=value;
     else if(key.startsWith('aria-'))x.setAttribute(key,value);
@@ -18,7 +18,12 @@ const dom=(tag,attrs={},text='')=>{
   return x;
 };
 export {dom};
-const allowedLink=href=>/^#\/[a-z0-9\-/]*$/.test(href)||/^https:\/\/[^\s<>"']+$/.test(href);
+// A programhoz tartozó önálló, helyi HTML-eszközök FTP-n is elérhetők.
+// Csak egyszerű fájlnév, a meglévő megjelenítési kapcsoló és helyi fragment
+// engedélyezett; protokoll, útvonalbejárás, tetszőleges paraméter nem adható meg.
+const allowedLink=href=>/^#\/[a-z0-9\-/]*$/.test(href)
+  ||/^[a-z0-9-]+\.html(?:\?embedded=1)?(?:#[a-z0-9-]+)?$/.test(href)
+  ||/^https:\/\/[^\s<>"']+$/.test(href);
 function inlineText(parent,text){
    
   const re=/(\*\*(.+?)\*\*|\*(.+?)\*|\[([^\]]+)\]\(([^)]+)\))/g;

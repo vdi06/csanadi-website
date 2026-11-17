@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Sportágak – Csanádi Sportiskola",
-    "description": "Az egyéni és csapatsportok sokszínű világa.",
+    "description": "Az egyéni és csapatsportok sokszínű világa. Csapat- és egyéni sportágak, felkészülési szempontok és a kapcsolódó sportiskolai tartalmak.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "sport"
   ],
   "tags": [],
-  "summary": "Az egyéni és csapatsportok sokszínű világa.",
+  "summary": "Az egyéni és csapatsportok sokszínű világa. Csapat- és egyéni sportágak, felkészülési szempontok és a kapcsolódó sportiskolai tartalmak.",
   "blocks": [
     {
       "id": "block:000032-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000032",
       "type": "section",
       "title": "Sportágak és felkészülés",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000032",
           "type": "markdown",
           "data": {
-            "text": "Az intézmény hivatalos sportolói névsora több sportág eredményeit mutatja be, például kajak-kenut, vízilabdát, birkózást, tornát, korcsolyát, vívást és öttusát. Ez a felsorolás a történeti eredmények sportágaira utal, nem bizonyítja, hogy a jelenlegi tanévben minden felsorolt sportágban külön iskolai edzés működik.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/iskolank/buszkesegeink)"
+            "text": "A hivatalos büszkeséglista kajak-kenu, vízilabda, birkózás, torna, gyorskorcsolya, vívás és más sportágak eredményeit is felvonultatja. **Ez történeti eredményjegyzék, nem az aktuálisan választható iskolai sportági képzések listája.** A jelentkezés előtt a képzési kínálatot a [Felvételi](#/oktatas/felveteli) oldalon és az intézménynél kell megerősíteni.\n\n[Az iskola közzétett büszkeséglistája – eredeti intézményi forrás](https://csanadi-bp.edu.hu/buszkeseg.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/sport/sportagak",
     "verifiedContent": false,
-    "bannerMediaId": "media:sport"
+    "bannerMediaId": "media:sport",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "pride"
+    }
   }
 }

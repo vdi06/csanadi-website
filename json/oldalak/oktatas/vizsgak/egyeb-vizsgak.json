@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Egyéb vizsgák – Csanádi Sportiskola",
-    "description": "Az érettségin és az osztályozó vizsgán kívüli vizsgahelyzetek tájékozódási oldala.",
+    "description": "Az érettségin és az osztályozó vizsgán kívüli vizsgahelyzetek tájékozódási oldala. Megtudhatod, mely forrásokból ellenőrizhetők a nem érettségi jellegű.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -69,15 +69,15 @@
       }
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000024",
       "type": "section",
       "title": "Egyéb tanulmányi vizsgák",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000024",
           "type": "markdown",
           "data": {
-            "text": "A tantárgyi különbözeti, javító és egyéb tanulmányi vizsgák pontos szervezési feltételeit az intézmény helyi tanterve és vizsgaszabályai rögzítik. A jelenleg nem közzétett vizsgadátumok helyett a tanulóknak az iskola hivatalos kapcsolati csatornáin kell időpontot egyeztetniük.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/informaciok/dokumentumtar)"
+            "text": "A tantárgyi különbözeti, javító és egyéb tanulmányi vizsgák pontos szervezési feltételeit az intézmény helyi tanterve és vizsgaszabályai rögzítik. A jelenleg nem közzétett vizsgadátumok helyett a tanulóknak az iskola hivatalos kapcsolati csatornáin kell időpontot egyeztetniük.\n\n[Dokumentumtár](#/informaciok/dokumentumtar)"
           }
         }
       ]
@@ -88,6 +88,11 @@
     "preview": false,
     "route": "#/oktatas/vizsgak/egyeb-vizsgak",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
   }
 }

@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 4
+    "revision": 7
   },
   "seo": {
     "title": "Felvételi központ – Csanádi Sportiskola",
-    "description": "Tájékozódás az általános iskolai beiratkozás és a gimnáziumi jelentkezés előtt.",
+    "description": "Tájékozódás az általános iskolai beiratkozás és a gimnáziumi jelentkezés előtt. A két beiskolázási út, a hivatalos dokumentumok és a jelentkezés lépései külön is.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -70,29 +70,29 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000016",
       "type": "section",
       "title": "A két beiskolázási út különbözik",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000016",
           "type": "markdown",
           "data": {
-            "text": "Az első évfolyamos beiratkozás a tanköteles gyermekek általános iskolai felvételéhez kapcsolódik, a kilencedik évfolyamra jelentkezők pedig a középfokú felvételi rendszerét használják. A Csanádi honlapján mindkét eljáráshoz külön dokumentumok, nyilatkozatok és KRÉTA-útmutatók érhetők el.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "Az első évfolyamos beiratkozás a tanköteles gyermekek általános iskolai felvételéhez kapcsolódik, a kilencedik évfolyamra jelentkezők pedig a középfokú felvételi rendszerét használják. A Csanádi honlapján mindkét eljáráshoz külön dokumentumok, nyilatkozatok és KRÉTA-útmutatók érhetők el."
           }
         }
       ]
     },
     {
-      "id": "block:next10-official",
+      "id": "block:next10-official--p000016",
       "type": "section",
       "title": "Hivatalos felvételi dokumentumok",
       "children": [
         {
-          "id": "block:next10-official-text",
+          "id": "block:next10-official-text--p000016",
           "type": "markdown",
           "data": {
-            "text": "A Csanádi hivatalos felvételi oldalán érhetők el a felvételi tájékoztatók, az írásbeli jelentkezéshez és a KRÉTA BKI használatához szükséges segédletek. Határidő előtt mindig az aktuális hivatalos kiírást ellenőrizd."
+            "text": "A Csanádi hivatalos felvételi oldalán érhetők el a felvételi tájékoztatók, az írásbeli jelentkezéshez és a KRÉTA BKI használatához szükséges segédletek. Határidő előtt mindig az aktuális hivatalos kiírást ellenőrizd.\n\n[Gimnáziumi felvételi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/felveteli.html)"
           }
         }
       ]
@@ -103,6 +103,11 @@
     "preview": false,
     "route": "#/oktatas/felveteli",
     "verifiedContent": false,
-    "bannerMediaId": "media:felveteli"
+    "bannerMediaId": "media:felveteli",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "highAdmission"
+    }
   }
 }

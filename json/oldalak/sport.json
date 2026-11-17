@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 4
+    "revision": 7
   },
   "seo": {
     "title": "Sport – Csanádi Sportiskola",
-    "description": "Kitartás, sportágak, történetek és a Csanádi sportolói hagyománya.",
+    "description": "Kitartás, sportágak, történetek és a Csanádi sportolói hagyománya. A sportági lehetőségeket, sportolói történeteket és hiteles eredményekre vezető oldalakat.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "sport"
   ],
   "tags": [],
-  "summary": "Kitartás, sportágak, történetek és a Csanádi sportolói hagyománya.",
+  "summary": "Kitartás, sportágak, történetek és a Csanádi sportolói hagyománya. A sportági lehetőségeket, sportolói történeteket és hiteles eredményekre vezető oldalakat fogja össze.",
   "blocks": [
     {
       "id": "block:000031-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000031",
       "type": "section",
       "title": "Csanádi sporthagyomány",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000031",
           "type": "markdown",
           "data": {
-            "text": "Az intézmény sportiskolai profiljához jelentős versenyzői életutak kapcsolódnak. A hivatalos büszkeséglistán többek között kajak-kenusok, vízilabdázók, birkózók, tornászok és rövidpályás gyorskorcsolyázók találhatók. A különböző korú eredményeket történeti és aktuális kategóriába érdemes sorolni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/iskolank/buszkesegeink)"
+            "text": "Az intézmény sportiskolai profiljához jelentős versenyzői életutak kapcsolódnak. A hivatalos büszkeséglistán többek között kajak-kenusok, vízilabdázók, birkózók, tornászok és rövidpályás gyorskorcsolyázók találhatók. A különböző korú eredményeket történeti és aktuális kategóriába érdemes sorolni.\n\n[Büszkeségeink](#/iskolank/buszkesegeink)\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/sport",
     "verifiedContent": false,
-    "bannerMediaId": "media:sport"
+    "bannerMediaId": "media:sport",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "home"
+    }
   }
 }

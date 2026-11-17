@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T15:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 6
   },
   "seo": {
     "title": "Kezdőoldal – Csanádi Sportiskola",
@@ -525,7 +525,7 @@
           "id": "block:content-review-text-20261114",
           "type": "markdown",
           "data": {
-            "text": "A 2026. novemberi nyílt napok, a 2026/2027-es tanévhez tartozó felvételi információk, az intézményi dokumentumok és a közzétett sporteredmények egy helyen elérhetők. Az oldalon megjelenő tematikus képek nem hiteles eseményfotók, a sporteredményeket és iskolai híreket hivatalos közlemények alapján külön kezeljük.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/hirek-es-esemenyek)"
+            "text": "A 2026. novemberi nyílt napok, a 2026/2027-es tanévhez tartozó felvételi információk, az intézményi dokumentumok és a közzétett sporteredmények egy helyen elérhetők. Az oldalon megjelenő tematikus képek nem hiteles eseményfotók, a sporteredményeket és iskolai híreket hivatalos közlemények alapján külön kezeljük.\n\n[Hírek és események](#/hirek-es-esemenyek)"
           }
         }
       ]
@@ -536,6 +536,11 @@
     "preview": false,
     "route": "#/",
     "verifiedContent": false,
-    "bannerMediaId": "media:hero"
+    "bannerMediaId": "media:hero",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
   }
 }

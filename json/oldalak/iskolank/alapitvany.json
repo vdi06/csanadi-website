@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 4
   },
   "seo": {
     "title": "Alapítvány – Csanádi Sportiskola",
-    "description": "Tanulás és sport: támogatás a fejlődési lehetőségekhez.",
+    "description": "Tanulás és sport: támogatás a fejlődési lehetőségekhez. Az alapítvány szerepét és a támogatási lehetőségekről szóló hivatalos tájékozódás módját mutatja be.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "iskolank"
   ],
   "tags": [],
-  "summary": "Tanulás és sport: támogatás a fejlődési lehetőségekhez.",
+  "summary": "Tanulás és sport: támogatás a fejlődési lehetőségekhez. Az alapítvány szerepét és a támogatási lehetőségekről szóló hivatalos tájékozódás módját mutatja be.",
   "blocks": [
     {
       "id": "block:000009-section-1",
@@ -50,21 +50,7 @@
           "id": "block:000009-text-2",
           "type": "markdown",
           "data": {
-            "text": "Iskolai alapítvány – hivatalos oldal"
-          }
-        }
-      ]
-    },
-    {
-      "id": "block:content-review-20261114",
-      "type": "section",
-      "title": "Tanulásért és Sportért Iskolai Alapítvány",
-      "children": [
-        {
-          "id": "block:content-review-text-20261114",
-          "type": "markdown",
-          "data": {
-            "text": "A Tanulásért és a Sportért Iskolai Alapítvány az iskola hivatalos tájékoztatása szerint támogatja a szociálisan rászoruló tanulókat, a tehetséggondozást, a sport- és tanulmányi versenyeket, valamint a taneszközök beszerzését. Pénzügyi támogatás előtt mindig az alapítvány közzétett adatait kell újra ellenőrizni.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "Az alapítvány támogatásának feltételeiről, kérelmeiről és közzétett adatairól az intézményi oldalon lehet tájékozódni. Adományozás vagy az adó 1%-ának felajánlása előtt mindig ellenőrizd az ott megadott bankszámlaszámot és adószámot.\n\n[Az iskolai alapítvány tájékoztatója – eredeti intézményi forrás](https://csanadi-bp.edu.hu/alapitvany.html)"
           }
         }
       ]
@@ -75,6 +61,11 @@
     "preview": false,
     "route": "#/iskolank/alapitvany",
     "verifiedContent": true,
-    "bannerMediaId": "media:iskolank"
+    "bannerMediaId": "media:iskolank",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "foundation"
+    }
   }
 }

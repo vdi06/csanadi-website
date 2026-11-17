@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Jogszabályok – Csanádi Sportiskola",
-    "description": "A közösségi szolgálathoz kapcsolódó szabályozási háttér tájékozódási oldala.",
+    "description": "A közösségi szolgálathoz kapcsolódó szabályozási háttér tájékozódási oldala. A szabályozási háttér eredeti, naprakész szövegének ellenőrzéséhez vezető.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000059",
       "type": "section",
       "title": "Jogszabályi háttér és ellenőrzés",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000059",
           "type": "markdown",
           "data": {
-            "text": "A közösségi szolgálat alapvető kereteit a nemzeti köznevelésről szóló törvény és a 20/2012. (VIII. 31.) EMMI rendelet szabályozza. Az iskola közzétett tájékoztatója a szolgálat szervezését, a dokumentálást és a fogadó szervezetekkel való együttműködést is tárgyalja; jogi kérdésben a hatályos jogszabály a mérvadó.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/informaciok/kozossegi-szolgalat)"
+            "text": "Az intézmény közösségi szolgálati tájékoztatója a 2011. évi CXC. törvényt és a 20/2012. (VIII. 31.) EMMI rendeletet ismerteti, de a közölt szöveg korábbi állapotot is tükrözhet. Jogi ügyintézéskor a hatályos jogszabályt ellenőrizd; az iskola oldalát eljárási segédletként kezeld.\n\n[Közösségi szolgálat – eljárás és korábban közzétett szabályok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozszolinfo.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok",
     "verifiedContent": false,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "serviceRules"
+    }
   }
 }

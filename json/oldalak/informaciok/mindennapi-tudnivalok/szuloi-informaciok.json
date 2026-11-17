@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Szülői információk – Csanádi Sportiskola",
-    "description": "Ügyintézés, tájékozódás és a mindennapi együttműködés.",
+    "description": "Ügyintézés, tájékozódás és a mindennapi együttműködés. Kapcsolattartás, szülői igazolások és a hétköznapi adminisztráció fontos tájékozódási pontjai.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
   "tags": [],
-  "summary": "Ügyintézés, tájékozódás és a mindennapi együttműködés.",
+  "summary": "Ügyintézés, tájékozódás és a mindennapi együttműködés. Kapcsolattartás, szülői igazolások és a hétköznapi adminisztráció fontos tájékozódási pontjai.",
   "blocks": [
     {
       "id": "block:000051-section-1",
@@ -42,15 +42,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000051",
       "type": "section",
       "title": "Szülői dokumentumok és igazolások",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000051",
           "type": "markdown",
           "data": {
-            "text": "A hivatalos szülői oldalon elérhető többek között a jogszerű távolléthez kapcsolódó szülői igazolás, az egyesületi sportolói igazolás, napközis és tanulószobai nyilatkozat, valamint az egyéni tanrenddel kapcsolatos kérelem. A kitöltés előtt mindig a dokumentum legújabb példányát kell letölteni.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "A hivatalos szülői oldalon külön nyomtatvány szerepel a 14 év alatti gyermek jogszerű távollétéhez, az egyesületi sportolói igazoláshoz, a napközis és tanulószobai igénybevételhez, az egyéni tanrendhez és a személyes adatok felhasználásához. A dokumentumokat mindig az **eredeti intézményi oldalon** nyisd meg, mert a fájlverzió és a benyújtási rend változhat.\n\n[Szülői nyomtatványok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/szulok.html)"
           }
         }
       ]
@@ -61,6 +61,11 @@
     "preview": false,
     "route": "#/informaciok/mindennapi-tudnivalok/szuloi-informaciok",
     "verifiedContent": false,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "parents"
+    }
   }
 }

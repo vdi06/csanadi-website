@@ -11,10 +11,10 @@
   <link rel="stylesheet" href="../css/tools-2026.css?v=csanadi-r29n-20261115">
   <link rel="stylesheet" href="../css/media-manager-2026.css?v=csanadi-r29n-20261115">
   <link rel="stylesheet" href="../css/round10-quality-2026.css?v=csanadi-r29n-20261115">
-  <script src="tool-ui-2026.js?v=1.37.0" defer>
+  <script src="tool-ui-2026.js?v=1.39.5" defer>
 </script>
   <script type="module" src="media-minoseg-2026.js?v=1.37.0"></script>
-  <script type="module" src="media-manager-2026.js?v=1.37.0">
+  <script type="module" src="media-manager-2026.js?v=1.39.9">
 </script>
 </head>
 <body class="csanadi-tool">
@@ -93,6 +93,7 @@
           </div>
           <label class="mm-check"><input id="mm-publish" type="checkbox"><span>Új fájl megjelenítése a megfelelő nyilvános gyűjteményben (képgaléria, videók vagy PDF-dokumentumtár). Csak jóváhagyott tartalomra használd.</span></label>
           <label class="mm-check"><input id="mm-rights-ok" type="checkbox"><span>A fájl nyilvános felhasználásának jogosultságát és az esetleges személyes adatok közzétételének jogalapját ellenőriztem. Új elem publikálásához kötelező.</span></label>
+          <label class="mm-check mm-publish-approval"><input id="mm-institution-ok" type="checkbox"><span>Az új tartalom nyilvános közzétételét az intézmény illetékes felelőse kifejezetten jóváhagyta, és ezt a kiadás előtt külön dokumentáltam. Pusztán a szerkesztői nyilatkozat nem elegendő.</span></label>
           <fieldset class="mm-rights-evidence"><legend>Felhasználási jog dokumentálása – új publikálás előtt kötelező</legend>
             <div class="mm-form-grid">
               <label for="mm-rights-holder">Jogosult / forrásgazda<input id="mm-rights-holder" maxlength="180" placeholder="Jogosult vagy intézményi forrásgazda"></label>
@@ -110,6 +111,7 @@
     <section class="mm-export-panel" aria-label="Kiadási csomag">
       <h2>Kiadás előkészítése</h2>
       <p>Letölthetsz <strong>csak a változásokat tartalmazó</strong> kisebb ZIP-et vagy <strong>teljes `assets/`-pillanatképet</strong>. Mindkettő tartalmazza a módosított JSON-nyilvántartásokat és az ellenőrző jegyzéket.</p>
+      <p class="mm-release-warning"><strong>Kiadási kapu:</strong> új, közzétett fájlnál a jogalap, a bizonyítékmezők és az intézményi jóváhagyás együttesen kötelező. Fájl törlésénél vagy átnevezésénél a még élő hivatkozás blokkolja az exportot. A ZIP kizárólag előkészített, ellenőrizendő kiadás.</p>
       <div class="mm-export-actions">
         <button id="mm-export-changes" class="primary" type="button">Változások ZIP letöltése</button>
         <button id="mm-export-full" type="button">Teljes médiatár ZIP letöltése</button>

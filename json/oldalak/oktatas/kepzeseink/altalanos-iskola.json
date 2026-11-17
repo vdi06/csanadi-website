@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Általános iskolai képzés – Csanádi Sportiskola",
-    "description": "A tanulási alapok, közösségi élmények és a mozgás fejlesztése.",
+    "description": "A tanulási alapok, közösségi élmények és a mozgás fejlesztése. A családok az iskolakezdésről, az alapozó tanulásról és a beiratkozási forrásokról tájékozódhatnak.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "A tanulási alapok, közösségi élmények és a mozgás fejlesztése.",
+  "summary": "A tanulási alapok, közösségi élmények és a mozgás fejlesztése. A családok az iskolakezdésről, az alapozó tanulásról és a beiratkozási forrásokról tájékozódhatnak.",
   "blocks": [
     {
       "id": "block:000013-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000013",
       "type": "section",
       "title": "Általános iskola: mire számíthat a család?",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000013",
           "type": "markdown",
           "data": {
-            "text": "Az iskola 2026/2027-es bemutatkozó anyaga évfolyamonként jellemzően egy, 14–16 fős általános iskolai osztályt ír le. Az alsó tagozaton az óvoda és az iskola közötti fokozatos átmenetre helyezik a hangsúlyt. A jelentkezéshez és a beiratkozáshoz a közzétett KRÉTA-útmutatók és nyilatkozatok tartoznak.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "Az iskola 2026/2027-es bemutatkozó anyaga évfolyamonként jellemzően egy, 14–16 fős általános iskolai osztályt ír le. Az alsó tagozaton az óvoda és az iskola közötti fokozatos átmenetre helyezik a hangsúlyt. A jelentkezéshez és a beiratkozáshoz a közzétett KRÉTA-útmutatók és nyilatkozatok tartoznak.\n\n[Első évfolyamos beiratkozás – eredeti intézményi forrás](https://csanadi-bp.edu.hu/altisk.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/oktatas/kepzeseink/altalanos-iskola",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "schoolAdmission"
+    }
   }
 }

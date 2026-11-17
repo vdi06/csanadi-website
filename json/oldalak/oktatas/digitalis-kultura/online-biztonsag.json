@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-17T12:00:00+01:00",
-  "updatedAt": "2026-11-17T12:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Online biztonság és felelős kommunikáció – Csanádi Sportiskola",
-    "description": "Személyes adatok védelme, biztonságos hozzáférés és felelős online viselkedés.",
+    "description": "Személyes adatok védelme, biztonságos hozzáférés és felelős online viselkedés. Gyakorlati tanácsok a jelszavak, a személyes adatok és a felelős digitális.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -64,6 +64,11 @@
     "preview": false,
     "route": "#/oktatas/digitalis-kultura/online-biztonsag",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
   }
 }

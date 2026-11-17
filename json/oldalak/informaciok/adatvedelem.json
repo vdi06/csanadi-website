@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Adatvédelem – Csanádi Sportiskola",
-    "description": "Személyes adatok, dokumentumok és biztonságos digitális tájékozódás.",
+    "description": "Személyes adatok, dokumentumok és biztonságos digitális tájékozódás. Az adatkezelési dokumentumok ellenőrzését és a biztonságos digitális használatot segíti.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
   "tags": [],
-  "summary": "Személyes adatok, dokumentumok és biztonságos digitális tájékozódás.",
+  "summary": "Személyes adatok, dokumentumok és biztonságos digitális tájékozódás. Az adatkezelési dokumentumok ellenőrzését és a biztonságos digitális használatot segíti.",
   "blocks": [
     {
       "id": "block:000062-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000062",
       "type": "section",
       "title": "Adatkezelés és adatbiztonság",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000062",
           "type": "markdown",
           "data": {
-            "text": "Az iskola a hivatalos dokumentumoldalon külön adatkezelési szabályzatot, általános adatkezelési tájékoztatót és a kamerarendszerhez kapcsolódó tájékoztatót is közzétesz. Az aktuális kapcsolattartó és adatvédelmi tisztviselő elérhetősége a Kapcsolat oldalon található meg.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/informaciok/dokumentumtar)"
+            "text": "Az intézmény hivatalos dokumentumoldala külön adatkezelési szabályzatot, általános tájékoztatót és kamerás megfigyeléshez kapcsolódó tájékoztatót tesz elérhetővé. Az adatvédelmi tisztviselő elérhetősége a hivatalos kapcsolati oldalon szerepel. Képmás, tanulói névsor vagy személyes ügyintézési adat közzététele előtt az alkalmazandó tájékoztatót és hozzájárulási feltételeket kell ellenőrizni.\n\n[Intézményi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/docs.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/informaciok/adatvedelem",
     "verifiedContent": false,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "documents"
+    }
   }
 }

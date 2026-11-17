@@ -139,11 +139,36 @@
       "dokumentum": [
         "pdf",
         "letoltes"
+      ],
+      "nyílt nap": [
+        "nyiltnap",
+        "tájékoztató nap",
+        "iskolalátogatás"
+      ],
+      "gimnázium": [
+        "középiskola",
+        "továbbtanulás"
+      ],
+      "csengetési rend": [
+        "csengetés",
+        "óraközi szünet"
+      ],
+      "étkezés": [
+        "menza",
+        "ebéd"
+      ],
+      "tanév": [
+        "tanévrend",
+        "iskolai naptár"
+      ],
+      "könyvtár": [
+        "kölcsönzés",
+        "olvasás"
       ]
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r-v1.39.0",
+    "cacheVersion": "csanadi-r-v1.39.10",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,

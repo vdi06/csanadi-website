@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 4
+    "revision": 7
   },
   "seo": {
     "title": "Iskolánk – Csanádi Sportiskola",
-    "description": "Több mint száz évnyi iskolatörténet, sport és közösség.",
+    "description": "Több mint száz évnyi iskolatörténet, sport és közösség. Fedezd fel az intézmény múltját, közösségi értékeit és a sportot a tanulással összekapcsoló szemléletét.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "iskolank"
   ],
   "tags": [],
-  "summary": "Több mint száz évnyi iskolatörténet, sport és közösség.",
+  "summary": "Több mint száz évnyi iskolatörténet, sport és közösség. Fedezd fel az intézmény múltját, közösségi értékeit és a sportot a tanulással összekapcsoló szemléletét.",
   "blocks": [
     {
       "id": "block:000002-section-1",
@@ -84,15 +84,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000002",
       "type": "section",
       "title": "Intézményünk ellenőrzött adatai",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000002",
           "type": "markdown",
           "data": {
-            "text": "A {{site.name}} címe: {{site.address}}. OM azonosítója {{site.omIdentifier}}. A főigazgató a jelenlegi intézményi nyitóoldal szerint {{site.directorName}}. A sportiskolai és általános közismereti nevelést közös intézményi keretben szervezik.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/kapcsolat)"
+            "text": "A {{site.name}} címe: {{site.address}}. OM azonosítója {{site.omIdentifier}}. A főigazgató a jelenlegi intézményi nyitóoldal szerint {{site.directorName}}. A sportiskolai és általános közismereti nevelést közös intézményi keretben szervezik.\n\n[Kapcsolati adatok](#/kapcsolat)\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
           }
         }
       ]
@@ -103,6 +103,11 @@
     "preview": false,
     "route": "#/iskolank",
     "verifiedContent": true,
-    "bannerMediaId": "media:iskolank"
+    "bannerMediaId": "media:iskolank",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "home"
+    }
   }
 }

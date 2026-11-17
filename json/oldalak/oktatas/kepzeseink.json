@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Képzéseink – Csanádi Sportiskola",
-    "description": "Általános iskolai, gimnáziumi és sportiskolai tanulási utak.",
+    "description": "Általános iskolai, gimnáziumi és sportiskolai tanulási utak. Az általános iskolai és gimnáziumi lehetőségek mellett a tanulmányi követelményekhez is vezet út.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "Általános iskolai, gimnáziumi és sportiskolai tanulási utak.",
+  "summary": "Általános iskolai, gimnáziumi és sportiskolai tanulási utak. Az általános iskolai és gimnáziumi lehetőségek mellett a tanulmányi követelményekhez is vezet út.",
   "blocks": [
     {
       "id": "block:000012-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000012",
       "type": "section",
       "title": "Képzések és tanulmányi követelmények",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000012",
           "type": "markdown",
           "data": {
-            "text": "Az iskola az általános műveltség megszerzését és a sportoló diákok tanulmányi támogatását közös keretben kezeli. Az aktuális évfolyamok, tantárgyi követelmények és tantervi részletek intézményi szabályzatokban és helyi tantervekben találhatók meg.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/informaciok/dokumentumtar)"
+            "text": "Az iskola az általános műveltség megszerzését és a sportoló diákok tanulmányi támogatását közös keretben kezeli. Az aktuális évfolyamok, tantárgyi követelmények és tantervi részletek intézményi szabályzatokban és helyi tantervekben találhatók meg.\n\n[Dokumentumtár](#/informaciok/dokumentumtar)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/oktatas/kepzeseink",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
   }
 }

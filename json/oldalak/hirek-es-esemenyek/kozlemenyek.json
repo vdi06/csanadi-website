@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Közlemények – Csanádi Sportiskola",
-    "description": "Aktuális intézményi tájékoztatások és fontos tudnivalók.",
+    "description": "Aktuális intézményi tájékoztatások és fontos tudnivalók. A lényeges tudnivalók és közzétett intézményi közlemények visszakeresését támogatja.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "hirek-es-esemenyek"
   ],
   "tags": [],
-  "summary": "Aktuális intézményi tájékoztatások és fontos tudnivalók.",
+  "summary": "Aktuális intézményi tájékoztatások és fontos tudnivalók. A lényeges tudnivalók és közzétett intézményi közlemények visszakeresését támogatja.",
   "blocks": [
     {
       "id": "block:000043-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000043",
       "type": "section",
       "title": "Közzétett közlemények",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000043",
           "type": "markdown",
           "data": {
-            "text": "A Multischool5 szülői étkezési moduljának közzétett év végi szünete 2026. december 22. 9:00-tól december 31. 9:15-ig tart. Ezen időszak alatt a hivatalos közlemény szerint az étkezés megrendelése és lemondása nem érhető el. A szülők a pontos ügyintézési lépéseket az eredeti intézményi tájékoztatóból ellenőrizhetik.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/hirek-es-esemenyek)"
+            "text": "A Multischool5 szülői étkezési moduljának közzétett év végi szünete 2026. december 22. 9:00-tól december 31. 9:15-ig tart. Ezen időszak alatt a hivatalos közlemény szerint az étkezés megrendelése és lemondása nem érhető el. A szülők a pontos ügyintézési lépéseket az eredeti intézményi tájékoztatóból ellenőrizhetik.\n\n[Hírek és események](#/hirek-es-esemenyek)\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/hirek-es-esemenyek/kozlemenyek",
     "verifiedContent": false,
-    "bannerMediaId": "media:esemenyek"
+    "bannerMediaId": "media:esemenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "home"
+    }
   }
 }

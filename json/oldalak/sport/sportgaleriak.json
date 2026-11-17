@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Sportgalériák – Csanádi Sportiskola",
-    "description": "Sport, tanulás és közösség képes témái.",
+    "description": "Sport, tanulás és közösség képes témái. Tematikus fotók és a sportiskolai mindennapokat bemutató képes tartalmak gyűjtőhelye.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "sport"
   ],
   "tags": [],
-  "summary": "Sport, tanulás és közösség képes témái.",
+  "summary": "Sport, tanulás és közösség képes témái. Tematikus fotók és a sportiskolai mindennapokat bemutató képes tartalmak gyűjtőhelye.",
   "blocks": [
     {
       "id": "block:000037-section-1",
@@ -36,21 +36,21 @@
           "id": "block:000037-text-1",
           "type": "markdown",
           "data": {
-            "text": "A sportgaléria az edzések, a mozgás és a közösségi élmények világát mutatja be. A képeket sportág és iskolai téma szerint válogathatod, és nagyobb méretben is megtekintheted. "
+            "text": "A sportgaléria az edzések, a mozgás és a közösségi élmények világát mutatja be. A képeket sportág és iskolai téma szerint válogathatod, és nagyobb méretben is megtekintheted."
           }
         }
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000037",
       "type": "section",
       "title": "Képek és sportélet",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000037",
           "type": "markdown",
           "data": {
-            "text": "A galériában jelenleg tematikus sport- és iskolai képek, valamint két képmontázs érhető el. A nyilvános fejlesztési képtár nem azonos az iskola hiteles eseményfotó-archívumával; a tényleges verseny- és rendezvényképek közzétételéhez intézményi jóváhagyás szükséges.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/hirek-es-esemenyek)"
+            "text": "A jelenlegi gyűjtemény tematikus sportképeket és bemutató montázsokat is tartalmaz. **Egy illusztráció nem egyenértékű hiteles iskolai eseményfotóval.** Eseményhez rendelhető személyes képeket, neveket és eredményeket csak jogszerű, intézményi jóváhagyással lehet publikálni. A közzétett versenyadatokat a [Sporteredmények](#/sport/sporteredmenyek) oldalon keresd."
           }
         }
       ]
@@ -61,6 +61,11 @@
     "preview": false,
     "route": "#/sport/sportgaleriak",
     "verifiedContent": false,
-    "bannerMediaId": "media:sport"
+    "bannerMediaId": "media:sport",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
   }
 }

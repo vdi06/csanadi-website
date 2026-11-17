@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-17T12:00:00+01:00",
-  "updatedAt": "2026-11-17T12:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 3
   },
   "seo": {
     "title": "Térkép és útvonaltervezés – Csanádi Sportiskola",
-    "description": "Helyi hozzájárulásos térkép, közlekedési kapcsolatok és érkezési segítség.",
+    "description": "Helyi hozzájárulásos térkép, közlekedési kapcsolatok és érkezési segítség. A helyi térképes nézet és a gyalogos, kerékpáros, tömegközlekedési tájékozódás.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -30,7 +30,7 @@
     "BKK",
     "OpenStreetMap"
   ],
-  "summary": "Helyi hozzájárulásos térkép, közlekedési kapcsolatok és érkezési segítség.",
+  "summary": "Helyi hozzájárulásos térkép, közlekedési kapcsolatok és érkezési segítség. A helyi térképes nézet és a gyalogos, kerékpáros, tömegközlekedési tájékozódás lehetőségei.",
   "blocks": [
     {
       "id": "block:erkezes-terkep",
@@ -55,7 +55,7 @@
           "id": "block:erkezes-utvonalak-text",
           "type": "markdown",
           "data": {
-            "text": "**Tömegközlekedés:** [BKK menetrendek](https://bkk.hu/menetrendek/).\n\n**Gyalog és kerékpárral:** indulás előtt tervezz biztonságos útvonalat, és ellenőrizd a helyi közlekedési feltételeket.\n\n**Akadálymentesség:** a konkrét bejárat és útvonal intézményi megerősítést igényel.\n\n[Vissza a Megközelítés és érkezés oldalra](#/megkozelites-es-erkezes)"
+            "text": "**Tömegközlekedés:** [BKK menetrendek](https://bkk.hu/menetrendek/).\n\n**Gyalog és kerékpárral:** indulás előtt tervezz biztonságos útvonalat, és ellenőrizd a helyi közlekedési feltételeket.\n\n**Akadálymentesség:** a konkrét bejárat és útvonal intézményi megerősítést igényel.\n\n[Vissza a Megközelítés és érkezés oldalra](#/megkozelites-es-erkezes)\n\n[Hivatalos kapcsolati és adatvédelmi elérhetőségek – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kapcsolat.html)"
           }
         }
       ]
@@ -66,6 +66,11 @@
     "preview": false,
     "route": "#/megkozelites-es-erkezes/terkep",
     "verifiedContent": false,
-    "bannerMediaId": "media:kapcsolat"
+    "bannerMediaId": "media:kapcsolat",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "contact"
+    }
   }
 }

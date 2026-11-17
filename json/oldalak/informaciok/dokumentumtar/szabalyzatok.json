@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Szabályzatok – Csanádi Sportiskola",
-    "description": "Hivatalos szabályzatok és a nyilvános intézményi alapdokumentumok áttekintése.",
+    "description": "Hivatalos szabályzatok és a nyilvános intézményi alapdokumentumok áttekintése. Az alapdokumentumok, változatok és hivatalos szabályzatok ellenőrzéséhez nyújt.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -69,15 +69,15 @@
       }
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000053",
       "type": "section",
       "title": "Alapdokumentumok",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000053",
           "type": "markdown",
           "data": {
-            "text": "Az iskola hivatalos honlapjáról letölthető a pedagógiai program, a házirend, a szervezeti és működési szabályzat és több helyi tanterv. Ezeket a megfelelő dokumentumoldalról célszerű megnyitni, mert így az aktuális, az intézmény által közzétett verzió használható.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/informaciok/dokumentumtar)"
+            "text": "A pedagógiai program a nevelési kereteket, a helyi tantervek a tantárgyi tartalmakat, a házirend a mindennapi működés szabályait, az SZMSZ az intézményi szervezetet írja le. Adatvédelmi ügyben az adatkezelési tájékoztató és a kamerarendszerre vonatkozó külön dokumentum is fontos. Mindegyiket közvetlenül az iskola dokumentumtárából érdemes megnyitni.\n\n[Intézményi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/docs.html)"
           }
         }
       ]
@@ -88,6 +88,11 @@
     "preview": false,
     "route": "#/informaciok/dokumentumtar/szabalyzatok",
     "verifiedContent": false,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "documents"
+    }
   }
 }

@@ -6,13 +6,16 @@
   if(!document.querySelector('link[data-csanadi-tools-unified]')){
     const stylesheet=document.createElement('link');
     stylesheet.rel='stylesheet';
-    stylesheet.href='../css/tools-unified-v1.css?v=1.37.0';
+    stylesheet.href='../css/tools-unified-v1.css?v=1.39.5';
     stylesheet.dataset.csanadiToolsUnified='true';
     document.head.append(stylesheet);
   }
-  const main=document.querySelector('main');
+  // A három önálló, iframe-es tesztoldalon nincs <main>, ezért a tényleges
+  // tesztterület legyen a kihagyható navigáció célpontja.
+  const main=document.querySelector('main')||document.querySelector('.stage')||document.querySelector('.toolbar');
   if(main){
     if(!main.id)main.id='cs-tools-main';
+    if(!main.hasAttribute('tabindex'))main.setAttribute('tabindex','-1');
     if(!document.querySelector('.cs-tools-skip')){
       const skip=document.createElement('a');
       skip.href='#'+main.id;
@@ -22,6 +25,39 @@
     }
   }
   const currentPage=location.pathname.split('/').pop();
+  // Egyetlen, minden szerkesztőből elérhető navigáció; a különálló segédoldalak
+  // a korábbi saját menüiket és szerkesztési folyamatukat is megtartják.
+  const pages=[
+    ['index.html','Munkaközpont'],
+    ['eszkoz-mediator.html','Média és fájlok'],
+    ['dokumentum-szerkeszto.html','Dokumentumadatok'],
+    ['oldal-json-szerkeszto.html','Oldalszerkesztő'],
+    ['minosegkapu.html','Minőségkapu'],
+    ['ftp-kiadas-ellenorzo.html','FTP-kiadás']
+  ];
+  let header=document.querySelector('body > header');
+  if(!header){
+    // A korábbi, kizárólag sötét témájú útvonal- és mobilpróbák is elérhetők
+    // ugyanabból a munkaközpontból, a belső teszthurok megváltoztatása nélkül.
+    header=document.createElement('header');header.className='cs-tools-compact-head';
+    const brand=document.createElement('a');brand.href='index.html';
+    brand.textContent='CSANÁDI SPORTISKOLA · ELLENŐRZŐ ESZKÖZ';
+    const theme=document.createElement('button');theme.type='button';theme.id='tool-theme-toggle';
+    theme.textContent='◐ Megjelenés';
+    header.append(brand,theme);document.body.insertBefore(header,document.body.firstChild);
+  }
+  if(header&&!document.querySelector('.cs-tools-global-nav')){
+    const navigation=document.createElement('nav');
+    navigation.className='cs-tools-global-nav';
+    navigation.setAttribute('aria-label','Karbantartási eszközök gyorsnavigációja');
+    const inner=document.createElement('div');inner.className='cs-tools-global-nav-inner';
+    for(const [url,label] of pages){
+      const link=document.createElement('a');link.href=url;link.textContent=label;
+      if(url===currentPage)link.setAttribute('aria-current','page');
+      inner.append(link);
+    }
+    navigation.append(inner);header.insertAdjacentElement('afterend',navigation);
+  }
   for(const link of document.querySelectorAll('nav a[href]')){
     try{if(new URL(link.href,location.href).pathname.split('/').pop()===currentPage)link.setAttribute('aria-current','page');}catch{}
   }

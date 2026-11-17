@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 6
   },
   "seo": {
     "title": "Tanévek – Csanádi Sportiskola",
-    "description": "Tanévi információk, fontos időszakok és tanulói szervezés.",
+    "description": "Tanévi információk, fontos időszakok és tanulói szervezés. A tanév szervezéséhez kapcsolódó fontos időszakok és a kapcsolódó információs oldalak érhetők el.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "Tanévi információk, fontos időszakok és tanulói szervezés.",
+  "summary": "Tanévi információk, fontos időszakok és tanulói szervezés. A tanév szervezéséhez kapcsolódó fontos időszakok és a kapcsolódó információs oldalak érhetők el.",
   "blocks": [
     {
       "id": "block:000025-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000025",
       "type": "section",
       "title": "Tanévi tervezés",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000025",
           "type": "markdown",
           "data": {
-            "text": "A 2026/2027-es tanév az iskola közzététele szerint 2026. szeptember 1-jén indult. Az intézményi csengetési rend, az eseménynaptár és az érettségi tájékoztató külön oldalon érhető el. A tanévi helyi rendet a közzétételi lista tartalmazza.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/informaciok/dokumentumtar/kozzeteteli-lista)"
+            "text": "A 2026/2027-es tanév az iskola közzététele szerint 2026. szeptember 1-jén indult. Az intézményi csengetési rend, az eseménynaptár és az érettségi tájékoztató külön oldalon érhető el. A tanévi helyi rendet a közzétételi lista tartalmazza.\n\n[Közzétételi lista](#/informaciok/dokumentumtar/kozzeteteli-lista)\n\n[Közzétételi lista – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozzetetel.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/oktatas/tanevek",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "disclosure"
+    }
   }
 }

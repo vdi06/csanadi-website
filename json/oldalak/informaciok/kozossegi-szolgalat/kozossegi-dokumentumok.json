@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Közösségi szolgálat dokumentumai – Csanádi Sportiskola",
-    "description": "Közösségi szolgálathoz kapcsolódó igazolások és űrlapok gyűjtőhelye.",
+    "description": "Közösségi szolgálathoz kapcsolódó igazolások és űrlapok gyűjtőhelye. A szolgálathoz kapcsolódó dokumentumok, nyilvántartások és jóváhagyott űrlapok gyűjteménye.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
   "tags": [],
-  "summary": "Közösségi szolgálathoz kapcsolódó igazolások és űrlapok gyűjtőhelye.",
+  "summary": "Közösségi szolgálathoz kapcsolódó igazolások és űrlapok gyűjtőhelye. A szolgálathoz kapcsolódó dokumentumok, nyilvántartások és jóváhagyott űrlapok gyűjteménye.",
   "blocks": [
     {
       "id": "block:000060-section-1",
@@ -69,15 +69,15 @@
       }
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000060",
       "type": "section",
       "title": "Szolgálati dokumentumok",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000060",
           "type": "markdown",
           "data": {
-            "text": "A hivatalos dokumentumtárban megtalálható a közösségi szolgálati jelentkezési lap, az együttműködési megállapodás, a befogadó nyilatkozat, a beszámoló és a szolgálati napló. A kitöltendő példányokat mindig az intézmény eredeti dokumentumoldaláról szükséges letölteni.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "Az intézményi nyomtatványoldalon kötelező jelentkezési lapot, kétpéldányos együttműködési megállapodást, adott helyzetben befogadó nyilatkozatot, beszámolót és szolgálati naplót sorolnak fel. Ezeket csak a hivatalos eredeti állományból töltsd le; az iskola helyi elszámolási szabályait egyeztesd a koordinátorral.\n\n[Közösségi szolgálati nyomtatványok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozszoldokuk.html)"
           }
         }
       ]
@@ -88,6 +88,11 @@
     "preview": false,
     "route": "#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok",
     "verifiedContent": false,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "serviceForms"
+    }
   }
 }

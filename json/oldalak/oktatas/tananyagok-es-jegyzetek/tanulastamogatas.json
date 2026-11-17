@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-17T12:00:00+01:00",
-  "updatedAt": "2026-11-17T12:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 3
   },
   "seo": {
     "title": "Tanulástámogatás és időgazdálkodás – Csanádi Sportiskola",
-    "description": "Gyakorlati tanulási módszerek, személyes célok és helyi időmérő eszközök.",
+    "description": "Gyakorlati tanulási módszerek, személyes célok és helyi időmérő eszközök. Tanulási célok, feladatbontás és helyben használható időmérők segítik az önálló munkát.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -29,7 +29,7 @@
     "időgazdálkodás",
     "tanulókártyák"
   ],
-  "summary": "Gyakorlati tanulási módszerek, személyes célok és helyi időmérő eszközök.",
+  "summary": "Gyakorlati tanulási módszerek, személyes célok és helyi időmérő eszközök. Tanulási célok, feladatbontás és helyben használható időmérők segítik az önálló munkát.",
   "blocks": [
     {
       "id": "block:tanulas-lepesek",
@@ -54,7 +54,7 @@
           "id": "block:tanulas-eszkozok-text",
           "type": "markdown",
           "data": {
-            "text": "Az eddigi honlap helyben futó **tanulási időzítője, tanulókártyája és saját céljaid nyilvántartása** továbbra is működik: [a tanulástámogató eszközök megnyitása](megkozelites-es-tanulas.html#tanulas). Ezek az adatok a saját böngésződben maradnak."
+            "text": "A tanulási műhelyben külön megnyitható a [fókuszidőzítő és gondolatébresztő kérdéssor](megkozelites-es-tanulas.html?embedded=1#modszerek), valamint a [személyes tanulási célok követése](megkozelites-es-tanulas.html?embedded=1#celok). Ezek a régebbi, önálló HTML-eszközök továbbra is helyben működnek; a célok mentése csak az adott böngészőben történik. A belső hivatkozások közvetlenül a megfelelő részhez vezetnek."
           }
         }
       ]
@@ -79,6 +79,11 @@
     "preview": false,
     "route": "#/tanulastamogatas",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
   }
 }

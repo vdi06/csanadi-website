@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Sportesemények – Csanádi Sportiskola",
-    "description": "Sportesemények és versenyprogramok áttekintő oldala.",
+    "description": "Sportesemények és versenyprogramok áttekintő oldala. A versenyek és sportprogramok típusairól, az időpontok és eredmények ellenőrzéséről tájékoztat.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "hirek-es-esemenyek"
   ],
   "tags": [],
-  "summary": "Sportesemények és versenyprogramok áttekintő oldala.",
+  "summary": "Sportesemények és versenyprogramok áttekintő oldala. A versenyek és sportprogramok típusairól, az időpontok és eredmények ellenőrzéséről tájékoztat.",
   "blocks": [
     {
       "id": "block:000046-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000046",
       "type": "section",
       "title": "Sportesemények ellenőrzése",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000046",
           "type": "markdown",
           "data": {
-            "text": "Az iskola 2026-os aktuális oldala több sportverseny eredményét is közzéteszi, de nem minden beszámolóban található ellenőrizhető kezdési időpont. Ezeket a hírek és az eredménytár mutatja be; naptári programként csak valós, közzétett eseményidőponttal szerepelhetnek.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/hirek-es-esemenyek)"
+            "text": "Az iskola 2026-os aktuális oldala több sportverseny eredményét is közzéteszi, de nem minden beszámolóban található ellenőrizhető kezdési időpont. Ezeket a hírek és az eredménytár mutatja be; naptári programként csak valós, közzétett eseményidőponttal szerepelhetnek.\n\n[Hírek és események](#/hirek-es-esemenyek)\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/hirek-es-esemenyek/esemenynaptar/sportesemenyek",
     "verifiedContent": false,
-    "bannerMediaId": "media:esemenyek"
+    "bannerMediaId": "media:esemenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "home"
+    }
   }
 }

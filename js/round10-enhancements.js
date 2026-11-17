@@ -71,5 +71,5 @@ export function initRound10Enhancements(){
   requestAnimationFrame(()=>{enhancedDocuments();enhancedMedia();});
  });
  const nav=document.getElementById('ext26-mobile-nav');
- if(nav)nav.setAttribute('aria-label','Mobilos gyorsnavigáció, öt választással');
+ if(nav)nav.setAttribute('aria-label','Mobilos gyorsnavigáció, három választással');
 }

@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 6
   },
   "seo": {
     "title": "Eseménynaptár – Csanádi Sportiskola",
-    "description": "Havi, heti és napi naptár az ellenőrzött intézményi eseményekkel.",
+    "description": "Havi, heti és napi naptár az ellenőrzött intézményi eseményekkel. Az ellenőrzött események havi, heti és napi nézete, valamint a programokhoz kapcsolódó.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "hirek-es-esemenyek"
   ],
   "tags": [],
-  "summary": "Havi, heti és napi naptár az ellenőrzött intézményi eseményekkel.",
+  "summary": "Havi, heti és napi naptár az ellenőrzött intézményi eseményekkel. Az ellenőrzött események havi, heti és napi nézete, valamint a programokhoz kapcsolódó részletek.",
   "blocks": [
     {
       "id": "block:000044-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000044",
       "type": "section",
       "title": "Ellenőrzött események",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000044",
           "type": "markdown",
           "data": {
-            "text": "A naptárban két, az iskola által közzétett 2026. novemberi gimnáziumi nyílt nap szerepel. Az országos felvételi határidők nem automatikusan iskolai rendezvények. A jelenlegi naptárban csak a konkrét, nyilvánosan megerősített eseményeket jelenítjük meg.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/hirek-es-esemenyek)"
+            "text": "A naptárban két, az iskola által közzétett 2026. novemberi gimnáziumi nyílt nap szerepel. Az országos felvételi határidők nem automatikusan iskolai rendezvények. A jelenlegi naptárban csak a konkrét, nyilvánosan megerősített eseményeket jelenítjük meg.\n\n[Hírek és események](#/hirek-es-esemenyek)\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/hirek-es-esemenyek/esemenynaptar",
     "verifiedContent": false,
-    "bannerMediaId": "media:esemenyek"
+    "bannerMediaId": "media:esemenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "home"
+    }
   }
 }

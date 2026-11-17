@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="hu">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="robots" content="noindex,nofollow">
+ <title>Csanádi – teljes útvonalpróba</title>
+ <script src="tool-ui-2026.js?v=1.39.5" defer></script>
+ <style>
+  :root{font:15px/1.5 system-ui,sans-serif;color-scheme:dark;background:#0b2037;color:#f1f4fb}
+  body{max-width:1280px;margin:auto;padding:22px}h1{font-size:25px}button,select{padding:10px 15px;border-radius:12px;border:1px solid #d8b876;background:#273e59;color:inherit}
+  button{cursor:pointer;font-weight:bold}.toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .layout{display:grid;grid-template-columns:1fr minmax(320px,630px);gap:16px;margin-top:18px}
+  .report{min-height:390px;border:1px solid #b89d70;border-radius:16px;padding:16px;background:#182c45}
+  #log{white-space:pre-wrap;overflow-wrap:anywhere;max-height:65vh;overflow-y:auto;margin:10px 0}
+  iframe{height:76vh;width:100%;border:2px solid #dab46c;border-radius:16px;background:white}
+  @media(max-width:850px){.layout{grid-template-columns:1fr}iframe{height:480px}}
+ </style>
+</head>
+<body>
+ <h1>Teljes SPA- és oldalsablon-próba – v1.39.2</h1>
+ <div class="toolbar"><button id="run" type="button">Mind a 71 oldal ellenőrzése</button><label for="width">Belső nézet</label><select id="width"><option value="390">390 px</option><option value="1200">1200 px</option></select><strong id="status" role="status">Indításra vár</strong></div>
+ <div class="layout"><section class="report"><h2>Eredmények</h2><p id="stats">Még nincs mérés.</p><pre id="log"></pre></section><iframe id="site" width="390" title="Vizsgált weboldal" src="../index.html#/"></iframe></div>
+ <script>
+  const button=document.getElementById('run'),frame=document.getElementById('site'),status=document.getElementById('status');
+  const stats=document.getElementById('stats'),log=document.getElementById('log'),width=document.getElementById('width');
+  width.addEventListener('change',()=>frame.width=width.value);
+  const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+  async function until(predicate,timeout=12000){const started=Date.now();while(Date.now()-started<timeout){try{if(predicate())return true;}catch{}await delay(35);}return false;}
+  async function run(){
+   button.disabled=true;status.textContent='Oldalkatalógus betöltése…';log.textContent='';
+   let items;
+   try{const response=await fetch('../json/oldalindex.json',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);const index=await response.json();items=Object.entries(index.pages).map(([path,page])=>({path,route:page.schemaExtensions.route,title:page.title}));}
+   catch(error){status.textContent='Nem indulhat: '+error.message;button.disabled=false;return;}
+   const failures=[];let passed=0;const exceptions=[];
+   frame.width=width.value;
+   const ready=await until(()=>frame.contentDocument?.querySelector('#app')?.textContent?.trim().length>80,14000);
+   if(!ready){status.textContent='Az alapalkalmazás nem töltött be.';button.disabled=false;return;}
+   frame.contentWindow.addEventListener('error',event=>exceptions.push(event.message||'ismeretlen hiba'));
+   frame.contentWindow.addEventListener('unhandledrejection',event=>exceptions.push(String(event.reason?.message||event.reason)));
+   for(const [index,item] of items.entries()){
+    status.textContent=(index+1)+' / '+items.length+' oldal';
+    if(frame.contentWindow.location.hash!==item.route)frame.contentWindow.location.hash=item.route;
+    const okay=await until(()=>{
+     const doc=frame.contentDocument,heading=doc?.querySelector('#app .page-banner h1');
+     if(item.route==='#/')return !!doc?.querySelector('#global-hero .csn26-visual-map')&&(doc?.querySelector('#app')?.textContent.length||0)>200&&!doc?.querySelector('.cs-page-load-error');
+     return frame.contentWindow.location.hash===item.route&&heading?.textContent.trim()===item.title&&
+       !!doc.querySelector('#app article.cs92-article[data-template-kind]')&&!doc.querySelector('.cs-page-load-error');
+    });
+    if(okay){passed++;}
+    else{const doc=frame.contentDocument;failures.push({route:item.route,title:item.title,actual:doc?.querySelector('#app h1')?.textContent?.trim()||doc?.querySelector('#app')?.textContent?.trim().slice(0,90)||'üres'});}
+    stats.textContent=`${index+1}/${items.length} vizsgálat · sikeres: ${passed} · hiba: ${failures.length}`;
+    log.textContent=failures.map(x=>x.route+' → '+x.actual).join('\n')||'Eddig nincs útvonalhiba.';
+   }
+   status.textContent=failures.length?'Kész, hibát találtam.':'Kész, minden regisztrált oldal megnyílt.';
+   stats.textContent=`${passed}/${items.length} sikeres útvonal · ${failures.length} sikertelen · ${exceptions.length} JavaScript-hibaüzenet`;
+   log.textContent=JSON.stringify({version:'1.39.2',pages:items.length,passed,failed:failures,exceptions:exceptions.slice(0,15),viewport:width.value},null,2);
+   button.disabled=false;
+  }
+  button.addEventListener('click',run);
+ </script>
+</body>
+</html>

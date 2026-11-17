@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "description": "A statikus weboldal teljes helyi médiakatalógusa, reszponzív képméretekkel; nem hivatalos intézményi médiák elkülönítve.",
-  "updatedAt": "2026-11-16",
+  "updatedAt": "2026-11-17",
   "items": [
     {
       "path": "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
@@ -10821,6 +10821,2166 @@
       "sha256": "4b766944a977a5e8edf9f51efa5fe93b4717b3775f930f3d5fd17edfd5873622",
       "published": false,
       "rightsConfirmed": false
+    },
+    {
+      "path": "assets/media/illustrations/konyv-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 690,
+      "sha256": "5a678d1380140c0920f44c3515c2e26dd742e22e8dd2be4319650419980c6acf",
+      "type": "graphic",
+      "title": "Könyv – sotet illusztráció",
+      "alt": "Könyv témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "konyv",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-konyv",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/konyv-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 692,
+      "sha256": "85a297d953653d852eb78f3ecf895806f28850cd352f5cec23354e2b40b1d7ab",
+      "type": "graphic",
+      "title": "Könyv – vilagos illusztráció",
+      "alt": "Könyv témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "konyv",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-konyv",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/konyv-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 688,
+      "sha256": "6d5eccd7c6fefa9c3fee69e3a5f160071a213e01821dc741ea4656cc65d399b1",
+      "type": "graphic",
+      "title": "Könyv – kontur illusztráció",
+      "alt": "Könyv témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "konyv",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-konyv",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/diploma-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 684,
+      "sha256": "db64ecd19a41944a84cc88463fce0c653af0ec5faf71cfc34e5cbc485060ddbe",
+      "type": "graphic",
+      "title": "Végzettség – sotet illusztráció",
+      "alt": "Végzettség témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "diploma",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-diploma",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/diploma-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 686,
+      "sha256": "0cb9cfe2564d1fa3d7c2a81d6e0b42e1731aba79b3feac0111e9771ae89a8dd8",
+      "type": "graphic",
+      "title": "Végzettség – vilagos illusztráció",
+      "alt": "Végzettség témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "diploma",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-diploma",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/diploma-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 682,
+      "sha256": "9dd799413165fd905c9354a1e955e411598ac24c44c9468179cfa7ac90d58e92",
+      "type": "graphic",
+      "title": "Végzettség – kontur illusztráció",
+      "alt": "Végzettség témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "diploma",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-diploma",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/tanulas-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 656,
+      "sha256": "7b4a3b79a8f3957d2fa73a2d7563f5f1fd093c999bed1e61141523a7e5bd59d2",
+      "type": "graphic",
+      "title": "Tanulás – sotet illusztráció",
+      "alt": "Tanulás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "tanulas",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-tanulas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/tanulas-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 658,
+      "sha256": "c37a16ab0d5c53e8fe2ccab4474fb7f0cf3400cbe1b53c2606ce96a6b20cc0ce",
+      "type": "graphic",
+      "title": "Tanulás – vilagos illusztráció",
+      "alt": "Tanulás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "tanulas",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-tanulas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/tanulas-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 654,
+      "sha256": "a3416c46e942a64b17ce1f28e961734cb1e797c9932f6175e2d60f614d9ad2d0",
+      "type": "graphic",
+      "title": "Tanulás – kontur illusztráció",
+      "alt": "Tanulás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "tanulas",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-tanulas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/laptop-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 724,
+      "sha256": "a5b32d8674bcf91a4b86e26869e58f66bc71c10a6cbf5b94639c281e11eb9791",
+      "type": "graphic",
+      "title": "Digitális eszköz – sotet illusztráció",
+      "alt": "Digitális eszköz témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "laptop",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-laptop",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/laptop-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 726,
+      "sha256": "1dc87b1dc6c38a6a6caf926b27d5f61e59bceb705f1354a03fd8553d661e0a33",
+      "type": "graphic",
+      "title": "Digitális eszköz – vilagos illusztráció",
+      "alt": "Digitális eszköz témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "laptop",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-laptop",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/laptop-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 722,
+      "sha256": "2727aba943ec24343f06341d93c5a870efa0a241788233da525685f28a3f16cc",
+      "type": "graphic",
+      "title": "Digitális eszköz – kontur illusztráció",
+      "alt": "Digitális eszköz témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "laptop",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-laptop",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/kodolas-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 663,
+      "sha256": "b1ee95523c2312320ffe4bc13cc0f7c09f68df3aecd0dd9e9b621229d6e3e6ac",
+      "type": "graphic",
+      "title": "Kódolás – sotet illusztráció",
+      "alt": "Kódolás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "kodolas",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-kodolas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/kodolas-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 665,
+      "sha256": "e2fce1431e024f7a9a9f5ee6caa2afaad394a29848b738bdb179ac599d820961",
+      "type": "graphic",
+      "title": "Kódolás – vilagos illusztráció",
+      "alt": "Kódolás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "kodolas",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-kodolas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/kodolas-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 661,
+      "sha256": "203c1130970d3318d837c2695086812bac35eae7306c19ff4549c722fcec5a0c",
+      "type": "graphic",
+      "title": "Kódolás – kontur illusztráció",
+      "alt": "Kódolás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "kodolas",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-kodolas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/matematika-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 725,
+      "sha256": "4eaf168a9137a569f90075fd79ecc3aae957b196243dcb61ee7a0927c6308c4d",
+      "type": "graphic",
+      "title": "Matematika – sotet illusztráció",
+      "alt": "Matematika témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "matematika",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-matematika",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/matematika-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 727,
+      "sha256": "fea16794ef76cbf6fdebe68e22a2036606e7c5a64b6a394c0c140b11512c79f5",
+      "type": "graphic",
+      "title": "Matematika – vilagos illusztráció",
+      "alt": "Matematika témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "matematika",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-matematika",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/matematika-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 723,
+      "sha256": "349505d70358de51e3faaeac1655471ff5dca379ecd2492f279b91ea10fe59c4",
+      "type": "graphic",
+      "title": "Matematika – kontur illusztráció",
+      "alt": "Matematika témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "matematika",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-matematika",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/naptar-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 716,
+      "sha256": "3ac42755e2dcfc81956e8894065ebe66ece2594f763d1da3a96a780b8e46bf8b",
+      "type": "graphic",
+      "title": "Naptár – sotet illusztráció",
+      "alt": "Naptár témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "naptar",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-naptar",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/naptar-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 718,
+      "sha256": "3849345328ba46443b877459c3df60753b6dd06f0fd8b840d89a7ed249240fcc",
+      "type": "graphic",
+      "title": "Naptár – vilagos illusztráció",
+      "alt": "Naptár témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "naptar",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-naptar",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/naptar-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 714,
+      "sha256": "7a161c82b7472249d75af8c8674767eaef062e9cf453336371d25874e3a039f5",
+      "type": "graphic",
+      "title": "Naptár – kontur illusztráció",
+      "alt": "Naptár témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "naptar",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-naptar",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/ora-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 681,
+      "sha256": "72a06c80043c17525da0cbfec93ce9a03a65c50daf7ca09182b0f45a9a12f3a4",
+      "type": "graphic",
+      "title": "Időbeosztás – sotet illusztráció",
+      "alt": "Időbeosztás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "ora",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-ora",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/ora-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 683,
+      "sha256": "283c4d2e4b4cddcadd10731e6f5ed98b528f7e1edb180b224ffba4be0d772456",
+      "type": "graphic",
+      "title": "Időbeosztás – vilagos illusztráció",
+      "alt": "Időbeosztás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "ora",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-ora",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/ora-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 679,
+      "sha256": "7b8cfd5390ed1740306ae74bf3aed8178e99e2e310462ef3285d0d639af34a19",
+      "type": "graphic",
+      "title": "Időbeosztás – kontur illusztráció",
+      "alt": "Időbeosztás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "ora",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-ora",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/erem-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 713,
+      "sha256": "734126ba471cb9baec035051551e7c2d8b105e08744fc5a5a5f8a43b60977647",
+      "type": "graphic",
+      "title": "Sportérem – sotet illusztráció",
+      "alt": "Sportérem témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "erem",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-erem",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/erem-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 715,
+      "sha256": "26b1dd4f63c6b629a960fb3af0448d38807b8cf7f5f22b8793e3367e927b6477",
+      "type": "graphic",
+      "title": "Sportérem – vilagos illusztráció",
+      "alt": "Sportérem témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "erem",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-erem",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/erem-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 711,
+      "sha256": "de208a87624889e9caf0d2e827c5d1806706dfeff615c8c010c50ea9a0a1d735",
+      "type": "graphic",
+      "title": "Sportérem – kontur illusztráció",
+      "alt": "Sportérem témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "erem",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-erem",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/kupa-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 689,
+      "sha256": "434526bc568035a89efa8b9774c34ae9b12513bfdb87517333e8785466b3a5bd",
+      "type": "graphic",
+      "title": "Sportkupa – sotet illusztráció",
+      "alt": "Sportkupa témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "kupa",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-kupa",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/kupa-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 691,
+      "sha256": "ad5be8528add61d5773815d87db5ca7d27be5bebc64f2220b24e7561f5ef6cda",
+      "type": "graphic",
+      "title": "Sportkupa – vilagos illusztráció",
+      "alt": "Sportkupa témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "kupa",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-kupa",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/kupa-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 687,
+      "sha256": "03508f6d8d4bdb1fff0988091ca98b7f0613da012303782e5ba38ceaa17dc644",
+      "type": "graphic",
+      "title": "Sportkupa – kontur illusztráció",
+      "alt": "Sportkupa témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "kupa",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-kupa",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/kosarlabda-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 682,
+      "sha256": "1c3cffa60aa0eee4d038064ed49138dcaed48cd6698a0f986e0024db1831235e",
+      "type": "graphic",
+      "title": "Kosárlabda – sotet illusztráció",
+      "alt": "Kosárlabda témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "kosarlabda",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-kosarlabda",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/kosarlabda-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 684,
+      "sha256": "abcf784d21e3d020d51af69cf5504ace87f4b9f7969b0b2a17874172675dc00f",
+      "type": "graphic",
+      "title": "Kosárlabda – vilagos illusztráció",
+      "alt": "Kosárlabda témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "kosarlabda",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-kosarlabda",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/kosarlabda-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 680,
+      "sha256": "42cfcf10aacb51e8c45bce858a8e3cfa1a53632c45912b678a2335cf33bdc3d2",
+      "type": "graphic",
+      "title": "Kosárlabda – kontur illusztráció",
+      "alt": "Kosárlabda témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "kosarlabda",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-kosarlabda",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/labdarugas-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 724,
+      "sha256": "60f712d9f56d204eaaa4c3f34d804ed633f6f64b642004bf61a454e68765e955",
+      "type": "graphic",
+      "title": "Labdarúgás – sotet illusztráció",
+      "alt": "Labdarúgás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "labdarugas",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-labdarugas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/labdarugas-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 726,
+      "sha256": "c5bf3cc484d669ba31a80132fef587438db7131516ae64d93881787d0742818b",
+      "type": "graphic",
+      "title": "Labdarúgás – vilagos illusztráció",
+      "alt": "Labdarúgás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "labdarugas",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-labdarugas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/labdarugas-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 722,
+      "sha256": "658d796780a0e673b677e05f338b2e9389e35159fb837fb4baf911160a9ced29",
+      "type": "graphic",
+      "title": "Labdarúgás – kontur illusztráció",
+      "alt": "Labdarúgás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "labdarugas",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-labdarugas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/roplabda-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 693,
+      "sha256": "e42ecde3fdc095a1218605603122933ec5a67184476985718ffa355c937d0411",
+      "type": "graphic",
+      "title": "Röplabda – sotet illusztráció",
+      "alt": "Röplabda témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "roplabda",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-roplabda",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/roplabda-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 695,
+      "sha256": "5fe01e822be205f03768e18447edd86e1ba7a3cc019500147d6ee62a5dc0dfe7",
+      "type": "graphic",
+      "title": "Röplabda – vilagos illusztráció",
+      "alt": "Röplabda témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "roplabda",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-roplabda",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/roplabda-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 691,
+      "sha256": "ed953a20429eb45a5be3d9f4f7f2355d11e568242e513899954eb84e4167e86a",
+      "type": "graphic",
+      "title": "Röplabda – kontur illusztráció",
+      "alt": "Röplabda témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "roplabda",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-roplabda",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uszas-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 696,
+      "sha256": "16b87a764bf0fe675243c3a84371bbbce318687939d4c24c7d49d82db3f94dba",
+      "type": "graphic",
+      "title": "Úszás – sotet illusztráció",
+      "alt": "Úszás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "uszas",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-uszas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uszas-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 698,
+      "sha256": "dcc84bd058186ce0b4c05fea892d3609f665fe7bb2d08f38224aa28fd61097e0",
+      "type": "graphic",
+      "title": "Úszás – vilagos illusztráció",
+      "alt": "Úszás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "uszas",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-uszas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uszas-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 694,
+      "sha256": "8ffbf0ebd90f6a188bcabdda1eb38741b7eed962f28c0576868e624179716e80",
+      "type": "graphic",
+      "title": "Úszás – kontur illusztráció",
+      "alt": "Úszás témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "uszas",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-uszas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/futas-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 692,
+      "sha256": "0300731ec030450d4f34b76c760d18186697f552692aa5274253a2cb74401e32",
+      "type": "graphic",
+      "title": "Atlétika – sotet illusztráció",
+      "alt": "Atlétika témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "futas",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-futas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/futas-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 694,
+      "sha256": "8f5f3d42484dbb92a6fd143736952f2f60cf806522beef8c95be6f96ae5d89cd",
+      "type": "graphic",
+      "title": "Atlétika – vilagos illusztráció",
+      "alt": "Atlétika témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "futas",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-futas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/futas-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 690,
+      "sha256": "6936451dd06bec5ce02c1daf32cc6516b84688f1ee2c2c3a1f2fe3ced305c580",
+      "type": "graphic",
+      "title": "Atlétika – kontur illusztráció",
+      "alt": "Atlétika témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "futas",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-futas",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/csapat-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 757,
+      "sha256": "c7bdac725f2d0d428f0c0df98eca63379e0c504acdfd70f064cedf37239adea7",
+      "type": "graphic",
+      "title": "Közösség – sotet illusztráció",
+      "alt": "Közösség témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "csapat",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-csapat",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/csapat-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 759,
+      "sha256": "c1e6e7541c4d687d49bc818aeeaf7d40a6f04d3e3851d5d3b90d81f854d0c1b6",
+      "type": "graphic",
+      "title": "Közösség – vilagos illusztráció",
+      "alt": "Közösség témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "csapat",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-csapat",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/csapat-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 755,
+      "sha256": "bd3dba38d937a629beb841d23e3c6ddee0c5362a60c357d390f9f4a09db650f4",
+      "type": "graphic",
+      "title": "Közösség – kontur illusztráció",
+      "alt": "Közösség témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "csapat",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-csapat",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/fenntarthatosag-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 674,
+      "sha256": "c3e0c8902fd64baea75a4b7312b4be12d2b55d3abd1b3e52fb4a3f7b579bdfad",
+      "type": "graphic",
+      "title": "Fenntarthatóság – sotet illusztráció",
+      "alt": "Fenntarthatóság témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "fenntarthatosag",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-fenntarthatosag",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/fenntarthatosag-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 676,
+      "sha256": "57fd48875c3d96d88a25413d02219371d7b6a7018c1a529546aa6a32c696d081",
+      "type": "graphic",
+      "title": "Fenntarthatóság – vilagos illusztráció",
+      "alt": "Fenntarthatóság témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "fenntarthatosag",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-fenntarthatosag",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/fenntarthatosag-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 672,
+      "sha256": "5373f0be46b52a6716627e5fa52b19b1d74e579af002602f215a76e7f4329cfa",
+      "type": "graphic",
+      "title": "Fenntarthatóság – kontur illusztráció",
+      "alt": "Fenntarthatóság témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "fenntarthatosag",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-fenntarthatosag",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/foldrajz-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 697,
+      "sha256": "4eb0b5a02ba4ce19711ed2cbb7a29a5a528bc6dfe4f4fcef4db8d2f9b8f3d56f",
+      "type": "graphic",
+      "title": "Világismeret – sotet illusztráció",
+      "alt": "Világismeret témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "foldrajz",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-foldrajz",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/foldrajz-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 699,
+      "sha256": "5a195e89ab9d033de65a5459ffc8c689912a7759e2bc3411ec75f6755eddc449",
+      "type": "graphic",
+      "title": "Világismeret – vilagos illusztráció",
+      "alt": "Világismeret témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "foldrajz",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-foldrajz",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/foldrajz-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 695,
+      "sha256": "f9b1496f33eaeaf884c22e217435cd23212c0d938bf86bb3de71ee8edf1a5bf8",
+      "type": "graphic",
+      "title": "Világismeret – kontur illusztráció",
+      "alt": "Világismeret témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "foldrajz",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-foldrajz",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/terkep-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 728,
+      "sha256": "6bb18abd617f6faf40912f58dcc0789eceb715711dbdc0de7418311f057a48f6",
+      "type": "graphic",
+      "title": "Megközelítés – sotet illusztráció",
+      "alt": "Megközelítés témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "terkep",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-terkep",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/terkep-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 730,
+      "sha256": "2ffbd4ddab734810717bc75dba0eb65b1a464ab899af3c7f42f4daa968a00602",
+      "type": "graphic",
+      "title": "Megközelítés – vilagos illusztráció",
+      "alt": "Megközelítés témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "terkep",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-terkep",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/terkep-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 726,
+      "sha256": "e54f777a0dd41e2ea776cbfd88b104438f4a6c895f08d6ca1d9cfce5b2a8702f",
+      "type": "graphic",
+      "title": "Megközelítés – kontur illusztráció",
+      "alt": "Megközelítés témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "terkep",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-terkep",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/dokumentum-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 657,
+      "sha256": "62557dc83a1efb3ba12cb0ba5298ea9ea80219a3246acb100ba9099825343814",
+      "type": "graphic",
+      "title": "Dokumentum – sotet illusztráció",
+      "alt": "Dokumentum témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "dokumentum",
+        "sotet"
+      ],
+      "mediaId": "media:tematika-dokumentum",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/dokumentum-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 659,
+      "sha256": "ce3f7088d589b12792b3a83377cd9b6287d8691ed49433bcb8e974f73376bbea",
+      "type": "graphic",
+      "title": "Dokumentum – vilagos illusztráció",
+      "alt": "Dokumentum témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "dokumentum",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika-dokumentum",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/dokumentum-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 655,
+      "sha256": "c07c2c21f6c82e4de3688277e0180564cc378ec6d3c9064d4e6c5e633285c1b9",
+      "type": "graphic",
+      "title": "Dokumentum – kontur illusztráció",
+      "alt": "Dokumentum témájú, stilizált vektorikon",
+      "description": "Saját, sematikus szerkesztői grafika; nem valós iskolai eseményt ábrázoló fénykép.",
+      "tags": [
+        "tematikus",
+        "ikon",
+        "dokumentum",
+        "kontur"
+      ],
+      "mediaId": "media:tematika-dokumentum",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-robotika-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 807,
+      "sha256": "0bfb7fb89dacae2dadf85c9b7ab0c22f9c97fa7667182b42a3ebfcee803f2088",
+      "type": "graphic",
+      "title": "Robotika – sotet",
+      "alt": "Robotika témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "robotika",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-robotika",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-robotika-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 809,
+      "sha256": "0b53a75887db85d10a72d4b780ab07ca3325bbd46b98b5939eb4b6f4213b754c",
+      "type": "graphic",
+      "title": "Robotika – vilagos",
+      "alt": "Robotika témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "robotika",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-robotika",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-robotika-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 805,
+      "sha256": "a93f2a15eb63a979aea711a6d6ce1d4d74497845fa113ee18f83401763031344",
+      "type": "graphic",
+      "title": "Robotika – kontur",
+      "alt": "Robotika témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "robotika",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-robotika",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-kemia-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 741,
+      "sha256": "1b59da2f108d1379dd2ea4f9580943392f1b3e80693f17cff76585dc2a4293ac",
+      "type": "graphic",
+      "title": "Kísérletezés – sotet",
+      "alt": "Kísérletezés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "kemia",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-kemia",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-kemia-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 743,
+      "sha256": "b1e511bcec6261e2c915690f91061cfaddb3d7511c26531d601aa0f42d162b1f",
+      "type": "graphic",
+      "title": "Kísérletezés – vilagos",
+      "alt": "Kísérletezés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "kemia",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-kemia",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-kemia-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 739,
+      "sha256": "c96494b5283cf24878ee8d9a7d983752e0d7773bf830c4a6a3dd2d9537ebad6e",
+      "type": "graphic",
+      "title": "Kísérletezés – kontur",
+      "alt": "Kísérletezés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "kemia",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-kemia",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-nyelvek-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 698,
+      "sha256": "8362d236b547f98fe97954b12a1f0192f9a8ff181f9d4a8fd313024a2e757748",
+      "type": "graphic",
+      "title": "Nyelvtanulás – sotet",
+      "alt": "Nyelvtanulás témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "nyelvek",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-nyelvek",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-nyelvek-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 700,
+      "sha256": "d3aa536a36f8fd7e6e5ba1ca550f3cff8584dd49f1775235eaed71cb031fd4a5",
+      "type": "graphic",
+      "title": "Nyelvtanulás – vilagos",
+      "alt": "Nyelvtanulás témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "nyelvek",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-nyelvek",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-nyelvek-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 696,
+      "sha256": "3136e6b8d990fc597c730da93e4ddad62621af76419ad847f83fdee30128b1b3",
+      "type": "graphic",
+      "title": "Nyelvtanulás – kontur",
+      "alt": "Nyelvtanulás témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "nyelvek",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-nyelvek",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-jegyzeteles-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 749,
+      "sha256": "ae10b2b7172aef5be13867f296d7e981e8735578e77513bbd8c41c5418dbd14e",
+      "type": "graphic",
+      "title": "Jegyzetelés – sotet",
+      "alt": "Jegyzetelés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "jegyzeteles",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-jegyzeteles",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-jegyzeteles-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 751,
+      "sha256": "8f8e1c807fed79cf93c22442ddb04807c25d1bc7b1488df912837839f9ad2a19",
+      "type": "graphic",
+      "title": "Jegyzetelés – vilagos",
+      "alt": "Jegyzetelés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "jegyzeteles",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-jegyzeteles",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-jegyzeteles-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 747,
+      "sha256": "f2e580281dadbc05218f955924d2089b440fb238edafc5a98befcdb29e3cb926",
+      "type": "graphic",
+      "title": "Jegyzetelés – kontur",
+      "alt": "Jegyzetelés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "jegyzeteles",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-jegyzeteles",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-dij-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 706,
+      "sha256": "d9484b9df93aaaefc70e02591405475e48cd8aea6e4064bac5fc1b6eae92f2a8",
+      "type": "graphic",
+      "title": "Díjátadó – sotet",
+      "alt": "Díjátadó témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "dij",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-dij",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-dij-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 708,
+      "sha256": "4598cd52229d758ef579c87257d7dd884c0a9f8c2b4caf31a6124cff973eba0e",
+      "type": "graphic",
+      "title": "Díjátadó – vilagos",
+      "alt": "Díjátadó témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "dij",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-dij",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-dij-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 704,
+      "sha256": "d283090c200c340224ae0cecfcef8bc41af1c4fb6d5ea8d5bfe10b5dbd24c0fa",
+      "type": "graphic",
+      "title": "Díjátadó – kontur",
+      "alt": "Díjátadó témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "dij",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-dij",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-palya-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 756,
+      "sha256": "e5c00b78824933a3309c37a25d7c92daa4073c625196f62d70474366563aed6d",
+      "type": "graphic",
+      "title": "Sportpálya – sotet",
+      "alt": "Sportpálya témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "palya",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-palya",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-palya-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 758,
+      "sha256": "5ddae4e184499ef5d1977e357521b458f5e9de308851b5e46cfbf723536cc728",
+      "type": "graphic",
+      "title": "Sportpálya – vilagos",
+      "alt": "Sportpálya témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "palya",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-palya",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-palya-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 754,
+      "sha256": "6625d737524b3b97aa5f998443ec7adbbb91cfa02a27f7ce76b24300a298afba",
+      "type": "graphic",
+      "title": "Sportpálya – kontur",
+      "alt": "Sportpálya témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "palya",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-palya",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-edzesterv-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 738,
+      "sha256": "0e5b7831c063dabe2c219ed83fe64f356e6b5b2d6dadf5be9091492d6f5a8133",
+      "type": "graphic",
+      "title": "Edzésterv – sotet",
+      "alt": "Edzésterv témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "edzesterv",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-edzesterv",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-edzesterv-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 740,
+      "sha256": "b7283e3c005b1d0e80deed070549e734abf8afe983b9946499abf9a27e7182fa",
+      "type": "graphic",
+      "title": "Edzésterv – vilagos",
+      "alt": "Edzésterv témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "edzesterv",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-edzesterv",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-edzesterv-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 736,
+      "sha256": "d0a991d8e26289d4b672e1f2ccd20909782f8c15c9ee470c4a56993ec0aef29d",
+      "type": "graphic",
+      "title": "Edzésterv – kontur",
+      "alt": "Edzésterv témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "edzesterv",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-edzesterv",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-serulesmegelozes-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 718,
+      "sha256": "58960bd3c067d7c4862ca04ea459bf127390fc5a1fbaf84891de4e9357b8c227",
+      "type": "graphic",
+      "title": "Bemelegítés – sotet",
+      "alt": "Bemelegítés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "serulesmegelozes",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-serulesmegelozes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-serulesmegelozes-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 720,
+      "sha256": "c2423fc79eb11d65218fdb9909e26e4c7c99ad38327a1b3e427902d7331df8a8",
+      "type": "graphic",
+      "title": "Bemelegítés – vilagos",
+      "alt": "Bemelegítés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "serulesmegelozes",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-serulesmegelozes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-serulesmegelozes-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 716,
+      "sha256": "66d81210bada87b58575c20d0f11c12ba0d1e1e3fec85f5887b4afa1a74bca2c",
+      "type": "graphic",
+      "title": "Bemelegítés – kontur",
+      "alt": "Bemelegítés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "serulesmegelozes",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-serulesmegelozes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-viz-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 677,
+      "sha256": "dcc3fd374e1636e5d424cb66efd03c211452fb25535c78893e8156af6b57f7fc",
+      "type": "graphic",
+      "title": "Folyadékpótlás – sotet",
+      "alt": "Folyadékpótlás témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "viz",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-viz",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-viz-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 679,
+      "sha256": "72249d50c04670879bdc49c335f69959705502a9be9f28f664f6f0f452b40ca0",
+      "type": "graphic",
+      "title": "Folyadékpótlás – vilagos",
+      "alt": "Folyadékpótlás témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "viz",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-viz",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-viz-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 675,
+      "sha256": "2c5e62887828ae8f2de4d735e3d8319e64d26def8dda38a2354e4d246a4d6212",
+      "type": "graphic",
+      "title": "Folyadékpótlás – kontur",
+      "alt": "Folyadékpótlás témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "viz",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-viz",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-egeszseg-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 684,
+      "sha256": "f0cf5fd38f50af9a12c8b9a0d103844941d6e152e85cffc97ab06fe2b4a67fdd",
+      "type": "graphic",
+      "title": "Egészségtudatosság – sotet",
+      "alt": "Egészségtudatosság témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "egeszseg",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-egeszseg",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-egeszseg-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 686,
+      "sha256": "5e310cba9c022d9ba8b9023cf6e0f426d8d26172d5e2ee16d1480d29d4ff33e2",
+      "type": "graphic",
+      "title": "Egészségtudatosság – vilagos",
+      "alt": "Egészségtudatosság témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "egeszseg",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-egeszseg",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-egeszseg-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 682,
+      "sha256": "dabda2afac360680ca2788db0b450ae028f90813d44d0435126522b275d69555",
+      "type": "graphic",
+      "title": "Egészségtudatosság – kontur",
+      "alt": "Egészségtudatosság témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "egeszseg",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-egeszseg",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-vizsgafelk-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 727,
+      "sha256": "bf77c85cfbeb95fdb82ee7ef3313c5d0e04a09af092db2837c6599acaeb02871",
+      "type": "graphic",
+      "title": "Felkészülés – sotet",
+      "alt": "Felkészülés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "vizsgafelk",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-vizsgafelk",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-vizsgafelk-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 729,
+      "sha256": "fb0050bde7e5a7cb1a1d65020e4dca2cbe9c34c6716bbfd0695f538780b3c41c",
+      "type": "graphic",
+      "title": "Felkészülés – vilagos",
+      "alt": "Felkészülés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "vizsgafelk",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-vizsgafelk",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-vizsgafelk-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 725,
+      "sha256": "5c1a79f6d53808a6319b2c6e5f86215aaecc8704c476777c2054f4f9edce38e3",
+      "type": "graphic",
+      "title": "Felkészülés – kontur",
+      "alt": "Felkészülés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "vizsgafelk",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-vizsgafelk",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-szulok-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 740,
+      "sha256": "1c1d8a5070c4beb9ec608aa4dd528af92e6c39465c30354ca91cc33410105b3c",
+      "type": "graphic",
+      "title": "Szülői együttműködés – sotet",
+      "alt": "Szülői együttműködés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "szulok",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-szulok",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-szulok-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 742,
+      "sha256": "5598132a1a54cb23b1dd31234c692c7f61058e68ba883d2471dc2a6b6146f65f",
+      "type": "graphic",
+      "title": "Szülői együttműködés – vilagos",
+      "alt": "Szülői együttműködés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "szulok",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-szulok",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-szulok-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 738,
+      "sha256": "89014b95ffd4b04e499c1e373ea3c2d777a0a06cc8bb6f5b304b3b69d989dfe8",
+      "type": "graphic",
+      "title": "Szülői együttműködés – kontur",
+      "alt": "Szülői együttműködés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "szulok",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-szulok",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-csengetes-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 685,
+      "sha256": "3fad661fd59e0ab36c5da201e1f8c8c5b937a63d2975b3ac2940f5de1e77d533",
+      "type": "graphic",
+      "title": "Csengetés – sotet",
+      "alt": "Csengetés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "csengetes",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-csengetes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-csengetes-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 687,
+      "sha256": "204a6a1c38ba6a8f615b341b2f4e5ce1c070524ed9cbdabccd5d7473c37c4c11",
+      "type": "graphic",
+      "title": "Csengetés – vilagos",
+      "alt": "Csengetés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "csengetes",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-csengetes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-csengetes-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 683,
+      "sha256": "49263f13368de663cd35489e42f3bc18afa9297fa372e03a1c722b523d22f66e",
+      "type": "graphic",
+      "title": "Csengetés – kontur",
+      "alt": "Csengetés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "csengetes",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-csengetes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-jelentkezes-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 711,
+      "sha256": "acb7ab0673765c4976df06704fee9dbb527130be879c53a764c2f1ea315e11db",
+      "type": "graphic",
+      "title": "Jelentkezés – sotet",
+      "alt": "Jelentkezés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "jelentkezes",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-jelentkezes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-jelentkezes-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 713,
+      "sha256": "6735535cdd35405e6997afd378e716b3830c28849db398dfea61aa56ae1e8af7",
+      "type": "graphic",
+      "title": "Jelentkezés – vilagos",
+      "alt": "Jelentkezés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "jelentkezes",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-jelentkezes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-jelentkezes-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 709,
+      "sha256": "b1d1c0bb5d20e63be2bd71acbdea1be5f8131b13514ea2f1e1424cb46eeb5ded",
+      "type": "graphic",
+      "title": "Jelentkezés – kontur",
+      "alt": "Jelentkezés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "jelentkezes",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-jelentkezes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-etkezes-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 702,
+      "sha256": "fbf116d0f3a0f29dff20d2e590f1db271dd15e8bc714e128696f7f0835f305a8",
+      "type": "graphic",
+      "title": "Étkezés – sotet",
+      "alt": "Étkezés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "etkezes",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-etkezes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-etkezes-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 704,
+      "sha256": "b1cbda53acad7db864f068e16e42f468335f0287de3deb76dcc3c3adcaf2ec12",
+      "type": "graphic",
+      "title": "Étkezés – vilagos",
+      "alt": "Étkezés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "etkezes",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-etkezes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-etkezes-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 700,
+      "sha256": "1384b65af883e551c876faaa47a9e649aa5899b8d6a657379e22eb342ca9a7fe",
+      "type": "graphic",
+      "title": "Étkezés – kontur",
+      "alt": "Étkezés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "etkezes",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-etkezes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-kozlekedes-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 762,
+      "sha256": "054ed4b21121ddd88b7b6b6565d58ddfa035e1a2abc007f1e55f46a90d6ff524",
+      "type": "graphic",
+      "title": "Közlekedés – sotet",
+      "alt": "Közlekedés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "kozlekedes",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-kozlekedes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-kozlekedes-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 764,
+      "sha256": "12de70a3196c2cd8d6d0527580b044ee10ddc365ccf3b2bc454bbe8fc6eae092",
+      "type": "graphic",
+      "title": "Közlekedés – vilagos",
+      "alt": "Közlekedés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "kozlekedes",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-kozlekedes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-kozlekedes-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 760,
+      "sha256": "d52869dd1f0655d4eba5000fca328f9f3234308120b967cfd47077f2d4a5f0b3",
+      "type": "graphic",
+      "title": "Közlekedés – kontur",
+      "alt": "Közlekedés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "kozlekedes",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-kozlekedes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-hozzaferes-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 695,
+      "sha256": "fe6939f643705225ad970b33345825e81a9c08169f92f9cbae141a0e2ed0f17a",
+      "type": "graphic",
+      "title": "Akadálymentes elérés – sotet",
+      "alt": "Akadálymentes elérés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "hozzaferes",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-hozzaferes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-hozzaferes-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 697,
+      "sha256": "7fab1001a292ef9bd7df2413850e1c4c03ad38099eee15681d6048f2d386705d",
+      "type": "graphic",
+      "title": "Akadálymentes elérés – vilagos",
+      "alt": "Akadálymentes elérés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "hozzaferes",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-hozzaferes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-hozzaferes-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 693,
+      "sha256": "3f2980e71ac24235c977993b7fe6dc0d0baba6a6f99b78038dc6a766b94ba5ac",
+      "type": "graphic",
+      "title": "Akadálymentes elérés – kontur",
+      "alt": "Akadálymentes elérés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "hozzaferes",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-hozzaferes",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-adatbiztonsag-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 650,
+      "sha256": "0650262111d0d1de6392f7a37c4c0f8817514f94f19057e8bf30079d4e2b6b69",
+      "type": "graphic",
+      "title": "Adatbiztonság – sotet",
+      "alt": "Adatbiztonság témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "adatbiztonsag",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-adatbiztonsag",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-adatbiztonsag-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 652,
+      "sha256": "8c9bf079c84b8f4799d4e4745826b63f1ac245bf1f3c67d15417e602739a26cf",
+      "type": "graphic",
+      "title": "Adatbiztonság – vilagos",
+      "alt": "Adatbiztonság témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "adatbiztonsag",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-adatbiztonsag",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-adatbiztonsag-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 648,
+      "sha256": "8cab78dc892b7537a30c3027e2c4df95341527c87dc73a4ed46676c80af4c198",
+      "type": "graphic",
+      "title": "Adatbiztonság – kontur",
+      "alt": "Adatbiztonság témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "adatbiztonsag",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-adatbiztonsag",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-archivum-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 732,
+      "sha256": "4c78d55a9896d8c01f0c241db58dc1a47fab58b646367d160e6879f5c8a3c8f9",
+      "type": "graphic",
+      "title": "Dokumentumarchívum – sotet",
+      "alt": "Dokumentumarchívum témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "archivum",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-archivum",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-archivum-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 734,
+      "sha256": "1cfee289451b34949cf68fcf15c5775e4af8b9aa9ee2f1ec6a716dcdbe08b210",
+      "type": "graphic",
+      "title": "Dokumentumarchívum – vilagos",
+      "alt": "Dokumentumarchívum témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "archivum",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-archivum",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-archivum-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 730,
+      "sha256": "d8b36e136cd6c6cd891bccedf6fe31708babd5a98365739d9a9821b58017775c",
+      "type": "graphic",
+      "title": "Dokumentumarchívum – kontur",
+      "alt": "Dokumentumarchívum témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "archivum",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-archivum",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-digitalis-ugy-sotet.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 722,
+      "sha256": "e34049d1ee9de7376eb9f75f32117e6ef3ef56e73c91e9a63b755d7999704bf7",
+      "type": "graphic",
+      "title": "Online ügyintézés – sotet",
+      "alt": "Online ügyintézés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "digitalis-ugy",
+        "sotet"
+      ],
+      "mediaId": "media:tematika2-digitalis-ugy",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-digitalis-ugy-vilagos.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 724,
+      "sha256": "55b7c7b7046cc7c1d336c531a70c0b4f9302e0c4f38f4576c5b794ef4c62b8b0",
+      "type": "graphic",
+      "title": "Online ügyintézés – vilagos",
+      "alt": "Online ügyintézés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "digitalis-ugy",
+        "vilagos"
+      ],
+      "mediaId": "media:tematika2-digitalis-ugy",
+      "rightsStatus": "institutional-review-before-publication"
+    },
+    {
+      "path": "assets/media/illustrations/uj-digitalis-ugy-kontur.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 720,
+      "sha256": "72d013b8dc6d48bf10ee6e7a8e18019ff4604c5e806423ff1b6db676bd147feb",
+      "type": "graphic",
+      "title": "Online ügyintézés – kontur",
+      "alt": "Online ügyintézés témájú sematikus illusztráció",
+      "description": "Saját szerkesztői vektorgrafika, nem valós iskolai esemény vagy szereplő fényképe.",
+      "tags": [
+        "illusztráció",
+        "tematikus",
+        "digitalis-ugy",
+        "kontur"
+      ],
+      "mediaId": "media:tematika2-digitalis-ugy",
+      "rightsStatus": "institutional-review-before-publication"
     }
   ]
 }

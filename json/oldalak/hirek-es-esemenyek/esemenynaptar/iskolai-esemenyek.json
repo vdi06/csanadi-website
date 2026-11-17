@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Iskolai események – Csanádi Sportiskola",
-    "description": "Iskolai programok, közösségi alkalmak és tanulmányi események helye a naptárban.",
+    "description": "Iskolai programok, közösségi alkalmak és tanulmányi események helye a naptárban. A közösségi, tanulmányi és iskolai programok szervezési információi és.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000045",
       "type": "section",
       "title": "Iskolai alkalmak",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000045",
           "type": "markdown",
           "data": {
-            "text": "A gimnáziumi nyílt napok 2026. november 17-én és 19-én 8:30-kor kezdődnek. Az iskola e programokhoz regisztrációt is említ. További iskolai rendezvények dátumát ellenőrzés nélkül nem adjuk hozzá a naptárhoz.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/hirek-es-esemenyek)"
+            "text": "A gimnáziumi nyílt napok 2026. november 17-én és 19-én 8:30-kor kezdődnek. Az iskola e programokhoz regisztrációt is említ. További iskolai rendezvények dátumát ellenőrzés nélkül nem adjuk hozzá a naptárhoz.\n\n[Hírek és események](#/hirek-es-esemenyek)\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek",
     "verifiedContent": false,
-    "bannerMediaId": "media:esemenyek"
+    "bannerMediaId": "media:esemenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "home"
+    }
   }
 }

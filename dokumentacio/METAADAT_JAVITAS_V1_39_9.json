@@ -1,0 +1,603 @@
+{
+  "release": "1.39.9",
+  "pagesChanged": 66,
+  "summaries": 47,
+  "descriptions": 66,
+  "changes": [
+    {
+      "file": "json/oldalak/iskolank.json",
+      "id": "page:000002",
+      "route": "#/iskolank",
+      "summaryBefore": "Több mint száz évnyi iskolatörténet, sport és közösség.",
+      "summaryAfter": "Több mint száz évnyi iskolatörténet, sport és közösség. Fedezd fel az intézmény múltját, közösségi értékeit és a sportot a tanulással összekapcsoló szemléletét.",
+      "seoBefore": "Több mint száz évnyi iskolatörténet, sport és közösség.",
+      "seoAfter": "Több mint száz évnyi iskolatörténet, sport és közösség. Fedezd fel az intézmény múltját, közösségi értékeit és a sportot a tanulással összekapcsoló szemléletét."
+    },
+    {
+      "file": "json/oldalak/iskolank/bemutatkozas.json",
+      "id": "page:000003",
+      "route": "#/iskolank/bemutatkozas",
+      "summaryBefore": "Általános iskola, gimnázium és sportiskolai nevelés egy közösségben.",
+      "summaryAfter": "Általános iskola, gimnázium és sportiskolai nevelés egy közösségben. Az oldal bemutatja a zuglói iskolát, a közös értékeket és a további képzési tájékozódás útvonalait.",
+      "seoBefore": "Általános iskola, gimnázium és sportiskolai nevelés egy közösségben.",
+      "seoAfter": "Általános iskola, gimnázium és sportiskolai nevelés egy közösségben. Az oldal bemutatja a zuglói iskolát, a közös értékeket és a további képzési tájékozódás."
+    },
+    {
+      "file": "json/oldalak/iskolank/tantestulet.json",
+      "id": "page:000064",
+      "route": "#/iskolank/tantestulet",
+      "summaryBefore": "A tanítás, a nevelés és a sportpedagógia közös munkaterületei.",
+      "summaryAfter": "A tanítás, a nevelés és a sportpedagógia közös munkaterületei. Ismerd meg a pedagógiai együttműködés és a tanárokkal való hivatalos kapcsolattartás lehetőségeit.",
+      "seoBefore": "A tanítás, a nevelés és a sportpedagógia közös munkaterületei.",
+      "seoAfter": "A tanítás, a nevelés és a sportpedagógia közös munkaterületei. Ismerd meg a pedagógiai együttműködés és a tanárokkal való hivatalos kapcsolattartás lehetőségeit."
+    },
+    {
+      "file": "json/oldalak/iskolank/tortenet.json",
+      "id": "page:000005",
+      "route": "#/iskolank/tortenet",
+      "summaryBefore": "A törökőri iskola története a sportiskolai hagyományokig.",
+      "summaryAfter": "A törökőri iskola története a sportiskolai hagyományokig. Az iskolatörténeti mérföldkövek, a sportiskolai korszak és a további források egy oldalon követhetők.",
+      "seoBefore": "A törökőri iskola története a sportiskolai hagyományokig.",
+      "seoAfter": "A törökőri iskola története a sportiskolai hagyományokig. Az iskolatörténeti mérföldkövek, a sportiskolai korszak és a további források egy oldalon követhetők."
+    },
+    {
+      "file": "json/oldalak/iskolank/hagyomanyok-es-elismeresek.json",
+      "id": "page:000006",
+      "route": "#/iskolank/hagyomanyok-es-elismeresek",
+      "summaryBefore": "Az iskolai közösség hagyományainak és elismeréseinek áttekintő oldala.",
+      "summaryAfter": "Az iskolai közösség hagyományainak és elismeréseinek áttekintő oldala. Olvass a mindennapi hagyományokról, valamint a nyilvánosan ellenőrizhető eredmények bemutatásának módjáról.",
+      "seoBefore": "Az iskolai közösség hagyományainak és elismeréseinek áttekintő oldala.",
+      "seoAfter": "Az iskolai közösség hagyományainak és elismeréseinek áttekintő oldala. Olvass a mindennapi hagyományokról, valamint a nyilvánosan ellenőrizhető eredmények."
+    },
+    {
+      "file": "json/oldalak/iskolank/buszkesegeink.json",
+      "id": "page:000007",
+      "route": "#/iskolank/buszkesegeink",
+      "summaryBefore": "Olimpiai és világbajnoki eredmények az iskola nyilvános büszkeséglistájáról.",
+      "summaryAfter": "Olimpiai és világbajnoki eredmények az iskola nyilvános büszkeséglistájáról.",
+      "seoBefore": "Olimpiai és világbajnoki eredmények az iskola nyilvános büszkeséglistájáról.",
+      "seoAfter": "Olimpiai és világbajnoki eredmények az iskola nyilvános büszkeséglistájáról. A sportolói örökség és a közzétett eredmények segítenek megismerni az iskola."
+    },
+    {
+      "file": "json/oldalak/iskolank/partnerek.json",
+      "id": "page:000010",
+      "route": "#/iskolank/partnerek",
+      "summaryBefore": "Az iskola együttműködéseinek és lehetséges kapcsolódási területeinek áttekintése.",
+      "summaryAfter": "Az iskola együttműködéseinek és lehetséges kapcsolódási területeinek áttekintése.",
+      "seoBefore": "Az iskola együttműködéseinek és lehetséges kapcsolódási területeinek áttekintése.",
+      "seoAfter": "Az iskola együttműködéseinek és lehetséges kapcsolódási területeinek áttekintése. A partnerségek szerepéről, az együttműködési területekről és a."
+    },
+    {
+      "file": "json/oldalak/iskolank/alapitvany.json",
+      "id": "page:000009",
+      "route": "#/iskolank/alapitvany",
+      "summaryBefore": "Tanulás és sport: támogatás a fejlődési lehetőségekhez.",
+      "summaryAfter": "Tanulás és sport: támogatás a fejlődési lehetőségekhez. Az alapítvány szerepét és a támogatási lehetőségekről szóló hivatalos tájékozódás módját mutatja be.",
+      "seoBefore": "Tanulás és sport: támogatás a fejlődési lehetőségekhez.",
+      "seoAfter": "Tanulás és sport: támogatás a fejlődési lehetőségekhez. Az alapítvány szerepét és a támogatási lehetőségekről szóló hivatalos tájékozódás módját mutatja be."
+    },
+    {
+      "file": "json/oldalak/iskolank/oko-iskola.json",
+      "id": "page:000008",
+      "route": "#/iskolank/oko-iskola",
+      "summaryBefore": "Környezettudatosság, egészséges életmód és felelős közösség.",
+      "summaryAfter": "Környezettudatosság, egészséges életmód és felelős közösség. Környezeti nevelés, fenntarthatóság és az iskolai hétköznapok felelős szokásai kerülnek előtérbe.",
+      "seoBefore": "Környezettudatosság, egészséges életmód és felelős közösség.",
+      "seoAfter": "Környezettudatosság, egészséges életmód és felelős közösség. Környezeti nevelés, fenntarthatóság és az iskolai hétköznapok felelős szokásai kerülnek előtérbe."
+    },
+    {
+      "file": "json/oldalak/oktatas.json",
+      "id": "page:000011",
+      "route": "#/oktatas",
+      "summaryBefore": "Képzési utak, felvételi, vizsgák, tanévi tudnivalók és tanulási segédletek.",
+      "summaryAfter": "Képzési utak, felvételi, vizsgák, tanévi tudnivalók és tanulási segédletek.",
+      "seoBefore": "Képzési utak, felvételi, vizsgák, tanévi tudnivalók és tanulási segédletek.",
+      "seoAfter": "Képzési utak, felvételi, vizsgák, tanévi tudnivalók és tanulási segédletek. Innen érhetők el a képzések, a jelentkezési tájékoztatók, a vizsgák és a tanulási."
+    },
+    {
+      "file": "json/oldalak/oktatas/kepzeseink.json",
+      "id": "page:000012",
+      "route": "#/oktatas/kepzeseink",
+      "summaryBefore": "Általános iskolai, gimnáziumi és sportiskolai tanulási utak.",
+      "summaryAfter": "Általános iskolai, gimnáziumi és sportiskolai tanulási utak. Az általános iskolai és gimnáziumi lehetőségek mellett a tanulmányi követelményekhez is vezet út.",
+      "seoBefore": "Általános iskolai, gimnáziumi és sportiskolai tanulási utak.",
+      "seoAfter": "Általános iskolai, gimnáziumi és sportiskolai tanulási utak. Az általános iskolai és gimnáziumi lehetőségek mellett a tanulmányi követelményekhez is vezet út."
+    },
+    {
+      "file": "json/oldalak/oktatas/kepzeseink/altalanos-iskola.json",
+      "id": "page:000013",
+      "route": "#/oktatas/kepzeseink/altalanos-iskola",
+      "summaryBefore": "A tanulási alapok, közösségi élmények és a mozgás fejlesztése.",
+      "summaryAfter": "A tanulási alapok, közösségi élmények és a mozgás fejlesztése. A családok az iskolakezdésről, az alapozó tanulásról és a beiratkozási forrásokról tájékozódhatnak.",
+      "seoBefore": "A tanulási alapok, közösségi élmények és a mozgás fejlesztése.",
+      "seoAfter": "A tanulási alapok, közösségi élmények és a mozgás fejlesztése. A családok az iskolakezdésről, az alapozó tanulásról és a beiratkozási forrásokról tájékozódhatnak."
+    },
+    {
+      "file": "json/oldalak/oktatas/kepzeseink/gimnazium.json",
+      "id": "page:000014",
+      "route": "#/oktatas/kepzeseink/gimnazium",
+      "summaryBefore": "Felkészülés továbbtanulásra, érettségire és a sportolói élet kihívásaira.",
+      "summaryAfter": "Felkészülés továbbtanulásra, érettségire és a sportolói élet kihívásaira. A középiskolai tanulmányok, a továbbtanulás és a felvételi tájékoztatók kapcsolódnak egymáshoz.",
+      "seoBefore": "Felkészülés továbbtanulásra, érettségire és a sportolói élet kihívásaira.",
+      "seoAfter": "Felkészülés továbbtanulásra, érettségire és a sportolói élet kihívásaira. A középiskolai tanulmányok, a továbbtanulás és a felvételi tájékoztatók kapcsolódnak."
+    },
+    {
+      "file": "json/oldalak/oktatas/kepzeseink/sportiskolai-neveles.json",
+      "id": "page:000015",
+      "route": "#/oktatas/kepzeseink/sportiskolai-neveles",
+      "summaryBefore": "Sportteljesítmény és tanulmányi előrehaladás tudatos összehangolása.",
+      "summaryAfter": "Sportteljesítmény és tanulmányi előrehaladás tudatos összehangolása. Az oldal a tanulmányi feladatok és a sportolói felkészülés közös tervezésének szempontjait járja körül.",
+      "seoBefore": "Sportteljesítmény és tanulmányi előrehaladás tudatos összehangolása.",
+      "seoAfter": "Sportteljesítmény és tanulmányi előrehaladás tudatos összehangolása. Az oldal a tanulmányi feladatok és a sportolói felkészülés közös tervezésének szempontjait."
+    },
+    {
+      "file": "json/oldalak/oktatas/tanevek.json",
+      "id": "page:000025",
+      "route": "#/oktatas/tanevek",
+      "summaryBefore": "Tanévi információk, fontos időszakok és tanulói szervezés.",
+      "summaryAfter": "Tanévi információk, fontos időszakok és tanulói szervezés. A tanév szervezéséhez kapcsolódó fontos időszakok és a kapcsolódó információs oldalak érhetők el.",
+      "seoBefore": "Tanévi információk, fontos időszakok és tanulói szervezés.",
+      "seoAfter": "Tanévi információk, fontos időszakok és tanulói szervezés. A tanév szervezéséhez kapcsolódó fontos időszakok és a kapcsolódó információs oldalak érhetők el."
+    },
+    {
+      "file": "json/oldalak/oktatas/tanevek/aktualis-tanev.json",
+      "id": "page:000026",
+      "route": "#/oktatas/tanevek/aktualis-tanev",
+      "summaryBefore": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi.",
+      "summaryAfter": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi. A jelenlegi tanév szervezési adatait és az események hivatalos ellenőrzési forrásait gyűjti össze.",
+      "seoBefore": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi.",
+      "seoAfter": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi. A jelenlegi tanév szervezési adatait és az események hivatalos ellenőrzési forrásait gyűjti össze."
+    },
+    {
+      "file": "json/oldalak/oktatas/tanevek/korabbi-tanevek.json",
+      "id": "page:000027",
+      "route": "#/oktatas/tanevek/korabbi-tanevek",
+      "summaryBefore": "Korábbi tanévekhez kapcsolódó dokumentumok és események rendszerezett gyűjtőoldala.",
+      "summaryAfter": "Korábbi tanévekhez kapcsolódó dokumentumok és események rendszerezett gyűjtőoldala.",
+      "seoBefore": "Korábbi tanévekhez kapcsolódó dokumentumok és események rendszerezett gyűjtőoldala.",
+      "seoAfter": "Korábbi tanévekhez kapcsolódó dokumentumok és események rendszerezett gyűjtőoldala. Az archívum a korábbi évek dokumentumainak és eseményeinek visszakeresésében."
+    },
+    {
+      "file": "json/oldalak/oktatas/vizsgak.json",
+      "id": "page:000021",
+      "route": "#/oktatas/vizsgak",
+      "summaryBefore": "Érettségi és osztályozó vizsgák: tájékoztatás és felkészülés.",
+      "summaryAfter": "Érettségi és osztályozó vizsgák: tájékoztatás és felkészülés. A vizsgaidőszakokhoz, követelményekhez és hivatalos tájékoztatókhoz vezető hivatkozások találhatók itt.",
+      "seoBefore": "Érettségi és osztályozó vizsgák: tájékoztatás és felkészülés.",
+      "seoAfter": "Érettségi és osztályozó vizsgák: tájékoztatás és felkészülés. A vizsgaidőszakokhoz, követelményekhez és hivatalos tájékoztatókhoz vezető hivatkozások találhatók."
+    },
+    {
+      "file": "json/oldalak/oktatas/vizsgak/erettsegi.json",
+      "id": "page:000022",
+      "route": "#/oktatas/vizsgak/erettsegi",
+      "summaryBefore": "A közzétett 2026-os őszi vizsgaidőpontok és a felkészülés forrásai.",
+      "summaryAfter": "A közzétett 2026-os őszi vizsgaidőpontok és a felkészülés forrásai. A vizsgaidőszakok, a felkészülési tudnivalók és az eredeti hivatalos források együtt szerepelnek.",
+      "seoBefore": "A közzétett 2026-os őszi vizsgaidőpontok és a felkészülés forrásai.",
+      "seoAfter": "A közzétett 2026-os őszi vizsgaidőpontok és a felkészülés forrásai. A vizsgaidőszakok, a felkészülési tudnivalók és az eredeti hivatalos források együtt."
+    },
+    {
+      "file": "json/oldalak/oktatas/vizsgak/osztalyozo-vizsgak.json",
+      "id": "page:000023",
+      "route": "#/oktatas/vizsgak/osztalyozo-vizsgak",
+      "summaryBefore": "Az önálló felkészülés és a hivatalos vizsgakövetelmények áttekintése.",
+      "summaryAfter": "Az önálló felkészülés és a hivatalos vizsgakövetelmények áttekintése. A felkészülés tervezéséről, a követelmények ellenőrzéséről és az érvényesség vizsgálatáról olvashatsz.",
+      "seoBefore": "Az önálló felkészülés és a hivatalos vizsgakövetelmények áttekintése.",
+      "seoAfter": "Az önálló felkészülés és a hivatalos vizsgakövetelmények áttekintése. A felkészülés tervezéséről, a követelmények ellenőrzéséről és az érvényesség vizsgálatáról."
+    },
+    {
+      "file": "json/oldalak/oktatas/vizsgak/egyeb-vizsgak.json",
+      "id": "page:000024",
+      "route": "#/oktatas/vizsgak/egyeb-vizsgak",
+      "summaryBefore": "Az érettségin és az osztályozó vizsgán kívüli vizsgahelyzetek tájékozódási oldala.",
+      "summaryAfter": "Az érettségin és az osztályozó vizsgán kívüli vizsgahelyzetek tájékozódási oldala.",
+      "seoBefore": "Az érettségin és az osztályozó vizsgán kívüli vizsgahelyzetek tájékozódási oldala.",
+      "seoAfter": "Az érettségin és az osztályozó vizsgán kívüli vizsgahelyzetek tájékozódási oldala. Megtudhatod, mely forrásokból ellenőrizhetők a nem érettségi jellegű."
+    },
+    {
+      "file": "json/oldalak/oktatas/tananyagok-es-jegyzetek.json",
+      "id": "page:000030",
+      "route": "#/oktatas/tananyagok-es-jegyzetek",
+      "summaryBefore": "Önálló tanulás, digitális fájlkezelés és felkészülési módszerek.",
+      "summaryAfter": "Önálló tanulás, digitális fájlkezelés és felkészülési módszerek. Tanulási módszerek, digitális fájlkezelési gyakorlat és önálló felkészülést támogató eszközök érhetők el.",
+      "seoBefore": "Önálló tanulás, digitális fájlkezelés és felkészülési módszerek.",
+      "seoAfter": "Önálló tanulás, digitális fájlkezelés és felkészülési módszerek. Tanulási módszerek, digitális fájlkezelési gyakorlat és önálló felkészülést támogató eszközök."
+    },
+    {
+      "file": "json/oldalak/oktatas/tananyagok-es-jegyzetek/tanulastamogatas.json",
+      "id": "page:000069",
+      "route": "#/tanulastamogatas",
+      "summaryBefore": "Gyakorlati tanulási módszerek, személyes célok és helyi időmérő eszközök.",
+      "summaryAfter": "Gyakorlati tanulási módszerek, személyes célok és helyi időmérő eszközök. Tanulási célok, feladatbontás és helyben használható időmérők segítik az önálló munkát.",
+      "seoBefore": "Gyakorlati tanulási módszerek, személyes célok és helyi időmérő eszközök.",
+      "seoAfter": "Gyakorlati tanulási módszerek, személyes célok és helyi időmérő eszközök. Tanulási célok, feladatbontás és helyben használható időmérők segítik az önálló munkát."
+    },
+    {
+      "file": "json/oldalak/oktatas/konyvtar.json",
+      "id": "page:000028",
+      "route": "#/oktatas/konyvtar",
+      "summaryBefore": "Olvasás, információkeresés és önálló tudásszerzés.",
+      "summaryAfter": "Olvasás, információkeresés és önálló tudásszerzés. A könyvtár szerepét, a tudatos keresést és a forráskritikus olvasás gyakorlati szempontjait mutatja be.",
+      "seoBefore": "Olvasás, információkeresés és önálló tudásszerzés.",
+      "seoAfter": "Olvasás, információkeresés és önálló tudásszerzés. A könyvtár szerepét, a tudatos keresést és a forráskritikus olvasás gyakorlati szempontjait mutatja be."
+    },
+    {
+      "file": "json/oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json",
+      "id": "page:000029",
+      "route": "#/oktatas/konyvtar/konyvtari-szolgaltatasok",
+      "summaryBefore": "Iskolai könyvtári lehetőségek és tájékozódási útmutató.",
+      "summaryAfter": "Iskolai könyvtári lehetőségek és tájékozódási útmutató. A kölcsönzés és a könyvtári tájékozódás lehetőségeiről, valamint további forrásokról olvashatsz.",
+      "seoBefore": "Iskolai könyvtári lehetőségek és tájékozódási útmutató.",
+      "seoAfter": "Iskolai könyvtári lehetőségek és tájékozódási útmutató. A kölcsönzés és a könyvtári tájékozódás lehetőségeiről, valamint további forrásokról olvashatsz."
+    },
+    {
+      "file": "json/oldalak/oktatas/digitalis-kultura/online-biztonsag.json",
+      "id": "page:000067",
+      "route": "#/oktatas/digitalis-kultura/online-biztonsag",
+      "summaryBefore": "Személyes adatok védelme, biztonságos hozzáférés és felelős online viselkedés.",
+      "summaryAfter": "Személyes adatok védelme, biztonságos hozzáférés és felelős online viselkedés.",
+      "seoBefore": "Személyes adatok védelme, biztonságos hozzáférés és felelős online viselkedés.",
+      "seoAfter": "Személyes adatok védelme, biztonságos hozzáférés és felelős online viselkedés. Gyakorlati tanácsok a jelszavak, a személyes adatok és a felelős digitális."
+    },
+    {
+      "file": "json/oldalak/oktatas/digitalis-kultura/mesterseges-intelligencia.json",
+      "id": "page:000068",
+      "route": "#/oktatas/digitalis-kultura/mesterseges-intelligencia",
+      "summaryBefore": "Az MI mint segédeszköz: forráskritika, önálló gondolkodás és felelős felhasználás.",
+      "summaryAfter": "Az MI mint segédeszköz: forráskritika, önálló gondolkodás és felelős felhasználás.",
+      "seoBefore": "Az MI mint segédeszköz: forráskritika, önálló gondolkodás és felelős felhasználás.",
+      "seoAfter": "Az MI mint segédeszköz: forráskritika, önálló gondolkodás és felelős felhasználás. Forráskritika, ellenőrzés, saját gondolkodás és a generatív eszközök tudatos."
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli.json",
+      "id": "page:000016",
+      "route": "#/oktatas/felveteli",
+      "summaryBefore": "Tájékozódás az általános iskolai beiratkozás és a gimnáziumi jelentkezés előtt.",
+      "summaryAfter": "Tájékozódás az általános iskolai beiratkozás és a gimnáziumi jelentkezés előtt.",
+      "seoBefore": "Tájékozódás az általános iskolai beiratkozás és a gimnáziumi jelentkezés előtt.",
+      "seoAfter": "Tájékozódás az általános iskolai beiratkozás és a gimnáziumi jelentkezés előtt. A két beiskolázási út, a hivatalos dokumentumok és a jelentkezés lépései külön is."
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli/elso-evfolyam.json",
+      "id": "page:000017",
+      "route": "#/oktatas/felveteli/elso-evfolyam",
+      "summaryBefore": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források.",
+      "summaryAfter": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források. A családok a szükséges tájékoztatókat és az első osztályos beiratkozás hivatalos felületeit találják meg.",
+      "seoBefore": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források.",
+      "seoAfter": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források. A családok a szükséges tájékoztatókat és az első osztályos beiratkozás hivatalos felületeit."
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli/kilencedik-evfolyam.json",
+      "id": "page:000018",
+      "route": "#/oktatas/felveteli/kilencedik-evfolyam",
+      "summaryBefore": "Középiskola-választás, jelentkezés, tájékoztatók és kapcsolódó dokumentumok.",
+      "summaryAfter": "Középiskola-választás, jelentkezés, tájékoztatók és kapcsolódó dokumentumok.",
+      "seoBefore": "Középiskola-választás, jelentkezés, tájékoztatók és kapcsolódó dokumentumok.",
+      "seoAfter": "Középiskola-választás, jelentkezés, tájékoztatók és kapcsolódó dokumentumok. Segítség a középiskolai jelentkezés sorrendjéhez, az igazolt határidőkhöz és a."
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli/nyilt-napok.json",
+      "id": "page:000019",
+      "route": "#/oktatas/felveteli/nyilt-napok",
+      "summaryBefore": "Tájékozódás az iskolai bemutatkozó alkalmakról és a nyílt napokról.",
+      "summaryAfter": "Tájékozódás az iskolai bemutatkozó alkalmakról és a nyílt napokról. Ismerd meg a tájékozódási alkalmak célját, a részvétel feltételeit és a hivatalos időpontellenőrzést.",
+      "seoBefore": "Tájékozódás az iskolai bemutatkozó alkalmakról és a nyílt napokról.",
+      "seoAfter": "Tájékozódás az iskolai bemutatkozó alkalmakról és a nyílt napokról. Ismerd meg a tájékozódási alkalmak célját, a részvétel feltételeit és a hivatalos."
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli/felveteli-hataridok.json",
+      "id": "page:000020",
+      "route": "#/oktatas/felveteli/felveteli-hataridok",
+      "summaryBefore": "A felvételi és beiratkozási időpontok ellenőrzésének kiindulópontja.",
+      "summaryAfter": "A felvételi és beiratkozási időpontok ellenőrzésének kiindulópontja. A jelentkezések, értesítések és beiratkozások időrendjét csak megerősített források alapján szabad követni.",
+      "seoBefore": "A felvételi és beiratkozási időpontok ellenőrzésének kiindulópontja.",
+      "seoAfter": "A felvételi és beiratkozási időpontok ellenőrzésének kiindulópontja. A jelentkezések, értesítések és beiratkozások időrendjét csak megerősített források alapján."
+    },
+    {
+      "file": "json/oldalak/sport.json",
+      "id": "page:000031",
+      "route": "#/sport",
+      "summaryBefore": "Kitartás, sportágak, történetek és a Csanádi sportolói hagyománya.",
+      "summaryAfter": "Kitartás, sportágak, történetek és a Csanádi sportolói hagyománya. A sportági lehetőségeket, sportolói történeteket és hiteles eredményekre vezető oldalakat fogja össze.",
+      "seoBefore": "Kitartás, sportágak, történetek és a Csanádi sportolói hagyománya.",
+      "seoAfter": "Kitartás, sportágak, történetek és a Csanádi sportolói hagyománya. A sportági lehetőségeket, sportolói történeteket és hiteles eredményekre vezető oldalakat."
+    },
+    {
+      "file": "json/oldalak/sport/sportagak.json",
+      "id": "page:000032",
+      "route": "#/sport/sportagak",
+      "summaryBefore": "Az egyéni és csapatsportok sokszínű világa.",
+      "summaryAfter": "Az egyéni és csapatsportok sokszínű világa. Csapat- és egyéni sportágak, felkészülési szempontok és a kapcsolódó sportiskolai tartalmak.",
+      "seoBefore": "Az egyéni és csapatsportok sokszínű világa.",
+      "seoAfter": "Az egyéni és csapatsportok sokszínű világa. Csapat- és egyéni sportágak, felkészülési szempontok és a kapcsolódó sportiskolai tartalmak."
+    },
+    {
+      "file": "json/oldalak/sport/sportolok.json",
+      "id": "page:000034",
+      "route": "#/sport/sportolok",
+      "summaryBefore": "A sportolói bemutatkozások és ellenőrzött eredmények leendő gyűjtőhelye.",
+      "summaryAfter": "A sportolói bemutatkozások és ellenőrzött eredmények leendő gyűjtőhelye. A leendő sportolóprofilok, a hiteles eredmények és a közzétételi feltételek ismertetője.",
+      "seoBefore": "A sportolói bemutatkozások és ellenőrzött eredmények leendő gyűjtőhelye.",
+      "seoAfter": "A sportolói bemutatkozások és ellenőrzött eredmények leendő gyűjtőhelye. A leendő sportolóprofilok, a hiteles eredmények és a közzétételi feltételek ismertetője."
+    },
+    {
+      "file": "json/oldalak/sport/csapatok.json",
+      "id": "page:000035",
+      "route": "#/sport/csapatok",
+      "summaryBefore": "A csapatokhoz kapcsolódó sportági, korosztályos és eredményinformációk áttekintő oldala.",
+      "summaryAfter": "A csapatokhoz kapcsolódó sportági, korosztályos és eredményinformációk áttekintő oldala.",
+      "seoBefore": "A csapatokhoz kapcsolódó sportági, korosztályos és eredményinformációk áttekintő oldala.",
+      "seoAfter": "A csapatokhoz kapcsolódó sportági, korosztályos és eredményinformációk áttekintő oldala. A csapatprofilok felépítését és a megerősített sportági adatok."
+    },
+    {
+      "file": "json/oldalak/sport/edzok.json",
+      "id": "page:000036",
+      "route": "#/sport/edzok",
+      "summaryBefore": "Sportági szakemberek bemutatása és az edzői munkakörök általános ismertetése.",
+      "summaryAfter": "Sportági szakemberek bemutatása és az edzői munkakörök általános ismertetése.",
+      "seoBefore": "Sportági szakemberek bemutatása és az edzői munkakörök általános ismertetése.",
+      "seoAfter": "Sportági szakemberek bemutatása és az edzői munkakörök általános ismertetése. Az edzői szerepkörök mellett bemutatja, hogyan jelenhetnek meg hiteles szakmai."
+    },
+    {
+      "file": "json/oldalak/sport/sporteredmenyek.json",
+      "id": "page:000033",
+      "route": "#/sport/sporteredmenyek",
+      "summaryBefore": "A nyilvánosan ellenőrizhető eredmények külön, név szerinti jegyzéke.",
+      "summaryAfter": "A nyilvánosan ellenőrizhető eredmények külön, név szerinti jegyzéke. A név szerint ellenőrizhető sporteredmények és a nyilvános eredményjegyzékek eléréséhez vezet.",
+      "seoBefore": "A nyilvánosan ellenőrizhető eredmények külön, név szerinti jegyzéke.",
+      "seoAfter": "A nyilvánosan ellenőrizhető eredmények külön, név szerinti jegyzéke. A név szerint ellenőrizhető sporteredmények és a nyilvános eredményjegyzékek eléréséhez."
+    },
+    {
+      "file": "json/oldalak/sport/sportgaleriak.json",
+      "id": "page:000037",
+      "route": "#/sport/sportgaleriak",
+      "summaryBefore": "Sport, tanulás és közösség képes témái.",
+      "summaryAfter": "Sport, tanulás és közösség képes témái. Tematikus fotók és a sportiskolai mindennapokat bemutató képes tartalmak gyűjtőhelye.",
+      "seoBefore": "Sport, tanulás és közösség képes témái.",
+      "seoAfter": "Sport, tanulás és közösség képes témái. Tematikus fotók és a sportiskolai mindennapokat bemutató képes tartalmak gyűjtőhelye."
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek.json",
+      "id": "page:000038",
+      "route": "#/hirek-es-esemenyek",
+      "summaryBefore": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum.",
+      "summaryAfter": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum. Keresd meg az iskolai közleményeket, a sporthíreket, az eseménynaptárt és a korábbi híreket.",
+      "seoBefore": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum.",
+      "seoAfter": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum. Keresd meg az iskolai közleményeket, a sporthíreket, az eseménynaptárt és a korábbi."
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/hirek.json",
+      "id": "page:000039",
+      "route": "#/hirek-es-esemenyek/hirek",
+      "summaryBefore": "Iskolai hírek és sporttörténetek áttekinthető, kereshető formában.",
+      "summaryAfter": "Iskolai hírek és sporttörténetek áttekinthető, kereshető formában. A hírek tematikus csoportjai és a forrásokkal ellenőrizhető iskolai beszámolók jelennek meg.",
+      "seoBefore": "Iskolai hírek és sporttörténetek áttekinthető, kereshető formában.",
+      "seoAfter": "Iskolai hírek és sporttörténetek áttekinthető, kereshető formában. A hírek tematikus csoportjai és a forrásokkal ellenőrizhető iskolai beszámolók jelennek meg."
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/hirek/iskolai-hirek.json",
+      "id": "page:000040",
+      "route": "#/hirek-es-esemenyek/hirek/iskolai-hirek",
+      "summaryBefore": "Az intézmény közzétett tájékoztatói és közösségi aktualitásai.",
+      "summaryAfter": "Az intézmény közzétett tájékoztatói és közösségi aktualitásai. A közösségi tájékoztatók és hivatalos iskolai közlemények áttekintése, forrásmegjelöléssel.",
+      "seoBefore": "Az intézmény közzétett tájékoztatói és közösségi aktualitásai.",
+      "seoAfter": "Az intézmény közzétett tájékoztatói és közösségi aktualitásai. A közösségi tájékoztatók és hivatalos iskolai közlemények áttekintése, forrásmegjelöléssel."
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/hirek/sporthirek.json",
+      "id": "page:000041",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "summaryBefore": "A sportélet legfontosabb, hitelesen közzétett eredményei és történetei.",
+      "summaryAfter": "A sportélet legfontosabb, hitelesen közzétett eredményei és történetei. A sportolói teljesítményekről és versenybeszámolókról szóló ellenőrizhető hírek gyűjtőoldala.",
+      "seoBefore": "A sportélet legfontosabb, hitelesen közzétett eredményei és történetei.",
+      "seoAfter": "A sportélet legfontosabb, hitelesen közzétett eredményei és történetei. A sportolói teljesítményekről és versenybeszámolókról szóló ellenőrizhető hírek."
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/esemenynaptar.json",
+      "id": "page:000044",
+      "route": "#/hirek-es-esemenyek/esemenynaptar",
+      "summaryBefore": "Havi, heti és napi naptár az ellenőrzött intézményi eseményekkel.",
+      "summaryAfter": "Havi, heti és napi naptár az ellenőrzött intézményi eseményekkel. Az ellenőrzött események havi, heti és napi nézete, valamint a programokhoz kapcsolódó részletek.",
+      "seoBefore": "Havi, heti és napi naptár az ellenőrzött intézményi eseményekkel.",
+      "seoAfter": "Havi, heti és napi naptár az ellenőrzött intézményi eseményekkel. Az ellenőrzött események havi, heti és napi nézete, valamint a programokhoz kapcsolódó."
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json",
+      "id": "page:000045",
+      "route": "#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek",
+      "summaryBefore": "Iskolai programok, közösségi alkalmak és tanulmányi események helye a naptárban.",
+      "summaryAfter": "Iskolai programok, közösségi alkalmak és tanulmányi események helye a naptárban.",
+      "seoBefore": "Iskolai programok, közösségi alkalmak és tanulmányi események helye a naptárban.",
+      "seoAfter": "Iskolai programok, közösségi alkalmak és tanulmányi események helye a naptárban. A közösségi, tanulmányi és iskolai programok szervezési információi és."
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/esemenynaptar/sportesemenyek.json",
+      "id": "page:000046",
+      "route": "#/hirek-es-esemenyek/esemenynaptar/sportesemenyek",
+      "summaryBefore": "Sportesemények és versenyprogramok áttekintő oldala.",
+      "summaryAfter": "Sportesemények és versenyprogramok áttekintő oldala. A versenyek és sportprogramok típusairól, az időpontok és eredmények ellenőrzéséről tájékoztat.",
+      "seoBefore": "Sportesemények és versenyprogramok áttekintő oldala.",
+      "seoAfter": "Sportesemények és versenyprogramok áttekintő oldala. A versenyek és sportprogramok típusairól, az időpontok és eredmények ellenőrzéséről tájékoztat."
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/kozlemenyek.json",
+      "id": "page:000043",
+      "route": "#/hirek-es-esemenyek/kozlemenyek",
+      "summaryBefore": "Aktuális intézményi tájékoztatások és fontos tudnivalók.",
+      "summaryAfter": "Aktuális intézményi tájékoztatások és fontos tudnivalók. A lényeges tudnivalók és közzétett intézményi közlemények visszakeresését támogatja.",
+      "seoBefore": "Aktuális intézményi tájékoztatások és fontos tudnivalók.",
+      "seoAfter": "Aktuális intézményi tájékoztatások és fontos tudnivalók. A lényeges tudnivalók és közzétett intézményi közlemények visszakeresését támogatja."
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/hirek/hirarchivum.json",
+      "id": "page:000042",
+      "route": "#/hirek-es-esemenyek/hirek/hirarchivum",
+      "summaryBefore": "Korábbi iskolai információk és közzétett történetek visszakeresése.",
+      "summaryAfter": "Korábbi iskolai információk és közzétett történetek visszakeresése. Az időrendi archívum segít a korábbi intézményi hírek és történetek újbóli megtalálásában.",
+      "seoBefore": "Korábbi iskolai információk és közzétett történetek visszakeresése.",
+      "seoAfter": "Korábbi iskolai információk és közzétett történetek visszakeresése. Az időrendi archívum segít a korábbi intézményi hírek és történetek újbóli megtalálásában."
+    },
+    {
+      "file": "json/oldalak/informaciok.json",
+      "id": "page:000047",
+      "route": "#/informaciok",
+      "summaryBefore": "Csengetési rend, dokumentumok, közösségi szolgálat és ügyintézés.",
+      "summaryAfter": "Csengetési rend, dokumentumok, közösségi szolgálat és ügyintézés. A mindennapi ügyintézéshez kapcsolódó oldalak és a dokumentumok gyors elérési pontja.",
+      "seoBefore": "Csengetési rend, dokumentumok, közösségi szolgálat és ügyintézés.",
+      "seoAfter": "Csengetési rend, dokumentumok, közösségi szolgálat és ügyintézés. A mindennapi ügyintézéshez kapcsolódó oldalak és a dokumentumok gyors elérési pontja."
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok.json",
+      "id": "page:000048",
+      "route": "#/informaciok/mindennapi-tudnivalok",
+      "summaryBefore": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez.",
+      "summaryAfter": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez. Napirend, étkezési információk és szülői ügyintézés témájában vezet tovább a megfelelő oldalakra.",
+      "seoBefore": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez.",
+      "seoAfter": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez. Napirend, étkezési információk és szülői ügyintézés témájában vezet tovább a megfelelő."
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json",
+      "id": "page:000049",
+      "route": "#/informaciok/mindennapi-tudnivalok/csengetesi-rend",
+      "summaryBefore": "A tanítási órák hivatalosan közzétett időpontjai, élő órával és a következő csengetésig tartó visszaszámlálással.",
+      "summaryAfter": "A tanítási órák hivatalosan közzétett időpontjai, élő órával és a következő csengetésig tartó visszaszámlálással.",
+      "seoBefore": "Az intézmény hivatalos tanóraidőpontjai, digitális idővonallal.",
+      "seoAfter": "Az intézmény hivatalos tanóraidőpontjai, digitális idővonallal. A tanórai időrend és az élő visszaszámlálás mellett az eredeti intézményi tájékoztatás is."
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok/etkezes.json",
+      "id": "page:000050",
+      "route": "#/informaciok/mindennapi-tudnivalok/etkezes",
+      "summaryBefore": "Étkezési tájékoztatás és a kapcsolódó ügyintézési lehetőségek.",
+      "summaryAfter": "Étkezési tájékoztatás és a kapcsolódó ügyintézési lehetőségek. Az étkezési ügyintézés, a befizetés és a lemondás tudnivalóihoz kínál hivatalos forrásokat.",
+      "seoBefore": "Étkezési tájékoztatás és a kapcsolódó ügyintézési lehetőségek.",
+      "seoAfter": "Étkezési tájékoztatás és a kapcsolódó ügyintézési lehetőségek. Az étkezési ügyintézés, a befizetés és a lemondás tudnivalóihoz kínál hivatalos forrásokat."
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json",
+      "id": "page:000051",
+      "route": "#/informaciok/mindennapi-tudnivalok/szuloi-informaciok",
+      "summaryBefore": "Ügyintézés, tájékozódás és a mindennapi együttműködés.",
+      "summaryAfter": "Ügyintézés, tájékozódás és a mindennapi együttműködés. Kapcsolattartás, szülői igazolások és a hétköznapi adminisztráció fontos tájékozódási pontjai.",
+      "seoBefore": "Ügyintézés, tájékozódás és a mindennapi együttműködés.",
+      "seoAfter": "Ügyintézés, tájékozódás és a mindennapi együttműködés. Kapcsolattartás, szülői igazolások és a hétköznapi adminisztráció fontos tájékozódási pontjai."
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok/megkozelites.json",
+      "id": "page:000070",
+      "route": "#/megkozelites-es-erkezes",
+      "summaryBefore": "Az iskola címe, utazási lehetőségek és ellenőrzött érkezési tudnivalók egy helyen.",
+      "summaryAfter": "Az iskola címe, utazási lehetőségek és ellenőrzött érkezési tudnivalók egy helyen.",
+      "seoBefore": "Az iskola címe, utazási lehetőségek és ellenőrzött érkezési tudnivalók egy helyen.",
+      "seoAfter": "Az iskola címe, utazási lehetőségek és ellenőrzött érkezési tudnivalók egy helyen. Cím, közlekedési lehetőségek, útvonaltervezés és az érkezés előkészítésének."
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok/terkep.json",
+      "id": "page:000071",
+      "route": "#/megkozelites-es-erkezes/terkep",
+      "summaryBefore": "Helyi hozzájárulásos térkép, közlekedési kapcsolatok és érkezési segítség.",
+      "summaryAfter": "Helyi hozzájárulásos térkép, közlekedési kapcsolatok és érkezési segítség. A helyi térképes nézet és a gyalogos, kerékpáros, tömegközlekedési tájékozódás lehetőségei.",
+      "seoBefore": "Helyi hozzájárulásos térkép, közlekedési kapcsolatok és érkezési segítség.",
+      "seoAfter": "Helyi hozzájárulásos térkép, közlekedési kapcsolatok és érkezési segítség. A helyi térképes nézet és a gyalogos, kerékpáros, tömegközlekedési tájékozódás."
+    },
+    {
+      "file": "json/oldalak/informaciok/dokumentumtar.json",
+      "id": "page:000052",
+      "route": "#/informaciok/dokumentumtar",
+      "summaryBefore": "Kereshető szabályzatok, hivatalos források és letölthető tanulási segédletek.",
+      "summaryAfter": "Kereshető szabályzatok, hivatalos források és letölthető tanulási segédletek.",
+      "seoBefore": "Kereshető szabályzatok, hivatalos források és letölthető tanulási segédletek.",
+      "seoAfter": "Kereshető szabályzatok, hivatalos források és letölthető tanulási segédletek. Keress intézményi szabályzatokat, nyomtatványokat és tanulási segédleteket."
+    },
+    {
+      "file": "json/oldalak/informaciok/dokumentumtar/szabalyzatok.json",
+      "id": "page:000053",
+      "route": "#/informaciok/dokumentumtar/szabalyzatok",
+      "summaryBefore": "Hivatalos szabályzatok és a nyilvános intézményi alapdokumentumok áttekintése.",
+      "summaryAfter": "Hivatalos szabályzatok és a nyilvános intézményi alapdokumentumok áttekintése.",
+      "seoBefore": "Hivatalos szabályzatok és a nyilvános intézményi alapdokumentumok áttekintése.",
+      "seoAfter": "Hivatalos szabályzatok és a nyilvános intézményi alapdokumentumok áttekintése. Az alapdokumentumok, változatok és hivatalos szabályzatok ellenőrzéséhez nyújt."
+    },
+    {
+      "file": "json/oldalak/informaciok/dokumentumtar/nyomtatvanyok.json",
+      "id": "page:000054",
+      "route": "#/informaciok/dokumentumtar/nyomtatvanyok",
+      "summaryBefore": "Beadandó nyomtatványok és ügyintézési űrlapok gyűjtőoldala.",
+      "summaryAfter": "Beadandó nyomtatványok és ügyintézési űrlapok gyűjtőoldala. A nyomtatványok használatáról és a jóváhagyott, letölthető űrlapok eléréséről olvashatsz.",
+      "seoBefore": "Beadandó nyomtatványok és ügyintézési űrlapok gyűjtőoldala.",
+      "seoAfter": "Beadandó nyomtatványok és ügyintézési űrlapok gyűjtőoldala. A nyomtatványok használatáról és a jóváhagyott, letölthető űrlapok eléréséről olvashatsz."
+    },
+    {
+      "file": "json/oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json",
+      "id": "page:000055",
+      "route": "#/informaciok/dokumentumtar/kozzeteteli-lista",
+      "summaryBefore": "A nyilvánosan kötelezően hozzáférhető dokumentumok és információk gyűjtőpontja.",
+      "summaryAfter": "A nyilvánosan kötelezően hozzáférhető dokumentumok és információk gyűjtőpontja.",
+      "seoBefore": "A nyilvánosan kötelezően hozzáférhető dokumentumok és információk gyűjtőpontja.",
+      "seoAfter": "A nyilvánosan kötelezően hozzáférhető dokumentumok és információk gyűjtőpontja. A dokumentumok közzétételének szerepéről és a változatok ellenőrzésének módjáról."
+    },
+    {
+      "file": "json/oldalak/informaciok/digitalis-ugyintezes.json",
+      "id": "page:000056",
+      "route": "#/informaciok/digitalis-ugyintezes",
+      "summaryBefore": "Iskolai digitális rendszerek és az elektronikus ügyintézés tájékozódási oldala.",
+      "summaryAfter": "Iskolai digitális rendszerek és az elektronikus ügyintézés tájékozódási oldala.",
+      "seoBefore": "Iskolai digitális rendszerek és az elektronikus ügyintézés tájékozódási oldala.",
+      "seoAfter": "Iskolai digitális rendszerek és az elektronikus ügyintézés tájékozódási oldala. Digitális belépések, elektronikus fájlbeküldés és biztonságos ügyintézési."
+    },
+    {
+      "file": "json/oldalak/informaciok/kozossegi-szolgalat.json",
+      "id": "page:000057",
+      "route": "#/informaciok/kozossegi-szolgalat",
+      "summaryBefore": "Közösségi feladatok, együttműködés és felelősségvállalás.",
+      "summaryAfter": "Közösségi feladatok, együttműködés és felelősségvállalás. A közösségi szolgálat tervezési, igazolási és tájékozódási lépéseit gyűjti össze.",
+      "seoBefore": "Közösségi feladatok, együttműködés és felelősségvállalás.",
+      "seoAfter": "Közösségi feladatok, együttműködés és felelősségvállalás. A közösségi szolgálat tervezési, igazolási és tájékozódási lépéseit gyűjti össze."
+    },
+    {
+      "file": "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok.json",
+      "id": "page:000058",
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok",
+      "summaryBefore": "Tájékozódás a közösségi szolgálat feladatairól és igazolásáról.",
+      "summaryAfter": "Tájékozódás a közösségi szolgálat feladatairól és igazolásáról. Gyakorlati tudnivalók a feladatok megszervezéséhez, dokumentálásához és igazolásához.",
+      "seoBefore": "Tájékozódás a közösségi szolgálat feladatairól és igazolásáról.",
+      "seoAfter": "Tájékozódás a közösségi szolgálat feladatairól és igazolásáról. Gyakorlati tudnivalók a feladatok megszervezéséhez, dokumentálásához és igazolásához."
+    },
+    {
+      "file": "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok.json",
+      "id": "page:000059",
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok",
+      "summaryBefore": "A közösségi szolgálathoz kapcsolódó szabályozási háttér tájékozódási oldala.",
+      "summaryAfter": "A közösségi szolgálathoz kapcsolódó szabályozási háttér tájékozódási oldala.",
+      "seoBefore": "A közösségi szolgálathoz kapcsolódó szabályozási háttér tájékozódási oldala.",
+      "seoAfter": "A közösségi szolgálathoz kapcsolódó szabályozási háttér tájékozódási oldala. A szabályozási háttér eredeti, naprakész szövegének ellenőrzéséhez vezető."
+    },
+    {
+      "file": "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json",
+      "id": "page:000060",
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok",
+      "summaryBefore": "Közösségi szolgálathoz kapcsolódó igazolások és űrlapok gyűjtőhelye.",
+      "summaryAfter": "Közösségi szolgálathoz kapcsolódó igazolások és űrlapok gyűjtőhelye. A szolgálathoz kapcsolódó dokumentumok, nyilvántartások és jóváhagyott űrlapok gyűjteménye.",
+      "seoBefore": "Közösségi szolgálathoz kapcsolódó igazolások és űrlapok gyűjtőhelye.",
+      "seoAfter": "Közösségi szolgálathoz kapcsolódó igazolások és űrlapok gyűjtőhelye. A szolgálathoz kapcsolódó dokumentumok, nyilvántartások és jóváhagyott űrlapok gyűjteménye."
+    },
+    {
+      "file": "json/oldalak/kapcsolat.json",
+      "id": "page:000063",
+      "route": "#/kapcsolat",
+      "summaryBefore": "Az intézmény ellenőrzött elérhetőségei Budapesten.",
+      "summaryAfter": "Az intézmény ellenőrzött elérhetőségei Budapesten. Kapcsolattartási adatok, intézményi elérhetőségek és térképes megközelítési információk.",
+      "seoBefore": "Az intézmény ellenőrzött elérhetőségei Budapesten.",
+      "seoAfter": "Az intézmény ellenőrzött elérhetőségei Budapesten. Kapcsolattartási adatok, intézményi elérhetőségek és térképes megközelítési információk."
+    },
+    {
+      "file": "json/oldalak/informaciok/adatvedelem.json",
+      "id": "page:000062",
+      "route": "#/informaciok/adatvedelem",
+      "summaryBefore": "Személyes adatok, dokumentumok és biztonságos digitális tájékozódás.",
+      "summaryAfter": "Személyes adatok, dokumentumok és biztonságos digitális tájékozódás. Az adatkezelési dokumentumok ellenőrzését és a biztonságos digitális használatot segíti.",
+      "seoBefore": "Személyes adatok, dokumentumok és biztonságos digitális tájékozódás.",
+      "seoAfter": "Személyes adatok, dokumentumok és biztonságos digitális tájékozódás. Az adatkezelési dokumentumok ellenőrzését és a biztonságos digitális használatot segíti."
+    }
+  ],
+  "policy": "Meglévő oldalhoz illő, általános szerkesztői megfogalmazás; nem új hivatalos tény vagy dátum. A kézi intézményi felülvizsgálat külön továbbra is szükséges."
+}

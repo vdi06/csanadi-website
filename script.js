@@ -11,11 +11,13 @@ function startupError(error){
   shell.append(h,p,detail,hint);target.replaceChildren(shell);
 }
 Promise.all([
-  import('./js/app.js?v=1.39.0'),
-  import('./js/subpages-v1.js?v=1.39.0'),
-  import('./js/release-v1-39-0.js?v=1.39.0')
-]).then(([{startApp},{initSubpageEnhancements},{initReleaseEnhancements}])=>{
+  import('./js/app.js?v=1.39.10'),
+  import('./js/subpages-v1.js?v=1.39.1'),
+  import('./js/release-v1-39-0.js?v=1.39.10'),
+  import('./js/release-v1-39-1.js?v=1.39.10')
+]).then(([{startApp},{initSubpageEnhancements},{initReleaseEnhancements},{initV1391Enhancements}])=>{
   initSubpageEnhancements();
   initReleaseEnhancements();
+  initV1391Enhancements();
   return startApp();
 }).catch(startupError);

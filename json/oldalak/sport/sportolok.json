@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Sportolók – Csanádi Sportiskola",
-    "description": "A sportolói bemutatkozások és ellenőrzött eredmények leendő gyűjtőhelye.",
+    "description": "A sportolói bemutatkozások és ellenőrzött eredmények leendő gyűjtőhelye. A leendő sportolóprofilok, a hiteles eredmények és a közzétételi feltételek ismertetője.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "sport"
   ],
   "tags": [],
-  "summary": "A sportolói bemutatkozások és ellenőrzött eredmények leendő gyűjtőhelye.",
+  "summary": "A sportolói bemutatkozások és ellenőrzött eredmények leendő gyűjtőhelye. A leendő sportolóprofilok, a hiteles eredmények és a közzétételi feltételek ismertetője.",
   "blocks": [
     {
       "id": "block:000034-section-1",
@@ -50,7 +50,7 @@
           "id": "block:000034-text-2",
           "type": "markdown",
           "data": {
-            "text": "A felületen jelenleg nem szerepelnek jóváhagyott, név szerinti sportolói profilok. Addig a nyilvánosan ellenőrizhető eredmények gyűjteménye használható.\n\n[Sporteredmények](#/sport/sporteredmenyek) · [Sportágak](#/sport/sportagak)"
+            "text": "Ez nem élő tanulói névsor: az iskola jelenlegi sportolóiról név, korosztály, csapat vagy fotó csak előzetes intézményi adatkezelési és közzétételi ellenőrzés után jelenhet meg. A nyilvános, történeti sikereket a [Sporteredmények](#/sport/sporteredmenyek) és a [Büszkeségeink](#/iskolank/buszkesegeink) tartalmazzák."
           }
         }
       ]
@@ -69,15 +69,15 @@
       }
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000034",
       "type": "section",
       "title": "Sportolói bemutatkozások",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000034",
           "type": "markdown",
           "data": {
-            "text": "Az iskolai sportolói közösségben a tanulás és a versenyzés összehangolása kiemelt feladat. **Valós tanulókról név szerinti sportolói adatlap és személyes eredménybeszámoló jelenleg nem található az oldalon.** Az itt látható általános sportági példák fiktív bemutató tartalmak, nem személyes profilok. A későbbi portrék és eredmények csak ellenőrzött, jóváhagyott adatok alapján tehetők közzé."
+            "text": "A sportolóprofil szigorúan különbözik a korábbi tanítványok nyilvános eredményjegyzékétől. Az itt megjelenő általános sportági példák nem valós, azonosítható diákok adatlapjai. A jelenlegi tanulókról az intézmény jóváhagyása nélkül nem közlünk sem teljesítményadatot, sem képet."
           }
         }
       ]
@@ -88,6 +88,11 @@
     "preview": false,
     "route": "#/sport/sportolok",
     "verifiedContent": false,
-    "bannerMediaId": "media:eredmenyek"
+    "bannerMediaId": "media:eredmenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "institutional-approval-needed",
+      "sourceId": null
+    }
   }
 }

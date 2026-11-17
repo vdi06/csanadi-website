@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Büszkeségeink – Csanádi Sportiskola",
-    "description": "Olimpiai és világbajnoki eredmények az iskola nyilvános büszkeséglistájáról.",
+    "description": "Olimpiai és világbajnoki eredmények az iskola nyilvános büszkeséglistájáról. A sportolói örökség és a közzétett eredmények segítenek megismerni az iskola.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000007",
       "type": "section",
       "title": "Sportolói büszkeségeink",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000007",
           "type": "markdown",
           "data": {
-            "text": "A Csanádi nyilvános büszkeséglistáján Kozák Danuta, Szabó Gabriella, Liu Shaoang, Vári Attila, Berki Krisztián és sok további ismert sportoló szerepel. A névsor sportágakat és kiemelkedő történeti eredményeket mutat be; azokat nem szabad a jelenlegi tanév friss versenyeredményeivel összekeverni.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "A Csanádi nyilvános büszkeséglistáján Kozák Danuta, Szabó Gabriella, Liu Shaoang, Vári Attila, Berki Krisztián és sok további ismert sportoló szerepel. A névsor sportágakat és kiemelkedő történeti eredményeket mutat be; azokat nem szabad a jelenlegi tanév friss versenyeredményeivel összekeverni.\n\n[Az iskola közzétett büszkeséglistája – eredeti intézményi forrás](https://csanadi-bp.edu.hu/buszkeseg.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/iskolank/buszkesegeink",
     "verifiedContent": true,
-    "bannerMediaId": "media:eredmenyek"
+    "bannerMediaId": "media:eredmenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "pride"
+    }
   }
 }

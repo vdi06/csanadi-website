@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Érettségi – Csanádi Sportiskola",
-    "description": "A közzétett 2026-os őszi vizsgaidőpontok és a felkészülés forrásai.",
+    "description": "A közzétett 2026-os őszi vizsgaidőpontok és a felkészülés forrásai. A vizsgaidőszakok, a felkészülési tudnivalók és az eredeti hivatalos források együtt.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "A közzétett 2026-os őszi vizsgaidőpontok és a felkészülés forrásai.",
+  "summary": "A közzétett 2026-os őszi vizsgaidőpontok és a felkészülés forrásai. A vizsgaidőszakok, a felkészülési tudnivalók és az eredeti hivatalos források együtt szerepelnek.",
   "blocks": [
     {
       "id": "block:000022-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000022",
       "type": "section",
       "title": "2026 őszi érettségi – közzétett időpontok",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000022",
           "type": "markdown",
           "data": {
-            "text": "A Csanádi középszintű szóbeli érettségit 2026. november 18-ra hirdette meg, legkésőbb 7:30-as érkezéssel. Az októberi írásbelik már lezajlottak. A magyar, történelem és földrajz szóbeli témakörei az iskola hivatalos érettségi oldalán érhetők el.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "Az iskola 2026. őszi középszintű írásbeli időpontjai között az október 12-i magyar és földrajz, a 13-i matematika, a 14-i történelem és a 15-i angol szerepel. A dolgozatmegtekintés november 3-án volt. A november 18-i szóbelihez a közzétett **legkésőbbi érkezés 7:30**. Ez a 2026. őszi vizsgaidőszak tájékoztatója, nem az összes jövőbeli érettségi naptára.\n\n[Érettségi – intézményi tájékoztató – eredeti intézményi forrás](https://csanadi-bp.edu.hu/erettsegi.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/oktatas/vizsgak/erettsegi",
     "verifiedContent": true,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "finalExam"
+    }
   }
 }

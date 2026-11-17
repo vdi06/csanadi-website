@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Csengetési rend – Csanádi Sportiskola",
-    "description": "Az intézmény hivatalos tanóraidőpontjai, digitális idővonallal.",
+    "description": "Az intézmény hivatalos tanóraidőpontjai, digitális idővonallal. A tanórai időrend és az élő visszaszámlálás mellett az eredeti intézményi tájékoztatás is.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -50,21 +50,21 @@
           "id": "block:000049-text-2",
           "type": "markdown",
           "data": {
-            "text": "A csengetési rend nyolc tanítási órára kiterjedő időbeosztást és az általános iskolai ügyelet idejét is megadja. Az adatok aktualitását intézményi ellenőrzéssel szükséges megerősíteni."
+            "text": "A nyolc tanítási óra kezdő és befejező időpontjának egyetlen karbantartott adatsora a `json/adatok/csengetesi-rend.json` állományban szerepel. A mai napot mutató óra és a visszaszámláló ezt a központi adatkészletet használja. Kivételes tanítási nap esetén külön intézményi közlés az irányadó."
           }
         }
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000049",
       "type": "section",
       "title": "Hivatalos csengetési rend",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000049",
           "type": "markdown",
           "data": {
-            "text": "1. óra: 8:00–8:45; 2. óra: 8:55–9:40; 3. óra: 9:50–10:35; 4. óra: 10:45–11:30. 5. óra: 11:40–12:20; 6. óra: 12:40–13:20; 7. óra: 13:35–14:15; 8. óra: 14:20–15:00. Az általános iskolai ügyelet 7:00–18:00 között biztosított tanítási napokon."
+            "text": "Az első óra 8:00-kor kezdődik, a nyolcadik 15:00-kor ér véget. A 5–8. óra nem mind 45 perces; az időpontokat a megjelenő központi csengetési táblázatból olvasd le. Az általános iskolai ügyelet az iskola tájékoztatása szerint tanítási napokon 7:00–18:00 között működik.\n\n[Hivatalos csengetési rend – eredeti intézményi forrás](https://csanadi-bp.edu.hu/csengetes.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/informaciok/mindennapi-tudnivalok/csengetesi-rend",
     "verifiedContent": true,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "bells"
+    }
   }
 }

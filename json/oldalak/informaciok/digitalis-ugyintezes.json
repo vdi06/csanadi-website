@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Digitális ügyintézés – Csanádi Sportiskola",
-    "description": "Iskolai digitális rendszerek és az elektronikus ügyintézés tájékozódási oldala.",
+    "description": "Iskolai digitális rendszerek és az elektronikus ügyintézés tájékozódási oldala. Digitális belépések, elektronikus fájlbeküldés és biztonságos ügyintézési.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000056",
       "type": "section",
       "title": "Digitális ügyintézés",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000056",
           "type": "markdown",
           "data": {
-            "text": "A KRÉTA a beiratkozási folyamatban és több tanuló–szülő ügyben hivatalosan használt digitális felület. Az általános iskolai beiratkozás BÁI és a középiskolai beiratkozás BKI moduljának útmutatói az iskola felvételi oldalain találhatók. Bejelentkezési adatokat kizárólag a hivatalos rendszerekbe szabad megadni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/oktatas/felveteli)"
+            "text": "A KRÉTA a beiratkozási folyamatban és több tanuló–szülő ügyben hivatalosan használt digitális felület. Az általános iskolai beiratkozás BÁI és a középiskolai beiratkozás BKI moduljának útmutatói az iskola felvételi oldalain találhatók. Bejelentkezési adatokat kizárólag a hivatalos rendszerekbe szabad megadni.\n\n[Felvételi központ](#/oktatas/felveteli)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/informaciok/digitalis-ugyintezes",
     "verifiedContent": false,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
   }
 }

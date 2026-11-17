@@ -30,6 +30,16 @@ function sanitizeLinks(root) {
   root.querySelectorAll?.('a[href]').forEach(link => links.push(link));
   for (const link of links) {
     const original = link.getAttribute('href');
+    // A v1.39.3-as tartalmi felülvizsgálat tételes, elsődleges forrásai
+    // szándékosan a hivatalos intézményi oldalra vezetnek. Ezeket nem szabad
+    // a hasonló témájú SPA-oldalra átírni vagy nem kattinthatóvá alakítani:
+    // az olvasónak az eredeti állítást kell tudnia ellenőriznie.
+    if (/^https:\/\/csanadi-bp\.edu\.hu\/[^\s<>"']+$/i.test(original || '')
+        && link.textContent.trim().endsWith('– eredeti intézményi forrás')) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      continue;
+    }
     const substitute = localReplacement(original);
     if (substitute === null) continue;
     if (substitute) {

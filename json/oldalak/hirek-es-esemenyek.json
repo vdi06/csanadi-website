@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Hírek és események – Csanádi Sportiskola",
-    "description": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum.",
+    "description": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum. Keresd meg az iskolai közleményeket, a sporthíreket, az eseménynaptárt és a korábbi.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "hirek-es-esemenyek"
   ],
   "tags": [],
-  "summary": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum.",
+  "summary": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum. Keresd meg az iskolai közleményeket, a sporthíreket, az eseménynaptárt és a korábbi híreket.",
   "blocks": [
     {
       "id": "block:000038-section-1",
@@ -42,15 +42,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000038",
       "type": "section",
       "title": "Aktuális iskolai közlemények",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000038",
           "type": "markdown",
           "data": {
-            "text": "A 2026. november 14-i ellenőrzéskor a hivatalos intézményi oldalon két novemberi gimnáziumi nyílt nap, őszi érettségi tájékoztató és több diákverseny-beszámoló szerepel. Az oldalon az esemény dátumát mindig megkülönböztetjük a hír tényleges közzétételének időpontjától.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "A 2026. november 14-i ellenőrzéskor a hivatalos intézményi oldalon két novemberi gimnáziumi nyílt nap, őszi érettségi tájékoztató és több diákverseny-beszámoló szerepel. Az oldalon az esemény dátumát mindig megkülönböztetjük a hír tényleges közzétételének időpontjától.\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
           }
         }
       ]
@@ -61,6 +61,11 @@
     "preview": false,
     "route": "#/hirek-es-esemenyek",
     "verifiedContent": false,
-    "bannerMediaId": "media:esemenyek"
+    "bannerMediaId": "media:esemenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "home"
+    }
   }
 }

@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Aktuális tanév – Csanádi Sportiskola",
-    "description": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi.",
+    "description": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi. A jelenlegi tanév szervezési adatait és az események hivatalos ellenőrzési forrásait gyűjti össze.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi.",
+  "summary": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi. A jelenlegi tanév szervezési adatait és az események hivatalos ellenőrzési forrásait gyűjti össze.",
   "blocks": [
     {
       "id": "block:000026-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000026",
       "type": "section",
       "title": "2026/2027-es tanév – kiinduló adatok",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000026",
           "type": "markdown",
           "data": {
-            "text": "Az intézmény 2026. szeptember 1-jére tette közzé a tanévnyitót. A közzétételi listán külön hivatkozás szerepel az iskolai tanév helyi rendjéhez. A szünetek és tanítás nélküli napok részleteinél mindig a közzétett, legfrissebb intézményi munkaterv az irányadó.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/informaciok/dokumentumtar/kozzeteteli-lista)"
+            "text": "Az intézmény 2026. szeptember 1-jére tette közzé a tanévnyitót. A közzétételi listán külön hivatkozás szerepel az iskolai tanév helyi rendjéhez. A szünetek és tanítás nélküli napok részleteinél mindig a közzétett, legfrissebb intézményi munkaterv az irányadó.\n\n[Közzétételi lista](#/informaciok/dokumentumtar/kozzeteteli-lista)\n\n[Közzétételi lista – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozzetetel.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/oktatas/tanevek/aktualis-tanev",
     "verifiedContent": true,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "disclosure"
+    }
   }
 }

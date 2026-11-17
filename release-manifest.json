@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.39.0",
+  "release": "csanadi-website-v1.39.10",
   "date": "2026-11-17",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "C – Folyékony üveg arculat; öt új, önálló JSON-oldal; kétállapotú mobilos körmenü; tanulástámogatás és megközelítés szétválasztása; teljes képernyős kereső; kompakt főoldali fejléc; aloldali sportanimációk és tartalomfüggő haladásjelzés; kisebb lábléc.",
+  "notes": "Kezdőoldali vizuális finomítás: a látható bemutatkozó címsor és segédszöveg eltávolítva; a képes váltó és a görgetésre zsugorodó fejléc egységes, hézagmentes, szögletes felületté alakítva. A kompakt képsáv vezérlése a fejlécen belül marad; rejtett akadálymentes oldalcím biztosított. A kiadás nincs közzétéve, a robotindexelés tiltott; a mobilos és más böngészőmotoros élő tesztek a jelen környezet korlátozása miatt nyitottak.",
   "files": {
     "README.md": {
       "sizeBytes": 42,
@@ -133,6 +133,486 @@
     "assets/graphics/sports-pattern-light.svg": {
       "sizeBytes": 11611,
       "sha256": "271c85fd117a2d23b2d6534ab9cf0fa64f37df0257f52b05035f614d42abee10"
+    },
+    "assets/media/illustrations/csapat-kontur.svg": {
+      "sizeBytes": 755,
+      "sha256": "bd3dba38d937a629beb841d23e3c6ddee0c5362a60c357d390f9f4a09db650f4"
+    },
+    "assets/media/illustrations/csapat-sotet.svg": {
+      "sizeBytes": 757,
+      "sha256": "c7bdac725f2d0d428f0c0df98eca63379e0c504acdfd70f064cedf37239adea7"
+    },
+    "assets/media/illustrations/csapat-vilagos.svg": {
+      "sizeBytes": 759,
+      "sha256": "c1e6e7541c4d687d49bc818aeeaf7d40a6f04d3e3851d5d3b90d81f854d0c1b6"
+    },
+    "assets/media/illustrations/diploma-kontur.svg": {
+      "sizeBytes": 682,
+      "sha256": "9dd799413165fd905c9354a1e955e411598ac24c44c9468179cfa7ac90d58e92"
+    },
+    "assets/media/illustrations/diploma-sotet.svg": {
+      "sizeBytes": 684,
+      "sha256": "db64ecd19a41944a84cc88463fce0c653af0ec5faf71cfc34e5cbc485060ddbe"
+    },
+    "assets/media/illustrations/diploma-vilagos.svg": {
+      "sizeBytes": 686,
+      "sha256": "0cb9cfe2564d1fa3d7c2a81d6e0b42e1731aba79b3feac0111e9771ae89a8dd8"
+    },
+    "assets/media/illustrations/dokumentum-kontur.svg": {
+      "sizeBytes": 655,
+      "sha256": "c07c2c21f6c82e4de3688277e0180564cc378ec6d3c9064d4e6c5e633285c1b9"
+    },
+    "assets/media/illustrations/dokumentum-sotet.svg": {
+      "sizeBytes": 657,
+      "sha256": "62557dc83a1efb3ba12cb0ba5298ea9ea80219a3246acb100ba9099825343814"
+    },
+    "assets/media/illustrations/dokumentum-vilagos.svg": {
+      "sizeBytes": 659,
+      "sha256": "ce3f7088d589b12792b3a83377cd9b6287d8691ed49433bcb8e974f73376bbea"
+    },
+    "assets/media/illustrations/erem-kontur.svg": {
+      "sizeBytes": 711,
+      "sha256": "de208a87624889e9caf0d2e827c5d1806706dfeff615c8c010c50ea9a0a1d735"
+    },
+    "assets/media/illustrations/erem-sotet.svg": {
+      "sizeBytes": 713,
+      "sha256": "734126ba471cb9baec035051551e7c2d8b105e08744fc5a5a5f8a43b60977647"
+    },
+    "assets/media/illustrations/erem-vilagos.svg": {
+      "sizeBytes": 715,
+      "sha256": "26b1dd4f63c6b629a960fb3af0448d38807b8cf7f5f22b8793e3367e927b6477"
+    },
+    "assets/media/illustrations/fenntarthatosag-kontur.svg": {
+      "sizeBytes": 672,
+      "sha256": "5373f0be46b52a6716627e5fa52b19b1d74e579af002602f215a76e7f4329cfa"
+    },
+    "assets/media/illustrations/fenntarthatosag-sotet.svg": {
+      "sizeBytes": 674,
+      "sha256": "c3e0c8902fd64baea75a4b7312b4be12d2b55d3abd1b3e52fb4a3f7b579bdfad"
+    },
+    "assets/media/illustrations/fenntarthatosag-vilagos.svg": {
+      "sizeBytes": 676,
+      "sha256": "57fd48875c3d96d88a25413d02219371d7b6a7018c1a529546aa6a32c696d081"
+    },
+    "assets/media/illustrations/foldrajz-kontur.svg": {
+      "sizeBytes": 695,
+      "sha256": "f9b1496f33eaeaf884c22e217435cd23212c0d938bf86bb3de71ee8edf1a5bf8"
+    },
+    "assets/media/illustrations/foldrajz-sotet.svg": {
+      "sizeBytes": 697,
+      "sha256": "4eb0b5a02ba4ce19711ed2cbb7a29a5a528bc6dfe4f4fcef4db8d2f9b8f3d56f"
+    },
+    "assets/media/illustrations/foldrajz-vilagos.svg": {
+      "sizeBytes": 699,
+      "sha256": "5a195e89ab9d033de65a5459ffc8c689912a7759e2bc3411ec75f6755eddc449"
+    },
+    "assets/media/illustrations/futas-kontur.svg": {
+      "sizeBytes": 690,
+      "sha256": "6936451dd06bec5ce02c1daf32cc6516b84688f1ee2c2c3a1f2fe3ced305c580"
+    },
+    "assets/media/illustrations/futas-sotet.svg": {
+      "sizeBytes": 692,
+      "sha256": "0300731ec030450d4f34b76c760d18186697f552692aa5274253a2cb74401e32"
+    },
+    "assets/media/illustrations/futas-vilagos.svg": {
+      "sizeBytes": 694,
+      "sha256": "8f5f3d42484dbb92a6fd143736952f2f60cf806522beef8c95be6f96ae5d89cd"
+    },
+    "assets/media/illustrations/kodolas-kontur.svg": {
+      "sizeBytes": 661,
+      "sha256": "203c1130970d3318d837c2695086812bac35eae7306c19ff4549c722fcec5a0c"
+    },
+    "assets/media/illustrations/kodolas-sotet.svg": {
+      "sizeBytes": 663,
+      "sha256": "b1ee95523c2312320ffe4bc13cc0f7c09f68df3aecd0dd9e9b621229d6e3e6ac"
+    },
+    "assets/media/illustrations/kodolas-vilagos.svg": {
+      "sizeBytes": 665,
+      "sha256": "e2fce1431e024f7a9a9f5ee6caa2afaad394a29848b738bdb179ac599d820961"
+    },
+    "assets/media/illustrations/konyv-kontur.svg": {
+      "sizeBytes": 688,
+      "sha256": "6d5eccd7c6fefa9c3fee69e3a5f160071a213e01821dc741ea4656cc65d399b1"
+    },
+    "assets/media/illustrations/konyv-sotet.svg": {
+      "sizeBytes": 690,
+      "sha256": "5a678d1380140c0920f44c3515c2e26dd742e22e8dd2be4319650419980c6acf"
+    },
+    "assets/media/illustrations/konyv-vilagos.svg": {
+      "sizeBytes": 692,
+      "sha256": "85a297d953653d852eb78f3ecf895806f28850cd352f5cec23354e2b40b1d7ab"
+    },
+    "assets/media/illustrations/kosarlabda-kontur.svg": {
+      "sizeBytes": 680,
+      "sha256": "42cfcf10aacb51e8c45bce858a8e3cfa1a53632c45912b678a2335cf33bdc3d2"
+    },
+    "assets/media/illustrations/kosarlabda-sotet.svg": {
+      "sizeBytes": 682,
+      "sha256": "1c3cffa60aa0eee4d038064ed49138dcaed48cd6698a0f986e0024db1831235e"
+    },
+    "assets/media/illustrations/kosarlabda-vilagos.svg": {
+      "sizeBytes": 684,
+      "sha256": "abcf784d21e3d020d51af69cf5504ace87f4b9f7969b0b2a17874172675dc00f"
+    },
+    "assets/media/illustrations/kupa-kontur.svg": {
+      "sizeBytes": 687,
+      "sha256": "03508f6d8d4bdb1fff0988091ca98b7f0613da012303782e5ba38ceaa17dc644"
+    },
+    "assets/media/illustrations/kupa-sotet.svg": {
+      "sizeBytes": 689,
+      "sha256": "434526bc568035a89efa8b9774c34ae9b12513bfdb87517333e8785466b3a5bd"
+    },
+    "assets/media/illustrations/kupa-vilagos.svg": {
+      "sizeBytes": 691,
+      "sha256": "ad5be8528add61d5773815d87db5ca7d27be5bebc64f2220b24e7561f5ef6cda"
+    },
+    "assets/media/illustrations/labdarugas-kontur.svg": {
+      "sizeBytes": 722,
+      "sha256": "658d796780a0e673b677e05f338b2e9389e35159fb837fb4baf911160a9ced29"
+    },
+    "assets/media/illustrations/labdarugas-sotet.svg": {
+      "sizeBytes": 724,
+      "sha256": "60f712d9f56d204eaaa4c3f34d804ed633f6f64b642004bf61a454e68765e955"
+    },
+    "assets/media/illustrations/labdarugas-vilagos.svg": {
+      "sizeBytes": 726,
+      "sha256": "c5bf3cc484d669ba31a80132fef587438db7131516ae64d93881787d0742818b"
+    },
+    "assets/media/illustrations/laptop-kontur.svg": {
+      "sizeBytes": 722,
+      "sha256": "2727aba943ec24343f06341d93c5a870efa0a241788233da525685f28a3f16cc"
+    },
+    "assets/media/illustrations/laptop-sotet.svg": {
+      "sizeBytes": 724,
+      "sha256": "a5b32d8674bcf91a4b86e26869e58f66bc71c10a6cbf5b94639c281e11eb9791"
+    },
+    "assets/media/illustrations/laptop-vilagos.svg": {
+      "sizeBytes": 726,
+      "sha256": "1dc87b1dc6c38a6a6caf926b27d5f61e59bceb705f1354a03fd8553d661e0a33"
+    },
+    "assets/media/illustrations/matematika-kontur.svg": {
+      "sizeBytes": 723,
+      "sha256": "349505d70358de51e3faaeac1655471ff5dca379ecd2492f279b91ea10fe59c4"
+    },
+    "assets/media/illustrations/matematika-sotet.svg": {
+      "sizeBytes": 725,
+      "sha256": "4eaf168a9137a569f90075fd79ecc3aae957b196243dcb61ee7a0927c6308c4d"
+    },
+    "assets/media/illustrations/matematika-vilagos.svg": {
+      "sizeBytes": 727,
+      "sha256": "fea16794ef76cbf6fdebe68e22a2036606e7c5a64b6a394c0c140b11512c79f5"
+    },
+    "assets/media/illustrations/naptar-kontur.svg": {
+      "sizeBytes": 714,
+      "sha256": "7a161c82b7472249d75af8c8674767eaef062e9cf453336371d25874e3a039f5"
+    },
+    "assets/media/illustrations/naptar-sotet.svg": {
+      "sizeBytes": 716,
+      "sha256": "3ac42755e2dcfc81956e8894065ebe66ece2594f763d1da3a96a780b8e46bf8b"
+    },
+    "assets/media/illustrations/naptar-vilagos.svg": {
+      "sizeBytes": 718,
+      "sha256": "3849345328ba46443b877459c3df60753b6dd06f0fd8b840d89a7ed249240fcc"
+    },
+    "assets/media/illustrations/ora-kontur.svg": {
+      "sizeBytes": 679,
+      "sha256": "7b8cfd5390ed1740306ae74bf3aed8178e99e2e310462ef3285d0d639af34a19"
+    },
+    "assets/media/illustrations/ora-sotet.svg": {
+      "sizeBytes": 681,
+      "sha256": "72a06c80043c17525da0cbfec93ce9a03a65c50daf7ca09182b0f45a9a12f3a4"
+    },
+    "assets/media/illustrations/ora-vilagos.svg": {
+      "sizeBytes": 683,
+      "sha256": "283c4d2e4b4cddcadd10731e6f5ed98b528f7e1edb180b224ffba4be0d772456"
+    },
+    "assets/media/illustrations/roplabda-kontur.svg": {
+      "sizeBytes": 691,
+      "sha256": "ed953a20429eb45a5be3d9f4f7f2355d11e568242e513899954eb84e4167e86a"
+    },
+    "assets/media/illustrations/roplabda-sotet.svg": {
+      "sizeBytes": 693,
+      "sha256": "e42ecde3fdc095a1218605603122933ec5a67184476985718ffa355c937d0411"
+    },
+    "assets/media/illustrations/roplabda-vilagos.svg": {
+      "sizeBytes": 695,
+      "sha256": "5fe01e822be205f03768e18447edd86e1ba7a3cc019500147d6ee62a5dc0dfe7"
+    },
+    "assets/media/illustrations/tanulas-kontur.svg": {
+      "sizeBytes": 654,
+      "sha256": "a3416c46e942a64b17ce1f28e961734cb1e797c9932f6175e2d60f614d9ad2d0"
+    },
+    "assets/media/illustrations/tanulas-sotet.svg": {
+      "sizeBytes": 656,
+      "sha256": "7b4a3b79a8f3957d2fa73a2d7563f5f1fd093c999bed1e61141523a7e5bd59d2"
+    },
+    "assets/media/illustrations/tanulas-vilagos.svg": {
+      "sizeBytes": 658,
+      "sha256": "c37a16ab0d5c53e8fe2ccab4474fb7f0cf3400cbe1b53c2606ce96a6b20cc0ce"
+    },
+    "assets/media/illustrations/terkep-kontur.svg": {
+      "sizeBytes": 726,
+      "sha256": "e54f777a0dd41e2ea776cbfd88b104438f4a6c895f08d6ca1d9cfce5b2a8702f"
+    },
+    "assets/media/illustrations/terkep-sotet.svg": {
+      "sizeBytes": 728,
+      "sha256": "6bb18abd617f6faf40912f58dcc0789eceb715711dbdc0de7418311f057a48f6"
+    },
+    "assets/media/illustrations/terkep-vilagos.svg": {
+      "sizeBytes": 730,
+      "sha256": "2ffbd4ddab734810717bc75dba0eb65b1a464ab899af3c7f42f4daa968a00602"
+    },
+    "assets/media/illustrations/uj-adatbiztonsag-kontur.svg": {
+      "sizeBytes": 648,
+      "sha256": "8cab78dc892b7537a30c3027e2c4df95341527c87dc73a4ed46676c80af4c198"
+    },
+    "assets/media/illustrations/uj-adatbiztonsag-sotet.svg": {
+      "sizeBytes": 650,
+      "sha256": "0650262111d0d1de6392f7a37c4c0f8817514f94f19057e8bf30079d4e2b6b69"
+    },
+    "assets/media/illustrations/uj-adatbiztonsag-vilagos.svg": {
+      "sizeBytes": 652,
+      "sha256": "8c9bf079c84b8f4799d4e4745826b63f1ac245bf1f3c67d15417e602739a26cf"
+    },
+    "assets/media/illustrations/uj-archivum-kontur.svg": {
+      "sizeBytes": 730,
+      "sha256": "d8b36e136cd6c6cd891bccedf6fe31708babd5a98365739d9a9821b58017775c"
+    },
+    "assets/media/illustrations/uj-archivum-sotet.svg": {
+      "sizeBytes": 732,
+      "sha256": "4c78d55a9896d8c01f0c241db58dc1a47fab58b646367d160e6879f5c8a3c8f9"
+    },
+    "assets/media/illustrations/uj-archivum-vilagos.svg": {
+      "sizeBytes": 734,
+      "sha256": "1cfee289451b34949cf68fcf15c5775e4af8b9aa9ee2f1ec6a716dcdbe08b210"
+    },
+    "assets/media/illustrations/uj-csengetes-kontur.svg": {
+      "sizeBytes": 683,
+      "sha256": "49263f13368de663cd35489e42f3bc18afa9297fa372e03a1c722b523d22f66e"
+    },
+    "assets/media/illustrations/uj-csengetes-sotet.svg": {
+      "sizeBytes": 685,
+      "sha256": "3fad661fd59e0ab36c5da201e1f8c8c5b937a63d2975b3ac2940f5de1e77d533"
+    },
+    "assets/media/illustrations/uj-csengetes-vilagos.svg": {
+      "sizeBytes": 687,
+      "sha256": "204a6a1c38ba6a8f615b341b2f4e5ce1c070524ed9cbdabccd5d7473c37c4c11"
+    },
+    "assets/media/illustrations/uj-digitalis-ugy-kontur.svg": {
+      "sizeBytes": 720,
+      "sha256": "72d013b8dc6d48bf10ee6e7a8e18019ff4604c5e806423ff1b6db676bd147feb"
+    },
+    "assets/media/illustrations/uj-digitalis-ugy-sotet.svg": {
+      "sizeBytes": 722,
+      "sha256": "e34049d1ee9de7376eb9f75f32117e6ef3ef56e73c91e9a63b755d7999704bf7"
+    },
+    "assets/media/illustrations/uj-digitalis-ugy-vilagos.svg": {
+      "sizeBytes": 724,
+      "sha256": "55b7c7b7046cc7c1d336c531a70c0b4f9302e0c4f38f4576c5b794ef4c62b8b0"
+    },
+    "assets/media/illustrations/uj-dij-kontur.svg": {
+      "sizeBytes": 704,
+      "sha256": "d283090c200c340224ae0cecfcef8bc41af1c4fb6d5ea8d5bfe10b5dbd24c0fa"
+    },
+    "assets/media/illustrations/uj-dij-sotet.svg": {
+      "sizeBytes": 706,
+      "sha256": "d9484b9df93aaaefc70e02591405475e48cd8aea6e4064bac5fc1b6eae92f2a8"
+    },
+    "assets/media/illustrations/uj-dij-vilagos.svg": {
+      "sizeBytes": 708,
+      "sha256": "4598cd52229d758ef579c87257d7dd884c0a9f8c2b4caf31a6124cff973eba0e"
+    },
+    "assets/media/illustrations/uj-edzesterv-kontur.svg": {
+      "sizeBytes": 736,
+      "sha256": "d0a991d8e26289d4b672e1f2ccd20909782f8c15c9ee470c4a56993ec0aef29d"
+    },
+    "assets/media/illustrations/uj-edzesterv-sotet.svg": {
+      "sizeBytes": 738,
+      "sha256": "0e5b7831c063dabe2c219ed83fe64f356e6b5b2d6dadf5be9091492d6f5a8133"
+    },
+    "assets/media/illustrations/uj-edzesterv-vilagos.svg": {
+      "sizeBytes": 740,
+      "sha256": "b7283e3c005b1d0e80deed070549e734abf8afe983b9946499abf9a27e7182fa"
+    },
+    "assets/media/illustrations/uj-egeszseg-kontur.svg": {
+      "sizeBytes": 682,
+      "sha256": "dabda2afac360680ca2788db0b450ae028f90813d44d0435126522b275d69555"
+    },
+    "assets/media/illustrations/uj-egeszseg-sotet.svg": {
+      "sizeBytes": 684,
+      "sha256": "f0cf5fd38f50af9a12c8b9a0d103844941d6e152e85cffc97ab06fe2b4a67fdd"
+    },
+    "assets/media/illustrations/uj-egeszseg-vilagos.svg": {
+      "sizeBytes": 686,
+      "sha256": "5e310cba9c022d9ba8b9023cf6e0f426d8d26172d5e2ee16d1480d29d4ff33e2"
+    },
+    "assets/media/illustrations/uj-etkezes-kontur.svg": {
+      "sizeBytes": 700,
+      "sha256": "1384b65af883e551c876faaa47a9e649aa5899b8d6a657379e22eb342ca9a7fe"
+    },
+    "assets/media/illustrations/uj-etkezes-sotet.svg": {
+      "sizeBytes": 702,
+      "sha256": "fbf116d0f3a0f29dff20d2e590f1db271dd15e8bc714e128696f7f0835f305a8"
+    },
+    "assets/media/illustrations/uj-etkezes-vilagos.svg": {
+      "sizeBytes": 704,
+      "sha256": "b1cbda53acad7db864f068e16e42f468335f0287de3deb76dcc3c3adcaf2ec12"
+    },
+    "assets/media/illustrations/uj-hozzaferes-kontur.svg": {
+      "sizeBytes": 693,
+      "sha256": "3f2980e71ac24235c977993b7fe6dc0d0baba6a6f99b78038dc6a766b94ba5ac"
+    },
+    "assets/media/illustrations/uj-hozzaferes-sotet.svg": {
+      "sizeBytes": 695,
+      "sha256": "fe6939f643705225ad970b33345825e81a9c08169f92f9cbae141a0e2ed0f17a"
+    },
+    "assets/media/illustrations/uj-hozzaferes-vilagos.svg": {
+      "sizeBytes": 697,
+      "sha256": "7fab1001a292ef9bd7df2413850e1c4c03ad38099eee15681d6048f2d386705d"
+    },
+    "assets/media/illustrations/uj-jegyzeteles-kontur.svg": {
+      "sizeBytes": 747,
+      "sha256": "f2e580281dadbc05218f955924d2089b440fb238edafc5a98befcdb29e3cb926"
+    },
+    "assets/media/illustrations/uj-jegyzeteles-sotet.svg": {
+      "sizeBytes": 749,
+      "sha256": "ae10b2b7172aef5be13867f296d7e981e8735578e77513bbd8c41c5418dbd14e"
+    },
+    "assets/media/illustrations/uj-jegyzeteles-vilagos.svg": {
+      "sizeBytes": 751,
+      "sha256": "8f8e1c807fed79cf93c22442ddb04807c25d1bc7b1488df912837839f9ad2a19"
+    },
+    "assets/media/illustrations/uj-jelentkezes-kontur.svg": {
+      "sizeBytes": 709,
+      "sha256": "b1d1c0bb5d20e63be2bd71acbdea1be5f8131b13514ea2f1e1424cb46eeb5ded"
+    },
+    "assets/media/illustrations/uj-jelentkezes-sotet.svg": {
+      "sizeBytes": 711,
+      "sha256": "acb7ab0673765c4976df06704fee9dbb527130be879c53a764c2f1ea315e11db"
+    },
+    "assets/media/illustrations/uj-jelentkezes-vilagos.svg": {
+      "sizeBytes": 713,
+      "sha256": "6735535cdd35405e6997afd378e716b3830c28849db398dfea61aa56ae1e8af7"
+    },
+    "assets/media/illustrations/uj-kemia-kontur.svg": {
+      "sizeBytes": 739,
+      "sha256": "c96494b5283cf24878ee8d9a7d983752e0d7773bf830c4a6a3dd2d9537ebad6e"
+    },
+    "assets/media/illustrations/uj-kemia-sotet.svg": {
+      "sizeBytes": 741,
+      "sha256": "1b59da2f108d1379dd2ea4f9580943392f1b3e80693f17cff76585dc2a4293ac"
+    },
+    "assets/media/illustrations/uj-kemia-vilagos.svg": {
+      "sizeBytes": 743,
+      "sha256": "b1e511bcec6261e2c915690f91061cfaddb3d7511c26531d601aa0f42d162b1f"
+    },
+    "assets/media/illustrations/uj-kozlekedes-kontur.svg": {
+      "sizeBytes": 760,
+      "sha256": "d52869dd1f0655d4eba5000fca328f9f3234308120b967cfd47077f2d4a5f0b3"
+    },
+    "assets/media/illustrations/uj-kozlekedes-sotet.svg": {
+      "sizeBytes": 762,
+      "sha256": "054ed4b21121ddd88b7b6b6565d58ddfa035e1a2abc007f1e55f46a90d6ff524"
+    },
+    "assets/media/illustrations/uj-kozlekedes-vilagos.svg": {
+      "sizeBytes": 764,
+      "sha256": "12de70a3196c2cd8d6d0527580b044ee10ddc365ccf3b2bc454bbe8fc6eae092"
+    },
+    "assets/media/illustrations/uj-nyelvek-kontur.svg": {
+      "sizeBytes": 696,
+      "sha256": "3136e6b8d990fc597c730da93e4ddad62621af76419ad847f83fdee30128b1b3"
+    },
+    "assets/media/illustrations/uj-nyelvek-sotet.svg": {
+      "sizeBytes": 698,
+      "sha256": "8362d236b547f98fe97954b12a1f0192f9a8ff181f9d4a8fd313024a2e757748"
+    },
+    "assets/media/illustrations/uj-nyelvek-vilagos.svg": {
+      "sizeBytes": 700,
+      "sha256": "d3aa536a36f8fd7e6e5ba1ca550f3cff8584dd49f1775235eaed71cb031fd4a5"
+    },
+    "assets/media/illustrations/uj-palya-kontur.svg": {
+      "sizeBytes": 754,
+      "sha256": "6625d737524b3b97aa5f998443ec7adbbb91cfa02a27f7ce76b24300a298afba"
+    },
+    "assets/media/illustrations/uj-palya-sotet.svg": {
+      "sizeBytes": 756,
+      "sha256": "e5c00b78824933a3309c37a25d7c92daa4073c625196f62d70474366563aed6d"
+    },
+    "assets/media/illustrations/uj-palya-vilagos.svg": {
+      "sizeBytes": 758,
+      "sha256": "5ddae4e184499ef5d1977e357521b458f5e9de308851b5e46cfbf723536cc728"
+    },
+    "assets/media/illustrations/uj-robotika-kontur.svg": {
+      "sizeBytes": 805,
+      "sha256": "a93f2a15eb63a979aea711a6d6ce1d4d74497845fa113ee18f83401763031344"
+    },
+    "assets/media/illustrations/uj-robotika-sotet.svg": {
+      "sizeBytes": 807,
+      "sha256": "0bfb7fb89dacae2dadf85c9b7ab0c22f9c97fa7667182b42a3ebfcee803f2088"
+    },
+    "assets/media/illustrations/uj-robotika-vilagos.svg": {
+      "sizeBytes": 809,
+      "sha256": "0b53a75887db85d10a72d4b780ab07ca3325bbd46b98b5939eb4b6f4213b754c"
+    },
+    "assets/media/illustrations/uj-serulesmegelozes-kontur.svg": {
+      "sizeBytes": 716,
+      "sha256": "66d81210bada87b58575c20d0f11c12ba0d1e1e3fec85f5887b4afa1a74bca2c"
+    },
+    "assets/media/illustrations/uj-serulesmegelozes-sotet.svg": {
+      "sizeBytes": 718,
+      "sha256": "58960bd3c067d7c4862ca04ea459bf127390fc5a1fbaf84891de4e9357b8c227"
+    },
+    "assets/media/illustrations/uj-serulesmegelozes-vilagos.svg": {
+      "sizeBytes": 720,
+      "sha256": "c2423fc79eb11d65218fdb9909e26e4c7c99ad38327a1b3e427902d7331df8a8"
+    },
+    "assets/media/illustrations/uj-szulok-kontur.svg": {
+      "sizeBytes": 738,
+      "sha256": "89014b95ffd4b04e499c1e373ea3c2d777a0a06cc8bb6f5b304b3b69d989dfe8"
+    },
+    "assets/media/illustrations/uj-szulok-sotet.svg": {
+      "sizeBytes": 740,
+      "sha256": "1c1d8a5070c4beb9ec608aa4dd528af92e6c39465c30354ca91cc33410105b3c"
+    },
+    "assets/media/illustrations/uj-szulok-vilagos.svg": {
+      "sizeBytes": 742,
+      "sha256": "5598132a1a54cb23b1dd31234c692c7f61058e68ba883d2471dc2a6b6146f65f"
+    },
+    "assets/media/illustrations/uj-viz-kontur.svg": {
+      "sizeBytes": 675,
+      "sha256": "2c5e62887828ae8f2de4d735e3d8319e64d26def8dda38a2354e4d246a4d6212"
+    },
+    "assets/media/illustrations/uj-viz-sotet.svg": {
+      "sizeBytes": 677,
+      "sha256": "dcc3fd374e1636e5d424cb66efd03c211452fb25535c78893e8156af6b57f7fc"
+    },
+    "assets/media/illustrations/uj-viz-vilagos.svg": {
+      "sizeBytes": 679,
+      "sha256": "72249d50c04670879bdc49c335f69959705502a9be9f28f664f6f0f452b40ca0"
+    },
+    "assets/media/illustrations/uj-vizsgafelk-kontur.svg": {
+      "sizeBytes": 725,
+      "sha256": "5c1a79f6d53808a6319b2c6e5f86215aaecc8704c476777c2054f4f9edce38e3"
+    },
+    "assets/media/illustrations/uj-vizsgafelk-sotet.svg": {
+      "sizeBytes": 727,
+      "sha256": "bf77c85cfbeb95fdb82ee7ef3313c5d0e04a09af092db2837c6599acaeb02871"
+    },
+    "assets/media/illustrations/uj-vizsgafelk-vilagos.svg": {
+      "sizeBytes": 729,
+      "sha256": "fb0050bde7e5a7cb1a1d65020e4dca2cbe9c34c6716bbfd0695f538780b3c41c"
+    },
+    "assets/media/illustrations/uszas-kontur.svg": {
+      "sizeBytes": 694,
+      "sha256": "8ffbf0ebd90f6a188bcabdda1eb38741b7eed962f28c0576868e624179716e80"
+    },
+    "assets/media/illustrations/uszas-sotet.svg": {
+      "sizeBytes": 696,
+      "sha256": "16b87a764bf0fe675243c3a84371bbbce318687939d4c24c7d49d82db3f94dba"
+    },
+    "assets/media/illustrations/uszas-vilagos.svg": {
+      "sizeBytes": 698,
+      "sha256": "dcc84bd058186ce0b4c05fea892d3609f665fe7bb2d08f38224aa28fd61097e0"
     },
     "assets/media/logo/csanadi-cimer-512.webp": {
       "sizeBytes": 22756,
@@ -2534,6 +3014,10 @@
       "sizeBytes": 7788,
       "sha256": "ff8e57e7c01864bb137ac6e0fc462a6ea5fb6b02361d635652923a6f060e237f"
     },
+    "css/corrections-v1-39-1.css": {
+      "sizeBytes": 6715,
+      "sha256": "8651f6257df5db4a147e833bef8c0835a5cd1719b215391b80de3679e762234a"
+    },
     "css/desktop-condensed-ribbon-v1-38.css": {
       "sizeBytes": 1410,
       "sha256": "491d228b3f695e5f2f59a68aa4cee12511a790903049fecc054714bde54f7aac"
@@ -2569,6 +3053,10 @@
     "css/home-gallery-news-gate-2026.css": {
       "sizeBytes": 5562,
       "sha256": "7e84a90627e854afe592e3d56d0c2a128b186d3ada8ab128b9a79ceb655f79b8"
+    },
+    "css/home-header-ribbon-v1-39-10.css": {
+      "sizeBytes": 3362,
+      "sha256": "54b74227573c6e3b45f62d50379c0a9bf2bc91d115f98b549b65aa49bfb21710"
     },
     "css/interactions-be-2026.css": {
       "sizeBytes": 4902,
@@ -2610,6 +3098,10 @@
       "sizeBytes": 906,
       "sha256": "d3fddc18b94ea35854eda4c9856ac29d42a98b487303477d7935cdfed89730cf"
     },
+    "css/mobile-navigation-v1-39-2.css": {
+      "sizeBytes": 3337,
+      "sha256": "a3ee2f94ab7763fcf4962483df7ef52733ab56d00246fae73c636c0f59703048"
+    },
     "css/navigation-student-search-2026.css": {
       "sizeBytes": 6176,
       "sha256": "ca3a36d2c938150b246c8252a9bdfd971e62b671bdfc4053599f20bc39fe5646"
@@ -2629,6 +3121,10 @@
     "css/organized-2026.css": {
       "sizeBytes": 15836,
       "sha256": "f4a63a3ae13568453af3759757ca30e10734f3ff0d000f7ac1571b982d146976"
+    },
+    "css/page-templates-v1-39-2.css": {
+      "sizeBytes": 8705,
+      "sha256": "7eb176bc4c391a793ecf69335a199e853ad1a5f0a14ba07e606596d9edd56fae"
     },
     "css/performance-diagnostics-2026.css": {
       "sizeBytes": 2570,
@@ -2823,8 +3319,8 @@
       "sha256": "1a2e2ac95e61a423137158b77589cb1ded55a451457a79204ee719502a308081"
     },
     "css/tools-unified-v1.css": {
-      "sizeBytes": 5273,
-      "sha256": "fd6142c95a0eacd310d45f433e0a4c17d4318b4c11f626a4a1b4917f41243db7"
+      "sizeBytes": 11251,
+      "sha256": "b3c69179cebf3b99be2dfc3852d2aa82996b5dda50a6b205b0c349a074d71de0"
     },
     "css/unified-actions-v1.css": {
       "sizeBytes": 2045,
@@ -2878,9 +3374,49 @@
       "sizeBytes": 734,
       "sha256": "ae73ea93624ba10e8da299a6ccc450ce87c02149b14d4a535699a81a24aab5d5"
     },
+    "dokumentacio/ATADAS_V1_39_10.md": {
+      "sizeBytes": 5199,
+      "sha256": "300ef9bbf53cf2ab8b8fb848f8c6b0f471cfe0b8a01f23f9790ba02f3ec78274"
+    },
     "dokumentacio/ATADAS_v1_39_0.md": {
       "sizeBytes": 14534,
       "sha256": "2c813e50606da1586628aace6c206e1cce489a946b76495c763b9cddedd18f16"
+    },
+    "dokumentacio/ATADAS_v1_39_1.md": {
+      "sizeBytes": 7987,
+      "sha256": "e14ba702d85c7ccd5ebd1933886a32a19ef7bcb57b38d62d116a5c5607b492d1"
+    },
+    "dokumentacio/ATADAS_v1_39_2.md": {
+      "sizeBytes": 9515,
+      "sha256": "7e6a93e94459538e7e89dbd9f890d5ad91cc93e1aa571c9858d334c42a77b022"
+    },
+    "dokumentacio/ATADAS_v1_39_3.md": {
+      "sizeBytes": 9161,
+      "sha256": "582da187a20bac1060b7d6dc09232ab383b34de5bff026b73083ec2ed55cd4d0"
+    },
+    "dokumentacio/ATADAS_v1_39_4.md": {
+      "sizeBytes": 8561,
+      "sha256": "e986a74e0f00c57219ea7cf036b4030bd94647e2de53e30cb09df4a0e3c3ba81"
+    },
+    "dokumentacio/ATADAS_v1_39_5.md": {
+      "sizeBytes": 7757,
+      "sha256": "e637b1b03cb80ab2cd6b02f5408985af8a389b197132a56e586dd6998e776d3d"
+    },
+    "dokumentacio/ATADAS_v1_39_6.md": {
+      "sizeBytes": 9624,
+      "sha256": "ebfa908bf7156df8940f1fb1afe4a6aba111750efe929ab8b13a9066a44e12e2"
+    },
+    "dokumentacio/ATADAS_v1_39_7.md": {
+      "sizeBytes": 8877,
+      "sha256": "4eb7aafa0dedf0a92c8fa5e03a18fd11bb14b13045691d868acf5992c3caf822"
+    },
+    "dokumentacio/ATADAS_v1_39_8.md": {
+      "sizeBytes": 9162,
+      "sha256": "22157a2641260bca28382b516f44aa92149b38f2508c9654d0cc7ae429db4a1d"
+    },
+    "dokumentacio/ATADAS_v1_39_9.md": {
+      "sizeBytes": 8243,
+      "sha256": "4cd4a7135620e13ed161b753ff7554272740696fdc30c48160a87e12389aaac5"
     },
     "dokumentacio/AUDIT_V1_10.json": {
       "sizeBytes": 3080,
@@ -2938,9 +3474,17 @@
       "sizeBytes": 489,
       "sha256": "27c554945d5f438de61f74da045442a6713ce9cb5822b28c6345597a9f5a2918"
     },
+    "dokumentacio/BLOKK_AZONOSITO_MIGRACIO_V1_39_8.json": {
+      "sizeBytes": 23494,
+      "sha256": "96f8939c43e8545bbb77d1fd54f753635b73152e17a05d3a835352985a252097"
+    },
     "dokumentacio/BONGESZOS_PROBA_V1_33.md": {
       "sizeBytes": 1128,
       "sha256": "9bca040dc3f251d5f1cd6db0434e5300e1023c948382706f3a3892c3b245662b"
+    },
+    "dokumentacio/BONGESZOS_TESZT_V1_39_9.md": {
+      "sizeBytes": 4226,
+      "sha256": "84ce4da671abc6ee36a81f1c9e11a1f77bc7e8e4e88bf1a86d9fa3078855b5f0"
     },
     "dokumentacio/FEJLESZTESI_ES_TESZTBESZAMOLO_2026.md": {
       "sizeBytes": 25243,
@@ -2975,8 +3519,8 @@
       "sha256": "e44de595374dbcf7f2a63b6173768c50c9eb516c44730f3ad9f790fdf2e63258"
     },
     "dokumentacio/MEDIA_BOVITESI_KERET_V1_9.json": {
-      "sizeBytes": 2345,
-      "sha256": "ed2d86cfa3ae2f345e77cbdcf82f6e7929e2d319d195a22e49f738857bcf7df7"
+      "sizeBytes": 2523,
+      "sha256": "982b7d941567d09d7af9389c894d977140d9820fe850c4ffaeaedb1f4796f0b6"
     },
     "dokumentacio/MEDIA_BOVITESI_TERV_V1_7.md": {
       "sizeBytes": 3190,
@@ -2994,6 +3538,10 @@
       "sizeBytes": 44003,
       "sha256": "2b81f0e5b7c3b7e18bf821da6b0dbb015a5f410fa7cf328df69003c6e8d92b01"
     },
+    "dokumentacio/METAADAT_JAVITAS_V1_39_9.json": {
+      "sizeBytes": 48781,
+      "sha256": "f05a16f97bd7816a6acec24eb6f41f436c44e5f7398cf1e0f97f623aaf6dc54f"
+    },
     "dokumentacio/SZABALYOK_31_ALOLDAL_V1_8.json": {
       "sizeBytes": 268436,
       "sha256": "3c11bbf30b7bd968bb197dd54026ed23316de89b600db4aadd6f0a0f8ad9cc65"
@@ -3009,6 +3557,10 @@
     "dokumentacio/SZABALYOK_31_HIANYOK_V1_9.csv": {
       "sizeBytes": 13483,
       "sha256": "dae6ac59d34e03bd5e9404593ab7a3a1ac6de20cdb178f80d1321f06a48fc931"
+    },
+    "dokumentacio/TARTALMI_AUDIT_v1_39_7.json": {
+      "sizeBytes": 400,
+      "sha256": "8bea7f9f8ed8822d976ec5c9900ce0e4613134023c558f9fff95f9b807bcf0bd"
     },
     "dokumentacio/TARTALMI_FELULVIZSGALAT_66_OLDAL.csv": {
       "sizeBytes": 15104,
@@ -3037,6 +3589,26 @@
     "dokumentacio/TARTALMI_MEDIA_AUDIT_V1_9.json": {
       "sizeBytes": 116678,
       "sha256": "e86358330f5e64ca3c49b4b06f89c93bba95c69bb5eb9c899d25e88470d795d2"
+    },
+    "dokumentacio/TARTALMI_MINOSEG_V1_39_8.csv": {
+      "sizeBytes": 8883,
+      "sha256": "53e5b7cc993b1a852bd7d838b0aac7aa90d96ffc84353e9b02152ee2e1d38e37"
+    },
+    "dokumentacio/TARTALMI_MINOSEG_V1_39_8.json": {
+      "sizeBytes": 57187,
+      "sha256": "b34a9a3d31a0a6c53145b2525a3b4f02f335007f04bf0bccb099e73934f455e9"
+    },
+    "dokumentacio/TARTALMI_MINOSEG_V1_39_9.csv": {
+      "sizeBytes": 7650,
+      "sha256": "b7311fc431c3771bd7b6e9f7f4f29e9aebd8cd31fcd3781228c7bff4fd3c91a6"
+    },
+    "dokumentacio/TARTALMI_MINOSEG_V1_39_9.json": {
+      "sizeBytes": 31489,
+      "sha256": "d66a2a8db37b6d284e3ed21cf57e52f6a8d0f5227374a56ae9a6d43eeb3695bb"
+    },
+    "dokumentacio/TARTALMI_OLDALLELTAR_v1_39_3.md": {
+      "sizeBytes": 12942,
+      "sha256": "4598ecb8e2be8f4ff65d103522d0746d750669a787cb0d438227b459eecade07"
     },
     "dokumentacio/TELJES_AUDIT_V1_3.json": {
       "sizeBytes": 25557,
@@ -3263,8 +3835,8 @@
       "sha256": "75001b42d45bd4cc29f9e97a38c696997d1452c84cc64923f87af8cc4e60a6ca"
     },
     "index.html": {
-      "sizeBytes": 17549,
-      "sha256": "4c8125a59f13dd40e7c9ed1481c1c42a069cd6c1ef3b61b21df8ff832949a357"
+      "sizeBytes": 18298,
+      "sha256": "d69064651f1058bc11f0ee70e286155e5a40798545dec38228df71f1c22c9f19"
     },
     "iranytu.html": {
       "sizeBytes": 10082,
@@ -3279,16 +3851,16 @@
       "sha256": "5d126b815ce883d1e9e535175040a0cd05efbcde7beabce5cc0b14850225a37a"
     },
     "js/app.js": {
-      "sizeBytes": 59441,
-      "sha256": "537325f95aecb7c49bef828c27548109a31b8f3147c4cce99d1cf73275b3e7b4"
+      "sizeBytes": 60798,
+      "sha256": "6be6c23c0f5fe77cd55aa2edd43b9ef56991356ee924afee134121116af2b8a9"
     },
     "js/blocks.js": {
-      "sizeBytes": 8882,
-      "sha256": "40e222247a402993a05b4b3e54fb7301a6beb9c183b560ac3c1e9501df030c7c"
+      "sizeBytes": 9246,
+      "sha256": "a762cc4ac180bdee71466258334f1f247ec9443bdf51bc4916ce1d0bb63837e6"
     },
     "js/content.js": {
-      "sizeBytes": 5465,
-      "sha256": "0a22b3b5b3796fa86b0a2020f8338d4548381b709532a5c74893f9c1961bc10d"
+      "sizeBytes": 5925,
+      "sha256": "75311e89b90f3c3f069737f7ab186f8377aca371b822c22cdd4f3eb68b23f9c6"
     },
     "js/daily-sport-news.js": {
       "sizeBytes": 4746,
@@ -3310,6 +3882,10 @@
       "sizeBytes": 25852,
       "sha256": "f733d8a57dcfa341849bfa73c216c09c12100e82991b1b55e1359ee41aeb8768"
     },
+    "js/fetch-resilience-v1-39-7.js": {
+      "sizeBytes": 1966,
+      "sha256": "5528c02a21ab27201b1a71f52c860f80bb32f4f76aa1fd17583ce92e2e93520f"
+    },
     "js/format-bytes.js": {
       "sizeBytes": 481,
       "sha256": "463cbfbf2dbc714049c32ddf872b024f94ae2b148df1902a3e18a108dcd0fd1d"
@@ -3319,8 +3895,8 @@
       "sha256": "8ade3625d970b550b7d066ee899838da54e951faa8556e7164c9c33d37cba8b5"
     },
     "js/hero-2026.js": {
-      "sizeBytes": 6952,
-      "sha256": "275f899767daaed660d35a67c65e996becb58d0a3985e8e23d2deb60aa9c93f8"
+      "sizeBytes": 6818,
+      "sha256": "0e6af6e927b3465d40e437a7f2d666904014996a37cfa65f056b79b210ec9dc2"
     },
     "js/home-live.js": {
       "sizeBytes": 13997,
@@ -3355,8 +3931,8 @@
       "sha256": "d19bfc1d9e7f54baafb56f95874a38e107a4794d85c40e55ca7ecd64520fe644"
     },
     "js/next10-2026.js": {
-      "sizeBytes": 11228,
-      "sha256": "04a6f0cbc8e97ec68a3fc34ebb3b6d3cfb0373fdb165ea2ddda0c3fbcd9d7136"
+      "sizeBytes": 11639,
+      "sha256": "ff90fef87dbe604043ea08fdd2910207582bcba01cc55e7451545c4ed569e669"
     },
     "js/offline-reader-20.js": {
       "sizeBytes": 5249,
@@ -3365,6 +3941,10 @@
     "js/page-media-2026.js": {
       "sizeBytes": 2136,
       "sha256": "3b9dafe2ec515e8f8f9cb22b0da3565ee9ed26dc441f11ffeb641d1915debf03"
+    },
+    "js/page-templates-v1-39-2.js": {
+      "sizeBytes": 5123,
+      "sha256": "ded6db42bc8fad00bd0fe137b70ab8bff2988c5f3576e7a4ff680e1a675b580c"
     },
     "js/performance-diagnostics-2026.js": {
       "sizeBytes": 15457,
@@ -3375,12 +3955,16 @@
       "sha256": "3bd7b3dd8823865bfcd05d170bde32e8a7e0f90bd850fe4f18818a88ecc0c421"
     },
     "js/release-v1-39-0.js": {
-      "sizeBytes": 8700,
-      "sha256": "55fb3fd2046e9f921513db93ede4ee62471aee2465d0ffa9f0055a12b7062b7e"
+      "sizeBytes": 9045,
+      "sha256": "1dffc6c3809b9eb33fe9d887fc3722e857729a0d5a364d617634d8bc44cd73a9"
+    },
+    "js/release-v1-39-1.js": {
+      "sizeBytes": 6963,
+      "sha256": "967b4470f93db1090f844367af60d496ab3d1b4d32310de9301d816ff233a52c"
     },
     "js/round10-enhancements.js": {
-      "sizeBytes": 5051,
-      "sha256": "cdc3caac4fc69d74764a1b7a6d5255df17a256bdedd450d050a469195a4b844c"
+      "sizeBytes": 5054,
+      "sha256": "46c71a720c80069a38cc3f8372cc9e0729957b1e40979ece7810285acbbecf0b"
     },
     "js/round12-media-performance.js": {
       "sizeBytes": 1254,
@@ -3423,8 +4007,8 @@
       "sha256": "a64310d0211411696ca2c899de3e87d3cb50376ff1283366805c41472514386c"
     },
     "js/search-j-2026.js": {
-      "sizeBytes": 16517,
-      "sha256": "c00babff8ccd7e76166eed0f915efc9f110bdc5c86d3a74ed56c38c7ce8fad61"
+      "sizeBytes": 18722,
+      "sha256": "1876481a31bb1510420ea542bff1bd1dba11b0eaded6afdddc966103bbfdb0e5"
     },
     "js/site-quality-2026.js": {
       "sizeBytes": 9773,
@@ -3447,8 +4031,8 @@
       "sha256": "d77448f2871f93185345b1ae14388f48611d6ef17ae120aa919e50a9a055d9fc"
     },
     "js/subpages-v1.js": {
-      "sizeBytes": 13210,
-      "sha256": "36c9f0477b747c34a5fb4426f4327e89cff4d8c0ea79d014add64ab9d4261a39"
+      "sizeBytes": 13778,
+      "sha256": "dc57af67fe73bcce727c7b73e33da62a77bb841b5c9494a9f53b210dc601c9b0"
     },
     "js/tenway-2026.js": {
       "sizeBytes": 7419,
@@ -3459,8 +4043,8 @@
       "sha256": "0f57a7ec39abc6169657b251943a50f689b0bf79865575950570d14a9882adf9"
     },
     "json/adatok/dokumentumok.json": {
-      "sizeBytes": 33704,
-      "sha256": "bcd2517a23808a46baf9ef7c80f15487a3aff0fa2490c037b190e41a6047a25f"
+      "sizeBytes": 33681,
+      "sha256": "801d248ef1ef1b8648d826d1cddd604b2266a8703a5010941671e9a3a837fc2b"
     },
     "json/adatok/esemenyek.json": {
       "sizeBytes": 1853,
@@ -3534,313 +4118,317 @@
       "sizeBytes": 6159,
       "sha256": "893cfecd12a49d722f4bef665cf693adfa259174235298c912329c8d0f9a427c"
     },
+    "json/adatok/tartalmi-audit-v1-39-3.json": {
+      "sizeBytes": 26020,
+      "sha256": "b020ac5900d359faf4e6dabf4862cc3d7af4ed1008ad8b7f50a48dec4a342dc4"
+    },
     "json/assets-inventory.json": {
-      "sizeBytes": 343951,
-      "sha256": "a5f9312819415074b5ad5e1989055513ec0a11401d7a3b023353fd2dc6234bbf"
+      "sizeBytes": 426433,
+      "sha256": "a6dcd3985bc088d7e8a79af57beea73d27d030eda62684662e0df9071046d055"
     },
     "json/assets-project-index.json": {
       "sizeBytes": 132181,
       "sha256": "94b4ec00171367d6da15f2754c3972b7eddffe743b6558996da2c61e1899ccf9"
     },
     "json/config.json": {
-      "sizeBytes": 14795,
-      "sha256": "3cea495bdb2919a8df9f07318373e6dba2371fe94554712e69f78a2fb19a58f9"
+      "sizeBytes": 15287,
+      "sha256": "b2b5ef6f72aa777a866b7bc47d23eb81866a33847df8b07bd7ed56f1b58d70f0"
     },
     "json/mediatar.json": {
-      "sizeBytes": 218634,
-      "sha256": "92fd2b66a0ad4227017484b785128033d3f6e6631b758c7f2e28a94465319ee6"
+      "sizeBytes": 276676,
+      "sha256": "60f2adec54c4e7f0d28b1e6872020021d2a1b7ddd42a74568697d98690663645"
     },
     "json/nyelvek.json": {
       "sizeBytes": 1785,
       "sha256": "de6bc0c038ba1dbf011533bea4bd18de996756489f48b7f1fa7103fcfd08354c"
     },
     "json/oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json": {
-      "sizeBytes": 2766,
-      "sha256": "ab2d26e57bbda8132a27c898406cd49ba819de4ffda2f0825442b9c854b73228"
+      "sizeBytes": 3067,
+      "sha256": "f6ee2ac4d9ce6e90bfca849aab79116c02bdedc9f597617b9a80d811f6ed8d64"
     },
     "json/oldalak/hirek-es-esemenyek/esemenynaptar/sportesemenyek.json": {
-      "sizeBytes": 2703,
-      "sha256": "06bb5a689b848e6eb27e0c38b65bc8464c7c3eba97b1e7a5f8aeeada19cbbbf0"
+      "sizeBytes": 3139,
+      "sha256": "f8580e9490fb7c5a5f68de30e6488601152a9df71dd6b290d2ae18cff0fa88c5"
     },
     "json/oldalak/hirek-es-esemenyek/esemenynaptar.json": {
-      "sizeBytes": 2799,
-      "sha256": "41a2634ec78fe999e6a92617a5fbc7259d92a159ea5b3723a7ae334c1159220e"
+      "sizeBytes": 3220,
+      "sha256": "cbcfbe6bc383dae78a2d6069b35fab17d28c48c776f64d09df6b95a36a51a22f"
     },
     "json/oldalak/hirek-es-esemenyek/hirek/hirarchivum.json": {
-      "sizeBytes": 2445,
-      "sha256": "bb8e3dce0f5b8af3d607dad13e36f2f082ab5e3b9ef10421393b1498550ae388"
+      "sizeBytes": 2859,
+      "sha256": "8705f44a08524130e0be70aae01fd927c81f6f62ce227a9f0785c6b2b54ec3fd"
     },
     "json/oldalak/hirek-es-esemenyek/hirek/iskolai-hirek.json": {
-      "sizeBytes": 2737,
-      "sha256": "19077106fd870f67fc03eb870833147b9c57c6b1740a8bb760c0444087cbe700"
+      "sizeBytes": 3169,
+      "sha256": "f923d30f0cc9c00d2325ed6ccdeb009f8902e439659be628e54968b452e68e16"
     },
     "json/oldalak/hirek-es-esemenyek/hirek/sporthirek.json": {
-      "sizeBytes": 2891,
-      "sha256": "4b9e822c035bc3a358a235da3c445c86be322931885969e6d5319dd49588e560"
+      "sizeBytes": 3311,
+      "sha256": "5b53a49d53520b9a4bfe67f454fb40274aa9954caceb78afe2d73f3547528e14"
     },
     "json/oldalak/hirek-es-esemenyek/hirek.json": {
-      "sizeBytes": 2302,
-      "sha256": "9b66b5326db6624141fca1f72b34a5b26569ba48def002b9b9dad7fe432da344"
+      "sizeBytes": 2722,
+      "sha256": "97a7c8be4a139f61ab5240c37b173c5f7d56bb27f6da188d9f32b2c54aae68f3"
     },
     "json/oldalak/hirek-es-esemenyek/kozlemenyek.json": {
-      "sizeBytes": 2749,
-      "sha256": "f8582bd0a276ceed9392d6f158b516ae1f0431792881b51939b34a18fc9b5df7"
+      "sizeBytes": 3163,
+      "sha256": "a8ffc866dc5344698f775c84870902885bec5b8121fd2483218be8416b278e96"
     },
     "json/oldalak/hirek-es-esemenyek.json": {
-      "sizeBytes": 2426,
-      "sha256": "858f1a97a61ee9d9b5e18838ff16b57759b7f46b6ca9c97262b02d174f58a9d2"
+      "sizeBytes": 2814,
+      "sha256": "c7528aa679777a94b4f636b6de97e059f98515a09ba845688c11323681d55d23"
     },
     "json/oldalak/informaciok/adatvedelem.json": {
-      "sizeBytes": 2761,
-      "sha256": "68438b7bd4b5bbb77e3949390fe6a8bc8462d0a058fc61143980145d09bfc687"
+      "sizeBytes": 3274,
+      "sha256": "4f591651bd0148f206ecbda3ffa9f3a02800a4f3ead6fb75c0f3f317f100af59"
     },
     "json/oldalak/informaciok/allaspalyazatok.json": {
-      "sizeBytes": 3204,
-      "sha256": "0feb1f6c7ff16c288dc4b2b5769de9bda0f1f28d286f71ee35c4319062591840"
+      "sizeBytes": 3534,
+      "sha256": "ff19a36599c488509d82a36f162498f1fd396d4e18bcf5239e0f7e52e10baabd"
     },
     "json/oldalak/informaciok/digitalis-ugyintezes.json": {
-      "sizeBytes": 2906,
-      "sha256": "1880f5b7db95555fb2ebc731142e786c17f7c8a603cba2654c8a7394b311e0dc"
+      "sizeBytes": 3108,
+      "sha256": "5ee8afc92f98941b7f5fa8e6b8ab8e8135301f4257373596e0b1bb681013a2a1"
     },
     "json/oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json": {
-      "sizeBytes": 3370,
-      "sha256": "17934e23893279f050d0b65a88d48503d3d8d2e8cb2e5807aace79d721a337b8"
+      "sizeBytes": 3673,
+      "sha256": "76f099994cb47a4900c5179cdd8bf9664d5e477f4307811157a8b85ff5c521e3"
     },
     "json/oldalak/informaciok/dokumentumtar/nyomtatvanyok.json": {
-      "sizeBytes": 3399,
-      "sha256": "d3d798e5d79b8d89b31f14c3403c9e9a769ba6bc3815b947716df637cc5d7db8"
+      "sizeBytes": 3816,
+      "sha256": "410d4c22e1c2d6ff9209f15bbe565e7e827b858d1850f4829327368175779f35"
     },
     "json/oldalak/informaciok/dokumentumtar/szabalyzatok.json": {
-      "sizeBytes": 3276,
-      "sha256": "397f6db1b5be46356c05f140836ce10c5d23d83120c3ab69d2d94c8e0f9e3774"
+      "sizeBytes": 3624,
+      "sha256": "99b264f934ced5b87440f55f9c061d3909f436a39958d513547543db937c8786"
     },
     "json/oldalak/informaciok/dokumentumtar.json": {
-      "sizeBytes": 4072,
-      "sha256": "a97db6a6935da187a7372bef772a566ed22598b1226c8e671c37136f0574aa63"
+      "sizeBytes": 2491,
+      "sha256": "178d2b97b78796f80042a3ba07b5ddc5363e5249242da8d9dc8c5bb8260b5640"
     },
     "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json": {
-      "sizeBytes": 3327,
-      "sha256": "73e168f7e6f3507062fd9ff0c7e0e96cb8f820deb90cd5bf8042831429db9f19"
+      "sizeBytes": 3807,
+      "sha256": "cab8bc3df1d24f4a0a8670343603f674680912c1d01e1beae517817edbf868fa"
     },
     "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok.json": {
-      "sizeBytes": 2999,
-      "sha256": "ba4bba4d4d1c66eb94cb44b64b40694fa673543f2c924e036fbb1aa26bbd0be6"
+      "sizeBytes": 3270,
+      "sha256": "c6a418ce88e607b3659b11007b9ffb9bbe728b5fab2bcdb2e5f16863376a6352"
     },
     "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok.json": {
-      "sizeBytes": 3428,
-      "sha256": "585c44687595e08866ccac6d1c31b53c87225b0dfac3a82164d9af7c628a91be"
+      "sizeBytes": 3909,
+      "sha256": "bc7d2d1197559beeb977922b0b04e079c7a1f1772282a1f2558255fa2100fa27"
     },
     "json/oldalak/informaciok/kozossegi-szolgalat.json": {
-      "sizeBytes": 3299,
-      "sha256": "75262c3909daeab9a3114321d9c11189d3a0f797ee4b45786089547c7f2ae31d"
+      "sizeBytes": 3781,
+      "sha256": "918069642c0843fea6165ac111d3923d6fea11b680ef4ce622936b64365b830e"
     },
     "json/oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json": {
-      "sizeBytes": 2807,
-      "sha256": "53df92c42b1ded001dcfa30f27e67dd9155323a93d49b3458c56092eff8efc77"
+      "sizeBytes": 3308,
+      "sha256": "175c5fae1d4308c5242d2740b660bdc8cfb6133a1137c954816c96a908bc7af2"
     },
     "json/oldalak/informaciok/mindennapi-tudnivalok/etkezes.json": {
-      "sizeBytes": 2905,
-      "sha256": "47f6b3e71e99bba66a471c46c8d7699f6b314c27bb682b818fd9a56c6cd7c3e0"
+      "sizeBytes": 3246,
+      "sha256": "083a521ce9019791d4b6a24d8646f3dd62d1f3f85c341522521d640a7ff1026b"
     },
     "json/oldalak/informaciok/mindennapi-tudnivalok/megkozelites.json": {
-      "sizeBytes": 3320,
-      "sha256": "face0dda416e1163594972d9738700e2756f8205a6d29b3daad33ab23cf29779"
+      "sizeBytes": 3617,
+      "sha256": "496a681802185f65e71e5eea603e18f67e81275643da4e8a86225e75bae455ab"
     },
     "json/oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json": {
-      "sizeBytes": 2463,
-      "sha256": "1990677f081756b241c49736b0028486d2f68ffc1f6958c2dee6b7cfe3049a37"
+      "sizeBytes": 2948,
+      "sha256": "7d2a14751bd3473927015a447c0164f4e178208d0b97c216e40548f4bfbbff4d"
     },
     "json/oldalak/informaciok/mindennapi-tudnivalok/terkep.json": {
-      "sizeBytes": 2330,
-      "sha256": "fe535f8b08f807384ed011c6acde037e8a796c60ad0c486c6ce760ae9592cfc5"
+      "sizeBytes": 2799,
+      "sha256": "4468872a201a91f4a1e063e429e4e6cbdf796d570737ed4d5d628b2392a6c676"
     },
     "json/oldalak/informaciok/mindennapi-tudnivalok.json": {
-      "sizeBytes": 2450,
-      "sha256": "44085af9c420cd6c10d257ee4aef6681d08c751053a8a9c3873bb32a2964b948"
+      "sizeBytes": 2893,
+      "sha256": "26785510ac13fe06c6982b365e4b7350120f69c8e850d0441164e436bfd14ae4"
     },
     "json/oldalak/informaciok.json": {
-      "sizeBytes": 2820,
-      "sha256": "0e5f568fb74fa840938f6e166c1d8a73db852c203fbc7fdaa0f43d81f7e7ef7a"
+      "sizeBytes": 3229,
+      "sha256": "0f20041c92eef348fe3f2a5d389f43cd88a6670b2724e76f69ca3ba696ca9b90"
     },
     "json/oldalak/iskolank/a-honlap-szuletese.json": {
-      "sizeBytes": 13372,
-      "sha256": "257320f38d85057bd4f2fbeb7ee65249389284f3e241dce96f53d4e705ee8712"
+      "sizeBytes": 13593,
+      "sha256": "9d582b989eb306da68f8a88567a4a56344b01c8c1b3149e92ea463c84ba21cbd"
     },
     "json/oldalak/iskolank/alapitvany.json": {
-      "sizeBytes": 2804,
-      "sha256": "ed80f5d233f1ab665cca2727d4d23940be4e79683fa52a8b427818d584d41e5d"
+      "sizeBytes": 2792,
+      "sha256": "f5347fdafc8388cbef5a14654450c92e70976ad3004119d07cc89cf21a4ac60e"
     },
     "json/oldalak/iskolank/bemutatkozas.json": {
-      "sizeBytes": 2988,
-      "sha256": "1f4b0a6bc6830b1a4fb17feb2fb3bf43f7ceaf37d4c395f6aa01820e82076034"
+      "sizeBytes": 2671,
+      "sha256": "4ebfcee712c922cb1f93dec8df6ec3c08b4364abd5d01fea82862f31876b1653"
     },
     "json/oldalak/iskolank/buszkesegeink.json": {
-      "sizeBytes": 2868,
-      "sha256": "dcf91078feb767206edcbc85e9051ff4b3ad912e61b482fc337744d7414672bb"
+      "sizeBytes": 3177,
+      "sha256": "657b1a76287c49ec5bcba571080700d413828bc9de16c9c1c03bfe2fc0024292"
     },
     "json/oldalak/iskolank/hagyomanyok-es-elismeresek.json": {
-      "sizeBytes": 2946,
-      "sha256": "953a3363ec2579b0d56337873ae84e550de3845694fd2fb36a5e24777245e6ed"
+      "sizeBytes": 3355,
+      "sha256": "170872fb100a723024daff422312248ee93b62c978cd28a691c725c0376e68ad"
     },
     "json/oldalak/iskolank/kuldetes-es-ertekek.json": {
-      "sizeBytes": 3197,
-      "sha256": "04f65a6a2951daf4f31baff23a6242be740f19bb0a9f4dd70a68b410364cc5ea"
+      "sizeBytes": 3418,
+      "sha256": "9cca86ec2280bbfdc128bd2a068754462e6113bc41a483a720dcb86ba2d7f939"
     },
     "json/oldalak/iskolank/oko-iskola.json": {
-      "sizeBytes": 2748,
-      "sha256": "68b12d4553ab4590a0ff295b148895a292cd28d8c9f9db93d74cac96232d510c"
+      "sizeBytes": 3160,
+      "sha256": "61f3ac90a683855e3f7ae2be2b243d1036e19e29efed1572c6826c0b82de0747"
     },
     "json/oldalak/iskolank/partnerek.json": {
-      "sizeBytes": 2784,
-      "sha256": "ca819aaa928d86a541e0e4d6ee11f9648b953ea3a4e9b60ae0c97ca06d0cd0d7"
+      "sizeBytes": 3139,
+      "sha256": "2e7c5fd8ad08e8f5d97da1ef81e68193cd8672ee0f17142de75df2016eb96b89"
     },
     "json/oldalak/iskolank/tantestulet.json": {
-      "sizeBytes": 2639,
-      "sha256": "9c79311766d8b352d447c35debe55758edd030631b20abeeee319862ef5947ac"
+      "sizeBytes": 3057,
+      "sha256": "efdcf40f5157b134e5e84f19d26a0b3911a92366209a865039d263a1f3ddd7ed"
     },
     "json/oldalak/iskolank/tortenet.json": {
-      "sizeBytes": 3841,
-      "sha256": "8cd32c316e6e2323b432a74ae2a6b8fc5f6ef04b3cc1c0bf2189896c848724f5"
+      "sizeBytes": 4424,
+      "sha256": "c9868d4f54e9909dc1af0a5ebf585eecff5e3a05283466bf794a5d4c465238a1"
     },
     "json/oldalak/iskolank.json": {
-      "sizeBytes": 3883,
-      "sha256": "ece3eaf42e5e9a01b70a4e3863585dc7367866b7f384e907e7c79df275c59850"
+      "sizeBytes": 4347,
+      "sha256": "8eaf9460125f3df230b9511f045c1fbedd9c0f1b848608d1362951cf0a5511be"
     },
     "json/oldalak/kapcsolat.json": {
-      "sizeBytes": 3154,
-      "sha256": "e0fa29f9599190ee6a41a1de73971cce34fa0cdfc1598e32d578695338a1ada9"
+      "sizeBytes": 3615,
+      "sha256": "e35f67bcfab755b338f1ab5dff4ef1cdd328a9f0a60c046d5cd6c0894b47b9d3"
     },
     "json/oldalak/kezdolap.json": {
-      "sizeBytes": 18726,
-      "sha256": "f2c890e478eb89506f22483ed127247d75e7df12aa403f5442d1713c65898d37"
+      "sizeBytes": 18826,
+      "sha256": "4482412ca09adc4cf1d7f3d2d2607ba1de2a88716a5bc03cfaa5c240dc3edcb4"
     },
     "json/oldalak/oktatas/digitalis-kultura/mesterseges-intelligencia.json": {
-      "sizeBytes": 3145,
-      "sha256": "e5b210726f017ed03b10e9f0ed7e43c96d0c9d46996b0c87e98b56d25c2de05a"
+      "sizeBytes": 3357,
+      "sha256": "5d6263afc574e12fa78669d9b1d29074aa5c7f97960f736e4bcf0c746f104215"
     },
     "json/oldalak/oktatas/digitalis-kultura/online-biztonsag.json": {
-      "sizeBytes": 2956,
-      "sha256": "99c7fe2114244dbbd4a42913a6a6a50607adbfa6866faa21084fc058de343abf"
+      "sizeBytes": 3162,
+      "sha256": "e8b2acfe9a8f26984f6a90cfd0c87ec2c23082fd018d1a55f150931d56155616"
     },
     "json/oldalak/oktatas/digitalis-kultura.json": {
-      "sizeBytes": 10615,
-      "sha256": "aedbcc5fd12868f85a2a79380fdc38b1323bdbcf6d22f04eb941a0e310fc0336"
+      "sizeBytes": 10708,
+      "sha256": "13aacf9115ed891550e33b28a52eabd4d3099fdc7d73282fc3f3d63cbf36a386"
     },
     "json/oldalak/oktatas/felveteli/elso-evfolyam.json": {
-      "sizeBytes": 2909,
-      "sha256": "0825af336c5b4891a8fed2a917d0f7be9cbbc7afbef6047edbd69c26b377bbda"
+      "sizeBytes": 3370,
+      "sha256": "565ffb2e4e43fcf5348e4ea318141a6c585c4646ce6a5f6958f098f074e3181f"
     },
     "json/oldalak/oktatas/felveteli/felveteli-hataridok.json": {
-      "sizeBytes": 3648,
-      "sha256": "83744d9ea86e2435e146993ca1c02875edc7bca7bd09176b52514ae2dbab8a6b"
+      "sizeBytes": 4113,
+      "sha256": "ebc3db9fcf7492eb5dbf07fc757a0f25c3ca2e85740f89c1c43966057a537a8d"
     },
     "json/oldalak/oktatas/felveteli/kilencedik-evfolyam.json": {
-      "sizeBytes": 3093,
-      "sha256": "1ec561ca5d60afbd686b25ba2cc09e853c6fa14c22eacfe09c8b831f308643f1"
+      "sizeBytes": 3400,
+      "sha256": "4285d4eca659ed929834906db89e28fcb6503e6859095a4a12abfb1855a15df5"
     },
     "json/oldalak/oktatas/felveteli/nyilt-napok.json": {
-      "sizeBytes": 3321,
-      "sha256": "708128ff5335689d3a975d12249de109e00aa292a7e174b8b3e5bddb3f904e3d"
+      "sizeBytes": 3770,
+      "sha256": "587b14f4d11b60fda0355971b77b0ee6e8eb64179f2c358c3abb602c95e849c0"
     },
     "json/oldalak/oktatas/felveteli.json": {
-      "sizeBytes": 3904,
-      "sha256": "10eaa142abaffb2b4c8dc843e172fde333f649ed63dcb926cc806c537cdc3bb7"
+      "sizeBytes": 4231,
+      "sha256": "4873bbc16e49584233268b60641cf2dd2f4e48b94a2170cf7707ff4434afe8b8"
     },
     "json/oldalak/oktatas/kepzeseink/altalanos-iskola.json": {
-      "sizeBytes": 2827,
-      "sha256": "320ac8c695d1d7055534b0499cc41f33e4cb5b099a9ebf00dc0db5025dc8817d"
+      "sizeBytes": 3271,
+      "sha256": "2575c86d299d18c8cf2f3f2f1a5ba72a88e7d8505807b456639cc01d024e7197"
     },
     "json/oldalak/oktatas/kepzeseink/gimnazium.json": {
-      "sizeBytes": 2906,
-      "sha256": "862af21ab5ab6c8edc3f491242d78ed0a1824397708dcf816e290b28f22c1444"
+      "sizeBytes": 3360,
+      "sha256": "43d875b86183a954ee74a3a56b2d557bc193c21aa201d6af6d7c10f8ede6cc40"
     },
     "json/oldalak/oktatas/kepzeseink/sportiskolai-neveles.json": {
-      "sizeBytes": 2479,
-      "sha256": "30ed768ba1ed1a788d6c69e4392c39e3d5f625ae9d39dcfbbe945fd1e8a352c9"
+      "sizeBytes": 2809,
+      "sha256": "d74048796dbca76a0cf4cbb1265b4118d394aeaa2eca14f21637ecc7cc3b5aa7"
     },
     "json/oldalak/oktatas/kepzeseink.json": {
-      "sizeBytes": 2727,
-      "sha256": "4561c5a68f9f7f7f02a222b7d41b12177d61110106a14436941c80267a1fcfac"
+      "sizeBytes": 3054,
+      "sha256": "f938381cd13bfec435c7a5f715aa29d28fdc5877f5a4dffc84fca0e5107059a2"
     },
     "json/oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json": {
-      "sizeBytes": 2822,
-      "sha256": "e0f470e31342ef321d23956fda12c65c2802dd3eeafc82119a0c05ffc09bef81"
+      "sizeBytes": 3162,
+      "sha256": "0cf8e4a20fbcb70ce6bb6ed702dd6593a569373594442abc5ccebacb454cdbaf"
     },
     "json/oldalak/oktatas/konyvtar.json": {
-      "sizeBytes": 4530,
-      "sha256": "2e126eaaa2435746283d0bd51622d69725b61fd6f57077b5acbb8dd0e200c5b8"
+      "sizeBytes": 3696,
+      "sha256": "0760562c4ebce482e9c010fd5daa86a2dca6788883389df89977cf2b6d94654d"
     },
     "json/oldalak/oktatas/tananyagok-es-jegyzetek/tanulastamogatas.json": {
-      "sizeBytes": 2699,
-      "sha256": "a64b45e0403ad659c29a89eacdde0cfb68333f33777e0c8c167b998c4aab5818"
+      "sizeBytes": 3212,
+      "sha256": "87878cd66efa93018216930f75b73886439eb414c7b828648d612876ffcc9675"
     },
     "json/oldalak/oktatas/tananyagok-es-jegyzetek.json": {
-      "sizeBytes": 3090,
-      "sha256": "3b476cbe92163d2d80ebe683719024c3b72b8c0b8a2345fbf61ef7eccdc1c3d3"
+      "sizeBytes": 3549,
+      "sha256": "8d6feae8fcc75b47acbd3cb4923a6da465b41301e61f84f24e8b20875ed37ca9"
     },
     "json/oldalak/oktatas/tanevek/aktualis-tanev.json": {
-      "sizeBytes": 2789,
-      "sha256": "0ba1bc356be9b64c0f90cfdfaf99b24565dc4259e730f8469782457c2f23f324"
+      "sizeBytes": 3236,
+      "sha256": "f216c3c6be65d50924d73d5d192a864d92ffb882c736a6e247fc44130bf3052c"
     },
     "json/oldalak/oktatas/tanevek/korabbi-tanevek.json": {
-      "sizeBytes": 2907,
-      "sha256": "853c951c7842a517ce511ebe620e1449459f5d5e6487323b844f99f92bc107e5"
+      "sizeBytes": 3228,
+      "sha256": "cb245e2100708e058f956df7cdcb3d260dc2d3d890c8fd1a8106044fea8adae1"
     },
     "json/oldalak/oktatas/tanevek.json": {
-      "sizeBytes": 2638,
-      "sha256": "db3cb65473135738d8ebd0bebcbba44463e80045908344840f880fef0e2d2bd9"
+      "sizeBytes": 3091,
+      "sha256": "85650af52685f5ab611c037a00d16b259401d72548611addab93a72dc5b928f5"
     },
     "json/oldalak/oktatas/vizsgak/egyeb-vizsgak.json": {
-      "sizeBytes": 3252,
-      "sha256": "bf8cae884673905fd1597af72aa28b8f593433f28dcbd02c42f0506323f411a9"
+      "sizeBytes": 3440,
+      "sha256": "5832a596d37585e650f4062f8c22f2a3244203d74e43924b381bd0501b6b4d80"
     },
     "json/oldalak/oktatas/vizsgak/erettsegi.json": {
-      "sizeBytes": 2766,
-      "sha256": "71387449176758bc95697fdd9b4f13b103e5fde3b3ede7741509232f841fd304"
+      "sizeBytes": 3312,
+      "sha256": "c1cb69c1d4dd7a0f41043a51fbaab92d3d416f0018695ddeaeac2d6d4ae3169d"
     },
     "json/oldalak/oktatas/vizsgak/osztalyozo-vizsgak.json": {
-      "sizeBytes": 2546,
-      "sha256": "7e5d10d660641104b4da72094ceebb9dd7a25bdc13c7b4337b02f99c0b2f1660"
+      "sizeBytes": 3074,
+      "sha256": "24199fd35800c50a1558da6fc74d16604604c55d08f9a5d948d3b645cc412c05"
     },
     "json/oldalak/oktatas/vizsgak.json": {
-      "sizeBytes": 2783,
-      "sha256": "43064560e7ed754885f033329396d571383c42f9c5bd0e8f83db772c1be625a1"
+      "sizeBytes": 3252,
+      "sha256": "7aa4c0359efab566045edb363486036db864fac4afc20699893b098bcde20813"
     },
     "json/oldalak/oktatas.json": {
-      "sizeBytes": 3022,
-      "sha256": "b8062a310faa7ae527ae8ff55ca980cc1a88d8743b493cafd284ecb840ee3fae"
+      "sizeBytes": 3342,
+      "sha256": "0fa1d2e97384538de5b18cef1f52866f4cbc41f700e34f7ec72bee408c1c81f2"
     },
     "json/oldalak/sport/csapatok.json": {
-      "sizeBytes": 3193,
-      "sha256": "5e04f706a9e8b98d4feddf37550407a335fa3fd4b54de959e1a56440ab1f6b6a"
+      "sizeBytes": 3403,
+      "sha256": "aec026e127b64f617284a247d0d982d45a7e941b2d03a20c9c04217afdd5b068"
     },
     "json/oldalak/sport/edzok.json": {
-      "sizeBytes": 3109,
-      "sha256": "cc7f6c09351cda25c6608a128ed8e6660fd9616d7a63f729e3c11984168047a7"
+      "sizeBytes": 3423,
+      "sha256": "2fac7582a780a1067975264029b59909030e0c37be66fdbcb190275855437300"
     },
     "json/oldalak/sport/sportagak.json": {
-      "sizeBytes": 2955,
-      "sha256": "2ab252d1159d4fb0548069cec471d44571642c6391da087937e8704f4111b8b7"
+      "sizeBytes": 3394,
+      "sha256": "27e0514c77b6996cb18ee9512dd259ec90da0efb9f0aa96dc3a764dc0a954f0e"
     },
     "json/oldalak/sport/sporteredmenyek.json": {
-      "sizeBytes": 2346,
-      "sha256": "ac2fbcc89f0ad4d2505ff655b3ed16351a8925e12ff75946c5fe9f56b74c55b4"
+      "sizeBytes": 2799,
+      "sha256": "39ed542a5bb1d97ebb94cb51de42e9623ebf0adb4c20cbf9673bd1ecd94feeaa"
     },
     "json/oldalak/sport/sportgaleriak.json": {
-      "sizeBytes": 2112,
-      "sha256": "d699afc4af7ec87a02394f272fb4020a835f002e5d0838948cf09bd053b4ad2a"
+      "sizeBytes": 2460,
+      "sha256": "4545794e05ced1781e7787ae76e4159afeb87c0ca77f2257cc1aa14ba765df68"
     },
     "json/oldalak/sport/sportolok.json": {
-      "sizeBytes": 3233,
-      "sha256": "cba148f404974a12fe9ab027a6b5f26f30fb160dff632803ba5be60f0cf6ac88"
+      "sizeBytes": 3558,
+      "sha256": "2dc64dc8a22a7fd3473ade80a546fe6efb1820e6d713d1a8d48f445592ca1a29"
     },
     "json/oldalak/sport.json": {
-      "sizeBytes": 2788,
-      "sha256": "8489784b624eeb7652024690e21a255693e5f0d9d9aadd09ae9df3cda80fbfee"
+      "sizeBytes": 3223,
+      "sha256": "1100ac6109193d4efeb6c40f03c16d2a19a41faff9ed79f9ef6ad4f088244b25"
     },
     "json/oldalindex.json": {
-      "sizeBytes": 63895,
-      "sha256": "e1bfcd98664243be218bc6928d340a0551067ae8b513aaf5d711dfea5c7b5dc3"
+      "sizeBytes": 159479,
+      "sha256": "ab2b4bf4a491cbc230ab69cbe5ad6b40f30fc3aaca0c964de90b63ab583e16b7"
     },
     "json/schemas/dokumentumok.schema.json": {
       "sizeBytes": 5536,
@@ -3871,8 +4459,8 @@
       "sha256": "29a7f3d09d77424f77e455b645a857435224e85e37fa3aa512e2f3a23e6058bf"
     },
     "mobile/quick-nav.js": {
-      "sizeBytes": 3084,
-      "sha256": "ab15c848ea0c2d7d5356d44ddaa0c10bb5c7c30a4cabead59c551c16ea87dc95"
+      "sizeBytes": 3234,
+      "sha256": "8c449097c6eb6a6e39d9bf60a6b385a67ef247b701d18b0458f94f66fe5efa3b"
     },
     "mobile/radial-wheel-v1-38.css": {
       "sizeBytes": 5696,
@@ -3935,8 +4523,8 @@
       "sha256": "78b72d85e76362c780f1c1a36454822a538e28b0283d53cb622191e8043d3467"
     },
     "script.js": {
-      "sizeBytes": 1406,
-      "sha256": "b5112c535f78b62d79de250ae36c5b0682176def77d6d2519707f8ef8153f066"
+      "sizeBytes": 1506,
+      "sha256": "f4665c7babec1df6d3f29187312bb1f08b2fdbe1477222cccf549acd44aeac49"
     },
     "service-worker.js": {
       "sizeBytes": 5975,
@@ -3954,6 +4542,18 @@
       "sizeBytes": 3634,
       "sha256": "8e58b74562f76214461b6129dd036ec10dce7815565dea46d45d23d0a6dfa17d"
     },
+    "tools/audit-content-v1-39-7.mjs": {
+      "sizeBytes": 3971,
+      "sha256": "af9d41e029e2ad63f567f8693da2f159d921e44cf853ee0e87d92159e4f93e24"
+    },
+    "tools/audit-editorial-v1-39-8.mjs": {
+      "sizeBytes": 6407,
+      "sha256": "f7463eef07570a31c2290a27189178a953f3819a8e1d901204a96bdf46f7a838"
+    },
+    "tools/audit-editorial-v1-39-9.mjs": {
+      "sizeBytes": 6407,
+      "sha256": "615c21d44eb7cc7410c635a743747d759602423b03407d5f16b0b1afb1940506"
+    },
     "tools/audit-subpages-v1.js": {
       "sizeBytes": 4755,
       "sha256": "5f3dbdc75f34f097f562efe803c5f909ad9339b61fc5f65948d1d526ac89058c"
@@ -3966,17 +4566,29 @@
       "sizeBytes": 4859,
       "sha256": "290f22575928c11aa71168ceccb4a2a7890309761ddec616038690adf21b7ff2"
     },
+    "tools/build-content-inventory-v1-39-3.mjs": {
+      "sizeBytes": 2776,
+      "sha256": "bf63f63a653e2b1729f8ac6cc7beca17dc73290489e9f3db3460e07092d09fd9"
+    },
     "tools/build-content-v1-39-0.js": {
       "sizeBytes": 10228,
       "sha256": "746de1ccdd92def10fb9ae9c174f1fbbe5cdea2a9c86df0d62e1d8571520858f"
     },
+    "tools/build-editorial-graphics-v1-39-8.mjs": {
+      "sizeBytes": 6438,
+      "sha256": "7b590916f948c30856cb90fab078c4727869f71b258f66829cbddd1e5ef31f72"
+    },
+    "tools/build-editorial-graphics-v1-39-9.mjs": {
+      "sizeBytes": 6920,
+      "sha256": "3f08f1d5def62904003dc0ca1b4251963ceb8289f46c326e38bb37bf337dc69b"
+    },
     "tools/build-media-expansion-plan-v1-9.js": {
-      "sizeBytes": 3661,
-      "sha256": "8a6989724e0c03d857240fbb96a8fc593146122e9bb319b71fe3710e36c3997a"
+      "sizeBytes": 4214,
+      "sha256": "79e2ab86045194652aeddde5318328a5a904c55abf861e53875dba9de5983afa"
     },
     "tools/build-release-manifest.js": {
-      "sizeBytes": 1421,
-      "sha256": "e429fa4462ab83b6900647b5833d1ed2a8037b01ace76d7f4cbc05b70538dd07"
+      "sizeBytes": 1610,
+      "sha256": "c231f856b1391d3e2797787acf015b5f2c5a39d44dd6ff6b9687e34a09a84e41"
     },
     "tools/build-rule31-worklist-v1-8.js": {
       "sizeBytes": 3230,
@@ -3986,25 +4598,29 @@
       "sizeBytes": 3230,
       "sha256": "e63292fb82defb1b49c152e605b81a7a4d3858a53b75e671fa55e66d8e2033b4"
     },
+    "tools/build-search-index-v1-39-1.js": {
+      "sizeBytes": 2523,
+      "sha256": "b9fd11be041cccd4a9c9a4d53ff82cabbb2f77653324b15d8e7b81f843560734"
+    },
     "tools/dokumentum-szerkeszto.html": {
       "sizeBytes": 4566,
-      "sha256": "d61380bbd99d20bd5c48315a7be520d93128b0de5ddd348af0eaa5439b22b282"
+      "sha256": "2717276969b20ead27b8677c2e7cc46b5092d462d051c395bd65aaac3fdbffee"
     },
     "tools/dokumentum-szerkeszto.js": {
       "sizeBytes": 4523,
       "sha256": "bc9426965d65e4795425a12e63c5feb34d3813beea70f10562f3c35de0f1efa2"
     },
     "tools/eszkoz-mediator.html": {
-      "sizeBytes": 13246,
-      "sha256": "2229af20b20c70697181b637afd9e9115d19d10ea50aa324ee11f3db3a0bf17c"
+      "sizeBytes": 13915,
+      "sha256": "fa88010694a3fc6d264fc3407e1820e9e91fa2cba49360330d2b85962af49d14"
     },
     "tools/fejlesztoi-munkakozpont-20.html": {
       "sizeBytes": 7225,
-      "sha256": "a0b898570c346f38f1ed44fc790319337a7d4975d561685d2c7a5047a97bf5ad"
+      "sha256": "d87f74ed6cad75869182a26624df253efa803ec459a0666f006eadbe832f817d"
     },
     "tools/ftp-kiadas-ellenorzo.html": {
       "sizeBytes": 3783,
-      "sha256": "675376b9cd158ae26714d8066698071bf536bb6671cddc2dca5938a485f4665b"
+      "sha256": "8bd9ad66e1df5db453cd75c557ca2f1dcdd8e416e060539eb3f783782cc1574a"
     },
     "tools/ftp-kiadas-ellenorzo.js": {
       "sizeBytes": 12162,
@@ -4012,7 +4628,7 @@
     },
     "tools/hirek-mintaeditor-18.html": {
       "sizeBytes": 2269,
-      "sha256": "3107d6a8f28451a6b9fa6a390cda57b2c19f4ef189a599c454788cc949a83e4f"
+      "sha256": "f32c916c40a6643b9cfb0a91ab3f6d5ce4cb04d1b65475fbfa04859f02112e99"
     },
     "tools/hirek-mintaeditor-18.js": {
       "sizeBytes": 3073,
@@ -4020,23 +4636,35 @@
     },
     "tools/index.html": {
       "sizeBytes": 3783,
-      "sha256": "f65de30c0371c4d8ffcb86681b5a6bc8a8b2250db73eb6b92c433b8c3fda5e21"
+      "sha256": "72f4c5f72de8eef758127bcca1e8e4d6315436729694ee74aeda7f0fcae2a51a"
     },
     "tools/kiadas-es-mediak-18.html": {
       "sizeBytes": 2566,
-      "sha256": "98a157f554387551d35e8357bab6a841417e822823127f85b9530d2431aab3db"
+      "sha256": "fd8827255611b7a9d467c8f388f92ac8cf4f3e21dc700e884042edc57e9272ce"
     },
     "tools/kiadas-es-mediak-18.js": {
       "sizeBytes": 7740,
       "sha256": "15cc09abea2662f6740cf65c7229a7c679f6220b5abb1543497d3fccf6b05efa"
     },
     "tools/media-manager-2026.js": {
-      "sizeBytes": 41860,
-      "sha256": "0877db96fb8e93132ad30010cabef5efc00d5bf7a13186c60e95e650a755c4f2"
+      "sizeBytes": 42850,
+      "sha256": "dae6aeede3fb5cfa12e72c2b820da1291eb57f93cc780dfe40cc6de949c4b77d"
     },
     "tools/media-minoseg-2026.js": {
       "sizeBytes": 3821,
       "sha256": "8dd5d00711aa6bf4b7ae6ffa0616716c8b9370ac2ae6d11d73aa20b536907b65"
+    },
+    "tools/media-project-ops-v1-39-4.mjs": {
+      "sizeBytes": 2496,
+      "sha256": "e83275ba90404bc61c627821842848bad1cbe1a4e59a7f53a99bfd289197a604"
+    },
+    "tools/media-validation-v1-39-7.mjs": {
+      "sizeBytes": 3044,
+      "sha256": "8f4c6df2be38187e835fca2b0405aea2c857413f0ef339e0e54858be29cf94bb"
+    },
+    "tools/migrate-global-block-ids-v1-39-8.mjs": {
+      "sizeBytes": 2894,
+      "sha256": "ea03b80cc9229369e484a51e3efe0b103bb25a163ecd5107bc77ab9e9cbf9222"
     },
     "tools/minosegkapu-2026.js": {
       "sizeBytes": 9307,
@@ -4044,23 +4672,23 @@
     },
     "tools/minosegkapu.html": {
       "sizeBytes": 2286,
-      "sha256": "ffc5654336f284005b56acd72e9d9ece1f5b06c6fb55437bef6724e36a7919c5"
+      "sha256": "39099a10027d864a279076ac0cdc14f42a51fd566d63b6d3cad66471b231d267"
     },
     "tools/mobile-preview-v1-39-0.html": {
-      "sizeBytes": 2317,
-      "sha256": "5dc10602b5bc8f4f6a78cc286035c1ead885bbe620f9dc6a3d16bbd6321067a1"
+      "sizeBytes": 2373,
+      "sha256": "0045b8a8b0528975c3efd26d74454b76ba727c9fa5785124aa0d054bfd327b2c"
     },
     "tools/oldal-json-szerkeszto.html": {
       "sizeBytes": 8857,
-      "sha256": "506b9d5066bdc5f434a1614e7a9d7d720e8eb487ea49eef454ee8c1d4cf6fd06"
+      "sha256": "ddc0af7d36a6a6d11523adc3a554fefcbff8b223f08b778ce91f703069f73a8a"
     },
     "tools/oldalindex-frissito.html": {
       "sizeBytes": 6957,
-      "sha256": "46a44fc0c6c3f86e1ad434c77571a679c62a4d4e81f4c31ce3250f220bcf7f91"
+      "sha256": "aa2dcf9b29a99151fa998b452bff4d6f6c20266de703199a859f585278c1915a"
     },
     "tools/parameterek-szerkeszto.html": {
       "sizeBytes": 6021,
-      "sha256": "edc891f3c7aa135380f9329957e5ddab142102ad62a99027ab4027dff441d319"
+      "sha256": "ee3ed0d224b1176786838b8b3d991f702459965c78730c5f7308752dfad6f877"
     },
     "tools/parameterek-szerkeszto.js": {
       "sizeBytes": 14428,
@@ -4074,17 +4702,29 @@
       "sizeBytes": 5109,
       "sha256": "6b15b361b332c2a37942af41046589724ba1229147ded8689d4afde3f6b26aa5"
     },
+    "tools/refine-editorial-metadata-v1-39-9.mjs": {
+      "sizeBytes": 10698,
+      "sha256": "276e32edea41de0628a1d91121db8156e195020e1e2f5f8b4c2faed8c0dce282"
+    },
     "tools/remove-self-links.js": {
       "sizeBytes": 1108,
       "sha256": "d965b3bf1453e548e70c3b495e0016d30731d1a61d366f47ed4173c4d4c244ca"
+    },
+    "tools/review-content-v1-39-3.mjs": {
+      "sizeBytes": 25790,
+      "sha256": "1979bcd0ce746777762206cd131d6937e4ccdd65dc237492faaac0fc027b6e6f"
     },
     "tools/round20-suite.js": {
       "sizeBytes": 22609,
       "sha256": "d78e30efd9080a877d0d74f0f42c9184acda06e638cefca8c0961c9ce8e4b6ef"
     },
     "tools/route-smoke-v1-39-0.html": {
-      "sizeBytes": 4963,
-      "sha256": "f7b76e924fa01021d8f54b35af44f98a7cab9c9451eb8fbed960783fc2107774"
+      "sizeBytes": 5019,
+      "sha256": "79b9eea7eacde46e7f0f530dc64adfd3d245f26bb4e149586b42b7cdbd4d2e16"
+    },
+    "tools/route-smoke-v1-39-2.html": {
+      "sizeBytes": 5107,
+      "sha256": "65ae8d497bcfb4315371c4b3fe8d2ea93eee8966ef8b7e9db776562ff63d4f91"
     },
     "tools/run-full-regression-v1-24.js": {
       "sizeBytes": 2379,
@@ -4144,11 +4784,11 @@
     },
     "tools/sporthirek-szerkeszto.html": {
       "sizeBytes": 7950,
-      "sha256": "292c13117b98593039e9ae9750bbfd2a1e607c627fd2fe95f340e636788e2cd5"
+      "sha256": "8d14c22aad14f1b256f55be2f4ec4d23967b7bcdd94329dbac95f94bdf766de3"
     },
     "tools/tartalmi-hitelesites.html": {
       "sizeBytes": 6832,
-      "sha256": "3389a4c8f1b4ba035ab6a75da326a50129b81ef1d0794d8b0a8e56f656b4d28b"
+      "sha256": "67c83fcccce5498b448cc3e933080402c1c1a9f991df2e2ae09deced0403121c"
     },
     "tools/tartalmi-hitelesites.js": {
       "sizeBytes": 11483,
@@ -4161,6 +4801,22 @@
     "tools/tartalomellenorzesi-jegyzek.csv": {
       "sizeBytes": 25241,
       "sha256": "48e0e38bd9456662eed95e239b0d6af3fc65f29c999186eaad46ddbd404fc617"
+    },
+    "tools/test-abcd-v1-39-9.mjs": {
+      "sizeBytes": 6778,
+      "sha256": "5476139f82402b20faeb26dba7e920393392806b305323b3e3864dcda1f70505"
+    },
+    "tools/test-bcd-v1-39-8.mjs": {
+      "sizeBytes": 5761,
+      "sha256": "7a70092e81754b27e5ac7d5a98fe1f760df0553cf742d8a34999736132d0bc4d"
+    },
+    "tools/test-browser-responsive-v1-39-5.js": {
+      "sizeBytes": 6741,
+      "sha256": "a8cd06c8baba2e7c9e3afaacce03520b16c0590e32925969ad6fab0113f52c7b"
+    },
+    "tools/test-browser-responsive-v1-39-6.js": {
+      "sizeBytes": 7355,
+      "sha256": "b077f032edb9da48d3cb67f39dcb28a3e963480faf4d5727b90db4e4416f4775"
     },
     "tools/test-browser-v1-25.js": {
       "sizeBytes": 6518,
@@ -4217,6 +4873,10 @@
     "tools/test-cache-resilience-v1-12.js": {
       "sizeBytes": 5972,
       "sha256": "27ecf98b7d6aabad4c08fe6b2316145ca054129b901e57b99f2e09170e6598d8"
+    },
+    "tools/test-content-v1-39-3.mjs": {
+      "sizeBytes": 8154,
+      "sha256": "5323e2d9c8cb7512b1edd80654eb607f01c60d45aa8aeac6fc3c244ca6ea8bd6"
     },
     "tools/test-corrections-v1-31.js": {
       "sizeBytes": 5262,
@@ -4534,6 +5194,18 @@
       "sizeBytes": 11045,
       "sha256": "e03915acd4e161aae4649188b0de2d93b285aed646219d36a7152002d032ac89"
     },
+    "tools/test-header-static-v1-39-10.mjs": {
+      "sizeBytes": 2837,
+      "sha256": "5655642ac31490c63891b47418f0f17458ef5a5ec0a9368446501a1fcbba77c6"
+    },
+    "tools/test-home-header-v1-39-10.js": {
+      "sizeBytes": 6132,
+      "sha256": "dcb6e334a3e91892e35c3d01a3953d7d81cc8a838a23a46fd7a1f19198a1ebc0"
+    },
+    "tools/test-html-semantics-v1-39-5.py": {
+      "sizeBytes": 3142,
+      "sha256": "fb159b91ed50f129d2abbb588b1ea159d7a3bd438b9609fe561b04f1ec7dd46f"
+    },
     "tools/test-media-export-v1-8.js": {
       "sizeBytes": 6904,
       "sha256": "a9429479e76d1ff34dc6e8a1b1bd96c0eabe6ad82aeb64ad2d28c62ced34fb71"
@@ -4734,9 +5406,17 @@
       "sizeBytes": 3216,
       "sha256": "1081a25d874387de53447146b209e23d660a931e886c9afa1cab095c39bd3d89"
     },
+    "tools/test-modal-a11y-v1-39-6.mjs": {
+      "sizeBytes": 5953,
+      "sha256": "1c6529812ec0c665922da79c7d2ad8d1287fb8c04806a18edb87bb1fa839de03"
+    },
     "tools/test-navigation-v1-38.js": {
       "sizeBytes": 8484,
       "sha256": "ba98d1986b146f117a9fa741e78b7dc87a5517f7f9c75f9f8136abf9c7bd7c16"
+    },
+    "tools/test-offline-six-v1-39-7.mjs": {
+      "sizeBytes": 9498,
+      "sha256": "da46d3fddc136b3669da532c3bd91914cafd2a0671b65646f28bd7524eab8452"
     },
     "tools/test-optimization-v1-37.js": {
       "sizeBytes": 5300,
@@ -4870,6 +5550,14 @@
       "sizeBytes": 4823,
       "sha256": "830536b6c10b0ac1517f9ca6e8e8d7b3005b8fd899dfdfccf1970afc854b5f8a"
     },
+    "tools/test-release-v1-39-1.js": {
+      "sizeBytes": 2613,
+      "sha256": "f060fba26be920ddd41811d9b9e225a1c2fa22d406dece067fcc03f2ed3eafb8"
+    },
+    "tools/test-release-v1-39-2.mjs": {
+      "sizeBytes": 3847,
+      "sha256": "35c4877d5aaa406375aa3d04320ea23940546aed7126e0e486e64e93bdf73e16"
+    },
     "tools/test-release-v1-5.js": {
       "sizeBytes": 10068,
       "sha256": "d5863fbc38dae5be1016673b457d0ff66e523db1f424db5704a1a340f5ba8d0b"
@@ -4886,9 +5574,17 @@
       "sizeBytes": 3473,
       "sha256": "09bdbaa4db5c235a5e8a16c3cf848f5b1032ab972f645010b813ede307e4a90e"
     },
+    "tools/test-responsive-a11y-v1-39-5.mjs": {
+      "sizeBytes": 8599,
+      "sha256": "c1460ccf23b6464c5be66b17f167514ed0d0b440d45f33b07ea5cfe7375be028"
+    },
     "tools/test-review-worklist-v1-9.js": {
       "sizeBytes": 5189,
       "sha256": "c1621a123bc609158f36fd51583eb8f16331d2a07534138e7ee5b3de834840fa"
+    },
+    "tools/test-search-index-v1-39-1.js": {
+      "sizeBytes": 1179,
+      "sha256": "ed9d79c86ef2ce03dbee74677e283cd4d03c52fcad982ced5f579c2794ee1036"
     },
     "tools/test-static-http-v1-15.js": {
       "sizeBytes": 2997,
@@ -5082,17 +5778,29 @@
       "sizeBytes": 3748,
       "sha256": "3bc77c055d202fcd5f2a8939b1c85dbc18a216ff8a69ada9d668ee923126f041"
     },
+    "tools/test-tools-browser-v1-39-4.js": {
+      "sizeBytes": 6868,
+      "sha256": "54bb5dd507ca02c670ca44c6fc35b6cfbe840e7b55361910f203265d67296ec5"
+    },
+    "tools/test-tools-media-v1-39-4.mjs": {
+      "sizeBytes": 5423,
+      "sha256": "4066c9e4bff571741afc04fe93bd31cd28e968a15f4a6a2a4e321014af2ac226"
+    },
+    "tools/test-zip-engine-v1-39-4.mjs": {
+      "sizeBytes": 1439,
+      "sha256": "cee9012de7b7ebe26d7710a640e7aa0d79f66b985cc65a601ba88d7aeb0a331f"
+    },
     "tools/tool-settings-2026.js": {
       "sizeBytes": 211,
       "sha256": "0543eb693c352917e2cdfe9b588bbd9535ad368e3c386f5c72d4dbf9bdaf7ffd"
     },
     "tools/tool-ui-2026.js": {
-      "sizeBytes": 3722,
-      "sha256": "6aeab354161b308e7dc37add135f3e97edd5dc3f0048472567b8b781e8a2ae41"
+      "sizeBytes": 5852,
+      "sha256": "d1627663e1fd19d146b0ee57d97dd30747425fd89410f920a7824d5c0a387a8c"
     },
     "tools/verify-release-manifest-v1-39-0.js": {
-      "sizeBytes": 1851,
-      "sha256": "34806334e103480f89b437f83b40a145113395aca49f855461994e4cd6ff4c77"
+      "sizeBytes": 1853,
+      "sha256": "e93d434f197ed6b546ba8dd97dc7c9f4eca75b9609416a636ee9a227cc83d4cf"
     },
     "tools/zip-compare-20.js": {
       "sizeBytes": 3460,

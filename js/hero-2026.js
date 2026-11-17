@@ -8,7 +8,6 @@ export function renderPremiumHero(block){
  const slides=(Array.isArray(data.slides)&&data.slides.length?data.slides:[data]).filter(slide=>slide&&typeof slide.mediaId==='string').slice(0,settingNumber('runtime.hero.maxSlides'));
  if(!slides.length)return null;
  const section=el('section','csn26-visual-map');section.setAttribute('aria-label','Képes kezdőlap és főmenü');
- const heading=el('div','csn26-visual-heading');heading.append(el('span','csn26-visual-kicker','SPORT · TUDÁS · KÖZÖSSÉG'),el('h1','','Fedezd fel a Csanádi Sportiskolát'),el('p','','Asztalon a két kép együtt lapozható, telefonon egyenként követik egymást. A teljes képre kattintva megnyílik a tartalom.'));
  const row=el('div','csn26-visual-row');
  row.setAttribute('aria-roledescription','képes tartalomváltó');
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
@@ -77,6 +76,8 @@ export function renderPremiumHero(block){
   launcher.append(home);
   row.append(launcher);
  }
- section.append(heading,row);
+ // Preserve an accessible page heading without reintroducing the removed visible introduction.
+ const accessibleHeading=el('h1','visually-hidden','Csanádi Árpád Sportiskola');
+ section.append(accessibleHeading,row);
  return section;
 }

@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 4
   },
   "seo": {
     "title": "A honlap születése – emberi döntések és digitális segítség – Csanádi Sportiskola",
@@ -173,15 +173,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000066",
       "type": "section",
       "title": "A megújuló honlap tartalmi alapelvei",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000066",
           "type": "markdown",
           "data": {
-            "text": "A megújuló oldal az iskola nyilvános tájékoztatását, a sportot, a tanulást és a dokumentumokat kapcsolja össze. A közzététel alapelve a dátumok, a dokumentumok és az intézményi adatok ellenőrizhetősége: a szemléltető média és a hivatalos iskolai fénykép nem ugyanaz.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/informaciok/dokumentumtar)"
+            "text": "A megújuló oldal az iskola nyilvános tájékoztatását, a sportot, a tanulást és a dokumentumokat kapcsolja össze. A közzététel alapelve a dátumok, a dokumentumok és az intézményi adatok ellenőrizhetősége: a szemléltető média és a hivatalos iskolai fénykép nem ugyanaz.\n\n[Dokumentumtár](#/informaciok/dokumentumtar)\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
           }
         }
       ]
@@ -194,6 +194,11 @@
     "preview": false,
     "route": "#/iskolank/a-honlap-szuletese",
     "verifiedContent": false,
-    "bannerMediaId": "media:iskolank"
+    "bannerMediaId": "media:iskolank",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "home"
+    }
   }
 }

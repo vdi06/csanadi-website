@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 6
   },
   "seo": {
     "title": "Közösségi szolgálat – Csanádi Sportiskola",
-    "description": "Közösségi feladatok, együttműködés és felelősségvállalás.",
+    "description": "Közösségi feladatok, együttműködés és felelősségvállalás. A közösségi szolgálat tervezési, igazolási és tájékozódási lépéseit gyűjti össze.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
   "tags": [],
-  "summary": "Közösségi feladatok, együttműködés és felelősségvállalás.",
+  "summary": "Közösségi feladatok, együttműködés és felelősségvállalás. A közösségi szolgálat tervezési, igazolási és tájékozódási lépéseit gyűjti össze.",
   "blocks": [
     {
       "id": "block:000057-section-1",
@@ -70,15 +70,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000057",
       "type": "section",
       "title": "Közösségi szolgálat az érettségi előtt",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000057",
           "type": "markdown",
           "data": {
-            "text": "A közösségi szolgálat rendszerint 50 órányi, szervezett és igazolt tevékenységet jelent a középiskolások számára. Az iskola részletes tájékoztatást és külön nyilatkozatokat tesz közzé a jelentkezésről, együttműködési megállapodásról és szolgálati naplóról.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "A jogszabályi alap szerinti 50 órás iskolai közösségi szolgálatot az intézmény által megadott rendben kell dokumentálni. A Csanádi hivatalos koordinátori elérhetősége a 2026. november 17-i közlésben Horváth-Szabó Erika (horvath-szabo.erika@csanadiiskola.hu). A konkrét helyszínt és feladatot indulás előtt egyeztesd a koordinátorral.\n\n[Közösségi szolgálat – koordinátor – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozszol.html)"
           }
         }
       ]
@@ -89,6 +89,11 @@
     "preview": false,
     "route": "#/informaciok/kozossegi-szolgalat",
     "verifiedContent": false,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "service"
+    }
   }
 }

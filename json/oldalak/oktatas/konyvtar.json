@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 6
   },
   "seo": {
     "title": "Könyvtár – Csanádi Sportiskola",
-    "description": "Olvasás, információkeresés és önálló tudásszerzés.",
+    "description": "Olvasás, információkeresés és önálló tudásszerzés. A könyvtár szerepét, a tudatos keresést és a forráskritikus olvasás gyakorlati szempontjait mutatja be.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "Olvasás, információkeresés és önálló tudásszerzés.",
+  "summary": "Olvasás, információkeresés és önálló tudásszerzés. A könyvtár szerepét, a tudatos keresést és a forráskritikus olvasás gyakorlati szempontjait mutatja be.",
   "blocks": [
     {
       "id": "block:000028-section-1",
@@ -70,43 +70,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000028",
       "type": "section",
       "title": "Könyvtári és tanulási tájékozódás",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000028",
           "type": "markdown",
           "data": {
-            "text": "Az iskolai könyvtárhoz kapcsolódó információkeresés, olvasás és forráshasználat a tanulási önállóság része. Nyitvatartást vagy kölcsönzési határidőt csak a könyvtár saját ellenőrzött tájékoztatása alapján lehet megadni; ilyen dátum nélkül a tanuló az intézményi kapcsolaton keresztül tájékozódhat.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/kapcsolat)"
-          }
-        }
-      ]
-    },
-    {
-      "id": "block:000029-section-1",
-      "type": "section",
-      "title": "Miben segíthet a könyvtár?",
-      "children": [
-        {
-          "id": "block:000029-text-1",
-          "type": "markdown",
-          "data": {
-            "text": "A könyvtári szolgáltatások a tanulást, az olvasást, az információkeresést és az önálló kutatómunkát támogathatják. A kölcsönzési feltételeket és az elérhető állományt a helyi könyvtári szabályzat rögzíti."
-          }
-        }
-      ]
-    },
-    {
-      "id": "block:000029-section-2",
-      "type": "section",
-      "title": "Kölcsönzés és tájékozódás",
-      "children": [
-        {
-          "id": "block:000029-text-2",
-          "type": "markdown",
-          "data": {
-            "text": "A nyitvatartásra, beiratkozásra, könyvkölcsönzésre és tanulói hozzáférésre vonatkozó aktuális feltételek intézményi ellenőrzés után jeleníthetők meg.\n\n[Könyvtár](#/oktatas/konyvtar) · [Tananyagok és jegyzetek](#/oktatas/tananyagok-es-jegyzetek)"
+            "text": "A könyvtárhasználat gyakorlati tudnivalóit a [Könyvtári szolgáltatások](#/oktatas/konyvtar/konyvtari-szolgaltatasok) aloldalon találod. Nyitvatartást és kölcsönzési határidőt nem állítunk intézményi igazolás nélkül; ilyen kérdésben az [iskolai kapcsolati oldal](#/kapcsolat) segít."
           }
         }
       ]
@@ -117,6 +89,11 @@
     "preview": false,
     "route": "#/oktatas/konyvtar",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
   }
 }

@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 6
   },
   "seo": {
     "title": "Sporteredmények – Csanádi Sportiskola",
-    "description": "A nyilvánosan ellenőrizhető eredmények külön, név szerinti jegyzéke.",
+    "description": "A nyilvánosan ellenőrizhető eredmények külön, név szerinti jegyzéke. A név szerint ellenőrizhető sporteredmények és a nyilvános eredményjegyzékek eléréséhez.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "sport"
   ],
   "tags": [],
-  "summary": "A nyilvánosan ellenőrizhető eredmények külön, név szerinti jegyzéke.",
+  "summary": "A nyilvánosan ellenőrizhető eredmények külön, név szerinti jegyzéke. A név szerint ellenőrizhető sporteredmények és a nyilvános eredményjegyzékek eléréséhez vezet.",
   "blocks": [
     {
       "id": "block:000033-section-1",
@@ -42,15 +42,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000033",
       "type": "section",
       "title": "Közzétett sporteredmények",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000033",
           "type": "markdown",
           "data": {
-            "text": "A hivatalos büszkeséglistán szereplő történeti eredményeket az iskolai sporteredménytárban név szerint vissza lehet keresni. A 2026-os intézményi aktuális oldalon több diákverseny-eredményről is beszámolnak. Egyéni, friss sporteredményt csak a hivatalos közlésben szereplő helyezéssel és névvel állítunk.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/hirek-es-esemenyek)"
+            "text": "A hivatalos büszkeséglistán szereplő történeti eredményeket az iskolai sporteredménytárban név szerint vissza lehet keresni. A 2026-os intézményi aktuális oldalon több diákverseny-eredményről is beszámolnak. Egyéni, friss sporteredményt csak a hivatalos közlésben szereplő helyezéssel és névvel állítunk.\n\n[Hírek és események](#/hirek-es-esemenyek)\n\n[Az iskola közzétett büszkeséglistája – eredeti intézményi forrás](https://csanadi-bp.edu.hu/buszkeseg.html)"
           }
         }
       ]
@@ -61,6 +61,11 @@
     "preview": false,
     "route": "#/sport/sporteredmenyek",
     "verifiedContent": false,
-    "bannerMediaId": "media:eredmenyek"
+    "bannerMediaId": "media:eredmenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "pride"
+    }
   }
 }

@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Felvételi határidők – Csanádi Sportiskola",
-    "description": "A felvételi és beiratkozási időpontok ellenőrzésének kiindulópontja.",
+    "description": "A felvételi és beiratkozási időpontok ellenőrzésének kiindulópontja. A jelentkezések, értesítések és beiratkozások időrendjét csak megerősített források alapján.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "A felvételi és beiratkozási időpontok ellenőrzésének kiindulópontja.",
+  "summary": "A felvételi és beiratkozási időpontok ellenőrzésének kiindulópontja. A jelentkezések, értesítések és beiratkozások időrendjét csak megerősített források alapján szabad követni.",
   "blocks": [
     {
       "id": "block:000020-section-1",
@@ -69,15 +69,15 @@
       }
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000020",
       "type": "section",
       "title": "Országos középfokú felvételi – 2027",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000020",
           "type": "markdown",
           "data": {
-            "text": "2026. december 1.: jelentkezés a központi írásbelire. 2027. január 23., 10:00: központi írásbeli vizsga. 2027. február 3., 14:00: pótló írásbeli. 2027. február 22.: a középfokú jelentkezési lapok továbbításának határideje. 2027. március 1–19.: a szóbeli vizsgák országos időszaka. Ezek országos időpontok, nem külön Csanádi által meghirdetett programok.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/oktatas/felveteli)\n\n[Az országos felvételi eljárás részletes időrendje](https://palyavalasztas.csmpsz.hu/a-kozepfoku-felveteli-eljaras-rendje-a-2026-2027-tanevben/)"
+            "text": "2026. december 1.: jelentkezés a központi írásbelire. 2027. január 23., 10:00: központi írásbeli vizsga. 2027. február 3., 14:00: pótló írásbeli. 2027. február 22.: a középfokú jelentkezési lapok továbbításának határideje. 2027. március 1–19.: a szóbeli vizsgák országos időszaka. Ezek országos időpontok, nem külön Csanádi által meghirdetett programok.\n\n[Felvételi központ](#/oktatas/felveteli)\n\n[Az országos felvételi eljárás részletes időrendje](https://palyavalasztas.csmpsz.hu/a-kozepfoku-felveteli-eljaras-rendje-a-2026-2027-tanevben/)\n\n[Gimnáziumi felvételi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/felveteli.html)"
           }
         }
       ]
@@ -88,6 +88,11 @@
     "preview": false,
     "route": "#/oktatas/felveteli/felveteli-hataridok",
     "verifiedContent": false,
-    "bannerMediaId": "media:felveteli"
+    "bannerMediaId": "media:felveteli",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "highAdmission"
+    }
   }
 }

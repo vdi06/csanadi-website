@@ -14,9 +14,10 @@ export function initMobileQuickNav(){
  };
  // A mobilos alsó címer független a kezdőlapi képváltóba áthelyezett indítótól.
  const entries=[['home','Kezdőlap',()=>location.hash='#/'],['menu','Menü',()=>document.dispatchEvent(new Event('csanadi:menu-toggle'))],['search','Keresés',()=>document.getElementById('search-open')?.click()]];
- entries.forEach(([kind,label,action])=>{const b=el('button','ext26-nav-icon-button');b.type='button';b.dataset.navId=kind;b.setAttribute('aria-label',label);b.title=label;if(kind==='menu')b.setAttribute('aria-controls','site-map-overlay');if(kind==='search')b.setAttribute('aria-controls','search-panel');append(b,icon(kind));b.addEventListener('click',action);nav.append(b);});
+ entries.forEach(([kind,label,action])=>{const b=el('button','ext26-nav-icon-button');b.type='button';b.dataset.navId=kind;b.setAttribute('aria-label',label);b.title=label;if(kind==='menu'||kind==='search')b.setAttribute('aria-haspopup','dialog');if(kind==='menu')b.setAttribute('aria-controls','site-map-overlay');if(kind==='search')b.setAttribute('aria-controls','search-panel');append(b,icon(kind));b.addEventListener('click',action);nav.append(b);});
  document.body.append(nav);
- const update=()=>{const route=location.hash||'#/';nav.querySelector('[data-nav-id="home"]')?.setAttribute('aria-current',route==='#/'?'page':'false');
+ const update=()=>{const route=location.hash||'#/';const homeButton=nav.querySelector('[data-nav-id="home"]');
+  if(route==='#/')homeButton?.setAttribute('aria-current','page');else homeButton?.removeAttribute('aria-current');
   const menuOpen=!document.getElementById('site-map-overlay')?.hidden;
   const menuButton=nav.querySelector('[data-nav-id="menu"]');menuButton?.setAttribute('aria-expanded',String(menuOpen));menuButton?.setAttribute('aria-label',menuOpen?'Főmenü bezárása':'Főmenü megnyitása');
   const searchOpen=!document.getElementById('search-panel')?.hidden;

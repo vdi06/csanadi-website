@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Mindennapi tudnivalók – Csanádi Sportiskola",
-    "description": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez.",
+    "description": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez. Napirend, étkezési információk és szülői ügyintézés témájában vezet tovább a megfelelő.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
   "tags": [],
-  "summary": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez.",
+  "summary": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez. Napirend, étkezési információk és szülői ügyintézés témájában vezet tovább a megfelelő oldalakra.",
   "blocks": [
     {
       "id": "block:000048-section-1",
@@ -42,15 +42,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000048",
       "type": "section",
       "title": "Napi iskolai tudnivalók",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000048",
           "type": "markdown",
           "data": {
-            "text": "Az iskola hivatalos csengetési rendje szerint az első óra 8:00-kor, a nyolcadik óra 14:20-kor kezdődik. Az általános iskolai ügyelet tanítási napokon 7:00 és 18:00 között működik. Az étkezési ügyintézés feltételei az intézmény ebédbefizetési oldalán találhatók.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/informaciok/mindennapi-tudnivalok/csengetesi-rend)"
+            "text": "Az iskola hivatalos csengetési rendje szerint az első óra 8:00-kor, a nyolcadik óra 14:20-kor kezdődik. Az általános iskolai ügyelet tanítási napokon 7:00 és 18:00 között működik. Az étkezési ügyintézés feltételei az intézmény ebédbefizetési oldalán találhatók.\n\n[Csengetési rend](#/informaciok/mindennapi-tudnivalok/csengetesi-rend)\n\n[Hivatalos csengetési rend – eredeti intézményi forrás](https://csanadi-bp.edu.hu/csengetes.html)"
           }
         }
       ]
@@ -61,6 +61,11 @@
     "preview": false,
     "route": "#/informaciok/mindennapi-tudnivalok",
     "verifiedContent": false,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "bells"
+    }
   }
 }

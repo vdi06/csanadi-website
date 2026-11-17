@@ -1,0 +1,94 @@
+/* v1.39.10: a páros képváltó a görgetésre összemenő fejléc folytatása.
+   A nyílsávok és a képek hézagmentesen érintkeznek, a külső élek szögletesek. */
+body.cs-home-header #cs39-home-shell{
+ background:#0b233b;
+ border-bottom:1px solid rgba(227,190,118,.55);
+}
+body.cs-home-header #cs39-home-shell #site-header{
+ margin:0!important;
+ border-bottom:0!important;
+ box-shadow:none!important;
+}
+body.cs-home-header #cs39-home-shell #global-hero{
+ margin:0!important;
+ border:0!important;
+ background:#0b233b!important;
+}
+#global-hero .csn26-visual-map{
+ margin:0!important;
+ padding:0!important;
+ background:transparent!important;
+}
+#global-hero .csn26-visual-heading{display:none!important}
+#global-hero .csn26-visual-row{
+ --cs10-rail-width:clamp(42px,5vw,76px);
+ width:calc(100% - var(--cs10-rail-width) * 2)!important;
+ max-width:none!important;
+ margin:0 auto!important;
+ gap:0!important;
+ border-radius:0!important;
+}
+#global-hero .csn26-visual-wing,
+#global-hero .csn26-visual-wing .csn26-wing-surface,
+#global-hero .csn26-wing-photo,
+#global-hero .csn26-wing-photo picture,
+#global-hero .csn26-wing-photo img{
+ border-radius:0!important;
+}
+#global-hero .csn26-visual-wing .csn26-wing-surface{
+ border:0!important;
+ box-shadow:none!important;
+}
+#global-hero .csn26-visual-row>.csn26-edge-arrow{
+ width:var(--cs10-rail-width)!important;
+ min-width:var(--cs10-rail-width)!important;
+ height:100%!important;
+ border-radius:0!important;
+ margin:0!important;
+ top:0!important;
+ bottom:0!important;
+ transform:none!important;
+}
+#global-hero .csn26-visual-row>.csn26-edge-arrow--left{
+ left:calc(-1 * var(--cs10-rail-width))!important;
+ right:auto!important;
+ border-radius:0!important;
+}
+#global-hero .csn26-visual-row>.csn26-edge-arrow--right{
+ right:calc(-1 * var(--cs10-rail-width))!important;
+ left:auto!important;
+ border-radius:0!important;
+}
+/* A zsugorított képváltó ténylegesen a site-header gyereke, nem külön úszó sáv. */
+body.cs-home-header.cs-home-condensed #site-header #cs39-mini-hero{
+ display:flex!important;
+ padding:3px clamp(4px,1vw,12px)!important;
+ min-height:54px!important;
+ gap:0!important;
+ border-top:1px solid rgba(238,203,125,.24)!important;
+ background:transparent!important;
+ box-shadow:none!important;
+}
+body.cs-home-header #site-header #cs39-mini-hero :is(.cs39-mini-step,.cs39-mini-preview),
+body.cs-home-header #site-header #cs39-mini-hero .cs39-mini-image{
+ border-radius:0!important;
+}
+body.cs-home-header #site-header #cs39-mini-hero .cs39-mini-step,
+body.cs-home-header #site-header #cs39-mini-hero .cs39-mini-preview{margin:0!important}
+body.cs-home-header #site-header #cs39-mini-hero .cs39-mini-menu{margin-left:9px}
+body.cs-home-header #site-header #cs39-mini-hero .cs39-mini-top{margin-left:5px}
+@media(max-width:768px){
+ #global-hero .csn26-visual-row{
+  --cs10-rail-width:44px;
+  width:calc(100% - 88px)!important;
+  max-width:none!important;
+ }
+ body.cs-home-header.cs-home-condensed #site-header #cs39-mini-hero{min-height:50px!important;padding:2px 4px!important}
+}
+@media(max-width:390px){
+ #global-hero .csn26-visual-row{--cs10-rail-width:40px;width:calc(100% - 80px)!important}
+ body.cs-home-header #site-header #cs39-mini-hero .cs39-mini-menu{margin-left:4px}
+}
+@media(prefers-reduced-motion:reduce){
+ #global-hero .csn26-visual-row>.csn26-edge-arrow{transition:none!important}
+}

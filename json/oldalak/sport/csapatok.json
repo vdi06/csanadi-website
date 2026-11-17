@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Csapatok – Csanádi Sportiskola",
-    "description": "A csapatokhoz kapcsolódó sportági, korosztályos és eredményinformációk áttekintő oldala.",
+    "description": "A csapatokhoz kapcsolódó sportági, korosztályos és eredményinformációk áttekintő oldala. A csapatprofilok felépítését és a megerősített sportági adatok.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -50,7 +50,7 @@
           "id": "block:000035-text-2",
           "type": "markdown",
           "data": {
-            "text": "A jelenlegi változatban még nincs ellenőrzött csapatnévsor vagy csapatprofil-adatállomány. Az adatok felvitele a jóváhagyott nyilvánossági és adatkezelési szabályok mellett történhet.\n\n[Sportágak](#/sport/sportagak) · [Sporteredmények](#/sport/sporteredmenyek)"
+            "text": "A csapatnév, a sportág, a korosztály, a következő nyilvános mérkőzés és a sporteredmény **külön adat**. A csapatok oldala jelenleg nem tartalmaz jóváhagyott névsort vagy edzésidőpontot, ezért itt nem szerepelnek kitalált játékosnevek. [Sporteredmények](#/sport/sporteredmenyek) · [Sportágak](#/sport/sportagak)"
           }
         }
       ]
@@ -69,15 +69,15 @@
       }
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000035",
       "type": "section",
       "title": "Csapatsportok eredményei",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000035",
           "type": "markdown",
           "data": {
-            "text": "A Csanádi aktuális közleményeiben csapatsportokkal kapcsolatos eredmények is megjelennek, például a vízilabda és a kézilabda területéről. A jelenlegi csapatnévsorokat, edzőbeosztásokat és edzésidőpontokat az iskola külön jóváhagyása nélkül nem tesszük közzé.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/hirek-es-esemenyek)"
+            "text": "A vízilabdához és kézilabdához kapcsolódó eredményeket az iskola közzétett sporthírei között lehet keresni. Egy versenyeredmény nem jelenti azt, hogy az adott névsor ma is érvényes. Csapatprofilt csak jóváhagyott korosztály-, edző- és időadatokkal lehet megjelentetni."
           }
         }
       ]
@@ -88,6 +88,11 @@
     "preview": false,
     "route": "#/sport/csapatok",
     "verifiedContent": false,
-    "bannerMediaId": "media:eredmenyek"
+    "bannerMediaId": "media:eredmenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "institutional-approval-needed",
+      "sourceId": null
+    }
   }
 }

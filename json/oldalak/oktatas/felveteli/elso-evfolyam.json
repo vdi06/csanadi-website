@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Első évfolyamos beiskolázás – Csanádi Sportiskola",
-    "description": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források.",
+    "description": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források. A családok a szükséges tájékoztatókat és az első osztályos beiratkozás hivatalos felületeit.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források.",
+  "summary": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források. A családok a szükséges tájékoztatókat és az első osztályos beiratkozás hivatalos felületeit találják meg.",
   "blocks": [
     {
       "id": "block:000017-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000017",
       "type": "section",
       "title": "Első osztály: szükséges tájékoztatók",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000017",
           "type": "markdown",
           "data": {
-            "text": "A hivatalos általános iskolai beiratkozási oldalon megtalálható a beiskolázási kiadvány, a tankerületi felhívás, a KRÉTA BÁI-modul szülői útmutatója, valamint a kapcsolódó nyilatkozatok. Az adott beiratkozás konkrét időpontját az aktuális tankerületi közleményből kell ellenőrizni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/oktatas/kepzeseink/altalanos-iskola)"
+            "text": "Az iskola első évfolyamos beiratkozási oldalán a beiskolázási kiadvány, a tankerületi felhívás, a KRÉTA BÁI használati útmutatója, a szülői nyilatkozat és az erkölcstan/hit- és erkölcstan választásáról szóló nyilatkozat található. **A beiratkozás időpontját és eljárását minden tanévben a friss tankerületi felhívással kell ellenőrizni.**\n\n[Első évfolyamos beiratkozás – eredeti intézményi forrás](https://csanadi-bp.edu.hu/altisk.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/oktatas/felveteli/elso-evfolyam",
     "verifiedContent": false,
-    "bannerMediaId": "media:felveteli"
+    "bannerMediaId": "media:felveteli",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "schoolAdmission"
+    }
   }
 }

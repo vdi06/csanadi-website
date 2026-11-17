@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-17T12:00:00+01:00",
+  "updatedAt": "2026-11-17T18:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 5
   },
   "seo": {
     "title": "Digitális kultúra – értsük és használjuk jól a technológiát – Csanádi Sportiskola",
@@ -145,15 +145,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000065",
       "type": "section",
       "title": "Digitális kultúra a gyakorlatban",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000065",
           "type": "markdown",
           "data": {
-            "text": "A digitális kultúra témái között szerepel az információk ellenőrzése, az adatvédelem, a szövegszerkesztés, a táblázatkezelés, a prezentációkészítés és az algoritmikus problémamegoldás. Az intézményi követelményeket és az adott tanév feladatait a szaktanár által meghatározott hivatalos tanulási környezet közli.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "A digitális kultúra témái között szerepel az információk ellenőrzése, az adatvédelem, a szövegszerkesztés, a táblázatkezelés, a prezentációkészítés és az algoritmikus problémamegoldás. Az intézményi követelményeket és az adott tanév feladatait a szaktanár által meghatározott hivatalos tanulási környezet közli."
           }
         }
       ]
@@ -166,6 +166,11 @@
     "preview": false,
     "route": "#/oktatas/digitalis-kultura",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
   }
 }

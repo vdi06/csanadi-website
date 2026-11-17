@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-17T12:00:00+01:00",
-  "updatedAt": "2026-11-17T12:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 3
   },
   "seo": {
     "title": "Megközelítés és érkezés – Csanádi Sportiskola",
-    "description": "Az iskola címe, utazási lehetőségek és ellenőrzött érkezési tudnivalók egy helyen.",
+    "description": "Az iskola címe, utazási lehetőségek és ellenőrzött érkezési tudnivalók egy helyen. Cím, közlekedési lehetőségek, útvonaltervezés és az érkezés előkészítésének.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -41,7 +41,7 @@
           "id": "block:erkezes-cim-text",
           "type": "markdown",
           "data": {
-            "text": "**Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium**\n\n1143 Budapest, Őrnagy utca 5–7.\n\n[A térkép és az útvonaltervezés megnyitása](#/megkozelites-es-erkezes/terkep)"
+            "text": "**{{site.name}}**\n\n**{{site.address}}**\n\n[A térkép és az útvonaltervezés megnyitása](#/megkozelites-es-erkezes/terkep)"
           }
         }
       ]
@@ -83,7 +83,7 @@
           "id": "block:erkezes-szetszedes-text",
           "type": "markdown",
           "data": {
-            "text": "A tanulási időzítő, a céltervező és a tanulókártyák külön, a [Tanulástámogatás](#/tanulastamogatas) oldalon érhetők el."
+            "text": "A tanulási időzítő, a céltervező és a tanulókártyák külön, a [Tanulástámogatás](#/tanulastamogatas) oldalon érhetők el.\n\n[Hivatalos kapcsolati és adatvédelmi elérhetőségek – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kapcsolat.html)"
           }
         }
       ]
@@ -94,6 +94,11 @@
     "preview": false,
     "route": "#/megkozelites-es-erkezes",
     "verifiedContent": false,
-    "bannerMediaId": "media:kapcsolat"
+    "bannerMediaId": "media:kapcsolat",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "contact"
+    }
   }
 }

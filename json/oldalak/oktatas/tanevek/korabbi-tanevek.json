@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Korábbi tanévek – Csanádi Sportiskola",
-    "description": "Korábbi tanévekhez kapcsolódó dokumentumok és események rendszerezett gyűjtőoldala.",
+    "description": "Korábbi tanévekhez kapcsolódó dokumentumok és események rendszerezett gyűjtőoldala. Az archívum a korábbi évek dokumentumainak és eseményeinek visszakeresésében.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000027",
       "type": "section",
       "title": "Archív tanévi anyagok",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000027",
           "type": "markdown",
           "data": {
-            "text": "A korábbi tanévek beiratkozási, érettségi és intézményi közleményei archív tájékoztatásként használhatók. A 2025-ös osztályozó vizsga időpontjai például nem alkalmazhatók automatikusan a 2026/2027-es tanévre. Aktuális döntéshez a friss vizsgahirdetést kell figyelembe venni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/oktatas/vizsgak/osztalyozo-vizsgak)"
+            "text": "A korábbi tanévek eseményei és dokumentumai csak az **eredeti évszámmal** használhatók. Például a 2025-ös osztályozóvizsga-beosztás a történeti tájékozódást szolgálja, nem alkalmazható a 2026/2027-es tanévben. Ha egy archív irat nem érhető el hiteles, letölthető változatban, az adatát nem tüntetjük fel aktuális követelményként.\n\n[Közzétételi lista – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozzetetel.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/oktatas/tanevek/korabbi-tanevek",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "institutional-approval-needed",
+      "sourceId": "disclosure"
+    }
   }
 }

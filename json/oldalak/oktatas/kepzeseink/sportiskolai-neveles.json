@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Sportiskolai nevelés – Csanádi Sportiskola",
-    "description": "Sportteljesítmény és tanulmányi előrehaladás tudatos összehangolása.",
+    "description": "Sportteljesítmény és tanulmányi előrehaladás tudatos összehangolása. Az oldal a tanulmányi feladatok és a sportolói felkészülés közös tervezésének szempontjait.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "Sportteljesítmény és tanulmányi előrehaladás tudatos összehangolása.",
+  "summary": "Sportteljesítmény és tanulmányi előrehaladás tudatos összehangolása. Az oldal a tanulmányi feladatok és a sportolói felkészülés közös tervezésének szempontjait járja körül.",
   "blocks": [
     {
       "id": "block:000015-section-1",
@@ -42,15 +42,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000015",
       "type": "section",
       "title": "Sport és tanulmányok összehangolása",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000015",
           "type": "markdown",
           "data": {
-            "text": "A sportiskolai képzésben a közismereti tanulmányok mellett kiemelt szerepet kap a sportoló diákok felkészülésének támogatása. A szakmai keretek, a tanulmányi követelmények és a sportági sajátosságok részleteit az iskola pedagógiai programja és felvételi tájékoztatója tartalmazza.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/informaciok/dokumentumtar)"
+            "text": "A sportiskolai képzésben a közismereti tanulmányok mellett kiemelt szerepet kap a sportoló diákok felkészülésének támogatása. A szakmai keretek, a tanulmányi követelmények és a sportági sajátosságok részleteit az iskola pedagógiai programja és felvételi tájékoztatója tartalmazza.\n\n[Dokumentumtár](#/informaciok/dokumentumtar)"
           }
         }
       ]
@@ -61,6 +61,11 @@
     "preview": false,
     "route": "#/oktatas/kepzeseink/sportiskolai-neveles",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
   }
 }

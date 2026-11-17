@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 6
   },
   "seo": {
     "title": "Kapcsolat – Csanádi Sportiskola",
-    "description": "Az intézmény ellenőrzött elérhetőségei Budapesten.",
+    "description": "Az intézmény ellenőrzött elérhetőségei Budapesten. Kapcsolattartási adatok, intézményi elérhetőségek és térképes megközelítési információk.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "kapcsolat"
   ],
   "tags": [],
-  "summary": "Az intézmény ellenőrzött elérhetőségei Budapesten.",
+  "summary": "Az intézmény ellenőrzött elérhetőségei Budapesten. Kapcsolattartási adatok, intézményi elérhetőségek és térképes megközelítési információk.",
   "blocks": [
     {
       "id": "block:000063-section-1",
@@ -56,29 +56,29 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000063",
       "type": "section",
       "title": "Hivatalos elérhetőségek",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000063",
           "type": "markdown",
           "data": {
-            "text": "{{site.name}}. {{site.address}}; OM: {{site.omIdentifier}}. Titkárság: {{site.secretariatPhones}}; e-mail: {{site.email}}. A fenntartó: {{site.maintainerName}}.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "{{site.name}}. {{site.address}}; OM: {{site.omIdentifier}}. Titkárság: {{site.secretariatPhones}}; e-mail: {{site.email}}. A fenntartó: {{site.maintainerName}}."
           }
         }
       ]
     },
     {
-      "id": "block:next10-official",
+      "id": "block:next10-official--p000063",
       "type": "section",
       "title": "A hivatalos intézményi kapcsolati adatok",
       "children": [
         {
-          "id": "block:next10-official-text",
+          "id": "block:next10-official-text--p000063",
           "type": "markdown",
           "data": {
-            "text": "Az intézmény címe **{{site.address}}**. Telefonszámok: **{{site.secretariatPhones}}**; e-mail: **{{site.email}}**. A főigazgató a hivatalos nyitóoldal szerint **{{site.directorName}}**. Az aktuális elérhetőségeket a [hivatalos iskolai honlapon](#/) is ellenőrizheted."
+            "text": "Az intézmény címe **{{site.address}}**. Telefonszámok: **{{site.secretariatPhones}}**; e-mail: **{{site.email}}**. A főigazgató a hivatalos nyitóoldal szerint **{{site.directorName}}**. Az aktuális elérhetőségeket a [hivatalos iskolai honlapon](#/) is ellenőrizheted.\n\n[Hivatalos kapcsolati és adatvédelmi elérhetőségek – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kapcsolat.html)"
           }
         }
       ]
@@ -89,6 +89,11 @@
     "preview": false,
     "route": "#/kapcsolat",
     "verifiedContent": true,
-    "bannerMediaId": "media:kapcsolat"
+    "bannerMediaId": "media:kapcsolat",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "contact"
+    }
   }
 }

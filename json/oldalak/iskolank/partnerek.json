@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Partnereink – Csanádi Sportiskola",
-    "description": "Az iskola együttműködéseinek és lehetséges kapcsolódási területeinek áttekintése.",
+    "description": "Az iskola együttműködéseinek és lehetséges kapcsolódási területeinek áttekintése. A partnerségek szerepéről, az együttműködési területekről és a.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000010",
       "type": "section",
       "title": "Intézményi és sportkapcsolatok",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000010",
           "type": "markdown",
           "data": {
-            "text": "Az iskola fenntartója a Közép-Pesti Tankerületi Központ. A sportági együttműködések és az egyesületi igazolások fontosak a sportolói élet megszervezésében. A konkrét, aktuális partnerlistát kizárólag az iskola által jóváhagyott megnevezésekkel érdemes közzétenni.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/kapcsolat)"
+            "text": "A Csanádi fenntartója a Közép-Pesti Tankerületi Központ, amelynek elérhetősége a hivatalos kapcsolati oldalon szerepel. Az egyesületi együttműködés vagy sportolói igazolás nem jelent automatikusan nyilvános partneri névsort. A teljes, aktuális partnerlista közlése intézményi jóváhagyást igényel; ezért itt nem szerepel ellenőrizetlen szervezetnév.\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/iskolank/partnerek",
     "verifiedContent": false,
-    "bannerMediaId": "media:iskolank"
+    "bannerMediaId": "media:iskolank",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "institutional-approval-needed",
+      "sourceId": "home"
+    }
   }
 }

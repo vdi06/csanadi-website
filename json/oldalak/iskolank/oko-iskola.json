@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "ÖKO-iskola – Csanádi Sportiskola",
-    "description": "Környezettudatosság, egészséges életmód és felelős közösség.",
+    "description": "Környezettudatosság, egészséges életmód és felelős közösség. Környezeti nevelés, fenntarthatóság és az iskolai hétköznapok felelős szokásai kerülnek előtérbe.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "iskolank"
   ],
   "tags": [],
-  "summary": "Környezettudatosság, egészséges életmód és felelős közösség.",
+  "summary": "Környezettudatosság, egészséges életmód és felelős közösség. Környezeti nevelés, fenntarthatóság és az iskolai hétköznapok felelős szokásai kerülnek előtérbe.",
   "blocks": [
     {
       "id": "block:000008-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000008",
       "type": "section",
       "title": "Környezeti nevelés az iskolában",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000008",
           "type": "markdown",
           "data": {
-            "text": "Az ökoiskolai program a környezettudatos életmódot, az erőforrások takarékos használatát és az egészséges mindennapokat kapcsolja a tanuláshoz és a sporthoz. Az iskola 2026-os közzététele a Madarak és fák napjához kapcsolódó közösségi programokról és az alvás fontosságáról is beszámol.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "Az ökoiskolai program a környezettudatos életmódot, az erőforrások takarékos használatát és az egészséges mindennapokat kapcsolja a tanuláshoz és a sporthoz. Az iskola 2026-os közzététele a Madarak és fák napjához kapcsolódó közösségi programokról és az alvás fontosságáról is beszámol.\n\n[Ökoiskolai program – eredeti intézményi forrás](https://csanadi-bp.edu.hu/oko.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/iskolank/oko-iskola",
     "verifiedContent": true,
-    "bannerMediaId": "media:iskolank"
+    "bannerMediaId": "media:iskolank",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "eco"
+    }
   }
 }

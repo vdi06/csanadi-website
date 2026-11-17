@@ -1,0 +1,651 @@
+{
+  "release": "1.39.8",
+  "pages": 71,
+  "changedPages": 62,
+  "renamedBlocks": 128,
+  "unchangedRoutes": true,
+  "remainingGlobalConflicts": 0,
+  "changes": [
+    {
+      "file": "json/oldalak/iskolank.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000002"
+    },
+    {
+      "file": "json/oldalak/iskolank/kuldetes-es-ertekek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000004"
+    },
+    {
+      "file": "json/oldalak/iskolank/tantestulet.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000064"
+    },
+    {
+      "file": "json/oldalak/iskolank/tortenet.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000005"
+    },
+    {
+      "file": "json/oldalak/iskolank/hagyomanyok-es-elismeresek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000006"
+    },
+    {
+      "file": "json/oldalak/iskolank/buszkesegeink.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000007"
+    },
+    {
+      "file": "json/oldalak/iskolank/a-honlap-szuletese.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000066"
+    },
+    {
+      "file": "json/oldalak/iskolank/partnerek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000010"
+    },
+    {
+      "file": "json/oldalak/iskolank/oko-iskola.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000008"
+    },
+    {
+      "file": "json/oldalak/oktatas.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000011"
+    },
+    {
+      "file": "json/oldalak/oktatas/kepzeseink.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000012"
+    },
+    {
+      "file": "json/oldalak/oktatas/kepzeseink/altalanos-iskola.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000013"
+    },
+    {
+      "file": "json/oldalak/oktatas/kepzeseink/gimnazium.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000014"
+    },
+    {
+      "file": "json/oldalak/oktatas/kepzeseink/sportiskolai-neveles.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000015"
+    },
+    {
+      "file": "json/oldalak/oktatas/tanevek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000025"
+    },
+    {
+      "file": "json/oldalak/oktatas/tanevek/aktualis-tanev.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000026"
+    },
+    {
+      "file": "json/oldalak/oktatas/tanevek/korabbi-tanevek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000027"
+    },
+    {
+      "file": "json/oldalak/oktatas/vizsgak.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000021"
+    },
+    {
+      "file": "json/oldalak/oktatas/vizsgak/erettsegi.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000022"
+    },
+    {
+      "file": "json/oldalak/oktatas/vizsgak/osztalyozo-vizsgak.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000023"
+    },
+    {
+      "file": "json/oldalak/oktatas/vizsgak/egyeb-vizsgak.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000024"
+    },
+    {
+      "file": "json/oldalak/oktatas/tananyagok-es-jegyzetek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000030"
+    },
+    {
+      "file": "json/oldalak/oktatas/konyvtar.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000028"
+    },
+    {
+      "file": "json/oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000029"
+    },
+    {
+      "file": "json/oldalak/oktatas/digitalis-kultura.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000065"
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000016"
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli/elso-evfolyam.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000017"
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli/kilencedik-evfolyam.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000018"
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli/nyilt-napok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000019"
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli/felveteli-hataridok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000020"
+    },
+    {
+      "file": "json/oldalak/sport.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000031"
+    },
+    {
+      "file": "json/oldalak/sport/sportagak.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000032"
+    },
+    {
+      "file": "json/oldalak/sport/sportolok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000034"
+    },
+    {
+      "file": "json/oldalak/sport/csapatok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000035"
+    },
+    {
+      "file": "json/oldalak/sport/edzok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000036"
+    },
+    {
+      "file": "json/oldalak/sport/sporteredmenyek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000033"
+    },
+    {
+      "file": "json/oldalak/sport/sportgaleriak.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000037"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000038"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/hirek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000039"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/hirek/iskolai-hirek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000040"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/hirek/sporthirek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000041"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/esemenynaptar.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000044"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000045"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/esemenynaptar/sportesemenyek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000046"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/kozlemenyek.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000043"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/hirek/hirarchivum.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000042"
+    },
+    {
+      "file": "json/oldalak/informaciok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000047"
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000048"
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000049"
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok/etkezes.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000050"
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000051"
+    },
+    {
+      "file": "json/oldalak/informaciok/dokumentumtar/szabalyzatok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000053"
+    },
+    {
+      "file": "json/oldalak/informaciok/dokumentumtar/nyomtatvanyok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000054"
+    },
+    {
+      "file": "json/oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000055"
+    },
+    {
+      "file": "json/oldalak/informaciok/digitalis-ugyintezes.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000056"
+    },
+    {
+      "file": "json/oldalak/informaciok/kozossegi-szolgalat.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000057"
+    },
+    {
+      "file": "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000058"
+    },
+    {
+      "file": "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000059"
+    },
+    {
+      "file": "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000060"
+    },
+    {
+      "file": "json/oldalak/kapcsolat.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000063"
+    },
+    {
+      "file": "json/oldalak/informaciok/allaspalyazatok.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000061"
+    },
+    {
+      "file": "json/oldalak/informaciok/adatvedelem.json",
+      "from": "block:content-review-20261114",
+      "to": "block:content-review-20261114--p000062"
+    },
+    {
+      "file": "json/oldalak/iskolank.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000002"
+    },
+    {
+      "file": "json/oldalak/iskolank/kuldetes-es-ertekek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000004"
+    },
+    {
+      "file": "json/oldalak/iskolank/tantestulet.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000064"
+    },
+    {
+      "file": "json/oldalak/iskolank/tortenet.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000005"
+    },
+    {
+      "file": "json/oldalak/iskolank/hagyomanyok-es-elismeresek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000006"
+    },
+    {
+      "file": "json/oldalak/iskolank/buszkesegeink.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000007"
+    },
+    {
+      "file": "json/oldalak/iskolank/a-honlap-szuletese.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000066"
+    },
+    {
+      "file": "json/oldalak/iskolank/partnerek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000010"
+    },
+    {
+      "file": "json/oldalak/iskolank/oko-iskola.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000008"
+    },
+    {
+      "file": "json/oldalak/oktatas.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000011"
+    },
+    {
+      "file": "json/oldalak/oktatas/kepzeseink.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000012"
+    },
+    {
+      "file": "json/oldalak/oktatas/kepzeseink/altalanos-iskola.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000013"
+    },
+    {
+      "file": "json/oldalak/oktatas/kepzeseink/gimnazium.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000014"
+    },
+    {
+      "file": "json/oldalak/oktatas/kepzeseink/sportiskolai-neveles.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000015"
+    },
+    {
+      "file": "json/oldalak/oktatas/tanevek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000025"
+    },
+    {
+      "file": "json/oldalak/oktatas/tanevek/aktualis-tanev.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000026"
+    },
+    {
+      "file": "json/oldalak/oktatas/tanevek/korabbi-tanevek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000027"
+    },
+    {
+      "file": "json/oldalak/oktatas/vizsgak.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000021"
+    },
+    {
+      "file": "json/oldalak/oktatas/vizsgak/erettsegi.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000022"
+    },
+    {
+      "file": "json/oldalak/oktatas/vizsgak/osztalyozo-vizsgak.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000023"
+    },
+    {
+      "file": "json/oldalak/oktatas/vizsgak/egyeb-vizsgak.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000024"
+    },
+    {
+      "file": "json/oldalak/oktatas/tananyagok-es-jegyzetek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000030"
+    },
+    {
+      "file": "json/oldalak/oktatas/konyvtar.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000028"
+    },
+    {
+      "file": "json/oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000029"
+    },
+    {
+      "file": "json/oldalak/oktatas/digitalis-kultura.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000065"
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000016"
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli/elso-evfolyam.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000017"
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli/kilencedik-evfolyam.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000018"
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli/nyilt-napok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000019"
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli/felveteli-hataridok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000020"
+    },
+    {
+      "file": "json/oldalak/sport.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000031"
+    },
+    {
+      "file": "json/oldalak/sport/sportagak.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000032"
+    },
+    {
+      "file": "json/oldalak/sport/sportolok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000034"
+    },
+    {
+      "file": "json/oldalak/sport/csapatok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000035"
+    },
+    {
+      "file": "json/oldalak/sport/edzok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000036"
+    },
+    {
+      "file": "json/oldalak/sport/sporteredmenyek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000033"
+    },
+    {
+      "file": "json/oldalak/sport/sportgaleriak.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000037"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000038"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/hirek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000039"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/hirek/iskolai-hirek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000040"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/hirek/sporthirek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000041"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/esemenynaptar.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000044"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000045"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/esemenynaptar/sportesemenyek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000046"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/kozlemenyek.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000043"
+    },
+    {
+      "file": "json/oldalak/hirek-es-esemenyek/hirek/hirarchivum.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000042"
+    },
+    {
+      "file": "json/oldalak/informaciok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000047"
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000048"
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000049"
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok/etkezes.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000050"
+    },
+    {
+      "file": "json/oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000051"
+    },
+    {
+      "file": "json/oldalak/informaciok/dokumentumtar/szabalyzatok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000053"
+    },
+    {
+      "file": "json/oldalak/informaciok/dokumentumtar/nyomtatvanyok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000054"
+    },
+    {
+      "file": "json/oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000055"
+    },
+    {
+      "file": "json/oldalak/informaciok/digitalis-ugyintezes.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000056"
+    },
+    {
+      "file": "json/oldalak/informaciok/kozossegi-szolgalat.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000057"
+    },
+    {
+      "file": "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000058"
+    },
+    {
+      "file": "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000059"
+    },
+    {
+      "file": "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000060"
+    },
+    {
+      "file": "json/oldalak/kapcsolat.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000063"
+    },
+    {
+      "file": "json/oldalak/informaciok/allaspalyazatok.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000061"
+    },
+    {
+      "file": "json/oldalak/informaciok/adatvedelem.json",
+      "from": "block:content-review-text-20261114",
+      "to": "block:content-review-text-20261114--p000062"
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli.json",
+      "from": "block:next10-official",
+      "to": "block:next10-official--p000016"
+    },
+    {
+      "file": "json/oldalak/kapcsolat.json",
+      "from": "block:next10-official",
+      "to": "block:next10-official--p000063"
+    },
+    {
+      "file": "json/oldalak/oktatas/felveteli.json",
+      "from": "block:next10-official-text",
+      "to": "block:next10-official-text--p000016"
+    },
+    {
+      "file": "json/oldalak/kapcsolat.json",
+      "from": "block:next10-official-text",
+      "to": "block:next10-official-text--p000063"
+    }
+  ],
+  "note": "A blokkazonosítók változtak, az oldalazonosítók, URL-ek és a szöveges tartalom nem."
+}

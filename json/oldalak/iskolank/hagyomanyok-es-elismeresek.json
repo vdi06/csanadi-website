@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Hagyományok és elismerések – Csanádi Sportiskola",
-    "description": "Az iskolai közösség hagyományainak és elismeréseinek áttekintő oldala.",
+    "description": "Az iskolai közösség hagyományainak és elismeréseinek áttekintő oldala. Olvass a mindennapi hagyományokról, valamint a nyilvánosan ellenőrizhető eredmények.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "iskolank"
   ],
   "tags": [],
-  "summary": "Az iskolai közösség hagyományainak és elismeréseinek áttekintő oldala.",
+  "summary": "Az iskolai közösség hagyományainak és elismeréseinek áttekintő oldala. Olvass a mindennapi hagyományokról, valamint a nyilvánosan ellenőrizhető eredmények bemutatásának módjáról.",
   "blocks": [
     {
       "id": "block:000006-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000006",
       "type": "section",
       "title": "Közzétett elismerések",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000006",
           "type": "markdown",
           "data": {
-            "text": "A Magyar Olimpiai Bizottság 1998-ban olimpiai érdemérmet adományozott az iskolának. Az intézményi elismerésjegyzék több sportiskolai díjat sorol fel, és tartalmazza a 2025/2026-os Boldog Iskola elismerését is. Az egyes díjak évét és megnevezését a hivatalos kitüntetési oldalon lehet ellenőrizni.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "A Magyar Olimpiai Bizottság 1998-ban olimpiai érdemérmet adományozott az iskolának. Az intézményi elismerésjegyzék több sportiskolai díjat sorol fel, és tartalmazza a 2025/2026-os Boldog Iskola elismerését is. Az egyes díjak évét és megnevezését a hivatalos kitüntetési oldalon lehet ellenőrizni.\n\n[Iskolai elismerések – eredeti intézményi forrás](https://csanadi-bp.edu.hu/awards.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/iskolank/hagyomanyok-es-elismeresek",
     "verifiedContent": false,
-    "bannerMediaId": "media:iskolank"
+    "bannerMediaId": "media:iskolank",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "awards"
+    }
   }
 }

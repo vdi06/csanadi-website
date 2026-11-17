@@ -1,10 +1,10 @@
-import {initRound10Enhancements} from './round10-enhancements.js?v=csanadi-r29n-20261115';
-import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=csanadi-r29n-20261115';
+import {initRound10Enhancements} from './round10-enhancements.js?v=1.39.5';
+import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.39.10';
 import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.37.0';
 import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=csanadi-r29n-20261115';
 import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=csanadi-r29n-20261115';
-import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.37.0';
-import {setupSmartSearch} from './search-j-2026.js?v=1.37.0';
+import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.39.5';
+import {setupSmartSearch} from './search-j-2026.js?v=1.39.10';
 import {installLanguageHighlights} from './language-20.js?v=csanadi-r29n-20261115';
 import {enhancePersonalizedHome} from './round21-personalize.js?v=csanadi-r29n-20261115';
 import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,syncMobileEmbeddedSections,initRound29Diagnostics} from './round29-home.js?v=1.37.0';
@@ -20,7 +20,7 @@ import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialS
 import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=csanadi-r29n-20261115';
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r29n-20261115';
  
-import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.38.1';
+import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.39.10';
 import {renderBlock,dom,listCards} from './blocks.js?v=csanadi-r29n-20261115';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=csanadi-r29n-20261115';
 import {renderSportsSuccesses} from './sports-successes.js?v=csanadi-r29n-20261115';
@@ -29,6 +29,7 @@ import {renderDailySportsNews} from './daily-sport-news.js?v=csanadi-r29n-202611
 import {renderDesktopTree} from '../desktop/navigation.js?v=csanadi-r29n-20261115';
 import {renderMobileTree} from '../mobile/navigation.js?v=1.38.1';
 import {createPhoneRadial} from '../mobile/radial-wheel-v1-38.js?v=1.38.1';
+import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.39.2';
 import {createSubpageHero} from './subpages-v1.js?v=1.38.2';
 const app=document.getElementById('app');
 let homeHeroElement=null;
@@ -131,6 +132,15 @@ const phoneWheel=createPhoneRadial({
 });
 let siteMapSelected=null,siteMapReturnFocus=null;
 let siteMapLauncherHome=null;
+let searchPreviousOverflow='',searchInertNodes=[];
+let siteMapInertNodes=[];
+function setMenuButtonState(open){
+ for(const button of [menuBtn,document.getElementById('orbit-open')]){
+  if(!button)continue;
+  button.setAttribute('aria-expanded',String(open));
+  button.setAttribute('aria-label',open?'Főmenü bezárása':'Főmenü megnyitása');
+ }
+}
 function relocateSiteMapButton(open){
  const emblem=siteMap.querySelector('.compass26-emblem');
  const launcher=document.querySelector('.csn26-visual-launch');
@@ -275,14 +285,26 @@ function positionCompassSubmenu(){
 function openSiteMap(){
  if(!catalog)return;
  const openingFocus=document.activeElement;
- const cameFromMobile=mobile.contains(openingFocus);
+ // Keresőből menüre váltáskor a rejtett keresőmező helyett az eredeti
+ // látható vezérlő legyen a fókusz visszaállításának célpontja.
+ const focusOrigin=!dialog.hidden&&dialog.contains(openingFocus)
+  ?(previousSearchFocus?.isConnected?previousSearchFocus:document.getElementById('search-open'))
+  :openingFocus;
+ const cameFromMobile=mobile.contains(focusOrigin);
+ if(!dialog.hidden)closeSearch(false);
  closeMobile();
  document.dispatchEvent(new Event('csanadi:main-menu-opening'));
- siteMapReturnFocus=cameFromMobile?document.getElementById('orbit-open'):openingFocus;
+ siteMapReturnFocus=cameFromMobile?document.getElementById('orbit-open'):focusOrigin;
  renderSiteMap(null);phoneWheel.reset();siteMap.hidden=false;relocateSiteMapButton(true);
- menuBtn.setAttribute('aria-expanded',String(phoneWheel.phone()));
+ setMenuButtonState(true);
  document.body.classList.add('site-map-is-open');
- for(const node of document.body.children)if(node!==siteMap&&node!==outerRing&&node!==document.getElementById('toast')&&node!==document.querySelector('script'))if(['HEADER','MAIN','FOOTER'].includes(node.tagName)||node.id==='global-hero')node.inert=true;
+ // A körmenü modális állapotában az alsó mobilnavigáció és az összes
+ // egyéb háttérvezérlő is kikerül a fókusz- és segédtechnológiai sorrendből.
+ siteMapInertNodes=[];
+ for(const node of document.body.children){
+  if(node===siteMap||node.tagName==='SCRIPT'||node.id==='toast'||node.inert)continue;
+  node.inert=true;siteMapInertNodes.push(node);
+ }
  (phoneWheel.phone()?phoneWheel.focus():siteMapCats.querySelector('.compass26-choice-link'))?.focus();
 }
 siteMap.addEventListener('keydown',event=>{
@@ -296,8 +318,9 @@ siteMap.addEventListener('keydown',event=>{
 function closeSiteMap(restoreFocus=true){
  if(siteMap.hidden)return;
  siteMap.hidden=true;outerRing.hidden=true;siteMap.classList.remove('csn26-ring-active');document.body.classList.remove('site-map-is-open');relocateSiteMapButton(false);
- menuBtn.setAttribute('aria-expanded','false');
- for(const node of document.body.children)if(node.inert&&(['HEADER','MAIN','FOOTER'].includes(node.tagName)||node.id==='global-hero'))node.inert=false;
+ setMenuButtonState(false);
+ for(const node of siteMapInertNodes)if(node.isConnected)node.inert=false;
+ siteMapInertNodes=[];
  if(restoreFocus&&siteMapReturnFocus?.isConnected&&siteMapReturnFocus.getClientRects?.().length)siteMapReturnFocus.focus({preventScroll:true});
 }
 function renderMenu(){
@@ -307,7 +330,7 @@ function renderMenu(){
  phoneWheel.setCatalog(catalog.roots,{childrenOf:pageChildren,titleOf,hrefOf});
  document.getElementById('footer-page-count').textContent=`${catalog.items.length} tartalmi oldal`;
 }
-function closeMobile(){mobile.hidden=true;menuBtn.setAttribute('aria-expanded','false');menuBtn.setAttribute('aria-label','Mobilmenü megnyitása');}
+function closeMobile(){mobile.hidden=true;if(siteMap.hidden)setMenuButtonState(false);}
 function breadcrumb(node){
   const chain=[];let cur=node;
   while(cur){chain.unshift(cur);cur=cur.parent;}
@@ -336,7 +359,7 @@ function contentPage(node){
 
    
    
-  const template=route.includes('hirek')||route.includes('kozlemenyek')?'news':route.includes('sport')?'sport':route.includes('dokumentum')||route.includes('szabalyzat')?'documents':route.includes('esemeny')?'events':route.includes('megkozelites')||route.includes('terkep')?'arrival':route.includes('tanulas')||route.includes('digitalis-kultura')?'guide':'school';
+  const template=pageTemplateKind(route);
   const shell=dom('div',{class:'container-xxl content-shell cs-template--'+template});
   const layout=dom('div',{class:'content-layout content-no-aside'});
   const body=dom('div',{class:'content-tiles content-tiles--editorial'});
@@ -360,7 +383,7 @@ function contentPage(node){
       if(el){const section=dom('section',{class:'article-section article-section--module'});section.append(el);article.append(section);}
     }
   }
-  if(article.children.length)body.append(article);
+  if(article.children.length){applyPageTemplate(article,route);body.append(article);}
 
   // A régi harmadik menüszint összes különálló oldala megmarad; az almenü
   // saját tartalmi csempéi vezetik tovább a látogatót, a globális menü nem.
@@ -542,7 +565,7 @@ function embeddedArrival(route,options){
  };
  if(window.__csArrivalMessage)window.removeEventListener('message',window.__csArrivalMessage);
  window.__csArrivalMessage=onMessage;window.addEventListener('message',onMessage);
- document.title='Megközelítés és tanulástámogatás | Csanádi Árpád Sportiskola';
+ updatePageMeta({title:'Megközelítés és tanulástámogatás',summary:'Megközelítés, érkezés és tanulástámogatás a Csanádi Árpád Sportiskolában.'},route);
  renderMenu();closeMobile();closeSiteMap(false);
  if(previous!==route&&!section)requestAnimationFrame(()=>window.scrollTo({top:0,behavior:'instant'}));
  if(options.focus)app.focus({preventScroll:true});
@@ -665,11 +688,10 @@ function renderRoute(options={}){
    const replacement=document.getElementById(restoreFocusId);
    if(replacement&&app.contains(replacement))replacement.focus({preventScroll:true});
   }
-  if(node)updatePageMeta(node.page,route);
+  updatePageMeta(node?.page||{title:'Az oldal nem található',summary:'A keresett oldal nem érhető el. Használd a honlap navigációját vagy keresőjét.'},route);
   const headerMotion=headerMotionForRoute(route,node,catalog?.config?.runtime?.subpageHeaderMotion);
   document.dispatchEvent(new CustomEvent('csanadi:route-rendered',{detail:{route,headerMotion}}));
   if(pendingSearchJump && pendingSearchJump.route===route)setTimeout(trySearchJump,settingNumber('runtime.timing.searchJumpDelayMs'));
-  const title=node?.page?.title||'Az oldal nem található';document.title=title+' | Csanádi Árpád Sportiskola';
   renderMenu();closeMobile();closeSiteMap(false);
  const target=options.keepScroll?window.scrollY:(options.restoreScroll?(historyScroll.get(route)||0):0);
   if(isNew)requestAnimationFrame(()=>window.scrollTo({top:target,behavior:'instant'}));
@@ -677,9 +699,13 @@ function renderRoute(options={}){
   markRouteRendered(route,{found:!!node});
 }
 function closeSearch(restoreFocus=true){
+ if(dialog.hidden)return;
  if(!dialog.hidden&&smartSearch){searchRouteStates.set(searchOpenRoute||getRoute(),smartSearch.snapshot());if(searchRouteStates.size>40)searchRouteStates.delete(searchRouteStates.keys().next().value);}
  searchOpenRoute=null;
- dialog.hidden=true;document.body.style.overflow='';smartSearch?.reset();if(restoreFocus&&previousSearchFocus?.isConnected&&previousSearchFocus.getClientRects?.().length)previousSearchFocus.focus({preventScroll:true});
+ dialog.hidden=true;document.body.style.overflow=searchPreviousOverflow;
+ for(const node of searchInertNodes)if(node.isConnected)node.inert=false;
+ searchInertNodes=[];
+ smartSearch?.reset();if(restoreFocus&&previousSearchFocus?.isConnected&&previousSearchFocus.getClientRects?.().length)previousSearchFocus.focus({preventScroll:true});
 }
  
 function markSearchTarget(element){
@@ -754,9 +780,23 @@ function handleSearchNavigation(entry,query,event){
 
 function openSearch(){
   if(!dialog.hidden){searchInput.focus();return;}
-  previousSearchFocus=document.activeElement;
+  const source=document.activeElement;
+  const focusOrigin=!siteMap.hidden&&siteMap.contains(source)
+   ?(siteMapReturnFocus?.isConnected?siteMapReturnFocus:document.getElementById('search-open'))
+   :source;
+  if(!siteMap.hidden)closeSiteMap(false);
+  closeMobile();
+  document.dispatchEvent(new Event('csanadi:main-menu-opening'));
+  previousSearchFocus=focusOrigin?.getClientRects?.().length?focusOrigin:document.getElementById('search-open');
   searchOpenRoute=getRoute();
+  searchPreviousOverflow=document.body.style.overflow;
   dialog.hidden=false;document.body.style.overflow='hidden';
+  searchInertNodes=[];
+  for(const node of document.body.children){
+   if(node===dialog||node.tagName==='SCRIPT'||node.inert)continue;
+   node.inert=true;searchInertNodes.push(node);
+  }
+  searchInput.focus({preventScroll:true});
   const route=getRoute(),saved=searchRouteStates.get(route);
   if(saved){searchRouteStates.delete(route);searchRouteStates.set(route,saved);smartSearch?.restore(saved);}else smartSearch?.render();
   setTimeout(()=>{if(!dialog.hidden)searchInput.focus();},settingNumber('runtime.timing.searchFocusDelayMs'));

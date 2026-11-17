@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-17T12:00:00+01:00",
-  "updatedAt": "2026-11-17T12:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 1
+    "revision": 2
   },
   "seo": {
     "title": "Mesterséges intelligencia tudatos használata – Csanádi Sportiskola",
-    "description": "Az MI mint segédeszköz: forráskritika, önálló gondolkodás és felelős felhasználás.",
+    "description": "Az MI mint segédeszköz: forráskritika, önálló gondolkodás és felelős felhasználás. Forráskritika, ellenőrzés, saját gondolkodás és a generatív eszközök tudatos.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -64,6 +64,11 @@
     "preview": false,
     "route": "#/oktatas/digitalis-kultura/mesterseges-intelligencia",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
   }
 }

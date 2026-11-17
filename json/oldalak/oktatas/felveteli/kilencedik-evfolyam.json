@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Kilencedik évfolyamos felvételi – Csanádi Sportiskola",
-    "description": "Középiskola-választás, jelentkezés, tájékoztatók és kapcsolódó dokumentumok.",
+    "description": "Középiskola-választás, jelentkezés, tájékoztatók és kapcsolódó dokumentumok. Segítség a középiskolai jelentkezés sorrendjéhez, az igazolt határidőkhöz és a.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000018",
       "type": "section",
       "title": "Kilencedik évfolyam: felvételi lépések",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000018",
           "type": "markdown",
           "data": {
-            "text": "A gimnáziumi jelentkezéshez tanulmányi területi tájékoztató, jelentkezési lapok és a központi írásbelihez kapcsolódó útmutatók érhetők el. Az országos eljárásban az írásbelire 2026. december 1-jéig kell jelentkezni, a vizsga 2027. január 23-án 10:00-kor lesz; az iskola saját felvételi feltételeit külön is ellenőrizni kell.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/oktatas/felveteli)\n\n[Országos eljárási határidők](https://palyavalasztas.csmpsz.hu/a-kozepfoku-felveteli-eljaras-rendje-a-2026-2027-tanevben/)"
+            "text": "A 9. évfolyamra jelentkezéshez külön intézményi tájékoztató, központi írásbeli jelentkezési dokumentum, helyi jelentkezési lap és KRÉTA BKI-útmutató található a Csanádi felvételi oldalán. Az írásbelire való jelentkezés és a középfokú felvételi lapok leadása két eltérő lépés. A 2027-es eljárás országos dátumait a [Felvételi határidők](#/oktatas/felveteli/felveteli-hataridok) oldalon követheted, a helyi követelményeket pedig az eredeti intézményi kiírásban.\n\n[Gimnáziumi felvételi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/felveteli.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/oktatas/felveteli/kilencedik-evfolyam",
     "verifiedContent": false,
-    "bannerMediaId": "media:felveteli"
+    "bannerMediaId": "media:felveteli",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "highAdmission"
+    }
   }
 }

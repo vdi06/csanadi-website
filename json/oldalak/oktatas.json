@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 6
   },
   "seo": {
     "title": "Oktatás – Csanádi Sportiskola",
-    "description": "Képzési utak, felvételi, vizsgák, tanévi tudnivalók és tanulási segédletek.",
+    "description": "Képzési utak, felvételi, vizsgák, tanévi tudnivalók és tanulási segédletek. Innen érhetők el a képzések, a jelentkezési tájékoztatók, a vizsgák és a tanulási.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000011",
       "type": "section",
       "title": "Oktatási tájékozódás",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000011",
           "type": "markdown",
           "data": {
-            "text": "Az intézmény általános iskolai és gimnáziumi képzést működtet sportiskolai profillal. Az első osztályba történő beiratkozásnak és a kilencedik évfolyamos középfokú felvételinek eltérő szabályai és dokumentumai vannak. Ezekhez külön, hivatalos tájékoztató oldalak érhetők el.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/oktatas/felveteli)"
+            "text": "Az intézmény általános iskolai és gimnáziumi képzést működtet sportiskolai profillal. Az első osztályba történő beiratkozásnak és a kilencedik évfolyamos középfokú felvételinek eltérő szabályai és dokumentumai vannak. Ezekhez külön, hivatalos tájékoztató oldalak érhetők el.\n\n[Felvételi központ](#/oktatas/felveteli)\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/oktatas",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "home"
+    }
   }
 }

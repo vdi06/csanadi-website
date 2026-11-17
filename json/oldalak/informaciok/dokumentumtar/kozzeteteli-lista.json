@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Közzétételi lista – Csanádi Sportiskola",
-    "description": "A nyilvánosan kötelezően hozzáférhető dokumentumok és információk gyűjtőpontja.",
+    "description": "A nyilvánosan kötelezően hozzáférhető dokumentumok és információk gyűjtőpontja. A dokumentumok közzétételének szerepéről és a változatok ellenőrzésének módjáról.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -69,15 +69,15 @@
       }
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000055",
       "type": "section",
       "title": "Különös közzétételi lista",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000055",
           "type": "markdown",
           "data": {
-            "text": "Az iskola honlapján külön közzétételi lista tartalmazza az intézményi adatokat, mérési és érettségi eredményekre, osztálylétszámokra, munkatervre és házi feladatok szabályaira mutató hivatkozásokat. A hivatalos oldal jelzi, hogy az adatok frissítése folyamatban van, ezért az egyes dokumentumok dátumát külön ellenőrizni kell.\n\nKapcsolódó hivatalos iskolai tájékoztatás"
+            "text": "Az iskola honlapján külön közzétételi lista tartalmazza az intézményi adatokat, mérési és érettségi eredményekre, osztálylétszámokra, munkatervre és házi feladatok szabályaira mutató hivatkozásokat. A hivatalos oldal jelzi, hogy az adatok frissítése folyamatban van, ezért az egyes dokumentumok dátumát külön ellenőrizni kell.\n\n[Közzétételi lista – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozzetetel.html)"
           }
         }
       ]
@@ -88,6 +88,11 @@
     "preview": false,
     "route": "#/informaciok/dokumentumtar/kozzeteteli-lista",
     "verifiedContent": false,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "disclosure"
+    }
   }
 }

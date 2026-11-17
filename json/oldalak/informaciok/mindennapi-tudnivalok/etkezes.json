@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Étkezés és ebédbefizetés – Csanádi Sportiskola",
-    "description": "Étkezési tájékoztatás és a kapcsolódó ügyintézési lehetőségek.",
+    "description": "Étkezési tájékoztatás és a kapcsolódó ügyintézési lehetőségek. Az étkezési ügyintézés, a befizetés és a lemondás tudnivalóihoz kínál hivatalos forrásokat.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
   "tags": [],
-  "summary": "Étkezési tájékoztatás és a kapcsolódó ügyintézési lehetőségek.",
+  "summary": "Étkezési tájékoztatás és a kapcsolódó ügyintézési lehetőségek. Az étkezési ügyintézés, a befizetés és a lemondás tudnivalóihoz kínál hivatalos forrásokat.",
   "blocks": [
     {
       "id": "block:000050-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000050",
       "type": "section",
       "title": "Étkezés és ebédbefizetés",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000050",
           "type": "markdown",
           "data": {
-            "text": "Az iskola szerint az étkezési rendszerben a következő havi megrendelések a hónap ötödik napjától kezelhetők; a következő naptól érvényes lemondásokat 9:00-ig lehet megtenni. A belépési adatokkal kapcsolatban az iskola gazdasági irodája nyújt tájékoztatást munkanapokon 9:00–15:00 között. A 2026. december 22–31. közötti átmeneti rendszerleállás külön intézményi közleményben szerepel.\n\nKapcsolódó hivatalos iskolai tájékoztatás\n\n[A 2026. év végi változásokat tartalmazó közlemény](#/hirek-es-esemenyek)"
+            "text": "A hivatalos tájékoztató szerint a következő havi ebéd internetes befizetése a hónap ötödik napjától válik elérhetővé. A következő naptól érvényes rendelést 9:00-ig lehet lemondani. A belépési adatokhoz az iskola gazdasági irodája nyújt segítséget; az aktuális étlapokat az étkeztető teszi közzé. A részletes, esetleg módosult szabályokat fizetés vagy lemondás előtt az eredeti oldalon ellenőrizd.\n\n[Ebédbefizetés és étkezés – eredeti intézményi forrás](https://csanadi-bp.edu.hu/ebed.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/informaciok/mindennapi-tudnivalok/etkezes",
     "verifiedContent": false,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "meals"
+    }
   }
 }

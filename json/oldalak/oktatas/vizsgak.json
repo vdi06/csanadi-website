@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 6
   },
   "seo": {
     "title": "Vizsgaközpont – Csanádi Sportiskola",
-    "description": "Érettségi és osztályozó vizsgák: tájékoztatás és felkészülés.",
+    "description": "Érettségi és osztályozó vizsgák: tájékoztatás és felkészülés. A vizsgaidőszakokhoz, követelményekhez és hivatalos tájékoztatókhoz vezető hivatkozások találhatók.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "Érettségi és osztályozó vizsgák: tájékoztatás és felkészülés.",
+  "summary": "Érettségi és osztályozó vizsgák: tájékoztatás és felkészülés. A vizsgaidőszakokhoz, követelményekhez és hivatalos tájékoztatókhoz vezető hivatkozások találhatók itt.",
   "blocks": [
     {
       "id": "block:000021-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000021",
       "type": "section",
       "title": "Vizsgák: hivatalos dokumentumok",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000021",
           "type": "markdown",
           "data": {
-            "text": "Az érettségi, az osztályozó vizsga és az egyéb tanulmányi vizsgák időpontjai eltérők. Az iskola közzétett érettségi oldala 2026 őszi vizsgaadatokat tartalmaz, az osztályozó vizsga honlapján viszont egyes látható időpontok még 2025-ből származnak. A régi dátumokat nem tekintjük aktuális vizsgaidőpontnak.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/oktatas/vizsgak/erettsegi)"
+            "text": "Az érettségi, az osztályozó vizsga és az egyéb tanulmányi vizsgák időpontjai eltérők. Az iskola közzétett érettségi oldala 2026 őszi vizsgaadatokat tartalmaz, az osztályozó vizsga honlapján viszont egyes látható időpontok még 2025-ből származnak. A régi dátumokat nem tekintjük aktuális vizsgaidőpontnak.\n\n[Érettségi](#/oktatas/vizsgak/erettsegi)\n\n[Érettségi – intézményi tájékoztató – eredeti intézményi forrás](https://csanadi-bp.edu.hu/erettsegi.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/oktatas/vizsgak",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "finalExam"
+    }
   }
 }

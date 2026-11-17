@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Hírarchívum – Csanádi Sportiskola",
-    "description": "Korábbi iskolai információk és közzétett történetek visszakeresése.",
+    "description": "Korábbi iskolai információk és közzétett történetek visszakeresése. Az időrendi archívum segít a korábbi intézményi hírek és történetek újbóli megtalálásában.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "hirek-es-esemenyek"
   ],
   "tags": [],
-  "summary": "Korábbi iskolai információk és közzétett történetek visszakeresése.",
+  "summary": "Korábbi iskolai információk és közzétett történetek visszakeresése. Az időrendi archívum segít a korábbi intézményi hírek és történetek újbóli megtalálásában.",
   "blocks": [
     {
       "id": "block:000042-section-1",
@@ -42,15 +42,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000042",
       "type": "section",
       "title": "Hírarchívum és időrend",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000042",
           "type": "markdown",
           "data": {
-            "text": "Az archív tartalom múltbeli tanévi közleményeket, történeti iskolai információkat és lezárult programokat tartalmazhat. Például a 2026. szeptemberi tanévnyitó és az októberi őszi érettségi írásbeli időpontjai már történeti események; felvételi vagy vizsgatervezéshez az aktuális naptár az irányadó.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/hirek-es-esemenyek)"
+            "text": "Az archívum a már lezárult iskolai programok és korábbi időszakok híreinek visszakeresésére való. A 2026. szeptemberi tanévnyitó és az októberi írásbeli érettségi az archív időrendbe tartozik; nem soroljuk őket a közelgő események közé. A szűrésnél a hír megjelenésének idejét különítsd el az esemény tényleges dátumától.\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
           }
         }
       ]
@@ -61,6 +61,11 @@
     "preview": false,
     "route": "#/hirek-es-esemenyek/hirek/hirarchivum",
     "verifiedContent": false,
-    "bannerMediaId": "media:esemenyek"
+    "bannerMediaId": "media:esemenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "home"
+    }
   }
 }

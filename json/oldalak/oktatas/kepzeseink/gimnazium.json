@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Gimnáziumi képzés – Csanádi Sportiskola",
-    "description": "Felkészülés továbbtanulásra, érettségire és a sportolói élet kihívásaira.",
+    "description": "Felkészülés továbbtanulásra, érettségire és a sportolói élet kihívásaira. A középiskolai tanulmányok, a továbbtanulás és a felvételi tájékoztatók kapcsolódnak.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "Felkészülés továbbtanulásra, érettségire és a sportolói élet kihívásaira.",
+  "summary": "Felkészülés továbbtanulásra, érettségire és a sportolói élet kihívásaira. A középiskolai tanulmányok, a továbbtanulás és a felvételi tájékoztatók kapcsolódnak egymáshoz.",
   "blocks": [
     {
       "id": "block:000014-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000014",
       "type": "section",
       "title": "Gimnáziumi tájékozódás",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000014",
           "type": "markdown",
           "data": {
-            "text": "A kilencedik évfolyamra történő jelentkezés középfokú felvételi eljárás keretében zajlik. Az iskola 2026. november 17-én és 19-én gimnáziumi nyílt napot hirdetett; az igazgatói tájékoztató 8:30-kor, a bemutató 9:50-kor kezdődik. A tanulmányi területeket és felvételi követelményeket a hivatalos iskolai tájékoztató szabályozza.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/hirek-es-esemenyek)"
+            "text": "A kilencedik évfolyamra történő jelentkezés középfokú felvételi eljárás keretében zajlik. Az iskola 2026. november 17-én és 19-én gimnáziumi nyílt napot hirdetett; az igazgatói tájékoztató 8:30-kor, a bemutató 9:50-kor kezdődik. A tanulmányi területeket és felvételi követelményeket a hivatalos iskolai tájékoztató szabályozza.\n\n[Hírek és események](#/hirek-es-esemenyek)\n\n[Gimnáziumi felvételi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/felveteli.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/oktatas/kepzeseink/gimnazium",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "highAdmission"
+    }
   }
 }

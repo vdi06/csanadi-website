@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Tananyagok és jegyzetek – Csanádi Sportiskola",
-    "description": "Önálló tanulás, digitális fájlkezelés és felkészülési módszerek.",
+    "description": "Önálló tanulás, digitális fájlkezelés és felkészülési módszerek. Tanulási módszerek, digitális fájlkezelési gyakorlat és önálló felkészülést támogató eszközök.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "Önálló tanulás, digitális fájlkezelés és felkészülési módszerek.",
+  "summary": "Önálló tanulás, digitális fájlkezelés és felkészülési módszerek. Tanulási módszerek, digitális fájlkezelési gyakorlat és önálló felkészülést támogató eszközök érhetők el.",
   "blocks": [
     {
       "id": "block:000030-section-1",
@@ -56,15 +56,15 @@
       ]
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000030",
       "type": "section",
       "title": "Tanulást támogató segédletek",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000030",
           "type": "markdown",
           "data": {
-            "text": "A honlap digitális dokumentumtára felvételi tervezési, digitális fájlkezelési és sport melletti időgazdálkodási segédleteket tartalmaz. Ezek fejlesztési tájékoztató anyagok, nem helyettesítik az iskola hivatalos pedagógiai programját, tantervét vagy házirendjét.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/informaciok/dokumentumtar)"
+            "text": "A honlap digitális dokumentumtára felvételi tervezési, digitális fájlkezelési és sport melletti időgazdálkodási segédleteket tartalmaz. Ezek fejlesztési tájékoztató anyagok, nem helyettesítik az iskola hivatalos pedagógiai programját, tantervét vagy házirendjét.\n\n[Dokumentumtár](#/informaciok/dokumentumtar)\n\n[Intézményi jegyzetek – eredeti intézményi forrás](https://csanadi-bp.edu.hu/sportjegyzet.html)"
           }
         }
       ]
@@ -75,6 +75,11 @@
     "preview": false,
     "route": "#/oktatas/tananyagok-es-jegyzetek",
     "verifiedContent": false,
-    "bannerMediaId": "media:oktatas"
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "notes"
+    }
   }
 }

@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Tudnivalók – Csanádi Sportiskola",
-    "description": "Tájékozódás a közösségi szolgálat feladatairól és igazolásáról.",
+    "description": "Tájékozódás a közösségi szolgálat feladatairól és igazolásáról. Gyakorlati tudnivalók a feladatok megszervezéséhez, dokumentálásához és igazolásához.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
   "tags": [],
-  "summary": "Tájékozódás a közösségi szolgálat feladatairól és igazolásáról.",
+  "summary": "Tájékozódás a közösségi szolgálat feladatairól és igazolásáról. Gyakorlati tudnivalók a feladatok megszervezéséhez, dokumentálásához és igazolásához.",
   "blocks": [
     {
       "id": "block:000058-section-1",
@@ -69,15 +69,15 @@
       }
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000058",
       "type": "section",
       "title": "Közösségi szolgálat: hogyan kezdj hozzá?",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000058",
           "type": "markdown",
           "data": {
-            "text": "A tanuló a közösségi szolgálat megkezdése előtt az iskolai koordinátorral egyezteti a helyszínt és a tevékenységet. A szolgálati naplóban dátummal és tevékenységgel dokumentálja a teljesítést. Az utazási idő a szolgálati időbe nem számítható be.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/informaciok/kozossegi-szolgalat)\n\n[Az iskola közösségi szolgálati dokumentumai](#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok)"
+            "text": "A tanuló a közösségi szolgálat megkezdése előtt az iskolai koordinátorral egyezteti a helyszínt és a tevékenységet. A szolgálati naplóban dátummal és tevékenységgel dokumentálja a teljesítést. Az utazási idő a szolgálati időbe nem számítható be.\n\n[Közösségi szolgálat](#/informaciok/kozossegi-szolgalat)\n\n[Az iskola közösségi szolgálati dokumentumai](#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok)\n\n[Közösségi szolgálat – eljárás és korábban közzétett szabályok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozszolinfo.html)"
           }
         }
       ]
@@ -88,6 +88,11 @@
     "preview": false,
     "route": "#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok",
     "verifiedContent": false,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "serviceRules"
+    }
   }
 }

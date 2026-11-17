@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 5
   },
   "seo": {
     "title": "Nyomtatványok – Csanádi Sportiskola",
-    "description": "Beadandó nyomtatványok és ügyintézési űrlapok gyűjtőoldala.",
+    "description": "Beadandó nyomtatványok és ügyintézési űrlapok gyűjtőoldala. A nyomtatványok használatáról és a jóváhagyott, letölthető űrlapok eléréséről olvashatsz.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "informaciok"
   ],
   "tags": [],
-  "summary": "Beadandó nyomtatványok és ügyintézési űrlapok gyűjtőoldala.",
+  "summary": "Beadandó nyomtatványok és ügyintézési űrlapok gyűjtőoldala. A nyomtatványok használatáról és a jóváhagyott, letölthető űrlapok eléréséről olvashatsz.",
   "blocks": [
     {
       "id": "block:000054-section-1",
@@ -69,15 +69,15 @@
       }
     },
     {
-      "id": "block:content-review-20261114",
+      "id": "block:content-review-20261114--p000054",
       "type": "section",
       "title": "Letölthető nyomtatványok",
       "children": [
         {
-          "id": "block:content-review-text-20261114",
+          "id": "block:content-review-text-20261114--p000054",
           "type": "markdown",
           "data": {
-            "text": "Szülői igazolás, sportegyesületi igazolás, napközis és tanulószobai nyilatkozat, felvételi jelentkezési anyagok és közösségi szolgálati dokumentumok szerepelnek az intézmény külön hivatalos tájékoztatóin. Ezek közvetlenül a kibocsátó oldalon érhetők el.\n\n[Kapcsolódó hivatalos iskolai tájékoztatás](#/informaciok/mindennapi-tudnivalok/szuloi-informaciok)\n\n[Felvételi nyomtatványok](#/oktatas/felveteli) · [Közösségi szolgálati iratok](#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok)"
+            "text": "A szülői igazolás, a sportegyesületi igazolás, a napközis és tanulószobai nyilatkozat, a felvételi lapok és a közösségi szolgálati iratok **más-más eljáráshoz tartoznak**. Kezdd a [Szülői információknál](#/informaciok/mindennapi-tudnivalok/szuloi-informaciok), a [Felvételinél](#/oktatas/felveteli) vagy a [Közösségi szolgálati dokumentumoknál](#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok), és ott az eredeti fájl aktuális változatát használd.\n\n[Szülői nyomtatványok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/szulok.html)"
           }
         }
       ]
@@ -88,6 +88,11 @@
     "preview": false,
     "route": "#/informaciok/dokumentumtar/nyomtatvanyok",
     "verifiedContent": false,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "parents"
+    }
   }
 }

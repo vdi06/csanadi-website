@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-14T21:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 4
+    "revision": 6
   },
   "seo": {
     "title": "Dokumentumtár – Csanádi Sportiskola",
-    "description": "Kereshető szabályzatok, hivatalos források és letölthető tanulási segédletek.",
+    "description": "Kereshető szabályzatok, hivatalos források és letölthető tanulási segédletek. Keress intézményi szabályzatokat, nyomtatványokat és tanulási segédleteket.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -36,21 +36,7 @@
           "id": "block:000052-text-1",
           "type": "markdown",
           "data": {
-            "text": "Az iskola hivatalos dokumentumtárában megtalálható a pedagógiai program, a házirend, a szervezeti és működési szabályzat, valamint az adatkezelési tájékoztató. Ezeket közvetlen, eredeti intézményi hivatkozásokon keresztül érheted el.\n\nA beépített dokumentumkeresőben külön, önállóan használható tanulási segédletek is elérhetők PDF-ként."
-          }
-        }
-      ]
-    },
-    {
-      "id": "block:000052-section-2",
-      "type": "section",
-      "title": "Hivatalos dokumentumok",
-      "children": [
-        {
-          "id": "block:000052-text-2",
-          "type": "markdown",
-          "data": {
-            "text": "Pedagógiai program és intézményi dokumentumok · Házirend és szabályzatok · Intézményi dokumentumok · Teljes dokumentumjegyzék"
+            "text": "A pedagógiai program, a házirend, az SZMSZ, a helyi tantervek, a munkaterv és az adatkezelési tájékoztatók az iskola eredeti dokumentumoldalán érhetők el. A beépített PDF-kereső ezzel szemben külön, fejlesztői tanulási segédleteket is tartalmaz. **A két dokumentumtípust ne kezeld azonos jóváhagyásúként.**"
           }
         }
       ]
@@ -64,35 +50,7 @@
           "id": "block:be2026-navlinks-000052",
           "type": "markdown",
           "data": {
-            "text": "[Szabályzatok](#/informaciok/dokumentumtar/szabalyzatok) · [Nyomtatványok](#/informaciok/dokumentumtar/nyomtatvanyok) · [Közzétételi lista](#/informaciok/dokumentumtar/kozzeteteli-lista)"
-          }
-        }
-      ]
-    },
-    {
-      "id": "block:content-review-20261114",
-      "type": "section",
-      "title": "Hivatalos dokumentumok",
-      "children": [
-        {
-          "id": "block:content-review-text-20261114",
-          "type": "markdown",
-          "data": {
-            "text": "A Csanádi hivatalos dokumentumoldala tartalmazza a pedagógiai programot, az általános és gimnáziumi helyi tanterveket, a házirendet, a munkatervet, az SZMSZ-t és az adatkezelési szabályzatot. A fejlesztői segédletek nem intézményi szabályzatok; a hivatalos dokumentumokhoz a Csanádi közzétett fájllistája az irányadó.\n\nKapcsolódó hivatalos iskolai tájékoztatás\n\n[Hivatalos közzétételi lista](#/informaciok/dokumentumtar/kozzeteteli-lista) · [Szülői nyomtatványok](#/informaciok/mindennapi-tudnivalok/szuloi-informaciok)"
-          }
-        }
-      ]
-    },
-    {
-      "id": "block:next10-official",
-      "type": "section",
-      "title": "Hivatalos dokumentumok megnyitása",
-      "children": [
-        {
-          "id": "block:next10-official-text",
-          "type": "markdown",
-          "data": {
-            "text": "A hivatalos intézményi dokumentumoldalon megtalálható a pedagógiai program, a házirend, a szervezeti és működési szabályzat és az adatkezelési dokumentáció. A honlap saját PDF-segédletei nem helyettesítik a jóváhagyott szabályzatokat."
+            "text": "[Szabályzatok](#/informaciok/dokumentumtar/szabalyzatok) · [Nyomtatványok](#/informaciok/dokumentumtar/nyomtatvanyok) · [Közzétételi lista](#/informaciok/dokumentumtar/kozzeteteli-lista)\n\n[Intézményi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/docs.html)"
           }
         }
       ]
@@ -103,6 +61,11 @@
     "preview": false,
     "route": "#/informaciok/dokumentumtar",
     "verifiedContent": false,
-    "bannerMediaId": "media:kozosseg"
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "documents"
+    }
   }
 }

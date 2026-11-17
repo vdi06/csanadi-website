@@ -8,8 +8,9 @@ let arrivalRequest=0;
 
 function updateHomeHeader(){
  const isHome=currentRoute==='#/';
- const hero=select('#global-hero');
- const threshold=Math.max(120,Math.min(480,(hero?.offsetHeight||300)*.7));
+ // Az új teljes felső egység állandó küszöböt kap; összehúzott magasság
+ // alapján új küszöböt számolni oda-vissza villogást okozna.
+ const threshold=150;
  document.body.classList.toggle('cs-home-condensed',isHome&&window.scrollY>threshold);
  document.body.classList.toggle('cs-home-header',isHome);
 }
@@ -18,7 +19,10 @@ function headingIndex(){
  const article=select('#app .content-tiles--editorial article.article-flow');
  const shell=select('#app .content-shell');
  if(!article||!shell)return;
- const headings=all(':scope > .article-section > h2',article);
+ if(article.querySelector('.cs92-section-navigation'))return;
+ // A v1.39.2 egyes oldaltípusokban több valódi szerkezeti régióra bontja a
+ // cikket, így a címsorok már nem mindenhol közvetlen gyerekei a cikknek.
+ const headings=all('.article-section > h2',article);
  if(headings.length<4)return;
  const headingNames=new Map();
  const toc=make('nav','cs-reading-index');
@@ -134,7 +138,7 @@ function syncMobileHeader(){
  const trigger=select('#mobile-menu-toggle');
  if(trigger){
   trigger.title='Körmenü megnyitása';
-  trigger.innerHTML='<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="4"/><circle cx="16" cy="5" r="2"/><circle cx="26" cy="10" r="2"/><circle cx="26" cy="22" r="2"/><circle cx="16" cy="27" r="2"/><circle cx="6" cy="22" r="2"/><circle cx="6" cy="10" r="2"/></svg>';
+  trigger.innerHTML='<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="4"/><circle cx="16" cy="5" r="2"/><circle cx="26" cy="10" r="2"/><circle cx="26" cy="22" r="2"/><circle cx="16" cy="27" r="2"/><circle cx="6" cy="22" r="2"/><circle cx="6" cy="10" r="2"/></svg><span class="cs92-mobile-menu-label" aria-hidden="true">MENÜ</span>';
  }
 }
 

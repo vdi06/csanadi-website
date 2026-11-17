@@ -3,10 +3,12 @@
   "mode": "planning-only",
   "multiplier": 6,
   "originalFileCount": 628,
+  "currentFileCount": 748,
+  "newEditorialIllustrations": 120,
   "derivativeImages": 353,
   "existingQrGraphics": 87,
   "source": "json/assets-inventory.json",
-  "generatedAt": "2026-11-16",
+  "generatedAt": "2026-11-17",
   "categories": [
     {
       "id": "original-images",
@@ -73,7 +75,7 @@
       ]
     }
   ],
-  "warning": "A számok tervezési viszonyítási alapok, nem megrendelések és nem nyilvános tartalmak. A reszponzív variánsok és QR-kódok nem önálló új fotók.",
+  "warning": "A hatos szorzó az eredeti, egyedi médiákra külön tervezési cél, nem teljesült. A v1.39.8 és v1.39.9 összesen 120 új SVG-ikonváltozata 40 sematikus témát jelent, nem 120 új iskolai fényképet. A reszponzív variánsok és QR-kódok sem önálló új fotók.",
   "uniqueBaselineEstimate": 188,
   "indicativeTotalNew": 940
 }
