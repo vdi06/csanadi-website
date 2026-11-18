@@ -9,14 +9,15 @@ export function bindFeatureTheme(buttonId){
  const query=matchMedia('(prefers-color-scheme:dark)');
  const apply=()=>{
   if(!button.isConnected)return;
-  document.documentElement.dataset.theme=preference==='system'?(query.matches?'dark':'light'):preference;
+  const theme=preference==='system'?(query.matches?'dark':'light'):preference;
+  document.documentElement.dataset.theme=theme;document.documentElement.setAttribute('data-bs-theme',theme);document.documentElement.dataset.themePreference=preference;
   button.textContent='◐ '+labels[preference];
  };
  const click=()=>{preference=modes[(modes.indexOf(preference)+1)%modes.length];try{localStorage.setItem('csanadi-theme',preference);}catch{}apply();};
  const systemChange=()=>{if(preference==='system')apply();};
  button.addEventListener('click',click);
  query.addEventListener?.('change',systemChange);
- button.closest('.cs-spa-feature')?.addEventListener('csanadi:feature-unmount',()=>{
+ (button.closest('.cs-spa-feature')||document.body)?.addEventListener('csanadi:feature-unmount',()=>{
   button.removeEventListener('click',click);
   query.removeEventListener?.('change',systemChange);
  },{once:true});

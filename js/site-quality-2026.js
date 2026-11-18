@@ -1,4 +1,4 @@
-import {formatBytes} from './format-bytes.js?v=1.42.15';
+import {formatBytes} from './format-bytes.js?v=1.42.16';
 import {settingNumber} from './site-settings-2026.js';
  
 export const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};

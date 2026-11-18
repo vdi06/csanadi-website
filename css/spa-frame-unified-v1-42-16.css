@@ -1,4 +1,4 @@
-/* Shared baseline for all eight isolated JSON-driven interactive centers. */
+/* v1.42.16 – shared baseline for all eight isolated JSON-driven interactive centers. */
 *{box-sizing:border-box}
 html,body{min-width:0;max-width:100%;overflow-x:hidden}
 body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -14,3 +14,9 @@ body :is(.table-responsive,.params){overflow-x:auto;max-width:100%}
 body :is(a,button,input,select,textarea):focus-visible{outline:3px solid #d8b15e;outline-offset:3px}
 html[data-theme="dark"] body :is(.section,.item,.card,.panel,.cover){color:var(--ink)}
 @media(max-width:768px){body{font-size:15px}body :is(h1,h2,h3){line-height:1.22}body :is(.grid,.cards,.columns){min-width:0}}
+
+/* Wide data tables must scroll inside the feature, not widen the viewport. */
+.cs-spa-data-table-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+body :is(input,button,select,textarea){font:inherit}
+body [hidden]{display:none!important}
+@media(max-width:390px){body{font-size:clamp(14px,3.85vw,15px)} body :is(.grid,.cards,.columns){grid-template-columns:minmax(0,1fr)!important}}

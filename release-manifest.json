@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.42.15",
+  "release": "csanadi-website-v1.42.16",
   "date": "2026-11-18",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "Közös aloldali megjelenés (mobil és asztali), egységes 1160 px-es kezdőlapi tartalomszélesség, nagyobb kompakt címer, interaktív SPA-központok korai iframe inicializálása, témakövetés, belső útvonalkezelés, útmutatókereső-javítás és kapukeret azonnali eltüntetése. Az éles publikálás nincs végrehajtva. Teljes end-to-end böngészős teszt továbbra is szükséges.",
+  "notes": "A v1.42.15 1. és 2. fejlesztési szakaszának újraellenőrzött, továbbfejlesztett kiadása: egységes 1160 pixeles fő- és aloldali tartalomszélesség a többszörös oldalsó margó nélkül; átláthatóbb mobil/asztali fejléc, nagyobb kompakt címer; kapukeret kattintáskor DOM-ból eltávolítva, csökkentett mozgás támogatásával; nyolc SPA-központ URL- és szakasznavigációja, iframe-életciklusa, témakövetése, ResizeObserver ütemezése és HTML-tartalomszűrése javítva; a közösségi aloldal belső hash-linkjeinek validálása javítva; a Bootstrap CDN változat és SRI megőrizve. Teljes hálózatos Chrome-regressziós teszt nem volt elérhető; éles feltöltés nem történt.",
   "files": {
     "assets/documents/admissions-tajekozodasi-handout-2026.pdf": {
       "sizeBytes": 48341,
@@ -3279,8 +3279,8 @@
       "sha256": "491d228b3f695e5f2f59a68aa4cee12511a790903049fecc054714bde54f7aac"
     },
     "css/desktop-hero-fold-v1-42-14.css": {
-      "sizeBytes": 2774,
-      "sha256": "f359b0b245d5841b93f35de4ad44e96957bd5faa2636552506f450e2c8c81a1c"
+      "sizeBytes": 2869,
+      "sha256": "46416ed12739d9acd3bc0ed685baa5cd949061cd93c8439f5e72861d0df62315"
     },
     "css/dfg-2026.css": {
       "sizeBytes": 11832,
@@ -3634,13 +3634,13 @@
       "sizeBytes": 590341,
       "sha256": "490e3ed76ec33317c0bf42b4f6ce4300ae16ecff93154f295947b0b54ae399a2"
     },
-    "css/site-consistency-v1-42-15.css": {
-      "sizeBytes": 8481,
-      "sha256": "f4a4e5e3a19479f1d571292dfd786059b59caef143368425055e8064ed4a2664"
+    "css/site-consistency-v1-42-16.css": {
+      "sizeBytes": 6235,
+      "sha256": "59826765ed4624caf174f8ef35da2cdd334a1600e093efc8412c56b985c713b5"
     },
-    "css/spa-frame-unified-v1-42-15.css": {
-      "sizeBytes": 1498,
-      "sha256": "67f8a23aef80d418d81ca646903826502c48d7b863db9ac29174f94b9bb36ad5"
+    "css/spa-frame-unified-v1-42-16.css": {
+      "sizeBytes": 1947,
+      "sha256": "ad23b403f1a673418d98987f88f57da1aca6e4ff94bb3c8a7293d4d1e5a37187"
     },
     "css/style.css": {
       "sizeBytes": 75799,
@@ -3728,19 +3728,19 @@
     },
     "index.html": {
       "sizeBytes": 23588,
-      "sha256": "40ba2df6f4a892b29a6581fd44abf269ca705160b83b05322c03e2458ff60099"
+      "sha256": "b05ec1cb60cfc5187da0a886a260f82abc9f7d7725e0a73cd3410e6b6da95daa"
     },
     "js/advanced-2026.js": {
-      "sizeBytes": 34828,
-      "sha256": "265553cfe7fa9adc18a50b136dc4a84c6da0f055d31ec33db8b4159fec716935"
+      "sizeBytes": 34532,
+      "sha256": "989fd695b9058638abd0b6f7ebd2756258c6a8439475c908d1708030d0e04000"
     },
     "js/app.js": {
       "sizeBytes": 58407,
-      "sha256": "07b45b2d29a335247bae9a41c70fa6117a08e006d93d6602491213c9b25d6205"
+      "sha256": "8d41b937f149ca412caa63b3b5737690a6526cbadb70f530ce4118d7deb4eb5a"
     },
     "js/blocks.js": {
       "sizeBytes": 9204,
-      "sha256": "3a115beef582434208dd0dba03bef8595902f49222ed73462f7ddfc139b71ee2"
+      "sha256": "73898f25e3d59a9896cc8473a723dbbeb479de4b28c94f5c670961762d24dbd4"
     },
     "js/content.js": {
       "sizeBytes": 5942,
@@ -3756,7 +3756,7 @@
     },
     "js/documents.js": {
       "sizeBytes": 29178,
-      "sha256": "bcafd9ab57371ddf21a4d91208c2addcdb5c2754990024b53558168bedfeaf26"
+      "sha256": "98d4637d7fc1f06a224a2815455f5135466d9cc5247f9ff5b2b99746baca76d0"
     },
     "js/experience-2026.js": {
       "sizeBytes": 21326,
@@ -3764,7 +3764,7 @@
     },
     "js/extended-hubs-2026.js": {
       "sizeBytes": 25824,
-      "sha256": "7991e343ca1327b708d8467f522b5cba1fafb6e9a84b370f3541e1759df918a6"
+      "sha256": "c6f9b2109c85f609f436d68990f837afe49edb2e41cf0f3d6612c4a761a02290"
     },
     "js/fetch-resilience-v1-39-7.js": {
       "sizeBytes": 1966,
@@ -3788,7 +3788,7 @@
     },
     "js/hero-2026.js": {
       "sizeBytes": 12858,
-      "sha256": "5f7cc8b9ea2505678d2506a2c79988524d8a4ea39233d74ab463e6d694f07c7b"
+      "sha256": "f217a05a17211e891d8634af3b0cac8704aca0d029d5c5769bd548e343bc58ef"
     },
     "js/home-inline-editor-v1-41-4.js": {
       "sizeBytes": 11264,
@@ -3836,7 +3836,7 @@
     },
     "js/offline-reader-20.js": {
       "sizeBytes": 5457,
-      "sha256": "13cebd08d2205d1ac11e02b7eded620949339fb2436d7e215279aad36ca2064a"
+      "sha256": "8780d4c465cf9cb813473cf0a04c1b45749374d7e4abe3e6d3903e94024af23e"
     },
     "js/page-media-2026.js": {
       "sizeBytes": 2134,
@@ -3848,11 +3848,11 @@
     },
     "js/performance-diagnostics-2026.js": {
       "sizeBytes": 16029,
-      "sha256": "0e557cb543c2be539710b743cd7f65ce9854c1c82d267508ea663c735ac94345"
+      "sha256": "ccff72f30490e31563a1d587fabdd3179f948eb6d4932722e3cb161a4a43bd07"
     },
     "js/premium-home-2026.js": {
       "sizeBytes": 3132,
-      "sha256": "1ae4e2ad1f381b2c07550c7c2906c599377de712a094280ed55d0bffb13a300e"
+      "sha256": "2dd53c148c054bd61c47279e9c254e65f2c75017ae425d83e13c47ec73af5667"
     },
     "js/release-v1-39-0.js": {
       "sizeBytes": 9704,
@@ -3876,7 +3876,7 @@
     },
     "js/round21-explorer.js": {
       "sizeBytes": 16704,
-      "sha256": "639c15a7472f76c13ccf20fbb7b6c81843730eb4919cddec5ba164e0ed42b534"
+      "sha256": "788ca8646438b661ecbe209ce8aed710982eec44f68ec5bff2a052276ae7a83c"
     },
     "js/round21-personalize.js": {
       "sizeBytes": 8306,
@@ -3895,8 +3895,8 @@
       "sha256": "fe93dea6c6bb291ec213759283605512037cb069ab4520e0997d5a6eabb2c369"
     },
     "js/round25-community.js": {
-      "sizeBytes": 21418,
-      "sha256": "f2f71663206b6f9d6aea1269e4e056f4db817723f85278938a9494129a8ffac1"
+      "sizeBytes": 20989,
+      "sha256": "73594c58108d8165acdcec9be7220f81c330035a44d520822b9420f0b94f55b2"
     },
     "js/round26-arrival.js": {
       "sizeBytes": 15709,
@@ -3924,23 +3924,23 @@
     },
     "js/site-quality-2026.js": {
       "sizeBytes": 9745,
-      "sha256": "08f3d988b6d75da6b5cb8d578eab9fe4a7fe9e3595c62061929ac1d540e61736"
+      "sha256": "4491f06d50ef5dc96ca8746100263e1266a708e5e46d30bb7db86a89611939ec"
     },
     "js/site-settings-2026.js": {
       "sizeBytes": 3539,
       "sha256": "e86aade74a4773c0a25de1304b0ece083dac218b9eb9722056dd64bf2ed3b615"
     },
     "js/spa-feature-theme-v1-42.js": {
-      "sizeBytes": 1270,
-      "sha256": "a524d1c62c93e1ba13a5f5dc1c908de8f1097432b7290593fd21a6c0a8ae5d31"
+      "sizeBytes": 1429,
+      "sha256": "be7120abe6560392bf445fb32b53ad38683d132c4995c1a9db9ebf94958c0ccd"
     },
     "js/spa-features-v1-42.js": {
-      "sizeBytes": 7046,
-      "sha256": "575abb7064fec9d49c9febec17a87367cbf2ce05ae71718cb097fda8b2189718"
+      "sizeBytes": 10938,
+      "sha256": "7f2a7cd9907e16cc467a22a3fa4853a62681d1ebc61beabaa04969cbfc07fced"
     },
     "js/spa-frame-bootstrap-v1-42.js": {
       "sizeBytes": 1726,
-      "sha256": "97c04e34c69beeceaa0dd5fdffa44b7d6d4dd1fff977dc7f14f4854dbfecf895"
+      "sha256": "3ccdebf8a2ddc9c78fedd9a2bba8b474fd5645d07036c8a1ab7acebf667d68f3"
     },
     "js/sports-successes.js": {
       "sizeBytes": 6823,
@@ -3956,7 +3956,7 @@
     },
     "js/subpages-v1.js": {
       "sizeBytes": 14198,
-      "sha256": "1a3cc8bd7565a88936ff1575f79f31fce9f8b3512d9a105a56bc8e6c0022d498"
+      "sha256": "0f36c85db396142e7323a38d96441924d297f4870cfe430bb56551320070787a"
     },
     "js/tenway-2026.js": {
       "sizeBytes": 7414,
@@ -3976,7 +3976,7 @@
     },
     "json/config.json": {
       "sizeBytes": 16558,
-      "sha256": "47411ce1071186915900ac4c2aff41ee0e15128a21de4c9b43bb6afbb48c512e"
+      "sha256": "3a47d261a9231551a5dbc137aaea1907f4ea638efb9bc93c493fa4500c353cd7"
     },
     "json/data/arrival-and-development-26.json": {
       "sizeBytes": 6849,
@@ -4488,7 +4488,7 @@
     },
     "script.js": {
       "sizeBytes": 1739,
-      "sha256": "29834d25d91bd5c41b426ca990e0854e4b648556c7797eb5da6b27ce2222c2dc"
+      "sha256": "928e9fcfd4b868632ee4c2c2e4b365de7857276edf92a8b50eaff67da05150fc"
     },
     "service-worker.js": {
       "sizeBytes": 6084,

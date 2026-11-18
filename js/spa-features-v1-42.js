@@ -12,6 +12,7 @@ const KNOWN={
 };
 const STYLE=/^css\/[a-z0-9-]+\.css$/;
 let dataPromise=null,activation=0,dispose=null;
+let requestedSection=null;
 export function isSpaFeature(page){return Object.hasOwn(KNOWN,page?.schemaExtensions?.spaFeature||'');}
 export function featurePlaceholder(page){
  const shell=document.createElement('div');shell.className='cs-spa-feature';
@@ -31,23 +32,38 @@ async function data(){
  }).catch(error=>{dataPromise=null;throw error;});
  return dataPromise;
 }
+/* The feature HTML is release-controlled JSON, but still gets a strict boundary.
+   No active content, arbitrary style/event attributes or executable URLs are accepted. */
+const ALLOWED_TAGS=new Set('a article aside button canvas circle code dialog div figcaption figure footer form h1 h2 h3 header img input label li main nav ol option output p path section select small span strong svg table tbody td th thead tr ul'.split(' '));
+const ALLOWED_ATTRIBUTES=new Set('id class title role aria-label aria-labelledby aria-hidden aria-live aria-expanded aria-controls alt href src type value placeholder required min max step for maxlength accept tabindex width height target rel download fill stroke stroke-width viewbox d cx cy r hidden data-filterable'.split(' '));
+function validURL(raw,kind){
+ const value=String(raw||'').trim();if(!value||/[\u0000-\u001f\u007f]/.test(value))return false;
+ if(value.startsWith('#'))return true;
+ if(kind==='src')return /^assets\/media\/[a-z0-9/_.-]+\.(?:webp|png|jpe?g|svg)$/i.test(value) && !value.includes('..');
+ if(/^(?:https:\/\/[^\s<>]+|assets\/documents\/[a-z0-9/_.-]+\.pdf|(?:\.\/)?index\.html#\/[a-z0-9\-/#]+)$/i.test(value))return true;
+ return false;
+}
 function sanitizedHTML(source){
  const template=document.createElement('template');template.innerHTML=source;
- for(const element of template.content.querySelectorAll('*')){
-  if(['SCRIPT','IFRAME','OBJECT','EMBED','BASE','META','LINK'].includes(element.tagName)){element.remove();continue;}
-  for(const attribute of [...element.attributes]){
-   if(/^on/i.test(attribute.name)||(/^(?:href|src|action|formaction|srcdoc)$/i.test(attribute.name)&&/^(?:javascript|data):/i.test(attribute.value.trim())))element.removeAttribute(attribute.name);
+ for(const element of [...template.content.querySelectorAll('*')]){
+  if(!ALLOWED_TAGS.has(element.localName)){
+   element.remove();continue;
   }
+  for(const attribute of [...element.attributes]){
+   const key=attribute.name.toLowerCase();
+   if(!ALLOWED_ATTRIBUTES.has(key)||((key==='href'||key==='src')&&!validURL(attribute.value,key))){element.removeAttribute(attribute.name);continue;}
+  }
+  if(element.localName==='a'&&element.getAttribute('target')==='_blank')element.setAttribute('rel','noopener noreferrer');
  }
  return template.innerHTML;
 }
 function safeAttribute(value){return String(value).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');}
 function frameDocument(key,component){
- const css=component.styles.map(path=>`<link rel="stylesheet" href="${safeAttribute(path)}?v=1.42.15">`).join('')+'<link rel="stylesheet" href="css/spa-frame-unified-v1-42-15.css?v=1.42.15">';
+ const css=component.styles.map(path=>`<link rel="stylesheet" href="${safeAttribute(path)}?v=1.42.16">`).join('')+'<link rel="stylesheet" href="css/spa-frame-unified-v1-42-16.css?v=1.42.16">';
  const base=new URL('./',document.baseURI).href;
  // Bootstrap remains pinned to the same CDN version as the original SPA.
  const bootstrap='https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css';
- return `<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><base href="${safeAttribute(base)}"><link rel="stylesheet" href="${bootstrap}">${css}</head><body data-spa-feature="${key}" class="${key==='arrival'?'arrival2':''}">${sanitizedHTML(component.html)}<script type="module" src="js/spa-frame-bootstrap-v1-42.js?v=1.42.15"></script></body></html>`;
+ return `<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><base href="${safeAttribute(base)}"><link rel="stylesheet" href="${bootstrap}" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">${css}</head><body data-spa-feature="${key}" class="${key==='arrival'?'arrival2':''}">${sanitizedHTML(component.html)}<script type="module" src="js/spa-frame-bootstrap-v1-42.js?v=1.42.16"></script></body></html>`;
 }
 export async function activateSpaFeature(shell,page){
  const token=activation,key=page?.schemaExtensions?.spaFeature;
@@ -58,34 +74,83 @@ export async function activateSpaFeature(shell,page){
   if(!shell.isConnected||token!==activation)return;
   const iframe=document.createElement('iframe');
   iframe.className='cs-spa-feature-frame';
-  iframe.title=page.title;iframe.loading='eager';iframe.referrerPolicy='same-origin';
+  iframe.title=page.title;iframe.loading='eager';iframe.referrerPolicy='no-referrer';
   iframe.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-downloads allow-modals');
   iframe.style.cssText='display:block;width:100%;min-height:520px;height:100vh;border:0;overflow:hidden;background:transparent;';
   iframe.srcdoc=frameDocument(key,component);
   shell.replaceChildren(iframe);shell.removeAttribute('aria-busy');
-  let observer=null,themeObserver=null,started=false,readinessFrame=0,readinessChecks=0;
+  let observer=null,themeObserver=null,started=false,readinessFrame=0,readinessChecks=0,resizeFrame=0;
   const onLoad=()=>{
    if(started||!shell.isConnected||token!==activation)return;
    const doc=iframe.contentDocument;if(!doc?.body||doc.body.dataset.spaFeature!==key)return;
    started=true;
-   const resize=()=>{if(!iframe.isConnected)return;const height=Math.max(doc.body.scrollHeight,doc.documentElement.scrollHeight);const desired=Math.max(520,Math.ceil(height)+6);if(Math.abs(iframe.getBoundingClientRect().height-desired)>8)iframe.style.height=desired+'px';};
+   // Tables in the long guide stay horizontally scrollable on narrow phones.
+   for(const table of doc.querySelectorAll('table')){
+    if(table.closest('.cs-spa-data-table-scroll'))continue;
+    const scroll=doc.createElement('div');scroll.className='cs-spa-data-table-scroll';
+    scroll.tabIndex=0;scroll.setAttribute('role','region');
+    scroll.setAttribute('aria-label','Táblázat vízszintes görgetése');
+    table.parentNode.insertBefore(scroll,table);scroll.append(table);
+   }
+   // Defer writes from ResizeObserver to rAF to avoid resize loops.
+   const resize=()=>{if(resizeFrame||!iframe.isConnected)return;
+    resizeFrame=requestAnimationFrame(()=>{resizeFrame=0;if(!iframe.isConnected||token!==activation)return;
+     const height=Math.max(doc.body.scrollHeight,doc.documentElement.scrollHeight);
+     const desired=Math.max(520,Math.ceil(height)+6);
+     if(Math.abs(iframe.getBoundingClientRect().height-desired)>8)iframe.style.height=desired+'px';
+    });
+   };
    observer=new ResizeObserver(resize);observer.observe(doc.body);observer.observe(doc.documentElement);
    // Changing the parent's theme must immediately update the embedded center.
    const syncTheme=()=>{const mode=document.documentElement.dataset.theme||'light';doc.documentElement.dataset.theme=mode;doc.documentElement.setAttribute('data-bs-theme',mode);};
    syncTheme();themeObserver=new MutationObserver(syncTheme);themeObserver.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme','data-bs-theme']});
-   // Internal SPA links belong to the parent router, not the frame's hash.
+   // SPA links belong to the parent's hash router; section links stay in-frame.
    doc.addEventListener('click',event=>{
-    const anchor=event.target.closest?.('a[href]');if(!anchor)return;
-    const href=anchor.getAttribute('href')||'';
-    const route=href.startsWith('#/')?href:href.startsWith('index.html#/')?href.slice('index.html'.length):null;
-    if(route&&/^#\/[a-z0-9\-/]*$/.test(route)){
-     event.preventDefault();window.location.hash=route;
+    if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+    const anchor=event.target?.closest?.('a[href]');if(!anchor)return;
+    const href=(anchor.getAttribute('href')||'').trim();
+    if(!href)return;
+    let routeAndSection=null;
+    if(href.startsWith('#/'))routeAndSection=href;
+    else if(/^(?:\.\/)?index\.html#\//i.test(href))routeAndSection=href.slice(href.indexOf('#'));
+    if(routeAndSection){
+     const sectionIndex=routeAndSection.indexOf('#',1);
+     const route=sectionIndex<0?routeAndSection:routeAndSection.slice(0,sectionIndex);
+     const section=sectionIndex<0?'':routeAndSection.slice(sectionIndex+1);
+     if(!/^#\/[a-z0-9\-/]*$/.test(route)|| (section&&!/^[a-zA-Z][\w:.-]*$/.test(section)))return;
+     event.preventDefault();
+     if(section){
+      const immediate=route===window.location.hash?doc.getElementById(section):null;
+      if(immediate){
+       const top=window.scrollY+iframe.getBoundingClientRect().top+immediate.getBoundingClientRect().top-100;
+       window.scrollTo({top:Math.max(0,top),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+       return;
+      }
+      requestedSection={route,section};
+     }else requestedSection=null;
+     if(window.location.hash!==route)window.location.hash=route;
+     else if(!section)window.scrollTo({top:0,behavior:'instant'});
     }else if(/^#[A-Za-z][\w:.-]*$/.test(href)){
      const target=doc.getElementById(href.slice(1));
-     if(target){event.preventDefault();window.scrollTo({top:window.scrollY+iframe.getBoundingClientRect().top+target.getBoundingClientRect().top,behavior:'smooth'});}
+     if(target){event.preventDefault();
+      const top=window.scrollY+iframe.getBoundingClientRect().top+target.getBoundingClientRect().top-100;
+      window.scrollTo({top:Math.max(0,top),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+     }
     }
    });
+   if(requestedSection?.route===window.location.hash){
+    const target=doc.getElementById(requestedSection.section);
+    if(target){
+     requestedSection=null;
+     requestAnimationFrame(()=>{
+      if(!iframe.isConnected||token!==activation)return;
+      const top=window.scrollY+iframe.getBoundingClientRect().top+target.getBoundingClientRect().top-100;
+      window.scrollTo({top:Math.max(0,top),behavior:'instant'});
+     });
+    }
+   }
    resize();
+   doc.fonts?.ready?.then(()=>{if(iframe.isConnected)resize();}).catch(()=>{});
   };
   iframe.addEventListener('load',onLoad);
   // The external CDN can delay iframe load indefinitely on a poor connection.
@@ -97,7 +162,7 @@ export async function activateSpaFeature(shell,page){
   };
   readinessFrame=requestAnimationFrame(checkReady);
   dispose=()=>{
-   cancelAnimationFrame(readinessFrame);
+   cancelAnimationFrame(readinessFrame);cancelAnimationFrame(resizeFrame);
    try{iframe.contentDocument?.body?.dispatchEvent(new Event('csanadi:feature-unmount'));}catch{}
    observer?.disconnect();observer=null;themeObserver?.disconnect();themeObserver=null;
    iframe.removeEventListener('load',onLoad);

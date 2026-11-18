@@ -39,10 +39,10 @@
   /* Hide the deprecated mini slide preview entirely; compact navigation is the crest only. */
   #site-header #cs39-mini-hero{border:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;min-height:0!important}
   #site-header #cs39-mini-hero .cs39-mini-preview{display:flex;align-items:center;justify-content:center;
-     width:56px!important;height:56px!important;flex:0 0 56px!important;border-radius:50%!important;
+     width:clamp(82px,6.4vw,102px)!important;height:clamp(82px,6.4vw,102px)!important;flex:0 0 clamp(82px,6.4vw,102px)!important;border-radius:50%!important;
      border:2px solid #e6bd6c!important;background:radial-gradient(circle,#173b5c,#07182b)!important;
      padding:3px!important;box-shadow:0 0 0 3px #c9a45b33!important}
-  #site-header #cs39-mini-hero .cs39-mini-image{width:42px!important;height:42px!important;object-fit:contain;border-radius:50%}
+  #site-header #cs39-mini-hero .cs39-mini-image{width:clamp(72px,5.55vw,92px)!important;height:clamp(72px,5.55vw,92px)!important;object-fit:contain;border-radius:50%}
   #site-header #cs39-mini-hero .cs39-mini-description{display:none!important}
 }
 @media(prefers-reduced-motion:reduce) and (min-width:769px){

@@ -3,14 +3,14 @@ try{const preference=localStorage.getItem('csanadi-theme')||'system';const mode=
 /* Load only the explicitly registered interactive center inside its own frame.
    Separate window/document isolates CSS, dialogs, timers and DOM identifiers. */
 const modules={
- explorer:()=>import('./round21-explorer.js?v=1.42.15').then(module=>module.mountExplorer()),
- compass:()=>import('./round22-center.js?v=1.42.15').then(module=>module.mountCompass()),
- workshop:()=>import('./round23-workshop.js?v=1.42.15').then(module=>module.mountWorkshop()),
- heritage:()=>import('./round24-heritage.js?v=1.42.15').then(module=>module.mountHeritage()),
- community:()=>import('./round25-community.js?v=1.42.15').then(module=>module.mountCommunity()),
- offline:()=>import('./offline-reader-20.js?v=1.42.15').then(module=>module.mountOfflineReader()),
- guide:()=>import('./guide-ui-v1-42.js?v=1.42.15').then(module=>module.mountGuide()),
- arrival:()=>import('./round26-arrival.js?v=1.42.15')
+ explorer:()=>import('./round21-explorer.js?v=1.42.16').then(module=>module.mountExplorer()),
+ compass:()=>import('./round22-center.js?v=1.42.16').then(module=>module.mountCompass()),
+ workshop:()=>import('./round23-workshop.js?v=1.42.16').then(module=>module.mountWorkshop()),
+ heritage:()=>import('./round24-heritage.js?v=1.42.16').then(module=>module.mountHeritage()),
+ community:()=>import('./round25-community.js?v=1.42.16').then(module=>module.mountCommunity()),
+ offline:()=>import('./offline-reader-20.js?v=1.42.16').then(module=>module.mountOfflineReader()),
+ guide:()=>import('./guide-ui-v1-42.js?v=1.42.16').then(module=>module.mountGuide()),
+ arrival:()=>import('./round26-arrival.js?v=1.42.16')
 };
 const key=document.body?.dataset.spaFeature;
 if(!Object.hasOwn(modules,key)){
