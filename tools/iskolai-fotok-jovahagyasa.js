@@ -1,9 +1,9 @@
-/* v1.40.5 – képfájlok helyi forrás- és jogosultsági bizonyítékjegyzéke.
+/* v1.40.7 – fotóforrások visszaellenőrzése és függő importterve.
    Nem tölti fel a képeket, nem jelöl szerveres forrást jóváhagyottnak. */
 (()=>{
  'use strict';
  const $=id=>document.getElementById(id),list=$('photos-list'),status=$('photos-status');
- let images=[];
+ let images=[],verifiedManifest=null;
  const formats=new Set(['image/jpeg','image/png','image/webp','image/avif']);
  const sha256=async file=>{
   const bytes=await file.arrayBuffer();
@@ -31,7 +31,7 @@
   }
  }
  $('photos-input').addEventListener('change',async event=>{
-  images=[];render();status.textContent='Képek ellenőrzése…';
+  images=[];verifiedManifest=null;$('photos-stage-export').disabled=true;render();status.textContent='Képek ellenőrzése…';
   try{const files=[...event.target.files].slice(0,50);const collected=[];
    for(const file of files)collected.push(await readImage(file));
    const seen=new Set();images=collected.filter(item=>{if(seen.has(item.sha256))return false;seen.add(item.sha256);return true;});render();
@@ -45,14 +45,37 @@
   if(!event.currentTarget.reportValidity()){status.textContent='A kötelező bizonyítékmezők és felelősi ellenőrzések hiányosak.';return;}
   const approval={holder:$('photos-holder').value.trim(),permission:$('photos-permission').value.trim(),evidenceId:$('photos-evidence').value.trim(),reviewer:$('photos-reviewer').value.trim(),decisionId:$('photos-decision').value.trim(),sourceDate:$('photos-date').value,privacyBasis:$('photos-privacy').value.trim()};
   if(Object.values(approval).some(x=>!x)){status.textContent='Minden engedélyezési mező kitöltése kötelező.';return;}
-  const report={release:'1.40.5',schemaVersion:'1.0.0',purpose:'Intézményi képregisztrálás előkészítése',
+  const report={release:'1.40.7',schemaVersion:'1.0.0',purpose:'Intézményi képregisztrálás előkészítése',
    warning:'Ez a nyilatkozat csak a felhasználó által rögzített adatokat tartalmazza, az engedély valódiságát nem bizonyítja. NEM jelent nyilvános publikálást.',
    externallyVerifiedBySystem:false,uploadedToServer:false,approval,images};
-  exportFile('csanadi_fotok_jovahagyasi_munkalap_v1_40_5.json','application/json',JSON.stringify(report,null,2));
+  exportFile('csanadi_fotok_jovahagyasi_munkalap_v1_40_7.json','application/json',JSON.stringify(report,null,2));
   const keys=['name','mimeType','sizeBytes','width','height','sha256','holder','permission','evidenceId','reviewer','decisionId','sourceDate','privacyBasis'];
   const escape=v=>'"'+String(v??'').replace(/^[=+\-@]/,"'$&").replace(/"/g,'""')+'"';
   const rows=[keys,...images.map(image=>keys.map(key=>image[key]??approval[key]))];
-  exportFile('csanadi_fotok_jovahagyasi_munkalap_v1_40_5.csv','text/csv;charset=utf-8','\ufeff'+rows.map(row=>row.map(escape).join(';')).join('\r\n'));
+  exportFile('csanadi_fotok_jovahagyasi_munkalap_v1_40_7.csv','text/csv;charset=utf-8','\ufeff'+rows.map(row=>row.map(escape).join(';')).join('\r\n'));
   status.textContent=`${images.length} helyi kép adatai és a rögzített nyilatkozatok exportálva. A képfájlok nem kerültek feltöltésre.`;
+ });
+ $('photos-verify-input').addEventListener('change',async event=>{
+  const result=$('photos-verify-status'),errors=$('photos-verify-errors');errors.replaceChildren();verifiedManifest=null;$('photos-stage-export').disabled=true;
+  try{const file=event.target.files?.[0];if(!file)return;if(file.size>5*1024*1024)throw Error('Túl nagy jegyzék (legfeljebb 5 MiB).');
+   const manifest=JSON.parse(await file.text());const {verifyPhotoApproval}=await import('./photo-approval-core-v1-40-6.mjs');
+   const outcome=verifyPhotoApproval(manifest,images);
+   if(outcome.matched){verifiedManifest=manifest;$('photos-stage-export').disabled=false;}
+   result.textContent=`${outcome.rows} jegyzéksor, ${outcome.files} helyi eredeti kép · ${outcome.problems.length} eltérés. ${outcome.disclaimer}`;
+   for(const problem of outcome.problems){const item=document.createElement('li');item.textContent=problem;errors.append(item);}
+  }catch(error){result.textContent='A jegyzék nem ellenőrizhető: '+error.message;}
+ });
+ $('photos-stage-export').addEventListener('click',async()=>{
+  if(!verifiedManifest||!images.length)return;
+  try{
+   const response=await fetch('../json/mediatar.json',{cache:'no-store'});if(!response.ok)throw Error('A médiatár nem tölthető be: HTTP '+response.status);
+   const registry=await response.json();
+   const {buildPhotoStagingPlan}=await import('./photo-staging-core-v1-40-7.mjs');
+   const plan=buildPhotoStagingPlan(verifiedManifest,images,registry.items||[]);
+   if(!plan.ready){$('photos-verify-status').textContent='Az előkészítés megszakadt: '+plan.issues.join('; ');return;}
+   const payload={release:'1.40.7',purpose:'Csak helyi, nem közzétehető médiaimport-terv',createdByTool:true,uploadedToServer:false,...plan};
+   exportFile('csanadi_foto_mediatar_elokeszites_v1_40_7.json','application/json',JSON.stringify(payload,null,2));
+   $('photos-verify-status').textContent=`${plan.items.length} előkészítő médiasor exportálva. Egyik sem rendelkezik önálló intézményi jóváhagyással; közzététel nem történt.`;
+  }catch(error){$('photos-verify-status').textContent='A médiatári terv nem készíthető el: '+error.message;}
  });
 })();

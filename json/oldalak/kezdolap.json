@@ -44,13 +44,13 @@
             "href": "#/sport/sporteredmenyek"
           }
         ],
-        "imageId": "media:v140-sport",
+        "imageId": "media:hero",
         "intervalMs": 7500,
         "slides": [
           {
             "id": "hero-v140-sport",
-            "mediaId": "media:v140-sport",
-            "mobileMediaId": "media:v140-sport-mobile",
+            "mediaId": "media:hero",
+            "mobileMediaId": "media:hero",
             "eyebrow": "CSANÁDI · SPORT",
             "title": "A pályán kezdődik a történet",
             "subtitle": "Kitartás, mozgás és új célok a sport világában.",

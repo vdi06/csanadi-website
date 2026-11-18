@@ -18,10 +18,10 @@ const html=read('index.html'),app=read('js/app.js'),hero=read('js/hero-2026.js')
 const css=read('css/accessibility-v1-40-4.css');
 
 check('H: egységes verzió, bootstrap és statikus FTP',()=>{
- assert.match(config.performance.cacheVersion,/^csanadi-r-v1\.40\.[45]$/);
- assert.match(html,/script\.js\?v=1\.40\.[45]/);assert.match(html,/accessibility-v1-40-4\.css\?v=1\.40\.4/);
- assert.match(read('script.js'),/app\.js\?v=1\.40\.[45]/);assert.match(app,/blocks\.js\?v=1\.40\.[45]/);
- assert.match(read('js/blocks.js'),/hero-2026\.js\?v=1\.40\.[45]/);
+ assert.match(config.performance.cacheVersion,/^csanadi-r-v1\.40\.(?:[4-9]|10)$/);
+ assert.match(html,/script\.js\?v=1\.40\.(?:[4-9]|10)/);assert.match(html,/accessibility-v1-40-4\.css\?v=1\.40\.4/);
+ assert.match(read('script.js'),/app\.js\?v=1\.40\.(?:[4-9]|10)/);assert.match(app,/blocks\.js\?v=1\.40\.(?:[4-9]|10)/);
+ assert.match(read('js/blocks.js'),/hero-2026\.js\?v=1\.40\.(?:[4-9]|10)/);
  assert.match(html,/bootstrap@5\.3\.9/);assert.doesNotMatch(html,/href="(?:assets|vendor|\.\/).*bootstrap\.min\.css/);
 });
 check('H: 71 külön regisztrált útvonal és hiánytalan JSON',()=>{

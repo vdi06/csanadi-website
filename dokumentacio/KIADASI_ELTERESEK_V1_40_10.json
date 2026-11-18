@@ -1,0 +1,409 @@
+{
+  "from": "csanadi-website-v1.40.9",
+  "to": "csanadi-website-v1.40.10",
+  "totals": {
+    "previous": 1672,
+    "current": 1695,
+    "added": 23,
+    "removed": 0,
+    "changed": 44,
+    "unchanged": 1628,
+    "bytesBefore": 31056258,
+    "bytesAfter": 31428229,
+    "byteDelta": 371971
+  },
+  "added": [
+    {
+      "path": "dokumentacio/AJANLASOK_STATUS_V1_40_10.json",
+      "category": "documentation",
+      "bytes": 487
+    },
+    {
+      "path": "dokumentacio/BAZIS_MANIFEST_V1_40_9.json",
+      "category": "documentation",
+      "bytes": 274367
+    },
+    {
+      "path": "dokumentacio/FOTO_ELLENORZES_V1_40_10.json",
+      "category": "documentation",
+      "bytes": 717
+    },
+    {
+      "path": "dokumentacio/MOBIL_HIBAJAVITASI_TERV_V1_40_10.json",
+      "category": "documentation",
+      "bytes": 662
+    },
+    {
+      "path": "dokumentacio/SEO_ENGEDELYEZES_V1_40_10.json",
+      "category": "documentation",
+      "bytes": 26435
+    },
+    {
+      "path": "dokumentacio/WEB_VITALS_TERV_V1_40_10.json",
+      "category": "documentation",
+      "bytes": 687
+    },
+    {
+      "path": "json/adatok/ajanlasi-szabalyok-v1-40-10.json",
+      "category": "json",
+      "bytes": 443
+    },
+    {
+      "path": "tools/ajanlasok-szerkeszto-v1-40-10.html",
+      "category": "tool",
+      "bytes": 3082
+    },
+    {
+      "path": "tools/ajanlasok-szerkeszto-v1-40-10.js",
+      "category": "tool",
+      "bytes": 4241
+    },
+    {
+      "path": "tools/build-readiness-report-v1-40-10.mjs",
+      "category": "tool",
+      "bytes": 5130
+    },
+    {
+      "path": "tools/build-release-diff-v1-40-10.mjs",
+      "category": "tool",
+      "bytes": 866
+    },
+    {
+      "path": "tools/build-v14010-readiness.mjs",
+      "category": "tool",
+      "bytes": 3478
+    },
+    {
+      "path": "tools/check-release-target-v1-40-10.mjs",
+      "category": "tool",
+      "bytes": 7610
+    },
+    {
+      "path": "tools/official-photo-validation-v1-40-10.mjs",
+      "category": "tool",
+      "bytes": 4161
+    },
+    {
+      "path": "tools/qa-remediation-core-v1-40-10.mjs",
+      "category": "tool",
+      "bytes": 2468
+    },
+    {
+      "path": "tools/rehearse-local-release-v1-40-10.mjs",
+      "category": "tool",
+      "bytes": 4704
+    },
+    {
+      "path": "tools/run-full-regression-v1-40-10.mjs",
+      "category": "tool",
+      "bytes": 3205
+    },
+    {
+      "path": "tools/seo-consent-core-v1-40-10.mjs",
+      "category": "tool",
+      "bytes": 2632
+    },
+    {
+      "path": "tools/test-v1410-static.mjs",
+      "category": "tool",
+      "bytes": 9600
+    },
+    {
+      "path": "tools/v14010-bizonyitek-kapu.html",
+      "category": "tool",
+      "bytes": 4098
+    },
+    {
+      "path": "tools/v14010-bizonyitek-kapu.js",
+      "category": "tool",
+      "bytes": 3120
+    },
+    {
+      "path": "tools/v14010-kiadasi-munkalap.html",
+      "category": "tool",
+      "bytes": 4846
+    },
+    {
+      "path": "tools/vitals-review-core-v1-40-10.mjs",
+      "category": "tool",
+      "bytes": 1569
+    }
+  ],
+  "removed": [],
+  "changed": [
+    {
+      "path": "index.html",
+      "category": "other",
+      "fromBytes": 23564,
+      "toBytes": 23568
+    },
+    {
+      "path": "js/app.js",
+      "category": "script",
+      "fromBytes": 60991,
+      "toBytes": 60993
+    },
+    {
+      "path": "js/blocks.js",
+      "category": "script",
+      "fromBytes": 9230,
+      "toBytes": 9231
+    },
+    {
+      "path": "js/search-j-2026.js",
+      "category": "script",
+      "fromBytes": 22231,
+      "toBytes": 22734
+    },
+    {
+      "path": "js/search-recommendations-v1-40-9.js",
+      "category": "script",
+      "fromBytes": 2144,
+      "toBytes": 3914
+    },
+    {
+      "path": "json/config.json",
+      "category": "json",
+      "fromBytes": 15605,
+      "toBytes": 15606
+    },
+    {
+      "path": "script.js",
+      "category": "script",
+      "fromBytes": 1615,
+      "toBytes": 1618
+    },
+    {
+      "path": "tools/build-release-manifest.js",
+      "category": "tool",
+      "fromBytes": 2289,
+      "toBytes": 2472
+    },
+    {
+      "path": "tools/dokumentum-szerkeszto.html",
+      "category": "tool",
+      "fromBytes": 4566,
+      "toBytes": 4567
+    },
+    {
+      "path": "tools/eszkoz-mediator.html",
+      "category": "tool",
+      "fromBytes": 13915,
+      "toBytes": 13916
+    },
+    {
+      "path": "tools/fejlesztoi-munkakozpont-20.html",
+      "category": "tool",
+      "fromBytes": 7225,
+      "toBytes": 7226
+    },
+    {
+      "path": "tools/ftp-kiadas-ellenorzo.html",
+      "category": "tool",
+      "fromBytes": 3783,
+      "toBytes": 3784
+    },
+    {
+      "path": "tools/hirek-mintaeditor-18.html",
+      "category": "tool",
+      "fromBytes": 2269,
+      "toBytes": 2270
+    },
+    {
+      "path": "tools/index.html",
+      "category": "tool",
+      "fromBytes": 5812,
+      "toBytes": 6577
+    },
+    {
+      "path": "tools/iskolai-fotok-jovahagyasa.html",
+      "category": "tool",
+      "fromBytes": 5881,
+      "toBytes": 5882
+    },
+    {
+      "path": "tools/kezdolap-elrendezes-tervezo.html",
+      "category": "tool",
+      "fromBytes": 7783,
+      "toBytes": 7784
+    },
+    {
+      "path": "tools/kiadas-es-mediak-18.html",
+      "category": "tool",
+      "fromBytes": 2566,
+      "toBytes": 2567
+    },
+    {
+      "path": "tools/kiadas-osszehasonlitas-v1-40-7.html",
+      "category": "tool",
+      "fromBytes": 2640,
+      "toBytes": 2641
+    },
+    {
+      "path": "tools/kiadasi-kapu-v1-40-6.html",
+      "category": "tool",
+      "fromBytes": 2180,
+      "toBytes": 2181
+    },
+    {
+      "path": "tools/kiadasi-kapu-v1-40-7.html",
+      "category": "tool",
+      "fromBytes": 2180,
+      "toBytes": 2181
+    },
+    {
+      "path": "tools/minosegkapu.html",
+      "category": "tool",
+      "fromBytes": 2867,
+      "toBytes": 2868
+    },
+    {
+      "path": "tools/mobil-akadalymentesseg-qa.html",
+      "category": "tool",
+      "fromBytes": 5458,
+      "toBytes": 5459
+    },
+    {
+      "path": "tools/mobile-preview-v1-39-0.html",
+      "category": "tool",
+      "fromBytes": 2373,
+      "toBytes": 2374
+    },
+    {
+      "path": "tools/oldal-json-szerkeszto.html",
+      "category": "tool",
+      "fromBytes": 8857,
+      "toBytes": 8858
+    },
+    {
+      "path": "tools/oldalindex-frissito.html",
+      "category": "tool",
+      "fromBytes": 6957,
+      "toBytes": 6958
+    },
+    {
+      "path": "tools/parameterek-szerkeszto.html",
+      "category": "tool",
+      "fromBytes": 6021,
+      "toBytes": 6022
+    },
+    {
+      "path": "tools/route-smoke-v1-39-0.html",
+      "category": "tool",
+      "fromBytes": 5019,
+      "toBytes": 5020
+    },
+    {
+      "path": "tools/route-smoke-v1-39-2.html",
+      "category": "tool",
+      "fromBytes": 5107,
+      "toBytes": 5108
+    },
+    {
+      "path": "tools/sporthirek-szerkeszto.html",
+      "category": "tool",
+      "fromBytes": 7950,
+      "toBytes": 7951
+    },
+    {
+      "path": "tools/tartalmi-hitelesites.html",
+      "category": "tool",
+      "fromBytes": 8537,
+      "toBytes": 8538
+    },
+    {
+      "path": "tools/tartalom-kereses-audit.html",
+      "category": "tool",
+      "fromBytes": 3273,
+      "toBytes": 3274
+    },
+    {
+      "path": "tools/test-all-four-v1-39-16.mjs",
+      "category": "tool",
+      "fromBytes": 6573,
+      "toBytes": 6585
+    },
+    {
+      "path": "tools/test-responsive-a11y-v1-39-5.mjs",
+      "category": "tool",
+      "fromBytes": 8651,
+      "toBytes": 8656
+    },
+    {
+      "path": "tools/test-tools-media-v1-39-4.mjs",
+      "category": "tool",
+      "fromBytes": 5509,
+      "toBytes": 5517
+    },
+    {
+      "path": "tools/test-v1402-header-images-contrast.mjs",
+      "category": "tool",
+      "fromBytes": 3048,
+      "toBytes": 3051
+    },
+    {
+      "path": "tools/test-v1403-audit.mjs",
+      "category": "tool",
+      "fromBytes": 4444,
+      "toBytes": 4459
+    },
+    {
+      "path": "tools/test-v1404-static.mjs",
+      "category": "tool",
+      "fromBytes": 6486,
+      "toBytes": 6506
+    },
+    {
+      "path": "tools/test-v1405-static.mjs",
+      "category": "tool",
+      "fromBytes": 6399,
+      "toBytes": 6403
+    },
+    {
+      "path": "tools/test-v1406-static.mjs",
+      "category": "tool",
+      "fromBytes": 6995,
+      "toBytes": 6996
+    },
+    {
+      "path": "tools/test-v1407-static.mjs",
+      "category": "tool",
+      "fromBytes": 8354,
+      "toBytes": 8355
+    },
+    {
+      "path": "tools/test-v1408-static.mjs",
+      "category": "tool",
+      "fromBytes": 6737,
+      "toBytes": 6738
+    },
+    {
+      "path": "tools/test-v1409-static.mjs",
+      "category": "tool",
+      "fromBytes": 6121,
+      "toBytes": 6158
+    },
+    {
+      "path": "tools/v1408-kiadasi-munkalap.html",
+      "category": "tool",
+      "fromBytes": 3493,
+      "toBytes": 3494
+    },
+    {
+      "path": "tools/v1409-kiadasi-munkalap.html",
+      "category": "tool",
+      "fromBytes": 4174,
+      "toBytes": 4175
+    }
+  ],
+  "reviewRequired": true,
+  "flagged": {
+    "removedCoreFiles": [],
+    "changedEntrypoints": [
+      "index.html",
+      "json/config.json",
+      "script.js"
+    ]
+  },
+  "note": "A különbség technikai fájl- és SHA-256-összevetés, nem jelenti a tartalom jogi vagy intézményi jóváhagyását."
+}

@@ -11,10 +11,10 @@ const tests=[];
 function test(name,run){try{run();tests.push({name,ok:true});}catch(error){tests.push({name,ok:false,error:error.message});}}
 const html=read('index.html'),planner=read('tools/kezdolap-elrendezes-tervezo.js'),panel=read('tools/kezdolap-elrendezes-tervezo.html'),css=read('css/header-polish-v1-39-16.css');
 const check=read('tools/check-release-target-v1-40-4.mjs'),review=read('tools/tartalmi-hitelesites.js');
-test('A · naprakész 1.40.4/5 belépőverzió',()=>{
- assert.match(html,/script\.js\?v=1\.40\.[45]/);
- assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.40\.[45]$/);
- assert.match(read('script.js'),/app\.js\?v=1\.40\.[45]/);
+test('A · naprakész 1.40.4/5/6 belépőverzió',()=>{
+ assert.match(html,/script\.js\?v=1\.40\.(?:[4-9]|10)/);
+ assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.40\.(?:[4-9]|10)$/);
+ assert.match(read('script.js'),/app\.js\?v=1\.40\.(?:[4-9]|10)/);
 });
 test('A · az oldal- és médiakészlet megmaradt',()=>{
  assert.equal(Object.keys(json('json/oldalindex.json').pages).length,71);

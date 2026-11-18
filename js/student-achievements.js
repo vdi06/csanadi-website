@@ -42,10 +42,30 @@ function mount(section,items,view){
  const active=items.filter(isFeatured).sort((a,b)=>actualPublication(b).localeCompare(actualPublication(a)));
  const older=items.filter(x=>!isFeatured(x)).sort((a,b)=>(actualPublication(b)||'').localeCompare(actualPublication(a)||'')||a.studentName.localeCompare(b.studentName,'hu'));
  if(view==='home'){
-  sectionHead(inner,'Diákjaink sportsikerei','Személyhez nem köthető, fiktív mintakártyák a leendő eredménytár bemutatásához.');
-  notice(inner,active);
-  if(active.length){const count=el('p','student-success-stat',`${active.length} kiemelt minta · ${older.length} további bemutató bejegyzés`);inner.append(count);const grid=el('div','student-success-feature-grid');active.slice(0,settingNumber('runtime.display.featuredStudents')).forEach(x=>grid.append(card(x,true)));inner.append(grid);}
-  else if(older.length){inner.append(el('p','student-success-note','Ezek a sportághoz kapcsolódó minták nem tényleges versenyeredmények.'));const grid=el('div','student-success-feature-grid');older.slice(0,settingNumber('runtime.display.otherStudents')).forEach(x=>grid.append(card(x,false)));inner.append(grid);}else inner.append(el('p','student-success-note','Jelenleg nincs ellenőrzött sporteredmény a gyűjteményben.'));
+  sectionHead(inner,'DIÁKJAINK SPORTSIKEREI','INTERAKTÍV DICSŐSÉGFAL');
+  notice(inner,items);
+  const filters=el('div','cs41-wall-controls');filters.setAttribute('aria-label','Dicsőségfal sportági szűrői');
+  const sports=['',...Array.from(new Set(items.map(x=>x.sport))).sort((a,b)=>a.localeCompare(b,'hu'))];
+  const chips=el('div','cs41-wall-chips');chips.setAttribute('role','group');chips.setAttribute('aria-label','Sportágak');
+  const search=el('input','cs41-wall-search');search.type='search';search.placeholder='Keresés…';search.setAttribute('aria-label','Keresés a dicsőségfal mintakártyái között');
+  let selected='';
+  const count=el('p','student-success-stat');const grid=el('div','student-success-feature-grid');
+  const empty=el('p','student-success-note');empty.hidden=true;
+  const update=()=>{
+   const query=search.value.trim().toLocaleLowerCase('hu-HU');
+   // A hét napnál frissebb tételek az alapértelmezett kiemelések. A korábbi
+   // minták csak célzott sportági szűrésre / keresésre jelennek meg.
+   const matching=(selected||query?[...active,...older]:active).filter(x=>(!selected||x.sport===selected)&&
+    [x.studentName,x.sport,x.competition,x.result,x.summary||''].join(' ').toLocaleLowerCase('hu-HU').includes(query));
+   const limit=selected||query?matching.length:settingNumber('runtime.display.featuredStudents');
+   grid.replaceChildren();matching.slice(0,limit).forEach(x=>grid.append(card(x,isFeatured(x))));
+   count.textContent=`${matching.length} bemutató kártya · ${active.length} kiemelt az elmúlt 7 napból`;
+   empty.hidden=matching.length>0;empty.textContent='Ehhez a szűréshez nincs bemutatható bejegyzés.';
+   for(const button of chips.querySelectorAll('button'))button.setAttribute('aria-pressed',String(button.dataset.sport===selected));
+  };
+  for(const sport of sports){const button=el('button','cs41-wall-chip',sport||'Összes');button.type='button';button.dataset.sport=sport;
+   button.addEventListener('click',()=>{selected=sport;update();});chips.append(button);}
+  search.addEventListener('input',update);filters.append(chips,search);inner.append(filters,count,grid,empty);update();
   const link=el('a','student-success-all','Összes név nélküli sportminta →');link.href='#/sport/sporteredmenyek';inner.append(link);
  }else{
   sectionHead(inner,'Diákjaink sportsikerei – mintatár','Nem valós események és név nélküli mintakártyák, sportág alapján kereshetően.');

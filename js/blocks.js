@@ -1,5 +1,5 @@
 import {renderSportsSuccesses} from './sports-successes.js?v=csanadi-r29n-20261115';
-import {renderPremiumHero} from './hero-2026.js?v=1.40.5';
+import {renderPremiumHero} from './hero-2026.js?v=1.40.10';
 import {renderLiveDashboard} from './home-live.js?v=csanadi-r29n-20261115';
 import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js?v=1.40.0';
 import {resolveConfiguredText,settingNumber} from './site-settings-2026.js';

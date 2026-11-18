@@ -1,0 +1,933 @@
+{
+  "release": "1.40.9",
+  "baseUrl": "https://vdi06.github.io/csanadi-website/",
+  "total": 71,
+  "verifiedContent": 9,
+  "metadataComplete": 71,
+  "indexable": 0,
+  "publicationAuthorized": false,
+  "indexingActivated": false,
+  "sitemapPublicUrls": 0,
+  "preconditions": [
+    "tényleges iskolai tartalomellenőrzés oldalszinten",
+    "az intézményi nyilvános domain és canonical URL jóváhagyása",
+    "közvetlen kézi jóváhagyás index/follow feloldására",
+    "statikus SEO-kimenet és sitemap újragenerálása FTP-bázis URL-lel"
+  ],
+  "pages": [
+    {
+      "route": "#/",
+      "title": "Csanádi Sportiskola – Sport, tanulás, közösség",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/hirek-es-esemenyek",
+      "title": "Hírek és események",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/hirek-es-esemenyek/esemenynaptar",
+      "title": "Eseménynaptár",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek",
+      "title": "Iskolai események",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/hirek-es-esemenyek/esemenynaptar/sportesemenyek",
+      "title": "Sportesemények",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/hirek-es-esemenyek/hirek",
+      "title": "Hírek",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/hirek-es-esemenyek/hirek/hirarchivum",
+      "title": "Hírarchívum",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/hirek-es-esemenyek/hirek/iskolai-hirek",
+      "title": "Iskolai hírek",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "title": "Sporthírek",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/hirek-es-esemenyek/kozlemenyek",
+      "title": "Közlemények",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok",
+      "title": "Iskolai információk",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/adatvedelem",
+      "title": "Adatvédelem",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/allaspalyazatok",
+      "title": "Álláspályázatok",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/digitalis-ugyintezes",
+      "title": "Digitális ügyintézés",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/dokumentumtar",
+      "title": "Dokumentumtár",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/dokumentumtar/kozzeteteli-lista",
+      "title": "Közzétételi lista",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/dokumentumtar/nyomtatvanyok",
+      "title": "Nyomtatványok",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/dokumentumtar/szabalyzatok",
+      "title": "Szabályzatok",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/kozossegi-szolgalat",
+      "title": "Közösségi szolgálat",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok",
+      "title": "Közösségi szolgálat dokumentumai",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok",
+      "title": "Jogszabályok",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok",
+      "title": "Tudnivalók",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/mindennapi-tudnivalok",
+      "title": "Mindennapi tudnivalók",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/mindennapi-tudnivalok/csengetesi-rend",
+      "title": "Csengetési rend",
+      "verifiedContent": true,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/mindennapi-tudnivalok/etkezes",
+      "title": "Étkezés",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/informaciok/mindennapi-tudnivalok/szuloi-informaciok",
+      "title": "Szülői információk",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/iskolank",
+      "title": "Iskolánk",
+      "verifiedContent": true,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/iskolank/a-honlap-szuletese",
+      "title": "A honlap születése – emberi döntések és digitális segítség",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/iskolank/alapitvany",
+      "title": "Iskolai alapítvány",
+      "verifiedContent": true,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/iskolank/bemutatkozas",
+      "title": "Bemutatkozás",
+      "verifiedContent": true,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/iskolank/buszkesegeink",
+      "title": "Büszkeségeink",
+      "verifiedContent": true,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/iskolank/hagyomanyok-es-elismeresek",
+      "title": "Hagyományok és elismerések",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/iskolank/kuldetes-es-ertekek",
+      "title": "Küldetésünk és értékeink",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/iskolank/oko-iskola",
+      "title": "Ökoiskolai szemlélet",
+      "verifiedContent": true,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/iskolank/partnerek",
+      "title": "Partnereink",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/iskolank/tantestulet",
+      "title": "Tantestület",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/iskolank/tortenet",
+      "title": "Iskolánk története",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/kapcsolat",
+      "title": "Kapcsolat",
+      "verifiedContent": true,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/megkozelites-es-erkezes",
+      "title": "Megközelítés és érkezés",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/megkozelites-es-erkezes/terkep",
+      "title": "Térkép és útvonaltervezés",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas",
+      "title": "Oktatás és felvételi",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/digitalis-kultura",
+      "title": "Digitális kultúra – értsük és használjuk jól a technológiát",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/digitalis-kultura/mesterseges-intelligencia",
+      "title": "Mesterséges intelligencia tudatos használata",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/digitalis-kultura/online-biztonsag",
+      "title": "Online biztonság és felelős kommunikáció",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/felveteli",
+      "title": "Felvételi központ",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/felveteli/elso-evfolyam",
+      "title": "Első évfolyamos beiratkozás",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/felveteli/felveteli-hataridok",
+      "title": "Felvételi határidők",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/felveteli/kilencedik-evfolyam",
+      "title": "Kilencedik évfolyamos felvételi",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/felveteli/nyilt-napok",
+      "title": "Nyílt napok",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/kepzeseink",
+      "title": "Képzéseink",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/kepzeseink/altalanos-iskola",
+      "title": "Általános iskola",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/kepzeseink/gimnazium",
+      "title": "Gimnázium",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/kepzeseink/sportiskolai-neveles",
+      "title": "Sportiskolai nevelés",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/konyvtar",
+      "title": "Könyvtár és tanulás",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/konyvtar/konyvtari-szolgaltatasok",
+      "title": "Könyvtári szolgáltatások",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/tananyagok-es-jegyzetek",
+      "title": "Digitális tananyagközpont",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/tanevek",
+      "title": "Tanévek",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/tanevek/aktualis-tanev",
+      "title": "Aktuális tanév – 2026/2027",
+      "verifiedContent": true,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/tanevek/korabbi-tanevek",
+      "title": "Korábbi tanévek",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/vizsgak",
+      "title": "Vizsgák",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/vizsgak/egyeb-vizsgak",
+      "title": "Egyéb vizsgák",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/vizsgak/erettsegi",
+      "title": "Érettségi",
+      "verifiedContent": true,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/oktatas/vizsgak/osztalyozo-vizsgak",
+      "title": "Osztályozó vizsgák",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/sport",
+      "title": "Sportélet",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/sport/csapatok",
+      "title": "Csapatok",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/sport/edzok",
+      "title": "Edzők",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/sport/sportagak",
+      "title": "Sportágak",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/sport/sporteredmenyek",
+      "title": "Sporteredmények",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/sport/sportgaleriak",
+      "title": "Képgaléria",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/sport/sportolok",
+      "title": "Sportolók",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    },
+    {
+      "route": "#/tanulastamogatas",
+      "title": "Tanulástámogatás és időgazdálkodás",
+      "verifiedContent": false,
+      "robots": "noindex,nofollow",
+      "indexable": false,
+      "metadataComplete": true,
+      "manualApproval": false,
+      "issues": [
+        "intézményi szöveg nincs hitelesítve",
+        "noindex – kizárólag kézi jóváhagyással módosítható"
+      ]
+    }
+  ]
+}

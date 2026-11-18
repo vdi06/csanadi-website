@@ -1,0 +1,74 @@
+{
+  "release": "1.40.7",
+  "createdAt": "2026-11-18",
+  "mode": "local-read-only",
+  "publicationPerformed": false,
+  "packageIntegrity": {
+    "passed": true,
+    "manifestEntries": 1566,
+    "hashesChecked": 1566,
+    "jsonPages": 71,
+    "assetFiles": 769,
+    "mediaRegistryItems": 174,
+    "issues": []
+  },
+  "versionComparison": {
+    "baseline": "csanadi-website-v1.40.6",
+    "added": 16,
+    "removed": 0,
+    "changed": 40,
+    "manualReviewRequired": true,
+    "flagged": {
+      "removedCoreFiles": [],
+      "changedEntrypoints": [
+        "index.html",
+        "json/config.json",
+        "script.js"
+      ]
+    }
+  },
+  "externalEvidence": {
+    "institutionApprovedNewPhotosProvided": false,
+    "approvedNewPhotosIntegrated": 0,
+    "physicalPhoneQaProvided": false,
+    "screenReaderQaProvided": false
+  },
+  "releaseGates": [
+    {
+      "id": "files",
+      "name": "Teljes helyi fájlintegritás",
+      "passed": true
+    },
+    {
+      "id": "search",
+      "name": "Kiemelt keresési útvonalak léteznek",
+      "passed": true
+    },
+    {
+      "id": "release-diff",
+      "name": "Verziókülönbségek gépi ellenőrzése",
+      "passed": true,
+      "requires": "A módosult belépőfájlokat kézzel is át kell tekinteni."
+    },
+    {
+      "id": "photo-rights",
+      "name": "Új intézményi fotók engedélye és forrása igazolt",
+      "passed": false,
+      "requires": "Eredeti fotók, írásos jogi és adatvédelmi jóváhagyás"
+    },
+    {
+      "id": "physical-qa",
+      "name": "Valós mobil- és képernyőolvasós teszt",
+      "passed": false,
+      "requires": "320/390/768 px tényleges mérési és kézi ellenőrzési jegyzőkönyv"
+    },
+    {
+      "id": "manual-activation",
+      "name": "Kifejezett kiadási jóváhagyás",
+      "passed": false,
+      "requires": "Külön, a felhasználó által kezdeményezett publikálás"
+    }
+  ],
+  "readyForPublicRelease": false,
+  "note": "A technikailag ép ZIP nem jelent automatikus intézményi, adatvédelmi vagy közzétételi jóváhagyást."
+}

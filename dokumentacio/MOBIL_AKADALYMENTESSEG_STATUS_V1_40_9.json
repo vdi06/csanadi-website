@@ -1,0 +1,38 @@
+{
+  "release": "1.40.9",
+  "automatedTool": "tools/mobil-akadalymentesseg-qa.html",
+  "automatedWidths": [
+    320,
+    390,
+    768
+  ],
+  "newChecks": [
+    "látható H1",
+    "címsorszint-ugrás",
+    "aria-expanded/aria-controls célpontja",
+    "target=_blank noopener"
+  ],
+  "previousChecksPreserved": [
+    "vízszintes túlcsordulás",
+    "24 CSS px alatti célterületek",
+    "fejlécütközések",
+    "képek alt attribútuma",
+    "űrlapnevek",
+    "duplikált ID",
+    "alapvető ARIA"
+  ],
+  "actualDeviceReportsSupplied": 0,
+  "realPhoneTested": false,
+  "realTabletTested": false,
+  "keyboardTestedOnDevice": false,
+  "screenReaderTested": false,
+  "wcagConformanceCertified": false,
+  "requiresManualReview": [
+    "valódi Android/iOS és asztali billentyűzetes végigjárás",
+    "NVDA/VoiceOver ellenőrzés",
+    "320/390/768 px JSON mérések exportja és előzővel összevetése",
+    "valós hibák célzott javítása és újramérése"
+  ],
+  "status": "expanded-tooling-not-physical-certification",
+  "publicationPerformed": false
+}

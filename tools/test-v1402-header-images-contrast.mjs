@@ -30,7 +30,7 @@ assert.match(css,/data-theme="dark"/,'Sötét felület kezelése');
 assert.match(css,/cs1402-hero-text/,'A képfeliratoknak is legyen kontrasztos színük');
 assert.match(css,/prefers-reduced-motion:reduce/,'A mozgáscsökkentést tisztelni kell');
 assert.match(html,/header-responsive-v1-40-2\.css\?v=1\.40\.2/,'A kontrasztos fejlécstílus legyen bekötve');
-assert.match(boot,/app\.js\?v=1\.40\.(?:2|3|4|5)/,'A v1.40-es alkalmazáskód töltődjön be');
+assert.match(boot,/app\.js\?v=1\.40\.(?:2|3|4|5|6|7|8|9|10)/,'A v1.40-es alkalmazáskód töltődjön be');
 
 function luminance(hex){
  const parts=hex.replace('#','').match(/.{2}/g).map(part=>parseInt(part,16)/255);

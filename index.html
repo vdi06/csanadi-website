@@ -20,12 +20,12 @@
   </style>
   <script>(function(){
     try{
-      var route=location.hash||'#/';if(route!=='#/'&&route!=='#')return;
-      var dates=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Budapest',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).filter(function(x){return x.type!=='literal';}).map(function(x){return [x.type,x.value];}));
-      var today=dates.year+'-'+dates.month+'-'+dates.day;
-      if(localStorage.getItem('csanadi-portal-visit-v3')===today)return;
+      // A nyitójelenet az első látogatáskor jelenik meg, nem naponta.
+      if(localStorage.getItem('csanadi-portal-ever-seen')==='1'||localStorage.getItem('csanadi-portal-visit-v3'))return;
     }catch(_error){}
     document.documentElement.classList.add('cs-gate-pending');
+    var firstGateImage=matchMedia('(max-width:767px)').matches?'csanadi-kapu-v141-mobil.webp':'csanadi-kapu-v141-asztali.webp';
+    var firstGatePreload=document.createElement('link');firstGatePreload.rel='preload';firstGatePreload.as='image';firstGatePreload.type='image/webp';firstGatePreload.href='assets/media/web/'+firstGateImage;document.head.append(firstGatePreload);
     setTimeout(function(){document.documentElement.classList.remove('cs-gate-pending');document.getElementById('cs-gate-prelude')?.remove();},20000);
   })();</script>
   <meta name="description" content="Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium – sport, tanulás, közösség, iskolai információk.">
@@ -34,100 +34,214 @@
   <link rel="icon" href="assets/media/logo/csanadi-cimer-512.webp" type="image/webp">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <!-- A kezdeti sportkép csak akkor előtöltött, ha valóban a kezdőlap látszik.
+       A meglévő kapu első látogatáskor elsőbbséget élvez. -->
+  <script>(function(){
+    var route=location.hash||'#/';
+    if((route!=='#/'&&route!=='#')||document.documentElement.classList.contains('cs-gate-pending'))return;
+    if(navigator.connection&&navigator.connection.saveData)return;
+    var mobile=matchMedia('(max-width: 768px)').matches;
+    var folder='assets/media/web/v1-40/';
+    var parts=mobile?[['responsive/sport-mobile-320.webp',320],['responsive/sport-mobile-480.webp',480],['sport-mobile-800.webp',800]]:[['responsive/sport-320.webp',320],['responsive/sport-640.webp',640],['responsive/sport-960.webp',960],['sport-1600.webp',1600]];
+    var link=document.createElement('link');link.rel='preload';link.as='image';link.type='image/webp';
+    link.href=folder+parts[parts.length-1][0];link.imageSrcSet=parts.map(function(p){return folder+p[0]+' '+p[1]+'w';}).join(', ');link.imageSizes='100vw';link.fetchPriority='high';document.head.append(link);
+  })();</script>
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/next-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/orbit-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/layout-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/radial-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/organized-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/compass-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/content-reflow-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/premium-home-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/interactions-be-2026.css?v=csanadi-v127-20261116">
-  <link rel="stylesheet" href="css/dfg-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/gallery-h-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="mobile/mobile-compact-h2-2026.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
-  <link rel="stylesheet" href="css/home-gallery-news-gate-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/j-search-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/j-home-layout-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="mobile/j-mobile-home-2026.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
-  <link rel="stylesheet" href="css/kmil-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/menu-backdrop-guaranteed-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/navigation-student-search-2026.css?v=1.38.1">
-  <link rel="stylesheet" href="css/tenway-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/performance-diagnostics-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/extended-hubs-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/next10-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/media-experience-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/gate-key-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/hero-map-dock-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round10-cinematic-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/finish11-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round12-visual-menu-2026.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round13-accessibility.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round14-central.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round15-mobile.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round15-theme.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round16-sport-theme.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="mobile/round16-responsive.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
-  <link rel="stylesheet" href="css/round16-paired-hero.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round17-visual-access.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round17-single-mobile-gradient.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round18-upgrades.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round19-features.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round20-public.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="desktop/styles.css?v=csanadi-r29n-20261115" media="screen and (min-width: 769px)">
-  <link rel="stylesheet" href="mobile/styles.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
-  <link rel="stylesheet" href="css/round21-public.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round22-public.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round23-diagnostics.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round26-home-map-link.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="mobile/round22-nav.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
-  <link rel="stylesheet" href="css/round27-quality.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="mobile/round27-quality-mobile.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
-  <link rel="stylesheet" href="desktop/round27-quality-desktop.css?v=csanadi-r29n-20261115" media="screen and (min-width: 769px)">
-  <link rel="stylesheet" href="css/round28-maintenance.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="mobile/round28-maintenance-mobile.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
-  <link rel="stylesheet" href="desktop/round28-maintenance-desktop.css?v=csanadi-r29n-20261115" media="screen and (min-width: 769px)">
-  <link rel="stylesheet" href="css/round29-integration.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round29-home.css?v=csanadi-v127-20261116">
-  <link rel="stylesheet" href="css/round29-theme-unified.css?v=csanadi-v127-20261116">
-  <link rel="stylesheet" href="css/round29-personalize.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round30-quicklinks.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round30-hero-rails.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round30-interest-hub.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round31-self-links.css?v=csanadi-r29n-20261115">
-  <link rel="stylesheet" href="css/round32-mobile-sections.css?v=1.38.1">
-  <link rel="stylesheet" href="css/subpages-v1.css?v=1.2.0">
-  <link rel="stylesheet" href="css/unified-actions-v1.css?v=1.38.1">
-  <link rel="stylesheet" href="css/quality-polish-v1.css?v=1.38.1">
-  <link rel="stylesheet" href="css/subpage-header-fix.css?v=1.38.1">
-  <link rel="stylesheet" href="css/mobile-header-unified-v1-11.css?v=1.38.1" media="screen and (max-width: 768px)">
-  <link rel="stylesheet" href="mobile/radial-wheel-v1-38.css?v=1.38.1">
-  <link rel="stylesheet" href="css/desktop-condensed-ribbon-v1-38.css?v=1.38.1">
-  <link rel="stylesheet" href="css/subpage-header-motion-v1-38-2.css?v=1.38.2">
-  <link rel="stylesheet" href="css/liquid-glass-v1-39-0.css?v=1.39.0">
-  <link rel="stylesheet" href="css/corrections-v1-39-1.css?v=1.39.1">
-  <link rel="stylesheet" href="css/page-templates-v1-39-2.css?v=1.39.2">
-  <link rel="stylesheet" href="css/mobile-navigation-v1-39-2.css?v=1.39.2">
-  <link rel="stylesheet" href="css/home-header-ribbon-v1-39-10.css?v=1.39.10">
-  <link rel="stylesheet" href="css/home-header-polish-v1-39-11.css?v=1.39.11">
-  <link rel="stylesheet" href="css/hero-morph-v1-39-12.css?v=1.39.12">
-  <link rel="stylesheet" href="css/subpage-morph-v1-39-13.css?v=1.39.13">
-  <link rel="stylesheet" href="css/subpage-interaction-v1-39-14.css?v=1.39.14">
-  <link rel="stylesheet" href="css/header-mobile-polish-v1-39-15.css?v=1.39.16">
-  <link rel="stylesheet" href="css/header-polish-v1-39-16.css?v=1.39.16">
-  <link rel="stylesheet" href="css/home-menu-scroll-v1-39-17.css?v=1.39.17">
-  <link rel="stylesheet" href="css/header-interaction-v1-39-18.css?v=1.39.18">
-  <link rel="stylesheet" href="css/single-hero-v1-40.css?v=1.40.0">
-  <link rel="stylesheet" href="css/subpage-centered-v1-40-1.css?v=1.40.1">
-  <link rel="stylesheet" href="css/card-centering-v1-40-1.css?v=1.40.1">
-  <link rel="stylesheet" href="css/header-seamless-v1-40-1.css?v=1.40.1">
-  <link rel="stylesheet" href="css/header-responsive-v1-40-2.css?v=1.40.2">
-  <link rel="stylesheet" href="css/accessibility-v1-40-3.css?v=1.40.3">
-  <link rel="stylesheet" href="css/accessibility-v1-40-4.css?v=1.40.4">
+      <!-- v1.40.8 CSS-forrásreferenciák (a tényleges CSS a bundle-ben van)
+<link rel="stylesheet" href="css/style.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/next-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/orbit-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/layout-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/radial-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/organized-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/compass-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/content-reflow-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/premium-home-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/interactions-be-2026.css?v=csanadi-v127-20261116">
+<link rel="stylesheet" href="css/dfg-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/gallery-h-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="mobile/mobile-compact-h2-2026.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
+<link rel="stylesheet" href="css/home-gallery-news-gate-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/j-search-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/j-home-layout-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="mobile/j-mobile-home-2026.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
+<link rel="stylesheet" href="css/kmil-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/menu-backdrop-guaranteed-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/navigation-student-search-2026.css?v=1.38.1">
+<link rel="stylesheet" href="css/tenway-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/performance-diagnostics-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/extended-hubs-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/next10-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/media-experience-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/gate-key-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/hero-map-dock-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round10-cinematic-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/finish11-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round12-visual-menu-2026.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round13-accessibility.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round14-central.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round15-mobile.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round15-theme.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round16-sport-theme.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="mobile/round16-responsive.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
+<link rel="stylesheet" href="css/round16-paired-hero.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round17-visual-access.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round17-single-mobile-gradient.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round18-upgrades.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round19-features.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round20-public.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="desktop/styles.css?v=csanadi-r29n-20261115" media="screen and (min-width: 769px)">
+<link rel="stylesheet" href="mobile/styles.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
+<link rel="stylesheet" href="css/round21-public.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round22-public.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round23-diagnostics.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round26-home-map-link.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="mobile/round22-nav.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
+<link rel="stylesheet" href="css/round27-quality.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="mobile/round27-quality-mobile.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
+<link rel="stylesheet" href="desktop/round27-quality-desktop.css?v=csanadi-r29n-20261115" media="screen and (min-width: 769px)">
+<link rel="stylesheet" href="css/round28-maintenance.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="mobile/round28-maintenance-mobile.css?v=csanadi-r29n-20261115" media="screen and (max-width: 768px)">
+<link rel="stylesheet" href="desktop/round28-maintenance-desktop.css?v=csanadi-r29n-20261115" media="screen and (min-width: 769px)">
+<link rel="stylesheet" href="css/round29-integration.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round29-home.css?v=csanadi-v127-20261116">
+<link rel="stylesheet" href="css/round29-theme-unified.css?v=csanadi-v127-20261116">
+<link rel="stylesheet" href="css/round29-personalize.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round30-quicklinks.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round30-hero-rails.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round30-interest-hub.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round31-self-links.css?v=csanadi-r29n-20261115">
+<link rel="stylesheet" href="css/round32-mobile-sections.css?v=1.38.1">
+<link rel="stylesheet" href="css/subpages-v1.css?v=1.2.0">
+<link rel="stylesheet" href="css/unified-actions-v1.css?v=1.38.1">
+<link rel="stylesheet" href="css/quality-polish-v1.css?v=1.38.1">
+<link rel="stylesheet" href="css/subpage-header-fix.css?v=1.38.1">
+<link rel="stylesheet" href="css/mobile-header-unified-v1-11.css?v=1.38.1" media="screen and (max-width: 768px)">
+<link rel="stylesheet" href="mobile/radial-wheel-v1-38.css?v=1.38.1">
+<link rel="stylesheet" href="css/desktop-condensed-ribbon-v1-38.css?v=1.38.1">
+<link rel="stylesheet" href="css/subpage-header-motion-v1-38-2.css?v=1.38.2">
+<link rel="stylesheet" href="css/liquid-glass-v1-39-0.css?v=1.39.0">
+<link rel="stylesheet" href="css/corrections-v1-39-1.css?v=1.39.1">
+<link rel="stylesheet" href="css/page-templates-v1-39-2.css?v=1.39.2">
+<link rel="stylesheet" href="css/mobile-navigation-v1-39-2.css?v=1.39.2">
+<link rel="stylesheet" href="css/home-header-ribbon-v1-39-10.css?v=1.39.10">
+<link rel="stylesheet" href="css/home-header-polish-v1-39-11.css?v=1.39.11">
+<link rel="stylesheet" href="css/hero-morph-v1-39-12.css?v=1.39.12">
+<link rel="stylesheet" href="css/subpage-morph-v1-39-13.css?v=1.39.13">
+<link rel="stylesheet" href="css/subpage-interaction-v1-39-14.css?v=1.39.14">
+<link rel="stylesheet" href="css/header-mobile-polish-v1-39-15.css?v=1.39.16">
+<link rel="stylesheet" href="css/header-polish-v1-39-16.css?v=1.39.16">
+<link rel="stylesheet" href="css/home-menu-scroll-v1-39-17.css?v=1.39.17">
+<link rel="stylesheet" href="css/header-interaction-v1-39-18.css?v=1.39.18">
+<link rel="stylesheet" href="css/single-hero-v1-40.css?v=1.40.0">
+<link rel="stylesheet" href="css/subpage-centered-v1-40-1.css?v=1.40.1">
+<link rel="stylesheet" href="css/card-centering-v1-40-1.css?v=1.40.1">
+<link rel="stylesheet" href="css/header-seamless-v1-40-1.css?v=1.40.1">
+<link rel="stylesheet" href="css/header-responsive-v1-40-2.css?v=1.40.2">
+<link rel="stylesheet" href="css/accessibility-v1-40-3.css?v=1.40.3">
+<link rel="stylesheet" href="css/accessibility-v1-40-4.css?v=1.40.4">
+<link rel="stylesheet" href="css/search-polish-v1-40-6.css?v=1.40.7">
+<link rel="stylesheet" href="css/search-ux-v1-40-7.css?v=1.40.7">
+<link rel="stylesheet" href="css/search-recommendations-v1-40-8.css?v=1.40.10">
+CSS-forrásreferenciák vége -->
+  <link rel="stylesheet" href="css/site-bundle-v1-40-8.css?v=1.40.10">
+  <link rel="stylesheet" href="css/gate-v1-41-preview.css?v=1.41-gate-preview">
+  <link rel="stylesheet" href="css/home-v1-41.css?v=1.41-home-preview">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </head>
 <body>
   <div id="cs-gate-prelude" role="status" aria-label="A Csanádi Sportiskola nyitókapuja betöltődik">
@@ -233,8 +347,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous" defer>
 </script>
   <script src="js/round12-media-performance.js?v=csanadi-r29n-20261115" defer></script>
-  <script src="js/round13-network.js?v=csanadi-r-v1.40.5" defer></script>
-  <script type="module" src="script.js?v=1.40.5">
+  <script src="js/round13-network.js?v=csanadi-r-v1.40.10" defer></script>
+  <script type="module" src="script.js?v=1.40.10">
 </script>
 </body>
 </html>

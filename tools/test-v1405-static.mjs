@@ -17,10 +17,10 @@ const media=json('json/mediatar.json').items,inventory=json('json/assets-invento
 const generated=json('dokumentacio/TARTALOM_KERESES_AUDIT_V1_40_5.json');
 
 test('H: v1.40.5 indítókód és változatlan CDN alapok',()=>{
- assert.equal(json('json/config.json').performance.cacheVersion,'csanadi-r-v1.40.5');
- assert.match(read('index.html'),/script\.js\?v=1\.40\.5/);
- assert.match(read('script.js'),/app\.js\?v=1\.40\.5/);
- assert.match(read('js/app.js'),/blocks\.js\?v=1\.40\.5/);
+ assert.equal(json('json/config.json').performance.cacheVersion,'csanadi-r-v1.40.10');
+ assert.match(read('index.html'),/script\.js\?v=1\.40\.10/);
+ assert.match(read('script.js'),/app\.js\?v=1\.40\.10/);
+ assert.match(read('js/app.js'),/blocks\.js\?v=1\.40\.10/);
  assert.match(read('index.html'),/bootstrap@5\.3\.9/);
 });
 test('Megőrzés: mind a 71 oldal, 769 asset, 174 média és 30 kezdőkép',()=>{

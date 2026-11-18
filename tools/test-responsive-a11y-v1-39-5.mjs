@@ -25,7 +25,7 @@ test('A kibővített karbantartó nézetek nyelve, viewportja és közös arcula
   const html=read('tools/'+page);
   assert.match(html,/<html[^>]+lang="hu"/i,page);
   assert.match(html,/<meta[^>]+name="viewport"/i,page);
-  assert.match(html,/tool-ui-2026\.js\?v=(?:1\.39\.(?:5|16)|1\.40\.5)/,page);
+  assert.match(html,/tool-ui-2026\.js\?v=(?:1\.39\.(?:5|16)|1\.40\.(?:[5-9]|10))/,page);
  }
 });
 test('Valamennyi segédoldal kap fókuszálható, működő tartalmi ugrópontot',()=>{

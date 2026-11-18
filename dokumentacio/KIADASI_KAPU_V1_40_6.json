@@ -1,0 +1,53 @@
+{
+  "release": "1.40.6",
+  "createdAt": "2026-11-18",
+  "mode": "local-read-only",
+  "publicationPerformed": false,
+  "packageIntegrity": {
+    "passed": true,
+    "manifestEntries": 1550,
+    "hashesChecked": 1550,
+    "jsonPages": 71,
+    "assetFiles": 769,
+    "mediaRegistryItems": 174,
+    "issues": []
+  },
+  "externalEvidence": {
+    "institutionApprovedNewPhotosProvided": false,
+    "approvedNewPhotosIntegrated": 0,
+    "physicalPhoneQaProvided": false,
+    "screenReaderQaProvided": false
+  },
+  "releaseGates": [
+    {
+      "id": "files",
+      "name": "Teljes helyi fájlintegritás",
+      "passed": true
+    },
+    {
+      "id": "search",
+      "name": "Kiemelt keresési útvonalak léteznek",
+      "passed": true
+    },
+    {
+      "id": "photo-rights",
+      "name": "Új intézményi fotók engedélye és forrása igazolt",
+      "passed": false,
+      "requires": "Eredeti fotók, írásos jogi és adatvédelmi jóváhagyás"
+    },
+    {
+      "id": "physical-qa",
+      "name": "Valós mobil- és képernyőolvasós teszt",
+      "passed": false,
+      "requires": "320/390/768 px tényleges mérési és kézi ellenőrzési jegyzőkönyv"
+    },
+    {
+      "id": "manual-activation",
+      "name": "Kifejezett kiadási jóváhagyás",
+      "passed": false,
+      "requires": "Külön, a felhasználó által kezdeményezett publikálás"
+    }
+  ],
+  "readyForPublicRelease": false,
+  "note": "A technikailag ép ZIP nem jelent automatikus intézményi, adatvédelmi vagy közzétételi jóváhagyást."
+}

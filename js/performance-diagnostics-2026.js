@@ -9,7 +9,7 @@ let lastRoute='';
 let bundleStats=null;
 let bundleRequested=false;
 let bundleRun=0;
-const webVitals={lcp:null,cls:0,shiftSources:[]};
+const webVitals={lcp:null,cls:0,shiftSources:[],interactionMax:null,interactionCount:0};
 let observersStarted=false;
 const clock=()=>Math.max(0,performance.now());
 const fmt=(ms)=>Number.isFinite(ms)?Math.round(ms).toLocaleString('hu-HU')+' ms':'—';
@@ -84,7 +84,7 @@ function refresh(){
  const fcpEntry=performance.getEntriesByType('paint').find(entry=>entry.name==='first-contentful-paint');
  const fcp=fcpEntry?.startTime;
  const metric=(name,value,target,unit)=>name+': '+(Number.isFinite(value)?(unit==='ms'?fmt(value):value.toLocaleString('hu-HU',{maximumFractionDigits:3}))+(value<=target?' (célon belül)':' (cél fölött)'):'nem mérhető')+' · cél: '+(unit==='ms'?fmt(target):target);
- panel.querySelector('[data-speed-vitals]').textContent=[metric('FCP',fcp,targetFcpMs,'ms'),metric('LCP',webVitals.lcp,targetLcpMs,'ms'),metric('CLS',webVitals.cls,targetCls,'score')].join(' | ')+'. A webes vitális mutatók eszközfüggők; az LCP a betöltés végéig változhat.';
+ panel.querySelector('[data-speed-vitals]').textContent=[metric('FCP',fcp,targetFcpMs,'ms'),metric('LCP',webVitals.lcp,targetLcpMs,'ms'),metric('CLS',webVitals.cls,targetCls,'score'),`INP-eseményminta maximuma: ${webVitals.interactionMax===null?'még nincs adat':fmt(webVitals.interactionMax)} (${webVitals.interactionCount} esemény)`].join(' | ')+'. Az eseményminta NEM hiteles INP / PageSpeed mérés, a böngésző csak bizonyos interakciókat közöl; az LCP a betöltés végéig változhat.';
  const shiftCandidates=panel.querySelector('[data-speed-shift-sources]');
  if(shiftCandidates)shiftCandidates.textContent=webVitals.shiftSources.length?'Elrendezés-elmozdulási jelzések: '+webVitals.shiftSources.slice(0,5).map(x=>x).join(' · ')+'. A pontos okot a böngésző teljesítményelemzőjében kell megvizsgálni.':'Az elmozdulások okozóelemeit a böngésző még nem azonosította. A CLS célértéke legfeljebb 0,1.';
  const nav=performance.getEntriesByType?.('navigation')?.[0];
@@ -144,9 +144,10 @@ export function initPerformanceDiagnostics(){
   observersStarted=true;
   for(const [type,handler] of [
    ['largest-contentful-paint',entry=>{webVitals.lcp=entry.startTime;}],
-   ['layout-shift',entry=>{if(!entry.hadRecentInput){webVitals.cls+=entry.value||0;const attribution=(entry.sources||[]).slice(0,2).map(source=>source.node?.id?'#'+source.node.id:source.node?.className&&typeof source.node.className==='string'?'.'+source.node.className.trim().split(/\s+/).slice(0,2).join('.'):source.node?.tagName||'ismeretlen elem');if(attribution.length)webVitals.shiftSources.push(attribution.join(', ')+' ('+(entry.value||0).toFixed(3)+')');}}]
+   ['layout-shift',entry=>{if(!entry.hadRecentInput){webVitals.cls+=entry.value||0;const attribution=(entry.sources||[]).slice(0,2).map(source=>source.node?.id?'#'+source.node.id:source.node?.className&&typeof source.node.className==='string'?'.'+source.node.className.trim().split(/\s+/).slice(0,2).join('.'):source.node?.tagName||'ismeretlen elem');if(attribution.length)webVitals.shiftSources.push(attribution.join(', ')+' ('+(entry.value||0).toFixed(3)+')');}}],
+   ['event',entry=>{if(Number(entry.interactionId)>0&&Number.isFinite(entry.duration)){webVitals.interactionCount++;webVitals.interactionMax=Math.max(webVitals.interactionMax||0,entry.duration);}}]
   ]){
-   try{const observer=new PerformanceObserver(list=>{for(const entry of list.getEntries())handler(entry);refresh();});observer.observe({type,buffered:true});}catch{}
+   try{const observer=new PerformanceObserver(list=>{for(const entry of list.getEntries())handler(entry);refresh();});observer.observe(type==='event'?{type,buffered:true,durationThreshold:40}:{type,buffered:true});}catch{}
   }
  }
  refresh();

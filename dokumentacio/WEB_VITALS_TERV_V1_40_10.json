@@ -1,0 +1,22 @@
+{
+  "release": "1.40.10",
+  "rows": [],
+  "issues": [
+    "Nincs importált útvonalankénti mérés"
+  ],
+  "measurementCount": 0,
+  "verifiedFieldMeasurementCount": 0,
+  "requiresEvidenceReview": true,
+  "automaticallyCertified": false,
+  "note": "A megadott méréseket a rendszer nem képes függetlenül igazolni. A laboreredmény nem helyettesíti a terepmérést.",
+  "lcpMeasured": false,
+  "inpMeasured": false,
+  "clsMeasured": false,
+  "realDeviceLogsReceived": 0,
+  "requires": [
+    "valódi p75 minták útvonalanként",
+    "mobil/asztali labor és terepmérés külön",
+    "előtte/utána kontroll",
+    "CDN, belépőkapu és adatspórolás külön vizsgálata"
+  ]
+}

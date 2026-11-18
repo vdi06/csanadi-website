@@ -1,0 +1,71 @@
+{
+  "release": "1.40.9",
+  "kind": "static-readiness-audit",
+  "baseRelease": "1.40.8",
+  "existingCssBundle": {
+    "sourceRequests": 95,
+    "activeLocalStylesheetRequests": 1
+  },
+  "homeHero": {
+    "conditionalPreload": true,
+    "onlyHomeRoute": true,
+    "skipWhenEntranceGateVisible": true,
+    "skipOnSaveData": true,
+    "responsiveMobileAndDesktop": true,
+    "preloadTargets": [
+      {
+        "file": "assets/media/web/v1-40/responsive/sport-mobile-320.webp",
+        "bytes": 16574,
+        "sha256": "51a14f26966dc26bd037ca41f29732cfbd854cf728fb566e41ce829c747fbd82"
+      },
+      {
+        "file": "assets/media/web/v1-40/responsive/sport-mobile-480.webp",
+        "bytes": 30686,
+        "sha256": "09540a27ec73b907bb3e723336ff9207c0162a417ede7fe1d111bb740d28e4ad"
+      },
+      {
+        "file": "assets/media/web/v1-40/sport-mobile-800.webp",
+        "bytes": 82270,
+        "sha256": "1b0dc023c7fa4099536e95f45654c4211982af0bc76364cb64dcf718b7f99c94"
+      },
+      {
+        "file": "assets/media/web/v1-40/responsive/sport-320.webp",
+        "bytes": 11072,
+        "sha256": "84034e7480ec3587a50d7dfaf37df2995a3fe0bdb643455588e9cd29f88caa30"
+      },
+      {
+        "file": "assets/media/web/v1-40/responsive/sport-640.webp",
+        "bytes": 38186,
+        "sha256": "b0c6d22c8224dd24bfd6e70ae9ce35399a9257d13471434727b623097beb2336"
+      },
+      {
+        "file": "assets/media/web/v1-40/responsive/sport-960.webp",
+        "bytes": 81480,
+        "sha256": "1b02dacdc7c8e65579cc08116f1902a2070fdf861ab790b81a54c0ba986cb2b3"
+      },
+      {
+        "file": "assets/media/web/v1-40/sport-1600.webp",
+        "bytes": 232378,
+        "sha256": "c752f826b7661e29215cbe49c332c1e5b0f9233e6bb07a5f70aff3543c62d238"
+      }
+    ]
+  },
+  "sourceInventoryAssets": 769,
+  "realMetricsMeasured": false,
+  "metricsNotMeasured": [
+    "LCP",
+    "INP",
+    "CLS",
+    "FCP",
+    "Lighthouse"
+  ],
+  "fieldMeasurementPlan": [
+    "Chromium/Firefox/Safari kontrollmérés mobil és asztali profillal",
+    "LCP p75 ≤ 2,5 s",
+    "INP p75 ≤ 200 ms",
+    "CLS p75 ≤ 0,1",
+    "első kapu-látogatás és visszatérő látogató külön mérés",
+    "CDN/FTP hálózati és cache változatok összevetése"
+  ],
+  "publicationPerformed": false
+}

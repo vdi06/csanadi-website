@@ -40,11 +40,11 @@ for(const [i,slide] of slides.entries()){
 assert.equal(hashes.size,30);
 assert.equal(config.runtime.hero.maxSlides,30);
 assert.ok(config.runtime.hero.pictureCacheEntries<=5);
-assert.match(config.performance.cacheVersion,/^csanadi-r-v1\.40\.[345]$/);
+assert.match(config.performance.cacheVersion,/^csanadi-r-v1\.40\.(?:[3-9]|10)$/);
 assert.match(read('index.html'),/accessibility-v1-40-3\.css\?v=1\.40\.3/);
-assert.match(read('index.html'),/script\.js\?v=1\.40\.[345]/);
-assert.match(read('js/app.js'),/blocks\.js\?v=1\.40\.[345]/);
-assert.match(read('script.js'),/app\.js\?v=1\.40\.[345]/);
+assert.match(read('index.html'),/script\.js\?v=1\.40\.(?:[3-9]|10)/);
+assert.match(read('js/app.js'),/blocks\.js\?v=1\.40\.(?:[3-9]|10)/);
+assert.match(read('script.js'),/app\.js\?v=1\.40\.(?:[3-9]|10)/);
 const language=read('js/language-20.js');
 assert.match(language,/from ['"]\.\/site-settings-2026\.js['"]/);
 assert.doesNotMatch(language,/site-settings-2026\.js\?v=/,'A beállításmodulból ne jöjjön létre második példány');
@@ -63,7 +63,7 @@ assert.match(css,/html\[data-theme="dark"\]/);
 const manifestFile=path.join(root,'release-manifest.json');
 if(fs.existsSync(manifestFile)){
  const manifest=json('release-manifest.json');
- if(/^csanadi-website-v1\.40\.[345]$/.test(manifest.release)){
+ if(/^csanadi-website-v1\.40\.(?:[3-9]|10)$/.test(manifest.release)){
   for(const [name,meta] of Object.entries(manifest.files)){
    const bytes=fs.readFileSync(path.join(root,name));
    assert.equal(bytes.length,meta.sizeBytes,`Kiadási méreteltérés: ${name}`);

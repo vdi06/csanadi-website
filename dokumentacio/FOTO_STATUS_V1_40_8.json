@@ -1,0 +1,15 @@
+{
+  "release": "1.40.8",
+  "sourcePhotoFilesReceived": 0,
+  "institutionalPermissionsReceived": 0,
+  "newApprovedPhotosIntegrated": 0,
+  "originalHeroSlideCount": 30,
+  "originalMediaRegistryCount": 174,
+  "status": "waiting-for-original-files-and-institutional-approval",
+  "preparationAvailable": [
+    "tools/iskolai-fotok-jovahagyasa.html",
+    "tools/photo-staging-core-v1-40-7.mjs",
+    "tools/photo-placement-core-v1-40-8.mjs"
+  ],
+  "note": "Képet csak valódi eredeti állománnyal, képenként igazolt jogi/adatvédelmi engedéllyel és kézi jóváhagyással lehet hero- vagy galériatartalomként ténylegesen beépíteni. A jelen kiadás nem állít valódi fotóbeépítést."
+}

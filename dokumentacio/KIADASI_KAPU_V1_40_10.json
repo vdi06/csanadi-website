@@ -1,0 +1,78 @@
+{
+  "release": "1.40.10",
+  "date": "2026-11-18",
+  "publicationPerformed": false,
+  "packageIntegrity": {
+    "passed": true,
+    "checked": 1695,
+    "issues": [],
+    "jsonPages": 71,
+    "assets": 769,
+    "media": 174
+  },
+  "releaseComparison": {
+    "from": "csanadi-website-v1.40.9",
+    "to": "csanadi-website-v1.40.10",
+    "added": 23,
+    "changed": 44,
+    "removed": 0,
+    "reviewRequired": true
+  },
+  "rollout": {
+    "archivedPreviousVersion": "1.40.9",
+    "verifiedRollbackArchive": true,
+    "stageVerifiedFiles": 1695,
+    "rollbackVerifiedFiles": 1672,
+    "automaticPublication": false
+  },
+  "releaseGates": [
+    {
+      "id": "file-integrity",
+      "passed": true
+    },
+    {
+      "id": "editorial-recommendation-config",
+      "passed": true,
+      "requires": "Új, jóváhagyott szerkesztői szabályok hiányában az alap ajánlások működnek."
+    },
+    {
+      "id": "seo-noindex-conservation",
+      "passed": true
+    },
+    {
+      "id": "css-bundle",
+      "passed": true
+    },
+    {
+      "id": "offline-staging-and-rollback",
+      "passed": true
+    },
+    {
+      "id": "photo-rights",
+      "passed": false,
+      "requires": "Jogszerű eredeti fotók, intézményi és adatvédelmi bizonyítékok."
+    },
+    {
+      "id": "physical-qa",
+      "passed": false,
+      "requires": "Valódi telefon, billentyűzet és képernyőolvasó előtte/utána jegyzőkönyv."
+    },
+    {
+      "id": "seo-activation",
+      "passed": false,
+      "requires": "Jóváhagyott domain és oldalankénti SEO-feloldás kézi ellenőrzéssel."
+    },
+    {
+      "id": "performance-field",
+      "passed": false,
+      "requires": "Valós, ellenőrizhető LCP, INP, CLS mérési sorok."
+    },
+    {
+      "id": "manual-publication",
+      "passed": false,
+      "requires": "A felhasználó kifejezett élesítési jóváhagyása."
+    }
+  ],
+  "readyForPublicRelease": false,
+  "note": "A fájl- és rollback-integritás átmenetele nem váltja ki a fotójogi, mobilos, SEO és intézményi közzétételi jóváhagyást."
+}

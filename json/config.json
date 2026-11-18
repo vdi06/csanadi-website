@@ -122,6 +122,14 @@
       "Dokumentumtár",
       "Képgaléria"
     ],
+    "featuredRoutes": {
+      "felveteli": "#/oktatas/felveteli",
+      "sporteredmenyek": "#/sport/sporteredmenyek",
+      "esemenynaptar": "#/hirek-es-esemenyek/esemenynaptar",
+      "dokumentumtar": "#/informaciok/dokumentumtar",
+      "kepgaleria": "#/sport/sportgaleriak",
+      "kapcsolat": "#/kapcsolat"
+    },
     "fuzzyWordLengthTolerance": 6,
     "synonyms": {
       "felveteli": [
@@ -168,7 +176,7 @@
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r-v1.40.5",
+    "cacheVersion": "csanadi-r-v1.40.10",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,

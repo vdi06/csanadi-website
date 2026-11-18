@@ -32,10 +32,9 @@ function clearEntrancePrelude(){
 }
 export function openEntrancePortal({force=false}={}){
  if(gateShowing){clearEntrancePrelude();return;}
- if(!force&&!['','#','#/'].includes(location.hash)){clearEntrancePrelude();return;}
- const key='csanadi-portal-visit-v3';const today=dayISO(new Date());
- if(!force&&getStore(key)===today){clearEntrancePrelude();return;}
- if(!force)setStore(key,today);
+ const key='csanadi-portal-ever-seen';
+ if(!force&&(getStore(key)==='1'||getStore('csanadi-portal-visit-v3'))){clearEntrancePrelude();return;}
+ if(!force)setStore(key,'1');
  gateShowing=true;
  const layer=e('div','gate26');layer.id='gate26';layer.setAttribute('role','dialog');layer.setAttribute('aria-modal','true');layer.setAttribute('aria-labelledby','gate26-title');layer.setAttribute('aria-describedby','gate26-description');
  const scenery=e('div','gate26-scene');const glow=e('div','gate26-glow');const doors=e('div','gate26-doors');
@@ -65,7 +64,7 @@ export function openEntrancePortal({force=false}={}){
   const mobileGate=window.matchMedia('(max-width:767px)').matches;
   for(let i=0;i<3;i++){
    const img=e('img','gate29-approach-image gate29-approach-'+(i+1));
-   img.src=mobileGate?'assets/media/web/belepes-nyitott-mobil.webp':'assets/media/web/belepes-nyitott.webp';img.alt='';img.decoding='async';
+   img.src=mobileGate?'assets/media/web/csanadi-kapu-v141-mobil.webp':'assets/media/web/csanadi-kapu-v141-asztali.webp';img.alt='';img.decoding='async';
    approach.append(img);
   }
   layer.insertBefore(approach,glow);

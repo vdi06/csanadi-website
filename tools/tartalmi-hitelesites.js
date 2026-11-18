@@ -332,7 +332,7 @@
           sourceUrl:current.sourceUrl||'',permission:current.permission||'',decision:current.decision||'',
           note:current.note||'',updatedAt:current.date||''};
       });
-      const report={schemaVersion:'1.0.0',type:'csanadi-local-content-audit',release:'1.40.5',
+      const report={schemaVersion:'1.0.0',type:'csanadi-local-content-audit',release:'1.40.7',
         generatedAt:new Date().toISOString(),institutionalApprovalVerified:false,ftpPublished:false,
         warning:'A helyi igazoló mezők kitöltése és az URL alakjának ellenőrzése NEM bizonyít valódi intézményi jóváhagyást vagy a forrás ténybeli helyességét.',counts,records};
       download('csanadi_helyi_audit_v1_40_5.json',JSON.stringify(report,null,2),'application/json');

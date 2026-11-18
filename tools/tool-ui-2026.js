@@ -42,7 +42,9 @@
     ['ftp-kiadas-ellenorzo.html','FTP-kiadás'],
     ['iskolai-fotok-jovahagyasa.html','Iskolai fotók'],
     ['mobil-akadalymentesseg-qa.html','Mobil QA'],
-    ['tartalom-kereses-audit.html','Tartalom és keresés']
+    ['tartalom-kereses-audit.html','Tartalom és keresés'],
+    ['kiadasi-kapu-v1-40-7.html','Kiadási kapu'],
+    ['kiadas-osszehasonlitas-v1-40-7.html','Verzióeltérések']
   ];
   let header=document.querySelector('body > header');
   if(!header){

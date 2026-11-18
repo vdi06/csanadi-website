@@ -1,4 +1,6 @@
 import {resolveConfiguredText,setting,settingNumber} from './site-settings-2026.js';
+import {validFeaturedRoutes,isFeaturedHit,uniqueSearchEntries,sortSearchHits} from './search-policies-v1-40-6.js';
+import {recommendRelatedContent,validateEditorialRules} from './search-recommendations-v1-40-9.js';
 const TYPES={page:'Oldal',news:'Hír',event:'Esemény',document:'Dokumentum',image:'Galériakép',video:'Videó'};
 const SECTIONS={iskolank:'Iskolánk',oktatas:'Oktatás',sport:'Sport', 'hirek-es-esemenyek':'Hírek és események',informaciok:'Információk',kapcsolat:'Kapcsolat',home:'Kezdőlap'};
 const DATASETS=[
@@ -60,7 +62,7 @@ function indexPayload(type,data){
   result.push({
    id:item.id||type+':'+result.length,title:item.title,summary:item.summary||item.description||item.alt||'',
    tags:[item.category,item.categoryId].filter(Boolean),body:labelsFrom(null,[item.detail,item.location,item.date]),
-   type,href:route,isSample:type==='news'&&item.status==='sample'
+   type,href:route,isSample:type==='news'&&item.status==='sample',verified:type!=='event'||item.verified===true
   });
  }
  return result;
@@ -127,9 +129,10 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
  // Az ékezetes szinonimák ugyanarra a normalizált kulcsra kerülnek,
  // mint a keresett kifejezések; az oda-vissza kapcsolatok duplikációmentesek.
  const synonyms=compileSynonyms(setting('search.synonyms'),norm);
+ const featuredRoutes=validFeaturedRoutes(setting('search.featuredRoutes'));
  const typoMaximum=settingNumber('search.typoMaxDistance'),typoMinimum=settingNumber('search.typoMinimumLength'),statsLimit=settingNumber('search.statsSessionLimit');
  const sessionStats={searches:0,opened:0,empty:0};
- let all=[],query='',type='all',section='all',max=pageSize,rebuildSerial=0,unavailableSources=0,inputTimer=null;
+ let all=[],query='',type='all',section='all',order='relevance',max=pageSize,rebuildSerial=0,unavailableSources=0,inputTimer=null,curationRules=[];
  let cachedQuery=null,cachedHits=[];
  const resultWrap=results;resultWrap.setAttribute('aria-label','Keresési találatok');status.setAttribute('role','status');status.setAttribute('aria-live','polite');
  const form=element('div','j-search-tools');
@@ -137,14 +140,22 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
  const typeSelect=element('select','j-search-select');typeSelect.setAttribute('aria-label','Tartalomtípus szerinti szűrés');
  const sectionLabel=element('label','j-search-field','Témakör');
  const sectionSelect=element('select','j-search-select');sectionSelect.setAttribute('aria-label','Témakör szerinti szűrés');
- typeLabel.append(typeSelect);sectionLabel.append(sectionSelect);form.append(typeLabel,sectionLabel);
+ const orderLabel=element('label','j-search-field','Találatok sorrendje');
+ const orderSelect=element('select','j-search-select');orderSelect.setAttribute('aria-label','Keresési találatok rendezése');
+ typeLabel.append(typeSelect);sectionLabel.append(sectionSelect);orderLabel.append(orderSelect);form.append(typeLabel,sectionLabel,orderLabel);
  input.insertAdjacentElement('afterend',form);
  const picks=element('div','j-search-picks');picks.setAttribute('aria-label','Keresési javaslatok');
- const resetBtn=element('button','j-search-clear','Keresés törlése');resetBtn.type='button';resetBtn.addEventListener('click',()=>{if(inputTimer){clearTimeout(inputTimer);inputTimer=null;}input.value='';query='';max=pageSize;type='all';section='all';typeSelect.value='all';sectionSelect.value='all';render();input.focus();});picks.append(resetBtn);
+ const resetBtn=element('button','j-search-clear','Keresés törlése');resetBtn.type='button';resetBtn.addEventListener('click',()=>{if(inputTimer){clearTimeout(inputTimer);inputTimer=null;}input.value='';query='';max=pageSize;type='all';section='all';order='relevance';typeSelect.value='all';sectionSelect.value='all';orderSelect.value='relevance';render();input.focus();});picks.append(resetBtn);
  form.insertAdjacentElement('afterend',picks);
  const more=element('button','j-search-more','További találatok');more.type='button';more.hidden=true;
  resultWrap.insertAdjacentElement('afterend',more);
+ const related=element('section','j-search-related');related.hidden=true;related.setAttribute('aria-label','Kapcsolódó ellenőrzött tartalmak');
+ const relatedHeading=element('h3','j-search-related-heading','Kapcsolódó ellenőrzött tartalmak');
+ const relatedCards=element('div','j-search-related-cards');related.append(relatedHeading,relatedCards);more.insertAdjacentElement('afterend',related);
  const stats=element('p','csn20-search-stats');stats.setAttribute('aria-label','Helyi keresési statisztika');more.insertAdjacentElement('afterend',stats);
+ const keyHelp=element('p','j-search-keyboard-help','Billentyűzettel: a keresőmezőből ↓ a találatokhoz lép; a találatok között ↑ és ↓, valamint Home és End használható. Az Escape bezárja a keresőt.');
+ keyHelp.id='j-search-keyboard-help';form.insertAdjacentElement('afterend',keyHelp);
+ input.setAttribute('aria-describedby',keyHelp.id);
  const list=element('datalist');list.id='j-search-suggestions';input.setAttribute('list',list.id);input.insertAdjacentElement('afterend',list);
  input.autocomplete='off';input.placeholder='Például: felvételi, nyílt nap, kosárlabda, dokumentum…';
  function option(select,value,name){const opt=document.createElement('option');opt.value=value;opt.textContent=name;select.append(opt);}
@@ -153,8 +164,16 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   Object.entries(TYPES).forEach(([value,name])=>option(typeSelect,value,name));
   sectionSelect.replaceChildren();option(sectionSelect,'all','Összes témakör');
   Object.entries(SECTIONS).forEach(([value,name])=>option(sectionSelect,value,name));
+  orderSelect.replaceChildren();option(orderSelect,'relevance','Relevancia szerint');
+  option(orderSelect,'title-asc','Cím szerint (A–Z)');option(orderSelect,'title-desc','Cím szerint (Z–A)');
  }
  populateFilters();
+ function refreshFilterCounts(){
+  const types=Object.fromEntries(Object.keys(TYPES).map(key=>[key,0])),sections=Object.fromEntries(Object.keys(SECTIONS).map(key=>[key,0]));
+  for(const entry of all){if(entry.type in types)types[entry.type]++;if(entry.section in sections)sections[entry.section]++;}
+  for(const option of typeSelect.options)option.textContent=option.value==='all'?`Minden tartalom (${all.length})`:`${TYPES[option.value]} (${types[option.value]??0})`;
+  for(const option of sectionSelect.options)option.textContent=option.value==='all'?`Összes témakör (${all.length})`:`${SECTIONS[option.value]} (${sections[option.value]??0})`;
+ }
  function rebuildPages(pages){
   return pages.items.filter(entry=>entry.page.lifecycle?.status==='published').map(entry=>{
    const generated=entry.page.searchText||'';
@@ -166,17 +185,24 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   const serial=++rebuildSerial;
   const pageEntries=rebuildPages(pages);
   unavailableSources=0;
-  all=pageEntries.map(e=>buildEntry(e,norm));cachedQuery=null;
+  all=pageEntries.map(e=>buildEntry(e,norm));cachedQuery=null;refreshFilterCounts();
   if(!dialog.hidden)render();
-  const settled=await Promise.allSettled(DATASETS.map(async ([t,path])=>({t,data:await loadJSON(path)})));
+  const settled=await Promise.allSettled([
+   ...DATASETS.map(async ([t,path])=>({t,data:await loadJSON(path)})),
+   loadJSON('adatok/ajanlasi-szabalyok-v1-40-10.json').then(data=>({t:'curation',data}))
+  ]);
   if(serial!==rebuildSerial)return;
   const indexed=[...pageEntries];
   unavailableSources=settled.filter(r=>r.status==='rejected').length;
+  let proposedRules=[];
   for(const r of settled){
-   if(r.status==='fulfilled')indexed.push(...indexPayload(r.value.t,r.value.data));
+   if(r.status==='fulfilled'&&r.value.t==='curation')proposedRules=Array.isArray(r.value.data?.rules)?r.value.data.rules:[];
+   else if(r.status==='fulfilled')indexed.push(...indexPayload(r.value.t,r.value.data));
    else console.warn('Kereső: adatforrás átmenetileg nem elérhető:',r.reason);
   }
-  all=indexed.map(x=>buildEntry(x,norm));cachedQuery=null;
+  all=uniqueSearchEntries(indexed).map(x=>buildEntry(x,norm));cachedQuery=null;refreshFilterCounts();
+  const editorial=validateEditorialRules(proposedRules,all);curationRules=editorial.valid;
+  if(editorial.problems.length)console.warn('Szerkesztői ajánlások kihagyva:',editorial.problems);
   const unique=new Set();list.replaceChildren();
   for(const item of all){
    if(unique.has(item.title))continue;unique.add(item.title);
@@ -204,7 +230,7 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   let picksList=[...new Set(suggestions)];
   if(normalizedQuery&&!picksList.length){const prefix=normalizedQuery.slice(0,Math.min(settingNumber('search.minimumFuzzyLength'),normalizedQuery.length)),tolerance=settingNumber('search.fuzzyWordLengthTolerance');picksList=firstMatchingTitles(x=>x.normalTitle.split(' ').some(word=>word.startsWith(prefix)&&Math.abs(word.length-normalizedQuery.length)<=tolerance),suggestionLimit);}
   for(const s of [...new Set(picksList)].slice(0,suggestionLimit))picks.append(suggestion(s));
-  if(query.trim()||type!=='all'||section!=='all')picks.append(resetBtn);
+  if(query.trim()||type!=='all'||section!=='all'||order!=='relevance')picks.append(resetBtn);
  }
  function appendHighlight(target,value,tokens){
   const plain=String(value||'');
@@ -220,10 +246,12 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   for(const [start,end] of spans){if(start<cursor)continue;target.append(document.createTextNode(chars.slice(cursor,start).join('')),element('mark','',chars.slice(start,end).join('')));cursor=end;}
   target.append(document.createTextNode(chars.slice(cursor).join('')));
  }
- function makeCard(entry,tokens){
-  const a=element('a','search-result');a.href=entry.href;
+ function makeCard(entry,tokens,featured=false){
+  const a=element('a','search-result');a.href=entry.href;a.setAttribute('aria-keyshortcuts','ArrowUp ArrowDown Home End');
+  if(featured)a.dataset.featured='true';
   if(entry.external){a.target='_blank';a.rel='noopener noreferrer';}
   const top=element('div','j-search-result-top');top.append(element('span','j-search-type',entry.isSample?'Fiktív minta · Hír':TYPES[entry.type]||'Tartalom'),element('span','j-search-section',SECTIONS[entry.section]||'Tartalom'));
+  if(featured)top.append(element('span','j-search-featured','Kiemelt intézményi oldal'));
   const title=element('strong','search-result-title');appendHighlight(title,entry.title,tokens);
   const description=element('small');appendHighlight(description,entry.summary||'Kapcsolódó tartalom megtekintése',tokens);
   a.append(top,title,description);a.addEventListener('click',event=>{sessionStats.opened=Math.min(statsLimit,sessionStats.opened+1);updateStats();onNavigate(entry,query,event);});
@@ -236,17 +264,26 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   // a drágább ékezet-/elgépelés-összevetés csak új keresőszövegnél fut le.
   if(cachedQuery!==q){
    cachedHits=[];
-   for(const x of all){const points=score(x,q,tokens,synonyms,typoMaximum,typoMinimum);if(points>=0)cachedHits.push({x,score:points});}
-   cachedHits.sort((a,b)=>b.score-a.score||a.x.title.localeCompare(b.x.title,'hu'));
+   for(const x of all){const points=score(x,q,tokens,synonyms,typoMaximum,typoMinimum);if(points>=0){
+    const featured=isFeaturedHit(x,tokens,featuredRoutes,norm);cachedHits.push({x,featured,score:points+(featured?65:0)});
+   }}
+   cachedHits=sortSearchHits(cachedHits);
    cachedQuery=q;
   }
-  const matches=cachedHits.filter(hit=>(type==='all'||hit.x.type===type)&&(section==='all'||hit.x.section===section));
+  const matches=sortSearchHits(cachedHits.filter(hit=>(type==='all'||hit.x.type===type)&&(section==='all'||hit.x.section===section)),order);
   const shown=matches.slice(0,Math.min(max,maxResults));
   status.textContent=`${matches.length} találat · ${shown.length} megjelenítve`+(unavailableSources?` · ${unavailableSources} kiegészítő adatforrás átmenetileg nem érhető el`:'');
   const fragment=document.createDocumentFragment();
-  for(const hit of shown)fragment.append(makeCard(hit.x,tokens));
+  for(const hit of shown)fragment.append(makeCard(hit.x,tokens,hit.featured));
   results.append(fragment);
-  if(!matches.length)results.append(element('p','j-search-empty','Nincs pontos találat. Válassz egy javaslatot, egyszerűsítsd a kifejezést, vagy módosítsd a témakör szűrőjét.'));
+  // A kiegészítő ajánlás kizárólag közzétett, nem minta oldalakból, hírekből,
+  // ellenőrzött eseményekből és dokumentumokból áll össze.
+  // A keresés és a megnyitások története nem kerül tartós tárolásba vagy hálózatra.
+  const seed=query.trim()?matches.find(hit=>!hit.x.isSample)?.x:null;
+  const relatedItems=seed?recommendRelatedContent(seed,all,{limit:6,perType:2,curationRules}):[];
+  relatedCards.replaceChildren(...relatedItems.map(item=>makeCard(item,[],false)));
+  related.hidden=relatedItems.length===0;
+  if(!matches.length)results.append(element('p','j-search-empty','Nincs találat ezekkel a feltételekkel. Rövidebb keresőkifejezéssel, másik témakörrel vagy a szűrők törlésével próbálkozhatsz.'));
   results.setAttribute('aria-label',query.trim()?`${matches.length} találat a(z) ${query.slice(0,160)} keresésre`:'Keresési találatok');
   more.hidden=shown.length>=matches.length||shown.length>=maxResults;
   updateStats();
@@ -257,6 +294,7 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
  input.addEventListener('input',()=>{if(inputTimer)clearTimeout(inputTimer);inputTimer=setTimeout(()=>{inputTimer=null;setQuery(input.value);},90);});
  typeSelect.addEventListener('change',()=>{type=typeSelect.value;max=pageSize;render();});
  sectionSelect.addEventListener('change',()=>{section=sectionSelect.value;max=pageSize;render();});
+ orderSelect.addEventListener('change',()=>{order=orderSelect.value;max=pageSize;render();});
  more.addEventListener('click',()=>{max+=pageSize;render();});
  input.addEventListener('keydown',e=>{
   if(e.key==='ArrowDown'){
@@ -268,21 +306,22 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   }
  });
  results.addEventListener('keydown',e=>{
-  if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+  if(['ArrowDown','ArrowUp','Home','End'].includes(e.key)){
    const arr=[...results.querySelectorAll('a.search-result')],pos=arr.indexOf(document.activeElement);
-   if(pos>=0){e.preventDefault();const next=e.key==='ArrowDown'?Math.min(pos+1,arr.length-1):pos-1;
+   if(pos>=0){e.preventDefault();const next=e.key==='Home'?0:e.key==='End'?arr.length-1:e.key==='ArrowDown'?Math.min(pos+1,arr.length-1):pos-1;
     if(next<0)input.focus();else arr[next].focus();}
   }
  });
  return {rebuild,render,
-  snapshot(){return {query,type,section,max};},
+  snapshot(){return {query,type,section,order,max};},
   restore(state){
    if(inputTimer){clearTimeout(inputTimer);inputTimer=null;}
    query=typeof state?.query==='string'?state.query.trim().slice(0,160):'';
    type=Object.hasOwn(TYPES,state?.type)?state.type:'all';
    section=Object.hasOwn(SECTIONS,state?.section)?state.section:'all';
+   order=['relevance','title-asc','title-desc'].includes(state?.order)?state.order:'relevance';
    max=Number.isSafeInteger(state?.max)?Math.min(maxResults,Math.max(pageSize,state.max)):pageSize;
-   input.value=query;typeSelect.value=type;sectionSelect.value=section;render();
+   input.value=query;typeSelect.value=type;sectionSelect.value=section;orderSelect.value=order;render();
   },
-  reset(){if(inputTimer){clearTimeout(inputTimer);inputTimer=null;}query='';type='all';section='all';max=pageSize;input.value='';typeSelect.value='all';sectionSelect.value='all';render();}};
+  reset(){if(inputTimer){clearTimeout(inputTimer);inputTimer=null;}query='';type='all';section='all';order='relevance';max=pageSize;input.value='';typeSelect.value='all';sectionSelect.value='all';orderSelect.value='relevance';render();}};
 }

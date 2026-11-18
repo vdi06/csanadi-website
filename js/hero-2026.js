@@ -122,6 +122,28 @@ export function renderPremiumHero(block){
   launcher.append(home);
   row.append(launcher);
  }
+ // v1.41: a címeres főmenü minden képes dián ugyanazon a helyen marad.
+ // A szöveges arculati réteg és a mobil gyorselérés külön helyet kap, ezért
+ // a képre illesztett szöveg nem csúszhat össze a képi tartalommal.
+ section.classList.add('cs41-home-hero');
+ const identity=el('div','cs41-hero-identity');
+ identity.setAttribute('aria-hidden','true');
+ identity.append(el('span','cs41-hero-brand','CSANÁDI'),el('span','cs41-hero-brand-sub','SPORTISKOLA'));
+ const statement=el('div','cs41-hero-statement');
+ statement.append(el('p','cs41-hero-name','CSANÁDI SPORTISKOLA'),el('p','cs41-hero-motto','Sport · Tanulás · Közösség'));
+ const routes=el('nav','cs41-mobile-routes');routes.setAttribute('aria-label','Kezdőoldali tematikus gyorselérés');
+ for(const [label,href,symbol] of [['Sport','#/sport','›'],['Tanulás','#/oktatas','›'],['Közösség','#/iskolank','›']]){
+  const link=el('a','cs41-route');link.href=href;
+  link.append(el('span','',label),el('span','cs41-route-symbol',symbol));routes.append(link);
+ }
+ const scrollCue=el('button','cs41-scroll-cue','⌄');scrollCue.type='button';
+ scrollCue.setAttribute('aria-label','Ugrás a diákjaink sportsikerei szakaszhoz');
+ scrollCue.addEventListener('click',()=>{
+  const target=document.querySelector('#app[data-page-kind="home"] .student-success-home');
+  if(!target)return;
+  target.scrollIntoView({behavior:reduced.matches?'auto':'smooth',block:'start'});
+ });
+ row.append(identity,statement,routes,scrollCue);
  // Preserve an accessible page heading without reintroducing the removed visible introduction.
  const accessibleHeading=el('h1','visually-hidden','Csanádi Árpád Sportiskola');
  section.append(accessibleHeading,row);

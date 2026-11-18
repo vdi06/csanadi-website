@@ -4,7 +4,7 @@ import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRou
 import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=csanadi-r29n-20261115';
 import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=csanadi-r29n-20261115';
 import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.39.5';
-import {setupSmartSearch} from './search-j-2026.js?v=1.39.16';
+import {setupSmartSearch} from './search-j-2026.js?v=1.40.10';
 import {installLanguageHighlights} from './language-20.js?v=csanadi-r29n-20261115';
 import {enhancePersonalizedHome} from './round21-personalize.js?v=csanadi-r29n-20261115';
 import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,syncMobileEmbeddedSections,initRound29Diagnostics} from './round29-home.js?v=1.37.0';
@@ -21,7 +21,7 @@ import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r29n-20261115';
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.39.16';
-import {renderBlock,dom,listCards} from './blocks.js?v=1.40.5';
+import {renderBlock,dom,listCards} from './blocks.js?v=1.40.10';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=csanadi-r29n-20261115';
 import {renderSportsSuccesses} from './sports-successes.js?v=csanadi-r29n-20261115';
 import {renderStudentAchievements} from './student-achievements.js?v=csanadi-r29n-20261115';
@@ -476,12 +476,14 @@ function homePage(node){
   nav.append(dom('a',{href:'orokseg-es-tudastar.html',class:'csn21-explorer-link'},'Olimpiai örökség és tudástár · 24. kiadás ↗'));
   nav.append(dom('a',{href:'tanulas-es-kozosseg.html',class:'csn21-explorer-link'},'Tanulás, sport és közösség · 25. kiadás ↗'));
   const rails=dom('div',{class:'home-j-navrail-unit'});rails.append(nav);
-  const visibleRoles=['premium-showcase','school-news'];
+  // A dicsőségfal a kezdőoldali hero UTÁNI első fő tartalmi szakasz.
+  // A további, korábban működő modulok és a személyes sorrendezés megmaradnak.
+  const visibleRoles=['students','school-news','premium-showcase'];
   canvas.replaceChildren();
   for(const role of visibleRoles){const unit=roleMap.get(role);if(unit)canvas.append(unit);if(role==='premium-showcase')canvas.append(rails);}
   const foldGroups=[
     {title:'Napi központ és interaktív információk',sub:'A napi központ részletes elemei egy kattintással',roles:['daily-hub']},
-    {title:'Sporteredmények és statisztikák',sub:'Tanulói sikerek, részletes sporttartalmak és adatok',roles:['students','sports-story','statistics']},
+    {title:'Sporteredmények és statisztikák',sub:'Részletes sporttartalmak és adatok',roles:['sports-story','statistics']},
     {title:'Sport és iskolai élet – képekben',sub:'Fotógaléria, albumok és közösségi felületek',roles:['gallery','life-gallery','social']},
     {title:'Fedezd fel az iskolát',sub:'Képzési, közösségi és ügyintézési információk',roles:['shortcuts','editorial','story','areas','documents','standard']}
   ];
