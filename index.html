@@ -11,9 +11,9 @@
   <style>
     #cs-gate-prelude{display:none}
     html.cs-gate-pending #cs-gate-prelude{position:fixed;inset:0;z-index:2601;display:grid;place-items:center;overflow:hidden;background:#07182a;color:#fff;isolation:isolate;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
-    html.cs-gate-pending #cs-gate-prelude .cs-gate-prelude-door{position:absolute;inset-block:0;width:50%;background:linear-gradient(90deg,rgba(1,10,23,.45),rgba(1,10,23,.1)),url('assets/media/web/belepes-kapu.webp') center/200% 100% no-repeat}
-    #cs-gate-prelude .cs-gate-prelude-left{left:0;background-position:left center!important;border-right:2px solid #c69e5d}
-    #cs-gate-prelude .cs-gate-prelude-right{right:0;background-position:right center!important;border-left:2px solid #c69e5d}
+    html.cs-gate-pending #cs-gate-prelude .cs-gate-prelude-door{position:absolute;inset-block:0;width:50%;background:linear-gradient(90deg,rgba(1,10,23,.14),rgba(1,10,23,.08)),url('assets/media/web/csanadi-kapu-zart-valosag.webp') center/200% 100% no-repeat}
+    #cs-gate-prelude .cs-gate-prelude-left{left:0;background-position:left center!important}
+    #cs-gate-prelude .cs-gate-prelude-right{right:0;background-position:right center!important}
     #cs-gate-prelude .cs-gate-prelude-copy{position:relative;z-index:1;text-align:center;padding:24px;max-width:700px;text-shadow:0 3px 20px #061323}
     #cs-gate-prelude .cs-gate-prelude-copy strong{display:block;color:#f8db99;letter-spacing:.18em;font-size:clamp(11px,1.2vw,15px);margin-bottom:16px}
     #cs-gate-prelude .cs-gate-prelude-copy p{font-size:clamp(24px,4vw,54px);font-weight:850;line-height:1.12;margin:0}
@@ -24,7 +24,7 @@
       if(localStorage.getItem('csanadi-portal-ever-seen')==='1'||localStorage.getItem('csanadi-portal-visit-v3'))return;
     }catch(_error){}
     document.documentElement.classList.add('cs-gate-pending');
-    var firstGateImage=matchMedia('(max-width:767px)').matches?'csanadi-kapu-v141-mobil.webp':'csanadi-kapu-v141-asztali.webp';
+    var firstGateImage='csanadi-kapu-zart-valosag.webp';
     var firstGatePreload=document.createElement('link');firstGatePreload.rel='preload';firstGatePreload.as='image';firstGatePreload.type='image/webp';firstGatePreload.href='assets/media/web/'+firstGateImage;document.head.append(firstGatePreload);
     setTimeout(function(){document.documentElement.classList.remove('cs-gate-pending');document.getElementById('cs-gate-prelude')?.remove();},20000);
   })();</script>
@@ -148,6 +148,7 @@ CSS-forrásreferenciák vége -->
   <link rel="stylesheet" href="css/site-bundle-v1-40-8.css?v=1.40.10">
   <link rel="stylesheet" href="css/gate-v1-41-preview.css?v=1.41-gate-preview">
   <link rel="stylesheet" href="css/home-v1-41.css?v=1.41-home-preview">
+  <link rel="stylesheet" href="css/gate-v1-41-real-door.css?v=1.41-real-door-1">
   
   
   

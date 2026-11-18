@@ -37,40 +37,34 @@ export function openEntrancePortal({force=false}={}){
  if(!force)setStore(key,'1');
  gateShowing=true;
  const layer=e('div','gate26');layer.id='gate26';layer.setAttribute('role','dialog');layer.setAttribute('aria-modal','true');layer.setAttribute('aria-labelledby','gate26-title');layer.setAttribute('aria-describedby','gate26-description');
- const scenery=e('div','gate26-scene');const glow=e('div','gate26-glow');const doors=e('div','gate26-doors');
- for(const side of ['left','right']){const d=e('div','gate26-door gate26-'+side);add(d,e('div','gate26-bars'),e('div','gate26-crest','✦'));doors.append(d);}
- const content=e('div','gate26-content');const logo=e('img','gate26-logo');logo.src='assets/media/logo/csanadi-cimer-512.webp';logo.alt='Csanádi Sportiskola címer';logo.width=76;logo.height=76;
- const title=e('h2','', 'Lépj be a sport és a tudás világába');title.id='gate26-title';const desc=e('p','','Nyitva áll a Csanádi Sportiskola kapuja.');desc.id='gate26-description';
- const enter=btn('','gate26-enter gate26-key',()=>open());const skip=btn('Kihagyás','gate26-skip',()=>finish());skip.setAttribute('aria-label','Belépőanimáció kihagyása');
- const keyIcon=document.createElementNS('http://www.w3.org/2000/svg','svg');keyIcon.setAttribute('viewBox','0 0 120 120');keyIcon.setAttribute('width','92');keyIcon.setAttribute('height','92');keyIcon.setAttribute('aria-hidden','true');keyIcon.innerHTML='<circle cx="35" cy="35" r="23" fill="none" stroke="currentColor" stroke-width="9"/><circle cx="35" cy="35" r="8" fill="none" stroke="currentColor" stroke-width="4"/><path d="M52 52 105 105 93 116 80 103 72 111 62 101 70 93 43 66" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="11"/>';
- enter.append(keyIcon);enter.setAttribute('aria-label','Nyisd meg a kaput');enter.setAttribute('title','Nyisd meg a kaput');
- add(content,logo,e('span','gate26-eyebrow','CSANÁDI SPORTISKOLA · 2026'),title,desc,document.createDocumentFragment(),enter);
- add(layer,scenery,glow,doors,content,skip);document.body.append(layer);clearEntrancePrelude();
+ const scenery=e('div','gate26-scene gate26-cinematic-open');scenery.setAttribute('aria-hidden','true');
+ const shut=e('div','gate26-cinematic-shut');shut.setAttribute('aria-hidden','true');
+ const glow=e('div','gate26-glow');
+ const content=e('div','gate26-content');
+ const title=e('h2','', 'Lépj be a sport és a tudás világába');title.id='gate26-title';
+ const desc=e('p','','A valódi iskolaépület ihlette kapu a sport és a tudás világába vezet.');desc.id='gate26-description';
+ const enter=btn('','gate26-enter gate26-crest-button',()=>open());
+ const crest=e('img','gate26-crest-image');crest.src='assets/media/logo/csanadi-cimer-512.webp';crest.alt='';crest.width=148;crest.height=148;enter.append(crest);
+ enter.setAttribute('aria-label','Nyisd meg a Csanádi Sportiskola kapuját');enter.title='Kapunyitás';
+ const skipBar=e('div','gate26-skip-bar');const skip=btn('Animáció kihagyása','gate26-skip',()=>finish());skip.setAttribute('aria-label','Belépőanimáció kihagyása');skipBar.append(skip);
+ add(content,e('span','gate26-eyebrow','CSANÁDI SPORTISKOLA'),title,desc,enter);
+ add(layer,scenery,shut,glow,content,skipBar);document.body.append(layer);clearEntrancePrelude();
  const oldFocus=document.activeElement;let done=false,opening=false,finishTimer;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const previousOverflow=document.body.style.overflow;
  document.body.style.overflow='hidden';
  function cleanup(){if(!layer.isConnected)return;layer.remove();document.body.style.overflow=previousOverflow;gateShowing=false;if(oldFocus?.isConnected&&oldFocus!==document.body)oldFocus.focus?.();}
- function finish(){if(done)return;done=true;clearTimeout(finishTimer);layer.classList.add('gate26-finished');setTimeout(cleanup,reduced?0:settingNumber('runtime.timing.portalCleanupMs'));}
+ function finish(){if(done)return;done=true;clearTimeout(finishTimer);layer.classList.add('gate26-finished');setTimeout(cleanup,reduced?0:420);}
  function open(){
   if(done||opening)return;
   opening=true;
   enter.disabled=true;
   enter.setAttribute('aria-label','A kapu nyílik');
   if(reduced){finish();return;}
-  // A nyitott kapu a mobilos várakozás alatt is felismerhető marad.
-  // A három közelítés csak a belépéskor kap képeket: induláskor nem terheli a hálózatot.
-  const approach=e('div','gate29-approach');approach.setAttribute('aria-hidden','true');
-  const mobileGate=window.matchMedia('(max-width:767px)').matches;
-  for(let i=0;i<3;i++){
-   const img=e('img','gate29-approach-image gate29-approach-'+(i+1));
-   img.src=mobileGate?'assets/media/web/csanadi-kapu-v141-mobil.webp':'assets/media/web/csanadi-kapu-v141-asztali.webp';img.alt='';img.decoding='async';
-   approach.append(img);
-  }
-  layer.insertBefore(approach,glow);
+  const duration=window.matchMedia('(max-width:767px)').matches?3800:5100;
+  layer.style.setProperty('--gate26-duration',duration+'ms');
   layer.classList.add('gate26-open');
-   
-  finishTimer=setTimeout(finish,settingNumber('runtime.timing.portalOpenDurationMs'));
+  finishTimer=setTimeout(finish,duration);
  }
  layer.addEventListener('keydown',ev=>{
   if(ev.key==='Escape'){ev.preventDefault();finish();}
