@@ -109,10 +109,10 @@ function printer(){const controls=$('print-choices'),out=$('print-preview'),stat
 }
 async function main(){const applyTheme=startTheme();
  try{config=await load('json/config.json');applyTheme();const path=config.runtime?.round22?.dataPath;
-  if(typeof path!=='string'||!/^adatok\/[a-z0-9-]+\.json$/.test(path))throw Error('A 22-es központi adatútvonal hiányzik.');
+  if(typeof path!=='string'||!/^data\/[a-z0-9-]+\.json$/.test(path))throw Error('A 22-es központi adatútvonal hiányzik.');
   const qrPath=config.runtime?.round22?.qrIndexPath;
-  if(typeof qrPath!=='string'||!/^adatok\/[a-z0-9-]+\.json$/.test(qrPath))throw Error('Hiányzó QR-index útvonal a központi beállításban.');
-  const entries=await Promise.allSettled([load('json/'+path),load('json/adatok/esemenyek.json'),load('json/adatok/kepgaleria.json'),load('json/adatok/dokumentumok.json'),load('json/'+qrPath)]);
+  if(typeof qrPath!=='string'||!/^data\/[a-z0-9-]+\.json$/.test(qrPath))throw Error('Hiányzó QR-index útvonal a központi beállításban.');
+  const entries=await Promise.allSettled([load('json/'+path),load('json/data/events.json'),load('json/data/photo-gallery.json'),load('json/data/documents.json'),load('json/'+qrPath)]);
   if(entries[0].status!=='fulfilled')throw entries[0].reason;content=entries[0].value;
   if(!Array.isArray(content.openDayStations)||!Array.isArray(content.glossary)||content.release!==22)throw Error('Hibás 22-es iránytűadat-szerkezet.');
   eventData=entries[1].status==='fulfilled'?entries[1].value:{items:[]};mediaData=entries[2].status==='fulfilled'?entries[2].value:{items:[]};docData=entries[3].status==='fulfilled'?entries[3].value:{documents:[]};qrData=entries[4].status==='fulfilled'?entries[4].value:{entries:[]};

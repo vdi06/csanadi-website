@@ -1,38 +1,38 @@
-import {initRound10Enhancements} from './round10-enhancements.js?v=1.39.5';
-import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.39.16';
-import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.40.0';
-import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=csanadi-r29n-20261115';
-import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=csanadi-r29n-20261115';
-import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.39.5';
-import {setupSmartSearch} from './search-j-2026.js?v=1.40.10';
-import {installLanguageHighlights} from './language-20.js?v=csanadi-r29n-20261115';
-import {enhancePersonalizedHome} from './round21-personalize.js?v=csanadi-r29n-20261115';
-import {enhanceInlineHomeEditor} from './home-inline-editor-v1-41-4.js?v=1.41.4';
-import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,syncMobileEmbeddedSections,initRound29Diagnostics} from './round29-home.js?v=1.37.0';
-import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=csanadi-r29n-20261115';
-import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=csanadi-r29n-20261115';
-import {initEnhancedInteractions} from './interactions-be-2026.js?v=csanadi-v127-20261116';
-import {renderMediaGallery} from './media-gallery-h-2026.js?v=1.37.0';
-import {renderDocumentCollections} from './document-collections-2026.js?v=csanadi-r29n-20261115';
-import {renderPageMedia} from './page-media-2026.js?v=csanadi-r29n-20261115';
+import {initRound10Enhancements} from './round10-enhancements.js?v=1.42.12';
+import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.42.12';
+import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.42.12';
+import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=1.42.12';
+import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=1.42.12';
+import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.42.12';
+import {setupSmartSearch} from './search-j-2026.js?v=1.42.12';
+import {installLanguageHighlights} from './language-20.js?v=1.42.12';
+import {enhancePersonalizedHome} from './round21-personalize.js?v=1.42.12';
+import {enhanceInlineHomeEditor} from './home-inline-editor-v1-41-4.js?v=1.42.12';
+import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,syncMobileEmbeddedSections,initRound29Diagnostics} from './round29-home.js?v=1.42.12';
+import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=1.42.12';
+import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=1.42.12';
+import {initEnhancedInteractions} from './interactions-be-2026.js?v=1.42.12';
+import {renderMediaGallery} from './media-gallery-h-2026.js?v=1.42.12';
+import {renderDocumentCollections} from './document-collections-2026.js?v=1.42.12';
+import {renderPageMedia} from './page-media-2026.js?v=1.42.12';
 import {useSiteSettings,settingNumber} from './site-settings-2026.js';
-import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.40.0';
-import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.42.10';
-import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.40.0';
-import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r29n-20261115';
+import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.42.12';
+import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.42.12';
+import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.42.12';
+import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=1.42.12';
  
-import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.39.16';
-import {renderBlock,dom,listCards} from './blocks.js?v=1.42.6';
-import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=csanadi-r29n-20261115';
-import {renderSportsSuccesses} from './sports-successes.js?v=csanadi-r29n-20261115';
-import {renderStudentAchievements} from './student-achievements.js?v=csanadi-r29n-20261115';
-import {renderDailySportsNews} from './daily-sport-news.js?v=csanadi-r29n-20261115';
-import {renderDesktopTree} from '../desktop/navigation.js?v=csanadi-r29n-20261115';
-import {renderMobileTree} from '../mobile/navigation.js?v=1.38.1';
-import {createPhoneRadial} from '../mobile/radial-wheel-v1-38.js?v=1.38.1';
-import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.39.2';
-import {createSubpageHero} from './subpages-v1.js?v=1.39.16';
-import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.42.10';
+import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.42.12';
+import {renderBlock,dom,listCards} from './blocks.js?v=1.42.12';
+import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=1.42.12';
+import {renderSportsSuccesses} from './sports-successes.js?v=1.42.12';
+import {renderStudentAchievements} from './student-achievements.js?v=1.42.12';
+import {renderDailySportsNews} from './daily-sport-news.js?v=1.42.12';
+import {renderDesktopTree} from '../desktop/navigation.js?v=1.42.12';
+import {renderMobileTree} from '../mobile/navigation.js?v=1.42.12';
+import {createPhoneRadial} from '../mobile/radial-wheel-v1-38.js?v=1.42.12';
+import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.42.12';
+import {createSubpageHero} from './subpages-v1.js?v=1.42.12';
+import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.42.12';
 const app=document.getElementById('app');
 const routeStatus=document.getElementById('cs1404-route-status');
 let homeHeroElement=null;
@@ -391,10 +391,10 @@ function contentPage(node){
   // A régi harmadik menüszint összes különálló oldala megmarad; az almenü
   // saját tartalmi csempéi vezetik tovább a látogatót, a globális menü nem.
   const details=contentChildrenOf(catalog,node).filter(item=>
-    item.path!=='oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json'&&
-    item.path!=='oldalak/iskolank/a-honlap-szuletese.json'&&
-    item.path!=='oldalak/informaciok/allaspalyazatok.json'&&
-    item.path!=='oldalak/informaciok/adatvedelem.json'
+    item.path!=='pages/education/library/library-services.json'&&
+    item.path!=='pages/our-school/website-history.json'&&
+    item.path!=='pages/information/job-openings.json'&&
+    item.path!=='pages/information/privacy.json'
   );
   if(details.length){
     const related=dom('section',{class:'cs-nav-detail-tiles','aria-label':'Részletes kapcsolódó tartalmak'});
@@ -890,7 +890,7 @@ export async function startApp(){
   markNavigationStart(getRoute(),{initial:true});
   wireEvents();
   if(location.protocol==='file:')throw new Error('A JSON-alapú weboldal HTTP/HTTPS kiszolgálást igényel, például helyi localhost szervert vagy az iskola webtárhelyét.');
-  registerMedia(await loadJSON('mediatar.json'));
+  registerMedia(await loadJSON('media-library.json'));
   catalog=await buildCatalog();
   useSiteSettings(catalog.config);
   installLanguageHighlights().catch(error=>console.warn('A kétnyelvű tájékoztatók nem tölthetők be:',error));

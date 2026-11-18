@@ -1,8 +1,8 @@
 /* Csanádi – fotóalapú, hangtalan, statikus tárhelyen működő kapunyitás. */
 .gate26{--gate26-duration:5100ms;background:#07131d;perspective:none}
 .gate26 .gate26-scene,.gate26 .gate26-cinematic-shut{position:absolute;inset:0;z-index:0;background-position:center;background-size:cover;background-repeat:no-repeat;transition:none;pointer-events:none;transform:none!important}
-.gate26 .gate26-scene{background-image:url('../assets/media/web/csanadi-kapu-nyitott-valosag.webp')!important;filter:brightness(.79)}
-.gate26 .gate26-cinematic-shut{z-index:1;background-image:url('../assets/media/web/csanadi-kapu-zart-valosag.webp');filter:brightness(.87);opacity:1;transform-origin:center;will-change:opacity}
+.gate26 .gate26-scene{background-image:url('../assets/media/web/csanadi-gate-open-photo.webp')!important;filter:brightness(.79)}
+.gate26 .gate26-cinematic-shut{z-index:1;background-image:url('../assets/media/web/csanadi-gate-closed-photo.webp');filter:brightness(.87);opacity:1;transform-origin:center;will-change:opacity}
 .gate26 .gate26-glow{z-index:2;opacity:.35;mix-blend-mode:screen;background:radial-gradient(ellipse at 50% 47%,rgba(227,178,79,.16),transparent 40%);pointer-events:none}
 .gate26 .gate26-content{position:relative;z-index:5;width:min(780px,calc(100% - 32px));max-width:none;padding:0;gap:10px;transform:none!important;border:0;background:none;box-shadow:none;backdrop-filter:none;text-shadow:0 2px 22px #061321,0 0 8px #061321;opacity:1}
 .gate26 .gate26-content .gate26-eyebrow{color:#f9e0ab;font-size:clamp(11px,1.35vw,16px);letter-spacing:.22em}
@@ -108,7 +108,7 @@
  top:calc(50% - var(--gate-door-image-height) * .172);
  height:calc(var(--gate-door-image-height) * .538);
  width:var(--gate-door-leaf-width);
- background-image:url('../assets/media/web/csanadi-kapu-zart-valosag.webp');
+ background-image:url('../assets/media/web/csanadi-gate-closed-photo.webp');
  background-size:var(--gate-door-image-width) var(--gate-door-image-height);
  background-repeat:no-repeat;
  backface-visibility:hidden;
@@ -158,42 +158,83 @@
 }
 
 
-/* v1.42.8 – kattintható, áttetsző arany keretes kapu pontosan a zöld ajtóra illesztve. */
-.gate26 .gate26-door-hitbox{
- position:absolute;z-index:6;
- left:50%;top:calc(50% + var(--gate-door-image-height) * .101);
- width:calc(var(--gate-door-leaf-width) * 1.92);height:calc(var(--gate-door-image-height) * .519);
+/* v1.42.11 – The door itself is the button. No rectangular gold overlay. */
+.gate26 .gate26-door-hitbox {
+ position:absolute; z-index:6; left:50%;
+ top:calc(50% + var(--gate-door-image-height) * .096);
+ width:calc(var(--gate-door-leaf-width) * 1.96);
+ height:calc(var(--gate-door-image-height) * .54);
+ margin:0; padding:0; appearance:none;
  transform:translate(-50%,-50%);
- background:transparent!important;border:2px solid rgba(239,210,134,.96)!important;border-radius:42% 42% 9px 9px / 8% 8% 2% 2%;
- box-shadow:0 0 0 2px rgba(99,72,31,.45) inset,0 0 0 1px rgba(255,237,188,.55),0 0 18px rgba(235,192,96,.30);
- cursor:pointer;pointer-events:auto;overflow:hidden;
- transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease, opacity .22s ease;
+ background:transparent!important; border:0!important;
+ border-radius:0!important; box-shadow:none!important;
+ cursor:pointer; overflow:visible;
+ pointer-events:auto;
+ clip-path:polygon(0 15%,5% 11%,18% 5%,33% 1%,50% 0,67% 1%,82% 5%,95% 11%,100% 15%,100% 100%,0 100%);
+ -webkit-tap-highlight-color:transparent;
 }
-.gate26 .gate26-door-hitbox::before,.gate26 .gate26-door-hitbox::after{content:'';position:absolute;inset:0;pointer-events:none}
-.gate26 .gate26-door-hitbox::before{
- background:
-   linear-gradient(90deg,transparent calc(50% - 1px),rgba(239,210,134,.92) calc(50% - 1px) calc(50% + 1px),transparent calc(50% + 1px)),
-   linear-gradient(180deg,rgba(239,210,134,.55),rgba(239,210,134,.55)) top/100% 2px no-repeat,
-   linear-gradient(180deg,transparent 0 62%,rgba(239,210,134,.34) 62% 63%,transparent 63% 100%),
-   radial-gradient(circle at 24% 51%,rgba(239,210,134,.95) 0 2px,transparent 3px),
-   radial-gradient(circle at 76% 51%,rgba(239,210,134,.95) 0 2px,transparent 3px);
- opacity:.95;
+.gate26 .gate26-door-hitbox::before,.gate26 .gate26-door-hitbox::after{content:none!important}
+.gate26 .gate26-door-hitbox:hover,.gate26 .gate26-door-hitbox:focus-visible {
+ transform:translate(-50%,-50%);
+ background:transparent!important; border:0!important;box-shadow:none!important;outline:none!important;
 }
-.gate26 .gate26-door-hitbox::after{
- inset:8px; border:1px solid rgba(239,210,134,.68); border-radius:42% 42% 8px 8px / 8% 8% 2% 2%;
- clip-path:polygon(0 0,100% 0,100% 100%,0 100%,0 0,42% 0,42% 78%,58% 78%,58% 0,0 0);
- opacity:.55;
+.gate26 .gate26-door-outline{display:block;width:100%;height:100%;overflow:visible;pointer-events:none;filter:drop-shadow(0 0 2px rgba(34,19,3,.55))}
+.gate26 .gate26-door-contour{
+ fill:none; stroke:#f4d996; stroke-width:2.3; stroke-linecap:round;stroke-linejoin:round;
+ stroke-opacity:.48; transition:stroke-opacity .28s ease,stroke-width .28s ease;
 }
-.gate26 .gate26-door-hitbox:hover,.gate26 .gate26-door-hitbox:focus-visible{
- transform:translate(-50%,-50%) scale(1.018);
- border-color:#fff0b8!important;
- box-shadow:0 0 0 2px rgba(99,72,31,.52) inset,0 0 0 2px rgba(255,242,197,.65),0 0 26px rgba(240,205,116,.48);
- outline:none;
+.gate26 .gate26-door-seam{fill:none;stroke:#f3d999;stroke-width:1.5;stroke-opacity:.17;transition:stroke-opacity .28s ease}
+.gate26 .gate26-door-hitbox:hover .gate26-door-contour,.gate26 .gate26-door-hitbox:focus-visible .gate26-door-contour {
+ stroke-opacity:.95;stroke-width:3.2;
 }
-.gate26-open .gate26-door-hitbox{animation:cs-gate-door-hitbox-fade var(--gate26-duration) ease-in-out both;pointer-events:none}
-@keyframes cs-gate-door-hitbox-fade{0%,15%{opacity:1}38%{opacity:.9}72%,100%{opacity:0}}
+.gate26 .gate26-door-hitbox:hover .gate26-door-seam,.gate26 .gate26-door-hitbox:focus-visible .gate26-door-seam{stroke-opacity:.56}
+.gate26 .gate26-door-hitbox:hover .gate26-door-outline,.gate26 .gate26-door-hitbox:focus-visible .gate26-door-outline{
+ filter:drop-shadow(0 0 5px rgba(246,205,119,.72));
+}
+.gate26-open .gate26-door-hitbox{pointer-events:none;animation:cs-gate-door-mark-fade var(--gate26-duration) ease-out both}
+@keyframes cs-gate-door-mark-fade {0%,12%{opacity:1}45%{opacity:.25}70%,100%{opacity:0}}
+/* The footer is a soft photographic gradient, not a dark rectangular bar. */
+.gate26 .gate26-skip-bar{
+ position:absolute!important;inset:auto 0 0!important;z-index:9;
+ width:100%;min-height:0!important;height:clamp(120px,17vh,174px);
+ display:flex!important;align-items:flex-end!important;justify-content:center!important;
+ padding:24px max(18px,env(safe-area-inset-right)) calc(23px + env(safe-area-inset-bottom))!important;
+ background:linear-gradient(to top,rgba(4,15,26,.82) 0%,rgba(4,15,26,.40) 47%,rgba(4,15,26,0) 100%)!important;
+ border:0!important;box-shadow:none!important;backdrop-filter:none!important;
+ gap:0!important;pointer-events:none;
+}
+.gate26 .gate26-bottom-copy{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ width:min(1020px,calc(100% - 120px))!important;max-width:none!important;
+ min-width:0;flex:none!important;grid-column:auto!important;
+ margin:0 auto!important;text-align:center!important;
+ color:#fff8ed;pointer-events:none;
+}
+.gate26 .gate26-bottom-copy .gate26-school-name{
+ margin:0!important;color:#f9e6b5!important;font-weight:750!important;
+ text-align:center!important;white-space:normal!important;text-wrap:balance;
+ font-size:clamp(16px,1.55vw,24px)!important;line-height:1.32!important;
+ letter-spacing:.065em;max-width:100%!important;
+ text-shadow:0 2px 3px rgba(0,0,0,.9),0 5px 23px rgba(0,0,0,.9);
+}
+.gate26 .gate26-skip,.gate26 .gate26-skip:hover{
+ position:absolute!important;right:clamp(12px,2vw,34px)!important;
+ bottom:calc(18px + env(safe-area-inset-bottom))!important;
+ left:auto!important;top:auto!important;grid-column:auto!important;
+ display:grid!important;place-items:center!important;
+ width:45px!important;height:45px!important;min-width:45px!important;min-height:45px!important;
+ border:1px solid rgba(239,206,141,.72)!important;border-radius:50%!important;
+ padding:0!important;color:#fff1d1!important;background:rgba(12,27,43,.38)!important;
+ box-shadow:0 5px 20px rgba(0,0,0,.2)!important;
+ font-size:22px!important;line-height:1!important;
+ pointer-events:auto!important;backdrop-filter:blur(3px);
+}
+.gate26 .gate26-skip:focus-visible {outline:2px solid #fff3c5!important;outline-offset:3px!important}
+.gate26 .gate26-skip:hover {background:rgba(12,27,43,.76)!important}
 @media(max-width:767px){
- .gate26 .gate26-door-hitbox{border-width:2px;box-shadow:0 0 0 1px rgba(255,237,188,.5),0 0 15px rgba(235,192,96,.24)}
- .gate26 .gate26-door-hitbox::after{inset:6px}
+ .gate26 .gate26-skip-bar{height:clamp(124px,22vh,182px);padding:18px 8px calc(20px + env(safe-area-inset-bottom))!important}
+ .gate26 .gate26-bottom-copy{width:calc(100% - 88px)!important}
+ .gate26 .gate26-bottom-copy .gate26-school-name{font-size:clamp(12px,3.15vw,16px)!important;line-height:1.28!important;letter-spacing:.025em!important}
+ .gate26 .gate26-skip,.gate26 .gate26-skip:hover{width:39px!important;height:39px!important;min-width:39px!important;min-height:39px!important;font-size:20px!important;right:10px!important;bottom:calc(17px + env(safe-area-inset-bottom))!important}
 }
 @media(prefers-reduced-motion:reduce){.gate26-open .gate26-door-hitbox{animation:none!important;opacity:0}}

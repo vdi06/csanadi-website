@@ -4,7 +4,7 @@
   inset: 0;
   background-image:
     linear-gradient(90deg, rgba(5, 18, 34, .27), rgba(5, 18, 34, .03) 50%, rgba(5, 18, 34, .18)),
-    url('../assets/media/web/csanadi-kapu-v141-asztali.webp');
+    url('../assets/media/web/csanadi-gate-v141-desktop.webp');
   background-position: center;
   background-size: cover;
   transform: scale(1.08);
@@ -73,7 +73,7 @@
 }
 
 .gate26 .gate29-approach {
-  background: #071729 url('../assets/media/web/csanadi-kapu-v141-asztali.webp') center / cover no-repeat;
+  background: #071729 url('../assets/media/web/csanadi-gate-v141-desktop.webp') center / cover no-repeat;
 }
 
 .gate26 .gate29-approach-image {filter: brightness(.99)}
@@ -82,12 +82,12 @@
   .gate26 .gate26-scene {
     background-image:
       linear-gradient(180deg, rgba(5, 18, 34, .1), rgba(5, 18, 34, .12)),
-      url('../assets/media/web/csanadi-kapu-v141-mobil.webp');
+      url('../assets/media/web/csanadi-gate-v141-mobile.webp');
     background-position: center 54%;
   }
 
   .gate26 .gate29-approach {
-    background-image: url('../assets/media/web/csanadi-kapu-v141-mobil.webp');
+    background-image: url('../assets/media/web/csanadi-gate-v141-mobile.webp');
     background-position: center;
   }
 

@@ -26,7 +26,7 @@ export function releaseSpaFeatureStyles(){
  if(dispose){dispose();dispose=null;}
 }
 async function data(){
- if(!dataPromise)dataPromise=fetch('json/adatok/spa-features-42.json',{cache:'no-store'}).then(response=>{
+ if(!dataPromise)dataPromise=fetch('json/data/spa-features-42.json',{cache:'no-store'}).then(response=>{
   if(!response.ok)throw Error('A SPA-komponensadat nem érhető el.');return response.json();
  }).catch(error=>{dataPromise=null;throw error;});
  return dataPromise;
@@ -47,7 +47,7 @@ function frameDocument(key,component){
  const base=new URL('./',document.baseURI).href;
  // Bootstrap remains pinned to the same CDN version as the original SPA.
  const bootstrap='https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css';
- return `<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><base href="${safeAttribute(base)}"><link rel="stylesheet" href="${bootstrap}">${css}</head><body data-spa-feature="${key}" class="${key==='arrival'?'arrival2':''}">${sanitizedHTML(component.html)}<script type="module" src="js/spa-frame-bootstrap-v1-42.js?v=1.42.10"></script></body></html>`;
+ return `<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><base href="${safeAttribute(base)}"><link rel="stylesheet" href="${bootstrap}">${css}</head><body data-spa-feature="${key}" class="${key==='arrival'?'arrival2':''}">${sanitizedHTML(component.html)}<script type="module" src="js/spa-frame-bootstrap-v1-42.js?v=1.42.12"></script></body></html>`;
 }
 export async function activateSpaFeature(shell,page){
  const token=activation,key=page?.schemaExtensions?.spaFeature;

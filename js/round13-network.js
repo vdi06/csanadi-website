@@ -24,10 +24,18 @@
   const actions=document.createElement('span');actions.className='cs-release-actions';
   const dismiss=()=>{toast.hidden=true;clearTimeout(dismissTimer);try{sessionStorage.setItem('csanadi-dismissed-release',version);}catch{}};
   const later=document.createElement('button');later.type='button';later.textContent='Később';later.addEventListener('click',dismiss);
-  const reload=document.createElement('button');reload.type='button';reload.textContent='Frissítés';reload.addEventListener('click',()=>{dismiss();location.reload();});
+  const reload=document.createElement('button');reload.type='button';reload.textContent='Frissítés';
+  reload.addEventListener('click',async()=>{
+   clearTimeout(dismissTimer);toast.hidden=true;
+   // Force a distinct HTML URL so Chromium and static CDN caches cannot reuse the prior document URL.
+   try{const registration=await navigator.serviceWorker?.getRegistration?.();await registration?.update?.();}catch{}
+   const next=new URL(location.href);
+   next.searchParams.set('release',version);
+   location.replace(next.href);
+  });
   actions.append(later,reload);toast.replaceChildren(message,actions);toast.hidden=false;
   clearTimeout(dismissTimer);
-  dismissTimer=setTimeout(()=>{if(!toast.hidden&&toast.contains(actions))dismiss();},12000);
+  // The update notice stays visible until the visitor chooses an action.
  };
  const checkVersion=()=>{
   if(checking)return checking;

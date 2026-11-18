@@ -88,10 +88,10 @@
   },
   "content": {
     "structurePath": "structure.json",
-    "mediaRegistryPath": "mediatar.json",
+    "mediaRegistryPath": "media-library.json",
     "collectionRoot": "entitasok",
     "componentRoot": "komponensek",
-    "languagesPath": "nyelvek.json"
+    "languagesPath": "languages.json"
   },
   "privacy": {
     "requireConsentForExternalEmbeds": true,
@@ -176,7 +176,7 @@
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r-v1.42.10",
+    "cacheVersion": "csanadi-r-v1.42.12",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,
@@ -322,7 +322,7 @@
       }
     },
     "round26": {
-      "dataPath": "adatok/megkozelites-fejlodes-26.json",
+      "dataPath": "data/arrival-and-development-26.json",
       "mapRequireConsent": true,
       "mapProvider": "openstreetmap",
       "mapZoom": 16,
@@ -338,7 +338,7 @@
       "changelogMaximumEntries": 200
     },
     "round25": {
-      "dataPath": "adatok/tanulas-kozosseg-25.json",
+      "dataPath": "data/learning-and-community-25.json",
       "plannerMaximumEntries": 80,
       "plannerRetentionDays": 30,
       "plannerLocalOnly": true,
@@ -351,7 +351,7 @@
       "faqMaximumDepth": 8
     },
     "round24": {
-      "dataPath": "adatok/orokseg-es-tudastar-24.json",
+      "dataPath": "data/heritage-and-knowledge-24.json",
       "diffMaximumBytes": 131072,
       "diffMaximumLines": 450,
       "summaryMaximumYears": 30,
@@ -362,7 +362,7 @@
       "historicalPartnersAreNotCurrentProof": true
     },
     "round23": {
-      "dataPath": "adatok/kozossegi-muhely-23.json",
+      "dataPath": "data/community-workshop-23.json",
       "volunteerMaxEntries": 80,
       "volunteerPlannedGoalHours": 50,
       "exportMaximumRecords": 500,
@@ -373,8 +373,8 @@
       "bilingualInformationalOnly": true
     },
     "round22": {
-      "dataPath": "adatok/iranytu-22.json",
-      "qrIndexPath": "adatok/qr-index-22.json",
+      "dataPath": "data/compass-22.json",
+      "qrIndexPath": "data/qr-index-22.json",
       "mediaPageSize": 12,
       "parentEventLimit": 4,
       "previewBaseUrl": "https://vdi06.github.io/csanadi-website/",
@@ -388,7 +388,7 @@
       "maxBundleBytes": 24000000,
       "kioskMaxSlides": 14,
       "kioskRotationMs": 8500,
-      "explorerDataPath": "adatok/felfedezo-21.json",
+      "explorerDataPath": "data/explorer-21.json",
       "homePreferencesStorageVersion": 1,
       "privacyLocalOnly": true
     },
@@ -455,7 +455,7 @@
     "studentAchievements": {
       "featuredDays": 7,
       "demoDaysAgoMaximum": 1500,
-      "dataPath": "adatok/tanuloi-sikerek.json"
+      "dataPath": "data/student-achievements.json"
     },
     "events": {
       "refreshSeconds": 60
@@ -564,23 +564,23 @@
     },
     "calendar": {
       "displayOnlyVerifiedDates": true,
-      "dataPath": "adatok/esemenyek.json"
+      "dataPath": "data/events.json"
     },
     "bell": {
       "requireVerifiedForOfficialBadge": true,
-      "dataPath": "adatok/csengetesi-rend.json"
+      "dataPath": "data/bell-schedule.json"
     },
     "gallery": {
       "imageCount": 48,
-      "dataPath": "adatok/kepgaleria.json"
+      "dataPath": "data/photo-gallery.json"
     },
     "social": {
       "requireVerifiedLinksForOfficialBadge": true,
-      "dataPath": "adatok/social.json"
+      "dataPath": "data/social.json"
     },
     "staff": {
       "onlyPublishedPeople": true,
-      "dataPath": "adatok/tantestulet.json"
+      "dataPath": "data/teaching-staff.json"
     }
   }
 }

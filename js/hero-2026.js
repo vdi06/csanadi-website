@@ -1,4 +1,4 @@
-import {createPicture,mediaItem} from './media.js?v=1.40.0';
+import {createPicture,mediaItem} from './media.js?v=1.42.12';
 import {settingNumber,isWithinConfiguredWindow} from './site-settings-2026.js';
 const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 const safeRoute=value=>typeof value==='string'&&/^#\/[a-z0-9/\-]*$/i.test(value)?value:'#/';
@@ -116,7 +116,7 @@ export function renderPremiumHero(block){
   const button=launcher.querySelector('#orbit-open');
   if(button){
    button.replaceChildren();
-   const logo=el('img','csn26-visual-logo');logo.src='assets/media/logo/csanadi-cimer-512.webp';logo.alt='';logo.width=118;logo.height=118;
+   const logo=el('img','csn26-visual-logo');logo.src='assets/media/logo/csanadi-crest-512.webp';logo.alt='';logo.width=118;logo.height=118;
    button.append(logo);
    button.setAttribute('title','Főmenü');button.setAttribute('aria-label','Főmenü megnyitása');
    button.setAttribute('aria-expanded','false');

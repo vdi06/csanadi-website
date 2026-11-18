@@ -1,6 +1,6 @@
 
  
-import {createPicture} from './media.js?v=1.40.0';
+import {createPicture} from './media.js?v=1.42.12';
 
 const node=(tag,klass='',value)=>{
   const e=document.createElement(tag);

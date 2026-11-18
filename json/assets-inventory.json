@@ -4,7 +4,7 @@
   "updatedAt": "2026-11-18",
   "items": [
     {
-      "path": "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
+      "path": "assets/documents/csanadi-website-complete-usage-guide-2026.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 219786,
@@ -20,7 +20,7 @@
       "sha256": "4edabd5ac2344063575f05eccbc5cdc8975cc04b6220890e50365227df5daa84"
     },
     {
-      "path": "assets/documents/digitalis-fajlok-es-beadas.pdf",
+      "path": "assets/documents/digital-files-es-submission.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 48220,
@@ -32,7 +32,7 @@
       "sha256": "8a2ad96eacd33bd78f77b28a6367a24b2a1b473e5422a17e1010c4181199063f"
     },
     {
-      "path": "assets/documents/felveteli-tajekozodasi-segedlet-2026.pdf",
+      "path": "assets/documents/admissions-tajekozodasi-handout-2026.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 48341,
@@ -44,7 +44,7 @@
       "sha256": "398e044c33cfd3b109d841b4e650be9c082ee90ce129dc242c85a5d997c80522"
     },
     {
-      "path": "assets/documents/segedlet-2026-01.pdf",
+      "path": "assets/documents/handout-2026-01.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46582,
@@ -61,7 +61,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-02.pdf",
+      "path": "assets/documents/handout-2026-02.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46721,
@@ -78,7 +78,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-03.pdf",
+      "path": "assets/documents/handout-2026-03.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46656,
@@ -95,7 +95,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-04.pdf",
+      "path": "assets/documents/handout-2026-04.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46632,
@@ -112,7 +112,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-05.pdf",
+      "path": "assets/documents/handout-2026-05.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46718,
@@ -129,7 +129,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-06.pdf",
+      "path": "assets/documents/handout-2026-06.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46652,
@@ -146,7 +146,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-07.pdf",
+      "path": "assets/documents/handout-2026-07.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46655,
@@ -163,7 +163,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-08.pdf",
+      "path": "assets/documents/handout-2026-08.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46647,
@@ -180,7 +180,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-09.pdf",
+      "path": "assets/documents/handout-2026-09.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46628,
@@ -197,7 +197,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-10.pdf",
+      "path": "assets/documents/handout-2026-10.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46663,
@@ -214,7 +214,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-11.pdf",
+      "path": "assets/documents/handout-2026-11.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46574,
@@ -231,7 +231,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-12.pdf",
+      "path": "assets/documents/handout-2026-12.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46668,
@@ -248,7 +248,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-13.pdf",
+      "path": "assets/documents/handout-2026-13.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46668,
@@ -265,7 +265,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-14.pdf",
+      "path": "assets/documents/handout-2026-14.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46664,
@@ -282,7 +282,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/segedlet-2026-15.pdf",
+      "path": "assets/documents/handout-2026-15.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 46690,
@@ -299,7 +299,7 @@
       "published": true
     },
     {
-      "path": "assets/documents/tanulas-sport-idogazdalkodas.pdf",
+      "path": "assets/documents/learning-sport-time-management.pdf",
       "type": "document",
       "mimeType": "application/pdf",
       "sizeBytes": 48603,
@@ -311,7 +311,7 @@
       "sha256": "4af4e9c0c78536f6fb53c23701ff1ac42c628e9466debcdb993a49e1ae42f97f"
     },
     {
-      "path": "assets/graphics/ikon-atletika.svg",
+      "path": "assets/graphics/icon-athletics.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
       "sizeBytes": 554,
@@ -329,7 +329,7 @@
       "published": true
     },
     {
-      "path": "assets/graphics/ikon-fenntarthatosag.svg",
+      "path": "assets/graphics/icon-sustainability.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
       "sizeBytes": 513,
@@ -347,7 +347,7 @@
       "published": true
     },
     {
-      "path": "assets/graphics/ikon-konyv.svg",
+      "path": "assets/graphics/icon-book.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
       "sizeBytes": 510,
@@ -365,7 +365,7 @@
       "published": true
     },
     {
-      "path": "assets/graphics/ikon-kosarlabda.svg",
+      "path": "assets/graphics/icon-basketball.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
       "sizeBytes": 520,
@@ -383,7 +383,7 @@
       "published": true
     },
     {
-      "path": "assets/graphics/ikon-kozosseg.svg",
+      "path": "assets/graphics/icon-community.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
       "sizeBytes": 584,
@@ -401,7 +401,7 @@
       "published": true
     },
     {
-      "path": "assets/graphics/ikon-labdarugas.svg",
+      "path": "assets/graphics/icon-football.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
       "sizeBytes": 557,
@@ -419,7 +419,7 @@
       "published": true
     },
     {
-      "path": "assets/graphics/ikon-laptop.svg",
+      "path": "assets/graphics/icon-laptop.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
       "sizeBytes": 500,
@@ -437,7 +437,7 @@
       "published": true
     },
     {
-      "path": "assets/graphics/ikon-naptar.svg",
+      "path": "assets/graphics/icon-calendar.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
       "sizeBytes": 542,
@@ -455,7 +455,7 @@
       "published": true
     },
     {
-      "path": "assets/graphics/ikon-roplabda.svg",
+      "path": "assets/graphics/icon-volleyball.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
       "sizeBytes": 501,
@@ -473,7 +473,7 @@
       "published": true
     },
     {
-      "path": "assets/graphics/ikon-uszas.svg",
+      "path": "assets/graphics/icon-swimming.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
       "sizeBytes": 524,
@@ -515,7 +515,7 @@
       "sha256": "271c85fd117a2d23b2d6534ab9cf0fa64f37df0257f52b05035f614d42abee10"
     },
     {
-      "path": "assets/media/logo/csanadi-cimer-512.webp",
+      "path": "assets/media/logo/csanadi-crest-512.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 22756,
@@ -721,7 +721,7 @@
       "sha256": "9bc495d484f9216bcdd46fc22fc47720bf6e25bf40fc5a1ab6e02a80ad3c3bc0"
     },
     {
-      "path": "assets/media/video/tudas-kozosseg.mp4",
+      "path": "assets/media/video/knowledge-community.mp4",
       "type": "video",
       "mimeType": "video/mp4",
       "sizeBytes": 612719,
@@ -733,7 +733,7 @@
       "sha256": "1b91a1d080561629c938115ee2f81a312cd67b367f662137ad807874648564bb"
     },
     {
-      "path": "assets/media/web/belepes-kapu.webp",
+      "path": "assets/media/web/entrance-gate.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 317992,
@@ -747,7 +747,7 @@
       "height": 941
     },
     {
-      "path": "assets/media/web/belepes-nyitott-mobil.webp",
+      "path": "assets/media/web/entrance-open-mobile.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 365434,
@@ -762,7 +762,7 @@
       "rightsConfirmed": false
     },
     {
-      "path": "assets/media/web/belepes-nyitott.webp",
+      "path": "assets/media/web/entrance-open.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 307012,
@@ -2296,7 +2296,7 @@
       "published": true
     },
     {
-      "path": "assets/media/web/eletkep-01.webp",
+      "path": "assets/media/web/school-life-01.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 115026,
@@ -2310,7 +2310,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/eletkep-02.webp",
+      "path": "assets/media/web/school-life-02.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 122184,
@@ -2324,7 +2324,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/eletkep-03.webp",
+      "path": "assets/media/web/school-life-03.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 150494,
@@ -2338,7 +2338,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/eletkep-04.webp",
+      "path": "assets/media/web/school-life-04.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 86222,
@@ -2352,7 +2352,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/eletkep-05.webp",
+      "path": "assets/media/web/school-life-05.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 136694,
@@ -2366,7 +2366,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/eletkep-06.webp",
+      "path": "assets/media/web/school-life-06.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 124066,
@@ -2380,7 +2380,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/eletkep-07.webp",
+      "path": "assets/media/web/school-life-07.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 147856,
@@ -2394,7 +2394,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/eletkep-08.webp",
+      "path": "assets/media/web/school-life-08.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 89440,
@@ -2408,7 +2408,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/eletkep-09.webp",
+      "path": "assets/media/web/school-life-09.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 191108,
@@ -2422,7 +2422,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/eletkep-10.webp",
+      "path": "assets/media/web/school-life-10.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 155646,
@@ -2436,7 +2436,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/eletkep-11.webp",
+      "path": "assets/media/web/school-life-11.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 21702,
@@ -2450,7 +2450,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-12.webp",
+      "path": "assets/media/web/school-life-12.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 25502,
@@ -2464,7 +2464,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-13.webp",
+      "path": "assets/media/web/school-life-13.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 31120,
@@ -2478,7 +2478,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-14.webp",
+      "path": "assets/media/web/school-life-14.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 49466,
@@ -2492,7 +2492,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-15.webp",
+      "path": "assets/media/web/school-life-15.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 26414,
@@ -2506,7 +2506,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-16.webp",
+      "path": "assets/media/web/school-life-16.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 29096,
@@ -2520,7 +2520,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-17.webp",
+      "path": "assets/media/web/school-life-17.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 20036,
@@ -2534,7 +2534,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-18.webp",
+      "path": "assets/media/web/school-life-18.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 11456,
@@ -2548,7 +2548,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-19.webp",
+      "path": "assets/media/web/school-life-19.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 21132,
@@ -2562,7 +2562,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-20.webp",
+      "path": "assets/media/web/school-life-20.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 32202,
@@ -2576,7 +2576,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-21.webp",
+      "path": "assets/media/web/school-life-21.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 13660,
@@ -2590,7 +2590,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-22.webp",
+      "path": "assets/media/web/school-life-22.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 22132,
@@ -2604,7 +2604,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-23.webp",
+      "path": "assets/media/web/school-life-23.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 22412,
@@ -2618,7 +2618,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-24.webp",
+      "path": "assets/media/web/school-life-24.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 31066,
@@ -2632,7 +2632,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-25.webp",
+      "path": "assets/media/web/school-life-25.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 35012,
@@ -2646,7 +2646,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-26.webp",
+      "path": "assets/media/web/school-life-26.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 25996,
@@ -2660,7 +2660,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-27.webp",
+      "path": "assets/media/web/school-life-27.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 27620,
@@ -2674,7 +2674,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-28.webp",
+      "path": "assets/media/web/school-life-28.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 26414,
@@ -2688,7 +2688,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-29.webp",
+      "path": "assets/media/web/school-life-29.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 25544,
@@ -2702,7 +2702,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-30.webp",
+      "path": "assets/media/web/school-life-30.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 28832,
@@ -2716,7 +2716,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-31.webp",
+      "path": "assets/media/web/school-life-31.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 22830,
@@ -2730,7 +2730,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-32.webp",
+      "path": "assets/media/web/school-life-32.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 28690,
@@ -2744,7 +2744,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-33.webp",
+      "path": "assets/media/web/school-life-33.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 31648,
@@ -2758,7 +2758,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-34.webp",
+      "path": "assets/media/web/school-life-34.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 38450,
@@ -2772,7 +2772,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-35.webp",
+      "path": "assets/media/web/school-life-35.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 26392,
@@ -2786,7 +2786,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-36.webp",
+      "path": "assets/media/web/school-life-36.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 27620,
@@ -2800,7 +2800,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-37.webp",
+      "path": "assets/media/web/school-life-37.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 35852,
@@ -2814,7 +2814,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-38.webp",
+      "path": "assets/media/web/school-life-38.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 24906,
@@ -2828,7 +2828,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-39.webp",
+      "path": "assets/media/web/school-life-39.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 21702,
@@ -2842,7 +2842,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-40.webp",
+      "path": "assets/media/web/school-life-40.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 23738,
@@ -2856,7 +2856,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-41.webp",
+      "path": "assets/media/web/school-life-41.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 40630,
@@ -2870,7 +2870,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-42.webp",
+      "path": "assets/media/web/school-life-42.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 31696,
@@ -2884,7 +2884,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-43.webp",
+      "path": "assets/media/web/school-life-43.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 21898,
@@ -2898,7 +2898,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-44.webp",
+      "path": "assets/media/web/school-life-44.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 33702,
@@ -2912,7 +2912,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-45.webp",
+      "path": "assets/media/web/school-life-45.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 20036,
@@ -2926,7 +2926,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-46.webp",
+      "path": "assets/media/web/school-life-46.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 24028,
@@ -2940,7 +2940,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-47.webp",
+      "path": "assets/media/web/school-life-47.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 33686,
@@ -2954,7 +2954,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eletkep-48.webp",
+      "path": "assets/media/web/school-life-48.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 44598,
@@ -2968,7 +2968,7 @@
       "height": 400
     },
     {
-      "path": "assets/media/web/eredmenyek-1600.webp",
+      "path": "assets/media/web/results-1600.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 89440,
@@ -2996,7 +2996,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/felveteli-1600.webp",
+      "path": "assets/media/web/admissions-1600.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 155646,
@@ -3024,7 +3024,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/iskolank-1600.webp",
+      "path": "assets/media/web/our-school-1600.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 147856,
@@ -3052,7 +3052,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/kozosseg-1600.webp",
+      "path": "assets/media/web/community-1600.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 136694,
@@ -3086,7 +3086,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/responsive/belepes-kapu-320.webp",
+      "path": "assets/media/web/responsive/entrance-gate-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 19044,
@@ -3102,7 +3102,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/belepes-kapu-640.webp",
+      "path": "assets/media/web/responsive/entrance-gate-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 62514,
@@ -3118,7 +3118,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/belepes-kapu-960.webp",
+      "path": "assets/media/web/responsive/entrance-gate-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 122144,
@@ -3134,7 +3134,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/belepes-nyitott-320.webp",
+      "path": "assets/media/web/responsive/entrance-open-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 18472,
@@ -3150,7 +3150,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/belepes-nyitott-640.webp",
+      "path": "assets/media/web/responsive/entrance-open-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 60128,
@@ -3166,7 +3166,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/belepes-nyitott-960.webp",
+      "path": "assets/media/web/responsive/entrance-open-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 117776,
@@ -7742,7 +7742,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-01-320.webp",
+      "path": "assets/media/web/responsive/school-life-01-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 12138,
@@ -7758,7 +7758,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-01-640.webp",
+      "path": "assets/media/web/responsive/school-life-01-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 32448,
@@ -7774,7 +7774,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-01-960.webp",
+      "path": "assets/media/web/responsive/school-life-01-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 54376,
@@ -7790,7 +7790,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-02-320.webp",
+      "path": "assets/media/web/responsive/school-life-02-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 14270,
@@ -7806,7 +7806,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-02-640.webp",
+      "path": "assets/media/web/responsive/school-life-02-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 36762,
@@ -7822,7 +7822,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-02-960.webp",
+      "path": "assets/media/web/responsive/school-life-02-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 59644,
@@ -7838,7 +7838,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-03-320.webp",
+      "path": "assets/media/web/responsive/school-life-03-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 14648,
@@ -7854,7 +7854,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-03-640.webp",
+      "path": "assets/media/web/responsive/school-life-03-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 40350,
@@ -7870,7 +7870,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-03-960.webp",
+      "path": "assets/media/web/responsive/school-life-03-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 69506,
@@ -7886,7 +7886,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-04-320.webp",
+      "path": "assets/media/web/responsive/school-life-04-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 9982,
@@ -7902,7 +7902,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-04-640.webp",
+      "path": "assets/media/web/responsive/school-life-04-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 24952,
@@ -7918,7 +7918,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-04-960.webp",
+      "path": "assets/media/web/responsive/school-life-04-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 40838,
@@ -7934,7 +7934,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-05-320.webp",
+      "path": "assets/media/web/responsive/school-life-05-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 14676,
@@ -7950,7 +7950,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-05-640.webp",
+      "path": "assets/media/web/responsive/school-life-05-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 39774,
@@ -7966,7 +7966,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-05-960.webp",
+      "path": "assets/media/web/responsive/school-life-05-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 64774,
@@ -7982,7 +7982,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-06-320.webp",
+      "path": "assets/media/web/responsive/school-life-06-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 12992,
@@ -7998,7 +7998,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-06-640.webp",
+      "path": "assets/media/web/responsive/school-life-06-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 33178,
@@ -8014,7 +8014,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-06-960.webp",
+      "path": "assets/media/web/responsive/school-life-06-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 56340,
@@ -8030,7 +8030,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-07-320.webp",
+      "path": "assets/media/web/responsive/school-life-07-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 15748,
@@ -8046,7 +8046,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-07-640.webp",
+      "path": "assets/media/web/responsive/school-life-07-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 43216,
@@ -8062,7 +8062,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-07-960.webp",
+      "path": "assets/media/web/responsive/school-life-07-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 72102,
@@ -8078,7 +8078,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-08-320.webp",
+      "path": "assets/media/web/responsive/school-life-08-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 11540,
@@ -8094,7 +8094,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-08-640.webp",
+      "path": "assets/media/web/responsive/school-life-08-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 27474,
@@ -8110,7 +8110,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-08-960.webp",
+      "path": "assets/media/web/responsive/school-life-08-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 43552,
@@ -8126,7 +8126,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-09-320.webp",
+      "path": "assets/media/web/responsive/school-life-09-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 15602,
@@ -8142,7 +8142,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-09-640.webp",
+      "path": "assets/media/web/responsive/school-life-09-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 47290,
@@ -8158,7 +8158,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-09-960.webp",
+      "path": "assets/media/web/responsive/school-life-09-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 85288,
@@ -8174,7 +8174,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-10-320.webp",
+      "path": "assets/media/web/responsive/school-life-10-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 14204,
@@ -8190,7 +8190,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-10-640.webp",
+      "path": "assets/media/web/responsive/school-life-10-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 41474,
@@ -8206,7 +8206,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-10-960.webp",
+      "path": "assets/media/web/responsive/school-life-10-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 73582,
@@ -8222,7 +8222,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-11-320.webp",
+      "path": "assets/media/web/responsive/school-life-11-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 8416,
@@ -8238,7 +8238,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-12-320.webp",
+      "path": "assets/media/web/responsive/school-life-12-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 10050,
@@ -8254,7 +8254,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-13-320.webp",
+      "path": "assets/media/web/responsive/school-life-13-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 12320,
@@ -8270,7 +8270,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-14-320.webp",
+      "path": "assets/media/web/responsive/school-life-14-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 18260,
@@ -8286,7 +8286,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-15-320.webp",
+      "path": "assets/media/web/responsive/school-life-15-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 9924,
@@ -8302,7 +8302,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-16-320.webp",
+      "path": "assets/media/web/responsive/school-life-16-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 11236,
@@ -8318,7 +8318,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-17-320.webp",
+      "path": "assets/media/web/responsive/school-life-17-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 8416,
@@ -8334,7 +8334,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-18-320.webp",
+      "path": "assets/media/web/responsive/school-life-18-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 4480,
@@ -8350,7 +8350,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-19-320.webp",
+      "path": "assets/media/web/responsive/school-life-19-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 8766,
@@ -8366,7 +8366,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-20-320.webp",
+      "path": "assets/media/web/responsive/school-life-20-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 12750,
@@ -8382,7 +8382,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-21-320.webp",
+      "path": "assets/media/web/responsive/school-life-21-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 5584,
@@ -8398,7 +8398,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-22-320.webp",
+      "path": "assets/media/web/responsive/school-life-22-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 9422,
@@ -8414,7 +8414,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-23-320.webp",
+      "path": "assets/media/web/responsive/school-life-23-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 9040,
@@ -8430,7 +8430,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-24-320.webp",
+      "path": "assets/media/web/responsive/school-life-24-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 13074,
@@ -8446,7 +8446,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-25-320.webp",
+      "path": "assets/media/web/responsive/school-life-25-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 13518,
@@ -8462,7 +8462,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-26-320.webp",
+      "path": "assets/media/web/responsive/school-life-26-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 10366,
@@ -8478,7 +8478,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-27-320.webp",
+      "path": "assets/media/web/responsive/school-life-27-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 11028,
@@ -8494,7 +8494,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-28-320.webp",
+      "path": "assets/media/web/responsive/school-life-28-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 9924,
@@ -8510,7 +8510,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-29-320.webp",
+      "path": "assets/media/web/responsive/school-life-29-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 10842,
@@ -8526,7 +8526,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-30-320.webp",
+      "path": "assets/media/web/responsive/school-life-30-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 12116,
@@ -8542,7 +8542,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-31-320.webp",
+      "path": "assets/media/web/responsive/school-life-31-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 9108,
@@ -8558,7 +8558,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-32-320.webp",
+      "path": "assets/media/web/responsive/school-life-32-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 12056,
@@ -8574,7 +8574,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-33-320.webp",
+      "path": "assets/media/web/responsive/school-life-33-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 11878,
@@ -8590,7 +8590,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-34-320.webp",
+      "path": "assets/media/web/responsive/school-life-34-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 16542,
@@ -8606,7 +8606,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-35-320.webp",
+      "path": "assets/media/web/responsive/school-life-35-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 10212,
@@ -8622,7 +8622,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-36-320.webp",
+      "path": "assets/media/web/responsive/school-life-36-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 11028,
@@ -8638,7 +8638,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-37-320.webp",
+      "path": "assets/media/web/responsive/school-life-37-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 13012,
@@ -8654,7 +8654,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-38-320.webp",
+      "path": "assets/media/web/responsive/school-life-38-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 9982,
@@ -8670,7 +8670,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-39-320.webp",
+      "path": "assets/media/web/responsive/school-life-39-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 8416,
@@ -8686,7 +8686,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-40-320.webp",
+      "path": "assets/media/web/responsive/school-life-40-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 9554,
@@ -8702,7 +8702,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-41-320.webp",
+      "path": "assets/media/web/responsive/school-life-41-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 15974,
@@ -8718,7 +8718,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-42-320.webp",
+      "path": "assets/media/web/responsive/school-life-42-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 12930,
@@ -8734,7 +8734,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-43-320.webp",
+      "path": "assets/media/web/responsive/school-life-43-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 9182,
@@ -8750,7 +8750,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-44-320.webp",
+      "path": "assets/media/web/responsive/school-life-44-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 14238,
@@ -8766,7 +8766,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-45-320.webp",
+      "path": "assets/media/web/responsive/school-life-45-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 8416,
@@ -8782,7 +8782,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-46-320.webp",
+      "path": "assets/media/web/responsive/school-life-46-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 9696,
@@ -8798,7 +8798,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-47-320.webp",
+      "path": "assets/media/web/responsive/school-life-47-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 14268,
@@ -8814,7 +8814,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eletkep-48-320.webp",
+      "path": "assets/media/web/responsive/school-life-48-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 16082,
@@ -8830,7 +8830,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eredmenyek-1600-320.webp",
+      "path": "assets/media/web/responsive/results-1600-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 11540,
@@ -8846,7 +8846,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eredmenyek-1600-640.webp",
+      "path": "assets/media/web/responsive/results-1600-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 27474,
@@ -8862,7 +8862,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/eredmenyek-1600-960.webp",
+      "path": "assets/media/web/responsive/results-1600-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 43552,
@@ -8926,7 +8926,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/felveteli-1600-320.webp",
+      "path": "assets/media/web/responsive/admissions-1600-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 14204,
@@ -8942,7 +8942,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/felveteli-1600-640.webp",
+      "path": "assets/media/web/responsive/admissions-1600-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 41474,
@@ -8958,7 +8958,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/felveteli-1600-960.webp",
+      "path": "assets/media/web/responsive/admissions-1600-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 73582,
@@ -9022,7 +9022,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/iskolank-1600-320.webp",
+      "path": "assets/media/web/responsive/our-school-1600-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 15748,
@@ -9038,7 +9038,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/iskolank-1600-640.webp",
+      "path": "assets/media/web/responsive/our-school-1600-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 43216,
@@ -9054,7 +9054,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/iskolank-1600-960.webp",
+      "path": "assets/media/web/responsive/our-school-1600-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 72102,
@@ -9118,7 +9118,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/kozosseg-1600-320.webp",
+      "path": "assets/media/web/responsive/community-1600-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 14676,
@@ -9135,7 +9135,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/kozosseg-1600-640.webp",
+      "path": "assets/media/web/responsive/community-1600-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 39774,
@@ -9152,7 +9152,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/kozosseg-1600-960.webp",
+      "path": "assets/media/web/responsive/community-1600-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 64774,
@@ -9220,7 +9220,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/siker-atletika-320.webp",
+      "path": "assets/media/web/responsive/success-athletics-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 14270,
@@ -9236,7 +9236,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/siker-atletika-640.webp",
+      "path": "assets/media/web/responsive/success-athletics-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 36762,
@@ -9252,7 +9252,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/siker-atletika-960.webp",
+      "path": "assets/media/web/responsive/success-athletics-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 59644,
@@ -9268,7 +9268,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/siker-kosarlabda-320.webp",
+      "path": "assets/media/web/responsive/success-basketball-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 12138,
@@ -9284,7 +9284,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/siker-kosarlabda-640.webp",
+      "path": "assets/media/web/responsive/success-basketball-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 32448,
@@ -9300,7 +9300,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/siker-kosarlabda-960.webp",
+      "path": "assets/media/web/responsive/success-basketball-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 54376,
@@ -9316,7 +9316,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/siker-roplabda-320.webp",
+      "path": "assets/media/web/responsive/success-volleyball-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 9982,
@@ -9332,7 +9332,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/siker-roplabda-640.webp",
+      "path": "assets/media/web/responsive/success-volleyball-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 24952,
@@ -9348,7 +9348,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/siker-roplabda-960.webp",
+      "path": "assets/media/web/responsive/success-volleyball-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 40838,
@@ -9364,7 +9364,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/siker-uszas-320.webp",
+      "path": "assets/media/web/responsive/success-swimming-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 14648,
@@ -9380,7 +9380,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/siker-uszas-640.webp",
+      "path": "assets/media/web/responsive/success-swimming-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 40350,
@@ -9396,7 +9396,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/responsive/siker-uszas-960.webp",
+      "path": "assets/media/web/responsive/success-swimming-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 69506,
@@ -9463,7 +9463,7 @@
       "published": false
     },
     {
-      "path": "assets/media/web/siker-atletika.webp",
+      "path": "assets/media/web/success-athletics.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 122184,
@@ -9477,7 +9477,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/siker-kosarlabda.webp",
+      "path": "assets/media/web/success-basketball.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 115026,
@@ -9491,7 +9491,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/siker-roplabda.webp",
+      "path": "assets/media/web/success-volleyball.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 86222,
@@ -9505,7 +9505,7 @@
       "height": 900
     },
     {
-      "path": "assets/media/web/siker-uszas.webp",
+      "path": "assets/media/web/success-swimming.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 150494,
@@ -10841,7 +10841,7 @@
       "rightsConfirmed": false
     },
     {
-      "path": "assets/media/illustrations/konyv-sotet.svg",
+      "path": "assets/media/illustrations/book-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 690,
       "sha256": "5a678d1380140c0920f44c3515c2e26dd742e22e8dd2be4319650419980c6acf",
@@ -10859,7 +10859,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/konyv-vilagos.svg",
+      "path": "assets/media/illustrations/book-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 692,
       "sha256": "85a297d953653d852eb78f3ecf895806f28850cd352f5cec23354e2b40b1d7ab",
@@ -10877,7 +10877,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/konyv-kontur.svg",
+      "path": "assets/media/illustrations/book-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 688,
       "sha256": "6d5eccd7c6fefa9c3fee69e3a5f160071a213e01821dc741ea4656cc65d399b1",
@@ -10895,7 +10895,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/diploma-sotet.svg",
+      "path": "assets/media/illustrations/diploma-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 684,
       "sha256": "db64ecd19a41944a84cc88463fce0c653af0ec5faf71cfc34e5cbc485060ddbe",
@@ -10913,7 +10913,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/diploma-vilagos.svg",
+      "path": "assets/media/illustrations/diploma-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 686,
       "sha256": "0cb9cfe2564d1fa3d7c2a81d6e0b42e1731aba79b3feac0111e9771ae89a8dd8",
@@ -10931,7 +10931,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/diploma-kontur.svg",
+      "path": "assets/media/illustrations/diploma-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 682,
       "sha256": "9dd799413165fd905c9354a1e955e411598ac24c44c9468179cfa7ac90d58e92",
@@ -10949,7 +10949,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/tanulas-sotet.svg",
+      "path": "assets/media/illustrations/learning-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 656,
       "sha256": "7b4a3b79a8f3957d2fa73a2d7563f5f1fd093c999bed1e61141523a7e5bd59d2",
@@ -10967,7 +10967,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/tanulas-vilagos.svg",
+      "path": "assets/media/illustrations/learning-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 658,
       "sha256": "c37a16ab0d5c53e8fe2ccab4474fb7f0cf3400cbe1b53c2606ce96a6b20cc0ce",
@@ -10985,7 +10985,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/tanulas-kontur.svg",
+      "path": "assets/media/illustrations/learning-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 654,
       "sha256": "a3416c46e942a64b17ce1f28e961734cb1e797c9932f6175e2d60f614d9ad2d0",
@@ -11003,7 +11003,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/laptop-sotet.svg",
+      "path": "assets/media/illustrations/laptop-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 724,
       "sha256": "a5b32d8674bcf91a4b86e26869e58f66bc71c10a6cbf5b94639c281e11eb9791",
@@ -11021,7 +11021,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/laptop-vilagos.svg",
+      "path": "assets/media/illustrations/laptop-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 726,
       "sha256": "1dc87b1dc6c38a6a6caf926b27d5f61e59bceb705f1354a03fd8553d661e0a33",
@@ -11039,7 +11039,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/laptop-kontur.svg",
+      "path": "assets/media/illustrations/laptop-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 722,
       "sha256": "2727aba943ec24343f06341d93c5a870efa0a241788233da525685f28a3f16cc",
@@ -11057,7 +11057,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/kodolas-sotet.svg",
+      "path": "assets/media/illustrations/kodolas-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 663,
       "sha256": "b1ee95523c2312320ffe4bc13cc0f7c09f68df3aecd0dd9e9b621229d6e3e6ac",
@@ -11075,7 +11075,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/kodolas-vilagos.svg",
+      "path": "assets/media/illustrations/kodolas-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 665,
       "sha256": "e2fce1431e024f7a9a9f5ee6caa2afaad394a29848b738bdb179ac599d820961",
@@ -11093,7 +11093,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/kodolas-kontur.svg",
+      "path": "assets/media/illustrations/kodolas-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 661,
       "sha256": "203c1130970d3318d837c2695086812bac35eae7306c19ff4549c722fcec5a0c",
@@ -11111,7 +11111,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/matematika-sotet.svg",
+      "path": "assets/media/illustrations/matematika-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 725,
       "sha256": "4eaf168a9137a569f90075fd79ecc3aae957b196243dcb61ee7a0927c6308c4d",
@@ -11129,7 +11129,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/matematika-vilagos.svg",
+      "path": "assets/media/illustrations/matematika-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 727,
       "sha256": "fea16794ef76cbf6fdebe68e22a2036606e7c5a64b6a394c0c140b11512c79f5",
@@ -11147,7 +11147,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/matematika-kontur.svg",
+      "path": "assets/media/illustrations/matematika-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 723,
       "sha256": "349505d70358de51e3faaeac1655471ff5dca379ecd2492f279b91ea10fe59c4",
@@ -11165,7 +11165,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/naptar-sotet.svg",
+      "path": "assets/media/illustrations/calendar-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 716,
       "sha256": "3ac42755e2dcfc81956e8894065ebe66ece2594f763d1da3a96a780b8e46bf8b",
@@ -11183,7 +11183,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/naptar-vilagos.svg",
+      "path": "assets/media/illustrations/calendar-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 718,
       "sha256": "3849345328ba46443b877459c3df60753b6dd06f0fd8b840d89a7ed249240fcc",
@@ -11201,7 +11201,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/naptar-kontur.svg",
+      "path": "assets/media/illustrations/calendar-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 714,
       "sha256": "7a161c82b7472249d75af8c8674767eaef062e9cf453336371d25874e3a039f5",
@@ -11219,7 +11219,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/ora-sotet.svg",
+      "path": "assets/media/illustrations/ora-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 681,
       "sha256": "72a06c80043c17525da0cbfec93ce9a03a65c50daf7ca09182b0f45a9a12f3a4",
@@ -11237,7 +11237,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/ora-vilagos.svg",
+      "path": "assets/media/illustrations/ora-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 683,
       "sha256": "283c4d2e4b4cddcadd10731e6f5ed98b528f7e1edb180b224ffba4be0d772456",
@@ -11255,7 +11255,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/ora-kontur.svg",
+      "path": "assets/media/illustrations/ora-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 679,
       "sha256": "7b8cfd5390ed1740306ae74bf3aed8178e99e2e310462ef3285d0d639af34a19",
@@ -11273,7 +11273,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/erem-sotet.svg",
+      "path": "assets/media/illustrations/erem-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 713,
       "sha256": "734126ba471cb9baec035051551e7c2d8b105e08744fc5a5a5f8a43b60977647",
@@ -11291,7 +11291,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/erem-vilagos.svg",
+      "path": "assets/media/illustrations/erem-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 715,
       "sha256": "26b1dd4f63c6b629a960fb3af0448d38807b8cf7f5f22b8793e3367e927b6477",
@@ -11309,7 +11309,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/erem-kontur.svg",
+      "path": "assets/media/illustrations/erem-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 711,
       "sha256": "de208a87624889e9caf0d2e827c5d1806706dfeff615c8c010c50ea9a0a1d735",
@@ -11327,7 +11327,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/kupa-sotet.svg",
+      "path": "assets/media/illustrations/kupa-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 689,
       "sha256": "434526bc568035a89efa8b9774c34ae9b12513bfdb87517333e8785466b3a5bd",
@@ -11345,7 +11345,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/kupa-vilagos.svg",
+      "path": "assets/media/illustrations/kupa-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 691,
       "sha256": "ad5be8528add61d5773815d87db5ca7d27be5bebc64f2220b24e7561f5ef6cda",
@@ -11363,7 +11363,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/kupa-kontur.svg",
+      "path": "assets/media/illustrations/kupa-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 687,
       "sha256": "03508f6d8d4bdb1fff0988091ca98b7f0613da012303782e5ba38ceaa17dc644",
@@ -11381,7 +11381,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/kosarlabda-sotet.svg",
+      "path": "assets/media/illustrations/basketball-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 682,
       "sha256": "1c3cffa60aa0eee4d038064ed49138dcaed48cd6698a0f986e0024db1831235e",
@@ -11399,7 +11399,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/kosarlabda-vilagos.svg",
+      "path": "assets/media/illustrations/basketball-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 684,
       "sha256": "abcf784d21e3d020d51af69cf5504ace87f4b9f7969b0b2a17874172675dc00f",
@@ -11417,7 +11417,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/kosarlabda-kontur.svg",
+      "path": "assets/media/illustrations/basketball-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 680,
       "sha256": "42cfcf10aacb51e8c45bce858a8e3cfa1a53632c45912b678a2335cf33bdc3d2",
@@ -11435,7 +11435,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/labdarugas-sotet.svg",
+      "path": "assets/media/illustrations/football-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 724,
       "sha256": "60f712d9f56d204eaaa4c3f34d804ed633f6f64b642004bf61a454e68765e955",
@@ -11453,7 +11453,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/labdarugas-vilagos.svg",
+      "path": "assets/media/illustrations/football-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 726,
       "sha256": "c5bf3cc484d669ba31a80132fef587438db7131516ae64d93881787d0742818b",
@@ -11471,7 +11471,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/labdarugas-kontur.svg",
+      "path": "assets/media/illustrations/football-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 722,
       "sha256": "658d796780a0e673b677e05f338b2e9389e35159fb837fb4baf911160a9ced29",
@@ -11489,7 +11489,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/roplabda-sotet.svg",
+      "path": "assets/media/illustrations/volleyball-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 693,
       "sha256": "e42ecde3fdc095a1218605603122933ec5a67184476985718ffa355c937d0411",
@@ -11507,7 +11507,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/roplabda-vilagos.svg",
+      "path": "assets/media/illustrations/volleyball-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 695,
       "sha256": "5fe01e822be205f03768e18447edd86e1ba7a3cc019500147d6ee62a5dc0dfe7",
@@ -11525,7 +11525,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/roplabda-kontur.svg",
+      "path": "assets/media/illustrations/volleyball-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 691,
       "sha256": "ed953a20429eb45a5be3d9f4f7f2355d11e568242e513899954eb84e4167e86a",
@@ -11543,7 +11543,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uszas-sotet.svg",
+      "path": "assets/media/illustrations/swimming-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 696,
       "sha256": "16b87a764bf0fe675243c3a84371bbbce318687939d4c24c7d49d82db3f94dba",
@@ -11561,7 +11561,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uszas-vilagos.svg",
+      "path": "assets/media/illustrations/swimming-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 698,
       "sha256": "dcc84bd058186ce0b4c05fea892d3609f665fe7bb2d08f38224aa28fd61097e0",
@@ -11579,7 +11579,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uszas-kontur.svg",
+      "path": "assets/media/illustrations/swimming-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 694,
       "sha256": "8ffbf0ebd90f6a188bcabdda1eb38741b7eed962f28c0576868e624179716e80",
@@ -11597,7 +11597,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/futas-sotet.svg",
+      "path": "assets/media/illustrations/futas-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 692,
       "sha256": "0300731ec030450d4f34b76c760d18186697f552692aa5274253a2cb74401e32",
@@ -11615,7 +11615,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/futas-vilagos.svg",
+      "path": "assets/media/illustrations/futas-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 694,
       "sha256": "8f5f3d42484dbb92a6fd143736952f2f60cf806522beef8c95be6f96ae5d89cd",
@@ -11633,7 +11633,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/futas-kontur.svg",
+      "path": "assets/media/illustrations/futas-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 690,
       "sha256": "6936451dd06bec5ce02c1daf32cc6516b84688f1ee2c2c3a1f2fe3ced305c580",
@@ -11651,7 +11651,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/csapat-sotet.svg",
+      "path": "assets/media/illustrations/csapat-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 757,
       "sha256": "c7bdac725f2d0d428f0c0df98eca63379e0c504acdfd70f064cedf37239adea7",
@@ -11669,7 +11669,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/csapat-vilagos.svg",
+      "path": "assets/media/illustrations/csapat-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 759,
       "sha256": "c1e6e7541c4d687d49bc818aeeaf7d40a6f04d3e3851d5d3b90d81f854d0c1b6",
@@ -11687,7 +11687,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/csapat-kontur.svg",
+      "path": "assets/media/illustrations/csapat-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 755,
       "sha256": "bd3dba38d937a629beb841d23e3c6ddee0c5362a60c357d390f9f4a09db650f4",
@@ -11705,7 +11705,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/fenntarthatosag-sotet.svg",
+      "path": "assets/media/illustrations/sustainability-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 674,
       "sha256": "c3e0c8902fd64baea75a4b7312b4be12d2b55d3abd1b3e52fb4a3f7b579bdfad",
@@ -11723,7 +11723,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/fenntarthatosag-vilagos.svg",
+      "path": "assets/media/illustrations/sustainability-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 676,
       "sha256": "57fd48875c3d96d88a25413d02219371d7b6a7018c1a529546aa6a32c696d081",
@@ -11741,7 +11741,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/fenntarthatosag-kontur.svg",
+      "path": "assets/media/illustrations/sustainability-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 672,
       "sha256": "5373f0be46b52a6716627e5fa52b19b1d74e579af002602f215a76e7f4329cfa",
@@ -11759,7 +11759,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/foldrajz-sotet.svg",
+      "path": "assets/media/illustrations/foldrajz-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 697,
       "sha256": "4eb0b5a02ba4ce19711ed2cbb7a29a5a528bc6dfe4f4fcef4db8d2f9b8f3d56f",
@@ -11777,7 +11777,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/foldrajz-vilagos.svg",
+      "path": "assets/media/illustrations/foldrajz-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 699,
       "sha256": "5a195e89ab9d033de65a5459ffc8c689912a7759e2bc3411ec75f6755eddc449",
@@ -11795,7 +11795,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/foldrajz-kontur.svg",
+      "path": "assets/media/illustrations/foldrajz-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 695,
       "sha256": "f9b1496f33eaeaf884c22e217435cd23212c0d938bf86bb3de71ee8edf1a5bf8",
@@ -11813,7 +11813,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/terkep-sotet.svg",
+      "path": "assets/media/illustrations/terkep-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 728,
       "sha256": "6bb18abd617f6faf40912f58dcc0789eceb715711dbdc0de7418311f057a48f6",
@@ -11831,7 +11831,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/terkep-vilagos.svg",
+      "path": "assets/media/illustrations/terkep-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 730,
       "sha256": "2ffbd4ddab734810717bc75dba0eb65b1a464ab899af3c7f42f4daa968a00602",
@@ -11849,7 +11849,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/terkep-kontur.svg",
+      "path": "assets/media/illustrations/terkep-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 726,
       "sha256": "e54f777a0dd41e2ea776cbfd88b104438f4a6c895f08d6ca1d9cfce5b2a8702f",
@@ -11867,7 +11867,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/dokumentum-sotet.svg",
+      "path": "assets/media/illustrations/dokumentum-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 657,
       "sha256": "62557dc83a1efb3ba12cb0ba5298ea9ea80219a3246acb100ba9099825343814",
@@ -11885,7 +11885,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/dokumentum-vilagos.svg",
+      "path": "assets/media/illustrations/dokumentum-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 659,
       "sha256": "ce3f7088d589b12792b3a83377cd9b6287d8691ed49433bcb8e974f73376bbea",
@@ -11903,7 +11903,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/dokumentum-kontur.svg",
+      "path": "assets/media/illustrations/dokumentum-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 655,
       "sha256": "c07c2c21f6c82e4de3688277e0180564cc378ec6d3c9064d4e6c5e633285c1b9",
@@ -11921,7 +11921,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-robotika-sotet.svg",
+      "path": "assets/media/illustrations/new-robotika-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 807,
       "sha256": "0bfb7fb89dacae2dadf85c9b7ab0c22f9c97fa7667182b42a3ebfcee803f2088",
@@ -11939,7 +11939,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-robotika-vilagos.svg",
+      "path": "assets/media/illustrations/new-robotika-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 809,
       "sha256": "0b53a75887db85d10a72d4b780ab07ca3325bbd46b98b5939eb4b6f4213b754c",
@@ -11957,7 +11957,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-robotika-kontur.svg",
+      "path": "assets/media/illustrations/new-robotika-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 805,
       "sha256": "a93f2a15eb63a979aea711a6d6ce1d4d74497845fa113ee18f83401763031344",
@@ -11975,7 +11975,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-kemia-sotet.svg",
+      "path": "assets/media/illustrations/new-kemia-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 741,
       "sha256": "1b59da2f108d1379dd2ea4f9580943392f1b3e80693f17cff76585dc2a4293ac",
@@ -11993,7 +11993,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-kemia-vilagos.svg",
+      "path": "assets/media/illustrations/new-kemia-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 743,
       "sha256": "b1e511bcec6261e2c915690f91061cfaddb3d7511c26531d601aa0f42d162b1f",
@@ -12011,7 +12011,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-kemia-kontur.svg",
+      "path": "assets/media/illustrations/new-kemia-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 739,
       "sha256": "c96494b5283cf24878ee8d9a7d983752e0d7773bf830c4a6a3dd2d9537ebad6e",
@@ -12029,7 +12029,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-nyelvek-sotet.svg",
+      "path": "assets/media/illustrations/new-nyelvek-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 698,
       "sha256": "8362d236b547f98fe97954b12a1f0192f9a8ff181f9d4a8fd313024a2e757748",
@@ -12047,7 +12047,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-nyelvek-vilagos.svg",
+      "path": "assets/media/illustrations/new-nyelvek-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 700,
       "sha256": "d3aa536a36f8fd7e6e5ba1ca550f3cff8584dd49f1775235eaed71cb031fd4a5",
@@ -12065,7 +12065,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-nyelvek-kontur.svg",
+      "path": "assets/media/illustrations/new-nyelvek-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 696,
       "sha256": "3136e6b8d990fc597c730da93e4ddad62621af76419ad847f83fdee30128b1b3",
@@ -12083,7 +12083,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-jegyzeteles-sotet.svg",
+      "path": "assets/media/illustrations/new-jegyzeteles-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 749,
       "sha256": "ae10b2b7172aef5be13867f296d7e981e8735578e77513bbd8c41c5418dbd14e",
@@ -12101,7 +12101,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-jegyzeteles-vilagos.svg",
+      "path": "assets/media/illustrations/new-jegyzeteles-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 751,
       "sha256": "8f8e1c807fed79cf93c22442ddb04807c25d1bc7b1488df912837839f9ad2a19",
@@ -12119,7 +12119,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-jegyzeteles-kontur.svg",
+      "path": "assets/media/illustrations/new-jegyzeteles-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 747,
       "sha256": "f2e580281dadbc05218f955924d2089b440fb238edafc5a98befcdb29e3cb926",
@@ -12137,7 +12137,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-dij-sotet.svg",
+      "path": "assets/media/illustrations/new-dij-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 706,
       "sha256": "d9484b9df93aaaefc70e02591405475e48cd8aea6e4064bac5fc1b6eae92f2a8",
@@ -12155,7 +12155,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-dij-vilagos.svg",
+      "path": "assets/media/illustrations/new-dij-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 708,
       "sha256": "4598cd52229d758ef579c87257d7dd884c0a9f8c2b4caf31a6124cff973eba0e",
@@ -12173,7 +12173,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-dij-kontur.svg",
+      "path": "assets/media/illustrations/new-dij-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 704,
       "sha256": "d283090c200c340224ae0cecfcef8bc41af1c4fb6d5ea8d5bfe10b5dbd24c0fa",
@@ -12191,7 +12191,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-palya-sotet.svg",
+      "path": "assets/media/illustrations/new-palya-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 756,
       "sha256": "e5c00b78824933a3309c37a25d7c92daa4073c625196f62d70474366563aed6d",
@@ -12209,7 +12209,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-palya-vilagos.svg",
+      "path": "assets/media/illustrations/new-palya-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 758,
       "sha256": "5ddae4e184499ef5d1977e357521b458f5e9de308851b5e46cfbf723536cc728",
@@ -12227,7 +12227,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-palya-kontur.svg",
+      "path": "assets/media/illustrations/new-palya-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 754,
       "sha256": "6625d737524b3b97aa5f998443ec7adbbb91cfa02a27f7ce76b24300a298afba",
@@ -12245,7 +12245,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-edzesterv-sotet.svg",
+      "path": "assets/media/illustrations/new-edzesterv-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 738,
       "sha256": "0e5b7831c063dabe2c219ed83fe64f356e6b5b2d6dadf5be9091492d6f5a8133",
@@ -12263,7 +12263,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-edzesterv-vilagos.svg",
+      "path": "assets/media/illustrations/new-edzesterv-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 740,
       "sha256": "b7283e3c005b1d0e80deed070549e734abf8afe983b9946499abf9a27e7182fa",
@@ -12281,7 +12281,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-edzesterv-kontur.svg",
+      "path": "assets/media/illustrations/new-edzesterv-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 736,
       "sha256": "d0a991d8e26289d4b672e1f2ccd20909782f8c15c9ee470c4a56993ec0aef29d",
@@ -12299,7 +12299,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-serulesmegelozes-sotet.svg",
+      "path": "assets/media/illustrations/new-serulesmegelozes-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 718,
       "sha256": "58960bd3c067d7c4862ca04ea459bf127390fc5a1fbaf84891de4e9357b8c227",
@@ -12317,7 +12317,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-serulesmegelozes-vilagos.svg",
+      "path": "assets/media/illustrations/new-serulesmegelozes-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 720,
       "sha256": "c2423fc79eb11d65218fdb9909e26e4c7c99ad38327a1b3e427902d7331df8a8",
@@ -12335,7 +12335,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-serulesmegelozes-kontur.svg",
+      "path": "assets/media/illustrations/new-serulesmegelozes-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 716,
       "sha256": "66d81210bada87b58575c20d0f11c12ba0d1e1e3fec85f5887b4afa1a74bca2c",
@@ -12353,7 +12353,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-viz-sotet.svg",
+      "path": "assets/media/illustrations/new-viz-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 677,
       "sha256": "dcc3fd374e1636e5d424cb66efd03c211452fb25535c78893e8156af6b57f7fc",
@@ -12371,7 +12371,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-viz-vilagos.svg",
+      "path": "assets/media/illustrations/new-viz-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 679,
       "sha256": "72249d50c04670879bdc49c335f69959705502a9be9f28f664f6f0f452b40ca0",
@@ -12389,7 +12389,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-viz-kontur.svg",
+      "path": "assets/media/illustrations/new-viz-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 675,
       "sha256": "2c5e62887828ae8f2de4d735e3d8319e64d26def8dda38a2354e4d246a4d6212",
@@ -12407,7 +12407,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-egeszseg-sotet.svg",
+      "path": "assets/media/illustrations/new-egeszseg-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 684,
       "sha256": "f0cf5fd38f50af9a12c8b9a0d103844941d6e152e85cffc97ab06fe2b4a67fdd",
@@ -12425,7 +12425,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-egeszseg-vilagos.svg",
+      "path": "assets/media/illustrations/new-egeszseg-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 686,
       "sha256": "5e310cba9c022d9ba8b9023cf6e0f426d8d26172d5e2ee16d1480d29d4ff33e2",
@@ -12443,7 +12443,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-egeszseg-kontur.svg",
+      "path": "assets/media/illustrations/new-egeszseg-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 682,
       "sha256": "dabda2afac360680ca2788db0b450ae028f90813d44d0435126522b275d69555",
@@ -12461,7 +12461,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-vizsgafelk-sotet.svg",
+      "path": "assets/media/illustrations/new-vizsgafelk-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 727,
       "sha256": "bf77c85cfbeb95fdb82ee7ef3313c5d0e04a09af092db2837c6599acaeb02871",
@@ -12479,7 +12479,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-vizsgafelk-vilagos.svg",
+      "path": "assets/media/illustrations/new-vizsgafelk-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 729,
       "sha256": "fb0050bde7e5a7cb1a1d65020e4dca2cbe9c34c6716bbfd0695f538780b3c41c",
@@ -12497,7 +12497,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-vizsgafelk-kontur.svg",
+      "path": "assets/media/illustrations/new-vizsgafelk-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 725,
       "sha256": "5c1a79f6d53808a6319b2c6e5f86215aaecc8704c476777c2054f4f9edce38e3",
@@ -12515,7 +12515,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-szulok-sotet.svg",
+      "path": "assets/media/illustrations/new-szulok-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 740,
       "sha256": "1c1d8a5070c4beb9ec608aa4dd528af92e6c39465c30354ca91cc33410105b3c",
@@ -12533,7 +12533,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-szulok-vilagos.svg",
+      "path": "assets/media/illustrations/new-szulok-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 742,
       "sha256": "5598132a1a54cb23b1dd31234c692c7f61058e68ba883d2471dc2a6b6146f65f",
@@ -12551,7 +12551,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-szulok-kontur.svg",
+      "path": "assets/media/illustrations/new-szulok-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 738,
       "sha256": "89014b95ffd4b04e499c1e373ea3c2d777a0a06cc8bb6f5b304b3b69d989dfe8",
@@ -12569,7 +12569,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-csengetes-sotet.svg",
+      "path": "assets/media/illustrations/new-csengetes-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 685,
       "sha256": "3fad661fd59e0ab36c5da201e1f8c8c5b937a63d2975b3ac2940f5de1e77d533",
@@ -12587,7 +12587,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-csengetes-vilagos.svg",
+      "path": "assets/media/illustrations/new-csengetes-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 687,
       "sha256": "204a6a1c38ba6a8f615b341b2f4e5ce1c070524ed9cbdabccd5d7473c37c4c11",
@@ -12605,7 +12605,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-csengetes-kontur.svg",
+      "path": "assets/media/illustrations/new-csengetes-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 683,
       "sha256": "49263f13368de663cd35489e42f3bc18afa9297fa372e03a1c722b523d22f66e",
@@ -12623,7 +12623,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-jelentkezes-sotet.svg",
+      "path": "assets/media/illustrations/new-jelentkezes-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 711,
       "sha256": "acb7ab0673765c4976df06704fee9dbb527130be879c53a764c2f1ea315e11db",
@@ -12641,7 +12641,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-jelentkezes-vilagos.svg",
+      "path": "assets/media/illustrations/new-jelentkezes-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 713,
       "sha256": "6735535cdd35405e6997afd378e716b3830c28849db398dfea61aa56ae1e8af7",
@@ -12659,7 +12659,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-jelentkezes-kontur.svg",
+      "path": "assets/media/illustrations/new-jelentkezes-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 709,
       "sha256": "b1d1c0bb5d20e63be2bd71acbdea1be5f8131b13514ea2f1e1424cb46eeb5ded",
@@ -12677,7 +12677,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-etkezes-sotet.svg",
+      "path": "assets/media/illustrations/new-etkezes-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 702,
       "sha256": "fbf116d0f3a0f29dff20d2e590f1db271dd15e8bc714e128696f7f0835f305a8",
@@ -12695,7 +12695,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-etkezes-vilagos.svg",
+      "path": "assets/media/illustrations/new-etkezes-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 704,
       "sha256": "b1cbda53acad7db864f068e16e42f468335f0287de3deb76dcc3c3adcaf2ec12",
@@ -12713,7 +12713,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-etkezes-kontur.svg",
+      "path": "assets/media/illustrations/new-etkezes-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 700,
       "sha256": "1384b65af883e551c876faaa47a9e649aa5899b8d6a657379e22eb342ca9a7fe",
@@ -12731,7 +12731,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-kozlekedes-sotet.svg",
+      "path": "assets/media/illustrations/new-kozlekedes-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 762,
       "sha256": "054ed4b21121ddd88b7b6b6565d58ddfa035e1a2abc007f1e55f46a90d6ff524",
@@ -12749,7 +12749,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-kozlekedes-vilagos.svg",
+      "path": "assets/media/illustrations/new-kozlekedes-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 764,
       "sha256": "12de70a3196c2cd8d6d0527580b044ee10ddc365ccf3b2bc454bbe8fc6eae092",
@@ -12767,7 +12767,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-kozlekedes-kontur.svg",
+      "path": "assets/media/illustrations/new-kozlekedes-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 760,
       "sha256": "d52869dd1f0655d4eba5000fca328f9f3234308120b967cfd47077f2d4a5f0b3",
@@ -12785,7 +12785,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-hozzaferes-sotet.svg",
+      "path": "assets/media/illustrations/new-hozzaferes-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 695,
       "sha256": "fe6939f643705225ad970b33345825e81a9c08169f92f9cbae141a0e2ed0f17a",
@@ -12803,7 +12803,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-hozzaferes-vilagos.svg",
+      "path": "assets/media/illustrations/new-hozzaferes-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 697,
       "sha256": "7fab1001a292ef9bd7df2413850e1c4c03ad38099eee15681d6048f2d386705d",
@@ -12821,7 +12821,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-hozzaferes-kontur.svg",
+      "path": "assets/media/illustrations/new-hozzaferes-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 693,
       "sha256": "3f2980e71ac24235c977993b7fe6dc0d0baba6a6f99b78038dc6a766b94ba5ac",
@@ -12839,7 +12839,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-adatbiztonsag-sotet.svg",
+      "path": "assets/media/illustrations/new-adatbiztonsag-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 650,
       "sha256": "0650262111d0d1de6392f7a37c4c0f8817514f94f19057e8bf30079d4e2b6b69",
@@ -12857,7 +12857,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-adatbiztonsag-vilagos.svg",
+      "path": "assets/media/illustrations/new-adatbiztonsag-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 652,
       "sha256": "8c9bf079c84b8f4799d4e4745826b63f1ac245bf1f3c67d15417e602739a26cf",
@@ -12875,7 +12875,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-adatbiztonsag-kontur.svg",
+      "path": "assets/media/illustrations/new-adatbiztonsag-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 648,
       "sha256": "8cab78dc892b7537a30c3027e2c4df95341527c87dc73a4ed46676c80af4c198",
@@ -12893,7 +12893,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-archivum-sotet.svg",
+      "path": "assets/media/illustrations/new-archivum-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 732,
       "sha256": "4c78d55a9896d8c01f0c241db58dc1a47fab58b646367d160e6879f5c8a3c8f9",
@@ -12911,7 +12911,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-archivum-vilagos.svg",
+      "path": "assets/media/illustrations/new-archivum-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 734,
       "sha256": "1cfee289451b34949cf68fcf15c5775e4af8b9aa9ee2f1ec6a716dcdbe08b210",
@@ -12929,7 +12929,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-archivum-kontur.svg",
+      "path": "assets/media/illustrations/new-archivum-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 730,
       "sha256": "d8b36e136cd6c6cd891bccedf6fe31708babd5a98365739d9a9821b58017775c",
@@ -12947,7 +12947,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-digitalis-ugy-sotet.svg",
+      "path": "assets/media/illustrations/new-digital-service-dark.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 722,
       "sha256": "e34049d1ee9de7376eb9f75f32117e6ef3ef56e73c91e9a63b755d7999704bf7",
@@ -12965,7 +12965,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-digitalis-ugy-vilagos.svg",
+      "path": "assets/media/illustrations/new-digital-service-light.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 724,
       "sha256": "55b7c7b7046cc7c1d336c531a70c0b4f9302e0c4f38f4576c5b794ef4c62b8b0",
@@ -12983,7 +12983,7 @@
       "rightsStatus": "institutional-review-before-publication"
     },
     {
-      "path": "assets/media/illustrations/uj-digitalis-ugy-kontur.svg",
+      "path": "assets/media/illustrations/new-digital-service-outline.svg",
       "mimeType": "image/svg+xml",
       "sizeBytes": 720,
       "sha256": "72d013b8dc6d48bf10ee6e7a8e18019ff4604c5e806423ff1b6db676bd147feb",
@@ -13134,7 +13134,7 @@
       "sha256": "1b0dc023c7fa4099536e95f45654c4211982af0bc76364cb64dcf718b7f99c94"
     },
     {
-      "path": "assets/media/web/v1-40/responsive/tudas-320.webp",
+      "path": "assets/media/web/v1-40/responsive/knowledge-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 10508,
@@ -13153,7 +13153,7 @@
       "sha256": "3ec122a87e0096fcf6688cdb37063863a47400f09ce2280cf58bdab588047ad5"
     },
     {
-      "path": "assets/media/web/v1-40/responsive/tudas-640.webp",
+      "path": "assets/media/web/v1-40/responsive/knowledge-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 27822,
@@ -13172,7 +13172,7 @@
       "sha256": "1ad8ca79c36b32c4ef198c5e13da8972f262869bd0876860c9abdab436887f7f"
     },
     {
-      "path": "assets/media/web/v1-40/responsive/tudas-960.webp",
+      "path": "assets/media/web/v1-40/responsive/knowledge-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 48194,
@@ -13191,7 +13191,7 @@
       "sha256": "542c85bb08be9c8371d977d1f1b9d7da85a3517b3cb0f46d6f1e439d8f28793b"
     },
     {
-      "path": "assets/media/web/v1-40/tudas-1600.webp",
+      "path": "assets/media/web/v1-40/knowledge-1600.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 109380,
@@ -13210,7 +13210,7 @@
       "sha256": "30d510f5ea461a121d8d58cc30f6e2e055e249f7f531a51f656346e0f237c79c"
     },
     {
-      "path": "assets/media/web/v1-40/responsive/tudas-mobile-320.webp",
+      "path": "assets/media/web/v1-40/responsive/knowledge-mobile-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 25880,
@@ -13229,7 +13229,7 @@
       "sha256": "2a44c6d5d810058464f53f81c7b8fa908e91349042d2c40857d54ee3648ce227"
     },
     {
-      "path": "assets/media/web/v1-40/responsive/tudas-mobile-480.webp",
+      "path": "assets/media/web/v1-40/responsive/knowledge-mobile-480.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 44406,
@@ -13248,7 +13248,7 @@
       "sha256": "eae0661de34d07c49c9299ed05443cb0348ed07147032ea90fe6570f89b0008c"
     },
     {
-      "path": "assets/media/web/v1-40/tudas-mobile-800.webp",
+      "path": "assets/media/web/v1-40/knowledge-mobile-800.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 95378,
@@ -13267,7 +13267,7 @@
       "sha256": "f57324d58a87f779f5f6b4e30744a2d31dbeaa3d805e6e55dca5f642293074f4"
     },
     {
-      "path": "assets/media/web/v1-40/responsive/kozosseg-320.webp",
+      "path": "assets/media/web/v1-40/responsive/community-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 11282,
@@ -13286,7 +13286,7 @@
       "sha256": "69bc3f7e216fc2d35573e9cb3995ce22f3bc1cfb7c18fdf9eba7c13f36655ba0"
     },
     {
-      "path": "assets/media/web/v1-40/responsive/kozosseg-640.webp",
+      "path": "assets/media/web/v1-40/responsive/community-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 35142,
@@ -13305,7 +13305,7 @@
       "sha256": "574cd1648e74d2488fa59a3a9457adb016a04ba1cbfb36069612c0dbeebf2de3"
     },
     {
-      "path": "assets/media/web/v1-40/responsive/kozosseg-960.webp",
+      "path": "assets/media/web/v1-40/responsive/community-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 68400,
@@ -13324,7 +13324,7 @@
       "sha256": "56d9a0527f3c3198b2c98d9cc7259b88fd333562ee3e4d5004a0e82c0b57c883"
     },
     {
-      "path": "assets/media/web/v1-40/kozosseg-1600.webp",
+      "path": "assets/media/web/v1-40/community-1600.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 166198,
@@ -13343,7 +13343,7 @@
       "sha256": "1bbeb00ac536652963f7e0e142fededa8263dccf9455e1453b31b70d2b8a810b"
     },
     {
-      "path": "assets/media/web/v1-40/responsive/kozosseg-mobile-320.webp",
+      "path": "assets/media/web/v1-40/responsive/community-mobile-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 23474,
@@ -13362,7 +13362,7 @@
       "sha256": "b0bf60625e2bfa6d4acfc687cbc57380b9a9f818af4c8b225b749fde39455da0"
     },
     {
-      "path": "assets/media/web/v1-40/responsive/kozosseg-mobile-480.webp",
+      "path": "assets/media/web/v1-40/responsive/community-mobile-480.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 44804,
@@ -13381,7 +13381,7 @@
       "sha256": "9589270b29298c1fbd7b089924b75f760a0eadb5c0eeeabc5caaaff48d8dc7d3"
     },
     {
-      "path": "assets/media/web/v1-40/kozosseg-mobile-800.webp",
+      "path": "assets/media/web/v1-40/community-mobile-800.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 113436,
@@ -13468,7 +13468,7 @@
       "sha256": "60bb161dcd4738fca33b13ea2088f33624a212bb5cdab3dcfa7eda50350acbe4"
     },
     {
-      "path": "assets/media/web/uszas-1600.webp",
+      "path": "assets/media/web/swimming-1600.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 272586,
@@ -13485,7 +13485,7 @@
       "sha256": "17704317fb859ce1259609a8334ca0db307437ec9c1f4528f0996466374c0120"
     },
     {
-      "path": "assets/media/web/responsive/uszas-1600-320.webp",
+      "path": "assets/media/web/responsive/swimming-1600-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 21644,
@@ -13502,7 +13502,7 @@
       "sha256": "335b968572ea5910234249f1e7cdec5c23adf813813642a84f0feca0754a8ff1"
     },
     {
-      "path": "assets/media/web/responsive/uszas-1600-640.webp",
+      "path": "assets/media/web/responsive/swimming-1600-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 64760,
@@ -13519,7 +13519,7 @@
       "sha256": "009a93dfaae553f95d2742403171a734e13e720cce532661c9f623bff622f86a"
     },
     {
-      "path": "assets/media/web/responsive/uszas-1600-960.webp",
+      "path": "assets/media/web/responsive/swimming-1600-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 119560,
@@ -13604,7 +13604,7 @@
       "sha256": "c09160f3b5091518283899b0b795478199f9a7e86a83c96fbf71c8daf03dd9ce"
     },
     {
-      "path": "assets/media/web/digitalis-1600.webp",
+      "path": "assets/media/web/digital-1600.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 234838,
@@ -13621,7 +13621,7 @@
       "sha256": "73d687a15fd2345aae18e6b06d915683df054e8f20a246bf5418b3f2ce9967c9"
     },
     {
-      "path": "assets/media/web/responsive/digitalis-1600-320.webp",
+      "path": "assets/media/web/responsive/digital-1600-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 15200,
@@ -13638,7 +13638,7 @@
       "sha256": "8d70f2cef88d305f014b04afa63d0620bb2aae7e6c48e2cd15c86feccbb9ae3d"
     },
     {
-      "path": "assets/media/web/responsive/digitalis-1600-640.webp",
+      "path": "assets/media/web/responsive/digital-1600-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 44502,
@@ -13655,7 +13655,7 @@
       "sha256": "00ed34aa967b8c1bfbfcd81a7f47994cf6b18e5800cc2c643c2774f8463e8c94"
     },
     {
-      "path": "assets/media/web/responsive/digitalis-1600-960.webp",
+      "path": "assets/media/web/responsive/digital-1600-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 86526,
@@ -13672,7 +13672,7 @@
       "sha256": "7dc3c01abcfce8bfc9f7b857c17ed65287ce3295997da3a0f9fbf3892a83fca5"
     },
     {
-      "path": "assets/media/web/kozosseg2-1600.webp",
+      "path": "assets/media/web/community2-1600.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 273588,
@@ -13689,7 +13689,7 @@
       "sha256": "97f7c87b53127875f69220add4aeef1ef42c1cbaf314f82a9db79d400a936ea1"
     },
     {
-      "path": "assets/media/web/responsive/kozosseg2-1600-320.webp",
+      "path": "assets/media/web/responsive/community2-1600-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 22962,
@@ -13706,7 +13706,7 @@
       "sha256": "506ab3a3c26a9ac4c787f83ad44eb076b8ec6426e0aa8ac47fa550e59284b410"
     },
     {
-      "path": "assets/media/web/responsive/kozosseg2-1600-640.webp",
+      "path": "assets/media/web/responsive/community2-1600-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 69694,
@@ -13723,7 +13723,7 @@
       "sha256": "6b09137f3cf122e591b82a2023d422a8c656e4b3bc3487e557bf7e8c41f086fb"
     },
     {
-      "path": "assets/media/web/responsive/kozosseg2-1600-960.webp",
+      "path": "assets/media/web/responsive/community2-1600-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 121126,
@@ -13944,7 +13944,7 @@
       "sha256": "1533ebfd1e85f3e9dbf0feb8047f7f4bd15b59ab2ba1a4a262fca73bba1334ad"
     },
     {
-      "path": "assets/media/web/hero-kozosseg-2026.webp",
+      "path": "assets/media/web/hero-community-2026.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 291914,
@@ -13961,7 +13961,7 @@
       "sha256": "5144763b5137f57b695c1cbb3139da3b1dbde4fafae4c02f2e0e48f0a1768b82"
     },
     {
-      "path": "assets/media/web/responsive/hero-kozosseg-2026-320.webp",
+      "path": "assets/media/web/responsive/hero-community-2026-320.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 23764,
@@ -13978,7 +13978,7 @@
       "sha256": "de12814bdab6eb7f42ed9f521d9f7308ac2491799f0e5a5fc3265a1ad3842e3d"
     },
     {
-      "path": "assets/media/web/responsive/hero-kozosseg-2026-640.webp",
+      "path": "assets/media/web/responsive/hero-community-2026-640.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 74060,
@@ -13995,7 +13995,7 @@
       "sha256": "ba7d095b0553975f1f90cc608e38260dddf1ebc5572b32f4191726463260eb56"
     },
     {
-      "path": "assets/media/web/responsive/hero-kozosseg-2026-960.webp",
+      "path": "assets/media/web/responsive/hero-community-2026-960.webp",
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 130426,

@@ -1,8 +1,8 @@
-import {formatBytes as formatSize} from './format-bytes.js?v=csanadi-r29n-20261115';
+import {formatBytes as formatSize} from './format-bytes.js?v=1.42.12';
  
 const ROOT = new URL('../', import.meta.url);
-const REGISTRY = new URL('../json/adatok/dokumentumok.json', import.meta.url);
-const SCHEMA = new URL('../json/schemas/dokumentumok.schema.json', import.meta.url);
+const REGISTRY = new URL('../json/data/documents.json', import.meta.url);
+const SCHEMA = new URL('../json/schemas/documents.schema.json', import.meta.url);
 const STATE_KEY='csanadi-2026-document-filters-v1';
 const SEARCH_KEY='csanadi-2026-document-saved-v1';
 const KIND={guide:'Segédlet',form:'Nyomtatvány',policy:'Szabályzat',publication:'Közzététel',other:'Egyéb'};
@@ -180,8 +180,8 @@ function renderCenterContents(mount,route,initial){
  manual.append(el('p','doc-kicker','TELJES FELHASZNÁLÓI ÉS KARBANTARTÓI DOKUMENTÁCIÓ'),el('h3',null,'A Csanádi Sportiskola 2026 teljes használati kézikönyve'),el('p',null,'66 tartalmi oldal, 10 karbantartó eszköz, a főmenü, a képes tartalomváltó, a keresés, a médiák, a dokumentumkezelés és az FTP-kiadás lépésről lépésre.'));
  const manualLinks=el('div','csn26-manual-links');
  const online=el('a','doc-center-link','Kereshető webes kézikönyv megnyitása');online.href=new URL('#/informaciok/utmutato',ROOT).href;
- const pdf=el('a','doc-center-link','PDF-kézikönyv letöltése');pdf.href=new URL('assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf',ROOT).href;pdf.download='csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf';
- const pdfView=el('a','doc-center-link','PDF megnyitása új lapon');pdfView.href=new URL('assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf',ROOT).href;pdfView.target='_blank';pdfView.rel='noopener noreferrer';manualLinks.append(online,pdfView,pdf);manual.append(manualLinks);mount.append(manual);
+ const pdf=el('a','doc-center-link','PDF-kézikönyv letöltése');pdf.href=new URL('assets/documents/csanadi-website-complete-usage-guide-2026.pdf',ROOT).href;pdf.download='csanadi-website-complete-usage-guide-2026.pdf';
+ const pdfView=el('a','doc-center-link','PDF megnyitása új lapon');pdfView.href=new URL('assets/documents/csanadi-website-complete-usage-guide-2026.pdf',ROOT).href;pdfView.target='_blank';pdfView.rel='noopener noreferrer';manualLinks.append(online,pdfView,pdf);manual.append(manualLinks);mount.append(manual);
  const officialLinks=[
   ['Intézményi alapdokumentumok','#/informaciok/dokumentumtar','intezmenyi-szabalyzat'],
   ['Szülői nyomtatványok','#/informaciok/mindennapi-tudnivalok/szuloi-informaciok','intezmenyi-nyomtatvany'],

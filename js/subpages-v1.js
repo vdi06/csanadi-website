@@ -1,5 +1,5 @@
 // Közös, statikus tárhelyen is működő aloldali finomítások.
-import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.39.16';
+import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.42.12';
 const forbiddenHost = /(^|\.)csanadi-bp\.edu\.hu$/i;
 const legacyRoutes = new Map([
   ['tortenet.html','#/iskolank/tortenet'],
@@ -109,7 +109,7 @@ export function initSubpageEnhancements() {
   menu.setAttribute('title','Főmenü');
   // Az eredeti iskolai címer a lap tetején és összecsukva egyaránt középen
   // nyitja meg a főmenüt. A funkció neve az akadálymentes aria-labelben marad.
-  menu.innerHTML = '<img class="cs-subpage-menu-logo" src="assets/media/logo/csanadi-cimer-512.webp" width="46" height="46" alt="" aria-hidden="true">';
+  menu.innerHTML = '<img class="cs-subpage-menu-logo" src="assets/media/logo/csanadi-crest-512.webp" width="46" height="46" alt="" aria-hidden="true">';
   // Nem hivatkozunk a kezdőlapi vizuális indítógombra: az oldalváltás
   // ideiglenesen áthelyezheti, az aloldali menünek ettől függetlenül működnie kell.
   menu.addEventListener('click', () => document.dispatchEvent(new Event('csanadi:menu-toggle')));

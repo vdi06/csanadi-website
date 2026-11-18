@@ -2,8 +2,8 @@
 
 
  
-const PHOTO_URL = new URL('../json/adatok/kepgaleria.json', import.meta.url);
-const VIDEO_URL = new URL('../json/adatok/galeriavideok.json', import.meta.url);
+const PHOTO_URL = new URL('../json/data/photo-gallery.json', import.meta.url);
+const VIDEO_URL = new URL('../json/data/gallery-videos.json', import.meta.url);
 const albums = [['mind','Összes album','✦'],['sport','Sportpillanatok','🏅'],['oktatas','Tanulás és tudás','✎'],['kozosseg','Közösségi élet','♡']];
 const disciplines=[['mind','Minden sportág'],['kosarlabda','Kosárlabda'],['atletika','Atlétika'],['labdarugas','Labdarúgás'],['uszas','Úszás'],['roplabda','Röplabda'],['asztalitenisz','Asztalitenisz'],['egyeb','További sportágak']];
 const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};

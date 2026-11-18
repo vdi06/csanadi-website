@@ -1,4 +1,4 @@
-const INDEX=new URL('../json/adatok/oldalmedia-2026.json',import.meta.url);
+const INDEX=new URL('../json/data/page-media-2026.json',import.meta.url);
 const els=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e;};
 let indexPromise;
 async function index(){if(!indexPromise)indexPromise=fetch(INDEX,{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Médiaindex nem elérhető');return r.json();});return indexPromise;}

@@ -4,11 +4,11 @@ import {recommendRelatedContent,validateEditorialRules} from './search-recommend
 const TYPES={page:'Oldal',news:'Hír',event:'Esemény',document:'Dokumentum',image:'Galériakép',video:'Videó'};
 const SECTIONS={iskolank:'Iskolánk',oktatas:'Oktatás',sport:'Sport', 'hirek-es-esemenyek':'Hírek és események',informaciok:'Információk',kapcsolat:'Kapcsolat',home:'Kezdőlap'};
 const DATASETS=[
- ['news','adatok/hirek-hivatalos.json'],
- ['event','adatok/esemenyek.json'],
- ['document','adatok/dokumentumok.json'],
- ['image','adatok/kepgaleria.json'],
- ['video','adatok/galeriavideok.json']
+ ['news','data/official-news.json'],
+ ['event','data/events.json'],
+ ['document','data/documents.json'],
+ ['image','data/photo-gallery.json'],
+ ['video','data/gallery-videos.json']
 ];
 const element=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!=null)el.textContent=String(text);return el;};
 const sectionOf=(route,type)=>{
@@ -189,7 +189,7 @@ export function setupSmartSearch({catalog,loadJSON,norm,dialog,input,results,sta
   if(!dialog.hidden)render();
   const settled=await Promise.allSettled([
    ...DATASETS.map(async ([t,path])=>({t,data:await loadJSON(path)})),
-   loadJSON('adatok/ajanlasi-szabalyok-v1-40-10.json').then(data=>({t:'curation',data}))
+   loadJSON('data/recommendation-rules-v1-40-10.json').then(data=>({t:'curation',data}))
   ]);
   if(serial!==rebuildSerial)return;
   const indexed=[...pageEntries];

@@ -19,7 +19,7 @@ export function updatePageMeta(page,route){
  makeMeta('name','description',summary);makeMeta('property','og:type','website');makeMeta('property','og:title',fullTitle);
  makeMeta('property','og:description',summary);makeMeta('property','og:url',seoCanonical);
  makeMeta('property','og:site_name','Csanádi Árpád Sportiskola');makeMeta('property','og:locale','hu_HU');
- makeMeta('property','og:image',new URL('assets/media/logo/csanadi-cimer-512.webp',document.baseURI).href);
+ makeMeta('property','og:image',new URL('assets/media/logo/csanadi-crest-512.webp',document.baseURI).href);
  makeMeta('name','twitter:card','summary');makeMeta('name','twitter:title',fullTitle);
  makeMeta('name','twitter:description',summary);
  // A közzététel előtti noindex állapotot nem módosítjuk automatikusan.
@@ -37,7 +37,7 @@ export function renderHistoryTimeline(){
  const select=e('select');select.setAttribute('aria-label','Történeti időszak');
  for(const [value,label] of [['all','Minden korszak'],['before1980','1980 előtt'],['after1980','1980-tól']]){const o=e('option','',label);o.value=value;select.append(o);}
  tools.append(select);root.append(tools,list,state);
- get('adatok/iskolatorteneti-idovonal.json').then(data=>{
+ get('data/school-history-timeline.json').then(data=>{
   const entries=Array.isArray(data.events)?data.events:[];
   const draw=()=>{list.replaceChildren();let visible=entries.filter(x=>select.value==='all'||(select.value==='before1980'?x.year<1980:x.year>=1980));
    for(const item of visible){const li=e('li','next10-milestone');const date=e('time','next10-year',item.year);date.dateTime=String(item.year);
@@ -79,7 +79,7 @@ export function renderSportsStatisticsV3(){
   }
   graph.append(svg);
  }
- get('adatok/sportsikerek.json').then(data=>{const counts=new Map();for(const item of data.items||[])if(item.verified===true&&item.status==='verified'&&item.category)counts.set(item.category,(counts.get(item.category)||0)+1);
+ get('data/sports-achievements.json').then(data=>{const counts=new Map();for(const item of data.items||[])if(item.verified===true&&item.status==='verified'&&item.category)counts.set(item.category,(counts.get(item.category)||0)+1);
   rows=[...counts].map(([label,count])=>({label,count})).sort((a,b)=>b.count-a.count||a.label.localeCompare(b.label,'hu'));draw();
  }).catch(()=>notice.textContent='A sporteredmény-JSON most nem elérhető.');
  return root;
@@ -95,7 +95,7 @@ export function renderDocumentInsights(){
   if(!matches.length)area.append(e('p','next10-note','Nincs a feltételeknek megfelelő dokumentum.'));
  };
  search.addEventListener('input',paint);type.addEventListener('change',paint);
- get('adatok/dokumentumok.json').then(data=>{docs=(data.documents||[]).filter(d=>d.status==='published');categories=data.categories||[];const all=e('option','','Minden kategória');all.value='all';type.append(all);
+ get('data/documents.json').then(data=>{docs=(data.documents||[]).filter(d=>d.status==='published');categories=data.categories||[];const all=e('option','','Minden kategória');all.value='all';type.append(all);
   for(const x of categories){const op=e('option','',x.label);op.value=x.id;type.append(op);}paint();
  }).catch(()=>count.textContent='A dokumentum-JSON nem érhető el.');
  return root;

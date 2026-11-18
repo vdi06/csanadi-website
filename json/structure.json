@@ -2,386 +2,386 @@
   "schemaVersion": "1.0.0",
   "nodes": [
     {
-      "path": "oldalak/iskolank.json",
+      "path": "pages/our-school.json",
       "order": 1,
       "children": [
         {
-          "path": "oldalak/iskolank/bemutatkozas.json",
+          "path": "pages/our-school/introduction.json",
           "order": 1
         },
         {
-          "path": "oldalak/iskolank/kuldetes-es-ertekek.json",
+          "path": "pages/our-school/mission-and-values.json",
           "order": 2
         },
         {
-          "path": "oldalak/iskolank/tantestulet.json",
+          "path": "pages/our-school/teaching-staff.json",
           "order": 3
         },
         {
-          "path": "oldalak/iskolank/tortenet.json",
+          "path": "pages/our-school/history.json",
           "order": 4,
           "children": [
             {
-              "path": "oldalak/iskolank/hagyomanyok-es-elismeresek.json",
+              "path": "pages/our-school/traditions-and-awards.json",
               "order": 1,
               "menuVisible": false
             },
             {
-              "path": "oldalak/iskolank/buszkesegeink.json",
+              "path": "pages/our-school/our-achievements.json",
               "order": 2,
               "menuVisible": false
             },
             {
-              "path": "oldalak/iskolank/a-honlap-szuletese.json",
+              "path": "pages/our-school/website-history.json",
               "order": 3,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/iskolank/partnerek.json",
+          "path": "pages/our-school/partners.json",
           "order": 5,
           "children": [
             {
-              "path": "oldalak/iskolank/alapitvany.json",
+              "path": "pages/our-school/foundation.json",
               "order": 1,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/iskolank/oko-iskola.json",
+          "path": "pages/our-school/eco-school.json",
           "order": 6
         },
         {
-          "path": "oldalak/iskolank/felfedezo.json",
+          "path": "pages/our-school/explorer.json",
           "order": 7
         },
         {
-          "path": "oldalak/iskolank/iskolai-iranytu.json",
+          "path": "pages/our-school/school-compass.json",
           "order": 8
         },
         {
-          "path": "oldalak/iskolank/iskolai-muhely.json",
+          "path": "pages/our-school/school-workshop.json",
           "order": 9
         }
       ]
     },
     {
-      "path": "oldalak/oktatas.json",
+      "path": "pages/education.json",
       "order": 2,
       "children": [
         {
-          "path": "oldalak/oktatas/kepzeseink.json",
+          "path": "pages/education/programs.json",
           "order": 1,
           "children": [
             {
-              "path": "oldalak/oktatas/kepzeseink/altalanos-iskola.json",
+              "path": "pages/education/programs/primary-school.json",
               "order": 1,
               "menuVisible": false
             },
             {
-              "path": "oldalak/oktatas/kepzeseink/gimnazium.json",
+              "path": "pages/education/programs/secondary-school.json",
               "order": 2,
               "menuVisible": false
             },
             {
-              "path": "oldalak/oktatas/kepzeseink/sportiskolai-neveles.json",
+              "path": "pages/education/programs/sports-school-education.json",
               "order": 3,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/oktatas/tanevek.json",
+          "path": "pages/education/school-years.json",
           "order": 2,
           "children": [
             {
-              "path": "oldalak/oktatas/tanevek/aktualis-tanev.json",
+              "path": "pages/education/school-years/current-school-year.json",
               "order": 1,
               "menuVisible": false
             },
             {
-              "path": "oldalak/oktatas/tanevek/korabbi-tanevek.json",
+              "path": "pages/education/school-years/previous-school-years.json",
               "order": 2,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/oktatas/vizsgak.json",
+          "path": "pages/education/exams.json",
           "order": 3,
           "children": [
             {
-              "path": "oldalak/oktatas/vizsgak/erettsegi.json",
+              "path": "pages/education/exams/graduation-exams.json",
               "order": 1,
               "menuVisible": false
             },
             {
-              "path": "oldalak/oktatas/vizsgak/osztalyozo-vizsgak.json",
+              "path": "pages/education/exams/classification-exams.json",
               "order": 2,
               "menuVisible": false
             },
             {
-              "path": "oldalak/oktatas/vizsgak/egyeb-vizsgak.json",
+              "path": "pages/education/exams/other-exams.json",
               "order": 3,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/oktatas/tananyagok-es-jegyzetek.json",
+          "path": "pages/education/learning-resources.json",
           "order": 4,
           "children": [
             {
-              "path": "oldalak/oktatas/tananyagok-es-jegyzetek/tanulastamogatas.json",
+              "path": "pages/education/learning-resources/learning-support.json",
               "order": 1,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/oktatas/konyvtar.json",
+          "path": "pages/education/library.json",
           "order": 5,
           "children": [
             {
-              "path": "oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json",
+              "path": "pages/education/library/library-services.json",
               "order": 1,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/oktatas/digitalis-kultura.json",
+          "path": "pages/education/digital-culture.json",
           "order": 6,
           "children": [
             {
-              "path": "oldalak/oktatas/digitalis-kultura/online-biztonsag.json",
+              "path": "pages/education/digital-culture/online-safety.json",
               "order": 1,
               "menuVisible": false
             },
             {
-              "path": "oldalak/oktatas/digitalis-kultura/mesterseges-intelligencia.json",
+              "path": "pages/education/digital-culture/artificial-intelligence.json",
               "order": 2,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/oktatas/tanulas-es-kozosseg.json",
+          "path": "pages/education/learning-and-community.json",
           "order": 7
         }
       ]
     },
     {
-      "path": "oldalak/oktatas/felveteli.json",
+      "path": "pages/education/admissions.json",
       "order": 3,
       "children": [
         {
-          "path": "oldalak/oktatas/felveteli/elso-evfolyam.json",
+          "path": "pages/education/admissions/first-grade.json",
           "order": 1
         },
         {
-          "path": "oldalak/oktatas/felveteli/kilencedik-evfolyam.json",
+          "path": "pages/education/admissions/ninth-grade.json",
           "order": 2
         },
         {
-          "path": "oldalak/oktatas/felveteli/nyilt-napok.json",
+          "path": "pages/education/admissions/open-days.json",
           "order": 3
         },
         {
-          "path": "oldalak/oktatas/felveteli/felveteli-hataridok.json",
+          "path": "pages/education/admissions/admission-deadlines.json",
           "order": 4
         }
       ]
     },
     {
-      "path": "oldalak/sport.json",
+      "path": "pages/sports.json",
       "order": 4,
       "children": [
         {
-          "path": "oldalak/sport/sportagak.json",
+          "path": "pages/sports/sports-disciplines.json",
           "order": 1,
           "children": [
             {
-              "path": "oldalak/sport/sportolok.json",
+              "path": "pages/sports/athletes.json",
               "order": 1,
               "menuVisible": false
             },
             {
-              "path": "oldalak/sport/csapatok.json",
+              "path": "pages/sports/teams.json",
               "order": 2,
               "menuVisible": false
             },
             {
-              "path": "oldalak/sport/edzok.json",
+              "path": "pages/sports/coaches.json",
               "order": 3,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/sport/sporteredmenyek.json",
+          "path": "pages/sports/sports-results.json",
           "order": 2
         },
         {
-          "path": "oldalak/sport/sportgaleriak.json",
+          "path": "pages/sports/sports-galleries.json",
           "order": 3
         },
         {
-          "path": "oldalak/sport/olimpiai-orokseg-es-tudastar.json",
+          "path": "pages/sports/olympic-heritage-and-knowledge.json",
           "order": 4
         }
       ]
     },
     {
-      "path": "oldalak/hirek-es-esemenyek.json",
+      "path": "pages/news-and-events.json",
       "order": 5,
       "children": [
         {
-          "path": "oldalak/hirek-es-esemenyek/hirek.json",
+          "path": "pages/news-and-events/news.json",
           "order": 1,
           "children": [
             {
-              "path": "oldalak/hirek-es-esemenyek/hirek/iskolai-hirek.json",
+              "path": "pages/news-and-events/news/school-news.json",
               "order": 1,
               "menuVisible": false
             },
             {
-              "path": "oldalak/hirek-es-esemenyek/hirek/sporthirek.json",
+              "path": "pages/news-and-events/news/sports-news.json",
               "order": 2,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/hirek-es-esemenyek/esemenynaptar.json",
+          "path": "pages/news-and-events/event-calendar.json",
           "order": 2,
           "children": [
             {
-              "path": "oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json",
+              "path": "pages/news-and-events/event-calendar/school-events.json",
               "order": 1,
               "menuVisible": false
             },
             {
-              "path": "oldalak/hirek-es-esemenyek/esemenynaptar/sportesemenyek.json",
+              "path": "pages/news-and-events/event-calendar/sport-events.json",
               "order": 2,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/hirek-es-esemenyek/kozlemenyek.json",
+          "path": "pages/news-and-events/announcements.json",
           "order": 3
         },
         {
-          "path": "oldalak/hirek-es-esemenyek/hirek/hirarchivum.json",
+          "path": "pages/news-and-events/news/news-archive.json",
           "order": 4
         }
       ]
     },
     {
-      "path": "oldalak/informaciok.json",
+      "path": "pages/information.json",
       "order": 6,
       "children": [
         {
-          "path": "oldalak/informaciok/mindennapi-tudnivalok.json",
+          "path": "pages/information/daily-information.json",
           "order": 1,
           "children": [
             {
-              "path": "oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json",
+              "path": "pages/information/daily-information/bell-schedule.json",
               "order": 1,
               "menuVisible": false
             },
             {
-              "path": "oldalak/informaciok/mindennapi-tudnivalok/etkezes.json",
+              "path": "pages/information/daily-information/meals.json",
               "order": 2,
               "menuVisible": false
             },
             {
-              "path": "oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json",
+              "path": "pages/information/daily-information/parent-information.json",
               "order": 3,
               "menuVisible": false
             },
             {
-              "path": "oldalak/informaciok/mindennapi-tudnivalok/megkozelites.json",
+              "path": "pages/information/daily-information/directions.json",
               "order": 4,
               "menuVisible": false
             },
             {
-              "path": "oldalak/informaciok/mindennapi-tudnivalok/terkep.json",
+              "path": "pages/information/daily-information/map.json",
               "order": 5,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/informaciok/dokumentumtar.json",
+          "path": "pages/information/document-library.json",
           "order": 2,
           "children": [
             {
-              "path": "oldalak/informaciok/dokumentumtar/szabalyzatok.json",
+              "path": "pages/information/document-library/policies.json",
               "order": 1,
               "menuVisible": false
             },
             {
-              "path": "oldalak/informaciok/dokumentumtar/nyomtatvanyok.json",
+              "path": "pages/information/document-library/forms.json",
               "order": 2,
               "menuVisible": false
             },
             {
-              "path": "oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json",
+              "path": "pages/information/document-library/public-disclosures.json",
               "order": 3,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/informaciok/digitalis-ugyintezes.json",
+          "path": "pages/information/digital-services.json",
           "order": 3
         },
         {
-          "path": "oldalak/informaciok/kozossegi-szolgalat.json",
+          "path": "pages/information/community-service.json",
           "order": 4,
           "children": [
             {
-              "path": "oldalak/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok.json",
+              "path": "pages/information/community-service/community-service-guide.json",
               "order": 1,
               "menuVisible": false
             },
             {
-              "path": "oldalak/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok.json",
+              "path": "pages/information/community-service/community-service-regulations.json",
               "order": 2,
               "menuVisible": false
             },
             {
-              "path": "oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json",
+              "path": "pages/information/community-service/community-service-documents.json",
               "order": 3,
               "menuVisible": false
             }
           ]
         },
         {
-          "path": "oldalak/kapcsolat.json",
+          "path": "pages/contact.json",
           "order": 5
         },
         {
-          "path": "oldalak/informaciok/allaspalyazatok.json",
+          "path": "pages/information/job-openings.json",
           "order": 6,
           "menuVisible": false
         },
         {
-          "path": "oldalak/informaciok/adatvedelem.json",
+          "path": "pages/information/privacy.json",
           "order": 7,
           "menuVisible": false
         },
         {
-          "path": "oldalak/informaciok/offline-olvaso.json",
+          "path": "pages/information/offline-reader.json",
           "order": 8,
           "menuVisible": false
         },
         {
-          "path": "oldalak/informaciok/utmutato.json",
+          "path": "pages/information/guide.json",
           "order": 9,
           "menuVisible": false
         }

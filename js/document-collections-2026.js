@@ -1,4 +1,4 @@
-const STORE=new URL('../json/adatok/dokumentumok.json',import.meta.url);
+const STORE=new URL('../json/data/documents.json',import.meta.url);
 const node=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
 const fold=x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 export function renderDocumentCollections(){
@@ -15,7 +15,7 @@ export function renderDocumentCollections(){
  const manualLead=node('p','','Részletes útmutató a 66 tartalmi oldalhoz, a főmenühöz, a keresőhöz, a médiákhoz és a 10 helyi karbantartó eszközhöz.');
  const manualActions=node('div','doc26-manual-actions');
  const manualWeb=node('a','','Kereshető webes útmutató megnyitása');manualWeb.href='#/informaciok/utmutato';
- const manualPdf=node('a','','Teljes PDF-kézikönyv letöltése');manualPdf.href='assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf';manualPdf.download='csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf';
+ const manualPdf=node('a','','Teljes PDF-kézikönyv letöltése');manualPdf.href='assets/documents/csanadi-website-complete-usage-guide-2026.pdf';manualPdf.download='csanadi-website-complete-usage-guide-2026.pdf';
  manualActions.append(manualWeb,manualPdf);manual.append(manualTitle,manualLead,manualActions);
  toolbar.append(search,select);box.append(manual,title,text,toolbar,result,grid,more);
  let docs=[],categories=new Map(),limit=settingNumber('runtime.display.documentCollectionBatch');

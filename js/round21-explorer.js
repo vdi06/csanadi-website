@@ -1,4 +1,4 @@
-import {createZip,downloadBlob} from './zip-native-2026.js?v=1.42.3';
+import {createZip,downloadBlob} from './zip-native-2026.js?v=1.42.12';
 
 const byId=id=>document.getElementById(id);
 const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -158,8 +158,8 @@ async function main(){initTheme();
  try{
   const config=await load('json/config.json');
   const dataset=config.runtime?.round21?.explorerDataPath;
-  if(typeof dataset!=='string'||!/^adatok\/[a-z0-9-]+\.json$/.test(dataset))throw Error('Érvénytelen központi felfedezőadat-útvonal');
-  const [d,docs,n,ev]=await Promise.all([load('json/'+dataset),load('json/adatok/dokumentumok.json'),load('json/adatok/hirek-hivatalos.json'),load('json/adatok/esemenyek.json')]);
+  if(typeof dataset!=='string'||!/^data\/[a-z0-9-]+\.json$/.test(dataset))throw Error('Érvénytelen központi felfedezőadat-útvonal');
+  const [d,docs,n,ev]=await Promise.all([load('json/'+dataset),load('json/data/documents.json'),load('json/data/official-news.json'),load('json/data/events.json')]);
   window.round21Settings=config.runtime;window.round21Palette=config.theme;window.applyRound21Theme?.();data=d;documents=docs;news=n;events=ev;
   renderAdmissions();renderAcademic();renderSports();renderMap();initTour();initHomePrefs();initDocumentBundle();initNewsWatcher();initQuiz();initKiosk();
   byId('explorer-status').textContent='A tíz interaktív eszköz betöltődött. A nyilvános adatok helyi JSON-fájlokból érkeznek.';

@@ -6,7 +6,7 @@ export function initMobileQuickNav(){
  const nav=el('nav','ext26-mobile-nav');nav.id='ext26-mobile-nav';nav.setAttribute('aria-label','Mobilos gyorsnavigáció');
  const icon=kind=>{
   if(kind==='menu'){
-   const image=el('img','ext26-nav-logo');image.src='assets/media/logo/csanadi-cimer-512.webp';image.alt='';image.width=35;image.height=35;image.decoding='async';image.setAttribute('aria-hidden','true');return image;
+   const image=el('img','ext26-nav-logo');image.src='assets/media/logo/csanadi-crest-512.webp';image.alt='';image.width=35;image.height=35;image.decoding='async';image.setAttribute('aria-hidden','true');return image;
   }
   const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('class','ext26-nav-icon');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('fill','none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','2.2');svg.setAttribute('stroke-linecap','round');svg.setAttribute('stroke-linejoin','round');svg.setAttribute('aria-hidden','true');
   const shape=kind==='home'?'M3 10.5 12 3l9 7.5V21h-6v-7H9v7H3V10.5':'M21 21l-4.3-4.3M19 10.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0';

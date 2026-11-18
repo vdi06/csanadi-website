@@ -10,7 +10,7 @@ export function renderSportsPortal(){
  const buttons=tag('div','cs-portal-filter');buttons.setAttribute('aria-label','Sportág szűrése');
  const grid=tag('div','cs-portal-grid'),status=tag('p','cs-portal-stats','A sportági adatok betöltése…');status.setAttribute('aria-live','polite');
  section.append(buttons,grid,status);
- json('adatok/sportsikerek.json').then(data=>{
+ json('data/sports-achievements.json').then(data=>{
   if(!section.isConnected)return;
   const list=(data.items||[]).filter(x=>x.status==='verified'&&x.verified===true&&typeof x.category==='string');
   const counts=new Map();for(const x of list)counts.set(x.category,(counts.get(x.category)||0)+1);
@@ -38,7 +38,7 @@ export function renderEducationPath(){
 export function renderUpcomingPanel(){
  const section=tag('section','cs-portal-section cs-upcoming-panel');section.append(heading('JÓVÁHAGYOTT IDŐPONTOK','Következő események','Csak ellenőrzött, közzétett, jövőbeli dátumok szerepelnek itt.'));
  const grid=tag('div','cs-portal-grid'),status=tag('p','cs-portal-stats','Események betöltése…');section.append(grid,status);
- json('adatok/esemenyek.json').then(data=>{
+ json('data/events.json').then(data=>{
   if(!section.isConnected)return;
   const now=Date.now();const items=(data.items||[]).filter(x=>x.verified===true&&x.status==='published'&&Date.parse(x.startsAt)>now).sort((a,b)=>Date.parse(a.startsAt)-Date.parse(b.startsAt)).slice(0,settingNumber('runtime.display.upcomingEventPanel'));
   grid.replaceChildren();const fmt=new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit',timeZone:setting('modules2026.clock.timezone')});
@@ -52,7 +52,7 @@ export function renderDocumentIndexExport(){
  const wrapper=tag('div','cs-skip-shortcuts cs-doc-export-wrap');const button=tag('button','cs-doc-export','Dokumentumjegyzék letöltése (.csv)');button.type='button';
  const text=tag('p','cs-newstag','A letöltés helyben, a böngészőben készül az elérhető dokumentum-JSON alapján.');text.setAttribute('aria-live','polite');
  button.addEventListener('click',async()=>{
-  button.disabled=true;try{const data=await json('adatok/dokumentumok.json');const rows=[['Cím','Leírás','Kategória','Státusz','Fájl']];
+  button.disabled=true;try{const data=await json('data/documents.json');const rows=[['Cím','Leírás','Kategória','Státusz','Fájl']];
    for(const d of data.documents||[])if(d.status==='published')rows.push([d.title,d.summary,d.categoryId,d.status,d.filePath||'']);
    const csv='\uFEFF'+rows.map(cols=>cols.map(csvField).join(';')).join('\r\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));
    const a=tag('a');a.href=url;a.download='csanadi-dokumentumjegyzek.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);

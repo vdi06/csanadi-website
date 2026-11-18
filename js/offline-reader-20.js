@@ -1,4 +1,4 @@
-import {formatBytes} from './format-bytes.js?v=csanadi-r29n-20261115';
+import {formatBytes} from './format-bytes.js?v=1.42.12';
 const $=id=>document.getElementById(id);const root=new URL('../',import.meta.url),selected=new Set();let cfg=null,pages=[],manifest=null;
 const status=message=>$('offline-status').textContent=message;
 async function load(path){const url=new URL(path,root);try{const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);return response.json();}catch(error){const cached=await caches.match(url,{ignoreSearch:true});if(cached)return cached.json();throw error;}}
@@ -45,7 +45,7 @@ export async function mountOfflineReader(){
   if(!('caches'in window)||!window.isSecureContext){status('Az offline mentéshez HTTPS vagy localhost és egy modern böngésző szükséges. A honlap online továbbra is használható.');return;}
   [cfg,manifest]=await Promise.all([load('json/config.json'),load('release-manifest.json')]);
   if(!$('offline-status'))return;
-  const index=await load('json/oldalindex.json');
+  const index=await load('json/page-index.json');
   pages=Object.entries(index.pages||{}).filter(([,p])=>p.lifecycle?.status==='published').map(([path,page])=>({path,title:page.menuLabel||page.title})).sort((a,b)=>a.title.localeCompare(b.title,'hu'));
   status(`${pages.length} nyilvános oldal. Kijelölés után a Mentés/frissítés gombbal külön offline másolat készíthető.`);
   buildList();await refreshStats();

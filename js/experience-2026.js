@@ -5,7 +5,7 @@
 const e=(tag,cls='',text)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=String(text);return x;};
 const add=(target,...kids)=>{kids.filter(Boolean).forEach(k=>target.append(k));return target;};
 const safe=(s)=>String(s||'').replace(/[^a-zA-Z0-9À-ž _.,!?–:()/-]/g,'').slice(0,220);
-async function dataJSON(path){const r=await fetch('json/adatok/'+path,{cache:'no-store'});if(!r.ok)throw new Error('A '+path+' nem tölthető be ('+r.status+')');return r.json();}
+async function dataJSON(path){const r=await fetch('json/data/'+path,{cache:'no-store'});if(!r.ok)throw new Error('A '+path+' nem tölthető be ('+r.status+')');return r.json();}
 const note=(txt)=>e('p','experience-data-note',txt);
 const timeZone=()=>setting('modules2026.clock.timezone');
 const parts=d=>Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:timeZone(),year:'numeric',month:'2-digit',day:'2-digit',weekday:'short',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).formatToParts(d).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
@@ -75,7 +75,7 @@ export function renderBellPanel({expanded=false}={}){
   title.textContent=line;timer.textContent=(current||next)?`${pad(Math.floor(seconds/3600))}:${pad(Math.floor(seconds%3600/60))}:${pad(seconds%60)}`:'—';track.firstChild.style.width=ratio+'%';
   for(const child of hours.children)child.classList.toggle('bell-row-current',Boolean(current&&child.dataset.number===String(current.number)));
  };
- dataJSON('csengetesi-rend.json').then(x=>{
+ dataJSON('bell-schedule.json').then(x=>{
   data=validateBell(x);
   panel.querySelector('.bell-data-status').textContent=data.verifiedBySchool&&data.status==='verified'?'Ellenőrzött':'BEMUTATÓ · NEM HIVATALOS';
   if(!data.verifiedBySchool)panel.insertBefore(note('A látható időpontok szemléltető adatok. A valós csengetési rendet az iskola jóváhagyása után lehet feltölteni.'),hours);
@@ -114,7 +114,7 @@ export function renderCalendarPanel({expanded=false}={}){
   else detail.append(e('p','calendar-empty',sel?'Ehhez a naphoz nincs hitelesített esemény.':'Válassz ki egy napot. Csak hitelesített dátumok jelennek meg.'));
  }
  prev.addEventListener('click',()=>{m--;if(m<0){m=11;y--;}sel=null;draw();});next.addEventListener('click',()=>{m++;if(m>11){m=0;y++;}sel=null;draw();});today.addEventListener('click',()=>{const p=parts(new Date());y=Number(p.year);m=Number(p.month)-1;sel=isoDay(p);draw();});
- draw();dataJSON('esemenyek.json').then(v=>{all=validEvents(v);draw();}).catch(err=>{detail.textContent='Az eseményadatok most nem frissíthetők: '+err.message;});
+ draw();dataJSON('events.json').then(v=>{all=validEvents(v);draw();}).catch(err=>{detail.textContent='Az eseményadatok most nem frissíthetők: '+err.message;});
  return panel;
 }
 export function renderHomeExperience(){
@@ -144,7 +144,7 @@ export function renderLifeGallery(){
  more.addEventListener('click',()=>{limit+=settingNumber('runtime.display.galleryBatch');draw();});
  add(container,controls,grid,more,modal,document.createDocumentFragment());
  section.append(container);
- dataJSON('kepgaleria.json').then(v=>{if(v?.schemaVersion!=='1.0.0'||!Array.isArray(v.items))throw Error('A képgaléria JSON hibás.');entries=v.items.filter(x=>x.verifiedSchoolPhoto===false&&/^assets\/media\/web\/[a-z0-9-]+\.webp$/.test(x.src)&&typeof x.title==='string');draw();}).catch(err=>{grid.append(e('p','experience-error','Nem tölthető be a galéria: '+err.message));});
+ dataJSON('photo-gallery.json').then(v=>{if(v?.schemaVersion!=='1.0.0'||!Array.isArray(v.items))throw Error('A képgaléria JSON hibás.');entries=v.items.filter(x=>x.verifiedSchoolPhoto===false&&/^assets\/media\/web\/[a-z0-9-]+\.webp$/.test(x.src)&&typeof x.title==='string');draw();}).catch(err=>{grid.append(e('p','experience-error','Nem tölthető be a galéria: '+err.message));});
  return section;
 }
 const socialIcons={Facebook:'f',Instagram:'◎',YouTube:'▶',TikTok:'♪'};
@@ -182,14 +182,14 @@ export function renderStaffCenter(){
   filters.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.key===filter)));
   const q=inp.value.toLocaleLowerCase('hu-HU');const shown=teams.filter(x=>(filter==='mind'||x.category===filter)&&(x.name+' '+x.description).toLocaleLowerCase('hu-HU').includes(q));result.textContent=shown.length+' munkaterület · A megnevezések a fejlesztési modell részei';grid.replaceChildren();
   shown.forEach((item,i)=>{
-   const card=e('article','staff-team-card');const header=e('div','staff-team-photo');const img=e('img');img.src=`assets/media/web/eletkep-${pad(17+(i*3)%24)}.webp`;img.loading='lazy';img.alt='Iskolai életkép';header.append(img);
+   const card=e('article','staff-team-card');const header=e('div','staff-team-photo');const img=e('img');img.src=`assets/media/web/school-life-${pad(17+(i*3)%24)}.webp`;img.loading='lazy';img.alt='Iskolai életkép';header.append(img);
    const body=e('div','staff-team-body');add(body,e('span','staff-team-kicker',item.category==='sport'?'SPORT ÉS MOZGÁS':item.category==='oktatas'?'OKTATÁS':'KÖZÖSSÉG'),e('h3','',item.name),e('p','',item.description),e('span','staff-team-note','A valós munkaközösségi besorolás ellenőrzésre vár.'));
    add(card,header,body);grid.append(card);
   });
   if(!shown.length)grid.append(note('Nincs ilyen találat. Próbálj más keresőkifejezést.'));
  }
  inp.addEventListener('input',paint);
- dataJSON('tantestulet.json').then(data=>{
+ dataJSON('teaching-staff.json').then(data=>{
   if(data.schemaVersion!=='1.0.0'||!Array.isArray(data.teams)||!Array.isArray(data.staff))throw Error('A tantestületi JSON érvénytelen.');
   teams=data.teams.filter(x=>typeof x.name==='string'&&typeof x.description==='string');paint();
   wrap.append(note('Személyes pedagógusprofil és fénykép csak intézményileg jóváhagyott névvel, adatokkal és képfelhasználási jogosultsággal jelenik meg. Jelenleg nincs közzétételre jóváhagyott személyes névsor.'));

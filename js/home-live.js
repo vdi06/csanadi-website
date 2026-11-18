@@ -1,8 +1,8 @@
 
 
  
-const SPORTS_URL=new URL('../json/adatok/sportsikerek.json',import.meta.url);
-const EVENTS_URL=new URL('../json/adatok/esemenyek.json',import.meta.url);
+const SPORTS_URL=new URL('../json/data/sports-achievements.json',import.meta.url);
+const EVENTS_URL=new URL('../json/data/events.json',import.meta.url);
 const VALID_ROUTE=/^#\/[a-z0-9/-]*$/;
 const SAFE_ID=/^(success|esemeny):[a-z0-9-]{3,60}$/;
 const STRING_TEXT=/^[\p{L}\p{N} ,.\-–()\/:!?]+$/u;
@@ -12,7 +12,7 @@ function formatNow(){return new Intl.DateTimeFormat('hu-HU',{hour:'2-digit',minu
 function formatDate(stamp){return new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(stamp));}
 async function fetchJSON(url){const res=await fetch(url,{cache:'no-store'});if(!res.ok)throw Error(`Nem elérhető: ${url.pathname} (${res.status})`);return res.json();}
 function checkSports(data){
- if(!data||data.schemaVersion!=='1.0.0'||data.collectionId!=='collection:sportsikerek'||!Array.isArray(data.items)||data.items.length>300)throw Error('Érvénytelen sportsikerek.json gyűjtemény.');
+ if(!data||data.schemaVersion!=='1.0.0'||data.collectionId!=='collection:sportsikerek'||!Array.isArray(data.items)||data.items.length>300)throw Error('Érvénytelen sports-achievements.json gyűjtemény.');
  const ids=new Set();
  for(const item of data.items){
   if(!item||typeof item.id!=='string'||!SAFE_ID.test(item.id)||!item.id.startsWith('success:')||ids.has(item.id)||
@@ -26,7 +26,7 @@ function checkSports(data){
 }
 function validISOString(value){if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?([+-]\d{2}:\d{2}|Z)$/.test(value))return false;const d=new Date(value);return Number.isFinite(d.getTime());}
 function checkEvents(data){
- if(!data||data.schemaVersion!=='2.0.0'||data.collectionId!=='collection:esemenyek'||!Array.isArray(data.items)||!Array.isArray(data.categories))throw Error('Érvénytelen esemenyek.json gyűjtemény.');
+ if(!data||data.schemaVersion!=='2.0.0'||data.collectionId!=='collection:esemenyek'||!Array.isArray(data.items)||!Array.isArray(data.categories))throw Error('Érvénytelen events.json gyűjtemény.');
  const ids=new Set(),categories=new Map(data.categories.map(x=>[x.id,x.label]));
  return data.items.map(item=>{
   if(!item||typeof item.id!=='string'||!/^esemeny:[a-z0-9-]{3,60}$/.test(item.id)||ids.has(item.id)||

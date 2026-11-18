@@ -1,0 +1,2134 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedFor": "csanadi-static-ftp",
+  "pages": {
+    "pages/contact.json": {
+      "id": "page:000063",
+      "title": "Kapcsolat",
+      "menuLabel": "Kapcsolat",
+      "summary": "Az intézmény ellenőrzött elérhetőségei Budapesten. Kapcsolattartási adatok, intézményi elérhetőségek és térképes megközelítési információk.",
+      "tags": [],
+      "categories": [
+        "kapcsolat"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 6
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/kapcsolat",
+        "verifiedContent": true,
+        "bannerMediaId": "media:kapcsolat",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "contact"
+        }
+      },
+      "searchText": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium Cím: **{{site.address}}** Titkárság: **{{site.secretariatPhones}}** E-mail: **{{site.email}}** OM azonosító: **{{site.omIdentifier}}** A fenntartó: {{site.maintainerName}}. Címe: {{site.maintainerAddress}}. A telefonos és elektronikus elérhetőségeket az intézmény hivatalos kapcsolati oldala közli. Térkép és elérhetőség Hivatalos kapcsolati oldal · [Útvonal tervezése](https://www.google.com/maps/search/?api=1&query=1143%20Budapest%20%C5%90rnagy%20utca%205-7) Hivatalos elérhetőségek {{site.name}}. {{site.address}}; OM: {{site.omIdentifier}}. Titkárság: {{site.secretariatPhones}}; e-mail: {{site.email}}. A fenntartó: {{site.maintainerName}}. A hivatalos intézményi kapcsolati adatok Az intézmény címe **{{site.address}}**. Telefonszámok: **{{site.secretariatPhones}}**; e-mail: **{{site.email}}**. A főigazgató a hivatalos nyitóoldal szerint **{{site.directorName}}**. Az aktuális elérhetőségeket a [hivatalos iskolai honlapon](#/) is ellenőrizheted. [Hivatalos kapcsolati és adatvédelmi elérhetőségek – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kapcsolat.html)",
+      "blocks": []
+    },
+    "pages/sports.json": {
+      "id": "page:000031",
+      "title": "Sportélet",
+      "menuLabel": "Sportélet",
+      "summary": "Kitartás, sportágak, történetek és a Csanádi sportolói hagyománya. A sportági lehetőségeket, sportolói történeteket és hiteles eredményekre vezető oldalakat fogja össze.",
+      "tags": [],
+      "categories": [
+        "sport"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 7
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/sport",
+        "verifiedContent": false,
+        "bannerMediaId": "media:sport",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Sport a mindennapokban A sport közösséget épít, célokat ad, és olyan készségeket fejleszt, amelyek az iskolai tanulásban is értékesek. A sportágak bemutatásánál a technikai ismeretek mellett szerepet kap a csapatmunka, a fegyelem és az egészséges életmód. A sporteredményeket az intézmény által közzétett, ellenőrizhető forrásokra alapozzuk. A képtár a mozgás és a közösség világát mutatja be. További tájékozódási lehetőségek [Sportolók](#/sport/sportolok) · [Csapatok](#/sport/csapatok) · [Edzők](#/sport/edzok) Csanádi sporthagyomány Az intézmény sportiskolai profiljához jelentős versenyzői életutak kapcsolódnak. A hivatalos büszkeséglistán többek között kajak-kenusok, vízilabdázók, birkózók, tornászok és rövidpályás gyorskorcsolyázók találhatók. A különböző korú eredményeket történeti és aktuális kategóriába érdemes sorolni. [Büszkeségeink](#/iskolank/buszkesegeink) [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/home.json": {
+      "id": "page:000001",
+      "title": "Csanádi Sportiskola – Sport, tanulás, közösség",
+      "menuLabel": "Kezdőoldal",
+      "summary": "A Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium honlapja: sportolói sikerek, oktatás, programok és mindennapi információk.",
+      "tags": [],
+      "categories": [
+        "kezdolap"
+      ],
+      "lifecycle": {
+        "status": "published"
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/",
+        "verifiedContent": false,
+        "bannerMediaId": "media:hero",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "editorial-guidance",
+          "sourceId": null
+        }
+      },
+      "searchText": "CSANÁDI 2026 • SPORT · TUDÁS · KÖZÖSSÉG Sportban és tanulásban is előre. Fedezd fel az iskolai mindennapok, a sport és a tanulás összetartozó világát. A közösség történeteit, a sportági lehetőségeket és a tudnivalókat egy helyen találod. Fedezd fel iskolánkat Sportolói sikereink media:v140-sport media:v140-sport-mobile CSANÁDI · SPORT A pályán kezdődik a történet Kitartás, mozgás és új célok a sport világában. EGYÜTT A SIKEREKÉRT Minden nap egy új lehetőség Tehetség, csapatszellem és inspiráló kihívások. Tovább media:v140-tudas-mobile CSANÁDI · TUDÁS A tudás új lehetőségeket nyit Kíváncsiság, felfedezés és közös tanulás. FEJLŐDÉS ÉS TUDÁS A jövőt ma építjük Biztos alapok a tanteremben és azon túl. Tovább media:v140-kozosseg-mobile CSANÁDI · KÖZÖSSÉG Együtt formáljuk a közösséget A közösség ott kezdődik, ahol egymásra figyelünk. KÖZÖS ÉLMÉNYEK Ide jó tartozni Barátságok, találkozások, együtt megélt pillanatok. Tovább CSANÁDI · SPORT Kosárlabda a mindennapokban A csapat együtt találja meg a ritmust. MOZGÁS ÉS KITARTÁS A mozgás összekapcsol Sport, tehetség és együttműködés. Tovább CSANÁDI · TUDÁS Közösen könnyebb tanulni A kíváncsiság új nézőpontokat nyit. FELFEDEZÉS ÉS FEJLŐDÉS Tanulj velünk tovább Tudás, figyelem és új lehetőségek. Tovább CSANÁDI · KÖZÖSSÉG Találkozások és barátságok A hétköznapokat az emberek teszik értékessé. EGYÜTT A MINDENNAPOKBAN Egy közösség, sok történet Barátságok, élmények és közös utak. Tovább CSANÁDI · SPORT Úszás és összpontosítás Minden hossz egy újabb lépés. MOZGÁS ÉS KITARTÁS A mozgás összekapcsol Sport, tehetség és együttműködés. Tovább CSANÁDI · TUDÁS Kérdésekből születik a tudás A tanulás beszélgetéssel is kezdődhet. FELFEDEZÉS ÉS FEJLŐDÉS Tanulj velünk tovább Tudás, figyelem és új lehetőségek. Tovább CSANÁDI · KÖZÖSSÉG Mindennap együtt az iskolában A közösség az érkezéssel kezdődik. EGYÜTT A MINDENNAPOKBAN Egy közösség, sok történet Barátságok, élmények és közös utak. Tovább CSANÁDI · SPORT Röplabda és összjáték A sikerhez minden mozdulat hozzáad. MOZGÁS ÉS KITARTÁS A mozgás összekapcsol Sport, tehetség és együttműködés. Tovább CSANÁDI · TUDÁS A közös munka eredménye A megszerzett tudásra építeni lehet. FELFEDEZÉS ÉS FEJLŐDÉS Tanulj velünk tovább Tudás, figyelem és új lehetőségek. Tovább CSANÁDI · KÖZÖSSÉG A sport otthona Egy csarnok, ahol a mozgás közös élmény. EGYÜTT A MINDENNAPOKBAN Egy közösség, sok történet Barátságok, élmények és közös utak. Tovább CSANÁDI · SPORT Együtt a célban A kitartás öröme minden befutónál közös. MOZGÁS ÉS KITARTÁS A mozgás összekapcsol Sport, tehetség és együttműködés. Tovább CSANÁDI · TUDÁS A könyvek új világokat nyitnak Egy jó kérdés új irányt mutat. FELFEDEZÉS ÉS FEJLŐDÉS Tanulj velünk tovább Tudás, figyelem és új lehetőségek. Tovább CSANÁDI · KÖZÖSSÉG Iskolánk mindennapi terei A közös helyszínek összekötnek. EGYÜTT A MINDENNAPOKBAN Egy közösség, sok történet Barátságok, élmények és közös utak. Tovább CSANÁDI · SPORT Magasabbra, lépésről lépésre A kihívás fejleszti az önbizalmat. MOZGÁS ÉS KITARTÁS A mozgás összekapcsol Sport, tehetség és együttműködés. Tovább CSANÁDI · TUDÁS Digitális tudás a gyakorlatban A számítógépes teremben is együtt fejlődünk. FELFEDEZÉS ÉS FEJLŐDÉS Tanulj velünk tovább Tudás, figyelem és új lehetőségek. Tovább CSANÁDI · KÖZÖSSÉG Nyitott kapuk, közös utak A közös történetek az első lépéssel kezdődnek. EGYÜTT A MINDENNAPOKBAN Egy közösség, sok történet Barátságok, élmények és közös utak. Tovább CSANÁDI · SPORT Újabb célok a futópályán Felfedezés, mozgás és friss élmények. MOZGÁS ÉS KITARTÁS A mozgás összekapcsol Sport, tehetség és együttműködés. Tovább CSANÁDI · TUDÁS Kérdésekből születnek a felfedezések Kísérletek és megfigyelések a tanulásban. FELFEDEZÉS ÉS FEJLŐDÉS Tanulj velünk tovább Tudás, figyelem és új lehetőségek. Tovább CSANÁDI · KÖZÖSSÉG A közös játék helyei A találkozásoknak mindig van helye. EGYÜTT A MINDENNAPOKBAN Egy közösség, sok történet Barátságok, élmények és közös utak. Tovább CSANÁDI · SPORT Úszásra hív a medence Gyakorlásból születik a magabiztosság. MOZGÁS ÉS KITARTÁS A mozgás összekapcsol Sport, tehetség és együttműködés. Tovább CSANÁDI · TUDÁS Adatok és döntések a sportban A számok a pályán is történetet mesélnek. FELFEDEZÉS ÉS FEJLŐDÉS Tanulj velünk tovább Tudás, figyelem és új lehetőségek. Tovább CSANÁDI · KÖZÖSSÉG Együtt a röplabdapályán A csapatélmény mindenkinek ad valamit. EGYÜTT A MINDENNAPOKBAN Egy közösség, sok történet Barátságok, élmények és közös utak. Tovább CSANÁDI · SPORT Labdarúgás lendületben Egyetlen passz is közös gondolkodás. MOZGÁS ÉS KITARTÁS A mozgás összekapcsol Sport, tehetség és együttműködés. Tovább CSANÁDI · TUDÁS A játékban is fejlődünk Figyelem, ritmus és pontosság az asztal mellett. FELFEDEZÉS ÉS FEJLŐDÉS Tanulj velünk tovább Tudás, figyelem és új lehetőségek. Tovább CSANÁDI · KÖZÖSSÉG A közös sport új nézőpontból A kosárlabda a találkozások egyik helye. EGYÜTT A MINDENNAPOKBAN Egy közösség, sok történet Barátságok, élmények és közös utak. Tovább CSANÁDI · SPORT Újabb kör, újabb cél A fejlődés minden nap folytatódik. MOZGÁS ÉS KITARTÁS A mozgás összekapcsol Sport, tehetség és együttműködés. Tovább CSANÁDI · SPORT A labdával új lehetőségek nyílnak A dobás előtt minden mozdulat számít. FELFEDEZÉS ÉS FEJLŐDÉS Tanulj velünk tovább Tudás, figyelem és új lehetőségek. Tovább CSANÁDI · SPORT A vízben is lendületben Úszósávok és új kihívások várnak. EGYÜTT A MINDENNAPOKBAN Egy közösség, sok történet Barátságok, élmények és közös utak. Tovább Sportélet és büszkeségeink home Sporteredmények számokban overview Fedezd fel az iskolát Képzéseink Különböző tanulási utak, oktatási területek és kapcsolódó lehetőségek. Sporteredmények Sportáganként bemutatott történetek, eredmények és sporthírek. Felvételi A jelentkezési folyamat és a tájékozódáshoz szükséges tudnivalók. Eseménynaptár Közösségi alkalmak és az iskola életéhez kapcsolódó események. Diákélet Iskolai élmények, közösségi történetek és együttműködés. Képgalériák A sport és a közösség látványos, képes bemutatása. Tantestület Tantestület Pedagógusaink és a munkaközösségek bemutatása, kereshető áttekintésben. A teljesítmény mögött emberek vannak TÖBB MINT EGY WEBOLDAL A sportolói fejlődés nem egyetlen mérkőzésen vagy versenyen dől el. Az iskolai felkészülés, a közös munka, a tanulás és a tapasztalatok egymásra épülnek. Ebben a szemléletben mutatjuk be az oktatás és a sport találkozását. Sport – kitartás és együttműködés Egy sportág megtanít célokat kitűzni, figyelni a részletekre és tovább dolgozni egy nehezebb nap után is. A csapatsportok az együttműködést, az egyéni sportágak az önismeretet és a tudatos felkészülést erősíthetik. A sportoldalak sportáganként összekapcsolják a történeteket, a képeket és az eredményeket. Sportágak megtekintése Oktatás – tudás és kíváncsiság A tanulás a kérdezéssel, a gyakorlással és a megértés keresésével válik igazán élővé. Az oktatási központban helyet kapnak a képzési területek, a felvételi tájékozódást segítő anyagok, a vizsgák és a tanévi információk. A cél, hogy az eligazodás egyszerű legyen. Oktatási központ Közösség – egymásra figyelés A közösségi alkalmak, a sportversenyek, az iskolai események és a mindennapi beszélgetések egyaránt meghatározó élményekké válhatnak. A honlap ezért a híreket, az eseményeket és a képeket összekapcsolva mutatja be, és lehetőséget ad arra, hogy mindenki megtalálja a számára fontos témákat. Hírek és események Sport, tudás, közösség – egyetlen történet Oktatási központ Képzéseink, felvételi és tanévi információk. Sportközpont Sportágak, csapatok, eredmények és profilok. Hírek és események Összekapcsolt hírek, események és közlemények. Pillanatképek az iskola világából Iskolánk Oktatás Sport Közösség Felvételi Eredmények Események Kapcsolat Fontos információk egy helyen A 2026. novemberi nyílt napok, a 2026/2027-es tanévhez tartozó felvételi információk, az intézményi dokumentumok és a közzétett sporteredmények egy helyen elérhetők. Az oldalon megjelenő tematikus képek nem hiteles eseményfotók, a sporteredményeket és iskolai híreket hivatalos közlemények alapján külön kezeljük. [Hírek és események](#/hirek-es-esemenyek)",
+      "blocks": []
+    },
+    "pages/information.json": {
+      "id": "page:000047",
+      "title": "Iskolai információk",
+      "menuLabel": "Információk",
+      "summary": "Csengetési rend, dokumentumok, közösségi szolgálat és ügyintézés. A mindennapi ügyintézéshez kapcsolódó oldalak és a dokumentumok gyors elérési pontja.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 6
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "A mindennapokhoz szükséges tudnivalók A mindennapi ügyintézésben a pontos csengetési rend, az étkezés, a szülői tájékoztatás és az intézményi dokumentumok játszanak fontos szerepet. Az információs központ ezeket a témákat egy helyen teszi elérhetővé. A dokumentumoknál külön jelezzük az intézmény hivatalos forrásait, az általános segédleteket pedig ettől elkülönítve kezeljük. További tájékozódási lehetőségek [Digitális ügyintézés](#/informaciok/digitalis-ugyintezes) · [Álláspályázatok](#/informaciok/allaspalyazatok) Iskolai ügyintézés egy helyen Az intézmény hivatalos oldalán a szülői nyilatkozatok, az étkezés, a csengetési rend, a házirend, a felvételi, a közösségi szolgálat és a közzétételi lista külön elérhető. A honlapon ezekhez közvetlenül használható, ellenőrzött útvonalakat és témaköröket tartunk fenn. [Dokumentumtár](#/informaciok/dokumentumtar) [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/our-school.json": {
+      "id": "page:000002",
+      "title": "Iskolánk",
+      "menuLabel": "Iskolánk",
+      "summary": "Több mint száz évnyi iskolatörténet, sport és közösség. Fedezd fel az intézmény múltját, közösségi értékeit és a sportot a tanulással összekapcsoló szemléletét.",
+      "tags": [],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 7
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank",
+        "verifiedContent": true,
+        "bannerMediaId": "media:iskolank",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Ismerd meg intézményünket A {{site.name}} címe: {{site.address}}. Az oktatás és a sport közös története különleges szerepet kap az intézmény életében. Az iskola múltjáról, névadójáról, hagyományairól és eredményes sportoló tanítványairól külön oldalakon olvashatsz. A történeti adatokhoz az intézmény hivatalos tájékoztatóit használjuk. A sport és a tanulás kapcsolata A sportolói felkészülés kitartást, önfegyelmet, együttműködést és tudatos időgazdálkodást igényel. Ugyanezek a készségek a tanulásban és a mindennapi életben is értékesek. A Csanádi szemléletében a teljesítmény mellett fontos az emberi kapcsolatok, a tudás és a közösség megerősítése is. Hogyan született a honlap? Egy iskolai weboldal mögött sok tervezés, mérlegelés és ellenőrzés áll. [Olvasd el a honlap megújulásának történetét](#/iskolank/a-honlap-szuletese), és ismerd meg, hogyan segíthetnek a digitális eszközök a fejlesztésben. További tájékozódási lehetőségek [Küldetés és értékek](#/iskolank/kuldetes-es-ertekek) · [Hagyományok](#/iskolank/hagyomanyok-es-elismeresek) · [Partnerek](#/iskolank/partnerek) Intézményünk ellenőrzött adatai A {{site.name}} címe: {{site.address}}. OM azonosítója {{site.omIdentifier}}. A főigazgató a jelenlegi intézményi nyitóoldal szerint {{site.directorName}}. A sportiskolai és általános közismereti nevelést közös intézményi keretben szervezik. [Kapcsolati adatok](#/kapcsolat) [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/news-and-events.json": {
+      "id": "page:000038",
+      "title": "Hírek és események",
+      "menuLabel": "Hírek és események",
+      "summary": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum. Keresd meg az iskolai közleményeket, a sporthíreket, az eseménynaptárt és a korábbi híreket.",
+      "tags": [],
+      "categories": [
+        "hirek-es-esemenyek"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/hirek-es-esemenyek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:esemenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Tájékozódj egy helyen Az iskolai hírek és események időrendben mutatják meg a közösség fontos időszakait. A közzétett információk mellé lehetőség szerint az intézmény eredeti közleményét kapcsoljuk. A keresővel és a kategóriaszűrővel az aktuális tájékoztatások és a korábbi bejegyzések között is eligazodhatsz. A naptár csak olyan programot jelöl eseményként, amelyhez ellenőrzött dátum társul. Aktuális iskolai közlemények A 2026. november 14-i ellenőrzéskor a hivatalos intézményi oldalon két novemberi gimnáziumi nyílt nap, őszi érettségi tájékoztató és több diákverseny-beszámoló szerepel. Az oldalon az esemény dátumát mindig megkülönböztetjük a hír tényleges közzétételének időpontjától. [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/education.json": {
+      "id": "page:000011",
+      "title": "Oktatás és felvételi",
+      "menuLabel": "Oktatás",
+      "summary": "Képzési utak, felvételi, vizsgák, tanévi tudnivalók és tanulási segédletek.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 6
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Tudás a sport mellett A tanulás és az edzés mindennapjai összehangolást igényelnek. A képzési központban az általános iskolai és gimnáziumi útvonalakat, valamint a sportiskolai nevelés alapelveit mutatjuk be. Külön aloldalon találhatók a felvételi tájékozódást segítő információk, a vizsgákkal kapcsolatos tudnivalók és a tanévi időpontok. A hivatalos határidőket mindig külön, ellenőrzött forrás alapján tesszük közzé. Digitális kultúra a mindennapokban A technológia tudatos használata minden tanulási területen fontos. [Fedezd fel a digitális kultúráról szóló részletes írásunkat](#/oktatas/digitalis-kultura): hogyan lehet a digitális eszközöket biztonságosan, alkotó módon és valóban hasznos célokra használni? Oktatási tájékozódás Az intézmény általános iskolai és gimnáziumi képzést működtet sportiskolai profillal. Az első osztályba történő beiratkozásnak és a kilencedik évfolyamos középfokú felvételinek eltérő szabályai és dokumentumai vannak. Ezekhez külön, hivatalos tájékoztató oldalak érhetők el. [Felvételi központ](#/oktatas/felveteli) [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/news-and-events/announcements.json": {
+      "id": "page:000043",
+      "title": "Közlemények",
+      "menuLabel": "Közlemények",
+      "summary": "Aktuális intézményi tájékoztatások és fontos tudnivalók. A lényeges tudnivalók és közzétett intézményi közlemények visszakeresését támogatja.",
+      "tags": [],
+      "categories": [
+        "hirek-es-esemenyek"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/hirek-es-esemenyek/kozlemenyek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:esemenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Ellenőrzött közlemények A hivatalos iskolaoldal a 2026. novemberi nyílt napok mellett az étkeztetési rendszerrel, a 2026/2027-es tanévvel és az őszi érettségivel kapcsolatban is közzétett információkat. Minden tájékoztatásnál lényeges a közzététel ideje és a vonatkozó időszak. A korábbi híreket archívumként kezeljük, nem állítjuk őket aktuális utasításként. Hivatalos információk [Iskolai közlemények](#/hirek-es-esemenyek/hirek) Közzétett közlemények A Multischool5 szülői étkezési moduljának közzétett év végi szünete 2026. december 22. 9:00-tól december 31. 9:15-ig tart. Ezen időszak alatt a hivatalos közlemény szerint az étkezés megrendelése és lemondása nem érhető el. A szülők a pontos ügyintézési lépéseket az eredeti intézményi tájékoztatóból ellenőrizhetik. [Hírek és események](#/hirek-es-esemenyek) [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/news-and-events/news.json": {
+      "id": "page:000039",
+      "title": "Hírek",
+      "menuLabel": "Hírek",
+      "summary": "Iskolai hírek és sporttörténetek áttekinthető, kereshető formában. A hírek tematikus csoportjai és a forrásokkal ellenőrizhető iskolai beszámolók jelennek meg.",
+      "tags": [],
+      "categories": [
+        "hirek-es-esemenyek"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/hirek-es-esemenyek/hirek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:esemenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Közlemények és beszámolók A hírek feladata a pontos, könnyen követhető tájékoztatás. A felvételi programok, tanévi tudnivalók és iskolai sporteredmények külön témakörökben találhatók meg. A közölt tényekhez és időpontokhoz az intézmény eredeti oldalára mutató hivatkozás tartozik. A képes sportbemutató önálló, tematikus galériában marad. Hiteles hírek A hírek az intézmény által nyilvánosan közzétett programokra, eredményekre és iskolai tájékoztatásokra épülnek. Külön kategória a felvételi, az oktatás, a sport és a közlemény. A dátum nélküli iskolai hírnél nem tüntetünk fel kitalált publikálási dátumot. [Hírek és események](#/hirek-es-esemenyek) [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/news-and-events/event-calendar.json": {
+      "id": "page:000044",
+      "title": "Eseménynaptár",
+      "menuLabel": "Eseménynaptár",
+      "summary": "Havi, heti és napi naptár az ellenőrzött intézményi eseményekkel. Az ellenőrzött események havi, heti és napi nézete, valamint a programokhoz kapcsolódó részletek.",
+      "tags": [],
+      "categories": [
+        "hirek-es-esemenyek"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 6
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/hirek-es-esemenyek/esemenynaptar",
+        "verifiedContent": false,
+        "bannerMediaId": "media:esemenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Programok és időpontok Az eseménynaptárban a közzétett iskolai programok időpontjai kereshetők és szűrhetők. A 2026. novemberi gimnáziumi nyílt napokat az iskola hivatalos oldala alapján tüntetjük fel. A naptárba mentés az olyan időpontoknál is működik, amelyekhez a forrás csak kezdést közölt; ilyenkor az export nem állít be kitalált befejezési időt. További tájékozódási lehetőségek [Iskolai események](#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek) · [Sportesemények](#/hirek-es-esemenyek/esemenynaptar/sportesemenyek) Ellenőrzött események A naptárban két, az iskola által közzétett 2026. novemberi gimnáziumi nyílt nap szerepel. Az országos felvételi határidők nem automatikusan iskolai rendezvények. A jelenlegi naptárban csak a konkrét, nyilvánosan megerősített eseményeket jelenítjük meg. [Hírek és események](#/hirek-es-esemenyek) [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/information/document-library.json": {
+      "id": "page:000052",
+      "title": "Dokumentumtár",
+      "menuLabel": "Dokumentumtár",
+      "summary": "Kereshető szabályzatok, hivatalos források és letölthető tanulási segédletek.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 6
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/dokumentumtar",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "documents"
+        }
+      },
+      "searchText": "Hivatalos intézményi dokumentumok A pedagógiai program, a házirend, az SZMSZ, a helyi tantervek, a munkaterv és az adatkezelési tájékoztatók az iskola eredeti dokumentumoldalán érhetők el. A beépített PDF-kereső ezzel szemben külön, fejlesztői tanulási segédleteket is tartalmaz. **A két dokumentumtípust ne kezeld azonos jóváhagyásúként.** További tájékozódási lehetőségek [Szabályzatok](#/informaciok/dokumentumtar/szabalyzatok) · [Nyomtatványok](#/informaciok/dokumentumtar/nyomtatvanyok) · [Közzétételi lista](#/informaciok/dokumentumtar/kozzeteteli-lista) [Intézményi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/docs.html)",
+      "blocks": []
+    },
+    "pages/information/community-service.json": {
+      "id": "page:000057",
+      "title": "Közösségi szolgálat",
+      "menuLabel": "Közösségi szolgálat",
+      "summary": "Közösségi feladatok, együttműködés és felelősségvállalás. A közösségi szolgálat tervezési, igazolási és tájékozódási lépéseit gyűjti össze.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 6
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/kozossegi-szolgalat",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "service"
+        }
+      },
+      "searchText": "Tevékeny részvétel A közösségi szolgálat a közösség érdekében végzett tevékenységek megismerésére ad alkalmat. A programok során fontos a szervezett együttműködés, az egyeztetés és a tevékenység dokumentálása. Az intézmény hivatalos oldala külön tájékoztatást, dokumentumokat és jogszabályi hátteret biztosít ehhez a témához. A kötelező feltételek részleteiért a hivatalos szabályozás az irányadó. Iskolai tájékoztatás Közösségi szolgálat – hivatalos oldal További tájékozódási lehetőségek [Tudnivalók](#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok) · [Jogszabályok](#/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok) · [Dokumentumok](#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok) Közösségi szolgálat az érettségi előtt A jogszabályi alap szerinti 50 órás iskolai közösségi szolgálatot az intézmény által megadott rendben kell dokumentálni. A Csanádi hivatalos koordinátori elérhetősége a 2026. november 17-i közlésben Horváth-Szabó Erika (horvath-szabo.erika@csanadiiskola.hu). A konkrét helyszínt és feladatot indulás előtt egyeztesd a koordinátorral. [Közösségi szolgálat – koordinátor – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozszol.html)",
+      "blocks": []
+    },
+    "pages/information/privacy.json": {
+      "id": "page:000062",
+      "title": "Adatvédelem",
+      "menuLabel": "Adatvédelem",
+      "summary": "Személyes adatok, dokumentumok és biztonságos digitális tájékozódás. Az adatkezelési dokumentumok ellenőrzését és a biztonságos digitális használatot segíti.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/adatvedelem",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "documents"
+        }
+      },
+      "searchText": "Adatkezelési tájékozódás Az iskolai ügyintézés és a digitális felületek használata során fontos, hogy a személyes adatok célhoz kötötten, a megfelelő tájékoztatás mellett kerüljenek kezelésre. A hivatalos intézményi adatkezelési tájékoztató és szabályzat a dokumentumtárban érhető el. A fejlesztett honlap nem tesz közzé nem jóváhagyott tanári profilt vagy személyes elérhetőséget. Hivatalos dokumentumok [Adatkezelés – intézményi dokumentumok](#/informaciok/dokumentumtar) Adatkezelés és adatbiztonság Az intézmény hivatalos dokumentumoldala külön adatkezelési szabályzatot, általános tájékoztatót és kamerás megfigyeléshez kapcsolódó tájékoztatót tesz elérhetővé. Az adatvédelmi tisztviselő elérhetősége a hivatalos kapcsolati oldalon szerepel. Képmás, tanulói névsor vagy személyes ügyintézési adat közzététele előtt az alkalmazandó tájékoztatót és hozzájárulási feltételeket kell ellenőrizni. [Intézményi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/docs.html)",
+      "blocks": []
+    },
+    "pages/information/digital-services.json": {
+      "id": "page:000056",
+      "title": "Digitális ügyintézés",
+      "menuLabel": "Ügyintézés",
+      "summary": "Iskolai digitális rendszerek és az elektronikus ügyintézés tájékozódási oldala.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/digitalis-ugyintezes",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "editorial-guidance",
+          "sourceId": null
+        }
+      },
+      "searchText": "Digitális belépések A KRÉTA az intézményi elektronikus ügyintézés és tájékoztatás egyik fontos felülete. Belépéskor a hivatalos intézményi címet használd, és soha ne add meg a jelszavadat nem megbízható oldalon. Fájlbeküldés és kommunikáció A megadott digitális felületen mindig az adott feladat vagy ügy előírásait kell követni. Ellenőrizd a fájlnevet, a szükséges formátumot, a jogosultságokat és a határidőt. [KRÉTA – hivatalos belépés](https://klik200346001.e-kreta.hu/) · [Dokumentumtár](#/informaciok/dokumentumtar) Digitális ügyintézés A KRÉTA a beiratkozási folyamatban és több tanuló–szülő ügyben hivatalosan használt digitális felület. Az általános iskolai beiratkozás BÁI és a középiskolai beiratkozás BKI moduljának útmutatói az iskola felvételi oldalain találhatók. Bejelentkezési adatokat kizárólag a hivatalos rendszerekbe szabad megadni. [Felvételi központ](#/oktatas/felveteli)",
+      "blocks": []
+    },
+    "pages/information/daily-information.json": {
+      "id": "page:000048",
+      "title": "Mindennapi tudnivalók",
+      "menuLabel": "Mindennapi tudnivalók",
+      "summary": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez. Napirend, étkezési információk és szülői ügyintézés témájában vezet tovább a megfelelő oldalakra.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/mindennapi-tudnivalok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "bells"
+        }
+      },
+      "searchText": "Napirend és tájékoztatás A csengetési rend a tanórák időpontjait rögzíti, a szülői tájékoztatás pedig a mindennapi ügyintézéshez nyújt kapaszkodót. A digitális idővonal az ellenőrzött órarendet követi. A különleges tanítási napokra vonatkozó eltérő napirendet csak intézményi közlés alapján lehet beállítani, ezért itt nem jelenik meg találgatott rövidített csengetési rend. Napi iskolai tudnivalók Az iskola hivatalos csengetési rendje szerint az első óra 8:00-kor, a nyolcadik óra 14:20-kor kezdődik. Az általános iskolai ügyelet tanítási napokon 7:00 és 18:00 között működik. Az étkezési ügyintézés feltételei az intézmény ebédbefizetési oldalán találhatók. [Csengetési rend](#/informaciok/mindennapi-tudnivalok/csengetesi-rend) [Hivatalos csengetési rend – eredeti intézményi forrás](https://csanadi-bp.edu.hu/csengetes.html)",
+      "blocks": []
+    },
+    "pages/information/job-openings.json": {
+      "id": "page:000061",
+      "title": "Álláspályázatok",
+      "menuLabel": "Állások",
+      "summary": "A nyilvánosan meghirdetett, intézmény által jóváhagyott álláspályázatok megjelenítési helye.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 4
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/allaspalyazatok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "jobs"
+        }
+      },
+      "searchText": "Álláshirdetések követése A betöltendő munkakör, a jelentkezési feltételek, a szükséges dokumentumok, a határidő és a kapcsolattartás módja minden álláshirdetésnél külön ellenőrizendő. Jelenlegi állapot Az iskola hivatalos állásoldalán karbantartói és digitális kultúra szakos pedagógusi lehetőség is szerepel a 2026. november 17-i ellenőrzéskor. Ez nem valós idejű álláslista: a betöltöttség, a jelentkezési határidő és a munkavégzés feltételei változhatnak. Jelentkezés előtt az eredeti kiírást és az intézményi elérhetőséget ellenőrizd. Gyakori kérdés Mikor lesznek pontos adatok? A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz. Az iskola álláshirdetései A hivatalosan közzétett digitális kultúra (informatika) szakos feladat a megtekintett leírás szerint határozott idejű, 2027. június 18-ig tartó jogviszony, heti 4 órás megbízás keretében. Az oldal karbantartói feladatkört is megnevez. Ez 2026. november 17-i állapotfelvétel, nem álláshirdetési garancia. [Iskolai álláspályázatok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/allas.html)",
+      "blocks": []
+    },
+    "pages/education/admissions.json": {
+      "id": "page:000016",
+      "title": "Felvételi központ",
+      "menuLabel": "Felvételi",
+      "summary": "Tájékozódás az általános iskolai beiratkozás és a gimnáziumi jelentkezés előtt.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 7
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/felveteli",
+        "verifiedContent": false,
+        "bannerMediaId": "media:felveteli",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "highAdmission"
+        }
+      },
+      "searchText": "Hogyan készüljünk? A felvételi folyamatban különösen fontos a határidők, a szükséges nyilatkozatok és a felhasználható digitális felületek pontos ismerete. Az első és a kilencedik évfolyamra jelentkezők tájékoztatása eltérő dokumentumokat és eljárásokat érinthet. Az aktuális, intézmény által közzétett dokumentumok a hivatalos beiratkozási és felvételi oldalakon érhetők el. A hiányzó vagy még nem megadott határidők helyett nem közlünk becsült dátumokat. Közvetlen hivatalos elérhetőségek [Első évfolyam](#/oktatas/felveteli/elso-evfolyam) · [Kilencedik évfolyam](#/oktatas/felveteli/kilencedik-evfolyam) További tájékozódási lehetőségek [Nyílt napok](#/oktatas/felveteli/nyilt-napok) · [Felvételi határidők](#/oktatas/felveteli/felveteli-hataridok) A két beiskolázási út különbözik Az első évfolyamos beiratkozás a tanköteles gyermekek általános iskolai felvételéhez kapcsolódik, a kilencedik évfolyamra jelentkezők pedig a középfokú felvételi rendszerét használják. A Csanádi honlapján mindkét eljáráshoz külön dokumentumok, nyilatkozatok és KRÉTA-útmutatók érhetők el. Hivatalos felvételi dokumentumok A Csanádi hivatalos felvételi oldalán érhetők el a felvételi tájékoztatók, az írásbeli jelentkezéshez és a KRÉTA BKI használatához szükséges segédletek. Határidő előtt mindig az aktuális hivatalos kiírást ellenőrizd. [Gimnáziumi felvételi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/felveteli.html)",
+      "blocks": []
+    },
+    "pages/education/school-years.json": {
+      "id": "page:000025",
+      "title": "Tanévek",
+      "menuLabel": "Tanévek",
+      "summary": "Tanévi információk, fontos időszakok és tanulói szervezés. A tanév szervezéséhez kapcsolódó fontos időszakok és a kapcsolódó információs oldalak érhetők el.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 6
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/tanevek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "disclosure"
+        }
+      },
+      "searchText": "A tanév ritmusa A tanév során a tanítási napok, szünetek, vizsgák és iskolai programok közös időrendet alkotnak. A pontos dátumok ismerete különösen fontos, ha a tanulás mellé rendszeres edzések és sportversenyek társulnak. A 2026/2027-es tanévre vonatkozó ellenőrzött közleményeket és a kapcsolódó intézményi dokumentumokat külön oldalon gyűjtjük. További tájékozódási lehetőségek [Korábbi tanévek](#/oktatas/tanevek/korabbi-tanevek) Tanévi tervezés A 2026/2027-es tanév az iskola közzététele szerint 2026. szeptember 1-jén indult. Az intézményi csengetési rend, az eseménynaptár és az érettségi tájékoztató külön oldalon érhető el. A tanévi helyi rendet a közzétételi lista tartalmazza. [Közzétételi lista](#/informaciok/dokumentumtar/kozzeteteli-lista) [Közzétételi lista – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozzetetel.html)",
+      "blocks": []
+    },
+    "pages/education/library.json": {
+      "id": "page:000028",
+      "title": "Könyvtár és tanulás",
+      "menuLabel": "Könyvtár",
+      "summary": "Olvasás, információkeresés és önálló tudásszerzés. A könyvtár szerepét, a tudatos keresést és a forráskritikus olvasás gyakorlati szempontjait mutatja be.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 6
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/konyvtar",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "editorial-guidance",
+          "sourceId": null
+        }
+      },
+      "searchText": "A könyvtár szerepe A könyvtár a tanulás és a tájékozódás fontos helyszíne: könyvek, szakirodalom, források és közös tanulási alkalmak segíthetik az elmélyülést. Az információk megbízhatóságának értékelése, a források tudatos használata és az önálló kutatás a digitális környezetben is hasznos tudás. Az intézmény pedagógiai programja a könyvtárhasználat és a tanulási módszerek fejlesztésének szerepét is tárgyalja. Kutatási és olvasási tippek Kezdd a feladat kulcskérdéseivel, gyűjts többféle forrást, és jegyezd fel a szerzőt, a címet, valamint a megjelenés dátumát. A saját szavaiddal készített összefoglaló segít a megértés ellenőrzésében. A felhasznált forrásokat mindig különítsd el a saját megállapításaidtól. További tájékozódási lehetőségek [Könyvtári szolgáltatások](#/oktatas/konyvtar/konyvtari-szolgaltatasok) Könyvtári és tanulási tájékozódás A könyvtárhasználat gyakorlati tudnivalóit a [Könyvtári szolgáltatások](#/oktatas/konyvtar/konyvtari-szolgaltatasok) aloldalon találod. Nyitvatartást és kölcsönzési határidőt nem állítunk intézményi igazolás nélkül; ilyen kérdésben az [iskolai kapcsolati oldal](#/kapcsolat) segít.",
+      "blocks": []
+    },
+    "pages/education/programs.json": {
+      "id": "page:000012",
+      "title": "Képzéseink",
+      "menuLabel": "Képzéseink",
+      "summary": "Általános iskolai, gimnáziumi és sportiskolai tanulási utak. Az általános iskolai és gimnáziumi lehetőségek mellett a tanulmányi követelményekhez is vezet út.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/kepzeseink",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "editorial-guidance",
+          "sourceId": null
+        }
+      },
+      "searchText": "Tudatos tanulmányi út A képzés kiválasztásakor érdemes a tanulmányi érdeklődést, az egyéni fejlődést és a sportolási terhelést egyszerre figyelembe venni. A Csanádi Árpád Sportiskola általános iskolai és gimnáziumi oktatást is biztosít. A sportiskolai nevelés célja nem a tanulmányi fejlődés háttérbe szorítása, hanem a sportbeli és iskolai feladatok egymással összeegyeztethető szervezése. Intézményi alapdokumentum [A 2026-os pedagógiai program képzési fejezete](#/informaciok/dokumentumtar) Képzések és tanulmányi követelmények Az iskola az általános műveltség megszerzését és a sportoló diákok tanulmányi támogatását közös keretben kezeli. Az aktuális évfolyamok, tantárgyi követelmények és tantervi részletek intézményi szabályzatokban és helyi tantervekben találhatók meg. [Dokumentumtár](#/informaciok/dokumentumtar)",
+      "blocks": []
+    },
+    "pages/education/exams.json": {
+      "id": "page:000021",
+      "title": "Vizsgák",
+      "menuLabel": "Vizsgák",
+      "summary": "Érettségi és osztályozó vizsgák: tájékoztatás és felkészülés. A vizsgaidőszakokhoz, követelményekhez és hivatalos tájékoztatókhoz vezető hivatkozások találhatók itt.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 6
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/vizsgak",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "finalExam"
+        }
+      },
+      "searchText": "Felkészülés és pontos tájékozódás A vizsgákra való felkészülés során fontos a követelmények rendszerezése és az időbeosztás. A tantárgyi témaköröket, vizsgaidőpontokat és a jelentkezéssel kapcsolatos feltételeket mindig az intézmény aktuális hivatalos közlése alapján kell követni. A vizsgaközpont az érettségi, az osztályozó vizsgák és a kapcsolódó dokumentumok közötti eligazodást segíti. További tájékozódási lehetőségek [Egyéb vizsgák](#/oktatas/vizsgak/egyeb-vizsgak) Vizsgák: hivatalos dokumentumok Az érettségi, az osztályozó vizsga és az egyéb tanulmányi vizsgák időpontjai eltérők. Az iskola közzétett érettségi oldala 2026 őszi vizsgaadatokat tartalmaz, az osztályozó vizsga honlapján viszont egyes látható időpontok még 2025-ből származnak. A régi dátumokat nem tekintjük aktuális vizsgaidőpontnak. [Érettségi](#/oktatas/vizsgak/erettsegi) [Érettségi – intézményi tájékoztató – eredeti intézményi forrás](https://csanadi-bp.edu.hu/erettsegi.html)",
+      "blocks": []
+    },
+    "pages/education/learning-resources.json": {
+      "id": "page:000030",
+      "title": "Digitális tananyagközpont",
+      "menuLabel": "Tananyagok és segédletek",
+      "summary": "Önálló tanulás, digitális fájlkezelés és felkészülési módszerek. Tanulási módszerek, digitális fájlkezelési gyakorlat és önálló felkészülést támogató eszközök érhetők el.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/tananyagok-es-jegyzetek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "notes"
+        }
+      },
+      "searchText": "Tanulj tudatosan Az eredményes önálló tanulás a feladatok pontos értelmezésével kezdődik. Hasznos, ha a tananyagot kisebb egységekre bontod, gyakorló kérdéseket készítesz, és rendszeresen visszatérsz a nehéz részekhez. Digitális munkáknál figyelj a rendezett fájlnevekre, a megfelelő formátumra és a beadási határidőkre. A honlap Dokumentumtárában külön, letölthető gyakorlati segédletek is találhatók. Digitális kompetenciák A dokumentumszerkesztés, a táblázatkezelés, a prezentációkészítés és a forráskritika egymást kiegészítő készségek. A feladatoknál érdemes egyértelmű célokat, jól strukturált tartalmat és következetes ellenőrzési lépéseket használni. [Digitális dokumentumsegédletek megnyitása](#/informaciok/dokumentumtar) Tanulást támogató segédletek A honlap digitális dokumentumtára felvételi tervezési, digitális fájlkezelési és sport melletti időgazdálkodási segédleteket tartalmaz. Ezek fejlesztési tájékoztató anyagok, nem helyettesítik az iskola hivatalos pedagógiai programját, tantervét vagy házirendjét. [Dokumentumtár](#/informaciok/dokumentumtar) [Intézményi jegyzetek – eredeti intézményi forrás](https://csanadi-bp.edu.hu/sportjegyzet.html)",
+      "blocks": []
+    },
+    "pages/education/digital-culture.json": {
+      "id": "page:000065",
+      "title": "Digitális kultúra – értsük és használjuk jól a technológiát",
+      "menuLabel": "Digitális kultúra",
+      "summary": "A technológia nem önmagában jó vagy rossz: az a fontos, hogy tudatosan, biztonságosan és alkotó módon használjuk.",
+      "tags": [
+        "digitalis-kultura",
+        "technologia",
+        "tudatos-hasznalat",
+        "digitalis-biztonsag"
+      ],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/digitalis-kultura",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "editorial-guidance",
+          "sourceId": null
+        }
+      },
+      "searchText": "Nem a technológia helyettünk, hanem a technológia velünk A digitális kultúra jóval több egy tantárgynál, egy számítógép kezelésénél vagy néhány alkalmazás használatánál. Annak megértéséről szól, hogyan alakítja a technológia a tanulást, a munkát, a kapcsolatainkat és a mindennapi döntéseinket. Olyan tudásról, amely segít abban, hogy ne csupán fogyasztói legyünk a digitális világnak, hanem tudatos, felelős alakítói is. Egy eszköz önmagában nem helyettesíti az emberi figyelmet, kíváncsiságot és mérlegelést. Ugyanazzal a telefonnal lehet céltalanul görgetni, kapcsolatot tartani egy családtaggal, új ismereteket szerezni vagy egy alkotást létrehozni. Nem csak az a kérdés, mennyi időt töltünk a képernyő előtt, hanem az is, **milyen célból, milyen tartalommal és milyen következményekkel használjuk**. A használattól a megértésig A digitális jártasság nem egyenlő a gyors kattintással. Aki megtanul egy felületet kezelni, még nem feltétlenül érti, mi történik az adataival, hogyan működik egy keresés, mitől megbízható egy információ vagy miért hibás egy automatikus javaslat. A digitális kultúra oktatása éppen a látható műveletek mögötti összefüggéseket teszi érthetővé. A jó feladat ezért gyakran egy valódi problémából indul ki: hogyan rendszerezzük egy projekt adatait, miként készítsünk közérthető bemutatót, milyen módon ellenőrizhetünk egy állítást, vagy hogyan működjön egy egyszerű program? A megoldás közben fejlődik az önállóság, a tervezés, a pontos fogalmazás és az együttműködés is. A számítógép ilyenkor nem cél, hanem **a gondolkodás és az alkotás eszköze**. Tudást építeni, nem csak információt gyűjteni Az internet óriási mennyiségű információhoz ad hozzáférést, de a hozzáférés még nem jelent megértést. Meg kell tanulni különbséget tenni tény, vélemény, reklám, feltételezés és szándékosan félrevezető tartalom között. Érdemes megvizsgálni, ki állít valamit, milyen bizonyítékra hivatkozik, mikor jelent meg az információ, és más, független források megerősítik-e. A valódi tanulás során az információt értelmezzük, kérdéseket teszünk fel róla, kapcsolatba hozzuk korábbi ismereteinkkel, és képesek vagyunk saját szavainkkal elmagyarázni. A technológia ebben segíthet jegyzeteléssel, vizualizációval, szimulációval vagy gyakorlófeladatokkal. Nem az a cél, hogy valaki a legtöbb választ megtalálja, hanem hogy **értse is, amit felhasznál**. Alkotás: a digitális világ aktív oldala A digitális kultúra egyik legfontosabb élménye, amikor a tanuló felismeri: a technológia segítségével nemcsak nézni, hanem létrehozni is lehet valamit. Egy jól szerkesztett dokumentum, egy adatokra épülő grafikon, egy prezentáció, egy fényképes történet, egy saját weboldal vagy egy egyszerű alkalmazás mind ennek példája. A digitális alkotás figyelmet kíván. Pontosan kell megfogalmazni a célt, meg kell tervezni a lépéseket, ki kell próbálni az eredményt, fel kell ismerni a hibákat, és sokszor újra kell gondolni a megoldást. A hibakeresés, a kitartás és az igényesség ugyanúgy része a folyamatnak, mint az eszközkezelés. Egy elkészült produktum akkor értékes igazán, ha egy valós kérdésre ad érthető és használható választ. A sport és az adatok találkozása A sport különösen jó terepet kínál a tudatos technológiahasználat megértéséhez. Egy edzésnapló, egy mérkőzésstatisztika, egy időeredményeket ábrázoló grafikon vagy egy videós mozgáselemzés segíthet abban, hogy pontosabban lássuk a fejlődést. Az adatokból mintázatok rajzolódhatnak ki, és könnyebben megfogalmazhatók a következő célok. Ugyanakkor a számok nem mondanak el mindent. A teljesítményt befolyásolhatja a terhelés, a pihenés, a motiváció, a sérülés vagy a versenyhelyzet is. Egy digitális eszköz mérése segítheti az edző és a sportoló munkáját, de önmagában nem helyettesíti a szakmai tapasztalatot és az emberi beszélgetést. A felelős technológiahasználat ezért **az adatok és az emberi szempontok együttes értelmezését** jelenti. Önálló digitális útmutatók Két önálló témához részletes útmutató készült. Az [online biztonság és felelős kommunikáció](#/oktatas/digitalis-kultura/online-biztonsag) a személyes adatok és digitális viselkedés kérdéseit tárgyalja. A [mesterséges intelligencia tudatos használata](#/oktatas/digitalis-kultura/mesterseges-intelligencia) a lehetőségekre, az ellenőrzésre és az önálló döntésekre összpontosít. Digitális egyensúly és jó szokások A technológia akkor támogatja az életünket, ha nem szorítja háttérbe az alvást, a mozgást, a személyes kapcsolatokat és az elmélyült figyelmet. Érdemes felismerni, mikor segít egy értesítés, és mikor szakítja meg feleslegesen a munkát; mikor érdemes online keresni, és mikor jobb letenni a készüléket, beszélgetni vagy kipróbálni valamit a valóságban. A digitális egyensúly nem a technológia elutasítása, hanem a **tudatos idő- és figyelemgazdálkodás**. Egy jól megválasztott alkalmazás csökkentheti a felesleges munkát, átláthatóbbá teheti a tanulást és több időt hagyhat a sportolásra vagy a közösségi életre. A döntés azonban a felhasználóé: a digitális eszköznek az ember céljaihoz kell igazodnia, nem fordítva. A digitális kultúra mindenkié A digitális világ folyamatosan változik. Egy mai felület vagy alkalmazás néhány év múlva másképp nézhet ki, de az alapvető készségek hosszú távon is értékesek maradnak: az önálló tanulás, a kritikai gondolkodás, az adatok értelmezése, az alkotás, a biztonságos kommunikáció és az új helyzetekhez való alkalmazkodás. Ezért a digitális kultúra nem csupán azoknak szól, akik később informatikával szeretnének foglalkozni. Ugyanúgy része lehet egy sportoló, egy pedagógus, egy egészségügyi szakember, egy művész vagy bármely más területen dolgozó ember életének. A cél, hogy a technológiától ne félnünk kelljen, és ne is kritikátlanul kövessük: **értsük meg, válasszuk meg, és használjuk értelmes, hasznos célokra**. Digitális kultúra a gyakorlatban A digitális kultúra témái között szerepel az információk ellenőrzése, az adatvédelem, a szövegszerkesztés, a táblázatkezelés, a prezentációkészítés és az algoritmikus problémamegoldás. Az intézményi követelményeket és az adott tanév feladatait a szaktanár által meghatározott hivatalos tanulási környezet közli.",
+      "blocks": []
+    },
+    "pages/our-school/partners.json": {
+      "id": "page:000010",
+      "title": "Partnereink",
+      "menuLabel": "Partnereink és alapítványunk",
+      "summary": "Az iskola együttműködéseinek és lehetséges kapcsolódási területeinek áttekintése.",
+      "tags": [],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/partnerek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:iskolank",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "institutional-approval-needed",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Miért fontos az együttműködés? A sportegyesületekkel, szakmai partnerekkel és közösségi szereplőkkel való kapcsolatok az oktatási és sportnevelési célokat támogathatják. Partnerként kizárólag intézményi jóváhagyással és ellenőrzött megnevezéssel szerepelhet szervezet. Kapcsolatfelvétel Együttműködéssel kapcsolatos megkereséseket az intézmény hivatalos kapcsolati felületén lehet kezdeményezni. A konkrét partnerlista ellenőrzés után bővíthető. [Kapcsolati adatok](#/kapcsolat) Intézményi és sportkapcsolatok A Csanádi fenntartója a Közép-Pesti Tankerületi Központ, amelynek elérhetősége a hivatalos kapcsolati oldalon szerepel. Az egyesületi együttműködés vagy sportolói igazolás nem jelent automatikusan nyilvános partneri névsort. A teljes, aktuális partnerlista közlése intézményi jóváhagyást igényel; ezért itt nem szerepel ellenőrizetlen szervezetnév. [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/our-school/introduction.json": {
+      "id": "page:000003",
+      "title": "Bemutatkozás",
+      "menuLabel": "Bemutatkozás",
+      "summary": "Általános iskola, gimnázium és sportiskolai nevelés egy közösségben. Az oldal bemutatja a zuglói iskolát, a közös értékeket és a további képzési tájékozódás útvonalait.",
+      "tags": [],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 4
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/bemutatkozas",
+        "verifiedContent": true,
+        "bannerMediaId": "media:iskolank",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Iskola Zugló szívében A **{{site.name}}** címe **{{site.address}}**, OM-azonosítója **{{site.omIdentifier}}**. Általános iskolai és gimnáziumi közismereti oktatása sportiskolai felkészüléssel kapcsolódik össze. A képzési részletekért a [Képzéseink](#/oktatas/kepzeseink), a jelentkezésért a [Felvételi](#/oktatas/felveteli) oldalt keresd. Közös értékek Az iskola 2026-os pedagógiai programja a tisztességet, a kitartást, a fegyelmet és a tudatos munkát hangsúlyozza. Ezek az értékek a sportpályán, az osztályteremben és az iskolai közösségben egyaránt jelen vannak. [Pedagógiai program – hivatalos PDF](#/informaciok/dokumentumtar) [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/our-school/mission-and-values.json": {
+      "id": "page:000004",
+      "title": "Küldetésünk és értékeink",
+      "menuLabel": "Céljaink és értékeink",
+      "summary": "Az iskola küldetése a tanulás és a sport összehangolása, az egyéni fejlődés és a közösségi felelősség támogatása.",
+      "tags": [],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 4
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/kuldetes-es-ertekek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:iskolank",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "A tanulás és a sport közös alapja A tudás megszerzése és a rendszeres, kitartó munka egymást erősítő célok. A következetesség, a sportszerűség, az együttműködés és az önállóság nemcsak az edzésen, hanem a tanórákon is fontosak. A nevelési célok részletes, hivatalos megfogalmazását az intézmény pedagógiai programja tartalmazza. Az itt olvasható szöveg tájékoztató összefoglaló. Miben jelennek meg ezek az értékek? A közösségi munka, a tanulmányi és sportteljesítmény, a digitális felelősség és az egymás iránti figyelem mind a mindennapok részét képezhetik. [Iskolánk bemutatása](#/iskolank/bemutatkozas) · [Sportiskolai nevelés](#/oktatas/kepzeseink/sportiskolai-neveles) A tanulás és a sport egyensúlya A tanulói fejlődés az alapműveltség, az önálló munkavégzés és a sportban fontos kitartás együttese. A sportolói felkészülés mellett az általános iskolai és gimnáziumi képzés is az intézmény hivatalos feladata. A konkrét szakmai követelményeket mindig a közzétett pedagógiai program alapján érdemes áttekinteni. [Dokumentumtár](#/informaciok/dokumentumtar) [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/our-school/our-achievements.json": {
+      "id": "page:000007",
+      "title": "Büszkeségeink",
+      "menuLabel": "Büszkeségeink",
+      "summary": "Olimpiai és világbajnoki eredmények az iskola nyilvános büszkeséglistájáról.",
+      "tags": [],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/buszkesegeink",
+        "verifiedContent": true,
+        "bannerMediaId": "media:eredmenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "pride"
+        }
+      },
+      "searchText": "A Csanádi sportolói öröksége Az intézmény hivatalos Büszkeségeink oldala olimpiai bajnokok, világ- és Európa-bajnokok hosszú sorát mutatja be. Ezek valóban közzétett, történeti sporteredmények, nem látványképek alapján megállapított sikerek. A névsorban például Kozák Danuta kajakos, Szabó Gabriella kajakos, Berki Krisztián tornász és Lőrincz Tamás birkózó is szerepel. A névhez és az eredményhez az intézményi forrást kapcsoljuk, nem egy másik személyt ábrázoló képet. Eredmények és további nevek [Az iskola hivatalos büszkeséglistája](#/sport/sporteredmenyek) Sportolói büszkeségeink A Csanádi nyilvános büszkeséglistáján Kozák Danuta, Szabó Gabriella, Liu Shaoang, Vári Attila, Berki Krisztián és sok további ismert sportoló szerepel. A névsor sportágakat és kiemelkedő történeti eredményeket mutat be; azokat nem szabad a jelenlegi tanév friss versenyeredményeivel összekeverni. [Az iskola közzétett büszkeséglistája – eredeti intézményi forrás](https://csanadi-bp.edu.hu/buszkeseg.html)",
+      "blocks": []
+    },
+    "pages/our-school/history.json": {
+      "id": "page:000005",
+      "title": "Iskolánk története",
+      "menuLabel": "Történetünk és büszkeségeink",
+      "summary": "A törökőri iskola története a sportiskolai hagyományokig. Az iskolatörténeti mérföldkövek, a sportiskolai korszak és a további források egy oldalon követhetők.",
+      "tags": [],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 6
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/tortenet",
+        "verifiedContent": false,
+        "bannerMediaId": "media:iskolank",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "history"
+        }
+      },
+      "searchText": "A kezdetektől a saját épületig Törökőr iskolájának kezdeteit az intézmény történeti összefoglalója mutatja be. Az eredeti szöveg elején **1887**, ugyanott később **1897** szerepel a Várna utcai kezdeteknél, ezért a kezdőév pontos feloldása intézményi egyeztetést igényel. Az Őrnagy utcai épület átadásának dátuma egyértelműen 1904. október 18.; ott a tanítás másnap indult. A sportiskolai korszak Az iskola 1987-től a Központi Sportiskola bázisiskolájaként működött. Az 1988/1989-es tanévben gimnáziumi osztályok is indultak. 1989. május 25-én az intézmény Csanádi Árpád nevét vette fel. A névadó a magyar és a nemzetközi sportélet meghatározó szereplője volt. Az iskola története és a sporthoz kötődő hagyományai ma is összekapcsolódnak. Bővebben Iskolánk hivatalos története Iskolatörténeti mérföldkövek A megbízhatóan elkülöníthető későbbi állomások: az Őrnagy utcai épület megnyitása (1904), a Központi Sportiskola bázisiskolai szerepe (1987), gimnáziumi osztályok indulása (1988/1989), a Csanádi Árpád név felvétele (1989. május 25.) és az 1998-as olimpiai érdemérem. A Várna utcai kezdetek 1887/1897-es eltérését a hivatalos szöveg tisztázásáig nem tesszük az idővonal ellenőrzött eseményei közé. Az iskola hivatalos történeti ismertetője Az iskola történetének részletes és eredeti változata a hivatalos intézményi történeti oldalon olvasható. Az itt megjelenített idővonal ennek ellenőrizhető, kivonatos feldolgozása. [Intézményi történet és névadó – eredeti intézményi forrás](https://csanadi-bp.edu.hu/tortenet.html)",
+      "blocks": []
+    },
+    "pages/our-school/teaching-staff.json": {
+      "id": "page:000064",
+      "title": "Tantestület",
+      "menuLabel": "Tantestület",
+      "summary": "A tanítás, a nevelés és a sportpedagógia közös munkaterületei. Ismerd meg a pedagógiai együttműködés és a tanárokkal való hivatalos kapcsolattartás lehetőségeit.",
+      "tags": [
+        "tantestulet",
+        "pedagogusok",
+        "munkakozossegek",
+        "sport"
+      ],
+      "categories": [
+        "iskolank",
+        "tantestulet"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "route": "#/iskolank/tantestulet",
+        "preview": false,
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "institutional-approval-needed",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Pedagógiai együttműködés Az iskolai tantestület munkájában az általános iskolai és gimnáziumi nevelés, a közismereti tantárgyak, a testnevelés és a sportpedagógia egymást kiegészítő területek. A munkaközösségi együttműködés segíti az egységes pedagógiai szemléletet, a tehetséggondozást és a tanulók személyes fejlődésének támogatását. A tantestületi áttekintőben a pedagógiai szakterületek között kereshetsz, megismerheted az egyes munkaterületek feladatait és az iskolai közösségben betöltött szerepüket. Kapcsolat a pedagógusokkal A tantestület közismereti, testnevelési és sportpedagógiai feladatokat lát el. Az aktuális tanári és osztályfőnöki névsor az intézmény jóváhagyása nélkül nem tehető közzé; személyes telefonszámot vagy e-mail-címet nem találunk ki. A megfelelő kapcsolattartót az [iskolai titkárságon](#/kapcsolat) lehet megkeresni. [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/our-school/traditions-and-awards.json": {
+      "id": "page:000006",
+      "title": "Hagyományok és elismerések",
+      "menuLabel": "Hagyományok, díjak",
+      "summary": "Az iskolai közösség hagyományainak és elismeréseinek áttekintő oldala. Olvass a mindennapi hagyományokról, valamint a nyilvánosan ellenőrizhető eredmények bemutatásának módjáról.",
+      "tags": [],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/hagyomanyok-es-elismeresek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:iskolank",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "awards"
+        }
+      },
+      "searchText": "Hagyományok a mindennapokban Az iskolai közösség életében kiemelt szerepet kapnak az ünnepek, közösségi alkalmak, sportprogramok és tanulmányi események. Az egyes programok aktuális időpontjai a hivatalos eseménynaptárban jelenhetnek meg. [Iskolai események](#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek) Elismerések és eredmények A nyilvánosan közölhető eredmények kizárólag ellenőrzött intézményi közlés alapján szerepelhetnek ezen az oldalon. A kapcsolódó eredményeket külön gyűjteményben lehet böngészni. [Büszkeségeink](#/iskolank/buszkesegeink) · [Sporteredmények](#/sport/sporteredmenyek) Közzétett elismerések A Magyar Olimpiai Bizottság 1998-ban olimpiai érdemérmet adományozott az iskolának. Az intézményi elismerésjegyzék több sportiskolai díjat sorol fel, és tartalmazza a 2025/2026-os Boldog Iskola elismerését is. Az egyes díjak évét és megnevezését a hivatalos kitüntetési oldalon lehet ellenőrizni. [Iskolai elismerések – eredeti intézményi forrás](https://csanadi-bp.edu.hu/awards.html)",
+      "blocks": []
+    },
+    "pages/our-school/eco-school.json": {
+      "id": "page:000008",
+      "title": "Ökoiskolai szemlélet",
+      "menuLabel": "Ökoiskola",
+      "summary": "Környezettudatosság, egészséges életmód és felelős közösség. Környezeti nevelés, fenntarthatóság és az iskolai hétköznapok felelős szokásai kerülnek előtérbe.",
+      "tags": [],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/oko-iskola",
+        "verifiedContent": true,
+        "bannerMediaId": "media:iskolank",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "eco"
+        }
+      },
+      "searchText": "Természet és mindennapok Az intézmény hivatalos ÖKO Iskola oldala a fenntarthatósági ismeretek és a környezeti nevelés szerepét hangsúlyozza. A természet védelme, a takarékosság és a tudatos döntések a diákok számára kézzelfogható feladatokká válhatnak. A közösségi programok, a kirándulások és a sport is alkalmat teremthetnek arra, hogy a diákok a környezetükre figyeljenek, és saját lehetőségeikhez mérten cselekedjenek. Kapcsolódó forrás ÖKO Iskola – intézményi tájékoztatás Környezeti nevelés az iskolában Az ökoiskolai program a környezettudatos életmódot, az erőforrások takarékos használatát és az egészséges mindennapokat kapcsolja a tanuláshoz és a sporthoz. Az iskola 2026-os közzététele a Madarak és fák napjához kapcsolódó közösségi programokról és az alvás fontosságáról is beszámol. [Ökoiskolai program – eredeti intézményi forrás](https://csanadi-bp.edu.hu/oko.html)",
+      "blocks": []
+    },
+    "pages/our-school/website-history.json": {
+      "id": "page:000066",
+      "title": "A honlap születése – emberi döntések és digitális segítség",
+      "menuLabel": "A honlap születése",
+      "summary": "Hogyan születik egy korszerű iskolai honlap, és miként segítheti a mesterséges intelligencia az emberi fejlesztőmunkát?",
+      "tags": [
+        "honlap",
+        "webfejlesztes",
+        "mesterseges-intelligencia",
+        "emberi-felelosseg"
+      ],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 4
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/a-honlap-szuletese",
+        "verifiedContent": false,
+        "bannerMediaId": "media:iskolank",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "A megújuló digitális találkozási pont Egy iskola honlapja nem pusztán oldalak, menüpontok és képek gyűjteménye. Olyan közös információs tér, ahol a tanulók, a családok, a pedagógusok, a sportolók és az érdeklődők a számukra fontos tudnivalókat keresik. Egy jól működő honlapnak ezért egyszerre kell áttekinthetőnek, hozzáférhetőnek, informatívnak és megbízhatónak lennie. A Csanádi Sportiskola 2026-os weboldalának megújítását ez a szempont vezeti. A cél, hogy az iskola hagyományai, az oktatás, a sporteredmények, a hétköznapi tudnivalók és a közösségi élet egymással összekapcsolva jelenjenek meg. Az új felület a gyors tájékozódást éppúgy támogatja, mint az elmélyültebb olvasást, a keresést és a képes történetmesélést. Az első lépés: kérdések és tudatos döntések Egy weboldal minőségét nem az határozza meg, hány látványos elemet sikerül elhelyezni rajta. A fontosabb kérdés az, hogy az egyes megoldások mit tesznek hozzá a látogató élményéhez. Meg kell határozni, milyen témák fontosak az intézménynek, hogyan kapcsolódnak az oldalak, mit kell gyorsan megtalálni, és mely információknál szükséges különösen pontos, rendszeresen ellenőrzött tartalom. A tervezés ezért a célok, a menüszerkezet, a hozzáférhetőség, az arculat és az adatkezelés átgondolásával kezdődött. A feladatok sorrendje is számított: előbb az alapokat és az összefüggéseket kellett tisztázni, majd ezekre lehetett felépíteni a képgalériákat, a keresőt, az eseménynaptárt, a dokumentumtárat és más interaktív felületeket. Arculat, amelyben a hagyomány és a jelen találkozik Az iskola címerének, sportos karakterének és közösségi értékeinek megőrzése mellett olyan vizuális világot kerestünk, amely korszerű, de nem öncélúan harsány. A sötétkék, a törtfehér és az arany színek egymást kiegészítve jelennek meg, a világos és sötét megjelenés pedig ugyanannak az egységes arculatnak két változata. A mozgó képsávok, a sportági motívumok, a kapunyitó jelenet és az animációk az élményt gazdagíthatják, de csak akkor hasznosak, ha közben az oldal könnyen kezelhető marad. Fontos szempont a telefonos használat, a jól olvasható szöveg, a billentyűzetes navigáció és a csökkentett mozgást előnyben részesítő látogatók igényeinek figyelembevétele is. A háttérben: átgondolt tartalom és szervezett adatok A látható honlap mögött sok olyan munka zajlik, amely a látogató számára szinte észrevétlen. Egy hírnek, egy dokumentumnak vagy egy oldalnak megfelelő címet, leírást, elérési utat és kapcsolódásokat kell kapnia. A csengetési rendnek egyértelmű időpontokkal, az eseményeknek értelmezhető dátumokkal, a sporteredményeknek ellenőrizhető adatokkal kell rendelkezniük. A rendszer ezért strukturált JSON-adatokra és újrafelhasználható megjelenítőelemekre épül. Ez segít abban, hogy ugyanaz az információ több helyen is következetesen jelenjen meg, és a későbbi változtatások ne igényeljék minden oldal kézi újraszerkesztését. A technikai felépítés célja nem a bonyolultság, hanem a **pontosság, az átláthatóság és a hosszú távú fenntarthatóság**. Miben segített a mesterséges intelligencia? A honlap fejlesztésében a mesterséges intelligencia jelentős segítséget nyújtott. Különösen ott bizonyult hasznosnak, ahol egy feladat sok ismétlődő lépésből állt, nagy mennyiségű szöveg vagy strukturált adat átnézését igényelte, illetve több megoldási változat gyors összehasonlítására volt szükség. Segített ötleteket rendszerezni, szövegvázlatokat és szerkezeti javaslatokat készíteni, egyes programozási feladatokat előkészíteni, kódrészleteket átvizsgálni, adatkapcsolatokat ellenőrizni és hibalehetőségeket feltárni. A források feltérképezésében és bizonyos rutinszerű ellenőrzésekben is támogatta a munkát. Ezek a lehetőségek gyorsíthatják a fejlesztést, és több időt hagyhatnak arra, ami valóban emberi figyelmet kíván: a célok tisztázására, a tartalom megértésére és a minőség értékelésére. Miért nélkülözhetetlen az emberi irányítás? A mesterséges intelligencia használata nem azt jelenti, hogy a fejlesztés önállóan, emberi döntések nélkül történik. Valakinek meg kell fogalmaznia, mi készüljön el, milyen színvonalon, milyen korlátokkal és milyen felelősséggel. A jó eredményhez világos feladatmeghatározás, következetes visszajelzés és gyakran többszöri javítás szükséges. Az automatizált rendszer válaszokat és javaslatokat állít elő a kapott utasítások és a rendelkezésére álló mintázatok alapján. Képes összetett feladatokban is közreműködni, de **nem helyettesíti az intézmény szempontjainak ismeretét, a közösség iránti felelősséget és az emberi mérlegelést**. A végső tartalmi döntés, a közzététel jóváhagyása, a megfelelő utasítások megadása és az eredmény vállalása emberi feladat marad. Ellenőrzés nélkül nincs megbízható eredmény Egy technikailag helyesnek látszó megoldás is tartalmazhat hibát. Egy program elindulhat úgy, hogy valamelyik menüpontja nem működik megfelelően; egy adatlap lehet szépen formázott, miközben hibás dátumot tartalmaz; egy magabiztosan megfogalmazott állítás pedig lehet pontatlan. A fejlesztés ezért nem ér véget a tartalom előállításánál. A munka része a JSON-fájlok és a hivatkozások ellenőrzése, a navigáció kipróbálása, a különböző képernyőméretek vizsgálata és a hibák javítása. Legalább ilyen fontos a források ellenőrzése. A hivatalos iskolai tényekhez hiteles intézményi forrást kell keresni; ha egy adat még nem ellenőrzött, nem szabad biztos információként megjelentetni. Az emberi ellenőrzés és az automatizált tesztelés itt egymást erősíti. Képek, személyes adatok és hitelesség Egy iskolai honlap vizuális világa sokat hozzátesz a tájékozódáshoz, ezért szükség van jó minőségű, változatos képekre. Ugyanakkor alapvető különbség van egy bemutató jellegű látványkép és egy valóban megtörtént iskolai esemény dokumentumfotója között. A kétféle tartalmat nem szabad összekeverni, különösen akkor, ha név szerint azonosítható sportoló, pedagógus vagy tanuló szerepel az oldalon. A személyes adatok megjelenítésénél az iskolai közösség tagjainak érdekeit és a közzététel feltételeit is figyelembe kell venni. A részletes tanári profilok és az eseménybeszámolók akkor válnak hitelessé, ha a szükséges adatok és képek megfelelő jóváhagyással állnak rendelkezésre. A fejlesztés egyik fontos tanulsága: **a látvány és a tartalmi igazság nem választható el egymástól**. A gondolkodás és az eszköz kapcsolatáról A mesterséges intelligencia fejlődése új kérdéseket vet fel arról, hogyan dolgozunk, tanulunk és hozunk döntéseket. Egyre több olyan részfeladatban lehet segítségünkre, amelyhez korábban hosszú, ismétlődő kézi munka kellett. Ez értékes lehetőség, de nem jelenti azt, hogy minden javaslatát mérlegelés nélkül el kellene fogadnunk. Az emberi gondolkodás nem csupán lehetséges válaszok előállítása. Hozzátartozik a célok kijelölése, a tapasztalat, a közösségi értékek figyelembevétele, a következmények mérlegelése és a felelősség vállalása. A technológia lehet egyre ügyesebb segítőtárs; attól azonban, hogy egy rendszer egyre jobb válaszokat képes adni, **a tudatos döntés és a felelős felhasználás szerepe nem csökken, hanem felértékelődik**. Egy honlap, amely folyamatosan fejlődhet A digitális felület akkor marad értékes, ha az elkészülte után is gondozzák. Új hírek, sporteredmények, tanévi információk, dokumentumok és közösségi történetek jelenhetnek meg rajta. A tartalmak frissítése mellett a hozzáférhetőség, a biztonság, az adatminőség és a látogatói visszajelzések vizsgálata is fontos. A honlap története ezért nem egyetlen elkészült képernyőképről szól. Sok apró döntés, ellenőrzés és javítás eredménye, amelyben a digitális eszközök és a mesterséges intelligencia hasznos segítséget adhatnak, de az irányt az emberi szándék és felelősség határozza meg. Ez ugyanaz a szemlélet, amelyet a [digitális kultúra szerepét bemutató oldalunkon](#/oktatas/digitalis-kultura) is fontosnak tartunk. A megújuló honlap tartalmi alapelvei A megújuló oldal az iskola nyilvános tájékoztatását, a sportot, a tanulást és a dokumentumokat kapcsolja össze. A közzététel alapelve a dátumok, a dokumentumok és az intézményi adatok ellenőrizhetősége: a szemléltető média és a hivatalos iskolai fénykép nem ugyanaz. [Dokumentumtár](#/informaciok/dokumentumtar) [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/our-school/foundation.json": {
+      "id": "page:000009",
+      "title": "Iskolai alapítvány",
+      "menuLabel": "Alapítvány",
+      "summary": "Tanulás és sport: támogatás a fejlődési lehetőségekhez. Az alapítvány szerepét és a támogatási lehetőségekről szóló hivatalos tájékozódás módját mutatja be.",
+      "tags": [],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 4
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/alapitvany",
+        "verifiedContent": true,
+        "bannerMediaId": "media:iskolank",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "foundation"
+        }
+      },
+      "searchText": "Tanulásért és a Sportért Iskolai Alapítvány Az iskola hivatalos bemutatkozása szerint az alapítvány célja többek között a szociálisan rászoruló diákok támogatása, a tehetséggondozás és a sport- vagy tanulmányi programok segítése. Az alapítvány az oktatáshoz, az iskolai közösséghez és a sportoláshoz kapcsolódó lehetőségeket támogatja. A részletes feltételekért és a hivatalos információkért az intézmény eredeti tájékoztatóját érdemes megnyitni. Hivatalos ismertető Az alapítvány támogatásának feltételeiről, kérelmeiről és közzétett adatairól az intézményi oldalon lehet tájékozódni. Adományozás vagy az adó 1%-ának felajánlása előtt mindig ellenőrizd az ott megadott bankszámlaszámot és adószámot. [Az iskolai alapítvány tájékoztatója – eredeti intézményi forrás](https://csanadi-bp.edu.hu/alapitvany.html)",
+      "blocks": []
+    },
+    "pages/sports/sports-results.json": {
+      "id": "page:000033",
+      "title": "Sporteredmények",
+      "menuLabel": "Sporteredmények",
+      "summary": "A nyilvánosan ellenőrizhető eredmények külön, név szerinti jegyzéke. A név szerint ellenőrizhető sporteredmények és a nyilvános eredményjegyzékek eléréséhez vezet.",
+      "tags": [],
+      "categories": [
+        "sport"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 6
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/sport/sporteredmenyek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:eredmenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "pride"
+        }
+      },
+      "searchText": "Hiteles eredmények A Csanádi Sportiskola egykori tanulói között olimpiai bajnokok, világ- és Európa-bajnokok is szerepelnek. A sikerek név és sportág szerint is böngészhetők, az egyes adatok mellett megtalálható az iskola hivatalos eredményjegyzékére mutató hivatkozás. Az intézmény eredeti Büszkeségeink oldala Közzétett sporteredmények A hivatalos büszkeséglistán szereplő történeti eredményeket az iskolai sporteredménytárban név szerint vissza lehet keresni. A 2026-os intézményi aktuális oldalon több diákverseny-eredményről is beszámolnak. Egyéni, friss sporteredményt csak a hivatalos közlésben szereplő helyezéssel és névvel állítunk. [Hírek és események](#/hirek-es-esemenyek) [Az iskola közzétett büszkeséglistája – eredeti intézményi forrás](https://csanadi-bp.edu.hu/buszkeseg.html)",
+      "blocks": []
+    },
+    "pages/sports/sports-disciplines.json": {
+      "id": "page:000032",
+      "title": "Sportágak",
+      "menuLabel": "Sportágak",
+      "summary": "Az egyéni és csapatsportok sokszínű világa. Csapat- és egyéni sportágak, felkészülési szempontok és a kapcsolódó sportiskolai tartalmak.",
+      "tags": [],
+      "categories": [
+        "sport"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/sport/sportagak",
+        "verifiedContent": false,
+        "bannerMediaId": "media:sport",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "pride"
+        }
+      },
+      "searchText": "Csapatsportok és közös döntések A labdarúgás, a kosárlabda, a kézilabda, a vízilabda és a röplabda egyszerre követel gyors helyzetfelismerést, szabályismeretet és egymásra figyelést. A csapatsportokban az eredmény nemcsak a technikán, hanem a kommunikáción, a szerepek elfogadásán és a közös felkészülésen is múlik. Egyéni felkészülés és kitartás Az atlétika, az úszás, a torna, a birkózás vagy a vívás más-más készségeket állít előtérbe. A fejlődés megfigyelése, az apró célok teljesítése és a pihenés tudatos tervezése minden sportágban fontos. A konkrét sportági kínálatról és az aktuális edzéslehetőségekről az iskola intézményi tájékoztatása adhat pontos információt. Sportágak és felkészülés A hivatalos büszkeséglista kajak-kenu, vízilabda, birkózás, torna, gyorskorcsolya, vívás és más sportágak eredményeit is felvonultatja. **Ez történeti eredményjegyzék, nem az aktuálisan választható iskolai sportági képzések listája.** A jelentkezés előtt a képzési kínálatot a [Felvételi](#/oktatas/felveteli) oldalon és az intézménynél kell megerősíteni. [Az iskola közzétett büszkeséglistája – eredeti intézményi forrás](https://csanadi-bp.edu.hu/buszkeseg.html)",
+      "blocks": []
+    },
+    "pages/sports/athletes.json": {
+      "id": "page:000034",
+      "title": "Sportolók",
+      "menuLabel": "Sportolók",
+      "summary": "A sportolói bemutatkozások és ellenőrzött eredmények leendő gyűjtőhelye. A leendő sportolóprofilok, a hiteles eredmények és a közzétételi feltételek ismertetője.",
+      "tags": [],
+      "categories": [
+        "sport"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/sport/sportolok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:eredmenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "institutional-approval-needed",
+          "sourceId": null
+        }
+      },
+      "searchText": "Sportolói profilok Egy sportolói adatlap tartalmazhat sportágat, korosztályt, a közzétételhez jóváhagyott eredményeket és kapcsolódó sporteseményeket. Kiskorúak azonosító adatai és képmásai csak megfelelő engedéllyel közölhetők. Jelenlegi állapot Ez nem élő tanulói névsor: az iskola jelenlegi sportolóiról név, korosztály, csapat vagy fotó csak előzetes intézményi adatkezelési és közzétételi ellenőrzés után jelenhet meg. A nyilvános, történeti sikereket a [Sporteredmények](#/sport/sporteredmenyek) és a [Büszkeségeink](#/iskolank/buszkesegeink) tartalmazzák. Gyakori kérdés Mikor lesznek pontos adatok? A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz. Sportolói bemutatkozások A sportolóprofil szigorúan különbözik a korábbi tanítványok nyilvános eredményjegyzékétől. Az itt megjelenő általános sportági példák nem valós, azonosítható diákok adatlapjai. A jelenlegi tanulókról az intézmény jóváhagyása nélkül nem közlünk sem teljesítményadatot, sem képet.",
+      "blocks": []
+    },
+    "pages/sports/teams.json": {
+      "id": "page:000035",
+      "title": "Csapatok",
+      "menuLabel": "Csapatok",
+      "summary": "A csapatokhoz kapcsolódó sportági, korosztályos és eredményinformációk áttekintő oldala.",
+      "tags": [],
+      "categories": [
+        "sport"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/sport/csapatok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:eredmenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "institutional-approval-needed",
+          "sourceId": null
+        }
+      },
+      "searchText": "Mit mutatna egy csapatprofil? A csapat neve, sportága, korosztálya, az intézmény által jóváhagyott edzői adatok, valamint a közzétehető események és eredmények kapcsolhatók össze egy adatlapban. Hiteles adatok nélkül nincs névsor A csapatnév, a sportág, a korosztály, a következő nyilvános mérkőzés és a sporteredmény **külön adat**. A csapatok oldala jelenleg nem tartalmaz jóváhagyott névsort vagy edzésidőpontot, ezért itt nem szerepelnek kitalált játékosnevek. [Sporteredmények](#/sport/sporteredmenyek) · [Sportágak](#/sport/sportagak) Gyakori kérdés Mikor lesznek pontos adatok? A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz. Csapatsportok eredményei A vízilabdához és kézilabdához kapcsolódó eredményeket az iskola közzétett sporthírei között lehet keresni. Egy versenyeredmény nem jelenti azt, hogy az adott névsor ma is érvényes. Csapatprofilt csak jóváhagyott korosztály-, edző- és időadatokkal lehet megjelentetni.",
+      "blocks": []
+    },
+    "pages/sports/sports-galleries.json": {
+      "id": "page:000037",
+      "title": "Képgaléria",
+      "menuLabel": "Képgaléria",
+      "summary": "Sport, tanulás és közösség képes témái. Tematikus fotók és a sportiskolai mindennapokat bemutató képes tartalmak gyűjtőhelye.",
+      "tags": [],
+      "categories": [
+        "sport"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/sport/sportgaleriak",
+        "verifiedContent": false,
+        "bannerMediaId": "media:sport",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "editorial-guidance",
+          "sourceId": null
+        }
+      },
+      "searchText": "Pillanatok, amelyek mesélnek A sportgaléria az edzések, a mozgás és a közösségi élmények világát mutatja be. A képeket sportág és iskolai téma szerint válogathatod, és nagyobb méretben is megtekintheted. Képek és sportélet A jelenlegi gyűjtemény tematikus sportképeket és bemutató montázsokat is tartalmaz. **Egy illusztráció nem egyenértékű hiteles iskolai eseményfotóval.** Eseményhez rendelhető személyes képeket, neveket és eredményeket csak jogszerű, intézményi jóváhagyással lehet publikálni. A közzétett versenyadatokat a [Sporteredmények](#/sport/sporteredmenyek) oldalon keresd.",
+      "blocks": []
+    },
+    "pages/sports/coaches.json": {
+      "id": "page:000036",
+      "title": "Edzők",
+      "menuLabel": "Edzők",
+      "summary": "Sportági szakemberek bemutatása és az edzői munkakörök általános ismertetése.",
+      "tags": [],
+      "categories": [
+        "sport"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/sport/edzok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:eredmenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "institutional-approval-needed",
+          "sourceId": null
+        }
+      },
+      "searchText": "Az edzői munka területei A sportági technikai képzés, a felkészítés tervezése, a terhelés és regeneráció összehangolása, valamint a tanulói fejlődés támogatása fontos szempont lehet a sportiskolai nevelésben. Név szerinti edzői adatok Az edzői bemutatkozásnál a sportágat, a szakmai feladatot, a korosztályt és – csak intézményi engedéllyel – a nyilvános kapcsolattartási módot érdemes feltüntetni. **Név szerinti edzőlista, portré és edzésbeosztás még nincs jóváhagyva ezen a felületen.** [Sportiskolai nevelés](#/oktatas/kepzeseink/sportiskolai-neveles) · [Kapcsolat](#/kapcsolat) Gyakori kérdés Mikor lesznek pontos adatok? A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz. Edzői munka A sportági felkészítés és a közismereti tanulmányok összehangolása közös feladat. A szülői vagy egyesületi megkereséshez az iskola hivatalos kapcsolattartását használd; tanulók személyes edzésadatait és közvetlen edzői elérhetőségeit nem gyűjtjük ellenőrzés nélkül.",
+      "blocks": []
+    },
+    "pages/education/admissions/open-days.json": {
+      "id": "page:000019",
+      "title": "Nyílt napok",
+      "menuLabel": "Nyílt napok",
+      "summary": "Tájékozódás az iskolai bemutatkozó alkalmakról és a nyílt napokról. Ismerd meg a tájékozódási alkalmak célját, a részvétel feltételeit és a hivatalos időpontellenőrzést.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/felveteli/nyilt-napok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:felveteli",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "highAdmission"
+        }
+      },
+      "searchText": "Mire jó a nyílt nap? A nyílt nap lehetőség az iskola képzési kínálatának, tanulási környezetének és sportnevelési szemléletének megismerésére. A részvételi feltételeket és a regisztráció módját az adott esemény hivatalos tájékoztatója határozza meg. Időpontok és jelentkezés A 2026/2027-es tanévhez kapcsolódó események pontos időpontját csak jóváhagyott intézményi közlemény alapján lehet megadni; ezen a fejlesztői változaton nem közlünk becsült dátumot. [Felvételi központ](#/oktatas/felveteli) · [Eseménynaptár](#/hirek-es-esemenyek/esemenynaptar) Gyakori kérdés Mikor lesznek pontos adatok? A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz. 2026. novemberi gimnáziumi nyílt napok A Csanádi Árpád Sportiskola 2026. november 17-re és november 19-re hirdetett gimnáziumi nyílt napot. A program 8:30-kor igazgatói tájékoztatóval kezdődik, majd 9:50-kor intézménybemutató következik. A részvételhez szükséges regisztrációról és az esetleges változásokról a hivatalos közlemény rendelkezik. [Hírek és események](#/hirek-es-esemenyek) [Gimnáziumi felvételi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/felveteli.html)",
+      "blocks": []
+    },
+    "pages/education/admissions/admission-deadlines.json": {
+      "id": "page:000020",
+      "title": "Felvételi határidők",
+      "menuLabel": "Felvételi határidők",
+      "summary": "A felvételi és beiratkozási időpontok ellenőrzésének kiindulópontja. A jelentkezések, értesítések és beiratkozások időrendjét csak megerősített források alapján szabad követni.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/felveteli/felveteli-hataridok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:felveteli",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "highAdmission"
+        }
+      },
+      "searchText": "Mely határidőket érdemes figyelni? A jelentkezés, a szükséges dokumentumok beadása, az esetleges vizsga vagy meghallgatás, valamint az eredményközlés eltérő időpontokhoz kapcsolódhat. Az első és a kilencedik évfolyamra jelentkezés folyamata sem feltétlenül azonos. Hivatalos információ ellenőrzése A határidők és feltételek a tanévre közzétett felvételi tájékoztatókban irányadók. Ha az intézmény még nem tett közzé ellenőrzött időpontot, az oldal nem jelenít meg kitalált dátumot. [Első évfolyamos beiskolázás](#/oktatas/felveteli/elso-evfolyam) · [Kilencedik évfolyamos felvételi](#/oktatas/felveteli/kilencedik-evfolyam) Gyakori kérdés Mikor lesznek pontos adatok? A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz. Országos középfokú felvételi – 2027 2026. december 1.: jelentkezés a központi írásbelire. 2027. január 23., 10:00: központi írásbeli vizsga. 2027. február 3., 14:00: pótló írásbeli. 2027. február 22.: a középfokú jelentkezési lapok továbbításának határideje. 2027. március 1–19.: a szóbeli vizsgák országos időszaka. Ezek országos időpontok, nem külön Csanádi által meghirdetett programok. [Felvételi központ](#/oktatas/felveteli) [Az országos felvételi eljárás részletes időrendje](https://palyavalasztas.csmpsz.hu/a-kozepfoku-felveteli-eljaras-rendje-a-2026-2027-tanevben/) [Gimnáziumi felvételi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/felveteli.html)",
+      "blocks": []
+    },
+    "pages/education/admissions/first-grade.json": {
+      "id": "page:000017",
+      "title": "Első évfolyamos beiratkozás",
+      "menuLabel": "1. osztályos beiratkozás",
+      "summary": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források. A családok a szükséges tájékoztatókat és az első osztályos beiratkozás hivatalos felületeit találják meg.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/felveteli/elso-evfolyam",
+        "verifiedContent": false,
+        "bannerMediaId": "media:felveteli",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "schoolAdmission"
+        }
+      },
+      "searchText": "Első lépések A családok számára az első iskolai év egyszerre jelent új tanulási környezetet, közösséget és napi ritmust. A beiratkozás előtt célszerű áttekinteni az intézmény pedagógiai programját, az aktuális beiratkozási felhívást és az ügyintézés technikai feltételeit. A hivatalos beiskolázási oldalon a KRÉTA modul használatához és a szülői nyilatkozatokhoz kapcsolódó anyagok is szerepelnek. Ezekből mindig az adott felvételi időszakra érvényes változatot kell használni. Hivatalos anyagok Beiratkozási dokumentumok Első osztály: szükséges tájékoztatók Az iskola első évfolyamos beiratkozási oldalán a beiskolázási kiadvány, a tankerületi felhívás, a KRÉTA BÁI használati útmutatója, a szülői nyilatkozat és az erkölcstan/hit- és erkölcstan választásáról szóló nyilatkozat található. **A beiratkozás időpontját és eljárását minden tanévben a friss tankerületi felhívással kell ellenőrizni.** [Első évfolyamos beiratkozás – eredeti intézményi forrás](https://csanadi-bp.edu.hu/altisk.html)",
+      "blocks": []
+    },
+    "pages/education/admissions/ninth-grade.json": {
+      "id": "page:000018",
+      "title": "Kilencedik évfolyamos felvételi",
+      "menuLabel": "9. évfolyamos felvételi",
+      "summary": "Középiskola-választás, jelentkezés, tájékoztatók és kapcsolódó dokumentumok.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/felveteli/kilencedik-evfolyam",
+        "verifiedContent": false,
+        "bannerMediaId": "media:felveteli",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "highAdmission"
+        }
+      },
+      "searchText": "A felvételi lépései A középfokú felvételi több egymásra épülő lépésből állhat: tájékozódás az intézményről, a követelmények megismerése, jelentkezés és az adott eljárás szerint szükséges vizsgák vagy beszélgetések. Az intézmény hivatalos felvételi oldalán található tájékoztató és a KRÉTA-felhasználói útmutató részletesebben segítheti a jelentkezést. Az általános információt mindig az adott tanévre kiadott szabályok egészítik ki. Hivatalos felvételi felület Felvételi tájékoztató és dokumentumok Kilencedik évfolyam: felvételi lépések A 9. évfolyamra jelentkezéshez külön intézményi tájékoztató, központi írásbeli jelentkezési dokumentum, helyi jelentkezési lap és KRÉTA BKI-útmutató található a Csanádi felvételi oldalán. Az írásbelire való jelentkezés és a középfokú felvételi lapok leadása két eltérő lépés. A 2027-es eljárás országos dátumait a [Felvételi határidők](#/oktatas/felveteli/felveteli-hataridok) oldalon követheted, a helyi követelményeket pedig az eredeti intézményi kiírásban. [Gimnáziumi felvételi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/felveteli.html)",
+      "blocks": []
+    },
+    "pages/education/library/library-services.json": {
+      "id": "page:000029",
+      "title": "Könyvtári szolgáltatások",
+      "menuLabel": "Könyvtári szolgáltatások",
+      "summary": "Iskolai könyvtári lehetőségek és tájékozódási útmutató. A kölcsönzés és a könyvtári tájékozódás lehetőségeiről, valamint további forrásokról olvashatsz.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/konyvtar/konyvtari-szolgaltatasok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "editorial-guidance",
+          "sourceId": null
+        }
+      },
+      "searchText": "Miben segíthet a könyvtár? A könyvtári szolgáltatások a tanulást, az olvasást, az információkeresést és az önálló kutatómunkát támogathatják. A kölcsönzési feltételeket és az elérhető állományt a helyi könyvtári szabályzat rögzíti. Kölcsönzés és tájékozódás A nyitvatartásra, beiratkozásra, könyvkölcsönzésre és tanulói hozzáférésre vonatkozó aktuális feltételek intézményi ellenőrzés után jeleníthetők meg. [Könyvtár](#/oktatas/konyvtar) · [Tananyagok és jegyzetek](#/oktatas/tananyagok-es-jegyzetek) Könyvtári szolgáltatások A dokumentumkeresés, a szakirodalom és az iskolai tananyagok tudatos használata a könyvtári tanulás része. A beiratkozás, a helyben használat és a kölcsönzés intézményi feltételei a könyvtáros vagy a titkárság aktuális tájékoztatásából ismerhetők meg. [Kapcsolati adatok](#/kapcsolat)",
+      "blocks": []
+    },
+    "pages/education/exams/graduation-exams.json": {
+      "id": "page:000022",
+      "title": "Érettségi",
+      "menuLabel": "Érettségi",
+      "summary": "A közzétett 2026-os őszi vizsgaidőpontok és a felkészülés forrásai. A vizsgaidőszakok, a felkészülési tudnivalók és az eredeti hivatalos források együtt szerepelnek.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/vizsgak/erettsegi",
+        "verifiedContent": true,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "finalExam"
+        }
+      },
+      "searchText": "2026 őszi vizsgaidőszak Az intézmény közlése szerint a 2026-os őszi középszintű írásbelik között szerepel a földrajz és a magyar nyelv és irodalom október 12-én, a matematika október 13-án, a történelem október 14-én, valamint az angol nyelv október 15-én. A dolgozatok megtekintésére közzétett nap november 3., a középszintű szóbeli időpontja november 18. Az iskola az érkezés idejét és a felkészülési témaköröket is a saját hivatalos oldalán részletezi. Hivatalos időpontok és témakörök Érettségi vizsga – 2026 ősz 2026 őszi érettségi – közzétett időpontok Az iskola 2026. őszi középszintű írásbeli időpontjai között az október 12-i magyar és földrajz, a 13-i matematika, a 14-i történelem és a 15-i angol szerepel. A dolgozatmegtekintés november 3-án volt. A november 18-i szóbelihez a közzétett **legkésőbbi érkezés 7:30**. Ez a 2026. őszi vizsgaidőszak tájékoztatója, nem az összes jövőbeli érettségi naptára. [Érettségi – intézményi tájékoztató – eredeti intézményi forrás](https://csanadi-bp.edu.hu/erettsegi.html)",
+      "blocks": []
+    },
+    "pages/education/exams/other-exams.json": {
+      "id": "page:000024",
+      "title": "Egyéb vizsgák",
+      "menuLabel": "Egyéb vizsgák",
+      "summary": "Az érettségin és az osztályozó vizsgán kívüli vizsgahelyzetek tájékozódási oldala.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/vizsgak/egyeb-vizsgak",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "editorial-guidance",
+          "sourceId": null
+        }
+      },
+      "searchText": "Lehetséges vizsgahelyzetek A tanulmányi előmenetellel összefüggésben különböző vizsgaformák fordulhatnak elő; a pontos jogosultságokat, feladatokat és eljárásokat mindig az aktuális intézményi szabályzatok határozzák meg. Milyen információkat kell keresni? Az érintett tantárgyat, a követelményeket, a jelentkezési és igazolási feltételeket, a vizsga időpontját és az értékelés módját érdemes ellenőrizni. [Vizsgaközpont](#/oktatas/vizsgak) · [Dokumentumtár](#/informaciok/dokumentumtar) Gyakori kérdés Mikor lesznek pontos adatok? A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz. Egyéb tanulmányi vizsgák A tantárgyi különbözeti, javító és egyéb tanulmányi vizsgák pontos szervezési feltételeit az intézmény helyi tanterve és vizsgaszabályai rögzítik. A jelenleg nem közzétett vizsgadátumok helyett a tanulóknak az iskola hivatalos kapcsolati csatornáin kell időpontot egyeztetniük. [Dokumentumtár](#/informaciok/dokumentumtar)",
+      "blocks": []
+    },
+    "pages/education/exams/classification-exams.json": {
+      "id": "page:000023",
+      "title": "Osztályozó vizsgák",
+      "menuLabel": "Osztályozó vizsgák",
+      "summary": "Az önálló felkészülés és a hivatalos vizsgakövetelmények áttekintése. A felkészülés tervezéséről, a követelmények ellenőrzéséről és az érvényesség vizsgálatáról olvashatsz.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/vizsgak/osztalyozo-vizsgak",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "placementExam"
+        }
+      },
+      "searchText": "Tervezés és dokumentáció Osztályozó vizsgára készülve a tananyagot célszerű témakörökre bontani, majd rendszeres önellenőrzéssel végighaladni az anyagon. A vizsgára jogosultságot, a jelentkezési teendőket és a számonkérés módját az intézmény hivatalos szabályozása határozza meg. A felkészüléshez elsősorban a megadott tantárgyi követelményeket, a pedagógus útmutatását és az intézményi tájékoztatókat érdemes használni. Az aktuális időpontot nem helyettesítjük általános becsléssel. Osztályozó vizsga: évszámellenőrzés A Csanádi nyilvános osztályozóvizsga-oldalán a megtekintéskor **2025. április 1–15.** közötti beosztások szerepelnek. Ezek archív adatok, 2026/2027-es vizsgaidőpontnak nem vehetők át. Az érintett tantárgy, vizsgakövetelmény, jogosultság és helyszín ellenőrzéséhez az iskola aktuális egyéni tájékoztatása szükséges. [Osztályozó vizsgák (a közzétett 2025-ös beosztással) – eredeti intézményi forrás](https://csanadi-bp.edu.hu/osztalyozo.html)",
+      "blocks": []
+    },
+    "pages/education/programs/secondary-school.json": {
+      "id": "page:000014",
+      "title": "Gimnázium",
+      "menuLabel": "Gimnázium",
+      "summary": "Felkészülés továbbtanulásra, érettségire és a sportolói élet kihívásaira. A középiskolai tanulmányok, a továbbtanulás és a felvételi tájékoztatók kapcsolódnak egymáshoz.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/kepzeseink/gimnazium",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "highAdmission"
+        }
+      },
+      "searchText": "Középiskolai évek A gimnáziumi tanulásban az összetettebb ismeretek, a saját tanulási módszerek és a továbbtanulásra való felkészülés kerül előtérbe. A rendszeres sportolás mellett különösen hasznos a tanulmányi idő tudatos megtervezése. A 9. évfolyamos felvételi részletes eljárását az intézmény hivatalos dokumentumai szabályozzák. A jelentkezés előtt a központi tájékoztatókat és a legfrissebb intézményi információkat célszerű áttekinteni. Felvételi tájékoztatás [A 9. évfolyam felvételi oldala](#/oktatas/felveteli/kilencedik-evfolyam) Gimnáziumi tájékozódás A kilencedik évfolyamra történő jelentkezés középfokú felvételi eljárás keretében zajlik. Az iskola 2026. november 17-én és 19-én gimnáziumi nyílt napot hirdetett; az igazgatói tájékoztató 8:30-kor, a bemutató 9:50-kor kezdődik. A tanulmányi területeket és felvételi követelményeket a hivatalos iskolai tájékoztató szabályozza. [Hírek és események](#/hirek-es-esemenyek) [Gimnáziumi felvételi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/felveteli.html)",
+      "blocks": []
+    },
+    "pages/education/programs/primary-school.json": {
+      "id": "page:000013",
+      "title": "Általános iskola",
+      "menuLabel": "Általános iskola",
+      "summary": "A tanulási alapok, közösségi élmények és a mozgás fejlesztése. A családok az iskolakezdésről, az alapozó tanulásról és a beiratkozási forrásokról tájékozódhatnak.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/kepzeseink/altalanos-iskola",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "schoolAdmission"
+        }
+      },
+      "searchText": "Az alapok megerősítése Az általános iskolai tanulásban a szövegértés, a számolási készség, a kíváncsiság és az önálló feladatmegoldás kap szerepet. A sportiskolai környezetben a mozgás öröme és a közösséghez tartozás szintén jelentős élmény lehet. Az iskolaválasztás előtt érdemes áttekinteni az intézmény pedagógiai programját, a beiratkozás aktuális feltételeit és a szükséges dokumentumokat. Beiratkozás [Első évfolyamos beiskolázás – hivatalos oldal](#/oktatas/felveteli/elso-evfolyam) Általános iskola: mire számíthat a család? Az iskola 2026/2027-es bemutatkozó anyaga évfolyamonként jellemzően egy, 14–16 fős általános iskolai osztályt ír le. Az alsó tagozaton az óvoda és az iskola közötti fokozatos átmenetre helyezik a hangsúlyt. A jelentkezéshez és a beiratkozáshoz a közzétett KRÉTA-útmutatók és nyilatkozatok tartoznak. [Első évfolyamos beiratkozás – eredeti intézményi forrás](https://csanadi-bp.edu.hu/altisk.html)",
+      "blocks": []
+    },
+    "pages/education/programs/sports-school-education.json": {
+      "id": "page:000015",
+      "title": "Sportiskolai nevelés",
+      "menuLabel": "Sportiskolai nevelés",
+      "summary": "Sportteljesítmény és tanulmányi előrehaladás tudatos összehangolása. Az oldal a tanulmányi feladatok és a sportolói felkészülés közös tervezésének szempontjait járja körül.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/kepzeseink/sportiskolai-neveles",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "editorial-guidance",
+          "sourceId": null
+        }
+      },
+      "searchText": "Két terület, közös fejlődés A sportolói élet rendszeres edzésekkel, versenyekkel és sokszor utazással jár. A tanulás az ismeretek bővítését és a hosszabb távú életpálya megalapozását segíti. A Csanádi pedagógiai programjában külön szerepet kap a sportoló tanulók szükségleteihez igazodó nevelés és oktatás. A kitartás, a felelősségvállalás és a tudatos szervezés a két terület közös értékei. Sport és tanulmányok összehangolása A sportiskolai képzésben a közismereti tanulmányok mellett kiemelt szerepet kap a sportoló diákok felkészülésének támogatása. A szakmai keretek, a tanulmányi követelmények és a sportági sajátosságok részleteit az iskola pedagógiai programja és felvételi tájékoztatója tartalmazza. [Dokumentumtár](#/informaciok/dokumentumtar)",
+      "blocks": []
+    },
+    "pages/education/school-years/previous-school-years.json": {
+      "id": "page:000027",
+      "title": "Korábbi tanévek",
+      "menuLabel": "Korábbi tanévek",
+      "summary": "Korábbi tanévekhez kapcsolódó dokumentumok és események rendszerezett gyűjtőoldala.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/tanevek/korabbi-tanevek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "institutional-approval-needed",
+          "sourceId": "disclosure"
+        }
+      },
+      "searchText": "Hogyan használható az archívum? A korábbi tanévek tanévrendjét, eseményeit és egyéb nyilvános dokumentumait az eredeti dátummal és az adott tanév megjelölésével érdemes közzétenni. A régi dokumentumokat nem szabad az aktuális tanév követelményeiként bemutatni. Mi érhető el most? A jelenlegi fejlesztési változatban nincs jóváhagyott, teljes korábbi tanéves archívum. A gyűjtemény akkor bővülhet, ha a dokumentumok eredete és nyilvánossága ellenőrizhető. [Aktuális tanév](#/oktatas/tanevek/aktualis-tanev) · [Hírarchívum](#/hirek-es-esemenyek/hirek/hirarchivum) Archív tanévi anyagok A korábbi tanévek eseményei és dokumentumai csak az **eredeti évszámmal** használhatók. Például a 2025-ös osztályozóvizsga-beosztás a történeti tájékozódást szolgálja, nem alkalmazható a 2026/2027-es tanévben. Ha egy archív irat nem érhető el hiteles, letölthető változatban, az adatát nem tüntetjük fel aktuális követelményként. [Közzétételi lista – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozzetetel.html)",
+      "blocks": []
+    },
+    "pages/education/school-years/current-school-year.json": {
+      "id": "page:000026",
+      "title": "Aktuális tanév – 2026/2027",
+      "menuLabel": "Aktuális tanév",
+      "summary": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi. A jelenlegi tanév szervezési adatait és az események hivatalos ellenőrzési forrásait gyűjti össze.",
+      "tags": [],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/tanevek/aktualis-tanev",
+        "verifiedContent": true,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "disclosure"
+        }
+      },
+      "searchText": "Tanévkezdés és tájékozódás Az iskola közzétett tanévnyitó-tájékoztatója szerint a 2026/2027-es tanév első tanítási napja 2026. szeptember 1., a tanévnyitó ünnepség 9:00 órakor kezdődött. A tanév további részében a vizsgaidőszakok és az intézményi események időpontjait a hivatalos tájékoztatás alapján frissítjük. A részletes csengetési rend a Mindennapi tudnivalók között található. Események időrendben [Hivatalos aktuális közlemények](#/hirek-es-esemenyek/hirek) 2026/2027-es tanév – kiinduló adatok Az intézmény 2026. szeptember 1-jére tette közzé a tanévnyitót. A közzétételi listán külön hivatkozás szerepel az iskolai tanév helyi rendjéhez. A szünetek és tanítás nélküli napok részleteinél mindig a közzétett, legfrissebb intézményi munkaterv az irányadó. [Közzétételi lista](#/informaciok/dokumentumtar/kozzeteteli-lista) [Közzétételi lista – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozzetetel.html)",
+      "blocks": []
+    },
+    "pages/information/community-service/community-service-documents.json": {
+      "id": "page:000060",
+      "title": "Közösségi szolgálat dokumentumai",
+      "menuLabel": "Szolgálati dokumentumok",
+      "summary": "Közösségi szolgálathoz kapcsolódó igazolások és űrlapok gyűjtőhelye. A szolgálathoz kapcsolódó dokumentumok, nyilvántartások és jóváhagyott űrlapok gyűjteménye.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "serviceForms"
+        }
+      },
+      "searchText": "Milyen dokumentumokra lehet szükség? A szolgálat szervezésénél megállapodási, jelentkezési vagy teljesítésigazolási dokumentumok fordulhatnak elő. A pontos dokumentumkör a helyi eljárástól és a fogadóhelytől függ. Ellenőrzött nyomtatványok A megfelelő intézményi nyomtatványokat csak az aktuális, jóváhagyott fájlok alapján érdemes feltölteni. Ellenőrizetlen űrlapokat nem tüntetünk fel használatra kész dokumentumként. [Nyomtatványok](#/informaciok/dokumentumtar/nyomtatvanyok) · [Közösségi szolgálat](#/informaciok/kozossegi-szolgalat) Gyakori kérdés Mikor lesznek pontos adatok? A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz. Szolgálati dokumentumok Az intézményi nyomtatványoldalon kötelező jelentkezési lapot, kétpéldányos együttműködési megállapodást, adott helyzetben befogadó nyilatkozatot, beszámolót és szolgálati naplót sorolnak fel. Ezeket csak a hivatalos eredeti állományból töltsd le; az iskola helyi elszámolási szabályait egyeztesd a koordinátorral. [Közösségi szolgálati nyomtatványok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozszoldokuk.html)",
+      "blocks": []
+    },
+    "pages/information/community-service/community-service-regulations.json": {
+      "id": "page:000059",
+      "title": "Jogszabályok",
+      "menuLabel": "Jogszabályok",
+      "summary": "A közösségi szolgálathoz kapcsolódó szabályozási háttér tájékozódási oldala.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "serviceRules"
+        }
+      },
+      "searchText": "Miért fontosak a szabályok? A közösségi szolgálat szervezésének és beszámításának feltételeit jogszabályok és intézményi szabályok is érinthetik. Az alkalmazandó előírásokat mindig a hatályos szöveg és az intézmény hivatalos tájékoztatása alapján kell megállapítani. Hivatalos szövegek ellenőrzése A jogszabályok változhatnak; ezért ide csak ellenőrzött, naprakész forrásra mutató hivatkozást érdemes feltölteni. [Közösségi szolgálat – tudnivalók](#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok) · [Szabályzatok](#/informaciok/dokumentumtar/szabalyzatok) Jogszabályi háttér és ellenőrzés Az intézmény közösségi szolgálati tájékoztatója a 2011. évi CXC. törvényt és a 20/2012. (VIII. 31.) EMMI rendeletet ismerteti, de a közölt szöveg korábbi állapotot is tükrözhet. Jogi ügyintézéskor a hatályos jogszabályt ellenőrizd; az iskola oldalát eljárási segédletként kezeld. [Közösségi szolgálat – eljárás és korábban közzétett szabályok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozszolinfo.html)",
+      "blocks": []
+    },
+    "pages/information/community-service/community-service-guide.json": {
+      "id": "page:000058",
+      "title": "Tudnivalók",
+      "menuLabel": "Tudnivalók",
+      "summary": "Tájékozódás a közösségi szolgálat feladatairól és igazolásáról. Gyakorlati tudnivalók a feladatok megszervezéséhez, dokumentálásához és igazolásához.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "serviceRules"
+        }
+      },
+      "searchText": "A szolgálat megtervezése A tanulói közösségi szolgálattal kapcsolatban az intézményi koordináció, a fogadóhely megválasztása, az előzetes egyeztetés és az igazolások kezelése különösen fontos. Az aktuális helyi szabályokat mindig a kijelölt felelős tájékoztatása alapján kell követni. Mit érdemes rögzíteni? A tevékenység időpontját, helyét, időtartamát és a szükséges igazolásokat az előírt módon kell dokumentálni. [Közösségi szolgálat](#/informaciok/kozossegi-szolgalat) · [Kapcsolódó dokumentumok](#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok) Gyakori kérdés Mikor lesznek pontos adatok? A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz. Közösségi szolgálat: hogyan kezdj hozzá? A tanuló a közösségi szolgálat megkezdése előtt az iskolai koordinátorral egyezteti a helyszínt és a tevékenységet. A szolgálati naplóban dátummal és tevékenységgel dokumentálja a teljesítést. Az utazási idő a szolgálati időbe nem számítható be. [Közösségi szolgálat](#/informaciok/kozossegi-szolgalat) [Az iskola közösségi szolgálati dokumentumai](#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok) [Közösségi szolgálat – eljárás és korábban közzétett szabályok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozszolinfo.html)",
+      "blocks": []
+    },
+    "pages/information/document-library/policies.json": {
+      "id": "page:000053",
+      "title": "Szabályzatok",
+      "menuLabel": "Szabályzatok",
+      "summary": "Hivatalos szabályzatok és a nyilvános intézményi alapdokumentumok áttekintése.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/dokumentumtar/szabalyzatok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "documents"
+        }
+      },
+      "searchText": "Mely dokumentumokat érdemes keresni? A pedagógiai program, a házirend, a szervezeti és működési szabályzat és az adatkezelési tájékoztatás eltérő kérdésekre adhat választ. Mindig a hatályos és hivatalosan közzétett változatot kell figyelembe venni. Dokumentumváltozatok Egy szabályzatnál az elnevezés, a verzió, a közzétételi dátum és a forrás egyértelmű megjelölése különösen fontos. A nem ellenőrzött dokumentumokat nem tüntetjük fel hivatalosként. [Dokumentumtár](#/informaciok/dokumentumtar) · [Adatvédelem](#/informaciok/adatvedelem) Gyakori kérdés Mikor lesznek pontos adatok? A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz. Alapdokumentumok A pedagógiai program a nevelési kereteket, a helyi tantervek a tantárgyi tartalmakat, a házirend a mindennapi működés szabályait, az SZMSZ az intézményi szervezetet írja le. Adatvédelmi ügyben az adatkezelési tájékoztató és a kamerarendszerre vonatkozó külön dokumentum is fontos. Mindegyiket közvetlenül az iskola dokumentumtárából érdemes megnyitni. [Intézményi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/docs.html)",
+      "blocks": []
+    },
+    "pages/information/document-library/forms.json": {
+      "id": "page:000054",
+      "title": "Nyomtatványok",
+      "menuLabel": "Nyomtatványok",
+      "summary": "Beadandó nyomtatványok és ügyintézési űrlapok gyűjtőoldala. A nyomtatványok használatáról és a jóváhagyott, letölthető űrlapok eléréséről olvashatsz.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/dokumentumtar/nyomtatvanyok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "parents"
+        }
+      },
+      "searchText": "Nyomtatványok használata A megfelelő nyomtatvány kiválasztásakor ellenőrizd az ügytípust, a kitöltési útmutatót, a kötelező mellékleteket és az aktuális verziót. Egyes ügyek intézésére digitális felület is rendelkezésre állhat. Közzétehető állományok A fejlesztői változat nem kínál ellenőrizetlen hivatalos űrlapot. A fájlokat csak intézményi jóváhagyás és dokumentumazonosító után szabad megjelentetni. [Digitális ügyintézés](#/informaciok/digitalis-ugyintezes) · [Dokumentumtár](#/informaciok/dokumentumtar) Gyakori kérdés Mikor lesznek pontos adatok? A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz. Letölthető nyomtatványok A szülői igazolás, a sportegyesületi igazolás, a napközis és tanulószobai nyilatkozat, a felvételi lapok és a közösségi szolgálati iratok **más-más eljáráshoz tartoznak**. Kezdd a [Szülői információknál](#/informaciok/mindennapi-tudnivalok/szuloi-informaciok), a [Felvételinél](#/oktatas/felveteli) vagy a [Közösségi szolgálati dokumentumoknál](#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok), és ott az eredeti fájl aktuális változatát használd. [Szülői nyomtatványok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/szulok.html)",
+      "blocks": []
+    },
+    "pages/information/document-library/public-disclosures.json": {
+      "id": "page:000055",
+      "title": "Közzétételi lista",
+      "menuLabel": "Közzétételi lista",
+      "summary": "A nyilvánosan kötelezően hozzáférhető dokumentumok és információk gyűjtőpontja.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/dokumentumtar/kozzeteteli-lista",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "disclosure"
+        }
+      },
+      "searchText": "A közzétételi lista célja A közzétételre előírt intézményi dokumentumok és adatok nyilvános elérhetőségét egységes szerkezetben célszerű biztosítani. A teljes és aktuális lista összeállítása intézményi adategyeztetést kíván. Mit ellenőrizz a dokumentumon? Cím, forrás, hatály, frissítés dátuma és az adott dokumentum valódi fájlhivatkozása mind fontos. Ezen az oldalon ellenőrzés nélkül nem szerepelnek hivatalosnak jelölt dokumentumok. [Szabályzatok](#/informaciok/dokumentumtar/szabalyzatok) · [Dokumentumtár](#/informaciok/dokumentumtar) Gyakori kérdés Mikor lesznek pontos adatok? A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz. Különös közzétételi lista Az iskola honlapján külön közzétételi lista tartalmazza az intézményi adatokat, mérési és érettségi eredményekre, osztálylétszámokra, munkatervre és házi feladatok szabályaira mutató hivatkozásokat. A hivatalos oldal jelzi, hogy az adatok frissítése folyamatban van, ezért az egyes dokumentumok dátumát külön ellenőrizni kell. [Közzétételi lista – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozzetetel.html)",
+      "blocks": []
+    },
+    "pages/information/daily-information/meals.json": {
+      "id": "page:000050",
+      "title": "Étkezés",
+      "menuLabel": "Étkezés",
+      "summary": "Étkezési tájékoztatás és a kapcsolódó ügyintézési lehetőségek. Az étkezési ügyintézés, a befizetés és a lemondás tudnivalóihoz kínál hivatalos forrásokat.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/mindennapi-tudnivalok/etkezes",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "meals"
+        }
+      },
+      "searchText": "Étkezés és lemondás Az intézmény hivatalos tájékoztatása szerint az étkezéshez internetes ügyintézési lehetőség is kapcsolódik. Az ebédbefizetéssel, megrendeléssel és lemondással kapcsolatos részletek a hivatalos étkezési oldalon találhatók. Az étlapokat és az aktuális megrendelési feltételeket mindig a megfelelő szolgáltató felületén kell ellenőrizni. Hivatalos információk Ebédbefizetés – intézményi tájékoztató Étkezés és ebédbefizetés A hivatalos tájékoztató szerint a következő havi ebéd internetes befizetése a hónap ötödik napjától válik elérhetővé. A következő naptól érvényes rendelést 9:00-ig lehet lemondani. A belépési adatokhoz az iskola gazdasági irodája nyújt segítséget; az aktuális étlapokat az étkeztető teszi közzé. A részletes, esetleg módosult szabályokat fizetés vagy lemondás előtt az eredeti oldalon ellenőrizd. [Ebédbefizetés és étkezés – eredeti intézményi forrás](https://csanadi-bp.edu.hu/ebed.html)",
+      "blocks": []
+    },
+    "pages/information/daily-information/bell-schedule.json": {
+      "id": "page:000049",
+      "title": "Csengetési rend",
+      "menuLabel": "Csengetési rend",
+      "summary": "A tanítási órák hivatalosan közzétett időpontjai, élő órával és a következő csengetésig tartó visszaszámlálással.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/mindennapi-tudnivalok/csengetesi-rend",
+        "verifiedContent": true,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "bells"
+        }
+      },
+      "searchText": "Tanóraidőpontok A tanítási órák időpontjait az iskola közzétett csengetési rendje alapján jelenítjük meg. A digitális órával és a következő csengetésig tartó visszaszámlálással napközben könnyen követheted az időrendet. Az általános iskolai ügyelet a hivatalos tájékoztatás szerint tanítási napokon 7:00-tól 18:00-ig tart. Eredeti időbeosztás A nyolc tanítási óra kezdő és befejező időpontjának egyetlen karbantartott adatsora a `json/data/bell-schedule.json` állományban szerepel. A mai napot mutató óra és a visszaszámláló ezt a központi adatkészletet használja. Kivételes tanítási nap esetén külön intézményi közlés az irányadó. Hivatalos csengetési rend Az első óra 8:00-kor kezdődik, a nyolcadik 15:00-kor ér véget. A 5–8. óra nem mind 45 perces; az időpontokat a megjelenő központi csengetési táblázatból olvasd le. Az általános iskolai ügyelet az iskola tájékoztatása szerint tanítási napokon 7:00–18:00 között működik. [Hivatalos csengetési rend – eredeti intézményi forrás](https://csanadi-bp.edu.hu/csengetes.html)",
+      "blocks": []
+    },
+    "pages/information/daily-information/parent-information.json": {
+      "id": "page:000051",
+      "title": "Szülői információk",
+      "menuLabel": "Szülői információk",
+      "summary": "Ügyintézés, tájékozódás és a mindennapi együttműködés. Kapcsolattartás, szülői igazolások és a hétköznapi adminisztráció fontos tájékozódási pontjai.",
+      "tags": [],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/mindennapi-tudnivalok/szuloi-informaciok",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kozosseg",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "parents"
+        }
+      },
+      "searchText": "Iskolai kapcsolattartás A szülőknek fontos lehet a tanévi programok, a vizsgák, az étkezés, a beiratkozás és az igazolások pontos menete. A hivatalos intézményi közleményekből az adott időszakra érvényes részletek ellenőrizhetők. Az iskola titkárságának elérhetőségeit a Kapcsolat oldalon gyűjtöttük össze. A beiratkozás és a felvételi aktuális tudnivalói külön az Oktatás terület alatt érhetők el. Szülői dokumentumok és igazolások A hivatalos szülői oldalon külön nyomtatvány szerepel a 14 év alatti gyermek jogszerű távollétéhez, az egyesületi sportolói igazoláshoz, a napközis és tanulószobai igénybevételhez, az egyéni tanrendhez és a személyes adatok felhasználásához. A dokumentumokat mindig az **eredeti intézményi oldalon** nyisd meg, mert a fájlverzió és a benyújtási rend változhat. [Szülői nyomtatványok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/szulok.html)",
+      "blocks": []
+    },
+    "pages/news-and-events/news/school-news.json": {
+      "id": "page:000040",
+      "title": "Iskolai hírek",
+      "menuLabel": "Iskolai hírek",
+      "summary": "Az intézmény közzétett tájékoztatói és közösségi aktualitásai. A közösségi tájékoztatók és hivatalos iskolai közlemények áttekintése, forrásmegjelöléssel.",
+      "tags": [],
+      "categories": [
+        "hirek-es-esemenyek"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/hirek-es-esemenyek/hirek/iskolai-hirek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:esemenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Közérdekű tájékoztatás A hivatalos honlap 2026. november 17-re és november 19-re gimnáziumi nyílt napot hirdetett. Az igazgatói tájékoztatót 8:30-ra, az intézmény bemutatását 9:50-re jelezte. Az intézményi aktuális oldalon a felvételi információk mellett egyéb tanévi, étkeztetési és sportéleti közlemények is megjelennek. Az itt közzétett programokhoz eredeti forráskapcsolatot adunk. További aktualitások [Hivatalos iskolai hírek](#/hirek-es-esemenyek/hirek) Iskolai hírek Az iskola aktuális hírei között szerepel a 2026. november 17-i és 19-i gimnáziumi nyílt nap, a novemberi őszi érettségi tájékoztató, valamint az étkezési rendszer év végi működéséről szóló közlemény. A részleteket mindig az eredeti iskolai oldalon lehet ellenőrizni. [Hírek és események](#/hirek-es-esemenyek) [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/news-and-events/news/sports-news.json": {
+      "id": "page:000041",
+      "title": "Sporthírek",
+      "menuLabel": "Sporthírek",
+      "summary": "A sportélet legfontosabb, hitelesen közzétett eredményei és történetei. A sportolói teljesítményekről és versenybeszámolókról szóló ellenőrizhető hírek gyűjtőoldala.",
+      "tags": [],
+      "categories": [
+        "hirek-es-esemenyek"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 6
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:esemenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Sportolói teljesítmények Az intézmény nyilvános oldalain több tanulói sporteredmény és a korábbi diákok kiemelkedő nemzetközi eredményei is szerepelnek. Az ellenőrzött eredményadatokat sportág, név és forrás szerint tesszük kereshetővé. A képek a sportiskolai mozgás és közösség hangulatát mutatják be; névhez kötött eredményfotót csak akkor kapcsolunk, ha valóban az adott sportolóról vagy eseményről készült. Hivatalos források [Iskolai aktualitások](#/hirek-es-esemenyek/hirek) · [Büszkeségeink](#/sport/sporteredmenyek) Sporthírek és versenyeredmények Az ezen a felületen megjelenő, **MINTA** jelzésű sportági bejegyzések bemutatócélúak: nem hivatalos versenyeredmények. A Csanádi korábbi sportolóinak nyilvánosan közzétett teljesítményeit külön, a [Büszkeségeink](#/iskolank/buszkesegeink) oldalon lehet böngészni. Új, jelenlegi tanulót névvel vagy eredménnyel csak igazolt intézményi forrás alapján adunk a gyűjteményhez. [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/news-and-events/news/news-archive.json": {
+      "id": "page:000042",
+      "title": "Hírarchívum",
+      "menuLabel": "Hírarchívum",
+      "summary": "Korábbi iskolai információk és közzétett történetek visszakeresése. Az időrendi archívum segít a korábbi intézményi hírek és történetek újbóli megtalálásában.",
+      "tags": [],
+      "categories": [
+        "hirek-es-esemenyek"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/hirek-es-esemenyek/hirek/hirarchivum",
+        "verifiedContent": false,
+        "bannerMediaId": "media:esemenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Időrend és visszakeresés Az archívumban a hírek kereséssel és kategóriák szerint is visszakereshetők. A korábbi időpontok nem kerülnek automatikusan a közelgő események közé, de tájékoztatási és történeti értékük megmaradhat. A korábbi tanévek vizsgái, felvételi eljárásai és sporteredményei időben elkülönítve szerepelnek, hogy ne lehessen őket aktuális határidőként értelmezni. Hírarchívum és időrend Az archívum a már lezárult iskolai programok és korábbi időszakok híreinek visszakeresésére való. A 2026. szeptemberi tanévnyitó és az októberi írásbeli érettségi az archív időrendbe tartozik; nem soroljuk őket a közelgő események közé. A szűrésnél a hír megjelenésének idejét különítsd el az esemény tényleges dátumától. [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/news-and-events/event-calendar/sport-events.json": {
+      "id": "page:000046",
+      "title": "Sportesemények",
+      "menuLabel": "Sportesemények",
+      "summary": "Sportesemények és versenyprogramok áttekintő oldala. A versenyek és sportprogramok típusairól, az időpontok és eredmények ellenőrzéséről tájékoztat.",
+      "tags": [],
+      "categories": [
+        "hirek-es-esemenyek"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/hirek-es-esemenyek/esemenynaptar/sportesemenyek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:esemenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Sportesemények típusa A sportági versenyek, bemutatók, mérkőzések és közösségi sportprogramok időpontjai külön sportesemény-kategóriában kezelhetők. Program és eredmény Egy eseményhez kapcsolódhat sportág, helyszín, kezdési idő, jelentkezési tájékoztatás és utólag ellenőrzött eredmény. Nem jelenítünk meg kitalált versenyidőpontokat. [Eseménynaptár](#/hirek-es-esemenyek/esemenynaptar) · [Sporteredmények](#/sport/sporteredmenyek) Sportesemények ellenőrzése Az iskola 2026-os aktuális oldala több sportverseny eredményét is közzéteszi, de nem minden beszámolóban található ellenőrizhető kezdési időpont. Ezeket a hírek és az eredménytár mutatja be; naptári programként csak valós, közzétett eseményidőponttal szerepelhetnek. [Hírek és események](#/hirek-es-esemenyek) [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/news-and-events/event-calendar/school-events.json": {
+      "id": "page:000045",
+      "title": "Iskolai események",
+      "menuLabel": "Iskolai események",
+      "summary": "Iskolai programok, közösségi alkalmak és tanulmányi események helye a naptárban.",
+      "tags": [],
+      "categories": [
+        "hirek-es-esemenyek"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 5
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek",
+        "verifiedContent": false,
+        "bannerMediaId": "media:esemenyek",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "time-sensitive",
+          "sourceId": "home"
+        }
+      },
+      "searchText": "Milyen események tartozhatnak ide? Az iskolai ünnepségek, közösségi alkalmak, tájékoztatók, pályaorientációs programok és más jóváhagyott események külön iskolai kategóriában jeleníthetők meg. Hogyan tájékozódj? A pontos helyszín, időpont és regisztrációs feltétel csak ellenőrzött eseménybejegyzésből követhető. A központi naptárban több nézet és szűrés is elérhető. [Teljes eseménynaptár](#/hirek-es-esemenyek/esemenynaptar) · [Iskolai hírek](#/hirek-es-esemenyek/hirek/iskolai-hirek) Iskolai alkalmak A gimnáziumi nyílt napok 2026. november 17-én és 19-én 8:30-kor kezdődnek. Az iskola e programokhoz regisztrációt is említ. További iskolai rendezvények dátumát ellenőrzés nélkül nem adjuk hozzá a naptárhoz. [Hírek és események](#/hirek-es-esemenyek) [Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)",
+      "blocks": []
+    },
+    "pages/education/digital-culture/online-safety.json": {
+      "id": "page:000067",
+      "title": "Online biztonság és felelős kommunikáció",
+      "menuLabel": "Online biztonság",
+      "summary": "Személyes adatok védelme, biztonságos hozzáférés és felelős online viselkedés.",
+      "tags": [
+        "adatvédelem",
+        "kiberbiztonság"
+      ],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 2
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/digitalis-kultura/online-biztonsag",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "editorial-guidance",
+          "sourceId": null
+        }
+      },
+      "searchText": "Biztonság és felelősség az online térben A hasznos technológiahasználathoz hozzátartozik a személyes adatok védelme. Nem minden információ való nyilvános felületre, és nem minden alkalmazásnak van szüksége ugyanazokra az engedélyekre. Az erős jelszavak, a többfaktoros azonosítás, a frissítések, a gyanús üzenetek felismerése és a tudatos megosztás a mindennapi digitális önvédelem részei. Legalább ilyen fontos a mások iránti felelősség. Egy fénykép, egy üzenet vagy egy továbbosztott információ másokra is hatással lehet. A digitális kultúra ezért a tiszteletteljes kommunikációt, a források megjelölését, a szerzői jogok figyelembevételét és a segítségkérés lehetőségét is tanítja. **A képernyő mögött is emberek vannak**, akiket ugyanúgy megillet a méltóság és a biztonság. Gyakorlati ellenőrzőlista Erős, egyedi jelszavakat használj, ahol elérhető, kapcsold be a többfaktoros azonosítást, és a megosztott fájlok jogosultságait ellenőrizd. Gyanús üzeneteknél ne add meg a jelszavadat, hanem kérj segítséget egy megbízható felnőttől vagy az intézménytől. [Vissza a digitális kultúrához](#/oktatas/digitalis-kultura)",
+      "blocks": []
+    },
+    "pages/education/digital-culture/artificial-intelligence.json": {
+      "id": "page:000068",
+      "title": "Mesterséges intelligencia tudatos használata",
+      "menuLabel": "Mesterséges intelligencia",
+      "summary": "Az MI mint segédeszköz: forráskritika, önálló gondolkodás és felelős felhasználás.",
+      "tags": [
+        "mesterséges intelligencia",
+        "digitális kultúra"
+      ],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 2
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/digitalis-kultura/mesterseges-intelligencia",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "editorial-guidance",
+          "sourceId": null
+        }
+      },
+      "searchText": "A mesterséges intelligencia mint eszköz, nem mint felmentés A mesterséges intelligenciára épülő alkalmazások képesek ötleteket rendszerezni, szövegtervezeteket készíteni, adatokat feldolgozni vagy különböző megoldási lehetőségeket javasolni. Segíthetnek az indulásban, a gyakorlásban, az összefoglalásban és az ismétlődő feladatok egyszerűsítésében. Ettől azonban az általuk előállított válasz még nem válik automatikusan helyessé. A felhasználónak kell eldöntenie, **mire kér segítséget, mit fogad el, mit ellenőriz és miért használja fel az eredményt**. Különösen fontos ez akkor, ha egy válasz személyes adatokat, tudományos állításokat, iskolai tájékoztatást vagy másokat érintő döntéseket befolyásol. A jó kérdésfeltevés, a forráskritika és az önálló értékelés a mesterséges intelligencia használatával nem veszít, hanem új jelentőséget kap. Négy kérdés az MI-válaszokhoz **Mire használom?** Pontosan nevezd meg, milyen segítséget kérsz. **Honnan származik?** Ellenőrizd az állításokat megbízható forrásokból. **Mit osztok meg?** Személyes vagy bizalmas adatot ne adj meg a szolgáltatásnak. **Mi az én munkám?** A végső döntést, megértést és felelősséget ne add át az alkalmazásnak. [Vissza a digitális kultúrához](#/oktatas/digitalis-kultura)",
+      "blocks": []
+    },
+    "pages/education/learning-resources/learning-support.json": {
+      "id": "page:000069",
+      "title": "Tanulástámogatás és időgazdálkodás",
+      "menuLabel": "Tanulástámogatás",
+      "summary": "Gyakorlati tanulási módszerek, személyes célok és helyi időmérő eszközök. Tanulási célok, feladatbontás és helyben használható időmérők segítik az önálló munkát.",
+      "tags": [
+        "tanulás",
+        "időgazdálkodás",
+        "tanulókártyák"
+      ],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 3
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/tanulastamogatas",
+        "verifiedContent": false,
+        "bannerMediaId": "media:oktatas",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "editorial-guidance",
+          "sourceId": null
+        }
+      },
+      "searchText": "Felkészülés egyszerű lépésekben Bontsd a tananyagot kisebb részekre, tűzz ki elérhető célokat, és minden gyakorlás után röviden foglald össze, mire emlékszel. A sport és a tanulás összehangolásakor hagyj időt a pihenésre is. Tanulási eszközök A tanulási műhelyben külön megnyitható a [fókuszidőzítő és gondolatébresztő kérdéssor](#/megkozelites-es-erkezes), valamint a [személyes tanulási célok követése](#/megkozelites-es-erkezes). Ezek az eszközök már a közös honlap JSON-vezérelt interaktív központjában működnek; a célok mentése csak az adott böngészőben történik. A belső hivatkozások közvetlenül a megfelelő részhez vezetnek. Kapcsolódó oldalak [Digitális tananyagközpont](#/oktatas/tananyagok-es-jegyzetek) · [Digitális kultúra](#/oktatas/digitalis-kultura) · [Dokumentumtár](#/informaciok/dokumentumtar)",
+      "blocks": []
+    },
+    "pages/information/daily-information/directions.json": {
+      "id": "page:000070",
+      "title": "Megközelítés és érkezés",
+      "menuLabel": "Megközelítés",
+      "summary": "Az iskola címe, utazási lehetőségek és ellenőrzött érkezési tudnivalók egy helyen.",
+      "tags": [
+        "megközelítés",
+        "érkezés",
+        "közlekedés",
+        "iskola címe"
+      ],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 3
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/megkozelites-es-erkezes",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kapcsolat",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "contact"
+        }
+      },
+      "searchText": "Hol található az iskola? **{{site.name}}** **{{site.address}}** [A térkép és az útvonaltervezés megnyitása](#/megkozelites-es-erkezes/terkep) Tömegközlekedés és érkezés A környéken az Őrnagy utca, a Várna utca és a Puskás Ferenc Stadion M megálló felől tervezhető útvonal. Az aktuális járatokat, átszállásokat és forgalmi változásokat a [BKK hivatalos menetrendjében](https://bkk.hu/menetrendek/) ellenőrizd. A pontos belépési pontot és a látogatói fogadás rendjét indulás előtt egyeztesd az iskolával. Akadálymentes érkezés Az akadálymentes bejárat, lépcsőmentes útvonal, lift vagy parkoló részleteiről jelenleg nincs intézményileg igazolt, közzétehető adat. Az útvonal megtervezése előtt kérj közvetlen tájékoztatást az [iskolától](#/kapcsolat). Tanulási eszközöket keresel? A tanulási időzítő, a céltervező és a tanulókártyák külön, a [Tanulástámogatás](#/tanulastamogatas) oldalon érhetők el. [Hivatalos kapcsolati és adatvédelmi elérhetőségek – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kapcsolat.html)",
+      "blocks": []
+    },
+    "pages/information/daily-information/map.json": {
+      "id": "page:000071",
+      "title": "Térkép és útvonaltervezés",
+      "menuLabel": "Térkép és útvonalak",
+      "summary": "Helyi hozzájárulásos térkép, közlekedési kapcsolatok és érkezési segítség. A helyi térképes nézet és a gyalogos, kerékpáros, tömegközlekedési tájékozódás lehetőségei.",
+      "tags": [
+        "térkép",
+        "útvonal",
+        "BKK",
+        "OpenStreetMap"
+      ],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 3
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/megkozelites-es-erkezes/terkep",
+        "verifiedContent": false,
+        "bannerMediaId": "media:kapcsolat",
+        "contentReview": {
+          "reviewedAt": "2026-11-17",
+          "status": "primary-source-checked",
+          "sourceId": "contact"
+        }
+      },
+      "searchText": "Interaktív térkép A térkép csak a „Térkép betöltése” gombra kattintva kapcsolódik a külső OpenStreetMap szolgáltatáshoz. A jelölő az iskola **hozzávetőleges** helyét mutatja; nem igazol pontos bejáratot. Útvonaltervezési tudnivalók **Tömegközlekedés:** [BKK menetrendek](https://bkk.hu/menetrendek/). **Gyalog és kerékpárral:** indulás előtt tervezz biztonságos útvonalat, és ellenőrizd a helyi közlekedési feltételeket. **Akadálymentesség:** a konkrét bejárat és útvonal intézményi megerősítést igényel. [Vissza a Megközelítés és érkezés oldalra](#/megkozelites-es-erkezes) [Hivatalos kapcsolati és adatvédelmi elérhetőségek – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kapcsolat.html)",
+      "blocks": []
+    },
+    "pages/our-school/explorer.json": {
+      "id": "page:000072",
+      "title": "Interaktív felfedezőközpont",
+      "menuLabel": "Felfedezőközpont",
+      "summary": "Interaktív iskolai felfedezőeszközök: felvételi, tanév, sportágak, térkép, dokumentumok és kvíz.",
+      "tags": [
+        "interaktiv",
+        "felfedezes"
+      ],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/felfedezo",
+        "spaFeature": "explorer",
+        "verifiedContent": false
+      },
+      "searchText": "Interaktív felfedezőközpont Interaktív iskolai felfedezőeszközök: felvételi, tanév, sportágak, térkép, dokumentumok és kvíz.",
+      "blocks": []
+    },
+    "pages/our-school/school-compass.json": {
+      "id": "page:000073",
+      "title": "Iskolai iránytű",
+      "menuLabel": "Iskolai iránytű",
+      "summary": "Interaktív iskolai iránytű a tájékozódáshoz és tanuláshoz.",
+      "tags": [
+        "interaktiv",
+        "iranytu"
+      ],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/iskolai-iranytu",
+        "spaFeature": "compass",
+        "verifiedContent": false
+      },
+      "searchText": "Iskolai iránytű Interaktív iskolai iránytű a tájékozódáshoz és tanuláshoz.",
+      "blocks": []
+    },
+    "pages/our-school/school-workshop.json": {
+      "id": "page:000074",
+      "title": "Interaktív iskolai műhely",
+      "menuLabel": "Iskolai műhely",
+      "summary": "Iskolai műhely interaktív tanulási és tájékozódási eszközökkel.",
+      "tags": [
+        "interaktiv",
+        "muhely"
+      ],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/iskolai-muhely",
+        "spaFeature": "workshop",
+        "verifiedContent": false
+      },
+      "searchText": "Interaktív iskolai műhely Iskolai műhely interaktív tanulási és tájékozódási eszközökkel.",
+      "blocks": []
+    },
+    "pages/sports/olympic-heritage-and-knowledge.json": {
+      "id": "page:000075",
+      "title": "Olimpiai örökség és tudástár",
+      "menuLabel": "Olimpiai örökség és tudástár",
+      "summary": "Interaktív sporttörténeti örökség és tudástár.",
+      "tags": [
+        "olimpia",
+        "tudastar"
+      ],
+      "categories": [
+        "sport"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/sport/olimpiai-orokseg-es-tudastar",
+        "spaFeature": "heritage",
+        "verifiedContent": false
+      },
+      "searchText": "Olimpiai örökség és tudástár Interaktív sporttörténeti örökség és tudástár.",
+      "blocks": []
+    },
+    "pages/education/learning-and-community.json": {
+      "id": "page:000076",
+      "title": "Tanulás és közösség",
+      "menuLabel": "Tanulás és közösség",
+      "summary": "Interaktív tanulási és közösségi központ.",
+      "tags": [
+        "tanulas",
+        "kozosseg"
+      ],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/tanulas-es-kozosseg",
+        "spaFeature": "community",
+        "verifiedContent": false
+      },
+      "searchText": "Tanulás és közösség Interaktív tanulási és közösségi központ.",
+      "blocks": []
+    },
+    "pages/information/offline-reader.json": {
+      "id": "page:000077",
+      "title": "Offline olvasási központ",
+      "menuLabel": "Offline olvasó",
+      "summary": "Offline olvasási központ, kiválasztott nyilvános oldalak helyi mentésével.",
+      "tags": [
+        "offline",
+        "olvasas"
+      ],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/offline-olvaso",
+        "spaFeature": "offline",
+        "verifiedContent": false
+      },
+      "searchText": "Offline olvasási központ Offline olvasási központ, kiválasztott nyilvános oldalak helyi mentésével.",
+      "blocks": []
+    },
+    "pages/information/guide.json": {
+      "id": "page:000078",
+      "title": "Teljes használati kézikönyv",
+      "menuLabel": "Használati útmutató",
+      "summary": "A honlap teljes használati kézikönyve, kereséssel és nyomtatható nézettel.",
+      "tags": [
+        "utmutato",
+        "kezikonyv"
+      ],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/utmutato",
+        "spaFeature": "guide",
+        "verifiedContent": false
+      },
+      "searchText": "Teljes használati kézikönyv A honlap teljes használati kézikönyve, kereséssel és nyomtatható nézettel.",
+      "blocks": []
+    }
+  },
+  "searchIndexRevision": "1.39.9"
+}

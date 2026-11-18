@@ -1,10 +1,11 @@
 import {fetchJSONResilient} from './fetch-resilience-v1-39-7.js';
 const ROOT = new URL('../json/', import.meta.url);
-const PATH_RE = /^(?:oldalak\/)[a-z0-9/_-]+\.json$/;
+const PATH_RE = /^(?:pages\/)[a-z0-9/_-]+\.json$/;
 const ACCENTS = /[\u0300-\u036f]/g;
 export const norm = value => String(value ?? '').normalize('NFD').replace(ACCENTS, '').toLocaleLowerCase('hu-HU');
 export const safeRoute = value => typeof value === 'string' && /^#\/[a-z0-9\-/]*$/.test(value) ? value : '#/';
-export const routeFromPath = path => '#/' + path.replace(/^oldalak\//, '').replace(/\.json$/, '').replace(/\/index$/, '');
+// Public routes are independent of English internal filenames.
+export const routeFromPath = (path, page) => page?.schemaExtensions?.route || '#/';
 export function jsonURL(path) {
   if (!/^[a-z0-9][a-z0-9/_\-.]*\.json$/.test(path) || path.includes('..') || path.startsWith('/')) throw new Error('Érvénytelen JSON-útvonal: '+path);
   return new URL(path, ROOT).href;
@@ -62,10 +63,10 @@ function validPage(page) {
 }
 export async function buildCatalog() {
   const [structure,config]=await Promise.all([loadJSON('structure.json'),loadJSON('config.json')]);
-  const items=[{path:'oldalak/kezdolap.json',depth:0,parent:null,children:[],order:0},...walkStructure(structure.nodes)];
+  const items=[{path:'pages/home.json',depth:0,parent:null,children:[],order:0},...walkStructure(structure.nodes)];
   let indexed=null;
   try{
-    const bundle=await loadJSON('oldalindex.json');
+    const bundle=await loadJSON('page-index.json');
     if(bundle?.schemaVersion==='1.0.0' && bundle.pages &&
        items.every(x=>validPage(bundle.pages[x.path]))){indexed=bundle.pages;}
     else console.warn('Az oldalindex hiányos; az eredeti JSON-fájlok betöltésére váltunk.');

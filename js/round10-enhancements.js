@@ -6,7 +6,7 @@ function csv(value){return '"'+String(value??'').replace(/"/g,'""')+'"';}
 async function makeDocumentList(status){
  try{
   status.textContent='Dokumentumok előkészítése…';
-  const response=await fetch(new URL('../json/adatok/dokumentumok.json',import.meta.url),{cache:'no-store'});
+  const response=await fetch(new URL('../json/data/documents.json',import.meta.url),{cache:'no-store'});
   if(!response.ok)throw Error('A dokumentum-JSON nem tölthető be.');
   const data=await response.json();
   const docs=(data.documents||[]).filter(item=>item.status==='published');

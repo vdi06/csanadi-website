@@ -1,4 +1,4 @@
-import {formatBytes} from './format-bytes.js?v=csanadi-r29n-20261115';
+import {formatBytes} from './format-bytes.js?v=1.42.12';
 import {settingNumber} from './site-settings-2026.js';
  
 export const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -54,11 +54,11 @@ export function initSiteHealth(catalog){
    const internal=[...document.querySelectorAll('a[href^="#/"]')].map(x=>x.getAttribute('href'));const broken=internal.filter(h=>!unique.has(h)&&h!=='#/');
    check(!broken.length,broken.length?`Hibás belső hivatkozások: ${[...new Set(broken)].slice(0,5).join(', ')}`:`${internal.length} belső hivatkozás ellenőrizve`);
    const rootURL=new URL('json/',document.baseURI);
-   try{const [config,index]=await Promise.all(['config.json','oldalindex.json'].map(async file=>{const response=await fetch(new URL(file,rootURL),{cache:'no-store'});if(!response.ok)throw Error(file+': '+response.status);return response.json();}));check(!!config&&index?.schemaVersion==='1.0.0'&&Object.keys(index.pages||{}).length>=catalog.items.length,`Konfiguráció és oldalindex: ${Object.keys(index?.pages||{}).length} regisztrált fájl, séma ${index?.schemaVersion||'ismeretlen'}`);}catch(e){check(false,'A konfiguráció vagy oldalindex nem vizsgálható: '+e.message);}
+   try{const [config,index]=await Promise.all(['config.json','page-index.json'].map(async file=>{const response=await fetch(new URL(file,rootURL),{cache:'no-store'});if(!response.ok)throw Error(file+': '+response.status);return response.json();}));check(!!config&&index?.schemaVersion==='1.0.0'&&Object.keys(index.pages||{}).length>=catalog.items.length,`Konfiguráció és oldalindex: ${Object.keys(index?.pages||{}).length} regisztrált fájl, séma ${index?.schemaVersion||'ismeretlen'}`);}catch(e){check(false,'A konfiguráció vagy oldalindex nem vizsgálható: '+e.message);}
    const list=[...new Set([
     ...catalog.items.map(x=>'json/'+x.path),
     ...[...document.querySelectorAll('img[src],video[poster],iframe[src],a[download][href]')].map(e=>e.getAttribute('src')||e.getAttribute('poster')||e.getAttribute('href')).filter(isLocalRef).map(x=>x.split('#')[0].split('?')[0]),
-    'json/structure.json','json/config.json','json/oldalindex.json','json/mediatar.json','json/adatok/esemenyek.json','json/adatok/dokumentumok.json'
+    'json/structure.json','json/config.json','json/page-index.json','json/media-library.json','json/data/events.json','json/data/documents.json'
    ])].filter(x=>/^(?:assets\/|json\/)/.test(x));
    try{
     const response=await fetch('release-manifest.json',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
@@ -71,7 +71,7 @@ export function initSiteHealth(catalog){
     check(!invalid.length,invalid.length?`Érvénytelen méret vagy SHA-256: ${invalid.slice(0,5).join(', ')}`:'A manifest valamennyi méret- és SHA-256 mezője szabályos');
    }catch(e){check(false,'A kiadási manifest nem ellenőrizhető: '+e.message);}
    try{
-    const sources=['json/adatok/esemenyek.json','json/adatok/dokumentumok.json','json/adatok/kepgaleria.json'];
+    const sources=['json/data/events.json','json/data/documents.json','json/data/photo-gallery.json'];
     for(const path of sources){const response=await fetch(path,{cache:'no-store'});if(!response.ok)throw Error(path+' HTTP '+response.status);
      const data=await response.json(),rows=data.items||data.documents||[],ids=rows.map(x=>x.id);
      check(ids.length===new Set(ids).size,`${path}: ${ids.length} rekord, ${ids.length===new Set(ids).size?'egyedi':'ütköző'} azonosítók`);
