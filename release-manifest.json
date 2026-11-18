@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.42.4-preview",
+  "release": "csanadi-website-v1.42.7-preview",
   "date": "2026-11-18",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "A v1.42.3 alapra épülő 0/1-D kapunyitási döntés: a kapu minden teljes oldalbetöltéskor megjelenik; a kihagyás és újrajátszás megmarad. Böngészős regresszió nyitott; éles közzététel nincs.",
+  "notes": "A 0/1-D és 0/2-C döntések szerint minden teljes betöltéskor térhatású valós kapunyitás jelenik meg. A kezdőlap képcserélőjében a középső címer takarási zónája szabad; a kép többi részén emberek és sporttémák is lehetnek. Az ellenőrzött logoSafe képek forognak, a többi dia adatként megmarad. Böngészős regresszió nyitott; éles közzététel nincs.",
   "files": {
     "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf": {
       "sizeBytes": 219786,
@@ -3159,8 +3159,8 @@
       "sha256": "57435f7d161cb9e3066d0fbfec14c4f7c12121a98729cc0a036d2349f3cc28a0"
     },
     "css/gate-v1-41-real-door.css": {
-      "sizeBytes": 11022,
-      "sha256": "d970e04e1008863d52aef63ee1d1f7d59843d01a1f60e9795acdf8e88705530d"
+      "sizeBytes": 13505,
+      "sha256": "53780e1766153d3d481f4e6d8698cc25219cdf1b6ad3e890b003465d24be2ad5"
     },
     "css/guide-legacy-v1-42.css": {
       "sizeBytes": 5736,
@@ -3567,8 +3567,8 @@
       "sha256": "75001b42d45bd4cc29f9e97a38c696997d1452c84cc64923f87af8cc4e60a6ca"
     },
     "index.html": {
-      "sizeBytes": 23728,
-      "sha256": "44a2145d284adeeed22528dc17abb6a3c7777d383e3b6e54e390c4cd14fb4629"
+      "sizeBytes": 23730,
+      "sha256": "0f0813a3806e12cd89b20167db99a612b6d34eff801fbd7837323f3aaccd93ae"
     },
     "iranytu.html": {
       "sizeBytes": 10082,
@@ -3579,16 +3579,16 @@
       "sha256": "e54eeac0f426d39ee84340ff0a9991cad81b6e6db51e7d79c7775565ceb5ebad"
     },
     "js/advanced-2026.js": {
-      "sizeBytes": 34243,
-      "sha256": "e55ad0b5063fe67da61d9c46b63f27ca59cc3925defb5ef8ae73c06f911cc77d"
+      "sizeBytes": 34510,
+      "sha256": "c3d05b41c289ed83b64307e32407bf494264cdf8c7da86daf840e7f7dfe68c87"
     },
     "js/app.js": {
       "sizeBytes": 61576,
-      "sha256": "f2483d7bc69a4b753cd42f41e795c67da510e9c0f0a4ad1b4411b45f7e8f581c"
+      "sha256": "3b3a5c5248e03a04a8015c794624f999e42f3b0da31e3d44dbacfcf6f09880cc"
     },
     "js/blocks.js": {
       "sizeBytes": 9230,
-      "sha256": "1478f112f1418760a66dbb4ae02bf74458706c772131d415abdeea30f7030108"
+      "sha256": "c25da39249f6f1b3d60d1f54d47a1196cabbc6f152ab6e84025059e594f3b7a1"
     },
     "js/content.js": {
       "sizeBytes": 5925,
@@ -3635,8 +3635,8 @@
       "sha256": "370e57413f01ae10a978a6be5f4a2b2e1040b7566ad30a14a662dd2c94accdee"
     },
     "js/hero-2026.js": {
-      "sizeBytes": 10898,
-      "sha256": "486274f020fa5b8419563a1e5d0b7efbdfc5673a9f8c9a875070b6265bcd902d"
+      "sizeBytes": 11212,
+      "sha256": "1af44c61555d67e2febbc29e8a534a52bd54220e557a702349608745816d9ca4"
     },
     "js/home-inline-editor-v1-41-4.js": {
       "sizeBytes": 11264,
@@ -4103,8 +4103,8 @@
       "sha256": "e35f67bcfab755b338f1ab5dff4ef1cdd328a9f0a60c046d5cd6c0894b47b9d3"
     },
     "json/oldalak/kezdolap.json": {
-      "sizeBytes": 28109,
-      "sha256": "24e9862faa970d82bce7d33e1d46f1f3c664ae32c2b1b310027c1c229d1db335"
+      "sizeBytes": 28541,
+      "sha256": "122e0794146b830c2740abfebd56d7e58721d440ba112da1a93002327714b1e7"
     },
     "json/oldalak/oktatas/digitalis-kultura/mesterseges-intelligencia.json": {
       "sizeBytes": 3357,
@@ -4340,7 +4340,7 @@
     },
     "script.js": {
       "sizeBytes": 1735,
-      "sha256": "ef0092da0b42b79ae6bf63d7334ea4c521a38bd51976e96a6b50fe0cd4ae4b2f"
+      "sha256": "83fd0b20dd7854ce8e768f7acedb432a624ca590b8c5e17611c4602730cf1f16"
     },
     "seo/hirek-es-esemenyek/esemenynaptar/index.html": {
       "sizeBytes": 3218,

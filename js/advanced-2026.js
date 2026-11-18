@@ -37,6 +37,10 @@ export function openEntrancePortal({force=false}={}){
  const layer=e('div','gate26');layer.id='gate26';layer.setAttribute('role','dialog');layer.setAttribute('aria-modal','true');layer.setAttribute('aria-labelledby','gate26-title');
  const scenery=e('div','gate26-scene gate26-cinematic-open');scenery.setAttribute('aria-hidden','true');
  const shut=e('div','gate26-cinematic-shut');shut.setAttribute('aria-hidden','true');
+ const doorStage=e('div','gate26-door-stage');doorStage.setAttribute('aria-hidden','true');
+ const leftLeaf=e('div','gate26-door-leaf gate26-door-left');
+ const rightLeaf=e('div','gate26-door-leaf gate26-door-right');
+ doorStage.append(leftLeaf,rightLeaf);
  const glow=e('div','gate26-glow');
  const content=e('div','gate26-content');
  const title=e('h2','','Lépjen be!');title.id='gate26-title';
@@ -48,7 +52,7 @@ export function openEntrancePortal({force=false}={}){
  const skipBar=e('div','gate26-skip-bar');const skip=btn('⏭','gate26-skip',()=>finish());skip.setAttribute('aria-label','Belépőanimáció kihagyása');skip.title='Belépőanimáció kihagyása';
  const bottomCopy=e('div','gate26-bottom-copy');add(bottomCopy,e('span','gate26-eyebrow','CSANÁDI ÁRPÁD SPORTISKOLA, ÁLTALÁNOS ISKOLA ÉS GIMNÁZIUM'),title);skipBar.append(bottomCopy,skip);
  add(content,enter);
- add(layer,scenery,shut,glow,content,skipBar);document.body.append(layer);clearEntrancePrelude();
+ add(layer,scenery,shut,doorStage,glow,content,skipBar);document.body.append(layer);clearEntrancePrelude();
  const oldFocus=document.activeElement;let done=false,opening=false,finishTimer;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const previousOverflow=document.body.style.overflow;

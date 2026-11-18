@@ -92,3 +92,67 @@
  .gate26 .gate26-bottom-copy h2{font-size:clamp(19px,5.4vw,24px)!important}
  .gate26 .gate26-skip,.gate26 .gate26-skip:hover{width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;font-size:24px!important}
 }
+
+/* v1.42.5 – 0/2-C: a valós kapufotó ajtószárnyai külön, térben fordulnak el. */
+.gate26 {
+ --gate-door-image-width:max(100vw,177.68vh);
+ --gate-door-image-height:max(100vh,56.28vw);
+ --gate-door-leaf-width:calc(var(--gate-door-image-width) * .0815);
+}
+.gate26 .gate26-door-stage {
+ position:absolute;inset:0;z-index:2;perspective:1100px;
+ pointer-events:none;transform-style:preserve-3d;
+}
+.gate26 .gate26-door-leaf {
+ position:absolute;
+ top:calc(50% - var(--gate-door-image-height) * .172);
+ height:calc(var(--gate-door-image-height) * .538);
+ width:var(--gate-door-leaf-width);
+ background-image:url('../assets/media/web/csanadi-kapu-zart-valosag.webp');
+ background-size:var(--gate-door-image-width) var(--gate-door-image-height);
+ background-repeat:no-repeat;
+ backface-visibility:hidden;
+ filter:brightness(.87);
+ transform-style:preserve-3d;
+ will-change:transform;
+}
+.gate26 .gate26-door-left {
+ left:calc(50% - var(--gate-door-leaf-width));
+ background-position:calc(var(--gate-door-image-width) * -.4185) calc(var(--gate-door-image-height) * -.328);
+ transform-origin:left center;
+}
+.gate26 .gate26-door-right {
+ left:50%;
+ background-position:calc(var(--gate-door-image-width) * -.5) calc(var(--gate-door-image-height) * -.328);
+ transform-origin:right center;
+}
+.gate26-open .gate26-cinematic-shut {
+ animation:cs-gate-photo-reveal var(--gate26-duration) ease-in-out both;
+}
+.gate26-open .gate26-door-left {
+ animation:cs-gate-swing-left var(--gate26-duration) cubic-bezier(.18,.58,.2,1) both;
+}
+.gate26-open .gate26-door-right {
+ animation:cs-gate-swing-right var(--gate26-duration) cubic-bezier(.18,.58,.2,1) both;
+}
+.gate26-open .gate26-scene {
+ animation:cs-gate-step-approach var(--gate26-duration) ease-in-out both,
+           cs-gate-perspective-approach var(--gate26-duration) ease-in-out both;
+}
+@keyframes cs-gate-photo-reveal {
+ 0%,20%{opacity:1}47%,100%{opacity:0}
+}
+@keyframes cs-gate-swing-left {
+ 0%,19%{transform:rotateY(0deg)}55%{transform:rotateY(-76deg)}82%,100%{transform:rotateY(-108deg)}
+}
+@keyframes cs-gate-swing-right {
+ 0%,19%{transform:rotateY(0deg)}55%{transform:rotateY(76deg)}82%,100%{transform:rotateY(108deg)}
+}
+@keyframes cs-gate-perspective-approach {
+ 0%,23%{scale:1}58%{scale:1.045}100%{scale:1.17}
+}
+@media(prefers-reduced-motion:reduce){
+ .gate26-open .gate26-cinematic-shut{animation:none!important;opacity:0}
+ .gate26-open .gate26-door-stage{display:none}
+ .gate26-open .gate26-scene{animation:none!important;scale:1}
+}

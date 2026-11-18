@@ -45,12 +45,14 @@
           }
         ],
         "imageId": "media:hero",
+        "logoSafeOnly": true,
         "intervalMs": 7500,
         "slides": [
           {
             "id": "hero-v140-sport",
-            "mediaId": "media:hero",
-            "mobileMediaId": "media:hero",
+            "logoSafe": true,
+            "mediaId": "media:cs2026-001",
+            "mobileMediaId": "media:cs2026-001",
             "eyebrow": "CSANÁDI · SPORT",
             "title": "A pályán kezdődik a történet",
             "subtitle": "Kitartás, mozgás és új célok a sport világában.",
@@ -66,6 +68,7 @@
           },
           {
             "id": "hero-v140-tudas",
+            "logoSafe": true,
             "mediaId": "media:v140-tudas",
             "mobileMediaId": "media:v140-tudas-mobile",
             "eyebrow": "CSANÁDI · TUDÁS",
@@ -83,6 +86,7 @@
           },
           {
             "id": "hero-v140-kozosseg",
+            "logoSafe": true,
             "mediaId": "media:v140-kozosseg",
             "mobileMediaId": "media:v140-kozosseg-mobile",
             "eyebrow": "CSANÁDI · KÖZÖSSÉG",
@@ -260,6 +264,7 @@
           },
           {
             "id": "hero-v1402-15",
+            "logoSafe": true,
             "mediaId": "media:cs2026-013",
             "eyebrow": "CSANÁDI · TUDÁS",
             "title": "A könyvek új világokat nyitnak",
@@ -308,6 +313,7 @@
           },
           {
             "id": "hero-v1402-16",
+            "logoSafe": true,
             "mediaId": "media:cs2026-014",
             "eyebrow": "CSANÁDI · TUDÁS",
             "title": "Digitális tudás a gyakorlatban",
@@ -340,6 +346,7 @@
           },
           {
             "id": "hero-v1402-24",
+            "logoSafe": true,
             "mediaId": "media:cs2026-005",
             "eyebrow": "CSANÁDI · SPORT",
             "title": "Újabb célok a futópályán",
@@ -356,6 +363,7 @@
           },
           {
             "id": "hero-v1402-25",
+            "logoSafe": true,
             "mediaId": "media:cs2026-015",
             "eyebrow": "CSANÁDI · TUDÁS",
             "title": "Kérdésekből születnek a felfedezések",
@@ -372,6 +380,7 @@
           },
           {
             "id": "hero-v1402-34",
+            "logoSafe": true,
             "mediaId": "media:cs2026-008",
             "eyebrow": "CSANÁDI · KÖZÖSSÉG",
             "title": "A közös játék helyei",
@@ -388,6 +397,7 @@
           },
           {
             "id": "hero-v1402-31",
+            "logoSafe": true,
             "mediaId": "media:cs2026-009",
             "eyebrow": "CSANÁDI · SPORT",
             "title": "Úszásra hív a medence",
@@ -420,6 +430,7 @@
           },
           {
             "id": "hero-v1402-37",
+            "logoSafe": true,
             "mediaId": "media:cs2026-011",
             "eyebrow": "CSANÁDI · KÖZÖSSÉG",
             "title": "Együtt a röplabdapályán",
@@ -468,6 +479,7 @@
           },
           {
             "id": "hero-v1402-44",
+            "logoSafe": true,
             "mediaId": "media:cs2026-003",
             "eyebrow": "CSANÁDI · KÖZÖSSÉG",
             "title": "A közös sport új nézőpontból",
@@ -484,6 +496,7 @@
           },
           {
             "id": "hero-v1402-42",
+            "logoSafe": true,
             "mediaId": "media:cs2026-006",
             "eyebrow": "CSANÁDI · SPORT",
             "title": "Újabb kör, újabb cél",
@@ -516,6 +529,7 @@
           },
           {
             "id": "hero-v1402-48",
+            "logoSafe": true,
             "mediaId": "media:cs2026-010",
             "eyebrow": "CSANÁDI · SPORT",
             "title": "A vízben is lendületben",

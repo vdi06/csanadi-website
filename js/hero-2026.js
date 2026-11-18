@@ -5,7 +5,12 @@ const safeRoute=value=>typeof value==='string'&&/^#\/[a-z0-9/\-]*$/i.test(value)
 export function renderPremiumHero(block){
  if(!isWithinConfiguredWindow('runtime.hero'))return null;
  const data=block.data||{};
- const slides=(Array.isArray(data.slides)&&data.slides.length?data.slides:[data]).filter(slide=>slide&&typeof slide.mediaId==='string').slice(0,settingNumber('runtime.hero.maxSlides'));
+ // Kizárólag a középső címer tényleges takarási zónáját tartjuk szabadon.
+ // A kép szélein emberek, tárgyak és sportjelenetek is megjelenhetnek.
+ // Az új képek addig nem kerülnek a kezdőlapi forgóba, amíg ezt a zónát nem ellenőriztük.
+ const slides=(Array.isArray(data.slides)&&data.slides.length?data.slides:[data])
+  .filter(slide=>slide&&typeof slide.mediaId==='string'&&(!data.logoSafeOnly||slide.logoSafe===true))
+  .slice(0,settingNumber('runtime.hero.maxSlides'));
  if(!slides.length)return null;
  const section=el('section','csn26-visual-map');section.setAttribute('aria-label','Képes kezdőlap és főmenü');
  const row=el('div','csn26-visual-row csn26-single-image');row.id='csn26-visual-carousel';
