@@ -53,7 +53,7 @@ export function enhanceHomeInterests(canvas){
   all:[['Felvételi','#/oktatas/felveteli'],['Sportágak','#/sport/sportagak'],['Iskolai hírek','#/hirek-es-esemenyek/hirek']],
   sport:[['Sportágak','#/sport/sportagak'],['Sporteredmények','#/sport'],['Sporthírek','#/hirek-es-esemenyek/hirek/sporthirek']],
   study:[['Képzéseink','#/oktatas/kepzeseink'],['Felvételi','#/oktatas/felveteli'],['Tanév és vizsgák','#/oktatas/tanevek/aktualis-tanev']],
-  community:[['Iskolánk','#/iskolank'],['Ökoiskola','#/iskolank/oko-iskola'],['Események','#/esemenyek']]
+  community:[['Iskolánk','#/iskolank'],['Ökoiskola','#/iskolank/oko-iskola'],['Események','#/hirek-es-esemenyek/esemenynaptar']]
  };
  const pick=(id)=>{
   buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.interest===id)));

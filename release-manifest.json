@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.42.13-mobile-and-hero-fixes",
+  "release": "csanadi-website-v1.42.14-preview",
   "date": "2026-11-18",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "Static FTP-ready SPA: only index.html and offline.html. English internal JSON structure and Hungarian visitor content. Mobile has one header menu button, no bottom navigation, a fixed home image without slide arrows and nonoverlapping text. Desktop slideshow fully shrinks/fades towards the compact crest navigation while scrolling, without a residual image strip. Inward-opening school gate has a contour-fitted transparent click area and a stable gold outline during opening, centered full school name and skip control. Nine custom-designed center-logo-safe illustrations. Static and isolated browser visual checks passed; end-to-end live site checks remain to be performed.",
+  "notes": "The only HTML pages are index.html and the justified offline.html. JSON paths and non-user-facing technical names are English, while public route URLs and text remain Hungarian. Mobile: fixed image with separate readable copy, a single persistent header navigator button, no bottom navigation. Desktop: the rotating hero progressively scales and clips into the compact central crest, without a leftover picture strip. The photographic green school gate swings inward and its golden outline disappears without jumping. Nine purpose-made center-logo-safe illustrations. Old event links repaired; CSS/JS cache parameters and the client-side release version updated. Static validation and isolated Chromium component checks passed; complete live site regression remains open.",
   "files": {
     "assets/documents/admissions-tajekozodasi-handout-2026.pdf": {
       "sizeBytes": 48341,
@@ -3274,6 +3274,10 @@
       "sizeBytes": 1410,
       "sha256": "491d228b3f695e5f2f59a68aa4cee12511a790903049fecc054714bde54f7aac"
     },
+    "css/desktop-hero-fold-v1-42-14.css": {
+      "sizeBytes": 2774,
+      "sha256": "f359b0b245d5841b93f35de4ad44e96957bd5faa2636552506f450e2c8c81a1c"
+    },
     "css/dfg-2026.css": {
       "sizeBytes": 11832,
       "sha256": "5a7b369526399fdda62d617e2107ddfdfd96d25918fe54a560538eed524c5912"
@@ -3303,8 +3307,8 @@
       "sha256": "02dc63656dd997bf87b10c7be9429769908d5f35264384b5f5d05f04813b51fe"
     },
     "css/gate-v1-41-real-door.css": {
-      "sizeBytes": 19316,
-      "sha256": "3d08fe5726229ffdf2bc3a9fbc8857d2626dca740fbb5fad519c68a44819431e"
+      "sizeBytes": 20530,
+      "sha256": "0eefc4eedf629a23ac1ec73b29a9b51750cdd813b408887dafe3996acad5bc76"
     },
     "css/guide-legacy-v1-42.css": {
       "sizeBytes": 5736,
@@ -3341,10 +3345,6 @@
     "css/hero-morph-v1-39-12.css": {
       "sizeBytes": 4998,
       "sha256": "4fd0f2fca3d8ceec3b77ec9b9b181fd33bc6780dd996838016a2ceaa5a12bf95"
-    },
-    "css/home-collapse-v1-42-13.css": {
-      "sizeBytes": 1815,
-      "sha256": "2dfb3b0f97aafc52f3f545c19fb3abf9bb2774c50c33db095f01536c381f73ad"
     },
     "css/home-gallery-news-gate-2026.css": {
       "sizeBytes": 5560,
@@ -3715,16 +3715,16 @@
       "sha256": "d699af49beee4cb9af24350bdf8a3092e82dcb83cdd40a46554c50880a6bae9c"
     },
     "index.html": {
-      "sizeBytes": 23472,
-      "sha256": "62718e87bd036b489e2b268b89bcf95a1e75d313d9337c7bce1edfbe770e215b"
+      "sizeBytes": 23511,
+      "sha256": "74259f15880745fdb84ee7467c4185c251c02b85adf108ea559301816f6aa9ae"
     },
     "js/advanced-2026.js": {
-      "sizeBytes": 34506,
-      "sha256": "f3512ae16ca44128e09fa4ab935eaac473b1d00d66db81b4fa6f490eb5ffbd8d"
+      "sizeBytes": 34369,
+      "sha256": "41d031f2f3015b4de3fe7a7e2cdd849a03ca8c976c73a6bcd7735e83d543a937"
     },
     "js/app.js": {
-      "sizeBytes": 57223,
-      "sha256": "83903fbac7e830ada7a8144327d7328249f78de5101812e3bbcd3cf6715bee7b"
+      "sizeBytes": 58407,
+      "sha256": "383367c1fa7a143cdb68c2c26e1b031ff6642998bf3807be176518d5c4ec49ce"
     },
     "js/blocks.js": {
       "sizeBytes": 9204,
@@ -3776,7 +3776,7 @@
     },
     "js/hero-2026.js": {
       "sizeBytes": 12858,
-      "sha256": "825abfce621ff39b574c374199c1b77931f175c2d7374d5b2419897804355e64"
+      "sha256": "fb90f0f4b39b9a89443ebffadbf36c774b92726a65dc8678c0763cba5c959831"
     },
     "js/home-inline-editor-v1-41-4.js": {
       "sizeBytes": 11264,
@@ -3787,16 +3787,16 @@
       "sha256": "28b9c16d07472c11e84a96dafa9d1e415aaa8adbec24686c891721c5050dfbfd"
     },
     "js/home-v1-41.js": {
-      "sizeBytes": 2918,
-      "sha256": "1323d4df7db60bba2261b8a42114c7302bde6731a78cbd09b191a167b2c9dfe2"
+      "sizeBytes": 2862,
+      "sha256": "6b7b78bbea12ef013f2c4dacaef0ce30b4505fd9abfecf7cdc8ae2a8d0ab49ca"
     },
     "js/interactions-be-2026.js": {
       "sizeBytes": 3951,
       "sha256": "0c961674bb9a283ea9afca0afbfa0d35904687db6abd70250f3863a6d929795b"
     },
     "js/kmil-2026.js": {
-      "sizeBytes": 7167,
-      "sha256": "aa07337b21981e013da8a851edff94d88a122809d53200095716e98599aed4e7"
+      "sizeBytes": 7190,
+      "sha256": "e240251a6cf7d2b05e54829d837184cc4d360962acdb7a44efd14034040646d8"
     },
     "js/language-20.js": {
       "sizeBytes": 2341,
@@ -3964,7 +3964,7 @@
     },
     "json/config.json": {
       "sizeBytes": 16558,
-      "sha256": "a50582c2b5b691c68dc099543c9234f2bbd89ee553539828bae64904856d6bc4"
+      "sha256": "97254180bac41a0dfcac636a77930b85896576fe652f42da5a30131018aa8e34"
     },
     "json/data/arrival-and-development-26.json": {
       "sizeBytes": 6849,
@@ -3979,8 +3979,8 @@
       "sha256": "348a7fe13fdc149467f22c5ef4da0999683833715dfcaab017c2ebe4c58a74bd"
     },
     "json/data/compass-22.json": {
-      "sizeBytes": 9126,
-      "sha256": "e56f54ea49bc8c114da730dcf8536905049f7994908ccd334b27c0a7a01797c4"
+      "sizeBytes": 9172,
+      "sha256": "4edd916ccc11b845c7ff1a3abcb1168f2d076607a8bd151ddbc549841ef31450"
     },
     "json/data/content-audit-v1-39-3.json": {
       "sizeBytes": 25872,
@@ -4074,6 +4074,14 @@
       "sizeBytes": 3615,
       "sha256": "e35f67bcfab755b338f1ab5dff4ef1cdd328a9f0a60c046d5cd6c0894b47b9d3"
     },
+    "json/pages/education.json": {
+      "sizeBytes": 3342,
+      "sha256": "0fa1d2e97384538de5b18cef1f52866f4cbc41f700e34f7ec72bee408c1c81f2"
+    },
+    "json/pages/education/admissions.json": {
+      "sizeBytes": 4231,
+      "sha256": "4873bbc16e49584233268b60641cf2dd2f4e48b94a2170cf7707ff4434afe8b8"
+    },
     "json/pages/education/admissions/admission-deadlines.json": {
       "sizeBytes": 4113,
       "sha256": "ebc3db9fcf7492eb5dbf07fc757a0f25c3ca2e85740f89c1c43966057a537a8d"
@@ -4090,9 +4098,9 @@
       "sizeBytes": 3770,
       "sha256": "587b14f4d11b60fda0355971b77b0ee6e8eb64179f2c358c3abb602c95e849c0"
     },
-    "json/pages/education/admissions.json": {
-      "sizeBytes": 4231,
-      "sha256": "4873bbc16e49584233268b60641cf2dd2f4e48b94a2170cf7707ff4434afe8b8"
+    "json/pages/education/digital-culture.json": {
+      "sizeBytes": 10708,
+      "sha256": "13aacf9115ed891550e33b28a52eabd4d3099fdc7d73282fc3f3d63cbf36a386"
     },
     "json/pages/education/digital-culture/artificial-intelligence.json": {
       "sizeBytes": 3357,
@@ -4102,9 +4110,9 @@
       "sizeBytes": 3162,
       "sha256": "e8b2acfe9a8f26984f6a90cfd0c87ec2c23082fd018d1a55f150931d56155616"
     },
-    "json/pages/education/digital-culture.json": {
-      "sizeBytes": 10708,
-      "sha256": "13aacf9115ed891550e33b28a52eabd4d3099fdc7d73282fc3f3d63cbf36a386"
+    "json/pages/education/exams.json": {
+      "sizeBytes": 3252,
+      "sha256": "7aa4c0359efab566045edb363486036db864fac4afc20699893b098bcde20813"
     },
     "json/pages/education/exams/classification-exams.json": {
       "sizeBytes": 3074,
@@ -4118,29 +4126,29 @@
       "sizeBytes": 3440,
       "sha256": "5832a596d37585e650f4062f8c22f2a3244203d74e43924b381bd0501b6b4d80"
     },
-    "json/pages/education/exams.json": {
-      "sizeBytes": 3252,
-      "sha256": "7aa4c0359efab566045edb363486036db864fac4afc20699893b098bcde20813"
-    },
     "json/pages/education/learning-and-community.json": {
       "sizeBytes": 874,
       "sha256": "6a1af64c4f5f515e497b2bd71b392955de3edcbe8d23209fe5419b531983f93d"
-    },
-    "json/pages/education/learning-resources/learning-support.json": {
-      "sizeBytes": 3187,
-      "sha256": "0215a24d7b1ae07174d6446629a4ea2bb38ae9434eb660130cb2c4786e2683b0"
     },
     "json/pages/education/learning-resources.json": {
       "sizeBytes": 3549,
       "sha256": "8d6feae8fcc75b47acbd3cb4923a6da465b41301e61f84f24e8b20875ed37ca9"
     },
-    "json/pages/education/library/library-services.json": {
-      "sizeBytes": 3162,
-      "sha256": "0cf8e4a20fbcb70ce6bb6ed702dd6593a569373594442abc5ccebacb454cdbaf"
+    "json/pages/education/learning-resources/learning-support.json": {
+      "sizeBytes": 3187,
+      "sha256": "0215a24d7b1ae07174d6446629a4ea2bb38ae9434eb660130cb2c4786e2683b0"
     },
     "json/pages/education/library.json": {
       "sizeBytes": 3696,
       "sha256": "0760562c4ebce482e9c010fd5daa86a2dca6788883389df89977cf2b6d94654d"
+    },
+    "json/pages/education/library/library-services.json": {
+      "sizeBytes": 3162,
+      "sha256": "0cf8e4a20fbcb70ce6bb6ed702dd6593a569373594442abc5ccebacb454cdbaf"
+    },
+    "json/pages/education/programs.json": {
+      "sizeBytes": 3054,
+      "sha256": "f938381cd13bfec435c7a5f715aa29d28fdc5877f5a4dffc84fca0e5107059a2"
     },
     "json/pages/education/programs/primary-school.json": {
       "sizeBytes": 3271,
@@ -4154,9 +4162,9 @@
       "sizeBytes": 2809,
       "sha256": "d74048796dbca76a0cf4cbb1265b4118d394aeaa2eca14f21637ecc7cc3b5aa7"
     },
-    "json/pages/education/programs.json": {
-      "sizeBytes": 3054,
-      "sha256": "f938381cd13bfec435c7a5f715aa29d28fdc5877f5a4dffc84fca0e5107059a2"
+    "json/pages/education/school-years.json": {
+      "sizeBytes": 3091,
+      "sha256": "85650af52685f5ab611c037a00d16b259401d72548611addab93a72dc5b928f5"
     },
     "json/pages/education/school-years/current-school-year.json": {
       "sizeBytes": 3236,
@@ -4166,17 +4174,17 @@
       "sizeBytes": 3228,
       "sha256": "cb245e2100708e058f956df7cdcb3d260dc2d3d890c8fd1a8106044fea8adae1"
     },
-    "json/pages/education/school-years.json": {
-      "sizeBytes": 3091,
-      "sha256": "85650af52685f5ab611c037a00d16b259401d72548611addab93a72dc5b928f5"
-    },
-    "json/pages/education.json": {
-      "sizeBytes": 3342,
-      "sha256": "0fa1d2e97384538de5b18cef1f52866f4cbc41f700e34f7ec72bee408c1c81f2"
-    },
     "json/pages/home.json": {
       "sizeBytes": 16209,
       "sha256": "7a346f0b8f5a98ff25591e749d2928508d1668e0f095480f59a5a03e55c872bd"
+    },
+    "json/pages/information.json": {
+      "sizeBytes": 3229,
+      "sha256": "0f20041c92eef348fe3f2a5d389f43cd88a6670b2724e76f69ca3ba696ca9b90"
+    },
+    "json/pages/information/community-service.json": {
+      "sizeBytes": 3781,
+      "sha256": "918069642c0843fea6165ac111d3923d6fea11b680ef4ce622936b64365b830e"
     },
     "json/pages/information/community-service/community-service-documents.json": {
       "sizeBytes": 3807,
@@ -4190,9 +4198,9 @@
       "sizeBytes": 3270,
       "sha256": "c6a418ce88e607b3659b11007b9ffb9bbe728b5fab2bcdb2e5f16863376a6352"
     },
-    "json/pages/information/community-service.json": {
-      "sizeBytes": 3781,
-      "sha256": "918069642c0843fea6165ac111d3923d6fea11b680ef4ce622936b64365b830e"
+    "json/pages/information/daily-information.json": {
+      "sizeBytes": 2893,
+      "sha256": "26785510ac13fe06c6982b365e4b7350120f69c8e850d0441164e436bfd14ae4"
     },
     "json/pages/information/daily-information/bell-schedule.json": {
       "sizeBytes": 3304,
@@ -4214,13 +4222,13 @@
       "sizeBytes": 2948,
       "sha256": "7d2a14751bd3473927015a447c0164f4e178208d0b97c216e40548f4bfbbff4d"
     },
-    "json/pages/information/daily-information.json": {
-      "sizeBytes": 2893,
-      "sha256": "26785510ac13fe06c6982b365e4b7350120f69c8e850d0441164e436bfd14ae4"
-    },
     "json/pages/information/digital-services.json": {
       "sizeBytes": 3108,
       "sha256": "5ee8afc92f98941b7f5fa8e6b8ab8e8135301f4257373596e0b1bb681013a2a1"
+    },
+    "json/pages/information/document-library.json": {
+      "sizeBytes": 2491,
+      "sha256": "178d2b97b78796f80042a3ba07b5ddc5363e5249242da8d9dc8c5bb8260b5640"
     },
     "json/pages/information/document-library/forms.json": {
       "sizeBytes": 3816,
@@ -4233,10 +4241,6 @@
     "json/pages/information/document-library/public-disclosures.json": {
       "sizeBytes": 3673,
       "sha256": "76f099994cb47a4900c5179cdd8bf9664d5e477f4307811157a8b85ff5c521e3"
-    },
-    "json/pages/information/document-library.json": {
-      "sizeBytes": 2491,
-      "sha256": "178d2b97b78796f80042a3ba07b5ddc5363e5249242da8d9dc8c5bb8260b5640"
     },
     "json/pages/information/guide.json": {
       "sizeBytes": 909,
@@ -4254,13 +4258,17 @@
       "sizeBytes": 3274,
       "sha256": "4f591651bd0148f206ecbda3ffa9f3a02800a4f3ead6fb75c0f3f317f100af59"
     },
-    "json/pages/information.json": {
-      "sizeBytes": 3229,
-      "sha256": "0f20041c92eef348fe3f2a5d389f43cd88a6670b2724e76f69ca3ba696ca9b90"
+    "json/pages/news-and-events.json": {
+      "sizeBytes": 2814,
+      "sha256": "c7528aa679777a94b4f636b6de97e059f98515a09ba845688c11323681d55d23"
     },
     "json/pages/news-and-events/announcements.json": {
       "sizeBytes": 3163,
       "sha256": "a8ffc866dc5344698f775c84870902885bec5b8121fd2483218be8416b278e96"
+    },
+    "json/pages/news-and-events/event-calendar.json": {
+      "sizeBytes": 3220,
+      "sha256": "cbcfbe6bc383dae78a2d6069b35fab17d28c48c776f64d09df6b95a36a51a22f"
     },
     "json/pages/news-and-events/event-calendar/school-events.json": {
       "sizeBytes": 3067,
@@ -4270,9 +4278,9 @@
       "sizeBytes": 3139,
       "sha256": "f8580e9490fb7c5a5f68de30e6488601152a9df71dd6b290d2ae18cff0fa88c5"
     },
-    "json/pages/news-and-events/event-calendar.json": {
-      "sizeBytes": 3220,
-      "sha256": "cbcfbe6bc383dae78a2d6069b35fab17d28c48c776f64d09df6b95a36a51a22f"
+    "json/pages/news-and-events/news.json": {
+      "sizeBytes": 2722,
+      "sha256": "97a7c8be4a139f61ab5240c37b173c5f7d56bb27f6da188d9f32b2c54aae68f3"
     },
     "json/pages/news-and-events/news/news-archive.json": {
       "sizeBytes": 2859,
@@ -4286,13 +4294,9 @@
       "sizeBytes": 3311,
       "sha256": "5b53a49d53520b9a4bfe67f454fb40274aa9954caceb78afe2d73f3547528e14"
     },
-    "json/pages/news-and-events/news.json": {
-      "sizeBytes": 2722,
-      "sha256": "97a7c8be4a139f61ab5240c37b173c5f7d56bb27f6da188d9f32b2c54aae68f3"
-    },
-    "json/pages/news-and-events.json": {
-      "sizeBytes": 2814,
-      "sha256": "c7528aa679777a94b4f636b6de97e059f98515a09ba845688c11323681d55d23"
+    "json/pages/our-school.json": {
+      "sizeBytes": 4347,
+      "sha256": "8eaf9460125f3df230b9511f045c1fbedd9c0f1b848608d1362951cf0a5511be"
     },
     "json/pages/our-school/eco-school.json": {
       "sizeBytes": 3160,
@@ -4346,9 +4350,9 @@
       "sizeBytes": 13593,
       "sha256": "9d582b989eb306da68f8a88567a4a56344b01c8c1b3149e92ea463c84ba21cbd"
     },
-    "json/pages/our-school.json": {
-      "sizeBytes": 4347,
-      "sha256": "8eaf9460125f3df230b9511f045c1fbedd9c0f1b848608d1362951cf0a5511be"
+    "json/pages/sports.json": {
+      "sizeBytes": 3223,
+      "sha256": "1100ac6109193d4efeb6c40f03c16d2a19a41faff9ed79f9ef6ad4f088244b25"
     },
     "json/pages/sports/athletes.json": {
       "sizeBytes": 3558,
@@ -4378,10 +4382,6 @@
       "sizeBytes": 3403,
       "sha256": "aec026e127b64f617284a247d0d982d45a7e941b2d03a20c9c04217afdd5b068"
     },
-    "json/pages/sports.json": {
-      "sizeBytes": 3223,
-      "sha256": "1100ac6109193d4efeb6c40f03c16d2a19a41faff9ed79f9ef6ad4f088244b25"
-    },
     "json/schemas/documents.schema.json": {
       "sizeBytes": 5533,
       "sha256": "7120eada79104b1d88d6de320385f9e07826c689e5a12411a402325bc21c2570"
@@ -4403,20 +4403,20 @@
       "sha256": "55835b1bd18061aa0b41e87ba2f9a9f2e14471db79d0b414fe72221aef088595"
     },
     "mobile/mobile-fixes-v1-42-13.css": {
-      "sizeBytes": 13199,
-      "sha256": "6314b131dbb3cfae0e813617ebfc8f8d06eef20ae306563f024877c55381b230"
+      "sizeBytes": 13160,
+      "sha256": "667a307fe56484bdfd6fec8871a46b27933c3b10fc5696c4e1a597ec38ee86c6"
     },
-    "mobile/mobile-navigation-v1-42-13.css": {
-      "sizeBytes": 2120,
-      "sha256": "5d91c3ae753ab2766622d86a9cde4c05b4f96368617d6ad5162dcf9774b4619c"
+    "mobile/mobile-top-nav-v1-42-14.css": {
+      "sizeBytes": 3409,
+      "sha256": "6455d6bff7682a935ce96b7e3236f84b358c91f058b0b9d291e7b5f54ebe25f7"
     },
     "mobile/navigation.js": {
       "sizeBytes": 1886,
       "sha256": "29a7f3d09d77424f77e455b645a857435224e85e37fa3aa512e2f3a23e6058bf"
     },
     "mobile/quick-nav.js": {
-      "sizeBytes": 4836,
-      "sha256": "3968628f74ebd04857bc11fa9a0644c00d265980a920ca893a493f56c26692c7"
+      "sizeBytes": 1199,
+      "sha256": "42dc590726c37d3dfb5601fbd438fae84dd70002c4d36c95affde85d92cb75a2"
     },
     "mobile/radial-wheel-v1-38.css": {
       "sizeBytes": 5696,
@@ -4476,7 +4476,7 @@
     },
     "script.js": {
       "sizeBytes": 1739,
-      "sha256": "5f2e239367513ba3ec616975a757f68bae2a081823308a11fb41fb70d625fa5d"
+      "sha256": "20e04fe0639b22949913765c3a4543853d70616094faf30af23cf044720e0abb"
     },
     "service-worker.js": {
       "sizeBytes": 6084,

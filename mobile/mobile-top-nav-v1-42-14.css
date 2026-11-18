@@ -1,0 +1,52 @@
+/* v1.42.14 – one header navigator on phones and tablets, nothing fixed at the bottom. */
+@media(max-width:768px){
+ html body{padding-bottom:0!important}
+ html body #ext26-mobile-nav,
+ html body .ext26-mobile-nav,
+ html body .cs32-mobile-bar,
+ html body .cs32-mobile-bar:not([hidden]),
+ html body #cs39-mobile-route{display:none!important;visibility:hidden!important;pointer-events:none!important}
+ html body.cs-home-header #site-header,
+ html body.cs-inner-page #site-header,
+ html body #site-header{position:sticky!important;top:0!important;z-index:950!important}
+ html body.cs-home-header #site-header .brand-row,
+ html body.cs-inner-page #site-header .brand-row,
+ html body #site-header .brand-row{min-height:60px!important;max-height:none!important;display:flex!important;align-items:center!important;justify-content:space-between!important}
+ html body.cs-home-header #site-header #mobile-menu-toggle,
+ html body.cs-home-header.cs-home-condensed #site-header #mobile-menu-toggle,
+ html body.cs-inner-page #site-header #mobile-menu-toggle,
+ html body #site-header #mobile-menu-toggle,
+ html body.cs-home-header #site-header .header-actions #mobile-menu-toggle,
+ html body.cs-inner-page #site-header .header-actions #mobile-menu-toggle,
+ html body #site-header .header-actions #mobile-menu-toggle{
+   display:grid!important;visibility:visible!important;pointer-events:auto!important;
+   place-items:center!important;position:relative!important;
+   flex:0 0 44px!important;min-width:44px!important;width:44px!important;height:44px!important;min-height:44px!important;
+   border:1px solid #e5c27c!important;border-radius:12px!important;
+   background:rgba(11,36,60,.72)!important;color:#f9dba0!important;
+ }
+ html body #site-header #mobile-menu-toggle svg{display:block!important;width:23px;height:23px}
+ /* Keep the crest-menu separate from the replay-gate control; neither creates a second header row. */
+ html body #site-header #cs39-mini-hero{display:none!important}
+ html body #site-header .cs-compact-hero-controls{display:none!important}
+ html body.cs-home-header #global-hero .cs42-mobile-landing{display:block!important}
+ html body.cs-home-header #global-hero .cs42-desktop-carousel{display:none!important}
+ #site-map-overlay #cs42-sections-inside-menu:not([hidden]){display:inline-flex;align-items:center;justify-content:center;
+   min-height:44px;padding:8px 13px;background:#12304c;color:#fff0c7;
+   border:1px solid #d7b46f;border-radius:11px;margin-right:auto}
+}
+
+/* The old condensed mobile-header cascade is exceptionally specific. */
+@media(max-width:768px){
+ html body.cs-home-header #cs39-home-shell,
+ html body.cs-home-header.cs-home-condensed #cs39-home-shell,
+ html body.cs-inner-page #cs39-home-shell {
+  position:sticky!important;top:0!important;z-index:950!important;
+ }
+ html body.cs-home-header header.site-header#site-header .brand-row .header-actions button.icon-btn.menu-btn#mobile-menu-toggle,
+ html body.cs-home-header.cs-home-condensed header.site-header#site-header .brand-row .header-actions button.icon-btn.menu-btn#mobile-menu-toggle,
+ html body.cs-inner-page header.site-header#site-header .brand-row .header-actions button.icon-btn.menu-btn#mobile-menu-toggle,
+ html body header.site-header#site-header .brand-row .header-actions button.icon-btn.menu-btn#mobile-menu-toggle {
+   display:grid!important;visibility:visible!important;pointer-events:auto!important;
+ }
+}

@@ -72,9 +72,7 @@ export function openEntrancePortal({force=false}={}){
  function open(){
   if(done||opening)return;
   opening=true;
-  // Preserve the door's transform: generic :disabled button CSS would snap it to the right.
-  enter.setAttribute('aria-disabled','true');
-  enter.tabIndex=-1;
+  enter.disabled=true;
   enter.setAttribute('aria-label','A kapu nyílik');
   enter.classList.add('is-opening');
   if(reduced){finish();return;}

@@ -3,7 +3,7 @@
 @media(max-width:768px){
  /* A megismétlődő alsó szakaszsáv helyett a meglévő fő navigációt használjuk. */
  body .cs32-mobile-bar,body .cs32-mobile-bar:not([hidden]){display:none!important}
- body{padding-bottom:calc(74px + env(safe-area-inset-bottom))!important}
+ body{padding-bottom:0!important}
  #ext26-mobile-nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
   min-height:62px!important;gap:6px!important;box-sizing:border-box!important;
   padding:6px 12px calc(6px + env(safe-area-inset-bottom))!important}
