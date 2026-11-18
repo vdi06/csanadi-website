@@ -8286,6 +8286,27 @@
         "holder": "Csanádi Sportiskola – látványterv",
         "license": "Illusztráció, nem igazolt iskolai eseményfotó; intézményi jóváhagyás szükséges."
       }
+    },
+    {
+      "id": "media:cs1403-open-gate",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/belepes-nyitott.webp",
+        "mimeType": "image/webp",
+        "width": 1672,
+        "height": 941,
+        "sizeBytes": 307012,
+        "sha256": "58367c56b1439286be31a611591a83c4d90abb5b64cb626036533325d0c5bda7"
+      },
+      "variants": [],
+      "alt": "A Csanádi Sportiskola stilizált, nyitott kapuja",
+      "caption": "Nyitott kapuk – látványterv.",
+      "decorative": false,
+      "rights": {
+        "clearance": "pending",
+        "holder": "Csanádi Sportiskola – látványterv",
+        "license": "Generált illusztráció, intézményi jóváhagyás szükséges."
+      }
     }
   ]
 }

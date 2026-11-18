@@ -54,7 +54,7 @@
     @media(max-width:600px){.filters{display:grid}.filters>*{width:100%}.actions{display:grid}.actions button,.import-button{width:100%}}
   </style>
   <link rel="stylesheet" href="../css/round16-standalone-tools.css?v=csanadi-r29n-20261115">
-  <script src="tool-ui-2026.js?v=1.39.5" defer></script>
+  <script src="tool-ui-2026.js?v=1.40.5" defer></script>
 </head>
 <body class="csn16-standalone-tool">
   <header>
@@ -64,14 +64,15 @@
   <main>
     <div class="intro">
       <h1>Tartalmi, szabály- és média-hitelesítési munkalap</h1>
-      <p>A <strong>23 intézményi ellenőrzést igénylő oldal</strong>, a <strong>69 rendezetlen médiajog</strong> és az <strong>5 hivatalos HTTPS-forrás nélküli, verified jelölésű hír</strong> önálló listában ellenőrizhető. A három nyitott csoport összesen 97 munkatételként exportálható. A hivatalos hírek forráscíme és az ellenőrzés dátuma helyben rögzíthető, de a hír-JSON nem módosul.</p>
+      <p>Az <strong>intézményi ellenőrzést igénylő oldalak</strong>, a <strong>teljes médiatár igazolásra váró képei</strong>, a <strong>30 kezdőkép</strong> és a <strong>hivatalos HTTPS-forrás nélküli hírek</strong> külön listában ellenőrizhetők. Az elemszám mindig a tényleges JSON-forrásadatokból származik; a helyi munkalapok összevont CSV- és JSON-exportja megmaradt.</p>
       <p class="warning"><strong>Fontos:</strong> minden itt megadott státusz és döntési adat helyi munkajegyzet. Nem módosítja a nyilvános JSON-t vagy az FTP-fájlokat, nem jelenti a hitelesítést, és nem helyettesíti az intézmény tényleges jóváhagyását. Mentsd el az exportált JSON-t a munka folytatásához.</p>
     </div>
     <section class="filters" aria-label="Szűrés és mentés">
       <label>Adatkör
         <select id="kind">
           <option value="priority">23 intézményi ellenőrzést igénylő oldal</option>
-          <option value="mediaRights">69 médiatétel · felhasználási jog függőben</option>
+          <option value="heroRights">30 kezdőkép · forrás és felhasználási jog</option>
+          <option value="mediaRights">Teljes médiatár · jóváhagyásra váró tételek</option>
           <option value="newsSources">5 intézményi hír · HTTPS-forrás hiányzik</option>
           <option value="criteria">31 szabály · 55 nyitott tétel</option>
           <option value="pages">71 tartalmi indexbejegyzés</option>
@@ -93,9 +94,9 @@
       <div class="actions">
         <button type="button" id="exportcsv">CSV export</button>
         <button type="button" id="exportjson">JSON export</button>
-        <button type="button" id="exportfocus" title="A 23 kiemelt oldal és 69 nyitott médiajog összesített helyi CSV-munkalapja">23+69 összesített CSV</button>
-        <button type="button" id="exportall" title="Mindhárom nyitott jóváhagyási csoport (23 oldal, 69 média és 5 hír) összesített munkalapja">23+69+5 összesített CSV</button>
-        <button type="button" id="exportaudit" title="Összesített, géppel feldolgozható, hivatalos jóváhagyást nem jelentő ellenőrzési JSON">97 tételes audit-JSON</button>
+        <button type="button" id="exportfocus" title="Kiemelt oldalak és minden még nem igazolt médiatétel közös CSV-munkalapja">Oldalak + média CSV</button>
+        <button type="button" id="exportall" title="Az összes nyitott jóváhagyási csoport közös munkalapja">Összes tétel CSV</button>
+        <button type="button" id="exportaudit" title="Összesített, géppel feldolgozható, hivatalos jóváhagyást nem jelentő ellenőrzési JSON">Összesített audit-JSON</button>
         <label class="import-button">JSON visszaolvasása<input type="file" id="importjson" accept=".json,application/json" aria-label="Korábban exportált helyi munkalap JSON visszaolvasása"></label>
       </div>
     </section>
@@ -110,6 +111,6 @@
     <p class="help">A 31 szabály ellenőrzése nem nyit meg új aloldalt; minden tételhez az eredeti JSON-fájlra mutató forráshivatkozás tartozik. A munkalap státuszait és bizonyítékait exportáld; a tényleges jóváhagyás elkülönített kiadási folyamatban történhet. Az összevont CSV az aktuális böngészőben elmentett munkajegyzeteket is tartalmazza, de a forrásoldalakat nem módosítja.</p>
   </main>
   <footer>Csanádi Sportiskola 2026 · Helyi ellenőrzési segédprogram, statikus FTP-kompatibilis</footer>
-  <script src="tartalmi-hitelesites.js?v=1.39.16" defer></script>
+  <script src="tartalmi-hitelesites.js?v=1.40.5" defer></script>
 </body>
 </html>

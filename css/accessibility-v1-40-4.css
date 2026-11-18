@@ -1,0 +1,79 @@
+/* v1.40.4 – kisebb kijelzők, igazolt képforrások és billentyűzetes hozzáférés.
+   A korábbi működő komponensek viselkedését nem írjuk felül. */
+
+/* A látványképek egyértelmű, témától független jelölése. */
+#global-hero .csn26-visual-wing .cs1404-hero-disclaimer{
+ position:absolute;
+ z-index:7;
+ top:clamp(9px,1.5vw,18px);
+ right:clamp(9px,1.8vw,24px);
+ display:inline-flex;
+ align-items:center;
+ max-width:min(56ch,calc(100% - 18px));
+ padding:5px 10px;
+ border:1px solid rgba(255,226,164,.75);
+ border-radius:7px;
+ background:rgba(5,27,45,.89);
+ color:#fff5dc!important;
+ font-size:clamp(10px,.95vw,13px);
+ line-height:1.3;
+ font-weight:750;
+ letter-spacing:.015em;
+ text-shadow:none;
+ overflow-wrap:anywhere;
+ pointer-events:none;
+}
+#global-hero .cs1404-hero-disclaimer[hidden]{display:none!important}
+
+/* Fókusz mindkét témában: egységesen jól látható szín és vastagság. */
+html[data-theme="light"] :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible{
+ outline:3px solid #163b59!important;
+ outline-offset:3px!important;
+}
+html[data-theme="dark"] :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible{
+ outline:3px solid #ffe3a5!important;
+ outline-offset:3px!important;
+}
+#site-map-overlay :is(a,button):focus-visible,
+#search-panel :is(a,button,input):focus-visible{
+ outline:3px solid #ffe3a5!important;
+ outline-offset:3px!important;
+}
+
+/* Szűk telefonon minden alapgomb legalább 40×40 CSS-pixeles. */
+@media(max-width:420px){
+ #site-header .header-actions :is(#mobile-menu-toggle,#search-open,#theme-toggle){
+  min-width:40px!important;
+  min-height:40px!important;
+  touch-action:manipulation;
+ }
+ #site-header .header-actions{gap:1px!important}
+ #site-header .header-kreta{min-height:40px!important;display:inline-flex;align-items:center}
+ #global-hero .csn26-visual-wing .cs1404-hero-disclaimer{
+  top:7px;
+  right:7px;
+  max-width:calc(100% - 14px);
+  padding:4px 6px;
+  font-size:10px;
+  letter-spacing:0;
+ }
+}
+@media(max-width:350px){
+ #site-header .brand-copy strong{font-size:12px!important}
+ #site-header .brand-logo{width:30px!important;height:30px!important;flex-basis:30px!important}
+ #global-hero .csn26-visual-wing .cs1404-hero-disclaimer{font-size:9px}
+}
+@media(forced-colors:active){
+ #global-hero .csn26-visual-wing .cs1404-hero-disclaimer{
+  background:Canvas!important;
+  color:CanvasText!important;
+  border:2px solid CanvasText!important;
+ }
+ :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible{
+  outline:3px solid Highlight!important;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ :focus{scroll-behavior:auto!important}
+ #global-hero .cs1404-hero-disclaimer{transition:none!important;animation:none!important}
+}

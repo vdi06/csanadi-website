@@ -40,6 +40,9 @@ export function renderPremiumHero(block){
  function showSlide(index,announce=false){
   const nextIndex=(index%slides.length+slides.length)%slides.length;
   const slide=slides[nextIndex],wing=wingStates[0],token=++changeToken;
+  const entry=mediaItem(slide.mediaId);
+  // A generált és még nem igazolt képek nem tüntethetők fel valódi iskolai fotóként.
+  const illustration=!entry||entry.rights?.clearance!=='approved';
   let picture=wing.cache.get(nextIndex);
   if(!picture){
    picture=createPicture(slide.mediaId,{className:'csn26-wing-picture',eager:true,sizes:'100vw',mobileId:slide.mobileMediaId});
@@ -55,8 +58,9 @@ export function renderPremiumHero(block){
    if(picture)picture.style.visibility='';
    wing.overline.textContent=slide.eyebrow||'CSANÁDI SPORTISKOLA';wing.title.textContent=slide.title||'Iskolai pillanatok';wing.summary.textContent=slide.subtitle||'Fedezd fel iskolánk világát.';
    wing.rightOverline.textContent=slide.rightEyebrow||'CSANÁDI · LEHETŐSÉGEK';wing.rightTitle.textContent=slide.rightTitle||'Találj rá a saját utadra';wing.rightSummary.textContent=slide.rightSubtitle||'Élmények, közösség és fejlődés.';
+   wing.disclaimer.hidden=!illustration;
    wing.surface.href=safeRoute(slide.buttons?.[0]?.href||'#/iskolank');
-   wing.surface.setAttribute('aria-label',`${activeIndex+1}. képes tartalom a(z) ${slides.length} közül: ${slide.title||'Iskolai pillanatok'} – megnyitás`);
+   wing.surface.setAttribute('aria-label',`${activeIndex+1}. képes tartalom a(z) ${slides.length} közül: ${slide.title||'Iskolai pillanatok'}${illustration?' – illusztráció, nem igazolt intézményi eseményfotó':''} – megnyitás`);
    wing.element.dataset.slide=String(activeIndex+1);
    if(status){status.setAttribute('aria-live',announce?'polite':'off');status.textContent=`${activeIndex+1}. képes tartalom a(z) ${slides.length} közül`;}
    queuePreparation(activeIndex);
@@ -79,12 +83,13 @@ export function renderPremiumHero(block){
   const rightCopy=el('div','csn26-wing-copy csn26-wing-copy--right');
   const rightOverline=el('span','csn26-wing-kicker');const rightTitle=el('h3','csn26-wing-title');const rightSummary=el('p','csn26-wing-summary');
   rightCopy.append(rightOverline,rightTitle,rightSummary);
-  const pictureMount=el('div','csn26-wing-photo');surface.append(pictureMount,el('div','csn26-wing-shade'),copy,rightCopy);
+  const disclaimer=el('span','cs1404-hero-disclaimer','Illusztráció · nem hitelesített iskolai fotó');disclaimer.setAttribute('aria-hidden','true');
+  const pictureMount=el('div','csn26-wing-photo');surface.append(pictureMount,el('div','csn26-wing-shade'),copy,rightCopy,disclaimer);
   wing.append(surface);
   surface.addEventListener('touchstart',event=>{if(event.touches.length===1)startX=event.touches[0].clientX;},{passive:true});
   surface.addEventListener('touchend',event=>{if(startX===null||!event.changedTouches.length)return;const delta=event.changedTouches[0].clientX-startX;startX=null;if(Math.abs(delta)>settingNumber('runtime.hero.swipeThresholdPx')){event.preventDefault();showSlide(activeIndex+(delta<0?1:-1),true);}},{passive:false});
   wing.addEventListener('keydown',event=>{if(event.target.matches('input,textarea,select'))return;if(event.key==='ArrowLeft'||event.key==='ArrowUp'){event.preventDefault();showSlide(activeIndex-1,true);}if(event.key==='ArrowRight'||event.key==='ArrowDown'){event.preventDefault();showSlide(activeIndex+1,true);}});
-  wingStates.push({element:wing,surface,pictureMount,overline,title,summary,rightOverline,rightTitle,rightSummary,cache:new Map()});
+  wingStates.push({element:wing,surface,pictureMount,disclaimer,overline,title,summary,rightOverline,rightTitle,rightSummary,cache:new Map()});
   return wing;
  };
  row.append(buildWing());

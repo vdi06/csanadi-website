@@ -1,4 +1,6 @@
-import {setting} from './site-settings-2026.js?v=csanadi-r29n-20261115';
+// Ugyanazt a modulazonosítót használjuk, mint az app.js: a query-paraméteres
+// import külön modulpéldányt hozott létre inicializálatlan settings állapottal.
+import {setting} from './site-settings-2026.js';
 export async function installLanguageHighlights(){
  if(!setting('runtime.display.bilingualPanelEnabled'))return;
  const url=new URL('../json/'+setting('content.languagesPath'),import.meta.url),response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error('Nem elérhető a központi nyelvi JSON.');const data=await response.json(),hero=document.getElementById('global-hero');if(!hero||!data.notices)return;

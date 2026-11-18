@@ -1,0 +1,37 @@
+/* v1.40.5 – közös prémium szerkesztői navigáció, fókusz és mobil hozzáférés. */
+html.cs-tools-modern{--cs1405-gold:#e4bf7b}
+html.cs-tools-modern .cs-tools-global-nav-inner{justify-content:flex-start;flex-wrap:wrap;gap:7px;padding:12px 0}
+html.cs-tools-modern .cs-tools-global-nav a{flex:1 1 152px;min-height:44px;max-width:250px;padding:11px 9px;letter-spacing:0;font-size:clamp(11px,.85vw,13px)}
+html.cs-tools-modern .cs-tools-global-nav a:focus-visible{outline:3px solid #ffe4a6!important;outline-offset:2px!important}
+html.cs-tools-modern .cs1405-tools-context{display:flex;flex-wrap:wrap;gap:8px 17px;align-items:center;justify-content:center;text-align:center;padding:9px 18px;background:#f3e6cc;color:#14314a;border-bottom:1px solid #bc9962;font-size:12px;line-height:1.4}
+html.cs-tools-modern .cs1405-tools-context span:first-child{font-weight:900;letter-spacing:.075em}
+html.cs-tools-modern .cs1405-tools-context span:last-child{font-weight:600}
+html.cs-tools-modern .cs1405-qa-controls,html.cs-tools-modern .cs1405-photos .cs1405-photo-form{display:flex;flex-wrap:wrap;gap:12px;align-items:end}
+html.cs-tools-modern .cs1405-qa label,html.cs-tools-modern .cs1405-photos .cs1405-photo-form>label{display:flex;flex-direction:column;gap:7px;flex:1 1 220px;font-weight:750}
+html.cs-tools-modern .cs1405-qa :is(button,select),html.cs-tools-modern .cs1405-photos :is(button,input){min-height:44px;font:inherit}
+html.cs-tools-modern .cs1405-qa-viewport{margin-top:16px;max-width:100%;overflow:auto;border:2px solid #b99b65;background:#293e57;border-radius:16px;padding:14px;scrollbar-width:thin}
+html.cs-tools-modern .cs1405-qa-viewport-label{text-align:center;color:#fff3d4;font-weight:800;margin-bottom:10px}
+html.cs-tools-modern #qa-frame{display:block;margin-inline:auto;min-height:630px;max-width:none;border:3px solid #d4b16f;background:#fff;border-radius:11px;box-shadow:0 15px 30px #061c3270}
+html.cs-tools-modern .cs1405-qa-tablewrap{max-width:100%;overflow:auto}
+html.cs-tools-modern :is(.cs1405-qa,.cs1405-audit) table{width:100%;border-collapse:collapse;min-width:660px;font-size:13px}
+html.cs-tools-modern :is(.cs1405-qa,.cs1405-audit) th,html.cs-tools-modern :is(.cs1405-qa,.cs1405-audit) td{border:1px solid var(--line,#adbed0);padding:10px;vertical-align:top;text-align:left}
+html.cs-tools-modern :is(.cs1405-qa,.cs1405-audit) th{background:#1b3b56;color:#fff}
+html.cs-tools-modern :is(.cs1405-qa,.cs1405-audit) tr[data-status=review]{background:#fff1dd;color:#6d321d}
+html.cs-tools-modern :is(.cs1405-qa,.cs1405-audit) tr[data-status=pass]{background:#e5f7e9;color:#16452c}
+html.cs-tools-modern .cs1405-audit-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+html.cs-tools-modern .cs1405-audit-stats p{flex:1 1 175px;text-align:center;display:grid;gap:7px;justify-items:center;padding:12px;border:1px solid var(--line,#abc0d0);border-radius:12px}
+html.cs-tools-modern .cs1405-audit-stats strong{font-size:clamp(20px,2.8vw,32px);color:var(--ink,#173450)}
+html.cs-tools-modern .cs1405-audit-filter{display:flex;gap:12px;align-items:center;margin-bottom:12px;font-weight:750}
+html.cs-tools-modern .cs1405-qa-checks,html.cs-tools-modern .cs1405-photo-consent{display:grid;gap:12px;margin-block:15px}
+html.cs-tools-modern .cs1405-qa-checks label,html.cs-tools-modern .cs1405-photo-consent label{display:flex;flex-direction:row;gap:10px;align-items:start;font-weight:650}
+html.cs-tools-modern .cs1405-qa-checks input,html.cs-tools-modern .cs1405-photo-consent input{min-width:20px;min-height:20px;flex:0 0 20px;margin-top:3px}
+html.cs-tools-modern .cs1405-photo-import{display:grid;gap:8px;font-weight:750}
+html.cs-tools-modern .cs1405-photo-row{border:1px solid var(--line,#abc0d0);border-left:4px solid #bb9453;padding:12px 14px;border-radius:12px;display:grid;gap:7px;margin-top:8px;overflow-wrap:anywhere}
+html.cs-tools-modern .cs1405-photo-row span{font:600 12px/1.5 system-ui,sans-serif;color:var(--muted,#555)}
+html.cs-tools-modern .cs1405-photo-form label{min-width:0}
+html.cs-tools-modern .cs1405-photo-consent{width:100%;padding:12px;border:1px solid var(--line,#adbed0);border-radius:12px}
+html.cs-tools-modern .cs1405-qa button:disabled,html.cs-tools-modern .cs1405-photos button:disabled{opacity:.48;cursor:not-allowed}
+@media(max-width:780px){html.cs-tools-modern .cs-tools-global-nav-inner{flex-wrap:nowrap;justify-content:flex-start;scroll-snap-type:x proximity;overflow-x:auto}html.cs-tools-modern .cs-tools-global-nav a{flex:0 0 145px;max-width:185px}html.cs-tools-modern .cs1405-tools-context{font-size:11px}}
+@media(max-width:420px){html.cs-tools-modern .cs1405-qa-viewport{padding:8px}html.cs-tools-modern #qa-frame{margin-inline:0}html.cs-tools-modern .cs1405-qa button{width:100%}}
+@media(forced-colors:active){html.cs-tools-modern .cs1405-qa-viewport,html.cs-tools-modern #qa-frame{border:2px solid CanvasText}html.cs-tools-modern :is(a,button,input,select,summary):focus-visible{outline:3px solid Highlight!important}}
+@media(prefers-reduced-motion:reduce){html.cs-tools-modern *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}

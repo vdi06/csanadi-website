@@ -1,0 +1,35 @@
+<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<title>Iskolai fotók hitelesítése – Csanádi Sportiskola</title><link rel="stylesheet" href="../css/round17-tools.css">
+<script src="tool-ui-2026.js?v=1.40.5" defer></script><script src="iskolai-fotok-jovahagyasa.js?v=1.40.5" defer></script>
+</head><body>
+<header class="admin-head"><div class="admin-logo"><img src="../assets/media/logo/csanadi-cimer-512.webp" width="64" height="64" alt=""><div><span>CSANÁDI SPORTISKOLA</span><h1>Iskolai fotók hitelesítése</h1></div></div><nav><a href="index.html">Karbantartási központ</a><button type="button" id="tool-theme-toggle">◐ Megjelenés</button></nav></header>
+<main class="admin-layout cs1405-photos" id="photos-main">
+ <p class="admin-alert"><strong>Bizonyítékgyűjtő, nem publikációs felület.</strong> A korábbi 30 kezdőkép és a 174 média jogi helyzetét a v1.40.4 munkalap tartalmazza. Itt új, valódi iskolai fotókat lehet <em>helyben ellenőrizni</em>, és intézményi jóváhagyási jegyzéket letölteni. A böngésző nem írja át a szerveren lévő képeket, és a mezők kitöltése önmagában nem igazolja az engedélyek valódiságát.</p>
+ <section><h2>1. Jóváhagyásra szánt képek kiválasztása</h2>
+  <label class="cs1405-photo-import">Képfájlok (JPG, PNG, WebP, AVIF)<input id="photos-input" type="file" multiple accept="image/jpeg,image/png,image/webp,image/avif"></label>
+  <p class="admin-note">A képek a saját gépeden maradnak. Minden képnél a név, méret, képméret és SHA-256 ellenőrzés szerepel a munkajegyzékben.</p>
+  <div class="cs1405-photos-list" id="photos-list" aria-live="polite"><p>Még nem választottál ki fájlt.</p></div>
+ </section>
+ <section><h2>2. Írásos engedély és adatvédelmi jogalap rögzítése</h2>
+  <p>Az alábbi adatok a kijelölt képek mindegyikére érvényesek. Eltérő jogosult vagy jogalap esetén külön jegyzéket készíts.</p>
+  <form id="photos-form" class="cs1405-photo-form" novalidate>
+   <label>Jogosult / fotós / intézményi forrásgazda<input id="photos-holder" required maxlength="180" autocomplete="off"></label>
+   <label>Felhasználási engedély vagy licenc<input id="photos-permission" required maxlength="240" placeholder="Pl. intézményi írásos felhasználási engedély"></label>
+   <label>Engedély vagy hozzájárulás dokumentumazonosítója<input id="photos-evidence" required maxlength="200" placeholder="Iktatószám vagy biztonságos belső hivatkozás"></label>
+   <label>Felelős ellenőrző neve / szerepköre<input id="photos-reviewer" required maxlength="150"></label>
+   <label>Intézményi jóváhagyás döntésazonosítója<input id="photos-decision" required maxlength="200"></label>
+   <label>Készítés vagy forrásellenőrzés napja<input id="photos-date" type="date" required></label>
+   <label>Kiskorúak és felismerhető személyek adatvédelmi jogalapja<input id="photos-privacy" required maxlength="350" placeholder="Jogalap vagy annak igazolt hiánya; ne rögzíts személyes azonosító adatot"></label>
+   <div class="cs1405-photo-consent"><label><input id="photos-rights-confirm" type="checkbox" required> Az írásos felhasználási jog és a megnevezett dokumentum ténylegesen ellenőrzött.</label>
+   <label><input id="photos-privacy-confirm" type="checkbox" required> Az érintettek adatvédelmi jogalapját felelős személy vizsgálta.</label>
+   <label><input id="photos-institution-confirm" type="checkbox" required> Az intézmény illetékes felelőse külön jóváhagyta a tervezett nyilvános felhasználást.</label></div>
+   <button type="submit" id="photos-export">Ellenőrzési jegyzék JSON és CSV</button>
+  </form>
+  <p id="photos-status" role="status" aria-live="polite">Egyelőre nincs exportálható, ellenőrzött képlista.</p>
+ </section>
+ <section><h2>3. Képek tényleges regisztrálása a médiatárban</h2>
+  <p>Jóváhagyott képfájl és ellenőrzött jegyzék birtokában nyisd meg a meglévő <a href="eszkoz-mediator.html">média- és dokumentumkezelőt</a>. Ott az eredeti képekkel és kötelező jogosultsági mezőkkel új médiasorokat hozhatsz létre, majd <strong>helyi ZIP-kiadást</strong> készíthetsz. A kiadást ezután újra kell tesztelni; a két eszköz egyike sem publikál automatikusan.</p>
+  <p class="admin-note"><strong>Jelen állapot:</strong> a v1.40.5 fejlesztési csomaghoz nem érkeztek új, intézményileg jóváhagyott képfájlok. Emiatt a meglévő 30 kezdőképet nem cseréltük le és semelyikük státuszát nem emeltük automatikusan „jóváhagyottra”.</p>
+ </section>
+</main><footer class="admin-foot">Csanádi Sportiskola · Fotó-jogtisztázás · v1.40.5</footer>
+</body></html>

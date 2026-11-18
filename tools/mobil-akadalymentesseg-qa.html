@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="hu"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+  <title>Mobil és akadálymentességi QA – Csanádi Sportiskola</title>
+  <link rel="stylesheet" href="../css/round17-tools.css">
+  <script src="tool-ui-2026.js?v=1.40.5" defer></script>
+  <script src="mobil-akadalymentesseg-qa.js?v=1.40.5" defer></script>
+</head><body>
+  <header class="admin-head"><div class="admin-logo"><img src="../assets/media/logo/csanadi-cimer-512.webp" width="64" height="64" alt=""><div><span>CSANÁDI SPORTISKOLA</span><h1>Mobil és akadálymentességi QA</h1></div></div><nav><a href="index.html">Karbantartási központ</a><button type="button" id="tool-theme-toggle">◐ Megjelenés</button></nav></header>
+  <main class="admin-layout cs1405-qa" id="qa-main">
+    <p class="admin-alert"><strong>Helyi, csak olvasó ellenőrzés:</strong> a vizsgált webhely a lenti keretben, a saját eredeti fájljaiból töltődik be. Sem feltöltés, sem publikálás nincs. A mérés valódi böngészőben, 320, 390 és 768 CSS-pixeles kerettel történik; nem helyettesít fizikai telefont vagy képernyőolvasót.</p>
+    <section aria-labelledby="qa-settings-heading"><h2 id="qa-settings-heading">Tesztbeállítások</h2>
+      <div class="cs1405-qa-controls"><label>SPA-útvonal<select id="qa-route"><option value="#/">Kezdőlap</option></select></label>
+      <button type="button" id="qa-run">320 / 390 / 768 px – tesztfuttatás</button><button type="button" id="qa-json" disabled>Jegyzőkönyv letöltése JSON</button><button type="button" id="qa-csv" disabled>Jegyzőkönyv letöltése CSV</button></div>
+      <p id="qa-status" role="status" aria-live="polite">A vizsgálat még nem indult el.</p>
+      <div class="cs1405-qa-viewport"><div class="cs1405-qa-viewport-label" id="qa-width">Előnézet – még nincs mérés</div><iframe id="qa-frame" title="Csanádi weboldal különálló mobilnézeti próbaablaka" loading="eager" src="../index.html#/" referrerpolicy="no-referrer"></iframe></div>
+    </section>
+    <section aria-labelledby="qa-results-heading"><h2 id="qa-results-heading">Automatikus mérések</h2><p>Az eredmények a tényleges kereten belüli szélességből, görgethető szélességből, látható interaktív elemek méretéből, élő státuszmezőből és főnavigációs jelölésekből készülnek.</p>
+      <div class="cs1405-qa-tablewrap"><table><thead><tr><th>Szélesség</th><th>Oldal</th><th>Vízszintes túlcsordulás</th><th>Látható gombok célfelülete</th><th>ARIA / útvonal</th><th>Eredmény</th></tr></thead><tbody id="qa-results"><tr><td colspan="6">Nincs eredmény</td></tr></tbody></table></div>
+    </section>
+    <section aria-labelledby="qa-manual-heading"><h2 id="qa-manual-heading">Kézi ellenőrzési lista</h2>
+      <p>A következő pontok automatikusan nem igazolhatók; csak akkor jelöld készre, ha valós eszközön vagy megfelelő segédtechnológiával elvégezted a tesztet.</p>
+      <div class="cs1405-qa-checks"><label><input type="checkbox">320 px: címer, menü, keresés, KRÉTA és hero nem takarják egymást</label><label><input type="checkbox">390 px: mobil menü nyitása, almenük és bezárás érintéssel</label><label><input type="checkbox">768 px: tablet navigáció és oldali kártyák vizuálisan rendben</label><label><input type="checkbox">Csak billentyűzettel: Tab, Shift+Tab, Enter, Escape, fókusz visszaadása</label><label><input type="checkbox">Valódi NVDA / VoiceOver / JAWS: címsorok, oldalváltás, keresés, menü</label><label><input type="checkbox">Világos/sötét téma, 200%-os nagyítás és csökkentett mozgás</label></div>
+      <p class="admin-note">A jelölések az aktuális böngészőoldalon élnek, nem szolgálnak intézményi megfelelőségi nyilatkozatként.</p>
+    </section>
+  </main><footer class="admin-foot">Csanádi Sportiskola · Helyi QA · v1.40.5</footer>
+</body></html>

@@ -21,7 +21,7 @@ import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r29n-20261115';
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.39.16';
-import {renderBlock,dom,listCards} from './blocks.js?v=1.40.2';
+import {renderBlock,dom,listCards} from './blocks.js?v=1.40.5';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=csanadi-r29n-20261115';
 import {renderSportsSuccesses} from './sports-successes.js?v=csanadi-r29n-20261115';
 import {renderStudentAchievements} from './student-achievements.js?v=csanadi-r29n-20261115';
@@ -32,6 +32,7 @@ import {createPhoneRadial} from '../mobile/radial-wheel-v1-38.js?v=1.38.1';
 import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.39.2';
 import {createSubpageHero} from './subpages-v1.js?v=1.39.16';
 const app=document.getElementById('app');
+const routeStatus=document.getElementById('cs1404-route-status');
 let homeHeroElement=null;
 // A legpontosabb útvonalprofil választja ki a témához illő, helyben futó
 // sportmozdulatot; az eredeti hat főmenü és az összes tartalmi oldal változatlan.
@@ -565,6 +566,7 @@ function embeddedArrival(route,options){
  if(window.__csArrivalMessage)window.removeEventListener('message',window.__csArrivalMessage);
  window.__csArrivalMessage=onMessage;window.addEventListener('message',onMessage);
  updatePageMeta({title:'Megközelítés és tanulástámogatás',summary:'Megközelítés, érkezés és tanulástámogatás a Csanádi Árpád Sportiskolában.'},route);
+ if(previous!==route&&routeStatus)routeStatus.textContent='Megközelítés és tanulástámogatás – az oldal betöltődött.';
  renderMenu();closeMobile();closeSiteMap(false);
  if(previous!==route&&!section)requestAnimationFrame(()=>window.scrollTo({top:0,behavior:'instant'}));
  if(options.focus)app.focus({preventScroll:true});
@@ -688,6 +690,7 @@ function renderRoute(options={}){
    if(replacement&&app.contains(replacement))replacement.focus({preventScroll:true});
   }
   updatePageMeta(node?.page||{title:'Az oldal nem található',summary:'A keresett oldal nem érhető el. Használd a honlap navigációját vagy keresőjét.'},route);
+  if(isNew&&routeStatus)routeStatus.textContent=(node?.page?.title||'Az oldal nem található')+' – az oldal betöltődött.';
   const headerMotion=headerMotionForRoute(route,node,catalog?.config?.runtime?.subpageHeaderMotion);
   document.dispatchEvent(new CustomEvent('csanadi:route-rendered',{detail:{route,headerMotion}}));
   if(pendingSearchJump && pendingSearchJump.route===route)setTimeout(trySearchJump,settingNumber('runtime.timing.searchJumpDelayMs'));

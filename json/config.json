@@ -168,7 +168,7 @@
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r-v1.40.2",
+    "cacheVersion": "csanadi-r-v1.40.5",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,

@@ -10,6 +10,11 @@
     stylesheet.dataset.csanadiToolsUnified='true';
     document.head.append(stylesheet);
   }
+  if(!document.querySelector('link[data-csanadi-tools-1405]')){
+    const polish=document.createElement('link');polish.rel='stylesheet';
+    polish.href='../css/tools-unified-v1-40-5.css?v=1.40.5';
+    polish.dataset.csanadiTools1405='true';document.head.append(polish);
+  }
   // A három önálló, iframe-es tesztoldalon nincs <main>, ezért a tényleges
   // tesztterület legyen a kihagyható navigáció célpontja.
   const main=document.querySelector('main')||document.querySelector('.stage')||document.querySelector('.toolbar');
@@ -34,7 +39,10 @@
     ['dokumentum-szerkeszto.html','Dokumentumadatok'],
     ['oldal-json-szerkeszto.html','Oldalszerkesztő'],
     ['minosegkapu.html','Minőségkapu'],
-    ['ftp-kiadas-ellenorzo.html','FTP-kiadás']
+    ['ftp-kiadas-ellenorzo.html','FTP-kiadás'],
+    ['iskolai-fotok-jovahagyasa.html','Iskolai fotók'],
+    ['mobil-akadalymentesseg-qa.html','Mobil QA'],
+    ['tartalom-kereses-audit.html','Tartalom és keresés']
   ];
   let header=document.querySelector('body > header');
   if(!header){
@@ -61,6 +69,14 @@
   }
   for(const link of document.querySelectorAll('nav a[href]')){
     try{if(new URL(link.href,location.href).pathname.split('/').pop()===currentPage)link.setAttribute('aria-current','page');}catch{}
+  }
+  if(!document.querySelector('.cs1405-tools-context')){
+    const context=document.createElement('div');context.className='cs1405-tools-context';
+    const label=document.createElement('span');label.textContent='HELYI SZERKESZTŐI KÖRNYEZET';
+    const description=document.createElement('span');description.textContent='A műveletek nem publikálnak az iskolai FTP-re vagy a GitHubra.';
+    context.append(label,description);
+    const topNav=document.querySelector('.cs-tools-global-nav');
+    if(topNav)topNav.insertAdjacentElement('afterend',context);
   }
   const button=document.getElementById('tool-theme-toggle');
   if(!button)return;

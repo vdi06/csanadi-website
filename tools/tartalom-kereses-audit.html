@@ -1,0 +1,17 @@
+<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+ <title>Tartalom- és keresési audit – Csanádi Sportiskola</title><link rel="stylesheet" href="../css/round17-tools.css">
+ <script src="tool-ui-2026.js?v=1.40.5" defer></script><script type="module" src="tartalom-kereses-audit.js?v=1.40.5"></script>
+</head><body>
+ <header class="admin-head"><div class="admin-logo"><img src="../assets/media/logo/csanadi-cimer-512.webp" width="64" height="64" alt=""><div><span>CSANÁDI SPORTISKOLA</span><h1>Tartalom- és keresési minőségaudit</h1></div></div><nav><a href="index.html">Karbantartási központ</a><button type="button" id="tool-theme-toggle">◐ Megjelenés</button></nav></header>
+ <main class="admin-layout cs1405-audit" id="content-main">
+  <p class="admin-alert"><strong>Olvasás és export, publikálás nélkül.</strong> A rendszer a 71 regisztrált JSON-oldalt és azok keresőindexét hasonlítja össze. Megjelöli a hibás útvonalakat, hiányzó leírásokat, régi honlapra mutató hivatkozásokat, duplikált címeket és ellenőrizendő belső kapcsolatokat. A jelzések nem helyettesítik az intézményi tényellenőrzést.</p>
+  <section><h2>Friss ellenőrzés</h2><div class="cs1405-qa-controls"><button type="button" id="content-run">Összes oldal ellenőrzése</button><button id="content-json" disabled type="button">Audit JSON letöltése</button><button id="content-csv" disabled type="button">Audit CSV letöltése</button></div>
+   <p id="content-status" role="status" aria-live="polite">Az ellenőrzés indításra vár.</p>
+   <div class="cs1405-audit-stats"><p><strong id="content-pages">–</strong> oldal</p><p><strong id="content-errors">–</strong> szerkezeti hiba</p><p><strong id="content-warnings">–</strong> figyelmeztetés</p><p><strong id="content-advice">–</strong> szakmai átnézési javaslat</p></div>
+  </section>
+  <section><h2>Részletes megállapítások</h2><label class="cs1405-audit-filter">Szűrés<select id="content-filter"><option value="all">Minden jelzés</option><option value="error">Szerkezeti hibák</option><option value="warning">Figyelmeztetések</option><option value="advice">Átnézési javaslatok</option></select></label>
+   <div class="cs1405-qa-tablewrap"><table><thead><tr><th>Fokozat</th><th>Oldal</th><th>Kód</th><th>Indok</th></tr></thead><tbody id="content-rows"><tr><td colspan="4">Még nincs eredmény.</td></tr></tbody></table></div>
+  </section>
+  <section><h2>Mi kerülhet kiadásba?</h2><p>Az audit hibáinak javítása után a <a href="oldal-json-szerkeszto.html">JSON-oldalszerkesztő</a> segítségével lehet ellenőrzött tartalmat készíteni. A keresőindexet a mellékelt <code>tools/build-search-index-v1-39-1.js</code> szinkronizálja. A forrás- és képhasználati jóváhagyás továbbra is külön ellenőrzési lépés.</p><p class="admin-note">Nem automatikus tartalomgenerátor: a hiányzó személyes, történeti vagy iskolai tényeket nem találja ki és nem írja át.</p></section>
+ </main><footer class="admin-foot">Csanádi Sportiskola · Tartalmi QA · v1.40.5</footer>
+</body></html>

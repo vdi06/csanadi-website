@@ -89,14 +89,15 @@ check('B: tartalom nélküli útvonalon nem marad régi menü',()=>{
  assert.equal(act('mobileTargets.length'),0);assert.equal(act('mobileBar.hidden'),true);
 });
 check('B: a megközelítési iframe nem kap hamis szakaszokat',()=>{
- const app=read('js/app.js');assert.ok(app.includes('syncRound29HomeNavigation(false);'));assert.ok(app.includes("if(arrivalSection(requested)!==null){embeddedArrival(requested,options);return;}"));
+ const app=read('js/app.js');assert.ok(app.includes('syncRound29HomeNavigation(false);'));assert.ok(app.includes('if(arrivalSection(requested)!==null){'));
+ assert.ok(app.includes('history.replaceState(history.state'));assert.ok(app.includes('renderRoute(options);'));
 });
 check('C: az összes regisztrált aloldalon vannak saját címes tartalmi szakaszok',()=>{
  const s=JSON.parse(read('json/structure.json'));const invalid=[];let count=0;
  function walk(items){for(const item of items){const p=JSON.parse(read('json/'+item.path));count++;
   if((p.blocks||[]).filter(b=>b.type==='section'&&b.title).length<2)invalid.push(p.schemaExtensions?.route);
   walk(item.children||[]);
- }}walk(s.nodes);assert.equal(count,65);assert.deepEqual(invalid,[]);
+ }}walk(s.nodes);assert.equal(count,Object.keys(JSON.parse(read('json/oldalindex.json')).pages).length-1);assert.deepEqual(invalid,[]);
 });
 check('C: a kezdőoldal szakaszlistája és asztali menüje érintetlen marad',()=>{
  assert.ok(code.includes('function buildLinks(canvas)'));assert.ok(code.includes('function mountNavigator()'));

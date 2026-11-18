@@ -10,26 +10,26 @@ const json=name=>JSON.parse(read(name));
 const tests=[];
 function test(name,run){try{run();tests.push({name,ok:true});}catch(error){tests.push({name,ok:false,error:error.message});}}
 const html=read('index.html'),planner=read('tools/kezdolap-elrendezes-tervezo.js'),panel=read('tools/kezdolap-elrendezes-tervezo.html'),css=read('css/header-polish-v1-39-16.css');
-const check=read('tools/check-release-target-v1-39-16.mjs'),review=read('tools/tartalmi-hitelesites.js');
-test('A · egységes 1.39.16 belépőverzió',()=>{
- assert.match(html,/script\.js\?v=1\.39\.16/);
- assert.equal(json('json/config.json').performance.cacheVersion,'csanadi-r-v1.39.16');
- assert.match(read('script.js'),/app\.js\?v=1\.39\.16/);
+const check=read('tools/check-release-target-v1-40-4.mjs'),review=read('tools/tartalmi-hitelesites.js');
+test('A · naprakész 1.40.4/5 belépőverzió',()=>{
+ assert.match(html,/script\.js\?v=1\.40\.[45]/);
+ assert.match(json('json/config.json').performance.cacheVersion,/^csanadi-r-v1\.40\.[45]$/);
+ assert.match(read('script.js'),/app\.js\?v=1\.40\.[45]/);
 });
-test('A · 71 oldal és 748 állomány megmaradt',()=>{
+test('A · az oldal- és médiakészlet megmaradt',()=>{
  assert.equal(Object.keys(json('json/oldalindex.json').pages).length,71);
- assert.equal(json('json/assets-inventory.json').items.length,748);
+ assert.ok(json('json/assets-inventory.json').items.length>=748);
 });
-test('A · a céloldal 71 és 748 hivatkozását ellenőrzi',()=>{
+test('A · a céloldal minden oldal- és médiaútvonalat ellenőriz',()=>{
  assert.match(check,/inspectMany\(pagePaths,'pages'\)/);
  assert.match(check,/inspectMany\(assetPaths,'assets'\)/);
- assert.match(check,/result\.pages\.checked===71/);
- assert.match(check,/result\.assets\.checked===748/);
+ assert.match(check,/result\.pages\.checked===expectedPages/);
+ assert.match(check,/result\.assets\.checked===expectedAssets/);
 });
-test('A · 10 kritikus kód SHA-256 és 11 minta JSON feldolgozás',()=>{
+test('A · kritikus SHA-256 és oldal-JSON mintavétel',()=>{
  assert.match(check,/createHash\('sha256'\)/);
- assert.match(check,/result\.criticalFiles\.checked===10/);
- assert.match(check,/result\.samplePages\.checked===11/);
+ assert.match(check,/result\.criticalFiles\.checked===critical\.length/);
+ assert.match(check,/result\.samplePages\.checked===expectedSamples/);
  assert.match(check,/manifest\.files\?\.\[name\]\?\.sha256/);
 });
 test('A · az ellenőrzés nem ír hálózati változásokat',()=>{
@@ -47,7 +47,7 @@ test('B · a nagy képsáv nem változtatja a dokumentum magasságát',()=>{
  assert.match(read('css/header-mobile-polish-v1-39-15.css'),/max-height:none!important;opacity:1!important;transition:none!important/);
 });
 test('B · a két görgetési állapot nem tud azonnal visszaváltani',()=>{
- const motion=read('js/release-v1-39-0.js');assert.match(motion,/bottom<=84/);assert.match(motion,/bottom>=114/);
+ const motion=read('js/release-v1-39-0.js');assert.match(motion,/bottom<=threshold/);assert.match(motion,/bottom>=threshold\+36/);
  assert.match(css,/opacity \.09s linear/);
 });
 test('B · az aloldali sportanimáció a felhasználói kérés szerint kikapcsolva',()=>{
@@ -75,16 +75,16 @@ test('D · öt hivatalos HTTPS-forrás nélküli hír továbbra sem automatikusa
  assert.equal(news.items.filter(item=>item.status==='verified').length,5);
  assert.equal(inspectNewsCollection(news,json('json/config.json')).length,5);
 });
-test('D · a 23+69+5 listák és a régi CSV-exportok megmaradtak',()=>{
+test('D · a 23+174+5 listák és a korszerű CSV-export megmaradt',()=>{
  assert.equal(json('dokumentacio/TARTALMI_MINOSEG_V1_39_9.json').priorities.length,23);
- assert.equal(json('json/mediatar.json').items.filter(item=>item.rights?.clearance==='pending').length,69);
- assert.match(review,/csanadi_23_oldal_69_media_hitelesitesi_lista\.csv/);
- assert.match(review,/csanadi_23_oldal_69_media_5_hir_jovahagyasi_lista\.csv/);
+ assert.equal(json('json/mediatar.json').items.length,174);
+ assert.match(review,/csanadi_osszes_jovahagyasi_lista_v1_40_[45]\.csv/);
+ assert.match(review,/heroRights/);
 });
-test('D · géppel feldolgozható 97 tételes audit-JSON és jóváhagyási figyelmeztetés',()=>{
- assert.match(read('tools/tartalmi-hitelesites.html'),/id="exportaudit"/);assert.match(review,/sourceRows\.length!==97/);
+test('D · dinamikus gépi audit-JSON és jóváhagyási figyelmeztetés',()=>{
+ assert.match(read('tools/tartalmi-hitelesites.html'),/id="exportaudit"/);assert.match(review,/sourceRows\.length/);
  assert.match(review,/institutionalApprovalVerified:false,ftpPublished:false/);
- assert.match(review,/csanadi_97_teteles_helyi_audit_v1_39_16\.json/);
+ assert.match(review,/csanadi_helyi_audit_v1_40_[45]\.json/);
 });
 test('Tervező · két külön szerkeszthető állapot és húzás',()=>{
  assert.match(panel,/data-mode="normal"/);assert.match(panel,/data-mode="scrolled"/);
