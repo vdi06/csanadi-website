@@ -1,4 +1,4 @@
-import {formatBytes as bytes} from './format-bytes.js?v=1.42.12';
+import {formatBytes as bytes} from './format-bytes.js?v=1.42.13';
  
 let panel=null;
 let pending=null;

@@ -1,4 +1,4 @@
-import {createPicture,mediaItem} from './media.js?v=1.42.12';
+import {createPicture,mediaItem} from './media.js?v=1.42.13';
 import {settingNumber,isWithinConfiguredWindow} from './site-settings-2026.js';
 const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 const safeRoute=value=>typeof value==='string'&&/^#\/[a-z0-9/\-]*$/i.test(value)?value:'#/';
@@ -13,8 +13,27 @@ export function renderPremiumHero(block){
   .slice(0,settingNumber('runtime.hero.maxSlides'));
  if(!slides.length)return null;
  const section=el('section','csn26-visual-map');section.setAttribute('aria-label','Képes kezdőlap és főmenü');
+ // A static mobile hero keeps its image and text in separate, non-overlapping elements.
+ const mobileLanding=el('div','cs42-mobile-landing');
+ const mobileFigure=el('div','cs42-mobile-figure');
+ const mobilePhoto=createPicture('media:bejarat',{className:'cs42-mobile-picture',eager:true,sizes:'(max-width: 768px) 100vw, 0px'});
+ if(mobilePhoto)mobileFigure.append(mobilePhoto);
+ const mobileCopy=el('div','cs42-mobile-copy');
+ const mobileKicker=el('span','cs42-mobile-kicker','ÜDVÖZLÜNK A CSANÁDIBAN');
+ const mobileTitle=el('h2','cs42-mobile-title','Sport, tanulás, közösség.');
+ const mobileSummary=el('p','cs42-mobile-summary','Fedezd fel iskolánk mindennapjait, sportéletét és tanulási lehetőségeit.');
+ const mobileLinks=el('nav','cs42-mobile-links');mobileLinks.setAttribute('aria-label','Kiemelt iskolai oldalak');
+ for(const [label,route] of [['Iskolánk','#/iskolank'],['Sportélet','#/sport'],['Felvételi','#/oktatas/felveteli']]){
+  const a=el('a','cs42-mobile-link',label);a.href=route;mobileLinks.append(a);
+ }
+ const mobileNote=el('span','cs42-mobile-image-note','Tematikus illusztráció, nem intézményi eseményfotó');
+ mobileCopy.append(mobileKicker,mobileTitle,mobileSummary,mobileLinks,mobileNote);
+ mobileLanding.append(mobileFigure,mobileCopy);
+ section.append(mobileLanding);
+
  const row=el('div','csn26-visual-row csn26-single-image');row.id='csn26-visual-carousel';
  row.setAttribute('role','group');
+ row.classList.add('cs42-desktop-carousel');
  row.setAttribute('aria-roledescription','képes tartalomváltó');
  const instructions=el('p','visually-hidden','A képek hivatkozások. A nyílgombokkal vagy a bal és jobb nyílbillentyűvel válthatsz közöttük.');
  instructions.id='csn26-carousel-help';row.setAttribute('aria-describedby',instructions.id);
@@ -25,7 +44,7 @@ export function renderPremiumHero(block){
  // Lassú / adatkorlátos kapcsolaton nincs előtöltés; egy dia sem kér le 30 képet.
  const prepared=new Set();
  function prepareNext(index){
-  if(slides.length<2||reduced.matches||document.hidden||navigator.connection?.saveData||/2g/.test(navigator.connection?.effectiveType||''))return;
+  if(slides.length<2||matchMedia('(max-width: 768px)').matches||reduced.matches||document.hidden||navigator.connection?.saveData||/2g/.test(navigator.connection?.effectiveType||''))return;
   const next=(index+1)%slides.length;if(prepared.has(next))return;
   const entry=mediaItem((innerWidth<=768&&slides[next].mobileMediaId)||slides[next].mediaId);
   if(!entry)return;
@@ -103,13 +122,16 @@ export function renderPremiumHero(block){
   arrow.addEventListener('click',()=>showSlide(activeIndex+(side==='left'?-1:1),true));return arrow;
  };
  const status=el('span','csn26-pair-status visually-hidden');status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.setAttribute('aria-atomic','true');
- row.append(makeArrow('left'),makeArrow('right'),instructions,status);showSlide(0);
+ row.append(makeArrow('left'),makeArrow('right'),instructions,status);
+ const desktopView=matchMedia('(min-width: 769px)');
+ if(desktopView.matches)showSlide(0);
+ desktopView.addEventListener('change',event=>{if(event.matches&&row.isConnected)showSlide(activeIndex);});
  row.addEventListener('mouseenter',()=>hovered=true);row.addEventListener('mouseleave',()=>hovered=false);
  row.addEventListener('focusin',()=>focused=true);row.addEventListener('focusout',()=>{focused=row.contains(document.activeElement);});
  const delay=Math.max(settingNumber('runtime.hero.rotationMinimumMs'),Math.min(settingNumber('runtime.hero.rotationMaximumMs'),Number(data.intervalMs)||settingNumber('runtime.hero.rotationDefaultMs')));
  const observer=typeof IntersectionObserver!=='undefined'?new IntersectionObserver(entries=>{visible=entries.some(entry=>entry.isIntersecting);},{threshold:0.05}):null;
  if(observer)observer.observe(row);
- const timer=setInterval(()=>{if(!row.isConnected){clearInterval(timer);observer?.disconnect();return;}if(document.hidden||!visible||reduced.matches||hovered||focused||document.body.classList.contains('site-map-is-open'))return;showSlide(activeIndex+1);},delay);
+ const timer=setInterval(()=>{if(!row.isConnected){clearInterval(timer);observer?.disconnect();return;}if(matchMedia('(max-width: 768px)').matches||document.hidden||!visible||reduced.matches||hovered||focused||document.body.classList.contains('site-map-is-open'))return;showSlide(activeIndex+1);},delay);
  const launcher=document.querySelector('body > .orbit-launch');
  if(launcher){
   launcher.classList.add('csn26-visual-launch');

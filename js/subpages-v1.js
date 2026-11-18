@@ -1,5 +1,5 @@
 // Közös, statikus tárhelyen is működő aloldali finomítások.
-import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.42.12';
+import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.42.13';
 const forbiddenHost = /(^|\.)csanadi-bp\.edu\.hu$/i;
 const legacyRoutes = new Map([
   ['tortenet.html','#/iskolank/tortenet'],
@@ -214,7 +214,7 @@ export function initSubpageEnhancements() {
 }
 
 export function createSubpageHero({title,mediaIds,createPicture,intervalMs=6500,enableAutoplay=true}) {
-  const pictures = mediaIds.map(id=>createPicture(id,{className:'cs-sub-hero-picture',eager:true,sizes:'100vw'})).filter(Boolean);
+  const pictures = mediaIds.map((id,i)=>createPicture(id,{className:'cs-sub-hero-picture',eager:i===0,sizes:'100vw'})).filter(Boolean);
   if(!pictures.length)return null;
   const root=document.createElement('div');root.className='cs-sub-hero';
   root.setAttribute('aria-label',title+' – képes oldalbevezető');
@@ -239,7 +239,7 @@ export function createSubpageHero({title,mediaIds,createPicture,intervalMs=6500,
   const stop=()=>{if(timer){clearInterval(timer);timer=null;}};
   const start=()=>{
     stop();
-    if(enableAutoplay && !paused && !matchMedia('(prefers-reduced-motion: reduce)').matches)
+    if(enableAutoplay && !paused && !matchMedia('(max-width: 768px)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches)
       timer=setInterval(()=>{if(root.isConnected && !document.hidden)show(index+1);else if(!root.isConnected)stop();},Math.min(30000,Math.max(5000,Number(intervalMs)||6500)));
   };
   prev.addEventListener('click',()=>show(index-1));next.addEventListener('click',()=>show(index+1));
@@ -255,7 +255,7 @@ export function createSubpageHero({title,mediaIds,createPicture,intervalMs=6500,
   let touchStart=null;
   root.addEventListener('touchstart',event=>{if(event.touches.length===1)touchStart=event.touches[0].clientX;},{passive:true});
   root.addEventListener('touchend',event=>{
-    if(touchStart===null)return;
+    if(touchStart===null||matchMedia('(max-width: 768px)').matches)return;
     const delta=event.changedTouches[0].clientX-touchStart;touchStart=null;
     if(Math.abs(delta)>45)show(index+(delta<0?1:-1));
   },{passive:true});

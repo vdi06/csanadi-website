@@ -1,0 +1,31 @@
+/* v1.42.13 — Mobile: one header menu, no bottom navigation. */
+@media (max-width:768px) {
+ html body #ext26-mobile-nav,
+ html body #ext26-mobile-nav:not([hidden]),
+ html body .cs32-mobile-bar,
+ html body .cs32-mobile-bar:not([hidden]),
+ html body #cs39-mobile-route,
+ html body #mobile-navigation {display:none!important;visibility:hidden!important;pointer-events:none!important}
+ html body {padding-bottom:0!important}
+ html body #site-header .header-actions #mobile-menu-toggle,
+ html body.cs-home-header #site-header .header-actions #mobile-menu-toggle,
+ html body.cs-home-header.cs-home-condensed #site-header .header-actions #mobile-menu-toggle,
+ html body.cs-inner-page #site-header .header-actions #mobile-menu-toggle,
+ html body:has(#ext26-mobile-nav) #site-header #mobile-menu-toggle,
+ html body.cs-home-header:has(#ext26-mobile-nav) #site-header #mobile-menu-toggle,
+ html body.cs-inner-page:has(#ext26-mobile-nav) #site-header #mobile-menu-toggle {
+  display:grid!important;visibility:visible!important;pointer-events:auto!important;
+  position:relative!important;inset:auto!important;transform:none!important;
+  width:46px!important;height:46px!important;min-width:46px!important;min-height:46px!important;
+  align-items:center!important;justify-items:center!important;flex:0 0 46px!important;
+  margin:0!important;padding:10px!important;border-radius:13px!important;
+  border:1.5px solid #eac57e!important;color:#fff2d9!important;
+  background:linear-gradient(145deg,#173b59,#09233b)!important;
+  box-shadow:0 4px 14px rgba(0,9,22,.22)!important;opacity:1!important;
+  clip-path:none!important;
+ }
+ html body #site-header #mobile-menu-toggle svg {width:25px!important;height:25px!important;display:block!important;stroke:currentColor!important}
+ html body #site-header #mobile-menu-toggle:focus-visible{outline:3px solid #ffdf9e!important;outline-offset:3px!important}
+ html body #site-header .header-actions{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:8px!important;flex:0 0 auto!important}
+ html body #site-header .brand-row{flex-wrap:nowrap!important}
+}

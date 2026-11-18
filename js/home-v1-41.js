@@ -27,6 +27,13 @@ export function initV141HomepageMotion(){
   const headerHeight=document.getElementById('site-header')?.getBoundingClientRect().height||0;
   const frame=hero.querySelector('.cs41-home-hero .csn26-visual-row');
   const stickyOffset=parseFloat(frame?getComputedStyle(frame).top:0)||0;
+  if(frame && matchMedia('(min-width: 769px)').matches){
+   const stickyTop=Number.isFinite(stickyOffset)?stickyOffset:0;
+   const frameCenter=stickyTop+frame.offsetHeight/2;
+   const headerNode=document.getElementById('site-header');
+   const headerCenter=(headerNode?.getBoundingClientRect().top||0)+headerHeight/2;
+   hero.style.setProperty('--cs42-hero-shift-y',(headerCenter-frameCenter).toFixed(1)+'px');
+  }
   const distance=Math.max(bounds.height-Math.max(headerHeight,stickyOffset),1);
   const ratio=Math.min(1,Math.max(0,-bounds.top/distance));
   // A teljes képkivágás csak az utolsó görgetési ponton záródhat össze.

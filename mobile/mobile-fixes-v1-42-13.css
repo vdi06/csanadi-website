@@ -1,0 +1,175 @@
+/* v1.42.13: Dedicated mobile home screen, one primary menu, readable type. */
+.cs42-mobile-landing{display:none}
+@media(max-width:768px){
+ /* A megismétlődő alsó szakaszsáv helyett a meglévő fő navigációt használjuk. */
+ body .cs32-mobile-bar,body .cs32-mobile-bar:not([hidden]){display:none!important}
+ body{padding-bottom:calc(74px + env(safe-area-inset-bottom))!important}
+ #ext26-mobile-nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  min-height:62px!important;gap:6px!important;box-sizing:border-box!important;
+  padding:6px 12px calc(6px + env(safe-area-inset-bottom))!important}
+ #ext26-mobile-nav:has([data-nav-id="sections"]:not([hidden])){grid-template-columns:repeat(4,minmax(0,1fr))!important}
+ #ext26-mobile-nav [data-nav-id="sections"][hidden]{display:none!important}
+ #ext26-mobile-nav .ext26-nav-icon-button{min-width:0!important;min-height:46px!important;max-width:100%;}
+ body.site-map-is-open #ext26-mobile-nav,body:has(#search-panel:not([hidden])) #ext26-mobile-nav{display:none!important}
+ /* Nem kell második menü a görgető fejléc közepébe. */
+ body.cs-home-header #site-header #cs39-mini-hero,
+ body.cs-home-header.cs-home-condensed #site-header #cs39-mini-hero,
+ body.cs-inner-page #site-header .cs-subpage-menu,
+ body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-menu,
+ #site-header #mobile-menu-toggle{display:none!important;visibility:hidden!important;pointer-events:none!important}
+ body.cs-home-header #site-header .cs1402-persistent-motto,
+ body.cs-home-header #site-header .header-tag,
+ body.cs-inner-page #site-header .header-tag,
+ #site-header .header-social{display:none!important}
+ /* A fejléc egyetlen, kiszámítható sor marad, és görgetéskor sem duplázódik. */
+ body.cs-home-header #site-header,
+ body.cs-inner-page #site-header{z-index:950!important;position:relative!important;top:auto!important;height:auto!important;min-height:0!important}
+ body.cs-home-header #site-header .brand-row,
+ body.cs-home-header.cs-home-condensed #site-header .brand-row,
+ body.cs-inner-page #site-header .brand-row,
+ body.cs-inner-page.cs-header-condensed #site-header .brand-row{
+  min-height:62px!important;height:auto!important;max-height:none!important;
+  display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:space-between!important;
+  padding:9px 12px!important;gap:8px!important;
+ }
+ body.cs-home-header #site-header .brand,
+ body.cs-home-header.cs-home-condensed #site-header .brand,
+ body.cs-inner-page #site-header .brand,
+ body.cs-inner-page.cs-header-condensed #site-header .brand{
+  display:flex!important;flex:1 1 auto!important;min-width:0!important;max-width:none!important;width:auto!important;
+ }
+ #site-header .brand-copy{display:block!important;min-width:0!important;width:100%!important;max-width:100%!important;white-space:nowrap!important;overflow:hidden!important}
+ #site-header .brand-copy strong,#site-header .brand-copy small,
+ body.cs-home-header.cs-home-condensed #site-header .brand-copy strong,
+ body.cs-inner-page #site-header .brand-copy strong{display:none!important}
+ #site-header .brand-copy::after{content:"CSANÁDI SPORTISKOLA";display:block;font-weight:850;
+  font-size:clamp(12px,3.5vw,16px);line-height:1.25;letter-spacing:.02em;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--cs1402-header-text,#f9f0da)}
+ #site-header .header-actions{display:flex!important;flex:0 0 auto!important;gap:7px!important;margin:0!important;min-width:0!important}
+ /* Override the old high-specificity mobile header rules that recreated the menu and search. */
+ html body.cs-home-header #site-header .header-actions #mobile-menu-toggle,
+ html body.cs-home-header #site-header .header-actions #search-open,
+ html body.cs-inner-page #site-header .header-actions #mobile-menu-toggle,
+ html body.cs-inner-page #site-header .header-actions #search-open,
+ html body #site-header .header-actions #mobile-menu-toggle,
+ html body #site-header .header-actions #search-open{display:none!important;visibility:hidden!important;pointer-events:none!important}
+ #site-header .header-kreta,#site-header .header-social,#site-header #search-open,
+ #site-header #theme-toggle{display:none!important}
+ #site-header #portal-replay{display:grid!important;min-width:42px!important;width:42px!important;height:42px!important;flex:0 0 42px!important}
+ /* Mobilon nincs 150vh-s, ragadós, képléptetésre épített nyitórész. */
+ body.cs-home-header #cs39-home-shell{position:relative!important;top:auto!important;overflow:visible!important}
+ body.cs-home-header #global-hero,
+ body.cs-home-header.cs-home-condensed #global-hero{position:relative!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;
+  background:#0b233b!important;padding:0!important;margin:0!important}
+ body.cs-home-header #global-hero .cs41-home-hero,
+ body.cs-home-header.cs-home-condensed #global-hero .cs41-home-hero{height:auto!important;min-height:0!important;max-height:none!important;
+  position:relative!important;overflow:visible!important;padding:0!important;margin:0!important}
+ body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row,
+ body.cs-home-header.cs-home-condensed #global-hero .cs41-home-hero .csn26-visual-row,
+ #global-hero .cs42-desktop-carousel{display:none!important;visibility:hidden!important;pointer-events:none!important}
+ #global-hero .cs42-mobile-landing{display:block!important;position:relative!important;z-index:1;box-sizing:border-box;
+  width:100%!important;max-width:100%!important;background:#081e33;color:#fff2d9;
+  padding:0 0 22px!important;overflow:hidden;min-width:0}
+ #global-hero .cs42-mobile-figure{position:relative;display:block;width:100%;height:auto;aspect-ratio:16/10;
+  max-height:40svh;overflow:hidden;background:#16334c}
+ #global-hero .cs42-mobile-picture,#global-hero .cs42-mobile-picture img,
+ #global-hero .cs42-mobile-picture picture{display:block;width:100%!important;height:100%!important;object-fit:cover}
+ #global-hero .cs42-mobile-figure img{object-fit:cover!important;object-position:center center!important;transform:none!important;filter:none!important}
+ #global-hero .cs42-mobile-figure::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(0deg,rgba(6,23,41,.38),transparent 38%)}
+ #global-hero .cs42-mobile-copy{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;
+  width:100%;min-width:0;max-width:100%;padding:23px 18px 0;margin:0 auto;text-align:center}
+ #global-hero .cs42-mobile-kicker{display:block;color:#eec982;font-size:clamp(10px,2.8vw,12px);font-weight:900;
+  letter-spacing:.105em;line-height:1.45;text-wrap:balance}
+ #global-hero .cs42-mobile-title{display:block;color:#fff4db;font-size:clamp(25px,7vw,39px);font-weight:900;
+  line-height:1.14!important;letter-spacing:-.025em;margin:0!important;max-width:620px;text-wrap:balance;overflow-wrap:break-word}
+ #global-hero .cs42-mobile-summary{color:#e7e9ee;font-size:clamp(14px,3.9vw,17px);line-height:1.54!important;
+  font-weight:450;max-width:550px;margin:0!important;text-wrap:pretty;overflow-wrap:break-word}
+ #global-hero .cs42-mobile-links{display:grid;width:100%;max-width:520px;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:7px;align-items:stretch;margin:7px auto 0}
+ #global-hero .cs42-mobile-link{display:grid;place-items:center;min-width:0;min-height:48px;padding:10px 6px;
+  background:#f0ce8b;color:#12263c;font-size:clamp(11px,3.2vw,15px);line-height:1.24;font-weight:850;
+  text-align:center;overflow-wrap:break-word;text-decoration:none;border:1px solid #ffe3aa;border-radius:12px;
+  box-shadow:0 6px 14px rgba(0,0,0,.15)}
+ #global-hero .cs42-mobile-link:focus-visible{outline:3px solid white;outline-offset:3px}
+ #global-hero .cs42-mobile-image-note{display:block;color:#b3c2d1;font-size:10px;line-height:1.4;max-width:100%;margin-top:3px}
+ /* Minden feliratnak természetes tördelést engedünk. */
+ #app,#app :is(article,section,header,main,.home-canvas,.home-unit,.student-success-card,.home-j-fold){min-width:0;max-width:100%}
+ #app :is(h1,h2,h3,h4,h5,p,li,figcaption,.section-title,.card-title,.student-success-result,.student-success-summary){
+  overflow-wrap:break-word!important;word-break:normal!important;text-wrap:pretty;
+ }
+ #app :is(h1,h2,h3,h4){height:auto!important;min-height:0;line-height:1.2!important;white-space:normal!important}
+ #app :is(p,li,figcaption){line-height:1.5}
+ #app[data-page-kind="home"] .home-canvas>.home-unit{min-width:0!important;width:100%!important;max-width:100%!important}
+ #app[data-page-kind="home"] .student-success-home .student-success-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ #app[data-page-kind="home"] .student-success-home .student-success-head{min-width:0!important}
+ #app[data-page-kind="home"] .student-success-home .section-title{font-size:clamp(26px,6vw,39px)!important;line-height:1.18!important}
+ #app[data-page-kind="home"] .student-success-home .student-success-intro{font-size:clamp(12px,3.5vw,16px)!important;line-height:1.4!important;letter-spacing:.06em!important}
+ body .cs32-mobile-sheet-head h2{font-size:clamp(18px,5vw,21px);line-height:1.25!important}
+ #site-map-overlay .compass26-choice-link,#site-map-overlay .compass26-sub-link{white-space:normal!important;overflow-wrap:break-word!important;
+  word-break:normal!important;line-height:1.25!important}
+ #site-map-overlay .cs-phone-wheel-heading :is(h3,p){height:auto;min-height:0;line-height:1.3!important;white-space:normal!important}
+}
+@media(max-width:480px){
+ #app[data-page-kind="home"] .student-success-home .student-success-feature-grid{grid-template-columns:minmax(0,1fr)!important}
+ #app[data-page-kind="home"] .student-success-home .student-success-card{min-width:0!important;width:100%!important;max-width:100%!important}
+ #app[data-page-kind="home"] .home-j-navrail{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:350px){
+ #global-hero .cs42-mobile-copy{padding-inline:12px;gap:10px}
+ #global-hero .cs42-mobile-links{gap:5px}
+ #global-hero .cs42-mobile-link{font-size:11px;padding-inline:3px;min-height:46px}
+ #site-header .brand-copy::after{font-size:12px}
+}
+@media(max-width:768px) and (orientation:landscape){
+ #global-hero .cs42-mobile-figure{max-height:44svh}
+ #global-hero .cs42-mobile-copy{padding-top:16px;gap:9px}
+}
+
+/* A régebbi kiadások magas specificitású !important fejlécszabályainak felülírása. */
+@media(max-width:768px){
+ html body.cs-home-header #site-header #mobile-menu-toggle,
+ html body.cs-home-header.cs-home-condensed #site-header #mobile-menu-toggle,
+ html body.cs-inner-page #site-header #mobile-menu-toggle,
+ html body.cs-inner-page #site-header .cs-subpage-menu,
+ html body.cs-home-header #site-header #cs39-mini-hero,
+ html body.cs-home-header.cs-home-condensed #site-header #cs39-mini-hero,
+ html body.cs-inner-page #site-header #search-open,
+ html body.cs-home-header #site-header #search-open,
+ html body #site-header #theme-toggle,
+ html body #site-header .header-kreta{
+  display:none!important;visibility:hidden!important;pointer-events:none!important;
+ }
+ html body #site-header .brand-copy strong,
+ html body #site-header .brand-copy small,
+ html body.cs-home-header #site-header .brand-copy strong,
+ html body.cs-home-header #site-header .brand-copy small,
+ html body.cs-inner-page #site-header .brand-copy strong,
+ html body.cs-inner-page #site-header .brand-copy small,
+ html body.cs-home-header.cs-home-condensed #site-header .brand-copy strong,
+ html body.cs-home-header.cs-home-condensed #site-header .brand-copy small,
+ html body.cs-inner-page.cs-header-condensed #site-header .brand-copy strong,
+ html body.cs-inner-page.cs-header-condensed #site-header .brand-copy small{
+  display:none!important;height:0!important;max-height:0!important;margin:0!important;padding:0!important;
+ }
+ html body.cs-home-header #site-header .brand-copy::after,
+ html body.cs-inner-page #site-header .brand-copy::after{color:var(--cs1402-header-text,#f9f0da)!important}
+}
+@media(max-width:768px){
+ /* A korábbi :has(#ext26-mobile-nav) szabály három ID-re támaszkodik. */
+ html body:has(#ext26-mobile-nav) #site-header #search-open,
+ html body:has(#ext26-mobile-nav) #site-header #mobile-menu-toggle,
+ html body.cs-home-header:has(#ext26-mobile-nav) #site-header #search-open,
+ html body.cs-home-header:has(#ext26-mobile-nav) #site-header #mobile-menu-toggle,
+ html body.cs-inner-page:has(#ext26-mobile-nav) #site-header #search-open,
+ html body.cs-inner-page:has(#ext26-mobile-nav) #site-header #mobile-menu-toggle{
+  display:none!important;visibility:hidden!important;pointer-events:none!important
+ }
+}
+@media(max-width:768px){
+ /* Az aloldalakon is egyetlen állandó bevezető kép legyen, képváltó nélkül. */
+ body.cs-inner-page #global-hero .cs-sub-hero{height:clamp(145px,40vw,220px)!important;min-height:145px!important;max-height:220px!important}
+ body.cs-inner-page #global-hero .cs-sub-hero-prev,
+ body.cs-inner-page #global-hero .cs-sub-hero-next,
+ body.cs-inner-page #global-hero .cs-sub-hero-pause{display:none!important}
+}

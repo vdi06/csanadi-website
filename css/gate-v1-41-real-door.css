@@ -192,7 +192,7 @@
  filter:drop-shadow(0 0 5px rgba(246,205,119,.72));
 }
 .gate26-open .gate26-door-hitbox{pointer-events:none;animation:cs-gate-door-mark-fade var(--gate26-duration) ease-out both}
-@keyframes cs-gate-door-mark-fade {0%,12%{opacity:1}45%{opacity:.25}70%,100%{opacity:0}}
+@keyframes cs-gate-door-mark-fade {0%,12%{opacity:1;transform:translate(-50%,-50%)}45%{opacity:.25;transform:translate(-50%,-50%)}70%,100%{opacity:0;transform:translate(-50%,-50%)}}
 /* The footer is a soft photographic gradient, not a dark rectangular bar. */
 .gate26 .gate26-skip-bar{
  position:absolute!important;inset:auto 0 0!important;z-index:9;
@@ -238,3 +238,14 @@
  .gate26 .gate26-skip,.gate26 .gate26-skip:hover{width:39px!important;height:39px!important;min-width:39px!important;min-height:39px!important;font-size:20px!important;right:10px!important;bottom:calc(17px + env(safe-area-inset-bottom))!important}
 }
 @media(prefers-reduced-motion:reduce){.gate26-open .gate26-door-hitbox{animation:none!important;opacity:0}}
+
+/* v1.42.13: prevent disabled-button CSS transitions from moving the door outline.
+   The gold contour never changes geometric position while its opacity fades. */
+.gate26 .gate26-door-hitbox,
+.gate26 .gate26-door-hitbox:hover,
+.gate26 .gate26-door-hitbox:focus-visible,
+.gate26 .gate26-door-hitbox:disabled,
+.gate26-open .gate26-door-hitbox {
+ transform:translate(-50%,-50%)!important;
+ transition:filter .2s ease,opacity .2s ease!important;
+}

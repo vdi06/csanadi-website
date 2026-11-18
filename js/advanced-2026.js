@@ -2,7 +2,7 @@
 
 
  
-import {renderDigitalClock} from './experience-2026.js?v=1.42.12';
+import {renderDigitalClock} from './experience-2026.js?v=1.42.13';
 const BASE='json/data/';
 const ZONE=()=>setting('modules2026.clock.timezone');
 const e=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -72,7 +72,9 @@ export function openEntrancePortal({force=false}={}){
  function open(){
   if(done||opening)return;
   opening=true;
-  enter.disabled=true;
+  // Preserve the door's transform: generic :disabled button CSS would snap it to the right.
+  enter.setAttribute('aria-disabled','true');
+  enter.tabIndex=-1;
   enter.setAttribute('aria-label','A kapu nyílik');
   enter.classList.add('is-opening');
   if(reduced){finish();return;}

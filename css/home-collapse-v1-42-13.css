@@ -1,0 +1,37 @@
+/* v1.42.13 — Full desktop-image collapse towards the crest navigation. */
+@media(min-width:769px){
+ body.cs-home-header #global-hero,
+ body.cs-home-header.cs-home-condensed #global-hero{
+  background:transparent!important;border:0!important;box-shadow:none!important;
+ }
+ body.cs-home-header #global-hero .cs41-home-hero,
+ body.cs-home-header.cs-home-condensed #global-hero .cs41-home-hero{
+  background:transparent!important;overflow:visible!important;
+ }
+ body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row,
+ body.cs-home-header.cs-home-condensed #global-hero .cs41-home-hero .csn26-visual-row{
+  --cs42-progress:var(--cs41-scroll,0);
+  transform-origin:50% 50%!important;
+  transform:translate3d(0,calc(var(--cs42-progress) * var(--cs42-hero-shift-y,-45vh)),0)
+             scale(calc(1 - var(--cs42-progress) * .92))!important;
+  clip-path:inset(0 round calc(var(--cs42-progress) * 50px))!important;
+  opacity:calc(1 - var(--cs42-progress))!important;
+  border:0!important;box-shadow:none!important;
+  will-change:transform,opacity;pointer-events:auto;
+ }
+ /* At full closure the compact menu has replaced the slide, completely. */
+ body.cs-home-header.cs-home-condensed #global-hero .cs41-home-hero .csn26-visual-row{
+  opacity:0!important;visibility:hidden!important;pointer-events:none!important;
+ }
+ body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row>.orbit-launch{
+  opacity:calc(1 - var(--cs41-scroll,0) * 1.08)!important;
+ }
+ body.cs-home-header.cs-home-condensed #global-hero .cs41-home-hero .csn26-visual-row>.orbit-launch{
+  pointer-events:none!important;
+ }
+}
+@media(prefers-reduced-motion:reduce) and (min-width:769px){
+ body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row{
+  transform:none!important;clip-path:none!important;will-change:auto;
+ }
+}
