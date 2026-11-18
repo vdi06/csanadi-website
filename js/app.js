@@ -1,5 +1,5 @@
 import {initRound10Enhancements} from './round10-enhancements.js?v=1.39.5';
-import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.42.8';
+import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.39.16';
 import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.40.0';
 import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=csanadi-r29n-20261115';
 import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=csanadi-r29n-20261115';
@@ -13,13 +13,13 @@ import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumen
 import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=csanadi-r29n-20261115';
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=csanadi-v127-20261116';
 import {renderMediaGallery} from './media-gallery-h-2026.js?v=1.37.0';
-import {renderDocumentCollections} from './document-collections-2026.js?v=1.42.8';
+import {renderDocumentCollections} from './document-collections-2026.js?v=csanadi-r29n-20261115';
 import {renderPageMedia} from './page-media-2026.js?v=csanadi-r29n-20261115';
 import {useSiteSettings,settingNumber} from './site-settings-2026.js';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.40.0';
-import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.42.6';
+import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.42.10';
 import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.40.0';
-import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=1.42.8';
+import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r29n-20261115';
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.39.16';
 import {renderBlock,dom,listCards} from './blocks.js?v=1.42.6';
@@ -32,7 +32,7 @@ import {renderMobileTree} from '../mobile/navigation.js?v=1.38.1';
 import {createPhoneRadial} from '../mobile/radial-wheel-v1-38.js?v=1.38.1';
 import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.39.2';
 import {createSubpageHero} from './subpages-v1.js?v=1.39.16';
-import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.42.8';
+import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.42.10';
 const app=document.getElementById('app');
 const routeStatus=document.getElementById('cs1404-route-status');
 let homeHeroElement=null;
@@ -521,85 +521,6 @@ function arrivalSection(route){
  const section=route.startsWith(arrivalPrefix+'/')?route.slice(arrivalPrefix.length+1):null;
  return section!==null&&/^[a-z0-9-]+$/.test(section)?section:null;
 }
-function embeddedArrival(route,options){
- const section=arrivalSection(route);
- if(section===null)return false;
- const previous=currentRoute;
- if(previous!==null&&previous!==route)historyScroll.set(previous,window.scrollY);
- currentRoute=route;
- syncRound29HomeNavigation(false);
- document.body.classList.add('cs-inner-page','cs-embedded-arrival');
- document.documentElement.dataset.csanadiPageRevision='30';
- app.dataset.pageKind='general';
- const wrapper=dom('section',{class:'cs-arrival-shell container-xxl'});
- const heading=dom('div',{class:'cs-arrival-shell-heading'});
- heading.append(dom('span',{class:'eyebrow'},'CSANÁDI · MEGKÖZELÍTÉS ÉS TANULÁS'),dom('h1',{},'Iskolai megközelítés és tanulástámogatás'));
- const iframe=dom('iframe',{class:'cs-arrival-frame'});
- iframe.title='Megközelítés és tanulástámogatás – iskolai útmutató';
- iframe.dataset.arrivalSection=section;
- // A régi különálló HTML-oldal helyett a tartalom JSON-ból, srcdoc keretben töltődik be.
- fetch('json/adatok/arrival-template-2026.json',{cache:'no-store'}).then(response=>{
-   if(!response.ok)throw Error('Megközelítési komponens: HTTP '+response.status);
-   return response.json();
- }).then(template=>{
-   if(!iframe.isConnected)return;
-   if(template.schemaVersion!=='1.0.0'||typeof template.document!=='string'||!template.document.startsWith('<!doctype html>'))throw Error('Hibás megközelítési komponens.');
-   const base=document.baseURI.replaceAll('&','&amp;').replaceAll('"','&quot;');
-   iframe.srcdoc=template.document.replace('<head>','<head><base href="'+base+'">');
- }).catch(error=>{
-   console.error('Megközelítési komponens:',error);
-   if(iframe.isConnected)iframe.replaceWith(dom('p',{role:'alert'},'A megközelítési és tanulási eszköz átmenetileg nem érhető el.'));
- });
- iframe.loading='eager';
- iframe.setAttribute('referrerpolicy','same-origin');
- iframe.dataset.embeddedHeight='0';
- let lastMessageSequence=0;
- iframe.addEventListener('load',()=>{
-   lastMessageSequence=0;syncEmbeddedTheme();
-   iframe.contentDocument?.addEventListener('click',event=>{
-     const anchor=event.target.closest?.('a[href]');
-     const href=anchor?.getAttribute('href')||'';
-     if(/^index\.html#\/[a-z0-9/-]*$/i.test(href)){
-       event.preventDefault();location.hash=href.slice('index.html'.length);
-     }
-   });
- });
- wrapper.append(heading,iframe);app.replaceChildren(wrapper);
- syncRouteHero(null,'general');
- const onMessage=event=>{
-   if(!wrapper.isConnected||!iframe.isConnected||currentRoute!==route||event.origin!==location.origin||event.source!==iframe.contentWindow||event.data?.source!=='csanadi-r26-embed')return;
-   if(!event.data||typeof event.data!=='object'||Array.isArray(event.data))return;
-   const height=event.data.height;
-   if(typeof height!=='number'||!Number.isFinite(height)||height<=200||height>=200000)return;
-   if(event.data.sections!==undefined&&(!Array.isArray(event.data.sections)||event.data.sections.length>128))return;
-   if(event.data.sequence!==undefined){
-     if(!Number.isSafeInteger(event.data.sequence)||event.data.sequence<=lastMessageSequence)return;
-     lastMessageSequence=event.data.sequence;
-   }
-   if(Number.isFinite(height)&&height>200&&height<200000&&Math.abs(Math.ceil(height)-Number(iframe.dataset.embeddedHeight))>=2){
-     iframe.style.height=Math.ceil(height)+'px';iframe.dataset.embeddedHeight=String(Math.ceil(height));
-   }
-   if(Array.isArray(event.data.sections)&&event.data.sections.length<=128)syncMobileEmbeddedSections(wrapper,iframe,event.data.sections);
-   if(!iframe.dataset.anchorDone){
-     const saved=options.restoreScroll?historyScroll.get(route):undefined;
-     if(Number.isFinite(saved)){
-       iframe.dataset.anchorDone='true';requestAnimationFrame(()=>{if(currentRoute===route&&iframe.isConnected)window.scrollTo({top:saved,behavior:'instant'});});
-     }else if(section&&event.data.section===section&&Number.isFinite(event.data.offset)&&event.data.offset>=0&&event.data.offset<200000){
-       iframe.dataset.anchorDone='true';const headerHeight=document.getElementById('site-header')?.getBoundingClientRect().height||72;
-       requestAnimationFrame(()=>requestAnimationFrame(()=>{if(currentRoute===route&&iframe.isConnected)window.scrollTo({top:Math.max(0,iframe.getBoundingClientRect().top+scrollY+event.data.offset-headerHeight-12),behavior:'instant'});}));
-     }
-   }
- };
- if(window.__csArrivalMessage)window.removeEventListener('message',window.__csArrivalMessage);
- window.__csArrivalMessage=onMessage;window.addEventListener('message',onMessage);
- updatePageMeta({title:'Megközelítés és tanulástámogatás',summary:'Megközelítés, érkezés és tanulástámogatás a Csanádi Árpád Sportiskolában.'},route);
- if(previous!==route&&routeStatus)routeStatus.textContent='Megközelítés és tanulástámogatás – az oldal betöltődött.';
- renderMenu();closeMobile();closeSiteMap(false);
- if(previous!==route&&!section)requestAnimationFrame(()=>window.scrollTo({top:0,behavior:'instant'}));
- if(options.focus)app.focus({preventScroll:true});
- markRouteRendered(route,{found:true});
- return true;
-}
 function wireReveal(){
   revealObserver?.disconnect();
   const targets=[...app.querySelectorAll('.feature-card,.editorial-tile,.gallery-item,.section-title,.premium26-visual-card,.premium26-discover-link,.student-success-card,.cs-achievement')];
@@ -613,11 +534,12 @@ function renderRoute(options={}){
   if(!catalog)return;
   const requested=getRoute();
   if(arrivalSection(requested)!==null){
-    embeddedArrival(requested,options);
+    const destination='#/megkozelites-es-erkezes';
+    history.replaceState(history.state,'',location.pathname+location.search+destination);
+    renderRoute(options);
     return;
   }
-  if(window.__csArrivalMessage){window.removeEventListener('message',window.__csArrivalMessage);window.__csArrivalMessage=null;}
-  document.body.classList.remove('cs-embedded-arrival');
+   document.body.classList.remove('cs-embedded-arrival');
   const route=getRoute();const node=pageForRoute(route);
   if(node && !node._fullLoaded){
     syncRound29HomeNavigation(false);

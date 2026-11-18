@@ -27,7 +27,7 @@ export async function createZip(entries, progress = () => {}) {
   const moment = dateBits(new Date());
   for (let i = 0; i < sorted.length; i++) {
     const [name, data] = sorted[i];
-    if (!/^[a-zA-Z0-9_./\-\u00c0-\u017f]+$/.test(name) || name.startsWith('/') || name.split('/').some(part=>!part||part==='.'||part==='..') || !/^(assets|json|css|js|tools|mobile|desktop|dokumentacio)\//.test(name) && !/^(index\.html|script\.js|service-worker\.js|offline\.html|offline-olvaso\.html|utmutato\.html|README\.md|release-manifest\.json)$/.test(name)) throw Error('Nem megfelelő ZIP-útvonal: ' + name);
+    if (!/^[a-zA-Z0-9_./\-\u00c0-\u017f]+$/.test(name) || name.startsWith('/') || name.split('/').some(part=>!part||part==='.'||part==='..') || !/^(assets|json|css|js|tools|mobile|desktop|dokumentacio)\//.test(name) && !/^(index\.html|script\.js|service-worker\.js|offline\.html|README\.md|release-manifest\.json)$/.test(name)) throw Error('Nem megfelelő ZIP-útvonal: ' + name);
     const bytes = data instanceof Uint8Array ? data : data instanceof Blob ? new Uint8Array(await data.arrayBuffer()) : encoder.encode(String(data));
     if (bytes.length > 150 * 1024 * 1024) throw Error('A fájl meghaladja a ZIP számára engedélyezett méretet: ' + name);
     const filename = encoder.encode(name), checksum = crc32(bytes);

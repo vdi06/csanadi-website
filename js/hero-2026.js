@@ -21,7 +21,7 @@ export function renderPremiumHero(block){
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const wingStates=[];
  let activeIndex=0,changeToken=0,hovered=false,focused=false,visible=true,startX=null;
- // A 30 képből kizárólag a következő mérethelyes állományt készítjük elő.
+ // A forgó képei közül kizárólag a következő mérethelyes állományt készítjük elő.
  // Lassú / adatkorlátos kapcsolaton nincs előtöltés; egy dia sem kér le 30 képet.
  const prepared=new Set();
  function prepareNext(index){

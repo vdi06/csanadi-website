@@ -3,7 +3,7 @@ import {createZip,downloadBlob} from './zip-native-2026.js?v=1.42.3';
 const byId=id=>document.getElementById(id);
 const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
 const clear=n=>n.replaceChildren();
-const link=(route,label)=>{const a=node('a','explorer-link',label);a.href=location.pathname.endsWith('/felfedezo.html')?'index.html'+route:route;return a;};
+const link=(route,label)=>{const a=node('a','explorer-link',label);a.href=location.pathname.endsWith('/#/iskolank/felfedezo')?'index.html'+route:route;return a;};
 const key='csanadi-r21-';
 const saved=(name,fallback)=>{try{return JSON.parse(localStorage.getItem(key+name))??fallback;}catch{return fallback;}};
 const save=(name,value)=>{try{localStorage.setItem(key+name,JSON.stringify(value));return true;}catch{return false;}};
@@ -166,4 +166,4 @@ async function main(){initTheme();
  }catch(error){console.error('Felfedezőközpont adatbetöltési hiba:',error);byId('explorer-status').textContent='Nem tölthető be a teljes felfedezőközpont: '+error.message+' · Ellenőrizd, hogy minden fájlt feltöltöttél-e.';}
 }
 export function mountExplorer(){return main();}
-if(location.pathname.endsWith('/felfedezo.html'))mountExplorer();
+if(location.pathname.endsWith('/#/iskolank/felfedezo'))mountExplorer();

@@ -12,9 +12,10 @@ export function updatePageMeta(page,route){
  const summary=String(page.seo?.description||page.summary||'Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium').trim().slice(0,200);
  const fullTitle=title.endsWith('Csanádi Sportiskola')||title.endsWith('Csanádi Árpád Sportiskola')?title:title+' | Csanádi Árpád Sportiskola';
  document.title=fullTitle;
- // A statikus FTP-csomag egyetlen belépési pontja az index.html.
- // A hash-útvonalak külön indexelhető HTML-másolat nélkül jelennek meg.
- const seoCanonical=new URL('index.html',document.baseURI).href;
+ // Hash-útvonal helyett statikus, olvasható URL-variánsra mutat a kanonikus cím.
+ // Az indexelés tiltása továbbra is a tartalom JSON robots mezőjét követi.
+ const canonicalPath=typeof route==='string'&&/^#\/[a-z0-9/-]*$/.test(route)?route.slice(2)||'kezdolap':null;
+ const seoCanonical=canonicalPath?new URL('seo/'+canonicalPath+'/index.html',document.baseURI).href:location.href.split('#')[0];
  makeMeta('name','description',summary);makeMeta('property','og:type','website');makeMeta('property','og:title',fullTitle);
  makeMeta('property','og:description',summary);makeMeta('property','og:url',seoCanonical);
  makeMeta('property','og:site_name','Csanádi Árpád Sportiskola');makeMeta('property','og:locale','hu_HU');

@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.42.8-preview",
+  "release": "csanadi-website-v1.42.10",
   "date": "2026-11-18",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "A v1.42.7 megjelenését megőrző, kizárólag index.html és offline.html fájlokat tartalmazó SPA-kiadás. A korábbi külön HTML-központok JSON-adatokkal működnek, a megközelítési eszköz srcdoc nézetbe került. A belső hivatkozások, QR-kódok, service worker és kanonikus URL-ek ehhez igazodnak. Böngészős regresszió nyitott; éles közzététel nincs.",
+  "notes": "A 79 felesleges HTML eltávolítva, tartalmuk és interaktív központjaik SPA JSON komponensekben vagy natív JSON oldalakon működnek; index.html és indokolt offline.html maradt. Kapu a zöld fotóajtóra illesztett átlátszó, arany keretes kattintási felülettel és befelé nyíló szárnyanimációval. 9 egyedi, középen címerbiztos főképes diával, az eredeti médiaállományok és más aloldalak képeinek megőrzésével. A böngészős teljes rendszerteszt a futtatókörnyezeti hálózati korlátozás miatt nyitott.",
   "files": {
     "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf": {
       "sizeBytes": 219786,
@@ -662,6 +662,10 @@
       "sizeBytes": 612719,
       "sha256": "1b91a1d080561629c938115ee2f81a312cd67b367f662137ad807874648564bb"
     },
+    "assets/media/web/bejarat-1600.webp": {
+      "sizeBytes": 248306,
+      "sha256": "4571a63887aae78771a19d499b125e2e25058c0d271d586743c886f436d127e9"
+    },
     "assets/media/web/belepes-kapu.webp": {
       "sizeBytes": 317992,
       "sha256": "6e93e94887bdbaae99b98c9361fb28260b198faecf35e1f05dd41e2e634338ee"
@@ -1010,6 +1014,10 @@
       "sizeBytes": 341998,
       "sha256": "b1e76939ec1049a001ab117dad9a16e90bd7363c8ba29f8c562cddc30484a0a4"
     },
+    "assets/media/web/digitalis-1600.webp": {
+      "sizeBytes": 234838,
+      "sha256": "73d687a15fd2345aae18e6b06d915683df054e8f20a246bf5418b3f2ce9967c9"
+    },
     "assets/media/web/eletkep-01.webp": {
       "sizeBytes": 115026,
       "sha256": "1788f50b18f8d95b103b81278e27c6a172edf28738f6d6e999a9f7b227c5b291"
@@ -1218,6 +1226,18 @@
       "sizeBytes": 155646,
       "sha256": "09d62b3144c3638fd3614bb6eb42c1e67d09618a1fb3744655854254df3aa79c"
     },
+    "assets/media/web/hero-kozosseg-2026.webp": {
+      "sizeBytes": 291914,
+      "sha256": "5144763b5137f57b695c1cbb3139da3b1dbde4fafae4c02f2e0e48f0a1768b82"
+    },
+    "assets/media/web/hero-oktatas-2026.webp": {
+      "sizeBytes": 417110,
+      "sha256": "089472dab7ca041a39d917072d7a7449e1ca37aa8d858bf1c849e8e694e61e75"
+    },
+    "assets/media/web/hero-sport-2026.webp": {
+      "sizeBytes": 246502,
+      "sha256": "93d423b630a49c20d4d2b032cc78d242abfd69ab604d20d150ed65a23ca5bfc9"
+    },
     "assets/media/web/iskolank-1600.webp": {
       "sizeBytes": 147856,
       "sha256": "dd3d9f4b6bb579e5d5b34b8a5921d6a75689404e7b921b9159dedac49517cb4e"
@@ -1230,9 +1250,29 @@
       "sizeBytes": 136694,
       "sha256": "03fc8def51c72cb5f6717010021c19cf87f4242f272269a275f6696af66c06bc"
     },
+    "assets/media/web/kozosseg2-1600.webp": {
+      "sizeBytes": 273588,
+      "sha256": "97f7c87b53127875f69220add4aeef1ef42c1cbaf314f82a9db79d400a936ea1"
+    },
     "assets/media/web/oktatas-1600.webp": {
       "sizeBytes": 124066,
       "sha256": "f543aa280151c768f51847b3d03e6b38519dabd7599f5f81ad44f92a1da97944"
+    },
+    "assets/media/web/oktatas2-1600.webp": {
+      "sizeBytes": 358174,
+      "sha256": "c4dea59b19bb11394f8b3a169876504da182587e1a3bce2e2e456a1a6fdca5c2"
+    },
+    "assets/media/web/responsive/bejarat-1600-320.webp": {
+      "sizeBytes": 22092,
+      "sha256": "6590e54e205323bf0be574e9f40766d24c6eb17d9dbe4e85432c3d6b711f3d7f"
+    },
+    "assets/media/web/responsive/bejarat-1600-640.webp": {
+      "sizeBytes": 64132,
+      "sha256": "cc4ff8962c25dea17eead04d69d2a01fa22674744515f08f6d505f0e5cee5d69"
+    },
+    "assets/media/web/responsive/bejarat-1600-960.webp": {
+      "sizeBytes": 113506,
+      "sha256": "34e47ec388d58e50bbdcfcb2b0c5f6816ad86df0a5397c87883a67eb3f0b5169"
     },
     "assets/media/web/responsive/belepes-kapu-320.webp": {
       "sizeBytes": 19044,
@@ -2218,6 +2258,18 @@
       "sizeBytes": 18826,
       "sha256": "548820fca15a9cea84d1dc226efe2c9538b3f59cf1576af28077dc6de407cc0a"
     },
+    "assets/media/web/responsive/digitalis-1600-320.webp": {
+      "sizeBytes": 15200,
+      "sha256": "8d70f2cef88d305f014b04afa63d0620bb2aae7e6c48e2cd15c86feccbb9ae3d"
+    },
+    "assets/media/web/responsive/digitalis-1600-640.webp": {
+      "sizeBytes": 44502,
+      "sha256": "00ed34aa967b8c1bfbfcd81a7f47994cf6b18e5800cc2c643c2774f8463e8c94"
+    },
+    "assets/media/web/responsive/digitalis-1600-960.webp": {
+      "sizeBytes": 86526,
+      "sha256": "7dc3c01abcfce8bfc9f7b857c17ed65287ce3295997da3a0f9fbf3892a83fca5"
+    },
     "assets/media/web/responsive/eletkep-01-320.webp": {
       "sizeBytes": 12138,
       "sha256": "c6b7bf626582c2c195ee5ca5078b709a4bd1d895e5a1a0e5eb144de3b8050229"
@@ -2538,6 +2590,42 @@
       "sizeBytes": 73582,
       "sha256": "0a34280b1a34a3b254cf4eb24338c7a71dd2a62622504e127958767425d91b42"
     },
+    "assets/media/web/responsive/hero-kozosseg-2026-320.webp": {
+      "sizeBytes": 23764,
+      "sha256": "de12814bdab6eb7f42ed9f521d9f7308ac2491799f0e5a5fc3265a1ad3842e3d"
+    },
+    "assets/media/web/responsive/hero-kozosseg-2026-640.webp": {
+      "sizeBytes": 74060,
+      "sha256": "ba7d095b0553975f1f90cc608e38260dddf1ebc5572b32f4191726463260eb56"
+    },
+    "assets/media/web/responsive/hero-kozosseg-2026-960.webp": {
+      "sizeBytes": 130426,
+      "sha256": "4a79dd9e41e0bcf6be098e91e42f3c2000e36c04410b15ca5638fa65f5f3e92a"
+    },
+    "assets/media/web/responsive/hero-oktatas-2026-320.webp": {
+      "sizeBytes": 24834,
+      "sha256": "1cd27a8c7131bc753fc1e0b3559b049eb89af1cb5b010c4ed569c5812aecc6a9"
+    },
+    "assets/media/web/responsive/hero-oktatas-2026-640.webp": {
+      "sizeBytes": 83456,
+      "sha256": "1e708f99cf2c9b62ef345f236cb5db966f67d640bcd0d0caf6e69886156a8409"
+    },
+    "assets/media/web/responsive/hero-oktatas-2026-960.webp": {
+      "sizeBytes": 168006,
+      "sha256": "1533ebfd1e85f3e9dbf0feb8047f7f4bd15b59ab2ba1a4a262fca73bba1334ad"
+    },
+    "assets/media/web/responsive/hero-sport-2026-320.webp": {
+      "sizeBytes": 20462,
+      "sha256": "7ff7177a26fac233a93c008aec53371044afd009e767a92e638ce22e81ee8d0d"
+    },
+    "assets/media/web/responsive/hero-sport-2026-640.webp": {
+      "sizeBytes": 61758,
+      "sha256": "87a1b6304f71985f35063bb76437675043f91f66a72371268a9572ea6d9bd6f8"
+    },
+    "assets/media/web/responsive/hero-sport-2026-960.webp": {
+      "sizeBytes": 107742,
+      "sha256": "a4740018a6f12f9de18dfdad634df5709243493244c1d262c575488ee15a6c44"
+    },
     "assets/media/web/responsive/iskolank-1600-320.webp": {
       "sizeBytes": 15748,
       "sha256": "8dd849c58f88206adcac4e93ed53f33d52f2adfa7b7cb42213e8d64efe35d44a"
@@ -2574,6 +2662,18 @@
       "sizeBytes": 64774,
       "sha256": "17af530afb0f195826cc9f8f26482cc1e8eb8ee989d7ac3a5566e8ef64c4f12a"
     },
+    "assets/media/web/responsive/kozosseg2-1600-320.webp": {
+      "sizeBytes": 22962,
+      "sha256": "506ab3a3c26a9ac4c787f83ad44eb076b8ec6426e0aa8ac47fa550e59284b410"
+    },
+    "assets/media/web/responsive/kozosseg2-1600-640.webp": {
+      "sizeBytes": 69694,
+      "sha256": "6b09137f3cf122e591b82a2023d422a8c656e4b3bc3487e557bf7e8c41f086fb"
+    },
+    "assets/media/web/responsive/kozosseg2-1600-960.webp": {
+      "sizeBytes": 121126,
+      "sha256": "befe08eb538cf5807d0e50e44cb843d2c0004a783e6f1f408b4f30d2566c7f49"
+    },
     "assets/media/web/responsive/oktatas-1600-320.webp": {
       "sizeBytes": 12992,
       "sha256": "d982cbfa96d021c3a79d50e93233af2472c0ee422db1f800b4b361f882ac21fa"
@@ -2585,6 +2685,18 @@
     "assets/media/web/responsive/oktatas-1600-960.webp": {
       "sizeBytes": 56340,
       "sha256": "22fcbe5c9253937bda6e0a3115259be13d02ae8d7b6380437c9239ad985f29f0"
+    },
+    "assets/media/web/responsive/oktatas2-1600-320.webp": {
+      "sizeBytes": 22574,
+      "sha256": "7076aed3bf234a8702812e0e3cd0ac6a2510aa4daca2bc0f15b1de674325a641"
+    },
+    "assets/media/web/responsive/oktatas2-1600-640.webp": {
+      "sizeBytes": 73118,
+      "sha256": "cb7c7cb6d6ed4362000a7226e9eddaf7d260774ea1f83adf2cd03db540fc8058"
+    },
+    "assets/media/web/responsive/oktatas2-1600-960.webp": {
+      "sizeBytes": 141836,
+      "sha256": "c09160f3b5091518283899b0b795478199f9a7e86a83c96fbf71c8daf03dd9ce"
     },
     "assets/media/web/responsive/siker-atletika-320.webp": {
       "sizeBytes": 14270,
@@ -2646,6 +2758,30 @@
       "sizeBytes": 85288,
       "sha256": "5aa6a5affa63e9df50eea9b6b671fb5ade0c60fb68c6a25307007e8d00cdf5ab"
     },
+    "assets/media/web/responsive/sport2-1600-320.webp": {
+      "sizeBytes": 16140,
+      "sha256": "86f72e06afeaf355197c51e4e9e790969e945410cfd569982dff0eca2dfc87fb"
+    },
+    "assets/media/web/responsive/sport2-1600-640.webp": {
+      "sizeBytes": 48994,
+      "sha256": "c2c4707214d720a25582e98c761da9ebce673056f298611c8244a77c56229e83"
+    },
+    "assets/media/web/responsive/sport2-1600-960.webp": {
+      "sizeBytes": 86564,
+      "sha256": "60bb161dcd4738fca33b13ea2088f33624a212bb5cdab3dcfa7eda50350acbe4"
+    },
+    "assets/media/web/responsive/uszas-1600-320.webp": {
+      "sizeBytes": 21644,
+      "sha256": "335b968572ea5910234249f1e7cdec5c23adf813813642a84f0feca0754a8ff1"
+    },
+    "assets/media/web/responsive/uszas-1600-640.webp": {
+      "sizeBytes": 64760,
+      "sha256": "009a93dfaae553f95d2742403171a734e13e720cce532661c9f623bff622f86a"
+    },
+    "assets/media/web/responsive/uszas-1600-960.webp": {
+      "sizeBytes": 119560,
+      "sha256": "b6fa2aaa607261e2339deb5c264df097946cbabafe135b2d5a39ed9dcd71f49a"
+    },
     "assets/media/web/siker-atletika.webp": {
       "sizeBytes": 122184,
       "sha256": "0e122c95484fb74a7030ea39fd392b7c3d3ee10367c333346f335821f5c3442d"
@@ -2665,6 +2801,14 @@
     "assets/media/web/sport-1600.webp": {
       "sizeBytes": 191108,
       "sha256": "828879404d355ea47a037faccac9471d5b4babcefec2cc12ba727e6011c4b221"
+    },
+    "assets/media/web/sport2-1600.webp": {
+      "sizeBytes": 210410,
+      "sha256": "b8eda576c2647324550964eabf5a3ad4181e7110f2bdc9ad8016fab13fa4c8fb"
+    },
+    "assets/media/web/uszas-1600.webp": {
+      "sizeBytes": 272586,
+      "sha256": "17704317fb859ce1259609a8334ca0db307437ec9c1f4528f0996466374c0120"
     },
     "assets/media/web/v1-40/kozosseg-1600.webp": {
       "sizeBytes": 166198,
@@ -2750,6 +2894,10 @@
       "sizeBytes": 95378,
       "sha256": "f57324d58a87f779f5f6b4e30744a2d31dbeaa3d805e6e55dca5f642293074f4"
     },
+    "assets/qr/csanadi-qr-06b6013647d5dabb.svg": {
+      "sizeBytes": 3353,
+      "sha256": "14a6fbb3a5cfc83693f26eaf23c22bd65e4ddae60113eb9b965b3da1803237f9"
+    },
     "assets/qr/csanadi-qr-0bcf56ffaf451cb2.svg": {
       "sizeBytes": 5520,
       "sha256": "1c3df4c44b0e4cfb2f031280ff8920a6e9bf3576acef50bb7eb94d6175b71d4b"
@@ -2793,10 +2941,6 @@
     "assets/qr/csanadi-qr-263990dcdf95e979.svg": {
       "sizeBytes": 4242,
       "sha256": "3384780a02ee5908d4ad7c6effafa22d4ad33cd229488316875680286124b980"
-    },
-    "assets/qr/csanadi-qr-281571ce738ff3de.svg": {
-      "sizeBytes": 4271,
-      "sha256": "9ecf7881755634fbb40b592d149b9047598e5163075d4c7d2c055b329f02ef24"
     },
     "assets/qr/csanadi-qr-2d2caec6a51d6205.svg": {
       "sizeBytes": 5459,
@@ -2865,10 +3009,6 @@
     "assets/qr/csanadi-qr-6c9334e5d6b059f3.svg": {
       "sizeBytes": 5547,
       "sha256": "45271137bd378bbea56705d16634b3711b0e78fbca1e7129eb73b7a4b042ce9d"
-    },
-    "assets/qr/csanadi-qr-6ccd880ba31e5a04.svg": {
-      "sizeBytes": 4434,
-      "sha256": "88924f259149c3c05b39cce49c8d3c10f3550de040b5d06078322598e9f2170a"
     },
     "assets/qr/csanadi-qr-720d4f1f6672ae3b.svg": {
       "sizeBytes": 4341,
@@ -3098,6 +3238,10 @@
       "sizeBytes": 5751,
       "sha256": "dec136f02a052fd22adaabce304dae016f38c6ee106e42cfa4bb9461b5d5c862"
     },
+    "assets/qr/csanadi-qr-fe6cb35447110140.svg": {
+      "sizeBytes": 4296,
+      "sha256": "4b766944a977a5e8edf9f51efa5fe93b4717b3775f930f3d5fd17edfd5873622"
+    },
     "css/accessibility-v1-40-3.css": {
       "sizeBytes": 3995,
       "sha256": "f72ff4b0f869d05aa12a34c506b0abc626317346b400ae254ced58d2e20889e7"
@@ -3159,8 +3303,8 @@
       "sha256": "57435f7d161cb9e3066d0fbfec14c4f7c12121a98729cc0a036d2349f3cc28a0"
     },
     "css/gate-v1-41-real-door.css": {
-      "sizeBytes": 13505,
-      "sha256": "53780e1766153d3d481f4e6d8698cc25219cdf1b6ad3e890b003465d24be2ad5"
+      "sizeBytes": 16094,
+      "sha256": "7e7ff73ccef0b0c27313099b6d28d2a5c14ff060e3532e73862505f02b8dac15"
     },
     "css/guide-legacy-v1-42.css": {
       "sizeBytes": 5736,
@@ -3563,16 +3707,16 @@
       "sha256": "d699af49beee4cb9af24350bdf8a3092e82dcb83cdd40a46554c50880a6bae9c"
     },
     "index.html": {
-      "sizeBytes": 23730,
-      "sha256": "2b9654065c4f13c79d12c4228147b2adb131e2d17a4d2d7746ca010cde388603"
+      "sizeBytes": 23732,
+      "sha256": "4931e1050cdd03f2818ad0080ef88d77769ed669538a312f865de057dac968f7"
     },
     "js/advanced-2026.js": {
-      "sizeBytes": 34510,
-      "sha256": "c3d05b41c289ed83b64307e32407bf494264cdf8c7da86daf840e7f7dfe68c87"
+      "sizeBytes": 33616,
+      "sha256": "29e859212e5fbd775ef38760fc5153f16c9dde467d73dbcc3938e5e104c38d70"
     },
     "js/app.js": {
-      "sizeBytes": 62577,
-      "sha256": "fb584bf311af04ab610a6a9d41d813cced717b987ae0a53c0851446da0c15884"
+      "sizeBytes": 57469,
+      "sha256": "d06df06012c3a805f6ed69bd58a16d9b993622a9dcc495c1958e6928f4d47ef4"
     },
     "js/blocks.js": {
       "sizeBytes": 9230,
@@ -3591,8 +3735,8 @@
       "sha256": "c8a1d76a3716107592e42fa17946b30ab36030dab915bd6733e427a7633f98c8"
     },
     "js/documents.js": {
-      "sizeBytes": 29202,
-      "sha256": "08d5585c4aa8180b62f9eb508a89d0f1362a1357a8f76f97f06227356c0b4cb0"
+      "sizeBytes": 29221,
+      "sha256": "87fb59ab6d5d5fdfcb6a1200532e5e281ddb307e6e3a9b9a0af4457b899fb606"
     },
     "js/experience-2026.js": {
       "sizeBytes": 21323,
@@ -3615,16 +3759,16 @@
       "sha256": "8ade3625d970b550b7d066ee899838da54e951faa8556e7164c9c33d37cba8b5"
     },
     "js/guide-ui-v1-42.js": {
-      "sizeBytes": 2875,
-      "sha256": "2c5fc2480d122bdea5e19ab09f785df86ca28c10fd1518fe59ba94920fe5fad8"
+      "sizeBytes": 2874,
+      "sha256": "186a9e7d44615b92ec08b17579ee07d1001d15eccf3c78c2ce24cc34a9847e9e"
     },
     "js/header-adaptive-v1-39-18.js": {
       "sizeBytes": 2554,
       "sha256": "370e57413f01ae10a978a6be5f4a2b2e1040b7566ad30a14a662dd2c94accdee"
     },
     "js/hero-2026.js": {
-      "sizeBytes": 11212,
-      "sha256": "1af44c61555d67e2febbc29e8a534a52bd54220e557a702349608745816d9ca4"
+      "sizeBytes": 11222,
+      "sha256": "4e105570178330d367584409f17882540508c3b813b58b53fe16de99f4fd6cf1"
     },
     "js/home-inline-editor-v1-41-4.js": {
       "sizeBytes": 11264,
@@ -3667,12 +3811,12 @@
       "sha256": "d19bfc1d9e7f54baafb56f95874a38e107a4794d85c40e55ca7ecd64520fe644"
     },
     "js/next10-2026.js": {
-      "sizeBytes": 11807,
-      "sha256": "3d42f9f846531e7fa122d7f48da7f7e59a2a85f97269336b9c81b5eadacdcba1"
+      "sizeBytes": 12001,
+      "sha256": "76e2ed433cc99b25004410431578ae871122c2877321c25c73df69dfdc084485"
     },
     "js/offline-reader-20.js": {
-      "sizeBytes": 5462,
-      "sha256": "f0f19bb3ed81010179111d961af2138128723fa1c3152e2e6631453700dd9970"
+      "sizeBytes": 5471,
+      "sha256": "c5fb3c69fbf0a57867b013a3f9cde287e762a848fb3586c753b059931795164e"
     },
     "js/page-media-2026.js": {
       "sizeBytes": 2136,
@@ -3711,32 +3855,32 @@
       "sha256": "dc17b67acf58a676b5f8dc85e95b528a03441533695dc9adb70ab8531ae53636"
     },
     "js/round21-explorer.js": {
-      "sizeBytes": 16707,
-      "sha256": "a4c104c46d7b0a03aead49326b30b48839766526ab8dd967fa5f73c20ef4940e"
+      "sizeBytes": 16719,
+      "sha256": "2863501a6990bfdbe010403749d3ce82e861f34c62badfebd7ac8e9ab7e4ff70"
     },
     "js/round21-personalize.js": {
       "sizeBytes": 8306,
       "sha256": "126f2893a4810fd8d9c4551edbc26c0590b2207d707c4eefd4266919c08639aa"
     },
     "js/round22-center.js": {
-      "sizeBytes": 16594,
-      "sha256": "1fa109c06c0ea76923b2ab530efc1db9af7b2ad24207f8170c5dccd70391cce2"
+      "sizeBytes": 16622,
+      "sha256": "7afefebb3fc3762128cfd4436eb6afde33a529ba3a3c966e288eaf0acd8c8c1c"
     },
     "js/round23-workshop.js": {
-      "sizeBytes": 18071,
-      "sha256": "7d0abfafb7787fdcb10a439ea7f01a19fe329229df0904f2495fe6f646302ce7"
+      "sizeBytes": 18083,
+      "sha256": "24049bb7306ed0187a95652d7f49a673e3c979d597d7a311c25e13d89d563b1f"
     },
     "js/round24-heritage.js": {
-      "sizeBytes": 17369,
-      "sha256": "537ef6379cab941a8ec479d6913f7fd5a37ebbc0dd091d7aa9aa492472586539"
+      "sizeBytes": 17455,
+      "sha256": "825b0a17538bd2b862f891dc61ccb31a47b89e4045d0594eafc548435c6c3cf0"
     },
     "js/round25-community.js": {
-      "sizeBytes": 20921,
-      "sha256": "fa0e42f6ca98d052be9243d428761860747ddd7c5fe9f9f95c63b15550cd31fc"
+      "sizeBytes": 21420,
+      "sha256": "62e46d08140d28fd5540e9537c070d75c66e5fe7280db4a9cc959cb73ae67fc7"
     },
     "js/round26-arrival.js": {
-      "sizeBytes": 15763,
-      "sha256": "1c371796bbf5f7941959a95c9509d9e6d556b09a1427b5f8eaae6b0c8771540d"
+      "sizeBytes": 15711,
+      "sha256": "e0e3d7cab793e7a35f0746514ea50f001170baf1c9c1a4a124e4c06421303335"
     },
     "js/round29-home.js": {
       "sizeBytes": 36120,
@@ -3771,12 +3915,12 @@
       "sha256": "a524d1c62c93e1ba13a5f5dc1c908de8f1097432b7290593fd21a6c0a8ae5d31"
     },
     "js/spa-features-v1-42.js": {
-      "sizeBytes": 5625,
-      "sha256": "74bd9408017bae5faf17d44259fbd3fde2416f3b5a7bf56a8b5c8c2ec38467b2"
+      "sizeBytes": 5705,
+      "sha256": "d642599ae18154a18e229a4e6b2aa2eb1dacce672e9e9018f7b3c1b9db8e432b"
     },
     "js/spa-frame-bootstrap-v1-42.js": {
-      "sizeBytes": 1263,
-      "sha256": "e9aa73c88b07d120f68598c63f3538337ea2dc386a31e449b26600a3b9b4eb25"
+      "sizeBytes": 1318,
+      "sha256": "f8cbcac54e2c9c2c0fa26a4f8f16f141d60efb681758d231a5f51cbbc3958234"
     },
     "js/sports-successes.js": {
       "sizeBytes": 6817,
@@ -3799,16 +3943,12 @@
       "sha256": "b07487d7f2e76e2a36e2d5fe8b4306828dbcd32854edd802078cab3a49ad3f01"
     },
     "js/zip-native-2026.js": {
-      "sizeBytes": 3754,
-      "sha256": "f83cf15aded6a2e28ee3dab09f35d5263270c2dbd71c02d0e3cef9f747ef4384"
+      "sizeBytes": 3718,
+      "sha256": "4534e6447179d26b3504c9ba9de0578f8811726d80b2c6dca8cc448e0a08d390"
     },
     "json/adatok/ajanlasi-szabalyok-v1-40-10.json": {
       "sizeBytes": 443,
       "sha256": "0ad814a8e63b67794bf812f1815f31f894dde3c8b911810fbc905391864126bf"
-    },
-    "json/adatok/arrival-template-2026.json": {
-      "sizeBytes": 17333,
-      "sha256": "750f9b58f437ed98e99b8bf91ce36697ee7fc0b9121c1b7c5df5d8a93e0560d7"
     },
     "json/adatok/csengetesi-rend.json": {
       "sizeBytes": 1536,
@@ -3863,20 +4003,20 @@
       "sha256": "020d01e4c6d1ff443f1d4fa27f9ec5da4b67e37e09986a5f65c8286454229425"
     },
     "json/adatok/orokseg-es-tudastar-24.json": {
-      "sizeBytes": 9801,
-      "sha256": "d2841b35e2c0b402aed768024edc3a412507ebc98edf2af2c434cc4d75f6592e"
+      "sizeBytes": 9783,
+      "sha256": "b60bf518ce3820b9de60c9256d053274aa776523088f42f690f19e5cd1cb64ca"
     },
     "json/adatok/qr-index-22.json": {
       "sizeBytes": 44087,
-      "sha256": "15c6492bc4373b81be385f6656ffba9d8527daaee759df56aecf494887ef0ec2"
+      "sha256": "97680f6a764ae8115883324e1f00525d6f309e502e42e5ffbd066697522b7889"
     },
     "json/adatok/social.json": {
       "sizeBytes": 631,
       "sha256": "2b04e2a0c84d8d4a9c00b076b208ea1dcd399ae8a97a7e4f2da5955da5e7f478"
     },
     "json/adatok/spa-features-42.json": {
-      "sizeBytes": 199858,
-      "sha256": "24f2ea6d26b8ad7a135aa2a15cd66798fb3698806a198da30458f484b7ec81a7"
+      "sizeBytes": 213004,
+      "sha256": "49baf6312b090d59fb37fce56672eec4c878687f6a84af2b373f306d16600587"
     },
     "json/adatok/sportsikerek.json": {
       "sizeBytes": 10319,
@@ -3887,8 +4027,8 @@
       "sha256": "2faef1fb6ddf910d85afed303429c111844d1945144592f760dc37ecb3a7c086"
     },
     "json/adatok/tanulas-kozosseg-25.json": {
-      "sizeBytes": 8809,
-      "sha256": "1c8465709878e27129aabe1292dcdfd673014601211bc6ad20d4cbd976b70e81"
+      "sizeBytes": 8792,
+      "sha256": "b3d82900a1de68a699455a667bcbf1cef0ed6a9d9a9e3e9a5b9fb6aee18972b8"
     },
     "json/adatok/tanuloi-sikerek.json": {
       "sizeBytes": 6159,
@@ -3899,32 +4039,24 @@
       "sha256": "b020ac5900d359faf4e6dabf4862cc3d7af4ed1008ad8b7f50a48dec4a342dc4"
     },
     "json/assets-inventory.json": {
-      "sizeBytes": 441104,
-      "sha256": "61ca8fda3ca477f4cd1bf694222e7d08d7a4ecf1d56fb1148955cdfcefcc7e17"
+      "sizeBytes": 464753,
+      "sha256": "a92d694c3631d6c06946b7a66f281cb1d083c2fc94b4e9678a16f78d27a6aaa7"
     },
     "json/assets-project-index.json": {
-      "sizeBytes": 131752,
-      "sha256": "676105e3cfa7d09fb0c50116171d2936807b3efd02eede0dc651161a42365c63"
+      "sizeBytes": 137972,
+      "sha256": "23090831f0f83f0f06b69210b8d92e2c7680f402b3018c2452c2cdb1b75f55db"
     },
     "json/config.json": {
-      "sizeBytes": 15605,
-      "sha256": "8f696274ae96e129a6497c755fa3667f7169fca5c6c063834dad0dca21868a8e"
+      "sizeBytes": 16558,
+      "sha256": "a798fb048e8084a5abf82666ebe42b6409a450f220b4e0684975d83ea7790cb0"
     },
     "json/mediatar.json": {
-      "sizeBytes": 306653,
-      "sha256": "4201c3e1046cd812701f67f8bb1ec80596219b875cb6ee28502ddf819bcce614"
+      "sizeBytes": 324230,
+      "sha256": "4ebb8303bf84482ddca419ef077e1fab237b44b072152c55885b28ac1eb30599"
     },
     "json/nyelvek.json": {
       "sizeBytes": 1785,
       "sha256": "de6bc0c038ba1dbf011533bea4bd18de996756489f48b7f1fa7103fcfd08354c"
-    },
-    "json/oldalak/hirek-es-esemenyek.json": {
-      "sizeBytes": 2814,
-      "sha256": "c7528aa679777a94b4f636b6de97e059f98515a09ba845688c11323681d55d23"
-    },
-    "json/oldalak/hirek-es-esemenyek/esemenynaptar.json": {
-      "sizeBytes": 3220,
-      "sha256": "cbcfbe6bc383dae78a2d6069b35fab17d28c48c776f64d09df6b95a36a51a22f"
     },
     "json/oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json": {
       "sizeBytes": 3067,
@@ -3934,9 +4066,9 @@
       "sizeBytes": 3139,
       "sha256": "f8580e9490fb7c5a5f68de30e6488601152a9df71dd6b290d2ae18cff0fa88c5"
     },
-    "json/oldalak/hirek-es-esemenyek/hirek.json": {
-      "sizeBytes": 2722,
-      "sha256": "97a7c8be4a139f61ab5240c37b173c5f7d56bb27f6da188d9f32b2c54aae68f3"
+    "json/oldalak/hirek-es-esemenyek/esemenynaptar.json": {
+      "sizeBytes": 3220,
+      "sha256": "cbcfbe6bc383dae78a2d6069b35fab17d28c48c776f64d09df6b95a36a51a22f"
     },
     "json/oldalak/hirek-es-esemenyek/hirek/hirarchivum.json": {
       "sizeBytes": 2859,
@@ -3950,13 +4082,17 @@
       "sizeBytes": 3311,
       "sha256": "5b53a49d53520b9a4bfe67f454fb40274aa9954caceb78afe2d73f3547528e14"
     },
+    "json/oldalak/hirek-es-esemenyek/hirek.json": {
+      "sizeBytes": 2722,
+      "sha256": "97a7c8be4a139f61ab5240c37b173c5f7d56bb27f6da188d9f32b2c54aae68f3"
+    },
     "json/oldalak/hirek-es-esemenyek/kozlemenyek.json": {
       "sizeBytes": 3163,
       "sha256": "a8ffc866dc5344698f775c84870902885bec5b8121fd2483218be8416b278e96"
     },
-    "json/oldalak/informaciok.json": {
-      "sizeBytes": 3229,
-      "sha256": "0f20041c92eef348fe3f2a5d389f43cd88a6670b2724e76f69ca3ba696ca9b90"
+    "json/oldalak/hirek-es-esemenyek.json": {
+      "sizeBytes": 2814,
+      "sha256": "c7528aa679777a94b4f636b6de97e059f98515a09ba845688c11323681d55d23"
     },
     "json/oldalak/informaciok/adatvedelem.json": {
       "sizeBytes": 3274,
@@ -3970,10 +4106,6 @@
       "sizeBytes": 3108,
       "sha256": "5ee8afc92f98941b7f5fa8e6b8ab8e8135301f4257373596e0b1bb681013a2a1"
     },
-    "json/oldalak/informaciok/dokumentumtar.json": {
-      "sizeBytes": 2491,
-      "sha256": "178d2b97b78796f80042a3ba07b5ddc5363e5249242da8d9dc8c5bb8260b5640"
-    },
     "json/oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json": {
       "sizeBytes": 3673,
       "sha256": "76f099994cb47a4900c5179cdd8bf9664d5e477f4307811157a8b85ff5c521e3"
@@ -3986,9 +4118,9 @@
       "sizeBytes": 3624,
       "sha256": "99b264f934ced5b87440f55f9c061d3909f436a39958d513547543db937c8786"
     },
-    "json/oldalak/informaciok/kozossegi-szolgalat.json": {
-      "sizeBytes": 3781,
-      "sha256": "918069642c0843fea6165ac111d3923d6fea11b680ef4ce622936b64365b830e"
+    "json/oldalak/informaciok/dokumentumtar.json": {
+      "sizeBytes": 2491,
+      "sha256": "178d2b97b78796f80042a3ba07b5ddc5363e5249242da8d9dc8c5bb8260b5640"
     },
     "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json": {
       "sizeBytes": 3807,
@@ -4002,9 +4134,9 @@
       "sizeBytes": 3909,
       "sha256": "bc7d2d1197559beeb977922b0b04e079c7a1f1772282a1f2558255fa2100fa27"
     },
-    "json/oldalak/informaciok/mindennapi-tudnivalok.json": {
-      "sizeBytes": 2893,
-      "sha256": "26785510ac13fe06c6982b365e4b7350120f69c8e850d0441164e436bfd14ae4"
+    "json/oldalak/informaciok/kozossegi-szolgalat.json": {
+      "sizeBytes": 3781,
+      "sha256": "918069642c0843fea6165ac111d3923d6fea11b680ef4ce622936b64365b830e"
     },
     "json/oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json": {
       "sizeBytes": 3308,
@@ -4015,8 +4147,8 @@
       "sha256": "083a521ce9019791d4b6a24d8646f3dd62d1f3f85c341522521d640a7ff1026b"
     },
     "json/oldalak/informaciok/mindennapi-tudnivalok/megkozelites.json": {
-      "sizeBytes": 3617,
-      "sha256": "496a681802185f65e71e5eea603e18f67e81275643da4e8a86225e75bae455ab"
+      "sizeBytes": 3643,
+      "sha256": "e596b2ce771307b45ce1536300787245a936b6872a89719f3d2cc02b91e8f302"
     },
     "json/oldalak/informaciok/mindennapi-tudnivalok/szuloi-informaciok.json": {
       "sizeBytes": 2948,
@@ -4026,6 +4158,10 @@
       "sizeBytes": 2799,
       "sha256": "4468872a201a91f4a1e063e429e4e6cbdf796d570737ed4d5d628b2392a6c676"
     },
+    "json/oldalak/informaciok/mindennapi-tudnivalok.json": {
+      "sizeBytes": 2893,
+      "sha256": "26785510ac13fe06c6982b365e4b7350120f69c8e850d0441164e436bfd14ae4"
+    },
     "json/oldalak/informaciok/offline-olvaso.json": {
       "sizeBytes": 894,
       "sha256": "b92e88047f60ba8b389b8ad502d1335d081b32e49a5f2873940e4519878e08c9"
@@ -4034,9 +4170,9 @@
       "sizeBytes": 909,
       "sha256": "6251ea90f04363d7a49cd723b5f9d2682ea6dbaa7a0ff17541346ddee6dd74a4"
     },
-    "json/oldalak/iskolank.json": {
-      "sizeBytes": 4347,
-      "sha256": "8eaf9460125f3df230b9511f045c1fbedd9c0f1b848608d1362951cf0a5511be"
+    "json/oldalak/informaciok.json": {
+      "sizeBytes": 3229,
+      "sha256": "0f20041c92eef348fe3f2a5d389f43cd88a6670b2724e76f69ca3ba696ca9b90"
     },
     "json/oldalak/iskolank/a-honlap-szuletese.json": {
       "sizeBytes": 13593,
@@ -4090,21 +4226,17 @@
       "sizeBytes": 4424,
       "sha256": "c9868d4f54e9909dc1af0a5ebf585eecff5e3a05283466bf794a5d4c465238a1"
     },
+    "json/oldalak/iskolank.json": {
+      "sizeBytes": 4347,
+      "sha256": "8eaf9460125f3df230b9511f045c1fbedd9c0f1b848608d1362951cf0a5511be"
+    },
     "json/oldalak/kapcsolat.json": {
       "sizeBytes": 3615,
       "sha256": "e35f67bcfab755b338f1ab5dff4ef1cdd328a9f0a60c046d5cd6c0894b47b9d3"
     },
     "json/oldalak/kezdolap.json": {
-      "sizeBytes": 28541,
-      "sha256": "122e0794146b830c2740abfebd56d7e58721d440ba112da1a93002327714b1e7"
-    },
-    "json/oldalak/oktatas.json": {
-      "sizeBytes": 3342,
-      "sha256": "0fa1d2e97384538de5b18cef1f52866f4cbc41f700e34f7ec72bee408c1c81f2"
-    },
-    "json/oldalak/oktatas/digitalis-kultura.json": {
-      "sizeBytes": 10708,
-      "sha256": "13aacf9115ed891550e33b28a52eabd4d3099fdc7d73282fc3f3d63cbf36a386"
+      "sizeBytes": 16209,
+      "sha256": "7a346f0b8f5a98ff25591e749d2928508d1668e0f095480f59a5a03e55c872bd"
     },
     "json/oldalak/oktatas/digitalis-kultura/mesterseges-intelligencia.json": {
       "sizeBytes": 3357,
@@ -4114,9 +4246,9 @@
       "sizeBytes": 3162,
       "sha256": "e8b2acfe9a8f26984f6a90cfd0c87ec2c23082fd018d1a55f150931d56155616"
     },
-    "json/oldalak/oktatas/felveteli.json": {
-      "sizeBytes": 4231,
-      "sha256": "4873bbc16e49584233268b60641cf2dd2f4e48b94a2170cf7707ff4434afe8b8"
+    "json/oldalak/oktatas/digitalis-kultura.json": {
+      "sizeBytes": 10708,
+      "sha256": "13aacf9115ed891550e33b28a52eabd4d3099fdc7d73282fc3f3d63cbf36a386"
     },
     "json/oldalak/oktatas/felveteli/elso-evfolyam.json": {
       "sizeBytes": 3370,
@@ -4134,9 +4266,9 @@
       "sizeBytes": 3770,
       "sha256": "587b14f4d11b60fda0355971b77b0ee6e8eb64179f2c358c3abb602c95e849c0"
     },
-    "json/oldalak/oktatas/kepzeseink.json": {
-      "sizeBytes": 3054,
-      "sha256": "f938381cd13bfec435c7a5f715aa29d28fdc5877f5a4dffc84fca0e5107059a2"
+    "json/oldalak/oktatas/felveteli.json": {
+      "sizeBytes": 4231,
+      "sha256": "4873bbc16e49584233268b60641cf2dd2f4e48b94a2170cf7707ff4434afe8b8"
     },
     "json/oldalak/oktatas/kepzeseink/altalanos-iskola.json": {
       "sizeBytes": 3271,
@@ -4150,25 +4282,25 @@
       "sizeBytes": 2809,
       "sha256": "d74048796dbca76a0cf4cbb1265b4118d394aeaa2eca14f21637ecc7cc3b5aa7"
     },
-    "json/oldalak/oktatas/konyvtar.json": {
-      "sizeBytes": 3696,
-      "sha256": "0760562c4ebce482e9c010fd5daa86a2dca6788883389df89977cf2b6d94654d"
+    "json/oldalak/oktatas/kepzeseink.json": {
+      "sizeBytes": 3054,
+      "sha256": "f938381cd13bfec435c7a5f715aa29d28fdc5877f5a4dffc84fca0e5107059a2"
     },
     "json/oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json": {
       "sizeBytes": 3162,
       "sha256": "0cf8e4a20fbcb70ce6bb6ed702dd6593a569373594442abc5ccebacb454cdbaf"
     },
+    "json/oldalak/oktatas/konyvtar.json": {
+      "sizeBytes": 3696,
+      "sha256": "0760562c4ebce482e9c010fd5daa86a2dca6788883389df89977cf2b6d94654d"
+    },
+    "json/oldalak/oktatas/tananyagok-es-jegyzetek/tanulastamogatas.json": {
+      "sizeBytes": 3187,
+      "sha256": "0215a24d7b1ae07174d6446629a4ea2bb38ae9434eb660130cb2c4786e2683b0"
+    },
     "json/oldalak/oktatas/tananyagok-es-jegyzetek.json": {
       "sizeBytes": 3549,
       "sha256": "8d6feae8fcc75b47acbd3cb4923a6da465b41301e61f84f24e8b20875ed37ca9"
-    },
-    "json/oldalak/oktatas/tananyagok-es-jegyzetek/tanulastamogatas.json": {
-      "sizeBytes": 3184,
-      "sha256": "6cb24df0d425facd6c6b93402f727f2d0939d3c9441df1d886b34f91864057c0"
-    },
-    "json/oldalak/oktatas/tanevek.json": {
-      "sizeBytes": 3091,
-      "sha256": "85650af52685f5ab611c037a00d16b259401d72548611addab93a72dc5b928f5"
     },
     "json/oldalak/oktatas/tanevek/aktualis-tanev.json": {
       "sizeBytes": 3236,
@@ -4178,13 +4310,13 @@
       "sizeBytes": 3228,
       "sha256": "cb245e2100708e058f956df7cdcb3d260dc2d3d890c8fd1a8106044fea8adae1"
     },
+    "json/oldalak/oktatas/tanevek.json": {
+      "sizeBytes": 3091,
+      "sha256": "85650af52685f5ab611c037a00d16b259401d72548611addab93a72dc5b928f5"
+    },
     "json/oldalak/oktatas/tanulas-es-kozosseg.json": {
       "sizeBytes": 874,
       "sha256": "6a1af64c4f5f515e497b2bd71b392955de3edcbe8d23209fe5419b531983f93d"
-    },
-    "json/oldalak/oktatas/vizsgak.json": {
-      "sizeBytes": 3252,
-      "sha256": "7aa4c0359efab566045edb363486036db864fac4afc20699893b098bcde20813"
     },
     "json/oldalak/oktatas/vizsgak/egyeb-vizsgak.json": {
       "sizeBytes": 3440,
@@ -4198,9 +4330,13 @@
       "sizeBytes": 3074,
       "sha256": "24199fd35800c50a1558da6fc74d16604604c55d08f9a5d948d3b645cc412c05"
     },
-    "json/oldalak/sport.json": {
-      "sizeBytes": 3223,
-      "sha256": "1100ac6109193d4efeb6c40f03c16d2a19a41faff9ed79f9ef6ad4f088244b25"
+    "json/oldalak/oktatas/vizsgak.json": {
+      "sizeBytes": 3252,
+      "sha256": "7aa4c0359efab566045edb363486036db864fac4afc20699893b098bcde20813"
+    },
+    "json/oldalak/oktatas.json": {
+      "sizeBytes": 3342,
+      "sha256": "0fa1d2e97384538de5b18cef1f52866f4cbc41f700e34f7ec72bee408c1c81f2"
     },
     "json/oldalak/sport/csapatok.json": {
       "sizeBytes": 3403,
@@ -4230,9 +4366,13 @@
       "sizeBytes": 3558,
       "sha256": "2dc64dc8a22a7fd3473ade80a546fe6efb1820e6d713d1a8d48f445592ca1a29"
     },
+    "json/oldalak/sport.json": {
+      "sizeBytes": 3223,
+      "sha256": "1100ac6109193d4efeb6c40f03c16d2a19a41faff9ed79f9ef6ad4f088244b25"
+    },
     "json/oldalindex.json": {
-      "sizeBytes": 168764,
-      "sha256": "6ba991a0101cc6f84c69e8e4f06acf38db1d45eeccdae0d18195298e5ddcec96"
+      "sizeBytes": 168767,
+      "sha256": "a1415b6ce337118b01ba9e0c6e155b57b996d98b2ba255245bb3ebf7cf0e54d2"
     },
     "json/schemas/dokumentumok.schema.json": {
       "sizeBytes": 5536,
@@ -4319,12 +4459,12 @@
       "sha256": "ee51df6dbbccda4533d6a067cfdd8a35a6421611b6cccc814fbbe9f7e65aa283"
     },
     "script.js": {
-      "sizeBytes": 1735,
-      "sha256": "7921e5789b1dfb3a8f1d48f9c2a2c8880b7047f5eb1bd3cf51d71c6856cccce7"
+      "sizeBytes": 1736,
+      "sha256": "e04946cd7b38a0f1c060a7e913f5e20e90c5e037d0d8a67a1170cab8fe3b42ef"
     },
     "service-worker.js": {
-      "sizeBytes": 6966,
-      "sha256": "25d22f8dbdb9ff43c70deb61833af31d8d50024ac82cf389eecd4ceac5f01f1c"
+      "sizeBytes": 6065,
+      "sha256": "290cdf695beb9078e5149ff8437a4f44670b0b9891ff3f9bcc2f31b3911cc458"
     },
     "sitemap.xml": {
       "sizeBytes": 111,

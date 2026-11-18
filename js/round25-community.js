@@ -10,9 +10,10 @@ const empty=(target,message)=>{wipe(target);target.append(el('p','r25-no-verifie
 const domains=['olimpia.hu','dokumentumtar.mlsz.hu','mlsz.hu','mksz.hu','hunfencing.hu','kajakkenusport.hu','birkozoszov.hu','emet.gov.hu','kormany.hu','utr.tef.gov.hu'];
 const trusted=url=>{try{const u=new URL(url);return u.protocol==='https:'&&domains.some(d=>u.hostname===d||u.hostname.endsWith('.'+d));}catch{return false;}};
 const link=(url,text='Hivatalos forrás ↗')=>{const a=el('a','r25-source',text);if(trusted(url)){a.href=url;a.rel='noopener noreferrer';a.target='_blank';}else{a.textContent='Nincs ellenőrzött hivatkozás';}return a;};
-const localRoute=url=>/^(?:index\.html)?#\/[a-z0-9/-]*$/.test(url||'');
+const localRoute=url=>/^(?:index\.html#\/[a-z0-9/-]*|(?:felfedezo|iranytu|iskolai-muhely|orokseg-es-tudastar|tanulas-es-kozosseg)\.html(?:#[a-z-]+)?)$/.test(url||'');
 const internal=(url,text)=>{const a=el('a','r25-source',text);if(localRoute(url)){
- a.href=url.startsWith('index.html#/')?url.slice('index.html'.length):url;
+ const routes={'#/iskolank/felfedezo':'#/iskolank/felfedezo','#/iskolank/iskolai-iranytu':'#/iskolank/iskolai-iranytu','#/iskolank/iskolai-muhely':'#/iskolank/iskolai-muhely','#/sport/olimpiai-orokseg-es-tudastar':'#/sport/olimpiai-orokseg-es-tudastar','#/oktatas/tanulas-es-kozosseg':'#/oktatas/tanulas-es-kozosseg'};
+ a.href=location.pathname.endsWith('/#/oktatas/tanulas-es-kozosseg')?url:routes[url]||(url.startsWith('index.html#/')?url.slice('index.html'.length):url);
  }else a.textContent='Nem ellenőrzött belső hivatkozás';return a;};
 const card=(title,description,chip)=>{const c=el('article','r23-card'),b=el('div','r23-card-content');if(chip)b.append(el('span','r23-chip',chip));b.append(el('h3','',title),el('p','',description));c.append(b);return{c,b};};
 const loadJSON=async(path)=>{const response=await fetch(path,{cache:'no-store'});if(!response.ok)throw Error(path+': HTTP '+response.status);return response.json();};
@@ -58,4 +59,4 @@ function faq(){const trail=$('r25-faq-trail'),out=$('r25-faq-content'),back=$('r
 
 async function main(){theme();try{config=await loadJSON('json/config.json');const path=config.runtime?.round25?.dataPath;if(!/^adatok\/[a-z0-9-]+\.json$/.test(path||''))throw Error('Hiányzó runtime.round25.dataPath beállítás.');content=await loadJSON('json/'+path);const required=['plannerKinds','fairPlayGuides','panoramas','clubs','scholarships','easyReadTopics','alumniProfiles','alumniPublicSources','projectReports','projectSourceDirectory','faq'];if(content.release!==25||required.some(k=>!Array.isArray(content[k])))throw Error('Hibás R25 adatstruktúra.');planner();fairPlay();panorama();clubs();scholarships();speech();easyRead();alumni();reports();faq();$('r25-status').textContent='Mind a tíz modul betöltődött. A hitelesítetlen adatokat a rendszer nem teszi közzé.';}catch(error){console.error('R25 betöltés',error);$('r25-status').textContent='A központ betöltése sikertelen: '+error.message;}}
 export function mountCommunity(){return main();}
-if(location.pathname.endsWith('/tanulas-es-kozosseg.html'))mountCommunity();
+if(location.pathname.endsWith('/#/oktatas/tanulas-es-kozosseg'))mountCommunity();

@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-17T12:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-18T17:55:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 4
   },
   "seo": {
     "title": "Megközelítés és érkezés – Csanádi Sportiskola",
@@ -30,7 +30,7 @@
     "közlekedés",
     "iskola címe"
   ],
-  "summary": "Az iskola címe, utazási lehetőségek és ellenőrzött érkezési tudnivalók egy helyen.",
+  "summary": "Megközelítés, útvonaltervezés és tíz interaktív, helyi tanulástámogató eszköz.",
   "blocks": [
     {
       "id": "block:erkezes-cim",
@@ -99,6 +99,7 @@
       "reviewedAt": "2026-11-17",
       "status": "primary-source-checked",
       "sourceId": "contact"
-    }
+    },
+    "spaFeature": "arrival"
   }
 }

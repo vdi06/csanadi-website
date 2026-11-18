@@ -51,4 +51,4 @@ export async function mountOfflineReader(){
   buildList();await refreshStats();
  }catch(error){if($('offline-status'))status('Az offline központ nem tölthető be: '+error.message);}
 }
-if(location.pathname.endsWith('/offline-olvaso.html'))void mountOfflineReader();
+if(location.pathname.endsWith('/#/informaciok/offline-olvaso'))void mountOfflineReader();

@@ -7,7 +7,8 @@ const KNOWN={
  heritage:'#/sport/olimpiai-orokseg-es-tudastar',
  community:'#/oktatas/tanulas-es-kozosseg',
  offline:'#/informaciok/offline-olvaso',
- guide:'#/informaciok/utmutato'
+ guide:'#/informaciok/utmutato',
+ arrival:'#/megkozelites-es-erkezes'
 };
 const STYLE=/^css\/[a-z0-9-]+\.css$/;
 let dataPromise=null,activation=0,dispose=null;
@@ -46,7 +47,7 @@ function frameDocument(key,component){
  const base=new URL('./',document.baseURI).href;
  // Bootstrap remains pinned to the same CDN version as the original SPA.
  const bootstrap='https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css';
- return `<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><base href="${safeAttribute(base)}"><link rel="stylesheet" href="${bootstrap}">${css}</head><body data-spa-feature="${key}">${sanitizedHTML(component.html)}<script type="module" src="js/spa-frame-bootstrap-v1-42.js?v=1.42.8"></script></body></html>`;
+ return `<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><base href="${safeAttribute(base)}"><link rel="stylesheet" href="${bootstrap}">${css}</head><body data-spa-feature="${key}" class="${key==='arrival'?'arrival2':''}">${sanitizedHTML(component.html)}<script type="module" src="js/spa-frame-bootstrap-v1-42.js?v=1.42.10"></script></body></html>`;
 }
 export async function activateSpaFeature(shell,page){
  const token=activation,key=page?.schemaExtensions?.spaFeature;

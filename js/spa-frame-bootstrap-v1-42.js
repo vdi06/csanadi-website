@@ -4,10 +4,11 @@ const modules={
  explorer:()=>import('./round21-explorer.js?v=1.42.3').then(module=>module.mountExplorer()),
  compass:()=>import('./round22-center.js?v=1.42.3').then(module=>module.mountCompass()),
  workshop:()=>import('./round23-workshop.js?v=1.42.3').then(module=>module.mountWorkshop()),
- heritage:()=>import('./round24-heritage.js?v=1.42.8').then(module=>module.mountHeritage()),
- community:()=>import('./round25-community.js?v=1.42.8').then(module=>module.mountCommunity()),
+ heritage:()=>import('./round24-heritage.js?v=1.42.3').then(module=>module.mountHeritage()),
+ community:()=>import('./round25-community.js?v=1.42.3').then(module=>module.mountCommunity()),
  offline:()=>import('./offline-reader-20.js?v=1.42.3').then(module=>module.mountOfflineReader()),
- guide:()=>import('./guide-ui-v1-42.js?v=1.42.3').then(module=>module.mountGuide())
+ guide:()=>import('./guide-ui-v1-42.js?v=1.42.3').then(module=>module.mountGuide()),
+ arrival:()=>import('./round26-arrival.js?v=1.42.10')
 };
 const key=document.body?.dataset.spaFeature;
 if(!Object.hasOwn(modules,key)){

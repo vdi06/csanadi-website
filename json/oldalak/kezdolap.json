@@ -11,7 +11,7 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-17T23:20:00Z",
+  "updatedAt": "2026-11-18T00:30:00Z",
   "lifecycle": {
     "status": "published",
     "revision": 10
@@ -44,21 +44,21 @@
             "href": "#/sport/sporteredmenyek"
           }
         ],
-        "imageId": "media:hero",
+        "imageId": "media:hero-kozosseg-2026",
         "logoSafeOnly": true,
         "intervalMs": 7500,
         "slides": [
           {
-            "id": "hero-v140-sport",
+            "id": "hero-safe-sport",
             "logoSafe": true,
-            "mediaId": "media:cs2026-001",
-            "mobileMediaId": "media:cs2026-001",
+            "mediaId": "media:hero-sport-2026",
+            "mobileMediaId": "media:hero-sport-2026",
             "eyebrow": "CSANÁDI · SPORT",
-            "title": "A pályán kezdődik a történet",
-            "subtitle": "Kitartás, mozgás és új célok a sport világában.",
-            "rightEyebrow": "EGYÜTT A SIKEREKÉRT",
-            "rightTitle": "Minden nap egy új lehetőség",
-            "rightSubtitle": "Tehetség, csapatszellem és inspiráló kihívások.",
+            "title": "A mozgásban közösség születik",
+            "subtitle": "Edzés, figyelem és fejlődés minden nap.",
+            "rightEyebrow": "CSANÁDI · SPORT",
+            "rightTitle": "A mozgásban közösség születik",
+            "rightSubtitle": "Edzés, figyelem és fejlődés minden nap.",
             "buttons": [
               {
                 "label": "Tovább",
@@ -67,16 +67,16 @@
             ]
           },
           {
-            "id": "hero-v140-tudas",
+            "id": "hero-safe-oktatas",
             "logoSafe": true,
-            "mediaId": "media:v140-tudas",
-            "mobileMediaId": "media:v140-tudas-mobile",
+            "mediaId": "media:hero-oktatas-2026",
+            "mobileMediaId": "media:hero-oktatas-2026",
             "eyebrow": "CSANÁDI · TUDÁS",
-            "title": "A tudás új lehetőségeket nyit",
-            "subtitle": "Kíváncsiság, felfedezés és közös tanulás.",
-            "rightEyebrow": "FEJLŐDÉS ÉS TUDÁS",
-            "rightTitle": "A jövőt ma építjük",
-            "rightSubtitle": "Biztos alapok a tanteremben és azon túl.",
+            "title": "A tanulás új ajtókat nyit",
+            "subtitle": "Közös gondolkodás, kíváncsiság és biztos alapok.",
+            "rightEyebrow": "CSANÁDI · TUDÁS",
+            "rightTitle": "A tanulás új ajtókat nyit",
+            "rightSubtitle": "Közös gondolkodás, kíváncsiság és biztos alapok.",
             "buttons": [
               {
                 "label": "Tovább",
@@ -85,16 +85,16 @@
             ]
           },
           {
-            "id": "hero-v140-kozosseg",
+            "id": "hero-safe-kozosseg",
             "logoSafe": true,
-            "mediaId": "media:v140-kozosseg",
-            "mobileMediaId": "media:v140-kozosseg-mobile",
+            "mediaId": "media:hero-kozosseg-2026",
+            "mobileMediaId": "media:hero-kozosseg-2026",
             "eyebrow": "CSANÁDI · KÖZÖSSÉG",
-            "title": "Együtt formáljuk a közösséget",
-            "subtitle": "A közösség ott kezdődik, ahol egymásra figyelünk.",
-            "rightEyebrow": "KÖZÖS ÉLMÉNYEK",
-            "rightTitle": "Ide jó tartozni",
-            "rightSubtitle": "Barátságok, találkozások, együtt megélt pillanatok.",
+            "title": "Ide jó megérkezni",
+            "subtitle": "Találkozások, élmények és közös történetek nap mint nap.",
+            "rightEyebrow": "CSANÁDI · KÖZÖSSÉG",
+            "rightTitle": "Ide jó megérkezni",
+            "rightSubtitle": "Találkozások, élmények és közös történetek nap mint nap.",
             "buttons": [
               {
                 "label": "Tovább",
@@ -103,14 +103,16 @@
             ]
           },
           {
-            "id": "hero-v1402-01",
-            "mediaId": "media:eletkep-01",
+            "id": "hero-safe-sport2",
+            "logoSafe": true,
+            "mediaId": "media:sport2",
+            "mobileMediaId": "media:sport2",
             "eyebrow": "CSANÁDI · SPORT",
-            "title": "Kosárlabda a mindennapokban",
-            "subtitle": "A csapat együtt találja meg a ritmust.",
-            "rightEyebrow": "MOZGÁS ÉS KITARTÁS",
-            "rightTitle": "A mozgás összekapcsol",
-            "rightSubtitle": "Sport, tehetség és együttműködés.",
+            "title": "Gyakorlásból lesz eredmény",
+            "subtitle": "Fókusz, ritmus és csapatmunka a pályán.",
+            "rightEyebrow": "CSANÁDI · SPORT",
+            "rightTitle": "Gyakorlásból lesz eredmény",
+            "rightSubtitle": "Fókusz, ritmus és csapatmunka a pályán.",
             "buttons": [
               {
                 "label": "Tovább",
@@ -119,14 +121,34 @@
             ]
           },
           {
-            "id": "hero-v1402-05",
-            "mediaId": "media:eletkep-05",
-            "eyebrow": "CSANÁDI · TUDÁS",
+            "id": "hero-safe-uszas",
+            "logoSafe": true,
+            "mediaId": "media:uszas",
+            "mobileMediaId": "media:uszas",
+            "eyebrow": "CSANÁDI · ÚSZÁS",
+            "title": "Erő és technika a vízben",
+            "subtitle": "Kitartó munka és fejlődés minden hosszon.",
+            "rightEyebrow": "CSANÁDI · ÚSZÁS",
+            "rightTitle": "Erő és technika a vízben",
+            "rightSubtitle": "Kitartó munka és fejlődés minden hosszon.",
+            "buttons": [
+              {
+                "label": "Tovább",
+                "href": "#/sport/sportagak"
+              }
+            ]
+          },
+          {
+            "id": "hero-safe-oktatas2",
+            "logoSafe": true,
+            "mediaId": "media:oktatas2",
+            "mobileMediaId": "media:oktatas2",
+            "eyebrow": "CSANÁDI · TANULÁS",
             "title": "Közösen könnyebb tanulni",
-            "subtitle": "A kíváncsiság új nézőpontokat nyit.",
-            "rightEyebrow": "FELFEDEZÉS ÉS FEJLŐDÉS",
-            "rightTitle": "Tanulj velünk tovább",
-            "rightSubtitle": "Tudás, figyelem és új lehetőségek.",
+            "subtitle": "Nyitott tér, figyelem és együttműködés.",
+            "rightEyebrow": "CSANÁDI · TANULÁS",
+            "rightTitle": "Közösen könnyebb tanulni",
+            "rightSubtitle": "Nyitott tér, figyelem és együttműködés.",
             "buttons": [
               {
                 "label": "Tovább",
@@ -135,412 +157,56 @@
             ]
           },
           {
-            "id": "hero-v1402-07",
-            "mediaId": "media:eletkep-07",
+            "id": "hero-safe-digitalis",
+            "logoSafe": true,
+            "mediaId": "media:digitalis",
+            "mobileMediaId": "media:digitalis",
+            "eyebrow": "CSANÁDI · DIGITÁLIS",
+            "title": "Modern tudás korszerű környezetben",
+            "subtitle": "Informatikai és digitális készségek a mindennapokhoz.",
+            "rightEyebrow": "CSANÁDI · DIGITÁLIS",
+            "rightTitle": "Modern tudás korszerű környezetben",
+            "rightSubtitle": "Informatikai és digitális készségek a mindennapokhoz.",
+            "buttons": [
+              {
+                "label": "Tovább",
+                "href": "#/oktatas/digitalis-kultura"
+              }
+            ]
+          },
+          {
+            "id": "hero-safe-kozosseg2",
+            "logoSafe": true,
+            "mediaId": "media:kozosseg2",
+            "mobileMediaId": "media:kozosseg2",
             "eyebrow": "CSANÁDI · KÖZÖSSÉG",
-            "title": "Találkozások és barátságok",
-            "subtitle": "A hétköznapokat az emberek teszik értékessé.",
-            "rightEyebrow": "EGYÜTT A MINDENNAPOKBAN",
-            "rightTitle": "Egy közösség, sok történet",
-            "rightSubtitle": "Barátságok, élmények és közös utak.",
+            "title": "Az iskola közös élmény is",
+            "subtitle": "Programok, kapcsolatok és jó hangulat mindenütt.",
+            "rightEyebrow": "CSANÁDI · KÖZÖSSÉG",
+            "rightTitle": "Az iskola közös élmény is",
+            "rightSubtitle": "Programok, kapcsolatok és jó hangulat mindenütt.",
             "buttons": [
               {
                 "label": "Tovább",
-                "href": "#/iskolank"
+                "href": "#/hirek-es-esemenyek"
               }
             ]
           },
           {
-            "id": "hero-v1402-03",
-            "mediaId": "media:eletkep-03",
-            "eyebrow": "CSANÁDI · SPORT",
-            "title": "Úszás és összpontosítás",
-            "subtitle": "Minden hossz egy újabb lépés.",
-            "rightEyebrow": "MOZGÁS ÉS KITARTÁS",
-            "rightTitle": "A mozgás összekapcsol",
-            "rightSubtitle": "Sport, tehetség és együttműködés.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/sport/sportagak"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-06",
-            "mediaId": "media:eletkep-06",
-            "eyebrow": "CSANÁDI · TUDÁS",
-            "title": "Kérdésekből születik a tudás",
-            "subtitle": "A tanulás beszélgetéssel is kezdődhet.",
-            "rightEyebrow": "FELFEDEZÉS ÉS FEJLŐDÉS",
-            "rightTitle": "Tanulj velünk tovább",
-            "rightSubtitle": "Tudás, figyelem és új lehetőségek.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/oktatas"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-10",
-            "mediaId": "media:eletkep-10",
-            "eyebrow": "CSANÁDI · KÖZÖSSÉG",
-            "title": "Mindennap együtt az iskolában",
-            "subtitle": "A közösség az érkezéssel kezdődik.",
-            "rightEyebrow": "EGYÜTT A MINDENNAPOKBAN",
-            "rightTitle": "Egy közösség, sok történet",
-            "rightSubtitle": "Barátságok, élmények és közös utak.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/iskolank"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-04",
-            "mediaId": "media:eletkep-04",
-            "eyebrow": "CSANÁDI · SPORT",
-            "title": "Röplabda és összjáték",
-            "subtitle": "A sikerhez minden mozdulat hozzáad.",
-            "rightEyebrow": "MOZGÁS ÉS KITARTÁS",
-            "rightTitle": "A mozgás összekapcsol",
-            "rightSubtitle": "Sport, tehetség és együttműködés.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/sport/sportagak"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-08",
-            "mediaId": "media:eletkep-08",
-            "eyebrow": "CSANÁDI · TUDÁS",
-            "title": "A közös munka eredménye",
-            "subtitle": "A megszerzett tudásra építeni lehet.",
-            "rightEyebrow": "FELFEDEZÉS ÉS FEJLŐDÉS",
-            "rightTitle": "Tanulj velünk tovább",
-            "rightSubtitle": "Tudás, figyelem és új lehetőségek.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/oktatas"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-13",
-            "mediaId": "media:cs2026-001",
-            "eyebrow": "CSANÁDI · KÖZÖSSÉG",
-            "title": "A sport otthona",
-            "subtitle": "Egy csarnok, ahol a mozgás közös élmény.",
-            "rightEyebrow": "EGYÜTT A MINDENNAPOKBAN",
-            "rightTitle": "Egy közösség, sok történet",
-            "rightSubtitle": "Barátságok, élmények és közös utak.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/iskolank"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-12",
-            "mediaId": "media:eletkep-02",
-            "eyebrow": "CSANÁDI · SPORT",
-            "title": "Együtt a célban",
-            "subtitle": "A kitartás öröme minden befutónál közös.",
-            "rightEyebrow": "MOZGÁS ÉS KITARTÁS",
-            "rightTitle": "A mozgás összekapcsol",
-            "rightSubtitle": "Sport, tehetség és együttműködés.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/sport/sportagak"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-15",
+            "id": "hero-safe-bejarat",
             "logoSafe": true,
-            "mediaId": "media:cs2026-013",
-            "eyebrow": "CSANÁDI · TUDÁS",
-            "title": "A könyvek új világokat nyitnak",
-            "subtitle": "Egy jó kérdés új irányt mutat.",
-            "rightEyebrow": "FELFEDEZÉS ÉS FEJLŐDÉS",
-            "rightTitle": "Tanulj velünk tovább",
-            "rightSubtitle": "Tudás, figyelem és új lehetőségek.",
+            "mediaId": "media:bejarat",
+            "mobileMediaId": "media:bejarat",
+            "eyebrow": "CSANÁDI · ÉRKEZÉS",
+            "title": "Innen indul minden nap",
+            "subtitle": "Barátságos iskola, ahová jó belépni.",
+            "rightEyebrow": "CSANÁDI · ÉRKEZÉS",
+            "rightTitle": "Innen indul minden nap",
+            "rightSubtitle": "Barátságos iskola, ahová jó belépni.",
             "buttons": [
               {
                 "label": "Tovább",
-                "href": "#/oktatas"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-14",
-            "mediaId": "media:cs2026-016",
-            "eyebrow": "CSANÁDI · KÖZÖSSÉG",
-            "title": "Iskolánk mindennapi terei",
-            "subtitle": "A közös helyszínek összekötnek.",
-            "rightEyebrow": "EGYÜTT A MINDENNAPOKBAN",
-            "rightTitle": "Egy közösség, sok történet",
-            "rightSubtitle": "Barátságok, élmények és közös utak.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/iskolank"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-23",
-            "mediaId": "media:cs2026-007",
-            "eyebrow": "CSANÁDI · SPORT",
-            "title": "Magasabbra, lépésről lépésre",
-            "subtitle": "A kihívás fejleszti az önbizalmat.",
-            "rightEyebrow": "MOZGÁS ÉS KITARTÁS",
-            "rightTitle": "A mozgás összekapcsol",
-            "rightSubtitle": "Sport, tehetség és együttműködés.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/sport/sportagak"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-16",
-            "logoSafe": true,
-            "mediaId": "media:cs2026-014",
-            "eyebrow": "CSANÁDI · TUDÁS",
-            "title": "Digitális tudás a gyakorlatban",
-            "subtitle": "A számítógépes teremben is együtt fejlődünk.",
-            "rightEyebrow": "FELFEDEZÉS ÉS FEJLŐDÉS",
-            "rightTitle": "Tanulj velünk tovább",
-            "rightSubtitle": "Tudás, figyelem és új lehetőségek.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/oktatas"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-19",
-            "mediaId": "media:cs1403-open-gate",
-            "eyebrow": "CSANÁDI · KÖZÖSSÉG",
-            "title": "Nyitott kapuk, közös utak",
-            "subtitle": "A közös történetek az első lépéssel kezdődnek.",
-            "rightEyebrow": "EGYÜTT A MINDENNAPOKBAN",
-            "rightTitle": "Egy közösség, sok történet",
-            "rightSubtitle": "Barátságok, élmények és közös utak.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/iskolank"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-24",
-            "logoSafe": true,
-            "mediaId": "media:cs2026-005",
-            "eyebrow": "CSANÁDI · SPORT",
-            "title": "Újabb célok a futópályán",
-            "subtitle": "Felfedezés, mozgás és friss élmények.",
-            "rightEyebrow": "MOZGÁS ÉS KITARTÁS",
-            "rightTitle": "A mozgás összekapcsol",
-            "rightSubtitle": "Sport, tehetség és együttműködés.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/sport/sportagak"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-25",
-            "logoSafe": true,
-            "mediaId": "media:cs2026-015",
-            "eyebrow": "CSANÁDI · TUDÁS",
-            "title": "Kérdésekből születnek a felfedezések",
-            "subtitle": "Kísérletek és megfigyelések a tanulásban.",
-            "rightEyebrow": "FELFEDEZÉS ÉS FEJLŐDÉS",
-            "rightTitle": "Tanulj velünk tovább",
-            "rightSubtitle": "Tudás, figyelem és új lehetőségek.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/oktatas"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-34",
-            "logoSafe": true,
-            "mediaId": "media:cs2026-008",
-            "eyebrow": "CSANÁDI · KÖZÖSSÉG",
-            "title": "A közös játék helyei",
-            "subtitle": "A találkozásoknak mindig van helye.",
-            "rightEyebrow": "EGYÜTT A MINDENNAPOKBAN",
-            "rightTitle": "Egy közösség, sok történet",
-            "rightSubtitle": "Barátságok, élmények és közös utak.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/iskolank"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-31",
-            "logoSafe": true,
-            "mediaId": "media:cs2026-009",
-            "eyebrow": "CSANÁDI · SPORT",
-            "title": "Úszásra hív a medence",
-            "subtitle": "Gyakorlásból születik a magabiztosság.",
-            "rightEyebrow": "MOZGÁS ÉS KITARTÁS",
-            "rightTitle": "A mozgás összekapcsol",
-            "rightSubtitle": "Sport, tehetség és együttműködés.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/sport/sportagak"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-26",
-            "mediaId": "media:cs2026-004",
-            "eyebrow": "CSANÁDI · TUDÁS",
-            "title": "Adatok és döntések a sportban",
-            "subtitle": "A számok a pályán is történetet mesélnek.",
-            "rightEyebrow": "FELFEDEZÉS ÉS FEJLŐDÉS",
-            "rightTitle": "Tanulj velünk tovább",
-            "rightSubtitle": "Tudás, figyelem és új lehetőségek.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/oktatas"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-37",
-            "logoSafe": true,
-            "mediaId": "media:cs2026-011",
-            "eyebrow": "CSANÁDI · KÖZÖSSÉG",
-            "title": "Együtt a röplabdapályán",
-            "subtitle": "A csapatélmény mindenkinek ad valamit.",
-            "rightEyebrow": "EGYÜTT A MINDENNAPOKBAN",
-            "rightTitle": "Egy közösség, sok történet",
-            "rightSubtitle": "Barátságok, élmények és közös utak.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/iskolank"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-38",
-            "mediaId": "media:eletkep-09",
-            "eyebrow": "CSANÁDI · SPORT",
-            "title": "Labdarúgás lendületben",
-            "subtitle": "Egyetlen passz is közös gondolkodás.",
-            "rightEyebrow": "MOZGÁS ÉS KITARTÁS",
-            "rightTitle": "A mozgás összekapcsol",
-            "rightSubtitle": "Sport, tehetség és együttműködés.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/sport/sportagak"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-27",
-            "mediaId": "media:cs2026-012",
-            "eyebrow": "CSANÁDI · TUDÁS",
-            "title": "A játékban is fejlődünk",
-            "subtitle": "Figyelem, ritmus és pontosság az asztal mellett.",
-            "rightEyebrow": "FELFEDEZÉS ÉS FEJLŐDÉS",
-            "rightTitle": "Tanulj velünk tovább",
-            "rightSubtitle": "Tudás, figyelem és új lehetőségek.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/oktatas"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-44",
-            "logoSafe": true,
-            "mediaId": "media:cs2026-003",
-            "eyebrow": "CSANÁDI · KÖZÖSSÉG",
-            "title": "A közös sport új nézőpontból",
-            "subtitle": "A kosárlabda a találkozások egyik helye.",
-            "rightEyebrow": "EGYÜTT A MINDENNAPOKBAN",
-            "rightTitle": "Egy közösség, sok történet",
-            "rightSubtitle": "Barátságok, élmények és közös utak.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/iskolank"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-42",
-            "logoSafe": true,
-            "mediaId": "media:cs2026-006",
-            "eyebrow": "CSANÁDI · SPORT",
-            "title": "Újabb kör, újabb cél",
-            "subtitle": "A fejlődés minden nap folytatódik.",
-            "rightEyebrow": "MOZGÁS ÉS KITARTÁS",
-            "rightTitle": "A mozgás összekapcsol",
-            "rightSubtitle": "Sport, tehetség és együttműködés.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/sport/sportagak"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-36",
-            "mediaId": "media:cs2026-002",
-            "eyebrow": "CSANÁDI · SPORT",
-            "title": "A labdával új lehetőségek nyílnak",
-            "subtitle": "A dobás előtt minden mozdulat számít.",
-            "rightEyebrow": "FELFEDEZÉS ÉS FEJLŐDÉS",
-            "rightTitle": "Tanulj velünk tovább",
-            "rightSubtitle": "Tudás, figyelem és új lehetőségek.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/oktatas"
-              }
-            ]
-          },
-          {
-            "id": "hero-v1402-48",
-            "logoSafe": true,
-            "mediaId": "media:cs2026-010",
-            "eyebrow": "CSANÁDI · SPORT",
-            "title": "A vízben is lendületben",
-            "subtitle": "Úszósávok és új kihívások várnak.",
-            "rightEyebrow": "EGYÜTT A MINDENNAPOKBAN",
-            "rightTitle": "Egy közösség, sok történet",
-            "rightSubtitle": "Barátságok, élmények és közös utak.",
-            "buttons": [
-              {
-                "label": "Tovább",
-                "href": "#/iskolank"
+                "href": "#/kapcsolat"
               }
             ]
           }

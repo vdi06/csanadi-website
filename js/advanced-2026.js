@@ -44,15 +44,11 @@ export function openEntrancePortal({force=false}={}){
  const glow=e('div','gate26-glow');
  const content=e('div','gate26-content');
  const title=e('h2','','Lépjen be!');title.id='gate26-title';
- const enter=btn('','gate26-enter gate26-logo-key',()=>open());
- const keySvg=document.createElementNS('http://www.w3.org/2000/svg','svg');keySvg.setAttribute('class','gate26-key-art');keySvg.setAttribute('viewBox','0 0 340 155');keySvg.setAttribute('aria-hidden','true');
- keySvg.innerHTML='<defs><linearGradient id="gate26-key-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0bb"/><stop offset=".43" stop-color="#e8b956"/><stop offset="1" stop-color="#906025"/></linearGradient></defs><path d="M78 20a57 57 0 1 0 0 114 57 57 0 0 0 49-28h94l17 16h18v-17h20l18 18h24v-41H127A57 57 0 0 0 78 20Zm0 18a39 39 0 1 1 0 78 39 39 0 0 1 0-78Z" fill="url(#gate26-key-gold)" stroke="#533a19" stroke-width="3" stroke-linejoin="round"/><path d="M137 90h157" stroke="#fff2bf" stroke-width="5" opacity=".7"/>';
- const crest=e('img','gate26-crest-image');crest.src='assets/media/logo/csanadi-cimer-512.webp';crest.alt='';crest.width=76;crest.height=76;enter.append(keySvg,crest);
+ const enter=btn('','gate26-enter gate26-door-hitbox',()=>open());
  enter.setAttribute('aria-label','Nyisd meg a Csanádi Sportiskola kapuját');enter.title='Kapunyitás';
  const skipBar=e('div','gate26-skip-bar');const skip=btn('⏭','gate26-skip',()=>finish());skip.setAttribute('aria-label','Belépőanimáció kihagyása');skip.title='Belépőanimáció kihagyása';
  const bottomCopy=e('div','gate26-bottom-copy');add(bottomCopy,e('span','gate26-eyebrow','CSANÁDI ÁRPÁD SPORTISKOLA, ÁLTALÁNOS ISKOLA ÉS GIMNÁZIUM'),title);skipBar.append(bottomCopy,skip);
- add(content,enter);
- add(layer,scenery,shut,doorStage,glow,content,skipBar);document.body.append(layer);clearEntrancePrelude();
+ add(layer,scenery,shut,doorStage,glow,content,enter,skipBar);document.body.append(layer);clearEntrancePrelude();
  const oldFocus=document.activeElement;let done=false,opening=false,finishTimer;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const previousOverflow=document.body.style.overflow;
@@ -64,6 +60,7 @@ export function openEntrancePortal({force=false}={}){
   opening=true;
   enter.disabled=true;
   enter.setAttribute('aria-label','A kapu nyílik');
+  enter.classList.add('is-opening');
   if(reduced){finish();return;}
   const duration=window.matchMedia('(max-width:767px)').matches?3800:5100;
   layer.style.setProperty('--gate26-duration',duration+'ms');

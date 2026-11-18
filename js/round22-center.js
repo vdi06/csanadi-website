@@ -2,7 +2,7 @@
 const $=id=>document.getElementById(id);
 const make=(tag,cls='',value)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(value!==undefined)e.textContent=String(value);return e;};
 const empty=e=>e.replaceChildren();
-const routeUrl=route=>{const hash=/^#\/[a-z0-9/-]+$/i.test(route||'')?route:'#/';return location.pathname.endsWith('/iranytu.html')?'index.html'+hash:hash;};
+const routeUrl=route=>{const hash=/^#\/[a-z0-9/-]+$/i.test(route||'')?route:'#/';return location.pathname.endsWith('/#/iskolank/iskolai-iranytu')?'index.html'+hash:hash;};
 const routeLink=(route,label='Részletek megnyitása →')=>{const a=make('a','',label);a.href=routeUrl(route);return a;};
 const normalize=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('hu-HU');
 const dayText=s=>{const d=new Date(s);return Number.isFinite(d.getTime())?new Intl.DateTimeFormat('hu-HU',{dateStyle:'medium',timeZone:'Europe/Budapest'}).format(d):'Dátum ellenőrzendő';};
@@ -121,4 +121,4 @@ async function main(){const applyTheme=startTheme();
  }catch(error){console.error('22-es iránytű:',error);$('r22-status').textContent='Nem sikerült betölteni az iránytű központi adatait: '+error.message;}
 }
 export function mountCompass(){return main();}
-if(location.pathname.endsWith('/iranytu.html'))mountCompass();
+if(location.pathname.endsWith('/#/iskolank/iskolai-iranytu'))mountCompass();

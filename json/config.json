@@ -176,7 +176,7 @@
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r-v1.42.8",
+    "cacheVersion": "csanadi-r-v1.42.10",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,
@@ -194,31 +194,131 @@
       "enabled": false,
       "autoplay": false,
       "profiles": {
-        "#/iskolank": { "scene": "dribble", "label": "ISKOLÁNK", "caption": "Sport és közösség, egy ritmusban" },
-        "#/iskolank/tortenet": { "scene": "relay", "label": "ISKOLATÖRTÉNET", "caption": "A hagyomány stafétája" },
-        "#/iskolank/tantestulet": { "scene": "whistle", "label": "TANTESTÜLET", "caption": "Együtt lendületben" },
-        "#/iskolank/buszkesegeink": { "scene": "medal", "label": "BÜSZKESÉGEINK", "caption": "Egy kis győzelmi ugrás" },
-        "#/iskolank/oko-iskola": { "scene": "eco", "label": "ÖKO-ISKOLA", "caption": "Zöld akadálypálya" },
-        "#/oktatas": { "scene": "bookjump", "label": "OKTATÁS", "caption": "Egy ugrásnyi tudás" },
-        "#/oktatas/konyvtar": { "scene": "bookjump", "label": "KÖNYVTÁR", "caption": "Könyv fölött, cél felé" },
-        "#/oktatas/digitalis-kultura": { "scene": "digital", "label": "DIGITÁLIS KULTÚRA", "caption": "Pixelakadályok között" },
-        "#/tanulastamogatas": { "scene": "bookjump", "label": "TANULÁSTÁMOGATÁS", "caption": "Egy könyvvel is célba érünk" },
-        "#/oktatas/felveteli": { "scene": "sprint", "label": "FELVÉTELI", "caption": "Rajt a Csanádi felé!" },
-        "#/oktatas/vizsgak": { "scene": "hurdle", "label": "VIZSGÁK", "caption": "Akadály? Átugorjuk!" },
-        "#/oktatas/tanevek": { "scene": "calendar", "label": "TANÉVEK", "caption": "Rajt az új tanévhez" },
-        "#/sport": { "scene": "goal", "label": "SPORTÉLET", "caption": "Lendületben a labda" },
-        "#/sport/sportagak": { "scene": "dribble", "label": "SPORTÁGAK", "caption": "Egy labda, sok sportág" },
-        "#/sport/sporteredmenyek": { "scene": "medal", "label": "SPORTEREDMÉNYEK", "caption": "Egy kis győzelmi tánc" },
-        "#/sport/sportgaleriak": { "scene": "goal", "label": "KÉPGALÉRIA", "caption": "Mozgásból pillanatkép" },
-        "#/hirek-es-esemenyek": { "scene": "news", "label": "HÍREK ÉS ESEMÉNYEK", "caption": "Futár hozza a híreket" },
-        "#/hirek-es-esemenyek/esemenynaptar": { "scene": "calendar", "label": "ESEMÉNYNAPTÁR", "caption": "Futás a következő programra" },
-        "#/hirek-es-esemenyek/hirek/sporthirek": { "scene": "goal", "label": "SPORTHÍREK", "caption": "Itt a friss sporthír!" },
-        "#/informaciok": { "scene": "relay", "label": "INFORMÁCIÓK", "caption": "Hasznos infók stafétában" },
-        "#/informaciok/dokumentumtar": { "scene": "document", "label": "DOKUMENTUMTÁR", "caption": "A papírok is célba érnek" },
-        "#/informaciok/mindennapi-tudnivalok": { "scene": "whistle", "label": "MINDENNAPI TUDNIVALÓK", "caption": "Indul a nap!" },
-        "#/megkozelites-es-erkezes": { "scene": "relay", "label": "MEGKÖZELÍTÉS", "caption": "Együtt célba érünk!" },
-        "#/informaciok/kozossegi-szolgalat": { "scene": "relay", "label": "KÖZÖSSÉGI SZOLGÁLAT", "caption": "Segítség kézről kézre" },
-        "#/kapcsolat": { "scene": "contact", "label": "KAPCSOLAT", "caption": "Egy üzenet célba ér" }
+        "#/iskolank": {
+          "scene": "dribble",
+          "label": "ISKOLÁNK",
+          "caption": "Sport és közösség, egy ritmusban"
+        },
+        "#/iskolank/tortenet": {
+          "scene": "relay",
+          "label": "ISKOLATÖRTÉNET",
+          "caption": "A hagyomány stafétája"
+        },
+        "#/iskolank/tantestulet": {
+          "scene": "whistle",
+          "label": "TANTESTÜLET",
+          "caption": "Együtt lendületben"
+        },
+        "#/iskolank/buszkesegeink": {
+          "scene": "medal",
+          "label": "BÜSZKESÉGEINK",
+          "caption": "Egy kis győzelmi ugrás"
+        },
+        "#/iskolank/oko-iskola": {
+          "scene": "eco",
+          "label": "ÖKO-ISKOLA",
+          "caption": "Zöld akadálypálya"
+        },
+        "#/oktatas": {
+          "scene": "bookjump",
+          "label": "OKTATÁS",
+          "caption": "Egy ugrásnyi tudás"
+        },
+        "#/oktatas/konyvtar": {
+          "scene": "bookjump",
+          "label": "KÖNYVTÁR",
+          "caption": "Könyv fölött, cél felé"
+        },
+        "#/oktatas/digitalis-kultura": {
+          "scene": "digital",
+          "label": "DIGITÁLIS KULTÚRA",
+          "caption": "Pixelakadályok között"
+        },
+        "#/tanulastamogatas": {
+          "scene": "bookjump",
+          "label": "TANULÁSTÁMOGATÁS",
+          "caption": "Egy könyvvel is célba érünk"
+        },
+        "#/oktatas/felveteli": {
+          "scene": "sprint",
+          "label": "FELVÉTELI",
+          "caption": "Rajt a Csanádi felé!"
+        },
+        "#/oktatas/vizsgak": {
+          "scene": "hurdle",
+          "label": "VIZSGÁK",
+          "caption": "Akadály? Átugorjuk!"
+        },
+        "#/oktatas/tanevek": {
+          "scene": "calendar",
+          "label": "TANÉVEK",
+          "caption": "Rajt az új tanévhez"
+        },
+        "#/sport": {
+          "scene": "goal",
+          "label": "SPORTÉLET",
+          "caption": "Lendületben a labda"
+        },
+        "#/sport/sportagak": {
+          "scene": "dribble",
+          "label": "SPORTÁGAK",
+          "caption": "Egy labda, sok sportág"
+        },
+        "#/sport/sporteredmenyek": {
+          "scene": "medal",
+          "label": "SPORTEREDMÉNYEK",
+          "caption": "Egy kis győzelmi tánc"
+        },
+        "#/sport/sportgaleriak": {
+          "scene": "goal",
+          "label": "KÉPGALÉRIA",
+          "caption": "Mozgásból pillanatkép"
+        },
+        "#/hirek-es-esemenyek": {
+          "scene": "news",
+          "label": "HÍREK ÉS ESEMÉNYEK",
+          "caption": "Futár hozza a híreket"
+        },
+        "#/hirek-es-esemenyek/esemenynaptar": {
+          "scene": "calendar",
+          "label": "ESEMÉNYNAPTÁR",
+          "caption": "Futás a következő programra"
+        },
+        "#/hirek-es-esemenyek/hirek/sporthirek": {
+          "scene": "goal",
+          "label": "SPORTHÍREK",
+          "caption": "Itt a friss sporthír!"
+        },
+        "#/informaciok": {
+          "scene": "relay",
+          "label": "INFORMÁCIÓK",
+          "caption": "Hasznos infók stafétában"
+        },
+        "#/informaciok/dokumentumtar": {
+          "scene": "document",
+          "label": "DOKUMENTUMTÁR",
+          "caption": "A papírok is célba érnek"
+        },
+        "#/informaciok/mindennapi-tudnivalok": {
+          "scene": "whistle",
+          "label": "MINDENNAPI TUDNIVALÓK",
+          "caption": "Indul a nap!"
+        },
+        "#/megkozelites-es-erkezes": {
+          "scene": "relay",
+          "label": "MEGKÖZELÍTÉS",
+          "caption": "Együtt célba érünk!"
+        },
+        "#/informaciok/kozossegi-szolgalat": {
+          "scene": "relay",
+          "label": "KÖZÖSSÉGI SZOLGÁLAT",
+          "caption": "Segítség kézről kézre"
+        },
+        "#/kapcsolat": {
+          "scene": "contact",
+          "label": "KAPCSOLAT",
+          "caption": "Egy üzenet célba ér"
+        }
       }
     },
     "round26": {
@@ -315,7 +415,7 @@
       "outerRingArcSpacingDegrees": 34,
       "mobileSubmenuMaxWidthPx": 760,
       "menuFocusDelayMs": 90,
-    "typeAheadResetMs": 800
+      "typeAheadResetMs": 800
     },
     "documents": {
       "maxSavedFilters": 20,
@@ -455,7 +555,7 @@
   "modules2026": {
     "gate": {
       "enabled": true,
-      "showOncePerSession": true,
+      "showOncePerSession": false,
       "reducedMotionSkip": true
     },
     "clock": {

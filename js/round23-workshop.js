@@ -9,7 +9,7 @@ const fetchJSON=async path=>{const response=await fetch(path,{cache:'no-store'})
 const storagePrefix='csanadi-r23-';
 const read=(key,fallback)=>{try{const item=localStorage.getItem(storagePrefix+key);return item===null?fallback:JSON.parse(item);}catch{return fallback;}};
 const save=(key,value)=>{try{localStorage.setItem(storagePrefix+key,JSON.stringify(value));return true;}catch{return false;}};
-const routeLink=(route,label='Kapcsolódó oldal →')=>{const a=node('a','',label);const hash=/^(?:#\/)[a-z0-9/-]+$/i.test(route||'')?route:'#/';a.href=location.pathname.endsWith('/iskolai-muhely.html')?'index.html'+hash:hash;return a;};
+const routeLink=(route,label='Kapcsolódó oldal →')=>{const a=node('a','',label);const hash=/^(?:#\/)[a-z0-9/-]+$/i.test(route||'')?route:'#/';a.href=location.pathname.endsWith('/#/iskolank/iskolai-muhely')?'index.html'+hash:hash;return a;};
 const trustedLink=(url,label='Forrás megnyitása ↗')=>{const a=node('a','',label);if(typeof url==='string'&&/^https:\/\/[a-z0-9.-]+(?:\/[^\s]*)?$/i.test(url)){a.href=url;a.target='_blank';a.rel='noopener noreferrer';}else{a.textContent='A forrás címe nem ellenőrizhető';a.removeAttribute('href');}return a;};
 const card=(title,description,badge)=>{const e=node('article','r23-card'),body=node('div','r23-card-content');if(badge)body.append(node('span','r23-chip',badge));body.append(node('h3','',title),node('p','',description));e.append(body);return{e,body};};
 const blank=(target,message)=>{clear(target);target.append(node('p','r23-empty',message));};
@@ -52,4 +52,4 @@ function exports(){const select=$('r23-export-type'),format=$('r23-export-format
 
 async function init(){theme();try{config=await fetchJSON('json/config.json');const source=config.runtime?.round23?.dataPath;if(typeof source!=='string'||!/^adatok\/[a-z0-9-]+\.json$/.test(source))throw Error('A 23. kör adatútvonala hiányzik a központi konfigurációból.');const [a,b,c]=await Promise.all([fetchJSON('json/'+source),fetchJSON('json/adatok/iskolatorteneti-idovonal.json'),fetchJSON('json/adatok/dokumentumok.json')]);if(a.release!==23||!Array.isArray(a.facilities)||!Array.isArray(a.bilingualPages)||!Array.isArray(b.events)||!Array.isArray(c.documents))throw Error('Érvénytelen központi adatszerkezet.');data=a;history=b;docs=c;facilities();volunteer();achievements();schoolHistory();projects();enrollment();archive();learning();translation();exports();$('r23-status').textContent='Mind a tíz műhelyeszköz készen áll. A helyi tervek, nyelvválasztás és pipák nem hagyják el a böngészőt.';}catch(error){console.error('R23 műhely:',error);$('r23-status').textContent='Nem sikerült betölteni a műhelyt: '+error.message;}}
 export function mountWorkshop(){return init();}
-if(location.pathname.endsWith('/iskolai-muhely.html'))mountWorkshop();
+if(location.pathname.endsWith('/#/iskolank/iskolai-muhely'))mountWorkshop();

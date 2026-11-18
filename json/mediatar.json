@@ -8307,6 +8307,492 @@
         "holder": "Csanádi Sportiskola – látványterv",
         "license": "Generált illusztráció, intézményi jóváhagyás szükséges."
       }
+    },
+    {
+      "id": "media:sport2",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/sport2-1600.webp",
+        "mimeType": "image/webp",
+        "width": 1672,
+        "height": 941,
+        "sizeBytes": 210410,
+        "sha256": "b8eda576c2647324550964eabf5a3ad4181e7110f2bdc9ad8016fab13fa4c8fb"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/sport2-1600.webp",
+          "mimeType": "image/webp",
+          "width": 1672,
+          "height": 941,
+          "sizeBytes": 210410,
+          "sha256": "b8eda576c2647324550964eabf5a3ad4181e7110f2bdc9ad8016fab13fa4c8fb"
+        },
+        {
+          "path": "assets/media/web/responsive/sport2-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 16140,
+          "sha256": "86f72e06afeaf355197c51e4e9e790969e945410cfd569982dff0eca2dfc87fb"
+        },
+        {
+          "path": "assets/media/web/responsive/sport2-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 48994,
+          "sha256": "c2c4707214d720a25582e98c761da9ebce673056f298611c8244a77c56229e83"
+        },
+        {
+          "path": "assets/media/web/responsive/sport2-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 86564,
+          "sha256": "60bb161dcd4738fca33b13ea2088f33624a212bb5cdab3dcfa7eda50350acbe4"
+        }
+      ],
+      "alt": "Második sportos kezdőoldali főkép, középen szabad címerhellyel.",
+      "caption": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "decorative": false,
+      "rights": {
+        "clearance": "custom-generated",
+        "holder": "Csanádi Sportiskola project",
+        "license": "Projektcélra készített egyedi képi változat."
+      }
+    },
+    {
+      "id": "media:uszas",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/uszas-1600.webp",
+        "mimeType": "image/webp",
+        "width": 1672,
+        "height": 941,
+        "sizeBytes": 272586,
+        "sha256": "17704317fb859ce1259609a8334ca0db307437ec9c1f4528f0996466374c0120"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/uszas-1600.webp",
+          "mimeType": "image/webp",
+          "width": 1672,
+          "height": 941,
+          "sizeBytes": 272586,
+          "sha256": "17704317fb859ce1259609a8334ca0db307437ec9c1f4528f0996466374c0120"
+        },
+        {
+          "path": "assets/media/web/responsive/uszas-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 21644,
+          "sha256": "335b968572ea5910234249f1e7cdec5c23adf813813642a84f0feca0754a8ff1"
+        },
+        {
+          "path": "assets/media/web/responsive/uszas-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 64760,
+          "sha256": "009a93dfaae553f95d2742403171a734e13e720cce532661c9f623bff622f86a"
+        },
+        {
+          "path": "assets/media/web/responsive/uszas-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 119560,
+          "sha256": "b6fa2aaa607261e2339deb5c264df097946cbabafe135b2d5a39ed9dcd71f49a"
+        }
+      ],
+      "alt": "Úszóedzéses kezdőoldali főkép, középen szabad címerhellyel.",
+      "caption": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "decorative": false,
+      "rights": {
+        "clearance": "custom-generated",
+        "holder": "Csanádi Sportiskola project",
+        "license": "Projektcélra készített egyedi képi változat."
+      }
+    },
+    {
+      "id": "media:oktatas2",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/oktatas2-1600.webp",
+        "mimeType": "image/webp",
+        "width": 1672,
+        "height": 941,
+        "sizeBytes": 358174,
+        "sha256": "c4dea59b19bb11394f8b3a169876504da182587e1a3bce2e2e456a1a6fdca5c2"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/oktatas2-1600.webp",
+          "mimeType": "image/webp",
+          "width": 1672,
+          "height": 941,
+          "sizeBytes": 358174,
+          "sha256": "c4dea59b19bb11394f8b3a169876504da182587e1a3bce2e2e456a1a6fdca5c2"
+        },
+        {
+          "path": "assets/media/web/responsive/oktatas2-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 22574,
+          "sha256": "7076aed3bf234a8702812e0e3cd0ac6a2510aa4daca2bc0f15b1de674325a641"
+        },
+        {
+          "path": "assets/media/web/responsive/oktatas2-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 73118,
+          "sha256": "cb7c7cb6d6ed4362000a7226e9eddaf7d260774ea1f83adf2cd03db540fc8058"
+        },
+        {
+          "path": "assets/media/web/responsive/oktatas2-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 141836,
+          "sha256": "c09160f3b5091518283899b0b795478199f9a7e86a83c96fbf71c8daf03dd9ce"
+        }
+      ],
+      "alt": "Második tanulási kezdőoldali főkép, középen szabad címerhellyel.",
+      "caption": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "decorative": false,
+      "rights": {
+        "clearance": "custom-generated",
+        "holder": "Csanádi Sportiskola project",
+        "license": "Projektcélra készített egyedi képi változat."
+      }
+    },
+    {
+      "id": "media:digitalis",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/digitalis-1600.webp",
+        "mimeType": "image/webp",
+        "width": 1672,
+        "height": 941,
+        "sizeBytes": 234838,
+        "sha256": "73d687a15fd2345aae18e6b06d915683df054e8f20a246bf5418b3f2ce9967c9"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/digitalis-1600.webp",
+          "mimeType": "image/webp",
+          "width": 1672,
+          "height": 941,
+          "sizeBytes": 234838,
+          "sha256": "73d687a15fd2345aae18e6b06d915683df054e8f20a246bf5418b3f2ce9967c9"
+        },
+        {
+          "path": "assets/media/web/responsive/digitalis-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 15200,
+          "sha256": "8d70f2cef88d305f014b04afa63d0620bb2aae7e6c48e2cd15c86feccbb9ae3d"
+        },
+        {
+          "path": "assets/media/web/responsive/digitalis-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 44502,
+          "sha256": "00ed34aa967b8c1bfbfcd81a7f47994cf6b18e5800cc2c643c2774f8463e8c94"
+        },
+        {
+          "path": "assets/media/web/responsive/digitalis-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 86526,
+          "sha256": "7dc3c01abcfce8bfc9f7b857c17ed65287ce3295997da3a0f9fbf3892a83fca5"
+        }
+      ],
+      "alt": "Digitális tantermes kezdőoldali főkép, középen szabad címerhellyel.",
+      "caption": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "decorative": false,
+      "rights": {
+        "clearance": "custom-generated",
+        "holder": "Csanádi Sportiskola project",
+        "license": "Projektcélra készített egyedi képi változat."
+      }
+    },
+    {
+      "id": "media:kozosseg2",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/kozosseg2-1600.webp",
+        "mimeType": "image/webp",
+        "width": 1672,
+        "height": 941,
+        "sizeBytes": 273588,
+        "sha256": "97f7c87b53127875f69220add4aeef1ef42c1cbaf314f82a9db79d400a936ea1"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/kozosseg2-1600.webp",
+          "mimeType": "image/webp",
+          "width": 1672,
+          "height": 941,
+          "sizeBytes": 273588,
+          "sha256": "97f7c87b53127875f69220add4aeef1ef42c1cbaf314f82a9db79d400a936ea1"
+        },
+        {
+          "path": "assets/media/web/responsive/kozosseg2-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 22962,
+          "sha256": "506ab3a3c26a9ac4c787f83ad44eb076b8ec6426e0aa8ac47fa550e59284b410"
+        },
+        {
+          "path": "assets/media/web/responsive/kozosseg2-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 69694,
+          "sha256": "6b09137f3cf122e591b82a2023d422a8c656e4b3bc3487e557bf7e8c41f086fb"
+        },
+        {
+          "path": "assets/media/web/responsive/kozosseg2-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 121126,
+          "sha256": "befe08eb538cf5807d0e50e44cb843d2c0004a783e6f1f408b4f30d2566c7f49"
+        }
+      ],
+      "alt": "Második közösségi kezdőoldali főkép, középen szabad címerhellyel.",
+      "caption": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "decorative": false,
+      "rights": {
+        "clearance": "custom-generated",
+        "holder": "Csanádi Sportiskola project",
+        "license": "Projektcélra készített egyedi képi változat."
+      }
+    },
+    {
+      "id": "media:bejarat",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/bejarat-1600.webp",
+        "mimeType": "image/webp",
+        "width": 1672,
+        "height": 941,
+        "sizeBytes": 248306,
+        "sha256": "4571a63887aae78771a19d499b125e2e25058c0d271d586743c886f436d127e9"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/bejarat-1600.webp",
+          "mimeType": "image/webp",
+          "width": 1672,
+          "height": 941,
+          "sizeBytes": 248306,
+          "sha256": "4571a63887aae78771a19d499b125e2e25058c0d271d586743c886f436d127e9"
+        },
+        {
+          "path": "assets/media/web/responsive/bejarat-1600-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 22092,
+          "sha256": "6590e54e205323bf0be574e9f40766d24c6eb17d9dbe4e85432c3d6b711f3d7f"
+        },
+        {
+          "path": "assets/media/web/responsive/bejarat-1600-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 64132,
+          "sha256": "cc4ff8962c25dea17eead04d69d2a01fa22674744515f08f6d505f0e5cee5d69"
+        },
+        {
+          "path": "assets/media/web/responsive/bejarat-1600-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 113506,
+          "sha256": "34e47ec388d58e50bbdcfcb2b0c5f6816ad86df0a5397c87883a67eb3f0b5169"
+        }
+      ],
+      "alt": "Bejárati kezdőoldali főkép, középen szabad címerhellyel.",
+      "caption": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "decorative": false,
+      "rights": {
+        "clearance": "custom-generated",
+        "holder": "Csanádi Sportiskola project",
+        "license": "Projektcélra készített egyedi képi változat."
+      }
+    },
+    {
+      "id": "media:hero-sport-2026",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/hero-sport-2026.webp",
+        "mimeType": "image/webp",
+        "width": 1672,
+        "height": 941,
+        "sizeBytes": 246502,
+        "sha256": "93d423b630a49c20d4d2b032cc78d242abfd69ab604d20d150ed65a23ca5bfc9"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/hero-sport-2026.webp",
+          "mimeType": "image/webp",
+          "width": 1672,
+          "height": 941,
+          "sizeBytes": 246502,
+          "sha256": "93d423b630a49c20d4d2b032cc78d242abfd69ab604d20d150ed65a23ca5bfc9"
+        },
+        {
+          "path": "assets/media/web/responsive/hero-sport-2026-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 20462,
+          "sha256": "7ff7177a26fac233a93c008aec53371044afd009e767a92e638ce22e81ee8d0d"
+        },
+        {
+          "path": "assets/media/web/responsive/hero-sport-2026-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 61758,
+          "sha256": "87a1b6304f71985f35063bb76437675043f91f66a72371268a9572ea6d9bd6f8"
+        },
+        {
+          "path": "assets/media/web/responsive/hero-sport-2026-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 107742,
+          "sha256": "a4740018a6f12f9de18dfdad634df5709243493244c1d262c575488ee15a6c44"
+        }
+      ],
+      "alt": "Kezdőoldali sportfőkép, középen szabadon hagyott címerhellyel.",
+      "caption": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "decorative": false,
+      "rights": {
+        "clearance": "custom-generated",
+        "holder": "Csanádi Sportiskola project",
+        "license": "Projektcélra készített egyedi képi változat."
+      }
+    },
+    {
+      "id": "media:hero-oktatas-2026",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/hero-oktatas-2026.webp",
+        "mimeType": "image/webp",
+        "width": 1672,
+        "height": 941,
+        "sizeBytes": 417110,
+        "sha256": "089472dab7ca041a39d917072d7a7449e1ca37aa8d858bf1c849e8e694e61e75"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/hero-oktatas-2026.webp",
+          "mimeType": "image/webp",
+          "width": 1672,
+          "height": 941,
+          "sizeBytes": 417110,
+          "sha256": "089472dab7ca041a39d917072d7a7449e1ca37aa8d858bf1c849e8e694e61e75"
+        },
+        {
+          "path": "assets/media/web/responsive/hero-oktatas-2026-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 24834,
+          "sha256": "1cd27a8c7131bc753fc1e0b3559b049eb89af1cb5b010c4ed569c5812aecc6a9"
+        },
+        {
+          "path": "assets/media/web/responsive/hero-oktatas-2026-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 83456,
+          "sha256": "1e708f99cf2c9b62ef345f236cb5db966f67d640bcd0d0caf6e69886156a8409"
+        },
+        {
+          "path": "assets/media/web/responsive/hero-oktatas-2026-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 168006,
+          "sha256": "1533ebfd1e85f3e9dbf0feb8047f7f4bd15b59ab2ba1a4a262fca73bba1334ad"
+        }
+      ],
+      "alt": "Kezdőoldali tanulási főkép, középen szabadon hagyott címerhellyel.",
+      "caption": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "decorative": false,
+      "rights": {
+        "clearance": "custom-generated",
+        "holder": "Csanádi Sportiskola project",
+        "license": "Projektcélra készített egyedi képi változat."
+      }
+    },
+    {
+      "id": "media:hero-kozosseg-2026",
+      "kind": "image",
+      "original": {
+        "path": "assets/media/web/hero-kozosseg-2026.webp",
+        "mimeType": "image/webp",
+        "width": 1672,
+        "height": 941,
+        "sizeBytes": 291914,
+        "sha256": "5144763b5137f57b695c1cbb3139da3b1dbde4fafae4c02f2e0e48f0a1768b82"
+      },
+      "variants": [
+        {
+          "path": "assets/media/web/hero-kozosseg-2026.webp",
+          "mimeType": "image/webp",
+          "width": 1672,
+          "height": 941,
+          "sizeBytes": 291914,
+          "sha256": "5144763b5137f57b695c1cbb3139da3b1dbde4fafae4c02f2e0e48f0a1768b82"
+        },
+        {
+          "path": "assets/media/web/responsive/hero-kozosseg-2026-320.webp",
+          "mimeType": "image/webp",
+          "width": 320,
+          "height": 180,
+          "sizeBytes": 23764,
+          "sha256": "de12814bdab6eb7f42ed9f521d9f7308ac2491799f0e5a5fc3265a1ad3842e3d"
+        },
+        {
+          "path": "assets/media/web/responsive/hero-kozosseg-2026-640.webp",
+          "mimeType": "image/webp",
+          "width": 640,
+          "height": 360,
+          "sizeBytes": 74060,
+          "sha256": "ba7d095b0553975f1f90cc608e38260dddf1ebc5572b32f4191726463260eb56"
+        },
+        {
+          "path": "assets/media/web/responsive/hero-kozosseg-2026-960.webp",
+          "mimeType": "image/webp",
+          "width": 960,
+          "height": 540,
+          "sizeBytes": 130426,
+          "sha256": "4a79dd9e41e0bcf6be098e91e42f3c2000e36c04410b15ca5638fa65f5f3e92a"
+        }
+      ],
+      "alt": "Kezdőoldali közösségi főkép, középen szabadon hagyott címerhellyel.",
+      "caption": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "decorative": false,
+      "rights": {
+        "clearance": "custom-generated",
+        "holder": "Csanádi Sportiskola project",
+        "license": "Projektcélra készített egyedi képi változat."
+      }
     }
   ]
 }

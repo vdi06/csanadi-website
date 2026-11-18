@@ -143,10 +143,10 @@
  0%,20%{opacity:1}47%,100%{opacity:0}
 }
 @keyframes cs-gate-swing-left {
- 0%,19%{transform:rotateY(0deg)}55%{transform:rotateY(-76deg)}82%,100%{transform:rotateY(-108deg)}
+ 0%,19%{transform:rotateY(0deg)}55%{transform:rotateY(72deg) translateZ(-4px)}82%,100%{transform:rotateY(102deg) translateZ(-10px);filter:brightness(.74)}
 }
 @keyframes cs-gate-swing-right {
- 0%,19%{transform:rotateY(0deg)}55%{transform:rotateY(76deg)}82%,100%{transform:rotateY(108deg)}
+ 0%,19%{transform:rotateY(0deg)}55%{transform:rotateY(-72deg) translateZ(-4px)}82%,100%{transform:rotateY(-102deg) translateZ(-10px);filter:brightness(.74)}
 }
 @keyframes cs-gate-perspective-approach {
  0%,23%{scale:1}58%{scale:1.045}100%{scale:1.17}
@@ -156,3 +156,44 @@
  .gate26-open .gate26-door-stage{display:none}
  .gate26-open .gate26-scene{animation:none!important;scale:1}
 }
+
+
+/* v1.42.8 – kattintható, áttetsző arany keretes kapu pontosan a zöld ajtóra illesztve. */
+.gate26 .gate26-door-hitbox{
+ position:absolute;z-index:6;
+ left:50%;top:calc(50% + var(--gate-door-image-height) * .101);
+ width:calc(var(--gate-door-leaf-width) * 1.92);height:calc(var(--gate-door-image-height) * .519);
+ transform:translate(-50%,-50%);
+ background:transparent!important;border:2px solid rgba(239,210,134,.96)!important;border-radius:42% 42% 9px 9px / 8% 8% 2% 2%;
+ box-shadow:0 0 0 2px rgba(99,72,31,.45) inset,0 0 0 1px rgba(255,237,188,.55),0 0 18px rgba(235,192,96,.30);
+ cursor:pointer;pointer-events:auto;overflow:hidden;
+ transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease, opacity .22s ease;
+}
+.gate26 .gate26-door-hitbox::before,.gate26 .gate26-door-hitbox::after{content:'';position:absolute;inset:0;pointer-events:none}
+.gate26 .gate26-door-hitbox::before{
+ background:
+   linear-gradient(90deg,transparent calc(50% - 1px),rgba(239,210,134,.92) calc(50% - 1px) calc(50% + 1px),transparent calc(50% + 1px)),
+   linear-gradient(180deg,rgba(239,210,134,.55),rgba(239,210,134,.55)) top/100% 2px no-repeat,
+   linear-gradient(180deg,transparent 0 62%,rgba(239,210,134,.34) 62% 63%,transparent 63% 100%),
+   radial-gradient(circle at 24% 51%,rgba(239,210,134,.95) 0 2px,transparent 3px),
+   radial-gradient(circle at 76% 51%,rgba(239,210,134,.95) 0 2px,transparent 3px);
+ opacity:.95;
+}
+.gate26 .gate26-door-hitbox::after{
+ inset:8px; border:1px solid rgba(239,210,134,.68); border-radius:42% 42% 8px 8px / 8% 8% 2% 2%;
+ clip-path:polygon(0 0,100% 0,100% 100%,0 100%,0 0,42% 0,42% 78%,58% 78%,58% 0,0 0);
+ opacity:.55;
+}
+.gate26 .gate26-door-hitbox:hover,.gate26 .gate26-door-hitbox:focus-visible{
+ transform:translate(-50%,-50%) scale(1.018);
+ border-color:#fff0b8!important;
+ box-shadow:0 0 0 2px rgba(99,72,31,.52) inset,0 0 0 2px rgba(255,242,197,.65),0 0 26px rgba(240,205,116,.48);
+ outline:none;
+}
+.gate26-open .gate26-door-hitbox{animation:cs-gate-door-hitbox-fade var(--gate26-duration) ease-in-out both;pointer-events:none}
+@keyframes cs-gate-door-hitbox-fade{0%,15%{opacity:1}38%{opacity:.9}72%,100%{opacity:0}}
+@media(max-width:767px){
+ .gate26 .gate26-door-hitbox{border-width:2px;box-shadow:0 0 0 1px rgba(255,237,188,.5),0 0 15px rgba(235,192,96,.24)}
+ .gate26 .gate26-door-hitbox::after{inset:6px}
+}
+@media(prefers-reduced-motion:reduce){.gate26-open .gate26-door-hitbox{animation:none!important;opacity:0}}

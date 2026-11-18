@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "description": "A statikus weboldal teljes helyi médiakatalógusa, reszponzív képméretekkel; nem hivatalos intézményi médiák elkülönítve.",
-  "updatedAt": "2026-11-17",
+  "updatedAt": "2026-11-18",
   "items": [
     {
       "path": "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf",
@@ -3056,10 +3056,13 @@
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 136694,
-      "title": "Kozosseg 1600",
+      "title": "kozosseg",
       "alt": "Közös tanulás a modern könyvtárban",
       "description": "Életszerű, generált könyvtári közösségi látványkép.",
-      "tags": [],
+      "tags": [
+        "weboldal",
+        "eredeti"
+      ],
       "mediaId": "media:kozosseg",
       "sha256": "03fc8def51c72cb5f6717010021c19cf87f4242f272269a275f6696af66c06bc",
       "width": 1600,
@@ -3070,10 +3073,13 @@
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 124066,
-      "title": "Oktatas 1600",
+      "title": "oktatas",
       "alt": "Együttműködő tanulás modern osztályteremben",
       "description": "Életszerű, generált oktatási jelenet együtt tanuló diákokkal.",
-      "tags": [],
+      "tags": [
+        "weboldal",
+        "eredeti"
+      ],
       "mediaId": "media:oktatas",
       "sha256": "f543aa280151c768f51847b3d03e6b38519dabd7599f5f81ad44f92a1da97944",
       "width": 1600,
@@ -9116,14 +9122,15 @@
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 14676,
-      "title": "kozosseg-1600 – 320 px",
-      "alt": "",
-      "description": "Reszponzív változat",
+      "title": "kozosseg",
+      "alt": "Közös tanulás a modern könyvtárban",
+      "description": "Életszerű, generált könyvtári közösségi látványkép.",
       "category": "responsive",
       "tags": [
-        "responsive"
+        "weboldal",
+        "eredeti"
       ],
-      "mediaId": null,
+      "mediaId": "media:kozosseg",
       "sha256": "29ad175bbc0a907b9b8bd91992afacfaed548b166045829350b5607595edabf1",
       "published": false
     },
@@ -9132,14 +9139,15 @@
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 39774,
-      "title": "kozosseg-1600 – 640 px",
-      "alt": "",
-      "description": "Reszponzív változat",
+      "title": "kozosseg",
+      "alt": "Közös tanulás a modern könyvtárban",
+      "description": "Életszerű, generált könyvtári közösségi látványkép.",
       "category": "responsive",
       "tags": [
-        "responsive"
+        "weboldal",
+        "eredeti"
       ],
-      "mediaId": null,
+      "mediaId": "media:kozosseg",
       "sha256": "72c838ce7088bb70d09876ff51b313b81836878002ccdd6a6585e05496d127e6",
       "published": false
     },
@@ -9148,14 +9156,15 @@
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 64774,
-      "title": "kozosseg-1600 – 960 px",
-      "alt": "",
-      "description": "Reszponzív változat",
+      "title": "kozosseg",
+      "alt": "Közös tanulás a modern könyvtárban",
+      "description": "Életszerű, generált könyvtári közösségi látványkép.",
       "category": "responsive",
       "tags": [
-        "responsive"
+        "weboldal",
+        "eredeti"
       ],
-      "mediaId": null,
+      "mediaId": "media:kozosseg",
       "sha256": "17af530afb0f195826cc9f8f26482cc1e8eb8ee989d7ac3a5566e8ef64c4f12a",
       "published": false
     },
@@ -9164,14 +9173,15 @@
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 12992,
-      "title": "oktatas-1600 – 320 px",
-      "alt": "",
-      "description": "Reszponzív változat",
+      "title": "oktatas",
+      "alt": "Együttműködő tanulás modern osztályteremben",
+      "description": "Életszerű, generált oktatási jelenet együtt tanuló diákokkal.",
       "category": "responsive",
       "tags": [
-        "responsive"
+        "weboldal",
+        "eredeti"
       ],
-      "mediaId": null,
+      "mediaId": "media:oktatas",
       "sha256": "d982cbfa96d021c3a79d50e93233af2472c0ee422db1f800b4b361f882ac21fa",
       "published": false
     },
@@ -9180,14 +9190,15 @@
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 33178,
-      "title": "oktatas-1600 – 640 px",
-      "alt": "",
-      "description": "Reszponzív változat",
+      "title": "oktatas",
+      "alt": "Együttműködő tanulás modern osztályteremben",
+      "description": "Életszerű, generált oktatási jelenet együtt tanuló diákokkal.",
       "category": "responsive",
       "tags": [
-        "responsive"
+        "weboldal",
+        "eredeti"
       ],
-      "mediaId": null,
+      "mediaId": "media:oktatas",
       "sha256": "00f2199cca065fa9a4094d313d86d6f13570668a0b884cdc80c42db966ea7f8a",
       "published": false
     },
@@ -9196,14 +9207,15 @@
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 56340,
-      "title": "oktatas-1600 – 960 px",
-      "alt": "",
-      "description": "Reszponzív változat",
+      "title": "oktatas",
+      "alt": "Együttműködő tanulás modern osztályteremben",
+      "description": "Életszerű, generált oktatási jelenet együtt tanuló diákokkal.",
       "category": "responsive",
       "tags": [
-        "responsive"
+        "weboldal",
+        "eredeti"
       ],
-      "mediaId": null,
+      "mediaId": "media:oktatas",
       "sha256": "22fcbe5c9253937bda6e0a3115259be13d02ae8d7b6380437c9239ad985f29f0",
       "published": false
     },
@@ -9404,14 +9416,15 @@
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 15602,
-      "title": "sport-1600 – 320 px",
-      "alt": "",
-      "description": "Reszponzív változat",
+      "title": "sport",
+      "alt": "Kék-arany fociedzés az akadémián",
+      "description": "Életszerű, generált sportjelenet kültéri edzésről.",
       "category": "responsive",
       "tags": [
-        "responsive"
+        "weboldal",
+        "eredeti"
       ],
-      "mediaId": null,
+      "mediaId": "media:sport",
       "sha256": "64db2daf5cb56bfed91153afc597a7fa19bd742197510a27c276147b9ba84c7b",
       "published": false
     },
@@ -9420,14 +9433,15 @@
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 47290,
-      "title": "sport-1600 – 640 px",
-      "alt": "",
-      "description": "Reszponzív változat",
+      "title": "sport",
+      "alt": "Kék-arany fociedzés az akadémián",
+      "description": "Életszerű, generált sportjelenet kültéri edzésről.",
       "category": "responsive",
       "tags": [
-        "responsive"
+        "weboldal",
+        "eredeti"
       ],
-      "mediaId": null,
+      "mediaId": "media:sport",
       "sha256": "aafcac1340d8deba91228fb07a55fb8eedb1db7651b770357902dcba1f3eee4e",
       "published": false
     },
@@ -9436,14 +9450,15 @@
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 85288,
-      "title": "sport-1600 – 960 px",
-      "alt": "",
-      "description": "Reszponzív változat",
+      "title": "sport",
+      "alt": "Kék-arany fociedzés az akadémián",
+      "description": "Életszerű, generált sportjelenet kültéri edzésről.",
       "category": "responsive",
       "tags": [
-        "responsive"
+        "weboldal",
+        "eredeti"
       ],
-      "mediaId": null,
+      "mediaId": "media:sport",
       "sha256": "5aa6a5affa63e9df50eea9b6b671fb5ade0c60fb68c6a25307007e8d00cdf5ab",
       "published": false
     },
@@ -9508,27 +9523,30 @@
       "type": "image",
       "mimeType": "image/webp",
       "sizeBytes": 191108,
-      "title": "Sport 1600",
+      "title": "sport",
       "alt": "Kék-arany fociedzés az akadémián",
       "description": "Életszerű, generált sportjelenet kültéri edzésről.",
-      "tags": [],
+      "tags": [
+        "weboldal",
+        "eredeti"
+      ],
       "mediaId": "media:sport",
       "sha256": "828879404d355ea47a037faccac9471d5b4babcefec2cc12ba727e6011c4b221",
       "width": 1600,
       "height": 900
     },
     {
-      "path": "assets/qr/csanadi-qr-281571ce738ff3de.svg",
+      "path": "assets/qr/csanadi-qr-06b6013647d5dabb.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
-      "sizeBytes": 4271,
-      "title": "csanadi qr 281571ce738ff3de",
+      "sizeBytes": 3353,
+      "title": "csanadi qr 06b6013647d5dabb",
       "alt": "",
       "description": "",
       "category": "qr",
       "tags": [],
       "mediaId": null,
-      "sha256": "9ecf7881755634fbb40b592d149b9047598e5163075d4c7d2c055b329f02ef24",
+      "sha256": "14a6fbb3a5cfc83693f26eaf23c22bd65e4ddae60113eb9b965b3da1803237f9",
       "published": false,
       "rightsConfirmed": false
     },
@@ -10808,17 +10826,17 @@
       "rightsConfirmed": false
     },
     {
-      "path": "assets/qr/csanadi-qr-6ccd880ba31e5a04.svg",
+      "path": "assets/qr/csanadi-qr-fe6cb35447110140.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
-      "sizeBytes": 4434,
-      "title": "csanadi qr 6ccd880ba31e5a04",
+      "sizeBytes": 4296,
+      "title": "csanadi qr fe6cb35447110140",
       "alt": "",
       "description": "",
       "category": "qr",
       "tags": [],
       "mediaId": null,
-      "sha256": "88924f259149c3c05b39cce49c8d3c10f3550de040b5d06078322598e9f2170a",
+      "sha256": "4b766944a977a5e8edf9f51efa5fe93b4717b3775f930f3d5fd17edfd5873622",
       "published": false,
       "rightsConfirmed": false
     },
@@ -13380,6 +13398,618 @@
       ],
       "mediaId": "media:v140-kozosseg-mobile",
       "sha256": "8478941213e8d4afe8400ec4b9c4a7299dc25c454a2df54ade7ada780ea9f059"
+    },
+    {
+      "path": "assets/media/web/sport2-1600.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 210410,
+      "title": "sport II",
+      "alt": "Második sportos kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:sport2",
+      "sha256": "b8eda576c2647324550964eabf5a3ad4181e7110f2bdc9ad8016fab13fa4c8fb"
+    },
+    {
+      "path": "assets/media/web/responsive/sport2-1600-320.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 16140,
+      "title": "sport II",
+      "alt": "Második sportos kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:sport2",
+      "sha256": "86f72e06afeaf355197c51e4e9e790969e945410cfd569982dff0eca2dfc87fb"
+    },
+    {
+      "path": "assets/media/web/responsive/sport2-1600-640.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 48994,
+      "title": "sport II",
+      "alt": "Második sportos kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:sport2",
+      "sha256": "c2c4707214d720a25582e98c761da9ebce673056f298611c8244a77c56229e83"
+    },
+    {
+      "path": "assets/media/web/responsive/sport2-1600-960.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 86564,
+      "title": "sport II",
+      "alt": "Második sportos kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:sport2",
+      "sha256": "60bb161dcd4738fca33b13ea2088f33624a212bb5cdab3dcfa7eda50350acbe4"
+    },
+    {
+      "path": "assets/media/web/uszas-1600.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 272586,
+      "title": "uszas",
+      "alt": "Úszóedzéses kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:uszas",
+      "sha256": "17704317fb859ce1259609a8334ca0db307437ec9c1f4528f0996466374c0120"
+    },
+    {
+      "path": "assets/media/web/responsive/uszas-1600-320.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 21644,
+      "title": "uszas",
+      "alt": "Úszóedzéses kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:uszas",
+      "sha256": "335b968572ea5910234249f1e7cdec5c23adf813813642a84f0feca0754a8ff1"
+    },
+    {
+      "path": "assets/media/web/responsive/uszas-1600-640.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 64760,
+      "title": "uszas",
+      "alt": "Úszóedzéses kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:uszas",
+      "sha256": "009a93dfaae553f95d2742403171a734e13e720cce532661c9f623bff622f86a"
+    },
+    {
+      "path": "assets/media/web/responsive/uszas-1600-960.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 119560,
+      "title": "uszas",
+      "alt": "Úszóedzéses kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:uszas",
+      "sha256": "b6fa2aaa607261e2339deb5c264df097946cbabafe135b2d5a39ed9dcd71f49a"
+    },
+    {
+      "path": "assets/media/web/oktatas2-1600.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 358174,
+      "title": "oktatas II",
+      "alt": "Második tanulási kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:oktatas2",
+      "sha256": "c4dea59b19bb11394f8b3a169876504da182587e1a3bce2e2e456a1a6fdca5c2"
+    },
+    {
+      "path": "assets/media/web/responsive/oktatas2-1600-320.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 22574,
+      "title": "oktatas II",
+      "alt": "Második tanulási kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:oktatas2",
+      "sha256": "7076aed3bf234a8702812e0e3cd0ac6a2510aa4daca2bc0f15b1de674325a641"
+    },
+    {
+      "path": "assets/media/web/responsive/oktatas2-1600-640.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 73118,
+      "title": "oktatas II",
+      "alt": "Második tanulási kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:oktatas2",
+      "sha256": "cb7c7cb6d6ed4362000a7226e9eddaf7d260774ea1f83adf2cd03db540fc8058"
+    },
+    {
+      "path": "assets/media/web/responsive/oktatas2-1600-960.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 141836,
+      "title": "oktatas II",
+      "alt": "Második tanulási kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:oktatas2",
+      "sha256": "c09160f3b5091518283899b0b795478199f9a7e86a83c96fbf71c8daf03dd9ce"
+    },
+    {
+      "path": "assets/media/web/digitalis-1600.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 234838,
+      "title": "digitalis",
+      "alt": "Digitális tantermes kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:digitalis",
+      "sha256": "73d687a15fd2345aae18e6b06d915683df054e8f20a246bf5418b3f2ce9967c9"
+    },
+    {
+      "path": "assets/media/web/responsive/digitalis-1600-320.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 15200,
+      "title": "digitalis",
+      "alt": "Digitális tantermes kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:digitalis",
+      "sha256": "8d70f2cef88d305f014b04afa63d0620bb2aae7e6c48e2cd15c86feccbb9ae3d"
+    },
+    {
+      "path": "assets/media/web/responsive/digitalis-1600-640.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 44502,
+      "title": "digitalis",
+      "alt": "Digitális tantermes kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:digitalis",
+      "sha256": "00ed34aa967b8c1bfbfcd81a7f47994cf6b18e5800cc2c643c2774f8463e8c94"
+    },
+    {
+      "path": "assets/media/web/responsive/digitalis-1600-960.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 86526,
+      "title": "digitalis",
+      "alt": "Digitális tantermes kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:digitalis",
+      "sha256": "7dc3c01abcfce8bfc9f7b857c17ed65287ce3295997da3a0f9fbf3892a83fca5"
+    },
+    {
+      "path": "assets/media/web/kozosseg2-1600.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 273588,
+      "title": "kozosseg II",
+      "alt": "Második közösségi kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:kozosseg2",
+      "sha256": "97f7c87b53127875f69220add4aeef1ef42c1cbaf314f82a9db79d400a936ea1"
+    },
+    {
+      "path": "assets/media/web/responsive/kozosseg2-1600-320.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 22962,
+      "title": "kozosseg II",
+      "alt": "Második közösségi kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:kozosseg2",
+      "sha256": "506ab3a3c26a9ac4c787f83ad44eb076b8ec6426e0aa8ac47fa550e59284b410"
+    },
+    {
+      "path": "assets/media/web/responsive/kozosseg2-1600-640.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 69694,
+      "title": "kozosseg II",
+      "alt": "Második közösségi kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:kozosseg2",
+      "sha256": "6b09137f3cf122e591b82a2023d422a8c656e4b3bc3487e557bf7e8c41f086fb"
+    },
+    {
+      "path": "assets/media/web/responsive/kozosseg2-1600-960.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 121126,
+      "title": "kozosseg II",
+      "alt": "Második közösségi kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:kozosseg2",
+      "sha256": "befe08eb538cf5807d0e50e44cb843d2c0004a783e6f1f408b4f30d2566c7f49"
+    },
+    {
+      "path": "assets/media/web/bejarat-1600.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 248306,
+      "title": "bejarat",
+      "alt": "Bejárati kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:bejarat",
+      "sha256": "4571a63887aae78771a19d499b125e2e25058c0d271d586743c886f436d127e9"
+    },
+    {
+      "path": "assets/media/web/responsive/bejarat-1600-320.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 22092,
+      "title": "bejarat",
+      "alt": "Bejárati kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:bejarat",
+      "sha256": "6590e54e205323bf0be574e9f40766d24c6eb17d9dbe4e85432c3d6b711f3d7f"
+    },
+    {
+      "path": "assets/media/web/responsive/bejarat-1600-640.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 64132,
+      "title": "bejarat",
+      "alt": "Bejárati kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:bejarat",
+      "sha256": "cc4ff8962c25dea17eead04d69d2a01fa22674744515f08f6d505f0e5cee5d69"
+    },
+    {
+      "path": "assets/media/web/responsive/bejarat-1600-960.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 113506,
+      "title": "bejarat",
+      "alt": "Bejárati kezdőoldali főkép, középen szabad címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:bejarat",
+      "sha256": "34e47ec388d58e50bbdcfcb2b0c5f6816ad86df0a5397c87883a67eb3f0b5169"
+    },
+    {
+      "path": "assets/media/web/hero-sport-2026.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 246502,
+      "title": "hero-sport-2026",
+      "alt": "Kezdőoldali sportfőkép, középen szabadon hagyott címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:hero-sport-2026",
+      "sha256": "93d423b630a49c20d4d2b032cc78d242abfd69ab604d20d150ed65a23ca5bfc9"
+    },
+    {
+      "path": "assets/media/web/responsive/hero-sport-2026-320.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 20462,
+      "title": "hero-sport-2026",
+      "alt": "Kezdőoldali sportfőkép, középen szabadon hagyott címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:hero-sport-2026",
+      "sha256": "7ff7177a26fac233a93c008aec53371044afd009e767a92e638ce22e81ee8d0d"
+    },
+    {
+      "path": "assets/media/web/responsive/hero-sport-2026-640.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 61758,
+      "title": "hero-sport-2026",
+      "alt": "Kezdőoldali sportfőkép, középen szabadon hagyott címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:hero-sport-2026",
+      "sha256": "87a1b6304f71985f35063bb76437675043f91f66a72371268a9572ea6d9bd6f8"
+    },
+    {
+      "path": "assets/media/web/responsive/hero-sport-2026-960.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 107742,
+      "title": "hero-sport-2026",
+      "alt": "Kezdőoldali sportfőkép, középen szabadon hagyott címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:hero-sport-2026",
+      "sha256": "a4740018a6f12f9de18dfdad634df5709243493244c1d262c575488ee15a6c44"
+    },
+    {
+      "path": "assets/media/web/hero-oktatas-2026.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 417110,
+      "title": "hero-oktatas-2026",
+      "alt": "Kezdőoldali tanulási főkép, középen szabadon hagyott címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:hero-oktatas-2026",
+      "sha256": "089472dab7ca041a39d917072d7a7449e1ca37aa8d858bf1c849e8e694e61e75"
+    },
+    {
+      "path": "assets/media/web/responsive/hero-oktatas-2026-320.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 24834,
+      "title": "hero-oktatas-2026",
+      "alt": "Kezdőoldali tanulási főkép, középen szabadon hagyott címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:hero-oktatas-2026",
+      "sha256": "1cd27a8c7131bc753fc1e0b3559b049eb89af1cb5b010c4ed569c5812aecc6a9"
+    },
+    {
+      "path": "assets/media/web/responsive/hero-oktatas-2026-640.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 83456,
+      "title": "hero-oktatas-2026",
+      "alt": "Kezdőoldali tanulási főkép, középen szabadon hagyott címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:hero-oktatas-2026",
+      "sha256": "1e708f99cf2c9b62ef345f236cb5db966f67d640bcd0d0caf6e69886156a8409"
+    },
+    {
+      "path": "assets/media/web/responsive/hero-oktatas-2026-960.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 168006,
+      "title": "hero-oktatas-2026",
+      "alt": "Kezdőoldali tanulási főkép, középen szabadon hagyott címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:hero-oktatas-2026",
+      "sha256": "1533ebfd1e85f3e9dbf0feb8047f7f4bd15b59ab2ba1a4a262fca73bba1334ad"
+    },
+    {
+      "path": "assets/media/web/hero-kozosseg-2026.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 291914,
+      "title": "hero-kozosseg-2026",
+      "alt": "Kezdőoldali közösségi főkép, középen szabadon hagyott címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:hero-kozosseg-2026",
+      "sha256": "5144763b5137f57b695c1cbb3139da3b1dbde4fafae4c02f2e0e48f0a1768b82"
+    },
+    {
+      "path": "assets/media/web/responsive/hero-kozosseg-2026-320.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 23764,
+      "title": "hero-kozosseg-2026",
+      "alt": "Kezdőoldali közösségi főkép, középen szabadon hagyott címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:hero-kozosseg-2026",
+      "sha256": "de12814bdab6eb7f42ed9f521d9f7308ac2491799f0e5a5fc3265a1ad3842e3d"
+    },
+    {
+      "path": "assets/media/web/responsive/hero-kozosseg-2026-640.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 74060,
+      "title": "hero-kozosseg-2026",
+      "alt": "Kezdőoldali közösségi főkép, középen szabadon hagyott címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:hero-kozosseg-2026",
+      "sha256": "ba7d095b0553975f1f90cc608e38260dddf1ebc5572b32f4191726463260eb56"
+    },
+    {
+      "path": "assets/media/web/responsive/hero-kozosseg-2026-960.webp",
+      "type": "image",
+      "mimeType": "image/webp",
+      "sizeBytes": 130426,
+      "title": "hero-kozosseg-2026",
+      "alt": "Kezdőoldali közösségi főkép, középen szabadon hagyott címerhellyel.",
+      "description": "Külön kezdőoldali főképként készített, középen címerbiztos kompozíció.",
+      "tags": [
+        "kezdőlap",
+        "főkép",
+        "címerbiztos",
+        "generált illusztráció"
+      ],
+      "mediaId": "media:hero-kozosseg-2026",
+      "sha256": "4a79dd9e41e0bcf6be098e91e42f3c2000e36c04410b15ca5638fa65f5f3e92a"
     }
   ]
 }

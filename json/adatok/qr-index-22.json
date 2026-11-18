@@ -23,11 +23,11 @@
       "targets": {
         "preview": {
           "url": "https://vdi06.github.io/csanadi-website/#/iskolank/felfedezo",
-          "svg": "assets/qr/csanadi-qr-6ccd880ba31e5a04.svg"
+          "svg": "assets/qr/csanadi-qr-fe6cb35447110140.svg"
         },
         "ftp": {
           "url": "https://vdi06.github.io/csanadi-website/#/iskolank/felfedezo",
-          "svg": "assets/qr/csanadi-qr-6ccd880ba31e5a04.svg"
+          "svg": "assets/qr/csanadi-qr-fe6cb35447110140.svg"
         }
       }
     },
@@ -37,11 +37,11 @@
       "targets": {
         "preview": {
           "url": "https://vdi06.github.io/csanadi-website/#/iskolank/iskolai-iranytu",
-          "svg": "assets/qr/csanadi-qr-281571ce738ff3de.svg"
+          "svg": "assets/qr/csanadi-qr-06b6013647d5dabb.svg"
         },
         "ftp": {
           "url": "https://vdi06.github.io/csanadi-website/#/iskolank/iskolai-iranytu",
-          "svg": "assets/qr/csanadi-qr-281571ce738ff3de.svg"
+          "svg": "assets/qr/csanadi-qr-06b6013647d5dabb.svg"
         }
       }
     },
