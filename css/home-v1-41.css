@@ -324,14 +324,41 @@ body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-carousel,
 body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-wrap{height:100%;overflow:visible!important}
 body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row{
  position:sticky!important;top:96px;min-height:calc(100svh - 96px)!important;height:calc(100svh - 96px)!important;
- border-radius:calc(var(--cs41-scroll) * 26px)!important;
- clip-path:inset(calc(var(--cs41-scroll) * 2%) calc(var(--cs41-scroll) * 2%) round calc(var(--cs41-scroll) * 28px));
+ border-radius:calc(var(--cs41-scroll) * 34px)!important;
+ clip-path:inset(calc(var(--cs41-scroll) * 10%) calc(var(--cs41-scroll) * 5%) round calc(var(--cs41-scroll) * 36px));
  box-shadow:0 calc(var(--cs41-scroll) * 24px) 70px rgba(0,0,0,.5);
 }
+body.cs-home-header #global-hero .cs41-home-hero .cs1404-hero-disclaimer,
+body.cs-home-header #global-hero .cs41-home-hero .media-illustration-tag{display:none!important}
 body.cs-home-header #global-hero .cs41-home-hero .csn26-wing-photo img{
  transform:scale(calc(1.08 - var(--cs41-scroll) * .12))!important;
  filter:brightness(calc(1 - var(--cs41-scroll) * .18));
 }
+
+/* A dicsőségfal a választott világos témában valóban világos felület. */
+html[data-theme="light"] #app[data-page-kind="home"] .home-canvas{background:#f6f8fc!important}
+html[data-theme="light"] #app[data-page-kind="home"] .student-success-home{
+ background:radial-gradient(ellipse at 50% 0,rgba(235,198,121,.17),transparent 58%),linear-gradient(180deg,#f8fbff,#edf3f9 95%)!important;
+ color:#21384c!important;border-bottom-color:#d2b174;
+}
+html[data-theme="light"] #app[data-page-kind="home"] .student-success-home .section-overline{color:#725523!important}
+html[data-theme="light"] #app[data-page-kind="home"] .student-success-home .section-title{color:#75521b!important;text-shadow:none!important}
+html[data-theme="light"] #app[data-page-kind="home"] .student-success-home .student-success-intro{color:#42586c!important}
+html[data-theme="light"] #app[data-page-kind="home"] .student-success-home .student-demo-banner{color:#513e22!important;background:#fff3d8!important;border-color:#caa660!important}
+html[data-theme="light"] #app[data-page-kind="home"] .cs41-wall-chip{background:#fff!important;color:#273e51!important;border-color:#b78c43!important}
+html[data-theme="light"] #app[data-page-kind="home"] .cs41-wall-chip[aria-pressed="true"]{background:linear-gradient(120deg,#f5d98c,#dbb462)!important;color:#162b40!important}
+html[data-theme="light"] #app[data-page-kind="home"] .cs41-wall-search{background:#fff!important;color:#20394e!important;border-color:#b78c43!important}
+html[data-theme="light"] #app[data-page-kind="home"] .cs41-wall-search::placeholder{color:#637589!important}
+html[data-theme="light"] #app[data-page-kind="home"] .student-success-home .student-success-stat{color:#476075!important}
+html[data-theme="light"] #app[data-page-kind="home"] .student-success-home .student-success-card{background:#fff!important;color:#253c50!important;box-shadow:0 12px 30px #172f4d18!important}
+html[data-theme="light"] #app[data-page-kind="home"] .student-success-home .student-success-body{background:#fff!important}
+html[data-theme="light"] #app[data-page-kind="home"] .student-success-home .student-success-card :is(h3,.student-success-tag){color:#72501f!important}
+html[data-theme="light"] #app[data-page-kind="home"] .student-success-home .student-success-card :is(.student-success-event,.student-success-summary,.student-success-date){color:#40566b!important}
+html[data-theme="light"] #app[data-page-kind="home"] .student-success-home .student-success-all{color:#73511d!important}
+
+/* A találatok a teljes szélesség helyett középre rendezett kártyarácsban. */
+#search-panel .search-results{max-width:780px!important;width:100%!important;margin-inline:auto!important;justify-content:center!important}
+#search-panel .search-results>.search-result:only-child{grid-column:1/-1;justify-self:center;width:min(100%,390px)}
 body.cs-home-header #global-hero .cs41-home-hero .cs41-hero-identity,
 body.cs-home-header #global-hero .cs41-home-hero .cs41-hero-statement,
 body.cs-home-header #global-hero .cs41-home-hero .cs41-mobile-routes{

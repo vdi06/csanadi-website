@@ -22,7 +22,9 @@ export function initV141HomepageMotion(){
    hero.style.removeProperty('--cs41-scroll');return;
   }
   const bounds=hero.getBoundingClientRect();
-  const unlockDistance=Math.max(bounds.height-window.innerHeight+88,1);
+  // A kép addig alakul, amíg a nyitószakasz a fejléc mögött el nem tűnik.
+  const headerHeight=document.getElementById('site-header')?.getBoundingClientRect().height||0;
+  const unlockDistance=Math.max(bounds.height-headerHeight,1);
   const ratio=Math.min(1,Math.max(0,-bounds.top/unlockDistance));
   hero.style.setProperty('--cs41-scroll',ratio.toFixed(3));
  };

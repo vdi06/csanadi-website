@@ -146,7 +146,7 @@ function syncMobileHeader(){
  if(!brand)return;
  brand.setAttribute('aria-label','Csanádi Sportiskola – kezdőoldal');
  const topName=select('#site-header .brand-copy small');
- if(topName)topName.textContent='ÁRPÁD SPORTISKOLA';
+ if(topName)topName.textContent='ÁLTALÁNOS ISKOLA ÉS GIMNÁZIUM';
  const trigger=select('#mobile-menu-toggle');
  if(trigger){
   trigger.title='Körmenü megnyitása';

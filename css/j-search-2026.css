@@ -43,6 +43,9 @@
 #search-panel .j-search-chip:hover{border-color:var(--gold);background:var(--card);}
 #search-panel .search-meta{margin:12px 0;align-items:center;gap:10px;}
 #search-panel .search-results{max-height:none;overflow:visible;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+/* A találatok kártyacsoportja a keresőablak középvonalához igazodik. */
+#search-panel .search-results{width:100%;max-width:780px;margin-inline:auto;justify-content:center;justify-items:stretch;}
+#search-panel .search-results>.search-result:only-child{grid-column:1/-1;justify-self:center;width:min(100%,390px);}
 #search-panel .search-result{display:flex;flex-direction:column;gap:7px;padding:14px 15px;border:1px solid var(--line);border-radius:14px;background:var(--light);color:var(--ink);text-decoration:none;overflow-wrap:anywhere;transition:border-color .18s ease,transform .18s ease;}
 #search-panel .search-result:hover,#search-panel .search-result:focus-visible{background:var(--card);border-color:var(--gold);color:var(--ink);transform:translateY(-1px);}
 #search-panel .search-result-title{font-size:15px;line-height:1.35;overflow-wrap:anywhere;}
