@@ -16,7 +16,7 @@ import {renderDocumentCollections} from './document-collections-2026.js?v=csanad
 import {renderPageMedia} from './page-media-2026.js?v=csanadi-r29n-20261115';
 import {useSiteSettings,settingNumber} from './site-settings-2026.js';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.40.0';
-import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.40.0';
+import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.41-logo-key-1';
 import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.40.0';
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r29n-20261115';
  

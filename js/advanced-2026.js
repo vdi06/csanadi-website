@@ -43,11 +43,14 @@ export function openEntrancePortal({force=false}={}){
  const content=e('div','gate26-content');
  const title=e('h2','', 'Lépj be a sport és a tudás világába');title.id='gate26-title';
  const desc=e('p','','A valódi iskolaépület ihlette kapu a sport és a tudás világába vezet.');desc.id='gate26-description';
- const enter=btn('','gate26-enter gate26-crest-button',()=>open());
- const crest=e('img','gate26-crest-image');crest.src='assets/media/logo/csanadi-cimer-512.webp';crest.alt='';crest.width=148;crest.height=148;enter.append(crest);
+ const enter=btn('','gate26-enter gate26-logo-key',()=>open());
+ const keySvg=document.createElementNS('http://www.w3.org/2000/svg','svg');keySvg.setAttribute('class','gate26-key-art');keySvg.setAttribute('viewBox','0 0 340 155');keySvg.setAttribute('aria-hidden','true');
+ keySvg.innerHTML='<defs><linearGradient id="gate26-key-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0bb"/><stop offset=".43" stop-color="#e8b956"/><stop offset="1" stop-color="#906025"/></linearGradient></defs><path d="M78 20a57 57 0 1 0 0 114 57 57 0 0 0 49-28h94l17 16h18v-17h20l18 18h24v-41H127A57 57 0 0 0 78 20Zm0 18a39 39 0 1 1 0 78 39 39 0 0 1 0-78Z" fill="url(#gate26-key-gold)" stroke="#533a19" stroke-width="3" stroke-linejoin="round"/><path d="M137 90h157" stroke="#fff2bf" stroke-width="5" opacity=".7"/>';
+ const crest=e('img','gate26-crest-image');crest.src='assets/media/logo/csanadi-cimer-512.webp';crest.alt='';crest.width=76;crest.height=76;enter.append(keySvg,crest);
  enter.setAttribute('aria-label','Nyisd meg a Csanádi Sportiskola kapuját');enter.title='Kapunyitás';
- const skipBar=e('div','gate26-skip-bar');const skip=btn('Animáció kihagyása','gate26-skip',()=>finish());skip.setAttribute('aria-label','Belépőanimáció kihagyása');skipBar.append(skip);
- add(content,e('span','gate26-eyebrow','CSANÁDI SPORTISKOLA'),title,desc,enter);
+ const skipBar=e('div','gate26-skip-bar');const skip=btn('Kihagyás','gate26-skip',()=>finish());skip.setAttribute('aria-label','Belépőanimáció kihagyása');
+ const bottomCopy=e('div','gate26-bottom-copy');add(bottomCopy,e('span','gate26-eyebrow','CSANÁDI SPORTISKOLA'),title,desc);skipBar.append(bottomCopy,skip);
+ add(content,enter);
  add(layer,scenery,shut,glow,content,skipBar);document.body.append(layer);clearEntrancePrelude();
  const oldFocus=document.activeElement;let done=false,opening=false,finishTimer;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;

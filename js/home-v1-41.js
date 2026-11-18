@@ -22,7 +22,8 @@ export function initV141HomepageMotion(){
    hero.style.removeProperty('--cs41-scroll');return;
   }
   const bounds=hero.getBoundingClientRect();
-  const ratio=Math.min(1,Math.max(0,-bounds.top/Math.max(bounds.height,1)));
+  const unlockDistance=Math.max(bounds.height-window.innerHeight+88,1);
+  const ratio=Math.min(1,Math.max(0,-bounds.top/unlockDistance));
   hero.style.setProperty('--cs41-scroll',ratio.toFixed(3));
  };
  const schedule=()=>{if(!scheduled){scheduled=true;requestAnimationFrame(update);}};

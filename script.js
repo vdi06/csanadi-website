@@ -16,7 +16,7 @@ Promise.all([
   import('./js/release-v1-39-0.js?v=1.40.0'),
   import('./js/release-v1-39-1.js?v=1.40.10'),
   import('./js/header-adaptive-v1-39-18.js?v=1.40.0'),
-  import('./js/home-v1-41.js?v=1.41-home-preview')
+  import('./js/home-v1-41.js?v=1.41-unlock-1')
 ]).then(([{startApp},{initSubpageEnhancements},{initReleaseEnhancements},{initV1391Enhancements},{initAdaptiveHeaderV13918},{initV141HomepageMotion}])=>{
   initSubpageEnhancements();
   initReleaseEnhancements();
