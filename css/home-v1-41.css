@@ -389,3 +389,32 @@ body.cs-home-header #global-hero .cs41-home-hero .cs41-scroll-cue{
 @media(prefers-reduced-motion:reduce){
  body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row{clip-path:none!important;border-radius:0!important}
 }
+
+/* v1.41.3: folyamatos feloldás a nyitókép utolsó látható pixeléig.
+   A középre összezáródó kivágás kizárólag 100% görgetési haladásnál üres. */
+body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row{
+ clip-path:inset(calc(var(--cs41-scroll,0) * 50%) calc(var(--cs41-scroll,0) * 4%) round calc(var(--cs41-scroll,0) * 36px))!important;
+ border-radius:calc(var(--cs41-scroll,0) * 36px)!important;
+}
+body.cs-home-header #global-hero .cs41-home-hero .cs41-next-chapter{
+ position:absolute;z-index:18;left:50%;top:50%;width:min(88%,720px);
+ transform:translate(-50%,-50%);display:flex;flex-direction:column;gap:8px;
+ padding:clamp(14px,2.8vw,28px);border:1px solid rgba(239,196,105,.85);
+ border-radius:18px;background:rgba(4,21,37,.88);box-shadow:0 15px 55px #0008;
+ color:#f9e1ac;text-align:center;pointer-events:none;
+ opacity:var(--cs41-next,0);
+}
+body.cs-home-header #global-hero .cs41-home-hero .cs41-next-chapter span{
+ font-size:clamp(10px,1.2vw,14px);font-weight:800;letter-spacing:.24em;
+}
+body.cs-home-header #global-hero .cs41-home-hero .cs41-next-chapter strong{
+ font-size:clamp(17px,3vw,35px);line-height:1.15;letter-spacing:.035em;
+}
+@media(max-width:767px){
+ body.cs-home-header #global-hero .cs41-home-hero .cs41-next-chapter{padding:13px 12px;border-radius:11px;gap:4px}
+ body.cs-home-header #global-hero .cs41-home-hero .cs41-next-chapter strong{font-size:clamp(15px,4.8vw,23px)}
+}
+@media(prefers-reduced-motion:reduce){
+ body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row{clip-path:none!important}
+ body.cs-home-header #global-hero .cs41-home-hero .cs41-next-chapter{display:none!important}
+}
