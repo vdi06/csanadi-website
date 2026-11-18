@@ -2,7 +2,7 @@
 const $=id=>document.getElementById(id);
 const make=(tag,cls='',value)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(value!==undefined)e.textContent=String(value);return e;};
 const empty=e=>e.replaceChildren();
-const routeUrl=route=>/^#\/[a-z0-9/-]+$/i.test(route||'')?'index.html'+route:'index.html#/';
+const routeUrl=route=>{const hash=/^#\/[a-z0-9/-]+$/i.test(route||'')?route:'#/';return location.pathname.endsWith('/iranytu.html')?'index.html'+hash:hash;};
 const routeLink=(route,label='Részletek megnyitása →')=>{const a=make('a','',label);a.href=routeUrl(route);return a;};
 const normalize=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('hu-HU');
 const dayText=s=>{const d=new Date(s);return Number.isFinite(d.getTime())?new Intl.DateTimeFormat('hu-HU',{dateStyle:'medium',timeZone:'Europe/Budapest'}).format(d):'Dátum ellenőrzendő';};
@@ -19,7 +19,10 @@ function startTheme(){
  const apply=()=>{const mode=preference==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):preference;document.documentElement.dataset.theme=mode;
   $('r22-theme').textContent='◐ '+names[preference];const p=config?.theme?.[mode+'Colors'];if(p){const set=(key,value)=>value&&document.documentElement.style.setProperty('--r22-'+key,value);set('bg',p.page);set('card',p.card);set('ink',p.ink);set('muted',p.muted);set('border',p.line);set('green',p.sportGreen);set('yellow',p.sportYellow);}};
  $('r22-theme').addEventListener('click',()=>{const values=['system','light','dark'];preference=values[(values.indexOf(preference)+1)%values.length];try{localStorage.setItem('csanadi-theme',preference);}catch{}apply();});
- matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if(preference==='system')apply();});return apply;
+ const query=matchMedia('(prefers-color-scheme: dark)'),change=()=>{if(preference==='system'&&$('r22-theme')?.isConnected)apply();};
+ query.addEventListener('change',change);
+ $('r22-theme').closest('.cs-spa-feature')?.addEventListener('csanadi:feature-unmount',()=>query.removeEventListener('change',change),{once:true});
+ return apply;
 }
 
 function openDay(){
@@ -117,4 +120,5 @@ async function main(){const applyTheme=startTheme();
   const missing=entries.slice(1).filter(x=>x.status!=='fulfilled').length;$('r22-status').textContent=missing?`A tájékoztató betöltődött, de ${missing} opcionális adatforrás hiányzik. Az érintett rész üres állapotot mutat.`:'Az iránytű tíz eszköze betöltődött. A személyes választások ezen a készüléken maradnak.';
  }catch(error){console.error('22-es iránytű:',error);$('r22-status').textContent='Nem sikerült betölteni az iránytű központi adatait: '+error.message;}
 }
-main();
+export function mountCompass(){return main();}
+if(location.pathname.endsWith('/iranytu.html'))mountCompass();

@@ -1,4 +1,5 @@
 /* Csanádi Sportiskola 2026 R25 – statikus, forrásolt, elsősorban helyi működés. */
+import {bindFeatureTheme} from './spa-feature-theme-v1-42.js';
 const $=id=>document.getElementById(id);
 const el=(tag,cls='',value)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(value!==undefined)n.textContent=String(value);return n;};
 const wipe=n=>n.replaceChildren();
@@ -10,12 +11,15 @@ const domains=['olimpia.hu','dokumentumtar.mlsz.hu','mlsz.hu','mksz.hu','hunfenc
 const trusted=url=>{try{const u=new URL(url);return u.protocol==='https:'&&domains.some(d=>u.hostname===d||u.hostname.endsWith('.'+d));}catch{return false;}};
 const link=(url,text='Hivatalos forrás ↗')=>{const a=el('a','r25-source',text);if(trusted(url)){a.href=url;a.rel='noopener noreferrer';a.target='_blank';}else{a.textContent='Nincs ellenőrzött hivatkozás';}return a;};
 const localRoute=url=>/^(?:index\.html#\/[a-z0-9/-]*|(?:felfedezo|iranytu|iskolai-muhely|orokseg-es-tudastar|tanulas-es-kozosseg)\.html(?:#[a-z-]+)?)$/.test(url||'');
-const internal=(url,text)=>{const a=el('a','r25-source',text);if(localRoute(url))a.href=url;else a.textContent='Nem ellenőrzött belső hivatkozás';return a;};
+const internal=(url,text)=>{const a=el('a','r25-source',text);if(localRoute(url)){
+ const routes={'felfedezo.html':'#/iskolank/felfedezo','iranytu.html':'#/iskolank/iskolai-iranytu','iskolai-muhely.html':'#/iskolank/iskolai-muhely','orokseg-es-tudastar.html':'#/sport/olimpiai-orokseg-es-tudastar','tanulas-es-kozosseg.html':'#/oktatas/tanulas-es-kozosseg'};
+ a.href=location.pathname.endsWith('/tanulas-es-kozosseg.html')?url:routes[url]||(url.startsWith('index.html#/')?url.slice('index.html'.length):url);
+ }else a.textContent='Nem ellenőrzött belső hivatkozás';return a;};
 const card=(title,description,chip)=>{const c=el('article','r23-card'),b=el('div','r23-card-content');if(chip)b.append(el('span','r23-chip',chip));b.append(el('h3','',title),el('p','',description));c.append(b);return{c,b};};
 const loadJSON=async(path)=>{const response=await fetch(path,{cache:'no-store'});if(!response.ok)throw Error(path+': HTTP '+response.status);return response.json();};
 let config,content;
 
-function theme(){const modes=['system','light','dark'],labels={system:'Automatikus',light:'Világos',dark:'Sötét'};let pref='system';try{pref=localStorage.getItem('csanadi-theme')||'system';}catch{}if(!modes.includes(pref))pref='system';const apply=()=>{document.documentElement.dataset.theme=pref==='system'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):pref;$('r25-theme').textContent='◐ '+labels[pref];};$('r25-theme').addEventListener('click',()=>{pref=modes[(modes.indexOf(pref)+1)%3];try{localStorage.setItem('csanadi-theme',pref);}catch{}apply();});try{matchMedia('(prefers-color-scheme:dark)').addEventListener('change',()=>{if(pref==='system')apply();});}catch{}apply();}
+function theme(){bindFeatureTheme('r25-theme');}
 
 const weekdays=['Hétfő','Kedd','Szerda','Csütörtök','Péntek','Szombat','Vasárnap'];
 function planner(){const policy=config.runtime.round25,max=Math.min(120,Number(policy.plannerMaximumEntries)||80),days=Math.min(365,Number(policy.plannerRetentionDays)||30),key='csanadi-r25-weekly-plan',kind=$('r25-plan-kind'),form=$('r25-plan-form'),out=$('r25-plan-results'),status=$('r25-plan-status');content.plannerKinds.forEach(k=>option(kind,k));let items=[];
@@ -54,4 +58,5 @@ function reports(){const items=content.projectReports.filter(x=>x.published===tr
 function faq(){const trail=$('r25-faq-trail'),out=$('r25-faq-content'),back=$('r25-faq-back'),nodes=new Map(content.faq.map(x=>[x.id,x])),path=['fresh'];let choice=null;function draw(){wipe(out);wipe(trail);path.forEach(id=>trail.append(el('span','',nodes.get(id)?.title||id)));back.disabled=path.length<2&&!choice;const current=nodes.get(path.at(-1));if(!current){empty(out,'Hiányzó jóváhagyott döntésifa-elem.');return;}out.append(el('h3','',current.question));if(choice){const result=el('article','r25-faq-result');result.append(el('p','',choice.result));if(localRoute(choice.link))result.append(internal(choice.link,'Kapcsolódó oldal megnyitása ↗'));out.append(result);return;}const options=el('div','r25-faq-choices');for(const item of current.options||[]){const btn=el('button','',item.label);btn.type='button';btn.addEventListener('click',()=>{if(item.next&&nodes.has(item.next)&&path.length<(Number(config.runtime.round25.faqMaximumDepth)||8))path.push(item.next);else if(item.result&&localRoute(item.link))choice=item;else return;draw();});options.append(btn);}out.append(options);}back.addEventListener('click',()=>{if(choice)choice=null;else if(path.length>1)path.pop();draw();});$('r25-faq-start').addEventListener('click',()=>{path=['fresh'];choice=null;draw();});draw();}
 
 async function main(){theme();try{config=await loadJSON('json/config.json');const path=config.runtime?.round25?.dataPath;if(!/^adatok\/[a-z0-9-]+\.json$/.test(path||''))throw Error('Hiányzó runtime.round25.dataPath beállítás.');content=await loadJSON('json/'+path);const required=['plannerKinds','fairPlayGuides','panoramas','clubs','scholarships','easyReadTopics','alumniProfiles','alumniPublicSources','projectReports','projectSourceDirectory','faq'];if(content.release!==25||required.some(k=>!Array.isArray(content[k])))throw Error('Hibás R25 adatstruktúra.');planner();fairPlay();panorama();clubs();scholarships();speech();easyRead();alumni();reports();faq();$('r25-status').textContent='Mind a tíz modul betöltődött. A hitelesítetlen adatokat a rendszer nem teszi közzé.';}catch(error){console.error('R25 betöltés',error);$('r25-status').textContent='A központ betöltése sikertelen: '+error.message;}}
-main();
+export function mountCommunity(){return main();}
+if(location.pathname.endsWith('/tanulas-es-kozosseg.html'))mountCommunity();

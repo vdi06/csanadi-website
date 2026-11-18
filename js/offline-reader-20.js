@@ -36,5 +36,19 @@ async function transfer(remove=false){
   await refreshStats();
  }
 }
-$('offline-refresh').addEventListener('click',()=>transfer(false));$('offline-remove').addEventListener('click',()=>transfer(true));$('offline-select').addEventListener('click',()=>{selected.clear();buildList();refreshStats();});
-(async()=>{try{if(!('caches'in window)||!window.isSecureContext){status('Az offline mentéshez HTTPS vagy localhost és egy modern böngésző szükséges. A honlap online továbbra is használható.');return;}[cfg,manifest]=await Promise.all([load('json/config.json'),load('release-manifest.json')]);const index=await load('json/oldalindex.json');pages=Object.entries(index.pages||{}).filter(([,p])=>p.lifecycle?.status==='published').map(([path,page])=>({path,title:page.menuLabel||page.title})).sort((a,b)=>a.title.localeCompare(b.title,'hu'));status(`${pages.length} nyilvános oldal. Kijelölés után a Mentés/frissítés gombbal külön offline másolat készíthető.`);buildList();await refreshStats();}catch(error){status('Az offline központ nem tölthető be: '+error.message);}})();
+export async function mountOfflineReader(){
+ selected.clear();
+ $('offline-refresh').addEventListener('click',()=>transfer(false));
+ $('offline-remove').addEventListener('click',()=>transfer(true));
+ $('offline-select').addEventListener('click',()=>{selected.clear();buildList();refreshStats();});
+ try{
+  if(!('caches'in window)||!window.isSecureContext){status('Az offline mentéshez HTTPS vagy localhost és egy modern böngésző szükséges. A honlap online továbbra is használható.');return;}
+  [cfg,manifest]=await Promise.all([load('json/config.json'),load('release-manifest.json')]);
+  if(!$('offline-status'))return;
+  const index=await load('json/oldalindex.json');
+  pages=Object.entries(index.pages||{}).filter(([,p])=>p.lifecycle?.status==='published').map(([path,page])=>({path,title:page.menuLabel||page.title})).sort((a,b)=>a.title.localeCompare(b.title,'hu'));
+  status(`${pages.length} nyilvános oldal. Kijelölés után a Mentés/frissítés gombbal külön offline másolat készíthető.`);
+  buildList();await refreshStats();
+ }catch(error){if($('offline-status'))status('Az offline központ nem tölthető be: '+error.message);}
+}
+if(location.pathname.endsWith('/offline-olvaso.html'))void mountOfflineReader();

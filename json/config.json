@@ -176,7 +176,7 @@
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r-v1.41.4",
+    "cacheVersion": "csanadi-r-v1.42.3",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 100,
@@ -442,7 +442,7 @@
     },
     "release": {
       "minimumManifestEntries": 700,
-      "expectedPageCount": 71,
+      "expectedPageCount": 78,
       "updateCheckSeconds": 300
     },
     "offlineReader": {

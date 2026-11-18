@@ -33,7 +33,7 @@ async function migrateReaderCaches(keys,destination){
 }
 async function precache(){
  const config=await configuration(),cacheNames=names(config),cache=await caches.open(cacheNames.shell);
- const start=['./','./index.html','./felfedezo.html','./iranytu.html','./iskolai-muhely.html','./orokseg-es-tudastar.html','./tanulas-es-kozosseg.html','./megkozelites-es-tanulas.html','./utmutato.html','./offline.html','./json/config.json','./json/adatok/kozossegi-muhely-23.json','./json/adatok/orokseg-es-tudastar-24.json','./json/adatok/tanulas-kozosseg-25.json','./json/adatok/megkozelites-fejlodes-26.json','./service-worker.js','./release-manifest.json','./assets/media/logo/csanadi-cimer-512.webp'];
+ const start=['./','./index.html','./felfedezo.html','./iranytu.html','./iskolai-muhely.html','./orokseg-es-tudastar.html','./tanulas-es-kozosseg.html','./megkozelites-es-tanulas.html','./offline-olvaso.html','./utmutato.html','./offline.html','./json/config.json','./json/adatok/spa-features-42.json','./js/spa-features-v1-42.js','./js/spa-feature-theme-v1-42.js','./js/zip-native-2026.js','./js/offline-reader-20.js','./js/guide-ui-v1-42.js','./css/guide-legacy-v1-42.css','./json/structure.json','./json/oldalindex.json','./json/adatok/kozossegi-muhely-23.json','./json/adatok/orokseg-es-tudastar-24.json','./json/adatok/tanulas-kozosseg-25.json','./json/adatok/megkozelites-fejlodes-26.json','./service-worker.js','./release-manifest.json','./assets/media/logo/csanadi-cimer-512.webp'];
  let paths=start;
  try{
   const response=await fetch(new URL('release-manifest.json',scope),{cache:'no-store'});

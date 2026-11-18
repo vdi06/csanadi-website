@@ -1953,6 +1953,181 @@
       },
       "searchText": "Interaktív térkép A térkép csak a „Térkép betöltése” gombra kattintva kapcsolódik a külső OpenStreetMap szolgáltatáshoz. A jelölő az iskola **hozzávetőleges** helyét mutatja; nem igazol pontos bejáratot. Útvonaltervezési tudnivalók **Tömegközlekedés:** [BKK menetrendek](https://bkk.hu/menetrendek/). **Gyalog és kerékpárral:** indulás előtt tervezz biztonságos útvonalat, és ellenőrizd a helyi közlekedési feltételeket. **Akadálymentesség:** a konkrét bejárat és útvonal intézményi megerősítést igényel. [Vissza a Megközelítés és érkezés oldalra](#/megkozelites-es-erkezes) [Hivatalos kapcsolati és adatvédelmi elérhetőségek – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kapcsolat.html)",
       "blocks": []
+    },
+    "oldalak/iskolank/felfedezo.json": {
+      "id": "page:000072",
+      "title": "Interaktív felfedezőközpont",
+      "menuLabel": "Felfedezőközpont",
+      "summary": "Interaktív iskolai felfedezőeszközök: felvételi, tanév, sportágak, térkép, dokumentumok és kvíz.",
+      "tags": [
+        "interaktiv",
+        "felfedezes"
+      ],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/felfedezo",
+        "spaFeature": "explorer",
+        "verifiedContent": false
+      },
+      "searchText": "Interaktív felfedezőközpont Interaktív iskolai felfedezőeszközök: felvételi, tanév, sportágak, térkép, dokumentumok és kvíz.",
+      "blocks": []
+    },
+    "oldalak/iskolank/iskolai-iranytu.json": {
+      "id": "page:000073",
+      "title": "Iskolai iránytű",
+      "menuLabel": "Iskolai iránytű",
+      "summary": "Interaktív iskolai iránytű a tájékozódáshoz és tanuláshoz.",
+      "tags": [
+        "interaktiv",
+        "iranytu"
+      ],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/iskolai-iranytu",
+        "spaFeature": "compass",
+        "verifiedContent": false
+      },
+      "searchText": "Iskolai iránytű Interaktív iskolai iránytű a tájékozódáshoz és tanuláshoz.",
+      "blocks": []
+    },
+    "oldalak/iskolank/iskolai-muhely.json": {
+      "id": "page:000074",
+      "title": "Interaktív iskolai műhely",
+      "menuLabel": "Iskolai műhely",
+      "summary": "Iskolai műhely interaktív tanulási és tájékozódási eszközökkel.",
+      "tags": [
+        "interaktiv",
+        "muhely"
+      ],
+      "categories": [
+        "iskolank"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/iskolank/iskolai-muhely",
+        "spaFeature": "workshop",
+        "verifiedContent": false
+      },
+      "searchText": "Interaktív iskolai műhely Iskolai műhely interaktív tanulási és tájékozódási eszközökkel.",
+      "blocks": []
+    },
+    "oldalak/sport/olimpiai-orokseg-es-tudastar.json": {
+      "id": "page:000075",
+      "title": "Olimpiai örökség és tudástár",
+      "menuLabel": "Olimpiai örökség és tudástár",
+      "summary": "Interaktív sporttörténeti örökség és tudástár.",
+      "tags": [
+        "olimpia",
+        "tudastar"
+      ],
+      "categories": [
+        "sport"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/sport/olimpiai-orokseg-es-tudastar",
+        "spaFeature": "heritage",
+        "verifiedContent": false
+      },
+      "searchText": "Olimpiai örökség és tudástár Interaktív sporttörténeti örökség és tudástár.",
+      "blocks": []
+    },
+    "oldalak/oktatas/tanulas-es-kozosseg.json": {
+      "id": "page:000076",
+      "title": "Tanulás és közösség",
+      "menuLabel": "Tanulás és közösség",
+      "summary": "Interaktív tanulási és közösségi központ.",
+      "tags": [
+        "tanulas",
+        "kozosseg"
+      ],
+      "categories": [
+        "oktatas"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/oktatas/tanulas-es-kozosseg",
+        "spaFeature": "community",
+        "verifiedContent": false
+      },
+      "searchText": "Tanulás és közösség Interaktív tanulási és közösségi központ.",
+      "blocks": []
+    },
+    "oldalak/informaciok/offline-olvaso.json": {
+      "id": "page:000077",
+      "title": "Offline olvasási központ",
+      "menuLabel": "Offline olvasó",
+      "summary": "Offline olvasási központ, kiválasztott nyilvános oldalak helyi mentésével.",
+      "tags": [
+        "offline",
+        "olvasas"
+      ],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/offline-olvaso",
+        "spaFeature": "offline",
+        "verifiedContent": false
+      },
+      "searchText": "Offline olvasási központ Offline olvasási központ, kiválasztott nyilvános oldalak helyi mentésével.",
+      "blocks": []
+    },
+    "oldalak/informaciok/utmutato.json": {
+      "id": "page:000078",
+      "title": "Teljes használati kézikönyv",
+      "menuLabel": "Használati útmutató",
+      "summary": "A honlap teljes használati kézikönyve, kereséssel és nyomtatható nézettel.",
+      "tags": [
+        "utmutato",
+        "kezikonyv"
+      ],
+      "categories": [
+        "informaciok"
+      ],
+      "lifecycle": {
+        "status": "published",
+        "revision": 1
+      },
+      "schemaExtensions": {
+        "preview": false,
+        "route": "#/informaciok/utmutato",
+        "spaFeature": "guide",
+        "verifiedContent": false
+      },
+      "searchText": "Teljes használati kézikönyv A honlap teljes használati kézikönyve, kereséssel és nyomtatható nézettel.",
+      "blocks": []
     }
   },
   "searchIndexRevision": "1.39.9"

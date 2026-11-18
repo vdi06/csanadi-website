@@ -1,0 +1,12 @@
+{
+ "schemaVersion":"1.0.0","id":"page:000075","pageType":"standard",
+ "menuLabel":"Olimpiai örökség és tudástár","title":"Olimpiai örökség és tudástár","slug":"olimpiai-orokseg-es-tudastar","locale":"hu-HU",
+ "author":{"displayName":"Csanádi Árpád Sportiskola","organization":"Csanádi Árpád Sportiskola"},
+ "createdAt":"2026-11-18T00:00:00+01:00","updatedAt":"2026-11-18T00:00:00+01:00",
+ "lifecycle":{"status":"published","revision":1},
+ "seo":{"title":"Olimpiai örökség és tudástár – Csanádi Sportiskola","description":"Sporttörténeti és iskolai tudástár.","robots":"noindex,nofollow"},
+ "categories":["sport"],"tags":["olimpia","tudastar"],
+ "summary":"Interaktív sporttörténeti örökség és tudástár.",
+ "blocks":[],"related":[],
+ "schemaExtensions":{"preview":false,"route":"#/sport/olimpiai-orokseg-es-tudastar","spaFeature":"heritage","verifiedContent":false}
+}

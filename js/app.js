@@ -32,6 +32,7 @@ import {renderMobileTree} from '../mobile/navigation.js?v=1.38.1';
 import {createPhoneRadial} from '../mobile/radial-wheel-v1-38.js?v=1.38.1';
 import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.39.2';
 import {createSubpageHero} from './subpages-v1.js?v=1.39.16';
+import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.42.3';
 const app=document.getElementById('app');
 const routeStatus=document.getElementById('cs1404-route-status');
 let homeHeroElement=null;
@@ -471,8 +472,8 @@ function homePage(node){
   }
   const searchShortcut=dom('button',{type:'button',class:'home-j-search'},'Keresés a honlapon ⌕');
   searchShortcut.addEventListener('click',openSearch);nav.append(searchShortcut);
-  nav.append(dom('a',{href:'felfedezo.html',class:'csn21-explorer-link'},'Interaktív felfedezőközpont ↗'));
-  nav.append(dom('a',{href:'iranytu.html',class:'csn21-explorer-link'},'Iskolai iránytű ↗'));
+  nav.append(dom('a',{href:'#/iskolank/felfedezo',class:'csn21-explorer-link'},'Interaktív felfedezőközpont ↗'));
+  nav.append(dom('a',{href:'#/iskolank/iskolai-iranytu',class:'csn21-explorer-link'},'Iskolai iránytű ↗'));
   nav.append(dom('a',{href:'iskolai-muhely.html',class:'csn21-explorer-link'},'Iskolai műhely · 23. kiadás ↗'));
   nav.append(dom('a',{href:'orokseg-es-tudastar.html',class:'csn21-explorer-link'},'Olimpiai örökség és tudástár · 24. kiadás ↗'));
   nav.append(dom('a',{href:'tanulas-es-kozosseg.html',class:'csn21-explorer-link'},'Tanulás, sport és közösség · 25. kiadás ↗'));
@@ -655,7 +656,9 @@ function renderRoute(options={}){
   app.dataset.pageKind=kind;
   syncRound29HomeNavigation(kind==='home');
   document.body.classList.toggle('cs-inner-page',kind!=='home');
-  app.replaceChildren(node?(node.depth===0?homePage(node):contentPage(node)):errorPage());
+  releaseSpaFeatureStyles();
+  app.replaceChildren(node?(isSpaFeature(node.page)?featurePlaceholder(node.page):node.depth===0?homePage(node):contentPage(node)):errorPage());
+  if(node&&isSpaFeature(node.page))void activateSpaFeature(app.firstElementChild,node.page);
   if(expandedDetails.length){
    const nextDetails=[...app.querySelectorAll('details')];
    const nextById=new Map(),nextBySummary=new Map();

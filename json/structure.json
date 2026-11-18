@@ -52,6 +52,18 @@
         {
           "path": "oldalak/iskolank/oko-iskola.json",
           "order": 6
+        },
+        {
+          "path": "oldalak/iskolank/felfedezo.json",
+          "order": 7
+        },
+        {
+          "path": "oldalak/iskolank/iskolai-iranytu.json",
+          "order": 8
+        },
+        {
+          "path": "oldalak/iskolank/iskolai-muhely.json",
+          "order": 9
         }
       ]
     },
@@ -154,6 +166,10 @@
               "menuVisible": false
             }
           ]
+        },
+        {
+          "path": "oldalak/oktatas/tanulas-es-kozosseg.json",
+          "order": 7
         }
       ]
     },
@@ -211,6 +227,10 @@
         {
           "path": "oldalak/sport/sportgaleriak.json",
           "order": 3
+        },
+        {
+          "path": "oldalak/sport/olimpiai-orokseg-es-tudastar.json",
+          "order": 4
         }
       ]
     },
@@ -353,6 +373,16 @@
         {
           "path": "oldalak/informaciok/adatvedelem.json",
           "order": 7,
+          "menuVisible": false
+        },
+        {
+          "path": "oldalak/informaciok/offline-olvaso.json",
+          "order": 8,
+          "menuVisible": false
+        },
+        {
+          "path": "oldalak/informaciok/utmutato.json",
+          "order": 9,
           "menuVisible": false
         }
       ]

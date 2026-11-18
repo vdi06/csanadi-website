@@ -1,9 +1,9 @@
-import {createZip,downloadBlob} from '../tools/zip-native-2026.js?v=csanadi-r29n-20261115';
+import {createZip,downloadBlob} from './zip-native-2026.js?v=1.42.3';
 
 const byId=id=>document.getElementById(id);
 const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
 const clear=n=>n.replaceChildren();
-const link=(route,label)=>{const a=node('a','explorer-link',label);a.href='index.html'+route;return a;};
+const link=(route,label)=>{const a=node('a','explorer-link',label);a.href=location.pathname.endsWith('/felfedezo.html')?'index.html'+route:route;return a;};
 const key='csanadi-r21-';
 const saved=(name,fallback)=>{try{return JSON.parse(localStorage.getItem(key+name))??fallback;}catch{return fallback;}};
 const save=(name,value)=>{try{localStorage.setItem(key+name,JSON.stringify(value));return true;}catch{return false;}};
@@ -130,6 +130,7 @@ function initKiosk(){
  const step=n=>{index=(index+n+slides.length)%slides.length;draw();};
  const stop=()=>{clearInterval(timer);timer=null;};
  const start=()=>{stop();if(!paused)timer=setInterval(()=>{if(!document.hidden&&dialog.open)step(1);},configNumber('round21.kioskRotationMs',8500));};
+ dialog.closest('.cs-spa-feature')?.addEventListener('csanadi:feature-unmount',()=>{stop();if(dialog.open)dialog.close();},{once:true});
  byId('kiosk-start').addEventListener('click',()=>{index=0;paused=false;draw();dialog.showModal();if(dialog.requestFullscreen)dialog.requestFullscreen().catch(()=>{});start();});
  function close(){stop();if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});dialog.close();}
  byId('kiosk-close').addEventListener('click',close);dialog.addEventListener('close',stop);
@@ -148,7 +149,10 @@ function initTheme(){
  }
  window.applyRound21Theme=apply;
  byId('theme21').addEventListener('click',()=>{value=values[(values.indexOf(value)+1)%3];try{localStorage.setItem('csanadi-theme',value);}catch{}apply();});
- matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if(value==='system')apply();});apply();
+ const query=matchMedia('(prefers-color-scheme: dark)'),change=()=>{if(value==='system'&&byId('theme21')?.isConnected)apply();};
+ query.addEventListener('change',change);
+ byId('theme21').closest('.cs-spa-feature')?.addEventListener('csanadi:feature-unmount',()=>query.removeEventListener('change',change),{once:true});
+ apply();
 }
 async function main(){initTheme();
  try{
@@ -161,4 +165,5 @@ async function main(){initTheme();
   byId('explorer-status').textContent='A tíz interaktív eszköz betöltődött. A nyilvános adatok helyi JSON-fájlokból érkeznek.';
  }catch(error){console.error('Felfedezőközpont adatbetöltési hiba:',error);byId('explorer-status').textContent='Nem tölthető be a teljes felfedezőközpont: '+error.message+' · Ellenőrizd, hogy minden fájlt feltöltöttél-e.';}
 }
-main();
+export function mountExplorer(){return main();}
+if(location.pathname.endsWith('/felfedezo.html'))mountExplorer();
