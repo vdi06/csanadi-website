@@ -7,6 +7,7 @@ import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.39.5';
 import {setupSmartSearch} from './search-j-2026.js?v=1.40.10';
 import {installLanguageHighlights} from './language-20.js?v=csanadi-r29n-20261115';
 import {enhancePersonalizedHome} from './round21-personalize.js?v=csanadi-r29n-20261115';
+import {enhanceInlineHomeEditor} from './home-inline-editor-v1-41-4.js?v=1.41.4';
 import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,syncMobileEmbeddedSections,initRound29Diagnostics} from './round29-home.js?v=1.37.0';
 import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=csanadi-r29n-20261115';
 import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=csanadi-r29n-20261115';
@@ -505,6 +506,7 @@ function homePage(node){
   for(const unit of units)if(!canvas.contains(unit))canvas.append(unit);
   enhanceHomeInterests(canvas);
   enhancePersonalizedHome(canvas);
+  enhanceInlineHomeEditor(canvas);
   enhanceRound29Home(canvas);
   // Az oldalverzió a betöltési diagnosztikában jelenik meg, nem a tartalomkártyák alatt.
   frag.append(canvas);
