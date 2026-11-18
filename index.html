@@ -7,7 +7,7 @@
   <meta name="theme-color" id="theme-color" content="#FFF8E9">
   <script>(function(){var m="system";try{var saved=localStorage.getItem("csanadi-theme");if(["system","light","dark"].includes(saved))m=saved;}catch(e){}var actual=m==="system"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):m;document.documentElement.dataset.theme=actual;document.documentElement.dataset.themePreference=m;document.documentElement.setAttribute("data-bs-theme",actual);var bar=document.getElementById("theme-color");if(bar)bar.content=actual==="dark"?"#0d1b2d":"#fffaf0";})();
 </script>
-  <!-- A kapu első látogatáskor a HTML legelső megjelenítési pillanatától takar. -->
+  <!-- A kapu minden új oldalbetöltéskor a HTML legelső megjelenítési pillanatától takar. -->
   <style>
     #cs-gate-prelude{display:none}
     html.cs-gate-pending #cs-gate-prelude{position:fixed;inset:0;z-index:2601;display:grid;place-items:center;overflow:hidden;background:#07182a;color:#fff;isolation:isolate;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -19,10 +19,7 @@
     #cs-gate-prelude .cs-gate-prelude-copy p{font-size:clamp(24px,4vw,54px);font-weight:850;line-height:1.12;margin:0}
   </style>
   <script>(function(){
-    try{
-      // A nyitójelenet az első látogatáskor jelenik meg, nem naponta.
-      if(localStorage.getItem('csanadi-portal-ever-seen')==='1'||localStorage.getItem('csanadi-portal-visit-v3'))return;
-    }catch(_error){}
+    // A nyitójelenet minden friss oldalbetöltéskor megjelenik.
     document.documentElement.classList.add('cs-gate-pending');
     var firstGateImage='csanadi-kapu-zart-valosag.webp';
     var firstGatePreload=document.createElement('link');firstGatePreload.rel='preload';firstGatePreload.as='image';firstGatePreload.type='image/webp';firstGatePreload.href='assets/media/web/'+firstGateImage;document.head.append(firstGatePreload);

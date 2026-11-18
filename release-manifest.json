@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.42.3-preview",
+  "release": "csanadi-website-v1.42.4-preview",
   "date": "2026-11-18",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "A v1.41.4-es frissített vizuális forrás ellenőrzött egyeztetése az elkülönített SPA-központokkal. A vizuális fájlok megegyeznek, logikai működés megőrizve; böngészős regresszió nyitott; éles közzététel nincs.",
+  "notes": "A v1.42.3 alapra épülő 0/1-D kapunyitási döntés: a kapu minden teljes oldalbetöltéskor megjelenik; a kihagyás és újrajátszás megmarad. Böngészős regresszió nyitott; éles közzététel nincs.",
   "files": {
     "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf": {
       "sizeBytes": 219786,
@@ -3567,8 +3567,8 @@
       "sha256": "75001b42d45bd4cc29f9e97a38c696997d1452c84cc64923f87af8cc4e60a6ca"
     },
     "index.html": {
-      "sizeBytes": 23878,
-      "sha256": "7a60bd7eb8f51b1b82b634e37d65a0de491e73ed8c81426e480daf571845142c"
+      "sizeBytes": 23728,
+      "sha256": "44a2145d284adeeed22528dc17abb6a3c7777d383e3b6e54e390c4cd14fb4629"
     },
     "iranytu.html": {
       "sizeBytes": 10082,
@@ -3579,8 +3579,8 @@
       "sha256": "e54eeac0f426d39ee84340ff0a9991cad81b6e6db51e7d79c7775565ceb5ebad"
     },
     "js/advanced-2026.js": {
-      "sizeBytes": 34316,
-      "sha256": "37c927d67ecfc988031463a44d6efcd9e6a1d2cbb59889d6b35ca69a0d38d407"
+      "sizeBytes": 34243,
+      "sha256": "e55ad0b5063fe67da61d9c46b63f27ca59cc3925defb5ef8ae73c06f911cc77d"
     },
     "js/app.js": {
       "sizeBytes": 61576,

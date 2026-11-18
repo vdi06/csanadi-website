@@ -32,9 +32,7 @@ function clearEntrancePrelude(){
 }
 export function openEntrancePortal({force=false}={}){
  if(gateShowing){clearEntrancePrelude();return;}
- const key='csanadi-portal-ever-seen';
- if(!force&&(getStore(key)==='1'||getStore('csanadi-portal-visit-v3'))){clearEntrancePrelude();return;}
- if(!force)setStore(key,'1');
+ // Minden új dokumentumbetöltéskor megjelenik; az újrajátszás külön gombbal is elérhető.
  gateShowing=true;
  const layer=e('div','gate26');layer.id='gate26';layer.setAttribute('role','dialog');layer.setAttribute('aria-modal','true');layer.setAttribute('aria-labelledby','gate26-title');
  const scenery=e('div','gate26-scene gate26-cinematic-open');scenery.setAttribute('aria-hidden','true');
