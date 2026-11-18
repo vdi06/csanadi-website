@@ -1,5 +1,5 @@
 import {initRound10Enhancements} from './round10-enhancements.js?v=1.39.5';
-import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.39.16';
+import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.42.8';
 import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.40.0';
 import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=csanadi-r29n-20261115';
 import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=csanadi-r29n-20261115';
@@ -13,13 +13,13 @@ import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumen
 import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=csanadi-r29n-20261115';
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=csanadi-v127-20261116';
 import {renderMediaGallery} from './media-gallery-h-2026.js?v=1.37.0';
-import {renderDocumentCollections} from './document-collections-2026.js?v=csanadi-r29n-20261115';
+import {renderDocumentCollections} from './document-collections-2026.js?v=1.42.8';
 import {renderPageMedia} from './page-media-2026.js?v=csanadi-r29n-20261115';
 import {useSiteSettings,settingNumber} from './site-settings-2026.js';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.40.0';
 import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.42.6';
 import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.40.0';
-import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=csanadi-r29n-20261115';
+import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=1.42.8';
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.39.16';
 import {renderBlock,dom,listCards} from './blocks.js?v=1.42.6';
@@ -32,7 +32,7 @@ import {renderMobileTree} from '../mobile/navigation.js?v=1.38.1';
 import {createPhoneRadial} from '../mobile/radial-wheel-v1-38.js?v=1.38.1';
 import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.39.2';
 import {createSubpageHero} from './subpages-v1.js?v=1.39.16';
-import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.42.3';
+import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.42.8';
 const app=document.getElementById('app');
 const routeStatus=document.getElementById('cs1404-route-status');
 let homeHeroElement=null;
@@ -474,9 +474,9 @@ function homePage(node){
   searchShortcut.addEventListener('click',openSearch);nav.append(searchShortcut);
   nav.append(dom('a',{href:'#/iskolank/felfedezo',class:'csn21-explorer-link'},'Interaktív felfedezőközpont ↗'));
   nav.append(dom('a',{href:'#/iskolank/iskolai-iranytu',class:'csn21-explorer-link'},'Iskolai iránytű ↗'));
-  nav.append(dom('a',{href:'iskolai-muhely.html',class:'csn21-explorer-link'},'Iskolai műhely · 23. kiadás ↗'));
-  nav.append(dom('a',{href:'orokseg-es-tudastar.html',class:'csn21-explorer-link'},'Olimpiai örökség és tudástár · 24. kiadás ↗'));
-  nav.append(dom('a',{href:'tanulas-es-kozosseg.html',class:'csn21-explorer-link'},'Tanulás, sport és közösség · 25. kiadás ↗'));
+  nav.append(dom('a',{href:'#/iskolank/iskolai-muhely',class:'csn21-explorer-link'},'Iskolai műhely · 23. kiadás ↗'));
+  nav.append(dom('a',{href:'#/sport/olimpiai-orokseg-es-tudastar',class:'csn21-explorer-link'},'Olimpiai örökség és tudástár · 24. kiadás ↗'));
+  nav.append(dom('a',{href:'#/oktatas/tanulas-es-kozosseg',class:'csn21-explorer-link'},'Tanulás, sport és közösség · 25. kiadás ↗'));
   const rails=dom('div',{class:'home-j-navrail-unit'});rails.append(nav);
   // A dicsőségfal a kezdőoldali hero UTÁNI első fő tartalmi szakasz.
   // A további, korábban működő modulok és a személyes sorrendezés megmaradnak.
@@ -536,12 +536,34 @@ function embeddedArrival(route,options){
  heading.append(dom('span',{class:'eyebrow'},'CSANÁDI · MEGKÖZELÍTÉS ÉS TANULÁS'),dom('h1',{},'Iskolai megközelítés és tanulástámogatás'));
  const iframe=dom('iframe',{class:'cs-arrival-frame'});
  iframe.title='Megközelítés és tanulástámogatás – iskolai útmutató';
- iframe.src='megkozelites-es-tanulas.html?embedded=1'+(section?'#'+section:'');
+ iframe.dataset.arrivalSection=section;
+ // A régi különálló HTML-oldal helyett a tartalom JSON-ból, srcdoc keretben töltődik be.
+ fetch('json/adatok/arrival-template-2026.json',{cache:'no-store'}).then(response=>{
+   if(!response.ok)throw Error('Megközelítési komponens: HTTP '+response.status);
+   return response.json();
+ }).then(template=>{
+   if(!iframe.isConnected)return;
+   if(template.schemaVersion!=='1.0.0'||typeof template.document!=='string'||!template.document.startsWith('<!doctype html>'))throw Error('Hibás megközelítési komponens.');
+   const base=document.baseURI.replaceAll('&','&amp;').replaceAll('"','&quot;');
+   iframe.srcdoc=template.document.replace('<head>','<head><base href="'+base+'">');
+ }).catch(error=>{
+   console.error('Megközelítési komponens:',error);
+   if(iframe.isConnected)iframe.replaceWith(dom('p',{role:'alert'},'A megközelítési és tanulási eszköz átmenetileg nem érhető el.'));
+ });
  iframe.loading='eager';
  iframe.setAttribute('referrerpolicy','same-origin');
  iframe.dataset.embeddedHeight='0';
  let lastMessageSequence=0;
- iframe.addEventListener('load',()=>{lastMessageSequence=0;syncEmbeddedTheme();});
+ iframe.addEventListener('load',()=>{
+   lastMessageSequence=0;syncEmbeddedTheme();
+   iframe.contentDocument?.addEventListener('click',event=>{
+     const anchor=event.target.closest?.('a[href]');
+     const href=anchor?.getAttribute('href')||'';
+     if(/^index\.html#\/[a-z0-9/-]*$/i.test(href)){
+       event.preventDefault();location.hash=href.slice('index.html'.length);
+     }
+   });
+ });
  wrapper.append(heading,iframe);app.replaceChildren(wrapper);
  syncRouteHero(null,'general');
  const onMessage=event=>{
@@ -591,9 +613,7 @@ function renderRoute(options={}){
   if(!catalog)return;
   const requested=getRoute();
   if(arrivalSection(requested)!==null){
-    const destination='#/megkozelites-es-erkezes'+(arrivalSection(requested)==='terkep'?'/terkep':'');
-    history.replaceState(history.state,'',location.pathname+location.search+destination);
-    renderRoute(options);
+    embeddedArrival(requested,options);
     return;
   }
   if(window.__csArrivalMessage){window.removeEventListener('message',window.__csArrivalMessage);window.__csArrivalMessage=null;}

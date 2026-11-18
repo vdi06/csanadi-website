@@ -179,7 +179,7 @@ function renderCenterContents(mount,route,initial){
  manual.setAttribute('aria-label','Teljes weboldal-használati útmutató');
  manual.append(el('p','doc-kicker','TELJES FELHASZNÁLÓI ÉS KARBANTARTÓI DOKUMENTÁCIÓ'),el('h3',null,'A Csanádi Sportiskola 2026 teljes használati kézikönyve'),el('p',null,'66 tartalmi oldal, 10 karbantartó eszköz, a főmenü, a képes tartalomváltó, a keresés, a médiák, a dokumentumkezelés és az FTP-kiadás lépésről lépésre.'));
  const manualLinks=el('div','csn26-manual-links');
- const online=el('a','doc-center-link','Kereshető webes kézikönyv megnyitása');online.href=new URL('utmutato.html',ROOT).href;
+ const online=el('a','doc-center-link','Kereshető webes kézikönyv megnyitása');online.href='#/informaciok/utmutato';
  const pdf=el('a','doc-center-link','PDF-kézikönyv letöltése');pdf.href=new URL('assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf',ROOT).href;pdf.download='csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf';
  const pdfView=el('a','doc-center-link','PDF megnyitása új lapon');pdfView.href=new URL('assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf',ROOT).href;pdfView.target='_blank';pdfView.rel='noopener noreferrer';manualLinks.append(online,pdfView,pdf);manual.append(manualLinks);mount.append(manual);
  const officialLinks=[

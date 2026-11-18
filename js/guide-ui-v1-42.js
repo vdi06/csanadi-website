@@ -1,4 +1,4 @@
-// SPA-only interaction adapter. The original utmutato.html remains unchanged.
+// SPA-only interaction adapter. A kézikönyv tartalma JSON-komponensként érhető el.
 export async function mountGuide(){
  const input=document.getElementById('guide-search'),status=document.getElementById('guide-count');
  const button=document.getElementById('guide-theme-toggle');

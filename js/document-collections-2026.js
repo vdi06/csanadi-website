@@ -14,7 +14,7 @@ export function renderDocumentCollections(){
  const manualTitle=node('h2','','A honlap teljes használati útmutatója');manualTitle.id='doc26-manual-title';
  const manualLead=node('p','','Részletes útmutató a 66 tartalmi oldalhoz, a főmenühöz, a keresőhöz, a médiákhoz és a 10 helyi karbantartó eszközhöz.');
  const manualActions=node('div','doc26-manual-actions');
- const manualWeb=node('a','','Kereshető webes útmutató megnyitása');manualWeb.href='utmutato.html';
+ const manualWeb=node('a','','Kereshető webes útmutató megnyitása');manualWeb.href='#/informaciok/utmutato';
  const manualPdf=node('a','','Teljes PDF-kézikönyv letöltése');manualPdf.href='assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf';manualPdf.download='csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf';
  manualActions.append(manualWeb,manualPdf);manual.append(manualTitle,manualLead,manualActions);
  toolbar.append(search,select);box.append(manual,title,text,toolbar,result,grid,more);

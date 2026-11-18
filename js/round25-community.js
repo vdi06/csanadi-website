@@ -10,10 +10,9 @@ const empty=(target,message)=>{wipe(target);target.append(el('p','r25-no-verifie
 const domains=['olimpia.hu','dokumentumtar.mlsz.hu','mlsz.hu','mksz.hu','hunfencing.hu','kajakkenusport.hu','birkozoszov.hu','emet.gov.hu','kormany.hu','utr.tef.gov.hu'];
 const trusted=url=>{try{const u=new URL(url);return u.protocol==='https:'&&domains.some(d=>u.hostname===d||u.hostname.endsWith('.'+d));}catch{return false;}};
 const link=(url,text='Hivatalos forrás ↗')=>{const a=el('a','r25-source',text);if(trusted(url)){a.href=url;a.rel='noopener noreferrer';a.target='_blank';}else{a.textContent='Nincs ellenőrzött hivatkozás';}return a;};
-const localRoute=url=>/^(?:index\.html#\/[a-z0-9/-]*|(?:felfedezo|iranytu|iskolai-muhely|orokseg-es-tudastar|tanulas-es-kozosseg)\.html(?:#[a-z-]+)?)$/.test(url||'');
+const localRoute=url=>/^(?:index\.html)?#\/[a-z0-9/-]*$/.test(url||'');
 const internal=(url,text)=>{const a=el('a','r25-source',text);if(localRoute(url)){
- const routes={'felfedezo.html':'#/iskolank/felfedezo','iranytu.html':'#/iskolank/iskolai-iranytu','iskolai-muhely.html':'#/iskolank/iskolai-muhely','orokseg-es-tudastar.html':'#/sport/olimpiai-orokseg-es-tudastar','tanulas-es-kozosseg.html':'#/oktatas/tanulas-es-kozosseg'};
- a.href=location.pathname.endsWith('/tanulas-es-kozosseg.html')?url:routes[url]||(url.startsWith('index.html#/')?url.slice('index.html'.length):url);
+ a.href=url.startsWith('index.html#/')?url.slice('index.html'.length):url;
  }else a.textContent='Nem ellenőrzött belső hivatkozás';return a;};
 const card=(title,description,chip)=>{const c=el('article','r23-card'),b=el('div','r23-card-content');if(chip)b.append(el('span','r23-chip',chip));b.append(el('h3','',title),el('p','',description));c.append(b);return{c,b};};
 const loadJSON=async(path)=>{const response=await fetch(path,{cache:'no-store'});if(!response.ok)throw Error(path+': HTTP '+response.status);return response.json();};

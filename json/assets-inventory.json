@@ -9518,17 +9518,17 @@
       "height": 900
     },
     {
-      "path": "assets/qr/csanadi-qr-06b6013647d5dabb.svg",
+      "path": "assets/qr/csanadi-qr-281571ce738ff3de.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
-      "sizeBytes": 3353,
-      "title": "csanadi qr 06b6013647d5dabb",
+      "sizeBytes": 4271,
+      "title": "csanadi qr 281571ce738ff3de",
       "alt": "",
       "description": "",
       "category": "qr",
       "tags": [],
       "mediaId": null,
-      "sha256": "14a6fbb3a5cfc83693f26eaf23c22bd65e4ddae60113eb9b965b3da1803237f9",
+      "sha256": "9ecf7881755634fbb40b592d149b9047598e5163075d4c7d2c055b329f02ef24",
       "published": false,
       "rightsConfirmed": false
     },
@@ -10808,17 +10808,17 @@
       "rightsConfirmed": false
     },
     {
-      "path": "assets/qr/csanadi-qr-fe6cb35447110140.svg",
+      "path": "assets/qr/csanadi-qr-6ccd880ba31e5a04.svg",
       "type": "graphic",
       "mimeType": "image/svg+xml",
-      "sizeBytes": 4296,
-      "title": "csanadi qr fe6cb35447110140",
+      "sizeBytes": 4434,
+      "title": "csanadi qr 6ccd880ba31e5a04",
       "alt": "",
       "description": "",
       "category": "qr",
       "tags": [],
       "mediaId": null,
-      "sha256": "4b766944a977a5e8edf9f51efa5fe93b4717b3775f930f3d5fd17edfd5873622",
+      "sha256": "88924f259149c3c05b39cce49c8d3c10f3550de040b5d06078322598e9f2170a",
       "published": false,
       "rightsConfirmed": false
     },

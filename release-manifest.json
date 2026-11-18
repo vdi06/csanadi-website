@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.42.7-preview",
+  "release": "csanadi-website-v1.42.8-preview",
   "date": "2026-11-18",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "A 0/1-D és 0/2-C döntések szerint minden teljes betöltéskor térhatású valós kapunyitás jelenik meg. A kezdőlap képcserélőjében a középső címer takarási zónája szabad; a kép többi részén emberek és sporttémák is lehetnek. Az ellenőrzött logoSafe képek forognak, a többi dia adatként megmarad. Böngészős regresszió nyitott; éles közzététel nincs.",
+  "notes": "A v1.42.7 megjelenését megőrző, kizárólag index.html és offline.html fájlokat tartalmazó SPA-kiadás. A korábbi külön HTML-központok JSON-adatokkal működnek, a megközelítési eszköz srcdoc nézetbe került. A belső hivatkozások, QR-kódok, service worker és kanonikus URL-ek ehhez igazodnak. Böngészős regresszió nyitott; éles közzététel nincs.",
   "files": {
     "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf": {
       "sizeBytes": 219786,
@@ -2750,10 +2750,6 @@
       "sizeBytes": 95378,
       "sha256": "f57324d58a87f779f5f6b4e30744a2d31dbeaa3d805e6e55dca5f642293074f4"
     },
-    "assets/qr/csanadi-qr-06b6013647d5dabb.svg": {
-      "sizeBytes": 3353,
-      "sha256": "14a6fbb3a5cfc83693f26eaf23c22bd65e4ddae60113eb9b965b3da1803237f9"
-    },
     "assets/qr/csanadi-qr-0bcf56ffaf451cb2.svg": {
       "sizeBytes": 5520,
       "sha256": "1c3df4c44b0e4cfb2f031280ff8920a6e9bf3576acef50bb7eb94d6175b71d4b"
@@ -2797,6 +2793,10 @@
     "assets/qr/csanadi-qr-263990dcdf95e979.svg": {
       "sizeBytes": 4242,
       "sha256": "3384780a02ee5908d4ad7c6effafa22d4ad33cd229488316875680286124b980"
+    },
+    "assets/qr/csanadi-qr-281571ce738ff3de.svg": {
+      "sizeBytes": 4271,
+      "sha256": "9ecf7881755634fbb40b592d149b9047598e5163075d4c7d2c055b329f02ef24"
     },
     "assets/qr/csanadi-qr-2d2caec6a51d6205.svg": {
       "sizeBytes": 5459,
@@ -2865,6 +2865,10 @@
     "assets/qr/csanadi-qr-6c9334e5d6b059f3.svg": {
       "sizeBytes": 5547,
       "sha256": "45271137bd378bbea56705d16634b3711b0e78fbca1e7129eb73b7a4b042ce9d"
+    },
+    "assets/qr/csanadi-qr-6ccd880ba31e5a04.svg": {
+      "sizeBytes": 4434,
+      "sha256": "88924f259149c3c05b39cce49c8d3c10f3550de040b5d06078322598e9f2170a"
     },
     "assets/qr/csanadi-qr-720d4f1f6672ae3b.svg": {
       "sizeBytes": 4341,
@@ -3093,10 +3097,6 @@
     "assets/qr/csanadi-qr-fdde03c49be816a7.svg": {
       "sizeBytes": 5751,
       "sha256": "dec136f02a052fd22adaabce304dae016f38c6ee106e42cfa4bb9461b5d5c862"
-    },
-    "assets/qr/csanadi-qr-fe6cb35447110140.svg": {
-      "sizeBytes": 4296,
-      "sha256": "4b766944a977a5e8edf9f51efa5fe93b4717b3775f930f3d5fd17edfd5873622"
     },
     "css/accessibility-v1-40-3.css": {
       "sizeBytes": 3995,
@@ -3562,29 +3562,17 @@
       "sizeBytes": 484,
       "sha256": "d699af49beee4cb9af24350bdf8a3092e82dcb83cdd40a46554c50880a6bae9c"
     },
-    "felfedezo.html": {
-      "sizeBytes": 9075,
-      "sha256": "75001b42d45bd4cc29f9e97a38c696997d1452c84cc64923f87af8cc4e60a6ca"
-    },
     "index.html": {
       "sizeBytes": 23730,
-      "sha256": "0f0813a3806e12cd89b20167db99a612b6d34eff801fbd7837323f3aaccd93ae"
-    },
-    "iranytu.html": {
-      "sizeBytes": 10082,
-      "sha256": "0292db0b935668f913eb4d48a54f3eebfa3c7cd2e4a25f5575f2f888016015df"
-    },
-    "iskolai-muhely.html": {
-      "sizeBytes": 11362,
-      "sha256": "e54eeac0f426d39ee84340ff0a9991cad81b6e6db51e7d79c7775565ceb5ebad"
+      "sha256": "2b9654065c4f13c79d12c4228147b2adb131e2d17a4d2d7746ca010cde388603"
     },
     "js/advanced-2026.js": {
       "sizeBytes": 34510,
       "sha256": "c3d05b41c289ed83b64307e32407bf494264cdf8c7da86daf840e7f7dfe68c87"
     },
     "js/app.js": {
-      "sizeBytes": 61576,
-      "sha256": "3b3a5c5248e03a04a8015c794624f999e42f3b0da31e3d44dbacfcf6f09880cc"
+      "sizeBytes": 62577,
+      "sha256": "fb584bf311af04ab610a6a9d41d813cced717b987ae0a53c0851446da0c15884"
     },
     "js/blocks.js": {
       "sizeBytes": 9230,
@@ -3599,12 +3587,12 @@
       "sha256": "1467cdbafd173f4d86cf54c0633ef534d8f454edff92411fd0f97557bb4ce737"
     },
     "js/document-collections-2026.js": {
-      "sizeBytes": 4410,
-      "sha256": "d0f2dbf18cb1ef4ebdd2ba99a54a4fd818f3fa9d14daf7f1026a21dc9e903e17"
+      "sizeBytes": 4419,
+      "sha256": "c8a1d76a3716107592e42fa17946b30ab36030dab915bd6733e427a7633f98c8"
     },
     "js/documents.js": {
-      "sizeBytes": 29212,
-      "sha256": "974827c0e857b0bc4d165fc677e327321454fa1a33a29db9a4d66fdf4b141f23"
+      "sizeBytes": 29202,
+      "sha256": "08d5585c4aa8180b62f9eb508a89d0f1362a1357a8f76f97f06227356c0b4cb0"
     },
     "js/experience-2026.js": {
       "sizeBytes": 21323,
@@ -3627,8 +3615,8 @@
       "sha256": "8ade3625d970b550b7d066ee899838da54e951faa8556e7164c9c33d37cba8b5"
     },
     "js/guide-ui-v1-42.js": {
-      "sizeBytes": 2865,
-      "sha256": "add66f34ea953d1659409f24ce73ed0058da76bbeb977a5e93c33ca3f5fc28ad"
+      "sizeBytes": 2875,
+      "sha256": "2c5fc2480d122bdea5e19ab09f785df86ca28c10fd1518fe59ba94920fe5fad8"
     },
     "js/header-adaptive-v1-39-18.js": {
       "sizeBytes": 2554,
@@ -3679,8 +3667,8 @@
       "sha256": "d19bfc1d9e7f54baafb56f95874a38e107a4794d85c40e55ca7ecd64520fe644"
     },
     "js/next10-2026.js": {
-      "sizeBytes": 12001,
-      "sha256": "76e2ed433cc99b25004410431578ae871122c2877321c25c73df69dfdc084485"
+      "sizeBytes": 11807,
+      "sha256": "3d42f9f846531e7fa122d7f48da7f7e59a2a85f97269336b9c81b5eadacdcba1"
     },
     "js/offline-reader-20.js": {
       "sizeBytes": 5462,
@@ -3739,16 +3727,16 @@
       "sha256": "7d0abfafb7787fdcb10a439ea7f01a19fe329229df0904f2495fe6f646302ce7"
     },
     "js/round24-heritage.js": {
-      "sizeBytes": 17443,
-      "sha256": "907ed882079e8c4066a0cf669164a6a0e0bd1641f70210ac0ce7ab9418f16f00"
+      "sizeBytes": 17369,
+      "sha256": "537ef6379cab941a8ec479d6913f7fd5a37ebbc0dd091d7aa9aa492472586539"
     },
     "js/round25-community.js": {
-      "sizeBytes": 21367,
-      "sha256": "d606a8afa4558e5a9f0fdb0f3a6eee82ac671ac8aea5a1b97dc25748c24dd3cb"
+      "sizeBytes": 20921,
+      "sha256": "fa0e42f6ca98d052be9243d428761860747ddd7c5fe9f9f95c63b15550cd31fc"
     },
     "js/round26-arrival.js": {
-      "sizeBytes": 15725,
-      "sha256": "da50597657b8bdb752472bbf10ccbc441606fc6b363ec120cd3e2836f96abad6"
+      "sizeBytes": 15763,
+      "sha256": "1c371796bbf5f7941959a95c9509d9e6d556b09a1427b5f8eaae6b0c8771540d"
     },
     "js/round29-home.js": {
       "sizeBytes": 36120,
@@ -3784,11 +3772,11 @@
     },
     "js/spa-features-v1-42.js": {
       "sizeBytes": 5625,
-      "sha256": "d6ea558bc09564af2fc80b0db29c331da6b6d68f5ef2a88d25d63ed05cd3f46f"
+      "sha256": "74bd9408017bae5faf17d44259fbd3fde2416f3b5a7bf56a8b5c8c2ec38467b2"
     },
     "js/spa-frame-bootstrap-v1-42.js": {
       "sizeBytes": 1263,
-      "sha256": "f7e5fdd266739fa6737943b029079d264131cf102e57b16eca19edbe554dcd0c"
+      "sha256": "e9aa73c88b07d120f68598c63f3538337ea2dc386a31e449b26600a3b9b4eb25"
     },
     "js/sports-successes.js": {
       "sizeBytes": 6817,
@@ -3817,6 +3805,10 @@
     "json/adatok/ajanlasi-szabalyok-v1-40-10.json": {
       "sizeBytes": 443,
       "sha256": "0ad814a8e63b67794bf812f1815f31f894dde3c8b911810fbc905391864126bf"
+    },
+    "json/adatok/arrival-template-2026.json": {
+      "sizeBytes": 17333,
+      "sha256": "750f9b58f437ed98e99b8bf91ce36697ee7fc0b9121c1b7c5df5d8a93e0560d7"
     },
     "json/adatok/csengetesi-rend.json": {
       "sizeBytes": 1536,
@@ -3871,20 +3863,20 @@
       "sha256": "020d01e4c6d1ff443f1d4fa27f9ec5da4b67e37e09986a5f65c8286454229425"
     },
     "json/adatok/orokseg-es-tudastar-24.json": {
-      "sizeBytes": 9743,
-      "sha256": "cd1be14a63633eb81472b19f49fc488023cb65357d3ecc6c1e5825dc65eb4ad6"
+      "sizeBytes": 9801,
+      "sha256": "d2841b35e2c0b402aed768024edc3a412507ebc98edf2af2c434cc4d75f6592e"
     },
     "json/adatok/qr-index-22.json": {
-      "sizeBytes": 44047,
-      "sha256": "c574832f4956ca7e8aa036f98e0baeca516038e34162c1a4f2ce78c8543e3a3a"
+      "sizeBytes": 44087,
+      "sha256": "15c6492bc4373b81be385f6656ffba9d8527daaee759df56aecf494887ef0ec2"
     },
     "json/adatok/social.json": {
       "sizeBytes": 631,
       "sha256": "2b04e2a0c84d8d4a9c00b076b208ea1dcd399ae8a97a7e4f2da5955da5e7f478"
     },
     "json/adatok/spa-features-42.json": {
-      "sizeBytes": 199731,
-      "sha256": "4c78d702ccca44709a49fd6d746d363a6ca428ca028b5d0d8f654195ec1e7bab"
+      "sizeBytes": 199858,
+      "sha256": "24f2ea6d26b8ad7a135aa2a15cd66798fb3698806a198da30458f484b7ec81a7"
     },
     "json/adatok/sportsikerek.json": {
       "sizeBytes": 10319,
@@ -3895,8 +3887,8 @@
       "sha256": "2faef1fb6ddf910d85afed303429c111844d1945144592f760dc37ecb3a7c086"
     },
     "json/adatok/tanulas-kozosseg-25.json": {
-      "sizeBytes": 8790,
-      "sha256": "7e41da8489f2c7a807a2473c7633e14bc28c82077633eda26da6c5309400a607"
+      "sizeBytes": 8809,
+      "sha256": "1c8465709878e27129aabe1292dcdfd673014601211bc6ad20d4cbd976b70e81"
     },
     "json/adatok/tanuloi-sikerek.json": {
       "sizeBytes": 6159,
@@ -3908,15 +3900,15 @@
     },
     "json/assets-inventory.json": {
       "sizeBytes": 441104,
-      "sha256": "b1433ceadce85d5e680275c61ed9b015f4895e9bdc439716d482a90ecc9e4202"
+      "sha256": "61ca8fda3ca477f4cd1bf694222e7d08d7a4ecf1d56fb1148955cdfcefcc7e17"
     },
     "json/assets-project-index.json": {
-      "sizeBytes": 132181,
-      "sha256": "94b4ec00171367d6da15f2754c3972b7eddffe743b6558996da2c61e1899ccf9"
+      "sizeBytes": 131752,
+      "sha256": "676105e3cfa7d09fb0c50116171d2936807b3efd02eede0dc651161a42365c63"
     },
     "json/config.json": {
       "sizeBytes": 15605,
-      "sha256": "27856fb48f40994dbcb53c68e2a40d39fa9817c57928a18e910cf80cecb97ad2"
+      "sha256": "8f696274ae96e129a6497c755fa3667f7169fca5c6c063834dad0dca21868a8e"
     },
     "json/mediatar.json": {
       "sizeBytes": 306653,
@@ -3926,6 +3918,14 @@
       "sizeBytes": 1785,
       "sha256": "de6bc0c038ba1dbf011533bea4bd18de996756489f48b7f1fa7103fcfd08354c"
     },
+    "json/oldalak/hirek-es-esemenyek.json": {
+      "sizeBytes": 2814,
+      "sha256": "c7528aa679777a94b4f636b6de97e059f98515a09ba845688c11323681d55d23"
+    },
+    "json/oldalak/hirek-es-esemenyek/esemenynaptar.json": {
+      "sizeBytes": 3220,
+      "sha256": "cbcfbe6bc383dae78a2d6069b35fab17d28c48c776f64d09df6b95a36a51a22f"
+    },
     "json/oldalak/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek.json": {
       "sizeBytes": 3067,
       "sha256": "f6ee2ac4d9ce6e90bfca849aab79116c02bdedc9f597617b9a80d811f6ed8d64"
@@ -3934,9 +3934,9 @@
       "sizeBytes": 3139,
       "sha256": "f8580e9490fb7c5a5f68de30e6488601152a9df71dd6b290d2ae18cff0fa88c5"
     },
-    "json/oldalak/hirek-es-esemenyek/esemenynaptar.json": {
-      "sizeBytes": 3220,
-      "sha256": "cbcfbe6bc383dae78a2d6069b35fab17d28c48c776f64d09df6b95a36a51a22f"
+    "json/oldalak/hirek-es-esemenyek/hirek.json": {
+      "sizeBytes": 2722,
+      "sha256": "97a7c8be4a139f61ab5240c37b173c5f7d56bb27f6da188d9f32b2c54aae68f3"
     },
     "json/oldalak/hirek-es-esemenyek/hirek/hirarchivum.json": {
       "sizeBytes": 2859,
@@ -3950,17 +3950,13 @@
       "sizeBytes": 3311,
       "sha256": "5b53a49d53520b9a4bfe67f454fb40274aa9954caceb78afe2d73f3547528e14"
     },
-    "json/oldalak/hirek-es-esemenyek/hirek.json": {
-      "sizeBytes": 2722,
-      "sha256": "97a7c8be4a139f61ab5240c37b173c5f7d56bb27f6da188d9f32b2c54aae68f3"
-    },
     "json/oldalak/hirek-es-esemenyek/kozlemenyek.json": {
       "sizeBytes": 3163,
       "sha256": "a8ffc866dc5344698f775c84870902885bec5b8121fd2483218be8416b278e96"
     },
-    "json/oldalak/hirek-es-esemenyek.json": {
-      "sizeBytes": 2814,
-      "sha256": "c7528aa679777a94b4f636b6de97e059f98515a09ba845688c11323681d55d23"
+    "json/oldalak/informaciok.json": {
+      "sizeBytes": 3229,
+      "sha256": "0f20041c92eef348fe3f2a5d389f43cd88a6670b2724e76f69ca3ba696ca9b90"
     },
     "json/oldalak/informaciok/adatvedelem.json": {
       "sizeBytes": 3274,
@@ -3974,6 +3970,10 @@
       "sizeBytes": 3108,
       "sha256": "5ee8afc92f98941b7f5fa8e6b8ab8e8135301f4257373596e0b1bb681013a2a1"
     },
+    "json/oldalak/informaciok/dokumentumtar.json": {
+      "sizeBytes": 2491,
+      "sha256": "178d2b97b78796f80042a3ba07b5ddc5363e5249242da8d9dc8c5bb8260b5640"
+    },
     "json/oldalak/informaciok/dokumentumtar/kozzeteteli-lista.json": {
       "sizeBytes": 3673,
       "sha256": "76f099994cb47a4900c5179cdd8bf9664d5e477f4307811157a8b85ff5c521e3"
@@ -3986,9 +3986,9 @@
       "sizeBytes": 3624,
       "sha256": "99b264f934ced5b87440f55f9c061d3909f436a39958d513547543db937c8786"
     },
-    "json/oldalak/informaciok/dokumentumtar.json": {
-      "sizeBytes": 2491,
-      "sha256": "178d2b97b78796f80042a3ba07b5ddc5363e5249242da8d9dc8c5bb8260b5640"
+    "json/oldalak/informaciok/kozossegi-szolgalat.json": {
+      "sizeBytes": 3781,
+      "sha256": "918069642c0843fea6165ac111d3923d6fea11b680ef4ce622936b64365b830e"
     },
     "json/oldalak/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok.json": {
       "sizeBytes": 3807,
@@ -4002,9 +4002,9 @@
       "sizeBytes": 3909,
       "sha256": "bc7d2d1197559beeb977922b0b04e079c7a1f1772282a1f2558255fa2100fa27"
     },
-    "json/oldalak/informaciok/kozossegi-szolgalat.json": {
-      "sizeBytes": 3781,
-      "sha256": "918069642c0843fea6165ac111d3923d6fea11b680ef4ce622936b64365b830e"
+    "json/oldalak/informaciok/mindennapi-tudnivalok.json": {
+      "sizeBytes": 2893,
+      "sha256": "26785510ac13fe06c6982b365e4b7350120f69c8e850d0441164e436bfd14ae4"
     },
     "json/oldalak/informaciok/mindennapi-tudnivalok/csengetesi-rend.json": {
       "sizeBytes": 3308,
@@ -4026,10 +4026,6 @@
       "sizeBytes": 2799,
       "sha256": "4468872a201a91f4a1e063e429e4e6cbdf796d570737ed4d5d628b2392a6c676"
     },
-    "json/oldalak/informaciok/mindennapi-tudnivalok.json": {
-      "sizeBytes": 2893,
-      "sha256": "26785510ac13fe06c6982b365e4b7350120f69c8e850d0441164e436bfd14ae4"
-    },
     "json/oldalak/informaciok/offline-olvaso.json": {
       "sizeBytes": 894,
       "sha256": "b92e88047f60ba8b389b8ad502d1335d081b32e49a5f2873940e4519878e08c9"
@@ -4038,9 +4034,9 @@
       "sizeBytes": 909,
       "sha256": "6251ea90f04363d7a49cd723b5f9d2682ea6dbaa7a0ff17541346ddee6dd74a4"
     },
-    "json/oldalak/informaciok.json": {
-      "sizeBytes": 3229,
-      "sha256": "0f20041c92eef348fe3f2a5d389f43cd88a6670b2724e76f69ca3ba696ca9b90"
+    "json/oldalak/iskolank.json": {
+      "sizeBytes": 4347,
+      "sha256": "8eaf9460125f3df230b9511f045c1fbedd9c0f1b848608d1362951cf0a5511be"
     },
     "json/oldalak/iskolank/a-honlap-szuletese.json": {
       "sizeBytes": 13593,
@@ -4094,10 +4090,6 @@
       "sizeBytes": 4424,
       "sha256": "c9868d4f54e9909dc1af0a5ebf585eecff5e3a05283466bf794a5d4c465238a1"
     },
-    "json/oldalak/iskolank.json": {
-      "sizeBytes": 4347,
-      "sha256": "8eaf9460125f3df230b9511f045c1fbedd9c0f1b848608d1362951cf0a5511be"
-    },
     "json/oldalak/kapcsolat.json": {
       "sizeBytes": 3615,
       "sha256": "e35f67bcfab755b338f1ab5dff4ef1cdd328a9f0a60c046d5cd6c0894b47b9d3"
@@ -4105,6 +4097,14 @@
     "json/oldalak/kezdolap.json": {
       "sizeBytes": 28541,
       "sha256": "122e0794146b830c2740abfebd56d7e58721d440ba112da1a93002327714b1e7"
+    },
+    "json/oldalak/oktatas.json": {
+      "sizeBytes": 3342,
+      "sha256": "0fa1d2e97384538de5b18cef1f52866f4cbc41f700e34f7ec72bee408c1c81f2"
+    },
+    "json/oldalak/oktatas/digitalis-kultura.json": {
+      "sizeBytes": 10708,
+      "sha256": "13aacf9115ed891550e33b28a52eabd4d3099fdc7d73282fc3f3d63cbf36a386"
     },
     "json/oldalak/oktatas/digitalis-kultura/mesterseges-intelligencia.json": {
       "sizeBytes": 3357,
@@ -4114,9 +4114,9 @@
       "sizeBytes": 3162,
       "sha256": "e8b2acfe9a8f26984f6a90cfd0c87ec2c23082fd018d1a55f150931d56155616"
     },
-    "json/oldalak/oktatas/digitalis-kultura.json": {
-      "sizeBytes": 10708,
-      "sha256": "13aacf9115ed891550e33b28a52eabd4d3099fdc7d73282fc3f3d63cbf36a386"
+    "json/oldalak/oktatas/felveteli.json": {
+      "sizeBytes": 4231,
+      "sha256": "4873bbc16e49584233268b60641cf2dd2f4e48b94a2170cf7707ff4434afe8b8"
     },
     "json/oldalak/oktatas/felveteli/elso-evfolyam.json": {
       "sizeBytes": 3370,
@@ -4134,9 +4134,9 @@
       "sizeBytes": 3770,
       "sha256": "587b14f4d11b60fda0355971b77b0ee6e8eb64179f2c358c3abb602c95e849c0"
     },
-    "json/oldalak/oktatas/felveteli.json": {
-      "sizeBytes": 4231,
-      "sha256": "4873bbc16e49584233268b60641cf2dd2f4e48b94a2170cf7707ff4434afe8b8"
+    "json/oldalak/oktatas/kepzeseink.json": {
+      "sizeBytes": 3054,
+      "sha256": "f938381cd13bfec435c7a5f715aa29d28fdc5877f5a4dffc84fca0e5107059a2"
     },
     "json/oldalak/oktatas/kepzeseink/altalanos-iskola.json": {
       "sizeBytes": 3271,
@@ -4150,25 +4150,25 @@
       "sizeBytes": 2809,
       "sha256": "d74048796dbca76a0cf4cbb1265b4118d394aeaa2eca14f21637ecc7cc3b5aa7"
     },
-    "json/oldalak/oktatas/kepzeseink.json": {
-      "sizeBytes": 3054,
-      "sha256": "f938381cd13bfec435c7a5f715aa29d28fdc5877f5a4dffc84fca0e5107059a2"
+    "json/oldalak/oktatas/konyvtar.json": {
+      "sizeBytes": 3696,
+      "sha256": "0760562c4ebce482e9c010fd5daa86a2dca6788883389df89977cf2b6d94654d"
     },
     "json/oldalak/oktatas/konyvtar/konyvtari-szolgaltatasok.json": {
       "sizeBytes": 3162,
       "sha256": "0cf8e4a20fbcb70ce6bb6ed702dd6593a569373594442abc5ccebacb454cdbaf"
     },
-    "json/oldalak/oktatas/konyvtar.json": {
-      "sizeBytes": 3696,
-      "sha256": "0760562c4ebce482e9c010fd5daa86a2dca6788883389df89977cf2b6d94654d"
-    },
-    "json/oldalak/oktatas/tananyagok-es-jegyzetek/tanulastamogatas.json": {
-      "sizeBytes": 3212,
-      "sha256": "87878cd66efa93018216930f75b73886439eb414c7b828648d612876ffcc9675"
-    },
     "json/oldalak/oktatas/tananyagok-es-jegyzetek.json": {
       "sizeBytes": 3549,
       "sha256": "8d6feae8fcc75b47acbd3cb4923a6da465b41301e61f84f24e8b20875ed37ca9"
+    },
+    "json/oldalak/oktatas/tananyagok-es-jegyzetek/tanulastamogatas.json": {
+      "sizeBytes": 3184,
+      "sha256": "6cb24df0d425facd6c6b93402f727f2d0939d3c9441df1d886b34f91864057c0"
+    },
+    "json/oldalak/oktatas/tanevek.json": {
+      "sizeBytes": 3091,
+      "sha256": "85650af52685f5ab611c037a00d16b259401d72548611addab93a72dc5b928f5"
     },
     "json/oldalak/oktatas/tanevek/aktualis-tanev.json": {
       "sizeBytes": 3236,
@@ -4178,13 +4178,13 @@
       "sizeBytes": 3228,
       "sha256": "cb245e2100708e058f956df7cdcb3d260dc2d3d890c8fd1a8106044fea8adae1"
     },
-    "json/oldalak/oktatas/tanevek.json": {
-      "sizeBytes": 3091,
-      "sha256": "85650af52685f5ab611c037a00d16b259401d72548611addab93a72dc5b928f5"
-    },
     "json/oldalak/oktatas/tanulas-es-kozosseg.json": {
       "sizeBytes": 874,
       "sha256": "6a1af64c4f5f515e497b2bd71b392955de3edcbe8d23209fe5419b531983f93d"
+    },
+    "json/oldalak/oktatas/vizsgak.json": {
+      "sizeBytes": 3252,
+      "sha256": "7aa4c0359efab566045edb363486036db864fac4afc20699893b098bcde20813"
     },
     "json/oldalak/oktatas/vizsgak/egyeb-vizsgak.json": {
       "sizeBytes": 3440,
@@ -4198,13 +4198,9 @@
       "sizeBytes": 3074,
       "sha256": "24199fd35800c50a1558da6fc74d16604604c55d08f9a5d948d3b645cc412c05"
     },
-    "json/oldalak/oktatas/vizsgak.json": {
-      "sizeBytes": 3252,
-      "sha256": "7aa4c0359efab566045edb363486036db864fac4afc20699893b098bcde20813"
-    },
-    "json/oldalak/oktatas.json": {
-      "sizeBytes": 3342,
-      "sha256": "0fa1d2e97384538de5b18cef1f52866f4cbc41f700e34f7ec72bee408c1c81f2"
+    "json/oldalak/sport.json": {
+      "sizeBytes": 3223,
+      "sha256": "1100ac6109193d4efeb6c40f03c16d2a19a41faff9ed79f9ef6ad4f088244b25"
     },
     "json/oldalak/sport/csapatok.json": {
       "sizeBytes": 3403,
@@ -4234,13 +4230,9 @@
       "sizeBytes": 3558,
       "sha256": "2dc64dc8a22a7fd3473ade80a546fe6efb1820e6d713d1a8d48f445592ca1a29"
     },
-    "json/oldalak/sport.json": {
-      "sizeBytes": 3223,
-      "sha256": "1100ac6109193d4efeb6c40f03c16d2a19a41faff9ed79f9ef6ad4f088244b25"
-    },
     "json/oldalindex.json": {
-      "sizeBytes": 168792,
-      "sha256": "81687fbab58d14b3ffc68ef3ccfe18523af36f9228885975fc118894d3a776b4"
+      "sizeBytes": 168764,
+      "sha256": "6ba991a0101cc6f84c69e8e4f06acf38db1d45eeccdae0d18195298e5ddcec96"
     },
     "json/schemas/dokumentumok.schema.json": {
       "sizeBytes": 5536,
@@ -4253,10 +4245,6 @@
     "json/structure.json": {
       "sizeBytes": 10675,
       "sha256": "05be9bd29ad5707eb72454ae94387d28b7aebd482a5a6f5b964852e84e65d7e8"
-    },
-    "megkozelites-es-tanulas.html": {
-      "sizeBytes": 16598,
-      "sha256": "443cba126ecebbc964ba1cee1c573176578da378a7ae8bd5eb51fa9e424e5426"
     },
     "mobile/j-mobile-home-2026.css": {
       "sizeBytes": 4226,
@@ -4322,17 +4310,9 @@
       "sizeBytes": 8100,
       "sha256": "c44bb4a51aa02491cd50fb643445076e7e0829714cd69428da77b59814ee9f4a"
     },
-    "offline-olvaso.html": {
-      "sizeBytes": 2109,
-      "sha256": "073d5a83e09ae6df70a48b233c7c2b6134af82e0095db2be15bc10f07d84b98d"
-    },
     "offline.html": {
       "sizeBytes": 1665,
       "sha256": "4a0b7b3806e29c99ee506733b98b783e8681212b27632eb79e730647df31066b"
-    },
-    "orokseg-es-tudastar.html": {
-      "sizeBytes": 11172,
-      "sha256": "78b72d85e76362c780f1c1a36454822a538e28b0283d53cb622191e8043d3467"
     },
     "robots.txt": {
       "sizeBytes": 84,
@@ -4340,307 +4320,15 @@
     },
     "script.js": {
       "sizeBytes": 1735,
-      "sha256": "83fd0b20dd7854ce8e768f7acedb432a624ca590b8c5e17611c4602730cf1f16"
-    },
-    "seo/hirek-es-esemenyek/esemenynaptar/index.html": {
-      "sizeBytes": 3218,
-      "sha256": "fccf96a61c1800cb86a4e0dbc2cd3468f1536d8210cb0f36b20ae42038a9d5ea"
-    },
-    "seo/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek/index.html": {
-      "sizeBytes": 3233,
-      "sha256": "5720d1f432617c93204db911364be62288a566ccfcc39bd8168891d361d51948"
-    },
-    "seo/hirek-es-esemenyek/esemenynaptar/sportesemenyek/index.html": {
-      "sizeBytes": 3267,
-      "sha256": "632ae176b492240bf3ee9116f7ed440d7ecdc6691d5e6be4084ca283656cc264"
-    },
-    "seo/hirek-es-esemenyek/hirek/hirarchivum/index.html": {
-      "sizeBytes": 3294,
-      "sha256": "e6a39bac93ba3d9628bc0e93675547edab8243487c5a225ee0b3535c888c7808"
-    },
-    "seo/hirek-es-esemenyek/hirek/index.html": {
-      "sizeBytes": 3166,
-      "sha256": "c2f5e6630bb48e68ab3c8ff4be4f825244f04775d20140b305184a1bee1fead1"
-    },
-    "seo/hirek-es-esemenyek/hirek/iskolai-hirek/index.html": {
-      "sizeBytes": 3298,
-      "sha256": "df4c633c60c535ffea32709d0a65c9495f0bfd1b10db78fb6f3f63f196de033f"
-    },
-    "seo/hirek-es-esemenyek/hirek/sporthirek/index.html": {
-      "sizeBytes": 3246,
-      "sha256": "29f6f8f55a4a797d68d9ff8814bd01f1a290472f4bed18f4a3e3026297b80241"
-    },
-    "seo/hirek-es-esemenyek/index.html": {
-      "sizeBytes": 3190,
-      "sha256": "80be10328818aa447aca4c85ed65e2e49ca277f9a3a3237532da52a8925f7a36"
-    },
-    "seo/hirek-es-esemenyek/kozlemenyek/index.html": {
-      "sizeBytes": 3159,
-      "sha256": "fd48508b7e48d56045515548dbca91db2afdb2f4f55c2255785d6366dc1ca014"
-    },
-    "seo/informaciok/adatvedelem/index.html": {
-      "sizeBytes": 3185,
-      "sha256": "34f25e1046da54a3b42d2409acc30876239be7b20e1eceb4791f834db8c414fc"
-    },
-    "seo/informaciok/allaspalyazatok/index.html": {
-      "sizeBytes": 2883,
-      "sha256": "e838c715217e1318f1bd77919f745a751b08f71d919eb543cc3cc6b49e605ad8"
-    },
-    "seo/informaciok/digitalis-ugyintezes/index.html": {
-      "sizeBytes": 3192,
-      "sha256": "87fa313159ab909ee3ff51543fa5506cac8f232d5e137ab08d08519837acc509"
-    },
-    "seo/informaciok/dokumentumtar/index.html": {
-      "sizeBytes": 3090,
-      "sha256": "1872ea9f38544ea0db62f83012cea48385ebd9cff2871bae4e07e57f457bc399"
-    },
-    "seo/informaciok/dokumentumtar/kozzeteteli-lista/index.html": {
-      "sizeBytes": 3281,
-      "sha256": "b6db2633b258c84af2a3256eedaa30ffc95d2a3ae167a0d9200cb6034b868cba"
-    },
-    "seo/informaciok/dokumentumtar/nyomtatvanyok/index.html": {
-      "sizeBytes": 3263,
-      "sha256": "6c5a3214f3b870b567fa951f31f77e93ecf72fa4624ec9ce0b9dcca2603de7eb"
-    },
-    "seo/informaciok/dokumentumtar/szabalyzatok/index.html": {
-      "sizeBytes": 3167,
-      "sha256": "ee7a9724b11a69de11d6734c9f100263736594877b8542aeb4c5d85bd665f7f8"
-    },
-    "seo/informaciok/index.html": {
-      "sizeBytes": 3115,
-      "sha256": "7b78812c2f3e30ac5c641dcd891a1abf14ecc7eff35c4c8c49073119c073e403"
-    },
-    "seo/informaciok/kozossegi-szolgalat/index.html": {
-      "sizeBytes": 3229,
-      "sha256": "0613ee18906954bd8faf698f3bedf2ad99a483a052b9f8a24660ea09a5780410"
-    },
-    "seo/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok/index.html": {
-      "sizeBytes": 3476,
-      "sha256": "19a16aa37c3b2a5990f57e9ae13113521446d7df23cfc62fc85659df8d81321f"
-    },
-    "seo/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok/index.html": {
-      "sizeBytes": 3268,
-      "sha256": "e1ee72f563a297f572d380c1c6739f606046e7bf9234eb94d661c54424b098bc"
-    },
-    "seo/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok/index.html": {
-      "sizeBytes": 3311,
-      "sha256": "d113395ca3be2067da594c63939433cc5a8f58131e053f1729fa156f363f1805"
-    },
-    "seo/informaciok/mindennapi-tudnivalok/csengetesi-rend/index.html": {
-      "sizeBytes": 3285,
-      "sha256": "9c67a28a47b0681ab0e6ab2821a17827f1a6a4938a61bd0fda6d1b1acbffbc24"
-    },
-    "seo/informaciok/mindennapi-tudnivalok/etkezes/index.html": {
-      "sizeBytes": 3328,
-      "sha256": "c2b8461efda5cde61e6717c7c4644830879fb34448333053d18b99a92d68772c"
-    },
-    "seo/informaciok/mindennapi-tudnivalok/index.html": {
-      "sizeBytes": 3320,
-      "sha256": "f4d2c695e282a2bea79958802973fa5aedd906536d4707c488ea649d8e4d6509"
-    },
-    "seo/informaciok/mindennapi-tudnivalok/szuloi-informaciok/index.html": {
-      "sizeBytes": 3370,
-      "sha256": "3aa09e2650c9f0e7c8ac1990fa6d44cae83b6008dd70e71337702bee8d9e44ed"
-    },
-    "seo/iskolank/a-honlap-szuletese/index.html": {
-      "sizeBytes": 3194,
-      "sha256": "2b734d82d24176fddb4f84abd06a5ecb7496ac8ef33598377c8c86e7ec405035"
-    },
-    "seo/iskolank/alapitvany/index.html": {
-      "sizeBytes": 3216,
-      "sha256": "42822d0f7fb6b0fa303fcbcb85e1d9b52abc7c4be40b0fe29a6e25bdb4a36180"
-    },
-    "seo/iskolank/bemutatkozas/index.html": {
-      "sizeBytes": 3216,
-      "sha256": "3b97573ba9249b56115ea290a24da6e5685013ff67f3501b01fba8dec5597cf1"
-    },
-    "seo/iskolank/buszkesegeink/index.html": {
-      "sizeBytes": 3095,
-      "sha256": "4e2c19167dffa8c0e7147c81c082f18218cb82cff420d95cc23323ab54b84fcb"
-    },
-    "seo/iskolank/hagyomanyok-es-elismeresek/index.html": {
-      "sizeBytes": 3316,
-      "sha256": "8dace37a1d70bdf044c40fc43098ebc2f4db7f5106d9d37bca0b1d2869852d1a"
-    },
-    "seo/iskolank/index.html": {
-      "sizeBytes": 3148,
-      "sha256": "e309b89d80d5e6709718d9b7e1e3bae0cabe2288c10fbc00f7e3be96d8a046f0"
-    },
-    "seo/iskolank/kuldetes-es-ertekek/index.html": {
-      "sizeBytes": 3062,
-      "sha256": "e19535c951e7e76d894c14f901317445050f2cac19970e6729283eca28bc098d"
-    },
-    "seo/iskolank/oko-iskola/index.html": {
-      "sizeBytes": 3218,
-      "sha256": "01cc7c49edbd81e5572e4197bba92b1ae2efd6df5e65a6a72aa9fa19d0635013"
-    },
-    "seo/iskolank/partnerek/index.html": {
-      "sizeBytes": 3042,
-      "sha256": "c1214cf33c6fb761fd492babde6f7ff43dc122b37b8e708a965433360df6fb21"
-    },
-    "seo/iskolank/tantestulet/index.html": {
-      "sizeBytes": 3200,
-      "sha256": "e01c46d85d49d6c44ddf3cb1358bf33298295545f9225ea489f32bf1b29e5c92"
-    },
-    "seo/iskolank/tortenet/index.html": {
-      "sizeBytes": 3182,
-      "sha256": "e3e9d83f17391c9bd5a23bd982858120efbc6857378bed9561316c9afbed6807"
-    },
-    "seo/kapcsolat/index.html": {
-      "sizeBytes": 3033,
-      "sha256": "c0548e096333b6216cb0daf872a0db8750c5ef3c3ddea5e3786f94e63b6a2476"
-    },
-    "seo/kezdolap/index.html": {
-      "sizeBytes": 3029,
-      "sha256": "eef544c7590120c47c9173f8788c98f3a22433def9e1ef4530b9200d466f71f6"
-    },
-    "seo/megkozelites-es-erkezes/index.html": {
-      "sizeBytes": 3211,
-      "sha256": "9cb36f1e845da583cae594aa3980e99b4aeaf01eb7a3811d81a68556fbdf7bed"
-    },
-    "seo/megkozelites-es-erkezes/terkep/index.html": {
-      "sizeBytes": 3331,
-      "sha256": "0758302d978414759ba11aac4365d45435480b28f9e89a527eda1afb52ff4dfd"
-    },
-    "seo/oktatas/digitalis-kultura/index.html": {
-      "sizeBytes": 3167,
-      "sha256": "d02f1c3a00d7b5e5c799beea8749158acf80207ab86f58445e7da93c67ab236f"
-    },
-    "seo/oktatas/digitalis-kultura/mesterseges-intelligencia/index.html": {
-      "sizeBytes": 3404,
-      "sha256": "b9b9a5c410fb205c53a851afd641c52cba646b9988b9884cebfa781d817c6034"
-    },
-    "seo/oktatas/digitalis-kultura/online-biztonsag/index.html": {
-      "sizeBytes": 3301,
-      "sha256": "4b09a6125f822889997796cb56ac2a35567e2fd362a2286dccca569eedc68934"
-    },
-    "seo/oktatas/felveteli/elso-evfolyam/index.html": {
-      "sizeBytes": 3359,
-      "sha256": "581ab9096addadaf1720a6a8198c10a8c2dc2c7fb501e7e4c94386f12ac5e31b"
-    },
-    "seo/oktatas/felveteli/felveteli-hataridok/index.html": {
-      "sizeBytes": 3346,
-      "sha256": "72a5ab004bf631ad0f77b3c71c750b5ad77a4e0b9a741966db605a278bf520fa"
-    },
-    "seo/oktatas/felveteli/index.html": {
-      "sizeBytes": 3135,
-      "sha256": "17d78e5cc3c60d01b9265686ba164a3e75a2529b16b43e6f8288fad1886cb27b"
-    },
-    "seo/oktatas/felveteli/kilencedik-evfolyam/index.html": {
-      "sizeBytes": 3264,
-      "sha256": "cacac4e0f54914e08ddf51476c136f5932049459eab21a63141476c0c375feb5"
-    },
-    "seo/oktatas/felveteli/nyilt-napok/index.html": {
-      "sizeBytes": 3212,
-      "sha256": "d0d49c05236bbf52169908b072be2db4dcd6785bf8924b51b4c076d98925100a"
-    },
-    "seo/oktatas/index.html": {
-      "sizeBytes": 3045,
-      "sha256": "50b860656bd3b9fbf7fe925c2ebfcb34e1b4ec75785554cec2ff690ffbbb6ea1"
-    },
-    "seo/oktatas/kepzeseink/altalanos-iskola/index.html": {
-      "sizeBytes": 3339,
-      "sha256": "2047eb316a5d431b22663029bec807e42a42b42d18547132ae9e7cad099f7bff"
-    },
-    "seo/oktatas/kepzeseink/gimnazium/index.html": {
-      "sizeBytes": 3273,
-      "sha256": "1979a04de77a25b90353d511fbf36321c0ac75bfbc84f1cd8961d0e0896d05c3"
-    },
-    "seo/oktatas/kepzeseink/index.html": {
-      "sizeBytes": 3155,
-      "sha256": "f8d87a881c5acf1eb0bea55616c9129fac19a0b31cbacfeec47498f588f2e9c7"
-    },
-    "seo/oktatas/kepzeseink/sportiskolai-neveles/index.html": {
-      "sizeBytes": 3336,
-      "sha256": "8962a393fa45f1800e95370b7adc734dd8d0b751faf7f963e5a3c6e4b1706c3d"
-    },
-    "seo/oktatas/konyvtar/index.html": {
-      "sizeBytes": 3153,
-      "sha256": "d38dd67f7ba8e15818d57c8e8b572227eaa3d4b5791ccb8aff18bb20377a258d"
-    },
-    "seo/oktatas/konyvtar/konyvtari-szolgaltatasok/index.html": {
-      "sizeBytes": 3364,
-      "sha256": "929d02985a98cf68d8d542966eddbf7f8e220ef5ce3f0b30c67bc4e74544dd3b"
-    },
-    "seo/oktatas/tananyagok-es-jegyzetek/index.html": {
-      "sizeBytes": 3357,
-      "sha256": "3c8959cd4fd5a3dd40782bce292f2f42d3f96305af464368f40e416edc8f7ece"
-    },
-    "seo/oktatas/tanevek/aktualis-tanev/index.html": {
-      "sizeBytes": 3274,
-      "sha256": "059bfdf1f42f49630027b9c165b5b6ccf8bb18c372bd9bd8439c356b80f41f96"
-    },
-    "seo/oktatas/tanevek/index.html": {
-      "sizeBytes": 3139,
-      "sha256": "6d205d53a54a1fa7cc2bf3659cb9a1c1f86d0afc0c6e653fa9fa20f87f5649d7"
-    },
-    "seo/oktatas/tanevek/korabbi-tanevek/index.html": {
-      "sizeBytes": 3170,
-      "sha256": "e61a416c88364675975eb0ea8b0c84015d564cbf3d0704658c1dabf0f36e2790"
-    },
-    "seo/oktatas/vizsgak/egyeb-vizsgak/index.html": {
-      "sizeBytes": 3135,
-      "sha256": "645946ddcd8053bb748311b8e08dc443ea053245a8e83950013488383431296f"
-    },
-    "seo/oktatas/vizsgak/erettsegi/index.html": {
-      "sizeBytes": 3183,
-      "sha256": "ed4e902989bb39796525c996908c49d973c76c3b51792eb12697cb9fbc433eb0"
-    },
-    "seo/oktatas/vizsgak/index.html": {
-      "sizeBytes": 3200,
-      "sha256": "4c1f08bdd2075f9c7389c59ef1b66ce41830174cf5ca8a375da143d06914d18f"
-    },
-    "seo/oktatas/vizsgak/osztalyozo-vizsgak/index.html": {
-      "sizeBytes": 3372,
-      "sha256": "4511ff209ad52a894a6ef27f919b4af4f8c63480e2f56a8af80a0ad42521956f"
-    },
-    "seo/sport/csapatok/index.html": {
-      "sizeBytes": 3032,
-      "sha256": "a7fa8a32e50456bccb9dcf6f6384e55b7e32e594830e422d290edbd33adc20ad"
-    },
-    "seo/sport/edzok/index.html": {
-      "sizeBytes": 2993,
-      "sha256": "afc3b25e0ce5a0c9460ab86ba7eb6d1370829b1f58a1e91b203bcd039fd5013a"
-    },
-    "seo/sport/index.html": {
-      "sizeBytes": 3090,
-      "sha256": "82df6aa9a1960a643ec2e6e83713f11f621e93c12953ae76aca5e1e22067e2e7"
-    },
-    "seo/sport/sportagak/index.html": {
-      "sizeBytes": 3017,
-      "sha256": "bbe0e65b5ba8d7e4298b1dc9c96e60d99d4518f97edc60201d88b1b050429443"
-    },
-    "seo/sport/sporteredmenyek/index.html": {
-      "sizeBytes": 3207,
-      "sha256": "71939bb856ba8125a7d147205e8398111b0d23b305c3fa06cc8dc0dabdf31580"
-    },
-    "seo/sport/sportgaleriak/index.html": {
-      "sizeBytes": 2996,
-      "sha256": "666f03421e0ad2bf0a4a51f78c1ef44a98a52c60388939124c70fb8be3a8f4cd"
-    },
-    "seo/sport/sportolok/index.html": {
-      "sizeBytes": 3162,
-      "sha256": "c3157afc6d89a3f343dc2577814142d448aa79eca76d1bdc57e9d1afc7287e20"
-    },
-    "seo/tanulastamogatas/index.html": {
-      "sizeBytes": 3321,
-      "sha256": "6e65e8a7fad883ddcf318f6f87b98467b34250fa3f66618e435f13784dcf0632"
+      "sha256": "7921e5789b1dfb3a8f1d48f9c2a2c8880b7047f5eb1bd3cf51d71c6856cccce7"
     },
     "service-worker.js": {
-      "sizeBytes": 6258,
-      "sha256": "b401b6bb41ffc2884d08fe0b77394e1f1f0eea4bdfae5da863a45b636cd727fd"
+      "sizeBytes": 6966,
+      "sha256": "25d22f8dbdb9ff43c70deb61833af31d8d50024ac82cf389eecd4ceac5f01f1c"
     },
     "sitemap.xml": {
       "sizeBytes": 111,
       "sha256": "3a9976f0ed80dc22748bf9809f3dcb7b34c125d8d34fdf70209c0a11b6ccf8aa"
-    },
-    "tanulas-es-kozosseg.html": {
-      "sizeBytes": 13152,
-      "sha256": "b27d4c8540d809b7b8eecb173b94140aeb1f223878711921128bb9d5e08e46b0"
-    },
-    "utmutato.html": {
-      "sizeBytes": 155040,
-      "sha256": "59f98b5841bd657ca66d6959ae9f26afb10dd8b35842b692f3e455ddacbba1e7"
     }
   }
 }

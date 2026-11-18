@@ -1,6 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "jsonFiles": [
+    "json/adatok/arrival-template-2026.json",
     "json/adatok/csengetesi-rend.json",
     "json/adatok/dokumentumok.json",
     "json/adatok/esemenyek.json",
@@ -161,15 +162,7 @@
     "mobile/quick-nav.js",
     "mobile/round16-responsive.css",
     "mobile/styles.css",
-    "script.js",
-    "tools/eszkoz-mediator.html",
-    "tools/media-manager-2026.js",
-    "tools/oldal-json-szerkeszto.html",
-    "tools/oldalindex-frissito.html",
-    "tools/sporthirek-szerkeszto.html",
-    "tools/tool-ui-2026.js",
-    "tools/zip-native-2026.js",
-    "utmutato.html"
+    "script.js"
   ],
   "assetReferences": {
     "assets/documents/csanadi-weboldal-teljes-hasznalati-utmutato-2026.pdf": [
@@ -178,8 +171,7 @@
       "json/adatok/dokumentumok.json",
       "json/adatok/orokseg-es-tudastar-24.json",
       "json/adatok/qr-index-22.json",
-      "json/assets-inventory.json",
-      "utmutato.html"
+      "json/assets-inventory.json"
     ],
     "assets/documents/digitalis-fajlok-es-beadas.pdf": [
       "json/adatok/dokumentumok.json",
@@ -333,12 +325,7 @@
       "js/next10-2026.js",
       "json/assets-inventory.json",
       "json/mediatar.json",
-      "mobile/quick-nav.js",
-      "tools/eszkoz-mediator.html",
-      "tools/oldal-json-szerkeszto.html",
-      "tools/oldalindex-frissito.html",
-      "tools/sporthirek-szerkeszto.html",
-      "utmutato.html"
+      "mobile/quick-nav.js"
     ],
     "assets/media/video/montazs-2026-01.mp4": [
       "json/adatok/galeriavideok.json",
@@ -3051,10 +3038,6 @@
       "json/assets-inventory.json",
       "json/mediatar.json"
     ],
-    "assets/qr/csanadi-qr-06b6013647d5dabb.svg": [
-      "json/adatok/qr-index-22.json",
-      "json/assets-inventory.json"
-    ],
     "assets/qr/csanadi-qr-0bcf56ffaf451cb2.svg": [
       "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
@@ -3395,7 +3378,11 @@
       "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ],
-    "assets/qr/csanadi-qr-fe6cb35447110140.svg": [
+    "assets/qr/csanadi-qr-6ccd880ba31e5a04.svg": [
+      "json/adatok/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-281571ce738ff3de.svg": [
       "json/adatok/qr-index-22.json",
       "json/assets-inventory.json"
     ]
