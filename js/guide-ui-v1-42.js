@@ -3,7 +3,7 @@ export async function mountGuide(){
  const input=document.getElementById('guide-search'),status=document.getElementById('guide-count');
  const button=document.getElementById('guide-theme-toggle');
  if(!input||!status||!button)return;
- const host=input.closest('.cs-spa-feature');
+ const host=input.closest('.cs-spa-feature')||document.body;
  const sections=[...host.querySelectorAll('[data-filterable]')];
  const normalize=value=>String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('hu-HU');
  document.getElementById('print')?.addEventListener('click',()=>window.print());

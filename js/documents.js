@@ -1,4 +1,4 @@
-import {formatBytes as formatSize} from './format-bytes.js?v=1.42.13';
+import {formatBytes as formatSize} from './format-bytes.js?v=1.42.15';
  
 const ROOT = new URL('../', import.meta.url);
 const REGISTRY = new URL('../json/data/documents.json', import.meta.url);

@@ -1,14 +1,16 @@
+const root=document.documentElement;
+try{const preference=localStorage.getItem('csanadi-theme')||'system';const mode=preference==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):preference;root.dataset.theme=mode;root.dataset.themePreference=preference;root.setAttribute('data-bs-theme',mode);}catch{root.dataset.theme='light';root.setAttribute('data-bs-theme','light');}
 /* Load only the explicitly registered interactive center inside its own frame.
    Separate window/document isolates CSS, dialogs, timers and DOM identifiers. */
 const modules={
- explorer:()=>import('./round21-explorer.js?v=1.42.13').then(module=>module.mountExplorer()),
- compass:()=>import('./round22-center.js?v=1.42.13').then(module=>module.mountCompass()),
- workshop:()=>import('./round23-workshop.js?v=1.42.13').then(module=>module.mountWorkshop()),
- heritage:()=>import('./round24-heritage.js?v=1.42.13').then(module=>module.mountHeritage()),
- community:()=>import('./round25-community.js?v=1.42.13').then(module=>module.mountCommunity()),
- offline:()=>import('./offline-reader-20.js?v=1.42.13').then(module=>module.mountOfflineReader()),
- guide:()=>import('./guide-ui-v1-42.js?v=1.42.13').then(module=>module.mountGuide()),
- arrival:()=>import('./round26-arrival.js?v=1.42.13')
+ explorer:()=>import('./round21-explorer.js?v=1.42.15').then(module=>module.mountExplorer()),
+ compass:()=>import('./round22-center.js?v=1.42.15').then(module=>module.mountCompass()),
+ workshop:()=>import('./round23-workshop.js?v=1.42.15').then(module=>module.mountWorkshop()),
+ heritage:()=>import('./round24-heritage.js?v=1.42.15').then(module=>module.mountHeritage()),
+ community:()=>import('./round25-community.js?v=1.42.15').then(module=>module.mountCommunity()),
+ offline:()=>import('./offline-reader-20.js?v=1.42.15').then(module=>module.mountOfflineReader()),
+ guide:()=>import('./guide-ui-v1-42.js?v=1.42.15').then(module=>module.mountGuide()),
+ arrival:()=>import('./round26-arrival.js?v=1.42.15')
 };
 const key=document.body?.dataset.spaFeature;
 if(!Object.hasOwn(modules,key)){

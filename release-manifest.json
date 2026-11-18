@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.42.14-preview",
+  "release": "csanadi-website-v1.42.15",
   "date": "2026-11-18",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "The only HTML pages are index.html and the justified offline.html. JSON paths and non-user-facing technical names are English, while public route URLs and text remain Hungarian. Mobile: fixed image with separate readable copy, a single persistent header navigator button, no bottom navigation. Desktop: the rotating hero progressively scales and clips into the compact central crest, without a leftover picture strip. The photographic green school gate swings inward and its golden outline disappears without jumping. Nine purpose-made center-logo-safe illustrations. Old event links repaired; CSS/JS cache parameters and the client-side release version updated. Static validation and isolated Chromium component checks passed; complete live site regression remains open.",
+  "notes": "Közös aloldali megjelenés (mobil és asztali), egységes 1160 px-es kezdőlapi tartalomszélesség, nagyobb kompakt címer, interaktív SPA-központok korai iframe inicializálása, témakövetés, belső útvonalkezelés, útmutatókereső-javítás és kapukeret azonnali eltüntetése. Az éles publikálás nincs végrehajtva. Teljes end-to-end böngészős teszt továbbra is szükséges.",
   "files": {
     "assets/documents/admissions-tajekozodasi-handout-2026.pdf": {
       "sizeBytes": 48341,
@@ -613,6 +613,10 @@
     "assets/media/logo/csanadi-crest-512.webp": {
       "sizeBytes": 22756,
       "sha256": "bf32c83b51a4d7fd6a079a73dc9488e3e70720f26a45f604c1f1bcfc84ec8c16"
+    },
+    "assets/media/logo/csanadi-crest-compact.webp": {
+      "sizeBytes": 20854,
+      "sha256": "98a0a07af022f43b85d781bea074dbea2fe94c74a109d519fd2ba37fe4d9f89a"
     },
     "assets/media/video/knowledge-community.mp4": {
       "sizeBytes": 612719,
@@ -3630,6 +3634,14 @@
       "sizeBytes": 590341,
       "sha256": "490e3ed76ec33317c0bf42b4f6ce4300ae16ecff93154f295947b0b54ae399a2"
     },
+    "css/site-consistency-v1-42-15.css": {
+      "sizeBytes": 8481,
+      "sha256": "f4a4e5e3a19479f1d571292dfd786059b59caef143368425055e8064ed4a2664"
+    },
+    "css/spa-frame-unified-v1-42-15.css": {
+      "sizeBytes": 1498,
+      "sha256": "67f8a23aef80d418d81ca646903826502c48d7b863db9ac29174f94b9bb36ad5"
+    },
     "css/style.css": {
       "sizeBytes": 75799,
       "sha256": "7820de3aacda8118497d44f443aff1952f13e69d1c54edaf4e7234299f4b31f2"
@@ -3715,20 +3727,20 @@
       "sha256": "d699af49beee4cb9af24350bdf8a3092e82dcb83cdd40a46554c50880a6bae9c"
     },
     "index.html": {
-      "sizeBytes": 23511,
-      "sha256": "74259f15880745fdb84ee7467c4185c251c02b85adf108ea559301816f6aa9ae"
+      "sizeBytes": 23588,
+      "sha256": "40ba2df6f4a892b29a6581fd44abf269ca705160b83b05322c03e2458ff60099"
     },
     "js/advanced-2026.js": {
-      "sizeBytes": 34369,
-      "sha256": "41d031f2f3015b4de3fe7a7e2cdd849a03ca8c976c73a6bcd7735e83d543a937"
+      "sizeBytes": 34828,
+      "sha256": "265553cfe7fa9adc18a50b136dc4a84c6da0f055d31ec33db8b4159fec716935"
     },
     "js/app.js": {
       "sizeBytes": 58407,
-      "sha256": "383367c1fa7a143cdb68c2c26e1b031ff6642998bf3807be176518d5c4ec49ce"
+      "sha256": "07b45b2d29a335247bae9a41c70fa6117a08e006d93d6602491213c9b25d6205"
     },
     "js/blocks.js": {
       "sizeBytes": 9204,
-      "sha256": "bb9d85c62a267ed37015a4473acf7a9cd74ac7b70f4a21985dd3294780dc7e4b"
+      "sha256": "3a115beef582434208dd0dba03bef8595902f49222ed73462f7ddfc139b71ee2"
     },
     "js/content.js": {
       "sizeBytes": 5942,
@@ -3744,7 +3756,7 @@
     },
     "js/documents.js": {
       "sizeBytes": 29178,
-      "sha256": "494c522ff31a5024b5c1dc316f625557dbb5a4e54777525e519ef93e0b78dab8"
+      "sha256": "bcafd9ab57371ddf21a4d91208c2addcdb5c2754990024b53558168bedfeaf26"
     },
     "js/experience-2026.js": {
       "sizeBytes": 21326,
@@ -3752,7 +3764,7 @@
     },
     "js/extended-hubs-2026.js": {
       "sizeBytes": 25824,
-      "sha256": "5b2d3b62037fdf0a4db77059b92f0656ba6843268baeda2d9d2d5f7126f49d72"
+      "sha256": "7991e343ca1327b708d8467f522b5cba1fafb6e9a84b370f3541e1759df918a6"
     },
     "js/fetch-resilience-v1-39-7.js": {
       "sizeBytes": 1966,
@@ -3767,8 +3779,8 @@
       "sha256": "8ade3625d970b550b7d066ee899838da54e951faa8556e7164c9c33d37cba8b5"
     },
     "js/guide-ui-v1-42.js": {
-      "sizeBytes": 2874,
-      "sha256": "186a9e7d44615b92ec08b17579ee07d1001d15eccf3c78c2ce24cc34a9847e9e"
+      "sizeBytes": 2889,
+      "sha256": "05b465eec9b6911ea8b67c07c9e734ca0d3fbb7ed93103d7f5b1fe8b0f793764"
     },
     "js/header-adaptive-v1-39-18.js": {
       "sizeBytes": 2554,
@@ -3776,7 +3788,7 @@
     },
     "js/hero-2026.js": {
       "sizeBytes": 12858,
-      "sha256": "fb90f0f4b39b9a89443ebffadbf36c774b92726a65dc8678c0763cba5c959831"
+      "sha256": "5f7cc8b9ea2505678d2506a2c79988524d8a4ea39233d74ab463e6d694f07c7b"
     },
     "js/home-inline-editor-v1-41-4.js": {
       "sizeBytes": 11264,
@@ -3824,7 +3836,7 @@
     },
     "js/offline-reader-20.js": {
       "sizeBytes": 5457,
-      "sha256": "0551365247e0c3cda1793647530c3cc91a7a0b20c0ff07704359154e033c2f8f"
+      "sha256": "13cebd08d2205d1ac11e02b7eded620949339fb2436d7e215279aad36ca2064a"
     },
     "js/page-media-2026.js": {
       "sizeBytes": 2134,
@@ -3836,19 +3848,19 @@
     },
     "js/performance-diagnostics-2026.js": {
       "sizeBytes": 16029,
-      "sha256": "2fd42a22983f8e322ef78dc2f34881e120e8f3320d738039cb79e40f13db8975"
+      "sha256": "0e557cb543c2be539710b743cd7f65ce9854c1c82d267508ea663c735ac94345"
     },
     "js/premium-home-2026.js": {
       "sizeBytes": 3132,
-      "sha256": "cb4ca502ea3b5df38e19054532862f17dbd54b4f8969f97128a77ea9e3605e16"
+      "sha256": "1ae4e2ad1f381b2c07550c7c2906c599377de712a094280ed55d0bffb13a300e"
     },
     "js/release-v1-39-0.js": {
       "sizeBytes": 9704,
       "sha256": "da927ace91877fea7c565dc8f2c2da47f16209916ce2cbe347bbc81aa0db7530"
     },
     "js/release-v1-39-1.js": {
-      "sizeBytes": 6902,
-      "sha256": "f179dcdbedc7c9058df5a3a79b19e6eea2266d5aa25c9c8b6a122bae9f2efe52"
+      "sizeBytes": 6906,
+      "sha256": "a4817ff7d5c98e647c4a684d1b806233537d2f050f7d45600dccf16a640587a6"
     },
     "js/round10-enhancements.js": {
       "sizeBytes": 5049,
@@ -3864,7 +3876,7 @@
     },
     "js/round21-explorer.js": {
       "sizeBytes": 16704,
-      "sha256": "5aa30a0bedb16ab22f0e25eeec6ead7ac52cdae6e7b3b8ee0c5d35f1c5a361a2"
+      "sha256": "639c15a7472f76c13ccf20fbb7b6c81843730eb4919cddec5ba164e0ed42b534"
     },
     "js/round21-personalize.js": {
       "sizeBytes": 8306,
@@ -3912,7 +3924,7 @@
     },
     "js/site-quality-2026.js": {
       "sizeBytes": 9745,
-      "sha256": "b562432bb91600af6e16636007bb6bfa959112da281a6372662e4f49013df7bf"
+      "sha256": "08f3d988b6d75da6b5cb8d578eab9fe4a7fe9e3595c62061929ac1d540e61736"
     },
     "js/site-settings-2026.js": {
       "sizeBytes": 3539,
@@ -3923,12 +3935,12 @@
       "sha256": "a524d1c62c93e1ba13a5f5dc1c908de8f1097432b7290593fd21a6c0a8ae5d31"
     },
     "js/spa-features-v1-42.js": {
-      "sizeBytes": 5703,
-      "sha256": "b200be3adafd51731312dbd5e858bdd4465bc9cf227328bd06bfd334b2dbfec5"
+      "sizeBytes": 7046,
+      "sha256": "575abb7064fec9d49c9febec17a87367cbf2ce05ae71718cb097fda8b2189718"
     },
     "js/spa-frame-bootstrap-v1-42.js": {
-      "sizeBytes": 1325,
-      "sha256": "f2fb81f5bdb1369b9bf6e17968463b3d08d53ee72c3cb7ddf2955ba0cd34ba50"
+      "sizeBytes": 1726,
+      "sha256": "97c04e34c69beeceaa0dd5fdffa44b7d6d4dd1fff977dc7f14f4854dbfecf895"
     },
     "js/sports-successes.js": {
       "sizeBytes": 6823,
@@ -3944,7 +3956,7 @@
     },
     "js/subpages-v1.js": {
       "sizeBytes": 14198,
-      "sha256": "b95a52d523bccab61644d94050ff53adb444eb6f458b092fc499467623b6a617"
+      "sha256": "1a3cc8bd7565a88936ff1575f79f31fce9f8b3512d9a105a56bc8e6c0022d498"
     },
     "js/tenway-2026.js": {
       "sizeBytes": 7414,
@@ -3964,7 +3976,7 @@
     },
     "json/config.json": {
       "sizeBytes": 16558,
-      "sha256": "97254180bac41a0dfcac636a77930b85896576fe652f42da5a30131018aa8e34"
+      "sha256": "47411ce1071186915900ac4c2aff41ee0e15128a21de4c9b43bb6afbb48c512e"
     },
     "json/data/arrival-and-development-26.json": {
       "sizeBytes": 6849,
@@ -4074,14 +4086,6 @@
       "sizeBytes": 3615,
       "sha256": "e35f67bcfab755b338f1ab5dff4ef1cdd328a9f0a60c046d5cd6c0894b47b9d3"
     },
-    "json/pages/education.json": {
-      "sizeBytes": 3342,
-      "sha256": "0fa1d2e97384538de5b18cef1f52866f4cbc41f700e34f7ec72bee408c1c81f2"
-    },
-    "json/pages/education/admissions.json": {
-      "sizeBytes": 4231,
-      "sha256": "4873bbc16e49584233268b60641cf2dd2f4e48b94a2170cf7707ff4434afe8b8"
-    },
     "json/pages/education/admissions/admission-deadlines.json": {
       "sizeBytes": 4113,
       "sha256": "ebc3db9fcf7492eb5dbf07fc757a0f25c3ca2e85740f89c1c43966057a537a8d"
@@ -4098,9 +4102,9 @@
       "sizeBytes": 3770,
       "sha256": "587b14f4d11b60fda0355971b77b0ee6e8eb64179f2c358c3abb602c95e849c0"
     },
-    "json/pages/education/digital-culture.json": {
-      "sizeBytes": 10708,
-      "sha256": "13aacf9115ed891550e33b28a52eabd4d3099fdc7d73282fc3f3d63cbf36a386"
+    "json/pages/education/admissions.json": {
+      "sizeBytes": 4231,
+      "sha256": "4873bbc16e49584233268b60641cf2dd2f4e48b94a2170cf7707ff4434afe8b8"
     },
     "json/pages/education/digital-culture/artificial-intelligence.json": {
       "sizeBytes": 3357,
@@ -4110,9 +4114,9 @@
       "sizeBytes": 3162,
       "sha256": "e8b2acfe9a8f26984f6a90cfd0c87ec2c23082fd018d1a55f150931d56155616"
     },
-    "json/pages/education/exams.json": {
-      "sizeBytes": 3252,
-      "sha256": "7aa4c0359efab566045edb363486036db864fac4afc20699893b098bcde20813"
+    "json/pages/education/digital-culture.json": {
+      "sizeBytes": 10708,
+      "sha256": "13aacf9115ed891550e33b28a52eabd4d3099fdc7d73282fc3f3d63cbf36a386"
     },
     "json/pages/education/exams/classification-exams.json": {
       "sizeBytes": 3074,
@@ -4126,29 +4130,29 @@
       "sizeBytes": 3440,
       "sha256": "5832a596d37585e650f4062f8c22f2a3244203d74e43924b381bd0501b6b4d80"
     },
+    "json/pages/education/exams.json": {
+      "sizeBytes": 3252,
+      "sha256": "7aa4c0359efab566045edb363486036db864fac4afc20699893b098bcde20813"
+    },
     "json/pages/education/learning-and-community.json": {
       "sizeBytes": 874,
       "sha256": "6a1af64c4f5f515e497b2bd71b392955de3edcbe8d23209fe5419b531983f93d"
-    },
-    "json/pages/education/learning-resources.json": {
-      "sizeBytes": 3549,
-      "sha256": "8d6feae8fcc75b47acbd3cb4923a6da465b41301e61f84f24e8b20875ed37ca9"
     },
     "json/pages/education/learning-resources/learning-support.json": {
       "sizeBytes": 3187,
       "sha256": "0215a24d7b1ae07174d6446629a4ea2bb38ae9434eb660130cb2c4786e2683b0"
     },
-    "json/pages/education/library.json": {
-      "sizeBytes": 3696,
-      "sha256": "0760562c4ebce482e9c010fd5daa86a2dca6788883389df89977cf2b6d94654d"
+    "json/pages/education/learning-resources.json": {
+      "sizeBytes": 3549,
+      "sha256": "8d6feae8fcc75b47acbd3cb4923a6da465b41301e61f84f24e8b20875ed37ca9"
     },
     "json/pages/education/library/library-services.json": {
       "sizeBytes": 3162,
       "sha256": "0cf8e4a20fbcb70ce6bb6ed702dd6593a569373594442abc5ccebacb454cdbaf"
     },
-    "json/pages/education/programs.json": {
-      "sizeBytes": 3054,
-      "sha256": "f938381cd13bfec435c7a5f715aa29d28fdc5877f5a4dffc84fca0e5107059a2"
+    "json/pages/education/library.json": {
+      "sizeBytes": 3696,
+      "sha256": "0760562c4ebce482e9c010fd5daa86a2dca6788883389df89977cf2b6d94654d"
     },
     "json/pages/education/programs/primary-school.json": {
       "sizeBytes": 3271,
@@ -4162,9 +4166,9 @@
       "sizeBytes": 2809,
       "sha256": "d74048796dbca76a0cf4cbb1265b4118d394aeaa2eca14f21637ecc7cc3b5aa7"
     },
-    "json/pages/education/school-years.json": {
-      "sizeBytes": 3091,
-      "sha256": "85650af52685f5ab611c037a00d16b259401d72548611addab93a72dc5b928f5"
+    "json/pages/education/programs.json": {
+      "sizeBytes": 3054,
+      "sha256": "f938381cd13bfec435c7a5f715aa29d28fdc5877f5a4dffc84fca0e5107059a2"
     },
     "json/pages/education/school-years/current-school-year.json": {
       "sizeBytes": 3236,
@@ -4174,17 +4178,17 @@
       "sizeBytes": 3228,
       "sha256": "cb245e2100708e058f956df7cdcb3d260dc2d3d890c8fd1a8106044fea8adae1"
     },
+    "json/pages/education/school-years.json": {
+      "sizeBytes": 3091,
+      "sha256": "85650af52685f5ab611c037a00d16b259401d72548611addab93a72dc5b928f5"
+    },
+    "json/pages/education.json": {
+      "sizeBytes": 3342,
+      "sha256": "0fa1d2e97384538de5b18cef1f52866f4cbc41f700e34f7ec72bee408c1c81f2"
+    },
     "json/pages/home.json": {
       "sizeBytes": 16209,
       "sha256": "7a346f0b8f5a98ff25591e749d2928508d1668e0f095480f59a5a03e55c872bd"
-    },
-    "json/pages/information.json": {
-      "sizeBytes": 3229,
-      "sha256": "0f20041c92eef348fe3f2a5d389f43cd88a6670b2724e76f69ca3ba696ca9b90"
-    },
-    "json/pages/information/community-service.json": {
-      "sizeBytes": 3781,
-      "sha256": "918069642c0843fea6165ac111d3923d6fea11b680ef4ce622936b64365b830e"
     },
     "json/pages/information/community-service/community-service-documents.json": {
       "sizeBytes": 3807,
@@ -4198,9 +4202,9 @@
       "sizeBytes": 3270,
       "sha256": "c6a418ce88e607b3659b11007b9ffb9bbe728b5fab2bcdb2e5f16863376a6352"
     },
-    "json/pages/information/daily-information.json": {
-      "sizeBytes": 2893,
-      "sha256": "26785510ac13fe06c6982b365e4b7350120f69c8e850d0441164e436bfd14ae4"
+    "json/pages/information/community-service.json": {
+      "sizeBytes": 3781,
+      "sha256": "918069642c0843fea6165ac111d3923d6fea11b680ef4ce622936b64365b830e"
     },
     "json/pages/information/daily-information/bell-schedule.json": {
       "sizeBytes": 3304,
@@ -4222,13 +4226,13 @@
       "sizeBytes": 2948,
       "sha256": "7d2a14751bd3473927015a447c0164f4e178208d0b97c216e40548f4bfbbff4d"
     },
+    "json/pages/information/daily-information.json": {
+      "sizeBytes": 2893,
+      "sha256": "26785510ac13fe06c6982b365e4b7350120f69c8e850d0441164e436bfd14ae4"
+    },
     "json/pages/information/digital-services.json": {
       "sizeBytes": 3108,
       "sha256": "5ee8afc92f98941b7f5fa8e6b8ab8e8135301f4257373596e0b1bb681013a2a1"
-    },
-    "json/pages/information/document-library.json": {
-      "sizeBytes": 2491,
-      "sha256": "178d2b97b78796f80042a3ba07b5ddc5363e5249242da8d9dc8c5bb8260b5640"
     },
     "json/pages/information/document-library/forms.json": {
       "sizeBytes": 3816,
@@ -4241,6 +4245,10 @@
     "json/pages/information/document-library/public-disclosures.json": {
       "sizeBytes": 3673,
       "sha256": "76f099994cb47a4900c5179cdd8bf9664d5e477f4307811157a8b85ff5c521e3"
+    },
+    "json/pages/information/document-library.json": {
+      "sizeBytes": 2491,
+      "sha256": "178d2b97b78796f80042a3ba07b5ddc5363e5249242da8d9dc8c5bb8260b5640"
     },
     "json/pages/information/guide.json": {
       "sizeBytes": 909,
@@ -4258,17 +4266,13 @@
       "sizeBytes": 3274,
       "sha256": "4f591651bd0148f206ecbda3ffa9f3a02800a4f3ead6fb75c0f3f317f100af59"
     },
-    "json/pages/news-and-events.json": {
-      "sizeBytes": 2814,
-      "sha256": "c7528aa679777a94b4f636b6de97e059f98515a09ba845688c11323681d55d23"
+    "json/pages/information.json": {
+      "sizeBytes": 3229,
+      "sha256": "0f20041c92eef348fe3f2a5d389f43cd88a6670b2724e76f69ca3ba696ca9b90"
     },
     "json/pages/news-and-events/announcements.json": {
       "sizeBytes": 3163,
       "sha256": "a8ffc866dc5344698f775c84870902885bec5b8121fd2483218be8416b278e96"
-    },
-    "json/pages/news-and-events/event-calendar.json": {
-      "sizeBytes": 3220,
-      "sha256": "cbcfbe6bc383dae78a2d6069b35fab17d28c48c776f64d09df6b95a36a51a22f"
     },
     "json/pages/news-and-events/event-calendar/school-events.json": {
       "sizeBytes": 3067,
@@ -4278,9 +4282,9 @@
       "sizeBytes": 3139,
       "sha256": "f8580e9490fb7c5a5f68de30e6488601152a9df71dd6b290d2ae18cff0fa88c5"
     },
-    "json/pages/news-and-events/news.json": {
-      "sizeBytes": 2722,
-      "sha256": "97a7c8be4a139f61ab5240c37b173c5f7d56bb27f6da188d9f32b2c54aae68f3"
+    "json/pages/news-and-events/event-calendar.json": {
+      "sizeBytes": 3220,
+      "sha256": "cbcfbe6bc383dae78a2d6069b35fab17d28c48c776f64d09df6b95a36a51a22f"
     },
     "json/pages/news-and-events/news/news-archive.json": {
       "sizeBytes": 2859,
@@ -4294,9 +4298,13 @@
       "sizeBytes": 3311,
       "sha256": "5b53a49d53520b9a4bfe67f454fb40274aa9954caceb78afe2d73f3547528e14"
     },
-    "json/pages/our-school.json": {
-      "sizeBytes": 4347,
-      "sha256": "8eaf9460125f3df230b9511f045c1fbedd9c0f1b848608d1362951cf0a5511be"
+    "json/pages/news-and-events/news.json": {
+      "sizeBytes": 2722,
+      "sha256": "97a7c8be4a139f61ab5240c37b173c5f7d56bb27f6da188d9f32b2c54aae68f3"
+    },
+    "json/pages/news-and-events.json": {
+      "sizeBytes": 2814,
+      "sha256": "c7528aa679777a94b4f636b6de97e059f98515a09ba845688c11323681d55d23"
     },
     "json/pages/our-school/eco-school.json": {
       "sizeBytes": 3160,
@@ -4350,9 +4358,9 @@
       "sizeBytes": 13593,
       "sha256": "9d582b989eb306da68f8a88567a4a56344b01c8c1b3149e92ea463c84ba21cbd"
     },
-    "json/pages/sports.json": {
-      "sizeBytes": 3223,
-      "sha256": "1100ac6109193d4efeb6c40f03c16d2a19a41faff9ed79f9ef6ad4f088244b25"
+    "json/pages/our-school.json": {
+      "sizeBytes": 4347,
+      "sha256": "8eaf9460125f3df230b9511f045c1fbedd9c0f1b848608d1362951cf0a5511be"
     },
     "json/pages/sports/athletes.json": {
       "sizeBytes": 3558,
@@ -4381,6 +4389,10 @@
     "json/pages/sports/teams.json": {
       "sizeBytes": 3403,
       "sha256": "aec026e127b64f617284a247d0d982d45a7e941b2d03a20c9c04217afdd5b068"
+    },
+    "json/pages/sports.json": {
+      "sizeBytes": 3223,
+      "sha256": "1100ac6109193d4efeb6c40f03c16d2a19a41faff9ed79f9ef6ad4f088244b25"
     },
     "json/schemas/documents.schema.json": {
       "sizeBytes": 5533,
@@ -4476,7 +4488,7 @@
     },
     "script.js": {
       "sizeBytes": 1739,
-      "sha256": "20e04fe0639b22949913765c3a4543853d70616094faf30af23cf044720e0abb"
+      "sha256": "29834d25d91bd5c41b426ca990e0854e4b648556c7797eb5da6b27ce2222c2dc"
     },
     "service-worker.js": {
       "sizeBytes": 6084,

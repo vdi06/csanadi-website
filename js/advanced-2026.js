@@ -2,7 +2,7 @@
 
 
  
-import {renderDigitalClock} from './experience-2026.js?v=1.42.13';
+import {renderDigitalClock} from './experience-2026.js?v=1.42.15';
 const BASE='json/data/';
 const ZONE=()=>setting('modules2026.clock.timezone');
 const e=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -74,6 +74,13 @@ export function openEntrancePortal({force=false}={}){
   opening=true;
   enter.disabled=true;
   enter.setAttribute('aria-label','A kapu nyílik');
+  // Hide the outline synchronously, before applying any 3D door transition.
+  // A hidden click target cannot temporarily jump to a different screen position.
+  enter.style.setProperty('animation','none','important');
+  enter.style.setProperty('transition','none','important');
+  enter.style.setProperty('visibility','hidden','important');
+  enter.style.setProperty('opacity','0','important');
+  enter.style.setProperty('pointer-events','none','important');
   enter.classList.add('is-opening');
   if(reduced){finish();return;}
   const duration=window.matchMedia('(max-width:767px)').matches?3800:5100;

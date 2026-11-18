@@ -1,5 +1,5 @@
 // Közös, statikus tárhelyen is működő aloldali finomítások.
-import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.42.13';
+import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.42.15';
 const forbiddenHost = /(^|\.)csanadi-bp\.edu\.hu$/i;
 const legacyRoutes = new Map([
   ['tortenet.html','#/iskolank/tortenet'],

@@ -1,0 +1,16 @@
+/* Shared baseline for all eight isolated JSON-driven interactive centers. */
+*{box-sizing:border-box}
+html,body{min-width:0;max-width:100%;overflow-x:hidden}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+:root,html[data-theme="light"]{color-scheme:light;--page:#fffaf0;--card:#ffffff;--light:#f5f0e6;--line:#d9d6ce;--ink:#173249;--muted:#506579;--header:#0c2a43;--footer:#0c2a43;--nav:#152f49;--sport-green:#cfe5dc;--sport-yellow:#e5c17b}
+html[data-theme="dark"]{color-scheme:dark;--page:#0c1b2c;--card:#132c42;--light:#183850;--line:#38516b;--ink:#f1f5f9;--muted:#c5d4df;--header:#0c2437;--footer:#0c2437;--nav:#183852;--sport-green:#276b65;--sport-yellow:#d4ae63}
+body{background:var(--page);color:var(--ink)}
+body :is(section,article,main,aside,nav,div){min-width:0}
+body :is(h1,h2,h3,h4,p,li,figcaption,button,a){overflow-wrap:break-word;word-break:normal}
+body :is(img,video,canvas,svg){max-width:100%;height:auto}
+body :is(input,textarea,select){max-width:100%;color-scheme:inherit}
+body :is(.container,.container-fluid,.container-xxl,.layout,.main,.section,.shell){max-width:100%}
+body :is(.table-responsive,.params){overflow-x:auto;max-width:100%}
+body :is(a,button,input,select,textarea):focus-visible{outline:3px solid #d8b15e;outline-offset:3px}
+html[data-theme="dark"] body :is(.section,.item,.card,.panel,.cover){color:var(--ink)}
+@media(max-width:768px){body{font-size:15px}body :is(h1,h2,h3){line-height:1.22}body :is(.grid,.cards,.columns){min-width:0}}
