@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T21:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 6
   },
   "seo": {
     "title": "Egyéb vizsgák – Csanádi Sportiskola",
@@ -30,13 +30,13 @@
     {
       "id": "block:000024-section-1",
       "type": "section",
-      "title": "Lehetséges vizsgahelyzetek",
+      "title": "Belső vizsgák a 2026/2027-es tanévben",
       "children": [
         {
           "id": "block:000024-text-1",
           "type": "markdown",
           "data": {
-            "text": "A tanulmányi előmenetellel összefüggésben különböző vizsgaformák fordulhatnak elő; a pontos jogosultságokat, feladatokat és eljárásokat mindig az aktuális intézményi szabályzatok határozzák meg."
+            "text": "A munkaterv rögzíti a **10. évfolyam kisvizsgáit**, a **11. évfolyam idegen nyelvi kisvizsgáját** és a **12. évfolyam próbaérettségijét**. Az írásbeli és szóbeli vizsgák külön időpontban vannak; a vizsgázóknak a tantárgyi követelményeket is meg kell ismerniük."
           }
         }
       ]
@@ -71,13 +71,13 @@
     {
       "id": "block:content-review-20261114--p000024",
       "type": "section",
-      "title": "Egyéb tanulmányi vizsgák",
+      "title": "Kisvizsgák és próbaérettségi – pontos napok",
       "children": [
         {
           "id": "block:content-review-text-20261114--p000024",
           "type": "markdown",
           "data": {
-            "text": "A tantárgyi különbözeti, javító és egyéb tanulmányi vizsgák pontos szervezési feltételeit az intézmény helyi tanterve és vizsgaszabályai rögzítik. A jelenleg nem közzétett vizsgadátumok helyett a tanulóknak az iskola hivatalos kapcsolati csatornáin kell időpontot egyeztetniük.\n\n[Dokumentumtár](#/informaciok/dokumentumtar)"
+            "text": "**10. évfolyam:** magyar nyelvi írásbeli kisvizsga **2027. március 3., 8:00–9:30**; irodalom és történelem szóbeli **május 3-án és 5-én, 8:00-tól**.\n\n**11. évfolyam:** idegen nyelvi szóbeli kisvizsga **május 6., 8:00-tól**; az előrehozott érettségizők írásbeli osztályozóvizsgái **március 17–24.** között.\n\n**12. évfolyam, próbaérettségi:** idegen nyelvi írásbeli **2026. december 1., 7:45–9:45**; magyar írásbeli **2027. március 10., 8:00–9:00**; történelem írásbeli **április 6., 8:00–9:30**; matematika írásbeli **április 13., a munkatervben 8:00–10:35**; szóbeli próbavizsgák **április 14., 8:00-tól**.\n\n**8. osztály:** magyar nyelvi záróvizsga június első hetében, irodalom szóbeli június második hetében; a pontos nap nincs közölve. A vizsgák részletei a munkatervben szerepelnek."
           }
         }
       ]
@@ -87,12 +87,12 @@
   "schemaExtensions": {
     "preview": false,
     "route": "#/oktatas/vizsgak/egyeb-vizsgak",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:oktatas",
     "contentReview": {
-      "reviewedAt": "2026-11-17",
-      "status": "editorial-guidance",
-      "sourceId": null
+      "reviewedAt": "2026-11-19",
+      "status": "primary-source-checked",
+      "sourceId": "annual-workplan-2026-27"
     }
   }
 }

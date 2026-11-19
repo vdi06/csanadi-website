@@ -1,7 +1,7 @@
 
 
 
- 
+import {openImageViewer} from './site-viewers-v1-43-3.js?v=1.43.3';
 const e=(tag,cls='',text)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=String(text);return x;};
 const add=(target,...kids)=>{kids.filter(Boolean).forEach(k=>target.append(k));return target;};
 const safe=(s)=>String(s||'').replace(/[^a-zA-Z0-9À-ž _.,!?–:()/-]/g,'').slice(0,220);
@@ -127,22 +127,21 @@ export function renderCalendarCenter(){const wrap=e('section','experience-standa
 export function renderLifeGallery(){
  const section=e('section','photo-wall-section section-wrap');section.id='eletkepek';const container=e('div','container-xxl');
  add(container,sectionHead('ÉLETKÉPEK ÉS PILLANATOK','Sport, tudás, közösség – képekben','Fedezd fel a sportágakat, a közös tanulás örömét és a közösségi élményeket sokféle tematikus képen.'));
- const controls=e('div','photo-wall-controls'),results=e('span','gallery-results'),grid=e('div','photo-wall-grid');const more=e('button','gallery-more','További képek mutatása');more.type='button';
+ const controls=e('div','photo-wall-controls'),results=e('span','gallery-results'),grid=e('div','photo-wall-grid');const more=e('button','gallery-more btn btn-outline-primary','További képek mutatása');more.type='button';
  let entries=[],filter='mind',limit=settingNumber('runtime.display.galleryBatch');
  const choices=[['mind','Összes'],['sport','Sport'],['oktatas','Tanulás'],['kozosseg','Közösség']];
- choices.forEach(([key,label])=>{const b=e('button','gallery-filter',label);b.type='button';b.dataset.filter=key;b.setAttribute('aria-pressed',String(key===filter));b.addEventListener('click',()=>{filter=key;limit=settingNumber('runtime.display.galleryBatch');draw();});controls.append(b);});controls.append(results);
- const modal=document.createElement('dialog');modal.className='gallery-lightbox';const img=e('img'),caption=e('p','gallery-lightbox-title');const close=e('button','gallery-lightbox-close','Bezárás ×');close.type='button';close.addEventListener('click',()=>modal.close());add(modal,close,img,caption);modal.addEventListener('click',ev=>{if(ev.target===modal)modal.close();});
+ choices.forEach(([key,label])=>{const b=e('button','gallery-filter btn btn-outline-secondary',label);b.type='button';b.dataset.filter=key;b.setAttribute('aria-pressed',String(key===filter));b.addEventListener('click',()=>{filter=key;limit=settingNumber('runtime.display.galleryBatch');draw();});controls.append(b);});controls.append(results);
  function draw(){
   controls.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.filter===filter)));
   const items=entries.filter(x=>filter==='mind'||x.category===filter);
   results.textContent=`${Math.min(limit,items.length)} / ${items.length} kép`;
   grid.replaceChildren();items.slice(0,limit).forEach((item,i)=>{
    const tile=e('button','photo-tile');tile.type='button';tile.setAttribute('aria-label',item.title+' – kép nagyítása');const photo=e('img');photo.src=item.src;photo.alt=item.alt;photo.loading=i<8?'eager':'lazy';photo.decoding='async';
-   add(tile,photo,e('span','photo-tile-caption',item.title));tile.addEventListener('click',()=>{img.src=item.src;img.alt=item.alt;caption.textContent=item.title;modal.showModal();});grid.append(tile);
+   add(tile,photo,e('span','photo-tile-caption',item.title));tile.addEventListener('click',()=>openImageViewer(items,i,{title:choices.find(x=>x[0]===filter)?.[1]||'Életképek'}));grid.append(tile);
   });more.hidden=items.length<=limit;
  }
  more.addEventListener('click',()=>{limit+=settingNumber('runtime.display.galleryBatch');draw();});
- add(container,controls,grid,more,modal,document.createDocumentFragment());
+ add(container,controls,grid,more,document.createDocumentFragment());
  section.append(container);
  dataJSON('photo-gallery.json').then(v=>{if(v?.schemaVersion!=='1.0.0'||!Array.isArray(v.items))throw Error('A képgaléria JSON hibás.');entries=v.items.filter(x=>x.verifiedSchoolPhoto===false&&/^assets\/media\/web\/[a-z0-9-]+\.webp$/.test(x.src)&&typeof x.title==='string');draw();}).catch(err=>{grid.append(e('p','experience-error','Nem tölthető be a galéria: '+err.message));});
  return section;

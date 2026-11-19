@@ -1,4 +1,5 @@
 import {formatBytes} from './format-bytes.js?v=1.42.18';
+import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.43.3';
 
 
  
@@ -44,6 +45,12 @@ export function renderSportsCharts(){
    }
    if(chart){const palette=setting('theme.'+(document.documentElement.dataset.theme==='dark'?'dark':'light')+'Colors');chart.data.labels=displayed.map(r=>r[0]);chart.data.datasets[0].data=displayed.map(r=>r[1]);chart.data.datasets[0].backgroundColor=[palette.sportYellow,palette.sportGreen,...palette.chartOtherColors];chart.options.plugins.legend.labels.color=palette.ink;chart.update();}
   };
+  let lastFiltered=[];
+  const followTheme=()=>{
+   if(!root.isConnected){document.removeEventListener('csanadi:theme-change',followTheme);return;}
+   redrawBars(lastFiltered);
+  };
+  document.addEventListener('csanadi:theme-change',followTheme);
   const renderCards=()=>{
    const query=tokenize(sportSearch.value),filtered=entries.filter(entry=>
     (sportFilter.value==='all'||entry.category===sportFilter.value)&&
@@ -53,7 +60,7 @@ export function renderSportsCharts(){
    sportInfo.textContent=`${filtered.length} ellenőrzött bejegyzés, ebből ${Math.min(filtered.length,limit)} látható. A dátum nélküli történeti eredményekhez nem találunk ki évszámot.`;
    for(const entry of filtered.slice(0,limit))sportCards.append(itemLink(entry.title,entry.summary||entry.category,safeRoute(entry.links?.results),'✓ '+entry.category));
    if(!filtered.length)sportCards.append(make('p','ext26-empty','Nincs megfelelő ellenőrzött eredmény.'));
-   redrawBars(filtered);
+   lastFiltered=filtered;redrawBars(filtered);
   };
   [sportFilter,sportPeriod,sportSearch].forEach(control=>control.addEventListener('input',renderCards));renderCards();
   if(!rows.length){state.textContent='Nincsenek ellenőrzött sportági bejegyzések.';graph.hidden=true;return;}
@@ -151,7 +158,7 @@ export function renderCalendarFilters(){
  clear.addEventListener('click',()=>{search.value='';category.value='all';from.value='';until.value='';draw();});
  const icsEscape=value=>String(value??'').replace(/\\/g,'\\\\').replace(/\r?\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');
  const icsUTC=value=>new Date(value).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
- exportICS.addEventListener('click',()=>{const range=period(),q=tokenize(search.value).join(' ');const selected=items.filter(x=>range&&matchesFilters(x,q)&&x.startsAt.slice(0,10)<=range[1]&&eventEnd(x)>=range[0]);const stamp=icsUTC(new Date().toISOString());const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Csanadi Sportiskola 2026//HU','CALSCALE:GREGORIAN'];for(const x of selected){if(!Number.isFinite(Date.parse(x.startsAt)))continue;lines.push('BEGIN:VEVENT','UID:'+icsEscape(x.id)+'@csanadi-school','DTSTAMP:'+stamp,'DTSTART:'+icsUTC(x.startsAt));if(x.endsAt&&Number.isFinite(Date.parse(x.endsAt)))lines.push('DTEND:'+icsUTC(x.endsAt));lines.push('SUMMARY:'+icsEscape(x.title),'DESCRIPTION:'+icsEscape(x.summary),'LOCATION:'+icsEscape(x.location),'END:VEVENT');}lines.push('END:VCALENDAR');const blob=new Blob([lines.join('\r\n')+'\r\n'],{type:'text/calendar;charset=utf-8'}),url=URL.createObjectURL(blob),a=make('a');a.href=url;a.download='csanadi_esemenyek.ics';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000);info.textContent=`${selected.length} esemény helyi ICS-fájlba exportálva. A dátumok a forrás JSON alapján szerepelnek.`;});
+ exportICS.addEventListener('click',()=>{const range=period(),q=tokenize(search.value).join(' ');const selected=items.filter(x=>range&&matchesFilters(x,q)&&x.startsAt.slice(0,10)<=range[1]&&eventEnd(x)>=range[0]);const stamp=icsUTC(new Date().toISOString());const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Csanadi Sportiskola 2026//HU','CALSCALE:GREGORIAN'];for(const x of selected){if(!Number.isFinite(Date.parse(x.startsAt)))continue;lines.push('BEGIN:VEVENT','UID:'+icsEscape(x.id)+'@csanadi-school','DTSTAMP:'+stamp);if(x.allDay===true){const ending=new Date(eventEnd(x)+'T12:00:00Z');ending.setUTCDate(ending.getUTCDate()+1);lines.push('DTSTART;VALUE=DATE:'+x.startsAt.slice(0,10).replaceAll('-',''),'DTEND;VALUE=DATE:'+ending.toISOString().slice(0,10).replaceAll('-',''));}else{lines.push('DTSTART:'+icsUTC(x.startsAt));if(x.endsAt&&Number.isFinite(Date.parse(x.endsAt)))lines.push('DTEND:'+icsUTC(x.endsAt));}lines.push('SUMMARY:'+icsEscape(x.title),'DESCRIPTION:'+icsEscape(x.summary),'LOCATION:'+icsEscape(x.location),'END:VEVENT');}lines.push('END:VCALENDAR');const blob=new Blob([lines.join('\r\n')+'\r\n'],{type:'text/calendar;charset=utf-8'}),url=URL.createObjectURL(blob),a=make('a');a.href=url;a.download='csanadi_esemenyek.ics';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000);info.textContent=`${selected.length} esemény helyi ICS-fájlba exportálva. A dátumok a helyi eseményjegyzék alapján szerepelnek.`;});
  print.addEventListener('click',()=>window.print());
  getData('data/events.json').then(data=>{items=(data.items||[]).filter(x=>x.status==='published'&&x.verified===true&&Number.isFinite(Date.parse(x.startsAt))).sort((a,b)=>Date.parse(a.startsAt)-Date.parse(b.startsAt));categories=data.categories||[];
   category.replaceChildren(all());categories.forEach(c=>{const o=make('option','',c.label);o.value=c.id;category.append(o);});draw();
@@ -162,18 +169,11 @@ export function renderCalendarFilters(){
  
 export function renderDocumentFinder(){
  const root=make('details','ext26-section ext26-doc-finder'),summary=make('summary','ext26-disclosure','Dokumentumok gyorskeresése és PDF-előnézete');
- const controls=make('div','ext26-filter-row'),search=make('input'),list=make('div','ext26-list'),status=make('p','ext26-note','Dokumentumok betöltése…');search.type='search';search.placeholder='Cím, kategória, tartalom…';search.setAttribute('aria-label','Dokumentumok gyorskeresése');
- const category=make('select'),sort=make('select');category.setAttribute('aria-label','Dokumentumkategória');sort.setAttribute('aria-label','Dokumentumok rendezése');
+ const controls=make('div','ext26-filter-row'),search=make('input','form-control'),list=make('div','ext26-list'),status=make('p','ext26-note','Dokumentumok betöltése…');search.type='search';search.placeholder='Cím, kategória, tartalom…';search.setAttribute('aria-label','Dokumentumok gyorskeresése');
+ const category=make('select','form-select'),sort=make('select','form-select');category.setAttribute('aria-label','Dokumentumkategória');sort.setAttribute('aria-label','Dokumentumok rendezése');
  [['title','Cím szerint'],['version','Verzió szerint'],['date','Frissítés szerint']].forEach(([value,title])=>sort.add(new Option(title,value)));
- const modal=make('dialog','ext26-pdf-dialog');modal.setAttribute('aria-label','PDF előnézet');
- const close=make('button','','Bezárás ×');close.type='button';close.addEventListener('click',()=>modal.close());
- const label=make('h3','','PDF előnézet'),frame=make('iframe');frame.title='PDF-fájl előnézete';frame.loading='lazy';
- const open=make('a','','PDF megnyitása új lapon');open.target='_blank';open.rel='noopener noreferrer';
- const meta=make('p','csn19-doc-preview-meta'),fallback=make('p','csn19-doc-preview-help','Ha a PDF nem jelenik meg a böngészőben, nyisd meg új lapon vagy töltsd le a dokumentumot.');
- const download=make('a','','PDF letöltése');download.setAttribute('download','');
- append(modal,close,label,meta,frame,fallback,open,download);modal.addEventListener('close',()=>frame.removeAttribute('src'));
  for(const [title,control] of [['Keresés',search],['Kategória',category],['Rendezés',sort]]){const label=make('label','ext26-field');label.append(make('span','',title),control);controls.append(label);}
- append(root,summary,controls,status,list,modal);
+ append(root,summary,controls,status,list);
  let docs=[];function draw(){list.replaceChildren();const q=tokenize(search.value);const rows=docs.filter(d=>(category.value==='all'||d.categoryId===category.value)&&q.every(w=>tokenize([d.title,d.summary,d.description,d.categoryId,(d.tags||[]).join(' ')].join(' ')).some(part=>part.includes(w))));
   if(sort.value==='version')rows.sort((a,b)=>String(b.version||'').localeCompare(String(a.version||''),'hu',{numeric:true}));
   else if(sort.value==='date')rows.sort((a,b)=>String(b.updatedAt||'').localeCompare(String(a.updatedAt||'')));
@@ -181,7 +181,7 @@ export function renderDocumentFinder(){
   status.textContent=`${rows.length} közzétett dokumentum. A fájlok helyben, a honlap tárhelyéről nyílnak meg.`;
   for(const d of rows){const row=make('div','ext26-doc-row');append(row,make('strong','',d.title),make('small','',d.summary||''),make('small','',`Verzió: ${d.version||'nincs megadva'} · Méret: ${typeof d.fileSizeBytes==='number'?formatBytes(d.fileSizeBytes):'ismeretlen'}`));const file=safePDF(d.filePath);
    if(Array.isArray(d.versionHistory)&&d.versionHistory.length){const history=make('details','csn19-doc-history'),historyTitle=make('summary','','Verziótörténet · '+d.versionHistory.length+' bejegyzés');history.append(historyTitle);for(const item of d.versionHistory){history.append(make('p','',`v${item.version||'?'} · ${item.date||'Dátum nélkül'} · ${item.change||''}`));}row.append(history);}
-   if(file){const btn=make('button','','Előnézet');btn.type='button';btn.addEventListener('click',()=>{label.textContent=d.title;meta.textContent=`Verzió: ${d.version||'nincs megadva'} · Méret: ${typeof d.fileSizeBytes==='number'?formatBytes(d.fileSizeBytes):'ismeretlen'}`;frame.src=file+'#toolbar=1';open.href=file;download.href=file;download.download=d.fileName||'';modal.showModal();});const direct=make('a','','Letöltés');direct.href=file;direct.download=d.fileName||'';append(row,btn,direct);}
+   if(file){const btn=make('button','btn btn-primary','Megtekintés');btn.type='button';btn.addEventListener('click',()=>openDocumentViewer(d,btn));const direct=make('a','btn btn-outline-secondary','Letöltés');direct.href=file;direct.download=d.fileName||'';append(row,btn,direct);}
    list.append(row);
   }
   if(!rows.length)list.append(make('p','ext26-empty','Nincs megfelelő dokumentum.'));

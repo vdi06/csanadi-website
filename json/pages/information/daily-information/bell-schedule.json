@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T22:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 7
   },
   "seo": {
     "title": "Csengetési rend – Csanádi Sportiskola",
@@ -64,7 +64,21 @@
           "id": "block:content-review-text-20261114--p000049",
           "type": "markdown",
           "data": {
-            "text": "Az első óra 8:00-kor kezdődik, a nyolcadik 15:00-kor ér véget. A 5–8. óra nem mind 45 perces; az időpontokat a megjelenő központi csengetési táblázatból olvasd le. Az általános iskolai ügyelet az iskola tájékoztatása szerint tanítási napokon 7:00–18:00 között működik.\n\n[Hivatalos csengetési rend – eredeti intézményi forrás](https://csanadi-bp.edu.hu/csengetes.html)"
+            "text": "Az első óra 8:00-kor kezdődik, a nyolcadik **15:05-kor** ér véget. Az 5–8. tanóra 40 perces; az időpontokat a megjelenő központi csengetési táblázat tartalmazza. Az általános iskolai ügyelet a tanítási napokon 7:00–18:00 között működik."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:202627-bell-document-conflict",
+      "type": "section",
+      "title": "A hivatalos csengetési rend – megerősítve",
+      "children": [
+        {
+          "id": "block:202627-bell-document-conflict-text",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskola által közvetlenül átadott hivatalos csengetési rend alapján a **7. óra 13:40–14:20**, a **8. óra 14:25–15:05**. A honlap digitális órája és a következő csengetésig tartó visszaszámláló is ezeket az időpontokat használja.\n\n| Óra | Kezdés | Befejezés |\n|---|---|---|\n| 1. | 8:00 | 8:45 |\n| 2. | 8:55 | 9:40 |\n| 3. | 9:50 | 10:35 |\n| 4. | 10:45 | 11:30 |\n| 5. | 11:40 | 12:20 |\n| 6. | 12:40 | 13:20 |\n| 7. | 13:40 | 14:20 |\n| 8. | 14:25 | 15:05 |\n\nA házirend szerint a tanulóknak a napi első órájuk kezdete előtt legalább 15 perccel kell megérkezniük. Az általános iskolai reggeli ügyelet 7:00-kor kezdődik."
           }
         }
       ]
@@ -77,9 +91,9 @@
     "verifiedContent": true,
     "bannerMediaId": "media:kozosseg",
     "contentReview": {
-      "reviewedAt": "2026-11-17",
-      "status": "primary-source-checked",
-      "sourceId": "bells"
+      "reviewedAt": "2026-11-19",
+      "status": "school-confirmed-bell-photo",
+      "sourceId": "school-provided-photo-20261119"
     }
   }
 }

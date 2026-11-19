@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T21:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 6
   },
   "seo": {
     "title": "Érettségi – Csanádi Sportiskola",
-    "description": "A közzétett 2026-os őszi vizsgaidőpontok és a felkészülés forrásai. A vizsgaidőszakok, a felkészülési tudnivalók és az eredeti hivatalos források együtt.",
+    "description": "Érettségi – 2026 őszi és 2027 tavaszi vizsgaidőszak, az ismert iskolai időpontokkal.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "A közzétett 2026-os őszi vizsgaidőpontok és a felkészülés forrásai. A vizsgaidőszakok, a felkészülési tudnivalók és az eredeti hivatalos források együtt szerepelnek.",
+  "summary": "Érettségi – 2026 őszi és 2027 tavaszi vizsgaidőszak, az ismert iskolai időpontokkal.",
   "blocks": [
     {
       "id": "block:000022-section-1",
@@ -44,13 +44,13 @@
     {
       "id": "block:000022-section-2",
       "type": "section",
-      "title": "Hivatalos időpontok és témakörök",
+      "title": "2027. évi tavaszi érettségi",
       "children": [
         {
           "id": "block:000022-text-2",
           "type": "markdown",
           "data": {
-            "text": "Érettségi vizsga – 2026 ősz"
+            "text": "Az **írásbeli érettségik időszaka 2027. május 3–24.** Az első kötelező vizsga, a **magyar nyelv és irodalom írásbeli 2027. május 3-án 9:00-kor** kezdődik.\n\n**Emelt szintű szóbelik:** 2027. június 2–9. **Középszintű szóbelik:** június 14–30. **A Csanádi 12.A, 12.B és 12.C osztályainak szóbeli időszaka:** június 22–28. **Testnevelés gyakorlati érettségi:** június 16. délelőtt (pontos óra nem szerepel a munkatervben).\n\nA belső próbaérettségi-alkalmak az [egyéb vizsgák](#/oktatas/vizsgak/egyeb-vizsgak) oldalán is megtalálhatók."
           }
         }
       ]
@@ -58,13 +58,13 @@
     {
       "id": "block:content-review-20261114--p000022",
       "type": "section",
-      "title": "2026 őszi érettségi – közzétett időpontok",
+      "title": "2026. őszi érettségi – korábbi időpontok",
       "children": [
         {
           "id": "block:content-review-text-20261114--p000022",
           "type": "markdown",
           "data": {
-            "text": "Az iskola 2026. őszi középszintű írásbeli időpontjai között az október 12-i magyar és földrajz, a 13-i matematika, a 14-i történelem és a 15-i angol szerepel. A dolgozatmegtekintés november 3-án volt. A november 18-i szóbelihez a közzétett **legkésőbbi érkezés 7:30**. Ez a 2026. őszi vizsgaidőszak tájékoztatója, nem az összes jövőbeli érettségi naptára.\n\n[Érettségi – intézményi tájékoztató – eredeti intézményi forrás](https://csanadi-bp.edu.hu/erettsegi.html)"
+            "text": "Az intézmény 2026. őszi írásbeli vizsgái október 12-én kezdődtek, a dolgozatmegtekintés november 3-án zajlott. Az őszi szóbeli érettségi időszaka november 16–20. volt; az iskola külön tájékoztatása szerint a középszintű szóbeli november 18-án, legkésőbb 7:30-as érkezéssel zajlott.\n\nA **2027. tavaszi időpontok** a fenti részben szerepelnek."
           }
         }
       ]
@@ -77,9 +77,9 @@
     "verifiedContent": true,
     "bannerMediaId": "media:oktatas",
     "contentReview": {
-      "reviewedAt": "2026-11-17",
+      "reviewedAt": "2026-11-19",
       "status": "primary-source-checked",
-      "sourceId": "finalExam"
+      "sourceId": "annual-workplan-2026-27"
     }
   }
 }

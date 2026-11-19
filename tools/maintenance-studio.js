@@ -2,6 +2,11 @@
    No FTP, Github, API or remote writing is attempted. */
 import {createZip,downloadBlob} from '../js/zip-native-2026.js?v=1.42.18';
 import {MEDIA_ID,DOC_ID,DOC_EXT,IMAGE_TYPES,makeSlug,deepCopy,safePackagePath,sha256,validateMediaRegistry,validateDocumentRegistry,parseReleaseStamp,formatMediaRecord,canDeleteMedia} from './editor-core.js?v=1.42.18';
+import {PageHistory,editedPage,sameContent,validateEditablePage,listSavedDrafts,savePageDraft,deletePageDraft,clearPageDrafts,restorePageDraft,newContentBlock} from './page-draft-core-v1-42-23.js?v=1.42.25';
+import {workflowRecord,noteContentChanged,transitionWorkflow,adoptWorkflowRecord} from './content-workflow-core-v1-42-25.js?v=1.43.3';
+import {createLivePreview} from '../js/live-preview-v1-42-25.js?v=1.42.25';
+import {evaluateReleaseGate,synchronizePageIndex,validateReleaseGraph,validateReleaseManifest,reportCSV} from './release-policy-v1-42-26.js?v=1.43.3';
+import {readVerifiedZip} from '../js/zip-integrity-v1-42-26.js?v=1.43.3';
 const ROOT=new URL('../',import.meta.url);
 const PATHS={media:'json/media-library.json',documents:'json/data/documents.json',config:'json/config.json',manifest:'release-manifest.json',pageIndex:'json/page-index.json',structure:'json/structure.json'};
 const $=(sel,root=document)=>root.querySelector(sel);
@@ -30,7 +35,21 @@ export function initStudio(){
 }
 class Studio{
  constructor(){
-  this.state=null;this.dialog=null;this.tab='media';this.changed=new Map();this.deleted=new Set();this.loadedTexts=null;this.focus=null;this.pageDrafts=new Map();
+  this.state=null;this.dialog=null;this.tab='media';this.changed=new Map();this.deleted=new Set();this.loadedTexts=null;this.focus=null;this.pageDrafts=new Map();this.sourcePages=new Map();this.pageHistories=new Map();this.draftWarnings=[];this.originalIndex=null;this.originalMedia=null;this.originalDocuments=null;this.lastReport=null;this.previewPanel=null;
+  document.addEventListener('csanadi:c2-draft-changed',event=>{void this.acceptVisualDraft(event.detail);});
+ }
+ async acceptVisualDraft(detail){
+  if(!this.state||!detail?.path||!detail.page)return;
+  try{
+   if(!this.sourcePages.has(detail.path)){
+    const response=await fetch(new URL(detail.path,ROOT),{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
+    this.sourcePages.set(detail.path,await response.json());
+   }
+   this.stagePage(detail.path,detail.page,false);
+   if(!this.pageHistories.has(detail.path))this.pageHistories.set(detail.path,new PageHistory(this.sourcePages.get(detail.path)));
+   this.pageHistories.get(detail.path).commit(detail.page);
+   if(this.dialog?.open)this.status('A közvetlen oldalszerkesztés változása bekerült a helyi ZIP-munkapéldányba.');
+  }catch(error){this.draftWarnings.push(detail.path+': '+error.message);if(this.dialog?.open)this.status('A vizuális változás összehangolása sikertelen: '+error.message,true);}
  }
  async load(){
   const results=await Promise.all(Object.values(PATHS).map(async path=>{
@@ -39,7 +58,49 @@ class Studio{
    return response.json();
   }));
   this.state=Object.fromEntries(Object.keys(PATHS).map((key,i)=>[key,results[i]]));
-  this.changed.clear();this.deleted.clear();this.loadedTexts=null;this.pageDrafts.clear();
+  this.changed.clear();this.deleted.clear();this.loadedTexts=null;this.pageDrafts.clear();this.sourcePages.clear();this.pageHistories.clear();this.draftWarnings=[];this.originalIndex=deepCopy(this.state.pageIndex);this.originalMedia=deepCopy(this.state.media);this.originalDocuments=deepCopy(this.state.documents);this.lastReport=null;
+  await this.restoreLocalDrafts();
+ }
+ storage(){try{return globalThis.localStorage||null;}catch{return null;}}
+ release(){return this.state.manifest.release;}
+ async restoreLocalDrafts(){
+  let drafts=[];try{drafts=listSavedDrafts(this.storage(),this.release());}catch(error){this.draftWarnings.push('A helyi tervezetek betöltése sikertelen: '+error.message);return;}
+  for(const record of drafts){
+   try{
+    const response=await fetch(new URL(record.path,ROOT),{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
+    const original=await response.json();this.sourcePages.set(record.path,deepCopy(original));
+    const page=restorePageDraft(original,record);
+    const history=new PageHistory(original);history.commit(page);this.pageHistories.set(record.path,history);
+    this.stagePage(record.path,page,false);
+   }catch(error){this.draftWarnings.push(record.path+': '+error.message);}
+  }
+ }
+ stagePage(url,page,persist=true){
+  const original=this.sourcePages.get(url);if(!original)throw Error('Az oldal eredeti példánya nem található.');
+  validateEditablePage(original,page);
+  const path=url.replace(/^json\//,'');
+  const item=this.state.pageIndex.pages[path];
+  if(!item||item.id!==page.id||item.schemaExtensions?.route!==page.schemaExtensions?.route)throw Error('A szerkesztési útvonal vagy oldalazonosító nem egyezik.');
+  if(sameContent(original,page)){
+   this.pageDrafts.delete(url);this.changed.delete(url);
+   Object.assign(item,deepCopy(this.originalIndex.pages[path]));
+  }else{
+   this.pageDrafts.set(url,deepCopy(page));this.changed.set(url,new TextEncoder().encode(safeJSON(page)));
+   const search=[];const texts=value=>{if(typeof value==='string')search.push(value);else if(Array.isArray(value))for(const part of value)texts(part);else if(value&&typeof value==='object')for(const [key,part] of Object.entries(value))if(!['id','mediaId','imageId','style','className','href'].includes(key))texts(part);};
+   texts(page.blocks);
+   Object.assign(item,{title:page.title,menuLabel:page.menuLabel,summary:page.summary,lifecycle:deepCopy(page.lifecycle),searchText:[page.title,page.summary,...search].join(' ').slice(0,45000)});
+  }
+  this.state.pageIndex.searchIndexRevision=this.pageDrafts.size?'csanadi-v'+this.release().replace('csanadi-website-v',''):this.originalIndex.searchIndexRevision;
+  if(this.pageDrafts.size)this.changed.set(PATHS.pageIndex,new TextEncoder().encode(safeJSON(this.state.pageIndex)));
+  else this.changed.delete(PATHS.pageIndex);
+  if(!persist)return '';
+  try{
+   const storage=this.storage();if(!storage)throw Error('A böngésző nem engedi a helyi tárolást.');
+   if(this.pageDrafts.has(url))savePageDraft(storage,this.release(),url,original,page);
+   else deletePageDraft(storage,this.release(),url);
+   noteContentChanged(storage,this.release(),url,original,page);
+   return 'A tervezet ezen az eszközön mentve.';
+  }catch(error){return 'A munkapéldány mentve, de a tartós helyi tárolás sikertelen: '+error.message;}
  }
  async open(){
   if(this.dialog?.open){this.dialog.focus();return;}
@@ -53,10 +114,11 @@ class Studio{
    this.dialog.addEventListener('close',()=>this.focus?.focus?.());
    this.dialog.addEventListener('click',event=>{const button=event.target.closest('button[data-tab]');if(button)this.switchTab(button.dataset.tab);});
   }
-  this.dialog.showModal();this.switchTab('media');
+  this.dialog.showModal();this.switchTab('pages');
  }
  status(message,error=false){const el=$('.cs-tool-live',this.dialog);el.textContent=message;el.classList.toggle('cs-tool-error',error);}
  switchTab(which){
+  this.previewPanel?.destroy();this.previewPanel=null;
   this.tab=which;
   for(const b of this.dialog.querySelectorAll('button[data-tab]')){b.setAttribute('aria-selected',String(b.dataset.tab===which));}
   const body=$('.cs-tool-body',this.dialog);body.replaceChildren();this.status('');
@@ -84,58 +146,202 @@ class Studio{
  }
  addButton(parent,text,callback,style=''){const b=node('button','cs-tool-button '+style,text);b.type='button';b.addEventListener('click',callback);parent.append(b);return b;}
  showPages(parent){
-  this.sectionTitle(parent,'JSON-alapú oldalak szerkesztése', 'A 78 oldal magyar címe, összefoglalója és tartalmi blokkjai szerkeszthetők. A belső angol fájlútvonal és a nyilvános #/ URL nem változik.');
+  this.sectionTitle(parent,'JSON-alapú oldalak szerkesztése', 'A 79 oldal címe, összefoglalója és tartalmi blokkjai szerkeszthetők. A jóváhagyott oldalak fájljait a böngésző nem írja át; csak helyi tervezet és ellenőrzött ZIP-kiadás készül.');
   const list=[];const collect=(nodes)=>{for(const n of nodes){list.push(n.path);collect(n.children||[]);}};
   collect(this.state.structure.nodes);list.unshift('pages/home.json');
   const group=node('div','cs-tool-actions');
   const pagePicker=this.select('Válassz oldalt',list.map(p=>[p,this.state.pageIndex.pages[p]?.title||p]),list[0]);
   group.append(pagePicker.wrapper);this.addButton(group,'Oldal megnyitása',()=>this.pageForm(parent,pagePicker.field.value),'cs-tool-primary');
+  this.addButton(group,'Vizuális szerkesztés az oldalon',()=>{
+   const chosen=this.state.pageIndex.pages[pagePicker.field.value],route=chosen?.schemaExtensions?.route;
+   if(!/^#\/[a-z0-9\-/]*$/.test(route||'')){this.status('A kiválasztott oldal útvonala érvénytelen.',true);return;}
+   const inMemory=[...this.changed.keys()].filter(key=>!key.startsWith('json/pages/')&&key!==PATHS.pageIndex);
+   if(inMemory.length&&!confirm('A képek és dokumentumok mentetlen módosításai a navigációkor elveszhetnek. Folytatod?'))return;
+   const url=new URL(location.href);url.searchParams.set('editor','1');url.hash=route;
+   if(this.dialog?.open)this.dialog.close();location.assign(url.href);
+  });
   parent.append(group);
-  parent.append(node('p','cs-tool-note','A szerkesztés után a keresőindex ugyanabban a kiadásban frissül. Az új oldalak regisztrációja és az oldalazonosítók megváltoztatása külön, ellenőrzött kiadási folyamatot igényel.'));
+  parent.append(node('p','cs-tool-note',`${this.pageDrafts.size} helyi oldaltervezet a munkapéldányban. A mentett tervezetek ezen az eszközön, ehhez a kiadáshoz kötve legfeljebb 60 napig használhatók. A keresőindex az exportban együtt frissül.`));
+  try{
+   const grouped={draft:0,checked:0,approved:0};
+   for(const [url,page] of this.pageDrafts){const current=workflowRecord(this.storage(),this.release(),url,this.sourcePages.get(url),page);if(Object.hasOwn(grouped,current.state))grouped[current.state]++;}
+   parent.append(node('p','cs-tool-note',`C3 helyi állapotok: ${grouped.draft} tervezet · ${grouped.checked} ellenőrzött · ${grouped.approved} jóváhagyott. Ezek nem szerveroldali jogosultságok.`));
+   const extras=node('div','cs-tool-actions');
+   this.addButton(extras,'Állapotnapló JSON letöltése',()=>{
+    const entries=[...this.pageDrafts].map(([url,page])=>({path:url,...workflowRecord(this.storage(),this.release(),url,this.sourcePages.get(url),page)}));
+    downloadBlob(new Blob([safeJSON({schema:1,release:this.release(),localOnly:true,entries})],{type:'application/json'}),'csanadi-c3-helyi-allapotnaplo.json');
+   });
+   for(const oldVersion of ['1.43.0','1.42.26','1.42.25','1.42.24']){
+    const oldRelease='csanadi-website-v'+oldVersion,previous=listSavedDrafts(this.storage(),oldRelease);
+    if(!previous.some(item=>!this.pageDrafts.has(item.path)))continue;
+    this.addButton(extras,`v${oldVersion} helyi tervezetek átvétele`,async()=>{
+     if(!confirm(`A v${oldVersion} kiadás helyi tervezeteit ellenőrzés után átvesszük. A régi mentések megmaradnak; a C3 jóváhagyást csak változatlan tartalom esetén őrizzük meg. Folytatod?`))return;
+     let count=0,skipped=0,approved=0;
+     for(const record of previous){
+      if(this.pageDrafts.has(record.path)){skipped++;continue;}
+      try{
+       const response=await fetch(new URL(record.path,ROOT),{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
+       const original=await response.json(),page=restorePageDraft(original,record);
+       this.sourcePages.set(record.path,original);this.stagePage(record.path,page);
+       if(oldVersion==='1.43.0'||oldVersion==='1.42.26'||oldVersion==='1.42.25'){
+        const adopted=adoptWorkflowRecord(this.storage(),oldRelease,this.release(),record.path,original,page);
+        if(adopted.state==='approved')approved++;
+       }
+       const history=new PageHistory(original);history.commit(page);this.pageHistories.set(record.path,history);count++;
+      }catch(error){skipped++;this.draftWarnings.push(record.path+': '+error.message);}
+     }
+     this.switchTab('pages');this.status(`${count} tervezet átvéve, köztük ${approved} érvényes helyi jóváhagyással; ${skipped} kihagyva. A v${oldVersion} mentései megmaradtak.`);
+    });
+   }
+   parent.append(extras);
+  }catch(error){parent.append(node('p','cs-tool-warning','A C3 helyi állapotok nem tölthetők be: '+error.message));}
+  for(const warning of this.draftWarnings)parent.append(node('p','cs-tool-warning',warning));
+  parent.append(node('p','cs-tool-note','Az új oldalak regisztrációja és az oldalazonosítók megváltoztatása külön, ellenőrzött kiadási folyamatot igényel. A mentés nem intézményi jóváhagyás és nem FTP-feltöltés.'));
  }
  async pageForm(parent,path){
+  this.previewPanel?.destroy();this.previewPanel=null;
   parent.replaceChildren();const url='json/'+path;
   try{
-   const page=this.pageDrafts.has(url)?deepCopy(this.pageDrafts.get(url)):
-    await (async()=>{const response=await fetch(new URL(url,ROOT),{cache:'no-store'});if(!response.ok)throw Error(url+': HTTP '+response.status);return response.json();})();
-   this.sectionTitle(parent,'Oldal szerkesztése',page.schemaExtensions.route+' · '+path);
-   const form=node('form','cs-tool-form');const fields={};
-   for(const [key,label,type] of [['title','Oldalcím','text'],['menuLabel','Menüben megjelenő név','text'],['summary','Rövid összefoglaló','textarea']]){
-    const f=this.input(label,page[key],type,true);fields[key]=f.field;form.append(f.wrapper);
+   if(!this.sourcePages.has(url)){
+    const response=await fetch(new URL(url,ROOT),{cache:'no-store'});
+    if(!response.ok)throw Error(url+': HTTP '+response.status);
+    this.sourcePages.set(url,await response.json());
    }
-   const blocks=this.input('Tartalmi blokkok (érvényes JSON-tömb)',safeJSON(page.blocks),'textarea',true);
-   blocks.field.rows=17;blocks.wrapper.classList.add('cs-tool-json');form.append(blocks.wrapper);
-   const actions=node('div','cs-tool-actions');const save=node('button','cs-tool-button cs-tool-primary','Oldal mentése');save.type='submit';actions.append(save);this.addButton(actions,'Vissza',()=>this.switchTab('pages'));form.append(actions);
-   form.addEventListener('submit',event=>{
-    event.preventDefault();
+   const original=this.sourcePages.get(url);
+   if(!this.pageHistories.has(url)){
+    const history=new PageHistory(original);
+    if(this.pageDrafts.has(url))history.commit(this.pageDrafts.get(url));
+    this.pageHistories.set(url,history);
+   }
+   const history=this.pageHistories.get(url),page=deepCopy(history.current);
+   this.sectionTitle(parent,'Oldal szerkesztése',page.schemaExtensions.route+' · '+path);
+   parent.append(node('p','cs23-draft-status',this.pageDrafts.has(url)?'Helyi tervezet · az eredeti kiadás érintetlen':'Eredeti oldal · még nincs helyi módosítás'));
+   const workflowBox=node('section','cs25-workflow');workflowBox.setAttribute('aria-label','Tartalmi munkafolyamat');parent.append(workflowBox);
+   const pendingNotice=node('p','cs25-unsaved-warning');parent.append(pendingNotice);
+   const form=node('form','cs-tool-form'),fields={};
+   for(const [key,label,type] of [['title','Oldalcím','text'],['menuLabel','Menüben megjelenő név','text'],['summary','Rövid összefoglaló','textarea']]){
+    const input=this.input(label,page[key],type,key!=='summary');fields[key]=input.field;form.append(input.wrapper);
+   }
+   const blocks=this.input('Haladó blokkszerkesztés · érvényes JSON-tömb',safeJSON(page.blocks),'textarea',true);
+   blocks.field.rows=11;blocks.wrapper.classList.add('cs-tool-json');
+   const controls=node('div','cs23-editor-controls');
+   const actions=node('div','cs-tool-actions');
+   const save=node('button','cs-tool-button cs-tool-primary','Tervezet mentése');save.type='submit';actions.append(save);
+   const undo=this.addButton(actions,'↶ Visszavonás',()=>changeHistory('undo'));
+   const redo=this.addButton(actions,'↷ Újra',()=>changeHistory('redo'));
+   this.addButton(actions,'Helyi tervezet elvetése',()=>{
+    if(!confirm('Az oldal mentett helyi módosításai elvesszenek? A jóváhagyott oldal változatlan marad.'))return;
+    this.pageHistories.set(url,new PageHistory(original));const message=this.stagePage(url,original);
+    this.pageForm(parent,path);this.status('A tervezet elvetve. '+message);
+   },'cs-tool-danger');
+   this.addButton(actions,'Vissza az oldalakhoz',()=>this.switchTab('pages'));
+   const currentFields=()=>Object.fromEntries(Object.entries(fields).map(([key,input])=>[key,input.value]));
+   const parsedBlocks=()=>{const value=JSON.parse(blocks.field.value);if(!Array.isArray(value))throw Error('A blokkok mezőnek JSON-tömbnek kell lennie.');return value;};
+   const readForm=items=>editedPage(original,currentFields(),items??parsedBlocks());
+   const updatePendingNotice=()=>{
+    try{pendingNotice.textContent=sameContent(readForm(),this.pageDrafts.get(url)||original)?'':'Mentetlen mezőváltozás: az előnézet már mutathatja az új tartalmat, de az ellenőrzött vagy jóváhagyott állapot erre még nem érvényes.';}
+    catch{pendingNotice.textContent='Mentetlen vagy érvénytelen mezőérték: az állapotváltás előtt javítsd és mentsd a tervezetet.';}
+   };
+   const renderWorkflow=()=>{
+    workflowBox.replaceChildren();
     try{
-     const parsed=JSON.parse(blocks.field.value);
-     if(!Array.isArray(parsed)||parsed.length>200)throw Error('A tartalomnak legfeljebb 200 elemből álló JSON-tömbnek kell lennie.');
-     const blockIds=new Set();let count=0;
-     const visit=(blocks,depth)=>{if(depth>12)throw Error('A tartalom túl mélyen van egymásba ágyazva.');
-      for(const block of blocks){
-       if(!block||typeof block!=='object'||typeof block.id!=='string'||typeof block.type!=='string'||blockIds.has(block.id))throw Error('Hiányzó vagy ismétlődő blokkazonosító.');
-       blockIds.add(block.id);if(++count>1000)throw Error('Túl sok tartalmi blokk.');
-       if(block.children){if(!Array.isArray(block.children))throw Error('A beágyazott children mezőnek tömbnek kell lennie.');visit(block.children,depth+1);}
-      }};
-     visit(parsed,1);
-     const updated=deepCopy(page);
-     for(const key of ['title','menuLabel','summary']){const value=fields[key].value.trim();if(value.length<3||value.length>3000)throw Error('Érvénytelen szövegmező: '+key);updated[key]=value;}
-     updated.blocks=parsed;updated.updatedAt=new Date().toISOString();
-     updated.lifecycle.revision=(Number(page.lifecycle.revision)||0)+1;
-     if(updated.id!==this.state.pageIndex.pages[path]?.id||updated.schemaExtensions.route!==this.state.pageIndex.pages[path]?.schemaExtensions?.route)throw Error('Az oldalazonosító vagy útvonal nem módosítható.');
-     this.pageDrafts.set(url,updated);
-     this.changed.set(url,new TextEncoder().encode(safeJSON(updated)));
-     const info=this.state.pageIndex.pages[path];
-     const search=[];
-     const texts=(v)=>{if(typeof v==='string')search.push(v);else if(Array.isArray(v))for(const x of v)texts(x);else if(v&&typeof v==='object')for(const [key,x] of Object.entries(v))if(!['id','mediaId','imageId','style','className','href'].includes(key))texts(x);};
-     texts(parsed);
-     Object.assign(info,{title:updated.title,menuLabel:updated.menuLabel,summary:updated.summary,lifecycle:updated.lifecycle,searchText:[updated.title,updated.summary,...search].join(' ').slice(0,45000)});
-     this.state.pageIndex.searchIndexRevision='csanadi-v1.42.18';
-     this.changed.set('json/page-index.json',new TextEncoder().encode(safeJSON(this.state.pageIndex)));
-     this.switchTab('pages');this.status('Az oldal és a hozzá tartozó keresőindex a helyi kiadási munkapéldányban frissült.');
-    }catch(error){this.status('Az oldal mentése sikertelen: '+error.message,true);}
-   });parent.append(form);
+     const saved=this.pageDrafts.get(url)||original,record=workflowRecord(this.storage(),this.release(),url,original,saved);
+     const labels={baseline:'Kiadott alapoldal',draft:'Tervezet',checked:'Ellenőrzött',approved:'Jóváhagyott'};
+     const title=node('strong','',`C3 állapot: ${labels[record.state]||'Tervezet'}`);workflowBox.dataset.state=record.state;workflowBox.append(title);
+     workflowBox.append(node('p','',record.state==='baseline'?'Az oldalhoz nincs külön helyi tervezet.':record.stale?'A korábbi ellenőrzés érvénytelen; a tartalom új tervezet.':'Ez kizárólag helyi munkafolyamat-állapot, nem intézményi jogosultság vagy közzététel.'));
+     if(record.checkedAt)workflowBox.append(node('p','',`Ellenőrizve: ${new Date(record.checkedAt).toLocaleString('hu-HU')}`));
+     if(record.approvedAt)workflowBox.append(node('p','',`Helyi jóváhagyás: ${new Date(record.approvedAt).toLocaleString('hu-HU')}`));
+     const recent=record.history?.slice(-3)||[];
+     if(recent.length)workflowBox.append(node('p','',`Napló (utolsó 3): ${recent.map(entry=>`${labels[entry.state]||entry.state} · ${new Date(entry.at).toLocaleString('hu-HU')}`).join(' | ')}`));
+     if(record.state==='baseline')return;
+     const buttons=node('div','cs25-workflow-actions');
+     const changeState=action=>{
+      try{
+       const pending=readForm(),saved=this.pageDrafts.get(url)||original;
+       if(!sameContent(pending,saved))throw Error('Az űrlap még nem mentett változásokat tartalmaz. Előbb mentsd a tervezetet.');
+       if(action==='check'&&this.draftProblems().some(error=>error.startsWith(url+':')))throw Error('Az oldaltervezet keresőindexe vagy JSON-ja nem ment át az ellenőrzésen.');
+       const next=transitionWorkflow(this.storage(),this.release(),url,original,saved,action);
+       renderWorkflow();this.status(`A helyi munkafolyamat új állapota: ${labels[next.state]}. FTP-közzététel nem történt.`);
+      }catch(error){this.status('Állapotváltás sikertelen: '+error.message,true);}
+     };
+     if(record.state==='draft')this.addButton(buttons,'✓ Ellenőrzöttnek jelölés',()=>changeState('check'),'cs-tool-primary');
+     if(record.state==='checked')this.addButton(buttons,'✓ Helyi jóváhagyás',()=>changeState('approve'),'cs-tool-primary');
+     if(['checked','approved'].includes(record.state))this.addButton(buttons,'Vissza tervezetbe',()=>changeState('reopen'));
+     workflowBox.append(buttons);
+    }catch(error){workflowBox.append(node('p','cs-tool-warning','Az állapotnapló nem olvasható: '+error.message));}
+   };
+   renderWorkflow();
+   const commit=updated=>{
+    if(!sameContent(history.current,updated))history.commit(updated);
+    const message=this.stagePage(url,history.current);
+    undo.disabled=!history.past.length;redo.disabled=!history.future.length;
+    return message;
+   };
+   const changeHistory=direction=>{
+    const result=direction==='undo'?history.undo():history.redo();if(!result)return;
+    const message=this.stagePage(url,result);this.pageForm(parent,path);this.status((direction==='undo'?'Az előző módosítás visszavonva. ':'A módosítás ismét alkalmazva. ')+message);
+   };
+   const changeBlocks=mutate=>{
+    try{
+     const pending=readForm();if(!sameContent(history.current,pending))history.commit(pending);
+     const list=deepCopy(pending.blocks);mutate(list);
+     const message=commit(readForm(list));this.pageForm(parent,path);this.status(message);
+    }catch(error){this.status('A blokk módosítása sikertelen: '+error.message,true);}
+   };
+   undo.disabled=!history.past.length;redo.disabled=!history.future.length;
+   form.append(actions);
+   controls.append(node('h4','','Tartalmi blokkok'));
+   controls.append(node('p','cs-tool-note','A meglévő blokkazonosítók nem változnak. Itt egyszerű szövegeket és szakaszcímeket szerkeszthetsz; az összetett modulokhoz megmarad a haladó JSON-mező. A blokkok húzásos átrendezése a C2 ütem feladata.'));
+   const list=node('div','cs23-block-list');controls.append(list);
+   const renderList=()=>{
+    list.replaceChildren();let data;
+    try{data=parsedBlocks();}catch(error){list.append(node('p','cs-tool-warning','A blokklista csak érvényes JSON alapján frissül: '+error.message));return;}
+    data.forEach((block,index)=>{
+     const item=node('details','cs23-block-item');
+     const caption=node('summary','',`${index+1}. ${block.title||block.type} · ${block.id||'azonosító nélkül'}`);item.append(caption);
+     const inner=node('div','cs23-block-inner');
+     const title=block.type==='section'?this.input('Szakaszcím',block.title||'','text',true):null;
+     if(title)inner.append(title.wrapper);
+     const markdowns=block.type==='markdown'?[block]:(Array.isArray(block.children)?block.children.filter(x=>x.type==='markdown'):[]);
+     const editors=markdowns.map((child,i)=>{const input=this.input(`Markdown-szöveg ${i+1}`,child.data?.text||'','textarea');input.field.rows=5;inner.append(input.wrapper);return {id:child.id,field:input.field};});
+     if(!title&&!editors.length)inner.append(node('p','cs-tool-note','Ehhez az összetett modulhoz a haladó JSON-mező használható.'));
+     if(title||editors.length)this.addButton(inner,'Mezők alkalmazása',()=>changeBlocks(items=>{
+      const target=items[index];if(target.id!==block.id)throw Error('A blokklista megváltozott, frissítsd a nézetet.');
+      if(title)target.title=title.field.value.trim();
+      for(const field of editors){const entry=target.type==='markdown'?target:target.children.find(x=>x.id===field.id);if(!entry||entry.type!=='markdown')throw Error('A szövegblokk már nem található.');entry.data={...(entry.data||{}),text:field.field.value};}
+     }),'cs-tool-primary');
+     this.addButton(inner,'Blokk eltávolítása',()=>{
+      if(!confirm('Biztosan törlöd ezt a blokkot a helyi tervezetből? A művelet visszavonható.'))return;
+      changeBlocks(items=>{if(items[index]?.id!==block.id)throw Error('A blokklista megváltozott.');items.splice(index,1);});
+     },'cs-tool-danger');
+     item.append(inner);list.append(item);
+    });
+   };
+   renderList();
+   const add=node('div','cs23-new-block');add.append(node('h4','','Új tartalmi blokk'));
+   const type=this.select('Blokk típusa',[['section','Címes szakasz'],['markdown','Egyszerű szövegblokk']],'section');
+   const newTitle=this.input('Szakaszcím (szakasz esetén)','');
+   const newText=this.input('Tartalom (Markdown)','','textarea');newText.field.rows=4;
+   add.append(type.wrapper,newTitle.wrapper,newText.wrapper);
+   this.addButton(add,'+ Blokk hozzáadása',()=>changeBlocks(items=>items.push(newContentBlock(type.field.value,newTitle.field.value,newText.field.value,items))),'cs-tool-primary');
+   controls.append(add);
+   this.addButton(controls,'Blokklista frissítése a JSON-mezőből',renderList);
+   form.append(controls,blocks.wrapper);
+   form.addEventListener('submit',event=>{
+    event.preventDefault();try{const message=commit(readForm());this.switchTab('pages');this.status('Oldal és keresőindex előkészítve. '+message);}catch(error){this.status('A tervezet mentése sikertelen: '+error.message,true);}
+   });
+   const preview=createLivePreview({route:page.schemaExtensions.route,title:page.title});this.previewPanel=preview;
+   const previewLaunch=node('div','cs-tool-actions');const previewButton=this.addButton(previewLaunch,'Élő előnézet megnyitása',()=>{
+    if(preview.element.hidden){preview.show();previewButton.textContent='Előnézet bezárása';syncPreview();preview.element.scrollIntoView?.({behavior:'smooth',block:'nearest'});}
+    else{preview.hide();previewButton.textContent='Élő előnézet megnyitása';}
+   },'cs-tool-primary');
+   const syncPreview=()=>{
+    if(preview.element.hidden)return;
+    try{preview.updateDraft(url,readForm());}catch(error){preview.error(error.message);}
+   };
+   let updateTimer=null;form.addEventListener('input',()=>{updatePendingNotice();clearTimeout(updateTimer);updateTimer=setTimeout(syncPreview,260);});
+   const layout=node('div','cs25-editor-layout');layout.append(form,preview.element);
+   parent.append(previewLaunch,layout);
   }catch(error){this.status(error.message,true);this.addButton(parent,'Vissza',()=>this.switchTab('pages'));}
  }
  showMedia(parent){
@@ -337,9 +543,60 @@ class Studio{
    this.changed.set(PATHS.documents,new TextEncoder().encode(safeJSON(this.state.documents)));this.switchTab('documents');
   }catch(error){this.status(error.message,true);}
  }
+ draftProblems(){
+  const problems=[];
+  for(const [url,page] of this.pageDrafts){
+   try{
+    const original=this.sourcePages.get(url);validateEditablePage(original,page);
+    const entry=this.state.pageIndex.pages[url.replace(/^json\//,'')];
+    if(!entry||entry.title!==page.title||entry.summary!==page.summary||entry.id!==page.id)throw Error('A keresőindex nem egyezik a szerkesztett oldallal.');
+    if(!this.changed.has(url)||!this.changed.has(PATHS.pageIndex))throw Error('A kiadási csomagból hiányzik egy szerkesztett JSON.');
+   }catch(error){problems.push(url+': '+error.message);}
+  }
+  return problems;
+ }
+ async releasePages(){
+  const paths=Object.keys(this.state.pageIndex.pages).map(path=>'json/'+path),queue=[...paths],pages=new Map();
+  const load=async()=>{
+   while(queue.length){
+    const path=queue.shift();
+    if(this.pageDrafts.has(path)){pages.set(path,deepCopy(this.pageDrafts.get(path)));continue;}
+    const response=await fetch(new URL(path,ROOT),{cache:'no-store'});
+    if(!response.ok)throw Error('Hiányzó oldal: '+path+' (HTTP '+response.status+')');
+    const page=await response.json();pages.set(path,page);
+    if(!this.sourcePages.has(path))this.sourcePages.set(path,deepCopy(page));
+   }
+  };
+  await Promise.all(Array.from({length:5},load));
+  return [...paths].map(path=>[path,pages.get(path)]);
+ }
+ async preflightRelease(){
+  this.status('C4 ellenőrzés: a 79 oldal és az állománykapcsolatok vizsgálata…');
+  const pages=await this.releasePages();
+  const synchronized=synchronizePageIndex(this.state.pageIndex,pages);
+  if(this.pageDrafts.size)synchronized.index.searchIndexRevision='csanadi-v'+this.release().replace('csanadi-website-v','');
+  const staged=new Set([...Object.keys(this.state.manifest.files),...this.changed.keys()]);
+  for(const path of this.deleted)staged.delete(path);
+  const gate=evaluateReleaseGate({drafts:[...this.pageDrafts],sourcePages:this.sourcePages,release:this.release(),storage:this.storage(),
+   media:this.state.media,documents:this.state.documents,originalMedia:this.originalMedia,originalDocuments:this.originalDocuments,changedPaths:[...this.changed.keys()]});
+  const graph=validateReleaseGraph({pages,pageIndex:synchronized.index,structure:this.state.structure,media:this.state.media,documents:this.state.documents,filePaths:[...staged]});
+  const errors=[...gate.errors,...graph.errors,...this.draftProblems()];
+  for(const path of this.changed.keys())if(!safePackagePath(path))errors.push('Nem megengedett kiadási útvonal: '+path);
+  const report={schemaVersion:'1.0.0',sourceRelease:this.release(),localOnly:true,createdAt:new Date().toISOString(),
+   status:errors.length?'blocked':'ready',counts:graph.counts,approvedDrafts:gate.statuses.approved,indexSynced:synchronized.updated,
+   errors:[...new Set(errors)],warnings:[...new Set([...gate.warnings,...graph.warnings])],requiresManualBrowserQA:true,requiresInstitutionalApproval:true};
+  this.lastReport=report;
+  return {report,index:synchronized.index,pages};
+ }
+ downloadPreflightReport(kind){
+  if(!this.lastReport){this.status('Előbb futtasd a teljes C4 ellenőrzést.',true);return;}
+  const json=kind==='json';
+  const data=json?safeJSON(this.lastReport):reportCSV(this.lastReport);
+  downloadBlob(new Blob([data],{type:json?'application/json':'text/csv;charset=utf-8'}),`csanadi-c4-ellenorzes.${json?'json':'csv'}`);
+ }
  async showValidation(parent){
   this.sectionTitle(parent,'Kiadás előtti ellenőrzés','A sémák, azonosítók, állományhivatkozások és a szerkesztett változatok ellenőrzése. A teljes közzétételhez intézményi tartalmi és jogi jóváhagyás is szükséges.');
-  const problems=[...validateMediaRegistry(this.state.media),...validateDocumentRegistry(this.state.documents)];
+  const problems=[...validateMediaRegistry(this.state.media),...validateDocumentRegistry(this.state.documents),...this.draftProblems()];
   for(const path of this.changed.keys())if(!safePackagePath(path))problems.push('Nem megengedett fájlútvonal: '+path);
   for(const item of this.state.media.items){
    const variants=[item.original,...item.variants];
@@ -353,18 +610,66 @@ class Studio{
   const box=node('div','cs-tool-actions');this.addButton(box,'Médiatár JSON letöltése',()=>downloadBlob(new Blob([safeJSON(this.state.media)],{type:'application/json'}),'media-library.json'));
   this.addButton(box,'Dokumentumtár JSON letöltése',()=>downloadBlob(new Blob([safeJSON(this.state.documents)],{type:'application/json'}),'documents.json'));
   parent.append(box);
+  const c4=node('section','cs26-check-result');c4.append(node('h4','','C4 · Teljes kiadási előellenőrzés'));
+  c4.append(node('p','','A jóváhagyott tervezeteket, az összes JSON-oldalt, a keresőindexet, a média- és dokumentumhivatkozásokat közösen vizsgálja. Hiba esetén a jóváhagyott kiadás tiltott.'));
+  const buttons=node('div','cs-tool-actions');
+  this.addButton(buttons,'Teljes C4 ellenőrzés indítása',async()=>{
+   try{
+    const {report}=await this.preflightRelease();
+    result.replaceChildren(node('strong','',report.status==='ready'?'A helyi kiadási kapu megfelelt.':`${report.errors.length} blokkoló hiba`));
+    result.append(node('p','',`${report.counts.pages} oldal · ${report.counts.media} média · ${report.counts.documents} dokumentum · ${report.approvedDrafts} jóváhagyott helyi tervezet`));
+    if(report.errors.length){const list=node('ul');for(const error of report.errors.slice(0,80))list.append(node('li','',error));result.append(list);}
+    if(report.warnings.length){const list=node('ul');for(const warning of report.warnings.slice(0,30))list.append(node('li','',warning));result.append(node('p','','Nyitott, nem automatikusan blokkoló figyelmeztetések:'),list);}
+    this.status(report.status==='ready'?'A C4 technikai kapuk megfeleltek. A böngészős és intézményi átvétel külön szükséges.':'A kiadás blokkolva. Javítsd a jelzett hibákat.',report.status!=='ready');
+   }catch(error){this.status('A teljes C4 ellenőrzés nem végezhető el: '+error.message,true);}
+  },'cs-tool-primary');
+  this.addButton(buttons,'Jelentés JSON',()=>this.downloadPreflightReport('json'));
+  this.addButton(buttons,'Jelentés CSV',()=>this.downloadPreflightReport('csv'));
+  c4.append(buttons);const result=node('div','cs26-check-details');c4.append(result);parent.append(c4);
  }
  showRelease(parent){
   this.sectionTitle(parent,'Teljes statikus honlap ZIP-exportja','Az export a teljes aktuális kiadást újra összeállítja az eredeti állományokból, a képek és dokumentumok módosításaiból, valamint a helyi oldalszerkesztő változásaiból. Nem tölt fel FTP-re vagy GitHubra.');
+  parent.append(node('p','cs-tool-note','A C3 ellenőrzött és jóváhagyott állapotai kizárólag helyi munkafolyamat-jelölések. Nem jelentenek intézményi engedélyt, és a C4 ellenőrzött kiadási kapuit nem helyettesítik.'));
   parent.append(node('p','cs-tool-summary',`${this.changed.size} módosított vagy új állomány · ${this.deleted.size} eltávolítandó állomány`));
   if(this.deleted.size){parent.append(node('p','cs-tool-note','Figyelem: ha az FTP-re csak felülmásolod a ZIP-et, a korábban ott lévő törölt fájlok megmaradnak. A törlésükről külön gondoskodni kell.'));const list=node('ul','cs-tool-deletions');for(const f of this.deleted)list.append(node('li','',f));parent.append(list);}
-  const row=node('div','cs-tool-actions');this.addButton(row,'Teljes ZIP elkészítése',()=>this.makeFullRelease(),'cs-tool-primary');
-  this.addButton(row,'Változtatások visszavonása',async()=>{if(!confirm('Minden helyi módosítás elvesszen?'))return;await this.load();this.switchTab('media');});parent.append(row);
+  const row=node('div','cs-tool-actions');this.addButton(row,'Ellenőrzött teljes ZIP elkészítése',()=>this.makeFullRelease(),'cs-tool-primary');
+  this.addButton(row,'Változtatások visszavonása',async()=>{
+   if(!confirm('Minden helyi módosítás és e kiadáshoz mentett oldaltervezet elvesszen?'))return;
+   try{if(this.storage())clearPageDrafts(this.storage(),this.release());}catch(error){this.status('A helyi tervezettár törlése sikertelen: '+error.message,true);return;}
+   await this.load();this.switchTab('media');
+  });parent.append(row);
+  const restore=node('section','cs26-check-result');restore.append(node('h4','','Korábbi kiadás helyi visszaállítási próbája'));
+  restore.append(node('p','','Válassz egy korábban jóváhagyott teljes ZIP-et. A fájl kizárólag a böngésző memóriájába kerül: minden állomány CRC32-, SHA-256- és manifestellenőrzésen megy át. A próba nem írja át az aktuális honlapot és nem tölt fel FTP-re.'));
+  const upload=this.input('Korábbi teljes ZIP fájl','','file');upload.field.accept='.zip,application/zip';restore.append(upload.wrapper);
+  const proof=node('p','cs26-restore-result');proof.setAttribute('role','status');proof.setAttribute('aria-live','polite');
+  this.addButton(restore,'Visszaállítási próba',async()=>{
+   const file=upload.field.files?.[0];if(!file){this.status('Előbb válassz teljes ZIP-fájlt.',true);return;}
+   try{
+    const verified=await readVerifiedZip(file,{retainFiles:true,onProgress:(done,total)=>{if(done%140===1)this.status(`Helyi ZIP visszaolvasása: ${done}/${total}`);}});
+    const isolated=new Map(verified.files);
+    if(isolated.size!==verified.count||!isolated.has('index.html')||!isolated.has('json/page-index.json'))throw Error('A helyreállított példányból alapfájl hiányzik.');
+    proof.textContent=`Sikeres helyi visszaállítási szimuláció: ${verified.release} · ${verified.count} állomány · ${(verified.bytesVerified/1048576).toFixed(1)} MiB ellenőrzött adat.`;
+    this.status('A ZIP külön memóriabeli példányba kibontható és minden ellenőrzőösszeg egyezik. A tényleges FTP-visszaállítás külön kézi feladat.');
+   }catch(error){proof.textContent='A visszaállítási próba sikertelen.';this.status('A korábbi ZIP nem felelt meg: '+error.message,true);}
+  },'cs-tool-primary');
+  const procedure=node('details','cs26-rollback-checklist');procedure.append(node('summary','','Kézi FTP-visszaállítás ellenőrzőlistája'));
+  const steps=node('ol');for(const item of [
+   'Őrizd meg a korábbi, külön jóváhagyott teljes kiadási ZIP-et.',
+   'A régi csomagot bontsd ki külön, majd ellenőrizd a benne lévő manifestet és fájlokat.',
+   'Az FTP-visszaállítást csak az intézmény külön engedélyével végezd.',
+   'Az új kiadásban eltávolított, de az FTP-n megmaradt állományokat külön ellenőrizd.',
+   'A visszaállítás után ellenőrizd a menüt, az aloldalakat, a témákat és a média-/dokumentumhivatkozásokat.'
+  ])steps.append(node('li','',item));procedure.append(steps);restore.append(procedure);
+  restore.append(proof);parent.append(restore);
   parent.append(node('p','cs-tool-note','A ZIP csak a böngésző által elérhető kiinduló állományokból építhető össze, ezért az exporthoz internetkapcsolat vagy helyi HTTP-kiszolgáló szükséges. Ellenőrizd a kiadást feltöltés előtt.'));
  }
  async makeFullRelease(){
-  const errors=[...validateMediaRegistry(this.state.media),...validateDocumentRegistry(this.state.documents)];
+  const errors=[...validateMediaRegistry(this.state.media),...validateDocumentRegistry(this.state.documents),...this.draftProblems()];
   if(errors.length){this.status('A ZIP nem készíthető el: '+errors.slice(0,3).join('; '),true);return;}
+  let check;
+  try{check=await this.preflightRelease();}
+  catch(error){this.status('A ZIP előellenőrzése sikertelen: '+error.message,true);return;}
+  if(check.report.errors.length){this.status('A jóváhagyott ZIP nem készíthető el: '+check.report.errors.slice(0,3).join('; '),true);return;}
   const launch=this.dialog.querySelector('.cs-tool-primary');if(launch)launch.disabled=true;
   try{
    const stamp=parseReleaseStamp(),token=`content-${stamp}`;
@@ -397,9 +702,10 @@ class Studio{
    };
    await Promise.all(Array.from({length:5},loadOne));
    for(const [path,bytes] of this.changed)if(!this.deleted.has(path))entries.set(path,bytes);
-   // The ZIP is a new complete release, not merely a JSON overlay.
    const config=deepCopy(this.state.config);config.performance.cacheVersion='csanadi-r-v'+nextVersion;
    entries.set(PATHS.config,new TextEncoder().encode(safeJSON(config)));
+   const nextIndex=deepCopy(check.index);nextIndex.searchIndexRevision='csanadi-v'+nextVersion;
+   entries.set(PATHS.pageIndex,new TextEncoder().encode(safeJSON(nextIndex)));
    entries.set(PATHS.media,new TextEncoder().encode(safeJSON(this.state.media)));
    entries.set(PATHS.documents,new TextEncoder().encode(safeJSON(this.state.documents)));
    const files={};let processed=0;
@@ -407,11 +713,17 @@ class Studio{
     files[path]={sizeBytes:bytes.length,sha256:await sha256(bytes)};
     if(++processed%90===0)this.status(`SHA-256 ellenőrzőlista: ${processed}/${entries.size}`);
    }
-   const manifest={schemaVersion:'1.0.0',release:`csanadi-website-v${nextVersion}`,date:today(),ftpCompatible:true,bootstrap:'CDN bootstrap@5.3.9',notes:'Helyi szerkesztői ZIP-export, intézményi ellenőrzés és kézi publikálás szükséges. A kiadási állomány tartalmazza a változtatásokat és nem tartalmazza a törölt fájlokat.',files};
+   const manifest={schemaVersion:'1.0.0',release:`csanadi-website-v${nextVersion}`,date:today(),ftpCompatible:true,bootstrap:'CDN bootstrap@5.3.9',notes:'C4 ellenőrzött helyi ZIP-export. Csak a változatlanul jóváhagyott C3-tervezetek és a hitelesített új médiák/dokumentumok kerülhetnek bele. A manifest tartalmazza az állományok méretét és SHA-256 értékét. Az intézményi, böngészős és FTP-közzétételi engedélyek külön szükségesek.',files};
+   const manifestIssues=validateReleaseManifest(manifest,entries);
+   if(manifestIssues.length)throw Error('A kiadási manifest nem megfelelő: '+manifestIssues.slice(0,3).join('; '));
    entries.set('release-manifest.json',new TextEncoder().encode(safeJSON(manifest)));
-   this.status('ZIP tömörítése…');const zip=await createZip(entries,()=>{});
+   this.status('ZIP összeállítása…');const zip=await createZip(entries,()=>{});
+   this.status('ZIP visszaolvasása, CRC32 és SHA-256 ellenőrzés…');
+   const checked=await readVerifiedZip(zip,{expectedRelease:manifest.release,onProgress:(done,total)=>{if(done%140===1)this.status(`ZIP integritása: ${done}/${total}`);}});
+   if(checked.count!==entries.size)throw Error('Az ellenőrzött ZIP fájlszáma eltér.');
+   this.lastReport={...check.report,outputRelease:manifest.release,zipFileCount:checked.count,zipSizeBytes:zip.size,zipVerified:true};
    downloadBlob(zip,`csanadi-website-v${nextVersion}-${token}.zip`);
-   this.status(`${entries.size} fájlos teljes ZIP elkészült (${(zip.size/1048576).toFixed(1)} MB). A régi FTP-fájlok szükséges törlését külön végezd el.`);
+   this.status(`${entries.size} állományos, visszaolvasással és SHA-256-tal igazolt teljes ZIP elkészült (${(zip.size/1048576).toFixed(1)} MiB). A nyilvános FTP változatlan; külön kézi engedély és telepítés szükséges.`);
   }catch(error){console.error('ZIP-kiadás hiba:',error);this.status('A ZIP nem készült el: '+error.message,true);}
   finally{if(launch)launch.disabled=false;}
  }

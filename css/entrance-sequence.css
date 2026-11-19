@@ -1,6 +1,7 @@
 /* Nine-frame entrance – the live image contains the movement; no duplicate CSS door animations. */
 .gate26{--gate-photo-width:max(100vw,177.68vh);--gate-photo-height:max(100vh,56.28vw);position:fixed!important;inset:0!important;z-index:2600!important;display:block!important;overflow:hidden!important;background:#07131d!important;isolation:isolate}
-.gate26 .gate26-frame{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;display:block;filter:brightness(.89);z-index:1;pointer-events:none;user-select:none}
+.gate26 .gate26-frame{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;display:block;opacity:0;filter:brightness(.89);z-index:1;pointer-events:none;user-select:none}
+.gate26 .gate26-frame.is-current{opacity:1}
 /* The arched glazing is centered at roughly 21% of the uncropped 16:9 frame.
    Sizing uses the same cover-image geometry on wide and narrow screens. */
 .gate26 .gate26-glass-crest{
@@ -36,13 +37,13 @@
    is the interactive target. The highlight vanishes as soon as the door opens. */
 .gate26 .gate26-door-hitbox{transition:filter .22s ease,box-shadow .22s ease!important}
 .gate26 .gate26-door-hitbox:is(:hover,:focus-visible){
- background-color:rgba(226,166,45,.58)!important;
- background-image:linear-gradient(120deg,rgba(255,238,166,.28),rgba(215,158,42,.06) 48%,rgba(255,226,133,.30))!important;
- box-shadow:inset 0 0 32px rgba(255,220,124,.58),0 0 30px rgba(245,189,66,.64)!important;
+ background-color:rgba(226,166,45,.19)!important;
+ background-image:linear-gradient(120deg,rgba(255,238,166,.12),rgba(215,158,42,.02) 48%,rgba(255,226,133,.11))!important;
+ box-shadow:inset 0 0 24px rgba(255,220,124,.22),0 0 25px rgba(245,189,66,.45)!important;
  filter:drop-shadow(0 0 13px rgba(255,210,102,.95)) drop-shadow(0 0 25px rgba(245,181,62,.52));
 }
 .gate26 .gate26-door-hitbox:is(:hover,:focus-visible) .gate26-door-contour{
- fill:rgba(255,211,103,.22);stroke:#ffe49d;stroke-opacity:1;stroke-width:4.5;
+ fill:rgba(255,211,103,.09);stroke:#ffe49d;stroke-opacity:1;stroke-width:4.5;
  filter:drop-shadow(0 0 6px rgba(255,212,105,.95));
 }
 .gate26 .gate26-door-hitbox:is(:hover,:focus-visible) .gate26-door-seam{stroke:#ffe1a0;stroke-opacity:.85;stroke-width:2.5}

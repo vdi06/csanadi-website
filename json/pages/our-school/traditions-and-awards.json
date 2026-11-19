@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T21:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 6
   },
   "seo": {
     "title": "Hagyományok és elismerések – Csanádi Sportiskola",
@@ -68,18 +68,32 @@
           }
         }
       ]
+    },
+    {
+      "id": "block:202627-traditions",
+      "type": "section",
+      "title": "Sportiskolai hagyományok és programok",
+      "children": [
+        {
+          "id": "block:202627-traditions-text",
+          "type": "markdown",
+          "data": {
+            "text": "A pedagógiai program az olimpiai mozgalom megismertetését az iskola kiemelt feladatának tartja. A tantermek és tornatermek olimpiai bajnokokról kapott elnevezése az intézményi hagyomány része.\n\nA **Csanádi-napon** a közösséghez kötődő korábbi és jelenlegi sportolók, sportszakemberek vesznek részt, és az iskola elismeréseket ad át a tanulmányi és sporteredményeket elért tanulóknak. A **Csanádi Sportfórum 2005/2006-os tanévtől** teremt lehetőséget sportolókkal és sportszakemberekkel való találkozásra.\n\nA 2026/2027-es tanév **Csanádi-napja 2027. május 28.**, a sportnap május 27. Az iskola korábban, **1998-ban Olimpiai Érdemérmet** kapott."
+          }
+        }
+      ]
     }
   ],
   "related": [],
   "schemaExtensions": {
     "preview": false,
     "route": "#/iskolank/hagyomanyok-es-elismeresek",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:iskolank",
     "contentReview": {
-      "reviewedAt": "2026-11-17",
+      "reviewedAt": "2026-11-19",
       "status": "primary-source-checked",
-      "sourceId": "awards"
+      "sourceId": "school-policies-2026"
     }
   }
 }

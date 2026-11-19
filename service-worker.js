@@ -1,6 +1,6 @@
 /* Csanádi: static FTP-compatible, version-scoped offline shell.
    Updated workers activate on explicit user refresh; the first install activates normally. */
-const RELEASE_ID='1.42.20';
+const RELEASE_ID='1.43.4';
 const SCOPE=new URL('./',self.registration.scope);
 const SHELL=`csanadi-shell-${RELEASE_ID}`;
 const MEDIA=`csanadi-media-${RELEASE_ID}`;
@@ -8,7 +8,7 @@ const READER='csanadi-user-offline-pages';
 const CORE=[ 
  './','./index.html','./offline.html','./script.js','./service-worker.js',
  './json/config.json','./json/structure.json','./json/page-index.json','./json/media-library.json',
- './json/pages/home.json','./css/responsive-system-v1-42-18.css','./css/editor-workbench-v1-42-18.css','./css/maintenance-studio.css','./js/editor-workbench-v1-42-18.js','./tools/maintenance-studio.js','./json/data/spa-features-42.json',
+ './json/pages/home.json','./css/responsive-system-v1-42-18.css','./css/theme-coverage-v1-42-21.css','./css/subpage-premium-v1-42-22.css','./css/editor-c1-v1-42-23.css','./css/visual-editor-v1-42-24.css','./css/c3-live-preview-v1-42-25.css','./css/c4-release-gates-v1-42-26.css','./css/desktop-hero-controls-v1-43-1.css','./css/viewers-bootstrap-v1-43-3.css','./css/editor-workbench-v1-42-18.css','./css/maintenance-studio.css','./js/site-viewers-v1-43-3.js','./js/vendor/pdfjs/pdf.min.js','./js/vendor/pdfjs/pdf.worker.min.js','./js/editor-workbench-v1-42-18.js','./js/visual-editor-v1-42-24.js','./js/live-preview-v1-42-25.js','./js/zip-integrity-v1-42-26.js','./tools/maintenance-studio.js','./tools/page-draft-core-v1-42-23.js','./tools/visual-order-core-v1-42-24.js','./tools/content-workflow-core-v1-42-25.js','./tools/release-policy-v1-42-26.js','./json/data/spa-features-42.json',
  './assets/media/logo/csanadi-crest-512.webp'
 ];
 const local=url=>url.origin===SCOPE.origin&&url.pathname.startsWith(SCOPE.pathname);
@@ -73,7 +73,7 @@ async function precache(){
  await Promise.all(Array.from({length:4},async()=>{
   while(queue.length){
    const path=queue.shift(),request=new Request(coreURL(path),{cache:'reload'});
-   try{const response=await fetch(request);if(response.ok)await putIfSuitable(SHELL,request,response,{maxBytes:policy.swShellMaxItemBytes||750000});}
+   try{const response=await fetch(request);if(response.ok)await putIfSuitable(SHELL,request,response,{maxBytes:path.includes('pdf.worker.min.js')?1500000:policy.swShellMaxItemBytes||750000});}
    catch(error){console.warn('Offline precache skipped:',path,error);}
   }
  }));

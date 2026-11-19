@@ -12,7 +12,7 @@
     5
   ],
   "defaultScheduleId": "schedule:general",
-  "revision": 2,
+  "revision": 3,
   "schedules": [
     {
       "id": "schedule:general",
@@ -58,17 +58,164 @@
         {
           "id": "period:07",
           "number": 7,
-          "start": "13:35",
-          "end": "14:15"
+          "start": "13:40",
+          "end": "14:20"
         },
         {
           "id": "period:08",
           "number": 8,
-          "start": "14:20",
-          "end": "15:00"
+          "start": "14:25",
+          "end": "15:05"
         }
       ]
     }
   ],
-  "specialDates": []
+  "specialDates": [
+    {
+      "date": "2026-10-02",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-10-26",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-10-27",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-10-28",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-10-29",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-10-30",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-12-12",
+      "kind": "schedule",
+      "scheduleId": "schedule:general",
+      "verified": true
+    },
+    {
+      "date": "2026-12-21",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-12-22",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-12-23",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-12-24",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-12-25",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-12-28",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-12-29",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-12-30",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2026-12-31",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2027-01-01",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2027-03-09",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2027-03-16",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2027-03-25",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2027-03-26",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2027-03-29",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2027-03-30",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2027-03-31",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2027-04-01",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2027-04-02",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2027-04-14",
+      "kind": "no-school",
+      "verified": true
+    },
+    {
+      "date": "2027-05-27",
+      "kind": "no-school",
+      "verified": true
+    }
+  ]
 }

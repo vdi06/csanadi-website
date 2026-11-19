@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T21:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 6
   },
   "seo": {
     "title": "Könyvtári szolgáltatások – Csanádi Sportiskola",
@@ -68,18 +68,32 @@
           }
         }
       ]
+    },
+    {
+      "id": "block:202627-library",
+      "type": "section",
+      "title": "Könyvtári kapcsolattartás",
+      "children": [
+        {
+          "id": "block:202627-library-text",
+          "type": "markdown",
+          "data": {
+            "text": "A 2026/2027-es intézményi munkaterv szerint az iskola **könyvtárosa és tankönyvfelelőse Hegedüs Ferenc**. A könyvtár az intézmény helyiségei között is szerepel.\n\nA kölcsönzés részletes feltételeihez és a nyitvatartáshoz az aktuális intézményi tájékoztatás az irányadó; a munkaterv nem közöl külön heti könyvtári nyitvatartást."
+          }
+        }
+      ]
     }
   ],
   "related": [],
   "schemaExtensions": {
     "preview": false,
     "route": "#/oktatas/konyvtar/konyvtari-szolgaltatasok",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:oktatas",
     "contentReview": {
-      "reviewedAt": "2026-11-17",
-      "status": "editorial-guidance",
-      "sourceId": null
+      "reviewedAt": "2026-11-19",
+      "status": "primary-source-checked",
+      "sourceId": "school-policies-2026"
     }
   }
 }

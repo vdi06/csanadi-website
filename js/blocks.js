@@ -63,11 +63,11 @@ function iconNode(name){
   return svg;
 }
 function linkCard(data,i,css='feature-card') {
-  const a=dom('a',{class:css,href:data.href||'#/'}) ;
+  const a=dom('a',{class:css+' card',href:data.href||'#/'}) ;
   const id=data.mediaId || mediaForRoute(data.href||'');
   const art=createPicture(id,{className:'card-picture',sizes:'(max-width: 560px) 100vw, (max-width: 900px) 50vw, 400px'});
   if(art) a.append(art);
-  const copy=dom('div',{class:'card-copy'});
+  const copy=dom('div',{class:'card-copy card-body'});
   const head=dom('div',{class:'card-topline'});
   head.append(dom('span',{class:'card-icon'}));head.firstChild.append(iconNode(data.icon||'study'));
   head.append(dom('span',{class:'card-index'},String(i+1).padStart(2,'0')));copy.append(head);
@@ -89,7 +89,7 @@ const styles={
     if(data.lead)container.append(dom('p',{class:'editorial-lead'},data.lead));
     const grid=dom('div',{class:'editorial-grid'});
     (data.items||[]).slice(0,settingNumber('runtime.display.genericListCards')).forEach(item=>{
-      const tile=dom('article',{class:'editorial-tile'});
+      const tile=dom('article',{class:'editorial-tile card'});
       const header=dom('div',{class:'editorial-tile-head'});
       const icon=dom('span',{class:'editorial-icon'});icon.append(iconNode(item.icon||'study'));
       header.append(icon);tile.append(header,dom('h3',{},item.title||''),dom('p',{},item.text||''));
@@ -120,7 +120,7 @@ const styles={
     return grid;
   },
   'card':block=>{
-    const c=dom('div',{class:'body-card'});
+    const c=dom('div',{class:'body-card card'});
     c.append(dom('h2',{},block.data?.title||block.title||'Tájékoztatás'),dom('p',{class:'section-lead'},block.data?.description||''));return c;
   },
   'image':block=>{
@@ -143,9 +143,27 @@ const styles={
     return wrap;
   },
   'accordion':block=>{
-    const section=dom('div',{class:'body-card content-accordion'});
+    // Bootstrap Collapse owns the open/close animation and ARIA state.
+    // Stable IDs derived from the content block prevent duplicate targets on SPA navigation.
+    const identity=String(block.id||block.title||'accordion').replace(/[^a-z0-9_-]/gi,'-').slice(0,70);
+    const groupId='cs43-accordion-'+identity;
+    const section=dom('div',{class:'body-card card content-accordion'});
     if(block.title)section.append(dom('h2',{},block.title));
-    (block.data?.items||[]).forEach(item=>{const d=dom('details');d.append(dom('summary',{},item.title||'Részletek'),dom('p',{},item.text||''));section.append(d);});return section;
+    const group=dom('div',{class:'accordion cs43-accordion',id:groupId});
+    (block.data?.items||[]).forEach((item,i)=>{
+      const headingId=groupId+'-heading-'+i, panelId=groupId+'-panel-'+i;
+      const row=dom('div',{class:'accordion-item'});
+      const heading=dom('h3',{class:'accordion-header',id:headingId});
+      const toggle=dom('button',{class:'accordion-button collapsed'},item.title||'Részletek');
+      toggle.type='button';toggle.setAttribute('data-bs-toggle','collapse');toggle.setAttribute('data-bs-target','#'+panelId);
+      toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-controls',panelId);
+      heading.append(toggle);
+      const panel=dom('div',{class:'accordion-collapse collapse',id:panelId});
+      panel.setAttribute('aria-labelledby',headingId);panel.setAttribute('data-bs-parent','#'+groupId);
+      panel.append(dom('div',{class:'accordion-body'},item.text||''));
+      row.append(heading,panel);group.append(row);
+    });
+    section.append(group);return section;
   }
 };
 export function renderBlock(block){

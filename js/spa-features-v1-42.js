@@ -59,7 +59,7 @@ function sanitizedHTML(source){
 }
 function safeAttribute(value){return String(value).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');}
 function frameDocument(key,component){
- const css=component.styles.map(path=>`<link rel="stylesheet" href="${safeAttribute(path)}?v=1.42.18">`).join('')+'<link rel="stylesheet" href="css/spa-frame-unified-v1-42-16.css?v=1.42.18">';
+ const css=component.styles.map(path=>`<link rel="stylesheet" href="${safeAttribute(path)}?v=1.42.18">`).join('')+'<link rel="stylesheet" href="css/spa-frame-unified-v1-42-16.css?v=1.42.18"><link rel="stylesheet" href="css/theme-coverage-v1-42-21.css?v=1.42.21">';
  const base=new URL('./',document.baseURI).href;
  // Bootstrap remains pinned to the same CDN version as the original SPA.
  const bootstrap='https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css';

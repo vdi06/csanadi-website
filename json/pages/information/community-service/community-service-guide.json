@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T21:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 6
   },
   "seo": {
     "title": "Tudnivalók – Csanádi Sportiskola",
@@ -81,18 +81,32 @@
           }
         }
       ]
+    },
+    {
+      "id": "block:202627-service",
+      "type": "section",
+      "title": "Közösségi szolgálat – felelős pedagógus",
+      "children": [
+        {
+          "id": "block:202627-service-text",
+          "type": "markdown",
+          "data": {
+            "text": "A 2026/2027-es tanévben a közösségi szolgálat intézményi felelőse **Horváth-Szabó Erika**. A feladat megkezdése előtt vele vagy az iskolai kapcsolattartási rend szerint kijelölt koordinátorral érdemes egyeztetni.\n\nA szolgálati idő, a tevékenység és az igazolás adatait a helyi szabályzatnak megfelelően dokumentálni kell. [Közösségi szolgálati dokumentumok](#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok)"
+          }
+        }
+      ]
     }
   ],
   "related": [],
   "schemaExtensions": {
     "preview": false,
     "route": "#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:kozosseg",
     "contentReview": {
-      "reviewedAt": "2026-11-17",
+      "reviewedAt": "2026-11-19",
       "status": "primary-source-checked",
-      "sourceId": "serviceRules"
+      "sourceId": "school-policies-2026"
     }
   }
 }

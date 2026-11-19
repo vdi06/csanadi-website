@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T21:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 6
   },
   "seo": {
     "title": "ÖKO-iskola – Csanádi Sportiskola",
@@ -68,6 +68,20 @@
           }
         }
       ]
+    },
+    {
+      "id": "block:202627-eco",
+      "type": "section",
+      "title": "Fenntarthatóság a 2026/2027-es tanévben",
+      "children": [
+        {
+          "id": "block:202627-eco-text",
+          "type": "markdown",
+          "data": {
+            "text": "A 2026/2027-es tanévi munkatervben a **Fenntarthatósági Témahét 2027. április 19–23.** között szerepel. A környezeti kultúrával kapcsolatos intézményi feladatoknál **Rúzsa Sándorné és Fabókné Kocsi Erika** neve jelenik meg.\n\nA pedagógiai program önálló **Ökoiskola Programot** tartalmaz; az iskola nevelési céljai között megjelenik a környezet védelme, az erőforrások tudatos használata és a fenntarthatóság."
+          }
+        }
+      ]
     }
   ],
   "related": [],
@@ -77,9 +91,9 @@
     "verifiedContent": true,
     "bannerMediaId": "media:iskolank",
     "contentReview": {
-      "reviewedAt": "2026-11-17",
+      "reviewedAt": "2026-11-19",
       "status": "primary-source-checked",
-      "sourceId": "eco"
+      "sourceId": "school-policies-2026"
     }
   }
 }

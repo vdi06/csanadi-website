@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-19T00:00:00+01:00",
+  "updatedAt": "2026-11-19T21:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 6
+    "revision": 7
   },
   "seo": {
     "title": "Szülői információk – Csanádi Sportiskola",
@@ -30,13 +30,13 @@
     {
       "id": "block:000051-section-1",
       "type": "section",
-      "title": "Iskolai kapcsolattartás",
+      "title": "2026/2027-es szülői időpontok",
       "children": [
         {
           "id": "block:000051-text-1",
           "type": "markdown",
           "data": {
-            "text": "A szülőknek fontos lehet a tanévi programok, a vizsgák, az étkezés, a beiratkozás és az igazolások pontos menete. A hivatalos intézményi közleményekből az adott időszakra érvényes részletek ellenőrizhetők.\n\nAz iskola titkárságának elérhetőségeit a Kapcsolat oldalon gyűjtöttük össze. A beiratkozás és a felvételi aktuális tudnivalói külön az Oktatás terület alatt érhetők el."
+            "text": "**Őszi, személyes fogadóóra:** 2026. november 24., 17:00–19:00. **Tavaszi, személyes fogadóóra:** 2027. március 23., 17:00–19:00.\n\n**Második félévi szülői értekezletek:** felső tagozat **február 1., 17:00**; alsó tagozat és gimnázium **február 2., 17:00**. **Szülői szervezet választmányi értekezlete:** 2027. február 9., 17:00.\n\nA tanévi események a [naptárban](#/hirek-es-esemenyek/esemenynaptar), az elérhetőségek a [Kapcsolat](#/kapcsolat) oldalon találhatók."
           }
         }
       ]
@@ -74,12 +74,12 @@
   "schemaExtensions": {
     "preview": false,
     "route": "#/informaciok/mindennapi-tudnivalok/szuloi-informaciok",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:kozosseg",
     "contentReview": {
-      "reviewedAt": "2026-11-17",
+      "reviewedAt": "2026-11-19",
       "status": "primary-source-checked",
-      "sourceId": "parents"
+      "sourceId": "annual-workplan-2026-27"
     }
   }
 }

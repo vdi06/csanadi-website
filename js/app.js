@@ -1,7 +1,7 @@
 import {initRound10Enhancements} from './round10-enhancements.js?v=1.42.18';
-import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.42.18';
+import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.42.21';
 import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.42.18';
-import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=1.42.18';
+import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=1.42.21';
 import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=1.42.18';
 import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.42.18';
 import {setupSmartSearch} from './search-j-2026.js?v=1.42.18';
@@ -17,13 +17,13 @@ import {renderDocumentCollections} from './document-collections-2026.js?v=1.42.1
 import {renderPageMedia} from './page-media-2026.js?v=1.42.18';
 import {useSiteSettings,settingNumber} from './site-settings-2026.js?v=1.42.18';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.42.18';
-import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.42.19';
+import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.42.21';
 import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.42.18';
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=1.42.18';
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.42.18';
-import {renderBlock,dom,listCards} from './blocks.js?v=1.42.18';
-import {createAuthoringWorkbench} from './editor-workbench-v1-42-18.js';
+import {renderBlock,dom,listCards} from './blocks.js?v=1.43.4';
+import {createAuthoringWorkbench} from './editor-workbench-v1-42-18.js?v=1.43.3';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=1.42.18';
 import {renderSportsSuccesses} from './sports-successes.js?v=1.42.18';
 import {renderStudentAchievements} from './student-achievements.js?v=1.42.18';
@@ -31,10 +31,18 @@ import {renderDailySportsNews} from './daily-sport-news.js?v=1.42.18';
 import {renderDesktopTree} from '../desktop/navigation.js?v=1.42.18';
 import {renderMobileTree} from '../mobile/navigation.js?v=1.42.18';
 import {createPhoneRadial} from '../mobile/radial-wheel-v1-38.js?v=1.42.18';
-import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.42.18';
+import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.42.22';
+import {resolveVisualDraft,attachVisualEditor,visualEditingEnabled} from './visual-editor-v1-42-24.js?v=1.43.3';
+import {validateEditablePage} from '../tools/page-draft-core-v1-42-23.js?v=1.42.25';
 import {createSubpageHero} from './subpages-v1.js?v=1.42.18';
-import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.42.18';
+import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.42.21';
 const app=document.getElementById('app');
+const c3Params=new URLSearchParams(location.search);
+const c3Preview=c3Params.get('preview')==='1';
+const c3PreviewBase=c3Params.get('previewMode')==='base';
+const c3PreviewTheme=['light','dark'].includes(c3Params.get('previewTheme'))?c3Params.get('previewTheme'):null;
+let c3Overlay=null;
+if(c3Preview)document.body.classList.add('cs-preview');
 const routeStatus=document.getElementById('cs1404-route-status');
 let homeHeroElement=null;
 // A legpontosabb útvonalprofil választja ki a témához illő, helyben futó
@@ -115,7 +123,15 @@ function notify(s,{themePreference=null}={}){
   if(['light','dark','system'].includes(themePreference))noticeNode.dataset.themeNotification=themePreference;
   else delete noticeNode.dataset.themeNotification;
   noticeNode.hidden=false;
-  toastClear=setTimeout(()=>{noticeNode.hidden=true;delete noticeNode.dataset.themeNotification;},settingNumber('runtime.timing.toastDurationMs'));
+  const duration=settingNumber('runtime.timing.toastDurationMs');
+  if(window.bootstrap?.Toast){
+    const toast=window.bootstrap.Toast.getOrCreateInstance(noticeNode,{autohide:false});
+    toast.show();
+    toastClear=setTimeout(()=>{toast.hide();delete noticeNode.dataset.themeNotification;},duration);
+  }else{
+    // A CDN hiánya nem akadályozhatja az alapvető visszajelzéseket.
+    toastClear=setTimeout(()=>{noticeNode.hidden=true;delete noticeNode.dataset.themeNotification;},duration);
+  }
 }
 function titleOf(x){return routeTitle(x)}
 function hrefOf(x){return x?.page?.schemaExtensions?.route||'#/'}
@@ -339,15 +355,21 @@ function breadcrumb(node){
   const chain=[];let cur=node;
   while(cur){chain.unshift(cur);cur=cur.parent;}
   const bar=dom('nav',{class:'breadcrumbs','aria-label':'Morzsamenü'});
-  bar.append(dom('a',{href:'#/'},'Kezdőoldal'));
-  for(const item of chain){if(item.depth===0)continue;bar.append(dom('span',{class:'breadcrumb-sep','aria-hidden':'true'},'›'));
-    if(item===node)bar.append(dom('span',{'aria-current':'page'},titleOf(item)));
-    else bar.append(navLink(item));}
+  const list=dom('ol',{class:'breadcrumb mb-0'});
+  const home=dom('li',{class:'breadcrumb-item'});
+  home.append(dom('a',{href:'#/'},'Kezdőoldal'));list.append(home);
+  for(const item of chain){if(item.depth===0)continue;
+    const crumb=dom('li',{class:'breadcrumb-item'+(item===node?' active':'')});
+    if(item===node){crumb.setAttribute('aria-current','page');crumb.textContent=titleOf(item);}
+    else crumb.append(navLink(item));
+    list.append(crumb);
+  }
+  bar.append(list);
   return bar;
 }
 function getSiblings(node){if(node.depth===0)return[];return catalog.items.filter(x=>x.parent===node.parent&&x!==node).slice(0,settingNumber('runtime.display.relatedPages'));}
-function contentPage(node){
-  const page=node.page,route=page.schemaExtensions?.route||'';
+function contentPage(node,previewPage=null){
+  const page=previewPage||node.page,route=page.schemaExtensions?.route||'';
   const fragment=document.createDocumentFragment();
   const banner=dom('section',{class:'page-banner'}),bannerInner=dom('div',{class:'container-xxl'});
   const bannerMedia=createPicture(page.schemaExtensions?.bannerMediaId,{className:'page-banner-media',eager:true,sizes:'100vw'});
@@ -355,7 +377,7 @@ function contentPage(node){
   bannerInner.append(breadcrumb(node),dom('h1',{},page.title));
   if(page.summary?.trim())bannerInner.append(dom('p',{},page.summary));
   if(page.schemaExtensions?.verifiedContent===false){
-    const note=dom('p',{class:'cs-content-review-notice',role:'note'},'Az oldal egyes intézményi adatai még ellenőrzés alatt állnak. Határidő vagy hivatalos ügyintézés előtt kérjük az aktuális intézményi tájékoztatás megerősítését.');
+    const note=dom('p',{class:'cs-content-review-notice alert alert-warning',role:'note'},'Az oldal egyes intézményi adatai még ellenőrzés alatt állnak. Határidő vagy hivatalos ügyintézés előtt kérjük az aktuális intézményi tájékoztatás megerősítését.');
     bannerInner.append(note);
   }
   // Az oldalverziót egységesen a lábléc Honlapdiagnosztika panelje mutatja.
@@ -374,17 +396,18 @@ function contentPage(node){
     if(!block||typeof block!=='object')continue;
     if(block.type==='section'){
       const section=dom('section',{class:'article-section'});
+      section.dataset.cs24Id=block.id;section.dataset.cs24Kind='block';
       let usefulChildren=0;
-      for(const sub of block.children||[]){const el=renderBlock(sub);if(el){section.append(el);usefulChildren++;}}
+      for(const sub of block.children||[]){const el=renderBlock(sub);if(el){el.dataset.cs24Id=sub.id;el.dataset.cs24Kind='block';el.classList.add('cs24-nested-node');if(['cards','gallery'].includes(sub.type))el.dataset.cs24ItemsOwner=sub.id;section.append(el);usefulChildren++;}}
       if(usefulChildren){
         const key=String(block.title||'').trim().toLocaleLowerCase('hu-HU');
         const prior=key?sectionTitles.get(key):null;
-        if(prior)prior.append(...section.childNodes);
+        if(prior&&!visualEditingEnabled())prior.append(...section.childNodes);
         else{if(block.title)section.prepend(dom('h2',{},block.title));article.append(section);if(key)sectionTitles.set(key,section);}
       }
     } else {
       const el=renderBlock(block);
-      if(el){const section=dom('section',{class:'article-section article-section--module'});section.append(el);article.append(section);}
+      if(el){const section=dom('section',{class:'article-section article-section--module'});section.dataset.cs24Id=block.id;section.dataset.cs24Kind='block';if(['cards','gallery'].includes(block.type))el.dataset.cs24ItemsOwner=block.id;section.append(el);article.append(section);}
     }
   }
   if(article.children.length){applyPageTemplate(article,route);body.append(article);}
@@ -601,7 +624,13 @@ function renderRoute(options={}){
   syncRound29HomeNavigation(kind==='home');
   document.body.classList.toggle('cs-inner-page',kind!=='home');
   releaseSpaFeatureStyles();
-  app.replaceChildren(node?(isSpaFeature(node.page)?featurePlaceholder(node.page):node.depth===0?homePage(node):contentPage(node)):errorPage());
+  const inEditor=visualEditingEnabled()&&!c3Preview;
+  const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.43.4');
+  const localRelease=/^csanadi-r-v\d+\.\d+\.\d+$/.test(version)?'csanadi-website-'+version.slice('csanadi-r-'.length):'csanadi-website-v1.43.1';
+  const previewDraft=node&&node.depth!==0&&!isSpaFeature(node.page)&&(inEditor||(c3Preview&&!c3PreviewBase))?resolveVisualDraft(node.page,'json/'+node.path,localRelease):null;
+  const activeDraft=c3Preview&&!c3PreviewBase&&c3Overlay?.path==='json/'+node?.path?c3Overlay.page:previewDraft?.page;
+  app.replaceChildren(node?(isSpaFeature(node.page)?featurePlaceholder(node.page):node.depth===0?homePage(node):contentPage(node,activeDraft)):errorPage());
+  if(inEditor&&previewDraft&&node)attachVisualEditor(app,node.page,'json/'+node.path,localRelease,{rerender:()=>renderRoute({keepScroll:true}),warning:previewDraft.warning});
   if(node&&isSpaFeature(node.page))void activateSpaFeature(app.firstElementChild,node.page);
   if(expandedDetails.length){
    const nextDetails=[...app.querySelectorAll('details')];
@@ -766,7 +795,7 @@ const THEME_ICONS={
   light:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
   dark:'<path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5 8.5 8.5 0 1 0 20.5 14.3Z"/>'
 };
-function storedTheme(fallback='system'){try{const v=localStorage.getItem('csanadi-theme');return v===null?'system':THEME_MODES.includes(v)?v:fallback;}catch{return fallback;}}
+function storedTheme(fallback='system'){if(c3PreviewTheme)return c3PreviewTheme;try{const v=localStorage.getItem('csanadi-theme');return v===null?'system':THEME_MODES.includes(v)?v:fallback;}catch{return fallback;}}
 let themeMode=storedTheme();
 const mq=window.matchMedia('(prefers-color-scheme: dark)');
 function syncEmbeddedTheme(){
@@ -787,8 +816,10 @@ function applyTheme(){
   document.getElementById('theme-label').textContent=THEME_LABELS[themeMode];
   const meta=document.getElementById('theme-color');if(meta)meta.content=actual==='dark'?'#0d1b2d':'#fffaf0';
   syncEmbeddedTheme();
+  document.dispatchEvent(new CustomEvent('csanadi:theme-change',{detail:{theme:actual}}));
 }
 function changeTheme(){
+  if(c3Preview)return;
   themeMode=THEME_MODES[(THEME_MODES.indexOf(themeMode)+1)%3];
   try{localStorage.setItem('csanadi-theme',themeMode);}catch{}
   applyTheme();notify('Megjelenés: '+THEME_LABELS[themeMode],{themePreference:themeMode});
@@ -899,6 +930,21 @@ export async function startApp(){
   if(location.protocol==='file:')throw new Error('A JSON-alapú weboldal HTTP/HTTPS kiszolgálást igényel, például helyi localhost szervert vagy az iskola webtárhelyét.');
   registerMedia(await loadJSON('media-library.json'));
   catalog=await buildCatalog();
+  if(c3Preview){
+   document.addEventListener('click',event=>{
+    if(event.target?.closest?.('a[href]')){event.preventDefault();event.stopPropagation();}
+   },true);
+   window.addEventListener('message',event=>{
+    if(event.origin!==location.origin||event.source!==window.parent||c3PreviewBase||event.data?.type!=='csanadi-c3-preview-page')return;
+    try{
+     const entry=catalog.routes.get(getRoute());
+     if(!entry||entry.depth===0||isSpaFeature(entry.page)||event.data.route!==getRoute()||event.data.path!=='json/'+entry.path)throw Error('Másik oldalhoz tartozó előnézet.');
+     validateEditablePage(entry.page,event.data.page);
+     c3Overlay={path:event.data.path,page:event.data.page};renderRoute({keepScroll:true});
+     window.parent.postMessage({type:'csanadi-c3-preview-applied'},location.origin);
+    }catch(error){window.parent.postMessage({type:'csanadi-c3-preview-error',message:error.message},location.origin);}
+   });
+  }
   useSiteSettings(catalog.config);
   installLanguageHighlights().catch(error=>console.warn('A kétnyelvű tájékoztatók nem tölthetők be:',error));
   smartSearch=setupSmartSearch({catalog,loadJSON,norm,dialog,input:searchInput,results:searchResults,status:searchStatus,onNavigate:handleSearchNavigation});
@@ -939,8 +985,9 @@ export async function startApp(){
    }
   }
   window.__CSANADI_STARTED__=true;
+  if(c3Preview&&window.parent!==window)window.parent.postMessage({type:'csanadi-c3-preview-ready',route:getRoute()},location.origin);
   initSocialLinks();
-  openEntrancePortal();
+  if(!c3Preview)openEntrancePortal();
   initEnhancedInteractions();
   beginPolling();
   setInterval(()=>{if(!document.hidden)loadDocumentRegistry(true);},documentRefreshSeconds()*1000);

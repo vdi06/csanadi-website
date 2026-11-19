@@ -39,6 +39,9 @@ function sectionTitle(section,index){
 function setSectionClasses(sections,kind){sections.forEach((section,i)=>{
  section.classList.add(`cs92-${kind}-part`);
  section.dataset.sectionPosition=String(i+1);
+ const contentLength=section.textContent?.trim().length||0;
+ const complexContent=section.classList.contains('article-section--module')||Boolean(section.querySelector('table,iframe,video,form,.table-responsive,.content-accordion,[role="table"],.doc-card-grid,.staff-team-grid,.cs-result-grid,.media26-albums,.media26-video-grid'));
+ section.dataset.layout=complexContent||contentLength>720?'wide':'card';
 });}
 
 function sectionNavigation(sections,kind){

@@ -11,21 +11,21 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-14T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T21:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 6
   },
   "seo": {
     "title": "Iskolai események – Csanádi Sportiskola",
-    "description": "Iskolai programok, közösségi alkalmak és tanulmányi események helye a naptárban. A közösségi, tanulmányi és iskolai programok szervezési információi és.",
+    "description": "Iskolai ünnepségek, szülői alkalmak és témahetek a 2026/2027-es munkaterv alapján.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "hirek-es-esemenyek"
   ],
   "tags": [],
-  "summary": "Iskolai programok, közösségi alkalmak és tanulmányi események helye a naptárban.",
+  "summary": "Iskolai ünnepségek, szülői alkalmak és témahetek a 2026/2027-es munkaterv alapján.",
   "blocks": [
     {
       "id": "block:000045-section-1",
@@ -58,13 +58,13 @@
     {
       "id": "block:content-review-20261114--p000045",
       "type": "section",
-      "title": "Iskolai alkalmak",
+      "title": "Közzétett tanévi rendezvények",
       "children": [
         {
           "id": "block:content-review-text-20261114--p000045",
           "type": "markdown",
           "data": {
-            "text": "A gimnáziumi nyílt napok 2026. november 17-én és 19-én 8:30-kor kezdődnek. Az iskola e programokhoz regisztrációt is említ. További iskolai rendezvények dátumát ellenőrzés nélkül nem adjuk hozzá a naptárhoz.\n\n[Hírek és események](#/hirek-es-esemenyek)\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
+            "text": "**2026. november:** gimnáziumi nyílt napok **17-én és 19-én, 8:30-tól**; szülői fogadóóra **24-én, 17:00–19:00**. **December:** szalagavató **11-én, 18:00**; karácsonyi ünnepségek **17-én**.\n\n**2027. január:** a magyar kultúra napja **22-én**. **Február:** szülői értekezletek **1-jén és 2-án, 17:00-kor**; megemlékezés a diktatúrák áldozatairól **25-én**. **Március:** a március 15-i megemlékezés **12-én**; diákparlament **22-én**; fogadóóra **23-án, 17:00–19:00**.\n\n**Április:** a költészet napjának iskolai programja **12-én**; holokauszt-megemlékezés **16-án**; gimnáziumi ballagás **30-án, 12:00**. **Május:** Csanádi-nap **28-án**. **Június:** Nemzeti Összetartozás Napja **4-én**; tanévzáró és 8. osztályos ballagás **18-án, 10:00**.\n\nA teljes lista és a további témahetek az [eseménynaptárban](#/hirek-es-esemenyek/esemenynaptar) érhetők el. A csak hónappal, közelítő időponttal vagy opcionális napként jelölt programokhoz nem közlünk kitalált napot."
           }
         }
       ]
@@ -74,12 +74,12 @@
   "schemaExtensions": {
     "preview": false,
     "route": "#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek",
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:esemenyek",
     "contentReview": {
-      "reviewedAt": "2026-11-17",
-      "status": "time-sensitive",
-      "sourceId": "home"
+      "reviewedAt": "2026-11-19",
+      "status": "primary-source-checked",
+      "sourceId": "annual-workplan-2026-27"
     }
   }
 }

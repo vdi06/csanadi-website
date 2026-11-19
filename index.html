@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" id="theme-color" content="#FFF8E9">
-  <script>(function(){var m="system";try{var saved=localStorage.getItem("csanadi-theme");if(["system","light","dark"].includes(saved))m=saved;}catch(e){}var actual=m==="system"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):m;document.documentElement.dataset.theme=actual;document.documentElement.dataset.themePreference=m;document.documentElement.setAttribute("data-bs-theme",actual);var bar=document.getElementById("theme-color");if(bar)bar.content=actual==="dark"?"#0d1b2d":"#fffaf0";})();
+  <script>(function(){var m="system";try{var saved=localStorage.getItem("csanadi-theme");if(["system","light","dark"].includes(saved))m=saved;}catch(e){}var q=new URLSearchParams(location.search);if(q.get('preview')==='1'&&['light','dark'].includes(q.get('previewTheme')))m=q.get('previewTheme');var actual=m==="system"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):m;document.documentElement.dataset.theme=actual;document.documentElement.dataset.themePreference=m;document.documentElement.setAttribute("data-bs-theme",actual);var bar=document.getElementById("theme-color");if(bar)bar.content=actual==="dark"?"#0d1b2d":"#fffaf0";})();
 </script>
   <!-- A kapu minden új oldalbetöltéskor a HTML legelső megjelenítési pillanatától takar. -->
   <style>
@@ -21,6 +21,7 @@
     #cs-gate-prelude .cs-gate-prelude-copy p{font-size:clamp(24px,4vw,54px);font-weight:850;line-height:1.12;margin:0}
   </style>
   <script>(function(){
+    if(new URLSearchParams(location.search).get('preview')==='1')return;
     // A nyitójelenet minden friss oldalbetöltéskor megjelenik.
     document.documentElement.classList.add('cs-gate-pending');
     var firstGateImage='csanadi-gate-closed-photo.webp';
@@ -48,7 +49,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
   <link rel="stylesheet" href="css/site-bundle-v1-42-17.css?v=1.42.18">
   <link rel="stylesheet" href="css/home-v1-41.css?v=1.42.18">
-  <link rel="stylesheet" href="css/entrance-sequence.css?v=1.42.20">
+  <link rel="stylesheet" href="css/entrance-sequence.css?v=1.42.21">
   <link rel="stylesheet" href="css/header-v1-41-full-name.css?v=1.42.18">
   <link rel="stylesheet" href="css/home-refinement-v1-41-4.css?v=1.42.18">
   <link rel="stylesheet" href="css/menu-overlay-clean-v1-42-12.css?v=1.42.18">
@@ -60,6 +61,15 @@
   <link rel="stylesheet" href="css/editor-workbench-v1-42-18.css?v=1.42.18">
   <link rel="stylesheet" href="css/maintenance-studio.css?v=1.42.18">
   <link rel="stylesheet" href="css/update-notice.css?v=1.42.18">
+  <link rel="stylesheet" href="css/theme-coverage-v1-42-21.css?v=1.42.21">
+  <link rel="stylesheet" href="css/subpage-premium-v1-42-22.css?v=1.42.22">
+  <link rel="stylesheet" href="css/editor-c1-v1-42-23.css?v=1.42.23">
+  <link rel="stylesheet" href="css/visual-editor-v1-42-24.css?v=1.42.24">
+  <link rel="stylesheet" href="css/c3-live-preview-v1-42-25.css?v=1.42.25">
+  <link rel="stylesheet" href="css/c4-release-gates-v1-42-26.css?v=1.43.3">
+  <link rel="stylesheet" href="css/desktop-hero-controls-v1-43-1.css?v=1.43.3">
+  <link rel="stylesheet" href="css/viewers-bootstrap-v1-43-3.css?v=1.43.3">
+  <link rel="stylesheet" href="css/bootstrap-unification-v1-43-4.css?v=1.43.4">
 </head>
 <body>
   <div id="cs-gate-prelude" role="status" aria-label="A Csanádi Sportiskola nyitókapuja betöltődik">
@@ -143,7 +153,7 @@
     </div>
   </footer>
   <div id="search-panel" class="search-backdrop" hidden><div class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="search-heading"><div class="search-head"><div><span class="eyebrow">KERESŐKÖZPONT</span><h2 id="search-heading">Mit szeretnél megtalálni?</h2></div><button id="search-close" type="button" class="icon-btn" aria-label="Keresés bezárása">✕</button></div><label class="visually-hidden" for="search-input">Keresés az oldalak között</label><input id="search-input" type="search" class="form-control form-control-lg" placeholder="Például: felvételi, sporteredmények, dokumentumok…" autocomplete="off"><div class="search-meta"><span id="search-status">Az oldalak között kereshetsz.</span><kbd>ESC</kbd></div><div id="search-results" class="search-results" role="list"></div></div></div>
-  <div id="toast" class="toast-info" role="status" aria-live="polite" hidden></div>
+  <div id="toast" class="toast toast-info" role="status" aria-live="polite" aria-atomic="true" hidden></div>
   <script>    (function(){
       function fail(message){
         if(window.__CSANADI_STARTED__)return;
@@ -162,8 +172,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous" defer>
 </script>
   <script src="js/round12-media-performance.js?v=1.42.18" defer></script>
-  <script src="js/round13-network.js?v=csanadi-r-v1.42.20" defer></script>
-  <script type="module" src="script.js?v=1.42.20">
+  <script src="js/round13-network.js?v=csanadi-r-v1.43.4" defer></script>
+  <script type="module" src="script.js?v=1.43.4">
 </script>
 </body>
 </html>

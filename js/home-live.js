@@ -10,6 +10,11 @@ const mk=(tag,cls='',txt)=>{const node=document.createElement(tag);if(cls)node.c
 function add(parent,...children){parent.append(...children);return parent;}
 function formatNow(){return new Intl.DateTimeFormat('hu-HU',{hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(new Date());}
 function formatDate(stamp){return new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(stamp));}
+function formatEventDate(item){
+ if(item.allDay!==true)return formatDate(item.startsAt);
+ const onlyDate=date=>new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',day:'numeric',timeZone:'Europe/Budapest'}).format(new Date(date));
+ return onlyDate(item.startsAt)+(item.endsAt&&item.endsAt.slice(0,10)!==item.startsAt.slice(0,10)?' – '+onlyDate(item.endsAt):'')+' · óra nincs megadva';
+}
 async function fetchJSON(url){const res=await fetch(url,{cache:'no-store'});if(!res.ok)throw Error(`Nem elérhető: ${url.pathname} (${res.status})`);return res.json();}
 function checkSports(data){
  if(!data||data.schemaVersion!=='1.0.0'||data.collectionId!=='collection:sportsikerek'||!Array.isArray(data.items)||data.items.length>300)throw Error('Érvénytelen sports-achievements.json gyűjtemény.');
@@ -83,7 +88,7 @@ function eventCard(item,upcoming){
  const title=mk('h3','',item.title),summary=mk('p','',item.summary);
  const details=mk('div','live-event-bottom');
  if(item.status==='verified'){
-  const time=mk('time','live-event-date',formatDate(item.startsAt));time.dateTime=item.startsAt;details.append(time);
+  const time=mk('time','live-event-date',formatEventDate(item));time.dateTime=item.startsAt;details.append(time);
   if(item.location)details.append(mk('span','live-event-location',item.location));
   if(upcoming)details.append(mk('span','live-event-live','Következő program'));
  }else details.append(mk('span','live-event-date','Időpont még nincs meghirdetve'));

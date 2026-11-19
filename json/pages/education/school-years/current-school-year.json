@@ -11,32 +11,32 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T21:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 6
   },
   "seo": {
     "title": "Aktuális tanév – Csanádi Sportiskola",
-    "description": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi. A jelenlegi tanév szervezési adatait és az események hivatalos ellenőrzési forrásait gyűjti össze.",
+    "description": "A 2026/2027-es tanév hivatalos rendje, szünetei, szülői és vizsgaidőpontjai.",
     "robots": "noindex,nofollow"
   },
   "categories": [
     "oktatas"
   ],
   "tags": [],
-  "summary": "A 2026/2027-es tanév hivatalosan közzétett iskolai információi. A jelenlegi tanév szervezési adatait és az események hivatalos ellenőrzési forrásait gyűjti össze.",
+  "summary": "A 2026/2027-es tanév hivatalos rendje, szünetei, szülői és vizsgaidőpontjai.",
   "blocks": [
     {
       "id": "block:000026-section-1",
       "type": "section",
-      "title": "Tanévkezdés és tájékozódás",
+      "title": "A tanév legfontosabb időpontjai",
       "children": [
         {
           "id": "block:000026-text-1",
           "type": "markdown",
           "data": {
-            "text": "Az iskola közzétett tanévnyitó-tájékoztatója szerint a 2026/2027-es tanév első tanítási napja 2026. szeptember 1., a tanévnyitó ünnepség 9:00 órakor kezdődött.\n\nA tanév további részében a vizsgaidőszakok és az intézményi események időpontjait a hivatalos tájékoztatás alapján frissítjük. A részletes csengetési rend a Mindennapi tudnivalók között található."
+            "text": "**Első tanítási nap:** 2026. szeptember 1. **Utolsó tanítási nap:** 2027. június 18. (a 12. évfolyamon április 30.). **Tanítási napok száma:** 180.\n\n**Első félév vége:** 2027. január 22. **Félévi értesítők kiosztása:** január 29. **Áthelyezett munkanap:** 2026. december 12. (szombat). **Tanítás nélküli munkanapok** közül a munkaterv október 2-át, 2027. március 9-ét, március 16-át, április 14-ét és május 27-ét sorolja fel."
           }
         }
       ]
@@ -44,13 +44,13 @@
     {
       "id": "block:000026-section-2",
       "type": "section",
-      "title": "Események időrendben",
+      "title": "Tanítási szünetek",
       "children": [
         {
           "id": "block:000026-text-2",
           "type": "markdown",
           "data": {
-            "text": "[Hivatalos aktuális közlemények](#/hirek-es-esemenyek/hirek)"
+            "text": "| Szünet | Szünet előtti utolsó tanítási nap | Visszatérés |\n|---|---|---|\n| Őszi | 2026. október 22. | 2026. november 2. |\n| Téli | 2026. december 18. | 2027. január 4. |\n| Tavaszi | 2027. március 24. | 2027. április 5. |\n\nA teljes, dátum szerint kereshető programlistát az [eseménynaptár](#/hirek-es-esemenyek/esemenynaptar) mutatja."
           }
         }
       ]
@@ -58,13 +58,13 @@
     {
       "id": "block:content-review-20261114--p000026",
       "type": "section",
-      "title": "2026/2027-es tanév – kiinduló adatok",
+      "title": "Tanévi mérföldkövek",
       "children": [
         {
           "id": "block:content-review-text-20261114--p000026",
           "type": "markdown",
           "data": {
-            "text": "Az intézmény 2026. szeptember 1-jére tette közzé a tanévnyitót. A közzétételi listán külön hivatkozás szerepel az iskolai tanév helyi rendjéhez. A szünetek és tanítás nélküli napok részleteinél mindig a közzétett, legfrissebb intézményi munkaterv az irányadó.\n\n[Közzétételi lista](#/informaciok/dokumentumtar/kozzeteteli-lista)\n\n[Közzétételi lista – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozzetetel.html)"
+            "text": "**Gimnáziumi ballagás:** 2027. április 30., 12:00. **Tanévzáró és 8. osztályos ballagás:** június 18., 10:00. **Szalagavató:** 2026. december 11., 18:00. **Sportnap:** 2027. május 27. **Csanádi-nap:** május 28.\n\n**Témahetek:** PÉNZ7: március 1–5.; Digitális Témahét: április 5–9.; Fenntarthatósági Témahét: április 19–23. **Mérések:** NETFIT: január 8. – május 5.; országos kompetenciamérések: március 22. – május 28.\n\nA részletes vizsgákat, a fogadóórákat és a felvételi alkalmakat a [naptár](#/hirek-es-esemenyek/esemenynaptar) és az érintett aloldalak sorolják fel."
           }
         }
       ]
@@ -77,9 +77,9 @@
     "verifiedContent": true,
     "bannerMediaId": "media:oktatas",
     "contentReview": {
-      "reviewedAt": "2026-11-17",
+      "reviewedAt": "2026-11-19",
       "status": "primary-source-checked",
-      "sourceId": "disclosure"
+      "sourceId": "annual-workplan-2026-27"
     }
   }
 }

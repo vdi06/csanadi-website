@@ -11,14 +11,14 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-19T00:00:00+01:00",
+  "updatedAt": "2026-11-19T21:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 6
+    "revision": 7
   },
   "seo": {
     "title": "Tantestület – Csanádi Sportiskola",
-    "description": "A tanítás, a nevelés és a sportpedagógia közös munkaterületei. Ismerd meg a pedagógiai együttműködés és a tanárokkal való hivatalos kapcsolattartás lehetőségeit.",
+    "description": "A 2026/2027-es tanév 40 közzétett pedagógusa, öt munkaközössége és a 18 osztály osztályfőnöki beosztása.",
     "robots": "noindex,nofollow"
   },
   "categories": [
@@ -31,18 +31,18 @@
     "munkakozossegek",
     "sport"
   ],
-  "summary": "A tanítás, a nevelés és a sportpedagógia közös munkaterületei. Ismerd meg a pedagógiai együttműködés és a tanárokkal való hivatalos kapcsolattartás lehetőségeit.",
+  "summary": "A 2026/2027-es tanév 40 közzétett pedagógusa, öt munkaközössége és a 18 osztály osztályfőnöki beosztása.",
   "blocks": [
     {
       "id": "block:000064-section-1",
       "type": "section",
-      "title": "Pedagógiai együttműködés",
+      "title": "2026/2027-es tantestület",
       "children": [
         {
           "id": "block:000064-text-1",
           "type": "markdown",
           "data": {
-            "text": "Az iskolai tantestület munkájában az általános iskolai és gimnáziumi nevelés, a közismereti tantárgyak, a testnevelés és a sportpedagógia egymást kiegészítő területek. A munkaközösségi együttműködés segíti az egységes pedagógiai szemléletet, a tehetséggondozást és a tanulók személyes fejlődésének támogatását.\n\nA tantestületi áttekintőben a pedagógiai szakterületek között kereshetsz, megismerheted az egyes munkaterületek feladatait és az iskolai közösségben betöltött szerepüket."
+            "text": "A Csanádi Árpád Sportiskola 2026/2027-es munkaterve **40 pedagógust** sorol fel. A tanárok neve, tantárgyai és nyilvános intézményi feladatkörei a Tantestület kereshető adatlapjain érhetők el. Az iskola **öt hivatalos munkaközössége**: humán (Vida Katalin), reál (Bakai Anikó), idegen nyelvi (Gáll Barbara), testnevelés (Ágoston Zsolt) és osztályfőnöki (Utassy Emília Antónia).\n\n**Iskolavezetés:** Rúzsa Sándor főigazgató, Horváth Zsuzsanna és Szobonya Cecília főigazgató-helyettesek. A pedagógusok szakterület szerinti kereshető szűrése tájékoztató jellegű; nem a hivatalos munkaközösségi tagsági jegyzék."
           }
         }
       ]
@@ -56,7 +56,7 @@
           "id": "block:content-review-text-20261114--p000064",
           "type": "markdown",
           "data": {
-            "text": "A tantestület közismereti, testnevelési és sportpedagógiai feladatokat lát el. Az aktuális tanári és osztályfőnöki névsor az intézmény jóváhagyása nélkül nem tehető közzé; személyes telefonszámot vagy e-mail-címet nem találunk ki. A megfelelő kapcsolattartót az [iskolai titkárságon](#/kapcsolat) lehet megkeresni.\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
+            "text": "A tanárokhoz kapcsolódó **szakterületek és intézményi feladatkörök** az aktuális tanévi névjegyzék szerint szerepelnek. Magántelefonszám, személyes e-mail-cím és jóváhagyatlan portréfotó nem jelenik meg. Ügyintézéshez a [titkárság](#/kapcsolat) segít a megfelelő kapcsolattartó elérésében."
           }
         }
       ]
@@ -64,13 +64,27 @@
     {
       "id": "block:editorial-guide-20261119",
       "type": "section",
-      "title": "Kikhez fordulhatsz?",
+      "title": "Osztályfőnökök és helyettesek",
       "children": [
         {
           "id": "block:editorial-guide-text-20261119",
           "type": "markdown",
           "data": {
-            "text": "Tanulmányi kérdésben az adott tantárgyat tanító pedagógus vagy az osztályfőnök lehet a megfelelő első kapcsolattartó. Sporttal kapcsolatos egyeztetésnél az érintett edző vagy sportági koordinátor adhat tájékoztatást.\n\nA személyi névjegyzéket kizárólag naprakész, jóváhagyott intézményi adatokkal lehet közzétenni. Az aktuális kapcsolattartási lehetőségeket a [Kapcsolat](#/kapcsolat) oldalon találod."
+            "text": "A 2026/2027-es tanév intézményi beosztása az alábbi **18 osztályt** tartalmazza. A tantermek megnevezése az éves munkaterv szerinti.\n\n| Osztály | Osztályfőnök | Helyettes | Terem |\n|---|---|---|---|\n| 1. | Tóthné Veres Noémi | Mészáros Zsófia | 7. |\n| 2. | Kiss Andrea | Bencsikné Komáromi Rózsa | 5. |\n| 4. | Szommer Edit | Bencsikné Komáromi Rózsa | 4. |\n| 5. | Gábor-Nagy Katalin | Kisteleki Zsuzsa | 207. |\n| 6. | Rúzsa Sándorné Szabó Judit | Horváth Anna | 208. |\n| 7. | Mészáros Zsófia | Vida Katalin | 209. |\n| 8. | Soósné Imre Gyöngyi | Rabi Ferencné | 101. |\n| 9.A | Mittich-Takács Enikő | Krajnyákné Nagy Katalin | Kémia |\n| 9.B | Szabó Zsolt | Rúzsa Sándorné Szabó Judit | 105. |\n| 10.A | Gáll Barbara | Ford Monika Elizabeth | Biológia |\n| 10.B | Horváth-Szabó Erika | Gábor-Nagy Katalin | Fizika |\n| 10.C | Ágoston Zsolt | Varga Dávid | 104. |\n| 11.A | Veres Eszter | Rácz Milán | 210. |\n| 11.B | Kovács Adrienn | Bakai Anikó | 100. |\n| 11.C | Kontz Alexandra | Ágoston Zsolt | 3. |\n| 12.A | Vida Katalin | Szobonya Cecília | 205. |\n| 12.B | Utassy Emília Antónia | Bakos Károly | 202. |\n| 12.C | Bakai Anikó | Horváth Zsuzsanna | 200. |\n\nA dokumentum nem sorol fel 3. osztályt. Az eltérő névalakokat a munkaterv szerinti alakban őrizzük meg (például Utassy Emília / Utassy Emília Antónia)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:workplan-staff-tasks-202627",
+      "type": "section",
+      "title": "Intézményi feladatkörök",
+      "children": [
+        {
+          "id": "block:workplan-staff-tasks-202627-text",
+          "type": "markdown",
+          "data": {
+            "text": "**Könyvtár és tankönyvellátás:** Hegedüs Ferenc. **Iskolapszichológus, gyermekvédelem:** Tóth Zsófia. **Diákönkormányzatot segítő pedagógus:** Rúzsa Sándorné. **Közösségi szolgálat:** Horváth-Szabó Erika. **Olimpiai eszmék ápolása:** Botyánszky Pálné. **Mérés-értékelés:** Horváth Zsuzsanna. **Szabadidőszervezés és balesetvédelem:** Kiss Dávid. **Környezeti kultúra:** Rúzsa Sándorné és Fabókné Kocsi Erika.\n\nA neveket az intézmény 2026/2027-es feladatmegosztása tartalmazza; a felsorolás nem közöl magánjellegű elérhetőséget."
           }
         }
       ]
@@ -80,12 +94,12 @@
   "schemaExtensions": {
     "route": "#/iskolank/tantestulet",
     "preview": false,
-    "verifiedContent": false,
+    "verifiedContent": true,
     "bannerMediaId": "media:oktatas",
     "contentReview": {
-      "reviewedAt": "2026-11-17",
-      "status": "institutional-approval-needed",
-      "sourceId": "home"
+      "reviewedAt": "2026-11-19",
+      "status": "primary-source-checked",
+      "sourceId": "annual-workplan-2026-27"
     }
   }
 }

@@ -42,7 +42,7 @@ export function renderUpcomingPanel(){
   if(!section.isConnected)return;
   const now=Date.now();const items=(data.items||[]).filter(x=>x.verified===true&&x.status==='published'&&Date.parse(x.startsAt)>now).sort((a,b)=>Date.parse(a.startsAt)-Date.parse(b.startsAt)).slice(0,settingNumber('runtime.display.upcomingEventPanel'));
   grid.replaceChildren();const fmt=new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit',timeZone:setting('modules2026.clock.timezone')});
-  for(const item of items){const a=link(item.title,fmt.format(new Date(item.startsAt))+' · '+(item.location||'Helyszín az eseményoldalon'),item.route||'#/hirek-es-esemenyek/esemenynaptar','◷');grid.append(a);}
+  for(const item of items){const when=item.allDay===true?new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',day:'numeric',timeZone:setting('modules2026.clock.timezone')}).format(new Date(item.startsAt))+' · óra nincs megadva':fmt.format(new Date(item.startsAt));const a=link(item.title,when+' · '+(item.location||'Helyszín nincs megadva'),item.route||'#/hirek-es-esemenyek/esemenynaptar','◷');grid.append(a);}
   status.textContent=items.length?'Az eseményeket a honlap saját JSON-adatállományából töltjük be.':'Jelenleg nincs jóváhagyott, jövőbeli esemény az adatállományban.';
  }).catch(()=>status.textContent='Az eseménynaptár adatai jelenleg nem elérhetők.');
  return section;

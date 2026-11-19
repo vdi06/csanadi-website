@@ -25,7 +25,7 @@ async function load(name){const r=await fetch(BASE+name,{cache:'no-store'});if(!
 const heading=(over,title,desc)=>{const box=e('div','experience-section-head');add(box,e('span','experience-eyebrow',over),e('h2','experience-title',title));if(desc)box.append(e('p','experience-lead',desc));return box;};
 
  
-import {showGateEntrance} from './gate-sequence-v1-42-17.js?v=1.42.19';
+import {showGateEntrance} from './gate-sequence-v1-42-17.js?v=1.42.21';
 export function openEntrancePortal(options={}){showGateEntrance(options);}
 
 function bindPortalButton(){const replay=document.getElementById('portal-replay');if(replay&&!replay.dataset.wired){replay.dataset.wired='1';replay.addEventListener('click',()=>openEntrancePortal({force:true}));}}
@@ -83,13 +83,20 @@ function validateEvents(value){
  }).sort((a,b)=>Date.parse(a.startsAt)-Date.parse(b.startsAt));
 }
 const eventDate=x=>dayISO(new Date(x.startsAt));
+const eventLastDate=x=>x.endsAt?dayISO(new Date(x.endsAt)):eventDate(x);
+const eventIntersects=(x,start,end)=>eventDate(x)<=end&&eventLastDate(x)>=start;
 const timeLabel=s=>new Intl.DateTimeFormat('hu-HU',{timeZone:ZONE(),hour:'2-digit',minute:'2-digit'}).format(new Date(s));
 const dateLabel=s=>new Intl.DateTimeFormat('hu-HU',{timeZone:ZONE(),year:'numeric',month:'long',day:'numeric',weekday:'long'}).format(new Date(s));
+const eventTiming=x=>x.allDay===true
+ ?(x.endsAt&&eventLastDate(x)!==eventDate(x)?'Időszak vége: '+dateLabel(x.endsAt)+' · óra nincs megadva':'Óra nincs megadva')
+ :timeLabel(x.startsAt)+(x.endsAt?'–'+timeLabel(x.endsAt):' · befejezés nem közölt');
 const escapeICS=s=>String(s||'').replace(/\\/g,'\\\\').replace(/\r?\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;').slice(0,1000);
 const toICSDate=s=>new Date(s).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
 function exportICS(items){if(!items.length)return false;
  const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Csanadi Sportiskola//Eseménynaptar//HU','CALSCALE:GREGORIAN','METHOD:PUBLISH'];const stamp=toICSDate(new Date().toISOString());
- items.forEach(x=>{const when=x.endsAt?[`DTSTART:${toICSDate(x.startsAt)}`,`DTEND:${toICSDate(x.endsAt)}`]:(()=>{const day=new Date(x.startsAt);return [`DTSTART:${toICSDate(x.startsAt)}`];})();
+ items.forEach(x=>{const when=x.allDay===true
+   ?[`DTSTART;VALUE=DATE:${eventDate(x).replaceAll('-','')}`,`DTEND;VALUE=DATE:${dateShift(eventLastDate(x),1).replaceAll('-','')}`]
+   :x.endsAt?[`DTSTART:${toICSDate(x.startsAt)}`,`DTEND:${toICSDate(x.endsAt)}`]:[`DTSTART:${toICSDate(x.startsAt)}`];
   lines.push('BEGIN:VEVENT',`UID:${x.id.replace(/[^a-z0-9:-]/gi,'')}@csanadi-website`,`DTSTAMP:${stamp}`,...when,`SUMMARY:${escapeICS(x.title)}`,`DESCRIPTION:${escapeICS(x.summary)}`,`LOCATION:${escapeICS(x.location||'')}`,'END:VEVENT');});lines.push('END:VCALENDAR');
  const blob=new Blob([lines.join('\r\n')+'\r\n'],{type:'text/calendar;charset=utf-8'});const url=URL.createObjectURL(blob);const a=e('a');a.href=url;a.download=items.length===1?`${items[0].id.replace(':','-')}.ics`:'csanadi-esemenyek.ics';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000);return true;
 }
@@ -113,18 +120,18 @@ export function renderCalendarPanel({expanded=false}={}){
  if(!expanded){const jump=e('a','experience-inline-link','Teljes naptár ↗');jump.href='#/hirek-es-esemenyek/esemenynaptar';panel.append(jump);}
  function period(){if(view==='agenda')return ['0000-01-01','9999-12-31'];const d=isoToUTC(focus);if(view==='day')return [focus,focus];if(view==='week'){const a=mondayISO(focus);return [a,dateShift(a,6)];}const a=`${d.getUTCFullYear()}-${pad(d.getUTCMonth()+1)}-01`;return [a,`${d.getUTCFullYear()}-${pad(d.getUTCMonth()+1)}-${pad(new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth()+1,0)).getUTCDate())}`];}
  function matching(){return events.filter(x=>(category==='all'||x.categoryId===category)&&slug(x.title+' '+(x.summary||'')+' '+(x.location||'')).includes(slug(query)));}
- function visibleEvents(){const [start,end]=period();return matching().filter(x=>eventDate(x)>=start&&eventDate(x)<=end);}
+ function visibleEvents(){const [start,end]=period();return matching().filter(x=>eventIntersects(x,start,end));}
  function move(dir){const d=isoToUTC(focus);if(view==='month'||view==='agenda'){d.setUTCDate(1);d.setUTCMonth(d.getUTCMonth()+dir);}else d.setUTCDate(d.getUTCDate()+(view==='week'?7:1)*dir);focus=d.toISOString().slice(0,10);draw();}
  function draw(){if(!panel.isConnected)return;
   const date=isoToUTC(focus);month.textContent=view==='agenda'?'Események időrendben':view==='month'?new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',timeZone:'UTC'}).format(date):view==='week'?`A hét: ${mondayISO(focus)} – ${dateShift(mondayISO(focus),6)}`:focus;
   modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===view)));
   grid.replaceChildren();grid.hidden=view==='agenda';weekdays.hidden=view==='day'||view==='agenda';prev.hidden=next.hidden=view==='agenda';today.hidden=view==='agenda';
-  const [start,end]=period(),byDate=new Map();matching().forEach(x=>{const day=eventDate(x);byDate.set(day,[...(byDate.get(day)||[]),x]);});
+  const [start,end]=period(),byDate=new Map();matching().forEach(x=>{for(let day=eventDate(x);day<=eventLastDate(x);day=dateShift(day,1)){if(day<start||day>end)continue;byDate.set(day,[...(byDate.get(day)||[]),x]);}});
   let dates=[];if(view==='month'){const offset=(dayIndex(start)+6)%7;for(let i=0;i<offset;i++)grid.append(e('span','calendar-blank'));for(let d=start;d<=end;d=dateShift(d,1))dates.push(d);}else if(view==='week'){for(let i=0;i<7;i++)dates.push(dateShift(start,i));}else if(view==='day')dates=[focus];
   dates.forEach(d=>{const c=btn(d.slice(-2).replace(/^0/,''),'calendar-day',()=>{focus=d;if(view==='month'&&!expanded)view='day';draw();});c.setAttribute('aria-label',`${d}: ${(byDate.get(d)||[]).length} esemény`);if(d===localNow().iso)c.classList.add('is-today');if(d===focus)c.classList.add('is-selected');if(byDate.has(d))c.classList.add('has-event');grid.append(c);});
   const visible=visibleEvents();count.textContent=`${visible.length} hitelesített esemény`;exportButton.disabled=!visible.length;output.replaceChildren();
   if(!visible.length)output.append(note('Ebben az időszakban nincs közzétett, ellenőrzött program a naptárban.'));
-  visible.slice(0,expanded?settingNumber('runtime.display.calendarExpandedItems'):settingNumber('runtime.display.calendarCollapsedItems')).forEach(item=>{const card=e('a','hub26-event-card');card.href=/^#\/[a-z0-9\/-]+$/.test(item.route||'')?item.route:'#/hirek-es-esemenyek/esemenynaptar';card.setAttribute('aria-label',item.title+' – '+dateLabel(item.startsAt)+(item.location?' · '+item.location:'')+' – részletek megnyitása');const date=e('time','hub26-event-kicker',dateLabel(item.startsAt));date.dateTime=item.startsAt;add(card,date,e('h4','',item.title),e('p','',item.summary||''),e('p','',`${timeLabel(item.startsAt)}${item.endsAt?'–'+timeLabel(item.endsAt):' · befejezés nem közölt'}${item.location?' · '+item.location:''}`));output.append(card);});
+  visible.slice(0,expanded?settingNumber('runtime.display.calendarExpandedItems'):settingNumber('runtime.display.calendarCollapsedItems')).forEach(item=>{const card=e('a','hub26-event-card');card.href=/^#\/[a-z0-9\/-]+$/.test(item.route||'')?item.route:'#/hirek-es-esemenyek/esemenynaptar';card.setAttribute('aria-label',item.title+' – '+dateLabel(item.startsAt)+(item.location?' · '+item.location:'')+' – részletek megnyitása');const date=e('time','hub26-event-kicker',dateLabel(item.startsAt));date.dateTime=item.startsAt;add(card,date,e('h4','',item.title),e('p','',item.summary||''),e('p','',eventTiming(item)+(item.location?' · '+item.location:'')));output.append(card);});
  }
  function apply(v){events=validateEvents(v);categories=v.categories;categorySelect.replaceChildren(allOption);for(const item of categories){const o=e('option','',item.label);o.value=item.id;categorySelect.append(o);}categorySelect.value=category;draw();}
  async function refresh(){try{apply(await load('events.json'));status.textContent=`Adatok ellenőrizve: ${new Intl.DateTimeFormat('hu-HU',{timeZone:ZONE(),hour:'2-digit',minute:'2-digit'}).format(new Date())}. Csak jóváhagyott bejegyzések látszanak.`;}catch(err){status.textContent='Az események ellenőrzése nem sikerült: '+err.message;}}

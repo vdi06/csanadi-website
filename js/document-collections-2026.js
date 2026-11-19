@@ -1,3 +1,4 @@
+import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.43.3';
 const STORE=new URL('../json/data/documents.json',import.meta.url);
 const node=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
 const fold=x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
@@ -6,10 +7,10 @@ export function renderDocumentCollections(){
  const title=node('h2','','PDF-segédletek témakörök szerint');
  const text=node('p','','Az itt szereplő anyagok általános segédletek, nem intézményi szabályzatok.');
  const toolbar=node('div','doc26-toolbar');
- const search=node('input','doc26-search');search.type='search';search.placeholder='Cím, témakör, kulcsszó…';search.setAttribute('aria-label','PDF-segédletek keresése');
- const select=node('select','doc26-filter');select.setAttribute('aria-label','Dokumentum-témakör');const all=node('option','','Minden témakör');all.value='all';select.append(all);
+ const search=node('input','doc26-search form-control');search.type='search';search.placeholder='Cím, témakör, kulcsszó…';search.setAttribute('aria-label','PDF-segédletek keresése');
+ const select=node('select','doc26-filter form-select');select.setAttribute('aria-label','Dokumentum-témakör');const all=node('option','','Minden témakör');all.value='all';select.append(all);
  const result=node('p','doc26-count','Dokumentumok betöltése…');result.setAttribute('role','status');
- const grid=node('div','doc26-grid');const more=node('button','doc26-more','További segédletek mutatása');more.type='button';more.hidden=true;
+ const grid=node('div','doc26-grid');const more=node('button','doc26-more btn btn-outline-primary','További segédletek mutatása');more.type='button';more.hidden=true;
  const manual=node('aside','doc26-manual-highlight');manual.setAttribute('aria-labelledby','doc26-manual-title');
  const manualTitle=node('h2','','A honlap teljes használati útmutatója');manualTitle.id='doc26-manual-title';
  const manualLead=node('p','','Részletes útmutató a 66 tartalmi oldalhoz, a főmenühöz, a keresőhöz, a médiákhoz és a 10 helyi karbantartó eszközhöz.');
@@ -24,8 +25,8 @@ export function renderDocumentCollections(){
   const q=fold(search.value.trim()),cat=select.value;
   const items=docs.filter(d=>(cat==='all'||d.categoryId===cat)&&(!q||fold([d.title,d.summary,...(d.keywords||[])].join(' ')).includes(q)));
   grid.replaceChildren();for(const d of items.slice(0,limit)){
-   const card=node('article','doc26-item');const label=node('span','doc26-label',categories.get(d.categoryId)||'Segédlet');const h=node('h3','',d.title);const desc=node('p','',d.summary||'');const actions=node('div','doc26-actions');
-   const preview=node('a','','PDF megnyitása ↗');preview.href=d.filePath;preview.target='_blank';preview.rel='noopener noreferrer';const down=node('a','','Letöltés');down.href=d.filePath;down.download=d.fileName||'';
+   const card=node('article','doc26-item card');const label=node('span','doc26-label badge text-bg-secondary',categories.get(d.categoryId)||'Segédlet');const h=node('h3','',d.title);const desc=node('p','',d.summary||'');const actions=node('div','doc26-actions');
+   const preview=node('button','btn btn-primary','Megtekintés');preview.type='button';preview.addEventListener('click',()=>openDocumentViewer(d,preview));const down=node('a','btn btn-outline-secondary','Letöltés');down.href=d.filePath;down.download=d.fileName||'';
    actions.append(preview,down);card.append(label,h,desc,actions);grid.append(card);
   }
   result.textContent=`${items.length} megfelelő segédlet · ${Math.min(limit,items.length)} megjelenítve`;

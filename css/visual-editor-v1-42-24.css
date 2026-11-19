@@ -1,0 +1,178 @@
+body.cs-inner-page #app .cs92-article .cs24-toolbar {
+  display: grid;
+  gap: 11px;
+  padding: clamp(14px, 2vw, 19px);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold);
+  border-radius: 15px;
+  background: color-mix(in srgb, var(--card) 90%, var(--gold) 10%);
+  color: var(--ink);
+}
+
+body.cs-inner-page #app .cs24-toolbar-title {
+  font-size: 16px;
+  font-weight: 850;
+  text-align: left;
+}
+
+body.cs-inner-page #app .cs24-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+body.cs-inner-page #app .cs24-action {
+  min-height: 44px;
+  padding: 9px 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+body.cs-inner-page #app .cs24-action:hover:not(:disabled),
+body.cs-inner-page #app .cs24-action[aria-pressed="true"] {
+  border-color: #bd9650;
+  background: color-mix(in srgb, var(--card) 78%, var(--gold) 22%);
+}
+
+body.cs-inner-page #app .cs24-action:disabled {
+  opacity: .47;
+  cursor: not-allowed;
+}
+
+body.cs-inner-page #app .cs24-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+  text-align: left !important;
+}
+
+body.cs-inner-page #app .cs24-status.is-error {
+  color: #ad422f;
+  font-weight: 750;
+}
+
+body.cs-inner-page #app .cs24-movable {
+  position: relative;
+  min-width: 0;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+body.cs-inner-page #app .cs24-card-frame {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  flex: 0 1 var(--cs40-basis, 100%);
+}
+
+body.cs-inner-page #app .cs24-card-frame > :is(.feature-card, .gallery-item) {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+}
+
+body.cs-inner-page #app .cs24-handle {
+  display: none !important;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 2px solid #a87c2e;
+  border-radius: 11px;
+  background: #f6e3b6;
+  color: #2a251c;
+  box-shadow: 0 7px 23px rgba(18, 29, 44, .21);
+  font-size: 25px;
+  font-weight: 750;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+body.cs-inner-page #app .cs24-editing .cs24-movable > .cs24-handle {
+  display: inline-flex !important;
+}
+
+body.cs-inner-page #app .cs24-editing .cs24-movable {
+  outline: 1px dashed color-mix(in srgb, var(--gold) 56%, transparent);
+  outline-offset: -2px;
+}
+
+body.cs-inner-page #app .cs24-editing .cs24-movable > .cs24-handle:hover {
+  background: #f1cf86;
+}
+
+body.cs-inner-page #app .cs24-editing .cs24-moving {
+  z-index: 4;
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 18px 35px rgba(13, 31, 50, .19), 0 0 0 2px #dbaf58;
+  opacity: .91;
+}
+
+body.cs-inner-page #app .cs24-editing .cs24-before {
+  box-shadow: inset 0 5px 0 #d3a13e, 0 0 0 2px rgba(211, 161, 62, .45) !important;
+}
+
+body.cs-inner-page #app .cs24-editing .cs24-after {
+  box-shadow: inset 0 -5px 0 #d3a13e, 0 0 0 2px rgba(211, 161, 62, .45) !important;
+}
+
+body.cs-inner-page #app :is(.cs24-action, .cs24-handle):focus-visible {
+  outline: 3px solid #b17a1b !important;
+  outline-offset: 3px !important;
+}
+
+html[data-theme="dark"] body.cs-inner-page #app .cs24-status.is-error {
+  color: #ffa78d;
+}
+
+@media (max-width: 650px) {
+  body.cs-inner-page #app .cs24-toolbar-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.cs-inner-page #app .cs24-action {
+    width: 100%;
+    padding-inline: 8px;
+  }
+
+  body.cs-inner-page #app .cs24-toggle {
+    grid-column: 1 / -1;
+  }
+
+  body.cs-inner-page #app .cs24-handle {
+    top: 5px;
+    right: 5px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.cs-inner-page #app .cs24-movable {
+    transition: none;
+    transform: none !important;
+  }
+}
+
+@media print {
+  body.cs-inner-page #app .cs24-toolbar,
+  body.cs-inner-page #app .cs24-handle {
+    display: none !important;
+  }
+}

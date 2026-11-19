@@ -133,9 +133,11 @@ export function initSubpageEnhancements() {
   ribbonSection.setAttribute('aria-hidden','true');
   brandRow?.prepend(ribbonSection);
   const progress=document.createElement('div');
-  progress.className='cs-subpage-reading-progress';
-  progress.setAttribute('aria-hidden','true');
-  const progressFill=document.createElement('span');progress.append(progressFill);header.append(progress);
+  progress.className='cs-subpage-reading-progress progress';
+  progress.setAttribute('role','progressbar');
+  progress.setAttribute('aria-label','Az oldal olvasásának előrehaladása');
+  progress.setAttribute('aria-valuemin','0');progress.setAttribute('aria-valuemax','100');
+  const progressFill=document.createElement('span');progressFill.className='progress-bar';progress.append(progressFill);header.append(progress);
   const mapOverlay = document.getElementById('site-map-overlay');
   if(mapOverlay){
     const syncMenuState=()=>{
@@ -172,6 +174,7 @@ export function initSubpageEnhancements() {
     const extent=Math.max(1,pageBottom-pageStart);
     const read=Math.min(100,Math.max(0,(visibleBottom-pageStart)/extent*100));
     progressFill.style.width=read.toFixed(1)+'%';
+    progress.setAttribute('aria-valuenow',String(Math.round(read)));
     const headings=[...document.querySelectorAll('#app .article-section > h2,#app .cs-arrival-shell h2')];
     const last=headings.filter(heading=>heading.getBoundingClientRect().top<=header.getBoundingClientRect().bottom+60).at(-1);
     const section=last?.textContent?.trim()||'Az oldal áttekintése';

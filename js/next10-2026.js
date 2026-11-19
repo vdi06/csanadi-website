@@ -79,6 +79,11 @@ export function renderSportsStatisticsV3(){
   }
   graph.append(svg);
  }
+ const followTheme=()=>{
+  if(!root.isConnected){document.removeEventListener('csanadi:theme-change',followTheme);return;}
+  draw();
+ };
+ document.addEventListener('csanadi:theme-change',followTheme);
  get('data/sports-achievements.json').then(data=>{const counts=new Map();for(const item of data.items||[])if(item.verified===true&&item.status==='verified'&&item.category)counts.set(item.category,(counts.get(item.category)||0)+1);
   rows=[...counts].map(([label,count])=>({label,count})).sort((a,b)=>b.count-a.count||a.label.localeCompare(b.label,'hu'));draw();
  }).catch(()=>notice.textContent='A sporteredmény-JSON most nem elérhető.');
