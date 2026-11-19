@@ -13,17 +13,27 @@
   for(let i=0;i<3;i++)if(a.sem[i]!==b.sem[i])return a.sem[i]>b.sem[i];
   return !!a.stamp&&a.stamp>b.stamp;
  };
- let notifiedVersion=null,checking=null,interval=null;
+ let notifiedVersion=null,checking=null,interval=null,upgrading=false;
  const notice=()=>{
   let root=document.getElementById('cs-release-notice');if(root)return root;
   root=document.createElement('aside');root.id='cs-release-notice';root.className='cs-release-notice';root.hidden=true;
   root.setAttribute('role','status');root.setAttribute('aria-live','polite');document.body.append(root);return root;
  };
  async function upgrade(version){
+  if(upgrading)return;
+  upgrading=true;
+  // Hide immediately: mobile users must not be trapped by a banner while an
+  // old service worker is waiting for its replacement or a slow network.
+  notice().hidden=true;
+  try{sessionStorage.setItem('csanadi-accepted-release',version);}catch{}
   try{
    const registration=await navigator.serviceWorker?.getRegistration?.();
    if(registration){
-    await registration.update();
+    // A temporarily offline phone may leave update() pending for too long.
+    await Promise.race([
+     registration.update(),
+     new Promise(resolve=>setTimeout(resolve,3000))
+    ]);
     if(registration.waiting){
      const changed=new Promise(resolve=>{
       let finished=false;
@@ -42,7 +52,10 @@
  }
  function inform(version){
   if(!newer(version,loadedVersion)||notifiedVersion===version)return;
-  try{if(sessionStorage.getItem('csanadi-dismissed-release')===version)return;}catch{}
+  try{
+   if(sessionStorage.getItem('csanadi-dismissed-release')===version||
+      sessionStorage.getItem('csanadi-accepted-release')===version)return;
+  }catch{}
   notifiedVersion=version;
   const root=notice(),message=document.createElement('span'),actions=document.createElement('span');
   message.textContent='Elérhető a honlap új verziója. A frissítés betölti a legújabb tartalmakat és működést.';

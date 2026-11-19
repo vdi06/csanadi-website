@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.43.7-m1-preview",
+  "release": "csanadi-website-v1.43.8-update-hotfix-preview",
   "date": "2026-11-19",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "V1.43.5 F1–F4: az oktatási témaválasztó natív Bootstrap Tabs/Pills panelekkel, a dokumentumtár Bootstrap Pagination lapozással és szűrésre visszaálló oldalszámmal, továbbá Input Group, Form Check és egységes műveletgombokkal bővült. A korábbi v1.43.4 saját PDF- és tematikus képnézője, kapuja, körmenüje és iskolai adatai változatlanok. A Bootstrap verzióhoz kötött CDN-ről töltődik be. Csak helyi ZIP-kiadás, nincs FTP- vagy GitHub-közzététel. V1.43.5-r1 jóváhagyás előtti javítás: a Kezdőlap beállítása/kedvenc kártyák külön panel megszűnt, az elavult modul kikerült. A meglévő közvetlen fogantyús szerkesztés megmaradt, a szerkesztőgomb vízszintesen középre került, áttetsző gombbal és teljesen átlátszó eszköztárral. Frissített kliensoldali gyorsítótár-verzió. V1.43.5-r2: majdnem átlátszó arany kapu-hover, kezdeti fotó és dekódolt első képkocka összehangolása, folyamatos 60 Hz-közeli képkocka-keverés, finomabb kameramozgás és frissített gyorsítótár. V1.43.5-r3: egységes vízszintes középre rendezés a teljes honlapon, a fejléctől az aloldalakig és szerkesztői felületekig; új globális CSS-réteg, verziózott gyorsítótár. V1.43.5-r4: több soros, háromoszlopos szimmetrikus fejléc, középen a görgetéskor felköltöző működő címeres menügombbal; Facebook, KRÉTA és Instagram-ellenőrzés alatt jelzés; ellenőrzött kliensoldali gyorsítótár. V1.43.5-r5: a megrendelő által megadott hivatalos Instagram-profil aktiválása a fejléc és a lábléc közösségi hivatkozásai között, új lapon, verziózott gyorsítótárral. V1.43.6 önálló kiadás: a jóváhagyásra váró v1.43.5-r5 teljes, változatlan funkciókészlete és tartalma új kiadási azonosítóval, egységes URL-gyorsítótár verzióval, önálló service-worker tárral és ellenőrzött visszaállítható ZIP-csomaggal. Karbantartási javítás v1.43.6-r1: az aloldali fejléc gombjai görgetés után is láthatók; a főoldal kapunyitás-újrajátszás gombja rejtett. V1.43.6-r2: a fölösleges jobb oldali menü- és kapuismétlés-gomb rejtve; az aloldalakon mobilon is a középső címer nyitja a főmenüt. V1.43.6-r3: a fejlécből fizikailag eltávolított kapuismétlő gomb; asztali aloldalon a külön körmenüindító nem látszik, a címer kezeli a navigációt. V1.43.6-r4: az összecsukott főoldali fejléc régi, nagyobb specificitású CSS-szabálya többé nem hozza vissza a jobb szélső menügombot; a középső címer marad a menüindító. M1/D–M2/D fejlesztési előnézet: egységes középső címeres mobilmenünyitó, régi párhuzamos mobilmenügomb elrejtése, adaptív áttetsző mobilfejléc. Kizárólag első ellenőrzési kapu, nem végleges kiadás; tényleges mobilböngészős renderelés még ellenőrizendő.",
+  "notes": "V1.43.5 F1–F4: az oktatási témaválasztó natív Bootstrap Tabs/Pills panelekkel, a dokumentumtár Bootstrap Pagination lapozással és szűrésre visszaálló oldalszámmal, továbbá Input Group, Form Check és egységes műveletgombokkal bővült. A korábbi v1.43.4 saját PDF- és tematikus képnézője, kapuja, körmenüje és iskolai adatai változatlanok. A Bootstrap verzióhoz kötött CDN-ről töltődik be. Csak helyi ZIP-kiadás, nincs FTP- vagy GitHub-közzététel. V1.43.5-r1 jóváhagyás előtti javítás: a Kezdőlap beállítása/kedvenc kártyák külön panel megszűnt, az elavult modul kikerült. A meglévő közvetlen fogantyús szerkesztés megmaradt, a szerkesztőgomb vízszintesen középre került, áttetsző gombbal és teljesen átlátszó eszköztárral. Frissített kliensoldali gyorsítótár-verzió. V1.43.5-r2: majdnem átlátszó arany kapu-hover, kezdeti fotó és dekódolt első képkocka összehangolása, folyamatos 60 Hz-közeli képkocka-keverés, finomabb kameramozgás és frissített gyorsítótár. V1.43.5-r3: egységes vízszintes középre rendezés a teljes honlapon, a fejléctől az aloldalakig és szerkesztői felületekig; új globális CSS-réteg, verziózott gyorsítótár. V1.43.5-r4: több soros, háromoszlopos szimmetrikus fejléc, középen a görgetéskor felköltöző működő címeres menügombbal; Facebook, KRÉTA és Instagram-ellenőrzés alatt jelzés; ellenőrzött kliensoldali gyorsítótár. V1.43.5-r5: a megrendelő által megadott hivatalos Instagram-profil aktiválása a fejléc és a lábléc közösségi hivatkozásai között, új lapon, verziózott gyorsítótárral. V1.43.6 önálló kiadás: a jóváhagyásra váró v1.43.5-r5 teljes, változatlan funkciókészlete és tartalma új kiadási azonosítóval, egységes URL-gyorsítótár verzióval, önálló service-worker tárral és ellenőrzött visszaállítható ZIP-csomaggal. Karbantartási javítás v1.43.6-r1: az aloldali fejléc gombjai görgetés után is láthatók; a főoldal kapunyitás-újrajátszás gombja rejtett. V1.43.6-r2: a fölösleges jobb oldali menü- és kapuismétlés-gomb rejtve; az aloldalakon mobilon is a középső címer nyitja a főmenüt. V1.43.6-r3: a fejlécből fizikailag eltávolított kapuismétlő gomb; asztali aloldalon a külön körmenüindító nem látszik, a címer kezeli a navigációt. V1.43.6-r4: az összecsukott főoldali fejléc régi, nagyobb specificitású CSS-szabálya többé nem hozza vissza a jobb szélső menügombot; a középső címer marad a menüindító. M1/D–M2/D fejlesztési előnézet: egységes középső címeres mobilmenünyitó, régi párhuzamos mobilmenügomb elrejtése, adaptív áttetsző mobilfejléc. Kizárólag első ellenőrzési kapu, nem végleges kiadás; tényleges mobilböngészős renderelés még ellenőrizendő. V1.43.8 javító előnézet: telefonon és asztali böngészőben ismétlődő frissítéskérés javítása, a betöltött szkript és a konfiguráció verziójának egyeztetése, az értesítés azonnali eltűnése Frissítés megnyomásakor, munkamenetes ismétlésvédelem és korlátozott várakozás szolgáltatásmunkás-frissítéskor. Az M3 menü új fejlesztése még nem része ennek a hotfixnek.",
   "files": {
     "assets/documents/admissions-tajekozodasi-handout-2026.pdf": {
       "sizeBytes": 48341,
@@ -3612,7 +3612,7 @@
     },
     "index.html": {
       "sizeBytes": 17898,
-      "sha256": "eaa511adffe64f616a399b1e66ee1dd8175835c3762952e52c962d3cbea8b94e"
+      "sha256": "8225b63a80d7f4022a010a46c72cdb64fd29f237bda7d6d3d1ce3c1a98661786"
     },
     "js/advanced-2026.js": {
       "sizeBytes": 31031,
@@ -3620,7 +3620,7 @@
     },
     "js/app.js": {
       "sizeBytes": 62376,
-      "sha256": "6b7e54b5569fd4f3dcc3c57b1aac22d46100dc634df0ed9b8725b4fddab142b6"
+      "sha256": "f7afb6f5f4577a8b58995c1ec6a0bf2c3273cc06bc346074a118281eaab1f031"
     },
     "js/blocks.js": {
       "sizeBytes": 10406,
@@ -3767,8 +3767,8 @@
       "sha256": "33d84135a0144efd41a457514af5fd826e1e10e150992e5549fd39f8af0fdf4b"
     },
     "js/round13-network.js": {
-      "sizeBytes": 4279,
-      "sha256": "62d86fa837ddfce6b6d7f544a0b10e1247ad8e4b4dd5434dab08aef901138fa5"
+      "sizeBytes": 4817,
+      "sha256": "ae8c8cff22ebb21f32a26531ed262e79d7094590cab0af43494c8116eb9bed03"
     },
     "js/round21-explorer.js": {
       "sizeBytes": 16704,
@@ -4684,7 +4684,7 @@
     },
     "json/config.json": {
       "sizeBytes": 17449,
-      "sha256": "a2fba6a2875a9d7d6ecd85475e59864d6f0b4dc4d0941a63891ff6f3a41f2d41"
+      "sha256": "ceb5d7958a07128e808c5ee28663082b2048abe548591c2dc0598b31acd6c9d5"
     },
     "json/data/arrival-and-development-26.json": {
       "sizeBytes": 6849,
@@ -5192,11 +5192,11 @@
     },
     "script.js": {
       "sizeBytes": 1736,
-      "sha256": "6fdc4d6364527a3454d41a67ea0d951556e29185079282bff8f2844624de26a1"
+      "sha256": "8fcf3869596d46b2fc261ca5a9ca154f5d5e35c212ef2aa6c754df47775e604f"
     },
     "service-worker.js": {
       "sizeBytes": 8404,
-      "sha256": "17077f637c2252ded5a1ff8fbab5c26a626766a9f56a713e419f53a5941320f2"
+      "sha256": "0decb9cdabf6ed17c80c327bfcdd7be27dcbc33e37f2763e740ea53bb3fe9bfe"
     },
     "sitemap.xml": {
       "sizeBytes": 111,
