@@ -1,0 +1,47 @@
+/* v1.43.6 maintenance: subpage toolbar stays available while reading. */
+html body.cs-inner-page #site-header,
+html body.cs-inner-page.cs-header-condensed #site-header {
+  position:sticky!important;
+  top:0!important;
+  z-index:950!important;
+}
+html body.cs-inner-page #site-header .header-symmetry-left,
+html body.cs-inner-page #site-header .header-symmetry-right {
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+html body.cs-inner-page #site-header .header-social,
+html body.cs-inner-page.cs-header-condensed #site-header .header-social {
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+html body.cs-inner-page #site-header .header-kreta,
+html body.cs-inner-page.cs-header-condensed #site-header .header-kreta {
+  display:inline-flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+html body.cs-inner-page.cs-header-condensed #site-header .header-symmetry-right :is(#search-open,#theme-toggle,#portal-replay) {
+  display:inline-flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+}
+html body.cs-inner-page.cs-header-condensed #site-header .theme-label {
+  display:inline!important;
+}
+/* The replay action is an inner-page utility, never a home-page control. */
+html body:not(.cs-inner-page) #site-header #portal-replay {
+  display:none!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+@media(max-width:768px) {
+  html body.cs-inner-page #site-header #mobile-menu-toggle {
+    display:grid!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+  }
+}
