@@ -23,7 +23,7 @@ html body.cs-inner-page.cs-header-condensed #site-header .header-kreta {
   visibility:visible!important;
   opacity:1!important;
 }
-html body.cs-inner-page.cs-header-condensed #site-header .header-symmetry-right :is(#search-open,#theme-toggle,#portal-replay) {
+html body.cs-inner-page.cs-header-condensed #site-header .header-symmetry-right :is(#search-open,#theme-toggle) {
   display:inline-flex!important;
   visibility:visible!important;
   opacity:1!important;
@@ -32,16 +32,42 @@ html body.cs-inner-page.cs-header-condensed #site-header .header-symmetry-right 
 html body.cs-inner-page.cs-header-condensed #site-header .theme-label {
   display:inline!important;
 }
-/* The replay action is an inner-page utility, never a home-page control. */
-html body:not(.cs-inner-page) #site-header #portal-replay {
+/* The crest owns the menu; the obsolete gate-replay control never appears. */
+html body #site-header #portal-replay {
   display:none!important;
   visibility:hidden!important;
   pointer-events:none!important;
 }
 @media(max-width:768px) {
-  html body.cs-inner-page #site-header #mobile-menu-toggle {
+  /* The centered crest replaces the old duplicate right-hand menu. */
+  html body.cs-inner-page #site-header #cs-subpage-menu {
     display:grid!important;
     visibility:visible!important;
     pointer-events:auto!important;
+    position:absolute!important;
+    left:50%!important;
+    top:50%!important;
+    transform:translate(-50%,-50%)!important;
+    z-index:6!important;
+    width:50px!important;
+    height:50px!important;
+    min-width:50px!important;
+    min-height:50px!important;
+  }
+}
+/* The center crest is the sole header menu launcher on every screen size. */
+html body #site-header #mobile-menu-toggle {
+  display:none!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+@media(min-width:769px) {
+  /* Inner pages only need the center crest, never a second circle-menu launcher. */
+  html body.cs-inner-page .orbit-launch,
+  html body.cs-inner-page #orbit-open,
+  html body.cs-inner-page #site-header .menu-btn:not(#cs-subpage-menu) {
+    display:none!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
   }
 }

@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.43.6-r1",
+  "release": "csanadi-website-v1.43.6-r3",
   "date": "2026-11-19",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "V1.43.5 F1–F4: az oktatási témaválasztó natív Bootstrap Tabs/Pills panelekkel, a dokumentumtár Bootstrap Pagination lapozással és szűrésre visszaálló oldalszámmal, továbbá Input Group, Form Check és egységes műveletgombokkal bővült. A korábbi v1.43.4 saját PDF- és tematikus képnézője, kapuja, körmenüje és iskolai adatai változatlanok. A Bootstrap verzióhoz kötött CDN-ről töltődik be. Csak helyi ZIP-kiadás, nincs FTP- vagy GitHub-közzététel. V1.43.5-r1 jóváhagyás előtti javítás: a Kezdőlap beállítása/kedvenc kártyák külön panel megszűnt, az elavult modul kikerült. A meglévő közvetlen fogantyús szerkesztés megmaradt, a szerkesztőgomb vízszintesen középre került, áttetsző gombbal és teljesen átlátszó eszköztárral. Frissített kliensoldali gyorsítótár-verzió. V1.43.5-r2: majdnem átlátszó arany kapu-hover, kezdeti fotó és dekódolt első képkocka összehangolása, folyamatos 60 Hz-közeli képkocka-keverés, finomabb kameramozgás és frissített gyorsítótár. V1.43.5-r3: egységes vízszintes középre rendezés a teljes honlapon, a fejléctől az aloldalakig és szerkesztői felületekig; új globális CSS-réteg, verziózott gyorsítótár. V1.43.5-r4: több soros, háromoszlopos szimmetrikus fejléc, középen a görgetéskor felköltöző működő címeres menügombbal; Facebook, KRÉTA és Instagram-ellenőrzés alatt jelzés; ellenőrzött kliensoldali gyorsítótár. V1.43.5-r5: a megrendelő által megadott hivatalos Instagram-profil aktiválása a fejléc és a lábléc közösségi hivatkozásai között, új lapon, verziózott gyorsítótárral. V1.43.6 önálló kiadás: a jóváhagyásra váró v1.43.5-r5 teljes, változatlan funkciókészlete és tartalma új kiadási azonosítóval, egységes URL-gyorsítótár verzióval, önálló service-worker tárral és ellenőrzött visszaállítható ZIP-csomaggal. Karbantartási javítás v1.43.6-r1: az aloldali fejléc gombjai görgetés után is láthatók; a főoldal kapunyitás-újrajátszás gombja rejtett.",
+  "notes": "V1.43.5 F1–F4: az oktatási témaválasztó natív Bootstrap Tabs/Pills panelekkel, a dokumentumtár Bootstrap Pagination lapozással és szűrésre visszaálló oldalszámmal, továbbá Input Group, Form Check és egységes műveletgombokkal bővült. A korábbi v1.43.4 saját PDF- és tematikus képnézője, kapuja, körmenüje és iskolai adatai változatlanok. A Bootstrap verzióhoz kötött CDN-ről töltődik be. Csak helyi ZIP-kiadás, nincs FTP- vagy GitHub-közzététel. V1.43.5-r1 jóváhagyás előtti javítás: a Kezdőlap beállítása/kedvenc kártyák külön panel megszűnt, az elavult modul kikerült. A meglévő közvetlen fogantyús szerkesztés megmaradt, a szerkesztőgomb vízszintesen középre került, áttetsző gombbal és teljesen átlátszó eszköztárral. Frissített kliensoldali gyorsítótár-verzió. V1.43.5-r2: majdnem átlátszó arany kapu-hover, kezdeti fotó és dekódolt első képkocka összehangolása, folyamatos 60 Hz-közeli képkocka-keverés, finomabb kameramozgás és frissített gyorsítótár. V1.43.5-r3: egységes vízszintes középre rendezés a teljes honlapon, a fejléctől az aloldalakig és szerkesztői felületekig; új globális CSS-réteg, verziózott gyorsítótár. V1.43.5-r4: több soros, háromoszlopos szimmetrikus fejléc, középen a görgetéskor felköltöző működő címeres menügombbal; Facebook, KRÉTA és Instagram-ellenőrzés alatt jelzés; ellenőrzött kliensoldali gyorsítótár. V1.43.5-r5: a megrendelő által megadott hivatalos Instagram-profil aktiválása a fejléc és a lábléc közösségi hivatkozásai között, új lapon, verziózott gyorsítótárral. V1.43.6 önálló kiadás: a jóváhagyásra váró v1.43.5-r5 teljes, változatlan funkciókészlete és tartalma új kiadási azonosítóval, egységes URL-gyorsítótár verzióval, önálló service-worker tárral és ellenőrzött visszaállítható ZIP-csomaggal. Karbantartási javítás v1.43.6-r1: az aloldali fejléc gombjai görgetés után is láthatók; a főoldal kapunyitás-újrajátszás gombja rejtett. V1.43.6-r2: a fölösleges jobb oldali menü- és kapuismétlés-gomb rejtve; az aloldalakon mobilon is a középső címer nyitja a főmenüt. V1.43.6-r3: a fejlécből fizikailag eltávolított kapuismétlő gomb; asztali aloldalon a külön körmenüindító nem látszik, a címer kezeli a navigációt.",
   "files": {
     "assets/documents/admissions-tajekozodasi-handout-2026.pdf": {
       "sizeBytes": 48341,
@@ -3387,8 +3387,8 @@
       "sha256": "7c5ace8fed63f88d11f9c8c328a2966ac5a612b1f91bb13eda830d0d5eade516"
     },
     "css/header-persistent-actions-v1-43-6.css": {
-      "sizeBytes": 1649,
-      "sha256": "e13a7dfc553d76d9fdcd6a6832a8f8aad0974195b5238ad215060cf1918bdf4e"
+      "sizeBytes": 2530,
+      "sha256": "42811609c06aed59ad4dcac54e246af83a990e6cd9e40f55303a6e8234dc7f25"
     },
     "css/header-symmetric-rows-v1-43-5.css": {
       "sizeBytes": 4242,
@@ -3611,8 +3611,8 @@
       "sha256": "d699af49beee4cb9af24350bdf8a3092e82dcb83cdd40a46554c50880a6bae9c"
     },
     "index.html": {
-      "sizeBytes": 18387,
-      "sha256": "992e921b49e9cb4df960fd7edc3d0d5cb0492ae7e81fa4beb98726863af2a07f"
+      "sizeBytes": 17772,
+      "sha256": "028fcfc89f3efcd46834dabf4e8ba77cefcb0ff5d62a9b2a8c63ee4e53343334"
     },
     "js/advanced-2026.js": {
       "sizeBytes": 31031,
