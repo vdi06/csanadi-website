@@ -25,9 +25,10 @@ function installHomeShell(){
  preview.addEventListener('click',()=>document.dispatchEvent(new Event('csanadi:menu-toggle')));
  // A zsugorodó fejlécben ez az egyetlen középső, címeres főmenügomb látszik.
  compact.append(preview);
- // Görgetéskor a kis kép nem kap új sort: a meglévő brand-row közepére kerül.
+ // The crest owns the middle column of the same symmetrical controls row.
  const brandRow=header.querySelector('.brand-row');
- (brandRow||header).append(compact);
+ const crestSlot=header.querySelector('.header-symmetry-center');
+ (crestSlot||brandRow||header).append(compact);
  // A háromszavas jelmondat a valódi fejléc része, nem a cserélődő képé.
  const motto=header.querySelector('.header-tag');
  if(motto&&brandRow){motto.classList.add('cs1402-persistent-motto');brandRow.append(motto);}

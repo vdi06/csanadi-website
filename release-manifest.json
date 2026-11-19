@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.43.5",
+  "release": "csanadi-website-v1.43.6",
   "date": "2026-11-19",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "V1.43.5 F1–F4: az oktatási témaválasztó natív Bootstrap Tabs/Pills panelekkel, a dokumentumtár Bootstrap Pagination lapozással és szűrésre visszaálló oldalszámmal, továbbá Input Group, Form Check és egységes műveletgombokkal bővült. A korábbi v1.43.4 saját PDF- és tematikus képnézője, kapuja, körmenüje és iskolai adatai változatlanok. A Bootstrap verzióhoz kötött CDN-ről töltődik be. Csak helyi ZIP-kiadás, nincs FTP- vagy GitHub-közzététel. V1.43.5-r1 jóváhagyás előtti javítás: a Kezdőlap beállítása/kedvenc kártyák külön panel megszűnt, az elavult modul kikerült. A meglévő közvetlen fogantyús szerkesztés megmaradt, a szerkesztőgomb vízszintesen középre került, áttetsző gombbal és teljesen átlátszó eszköztárral. Frissített kliensoldali gyorsítótár-verzió. V1.43.5-r2: majdnem átlátszó arany kapu-hover, kezdeti fotó és dekódolt első képkocka összehangolása, folyamatos 60 Hz-közeli képkocka-keverés, finomabb kameramozgás és frissített gyorsítótár. V1.43.5-r3: egységes vízszintes középre rendezés a teljes honlapon, a fejléctől az aloldalakig és szerkesztői felületekig; új globális CSS-réteg, verziózott gyorsítótár.",
+  "notes": "V1.43.5 F1–F4: az oktatási témaválasztó natív Bootstrap Tabs/Pills panelekkel, a dokumentumtár Bootstrap Pagination lapozással és szűrésre visszaálló oldalszámmal, továbbá Input Group, Form Check és egységes műveletgombokkal bővült. A korábbi v1.43.4 saját PDF- és tematikus képnézője, kapuja, körmenüje és iskolai adatai változatlanok. A Bootstrap verzióhoz kötött CDN-ről töltődik be. Csak helyi ZIP-kiadás, nincs FTP- vagy GitHub-közzététel. V1.43.5-r1 jóváhagyás előtti javítás: a Kezdőlap beállítása/kedvenc kártyák külön panel megszűnt, az elavult modul kikerült. A meglévő közvetlen fogantyús szerkesztés megmaradt, a szerkesztőgomb vízszintesen középre került, áttetsző gombbal és teljesen átlátszó eszköztárral. Frissített kliensoldali gyorsítótár-verzió. V1.43.5-r2: majdnem átlátszó arany kapu-hover, kezdeti fotó és dekódolt első képkocka összehangolása, folyamatos 60 Hz-közeli képkocka-keverés, finomabb kameramozgás és frissített gyorsítótár. V1.43.5-r3: egységes vízszintes középre rendezés a teljes honlapon, a fejléctől az aloldalakig és szerkesztői felületekig; új globális CSS-réteg, verziózott gyorsítótár. V1.43.5-r4: több soros, háromoszlopos szimmetrikus fejléc, középen a görgetéskor felköltöző működő címeres menügombbal; Facebook, KRÉTA és Instagram-ellenőrzés alatt jelzés; ellenőrzött kliensoldali gyorsítótár. V1.43.5-r5: a megrendelő által megadott hivatalos Instagram-profil aktiválása a fejléc és a lábléc közösségi hivatkozásai között, új lapon, verziózott gyorsítótárral. V1.43.6 önálló kiadás: a jóváhagyásra váró v1.43.5-r5 teljes, változatlan funkciókészlete és tartalma új kiadási azonosítóval, egységes URL-gyorsítótár verzióval, önálló service-worker tárral és ellenőrzött visszaállítható ZIP-csomaggal.",
   "files": {
     "assets/documents/admissions-tajekozodasi-handout-2026.pdf": {
       "sizeBytes": 48341,
@@ -3386,6 +3386,10 @@
       "sizeBytes": 5736,
       "sha256": "7c5ace8fed63f88d11f9c8c328a2966ac5a612b1f91bb13eda830d0d5eade516"
     },
+    "css/header-symmetric-rows-v1-43-5.css": {
+      "sizeBytes": 4242,
+      "sha256": "995b000a2d8333b3c9e08daad838f3f09f3e8bb89d41070286f258219cf7d5b1"
+    },
     "css/header-v1-41-full-name.css": {
       "sizeBytes": 2961,
       "sha256": "4f7cca785e56dfd8ad4f5b76e5729e984c38b4db62c3ed6cf42975f96640a9a6"
@@ -3603,16 +3607,16 @@
       "sha256": "d699af49beee4cb9af24350bdf8a3092e82dcb83cdd40a46554c50880a6bae9c"
     },
     "index.html": {
-      "sizeBytes": 17949,
-      "sha256": "460e119f42e506f4d17431e2dbef967488e793a83f3cd7788190f44612f00907"
+      "sizeBytes": 18300,
+      "sha256": "2e54eb59e239903c515e5d89029ced252e47c56fa202ac36de776313e43d5211"
     },
     "js/advanced-2026.js": {
-      "sizeBytes": 31034,
-      "sha256": "77b06f3ed9f6f5a42ea6a74ebf971473376ac4de0a85b25cb730fc5ec87f08ee"
+      "sizeBytes": 31031,
+      "sha256": "41e32adffb5b318d9728be6169f31a17497051c34c2568a253e05a210ada3212"
     },
     "js/app.js": {
-      "sizeBytes": 62379,
-      "sha256": "c0b9708b92edf082d15f358ba48c890a44f392d40b1fad66f3ce5e18e4fb4ee9"
+      "sizeBytes": 62376,
+      "sha256": "e72c97e7a638578aedaf048375ba5613defd4a94ad46121d96cd18ff140ae30d"
     },
     "js/blocks.js": {
       "sizeBytes": 10406,
@@ -3747,8 +3751,8 @@
       "sha256": "da927ace91877fea7c565dc8f2c2da47f16209916ce2cbe347bbc81aa0db7530"
     },
     "js/release-v1-39-1.js": {
-      "sizeBytes": 6906,
-      "sha256": "a4817ff7d5c98e647c4a684d1b806233537d2f050f7d45600dccf16a640587a6"
+      "sizeBytes": 6970,
+      "sha256": "09871010542dde11510641e631e2e79e09e22d1b04b0066e47035ca8fbcbceab"
     },
     "js/round10-enhancements.js": {
       "sizeBytes": 5059,
@@ -4675,8 +4679,8 @@
       "sha256": "14dd7ac6801707dd627c57ee5b1da2da8bd11098bf58de8ff34318d57670c5f3"
     },
     "json/config.json": {
-      "sizeBytes": 17452,
-      "sha256": "dea6a893f05d6511fca06e8566786cab9d503c528b2d6accdc640025d2934fc0"
+      "sizeBytes": 17449,
+      "sha256": "d26373c685b39926a1b63f2326c730513b51dcffcde3e8a7b480767e951af4a5"
     },
     "json/data/arrival-and-development-26.json": {
       "sizeBytes": 6849,
@@ -4751,8 +4755,8 @@
       "sha256": "cdcd2ce37099213caab43b3bad3b05729b009a43eefd64ccae04900caf69f38e"
     },
     "json/data/social.json": {
-      "sizeBytes": 631,
-      "sha256": "2b04e2a0c84d8d4a9c00b076b208ea1dcd399ae8a97a7e4f2da5955da5e7f478"
+      "sizeBytes": 981,
+      "sha256": "2d753a1488ea8cd15c6cd63776b5fdcbc28f5be920fd78491f1c6e79e203c85c"
     },
     "json/data/spa-features-42.json": {
       "sizeBytes": 71907,
@@ -5179,12 +5183,12 @@
       "sha256": "ee51df6dbbccda4533d6a067cfdd8a35a6421611b6cccc814fbbe9f7e65aa283"
     },
     "script.js": {
-      "sizeBytes": 1740,
-      "sha256": "624c552e8278b903c77dd5e8605281c919743eba8801a885fee13d97e8d3fe16"
+      "sizeBytes": 1737,
+      "sha256": "c82989ee143c01dfecd3a2ee28a64537f25627d433880747f35aaf6f208d3922"
     },
     "service-worker.js": {
-      "sizeBytes": 8407,
-      "sha256": "0a379340dde6024d020f5eddccbb23e71243b1bcd59db56999c8804a954ec378"
+      "sizeBytes": 8404,
+      "sha256": "117d569fa70982cd44594b7bc43fb9a5bfcdfc1a2ee7e630956aa8eb12adea99"
     },
     "sitemap.xml": {
       "sizeBytes": 111,

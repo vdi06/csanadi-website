@@ -1,0 +1,69 @@
+/* V1.43.5-r4: centered name and a symmetric three-column toolbar. */
+html body #site-header .brand-row{
+  width:100%!important;max-width:100%!important;
+  flex-direction:column!important;align-items:center!important;justify-content:center!important;
+  padding:10px clamp(8px,2.2vw,28px)!important;gap:8px!important;
+  height:auto!important;min-height:106px!important;
+}
+html body #site-header .brand{
+  justify-content:center!important;margin-inline:auto!important;
+  width:min(100%,660px)!important;max-width:100%!important;flex:0 1 auto!important;
+}
+html body #site-header .brand-copy{align-items:center!important}
+html body #site-header .header-actions{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) clamp(76px,8.2vw,112px) minmax(0,1fr)!important;
+  column-gap:clamp(4px,1vw,16px)!important;align-items:center!important;
+  justify-items:stretch!important;width:100%!important;max-width:1280px!important;
+  margin-inline:auto!important;padding:0!important;position:relative!important;
+}
+html body #site-header .header-symmetry-side{
+  display:flex!important;align-items:center!important;flex-wrap:wrap!important;
+  gap:clamp(5px,1.15vw,14px)!important;min-width:0!important;margin:0!important;
+}
+html body #site-header .header-symmetry-left{justify-content:flex-end!important}
+html body #site-header .header-symmetry-right{justify-content:flex-start!important}
+html body #site-header .header-symmetry-side > *{margin:0!important;flex:0 0 auto!important}
+html body #site-header .header-symmetry-center{
+  position:relative!important;display:flex!important;align-items:center!important;
+  justify-content:center!important;justify-self:center!important;
+  width:100%!important;min-width:0!important;min-height:54px!important;margin:0!important;
+}
+html body #site-header #cs39-mini-hero{
+  position:relative!important;left:auto!important;right:auto!important;
+  top:auto!important;bottom:auto!important;inset:auto!important;
+  transform:none!important;margin:0 auto!important;
+  justify-content:center!important;align-items:center!important;
+}
+/* Older condensed-header styles have ID-heavy selectors; override them too. */
+html body.cs-home-header.cs-home-condensed #site-header .header-symmetry-center #cs39-mini-hero,
+html body.cs-inner-page.cs-header-condensed #site-header .header-symmetry-center #cs39-mini-hero{
+  position:static!important;inset:auto!important;
+  left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+  margin:0 auto!important;transform:none!important;
+  width:min(96px,100%)!important;max-width:100%!important;
+  justify-self:center!important;align-self:center!important;
+}
+html body #site-header .header-symmetry-left .header-tag{margin:0!important;text-align:center!important}
+html body #site-header .header-social,html body #site-header .social-chip-group{
+  display:flex!important;justify-content:center!important;flex-wrap:wrap!important;gap:6px!important;
+}
+html body #site-header .social-chip.is-pending{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  gap:4px!important;padding:6px 9px!important;border:1px dashed currentColor!important;
+  border-radius:99px!important;opacity:.72!important;cursor:default!important;
+}
+html body #site-header .header-symmetry-side .icon-btn{flex:0 0 auto!important}
+@media(max-width:768px){
+  html body #site-header .brand-row{gap:5px!important;padding:8px 7px!important}
+  html body #site-header .brand{max-width:100%!important}
+  html body #site-header .header-actions{
+    grid-template-columns:minmax(0,1fr) 54px minmax(0,1fr)!important;column-gap:3px!important;
+  }
+  html body #site-header .header-symmetry-side{gap:3px!important}
+  html body #site-header .header-symmetry-side :is(.social-chip,.social-chip.is-pending){font-size:11px!important;padding:3px 5px!important}
+  html body #site-header .header-kreta{display:inline-flex!important;min-height:36px!important;padding:3px 7px!important;font-size:11px!important}
+  html body #site-header .header-symmetry-right .icon-btn{min-width:36px!important;min-height:36px!important}
+  html body #site-header .header-symmetry-center{min-height:54px!important}
+  html body #site-header #cs39-mini-hero{max-width:54px!important}
+}

@@ -2,8 +2,8 @@
   "schemaVersion": "2.0.0",
   "collectionId": "collection:social-2026",
   "status": "development",
-  "lastChecked": "2026-11-14",
-  "description": "A Facebook-hivatkozás külső intézményjegyzék alapján szerepel; az intézménynek meg kell erősítenie. További profilokat nem találunk ki.",
+  "lastChecked": "2026-11-19",
+  "description": "A Facebook-link az eddig rögzített intézményi adat; az Instagram-hivatkozást a weboldal megrendelője adta meg 2026. november 19-én. Külső beágyazás nincs engedélyezve.",
   "items": [
     {
       "id": "social:facebook",
@@ -12,6 +12,18 @@
       "status": "published",
       "schoolVerified": true,
       "url": "https://www.facebook.com/csanadiiskola",
+      "embed": {
+        "approved": false,
+        "url": null
+      }
+    },
+    {
+      "id": "social:instagram",
+      "platform": "Instagram",
+      "label": "Instagram – Csanádi Sportiskola",
+      "status": "published",
+      "schoolVerified": true,
+      "url": "https://www.instagram.com/_csanadi_/?hl=hu",
       "embed": {
         "approved": false,
         "url": null
