@@ -1,6 +1,24 @@
 /* Nine-frame entrance – the live image contains the movement; no duplicate CSS door animations. */
 .gate26{--gate-photo-width:max(100vw,177.68vh);--gate-photo-height:max(100vh,56.28vw);position:fixed!important;inset:0!important;z-index:2600!important;display:block!important;overflow:hidden!important;background:#07131d!important;isolation:isolate}
 .gate26 .gate26-frame{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;display:block;filter:brightness(.89);z-index:1;pointer-events:none;user-select:none}
+/* The arched glazing is centered at roughly 21% of the uncropped 16:9 frame.
+   Sizing uses the same cover-image geometry on wide and narrow screens. */
+.gate26 .gate26-glass-crest{
+ position:absolute!important;z-index:3!important;left:50%!important;
+ top:calc(50% - var(--gate-photo-height)*.29)!important;
+ width:calc(var(--gate-photo-height)*.162)!important;height:calc(var(--gate-photo-height)*.162)!important;
+ transform:translate(-50%,-50%);display:grid!important;place-items:center!important;
+ overflow:hidden!important;border:3px solid #e8c779!important;border-radius:50%!important;
+ background:radial-gradient(circle at 34% 22%,rgba(35,74,105,.94),rgba(4,22,38,.92) 74%)!important;
+ box-shadow:0 0 0 4px rgba(13,30,43,.58),0 0 24px rgba(238,194,106,.37),inset 0 0 16px rgba(244,209,137,.22)!important;
+ pointer-events:none!important;user-select:none!important;
+}
+.gate26 .gate26-glass-crest-image{
+ position:absolute!important;left:50%;top:50%;transform:translate(-50%,-50%);
+ width:190%!important;height:190%!important;max-width:none!important;
+ object-fit:contain!important;filter:drop-shadow(0 5px 6px rgba(0,0,0,.7));
+ pointer-events:none!important;user-select:none!important;
+}
 .gate26 .gate26-door-hitbox{
  position:absolute!important;z-index:5!important;left:50%!important;top:calc(50% + var(--gate-photo-height)*.096)!important;
  width:calc(var(--gate-photo-width)*.16)!important;height:calc(var(--gate-photo-height)*.535)!important;
@@ -14,7 +32,20 @@
 .gate26 .gate26-door-outline{display:block;width:100%;height:100%;pointer-events:none;overflow:visible;filter:drop-shadow(0 0 2px rgba(39,22,6,.42))}
 .gate26 .gate26-door-contour{fill:none;stroke:#f4d996;stroke-width:2.3;stroke-opacity:.52;stroke-linecap:round;stroke-linejoin:round}
 .gate26 .gate26-door-seam{fill:none;stroke:#f4d996;stroke-width:1.5;stroke-opacity:.19}
-.gate26 .gate26-door-hitbox:hover .gate26-door-contour,.gate26 .gate26-door-hitbox:focus-visible .gate26-door-contour{stroke-opacity:.97;stroke-width:3.3}
+/* Clear gold hover/focus feedback: the door itself, not the surrounding wall,
+   is the interactive target. The highlight vanishes as soon as the door opens. */
+.gate26 .gate26-door-hitbox{transition:filter .22s ease,box-shadow .22s ease!important}
+.gate26 .gate26-door-hitbox:is(:hover,:focus-visible){
+ background-color:rgba(226,166,45,.58)!important;
+ background-image:linear-gradient(120deg,rgba(255,238,166,.28),rgba(215,158,42,.06) 48%,rgba(255,226,133,.30))!important;
+ box-shadow:inset 0 0 32px rgba(255,220,124,.58),0 0 30px rgba(245,189,66,.64)!important;
+ filter:drop-shadow(0 0 13px rgba(255,210,102,.95)) drop-shadow(0 0 25px rgba(245,181,62,.52));
+}
+.gate26 .gate26-door-hitbox:is(:hover,:focus-visible) .gate26-door-contour{
+ fill:rgba(255,211,103,.22);stroke:#ffe49d;stroke-opacity:1;stroke-width:4.5;
+ filter:drop-shadow(0 0 6px rgba(255,212,105,.95));
+}
+.gate26 .gate26-door-hitbox:is(:hover,:focus-visible) .gate26-door-seam{stroke:#ffe1a0;stroke-opacity:.85;stroke-width:2.5}
 .gate26 .gate26-skip-bar{position:absolute!important;z-index:9!important;inset:auto 0 0!important;width:100%!important;height:clamp(120px,17vh,174px)!important;display:flex!important;align-items:flex-end!important;justify-content:center!important;padding:22px max(20px,env(safe-area-inset-right)) calc(21px + env(safe-area-inset-bottom))!important;background:linear-gradient(to top,rgba(4,15,26,.82),rgba(4,15,26,.40) 44%,transparent)!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;pointer-events:none}
 .gate26 .gate26-bottom-copy{width:min(1020px,calc(100% - 116px));max-width:none;display:flex!important;align-items:center!important;justify-content:center!important;margin:auto!important;text-align:center!important;color:#fff6df}
 .gate26 .gate26-school-name{margin:0!important;max-width:100%;color:#f9e6b5!important;text-align:center!important;text-wrap:balance;font-size:clamp(16px,1.55vw,24px)!important;line-height:1.33!important;letter-spacing:.065em!important;font-weight:750!important;text-shadow:0 2px 4px #000,0 5px 22px #000}
@@ -26,7 +57,9 @@
 
 /* Camera advances gently toward the open doorway during the last third of playback. */
 .gate26-open .gate26-frame{animation:cs17-approach var(--gate26-duration,2250ms) cubic-bezier(.2,.05,.25,1) both}
+.gate26-open .gate26-glass-crest{animation:cs17-crest-approach var(--gate26-duration,2250ms) cubic-bezier(.2,.05,.25,1) both}
 .gate26-open .gate26-bottom-copy{animation:cs17-caption var(--gate26-duration,2250ms) ease-in both}
 @keyframes cs17-approach{0%,58%{transform:scale(1)}100%{transform:scale(1.075)}}
+@keyframes cs17-crest-approach{0%,58%{transform:translate(-50%,-50%) scale(1)}100%{transform:translate(-50%,-50%) translateY(calc(var(--gate-photo-height)*-.021)) scale(1.075)}}
 @keyframes cs17-caption{0%,68%{opacity:1}100%{opacity:.4}}
-@media(prefers-reduced-motion:reduce){.gate26-open .gate26-frame,.gate26-open .gate26-bottom-copy{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.gate26-open .gate26-frame,.gate26-open .gate26-glass-crest,.gate26-open .gate26-bottom-copy{animation:none!important}}

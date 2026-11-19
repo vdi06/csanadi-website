@@ -25,7 +25,7 @@ async function load(name){const r=await fetch(BASE+name,{cache:'no-store'});if(!
 const heading=(over,title,desc)=>{const box=e('div','experience-section-head');add(box,e('span','experience-eyebrow',over),e('h2','experience-title',title));if(desc)box.append(e('p','experience-lead',desc));return box;};
 
  
-import {showGateEntrance} from './gate-sequence-v1-42-17.js';
+import {showGateEntrance} from './gate-sequence-v1-42-17.js?v=1.42.19';
 export function openEntrancePortal(options={}){showGateEntrance(options);}
 
 function bindPortalButton(){const replay=document.getElementById('portal-replay');if(replay&&!replay.dataset.wired){replay.dataset.wired='1';replay.addEventListener('click',()=>openEntrancePortal({force:true}));}}

@@ -16,13 +16,20 @@ export function showGateEntrance(){
  const wrapper=tag('div','gate26 gate26--frames');wrapper.id='gate26';wrapper.style.setProperty('--gate26-duration',duration+'ms');
  wrapper.setAttribute('role','dialog');wrapper.setAttribute('aria-modal','true');wrapper.setAttribute('aria-labelledby','gate26-title');
  const photo=tag('img','gate26-frame');photo.src=resources[0];photo.alt='';photo.draggable=false;photo.setAttribute('aria-hidden','true');
+ // The original school crest sits over the curved glass above the green door.
+ // Keep it decorative for now; the same anchor can later become the menu trigger.
+ const glassCrest=tag('div','gate26-glass-crest');glassCrest.setAttribute('aria-hidden','true');
+ const glassLogo=tag('img','gate26-glass-crest-image');
+ glassLogo.src='assets/media/logo/csanadi-crest-512.webp';glassLogo.alt='';
+ glassLogo.width=512;glassLogo.height=512;glassLogo.draggable=false;
+ glassCrest.append(glassLogo);
  const hit=tag('button','gate26-door-hitbox');hit.type='button';hit.title='A kapu kinyitása';hit.setAttribute('aria-label','A zöld iskolakapu kinyitása');
  // SVG follows the curved door silhouette; there is no rectangular overlay.
  hit.innerHTML='<svg class="gate26-door-outline" viewBox="0 0 280 520" preserveAspectRatio="none" aria-hidden="true"><path class="gate26-door-contour" d="M 6 78 C 37 48 76 17 140 12 C 204 17 243 48 274 78 L 274 510 Q 274 514 269 514 L 11 514 Q 6 514 6 510 Z"/><path class="gate26-door-seam" d="M 140 12 L 140 513"/></svg>';
  const bottom=tag('div','gate26-skip-bar');const title=tag('h2','gate26-school-name','CSANÁDI ÁRPÁD SPORTISKOLA, ÁLTALÁNOS ISKOLA ÉS GIMNÁZIUM');title.id='gate26-title';
  const copy=tag('div','gate26-bottom-copy');copy.append(title);
  const skip=tag('button','gate26-skip','⏭');skip.type='button';skip.title='Belépőanimáció kihagyása';skip.setAttribute('aria-label','Belépőanimáció kihagyása');
- bottom.append(copy,skip);wrapper.append(photo,hit,bottom);document.body.append(wrapper);dismissPrelude();
+ bottom.append(copy,skip);wrapper.append(photo,glassCrest,hit,bottom);document.body.append(wrapper);dismissPrelude();
  const previous=document.activeElement;const overflow=document.body.style.overflow;document.body.style.overflow='hidden';
  let finished=false,playing=false,raf=0,fade=0,lastFrame=0;
  // Desktop can fall back to the light offline frames if the large variants are unavailable.

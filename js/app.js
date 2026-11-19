@@ -17,7 +17,7 @@ import {renderDocumentCollections} from './document-collections-2026.js?v=1.42.1
 import {renderPageMedia} from './page-media-2026.js?v=1.42.18';
 import {useSiteSettings,settingNumber} from './site-settings-2026.js?v=1.42.18';
 import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.42.18';
-import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.42.18';
+import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.42.19';
 import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.42.18';
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=1.42.18';
  

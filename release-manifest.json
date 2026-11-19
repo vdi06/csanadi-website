@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.42.18",
+  "release": "csanadi-website-v1.42.20",
   "date": "2026-11-19",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "A v1.42.17 alapcsomag teljes útvonal- és függőségellenőrzése; szerkesztői műhely oldal-, kép- és dokumentummódosításhoz, verziózott teljes ZIP-exporttal; Chrome-frissítési értesítés, új Service Worker élettartam és ellenőrzött hálózatelső JSON/HTML-stratégia. Nincs szerveroldali írás, GitHub- vagy FTP-publikálás.",
+  "notes": "A v1.42.19 csomag kapujelenetében a zöld ajtóra aranyszínű, jól látható egérmutatós és billentyűzetes fókuszkiemelés került. Az eredeti aranykeretes címer, a kilenc kapuképkocka, a navigáció, a JSON-tartalom és az FTP-kompatibilis működés megmaradt. Nem történt GitHub- vagy FTP-publikálás.",
   "files": {
     "assets/documents/admissions-tajekozodasi-handout-2026.pdf": {
       "sizeBytes": 48341,
@@ -3343,8 +3343,8 @@
       "sha256": "c7a116dcc16fe23057f5dbb067e2ac74c34fc37f64b8e40f55d82e514130c3f0"
     },
     "css/entrance-sequence.css": {
-      "sizeBytes": 4895,
-      "sha256": "e6705da6d972e67879a86ee30062467b74c45f998ebe19048f8fe3f2fb72422a"
+      "sizeBytes": 7267,
+      "sha256": "41995cf7d2d8299e6dffbab1896d8f078858c56471f64c6b4630ec435f7dcfc4"
     },
     "css/extended-hubs-2026.css": {
       "sizeBytes": 9190,
@@ -3556,15 +3556,15 @@
     },
     "index.html": {
       "sizeBytes": 16566,
-      "sha256": "a92b41a9396b5c136e313cbeb9783190e5f2180b5d8a05114f4840b8390f28e6"
+      "sha256": "2efbae111f5c404594f031e36bb9eb74e6102ed14066e4b1343c5a75a4af836b"
     },
     "js/advanced-2026.js": {
-      "sizeBytes": 30521,
-      "sha256": "9bfc06cf05e01354985f3e7fc177adbf44b8ec1f3ff82115f8443c24e2c3307b"
+      "sizeBytes": 30531,
+      "sha256": "c8eeaa3c562c959e9b6cfcbe64fafc226260e210efe31295b857ed5fb56909d5"
     },
     "js/app.js": {
       "sizeBytes": 58921,
-      "sha256": "c00970b51afd78df96ad9a7f27c589288baa64c4c32c2b39faba3f0fcf1227b0"
+      "sha256": "2e7401a3ff2f2d488b3bd66b78467d452f7b8a244aaa3b4013d0f47595ca997d"
     },
     "js/blocks.js": {
       "sizeBytes": 9214,
@@ -3607,8 +3607,8 @@
       "sha256": "463cbfbf2dbc714049c32ddf872b024f94ae2b148df1902a3e18a108dcd0fd1d"
     },
     "js/gate-sequence-v1-42-17.js": {
-      "sizeBytes": 5112,
-      "sha256": "37130f4a9051541ae4b8ef3fa8f8ef769a192624107bdd670eecde14e333d4b1"
+      "sizeBytes": 5614,
+      "sha256": "45623df06890cd37a3e77a390a3e30dce9203738d639c38f3b0e4abd10009c7c"
     },
     "js/guide-theme-2026.js": {
       "sizeBytes": 2322,
@@ -3812,7 +3812,7 @@
     },
     "json/config.json": {
       "sizeBytes": 17450,
-      "sha256": "0ca7f97b0093ded3135db2493724d9211e80afcbe878842988a97412c15e3fcf"
+      "sha256": "eb7206362b3de08a07b60c38982a9f30725bcd8ce74610937469b3e1b92109b8"
     },
     "json/data/arrival-and-development-26.json": {
       "sizeBytes": 6849,
@@ -3922,6 +3922,14 @@
       "sizeBytes": 3615,
       "sha256": "e35f67bcfab755b338f1ab5dff4ef1cdd328a9f0a60c046d5cd6c0894b47b9d3"
     },
+    "json/pages/education.json": {
+      "sizeBytes": 3342,
+      "sha256": "0fa1d2e97384538de5b18cef1f52866f4cbc41f700e34f7ec72bee408c1c81f2"
+    },
+    "json/pages/education/admissions.json": {
+      "sizeBytes": 4231,
+      "sha256": "4873bbc16e49584233268b60641cf2dd2f4e48b94a2170cf7707ff4434afe8b8"
+    },
     "json/pages/education/admissions/admission-deadlines.json": {
       "sizeBytes": 4113,
       "sha256": "ebc3db9fcf7492eb5dbf07fc757a0f25c3ca2e85740f89c1c43966057a537a8d"
@@ -3938,9 +3946,9 @@
       "sizeBytes": 3770,
       "sha256": "587b14f4d11b60fda0355971b77b0ee6e8eb64179f2c358c3abb602c95e849c0"
     },
-    "json/pages/education/admissions.json": {
-      "sizeBytes": 4231,
-      "sha256": "4873bbc16e49584233268b60641cf2dd2f4e48b94a2170cf7707ff4434afe8b8"
+    "json/pages/education/digital-culture.json": {
+      "sizeBytes": 10708,
+      "sha256": "13aacf9115ed891550e33b28a52eabd4d3099fdc7d73282fc3f3d63cbf36a386"
     },
     "json/pages/education/digital-culture/artificial-intelligence.json": {
       "sizeBytes": 4072,
@@ -3950,9 +3958,9 @@
       "sizeBytes": 3835,
       "sha256": "069531cba48db124f2917353a70db74b9fda3428b7dad52e63d023d541cda4e5"
     },
-    "json/pages/education/digital-culture.json": {
-      "sizeBytes": 10708,
-      "sha256": "13aacf9115ed891550e33b28a52eabd4d3099fdc7d73282fc3f3d63cbf36a386"
+    "json/pages/education/exams.json": {
+      "sizeBytes": 3252,
+      "sha256": "7aa4c0359efab566045edb363486036db864fac4afc20699893b098bcde20813"
     },
     "json/pages/education/exams/classification-exams.json": {
       "sizeBytes": 3779,
@@ -3966,29 +3974,29 @@
       "sizeBytes": 3440,
       "sha256": "5832a596d37585e650f4062f8c22f2a3244203d74e43924b381bd0501b6b4d80"
     },
-    "json/pages/education/exams.json": {
-      "sizeBytes": 3252,
-      "sha256": "7aa4c0359efab566045edb363486036db864fac4afc20699893b098bcde20813"
-    },
     "json/pages/education/learning-and-community.json": {
       "sizeBytes": 874,
       "sha256": "6a1af64c4f5f515e497b2bd71b392955de3edcbe8d23209fe5419b531983f93d"
-    },
-    "json/pages/education/learning-resources/learning-support.json": {
-      "sizeBytes": 3187,
-      "sha256": "0215a24d7b1ae07174d6446629a4ea2bb38ae9434eb660130cb2c4786e2683b0"
     },
     "json/pages/education/learning-resources.json": {
       "sizeBytes": 3549,
       "sha256": "8d6feae8fcc75b47acbd3cb4923a6da465b41301e61f84f24e8b20875ed37ca9"
     },
-    "json/pages/education/library/library-services.json": {
-      "sizeBytes": 3162,
-      "sha256": "0cf8e4a20fbcb70ce6bb6ed702dd6593a569373594442abc5ccebacb454cdbaf"
+    "json/pages/education/learning-resources/learning-support.json": {
+      "sizeBytes": 3187,
+      "sha256": "0215a24d7b1ae07174d6446629a4ea2bb38ae9434eb660130cb2c4786e2683b0"
     },
     "json/pages/education/library.json": {
       "sizeBytes": 3696,
       "sha256": "0760562c4ebce482e9c010fd5daa86a2dca6788883389df89977cf2b6d94654d"
+    },
+    "json/pages/education/library/library-services.json": {
+      "sizeBytes": 3162,
+      "sha256": "0cf8e4a20fbcb70ce6bb6ed702dd6593a569373594442abc5ccebacb454cdbaf"
+    },
+    "json/pages/education/programs.json": {
+      "sizeBytes": 3054,
+      "sha256": "f938381cd13bfec435c7a5f715aa29d28fdc5877f5a4dffc84fca0e5107059a2"
     },
     "json/pages/education/programs/primary-school.json": {
       "sizeBytes": 3271,
@@ -4002,9 +4010,9 @@
       "sizeBytes": 3491,
       "sha256": "4f3961372010077a1b970be3e38c23a128321466026d81b812d76cfd29240cf5"
     },
-    "json/pages/education/programs.json": {
-      "sizeBytes": 3054,
-      "sha256": "f938381cd13bfec435c7a5f715aa29d28fdc5877f5a4dffc84fca0e5107059a2"
+    "json/pages/education/school-years.json": {
+      "sizeBytes": 3091,
+      "sha256": "85650af52685f5ab611c037a00d16b259401d72548611addab93a72dc5b928f5"
     },
     "json/pages/education/school-years/current-school-year.json": {
       "sizeBytes": 3236,
@@ -4014,17 +4022,17 @@
       "sizeBytes": 3228,
       "sha256": "cb245e2100708e058f956df7cdcb3d260dc2d3d890c8fd1a8106044fea8adae1"
     },
-    "json/pages/education/school-years.json": {
-      "sizeBytes": 3091,
-      "sha256": "85650af52685f5ab611c037a00d16b259401d72548611addab93a72dc5b928f5"
-    },
-    "json/pages/education.json": {
-      "sizeBytes": 3342,
-      "sha256": "0fa1d2e97384538de5b18cef1f52866f4cbc41f700e34f7ec72bee408c1c81f2"
-    },
     "json/pages/home.json": {
       "sizeBytes": 16209,
       "sha256": "7a346f0b8f5a98ff25591e749d2928508d1668e0f095480f59a5a03e55c872bd"
+    },
+    "json/pages/information.json": {
+      "sizeBytes": 3229,
+      "sha256": "0f20041c92eef348fe3f2a5d389f43cd88a6670b2724e76f69ca3ba696ca9b90"
+    },
+    "json/pages/information/community-service.json": {
+      "sizeBytes": 3781,
+      "sha256": "918069642c0843fea6165ac111d3923d6fea11b680ef4ce622936b64365b830e"
     },
     "json/pages/information/community-service/community-service-documents.json": {
       "sizeBytes": 3807,
@@ -4038,9 +4046,9 @@
       "sizeBytes": 3270,
       "sha256": "c6a418ce88e607b3659b11007b9ffb9bbe728b5fab2bcdb2e5f16863376a6352"
     },
-    "json/pages/information/community-service.json": {
-      "sizeBytes": 3781,
-      "sha256": "918069642c0843fea6165ac111d3923d6fea11b680ef4ce622936b64365b830e"
+    "json/pages/information/daily-information.json": {
+      "sizeBytes": 3522,
+      "sha256": "2547ba4514d088dbe73bb1ce9fce39e1e41b3935fd04730f0173f1e4ec4e97f7"
     },
     "json/pages/information/daily-information/bell-schedule.json": {
       "sizeBytes": 3304,
@@ -4062,13 +4070,13 @@
       "sizeBytes": 3606,
       "sha256": "08106c89bc6f837c60d6148c5253eb7b280ce299e8cedcbfef0cd2cddf3f3c1c"
     },
-    "json/pages/information/daily-information.json": {
-      "sizeBytes": 3522,
-      "sha256": "2547ba4514d088dbe73bb1ce9fce39e1e41b3935fd04730f0173f1e4ec4e97f7"
-    },
     "json/pages/information/digital-services.json": {
       "sizeBytes": 3108,
       "sha256": "5ee8afc92f98941b7f5fa8e6b8ab8e8135301f4257373596e0b1bb681013a2a1"
+    },
+    "json/pages/information/document-library.json": {
+      "sizeBytes": 3155,
+      "sha256": "62164bb85eb44efa09d8572c01571868da79fa5f74fdd7ab7c7731a72ce64632"
     },
     "json/pages/information/document-library/forms.json": {
       "sizeBytes": 3816,
@@ -4081,10 +4089,6 @@
     "json/pages/information/document-library/public-disclosures.json": {
       "sizeBytes": 3673,
       "sha256": "76f099994cb47a4900c5179cdd8bf9664d5e477f4307811157a8b85ff5c521e3"
-    },
-    "json/pages/information/document-library.json": {
-      "sizeBytes": 3155,
-      "sha256": "62164bb85eb44efa09d8572c01571868da79fa5f74fdd7ab7c7731a72ce64632"
     },
     "json/pages/information/editor-workbench.json": {
       "sizeBytes": 1124,
@@ -4106,13 +4110,17 @@
       "sizeBytes": 3274,
       "sha256": "4f591651bd0148f206ecbda3ffa9f3a02800a4f3ead6fb75c0f3f317f100af59"
     },
-    "json/pages/information.json": {
-      "sizeBytes": 3229,
-      "sha256": "0f20041c92eef348fe3f2a5d389f43cd88a6670b2724e76f69ca3ba696ca9b90"
+    "json/pages/news-and-events.json": {
+      "sizeBytes": 2814,
+      "sha256": "c7528aa679777a94b4f636b6de97e059f98515a09ba845688c11323681d55d23"
     },
     "json/pages/news-and-events/announcements.json": {
       "sizeBytes": 3163,
       "sha256": "a8ffc866dc5344698f775c84870902885bec5b8121fd2483218be8416b278e96"
+    },
+    "json/pages/news-and-events/event-calendar.json": {
+      "sizeBytes": 3220,
+      "sha256": "cbcfbe6bc383dae78a2d6069b35fab17d28c48c776f64d09df6b95a36a51a22f"
     },
     "json/pages/news-and-events/event-calendar/school-events.json": {
       "sizeBytes": 3067,
@@ -4122,9 +4130,9 @@
       "sizeBytes": 3139,
       "sha256": "f8580e9490fb7c5a5f68de30e6488601152a9df71dd6b290d2ae18cff0fa88c5"
     },
-    "json/pages/news-and-events/event-calendar.json": {
-      "sizeBytes": 3220,
-      "sha256": "cbcfbe6bc383dae78a2d6069b35fab17d28c48c776f64d09df6b95a36a51a22f"
+    "json/pages/news-and-events/news.json": {
+      "sizeBytes": 3398,
+      "sha256": "d0ebd45f1dbf5f5190c76b7480242e1a267185d52e890af58a311a6b07543752"
     },
     "json/pages/news-and-events/news/news-archive.json": {
       "sizeBytes": 3532,
@@ -4138,13 +4146,9 @@
       "sizeBytes": 3311,
       "sha256": "5b53a49d53520b9a4bfe67f454fb40274aa9954caceb78afe2d73f3547528e14"
     },
-    "json/pages/news-and-events/news.json": {
-      "sizeBytes": 3398,
-      "sha256": "d0ebd45f1dbf5f5190c76b7480242e1a267185d52e890af58a311a6b07543752"
-    },
-    "json/pages/news-and-events.json": {
-      "sizeBytes": 2814,
-      "sha256": "c7528aa679777a94b4f636b6de97e059f98515a09ba845688c11323681d55d23"
+    "json/pages/our-school.json": {
+      "sizeBytes": 4347,
+      "sha256": "8eaf9460125f3df230b9511f045c1fbedd9c0f1b848608d1362951cf0a5511be"
     },
     "json/pages/our-school/eco-school.json": {
       "sizeBytes": 3160,
@@ -4198,9 +4202,9 @@
       "sizeBytes": 13593,
       "sha256": "9d582b989eb306da68f8a88567a4a56344b01c8c1b3149e92ea463c84ba21cbd"
     },
-    "json/pages/our-school.json": {
-      "sizeBytes": 4347,
-      "sha256": "8eaf9460125f3df230b9511f045c1fbedd9c0f1b848608d1362951cf0a5511be"
+    "json/pages/sports.json": {
+      "sizeBytes": 3223,
+      "sha256": "1100ac6109193d4efeb6c40f03c16d2a19a41faff9ed79f9ef6ad4f088244b25"
     },
     "json/pages/sports/athletes.json": {
       "sizeBytes": 3558,
@@ -4229,10 +4233,6 @@
     "json/pages/sports/teams.json": {
       "sizeBytes": 3403,
       "sha256": "aec026e127b64f617284a247d0d982d45a7e941b2d03a20c9c04217afdd5b068"
-    },
-    "json/pages/sports.json": {
-      "sizeBytes": 3223,
-      "sha256": "1100ac6109193d4efeb6c40f03c16d2a19a41faff9ed79f9ef6ad4f088244b25"
     },
     "json/schemas/documents.schema.json": {
       "sizeBytes": 5533,
@@ -4316,11 +4316,11 @@
     },
     "script.js": {
       "sizeBytes": 1739,
-      "sha256": "291b35d8b3f17e079e93e76ace7fd8037ef7a8882da9b031a5089ad4b7689f43"
+      "sha256": "6478649ff22e2ea0eae7e1d9d3db82e2a351cbf2f247d1df44eb6004b736d510"
     },
     "service-worker.js": {
       "sizeBytes": 7711,
-      "sha256": "d8137a66b2c1aa73c3c339a88009bdcfca8ad1c132bd1145449949a6439c9d53"
+      "sha256": "d9bd89975184bdb04c9ab4b4191b1b718e3fb8ba0a6e19bf3b3140e986b452fd"
     },
     "sitemap.xml": {
       "sizeBytes": 111,
