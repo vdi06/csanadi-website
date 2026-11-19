@@ -16,7 +16,9 @@ export function enhanceInlineHomeEditor(canvas){
  const undo=document.createElement('button');undo.type='button';undo.className='cs41-edit-action';undo.textContent='↶ Visszavonás';undo.hidden=true;
  const exportButton=document.createElement('button');exportButton.type='button';exportButton.className='cs41-edit-action';exportButton.textContent='↓ Sorrend JSON exportálása';exportButton.hidden=true;
  const status=document.createElement('span');status.className='cs41-inline-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');
- toolbar.append(toggle,undo,exportButton,status);canvas.prepend(toolbar);
+ const secondaryControls=document.createElement('div');secondaryControls.className='cs41-edit-secondary-controls';
+ secondaryControls.append(undo,exportButton,status);
+ toolbar.append(toggle,secondaryControls);canvas.prepend(toolbar);
  const label=id=>LABELS[id]||(id.startsWith('fold:')?id.slice(5):id);
  function apply(){
   // A sportsikerek a felhasználó korábbi döntése szerint mindig az első szakasz.

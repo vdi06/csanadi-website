@@ -14,6 +14,8 @@ export function showGateEntrance(){
  const file=(index,small=mobile)=>settings.imageDirectory+'/'+settings.framePrefix+String(index).padStart(2,'0')+(small?settings.mobileSuffix:'')+settings.extension;
  const resources=Array.from({length:settings.frameCount},(_,i)=>file(i));
  const wrapper=tag('div','gate26 gate26--frames');wrapper.id='gate26';wrapper.style.setProperty('--gate26-duration',duration+'ms');
+ // The HTML prelude stays on top until the first real frame is decoded.
+ wrapper.tabIndex=-1;
  wrapper.setAttribute('role','dialog');wrapper.setAttribute('aria-modal','true');wrapper.setAttribute('aria-labelledby','gate26-title');
  // Keep all nine frames mounted and decoded: replacing one img.src during playback
  // can briefly paint an empty image and create the reported flashing effect.
@@ -36,9 +38,9 @@ export function showGateEntrance(){
  const bottom=tag('div','gate26-skip-bar');const title=tag('h2','gate26-school-name','CSANÁDI ÁRPÁD SPORTISKOLA, ÁLTALÁNOS ISKOLA ÉS GIMNÁZIUM');title.id='gate26-title';
  const copy=tag('div','gate26-bottom-copy');copy.append(title);
  const skip=tag('button','gate26-skip','⏭');skip.type='button';skip.title='Belépőanimáció kihagyása';skip.setAttribute('aria-label','Belépőanimáció kihagyása');
- bottom.append(copy,skip);wrapper.append(...frames,glassCrest,hit,bottom);document.body.append(wrapper);dismissPrelude();
+ bottom.append(copy,skip);wrapper.append(...frames,glassCrest,hit,bottom);document.body.append(wrapper);
  const previous=document.activeElement;const overflow=document.body.style.overflow;document.body.style.overflow='hidden';
- let finished=false,playing=false,raf=0,fade=0,lastFrame=0,displayedFrame=0;
+ let finished=false,playing=false,raf=0,fade=0,displayedFrame=0,upperFrame=-1;
  const available=Array(frames.length).fill(false);
  const decoded=frames.map(async(frame,index)=>{
   try{await frame.decode();available[index]=true;return;}
@@ -48,23 +50,38 @@ export function showGateEntrance(){
   }
   console.warn('[Csanádi kapu] Nem tölthető be a képkocka:',index);
  });
- function showFrame(index){
-  let next=available[index]?index:-1;
-  for(let i=index-1;next<0&&i>=0;i--)if(available[i])next=i;
-  if(next<0)next=available.findIndex(Boolean);
-  if(next<0||next===displayedFrame)return;
-  frames[displayedFrame].classList.remove('is-current');
-  frames[next].classList.add('is-current');displayedFrame=next;
+ // Blend consecutive photographs on the compositor, including fractional positions.
+ // A stepped image swap every ~250 ms looked like a slideshow instead of a door opening.
+ function showProgress(position){
+  const lower=Math.min(frames.length-1,Math.floor(position));
+  const upper=Math.min(frames.length-1,lower+1);
+  const mix=position-lower;
+  if(!available[lower]||!available[upper]){
+   const fallback=available[lower]?lower:available[upper]?upper:available.findIndex(Boolean);
+   if(fallback<0)return;
+   if(displayedFrame!==fallback||upperFrame!==-1){
+    frames.forEach((frame,i)=>{frame.style.opacity=i===fallback?'1':'0';});
+    displayedFrame=fallback;upperFrame=-1;
+   }
+   return;
+  }
+  if(displayedFrame!==lower||upperFrame!==upper){
+   frames.forEach((frame,i)=>{if(i!==lower&&i!==upper)frame.style.opacity='0';});
+   displayedFrame=lower;upperFrame=upper;
+  }
+  frames[lower].style.opacity='1';
+  if(upper!==lower)frames[upper].style.opacity=String(mix);
  }
  function clean(){if(!wrapper.isConnected)return;wrapper.remove();document.body.style.overflow=overflow;active=false;const focus=(previous?.isConnected?previous:document.getElementById('mobile-menu-toggle'));focus?.focus?.({preventScroll:true});}
- function finish(){if(finished)return;finished=true;cancelAnimationFrame(raf);clearTimeout(fade);wrapper.classList.add('gate26-finished');fade=setTimeout(clean,reduce?0:settings.finishFadeMs);}
+ function finish(){if(finished)return;finished=true;dismissPrelude();cancelAnimationFrame(raf);clearTimeout(fade);wrapper.classList.add('gate26-finished');fade=setTimeout(clean,reduce?0:settings.finishFadeMs);}
  function step(now,start){
   if(finished||!wrapper.isConnected)return;
   const elapsed=Math.max(0,now-start);
   // Nine *distinct source pictures*, not nine CSS transformations of three images.
-  const index=Math.min(resources.length-1,Math.floor(elapsed/duration*resources.length));
-  if(index!==lastFrame){lastFrame=index;showFrame(index);}
-  if(elapsed>=duration){showFrame(resources.length-1);fade=setTimeout(finish,80);return;}
+  const t=Math.min(1,elapsed/duration);
+  const eased=(1-Math.cos(Math.PI*t))/2;
+  showProgress(eased*(resources.length-1));
+  if(t>=1){fade=setTimeout(finish,120);return;}
   raf=requestAnimationFrame(time=>step(time,start));
  }
  function open(){
@@ -76,7 +93,7 @@ export function showGateEntrance(){
   Promise.all(decoded).then(()=>{
    if(finished||!wrapper.isConnected)return;
    if(!available.some(Boolean)){finish();return;}
-   showFrame(0);wrapper.classList.add('gate26-open');
+   showProgress(0);wrapper.classList.add('gate26-open');
    const start=performance.now();raf=requestAnimationFrame(time=>step(time,start));
   });
  }
@@ -89,5 +106,15 @@ export function showGateEntrance(){
    if(index>=0){event.preventDefault();list[(index+(event.shiftKey?-1:1)+list.length)%list.length].focus();}
   }
  });
- hit.focus({preventScroll:true});
+ // Focus the dialog, not the highlighted door. The latter made the first frame
+ // appear gold before the visitor had moved the mouse over the entrance.
+ Promise.all([decoded[0],glassLogo.decode().catch(()=>{})]).then(()=>{
+  if(finished||!wrapper.isConnected)return;
+  if(!available[0]){
+   Promise.all(decoded).then(()=>{if(!finished)finish();});
+   return;
+  }
+  dismissPrelude();
+  wrapper.focus({preventScroll:true});
+ });
 }

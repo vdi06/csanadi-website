@@ -6,11 +6,10 @@ import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=1
 import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.42.18';
 import {setupSmartSearch} from './search-j-2026.js?v=1.42.18';
 import {installLanguageHighlights} from './language-20.js?v=1.42.18';
-import {enhancePersonalizedHome} from './round21-personalize.js?v=1.42.18';
-import {enhanceInlineHomeEditor} from './home-inline-editor-v1-41-4.js?v=1.42.18';
+import {enhanceInlineHomeEditor} from './home-inline-editor-v1-41-4.js?v=1.43.5';
 import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,syncMobileEmbeddedSections,initRound29Diagnostics} from './round29-home.js?v=1.42.18';
 import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=1.42.18';
-import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=1.42.18';
+import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=1.43.5';
 import {initEnhancedInteractions} from './interactions-be-2026.js?v=1.42.18';
 import {renderMediaGallery} from './media-gallery-h-2026.js?v=1.42.18';
 import {renderDocumentCollections} from './document-collections-2026.js?v=1.42.18';
@@ -531,7 +530,6 @@ function homePage(node){
    
   for(const unit of units)if(!canvas.contains(unit))canvas.append(unit);
   enhanceHomeInterests(canvas);
-  enhancePersonalizedHome(canvas);
   enhanceInlineHomeEditor(canvas);
   enhanceRound29Home(canvas);
   // Az oldalverzió a betöltési diagnosztikában jelenik meg, nem a tartalomkártyák alatt.
@@ -625,7 +623,7 @@ function renderRoute(options={}){
   document.body.classList.toggle('cs-inner-page',kind!=='home');
   releaseSpaFeatureStyles();
   const inEditor=visualEditingEnabled()&&!c3Preview;
-  const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.43.4');
+  const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.43.5-r2');
   const localRelease=/^csanadi-r-v\d+\.\d+\.\d+$/.test(version)?'csanadi-website-'+version.slice('csanadi-r-'.length):'csanadi-website-v1.43.1';
   const previewDraft=node&&node.depth!==0&&!isSpaFeature(node.page)&&(inEditor||(c3Preview&&!c3PreviewBase))?resolveVisualDraft(node.page,'json/'+node.path,localRelease):null;
   const activeDraft=c3Preview&&!c3PreviewBase&&c3Overlay?.path==='json/'+node?.path?c3Overlay.page:previewDraft?.page;

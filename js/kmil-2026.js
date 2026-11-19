@@ -26,13 +26,21 @@ const titles={felveteli:'Felvételi',kepzes:'Képzéseink',tanev:'Tanév és viz
 export function learningNavigator(){
  const root=e('section','kmil-learning');root.setAttribute('aria-label','Oktatási és felvételi útvonalak');
  root.append(e('h2','','Oktatás és felvételi – gyors útvonalak'),e('p','','Válassz egy témát, majd nyisd meg a hozzá kapcsolódó oldalt. A hivatalos dátumok mindig a megfelelő tájékoztató oldalakon szerepelnek.'));
- const controls=e('div','kmil-learning-tabs'),grid=e('div','kmil-learning-grid');grid.setAttribute('aria-live','polite');
- const buttons=[];
- const render=(selected)=>{grid.replaceChildren();buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.topic===selected)));
-  for(const [title,href,summary] of groups[selected]){const card=e('a','kmil-topic-card');card.href=href;card.append(e('strong','',title),e('small','',summary),e('span','','Oldal megnyitása ↗'));grid.append(card);}
- };
- for(const [topic,label] of Object.entries(titles)){const b=e('button','kmil-learning-tab',label);b.type='button';b.dataset.topic=topic;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>render(topic));buttons.push(b);controls.append(b);}
- root.append(controls,grid);render('felveteli');return root;
+ // Valódi Bootstrap Tabs: külön tartalompanel, natív tabváltás és ARIA-kezelés.
+ const controls=e('div','kmil-learning-tabs nav nav-pills');controls.id='kmil-learning-tabs';controls.setAttribute('role','tablist');controls.setAttribute('aria-label','Oktatási témakörök');
+ const content=e('div','tab-content kmil-learning-panels');
+ for(const [index,[topic,label]] of Object.entries(titles).entries()){
+  const first=index===0,tabId='kmil-tab-'+topic,panelId='kmil-panel-'+topic;
+  const b=e('button','kmil-learning-tab nav-link'+(first?' active':''),label);b.type='button';b.id=tabId;
+  b.setAttribute('role','tab');b.setAttribute('data-bs-toggle','pill');b.setAttribute('data-bs-target','#'+panelId);
+  b.setAttribute('aria-controls',panelId);b.setAttribute('aria-selected',String(first));controls.append(b);
+  const panel=e('section','tab-pane fade'+(first?' show active':''));panel.id=panelId;
+  panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',tabId);panel.tabIndex=0;
+  const grid=e('div','kmil-learning-grid');
+  for(const [title,href,summary] of groups[topic]){const card=e('a','kmil-topic-card card');card.href=href;card.append(e('strong','',title),e('small','',summary),e('span','','Oldal megnyitása'));grid.append(card);}
+  panel.append(grid);content.append(panel);
+ }
+ root.append(controls,content);return root;
 }
 export function enhanceHomeInterests(canvas){
  const filters=e('section','kmil-interest kmil-interest-hub');filters.setAttribute('aria-label','Témaválasztó központ');

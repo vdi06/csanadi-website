@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.43.4",
+  "release": "csanadi-website-v1.43.5",
   "date": "2026-11-19",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "V1.43.4 Bootstrap-egységesítés: közös aloldali Breadcrumb, adatvezérelt Accordion/Collapse, Card alapú tartalomkártyák, Toast visszajelzés, Alert figyelmeztetés és Progress olvasási sáv. A korábbi saját PDF- és tematikus képnéző, a kapu, a körmenü és a tartalmi adatok megmaradtak. A Bootstrap kizárólag a rögzített verziójú CDN-ről töltődik be. Helyi ZIP; FTP/GitHub közzététel nincs.",
+  "notes": "V1.43.5 F1–F4: az oktatási témaválasztó natív Bootstrap Tabs/Pills panelekkel, a dokumentumtár Bootstrap Pagination lapozással és szűrésre visszaálló oldalszámmal, továbbá Input Group, Form Check és egységes műveletgombokkal bővült. A korábbi v1.43.4 saját PDF- és tematikus képnézője, kapuja, körmenüje és iskolai adatai változatlanok. A Bootstrap verzióhoz kötött CDN-ről töltődik be. Csak helyi ZIP-kiadás, nincs FTP- vagy GitHub-közzététel. V1.43.5-r1 jóváhagyás előtti javítás: a Kezdőlap beállítása/kedvenc kártyák külön panel megszűnt, az elavult modul kikerült. A meglévő közvetlen fogantyús szerkesztés megmaradt, a szerkesztőgomb vízszintesen középre került, áttetsző gombbal és teljesen átlátszó eszköztárral. Frissített kliensoldali gyorsítótár-verzió. V1.43.5-r2: majdnem átlátszó arany kapu-hover, kezdeti fotó és dekódolt első képkocka összehangolása, folyamatos 60 Hz-közeli képkocka-keverés, finomabb kameramozgás és frissített gyorsítótár.",
   "files": {
     "assets/documents/admissions-tajekozodasi-handout-2026.pdf": {
       "sizeBytes": 48341,
@@ -3322,6 +3322,10 @@
       "sizeBytes": 14147,
       "sha256": "5972f1f7c000403a5f8b1d6bf69cf3d555a89ef90b5a463bc12ad3567cdc6912"
     },
+    "css/bootstrap-components-v1-43-5.css": {
+      "sizeBytes": 2798,
+      "sha256": "b22ffda6302604d35d7f20755a46b78befb24d1c6ae78853520f535e32b27ac2"
+    },
     "css/bootstrap-unification-v1-43-4.css": {
       "sizeBytes": 3523,
       "sha256": "a253306c34bad8c7a0895a60b52f3d04b46ad4a010d68796148c935a6758d23c"
@@ -3363,8 +3367,8 @@
       "sha256": "c7a116dcc16fe23057f5dbb067e2ac74c34fc37f64b8e40f55d82e514130c3f0"
     },
     "css/entrance-sequence.css": {
-      "sizeBytes": 7321,
-      "sha256": "4d552c3597162f3431a67082a32127bfc13013cd2219b833fbfaca743b39fcff"
+      "sizeBytes": 7721,
+      "sha256": "3bd79fa358c84172b650e46401a6345d20aae368b6406808b624810df6b87cec"
     },
     "css/extended-hubs-2026.css": {
       "sizeBytes": 9190,
@@ -3385,6 +3389,10 @@
     "css/header-v1-41-full-name.css": {
       "sizeBytes": 2961,
       "sha256": "4f7cca785e56dfd8ad4f5b76e5729e984c38b4db62c3ed6cf42975f96640a9a6"
+    },
+    "css/home-direct-edit-fix-v1-43-5.css": {
+      "sizeBytes": 2297,
+      "sha256": "3d5ab54c203d3c66d7e95cbb9f93de34b01ad0343f1eff7bfbc2be9145d1bfd7"
     },
     "css/home-gallery-news-gate-2026.css": {
       "sizeBytes": 5560,
@@ -3591,16 +3599,16 @@
       "sha256": "d699af49beee4cb9af24350bdf8a3092e82dcb83cdd40a46554c50880a6bae9c"
     },
     "index.html": {
-      "sizeBytes": 17488,
-      "sha256": "30a1bea170ad15d3022df04fccbfff0ee4895ecfaf23ae7f5bf79b37c4c73b11"
+      "sizeBytes": 17857,
+      "sha256": "3f1f0c49e12498390aef24b8a77dd27a63944b9feb9f6514b4d52faa1aaaf04b"
     },
     "js/advanced-2026.js": {
-      "sizeBytes": 31032,
-      "sha256": "f4e7991205d2e992153128c6e89b6df95a02a468ac3da888d8269711583a9512"
+      "sizeBytes": 31034,
+      "sha256": "77b06f3ed9f6f5a42ea6a74ebf971473376ac4de0a85b25cb730fc5ec87f08ee"
     },
     "js/app.js": {
-      "sizeBytes": 62489,
-      "sha256": "9223640cdea4b1935858006ea0b673914457f4bc66e0a16a9b193f1f4f24ec8c"
+      "sizeBytes": 62379,
+      "sha256": "bd8576585732b4495d678906f1a1db673b1e191f7cb79b49a32b6e3a5929f2a4"
     },
     "js/blocks.js": {
       "sizeBytes": 10406,
@@ -3619,8 +3627,8 @@
       "sha256": "35609fd8059d0f36a61c074e1f22937b2a5bb5dd2be06b4ac5b1beec8bf047f5"
     },
     "js/documents.js": {
-      "sizeBytes": 25845,
-      "sha256": "390954ebcaf962724b3940c5fa33046bd95eb0ec2a7147a62be8684b88bd6374"
+      "sizeBytes": 27496,
+      "sha256": "ecc125973cf8d929b59c31076079c06ea7790cae8147a873eb62b254d650db77"
     },
     "js/editor-workbench-v1-42-18.js": {
       "sizeBytes": 1428,
@@ -3643,8 +3651,8 @@
       "sha256": "463cbfbf2dbc714049c32ddf872b024f94ae2b148df1902a3e18a108dcd0fd1d"
     },
     "js/gate-sequence-v1-42-17.js": {
-      "sizeBytes": 6464,
-      "sha256": "1050e61864a205223a8e007d6f5bd6c0fe360327e9a70b6abf870d052151eacc"
+      "sizeBytes": 7529,
+      "sha256": "2c6499be11e5fad1cd5c85eb87694497e8fbeea4d6996a28b105875b3c94e0ac"
     },
     "js/guide-theme-2026.js": {
       "sizeBytes": 2322,
@@ -3663,8 +3671,8 @@
       "sha256": "20b11103ff3498988c0c38812d183af0ddce677b8e72dfa1c53dacaf0b9ad3ef"
     },
     "js/home-inline-editor-v1-41-4.js": {
-      "sizeBytes": 11264,
-      "sha256": "b474e4da12e556c2ac0be2aa82d30b53a4a7fd7197cb6d4a4bb476524fdb46ae"
+      "sizeBytes": 11425,
+      "sha256": "8a1008d757ca19fc8667d1814151d2f204c8a164adf55257f92df56c4738dd4b"
     },
     "js/home-live.js": {
       "sizeBytes": 14406,
@@ -3679,8 +3687,8 @@
       "sha256": "0c961674bb9a283ea9afca0afbfa0d35904687db6abd70250f3863a6d929795b"
     },
     "js/kmil-2026.js": {
-      "sizeBytes": 7190,
-      "sha256": "e240251a6cf7d2b05e54829d837184cc4d360962acdb7a44efd14034040646d8"
+      "sizeBytes": 7734,
+      "sha256": "4b26fbe7cb5e0fa814a24338e7f8d6d3d4bda272b0ac4d07142427d9d8485856"
     },
     "js/language-20.js": {
       "sizeBytes": 2351,
@@ -3753,10 +3761,6 @@
     "js/round21-explorer.js": {
       "sizeBytes": 16704,
       "sha256": "0370c75953ba5a980d16860bcfe6b5223cb6c9bffe4782bb9fc09df2c8cf64fb"
-    },
-    "js/round21-personalize.js": {
-      "sizeBytes": 8306,
-      "sha256": "126f2893a4810fd8d9c4551edbc26c0590b2207d707c4eefd4266919c08639aa"
     },
     "js/round22-center.js": {
       "sizeBytes": 16000,
@@ -4667,8 +4671,8 @@
       "sha256": "14dd7ac6801707dd627c57ee5b1da2da8bd11098bf58de8ff34318d57670c5f3"
     },
     "json/config.json": {
-      "sizeBytes": 17449,
-      "sha256": "b996b907d36c68facb2b1ef995a4d7ac1e48d95c4c56ec40e8f7b14babb1d4a8"
+      "sizeBytes": 17452,
+      "sha256": "8f00233df2ce8bff409869dc862521773f10833af069d4fe6e13bc8b84a9ab57"
     },
     "json/data/arrival-and-development-26.json": {
       "sizeBytes": 6849,
@@ -5171,12 +5175,12 @@
       "sha256": "ee51df6dbbccda4533d6a067cfdd8a35a6421611b6cccc814fbbe9f7e65aa283"
     },
     "script.js": {
-      "sizeBytes": 1737,
-      "sha256": "d71845c1f10b6ab717d4a8e16f619329135bd1434556e90eb53807afd7d0568c"
+      "sizeBytes": 1740,
+      "sha256": "61e340a5192ae8f25786be02bf506e1616cef777824d8c0b16238c338522216a"
     },
     "service-worker.js": {
-      "sizeBytes": 8404,
-      "sha256": "c624e020094dc8988f653eaa1ad29c31f802271f3a71e7f8c15f6ea090f64baf"
+      "sizeBytes": 8407,
+      "sha256": "215c8c916b55c64e6a10111815c6c95805e0362aed6910c330e8d6450d001cea"
     },
     "sitemap.xml": {
       "sizeBytes": 111,

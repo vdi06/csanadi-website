@@ -11,7 +11,8 @@
   <style>
     #cs-gate-prelude{display:none}
     html.cs-gate-pending #cs-gate-prelude{position:fixed;inset:0;z-index:2601;display:grid;place-items:center;overflow:hidden;background:#07182a;color:#fff;isolation:isolate;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
-    html.cs-gate-pending #cs-gate-prelude::before{content:"";position:absolute;inset:0;background:url('assets/media/web/csanadi-gate-closed-photo.webp') center/cover no-repeat;filter:brightness(.89)}
+    html.cs-gate-pending #cs-gate-prelude::before{content:"";position:absolute;inset:0;background:url('assets/media/web/gate-frames/gate-00.webp') center/cover no-repeat;filter:brightness(.89)}
+    @media(max-width:768px){html.cs-gate-pending #cs-gate-prelude::before{background-image:url('assets/media/web/gate-frames/gate-00-mobile.webp')}}
     html.cs-gate-pending #cs-gate-prelude::after{content:"";position:absolute;inset:auto 0 0;height:150px;background:linear-gradient(to top,rgba(4,15,26,.80),transparent);pointer-events:none}
     html.cs-gate-pending #cs-gate-prelude .cs-gate-prelude-door{display:none}
     #cs-gate-prelude .cs-gate-prelude-left{left:0;background-position:left center!important}
@@ -24,8 +25,8 @@
     if(new URLSearchParams(location.search).get('preview')==='1')return;
     // A nyitójelenet minden friss oldalbetöltéskor megjelenik.
     document.documentElement.classList.add('cs-gate-pending');
-    var firstGateImage='csanadi-gate-closed-photo.webp';
-    var firstGatePreload=document.createElement('link');firstGatePreload.rel='preload';firstGatePreload.as='image';firstGatePreload.type='image/webp';firstGatePreload.href='assets/media/web/'+firstGateImage;document.head.append(firstGatePreload);
+    var firstGateImage=matchMedia('(max-width: 768px)').matches?'gate-00-mobile.webp':'gate-00.webp';
+    var firstGatePreload=document.createElement('link');firstGatePreload.rel='preload';firstGatePreload.as='image';firstGatePreload.type='image/webp';firstGatePreload.href='assets/media/web/gate-frames/'+firstGateImage;document.head.append(firstGatePreload);
     setTimeout(function(){document.documentElement.classList.remove('cs-gate-pending');document.getElementById('cs-gate-prelude')?.remove();},20000);
   })();</script>
   <meta name="description" content="Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium – sport, tanulás, közösség, iskolai információk.">
@@ -49,7 +50,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
   <link rel="stylesheet" href="css/site-bundle-v1-42-17.css?v=1.42.18">
   <link rel="stylesheet" href="css/home-v1-41.css?v=1.42.18">
-  <link rel="stylesheet" href="css/entrance-sequence.css?v=1.42.21">
+  <link rel="stylesheet" href="css/entrance-sequence.css?v=1.43.5-r2">
   <link rel="stylesheet" href="css/header-v1-41-full-name.css?v=1.42.18">
   <link rel="stylesheet" href="css/home-refinement-v1-41-4.css?v=1.42.18">
   <link rel="stylesheet" href="css/menu-overlay-clean-v1-42-12.css?v=1.42.18">
@@ -70,6 +71,8 @@
   <link rel="stylesheet" href="css/desktop-hero-controls-v1-43-1.css?v=1.43.3">
   <link rel="stylesheet" href="css/viewers-bootstrap-v1-43-3.css?v=1.43.3">
   <link rel="stylesheet" href="css/bootstrap-unification-v1-43-4.css?v=1.43.4">
+  <link rel="stylesheet" href="css/bootstrap-components-v1-43-5.css?v=1.43.5">
+  <link rel="stylesheet" href="css/home-direct-edit-fix-v1-43-5.css?v=1.43.5-r1">
 </head>
 <body>
   <div id="cs-gate-prelude" role="status" aria-label="A Csanádi Sportiskola nyitókapuja betöltődik">
@@ -172,8 +175,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous" defer>
 </script>
   <script src="js/round12-media-performance.js?v=1.42.18" defer></script>
-  <script src="js/round13-network.js?v=csanadi-r-v1.43.4" defer></script>
-  <script type="module" src="script.js?v=1.43.4">
+  <script src="js/round13-network.js?v=csanadi-r-v1.43.5-r1" defer></script>
+  <script type="module" src="script.js?v=1.43.5-r2">
 </script>
 </body>
 </html>
