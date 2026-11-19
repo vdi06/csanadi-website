@@ -61,6 +61,21 @@ html body #site-header #mobile-menu-toggle {
   visibility:hidden!important;
   pointer-events:none!important;
 }
+/* Older home-scroll rules have higher specificity and re-show this button.
+   The centered compact crest already opens the menu after scrolling. */
+html body.cs-home-header.cs-home-condensed #site-header .header-actions #mobile-menu-toggle,
+html body.cs-inner-page.cs-header-condensed #site-header .header-actions #mobile-menu-toggle,
+html body.cs-home-header #site-header .header-actions #mobile-menu-toggle {
+  display:none!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  width:0!important;
+  height:0!important;
+  min-width:0!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:0!important;
+}
 @media(min-width:769px) {
   /* Inner pages only need the center crest, never a second circle-menu launcher. */
   html body.cs-inner-page .orbit-launch,
