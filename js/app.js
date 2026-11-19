@@ -623,7 +623,7 @@ function renderRoute(options={}){
   document.body.classList.toggle('cs-inner-page',kind!=='home');
   releaseSpaFeatureStyles();
   const inEditor=visualEditingEnabled()&&!c3Preview;
-  const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.43.5-r2');
+  const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.43.5-r3');
   const localRelease=/^csanadi-r-v\d+\.\d+\.\d+$/.test(version)?'csanadi-website-'+version.slice('csanadi-r-'.length):'csanadi-website-v1.43.1';
   const previewDraft=node&&node.depth!==0&&!isSpaFeature(node.page)&&(inEditor||(c3Preview&&!c3PreviewBase))?resolveVisualDraft(node.page,'json/'+node.path,localRelease):null;
   const activeDraft=c3Preview&&!c3PreviewBase&&c3Overlay?.path==='json/'+node?.path?c3Overlay.page:previewDraft?.page;

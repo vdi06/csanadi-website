@@ -4,7 +4,7 @@
   "date": "2026-11-19",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "V1.43.5 F1–F4: az oktatási témaválasztó natív Bootstrap Tabs/Pills panelekkel, a dokumentumtár Bootstrap Pagination lapozással és szűrésre visszaálló oldalszámmal, továbbá Input Group, Form Check és egységes műveletgombokkal bővült. A korábbi v1.43.4 saját PDF- és tematikus képnézője, kapuja, körmenüje és iskolai adatai változatlanok. A Bootstrap verzióhoz kötött CDN-ről töltődik be. Csak helyi ZIP-kiadás, nincs FTP- vagy GitHub-közzététel. V1.43.5-r1 jóváhagyás előtti javítás: a Kezdőlap beállítása/kedvenc kártyák külön panel megszűnt, az elavult modul kikerült. A meglévő közvetlen fogantyús szerkesztés megmaradt, a szerkesztőgomb vízszintesen középre került, áttetsző gombbal és teljesen átlátszó eszköztárral. Frissített kliensoldali gyorsítótár-verzió. V1.43.5-r2: majdnem átlátszó arany kapu-hover, kezdeti fotó és dekódolt első képkocka összehangolása, folyamatos 60 Hz-közeli képkocka-keverés, finomabb kameramozgás és frissített gyorsítótár.",
+  "notes": "V1.43.5 F1–F4: az oktatási témaválasztó natív Bootstrap Tabs/Pills panelekkel, a dokumentumtár Bootstrap Pagination lapozással és szűrésre visszaálló oldalszámmal, továbbá Input Group, Form Check és egységes műveletgombokkal bővült. A korábbi v1.43.4 saját PDF- és tematikus képnézője, kapuja, körmenüje és iskolai adatai változatlanok. A Bootstrap verzióhoz kötött CDN-ről töltődik be. Csak helyi ZIP-kiadás, nincs FTP- vagy GitHub-közzététel. V1.43.5-r1 jóváhagyás előtti javítás: a Kezdőlap beállítása/kedvenc kártyák külön panel megszűnt, az elavult modul kikerült. A meglévő közvetlen fogantyús szerkesztés megmaradt, a szerkesztőgomb vízszintesen középre került, áttetsző gombbal és teljesen átlátszó eszköztárral. Frissített kliensoldali gyorsítótár-verzió. V1.43.5-r2: majdnem átlátszó arany kapu-hover, kezdeti fotó és dekódolt első képkocka összehangolása, folyamatos 60 Hz-közeli képkocka-keverés, finomabb kameramozgás és frissített gyorsítótár. V1.43.5-r3: egységes vízszintes középre rendezés a teljes honlapon, a fejléctől az aloldalakig és szerkesztői felületekig; új globális CSS-réteg, verziózott gyorsítótár.",
   "files": {
     "assets/documents/admissions-tajekozodasi-handout-2026.pdf": {
       "sizeBytes": 48341,
@@ -3558,6 +3558,10 @@
       "sizeBytes": 2045,
       "sha256": "73a83f66815c01f1f3c95b521e434a73a0c7abd04ba16e6bc12edaecc2d6cdd6"
     },
+    "css/universal-horizontal-centering-v1-43-5.css": {
+      "sizeBytes": 3784,
+      "sha256": "0a43f0d1e7399ee68fb2b93a8e429e550236d1118717ecc982c34a10ae785606"
+    },
     "css/update-notice.css": {
       "sizeBytes": 843,
       "sha256": "274e1ab8378841468056b53fc5de0b5618fb3d2df42db693d70a0fd3bbdc348f"
@@ -3599,8 +3603,8 @@
       "sha256": "d699af49beee4cb9af24350bdf8a3092e82dcb83cdd40a46554c50880a6bae9c"
     },
     "index.html": {
-      "sizeBytes": 17857,
-      "sha256": "3f1f0c49e12498390aef24b8a77dd27a63944b9feb9f6514b4d52faa1aaaf04b"
+      "sizeBytes": 17949,
+      "sha256": "460e119f42e506f4d17431e2dbef967488e793a83f3cd7788190f44612f00907"
     },
     "js/advanced-2026.js": {
       "sizeBytes": 31034,
@@ -3608,7 +3612,7 @@
     },
     "js/app.js": {
       "sizeBytes": 62379,
-      "sha256": "bd8576585732b4495d678906f1a1db673b1e191f7cb79b49a32b6e3a5929f2a4"
+      "sha256": "c0b9708b92edf082d15f358ba48c890a44f392d40b1fad66f3ce5e18e4fb4ee9"
     },
     "js/blocks.js": {
       "sizeBytes": 10406,
@@ -4672,7 +4676,7 @@
     },
     "json/config.json": {
       "sizeBytes": 17452,
-      "sha256": "8f00233df2ce8bff409869dc862521773f10833af069d4fe6e13bc8b84a9ab57"
+      "sha256": "dea6a893f05d6511fca06e8566786cab9d503c528b2d6accdc640025d2934fc0"
     },
     "json/data/arrival-and-development-26.json": {
       "sizeBytes": 6849,
@@ -5176,11 +5180,11 @@
     },
     "script.js": {
       "sizeBytes": 1740,
-      "sha256": "61e340a5192ae8f25786be02bf506e1616cef777824d8c0b16238c338522216a"
+      "sha256": "624c552e8278b903c77dd5e8605281c919743eba8801a885fee13d97e8d3fe16"
     },
     "service-worker.js": {
       "sizeBytes": 8407,
-      "sha256": "215c8c916b55c64e6a10111815c6c95805e0362aed6910c330e8d6450d001cea"
+      "sha256": "0a379340dde6024d020f5eddccbb23e71243b1bcd59db56999c8804a954ec378"
     },
     "sitemap.xml": {
       "sizeBytes": 111,
