@@ -29,7 +29,7 @@ import {renderStudentAchievements} from './student-achievements.js?v=1.42.18';
 import {renderDailySportsNews} from './daily-sport-news.js?v=1.42.18';
 import {renderDesktopTree} from '../desktop/navigation.js?v=1.42.18';
 import {renderMobileTree} from '../mobile/navigation.js?v=1.42.18';
-import {createPhoneRadial} from '../mobile/radial-wheel-v1-38.js?v=1.42.18';
+import {createPhoneRadial} from '../mobile/radial-wheel-m3-v1-43-9.js?v=1.43.9';
 import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.42.22';
 import {resolveVisualDraft,attachVisualEditor,visualEditingEnabled} from './visual-editor-v1-42-24.js?v=1.43.3';
 import {validateEditablePage} from '../tools/page-draft-core-v1-42-23.js?v=1.42.25';
@@ -136,6 +136,9 @@ function titleOf(x){return routeTitle(x)}
 function hrefOf(x){return x?.page?.schemaExtensions?.route||'#/'}
 function navLink(x){return dom('a',{href:hrefOf(x)},titleOf(x));}
 function pageChildren(node){return childrenOf(catalog,node)}
+// M3: a harmadik szint kizárólag a kifejezetten láthatóra állított oldalakra nyílik meg.
+// A régi desktop navigáció továbbra is a változatlan pageChildren-t használja.
+function mobileMenuChildren(node){return catalog.items.filter(item=>item.parent===node&&item.menuVisible&&item.depth<=3).sort((a,b)=>a.order-b.order)}
 const siteMap=document.getElementById('site-map-overlay');
 const siteMapCats=document.getElementById('site-map-categories');
 const siteMapSubtopics=document.getElementById('site-map-subtopics');
@@ -346,7 +349,7 @@ function renderMenu(){
  const context={dom,navLink,titleOf,hrefOf,pageChildren,currentRoute};
  renderDesktopTree(desktop,catalog.roots,context);
  renderMobileTree(mobile,catalog.roots,context);
- phoneWheel.setCatalog(catalog.roots,{childrenOf:pageChildren,titleOf,hrefOf});
+ phoneWheel.setCatalog(catalog.roots,{childrenOf:mobileMenuChildren,titleOf,hrefOf});
  document.getElementById('footer-page-count').textContent=`${catalog.items.length} tartalmi oldal`;
 }
 function closeMobile(){mobile.hidden=true;if(siteMap.hidden)setMenuButtonState(false);}
@@ -623,7 +626,7 @@ function renderRoute(options={}){
   document.body.classList.toggle('cs-inner-page',kind!=='home');
   releaseSpaFeatureStyles();
   const inEditor=visualEditingEnabled()&&!c3Preview;
-  const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.43.8');
+  const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.43.9');
   const localRelease=/^csanadi-r-v\d+\.\d+\.\d+$/.test(version)?'csanadi-website-'+version.slice('csanadi-r-'.length):'csanadi-website-v1.43.1';
   const previewDraft=node&&node.depth!==0&&!isSpaFeature(node.page)&&(inEditor||(c3Preview&&!c3PreviewBase))?resolveVisualDraft(node.page,'json/'+node.path,localRelease):null;
   const activeDraft=c3Preview&&!c3PreviewBase&&c3Overlay?.path==='json/'+node?.path?c3Overlay.page:previewDraft?.page;
