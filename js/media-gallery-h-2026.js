@@ -109,4 +109,4 @@ export function renderMediaGallery({compact=false}={}){
  }).catch(error=>{info.textContent='A galéria pillanatnyilag nem tölthető be: '+error.message;});
  return section;
 }
-import {settingNumber} from './site-settings-2026.js';
+import {settingNumber} from './site-settings-2026.js?v=1.42.18';

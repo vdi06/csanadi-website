@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-17T12:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T00:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 3
   },
   "seo": {
     "title": "Online biztonság és felelős kommunikáció – Csanádi Sportiskola",
@@ -54,6 +54,20 @@
           "type": "markdown",
           "data": {
             "text": "Erős, egyedi jelszavakat használj, ahol elérhető, kapcsold be a többfaktoros azonosítást, és a megosztott fájlok jogosultságait ellenőrizd. Gyanús üzeneteknél ne add meg a jelszavadat, hanem kérj segítséget egy megbízható felnőttől vagy az intézménytől.\n\n[Vissza a digitális kultúrához](#/oktatas/digitalis-kultura)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119",
+      "type": "section",
+      "title": "Mit tegyél egy gyanús üzenetnél?",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119",
+          "type": "markdown",
+          "data": {
+            "text": "Ne kattints automatikusan ismeretlen hivatkozásra, és ne add meg a jelszavadat kéretlen üzenetben. Ellenőrizd a feladót és a webcímet, szükség esetén külön, hivatalos csatornán érdeklődj.\n\nHa személyes adatot vagy képet szeretnél megosztani, gondold végig, kinek lesz hozzáférése, és kérj engedélyt az érintettektől."
           }
         }
       ]

@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T00:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 6
   },
   "seo": {
     "title": "Szülői információk – Csanádi Sportiskola",
@@ -51,6 +51,20 @@
           "type": "markdown",
           "data": {
             "text": "A hivatalos szülői oldalon külön nyomtatvány szerepel a 14 év alatti gyermek jogszerű távollétéhez, az egyesületi sportolói igazoláshoz, a napközis és tanulószobai igénybevételhez, az egyéni tanrendhez és a személyes adatok felhasználásához. A dokumentumokat mindig az **eredeti intézményi oldalon** nyisd meg, mert a fájlverzió és a benyújtási rend változhat.\n\n[Szülői nyomtatványok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/szulok.html)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119",
+      "type": "section",
+      "title": "Hasznos szülői ellenőrzőlista",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119",
+          "type": "markdown",
+          "data": {
+            "text": "Dokumentum benyújtása előtt ellenőrizd, hogy a megfelelő és aktuális nyomtatványt használod-e, szükséges-e szülői aláírás vagy melléklet, és pontosan melyik csatornán lehet beadni.\n\nTanulmányi és hiányzási ügyben az intézmény hivatalos kommunikációs felületein közzétett tájékoztatás az irányadó."
           }
         }
       ]

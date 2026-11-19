@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T00:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 6
   },
   "seo": {
     "title": "Sportgalériák – Csanádi Sportiskola",
@@ -51,6 +51,20 @@
           "type": "markdown",
           "data": {
             "text": "A jelenlegi gyűjtemény tematikus sportképeket és bemutató montázsokat is tartalmaz. **Egy illusztráció nem egyenértékű hiteles iskolai eseményfotóval.** Eseményhez rendelhető személyes képeket, neveket és eredményeket csak jogszerű, intézményi jóváhagyással lehet publikálni. A közzétett versenyadatokat a [Sporteredmények](#/sport/sporteredmenyek) oldalon keresd."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119",
+      "type": "section",
+      "title": "Képek és személyes adatok",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119",
+          "type": "markdown",
+          "data": {
+            "text": "A galériában a sportágak és az iskolai élet többféle helyzetét bemutató képek között tájékozódhatsz. A személyeket azonosíthatóvá tevő fotók publikálásához a vonatkozó adatvédelmi és felhasználási feltételeket is ellenőrizni kell.\n\nA sporteredményekről külön a [Sporteredmények](#/sport/sporteredmenyek) oldal nyújt tájékoztatást."
           }
         }
       ]

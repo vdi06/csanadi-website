@@ -384,6 +384,11 @@
           "path": "pages/information/guide.json",
           "order": 9,
           "menuVisible": false
+        },
+        {
+          "path": "pages/information/editor-workbench.json",
+          "order": 99,
+          "menuVisible": false
         }
       ]
     }

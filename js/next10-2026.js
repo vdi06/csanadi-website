@@ -1,4 +1,4 @@
-import {setting} from './site-settings-2026.js';
+import {setting} from './site-settings-2026.js?v=1.42.18';
 
 const e=(tag,cls,text)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=String(text);return x;};
 const add=(parent,...children)=>{for(const child of children)if(child)parent.append(child);return parent;};

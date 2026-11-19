@@ -1,0 +1,32 @@
+/* Nine-frame entrance – the live image contains the movement; no duplicate CSS door animations. */
+.gate26{--gate-photo-width:max(100vw,177.68vh);--gate-photo-height:max(100vh,56.28vw);position:fixed!important;inset:0!important;z-index:2600!important;display:block!important;overflow:hidden!important;background:#07131d!important;isolation:isolate}
+.gate26 .gate26-frame{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;display:block;filter:brightness(.89);z-index:1;pointer-events:none;user-select:none}
+.gate26 .gate26-door-hitbox{
+ position:absolute!important;z-index:5!important;left:50%!important;top:calc(50% + var(--gate-photo-height)*.096)!important;
+ width:calc(var(--gate-photo-width)*.16)!important;height:calc(var(--gate-photo-height)*.535)!important;
+ transform:translate(-50%,-50%)!important;margin:0!important;padding:0!important;
+ appearance:none;background:transparent!important;border:0!important;border-radius:0!important;
+ box-shadow:none!important;cursor:pointer;overflow:visible!important;pointer-events:auto;
+ clip-path:polygon(0 15%,5% 11%,18% 5%,33% 1%,50% 0,67% 1%,82% 5%,95% 11%,100% 15%,100% 100%,0 100%);
+ -webkit-tap-highlight-color:transparent;
+}
+.gate26 .gate26-door-hitbox:focus-visible{outline:3px solid #f5dc9c!important;outline-offset:3px!important}
+.gate26 .gate26-door-outline{display:block;width:100%;height:100%;pointer-events:none;overflow:visible;filter:drop-shadow(0 0 2px rgba(39,22,6,.42))}
+.gate26 .gate26-door-contour{fill:none;stroke:#f4d996;stroke-width:2.3;stroke-opacity:.52;stroke-linecap:round;stroke-linejoin:round}
+.gate26 .gate26-door-seam{fill:none;stroke:#f4d996;stroke-width:1.5;stroke-opacity:.19}
+.gate26 .gate26-door-hitbox:hover .gate26-door-contour,.gate26 .gate26-door-hitbox:focus-visible .gate26-door-contour{stroke-opacity:.97;stroke-width:3.3}
+.gate26 .gate26-skip-bar{position:absolute!important;z-index:9!important;inset:auto 0 0!important;width:100%!important;height:clamp(120px,17vh,174px)!important;display:flex!important;align-items:flex-end!important;justify-content:center!important;padding:22px max(20px,env(safe-area-inset-right)) calc(21px + env(safe-area-inset-bottom))!important;background:linear-gradient(to top,rgba(4,15,26,.82),rgba(4,15,26,.40) 44%,transparent)!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;pointer-events:none}
+.gate26 .gate26-bottom-copy{width:min(1020px,calc(100% - 116px));max-width:none;display:flex!important;align-items:center!important;justify-content:center!important;margin:auto!important;text-align:center!important;color:#fff6df}
+.gate26 .gate26-school-name{margin:0!important;max-width:100%;color:#f9e6b5!important;text-align:center!important;text-wrap:balance;font-size:clamp(16px,1.55vw,24px)!important;line-height:1.33!important;letter-spacing:.065em!important;font-weight:750!important;text-shadow:0 2px 4px #000,0 5px 22px #000}
+.gate26 .gate26-skip,.gate26 .gate26-skip:hover{position:absolute!important;right:clamp(12px,2vw,34px)!important;bottom:calc(17px + env(safe-area-inset-bottom))!important;left:auto!important;top:auto!important;width:45px!important;height:45px!important;min-width:45px!important;min-height:45px!important;display:grid!important;place-items:center!important;padding:0!important;color:#fff1d1!important;background:rgba(12,27,43,.52)!important;border:1px solid rgba(239,206,141,.72)!important;border-radius:50%!important;font-size:22px!important;pointer-events:auto!important}
+.gate26 .gate26-skip:focus-visible{outline:3px solid #f8df9f!important;outline-offset:3px!important}
+.gate26-finished{opacity:0!important;pointer-events:none!important;transition:opacity .27s ease!important}
+@media(max-width:767px){.gate26 .gate26-skip-bar{height:clamp(124px,22vh,182px)!important;padding:18px 8px calc(18px + env(safe-area-inset-bottom))!important}.gate26 .gate26-bottom-copy{width:calc(100% - 88px)!important}.gate26 .gate26-school-name{font-size:clamp(12px,3.15vw,16px)!important;line-height:1.28!important;letter-spacing:.025em!important}.gate26 .gate26-skip{width:40px!important;height:40px!important;min-width:40px!important;min-height:40px!important;right:10px!important}}
+@media(prefers-reduced-motion:reduce){.gate26,.gate26 *{animation:none!important;transition:none!important}}
+
+/* Camera advances gently toward the open doorway during the last third of playback. */
+.gate26-open .gate26-frame{animation:cs17-approach var(--gate26-duration,2250ms) cubic-bezier(.2,.05,.25,1) both}
+.gate26-open .gate26-bottom-copy{animation:cs17-caption var(--gate26-duration,2250ms) ease-in both}
+@keyframes cs17-approach{0%,58%{transform:scale(1)}100%{transform:scale(1.075)}}
+@keyframes cs17-caption{0%,68%{opacity:1}100%{opacity:.4}}
+@media(prefers-reduced-motion:reduce){.gate26-open .gate26-frame,.gate26-open .gate26-bottom-copy{animation:none!important}}

@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T00:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 6
   },
   "seo": {
     "title": "Osztályozó vizsgák – Csanádi Sportiskola",
@@ -51,6 +51,20 @@
           "type": "markdown",
           "data": {
             "text": "A Csanádi nyilvános osztályozóvizsga-oldalán a megtekintéskor **2025. április 1–15.** közötti beosztások szerepelnek. Ezek archív adatok, 2026/2027-es vizsgaidőpontnak nem vehetők át. Az érintett tantárgy, vizsgakövetelmény, jogosultság és helyszín ellenőrzéséhez az iskola aktuális egyéni tájékoztatása szükséges.\n\n[Osztályozó vizsgák (a közzétett 2025-ös beosztással) – eredeti intézményi forrás](https://csanadi-bp.edu.hu/osztalyozo.html)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119",
+      "type": "section",
+      "title": "Felkészülés az osztályozó vizsgára",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119",
+          "type": "markdown",
+          "data": {
+            "text": "A felkészülés előtt gyűjtsd össze a tananyag témaköreit, a szükséges segédanyagokat és a korábbi feladatokat. Készíts időbeosztást, és az ismereteket ne csak olvasd át, hanem gyakorold önálló feladatokkal is.\n\nA vizsga időpontját, formáját és hivatalos követelményeit mindig az iskola aktuális tájékoztatása alapján kell figyelembe venni."
           }
         }
       ]

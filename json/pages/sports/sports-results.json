@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T00:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 6
+    "revision": 7
   },
   "seo": {
     "title": "Sporteredmények – Csanádi Sportiskola",
@@ -51,6 +51,20 @@
           "type": "markdown",
           "data": {
             "text": "A hivatalos büszkeséglistán szereplő történeti eredményeket az iskolai sporteredménytárban név szerint vissza lehet keresni. A 2026-os intézményi aktuális oldalon több diákverseny-eredményről is beszámolnak. Egyéni, friss sporteredményt csak a hivatalos közlésben szereplő helyezéssel és névvel állítunk.\n\n[Hírek és események](#/hirek-es-esemenyek)\n\n[Az iskola közzétett büszkeséglistája – eredeti intézményi forrás](https://csanadi-bp.edu.hu/buszkeseg.html)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119",
+      "type": "section",
+      "title": "Sporteredmények értelmezése",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119",
+          "type": "markdown",
+          "data": {
+            "text": "Egy versenyeredményhez érdemes együtt megadni a sportágat, a verseny megnevezését, az időpontot, a korosztályt és a helyezést. A csak névből vagy rövid címből álló hivatkozás nem mindig elég az eredmény egyértelmű azonosítására.\n\nA régebbi eredmények az intézmény sporttörténetének részét alkotják, az aktuális versenynaptár pedig időről időre változhat."
           }
         }
       ]

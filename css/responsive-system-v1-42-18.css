@@ -1,0 +1,55 @@
+/* Consistent centered responsive layout for home, subpages, embedded centres and editor. */
+:root{--cs-content-limit:var(--cs-site-content-width,1160px);--cs-gutter:clamp(12px,3vw,32px);--cs-readable-limit:76ch}
+html{color-scheme:light dark;scroll-padding-top:clamp(72px,9vw,126px)}
+html[data-theme=light]{color-scheme:light}
+html[data-theme=dark]{color-scheme:dark}
+body,#app,#global-hero,.site-header,.site-footer{max-inline-size:100%;min-inline-size:0}
+#app :is(section,article,div,main,aside,figure,nav){min-inline-size:0}
+/* One content width token; nested Bootstrap containers must not subtract gutters twice. */
+#app[data-page-kind=home]>.home-canvas,
+#app:not([data-page-kind=home])>.content-shell,
+#app:not([data-page-kind=home])>.cs-spa-feature,
+#app:not([data-page-kind=home])>.page-banner>.container-xxl,
+#app>.not-found,
+.site-footer .footer-grid,
+.site-footer .footer-diagnostics-disclosure,
+.r26-home-map-link{
+  width:min(calc(100% - 2 * var(--cs-gutter)),var(--cs-content-limit))!important;
+  max-width:var(--cs-content-limit)!important;
+  margin-inline:auto!important;
+}
+#app[data-page-kind=home] .home-canvas :is(.container-xxl,.section-wrap,.experience-hub,.experience-hub>.container-xxl),
+#app:not([data-page-kind=home]) .content-shell :is(.container-xxl,.content-layout,.content-tiles,.article-flow){
+  width:100%!important;max-width:100%!important;margin-inline:auto!important;
+}
+#app .home-canvas>:is(.home-unit,.home-j-navrail-unit,.home-j-fold){max-width:100%!important;width:100%!important;margin-inline:auto!important}
+#app :is(.page-banner h1,.page-banner p,.page-banner .breadcrumbs,.section-overline,.section-title,.cs-nav-detail-tiles>h2){text-align:center}
+#app :is(.page-banner>.container-xxl,.content-shell,.cs-spa-feature,.home-j-fold){margin-inline:auto}
+#app :is(.page-banner p,.section-lead,.editorial-lead){max-width:var(--cs-readable-limit);margin-inline:auto}
+#app :is(p,li,.text-flow,figcaption){overflow-wrap:break-word;word-break:normal;hyphens:auto}
+#app :is(h1,h2,h3,h4,h5,h6){overflow-wrap:anywhere;text-wrap:balance;white-space:normal;line-height:1.26}
+#app :is(.features-grid,.editorial-grid,.quick-grid,.cs-nav-detail-tiles,.cs92-news-stream,.cs92-documents-layout,.student-success-feature-grid,.experience-dash-grid){width:100%;max-width:100%;min-width:0;gap:clamp(.7rem,2vw,1.4rem)}
+#app :is(.features-grid,.editorial-grid,.quick-grid,.cs-nav-detail-tiles)>*{min-width:0;max-width:100%}
+#app :is(img,svg,video,canvas,picture){max-width:100%}
+#app :is(img,video){height:auto}
+#app :is(input,select,textarea,button){max-width:100%}
+#app .cs-data-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-gutter:stable}
+#app .cs-data-scroll>table{max-width:none;min-width:max-content}
+#app .cs-spa-feature-frame{max-width:100%;border:0;background:transparent;color-scheme:inherit}
+/* Theme parity for content panels, informative cards and form controls. */
+html[data-theme=light] :is(.content-shell,.body-card,.article-section,.home-j-fold,.home-unit,.cs-spa-feature){color:var(--ink,#172B3D)}
+html[data-theme=dark] :is(.content-shell,.body-card,.article-section,.home-j-fold,.home-unit,.cs-spa-feature){color:var(--ink,#F1EAD9)}
+html[data-theme=dark] #app :is(input,select,textarea,.form-control){color-scheme:dark;color:var(--ink);background-color:var(--card);border-color:var(--line)}
+html[data-theme=light] #app :is(input,select,textarea,.form-control){color-scheme:light;color:var(--ink);background-color:var(--card);border-color:var(--line)}
+#app :is(a,button,input,textarea,select,summary):focus-visible{outline:3px solid #dfb970;outline-offset:3px}
+@media(max-width:768px){
+  #app :is(.features-grid,.editorial-grid,.quick-grid,.cs-nav-detail-tiles,.cs92-news-stream,.cs92-documents-layout){grid-template-columns:minmax(0,1fr)!important}
+  #app .home-canvas{padding-inline:0!important}
+  #app .page-banner h1{font-size:clamp(1.45rem,6vw,2.3rem)!important}
+  #app .cs-spa-feature{padding-inline:0!important}
+  #app :is(.article-flow,.body-card,.home-j-fold-grid){min-width:0}
+  body #site-header .brand-row{min-width:0;max-width:100%}
+  body :is(#ext26-mobile-nav,.ext26-mobile-nav,.cs32-mobile-bar,#cs39-mobile-route){display:none!important}
+}
+@media(max-width:350px){:root{--cs-gutter:12px}#app .content-shell .article-flow{padding-inline:12px!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}}

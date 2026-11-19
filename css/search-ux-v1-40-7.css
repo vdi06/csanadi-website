@@ -1,9 +1,0 @@
-/* v1.40.7 S – kereső billentyűzetes és visszajelzési finomításai. */
-#search-panel .j-search-keyboard-help{font-size:.82rem;line-height:1.5;opacity:.92;padding:.45rem .75rem;border-inline-start:3px solid currentColor;margin:.5rem 0 1rem}
-#search-panel .j-search-tools select{min-height:44px}
-#search-panel .search-result:focus-visible{outline:3px solid #d6a552!important;outline-offset:3px!important;position:relative;z-index:1}
-#search-panel .j-search-result-top{display:flex;flex-wrap:wrap;gap:.35rem .5rem;align-items:center}
-#search-panel .j-search-empty{padding:1rem;border:1px dashed currentColor;border-radius:.75rem}
-@media(max-width:380px){#search-panel .j-search-keyboard-help{font-size:.78rem;padding:.4rem .55rem}}
-@media(prefers-reduced-motion:reduce){#search-panel .search-result{scroll-behavior:auto!important}}
-@media(forced-colors:active){#search-panel .search-result:focus-visible{outline:3px solid Highlight!important}}

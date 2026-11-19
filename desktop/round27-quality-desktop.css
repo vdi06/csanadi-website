@@ -1,5 +1,0 @@
-/* A kártyarendező műveletek asztali nézetben kompaktan a cím mellett maradnak. */
-@media(min-width:769px){
- #app[data-page-kind="home"] .csn21-home-row{min-height:76px}
- #app[data-page-kind="home"] .csn21-card-actions button{font-size:.79rem!important}
-}

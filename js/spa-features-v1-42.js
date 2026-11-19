@@ -59,11 +59,11 @@ function sanitizedHTML(source){
 }
 function safeAttribute(value){return String(value).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');}
 function frameDocument(key,component){
- const css=component.styles.map(path=>`<link rel="stylesheet" href="${safeAttribute(path)}?v=1.42.16">`).join('')+'<link rel="stylesheet" href="css/spa-frame-unified-v1-42-16.css?v=1.42.16">';
+ const css=component.styles.map(path=>`<link rel="stylesheet" href="${safeAttribute(path)}?v=1.42.18">`).join('')+'<link rel="stylesheet" href="css/spa-frame-unified-v1-42-16.css?v=1.42.18">';
  const base=new URL('./',document.baseURI).href;
  // Bootstrap remains pinned to the same CDN version as the original SPA.
  const bootstrap='https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css';
- return `<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><base href="${safeAttribute(base)}"><link rel="stylesheet" href="${bootstrap}" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">${css}</head><body data-spa-feature="${key}" class="${key==='arrival'?'arrival2':''}">${sanitizedHTML(component.html)}<script type="module" src="js/spa-frame-bootstrap-v1-42.js?v=1.42.16"></script></body></html>`;
+ return `<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><base href="${safeAttribute(base)}"><link rel="stylesheet" href="${bootstrap}" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">${css}</head><body data-spa-feature="${key}" class="${key==='arrival'?'arrival2':''}">${sanitizedHTML(component.html)}<script type="module" src="js/spa-frame-bootstrap-v1-42.js?v=1.42.18"></script></body></html>`;
 }
 export async function activateSpaFeature(shell,page){
  const token=activation,key=page?.schemaExtensions?.spaFeature;
@@ -102,7 +102,13 @@ export async function activateSpaFeature(shell,page){
    };
    observer=new ResizeObserver(resize);observer.observe(doc.body);observer.observe(doc.documentElement);
    // Changing the parent's theme must immediately update the embedded center.
-   const syncTheme=()=>{const mode=document.documentElement.dataset.theme||'light';doc.documentElement.dataset.theme=mode;doc.documentElement.setAttribute('data-bs-theme',mode);};
+   const syncTheme=()=>{
+    const mode=document.documentElement.dataset.theme||'light',style=getComputedStyle(document.documentElement);
+    doc.documentElement.dataset.theme=mode;doc.documentElement.setAttribute('data-bs-theme',mode);
+    for(const key of ['page','card','light','line','ink','muted','header','footer','nav']){
+     const value=style.getPropertyValue('--'+key).trim();if(value)doc.documentElement.style.setProperty('--'+key,value);
+    }
+   };
    syncTheme();themeObserver=new MutationObserver(syncTheme);themeObserver.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme','data-bs-theme']});
    // SPA links belong to the parent's hash router; section links stay in-frame.
    doc.addEventListener('click',event=>{

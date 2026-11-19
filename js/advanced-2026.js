@@ -2,7 +2,7 @@
 
 
  
-import {renderDigitalClock} from './experience-2026.js?v=1.42.16';
+import {renderDigitalClock} from './experience-2026.js?v=1.42.18';
 const BASE='json/data/';
 const ZONE=()=>setting('modules2026.clock.timezone');
 const e=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -25,77 +25,9 @@ async function load(name){const r=await fetch(BASE+name,{cache:'no-store'});if(!
 const heading=(over,title,desc)=>{const box=e('div','experience-section-head');add(box,e('span','experience-eyebrow',over),e('h2','experience-title',title));if(desc)box.append(e('p','experience-lead',desc));return box;};
 
  
-let gateShowing=false;
-function clearEntrancePrelude(){
- document.documentElement.classList.remove('cs-gate-pending');
- document.getElementById('cs-gate-prelude')?.remove();
-}
-export function openEntrancePortal({force=false}={}){
- if(gateShowing){clearEntrancePrelude();return;}
- // Minden új dokumentumbetöltéskor megjelenik; az újrajátszás külön gombbal is elérhető.
- gateShowing=true;
- const layer=e('div','gate26');layer.id='gate26';layer.setAttribute('role','dialog');layer.setAttribute('aria-modal','true');layer.setAttribute('aria-labelledby','gate26-title');
- const scenery=e('div','gate26-scene gate26-cinematic-open');scenery.setAttribute('aria-hidden','true');
- const shut=e('div','gate26-cinematic-shut');shut.setAttribute('aria-hidden','true');
- const doorStage=e('div','gate26-door-stage');doorStage.setAttribute('aria-hidden','true');
- const leftLeaf=e('div','gate26-door-leaf gate26-door-left');
- const rightLeaf=e('div','gate26-door-leaf gate26-door-right');
- doorStage.append(leftLeaf,rightLeaf);
- const glow=e('div','gate26-glow');
- const content=e('div','gate26-content');
- const title=e('h2','gate26-school-name','CSANÁDI ÁRPÁD SPORTISKOLA, ÁLTALÁNOS ISKOLA ÉS GIMNÁZIUM');title.id='gate26-title';
- const enter=btn('','gate26-enter gate26-door-hitbox',()=>open());
- enter.setAttribute('aria-label','A zöld iskolakapu kinyitása');enter.title='A kapu kinyitása';
- // The SVG is only an outline: the actual door photograph remains fully visible.
- const svgNS='http://www.w3.org/2000/svg';
- const trim=document.createElementNS(svgNS,'svg');
- trim.classList.add('gate26-door-outline');
- trim.setAttribute('viewBox','0 0 280 520');
- trim.setAttribute('preserveAspectRatio','none');
- trim.setAttribute('aria-hidden','true');
- const contour=document.createElementNS(svgNS,'path');
- contour.setAttribute('class','gate26-door-contour');
- contour.setAttribute('d','M 6 78 C 37 48 76 17 140 12 C 204 17 243 48 274 78 L 274 510 Q 274 514 269 514 L 11 514 Q 6 514 6 510 Z');
- const seam=document.createElementNS(svgNS,'path');
- seam.setAttribute('class','gate26-door-seam');
- seam.setAttribute('d','M 140 12 L 140 513');
- trim.append(contour,seam);enter.append(trim);
- const skipBar=e('div','gate26-skip-bar');const skip=btn('⏭','gate26-skip',()=>finish());skip.setAttribute('aria-label','Belépőanimáció kihagyása');skip.title='Belépőanimáció kihagyása';
- const bottomCopy=e('div','gate26-bottom-copy');bottomCopy.append(title);skipBar.append(bottomCopy,skip);
- add(layer,scenery,shut,doorStage,glow,content,enter,skipBar);document.body.append(layer);clearEntrancePrelude();
- const oldFocus=document.activeElement;let done=false,opening=false,finishTimer;
- const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
- const previousOverflow=document.body.style.overflow;
- document.body.style.overflow='hidden';
- function cleanup(){if(!layer.isConnected)return;layer.remove();document.body.style.overflow=previousOverflow;gateShowing=false;if(oldFocus?.isConnected&&oldFocus!==document.body)oldFocus.focus?.();}
- function finish(){if(done)return;done=true;clearTimeout(finishTimer);layer.classList.add('gate26-finished');setTimeout(cleanup,reduced?0:420);}
- function open(){
-  if(done||opening)return;
-  opening=true;
-  enter.disabled=true;
-  enter.setAttribute('aria-label','A kapu nyílik');
-  // Remove the outline element before starting the door animation. It cannot jump.
-  // Keyboard focus moves to the still-available Skip action.
-  enter.remove();
-  skip.focus({preventScroll:true});
-  if(reduced){finish();return;}
-  const duration=window.matchMedia('(max-width:767px)').matches?3800:5100;
-  layer.style.setProperty('--gate26-duration',duration+'ms');
-  layer.classList.add('gate26-open');
-  finishTimer=setTimeout(finish,duration);
- }
- layer.addEventListener('keydown',ev=>{
-  if(ev.key==='Escape'){ev.preventDefault();finish();}
-  if(ev.key==='Tab'){
-   const choices=opening?[skip]:[enter,skip];
-   const index=choices.indexOf(document.activeElement);
-   if(index!==-1){ev.preventDefault();choices[(index+(ev.shiftKey?-1:1)+choices.length)%choices.length].focus();}
-  }
- });
- enter.focus();
-  
+import {showGateEntrance} from './gate-sequence-v1-42-17.js';
+export function openEntrancePortal(options={}){showGateEntrance(options);}
 
-}
 function bindPortalButton(){const replay=document.getElementById('portal-replay');if(replay&&!replay.dataset.wired){replay.dataset.wired='1';replay.addEventListener('click',()=>openEntrancePortal({force:true}));}}
 
 function validateBell(value){
@@ -250,4 +182,4 @@ function embedBlock(items){const eligible=items.filter(x=>publishedChannel(x)&&x
 export function initSocialLinks(){bindPortalButton();socialData().then(v=>{for(const id of ['social-header','social-footer']){const mount=document.getElementById(id);if(mount)mount.replaceChildren(socialLinks(v.items,true));}}).catch(err=>console.warn('Közösségi adatok:',err.message));}
 export function renderSocialSection(){const s=e('section','social-feature-section section-wrap'),c=e('div','container-xxl');add(c,heading('KÖZÖSSÉG ÉS MEGOSZTÁS','Kapcsolódjunk az iskola közösségéhez','Közösségi elérhetőségek és az oldal megosztása – az adatvédelem tiszteletben tartásával.'));const box=e('div','social-feature-box'),intro=e('div','social-feature-copy'),data=e('div','social-feature-items');add(intro,e('h3','','Egy történet több felületen is folytatódhat.'),e('p','','A hitelesített intézményi profilok gyorselérésként jelennek meg. A beágyazásokhoz a látogató külön hozzájárulása szükséges.'),btn('Az oldal megosztása','hub26-pill',nativeShare));data.append(note('Közösségi adatok betöltése…'));add(box,intro,data);c.append(box);s.append(c);
  socialData().then(v=>{data.replaceChildren(socialLinks(v.items),embedBlock(v.items));}).catch(err=>{data.textContent='Közösségi modul átmenetileg nem elérhető: '+err.message;});return s;}
-import {setting,settingNumber} from './site-settings-2026.js';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.42.18';

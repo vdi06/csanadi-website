@@ -1,5 +1,5 @@
 // Közös, statikus tárhelyen is működő aloldali finomítások.
-import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.42.16';
+import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.42.18';
 const forbiddenHost = /(^|\.)csanadi-bp\.edu\.hu$/i;
 const legacyRoutes = new Map([
   ['tortenet.html','#/iskolank/tortenet'],
@@ -113,10 +113,11 @@ export function initSubpageEnhancements() {
   // Nem hivatkozunk a kezdőlapi vizuális indítógombra: az oldalváltás
   // ideiglenesen áthelyezheti, az aloldali menünek ettől függetlenül működnie kell.
   menu.addEventListener('click', () => document.dispatchEvent(new Event('csanadi:menu-toggle')));
-  actions.insertBefore(menu, actions.firstChild);
+  // One centered menu button belongs to the entire row, not the right-side actions.
+  const brandRow=header.querySelector('.brand-row');
+  (brandRow||header).append(menu);
   // Asztali aloldalon a középre tett körmenügomb megmarad; a kompakt szalag
   // az aktuális oldal nevét és a tényleges olvasási előrehaladást is jelzi.
-  const brandRow=header.querySelector('.brand-row');
   // A sportjelenet nem része a kért fejlécnek. Nem készül hozzá SVG, gomb,
   // animációs DOM vagy eseménykezelő; a menü és olvasási jelzés működik tovább.
   const sportAnimationEnabled=false;

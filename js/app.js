@@ -1,38 +1,39 @@
-import {initRound10Enhancements} from './round10-enhancements.js?v=1.42.16';
-import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.42.16';
-import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.42.16';
-import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=1.42.16';
-import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=1.42.16';
-import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.42.16';
-import {setupSmartSearch} from './search-j-2026.js?v=1.42.16';
-import {installLanguageHighlights} from './language-20.js?v=1.42.16';
-import {enhancePersonalizedHome} from './round21-personalize.js?v=1.42.16';
-import {enhanceInlineHomeEditor} from './home-inline-editor-v1-41-4.js?v=1.42.16';
-import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,syncMobileEmbeddedSections,initRound29Diagnostics} from './round29-home.js?v=1.42.16';
-import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=1.42.16';
-import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=1.42.16';
-import {initEnhancedInteractions} from './interactions-be-2026.js?v=1.42.16';
-import {renderMediaGallery} from './media-gallery-h-2026.js?v=1.42.16';
-import {renderDocumentCollections} from './document-collections-2026.js?v=1.42.16';
-import {renderPageMedia} from './page-media-2026.js?v=1.42.16';
-import {useSiteSettings,settingNumber} from './site-settings-2026.js';
-import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.42.16';
-import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.42.16';
-import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.42.16';
-import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=1.42.16';
+import {initRound10Enhancements} from './round10-enhancements.js?v=1.42.18';
+import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.42.18';
+import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.42.18';
+import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=1.42.18';
+import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=1.42.18';
+import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.42.18';
+import {setupSmartSearch} from './search-j-2026.js?v=1.42.18';
+import {installLanguageHighlights} from './language-20.js?v=1.42.18';
+import {enhancePersonalizedHome} from './round21-personalize.js?v=1.42.18';
+import {enhanceInlineHomeEditor} from './home-inline-editor-v1-41-4.js?v=1.42.18';
+import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,syncMobileEmbeddedSections,initRound29Diagnostics} from './round29-home.js?v=1.42.18';
+import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=1.42.18';
+import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=1.42.18';
+import {initEnhancedInteractions} from './interactions-be-2026.js?v=1.42.18';
+import {renderMediaGallery} from './media-gallery-h-2026.js?v=1.42.18';
+import {renderDocumentCollections} from './document-collections-2026.js?v=1.42.18';
+import {renderPageMedia} from './page-media-2026.js?v=1.42.18';
+import {useSiteSettings,settingNumber} from './site-settings-2026.js?v=1.42.18';
+import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.42.18';
+import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.42.18';
+import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.42.18';
+import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=1.42.18';
  
-import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.42.16';
-import {renderBlock,dom,listCards} from './blocks.js?v=1.42.16';
-import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=1.42.16';
-import {renderSportsSuccesses} from './sports-successes.js?v=1.42.16';
-import {renderStudentAchievements} from './student-achievements.js?v=1.42.16';
-import {renderDailySportsNews} from './daily-sport-news.js?v=1.42.16';
-import {renderDesktopTree} from '../desktop/navigation.js?v=1.42.16';
-import {renderMobileTree} from '../mobile/navigation.js?v=1.42.16';
-import {createPhoneRadial} from '../mobile/radial-wheel-v1-38.js?v=1.42.16';
-import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.42.16';
-import {createSubpageHero} from './subpages-v1.js?v=1.42.16';
-import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.42.16';
+import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.42.18';
+import {renderBlock,dom,listCards} from './blocks.js?v=1.42.18';
+import {createAuthoringWorkbench} from './editor-workbench-v1-42-18.js';
+import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=1.42.18';
+import {renderSportsSuccesses} from './sports-successes.js?v=1.42.18';
+import {renderStudentAchievements} from './student-achievements.js?v=1.42.18';
+import {renderDailySportsNews} from './daily-sport-news.js?v=1.42.18';
+import {renderDesktopTree} from '../desktop/navigation.js?v=1.42.18';
+import {renderMobileTree} from '../mobile/navigation.js?v=1.42.18';
+import {createPhoneRadial} from '../mobile/radial-wheel-v1-38.js?v=1.42.18';
+import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.42.18';
+import {createSubpageHero} from './subpages-v1.js?v=1.42.18';
+import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.42.18';
 const app=document.getElementById('app');
 const routeStatus=document.getElementById('cs1404-route-status');
 let homeHeroElement=null;
@@ -412,6 +413,7 @@ function contentPage(node){
     body.prepend(renderSportsSuccesses({data:{view:'archive'},title:'Közzétett sporteredmények'}));
     body.prepend(renderStudentAchievements('archive'));
   }
+  if(route==='#/informaciok/szerkesztoi-muhely')body.prepend(createAuthoringWorkbench());
   if(route==='#/sport/sportgaleriak')body.prepend(renderMediaGallery({compact:false}));
   if(route==='#/iskolank/tantestulet')body.prepend(renderStaffCenter());
   if(route==='#/informaciok/mindennapi-tudnivalok/csengetesi-rend')body.prepend(renderBellCenter());
@@ -615,6 +617,11 @@ function renderRoute(options={}){
     const match=(matchingIds.length===1?matchingIds[0]:null)||(nextBySummary.get(saved.summary)||[])[saved.occurrence-1];
     if(match)match.open=true;
    }
+  }
+  for(const table of app.querySelectorAll('table')){
+   if(table.closest('.cs-data-scroll,.table-responsive,.cs-spa-feature'))continue;
+   const wrap=dom('div',{class:'cs-data-scroll',tabindex:'0',role:'region','aria-label':'Széles táblázat vízszintes görgetése'});
+   table.parentNode.insertBefore(wrap,table);wrap.append(table);
   }
   syncRouteHero(node,kind);
   syncHeaderSelfLinks();

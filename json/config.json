@@ -98,7 +98,7 @@
     "analyticsEnabled": false,
     "externalOrigins": [],
     "requireExplicitApprovalForStudentNews": true,
-    "allowFictionalStudentSamples": true
+    "allowFictionalStudentSamples": false
   },
   "search": {
     "enabled": true,
@@ -176,13 +176,17 @@
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r-v1.42.16",
+    "cacheVersion": "csanadi-r-v1.42.18",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
-    "mediaCacheEntries": 100,
+    "mediaCacheEntries": 55,
     "offlineShellMaxAgeHours": 24,
-    "offlinePrecacheFileMaxBytes": 300000,
-    "offlinePrecacheMaxEntries": 220
+    "offlinePrecacheFileMaxBytes": 650000,
+    "offlinePrecacheMaxEntries": 130,
+    "swShellMaxItemBytes": 750000,
+    "swMediaMaxItemBytes": 5242880,
+    "swMediaCacheMaxMegabytes": 42,
+    "swUpdateCheckSeconds": 300
   },
   "runtime": {
     "subpageHero": {
@@ -415,7 +419,12 @@
       "outerRingArcSpacingDegrees": 34,
       "mobileSubmenuMaxWidthPx": 760,
       "menuFocusDelayMs": 90,
-      "typeAheadResetMs": 800
+      "typeAheadResetMs": 800,
+      "subpageCrest": {
+        "initialDiameterPx": 100,
+        "scrolledScale": 0.9,
+        "mobileUsesTopMenu": true
+      }
     },
     "documents": {
       "maxSavedFilters": 20,
@@ -542,7 +551,7 @@
     },
     "release": {
       "minimumManifestEntries": 700,
-      "expectedPageCount": 78,
+      "expectedPageCount": 79,
       "updateCheckSeconds": 300
     },
     "offlineReader": {
@@ -550,6 +559,29 @@
       "maximumStorageBytes": 52428800,
       "maxFileBytes": 524288,
       "maxParallelFetches": 3
+    },
+    "entrance": {
+      "frameCount": 9,
+      "imageDirectory": "assets/media/web/gate-frames",
+      "framePrefix": "gate-",
+      "mobileSuffix": "-mobile",
+      "extension": ".webp",
+      "mobileBreakpointPx": 768,
+      "durationDesktopMs": 2250,
+      "durationMobileMs": 1750,
+      "finishFadeMs": 270,
+      "preloadFrames": true
+    },
+    "layout": {
+      "contentMaxWidthPx": 1160,
+      "minPageGutterPx": 14,
+      "maxPageGutterPx": 32
+    },
+    "editorWorkbench": {
+      "maxImagePixels": 1920,
+      "maxDocumentMegabytes": 25,
+      "maxExportEntries": 6000,
+      "saveMode": "export-only"
     }
   },
   "modules2026": {

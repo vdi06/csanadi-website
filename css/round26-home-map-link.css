@@ -1,5 +1,0 @@
-/* R26 egyszerű belépő: a teljes térkép csak a külön oldalon, jóváhagyás után töltődik be. */
-.r26-home-map-link{display:flex;gap:16px;align-items:center;padding:20px 25px;margin-block:20px 25px;border:1px solid var(--csn-border,#aab6c4);border-radius:18px;background:var(--bs-body-bg,#fff);color:var(--bs-body-color,#172a40);box-shadow:0 10px 35px #00000012}
-.r26-home-map-icon{font-size:2.45rem;flex:none}.r26-home-map-link div:nth-child(2){flex:1 1 370px;min-width:0}.r26-home-map-link strong{display:block;font-size:1.1rem}.r26-home-map-link p{margin:6px 0 0;line-height:1.5}.r26-home-map-link a{background:#183e64;color:#fff;text-decoration:none;padding:12px 15px;border-radius:10px;font-weight:750;white-space:normal;text-align:center}
-html[data-bs-theme=dark] .r26-home-map-link,html[data-theme=dark] .r26-home-map-link{background:#122638;border-color:#527083;color:#f2f7fb}html[data-theme=dark] .r26-home-map-link a{background:#d6ebfa;color:#122a40}
-@media(max-width:767px){.r26-home-map-link{flex-wrap:wrap;padding:17px;margin-block:15px}.r26-home-map-link a{flex:1 1 100%;width:100%}}

@@ -1,4 +1,4 @@
-import {formatBytes as formatSize} from './format-bytes.js?v=1.42.16';
+import {formatBytes as formatSize} from './format-bytes.js?v=1.42.18';
  
 const ROOT = new URL('../', import.meta.url);
 const REGISTRY = new URL('../json/data/documents.json', import.meta.url);
@@ -263,4 +263,4 @@ export function renderDocumentQuickLinks(){
  }container.append(list);const a=el('a','doc-center-link','Dokumentumtár megnyitása →');a.href='#/informaciok/dokumentumtar';container.append(a);s.append(container);return s;
 }
 export function documentRefreshSeconds(){return settingNumber('runtime.documents.refreshSeconds');}
-import {setting,settingNumber} from './site-settings-2026.js';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.42.18';

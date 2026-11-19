@@ -162,13 +162,6 @@
     "mobile/round16-responsive.css",
     "mobile/styles.css",
     "script.js",
-    "tools/eszkoz-mediator.html",
-    "tools/media-manager-2026.js",
-    "tools/oldal-json-szerkeszto.html",
-    "tools/oldalindex-frissito.html",
-    "tools/sporthirek-szerkeszto.html",
-    "tools/tool-ui-2026.js",
-    "tools/zip-native-2026.js",
     "#/informaciok/utmutato"
   ],
   "assetReferences": {
@@ -334,10 +327,6 @@
       "json/assets-inventory.json",
       "json/media-library.json",
       "mobile/quick-nav.js",
-      "tools/eszkoz-mediator.html",
-      "tools/oldal-json-szerkeszto.html",
-      "tools/oldalindex-frissito.html",
-      "tools/sporthirek-szerkeszto.html",
       "#/informaciok/utmutato"
     ],
     "assets/media/video/montazs-2026-01.mp4": [

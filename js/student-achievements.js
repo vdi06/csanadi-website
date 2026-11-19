@@ -17,7 +17,7 @@ function validate(root){
  }
  return result;
 }
-async function load(){const source=new URL('../json/'+setting('runtime.studentAchievements.dataPath'),import.meta.url);const r=await fetch(source,{cache:'no-store'});if(!r.ok)throw Error('A sporteredmények nem érhetők el.');return validate(await r.json());}
+async function load(){const source=new URL('../json/'+setting('runtime.studentAchievements.dataPath'),import.meta.url);const r=await fetch(source,{cache:'no-store'});if(!r.ok)throw Error('A sporteredmények nem érhetők el.');return validate(await r.json()).filter(item=>!item.isDemo || setting('privacy.allowFictionalStudentSamples')===true);}
 const actualPublication=x=>x.isDemo?datePlus(localDate(),-x.demoDaysAgo):x.publishedAt;
 const actualEventDate=x=>x.isDemo?datePlus(localDate(),-x.demoDaysAgo-1):x.eventDate;
 const isFeatured=x=>{const pub=actualPublication(x);if(!pub)return false;const d=daysSince(pub,localDate());return d>=0&&d<settingNumber('runtime.studentAchievements.featuredDays');};
@@ -39,6 +39,13 @@ function sectionHead(inner,title,subtitle){const h=el('div','student-success-hea
 function notice(inner,items){if(items.some(x=>x.isDemo))inner.append(el('p','student-demo-banner','KIZÁRÓLAG MINTAADATOK: itt egyetlen valós tanuló neve, osztályadata vagy eredménye sem szerepel. A képek csak sporttémájú bemutatóanyagok.'));}
 function mount(section,items,view){
  section.replaceChildren();const inner=el('div','container-xxl student-success-container');
+ if(!items.length){
+  sectionHead(inner,view==='home'?'Diákjaink sportsikerei':'Sporteredmények és sportolói hagyományok','Sportágak, eredmények és a közös munka értékei');
+  const intro=el('p','student-success-intro','A sportolói teljesítmények mögött rendszeres felkészülés, céltudatosság és együttműködés áll. Fedezd fel a közzétett sporteredményeket, és ismerd meg az iskolai sportélet témaköreit.');
+  const nav=el('div','student-success-tools');
+  for(const [label,url] of [['Sporteredmények','#/sport/sporteredmenyek'],['Sportágak','#/sport/sportagak'],['Hírek','#/hirek-es-esemenyek/hirek']]){const a=el('a','student-success-all',label+' →');a.href=url;nav.append(a);}
+  inner.append(intro,nav);section.append(inner);return;
+ }
  const active=items.filter(isFeatured).sort((a,b)=>actualPublication(b).localeCompare(actualPublication(a)));
  const older=items.filter(x=>!isFeatured(x)).sort((a,b)=>(actualPublication(b)||'').localeCompare(actualPublication(a)||'')||a.studentName.localeCompare(b.studentName,'hu'));
  if(view==='home'){
@@ -94,4 +101,4 @@ export function renderStudentAchievements(view='home'){
   const timer=setInterval(()=>{if(!section.isConnected){clearInterval(timer);return;}if(!section.querySelector(':focus-within'))mount(section,items,view);},settingNumber('runtime.timing.studentAchievementsRefreshMs'));
  }).catch(err=>{console.warn(err);section.replaceChildren(el('p','student-success-loading','A tanulói eredmények átmenetileg nem tölthetők be.'));});return section;
 }
-import {setting,settingNumber} from './site-settings-2026.js';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.42.18';

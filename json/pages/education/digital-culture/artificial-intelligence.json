@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-17T12:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T00:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 2
+    "revision": 3
   },
   "seo": {
     "title": "Mesterséges intelligencia tudatos használata – Csanádi Sportiskola",
@@ -54,6 +54,20 @@
           "type": "markdown",
           "data": {
             "text": "**Mire használom?** Pontosan nevezd meg, milyen segítséget kérsz.\n\n**Honnan származik?** Ellenőrizd az állításokat megbízható forrásokból.\n\n**Mit osztok meg?** Személyes vagy bizalmas adatot ne adj meg a szolgáltatásnak.\n\n**Mi az én munkám?** A végső döntést, megértést és felelősséget ne add át az alkalmazásnak.\n\n[Vissza a digitális kultúrához](#/oktatas/digitalis-kultura)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119",
+      "type": "section",
+      "title": "Az MI-válaszok ellenőrzése",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119",
+          "type": "markdown",
+          "data": {
+            "text": "A mesterséges intelligencia segíthet a fogalmak megértésében, a gyakorlásban vagy egy vázlat elkészítésében, de tévedhet és nem mindig jelöli a forrásait. A fontos állításokat hiteles dokumentumban vagy megbízható szakmai forrásban ellenőrizd.\n\nBeadandó feladatnál mindig az adott tanár által megadott eszközhasználati és forrásmegjelölési szabályokat kövesd."
           }
         }
       ]

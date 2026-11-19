@@ -1,0 +1,19 @@
+/* Standalone browser editor; all chromatic values derive from active site theme. */
+.cs-editor-workbench{width:100%;max-width:100%;color:var(--ink,#1b3344);font:inherit;line-height:1.5;--editor-border:var(--line,#d3c7b5);--editor-panel:var(--card,#fff);--editor-bg:var(--surface,#f6f4ef)}
+.cs-editor-workbench *, .cs-editor-workbench *::before,.cs-editor-workbench *::after{box-sizing:border-box;min-width:0}
+.cs-editor-intro{text-align:center;max-width:850px;margin:0 auto 1.5rem}.cs-editor-intro h2{margin:0 0 .75rem}.cs-editor-intro p{color:var(--muted,var(--ink));margin:0}
+.cs-editor-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin:1rem auto 1.5rem}
+.cs-editor-button{border:1px solid var(--editor-border);background:var(--editor-panel);color:var(--ink);font:inherit;border-radius:12px;padding:.65rem .95rem;cursor:pointer;max-width:100%;overflow-wrap:anywhere}
+.cs-editor-button:is(:hover,.is-active){border-color:#b88b3f;box-shadow:0 0 0 1px #b88b3f}.cs-editor-button.is-primary{background:#b88b3f;color:#091c2d;font-weight:750}.cs-editor-button.is-danger{border-color:#b85858;color:var(--ink)}
+.cs-editor-panel,.cs-editor-form,.cs-editor-record{padding:clamp(12px,2vw,22px);background:var(--editor-panel);border:1px solid var(--editor-border);border-radius:16px}
+.cs-editor-stack{display:grid;gap:1rem}.cs-editor-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,225px),1fr));gap:1rem;align-items:end}
+.cs-editor-field{display:flex;flex-direction:column;gap:.3rem;font-size:.92rem;font-weight:650;color:var(--ink);max-width:100%;min-width:0}
+.cs-editor-input{width:100%;max-width:100%;min-width:0;min-height:42px;border:1px solid var(--editor-border);border-radius:9px;background:var(--editor-bg);color:var(--ink);padding:.6rem .7rem;font:inherit;font-size:.94rem;line-height:1.5}
+.cs-editor-input:is(textarea){resize:vertical}.cs-editor-json{font-family:ui-monospace,monospace;font-size:.81rem;white-space:pre;overflow:auto;min-height:350px}
+.cs-editor-records{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:1rem}.cs-editor-record{display:grid;gap:.6rem;align-content:start;overflow-wrap:anywhere}
+.cs-editor-record code{font-size:.72rem;color:var(--muted,var(--ink));overflow-wrap:anywhere;white-space:normal}
+.cs-editor-subtle{font-size:.88rem;color:var(--muted,var(--ink));margin:0}.cs-editor-status{padding:.9rem;border-radius:10px;text-align:center;background:var(--editor-bg);margin-top:1rem;border:1px solid var(--editor-border)}.cs-editor-status.is-error{border-color:#d04e4e}
+.cs-editor-export{display:flex;justify-content:center;flex-wrap:wrap;gap:.7rem;margin:1.2rem auto 0}
+html[data-theme=dark] .cs-editor-workbench{color-scheme:dark}
+.cs-editor-workbench :is(button,input,textarea,select):focus-visible{outline:3px solid #dfb96e;outline-offset:2px}
+@media(max-width:480px){.cs-editor-form{grid-template-columns:minmax(0,1fr)}.cs-editor-button{width:100%}.cs-editor-tabs .cs-editor-button{flex:1 1 90px}.cs-editor-records{grid-template-columns:minmax(0,1fr)}}

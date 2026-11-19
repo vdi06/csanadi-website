@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T00:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 5
+    "revision": 6
   },
   "seo": {
     "title": "Sportiskolai nevelés – Csanádi Sportiskola",
@@ -51,6 +51,20 @@
           "type": "markdown",
           "data": {
             "text": "A sportiskolai képzésben a közismereti tanulmányok mellett kiemelt szerepet kap a sportoló diákok felkészülésének támogatása. A szakmai keretek, a tanulmányi követelmények és a sportági sajátosságok részleteit az iskola pedagógiai programja és felvételi tájékoztatója tartalmazza.\n\n[Dokumentumtár](#/informaciok/dokumentumtar)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119",
+      "type": "section",
+      "title": "A sport és a tanulás összehangolása",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119",
+          "type": "markdown",
+          "data": {
+            "text": "A rendszeres edzés és a tanulmányi feladatok együttes tervezése segíthet az időbeosztásban. Hasznos, ha a hét elején áttekinted a feladatokat, az edzésidőket, a számonkéréseket és a szükséges pihenést.\n\nA képzések konkrét követelményeit és a jelentkezés rendjét a [Felvételi](#/oktatas/felveteli) területén ellenőrizd."
           }
         }
       ]

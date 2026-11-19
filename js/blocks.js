@@ -1,8 +1,8 @@
-import {renderSportsSuccesses} from './sports-successes.js?v=1.42.16';
-import {renderPremiumHero} from './hero-2026.js?v=1.42.16';
-import {renderLiveDashboard} from './home-live.js?v=1.42.16';
-import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js?v=1.42.16';
-import {resolveConfiguredText,settingNumber} from './site-settings-2026.js';
+import {renderSportsSuccesses} from './sports-successes.js?v=1.42.18';
+import {renderPremiumHero} from './hero-2026.js?v=1.42.18';
+import {renderLiveDashboard} from './home-live.js?v=1.42.18';
+import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js?v=1.42.18';
+import {resolveConfiguredText,settingNumber} from './site-settings-2026.js?v=1.42.18';
  
 const dom=(tag,attrs={},text='')=>{
   const x=document.createElement(tag);

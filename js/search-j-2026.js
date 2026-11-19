@@ -1,4 +1,4 @@
-import {resolveConfiguredText,setting,settingNumber} from './site-settings-2026.js';
+import {resolveConfiguredText,setting,settingNumber} from './site-settings-2026.js?v=1.42.18';
 import {validFeaturedRoutes,isFeaturedHit,uniqueSearchEntries,sortSearchHits} from './search-policies-v1-40-6.js';
 import {recommendRelatedContent,validateEditorialRules} from './search-recommendations-v1-40-9.js';
 const TYPES={page:'Oldal',news:'Hír',event:'Esemény',document:'Dokumentum',image:'Galériakép',video:'Videó'};
@@ -54,7 +54,7 @@ function indexPayload(type,data){
  const result=[];
  for(const item of data?.items||[]){
   if(!item?.title)continue;
-  if(type==='news' && !['verified','sample'].includes(item.status))continue;
+  if(type==='news' && item.status!=='verified')continue;
   if(type==='event' && item.status!=='published')continue;
   let route='#/sport/sportgaleriak';
   if(type==='news')route='#/hirek-es-esemenyek/hirek';

@@ -60,4 +60,4 @@ export function renderDocumentIndexExport(){
   }catch(e){text.textContent='A jegyzék nem készíthető el: az adatforrás nem elérhető.';}finally{button.disabled=false;}
  });wrapper.append(button,text);return wrapper;
 }
-import {setting,settingNumber} from './site-settings-2026.js';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.42.18';

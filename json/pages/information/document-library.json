@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T00:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 6
+    "revision": 7
   },
   "seo": {
     "title": "Dokumentumtár – Csanádi Sportiskola",
@@ -51,6 +51,20 @@
           "type": "markdown",
           "data": {
             "text": "[Szabályzatok](#/informaciok/dokumentumtar/szabalyzatok) · [Nyomtatványok](#/informaciok/dokumentumtar/nyomtatvanyok) · [Közzétételi lista](#/informaciok/dokumentumtar/kozzeteteli-lista)\n\n[Intézményi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/docs.html)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119",
+      "type": "section",
+      "title": "Dokumentumok ellenőrzése",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119",
+          "type": "markdown",
+          "data": {
+            "text": "A fájl letöltésekor figyeld a dokumentum címét, érvényességét és kiadási dátumát. A korábbi változatok tájékozódásra használhatók, de hivatalos ügyintézéshez az aktuálisan hatályos változat szükséges.\n\nHa nem egyértelmű, melyik iratot kell használni, kérj segítséget az iskola hivatalos kapcsolattartójától."
           }
         }
       ]

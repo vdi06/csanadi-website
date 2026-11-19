@@ -142,4 +142,4 @@ export function renderLiveDashboard(block){
  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&section.isConnected)refreshData();},{signal:(()=>{const controller=new AbortController();const cleanup=setInterval(()=>{if(!section.isConnected){controller.abort();clearInterval(cleanup);}},settingNumber('runtime.timing.homeDashboardCleanupMs'));return controller.signal;})()});
  return section;
 }
-import {settingNumber} from './site-settings-2026.js';
+import {settingNumber} from './site-settings-2026.js?v=1.42.18';

@@ -1,4 +1,4 @@
-import {createZip,downloadBlob} from './zip-native-2026.js?v=1.42.16';
+import {createZip,downloadBlob} from './zip-native-2026.js?v=1.42.18';
 
 const byId=id=>document.getElementById(id);
 const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};

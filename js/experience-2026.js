@@ -196,4 +196,4 @@ export function renderStaffCenter(){
  }).catch(err=>grid.append(e('p','experience-error',err.message)));
  return wrap;
 }
-import {setting,settingNumber} from './site-settings-2026.js';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.42.18';

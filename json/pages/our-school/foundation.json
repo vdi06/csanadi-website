@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-13T00:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T00:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 4
+    "revision": 5
   },
   "seo": {
     "title": "Alapítvány – Csanádi Sportiskola",
@@ -51,6 +51,20 @@
           "type": "markdown",
           "data": {
             "text": "Az alapítvány támogatásának feltételeiről, kérelmeiről és közzétett adatairól az intézményi oldalon lehet tájékozódni. Adományozás vagy az adó 1%-ának felajánlása előtt mindig ellenőrizd az ott megadott bankszámlaszámot és adószámot.\n\n[Az iskolai alapítvány tájékoztatója – eredeti intézményi forrás](https://csanadi-bp.edu.hu/alapitvany.html)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119",
+      "type": "section",
+      "title": "Hogyan tájékozódj az alapítványi támogatásról?",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119",
+          "type": "markdown",
+          "data": {
+            "text": "Egy iskolai alapítvány tevékenységénél érdemes ellenőrizni a támogatási célt, a kapcsolattartót, a befizetés pontos rendjét és az elszámolásra vonatkozó tájékoztatást. A támogatási lehetőségekről kizárólag az aktuális, hivatalos intézményi közlés alapján dönts.\n\nKérdés esetén a [Kapcsolat](#/kapcsolat) oldalon található intézményi elérhetőségeket használd."
           }
         }
       ]

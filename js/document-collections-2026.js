@@ -40,4 +40,4 @@ export function renderDocumentCollections(){
  }).catch(err=>{result.textContent='A dokumentumtár nem tölthető be: '+err.message;});
  return box;
 }
-import {settingNumber} from './site-settings-2026.js';
+import {settingNumber} from './site-settings-2026.js?v=1.42.18';

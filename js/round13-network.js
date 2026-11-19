@@ -1,68 +1,80 @@
+/* Cross-version update flow for a static HTTPS/FTP deployment. */
 (function(){
  'use strict';
- // A megnyitott HTML verzióját hasonlítjuk az aktuális kiadáshoz.
- const source=document.currentScript?.src;
- const loadedVersion=source?new URL(source,location.href).searchParams.get('v'):null;
+ const source=document.currentScript?.src||'';
+ const loadedVersion=new URL(source||location.href,location.href).searchParams.get('v')||'';
  const parseVersion=value=>{
-  const match=/^csanadi-r-v(\d+)\.(\d+)\.(\d+)$/.exec(value||'');
-  return match?match.slice(1).map(Number):null;
+  const m=/^csanadi-r-v(\d+)\.(\d+)\.(\d+)(?:-content-(\d{8}-\d{6}))?$/.exec(value||'');
+  return m?{sem:m.slice(1,4).map(Number),stamp:m[4]||''}:null;
  };
- const actuallyNewer=(candidate,current)=>{
+ const newer=(candidate,current)=>{
   const a=parseVersion(candidate),b=parseVersion(current);
-  if(!a||!b)return false;
-  for(let i=0;i<3;i++){if(a[i]!==b[i])return a[i]>b[i];}
-  return false;
+  if(!a)return false;if(!b)return true;
+  for(let i=0;i<3;i++)if(a.sem[i]!==b.sem[i])return a.sem[i]>b.sem[i];
+  return !!a.stamp&&a.stamp>b.stamp;
  };
- let notifiedVersion=null,checking=null,dismissTimer=null;
- const notify=(version)=>{
-  // Eltérő/korábban gyorsítótárazott konfiguráció nem jelent új kiadást.
-  if(!actuallyNewer(version,loadedVersion)||version===notifiedVersion)return;
-  try { if(sessionStorage.getItem('csanadi-dismissed-release')===version)return; }catch{}
+ let notifiedVersion=null,checking=null,interval=null;
+ const notice=()=>{
+  let root=document.getElementById('cs-release-notice');if(root)return root;
+  root=document.createElement('aside');root.id='cs-release-notice';root.className='cs-release-notice';root.hidden=true;
+  root.setAttribute('role','status');root.setAttribute('aria-live','polite');document.body.append(root);return root;
+ };
+ async function upgrade(version){
+  try{
+   const registration=await navigator.serviceWorker?.getRegistration?.();
+   if(registration){
+    await registration.update();
+    if(registration.waiting){
+     const changed=new Promise(resolve=>{
+      let finished=false;
+      const done=()=>{if(finished)return;finished=true;resolve();};
+      navigator.serviceWorker.addEventListener('controllerchange',done,{once:true});
+      setTimeout(done,2400);
+     });
+     registration.waiting.postMessage({type:'ACTIVATE_UPDATE'});
+     await changed;
+    }
+   }
+  }catch(error){console.warn('Service Worker update check failed',error);}
+  const next=new URL(location.href);
+  next.searchParams.set('release',version);
+  location.replace(next.href);
+ }
+ function inform(version){
+  if(!newer(version,loadedVersion)||notifiedVersion===version)return;
+  try{if(sessionStorage.getItem('csanadi-dismissed-release')===version)return;}catch{}
   notifiedVersion=version;
-  const toast=document.getElementById('toast');if(!toast)return;
-  const message=document.createElement('span');message.textContent='Elérhető a honlap új verziója. Frissítsd az oldalt a legújabb fejlesztésekhez és tartalmakhoz.';
-  const actions=document.createElement('span');actions.className='cs-release-actions';
-  const dismiss=()=>{toast.hidden=true;clearTimeout(dismissTimer);try{sessionStorage.setItem('csanadi-dismissed-release',version);}catch{}};
-  const later=document.createElement('button');later.type='button';later.textContent='Később';later.addEventListener('click',dismiss);
+  const root=notice(),message=document.createElement('span'),actions=document.createElement('span');
+  message.textContent='Elérhető a honlap új verziója. A frissítés betölti a legújabb tartalmakat és működést.';
+  actions.className='cs-release-actions';
+  const later=document.createElement('button');later.type='button';later.textContent='Később';
+  later.addEventListener('click',()=>{root.hidden=true;try{sessionStorage.setItem('csanadi-dismissed-release',version);}catch{}});
   const reload=document.createElement('button');reload.type='button';reload.textContent='Frissítés';
-  reload.addEventListener('click',async()=>{
-   clearTimeout(dismissTimer);toast.hidden=true;
-   // Force a distinct HTML URL so Chromium and static CDN caches cannot reuse the prior document URL.
-   try{const registration=await navigator.serviceWorker?.getRegistration?.();await registration?.update?.();}catch{}
-   const next=new URL(location.href);
-   next.searchParams.set('release',version);
-   location.replace(next.href);
-  });
-  actions.append(later,reload);toast.replaceChildren(message,actions);toast.hidden=false;
-  clearTimeout(dismissTimer);
-  // The update notice stays visible until the visitor chooses an action.
- };
- const checkVersion=()=>{
+  reload.addEventListener('click',()=>upgrade(version));
+  actions.append(later,reload);root.replaceChildren(message,actions);root.hidden=false;
+ }
+ const check=()=>{
   if(checking)return checking;
-  checking=fetch('json/config.json',{cache:'no-store'}).then(response=>{
-   if(!response.ok)throw Error('HTTP '+response.status);
-   return response.json();
-  }).then(config=>{
-   const version=config?.performance?.cacheVersion;
-   if(typeof version==='string'&&version.trim())notify(version.trim());
-   return config;
-  }).catch(()=>null).finally(()=>{checking=null;});
+  checking=fetch('json/config.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();})
+   .then(config=>{const v=config?.performance?.cacheVersion;if(typeof v==='string')inform(v);return config;})
+   .catch(()=>null).finally(()=>{checking=null;});
   return checking;
  };
- const start=()=>{
-  checkVersion().then(config=>{
-   const seconds=Number(config?.runtime?.release?.updateCheckSeconds);
-   const interval=Number.isFinite(seconds)&&seconds>=30?seconds:300;
-   window.setInterval(()=>{if(!document.hidden)checkVersion();},interval*1000);
+ function start(){
+  check().then(config=>{
+   const seconds=Number(config?.performance?.swUpdateCheckSeconds??config?.runtime?.release?.updateCheckSeconds),period=Number.isFinite(seconds)&&seconds>=30?seconds:300;
+   interval=setInterval(()=>{if(!document.hidden)check();},period*1000);
   });
-  document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkVersion();});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden){check();navigator.serviceWorker?.getRegistration?.().then(r=>r?.update?.()).catch(()=>{});}});
   if(!('serviceWorker' in navigator)||!window.isSecureContext)return;
   navigator.serviceWorker.register('service-worker.js',{scope:'./',updateViaCache:'none'}).then(registration=>{
-   const checkWorker=()=>registration.update().catch(()=>{});
-   checkWorker();document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkWorker();});
-   // A service worker első aktiválása nem bizonyít új honlapverziót.
-   navigator.serviceWorker.addEventListener('controllerchange',()=>{checkVersion();});
-  }).catch(()=>{});
- };
+   registration.update().catch(()=>{});
+   navigator.serviceWorker.addEventListener('controllerchange',check);
+   registration.addEventListener('updatefound',()=>{
+    const worker=registration.installing;
+    worker?.addEventListener('statechange',()=>{if(worker.state==='installed'&&navigator.serviceWorker.controller)check();});
+   });
+  }).catch(error=>console.warn('Offline cache unavailable',error));
+ }
  if(document.readyState==='complete')start();else window.addEventListener('load',start,{once:true});
 })();

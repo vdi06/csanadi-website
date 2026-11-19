@@ -10,6 +10,11 @@ export function useSiteSettings(config){
   '--csn14-cutout-desktop':config.runtime.hero.desktopCutoutRadiusPx+'px',
   '--csn14-cutout-tablet':config.runtime.hero.tabletCutoutRadiusPx+'px',
   '--csn14-touch-min':config.runtime.accessibility.targetMinimumPx+'px',
+  '--cs-subpage-crest-main':config.runtime.navigation.subpageCrest.initialDiameterPx+'px',
+  '--cs-subpage-crest-scrolled':(config.runtime.navigation.subpageCrest.initialDiameterPx*config.runtime.navigation.subpageCrest.scrolledScale)+'px',
+  '--cs-site-content-width':config.runtime.layout.contentMaxWidthPx+'px',
+  '--cs-site-gutter-min':config.runtime.layout.minPageGutterPx+'px',
+  '--cs-site-gutter-max':config.runtime.layout.maxPageGutterPx+'px',
   '--csn14-focus-width':config.runtime.accessibility.focusOutlinePx+'px'
  };
  for(const mode of ['light','dark']){

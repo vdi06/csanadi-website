@@ -11,10 +11,10 @@
     "organization": "Csanádi Árpád Sportiskola"
   },
   "createdAt": "2026-11-17T12:00:00+01:00",
-  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "updatedAt": "2026-11-19T00:00:00+01:00",
   "lifecycle": {
     "status": "published",
-    "revision": 3
+    "revision": 4
   },
   "seo": {
     "title": "Térkép és útvonaltervezés – Csanádi Sportiskola",
@@ -56,6 +56,20 @@
           "type": "markdown",
           "data": {
             "text": "**Tömegközlekedés:** [BKK menetrendek](https://bkk.hu/menetrendek/).\n\n**Gyalog és kerékpárral:** indulás előtt tervezz biztonságos útvonalat, és ellenőrizd a helyi közlekedési feltételeket.\n\n**Akadálymentesség:** a konkrét bejárat és útvonal intézményi megerősítést igényel.\n\n[Vissza a Megközelítés és érkezés oldalra](#/megkozelites-es-erkezes)\n\n[Hivatalos kapcsolati és adatvédelmi elérhetőségek – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kapcsolat.html)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119",
+      "type": "section",
+      "title": "Útvonal megtervezése",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119",
+          "type": "markdown",
+          "data": {
+            "text": "Indulás előtt ellenőrizd a forgalmi helyzetet, a megállók aktuális helyét és a szükséges átszállásokat. Ha akadálymentes megközelítésre van szükséged, előzetesen érdeklődj az intézménynél a megfelelő bejáratról.\n\nAz online útvonaltervező külső térképszolgáltató használatával működhet, amelyre külön adatvédelmi beállítás vonatkozhat."
           }
         }
       ]
