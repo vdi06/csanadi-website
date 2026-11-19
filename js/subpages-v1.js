@@ -113,9 +113,12 @@ export function initSubpageEnhancements() {
   // Nem hivatkozunk a kezdőlapi vizuális indítógombra: az oldalváltás
   // ideiglenesen áthelyezheti, az aloldali menünek ettől függetlenül működnie kell.
   menu.addEventListener('click', () => document.dispatchEvent(new Event('csanadi:menu-toggle')));
-  // One centered menu button belongs to the entire row, not the right-side actions.
+  // The original crest has one permanent place in the symmetric toolbar.
+  // This also makes it the sole menu launcher on the mobile homepage, not
+  // only on subpages or after scrolling.
   const brandRow=header.querySelector('.brand-row');
-  (brandRow||header).append(menu);
+  const crestSlot=header.querySelector('.header-symmetry-center');
+  (crestSlot||brandRow||header).append(menu);
   // Asztali aloldalon a középre tett körmenügomb megmarad; a kompakt szalag
   // az aktuális oldal nevét és a tényleges olvasási előrehaladást is jelzi.
   // A sportjelenet nem része a kért fejlécnek. Nem készül hozzá SVG, gomb,

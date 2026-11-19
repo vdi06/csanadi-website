@@ -43,7 +43,7 @@ function installHomeShell(){
   // A vizuálisan összecsukott képváltó nem maradhat billentyűzettel fókuszálható.
   if(condensed&&hero.contains(document.activeElement)){
    const focused=document.activeElement;
-   const menu=byId('mobile-menu-toggle');
+   const menu=byId('cs-subpage-menu');
    if((focused.id==='orbit-open'||focused.closest('.orbit-launch'))&&menu)menu.focus({preventScroll:true});
    else preview.focus({preventScroll:true});
   }
@@ -52,7 +52,7 @@ function installHomeShell(){
   }
   // A csak görgetve látható asztali menü elrejtése előtt visszaadjuk a fókuszt
   // az eredeti, nagy címeres menünek. Mobilon a felső menügomb nem tűnik el.
-  const smallMenu=byId('mobile-menu-toggle');
+  const smallMenu=byId('cs-subpage-menu');
   if(!condensed&&document.activeElement===smallMenu&&matchMedia('(min-width:769px)').matches){
    byId('orbit-open')?.focus({preventScroll:true});
   }
