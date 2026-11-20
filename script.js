@@ -11,19 +11,17 @@ function startupError(error){
   shell.append(h,p,detail,hint);target.replaceChildren(shell);
 }
 Promise.all([
-  import('./js/app.js?v=1.43.15'),
-  import('./js/subpages-v1.js?v=1.43.15'),
+  import('./js/app.js?v=1.43.21'),
+  import('./js/subpages-v1.js?v=1.43.21'),
   import('./js/release-v1-39-0.js?v=1.42.18'),
-  import('./js/release-v1-39-1.js?v=1.43.15'),
+  import('./js/release-v1-39-1.js?v=1.43.21'),
   import('./js/header-adaptive-v1-39-18.js?v=1.42.18'),
-  import('./js/home-v1-41.js?v=1.42.18'),
-  import('./mobile/mobile-scroll-m4-v1-43-10.js?v=1.43.10'),
-  import('./mobile/mobile-m9-quality-v1-43-14.js?v=1.43.15'),
-  import('./mobile/mobile-m10-workflows-v1-43-15.js?v=1.43.15')
-]).then(([{startApp},{initSubpageEnhancements},{initReleaseEnhancements},{initV1391Enhancements},{initAdaptiveHeaderV13918},{initV141HomepageMotion},{initMobileScrollM4},{initMobileQualityM9},{initMobileWorkflowsM10}])=>{
-  initMobileScrollM4();
-  initMobileQualityM9();
-  initMobileWorkflowsM10();
+  import('./js/home-v1-41.js?v=1.43.21'),
+  import('./mobile/reboot-shell-v1-43-21.js?v=1.43.21'),
+  import('./mobile/reboot-quality-v1-43-21.js?v=1.43.21')
+]).then(([{startApp},{initSubpageEnhancements},{initReleaseEnhancements},{initV1391Enhancements},{initAdaptiveHeaderV13918},{initV141HomepageMotion},{initFreshMobileShell},{initFreshMobileQuality}])=>{
+  initFreshMobileShell();
+  initFreshMobileQuality();
   initSubpageEnhancements();
   initReleaseEnhancements();
   initV1391Enhancements();
