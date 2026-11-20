@@ -1,0 +1,176 @@
+/* M3/D – önálló, teljes képernyős mobilnavigáció. A desktop menü érintetlen. */
+@media screen and (max-width:768px), screen and (max-width:960px) and (max-height:500px) and (pointer:coarse){
+ html body #site-map-overlay{padding:0!important;inset:0!important;overscroll-behavior:contain!important}
+ html body #site-map-overlay .site-map-dialog{
+  width:100%!important;max-width:100%!important;height:100dvh!important;
+  min-height:100dvh!important;max-height:100dvh!important;
+  margin:0!important;border:0!important;border-radius:0!important;
+  display:flex!important;flex-direction:column!important;overflow:hidden!important;
+  background:linear-gradient(160deg,rgba(14,38,61,.98),rgba(6,22,39,.99))!important;
+  color:#f8f0df!important;
+ }
+ html[data-theme="light"] body #site-map-overlay .site-map-dialog{
+  background:linear-gradient(160deg,rgba(248,245,237,.99),rgba(226,232,231,.99))!important;
+  color:#192f42!important;
+ }
+ html body #site-map-overlay .site-map-topline{
+  position:relative!important;z-index:3!important;display:flex!important;
+  justify-content:flex-end!important;flex:0 0 auto!important;
+  min-height:68px!important;padding:calc(10px + env(safe-area-inset-top,0px)) 20px 8px!important;
+  background:transparent!important;border:0!important;
+ }
+ html body #site-map-overlay .site-map-close{
+  display:grid!important;place-items:center!important;width:48px!important;height:48px!important;
+  border-radius:50%!important;border:1px solid rgba(226,183,111,.56)!important;
+  background:rgba(214,176,101,.055)!important;color:inherit!important;font-size:30px!important;
+ }
+ html body #site-map-overlay .compass26-layout{display:none!important}
+ html body #site-map-overlay #cs-phone-wheel{
+  display:flex!important;flex:1 1 auto!important;flex-direction:column!important;
+  align-items:center!important;justify-content:flex-start!important;
+  gap:10px!important;width:100%!important;min-height:0!important;
+  max-width:600px!important;margin:0 auto!important;
+  padding:8px 15px max(15px,env(safe-area-inset-bottom,0px))!important;
+  overflow-y:auto!important;overscroll-behavior:contain!important;
+ }
+ html body #site-map-overlay .cs-phone-wheel-heading{
+  display:grid!important;gap:6px!important;justify-items:center!important;
+  text-align:center!important;min-height:0!important;flex:0 0 auto!important;
+  padding:0 8px 8px!important;
+ }
+ html body #site-map-overlay .cs-phone-wheel-heading>span{color:#d9b977!important;font-size:11px!important}
+ html body #site-map-overlay .cs-phone-wheel-heading h3{font-size:clamp(25px,7.3vw,34px)!important;line-height:1.18!important;color:inherit!important;margin:0!important}
+ html body #site-map-overlay .cs-phone-wheel-heading p{font-size:13px!important;color:inherit!important;opacity:.82!important;margin:0!important}
+ html body #site-map-overlay .cs-phone-wheel-stage{flex:1 1 auto!important;min-height:284px!important;margin:0 auto!important}
+ html body #site-map-overlay .cs-phone-wheel-stage[hidden],
+ html body #site-map-overlay .cs-m3-level[hidden],
+ html body #site-map-overlay .cs-phone-wheel-overview[hidden]{display:none!important}
+ html body #site-map-overlay .cs-phone-wheel-stage::before{
+  background:radial-gradient(circle,rgba(27,74,100,.18),rgba(14,38,63,.05) 69%,transparent 71%)!important;
+  border-color:rgba(217,178,106,.32)!important;box-shadow:0 0 0 7px rgba(218,177,100,.035)!important;
+ }
+ html body #site-map-overlay .cs-phone-wheel-stage::after{border-color:rgba(218,177,100,.3)!important}
+ html body #site-map-overlay .cs-phone-wheel-item{
+  border:1.5px solid rgba(238,202,139,.77)!important;
+  background:linear-gradient(145deg,rgba(34,71,98,.75),rgba(9,36,58,.72))!important;
+  color:#fff5df!important;box-shadow:0 4px 18px rgba(0,0,0,.22)!important;
+  min-width:70px!important;min-height:70px!important;touch-action:manipulation;
+ }
+ html body #site-map-overlay .cs-phone-wheel-item-icon{display:block!important;color:#e5be77!important}
+ html body #site-map-overlay .cs-phone-wheel-item-name{font-size:clamp(9px,2.6vw,11px)!important}
+ html body #site-map-overlay .cs-phone-wheel-center{background:rgba(16,45,68,.82)!important;border-color:rgba(218,177,100,.72)!important;box-shadow:none!important}
+ html body #site-map-overlay .cs-phone-wheel-center:disabled{opacity:1!important}
+ html body #site-map-overlay .cs92-wheel-shortcuts{
+  display:block!important;flex:0 0 auto!important;align-self:stretch!important;
+  background:rgba(227,190,116,.025)!important;border:1px solid rgba(227,190,116,.18)!important;
+  border-radius:16px!important;padding:10px!important;
+ }
+ html body #site-map-overlay .cs92-wheel-shortcuts-links a{
+  min-height:48px!important;border-color:rgba(232,199,135,.35)!important;
+  background:rgba(232,199,135,.045)!important;color:inherit!important;
+ }
+ html body #site-map-overlay #cs-phone-wheel[data-level="2"] .cs92-wheel-shortcuts,
+ html body #site-map-overlay #cs-phone-wheel[data-level="3"] .cs92-wheel-shortcuts{display:none!important}
+ html body #site-map-overlay #cs-phone-wheel .cs-m3-level{
+  width:100%!important;flex:1 1 auto!important;min-height:0!important;
+  max-width:560px!important;display:flex!important;flex-direction:column!important;
+  align-items:center!important;gap:9px!important;padding:0 4px 16px!important;
+  text-align:center!important;animation:cs-m3-in .22s ease-out both;
+ }
+ html body #site-map-overlay .cs-m3-back{
+  align-self:center!important;min-height:46px!important;padding:9px 20px!important;
+  border-radius:100px!important;border:1px solid rgba(218,177,100,.6)!important;
+  background:rgba(218,177,100,.075)!important;color:inherit!important;font-weight:800!important;
+ }
+ html body #site-map-overlay .cs-m3-crumbs{font-size:11px!important;color:#e5c68a!important;line-height:1.55!important;margin:0!important;overflow-wrap:anywhere!important}
+ html body #site-map-overlay .cs-m3-title{font-size:clamp(19px,5vw,26px)!important;line-height:1.25!important;color:inherit!important;margin:0!important}
+ html body #site-map-overlay .cs-m3-info{font-size:12px!important;opacity:.76!important;margin:0!important}
+ html body #site-map-overlay .cs-m3-links{
+  display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+  width:100%!important;gap:9px!important;align-content:start!important;
+  padding:8px 1px 18px!important;
+ }
+ html body #site-map-overlay .cs-m3-choice,
+ html body #site-map-overlay .cs-m3-overview{
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  gap:10px!important;width:100%!important;min-height:56px!important;
+  padding:13px 15px!important;border-radius:15px!important;
+  border:1px solid rgba(235,201,137,.46)!important;
+  background:rgba(224,188,116,.06)!important;color:inherit!important;
+  text-decoration:none!important;text-align:center!important;font-weight:750!important;
+  line-height:1.3!important;overflow-wrap:anywhere!important;
+ }
+ html body #site-map-overlay .cs-m3-overview{border-style:dashed!important;font-size:13px!important}
+ html body #site-map-overlay .cs-m3-nested{display:grid!important;gap:4px!important;justify-items:center!important}
+ html body #site-map-overlay .cs-m3-choice>span:last-child{font-size:20px!important;color:#d9b977!important}
+ html body #site-map-overlay .cs-m3-direct{min-height:44px!important;display:grid!important;place-items:center!important;color:inherit!important;font-size:12px!important;text-underline-offset:3px!important}
+ html body #site-map-overlay :is(.cs-m3-choice,.cs-m3-back,.cs-m3-overview,.cs-m3-direct,.cs-phone-wheel-item,.site-map-close):focus-visible{
+  outline:3px solid #e1b665!important;outline-offset:3px!important;
+ }
+ html[data-theme="light"] body #site-map-overlay :is(.cs-m3-crumbs,.cs-phone-wheel-heading>span){color:#856023!important}
+ html[data-theme="light"] body #site-map-overlay :is(.cs-m3-choice,.cs-m3-overview,.cs-m3-back,.cs92-wheel-shortcuts-links a){background:rgba(175,131,57,.055)!important;border-color:rgba(139,104,44,.38)!important;color:#192f42!important}
+ html[data-theme="light"] body #site-map-overlay .cs-phone-wheel-item{background:linear-gradient(145deg,rgba(231,236,230,.94),rgba(204,215,215,.94))!important;border-color:rgba(139,104,44,.5)!important;color:#192f42!important;box-shadow:0 5px 20px rgba(21,41,61,.12)!important}
+ html[data-theme="light"] body #site-map-overlay .cs-phone-wheel-center{background:rgba(231,236,230,.9)!important;color:#192f42!important}
+ html[data-theme="light"] body #site-map-overlay .cs92-wheel-shortcuts-title{color:#775729!important}
+ html[data-theme="light"] body #site-map-overlay .cs-phone-wheel-stage::before{background:radial-gradient(circle,rgba(218,204,176,.19),transparent 69%)!important}
+ @keyframes cs-m3-in{from{opacity:.6;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+}
+
+/* Szűk telefon: a hat választó valóban két oszlopban, ütközés nélkül látható. */
+@media screen and (max-width:399px){
+ html body #site-map-overlay .site-map-dialog{overflow-y:auto!important}
+ html body #site-map-overlay #cs-phone-wheel{gap:8px!important;padding-inline:12px!important}
+ html body #site-map-overlay .cs-phone-wheel-heading{padding-bottom:2px!important}
+ html body #site-map-overlay .cs-phone-wheel-stage{
+  width:100%!important;min-height:0!important;height:auto!important;max-height:none!important;
+  flex:0 0 auto!important;display:block!important;margin:5px auto!important;
+ }
+ html body #site-map-overlay .cs-phone-wheel-stage[hidden]{display:none!important}
+ html body #site-map-overlay .cs-phone-wheel-stage::before,
+ html body #site-map-overlay .cs-phone-wheel-stage::after,
+ html body #site-map-overlay .cs-phone-wheel-center{display:none!important}
+ html body #site-map-overlay .cs-phone-wheel-ring{
+  position:relative!important;inset:auto!important;display:grid!important;
+  width:100%!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:12px!important;align-items:stretch!important;
+ }
+ html body #site-map-overlay .cs-phone-wheel-item{
+  position:relative!important;inset:auto!important;transform:none!important;
+  display:flex!important;width:100%!important;height:112px!important;
+  min-height:96px!important;max-width:none!important;border-radius:19px!important;
+  padding:8px!important;animation:none!important;
+ }
+ html body #site-map-overlay .cs-phone-wheel-item-icon{font-size:23px!important}
+ html body #site-map-overlay .cs-phone-wheel-item-name{font-size:13px!important;-webkit-line-clamp:3!important}
+ html body #site-map-overlay .cs92-wheel-shortcuts{margin-top:auto!important}
+}
+
+@media screen and (max-width:768px) and (max-height:570px){
+ html body #site-map-overlay .cs-phone-wheel-stage{flex:0 0 auto!important}
+ html body #site-map-overlay .cs92-wheel-shortcuts{margin-top:12px!important}
+ html body #site-map-overlay #cs-phone-wheel{overflow-y:auto!important}
+}
+@media screen and (max-width:768px) and (prefers-reduced-motion:reduce){
+ html body #site-map-overlay .cs-m3-level{animation:none!important}
+ html body #site-map-overlay :is(.cs-phone-wheel-item,.cs-m3-choice,.cs-m3-back){transition:none!important;animation:none!important}
+}
+@media screen and (max-width:768px) and (forced-colors:active){
+ html body #site-map-overlay :is(.cs-m3-choice,.cs-m3-overview,.cs-m3-back,.cs-phone-wheel-item){border:2px solid ButtonText!important;color:ButtonText!important;background:Canvas!important}
+}
+
+/* M5/D vizuális alap: önálló, képre épülő telefonos kezdőoldal, áttetsző arannyal. */
+@media screen and (max-width:768px){
+ html body #global-hero .cs42-mobile-landing{background:linear-gradient(180deg,#081e33,#102c48)!important}
+ html body #global-hero .cs42-mobile-figure{aspect-ratio:4/3!important;max-height:48svh!important}
+ html body #global-hero .cs42-mobile-copy{padding:28px 17px 26px!important;gap:13px!important}
+ html body #global-hero .cs42-mobile-title{font-size:clamp(29px,8vw,44px)!important;line-height:1.07!important;letter-spacing:-.035em!important}
+ html body #global-hero .cs42-mobile-links{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:9px!important}
+ html body #global-hero .cs42-mobile-link{
+  min-height:60px!important;background:rgba(222,180,101,.08)!important;
+  border:1px solid rgba(245,216,154,.5)!important;color:#fff6df!important;
+  border-radius:18px!important;box-shadow:none!important;
+ }
+ html body #global-hero .cs42-mobile-link:is(:active,:hover,:focus-visible){background:rgba(222,180,101,.19)!important}
+ html body #app[data-page-kind="home"] .home-canvas>.home-unit{padding-inline:clamp(10px,3vw,20px)!important}
+ html body #app[data-page-kind="home"] :is(.home-unit,.cs-news-card,.student-success-card){border-radius:20px!important}
+}

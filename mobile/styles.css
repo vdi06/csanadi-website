@@ -1,0 +1,138 @@
+/* Mobil-specifikus körmenü és alternatív hamburger menü; közös színváltozók. */
+@media (max-width:768px){
+ #site-map-overlay{padding:4px!important}
+ #site-map-overlay .site-map-dialog{
+  width:min(100%,720px)!important;max-height:calc(100dvh - 8px)!important;
+  overflow-x:hidden!important;overflow-y:auto!important;overscroll-behavior:contain;
+  background:var(--card)!important;border:1px solid var(--line)!important;
+  border-radius:18px!important;box-shadow:0 15px 45px color-mix(in srgb,var(--ink) 25%,transparent)!important;
+ }
+ #site-map-overlay .site-map-topline{
+  position:sticky!important;top:0!important;z-index:12!important;display:flex!important;
+  justify-content:space-between!important;gap:8px!important;align-items:center!important;
+  min-height:58px!important;padding:8px 10px!important;background:var(--card)!important;
+  border-bottom:1px solid var(--line)!important;
+ }
+ #mobile-menu-mode-switch:not([hidden]){
+  display:flex!important;gap:5px!important;flex:1;min-width:0;align-items:center;
+ }
+ #mobile-menu-mode-switch[hidden],#mobile-conventional-navigation[hidden]{display:none!important}
+ #mobile-menu-mode-switch button{
+  appearance:none;min-width:0;min-height:44px;flex:1 1 auto;
+  padding:7px 6px;border-radius:12px;border:1px solid var(--line);
+  font-size:clamp(11px,3.1vw,13px);line-height:1.2;font-weight:800;
+  color:var(--ink);background:color-mix(in srgb,var(--sport-yellow) 12%,var(--card));
+ }
+ #mobile-menu-mode-switch button[aria-pressed="true"]{
+  border-color:var(--sport-green);background:linear-gradient(125deg,
+  color-mix(in srgb,var(--sport-green) 40%,var(--card)),
+  color-mix(in srgb,var(--sport-yellow) 38%,var(--card)));
+  box-shadow:inset 0 0 0 1px var(--sport-green);
+ }
+ #mobile-menu-mode-switch button:focus-visible,#mobile-conventional-navigation :is(a,summary):focus-visible{
+  outline:3px solid var(--sport-yellow);outline-offset:2px;
+ }
+ #site-map-overlay .site-map-close{flex:0 0 44px!important;width:44px!important;height:44px!important}
+ #site-map-overlay .compass26-layout{padding:2px 4px 12px!important;max-width:100%!important}
+ #site-map-overlay .compass26-stage{
+  --radius:clamp(105px,31.5vw,154px)!important;
+  width:100%!important;height:clamp(360px,99vw,490px)!important;
+  margin:0 auto!important;overflow:visible!important;
+ }
+ /* A régi középső, széles indítógomb eltakarta a témaköröket. Mobilon nem kerül a kör közepére. */
+ #site-map-overlay .compass26-emblem{display:none!important}
+ #site-map-overlay .compass26-stage::before{opacity:.3!important;border-color:var(--sport-green)!important}
+ #site-map-overlay .compass26-stage::after{opacity:.3!important;border-color:var(--sport-yellow)!important}
+ #site-map-overlay .compass26-choice{
+  width:clamp(100px,30vw,146px)!important;height:76px!important;
+  gap:2px!important;animation-duration:.35s!important;
+ }
+ #site-map-overlay .compass26-choice-link,
+ html[data-theme="light"] #site-map-overlay .compass26-choice-link,
+ html[data-theme="dark"] #site-map-overlay .compass26-choice-link{
+  display:flex!important;justify-content:center!important;
+  padding:5px 4px!important;gap:1px!important;
+  font-size:clamp(11px,3.1vw,13px)!important;line-height:1.22!important;
+  font-weight:850!important;letter-spacing:0!important;text-shadow:none!important;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--sport-green) 13%,var(--card)),
+  color-mix(in srgb,var(--sport-yellow) 17%,var(--card)))!important;
+  color:var(--ink)!important;border:2px solid var(--sport-yellow)!important;
+  box-shadow:0 4px 13px color-mix(in srgb,var(--ink) 20%,transparent)!important;
+  border-radius:12px!important;hyphens:auto!important;overflow-wrap:break-word!important;
+ }
+ #site-map-overlay .compass26-choice-icon{display:none!important}
+ #site-map-overlay .compass26-choice-toggle{
+  flex:0 0 30px!important;width:30px!important;min-width:30px!important;
+  border:2px solid var(--sport-yellow)!important;color:var(--ink)!important;
+  background:color-mix(in srgb,var(--sport-green) 40%,var(--card))!important;
+  font-size:19px!important;border-radius:10px!important;
+ }
+ #site-map-overlay .compass26-choice.is-active .compass26-choice-link{
+  border-color:var(--sport-green)!important;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--sport-green) 42%,var(--card)),
+  color-mix(in srgb,var(--sport-yellow) 39%,var(--card)))!important;
+ }
+ #site-map-overlay .compass26-panel{
+  position:relative!important;left:auto!important;top:auto!important;right:auto!important;
+  width:100%!important;max-width:100%!important;padding:0 5px 16px!important;
+  margin:0!important;background:transparent!important;
+ }
+ #site-map-overlay .compass26-subtopics{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ #site-map-overlay .compass26-sub-link{color:var(--ink)!important;
+  background:color-mix(in srgb,var(--sport-yellow) 14%,var(--card))!important;
+  border-color:var(--sport-yellow)!important}
+ #site-map-overlay.csn18-mode-list .compass26-layout{display:none!important}
+ #site-map-overlay .csn18-mobile-conventional:not([hidden]){
+  display:grid!important;gap:9px!important;padding:12px 12px 22px!important;
+  max-height:calc(100dvh - 94px);overflow-y:auto;overscroll-behavior:contain;
+ }
+ #mobile-conventional-navigation details{
+  min-width:0;border:1px solid var(--line);border-radius:13px;
+  background:linear-gradient(140deg,color-mix(in srgb,var(--sport-green) 11%,var(--card)),
+   color-mix(in srgb,var(--sport-yellow) 11%,var(--card)));color:var(--ink);
+ }
+ #mobile-conventional-navigation details[open]{border-color:var(--sport-green)}
+ #mobile-conventional-navigation summary{
+  cursor:pointer;font-weight:850;color:var(--ink);min-height:48px;
+  display:list-item;padding:12px 16px;line-height:1.35;
+ }
+ #mobile-conventional-navigation .csn18-mobile-list-children{display:grid;gap:5px;padding:0 9px 10px}
+ #mobile-conventional-navigation .csn18-mobile-list-nested{margin:3px 0}
+ #mobile-conventional-navigation a{
+  display:block;text-decoration:none;color:var(--ink);font-weight:650;
+  min-height:44px;padding:12px 13px;border-radius:9px;
+  background:color-mix(in srgb,var(--sport-yellow) 9%,var(--card));
+ }
+ #mobile-conventional-navigation a[aria-current="page"]{
+  border-left:4px solid var(--sport-green);
+  background:color-mix(in srgb,var(--sport-green) 32%,var(--card));
+ }
+}
+@media (max-width:365px){
+ #site-map-overlay .compass26-choice{width:99px!important;height:73px!important}
+ #site-map-overlay .compass26-choice-link{font-size:11px!important}
+ #site-map-overlay .compass26-choice-toggle{flex-basis:27px!important;width:27px!important;min-width:27px!important}
+ #site-map-overlay .compass26-subtopics{grid-template-columns:minmax(0,1fr)!important}
+}
+@media (prefers-reduced-motion:reduce){
+ #site-map-overlay .compass26-choice{animation:none!important}
+ #site-map-overlay .compass26-choice-link{transition:none!important}
+}
+@media (forced-colors:active){
+ #mobile-menu-mode-switch button,#mobile-conventional-navigation summary,
+ #mobile-conventional-navigation a,#site-map-overlay .compass26-choice-link{forced-color-adjust:auto!important;border:1px solid ButtonText!important}
+}
+/* 19. kiadás: szűk telefonon a körlapok ne fedjék egymást, legyen olvasható harmonikanézet. */
+@media(max-width:430px){
+ #site-map-overlay .site-map-dialog{border-radius:13px!important}
+ #site-map-overlay .compass26-stage{--radius:clamp(94px,28vw,119px)!important;height:clamp(340px,96vw,410px)!important}
+ #site-map-overlay .compass26-choice{width:clamp(96px,29vw,118px)!important;height:70px!important}
+ #site-map-overlay .compass26-choice-link{font-size:clamp(11px,3.2vw,12px)!important;line-height:1.17!important}
+ #site-map-overlay .compass26-panel{padding-inline:4px!important}
+ #site-map-overlay .site-map-topline{min-height:54px!important}
+}
+@media(max-width:350px){
+ #site-map-overlay .compass26-stage{--radius:90px!important;height:342px!important}
+ #site-map-overlay .compass26-choice{width:95px!important;height:71px!important}
+ #mobile-menu-mode-switch button{padding-inline:2px!important;font-size:11px!important}
+}

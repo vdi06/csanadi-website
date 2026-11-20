@@ -1,0 +1,146 @@
+/* M1/D-M2/D first mobile implementation gate. All desktop behavior is retained. */
+@media (max-width: 768px) {
+  html body #site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 950 !important;
+    width: 100% !important;
+    background: rgba(11, 30, 48, .76) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(1.06);
+    backdrop-filter: blur(14px) saturate(1.06);
+    transition: background-color .2s ease !important;
+  }
+  html[data-theme="light"] body #site-header {
+    background: rgba(249, 247, 239, .84) !important;
+  }
+  html body:is(.cs-home-condensed,.cs-header-condensed) #site-header {
+    background: rgba(11, 30, 48, .94) !important;
+  }
+  html[data-theme="light"] body:is(.cs-home-condensed,.cs-header-condensed) #site-header {
+    background: rgba(249, 247, 239, .96) !important;
+  }
+
+  /* One central crest for every mobile route, regardless of scroll position. */
+  html body #site-header #cs-subpage-menu,
+  html body.cs-home-header #site-header #cs-subpage-menu,
+  html body.cs-inner-page #site-header #cs-subpage-menu,
+  html body.cs-inner-page.cs-header-condensed #site-header #cs-subpage-menu {
+    display: grid !important;
+    place-items: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    flex: 0 0 52px !important;
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+    min-height: 52px !important;
+    padding: 2px !important;
+    margin: 0 auto !important;
+    border: 1px solid rgba(204, 162, 79, .34) !important;
+    border-radius: 50% !important;
+    background: rgba(218, 174, 78, .025) !important;
+    box-shadow: none !important;
+    z-index: 6 !important;
+    touch-action: manipulation;
+  }
+  html body #site-header #cs-subpage-menu:is(:hover,:active,[aria-expanded="true"]) {
+    background: rgba(218, 174, 78, .08) !important;
+    border-color: rgba(204, 162, 79, .7) !important;
+  }
+  html body #site-header #cs-subpage-menu:focus-visible {
+    outline: 3px solid #dfb96d !important;
+    outline-offset: 3px !important;
+  }
+  html body #site-header #cs-subpage-menu .cs-subpage-menu-logo {
+    display: block !important;
+    width: 44px !important;
+    height: 44px !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+  html body #site-header .header-symmetry-center {
+    min-width: 54px !important;
+    min-height: 54px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Obsolete launchers must not compete with the centered crest. */
+  html body #site-header #mobile-menu-toggle,
+  html body #site-header #cs39-mini-hero,
+  html body .orbit-launch,
+  html body #orbit-open {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+  /* Earlier mobile styles target the old button with ID-heavy selectors. */
+  html body.cs-home-header header.site-header#site-header .brand-row .header-actions button.icon-btn.menu-btn#mobile-menu-toggle,
+  html body.cs-home-header.cs-home-condensed header.site-header#site-header .brand-row .header-actions button.icon-btn.menu-btn#mobile-menu-toggle,
+  html body.cs-inner-page header.site-header#site-header .brand-row .header-actions button.icon-btn.menu-btn#mobile-menu-toggle {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  html body #site-header .header-actions {
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) 54px minmax(0,1fr) !important;
+    align-items: center !important;
+    gap: 3px !important;
+    width: 100% !important;
+  }
+  html body #site-header .header-symmetry-left,
+  html body #site-header .header-symmetry-right {
+    display: flex !important;
+    min-width: 0 !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 3px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  html body #site-header .header-symmetry-left {justify-content: flex-end !important}
+  html body #site-header .header-symmetry-right {justify-content: flex-start !important}
+  html body #site-header :is(#search-open,#theme-toggle) {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  html body #site-header .theme-label {display: none !important}
+  html body #site-header .header-social,
+  html body #site-header .header-kreta {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  html body #site-header .header-kreta {font-size: 10px !important}
+  html body #app :is(h1,h2,h3,h4,section,[id]) {scroll-margin-top: 112px}
+}
+
+@media (max-width: 359px) {
+  html body #site-header .header-actions {grid-template-columns: minmax(0,1fr) 50px minmax(0,1fr) !important}
+  html body #site-header #cs-subpage-menu {width: 48px !important;height: 48px !important;min-width: 48px !important;min-height: 48px !important}
+  html body #site-header .header-symmetry-center {min-width: 50px !important}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body #site-header {transition: none !important}
+  html body #site-header #cs-subpage-menu {transition: none !important}
+}

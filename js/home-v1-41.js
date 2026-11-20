@@ -18,13 +18,6 @@ export function initV141HomepageMotion(){
  const update=()=>{
   scheduled=false;
   placeLanguagePanel();
-  // A 0-ról épített mobilos filmsáv saját gördülést kap: a régi desktop
-  // scroll-clip/vágóanimáció egyetlen mobilos változót sem állít.
-  if(matchMedia('(max-width: 768px)').matches){
-   hero.style.removeProperty('--cs41-scroll');hero.style.removeProperty('--cs42-fold-radius');
-   hero.style.removeProperty('--cs42-fold-scale');hero.style.removeProperty('--cs42-fold-opacity');
-   document.documentElement.style.removeProperty('--cs41-page-scroll');return;
-  }
   if(!document.body.classList.contains('cs-home-header')||!hero.querySelector('.cs41-home-hero')){
    hero.style.removeProperty('--cs41-scroll');hero.style.removeProperty('--cs42-fold-radius');hero.style.removeProperty('--cs42-fold-scale');hero.style.removeProperty('--cs42-fold-opacity');document.documentElement.style.removeProperty('--cs41-page-scroll');return;
   }

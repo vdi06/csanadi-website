@@ -1,0 +1,11 @@
+@media screen and (max-width:767px){
+ .r25-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ .r25-form label,.r25-form .r25-wide{min-width:0}
+ .r25-form .r25-wide,.r25-form button{grid-column:1/-1}
+ .r25-panorama-shell{min-height:220px}
+ .r25-panorama-placeholder{min-height:220px;padding:20px;font-size:.98rem}
+ .r25-toolbar button{flex:1 1 auto}
+ .r25-week{grid-template-columns:1fr}
+ .r25-faq-choices{display:grid}
+ .r25-faq-choices button{max-width:none;width:100%}
+}
