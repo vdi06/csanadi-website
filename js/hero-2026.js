@@ -1,6 +1,6 @@
 import {createPicture,mediaItem} from './media.js?v=1.42.18';
 import {settingNumber,isWithinConfiguredWindow} from './site-settings-2026.js?v=1.42.18';
-import {enhanceMobileHeroM6} from '../mobile/mobile-m6-film-v1-43-11.js?v=1.43.11';
+import {createFreshMobileHero} from '../mobile/reboot-hero-v1-43-26.js?v=1.43.26';
 const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 const safeRoute=value=>typeof value==='string'&&/^#\/[a-z0-9/\-]*$/i.test(value)?value:'#/';
 export function renderPremiumHero(block){
@@ -14,24 +14,7 @@ export function renderPremiumHero(block){
   .slice(0,settingNumber('runtime.hero.maxSlides'));
  if(!slides.length)return null;
  const section=el('section','csn26-visual-map');section.setAttribute('aria-label','Képes kezdőlap és főmenü');
- // A static mobile hero keeps its image and text in separate, non-overlapping elements.
- const mobileLanding=el('div','cs42-mobile-landing');
- const mobileFigure=el('div','cs42-mobile-figure');
- const mobilePhoto=createPicture('media:bejarat',{className:'cs42-mobile-picture',eager:true,sizes:'(max-width: 768px) 100vw, 0px'});
- if(mobilePhoto)mobileFigure.append(mobilePhoto);
- const mobileCopy=el('div','cs42-mobile-copy');
- const mobileKicker=el('span','cs42-mobile-kicker','ÜDVÖZLÜNK A CSANÁDIBAN');
- const mobileTitle=el('h2','cs42-mobile-title','Sport, tanulás, közösség.');
- const mobileSummary=el('p','cs42-mobile-summary','Fedezd fel iskolánk mindennapjait, sportéletét és tanulási lehetőségeit.');
- const mobileLinks=el('nav','cs42-mobile-links');mobileLinks.setAttribute('aria-label','Kiemelt iskolai oldalak');
- for(const [label,route] of [['Iskolánk','#/iskolank'],['Sportélet','#/sport'],['Felvételi','#/oktatas/felveteli']]){
-  const a=el('a','cs42-mobile-link',label);a.href=route;mobileLinks.append(a);
- }
- const mobileNote=el('span','cs42-mobile-image-note','Tematikus illusztráció, nem intézményi eseményfotó');
- mobileCopy.append(mobileKicker,mobileTitle,mobileSummary,mobileLinks,mobileNote);
- mobileLanding.append(mobileFigure,mobileCopy);
- enhanceMobileHeroM6({landing:mobileLanding,figure:mobileFigure,copy:mobileCopy,
-  slides,createPicture,mediaItem,intervalMs:data.intervalMs});
+ const mobileLanding=createFreshMobileHero({slides,createPicture,mediaItem,intervalMs:data.intervalMs});
  section.append(mobileLanding);
 
  const row=el('div','csn26-visual-row csn26-single-image');row.id='csn26-visual-carousel';

@@ -3,7 +3,6 @@ import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,en
 import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.42.18';
 import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=1.42.21';
 import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=1.42.18';
-import {initMobileQuickNav} from '../mobile/quick-nav.js?v=1.42.18';
 import {setupSmartSearch} from './search-j-2026.js?v=1.42.18';
 import {installLanguageHighlights} from './language-20.js?v=1.42.18';
 import {enhanceInlineHomeEditor} from './home-inline-editor-v1-41-4.js?v=1.43.6';
@@ -28,8 +27,7 @@ import {renderSportsSuccesses} from './sports-successes.js?v=1.42.18';
 import {renderStudentAchievements} from './student-achievements.js?v=1.42.18';
 import {renderDailySportsNews} from './daily-sport-news.js?v=1.42.18';
 import {renderDesktopTree} from '../desktop/navigation.js?v=1.42.18';
-import {renderMobileTree} from '../mobile/navigation.js?v=1.42.18';
-import {createPhoneRadial} from '../mobile/radial-wheel-m3-v1-43-9.js?v=1.43.9';
+import {renderMobileTree,createPhoneRadial} from '../mobile/reboot-menu-v1-43-26.js?v=1.43.26';
 import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.42.22';
 import {resolveVisualDraft,attachVisualEditor,visualEditingEnabled} from './visual-editor-v1-42-24.js?v=1.43.3';
 import {validateEditablePage} from '../tools/page-draft-core-v1-42-23.js?v=1.42.25';
@@ -626,7 +624,7 @@ function renderRoute(options={}){
   document.body.classList.toggle('cs-inner-page',kind!=='home');
   releaseSpaFeatureStyles();
   const inEditor=visualEditingEnabled()&&!c3Preview;
- const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.43.15');
+ const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.43.26');
   const localRelease=/^csanadi-r-v\d+\.\d+\.\d+$/.test(version)?'csanadi-website-'+version.slice('csanadi-r-'.length):'csanadi-website-v1.43.1';
   const previewDraft=node&&node.depth!==0&&!isSpaFeature(node.page)&&(inEditor||(c3Preview&&!c3PreviewBase))?resolveVisualDraft(node.page,'json/'+node.path,localRelease):null;
   const activeDraft=c3Preview&&!c3PreviewBase&&c3Overlay?.path==='json/'+node?.path?c3Overlay.page:previewDraft?.page;
@@ -967,28 +965,10 @@ export async function startApp(){
   if(catalog.items.length===0)throw new Error('Nem található érvényes JSON-oldal.');
   renderRoute({focus:false});
   initSiteHealth(catalog);
-  initMobileQuickNav();
-  // Section navigation stays inside the one menu dialog instead of an extra bottom bar.
-  if(!document.getElementById('cs42-sections-inside-menu')){
-   const topline=document.querySelector('#site-map-overlay .site-map-topline');
-   if(topline){
-    const shortcut=document.createElement('button');shortcut.type='button';shortcut.id='cs42-sections-inside-menu';
-    shortcut.textContent='Oldalszakaszok';shortcut.hidden=true;
-    shortcut.addEventListener('click',()=>{
-     const source=document.querySelector('.cs32-mobile-bar:not([hidden]) [data-action="sections"]');
-     document.getElementById('site-map-close')?.click();
-     requestAnimationFrame(()=>source?.click());
-    });
-    topline.prepend(shortcut);
-    const update=()=>{const hide=!matchMedia('(max-width:768px)').matches||!document.querySelector('.cs32-mobile-bar:not([hidden]) [data-action="sections"]');if(shortcut.hidden!==hide)shortcut.hidden=hide;};
-    const watch=new MutationObserver(update);watch.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden']});
-    document.addEventListener('csanadi:route-rendered',update);update();
-   }
-  }
   window.__CSANADI_STARTED__=true;
   if(c3Preview&&window.parent!==window)window.parent.postMessage({type:'csanadi-c3-preview-ready',route:getRoute()},location.origin);
   initSocialLinks();
-  if(!c3Preview)openEntrancePortal();
+  if(!c3Preview&&!matchMedia('(max-width: 768px)').matches)openEntrancePortal();
   initEnhancedInteractions();
   beginPolling();
   setInterval(()=>{if(!document.hidden)loadDocumentRegistry(true);},documentRefreshSeconds()*1000);

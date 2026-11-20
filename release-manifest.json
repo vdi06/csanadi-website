@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.43.15-m8-m10-mobile-preview",
+  "release": "csanadi-website-v1.43.26-m18-1-legacy-header-isolation-preview",
   "date": "2026-11-20",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "V1.43.5 F1–F4: az oktatási témaválasztó natív Bootstrap Tabs/Pills panelekkel, a dokumentumtár Bootstrap Pagination lapozással és szűrésre visszaálló oldalszámmal, továbbá Input Group, Form Check és egységes műveletgombokkal bővült. A korábbi v1.43.4 saját PDF- és tematikus képnézője, kapuja, körmenüje és iskolai adatai változatlanok. A Bootstrap verzióhoz kötött CDN-ről töltődik be. Csak helyi ZIP-kiadás, nincs FTP- vagy GitHub-közzététel. V1.43.5-r1 jóváhagyás előtti javítás: a Kezdőlap beállítása/kedvenc kártyák külön panel megszűnt, az elavult modul kikerült. A meglévő közvetlen fogantyús szerkesztés megmaradt, a szerkesztőgomb vízszintesen középre került, áttetsző gombbal és teljesen átlátszó eszköztárral. Frissített kliensoldali gyorsítótár-verzió. V1.43.5-r2: majdnem átlátszó arany kapu-hover, kezdeti fotó és dekódolt első képkocka összehangolása, folyamatos 60 Hz-közeli képkocka-keverés, finomabb kameramozgás és frissített gyorsítótár. V1.43.5-r3: egységes vízszintes középre rendezés a teljes honlapon, a fejléctől az aloldalakig és szerkesztői felületekig; új globális CSS-réteg, verziózott gyorsítótár. V1.43.5-r4: több soros, háromoszlopos szimmetrikus fejléc, középen a görgetéskor felköltöző működő címeres menügombbal; Facebook, KRÉTA és Instagram-ellenőrzés alatt jelzés; ellenőrzött kliensoldali gyorsítótár. V1.43.5-r5: a megrendelő által megadott hivatalos Instagram-profil aktiválása a fejléc és a lábléc közösségi hivatkozásai között, új lapon, verziózott gyorsítótárral. V1.43.6 önálló kiadás: a jóváhagyásra váró v1.43.5-r5 teljes, változatlan funkciókészlete és tartalma új kiadási azonosítóval, egységes URL-gyorsítótár verzióval, önálló service-worker tárral és ellenőrzött visszaállítható ZIP-csomaggal. Karbantartási javítás v1.43.6-r1: az aloldali fejléc gombjai görgetés után is láthatók; a főoldal kapunyitás-újrajátszás gombja rejtett. V1.43.6-r2: a fölösleges jobb oldali menü- és kapuismétlés-gomb rejtve; az aloldalakon mobilon is a középső címer nyitja a főmenüt. V1.43.6-r3: a fejlécből fizikailag eltávolított kapuismétlő gomb; asztali aloldalon a külön körmenüindító nem látszik, a címer kezeli a navigációt. V1.43.6-r4: az összecsukott főoldali fejléc régi, nagyobb specificitású CSS-szabálya többé nem hozza vissza a jobb szélső menügombot; a középső címer marad a menüindító. M1/D–M2/D fejlesztési előnézet: egységes középső címeres mobilmenünyitó, régi párhuzamos mobilmenügomb elrejtése, adaptív áttetsző mobilfejléc. Kizárólag első ellenőrzési kapu, nem végleges kiadás; tényleges mobilböngészős renderelés még ellenőrizendő. V1.43.8 javító előnézet: telefonon és asztali böngészőben ismétlődő frissítéskérés javítása, a betöltött szkript és a konfiguráció verziójának egyeztetése, az értesítés azonnali eltűnése Frissítés megnyomásakor, munkamenetes ismétlésvédelem és korlátozott várakozás szolgáltatásmunkás-frissítéskor. Az M3 menü új fejlesztése még nem része ennek a hotfixnek. V1.43.9 M3/D mobilos fejlesztési előnézet: teljes képernyős, háromszintű telefonos menü; tágabb telefonon körmenü, szűk telefonon kétoszlopos választó; visszalépés, látható harmadik szint, önálló oldalnyitás, fényes/sötét téma, csökkentett animáció, továbbá M5/D telefonos kezdőoldal arculati alap. Csak helyi ZIP; FTP/GitHub-közzététel nem történt. A teljes M1–M10 még nem kész, valódi mobilböngészős ellenőrzés nyitott. V1.43.10 M4/D–M5/D mobilos ellenőrzési előnézet: adaptív, görgetés közben is megmaradó címeres fejléc, a fejléc alatti középről növő olvasási folyamatjelző, rAF-időzített könnyű scroll-kezelés és tájolásváltás, horgonyok gördülési eltolása; külön telefonos hero, fényes/sötét árnyalat, egyoszlopos hírek, kétoszlopos középre záródó gyorselérések, harmonizált középre rendezett kártyák; M3 körmenü érintetlen. Az SW a kritikus mobil JS/CSS elemeket előtölti. Teljes ZIP, helyi M3/M4 működési próba és visszaállítási teszt; valódi mobil böngészős renderelés még nyitott. FTP/GitHub közzététel nincs. M6–M10 még nem végleges. V1.43.11 M6/D ellenőrzési kapu: kizárólag telefonos, egyszeri, képbetöltéshez igazodó, villanásmentes kétlevelű kapunyitás; kilenc meglévő kép bejárati kezdőképpel; léptetés, érintéses lapozás, témalinkek, 44+px vezérlők, adaptív automatikus lejátszás, láthatóság/fókusz/mozgás/adatvédelem miatti szüneteltetés, világos/sötét téma. V1.43.12 M7/D következő kapu: egységes mobilos aloldali képes fejléc és középre rendezett címer, mobil breadcrumb, központosított szövegek és egymás alá rendezett tartalmi és híres kártyák, érinthető vezérlők, táblázatgörgetés, világos/sötét téma, csökkentett mozgás és kényszerített színek támogatása. M3–M5 megmaradt. Teljes helyi ZIP és visszaállítás; valódi mobilos böngészős renderpróba nyitott. FTP/GitHub közzététel nem történt. V1.43.13 M8/D: minden új CSS kizárólag telefonos; Bootstrap komponensek középre rendezése, 44px-es kezelőszervek, szűrt tematikus galéria és dokumentumtár, teljes képernyős saját Bootstrap kép-/PDF-néző, világos/sötét téma. V1.43.14 M9/D: fókusz, hozzáférhető méretek, reduced-motion/forced-colors/kontraszt, lazy képek, hálózat/készülék alapú kímélés, videóbeállítások desktop-visszaállítása. V1.43.15 M10/D: kereső mobilos megjelenítése, szűrőfókusz visszaadása, Home/End és nyilak, aria-current útvonal, virtuális billentyűzetet kerülő fókusz. M3–M10 regressziós Node/ál-DOM és ZIP-visszaállítási ellenőrzések; natív mobil böngésző, képernyőolvasó és CDN/offline hálózati teszt nyitott. Csak helyi teljes ZIP, FTP/GitHub közzététel nélkül.",
+  "notes": "V1.43.26 M18.1 második mobilos fejlécjavítás a felhasználó visszajelzése alapján: a hiba a v1.43.25 ZIP helyi tesztelésekor is fennmaradt. Konkrét ok: az eredeti fejlécre több korábbi !important CSS-deklaráció vonatkozik, amelyeket a mobilos elrejtés nem minden állapotban írt felül. A kizárólag mobilos új CSS erősebb specifitást használ; a mobil JS a régi fejlécsort inline important módon is kikapcsolja, asztali váltáskor az eredeti display/ARIA értékeket maradéktalanul visszaállítja. A v1.43.25 szimmetrikus ikonelrendezése és külön KRÉTA sora, valamint a korábbi mobilos funkciók megmaradnak. Desktop CSS, JS, médiaszerkesztés és JSON-tartalom változatlan. Külön M18.1 regressziós/desktop-visszaállítási próba, teljes ZIP, SHA-256 és visszabontott tesztek. A valós iOS/Android és pixelszintű teszt továbbra is NYITOTT, automata teszt nem bizonyítja. Nincs FTP- vagy GitHub-közzététel; v1.43.25 változatlanul megőrizve.",
   "files": {
     "assets/documents/admissions-tajekozodasi-handout-2026.pdf": {
       "sizeBytes": 48341,
@@ -3611,20 +3611,20 @@
       "sha256": "d699af49beee4cb9af24350bdf8a3092e82dcb83cdd40a46554c50880a6bae9c"
     },
     "index.html": {
-      "sizeBytes": 18885,
-      "sha256": "99abdc720a849160558de3a89320af2e934c0fb8c1d5f5927f5f4b4a9cbc3bdc"
+      "sizeBytes": 17887,
+      "sha256": "83f7c98afb6cba50510ed336332af488586fd4213aba22b1dfd1f869f712f769"
     },
     "js/advanced-2026.js": {
       "sizeBytes": 31031,
       "sha256": "41e32adffb5b318d9728be6169f31a17497051c34c2568a253e05a210ada3212"
     },
     "js/app.js": {
-      "sizeBytes": 62721,
-      "sha256": "f3a45b3356754649647259c36bee45f6d4d95d7f8fac264eb0448ea4a0806c9e"
+      "sizeBytes": 61464,
+      "sha256": "9fbbfd936018364cc64d136fd568345342eb892a353266b488157c4a75380c29"
     },
     "js/blocks.js": {
       "sizeBytes": 10406,
-      "sha256": "b54b7bda0ae1ba5e4d2898239bc2ec28e4e88c1df54fae89f1f28de0219cfb49"
+      "sha256": "7a3d45cdb867e9aa9bd9001a6e1539bc8ab87035ded4f4fc5f2f11b99c969584"
     },
     "js/content.js": {
       "sizeBytes": 5942,
@@ -3679,8 +3679,8 @@
       "sha256": "370e57413f01ae10a978a6be5f4a2b2e1040b7566ad30a14a662dd2c94accdee"
     },
     "js/hero-2026.js": {
-      "sizeBytes": 13096,
-      "sha256": "3d11eefd0dcb4c240747caea34bc5cecf5c7476bbd1b096d503ac701cac3060a"
+      "sizeBytes": 11769,
+      "sha256": "259204df4a964eebe461bf654137fe84896a0ef386abbe5ecf093237f4d94ed3"
     },
     "js/home-inline-editor-v1-41-4.js": {
       "sizeBytes": 11425,
@@ -3691,8 +3691,8 @@
       "sha256": "5032450074941e789de832a1cda902adf69865c29b5dbed51f12207514ca94b0"
     },
     "js/home-v1-41.js": {
-      "sizeBytes": 2862,
-      "sha256": "6b7b78bbea12ef013f2c4dacaef0ce30b4505fd9abfecf7cdc8ae2a8d0ab49ca"
+      "sizeBytes": 3345,
+      "sha256": "d67eeb77511a36c85b93f2fd42d2c0a9543e81212a9b6b05edd279464cbaf0d7"
     },
     "js/interactions-be-2026.js": {
       "sizeBytes": 3951,
@@ -3857,10 +3857,6 @@
     "js/tenway-2026.js": {
       "sizeBytes": 7635,
       "sha256": "9d9ada757297eeec0c0a2f0423e7670a61e5f076597036eeb5f43fa7bd8ee263"
-    },
-    "js/vendor/pdfjs/LICENSE": {
-      "sizeBytes": 10174,
-      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
     },
     "js/vendor/pdfjs/cmaps/78-EUC-H.bcmap": {
       "sizeBytes": 2404,
@@ -4086,14 +4082,6 @@
       "sizeBytes": 93,
       "sha256": "2e4f70a8afd23a121030fc2e5b5f3816e903b11e7ba8b8c09654b31c80399c38"
     },
-    "js/vendor/pdfjs/cmaps/ETHK-B5-H.bcmap": {
-      "sizeBytes": 4426,
-      "sha256": "d2f10fa519336bc4efcc7b6deb9604b75429946b40d82e311cb3a97a1994c89a"
-    },
-    "js/vendor/pdfjs/cmaps/ETHK-B5-V.bcmap": {
-      "sizeBytes": 158,
-      "sha256": "1fea3fd0d9f0f679f80505800851ef2e4131d81127e18c006938ffa2f4c8b247"
-    },
     "js/vendor/pdfjs/cmaps/ETen-B5-H.bcmap": {
       "sizeBytes": 1125,
       "sha256": "87ee6b3f5bfda5fe26fa35431264c7d73070d10dbbf398a75185d63ae322c18d"
@@ -4109,6 +4097,14 @@
     "js/vendor/pdfjs/cmaps/ETenms-B5-V.bcmap": {
       "sizeBytes": 172,
       "sha256": "18252fca90f472f479af1bddd60d6ab51c8e1b55dcf6845951426504934543e0"
+    },
+    "js/vendor/pdfjs/cmaps/ETHK-B5-H.bcmap": {
+      "sizeBytes": 4426,
+      "sha256": "d2f10fa519336bc4efcc7b6deb9604b75429946b40d82e311cb3a97a1994c89a"
+    },
+    "js/vendor/pdfjs/cmaps/ETHK-B5-V.bcmap": {
+      "sizeBytes": 158,
+      "sha256": "1fea3fd0d9f0f679f80505800851ef2e4131d81127e18c006938ffa2f4c8b247"
     },
     "js/vendor/pdfjs/cmaps/EUC-H.bcmap": {
       "sizeBytes": 578,
@@ -4174,6 +4170,14 @@
       "sizeBytes": 181,
       "sha256": "fdc736d46e642625dccc8ad8c59f2c69fc7db7a13f2e799c6c6b779e707bb97a"
     },
+    "js/vendor/pdfjs/cmaps/GBpc-EUC-H.bcmap": {
+      "sizeBytes": 557,
+      "sha256": "3c4a4eb82f05abe51f6650985c630e180438bfdd491318f5d20d2ec29236e1c3"
+    },
+    "js/vendor/pdfjs/cmaps/GBpc-EUC-V.bcmap": {
+      "sizeBytes": 181,
+      "sha256": "215bdfa2842705624b4cf4cd29b8e3c720f1e192365e0305c11030a424c84d7c"
+    },
     "js/vendor/pdfjs/cmaps/GBT-EUC-H.bcmap": {
       "sizeBytes": 7290,
       "sha256": "dc5f44e48a39f3367ae28665027d8ab1d8cedb5a9dcc5068a900acd6709f60f9"
@@ -4198,17 +4202,17 @@
       "sizeBytes": 182,
       "sha256": "d7a1b13ead9ab511cf2cd01de6ce8b02aa8e8767e84895337d7a3b67f039f93b"
     },
-    "js/vendor/pdfjs/cmaps/GBpc-EUC-H.bcmap": {
-      "sizeBytes": 557,
-      "sha256": "3c4a4eb82f05abe51f6650985c630e180438bfdd491318f5d20d2ec29236e1c3"
-    },
-    "js/vendor/pdfjs/cmaps/GBpc-EUC-V.bcmap": {
-      "sizeBytes": 181,
-      "sha256": "215bdfa2842705624b4cf4cd29b8e3c720f1e192365e0305c11030a424c84d7c"
-    },
     "js/vendor/pdfjs/cmaps/H.bcmap": {
       "sizeBytes": 553,
       "sha256": "a0233e21047ec00b852125b243cbcf30abee511155b6d8159c24f944384bc9ee"
+    },
+    "js/vendor/pdfjs/cmaps/Hankaku.bcmap": {
+      "sizeBytes": 132,
+      "sha256": "b454701f7aecd7856769016dfd04ca64280a060f2c67a2466d50b4395d24974e"
+    },
+    "js/vendor/pdfjs/cmaps/Hiragana.bcmap": {
+      "sizeBytes": 124,
+      "sha256": "2ed669394756dd9458651cd9995ab29ab691ecb7686659003306cdf22767a414"
     },
     "js/vendor/pdfjs/cmaps/HKdla-B5-H.bcmap": {
       "sizeBytes": 2654,
@@ -4258,13 +4262,9 @@
       "sizeBytes": 159,
       "sha256": "d073542b7dad1c4cbf01c1af5f0cd13218d1281a491956e310c55702fc8705c4"
     },
-    "js/vendor/pdfjs/cmaps/Hankaku.bcmap": {
-      "sizeBytes": 132,
-      "sha256": "b454701f7aecd7856769016dfd04ca64280a060f2c67a2466d50b4395d24974e"
-    },
-    "js/vendor/pdfjs/cmaps/Hiragana.bcmap": {
-      "sizeBytes": 124,
-      "sha256": "2ed669394756dd9458651cd9995ab29ab691ecb7686659003306cdf22767a414"
+    "js/vendor/pdfjs/cmaps/Katakana.bcmap": {
+      "sizeBytes": 100,
+      "sha256": "3b6ca6642fbf8822da00d5e58a8aa275216d5c32dbf2bd73e934197fc9fc5c53"
     },
     "js/vendor/pdfjs/cmaps/KSC-EUC-H.bcmap": {
       "sizeBytes": 1848,
@@ -4313,10 +4313,6 @@
     "js/vendor/pdfjs/cmaps/KSCpc-EUC-V.bcmap": {
       "sizeBytes": 166,
       "sha256": "031707887d6fc2378a36cdb6775334fd7a236c3f95048d8436abf43fe26fc49d"
-    },
-    "js/vendor/pdfjs/cmaps/Katakana.bcmap": {
-      "sizeBytes": 100,
-      "sha256": "3b6ca6642fbf8822da00d5e58a8aa275216d5c32dbf2bd73e934197fc9fc5c53"
     },
     "js/vendor/pdfjs/cmaps/LICENSE": {
       "sizeBytes": 2080,
@@ -4538,6 +4534,10 @@
       "sizeBytes": 179,
       "sha256": "543923bead225732aba30976690ee89095a19628277b5863efecc2c728d5d7bf"
     },
+    "js/vendor/pdfjs/LICENSE": {
+      "sizeBytes": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
     "js/vendor/pdfjs/pdf.min.js": {
       "sizeBytes": 435381,
       "sha256": "b0fc97331dc1fc03c4a381ebdd88f751a4d12de4ec97fa1faf18bb37721a4b5b"
@@ -4586,14 +4586,6 @@
       "sizeBytes": 16729,
       "sha256": "47967d055530e7357088a08403115425643ec2cdfd6201ba8af0fbd7116c1539"
     },
-    "js/vendor/pdfjs/standard_fonts/LICENSE_FOXIT": {
-      "sizeBytes": 1553,
-      "sha256": "b578cdd2345840ada550bd12519533812320d5f1d21cf4c1c7e1b1b0a31c98b7"
-    },
-    "js/vendor/pdfjs/standard_fonts/LICENSE_LIBERATION": {
-      "sizeBytes": 4414,
-      "sha256": "93fed46019c38bbe566b479d22148e2e8a1e85ada614accb0211c37b2c61c19b"
-    },
     "js/vendor/pdfjs/standard_fonts/LiberationSans-Bold.ttf": {
       "sizeBytes": 137052,
       "sha256": "361c61b82d575c5c35fd9157fda8b0194bcfcd0d88ea8521a4fb5dd53d33dddc"
@@ -4609,6 +4601,22 @@
     "js/vendor/pdfjs/standard_fonts/LiberationSans-Regular.ttf": {
       "sizeBytes": 139512,
       "sha256": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f"
+    },
+    "js/vendor/pdfjs/standard_fonts/LICENSE_FOXIT": {
+      "sizeBytes": 1553,
+      "sha256": "b578cdd2345840ada550bd12519533812320d5f1d21cf4c1c7e1b1b0a31c98b7"
+    },
+    "js/vendor/pdfjs/standard_fonts/LICENSE_LIBERATION": {
+      "sizeBytes": 4414,
+      "sha256": "93fed46019c38bbe566b479d22148e2e8a1e85ada614accb0211c37b2c61c19b"
+    },
+    "js/vendor/pdfjs/wasm/jbig2_nowasm_fallback.js": {
+      "sizeBytes": 145703,
+      "sha256": "04c795a6657a4553a64b781ea3e85256203d913c3b71b72b85fa3ce00622f458"
+    },
+    "js/vendor/pdfjs/wasm/jbig2.wasm": {
+      "sizeBytes": 104852,
+      "sha256": "e6bee67724a7b5436fe8162638e3708cfc8d52b6342db69a49715e30ff27cfdc"
     },
     "js/vendor/pdfjs/wasm/LICENSE_JBIG2": {
       "sizeBytes": 12862,
@@ -4634,21 +4642,13 @@
       "sizeBytes": 1121,
       "sha256": "36d847ae882f6574ebc72f56a4f354e4f104fde4a584373496482e97d52d31bc"
     },
-    "js/vendor/pdfjs/wasm/jbig2.wasm": {
-      "sizeBytes": 104852,
-      "sha256": "e6bee67724a7b5436fe8162638e3708cfc8d52b6342db69a49715e30ff27cfdc"
-    },
-    "js/vendor/pdfjs/wasm/jbig2_nowasm_fallback.js": {
-      "sizeBytes": 145703,
-      "sha256": "04c795a6657a4553a64b781ea3e85256203d913c3b71b72b85fa3ce00622f458"
+    "js/vendor/pdfjs/wasm/openjpeg_nowasm_fallback.js": {
+      "sizeBytes": 451590,
+      "sha256": "0f998419819da4491d8302222aa9e2ff2494685641aa2a6c21c3760c29f3e319"
     },
     "js/vendor/pdfjs/wasm/openjpeg.wasm": {
       "sizeBytes": 252032,
       "sha256": "004a0e62db930ba9ff2a22212f4554d0bb57a0635a8287caf70f98117cee14ba"
-    },
-    "js/vendor/pdfjs/wasm/openjpeg_nowasm_fallback.js": {
-      "sizeBytes": 451590,
-      "sha256": "0f998419819da4491d8302222aa9e2ff2494685641aa2a6c21c3760c29f3e319"
     },
     "js/vendor/pdfjs/wasm/qcms_bg.wasm": {
       "sizeBytes": 88837,
@@ -4684,7 +4684,7 @@
     },
     "json/config.json": {
       "sizeBytes": 17450,
-      "sha256": "f119cdf234f2a09d87c64ecdf4f55dbf4274787e932488f712004732cf182c63"
+      "sha256": "ba4f26625715da0beb6be998b283de3a91d6c075f709b32d8467a3ce5bede50c"
     },
     "json/data/arrival-and-development-26.json": {
       "sizeBytes": 6849,
@@ -4794,6 +4794,14 @@
       "sizeBytes": 3615,
       "sha256": "e35f67bcfab755b338f1ab5dff4ef1cdd328a9f0a60c046d5cd6c0894b47b9d3"
     },
+    "json/pages/education.json": {
+      "sizeBytes": 3342,
+      "sha256": "0fa1d2e97384538de5b18cef1f52866f4cbc41f700e34f7ec72bee408c1c81f2"
+    },
+    "json/pages/education/admissions.json": {
+      "sizeBytes": 4231,
+      "sha256": "4873bbc16e49584233268b60641cf2dd2f4e48b94a2170cf7707ff4434afe8b8"
+    },
     "json/pages/education/admissions/admission-deadlines.json": {
       "sizeBytes": 4003,
       "sha256": "e49b20df4898ceed565d21334b54ba41cd5c63fe880b988d46145357769fdd64"
@@ -4810,9 +4818,9 @@
       "sizeBytes": 3770,
       "sha256": "587b14f4d11b60fda0355971b77b0ee6e8eb64179f2c358c3abb602c95e849c0"
     },
-    "json/pages/education/admissions.json": {
-      "sizeBytes": 4231,
-      "sha256": "4873bbc16e49584233268b60641cf2dd2f4e48b94a2170cf7707ff4434afe8b8"
+    "json/pages/education/digital-culture.json": {
+      "sizeBytes": 10708,
+      "sha256": "13aacf9115ed891550e33b28a52eabd4d3099fdc7d73282fc3f3d63cbf36a386"
     },
     "json/pages/education/digital-culture/artificial-intelligence.json": {
       "sizeBytes": 4072,
@@ -4822,9 +4830,9 @@
       "sizeBytes": 3835,
       "sha256": "069531cba48db124f2917353a70db74b9fda3428b7dad52e63d023d541cda4e5"
     },
-    "json/pages/education/digital-culture.json": {
-      "sizeBytes": 10708,
-      "sha256": "13aacf9115ed891550e33b28a52eabd4d3099fdc7d73282fc3f3d63cbf36a386"
+    "json/pages/education/exams.json": {
+      "sizeBytes": 3252,
+      "sha256": "7aa4c0359efab566045edb363486036db864fac4afc20699893b098bcde20813"
     },
     "json/pages/education/exams/classification-exams.json": {
       "sizeBytes": 3779,
@@ -4838,29 +4846,29 @@
       "sizeBytes": 4090,
       "sha256": "67d09e46c00e61f170d145a6ffd89ec48e0220938954ddbd0398a024d1cb7cf4"
     },
-    "json/pages/education/exams.json": {
-      "sizeBytes": 3252,
-      "sha256": "7aa4c0359efab566045edb363486036db864fac4afc20699893b098bcde20813"
-    },
     "json/pages/education/learning-and-community.json": {
       "sizeBytes": 874,
       "sha256": "6a1af64c4f5f515e497b2bd71b392955de3edcbe8d23209fe5419b531983f93d"
-    },
-    "json/pages/education/learning-resources/learning-support.json": {
-      "sizeBytes": 3187,
-      "sha256": "0215a24d7b1ae07174d6446629a4ea2bb38ae9434eb660130cb2c4786e2683b0"
     },
     "json/pages/education/learning-resources.json": {
       "sizeBytes": 3549,
       "sha256": "8d6feae8fcc75b47acbd3cb4923a6da465b41301e61f84f24e8b20875ed37ca9"
     },
-    "json/pages/education/library/library-services.json": {
-      "sizeBytes": 3847,
-      "sha256": "c05c763c6a4d80ecab7eb0caca14704fb534665a0187f77986492e9a219a01cb"
+    "json/pages/education/learning-resources/learning-support.json": {
+      "sizeBytes": 3187,
+      "sha256": "0215a24d7b1ae07174d6446629a4ea2bb38ae9434eb660130cb2c4786e2683b0"
     },
     "json/pages/education/library.json": {
       "sizeBytes": 3696,
       "sha256": "0760562c4ebce482e9c010fd5daa86a2dca6788883389df89977cf2b6d94654d"
+    },
+    "json/pages/education/library/library-services.json": {
+      "sizeBytes": 3847,
+      "sha256": "c05c763c6a4d80ecab7eb0caca14704fb534665a0187f77986492e9a219a01cb"
+    },
+    "json/pages/education/programs.json": {
+      "sizeBytes": 3054,
+      "sha256": "f938381cd13bfec435c7a5f715aa29d28fdc5877f5a4dffc84fca0e5107059a2"
     },
     "json/pages/education/programs/primary-school.json": {
       "sizeBytes": 3271,
@@ -4874,9 +4882,9 @@
       "sizeBytes": 3491,
       "sha256": "4f3961372010077a1b970be3e38c23a128321466026d81b812d76cfd29240cf5"
     },
-    "json/pages/education/programs.json": {
-      "sizeBytes": 3054,
-      "sha256": "f938381cd13bfec435c7a5f715aa29d28fdc5877f5a4dffc84fca0e5107059a2"
+    "json/pages/education/school-years.json": {
+      "sizeBytes": 3091,
+      "sha256": "85650af52685f5ab611c037a00d16b259401d72548611addab93a72dc5b928f5"
     },
     "json/pages/education/school-years/current-school-year.json": {
       "sizeBytes": 3572,
@@ -4886,17 +4894,17 @@
       "sizeBytes": 3228,
       "sha256": "cb245e2100708e058f956df7cdcb3d260dc2d3d890c8fd1a8106044fea8adae1"
     },
-    "json/pages/education/school-years.json": {
-      "sizeBytes": 3091,
-      "sha256": "85650af52685f5ab611c037a00d16b259401d72548611addab93a72dc5b928f5"
-    },
-    "json/pages/education.json": {
-      "sizeBytes": 3342,
-      "sha256": "0fa1d2e97384538de5b18cef1f52866f4cbc41f700e34f7ec72bee408c1c81f2"
-    },
     "json/pages/home.json": {
       "sizeBytes": 16209,
       "sha256": "7a346f0b8f5a98ff25591e749d2928508d1668e0f095480f59a5a03e55c872bd"
+    },
+    "json/pages/information.json": {
+      "sizeBytes": 3229,
+      "sha256": "0f20041c92eef348fe3f2a5d389f43cd88a6670b2724e76f69ca3ba696ca9b90"
+    },
+    "json/pages/information/community-service.json": {
+      "sizeBytes": 3781,
+      "sha256": "918069642c0843fea6165ac111d3923d6fea11b680ef4ce622936b64365b830e"
     },
     "json/pages/information/community-service/community-service-documents.json": {
       "sizeBytes": 3807,
@@ -4910,9 +4918,9 @@
       "sizeBytes": 3270,
       "sha256": "c6a418ce88e607b3659b11007b9ffb9bbe728b5fab2bcdb2e5f16863376a6352"
     },
-    "json/pages/information/community-service.json": {
-      "sizeBytes": 3781,
-      "sha256": "918069642c0843fea6165ac111d3923d6fea11b680ef4ce622936b64365b830e"
+    "json/pages/information/daily-information.json": {
+      "sizeBytes": 3505,
+      "sha256": "d36e9fef101a2ae867fb2bd3a0d1bd0ca355e7f3cafef8ddc4ba258c57b24bcf"
     },
     "json/pages/information/daily-information/bell-schedule.json": {
       "sizeBytes": 4206,
@@ -4934,13 +4942,13 @@
       "sizeBytes": 3716,
       "sha256": "9eaebc3709f1370123d9e09f344ce835641e40c8bd82079282b6ceb1197f95da"
     },
-    "json/pages/information/daily-information.json": {
-      "sizeBytes": 3505,
-      "sha256": "d36e9fef101a2ae867fb2bd3a0d1bd0ca355e7f3cafef8ddc4ba258c57b24bcf"
-    },
     "json/pages/information/digital-services.json": {
       "sizeBytes": 3108,
       "sha256": "5ee8afc92f98941b7f5fa8e6b8ab8e8135301f4257373596e0b1bb681013a2a1"
+    },
+    "json/pages/information/document-library.json": {
+      "sizeBytes": 3155,
+      "sha256": "62164bb85eb44efa09d8572c01571868da79fa5f74fdd7ab7c7731a72ce64632"
     },
     "json/pages/information/document-library/forms.json": {
       "sizeBytes": 3816,
@@ -4953,10 +4961,6 @@
     "json/pages/information/document-library/public-disclosures.json": {
       "sizeBytes": 3673,
       "sha256": "76f099994cb47a4900c5179cdd8bf9664d5e477f4307811157a8b85ff5c521e3"
-    },
-    "json/pages/information/document-library.json": {
-      "sizeBytes": 3155,
-      "sha256": "62164bb85eb44efa09d8572c01571868da79fa5f74fdd7ab7c7731a72ce64632"
     },
     "json/pages/information/editor-workbench.json": {
       "sizeBytes": 1124,
@@ -4978,13 +4982,17 @@
       "sizeBytes": 3274,
       "sha256": "4f591651bd0148f206ecbda3ffa9f3a02800a4f3ead6fb75c0f3f317f100af59"
     },
-    "json/pages/information.json": {
-      "sizeBytes": 3229,
-      "sha256": "0f20041c92eef348fe3f2a5d389f43cd88a6670b2724e76f69ca3ba696ca9b90"
+    "json/pages/news-and-events.json": {
+      "sizeBytes": 2814,
+      "sha256": "c7528aa679777a94b4f636b6de97e059f98515a09ba845688c11323681d55d23"
     },
     "json/pages/news-and-events/announcements.json": {
       "sizeBytes": 3163,
       "sha256": "a8ffc866dc5344698f775c84870902885bec5b8121fd2483218be8416b278e96"
+    },
+    "json/pages/news-and-events/event-calendar.json": {
+      "sizeBytes": 3220,
+      "sha256": "cbcfbe6bc383dae78a2d6069b35fab17d28c48c776f64d09df6b95a36a51a22f"
     },
     "json/pages/news-and-events/event-calendar/school-events.json": {
       "sizeBytes": 3710,
@@ -4994,9 +5002,9 @@
       "sizeBytes": 3199,
       "sha256": "7c6a0ca51ebc19387cf837ca7bee445f710d23118dd319ee215e9b1557d63059"
     },
-    "json/pages/news-and-events/event-calendar.json": {
-      "sizeBytes": 3220,
-      "sha256": "cbcfbe6bc383dae78a2d6069b35fab17d28c48c776f64d09df6b95a36a51a22f"
+    "json/pages/news-and-events/news.json": {
+      "sizeBytes": 3398,
+      "sha256": "d0ebd45f1dbf5f5190c76b7480242e1a267185d52e890af58a311a6b07543752"
     },
     "json/pages/news-and-events/news/news-archive.json": {
       "sizeBytes": 3532,
@@ -5010,13 +5018,9 @@
       "sizeBytes": 3311,
       "sha256": "5b53a49d53520b9a4bfe67f454fb40274aa9954caceb78afe2d73f3547528e14"
     },
-    "json/pages/news-and-events/news.json": {
-      "sizeBytes": 3398,
-      "sha256": "d0ebd45f1dbf5f5190c76b7480242e1a267185d52e890af58a311a6b07543752"
-    },
-    "json/pages/news-and-events.json": {
-      "sizeBytes": 2814,
-      "sha256": "c7528aa679777a94b4f636b6de97e059f98515a09ba845688c11323681d55d23"
+    "json/pages/our-school.json": {
+      "sizeBytes": 4347,
+      "sha256": "8eaf9460125f3df230b9511f045c1fbedd9c0f1b848608d1362951cf0a5511be"
     },
     "json/pages/our-school/eco-school.json": {
       "sizeBytes": 3931,
@@ -5070,9 +5074,9 @@
       "sizeBytes": 13593,
       "sha256": "9d582b989eb306da68f8a88567a4a56344b01c8c1b3149e92ea463c84ba21cbd"
     },
-    "json/pages/our-school.json": {
-      "sizeBytes": 4347,
-      "sha256": "8eaf9460125f3df230b9511f045c1fbedd9c0f1b848608d1362951cf0a5511be"
+    "json/pages/sports.json": {
+      "sizeBytes": 3223,
+      "sha256": "1100ac6109193d4efeb6c40f03c16d2a19a41faff9ed79f9ef6ad4f088244b25"
     },
     "json/pages/sports/athletes.json": {
       "sizeBytes": 3558,
@@ -5102,10 +5106,6 @@
       "sizeBytes": 3403,
       "sha256": "aec026e127b64f617284a247d0d982d45a7e941b2d03a20c9c04217afdd5b068"
     },
-    "json/pages/sports.json": {
-      "sizeBytes": 3223,
-      "sha256": "1100ac6109193d4efeb6c40f03c16d2a19a41faff9ed79f9ef6ad4f088244b25"
-    },
     "json/schemas/documents.schema.json": {
       "sizeBytes": 5533,
       "sha256": "7120eada79104b1d88d6de320385f9e07826c689e5a12411a402325bc21c2570"
@@ -5118,141 +5118,97 @@
       "sizeBytes": 10665,
       "sha256": "18b066e6df5819ff925d4def5a7c2346ff55dfa23a16c015b39eab70bcd07a07"
     },
-    "mobile/j-mobile-home-2026.css": {
-      "sizeBytes": 4226,
-      "sha256": "032a416b95b23636f36f965b16b289415173f52d77cfd3a84fc86d21cc5544fa"
+    "mobile/reboot-design-v1-43-26.css": {
+      "sizeBytes": 51083,
+      "sha256": "0bace7a1706cf9d8781edf9a4149329bd673198788f0c3cb125ae327701d052b"
     },
-    "mobile/mobile-compact-h2-2026.css": {
-      "sizeBytes": 4228,
-      "sha256": "55835b1bd18061aa0b41e87ba2f9a9f2e14471db79d0b414fe72221aef088595"
+    "mobile/reboot-hero-v1-43-26.js": {
+      "sizeBytes": 11066,
+      "sha256": "fed32a69a8473917f7909055c25c6da1598f8a3e6bfede4ad87b74f66e23f952"
     },
-    "mobile/mobile-fixes-v1-42-13.css": {
-      "sizeBytes": 13160,
-      "sha256": "667a307fe56484bdfd6fec8871a46b27933c3b10fc5696c4e1a597ec38ee86c6"
+    "mobile/reboot-menu-v1-43-26.js": {
+      "sizeBytes": 8800,
+      "sha256": "9501477b2b90ad0ea54be97cbaedcaca7e313e235f80636b6dd2c5c5f470abf4"
     },
-    "mobile/mobile-m1-m2-foundation-v1-43-7.css": {
-      "sizeBytes": 5729,
-      "sha256": "e46d9bcd69ade6f4d0b6d863b760536571491a39c8c7980f99109669698935cc"
+    "mobile/reboot-quality-v1-43-26.js": {
+      "sizeBytes": 9188,
+      "sha256": "56abe3791c84d479e4e3ab841705e37d81562515190081353aee0dc6aa314794"
     },
-    "mobile/mobile-m10-workflows-v1-43-15.css": {
-      "sizeBytes": 3334,
-      "sha256": "332ccd656d2a74c1c75abab6144001bc0ba34f16d15b6d9ffad869b19b8bb587"
-    },
-    "mobile/mobile-m10-workflows-v1-43-15.js": {
-      "sizeBytes": 4517,
-      "sha256": "ebb0e53f59a9e112dc5c558e4541272bf624e643b28e4752f42d099d94264a1e"
-    },
-    "mobile/mobile-m3-adaptive-v1-43-9.css": {
-      "sizeBytes": 12666,
-      "sha256": "227492c3229c94579b0c9471a5306932671bf27d0bd5613faba3098d521677b5"
-    },
-    "mobile/mobile-m4-m5-v1-43-10.css": {
-      "sizeBytes": 9040,
-      "sha256": "6158503701f9565a0ed410a8b7fdd8bffc019fbede27a50e3ca80ca865740810"
-    },
-    "mobile/mobile-m6-film-v1-43-11.css": {
-      "sizeBytes": 7232,
-      "sha256": "e0cfbe4346a8beef5cc3c6a571e4d837701385f82f03cbcd9dbe4857a6156756"
-    },
-    "mobile/mobile-m6-film-v1-43-11.js": {
-      "sizeBytes": 9056,
-      "sha256": "4eac6b73d5f93e4bd58d9279156defe82ee698e5fc68a921936a17d1298eaa43"
-    },
-    "mobile/mobile-m7-subpages-v1-43-12.css": {
-      "sizeBytes": 8721,
-      "sha256": "3ce7ef1ca8197a958c2733f29ee46d9848bbcf2ed497ee0dd617bc0dfb73b89e"
-    },
-    "mobile/mobile-m8-components-v1-43-13.css": {
-      "sizeBytes": 12777,
-      "sha256": "84827c4c9101a04ea7e6e12dd0bfbfae44ddc8965d894054f1c447080ac8efe9"
-    },
-    "mobile/mobile-m9-quality-v1-43-14.css": {
-      "sizeBytes": 3528,
-      "sha256": "fb5ca2dd22add6aee0bcb8c2ec96f49bb74818d841b621b431cabc61975b3b4e"
-    },
-    "mobile/mobile-m9-quality-v1-43-14.js": {
-      "sizeBytes": 3010,
-      "sha256": "b5ce34349444eec5b833a58127f0f3cdb05112b22c1bbbc50e5628b91c918f36"
-    },
-    "mobile/mobile-scroll-m4-v1-43-10.js": {
-      "sizeBytes": 2666,
-      "sha256": "50260cec4a6674ecc81112348ea71086774a5455f38c41a01c754d65fe093345"
-    },
-    "mobile/mobile-top-nav-v1-42-14.css": {
-      "sizeBytes": 3409,
-      "sha256": "6455d6bff7682a935ce96b7e3236f84b358c91f058b0b9d291e7b5f54ebe25f7"
-    },
-    "mobile/navigation.js": {
-      "sizeBytes": 1886,
-      "sha256": "29a7f3d09d77424f77e455b645a857435224e85e37fa3aa512e2f3a23e6058bf"
-    },
-    "mobile/quick-nav.js": {
-      "sizeBytes": 1199,
-      "sha256": "42dc590726c37d3dfb5601fbd438fae84dd70002c4d36c95affde85d92cb75a2"
-    },
-    "mobile/radial-wheel-m3-v1-43-9.js": {
-      "sizeBytes": 6652,
-      "sha256": "5019b823932b7a0aeeb3546883b27f167483e63295d2825e56ce6c92b84c9aa7"
-    },
-    "mobile/radial-wheel-v1-38.js": {
-      "sizeBytes": 3653,
-      "sha256": "2d0e251e07931f16c2abf7f58d9fb00d21740a5193abf9d025df4aa192267e0b"
-    },
-    "mobile/round16-responsive.css": {
-      "sizeBytes": 1146,
-      "sha256": "2cf7212e6ef20da2211e7d8fab697edd79713f73e7c6ad5798caefef76506673"
-    },
-    "mobile/round22-center-mobile.css": {
-      "sizeBytes": 844,
-      "sha256": "7603f11d0ba7b68c9da03c5cd5a55842b2d5f30a5afe0024f5aaf7b9da845da2"
-    },
-    "mobile/round22-nav.css": {
-      "sizeBytes": 625,
-      "sha256": "4986751f2d12a09e6a07bdb1978f91f2f78a25ee8933730e6122c0d33bc0a24d"
-    },
-    "mobile/round23-workshop-mobile.css": {
-      "sizeBytes": 965,
-      "sha256": "197a5f375f06c2f4b0c90b4134f5167c6530c5822788c2f436bcc9a465a4010e"
-    },
-    "mobile/round24-heritage-mobile.css": {
-      "sizeBytes": 718,
-      "sha256": "0264314578909c3ecf7e07765e86d737b40ad68bf2edeacd8102a96eb8ba72c0"
-    },
-    "mobile/round25-community-mobile.css": {
-      "sizeBytes": 497,
-      "sha256": "55a133d399303d0567c7bf11465a8b91f27a55d667988edcee52d14c38d961b1"
-    },
-    "mobile/round26-arrival-mobile.css": {
-      "sizeBytes": 533,
-      "sha256": "e5b265830ecf64a7a515d4955c92a8b65c1c8b6bf1f6c78a45e2f77ec4b5d9df"
-    },
-    "mobile/styles.css": {
-      "sizeBytes": 8100,
-      "sha256": "c44bb4a51aa02491cd50fb643445076e7e0829714cd69428da77b59814ee9f4a"
+    "mobile/reboot-shell-v1-43-26.js": {
+      "sizeBytes": 9619,
+      "sha256": "91e3d256606266f23a5050fbf62db2c4b242d7605ac0e2b8edba6df19da98bf4"
     },
     "offline.html": {
       "sizeBytes": 1665,
       "sha256": "36675a60c8b50f9cb658ae64865d5e9d27222207522affb9b92b615dd63daf15"
     },
-    "reports/csanadi-v1.43.15-m8-m10-fejlesztesi-jelentes.md": {
-      "sizeBytes": 9115,
-      "sha256": "d41f36aecb02c9b0adb8c0f8c7b23291beaa73ed015fce2c4f34c78bd6081c47"
+    "reports/csanadi-v1.43.16-teljes-mobil-ujraepites-jelentes.md": {
+      "sizeBytes": 11577,
+      "sha256": "0e2088ae06542e3bdb7d090354dc72118b2b9a095cfb9b39e5e98b8886fc2fa9"
+    },
+    "reports/csanadi-v1.43.17-m11d-mobil-finomhangolas-jelentes.md": {
+      "sizeBytes": 9467,
+      "sha256": "771b5a0c7adab98f5e0545d03a1ddec481cd81fcb11de9727ee1f95d1cafc353"
+    },
+    "reports/csanadi-v1.43.18-m12d-mobil-veglegesites-jelentes.md": {
+      "sizeBytes": 11378,
+      "sha256": "718819bf8a9fbd0ba5cc1d75f55c5e3a506dd00d16da05ba92b341ae35ba3f1f"
+    },
+    "reports/csanadi-v1.43.19-m13-mobil-szovegillesztes-elonezet.md": {
+      "sizeBytes": 4097,
+      "sha256": "9cea19b2fd848c8dda15a7fc24a2de5a9172c1c056720571ef4b5e66695e1f30"
+    },
+    "reports/csanadi-v1.43.19-m13d-veglegesites-jelentes.md": {
+      "sizeBytes": 8142,
+      "sha256": "d49140a378ceb533e941cba0b6e249a6645a739775d91ced19d67755fd89db6a"
+    },
+    "reports/csanadi-v1.43.20-m14d-mobil-elmeny-jelentes.md": {
+      "sizeBytes": 6299,
+      "sha256": "0b2d180d4e740e32e61992e904d1d98004442458d25d80d8d9bf1304b8ee3bc7"
+    },
+    "reports/csanadi-v1.43.21-m15d-mobil-validacios-jelentes.md": {
+      "sizeBytes": 9471,
+      "sha256": "a8fa0f67439207f2c2bb194cbdbba79bb3a69e0a336c30e1ba3841f9b3b3059c"
+    },
+    "reports/csanadi-v1.43.22-m16d-mobil-stabilizacios-jelentes.md": {
+      "sizeBytes": 10290,
+      "sha256": "b60a447ffa12ff7311d4cb696e87a49dc586e72e98af4fecf4d1a9368242b557"
+    },
+    "reports/csanadi-v1.43.23-m17-1-dupla-nyitokep-javitas.md": {
+      "sizeBytes": 5643,
+      "sha256": "06875576a9060b3603ed45415f3fa30ae5b3e57d4e120307e9e8bc633b55731a"
+    },
+    "reports/csanadi-v1.43.24-m17-2-4-mobil-veglegesitesi-jelentes.md": {
+      "sizeBytes": 10230,
+      "sha256": "aa8c3b30cd8b2caff6b9c9c31a82431091f1808757a3cc30dd2582fde4251108"
+    },
+    "reports/csanadi-v1.43.25-m18-1-mobilfejlec-javitas-jelentes.md": {
+      "sizeBytes": 4844,
+      "sha256": "583c7b641384c6402ea785c55783aac2ec509452eef94abdfaaf98a1181f8e67"
+    },
+    "reports/csanadi-v1.43.26-m18-1-mobilfejlec-izolacio-jelentes.md": {
+      "sizeBytes": 5436,
+      "sha256": "4deaf8c2f90219d31ac80b9d03a6db4b47a7bfe623625227d59bb7fe173f8963"
     },
     "robots.txt": {
       "sizeBytes": 84,
       "sha256": "ee51df6dbbccda4533d6a067cfdd8a35a6421611b6cccc814fbbe9f7e65aa283"
     },
     "script.js": {
-      "sizeBytes": 2072,
-      "sha256": "25db7b96ee6357ac50bc390fb5cf2db6193d392f0c0aaa9ce196592631a9672c"
+      "sizeBytes": 1957,
+      "sha256": "fb0076256c5a7ffec75ddd696ff2ead8c4a856fe788e7780da97acec312d55eb"
     },
     "service-worker.js": {
-      "sizeBytes": 8920,
-      "sha256": "b79a89911eaefc98b2d525d05bb0812b5df9cfce062f93204459ec07283fe575"
+      "sizeBytes": 8712,
+      "sha256": "917d3d2156b6acb5bb5b19ce3098729d5f8a6a93cb1b1e8446ff1b7a19b047ea"
     },
     "sitemap.xml": {
       "sizeBytes": 111,
       "sha256": "3a9976f0ed80dc22748bf9809f3dcb7b34c125d8d34fdf70209c0a11b6ccf8aa"
+    },
+    "tools/build-reboot-manifest.mjs": {
+      "sizeBytes": 2537,
+      "sha256": "61048d65caf43360180360307536503f05f9d62d78fac53d7d96f3b268ec7819"
     },
     "tools/content-workflow-core-v1-42-25.js": {
       "sizeBytes": 6301,
@@ -5274,41 +5230,109 @@
       "sizeBytes": 9223,
       "sha256": "f0ba1d69cb3a245231dc6c6fe3ae46234040ea8b139bb7f9153bc7684b52f93a"
     },
-    "tools/verify-mobile-m10.mjs": {
-      "sizeBytes": 4934,
-      "sha256": "31d1187354a6c03fda03a2e83b54e7226c39a2e7582aaccf70d49c7bc4c5169e"
+    "tools/verify-m11-mobile-matrix.mjs": {
+      "sizeBytes": 2258,
+      "sha256": "2f688ee0a35ff4f446fdaf0985625322494f5b3c5c572ff219b43278dd6844f3"
     },
-    "tools/verify-mobile-m3.mjs": {
-      "sizeBytes": 3418,
-      "sha256": "67772f5e076e576b40ba87b34da67a1cee499d00fb3e257ae88ad4351bde1e7c"
+    "tools/verify-m12-content-coverage.mjs": {
+      "sizeBytes": 2579,
+      "sha256": "40ef7783bddd74fc4e3098af3f973e8d44a2b63f0d358d8f2baf8e38cc203828"
     },
-    "tools/verify-mobile-m4.mjs": {
-      "sizeBytes": 2846,
-      "sha256": "7d47d7e4a591282d1f43797a1bfb74dd0e16b08ccb9a8e71a35faa1398818801"
+    "tools/verify-m13-mobile-interactions.mjs": {
+      "sizeBytes": 3582,
+      "sha256": "34e6bb5a8a447fb0e8ae4a772a31a7647966b54c08da746895c730e31051f3a8"
     },
-    "tools/verify-mobile-m6-dom.mjs": {
-      "sizeBytes": 5638,
-      "sha256": "84a76f9e7d8759a11c8d70efeab087a3ce02ea6c553ec57a765f0dd2ccc9341b"
+    "tools/verify-m13-mobile-text.mjs": {
+      "sizeBytes": 2425,
+      "sha256": "56b01910eeb1579469ec8c846a0b66b1613b2f6a8b0af6223204c6bea2d4c5b8"
     },
-    "tools/verify-mobile-m6.mjs": {
-      "sizeBytes": 1092,
-      "sha256": "36f252a0d7271e97da81da7a78ae904e4daa3e419282ec829d0bd71e5d280ec0"
+    "tools/verify-m13-viewer-dom.mjs": {
+      "sizeBytes": 4295,
+      "sha256": "bdc2ff0fd31ccca029b88bccd80de4ddbe092e81220c8b0ed5cd40e8a7f43305"
     },
-    "tools/verify-mobile-m7.mjs": {
-      "sizeBytes": 1787,
-      "sha256": "c052159b8f911d9548ba1b555ff661958e90e55d30ce4698bc306b115fbee005"
+    "tools/verify-m14-mobile-ux.mjs": {
+      "sizeBytes": 2240,
+      "sha256": "f96489806a534d4ba6a044d40f5b06d96a862b51926ab053d109cab3cfdde16c"
     },
-    "tools/verify-mobile-m8.mjs": {
-      "sizeBytes": 1817,
-      "sha256": "3cc9850ac955851ce6decf55aabb9e9ea42cb3c8650d5b47aab7cc89850226cf"
+    "tools/verify-m15-a11y-performance.mjs": {
+      "sizeBytes": 2245,
+      "sha256": "40b71440d9af7e72d02d8e25c6c9a2bd9cfa8b3bfc81bf5e2f999c6604abfa44"
     },
-    "tools/verify-mobile-m9.mjs": {
-      "sizeBytes": 4664,
-      "sha256": "e3831053c8c65e9c9b3e5b1f0bae00ddc205b4dc9772b4ed7fd8e4937a9456b5"
+    "tools/verify-m15-interactions.mjs": {
+      "sizeBytes": 1442,
+      "sha256": "9b1210052216b204865b10b538dd27245702c16c1cb46b49aa789649ac7dd16c"
     },
-    "tools/verify-mobile-release.mjs": {
-      "sizeBytes": 2879,
-      "sha256": "760367f9be0ba2dc3770c7ef64462539c37c34731ace0a4c09ea4434c0f3e60f"
+    "tools/verify-m15-pwa-release.mjs": {
+      "sizeBytes": 5508,
+      "sha256": "01ea22c80edd769df8794d20b2fa29449a1e1663b7bf97e4397283ff24491cf3"
+    },
+    "tools/verify-m15-responsive.mjs": {
+      "sizeBytes": 2280,
+      "sha256": "77e370aaa806d6f2c5c69289b7c1c4d8a4b6142aab0c5694730c68f68fc16b8d"
+    },
+    "tools/verify-m16-a11y-performance.mjs": {
+      "sizeBytes": 959,
+      "sha256": "2b9565639d2587715383b380291e05d24bf2b388e319554abc66e9d1bb4e695e"
+    },
+    "tools/verify-m16-desktop-boundary.mjs": {
+      "sizeBytes": 3973,
+      "sha256": "81abe7b1f6fa5353d4693518404b586de38e6919318bdaa66998f5a4d686ba78"
+    },
+    "tools/verify-m16-interactions.mjs": {
+      "sizeBytes": 868,
+      "sha256": "697a60a0ed9efc14b297d513ba3b292e1a215762e19c836e952da44812064015"
+    },
+    "tools/verify-m16-pwa-release.mjs": {
+      "sizeBytes": 1014,
+      "sha256": "93b87f50d06803bff10fa8cc04f05bfed3841c2cfe8f02e8908cdaecc569b52e"
+    },
+    "tools/verify-m17-cross-platform-surfaces.mjs": {
+      "sizeBytes": 3806,
+      "sha256": "2ed583d679cbe282e7306f271119815e5a86aacbb06982d15d292c8b5b38b202"
+    },
+    "tools/verify-m17-desktop-hero-isolation.mjs": {
+      "sizeBytes": 1500,
+      "sha256": "35f935e94a069c10453ecc8a88db6436b3fea08d4ab3fddc25ee2d2bd086709d"
+    },
+    "tools/verify-m17-interactions-a11y.mjs": {
+      "sizeBytes": 1592,
+      "sha256": "321a955481fb8a76a748d290d1d2fc4ea51bdd36d22b89cc49177efe63823a60"
+    },
+    "tools/verify-m17-release-safety.mjs": {
+      "sizeBytes": 1596,
+      "sha256": "a5c1cb4500b6749c90d719f2fd5b35e39e364a5d4cdc1fcfaf64cf78a45f93af"
+    },
+    "tools/verify-m17-responsive-visual.mjs": {
+      "sizeBytes": 2461,
+      "sha256": "9a1ff9bce7bbbad8e3da8b77ae213ad10b815acf1650b16f4d787354ab5cc6e5"
+    },
+    "tools/verify-m18-header-layout.mjs": {
+      "sizeBytes": 2470,
+      "sha256": "2357ef83b24d1882b2eb67dc066a6c95dea43cb47ab574ccf13757fc77513429"
+    },
+    "tools/verify-m18-legacy-header-isolation.mjs": {
+      "sizeBytes": 2105,
+      "sha256": "be29f9ca27d4dd5dee1fef6608da29f4b83c844f57d07fd9b29c0ade15728889"
+    },
+    "tools/verify-reboot-hero.mjs": {
+      "sizeBytes": 8718,
+      "sha256": "81405c30d326d88cef628684e056c684793d0294d08c2fe37b3b9a2e006ddacd"
+    },
+    "tools/verify-reboot-menu.mjs": {
+      "sizeBytes": 6260,
+      "sha256": "5d26727b4dbce45def55636ff484cb5f0dd08b573b6f45066a3350262bf48f6b"
+    },
+    "tools/verify-reboot-quality.mjs": {
+      "sizeBytes": 6293,
+      "sha256": "fbb4f70bb3360971b9f98d5c4469e26d0203bad42285e9facbc2fbdf225a3ab6"
+    },
+    "tools/verify-reboot-release.mjs": {
+      "sizeBytes": 5298,
+      "sha256": "1bbf12e36276972db949fdbd443c9ee9c03daea20eaebc8b28aab09214cbf7ba"
+    },
+    "tools/verify-reboot-shell.mjs": {
+      "sizeBytes": 7495,
+      "sha256": "495313c27c197d45e9d423c829feb81cdea81766e0fc38190257834cc98d6162"
     },
     "tools/visual-order-core-v1-42-24.js": {
       "sizeBytes": 3956,

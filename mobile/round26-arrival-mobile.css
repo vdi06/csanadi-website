@@ -1,2 +1,0 @@
-/* R26 mobil – érintésbarát cím, térkép és terv. */
-.r26-location-grid{grid-template-columns:minmax(0,1fr);gap:12px}.r26-map-area{min-height:310px;padding:12px}.r26-action-line{grid-template-columns:minmax(0,1fr)}.r26-action-line a{justify-content:flex-start;padding-inline:16px}.r26-form{display:grid;grid-template-columns:1fr;gap:9px}.r26-toolbar{align-items:stretch}.r26-toolbar button{flex:1 1 135px}.r26-step{padding:12px}.r26-goal{align-items:flex-start}.r26-goal button{flex:none}.r26-map-consent p{font-size:.87rem}
