@@ -8,13 +8,13 @@ const root=path.resolve(import.meta.dirname,'..');
 const read=rel=>fs.readFileSync(path.join(root,rel));
 const text=rel=>read(rel).toString('utf8');
 const manifest=JSON.parse(text('release-manifest.json'));
-assert.equal(manifest.release,'csanadi-website-v1.43.21-m15-mobile-validation-preview');
+assert.equal(manifest.release,'csanadi-website-v1.43.22-m16-mobile-stabilization-preview');
 assert.equal(manifest.ftpCompatible,true);
 const files=Object.keys(manifest.files);
 const fresh=[
- 'reboot-design-v1-43-21.css','reboot-hero-v1-43-21.js',
- 'reboot-menu-v1-43-21.js','reboot-quality-v1-43-21.js',
- 'reboot-shell-v1-43-21.js'];
+ 'reboot-design-v1-43-22.css','reboot-hero-v1-43-22.js',
+ 'reboot-menu-v1-43-22.js','reboot-quality-v1-43-22.js',
+ 'reboot-shell-v1-43-22.js'];
 assert.deepEqual(files.filter(file=>file.startsWith('mobile/')).sort(),fresh.map(name=>'mobile/'+name).sort(),
  'A ZIP nem tartalmazhat a régi mobile/ könyvtárból egyetlen fájlt sem');
 for(const file of fresh){
@@ -52,7 +52,7 @@ for(const [prefix,count,reference] of baseline){
  for(const file of matches){hash.update(file+'\0');hash.update(read(file));}
  assert.equal(hash.digest('hex'),reference,`Változatlan v1.43.15 referencia: ${prefix}`);
 }
-// A v1.43.16-ból induló M11–M15 csak mobilos belső logikát módosíthat.
+// A v1.43.16-ból induló M11–M16 csak mobilos belső logikát módosíthat.
 // A közös belépési pontok, a SPA és a desktop hero byteazonos maradt,
 // ha a kötelező kiadási URL-/fájlnév-verzióváltást kivesszük.
 const commonRuntime={
@@ -65,18 +65,18 @@ const commonRuntime={
  'js/home-v1-41.js':'d67eeb77511a36c85b93f2fd42d2c0a9543e81212a9b6b05edd279464cbaf0d7'
 };
 for(const [file,reference] of Object.entries(commonRuntime)){
- const normalized=text(file).replaceAll('1.43.21','1.43.XX').replaceAll('v1-43-21','v1-43-XX');
+ const normalized=text(file).replaceAll('1.43.22','1.43.XX').replaceAll('v1-43-22','v1-43-XX');
  assert.equal(crypto.createHash('sha256').update(normalized).digest('hex'),reference,
-  `M15 desktop és SPA védelem: ${file}`);
+  `M16 desktop és SPA védelem: ${file}`);
 }
 const entrypoints=['index.html','script.js','js/app.js','js/hero-2026.js','js/blocks.js','service-worker.js'];
 const imported=entrypoints.map(text).join('\n');
 assert.doesNotMatch(imported,/mobile\/(?:m[1-9]|m10|quick-nav|mobile-)/i,
  'Régi mobilos JS/CSS nem importálható');
 assert.match(text('index.html'),/media="screen and \(max-width: 768px\)"/);
-assert.match(text('service-worker.js'),/const RELEASE_ID='1\.43\.21'/);
-assert.equal(JSON.parse(text('json/config.json')).performance.cacheVersion,'csanadi-r-v1.43.21');
-const css=text('mobile/reboot-design-v1-43-21.css');
+assert.match(text('service-worker.js'),/const RELEASE_ID='1\.43\.22'/);
+assert.equal(JSON.parse(text('json/config.json')).performance.cacheVersion,'csanadi-r-v1.43.22');
+const css=text('mobile/reboot-design-v1-43-22.css');
 assert.match(css,/#cs-mobile-rebuild,\.cs-mb-cinema\{display:none\}/);
 assert.match(css,/@media screen and \(max-width:768px\)/);
 assert.match(css,/@media screen and \(max-width:768px\) and \(prefers-reduced-motion:reduce\)/);
@@ -88,5 +88,5 @@ for(const char of css.replace(/\/\*[\s\S]*?\*\//g,'')){
 }
 assert.equal(balance,0,'A mobilos CSS összes blokkja lezárt');
 console.log(`Teljes leltár és SHA-256 OK: ${files.length} fájl; desktop CSS, JS, média, tartalmi JSON változatlan`);
-console.log('M15 közös SPA/desktop változatlan logika: 7 belépési pont lenyomata egyezik');
+console.log('M16 közös SPA/desktop változatlan logika: 7 belépési pont lenyomata egyezik');
 console.log('Öt új mobilmodul; korábbi mobile/ kizárva; reszponzív határ és verziók OK');

@@ -1,23 +1,25 @@
 /** Új mobilos címerfejléc: szimmetria, keresés, téma, scroll és adatforrás. */
 import assert from 'node:assert/strict';
-import {mobileScrollProgress,initFreshMobileShell} from '../mobile/reboot-shell-v1-43-21.js';
+import {mobileScrollProgress,initFreshMobileShell} from '../mobile/reboot-shell-v1-43-22.js';
 assert.equal(mobileScrollProgress(1000,3000,1000),.5);
 assert.equal(mobileScrollProgress(-8,1000,1200),0);
 assert.equal(mobileScrollProgress(9000,3000,1000),1);
 
 class Node{
  constructor(tag='div'){this.tagName=tag.toUpperCase();this.children=[];this.events={};this.dataset={};
-  this.attributes={};this.style={values:new Map(),setProperty(key,value){this.values.set(key,value)}};
+  this.attributes={};this.style={values:new Map(),setProperty(key,value){this.values.set(key,value)},
+   removeProperty(key){this.values.delete(key)}};
   this.textContent='';this.id='';this.isConnected=true;this.className='';}
  append(...children){children.forEach(n=>{this.children.push(n);n.parentNode=this})}
- prepend(...children){children.forEach(n=>{this.children.unshift(n);n.parentNode=this})}
+ prepend(...children){children.forEach(n=>{this.children.unshift(n);n.parentNode=this;n.isConnected=true})}
  replaceChildren(...children){this.children=[];this.append(...children)}
  setAttribute(name,value){this.attributes[name]=String(value)}
  getAttribute(name){return this.attributes[name]??null}
  removeAttribute(name){delete this.attributes[name];if(name==='data-cs-mb-scrolled')delete this.dataset.csMbScrolled}
  addEventListener(name,fn){this.events[name]=fn}
  click(){this.events.click?.()}
- remove(){this.isConnected=false}
+ remove(){this.isConnected=false;if(this.parentNode)
+  this.parentNode.children=this.parentNode.children.filter(n=>n!==this)}
  classList={add:cls=>{this.className+=' '+cls}}
 }
 const header=new Node('header'),overlay=new Node(),oldMobile=new Node('nav');
@@ -47,7 +49,7 @@ globalThis.ResizeObserver=class{
  constructor(callback){resizeCallback=callback}
  observe(node){resizeTarget=node}
 };
-const media={matches:true,addEventListener(){}};
+const media={matches:true,change:null,addEventListener(name,fn){if(name==='change')this.change=fn}};
 globalThis.matchMedia=()=>media;
 globalThis.fetch=async()=>({ok:true,json:async()=>({items:[
  {platform:'Facebook',label:'Facebook',url:'https://www.facebook.com/csanadiiskola',
@@ -55,7 +57,8 @@ globalThis.fetch=async()=>({ok:true,json:async()=>({items:[
  {platform:'Instagram',label:'Instagram',url:'https://www.instagram.com/_csanadi_/?hl=hu',
   status:'published',schoolVerified:true}]})});
 const instance=initFreshMobileShell();
-assert.ok(instance?.shell);assert.equal(oldMobile.isConnected,false);
+assert.ok(instance?.shell);assert.equal(oldMobile.isConnected,true,
+ 'M16: a desktophoz tartozó régi DOM-elemet a mobilmodul nem törölheti');
 assert.equal(header.children.length,1);
 const shell=header.children[0],bar=shell.children[1];
 assert.equal(resizeTarget,shell,'A fejléc dinamikus átrendezését figyelni kell');
@@ -72,10 +75,24 @@ window.scrollY=1000;windowListeners.get('scroll')();
 assert.equal(header.dataset.csMbScrolled,'true');
 assert.equal(header.style.values.get('--cs-mb-reading'),'0.5');
 assert.equal(root.style.values.get('--cs-mb-sticky-offset'),'91px');
-media.matches=false;windowListeners.get('resize')();
+assert.equal(shell.children[0].getAttribute('aria-hidden'),'true');
+assert.equal(shell.children[2].getAttribute('aria-hidden'),'true',
+ 'M16.3: a becsukódott ismétlődő feliratokat ne olvassa fel újra a képernyőolvasó');
+window.scrollY=0;windowListeners.get('scroll')();
+assert.equal(shell.children[0].getAttribute('aria-hidden'),'false');
+assert.equal(shell.children[2].getAttribute('aria-hidden'),'false',
+ 'Felgörgetéskor ismét hozzáférhetők az iskolai feliratok');
+media.matches=false;media.change();
 assert.equal(header.dataset.csMbScrolled,undefined);
 assert.equal(root.style.values.has('--cs-mb-sticky-offset'),false);
+assert.equal(header.style.values.has('--cs-mb-reading'),false);
+assert.equal(shell.children[0].getAttribute('aria-hidden'),null);
+assert.equal(header.children.length,0,
+ 'M16: asztali szélességen a teljes mobil fejlécnek le kell kapcsolódnia');
+media.matches=true;media.change();
+assert.equal(header.children.length,1,
+ 'Mobilra visszatérve a saját fejlécnek új példány nélkül vissza kell kapcsolódnia');
 await Promise.resolve();await Promise.resolve();
 const links=bar.children[0].children[0].children;
 assert.equal(links.length,2,'A közös JSON-ból mindkét közösségi link bekerült');
-console.log('Új fejléc DOM-próba: címer, kereső, téma, scroll, váltás, két social adat, régi menü eltávolítás OK');
+console.log('M16 fejléc DOM-próba: címer, téma, scroll és desktop DOM-védelem, rejtett duplikáció, két social adat OK');

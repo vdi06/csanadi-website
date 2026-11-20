@@ -29,6 +29,11 @@ export function createFreshMobileHero({slides=[],createPicture,mediaItem,interva
  const entrance=valid.find(slide=>(slide.mobileMediaId||slide.mediaId)==='media:bejarat');
  const items=entrance?[entrance,...valid.filter(x=>x!==entrance)]:valid;
  const root=make('section','cs-mb-cinema');root.setAttribute('aria-label','Mobilos iskolabemutató');
+ // M16.1: az önálló mobil CSS a desktopon szándékosan nem töltődik be.
+ // A mobil DOM ezért önmagában is rejtett kell legyen 769px felett.
+ const phone=matchMedia('(max-width: 768px)');
+ root.hidden=!phone.matches;
+ phone.addEventListener?.('change',event=>{root.hidden=!event.matches;});
  const stage=make('div','cs-mb-film-stage');
  const visual=make('div','cs-mb-film-visual');
  const shade=make('div','cs-mb-film-shade');shade.setAttribute('aria-hidden','true');
@@ -62,7 +67,6 @@ export function createFreshMobileHero({slides=[],createPicture,mediaItem,interva
  if(!items.length){heading.textContent='Üdvözlünk a Csanádiban';
   previous.disabled=true;next.disabled=true;autoplay.hidden=true;return root;}
 
- const phone=matchMedia('(max-width: 768px)');
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const network=navigator.connection;
  let dataLimited=Boolean(network?.saveData||/^(?:slow-2g|2g)$/.test(network?.effectiveType||''));

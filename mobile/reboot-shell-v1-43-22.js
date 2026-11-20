@@ -36,9 +36,6 @@ async function hydrateSocial(container){
 export function initFreshMobileShell(){
  const header=document.getElementById('site-header');
  if(!header||document.getElementById('cs-mobile-rebuild'))return;
- // A közös kódból keletkező régi, duplikált alsó mobilnavigációt teljesen
- // eltávolítjuk, hogy a desktop se örököljön egy fölösleges elemet.
- document.getElementById('ext26-mobile-nav')?.remove();
  const mq=matchMedia(MOBILE);
  const shell=make('div','cs-mb-shell');shell.id='cs-mobile-rebuild';
  const label=make('div','cs-mb-school-title');
@@ -65,7 +62,10 @@ export function initFreshMobileShell(){
  const subtitle=make('div','cs-mb-motto','SPORT · TUDÁS · KÖZÖSSÉG');
  const progress=make('div','cs-mb-progress');progress.setAttribute('aria-hidden','true');
  progress.append(make('span','cs-mb-progress-fill'));
- shell.append(label,bar,subtitle,progress);header.prepend(shell);
+ // M16.1: a mobilmodul nem módosíthatja az asztali fejléc DOM-sorrendjét.
+ // A régi alsó mobilnavigációt a kizárólag mobilos CSS rejti el, nem töröljük.
+ shell.append(label,bar,subtitle,progress);
+ if(mq.matches)header.prepend(shell);
  const status=make('p','visually-hidden');status.id='cs-mb-live';
  status.setAttribute('aria-live','polite');status.setAttribute('role','status');shell.append(status);
 
@@ -90,16 +90,24 @@ export function initFreshMobileShell(){
   });
   observer.observe(overlay,{attributes:true,attributeFilter:['hidden']});
  }
- hydrateSocial(socials);
+ // Csak csatlakoztatott mobilfejléchez kérünk közösségi hivatkozásokat.
+ // Így asztali indulás után, későbbi telefonméretre váltáskor sem vesznek el.
+ if(mq.matches)hydrateSocial(socials);
 
  let scheduled=false,lastHeaderState=null,lastViewportWidth=-1;
  const sync=()=>{
   scheduled=false;
   if(!mq.matches){lastHeaderState='desktop';header.removeAttribute('data-cs-mb-scrolled');
+   label.removeAttribute('aria-hidden');subtitle.removeAttribute('aria-hidden');
+   header.style.removeProperty('--cs-mb-reading');
    document.documentElement.style.removeProperty('--cs-mb-sticky-offset');return;}
   const y=Math.max(0,window.scrollY||0);
   const state=y>36?'true':'false';
   header.dataset.csMbScrolled=state;
+  // Az összehúzott, átlátszó címsor nem maradhat kétszer felolvasva.
+  // Visszagörgetéskor a szöveg ismét hozzáférhetővé válik.
+  label.setAttribute('aria-hidden',state);
+  subtitle.setAttribute('aria-hidden',state);
   const scrollEl=document.scrollingElement||document.documentElement;
   header.style.setProperty('--cs-mb-reading',String(mobileScrollProgress(y,
    scrollEl?.scrollHeight||0,window.innerHeight||0)));
@@ -120,7 +128,11 @@ export function initFreshMobileShell(){
  window.addEventListener('scroll',schedule,{passive:true});
  window.addEventListener('resize',schedule,{passive:true});
  window.addEventListener('orientationchange',schedule,{passive:true});
- mq.addEventListener?.('change',schedule);
+ mq.addEventListener?.('change',()=>{
+  if(mq.matches&&!shell.isConnected){header.prepend(shell);hydrateSocial(socials);}
+  else if(!mq.matches&&shell.isConnected)shell.remove();
+  schedule();
+ });
  document.addEventListener('csanadi:route-rendered',event=>{
   if(mq.matches){const title=document.querySelector('#app h1')?.textContent?.trim();
    status.textContent='Oldal betöltve: '+(title||event.detail?.route||'kiválasztott oldal')+'.';}

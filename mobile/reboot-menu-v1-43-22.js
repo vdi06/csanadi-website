@@ -38,13 +38,14 @@ export function createPhoneRadial({container,title,description,overview,center,
  const makeLink=(item,cls)=>{
   const a=make('a',cls,getTitle(item)),route=safeHref(getHref(item));
   a.href=route;
+  a.dataset.csMbRoute=route;
   // A böngésző a.href tulajdonsága abszolút URL-t ad vissza; a route-ot
   // a hash sztringhez kell hasonlítani, hogy az aktív oldal jelölése működjön.
   if(route===(window.location?.hash||'#/'))a.setAttribute('aria-current','page');
   a.addEventListener('click',()=>onChoose?.());return a;
  };
 
- function render({focus=false,focusRoute=''}={}){
+ function render({focus=false,focusRoute='',focusRole='main'}={}){
   const selected=current(),level=trail.length+1;
   container.dataset.level=String(level);
   const width=Number(window.innerWidth),height=Number(window.innerHeight);
@@ -92,8 +93,9 @@ export function createPhoneRadial({container,title,description,overview,center,
    // A korábban legörgetett harmadik szint helyett mindig a frissen
    // megnyílt szint tetején legyen a visszalépés és az első menüpont.
    container.scrollTop=0;
-   const prior=focusRoute?[...grid.children].map(card=>card.children[0])
-    .find(item=>item?.dataset?.csMbRoute===focusRoute):null;
+   const prior=focusRoute?[...grid.children].flatMap(card=>[...card.children])
+    .find(item=>item?.dataset?.csMbRoute===focusRoute&&
+     ((focusRole==='direct')===Boolean(item.className?.includes('cs-mb-menu-card-direct')))):null;
    (prior||(level>1?back:grid.querySelector('button,a[href]')))?.focus({preventScroll:true});
   }
  }
@@ -121,15 +123,20 @@ export function createPhoneRadial({container,title,description,overview,center,
   }
  });
  chosen.addEventListener('click',()=>onChoose?.());
- const activeRoute=()=>[...grid.children].map(card=>card.children[0])
-  .find(node=>node===document.activeElement)?.dataset?.csMbRoute||'';
- const renderKeepingFocus=()=>{const route=activeRoute();
-  render({focus:Boolean(route||document.activeElement===back),focusRoute:route});};
+ const activeItem=()=>[...grid.children].flatMap(card=>[...card.children])
+  .find(node=>node===document.activeElement);
+ const focusSnapshot=()=>{const node=activeItem();return {
+  route:node?.dataset?.csMbRoute||'',
+  role:node?.className?.includes('cs-mb-menu-card-direct')?'direct':'main',
+  back:document.activeElement===back};};
+ const renderKeepingFocus=()=>{const snapshot=focusSnapshot();
+  render({focus:Boolean(snapshot.route||snapshot.back),focusRoute:snapshot.route,
+   focusRole:snapshot.role});};
  const resize=()=>{if(isPhone())renderKeepingFocus();};
  window.addEventListener('resize',resize,{passive:true});
  media.addEventListener?.('change',resize);
  function setCatalog(nextRoots,{childrenOf,titleOf,hrefOf}){
-  const focusRoute=activeRoute(),focusBack=document.activeElement===back;
+  const {route:focusRoute,role:focusRole,back:focusBack}=focusSnapshot();
   const previous=trail.map(node=>getHref(node));
   roots=Array.isArray(nextRoots)?nextRoots.filter(Boolean):[];
   getChildren=childrenOf;getTitle=titleOf;getHref=hrefOf;
@@ -139,7 +146,7 @@ export function createPhoneRadial({container,title,description,overview,center,
    const found=collection.find(node=>getHref(node)===href);if(!found)break;
    trail.push(found);collection=children(found);
   }
-  render({focus:Boolean(focusRoute||focusBack),focusRoute});
+  render({focus:Boolean(focusRoute||focusBack),focusRoute,focusRole});
  }
  function reset(){trail=[];render();}
  function focus(){(trail.length?back:grid.querySelector('button,a[href]'))?.focus({preventScroll:true});}

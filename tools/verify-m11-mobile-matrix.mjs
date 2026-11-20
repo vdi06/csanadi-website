@@ -1,12 +1,12 @@
 /** M11.1 statikus reszponzív elfogadási mátrix – nem helyettesíti a böngészőt. */
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
-import {PHONE_QUERY,mobileViewportMode} from '../mobile/reboot-menu-v1-43-21.js';
+import {PHONE_QUERY,mobileViewportMode} from '../mobile/reboot-menu-v1-43-22.js';
 
-const css=fs.readFileSync(new URL('../mobile/reboot-design-v1-43-21.css',import.meta.url),'utf8');
+const css=fs.readFileSync(new URL('../mobile/reboot-design-v1-43-22.css',import.meta.url),'utf8');
 const html=fs.readFileSync(new URL('../index.html',import.meta.url),'utf8');
 assert.equal(PHONE_QUERY,'(max-width: 768px)');
-assert.match(html,/reboot-design-v1-43-21\.css\?v=1\.43\.21" media="screen and \(max-width: 768px\)"/);
+assert.match(html,/reboot-design-v1-43-22\.css\?v=1\.43\.22" media="screen and \(max-width: 768px\)"/);
 assert.match(css,/#cs-mobile-rebuild,\.cs-mb-cinema\{display:none\}/);
 assert.match(css,/@media screen and \(max-width:419px\)/);
 assert.match(css,/@media screen and \(min-width:420px\) and \(max-width:768px\) and \(min-height:650px\)/);

@@ -1,6 +1,6 @@
 /** Új, önálló mobilmenü: három szint, két megjelenés, közvetlen oldalnyitás. */
 import assert from 'node:assert/strict';
-import {createPhoneRadial,PHONE_QUERY,mobileViewportMode} from '../mobile/reboot-menu-v1-43-21.js';
+import {createPhoneRadial,PHONE_QUERY,mobileViewportMode} from '../mobile/reboot-menu-v1-43-22.js';
 class Node {
  constructor(tag='div'){this.tagName=tag;this.children=[];this.events={};this.style={setProperty(){}};
   this.dataset={};this.className='';this.textContent='';this.hidden=false;this.attributes={};}
@@ -62,6 +62,15 @@ screen.events.keydown({key:'Home',target:grid.children[0].children[1],altKey:fal
  ctrlKey:false,metaKey:false,preventDefault(){}});
 assert.equal(document.activeElement,grid.children[0].children[0],
  'M15: Home az első menüpontra lép');
+grid.children[0].children[1].focus();
+window.innerWidth=375;windowListeners.get('resize')();
+assert.equal(document.activeElement,grid.children[0].children[1],
+ 'M16.2: a közvetlen oldalhivatkozás megőrzi saját fókuszát mobilos átméretezésnél');
+menu.setCatalog([root],{childrenOf:node=>leaves.get(node)||[],
+ titleOf:node=>node.name,hrefOf:node=>node.href});
+assert.equal(document.activeElement,grid.children[0].children[1],
+ 'M16.2: tartalomfrissítés után a közvetlen oldalhivatkozás fókusza megmarad');
+grid.children[0].children[0].focus();
 menu.setCatalog([root],{childrenOf:node=>leaves.get(node)||[],
  titleOf:node=>node.name,hrefOf:node=>node.href});
 assert.equal(document.activeElement,grid.children[0].children[0],

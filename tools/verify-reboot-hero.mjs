@@ -1,6 +1,6 @@
 /** Új filmes mobilképernyő: kezdőkép, kézi léptetés, érintés, redukált mozgás. */
 import assert from 'node:assert/strict';
-import {createFreshMobileHero,mobileSlideIndex,mobileAutoPlayAllowed} from '../mobile/reboot-hero-v1-43-21.js';
+import {createFreshMobileHero,mobileSlideIndex,mobileAutoPlayAllowed} from '../mobile/reboot-hero-v1-43-22.js';
 assert.equal(mobileSlideIndex(-1,3),2);
 assert.equal(mobileSlideIndex(3,3),0);
 assert.equal(mobileSlideIndex(2,3),2);
@@ -35,7 +35,8 @@ class Node {
 }
 globalThis.document={createElement:tag=>new Node(tag),hidden:false,activeElement:null,
  body:{classList:{contains:()=>false}}};
-const media={phone:{matches:true},reduced:{matches:true}};
+const media={phone:{matches:true,listeners:[],addEventListener(name,listener){
+ if(name==='change')this.listeners.push(listener)}},reduced:{matches:true}};
 globalThis.matchMedia=query=>query.includes('reduced-motion')?media.reduced:media.phone;
 Object.defineProperty(globalThis,'navigator',{configurable:true,value:{connection:{saveData:true,effectiveType:'4g'}}});
 globalThis.setInterval=()=>1;
@@ -44,6 +45,18 @@ const pics=()=>{const p=new Node('picture'),img=new Node('img');img.complete=tru
 const slides=[{mediaId:'media:sport',title:'Sport',buttons:[{href:'#/sport'}]},
  {mediaId:'media:bejarat',title:'Bejárat',buttons:[{href:'#/iskolank'}]},
  {mediaId:'media:oktatas',title:'Oktatás',buttons:[{href:'#/oktatas'}]}];
+media.phone.matches=false;
+const desktopOnly=createFreshMobileHero({slides,createPicture:pics,mediaItem:()=>({})});
+assert.equal(desktopOnly.hidden,true,
+ 'M16: a mobil CSS nélkül a desktopon nem jelenhet meg a filmes mobil DOM');
+media.phone.matches=true;
+for(const listener of media.phone.listeners)listener({matches:true});
+assert.equal(desktopOnly.hidden,false,
+ 'Mobilos méretre váltáskor a filmes mobil UI elérhető');
+media.phone.matches=false;
+for(const listener of media.phone.listeners)listener({matches:false});
+assert.equal(desktopOnly.hidden,true,'Desktopra visszatérve újra rejtett');
+media.phone.matches=true;
 const root=createFreshMobileHero({slides,createPicture:pics,mediaItem:()=>({}),intervalMs:8000});
 assert.equal(root.className,'cs-mb-cinema');
 const stage=root.children[0],info=root.children[1];
