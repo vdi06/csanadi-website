@@ -1,5 +1,6 @@
 import {createPicture,mediaItem} from './media.js?v=1.42.18';
 import {settingNumber,isWithinConfiguredWindow} from './site-settings-2026.js?v=1.42.18';
+import {enhanceMobileHeroM6} from '../mobile/mobile-m6-film-v1-43-11.js?v=1.43.11';
 const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 const safeRoute=value=>typeof value==='string'&&/^#\/[a-z0-9/\-]*$/i.test(value)?value:'#/';
 export function renderPremiumHero(block){
@@ -29,6 +30,8 @@ export function renderPremiumHero(block){
  const mobileNote=el('span','cs42-mobile-image-note','Tematikus illusztráció, nem intézményi eseményfotó');
  mobileCopy.append(mobileKicker,mobileTitle,mobileSummary,mobileLinks,mobileNote);
  mobileLanding.append(mobileFigure,mobileCopy);
+ enhanceMobileHeroM6({landing:mobileLanding,figure:mobileFigure,copy:mobileCopy,
+  slides,createPicture,mediaItem,intervalMs:data.intervalMs});
  section.append(mobileLanding);
 
  const row=el('div','csn26-visual-row csn26-single-image');row.id='csn26-visual-carousel';

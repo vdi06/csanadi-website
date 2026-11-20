@@ -21,7 +21,7 @@ import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media
 import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=1.42.18';
  
 import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.42.18';
-import {renderBlock,dom,listCards} from './blocks.js?v=1.43.4';
+import {renderBlock,dom,listCards} from './blocks.js?v=1.43.11';
 import {createAuthoringWorkbench} from './editor-workbench-v1-42-18.js?v=1.43.3';
 import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=1.42.18';
 import {renderSportsSuccesses} from './sports-successes.js?v=1.42.18';
@@ -626,7 +626,7 @@ function renderRoute(options={}){
   document.body.classList.toggle('cs-inner-page',kind!=='home');
   releaseSpaFeatureStyles();
   const inEditor=visualEditingEnabled()&&!c3Preview;
-  const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.43.9');
+ const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.43.15');
   const localRelease=/^csanadi-r-v\d+\.\d+\.\d+$/.test(version)?'csanadi-website-'+version.slice('csanadi-r-'.length):'csanadi-website-v1.43.1';
   const previewDraft=node&&node.depth!==0&&!isSpaFeature(node.page)&&(inEditor||(c3Preview&&!c3PreviewBase))?resolveVisualDraft(node.page,'json/'+node.path,localRelease):null;
   const activeDraft=c3Preview&&!c3PreviewBase&&c3Overlay?.path==='json/'+node?.path?c3Overlay.page:previewDraft?.page;

@@ -1,6 +1,6 @@
 /* Csanádi: static FTP-compatible, version-scoped offline shell.
    Updated workers activate on explicit user refresh; the first install activates normally. */
-const RELEASE_ID='1.43.9';
+const RELEASE_ID='1.43.15';
 const SCOPE=new URL('./',self.registration.scope);
 const SHELL=`csanadi-shell-${RELEASE_ID}`;
 const MEDIA=`csanadi-media-${RELEASE_ID}`;
@@ -9,6 +9,13 @@ const CORE=[
  './','./index.html','./offline.html','./script.js','./service-worker.js',
  './json/config.json','./json/structure.json','./json/page-index.json','./json/media-library.json',
  './json/pages/home.json','./css/responsive-system-v1-42-18.css','./css/theme-coverage-v1-42-21.css','./css/subpage-premium-v1-42-22.css','./css/editor-c1-v1-42-23.css','./css/visual-editor-v1-42-24.css','./css/c3-live-preview-v1-42-25.css','./css/c4-release-gates-v1-42-26.css','./css/desktop-hero-controls-v1-43-1.css','./css/viewers-bootstrap-v1-43-3.css','./css/editor-workbench-v1-42-18.css','./css/maintenance-studio.css','./js/site-viewers-v1-43-3.js','./js/vendor/pdfjs/pdf.min.js','./js/vendor/pdfjs/pdf.worker.min.js','./js/editor-workbench-v1-42-18.js','./js/visual-editor-v1-42-24.js','./js/live-preview-v1-42-25.js','./js/zip-integrity-v1-42-26.js','./tools/maintenance-studio.js','./tools/page-draft-core-v1-42-23.js','./tools/visual-order-core-v1-42-24.js','./tools/content-workflow-core-v1-42-25.js','./tools/release-policy-v1-42-26.js','./json/data/spa-features-42.json',
+ './mobile/radial-wheel-m3-v1-43-9.js','./mobile/mobile-m3-adaptive-v1-43-9.css',
+ './mobile/mobile-scroll-m4-v1-43-10.js','./mobile/mobile-m4-m5-v1-43-10.css',
+ './mobile/mobile-m6-film-v1-43-11.js','./mobile/mobile-m6-film-v1-43-11.css',
+ './mobile/mobile-m7-subpages-v1-43-12.css',
+ './mobile/mobile-m8-components-v1-43-13.css',
+ './mobile/mobile-m9-quality-v1-43-14.css','./mobile/mobile-m9-quality-v1-43-14.js',
+ './mobile/mobile-m10-workflows-v1-43-15.css','./mobile/mobile-m10-workflows-v1-43-15.js',
  './assets/media/logo/csanadi-crest-512.webp'
 ];
 const local=url=>url.origin===SCOPE.origin&&url.pathname.startsWith(SCOPE.pathname);
@@ -63,7 +70,7 @@ async function precache(){
    const appAssets=Object.entries(files).filter(([path,meta])=>
     ((path.startsWith('js/')&&path.endsWith('.js'))||
      (path.startsWith('css/')&&path.endsWith('.css')&&/^(?:site-bundle|site-consistency|home-v1|entrance-sequence|header-v1|desktop-hero-fold)/.test(path.slice(4)))||
-     (path.startsWith('mobile/')&&path.endsWith('.css'))||
+     (path.startsWith('mobile/')&&(/\.(?:css|js)$/).test(path))||
      (path.startsWith('desktop/')&&path.endsWith('.js'))||
      path==='json/pages/home.json')&&meta.sizeBytes<=maxFile).slice(0,maxEntries);
    selected=[...new Set([...CORE,...appAssets.map(([path])=>'./'+path)])];
