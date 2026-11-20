@@ -8,7 +8,7 @@ import vm from 'node:vm';
 const root=path.resolve(import.meta.dirname,'..');
 const source=fs.readFileSync(path.join(root,'js/round13-network.js'),'utf8');
 const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-const css=fs.readFileSync(path.join(root,'mobile/reboot-design-v1-43-26.css'),'utf8');
+const css=fs.readFileSync(path.join(root,'mobile/reboot-design-v1-43-27.css'),'utf8');
 const scriptTag=/src="js\/round13-network\.js\?v=([^"]+)"/.exec(html);
 assert.ok(scriptTag,'A tényleges forrásszkript verziója elérhető');
 assert.match(css,/#cs-release-notice\[hidden\]\{display:none!important\}/);
@@ -42,7 +42,7 @@ function caseFor({found,stored=[]}={}){
 }
 const tick=async()=>{for(let i=0;i<8;i++)await Promise.resolve()};
 // Csak szimulált, a kiadásnál újabb célverzió: nem készül tényleges v1.43.27 kiadás.
-const latest='csanadi-r-v1.43.27';
+const latest='csanadi-r-v1.43.28';
 const available=caseFor({found:latest});await tick();
 const banner=available.elements.get('cs-release-notice');
 assert.ok(banner,'Újabb verziónál értesítés jelenik meg');

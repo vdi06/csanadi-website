@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "release": "csanadi-website-v1.43.26-m18-1-legacy-header-isolation-preview",
+  "release": "csanadi-website-v1.43.27-m18-2-mobile-single-row-scroll-fix-preview",
   "date": "2026-11-20",
   "ftpCompatible": true,
   "bootstrap": "CDN bootstrap@5.3.9",
-  "notes": "V1.43.26 M18.1 második mobilos fejlécjavítás a felhasználó visszajelzése alapján: a hiba a v1.43.25 ZIP helyi tesztelésekor is fennmaradt. Konkrét ok: az eredeti fejlécre több korábbi !important CSS-deklaráció vonatkozik, amelyeket a mobilos elrejtés nem minden állapotban írt felül. A kizárólag mobilos új CSS erősebb specifitást használ; a mobil JS a régi fejlécsort inline important módon is kikapcsolja, asztali váltáskor az eredeti display/ARIA értékeket maradéktalanul visszaállítja. A v1.43.25 szimmetrikus ikonelrendezése és külön KRÉTA sora, valamint a korábbi mobilos funkciók megmaradnak. Desktop CSS, JS, médiaszerkesztés és JSON-tartalom változatlan. Külön M18.1 regressziós/desktop-visszaállítási próba, teljes ZIP, SHA-256 és visszabontott tesztek. A valós iOS/Android és pixelszintű teszt továbbra is NYITOTT, automata teszt nem bizonyítja. Nincs FTP- vagy GitHub-közzététel; v1.43.25 változatlanul megőrizve.",
+  "notes": "V1.43.27 M18.2 mobilos újrajavítás. A korábbi kód külön KRÉTA sort és régi asztali kompakt képváltót tartott fenn. Mobilon egyetlen fejlécikonsor jelenik meg (Facebook, Instagram, KRÉTA mint K ikon, címer középen, keresés, téma); görgetéskor a régi fejléc minden közvetlen gyermeke és a desktop képváltó rejtve marad, újonnan létrejövő elem esetén is. Az eredeti inline és ARIA állapotok desktopon visszaállnak. A saját mobil filmes képváltó megmarad. Kizárólag a mobilfájlok kettője módosult érdemben; a közös belépési pontokon csak cache-verzió frissült. M18.2 DOM-, statikus, reszponzív és visszaállítási próbák; valós iOS/Android és pixelszintű ellenőrzés továbbra is NYITOTT. Nincs FTP- vagy GitHub-közzététel; v1.43.25 és v1.43.26 érintetlen.",
   "files": {
     "assets/documents/admissions-tajekozodasi-handout-2026.pdf": {
       "sizeBytes": 48341,
@@ -3612,7 +3612,7 @@
     },
     "index.html": {
       "sizeBytes": 17887,
-      "sha256": "83f7c98afb6cba50510ed336332af488586fd4213aba22b1dfd1f869f712f769"
+      "sha256": "8baab7ba8926247d2a95abd0a470731213c2a3ed79c5d4ce03b8fe52869b94e4"
     },
     "js/advanced-2026.js": {
       "sizeBytes": 31031,
@@ -3620,11 +3620,11 @@
     },
     "js/app.js": {
       "sizeBytes": 61464,
-      "sha256": "9fbbfd936018364cc64d136fd568345342eb892a353266b488157c4a75380c29"
+      "sha256": "da834611f259e6a74ad0b0f153a24ce4b4aa54604d6f2829116b8b8f8d54a08d"
     },
     "js/blocks.js": {
       "sizeBytes": 10406,
-      "sha256": "7a3d45cdb867e9aa9bd9001a6e1539bc8ab87035ded4f4fc5f2f11b99c969584"
+      "sha256": "4c0a81397801ec3c0aa194023c77b754b8ff323abb7001609c03481b3d002ed2"
     },
     "js/content.js": {
       "sizeBytes": 5942,
@@ -3680,7 +3680,7 @@
     },
     "js/hero-2026.js": {
       "sizeBytes": 11769,
-      "sha256": "259204df4a964eebe461bf654137fe84896a0ef386abbe5ecf093237f4d94ed3"
+      "sha256": "038d57422ccd85132925eb90ea754d756e19c2c945c698450554d9b88004d2f0"
     },
     "js/home-inline-editor-v1-41-4.js": {
       "sizeBytes": 11425,
@@ -4684,7 +4684,7 @@
     },
     "json/config.json": {
       "sizeBytes": 17450,
-      "sha256": "ba4f26625715da0beb6be998b283de3a91d6c075f709b32d8467a3ce5bede50c"
+      "sha256": "c0a702bed57238253bb0ecb67a10878d9762ed62e89fe2bb148fcb990ae10587"
     },
     "json/data/arrival-and-development-26.json": {
       "sizeBytes": 6849,
@@ -5118,25 +5118,25 @@
       "sizeBytes": 10665,
       "sha256": "18b066e6df5819ff925d4def5a7c2346ff55dfa23a16c015b39eab70bcd07a07"
     },
-    "mobile/reboot-design-v1-43-26.css": {
-      "sizeBytes": 51083,
-      "sha256": "0bace7a1706cf9d8781edf9a4149329bd673198788f0c3cb125ae327701d052b"
+    "mobile/reboot-design-v1-43-27.css": {
+      "sizeBytes": 50588,
+      "sha256": "36b5dae69516d948a53eb67e1896b4c1d0bd4919f8e3671ceeac96ead605a92b"
     },
-    "mobile/reboot-hero-v1-43-26.js": {
+    "mobile/reboot-hero-v1-43-27.js": {
       "sizeBytes": 11066,
       "sha256": "fed32a69a8473917f7909055c25c6da1598f8a3e6bfede4ad87b74f66e23f952"
     },
-    "mobile/reboot-menu-v1-43-26.js": {
+    "mobile/reboot-menu-v1-43-27.js": {
       "sizeBytes": 8800,
       "sha256": "9501477b2b90ad0ea54be97cbaedcaca7e313e235f80636b6dd2c5c5f470abf4"
     },
-    "mobile/reboot-quality-v1-43-26.js": {
+    "mobile/reboot-quality-v1-43-27.js": {
       "sizeBytes": 9188,
       "sha256": "56abe3791c84d479e4e3ab841705e37d81562515190081353aee0dc6aa314794"
     },
-    "mobile/reboot-shell-v1-43-26.js": {
-      "sizeBytes": 9619,
-      "sha256": "91e3d256606266f23a5050fbf62db2c4b242d7605ac0e2b8edba6df19da98bf4"
+    "mobile/reboot-shell-v1-43-27.js": {
+      "sizeBytes": 9622,
+      "sha256": "38a00a8e977e83df72e25a4970544acd44b6608d64e016e2d10003490d78c822"
     },
     "offline.html": {
       "sizeBytes": 1665,
@@ -5190,25 +5190,33 @@
       "sizeBytes": 5436,
       "sha256": "4deaf8c2f90219d31ac80b9d03a6db4b47a7bfe623625227d59bb7fe173f8963"
     },
+    "reports/csanadi-v1.43.27-m18-2-mobilos-elrendezes-bemutato.html": {
+      "sizeBytes": 6236,
+      "sha256": "7dae489e1f795fca46f4525695b12c5f825cff10af008b146c5d8045d46a96a7"
+    },
+    "reports/csanadi-v1.43.27-m18-2-mobilos-fejlec-atvizsgalas.md": {
+      "sizeBytes": 4873,
+      "sha256": "9634f854f34494e8fefece0ecfcfc86e1f7bac17e67da8e2c4cb0262e81c7918"
+    },
     "robots.txt": {
       "sizeBytes": 84,
       "sha256": "ee51df6dbbccda4533d6a067cfdd8a35a6421611b6cccc814fbbe9f7e65aa283"
     },
     "script.js": {
       "sizeBytes": 1957,
-      "sha256": "fb0076256c5a7ffec75ddd696ff2ead8c4a856fe788e7780da97acec312d55eb"
+      "sha256": "688185a5b986ac3ea4b2b98d5d00ed7c017637595f223105f9ce8029580c0bba"
     },
     "service-worker.js": {
       "sizeBytes": 8712,
-      "sha256": "917d3d2156b6acb5bb5b19ce3098729d5f8a6a93cb1b1e8446ff1b7a19b047ea"
+      "sha256": "43dce64526bf703630c3dc3bf5e8172ca1c70ff377482fbdaa3d98a6d8d55a4c"
     },
     "sitemap.xml": {
       "sizeBytes": 111,
       "sha256": "3a9976f0ed80dc22748bf9809f3dcb7b34c125d8d34fdf70209c0a11b6ccf8aa"
     },
     "tools/build-reboot-manifest.mjs": {
-      "sizeBytes": 2537,
-      "sha256": "61048d65caf43360180360307536503f05f9d62d78fac53d7d96f3b268ec7819"
+      "sizeBytes": 2372,
+      "sha256": "fe57dda93eb10524335acd8074400390958ebd94ddacba2ad50806f1ed8f6b2c"
     },
     "tools/content-workflow-core-v1-42-25.js": {
       "sizeBytes": 6301,
@@ -5232,19 +5240,19 @@
     },
     "tools/verify-m11-mobile-matrix.mjs": {
       "sizeBytes": 2258,
-      "sha256": "2f688ee0a35ff4f446fdaf0985625322494f5b3c5c572ff219b43278dd6844f3"
+      "sha256": "1fcf38d4f98629b615cb62271ea369d9820a06d243686072d6486b36cb364dad"
     },
     "tools/verify-m12-content-coverage.mjs": {
       "sizeBytes": 2579,
-      "sha256": "40ef7783bddd74fc4e3098af3f973e8d44a2b63f0d358d8f2baf8e38cc203828"
+      "sha256": "7e972604ae08c0690225b9934f6df66ed8689ef122040cbe28caf9ce79e859c4"
     },
     "tools/verify-m13-mobile-interactions.mjs": {
       "sizeBytes": 3582,
-      "sha256": "34e6bb5a8a447fb0e8ae4a772a31a7647966b54c08da746895c730e31051f3a8"
+      "sha256": "da92d03b2d76e69ba77ce3dd3258adba937ee86b8b40c18813b7b62d3a883b36"
     },
     "tools/verify-m13-mobile-text.mjs": {
       "sizeBytes": 2425,
-      "sha256": "56b01910eeb1579469ec8c846a0b66b1613b2f6a8b0af6223204c6bea2d4c5b8"
+      "sha256": "8e33e3c2d08b5a556588aa6ef5c0e3dfd41644cf0826cf1dca4bf8a9251ca678"
     },
     "tools/verify-m13-viewer-dom.mjs": {
       "sizeBytes": 4295,
@@ -5252,39 +5260,39 @@
     },
     "tools/verify-m14-mobile-ux.mjs": {
       "sizeBytes": 2240,
-      "sha256": "f96489806a534d4ba6a044d40f5b06d96a862b51926ab053d109cab3cfdde16c"
+      "sha256": "724c47d09872558e40b44e3fc212dc15b98aca234de4927b1485a0628549e98e"
     },
     "tools/verify-m15-a11y-performance.mjs": {
       "sizeBytes": 2245,
-      "sha256": "40b71440d9af7e72d02d8e25c6c9a2bd9cfa8b3bfc81bf5e2f999c6604abfa44"
+      "sha256": "6fb32e3c4c78c4c961b984ff9a72a2316743aac1a2b931d72f881afdd80cbedd"
     },
     "tools/verify-m15-interactions.mjs": {
       "sizeBytes": 1442,
-      "sha256": "9b1210052216b204865b10b538dd27245702c16c1cb46b49aa789649ac7dd16c"
+      "sha256": "36e16c1cca8ea06522d6b79550c68454074681890d296104a38d297ad1dbf498"
     },
     "tools/verify-m15-pwa-release.mjs": {
       "sizeBytes": 5508,
-      "sha256": "01ea22c80edd769df8794d20b2fa29449a1e1663b7bf97e4397283ff24491cf3"
+      "sha256": "4d48dc1823bd1053846037aec2913be8fdb5e5a3cd08ba1d197d17aa459ba755"
     },
     "tools/verify-m15-responsive.mjs": {
       "sizeBytes": 2280,
-      "sha256": "77e370aaa806d6f2c5c69289b7c1c4d8a4b6142aab0c5694730c68f68fc16b8d"
+      "sha256": "9cfb986662ac093eb9ecbe8baed2621f3d3a82ec385e948a005d05245c9c0b4d"
     },
     "tools/verify-m16-a11y-performance.mjs": {
       "sizeBytes": 959,
-      "sha256": "2b9565639d2587715383b380291e05d24bf2b388e319554abc66e9d1bb4e695e"
+      "sha256": "0e34f676099c52498617221d8dec78b4c917ccd69b8866836f38a6aee5756ba6"
     },
     "tools/verify-m16-desktop-boundary.mjs": {
       "sizeBytes": 3973,
-      "sha256": "81abe7b1f6fa5353d4693518404b586de38e6919318bdaa66998f5a4d686ba78"
+      "sha256": "6e7b4f03c0ddec892374cce51591ae2b3227900ed39350c032605bed1239f30c"
     },
     "tools/verify-m16-interactions.mjs": {
       "sizeBytes": 868,
-      "sha256": "697a60a0ed9efc14b297d513ba3b292e1a215762e19c836e952da44812064015"
+      "sha256": "b0f3c75057f6f957e4108eae3486bd0669c6e3c2191dabb5253c80c358f0a939"
     },
     "tools/verify-m16-pwa-release.mjs": {
       "sizeBytes": 1014,
-      "sha256": "93b87f50d06803bff10fa8cc04f05bfed3841c2cfe8f02e8908cdaecc569b52e"
+      "sha256": "324f54f04da8dcae3f55913f657578b0679f2e11eca912aaa51206ca362e882a"
     },
     "tools/verify-m17-cross-platform-surfaces.mjs": {
       "sizeBytes": 3806,
@@ -5292,47 +5300,47 @@
     },
     "tools/verify-m17-desktop-hero-isolation.mjs": {
       "sizeBytes": 1500,
-      "sha256": "35f935e94a069c10453ecc8a88db6436b3fea08d4ab3fddc25ee2d2bd086709d"
+      "sha256": "285b9d0ae73a2d6e8a8cb9e1435537bfb346f4406ce6ab6f1b729882dec99eec"
     },
     "tools/verify-m17-interactions-a11y.mjs": {
       "sizeBytes": 1592,
-      "sha256": "321a955481fb8a76a748d290d1d2fc4ea51bdd36d22b89cc49177efe63823a60"
+      "sha256": "3739d252567aa0817cbb0ec8fa4aa807c7bbe4cd6b84ca4aa8fc53aa246e1d80"
     },
     "tools/verify-m17-release-safety.mjs": {
-      "sizeBytes": 1596,
-      "sha256": "a5c1cb4500b6749c90d719f2fd5b35e39e364a5d4cdc1fcfaf64cf78a45f93af"
+      "sizeBytes": 1601,
+      "sha256": "f8de4ff5534b3762d6f4b5ae246aa8ff4993aa98a8fad4fd063965433bf3f678"
     },
     "tools/verify-m17-responsive-visual.mjs": {
       "sizeBytes": 2461,
-      "sha256": "9a1ff9bce7bbbad8e3da8b77ae213ad10b815acf1650b16f4d787354ab5cc6e5"
+      "sha256": "6c22b5e9c5c08272a655981767716ceddd786c968c8d44efb41276f00031d53c"
     },
     "tools/verify-m18-header-layout.mjs": {
-      "sizeBytes": 2470,
-      "sha256": "2357ef83b24d1882b2eb67dc066a6c95dea43cb47ab574ccf13757fc77513429"
+      "sizeBytes": 2155,
+      "sha256": "0897b8e8d19c1e371fe4416904a0de587860b5d4da798d6f65c17c324668ce00"
     },
     "tools/verify-m18-legacy-header-isolation.mjs": {
-      "sizeBytes": 2105,
-      "sha256": "be29f9ca27d4dd5dee1fef6608da29f4b83c844f57d07fd9b29c0ade15728889"
+      "sizeBytes": 1922,
+      "sha256": "5ace3730bd5d9cd7ab345fe548429d396d52450c5ad10ade15f85ecc25ad8aa6"
     },
     "tools/verify-reboot-hero.mjs": {
       "sizeBytes": 8718,
-      "sha256": "81405c30d326d88cef628684e056c684793d0294d08c2fe37b3b9a2e006ddacd"
+      "sha256": "c8996f8d4434ebcbd1b986f8a7710d3aacaa52846dc42acc9e41fe556fcf9241"
     },
     "tools/verify-reboot-menu.mjs": {
       "sizeBytes": 6260,
-      "sha256": "5d26727b4dbce45def55636ff484cb5f0dd08b573b6f45066a3350262bf48f6b"
+      "sha256": "0da39d0e47748154bb1e91e83d015afcf5f250754c7bf5e174e3e52010dea855"
     },
     "tools/verify-reboot-quality.mjs": {
       "sizeBytes": 6293,
-      "sha256": "fbb4f70bb3360971b9f98d5c4469e26d0203bad42285e9facbc2fbdf225a3ab6"
+      "sha256": "8c169415ecbf991a447fa69bc56fc6851efbb8b0b098fd71bd939595d7dd1417"
     },
     "tools/verify-reboot-release.mjs": {
-      "sizeBytes": 5298,
-      "sha256": "1bbf12e36276972db949fdbd443c9ee9c03daea20eaebc8b28aab09214cbf7ba"
+      "sizeBytes": 5303,
+      "sha256": "70ae9e07e241e19b60500da98ee9183fbd2d809854088b009f31cefc00451ba5"
     },
     "tools/verify-reboot-shell.mjs": {
-      "sizeBytes": 7495,
-      "sha256": "495313c27c197d45e9d423c829feb81cdea81766e0fc38190257834cc98d6162"
+      "sizeBytes": 8659,
+      "sha256": "f851413aaac10dfe536d5392a9c744541c1d71ffc1870dd642cd3d528862e748"
     },
     "tools/visual-order-core-v1-42-24.js": {
       "sizeBytes": 3956,

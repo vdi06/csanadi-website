@@ -11,8 +11,8 @@ for(const script of ['verify-reboot-menu.mjs','verify-reboot-hero.mjs',
   {encoding:'utf8',timeout:15000});
  assert.equal(result.status,0,`${script}: ${result.stderr||result.stdout}`);
 }
-const menu=fs.readFileSync(path.join(root,'mobile/reboot-menu-v1-43-26.js'),'utf8');
-const hero=fs.readFileSync(path.join(root,'mobile/reboot-hero-v1-43-26.js'),'utf8');
+const menu=fs.readFileSync(path.join(root,'mobile/reboot-menu-v1-43-27.js'),'utf8');
+const hero=fs.readFileSync(path.join(root,'mobile/reboot-hero-v1-43-27.js'),'utf8');
 assert.match(menu,/const renderKeepingFocus=/);
 assert.match(menu,/const focusSnapshot=/);
 assert.match(menu,/event\.key==='Home'/);

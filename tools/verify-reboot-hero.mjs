@@ -1,6 +1,6 @@
 /** Új filmes mobilképernyő: kezdőkép, kézi léptetés, érintés, redukált mozgás. */
 import assert from 'node:assert/strict';
-import {createFreshMobileHero,mobileSlideIndex,mobileAutoPlayAllowed} from '../mobile/reboot-hero-v1-43-26.js';
+import {createFreshMobileHero,mobileSlideIndex,mobileAutoPlayAllowed} from '../mobile/reboot-hero-v1-43-27.js';
 assert.equal(mobileSlideIndex(-1,3),2);
 assert.equal(mobileSlideIndex(3,3),0);
 assert.equal(mobileSlideIndex(2,3),2);

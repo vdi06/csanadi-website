@@ -1,6 +1,6 @@
 /** Új mobilos címerfejléc: szimmetria, keresés, téma, scroll és adatforrás. */
 import assert from 'node:assert/strict';
-import {mobileScrollProgress,initFreshMobileShell} from '../mobile/reboot-shell-v1-43-26.js';
+import {mobileScrollProgress,initFreshMobileShell} from '../mobile/reboot-shell-v1-43-27.js';
 assert.equal(mobileScrollProgress(1000,3000,1000),.5);
 assert.equal(mobileScrollProgress(-8,1000,1200),0);
 assert.equal(mobileScrollProgress(9000,3000,1000),1);
@@ -29,7 +29,9 @@ const header=new Node('header'),overlay=new Node(),oldMobile=new Node('nav');
 const legacyRow=new Node('div');legacyRow.className='brand-row';
 legacyRow.style.setProperty('display','flex');
 legacyRow.setAttribute('aria-hidden','false');
-header.append(legacyRow);
+const legacyActions=new Node('div');legacyActions.id='cs39-home-shell';
+legacyActions.style.setProperty('display','grid');
+header.append(legacyRow,legacyActions);
 header.querySelector=selector=>selector===':scope > .brand-row'?legacyRow:null;
 const search=new Node('button'),theme=new Node('button');
 let searchCalls=0,themeCalls=0;
@@ -51,7 +53,11 @@ globalThis.document={documentElement:root,scrollingElement:{scrollHeight:3000},
 globalThis.window={scrollY:0,innerHeight:1000,addEventListener(name,fn){windowListeners.set(name,fn)}};
 globalThis.CustomEvent=class{constructor(type){this.type=type}};
 globalThis.requestAnimationFrame=fn=>fn();
-globalThis.MutationObserver=class{observe(){}};
+let headerGuard=null;
+globalThis.MutationObserver=class{
+ constructor(callback){this.callback=callback}
+ observe(node){if(node===header)headerGuard=this.callback}
+};
 let resizeCallback=null,resizeTarget=null;
 globalThis.ResizeObserver=class{
  constructor(callback){resizeCallback=callback}
@@ -67,26 +73,36 @@ globalThis.fetch=async()=>({ok:true,json:async()=>({items:[
 const instance=initFreshMobileShell();
 assert.ok(instance?.shell);assert.equal(oldMobile.isConnected,true,
  'M16: a desktophoz tartozó régi DOM-elemet a mobilmodul nem törölheti');
-assert.equal(header.children.length,2,'Mobilon a régi sort elrejtjük, de nem töröljük');
+assert.equal(header.children.length,3,'Mobilon a régi elemeket elrejtjük, de nem töröljük');
 const shell=header.children[0],bar=shell.children[1];
 assert.equal(legacyRow.style.getPropertyValue('display'),'none');
 assert.equal(legacyRow.style.getPropertyPriority('display'),'important');
 assert.equal(legacyRow.getAttribute('aria-hidden'),'true');
+assert.equal(legacyActions.style.getPropertyValue('display'),'none');
+assert.equal(legacyActions.getAttribute('aria-hidden'),'true');
 assert.equal(resizeTarget,shell,'A fejléc dinamikus átrendezését figyelni kell');
 header.mockHeight=199;resizeCallback();
 assert.equal(root.style.values.get('--cs-mb-sticky-offset'),'199px',
  'A betöltés után több sorba törő fejléc új magassága legyen a scroll-offset');
 header.mockHeight=null;
-assert.equal(bar.children.length,4,'A négy elem: social / címer / eszközök / külön KRÉTA sor');
+assert.equal(bar.children.length,3,'Egy sor: bal ikonok / címer / jobb ikonok');
 assert.equal(bar.children[1].id,'cs-mb-menu');
-assert.equal(bar.children[0].children.length,1,
- 'A KRÉTA nem torlódhat a Facebook és Instagram mellé az első sorban');
-assert.match(bar.children[3].className,/cs-mb-kreta-line/);
-assert.match(bar.children[3].children[0].className,/cs-mb-kreta/);
+assert.equal(bar.children[0].children.length,2,'Bal oldalon a két közösségi és a KRÉTA gomb');
+assert.match(bar.children[0].children[1].className,/cs-mb-kreta/);
+assert.equal(bar.children[0].children[1].textContent,'K');
+assert.equal(bar.children[0].children[1].getAttribute('aria-label'),'KRÉTA – elektronikus napló');
 bar.children[1].click();assert.equal(customName,'csanadi:menu-toggle');
 bar.children[2].children[0].click();assert.equal(searchCalls,1);
 bar.children[2].children[1].click();assert.equal(themeCalls,1);
 window.scrollY=1000;windowListeners.get('scroll')();
+const lateControls=new Node('div');lateControls.id='cs-compact-hero-controls';
+lateControls.style.setProperty('display','flex');header.append(lateControls);
+assert.equal(typeof headerGuard,'function','A későn létrejövő fejléc-elemekre figyelő védelem él');
+headerGuard();
+assert.equal(lateControls.style.getPropertyValue('display'),'none');
+assert.equal(lateControls.style.getPropertyPriority('display'),'important');
+assert.equal(lateControls.getAttribute('aria-hidden'),'true');
+lateControls.remove();
 assert.equal(header.dataset.csMbScrolled,'true');
 assert.equal(header.style.values.get('--cs-mb-reading'),'0.5');
 assert.equal(root.style.values.get('--cs-mb-sticky-offset'),'91px');
@@ -102,14 +118,17 @@ assert.equal(header.dataset.csMbScrolled,undefined);
 assert.equal(root.style.values.has('--cs-mb-sticky-offset'),false);
 assert.equal(header.style.values.has('--cs-mb-reading'),false);
 assert.equal(shell.children[0].getAttribute('aria-hidden'),null);
-assert.equal(header.children.length,1,
+assert.equal(header.children.length,2,
  'M16: asztali szélességen a teljes mobil fejlécnek le kell kapcsolódnia');
 assert.equal(legacyRow.style.getPropertyValue('display'),'flex',
  'Asztalra visszaváltva az eredeti inline kijelzés visszaáll');
 assert.equal(legacyRow.style.getPropertyPriority('display'),'');
 assert.equal(legacyRow.getAttribute('aria-hidden'),'false');
+assert.equal(legacyActions.style.getPropertyValue('display'),'grid',
+ 'A második régi fejléc-egység eredeti állapota is visszaáll');
+assert.equal(legacyActions.getAttribute('aria-hidden'),null);
 media.matches=true;media.change();
-assert.equal(header.children.length,2,
+assert.equal(header.children.length,3,
  'Mobilra visszatérve a saját fejlécnek új példány nélkül vissza kell kapcsolódnia');
 assert.equal(legacyRow.style.getPropertyValue('display'),'none');
 assert.equal(legacyRow.style.getPropertyPriority('display'),'important');

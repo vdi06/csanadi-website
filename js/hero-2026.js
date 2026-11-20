@@ -1,6 +1,6 @@
 import {createPicture,mediaItem} from './media.js?v=1.42.18';
 import {settingNumber,isWithinConfiguredWindow} from './site-settings-2026.js?v=1.42.18';
-import {createFreshMobileHero} from '../mobile/reboot-hero-v1-43-26.js?v=1.43.26';
+import {createFreshMobileHero} from '../mobile/reboot-hero-v1-43-27.js?v=1.43.27';
 const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 const safeRoute=value=>typeof value==='string'&&/^#\/[a-z0-9/\-]*$/i.test(value)?value:'#/';
 export function renderPremiumHero(block){

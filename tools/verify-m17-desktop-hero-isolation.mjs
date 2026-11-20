@@ -6,7 +6,7 @@ import {execFileSync} from 'node:child_process';
 
 const root=path.resolve(import.meta.dirname,'..');
 const read=rel=>fs.readFileSync(path.join(root,rel),'utf8');
-const mobile=read('mobile/reboot-hero-v1-43-26.js');
+const mobile=read('mobile/reboot-hero-v1-43-27.js');
 const desktop=read('js/hero-2026.js');
 assert.match(mobile,/const mount=document\.createDocumentFragment\(\)/);
 assert.match(mobile,/const anchor=document\.createComment\(/);

@@ -7,14 +7,14 @@ import {execFileSync} from 'node:child_process';
 const root=path.resolve(import.meta.dirname,'..');
 const read=rel=>fs.readFileSync(path.join(root,rel),'utf8');
 const files=JSON.parse(read('release-manifest.json'));
-assert.equal(files.release,'csanadi-website-v1.43.26-m18-1-legacy-header-isolation-preview');
-assert.equal(JSON.parse(read('json/config.json')).performance.cacheVersion,'csanadi-r-v1.43.26');
-assert.match(read('service-worker.js'),/const RELEASE_ID='1\.43\.26'/);
-assert.match(read('index.html'),/reboot-design-v1-43-26\.css\?v=1\.43\.26/);
+assert.equal(files.release,'csanadi-website-v1.43.27-m18-2-mobile-single-row-scroll-fix-preview');
+assert.equal(JSON.parse(read('json/config.json')).performance.cacheVersion,'csanadi-r-v1.43.27');
+assert.match(read('service-worker.js'),/const RELEASE_ID='1\.43\.27'/);
+assert.match(read('index.html'),/reboot-design-v1-43-27\.css\?v=1\.43\.27/);
 const current=Object.keys(files.files).filter(file=>file.startsWith('mobile/'));
 assert.equal(current.length,5,'Csak az öt jóváhagyott új mobilmodul csomagolható');
-assert.ok(current.every(file=>file.includes('v1-43-26')));
-assert.match(read('mobile/reboot-hero-v1-43-26.js'),/createDocumentFragment/,
+assert.ok(current.every(file=>file.includes('v1-43-27')));
+assert.match(read('mobile/reboot-hero-v1-43-27.js'),/createDocumentFragment/,
  'A jóváhagyott M17.1 dupla hero elleni védelem nem veszhet el');
 for(const name of ['verify-m18-legacy-header-isolation.mjs','verify-m18-header-layout.mjs',
  'verify-m17-responsive-visual.mjs','verify-m17-interactions-a11y.mjs',
@@ -22,4 +22,4 @@ for(const name of ['verify-m18-legacy-header-isolation.mjs','verify-m18-header-l
  'verify-m17-desktop-hero-isolation.mjs','verify-reboot-release.mjs']){
  execFileSync(process.execPath,[path.join(root,'tools',name)],{stdio:'pipe'});
 }
-console.log(`M17.4 PASS: v1.43.26, ${Object.keys(files.files).length} SHA-256 fájl, minden kapu és desktop-határ`);
+console.log(`M17.4 PASS: v1.43.27, ${Object.keys(files.files).length} SHA-256 fájl, minden kapu és desktop-határ`);

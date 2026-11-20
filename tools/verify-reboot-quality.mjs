@@ -1,7 +1,7 @@
 /** Új mobilprofilok, billentyűzetes szűrés, adatforgalom és desktop állapot. */
 import assert from 'node:assert/strict';
 import {mobileIndexForKey,mobileResourceProfile,initFreshMobileQuality}
- from '../mobile/reboot-quality-v1-43-26.js';
+ from '../mobile/reboot-quality-v1-43-27.js';
 assert.equal(mobileIndexForKey(0,4,'ArrowLeft'),3);
 assert.equal(mobileIndexForKey(3,4,'ArrowRight'),0);
 assert.equal(mobileIndexForKey(2,4,'Home'),0);

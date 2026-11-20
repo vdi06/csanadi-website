@@ -5,7 +5,7 @@ import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 
 const root=path.resolve(import.meta.dirname,'..');
-const menu=fs.readFileSync(path.join(root,'mobile/reboot-menu-v1-43-26.js'),'utf8');
+const menu=fs.readFileSync(path.join(root,'mobile/reboot-menu-v1-43-27.js'),'utf8');
 assert.match(menu,/a\.dataset\.csMbRoute=route/);
 assert.match(menu,/focusSnapshot\(\)/);
 assert.match(menu,/focusRole='main'/);

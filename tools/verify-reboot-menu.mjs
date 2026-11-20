@@ -1,6 +1,6 @@
 /** Új, önálló mobilmenü: három szint, két megjelenés, közvetlen oldalnyitás. */
 import assert from 'node:assert/strict';
-import {createPhoneRadial,PHONE_QUERY,mobileViewportMode} from '../mobile/reboot-menu-v1-43-26.js';
+import {createPhoneRadial,PHONE_QUERY,mobileViewportMode} from '../mobile/reboot-menu-v1-43-27.js';
 class Node {
  constructor(tag='div'){this.tagName=tag;this.children=[];this.events={};this.style={setProperty(){}};
   this.dataset={};this.className='';this.textContent='';this.hidden=false;this.attributes={};}

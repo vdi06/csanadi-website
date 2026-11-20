@@ -11,14 +11,14 @@ function startupError(error){
   shell.append(h,p,detail,hint);target.replaceChildren(shell);
 }
 Promise.all([
-  import('./js/app.js?v=1.43.26'),
-  import('./js/subpages-v1.js?v=1.43.26'),
+  import('./js/app.js?v=1.43.27'),
+  import('./js/subpages-v1.js?v=1.43.27'),
   import('./js/release-v1-39-0.js?v=1.42.18'),
-  import('./js/release-v1-39-1.js?v=1.43.26'),
+  import('./js/release-v1-39-1.js?v=1.43.27'),
   import('./js/header-adaptive-v1-39-18.js?v=1.42.18'),
-  import('./js/home-v1-41.js?v=1.43.26'),
-  import('./mobile/reboot-shell-v1-43-26.js?v=1.43.26'),
-  import('./mobile/reboot-quality-v1-43-26.js?v=1.43.26')
+  import('./js/home-v1-41.js?v=1.43.27'),
+  import('./mobile/reboot-shell-v1-43-27.js?v=1.43.27'),
+  import('./mobile/reboot-quality-v1-43-27.js?v=1.43.27')
 ]).then(([{startApp},{initSubpageEnhancements},{initReleaseEnhancements},{initV1391Enhancements},{initAdaptiveHeaderV13918},{initV141HomepageMotion},{initFreshMobileShell},{initFreshMobileQuality}])=>{
   initFreshMobileShell();
   initFreshMobileQuality();

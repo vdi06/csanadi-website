@@ -5,9 +5,9 @@ import path from 'node:path';
 
 const base=path.resolve(import.meta.dirname,'..');
 const read=file=>fs.readFileSync(path.join(base,file),'utf8');
-const menu=read('mobile/reboot-menu-v1-43-26.js');
-const css=read('mobile/reboot-design-v1-43-26.css');
-const quality=read('mobile/reboot-quality-v1-43-26.js');
+const menu=read('mobile/reboot-menu-v1-43-27.js');
+const css=read('mobile/reboot-design-v1-43-27.css');
+const quality=read('mobile/reboot-quality-v1-43-27.js');
 const viewer=read('js/site-viewers-v1-43-3.js');
 const network=read('js/round13-network.js');
 const worker=read('service-worker.js');
@@ -42,10 +42,10 @@ assert.match(viewer,/PDF_LIB/);
 assert.match(viewer,/touch: true, keyboard: true, wrap: true/);
 assert.match(viewer,/trigger\.focus\(\{ preventScroll: true \}\)/);
 
-assert.equal(config.performance.cacheVersion,'csanadi-r-v1.43.26');
-assert.match(html,/reboot-design-v1-43-26\.css\?v=1\.43\.26/);
-assert.match(worker,/const RELEASE_ID='1\.43\.26'/);
-assert.match(worker,/\.\/mobile\/reboot-quality-v1-43-26\.js/);
+assert.equal(config.performance.cacheVersion,'csanadi-r-v1.43.27');
+assert.match(html,/reboot-design-v1-43-27\.css\?v=1\.43\.27/);
+assert.match(worker,/const RELEASE_ID='1\.43\.27'/);
+assert.match(worker,/\.\/mobile\/reboot-quality-v1-43-27\.js/);
 assert.match(worker,/event\.data\?\.type==='ACTIVATE_UPDATE'/);
 assert.match(network,/notice\(\)\.hidden=true/);
 assert.match(network,/csanadi-accepted-release/);

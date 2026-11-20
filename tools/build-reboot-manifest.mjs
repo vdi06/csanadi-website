@@ -23,9 +23,9 @@ for(const item of ['index.html','script.js','service-worker.js','offline.html','
  files[item]={sizeBytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex')};
 }
 const manifest={...previous,
- release:'csanadi-website-v1.43.26-m18-1-legacy-header-isolation-preview',
+ release:'csanadi-website-v1.43.27-m18-2-mobile-single-row-scroll-fix-preview',
  date:'2026-11-20',
- notes:'V1.43.26 M18.1 második mobilos fejlécjavítás a felhasználó visszajelzése alapján: a hiba a v1.43.25 ZIP helyi tesztelésekor is fennmaradt. Konkrét ok: az eredeti fejlécre több korábbi !important CSS-deklaráció vonatkozik, amelyeket a mobilos elrejtés nem minden állapotban írt felül. A kizárólag mobilos új CSS erősebb specifitást használ; a mobil JS a régi fejlécsort inline important módon is kikapcsolja, asztali váltáskor az eredeti display/ARIA értékeket maradéktalanul visszaállítja. A v1.43.25 szimmetrikus ikonelrendezése és külön KRÉTA sora, valamint a korábbi mobilos funkciók megmaradnak. Desktop CSS, JS, médiaszerkesztés és JSON-tartalom változatlan. Külön M18.1 regressziós/desktop-visszaállítási próba, teljes ZIP, SHA-256 és visszabontott tesztek. A valós iOS/Android és pixelszintű teszt továbbra is NYITOTT, automata teszt nem bizonyítja. Nincs FTP- vagy GitHub-közzététel; v1.43.25 változatlanul megőrizve.',
+ notes:'V1.43.27 M18.2 mobilos újrajavítás. A korábbi kód külön KRÉTA sort és régi asztali kompakt képváltót tartott fenn. Mobilon egyetlen fejlécikonsor jelenik meg (Facebook, Instagram, KRÉTA mint K ikon, címer középen, keresés, téma); görgetéskor a régi fejléc minden közvetlen gyermeke és a desktop képváltó rejtve marad, újonnan létrejövő elem esetén is. Az eredeti inline és ARIA állapotok desktopon visszaállnak. A saját mobil filmes képváltó megmarad. Kizárólag a mobilfájlok kettője módosult érdemben; a közös belépési pontokon csak cache-verzió frissült. M18.2 DOM-, statikus, reszponzív és visszaállítási próbák; valós iOS/Android és pixelszintű ellenőrzés továbbra is NYITOTT. Nincs FTP- vagy GitHub-közzététel; v1.43.25 és v1.43.26 érintetlen.',
  files:Object.fromEntries(Object.entries(files).sort(([a],[b])=>a.localeCompare(b,'en')))
 };
 fs.writeFileSync(path.join(base,'release-manifest.json'),JSON.stringify(manifest,null,2)+'\n');

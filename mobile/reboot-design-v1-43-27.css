@@ -21,17 +21,14 @@
   -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
  html body #site-header :is(.brand-row,#desktop-navigation,#mobile-navigation,
    #cs-subpage-menu,#mobile-menu-toggle,#cs39-mini-hero){display:none!important}
- /* M18.1 utóellenőrzés: a régi fejléc némely szabálya többszörös
-    osztályszelektorral és !important-tal újra bekapcsolhatja a .brand-row-t.
-    A megismételt #site-header ID szándékosan felülírja ezeket az örökölt
-    deklarációkat. Csak 768px alatt érvényes, desktopra nem hat. */
- html body #site-header#site-header > .brand-row,
- html body #site-header#site-header > #desktop-navigation,
- html body #site-header#site-header > #mobile-navigation{
+ /* M18.2: minden régi közvetlen fejléc-gyermek rejtve, a később
+    görgetéskor hozzáadott képkapcsolókkal együtt. Kivétel a saját shell. */
+ html body #site-header#site-header > :not(#cs-mobile-rebuild){
   display:none!important;visibility:hidden!important;pointer-events:none!important}
  html body :is(.orbit-launch,#orbit-open,#ext26-mobile-nav,.ext26-mobile-nav,
   .cs32-mobile-bar,#cs39-mobile-route,#cs42-sections-inside-menu,
-  .cs92-floating-subpage-menu){display:none!important;visibility:hidden!important;
+  .cs92-floating-subpage-menu,#cs-compact-hero-controls,
+  #cs39-mini-hero,.cs1402-persistent-motto){display:none!important;visibility:hidden!important;
   pointer-events:none!important}
  html body #site-header #cs-mobile-rebuild{display:block!important;position:relative!important;
   min-width:0!important;max-width:650px!important;margin-inline:auto!important;
@@ -61,16 +58,17 @@
   text-decoration:none!important;font-size:20px!important;font-weight:800!important;
   text-align:center!important;box-shadow:none!important;touch-action:manipulation!important}
  html body #site-header .cs-mb-kreta{font-size:10px!important;letter-spacing:.035em!important}
- /* M18.1: négy, azonos érintési cél a címer két oldalán; a KRÉTA
-    saját második sort kap. Ezt az elrendezést a desktop egyáltalán nem örökli. */
- html body #site-header .cs-mb-bar{grid-template-rows:auto auto!important;
-  row-gap:4px!important;align-content:center!important}
+ /* M18.2: 3 bal oldali ikon + középen címer + 2 jobb oldali ikon.
+    Szigorúan egyetlen sor, 320px-en is, a címer optikailag középen. */
+ html body #site-header .cs-mb-bar{grid-template-rows:auto!important;
+  row-gap:0!important;align-content:center!important}
  html body #site-header :is(.cs-mb-left,.cs-mb-right){display:grid!important;
-  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
   justify-items:stretch!important;align-items:center!important;
-  width:100%!important;max-width:118px!important;margin-inline:auto!important;
-  gap:6px!important;flex-wrap:nowrap!important;min-width:0!important}
+  width:100%!important;max-width:none!important;margin-inline:auto!important;
+  gap:3px!important;flex-wrap:nowrap!important;min-width:0!important}
  html body #site-header .cs-mb-left{grid-column:1!important;grid-row:1!important}
+ html body #site-header .cs-mb-right{grid-template-columns:repeat(2,minmax(0,1fr))!important}
  html body #site-header .cs-mb-socials{display:contents!important}
  html body #site-header .cs-mb-crest{grid-column:2!important;grid-row:1!important;
   justify-self:center!important}
@@ -80,19 +78,9 @@
   min-height:44px!important;position:static!important;inset:auto!important;
   transform:none!important;float:none!important;white-space:nowrap!important;
   overflow:hidden!important;text-overflow:clip!important}
- html body #site-header .cs-mb-kreta-line{grid-column:1/-1!important;grid-row:2!important;
-  display:flex!important;justify-content:center!important;align-items:center!important;
-  width:100%!important;min-width:0!important;min-height:44px!important;
-  position:relative!important;z-index:1!important}
- html body #site-header .cs-mb-kreta-line .cs-mb-kreta{display:grid!important;
-  place-items:center!important;position:static!important;inset:auto!important;
-  transform:none!important;float:none!important;text-decoration:none!important;
-  width:min(140px,100%)!important;min-width:100px!important;max-width:100%!important;
-  min-height:44px!important;padding:6px 12px!important;margin:0!important;
-  border:1px solid var(--cs-mb-stroke)!important;border-radius:13px!important;
-  background:rgba(220,178,102,.035)!important;color:var(--cs-mb-ink)!important;
-  font-size:12px!important;font-weight:900!important;letter-spacing:.065em!important;
-  line-height:1.2!important;white-space:nowrap!important}
+ html body #site-header .cs-mb-kreta{display:grid!important;place-items:center!important;
+  font-size:19px!important;font-weight:900!important;letter-spacing:0!important;
+  line-height:1!important;white-space:nowrap!important}
  html body #site-header .cs-mb-school-title,html body #site-header .cs-mb-motto{
   position:relative!important;inset:auto!important;transform:none!important;
   clear:both!important;isolation:isolate!important}
@@ -132,6 +120,10 @@
   position:relative!important}
  html body #global-hero :is(.cs42-mobile-landing,.cs42-desktop-carousel,.csn26-visual-row,
   .cs41-hero-identity,.cs41-hero-statement,.cs41-mobile-routes){display:none!important}
+ /* A filmes mobil képváltó marad, a régi képléptető és felúszó vezérlő nem. */
+ html body #global-hero :is(.csn26-edge-arrow,.csn26-hero-pager,
+   .cs42-desktop-carousel-controls,#cs-compact-hero-controls){
+  display:none!important;visibility:hidden!important;pointer-events:none!important}
  html body #global-hero .cs-mb-cinema{display:block!important;width:100%!important;
   max-width:680px!important;min-width:0!important;margin:0 auto!important;
   color:var(--cs-mb-ink)!important;background:var(--cs-mb-deep)!important;
@@ -582,7 +574,8 @@
   gap:4px!important}
  html body #site-header .cs-mb-crest{width:58px!important;height:58px!important;min-height:58px!important}
  html body #site-header .cs-mb-crest img{width:51px!important;height:51px!important}
- html body #site-header :is(.cs-mb-social,.cs-mb-tool){min-width:44px!important;min-height:44px!important}
+ html body #site-header :is(.cs-mb-social,.cs-mb-tool){min-width:0!important;min-height:44px!important;
+  padding-inline:0!important;border-radius:12px!important;font-size:clamp(16px,4.8vw,20px)!important}
  html body #site-map-overlay .cs-mb-menu-grid[data-level="1"]{
   grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
  html body #site-map-overlay .cs-mb-menu-grid[data-level="1"] .cs-mb-menu-card-main{

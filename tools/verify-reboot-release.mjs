@@ -8,13 +8,13 @@ const root=path.resolve(import.meta.dirname,'..');
 const read=rel=>fs.readFileSync(path.join(root,rel));
 const text=rel=>read(rel).toString('utf8');
 const manifest=JSON.parse(text('release-manifest.json'));
-assert.equal(manifest.release,'csanadi-website-v1.43.26-m18-1-legacy-header-isolation-preview');
+assert.equal(manifest.release,'csanadi-website-v1.43.27-m18-2-mobile-single-row-scroll-fix-preview');
 assert.equal(manifest.ftpCompatible,true);
 const files=Object.keys(manifest.files);
 const fresh=[
- 'reboot-design-v1-43-26.css','reboot-hero-v1-43-26.js',
- 'reboot-menu-v1-43-26.js','reboot-quality-v1-43-26.js',
- 'reboot-shell-v1-43-26.js'];
+ 'reboot-design-v1-43-27.css','reboot-hero-v1-43-27.js',
+ 'reboot-menu-v1-43-27.js','reboot-quality-v1-43-27.js',
+ 'reboot-shell-v1-43-27.js'];
 assert.deepEqual(files.filter(file=>file.startsWith('mobile/')).sort(),fresh.map(name=>'mobile/'+name).sort(),
  'A ZIP nem tartalmazhat a régi mobile/ könyvtárból egyetlen fájlt sem');
 for(const file of fresh){
@@ -65,7 +65,7 @@ const commonRuntime={
  'js/home-v1-41.js':'d67eeb77511a36c85b93f2fd42d2c0a9543e81212a9b6b05edd279464cbaf0d7'
 };
 for(const [file,reference] of Object.entries(commonRuntime)){
- const normalized=text(file).replaceAll('1.43.26','1.43.XX').replaceAll('v1-43-26','v1-43-XX');
+ const normalized=text(file).replaceAll('1.43.27','1.43.XX').replaceAll('v1-43-27','v1-43-XX');
  assert.equal(crypto.createHash('sha256').update(normalized).digest('hex'),reference,
   `M17.4 desktop és SPA védelem: ${file}`);
 }
@@ -74,9 +74,9 @@ const imported=entrypoints.map(text).join('\n');
 assert.doesNotMatch(imported,/mobile\/(?:m[1-9]|m10|quick-nav|mobile-)/i,
  'Régi mobilos JS/CSS nem importálható');
 assert.match(text('index.html'),/media="screen and \(max-width: 768px\)"/);
-assert.match(text('service-worker.js'),/const RELEASE_ID='1\.43\.26'/);
-assert.equal(JSON.parse(text('json/config.json')).performance.cacheVersion,'csanadi-r-v1.43.26');
-const css=text('mobile/reboot-design-v1-43-26.css');
+assert.match(text('service-worker.js'),/const RELEASE_ID='1\.43\.27'/);
+assert.equal(JSON.parse(text('json/config.json')).performance.cacheVersion,'csanadi-r-v1.43.27');
+const css=text('mobile/reboot-design-v1-43-27.css');
 assert.match(css,/#cs-mobile-rebuild,\.cs-mb-cinema\{display:none\}/);
 assert.match(css,/@media screen and \(max-width:768px\)/);
 assert.match(css,/@media screen and \(max-width:768px\) and \(prefers-reduced-motion:reduce\)/);

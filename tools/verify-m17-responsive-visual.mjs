@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
-import {mobileViewportMode} from '../mobile/reboot-menu-v1-43-26.js';
+import {mobileViewportMode} from '../mobile/reboot-menu-v1-43-27.js';
 
 const root=path.resolve(import.meta.dirname,'..');
-const css=fs.readFileSync(path.join(root,'mobile/reboot-design-v1-43-26.css'),'utf8');
+const css=fs.readFileSync(path.join(root,'mobile/reboot-design-v1-43-27.css'),'utf8');
 const viewportPairs=[[320,568,'grid'],[360,640,'grid'],[375,812,'grid'],
  [390,844,'grid'],[412,915,'grid'],[420,759,'grid'],[420,760,'circle'],
  [430,932,'circle'],[600,900,'circle'],[768,500,'grid'],

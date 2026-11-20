@@ -37,38 +37,45 @@ export function initFreshMobileShell(){
  const header=document.getElementById('site-header');
  if(!header||document.getElementById('cs-mobile-rebuild'))return;
  const mq=matchMedia(MOBILE);
- // M18.1: a korábbi !important-os desktop szabályok mobilon felülírhatták
- // a mobil CSS display:none deklarációját. A desktop brand-row eredeti
- // inline/ARIA értékeit megőrizzük, mobilon pedig inline important-tal
- // elrejtjük. Ez a rész asztali nézetben minden értéket visszaállít.
- const legacyRow=header.querySelector?.(':scope > .brand-row')||null;
- const originalLegacy=legacyRow?{
-  display:legacyRow.style.getPropertyValue('display'),
-  priority:legacyRow.style.getPropertyPriority('display'),
-  aria:legacyRow.getAttribute('aria-hidden')
- }:null;
+ // M18.2: a régi kód görgetéskor új fejléc-elemeket is beilleszthet, ezért
+ // kizárólag a saját mobil shell látható; az összes többi KÖZVETLEN
+ // fejlécgyermek eredeti inline és ARIA állapotát külön megőrizzük.
+ // Ez a 769px feletti asztali felületet változatlanul visszaállítja.
+ const originalLegacy=new Map();
  const protectLegacy=(mobile)=>{
-  if(!legacyRow)return;
   if(mobile){
-   if(legacyRow.style.getPropertyValue('display')!=='none'||
-      legacyRow.style.getPropertyPriority('display')!=='important'){
-    legacyRow.style.setProperty('display','none','important');
+   for(const node of [...header.children]){
+    if(node.id==='cs-mobile-rebuild')continue;
+    if(!originalLegacy.has(node)){
+     originalLegacy.set(node,{
+      display:node.style.getPropertyValue('display'),
+      priority:node.style.getPropertyPriority('display'),
+      aria:node.getAttribute('aria-hidden')
+     });
+     protectObserver?.observe(node,{attributes:true,attributeFilter:['style','aria-hidden']});
+    }
+    if(node.style.getPropertyValue('display')!=='none'||
+       node.style.getPropertyPriority('display')!=='important'){
+     node.style.setProperty('display','none','important');
+    }
+    if(node.getAttribute('aria-hidden')!=='true')node.setAttribute('aria-hidden','true');
    }
-   if(legacyRow.getAttribute('aria-hidden')!=='true')legacyRow.setAttribute('aria-hidden','true');
   }else{
-   if(originalLegacy.display)legacyRow.style.setProperty('display',originalLegacy.display,originalLegacy.priority);
-   else legacyRow.style.removeProperty('display');
-   if(originalLegacy.aria===null)legacyRow.removeAttribute('aria-hidden');
-   else legacyRow.setAttribute('aria-hidden',originalLegacy.aria);
+   for(const [node,original] of originalLegacy){
+    if(original.display)node.style.setProperty('display',original.display,original.priority);
+    else node.style.removeProperty('display');
+    if(original.aria===null)node.removeAttribute('aria-hidden');
+    else node.setAttribute('aria-hidden',original.aria);
+   }
+   originalLegacy.clear();
   }
  };
+ // Az observer a későn beillesztett (pl. görgetési képváltó) gyermekeket
+ // is azonnal rejtés alá vonja, nem csak az első .brand-row sort.
+ const protectObserver=typeof MutationObserver==='function'
+  ?new MutationObserver(()=>{if(mq.matches)protectLegacy(true)}):null;
+ protectObserver?.observe(header,{childList:true});
  protectLegacy(mq.matches);
- // Egy később induló, régi fejlécmodul sem teheti újra láthatóvá a sort.
- // Csak a két érintett attribútumot figyeljük; desktopon nem avatkozunk be.
- if(legacyRow&&typeof MutationObserver==='function'){
-  new MutationObserver(()=>{if(mq.matches)protectLegacy(true)}).observe(legacyRow,
-   {attributes:true,attributeFilter:['style','aria-hidden']});
- }
  const shell=make('div','cs-mb-shell');shell.id='cs-mobile-rebuild';
  const label=make('div','cs-mb-school-title');
  label.append(make('strong','','CSANÁDI ÁRPÁD SPORTISKOLA'),
@@ -77,11 +84,9 @@ export function initFreshMobileShell(){
  const left=make('nav','cs-mb-left');left.setAttribute('aria-label','Iskolai külső hivatkozások');
  const socials=make('div','cs-mb-socials');
  const kreta=socialAnchor({label:'KRÉTA – elektronikus napló',
-  url:'https://klik200346001.e-kreta.hu/',glyph:'KRÉTA'});
- // M18.1: a három külső link nem férhet el két 44px-es ikon mellett
- // a keskeny fél fejlécben. A KRÉTA külön, középre rendezett teljes sor.
- kreta.classList.add('cs-mb-kreta');left.append(socials);
- const kretaRow=make('div','cs-mb-kreta-line');kretaRow.append(kreta);
+  url:'https://klik200346001.e-kreta.hu/',glyph:'K'});
+ // Mobilon a KRÉTA kizárólag ikonos, a teljes felirat az elérhető névben marad.
+ kreta.classList.add('cs-mb-kreta');left.append(socials,kreta);
  const crest=make('button','cs-mb-crest');crest.type='button';crest.id='cs-mb-menu';
  crest.setAttribute('aria-label','Főmenü megnyitása');crest.setAttribute('aria-haspopup','dialog');
  crest.setAttribute('aria-controls','site-map-overlay');crest.setAttribute('aria-expanded','false');
@@ -93,7 +98,7 @@ export function initFreshMobileShell(){
  const theme=make('button','cs-mb-tool cs-mb-theme','◐');theme.type='button';
  theme.setAttribute('aria-label','Világos, sötét vagy automatikus megjelenés');
  theme.title='Megjelenési mód váltása';right.append(search,theme);
- bar.append(left,crest,right,kretaRow);
+ bar.append(left,crest,right);
  const subtitle=make('div','cs-mb-motto','SPORT · TUDÁS · KÖZÖSSÉG');
  const progress=make('div','cs-mb-progress');progress.setAttribute('aria-hidden','true');
  progress.append(make('span','cs-mb-progress-fill'));
