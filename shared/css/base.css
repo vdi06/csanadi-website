@@ -141,27 +141,6 @@ img { max-width: 100%; }
 }
 .shell-crest-toggle { border-radius: 50%; border-width: 2px; }
 .shell-crest { display:block; width: 86%; height:86%; object-fit:contain; background:transparent; }
-.shell-panel {
-  width: min(100%, 650px); margin: 12px auto 0; padding: 15px;
-  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
-  border-radius: 16px; background: var(--surface);
-  box-shadow: 0 12px 32px rgba(0,0,0,.17);
-}
-.shell-panel[hidden] { display: none !important; }
-.shell-nav-link, .shell-search-result {
-  display:block; padding: 10px 13px; border-radius: 9px;
-  text-decoration:none; color:var(--text); line-height:1.4; min-height:44px;
-}
-.shell-nav-link:hover, .shell-search-result:hover {
-  background:color-mix(in srgb,var(--accent) 16%,var(--surface));
-}
-.shell-search-input {
-  width:100%; min-height:46px; padding:10px 12px;
-  border:1px solid var(--accent); border-radius:10px;
-  color:var(--text); background:var(--background); font:inherit;
-}
-.shell-search-results { display:grid; gap:3px; padding-top:10px; }
-.shell-search-results p { margin:8px 0; color:var(--muted); }
 .site-footer {
   border-top: 2px solid color-mix(in srgb,var(--accent) 70%,transparent);
   background:color-mix(in srgb,var(--surface) 72%,var(--background)); color:var(--text);

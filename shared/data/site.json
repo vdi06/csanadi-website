@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "2.05",
-  "release": "2.05",
+  "schemaVersion": "2.06",
+  "release": "2.06",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -33,18 +33,18 @@
       "schoolLine2": "ÁLTALÁNOS ISKOLA ÉS GIMNÁZIUM",
       "motto": "SPORT · TUDÁS · KÖZÖSSÉG",
       "socialLabel": "Közösségi és külső hivatkozások",
+      "navigationLabel": "Főoldali navigáció",
+      "menuTitle": "Főmenü",
       "menuOpenLabel": "Főmenü megnyitása",
       "menuCloseLabel": "Főmenü bezárása",
       "searchOpenLabel": "Keresés megnyitása",
       "searchCloseLabel": "Keresés bezárása",
+      "searchTitle": "Keresés",
+      "closeSymbol": "×",
       "searchPlaceholder": "Keresés az elérhető hivatkozások között",
       "searchNoResults": "Nincs találat az aktív menüpontok között.",
       "searchGlyph": "⌕",
-      "themeGlyph": "◐",
-      "lightThemeGlyph": "☀",
       "themeLabel": "Megjelenés váltása",
-      "lightThemeLabel": "világos",
-      "darkThemeLabel": "sötét",
       "social": [
         { "label": "Facebook – Csanádi Sportiskola", "icon": "facebook", "url": "https://www.facebook.com/csanadiiskola" },
         { "label": "Instagram – Csanádi Sportiskola", "icon": "instagram", "url": "https://www.instagram.com/_csanadi_/?hl=hu" },
@@ -65,7 +65,11 @@
     }
   },
   "appearance": {
-    "defaultMode": "dark",
+    "defaultMode": "auto",
+    "cycle": ["auto", "light", "dark"],
+    "labels": { "auto": "Automatikus", "light": "Világos", "dark": "Sötét" },
+    "glyphs": { "auto": "◐", "light": "☀", "dark": "☾" },
+    "storageKey": "csanadi-theme-mode-206",
     "light": {
       "background": "#f5f0e5",
       "surface": "#ffffff",

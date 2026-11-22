@@ -1,7 +1,7 @@
 /** Egyetlen belépési pont: kapu (#/) és egyetlen kezdőlap (#/kezdolap). */
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
-const settingsUrl = new URL("../shared/data/site.json", import.meta.url);
+const settingsUrl = new URL("../data/site.json", import.meta.url);
 let config;
 let destroyCurrent = () => {};
 let serial = 0;
@@ -46,7 +46,7 @@ async function render() {
     stylesheet.addEventListener("error", () => reject(new Error("A platformstílus nem tölthető be.")), { once: true });
   });
   document.head.append(stylesheet);
-  const module = await import(`../${platform}/app.js`);
+  const module = await import(`../../${platform}/app.js`);
   await loaded;
   if (version !== serial) { stylesheet.remove(); return; }
   document.querySelectorAll("link[data-platform-style]").forEach((node) => {
@@ -62,7 +62,7 @@ async function start() {
     const response = await fetch(settingsUrl);
     if (!response.ok) throw new Error(`Hiányzó JSON: ${response.status}`);
     config = await response.json();
-    if (config.schemaVersion !== "2.05" || config.gate.frames !== 30) {
+    if (config.schemaVersion !== "2.06" || config.gate.frames !== 30) {
       throw new Error("A kapu JSON-beállításai hibásak.");
     }
     document.title = config.site.fullName;

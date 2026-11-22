@@ -1,6 +1,7 @@
 import { element } from "../shared/js/dom.js";
 import { mountGate } from "../shared/js/gate.js";
-import { makeFooter, makeHeaderTools } from "../shared/js/shell.js";
+import { makeFooter } from "../shared/js/shell.js";
+import { makeDesktopHeader } from "./header.js";
 
 /** Önálló asztali nézet: a középső tartalom nem aktív és nem renderelődik. */
 export function mount(root, config, page) {
@@ -11,25 +12,10 @@ export function mount(root, config, page) {
   }
 
   const home = element("div", { className: "desktop-home" });
-  const tools = makeHeaderTools(config, "desktop", home);
-  const header = element("header", { className: "desktop-header" },
-    element("a", { className: "home-brand desktop-brand", attributes: {
-      href: config.routes.home, "aria-label": config.site.fullName
-    } },
-      element("strong", { text: config.home.header.schoolLine1 }),
-      element("small", { text: config.home.header.schoolLine2 })),
-    element("div", { className: "desktop-toolbar" },
-      element("nav", { className: "desktop-links-left", attributes: {
-        "aria-label": config.home.header.socialLabel
-      } }, ...tools.socials),
-      tools.crestToggle,
-      element("div", { className: "desktop-links-right" }, tools.searchToggle, tools.themeToggle)),
-    element("p", { className: "desktop-motto", text: config.home.header.motto }),
-    tools.menuPanel,
-    tools.searchPanel);
-  home.append(header,
+  const desktopHeader = makeDesktopHeader(config, home);
+  home.append(desktopHeader.header,
     element("main", { className: "desktop-main", attributes: { id: "content" } }),
     makeFooter(config, "desktop"));
   platformRoot.replaceChildren(home);
-  return () => {};
+  return desktopHeader.destroy;
 }

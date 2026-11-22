@@ -1,69 +1,92 @@
-# Csanádi 2.05 – simább kapuzárás és két valódi főoldali sáv
+# Csanádi 2.06 – valóban külön mobilos és asztali fejléc
 
-**Nem publikált fejlesztési ZIP.** A 2.04-es kiadás és az 1.53-as referencia
-változatlanul külön megmaradt.
+Ez **nem publikált**, önállóan kipróbálható kiadás. A 2.05-ös eredeti ZIP
+változatlan marad.
 
-## A kapu
+## Egyetlen HTML, közös adatok, külön megjelenítők
 
-- Megmaradt a 30-30 mobilos és asztali WebP-fázis: 9 eredeti fotó és
-  21 interpolált köztes fázis minden felületen.
-- Megmaradt a dekódolás előtti várakozás és a szomszédos képeknek a
-  kijelzőfrissítéssel együtt számolt, folyamatos kompozitálása.
-- A kapu arany, térhatású körvonala és hover/fókusz fényhatása változatlan.
-- A nyitás legvégén a teljesen nyitott kapuképet **18 px-es elmosás** és
-  **620 ms-os sötétbe áttűnés** takarja el fokozatosan. A céloldal ezzel
-  megegyező háttérből lép elő 480 ms alatt. Mindez JSON-beállítás.
-- A kihagyásgomb továbbra is azonnal a kezdőlapra lép; a mozgáscsökkentési
-  beállítást tiszteletben tartjuk.
+Az egyetlen HTML az `index.html`, amely sem iskolai adatot, sem
+oldaltartalmat nem tartalmaz. Csak az alkalmazásgyökér és a közös
+belépési modul hivatkozása van benne.
 
-## A főoldal – kizárólag két aktív rész
+```text
+index.html
+shared/
+  data/site.json            – minden megjelenő szöveg, URL és módbeállítás
+  js/entry.js               – platformválasztás és útvonal
+  js/appearance.js          – három mód állapota, rendszerbeállítás figyelése
+  js/shell.js               – kizárólag közös ikon/linkadatok és lábléc
+  js/gate.js                – közös kapuanimáció
+  css/base.css              – közös alapstílusok
+  assets/...                – 60 WebP kapufázis és címer
+mobile/
+  app.js                    – csak mobilos oldalösszeállítás
+  header.js                 – saját mobilfejléc, környezetfüggetlen menü és kereső
+  styles.css                – mobilos elrendezés, teljes képernyős felületek
+desktop/
+  app.js                    – csak asztali oldalösszeállítás
+  header.js                 – saját asztali fejléc és kereső
+  styles.css                – asztali elrendezés és lebegő kereső
+```
 
-1. **Felső menüsor:** a régi változatból visszavett kétsoros intézménynév,
-   három hivatalos külső hivatkozás (Facebook, Instagram, KRÉTA), középre
-   igazított címeres menügomb, működő keresés és sötét/világos váltó,
-   valamint a „SPORT · TUDÁS · KÖZÖSSÉG” jelmondat. A Facebook és az
-   Instagram ikonja önálló SVG, nem betűkészlettől függő jel.
-2. **Alsó lábléc:** a régi `site-shell.json` szerinti intézménynév,
-   cím és e-mail-cím, továbbá kizárólag a már működő két útvonalhoz vezető
-   „Főoldal” és „Vissza a kapuhoz” hivatkozás.
+A `mobile/header.js` **nem importálja** az asztali fejlécet, és
+a `desktop/header.js` sem importál mobilos fejléckódot. Nincs közös
+fejlécépítő függvény, csak újrafelhasználható adat- és állapotsegéd.
 
-A két sáv **teljesen külön mobilos és asztali CSS-elrendezésben** épül fel,
-egyetlen adatvezérelt vezérlőlogikát és közös médiamappát használva.
+## A két fejléc nem ugyanaz
 
-Nincsenek még főoldali kártyák, hero, nagyméretű fotó, képváltó,
-aloldalak, dokumentumok, mobilos alsó navigáció, régi menürendszer vagy
-nem működő aloldal-hivatkozások. A főoldal `main` eleme szándékosan üres.
+| Mobil | Asztali |
+|---|---|
+| Középre rendezett kétsoros intézménynév | Balra rendezett intézménynév |
+| 3 külső ikon – címer – 2 művelet | Külön felső, vízszintes főnavigáció |
+| A címer egy teljes képernyős menüt nyit | A címer főoldali hivatkozás, nincs mobilmenü |
+| Teljes képernyős mobilkereső | Középre helyezett, 94vw × 90dvh méretű lebegő kereső |
+| Teljes képernyős áttetsző háttér, 22px blur | Lebegő panel mögött áttetsző háttér, 25px blur |
 
-## Működő funkciók
+Mindkét kereső ténylegesen csak a már működő menüpontok, a három
+külső hivatkozás és a kapcsolat e-mail-címe között keres. Későbbi
+aloldalakat nem ígér és nem jelenít meg.
 
-- A címergomb megnyitja és bezárja a két aktív útvonal menüjét.
-- A keresés kizárólag az aktív menüpontok, külső iskolai hivatkozások
-  és az e-mail-elérhetőség között keres; nem állítja, hogy 63 aloldalt keres.
-- A megjelenésváltó ténylegesen módosítja a főoldal színváltozóit;
-  a kapu nyitóképernyőjét nem színezi át.
-- A külső linkek új ablakban, biztonságos attribútumokkal nyílnak.
-- A rejtett menü és keresés nem vesz részt a navigációban; Escape visszaadja
-  a billentyűfókuszt a megfelelő gombnak.
+## Megjelenésválasztó – három valós állapot
 
-## Ellenőrzés – 2026. november 22.
+- **Automatikus (alapértelmezett):** `prefers-color-scheme` alapján
+  világos/sötét; az operációs rendszer módváltását élőben is követi.
+- **Világos:** kifejezetten világos paletta az oldal saját felületén.
+- **Sötét:** kifejezetten sötét paletta.
 
-Az önálló teszt: `node tools/test.mjs` a kibontott mappában.
+A sorrend Automatikus → Világos → Sötét → Automatikus.
+A kézi választást a böngésző helyi tárhelyén megőrzi, amennyiben az
+elérhető; tiltott tárhelynél is működik az aktuális oldalon.
+A kapunyitó kép színeit és aranykeretét nem módosítja.
 
-**Kódból és DOM-szimulációban sikeres:** 60 különböző WebP; JSON-verzió;
-adatmentes HTML; kapuanimáció és látható képpár; a nyitás végének időzítése;
-hibás kép melletti tartalék; csökkentett mozgás; mobil és asztali fejléc,
-lábléc és üres középrész; menü, keresés, témaváltó; fókuszátadás;
-platformváltás és egyetlen aktív platform-stíluslap.
+## Mi maradt még?
 
-**Kódból ellenőrzött CSS-geometria:** a kapu hét képernyőméreten középen
-marad, a mobilos eszközsáv közepén fix szélességű a címer, balra 3, jobbra 2
-azonos magasságú ikon; az asztali eszközsáv ugyanígy külön nagyobb méretezést
-kap. A mobilos eszközsáv 280–767 px között nyolc szélességnél számolva
-is elfér. A lábléc a rugalmas főoldali tér aljára igazodik.
+- Az eredeti kapu, 30 különböző mozgásfázis platformonként, 18px-es
+  végső lágyítás és 620ms-os áttűnés.
+- A kizárólag megengedett lábléc a régi kapcsolatadatokkal és két
+  ténylegesen működő belső hivatkozással.
+- A főoldal `main` eleme szándékosan üres.
 
-**Még nem igazolt:** valódi böngészős megjelenés és animációminőség,
-érintés iPhone-on és Androidon. A futtatókörnyezet megakadályozta a
-Chromium elindítását. A kész ZIP emiatt felhasználói vizuális
-jóváhagyást igényel, mielőtt élesítésre kerülhet.
+Nincs képváltó, hero, nagy fotó, kártya, galéria, más aloldal,
+mobilos alsó navigáció vagy elavult modul.
 
-GitHubra és FTP-re nem történt feltöltés.
+## Kódellenőrzés
+
+`node tools/test.mjs` a kibontott mappában:
+
+- az egyetlen HTML és a platformfájlok pontos készlete;
+- a 60 WebP és a JSON-séma;
+- külön mobilos/asztali fejlécszerkezet és hiányzó keresztimportok;
+- mobilmenü, asztali főnavigáció, külön kereső, Escape, fókusz;
+- az automatikus, világos és sötét állapot, az OS-változás követése,
+  a választás megőrzése és az eseménykezelők felszabadítása;
+- a kapuanimáció, hibás képkocka, kihagyás, útvonal és platformváltás;
+- méret- és elhelyezésellenőrzések több kijelzőszélességnél.
+
+**Fontos korlát:** ez a futtatókörnyezet a Chromiumot nem tudta
+elindítani, ezért a tényleges mobilos és asztali megjelenést, az iOS
+blur teljesítményét és az animáció vizuális minőségét az átadás után
+még külön meg kell nézni. A kódteszt nem egyenértékű egy valódi
+böngészős látványteszttel.
+
+GitHubra és FTP-re semmi nem került feltöltésre.
