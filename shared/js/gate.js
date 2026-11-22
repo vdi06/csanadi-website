@@ -103,6 +103,7 @@ export function mountGate(root, config, platform, enter) {
   const duration = platform === "mobile" ? settings.mobileDurationMs : settings.desktopDurationMs;
   screen.style.setProperty("--opening-duration", `${duration}ms`);
   screen.style.setProperty("--finish-duration", `${settings.finishFadeMs}ms`);
+  screen.style.setProperty("--finish-blur", `${settings.finishBlurPx}px`);
   root.replaceChildren(screen);
 
   // 30 képfázis között is folyamatosan, a kijelző képfrissítéséhez igazodva

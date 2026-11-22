@@ -1,69 +1,69 @@
-# Csanádi 2.04 – 30 képfázisos kapunyitás
+# Csanádi 2.05 – simább kapuzárás és két valódi főoldali sáv
 
-Ez a 2.03-as, külön megőrzött tiszta alap következő, **nem publikált** kiadása.
+**Nem publikált fejlesztési ZIP.** A 2.04-es kiadás és az 1.53-as referencia
+változatlanul külön megmaradt.
 
-## Pontosan mi változott?
+## A kapu
 
-- A korábbi **9 eredeti, a Csanádi homlokzatát ábrázoló képkockából**
-  mozgáskövető közteskép-számítással **30 egymástól különböző képfázis** készült,
-  külön 1600 × 900-as asztali és 800 × 450-es mobil WebP-sorozatban.
-  Ez **nem 30 külön készített fénykép**: a 21 köztes állapot az eredeti
-  képsorozatból számított kép. Az első és az utolsó kép pontosan az eredeti.
-- A korábbi, egész képenként hirtelen váltó megoldást az **1.53-as verzió
-  eredeti dekódolás-előtti várakozása és szomszédos képek folyamatos
-  kompozitálása** váltotta fel. A CSS-ből kikerült a képkockák külön
-  160 ms-os opacity-áttűnése, amely versenyzett a képcserével.
-- A valódi fotókhoz illeszkedő, *finom* közeledő mozgás, címermozgás és
-  felirathalványítás az eredeti 1.53-as animáció elvét követi.
-- A 30. (teljesen nyitott) kapukép fokozatosan a közös sötét háttérbe úszik;
-  a külön kezdőlap ebből a háttérből jelenik meg, ezért nincs közvetlen
-  fotócsere a nyitás végén. Az időtartamok mind JSON-adatok.
-- A korábban külön jóváhagyott arany, térhatású kapukörvonal és egérfény
-  **változatlanul megmaradt**, csak a nyitás animációját korszerűsítettük.
+- Megmaradt a 30-30 mobilos és asztali WebP-fázis: 9 eredeti fotó és
+  21 interpolált köztes fázis minden felületen.
+- Megmaradt a dekódolás előtti várakozás és a szomszédos képeknek a
+  kijelzőfrissítéssel együtt számolt, folyamatos kompozitálása.
+- A kapu arany, térhatású körvonala és hover/fókusz fényhatása változatlan.
+- A nyitás legvégén a teljesen nyitott kapuképet **18 px-es elmosás** és
+  **620 ms-os sötétbe áttűnés** takarja el fokozatosan. A céloldal ezzel
+  megegyező háttérből lép elő 480 ms alatt. Mindez JSON-beállítás.
+- A kihagyásgomb továbbra is azonnal a kezdőlapra lép; a mozgáscsökkentési
+  beállítást tiszteletben tartjuk.
 
-## Mit tartalmaz a ZIP?
+## A főoldal – kizárólag két aktív rész
 
-- A tartalmat nélkülöző közös `index.html`, egy közös kapumodul és JSON.
-- Egy mobil és egy asztali megjelenítő, külön saját CSS-sel és JS-sel.
-- A közös médiamappában 30 mobilos és 30 asztali WebP, valamint a címer.
-- Pontosan két aktív állapot: a kapu és az egyetlen, címeres kezdőlap.
-- A kapufelirat és az eredeti ⏭ kihagyásgomb; a kezdőlap visszalépő linkje.
+1. **Felső menüsor:** a régi változatból visszavett kétsoros intézménynév,
+   három hivatalos külső hivatkozás (Facebook, Instagram, KRÉTA), középre
+   igazított címeres menügomb, működő keresés és sötét/világos váltó,
+   valamint a „SPORT · TUDÁS · KÖZÖSSÉG” jelmondat. A Facebook és az
+   Instagram ikonja önálló SVG, nem betűkészlettől függő jel.
+2. **Alsó lábléc:** a régi `site-shell.json` szerinti intézménynév,
+   cím és e-mail-cím, továbbá kizárólag a már működő két útvonalhoz vezető
+   „Főoldal” és „Vissza a kapuhoz” hivatkozás.
 
-**Nincs benne** külön fejléc, menü, dokumentumtár, galéria, további aloldal,
-régi modul vagy külön választófelület. Sem FTP-re, sem GitHubra nem történt feltöltés.
+A két sáv **teljesen külön mobilos és asztali CSS-elrendezésben** épül fel,
+egyetlen adatvezérelt vezérlőlogikát és közös médiamappát használva.
 
-## Újraellenőrzés
+Nincsenek még főoldali kártyák, hero, nagyméretű fotó, képváltó,
+aloldalak, dokumentumok, mobilos alsó navigáció, régi menürendszer vagy
+nem működő aloldal-hivatkozások. A főoldal `main` eleme szándékosan üres.
 
-A ZIP gyökerében: `node tools/test.mjs`.
+## Működő funkciók
 
-Az ellenőrzések:
+- A címergomb megnyitja és bezárja a két aktív útvonal menüjét.
+- A keresés kizárólag az aktív menüpontok, külső iskolai hivatkozások
+  és az e-mail-elérhetőség között keres; nem állítja, hogy 63 aloldalt keres.
+- A megjelenésváltó ténylegesen módosítja a főoldal színváltozóit;
+  a kapu nyitóképernyőjét nem színezi át.
+- A külső linkek új ablakban, biztonságos attribútumokkal nyílnak.
+- A rejtett menü és keresés nem vesz részt a navigációban; Escape visszaadja
+  a billentyűfókuszt a megfelelő gombnak.
 
-1. Fájlok teljes és zárt készlete: nem kerülhet be véletlen régi aloldal.
-2. Mind a 60 WebP fejléce és eltérő SHA-256-azonosítója.
-3. A 30 fájl megfelelő mobilos/asztali útvonala és betöltési szerkezete.
-4. Kapukattintás: **a 30 fotó dekódolásának befejezéséig** nem indul animáció.
-5. A 15. és 16. képfázis között valódi, félátlátszó képpár jelenik meg;
-   a többi képkocka ki van kapcsolva.
-6. A záróképet az átmenet végéig megtartjuk; csak ezután vált útvonalat.
-7. Kihagyásgomb, duplakattintás-védelem, mozgáscsökkentés, kezdőlap,
-   visszalépés, fókuszátadás, breakpoint- és platform-CSS-váltás.
-8. Kapugeometria hét különböző képernyőméreten, külön hover-körvonal.
-9. Sérült fotó szimulálása: asztalon a mobilos változat a tartalék;
-   mobilon a működő szomszédos képkocka marad látható.
+## Ellenőrzés – 2026. november 22.
 
-## Eredmény – 2026. november 22.
+Az önálló teszt: `node tools/test.mjs` a kibontott mappában.
 
-- **Sikeres:** valamennyi felsorolt kód-, adat-, képfájl- és DOM-teszt.
-- **Sikeres:** a sötét köztes háttér és az utolsó kép időzítésének tesztje.
-- **Sikeres:** a szomszédos WebP-k mért legnagyobb normalizált
-  képpont-eltérése asztalon 2,31%, mobilon 1,89% (RMSE). Ez képi
-  folytonossági mérés, nem animációs látványteszt.
-- **Képi mintavétellel ellenőrizve:** az interpolált nyitás köztes és utolsó
-  képei, változatlan homlokzati geometria. Az egész animáció esztétikai
-  minősége ebből még nem bizonyítható.
-- **Nem igazolt:** a teljes animáció tényleges Chromium/Safari megjelenése,
-  eszközteljesítménye és színátmenete. A futtatókörnyezet a Chromiumot
-  blokkolta; valódi iPhone/Android sem volt elérhető.
+**Kódból és DOM-szimulációban sikeres:** 60 különböző WebP; JSON-verzió;
+adatmentes HTML; kapuanimáció és látható képpár; a nyitás végének időzítése;
+hibás kép melletti tartalék; csökkentett mozgás; mobil és asztali fejléc,
+lábléc és üres középrész; menü, keresés, témaváltó; fókuszátadás;
+platformváltás és egyetlen aktív platform-stíluslap.
 
-A **2.04 is külön végső vizuális jóváhagyásra vár**; a kódtesztek
-nem helyettesítik a telefonos és számítógépes megtekintést.
+**Kódból ellenőrzött CSS-geometria:** a kapu hét képernyőméreten középen
+marad, a mobilos eszközsáv közepén fix szélességű a címer, balra 3, jobbra 2
+azonos magasságú ikon; az asztali eszközsáv ugyanígy külön nagyobb méretezést
+kap. A mobilos eszközsáv 280–767 px között nyolc szélességnél számolva
+is elfér. A lábléc a rugalmas főoldali tér aljára igazodik.
+
+**Még nem igazolt:** valódi böngészős megjelenés és animációminőség,
+érintés iPhone-on és Androidon. A futtatókörnyezet megakadályozta a
+Chromium elindítását. A kész ZIP emiatt felhasználói vizuális
+jóváhagyást igényel, mielőtt élesítésre kerülhet.
+
+GitHubra és FTP-re nem történt feltöltés.

@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "2.04",
-  "release": "2.04",
+  "schemaVersion": "2.05",
+  "release": "2.05",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -23,12 +23,56 @@
     "extension": ".webp",
     "desktopDurationMs": 2250,
     "mobileDurationMs": 1750,
-    "finishFadeMs": 380,
-    "homeRevealMs": 420
+    "finishFadeMs": 620,
+    "finishBlurPx": 18,
+    "homeRevealMs": 480
   },
   "home": {
-    "title": "Üdvözlünk a Csanádiban",
-    "backLabel": "Vissza a kapuhoz"
+    "header": {
+      "schoolLine1": "CSANÁDI ÁRPÁD SPORTISKOLA",
+      "schoolLine2": "ÁLTALÁNOS ISKOLA ÉS GIMNÁZIUM",
+      "motto": "SPORT · TUDÁS · KÖZÖSSÉG",
+      "socialLabel": "Közösségi és külső hivatkozások",
+      "menuOpenLabel": "Főmenü megnyitása",
+      "menuCloseLabel": "Főmenü bezárása",
+      "searchOpenLabel": "Keresés megnyitása",
+      "searchCloseLabel": "Keresés bezárása",
+      "searchPlaceholder": "Keresés az elérhető hivatkozások között",
+      "searchNoResults": "Nincs találat az aktív menüpontok között.",
+      "searchGlyph": "⌕",
+      "themeGlyph": "◐",
+      "lightThemeGlyph": "☀",
+      "themeLabel": "Megjelenés váltása",
+      "lightThemeLabel": "világos",
+      "darkThemeLabel": "sötét",
+      "social": [
+        { "label": "Facebook – Csanádi Sportiskola", "icon": "facebook", "url": "https://www.facebook.com/csanadiiskola" },
+        { "label": "Instagram – Csanádi Sportiskola", "icon": "instagram", "url": "https://www.instagram.com/_csanadi_/?hl=hu" },
+        { "label": "KRÉTA – elektronikus napló", "icon": "kreta", "glyph": "K", "url": "https://klik200346001.e-kreta.hu/" }
+      ]
+    },
+    "navigation": [
+      { "label": "Főoldal", "href": "#/kezdolap" },
+      { "label": "Vissza a kapuhoz", "href": "#/" }
+    ],
+    "footer": {
+      "brand": "CSANÁDI",
+      "year": "2026",
+      "address": "1143 Budapest, Őrnagy utca 5–7.",
+      "email": "csanadi@csanadiiskola.hu",
+      "contactTitle": "Kapcsolat",
+      "linksTitle": "Tájékoztatás"
+    }
+  },
+  "appearance": {
+    "defaultMode": "dark",
+    "light": {
+      "background": "#f5f0e5",
+      "surface": "#ffffff",
+      "text": "#142b40",
+      "muted": "#465c6d",
+      "accent": "#946b2a"
+    }
   },
   "theme": {
     "background": "#071b2f",

@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const staticFiles = [
   "index.html", "js/entry.js", "shared/data/site.json", "shared/js/dom.js",
-  "shared/js/gate.js", "shared/css/base.css",
+  "shared/js/gate.js", "shared/js/shell.js", "shared/css/base.css",
   "shared/assets/media/logo/csanadi-crest-512.webp",
   "mobile/app.js", "mobile/styles.css", "desktop/app.js", "desktop/styles.css",
   "tools/test.mjs", "docs/ELLENORZES.md"
@@ -28,7 +28,7 @@ function files(directory) {
 }
 assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths].sort(), "Semmilyen régi funkció nem kerülhet az aktív csomagba.");
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
-assert.equal(config.schemaVersion, "2.04");
+assert.equal(config.schemaVersion, "2.05");
 assert.equal(config.gate.skipSymbol, "⏭");
 assert.ok(!Object.hasOwn(config.gate, "desktopHint") && !Object.hasOwn(config.gate, "mobileHint"));
 assert.deepEqual(config.routes, { gate: "#/", home: "#/kezdolap" });
@@ -36,6 +36,10 @@ assert.equal(config.gate.frames, 30);
 assert.equal(config.gate.desktopDurationMs, 2250);
 assert.equal(config.gate.mobileDurationMs, 1750);
 assert.ok(config.gate.finishFadeMs > 0 && config.gate.homeRevealMs > 0);
+assert.equal(config.gate.finishBlurPx, 18);
+assert.equal(config.home.header.social.length, 3);
+assert.equal(config.home.navigation.length, 2);
+assert.ok(config.home.footer.email.includes("@"));
 const frameHashes = new Set();
 for (const file of assetPaths) {
   const buffer = readFileSync(join(root, file));
@@ -52,13 +56,13 @@ assert.equal(createHash("sha256").update(crest).digest("hex"),
 const html = readFileSync(join(root, "index.html"), "utf8");
 assert.match(html, /<div id="app"><\/div>/);
 assert.doesNotMatch(html, /<h[1-6]|<p[ >]|<nav|<article|<img/i);
-const src = ["js/entry.js", "shared/js/dom.js", "shared/js/gate.js", "mobile/app.js", "desktop/app.js"]
+const src = ["js/entry.js", "shared/js/dom.js", "shared/js/gate.js", "shared/js/shell.js", "mobile/app.js", "desktop/app.js"]
   .map((path) => readFileSync(join(root, path), "utf8"));
 for (const source of src) assert.doesNotMatch(source, /innerHTML|eval\s*\(|carousel|slideshow|fetch\([^)]*pages/i);
 assert.match(src[0], /import\(`\.\.\/\$\{platform\}\/app\.js`\)/);
 assert.match(src[0], /window\.addEventListener\("hashchange"/);
 assert.match(src[0], /breakpoint\.addEventListener\("change"/);
-console.log("✓ Kizárólag kapu és kezdőlap: 60 különböző WebP (30 mobil + 30 asztali), adatmentes HTML");
+console.log("✓ 30+30 eltérő kapukép, adatmentes HTML, csak fejléc és lábléc a főoldalon");
 
 let failDesktopFrame = false;
 let failMobileFrame = false;
@@ -87,7 +91,7 @@ class FakeNode {
   append(...children) { for (const child of children) { if (typeof child === "object") child.parentNode = this; this.children.push(child); } }
   replaceChildren(...children) { this.children = []; this.append(...children); }
   addEventListener(name, callback) { this.events.set(name, callback); }
-  emit(name) { this.events.get(name)?.(); }
+  emit(name, event) { this.events.get(name)?.(event); }
   remove() { if (this.parentNode) this.parentNode.children = this.parentNode.children.filter((node) => node !== this); }
   querySelector(selector) {
     return scan(this).find((node) => selector.startsWith(".")
@@ -159,15 +163,57 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
 
   app.mount(parent, config, "home");
   nodes = scan(parent);
+  assert.equal(nodes.filter((n) => n.tag === "header").length, 1);
   assert.equal(nodes.filter((n) => n.tag === "main").length, 1);
-  assert.equal(nodes.filter((n) => n.tag === "h1").length, 1);
-  assert.equal(nodes.find((n) => n.tag === "h1").textContent, config.home.title);
-  assert.equal(nodes.filter((n) => n.tag === "img").length, 1, "A kezdőlap kizárólag a címert mutatja.");
-  assert.equal(nodes.filter((n) => n.tag === "button").length, 0);
-  assert.equal(nodes.filter((n) => n.tag === "a").length, 1);
-  assert.equal(nodes.find((n) => n.tag === "a").attributes.href, config.routes.gate);
+  assert.equal(nodes.filter((n) => n.tag === "footer").length, 1);
+  assert.equal(nodes.find((n) => n.tag === "main").children.length, 0, "Még egyetlen középső blokk sem engedélyezett.");
+  assert.equal(nodes.filter((n) => n.tag === "h1" || n.tag === "section").length, 0);
+  assert.equal(nodes.filter((n) => n.tag === "img").length, 1, "Csak a fejléc címerképe engedélyezett.");
+  assert.equal(nodes.filter((n) => n.tag === "button").length, 3, "Csak a címer, a keresés és a témaváltó gombja létezhet.");
+  assert.equal(nodes.filter((n) => n.className?.includes(`${platform}-social`)).length, 3);
+  assert.equal(nodes.filter((n) => n.tag === "svg").length, 2, "A két közösségi ikon nem függhet betűkészlettől.");
+  assert.equal(nodes.filter((n) => n.tag === "path").length, 1, "A Facebook jelének SVG-ként kell megjelennie.");
+  assert.equal(nodes.filter((n) => n.className === "home-brand" || n.className?.includes("home-brand ")).length, 1);
+  const footer = nodes.find((n) => n.tag === "footer");
+  assert.equal(scan(footer).filter((n) => n.tag === "a").length, 3, "A láblécben kizárólag e-mail és 2 működő útvonal van.");
+  assert.ok(scan(footer).some((n) => n.textContent === config.home.footer.address));
+  const crestToggle = nodes.find((n) => n.className.includes("crest-toggle"));
+  const menuPanel = nodes.find((n) => n.className.includes("menu-panel"));
+  const searchToggle = nodes.find((n) => n.className.includes("search-toggle"));
+  const searchPanel = nodes.find((n) => n.className.includes("search-panel"));
+  const themeToggle = nodes.find((n) => n.className.includes("theme-toggle"));
+  assert.equal(menuPanel.hidden, true);
+  assert.equal(searchPanel.hidden, true);
+  crestToggle.emit("click");
+  assert.equal(menuPanel.hidden, false);
+  assert.equal(crestToggle.attributes["aria-expanded"], "true");
+  assert.equal(menuPanel.children.length, 2);
+  assert.deepEqual(menuPanel.children.map((a) => a.attributes.href),
+    config.home.navigation.map((item) => item.href));
+  menuPanel.emit("keydown", { key: "Escape", preventDefault: () => {} });
+  assert.equal(menuPanel.hidden, true);
+  assert.ok(crestToggle.focused);
+  searchToggle.emit("click");
+  assert.equal(searchPanel.hidden, false);
+  const searchInput = searchPanel.querySelector("input");
+  assert.ok(searchInput.focused);
+  searchInput.value = "kapu";
+  searchInput.emit("input");
+  assert.equal(searchPanel.querySelector(".shell-search-results").children.length, 1);
+  assert.equal(searchPanel.querySelector(".shell-search-results").children[0].attributes.href, config.routes.gate);
+  searchInput.value = "Facebook";
+  searchInput.emit("input");
+  assert.equal(searchPanel.querySelector(".shell-search-results").children[0].attributes.target, "_blank");
+  searchPanel.emit("keydown", { key: "Escape", preventDefault: () => {} });
+  assert.equal(searchPanel.hidden, true);
+  assert.ok(searchToggle.focused);
+  const homeNode = nodes.find((n) => n.className === `${platform}-home`);
+  themeToggle.emit("click");
+  assert.equal(homeNode.dataset.theme, "light");
+  themeToggle.emit("click");
+  assert.equal(homeNode.dataset.theme, "dark");
   assert.equal(nodes.filter((n) => n.className?.includes("gate-frame")).length, 0);
-  console.log(`✓ ${platform}: dekódolás, 30 fázis, félátlátszó képpár, sötét áttűnés, kezdőlap és visszaút`);
+  console.log(`✓ ${platform}: 30 képfázis, fejléc/lábléc, valódi menü, keresés, témaváltás, visszaút`);
 }
 
 // Hibás nagy felbontású fotó esetén a mobil változat szolgál tartalékként.
@@ -223,15 +269,34 @@ assert.match(block(baseCss, ".gate-glass-crest"), /width:\s*9\.1125%;/);
 assert.match(baseCss, /\.gate-stage:has\(\.gate-door-button:hover\) \.gate-outline/);
 assert.doesNotMatch(block(baseCss, ".gate-frame"), /transition:\s*opacity/);
 assert.match(block(baseCss, ".gate-screen::after"), /transition:\s*opacity/);
+assert.match(block(baseCss, ".gate-screen.is-finishing .gate-frames"), /filter:\s*blur/);
 assert.match(block(mobileCss, ".mobile-home"), /animation:\s*home-reveal/);
 assert.match(block(desktopCss, ".desktop-home"), /animation:\s*home-reveal/);
 assert.match(baseCss, /\.gate-bottom-bar/);
 assert.match(baseCss, /\.gate-school-name/);
 assert.doesNotMatch(baseCss, /\.gate-hint|\.gate-subtitle/);
-assert.match(block(mobileCss, ".mobile-home-content"), /align-items:\s*center;/);
-assert.match(block(mobileCss, ".mobile-home-content"), /gap:\s*24px;/);
-assert.match(block(desktopCss, ".desktop-home-content"), /gap:\s*32px;/);
-assert.match(block(desktopCss, ".desktop-home-content"), /width:\s*min\(100%,\s*920px\);/);
+assert.match(block(mobileCss, ".mobile-toolbar"), /grid-template-columns:\s*minmax\(0,1fr\) 58px minmax\(0,1fr\);/);
+assert.match(block(mobileCss, ".mobile-links-left"), /repeat\(3,minmax\(0,1fr\)\)/);
+assert.match(mobileCss, /\.mobile-links-right\s*\{\s*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+assert.match(block(desktopCss, ".desktop-toolbar"), /grid-template-columns:\s*minmax\(0,1fr\) 84px minmax\(0,1fr\);/);
+assert.match(block(desktopCss, ".desktop-footer .footer-inner"), /grid-template-columns:\s*minmax\(0,1\.7fr\) minmax\(230px,\.8fr\);/);
+assert.match(block(mobileCss, ".mobile-home"), /display:\s*flex;\s*flex-direction:\s*column;/);
+assert.match(block(mobileCss, ".mobile-main"), /flex:\s*1 1 auto;/);
+assert.match(block(desktopCss, ".desktop-main"), /flex:\s*1 1 auto;/);
+assert.match(block(mobileCss, ".mobile-brand"), /margin:\s*0 auto 14px;/);
+for (const width of [280, 320, 359, 375, 390, 430, 650, 767]) {
+  const compact = width <= 359;
+  const innerWidth = Math.min(650, width - (compact ? 14 : 20));
+  const center = compact ? 54 : 58;
+  const gap = compact ? 3 : 4;
+  const side = (innerWidth - center - 2 * gap) / 2;
+  const leftCell = (side - 2 * 3) / 3;
+  const rightCell = (side - 3) / 2;
+  assert.ok(leftCell >= 30 && rightCell >= 30, `${width}px: a fejléc elemei túlcsordulnának.`);
+  assert.ok(Math.abs((side + gap + center / 2) - innerWidth / 2) < .01,
+    `${width}px: a címer nem lenne középen.`);
+}
+console.log("✓ Fejlécgeometria: 8 mobil szélességen középre tett címer, 3+2 elférő vezérlő és lábléc-aljhoz igazítás");
 for (const [width, height] of [[320, 720], [375, 812], [390, 844], [430, 932], [768, 800], [1024, 768], [1440, 900]]) {
   const stageWidth = Math.max(width, height * 16 / 9);
   const left = (stageWidth * .42) - (stageWidth - width) / 2;
@@ -282,7 +347,7 @@ assert.equal(location.hash, config.routes.home);
 windowEvents.get("hashchange")();
 await nextTick();
 assert.equal(documentRoot.dataset.route, "home");
-assert.ok(applicationRoot.querySelector("h1").focused, "A kezdőlapra lépés után fókuszt kell átadni.");
+assert.ok(applicationRoot.querySelector(".home-brand").focused, "A kezdőlap fejlécére fókuszt kell átadni.");
 location.hash = config.routes.gate;
 windowEvents.get("hashchange")();
 await nextTick();
@@ -331,8 +396,10 @@ if (chromium) {
         assert.ok(before <= 1, `${width}px: vízszintes túllógás`);
         await page.locator(".gate-door-button").click();
         await page.waitForURL(/#\/kezdolap$/, { timeout: 7000 });
-        assert.equal(await page.locator(".home-return").count(), 1);
-        await page.locator(".home-return").click();
+        assert.equal(await page.locator("header").count(), 1);
+        assert.equal(await page.locator("footer").count(), 1);
+        assert.equal(await page.locator("main").locator(":scope > *").count(), 0);
+        await page.locator(".footer-links a").last().click();
         await page.waitForSelector(".gate-door-button");
         await page.close();
         console.log(`✓ ${width}px: élő kapunyitás, átmenet és visszalépés`);

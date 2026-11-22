@@ -22,11 +22,3 @@ export function crest(config, className = "school-crest") {
   } });
 }
 
-export function homeContent(config) {
-  return [
-    crest(config, "home-crest"),
-    element("h1", { text: config.home.title }),
-    element("a", { className: "home-return", text: config.home.backLabel,
-      attributes: { href: config.routes.gate } })
-  ];
-}

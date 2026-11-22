@@ -20,9 +20,8 @@ function mountView(platform, module, selectedRoute) {
   destroyCurrent = module.mount(root, config, selectedRoute) || (() => {});
   if (hasRendered) {
     const focusTarget = selectedRoute === "home"
-      ? root.querySelector("h1") : root.querySelector(".gate-door-button");
+      ? root.querySelector(".home-brand") : root.querySelector(".gate-door-button");
     if (focusTarget) {
-      if (selectedRoute === "home") focusTarget.tabIndex = -1;
       focusTarget.focus({ preventScroll: true });
     }
   }
@@ -63,7 +62,7 @@ async function start() {
     const response = await fetch(settingsUrl);
     if (!response.ok) throw new Error(`Hiányzó JSON: ${response.status}`);
     config = await response.json();
-    if (config.schemaVersion !== "2.04" || config.gate.frames !== 30) {
+    if (config.schemaVersion !== "2.05" || config.gate.frames !== 30) {
       throw new Error("A kapu JSON-beállításai hibásak.");
     }
     document.title = config.site.fullName;

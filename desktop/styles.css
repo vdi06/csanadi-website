@@ -1,19 +1,65 @@
-/* Az 1.53-as asztali kapufelirat; a céloldal külön asztali-layout. */
-.desktop-app { width: 100%; min-height: 100dvh; }
+/* Önálló asztali elrendezés: nincs mobilos sáv, üres központ vagy rejtett kártya. */
+.desktop-app { width:100%; min-height:100dvh; }
 .desktop-home {
-  min-height: 100dvh;
-  display: grid; place-items: center;
-  padding: 48px clamp(28px, 6vw, 90px);
-  background: radial-gradient(ellipse at 50% 10%, #224054, #102a3d 52%, #071b2f);
-  animation: home-reveal var(--home-reveal-duration, 420ms) ease-out both;
+  display:flex; flex-direction:column; min-height:100dvh; width:100%;
+  background: radial-gradient(ellipse at 50% 0%,
+    color-mix(in srgb,var(--background) 55%,var(--surface)),var(--background) 65%);
+  color:var(--text);
+  animation:home-reveal var(--home-reveal-duration,480ms) ease-out both;
 }
-.desktop-home-content {
-  width: min(100%, 920px);
-  display: flex; flex-direction: column; align-items: center;
-  gap: 32px; padding: clamp(44px, 6vw, 74px);
-  border: 1px solid rgba(219,183,114,.55);
-  border-radius: 30px; background: rgba(7,27,47,.44);
-  box-shadow: 0 28px 70px rgba(0,0,0,.2); text-align: center;
+.desktop-header {
+  position:relative; z-index:10; width:100%;
+  padding:22px clamp(24px,4vw,56px) 19px;
+  background:color-mix(in srgb,var(--background) 93%,transparent);
+  border-bottom:1px solid color-mix(in srgb,var(--accent) 42%,transparent);
 }
-.desktop-home-content .home-crest { width: clamp(150px, 13vw, 200px); }
-.desktop-home-content h1 { margin: 0; font-size: clamp(2.6rem, 4.5vw, 4.4rem); line-height: 1.1; }
+.desktop-brand { width:min(100%,860px); margin:0 auto 20px; line-height:1.2; }
+.desktop-brand strong {
+  font-size:clamp(20px,2.05vw,30px); font-weight:900; letter-spacing:.085em;
+}
+.desktop-brand small {
+  font-size:clamp(12px,1.16vw,17px); font-weight:760; letter-spacing:.06em;
+}
+.desktop-toolbar {
+  display:grid; grid-template-columns:minmax(0,1fr) 84px minmax(0,1fr);
+  align-items:center; gap:clamp(12px,2vw,30px);
+  width:min(100%,1120px); margin-inline:auto;
+}
+.desktop-links-left, .desktop-links-right {
+  display:flex; align-items:center; gap:clamp(8px,1vw,16px); min-width:0;
+}
+.desktop-links-left { justify-content:flex-end; }
+.desktop-links-right { justify-content:flex-start; }
+.desktop-toolbar .shell-tool {
+  flex:0 0 auto; width:clamp(54px,5.5vw,72px); height:56px;
+  font-size:24px; border-radius:16px;
+}
+.desktop-toolbar .shell-crest-toggle {
+  justify-self:center; width:84px; height:84px; min-height:84px;
+  padding:4px;
+}
+.desktop-motto {
+  margin:17px auto 0; color:var(--accent); text-align:center;
+  font-weight:900; letter-spacing:.19em; font-size:clamp(11px,.95vw,15px);
+}
+.desktop-header .shell-panel { max-width:680px; }
+.desktop-main { flex:1 1 auto; min-height:0; }
+.desktop-footer { padding:36px clamp(28px,5vw,70px) 42px; }
+.desktop-footer .footer-inner {
+  width:min(100%,1120px); display:grid;
+  grid-template-columns:minmax(0,1.7fr) minmax(230px,.8fr);
+  gap:clamp(28px,5vw,78px);
+  align-items:start; text-align:left;
+}
+.desktop-footer .footer-inner h2 { font-size:1.08rem; }
+.desktop-footer .footer-brand { font-size:1.22rem; }
+
+@media (min-width:768px) and (max-width:900px) {
+  .desktop-toolbar { grid-template-columns:minmax(0,1fr) 74px minmax(0,1fr); gap:10px; }
+  .desktop-toolbar .shell-tool { width:48px; height:50px; }
+  .desktop-toolbar .shell-crest-toggle { width:74px; height:74px; min-height:74px; }
+  .desktop-links-left, .desktop-links-right { gap:6px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .desktop-home { animation:none; }
+}
