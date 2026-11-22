@@ -28,7 +28,9 @@ function files(directory) {
 }
 assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths].sort(), "Semmilyen régi funkció nem kerülhet az aktív csomagba.");
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
-assert.equal(config.schemaVersion, "2.02");
+assert.equal(config.schemaVersion, "2.03");
+assert.equal(config.gate.skipSymbol, "⏭");
+assert.ok(!Object.hasOwn(config.gate, "desktopHint") && !Object.hasOwn(config.gate, "mobileHint"));
 assert.deepEqual(config.routes, { gate: "#/", home: "#/kezdolap" });
 assert.equal(config.gate.frames, 9);
 assert.ok(config.gate.desktopDurationMs > 0 && config.gate.mobileDurationMs > 0);
@@ -57,6 +59,7 @@ class FakeNode {
     this.tag = tag; this.children = []; this.attributes = {}; this.className = "";
     this.textContent = ""; this.events = new Map(); this.complete = true; this.naturalWidth = 1600;
     this.dataset = {}; this.parentNode = null;
+    this.style = { setProperty: (key, value) => { this.style[key] = value; } };
     this.classList = {
       add: (name) => { this.className = [...new Set([...this.className.split(/\s+/).filter(Boolean), name])].join(" "); },
       remove: (name) => { this.className = this.className.split(/\s+/).filter((value) => value !== name).join(" "); }
@@ -92,7 +95,9 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   const dispose = app.mount(parent, config, "gate");
   let nodes = scan(parent);
   assert.equal(nodes.filter((n) => n.tag === "main").length, 1);
-  assert.equal(nodes.filter((n) => n.tag === "button").length, 1);
+  assert.equal(nodes.filter((n) => n.tag === "button").length, 2);
+  assert.equal(nodes.filter((n) => n.tag === "p").length, 0, "A kapun nem lehet új magyarázó szöveg.");
+  assert.equal(nodes.find((n) => n.tag === "h1").textContent, config.site.gateCaption);
   assert.equal(nodes.filter((n) => n.tag === "img" && n.className.includes("gate-frame")).length, 9);
   assert.equal(nodes.filter((n) => n.tag === "svg").length, 1);
   assert.equal(nodes.filter((n) => n.tag === "ellipse" || n.tag === "rect").length, 0, "A címer mögött nem lehet ovális.");
@@ -101,8 +106,9 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
     const suffix = platform === "mobile" ? "-mobile" : "";
     assert.equal(images[i].attributes.src, `${config.gate.assetDirectory}gate-${String(i).padStart(2, "0")}${suffix}.webp`);
   }
-  const button = nodes.find((n) => n.tag === "button");
+  const button = nodes.find((n) => n.className === "gate-door-button");
   assert.equal(button.attributes["aria-label"], config.gate.actionLabel);
+  assert.equal(nodes.find((n) => n.className === "gate-skip").textContent, "⏭");
   button.emit("click");
   button.emit("click");
   assert.equal(button.disabled, true, "A kapu nyitás közben nem kattintható újra.");
@@ -116,6 +122,12 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.ok(images[8].className.includes("is-visible"), `${platform}: a kapu nem a nyitott képnél fejeződik be.`);
   dispose();
 
+  location.hash = config.routes.gate;
+  const skipDispose = app.mount(parent, config, "gate");
+  scan(parent).find((n) => n.className === "gate-skip").emit("click");
+  assert.equal(location.hash, config.routes.home, `${platform}: a régi kihagyásgomb nem működik.`);
+  skipDispose();
+
   app.mount(parent, config, "home");
   nodes = scan(parent);
   assert.equal(nodes.filter((n) => n.tag === "main").length, 1);
@@ -126,7 +138,7 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(nodes.filter((n) => n.tag === "a").length, 1);
   assert.equal(nodes.find((n) => n.tag === "a").attributes.href, config.routes.gate);
   assert.equal(nodes.filter((n) => n.className?.includes("gate-frame")).length, 0);
-  console.log(`✓ ${platform}: kapunyitás, 9 képkocka, kattintásvédelem, kezdőlap és visszaút`);
+  console.log(`✓ ${platform}: kapunyitás, kihagyásgomb, 9 képkocka, kezdőlap és visszaút`);
 }
 
 // Külön ellenőrzés: a mozgáscsökkentés azonnal a működő oldalra visz.
@@ -149,16 +161,21 @@ function block(css, selector) {
 }
 assert.match(block(baseCss, ".gate-stage"), /width:\s*max\(100vw,\s*177\.77778dvh\);/);
 assert.match(block(baseCss, ".gate-stage"), /aspect-ratio:\s*16\s*\/\s*9;/);
-assert.match(block(baseCss, ".gate-door-button"), /left:\s*41\.6%;\s*top:\s*33%;\s*width:\s*16\.8%;\s*height:\s*54%;/);
+assert.match(block(baseCss, ".gate-door-button"), /left:\s*50%;\s*top:\s*59\.6%;\s*width:\s*16%;\s*height:\s*53\.5%;/);
 assert.match(block(baseCss, ".gate-glass-crest"), /left:\s*50%;/);
+assert.match(block(baseCss, ".gate-glass-crest"), /width:\s*9\.1125%;/);
+assert.match(baseCss, /\.gate-stage:has\(\.gate-door-button:hover\) \.gate-outline/);
+assert.match(baseCss, /\.gate-bottom-bar/);
+assert.match(baseCss, /\.gate-school-name/);
+assert.doesNotMatch(baseCss, /\.gate-hint|\.gate-subtitle/);
 assert.match(block(mobileCss, ".mobile-home-content"), /align-items:\s*center;/);
-assert.match(block(mobileCss, ".mobile-home-content"), /gap:\s*19px;/);
-assert.match(block(desktopCss, ".desktop-home-content"), /gap:\s*24px;/);
+assert.match(block(mobileCss, ".mobile-home-content"), /gap:\s*24px;/);
+assert.match(block(desktopCss, ".desktop-home-content"), /gap:\s*32px;/);
 assert.match(block(desktopCss, ".desktop-home-content"), /width:\s*min\(100%,\s*920px\);/);
 for (const [width, height] of [[320, 720], [375, 812], [390, 844], [430, 932], [768, 800], [1024, 768], [1440, 900]]) {
   const stageWidth = Math.max(width, height * 16 / 9);
-  const left = (stageWidth * .416) - (stageWidth - width) / 2;
-  const right = (stageWidth * .584) - (stageWidth - width) / 2;
+  const left = (stageWidth * .42) - (stageWidth - width) / 2;
+  const right = (stageWidth * .58) - (stageWidth - width) / 2;
   assert.ok(left >= 0 && right <= width && right - left >= 44,
     `${width}×${height}: a kattintható kapu kívül kerülne a képernyőn.`);
   assert.ok(Math.abs((left + right) / 2 - width / 2) < 1);

@@ -25,10 +25,7 @@ export function crest(config, className = "school-crest") {
 export function homeContent(config) {
   return [
     crest(config, "home-crest"),
-    element("p", { className: "home-eyebrow", text: config.home.eyebrow }),
     element("h1", { text: config.home.title }),
-    element("p", { className: "home-description", text: config.home.description }),
-    element("p", { className: "home-motto", text: config.site.motto }),
     element("a", { className: "home-return", text: config.home.backLabel,
       attributes: { href: config.routes.gate } })
   ];

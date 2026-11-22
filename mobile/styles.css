@@ -1,8 +1,17 @@
-/* Mobil: a kapu középvonalát mutatjuk, a kezdőlapon semmi nagy nyitókép nincs. */
+/* Az 1.53-as mobil kapufelirat-arany és gombméret. A céloldal külön mobil-layout. */
 .mobile-app { width: 100%; min-height: 100dvh; }
-.mobile-app .gate-caption h1 { font-size: clamp(.93rem, 3.7vw, 1.3rem); }
-.mobile-app .gate-subtitle { font-size: clamp(.64rem, 2.5vw, .86rem); }
-.mobile-app .gate-hint { font-size: clamp(.8rem, 3vw, 1rem); margin-top: 13px; }
+.mobile-app .gate-bottom-bar {
+  height: clamp(124px, 22dvh, 182px);
+  padding: 18px 8px calc(18px + env(safe-area-inset-bottom));
+}
+.mobile-app .gate-bottom-copy { width: calc(100% - 88px); }
+.mobile-app .gate-school-name {
+  font-size: clamp(12px, 3.15vw, 16px);
+  line-height: 1.28; letter-spacing: .025em;
+}
+.mobile-app .gate-skip {
+  width: 40px; height: 40px; min-width: 40px; min-height: 40px; right: 10px;
+}
 .mobile-home {
   min-height: 100dvh;
   display: grid; place-items: center;
@@ -11,11 +20,7 @@
 }
 .mobile-home-content {
   display: flex; flex-direction: column; align-items: center;
-  gap: 19px; width: 100%; max-width: 520px;
-  text-align: center;
+  gap: 24px; width: 100%; max-width: 520px; text-align: center;
 }
 .mobile-home-content .home-crest { width: clamp(128px, 39vw, 186px); }
 .mobile-home-content h1 { margin: 0; max-width: 20ch; font-size: clamp(2.1rem, 8.5vw, 3.4rem); line-height: 1.12; }
-.mobile-home-content .home-eyebrow { font-size: .72rem; }
-.mobile-home-content .home-description { max-width: 34ch; font-size: 1.05rem; }
-.mobile-home-content .home-motto { font-size: .8rem; }

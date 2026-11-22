@@ -1,8 +1,5 @@
-/* Asztal: a teljes kapuhomlokzat megmarad, a kezdőlap külön, rendezett felület. */
+/* Az 1.53-as asztali kapufelirat; a céloldal külön asztali-layout. */
 .desktop-app { width: 100%; min-height: 100dvh; }
-.desktop-app .gate-caption h1 { font-size: clamp(1.2rem, 2.1vw, 2.1rem); }
-.desktop-app .gate-subtitle { font-size: clamp(.76rem, 1.12vw, 1.05rem); }
-.desktop-app .gate-hint { font-size: 1.08rem; margin-top: 16px; }
 .desktop-home {
   min-height: 100dvh;
   display: grid; place-items: center;
@@ -12,13 +9,10 @@
 .desktop-home-content {
   width: min(100%, 920px);
   display: flex; flex-direction: column; align-items: center;
-  gap: 24px; padding: clamp(44px, 6vw, 74px);
+  gap: 32px; padding: clamp(44px, 6vw, 74px);
   border: 1px solid rgba(219,183,114,.55);
   border-radius: 30px; background: rgba(7,27,47,.44);
-  box-shadow: 0 28px 70px rgba(0,0,0,.2);
-  text-align: center;
+  box-shadow: 0 28px 70px rgba(0,0,0,.2); text-align: center;
 }
 .desktop-home-content .home-crest { width: clamp(150px, 13vw, 200px); }
 .desktop-home-content h1 { margin: 0; font-size: clamp(2.6rem, 4.5vw, 4.4rem); line-height: 1.1; }
-.desktop-home-content .home-eyebrow { font-size: .88rem; }
-.desktop-home-content .home-description { font-size: 1.25rem; max-width: 55ch; }

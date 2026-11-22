@@ -10,7 +10,7 @@ function svgNode(tag, attributes = {}, ...children) {
   return node;
 }
 
-/** Három egymáshoz illeszkedő arany fémél. Nincs kitöltött ovális vagy téglalap. */
+/** Az 1.53-as kapusziluett, a 2.02-ben jóváhagyott aranyperemmel és fényhatással. */
 function makeOutline() {
   const svg = svgNode("svg", { class: "gate-outline", viewBox: "0 0 1600 900",
     preserveAspectRatio: "none", "aria-hidden": "true" });
@@ -20,14 +20,13 @@ function makeOutline() {
     svgNode("stop", { offset: "58%", "stop-color": "#c29346" }),
     svgNode("stop", { offset: "100%", "stop-color": "#f7d890" }));
   svg.append(svgNode("defs", {}, gradient));
-  const group = svgNode("g", { transform: "translate(666 284) scale(.96 .95)" },
+  svg.append(svgNode("g", { transform: "translate(666 284) scale(.96 .95)" },
     svgNode("path", { d: DOOR_SHAPE, fill: "none", stroke: "#38230f", "stroke-width": 13 }),
     svgNode("path", { d: DOOR_SHAPE, fill: "none", stroke: "url(#csanadi-gold)", "stroke-width": 8 }),
     svgNode("path", { d: DOOR_SHAPE, fill: "none", stroke: "#fff0bc", "stroke-width": 2.2,
       "stroke-opacity": .78 }),
     svgNode("path", { d: "M 140 12 L 140 513", fill: "none", stroke: "#d9ac61",
-      "stroke-width": 2.5, "stroke-opacity": .8 }));
-  svg.append(group);
+      "stroke-width": 2.5, "stroke-opacity": .8 })));
   return svg;
 }
 
@@ -53,6 +52,8 @@ export function mountGate(root, config, platform, enter) {
   const button = element("button", { className: "gate-door-button", attributes: {
     type: "button", "aria-label": settings.actionLabel
   } });
+  const skipButton = element("button", { className: "gate-skip", text: settings.skipSymbol,
+    attributes: { type: "button", "aria-label": settings.skipLabel } });
   const stage = element("div", { className: "gate-stage" },
     frameHost,
     makeOutline(),
@@ -62,10 +63,12 @@ export function mountGate(root, config, platform, enter) {
     "aria-label": settings.title
   } },
     stage,
-    element("div", { className: "gate-caption" },
-      element("h1", { text: config.site.name }),
-      element("p", { className: "gate-subtitle", text: config.site.subtitle }),
-      element("p", { className: "gate-hint", text: platform === "mobile" ? settings.mobileHint : settings.desktopHint })));
+    element("div", { className: "gate-bottom-bar" },
+      element("div", { className: "gate-bottom-copy" },
+        element("h1", { className: "gate-school-name", text: config.site.gateCaption })),
+      skipButton));
+  const duration = platform === "mobile" ? settings.mobileDurationMs : settings.desktopDurationMs;
+  screen.style.setProperty("--opening-duration", `${duration}ms`);
   root.replaceChildren(screen);
 
   function visible(index) {
@@ -84,7 +87,6 @@ export function mountGate(root, config, platform, enter) {
     screen.classList.add("is-opening");
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) { enter(); return; }
-    const duration = platform === "mobile" ? settings.mobileDurationMs : settings.desktopDurationMs;
     let startedAt;
     const step = (time) => {
       if (destroyed) return;
@@ -98,6 +100,11 @@ export function mountGate(root, config, platform, enter) {
     animationFrame = requestAnimationFrame(step);
   }
   button.addEventListener("click", startOpening);
+  skipButton.addEventListener("click", () => {
+    if (destroyed) return;
+    opening = true;
+    enter();
+  });
   return () => {
     destroyed = true;
     cancelAnimationFrame(animationFrame);

@@ -63,7 +63,7 @@ async function start() {
     const response = await fetch(settingsUrl);
     if (!response.ok) throw new Error(`Hiányzó JSON: ${response.status}`);
     config = await response.json();
-    if (config.schemaVersion !== "2.02" || config.gate.frames !== 9) {
+    if (config.schemaVersion !== "2.03" || config.gate.frames !== 9) {
       throw new Error("A kapu JSON-beállításai hibásak.");
     }
     document.title = config.site.fullName;
