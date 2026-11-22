@@ -1,6 +1,6 @@
 /** Egyetlen HTML, JSON-alapú kapu, kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.21";
-import { mountOffline } from "./offline.js?v=2.21";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.22";
+import { mountOffline } from "./offline.js?v=2.22";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);

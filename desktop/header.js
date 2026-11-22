@@ -1,9 +1,9 @@
-import { crest, element } from "../shared/js/dom.js?v=2.21";
-import { bindAppearance } from "../shared/js/appearance.js?v=2.21";
-import { createEditMode } from "../shared/js/edit-mode.js?v=2.21";
-import { makeSocialLink } from "../shared/js/shell.js?v=2.21";
-import { createDesktopMenu } from "./menu.js?v=2.21";
-import { createDesktopSearch } from "./search.js?v=2.21";
+import { crest, element } from "../shared/js/dom.js?v=2.22";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.22";
+import { createEditMode } from "../shared/js/edit-mode.js?v=2.22";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.22";
+import { createDesktopMenu } from "./menu.js?v=2.22";
+import { createDesktopSearch } from "./search.js?v=2.22";
 
 /** Asztali fejléc: címerből nyíló körmenü és külön nagy lebegő keresőablak.
  * A mobilmenü és annak DOM-ja itt nem létezik. */

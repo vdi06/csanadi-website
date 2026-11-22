@@ -1,8 +1,36 @@
-# Csanádi 2.21 – diákjaink sportsikerei és a nyitókép javítása
+# Csanádi 2.22 – nagyobb címer, alsó hírsáv és nyitókép-csere
 
 Ez a ZIP **nem publikált** fejlesztési kiadás. A 2.15-ös forráscsomagot
-és a 2.16–2.20-as fejlesztéseket folytatja az eredeti 1.53-as képek és minden
-elfogadott funkció megtartásával. A korábbi ZIP-ek változatlanul megmaradtak.
+és a 2.16–2.21-es fejlesztéseket folytatja az elfogadott funkciók
+megtartásával. A korábbi ZIP-ek változatlanul megmaradtak.
+
+## A 2.22-es fejlesztés
+
+- Az asztali teljes képes nyitás középső, **keret nélküli címergombja
+  kétszer akkora** lett a 2.21-eshez képest, a „MENÜ” felirat pedig
+  eltűnt. A kattintható címer ugyanúgy nyitja a körmenüt; görgetésre
+  továbbra is a korábbi méretű felső fejléc-címerbe húzódik össze.
+- A jobb felső képfelirat helyett az asztali **nyitókép alján végigfutó,
+  TV-hírsáv jellegű teljes szélességű link** látható. A sávon
+  „CSANÁDI HÍREK”, az aktuális diakép kategóriája, címe és „MEGNYITÁS”
+  jelzése szerepel. A teljes sáv kattintható, a hozzá rendelt JSON-aloldalra
+  vezet. A hosszabb cím egy sorban marad és szükség esetén levágódik.
+  A sötét és világos téma külön változatot kapott.
+- Az egykori „Mi kerül majd a kezdőlapra?” **átmeneti felsorolás**
+  mindkét kezdőlapról és a közös JSON-ból kikerült. Asztalon a
+  görgethető nagy nyitó után, mobilon a rövid képsáv után már közvetlenül
+  a tényleges, hat kártyás sportsiker-szakasz következik.
+- A felhasználó képernyőképén azonosított, **nagy kék és arany kört a fotóba
+  eleve beépítve tartalmazó** `hero-music-new.webp` állományt kivettük
+  a 2.22-es forrásból. Helyette új, kör és grafikus fedés nélküli,
+  asztaliteniszes sportfotó (`hero-table-tennis-new.webp`) került be.
+  Az asztali váltakozó képek száma továbbra is **20 különböző**.
+  A régi kép a változatlan 2.21-es ZIP-ben visszakereshető.
+- A két asztali menügyűrű között vékony **arany körvonal** marad,
+  a főmenü és almenü külső, külön keretes panelje nélkül.
+- A külön mobilos és asztali kód, a JSON-alapú tartalom, az offline
+  tartalékoldal, az automatikus újrapróbálkozás és a korábban elfogadott
+  többi működés megmaradt.
 
 ## A 2.21-es fejlesztés
 
@@ -352,13 +380,13 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   visszatéréskor újra ellenőrzünk. Hibás JSON esetén a korábbi érvényes
   információ marad látható.
 - A lábléc paneljeit és külső térközeit jelentősen csökkentettük.
-  A legalsó sor minden frissítés után a `Verzió: 2.21`,
+  A legalsó sor minden frissítés után a `Verzió: 2.22`,
   illetve a későbbi JSON-verzió.
 
 ## Frissítés böngészési adatok törlése nélkül
 
 - A nyitó HTML a `shared/js/entry.js` és az alap CSS fájlt a JSON-ban
-  szereplő kiadáshoz kötött URL-lel (`?v=2.21`) kéri le.
+  szereplő kiadáshoz kötött URL-lel (`?v=2.22`) kéri le.
 - Minden statikus JavaScript-modul-import ugyanilyen verziót kap a
   `node tools/stamp-release.mjs` kiadás-előkészítő lépésben. A két
   platformstílus is verziózott URL-lel töltődik be.
@@ -367,7 +395,7 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   útvonal megtartásával, új verzióparaméterrel tölti újra a teljes oldalt.
 - **Korlát:** a régi, már eltárolt 2.13-as kezdő HTML és programkód
   magától nem feltétlenül tudja alkalmazni az új mechanizmust; az új
-  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.21`
+  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.22`
   URL-t. A tárhely/CDN HTTP gyorsítótárazási szabályai külön is számítanak.
 
 ## A visszaállított asztali kezdőlap és a mobilos következő lépés
@@ -387,7 +415,7 @@ másolata; a felső címeres menügomb nem kerül át máshová.
 A menüvégpontok továbbra is csak minimális, jóváhagyott oldalvázlatokként
 nyílnak meg, valós tartalmuk később épül be.
 A lábléc `Tájékoztatás` oszlopának legalsó sora a JSON-ból
-automatikusan megjelenő `Verzió: 2.21`.
+automatikusan megjelenő `Verzió: 2.22`.
 
 ## Tesztek és korlát
 

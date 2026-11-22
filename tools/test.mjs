@@ -28,7 +28,7 @@ const desktopHeroAssets = [
   "digital-1600.webp", "community2-1600.webp", "bejarat-1600.webp",
   "hero-athletics-new.webp", "hero-digital-new.webp", "hero-volleyball-new.webp",
   "hero-football-new.webp", "hero-handball-new.webp", "hero-gymnastics-new.webp",
-  "hero-laboratory-new.webp", "hero-library-new.webp", "hero-music-new.webp",
+  "hero-laboratory-new.webp", "hero-library-new.webp", "hero-table-tennis-new.webp",
   "hero-nature-new.webp", "hero-workshop-new.webp"
 ].map((name) => `shared/assets/media/web/desktop-hero/${name}`);
 const mobileStoryAssets = [
@@ -53,7 +53,7 @@ assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths, ...desktopH
 assert.deepEqual(files(root).filter((path) => path.endsWith(".html")), ["index.html"]);
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
 assert.equal(config.schemaVersion, "2.06");
-assert.equal(config.release, "2.21");
+assert.equal(config.release, "2.22");
 assert.equal(config.appearance.defaultMode, "auto");
 assert.deepEqual(config.appearance.cycle, ["auto", "light", "dark"]);
 assert.deepEqual(Object.keys(config.appearance.shortLabels).sort(), ["auto", "dark", "light"]);
@@ -87,7 +87,8 @@ assert.equal(config.home.mobileStory.topics.every((topic) => topic.photos.length
 assert.ok(!Object.hasOwn(config.home.mobileStory,"stateLabel") &&
   !Object.hasOwn(config.home.mobileStory,"scrollHint"),
   "A mobilos képsávon nem maradhat állapotszámláló vagy görgetési súgó.");
-assert.equal(config.home.homePreview.items.length, 3);
+assert.equal(Object.hasOwn(config.home, "homePreview"), false,
+  "Az ideiglenes kezdőlapi felsorolás adatként sem szükséges többé.");
 assert.equal(config.home.sportSuccesses.items.length, 6);
 assert.equal(config.home.sportSuccesses.items.filter((item) => item.image).length, 4,
   "Négy képes és két fénykép nélküli sportsiker ellenőrzendő.");
@@ -149,8 +150,8 @@ for (const path of [...desktopHeroAssets, ...mobileStoryAssets, ...sportSuccessA
 }
 const html = readFileSync(join(root, "index.html"), "utf8");
 assert.match(html, /<div id="app"><\/div>/);
-assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.21"/);
-assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.21"/);
+assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.22"/);
+assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.22"/);
 assert.match(html, /name="color-scheme" content="light dark"/);
 assert.doesNotMatch(html, /<h[1-6]|<p[ >]|<nav|<article|<img/i);
 const src = ["shared/js/entry.js", "shared/js/dom.js", "shared/js/gate.js", "shared/js/offline.js", "shared/js/shell.js",
@@ -353,8 +354,11 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(nodes.filter((n) => n.tag === "header").length, 1);
   assert.equal(nodes.filter((n) => n.tag === "main").length, 1);
   assert.equal(nodes.filter((n) => n.tag === "footer").length, 1);
-  assert.equal(nodes.find((n) => n.tag === "main").children.length, 3,
-    "Mindkét kezdőlapon a képes nyitás és a tartalomvázlat után jelenjen meg a sportsiker-rács.");
+  assert.equal(nodes.find((n) => n.tag === "main").children.length, 2,
+    "Mindkét kezdőlapon a képes nyitás után közvetlenül a valódi sportsiker-rács jelenjen meg.");
+  assert.equal(nodes.some((n) => n.className?.includes("home-preview") ||
+    n.className === "desktop-hero-continuation"), false,
+    "A már nem aktuális kezdőlapi tartalomfelsorolás nem jelenhet meg.");
   assert.equal(nodes.filter((n) => n.tag === "h1").length, 1);
   assert.equal(nodes.filter((n) => n.tag === "img").length, platform === "desktop" ? 9 : 13,
     "A régi nyitóképeken felül négy sportsiker-fotó és egy részletes képhely legyen.");
@@ -385,8 +389,8 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
       assert.equal(scan(active).filter((photo)=>photo.className==="mobile-story-photo"&&!photo.hidden).length,
         expected==="intro"||expected==="outro"?3:1);
     }
-    assert.ok(nodes.some((n)=>n.className?.includes("mobile-home-preview")),
-      "A mobilos kezdőlap tervezett tartalmai jelenjenek meg a sáv alatt.");
+    assert.equal(nodes.find((n) => n.tag === "main").children[1].className,
+      "mobile-successes-section", "A mobilos képsávot közvetlenül a valódi tartalom kövesse.");
   }
   const successGrid = nodes.find((n) => n.className === `${platform}-successes-grid`);
   const successOverlay = nodes.find((n) => n.className === `${platform}-successes-overlay`);
@@ -548,8 +552,13 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
     const hero = nodes.find((n) => n.className === "desktop-hero-track");
     const photo = scan(hero).find((n) => n.className === "desktop-hero-photo");
     const crest = scan(hero).find((n) => n.className === "desktop-hero-crest");
-    assert.equal(scan(crest).find((n) => n.className === "desktop-hero-crest-label")?.textContent, "MENÜ",
-      "A középen lévő menügomb szöveges jelölést kapjon a zavaró kör alakú keret helyett.");
+    assert.equal(scan(crest).find((n) => n.className === "desktop-hero-crest-label"), undefined,
+      "A megnagyobbított középső címer alá ne kerüljön MENÜ felirat.");
+    const ticker = scan(hero).find((n) => n.className === "desktop-hero-story");
+    assert.equal(ticker.tagName, "A", "A teljes alsó hírsáv legyen kattintható hivatkozás.");
+    assert.ok(ticker.attributes.href?.startsWith("#/oldal/"));
+    assert.ok(scan(ticker).some((n) => n.className === "desktop-hero-story-channel" && n.textContent === "CSANÁDI HÍREK"));
+    assert.ok(scan(ticker).some((n) => n.className === "desktop-hero-story-action" && n.textContent === "MEGNYITÁS"));
     const next = scan(hero).find((n) => n.className === "desktop-hero-arrow desktop-hero-arrow--next");
     assert.equal(scan(hero).some((n) => ["desktop-hero-count", "desktop-hero-pause"].includes(n.className)), false,
       "Sem számláló, sem stop/szünet gomb nem jelenhet meg az asztali fotón.");
@@ -859,13 +868,13 @@ const liveModalText = scan(liveFooter.footer).find((node) => node.className === 
 liveNotices.children[0].emit("click");
 assert.equal(liveModal.hidden, false);
 const refreshed = structuredClone(config);
-refreshed.release = "2.22";
+refreshed.release = "2.23";
 refreshed.home.footer.updatedAt = "2026-11-23";
 refreshed.home.footer.notices[0].body = "Ellenőrzött, módosított impresszum-adatok.";
 const originalFetch = globalThis.fetch;
 let requests = 0;
 let replacementUrl = null;
-window.location = { href:"https://example.test/index.html?v=2.21#/kezdolap",
+window.location = { href:"https://example.test/index.html?v=2.22#/kezdolap",
   replace:(next) => { replacementUrl = next; } };
 globalThis.fetch = async (url, options) => {
   requests++;
@@ -879,22 +888,22 @@ assert.equal(requests, 0, "Rejtett lapon a frissítés nem terhelheti a hálóza
 document.visibilityState = "visible";
 assert.equal(await liveFooter.checkForUpdates(), true);
 assert.equal(requests, 1);
-assert.equal(liveVersion.textContent, "Verzió: 2.22");
+assert.equal(liveVersion.textContent, "Verzió: 2.23");
 assert.equal(liveUpdated.textContent, "Utolsó frissítés: 2026. 11. 23.");
 assert.equal(liveModalText.textContent, "Ellenőrzött, módosított impresszum-adatok.");
 assert.equal(liveModal.hidden, false, "A megnyitott tájékoztató maradjon meg adatfrissítéskor.");
-assert.equal(replacementUrl, "https://example.test/index.html?v=2.22#/kezdolap",
+assert.equal(replacementUrl, "https://example.test/index.html?v=2.23#/kezdolap",
   "Új kiadáskor az egész alkalmazás új verziókulccsal töltődjön újra.");
 scan(liveFooter.footer).find((node) => node.className === "footer-modal-close").emit("click");
 assert.equal(liveModal.hidden, true);
 assert.ok(liveNotices.children[0].focused, "Frissítés után is a létező ikonnak jár vissza a fókusz.");
 assert.ok(liveChecked.textContent.startsWith(refreshed.home.footer.checkedLabel));
 const invalid = structuredClone(refreshed);
-invalid.release = "2.21";
+invalid.release = "2.22";
 invalid.home.footer.notices[0].body = "";
 globalThis.fetch = async () => ({ ok: true, json: async () => invalid });
 assert.equal(await liveFooter.checkForUpdates(), false);
-assert.equal(liveVersion.textContent, "Verzió: 2.22", "Hibás JSON nem írhatja felül az érvényes adatot.");
+assert.equal(liveVersion.textContent, "Verzió: 2.23", "Hibás JSON nem írhatja felül az érvényes adatot.");
 const duplicateGlyph = structuredClone(refreshed);
 duplicateGlyph.home.footer.notices[1].glyph = duplicateGlyph.home.footer.notices[0].glyph;
 globalThis.fetch = async () => ({ ok: true, json: async () => duplicateGlyph });
@@ -1050,6 +1059,9 @@ assert.match(block(desktopCss, ".desktop-wheel-backdrop"), /backdrop-filter:blur
 assert.match(block(baseCss, ".offline-screen"), /min-height:100dvh/);
 assert.match(block(baseCss, ".offline-retry"), /min-height:52px/);
 assert.match(block(desktopCss, ".desktop-wheel-stage"), /background:transparent;/);
+assert.match(block(desktopCss, ".desktop-wheel-stage::before"),
+  /width:58%;[^}]*border:2px solid color-mix\(in srgb,var\(--accent\) 80%,transparent\);/s,
+  "A fő- és almenü gyűrűje közötti arany elválasztóvonal maradjon meg.");
 assert.doesNotMatch(desktopCss, /\.desktop-wheel-guide-main|\.desktop-wheel-guide-sub/,
   "Nem maradhatnak a menü mögött díszítő körkeretek.");
 assert.match(block(desktopCss, ".desktop-wheel-ring-main,.desktop-wheel-ring-sub"),
@@ -1164,16 +1176,18 @@ for (const width of [768, 1024, 1440, 1920]) {
 assert.match(block(baseCss, ".footer-notice-modal"), /position:fixed; inset:0; z-index:3000;/);
 assert.match(block(desktopCss, ".desktop-footer"), /padding:5px/);
 assert.match(block(mobileCss, ".mobile-footer"), /padding:3px/);
-assert.match(desktopCss, /\.desktop-hero-continuation\s*\{[^}]*min-height:100dvh/s,
-  "A nagy kép után egy teljes görgethető folytatás szükséges, különben a hero nem tűnik el.");
+assert.match(block(desktopCss, ".desktop-hero-track"), /height:160dvh; min-height:960px;/,
+  "Az asztali kép továbbra is végiggörgethető és eltűnik a tényleges tartalom előtt.");
+assert.doesNotMatch(desktopCss, /\.desktop-hero-continuation\s*\{/,
+  "A korábbi üres kezdőlapi folytatás ne maradjon meg.");
 assert.match(block(desktopCss, ".desktop-hero-crest"), /border:0;[^}]*background:transparent;/s,
   "A nyitókép közepén ne jelenjen meg a korábbi nagy kör alakú címérkeret.");
-assert.match(desktopCss, /\.desktop-hero-controls\s*\{[^}]*top:clamp\(/s,
-  "Az asztali kép információs kártyája jobb felül legyen.");
-assert.match(block(desktopCss, ".desktop-hero-controls"), /width:max-content;[^}]*max-width:calc\(100%/s,
-  "A jobb felső képfelirat hossza növelhesse a kártyát balra.");
-assert.match(block(desktopCss, ".desktop-hero-story"), /width:max-content; max-width:100%; white-space:nowrap;/,
-  "Az asztali képfelirat soha ne tördeljen második sorba.");
+assert.match(block(desktopCss, ".desktop-hero-crest"), /width:clamp\(340px,34vw,444px\);/,
+  "A középső címer legyen kétszer akkora, miközben görgetésre a felső címerhez zsugorodik.");
+assert.match(block(desktopCss, ".desktop-hero-controls"), /bottom:0; left:0; right:0;/,
+  "A hírsáv a nagy nyitókép alján legyen.");
+assert.match(block(desktopCss, ".desktop-hero-story"), /display:grid;[^}]*width:100%;[^}]*border-top:2px/s,
+  "Az alsó TV-szerű hírsáv teljes szélességű, kattintható felület legyen.");
 assert.match(block(desktopCss, ".desktop-hero-story-title"), /white-space:nowrap;/);
 assert.match(block(desktopCss, ".desktop-hero-story-eyebrow"), /white-space:nowrap;/);
 assert.doesNotMatch(desktopCss, /\.desktop-hero-scroll\s*\{/,
@@ -1186,8 +1200,8 @@ assert.doesNotMatch(mobileCss,/mobile-story-(bottom|state-count|steps|step|scrol
   "Az állapotszámláló és jelző ne maradjon a megjelenésben.");
 assert.doesNotMatch(mobileCss,/height:calc\(158px \+ clamp\(/,
   "Nem maradhat fél képernyős láthatatlan görgetési pálya.");
-assert.match(block(mobileCss,".mobile-home-preview"),/margin-top:0; padding-top:23px;/,
-  "A kezdőlap tartalma közvetlenül a képsáv alatt induljon.");
+assert.doesNotMatch(mobileCss,/\.mobile-home-preview\s*\{/,
+  "A mobilos kezdőlapon se maradjon meg a korábbi tartalomfelsorolás.");
 assert.match(mobileCss, /\.mobile-story-visual\[data-active="true"\]/,
   "A mobilos állapotok külön, áttűnő képréteget használjanak.");
 assert.match(block(mobileCss, ".mobile-home"), /display:\s*flex;\s*flex-direction:\s*column;/);
@@ -1255,7 +1269,7 @@ location.hash = config.routes.gate;
 await import(new URL("../shared/js/entry.js", import.meta.url));
 const nextTick = () => new Promise((done) => setImmediate(done));
 await nextTick();
-assert.equal(historyUrl, "https://example.test/index.html?v=2.21#/",
+assert.equal(historyUrl, "https://example.test/index.html?v=2.22#/",
   "A kezdő URL kapjon kiadási verziót a későbbi cache-biztos újratöltéshez.");
 assert.equal(documentRoot.dataset.platform, "mobile");
 assert.equal(documentRoot.dataset.route, "gate");

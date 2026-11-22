@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.21";
-import { trapTab } from "../shared/js/focus.js?v=2.21";
-import { checkedSportSuccesses, successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.21";
+import { element } from "../shared/js/dom.js?v=2.22";
+import { trapTab } from "../shared/js/focus.js?v=2.22";
+import { checkedSportSuccesses, successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.22";
 
 /** Önálló mobilos sportsiker-rács: 2×3 kártya és függőlegesen olvasható lebegő ablak. */
 export function createMobileSuccesses(config) {

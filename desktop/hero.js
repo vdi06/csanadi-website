@@ -1,5 +1,5 @@
-import { crest, element } from "../shared/js/dom.js?v=2.21";
-import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.21";
+import { crest, element } from "../shared/js/dom.js?v=2.22";
+import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.22";
 
 const clamp = (value) => Math.max(0, Math.min(1, value));
 const mediaRoot = "./shared/assets/media/web/desktop-hero/";
@@ -31,8 +31,10 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   } });
   const eyebrow = element("span", { className: "desktop-hero-story-eyebrow" });
   const storyTitle = element("strong", { className: "desktop-hero-story-title" });
-  const story = element("a", { className: "desktop-hero-story" }, eyebrow, storyTitle,
-    element("span", { className: "desktop-hero-story-arrow", text: "↗", attributes: { "aria-hidden": "true" } }));
+  const story = element("a", { className: "desktop-hero-story" },
+    element("span", { className: "desktop-hero-story-channel", text: "CSANÁDI HÍREK" }),
+    eyebrow, storyTitle,
+    element("span", { className: "desktop-hero-story-action", text: "MEGNYITÁS" }));
   const previous = element("button", { className: "desktop-hero-arrow desktop-hero-arrow--prev", text: "‹",
     attributes: { type: "button", "aria-label": data.previousLabel } });
   const next = element("button", { className: "desktop-hero-arrow desktop-hero-arrow--next", text: "›",
@@ -40,8 +42,7 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   const heroCrest = element("button", { className: "desktop-hero-crest", attributes: {
     type: "button", "aria-label": data.menuTitle,
     "aria-controls": "desktop-main-menu", "aria-expanded": "false"
-  } }, crest(config, "desktop-hero-crest-image"),
-    element("span", { className: "desktop-hero-crest-label", text: "MENÜ" }));
+  } }, crest(config, "desktop-hero-crest-image"));
   const brand = element("div", { className: "desktop-hero-identity", attributes: { "aria-hidden": "true" } },
     element("span", { className: "desktop-hero-wordmark", text: data.brand }),
     element("span", { className: "desktop-hero-wordmark-sub", text: data.brandSub }));
@@ -59,17 +60,6 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
     element("div", { className: "desktop-hero-after", attributes: { "aria-hidden": "true" } },
       element("span", { text: data.brand }), element("span", { text: data.motto })),
     stage);
-  const continuation = element("section", { className: "desktop-hero-continuation" },
-    element("div", { className: "desktop-hero-continuation-inner" },
-      element("span", { className: "desktop-hero-continuation-brand", text: data.brand }),
-      element("h2", { text: data.schoolTitle }),
-      element("p", { text: data.motto }),
-      element("div", { className: "desktop-home-preview" },
-        element("h3", { text: config.home.homePreview.title }),
-        element("p", { text: config.home.homePreview.intro }),
-        element("ul", { className: "desktop-page-list" },
-          ...config.home.homePreview.items.map((text) => element("li", { text }))))));
-
   let sequence = shuffledHeroOrder(data.slides.length);
   let position = 0;
   let activeIndex = sequence[position];
@@ -84,7 +74,7 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
     activeIndex = sequence[position];
     const slide = data.slides[activeIndex];
     photo.setAttribute("src", `${mediaRoot}${slide.file}`);
-    eyebrow.textContent = `${data.brand} · ${slide.eyebrow}`;
+    eyebrow.textContent = slide.eyebrow;
     storyTitle.textContent = slide.title;
     story.setAttribute("href", menuPageHref(slide.pageId));
     story.setAttribute("aria-label", `${slide.title}. ${slide.summary}`);
@@ -169,7 +159,7 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   }, intervalMs);
   showSlide();
   updateScroll();
-  return { track, continuation, updateScroll, destroy() {
+  return { track, updateScroll, destroy() {
     disposed = true;
     clearInterval(timer);
     window.removeEventListener?.("scroll", onScroll);

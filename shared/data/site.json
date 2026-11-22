@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.06",
-  "release": "2.21",
+  "release": "2.22",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -28,15 +28,6 @@
     "homeRevealMs": 480
   },
   "home": {
-    "homePreview": {
-      "title": "Mi kerül majd a kezdőlapra?",
-      "intro": "A kezdőlap tartalmi részei később készülnek el:",
-      "items": [
-        "Aktuális hírek, események és kiemelt közlemények",
-        "Sportágak, sporteredmények és a mindennapi sportélet",
-        "Oktatási tudnivalók, felvételi és közösségi programok"
-      ]
-    },
     "sportSuccesses": {
       "ariaLabel": "Diákjaink sportsikerei",
       "eyebrow": "CSANÁDI · SPORTEREDMÉNYEK",
@@ -172,7 +163,7 @@
         { "id": "torna", "file": "hero-gymnastics-new.webp", "eyebrow": "MOZGÁS", "title": "A fejlődés sokféle mozdulatból áll", "summary": "Fegyelem, egyensúly és kitartás.", "pageId": "sports-disciplines" },
         { "id": "labor", "file": "hero-laboratory-new.webp", "eyebrow": "FELFEDEZÉS", "title": "Kérdésekből új felismerések", "summary": "A kísérletezés a kíváncsiságnál kezdődik.", "pageId": "education-resources" },
         { "id": "konyvtar", "file": "hero-library-new.webp", "eyebrow": "OLVASÁS", "title": "Minden könyv új világot nyit", "summary": "Elmélyülés, gondolkodás és közös felfedezés.", "pageId": "education-library" },
-        { "id": "zene", "file": "hero-music-new.webp", "eyebrow": "KÖZÖSSÉG", "title": "Együtt szól igazán", "summary": "Alkotás, figyelem és öröm a közös zenében.", "pageId": "news-latest" },
+        { "id": "asztalitenisz", "file": "hero-table-tennis-new.webp", "eyebrow": "ASZTALITENISZ", "title": "Minden labdamenet új lehetőség", "summary": "Koncentráció, lendület és csapatmunka az asztaloknál.", "pageId": "sports-disciplines" },
         { "id": "kirandulas", "file": "hero-nature-new.webp", "eyebrow": "ÉLMÉNYEK", "title": "A tanulás az iskola falain túl is tart", "summary": "Mozgás, felfedezés és közösségi élmény.", "pageId": "school-eco" },
         { "id": "muhely", "file": "hero-workshop-new.webp", "eyebrow": "ALKOTÓMŰHELY", "title": "Az ötletekből valami új születik", "summary": "Kreativitás és együttműködés kézzel fogható formában.", "pageId": "school-workshop" }
       ]

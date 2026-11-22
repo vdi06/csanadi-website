@@ -1,10 +1,10 @@
-import { element } from "../shared/js/dom.js?v=2.21";
-import { mountGate } from "../shared/js/gate.js?v=2.21";
-import { makeFooter } from "../shared/js/footer.js?v=2.21";
-import { makeDesktopHeader } from "./header.js?v=2.21";
-import { createDesktopPage } from "./page.js?v=2.21";
-import { createDesktopHero } from "./hero.js?v=2.21";
-import { createDesktopSuccesses } from "./successes.js?v=2.21";
+import { element } from "../shared/js/dom.js?v=2.22";
+import { mountGate } from "../shared/js/gate.js?v=2.22";
+import { makeFooter } from "../shared/js/footer.js?v=2.22";
+import { makeDesktopHeader } from "./header.js?v=2.22";
+import { createDesktopPage } from "./page.js?v=2.22";
+import { createDesktopHero } from "./hero.js?v=2.22";
+import { createDesktopSuccesses } from "./successes.js?v=2.22";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {
@@ -24,7 +24,7 @@ export function mount(root, config, page) {
     setCompact: desktopHeader.setCompact
   }) : null;
   const successes = isHome ? createDesktopSuccesses(config) : null;
-  if (hero) main.append(hero.track, hero.continuation, successes.section);
+  if (hero) main.append(hero.track, successes.section);
   else if (page.startsWith("page:")) main.append(createDesktopPage(config, page.slice(5)));
   home.append(desktopHeader.header,
     ...desktopHeader.overlays,

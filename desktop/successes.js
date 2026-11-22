@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.21";
-import { trapTab } from "../shared/js/focus.js?v=2.21";
-import { checkedSportSuccesses, successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.21";
+import { element } from "../shared/js/dom.js?v=2.22";
+import { trapTab } from "../shared/js/focus.js?v=2.22";
+import { checkedSportSuccesses, successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.22";
 
 /** Asztali sportsikerek: tágas 3×2-es rács, teljes nézet fölötti saját lebegő ablak. */
 export function createDesktopSuccesses(config) {
