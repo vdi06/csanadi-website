@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.16";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.16";
+import { element } from "../shared/js/dom.js?v=2.17";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.17";
 
 /** Önálló mobilos oldal: csak egy középre rendezett, olvasható felsorolás. */
 export function createMobilePage(config, id) {

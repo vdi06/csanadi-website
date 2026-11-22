@@ -1,4 +1,4 @@
-import { element, crest } from "./dom.js?v=2.16";
+import { element, crest } from "./dom.js?v=2.17";
 
 const NS = "http://www.w3.org/2000/svg";
 const DOOR_SHAPE = "M 6 78 C 37 48 76 17 140 12 C 204 17 243 48 274 78 L 274 510 Q 274 514 269 514 L 11 514 Q 6 514 6 510 Z";

@@ -1,9 +1,9 @@
-import { element } from "../shared/js/dom.js?v=2.16";
-import { mountGate } from "../shared/js/gate.js?v=2.16";
-import { makeFooter } from "../shared/js/footer.js?v=2.16";
-import { makeDesktopHeader } from "./header.js?v=2.16";
-import { createDesktopPage } from "./page.js?v=2.16";
-import { createDesktopHero } from "./hero.js?v=2.16";
+import { element } from "../shared/js/dom.js?v=2.17";
+import { mountGate } from "../shared/js/gate.js?v=2.17";
+import { makeFooter } from "../shared/js/footer.js?v=2.17";
+import { makeDesktopHeader } from "./header.js?v=2.17";
+import { createDesktopPage } from "./page.js?v=2.17";
+import { createDesktopHero } from "./hero.js?v=2.17";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {
@@ -22,7 +22,7 @@ export function mount(root, config, page) {
     openMenu: desktopHeader.openMenu, headerCrest: desktopHeader.crestToggle,
     setCompact: desktopHeader.setCompact
   }) : null;
-  if (hero) main.append(hero.track);
+  if (hero) main.append(hero.track, hero.continuation);
   else if (page.startsWith("page:")) main.append(createDesktopPage(config, page.slice(5)));
   home.append(desktopHeader.header,
     main,

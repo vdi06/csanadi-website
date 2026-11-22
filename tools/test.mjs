@@ -13,7 +13,7 @@ const staticFiles = [
   "shared/js/gate.js", "shared/js/offline.js", "shared/js/shell.js", "shared/js/appearance.js",
   "shared/js/focus.js", "shared/js/menu-data.js", "shared/js/edit-mode.js", "shared/js/footer.js", "shared/css/base.css",
   "shared/assets/media/logo/csanadi-crest-512.webp",
-  "mobile/app.js", "mobile/header.js", "mobile/menu.js", "mobile/search.js", "mobile/page.js", "mobile/styles.css",
+  "mobile/app.js", "mobile/header.js", "mobile/menu.js", "mobile/search.js", "mobile/page.js", "mobile/story.js", "mobile/styles.css",
   "desktop/app.js", "desktop/header.js", "desktop/hero.js", "desktop/menu.js", "desktop/search.js", "desktop/page.js", "desktop/styles.css",
   "tools/test.mjs", "tools/stamp-release.mjs", "docs/ELLENORZES.md"
 ];
@@ -31,18 +31,26 @@ const desktopHeroAssets = [
   "hero-laboratory-new.webp", "hero-library-new.webp", "hero-music-new.webp",
   "hero-nature-new.webp", "hero-workshop-new.webp"
 ].map((name) => `shared/assets/media/web/desktop-hero/${name}`);
+const mobileStoryAssets = [
+  "sport-01-futsal.webp", "sport-02-athletics.webp", "sport-03-basketball.webp",
+  "sport-04-swimming.webp", "sport-05-volleyball.webp", "sport-06-table-tennis.webp",
+  "tudas-01-digital.webp", "tudas-02-biomechanics.webp", "tudas-03-library.webp",
+  "tudas-04-mathematics.webp", "tudas-05-robotics.webp", "tudas-06-geography.webp",
+  "kozosseg-01-sportsday.webp", "kozosseg-02-student-council.webp", "kozosseg-03-volunteers.webp",
+  "kozosseg-04-corridor.webp", "kozosseg-05-cafeteria.webp", "kozosseg-06-celebration.webp"
+].map((name) => `shared/assets/media/web/mobile-story/${name}`);
 function files(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
     const file = join(directory, entry.name);
     return entry.isDirectory() ? files(file) : [relative(root, file).split(sep).join("/")];
   });
 }
-assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths, ...desktopHeroAssets].sort(),
+assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths, ...desktopHeroAssets, ...mobileStoryAssets].sort(),
   "Csak az ellenőrzött és szándékosan visszaállított funkciók szerepelhetnek az aktív csomagban.");
 assert.deepEqual(files(root).filter((path) => path.endsWith(".html")), ["index.html"]);
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
 assert.equal(config.schemaVersion, "2.06");
-assert.equal(config.release, "2.16");
+assert.equal(config.release, "2.17");
 assert.equal(config.appearance.defaultMode, "auto");
 assert.deepEqual(config.appearance.cycle, ["auto", "light", "dark"]);
 assert.deepEqual(Object.keys(config.appearance.shortLabels).sort(), ["auto", "dark", "light"]);
@@ -69,6 +77,11 @@ assert.equal(config.home.desktopHero.slides.length * config.home.desktopHero.int
   "Pont egy óra alatt minden képnek sorra kell kerülnie.");
 assert.deepEqual(config.home.desktopHero.slides.map((slide) => slide.file).sort(),
   desktopHeroAssets.map((path) => path.split("/").at(-1)).sort());
+assert.deepEqual(config.home.mobileStory.topics.map(({id}) => id), ["sport", "tudas", "kozosseg"]);
+assert.deepEqual(config.home.mobileStory.topics.flatMap((topic) => topic.photos).sort(),
+  mobileStoryAssets.map((path) => path.split("/").at(-1)).sort());
+assert.equal(config.home.mobileStory.topics.every((topic) => topic.photos.length === 6), true);
+assert.equal(config.home.homePreview.items.length, 3);
 assert.equal(config.home.header.social.length, 3);
 assert.ok(!Object.hasOwn(config.home, "navigation"), "A korábbi próbalinkeket végleg ki kell venni.");
 assert.equal(config.menu.items.length, 6, "Az 1.53-as hat főcsoportot olvassuk az új JSON-ból.");
@@ -104,25 +117,25 @@ const crest = readFileSync(join(root, "shared/assets/media/logo/csanadi-crest-51
 assert.equal(createHash("sha256").update(crest).digest("hex"),
   "bf32c83b51a4d7fd6a079a73dc9488e3e70720f26a45f604c1f1bcfc84ec8c16");
 const heroImageFingerprints = new Set();
-for (const path of desktopHeroAssets) {
+for (const path of [...desktopHeroAssets, ...mobileStoryAssets]) {
   const bytes = readFileSync(join(root, path));
   assert.equal(bytes.subarray(0, 4).toString(), "RIFF", path);
   assert.equal(bytes.subarray(8, 12).toString(), "WEBP", path);
   assert.ok(bytes.length > 20000, path);
   const digest = createHash("sha256").update(bytes).digest("hex");
-  assert.ok(!heroImageFingerprints.has(digest), `A 20 nyitókép között azonos kép van: ${path}`);
+  assert.ok(!heroImageFingerprints.has(digest), `A 38 képes válogatásban azonos fájl van: ${path}`);
   heroImageFingerprints.add(digest);
 }
 const html = readFileSync(join(root, "index.html"), "utf8");
 assert.match(html, /<div id="app"><\/div>/);
-assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.16"/);
-assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.16"/);
+assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.17"/);
+assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.17"/);
 assert.match(html, /name="color-scheme" content="light dark"/);
 assert.doesNotMatch(html, /<h[1-6]|<p[ >]|<nav|<article|<img/i);
 const src = ["shared/js/entry.js", "shared/js/dom.js", "shared/js/gate.js", "shared/js/offline.js", "shared/js/shell.js",
   "shared/js/appearance.js", "mobile/app.js", "mobile/header.js", "desktop/app.js", "desktop/header.js",
   "desktop/menu.js", "mobile/menu.js", "desktop/search.js", "mobile/search.js",
-  "shared/js/edit-mode.js", "shared/js/footer.js", "mobile/page.js", "desktop/page.js", "desktop/hero.js"]
+  "shared/js/edit-mode.js", "shared/js/footer.js", "mobile/page.js", "desktop/page.js", "desktop/hero.js", "mobile/story.js"]
   .map((path) => readFileSync(join(root, path), "utf8"));
 for (const source of src) assert.doesNotMatch(source, /innerHTML|eval\s*\(|fetch\([^)]*pages/i);
 for (const source of src.slice(0, -1)) assert.doesNotMatch(source, /carousel|slideshow/i);
@@ -141,7 +154,7 @@ for (const file of [...staticFiles.filter((path) => /^shared\/js\/.*\.js$|^(mobi
   const imports = [...source.matchAll(/\bfrom\s+["'](\.\.?\/[^"']+\.js)(?:\?v=(\d+\.\d+))?["']/g)];
   assert.ok(imports.every((match) => match[2] === config.release), `A(z) ${file} importja régi kódot gyorsítótárazhat.`);
 }
-console.log("✓ 30+30 kapukép, JSON-alapú 20 különböző kép, véletlen körök/3 perc, adatmentes HTML");
+console.log("✓ 30+30 kapukép, 20 asztali + 3×6 mobilos egyedi fotó, véletlen váltások, adatmentes HTML");
 
 let failDesktopFrame = false;
 let failMobileFrame = false;
@@ -216,6 +229,20 @@ const scan = (node) => [node, ...node.children.flatMap((item) => typeof item ===
 const mobile = await import(new URL("../mobile/app.js", import.meta.url));
 const desktop = await import(new URL("../desktop/app.js", import.meta.url));
 const { shuffledHeroOrder } = await import(new URL("../desktop/hero.js", import.meta.url));
+const { selectMobileStoryPhotos } = await import(new URL("../mobile/story.js", import.meta.url));
+for (let cycle=0; cycle<10; cycle++) {
+  let seed=cycle+284;
+  const picks=selectMobileStoryPhotos(config.home.mobileStory.topics,()=>{
+    seed=(seed*1664525+1013904223)>>>0;
+    return seed/4294967296;
+  });
+  assert.equal(picks.length,3);
+  for (const [i,choice] of picks.entries()) {
+    assert.equal(new Set(Object.values(choice)).size,3,
+      "Egy témán belül a nyitó, a különálló és a záró állapot képe sem ismétlődhet.");
+    assert.ok(Object.values(choice).every((name)=>config.home.mobileStory.topics[i].photos.includes(name)));
+  }
+}
 const allOrderIds = Array.from({length:20}, (_,i)=>i).sort((a,b)=>a-b);
 let lastSlide = -1;
 for (let cycle=0; cycle<8; cycle++) {
@@ -284,11 +311,36 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(nodes.filter((n) => n.tag === "header").length, 1);
   assert.equal(nodes.filter((n) => n.tag === "main").length, 1);
   assert.equal(nodes.filter((n) => n.tag === "footer").length, 1);
-  assert.equal(nodes.find((n) => n.tag === "main").children.length, platform === "desktop" ? 1 : 0,
-    "A képes nyitórész kizárólag az asztali kezdőlap része.");
-  assert.equal(nodes.filter((n) => n.tag === "h1").length, platform === "desktop" ? 1 : 0);
-  assert.equal(nodes.filter((n) => n.tag === "img").length, platform === "desktop" ? 4 : 2,
-    "A külön mobilos menü maradjon a fejlécben; az asztali nyitókép kapjon középső címert.");
+  assert.equal(nodes.find((n) => n.tag === "main").children.length, 2,
+    "Mindkét kezdőlap képes nyitást és külön tartalomvázlatot kapjon.");
+  assert.equal(nodes.filter((n) => n.tag === "h1").length, 1);
+  assert.equal(nodes.filter((n) => n.tag === "img").length, platform === "desktop" ? 4 : 8,
+    "Mobilon két háromképes áttűnési réteg, asztalon egy fotó és címer szükséges.");
+  if (platform === "mobile") {
+    const story=nodes.find((n)=>n.className==="mobile-story-track");
+    const storyStage=story?.querySelector(".mobile-story-stage");
+    const layers=scan(story).filter((n)=>n.className==="mobile-story-visual");
+    const photos=scan(story).filter((n)=>n.className==="mobile-story-photo");
+    assert.ok(storyStage && layers.length===2 && photos.length===6);
+    assert.equal(storyStage.dataset.storyState,"intro");
+    assert.equal(storyStage.dataset.storyMode,"trio");
+    assert.equal(layers.filter((layer)=>layer.dataset.active==="true").length,1);
+    assert.equal(scan(layers.find((layer)=>layer.dataset.active==="true"))
+      .filter((photo)=>photo.className==="mobile-story-photo"&&!photo.hidden).length,3);
+    const checkpoints=[[155,"sport"],[290,"tudas"],[430,"kozosseg"],[590,"outro"],[0,"intro"]];
+    for(const [scrollY,expected] of checkpoints) {
+      window.scrollY=scrollY;
+      for(const callback of heroWindowEvents.get("scroll") || []) callback();
+      queue.shift()?.(0);
+      assert.equal(storyStage.dataset.storyState,expected,
+        "A mobilos állapotsor pontosan együtt → sport → tudás → közösség → együtt legyen.");
+      const active=layers.find((layer)=>layer.dataset.active==="true");
+      assert.equal(scan(active).filter((photo)=>photo.className==="mobile-story-photo"&&!photo.hidden).length,
+        expected==="intro"||expected==="outro"?3:1);
+    }
+    assert.ok(nodes.some((n)=>n.className?.includes("mobile-home-preview")),
+      "A mobilos kezdőlap tervezett tartalmai jelenjenek meg a sáv alatt.");
+  }
   assert.equal(nodes.filter((n) => n.className?.includes(`${platform}-social`)).length, 3);
   assert.equal(nodes.filter((n) => n.tag === "svg").length, 2,
     "A két közösségi ikon saját SVG-képként jelenik meg.");
@@ -414,8 +466,11 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
     assert.equal(crestToggle.attributes.tabindex, "0",
       "A felső címernek meg kell jelennie görgetés után.");
     assert.equal(crestToggle.attributes["aria-hidden"], "false");
-    assert.equal(hero.querySelector(".desktop-hero-stage").style["--hero-fold-radius"], "0.00%",
-      "A teljes nyitóképnek nyom nélkül össze kell záródnia.");
+    const radius=Number.parseFloat(hero.querySelector(".desktop-hero-stage").style["--hero-clip-radius"]);
+    assert.ok(radius<=40 && radius>0,
+      "A fotónak a felső fejléc címere méretére kell zsugorodnia.");
+    assert.equal(scan(hero).some((n)=>n.className==="desktop-hero-scroll"),false,
+      "Ne maradjon lefelé mutató gomb az asztali nyitó alján.");
     window.scrollY = 0;
     for (const callback of heroWindowEvents.get("scroll")) callback();
     queue.shift()?.(0);
@@ -690,13 +745,13 @@ const liveModalText = scan(liveFooter.footer).find((node) => node.className === 
 liveNotices.children[0].emit("click");
 assert.equal(liveModal.hidden, false);
 const refreshed = structuredClone(config);
-refreshed.release = "2.17";
+refreshed.release = "2.18";
 refreshed.home.footer.updatedAt = "2026-11-23";
 refreshed.home.footer.notices[0].body = "Ellenőrzött, módosított impresszum-adatok.";
 const originalFetch = globalThis.fetch;
 let requests = 0;
 let replacementUrl = null;
-window.location = { href:"https://example.test/index.html?v=2.16#/kezdolap",
+window.location = { href:"https://example.test/index.html?v=2.17#/kezdolap",
   replace:(next) => { replacementUrl = next; } };
 globalThis.fetch = async (url, options) => {
   requests++;
@@ -710,11 +765,11 @@ assert.equal(requests, 0, "Rejtett lapon a frissítés nem terhelheti a hálóza
 document.visibilityState = "visible";
 assert.equal(await liveFooter.checkForUpdates(), true);
 assert.equal(requests, 1);
-assert.equal(liveVersion.textContent, "Verzió: 2.17");
+assert.equal(liveVersion.textContent, "Verzió: 2.18");
 assert.equal(liveUpdated.textContent, "Utolsó frissítés: 2026. 11. 23.");
 assert.equal(liveModalText.textContent, "Ellenőrzött, módosított impresszum-adatok.");
 assert.equal(liveModal.hidden, false, "A megnyitott tájékoztató maradjon meg adatfrissítéskor.");
-assert.equal(replacementUrl, "https://example.test/index.html?v=2.17#/kezdolap",
+assert.equal(replacementUrl, "https://example.test/index.html?v=2.18#/kezdolap",
   "Új kiadáskor az egész alkalmazás új verziókulccsal töltődjön újra.");
 scan(liveFooter.footer).find((node) => node.className === "footer-modal-close").emit("click");
 assert.equal(liveModal.hidden, true);
@@ -725,7 +780,7 @@ invalid.release = "2.17";
 invalid.home.footer.notices[0].body = "";
 globalThis.fetch = async () => ({ ok: true, json: async () => invalid });
 assert.equal(await liveFooter.checkForUpdates(), false);
-assert.equal(liveVersion.textContent, "Verzió: 2.17", "Hibás JSON nem írhatja felül az érvényes adatot.");
+assert.equal(liveVersion.textContent, "Verzió: 2.18", "Hibás JSON nem írhatja felül az érvényes adatot.");
 const duplicateGlyph = structuredClone(refreshed);
 duplicateGlyph.home.footer.notices[1].glyph = duplicateGlyph.home.footer.notices[0].glyph;
 globalThis.fetch = async () => ({ ok: true, json: async () => duplicateGlyph });
@@ -960,6 +1015,18 @@ for (const width of [768, 1024, 1440, 1920]) {
 assert.match(block(baseCss, ".footer-notice-modal"), /position:fixed; inset:0; z-index:3000;/);
 assert.match(block(desktopCss, ".desktop-footer"), /padding:5px/);
 assert.match(block(mobileCss, ".mobile-footer"), /padding:4px/);
+assert.match(desktopCss, /\.desktop-hero-continuation\s*\{[^}]*min-height:100dvh/s,
+  "A nagy kép után egy teljes görgethető folytatás szükséges, különben a hero nem tűnik el.");
+assert.match(desktopCss, /\.desktop-hero-controls\s*\{[^}]*top:clamp\(/s,
+  "Az asztali kép információs kártyája jobb felül legyen.");
+assert.doesNotMatch(desktopCss, /\.desktop-hero-scroll\s*\{/,
+  "Az asztali lefelé mutató nyílgombot valóban ki kell venni.");
+assert.match(desktopCss, /\[data-theme="light"\] \.desktop-hero-shade/,
+  "A világos témának az asztali nyitófotó megjelenését is módosítania kell.");
+assert.match(mobileCss, /\.mobile-story-stage\s*\{[^}]*height:158px/s,
+  "A mobilos képes sáv maradjon 158 px magas vagy annál alacsonyabb.");
+assert.match(mobileCss, /\.mobile-story-visual\[data-active="true"\]/,
+  "A mobilos állapotok külön, áttűnő képréteget használjanak.");
 assert.match(block(mobileCss, ".mobile-home"), /display:\s*flex;\s*flex-direction:\s*column;/);
 assert.match(block(mobileCss, ".mobile-main"), /flex:\s*1 1 auto;/);
 assert.match(block(desktopCss, ".desktop-main"), /flex:\s*1 1 auto;/);
@@ -1024,7 +1091,7 @@ location.hash = config.routes.gate;
 await import(new URL("../shared/js/entry.js", import.meta.url));
 const nextTick = () => new Promise((done) => setImmediate(done));
 await nextTick();
-assert.equal(historyUrl, "https://example.test/index.html?v=2.16#/",
+assert.equal(historyUrl, "https://example.test/index.html?v=2.17#/",
   "A kezdő URL kapjon kiadási verziót a későbbi cache-biztos újratöltéshez.");
 assert.equal(documentRoot.dataset.platform, "mobile");
 assert.equal(documentRoot.dataset.route, "gate");
@@ -1163,7 +1230,7 @@ if (chromium) {
         await page.waitForURL(/#\/kezdolap$/, { timeout: 7000 });
         assert.equal(await page.locator("header").count(), 1);
         assert.equal(await page.locator("footer").count(), 1);
-        assert.equal(await page.locator("main").locator(":scope > *").count(), width < 768 ? 0 : 1);
+        assert.equal(await page.locator("main").locator(":scope > *").count(), 2);
         const platform = width < 768 ? "mobile" : "desktop";
         if (platform === "desktop") {
           assert.equal(await page.locator(".desktop-hero-photo").count(), 1);
@@ -1176,6 +1243,15 @@ if (chromium) {
           }));
           await page.waitForFunction(() => document.querySelector(".desktop-home")?.dataset.heroCompact === "true");
           assert.equal(await page.locator(".desktop-crest-toggle").getAttribute("aria-hidden"), "false");
+          assert.equal(await page.locator(".desktop-hero-scroll").count(), 0);
+          await page.evaluate(() => window.scrollTo({
+            top:document.querySelector(".desktop-hero-track").offsetHeight, behavior:"instant"
+          }));
+          await page.waitForFunction(() =>
+            document.querySelector(".desktop-hero-track")?.getBoundingClientRect().bottom <= 1);
+        } else {
+          assert.equal(await page.locator(".mobile-story-photo").count(),6);
+          assert.equal(await page.locator(".mobile-story-stage").getAttribute("data-story-mode"),"trio");
         }
         await page.locator(`.${platform}-crest-toggle`).click();
         if (platform === "mobile") {

@@ -1,8 +1,41 @@
-# Csanádi 2.16 – visszaállított asztali nyitókép, húsz fotó és kompakt lábléc
+# Csanádi 2.17 – új mobilos képes történet és újraépített asztali nyitóoldal
 
 Ez a ZIP **nem publikált** fejlesztési kiadás. A 2.15-ös forráscsomagot
-folytatja, az 1.53-as referenciából visszaállított képekkel és görgetési
-viselkedéssel. Minden korábbi ZIP változatlanul megmaradt.
+és a 2.16-os fejlesztést folytatja az eredeti 1.53-as képek és minden korábbi
+elfogadott funkció megtartásával. A korábbi ZIP-ek változatlanul megmaradtak.
+
+## A 2.17-es módosítás hatóköre
+
+- A mobilos kezdőlap **öt egymás utáni görgetési állapotot** kapott:
+  **Sport · Tudás · Közösség együtt → Sport → Tudás → Közösség → ismét együtt**.
+  A sáv tényleges látható magassága kb. 130–158 képpont, és minden állapot
+  ugyanabban a teljes szélességű, görgetésre reagáló felületen jelenik meg.
+  A mobilos címeres főmenügomb változatlanul a felső fejlécben marad.
+- Mindhárom témához **hat-hat önálló, új kép**, összesen **18 különálló WebP**
+  készült. A témákhoz a betöltéskor véletlenszerűen kerül kiválasztásra három
+  eltérő kép: egy az együtt induló, egy az önálló és egy az együtt záró állapothoz.
+  Az együttállásban három képrészlet, a külön témáknál egy nagy képrészlet látszik.
+  A JSON tartalmazza a képlistákat és a szövegeket, a logika kizárólag
+  `mobile/story.js` fájlban él.
+- Az asztali nyitó **görgetési animációját újraépítettük**: a nagy fotó és
+  a címer a fejléc valódi címerpozíciójához tart, a fénykép köre simán
+  szűkül. A korábbi kép teljes eltűnését megakadályozó rövid oldalhossz után
+  most van egy teljes képernyőnyi, saját tartalmi folytatás, ezért a
+  nyitófelület továbbgörgetve ténylegesen kimegy a látótérből.
+- Az **alsó lefelé mutató nyilat eltávolítottuk** az asztali nyitóképről.
+  A dia információs kártyája a bal alsó helyett a **jobb felső** sarokba került.
+  A világos/sötét/automatikus téma az asztali hero és fejléc külön szín- és
+  árnyékolási szabályait is vezérli.
+- Mindkét kezdőlapon JSON-ból működő, **háromelemű ideiglenes felsorolás**
+  mutatja, milyen tartalmak kerülnek majd oda. Asztalon a nyitókép után,
+  mobilon a képes történet alatt található. A valódi iskolai oldalblokkok
+  továbbra is későbbi fejlesztésre várnak.
+- Az asztali **20 képes, 3 percenként váltó, óránként teljesen újrakevert**
+  vetítés változatlan; a mobilos 18 új kép ettől teljesen független.
+
+**Vizuális tesztkorlát:** a kódtesztek a struktúrát és állapotváltásokat
+ellenőrzik, a korábbi futtató környezet a Chromium elindítását blokkolta.
+Éles asztali és telefonos megjelenésben szükséges a végső jóváhagyás.
 
 ## A 2.16-os módosítás hatóköre
 
@@ -29,7 +62,7 @@ viselkedéssel. Minden korábbi ZIP változatlanul megmaradt.
   kép és címer visszaáll.
 - **Mobilon nem jelenik meg** ez az asztali képsor vagy görgetési animáció.
   A mobilos címeres menügomb továbbra is mindig a felső ikonsorban van.
-  A jóval alacsonyabb mobilos görgetési nyitóelem külön jóváhagyásra vár.
+  A jóval alacsonyabb mobilos görgetési nyitóelem a 2.17-ben külön készült el.
 - A 2.15-ös keresők, menük, JSON-hiba esetén megjelenő tartalék offline
   oldal és automatikus újrapróbálás változatlanul megmaradtak.
 
@@ -85,18 +118,20 @@ shared/
   assets/...                 – a közös címer és kapuképek
 mobile/
   app.js, header.js          – önálló mobilos fejléc és összerakás
+  story.js                   – öt görgetési állapot és témánként 6 véletlen fotó
   menu.js                    – a választott D jelű, íves mobilos iránytű
   page.js                    – saját mobilos, középre igazított oldalvázlat
   search.js                  – saját, teljes képernyős Spotlight kereső
   styles.css                 – kizárólag mobilos elrendezés
 desktop/
   app.js, header.js          – önálló asztali fejléc és összerakás
-  hero.js                    – eredeti teljes képes nyitó, 20 véletlenített dia, scroll-fold
+  hero.js                    – újraépített teljes képes nyitó, 20 dia, görgetési pálya
   menu.js                    – saját, két szimmetrikus gyűrűs lebegő menü
   page.js                    – saját asztali, középre igazított oldalvázlat
   search.js                  – saját, lebegő Spotlight kereső
   styles.css                 – kizárólag asztali elrendezés
 shared/assets/media/web/desktop-hero/ – húsz különálló, asztali WebP-nyitókép
+shared/assets/media/web/mobile-story/ – tizennyolc különálló, mobilos WebP-kép
 tools/stamp-release.mjs      – a JSON release alapján kiadási cache-kulcsok
 ```
 
@@ -209,13 +244,13 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   visszatéréskor újra ellenőrzünk. Hibás JSON esetén a korábbi érvényes
   információ marad látható.
 - A lábléc paneljeit és külső térközeit jelentősen csökkentettük.
-  A legalsó sor minden frissítés után a `Verzió: 2.16`,
+  A legalsó sor minden frissítés után a `Verzió: 2.17`,
   illetve a későbbi JSON-verzió.
 
 ## Frissítés böngészési adatok törlése nélkül
 
 - A nyitó HTML a `shared/js/entry.js` és az alap CSS fájlt a JSON-ban
-  szereplő kiadáshoz kötött URL-lel (`?v=2.16`) kéri le.
+  szereplő kiadáshoz kötött URL-lel (`?v=2.17`) kéri le.
 - Minden statikus JavaScript-modul-import ugyanilyen verziót kap a
   `node tools/stamp-release.mjs` kiadás-előkészítő lépésben. A két
   platformstílus is verziózott URL-lel töltődik be.
@@ -224,7 +259,7 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   útvonal megtartásával, új verzióparaméterrel tölti újra a teljes oldalt.
 - **Korlát:** a régi, már eltárolt 2.13-as kezdő HTML és programkód
   magától nem feltétlenül tudja alkalmazni az új mechanizmust; az új
-  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.16`
+  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.17`
   URL-t. A tárhely/CDN HTTP gyorsítótárazási szabályai külön is számítanak.
 
 ## A visszaállított asztali kezdőlap és a mobilos következő lépés
@@ -235,16 +270,16 @@ valós aloldal-hivatkozások, valamint a 3 perces időköz a közös JSON-ból
 érkeznek. Külön `desktop/hero.js` kezeli, ezért a mobilos fejléc/menü kódját
 nem érinti.
 
-**Mobilra javasolt, de még nem megvalósított következő fejlesztés:** egy
-130–180 pixel magas „Sport · Tudás · Közösség” tematikus sáv három keskeny,
-érinthető témakártyával, amelyek lefelé görgetve finoman átrendeződnek vagy
-egymás után hangsúlyt kapnak. Nem lenne nagy képcsúszka; a felső címeres
-menügomb egy pillanatra sem kerülne át máshová.
+**A 2.17-ben megvalósult mobilos fejlesztés:** 130–158 pixel magas,
+teljes szélességű „Sport · Tudás · Közösség” tematikus sáv,
+öt görgetési állapottal és három, hatképes véletlen képválasztóval.
+Ez nem az asztali nagy kép másolata; a felső címeres menügomb nem kerül
+át máshová.
 
 A menüvégpontok továbbra is csak minimális, jóváhagyott oldalvázlatokként
 nyílnak meg, valós tartalmuk később épül be.
 A lábléc `Tájékoztatás` oszlopának legalsó sora a JSON-ból
-automatikusan megjelenő `Verzió: 2.16`.
+automatikusan megjelenő `Verzió: 2.17`.
 
 ## Tesztek és korlát
 

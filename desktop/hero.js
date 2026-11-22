@@ -1,5 +1,5 @@
-import { crest, element } from "../shared/js/dom.js?v=2.16";
-import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.16";
+import { crest, element } from "../shared/js/dom.js?v=2.17";
+import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.17";
 
 const clamp = (value) => Math.max(0, Math.min(1, value));
 const mediaRoot = "./shared/assets/media/web/desktop-hero/";
@@ -17,8 +17,8 @@ export function shuffledHeroOrder(count, previous = -1, random = Math.random) {
   return sequence;
 }
 
-/** A régi teljes képes asztali nyitás: forgó, középső címer és görgetésre
- * a fejléc címeréhez összezáródó teljes fotó. Mobilon nem importáljuk. */
+/** Újraépített teljes képes asztali nyitás: a fotó és a címer ugyanabba a
+ * fejlécbeli célpontba fut. Mobilon ez a modul nincs betöltve. */
 export function createDesktopHero(config, { openMenu, headerCrest, setCompact }) {
   const data = config.home.desktopHero;
   if (!Array.isArray(data?.slides) || data.slides.length < 2 ||
@@ -46,8 +46,6 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
     type: "button", "aria-label": data.menuTitle,
     "aria-controls": "desktop-main-menu", "aria-expanded": "false"
   } }, crest(config, "desktop-hero-crest-image"));
-  const cue = element("button", { className: "desktop-hero-scroll", text: data.scrollGlyph,
-    attributes: { type: "button", "aria-label": data.scrollLabel, title: data.scrollLabel } });
   const brand = element("div", { className: "desktop-hero-identity", attributes: { "aria-hidden": "true" } },
     element("span", { className: "desktop-hero-wordmark", text: data.brand }),
     element("span", { className: "desktop-hero-wordmark-sub", text: data.brandSub }));
@@ -58,13 +56,23 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
     element("div", { className: "desktop-hero-image", attributes: { "aria-hidden": "true" } }, photo,
       element("div", { className: "desktop-hero-shade" })),
     brand, heroCrest, message, previous, next,
-    element("div", { className: "desktop-hero-controls" }, story, counter, pause), cue);
+    element("div", { className: "desktop-hero-controls" }, story, counter, pause));
   const track = element("section", { className: "desktop-hero-track", attributes: {
     "aria-label": data.ariaLabel
   } },
     element("div", { className: "desktop-hero-after", attributes: { "aria-hidden": "true" } },
       element("span", { text: data.brand }), element("span", { text: data.motto })),
     stage);
+  const continuation = element("section", { className: "desktop-hero-continuation" },
+    element("div", { className: "desktop-hero-continuation-inner" },
+      element("span", { className: "desktop-hero-continuation-brand", text: data.brand }),
+      element("h2", { text: data.schoolTitle }),
+      element("p", { text: data.motto }),
+      element("div", { className: "desktop-home-preview" },
+        element("h3", { text: config.home.homePreview.title }),
+        element("p", { text: config.home.homePreview.intro }),
+        element("ul", { className: "desktop-page-list" },
+          ...config.home.homePreview.items.map((text) => element("li", { text }))))));
 
   let sequence = shuffledHeroOrder(data.slides.length);
   let position = 0;
@@ -75,7 +83,7 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   let scheduled = false;
   let disposed = false;
   const failed = new Set();
-  const allControls = [heroCrest, cue, previous, next, pause, story];
+  const allControls = [heroCrest, previous, next, pause, story];
 
   function showSlide(announce = false) {
     activeIndex = sequence[position];
@@ -121,28 +129,41 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
     }
   });
 
-  const foldLength = () => Math.max(1, (track.offsetHeight || window.innerHeight * 1.58 || 1200) -
+  const foldLength = () => Math.max(1, (track.offsetHeight || window.innerHeight * 1.6 || 1200) -
     (window.innerHeight || 800));
-  cue.addEventListener("click", () => window.scrollTo?.({
-    top: foldLength(), behavior: reduced.matches ? "instant" : "smooth"
-  }));
   function updateScroll() {
     scheduled = false;
     if (disposed) return;
     scrollRatio = clamp((window.scrollY || 0) / foldLength());
-    const stageBounds = stage.getBoundingClientRect?.();
-    const targetBounds = headerCrest?.getBoundingClientRect?.();
-    const targetY = stageBounds && targetBounds && stageBounds.height
-      ? ((targetBounds.top + targetBounds.height / 2 - stageBounds.top) / stageBounds.height * 100)
-      : 12;
-    const y = 45 + (targetY - 45) * scrollRatio;
-    stage.style.setProperty("--hero-fold-radius", `${(155 * (1 - scrollRatio)).toFixed(2)}%`);
-    stage.style.setProperty("--hero-fold-y", `${y.toFixed(2)}%`);
-    stage.style.setProperty("--hero-fold-scale", String(1 - scrollRatio * .70));
-    stage.style.setProperty("--hero-fold-opacity", String(1 - scrollRatio * .98));
-    const compact = scrollRatio >= .72;
+    const progress = reduced.matches ? (scrollRatio >= .5 ? 1 : 0)
+      : scrollRatio * scrollRatio * (3 - 2 * scrollRatio);
+    const bounds = stage.getBoundingClientRect?.() || { left:0, top:0,
+      width:window.innerWidth || 1440, height:window.innerHeight || 900 };
+    const target = headerCrest?.getBoundingClientRect?.() || { left:bounds.width/2 - 38,
+      top:0, width:76, height:76 };
+    const startX = bounds.width / 2;
+    const startY = bounds.height / 2;
+    const targetX = target.left + target.width / 2 - bounds.left;
+    const targetY = target.top + target.height / 2 - bounds.top;
+    const moveX = (targetX - startX) * progress;
+    const moveY = (targetY - startY) * progress;
+    const clipRadius = Math.hypot(bounds.width, bounds.height) * (1 - progress) +
+      target.width * .48 * progress;
+    const sourceCrestWidth = heroCrest.offsetWidth || Math.min(234,
+      Math.max(158, (window.innerWidth || 1100) * .16));
+    const endScale = Math.min(1, target.width / sourceCrestWidth);
+    stage.style.setProperty("--hero-clip-radius", `${clipRadius.toFixed(2)}px`);
+    stage.style.setProperty("--hero-clip-x", `${(startX + moveX).toFixed(2)}px`);
+    stage.style.setProperty("--hero-clip-y", `${(startY + moveY).toFixed(2)}px`);
+    stage.style.setProperty("--hero-crest-x", `${moveX.toFixed(2)}px`);
+    stage.style.setProperty("--hero-crest-y", `${moveY.toFixed(2)}px`);
+    stage.style.setProperty("--hero-crest-scale", String(1 + (endScale - 1) * progress));
+    stage.style.setProperty("--hero-crest-opacity", String(clamp((1 - progress) / .15)));
+    stage.style.setProperty("--hero-image-opacity", String(clamp((1 - progress) / .13)));
+    stage.style.setProperty("--hero-fold-opacity", String(clamp((1 - progress) / .5)));
+    const compact = progress >= .86;
     setCompact(compact);
-    const folded = scrollRatio >= .985;
+    const folded = progress >= .97;
     if (folded !== lastFolded) {
       for (const control of allControls) control.setAttribute("tabindex", folded ? "-1" : "0");
       lastFolded = folded;
@@ -161,7 +182,7 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   }, intervalMs);
   showSlide();
   updateScroll();
-  return { track, updateScroll, destroy() {
+  return { track, continuation, updateScroll, destroy() {
     disposed = true;
     clearInterval(timer);
     window.removeEventListener?.("scroll", onScroll);

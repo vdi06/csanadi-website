@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.16";
-import { trapTab } from "../shared/js/focus.js?v=2.16";
-import { menuPageHref } from "../shared/js/menu-data.js?v=2.16";
+import { element } from "../shared/js/dom.js?v=2.17";
+import { trapTab } from "../shared/js/focus.js?v=2.17";
+import { menuPageHref } from "../shared/js/menu-data.js?v=2.17";
 
 /** Mobilos iránytű: az alapmenü és minden almenürács ugyanabban a rétegben marad. */
 export function createMobileMenu(config, trigger, beforeOpen = () => {}) {

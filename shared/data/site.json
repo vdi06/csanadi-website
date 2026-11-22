@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.06",
-  "release": "2.16",
+  "release": "2.17",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -28,6 +28,38 @@
     "homeRevealMs": 480
   },
   "home": {
+    "homePreview": {
+      "title": "Mi kerül majd a kezdőlapra?",
+      "intro": "A kezdőlap tartalmi részei később készülnek el:",
+      "items": [
+        "Aktuális hírek, események és kiemelt közlemények",
+        "Sportágak, sporteredmények és a mindennapi sportélet",
+        "Oktatási tudnivalók, felvételi és közösségi programok"
+      ]
+    },
+    "mobileStory": {
+      "ariaLabel": "Mobilos képes történet: Sport, Tudás, Közösség",
+      "introTitle": "SPORT · TUDÁS · KÖZÖSSÉG",
+      "introSubtitle": "Egy iskola, három erősség",
+      "outroTitle": "SPORT · TUDÁS · KÖZÖSSÉG",
+      "outroSubtitle": "Együtt vagyunk Csanádi",
+      "scrollHint": "Görgess tovább",
+      "stateLabel": "Görgetési állapot",
+      "topics": [
+        {
+          "id": "sport", "title": "SPORT", "subtitle": "Lendület, kitartás, csapatmunka",
+          "photos": ["sport-01-futsal.webp", "sport-02-athletics.webp", "sport-03-basketball.webp", "sport-04-swimming.webp", "sport-05-volleyball.webp", "sport-06-table-tennis.webp"]
+        },
+        {
+          "id": "tudas", "title": "TUDÁS", "subtitle": "Kíváncsiság, alkotás, fejlődés",
+          "photos": ["tudas-01-digital.webp", "tudas-02-biomechanics.webp", "tudas-03-library.webp", "tudas-04-mathematics.webp", "tudas-05-robotics.webp", "tudas-06-geography.webp"]
+        },
+        {
+          "id": "kozosseg", "title": "KÖZÖSSÉG", "subtitle": "Élmények, barátságok, összetartozás",
+          "photos": ["kozosseg-01-sportsday.webp", "kozosseg-02-student-council.webp", "kozosseg-03-volunteers.webp", "kozosseg-04-corridor.webp", "kozosseg-05-cafeteria.webp", "kozosseg-06-celebration.webp"]
+        }
+      ]
+    },
     "desktopHero": {
       "ariaLabel": "Váltakozó képes asztali nyitóoldal",
       "brand": "CSANÁDI",

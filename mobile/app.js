@@ -1,8 +1,9 @@
-import { element } from "../shared/js/dom.js?v=2.16";
-import { mountGate } from "../shared/js/gate.js?v=2.16";
-import { makeFooter } from "../shared/js/footer.js?v=2.16";
-import { makeMobileHeader } from "./header.js?v=2.16";
-import { createMobilePage } from "./page.js?v=2.16";
+import { element } from "../shared/js/dom.js?v=2.17";
+import { mountGate } from "../shared/js/gate.js?v=2.17";
+import { makeFooter } from "../shared/js/footer.js?v=2.17";
+import { makeMobileHeader } from "./header.js?v=2.17";
+import { createMobilePage } from "./page.js?v=2.17";
+import { createMobileStory } from "./story.js?v=2.17";
 
 /** Önálló mobilos nézet: saját fejléc, JSON-vázlatos aloldal és kompakt lábléc. */
 export function mount(root, config, page) {
@@ -16,10 +17,18 @@ export function mount(root, config, page) {
   const mobileHeader = makeMobileHeader(config, home);
   const mobileFooter = makeFooter(config, "mobile");
   const main = element("main", { className: "mobile-main", attributes: { id: "content" } });
-  if (page.startsWith("page:")) main.append(createMobilePage(config, page.slice(5)));
+  const story = page === "home" ? createMobileStory(config) : null;
+  if (story) main.append(story.track,
+    element("section", { className: "mobile-page-preview mobile-home-preview" },
+      element("h2", { className: "mobile-page-title", text: config.home.homePreview.title }),
+      element("p", { className: "mobile-page-intro", text: config.home.homePreview.intro }),
+      element("ul", { className: "mobile-page-list" },
+        ...config.home.homePreview.items.map((text) => element("li", { text })))));
+  else if (page.startsWith("page:")) main.append(createMobilePage(config, page.slice(5)));
   home.append(mobileHeader.header,
     main,
     mobileFooter.footer);
   platformRoot.replaceChildren(home);
-  return () => { mobileHeader.destroy(); mobileFooter.destroy(); };
+  story?.updateScroll();
+  return () => { story?.destroy(); mobileHeader.destroy(); mobileFooter.destroy(); };
 }
