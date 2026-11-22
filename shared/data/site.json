@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.06",
-  "release": "2.15",
+  "release": "2.16",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -28,6 +28,44 @@
     "homeRevealMs": 480
   },
   "home": {
+    "desktopHero": {
+      "ariaLabel": "Váltakozó képes asztali nyitóoldal",
+      "brand": "CSANÁDI",
+      "brandSub": "SPORTISKOLA",
+      "schoolTitle": "CSANÁDI SPORTISKOLA",
+      "motto": "Sport · Tudás · Közösség",
+      "scrollLabel": "Görgess le a folytatáshoz",
+      "scrollGlyph": "⌄",
+      "menuTitle": "Főmenü megnyitása a központi címerrel",
+      "previousLabel": "Előző nyitókép",
+      "nextLabel": "Következő nyitókép",
+      "pauseLabel": "Automatikus képváltás szüneteltetése",
+      "resumeLabel": "Automatikus képváltás folytatása",
+      "slideLabel": "Nyitókép",
+      "intervalMs": 180000,
+      "slides": [
+        { "id": "sport", "file": "hero-sport-2026.webp", "eyebrow": "SPORT", "title": "A mozgásban közösség születik", "summary": "Edzés, figyelem és fejlődés minden nap.", "pageId": "sports-disciplines" },
+        { "id": "tudas", "file": "hero-oktatas-2026.webp", "eyebrow": "TUDÁS", "title": "A tanulás új ajtókat nyit", "summary": "Közös gondolkodás, kíváncsiság és biztos alapok.", "pageId": "education-resources" },
+        { "id": "kozosseg", "file": "hero-community-2026.webp", "eyebrow": "KÖZÖSSÉG", "title": "Ide jó megérkezni", "summary": "Találkozások, élmények és közös történetek nap mint nap.", "pageId": "school-introduction" },
+        { "id": "csapat", "file": "sport2-1600.webp", "eyebrow": "SPORT", "title": "Gyakorlásból lesz eredmény", "summary": "Fókusz, ritmus és csapatmunka a pályán.", "pageId": "sports-results" },
+        { "id": "uszas", "file": "swimming-1600.webp", "eyebrow": "ÚSZÁS", "title": "Erő és technika a vízben", "summary": "Kitartó munka és fejlődés minden hosszon.", "pageId": "sports-disciplines" },
+        { "id": "tanulas", "file": "oktatas2-1600.webp", "eyebrow": "TANULÁS", "title": "Közösen könnyebb tanulni", "summary": "Nyitott tér, figyelem és együttműködés.", "pageId": "education-community" },
+        { "id": "digitalis", "file": "digital-1600.webp", "eyebrow": "DIGITÁLIS KULTÚRA", "title": "Modern tudás korszerű környezetben", "summary": "Informatikai és digitális készségek a mindennapokhoz.", "pageId": "education-digital" },
+        { "id": "iskolai-elet", "file": "community2-1600.webp", "eyebrow": "KÖZÖSSÉG", "title": "Az iskola közös élmény is", "summary": "Programok, kapcsolatok és jó hangulat mindenütt.", "pageId": "news-latest" },
+        { "id": "erkezes", "file": "bejarat-1600.webp", "eyebrow": "ÉRKEZÉS", "title": "Innen indul minden nap", "summary": "Barátságos iskola, ahová jó belépni.", "pageId": "information-contact" },
+        { "id": "atletika", "file": "hero-athletics-new.webp", "eyebrow": "ATLÉTIKA", "title": "Minden lépés számít", "summary": "Közös lendület és kitartó munka a pályán.", "pageId": "sports-disciplines" },
+        { "id": "robotika", "file": "hero-digital-new.webp", "eyebrow": "ALKOTÁS", "title": "A kíváncsiságból tudás lesz", "summary": "Felfedezés és együttműködés a digitális világban.", "pageId": "education-digital" },
+        { "id": "roplabda", "file": "hero-volleyball-new.webp", "eyebrow": "RÖPLABDA", "title": "Együtt magasabbra jutunk", "summary": "Gyors döntések, csapatjáték és sportos élmények.", "pageId": "sports-disciplines" },
+        { "id": "labdarugas", "file": "hero-football-new.webp", "eyebrow": "LABDARÚGÁS", "title": "A pályán együtt haladunk", "summary": "Összjáték és lendület minden edzésen.", "pageId": "sports-disciplines" },
+        { "id": "kezilabda", "file": "hero-handball-new.webp", "eyebrow": "KÉZILABDA", "title": "Gyorsaság, figyelem, csapat", "summary": "Egymásra épülő mozdulatok és közös sikerek.", "pageId": "sports-disciplines" },
+        { "id": "torna", "file": "hero-gymnastics-new.webp", "eyebrow": "MOZGÁS", "title": "A fejlődés sokféle mozdulatból áll", "summary": "Fegyelem, egyensúly és kitartás.", "pageId": "sports-disciplines" },
+        { "id": "labor", "file": "hero-laboratory-new.webp", "eyebrow": "FELFEDEZÉS", "title": "Kérdésekből új felismerések", "summary": "A kísérletezés a kíváncsiságnál kezdődik.", "pageId": "education-resources" },
+        { "id": "konyvtar", "file": "hero-library-new.webp", "eyebrow": "OLVASÁS", "title": "Minden könyv új világot nyit", "summary": "Elmélyülés, gondolkodás és közös felfedezés.", "pageId": "education-library" },
+        { "id": "zene", "file": "hero-music-new.webp", "eyebrow": "KÖZÖSSÉG", "title": "Együtt szól igazán", "summary": "Alkotás, figyelem és öröm a közös zenében.", "pageId": "news-latest" },
+        { "id": "kirandulas", "file": "hero-nature-new.webp", "eyebrow": "ÉLMÉNYEK", "title": "A tanulás az iskola falain túl is tart", "summary": "Mozgás, felfedezés és közösségi élmény.", "pageId": "school-eco" },
+        { "id": "muhely", "file": "hero-workshop-new.webp", "eyebrow": "ALKOTÓMŰHELY", "title": "Az ötletekből valami új születik", "summary": "Kreativitás és együttműködés kézzel fogható formában.", "pageId": "school-workshop" }
+      ]
+    },
     "header": {
       "schoolLine1": "CSANÁDI ÁRPÁD SPORTISKOLA",
       "schoolLine2": "ÁLTALÁNOS ISKOLA ÉS GIMNÁZIUM",

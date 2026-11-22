@@ -1,4 +1,4 @@
-import { element } from "./dom.js?v=2.15";
+import { element } from "./dom.js?v=2.16";
 
 /** Kizárólag közös adatelérés, ikonok és lábléc.
  * Fejlécet itt szándékosan NEM építünk: azt a két platform a saját fájljában teszi. */

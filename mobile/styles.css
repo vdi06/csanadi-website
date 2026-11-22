@@ -74,21 +74,21 @@
   font-size:15px; line-height:1.5; text-align:center;
 }
 .mobile-page-list li::before { content:"• "; color:var(--accent); }
-.mobile-footer { padding:12px 16px calc(16px + env(safe-area-inset-bottom)); }
+.mobile-footer { padding:4px 10px calc(5px + env(safe-area-inset-bottom)); }
 .mobile-footer .footer-inner {
   width:min(100%,650px); display:block; text-align:center;
 }
 .mobile-footer .footer-mobile-tabs {
-  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px;
-  width:min(100%,650px); margin:0 auto 9px; padding:4px;
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px;
+  width:min(100%,650px); margin:0 auto 4px; padding:2px;
   border:1px solid color-mix(in srgb,var(--accent) 42%,transparent);
-  border-radius:17px; background:color-mix(in srgb,var(--background) 64%,var(--surface));
+  border-radius:10px; background:color-mix(in srgb,var(--background) 64%,var(--surface));
 }
 .mobile-footer .footer-mobile-tab {
-  min-width:0; min-height:42px; padding:8px 7px;
-  border:1px solid transparent; border-radius:12px;
+  min-width:0; min-height:28px; padding:4px 6px;
+  border:1px solid transparent; border-radius:7px;
   background:transparent; color:var(--muted); font:inherit;
-  font-size:clamp(12px,3.1vw,15px); font-weight:850;
+  font-size:clamp(10px,2.6vw,12px); font-weight:850;
   cursor:pointer; text-align:center; overflow-wrap:anywhere;
 }
 .mobile-footer .footer-mobile-tab[aria-selected="true"] {
@@ -98,16 +98,30 @@
 }
 .mobile-footer .footer-mobile-tab:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
 .mobile-footer .footer-contact[hidden],.mobile-footer .footer-links[hidden] { display:none !important; }
-.mobile-footer .footer-links { align-items:stretch; width:100%; text-align:left; }
-.mobile-footer .footer-notices {
-  flex:1 1 auto; min-height:clamp(132px,20svh,174px);
-  grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px;
+.mobile-footer .footer-links {
+  align-items:stretch; width:100%; text-align:left;
+  padding:5px 8px; gap:2px; border-radius:10px;
 }
-.mobile-footer .footer-notice-icon { min-height:58px; font-size:clamp(23px,6vw,29px); border-radius:15px; }
-.mobile-footer .footer-contact { width:100%; align-items:center; text-align:center; }
+.mobile-footer .footer-notices {
+  flex:0 0 66px; min-height:66px;
+  grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px;
+}
+.mobile-footer .footer-notice-icon { min-height:31px; font-size:clamp(15px,4vw,18px); border-radius:8px; padding:2px; }
+.mobile-footer .footer-notice-icon::before { inset:2px; border-radius:5px; }
+.mobile-footer .footer-notice-icon::after { bottom:2px; height:1px; }
+.mobile-footer .footer-contact {
+  width:100%; align-items:center; text-align:center; gap:3px;
+  padding:6px 8px; border-radius:10px;
+}
 .mobile-footer .footer-contact-main { justify-items:center; }
-.mobile-footer h2 { margin:6px 0 12px; }
-.mobile-footer .footer-links a { min-height:36px; padding:6px 2px; }
+.mobile-footer h2 { display:none; }
+.mobile-footer .footer-inner p { margin:0; line-height:1.12; font-size:10px; }
+.mobile-footer .footer-brand { font-size:12px; }
+.mobile-footer .footer-contact a { font-size:11px; }
+.mobile-footer .footer-inner .footer-signature { font-size:9px; padding-top:3px; }
+.mobile-footer .footer-inner .footer-updated,
+.mobile-footer .footer-inner .footer-checked { font-size:9px; line-height:1.1; }
+.mobile-footer .footer-links .footer-version { font-size:10px; line-height:1.12; padding-top:2px; }
 
 /* Két külön mobilos, teljes képernyős felület: menü és kereső. */
 .mobile-menu-overlay, .mobile-search-overlay {

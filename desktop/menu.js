@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.15";
-import { trapTab } from "../shared/js/focus.js?v=2.15";
-import { menuPageHref } from "../shared/js/menu-data.js?v=2.15";
+import { element } from "../shared/js/dom.js?v=2.16";
+import { trapTab } from "../shared/js/focus.js?v=2.16";
+import { menuPageHref } from "../shared/js/menu-data.js?v=2.16";
 
 /** Asztali kétgyűrűs menü: az almenük valós, JSON-vázlatos belső oldalakra visznek. */
 export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
@@ -41,6 +41,7 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
   let rootIndex = -1;
   let secondControls = [];
   let previousOverflow;
+  let openOrigin = trigger;
 
   function itemNode(item, className) {
     return element("a", { className, text: item.label,
@@ -125,17 +126,22 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
     clearSelection();
     trigger.setAttribute("aria-expanded", "false");
     trigger.setAttribute("aria-label", config.home.header.menuOpenLabel);
+    if (openOrigin !== trigger) openOrigin.setAttribute("aria-expanded", "false");
     if (document.body) document.body.style.overflow = previousOverflow || "";
-    if (restoreFocus) trigger.focus({ preventScroll: true });
+    if (restoreFocus) (openOrigin.isConnected === false ? trigger : openOrigin)
+      .focus({ preventScroll: true });
+    openOrigin = trigger;
   }
-  function open() {
+  function open(origin = trigger) {
     beforeOpen();
     if (!overlay.hidden) return;
+    openOrigin = origin;
     previousOverflow = document.body?.style.overflow;
     if (document.body) document.body.style.overflow = "hidden";
     overlay.hidden = false;
     trigger.setAttribute("aria-expanded", "true");
     trigger.setAttribute("aria-label", config.home.header.menuCloseLabel);
+    if (openOrigin !== trigger) openOrigin.setAttribute("aria-expanded", "true");
     rootButtons[Math.max(0, rootIndex)].focus({ preventScroll: true });
   }
   trigger.addEventListener("click", () => overlay.hidden ? open() : close());
@@ -159,5 +165,5 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
     }
     close(false);
   });
-  return { overlay, close, destroy: () => close(false) };
+  return { overlay, open, close, destroy: () => close(false) };
 }

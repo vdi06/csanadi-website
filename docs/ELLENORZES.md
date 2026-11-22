@@ -1,7 +1,42 @@
-# Csanádi 2.15 – egyedi, területkitöltő láblécgombok és forrásellenőrzés
+# Csanádi 2.16 – visszaállított asztali nyitókép, húsz fotó és kompakt lábléc
 
-Ez a ZIP **nem publikált** fejlesztési kiadás. A 2.14-es forráscsomagból
-indul; a korábbi ZIP változatlanul megmaradt.
+Ez a ZIP **nem publikált** fejlesztési kiadás. A 2.15-ös forráscsomagot
+folytatja, az 1.53-as referenciából visszaállított képekkel és görgetési
+viselkedéssel. Minden korábbi ZIP változatlanul megmaradt.
+
+## A 2.16-os módosítás hatóköre
+
+- Az **asztali lábléc** külső és belső térközeit, betűméreteit, valamint a
+  négy aranyhatású gomb magasságát jelentősen csökkentettük: a korábbi
+  magas tömb helyett nagyjából feleakkora, tömör, kétoszlopos sáv a cél.
+- A **mobilos lábléc** két füle és 2×2-es betűgombjai megmaradtak, de
+  keskenyebb szegélyekkel, 31 pixeles gombmagassággal, rövidebb sorokkal és
+  jóval kisebb felső/alsó térrel; a cél a korábbi magasság harmada körüli sáv.
+- Az 1.53-as asztali nyitóképsor eredeti **kilenc** képfájlját átemeltük,
+  és a sportiskola világához illő **tizenegy** további képpel bővítettük.
+  Mind a húsz kép önálló 16:9-es WebP állomány; külön feliratot a képekre
+  nem helyezünk.
+- A dia **180 000 ms**, vagyis **3 perc** után vált. A képek minden körben
+  Fisher–Yates módszerrel új, véletlen sorrendbe kerülnek, a húsz kép egy
+  körön belül pontosan egyszer jelenik meg, a körök határán sincs közvetlen
+  ismétlés. Ez normál, nyitva tartott lapon egy **60 perces képkört** ad.
+  Előre/hátra léptetés és kézi szüneteltetés is működik.
+- Asztalon a teljes képes nyitófelületen az **aranykeretes, nagy középső
+  címer** nyitja a meglévő kétgyűrűs menüt; a fejléc középső menügombja
+  induláskor rejtve van. Lefelé görgetve a teljes fotó kör alakban
+  összezáródik, a nagy címer ugyanennek az átmenetnek a során a fejléc
+  felé mozdul, ott megjelenik az eredeti menügomb. Visszagörgetve a nagy
+  kép és címer visszaáll.
+- **Mobilon nem jelenik meg** ez az asztali képsor vagy görgetési animáció.
+  A mobilos címeres menügomb továbbra is mindig a felső ikonsorban van.
+  A jóval alacsonyabb mobilos görgetési nyitóelem külön jóváhagyásra vár.
+- A 2.15-ös keresők, menük, JSON-hiba esetén megjelenő tartalék offline
+  oldal és automatikus újrapróbálás változatlanul megmaradtak.
+
+**Vizuális ellenőrzési korlát:** a környezet a Chromiumot blokkolja, ezért
+az új összehúzódó képfelületet és a láblécek tényleges pixeles magasságát
+külön élő böngészőben is ellenőrizni kell. A méretcél CSS-szabályokkal
+megadott, nem mért képernyőfotós eredmény.
 
 ## A 2.15-ös módosítás hatóköre
 
@@ -56,10 +91,12 @@ mobile/
   styles.css                 – kizárólag mobilos elrendezés
 desktop/
   app.js, header.js          – önálló asztali fejléc és összerakás
+  hero.js                    – eredeti teljes képes nyitó, 20 véletlenített dia, scroll-fold
   menu.js                    – saját, két szimmetrikus gyűrűs lebegő menü
   page.js                    – saját asztali, középre igazított oldalvázlat
   search.js                  – saját, lebegő Spotlight kereső
   styles.css                 – kizárólag asztali elrendezés
+shared/assets/media/web/desktop-hero/ – húsz különálló, asztali WebP-nyitókép
 tools/stamp-release.mjs      – a JSON release alapján kiadási cache-kulcsok
 ```
 
@@ -172,13 +209,13 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   visszatéréskor újra ellenőrzünk. Hibás JSON esetén a korábbi érvényes
   információ marad látható.
 - A lábléc paneljeit és külső térközeit jelentősen csökkentettük.
-  A legalsó sor minden frissítés után a `Verzió: 2.15`,
+  A legalsó sor minden frissítés után a `Verzió: 2.16`,
   illetve a későbbi JSON-verzió.
 
 ## Frissítés böngészési adatok törlése nélkül
 
 - A nyitó HTML a `shared/js/entry.js` és az alap CSS fájlt a JSON-ban
-  szereplő kiadáshoz kötött URL-lel (`?v=2.15`) kéri le.
+  szereplő kiadáshoz kötött URL-lel (`?v=2.16`) kéri le.
 - Minden statikus JavaScript-modul-import ugyanilyen verziót kap a
   `node tools/stamp-release.mjs` kiadás-előkészítő lépésben. A két
   platformstílus is verziózott URL-lel töltődik be.
@@ -187,21 +224,27 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   útvonal megtartásával, új verzióparaméterrel tölti újra a teljes oldalt.
 - **Korlát:** a régi, már eltárolt 2.13-as kezdő HTML és programkód
   magától nem feltétlenül tudja alkalmazni az új mechanizmust; az új
-  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.15`
+  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.16`
   URL-t. A tárhely/CDN HTTP gyorsítótárazási szabályai külön is számítanak.
 
-## Jövőbeli asztali kezdőlap – most nem része a kiadásnak
+## A visszaállított asztali kezdőlap és a mobilos következő lépés
 
-Az 1.53-as megoldás referenciájával később teljes méretű fotó és
-görgethető tartalom jön. Induláskor a címer a nagy kép közepén van,
-és csak lefelé görgetéskor kerül át a fejlécbe. Ezt a menümodult
-függetlenül tartjuk a jövőbeli kép-/görgetéslogikától.
+Az asztali teljes képes nyitó, a címer görgetésre fejlécbe kerülése és
+visszatérése a 2.16 része. A képváltó adatai, a képek sorrendjétől független
+valós aloldal-hivatkozások, valamint a 3 perces időköz a közös JSON-ból
+érkeznek. Külön `desktop/hero.js` kezeli, ezért a mobilos fejléc/menü kódját
+nem érinti.
 
-A kezdőlap fő tartalmi része továbbra is szándékosan üres. Nincs képváltó,
-galéria vagy hero. A menüvégpontok minimális, jóváhagyott oldalvázlatként
-megnyílnak, valós tartalmuk később épül be.
+**Mobilra javasolt, de még nem megvalósított következő fejlesztés:** egy
+130–180 pixel magas „Sport · Tudás · Közösség” tematikus sáv három keskeny,
+érinthető témakártyával, amelyek lefelé görgetve finoman átrendeződnek vagy
+egymás után hangsúlyt kapnak. Nem lenne nagy képcsúszka; a felső címeres
+menügomb egy pillanatra sem kerülne át máshová.
+
+A menüvégpontok továbbra is csak minimális, jóváhagyott oldalvázlatokként
+nyílnak meg, valós tartalmuk később épül be.
 A lábléc `Tájékoztatás` oszlopának legalsó sora a JSON-ból
-automatikusan megjelenő `Verzió: 2.15`.
+automatikusan megjelenő `Verzió: 2.16`.
 
 ## Tesztek és korlát
 

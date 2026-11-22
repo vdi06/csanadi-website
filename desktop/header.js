@@ -1,13 +1,13 @@
-import { crest, element } from "../shared/js/dom.js?v=2.15";
-import { bindAppearance } from "../shared/js/appearance.js?v=2.15";
-import { createEditMode } from "../shared/js/edit-mode.js?v=2.15";
-import { makeSocialLink } from "../shared/js/shell.js?v=2.15";
-import { createDesktopMenu } from "./menu.js?v=2.15";
-import { createDesktopSearch } from "./search.js?v=2.15";
+import { crest, element } from "../shared/js/dom.js?v=2.16";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.16";
+import { createEditMode } from "../shared/js/edit-mode.js?v=2.16";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.16";
+import { createDesktopMenu } from "./menu.js?v=2.16";
+import { createDesktopSearch } from "./search.js?v=2.16";
 
 /** Asztali fejléc: címerből nyíló körmenü és külön nagy lebegő keresőablak.
  * A mobilmenü és annak DOM-ja itt nem létezik. */
-export function makeDesktopHeader(config, home) {
+export function makeDesktopHeader(config, home, { heroMode = false } = {}) {
   const data = config.home.header;
   const brand = element("a", { className: "home-brand desktop-brand", attributes: {
     href: config.routes.home, "aria-label": config.site.fullName
@@ -31,6 +31,15 @@ export function makeDesktopHeader(config, home) {
   const search = createDesktopSearch(config, searchToggle, () => menu.close(false));
   const menu = createDesktopMenu(config, crestToggle, () => search.close(false));
   const editor = createEditMode(config, home, editToggle, "desktop");
+  home.dataset.heroHome = String(heroMode);
+  function setCompact(compact) {
+    home.dataset.heroCompact = String(compact);
+    if (heroMode) {
+      crestToggle.setAttribute("tabindex", compact ? "0" : "-1");
+      crestToggle.setAttribute("aria-hidden", String(!compact));
+    }
+  }
+  setCompact(!heroMode);
 
   const header = element("header", { className: "desktop-header" },
     element("div", { className: "desktop-headline" }, brand),
@@ -44,7 +53,8 @@ export function makeDesktopHeader(config, home) {
     search.overlay, menu.overlay, editor.bar);
 
   const unbindAppearance = bindAppearance(config, home, themeToggle);
-  return { header, destroy: () => {
+  return { header, crestToggle, openMenu: (origin) => menu.open(origin), setCompact,
+    destroy: () => {
     search.destroy(); menu.destroy(); editor.destroy(); unbindAppearance();
   } };
 }

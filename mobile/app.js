@@ -1,8 +1,8 @@
-import { element } from "../shared/js/dom.js?v=2.15";
-import { mountGate } from "../shared/js/gate.js?v=2.15";
-import { makeFooter } from "../shared/js/footer.js?v=2.15";
-import { makeMobileHeader } from "./header.js?v=2.15";
-import { createMobilePage } from "./page.js?v=2.15";
+import { element } from "../shared/js/dom.js?v=2.16";
+import { mountGate } from "../shared/js/gate.js?v=2.16";
+import { makeFooter } from "../shared/js/footer.js?v=2.16";
+import { makeMobileHeader } from "./header.js?v=2.16";
+import { createMobilePage } from "./page.js?v=2.16";
 
 /** Önálló mobilos nézet: saját fejléc, JSON-vázlatos aloldal és kompakt lábléc. */
 export function mount(root, config, page) {
