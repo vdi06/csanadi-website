@@ -1,4 +1,5 @@
-import { element } from "./dom.js?v=2.22";
+import { element } from "./dom.js?v=2.24";
+import { searchSite } from "./search-index.js?v=2.24";
 
 /** Kizárólag közös adatelérés, ikonok és lábléc.
  * Fejlécet itt szándékosan NEM építünk: azt a két platform a saját fájljában teszi. */
@@ -63,9 +64,8 @@ export function searchItems(config) {
 }
 
 export function filterSearchItems(config, query) {
-  const needle = String(query || "").toLocaleLowerCase("hu").trim();
-  return searchItems(config).filter((item) =>
-    [item.label,item.short,item.summary,item.category].some((value) =>
-      String(value || "").toLocaleLowerCase("hu").includes(needle)));
+  // Üres mezőnél marad a négy megszokott gyorselérhetőség. Minden beírt
+  // kifejezést a teljes, JSON-ból épülő tartalomindex dolgoz fel.
+  return String(query || "").trim() ? searchSite(config, query) : searchItems(config);
 }
 

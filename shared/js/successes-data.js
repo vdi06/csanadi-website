@@ -1,14 +1,14 @@
-import { getMenuPage } from "./menu-data.js?v=2.22";
+import { getMenuPage } from "./menu-data.js?v=2.24";
 
 /** Közös tartalmi szabályok, eltérő mobilos és asztali megjelenítéshez. */
 export const successImageRoot = "./shared/assets/media/web/sport-successes/";
 
 export function checkedSportSuccesses(config) {
   const data = config?.home?.sportSuccesses;
-  const fields = ["ariaLabel", "eyebrow", "title", "intro", "openLabel",
+  const fields = ["ariaLabel", "eyebrow", "title", "intro", "archiveTitle", "archiveIntro", "openLabel",
     "closeLabel", "detailLabel", "linkLabel"];
   if (!data || fields.some((field) => typeof data[field] !== "string" || !data[field].trim()) ||
-    !Array.isArray(data.items) || data.items.length !== 6) {
+    !Array.isArray(data.items) || data.items.length < 6 || data.items.length > 250) {
     throw new Error("Érvénytelen sportsiker-tartalom.");
   }
   const ids = new Set();
@@ -28,6 +28,20 @@ export function checkedSportSuccesses(config) {
     ids.add(item.id);
   }
   return data;
+}
+
+/** A kiemelés nem a JSON tömbjének sorrendjétől, hanem a dátumtól függ. */
+export function orderedSportSuccesses(config) {
+  return [...checkedSportSuccesses(config).items].sort((left, right) =>
+    right.date.localeCompare(left.date) || left.id.localeCompare(right.id, "hu"));
+}
+
+export function featuredSportSuccesses(config) {
+  return orderedSportSuccesses(config).slice(0, 6);
+}
+
+export function archivedSportSuccesses(config) {
+  return orderedSportSuccesses(config).slice(6);
 }
 
 export function successDateText(date) {

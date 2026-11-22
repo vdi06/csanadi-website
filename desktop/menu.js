@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.22";
-import { trapTab } from "../shared/js/focus.js?v=2.22";
-import { menuPageHref } from "../shared/js/menu-data.js?v=2.22";
+import { element } from "../shared/js/dom.js?v=2.24";
+import { trapTab } from "../shared/js/focus.js?v=2.24";
+import { menuPageHref } from "../shared/js/menu-data.js?v=2.24";
 
 /** Asztali kétgyűrűs menü: az almenük valós, JSON-vázlatos belső oldalakra visznek. */
 export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
@@ -20,14 +20,9 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
   const stage = element("div", { className: "desktop-wheel-stage" },
     element("div", { className: "desktop-wheel-center-group" }, centerButton, homeLink),
     innerRing, outerRing);
-  const thirdTitle = element("h3", { className: "desktop-wheel-third-title" });
-  const levelThree = element("div", { className: "desktop-wheel-level-three" });
-  const thirdPanel = element("section", { className: "desktop-wheel-third-panel",
-    attributes: { "aria-label": data.sectionsLabel } }, thirdTitle, levelThree);
-  thirdPanel.hidden = true;
   const dialog = element("section", { className: "desktop-wheel-dialog", attributes: {
     role: "dialog", "aria-modal": "true", "aria-label": data.title
-  } }, stage, thirdPanel);
+  } }, stage);
   const backdrop = element("div", { className: "desktop-wheel-backdrop", attributes: { "aria-hidden": "true" } });
   const overlay = element("div", { className: "desktop-wheel-overlay", attributes: {
     id: "desktop-main-menu"
@@ -42,20 +37,6 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
     return element("a", { className, text: item.label,
       attributes: { href: item.href || menuPageHref(item.id) } });
   }
-  function showThird(child, selectedButton) {
-    const wasOpen = selectedButton.getAttribute("aria-expanded") === "true";
-    for (const control of secondControls) if (control.tagName === "BUTTON")
-      control.setAttribute("aria-expanded", String(!wasOpen && control === selectedButton));
-    if (wasOpen) {
-      levelThree.replaceChildren();
-      thirdPanel.hidden = true;
-      return;
-    }
-    const items = child.children || [];
-    levelThree.replaceChildren(...items.map((item) => itemNode(item, "desktop-wheel-third-item")));
-    thirdTitle.textContent = child.label;
-    thirdPanel.hidden = !items.length;
-  }
   function clearSelection() {
     rootIndex = -1;
     for (const button of rootButtons) {
@@ -66,8 +47,6 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
     secondControls = [];
     outerRing.replaceChildren();
     outerRing.hidden = true;
-    levelThree.replaceChildren();
-    thirdPanel.hidden = true;
   }
   function selectRoot(index) {
     // A kiválasztott főág újabb kattintásra összecsukódik;
@@ -83,17 +62,8 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
     }
     secondControls = [];
     outerRing.replaceChildren(...(selected.children || []).map((item, i, items) => {
-      let node;
-      if (item.children?.length) {
-        const button = element("button", { className: "desktop-wheel-sub-node", text: item.label,
-          attributes: { type: "button", "aria-expanded": "false" } });
-        button.addEventListener("click", () => showThird(item, button));
-        secondControls.push(button);
-        node = button;
-      } else {
-        node = itemNode(item, "desktop-wheel-sub-node");
-        secondControls.push(node);
-      }
+      const node = itemNode(item, "desktop-wheel-sub-node");
+      secondControls.push(node);
       // Minden külső gyűrűn pontosan 360/n szögköz: nincs aszimmetrikus ív.
       const angle = -90 + i * 360 / items.length;
       const radians = angle * Math.PI / 180;
@@ -102,8 +72,6 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
       return node;
     }));
     outerRing.hidden = secondControls.length === 0;
-    levelThree.replaceChildren();
-    thirdPanel.hidden = true;
   }
 
   const rootButtons = data.items.map((item, index) => {
@@ -149,8 +117,7 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
   dialog.addEventListener("keydown", (event) => {
     if (event.key === "Escape") { event.preventDefault(); close(); }
     else trapTab(event, [centerButton, homeLink, ...rootButtons,
-      ...secondControls.filter((node) => node.tagName === "BUTTON" || node.tagName === "A"),
-      ...Array.from(levelThree.children).filter((node) => node.tagName === "A")]);
+      ...secondControls]);
   });
   overlay.addEventListener("click", (event) => {
     const link = event.target.closest?.("a[href]");

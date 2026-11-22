@@ -1,8 +1,8 @@
-import { element } from "../shared/js/dom.js?v=2.22";
-import { trapTab } from "../shared/js/focus.js?v=2.22";
-import { menuPageHref } from "../shared/js/menu-data.js?v=2.22";
+import { element } from "../shared/js/dom.js?v=2.24";
+import { trapTab } from "../shared/js/focus.js?v=2.24";
+import { menuPageHref } from "../shared/js/menu-data.js?v=2.24";
 
-/** Mobilos iránytű: az alapmenü és minden almenürács ugyanabban a rétegben marad. */
+/** Mobilos iránytű: kizárólag főpontok és egyetlen almenürács. */
 export function createMobileMenu(config, trigger, beforeOpen = () => {}) {
   const data = config.menu;
   const crest = element("img", { className:"mobile-compass-crest-image",
@@ -26,26 +26,10 @@ export function createMobileMenu(config, trigger, beforeOpen = () => {}) {
     subHeading, subGrid);
   subSection.hidden = true;
 
-  const thirdHeading = element("h4", { className:"mobile-compass-grid-heading" });
-  const thirdGrid = element("div", { className:"mobile-compass-third-grid" });
-  const thirdSection = element("section", { className:"mobile-compass-third-section",
-    attributes: { id:"mobile-compass-third", "aria-label":data.sectionsLabel } },
-    thirdHeading, thirdGrid);
-  thirdSection.hidden = true;
-
   let currentRoot = -1;
-  let currentSecond = null;
   let secondControls = [];
   let previousOverflow;
 
-  function clearThird() {
-    currentSecond = null;
-    thirdSection.hidden = true;
-    thirdGrid.replaceChildren();
-    secondControls.forEach((node) => {
-      if (node.tagName === "BUTTON") node.setAttribute("aria-expanded", "false");
-    });
-  }
   function clearRoot() {
     currentRoot = -1;
     rootButtons.forEach((button) => {
@@ -56,18 +40,6 @@ export function createMobileMenu(config, trigger, beforeOpen = () => {}) {
     subSection.hidden = true;
     subGrid.replaceChildren();
     secondControls = [];
-    clearThird();
-  }
-  function selectSecond(item, control) {
-    if (currentSecond === item.id) { clearThird(); return; }
-    clearThird();
-    currentSecond = item.id;
-    control.setAttribute("aria-expanded", "true");
-    thirdHeading.textContent = item.label;
-    thirdGrid.replaceChildren(...item.children.map((child) =>
-      element("a", { className:"mobile-compass-grid-item mobile-compass-grid-target",
-        text:child.label, attributes: { href:child.href || menuPageHref(child.id) } })));
-    thirdSection.hidden = false;
   }
   function selectRoot(index) {
     if (currentRoot === index) { clearRoot(); return; }
@@ -78,17 +50,9 @@ export function createMobileMenu(config, trigger, beforeOpen = () => {}) {
     rootButtons[index].setAttribute("aria-expanded", "true");
     rootButtons[index].setAttribute("aria-pressed", "true");
     subHeading.textContent = selected.label;
-    secondControls = (selected.children || []).map((child) => {
-      if (child.children?.length) {
-        const button = element("button", { className:"mobile-compass-grid-item mobile-compass-grid-action",
-          text:child.label, attributes: { type:"button", "aria-expanded":"false",
-            "aria-controls":"mobile-compass-third" } });
-        button.addEventListener("click", () => selectSecond(child, button));
-        return button;
-      }
-      return element("a", { className:"mobile-compass-grid-item mobile-compass-grid-target",
-        text:child.label, attributes: { href:child.href || menuPageHref(child.id) } });
-    });
+    secondControls = (selected.children || []).map((child) =>
+      element("a", { className:"mobile-compass-grid-item mobile-compass-grid-target",
+        text:child.label, attributes: { href:child.href || menuPageHref(child.id) } }));
     subGrid.replaceChildren(...secondControls);
     subSection.hidden = secondControls.length === 0;
   }
@@ -109,7 +73,7 @@ export function createMobileMenu(config, trigger, beforeOpen = () => {}) {
   const dialog = element("section", { className:"mobile-menu-dialog", attributes: {
     role:"dialog", "aria-modal":"true", "aria-label":data.title
   } }, element("h2", { className:"mobile-menu-title", text:data.title }),
-  stage, subSection, thirdSection);
+  stage, subSection);
   const backdrop = element("div", { className:"mobile-menu-backdrop",
     attributes: { "aria-hidden":"true" } });
   const overlay = element("div", { className:"mobile-menu-overlay",
@@ -141,8 +105,7 @@ export function createMobileMenu(config, trigger, beforeOpen = () => {}) {
   homeLink.addEventListener("click", () => close(false));
   dialog.addEventListener("keydown", (event) => {
     if (event.key === "Escape") { event.preventDefault(); close(); return; }
-    trapTab(event, [centerButton, homeLink, ...rootButtons,
-      ...secondControls, ...Array.from(thirdGrid.children)]);
+    trapTab(event, [centerButton, homeLink, ...rootButtons, ...secondControls]);
   });
   overlay.addEventListener("click", (event) => {
     const link = event.target.closest?.("a[href]");

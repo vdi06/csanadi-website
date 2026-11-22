@@ -1,10 +1,10 @@
-import { element } from "../shared/js/dom.js?v=2.22";
-import { mountGate } from "../shared/js/gate.js?v=2.22";
-import { makeFooter } from "../shared/js/footer.js?v=2.22";
-import { makeDesktopHeader } from "./header.js?v=2.22";
-import { createDesktopPage } from "./page.js?v=2.22";
-import { createDesktopHero } from "./hero.js?v=2.22";
-import { createDesktopSuccesses } from "./successes.js?v=2.22";
+import { element } from "../shared/js/dom.js?v=2.24";
+import { mountGate } from "../shared/js/gate.js?v=2.24";
+import { makeFooter } from "../shared/js/footer.js?v=2.24";
+import { makeDesktopHeader } from "./header.js?v=2.24";
+import { createDesktopPage } from "./page.js?v=2.24";
+import { createDesktopHero } from "./hero.js?v=2.24";
+import { createDesktopSuccesses } from "./successes.js?v=2.24";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {
@@ -23,8 +23,10 @@ export function mount(root, config, page) {
     openMenu: desktopHeader.openMenu, headerCrest: desktopHeader.crestToggle,
     setCompact: desktopHeader.setCompact
   }) : null;
-  const successes = isHome ? createDesktopSuccesses(config) : null;
+  const isArchive = page === "page:sports-results";
+  const successes = isHome || isArchive ? createDesktopSuccesses(config, { archive:isArchive }) : null;
   if (hero) main.append(hero.track, successes.section);
+  else if (isArchive) main.append(successes.section);
   else if (page.startsWith("page:")) main.append(createDesktopPage(config, page.slice(5)));
   home.append(desktopHeader.header,
     ...desktopHeader.overlays,
@@ -36,5 +38,11 @@ export function mount(root, config, page) {
     window.scrollTo?.({ top: 0, behavior: "instant" });
     hero.updateScroll();
   }
+  const successId = /^#\/kezdolap\/sportsiker\/([a-z0-9-]+)$/.exec(location.hash)?.[1];
+  const archiveId = /^#\/oldal\/sports-results\/sportsiker\/([a-z0-9-]+)$/.exec(location.hash)?.[1];
+  const noticeId = /^#\/kezdolap\/tajekoztatas\/([a-z0-9-]+)$/.exec(location.hash)?.[1];
+  if (successId) successes?.openById(successId);
+  if (archiveId) successes?.openById(archiveId);
+  if (noticeId) desktopFooter.openById(noticeId);
   return () => { successes?.destroy(); hero?.destroy(); desktopHeader.destroy(); desktopFooter.destroy(); };
 }

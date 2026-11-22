@@ -1,8 +1,62 @@
-# Csanádi 2.22 – nagyobb címer, alsó hírsáv és nyitókép-csere
+# Csanádi 2.24 – dinamikus keresés, sportsiker-archívum, egyszerűbb menü
 
 Ez a ZIP **nem publikált** fejlesztési kiadás. A 2.15-ös forráscsomagot
 és a 2.16–2.21-es fejlesztéseket folytatja az elfogadott funkciók
 megtartásával. A korábbi ZIP-ek változatlanul megmaradtak.
+
+## A 2.24-es fejlesztés
+
+- A mobilos és az asztali kereső a **mindig aktuális, ellenőrzött JSON-ból**
+  épít találatokat minden beíráskor: menüoldalak, külön oldalként megmaradt
+  képzési témák, diákok nevei és eredményei, az archívum, húsz asztali
+  képfelirat, mobilos témák, lábléc-tájékoztatások és elérhetőségek.
+  Ékezet nélkül, JSON-ban megadott rokon értelmű szavakkal, hosszabb
+  kifejezéseknél 1–2 karakteres elírással is kereshető. Az eredmények
+  a megadott oldalt vagy a konkrét lebegő részletezőt nyitják meg.
+- A JSON-ban **30 sportsiker** szerepel. Közülük a **dátum szerint legújabb
+  hat** van a kezdőlapon (asztal: 3×2, mobil: 2×3); a régebbiek az
+  **Sportélet → Sporteredmények** oldalon, archív kártyákkal és ugyanilyen
+  lebegő részletezővel érhetők el. Egy régebbi név közvetlenül is kereshető.
+  A **24 archív kártya** között két fotós és huszonkét elegáns kép nélküli
+  állapot is szerepel. A nevek, dátumok és eredmények fiktív próbaadatok; az éles
+  verzióban az iskolai adatokra cserélendők.
+- A menü **legfeljebb két szintű**: hat főcsoport, azok alatt közvetlen
+  almenük. Kikerült a harmadik panel mindkét felületből. Az egykori
+  Képzéseink → három altéma nem veszett el: oldalcímek és kereshető
+  hash-útvonalak maradtak, későbbi oldalon belüli választóhoz előkészítve.
+  A választható megoldásokról a következő fejlesztési döntés születhet.
+- A lábléc **Utolsó frissítés**, **Frissítések ellenőrizve** és **Verzió**
+  sora egyaránt **középre igazított asztalon és telefonon**. A dátum,
+  ellenőrzési idő és verzió továbbra is automatikusan frissül.
+- A két platform önálló JS/CSS-kódja, a témaállapotok, a képkészlet, az
+  elfogadott arany menügyűrű, a JSON-hiba esetén induló offline nézet és
+  az automatikus újrapróbálkozás megmaradtak.
+
+Az alábbi verziótörténeti szakaszok az adott régebbi kiadás állapotát
+írják le; az aktuális működésben a fenti **2.24-es változások** érvényesek.
+
+## A 2.23-as fejlesztés
+
+- Az asztali kezdőképen a fejléc alatt megismételt **„CSANÁDI / SPORTISKOLA”**
+  címblokkot és az alsó **„CSANÁDI SPORTISKOLA / Sport · Tudás · Közösség”**
+  feliratot eltávolítottuk. A rögzített fejlécben a hivatalos iskolanév és a
+  mottó továbbra is szerepel; ezeket a nagy fotó már nem írja ki újra.
+- A görgetéskor előtűnő háttérréteg is felirat nélküli lett. A képes
+  nyitó, a középső nagy címer és annak fejlécbe mozgása, az arany
+  menügyűrű, a képlapozás, a 20 fotó és az alsó, kattintható hírsáv megmaradt.
+  A keresőmotor számára és képernyőolvasóval továbbra is van egyetlen
+  rejtett első szintű cím.
+- A fejlécben már látható mottót a lábléc alján sem írjuk ki még egyszer.
+  A Kapcsolat és Tájékoztatás felületek, betűgombok és adatok megmaradtak.
+- Mobilon az első és az utolsó, három-három képet együtt mutató állapot
+  eltérő, természetes feliratot kapott: **„Nézz körül nálunk”**,
+  illetve **„Együtt tovább”**. A köztes sport, tudás, közösség
+  állapotok, a külön mobilkód és az automatikus görgetéskövetés változatlanok.
+- Mindezek a szövegek a **JSON-ból** tölthetők; a 2.23-as
+  tesztek ellenőrzik, hogy nem kerül vissza a többszörös felirat.
+- A mobilos lábléc **„Tájékoztatás”** füle alatt a frissítési állapot,
+  az ellenőrzési szöveg és a verziószám ezentúl középre igazítva jelenik meg.
+  Az asztali lábléc elrendezése ettől nem változik.
 
 ## A 2.22-es fejlesztés
 
@@ -242,11 +296,13 @@ index.html
 shared/
   data/site.json             – közös tartalom, oldalvázlat és menühierarchia
   js/entry.js                – mobil/asztali modul, útvonal és frissítés
-  js/menu-data.js            – háromszintű, egyedi azonosítós menüellenőrzés
+  js/menu-data.js            – kétszintű, egyedi azonosítós menüellenőrzés
   js/appearance.js           – automatikus, világos és sötét állapot
   js/focus.js                – közös billentyűzetes fókuszléptetés
   js/edit-mode.js            – közös kétállású szerkesztési mód
-  js/shell.js                – közös ikonok és keresőadatok
+  js/shell.js                – közös ikonok és keresőmegjelenítés
+  js/search-index.js         – az aktuális JSON teljes dinamikus keresőindexe
+  js/successes-data.js       – a hat friss és a régebbi sportsikerek leválogatása
   js/footer.js               – betűikonos tájékoztatás, felugró ablak, JSON-frissítés
   js/offline.js              – minimális, JSON-független offline tartalékoldal
   js/gate.js                 – a változatlan, 30 fázisos kapu
@@ -255,6 +311,7 @@ shared/
 mobile/
   app.js, header.js          – önálló mobilos fejléc és összerakás
   story.js                   – öt görgetési állapot és témánként 6 véletlen fotó
+  successes.js               – mobilos sportsikerek és archív részletezők
   menu.js                    – a választott D jelű, íves mobilos iránytű
   page.js                    – saját mobilos, középre igazított oldalvázlat
   search.js                  – saját, teljes képernyős Spotlight kereső
@@ -262,6 +319,7 @@ mobile/
 desktop/
   app.js, header.js          – önálló asztali fejléc és összerakás
   hero.js                    – újraépített teljes képes nyitó, 20 dia, görgetési pálya
+  successes.js               – asztali sportsikerek és archív részletezők
   menu.js                    – saját, két szimmetrikus gyűrűs lebegő menü
   page.js                    – saját asztali, középre igazított oldalvázlat
   search.js                  – saját, lebegő Spotlight kereső
@@ -276,12 +334,11 @@ tools/stamp-release.mjs      – a JSON release alapján kiadási cache-kulcsok
 - **Asztal:** az 1.53-as `source/js/app.js`, `source/css/compass-2026.css`
   és `source/css/next10-2026.css` kódok alapján a címer körül a hat
   főmenüpont **belső gyűrűben** található. A választott főmenü almenüi a
-  **második, külső gyűrűben** jelennek meg. Háromszintű ágaknál a harmadik
-  szint külön, a választott almenühöz tartozó panelben jelenik meg.
+  **második, külső gyűrűben** jelennek meg. Harmadik menüszint nincs.
   Mindkét gyűrűn a pontok azonos szögközökkel, szimmetrikusan oszlanak el.
   A kiválasztott főmenüpontra újra kattintva annak teljes almenügyűrűje
-  összecsukódik. Másik főmenüpontra kattintva a régi ág és annak harmadik
-  szintje bezárul, az új ág nyílik; a menü újranyitáskor üres kijelöléssel
+  összecsukódik. Másik főmenüpontra kattintva a régi ág
+  bezárul, az új ág nyílik; a menü újranyitáskor üres kijelöléssel
   indul. A menü mögötti körvonalakat a 2.18-ban teljesen eltávolítottuk.
   Az előző verzió hibáját a kattintási rétegek okozták: a külső gyűrű
   átlátszó felülete elfogta a belső gombok eseményeit. Most a két
@@ -292,9 +349,9 @@ tools/stamp-release.mjs      – a JSON release alapján kiadási cache-kulcsok
 - **Mobil:** a jóváhagyott **D – Mobilos iránytű** készült el. A címer alatt
   hat, ívesen elhelyezett főpont található. Keskeny telefonon a hat pont
   kétszéles, háromsoros íves kompozícióban jelenik meg. A második és
-  harmadik szint **ugyanebben a menüfelületben**, két egyforma szélességű
-  oszlopot alkotó, több soros rácsban nyílik meg. Az aktív főpontra vagy
-  második szintű gombra ismét kattintva az adott ág bezárul; másik
+  **utolsó szint ugyanebben a menüfelületben**, két egyforma szélességű
+  oszlopot alkotó, több soros rácsban nyílik meg. Az aktív főpontra
+  ismét kattintva az adott ág bezárul; másik
   főpontra kattintva a korábbi ág lezárul, és az új nyílik. A
   **középső címer zár**, a hozzá kapcsolódó kis házikó a főoldalra visz.
 - A címer mindkét fejlécben tényleges menügomb.
@@ -304,7 +361,7 @@ tools/stamp-release.mjs      – a JSON release alapján kiadási cache-kulcsok
   kapnak (`#/oldal/<azonosító>`). Minden oldal megnyílik, de csak
   címből és a JSON-ban leírt jövőbeli tartalmak **középre igazított
   háromelemű felsorolásából** áll. Még nincs közzétett aloldaltartalom.
-- Az egyedi menüazonosítók és a maximum három szint ellenőrzés alatt állnak.
+- Az egyedi menüazonosítók és a **maximum két szint** ellenőrzés alatt állnak.
 
 ## Spotlight keresők
 
@@ -317,9 +374,11 @@ tools/stamp-release.mjs      – a JSON release alapján kiadási cache-kulcsok
   eredeti oldal. A megjelenés önálló, keskeny kijelzőre méretezett;
   a gyorsválasztók kéthasábosak, a találatkártyák egymás alattiak.
 - Billentyűzetről a lefelé nyíl az első találatra lép; az `Escape` bezár.
-  A keresési szöveg az elérhetőségek neve és leírása alapján szűr.
-- A keresők az élesnek jóváhagyott négy hivatkozás közül keresnek.
-  Nem készítenek még meg nem létező aloldalakat vagy próbaeredményeket.
+  A kereső az összes aktuális JSON-tartalomból építi a találatokat;
+  kezeli az ékezeteket, néhány rokon értelmű alakot és az 1–2 betűs
+  elgépeléseket. Az üres kereső az elfogadott gyorshivatkozásokat mutatja.
+- A valóban meglévő hash-oldalakat és sportsiker/tájékoztató részletezőket
+  nyitja, a tartalom átírásakor új találati lista épül.
 - A címkék és ikonok szintén a közös JSON-ból származnak.
 
 ## Offline tartalékoldal
@@ -380,13 +439,13 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   visszatéréskor újra ellenőrzünk. Hibás JSON esetén a korábbi érvényes
   információ marad látható.
 - A lábléc paneljeit és külső térközeit jelentősen csökkentettük.
-  A legalsó sor minden frissítés után a `Verzió: 2.22`,
+  A legalsó sor minden frissítés után a `Verzió: 2.24`,
   illetve a későbbi JSON-verzió.
 
 ## Frissítés böngészési adatok törlése nélkül
 
 - A nyitó HTML a `shared/js/entry.js` és az alap CSS fájlt a JSON-ban
-  szereplő kiadáshoz kötött URL-lel (`?v=2.22`) kéri le.
+  szereplő kiadáshoz kötött URL-lel (`?v=2.24`) kéri le.
 - Minden statikus JavaScript-modul-import ugyanilyen verziót kap a
   `node tools/stamp-release.mjs` kiadás-előkészítő lépésben. A két
   platformstílus is verziózott URL-lel töltődik be.
@@ -395,7 +454,7 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   útvonal megtartásával, új verzióparaméterrel tölti újra a teljes oldalt.
 - **Korlát:** a régi, már eltárolt 2.13-as kezdő HTML és programkód
   magától nem feltétlenül tudja alkalmazni az új mechanizmust; az új
-  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.22`
+  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.24`
   URL-t. A tárhely/CDN HTTP gyorsítótárazási szabályai külön is számítanak.
 
 ## A visszaállított asztali kezdőlap és a mobilos következő lépés
@@ -415,7 +474,7 @@ másolata; a felső címeres menügomb nem kerül át máshová.
 A menüvégpontok továbbra is csak minimális, jóváhagyott oldalvázlatokként
 nyílnak meg, valós tartalmuk később épül be.
 A lábléc `Tájékoztatás` oszlopának legalsó sora a JSON-ból
-automatikusan megjelenő `Verzió: 2.22`.
+automatikusan megjelenő `Verzió: 2.24`.
 
 ## Tesztek és korlát
 
@@ -424,9 +483,10 @@ Az automatizált teszt ellenőrzi a JSON-sémát, az egyetlen HTML-t,
 a 60 kapuképet, a külön fejléc-, menü- és keresőmodulokat,
 a két asztali gyűrű egyenletes szögközeit, a főágak ki-/átkapcsolását,
 a középső bezárógombot,
-a mobilos iránytű három szintjét és ki-/átkapcsolását, a működő
+  a mobilos iránytű két szintjét és ki-/átkapcsolását, a működő
 hash-aloldalakat, a Spotlight keresők törlését, a négy valódi
-gyorsválasztó találatait, a keresési kategóriákat, a lefelé nyíllal
+  gyorsválasztó találatait, a teljes JSON-keresést, elgépelést, szinonimákat,
+  a hat friss és huszonnégy archív sportsikert, a keresési kategóriákat, a lefelé nyíllal
 elérhető találatfókuszt és az áttetsző háttérrétegek CSS-követelményeit,
 a fókuszt/ESC-et, a szerkesztési módváltást, a színmódokat, a mobilos
 kétfüles láblécet és a
@@ -436,9 +496,15 @@ lebegő ablak adatfrissítését, valamint a verzióhoz kötött újratöltést.
 A hibás induló JSON-t követő tartalékoldal, a kézi újrapróbálás és
 az eredeti útvonalra történő visszatérés is célzott tesztet kapott.
 
-**Korlát:** a környezet blokkolja a Chromium elindítását. A tényleges
-mobilos és asztali vizuális megjelenést – különösen az iOS elmosást,
-a hosszú menücímek tördelését és a későbbi animációkat – éles böngészőben
-még meg kell nézni. A kódteszt nem helyettesíti ezt.
+**Ellenőrzési megjegyzés:** a `tools/test.mjs` saját, lokális Chromium-indítása
+ebben a környezetben nem elérhető, de a 2.24-es asztali archívum élő,
+külön böngészős előnézetben megnyílt. A lebegő részletezőt, az archív név
+elgépeléses keresését, a közvetlen találati útvonalat és a három státuszsor
+tényleges középre igazítását ellenőriztük. A bővítés után az élő oldalon
+**24 archív kártya** jelent meg, a teljes oldalmagasság 3205 px volt
+936 px magas asztali nézetben. A legújabb JSON-bővítés viselkedési
+regressziós tesztje is lefutott. Valódi telefonon – különösen iOS-en – az
+elmosást, a hosszú menücímeket és a végleges archívum görgetését még
+külön is célszerű kipróbálni. A kódteszt nem helyettesíti ezt.
 
 Sem GitHubra, sem FTP-re nem töltöttem fel semmit.

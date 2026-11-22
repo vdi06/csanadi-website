@@ -1,5 +1,5 @@
-import { element } from "./dom.js?v=2.22";
-import { trapTab } from "./focus.js?v=2.22";
+import { element } from "./dom.js?v=2.24";
+import { trapTab } from "./focus.js?v=2.24";
 
 /** Közös JSON-adatfolyam: a platformok csak a lábléc elrendezését stílusozzák.
  * Az adatok csak ellenőrzött, teljes válasz esetén cserélődnek le. */
@@ -61,8 +61,7 @@ export function makeFooter(config, platform) {
   modal.hidden = true;
   const contactPanel = element("section", { className: "footer-contact",
     attributes: { "aria-label": first.contactTitle } },
-    element("div", { className: "footer-contact-main" }, brand, contactTitle, address, email),
-    element("p", { className: "footer-signature", text: config.home.header.motto }));
+    element("div", { className: "footer-contact-main" }, brand, contactTitle, address, email));
   const infoPanel = element("section", { className: "footer-links",
     attributes: { "aria-label": first.linksTitle } },
     linksTitle, notices, updated, checked, version);
@@ -118,13 +117,18 @@ export function makeFooter(config, platform) {
   let triggerById = new Map();
   let previousOverflow;
 
-  function closeModal(restoreFocus = true) {
+  function closeModal(restoreFocus = true, restoreRoute = true) {
     if (modal.hidden) return;
+    const closingId = currentNoticeId;
     modal.hidden = true;
     currentNoticeId = null;
     if (document.body) document.body.style.overflow = previousOverflow || "";
     if (restoreFocus) currentTrigger?.focus({ preventScroll:true });
     currentTrigger = null;
+    if (restoreRoute && closingId &&
+      location.hash === `${config.routes.home}/tajekoztatas/${closingId}`) {
+      location.hash = config.routes.home;
+    }
   }
   function openModal(item, trigger) {
     currentNoticeId = item.id;
@@ -224,10 +228,18 @@ export function makeFooter(config, platform) {
 
   function destroy() {
     active = false;
-    closeModal(false);
+    closeModal(false, false);
     clearInterval(timer);
     requestController?.abort();
     document.removeEventListener?.("visibilitychange", onVisibility);
   }
-  return { footer, destroy, checkForUpdates };
+  return { footer, destroy, checkForUpdates,
+    openById: (id) => {
+      const notice = noticeById.get(id);
+      const trigger = triggerById.get(id);
+      if (!notice || !trigger) return false;
+      if (contactTab && infoTab) infoTab.click?.();
+      openModal(notice, trigger);
+      return true;
+    } };
 }

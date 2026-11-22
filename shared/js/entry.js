@@ -1,6 +1,7 @@
 /** Egyetlen HTML, JSON-alapú kapu, kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.22";
-import { mountOffline } from "./offline.js?v=2.22";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.24";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.24";
+import { mountOffline } from "./offline.js?v=2.24";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -19,6 +20,14 @@ let offlineView = null;
 
 function route() {
   if (location.hash === config.routes.home) return "home";
+  const sportMatch = /^#\/kezdolap\/sportsiker\/([a-z0-9-]+)$/.exec(location.hash);
+  if (sportMatch && featuredSportSuccesses(config).some((item) => item.id === sportMatch[1])) return "home";
+  const noticeMatch = /^#\/kezdolap\/tajekoztatas\/([a-z0-9-]+)$/.exec(location.hash);
+  if (noticeMatch && config.home.footer.notices.some((item) => item.id === noticeMatch[1])) return "home";
+  const archiveMatch = /^#\/oldal\/sports-results\/sportsiker\/([a-z0-9-]+)$/.exec(location.hash);
+  if (archiveMatch && archivedSportSuccesses(config).some((item) => item.id === archiveMatch[1])) {
+    return "page:sports-results";
+  }
   const match = /^#\/oldal\/([a-z0-9-]+)$/.exec(location.hash);
   return match && getMenuPage(config, match[1]) ? `page:${match[1]}` : "gate";
 }
@@ -33,7 +42,11 @@ function mountView(platform, module, selectedRoute) {
   destroyCurrent = module.mount(root, config, selectedRoute) || (() => {});
   if (routeChanged) window.scrollTo?.({ top:0, behavior:"instant" });
   if (hasRendered) {
-    const focusTarget = menuPage
+    const searchDetailOpen = (selectedRoute === "home" &&
+      /^#\/kezdolap\/(sportsiker|tajekoztatas)\/[a-z0-9-]+$/.test(location.hash)) ||
+      (selectedRoute === "page:sports-results" &&
+        /^#\/oldal\/sports-results\/sportsiker\/[a-z0-9-]+$/.test(location.hash));
+    const focusTarget = searchDetailOpen ? null : menuPage
       ? root.querySelector(`.${platform}-page-title`)
       : selectedRoute === "home" ? root.querySelector(".home-brand")
       : root.querySelector(".gate-door-button");

@@ -1,10 +1,13 @@
-import { element } from "../shared/js/dom.js?v=2.22";
-import { trapTab } from "../shared/js/focus.js?v=2.22";
-import { checkedSportSuccesses, successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.22";
+import { element } from "../shared/js/dom.js?v=2.24";
+import { trapTab } from "../shared/js/focus.js?v=2.24";
+import { checkedSportSuccesses, featuredSportSuccesses, archivedSportSuccesses,
+  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.24";
 
 /** Asztali sportsikerek: tágas 3×2-es rács, teljes nézet fölötti saját lebegő ablak. */
-export function createDesktopSuccesses(config) {
+export function createDesktopSuccesses(config, { archive = false } = {}) {
   const data = checkedSportSuccesses(config);
+  const items = archive ? archivedSportSuccesses(config) : featuredSportSuccesses(config);
+  const baseRoute = archive ? "#/oldal/sports-results" : config.routes.home;
   const name = element("h3", { className: "desktop-successes-detail-name",
     attributes: { id: "desktop-successes-detail-title" } });
   const sport = element("span", { className: "desktop-successes-detail-sport" });
@@ -44,7 +47,7 @@ export function createDesktopSuccesses(config) {
   let activeIndex = -1;
   let previousOverflow = "";
   let origin = null;
-  const cards = data.items.map((item, index) => {
+  const cards = items.map((item, index) => {
     const image = item.image ? element("img", { className: "desktop-successes-card-image", attributes: {
       src: `${successImageRoot}${item.image}`, alt: `${item.sport} – sportpillanat`,
       loading: "lazy", decoding: "async", width: 960, height: 640
@@ -68,25 +71,32 @@ export function createDesktopSuccesses(config) {
     return card;
   });
   const section = element("section", { className: "desktop-successes-section", attributes: {
-    "aria-label": data.ariaLabel
+    "aria-label": archive ? data.archiveTitle : data.ariaLabel
   } }, element("div", { className: "desktop-successes-inner" },
     element("div", { className: "desktop-successes-heading" },
       element("span", { className: "desktop-successes-eyebrow", text: data.eyebrow }),
-      element("h2", { text: data.title }),
-      element("p", { text: data.intro })),
+      element(archive ? "h1" : "h2", { className: archive ? "desktop-page-title" : "",
+        text: archive ? data.archiveTitle : data.title,
+        attributes: archive ? { tabindex:"-1" } : {} }),
+      element("p", { text: archive ? data.archiveIntro : data.intro })),
     element("div", { className: "desktop-successes-grid" }, ...cards)));
 
-  function close(restoreFocus = true) {
+  function close(restoreFocus = true, restoreRoute = true) {
     if (overlay.hidden) return;
+    const activeItem = items[activeIndex];
     overlay.hidden = true;
     if (activeIndex >= 0) cards[activeIndex].setAttribute("aria-expanded", "false");
     activeIndex = -1;
     document.body.style.overflow = previousOverflow;
     if (restoreFocus && origin?.isConnected !== false) origin?.focus({ preventScroll: true });
     origin = null;
+    if (restoreRoute && activeItem &&
+      location.hash === `${baseRoute}/sportsiker/${activeItem.id}`) {
+      location.hash = baseRoute;
+    }
   }
   function open(index) {
-    const item = data.items[index];
+    const item = items[index];
     if (!item) return;
     if (!overlay.hidden) close(false);
     origin = cards[index];
@@ -122,5 +132,11 @@ export function createDesktopSuccesses(config) {
     if (href?.startsWith("#/")) { event.preventDefault(); location.hash = href; }
     close(false);
   });
-  return { section, overlay, destroy: () => close(false) };
+  return { section, overlay,
+    openById: (id) => {
+      const index = items.findIndex((item) => item.id === id);
+      if (index < 0) return false;
+      open(index); return true;
+    },
+    destroy: () => close(false, false) };
 }

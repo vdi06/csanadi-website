@@ -157,7 +157,7 @@
 .mobile-footer .footer-mobile-tab:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
 .mobile-footer .footer-contact[hidden],.mobile-footer .footer-links[hidden] { display:none !important; }
 .mobile-footer .footer-links {
-  align-items:stretch; width:100%; text-align:left;
+  align-items:stretch; width:100%; text-align:center;
   padding:5px 8px; gap:2px; border-radius:10px;
 }
 .mobile-footer .footer-notices {
@@ -176,10 +176,10 @@
 .mobile-footer .footer-inner p { margin:0; line-height:1.12; font-size:10px; }
 .mobile-footer .footer-brand { font-size:12px; }
 .mobile-footer .footer-contact a { font-size:11px; }
-.mobile-footer .footer-inner .footer-signature { font-size:9px; padding-top:3px; }
 .mobile-footer .footer-inner .footer-updated,
 .mobile-footer .footer-inner .footer-checked { font-size:9px; line-height:1.1; }
 .mobile-footer .footer-links .footer-version { font-size:10px; line-height:1.12; padding-top:2px; }
+.mobile-footer .footer-links :is(.footer-updated,.footer-checked,.footer-version) { text-align:center; }
 
 /* Két külön mobilos, teljes képernyős felület: menü és kereső. */
 .mobile-menu-overlay, .mobile-search-overlay {
@@ -389,15 +389,15 @@
 .mobile-compass-node[data-sector="4"] { left:16.5%; top:79%; }
 .mobile-compass-node[data-sector="5"] { left:50%; top:86%; }
 .mobile-compass-node[data-sector="6"] { left:83.5%; top:79%; }
-.mobile-compass-sub-section,.mobile-compass-third-section {
+.mobile-compass-sub-section {
   width:min(100%,650px); margin:7px auto 20px; padding-bottom:5px;
 }
-.mobile-compass-sub-section[hidden],.mobile-compass-third-section[hidden] { display:none !important; }
+.mobile-compass-sub-section[hidden] { display:none !important; }
 .mobile-compass-grid-heading {
   margin:0 0 12px; color:var(--accent); text-align:center;
   font-size:clamp(17px,4.7vw,22px); line-height:1.25;
 }
-.mobile-compass-sub-grid,.mobile-compass-third-grid {
+.mobile-compass-sub-grid {
   display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px;
 }
 .mobile-compass-grid-item {
@@ -408,8 +408,7 @@
   line-height:1.28; text-align:center; text-decoration:none; overflow-wrap:anywhere;
   box-shadow:0 6px 16px rgba(0,0,0,.14); cursor:pointer;
 }
-.mobile-compass-grid-item:is(:hover,:focus-visible),
-.mobile-compass-grid-action[aria-expanded="true"] {
+.mobile-compass-grid-item:is(:hover,:focus-visible) {
   outline:2px solid var(--accent); outline-offset:2px;
   background:color-mix(in srgb,var(--accent) 22%,var(--surface));
 }

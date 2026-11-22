@@ -1,5 +1,5 @@
-import { crest, element } from "../shared/js/dom.js?v=2.22";
-import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.22";
+import { crest, element } from "../shared/js/dom.js?v=2.24";
+import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.24";
 
 const clamp = (value) => Math.max(0, Math.min(1, value));
 const mediaRoot = "./shared/assets/media/web/desktop-hero/";
@@ -43,22 +43,20 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
     type: "button", "aria-label": data.menuTitle,
     "aria-controls": "desktop-main-menu", "aria-expanded": "false"
   } }, crest(config, "desktop-hero-crest-image"));
-  const brand = element("div", { className: "desktop-hero-identity", attributes: { "aria-hidden": "true" } },
-    element("span", { className: "desktop-hero-wordmark", text: data.brand }),
-    element("span", { className: "desktop-hero-wordmark-sub", text: data.brandSub }));
-  const message = element("div", { className: "desktop-hero-message" },
-    element("h1", { text: data.schoolTitle }),
-    element("p", { text: data.motto }));
+  // A teljes intézménynév és a mottó már a fejlécben olvasható.
+  // A nyitóképen nem ismételjük meg őket, de a főcím a felolvasóknak megmarad.
+  const accessibleTitle = element("h1", {
+    className: "desktop-hero-accessible-title", text: data.schoolTitle
+  });
   const stage = element("div", { className: "desktop-hero-stage" },
     element("div", { className: "desktop-hero-image", attributes: { "aria-hidden": "true" } }, photo,
       element("div", { className: "desktop-hero-shade" })),
-    brand, heroCrest, message, previous, next,
+    accessibleTitle, heroCrest, previous, next,
     element("div", { className: "desktop-hero-controls" }, story));
   const track = element("section", { className: "desktop-hero-track", attributes: {
     "aria-label": data.ariaLabel
   } },
-    element("div", { className: "desktop-hero-after", attributes: { "aria-hidden": "true" } },
-      element("span", { text: data.brand }), element("span", { text: data.motto })),
+    element("div", { className: "desktop-hero-after", attributes: { "aria-hidden": "true" } }),
     stage);
   let sequence = shuffledHeroOrder(data.slides.length);
   let position = 0;

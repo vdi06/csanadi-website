@@ -81,7 +81,6 @@
 }
 .desktop-footer .footer-contact { gap:4px; }
 .desktop-footer .footer-inner p { margin-bottom:2px; font-size:11px; line-height:1.2; }
-.desktop-footer .footer-inner .footer-signature { font-size:9px; padding-top:3px; }
 .desktop-footer .footer-notices {
   flex:0 0 32px; min-height:32px;
   grid-template-columns:repeat(4,minmax(0,1fr));
@@ -95,6 +94,7 @@
 .desktop-footer .footer-inner .footer-updated,
 .desktop-footer .footer-inner .footer-checked { font-size:9px; line-height:1.12; }
 .desktop-footer .footer-links .footer-version { font-size:10px; padding-top:2px; line-height:1.1; }
+.desktop-footer .footer-links :is(.footer-updated,.footer-checked,.footer-version) { text-align:center; }
 
 /* Eredeti asztali teljes képes nyitás: kilenc régi + bővített képsor és
    képpel együtt a fejléc címerébe összezáródó görgetési átmenet. */
@@ -139,13 +139,9 @@
   background:radial-gradient(ellipse at 50% 35%,#143c5c,#07192c 70%);
 }
 .desktop-hero-after {
-  position:absolute; inset:0; display:flex; flex-direction:column;
-  align-items:center; justify-content:center; gap:16px;
+  position:absolute; inset:0;
   background:radial-gradient(ellipse at 50% 55%,rgba(218,171,77,.16),transparent 50%);
-  color:#f2d39c; text-align:center; letter-spacing:.2em;
-  font-size:clamp(19px,3vw,35px); font-weight:900;
 }
-.desktop-hero-after span + span { font-size:clamp(11px,1.25vw,15px); letter-spacing:.12em; }
 .desktop-hero-stage {
   position:sticky; top:0; height:100dvh; min-height:580px;
   width:100%; isolation:isolate; overflow:hidden;
@@ -166,14 +162,10 @@
     rgba(3,17,32,.12) 52%,rgba(2,15,30,.9) 100%),
     linear-gradient(90deg,rgba(2,14,29,.25),transparent 40%,rgba(2,14,29,.21));
 }
-.desktop-hero-identity {
-  position:absolute; z-index:2; top:clamp(169px,19vh,215px); left:50%;
-  display:grid; justify-items:center; gap:3px; transform:translateX(-50%);
-  pointer-events:none; color:#fff8e8; text-shadow:0 3px 22px rgba(0,0,0,.72);
-  opacity:var(--hero-fold-opacity);
+.desktop-hero-accessible-title {
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
 }
-.desktop-hero-wordmark { padding-left:.25em; font-size:clamp(24px,3.5vw,49px); font-weight:950; letter-spacing:.25em; }
-.desktop-hero-wordmark-sub { padding-left:.5em; color:#f1d18d; font-size:clamp(11px,1vw,17px); letter-spacing:.5em; font-weight:850; }
 .desktop-hero-crest {
   position:absolute; z-index:4; left:50%; top:50%;
   width:clamp(340px,34vw,444px); height:clamp(380px,37vw,500px);
@@ -188,13 +180,6 @@
 .desktop-hero-crest:hover { filter:drop-shadow(0 7px 20px rgba(240,193,97,.75)); }
 .desktop-hero-crest:focus-visible { outline:3px solid #f6cc75; outline-offset:5px; }
 .desktop-hero-crest-image { width:100%; height:100%; object-fit:contain; }
-.desktop-hero-message {
-  position:absolute; z-index:2; left:16px; right:16px; bottom:clamp(122px,15vh,173px);
-  text-align:center; color:#fff1d5; pointer-events:none;
-  text-shadow:0 3px 20px rgba(0,0,0,.9); opacity:var(--hero-fold-opacity);
-}
-.desktop-hero-message h1 { margin:0; color:#fff0cb; font-size:clamp(32px,5vw,75px); letter-spacing:.08em; line-height:1.12; }
-.desktop-hero-message p { margin:10px 0 0; color:#ffdf9a; font-style:italic; font-size:clamp(15px,1.9vw,27px); }
 .desktop-hero-arrow {
   position:absolute; z-index:5; top:50%; width:49px; height:56px;
   transform:translateY(-50%); border:1px solid #e2ba70; border-radius:14px;
@@ -248,8 +233,6 @@
   .desktop-hero-story-action { padding:8px 10px; font-size:11px; }
 }
 @media (max-height:700px) and (min-width:768px) {
-  .desktop-hero-identity { top:135px; }
-  .desktop-hero-message { bottom:110px; }
   .desktop-hero-crest { width:clamp(280px,28vw,368px); height:clamp(312px,31vw,412px); }
   .desktop-hero-story { min-height:58px; padding-top:8px; padding-bottom:8px; }
 }
@@ -526,23 +509,6 @@
   box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent),
     0 12px 25px rgba(0,0,0,.24);
 }
-.desktop-wheel-sub-node[aria-expanded="true"] { background:color-mix(in srgb,var(--accent) 29%,var(--surface)); }
-.desktop-wheel-third-panel {
-  width:min(100%,940px); margin:0 auto 4px; padding:16px 20px;
-  border:0; border-radius:0; background:transparent;
-}
-.desktop-wheel-third-panel[hidden] { display:none !important; }
-.desktop-wheel-third-title { margin:0 0 12px; text-align:center; font-size:clamp(16px,1.6vw,20px); }
-.desktop-wheel-level-three { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:11px; }
-.desktop-wheel-third-item {
-  display:flex; align-items:center; justify-content:center;
-  min-width:0; min-height:49px; padding:10px 12px;
-  border:1px solid color-mix(in srgb,var(--accent) 38%,transparent);
-  border-radius:12px; background:var(--surface); color:var(--text);
-  font:inherit; font-size:13px; font-weight:750; text-align:center;
-  text-decoration:none; overflow-wrap:anywhere;
-}
-.desktop-wheel-third-item { background:var(--background); }
 
 /* A szerkesztő mód nem modal: a lap használható marad a lebegő fejléc alatt. */
 .desktop-edit-bar { position:fixed; z-index:1300; top:16px; right:24px;
