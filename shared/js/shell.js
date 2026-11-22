@@ -1,4 +1,4 @@
-import { element } from "./dom.js?v=2.14";
+import { element } from "./dom.js?v=2.15";
 
 /** Kizárólag közös adatelérés, ikonok és lábléc.
  * Fejlécet itt szándékosan NEM építünk: azt a két platform a saját fájljában teszi. */
@@ -52,12 +52,20 @@ export function navLink(item, className = "") {
 
 export function searchItems(config) {
   const { header, footer } = config.home;
-  return [...header.social.map((item) => ({label:item.label,href:item.url})),
-    {label:footer.contactTitle,href:`mailto:${footer.email}`}];
+  return [...header.social.map((item) => ({
+    label:item.label, href:item.url, short:item.searchShort,
+    summary:item.searchSummary,
+    category:item.icon === "kreta" ? header.searchDiaryCategory : header.searchSocialCategory
+  })),
+    {label:footer.contactTitle,href:`mailto:${footer.email}`,
+      short:footer.contactTitle, summary:header.searchEmailSummary,
+      category:header.searchContactCategory}];
 }
 
 export function filterSearchItems(config, query) {
   const needle = String(query || "").toLocaleLowerCase("hu").trim();
-  return searchItems(config).filter((item) => item.label.toLocaleLowerCase("hu").includes(needle));
+  return searchItems(config).filter((item) =>
+    [item.label,item.short,item.summary,item.category].some((value) =>
+      String(value || "").toLocaleLowerCase("hu").includes(needle)));
 }
 

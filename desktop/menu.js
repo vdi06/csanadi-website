@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.14";
-import { trapTab } from "../shared/js/focus.js?v=2.14";
-import { menuPageHref } from "../shared/js/menu-data.js?v=2.14";
+import { element } from "../shared/js/dom.js?v=2.15";
+import { trapTab } from "../shared/js/focus.js?v=2.15";
+import { menuPageHref } from "../shared/js/menu-data.js?v=2.15";
 
 /** Asztali kétgyűrűs menü: az almenük valós, JSON-vázlatos belső oldalakra visznek. */
 export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {

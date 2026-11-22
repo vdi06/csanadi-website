@@ -1,7 +1,32 @@
-# Csanádi 2.14 – javított körmenü, aloldal-vázlatok és kompakt lábléc
+# Csanádi 2.15 – egyedi, területkitöltő láblécgombok és forrásellenőrzés
 
-Ez a ZIP **nem publikált** fejlesztési kiadás. Az előző, 2.13-as ZIP
-változatlanul megmaradt; a 2.14-es a belőle külön elkészített új kiadás.
+Ez a ZIP **nem publikált** fejlesztési kiadás. A 2.14-es forráscsomagból
+indul; a korábbi ZIP változatlanul megmaradt.
+
+## A 2.15-ös módosítás hatóköre
+
+- A négy tájékoztató gomb JSON-ban külön tárolt, **egyedi betűjelet** kapott:
+  **I – Impresszum**, **D – Adatkezelési tájékoztató** (adatvédelem),
+  **A – Akadálymentességi nyilatkozat**, **M – Működés**.
+- Az utolsó gomb neve egyszerűen **Működés**. A korábbi stabil `hasznalat`
+  adat-azonosító megmaradt.
+- Az ikonok arany hatású, rétegzett gombstílust kaptak. Az **asztali** láblécben
+  négy egyforma szélességű, a szabad magasságra nyúló oszlop,
+  **mobilon** két egyforma szélességű oszlop és két egyforma magasságú sor van.
+  A két külön platform CSS-e külön szabályozza a méreteket.
+- A JSON-frissítés az ismétlődő vagy hibás betűjeleket elutasítja.
+  A regressziós teszt az új feliratokat és elrendezési szerződéseket is ellenőrzi.
+- Az asztali és mobilos Spotlight kereső külön, részletesebb üveghatású felületet
+  kapott. A háttér mindkét képernyőn elmosva, de felismerhetően látható,
+  ugyanígy a körmenük mögött is. A négy **valódi** elérhetőséghez gyorsválasztó,
+  kategória, leírás és billentyűzetes találatfókusz került.
+- Hibás, hiányzó vagy átmenetileg nem elérhető induló JSON esetén a program
+  egy külön, minimalista offline tartalékoldalt mutat. Kézi újrapróbálás,
+  5–30 másodperc között fokozatos automatikus ismétlés és `online` eseményre
+  azonnali újrakérés működik. A normál alkalmazás a korábbi hash-útvonalon
+  tér vissza, amint a szükséges adatok ismét betölthetők.
+- A kapu, a menük, a keresők, a szerkesztőkapcsoló és az oldalvázlatok
+  működő útvonalait és a korábbi tartalmi korlátokat megőriztük.
 
 ## Szerkezet
 
@@ -19,6 +44,7 @@ shared/
   js/edit-mode.js            – közös kétállású szerkesztési mód
   js/shell.js                – közös ikonok és keresőadatok
   js/footer.js               – betűikonos tájékoztatás, felugró ablak, JSON-frissítés
+  js/offline.js              – minimális, JSON-független offline tartalékoldal
   js/gate.js                 – a változatlan, 30 fázisos kapu
   css/base.css               – közös, újrafelhasználható alapstílusok
   assets/...                 – a közös címer és kapuképek
@@ -74,16 +100,35 @@ tools/stamp-release.mjs      – a JSON release alapján kiadási cache-kulcsok
 
 ## Spotlight keresők
 
-- **Asztal:** majdnem teljes képernyős, de lebegő, lekerekített
-  üvegpanel, arany kerettel, rétegzett áttetsző háttérrel és 30 px-es
-  háttérelmosással. Nagyméretű beviteli sáv, találatszámláló,
-  kétoszlopos eredménykártyák és valódi törlésgomb.
-- **Mobil:** a telefon teljes képernyőjét kitöltő, önálló, áttetsző és
-  homályosított kereső; érintésre méretezett beviteli sáv, törlésgomb,
-  találatszámláló és egymás alatti eredmények.
+- **Asztal:** nagy, de a mögöttes weboldalból körben teret hagyó, lebegő
+  üvegpanel; arany keret, áttetsző felület és finomabb háttérelmosás.
+  Kiemelt cím, magyarázó szöveg, nagyméretű keresősáv, négy gyorsválasztó,
+  kategorizált, leírással és számozással ellátott kétoszlopos találatkártyák,
+  élő számláló és valódi törlésgomb.
+- **Mobil:** a telefon teljes képernyős keresőjében is áttűnik az elmosott
+  eredeti oldal. A megjelenés önálló, keskeny kijelzőre méretezett;
+  a gyorsválasztók kéthasábosak, a találatkártyák egymás alattiak.
+- Billentyűzetről a lefelé nyíl az első találatra lép; az `Escape` bezár.
+  A keresési szöveg az elérhetőségek neve és leírása alapján szűr.
 - A keresők az élesnek jóváhagyott négy hivatkozás közül keresnek.
   Nem készítenek még meg nem létező aloldalakat vagy próbaeredményeket.
 - A címkék és ikonok szintén a közös JSON-ból származnak.
+
+## Offline tartalékoldal
+
+A normál felület továbbra is az egyetlen `index.html` fájlból indul.
+Ha a központi `site.json` első betöltése hibát ad, a felület nem marad üres:
+a már betöltött közös CSS és `shared/js/offline.js` egy helyi tartalékoldalt
+rajzol. A minimális vészhelyzeti feliratok szándékosan JSON-függetlenek,
+mert az eredeti JSON éppen hibás vagy elérhetetlen lehet.
+
+Az újrapróbálás 5, 10, 20, majd legfeljebb 30 másodpercenként történik,
+és a böngésző `online` eseménye, illetve az újrapróbálás gomb is azonnali
+ellenőrzést kér. Sikeres betöltés után az alkalmazás ugyanarra a hash-útvonalra
+lép vissza. Ez **nem** teljes PWA-offline garancia: ha az első látogatáskor
+maga a HTML, a JavaScript vagy a CSS sem érhető el, a tartalékoldalt sem lehet
+megjeleníteni. A későbbi teljes offline működéshez külön cache-/service-worker
+terv szükséges.
 
 ## Fejléc és beállítások
 
@@ -111,12 +156,12 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   tartalmat: egyszerre csak egy panel látható, tehát nem követik egymást
   hosszú, egymás alatti tömbök. Alapból a `Tájékoztatás` nyílik meg,
   így a verziószám rögtön elérhető. A fülek billentyűzettel is válthatók.
-- A `Tájékoztatás` oszlop négy **egymás melletti kezdőbetűs ikont** mutat.
+- A `Tájékoztatás` oszlop négy **különböző betűjelű, egyenletesen nyújtott gombot** mutat.
   A gomb megnyomására külön, elhomályosított hátterű lebegő ablakban
   jelenik meg az adott szöveg, amely Escape-pel, X-szel vagy a háttérre
   kattintva zárható. A gombok teljes címe akadálymentes feliratként szerepel:
   **Impresszum**, **Adatkezelési tájékoztató**, **Akadálymentességi nyilatkozat**,
-  **A honlap használata**. A hivatalos jogi/megfelelőségi tartalmakhoz
+  **Működés**. A hivatalos jogi/megfelelőségi tartalmakhoz
   ellenőrizetlen állítást nem tettünk: a jelen állapot technikai ismertető.
 - A `Utolsó frissítés` kizárólag a JSON `updatedAt` dátumát mutatja; **nem**
   állítja a böngésző aktuális idejét tartalmi frissítésnek.
@@ -127,13 +172,13 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   visszatéréskor újra ellenőrzünk. Hibás JSON esetén a korábbi érvényes
   információ marad látható.
 - A lábléc paneljeit és külső térközeit jelentősen csökkentettük.
-  A legalsó sor minden frissítés után a `Verzió: 2.14`,
+  A legalsó sor minden frissítés után a `Verzió: 2.15`,
   illetve a későbbi JSON-verzió.
 
 ## Frissítés böngészési adatok törlése nélkül
 
 - A nyitó HTML a `shared/js/entry.js` és az alap CSS fájlt a JSON-ban
-  szereplő kiadáshoz kötött URL-lel (`?v=2.14`) kéri le.
+  szereplő kiadáshoz kötött URL-lel (`?v=2.15`) kéri le.
 - Minden statikus JavaScript-modul-import ugyanilyen verziót kap a
   `node tools/stamp-release.mjs` kiadás-előkészítő lépésben. A két
   platformstílus is verziózott URL-lel töltődik be.
@@ -142,7 +187,7 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   útvonal megtartásával, új verzióparaméterrel tölti újra a teljes oldalt.
 - **Korlát:** a régi, már eltárolt 2.13-as kezdő HTML és programkód
   magától nem feltétlenül tudja alkalmazni az új mechanizmust; az új
-  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.14`
+  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.15`
   URL-t. A tárhely/CDN HTTP gyorsítótárazási szabályai külön is számítanak.
 
 ## Jövőbeli asztali kezdőlap – most nem része a kiadásnak
@@ -156,7 +201,7 @@ A kezdőlap fő tartalmi része továbbra is szándékosan üres. Nincs képvál
 galéria vagy hero. A menüvégpontok minimális, jóváhagyott oldalvázlatként
 megnyílnak, valós tartalmuk később épül be.
 A lábléc `Tájékoztatás` oszlopának legalsó sora a JSON-ból
-automatikusan megjelenő `Verzió: 2.14`.
+automatikusan megjelenő `Verzió: 2.15`.
 
 ## Tesztek és korlát
 
@@ -166,12 +211,16 @@ a 60 kapuképet, a külön fejléc-, menü- és keresőmodulokat,
 a két asztali gyűrű egyenletes szögközeit, a főágak ki-/átkapcsolását,
 a középső bezárógombot,
 a mobilos iránytű három szintjét és ki-/átkapcsolását, a működő
-hash-aloldalakat, a Spotlight keresők törlését,
+hash-aloldalakat, a Spotlight keresők törlését, a négy valódi
+gyorsválasztó találatait, a keresési kategóriákat, a lefelé nyíllal
+elérhető találatfókuszt és az áttetsző háttérrétegek CSS-követelményeit,
 a fókuszt/ESC-et, a szerkesztési módváltást, a színmódokat, a mobilos
 kétfüles láblécet és a
 több képernyőméretre vonatkozó CSS-geometriát. A lábléc külön tesztje
 ellenőrzi a JSON-frissítést, a hibás válasz elutasítását, a nyitott
 lebegő ablak adatfrissítését, valamint a verzióhoz kötött újratöltést.
+A hibás induló JSON-t követő tartalékoldal, a kézi újrapróbálás és
+az eredeti útvonalra történő visszatérés is célzott tesztet kapott.
 
 **Korlát:** a környezet blokkolja a Chromium elindítását. A tényleges
 mobilos és asztali vizuális megjelenést – különösen az iOS elmosást,

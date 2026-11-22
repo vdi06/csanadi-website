@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.06",
-  "release": "2.14",
+  "release": "2.15",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -41,12 +41,24 @@
       "searchCloseLabel": "Keresés bezárása",
       "searchTitle": "Keresés",
       "searchEyebrow": "CSANÁDI · KERESÉS",
+      "searchEmblem": "✦",
+      "searchLead": "Találd meg gyorsan a jelenleg elérhető iskolai hivatkozásokat.",
+      "searchFieldLabel": "MIT KERESEL?",
+      "searchQuickTitle": "Gyors választás",
+      "searchFeaturedTitle": "Kiemelt elérhetőségek",
+      "searchResultsTitle": "Keresési találatok",
+      "searchKeyboardHint": "↓ találatok · Esc bezárás",
+      "searchScopeHint": "Valódi, elérhető hivatkozások – a teljes belső oldalindex később készül el.",
+      "searchSocialCategory": "Közösség",
+      "searchDiaryCategory": "Tanulmányok",
+      "searchContactCategory": "Kapcsolat",
+      "searchEmailSummary": "Közvetlen e-mail írása az iskolának",
       "searchClearLabel": "Keresőkifejezés törlése",
       "searchResultCountLabel": "találat",
       "searchResultGlyph": "↗",
       "closeSymbol": "×",
       "searchPlaceholder": "Keresés az elérhető hivatkozások között",
-      "searchNoResults": "Nincs találat az aktív menüpontok között.",
+      "searchNoResults": "Nincs találat a jelenleg elérhető hivatkozások között.",
       "searchGlyph": "⌕",
       "themeLabel": "Megjelenés váltása",
       "settingsLabel": "Szerkesztő mód bekapcsolása",
@@ -54,9 +66,9 @@
       "finishEditingLabel": "Szerkesztés befejezése és elfogadása",
       "finishEditingGlyph": "✓",
       "social": [
-        { "label": "Facebook – Csanádi Sportiskola", "icon": "facebook", "url": "https://www.facebook.com/csanadiiskola" },
-        { "label": "Instagram – Csanádi Sportiskola", "icon": "instagram", "url": "https://www.instagram.com/_csanadi_/?hl=hu" },
-        { "label": "KRÉTA – elektronikus napló", "icon": "kreta", "glyph": "K", "url": "https://klik200346001.e-kreta.hu/" }
+        { "label": "Facebook – Csanádi Sportiskola", "searchShort": "Facebook", "searchSummary": "Hírek és közösségi bejegyzések", "icon": "facebook", "url": "https://www.facebook.com/csanadiiskola" },
+        { "label": "Instagram – Csanádi Sportiskola", "searchShort": "Instagram", "searchSummary": "Képek és iskolai pillanatok", "icon": "instagram", "url": "https://www.instagram.com/_csanadi_/?hl=hu" },
+        { "label": "KRÉTA – elektronikus napló", "searchShort": "KRÉTA", "searchSummary": "Elektronikus napló és tanulmányi ügyek", "icon": "kreta", "glyph": "K", "url": "https://klik200346001.e-kreta.hu/" }
       ]
     },
     "editor": {
@@ -80,22 +92,26 @@
       "notices": [
         {
           "id": "impresszum",
+          "glyph": "I",
           "title": "Impresszum",
           "body": "A Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium honlapjának fejlesztési tájékoztató felülete. Intézményi cím: 1143 Budapest, Őrnagy utca 5–7. Kapcsolat: csanadi@csanadiiskola.hu. A hivatalos fenntartói és közzétételi adatok ellenőrzése az élesítés előtt szükséges."
         },
         {
           "id": "adatkezeles",
+          "glyph": "D",
           "title": "Adatkezelési tájékoztató",
           "body": "Ebben a fejlesztési változatban nincs bejelentkezés és személyes adatokat bekérő űrlap. A választott megjelenési módot a böngésző helyi tárhelye tárolhatja. A külső szolgáltatásokra vezető hivatkozások saját adatkezelési feltételekhez kapcsolódhatnak. Ez a rövid technikai ismertető nem helyettesíti az intézmény jóváhagyott, teljes adatkezelési dokumentumát."
         },
         {
           "id": "akadalymentesseg",
+          "glyph": "A",
           "title": "Akadálymentességi nyilatkozat",
           "body": "A menük és a keresők billentyűzetes kezelését, fókuszát és a mozgáscsökkentést a fejlesztés figyelembe veszi. A teljes akadálymentességi megfelelőséget valós eszközökkel és segítő technológiákkal még ellenőrizni kell. Ez az állapotleírás nem hivatalos megfelelőségi minősítés."
         },
         {
           "id": "hasznalat",
-          "title": "A honlap használata",
+          "glyph": "M",
+          "title": "Működés",
           "body": "A főmenüt a címer nyitja meg. Asztalon a menü középső címere zárja be a navigációt, alatta a házikó a főoldalra vezet. Telefonon a témakörök külön szinteken nyílnak meg, visszalépési lehetőséggel. A kereső a jelenleg elérhető hivatkozások között keres. A megjelenés automatikus, világos vagy sötét lehet. A fogaskerék szerkesztő módra vált, a pipa befejezi azt."
         }
       ]

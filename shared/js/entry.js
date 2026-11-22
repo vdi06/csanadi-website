@@ -1,5 +1,6 @@
 /** Egyetlen HTML, JSON-alapú kapu, kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.14";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.15";
+import { mountOffline } from "./offline.js?v=2.15";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -9,6 +10,11 @@ let serial = 0;
 let activePlatform = null;
 let activeModule = null;
 let hasRendered = false;
+let initialized = false;
+let checkingConfig = false;
+let retryTimer = 0;
+let failedAttempts = 0;
+let offlineView = null;
 
 function route() {
   if (location.hash === config.routes.home) return "home";
@@ -53,28 +59,68 @@ async function render() {
     stylesheet.addEventListener("error", () => reject(new Error("A platformstílus nem tölthető be.")), { once: true });
   });
   document.head.append(stylesheet);
-  const module = await import(`../../${platform}/app.js?v=${encodeURIComponent(config.release)}`);
-  await loaded;
-  if (version !== serial) { stylesheet.remove(); return; }
-  document.querySelectorAll("link[data-platform-style]").forEach((node) => {
-    if (node !== stylesheet) node.remove();
-  });
-  activePlatform = platform;
-  activeModule = module;
-  mountView(platform, module, selectedRoute);
+  try {
+    const module = await import(`../../${platform}/app.js?v=${encodeURIComponent(config.release)}`);
+    await loaded;
+    if (version !== serial) { stylesheet.remove(); return; }
+    document.querySelectorAll("link[data-platform-style]").forEach((node) => {
+      if (node !== stylesheet) node.remove();
+    });
+    activePlatform = platform;
+    activeModule = module;
+    mountView(platform, module, selectedRoute);
+  } catch (error) {
+    stylesheet.remove();
+    throw error;
+  }
 }
 
-async function start() {
+function clearRetry() {
+  clearTimeout(retryTimer);
+  retryTimer = 0;
+}
+
+function showOffline() {
+  if (!offlineView) {
+    destroyCurrent();
+    destroyCurrent = () => {};
+    activePlatform = null;
+    activeModule = null;
+    document.querySelectorAll("link[data-platform-style]").forEach((node) => node.remove());
+    document.documentElement.dataset.platform = "offline";
+    document.documentElement.dataset.route = "offline";
+    document.title = "Csanádi – Átmeneti offline nézet";
+    offlineView = mountOffline(root, () => { clearRetry(); void loadConfig(); });
+  }
+  offlineView.setChecking(false);
+}
+
+function scheduleRetry() {
+  if (initialized || retryTimer) return;
+  const delay = Math.min(30000, 5000 * 2 ** Math.min(failedAttempts - 1, 3));
+  retryTimer = setTimeout(() => {
+    retryTimer = 0;
+    void loadConfig();
+  }, delay);
+}
+
+async function loadConfig() {
+  if (initialized || checkingConfig) return;
+  checkingConfig = true;
+  offlineView?.setChecking(true);
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
   try {
     const freshSettings = new URL(settingsUrl);
     freshSettings.searchParams.set("check", String(Date.now()));
-    const response = await fetch(freshSettings, { cache:"no-store" });
+    const response = await fetch(freshSettings, { cache:"no-store", signal:controller.signal });
     if (!response.ok) throw new Error(`Hiányzó JSON: ${response.status}`);
-    config = await response.json();
-    if (config.schemaVersion !== "2.06" || config.gate.frames !== 30) {
+    const nextConfig = await response.json();
+    if (nextConfig?.schemaVersion !== "2.06" || nextConfig.gate?.frames !== 30) {
       throw new Error("A kapu JSON-beállításai hibásak.");
     }
-    validateMenu(config);
+    validateMenu(nextConfig);
+    config = nextConfig;
     // A következő oldalfrissítés is saját, kiadáshoz kötött URL-en történjen.
     if (window.location?.href && window.history?.replaceState) {
       const current = new URL(window.location.href);
@@ -89,11 +135,24 @@ async function start() {
     }
     document.documentElement.style.setProperty("--home-reveal-duration", `${config.gate.homeRevealMs}ms`);
     await render();
+    initialized = true;
+    offlineView = null;
+    failedAttempts = 0;
+    clearRetry();
     window.addEventListener("hashchange", () => render().catch(console.error));
     breakpoint.addEventListener("change", () => render().catch(console.error));
   } catch (error) {
-    console.error(error);
+    console.warn("[Csanádi] Átmeneti betöltési hiba, újrapróbálás következik.", error);
+    failedAttempts++;
+    showOffline();
+    scheduleRetry();
+  } finally {
+    clearTimeout(timeout);
+    checkingConfig = false;
   }
 }
 
-start();
+window.addEventListener("online", () => {
+  if (!initialized) { clearRetry(); void loadConfig(); }
+});
+void loadConfig();

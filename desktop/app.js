@@ -1,8 +1,8 @@
-import { element } from "../shared/js/dom.js?v=2.14";
-import { mountGate } from "../shared/js/gate.js?v=2.14";
-import { makeFooter } from "../shared/js/footer.js?v=2.14";
-import { makeDesktopHeader } from "./header.js?v=2.14";
-import { createDesktopPage } from "./page.js?v=2.14";
+import { element } from "../shared/js/dom.js?v=2.15";
+import { mountGate } from "../shared/js/gate.js?v=2.15";
+import { makeFooter } from "../shared/js/footer.js?v=2.15";
+import { makeDesktopHeader } from "./header.js?v=2.15";
+import { createDesktopPage } from "./page.js?v=2.15";
 
 /** Önálló asztali nézet: a főoldali közép üres, az aloldal csak jóváhagyott vázlat. */
 export function mount(root, config, page) {

@@ -1,5 +1,5 @@
-import { element } from "./dom.js?v=2.14";
-import { trapTab } from "./focus.js?v=2.14";
+import { element } from "./dom.js?v=2.15";
+import { trapTab } from "./focus.js?v=2.15";
 
 /** Közös JSON-adatfolyam: a platformok csak a lábléc elrendezését stílusozzák.
  * Az adatok csak ellenőrzött, teljes válasz esetén cserélődnek le. */
@@ -13,11 +13,14 @@ function validFooter(data, release) {
     !Number.isFinite(Date.parse(`${data.updatedAt}T12:00:00Z`))) return false;
   if (!Array.isArray(data.notices) || data.notices.length > 8) return false;
   const ids = new Set();
+  const glyphs = new Set();
   for (const notice of data.notices) {
     if (!notice || !/^[a-z0-9-]{1,40}$/.test(notice.id || "") || ids.has(notice.id) ||
+      typeof notice.glyph !== "string" || !/^\p{Lu}$/u.test(notice.glyph) || glyphs.has(notice.glyph) ||
       typeof notice.title !== "string" || !notice.title.trim() || notice.title.length > 90 ||
       typeof notice.body !== "string" || !notice.body.trim() || notice.body.length > 1000) return false;
     ids.add(notice.id);
+    glyphs.add(notice.glyph);
   }
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email);
 }
@@ -146,7 +149,7 @@ export function makeFooter(config, platform) {
     const nextTriggers = new Map();
     const items = data.notices.map((item) => {
       const button = element("button", { className: "footer-notice-icon",
-        text: item.title.trim()[0].toLocaleUpperCase("hu-HU"),
+        text: item.glyph,
         attributes: { type: "button", "aria-label": item.title, title:item.title } });
       button.addEventListener("click", () => openModal(item, button));
       nextNotices.set(item.id, item);
