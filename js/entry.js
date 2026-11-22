@@ -1,61 +1,79 @@
-/** A közös belépési pont csak a kijelzőhöz tartozó alkalmazást indítja el. */
+/** Egyetlen belépési pont: kapu (#/) és egyetlen kezdőlap (#/kezdolap). */
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
-const configUrl = new URL("../shared/data/site.json", import.meta.url);
-let version = 0;
+const settingsUrl = new URL("../shared/data/site.json", import.meta.url);
+let config;
+let destroyCurrent = () => {};
+let serial = 0;
+let activePlatform = null;
+let activeModule = null;
+let hasRendered = false;
 
-async function loadConfig() {
-  const response = await fetch(configUrl);
-  if (!response.ok) throw new Error(`A JSON nem érhető el: HTTP ${response.status}`);
-  const config = await response.json();
-  if (config.schemaVersion !== "2.00" || !config.site?.crest) {
-    throw new Error("A kezdőlap JSON-adatainak formátuma hibás.");
-  }
-  return config;
+function route() {
+  return location.hash === config.routes.home ? "home" : "gate";
 }
 
-function applyTheme({ theme }) {
-  for (const [key, value] of Object.entries(theme)) {
-    document.documentElement.style.setProperty(`--${key}`, value);
+function mountView(platform, module, selectedRoute) {
+  destroyCurrent();
+  document.documentElement.dataset.platform = platform;
+  document.documentElement.dataset.route = selectedRoute;
+  destroyCurrent = module.mount(root, config, selectedRoute) || (() => {});
+  if (hasRendered) {
+    const focusTarget = selectedRoute === "home"
+      ? root.querySelector("h1") : root.querySelector(".gate-door-button");
+    if (focusTarget) {
+      if (selectedRoute === "home") focusTarget.tabIndex = -1;
+      focusTarget.focus({ preventScroll: true });
+    }
   }
+  hasRendered = true;
 }
 
-async function activate(platform, config) {
-  const request = ++version;
+async function render() {
+  if (!config) return;
+  const version = ++serial;
+  const platform = breakpoint.matches ? "mobile" : "desktop";
+  const selectedRoute = route();
+  if (activePlatform === platform && activeModule) {
+    mountView(platform, activeModule, selectedRoute);
+    return;
+  }
   const stylesheet = document.createElement("link");
   stylesheet.rel = "stylesheet";
   stylesheet.href = `./${platform}/styles.css`;
   stylesheet.dataset.platformStyle = platform;
-
   const loaded = new Promise((resolve, reject) => {
     stylesheet.addEventListener("load", resolve, { once: true });
-    stylesheet.addEventListener("error", () => reject(new Error("A megjelenés nem tölthető be.")), { once: true });
+    stylesheet.addEventListener("error", () => reject(new Error("A platformstílus nem tölthető be.")), { once: true });
   });
   document.head.append(stylesheet);
-  const appModule = await import(`../${platform}/app.js`);
+  const module = await import(`../${platform}/app.js`);
   await loaded;
-  if (request !== version) {
-    stylesheet.remove();
-    return;
-  }
-  document.querySelectorAll("link[data-platform-style]").forEach((link) => {
-    if (link !== stylesheet) link.remove();
+  if (version !== serial) { stylesheet.remove(); return; }
+  document.querySelectorAll("link[data-platform-style]").forEach((node) => {
+    if (node !== stylesheet) node.remove();
   });
-  document.documentElement.dataset.platform = platform;
-  root.replaceChildren();
-  appModule.mount(root, config);
+  activePlatform = platform;
+  activeModule = module;
+  mountView(platform, module, selectedRoute);
 }
 
 async function start() {
   try {
-    const config = await loadConfig();
+    const response = await fetch(settingsUrl);
+    if (!response.ok) throw new Error(`Hiányzó JSON: ${response.status}`);
+    config = await response.json();
+    if (config.schemaVersion !== "2.02" || config.gate.frames !== 9) {
+      throw new Error("A kapu JSON-beállításai hibásak.");
+    }
     document.title = config.site.fullName;
-    applyTheme(config);
-    const select = () => activate(breakpoint.matches ? "mobile" : "desktop", config).catch(console.error);
-    await select();
-    breakpoint.addEventListener("change", select);
+    for (const [name, value] of Object.entries(config.theme)) {
+      document.documentElement.style.setProperty(`--${name}`, value);
+    }
+    await render();
+    window.addEventListener("hashchange", () => render().catch(console.error));
+    breakpoint.addEventListener("change", () => render().catch(console.error));
   } catch (error) {
-    // A hálózati hiba nem fedhető el: a konzolban vizsgálható marad.
     console.error(error);
   }
 }

@@ -1,234 +1,269 @@
-/**
- * Első mérföldkő tesztje: forrásfájlok, JSON, elrendezési geometria és navigáció.
- * Futtatás: node tools/test.mjs
- * A böngészős részhez Playwright és Chromium szükséges.
- */
+/** Önálló, megismételhető kód- és viselkedésteszt a kapura és egy kezdőlapra. */
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { createServer } from "node:http";
-import { extname, join, relative, resolve, sep } from "node:path";
 import { createRequire } from "node:module";
+import { extname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
-const expectFiles = [
+const staticFiles = [
   "index.html", "js/entry.js", "shared/data/site.json", "shared/js/dom.js",
-  "shared/css/base.css", "shared/assets/media/logo/csanadi-crest-512.webp",
+  "shared/js/gate.js", "shared/css/base.css",
+  "shared/assets/media/logo/csanadi-crest-512.webp",
   "mobile/app.js", "mobile/styles.css", "desktop/app.js", "desktop/styles.css",
   "tools/test.mjs", "docs/ELLENORZES.md"
 ];
-
+const assetPaths = [];
+for (let i = 0; i < 9; i++) {
+  const number = String(i).padStart(2, "0");
+  for (const suffix of ["", "-mobile"]) assetPaths.push(`shared/assets/media/web/gate-frames/gate-${number}${suffix}.webp`);
+}
 function files(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
-    const path = join(directory, entry.name);
-    return entry.isDirectory() ? files(path) : [relative(root, path).split(sep).join("/")];
+    const file = join(directory, entry.name);
+    return entry.isDirectory() ? files(file) : [relative(root, file).split(sep).join("/")];
   });
 }
-
-const actualFiles = files(root).sort();
-assert.deepEqual(actualFiles, [...expectFiles].sort(), "Csak a 2.00 minimális fájlkészlete lehet jelen.");
+assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths].sort(), "Semmilyen régi funkció nem kerülhet az aktív csomagba.");
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
-assert.equal(config.schemaVersion, "2.00");
-assert.equal(Object.hasOwn(config, "review"), false, "A beszélgetés választója nem része a honlapnak.");
+assert.equal(config.schemaVersion, "2.02");
+assert.deepEqual(config.routes, { gate: "#/", home: "#/kezdolap" });
+assert.equal(config.gate.frames, 9);
+assert.ok(config.gate.desktopDurationMs > 0 && config.gate.mobileDurationMs > 0);
+for (const file of assetPaths) {
+  const buffer = readFileSync(join(root, file));
+  assert.equal(buffer.subarray(0, 4).toString(), "RIFF", file);
+  assert.equal(buffer.subarray(8, 12).toString(), "WEBP", file);
+  assert.ok(buffer.length > 5000, file);
+}
+const crest = readFileSync(join(root, "shared/assets/media/logo/csanadi-crest-512.webp"));
+assert.equal(createHash("sha256").update(crest).digest("hex"),
+  "bf32c83b51a4d7fd6a079a73dc9488e3e70720f26a45f604c1f1bcfc84ec8c16");
 const html = readFileSync(join(root, "index.html"), "utf8");
 assert.match(html, /<div id="app"><\/div>/);
-assert.doesNotMatch(html, /<h[1-6]|<p[ >]|<nav|<article|<img/i, "A HTML nem tartalmazhat szerkesztett tartalmat.");
+assert.doesNotMatch(html, /<h[1-6]|<p[ >]|<nav|<article|<img/i);
+const src = ["js/entry.js", "shared/js/dom.js", "shared/js/gate.js", "mobile/app.js", "desktop/app.js"]
+  .map((path) => readFileSync(join(root, path), "utf8"));
+for (const source of src) assert.doesNotMatch(source, /innerHTML|eval\s*\(|carousel|slideshow|fetch\([^)]*pages/i);
+assert.match(src[0], /import\(`\.\.\/\$\{platform\}\/app\.js`\)/);
+assert.match(src[0], /window\.addEventListener\("hashchange"/);
+assert.match(src[0], /breakpoint\.addEventListener\("change"/);
+console.log("✓ Kizárólag kapu és kezdőlap: 18 képkocka, 1 címer, adatmentes HTML, külön platformok");
 
-const mediaPath = join(root, "shared/assets/media/logo/csanadi-crest-512.webp");
-const media = readFileSync(mediaPath);
-assert.equal(media.subarray(0, 4).toString(), "RIFF");
-assert.equal(media.subarray(8, 12).toString(), "WEBP");
-assert.equal(createHash("sha256").update(media).digest("hex"),
-  "bf32c83b51a4d7fd6a079a73dc9488e3e70720f26a45f604c1f1bcfc84ec8c16");
-assert.equal(config.site.crest, "./shared/assets/media/logo/csanadi-crest-512.webp");
+class FakeNode {
+  constructor(tag) {
+    this.tag = tag; this.children = []; this.attributes = {}; this.className = "";
+    this.textContent = ""; this.events = new Map(); this.complete = true; this.naturalWidth = 1600;
+    this.dataset = {}; this.parentNode = null;
+    this.classList = {
+      add: (name) => { this.className = [...new Set([...this.className.split(/\s+/).filter(Boolean), name])].join(" "); },
+      remove: (name) => { this.className = this.className.split(/\s+/).filter((value) => value !== name).join(" "); }
+    };
+  }
+  setAttribute(name, value) { this.attributes[name] = String(value); }
+  append(...children) { for (const child of children) { if (typeof child === "object") child.parentNode = this; this.children.push(child); } }
+  replaceChildren(...children) { this.children = []; this.append(...children); }
+  addEventListener(name, callback) { this.events.set(name, callback); }
+  emit(name) { this.events.get(name)?.(); }
+  remove() { if (this.parentNode) this.parentNode.children = this.parentNode.children.filter((node) => node !== this); }
+  querySelector(selector) {
+    return scan(this).find((node) => selector.startsWith(".")
+      ? node.className.split(/\s+/).includes(selector.slice(1)) : node.tag === selector) || null;
+  }
+  focus() { this.focused = true; }
+}
+globalThis.document = { createElement: (tag) => new FakeNode(tag),
+  createElementNS: (_ns, tag) => new FakeNode(tag) };
+globalThis.location = { hash: "#/" };
+let reducedMotion = false;
+globalThis.window = { matchMedia: () => ({ matches: reducedMotion }) };
+const queue = [];
+globalThis.requestAnimationFrame = (callback) => { queue.push(callback); return queue.length; };
+globalThis.cancelAnimationFrame = () => {};
+const scan = (node) => [node, ...node.children.flatMap((item) => typeof item === "object" ? scan(item) : [])];
+const mobile = await import(new URL("../mobile/app.js", import.meta.url));
+const desktop = await import(new URL("../desktop/app.js", import.meta.url));
 
-const mobileJs = readFileSync(join(root, "mobile/app.js"), "utf8");
-const desktopJs = readFileSync(join(root, "desktop/app.js"), "utf8");
-const entryJs = readFileSync(join(root, "js/entry.js"), "utf8");
+for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
+  const parent = new FakeNode("root");
+  location.hash = config.routes.gate;
+  const dispose = app.mount(parent, config, "gate");
+  let nodes = scan(parent);
+  assert.equal(nodes.filter((n) => n.tag === "main").length, 1);
+  assert.equal(nodes.filter((n) => n.tag === "button").length, 1);
+  assert.equal(nodes.filter((n) => n.tag === "img" && n.className.includes("gate-frame")).length, 9);
+  assert.equal(nodes.filter((n) => n.tag === "svg").length, 1);
+  assert.equal(nodes.filter((n) => n.tag === "ellipse" || n.tag === "rect").length, 0, "A címer mögött nem lehet ovális.");
+  const images = nodes.filter((n) => n.tag === "img" && n.className.includes("gate-frame"));
+  for (let i = 0; i < 9; i++) {
+    const suffix = platform === "mobile" ? "-mobile" : "";
+    assert.equal(images[i].attributes.src, `${config.gate.assetDirectory}gate-${String(i).padStart(2, "0")}${suffix}.webp`);
+  }
+  const button = nodes.find((n) => n.tag === "button");
+  assert.equal(button.attributes["aria-label"], config.gate.actionLabel);
+  button.emit("click");
+  button.emit("click");
+  assert.equal(button.disabled, true, "A kapu nyitás közben nem kattintható újra.");
+  const duration = platform === "mobile" ? config.gate.mobileDurationMs : config.gate.desktopDurationMs;
+  for (const time of [0, duration / 4, duration / 2, duration * .75, duration]) {
+    const next = queue.shift();
+    assert.ok(next, "A kapuanimáció időzítője nem fut.");
+    next(time);
+  }
+  assert.equal(location.hash, config.routes.home, `${platform}: a kapu nem a kezdőlapra vezet.`);
+  assert.ok(images[8].className.includes("is-visible"), `${platform}: a kapu nem a nyitott képnél fejeződik be.`);
+  dispose();
+
+  app.mount(parent, config, "home");
+  nodes = scan(parent);
+  assert.equal(nodes.filter((n) => n.tag === "main").length, 1);
+  assert.equal(nodes.filter((n) => n.tag === "h1").length, 1);
+  assert.equal(nodes.find((n) => n.tag === "h1").textContent, config.home.title);
+  assert.equal(nodes.filter((n) => n.tag === "img").length, 1, "A kezdőlap kizárólag a címert mutatja.");
+  assert.equal(nodes.filter((n) => n.tag === "button").length, 0);
+  assert.equal(nodes.filter((n) => n.tag === "a").length, 1);
+  assert.equal(nodes.find((n) => n.tag === "a").attributes.href, config.routes.gate);
+  assert.equal(nodes.filter((n) => n.className?.includes("gate-frame")).length, 0);
+  console.log(`✓ ${platform}: kapunyitás, 9 képkocka, kattintásvédelem, kezdőlap és visszaút`);
+}
+
+// Külön ellenőrzés: a mozgáscsökkentés azonnal a működő oldalra visz.
+reducedMotion = true;
+location.hash = config.routes.gate;
+const reducedRoot = new FakeNode("root");
+const reducedDispose = mobile.mount(reducedRoot, config, "gate");
+scan(reducedRoot).find((n) => n.tag === "button").emit("click");
+assert.equal(location.hash, config.routes.home);
+reducedDispose();
+console.log("✓ Mozgáscsökkentés: közvetlen, animációmentes belépés");
+
+const baseCss = readFileSync(join(root, "shared/css/base.css"), "utf8");
 const mobileCss = readFileSync(join(root, "mobile/styles.css"), "utf8");
 const desktopCss = readFileSync(join(root, "desktop/styles.css"), "utf8");
-for (const source of [mobileJs, desktopJs, entryJs]) {
-  assert.doesNotMatch(source, /innerHTML|eval\s*\(|localStorage|import\s+[^;]+old/i);
+function block(css, selector) {
+  const pos = css.indexOf(`${selector} {`);
+  assert.ok(pos >= 0, `CSS-hiba: ${selector}`);
+  return css.slice(pos, css.indexOf("}", pos));
 }
-assert.doesNotMatch(mobileJs + mobileCss, /desktop-|slideshow|carousel|slideIndex/i);
-assert.doesNotMatch(desktopJs + desktopCss, /mobile-|slideshow|carousel|slideIndex/i);
-assert.match(entryJs, /import\(`\.\.\/\$\{platform\}\/app\.js`\)/);
-assert.match(entryJs, /breakpoint\.addEventListener\("change"/);
-assert.doesNotMatch(entryJs, /review|preview|valaszto/i);
-assert.match(desktopJs, /footer\(config, "desktop-footer"\)/);
-console.log("✓ Minimális fájlkészlet, biztonságos JSON, címer SHA-256 és tiszta forráskód");
+assert.match(block(baseCss, ".gate-stage"), /width:\s*max\(100vw,\s*177\.77778dvh\);/);
+assert.match(block(baseCss, ".gate-stage"), /aspect-ratio:\s*16\s*\/\s*9;/);
+assert.match(block(baseCss, ".gate-door-button"), /left:\s*41\.6%;\s*top:\s*33%;\s*width:\s*16\.8%;\s*height:\s*54%;/);
+assert.match(block(baseCss, ".gate-glass-crest"), /left:\s*50%;/);
+assert.match(block(mobileCss, ".mobile-home-content"), /align-items:\s*center;/);
+assert.match(block(mobileCss, ".mobile-home-content"), /gap:\s*19px;/);
+assert.match(block(desktopCss, ".desktop-home-content"), /gap:\s*24px;/);
+assert.match(block(desktopCss, ".desktop-home-content"), /width:\s*min\(100%,\s*920px\);/);
+for (const [width, height] of [[320, 720], [375, 812], [390, 844], [430, 932], [768, 800], [1024, 768], [1440, 900]]) {
+  const stageWidth = Math.max(width, height * 16 / 9);
+  const left = (stageWidth * .416) - (stageWidth - width) / 2;
+  const right = (stageWidth * .584) - (stageWidth - width) / 2;
+  assert.ok(left >= 0 && right <= width && right - left >= 44,
+    `${width}×${height}: a kattintható kapu kívül kerülne a képernyőn.`);
+  assert.ok(Math.abs((left + right) / 2 - width / 2) < 1);
+}
+console.log("✓ CSS-geometria: a kapu és kattintható területe hét képernyőméretnél középen marad");
 
-// A két DOM-építő önálló tesztje valódi böngésző nélkül is lefut.
-class TestNode {
-  constructor(tag) { this.tag = tag; this.children = []; this.attributes = {}; this.className = ""; this.textContent = ""; }
-  setAttribute(name, value) { this.attributes[name] = value; }
-  append(...children) { this.children.push(...children); }
-  replaceChildren(...children) { this.children = [...children]; }
-}
-globalThis.document = { createElement: (tag) => new TestNode(tag) };
-const mobileApp = await import(new URL("../mobile/app.js", import.meta.url));
-const desktopApp = await import(new URL("../desktop/app.js", import.meta.url));
-function all(rootNode) {
-  return [rootNode, ...rootNode.children.flatMap((child) => typeof child === "object" ? all(child) : [])];
-}
-const mobileRoot = new TestNode("root");
-const desktopRoot = new TestNode("root");
-mobileApp.mount(mobileRoot, config);
-desktopApp.mount(desktopRoot, config);
-const mobileTree = all(mobileRoot);
-const desktopTree = all(desktopRoot);
-for (const tree of [mobileTree, desktopTree]) {
-  for (const tag of ["header", "main", "footer", "h1", "img"]) {
-    assert.equal(tree.filter((node) => node.tag === tag).length, 1, `Pontosan egy ${tag} szükséges.`);
-  }
-  assert.equal(tree.find((node) => node.tag === "img").attributes.src, config.site.crest);
-  assert.equal(tree.find((node) => node.tag === "img").attributes.alt, config.site.crestAlt);
-  assert.equal(tree.find((node) => node.tag === "footer").children[1].attributes.href, "#app");
-  assert.equal(tree.filter((node) => node.tag === "script" || node.tag === "iframe").length, 0);
-}
-assert.equal(mobileTree.some((node) => node.className === "golden-gate"), false);
-assert.equal(desktopTree.some((node) => node.className === "golden-gate"), true);
-assert.equal(mobileTree.find((node) => node.tag === "h1").textContent, config.mobile.title);
-assert.equal(desktopTree.find((node) => node.tag === "h1").textContent, config.desktop.title);
-assert.equal(mobileTree.find((node) => node.className === "mobile-home-link").attributes.href, "./index.html");
-assert.equal(desktopTree.filter((node) => node.className === "mobile-home-link").length, 0);
-console.log("✓ Valódi modulokból felépített két külön DOM-fa, működő hivatkozási célok");
-
-const block = (css, selector) => {
-  const start = css.indexOf(`${selector} {`);
-  assert.notEqual(start, -1, `Hiányzó CSS: ${selector}`);
-  return css.slice(start, css.indexOf("}", start));
+// A teljes közös belépési pontot is futtatjuk, nem csupán a két oldal modulját.
+const applicationRoot = new FakeNode("root");
+const head = new FakeNode("head");
+const originalAppend = head.append.bind(head);
+head.append = (...children) => {
+  originalAppend(...children);
+  for (const child of children) Promise.resolve().then(() => child.emit("load"));
 };
-assert.match(block(mobileCss, ".mobile-welcome"), /align-items:\s*center;/);
-assert.match(block(mobileCss, ".mobile-welcome"), /text-align:\s*center;/);
-assert.match(block(mobileCss, ".mobile-welcome"), /gap:\s*18px;/);
-assert.match(block(mobileCss, ".mobile-main"), /max-width:\s*600px;/);
-assert.match(block(mobileCss, ".mobile-crest"), /margin-inline:\s*auto;/);
-assert.match(block(desktopCss, ".desktop-page"), /grid-template-rows:\s*auto\s+1fr\s+auto;/);
-assert.match(block(desktopCss, ".gate-content"), /gap:\s*20px;/);
-assert.match(block(desktopCss, ".desktop-welcome"), /text-align:\s*center;/);
-assert.match(block(desktopCss, ".golden-gate"), /border:\s*3px\s+solid\s+var\(--accent\);/);
-console.log("✓ A középre igazítás, térközök és arany keret külön CSS-szabályokkal rendelkeznek");
+const documentRoot = { dataset: {}, style: { setProperty: () => {} } };
+globalThis.document = {
+  createElement: (tag) => new FakeNode(tag),
+  createElementNS: (_ns, tag) => new FakeNode(tag),
+  getElementById: (id) => id === "app" ? applicationRoot : null,
+  querySelectorAll: (selector) => selector === "link[data-platform-style]"
+    ? head.children.filter((node) => node.dataset.platformStyle) : [],
+  head, documentElement: documentRoot, title: ""
+};
+const windowEvents = new Map();
+let viewportIsMobile = true;
+let breakpointChange;
+globalThis.window = {
+  matchMedia: (query) => query.includes("prefers-reduced-motion")
+    ? { matches: true }
+    : { get matches() { return viewportIsMobile; }, addEventListener: (_event, callback) => { breakpointChange = callback; } },
+  addEventListener: (name, callback) => windowEvents.set(name, callback)
+};
+globalThis.fetch = async () => ({ ok: true, json: async () => config });
+location.hash = config.routes.gate;
+await import(new URL("../js/entry.js", import.meta.url));
+const nextTick = () => new Promise((done) => setImmediate(done));
+await nextTick();
+assert.equal(documentRoot.dataset.platform, "mobile");
+assert.equal(documentRoot.dataset.route, "gate");
+assert.ok(applicationRoot.querySelector(".gate-door-button"));
+assert.equal(head.children.length, 1);
+applicationRoot.querySelector(".gate-door-button").emit("click");
+assert.equal(location.hash, config.routes.home);
+windowEvents.get("hashchange")();
+await nextTick();
+assert.equal(documentRoot.dataset.route, "home");
+assert.ok(applicationRoot.querySelector("h1").focused, "A kezdőlapra lépés után fókuszt kell átadni.");
+location.hash = config.routes.gate;
+windowEvents.get("hashchange")();
+await nextTick();
+assert.ok(applicationRoot.querySelector(".gate-door-button").focused, "Visszalépés után a kapu fókuszt kap.");
+viewportIsMobile = false;
+breakpointChange();
+await nextTick();
+assert.equal(documentRoot.dataset.platform, "desktop");
+assert.equal(head.children.length, 1, "Csak az éppen aktív platform CSS-e maradhat.");
+assert.equal(scan(applicationRoot).filter((n) => n.className === "mobile-app").length, 0);
+assert.equal(scan(applicationRoot).filter((n) => n.className === "desktop-app").length, 1);
+console.log("✓ Teljes belépési pont: kapu → kezdőlap → vissza, fókusz és mobil/asztali CSS-csere");
 
 let chromium;
-try {
-  const require = createRequire(import.meta.url);
-  ({ chromium } = require("playwright"));
-} catch {
-  console.log("⚠ Playwright nincs telepítve: böngészős elrendezésteszt nem futott.");
-}
-
+try { ({ chromium } = createRequire(import.meta.url)("playwright")); }
+catch { console.warn("⚠ Playwright hiányzik: élő böngészőteszt nem futott."); }
 if (chromium) {
   const mime = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".webp": "image/webp" };
   const server = createServer((request, response) => {
-    const pathname = decodeURIComponent(new URL(request.url, "http://localhost").pathname);
-    const file = resolve(root, `.${pathname === "/" ? "/index.html" : pathname}`);
-    if (!(file === root || file.startsWith(`${root}${sep}`)) || !existsSync(file) || !statSync(file).isFile()) {
-      response.writeHead(404).end("Not found");
-      return;
+    const target = decodeURIComponent(new URL(request.url, "http://localhost").pathname);
+    const file = resolve(root, `.${target === "/" ? "/index.html" : target}`);
+    if (!file.startsWith(`${root}${sep}`) || !existsSync(file) || !statSync(file).isFile()) {
+      response.writeHead(404).end(); return;
     }
     response.writeHead(200, { "Content-Type": mime[extname(file)] || "application/octet-stream" });
     response.end(readFileSync(file));
   });
   await new Promise((done) => server.listen(0, "127.0.0.1", done));
-  const port = server.address().port;
   let browser;
   try {
     try {
-      browser = await chromium.launch({ headless: true, executablePath: process.env.CHROMIUM_BIN || "/usr/bin/chromium", args: ["--no-sandbox"] });
+      browser = await chromium.launch({ executablePath: process.env.CHROMIUM_BIN || "/usr/bin/chromium",
+        headless: true, args: ["--no-sandbox"] });
     } catch (error) {
       if (!/Operation not permitted|socket\(\) failed/.test(String(error))) throw error;
-      console.warn("⚠ A környezet blokkolta a Chromium indítását: geometriai böngészőteszt nem futott.");
+      console.warn("⚠ A környezet blokkolta a Chromiumot; valódi képernyőteszt nem futott.");
     }
     if (browser) {
-    const errors = [];
-    for (const width of [320, 375, 390, 430, 767, 768, 800, 1024, 1280, 1440]) {
-      const page = await browser.newPage({ viewport: { width, height: 800 }, deviceScaleFactor: 1 });
-      page.on("pageerror", (error) => errors.push(`${width}px: ${error.message}`));
-      page.on("response", (response) => {
-        if (response.status() >= 400) errors.push(`${width}px: HTTP ${response.status()} ${response.url()}`);
-      });
-      await page.goto(`http://127.0.0.1:${port}/index.html`, { waitUntil: "networkidle" });
-      const expectedPlatform = width <= 767 ? "mobile" : "desktop";
-      await page.waitForFunction((platform) => document.documentElement.dataset.platform === platform,
-        expectedPlatform);
-      const dimensions = await page.evaluate(() => {
-        const platform = document.documentElement.dataset.platform;
-        const header = document.querySelector("header");
-        const main = document.querySelector("main");
-        const footer = document.querySelector("footer");
-        const crest = document.querySelector("img.crest");
-        const rect = (element) => {
-          const { x, y, width, height, bottom } = element.getBoundingClientRect();
-          return { x, y, width, height, bottom };
-        };
-        return {
-          platform,
-          header: rect(header), main: rect(main), footer: rect(footer), crest: rect(crest),
-          title: document.querySelector("h1").textContent,
-          bodyWidth: document.documentElement.scrollWidth,
-          viewportWidth: window.innerWidth,
-          assetLoaded: crest.complete && crest.naturalWidth > 0,
-          crestBackground: getComputedStyle(crest).backgroundColor,
-          linkCount: document.querySelectorAll("link[data-platform-style]").length,
-          largeImages: document.querySelectorAll("main img:not(.crest)").length,
-          inactivePlatformCount: document.querySelectorAll(platform === "mobile" ? ".desktop-page" : ".mobile-page").length,
-          gateCount: document.querySelectorAll(".golden-gate").length,
-          navigationCount: document.querySelectorAll("nav, .carousel, .slideshow").length,
-          homeLink: document.querySelector(".mobile-home-link")?.getAttribute("href"),
-          topLink: footer.querySelector("a")?.getAttribute("href")
-        };
-      });
-      assert.equal(dimensions.platform, expectedPlatform);
-      assert.ok(dimensions.assetLoaded, `${width}px: a címer nem töltődött be`);
-      assert.equal(dimensions.crestBackground, "rgba(0, 0, 0, 0)", `${width}px: a címer mögött nincs háttéralakzat`);
-      assert.equal(dimensions.linkCount, 1, `${width}px: pontosan egy felületspecifikus CSS`);
-      assert.equal(dimensions.largeImages, 0, `${width}px: nincs nagy nyitókép`);
-      assert.equal(dimensions.inactivePlatformCount, 0, `${width}px: nem keveredhetnek a felületek`);
-      assert.equal(dimensions.navigationCount, 0, `${width}px: régi navigáció nem jelenhet meg`);
-      assert.ok(dimensions.bodyWidth <= width + 1, `${width}px: vízszintes túllógás: ${dimensions.bodyWidth}`);
-      assert.ok(dimensions.header.bottom <= dimensions.main.y + 1, `${width}px: a felső sáv a tartalomra csúszik`);
-      assert.ok(dimensions.main.bottom <= dimensions.footer.y + 1, `${width}px: az alsó sáv a tartalomra csúszik`);
-      assert.ok(Math.abs(dimensions.crest.x + dimensions.crest.width / 2 - width / 2) < 2,
-        `${width}px: a címer nem középen van`);
-      assert.equal(dimensions.topLink, "#app", `${width}px: a tetejére mutató link működő célpont`);
-      if (expectedPlatform === "mobile") {
-        assert.equal(dimensions.homeLink, "./index.html");
-        assert.equal(dimensions.gateCount, 0, `${width}px: mobilon nincs asztali kapu`);
-        assert.equal(dimensions.title, config.mobile.title);
-      } else {
-        assert.equal(dimensions.homeLink, undefined);
-        assert.equal(dimensions.gateCount, 1);
-        assert.equal(dimensions.title, config.desktop.title);
+      const url = `http://127.0.0.1:${server.address().port}/index.html`;
+      for (const width of [320, 390, 768, 1024, 1440]) {
+        const page = await browser.newPage({ viewport: { width, height: 844 } });
+        await page.goto(url, { waitUntil: "networkidle" });
+        await page.waitForSelector(".gate-door-button");
+        assert.equal(await page.locator(".gate-frame").count(), 9);
+        const before = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
+        assert.ok(before <= 1, `${width}px: vízszintes túllógás`);
+        await page.locator(".gate-door-button").click();
+        await page.waitForURL(/#\/kezdolap$/, { timeout: 7000 });
+        assert.equal(await page.locator(".home-return").count(), 1);
+        await page.locator(".home-return").click();
+        await page.waitForSelector(".gate-door-button");
+        await page.close();
+        console.log(`✓ ${width}px: élő kapunyitás, átmenet és visszalépés`);
       }
-      if (width === 390) {
-        await page.locator(".mobile-home-link").click();
-        await page.waitForURL(/\/index\.html$/);
-        assert.equal(await page.locator(".mobile-page").count(), 1);
-      }
-      await page.close();
-      console.log(`✓ ${width}px: ${expectedPlatform} – méretek, hézagok, címer, linkek és fájlizoláció`);
-    }
-
-    const page = await browser.newPage({ viewport: { width: 390, height: 800 } });
-    await page.goto(`http://127.0.0.1:${port}/index.html`, { waitUntil: "networkidle" });
-    await page.setViewportSize({ width: 1280, height: 800 });
-    await page.waitForFunction(() => document.documentElement.dataset.platform === "desktop");
-    assert.equal(await page.locator(".mobile-page").count(), 0);
-    assert.equal(await page.locator(".desktop-page").count(), 1);
-    assert.equal(await page.locator('link[data-platform-style="mobile"]').count(), 0);
-    await page.setViewportSize({ width: 375, height: 800 });
-    await page.waitForFunction(() => document.documentElement.dataset.platform === "mobile");
-    assert.equal(await page.locator(".desktop-page").count(), 0);
-    assert.equal(await page.locator('link[data-platform-style="desktop"]').count(), 0);
-    await page.close();
-    assert.deepEqual(errors, [], "Nem lehet böngészős vagy hálózati hiba.");
-    console.log("✓ Dinamikus mobil ↔ asztali váltás: régi DOM és CSS eltávolítva");
     }
   } finally {
     if (browser) await browser.close();
     await new Promise((done) => server.close(done));
   }
-  console.log("\nFORRÁS- ÉS DOM-TESZTEK SIKERESEK. A böngészős tesztek állapota fent látható.");
 }
+console.log("\nA kód- és viselkedéstesztek sikeresek; a böngészőteszt állapota fent látható.");

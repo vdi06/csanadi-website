@@ -1,72 +1,21 @@
-/* Csak a mobilalkalmazás saját elemei. Nem tartalmaz asztali szelektort. */
-.mobile-page {
-  display: flex;
-  flex-direction: column;
+/* Mobil: a kapu középvonalát mutatjuk, a kezdőlapon semmi nagy nyitókép nincs. */
+.mobile-app { width: 100%; min-height: 100dvh; }
+.mobile-app .gate-caption h1 { font-size: clamp(.93rem, 3.7vw, 1.3rem); }
+.mobile-app .gate-subtitle { font-size: clamp(.64rem, 2.5vw, .86rem); }
+.mobile-app .gate-hint { font-size: clamp(.8rem, 3vw, 1rem); margin-top: 13px; }
+.mobile-home {
   min-height: 100dvh;
-  width: 100%;
-  background: linear-gradient(165deg, #081a2b 0%, var(--background) 63%, #0b263c 100%);
+  display: grid; place-items: center;
+  padding: 36px 20px calc(36px + env(safe-area-inset-bottom));
+  background: linear-gradient(165deg, #071b2f, #102b40);
 }
-.mobile-header {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 14px;
-  width: 100%;
-  padding: 24px max(18px, env(safe-area-inset-right)) 20px max(18px, env(safe-area-inset-left));
-  border-bottom: 1px solid rgba(219, 183, 114, .24);
-  background: #0b2033;
-}
-.mobile-header .brand-name { font-size: clamp(.92rem, 3.3vw, 1.2rem); }
-.mobile-header .brand-subtitle { font-size: clamp(.59rem, 2.4vw, .82rem); }
-.mobile-home-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  min-width: 104px;
-  padding: 9px 17px;
-  border-radius: 24px;
-  border: 1px solid rgba(219, 183, 114, .65);
-  text-decoration: none;
-  color: var(--text);
-  font-size: .87rem;
-  font-weight: 700;
-}
-.mobile-home-link:hover { background: rgba(219, 183, 114, .13); }
-
-.mobile-main {
-  display: grid;
-  place-items: center;
-  flex: 1 0 auto;
-  width: 100%;
-  max-width: 600px;
-  margin-inline: auto;
-  padding: 36px 20px 46px;
-}
-.mobile-welcome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 18px;
-  width: 100%;
-  min-width: 0;
-}
-.mobile-crest { width: clamp(128px, 38vw, 188px); margin-inline: auto; }
-.mobile-welcome h1 { max-width: 20ch; font-size: clamp(2rem, 8.3vw, 3.5rem); }
-.mobile-welcome .eyebrow { font-size: clamp(.67rem, 2.6vw, .82rem); }
-.mobile-description { margin: 0; max-width: 30ch; color: var(--muted); line-height: 1.6; font-size: clamp(.98rem, 3.4vw, 1.15rem); }
-.mobile-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  column-gap: 20px;
-  row-gap: 8px;
-  padding: 18px 20px calc(18px + env(safe-area-inset-bottom));
-  border-top: 1px solid rgba(219, 183, 114, .24);
-  color: var(--muted);
-  font-size: .8rem;
+.mobile-home-content {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 19px; width: 100%; max-width: 520px;
   text-align: center;
 }
-.mobile-footer a { text-underline-offset: 4px; }
+.mobile-home-content .home-crest { width: clamp(128px, 39vw, 186px); }
+.mobile-home-content h1 { margin: 0; max-width: 20ch; font-size: clamp(2.1rem, 8.5vw, 3.4rem); line-height: 1.12; }
+.mobile-home-content .home-eyebrow { font-size: .72rem; }
+.mobile-home-content .home-description { max-width: 34ch; font-size: 1.05rem; }
+.mobile-home-content .home-motto { font-size: .8rem; }

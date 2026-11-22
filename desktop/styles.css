@@ -1,69 +1,24 @@
-/* Csak az asztali alkalmazás saját elemei. */
-.desktop-page {
+/* Asztal: a teljes kapuhomlokzat megmarad, a kezdőlap külön, rendezett felület. */
+.desktop-app { width: 100%; min-height: 100dvh; }
+.desktop-app .gate-caption h1 { font-size: clamp(1.2rem, 2.1vw, 2.1rem); }
+.desktop-app .gate-subtitle { font-size: clamp(.76rem, 1.12vw, 1.05rem); }
+.desktop-app .gate-hint { font-size: 1.08rem; margin-top: 16px; }
+.desktop-home {
   min-height: 100dvh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  background: radial-gradient(ellipse at 50% 20%, #1b3a4e 0%, #0b2136 46%, var(--background) 100%);
+  display: grid; place-items: center;
+  padding: 48px clamp(28px, 6vw, 90px);
+  background: radial-gradient(ellipse at 50% 10%, #224054, #102a3d 52%, #071b2f);
 }
-.desktop-header {
-  padding: 28px 32px 22px;
-  border-bottom: 1px solid rgba(219, 183, 114, .3);
-  background: rgba(7, 27, 47, .75);
+.desktop-home-content {
+  width: min(100%, 920px);
+  display: flex; flex-direction: column; align-items: center;
+  gap: 24px; padding: clamp(44px, 6vw, 74px);
+  border: 1px solid rgba(219,183,114,.55);
+  border-radius: 30px; background: rgba(7,27,47,.44);
+  box-shadow: 0 28px 70px rgba(0,0,0,.2);
+  text-align: center;
 }
-.desktop-header .brand-name { font-size: 1.45rem; }
-.desktop-header .brand-subtitle { font-size: .8rem; }
-.desktop-main {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  padding: 48px clamp(24px, 5vw, 80px) 56px;
-}
-.desktop-welcome { position: relative; width: min(100%, 920px); text-align: center; }
-.desktop-crest { width: clamp(138px, 15vw, 184px); margin: 0 auto -42px; position: relative; z-index: 2; }
-.golden-gate {
-  position: relative;
-  width: 100%;
-  min-height: 360px;
-  border: 3px solid var(--accent);
-  border-radius: 38% 38% 26px 26px / 25% 25% 26px 26px;
-  background: linear-gradient(160deg, rgba(35, 67, 86, .76), rgba(9, 31, 49, .96));
-  box-shadow: inset 0 0 0 2px rgba(255, 232, 167, .21), inset 0 7px 20px rgba(255, 235, 180, .09),
-    0 0 0 1px rgba(99, 62, 19, .8), 0 24px 34px rgba(0, 0, 0, .34), 0 0 32px rgba(219, 183, 114, .09);
-}
-.golden-gate::after {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border: 1px solid rgba(219, 183, 114, .38);
-  border-radius: inherit;
-  pointer-events: none;
-}
-.gate-content {
-  min-height: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 90px 40px 54px;
-}
-.gate-content h1 { font-size: clamp(2.25rem, 4.5vw, 4rem); }
-.gate-content .eyebrow { font-size: .82rem; }
-.desktop-description { margin: 0; max-width: 52ch; font-size: 1.18rem; line-height: 1.65; color: var(--muted); }
-.desktop-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 20px clamp(24px, 6vw, 92px);
-  border-top: 1px solid rgba(219, 183, 114, .24);
-  font-size: .87rem;
-  color: var(--muted);
-}
-.desktop-footer a { color: var(--accent); text-underline-offset: 4px; }
-
-@media (max-width: 800px) {
-  .desktop-header .brand-name { font-size: 1.1rem; }
-  .golden-gate { border-radius: 28% 28% 22px 22px / 17% 17% 22px 22px; }
-  .gate-content { padding-inline: 18px; }
-}
+.desktop-home-content .home-crest { width: clamp(150px, 13vw, 200px); }
+.desktop-home-content h1 { margin: 0; font-size: clamp(2.6rem, 4.5vw, 4.4rem); line-height: 1.1; }
+.desktop-home-content .home-eyebrow { font-size: .88rem; }
+.desktop-home-content .home-description { font-size: 1.25rem; max-width: 55ch; }

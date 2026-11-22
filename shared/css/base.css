@@ -2,43 +2,70 @@
   color-scheme: dark;
   font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
   --background: #071b2f;
-  --surface: #112a40;
+  --surface: #102a40;
   --text: #f7f0e5;
   --muted: #c6d0d7;
   --accent: #dbb772;
 }
-
 *, *::before, *::after { box-sizing: border-box; }
-html { min-width: 280px; scroll-behavior: smooth; background: var(--background); }
+html { min-width: 280px; background: var(--background); }
 body { margin: 0; color: var(--text); background: var(--background); }
-body, button, input { font-family: inherit; }
-img { max-width: 100%; }
+#app { min-height: 100dvh; }
+button, a { font: inherit; }
 a { color: inherit; }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+img { max-width: 100%; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 
-.skip-link {
-  position: fixed;
-  z-index: 20;
-  top: -100px;
-  left: 12px;
-  padding: 12px 16px;
-  background: var(--accent);
-  color: #071b2f;
-  border-radius: 8px;
+/* A 16:9-es képkocka és a fölötte levő SVG MINDIG azonos koordinátarendszerben van.
+   Így a mobilon levágott oldalsó képrészek nem tolhatják el az arany kapukontúrt. */
+.gate-screen { position: relative; width: 100%; min-height: 100dvh; overflow: hidden; isolation: isolate; background: #273327; }
+.gate-stage {
+  position: absolute;
+  left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: max(100vw, 177.77778dvh);
+  aspect-ratio: 16 / 9;
 }
-.skip-link:focus { top: 12px; }
+.gate-frames, .gate-frame, .gate-outline { position: absolute; inset: 0; width: 100%; height: 100%; }
+.gate-frame { display: block; object-fit: fill; opacity: 0; transition: opacity .16s linear; }
+.gate-frame.is-visible { opacity: 1; }
+.gate-outline { z-index: 2; pointer-events: none; filter: drop-shadow(1px 2px 3px rgba(15, 12, 5, .85)); transition: opacity .5s ease; }
+.gate-glass-crest { position: absolute; left: 50%; top: 21%; width: 6%; transform: translateX(-50%); z-index: 3; pointer-events: none; }
+.gate-glass-crest img { display: block; width: 100%; height: auto; background: transparent; }
+.gate-door-button {
+  position: absolute; z-index: 4;
+  left: 41.6%; top: 33%; width: 16.8%; height: 54%;
+  padding: 0; border: 0; background: transparent;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.gate-door-button:focus-visible { outline: none; }
+.gate-stage:has(.gate-door-button:focus-visible) .gate-outline,
+.gate-stage:has(.gate-door-button:hover) .gate-outline { filter: drop-shadow(0 0 7px #ffe6a4) drop-shadow(0 0 14px rgba(219,183,114,.8)); }
+.gate-screen.is-opening .gate-door-button { pointer-events: none; }
+.gate-screen.is-opening .gate-outline { opacity: 0; }
+.gate-caption {
+  position: absolute; z-index: 5; bottom: 0; inset-inline: 0;
+  text-align: center; pointer-events: none;
+  padding: 45px 18px calc(21px + env(safe-area-inset-bottom));
+  background: linear-gradient(transparent, rgba(3, 15, 24, .84));
+  color: #fff9ee;
+}
+.gate-caption h1 { margin: 0; font-weight: 850; letter-spacing: .075em; line-height: 1.3; }
+.gate-caption p { margin: 6px 0 0; }
+.gate-subtitle { font-weight: 700; letter-spacing: .1em; }
+.gate-hint { color: #f0d7a1; font-weight: 650; }
 
-.brand { display: flex; flex-direction: column; align-items: center; gap: 3px; text-align: center; }
-.brand-name { font-weight: 850; letter-spacing: .085em; line-height: 1.25; }
-.brand-subtitle { font-weight: 650; letter-spacing: .12em; line-height: 1.4; }
-.crest { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; background: transparent; }
-.eyebrow { margin: 0; color: var(--accent); letter-spacing: .17em; font-weight: 800; line-height: 1.5; }
-.motto { margin: 0; color: var(--accent); font-size: .85rem; font-weight: 800; letter-spacing: .16em; line-height: 1.5; }
-h1 { margin: 0; font-weight: 850; line-height: 1.1; text-wrap: balance; }
-p { overflow-wrap: break-word; }
-
+.home-crest { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; background: transparent; }
+.home-eyebrow { margin: 0; color: var(--accent); font-weight: 800; letter-spacing: .16em; }
+.home-description { margin: 0; line-height: 1.65; color: var(--muted); }
+.home-motto { margin: 0; color: var(--accent); font-size: .9rem; font-weight: 800; letter-spacing: .14em; }
+.home-return {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 12px 22px;
+  border: 1px solid var(--accent); border-radius: 50px;
+  text-decoration: none; font-weight: 700;
+}
+.home-return:hover { background: rgba(219,183,114,.15); }
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  .gate-frame, .gate-outline { transition: none; }
 }
