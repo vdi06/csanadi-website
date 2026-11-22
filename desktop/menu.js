@@ -1,7 +1,7 @@
 import { element } from "../shared/js/dom.js";
 import { trapTab } from "../shared/js/focus.js";
 
-/** Önálló asztali, címerből nyíló körmenü az 1.53-as felépítését alapul véve.
+/** Az 1.53-as asztali menü két koncentrikus navigációs gyűrűje.
  * Nem létező oldalhoz soha nem készít látszólag működő hivatkozást. */
 export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
   const data = config.menu;
@@ -11,26 +11,30 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
   const crest = element("img", { className: "desktop-wheel-crest", attributes: {
     src: config.site.crest, alt: config.site.crestAlt, width: 512, height: 512
   } });
-  const middle = element("div", { className: "desktop-wheel-center" }, crest);
-  const orbit = element("div", { className: "desktop-wheel-orbit" },
-    element("span", { className: "desktop-wheel-ring", attributes: { "aria-hidden": "true" } }), middle);
-  const sections = element("div", { className: "desktop-wheel-sections" });
+  const innerRing = element("nav", { className: "desktop-wheel-ring-main",
+    attributes: { "aria-label": data.categoryLabel } });
+  const outerRing = element("nav", { className: "desktop-wheel-ring-sub",
+    attributes: { id: "desktop-wheel-outer-ring", "aria-label": data.sectionsLabel, "aria-live": "polite" } });
+  outerRing.hidden = true;
+  const stage = element("div", { className: "desktop-wheel-stage" },
+    element("span", { className: "desktop-wheel-guide desktop-wheel-guide-main", attributes: { "aria-hidden": "true" } }),
+    element("span", { className: "desktop-wheel-guide desktop-wheel-guide-sub", attributes: { "aria-hidden": "true" } }),
+    element("div", { className: "desktop-wheel-center" }, crest), innerRing, outerRing);
+  const thirdTitle = element("h3", { className: "desktop-wheel-third-title" });
   const levelThree = element("div", { className: "desktop-wheel-level-three" });
-  levelThree.hidden = true;
-  const selectedTitle = element("h3", { className: "desktop-wheel-selected-title" });
-  const details = element("section", { className: "desktop-wheel-details", attributes: {
-    "aria-label": data.sectionsLabel
-  } }, selectedTitle, sections, levelThree);
+  const thirdPanel = element("section", { className: "desktop-wheel-third-panel",
+    attributes: { "aria-label": data.sectionsLabel } }, thirdTitle, levelThree);
+  thirdPanel.hidden = true;
   const dialog = element("section", { className: "desktop-wheel-dialog", attributes: {
     role: "dialog", "aria-modal": "true", "aria-label": data.title
   } }, element("div", { className: "desktop-wheel-heading" },
-    element("h2", { text: data.title }), closeButton), orbit, details);
+    element("h2", { text: data.title }), closeButton), stage, thirdPanel);
   const backdrop = element("div", { className: "desktop-wheel-backdrop", attributes: { "aria-hidden": "true" } });
   const overlay = element("div", { className: "desktop-wheel-overlay", attributes: {
     id: "desktop-main-menu"
   } }, backdrop, dialog);
   overlay.hidden = true;
-  let rootIndex = 0;
+  let rootIndex = -1;
   let secondControls = [];
   let previousOverflow;
 
@@ -40,10 +44,12 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
     return element("span", { className, text: item.label });
   }
   function showThird(child, selectedButton) {
-    for (const control of secondControls) control.setAttribute("aria-expanded", String(control === selectedButton));
+    for (const control of secondControls) if (control.tagName === "BUTTON")
+      control.setAttribute("aria-expanded", String(control === selectedButton));
     const items = child.children || [];
     levelThree.replaceChildren(...items.map((item) => itemNode(item, "desktop-wheel-third-item")));
-    levelThree.hidden = !items.length;
+    thirdTitle.textContent = child.label;
+    thirdPanel.hidden = !items.length;
   }
   function selectRoot(index) {
     rootIndex = index;
@@ -52,34 +58,48 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
       if (i === index) button.classList.add("is-selected");
       else button.classList.remove("is-selected");
       button.setAttribute("aria-pressed", String(i === index));
+      button.setAttribute("aria-expanded", String(i === index));
     }
-    selectedTitle.textContent = selected.label;
     secondControls = [];
-    sections.replaceChildren(...(selected.children || []).map((item) => {
+    outerRing.replaceChildren(...(selected.children || []).map((item, i, items) => {
+      let node;
       if (item.children?.length) {
-        const button = element("button", { className: "desktop-wheel-section-button", text: item.label,
+        const button = element("button", { className: "desktop-wheel-sub-node", text: item.label,
           attributes: { type: "button", "aria-expanded": "false" } });
         button.addEventListener("click", () => showThird(item, button));
         secondControls.push(button);
-        return button;
+        node = button;
+      } else {
+        node = itemNode(item, "desktop-wheel-sub-node");
+        secondControls.push(node);
       }
-      return itemNode(item, "desktop-wheel-section-label");
+      // Az 1.53-as menü külső köre: a rövid ágak az aktív főpont felé
+      // csoportosulnak, a hosszabbak a teljes külső gyűrűt használják.
+      const angle = items.length <= 5
+        ? -90 + index * 60 - (items.length - 1) * 21 + i * 42
+        : -90 + i * 360 / items.length;
+      const radians = angle * Math.PI / 180;
+      node.style.left = `${(50 + Math.cos(radians) * 40).toFixed(3)}%`;
+      node.style.top = `${(50 + Math.sin(radians) * 40).toFixed(3)}%`;
+      return node;
     }));
+    outerRing.hidden = secondControls.length === 0;
     levelThree.replaceChildren();
-    levelThree.hidden = true;
+    thirdPanel.hidden = true;
   }
 
   const rootButtons = data.items.map((item, index) => {
     const angle = -Math.PI / 2 + (index * 2 * Math.PI / data.items.length);
     const button = element("button", { className: "desktop-wheel-node", text: item.label,
       attributes: { type: "button", "aria-pressed": "false" } });
-    button.style.left = `${(50 + Math.cos(angle) * 35).toFixed(3)}%`;
-    button.style.top = `${(50 + Math.sin(angle) * 35).toFixed(3)}%`;
+    button.style.left = `${(50 + Math.cos(angle) * 18).toFixed(3)}%`;
+    button.style.top = `${(50 + Math.sin(angle) * 18).toFixed(3)}%`;
+    button.setAttribute("aria-controls", "desktop-wheel-outer-ring");
+    button.setAttribute("aria-expanded", "false");
     button.addEventListener("click", () => selectRoot(index));
-    orbit.append(button);
+    innerRing.append(button);
     return button;
   });
-  selectRoot(rootIndex);
 
   function close(restoreFocus = true) {
     if (overlay.hidden) return;
@@ -97,14 +117,16 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
     overlay.hidden = false;
     trigger.setAttribute("aria-expanded", "true");
     trigger.setAttribute("aria-label", config.home.header.menuCloseLabel);
-    rootButtons[rootIndex].focus({ preventScroll: true });
+    rootButtons[Math.max(0, rootIndex)].focus({ preventScroll: true });
   }
   trigger.addEventListener("click", () => overlay.hidden ? open() : close());
   closeButton.addEventListener("click", () => close());
   backdrop.addEventListener("click", () => close());
   dialog.addEventListener("keydown", (event) => {
     if (event.key === "Escape") { event.preventDefault(); close(); }
-    else trapTab(event, [closeButton, ...rootButtons, ...secondControls]);
+    else trapTab(event, [closeButton, ...rootButtons,
+      ...secondControls.filter((node) => node.tagName === "BUTTON" || node.tagName === "A"),
+      ...Array.from(levelThree.children).filter((node) => node.tagName === "A")]);
   });
   overlay.addEventListener("click", (event) => {
     if (event.target.closest?.("a[href]")) close(false);

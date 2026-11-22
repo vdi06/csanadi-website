@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.06",
-  "release": "2.11",
+  "release": "2.12",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -45,18 +45,18 @@
       "searchNoResults": "Nincs találat az aktív menüpontok között.",
       "searchGlyph": "⌕",
       "themeLabel": "Megjelenés váltása",
-      "settingsLabel": "Oldalbeállítások megnyitása",
+      "settingsLabel": "Szerkesztő mód bekapcsolása",
       "settingsGlyph": "⚙",
+      "finishEditingLabel": "Szerkesztés befejezése és elfogadása",
+      "finishEditingGlyph": "✓",
       "social": [
         { "label": "Facebook – Csanádi Sportiskola", "icon": "facebook", "url": "https://www.facebook.com/csanadiiskola" },
         { "label": "Instagram – Csanádi Sportiskola", "icon": "instagram", "url": "https://www.instagram.com/_csanadi_/?hl=hu" },
         { "label": "KRÉTA – elektronikus napló", "icon": "kreta", "glyph": "K", "url": "https://klik200346001.e-kreta.hu/" }
       ]
     },
-    "settings": {
-      "title": "Oldalbeállítások",
-      "description": "Megjelenési mód",
-      "closeLabel": "Oldalbeállítások bezárása"
+    "editor": {
+      "title": "Szerkesztő mód"
     },
     "footer": {
       "brand": "CSANÁDI",

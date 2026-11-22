@@ -1,9 +1,9 @@
 import { crest, element } from "../shared/js/dom.js";
 import { bindAppearance } from "../shared/js/appearance.js";
+import { createEditMode } from "../shared/js/edit-mode.js";
 import { trapTab } from "../shared/js/focus.js";
 import { filterSearchItems, makeSocialLink, navLink } from "../shared/js/shell.js";
 import { createMobileMenu } from "./menu.js";
-import { createMobileSettings } from "./settings.js";
 
 /** Csak mobilos fejléc: középső címerből nyíló harmonikamenü, külön kereső. */
 export function makeMobileHeader(config, home) {
@@ -22,9 +22,9 @@ export function makeMobileHeader(config, home) {
       "aria-controls": "mobile-search-view", "aria-expanded": "false" } });
   const themeToggle = element("button", { className: "mobile-theme-toggle shell-tool shell-theme-toggle",
     attributes: { type: "button", "aria-label": data.themeLabel } });
-  const settingsToggle = element("button", { className: "mobile-settings-toggle shell-tool",
+  const editToggle = element("button", { className: "mobile-edit-toggle shell-tool",
     text: data.settingsGlyph, attributes: { type: "button", "aria-label": data.settingsLabel,
-      "aria-controls": "mobile-settings", "aria-expanded": "false" } });
+      "aria-pressed": "false" } });
 
   const searchClose = element("button", { className: "mobile-overlay-close", text: data.closeSymbol,
     attributes: { type: "button", "aria-label": data.searchCloseLabel } });
@@ -47,11 +47,9 @@ export function makeMobileHeader(config, home) {
   let searchOverflow;
 
   const menu = createMobileMenu(config, crestToggle, () => {
-    closeSearch(false); settings.close(false);
+    closeSearch(false);
   });
-  const settings = createMobileSettings(config, settingsToggle, () => {
-    closeSearch(false); menu.close(false);
-  });
+  const editor = createEditMode(config, home, editToggle, "mobile");
 
   const header = element("header", { className: "mobile-header" },
     brand,
@@ -59,9 +57,9 @@ export function makeMobileHeader(config, home) {
       element("nav", { className: "mobile-links-left", attributes: { "aria-label": data.socialLabel } },
         ...data.social.map((item) => makeSocialLink(item, "mobile-social shell-tool"))),
       crestToggle,
-      element("div", { className: "mobile-links-right" }, searchToggle, themeToggle, settingsToggle)),
+      element("div", { className: "mobile-links-right" }, searchToggle, themeToggle, editToggle)),
     element("p", { className: "mobile-motto", text: data.motto }),
-    menu.overlay, searchOverlay, settings.overlay);
+    menu.overlay, searchOverlay, editor.bar);
 
   function closeSearch(restoreFocus = true) {
     if (searchOverlay.hidden) return;
@@ -79,7 +77,7 @@ export function makeMobileHeader(config, home) {
   searchInput.addEventListener("input", renderSearch);
   searchToggle.addEventListener("click", () => {
     if (!searchOverlay.hidden) { closeSearch(); return; }
-    menu.close(false); settings.close(false);
+    menu.close(false);
     searchOverflow = document.body?.style.overflow;
     if (document.body) document.body.style.overflow = "hidden";
     searchOverlay.hidden = false;
@@ -97,6 +95,6 @@ export function makeMobileHeader(config, home) {
 
   const unbindAppearance = bindAppearance(config, home, themeToggle);
   return { header, destroy: () => {
-    closeSearch(false); menu.destroy(); settings.destroy(); unbindAppearance();
+    closeSearch(false); menu.destroy(); editor.destroy(); unbindAppearance();
   } };
 }

@@ -1,9 +1,9 @@
 import { crest, element } from "../shared/js/dom.js";
 import { bindAppearance } from "../shared/js/appearance.js";
+import { createEditMode } from "../shared/js/edit-mode.js";
 import { trapTab } from "../shared/js/focus.js";
 import { filterSearchItems, makeSocialLink, navLink } from "../shared/js/shell.js";
 import { createDesktopMenu } from "./menu.js";
-import { createDesktopSettings } from "./settings.js";
 
 /** Asztali fejléc: címerből nyíló körmenü és külön nagy lebegő keresőablak.
  * A mobilmenü és annak DOM-ja itt nem létezik. */
@@ -24,9 +24,9 @@ export function makeDesktopHeader(config, home) {
       "aria-controls": "desktop-floating-search", "aria-expanded": "false" } });
   const themeToggle = element("button", { className: "desktop-theme-toggle shell-tool shell-theme-toggle",
     attributes: { type: "button", "aria-label": data.themeLabel } });
-  const settingsToggle = element("button", { className: "desktop-settings-toggle shell-tool",
+  const editToggle = element("button", { className: "desktop-edit-toggle shell-tool",
     text: data.settingsGlyph, attributes: { type: "button", "aria-label": data.settingsLabel,
-      "aria-controls": "desktop-settings", "aria-expanded": "false" } });
+      "aria-pressed": "false" } });
 
   const closeButton = element("button", { className: "desktop-search-close", text: data.closeSymbol,
     attributes: { type: "button", "aria-label": data.searchCloseLabel } });
@@ -48,11 +48,9 @@ export function makeDesktopHeader(config, home) {
   let searchOverflow;
 
   const menu = createDesktopMenu(config, crestToggle, () => {
-    closeSearch(false); settings.close(false);
+    closeSearch(false);
   });
-  const settings = createDesktopSettings(config, settingsToggle, () => {
-    closeSearch(false); menu.close(false);
-  });
+  const editor = createEditMode(config, home, editToggle, "desktop");
 
   const header = element("header", { className: "desktop-header" },
     element("div", { className: "desktop-headline" }, brand),
@@ -61,9 +59,9 @@ export function makeDesktopHeader(config, home) {
         ...data.social.map((item) => makeSocialLink(item, "desktop-social shell-tool"))),
       crestToggle,
       element("div", { className: "desktop-links-right" }, searchToggle, themeToggle,
-        settingsToggle)),
+        editToggle)),
     element("p", { className: "desktop-motto", text: data.motto }),
-    overlay, menu.overlay, settings.overlay);
+    overlay, menu.overlay, editor.bar);
 
   function closeSearch(restoreFocus = true) {
     if (overlay.hidden) return;
@@ -82,7 +80,7 @@ export function makeDesktopHeader(config, home) {
   searchInput.addEventListener("input", renderSearch);
   searchToggle.addEventListener("click", () => {
     if (!overlay.hidden) { closeSearch(); return; }
-    menu.close(false); settings.close(false);
+    menu.close(false);
     searchOverflow = document.body?.style.overflow;
     if (document.body) document.body.style.overflow = "hidden";
     overlay.hidden = false;
@@ -102,6 +100,6 @@ export function makeDesktopHeader(config, home) {
 
   const unbindAppearance = bindAppearance(config, home, themeToggle);
   return { header, destroy: () => {
-    closeSearch(false); menu.destroy(); settings.destroy(); unbindAppearance();
+    closeSearch(false); menu.destroy(); editor.destroy(); unbindAppearance();
   } };
 }
