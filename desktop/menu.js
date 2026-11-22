@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.17";
-import { trapTab } from "../shared/js/focus.js?v=2.17";
-import { menuPageHref } from "../shared/js/menu-data.js?v=2.17";
+import { element } from "../shared/js/dom.js?v=2.19";
+import { trapTab } from "../shared/js/focus.js?v=2.19";
+import { menuPageHref } from "../shared/js/menu-data.js?v=2.19";
 
 /** Asztali kétgyűrűs menü: az almenük valós, JSON-vázlatos belső oldalakra visznek. */
 export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
@@ -17,12 +17,7 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
   const outerRing = element("nav", { className: "desktop-wheel-ring-sub",
     attributes: { id: "desktop-wheel-outer-ring", "aria-label": data.sectionsLabel, "aria-live": "polite" } });
   outerRing.hidden = true;
-  const outerGuide = element("span", { className: "desktop-wheel-guide desktop-wheel-guide-sub",
-    attributes: { "aria-hidden": "true" } });
-  outerGuide.hidden = true;
   const stage = element("div", { className: "desktop-wheel-stage" },
-    element("span", { className: "desktop-wheel-guide desktop-wheel-guide-main", attributes: { "aria-hidden": "true" } }),
-    outerGuide,
     element("div", { className: "desktop-wheel-center-group" }, centerButton, homeLink),
     innerRing, outerRing);
   const thirdTitle = element("h3", { className: "desktop-wheel-third-title" });
@@ -48,8 +43,14 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
       attributes: { href: item.href || menuPageHref(item.id) } });
   }
   function showThird(child, selectedButton) {
+    const wasOpen = selectedButton.getAttribute("aria-expanded") === "true";
     for (const control of secondControls) if (control.tagName === "BUTTON")
-      control.setAttribute("aria-expanded", String(control === selectedButton));
+      control.setAttribute("aria-expanded", String(!wasOpen && control === selectedButton));
+    if (wasOpen) {
+      levelThree.replaceChildren();
+      thirdPanel.hidden = true;
+      return;
+    }
     const items = child.children || [];
     levelThree.replaceChildren(...items.map((item) => itemNode(item, "desktop-wheel-third-item")));
     thirdTitle.textContent = child.label;
@@ -65,7 +66,6 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
     secondControls = [];
     outerRing.replaceChildren();
     outerRing.hidden = true;
-    outerGuide.hidden = true;
     levelThree.replaceChildren();
     thirdPanel.hidden = true;
   }
@@ -102,7 +102,6 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
       return node;
     }));
     outerRing.hidden = secondControls.length === 0;
-    outerGuide.hidden = outerRing.hidden;
     levelThree.replaceChildren();
     thirdPanel.hidden = true;
   }

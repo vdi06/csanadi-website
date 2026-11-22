@@ -5,7 +5,7 @@ export function trapTab(event, controls) {
   if (!available.length) return;
   event.preventDefault();
   const current = available.indexOf(document.activeElement);
-  const next = (current + (event.shiftKey ? available.length - 1 : 1) + available.length)
-    % available.length;
+  const next = current < 0 ? (event.shiftKey ? available.length - 1 : 0)
+    : (current + (event.shiftKey ? -1 : 1) + available.length) % available.length;
   available[next].focus({ preventScroll: true });
 }

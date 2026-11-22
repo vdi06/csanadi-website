@@ -1,7 +1,19 @@
-import { element } from "../shared/js/dom.js?v=2.17";
+import { element } from "../shared/js/dom.js?v=2.19";
 
 const imageRoot = "./shared/assets/media/web/mobile-story/";
 const clamp = (value) => Math.max(0, Math.min(1, value));
+
+/** A valóban görgethető oldal hosszán osztjuk el az öt képi állapotot.
+ * A sáv alatt nem foglalunk helyet egy láthatatlan animációs pályával. */
+export function mobileStoryStateAtScroll(scrollTop, maxScroll) {
+  if (!Number.isFinite(scrollTop) || !Number.isFinite(maxScroll) || maxScroll <= 0) return 0;
+  const progress = clamp(scrollTop / maxScroll);
+  if (progress < .16) return 0;
+  if (progress < .37) return 1;
+  if (progress < .58) return 2;
+  if (progress < .79) return 3;
+  return 4;
+}
 
 /** Hat képből témánként három különbözőt sorsolunk: egyet a nyitó,
  * egyet a különálló és egyet a záró állapothoz. Új oldalnyitás = új sorsolás. */
@@ -25,12 +37,11 @@ export function selectMobileStoryPhotos(topics, random = Math.random) {
   });
 }
 
-/** Öt különálló mobilos görgetési állapot, az asztali hero-tól függetlenül. */
+/** Öt képi állapot a normál oldalgörgetésre; a tartalom rögtön alatta indul. */
 export function createMobileStory(config) {
   const data = config.home?.mobileStory;
   const ids = ["sport", "tudas", "kozosseg"];
-  const required = ["ariaLabel", "introTitle", "introSubtitle", "outroTitle",
-    "outroSubtitle", "scrollHint", "stateLabel"];
+  const required = ["ariaLabel", "introTitle", "introSubtitle", "outroTitle", "outroSubtitle"];
   if (!data || !required.every((key) => typeof data[key] === "string" && data[key].trim()) ||
     !Array.isArray(data.topics) || data.topics.length !== 3 ||
     !data.topics.every((topic, index) => topic.id === ids[index] &&
@@ -50,6 +61,13 @@ export function createMobileStory(config) {
     { id: "outro", mode: "trio", title: data.outroTitle, subtitle: data.outroSubtitle,
       photos: picks.map((choice) => choice.outro) }
   ];
+  // A kilenc kiválasztott képet előre kérjük: görgetéskor a következő
+  // állapotot nem üres, még betöltetlen képhelyekre úsztatjuk rá.
+  const warmedPhotos = [...new Set(states.flatMap((state) => state.photos))].map((file) => {
+    const photo = document.createElement("img");
+    photo.setAttribute("src", `${imageRoot}${file}`);
+    return photo;
+  });
   // Kettős képréteg: a témák közötti váltásnál az előző kép megmarad
   // a háttérben, amíg az új fotóréteg finoman ráúszik.
   const imageLayers = Array.from({ length: 2 }, () => Array.from({ length: 3 }, () =>
@@ -61,19 +79,10 @@ export function createMobileStory(config) {
   }, ...photos));
   const title = element("h1", { className: "mobile-story-title" });
   const subtitle = element("p", { className: "mobile-story-subtitle" });
-  const count = element("span", { className: "mobile-story-state-count",
-    attributes: { "aria-hidden": "true" } });
-  const steps = Array.from({ length: 5 }, () => element("span", { className: "mobile-story-step",
-    attributes: { "aria-hidden": "true" } }));
-  const hint = element("span", { className: "mobile-story-scroll-hint", text: data.scrollHint });
   const stage = element("div", { className: "mobile-story-stage" },
     ...layerNodes,
     element("div", { className: "mobile-story-shade", attributes: { "aria-hidden": "true" } }),
-    element("div", { className: "mobile-story-copy", attributes: { "aria-live": "polite", "aria-atomic": "true" } },
-      title, subtitle),
-    element("div", { className: "mobile-story-bottom" },
-      count, element("div", { className: "mobile-story-steps", attributes: { "aria-hidden": "true" } },
-        ...steps), hint));
+    element("div", { className: "mobile-story-copy" }, title, subtitle));
   const track = element("section", { className: "mobile-story-track", attributes: {
     "aria-label": data.ariaLabel
   } }, stage);
@@ -90,8 +99,6 @@ export function createMobileStory(config) {
     stage.dataset.storyMode = state.mode;
     title.textContent = state.title;
     subtitle.textContent = state.subtitle;
-    count.textContent = `${data.stateLabel} ${index + 1} / 5`;
-    hint.hidden = index === 4;
     const nextLayer = 1 - activeLayer;
     for (const [slot, photo] of imageLayers[nextLayer].entries()) {
       const file = state.photos[slot];
@@ -103,18 +110,15 @@ export function createMobileStory(config) {
     layerNodes[nextLayer].dataset.active = "true";
     layerNodes[activeLayer].dataset.active = "false";
     activeLayer = nextLayer;
-    steps.forEach((step, stepIndex) => {
-      step.dataset.active = String(stepIndex === index);
-    });
   }
   function updateScroll() {
     scheduled = false;
     if (disposed) return;
-    const top = track.getBoundingClientRect?.().top ?? -(window.scrollY || 0);
-    const travel = Math.max(1, (track.offsetHeight || (window.innerHeight || 700) * .75 + 158) -
-      (stage.offsetHeight || 158));
-    const progress = clamp(-top / travel);
-    renderState(Math.min(4, Math.floor(progress * 5)));
+    const pageHeight = Math.max(document.scrollingElement?.scrollHeight || 0,
+      document.documentElement?.scrollHeight || 0, document.body?.scrollHeight || 0);
+    const viewportHeight = window.innerHeight || document.documentElement?.clientHeight || 700;
+    const maxScroll = Math.max(0, pageHeight - viewportHeight);
+    renderState(mobileStoryStateAtScroll(window.scrollY || 0, maxScroll));
   }
   const onScroll = () => {
     if (scheduled || disposed) return;
@@ -126,6 +130,7 @@ export function createMobileStory(config) {
   renderState(0);
   return { track, updateScroll, destroy() {
     disposed = true;
+    warmedPhotos.length = 0;
     window.removeEventListener?.("scroll", onScroll);
     window.removeEventListener?.("resize", onScroll);
   } };

@@ -1,5 +1,5 @@
-import { crest, element } from "../shared/js/dom.js?v=2.17";
-import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.17";
+import { crest, element } from "../shared/js/dom.js?v=2.19";
+import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.19";
 
 const clamp = (value) => Math.max(0, Math.min(1, value));
 const mediaRoot = "./shared/assets/media/web/desktop-hero/";
@@ -33,11 +33,6 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   const storyTitle = element("strong", { className: "desktop-hero-story-title" });
   const story = element("a", { className: "desktop-hero-story" }, eyebrow, storyTitle,
     element("span", { className: "desktop-hero-story-arrow", text: "↗", attributes: { "aria-hidden": "true" } }));
-  const counter = element("span", { className: "desktop-hero-count", attributes: {
-    role: "status", "aria-live": "polite", "aria-atomic": "true"
-  } });
-  const pause = element("button", { className: "desktop-hero-pause", text: "Ⅱ",
-    attributes: { type: "button", "aria-label": data.pauseLabel, "aria-pressed": "false" } });
   const previous = element("button", { className: "desktop-hero-arrow desktop-hero-arrow--prev", text: "‹",
     attributes: { type: "button", "aria-label": data.previousLabel } });
   const next = element("button", { className: "desktop-hero-arrow desktop-hero-arrow--next", text: "›",
@@ -56,7 +51,7 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
     element("div", { className: "desktop-hero-image", attributes: { "aria-hidden": "true" } }, photo,
       element("div", { className: "desktop-hero-shade" })),
     brand, heroCrest, message, previous, next,
-    element("div", { className: "desktop-hero-controls" }, story, counter, pause));
+    element("div", { className: "desktop-hero-controls" }, story));
   const track = element("section", { className: "desktop-hero-track", attributes: {
     "aria-label": data.ariaLabel
   } },
@@ -77,15 +72,14 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   let sequence = shuffledHeroOrder(data.slides.length);
   let position = 0;
   let activeIndex = sequence[position];
-  let paused = false;
   let lastFolded = false;
   let scrollRatio = 0;
   let scheduled = false;
   let disposed = false;
   const failed = new Set();
-  const allControls = [heroCrest, previous, next, pause, story];
+  const allControls = [heroCrest, previous, next, story];
 
-  function showSlide(announce = false) {
+  function showSlide() {
     activeIndex = sequence[position];
     const slide = data.slides[activeIndex];
     photo.setAttribute("src", `${mediaRoot}${slide.file}`);
@@ -93,10 +87,8 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
     storyTitle.textContent = slide.title;
     story.setAttribute("href", menuPageHref(slide.pageId));
     story.setAttribute("aria-label", `${slide.title}. ${slide.summary}`);
-    counter.textContent = `${position + 1} / ${data.slides.length}`;
-    counter.setAttribute("aria-live", announce ? "polite" : "off");
   }
-  function changeSlide(direction, announce = false) {
+  function changeSlide(direction) {
     if (direction > 0) {
       position++;
       if (position === sequence.length) {
@@ -104,28 +96,22 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
         position = 0;
       }
     } else position = (position - 1 + sequence.length) % sequence.length;
-    showSlide(announce);
+    showSlide();
   }
   photo.addEventListener("load", () => failed.delete(activeIndex));
   photo.addEventListener("error", () => {
     failed.add(activeIndex);
     const remaining = data.slides.some((_, index) => !failed.has(index));
     if (remaining) changeSlide(1);
-    else { photo.hidden = true; pause.disabled = true; }
+    else photo.hidden = true;
   });
-  previous.addEventListener("click", () => changeSlide(-1, true));
-  next.addEventListener("click", () => changeSlide(1, true));
-  pause.addEventListener("click", () => {
-    paused = !paused;
-    pause.textContent = paused ? "▶" : "Ⅱ";
-    pause.setAttribute("aria-pressed", String(paused));
-    pause.setAttribute("aria-label", paused ? data.resumeLabel : data.pauseLabel);
-  });
+  previous.addEventListener("click", () => changeSlide(-1));
+  next.addEventListener("click", () => changeSlide(1));
   heroCrest.addEventListener("click", () => openMenu(heroCrest));
   stage.addEventListener("keydown", (event) => {
     if (event.target?.closest?.("button,a")) return;
     if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
-      event.preventDefault(); changeSlide(event.key === "ArrowLeft" ? -1 : 1, true);
+      event.preventDefault(); changeSlide(event.key === "ArrowLeft" ? -1 : 1);
     }
   });
 
@@ -178,7 +164,7 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   window.addEventListener?.("resize", onScroll, { passive: true });
   const intervalMs = Math.max(1000, Math.min(360000, Number(data.intervalMs) || 180000));
   const timer = setInterval(() => {
-    if (!disposed && !paused && !reduced.matches) changeSlide(1);
+    if (!disposed && !reduced.matches) changeSlide(1);
   }, intervalMs);
   showSlide();
   updateScroll();

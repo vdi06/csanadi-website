@@ -1,7 +1,21 @@
-import { element, crest } from "./dom.js?v=2.17";
+import { element, crest } from "./dom.js?v=2.19";
 
 const NS = "http://www.w3.org/2000/svg";
 const DOOR_SHAPE = "M 6 78 C 37 48 76 17 140 12 C 204 17 243 48 274 78 L 274 510 Q 274 514 269 514 L 11 514 Q 6 514 6 510 Z";
+
+/** Több sérült egymás melletti képnél is a folyamatban levő fázishoz
+ * legközelebbi használható képet választjuk, soha nem ugrunk az elejére. */
+export function nearestAvailableFrame(available, desired) {
+  if (!Array.isArray(available) || !available.length || !Number.isFinite(desired)) return -1;
+  const center = Math.max(0, Math.min(available.length - 1, Math.round(desired)));
+  for (let distance = 0; distance < available.length; distance++) {
+    const before = center - distance;
+    const after = center + distance;
+    if (before >= 0 && available[before]) return before;
+    if (distance && after < available.length && available[after]) return after;
+  }
+  return -1;
+}
 
 function svgNode(tag, attributes = {}, ...children) {
   const node = document.createElementNS(NS, tag);
@@ -112,7 +126,8 @@ export function mountGate(root, config, platform, enter) {
     const lower = Math.min(frames.length - 1, Math.floor(position));
     const upper = Math.min(frames.length - 1, lower + 1);
     if (!available[lower] || !available[upper]) {
-      const fallback = available[lower] ? lower : available[upper] ? upper : available.findIndex(Boolean);
+      const fallback = available[lower] ? lower : available[upper] ? upper
+        : nearestAvailableFrame(available, position);
       if (fallback < 0) return;
       if (lowerFrame !== fallback || upperFrame !== -1) {
         frames.forEach((frame, index) => { frame.style.opacity = index === fallback ? "1" : "0"; });

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.06",
-  "release": "2.17",
+  "release": "2.19",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -43,8 +43,6 @@
       "introSubtitle": "Egy iskola, három erősség",
       "outroTitle": "SPORT · TUDÁS · KÖZÖSSÉG",
       "outroSubtitle": "Együtt vagyunk Csanádi",
-      "scrollHint": "Görgess tovább",
-      "stateLabel": "Görgetési állapot",
       "topics": [
         {
           "id": "sport", "title": "SPORT", "subtitle": "Lendület, kitartás, csapatmunka",
@@ -71,9 +69,6 @@
       "menuTitle": "Főmenü megnyitása a központi címerrel",
       "previousLabel": "Előző nyitókép",
       "nextLabel": "Következő nyitókép",
-      "pauseLabel": "Automatikus képváltás szüneteltetése",
-      "resumeLabel": "Automatikus képváltás folytatása",
-      "slideLabel": "Nyitókép",
       "intervalMs": 180000,
       "slides": [
         { "id": "sport", "file": "hero-sport-2026.webp", "eyebrow": "SPORT", "title": "A mozgásban közösség születik", "summary": "Edzés, figyelem és fejlődés minden nap.", "pageId": "sports-disciplines" },

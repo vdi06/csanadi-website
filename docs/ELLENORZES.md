@@ -1,8 +1,71 @@
-# Csanádi 2.17 – új mobilos képes történet és újraépített asztali nyitóoldal
+# Csanádi 2.19 – kétkörös hibajavítás
 
 Ez a ZIP **nem publikált** fejlesztési kiadás. A 2.15-ös forráscsomagot
-és a 2.16-os fejlesztést folytatja az eredeti 1.53-as képek és minden korábbi
+és a 2.16–2.18-as fejlesztéseket folytatja az eredeti 1.53-as képek és minden
 elfogadott funkció megtartásával. A korábbi ZIP-ek változatlanul megmaradtak.
+
+## A 2.19-es, kétkörös hibajavítás eredménye
+
+**1. kör – navigáció és almenü:**
+
+- Az asztali harmadik szintű almenü ugyanarra az aktív almenügombra
+  kattintva már **összecsukódik**, és ismételt kattintásra újranyílik.
+  Az `aria-expanded` állapota is helyes; másik főág választása továbbra is
+  teljesen lecseréli a korábbit.
+- A menüből másik oldalra navigálva a korábbi lap mély görgetési pozíciója
+  nem öröklődik át: az új oldal **felülről indul**.
+
+**2. kör – sérült képsor és billentyűzet:**
+
+- Két vagy több egymás melletti sérült kapukép esetén az animáció
+  **a legközelebbi elérhető képet tartja meg**. Nem ugrik vissza az első
+  képkockára a nyitási folyamat közepén.
+- A menük és keresők fókuszcsapdája a kívülről érkező **Shift+Tab**
+  esetén most a helyes utolsó vezérlőre léptet, a sima Tab pedig az
+  elsőre. A normál, körkörös billentyűzetes navigáció változatlan.
+
+Mind a négy javításhoz regressziós teszt készült. A teljes kódteszt sikeres.
+Az asztali nyitó és a körmenü élő előnézetében az almenü ki-/bekapcsolását,
+a később megnyitott aloldal felülről indulását és az asztali megjelenést
+külön is ellenőriztük. A mobilos tényleges képernyőméretű látvány
+továbbra is külön jóváhagyandó.
+
+## A 2.18-as módosítás hatóköre
+
+- **Az asztali menü mögötti oldal jobban, de továbbra is felismerhetően
+  elmosódik és sötétedik.** A menüháttér sötétítése `rgba(3,15,29,.23)` →
+  `rgba(3,15,29,.36)`, az elmosás 13 → 20 px. Finom `saturate(.78)` és
+  `brightness(.88)` háttérszűrés is társul hozzá.
+- **Nincs külön keret a főmenü és az almenük mögött.** A két díszítő
+  körvonalat eltávolítottuk a programkódból; a teljes menüszínpad háttere
+  átlátszó. A harmadik szint panelje is keret és háttér nélkül maradt.
+  Az egyedi kattintható gombok szegélye és a menücímer megmaradt.
+- Az asztali nyitóképről **a `1/20` számlálót és a stop/szünet gombot
+  eltávolítottuk**. A 20 kép hárompercenkénti automatikus, véletlen
+  sorrendű váltása, a bal/jobb lapozás és a jobb felső információs
+  kártya megmaradt.
+- **A jobb felső asztali képfelirat mindig egy sorban marad.** A kártya
+  a felirat hosszának megfelelően balra szélesedhet, a cím és a kategória
+  nem tördelődik; keskenyebb asztali ablakban az identitásfelirattól
+  lejjebb kerül, hogy ne takarják egymást.
+- **A mobilos képsáv alól kivettük a mintegy 420–620 px magas üres
+  görgetési pályát.** A 124–152 px magas képsáv normál tartalmi elemként
+  foglal helyet, görgetés közben felül megtapad, és a kezdőlap felsorolása
+  **közvetlenül alatta** kezdődik. A természetes oldalmozgásra öt
+  képállapotban vált: együtt → Sport → Tudás → Közösség → együtt.
+  Képei áttűnnek, a sorsolt kilenc fotó előre betöltődik. Nincs az alján
+  **„Görgetési állapot” felirat, lépésszámláló vagy görgetési súgó**.
+- **Kisebbek az alsó gombok:** asztali négy betűgomb 39-ről 32 px-re,
+  mobilos betűgombok 31-ről 26 px-re, mobilos két fül 28-ról 25 px-re.
+  A két platform stílusa továbbra is elkülönített, a gombok egyenletesen
+  töltik ki a nekik jutó helyet.
+- A keresők, fejlécmenük, JSON-tartalom, offline tartalékoldal, a 20
+  asztali és 18 mobilos egyedi kép változatlan.
+
+**Korlát:** a kódtesztek sikeresek, de a futtatókörnyezetben a
+böngészős képernyőteszt továbbra sem használható. A mobilos megtapadás,
+a jobb felső felirat és az elmosás végső vizuális megítélése valódi
+telefonos és asztali böngészőben jóváhagyandó.
 
 ## A 2.17-es módosítás hatóköre
 
@@ -53,7 +116,8 @@ ellenőrzik, a korábbi futtató környezet a Chromium elindítását blokkolta.
   Fisher–Yates módszerrel új, véletlen sorrendbe kerülnek, a húsz kép egy
   körön belül pontosan egyszer jelenik meg, a körök határán sincs közvetlen
   ismétlés. Ez normál, nyitva tartott lapon egy **60 perces képkört** ad.
-  Előre/hátra léptetés és kézi szüneteltetés is működik.
+  Előre/hátra léptetés működik; a 2.16-os kézi szüneteltetés a 2.18-ban
+  felhasználói kérésre kikerült.
 - Asztalon a teljes képes nyitófelületen az **aranykeretes, nagy középső
   címer** nyitja a meglévő kétgyűrűs menüt; a fejléc középső menügombja
   induláskor rejtve van. Lefelé görgetve a teljes fotó kör alakban
@@ -146,7 +210,7 @@ tools/stamp-release.mjs      – a JSON release alapján kiadási cache-kulcsok
   A kiválasztott főmenüpontra újra kattintva annak teljes almenügyűrűje
   összecsukódik. Másik főmenüpontra kattintva a régi ág és annak harmadik
   szintje bezárul, az új ág nyílik; a menü újranyitáskor üres kijelöléssel
-  indul. Az aktív második gyűrű vezetővonala is eltűnik összecsukáskor.
+  indul. A menü mögötti körvonalakat a 2.18-ban teljesen eltávolítottuk.
   Az előző verzió hibáját a kattintási rétegek okozták: a külső gyűrű
   átlátszó felülete elfogta a belső gombok eseményeit. Most a két
   gyűrű konténere nem fogja el a kattintásokat, csak a saját gombjai.
@@ -244,13 +308,13 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   visszatéréskor újra ellenőrzünk. Hibás JSON esetén a korábbi érvényes
   információ marad látható.
 - A lábléc paneljeit és külső térközeit jelentősen csökkentettük.
-  A legalsó sor minden frissítés után a `Verzió: 2.17`,
+  A legalsó sor minden frissítés után a `Verzió: 2.19`,
   illetve a későbbi JSON-verzió.
 
 ## Frissítés böngészési adatok törlése nélkül
 
 - A nyitó HTML a `shared/js/entry.js` és az alap CSS fájlt a JSON-ban
-  szereplő kiadáshoz kötött URL-lel (`?v=2.17`) kéri le.
+  szereplő kiadáshoz kötött URL-lel (`?v=2.19`) kéri le.
 - Minden statikus JavaScript-modul-import ugyanilyen verziót kap a
   `node tools/stamp-release.mjs` kiadás-előkészítő lépésben. A két
   platformstílus is verziózott URL-lel töltődik be.
@@ -259,7 +323,7 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   útvonal megtartásával, új verzióparaméterrel tölti újra a teljes oldalt.
 - **Korlát:** a régi, már eltárolt 2.13-as kezdő HTML és programkód
   magától nem feltétlenül tudja alkalmazni az új mechanizmust; az új
-  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.17`
+  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.19`
   URL-t. A tárhely/CDN HTTP gyorsítótárazási szabályai külön is számítanak.
 
 ## A visszaállított asztali kezdőlap és a mobilos következő lépés
@@ -270,16 +334,16 @@ valós aloldal-hivatkozások, valamint a 3 perces időköz a közös JSON-ból
 érkeznek. Külön `desktop/hero.js` kezeli, ezért a mobilos fejléc/menü kódját
 nem érinti.
 
-**A 2.17-ben megvalósult mobilos fejlesztés:** 130–158 pixel magas,
-teljes szélességű „Sport · Tudás · Közösség” tematikus sáv,
-öt görgetési állapottal és három, hatképes véletlen képválasztóval.
-Ez nem az asztali nagy kép másolata; a felső címeres menügomb nem kerül
-át máshová.
+**A 2.17-ben megvalósult mobilos fejlesztést a 2.18-ban átterveztük:**
+a „Sport · Tudás · Közösség” tematikus sáv továbbra is öt képi állapotot
+és három, hatképes véletlen képválasztót használ, de már nincs mögötte
+külön üres görgetőpálya vagy állapotjelző. Ez nem az asztali nagy kép
+másolata; a felső címeres menügomb nem kerül át máshová.
 
 A menüvégpontok továbbra is csak minimális, jóváhagyott oldalvázlatokként
 nyílnak meg, valós tartalmuk később épül be.
 A lábléc `Tájékoztatás` oszlopának legalsó sora a JSON-ból
-automatikusan megjelenő `Verzió: 2.17`.
+automatikusan megjelenő `Verzió: 2.19`.
 
 ## Tesztek és korlát
 

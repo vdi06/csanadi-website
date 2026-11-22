@@ -1,6 +1,6 @@
 /** Egyetlen HTML, JSON-alapú kapu, kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.17";
-import { mountOffline } from "./offline.js?v=2.17";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.19";
+import { mountOffline } from "./offline.js?v=2.19";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -10,6 +10,7 @@ let serial = 0;
 let activePlatform = null;
 let activeModule = null;
 let hasRendered = false;
+let lastRenderedRoute = null;
 let initialized = false;
 let checkingConfig = false;
 let retryTimer = 0;
@@ -23,12 +24,14 @@ function route() {
 }
 
 function mountView(platform, module, selectedRoute) {
+  const routeChanged = hasRendered && selectedRoute !== lastRenderedRoute;
   destroyCurrent();
   document.documentElement.dataset.platform = platform;
   document.documentElement.dataset.route = selectedRoute.startsWith("page:") ? "page" : selectedRoute;
   const menuPage = selectedRoute.startsWith("page:") ? getMenuPage(config, selectedRoute.slice(5)) : null;
   document.title = menuPage ? `${menuPage.title} – ${config.site.fullName}` : config.site.fullName;
   destroyCurrent = module.mount(root, config, selectedRoute) || (() => {});
+  if (routeChanged) window.scrollTo?.({ top:0, behavior:"instant" });
   if (hasRendered) {
     const focusTarget = menuPage
       ? root.querySelector(`.${platform}-page-title`)
@@ -39,6 +42,7 @@ function mountView(platform, module, selectedRoute) {
     }
   }
   hasRendered = true;
+  lastRenderedRoute = selectedRoute;
 }
 
 async function render() {

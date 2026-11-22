@@ -1,9 +1,9 @@
-import { element } from "../shared/js/dom.js?v=2.17";
-import { mountGate } from "../shared/js/gate.js?v=2.17";
-import { makeFooter } from "../shared/js/footer.js?v=2.17";
-import { makeDesktopHeader } from "./header.js?v=2.17";
-import { createDesktopPage } from "./page.js?v=2.17";
-import { createDesktopHero } from "./hero.js?v=2.17";
+import { element } from "../shared/js/dom.js?v=2.19";
+import { mountGate } from "../shared/js/gate.js?v=2.19";
+import { makeFooter } from "../shared/js/footer.js?v=2.19";
+import { makeDesktopHeader } from "./header.js?v=2.19";
+import { createDesktopPage } from "./page.js?v=2.19";
+import { createDesktopHero } from "./hero.js?v=2.19";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {
