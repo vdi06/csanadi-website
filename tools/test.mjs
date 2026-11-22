@@ -31,6 +31,7 @@ assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths].sort(), "Se
 assert.deepEqual(files(root).filter((path) => path.endsWith(".html")), ["index.html"]);
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
 assert.equal(config.schemaVersion, "2.06");
+assert.equal(config.release, "2.07");
 assert.equal(config.appearance.defaultMode, "auto");
 assert.deepEqual(config.appearance.cycle, ["auto", "light", "dark"]);
 assert.equal(config.gate.skipSymbol, "⏭");
@@ -202,6 +203,11 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   const footer = nodes.find((n) => n.tag === "footer");
   assert.equal(scan(footer).filter((n) => n.tag === "a").length, 3, "A láblécben kizárólag e-mail és 2 működő útvonal van.");
   assert.ok(scan(footer).some((n) => n.textContent === config.home.footer.address));
+  const informationColumn = scan(footer).find((n) => n.className === "footer-links");
+  const versionRow = informationColumn.children.at(-1);
+  assert.equal(versionRow.className, "footer-version", "A verziószámnak a Tájékoztatás oszlop legalsó sorában kell állnia.");
+  assert.equal(versionRow.textContent, `${config.home.footer.versionLabel}: ${config.release}`,
+    "A lábléc verziószáma kizárólag a JSON release mezőjéből származhat.");
   const searchToggle = nodes.find((n) => n.className.includes("search-toggle"));
   const themeToggle = nodes.find((n) => n.className.includes("theme-toggle"));
   const homeNode = nodes.find((n) => n.className === `${platform}-home`);

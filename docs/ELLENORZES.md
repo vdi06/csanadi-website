@@ -1,6 +1,6 @@
-# Csanádi 2.06 – valóban külön mobilos és asztali fejléc
+# Csanádi 2.07 – külön mobilos és asztali fejléc, automatikus láblécverzió
 
-Ez **nem publikált**, önállóan kipróbálható kiadás. A 2.05-ös eredeti ZIP
+Ez **nem publikált**, önállóan kipróbálható kiadás. A 2.06-os eredeti ZIP
 változatlan marad.
 
 ## Egyetlen HTML, közös adatok, külön megjelenítők
@@ -59,6 +59,15 @@ A kézi választást a böngésző helyi tárhelyén megőrzi, amennyiben az
 elérhető; tiltott tárhelynél is működik az aktuális oldalon.
 A kapunyitó kép színeit és aranykeretét nem módosítja.
 
+## Verziószám a Tájékoztatás oszlop alján
+
+A lábléc utolsó sora mobilon és asztalon egyaránt a `Verzió: 2.07` felirat.
+A felirat `Verzió` része a `home.footer.versionLabel`, a száma pedig a
+`release` mezőből származik a `shared/data/site.json` fájlban. A verzió
+következő kiadáskor ezért egyetlen központi JSON-adat átírásával frissül.
+A különleges `footer-version` CSS-osztály egyúttal rögzíti a legalsó
+elhelyezést; a két platformon ugyanaz a közös adat jelenik meg.
+
 ## Mi maradt még?
 
 - Az eredeti kapu, 30 különböző mozgásfázis platformonként, 18px-es
@@ -77,6 +86,7 @@ mobilos alsó navigáció vagy elavult modul.
 - az egyetlen HTML és a platformfájlok pontos készlete;
 - a 60 WebP és a JSON-séma;
 - külön mobilos/asztali fejlécszerkezet és hiányzó keresztimportok;
+- a JSON-ból érkező verziószám a Tájékoztatás oszlop utolsó sorában;
 - mobilmenü, asztali főnavigáció, külön kereső, Escape, fókusz;
 - az automatikus, világos és sötét állapot, az OS-változás követése,
   a választás megőrzése és az eseménykezelők felszabadítása;

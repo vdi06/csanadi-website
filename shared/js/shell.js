@@ -72,5 +72,6 @@ export function makeFooter(config, platform) {
         element("a", { text: footer.email, attributes: { href: `mailto:${footer.email}` } })),
       element("nav", { className: "footer-links", attributes: { "aria-label": footer.linksTitle } },
         element("h2", { text: footer.linksTitle }),
-        ...navigation.map((item) => navLink(item)))));
+        ...navigation.map((item) => navLink(item)),
+        element("p", { className: "footer-version", text: `${footer.versionLabel}: ${config.release}` }))));
 }

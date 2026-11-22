@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.06",
-  "release": "2.06",
+  "release": "2.07",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -61,7 +61,8 @@
       "address": "1143 Budapest, Őrnagy utca 5–7.",
       "email": "csanadi@csanadiiskola.hu",
       "contactTitle": "Kapcsolat",
-      "linksTitle": "Tájékoztatás"
+      "linksTitle": "Tájékoztatás",
+      "versionLabel": "Verzió"
     }
   },
   "appearance": {
