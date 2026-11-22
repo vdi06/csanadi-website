@@ -1,7 +1,0 @@
-@media screen and (min-width:768px){
- .r25-intro h1{max-width:18ch}
- .r25-week{grid-template-columns:repeat(7,minmax(0,1fr))}
- .r25-day{min-width:0}
- .r25-panorama-shell{min-height:360px}
- .r25-panorama-shell canvas{aspect-ratio:2.08}
-}

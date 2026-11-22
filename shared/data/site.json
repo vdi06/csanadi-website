@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "2.00",
+  "release": "2.00",
+  "site": {
+    "name": "CSANÁDI ÁRPÁD SPORTISKOLA",
+    "subtitle": "ÁLTALÁNOS ISKOLA ÉS GIMNÁZIUM",
+    "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
+    "motto": "SPORT · TUDÁS · KÖZÖSSÉG",
+    "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
+    "crestAlt": "A Csanádi Árpád Sportiskola címere"
+  },
+  "mobile": {
+    "eyebrow": "CSANÁDI SPORTISKOLA",
+    "title": "Sport. Tudás. Közösség.",
+    "description": "Együtt a pályán és a tanteremben."
+  },
+  "desktop": {
+    "eyebrow": "ÜDVÖZLÜNK A CSANÁDIBAN",
+    "title": "Sportból erő, tudásból jövő.",
+    "description": "A Csanádi Árpád Sportiskola közössége."
+  },
+  "ui": {
+    "skipToContent": "Ugrás a tartalomhoz",
+    "backToTop": "Oldal tetejére",
+    "contentLabel": "Kezdőlap",
+    "homeLink": "Főoldal",
+    "footerText": "Csanádi Árpád Sportiskola"
+  },
+  "theme": {
+    "background": "#071b2f",
+    "surface": "#112a40",
+    "text": "#f7f0e5",
+    "muted": "#c6d0d7",
+    "accent": "#dbb772"
+  }
+}

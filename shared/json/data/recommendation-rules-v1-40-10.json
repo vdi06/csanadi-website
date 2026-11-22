@@ -1,8 +1,0 @@
-{
-  "schemaVersion": "1.0.0",
-  "release": "1.40.10",
-  "description": "Jóváhagyott szerkesztői kiemelések és tiltások. Csak a keresőben már közzétett, hitelesített célokra hivatkozhatnak.",
-  "rules": [],
-  "publicationApprovalRecorded": false,
-  "note": "Egyetlen új kiemelést sem aktiválunk valódi intézményi szerkesztői döntés nélkül. Az üres szabálylista mellett a korábbi automatikus ajánlások működnek."
-}

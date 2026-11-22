@@ -1,0 +1,69 @@
+/* Csak az asztali alkalmazás saját elemei. */
+.desktop-page {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: radial-gradient(ellipse at 50% 20%, #1b3a4e 0%, #0b2136 46%, var(--background) 100%);
+}
+.desktop-header {
+  padding: 28px 32px 22px;
+  border-bottom: 1px solid rgba(219, 183, 114, .3);
+  background: rgba(7, 27, 47, .75);
+}
+.desktop-header .brand-name { font-size: 1.45rem; }
+.desktop-header .brand-subtitle { font-size: .8rem; }
+.desktop-main {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 48px clamp(24px, 5vw, 80px) 56px;
+}
+.desktop-welcome { position: relative; width: min(100%, 920px); text-align: center; }
+.desktop-crest { width: clamp(138px, 15vw, 184px); margin: 0 auto -42px; position: relative; z-index: 2; }
+.golden-gate {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  border: 3px solid var(--accent);
+  border-radius: 38% 38% 26px 26px / 25% 25% 26px 26px;
+  background: linear-gradient(160deg, rgba(35, 67, 86, .76), rgba(9, 31, 49, .96));
+  box-shadow: inset 0 0 0 2px rgba(255, 232, 167, .21), inset 0 7px 20px rgba(255, 235, 180, .09),
+    0 0 0 1px rgba(99, 62, 19, .8), 0 24px 34px rgba(0, 0, 0, .34), 0 0 32px rgba(219, 183, 114, .09);
+}
+.golden-gate::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(219, 183, 114, .38);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.gate-content {
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 90px 40px 54px;
+}
+.gate-content h1 { font-size: clamp(2.25rem, 4.5vw, 4rem); }
+.gate-content .eyebrow { font-size: .82rem; }
+.desktop-description { margin: 0; max-width: 52ch; font-size: 1.18rem; line-height: 1.65; color: var(--muted); }
+.desktop-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px clamp(24px, 6vw, 92px);
+  border-top: 1px solid rgba(219, 183, 114, .24);
+  font-size: .87rem;
+  color: var(--muted);
+}
+.desktop-footer a { color: var(--accent); text-underline-offset: 4px; }
+
+@media (max-width: 800px) {
+  .desktop-header .brand-name { font-size: 1.1rem; }
+  .golden-gate { border-radius: 28% 28% 22px 22px / 17% 17% 22px 22px; }
+  .gate-content { padding-inline: 18px; }
+}

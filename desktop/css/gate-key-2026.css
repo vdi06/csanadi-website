@@ -1,9 +1,0 @@
- .gate26 .gate26-key{position:relative;width:170px;height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:3px solid #f2d58d;border-radius:50%;color:#1a3046;background:radial-gradient(circle at 32% 24%,#fff6d1,#e8be69 50%,#ad7630 100%);box-shadow:0 0 0 7px rgba(213,172,87,.18),0 0 0 16px rgba(2,15,32,.25),inset 0 4px 11px #fff8d4a8,0 18px 60px #000a;cursor:pointer;transition:transform .24s,box-shadow .24s}
-.gate26 .gate26-key::before{content:'';position:absolute;inset:-13px;border:1px dashed #f2d58b88;border-radius:50%;pointer-events:none}
-.gate26 .gate26-key svg{flex:none;filter:drop-shadow(0 2px 2px rgba(83,48,10,.2));transform:rotate(-35deg)}
-.gate26 .gate26-key-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;line-height:1.25;font-weight:950;text-shadow:none}
-.gate26 .gate26-key:hover,.gate26 .gate26-key:focus-visible{transform:scale(1.065);box-shadow:0 0 0 9px rgba(234,194,104,.32),0 0 0 17px rgba(2,15,32,.25),0 20px 72px #000c}
-.gate26 .gate26-skip{position:absolute;z-index:8;top:clamp(14px,2.3vw,25px);right:clamp(14px,2.5vw,29px);bottom:auto;left:auto;width:auto;min-height:39px;padding:9px 17px;border-radius:999px;background:rgba(5,17,32,.94);border:2px solid #e4c581;font-size:12px;font-weight:850;letter-spacing:.02em;color:#fff9ed;opacity:1;text-shadow:0 1px 2px #000;box-shadow:0 5px 20px rgba(0,0,0,.50);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-.gate26 .gate26-skip:hover,.gate26 .gate26-skip:focus-visible{opacity:1;background:#071b31;border-color:#ffe9ad;box-shadow:0 7px 24px rgba(0,0,0,.64)}
-@media(max-width:600px){.gate26 .gate26-key{width:128px;height:128px}.gate26 .gate26-key svg{width:53px;height:53px}.gate26 .gate26-key-label{font-size:9px}.gate26 .gate26-skip{font-size:11px;min-height:37px;padding:7px 13px}.gate26 .gate26-content{padding:14px 16px;gap:10px}}
-@media(prefers-reduced-motion:reduce){.gate26 .gate26-key{transition:none}}

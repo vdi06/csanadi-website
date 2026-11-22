@@ -1,0 +1,44 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --background: #071b2f;
+  --surface: #112a40;
+  --text: #f7f0e5;
+  --muted: #c6d0d7;
+  --accent: #dbb772;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { min-width: 280px; scroll-behavior: smooth; background: var(--background); }
+body { margin: 0; color: var(--text); background: var(--background); }
+body, button, input { font-family: inherit; }
+img { max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+
+.skip-link {
+  position: fixed;
+  z-index: 20;
+  top: -100px;
+  left: 12px;
+  padding: 12px 16px;
+  background: var(--accent);
+  color: #071b2f;
+  border-radius: 8px;
+}
+.skip-link:focus { top: 12px; }
+
+.brand { display: flex; flex-direction: column; align-items: center; gap: 3px; text-align: center; }
+.brand-name { font-weight: 850; letter-spacing: .085em; line-height: 1.25; }
+.brand-subtitle { font-weight: 650; letter-spacing: .12em; line-height: 1.4; }
+.crest { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; background: transparent; }
+.eyebrow { margin: 0; color: var(--accent); letter-spacing: .17em; font-weight: 800; line-height: 1.5; }
+.motto { margin: 0; color: var(--accent); font-size: .85rem; font-weight: 800; letter-spacing: .16em; line-height: 1.5; }
+h1 { margin: 0; font-weight: 850; line-height: 1.1; text-wrap: balance; }
+p { overflow-wrap: break-word; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
