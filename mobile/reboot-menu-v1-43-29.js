@@ -9,6 +9,10 @@ export function mobileViewportMode(width,height){
  // Rövid képernyőn rácsos nézetre váltunk a pozíciók ütközése helyett.
  return w>=420&&Number.isFinite(h)&&h>=760?'circle':'grid';
 }
+export function mobileMenuNeedsLayoutRefresh(previousWidth,previousMode,width,height){
+ return Number(width)!==Number(previousWidth)||
+  mobileViewportMode(width,height)!==previousMode;
+}
 const make=(tag,cls='',label='')=>{
  const n=document.createElement(tag);if(cls)n.className=cls;
  if(label)n.textContent=label;return n;
@@ -47,7 +51,7 @@ export function createPhoneRadial({container,title,description,overview,center,
   a.addEventListener('click',()=>onChoose?.());return a;
  };
 
- function render({focus=false,focusRoute='',focusRole='main'}={}){
+ function render({focus=false,focusRoute='',focusRole='main',focusOverview=false}={}){
   const selected=current(),level=trail.length+1;
   container.dataset.level=String(level);
   const width=Number(window.innerWidth),height=Number(window.innerHeight);
@@ -98,7 +102,9 @@ export function createPhoneRadial({container,title,description,overview,center,
    const prior=focusRoute?[...grid.children].flatMap(card=>[...card.children])
     .find(item=>item?.dataset?.csMbRoute===focusRoute&&
      ((focusRole==='direct')===Boolean(item.className?.includes('cs-mb-menu-card-direct')))):null;
-   (prior||(level>1?back:grid.querySelector('button,a[href]')))?.focus({preventScroll:true});
+   const target=focusOverview&&!chosen.hidden?chosen:
+    (prior||(level>1?back:grid.querySelector('button,a[href]')));
+   target?.focus({preventScroll:true});
   }
  }
  function backOne(){if(!isPhone()||!trail.length)return false;
@@ -130,15 +136,27 @@ export function createPhoneRadial({container,title,description,overview,center,
  const focusSnapshot=()=>{const node=activeItem();return {
   route:node?.dataset?.csMbRoute||'',
   role:node?.className?.includes('cs-mb-menu-card-direct')?'direct':'main',
-  back:document.activeElement===back};};
+  back:document.activeElement===back,
+  overview:document.activeElement===chosen};};
  const renderKeepingFocus=()=>{const snapshot=focusSnapshot();
-  render({focus:Boolean(snapshot.route||snapshot.back),focusRoute:snapshot.route,
-   focusRole:snapshot.role});};
- const resize=()=>{if(isPhone())renderKeepingFocus();};
+  render({focus:Boolean(snapshot.route||snapshot.back||snapshot.overview),
+   focusRoute:snapshot.route,focusRole:snapshot.role,focusOverview:snapshot.overview});};
+ // M21.2: az iOS címsora és a virtuális billentyűzet sok resize eseményt
+ // okozhat változatlan szélességgel. Ne építsük újra a menüt minden eseménynél,
+ // mert az megszakíthatná a fókuszt, a kattintást és a háromszintű navigációt.
+ let lastWidth=Number(window.innerWidth);
+ let lastPresentation=mobileViewportMode(lastWidth,Number(window.innerHeight));
+ const resize=()=>{
+  if(!isPhone())return;
+  const width=Number(window.innerWidth),nextMode=mobileViewportMode(width,Number(window.innerHeight));
+  if(!mobileMenuNeedsLayoutRefresh(lastWidth,lastPresentation,width,window.innerHeight))return;
+  lastWidth=width;lastPresentation=nextMode;
+  renderKeepingFocus();
+ };
  window.addEventListener('resize',resize,{passive:true});
  media.addEventListener?.('change',resize);
  function setCatalog(nextRoots,{childrenOf,titleOf,hrefOf}){
-  const {route:focusRoute,role:focusRole,back:focusBack}=focusSnapshot();
+  const {route:focusRoute,role:focusRole,back:focusBack,overview:focusOverview}=focusSnapshot();
   const previous=trail.map(node=>getHref(node));
   roots=Array.isArray(nextRoots)?nextRoots.filter(Boolean):[];
   getChildren=childrenOf;getTitle=titleOf;getHref=hrefOf;
@@ -148,7 +166,8 @@ export function createPhoneRadial({container,title,description,overview,center,
    const found=collection.find(node=>getHref(node)===href);if(!found)break;
    trail.push(found);collection=children(found);
   }
-  render({focus:Boolean(focusRoute||focusBack),focusRoute,focusRole});
+  render({focus:Boolean(focusRoute||focusBack||focusOverview),focusRoute,focusRole,
+   focusOverview});
  }
  function reset(){trail=[];render();}
  function focus(){(trail.length?back:grid.querySelector('button,a[href]'))?.focus({preventScroll:true});}

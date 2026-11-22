@@ -1,5 +1,6 @@
 /* Csanádi R24 - csak nyilvános, forrásolt adat; helyi, natív böngészős működés. */
 import {bindFeatureTheme} from './spa-feature-theme-v1-42.js';
+import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.45';
 const $=id=>document.getElementById(id);
 const node=(tag,cls='',text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=String(text);return e;};
 const clear=el=>el.replaceChildren();
@@ -10,7 +11,7 @@ const empty=(target,message)=>{clear(target);target.append(node('p','r23-empty',
 const safeDomains=['olimpia.hu','zuglo.hu','ksi.hu','kk.gov.hu','dokumentumtar.mlsz.hu','mlsz.hu','hunfencing.hu','kajakkenusport.hu','birkozoszov.hu','mksz.hu'];
 const trusted=url=>{try{const v=new URL(url);return v.protocol==='https:'&&safeDomains.some(d=>v.hostname===d||v.hostname.endsWith('.'+d));}catch{return false;}};
 const sourceLink=(url,label='Elsődleges forrás ↗')=>{if(!trusted(url))return node('span','r23-footnote','A hivatkozás nincs jóváhagyva.');const a=node('a','r24-source',label);a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;};
-const localLink=(path,label='PDF megnyitása ↗')=>{if(!/^assets\/documents\/[a-zA-Z0-9_.-]+\.pdf$/.test(path||''))return node('span','r23-footnote','Nem ellenőrzött fájlútvonal.');const a=node('a','r24-source',label);a.href=path;a.target='_blank';a.rel='noopener noreferrer';return a;};
+const localLink=(path,label='PDF megtekintése')=>{if(!/^assets\/documents\/[a-zA-Z0-9_.-]+\.pdf$/.test(path||''))return node('span','r23-footnote','Nem ellenőrzött fájlútvonal.');const preview=node('button','r24-source',label);preview.type='button';preview.addEventListener('click',()=>openDocumentViewer({filePath:path,title:'Iskolai kiadvány',mimeType:'application/pdf'},preview));return preview;};
 const card=(title,description,tag)=>{const e=node('article','r23-card'),body=node('div','r23-card-content');if(tag)body.append(node('span','r23-chip',tag));body.append(node('h3','',title),node('p','',description));e.append(body);return{e,body};};
 const textMatch=(entry,q)=>norm(Object.values(entry).filter(v=>typeof v!=='object').join(' ')).includes(norm(q));
 const loadJSON=async path=>{const response=await fetch(path,{cache:'no-store'});if(!response.ok)throw Error(`A ${path} nem érhető el (HTTP ${response.status}).`);return response.json();};

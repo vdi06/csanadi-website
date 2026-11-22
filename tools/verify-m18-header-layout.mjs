@@ -6,8 +6,8 @@ import {execFileSync} from 'node:child_process';
 
 const root=path.resolve(import.meta.dirname,'..');
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
-const css=read('mobile/reboot-design-v1-43-27.css');
-const shell=read('mobile/reboot-shell-v1-43-27.js');
+const css=read('mobile/reboot-design-v1-43-29.css');
+const shell=read('mobile/reboot-shell-v1-43-29.js');
 const html=read('index.html');
 
 assert.match(css,/@media screen and \(max-width:768px\)/);

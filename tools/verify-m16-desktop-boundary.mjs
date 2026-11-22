@@ -3,7 +3,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import {initFreshMobileShell} from '../mobile/reboot-shell-v1-43-27.js';
+import {initFreshMobileShell} from '../mobile/reboot-shell-v1-43-29.js';
 
 class Node{
  constructor(tag='div'){this.tagName=tag;this.children=[];this.isConnected=false;
@@ -56,8 +56,8 @@ assert.equal(header.children.length,0,'Asztalra visszaváltva a mobilfejléc lev
 assert.equal(prior.isConnected,true);
 const base=path.resolve(import.meta.dirname,'..');
 const html=fs.readFileSync(path.join(base,'index.html'),'utf8');
-const css=fs.readFileSync(path.join(base,'mobile/reboot-design-v1-43-27.css'),'utf8');
-const hero=fs.readFileSync(path.join(base,'mobile/reboot-hero-v1-43-27.js'),'utf8');
+const css=fs.readFileSync(path.join(base,'mobile/reboot-design-v1-43-29.css'),'utf8');
+const hero=fs.readFileSync(path.join(base,'mobile/reboot-hero-v1-43-29.js'),'utf8');
 assert.match(html,/media="screen and \(max-width: 768px\)"/);
 assert.match(hero,/root\.hidden=!phone\.matches/);
 assert.match(hero,/root\.hidden=!event\.matches/);

@@ -1,7 +1,7 @@
 
 
 
-import {openImageViewer} from './site-viewers-v1-43-3.js?v=1.43.3';
+import {openImageViewer} from './site-viewers-v1-43-3.js?v=1.45';
 const e=(tag,cls='',text)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=String(text);return x;};
 const add=(target,...kids)=>{kids.filter(Boolean).forEach(k=>target.append(k));return target;};
 const safe=(s)=>String(s||'').replace(/[^a-zA-Z0-9À-ž _.,!?–:()/-]/g,'').slice(0,220);
@@ -195,4 +195,4 @@ export function renderStaffCenter(){
  }).catch(err=>grid.append(e('p','experience-error',err.message)));
  return wrap;
 }
-import {setting,settingNumber} from './site-settings-2026.js?v=1.42.18';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.45';

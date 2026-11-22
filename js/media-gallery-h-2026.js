@@ -1,7 +1,7 @@
 
 
 
-import {openImageViewer} from './site-viewers-v1-43-3.js?v=1.43.3';
+import {openImageViewer} from './site-viewers-v1-43-3.js?v=1.45';
 const PHOTO_URL = new URL('../json/data/photo-gallery.json', import.meta.url);
 const VIDEO_URL = new URL('../json/data/gallery-videos.json', import.meta.url);
 const albums = [['mind','Összes album','✦'],['sport','Sportpillanatok','🏅'],['oktatas','Tanulás és tudás','✎'],['kozosseg','Közösségi élet','♡']];
@@ -94,4 +94,4 @@ export function renderMediaGallery({compact=false}={}){
  }).catch(error=>{info.textContent='A galéria pillanatnyilag nem tölthető be: '+error.message;});
  return section;
 }
-import {settingNumber} from './site-settings-2026.js?v=1.42.18';
+import {settingNumber} from './site-settings-2026.js?v=1.45';

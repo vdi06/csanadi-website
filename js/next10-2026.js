@@ -1,4 +1,5 @@
-import {setting} from './site-settings-2026.js?v=1.42.18';
+import {setting} from './site-settings-2026.js?v=1.45';
+import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.45';
 
 const e=(tag,cls,text)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=String(text);return x;};
 const add=(parent,...children)=>{for(const child of children)if(child)parent.append(child);return parent;};
@@ -95,7 +96,10 @@ export function renderDocumentInsights(){
  const area=e('div','next10-docs'),count=e('p','next10-note','Dokumentumok betöltése…');form.append(search,type);root.append(form,area,count);let docs=[],categories=[];
  const paint=()=>{const q=norm(search.value);const matches=docs.filter(d=>(type.value==='all'||d.categoryId===type.value)&&norm([d.title,d.summary,...(d.tags||[])].join(' ')).includes(q));area.replaceChildren();count.textContent=`${matches.length} közzétett dokumentum; a helyi gyűjtemény segédleteket tartalmaz, nem teljes hivatalos irattár.`;
   for(const doc of matches){const card=e('article','next10-doc-item');add(card,e('h3','',doc.title),e('p','',doc.summary),e('small','',`Verzió: ${doc.version} · ${doc.versionHistory?.length||1} változat · ${doc.documentKind}`));
-   const actions=e('div','next10-doc-actions');if(/^assets\/documents\/[a-z0-9-]+\.pdf$/.test(doc.filePath||'')){const link=e('a','','PDF megnyitása ↗');link.href=doc.filePath;link.target='_blank';link.rel='noopener noreferrer';actions.append(link);}
+   const actions=e('div','next10-doc-actions');if(/^assets\/documents\/[a-z0-9-]+\.pdf$/.test(doc.filePath||'')){
+    const preview=e('button','','PDF megtekintése');preview.type='button';
+    preview.addEventListener('click',()=>openDocumentViewer({...doc,mimeType:'application/pdf'},preview));
+    actions.append(preview);}
    const versions=e('details');versions.append(e('summary','','Verziók részletei'));const list=e('ul');for(const v of doc.versionHistory||[])list.append(e('li','',`${v.version} – ${v.date}: ${v.change}`));versions.append(list);card.append(actions,versions);area.append(card);}
   if(!matches.length)area.append(e('p','next10-note','Nincs a feltételeknek megfelelő dokumentum.'));
  };

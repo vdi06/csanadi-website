@@ -1,8 +1,8 @@
-import {renderSportsSuccesses} from './sports-successes.js?v=1.42.18';
-import {renderPremiumHero} from './hero-2026.js?v=1.43.27';
-import {renderLiveDashboard} from './home-live.js?v=1.42.18';
-import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js?v=1.42.18';
-import {resolveConfiguredText,settingNumber} from './site-settings-2026.js?v=1.42.18';
+import {renderSportsSuccesses} from './sports-successes.js?v=1.45';
+import {renderPremiumHero} from './hero-2026.js?v=1.45';
+import {renderLiveDashboard} from './home-live.js?v=1.45';
+import {createPicture,mediaForRoute,imageDisclaimer,mediaItem} from './media.js?v=1.45';
+import {resolveConfiguredText,settingNumber} from './site-settings-2026.js?v=1.45';
  
 const dom=(tag,attrs={},text='')=>{
   const x=document.createElement(tag);
@@ -42,6 +42,29 @@ export function markdown(text){
  const lines=resolveConfiguredText(text).split(/\n{2,}/g);
   for(const part of lines){
     const trimmed=part.trim();if(!trimmed)continue;
+    // GFM-táblázatok: a korábbi egyszerű bekezdés-megjelenítő a | jeleket
+    // szó szerint írta ki (csengetési rend, névsor, tanévi dátumok).
+    const tableLines=trimmed.split('\n').map(line=>line.trim());
+    const cells=line=>line.replace(/^\|/,'').replace(/\|$/,'').split('|').map(cell=>cell.trim());
+    if(tableLines.length>=3&&/^\|/.test(tableLines[0])&&
+       cells(tableLines[1]).every(cell=>/^:?-{3,}:?$/.test(cell))){
+      const headers=cells(tableLines[0]);
+      const wrap=dom('div',{class:'cs-content-table-wrap'});
+      const table=dom('table',{class:'cs-content-table'});
+      const head=dom('thead'),headRow=dom('tr');
+      for(const value of headers){const th=dom('th');th.scope='col';inlineText(th,value);headRow.append(th);}
+      head.append(headRow);table.append(head);
+      const body=dom('tbody');
+      for(const line of tableLines.slice(2)){
+        if(!line.startsWith('|'))continue;
+        const row=dom('tr');
+        for(const value of cells(line).slice(0,headers.length)){
+          const td=dom('td');inlineText(td,value);row.append(td);
+        }
+        body.append(row);
+      }
+      table.append(body);wrap.append(table);el.append(wrap);continue;
+    }
     const tag=trimmed.startsWith('### ')?'h3':trimmed.startsWith('## ')?'h2':'p';
     const p=dom(tag);inlineText(p,trimmed.replace(/^#{2,3} /,''));el.append(p);
   }

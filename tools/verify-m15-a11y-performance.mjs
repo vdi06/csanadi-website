@@ -5,10 +5,10 @@ import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 
 const root=path.resolve(import.meta.dirname,'..');
-const css=fs.readFileSync(path.join(root,'mobile/reboot-design-v1-43-27.css'),'utf8');
-const quality=fs.readFileSync(path.join(root,'mobile/reboot-quality-v1-43-27.js'),'utf8');
-const shell=fs.readFileSync(path.join(root,'mobile/reboot-shell-v1-43-27.js'),'utf8');
-const menu=fs.readFileSync(path.join(root,'mobile/reboot-menu-v1-43-27.js'),'utf8');
+const css=fs.readFileSync(path.join(root,'mobile/reboot-design-v1-43-29.css'),'utf8');
+const quality=fs.readFileSync(path.join(root,'mobile/reboot-quality-v1-43-29.js'),'utf8');
+const shell=fs.readFileSync(path.join(root,'mobile/reboot-shell-v1-43-29.js'),'utf8');
+const menu=fs.readFileSync(path.join(root,'mobile/reboot-menu-v1-43-29.js'),'utf8');
 const child=spawnSync(process.execPath,[path.join(root,'tools/verify-reboot-quality.mjs')],
  {encoding:'utf8',timeout:15000});
 assert.equal(child.status,0,child.stderr||child.stdout);

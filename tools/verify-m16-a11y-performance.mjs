@@ -5,7 +5,7 @@ import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 
 const root=path.resolve(import.meta.dirname,'..');
-const shell=fs.readFileSync(path.join(root,'mobile/reboot-shell-v1-43-27.js'),'utf8');
+const shell=fs.readFileSync(path.join(root,'mobile/reboot-shell-v1-43-29.js'),'utf8');
 assert.match(shell,/label\.setAttribute\('aria-hidden',state\)/);
 assert.match(shell,/subtitle\.setAttribute\('aria-hidden',state\)/);
 assert.match(shell,/label\.removeAttribute\('aria-hidden'\)/);

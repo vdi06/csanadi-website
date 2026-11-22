@@ -13,11 +13,88 @@ export function mobileResourceProfile({mobile=true,motion=false,saveData=false,n
   (Number.isFinite(cores)&&cores>0&&cores<=2));
  return {active:Boolean(mobile),limited:Boolean(mobile&&limited),quiet:Boolean(mobile&&(motion||limited))};
 }
+/** M22.4: a rejtett Bootstrap panel és a hozzá tartozó vezérlő ne legyen
+    a mobilos roving-keyboard léptetés célpontja. */
+export function mobileActionIsVisible(node){
+ if(!node||node.disabled||node.hidden||node.getAttribute?.('aria-hidden')==='true'||
+  node.getAttribute?.('aria-disabled')==='true')return false;
+ const hiddenAncestor=node.closest?.('[hidden],[inert],[aria-hidden="true"]');
+ if(hiddenAncestor&&(hiddenAncestor.hidden||hiddenAncestor.inert||
+  hiddenAncestor.getAttribute?.('aria-hidden')==='true'))return false;
+ if(typeof node.getClientRects==='function'&&!node.getClientRects().length)return false;
+ // visibility:hidden és content-visibility:hidden mellett a geometria nem
+ // feltétlenül nulla, mégsem szabad a vezérlőre billentyűzettel lépni.
+ if(typeof getComputedStyle==='function'){
+  const style=getComputedStyle(node);
+  if(style.visibility==='hidden'||style.visibility==='collapse'||
+   style.contentVisibility==='hidden'||style.display==='none')return false;
+ }
+ return true;
+}
 export function initFreshMobileQuality(){
  const html=document.documentElement;
  if(html.dataset.csMbQuality==='1')return;
  html.dataset.csMbQuality='1';
  const mq=matchMedia('(max-width: 768px)'),motion=matchMedia('(prefers-reduced-motion: reduce)');
+ let observedNotice=null,noticeObserver=null;
+ // v1.43.31 / A: az aloldali három tájékoztatókártya egyetlen mobilos
+ // összecsukható előnézetté válik. Desktopon visszaáll az eredeti DOM.
+ function syncNoticeCompact(){
+  const panel=document.querySelector?.('body > .csn20-language-bar');
+  if(!panel){noticeObserver?.disconnect();noticeObserver=null;observedNotice=null;return;}
+  // M21.4: a SPA később is illeszthet új közleményt a panelbe.
+  // A frissen megjelent közlemények is a kinyitható törzsbe kerülnek.
+  if(panel!==observedNotice&&typeof MutationObserver==='function'){
+   noticeObserver?.disconnect();observedNotice=panel;
+   noticeObserver=new MutationObserver(syncNoticeCompact);
+   noticeObserver.observe(panel,{childList:true});
+  }
+  const toggle=panel.querySelector(':scope > .cs-mb-notice-toggle');
+  const content=panel.querySelector(':scope > .cs-mb-notice-body');
+  if(!mq.matches){
+   const focusedToggle=toggle&&document.activeElement===toggle;
+   if(content){while(content.firstChild)panel.insertBefore(content.firstChild,content);content.remove();}
+   toggle?.remove();panel.classList.remove('cs-mb-notices-compact','cs-mb-notices-open');
+   if(focusedToggle)panel.querySelector('button')?.focus?.({preventScroll:true});
+   return;
+  }
+  if(toggle&&content){
+   for(const child of [...panel.children]){
+    if(child!==toggle&&child!==content)content.appendChild(child);
+   }
+   return;
+  }
+  const retainFocus=panel.contains(document.activeElement);
+  const body=document.createElement('div');body.className='cs-mb-notice-body';
+  body.id='cs-mb-notice-body';
+  while(panel.firstChild)body.appendChild(panel.firstChild);
+  const control=document.createElement('button');control.type='button';
+  control.className='cs-mb-notice-toggle';control.setAttribute('aria-controls',body.id);
+  const label=document.createElement('span');label.textContent='Fontos tájékoztatók';
+  const hint=document.createElement('span');hint.className='cs-mb-notice-hint';
+  control.append(label,hint);panel.append(control,body);
+  const setOpen=open=>{
+   // A programból vagy külső műveletből bezáródó panelben sem maradhat
+   // fókusz egy immár rejtett link vagy gomb belsejében.
+   if(!open&&body.contains(document.activeElement))control.focus({preventScroll:true});
+   body.hidden=!open;control.setAttribute('aria-expanded',String(open));
+   hint.textContent=open?'Bezárás ↑':'Megnyitás ↓';
+   panel.classList.toggle('cs-mb-notices-open',open);
+  };
+  control.addEventListener('click',()=>setOpen(control.getAttribute('aria-expanded')!=='true'));
+  // Escape után a fókusz a nyitógombra tér vissza; a rejtett tartalom
+  // billentyűzettel nem maradhat véletlenül aktív.
+  body.addEventListener('keydown',event=>{
+   if(event.key!=='Escape')return;
+   event.preventDefault();setOpen(false);control.focus({preventScroll:true});
+  });
+  panel.classList.add('cs-mb-notices-compact');setOpen(retainFocus);
+ }
+ syncNoticeCompact();
+ if(typeof MutationObserver==='function'&&document.body){
+  new MutationObserver(syncNoticeCompact).observe(document.body,{childList:true});
+ }
+ mq.addEventListener?.('change',syncNoticeCompact);
  const connection=navigator.connection;
  const profile=()=>mobileResourceProfile({mobile:mq.matches,motion:motion.matches,
   saveData:Boolean(connection?.saveData),network:connection?.effectiveType||'',
@@ -140,7 +217,7 @@ export function initFreshMobileQuality(){
  connection?.addEventListener?.('change',schedule);
 
  const buttons=group=>[...group.querySelectorAll('button:not(:disabled),a[href]')]
-  .filter(node=>!node.hidden&&node.getAttribute('aria-hidden')!=='true');
+  .filter(mobileActionIsVisible);
  document.addEventListener('click',event=>{
   if(!mq.matches)return;
   const source=event.target.closest?.('button');

@@ -1,4 +1,4 @@
-import {openImageViewer} from './site-viewers-v1-43-3.js?v=1.43.3';
+import {openImageViewer} from './site-viewers-v1-43-3.js?v=1.45';
 /* Iskolai iránytű – tíz nyilvános, személyesadat-mentes, statikus FTP-eszköz. */
 const $=id=>document.getElementById(id);
 const make=(tag,cls='',value)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(value!==undefined)e.textContent=String(value);return e;};

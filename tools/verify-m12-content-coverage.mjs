@@ -32,7 +32,7 @@ for(const page of [
  'pages/sports/sports-galleries.json'
 ])assert.ok(visited.has(page),page+' a menüben');
 
-const css=read('mobile/reboot-design-v1-43-27.css');
+const css=read('mobile/reboot-design-v1-43-29.css');
 for(const selector of [
  '.hub26-calendar','.hub26-staff','.hub26-bell','.ext26-doc-browser',
  '.media26-grid','.cs43-viewer','.cs43-pdf-toolbar','.cs43-image-viewer',

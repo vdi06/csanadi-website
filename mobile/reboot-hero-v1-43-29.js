@@ -4,6 +4,17 @@ const make=(tag,cls='',value='')=>{
  if(value)el.textContent=value;return el;
 };
 export const mobileSlideIndex=(index,total)=>total?((index%total)+total)%total:0;
+/** M21.3: a hibásan betöltődő diák rövid ideig kimaradnak; ezalatt a
+    következő használható kép választható. Az időkorlát után újrapróbálhatók. */
+export function mobileNextAvailableSlide(index,direction,total,blockedUntil=new Map(),now=Date.now()){
+ if(total<2)return -1;
+ const step=direction<0?-1:1;
+ for(let offset=1;offset<total;offset++){
+  const candidate=mobileSlideIndex(index+step*offset,total);
+  if((blockedUntil.get(candidate)||0)<=now)return candidate;
+ }
+ return -1;
+}
 export const mobileAutoPlayAllowed=({mobile=true,reduce=false,limit=false,visible=true,
  hidden=false,paused=false,overlay=false,interacting=false}={})=>
  Boolean(mobile&&!reduce&&!limit&&visible&&!hidden&&!paused&&!overlay&&!interacting);
@@ -18,7 +29,22 @@ function imageLoaded(picture){
   const onLoad=()=>done(img.naturalWidth>0),onError=()=>done(false);
   img.addEventListener('load',onLoad,{once:true});img.addEventListener('error',onError,{once:true});
   const timeout=setTimeout(()=>done(false),5500);
+  // A betöltés az első ellenőrzés és az eseményfigyelők felhelyezése
+  // között is befejeződhet; ekkor már nem feltétlenül érkezik új load.
+  if(img.complete)done(img.naturalWidth>0);
  });
+}
+/** M20.2: Safari háttérbe helyezett lapján a decode() várakozása nem
+    tarthatja végtelenségig letiltva a képváltót. A betöltött kép marad. */
+async function waitForDecoded(picture,timeoutMs=1400){
+ const img=picture?.querySelector('img');if(typeof img?.decode!=='function')return;
+ let timer;
+ try{
+  await Promise.race([
+   Promise.resolve().then(()=>img.decode()).catch(()=>{}),
+   new Promise(resolve=>{timer=setTimeout(resolve,timeoutMs);})
+  ]);
+ }finally{clearTimeout(timer);}
 }
 const routeOf=slide=>/^#\/[a-z0-9/\-]*$/i.test(slide?.buttons?.[0]?.href||'')?
  slide.buttons[0].href:'#/iskolank';
@@ -28,7 +54,10 @@ export function createFreshMobileHero({slides=[],createPicture,mediaItem,interva
   mediaItem(slide.mobileMediaId||slide.mediaId));
  const entrance=valid.find(slide=>(slide.mobileMediaId||slide.mediaId)==='media:bejarat');
  const items=entrance?[entrance,...valid.filter(x=>x!==entrance)]:valid;
+ // B változat: a képváltó a KEZDŐLAP filmes nyitórészének része, nem
+ // fejléc-, lebegő vagy aloldali vezérlő. A normál oldalgörgetés viszi ki.
  const root=make('section','cs-mb-cinema');root.setAttribute('aria-label','Mobilos iskolabemutató');
+ root.dataset.csMbPlacement='home-hero-only';
  // M17.1: a mobil CSS desktopon nem töltődik be, és a 'hidden' állapotot
  // egy erősebb, külső display-szabály felülírhatná. Ezért a valódi mobil
  // DOM-elemet desktopon egyáltalán nem csatoljuk a kezdőlaphoz.
@@ -82,10 +111,14 @@ export function createFreshMobileHero({slides=[],createPicture,mediaItem,interva
  const network=navigator.connection;
  let dataLimited=Boolean(network?.saveData||/^(?:slow-2g|2g)$/.test(network?.effectiveType||''));
  let index=0,changing=false,stopped=false,hover=false,focus=false,visible=true,start=null;
+ const blockedUntil=new Map();
  const pictureFor=slide=>createPicture(slide.mobileMediaId||slide.mediaId,
   {className:'cs-mb-film-picture',eager:true,sizes:'(max-width: 768px) 100vw, 0px'});
  let active=pictureFor(items[0]);
  if(active)visual.prepend(active);
+ // M22.3: ha az első kép hibás vagy hiányzik, ne maradjon üres a teljes
+ // nyitóterület. A további, működő diák közül automatikusan keresünk egyet.
+ const firstImageReady=imageLoaded(active);
  const announce=manual=>{
   const s=items[index];
   eyebrow.textContent=s.eyebrow||'CSANÁDI SPORTISKOLA';
@@ -104,28 +137,87 @@ export function createFreshMobileHero({slides=[],createPicture,mediaItem,interva
  next.disabled=items.length<2;
  async function show(position,manual=false){
   if(changing||!root.isConnected||!phone.matches||items.length<2)return false;
-  const to=mobileSlideIndex(position,items.length);if(to===index)return false;
-  const entering=pictureFor(items[to]);if(!entering)return false;
+  const direction=position<index?-1:1;
+  const to=mobileNextAvailableSlide(index,direction,items.length,blockedUntil);
+  if(to<0){if(manual)message.textContent='A többi nyitókép átmenetileg nem érhető el.';
+   return false;}
+  const entering=pictureFor(items[to]);
+  if(!entering){blockedUntil.set(to,Date.now()+30000);return false;}
   changing=true;previous.disabled=true;next.disabled=true;
+  stage.setAttribute('aria-busy','true');
+  const unlock=()=>{changing=false;previous.disabled=false;next.disabled=false;
+   stage.removeAttribute('aria-busy');};
   entering.classList.add('cs-mb-film-entering');visual.insertBefore(entering,shade);
   const ready=await imageLoaded(entering);
-  if(!ready||!root.isConnected){entering.remove();changing=false;
-   previous.disabled=false;next.disabled=false;return false;}
-  try{await entering.querySelector('img')?.decode?.();}catch{}
-  if(!root.isConnected){entering.remove();changing=false;return false;}
+  if(!ready||!root.isConnected){
+   if(!ready){blockedUntil.set(to,Date.now()+30000);
+    if(manual)message.textContent='Ez a kép most nem tölthető be. A következő lapozás másik képet próbál.';}
+   entering.remove();unlock();return false;
+  }
+  await waitForDecoded(entering);
+  // Egy aloldalra lépés a dekódolás alatt leválaszthatja a kezdőlapot.
+  // Az újracsatolt komponens nyilai ekkor sem maradhatnak letiltva.
+  if(!root.isConnected||!phone.matches){entering.remove();unlock();return false;}
+  blockedUntil.delete(to);
   index=to;
   if(reduced.matches||dataLimited){
    announce(manual);active?.remove();entering.classList.remove('cs-mb-film-entering');
-   active=entering;changing=false;previous.disabled=false;next.disabled=false;return true;}
-  requestAnimationFrame(()=>requestAnimationFrame(()=>{
-   entering.classList.add('is-visible');active?.classList.add('is-leaving');
-   // A cím és az útvonallink a tényleges képcserével együtt vált.
+   active=entering;unlock();return true;}
+  // M18.3: iOS/Safari háttérben vagy lassú telefonon a dupla rAF késhet.
+  // A régi időzítő előbb lecserélhette az active változót, majd a késői
+  // rAF ugyanazt az új képet jelölte is-leaving osztállyal (üres képernyő).
+  // A kifutó képet rögzítjük; a lezárás egyszer futhat, és késői rAF
+  // soha nem tud már eltüntetni egy sikeresen beállított új képet.
+  const outgoing=active;
+  let finished=false,frameStarted=false;
+  const finish=()=>{
+   if(finished)return;
+   finished=true;
+   outgoing?.remove();
+   entering.classList.remove('cs-mb-film-entering','is-visible','is-leaving');
+   active=entering;unlock();
+   if(!frameStarted)announce(manual);
+  };
+  const reveal=()=>{
+   if(finished)return;
+   frameStarted=true;
+   entering.classList.add('is-visible');outgoing?.classList.add('is-leaving');
+   // A felirat a ténylegesen megkezdett áttűnéssel együtt vált.
    announce(manual);
-  }));
-  setTimeout(()=>{active?.remove();entering.classList.remove('cs-mb-film-entering','is-visible');
-   active=entering;changing=false;previous.disabled=false;next.disabled=false;},740);
+   entering.addEventListener('transitionend',event=>{
+    if(event.target===entering&&event.propertyName==='opacity')finish();
+   },{once:true});
+   setTimeout(finish,900);
+  };
+  requestAnimationFrame(()=>requestAnimationFrame(reveal));
+  // Ha a böngésző a rAF-et teljesen felfüggeszti, 1.5s után az új kép
+  // biztonságosan, animáció nélkül megjelenik. A későbbi rAF már nem hat.
+  setTimeout(finish,1500);
   return true;
  }
+ let recoveringFirst=false;
+ const recoverFirstImage=()=>{
+  if(!root.isConnected||!phone.matches||changing||index!==0||recoveringFirst)return;
+  recoveringFirst=true;
+  blockedUntil.set(0,Date.now()+30000);
+  // A második kép is hiányozhat. Az összes eltérő diát azonnal próbáljuk,
+  // a korábban hibásakat 30 másodpercig kihagyva.
+  void (async()=>{
+   for(let attempt=1;attempt<items.length;attempt++){
+    if(!root.isConnected||!phone.matches)return;
+    if(await show(index+1,false))return;
+   }
+   summary.textContent='A képek átmenetileg nem érhetők el. Az oldalak továbbra is megnyithatók.';
+   message.textContent='A mobilos nyitóképek jelenleg nem tölthetők be.';
+  })().finally(()=>{recoveringFirst=false;});
+ };
+ firstImageReady.then(ready=>{if(!ready)recoverFirstImage();});
+ // A desktopról mobilra átméretezett lap esetén a korábban már hibássá
+ // vált kezdőkép szintén helyreállítható, újratöltés nélkül.
+ phone.addEventListener?.('change',event=>{
+  if(!event.matches)return;
+  firstImageReady.then(ready=>{if(!ready)recoverFirstImage();});
+ });
  previous.addEventListener('click',()=>show(index-1,true));
  next.addEventListener('click',()=>show(index+1,true));
  autoplay.addEventListener('click',()=>{stopped=!stopped;announce(false)});
@@ -161,9 +253,22 @@ export function createFreshMobileHero({slides=[],createPicture,mediaItem,interva
  network?.addEventListener?.('change',networkChanged);
  reduced.addEventListener?.('change',()=>announce(false));
  const watcher=typeof IntersectionObserver==='function'?new IntersectionObserver(rows=>{
+  // A kezdőképből kigörgetve a saját képváltó automatikusan leáll.
+  // Görgetésnél nem mozgatjuk a DOM-ot és nem hozunk létre tapadó gombokat.
   visible=rows.some(row=>row.isIntersecting);
+  root.dataset.csMbVisible=visible?'true':'false';
  },{threshold:.15}):null;
  watcher?.observe(root);
+ // Régebbi Safari / beágyazott mobilböngésző IntersectionObserver nélkül:
+ // ilyenkor sem indulhat háttérben a kezdőlap filmje, ha már nem látható.
+ if(!watcher&&typeof root.getBoundingClientRect==='function'){
+  const measure=()=>{const rect=root.getBoundingClientRect();
+   visible=Boolean(phone.matches&&root.isConnected&&rect.bottom>0&&
+    rect.top<(window.innerHeight||0));
+   root.dataset.csMbVisible=visible?'true':'false';};
+  window.addEventListener('scroll',measure,{passive:true});
+  window.addEventListener('resize',measure,{passive:true});measure();
+ }
  const step=Math.min(12000,Math.max(7000,Number(intervalMs)||8000));
  const interval=setInterval(()=>{
   // A SPA ugyanazt a DOM-elemet csatolja vissza, amikor aloldalról a
@@ -177,9 +282,9 @@ export function createFreshMobileHero({slides=[],createPicture,mediaItem,interva
  async function firstOpening(){
   if(!phone.matches||reduced.matches||dataLimited||document.hidden||!active)return;
   try{if(sessionStorage.getItem('cs-mb-reboot-opened')==='1')return;}catch{}
-  const ready=await imageLoaded(active);
+  const ready=await firstImageReady;
   if(!ready||!root.isConnected||reduced.matches||dataLimited){gate.hidden=true;return;}
-  try{await active.querySelector('img')?.decode?.();}catch{}
+  await waitForDecoded(active);
   if(!root.isConnected||!phone.matches||document.hidden)return;
   // Az arany ajtó csak a valóban megjelent kép fölött kerül a DOM-képre.
   gate.hidden=false;

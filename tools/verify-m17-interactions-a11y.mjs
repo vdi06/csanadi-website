@@ -6,10 +6,10 @@ import {execFileSync} from 'node:child_process';
 
 const root=path.resolve(import.meta.dirname,'..');
 const read=rel=>fs.readFileSync(path.join(root,rel),'utf8');
-const quality=read('mobile/reboot-quality-v1-43-27.js');
-const menu=read('mobile/reboot-menu-v1-43-27.js');
+const quality=read('mobile/reboot-quality-v1-43-29.js');
+const menu=read('mobile/reboot-menu-v1-43-29.js');
 const app=read('js/app.js');
-const css=read('mobile/reboot-design-v1-43-27.css');
+const css=read('mobile/reboot-design-v1-43-29.css');
 assert.match(quality,/const changedImages=new Map\(\)/);
 assert.match(quality,/for\(const image of changedImages\.keys\(\)\)restoreImage\(image\)/);
 assert.match(quality,/image\.loading=prior\.loadingValue/);

@@ -1,6 +1,6 @@
-import {createPicture,mediaItem} from './media.js?v=1.42.18';
-import {settingNumber,isWithinConfiguredWindow} from './site-settings-2026.js?v=1.42.18';
-import {createFreshMobileHero} from '../mobile/reboot-hero-v1-43-27.js?v=1.43.27';
+import {createPicture,mediaItem} from './media.js?v=1.45';
+import {settingNumber,isWithinConfiguredWindow} from './site-settings-2026.js?v=1.45';
+import {createFreshMobileHero} from '../mobile/reboot-hero-v1-43-29.js?v=1.45';
 const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 const safeRoute=value=>typeof value==='string'&&/^#\/[a-z0-9/\-]*$/i.test(value)?value:'#/';
 export function renderPremiumHero(block){
@@ -54,6 +54,14 @@ export function renderPremiumHero(block){
   // A generált és még nem igazolt képek nem tüntethetők fel valódi iskolai fotóként.
   const illustration=!entry||entry.rights?.clearance!=='approved';
   let picture=wing.cache.get(nextIndex);
+  // Hibásan letöltött kép nem maradhat a gyorsítótárban: az Image.complete
+  // sikertelen kérésnél is true, így a következő kézi próbát is blokkolná.
+  if(picture){
+   const cachedImage=picture.querySelector('img');
+   if(cachedImage?.complete&&cachedImage.naturalWidth===0){
+    wing.cache.delete(nextIndex);picture.remove();picture=null;
+   }
+  }
   if(!picture){
    picture=createPicture(slide.mediaId,{className:'csn26-wing-picture',eager:true,sizes:'100vw',mobileId:slide.mobileMediaId});
    if(picture){wing.cache.set(nextIndex,picture);if(wing.cache.size>settingNumber('runtime.hero.pictureCacheEntries')){
@@ -75,12 +83,19 @@ export function renderPremiumHero(block){
    queuePreparation(activeIndex);
   };
   const image=picture?.querySelector('img');
-  if(image?.complete&&image.naturalWidth===0){console.warn('[Csanádi hero] Nem sikerült betölteni a képet:',slide.mediaId);return;}
+  if(image?.complete&&image.naturalWidth===0){
+   wing.cache.delete(nextIndex);
+   console.warn('[Csanádi hero] Nem sikerült betölteni a képet:',slide.mediaId);return;
+  }
   if(image&&!image.complete){
    picture.style.visibility='hidden';
    wing.pictureMount.append(picture);
    image.addEventListener('load',commit,{once:true});
-   image.addEventListener('error',()=>{picture.remove();console.warn('[Csanádi hero] Képbetöltési hiba:',slide.mediaId);},{once:true});
+   image.addEventListener('error',()=>{
+    if(wing.cache.get(nextIndex)===picture)wing.cache.delete(nextIndex);
+    picture.remove();
+    if(token===changeToken)console.warn('[Csanádi hero] Képbetöltési hiba:',slide.mediaId);
+   },{once:true});
   }else commit();
  }
  const buildWing=()=>{

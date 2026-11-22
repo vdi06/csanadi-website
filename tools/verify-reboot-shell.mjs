@@ -1,6 +1,6 @@
 /** Új mobilos címerfejléc: szimmetria, keresés, téma, scroll és adatforrás. */
 import assert from 'node:assert/strict';
-import {mobileScrollProgress,initFreshMobileShell} from '../mobile/reboot-shell-v1-43-27.js';
+import {mobileScrollProgress,mobileSocialFallback,initFreshMobileShell} from '../mobile/reboot-shell-v1-43-29.js';
 assert.equal(mobileScrollProgress(1000,3000,1000),.5);
 assert.equal(mobileScrollProgress(-8,1000,1200),0);
 assert.equal(mobileScrollProgress(9000,3000,1000),1);
@@ -26,6 +26,7 @@ class Node{
  classList={add:cls=>{this.className+=' '+cls}}
 }
 const header=new Node('header'),overlay=new Node(),oldMobile=new Node('nav');
+overlay.hidden=true;
 const legacyRow=new Node('div');legacyRow.className='brand-row';
 legacyRow.style.setProperty('display','flex');
 legacyRow.setAttribute('aria-hidden','false');
@@ -50,7 +51,9 @@ globalThis.document={documentElement:root,scrollingElement:{scrollHeight:3000},
  createElement:tag=>new Node(tag),getElementById:id=>known.get(id)||find(header,id),
  addEventListener(name,fn){documentListeners.set(name,fn)},
  dispatchEvent(event){customName=event.type}};
-globalThis.window={scrollY:0,innerHeight:1000,addEventListener(name,fn){windowListeners.set(name,fn)}};
+let viewportResize=null;
+globalThis.window={scrollY:0,innerHeight:1000,addEventListener(name,fn){windowListeners.set(name,fn)},
+ visualViewport:{addEventListener(name,fn){if(name==='resize')viewportResize=fn}}};
 globalThis.CustomEvent=class{constructor(type){this.type=type}};
 globalThis.requestAnimationFrame=fn=>fn();
 let headerGuard=null;
@@ -75,6 +78,11 @@ assert.ok(instance?.shell);assert.equal(oldMobile.isConnected,true,
  'M16: a desktophoz tartozó régi DOM-elemet a mobilmodul nem törölheti');
 assert.equal(header.children.length,3,'Mobilon a régi elemeket elrejtjük, de nem töröljük');
 const shell=header.children[0],bar=shell.children[1];
+assert.equal(mobileSocialFallback.length,2,'M22: közösségi linkek offline tartaléka');
+const offlineLinks=bar.children[0].children[0].children;
+assert.equal(offlineLinks.length,2,'M22: már a JSON betöltése előtt mindkét mobilikon látható');
+assert.match(offlineLinks[0].href,/facebook\.com\/csanadiiskola/);
+assert.match(offlineLinks[1].href,/instagram\.com\/_csanadi_/);
 assert.equal(legacyRow.style.getPropertyValue('display'),'none');
 assert.equal(legacyRow.style.getPropertyPriority('display'),'important');
 assert.equal(legacyRow.getAttribute('aria-hidden'),'true');
@@ -84,6 +92,9 @@ assert.equal(resizeTarget,shell,'A fejléc dinamikus átrendezését figyelni ke
 header.mockHeight=199;resizeCallback();
 assert.equal(root.style.values.get('--cs-mb-sticky-offset'),'199px',
  'A betöltés után több sorba törő fejléc új magassága legyen a scroll-offset');
+header.mockHeight=187;viewportResize();
+assert.equal(root.style.values.get('--cs-mb-sticky-offset'),'187px',
+ 'M21: a soft keyboard / Safari címsor viewport eseménye újramérjen változatlan szélességnél is');
 header.mockHeight=null;
 assert.equal(bar.children.length,3,'Egy sor: bal ikonok / címer / jobb ikonok');
 assert.equal(bar.children[1].id,'cs-mb-menu');

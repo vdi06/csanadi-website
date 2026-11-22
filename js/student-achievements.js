@@ -101,4 +101,4 @@ export function renderStudentAchievements(view='home'){
   const timer=setInterval(()=>{if(!section.isConnected){clearInterval(timer);return;}if(!section.querySelector(':focus-within'))mount(section,items,view);},settingNumber('runtime.timing.studentAchievementsRefreshMs'));
  }).catch(err=>{console.warn(err);section.replaceChildren(el('p','student-success-loading','A tanulói eredmények átmenetileg nem tölthetők be.'));});return section;
 }
-import {setting,settingNumber} from './site-settings-2026.js?v=1.42.18';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.45';

@@ -100,6 +100,12 @@
   transition:opacity .25s ease!important}
  html body #site-header[data-cs-mb-scrolled="true"]{background:var(--cs-mb-header)!important;
   box-shadow:0 7px 22px rgba(4,16,29,.15)!important}
+ /* Görgetéskor a kép és az alatta haladó feliratok nem üthetnek át az ikonokon. */
+ html body #site-header[data-cs-mb-scrolled="true"]{
+  background:rgba(8,27,46,.97)!important;-webkit-backdrop-filter:blur(22px)!important;
+  backdrop-filter:blur(22px)!important}
+ html[data-theme="light"] body #site-header[data-cs-mb-scrolled="true"]{
+  background:rgba(244,240,231,.97)!important}
  html body #site-header[data-cs-mb-scrolled="true"] :is(.cs-mb-school-title,.cs-mb-motto){
   max-height:0!important;opacity:0!important;overflow:hidden!important}
  html body.cs-home-header #cs39-home-shell{background:transparent!important;
@@ -126,11 +132,21 @@
   display:none!important;visibility:hidden!important;pointer-events:none!important}
  html body #global-hero .cs-mb-cinema{display:block!important;width:100%!important;
   max-width:680px!important;min-width:0!important;margin:0 auto!important;
+  position:relative!important;top:auto!important;bottom:auto!important;
   color:var(--cs-mb-ink)!important;background:var(--cs-mb-deep)!important;
   border-bottom:1px solid var(--cs-mb-stroke)!important}
+ /* B változat: a képváltó és a teljes kezelőpanel csak a nyitórészben
+    szerepel. Sem a kép, sem a nyilak nem ragadhatnak a mobil fejléc alá. */
+ html body #global-hero :is(.cs-mb-film-info,.cs-mb-film-panel,.cs-mb-film-actions){
+  position:static!important;top:auto!important;bottom:auto!important;
+  left:auto!important;right:auto!important}
  html body #global-hero .cs-mb-film-stage{width:100%!important;margin:0!important;
   position:relative!important;aspect-ratio:4/3!important;max-height:50svh!important;
-  min-height:0!important;overflow:hidden!important;background:var(--cs-mb-navy)!important;
+  min-height:0!important;overflow:hidden!important;
+  /* A bejárat eleve helyben tárolt, apró mobilképe: hálózati vagy
+     dekódolási hiba esetén sem maradhat üres, sötét képernyő. */
+  background:var(--cs-mb-navy) url('../assets/media/web/responsive/bejarat-1600-640.webp')
+   center/cover no-repeat!important;
   touch-action:pan-y!important}
  html body #global-hero .cs-mb-film-visual{position:absolute!important;inset:0!important;
   isolation:isolate!important;overflow:hidden!important}
@@ -290,6 +306,9 @@
  html body #app[data-page-kind="home"] .home-j-fold{background:var(--cs-mb-paper)!important;
   border:1px solid var(--cs-mb-stroke)!important;color:var(--cs-mb-ink)!important;
   border-radius:21px!important;overflow:hidden!important;box-shadow:0 8px 20px rgba(4,20,34,.08)!important}
+ /* A régi, egész kezdőlapot átrendező vezérlő kikerül a mobilos nézetből.
+    A kártyák saját tartalmi interakcióit nem érinti. */
+ html body #app[data-page-kind="home"] .cs41-inline-toolbar{display:none!important}
  html body #app[data-page-kind="home"] .home-j-fold-toggle{display:grid!important;
   grid-template-columns:44px minmax(0,1fr) 44px!important;
   gap:9px!important;justify-content:center!important;align-items:center!important;
@@ -340,6 +359,11 @@
   .cs-news-grid,.cs92-news-stream,.cs92-sport-fields,.cs92-information-grid){
   display:grid!important;grid-template-columns:minmax(0,1fr)!important;
   min-width:0!important;max-width:100%!important;gap:12px!important;justify-items:stretch!important}
+ /* A dokumentumtár két keskeny, nehezen olvasható hasábját egyre cseréljük. */
+ html body #app .next10-docs{display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+ html body #app .next10-doc-actions{display:flex!important;
+  align-items:center!important;justify-content:center!important;flex-wrap:wrap!important}
  html body #app :is(h1,h2,h3,h4,h5,p,li,blockquote,figcaption,label,summary,
   .card-title,.card-text){max-width:100%!important;text-align:center!important;
   overflow-wrap:anywhere!important}
@@ -400,11 +424,37 @@
  html body #app :is(.hub26-staff-person,.hub26-event-card,.cs-reading-index){
   max-width:100%!important;min-width:0!important;margin-inline:auto!important;
   text-align:center!important;overflow-wrap:anywhere!important}
+ /* A függőleges staff-toolbar-ban a régi flex-basis:240px a keresőből
+    óriási, több száz pixeles mezőt készített. */
+ html body #app .hub26-staff .staff-toolbar .staff-search{
+  flex:0 0 auto!important;width:100%!important;min-height:48px!important;
+  height:48px!important;max-height:48px!important}
  html body .csn20-language-bar{width:calc(100% - 24px)!important;max-width:680px!important;
   min-width:0!important;margin-inline:auto!important;text-align:center!important}
  html body .csn20-language-bar :is(.csn20-languages,.csn20-language-cards){
   justify-content:center!important;max-width:100%!important}
  html body .csn20-language-cards{grid-template-columns:minmax(0,1fr)!important}
+ /* v1.43.31 / A: kompakt, billentyűzettel is nyitható tájékoztatósáv.
+    A teljes nyelvváltó és a tartalom megnyitás után hozzáférhető. */
+ html body .csn20-language-bar.cs-mb-notices-compact{
+  padding:10px 12px!important;margin-block:12px!important;min-height:0!important;
+  background:var(--cs-mb-paper)!important;color:var(--cs-mb-ink)!important;
+  border:1px solid var(--cs-mb-stroke)!important;border-radius:16px!important}
+ html body .csn20-language-bar .cs-mb-notice-toggle{
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  flex-wrap:wrap!important;gap:5px 14px!important;width:100%!important;
+  min-height:48px!important;padding:9px 12px!important;border-radius:12px!important;
+  border:1px solid var(--cs-mb-stroke)!important;
+  background:rgba(221,181,111,.09)!important;color:var(--cs-mb-ink)!important;
+  font-size:clamp(15px,4vw,18px)!important;font-weight:850!important;
+  line-height:1.35!important;text-align:center!important;cursor:pointer!important}
+ html body .csn20-language-bar .cs-mb-notice-hint{
+  color:var(--cs-mb-gold)!important;font-size:13px!important;white-space:nowrap!important}
+ html body .csn20-language-bar .cs-mb-notice-body[hidden]{display:none!important}
+ html body .csn20-language-bar .cs-mb-notice-body:not([hidden]){
+  display:block!important;padding-top:12px!important}
+ html body .csn20-language-bar .cs-mb-notice-toggle:focus-visible{
+  outline:3px solid var(--cs-mb-gold)!important;outline-offset:3px!important}
 
  /* Bootstrap-komponensek új telefonos szabályai és saját nézők. */
  html body #app :is(.btn,button,summary,.page-link,.nav-link,.form-control,.form-select){
@@ -569,6 +619,19 @@
  html body #global-hero .cs-mb-film-info{padding-inline:10px!important}
  html body #site-map-overlay #cs-phone-wheel{padding-inline:9px!important}
 }
+/* M20.1: mobilon az ikonok billentyűfókusszal is láthatók. A szabály
+   csak a saját újraépített fejléc gombjait érinti. */
+@media screen and (max-width:768px){
+ html body #site-header #cs-mobile-rebuild :is(.cs-mb-social,.cs-mb-tool,.cs-mb-crest):focus-visible{
+  outline:3px solid var(--cs-mb-gold)!important;outline-offset:2px!important;
+  box-shadow:0 0 0 4px var(--cs-mb-deep)!important}
+ html body #site-header #cs-mobile-rebuild .cs-mb-bar{box-sizing:border-box!important;
+  padding-inline:0!important;max-width:100%!important;overflow:visible!important}
+ html body #site-header #cs-mobile-rebuild :is(.cs-mb-left,.cs-mb-right){
+  min-width:0!important;max-width:100%!important;overflow:visible!important}
+ html body #site-header[data-cs-mb-scrolled="true"] #cs-mobile-rebuild{
+  padding-bottom:max(8px,env(safe-area-inset-bottom,0px))!important}
+}
 @media screen and (max-width:419px){
  html body #site-header .cs-mb-bar{grid-template-columns:minmax(0,1fr) 58px minmax(0,1fr)!important;
   gap:4px!important}
@@ -629,6 +692,12 @@
 @media screen and (max-width:768px){
  html[data-cs-mb-quiet] body #global-hero :is(.cs-mb-film-picture,.cs-mb-film-door){
   transition:none!important;animation:none!important}
+ /* M20.4: csökkentett mozgás / adatforgalom / gyenge hardver esetén a
+    nagy felületű, folyamatos háttérelmosást is mellőzzük. */
+ html[data-cs-mb-quiet] body #site-header{
+  -webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+ html[data-cs-mb-quiet] body #site-header[data-cs-mb-scrolled="true"]{
+  -webkit-backdrop-filter:none!important;backdrop-filter:none!important}
 }
 @media screen and (max-width:768px) and (prefers-contrast:more){
  html body #site-header :is(.cs-mb-tool,.cs-mb-social,.cs-mb-crest),
@@ -672,6 +741,32 @@
  html body #app :is(.media26-albums,.media26-grid){
   grid-template-columns:minmax(0,1fr)!important}
  html body #app :is(.media26-album,.media26-tile){max-width:100%!important}
+}
+/* v1.43.31 / B: a kapcsolódó tartalom szűk telefonon egyetlen oszlop.
+   Ez a szabály nem érinti a tablet- és asztali rácsot. */
+@media screen and (max-width:480px){
+ html body.cs-inner-page #app .ext26-relation-grid,
+ html body.cs-inner-page #app .cs-nav-detail-tiles > .features-grid,
+ html body.cs-inner-page #app .ext26-list,
+ html body.cs-inner-page #app .ext26-perf-grid{
+  display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+  gap:12px!important;justify-items:stretch!important}
+ html body.cs-inner-page #app :is(.ext26-relation-grid,.cs-nav-detail-tiles > .features-grid,.ext26-list,.ext26-perf-grid) > *{
+  min-width:0!important;max-width:100%!important;width:100%!important;
+  margin-inline:auto!important;overflow-wrap:anywhere!important}
+}
+/* M20.3: nagyon keskeny mobilon a tabulált/több műveletes panelek
+   ne nyomják túl a teljes oldalt; a tényleg széles táblák saját régiójukban
+   vízszintesen görgethetők maradnak. */
+@media screen and (max-width:480px){
+ html body #app :is(.ext26-section,.doc26-controls,.hub26-cal-filters,.hub26-cal-actions,
+  .media26-toolbar,.media26-sport-filters,.cs-reading-index){
+  min-width:0!important;max-width:100%!important;box-sizing:border-box!important}
+ html body #app :is(.ext26-section,.doc26-controls,.hub26-cal-filters,
+  .media26-toolbar) :is(button,a,input,select){max-width:100%!important;
+  min-width:0!important;overflow-wrap:anywhere!important;white-space:normal!important}
+ html body #app :is(.table-responsive,.table-scroll,.cs-data-scroll){
+  overflow-x:auto!important;max-width:100%!important}
 }
 @media screen and (max-width:768px) and (max-height:500px){
  html body #site-map-overlay .cs-mb-menu-screen,

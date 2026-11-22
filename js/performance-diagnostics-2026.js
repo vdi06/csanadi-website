@@ -1,4 +1,4 @@
-import {formatBytes as bytes} from './format-bytes.js?v=1.42.18';
+import {formatBytes as bytes} from './format-bytes.js?v=1.45';
  
 let panel=null;
 let pending=null;
@@ -175,4 +175,4 @@ function finish(route,ok){
 }
 export function markRouteRendered(route,{found=true}={}){finish(route,found);}
 export function markRouteError(route){finish(route,false);}
-import {settingNumber} from './site-settings-2026.js?v=1.42.18';
+import {settingNumber} from './site-settings-2026.js?v=1.45';

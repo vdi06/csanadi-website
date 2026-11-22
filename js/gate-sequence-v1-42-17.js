@@ -1,6 +1,6 @@
 /* Static-host compatible, nine-photo entrance. One source of timings: json/config.json.
    The same real-world doorway stays fixed while its two leaves swing inward. */
-import {setting} from './site-settings-2026.js?v=1.42.18';
+import {setting} from './site-settings-2026.js?v=1.45';
 let active=false;
 const tag=(type,cls='',text)=>{const node=document.createElement(type);node.className=cls;if(text!==undefined)node.textContent=text;return node;};
 function dismissPrelude(){document.documentElement.classList.remove('cs-gate-pending');document.getElementById('cs-gate-prelude')?.remove();}

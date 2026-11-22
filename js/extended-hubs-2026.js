@@ -1,5 +1,5 @@
-import {formatBytes} from './format-bytes.js?v=1.42.18';
-import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.43.3';
+import {formatBytes} from './format-bytes.js?v=1.45';
+import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.45';
 
 
  
@@ -225,4 +225,4 @@ export function enhanceGallery(root){
  const counter=dialog.querySelector('.media26-lightbox-count');counter?.setAttribute('aria-live','polite');
  const link=make('a','ext26-gallery-skip','Ugrás a galéria képrácsához ↓');link.href='#media26-library-tiles';library.querySelector('.media26-grid')?.setAttribute('id','media26-library-tiles');library.querySelector('.media26-heading')?.after(link);
 }
-import {setting,settingNumber} from './site-settings-2026.js?v=1.42.18';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.45';

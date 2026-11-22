@@ -1,38 +1,38 @@
-import {initRound10Enhancements} from './round10-enhancements.js?v=1.42.18';
-import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.42.21';
-import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.42.18';
-import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=1.42.21';
-import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=1.42.18';
-import {setupSmartSearch} from './search-j-2026.js?v=1.42.18';
-import {installLanguageHighlights} from './language-20.js?v=1.42.18';
-import {enhanceInlineHomeEditor} from './home-inline-editor-v1-41-4.js?v=1.43.6';
-import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,syncMobileEmbeddedSections,initRound29Diagnostics} from './round29-home.js?v=1.42.18';
-import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=1.42.18';
-import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=1.43.6';
-import {initEnhancedInteractions} from './interactions-be-2026.js?v=1.42.18';
-import {renderMediaGallery} from './media-gallery-h-2026.js?v=1.42.18';
-import {renderDocumentCollections} from './document-collections-2026.js?v=1.42.18';
-import {renderPageMedia} from './page-media-2026.js?v=1.42.18';
-import {useSiteSettings,settingNumber} from './site-settings-2026.js?v=1.42.18';
-import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.42.18';
-import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.42.21';
-import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.42.18';
-import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=1.42.18';
+import {initRound10Enhancements} from './round10-enhancements.js?v=1.45';
+import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.45';
+import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.45';
+import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=1.45';
+import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=1.45';
+import {setupSmartSearch} from './search-j-2026.js?v=1.45';
+import {installLanguageHighlights} from './language-20.js?v=1.45';
+import {enhanceInlineHomeEditor} from './home-inline-editor-v1-41-4.js?v=1.45';
+import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,syncMobileEmbeddedSections,initRound29Diagnostics} from './round29-home.js?v=1.45';
+import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=1.45';
+import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=1.45';
+import {initEnhancedInteractions} from './interactions-be-2026.js?v=1.45';
+import {renderMediaGallery} from './media-gallery-h-2026.js?v=1.45';
+import {renderDocumentCollections} from './document-collections-2026.js?v=1.45';
+import {renderPageMedia} from './page-media-2026.js?v=1.45';
+import {useSiteSettings,settingNumber} from './site-settings-2026.js?v=1.45';
+import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.45';
+import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.45';
+import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.45';
+import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=1.45';
  
-import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.42.18';
-import {renderBlock,dom,listCards} from './blocks.js?v=1.43.11';
-import {createAuthoringWorkbench} from './editor-workbench-v1-42-18.js?v=1.43.3';
-import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=1.42.18';
-import {renderSportsSuccesses} from './sports-successes.js?v=1.42.18';
-import {renderStudentAchievements} from './student-achievements.js?v=1.42.18';
-import {renderDailySportsNews} from './daily-sport-news.js?v=1.42.18';
-import {renderDesktopTree} from '../desktop/navigation.js?v=1.42.18';
-import {renderMobileTree,createPhoneRadial} from '../mobile/reboot-menu-v1-43-27.js?v=1.43.27';
-import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.42.22';
-import {resolveVisualDraft,attachVisualEditor,visualEditingEnabled} from './visual-editor-v1-42-24.js?v=1.43.3';
-import {validateEditablePage} from '../tools/page-draft-core-v1-42-23.js?v=1.42.25';
-import {createSubpageHero} from './subpages-v1.js?v=1.42.18';
-import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.42.21';
+import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.45';
+import {renderBlock,dom,listCards} from './blocks.js?v=1.45';
+import {createAuthoringWorkbench} from './editor-workbench-v1-42-18.js?v=1.45';
+import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=1.45';
+import {renderSportsSuccesses} from './sports-successes.js?v=1.45';
+import {renderStudentAchievements} from './student-achievements.js?v=1.45';
+import {renderDailySportsNews} from './daily-sport-news.js?v=1.45';
+import {renderDesktopTree} from '../desktop/navigation.js?v=1.45';
+import {renderMobileTree,createPhoneRadial} from '../mobile/reboot-menu-v1-43-29.js?v=1.45';
+import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.45';
+import {resolveVisualDraft,attachVisualEditor,visualEditingEnabled} from './visual-editor-v1-42-24.js?v=1.45';
+import {validateEditablePage} from '../tools/page-draft-core-v1-42-23.js?v=1.45';
+import {createSubpageHero} from './subpages-v1.js?v=1.45';
+import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.45';
 const app=document.getElementById('app');
 const c3Params=new URLSearchParams(location.search);
 const c3Preview=c3Params.get('preview')==='1';
@@ -302,6 +302,18 @@ function positionCompassSubmenu(){
  siteMapPanel.style.top=Math.round(y)+'px';
  siteMapPanel.dataset.anchorSide=preferred;
 }
+function visibleDialogControls(root,selector){
+ return [...root.querySelectorAll(selector)].filter(node=>{
+  if(node.disabled||node.getAttribute('aria-hidden')==='true'||
+   node.getAttribute('aria-disabled')==='true'||
+   node.closest('[hidden],[inert],[aria-hidden="true"]')||!node.getClientRects().length)return false;
+  if(typeof getComputedStyle==='function'){
+   const style=getComputedStyle(node);
+   if(style.visibility!=='visible'||style.display==='none'||style.contentVisibility==='hidden')return false;
+  }
+  return true;
+ });
+}
 function openSiteMap(){
  if(!catalog)return;
  const openingFocus=document.activeElement;
@@ -329,11 +341,11 @@ function openSiteMap(){
 }
 siteMap.addEventListener('keydown',event=>{
  if(event.key!=='Tab'||siteMap.hidden)return;
- const active=[...siteMap.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(node=>node.getClientRects().length&&node.getAttribute('aria-hidden')!=='true'&&!node.closest('[hidden]'));
+ const active=visibleDialogControls(siteMap,'a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])');
  if(!active.length)return;
  const first=active[0],last=active[active.length-1];
- if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
- if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+ if(event.shiftKey&&(document.activeElement===first||!siteMap.contains(document.activeElement))){event.preventDefault();last.focus();}
+ if(!event.shiftKey&&(document.activeElement===last||!siteMap.contains(document.activeElement))){event.preventDefault();first.focus();}
 });
 function closeSiteMap(restoreFocus=true){
  if(siteMap.hidden)return;
@@ -624,8 +636,8 @@ function renderRoute(options={}){
   document.body.classList.toggle('cs-inner-page',kind!=='home');
   releaseSpaFeatureStyles();
   const inEditor=visualEditingEnabled()&&!c3Preview;
- const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.43.27');
-  const localRelease=/^csanadi-r-v\d+\.\d+\.\d+$/.test(version)?'csanadi-website-'+version.slice('csanadi-r-'.length):'csanadi-website-v1.43.1';
+ const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.45');
+  const localRelease=/^csanadi-r-v\d+\.\d+(?:\.\d+)?$/.test(version)?'csanadi-website-'+version.slice('csanadi-r-'.length):'csanadi-website-v1.45';
   const previewDraft=node&&node.depth!==0&&!isSpaFeature(node.page)&&(inEditor||(c3Preview&&!c3PreviewBase))?resolveVisualDraft(node.page,'json/'+node.path,localRelease):null;
   const activeDraft=c3Preview&&!c3PreviewBase&&c3Overlay?.path==='json/'+node?.path?c3Overlay.page:previewDraft?.page;
   app.replaceChildren(node?(isSpaFeature(node.page)?featurePlaceholder(node.page):node.depth===0?homePage(node):contentPage(node,activeDraft)):errorPage());
@@ -699,7 +711,14 @@ function markSearchTarget(element){
  for(let d=element.closest('details');d;d=d.parentElement?.closest('details'))d.open=true;
  const target=element.closest('.dfg-news-card,.cs-news-card,.hub26-event-card,.media26-tile,.media26-video-card,.doc-card,.feature-card,.student-success-card,.body-card')||element;
  target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'center',inline:'nearest'});
- target.classList.add('cs-search-found');target.setAttribute('tabindex','-1');target.focus({preventScroll:true});
+ target.classList.add('cs-search-found');
+ // A keresési ugrás nem veheti ki tartósan a gombot vagy hivatkozást a
+ // normál Tab-sorrendből; a nem fókuszálható címen átmeneti tabindex kell.
+ if(!target.matches('a[href],button,input,select,textarea,summary,[tabindex]')){
+  target.setAttribute('tabindex','-1');
+  target.addEventListener('blur',()=>target.removeAttribute('tabindex'),{once:true});
+ }
+ target.focus({preventScroll:true});
  setTimeout(()=>target.classList.remove('cs-search-found'),settingNumber('search.highlightDurationMs'));
 }
 function searchTargetMatch(root,entry,phrase){
@@ -847,8 +866,8 @@ function wireEvents(){
     if(e.key==='Escape'&&!siteMap.hidden){if(!phoneWheel.back())closeSiteMap();}
     if(e.key==='Escape'&&!mobile.hidden){closeMobile();menuBtn.focus();}
     if(!dialog.hidden&&e.key==='Tab'){
-      const focusables=Array.from(dialog.querySelectorAll('button,input,a[href]')).filter(x=>x.offsetParent!==null);
-      if(focusables.length){const first=focusables[0],last=focusables[focusables.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}
+      const focusables=visibleDialogControls(dialog,'button,input,select,textarea,a[href]');
+      if(focusables.length){const first=focusables[0],last=focusables[focusables.length-1];if(e.shiftKey&&(document.activeElement===first||!dialog.contains(document.activeElement))){e.preventDefault();last.focus();}else if(!e.shiftKey&&(document.activeElement===last||!dialog.contains(document.activeElement))){e.preventDefault();first.focus();}}
     }
   });
   menuBtn.addEventListener('click',()=>{if(!siteMap.hidden)closeSiteMap();else openSiteMap();});

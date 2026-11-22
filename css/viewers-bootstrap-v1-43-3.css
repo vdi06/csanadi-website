@@ -58,3 +58,56 @@ html[data-theme=dark] .cs43-viewer .btn-outline-secondary{--bs-btn-color:#e9eef7
  .cs43-image-viewer .modal-footer{justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){.cs43-viewer .carousel-item{transition:none!important}.cs43-viewer .modal-dialog{transition:none!important}}
+/* Offline tartalék: a saját kép- és dokumentumnéző internet/Bootstrap CDN nélkül is működik. */
+.cs-content-table-wrap{max-width:100%;overflow-x:auto;margin:14px auto 20px;
+ border:1px solid var(--line);border-radius:10px;-webkit-overflow-scrolling:touch}
+.cs-content-table{border-collapse:collapse;width:100%;min-width:300px;text-align:center;color:var(--ink)}
+.cs-content-table :is(th,td){padding:10px 12px;text-align:center;border-bottom:1px solid var(--line);
+ overflow-wrap:normal;white-space:nowrap}
+.cs-content-table th{background:color-mix(in srgb,var(--gold) 16%,var(--card));font-weight:850}
+.cs-content-table tr:last-child td{border-bottom:0}
+.cs43-fallback-backdrop{position:fixed;inset:0;background:#030d19c7;z-index:2699}
+.cs43-viewer.cs43-fallback{position:fixed;inset:0;z-index:2700;display:none;align-items:center;
+ justify-content:center;overflow-y:auto;padding:12px;box-sizing:border-box}
+.cs43-viewer.cs43-fallback.show{display:flex}
+.cs43-viewer.cs43-fallback .modal-dialog{position:relative;width:min(1100px,100%);max-width:100%;
+ max-height:calc(100dvh - 24px);margin:auto;min-width:0}
+.cs43-viewer.cs43-fallback.cs43-image-viewer .modal-dialog{width:min(1320px,100%)}
+.cs43-viewer.cs43-fallback .modal-content{display:flex;flex-direction:column;width:100%;
+ max-height:calc(100dvh - 24px);min-height:0}
+.cs43-viewer.cs43-fallback :is(.modal-header,.modal-footer){display:flex;align-items:center;
+ flex-wrap:wrap;gap:9px;padding:12px 15px;flex:0 0 auto}
+.cs43-viewer.cs43-fallback .modal-header{justify-content:space-between}
+.cs43-viewer.cs43-fallback .modal-body{overflow:auto;min-height:0;max-height:none;flex:1 1 auto;padding:14px}
+.cs43-viewer.cs43-fallback .modal-footer{justify-content:space-between}
+.cs43-viewer.cs43-fallback .modal-title{margin:0;font-size:clamp(17px,2vw,23px)}
+.cs43-viewer.cs43-fallback :is(.btn,.btn-close){display:inline-flex;align-items:center;
+ justify-content:center;min-height:40px;padding:8px 12px;cursor:pointer;border-radius:10px;
+ font:inherit;font-size:14px;font-weight:700;text-decoration:none;max-width:100%}
+.cs43-viewer.cs43-fallback .btn{border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.cs43-viewer.cs43-fallback .btn-primary{background:#176249;color:white;border-color:#176249}
+.cs43-viewer.cs43-fallback.cs43-image-viewer .btn{background:#23384e;color:#fff;border-color:#b29a67}
+.cs43-viewer.cs43-fallback .btn-close{min-width:44px;color:inherit;background:transparent;
+ border:1px solid currentColor}
+.cs43-viewer.cs43-fallback .btn-close:before{content:'×';font-size:27px;line-height:1}
+.cs43-viewer.cs43-fallback .btn:disabled{opacity:.4;cursor:not-allowed}
+.cs43-viewer.cs43-fallback .badge{display:inline-flex;align-items:center;border-radius:99px;
+ padding:5px 9px;background:#314960;color:#fff;font-size:12px}
+.cs43-viewer.cs43-fallback .alert{padding:10px;border:1px solid var(--line);border-radius:8px}
+.cs43-viewer.cs43-fallback .d-flex{display:flex;align-items:center;gap:8px}
+.cs43-viewer.cs43-fallback .flex-wrap{flex-wrap:wrap}
+.cs43-viewer.cs43-fallback .carousel-inner{position:relative;width:100%;overflow:hidden}
+.cs43-viewer.cs43-fallback .carousel-item{display:none;width:100%}
+.cs43-viewer.cs43-fallback .carousel-item.active{display:block}
+.cs43-viewer.cs43-fallback .cs43-photo-carousel{position:relative}
+.cs43-viewer.cs43-fallback .cs43-photo-carousel :is(.carousel-control-prev,.carousel-control-next){
+ position:absolute;z-index:3;display:grid;place-items:center;cursor:pointer}
+.cs43-viewer.cs43-fallback .cs43-photo-carousel :is(.carousel-control-prev,.carousel-control-next)[hidden]{display:none}
+.cs43-viewer.cs43-fallback .cs43-gallery-image{display:block}
+@media(max-width:575.98px){
+ .cs43-viewer.cs43-fallback{padding:0}
+ .cs43-viewer.cs43-fallback .modal-dialog,.cs43-viewer.cs43-fallback .modal-content{width:100%;
+  max-height:100dvh;min-height:100dvh;border-radius:0}
+ .cs43-viewer.cs43-fallback .modal-header,.cs43-viewer.cs43-fallback .modal-footer{padding:8px 10px}
+ .cs43-viewer.cs43-fallback .modal-body{padding:7px}
+}

@@ -2,7 +2,7 @@
 
 
  
-import {renderDigitalClock} from './experience-2026.js?v=1.42.18';
+import {renderDigitalClock} from './experience-2026.js?v=1.45';
 const BASE='json/data/';
 const ZONE=()=>setting('modules2026.clock.timezone');
 const e=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -25,7 +25,7 @@ async function load(name){const r=await fetch(BASE+name,{cache:'no-store'});if(!
 const heading=(over,title,desc)=>{const box=e('div','experience-section-head');add(box,e('span','experience-eyebrow',over),e('h2','experience-title',title));if(desc)box.append(e('p','experience-lead',desc));return box;};
 
  
-import {showGateEntrance} from './gate-sequence-v1-42-17.js?v=1.43.6';
+import {showGateEntrance} from './gate-sequence-v1-42-17.js?v=1.45';
 export function openEntrancePortal(options={}){showGateEntrance(options);}
 
 function bindPortalButton(){const replay=document.getElementById('portal-replay');if(replay&&!replay.dataset.wired){replay.dataset.wired='1';replay.addEventListener('click',()=>openEntrancePortal({force:true}));}}
@@ -189,4 +189,4 @@ function embedBlock(items){const eligible=items.filter(x=>publishedChannel(x)&&x
 export function initSocialLinks(){bindPortalButton();socialData().then(v=>{for(const id of ['social-header','social-footer']){const mount=document.getElementById(id);if(mount)mount.replaceChildren(socialLinks(v.items,true));}}).catch(err=>console.warn('Közösségi adatok:',err.message));}
 export function renderSocialSection(){const s=e('section','social-feature-section section-wrap'),c=e('div','container-xxl');add(c,heading('KÖZÖSSÉG ÉS MEGOSZTÁS','Kapcsolódjunk az iskola közösségéhez','Közösségi elérhetőségek és az oldal megosztása – az adatvédelem tiszteletben tartásával.'));const box=e('div','social-feature-box'),intro=e('div','social-feature-copy'),data=e('div','social-feature-items');add(intro,e('h3','','Egy történet több felületen is folytatódhat.'),e('p','','A hitelesített intézményi profilok gyorselérésként jelennek meg. A beágyazásokhoz a látogató külön hozzájárulása szükséges.'),btn('Az oldal megosztása','hub26-pill',nativeShare));data.append(note('Közösségi adatok betöltése…'));add(box,intro,data);c.append(box);s.append(c);
  socialData().then(v=>{data.replaceChildren(socialLinks(v.items),embedBlock(v.items));}).catch(err=>{data.textContent='Közösségi modul átmenetileg nem elérhető: '+err.message;});return s;}
-import {setting,settingNumber} from './site-settings-2026.js?v=1.42.18';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.45';

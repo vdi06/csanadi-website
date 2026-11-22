@@ -24,10 +24,13 @@ const button = (label, css = 'btn btn-outline-secondary') => {
   return element;
 };
 function modalShell(label, contentClass, size = 'modal-xl') {
-  if (!window.bootstrap?.Modal) throw new Error('A Bootstrap párbeszédablak nem érhető el.');
+  // A teljes ZIP hálózat nélkül is használható: ha a külső Bootstrap bundle
+  // nem töltődött be, a néző saját, akadálymentes párbeszédablakkal működik.
+  const hasBootstrap = Boolean(window.bootstrap?.Modal);
   const id = 'cs43-modal-title-' + ++serial;
-  const root = el('div', 'modal fade cs43-viewer ' + contentClass);
+  const root = el('div', 'modal fade cs43-viewer ' + contentClass + (hasBootstrap ? '' : ' cs43-fallback'));
   root.tabIndex = -1;
+  root.setAttribute('role', 'dialog');
   root.setAttribute('aria-labelledby', id);
   root.setAttribute('aria-modal', 'true');
   const dialog = el('div', 'modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down ' + size);
@@ -40,14 +43,65 @@ function modalShell(label, contentClass, size = 'modal-xl') {
   const footer = el('div', 'modal-footer');
   add(content, header, body, footer); dialog.append(content); root.append(dialog);
   root.dataset.bsTheme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
-  const themeObserver = new MutationObserver(() => {
+  const themeObserver = typeof MutationObserver === 'function' ? new MutationObserver(() => {
     root.dataset.bsTheme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
-  });
-  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  }) : null;
+  themeObserver?.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   document.body.append(root);
-  const instance = new window.bootstrap.Modal(root, { backdrop: true, keyboard: true, focus: true });
+  let instance;
+  if (hasBootstrap) {
+    instance = new window.bootstrap.Modal(root, { backdrop: true, keyboard: true, focus: true });
+  } else {
+    const priorFocus = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
+    let open = false;
+    let backdrop;
+    let inerted = [];
+    const focusable = () => [...root.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled])')]
+      .filter(node => node.getClientRects().length);
+    const onKey = event => {
+      if (event.key === 'Escape') { event.preventDefault(); instance.hide(); }
+      if (event.key !== 'Tab') return;
+      const nodes = focusable(); if (!nodes.length) return;
+      if (event.shiftKey && document.activeElement === nodes[0]) { event.preventDefault(); nodes.at(-1).focus(); }
+      else if (!event.shiftKey && document.activeElement === nodes.at(-1)) { event.preventDefault(); nodes[0].focus(); }
+    };
+    instance = {
+      show() {
+        if (open) return;
+        open = true;
+        backdrop = el('div', 'cs43-fallback-backdrop'); document.body.append(backdrop);
+        root.classList.add('show'); root.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        inerted = [];
+        for (const node of document.body.children) {
+          if (node !== root && node !== backdrop && !node.inert) {
+            node.inert = true; inerted.push(node);
+          }
+        }
+        root.addEventListener('keydown', onKey);
+        queueMicrotask(() => { if (open) { close.focus({ preventScroll: true }); root.dispatchEvent(new Event('shown.bs.modal')); } });
+      },
+      hide() {
+        if (!open) return;
+        open = false; root.classList.remove('show'); root.style.display = 'none';
+        backdrop?.remove(); document.body.style.overflow = previousOverflow;
+        for (const node of inerted) if (node.isConnected) node.inert = false;
+        inerted = [];
+        root.removeEventListener('keydown', onKey);
+        root.dispatchEvent(new Event('hidden.bs.modal'));
+        if (priorFocus?.isConnected) priorFocus.focus({ preventScroll: true });
+      },
+      dispose() { backdrop?.remove(); root.removeEventListener('keydown', onKey);
+        for (const node of inerted) if (node.isConnected) node.inert = false;
+        inerted = []; }
+    };
+    root.addEventListener('click', event => {
+      if (event.target === root || event.target.closest('[data-bs-dismiss="modal"]')) instance.hide();
+    });
+  }
   root.addEventListener('hidden.bs.modal', () => {
-    themeObserver.disconnect(); instance.dispose(); root.remove();
+    themeObserver?.disconnect(); instance.dispose(); root.remove();
   }, { once: true });
   return { root, header, body, footer, title, instance };
 }
@@ -240,7 +294,24 @@ export function openImageViewer(items, index = 0, options = {}) {
   add(footer, left, download);
   let api;
   root.addEventListener('shown.bs.modal', () => {
-    api = window.bootstrap.Carousel.getOrCreateInstance(carousel, { interval: false, touch: true, keyboard: true, wrap: true });
+    if (window.bootstrap?.Carousel) {
+      api = window.bootstrap.Carousel.getOrCreateInstance(carousel, { interval: false, touch: true, keyboard: true, wrap: true });
+    } else {
+      const select = delta => {
+        const before = current();
+        const target = (before + delta + safe.length) % safe.length;
+        inner.children[before]?.classList.remove('active');
+        inner.children[target]?.classList.add('active');
+        carousel.dispatchEvent(new CustomEvent('slid.bs.carousel', { detail: { to: target }, bubbles: true }));
+      };
+      previous.addEventListener('click', () => select(-1));
+      next.addEventListener('click', () => select(1));
+      root.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft') { event.preventDefault(); select(-1); }
+        if (event.key === 'ArrowRight') { event.preventDefault(); select(1); }
+      });
+      api = { dispose() {} };
+    }
   }, { once: true });
   root.addEventListener('hidden.bs.modal', () => { api?.dispose(); options.onClose?.(); }, { once: true });
   instance.show();

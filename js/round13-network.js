@@ -4,8 +4,11 @@
  const source=document.currentScript?.src||'';
  const loadedVersion=new URL(source||location.href,location.href).searchParams.get('v')||'';
  const parseVersion=value=>{
-  const m=/^csanadi-r-v(\d+)\.(\d+)\.(\d+)(?:-content-(\d{8}-\d{6}))?$/.exec(value||'');
-  return m?{sem:m.slice(1,4).map(Number),stamp:m[4]||''}:null;
+  // 1.44-től a nyilvános verzió kizárólag főverzió.alverzió.
+  // A korábbi háromrészes számokat a frissítési összehasonlítás továbbra
+  // is felismeri, hogy a 1.43.33 -> 1.44 átmenet ne ragadhasson be.
+  const m=/^csanadi-r-v(\d+)\.(\d+)(?:\.(\d+))?(?:-content-(\d{8}-\d{6}))?$/.exec(value||'');
+  return m?{sem:[Number(m[1]),Number(m[2]),Number(m[3]||0)],stamp:m[4]||''}:null;
  };
  const newer=(candidate,current)=>{
   const a=parseVersion(candidate),b=parseVersion(current);

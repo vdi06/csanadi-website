@@ -1,7 +1,7 @@
 /** Új mobilprofilok, billentyűzetes szűrés, adatforgalom és desktop állapot. */
 import assert from 'node:assert/strict';
-import {mobileIndexForKey,mobileResourceProfile,initFreshMobileQuality}
- from '../mobile/reboot-quality-v1-43-27.js';
+import {mobileIndexForKey,mobileResourceProfile,mobileActionIsVisible,initFreshMobileQuality}
+ from '../mobile/reboot-quality-v1-43-29.js';
 assert.equal(mobileIndexForKey(0,4,'ArrowLeft'),3);
 assert.equal(mobileIndexForKey(3,4,'ArrowRight'),0);
 assert.equal(mobileIndexForKey(2,4,'Home'),0);
@@ -12,6 +12,12 @@ assert.deepEqual(mobileResourceProfile({mobile:false,saveData:true}),{active:fal
 assert.deepEqual(mobileResourceProfile({mobile:true,motion:true}),{active:true,limited:false,quiet:true});
 assert.deepEqual(mobileResourceProfile({memory:2}),{active:true,limited:true,quiet:true});
 assert.deepEqual(mobileResourceProfile({network:'slow-2g'}),{active:true,limited:true,quiet:true});
+assert.equal(mobileActionIsVisible({hidden:true}),false);
+assert.equal(mobileActionIsVisible({disabled:true}),false);
+assert.equal(mobileActionIsVisible({getAttribute:()=> 'true'}),false);
+assert.equal(mobileActionIsVisible({getAttribute:()=>null,getClientRects:()=>[]}),false,
+ 'M22: a CSS-sel elrejtett Bootstrap gombot ne válassza ki a billentyűnavigáció');
+assert.equal(mobileActionIsVisible({getAttribute:()=>null,getClientRects:()=>[{width:42}]}),true);
 
 const documentListeners=new Map(),windowListeners=new Map(),mediaListeners=new Map();
 const root={dataset:{},flags:new Set(),toggleAttribute(name,condition){
@@ -77,6 +83,13 @@ windowListeners.get('pageshow')();
 let prevented=false;
 documentListeners.get('keydown')({target:buttons[1],key:'ArrowRight',preventDefault(){prevented=true}});
 assert.equal(globalThis.focused,buttons[0]);assert.equal(prevented,true);
+const invisibleButton=makeButton('Rejtett panel');
+invisibleButton.getClientRects=()=>[];
+buttons.push(invisibleButton);
+documentListeners.get('keydown')({target:buttons[1],key:'ArrowRight',preventDefault(){}});
+assert.equal(globalThis.focused,buttons[0],
+ 'M22: rejtett Bootstrap-panel gombja helyett látható elem legyen a következő');
+buttons.pop();
 mobile.matches=false;mediaListeners.get('mobile')();
 assert.equal(root.flags.has('data-cs-mb-quiet'),false);
 assert.equal(img.loading,'','Asztali méretre visszaváltva az eredeti képletöltési beállítás álljon helyre');

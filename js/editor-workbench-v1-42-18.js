@@ -7,7 +7,7 @@ export function createAuthoringWorkbench(){
  const status=document.createElement('p');status.className='cs-editor-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');
  button.addEventListener('click',async()=>{
   button.disabled=true;status.textContent='A szerkesztő betöltése…';
-  try{const {openMaintenanceStudio}=await import('../tools/maintenance-studio.js?v=1.43.3');await openMaintenanceStudio();status.textContent='A szerkesztő megnyílt. Az adatok nem kerülnek automatikusan a tárhelyre.';}
+  try{const {openMaintenanceStudio}=await import('../tools/maintenance-studio.js?v=1.45');await openMaintenanceStudio();status.textContent='A szerkesztő megnyílt. Az adatok nem kerülnek automatikusan a tárhelyre.';}
   catch(error){status.textContent='A szerkesztő nem indult: '+error.message;console.error(error);}
   finally{button.disabled=false;}
  });

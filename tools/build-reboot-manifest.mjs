@@ -23,9 +23,9 @@ for(const item of ['index.html','script.js','service-worker.js','offline.html','
  files[item]={sizeBytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex')};
 }
 const manifest={...previous,
- release:'csanadi-website-v1.43.27-m18-2-mobile-single-row-scroll-fix-preview',
- date:'2026-11-20',
- notes:'V1.43.27 M18.2 mobilos újrajavítás. A korábbi kód külön KRÉTA sort és régi asztali kompakt képváltót tartott fenn. Mobilon egyetlen fejlécikonsor jelenik meg (Facebook, Instagram, KRÉTA mint K ikon, címer középen, keresés, téma); görgetéskor a régi fejléc minden közvetlen gyermeke és a desktop képváltó rejtve marad, újonnan létrejövő elem esetén is. Az eredeti inline és ARIA állapotok desktopon visszaállnak. A saját mobil filmes képváltó megmarad. Kizárólag a mobilfájlok kettője módosult érdemben; a közös belépési pontokon csak cache-verzió frissült. M18.2 DOM-, statikus, reszponzív és visszaállítási próbák; valós iOS/Android és pixelszintű ellenőrzés továbbra is NYITOTT. Nincs FTP- vagy GitHub-közzététel; v1.43.25 és v1.43.26 érintetlen.',
+ release:'csanadi-website-1.45',
+ date:'2026-11-22',
+ notes:'1.45: célzott működési, mobil/desktop, reszponzív, akadálymentességi és vizuális javítások az 1.44 változatlan megőrzésével. Közösségi linkek hibatűrő forráskezelése, több hibás mobilnyitókép átugrása, fókusz és modális ablakok javítása, 1.45-re frissített cache-hivatkozások, két- és háromtagú offline verziók migrációja, új kis képernyős/kontraszt/fókusz stíluslap. Célzott DOM- és integritási ellenőrzések, SHA-256 leltár; FTP/GitHub közzététel nem történt. A teljes fizikai iPhone/Android és minden aloldal valamennyi interakciójának böngészős ellenőrzése nyitott.',
  files:Object.fromEntries(Object.entries(files).sort(([a],[b])=>a.localeCompare(b,'en')))
 };
 fs.writeFileSync(path.join(base,'release-manifest.json'),JSON.stringify(manifest,null,2)+'\n');

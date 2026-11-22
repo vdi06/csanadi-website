@@ -11,12 +11,33 @@ export function mobileScrollProgress(top=0,height=0,viewport=0){
  const available=Math.max(0,height-viewport);
  return available>0?Math.min(1,Math.max(0,top/available)):0;
 }
+/** M20.1: egyetlen, jól tesztelhető küszöb a mobilfejléc két állapotához. */
+export const mobileHeaderScrolled=(top=0,threshold=36)=>Number.isFinite(top)&&top>threshold;
 
 function socialAnchor({label,url,glyph}){
  const a=make('a','cs-mb-social',glyph);
  a.href=url;a.target='_blank';a.rel='noopener noreferrer';
  a.setAttribute('aria-label',label);a.title=label;
  return a;
+}
+// M22.1: a hivatalosan rögzített linkek hálózat nélkül is megmaradnak.
+// Sikeres adatbetöltés után továbbra is a közös JSON az elsődleges forrás.
+export const mobileSocialFallback=Object.freeze([
+ {label:'Facebook – Csanádi Sportiskola',url:'https://www.facebook.com/csanadiiskola',glyph:'f'},
+ {label:'Instagram – Csanádi Sportiskola',url:'https://www.instagram.com/_csanadi_/?hl=hu',glyph:'◎'}
+]);
+/** A hibás vagy részlegesen publikált adat sem tüntetheti el egyik ikont sem. */
+export function mobileSocialLinks(items=[]){
+ const platforms=['Facebook','Instagram'];
+ return platforms.map((platform,index)=>{
+  const match=Array.isArray(items)?items.find(item=>{
+   if(item?.platform!==platform||item.status!=='published'||item.schoolVerified!==true)return false;
+   try{const url=new URL(item.url);return url.protocol==='https:'&&Boolean(url.hostname)&&
+    !url.username&&!url.password;}catch{return false;}
+  }):null;
+  return match?{label:match.label||mobileSocialFallback[index].label,url:match.url,
+   glyph:mobileSocialFallback[index].glyph}:mobileSocialFallback[index];
+ });
 }
 async function hydrateSocial(container){
  // Közös, ellenőrzött adatkészlet; nem a desktop fejléc DOM-ját másoljuk.
@@ -26,10 +47,7 @@ async function hydrateSocial(container){
   if(!response.ok)throw Error('HTTP '+response.status);
   const data=await response.json();
   if(!container.isConnected||!Array.isArray(data.items))return;
-  const selected=data.items.filter(item=>item.status==='published'&&item.schoolVerified===true&&
-   ['Facebook','Instagram'].includes(item.platform)&&/^https:\/\//.test(item.url||''));
-  container.replaceChildren(...selected.map(item=>socialAnchor({
-   label:item.label||item.platform,url:item.url,glyph:item.platform==='Facebook'?'f':'◎'})));
+  container.replaceChildren(...mobileSocialLinks(data.items).map(socialAnchor));
  }catch(error){console.warn('A mobilos közösségi linkek adatforrása nem elérhető:',error);}
 }
 
@@ -83,6 +101,7 @@ export function initFreshMobileShell(){
  const bar=make('div','cs-mb-bar');
  const left=make('nav','cs-mb-left');left.setAttribute('aria-label','Iskolai külső hivatkozások');
  const socials=make('div','cs-mb-socials');
+ socials.replaceChildren(...mobileSocialFallback.map(socialAnchor));
  const kreta=socialAnchor({label:'KRÉTA – elektronikus napló',
   url:'https://klik200346001.e-kreta.hu/',glyph:'K'});
  // Mobilon a KRÉTA kizárólag ikonos, a teljes felirat az elérhető névben marad.
@@ -109,7 +128,14 @@ export function initFreshMobileShell(){
  const status=make('p','visually-hidden');status.id='cs-mb-live';
  status.setAttribute('aria-live','polite');status.setAttribute('role','status');shell.append(status);
 
- crest.addEventListener('click',()=>document.dispatchEvent(new CustomEvent('csanadi:menu-toggle')));
+ crest.addEventListener('click',()=>{
+  document.dispatchEvent(new CustomEvent('csanadi:menu-toggle'));
+  // A menüt az alkalmazás szinkron módon kapcsolja; observer nélkül is
+  // kövesse a címer gomb elérhetőségi állapota az eredményt.
+  queueMicrotask(()=>{const open=!document.getElementById('site-map-overlay')?.hidden;
+   crest.setAttribute('aria-expanded',String(open));
+   crest.setAttribute('aria-label',open?'Főmenü bezárása':'Főmenü megnyitása');});
+ });
  search.addEventListener('click',()=>document.getElementById('search-open')?.click());
  theme.addEventListener('click',()=>document.getElementById('theme-toggle')?.click());
  const updateTheme=()=>{
@@ -118,17 +144,36 @@ export function initFreshMobileShell(){
   theme.textContent=mode==='dark'?'☾':mode==='light'?'☀':'◐';
   theme.setAttribute('aria-label',`Megjelenés: ${mode==='system'?'automatikus':mode==='light'?'világos':'sötét'}; jelenleg ${current==='dark'?'sötét':'világos'}`);
  };
- new MutationObserver(updateTheme).observe(document.documentElement,
-  {attributes:true,attributeFilter:['data-theme','data-theme-preference']});
+ // M21.1: néhány beágyazott mobilböngészőben a MutationObserver nincs jelen.
+ // A menü és a keresés ilyenkor is induljon; az első témamegjelenés megmarad.
+ if(typeof MutationObserver==='function')new MutationObserver(updateTheme).observe(
+  document.documentElement,{attributes:true,
+   attributeFilter:['data-theme','data-theme-preference']});
  updateTheme();
  const overlay=document.getElementById('site-map-overlay');
  if(overlay){
-  const observer=new MutationObserver(()=>{
+  const syncOverlay=()=>{
    const open=!overlay.hidden;
    crest.setAttribute('aria-expanded',String(open));
    crest.setAttribute('aria-label',open?'Főmenü bezárása':'Főmenü megnyitása');
+  };
+  if(typeof MutationObserver==='function'){
+   const observer=new MutationObserver(syncOverlay);
+   observer.observe(overlay,{attributes:true,attributeFilter:['hidden']});
+  }
+  // Az állapot az első renderkor és az observer nélküli böngészőkben is jó.
+  syncOverlay();
+  document.addEventListener('csanadi:main-menu-opening',()=>queueMicrotask(syncOverlay));
+  document.addEventListener('csanadi:route-rendered',()=>queueMicrotask(syncOverlay));
+  // Az X, az Escape és egy menülink egyaránt bezárhatja a modált úgy,
+  // hogy a változást observer nélküli böngészőben is jelezzük.
+  document.addEventListener('click',event=>{
+   if(event.target?.closest?.('#site-map-close,[data-site-map-dismiss],#site-map-overlay a[href]'))
+    queueMicrotask(syncOverlay);
   });
-  observer.observe(overlay,{attributes:true,attributeFilter:['hidden']});
+  document.addEventListener('keydown',event=>{
+   if(event.key==='Escape')queueMicrotask(syncOverlay);
+  });
  }
  // Csak csatlakoztatott mobilfejléchez kérünk közösségi hivatkozásokat.
  // Így asztali indulás után, későbbi telefonméretre váltáskor sem vesznek el.
@@ -143,7 +188,7 @@ export function initFreshMobileShell(){
    header.style.removeProperty('--cs-mb-reading');
    document.documentElement.style.removeProperty('--cs-mb-sticky-offset');return;}
   const y=Math.max(0,window.scrollY||0);
-  const state=y>36?'true':'false';
+  const state=mobileHeaderScrolled(y)?'true':'false';
   header.dataset.csMbScrolled=state;
   // Az összehúzott, átlátszó címsor nem maradhat kétszer felolvasva.
   // Visszagörgetéskor a szöveg ismét hozzáférhetővé válik.
@@ -169,6 +214,13 @@ export function initFreshMobileShell(){
  window.addEventListener('scroll',schedule,{passive:true});
  window.addEventListener('resize',schedule,{passive:true});
  window.addEventListener('orientationchange',schedule,{passive:true});
+ // M20.1: iOS címsor/virtuális billentyűzet és BFCache visszatérés esetén
+ // szélességváltás nélkül is újramérjük a fejléc és a scroll-eltolás méretét.
+ // A virtuális billentyűzet és a Safari alsó címsora olykor szélesség- és
+ // állapotváltás nélkül módosítja az elérhető képmagasságot: valóban mérjünk.
+ const remeasure=()=>{lastViewportWidth=-1;schedule()};
+ window.visualViewport?.addEventListener?.('resize',remeasure,{passive:true});
+ window.addEventListener('pageshow',remeasure,{passive:true});
  mq.addEventListener?.('change',()=>{
   if(mq.matches&&!shell.isConnected){header.prepend(shell);hydrateSocial(socials);}
   else if(!mq.matches&&shell.isConnected)shell.remove();

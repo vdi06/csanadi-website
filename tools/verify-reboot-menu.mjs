@@ -1,6 +1,7 @@
 /** Új, önálló mobilmenü: három szint, két megjelenés, közvetlen oldalnyitás. */
 import assert from 'node:assert/strict';
-import {createPhoneRadial,PHONE_QUERY,mobileViewportMode} from '../mobile/reboot-menu-v1-43-27.js';
+import {createPhoneRadial,PHONE_QUERY,mobileViewportMode,mobileMenuNeedsLayoutRefresh}
+ from '../mobile/reboot-menu-v1-43-29.js';
 class Node {
  constructor(tag='div'){this.tagName=tag;this.children=[];this.events={};this.style={setProperty(){}};
   this.dataset={};this.className='';this.textContent='';this.hidden=false;this.attributes={};}
@@ -30,6 +31,10 @@ for(const [w,h,mode] of [[320,700,'grid'],[375,812,'grid'],[390,844,'grid'],
  [900,420,'desktop'],[769,900,'desktop']]){
  assert.equal(mobileViewportMode(w,h),mode,`${w}x${h}`);
 }
+assert.equal(mobileMenuNeedsLayoutRefresh(390,'grid',390,812),false);
+assert.equal(mobileMenuNeedsLayoutRefresh(390,'grid',390,720),false);
+assert.equal(mobileMenuNeedsLayoutRefresh(390,'grid',420,800),true);
+assert.equal(mobileMenuNeedsLayoutRefresh(420,'grid',420,760),true);
 const windowListeners=new Map();
 globalThis.window={innerWidth:430,innerHeight:780,
  location:{hash:'#/felveteli'},addEventListener(name,fn){windowListeners.set(name,fn)}};
@@ -45,6 +50,10 @@ assert.equal(menu.getLevel(),1);assert.equal(container.dataset.presentation,'cir
 assert.equal(title.textContent,'Fedezd fel a Csanádit');assert.equal(center.hidden,true);
 const screen=container.children[0],grid=screen.children[3].children[0];
 assert.equal(grid.children.length,1);
+const beforeKeyboardResize=grid.children[0];
+window.innerHeight=784;windowListeners.get('resize')();
+assert.equal(grid.children[0],beforeKeyboardResize,
+ 'M21: változatlan mobil szélességnél, azonos elrendezésben ne épüljön újra a menü');
 grid.children[0].children[0].click();
 assert.equal(menu.getLevel(),2);assert.equal(title.textContent,'Iskolánk');
 grid.children[0].children[0].focus();
@@ -71,6 +80,14 @@ menu.setCatalog([root],{childrenOf:node=>leaves.get(node)||[],
  titleOf:node=>node.name,hrefOf:node=>node.href});
 assert.equal(document.activeElement,grid.children[0].children[1],
  'M16.2: tartalomfrissítés után a közvetlen oldalhivatkozás fókusza megmarad');
+const overviewLink=screen.children[2];
+overviewLink.focus();window.innerWidth=377;windowListeners.get('resize')();
+assert.equal(document.activeElement,overviewLink,
+ 'M22: a témakör áttekintés-linkje átméretezéskor se veszítse el a fókuszt');
+menu.setCatalog([root],{childrenOf:node=>leaves.get(node)||[],
+ titleOf:node=>node.name,hrefOf:node=>node.href});
+assert.equal(document.activeElement,overviewLink,
+ 'M22: a témakör áttekintés-linkje adatkatalógus-frissítésnél se veszítse el a fókuszt');
 grid.children[0].children[0].focus();
 menu.setCatalog([root],{childrenOf:node=>leaves.get(node)||[],
  titleOf:node=>node.name,hrefOf:node=>node.href});

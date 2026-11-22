@@ -64,4 +64,4 @@ export function renderSportsSuccesses(block){
  }).catch(err=>{console.error(err);box.replaceChildren(n('p','sports-error','A sporttartalom jelenleg nem érhető el.'));});
  return wrap;
 }
-import {settingNumber} from './site-settings-2026.js?v=1.42.18';
+import {settingNumber} from './site-settings-2026.js?v=1.45';

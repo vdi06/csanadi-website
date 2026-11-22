@@ -5,8 +5,8 @@ import assert from 'node:assert/strict';
 
 const base=path.resolve(import.meta.dirname,'..');
 const read=file=>fs.readFileSync(path.join(base,file),'utf8');
-const css=read('mobile/reboot-design-v1-43-27.css');
-const shell=read('mobile/reboot-shell-v1-43-27.js');
+const css=read('mobile/reboot-design-v1-43-29.css');
+const shell=read('mobile/reboot-shell-v1-43-29.js');
 
 assert.match(css,/@media screen and \(max-width:768px\)/);
 assert.match(css,/\.cs-mb-school-title\{[^}]*max-height:none!important;opacity:1!important;overflow:visible!important/s,

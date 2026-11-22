@@ -1,4 +1,4 @@
-import {resolveConfiguredText,setting,settingNumber} from './site-settings-2026.js?v=1.42.18';
+import {resolveConfiguredText,setting,settingNumber} from './site-settings-2026.js?v=1.45';
 import {validFeaturedRoutes,isFeaturedHit,uniqueSearchEntries,sortSearchHits} from './search-policies-v1-40-6.js';
 import {recommendRelatedContent,validateEditorialRules} from './search-recommendations-v1-40-9.js';
 const TYPES={page:'Oldal',news:'Hír',event:'Esemény',document:'Dokumentum',image:'Galériakép',video:'Videó'};

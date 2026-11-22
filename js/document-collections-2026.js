@@ -1,4 +1,4 @@
-import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.43.3';
+import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.45';
 const STORE=new URL('../json/data/documents.json',import.meta.url);
 const node=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
 const fold=x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
@@ -41,4 +41,4 @@ export function renderDocumentCollections(){
  }).catch(err=>{result.textContent='A dokumentumtár nem tölthető be: '+err.message;});
  return box;
 }
-import {settingNumber} from './site-settings-2026.js?v=1.42.18';
+import {settingNumber} from './site-settings-2026.js?v=1.45';

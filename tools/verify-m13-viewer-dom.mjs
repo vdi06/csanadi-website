@@ -10,9 +10,18 @@ class Node{
  setAttribute(name,value){this.attributes.set(name,String(value))}
  getAttribute(name){return this.attributes.get(name)??null}
  addEventListener(name,fn){const list=this.events.get(name)||[];list.push(fn);this.events.set(name,list)}
+ removeEventListener(name,fn){this.events.set(name,(this.events.get(name)||[]).filter(item=>item!==fn))}
  dispatch(name,event={}){for(const fn of this.events.get(name)||[])fn(event)}
+ dispatchEvent(event){this.dispatch(event.type,event);return true}
  remove(){this.isConnected=false}
- get classList(){return{contains:name=>this.className.split(/\s+/).includes(name)}}
+ focus(){document.activeElement=this}
+ getClientRects(){return [{}]}
+ closest(){return null}
+ get classList(){return{
+  contains:name=>this.className.split(/\s+/).includes(name),
+  add:name=>{this.className=[...new Set([...this.className.split(/\s+/).filter(Boolean),name])].join(' ')},
+  remove:name=>{this.className=this.className.split(/\s+/).filter(part=>part!==name).join(' ')}
+ }}
 }
 const body=new Node('body');
 const documentElement={dataset:{theme:'light'}};
@@ -70,4 +79,20 @@ assert.equal(find(documentModal,'cs43-pdf-toolbar').hidden,true,
 assert.ok(find(documentModal,'modal-footer').children.some(node=>node.textContent==='Letöltés'));
 documentModal.dispatch('hidden.bs.modal');
 assert.equal(documentModal.isConnected,false);
+// 1.45: CDN-kiesés és MutationObserver nélküli böngésző esetén a saját
+// képnézőnek valódi dialógusként, háttérfókusz nélkül kell működnie.
+globalThis.MutationObserver=undefined;
+window.bootstrap=undefined;
+const behind=new Node('main');body.append(behind);
+const launcher=new Node('button');document.activeElement=launcher;
+assert.equal(openImageViewer(images,0),true);
+const fallback=body.children.at(-2);
+assert.equal(fallback.getAttribute('role'),'dialog');
+assert.equal(behind.inert,true,'Háttérelemek kizárása a fókuszsorrendből');
+await Promise.resolve();
+assert.ok(find(fallback,'btn-close'));
+fallback.dispatch('keydown',{key:'Escape',preventDefault(){}});
+assert.equal(fallback.isConnected,false);
+assert.equal(behind.inert,false,'Háttérfókusz visszaállítása bezáráskor');
+assert.equal(document.activeElement,launcher);
 console.log('M13.3 saját Bootstrap-nézők DOM-próbája: témaszűrés, swipe, képaláírás, letöltés, Word-állapot és bezárás OK');

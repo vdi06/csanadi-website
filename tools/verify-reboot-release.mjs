@@ -8,13 +8,13 @@ const root=path.resolve(import.meta.dirname,'..');
 const read=rel=>fs.readFileSync(path.join(root,rel));
 const text=rel=>read(rel).toString('utf8');
 const manifest=JSON.parse(text('release-manifest.json'));
-assert.equal(manifest.release,'csanadi-website-v1.43.27-m18-2-mobile-single-row-scroll-fix-preview');
+assert.equal(manifest.release,'csanadi-website-v1.43.29-m19-full-code-audit-preview');
 assert.equal(manifest.ftpCompatible,true);
 const files=Object.keys(manifest.files);
 const fresh=[
- 'reboot-design-v1-43-27.css','reboot-hero-v1-43-27.js',
- 'reboot-menu-v1-43-27.js','reboot-quality-v1-43-27.js',
- 'reboot-shell-v1-43-27.js'];
+ 'reboot-design-v1-43-29.css','reboot-hero-v1-43-29.js',
+ 'reboot-menu-v1-43-29.js','reboot-quality-v1-43-29.js',
+ 'reboot-shell-v1-43-29.js'];
 assert.deepEqual(files.filter(file=>file.startsWith('mobile/')).sort(),fresh.map(name=>'mobile/'+name).sort(),
  'A ZIP nem tartalmazhat a régi mobile/ könyvtárból egyetlen fájlt sem');
 for(const file of fresh){
@@ -52,31 +52,31 @@ for(const [prefix,count,reference] of baseline){
  for(const file of matches){hash.update(file+'\0');hash.update(read(file));}
  assert.equal(hash.digest('hex'),reference,`Változatlan v1.43.15 referencia: ${prefix}`);
 }
-// A v1.43.16-ból induló M11–M17.4 csak mobilos belső logikát módosíthat.
-// A közös belépési pontok, a SPA és a desktop hero byteazonos maradt,
-// ha a kötelező kiadási URL-/fájlnév-verzióváltást kivesszük.
+// A teljes forrásaudit során csak a desktop hero igazolt kép-újrapróbálási
+// hibáját javítottuk a közös kódban. A többi közös belépési pont lenyomata
+// továbbra is byteazonos a korábbi referencia normalizálása után.
 const commonRuntime={
  'index.html':'dfc93302dd046ad2f13bbcaa14ebe74529e8be81580609826ce7486df178a878',
  'script.js':'ba879827bf6c53b418fb1ebcf1a420e0cb3b74fa323ef19d85fc18fd2918daad',
  'service-worker.js':'80d1fb6c9162766b63198915eb551b1cfbdcc5843c0ea9548efa058af9aa3de2',
  'js/app.js':'d22b80ce2c7e41af93c204f1e76b2a89eb0dabf81442d9f3d5e1c67790d557f2',
  'js/blocks.js':'f2b4ca2e81a159c8b55cf4bdefba71c350fe2c9095dd17f518c8a31ea3b963a6',
- 'js/hero-2026.js':'c147a525843af3f1843cad6f16a6163b0b33aee4aa0ec79ac4e624c5768037b2',
+ 'js/hero-2026.js':'000645b1726d102b6bedac4a87efe9a41205ca4128af45971dfd936a4e20bef7',
  'js/home-v1-41.js':'d67eeb77511a36c85b93f2fd42d2c0a9543e81212a9b6b05edd279464cbaf0d7'
 };
 for(const [file,reference] of Object.entries(commonRuntime)){
- const normalized=text(file).replaceAll('1.43.27','1.43.XX').replaceAll('v1-43-27','v1-43-XX');
+ const normalized=text(file).replaceAll('1.43.29','1.43.XX').replaceAll('v1-43-29','v1-43-XX');
  assert.equal(crypto.createHash('sha256').update(normalized).digest('hex'),reference,
-  `M17.4 desktop és SPA védelem: ${file}`);
+  `M19 közös belépési pont és célzott desktop hero védelem: ${file}`);
 }
 const entrypoints=['index.html','script.js','js/app.js','js/hero-2026.js','js/blocks.js','service-worker.js'];
 const imported=entrypoints.map(text).join('\n');
 assert.doesNotMatch(imported,/mobile\/(?:m[1-9]|m10|quick-nav|mobile-)/i,
  'Régi mobilos JS/CSS nem importálható');
 assert.match(text('index.html'),/media="screen and \(max-width: 768px\)"/);
-assert.match(text('service-worker.js'),/const RELEASE_ID='1\.43\.27'/);
-assert.equal(JSON.parse(text('json/config.json')).performance.cacheVersion,'csanadi-r-v1.43.27');
-const css=text('mobile/reboot-design-v1-43-27.css');
+assert.match(text('service-worker.js'),/const RELEASE_ID='1\.43\.29'/);
+assert.equal(JSON.parse(text('json/config.json')).performance.cacheVersion,'csanadi-r-v1.43.29');
+const css=text('mobile/reboot-design-v1-43-29.css');
 assert.match(css,/#cs-mobile-rebuild,\.cs-mb-cinema\{display:none\}/);
 assert.match(css,/@media screen and \(max-width:768px\)/);
 assert.match(css,/@media screen and \(max-width:768px\) and \(prefers-reduced-motion:reduce\)/);
@@ -87,6 +87,6 @@ for(const char of css.replace(/\/\*[\s\S]*?\*\//g,'')){
  assert.ok(balance>=0,'CSS lezáró kapcsos zárójel nem előzheti meg a megnyitót');
 }
 assert.equal(balance,0,'A mobilos CSS összes blokkja lezárt');
-console.log(`Teljes leltár és SHA-256 OK: ${files.length} fájl; desktop CSS, JS, média, tartalmi JSON változatlan`);
-console.log('M17.4 közös SPA/desktop változatlan logika: 7 belépési pont lenyomata egyezik');
+console.log(`Teljes leltár és SHA-256 OK: ${files.length} fájl; desktop CSS, média, tartalmi JSON változatlan, egy célzott közös JS-javítás`);
+console.log('M19 közös SPA/desktop védelem: 6 belépési pont változatlan, az asztali képváltó célzottan javított');
 console.log('Öt új mobilmodul; korábbi mobile/ kizárva; reszponzív határ és verziók OK');

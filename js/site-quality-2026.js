@@ -1,5 +1,5 @@
-import {formatBytes} from './format-bytes.js?v=1.42.18';
-import {settingNumber} from './site-settings-2026.js?v=1.42.18';
+import {formatBytes} from './format-bytes.js?v=1.45';
+import {settingNumber} from './site-settings-2026.js?v=1.45';
  
 export const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
 export const append=(to,...nodes)=>{nodes.filter(Boolean).forEach(n=>to.append(n));return to;};

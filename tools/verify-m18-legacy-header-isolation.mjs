@@ -6,8 +6,8 @@ import {execFileSync} from 'node:child_process';
 
 const root=path.resolve(import.meta.dirname,'..');
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
-const mobile=read('mobile/reboot-design-v1-43-27.css');
-const shell=read('mobile/reboot-shell-v1-43-27.js');
+const mobile=read('mobile/reboot-design-v1-43-29.css');
+const shell=read('mobile/reboot-shell-v1-43-29.js');
 const old=read('js/release-v1-39-0.js');
 const legacyCss=read('css/site-consistency-v1-42-17.css');
 
