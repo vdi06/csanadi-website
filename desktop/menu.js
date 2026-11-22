@@ -1,8 +1,8 @@
-import { element } from "../shared/js/dom.js";
-import { trapTab } from "../shared/js/focus.js";
+import { element } from "../shared/js/dom.js?v=2.14";
+import { trapTab } from "../shared/js/focus.js?v=2.14";
+import { menuPageHref } from "../shared/js/menu-data.js?v=2.14";
 
-/** Az 1.53-as asztali menü két koncentrikus navigációs gyűrűje.
- * Nem létező oldalhoz soha nem készít látszólag működő hivatkozást. */
+/** Asztali kétgyűrűs menü: az almenük valós, JSON-vázlatos belső oldalakra visznek. */
 export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
   const data = config.menu;
   const crest = element("img", { className: "desktop-wheel-crest", attributes: {
@@ -43,9 +43,8 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
   let previousOverflow;
 
   function itemNode(item, className) {
-    if (item.href) return element("a", { className, text: item.label,
-      attributes: { href: item.href } });
-    return element("span", { className, text: item.label });
+    return element("a", { className, text: item.label,
+      attributes: { href: item.href || menuPageHref(item.id) } });
   }
   function showThird(child, selectedButton) {
     for (const control of secondControls) if (control.tagName === "BUTTON")
@@ -149,7 +148,16 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
       ...Array.from(levelThree.children).filter((node) => node.tagName === "A")]);
   });
   overlay.addEventListener("click", (event) => {
-    if (event.target.closest?.("a[href]")) close(false);
+    const link = event.target.closest?.("a[href]");
+    if (!link) return;
+    const destination = link.getAttribute("href");
+    if (destination?.startsWith("#/")) {
+      // A menü bezárásakor a link DOM-eleme eltűnik. Navigáljunk még előtte,
+      // különben a böngésző eldobhatja a leválasztott <a> alapműveletét.
+      event.preventDefault();
+      location.hash = destination;
+    }
+    close(false);
   });
   return { overlay, close, destroy: () => close(false) };
 }

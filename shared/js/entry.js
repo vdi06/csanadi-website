@@ -1,5 +1,5 @@
-/** Egyetlen belépési pont: kapu (#/) és egyetlen kezdőlap (#/kezdolap). */
-import { validateMenu } from "./menu-data.js";
+/** Egyetlen HTML, JSON-alapú kapu, kezdőlap és valódi menüvégpont-útvonalak. */
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.14";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -11,17 +11,23 @@ let activeModule = null;
 let hasRendered = false;
 
 function route() {
-  return location.hash === config.routes.home ? "home" : "gate";
+  if (location.hash === config.routes.home) return "home";
+  const match = /^#\/oldal\/([a-z0-9-]+)$/.exec(location.hash);
+  return match && getMenuPage(config, match[1]) ? `page:${match[1]}` : "gate";
 }
 
 function mountView(platform, module, selectedRoute) {
   destroyCurrent();
   document.documentElement.dataset.platform = platform;
-  document.documentElement.dataset.route = selectedRoute;
+  document.documentElement.dataset.route = selectedRoute.startsWith("page:") ? "page" : selectedRoute;
+  const menuPage = selectedRoute.startsWith("page:") ? getMenuPage(config, selectedRoute.slice(5)) : null;
+  document.title = menuPage ? `${menuPage.title} – ${config.site.fullName}` : config.site.fullName;
   destroyCurrent = module.mount(root, config, selectedRoute) || (() => {});
   if (hasRendered) {
-    const focusTarget = selectedRoute === "home"
-      ? root.querySelector(".home-brand") : root.querySelector(".gate-door-button");
+    const focusTarget = menuPage
+      ? root.querySelector(`.${platform}-page-title`)
+      : selectedRoute === "home" ? root.querySelector(".home-brand")
+      : root.querySelector(".gate-door-button");
     if (focusTarget) {
       focusTarget.focus({ preventScroll: true });
     }
@@ -40,14 +46,14 @@ async function render() {
   }
   const stylesheet = document.createElement("link");
   stylesheet.rel = "stylesheet";
-  stylesheet.href = `./${platform}/styles.css`;
+  stylesheet.href = `./${platform}/styles.css?v=${encodeURIComponent(config.release)}`;
   stylesheet.dataset.platformStyle = platform;
   const loaded = new Promise((resolve, reject) => {
     stylesheet.addEventListener("load", resolve, { once: true });
     stylesheet.addEventListener("error", () => reject(new Error("A platformstílus nem tölthető be.")), { once: true });
   });
   document.head.append(stylesheet);
-  const module = await import(`../../${platform}/app.js`);
+  const module = await import(`../../${platform}/app.js?v=${encodeURIComponent(config.release)}`);
   await loaded;
   if (version !== serial) { stylesheet.remove(); return; }
   document.querySelectorAll("link[data-platform-style]").forEach((node) => {
@@ -60,13 +66,23 @@ async function render() {
 
 async function start() {
   try {
-    const response = await fetch(settingsUrl);
+    const freshSettings = new URL(settingsUrl);
+    freshSettings.searchParams.set("check", String(Date.now()));
+    const response = await fetch(freshSettings, { cache:"no-store" });
     if (!response.ok) throw new Error(`Hiányzó JSON: ${response.status}`);
     config = await response.json();
     if (config.schemaVersion !== "2.06" || config.gate.frames !== 30) {
       throw new Error("A kapu JSON-beállításai hibásak.");
     }
     validateMenu(config);
+    // A következő oldalfrissítés is saját, kiadáshoz kötött URL-en történjen.
+    if (window.location?.href && window.history?.replaceState) {
+      const current = new URL(window.location.href);
+      if (current.searchParams.get("v") !== config.release) {
+        current.searchParams.set("v", config.release);
+        window.history.replaceState(window.history.state, "", current);
+      }
+    }
     document.title = config.site.fullName;
     for (const [name, value] of Object.entries(config.theme)) {
       document.documentElement.style.setProperty(`--${name}`, value);

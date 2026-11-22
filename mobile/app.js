@@ -1,9 +1,10 @@
-import { element } from "../shared/js/dom.js";
-import { mountGate } from "../shared/js/gate.js";
-import { makeFooter } from "../shared/js/footer.js";
-import { makeMobileHeader } from "./header.js";
+import { element } from "../shared/js/dom.js?v=2.14";
+import { mountGate } from "../shared/js/gate.js?v=2.14";
+import { makeFooter } from "../shared/js/footer.js?v=2.14";
+import { makeMobileHeader } from "./header.js?v=2.14";
+import { createMobilePage } from "./page.js?v=2.14";
 
-/** Önálló mobilos nézet: csak a fejléc, üres főrész és lábléc. */
+/** Önálló mobilos nézet: saját fejléc, JSON-vázlatos aloldal és kompakt lábléc. */
 export function mount(root, config, page) {
   const platformRoot = element("div", { className: "mobile-app" });
   root.replaceChildren(platformRoot);
@@ -14,8 +15,10 @@ export function mount(root, config, page) {
   const home = element("div", { className: "mobile-home" });
   const mobileHeader = makeMobileHeader(config, home);
   const mobileFooter = makeFooter(config, "mobile");
+  const main = element("main", { className: "mobile-main", attributes: { id: "content" } });
+  if (page.startsWith("page:")) main.append(createMobilePage(config, page.slice(5)));
   home.append(mobileHeader.header,
-    element("main", { className: "mobile-main", attributes: { id: "content" } }),
+    main,
     mobileFooter.footer);
   platformRoot.replaceChildren(home);
   return () => { mobileHeader.destroy(); mobileFooter.destroy(); };

@@ -1,11 +1,12 @@
-import { element } from "./dom.js";
+import { element } from "./dom.js?v=2.14";
+import { trapTab } from "./focus.js?v=2.14";
 
 /** Közös JSON-adatfolyam: a platformok csak a lábléc elrendezését stílusozzák.
  * Az adatok csak ellenőrzött, teljes válasz esetén cserélődnek le. */
 function validFooter(data, release) {
   if (!data || typeof release !== "string" || !/^\d+\.\d+$/.test(release)) return false;
   for (const name of ["brand", "year", "address", "email", "contactTitle", "linksTitle",
-    "versionLabel", "updatedLabel", "checkedLabel", "pendingLabel", "errorLabel"]) {
+    "versionLabel", "modalCloseLabel", "updatedLabel", "checkedLabel", "pendingLabel", "errorLabel"]) {
     if (typeof data[name] !== "string" || !data[name].trim() || data[name].length > 500) return false;
   }
   if (!/^\d{4}-\d{2}-\d{2}$/.test(data.updatedAt || "") ||
@@ -40,6 +41,21 @@ export function makeFooter(config, platform) {
   const checked = element("p", { className: "footer-checked",
     attributes: { "aria-live": "polite" } });
   const version = element("p", { className: "footer-version" });
+  const modalTitle = element("h2", { className: "footer-modal-title",
+    attributes: { id: `${platform}-footer-modal-title` } });
+  const modalContent = element("p", { className: "footer-modal-content" });
+  const modalClose = element("button", { className: "footer-modal-close",
+    text: config.home.header.closeSymbol,
+    attributes: { type: "button", "aria-label": first.modalCloseLabel } });
+  const modalDialog = element("section", { className: "footer-modal-dialog",
+    attributes: { role: "dialog", "aria-modal": "true",
+      "aria-labelledby": `${platform}-footer-modal-title` } },
+    modalClose, modalTitle, modalContent);
+  const modalBackdrop = element("div", { className: "footer-modal-backdrop",
+    attributes: { "aria-hidden": "true" } });
+  const modal = element("div", { className: "footer-notice-modal" },
+    modalBackdrop, modalDialog);
+  modal.hidden = true;
   const contactPanel = element("section", { className: "footer-contact",
     attributes: { "aria-label": first.contactTitle } },
     element("div", { className: "footer-contact-main" }, brand, contactTitle, address, email),
@@ -89,24 +105,53 @@ export function makeFooter(config, platform) {
   }
   const footer = element("footer", { className: `${platform}-footer site-footer` },
     ...(tabs ? [tabs] : []),
-    element("div", { className: "footer-inner" }, contactPanel, infoPanel));
-  const expandedIds = new Set();
+    element("div", { className: "footer-inner" }, contactPanel, infoPanel), modal);
   let active = true;
   let pending = false;
   let requestController = null;
+  let currentNoticeId = null;
+  let currentTrigger = null;
+  let noticeById = new Map();
+  let triggerById = new Map();
+  let previousOverflow;
+
+  function closeModal(restoreFocus = true) {
+    if (modal.hidden) return;
+    modal.hidden = true;
+    currentNoticeId = null;
+    if (document.body) document.body.style.overflow = previousOverflow || "";
+    if (restoreFocus) currentTrigger?.focus({ preventScroll:true });
+    currentTrigger = null;
+  }
+  function openModal(item, trigger) {
+    currentNoticeId = item.id;
+    currentTrigger = trigger;
+    modalTitle.textContent = item.title;
+    modalContent.textContent = item.body;
+    previousOverflow = document.body?.style.overflow;
+    if (document.body) document.body.style.overflow = "hidden";
+    modal.hidden = false;
+    modalClose.focus({ preventScroll:true });
+  }
+  modalClose.addEventListener("click", () => closeModal());
+  modalBackdrop.addEventListener("click", () => closeModal());
+  modalDialog.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") { event.preventDefault(); closeModal(); }
+    else trapTab(event, [modalClose]);
+  });
 
   function apply(data, release) {
     if (!validFooter(data, release)) return false;
+    const nextNotices = new Map();
+    const nextTriggers = new Map();
     const items = data.notices.map((item) => {
-      const disclosure = element("details", { className: "footer-notice" },
-        element("summary", { className: "footer-notice-title", text: item.title }),
-        element("p", { className: "footer-notice-content", text: item.body }));
-      disclosure.open = expandedIds.has(item.id);
-      disclosure.addEventListener("toggle", () => {
-        if (disclosure.open) expandedIds.add(item.id);
-        else expandedIds.delete(item.id);
-      });
-      return disclosure;
+      const button = element("button", { className: "footer-notice-icon",
+        text: item.title.trim()[0].toLocaleUpperCase("hu-HU"),
+        attributes: { type: "button", "aria-label": item.title, title:item.title } });
+      button.addEventListener("click", () => openModal(item, button));
+      nextNotices.set(item.id, item);
+      nextTriggers.set(item.id, button);
+      return button;
     });
     brand.textContent = `${data.brand} · ${data.year}`;
     contactTitle.textContent = data.contactTitle;
@@ -117,6 +162,17 @@ export function makeFooter(config, platform) {
     linksTitle.textContent = data.linksTitle;
     if (infoTab) infoTab.textContent = data.linksTitle;
     notices.replaceChildren(...items);
+    noticeById = nextNotices;
+    triggerById = nextTriggers;
+    if (currentNoticeId) {
+      const updatedNotice = noticeById.get(currentNoticeId);
+      if (updatedNotice) {
+        currentTrigger = triggerById.get(currentNoticeId);
+        modalTitle.textContent = updatedNotice.title;
+        modalContent.textContent = updatedNotice.body;
+      } else closeModal(false);
+    }
+    modalClose.setAttribute("aria-label", data.modalCloseLabel);
     updated.textContent = `${data.updatedLabel}: ${formatDate(data.updatedAt)}`;
     version.textContent = `${data.versionLabel}: ${release}`;
     return true;
@@ -138,6 +194,15 @@ export function makeFooter(config, platform) {
         timeZone: "Europe/Budapest", hour: "2-digit", minute: "2-digit"
       }).format(new Date());
       checked.textContent = `${next.home.footer.checkedLabel}: ${time}`;
+      // Új programkiadásnál friss URL: a böngésző nem használhatja a régi HTML/JS-t.
+      if (next.release !== config.release && window.location?.href &&
+        typeof window.location.replace === "function") {
+        const destination = new URL(window.location.href);
+        if (destination.searchParams.get("v") !== next.release) {
+          destination.searchParams.set("v", next.release);
+          window.location.replace(destination.href);
+        }
+      }
       return true;
     } catch {
       if (active) checked.textContent = first.errorLabel;
@@ -156,6 +221,7 @@ export function makeFooter(config, platform) {
 
   function destroy() {
     active = false;
+    closeModal(false);
     clearInterval(timer);
     requestController?.abort();
     document.removeEventListener?.("visibilitychange", onVisibility);

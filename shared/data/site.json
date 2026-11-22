@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.06",
-  "release": "2.13",
+  "release": "2.14",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -69,6 +69,7 @@
       "email": "csanadi@csanadiiskola.hu",
       "contactTitle": "Kapcsolat",
       "linksTitle": "Tájékoztatás",
+      "modalCloseLabel": "Tájékoztató bezárása",
       "versionLabel": "Verzió",
       "updatedLabel": "Utolsó frissítés",
       "updatedAt": "2026-11-22",
@@ -161,6 +162,17 @@
         { "id": "information-contact", "label": "Kapcsolat" }
       ] }
     ]
+  },
+  "pagePreview": {
+    "intro": "Ezen az oldalon később ezek a tartalmak kapnak helyet:",
+    "sections": {
+      "school": ["Az adott iskolai témakör részletes bemutatása", "Kapcsolódó iskolai információk", "Hasznos dokumentumok és elérhetőségek"],
+      "education": ["A választott oktatási témakör részletei", "Aktuális tanulmányi információk és időpontok", "Kapcsolódó tananyagok és dokumentumok"],
+      "admission": ["A felvételi témakör részletes tudnivalói", "Határidők és követelmények", "Jelentkezéshez szükséges dokumentumok és kapcsolatok"],
+      "sports": ["A választott sporttémakör bemutatása", "Eredmények, események és képes anyagok", "Kapcsolódó sporthírek és dokumentumok"],
+      "news": ["Hírek és események részletes tartalmai", "Aktuális dátumok és közlemények", "Kapcsolódó fényképek és források"],
+      "information": ["A választott intézményi tudnivalók", "Ügyintézési és kapcsolattartási információk", "Kapcsolódó dokumentumok és hivatkozások"]
+    }
   },
   "appearance": {
     "defaultMode": "auto",

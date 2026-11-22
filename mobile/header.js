@@ -1,9 +1,9 @@
-import { crest, element } from "../shared/js/dom.js";
-import { bindAppearance } from "../shared/js/appearance.js";
-import { createEditMode } from "../shared/js/edit-mode.js";
-import { makeSocialLink } from "../shared/js/shell.js";
-import { createMobileMenu } from "./menu.js";
-import { createMobileSearch } from "./search.js";
+import { crest, element } from "../shared/js/dom.js?v=2.14";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.14";
+import { createEditMode } from "../shared/js/edit-mode.js?v=2.14";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.14";
+import { createMobileMenu } from "./menu.js?v=2.14";
+import { createMobileSearch } from "./search.js?v=2.14";
 
 /** Csak mobilos fejléc: középső címerből nyíló harmonikamenü, külön kereső. */
 export function makeMobileHeader(config, home) {

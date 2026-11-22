@@ -51,16 +51,34 @@
   font-weight:900; letter-spacing:.19em; font-size:clamp(11px,.95vw,15px);
 }
 .desktop-main { flex:1 1 auto; min-height:0; }
-.desktop-footer { padding:36px clamp(28px,5vw,70px) 42px; }
+.desktop-page-preview {
+  width:min(780px,calc(100% - 52px)); margin:clamp(36px,5vw,70px) auto;
+  text-align:center; color:var(--text);
+}
+.desktop-page-title {
+  margin:0 0 15px; font-size:clamp(29px,3.4vw,48px); line-height:1.15;
+  font-weight:900; overflow-wrap:anywhere;
+}
+.desktop-page-intro { margin:0 auto 25px; color:var(--muted); font-size:18px; line-height:1.5; }
+.desktop-page-list {
+  display:grid; justify-items:center; gap:15px; margin:0 auto; padding:0;
+  list-style:none; max-width:640px;
+}
+.desktop-page-list li {
+  width:100%; padding:12px 25px; border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent);
+  font-size:17px; line-height:1.5; text-align:center;
+}
+.desktop-page-list li::before { content:"• "; color:var(--accent); }
+.desktop-footer { padding:15px clamp(22px,4vw,60px) 20px; }
 .desktop-footer .footer-inner {
   width:min(100%,1120px); display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:clamp(18px,3vw,40px);
+  gap:clamp(12px,2vw,24px);
   align-items:stretch; text-align:left;
 }
 .desktop-footer .footer-contact,.desktop-footer .footer-links { height:100%; }
-.desktop-footer .footer-inner h2 { font-size:1.08rem; }
-.desktop-footer .footer-brand { font-size:1.22rem; }
+.desktop-footer .footer-inner h2 { font-size:1rem; }
+.desktop-footer .footer-brand { font-size:1.05rem; }
 
 /* Spotlight asztalon: fókuszált, nagy áttetsző üvegfelület. */
 .desktop-search-overlay {
@@ -176,7 +194,13 @@
   border:1px dashed color-mix(in srgb,var(--accent) 74%,transparent);
   box-shadow:0 0 0 14px color-mix(in srgb,var(--accent) 3%,transparent); }
 .desktop-wheel-guide-sub[hidden] { display:none !important; }
-.desktop-wheel-ring-main,.desktop-wheel-ring-sub { position:absolute; inset:0; }
+.desktop-wheel-ring-main,.desktop-wheel-ring-sub {
+  position:absolute; inset:0;
+  /* A teljes méretű külső navigációs réteg nem takarhatja el a belső gombokat. */
+  pointer-events:none;
+}
+.desktop-wheel-ring-main { z-index:3; }
+.desktop-wheel-ring-sub { z-index:2; }
 .desktop-wheel-ring-sub[hidden] { display:none !important; }
 .desktop-wheel-center-group {
   position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
@@ -217,7 +241,7 @@
   line-height:1.15; overflow-wrap:anywhere; text-align:center;
   box-shadow:0 6px 17px rgba(0,0,0,.16);
 }
-.desktop-wheel-node { cursor:pointer; }
+.desktop-wheel-node { cursor:pointer; pointer-events:auto; }
 .desktop-wheel-node:hover, .desktop-wheel-node:focus-visible {
   border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent);
 }
@@ -229,7 +253,7 @@
 .desktop-wheel-sub-node { width:clamp(110px,12vw,144px); min-height:60px;
   background:color-mix(in srgb,var(--surface) 90%,var(--accent));
   border-color:var(--accent); font-size:clamp(10px,.96vw,13px); }
-.desktop-wheel-sub-node:is(button,a) { cursor:pointer; }
+.desktop-wheel-sub-node:is(button,a) { cursor:pointer; pointer-events:auto; }
 .desktop-wheel-sub-node:is(button,a):hover,.desktop-wheel-sub-node:is(button,a):focus-visible {
   box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent),
     0 12px 25px rgba(0,0,0,.24);

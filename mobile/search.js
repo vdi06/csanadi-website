@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js";
-import { trapTab } from "../shared/js/focus.js";
-import { filterSearchItems, navLink } from "../shared/js/shell.js";
+import { element } from "../shared/js/dom.js?v=2.14";
+import { trapTab } from "../shared/js/focus.js?v=2.14";
+import { filterSearchItems, navLink } from "../shared/js/shell.js?v=2.14";
 
 /** Mobilos Spotlight: valódi teljes képernyős, háttérhomályosító kereső. */
 export function createMobileSearch(config, trigger, beforeOpen = () => {}) {
