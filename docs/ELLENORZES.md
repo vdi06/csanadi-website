@@ -1,8 +1,52 @@
-# Csanádi 2.19 – kétkörös hibajavítás
+# Csanádi 2.21 – diákjaink sportsikerei és a nyitókép javítása
 
 Ez a ZIP **nem publikált** fejlesztési kiadás. A 2.15-ös forráscsomagot
-és a 2.16–2.18-as fejlesztéseket folytatja az eredeti 1.53-as képek és minden
+és a 2.16–2.20-as fejlesztéseket folytatja az eredeti 1.53-as képek és minden
 elfogadott funkció megtartásával. A korábbi ZIP-ek változatlanul megmaradtak.
+
+## A 2.21-es fejlesztés
+
+- A kezdőlap új **Diákjaink sportsikerei** szakaszt kapott, pontosan hat,
+  `shared/data/site.json` állományból betöltött bejegyzéssel. Az asztali
+  kódban **3 × 2**, a külön mobilos kódban **2 × 3** kártyás rács jelenik meg.
+- A kártya neveket, sportágat, eredményt, és négy esetben sportképet mutat.
+  Két bejegyzéshez **nincs kép**; ezek szándékosan megtervezett arany–krém
+  tipográfiai felületet kapnak, a részletezőablakban is. Ha egy kép
+  betöltése sikertelen, ugyanez a tartalékmegjelenítés lép életbe.
+- A kártya kattintásra **középre lebegő részletes nézetet** nyit: a
+  háttér elsötétedik és elmosódik, a részletek az eseményt, dátumot,
+  leírást és továbblépési hivatkozást tartalmazzák. Bezárás X-szel,
+  háttérre kattintva vagy Esc billentyűvel, a fókusz visszakerül a kártyára.
+- Az asztali nyitókép közepén a zavaró, túlméretezett **kerek címerkeret
+  eltűnt**. A címer visszafogott, keret nélküli, „MENÜ” feliratos gombként
+  továbbra is megnyitja a főmenüt, és görgetéskor a fejlécbe költöző
+  menülogika változatlanul működik.
+- A hat név, sporteredmény és dátum **ellenőrizetlen, fiktív próbatartalom**;
+  a weboldalon nincs külön „minta” jelzés a fejlesztési előnézethez.
+  **Publikálás előtt** a JSON-ban hiteles iskolai adatokra kell cserélni.
+- Külön asztali és mobilos CSS/JS, a meglévő témák, JSON offline
+  tartalékoldal és automatikus újrapróbálkozás megmaradtak.
+
+## A 2.20-as javítás
+
+- **Hiba oka:** a nagy nyitókép összehúzódása után a rögzített asztali
+  fejléc `backdrop-filter` szűrője új, korlátozott pozicionálási környezetet
+  hozott létre, mert a teljes képernyős körmenü a fejlécen belül volt.
+  Így a mögötte lévő oldalt a takaróréteg nem sötétítette és nem mosta el
+  teljes magasságban.
+- **Javítás:** az asztali körmenü és kereső teljes képernyős takarórétege
+  a fejléc közvetlen testvére, de továbbra is a témát hordozó asztali
+  oldal része. A menü mögött minden görgetési állapotban ugyanaz a
+  20 px-es elmosás, finom halványítás és 36%-os sötétítés működik.
+  A gombok élesek, a menük körül nincs új keret.
+- A világos és sötét fejléc régi színei a külön rétegekre is átkerültek.
+  A külön mobilos kód, a JSON-tartalom, az offline oldal és a meglévő
+  képek nem változtak.
+- Új regressziós teszt vizsgálja a menü és kereső szülőelemét, valamint
+  a görgetés után megnyitható körmenüt. A kód- és viselkedéstesztek
+  sikeresek, a 2.20-as élő asztali előnézetben pedig igazoltuk, hogy a
+  takaróréteg teljes mérete a képernyőé (`1363 × 936 px`), és a
+  háttérszűrő aktív.
 
 ## A 2.19-es, kétkörös hibajavítás eredménye
 
@@ -308,13 +352,13 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   visszatéréskor újra ellenőrzünk. Hibás JSON esetén a korábbi érvényes
   információ marad látható.
 - A lábléc paneljeit és külső térközeit jelentősen csökkentettük.
-  A legalsó sor minden frissítés után a `Verzió: 2.19`,
+  A legalsó sor minden frissítés után a `Verzió: 2.21`,
   illetve a későbbi JSON-verzió.
 
 ## Frissítés böngészési adatok törlése nélkül
 
 - A nyitó HTML a `shared/js/entry.js` és az alap CSS fájlt a JSON-ban
-  szereplő kiadáshoz kötött URL-lel (`?v=2.19`) kéri le.
+  szereplő kiadáshoz kötött URL-lel (`?v=2.21`) kéri le.
 - Minden statikus JavaScript-modul-import ugyanilyen verziót kap a
   `node tools/stamp-release.mjs` kiadás-előkészítő lépésben. A két
   platformstílus is verziózott URL-lel töltődik be.
@@ -323,7 +367,7 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   útvonal megtartásával, új verzióparaméterrel tölti újra a teljes oldalt.
 - **Korlát:** a régi, már eltárolt 2.13-as kezdő HTML és programkód
   magától nem feltétlenül tudja alkalmazni az új mechanizmust; az új
-  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.19`
+  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.21`
   URL-t. A tárhely/CDN HTTP gyorsítótárazási szabályai külön is számítanak.
 
 ## A visszaállított asztali kezdőlap és a mobilos következő lépés
@@ -343,7 +387,7 @@ másolata; a felső címeres menügomb nem kerül át máshová.
 A menüvégpontok továbbra is csak minimális, jóváhagyott oldalvázlatokként
 nyílnak meg, valós tartalmuk később épül be.
 A lábléc `Tájékoztatás` oszlopának legalsó sora a JSON-ból
-automatikusan megjelenő `Verzió: 2.19`.
+automatikusan megjelenő `Verzió: 2.21`.
 
 ## Tesztek és korlát
 

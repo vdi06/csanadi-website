@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.06",
-  "release": "2.19",
+  "release": "2.21",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -35,6 +35,90 @@
         "Aktuális hírek, események és kiemelt közlemények",
         "Sportágak, sporteredmények és a mindennapi sportélet",
         "Oktatási tudnivalók, felvételi és közösségi programok"
+      ]
+    },
+    "sportSuccesses": {
+      "ariaLabel": "Diákjaink sportsikerei",
+      "eyebrow": "CSANÁDI · SPORTEREDMÉNYEK",
+      "title": "Diákjaink sportsikerei",
+      "intro": "Hat történet a kitartásról, a fejlődésről és a közösen elért eredményekről.",
+      "openLabel": "Sportsiker részleteinek megnyitása",
+      "closeLabel": "Sportsiker részleteinek bezárása",
+      "detailLabel": "Sporteredmény részletei",
+      "linkLabel": "Sporteredmények megtekintése",
+      "items": [
+        {
+          "id": "atletika-nagy-lilla",
+          "name": "Nagy Lilla",
+          "sport": "Atlétika",
+          "result": "1. hely",
+          "competition": "Budapesti Diákolimpia · 400 m",
+          "date": "2026-10-16",
+          "image": "atletika.webp",
+          "summary": "Fegyelmezett felkészülés és remek hajrá a célegyenesben.",
+          "details": ["A versenyen Lilla egyenletes tempóval, magabiztos futással szerezte meg az első helyet. A teljesítmény mögött sok hét tudatos munka és folyamatos fejlődés áll.", "A sport és a tanulás összehangolása a mindennapi kitartás egyik legszebb példája."],
+          "href": "#/oldal/sports-results"
+        },
+        {
+          "id": "labdarugas-kiss-marton",
+          "name": "Kiss Márton",
+          "sport": "Labdarúgás",
+          "result": "2. hely",
+          "competition": "Budapesti iskolai teremlabdarúgó-torna",
+          "date": "2026-10-22",
+          "image": "labdarugas.webp",
+          "summary": "Összjáték és lendület az egész tornán.",
+          "details": ["A csapat egységes védekezéssel és gyors támadásokkal jutott be a döntőbe. Márton a csapatmunka és a sportszerű játék egyik meghatározó szereplője volt.", "Az elért eredmény újabb motiváció a következő megmérettetésre."],
+          "href": "#/oldal/sports-results"
+        },
+        {
+          "id": "uszas-szabo-nora",
+          "name": "Szabó Nóra",
+          "sport": "Úszás",
+          "result": "1. hely",
+          "competition": "Diákolimpiai úszóforduló · 100 m gyors",
+          "date": "2026-10-29",
+          "image": "uszas.webp",
+          "summary": "Javuló időeredmény, koncentrált versenyzés.",
+          "details": ["Nóra a rajttól a célba érkezésig tartotta a saját ritmusát, és kiemelkedő hajrával szerezte meg az első helyet.", "A siker mögött rendszeres edzés, türelem és sok apró technikai fejlődés áll."],
+          "href": "#/oldal/sports-results"
+        },
+        {
+          "id": "kosarlabda-toth-adam",
+          "name": "Tóth Ádám",
+          "sport": "Kosárlabda",
+          "result": "3. hely",
+          "competition": "Iskolák közötti kosárlabdakupa",
+          "date": "2026-11-03",
+          "image": "kosarlabda.webp",
+          "summary": "Küzdelmes mérkőzések és végig erős csapatszellem.",
+          "details": ["A csapat szoros mérkőzéseken küzdötte végig magát a dobogóig. Ádám pontos passzokkal és fegyelmezett védekezéssel segítette társait.", "A közös siker jól mutatja, mennyit számít a pályán az egymásra figyelés."],
+          "href": "#/oldal/sports-results"
+        },
+        {
+          "id": "roplabda-farkas-emese",
+          "name": "Farkas Emese",
+          "sport": "Röplabda",
+          "result": "1. hely",
+          "competition": "Budapesti diákröplabda-torna",
+          "date": "2026-11-08",
+          "image": null,
+          "summary": "Összhang a pályán, lendületes játék a döntőben.",
+          "details": ["A sikerhez pontos nyitások, jó helyezkedés és összeszokott csapatjáték vezetett. Emese a nehéz labdamenetekben is megőrizte a koncentrációját.", "Az első helyezés az egész közösség kitartó munkájának közös eredménye."],
+          "href": "#/oldal/sports-results"
+        },
+        {
+          "id": "asztalitenisz-varga-balint",
+          "name": "Varga Bálint",
+          "sport": "Asztalitenisz",
+          "result": "2. hely",
+          "competition": "Iskolai asztalitenisz-bajnokság",
+          "date": "2026-11-14",
+          "image": null,
+          "summary": "Gyors reakciók és kitartás a döntő szettig.",
+          "details": ["Bálint izgalmas mérkőzéseken jutott el a döntőbe, ahol végig szoros játékot mutatott. A második hely megszerzésében a biztos technika és a nyugodt játékvezetés segítette.", "Az eredmény jó alapot ad a további versenyekhez és a fejlődéshez."],
+          "href": "#/oldal/sports-results"
+        }
       ]
     },
     "mobileStory": {

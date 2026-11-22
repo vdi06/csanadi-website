@@ -1,5 +1,5 @@
-import { crest, element } from "../shared/js/dom.js?v=2.19";
-import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.19";
+import { crest, element } from "../shared/js/dom.js?v=2.21";
+import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.21";
 
 const clamp = (value) => Math.max(0, Math.min(1, value));
 const mediaRoot = "./shared/assets/media/web/desktop-hero/";
@@ -40,7 +40,8 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   const heroCrest = element("button", { className: "desktop-hero-crest", attributes: {
     type: "button", "aria-label": data.menuTitle,
     "aria-controls": "desktop-main-menu", "aria-expanded": "false"
-  } }, crest(config, "desktop-hero-crest-image"));
+  } }, crest(config, "desktop-hero-crest-image"),
+    element("span", { className: "desktop-hero-crest-label", text: "MENÜ" }));
   const brand = element("div", { className: "desktop-hero-identity", attributes: { "aria-hidden": "true" } },
     element("span", { className: "desktop-hero-wordmark", text: data.brand }),
     element("span", { className: "desktop-hero-wordmark-sub", text: data.brandSub }));

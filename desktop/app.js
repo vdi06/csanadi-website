@@ -1,9 +1,10 @@
-import { element } from "../shared/js/dom.js?v=2.19";
-import { mountGate } from "../shared/js/gate.js?v=2.19";
-import { makeFooter } from "../shared/js/footer.js?v=2.19";
-import { makeDesktopHeader } from "./header.js?v=2.19";
-import { createDesktopPage } from "./page.js?v=2.19";
-import { createDesktopHero } from "./hero.js?v=2.19";
+import { element } from "../shared/js/dom.js?v=2.21";
+import { mountGate } from "../shared/js/gate.js?v=2.21";
+import { makeFooter } from "../shared/js/footer.js?v=2.21";
+import { makeDesktopHeader } from "./header.js?v=2.21";
+import { createDesktopPage } from "./page.js?v=2.21";
+import { createDesktopHero } from "./hero.js?v=2.21";
+import { createDesktopSuccesses } from "./successes.js?v=2.21";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {
@@ -22,9 +23,12 @@ export function mount(root, config, page) {
     openMenu: desktopHeader.openMenu, headerCrest: desktopHeader.crestToggle,
     setCompact: desktopHeader.setCompact
   }) : null;
-  if (hero) main.append(hero.track, hero.continuation);
+  const successes = isHome ? createDesktopSuccesses(config) : null;
+  if (hero) main.append(hero.track, hero.continuation, successes.section);
   else if (page.startsWith("page:")) main.append(createDesktopPage(config, page.slice(5)));
   home.append(desktopHeader.header,
+    ...desktopHeader.overlays,
+    ...(successes ? [successes.overlay] : []),
     main,
     desktopFooter.footer);
   platformRoot.replaceChildren(home);
@@ -32,5 +36,5 @@ export function mount(root, config, page) {
     window.scrollTo?.({ top: 0, behavior: "instant" });
     hero.updateScroll();
   }
-  return () => { hero?.destroy(); desktopHeader.destroy(); desktopFooter.destroy(); };
+  return () => { successes?.destroy(); hero?.destroy(); desktopHeader.destroy(); desktopFooter.destroy(); };
 }

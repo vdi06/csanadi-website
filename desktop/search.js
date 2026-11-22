@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.19";
-import { trapTab } from "../shared/js/focus.js?v=2.19";
-import { filterSearchItems, navLink, searchItems } from "../shared/js/shell.js?v=2.19";
+import { element } from "../shared/js/dom.js?v=2.21";
+import { trapTab } from "../shared/js/focus.js?v=2.21";
+import { filterSearchItems, navLink, searchItems } from "../shared/js/shell.js?v=2.21";
 
 /** Asztali Spotlight: majdnem teljes képernyős, de lebegő üvegpanel. */
 export function createDesktopSearch(config, trigger, beforeOpen = () => {}) {

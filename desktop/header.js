@@ -1,9 +1,9 @@
-import { crest, element } from "../shared/js/dom.js?v=2.19";
-import { bindAppearance } from "../shared/js/appearance.js?v=2.19";
-import { createEditMode } from "../shared/js/edit-mode.js?v=2.19";
-import { makeSocialLink } from "../shared/js/shell.js?v=2.19";
-import { createDesktopMenu } from "./menu.js?v=2.19";
-import { createDesktopSearch } from "./search.js?v=2.19";
+import { crest, element } from "../shared/js/dom.js?v=2.21";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.21";
+import { createEditMode } from "../shared/js/edit-mode.js?v=2.21";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.21";
+import { createDesktopMenu } from "./menu.js?v=2.21";
+import { createDesktopSearch } from "./search.js?v=2.21";
 
 /** Asztali fejléc: címerből nyíló körmenü és külön nagy lebegő keresőablak.
  * A mobilmenü és annak DOM-ja itt nem létezik. */
@@ -50,10 +50,13 @@ export function makeDesktopHeader(config, home, { heroMode = false } = {}) {
       element("div", { className: "desktop-links-right" }, searchToggle, themeToggle,
         editToggle)),
     element("p", { className: "desktop-motto", text: data.motto }),
-    search.overlay, menu.overlay, editor.bar);
+    editor.bar);
 
   const unbindAppearance = bindAppearance(config, home, themeToggle);
-  return { header, crestToggle, openMenu: (origin) => menu.open(origin), setCompact,
+  // A rögzített fejléc backdrop-filtere új pozicionálási környezetet hoz létre.
+  // A teljes nézetet fedő menü és kereső ezért a fejléc testvére kell legyen.
+  return { header, overlays: [search.overlay, menu.overlay], crestToggle,
+    openMenu: (origin) => menu.open(origin), setCompact,
     destroy: () => {
     search.destroy(); menu.destroy(); editor.destroy(); unbindAppearance();
   } };
