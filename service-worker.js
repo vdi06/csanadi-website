@@ -1,23 +1,34 @@
 /* Csanádi: static FTP-compatible, version-scoped offline shell.
    Updated workers activate on explicit user refresh; the first install activates normally. */
-const RELEASE_ID='1.45';
+const PLATFORM=new URL(self.location.href).searchParams.get('platform')==='desktop'?'desktop':'mobile';
+const RELEASE_ID='1.51-'+PLATFORM;
 const SCOPE=new URL('./',self.registration.scope);
 const SHELL=`csanadi-shell-${RELEASE_ID}`;
 const MEDIA=`csanadi-media-${RELEASE_ID}`;
 const READER='csanadi-user-offline-pages';
-const CORE=[ 
+const SOURCE_CORE=[ 
  './','./index.html','./offline.html','./script.js','./service-worker.js',
  './json/config.json','./json/structure.json','./json/page-index.json','./json/media-library.json',
+ './json/site-shell.json','./json/offline-shell.json',
+ './js/site-bootstrap-v149.js','./js/offline-bootstrap-v149.js','./js/json-dom-v149.js','./js/json-validator-v149.js',
+ './css/gate-prelude-v149.css','./css/offline-v149.css','./css/visual-json-editor-v149.css','./mobile/reboot-stability-v149.css',
  './json/pages/home.json','./css/responsive-system-v1-42-18.css','./css/theme-coverage-v1-42-21.css','./css/subpage-premium-v1-42-22.css','./css/editor-c1-v1-42-23.css','./css/visual-editor-v1-42-24.css','./css/c3-live-preview-v1-42-25.css','./css/c4-release-gates-v1-42-26.css','./css/desktop-hero-controls-v1-43-1.css','./css/viewers-bootstrap-v1-43-3.css','./css/editor-workbench-v1-42-18.css','./css/maintenance-studio.css','./js/site-viewers-v1-43-3.js','./js/vendor/pdfjs/pdf.min.js','./js/vendor/pdfjs/pdf.worker.min.js','./js/editor-workbench-v1-42-18.js','./js/visual-editor-v1-42-24.js','./js/live-preview-v1-42-25.js','./js/zip-integrity-v1-42-26.js','./tools/maintenance-studio.js','./tools/page-draft-core-v1-42-23.js','./tools/visual-order-core-v1-42-24.js','./tools/content-workflow-core-v1-42-25.js','./tools/release-policy-v1-42-26.js','./json/data/spa-features-42.json',
  './mobile/reboot-design-v1-43-29.css','./css/verified-surface-fixes-v1-43-30.css','./css/v145-polish.css',
+ './tools/visual-json-editor-v149.js',
  './mobile/reboot-shell-v1-43-29.js','./mobile/reboot-menu-v1-43-29.js',
  './mobile/reboot-hero-v1-43-29.js','./mobile/reboot-quality-v1-43-29.js',
  './assets/media/logo/csanadi-crest-512.webp',
  './assets/media/web/responsive/bejarat-1600-640.webp',
  './assets/media/web/responsive/bejarat-1600-960.webp'
 ];
+const CORE=['./','./index.html','./js/platform-router-v149.js',...SOURCE_CORE
+ .filter(path=>path!=='./'&&path!=='./index.html'&&
+  (PLATFORM==='desktop'||!/(?:desktop-hero-fold|desktop-hero-controls)/.test(path))&&
+  (PLATFORM==='mobile'||!path.startsWith('./mobile/'))&&
+  (PLATFORM==='desktop'||!path.startsWith('./desktop/')))
+ .map(path=>'./'+PLATFORM+'/'+path.slice(2))];
 const local=url=>url.origin===SCOPE.origin&&url.pathname.startsWith(SCOPE.pathname);
-const coreURL=path=>new URL(path,SCOPE);
+const coreURL=path=>new URL(path.startsWith('./')?path:'./'+PLATFORM+'/'+path,SCOPE);
 let settingsPromise=null;
 async function settings(){
  if(!settingsPromise)settingsPromise=fetch(new Request(coreURL('json/config.json'),{cache:'no-store'}))
@@ -66,12 +77,13 @@ async function precache(){
   if(response.ok){
    const manifest=await response.json(),files=manifest.files||{};
    const appAssets=Object.entries(files).filter(([path,meta])=>
+    (PLATFORM==='desktop'||!/(?:desktop-hero-fold|desktop-hero-controls)/.test(path))&&
     ((path.startsWith('js/')&&path.endsWith('.js'))||
      (path.startsWith('css/')&&path.endsWith('.css')&&/^(?:site-bundle|site-consistency|home-v1|entrance-sequence|header-v1|desktop-hero-fold)/.test(path.slice(4)))||
      (path.startsWith('mobile/')&&(/\.(?:css|js)$/).test(path))||
      (path.startsWith('desktop/')&&path.endsWith('.js'))||
      path==='json/pages/home.json')&&meta.sizeBytes<=maxFile).slice(0,maxEntries);
-   selected=[...new Set([...CORE,...appAssets.map(([path])=>'./'+path)])];
+   selected=[...new Set([...CORE,...appAssets.map(([path])=>'./'+PLATFORM+'/'+path)])];
   }
  }catch(error){console.warn('Precache manifest not available',error);}
  const queue=[...selected];const cache=await caches.open(SHELL);
@@ -134,7 +146,7 @@ async function handle(event){
   const cached=await anyCached(request);if(cached)return cached;
   if(page){
    const shell=await caches.open(SHELL);
-   return await shell.match(coreURL('index.html'),{ignoreSearch:true})||await shell.match(coreURL('offline.html'),{ignoreSearch:true})||Response.error();
+   return await shell.match(new URL('./index.html',SCOPE),{ignoreSearch:true})||await shell.match(coreURL('offline.html'),{ignoreSearch:true})||Response.error();
   }
   if(/\.json$/i.test(url.pathname))return new Response(JSON.stringify({offline:true,temporary:true}),{status:503,headers:{'Content-Type':'application/json; charset=utf-8'}});
   return Response.error();

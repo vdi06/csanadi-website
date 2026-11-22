@@ -1,0 +1,12 @@
+/* V1.43.30: Chromiumban igazolt néző-/galéria-regressziók célzott javítása. */
+#app .media26-grid > .media26-tile{
+  display:block!important;width:100%!important;max-width:100%!important;
+  justify-self:stretch!important;min-width:0!important;
+  grid-row:auto!important;aspect-ratio:4/3!important;min-height:0!important;
+}
+#app .media26-grid > .media26-tile img{
+  display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;
+}
+@media screen and (min-width:769px){
+  #app .media26-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+}

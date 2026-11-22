@@ -1,0 +1,162 @@
+{
+  "schemaVersion": "1.0.0",
+  "collectionId": "collection:hirek-hivatalos",
+  "items": [
+    {
+      "id": "hir:nyilt-nap-2026",
+      "category": "Felvételi",
+      "title": "Gimnáziumi nyílt napok novemberben",
+      "summary": "A Csanádi Sportiskola 2026. november 17-én és 19-én gimnáziumi nyílt napot szervez. Igazgatói tájékoztató 8:30-kor, intézménybemutató 9:50-kor.",
+      "detail": "Az iskola mindkét dátumra meghirdette a programot. A részvétellel és a regisztrációval kapcsolatos aktuális tájékoztatás az eredeti intézményi közleményben olvasható. A program végét a forrás nem részletezi.",
+      "date": "2026-11-17",
+      "dateType": "esemény kezdőnapja",
+      "status": "verified",
+      "route": "#/oktatas/felveteli/kilencedik-evfolyam",
+      "url": "#/hirek-es-esemenyek"
+    },
+    {
+      "id": "hir:erettsegi-2026",
+      "category": "Oktatás",
+      "title": "Őszi érettségi – 2026",
+      "summary": "Az iskola az őszi középszintű szóbeli érettségi időpontját 2026. november 18-ra tette közzé. Az írásbelik októberben zajlottak.",
+      "detail": "A részletes tantárgyi időpontok, a dolgozatmegtekintésre vonatkozó információk és a témakörök az intézmény érettségi oldalán érhetők el.",
+      "date": "2026-11-18",
+      "dateType": "szóbeli vizsga napja",
+      "status": "verified",
+      "route": "#/oktatas/vizsgak/erettsegi",
+      "url": "#/oktatas/vizsgak/erettsegi"
+    },
+    {
+      "id": "hir:etkeztetes-2026",
+      "category": "Közlemény",
+      "title": "Étkeztetési rendszer: év végi szünet",
+      "summary": "Az iskola tájékoztatása szerint a Multischool5 szülői modul 2026. december 22. 9:00 és december 31. 9:15 között nem lesz elérhető.",
+      "detail": "A hivatalos közlemény szerint ebben az időszakban étkeztetési megrendelés és lemondás nem lehetséges. A részletekért az aktuális intézményi közleményt kell ellenőrizni.",
+      "date": "2026-12-22",
+      "dateType": "jelzett szünet kezdete",
+      "status": "verified",
+      "route": "#/informaciok/mindennapi-tudnivalok/etkezes",
+      "url": "#/hirek-es-esemenyek"
+    },
+    {
+      "id": "hir:tanevnyito-2026",
+      "category": "Archívum",
+      "title": "A 2026/2027-es tanév kezdete",
+      "summary": "A 2026/2027-es tanév első tanítási napját az iskola 2026. szeptember 1-re tette közzé, 9:00 órára meghirdetett tanévnyitóval.",
+      "detail": "Az eredeti közlemény a megérkezésről, az első tanítási napról és a kapcsolódó tudnivalókról is részletes tájékoztatást adott. Ez a bejegyzés történeti visszatekintésként szerepel.",
+      "date": "2026-09-01",
+      "dateType": "tanévkezdés",
+      "status": "verified",
+      "route": "#/oktatas/tanevek/aktualis-tanev",
+      "url": "#/hirek-es-esemenyek"
+    },
+    {
+      "id": "hir:iskolatortenet",
+      "category": "Iskolánk",
+      "title": "Több mint száz év Zuglóban",
+      "summary": "Az iskola 1897-ben kezdte meg működését, az Őrnagy utcai épületet 1904-ben adták át, és 1989-ben vette fel Csanádi Árpád nevét.",
+      "detail": "Az intézménytörténet az oktatás és a sport összekapcsolódásáról, a közösség továbbélő hagyományairól és a névadóhoz kötődő sportolói örökségről is szól.",
+      "date": null,
+      "dateType": "történeti összefoglaló",
+      "status": "verified",
+      "route": "#/iskolank/tortenet",
+      "url": "#/iskolank/tortenet"
+    },
+    {
+      "id": "minta:birkozas-iskolai-sportnap",
+      "category": "Sport",
+      "title": "MINTA – Birkózás az iskolai sportprogramban",
+      "summary": "Fiktív mintahír: a birkózó foglalkozásokon a technikai alapok, a biztonság és a sportszerűség áll a középpontban. A történet nem valós tanulóról vagy versenyeredményről szól.",
+      "detail": "Demonstrációs tartalom az új hírmegjelenítő kipróbálásához. Nincs hozzá köthető valós személy, osztály, verseny, eredmény vagy igazolt időpont.",
+      "date": null,
+      "dateType": "fiktív mintabejegyzés",
+      "status": "sample",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": null
+    },
+    {
+      "id": "minta:sportagak-kozossegi-edzes",
+      "category": "Sport",
+      "title": "MINTA – Közösségi sportfoglalkozás",
+      "summary": "Fiktív mintahír: a sportolók közös edzéseken készülnek, ahol a csapatmunka és az egymás támogatása fontos szerepet kap. Nem tényleges iskolai esemény.",
+      "detail": "Kizárólag bemutató jellegű szöveg. A közzétételre később az intézmény által jóváhagyott esemény kerülhet.",
+      "date": null,
+      "dateType": "fiktív mintabejegyzés",
+      "status": "sample",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": null
+    },
+    {
+      "id": "minta:okolvivas-technikai-alapok",
+      "category": "Sport",
+      "title": "MINTA – Ökölvívás: technika és fegyelem",
+      "summary": "Fiktív mintahír: egy elképzelt sportági edzés a mozgáskoordinációról, a koncentrációról és az edzésmunka fokozatosságáról szól.",
+      "detail": "Ez a szöveg nem kapcsolódik valós diákhoz, sportversenyhez, helyezéshez vagy közzétett intézményi hírhez.",
+      "date": null,
+      "dateType": "fiktív mintabejegyzés",
+      "status": "sample",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": null
+    },
+    {
+      "id": "minta:vizilabda-csapategyuttmukodes",
+      "category": "Sport",
+      "title": "MINTA – Vízilabda és csapatmunka",
+      "summary": "Fiktív mintahír: az elképzelt vízilabda-foglalkozás a gyors döntések, a csapattársak közötti kommunikáció és a közös célok fontosságát mutatja be.",
+      "detail": "Személynév, életkor, osztály és igazolt versenyeredmény nélküli demonstrációs tartalom.",
+      "date": null,
+      "dateType": "fiktív mintabejegyzés",
+      "status": "sample",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": null
+    },
+    {
+      "id": "minta:bmx-egyensuly-fejlesztes",
+      "category": "Sport",
+      "title": "MINTA – BMX: egyensúly és ügyesség",
+      "summary": "Fiktív mintahír: egy képzeletbeli BMX-bemutató az egyensúly, a biztonságos felkészülés és a kitartó gyakorlás szerepét szemlélteti.",
+      "detail": "A bejegyzés generált bemutató szöveg, nem valós személyről vagy sporteredményről készült beszámoló.",
+      "date": null,
+      "dateType": "fiktív mintabejegyzés",
+      "status": "sample",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": null
+    },
+    {
+      "id": "minta:kezilabda-csapatjatekok",
+      "category": "Sport",
+      "title": "MINTA – Kézilabda: gyors helyzetfelismerés",
+      "summary": "Fiktív mintahír: a bemutató kézilabdaedzés a passzpontosság, a közös mozgások és a játékszituációk gyakorlásának lehetőségeit mutatja be.",
+      "detail": "Generált minta, amely nem állít tényleges bajnoki szereplést vagy díjazást.",
+      "date": null,
+      "dateType": "fiktív mintabejegyzés",
+      "status": "sample",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": null
+    },
+    {
+      "id": "minta:vizilabda-mozgasfejlesztes",
+      "category": "Sport",
+      "title": "MINTA – Vízilabda: mozgásfejlesztés",
+      "summary": "Fiktív mintahír: a képzeletbeli vízi edzésben a labdakezelés, az állóképesség és a szabályos együttműködés kap hangsúlyt.",
+      "detail": "A történet kizárólag a honlap bemutatását szolgálja; nem valós verseny vagy tanulói eredmény.",
+      "date": null,
+      "dateType": "fiktív mintabejegyzés",
+      "status": "sample",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": null
+    },
+    {
+      "id": "minta:kezilabda-kozos-edzes",
+      "category": "Sport",
+      "title": "MINTA – Kézilabda: közös felkészülés",
+      "summary": "Fiktív mintahír: egy elképzelt csapatedzésen a sportolók a támadási és védekezési alapokat gyakorolják közösen.",
+      "detail": "Sem valós diákot, sem valódi egyesületi eredményt nem bemutató, generált mintatartalom.",
+      "date": null,
+      "dateType": "fiktív mintabejegyzés",
+      "status": "sample",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "url": null
+    }
+  ]
+}

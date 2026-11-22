@@ -1,0 +1,396 @@
+{
+  "schemaVersion": "1.0.0",
+  "nodes": [
+    {
+      "path": "pages/our-school.json",
+      "order": 1,
+      "children": [
+        {
+          "path": "pages/our-school/introduction.json",
+          "order": 1
+        },
+        {
+          "path": "pages/our-school/mission-and-values.json",
+          "order": 2
+        },
+        {
+          "path": "pages/our-school/teaching-staff.json",
+          "order": 3
+        },
+        {
+          "path": "pages/our-school/history.json",
+          "order": 4,
+          "children": [
+            {
+              "path": "pages/our-school/traditions-and-awards.json",
+              "order": 1,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/our-school/our-achievements.json",
+              "order": 2,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/our-school/website-history.json",
+              "order": 3,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/our-school/partners.json",
+          "order": 5,
+          "children": [
+            {
+              "path": "pages/our-school/foundation.json",
+              "order": 1,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/our-school/eco-school.json",
+          "order": 6
+        },
+        {
+          "path": "pages/our-school/explorer.json",
+          "order": 7
+        },
+        {
+          "path": "pages/our-school/school-compass.json",
+          "order": 8
+        },
+        {
+          "path": "pages/our-school/school-workshop.json",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "path": "pages/education.json",
+      "order": 2,
+      "children": [
+        {
+          "path": "pages/education/programs.json",
+          "order": 1,
+          "children": [
+            {
+              "path": "pages/education/programs/primary-school.json",
+              "order": 1,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/education/programs/secondary-school.json",
+              "order": 2,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/education/programs/sports-school-education.json",
+              "order": 3,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/education/school-years.json",
+          "order": 2,
+          "children": [
+            {
+              "path": "pages/education/school-years/current-school-year.json",
+              "order": 1,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/education/school-years/previous-school-years.json",
+              "order": 2,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/education/exams.json",
+          "order": 3,
+          "children": [
+            {
+              "path": "pages/education/exams/graduation-exams.json",
+              "order": 1,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/education/exams/classification-exams.json",
+              "order": 2,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/education/exams/other-exams.json",
+              "order": 3,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/education/learning-resources.json",
+          "order": 4,
+          "children": [
+            {
+              "path": "pages/education/learning-resources/learning-support.json",
+              "order": 1,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/education/library.json",
+          "order": 5,
+          "children": [
+            {
+              "path": "pages/education/library/library-services.json",
+              "order": 1,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/education/digital-culture.json",
+          "order": 6,
+          "children": [
+            {
+              "path": "pages/education/digital-culture/online-safety.json",
+              "order": 1,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/education/digital-culture/artificial-intelligence.json",
+              "order": 2,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/education/learning-and-community.json",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "path": "pages/education/admissions.json",
+      "order": 3,
+      "children": [
+        {
+          "path": "pages/education/admissions/first-grade.json",
+          "order": 1
+        },
+        {
+          "path": "pages/education/admissions/ninth-grade.json",
+          "order": 2
+        },
+        {
+          "path": "pages/education/admissions/open-days.json",
+          "order": 3
+        },
+        {
+          "path": "pages/education/admissions/admission-deadlines.json",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "path": "pages/sports.json",
+      "order": 4,
+      "children": [
+        {
+          "path": "pages/sports/sports-disciplines.json",
+          "order": 1,
+          "children": [
+            {
+              "path": "pages/sports/athletes.json",
+              "order": 1,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/sports/teams.json",
+              "order": 2,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/sports/coaches.json",
+              "order": 3,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/sports/sports-results.json",
+          "order": 2
+        },
+        {
+          "path": "pages/sports/sports-galleries.json",
+          "order": 3
+        },
+        {
+          "path": "pages/sports/olympic-heritage-and-knowledge.json",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "path": "pages/news-and-events.json",
+      "order": 5,
+      "children": [
+        {
+          "path": "pages/news-and-events/news.json",
+          "order": 1,
+          "children": [
+            {
+              "path": "pages/news-and-events/news/school-news.json",
+              "order": 1,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/news-and-events/news/sports-news.json",
+              "order": 2,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/news-and-events/event-calendar.json",
+          "order": 2,
+          "children": [
+            {
+              "path": "pages/news-and-events/event-calendar/school-events.json",
+              "order": 1,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/news-and-events/event-calendar/sport-events.json",
+              "order": 2,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/news-and-events/announcements.json",
+          "order": 3
+        },
+        {
+          "path": "pages/news-and-events/news/news-archive.json",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "path": "pages/information.json",
+      "order": 6,
+      "children": [
+        {
+          "path": "pages/information/daily-information.json",
+          "order": 1,
+          "children": [
+            {
+              "path": "pages/information/daily-information/bell-schedule.json",
+              "order": 1,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/information/daily-information/meals.json",
+              "order": 2,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/information/daily-information/parent-information.json",
+              "order": 3,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/information/daily-information/directions.json",
+              "order": 4,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/information/daily-information/map.json",
+              "order": 5,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/information/document-library.json",
+          "order": 2,
+          "children": [
+            {
+              "path": "pages/information/document-library/policies.json",
+              "order": 1,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/information/document-library/forms.json",
+              "order": 2,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/information/document-library/public-disclosures.json",
+              "order": 3,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/information/digital-services.json",
+          "order": 3
+        },
+        {
+          "path": "pages/information/community-service.json",
+          "order": 4,
+          "children": [
+            {
+              "path": "pages/information/community-service/community-service-guide.json",
+              "order": 1,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/information/community-service/community-service-regulations.json",
+              "order": 2,
+              "menuVisible": false
+            },
+            {
+              "path": "pages/information/community-service/community-service-documents.json",
+              "order": 3,
+              "menuVisible": false
+            }
+          ]
+        },
+        {
+          "path": "pages/contact.json",
+          "order": 5
+        },
+        {
+          "path": "pages/information/job-openings.json",
+          "order": 6,
+          "menuVisible": false
+        },
+        {
+          "path": "pages/information/privacy.json",
+          "order": 7,
+          "menuVisible": false
+        },
+        {
+          "path": "pages/information/offline-reader.json",
+          "order": 8,
+          "menuVisible": false
+        },
+        {
+          "path": "pages/information/guide.json",
+          "order": 9,
+          "menuVisible": false
+        },
+        {
+          "path": "pages/information/editor-workbench.json",
+          "order": 99,
+          "menuVisible": false
+        }
+      ]
+    }
+  ]
+}

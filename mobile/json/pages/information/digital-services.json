@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000056",
+  "pageType": "standard",
+  "menuLabel": "Ügyintézés",
+  "title": "Digitális ügyintézés",
+  "slug": "digitalis-ugyintezes",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 5
+  },
+  "seo": {
+    "title": "Digitális ügyintézés – Csanádi Sportiskola",
+    "description": "Iskolai digitális rendszerek és az elektronikus ügyintézés tájékozódási oldala. Digitális belépések, elektronikus fájlbeküldés és biztonságos ügyintézési.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [],
+  "summary": "Iskolai digitális rendszerek és az elektronikus ügyintézés tájékozódási oldala.",
+  "blocks": [
+    {
+      "id": "block:000056-section-1",
+      "type": "section",
+      "title": "Digitális belépések",
+      "children": [
+        {
+          "id": "block:000056-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A KRÉTA az intézményi elektronikus ügyintézés és tájékoztatás egyik fontos felülete. Belépéskor a hivatalos intézményi címet használd, és soha ne add meg a jelszavadat nem megbízható oldalon."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000056-section-2",
+      "type": "section",
+      "title": "Fájlbeküldés és kommunikáció",
+      "children": [
+        {
+          "id": "block:000056-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A megadott digitális felületen mindig az adott feladat vagy ügy előírásait kell követni. Ellenőrizd a fájlnevet, a szükséges formátumot, a jogosultságokat és a határidőt.\n\n[KRÉTA – hivatalos belépés](https://klik200346001.e-kreta.hu/) · [Dokumentumtár](#/informaciok/dokumentumtar)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000056",
+      "type": "section",
+      "title": "Digitális ügyintézés",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000056",
+          "type": "markdown",
+          "data": {
+            "text": "A KRÉTA a beiratkozási folyamatban és több tanuló–szülő ügyben hivatalosan használt digitális felület. Az általános iskolai beiratkozás BÁI és a középiskolai beiratkozás BKI moduljának útmutatói az iskola felvételi oldalain találhatók. Bejelentkezési adatokat kizárólag a hivatalos rendszerekbe szabad megadni.\n\n[Felvételi központ](#/oktatas/felveteli)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/informaciok/digitalis-ugyintezes",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
+  }
+}

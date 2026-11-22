@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000025",
+  "pageType": "hub",
+  "menuLabel": "Tanévek",
+  "title": "Tanévek",
+  "slug": "tanevek",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 6
+  },
+  "seo": {
+    "title": "Tanévek – Csanádi Sportiskola",
+    "description": "Tanévi információk, fontos időszakok és tanulói szervezés. A tanév szervezéséhez kapcsolódó fontos időszakok és a kapcsolódó információs oldalak érhetők el.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [],
+  "summary": "Tanévi információk, fontos időszakok és tanulói szervezés. A tanév szervezéséhez kapcsolódó fontos időszakok és a kapcsolódó információs oldalak érhetők el.",
+  "blocks": [
+    {
+      "id": "block:000025-section-1",
+      "type": "section",
+      "title": "A tanév ritmusa",
+      "children": [
+        {
+          "id": "block:000025-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A tanév során a tanítási napok, szünetek, vizsgák és iskolai programok közös időrendet alkotnak. A pontos dátumok ismerete különösen fontos, ha a tanulás mellé rendszeres edzések és sportversenyek társulnak.\n\nA 2026/2027-es tanévre vonatkozó ellenőrzött közleményeket és a kapcsolódó intézményi dokumentumokat külön oldalon gyűjtjük."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:be2026-nav-000025",
+      "type": "section",
+      "title": "További tájékozódási lehetőségek",
+      "children": [
+        {
+          "id": "block:be2026-navlinks-000025",
+          "type": "markdown",
+          "data": {
+            "text": "[Korábbi tanévek](#/oktatas/tanevek/korabbi-tanevek)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000025",
+      "type": "section",
+      "title": "Tanévi tervezés",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000025",
+          "type": "markdown",
+          "data": {
+            "text": "A 2026/2027-es tanév az iskola közzététele szerint 2026. szeptember 1-jén indult. Az intézményi csengetési rend, az eseménynaptár és az érettségi tájékoztató külön oldalon érhető el. A tanévi helyi rendet a közzétételi lista tartalmazza.\n\n[Közzétételi lista](#/informaciok/dokumentumtar/kozzeteteli-lista)\n\n[Közzétételi lista – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozzetetel.html)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/oktatas/tanevek",
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "disclosure"
+    }
+  }
+}

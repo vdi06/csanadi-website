@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000007",
+  "pageType": "standard",
+  "menuLabel": "Büszkeségeink",
+  "title": "Büszkeségeink",
+  "slug": "buszkesegeink",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 5
+  },
+  "seo": {
+    "title": "Büszkeségeink – Csanádi Sportiskola",
+    "description": "Olimpiai és világbajnoki eredmények az iskola nyilvános büszkeséglistájáról. A sportolói örökség és a közzétett eredmények segítenek megismerni az iskola.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "iskolank"
+  ],
+  "tags": [],
+  "summary": "Olimpiai és világbajnoki eredmények az iskola nyilvános büszkeséglistájáról.",
+  "blocks": [
+    {
+      "id": "block:000007-section-1",
+      "type": "section",
+      "title": "A Csanádi sportolói öröksége",
+      "children": [
+        {
+          "id": "block:000007-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "Az intézmény hivatalos Büszkeségeink oldala olimpiai bajnokok, világ- és Európa-bajnokok hosszú sorát mutatja be. Ezek valóban közzétett, történeti sporteredmények, nem látványképek alapján megállapított sikerek.\n\nA névsorban például Kozák Danuta kajakos, Szabó Gabriella kajakos, Berki Krisztián tornász és Lőrincz Tamás birkózó is szerepel. A névhez és az eredményhez az intézményi forrást kapcsoljuk, nem egy másik személyt ábrázoló képet."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000007-section-2",
+      "type": "section",
+      "title": "Eredmények és további nevek",
+      "children": [
+        {
+          "id": "block:000007-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "[Az iskola hivatalos büszkeséglistája](#/sport/sporteredmenyek)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000007",
+      "type": "section",
+      "title": "Sportolói büszkeségeink",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000007",
+          "type": "markdown",
+          "data": {
+            "text": "A Csanádi nyilvános büszkeséglistáján Kozák Danuta, Szabó Gabriella, Liu Shaoang, Vári Attila, Berki Krisztián és sok további ismert sportoló szerepel. A névsor sportágakat és kiemelkedő történeti eredményeket mutat be; azokat nem szabad a jelenlegi tanév friss versenyeredményeivel összekeverni.\n\n[Az iskola közzétett büszkeséglistája – eredeti intézményi forrás](https://csanadi-bp.edu.hu/buszkeseg.html)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/iskolank/buszkesegeink",
+    "verifiedContent": true,
+    "bannerMediaId": "media:eredmenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "pride"
+    }
+  }
+}

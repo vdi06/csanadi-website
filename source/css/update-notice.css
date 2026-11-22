@@ -1,0 +1,5 @@
+.cs-release-notice[hidden]{display:none!important}
+.cs-release-notice{position:fixed;inset:auto 12px 16px 12px;z-index:99999;max-width:680px;margin:auto;background:#102c49;color:#fff3d8;border:2px solid #dcb35a;border-radius:15px;box-shadow:0 18px 50px #0007;padding:1rem;display:flex;align-items:center;justify-content:space-between;gap:.9rem;flex-wrap:wrap;font:600 15px/1.5 system-ui,sans-serif}
+.cs-release-actions{display:flex;gap:.5rem;flex-wrap:wrap}.cs-release-actions button{cursor:pointer;background:#f6d99d;color:#102c49;border:1px solid #9a6d2b;border-radius:8px;padding:.55rem .9rem;font:700 14px system-ui,sans-serif}
+.cs-release-actions button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media(max-width:480px){.cs-release-notice{bottom:8px;padding:.7rem;font-size:13px}.cs-release-actions button{font-size:13px}}

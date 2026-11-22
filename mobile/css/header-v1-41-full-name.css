@@ -1,0 +1,32 @@
+/* v1.41 – teljes intézménynév a fejlécben; a középső kompakt címer ikon marad. */
+#site-header .brand-logo{display:none!important}
+#site-header .brand-copy{display:flex!important;flex-direction:column;gap:3px;min-width:0!important;max-width:100%;text-align:left}
+#site-header .brand-copy strong{display:block!important;font-size:clamp(12px,1.23vw,17px)!important;line-height:1.14!important;letter-spacing:.035em!important;overflow-wrap:normal}
+#site-header .brand-copy small{display:block!important;font-size:clamp(10px,.92vw,13px)!important;line-height:1.15!important;letter-spacing:.055em!important;overflow-wrap:normal}
+body.cs-home-header #site-header .brand-copy small,
+body.cs-inner-page #site-header .brand-copy small{display:block!important}
+#site-header .brand{display:flex!important;align-items:center;flex:0 1 auto!important;min-width:0!important;max-width:min(44vw,530px)!important;width:auto!important;gap:0!important;text-decoration:none}
+body.cs-home-header.cs-home-condensed #site-header .brand-copy,
+body.cs-inner-page.cs-header-condensed #site-header .brand-copy{display:flex!important}
+body.cs-home-header.cs-home-condensed #site-header .brand{flex:0 1 auto!important;min-width:0!important;max-width:min(44vw,530px)!important}
+body.cs-home-header #site-header #cs39-mini-hero .cs39-mini-description{display:none!important}
+body.cs-home-header #site-header #cs39-mini-hero > .cs39-mini-preview{width:48px!important;min-width:48px!important;max-width:48px!important;padding:0!important}
+body.cs-home-header #site-header #cs39-mini-hero{width:48px!important;max-width:48px!important}
+@media(max-width:768px){
+ #site-header .brand{max-width:calc(100vw - 136px)!important;flex:1 1 auto!important}
+ #site-header .brand-copy{gap:2px!important}
+ #site-header .brand-copy strong{font-size:clamp(10px,2.7vw,13px)!important;letter-spacing:0!important;line-height:1.13!important}
+ #site-header .brand-copy small{font-size:clamp(9px,2.45vw,12px)!important;letter-spacing:0!important;line-height:1.12!important}
+ body.cs-home-header.cs-home-condensed #site-header .brand{max-width:calc(100vw - 136px)!important;flex:1 1 auto!important}
+ #site-header .header-kreta,#site-header .theme-switch{display:none!important}
+}
+@media(max-width:350px){
+ #site-header .brand{max-width:calc(100vw - 117px)!important}
+ body.cs-home-header.cs-home-condensed #site-header .brand{max-width:calc(100vw - 117px)!important}
+ #site-header .brand-copy strong{font-size:10px!important}
+ #site-header .brand-copy small{font-size:9px!important}
+ body.cs-home-header:not(.cs-home-condensed) #site-header .brand-copy small{display:block!important;font-size:9px!important}
+ body.cs-home-header:not(.cs-home-condensed) #site-header .brand-copy strong{font-size:10px!important}
+ body.cs-home-header #site-header .brand-row{min-height:82px!important;padding-bottom:4px!important}
+ body.cs-home-header #site-header .brand-row>.cs1402-persistent-motto{display:none!important}
+}

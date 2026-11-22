@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000058",
+  "pageType": "standard",
+  "menuLabel": "Tudnivalók",
+  "title": "Tudnivalók",
+  "slug": "kozossegi-tudnivalok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-19T21:00:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 6
+  },
+  "seo": {
+    "title": "Tudnivalók – Csanádi Sportiskola",
+    "description": "Tájékozódás a közösségi szolgálat feladatairól és igazolásáról. Gyakorlati tudnivalók a feladatok megszervezéséhez, dokumentálásához és igazolásához.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [],
+  "summary": "Tájékozódás a közösségi szolgálat feladatairól és igazolásáról. Gyakorlati tudnivalók a feladatok megszervezéséhez, dokumentálásához és igazolásához.",
+  "blocks": [
+    {
+      "id": "block:000058-section-1",
+      "type": "section",
+      "title": "A szolgálat megtervezése",
+      "children": [
+        {
+          "id": "block:000058-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A tanulói közösségi szolgálattal kapcsolatban az intézményi koordináció, a fogadóhely megválasztása, az előzetes egyeztetés és az igazolások kezelése különösen fontos. Az aktuális helyi szabályokat mindig a kijelölt felelős tájékoztatása alapján kell követni."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000058-section-2",
+      "type": "section",
+      "title": "Mit érdemes rögzíteni?",
+      "children": [
+        {
+          "id": "block:000058-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A tevékenység időpontját, helyét, időtartamát és a szükséges igazolásokat az előírt módon kell dokumentálni.\n\n[Közösségi szolgálat](#/informaciok/kozossegi-szolgalat) · [Kapcsolódó dokumentumok](#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000058-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    },
+    {
+      "id": "block:content-review-20261114--p000058",
+      "type": "section",
+      "title": "Közösségi szolgálat: hogyan kezdj hozzá?",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000058",
+          "type": "markdown",
+          "data": {
+            "text": "A tanuló a közösségi szolgálat megkezdése előtt az iskolai koordinátorral egyezteti a helyszínt és a tevékenységet. A szolgálati naplóban dátummal és tevékenységgel dokumentálja a teljesítést. Az utazási idő a szolgálati időbe nem számítható be.\n\n[Közösségi szolgálat](#/informaciok/kozossegi-szolgalat)\n\n[Az iskola közösségi szolgálati dokumentumai](#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok)\n\n[Közösségi szolgálat – eljárás és korábban közzétett szabályok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kozszolinfo.html)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:202627-service",
+      "type": "section",
+      "title": "Közösségi szolgálat – felelős pedagógus",
+      "children": [
+        {
+          "id": "block:202627-service-text",
+          "type": "markdown",
+          "data": {
+            "text": "A 2026/2027-es tanévben a közösségi szolgálat intézményi felelőse **Horváth-Szabó Erika**. A feladat megkezdése előtt vele vagy az iskolai kapcsolattartási rend szerint kijelölt koordinátorral érdemes egyeztetni.\n\nA szolgálati idő, a tevékenység és az igazolás adatait a helyi szabályzatnak megfelelően dokumentálni kell. [Közösségi szolgálati dokumentumok](#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/informaciok/kozossegi-szolgalat/kozossegi-tudnivalok",
+    "verifiedContent": true,
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-19",
+      "status": "primary-source-checked",
+      "sourceId": "school-policies-2026"
+    }
+  }
+}

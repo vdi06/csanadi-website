@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000045",
+  "pageType": "collection",
+  "menuLabel": "Iskolai események",
+  "title": "Iskolai események",
+  "slug": "iskolai-esemenyek",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-19T21:00:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 6
+  },
+  "seo": {
+    "title": "Iskolai események – Csanádi Sportiskola",
+    "description": "Iskolai ünnepségek, szülői alkalmak és témahetek a 2026/2027-es munkaterv alapján.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "hirek-es-esemenyek"
+  ],
+  "tags": [],
+  "summary": "Iskolai ünnepségek, szülői alkalmak és témahetek a 2026/2027-es munkaterv alapján.",
+  "blocks": [
+    {
+      "id": "block:000045-section-1",
+      "type": "section",
+      "title": "Milyen események tartozhatnak ide?",
+      "children": [
+        {
+          "id": "block:000045-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskolai ünnepségek, közösségi alkalmak, tájékoztatók, pályaorientációs programok és más jóváhagyott események külön iskolai kategóriában jeleníthetők meg."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000045-section-2",
+      "type": "section",
+      "title": "Hogyan tájékozódj?",
+      "children": [
+        {
+          "id": "block:000045-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A pontos helyszín, időpont és regisztrációs feltétel csak ellenőrzött eseménybejegyzésből követhető. A központi naptárban több nézet és szűrés is elérhető.\n\n[Teljes eseménynaptár](#/hirek-es-esemenyek/esemenynaptar) · [Iskolai hírek](#/hirek-es-esemenyek/hirek/iskolai-hirek)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000045",
+      "type": "section",
+      "title": "Közzétett tanévi rendezvények",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000045",
+          "type": "markdown",
+          "data": {
+            "text": "**2026. november:** gimnáziumi nyílt napok **17-én és 19-én, 8:30-tól**; szülői fogadóóra **24-én, 17:00–19:00**. **December:** szalagavató **11-én, 18:00**; karácsonyi ünnepségek **17-én**.\n\n**2027. január:** a magyar kultúra napja **22-én**. **Február:** szülői értekezletek **1-jén és 2-án, 17:00-kor**; megemlékezés a diktatúrák áldozatairól **25-én**. **Március:** a március 15-i megemlékezés **12-én**; diákparlament **22-én**; fogadóóra **23-án, 17:00–19:00**.\n\n**Április:** a költészet napjának iskolai programja **12-én**; holokauszt-megemlékezés **16-án**; gimnáziumi ballagás **30-án, 12:00**. **Május:** Csanádi-nap **28-án**. **Június:** Nemzeti Összetartozás Napja **4-én**; tanévzáró és 8. osztályos ballagás **18-án, 10:00**.\n\nA teljes lista és a további témahetek az [eseménynaptárban](#/hirek-es-esemenyek/esemenynaptar) érhetők el. A csak hónappal, közelítő időponttal vagy opcionális napként jelölt programokhoz nem közlünk kitalált napot."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek",
+    "verifiedContent": true,
+    "bannerMediaId": "media:esemenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-19",
+      "status": "primary-source-checked",
+      "sourceId": "annual-workplan-2026-27"
+    }
+  }
+}

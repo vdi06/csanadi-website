@@ -1,0 +1,81 @@
+
+ 
+body.site-map-is-open > :is(.site-header,#global-hero,.orbit-launch,#app,.site-footer){
+  -webkit-filter:blur(7px) brightness(.71)  ;
+  filter:blur(7px) brightness(.71)  ;
+}
+html[data-theme="dark"] body.site-map-is-open > :is(.site-header,#global-hero,.orbit-launch,#app,.site-footer){
+  -webkit-filter:blur(8px) brightness(.59)  ;
+  filter:blur(8px) brightness(.59)  ;
+}
+#site-map-overlay:not([hidden]){
+  position:fixed  ;
+  inset:0  ;
+  z-index:5000  ;
+  isolation:isolate  ;
+  background:transparent  ;
+  -webkit-filter:none  ;
+  filter:none  ;
+  -webkit-backdrop-filter:none  ;
+  backdrop-filter:none  ;
+}
+#site-map-overlay .site-map-shade{
+  position:fixed  ;
+  inset:0  ;
+  width:100vw  ;
+  height:100dvh  ;
+  z-index:0  ;
+  display:block  ;
+  background:rgba(5,17,32,.30)  ;
+  -webkit-backdrop-filter:blur(5px)  ;
+  backdrop-filter:blur(5px)  ;
+  pointer-events:auto  ;
+  transform:none  ;
+}
+html[data-theme="dark"] #site-map-overlay .site-map-shade{
+  background:rgba(1,8,20,.42)  ;
+  -webkit-backdrop-filter:blur(5px)  ;
+  backdrop-filter:blur(5px)  ;
+}
+#site-map-overlay .site-map-dialog{
+  position:relative  ;
+  z-index:1  ;
+  -webkit-filter:none  ;
+  filter:none  ;
+  -webkit-backdrop-filter:none  ;
+  backdrop-filter:none  ;
+  background:transparent  ;
+  border:0  ;
+  box-shadow:none  ;
+}
+@media(prefers-reduced-motion:reduce){
+  body.site-map-is-open > :is(.site-header,#global-hero,.orbit-launch,#app,.site-footer){transition:none  ;}
+}
+
+
+ 
+html[data-theme="light"] #global-hero .hero2026-bottom{
+  background:linear-gradient(100deg,#fffaf0 0%,#f7edd9 58%,#f0dfba 100%)  ;
+  border-top:1px solid #d9bc82  ;
+  color:#1c354b  ;
+}
+html[data-theme="light"] #global-hero .hero2026-bottom :is(.hero2026-count,.hero2026-progress-overline,.hero2026-progress-sub){
+  color:#254055  ;
+}
+html[data-theme="light"] #global-hero .hero2026-bottom :is(.hero2026-arrow,.hero2026-pause){
+  background:#fffdf7  ;
+  color:#16354e  ;
+  border-color:#bc9a5b  ;
+}
+html[data-theme="light"] #global-hero .hero2026-bottom .hero2026-dot{
+  background:#b1a18a  ;
+  border-color:#a49278  ;
+}
+html[data-theme="light"] #global-hero .hero2026-bottom .hero2026-dot.active{
+  background:#b98937  ;
+  border-color:#aa7d2c  ;
+}
+html[data-theme="dark"] #global-hero .hero2026-bottom{
+  background:linear-gradient(100deg,#081e32,#163955)  ;
+  color:#f6e8c4  ;
+}

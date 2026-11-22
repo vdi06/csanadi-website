@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": 21,
+  "notice": "Tájékozódást segítő interaktív eszközök. A nem igazolt adatok nem hivatalos felvételi feltételek, határidők, épület- vagy edzéshelyszín-adatok.",
+  "admission": [
+    {"id":"first","label":"1. évfolyam","program":"Általános iskolai nevelés","requirements":"Aktuális beiskolázási tájékoztató szerint; itt nincs ellenőrzött részletes feltétellista.","deadline":"Pontos intézményi dátum ellenőrzendő","route":"#/oktatas/felveteli/elso-evfolyam","verifiedDeadline":false},
+    {"id":"ninth","label":"9. évfolyam","program":"Gimnáziumi képzés","requirements":"A hivatalos felvételi tájékoztatóban szereplő követelmények; az országos középfokú felvételi eljárás irányadó.","deadline":"Országos központi írásbeli: 2027. január 23. 10:00; intézményi határidők ellenőrzendők","route":"#/oktatas/felveteli/kilencedik-evfolyam","verifiedDeadline":true},
+    {"id":"sports","label":"Sportiskolai nevelés","program":"Sport és tanulás összehangolása","requirements":"Konkrét sportági lehetőségek és jogosultsági feltételek intézményi egyeztetéssel tisztázhatók.","deadline":"Nem áll rendelkezésre egységes, ellenőrzött határidő","route":"#/oktatas/kepzeseink/sportiskolai-neveles","verifiedDeadline":false}
+  ],
+  "academic": [
+    {"id":"year-start","date":"2026-09-01","category":"tanév","title":"A 2026/2027-es tanév első tanítási napja","note":"Korábbi, iskolai forrásban közölt időpont.","route":"#/oktatas/tanevek/aktualis-tanev"},
+    {"id":"open17","date":"2026-11-17","category":"felvételi","title":"Gimnáziumi nyílt nap","note":"Az iskola 8:30-as igazgatói tájékoztatót közölt.","route":"#/oktatas/felveteli/nyilt-napok"},
+    {"id":"exam18","date":"2026-11-18","category":"vizsga","title":"Őszi középszintű szóbeli érettségi","note":"Az intézmény korábban közzétett időpontja.","route":"#/oktatas/vizsgak/erettsegi"},
+    {"id":"open19","date":"2026-11-19","category":"felvételi","title":"Gimnáziumi nyílt nap","note":"Az iskola 8:30-as igazgatói tájékoztatót közölt.","route":"#/oktatas/felveteli/nyilt-napok"},
+    {"id":"written","date":"2027-01-23","category":"vizsga","title":"Országos központi írásbeli","note":"Országos időpont, nem önálló Csanádi-rendezvény.","route":"#/oktatas/felveteli/felveteli-hataridok"}
+  ],
+  "academicUndated": [
+    {"category":"szünet","title":"Tanítási szünetek","note":"A konkrét tanévi szüneteket intézményi/országos közzététel alapján kell ellenőrizni; ellenőrzés nélkül nem jelenítünk meg dátumot."},
+    {"category":"különleges nap","title":"Rendkívüli tanítási napok","note":"Az aktuális intézményi munkaterv alapján kerülhetnek ide."}
+  ],
+  "sports": [
+    {"id":"football","name":"Labdarúgás","kind":"csapat","interest":["labda","csapat"],"description":"Csapatmunka, taktika, gyors döntések.","route":"#/sport/sportagak"},
+    {"id":"waterpolo","name":"Vízilabda","kind":"csapat","interest":["víz","csapat"],"description":"Úszástudás, labda, együttműködés.","route":"#/sport/sportagak"},
+    {"id":"basketball","name":"Kosárlabda","kind":"csapat","interest":["labda","csapat"],"description":"Közös játék, helyzetfelismerés, mozgáskoordináció.","route":"#/sport/sportagak"},
+    {"id":"swim","name":"Úszás","kind":"egyéni","interest":["víz","állóképesség"],"description":"Technika, kitartás, rendszeresség.","route":"#/sport/sportagak"},
+    {"id":"athletics","name":"Atlétika","kind":"egyéni","interest":["állóképesség","technika"],"description":"Futás, ugrás és dobások változatos mozgásai.","route":"#/sport/sportagak"},
+    {"id":"wrestling","name":"Birkózás","kind":"egyéni","interest":["technika","erő"],"description":"Technika, kontroll és sportszerűség.","route":"#/sport/sportagak"}
+  ],
+  "map": [
+    {"id":"arrival","name":"Érkezés és tájékozódás","description":"Kiindulási pont: az iskola Őrnagy utcai címe. A tényleges bejáratot a helyszínen kell ellenőrizni.","route":"#/kapcsolat"},
+    {"id":"education","name":"Tantermek és oktatási terek","description":"Konkrét teremszám és folyosó nincs hitelesítve. Kérj útbaigazítást az iskolában.","route":"#/oktatas"},
+    {"id":"sport","name":"Sportolási helyszínek","description":"A sportlétesítmények pontos elhelyezkedése és megközelítése intézményi egyeztetést igényel.","route":"#/sport"},
+    {"id":"office","name":"Ügyintézés és kapcsolattartás","description":"Az aktuális ügyintézési hely és fogadási idő a hivatalos kapcsolati tájékoztató szerint.","route":"#/kapcsolat"}
+  ],
+  "quiz": [
+    {"id":"q1","question":"Melyik felületen lehet az éppen érvényes felvételi határidőt ellenőrizni?","options":["Egy fiktív sporthírben","A hivatalos felvételi tájékoztatóban","A fotógalériában"],"correct":1,"explanation":"Határidőket és követelményeket mindig a hivatalos közzétételben ellenőrizz."},
+    {"id":"q2","question":"Mit jelent a MINTA jelzés egy sporthír mellett?","options":["Személyes eredményt közöl","Hivatalos értesítés","Fiktív bemutató tartalom"],"correct":2,"explanation":"A mintahír nem bizonyít valós eseményt vagy diákot."},
+    {"id":"q3","question":"Mi történik a honlap önellenőrző feladatának válaszaival?","options":["Csak az aktuális böngészőben értékelődnek","Elküldi az osztályfőnöknek","Nyilvánosan megjelennek"],"correct":0,"explanation":"Az eredményjelzés kizárólag helyben készül; nincs adatküldés."},
+    {"id":"q4","question":"Mit jelent egy dokumentumnál, hogy nem hivatalos segédlet?","options":["Minden körülmények között kötelező","Tájékoztatásra szolgál, nem helyettesít szabályzatot","Tilos letölteni"],"correct":1,"explanation":"A segédlet támogathatja a felkészülést, de nem intézményi szabályzat."}
+  ],
+  "tour": [
+    {"title":"Üdvözlünk!","text":"A kezdőlap a legfontosabb iskolai tartalmakat foglalja össze."},
+    {"title":"Három ikon telefonon","text":"A házikó a kezdőlapot, a címer a menüt, a nagyító a keresőt nyitja meg."},
+    {"title":"Keresés és oldalak","text":"A kereső az intézményi tartalmak között segít tájékozódni."},
+    {"title":"Felfedezőközpont","text":"Itt összevetheted a képzéseket, kipróbálhatod a tanévtervezőt, és mini-kvízt oldhatsz meg."},
+    {"title":"Adatvédelem","text":"A kedvencek és a kvíz eredménye nem kerül szerverre. A saját beállításaidat a böngészőben törölheted."}
+  ]
+}

@@ -1,0 +1,129 @@
+/* v1.42.16 – consistent responsive layout and accessible page typography.
+   The photographic hero is deliberately full-bleed; content blocks have one shared max width. */
+:root { --cs-site-content-width:1160px; --cs-site-gutter:clamp(var(--cs-site-gutter-min,14px),3vw,var(--cs-site-gutter-max,32px)); }
+.visually-hidden:not(:focus):not(:active),
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+ position:absolute!important;width:1px!important;height:1px!important;padding:0!important;
+ margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;
+ clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important;
+}
+#app { min-width:0;max-width:100%;width:100%;overflow-x:clip; }
+#app [hidden] { display:none!important; }
+#app :is(.home-canvas,.home-unit,.content-shell,.content-layout,.cs92-article,.cs-spa-feature,
+ article,section,.row,.col,.card,.content-tile,.content-tiles,.section-wrap) { box-sizing:border-box;min-width:0; }
+#app[data-page-kind=home] .home-canvas,
+#app:not([data-page-kind=home]) > :is(.content-shell,.cs-spa-feature) {
+ max-width:var(--cs-site-content-width)!important;
+ width:min(calc(100% - 2 * var(--cs-site-gutter)),var(--cs-site-content-width))!important;
+ margin-inline:auto!important;
+}
+#app[data-page-kind=home] .home-canvas { padding-inline:0!important; }
+/* Nested content containers must not apply the outer page gutter a second time. */
+#app:not([data-page-kind=home]) :is(.content-layout,.cs92-article) {
+ width:100%!important;max-width:100%!important;margin-inline:auto!important;
+}
+#app[data-page-kind=home] .home-canvas > .home-unit {
+ grid-column:1/-1!important;max-width:100%!important;width:100%!important;margin-inline:auto!important;
+}
+#app[data-page-kind=home] .home-canvas :is(.container-xxl,.section-wrap,.student-success-container,.experience-hub) {
+ max-width:100%!important;width:100%!important;box-sizing:border-box;
+}
+#app :is(h1,h2,h3,h4,h5,h6,p,li,blockquote,figcaption,.section-title,.card-title) {
+ overflow-wrap:break-word;word-break:normal;
+}
+#app :is(h1,h2,h3,h4,h5,h6) { white-space:normal;line-height:1.22;text-wrap:balance; }
+#app :is(img,video,canvas,svg) {max-width:100%;height:auto;}
+#app :is(iframe,table,.table-responsive) {max-width:100%;}
+#app :is(.table-responsive,.cs-spa-feature-frame) {box-sizing:border-box;}
+#app .table-responsive {overflow-x:auto;}
+#app .cs-spa-feature-frame {display:block;width:100%;border:0;background:transparent;border-radius:14px;}
+html[data-theme=light] #app :is(.article-section,.content-tile,.cs92-article,.home-unit) {color:var(--ink,#173149);}
+html[data-theme=dark] #app :is(.article-section,.content-tile,.cs92-article,.home-unit) {color:var(--ink,#f0f4fa);}
+html[data-theme=dark] #app :is(input,textarea,select) {color-scheme:dark;}
+#app :is(a,button,input,textarea,select,summary):focus-visible {outline:3px solid #d5ac60;outline-offset:3px;}
+@media(min-width:769px) {
+ /* One compact crest size, matching the fold animation; older CSS no longer wins. */
+ html body.cs-home-header.cs-home-condensed #site-header .brand-row,
+ html body.cs-inner-page.cs-header-condensed #site-header .brand-row {
+   min-height:clamp(94px,7vw,116px)!important;height:auto!important;align-items:center!important;
+ }
+ html body.cs-home-header.cs-home-condensed #site-header #cs39-mini-hero,
+ html body.cs-inner-page.cs-header-condensed #site-header #cs39-mini-hero {
+   width:clamp(86px,6.6vw,106px)!important;max-width:none!important;min-height:84px!important;
+   display:flex!important;align-items:center!important;justify-content:center!important;
+ }
+ html body.cs-home-header.cs-home-condensed #site-header #cs39-mini-hero > button.cs39-mini-preview,
+ html body.cs-inner-page.cs-header-condensed #site-header #cs39-mini-hero > button.cs39-mini-preview {
+   width:clamp(82px,6.4vw,102px)!important;height:clamp(82px,6.4vw,102px)!important;
+   min-width:82px!important;max-width:none!important;min-height:82px!important;
+   padding:4px!important;overflow:visible!important;flex:0 0 auto!important;border-radius:50%!important;
+ }
+ html body.cs-home-header.cs-home-condensed #site-header #cs39-mini-hero > button.cs39-mini-preview > img.cs39-mini-image,
+ html body.cs-inner-page.cs-header-condensed #site-header #cs39-mini-hero > button.cs39-mini-preview > img.cs39-mini-image {
+   width:clamp(72px,5.55vw,92px)!important;height:clamp(72px,5.55vw,92px)!important;
+   max-width:none!important;min-width:72px!important;object-fit:contain!important;border-radius:50%;
+ }
+ html body #site-header #mobile-menu-toggle {display:none!important;visibility:hidden!important;pointer-events:none!important;}
+}
+@media(max-width:768px) {
+ html body {padding-bottom:0!important;}
+ html body :is(#ext26-mobile-nav,.ext26-mobile-nav,.cs32-mobile-bar,#cs39-mobile-route) {
+   display:none!important;visibility:hidden!important;pointer-events:none!important;
+ }
+ html body #site-header {position:sticky!important;top:0!important;z-index:950!important;}
+ html body #site-header .brand-row {
+   display:flex!important;flex-wrap:nowrap!important;align-items:center!important;
+   justify-content:space-between!important;gap:8px!important;min-height:60px!important;
+ }
+ html body #site-header .header-actions {display:flex!important;align-items:center!important;min-width:44px;flex:0 0 auto;}
+ html body #site-header .header-actions #mobile-menu-toggle {
+  display:grid!important;place-items:center!important;visibility:visible!important;pointer-events:auto!important;
+  width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;flex:0 0 44px!important;
+ }
+ #app :is(h1,h2,h3,h4) {overflow-wrap:anywhere;line-height:1.25!important;}
+ #app :is(p,li) {line-height:1.52;}
+ #app :is(.cs92-news-stream,.cs92-sport-fields,.cs92-documents-layout) {
+  grid-template-columns:minmax(0,1fr)!important;
+ }
+ #app .cs92-section-navigation--documents {position:static!important;}
+ #app .cs-spa-feature {padding-inline:0!important;}
+ #app :is(.home-canvas,.student-success-feature-grid,.experience-dash-grid,.cs-news-grid,.content-tiles) {
+  min-width:0;max-width:100%;
+ }
+}
+@media(max-width:360px) { :root{--cs-site-gutter:12px;} #app .cs92-article{padding:14px!important;} }
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important;}}
+
+/* v1.42.18: one centered crest on desktop subpages; no duplicate right-hand launcher.
+   The scroll state is 90% of the unscrolled main crest, configured by JSON tokens. */
+@media(min-width:769px){
+ body.cs-inner-page #site-header .brand-row{position:relative!important;min-height:calc(var(--cs-subpage-crest-main,100px) + 16px)!important}
+ body.cs-inner-page.cs-header-condensed #site-header .brand-row{min-height:calc(var(--cs-subpage-crest-scrolled,90px) + 14px)!important}
+ body.cs-inner-page #site-header .cs-subpage-menu{
+  position:absolute!important;left:50%!important;right:auto!important;top:50%!important;
+  transform:translate(-50%,-50%)!important;
+  width:var(--cs-subpage-crest-main,100px)!important;height:var(--cs-subpage-crest-main,100px)!important;
+  min-width:0!important;min-height:0!important;max-width:none!important;
+  padding:5px!important;border-radius:50%!important;margin:0!important;
+  display:grid!important;place-items:center!important;z-index:5!important;
+ }
+ body.cs-inner-page.cs-header-condensed #site-header .cs-subpage-menu{
+  width:var(--cs-subpage-crest-scrolled,90px)!important;height:var(--cs-subpage-crest-scrolled,90px)!important;
+ }
+ body.cs-inner-page #site-header .cs-subpage-menu-logo{
+  display:block!important;width:100%!important;height:100%!important;min-width:0!important;
+  max-width:none!important;object-fit:contain!important;
+ }
+ body.cs-inner-page #site-header #cs39-mini-hero,
+ body.cs-inner-page #site-header #mobile-menu-toggle,
+ body.cs-inner-page > .orbit-launch,
+ body.cs-inner-page #site-header .orbit-launch{display:none!important;visibility:hidden!important;pointer-events:none!important}
+}
+@media(max-width:768px){
+ /* Keep the previously approved *single top-right mobile menu*, no lower navigation. */
+ body.cs-inner-page #site-header .cs-subpage-menu{display:none!important;visibility:hidden!important;pointer-events:none!important}
+ body.cs-inner-page #site-header .header-actions #mobile-menu-toggle{display:grid!important;visibility:visible!important;pointer-events:auto!important}
+}
+
+/* All subpage sizes use exactly one active launcher. */
+body.cs-inner-page #cs39-mini-hero{display:none!important;visibility:hidden!important;pointer-events:none!important}

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000048",
+  "pageType": "hub",
+  "menuLabel": "Mindennapi tudnivalók",
+  "title": "Mindennapi tudnivalók",
+  "slug": "mindennapi-tudnivalok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-19T22:00:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 7
+  },
+  "seo": {
+    "title": "Mindennapi tudnivalók – Csanádi Sportiskola",
+    "description": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez. Napirend, étkezési információk és szülői ügyintézés témájában vezet tovább a megfelelő.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [],
+  "summary": "Tanítási idők, étkezés és tájékozódás a mindennapi iskolai élethez. Napirend, étkezési információk és szülői ügyintézés témájában vezet tovább a megfelelő oldalakra.",
+  "blocks": [
+    {
+      "id": "block:000048-section-1",
+      "type": "section",
+      "title": "Napirend és tájékoztatás",
+      "children": [
+        {
+          "id": "block:000048-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A csengetési rend a tanórák időpontjait rögzíti, a szülői tájékoztatás pedig a mindennapi ügyintézéshez nyújt kapaszkodót. A digitális idővonal az ellenőrzött órarendet követi.\n\nA különleges tanítási napokra vonatkozó eltérő napirendet csak intézményi közlés alapján lehet beállítani, ezért itt nem jelenik meg találgatott rövidített csengetési rend."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000048",
+      "type": "section",
+      "title": "Napi iskolai tudnivalók",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000048",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskola által megerősített hivatalos csengetési rend szerint az **első óra 8:00-kor**, a **nyolcadik 14:25-kor kezdődik és 15:05-kor ér véget**. Az általános iskolai ügyelet tanítási napokon 7:00 és 18:00 között működik. Az étkezési ügyintézés feltételei az intézmény ebédbefizetési tájékoztatójában találhatók.\n\n[Csengetési rend](#/informaciok/mindennapi-tudnivalok/csengetesi-rend)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119-p000048",
+      "type": "section",
+      "title": "Mielőtt elindulsz",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119-p000048",
+          "type": "markdown",
+          "data": {
+            "text": "A tanítási nap megtervezéséhez ellenőrizd a csengetési rendet, az esetleges rendkívüli programokat és a közlekedési információkat. Vizsga, felvételi vagy egyedi ügyintézés esetén az aktuális közlemény az irányadó.\n\nAz intézmény elérhetőségei a [Kapcsolat](#/kapcsolat) oldalon érhetők el."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/informaciok/mindennapi-tudnivalok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-19",
+      "status": "school-confirmed-bell-photo",
+      "sourceId": "school-provided-photo-20261119"
+    }
+  }
+}

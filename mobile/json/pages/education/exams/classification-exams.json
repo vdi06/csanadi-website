@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000023",
+  "pageType": "standard",
+  "menuLabel": "Osztályozó vizsgák",
+  "title": "Osztályozó vizsgák",
+  "slug": "osztalyozo-vizsgak",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-19T00:00:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 6
+  },
+  "seo": {
+    "title": "Osztályozó vizsgák – Csanádi Sportiskola",
+    "description": "Az önálló felkészülés és a hivatalos vizsgakövetelmények áttekintése. A felkészülés tervezéséről, a követelmények ellenőrzéséről és az érvényesség vizsgálatáról.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [],
+  "summary": "Az önálló felkészülés és a hivatalos vizsgakövetelmények áttekintése. A felkészülés tervezéséről, a követelmények ellenőrzéséről és az érvényesség vizsgálatáról olvashatsz.",
+  "blocks": [
+    {
+      "id": "block:000023-section-1",
+      "type": "section",
+      "title": "Tervezés és dokumentáció",
+      "children": [
+        {
+          "id": "block:000023-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "Osztályozó vizsgára készülve a tananyagot célszerű témakörökre bontani, majd rendszeres önellenőrzéssel végighaladni az anyagon. A vizsgára jogosultságot, a jelentkezési teendőket és a számonkérés módját az intézmény hivatalos szabályozása határozza meg.\n\nA felkészüléshez elsősorban a megadott tantárgyi követelményeket, a pedagógus útmutatását és az intézményi tájékoztatókat érdemes használni. Az aktuális időpontot nem helyettesítjük általános becsléssel."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000023",
+      "type": "section",
+      "title": "Osztályozó vizsga: évszámellenőrzés",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000023",
+          "type": "markdown",
+          "data": {
+            "text": "A Csanádi nyilvános osztályozóvizsga-oldalán a megtekintéskor **2025. április 1–15.** közötti beosztások szerepelnek. Ezek archív adatok, 2026/2027-es vizsgaidőpontnak nem vehetők át. Az érintett tantárgy, vizsgakövetelmény, jogosultság és helyszín ellenőrzéséhez az iskola aktuális egyéni tájékoztatása szükséges.\n\n[Osztályozó vizsgák (a közzétett 2025-ös beosztással) – eredeti intézményi forrás](https://csanadi-bp.edu.hu/osztalyozo.html)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119-p000023",
+      "type": "section",
+      "title": "Felkészülés az osztályozó vizsgára",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119-p000023",
+          "type": "markdown",
+          "data": {
+            "text": "A felkészülés előtt gyűjtsd össze a tananyag témaköreit, a szükséges segédanyagokat és a korábbi feladatokat. Készíts időbeosztást, és az ismereteket ne csak olvasd át, hanem gyakorold önálló feladatokkal is.\n\nA vizsga időpontját, formáját és hivatalos követelményeit mindig az iskola aktuális tájékoztatása alapján kell figyelembe venni."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/oktatas/vizsgak/osztalyozo-vizsgak",
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "placementExam"
+    }
+  }
+}

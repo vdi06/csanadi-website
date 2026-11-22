@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": 24,
+  "reviewedAt": "2026-11-15",
+  "publicationPolicy": "Csak nyilvánosan forrásolt, ellenőrizhető történeti adatok. Aktuális tagsági, tanulói és teljesítményadat nem következtethető a régebbi közlésekből.",
+  "olympic": [
+    {"id":"o1989","year":1989,"type":"Iskolatörténet","title":"Csanádi Árpád névadó ünnepsége","detail":"Az Őrnagy utcai intézmény 1989. május 25-én vette fel a magyar sportdiplomata nevét.","source":"https://olimpia.hu/25-eves-a-csanadi-iskola"},
+    {"id":"o2014","year":2014,"type":"Hagyomány","title":"A Csanádi Iskola 25 éves jubileuma","detail":"A Magyar Olimpiai Bizottság beszámolója a sportolói és olimpiai hagyományokat bemutató ünnepségről.","source":"https://olimpia.hu/25-eves-a-csanadi-iskola"},
+    {"id":"o2018","year":2018,"type":"Olimpiai kötődés","title":"Liu Shaolin Sándor és Liu Shaoang olimpiai sikere","detail":"A 2019-es zuglói beszámoló a két korábbi csanádis diákot a magyar téli olimpiai aranyéremhez kötődően mutatja be. Az állítás archív intézményi kötődés, nem jelenlegi jogviszony.","source":"https://www.zuglo.hu/tokiotol-tokioig/"},
+    {"id":"o2019","year":2019,"type":"Hagyomány","title":"Tokiótól Tokióig – Csanádi-nap","detail":"Olimpiai bajnokok részvételével rendezett ünnepség és díjátadás az iskola hagyományai szerint.","source":"https://www.zuglo.hu/tokiotol-tokioig/"},
+    {"id":"o2022","year":2022,"type":"Elismerés","title":"A Liu-díj bevezetése","detail":"Az iskola alapítványa a korábbi olimpiai bajnok diákok tiszteletére új elismerést alapított.","source":"https://www.zuglo.hu/atadtak-a-liu-dijat/"}
+  ],
+  "awards": [
+    {"id":"a2014a","year":2014,"name":"Csanádi Árpád-díj","kind":"Intézményi sportelismerés","description":"A 25 éves jubileumi ünnepségen kiosztott elismerések egyike; a kedvezményezett személy nevét a tudástár nem tárolja.","source":"https://olimpia.hu/25-eves-a-csanadi-iskola"},
+    {"id":"a2014b","year":2014,"name":"Schlegel Oszkár-díj","kind":"Intézményi sportelismerés","description":"A MOB 2014-es beszámolójában felsorolt díjak egyike.","source":"https://olimpia.hu/25-eves-a-csanadi-iskola"},
+    {"id":"a2019a","year":2019,"name":"Csanádi-díj","kind":"Intézményi elismerés","description":"A 2019-es Csanádi-napon kiosztott rangos iskolai elismerés.","source":"https://www.zuglo.hu/tokiotol-tokioig/"},
+    {"id":"a2019b","year":2019,"name":"Elek Ilona-díj","kind":"Sportági elismerés","description":"A 2019-es díjkiosztón átadott sportos elismerés.","source":"https://www.zuglo.hu/tokiotol-tokioig/"},
+    {"id":"a2022a","year":2022,"name":"Liu-díj","kind":"Új sportági elismerés","description":"A Csanádi-napon először átadott, két korábbi olimpiai bajnok diák nevét viselő díj.","source":"https://www.zuglo.hu/atadtak-a-liu-dijat/"}
+  ],
+  "partners": [
+    {"id":"pksi","name":"Központi Sport- és Ifjúsági Sport Egyesület (KSI SE)","sport":"Több sportág","evidenceYear":2021,"state":"Igazolt, 2021-es együttműködési megállapodás","description":"A KSI 2021-ben számolt be a Csanádi iskolával aláírt együttműködési megállapodásról. A jelenlegi szerződésállapot külön ellenőrzendő.","source":"https://ksi.hu/hirek/kozpont/egyuttmukodes-a-csanadi-arpad-altalanos-iskola-es-gimnaziummal"},
+    {"id":"pbvsc","name":"BVSC–Zugló","sport":"Több sportág","evidenceYear":2023,"state":"Történeti partnerlista; jelenlegi státusz nem ellenőrzött","description":"A KSI által 2023-ban közölt történeti iskolai partnerlistában szerepel.","source":"https://www.ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"},
+    {"id":"pangyal","name":"Angyalföldi Sportiskola – kézilabda","sport":"Kézilabda","evidenceYear":2023,"state":"Történeti partnerlista; jelenlegi státusz nem ellenőrzött","description":"A nyilvános partnerfelsorolás korábbi együttműködésként említi.","source":"https://www.ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"},
+    {"id":"pmrtus","name":"Mr. Tus Birkózó Iskola","sport":"Birkózás","evidenceYear":2023,"state":"Történeti partnerlista; jelenlegi státusz nem ellenőrzött","description":"Korábban dokumentált együttműködő szervezet.","source":"https://www.ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"},
+    {"id":"pvasas","name":"Vasas Akadémia – labdarúgás","sport":"Labdarúgás","evidenceYear":2023,"state":"Történeti partnerlista; jelenlegi státusz nem ellenőrzött","description":"A KSI 2023-as történeti közlésében szereplő partner.","source":"https://www.ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"}
+  ],
+  "academicCompetitions": [],
+  "publications": [
+    {"id":"pub2025","year":2025,"type":"Felvételi és iskolai tájékoztató","title":"Közép-Pesti Tájoló – 2025/2026","description":"A tankerületi központ nyilvános iskolabemutató kiadványa, amely a Csanádi iskolát is ismerteti. Külső PDF: a honlap nem állítja saját kiadványnak.","source":"https://kk.gov.hu/download/6/d2/53000/2025-2026_Kozep-Pesti_TAJOLO.pdf","localFile":""},
+    {"id":"pub2026guide","year":2026,"type":"Honlaphasználati kézikönyv","title":"Csanádi Sportiskola 2026 – teljes honlapkézikönyv","description":"A fejlesztés helyi, publikálható PDF-kézikönyve, nem iskolai évkönyv.","source":"","localFile":"assets/documents/csanadi-website-complete-usage-guide-2026.pdf"}
+  ],
+  "yearbooks": [],
+  "sportRules": [
+    {"id":"rfootball","sport":"Labdarúgás","title":"Versenyrendszer és szabályzatok","explanation":"A versenykiírás, a csapatok jogosultságai és a versenyrendszer szabályai az MLSZ hivatalos dokumentumtárában olvashatók. Az aktuális játékszabályok és versenyszabályzat nem azonos dokumentumok.","source":"https://dokumentumtar.mlsz.hu/doc/szabalyzatok/labdarugas-versenyszabalyzata"},
+    {"id":"rfencing","sport":"Vívás","title":"Kard, tőr, párbajtőr: fegyvernemek","explanation":"A három fegyvernem találati felülete és elsőbbségi szabályai eltérhetnek. A versenyrendezés részleteit mindig a szövetségi szabályzat tartalmazza.","source":"https://hunfencing.hu/szabalymagyarazat/"},
+    {"id":"rkayak","sport":"Kajak-kenu","title":"Szakágak és versenyszabályok","explanation":"Gyorsasági, szlalom, maraton és további szakági szabályzatok a Magyar Kajak-Kenu Szövetség dokumentumtárában érhetők el.","source":"https://kajakkenusport.hu/dokumentumok/HBVhwFFamR3-XQhUAvBLKg"},
+    {"id":"rwrestling","sport":"Birkózás","title":"Versenyrendszer és korosztályok","explanation":"A szabályzat kitér a versenyek lebonyolítására és az utánpótlás sajátosságaira. Az aktuális hatály mindig a szövetségi forrásból ellenőrizendő.","source":"https://www.birkozoszov.hu/site/szabalyzatok"},
+    {"id":"rhandball","sport":"Kézilabda","title":"A kézilabdázás játékszabályai","explanation":"A hivatalos játékszabályok és a versenykiírások külön források. A korosztályos eltéréseket a megfelelő versenykiírás rögzíti.","source":"https://mksz.hu/szabalyzatok/193"}
+  ],
+  "talentPrograms": [
+    {"id":"tksi","kind":"Sport és tanulás","title":"KSI–Csanádi sportolói tanulástámogatás","description":"2021-es megállapodás a versenyző tanulók sport- és tanulmányi előrehaladásának összehangolásáról. Jelenlegi részvétel és jelentkezés az intézménynél ellenőrzendő.","source":"https://ksi.hu/hirek/kozpont/egyuttmukodes-a-csanadi-arpad-altalanos-iskola-es-gimnaziummal","evidenceYear":2021},
+    {"id":"ttajolo","kind":"Iskolai profil","title":"Élsportolói utánpótlás-nevelés és általános műveltség","description":"A 2025/26-os tankerületi tájékoztató az iskola kettős oktatási és sportos profilját mutatja be, nem garantál felvételt vagy aktuális programindulást.","source":"https://kk.gov.hu/download/6/d2/53000/2025-2026_Kozep-Pesti_TAJOLO.pdf","evidenceYear":2025}
+  ],
+  "visitorRoutes": [
+    {"id":"vstudent","audience":"Leendő diák","title":"Ismerd meg a Csanádit","stops":[{"title":"Iskolánkról","description":"Iskolai bemutatkozás","href":"index.html#/iskolank"},{"title":"Felvételi","description":"Tájékoztatás és határidők","href":"index.html#/oktatas/felveteli"},{"title":"Digitális nyílt nap","description":"Tematikus online bemutató","href":"#/iskolank/iskolai-iranytu"},{"title":"Iskolai műhely","description":"Sport és tanulási témák","href":"#/iskolank/iskolai-muhely"}]},
+    {"id":"vparent","audience":"Szülő","title":"Szülői tájékozódási útvonal","stops":[{"title":"Felvételi","description":"Hivatalos tájékoztatók","href":"index.html#/oktatas/felveteli"},{"title":"Szülői információk","description":"Gyakori kérdések és kapcsolatok","href":"#/iskolank/iskolai-iranytu"},{"title":"Dokumentumtár","description":"Publikus intézményi dokumentumok","href":"index.html#/informaciok/dokumentumtar"},{"title":"Elérhetőségek","description":"Kapcsolattartási lehetőségek","href":"index.html#/kapcsolat"}]},
+    {"id":"vsport","audience":"Sport iránt érdeklődő","title":"Sport és olimpiai örökség","stops":[{"title":"Sportági központ","description":"Sportágak és kapcsolatok","href":"index.html#/sport"},{"title":"Olimpiai hagyományok","description":"Az iskolai kötődés története","href":"#/sport/olimpiai-orokseg-es-tudastar"},{"title":"Sportszabályok","description":"Sportszövetségi szabályforrások","href":"#/sport/olimpiai-orokseg-es-tudastar"},{"title":"Sportesemények","description":"Nyilvános programok","href":"index.html#/hirek-es-esemenyek/esemenynaptar/sportesemenyek"}]}
+  ]
+}

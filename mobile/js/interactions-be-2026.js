@@ -1,0 +1,75 @@
+
+ 
+export function initEnhancedInteractions(){
+  const overlay=document.getElementById('site-map-overlay');
+  const hero=document.getElementById('global-hero');
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+   
+  overlay?.addEventListener('keydown',(event)=>{
+    if(overlay.hidden||!['ArrowRight','ArrowLeft','ArrowUp','ArrowDown','Home','End'].includes(event.key))return;
+    const main=[...overlay.querySelectorAll('.compass26-choice-link')];
+    if(!main.length)return;
+    const current=main.indexOf(document.activeElement);
+    if(current===-1 && !overlay.querySelector('.compass26-choice-toggle:focus'))return;
+    event.preventDefault();
+    if(event.key==='Home'){main[0].focus();return;}
+    if(event.key==='End'){main[main.length-1].focus();return;}
+    const step=['ArrowRight','ArrowDown'].includes(event.key)?1:-1;
+    main[(Math.max(0,current)+step+main.length)%main.length].focus();
+  });
+   
+  overlay?.addEventListener('focusin',(event)=>{
+    const choice=event.target.closest?.('.compass26-choice');
+    overlay.querySelectorAll('.compass26-choice.is-keyfocus').forEach(n=>n.classList.remove('is-keyfocus'));
+    if(choice)choice.classList.add('is-keyfocus');
+  });
+  // Nincs külön, felúszó „Lap tetejére” gomb. Ahol indokolt, a szakaszmenü navigál.
+  const previewHero=()=>hero?.querySelector('.hero2026');
+   
+  let swipe=null;
+  hero?.addEventListener('pointerdown',(event)=>{
+    const section=previewHero();
+    if(!section||event.pointerType==='mouse'||event.target.closest('a,button'))return;
+    swipe={x:event.clientX,y:event.clientY,time:performance.now(),id:event.pointerId};
+  },{passive:true});
+  hero?.addEventListener('pointerup',(event)=>{
+    if(!swipe||swipe.id!==event.pointerId)return;
+    const dx=event.clientX-swipe.x,dy=event.clientY-swipe.y;
+    if(Math.abs(dx)>65&&Math.abs(dx)>Math.abs(dy)*1.4&&performance.now()-swipe.time<1300){
+       
+      const arrows=hero.querySelectorAll('.hero2026-arrow');
+      (dx<0?arrows[1]:arrows[0])?.click();
+    }
+    swipe=null;
+  },{passive:true});
+  hero?.addEventListener('pointercancel',()=>swipe=null,{passive:true});
+  hero?.addEventListener('keydown',(event)=>{
+    if(!['ArrowRight','ArrowLeft'].includes(event.key) || event.altKey || event.ctrlKey || event.metaKey)return;
+    if(!event.target.closest('.hero2026-nav'))return;
+    const arrows=hero.querySelectorAll('.hero2026-arrow');
+    event.preventDefault();(event.key==='ArrowRight'?arrows[1]:arrows[0])?.click();
+  });
+   
+  let sectionSerial=0;
+  const enhancePage=()=>{
+    const article=document.querySelector('#app .article-flow');
+    if(!article||article.dataset.enhancedBe==='true')return;
+    article.dataset.enhancedBe='true';
+    const sections=[...article.querySelectorAll(':scope > .article-section')].filter(s=>s.querySelector('h2'));
+    if(sections.length<3)return;
+    const nav=document.createElement('nav');nav.className='be2026-toc';nav.setAttribute('aria-label','Ugrás az oldal témáihoz');
+    const head=document.createElement('strong');head.textContent='Az oldal témái';nav.append(head);
+    const links=document.createElement('div');links.className='be2026-toc-links';
+    sections.forEach((section,i)=>{
+      const heading=section.querySelector('h2');const id='be2026-section-'+(++sectionSerial);
+      section.id=id;const a=document.createElement('a');a.href='#'+id;a.textContent=heading.textContent;
+      a.addEventListener('click',event=>{event.preventDefault();section.scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'start'});history.replaceState(history.state,'',location.pathname+location.search+location.hash);});
+      links.append(a);
+    });
+    nav.append(links);article.prepend(nav);
+  };
+  const app=document.getElementById('app');
+  const observer=new MutationObserver(()=>{if(app?.isConnected)requestAnimationFrame(enhancePage);});
+  if(app)observer.observe(app,{childList:true});
+  enhancePage();
+}

@@ -1,0 +1,36 @@
+/** M14.1–M14.4: kis telefon, fókusz, megszakított gesztus, frissítési panel. */
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+
+const base=path.resolve(import.meta.dirname,'..');
+const text=file=>fs.readFileSync(path.join(base,file),'utf8');
+const css=text('mobile/reboot-design-v1-43-29.css');
+const menu=text('mobile/reboot-menu-v1-43-29.js');
+const hero=text('mobile/reboot-hero-v1-43-29.js');
+const index=text('index.html');
+const network=text('js/round13-network.js');
+const config=JSON.parse(text('json/config.json'));
+assert.match(index,/reboot-design-v1-43-29\.css\?v=1\.43\.29" media="screen and \(max-width: 768px\)"/);
+assert.match(css,/@media screen and \(max-width:768px\)/);
+assert.match(css,/\.cs-mb-bar\{display:grid!important;[\s\S]*?grid-template-columns:minmax\(0,1fr\) 62px minmax\(0,1fr\)/);
+assert.match(css,/#site-header \.cs-mb-school-title\{[\s\S]*?max-height:none!important/);
+assert.match(css,/\.cs-mb-film-stage\{[^}]*touch-action:pan-y!important/s);
+assert.match(css,/\.cs-mb-menu-card-main/);
+assert.match(css,/\.hub26-event-card/);
+assert.match(css,/\.cs-news-card/);
+assert.match(css,/#cs-release-notice\[hidden\]\{display:none!important\}/);
+assert.match(css,/#cs-release-notice\{[^}]*max-height:min\(45dvh,320px\)!important/s);
+assert.match(css,/site-map-is-open #cs-release-notice\{display:none!important\}/);
+assert.match(css,/env\(safe-area-inset-bottom,0px\)/);
+assert.match(css,/html\[data-theme="light"\] body #cs-release-notice/);
+assert.match(css,/html\[data-theme="dark"\] body #cs-release-notice/);
+assert.match(css,/#cs-release-notice \.cs-release-actions button:focus-visible/);
+assert.match(menu,/focusRoute=''/);
+assert.match(menu,/dataset\.csMbRoute=safeHref\(getHref\(node\)\)/);
+assert.match(menu,/focusRoute:safeHref\(getHref\(previous\)\)/);
+assert.match(hero,/addEventListener\('touchcancel',\(\)=>\{start=null;\}/);
+assert.match(network,/notice\(\)\.hidden=true/);
+assert.equal(config.performance.cacheVersion,'csanadi-r-v1.43.29');
+assert.match(text('service-worker.js'),/const RELEASE_ID='1\.43\.29'/);
+console.log('M14 mobil UX kapu: fejléc, szövegek, fókusz, touchcancel, frissítési panel, két téma és verzió OK');

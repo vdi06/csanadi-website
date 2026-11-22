@@ -1,0 +1,28 @@
+/* 1.45: billentyűzetes fókusz, görgetési célpontok, kis képernyők. */
+#site-map-overlay :is(#site-map-close,.compass26-choice-toggle,.compass26-sub-link):focus-visible,
+#search-panel :is(#search-close,#search-input,.search-result):focus-visible,
+.cs43-viewer :is(.btn-close,.btn,.carousel-control-prev,.carousel-control-next):focus-visible{
+ outline:3px solid #e6b95e!important;outline-offset:3px!important;
+}
+@media screen and (max-width:768px){
+ html{scroll-padding-top:var(--cs-mb-sticky-offset,110px)}
+ #app :is(h1,h2,h3,[tabindex="-1"],.cs-search-found){
+  scroll-margin-top:calc(var(--cs-mb-sticky-offset,110px) + 12px);
+ }
+ #search-panel,#site-map-overlay{
+  box-sizing:border-box;padding-top:max(8px,env(safe-area-inset-top,0px));
+  padding-bottom:max(8px,env(safe-area-inset-bottom,0px));
+ }
+ #search-panel .search-dialog{max-width:100%;max-height:calc(100dvh - 16px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));}
+ #site-map-overlay .site-map-dialog{max-width:100%;min-width:0;}
+}
+@media screen and (prefers-reduced-motion:reduce){
+ #site-map-overlay :is(a,button),#search-panel :is(a,button),.cs43-viewer :is(a,button){
+  animation:none!important;transition:none!important;scroll-behavior:auto!important;
+ }
+}
+@media (forced-colors:active){
+ #site-map-overlay :is(a,button):focus-visible,
+ #search-panel :is(a,button,input):focus-visible,
+ .cs43-viewer :is(a,button):focus-visible{outline-color:Highlight!important;}
+}

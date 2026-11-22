@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000044",
+  "pageType": "calendar",
+  "menuLabel": "Eseménynaptár",
+  "title": "Eseménynaptár",
+  "slug": "esemenynaptar",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 6
+  },
+  "seo": {
+    "title": "Eseménynaptár – Csanádi Sportiskola",
+    "description": "Havi, heti és napi naptár az ellenőrzött intézményi eseményekkel. Az ellenőrzött események havi, heti és napi nézete, valamint a programokhoz kapcsolódó.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "hirek-es-esemenyek"
+  ],
+  "tags": [],
+  "summary": "Havi, heti és napi naptár az ellenőrzött intézményi eseményekkel. Az ellenőrzött események havi, heti és napi nézete, valamint a programokhoz kapcsolódó részletek.",
+  "blocks": [
+    {
+      "id": "block:000044-section-1",
+      "type": "section",
+      "title": "Programok és időpontok",
+      "children": [
+        {
+          "id": "block:000044-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "Az eseménynaptárban a közzétett iskolai programok időpontjai kereshetők és szűrhetők. A 2026. novemberi gimnáziumi nyílt napokat az iskola hivatalos oldala alapján tüntetjük fel.\n\nA naptárba mentés az olyan időpontoknál is működik, amelyekhez a forrás csak kezdést közölt; ilyenkor az export nem állít be kitalált befejezési időt."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:be2026-nav-000044",
+      "type": "section",
+      "title": "További tájékozódási lehetőségek",
+      "children": [
+        {
+          "id": "block:be2026-navlinks-000044",
+          "type": "markdown",
+          "data": {
+            "text": "[Iskolai események](#/hirek-es-esemenyek/esemenynaptar/iskolai-esemenyek) · [Sportesemények](#/hirek-es-esemenyek/esemenynaptar/sportesemenyek)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000044",
+      "type": "section",
+      "title": "Ellenőrzött események",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000044",
+          "type": "markdown",
+          "data": {
+            "text": "A naptárban két, az iskola által közzétett 2026. novemberi gimnáziumi nyílt nap szerepel. Az országos felvételi határidők nem automatikusan iskolai rendezvények. A jelenlegi naptárban csak a konkrét, nyilvánosan megerősített eseményeket jelenítjük meg.\n\n[Hírek és események](#/hirek-es-esemenyek)\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/hirek-es-esemenyek/esemenynaptar",
+    "verifiedContent": false,
+    "bannerMediaId": "media:esemenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "home"
+    }
+  }
+}

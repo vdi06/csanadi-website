@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000041",
+  "pageType": "collection",
+  "menuLabel": "Sporthírek",
+  "title": "Sporthírek",
+  "slug": "sporthirek",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 6
+  },
+  "seo": {
+    "title": "Sporthírek – Csanádi Sportiskola",
+    "description": "A sportélet legfontosabb, hitelesen közzétett eredményei és történetei. A sportolói teljesítményekről és versenybeszámolókról szóló ellenőrizhető hírek.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "hirek-es-esemenyek"
+  ],
+  "tags": [],
+  "summary": "A sportélet legfontosabb, hitelesen közzétett eredményei és történetei. A sportolói teljesítményekről és versenybeszámolókról szóló ellenőrizhető hírek gyűjtőoldala.",
+  "blocks": [
+    {
+      "id": "block:000041-section-1",
+      "type": "section",
+      "title": "Sportolói teljesítmények",
+      "children": [
+        {
+          "id": "block:000041-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "Az intézmény nyilvános oldalain több tanulói sporteredmény és a korábbi diákok kiemelkedő nemzetközi eredményei is szerepelnek. Az ellenőrzött eredményadatokat sportág, név és forrás szerint tesszük kereshetővé.\n\nA képek a sportiskolai mozgás és közösség hangulatát mutatják be; névhez kötött eredményfotót csak akkor kapcsolunk, ha valóban az adott sportolóról vagy eseményről készült."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000041-section-2",
+      "type": "section",
+      "title": "Hivatalos források",
+      "children": [
+        {
+          "id": "block:000041-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "[Iskolai aktualitások](#/hirek-es-esemenyek/hirek) · [Büszkeségeink](#/sport/sporteredmenyek)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000041",
+      "type": "section",
+      "title": "Sporthírek és versenyeredmények",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000041",
+          "type": "markdown",
+          "data": {
+            "text": "Az ezen a felületen megjelenő, **MINTA** jelzésű sportági bejegyzések bemutatócélúak: nem hivatalos versenyeredmények. A Csanádi korábbi sportolóinak nyilvánosan közzétett teljesítményeit külön, a [Büszkeségeink](#/iskolank/buszkesegeink) oldalon lehet böngészni. Új, jelenlegi tanulót névvel vagy eredménnyel csak igazolt intézményi forrás alapján adunk a gyűjteményhez.\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+    "verifiedContent": false,
+    "bannerMediaId": "media:esemenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "home"
+    }
+  }
+}

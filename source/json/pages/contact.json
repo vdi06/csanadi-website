@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000063",
+  "pageType": "standard",
+  "menuLabel": "Kapcsolat",
+  "title": "Kapcsolat",
+  "slug": "kapcsolat",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 6
+  },
+  "seo": {
+    "title": "Kapcsolat – Csanádi Sportiskola",
+    "description": "Az intézmény ellenőrzött elérhetőségei Budapesten. Kapcsolattartási adatok, intézményi elérhetőségek és térképes megközelítési információk.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "kapcsolat"
+  ],
+  "tags": [],
+  "summary": "Az intézmény ellenőrzött elérhetőségei Budapesten. Kapcsolattartási adatok, intézményi elérhetőségek és térképes megközelítési információk.",
+  "blocks": [
+    {
+      "id": "block:000063-section-1",
+      "type": "section",
+      "title": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
+      "children": [
+        {
+          "id": "block:000063-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "Cím: **{{site.address}}**\n\nTitkárság: **{{site.secretariatPhones}}**\n\nE-mail: **{{site.email}}**\n\nOM azonosító: **{{site.omIdentifier}}**\n\nA fenntartó: {{site.maintainerName}}. Címe: {{site.maintainerAddress}}. A telefonos és elektronikus elérhetőségeket az intézmény hivatalos kapcsolati oldala közli."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000063-section-2",
+      "type": "section",
+      "title": "Térkép és elérhetőség",
+      "children": [
+        {
+          "id": "block:000063-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Hivatalos kapcsolati oldal · [Útvonal tervezése](https://www.google.com/maps/search/?api=1&query=1143%20Budapest%20%C5%90rnagy%20utca%205-7)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000063",
+      "type": "section",
+      "title": "Hivatalos elérhetőségek",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000063",
+          "type": "markdown",
+          "data": {
+            "text": "{{site.name}}. {{site.address}}; OM: {{site.omIdentifier}}. Titkárság: {{site.secretariatPhones}}; e-mail: {{site.email}}. A fenntartó: {{site.maintainerName}}."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:next10-official--p000063",
+      "type": "section",
+      "title": "A hivatalos intézményi kapcsolati adatok",
+      "children": [
+        {
+          "id": "block:next10-official-text--p000063",
+          "type": "markdown",
+          "data": {
+            "text": "Az intézmény címe **{{site.address}}**. Telefonszámok: **{{site.secretariatPhones}}**; e-mail: **{{site.email}}**. A főigazgató a hivatalos nyitóoldal szerint **{{site.directorName}}**. Az aktuális elérhetőségeket a [hivatalos iskolai honlapon](#/) is ellenőrizheted.\n\n[Hivatalos kapcsolati és adatvédelmi elérhetőségek – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kapcsolat.html)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/kapcsolat",
+    "verifiedContent": true,
+    "bannerMediaId": "media:kapcsolat",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "contact"
+    }
+  }
+}

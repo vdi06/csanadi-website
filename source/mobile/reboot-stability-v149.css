@@ -1,0 +1,37 @@
+/* 1.51 – telefonon kizárólag az önálló mobilos kezdőkép jelenhet meg.
+   A desktop CSS specifikusabb volt, ezért a régi, magas desktop képsor
+   a telefonos film alatt megmaradt – ez okozta a látszólag üres részeket. */
+@media screen and (max-width:768px), screen and (pointer:coarse) and (hover:none){
+ html body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row.csn26-single-image,
+ html body.cs-home-header #global-hero .cs41-home-hero #csn26-visual-carousel{
+  display:none!important;position:static!important;visibility:hidden!important;
+  height:0!important;min-height:0!important;max-height:0!important;
+  margin:0!important;padding:0!important;border:0!important;overflow:hidden!important;
+  content-visibility:hidden!important;pointer-events:none!important
+ }
+ html body.cs-home-header #global-hero .csn26-visual-map.cs41-home-hero{
+  display:block!important;height:auto!important;min-height:0!important;
+  max-height:none!important;margin:0!important;padding:0!important;overflow:visible!important
+ }
+ html body.cs-home-header #global-hero .cs-mb-cinema{
+  display:block!important;height:auto!important;min-height:0!important;
+  max-height:none!important;contain:none!important
+ }
+ /* Ha iOS-en egy picture réteg nem festődik ki, a háttér is az adott dia. */
+ html body.cs-home-header #global-hero .cs-mb-film-stage{
+  background-image:var(--cs-mb-fallback-image)!important
+ }
+ html body.cs-home-header #global-hero .cs-mb-film-picture:not(.cs-mb-film-entering):not(.is-leaving){
+  opacity:1!important;visibility:visible!important
+ }
+ /* Safari görgetési megfigyelő nélkül sem maradhatnak láthatatlan kártyák. */
+ html body #app .reveal-on-scroll,
+ html body #app .reveal-on-scroll:not(.is-visible){
+  opacity:1!important;visibility:visible!important;transform:none!important;
+  animation:none!important;transition:none!important
+ }
+ html body #app[data-page-kind="home"] .home-canvas,
+ html body #app[data-page-kind="home"] .home-unit{
+  min-height:0!important;content-visibility:visible!important
+ }
+}

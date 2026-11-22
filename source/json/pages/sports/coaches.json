@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000036",
+  "pageType": "collection",
+  "menuLabel": "Edzők",
+  "title": "Edzők",
+  "slug": "edzok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 5
+  },
+  "seo": {
+    "title": "Edzők – Csanádi Sportiskola",
+    "description": "Sportági szakemberek bemutatása és az edzői munkakörök általános ismertetése. Az edzői szerepkörök mellett bemutatja, hogyan jelenhetnek meg hiteles szakmai.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "sport"
+  ],
+  "tags": [],
+  "summary": "Sportági szakemberek bemutatása és az edzői munkakörök általános ismertetése.",
+  "blocks": [
+    {
+      "id": "block:000036-section-1",
+      "type": "section",
+      "title": "Az edzői munka területei",
+      "children": [
+        {
+          "id": "block:000036-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A sportági technikai képzés, a felkészítés tervezése, a terhelés és regeneráció összehangolása, valamint a tanulói fejlődés támogatása fontos szempont lehet a sportiskolai nevelésben."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000036-section-2",
+      "type": "section",
+      "title": "Név szerinti edzői adatok",
+      "children": [
+        {
+          "id": "block:000036-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Az edzői bemutatkozásnál a sportágat, a szakmai feladatot, a korosztályt és – csak intézményi engedéllyel – a nyilvános kapcsolattartási módot érdemes feltüntetni. **Név szerinti edzőlista, portré és edzésbeosztás még nincs jóváhagyva ezen a felületen.** [Sportiskolai nevelés](#/oktatas/kepzeseink/sportiskolai-neveles) · [Kapcsolat](#/kapcsolat)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000036-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    },
+    {
+      "id": "block:content-review-20261114--p000036",
+      "type": "section",
+      "title": "Edzői munka",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000036",
+          "type": "markdown",
+          "data": {
+            "text": "A sportági felkészítés és a közismereti tanulmányok összehangolása közös feladat. A szülői vagy egyesületi megkereséshez az iskola hivatalos kapcsolattartását használd; tanulók személyes edzésadatait és közvetlen edzői elérhetőségeit nem gyűjtjük ellenőrzés nélkül."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/sport/edzok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:eredmenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "institutional-approval-needed",
+      "sourceId": null
+    }
+  }
+}

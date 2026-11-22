@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": 26,
+  "updated": "2026-11-15",
+  "school": {
+    "name": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
+    "address": "1143 Budapest, Őrnagy utca 5–7.",
+    "addressSource": "https://www.zuglo.hu/altalanos-iskolak/7/",
+    "mapLatApprox": 47.50155,
+    "mapLonApprox": 19.11147,
+    "mapAccuracyNote": "Az iskolát jelölő térképtű közelítő helyzetet mutat, nem igazolt bejáratot vagy akadálymentes útvonalat.",
+    "arrivalAdvice": [
+      "Indulás előtt ellenőrizd a BKK aktuális menetrendjét és az esetleges forgalmi változásokat.",
+      "A cím az Őrnagy utca 5–7.; a pontos belépési pontot és a látogatói fogadás rendjét egyeztesd az iskolával.",
+      "Kerékpárral a közlekedési szabályokat betartva közelíts; az iskola kerékpártárolójának elérhetősége nincs igazolva."
+    ],
+    "nearbyStops": [
+      {"name":"Őrnagy utca", "mode":"Buszmegálló környéke", "note":"Indulás előtt ellenőrizd a járatot a BKK-n."},
+      {"name":"Puskás Ferenc Stadion M", "mode":"Metró és felszíni átszállási pont", "note":"A megállótól a konkrét gyalogos útvonalat külön tervezd meg."},
+      {"name":"Várna utca", "mode":"Felszíni megálló környéke", "note":"A megálló aktuális használhatóságát és akadálymentességét ellenőrizd."}
+    ],
+    "publicTransportSource": "https://bkk.hu/menetrendek/",
+    "entrances": [],
+    "accessibleRoutes": []
+  },
+  "admissionSteps": [
+    {"id":"tudnivalok","title":"Aktuális felvételi tájékoztató megkeresése","description":"Olvasd el az iskola hivatalos, adott tanévre vonatkozó követelményeit.","link":"index.html#/oktatas/felveteli"},
+    {"id":"feltetelek","title":"Képzési és sportági feltételek ellenőrzése","description":"Vesd össze a követelményeket a saját terveiddel; a sportegészségügyi feltételeket külön tisztázd az iskolával.","link":"index.html#/oktatas/felveteli"},
+    {"id":"datumok","title":"Hivatalos határidők feljegyzése","description":"Mindig az aktuális tanév hivatalos dátumait használd, ne korábbi naptárakét.","link":"index.html#/oktatas/felveteli"},
+    {"id":"jelentkezes","title":"Jelentkezés megfelelő módon","description":"A hivatalosan előírt jelentkezési felületen vagy intézményi eljárásban járj el; ez a kipipálható lista nem ad be jelentkezést.","link":"index.html#/oktatas/felveteli"},
+    {"id":"visszaigazolas","title":"Visszaigazolás és további lépések figyelése","description":"Ellenőrizd az intézmény és az illetékes felvételi rendszer tájékoztatását; a döntésről a hivatalos csatornák értesítenek.","link":"index.html#/oktatas/felveteli"}
+  ],
+  "goalCategories": ["Rendszeres gyakorlás", "Olvasás", "Ismétlés", "Időbeosztás", "Pihenés"],
+  "sportMilestones": [
+    {"sport":"Labdarúgás","title":"Bemelegítés és alapvető labdakezelés","description":"Fokozatos mozgásra felkészítés, labdavezetés, passz és a sportszerű játék általános gyakorlása; egyéni teljesítménykövetelmény nélkül.","source":"https://www.mlsz.hu/"},
+    {"sport":"Kézilabda","title":"Labdaátadás, mozgás és csapatszabályok","description":"Biztonságos átadások, tájékozódás és egymás tisztelete; az életkorhoz igazított gyakorlatot edző határozza meg.","source":"https://www.mksz.hu/"},
+    {"sport":"Vívás","title":"Alapállás és védőfelszerelés-ismeret","description":"Alapmozgások és a felszerelés ellenőrzése kizárólag megfelelő felügyelet mellett.","source":"https://www.hunfencing.hu/"},
+    {"sport":"Kajak-kenu","title":"Vízi biztonság és a mozgás alapjai","description":"Mentőmellény és a vízre szállás szabályainak megismerése szakképzett felügyelettel; nem vízbiztonsági engedély.","source":"https://kajakkenusport.hu/"},
+    {"sport":"Birkózás","title":"Mozgásbiztonság és sportszerű kontaktus","description":"Bemelegítés, szabályismeret és biztonságos gyakorlatok edzői irányítással.","source":"https://birkozoszov.hu/"}
+  ],
+  "schoolMediaArchive": [],
+  "verifiedContacts": [
+    {"label":"Intézményi hivatalos elérhetőségek","description":"A tanári fogadóórák és a nyilvános elérhetőségek aktualitását az intézménynél kell ellenőrizni.","link":"index.html#/kapcsolat"}
+  ],
+  "approvedConsultations": [],
+  "studyMethods": [
+    {"id":"pomodoro","title":"Rövid, fókuszált gyakorlás","detail":"Válassz egy feladatot, dolgozz rajta meghatározott ideig, majd tarts szünetet. A rövid ciklus időtartama igény szerint állítható.","type":"timer"},
+    {"id":"active-recall","title":"Aktív felidézés","detail":"Olvasás után takard le a lényeget, és fogalmazd meg a választ saját szavaiddal.","type":"flashcard"},
+    {"id":"weekly-review","title":"Heti áttekintés","detail":"Egy mondatban rögzítsd, mi ment jól és mit szeretnél másképp csinálni. Csak helyi adatot használj.","type":"review"}
+  ],
+  "ecoModes": [
+    {"id":"walking","label":"Gyaloglás","benefit":"Közvetlen üzemanyag-felhasználás nélkül, az úttól és az időjárástól függően."},
+    {"id":"cycling","label":"Kerékpár","benefit":"Rövidebb távon megfontolható, ha a forgalmi és tárolási feltételek biztonságosak."},
+    {"id":"transit","label":"Közösségi közlekedés","benefit":"Járathoz kötött, utazás előtt a BKK menetrendjét kell ellenőrizni."},
+    {"id":"car","label":"Autó","benefit":"Időjárástól független lehet, de az útvonal és a forgalom jelentősen változtatja a terhelést."}
+  ],
+  "changelog": [
+    {"release":"r26", "date":"2026-11-15", "category":"Új fejlesztés", "title":"Megközelítés és tanulástámogatás", "description":"Térképes közlekedési kalauz; felvételi lépéskövető; helyi tanulási célok; sportolói fejlődési útmutatók; engedélyköteles diákújság- és rádióarchívum; fogadóóra-központ; interaktív tanulási módszerek; akadálymentes elérhetőség; ökoterv; kereshető változásnapló."},
+    {"release":"r25", "date":"2026-11-15", "category":"Korábbi kiadás", "title":"Tanulás, sport és közösség", "description":"Helyi heti tervező, fair play kalauz, 360° panorámanéző, diákkörök, ösztöndíjak, közérthető szövegek, felolvasó, alumni- és pályázati archívum, GYIK."},
+    {"release":"r24", "date":"2026-11-15", "category":"Korábbi kiadás", "title":"Olimpiai örökség és tudástár", "description":"Olimpiai, díj-, sportszövetségi, dokumentum- és eredményközpontok."},
+    {"release":"r23", "date":"2026-11-15", "category":"Korábbi kiadás", "title":"Iskolai műhely", "description":"Létesítmények, közösségi szolgálat, iskolatörténet, diákprojektek, digitális segédletek és adatexport."}
+  ]
+}

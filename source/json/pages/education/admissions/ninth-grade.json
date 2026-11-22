@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000018",
+  "pageType": "standard",
+  "menuLabel": "9. évfolyamos felvételi",
+  "title": "Kilencedik évfolyamos felvételi",
+  "slug": "kilencedik-evfolyam",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 5
+  },
+  "seo": {
+    "title": "Kilencedik évfolyamos felvételi – Csanádi Sportiskola",
+    "description": "Középiskola-választás, jelentkezés, tájékoztatók és kapcsolódó dokumentumok. Segítség a középiskolai jelentkezés sorrendjéhez, az igazolt határidőkhöz és a.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [],
+  "summary": "Középiskola-választás, jelentkezés, tájékoztatók és kapcsolódó dokumentumok.",
+  "blocks": [
+    {
+      "id": "block:000018-section-1",
+      "type": "section",
+      "title": "A felvételi lépései",
+      "children": [
+        {
+          "id": "block:000018-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A középfokú felvételi több egymásra épülő lépésből állhat: tájékozódás az intézményről, a követelmények megismerése, jelentkezés és az adott eljárás szerint szükséges vizsgák vagy beszélgetések.\n\nAz intézmény hivatalos felvételi oldalán található tájékoztató és a KRÉTA-felhasználói útmutató részletesebben segítheti a jelentkezést. Az általános információt mindig az adott tanévre kiadott szabályok egészítik ki."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000018-section-2",
+      "type": "section",
+      "title": "Hivatalos felvételi felület",
+      "children": [
+        {
+          "id": "block:000018-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Felvételi tájékoztató és dokumentumok"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000018",
+      "type": "section",
+      "title": "Kilencedik évfolyam: felvételi lépések",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000018",
+          "type": "markdown",
+          "data": {
+            "text": "A 9. évfolyamra jelentkezéshez külön intézményi tájékoztató, központi írásbeli jelentkezési dokumentum, helyi jelentkezési lap és KRÉTA BKI-útmutató található a Csanádi felvételi oldalán. Az írásbelire való jelentkezés és a középfokú felvételi lapok leadása két eltérő lépés. A 2027-es eljárás országos dátumait a [Felvételi határidők](#/oktatas/felveteli/felveteli-hataridok) oldalon követheted, a helyi követelményeket pedig az eredeti intézményi kiírásban.\n\n[Gimnáziumi felvételi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/felveteli.html)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/oktatas/felveteli/kilencedik-evfolyam",
+    "verifiedContent": false,
+    "bannerMediaId": "media:felveteli",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "highAdmission"
+    }
+  }
+}

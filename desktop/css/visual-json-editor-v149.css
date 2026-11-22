@@ -1,0 +1,21 @@
+.cs-vjson{display:grid;gap:16px;max-width:100%;color:var(--ink)}
+.cs-vjson-intro p{color:var(--muted);font-size:14px;line-height:1.5}
+.cs-vjson-switch,.cs-vjson-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.cs-vjson-tab{appearance:none;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:10px 16px;font-weight:750;cursor:pointer}
+.cs-vjson-tab[aria-pressed="true"]{background:var(--navy);color:#fff4d8;border-color:var(--gold)}
+.cs-vjson-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:14px;align-items:start}
+.cs-vjson-fields,.cs-vjson-preview{min-width:0;padding:14px;border:1px solid var(--line);background:var(--card);border-radius:14px}
+.cs-vjson-layout h4{font-size:17px;margin:0 0 12px}
+.cs-vjson-field{display:grid;gap:5px;margin:0 0 12px;font-size:13px;min-width:0}
+.cs-vjson-field span{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.cs-vjson-field input,.cs-vjson-field select{width:100%;min-width:0;min-height:42px;border:1px solid var(--line);border-radius:9px;background:var(--page);color:var(--ink);padding:8px;font:inherit}
+.cs-vjson-scroll{display:grid;gap:3px;max-height:460px;overflow:auto;overscroll-behavior:contain;padding-right:4px}
+.cs-vjson-frame{display:block;border:1px solid var(--line);border-radius:10px;background:#fff;min-height:430px;width:100%;max-width:100%}
+.cs-vjson-menu-list{margin:0;max-height:465px;overflow:auto;padding:8px 4px;list-style:none;display:grid;gap:3px}
+.cs-vjson-menu-list li{padding:7px 8px;border-radius:6px;font-size:13px;overflow-wrap:anywhere}
+.cs-vjson-menu-list li.is-active{background:rgba(214,174,93,.24);font-weight:800}
+.cs-vjson-menu-list li.is-hidden-menu{opacity:.55}
+.cs-vjson-mini{font-size:12px;color:var(--muted);line-height:1.5}
+.cs-vjson-status{margin:0;font-weight:700;color:#277050;overflow-wrap:anywhere}
+.cs-vjson-status.is-error{color:#b52932}
+@media(max-width:800px){.cs-vjson-layout{grid-template-columns:minmax(0,1fr)}.cs-vjson-frame{min-height:320px}.cs-vjson-scroll{max-height:310px}}

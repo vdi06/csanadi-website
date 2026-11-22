@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000021",
+  "pageType": "hub",
+  "menuLabel": "Vizsgák",
+  "title": "Vizsgák",
+  "slug": "vizsgak",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 6
+  },
+  "seo": {
+    "title": "Vizsgaközpont – Csanádi Sportiskola",
+    "description": "Érettségi és osztályozó vizsgák: tájékoztatás és felkészülés. A vizsgaidőszakokhoz, követelményekhez és hivatalos tájékoztatókhoz vezető hivatkozások találhatók.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [],
+  "summary": "Érettségi és osztályozó vizsgák: tájékoztatás és felkészülés. A vizsgaidőszakokhoz, követelményekhez és hivatalos tájékoztatókhoz vezető hivatkozások találhatók itt.",
+  "blocks": [
+    {
+      "id": "block:000021-section-1",
+      "type": "section",
+      "title": "Felkészülés és pontos tájékozódás",
+      "children": [
+        {
+          "id": "block:000021-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A vizsgákra való felkészülés során fontos a követelmények rendszerezése és az időbeosztás. A tantárgyi témaköröket, vizsgaidőpontokat és a jelentkezéssel kapcsolatos feltételeket mindig az intézmény aktuális hivatalos közlése alapján kell követni.\n\nA vizsgaközpont az érettségi, az osztályozó vizsgák és a kapcsolódó dokumentumok közötti eligazodást segíti."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:be2026-nav-000021",
+      "type": "section",
+      "title": "További tájékozódási lehetőségek",
+      "children": [
+        {
+          "id": "block:be2026-navlinks-000021",
+          "type": "markdown",
+          "data": {
+            "text": "[Egyéb vizsgák](#/oktatas/vizsgak/egyeb-vizsgak)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000021",
+      "type": "section",
+      "title": "Vizsgák: hivatalos dokumentumok",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000021",
+          "type": "markdown",
+          "data": {
+            "text": "Az érettségi, az osztályozó vizsga és az egyéb tanulmányi vizsgák időpontjai eltérők. Az iskola közzétett érettségi oldala 2026 őszi vizsgaadatokat tartalmaz, az osztályozó vizsga honlapján viszont egyes látható időpontok még 2025-ből származnak. A régi dátumokat nem tekintjük aktuális vizsgaidőpontnak.\n\n[Érettségi](#/oktatas/vizsgak/erettsegi)\n\n[Érettségi – intézményi tájékoztató – eredeti intézményi forrás](https://csanadi-bp.edu.hu/erettsegi.html)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/oktatas/vizsgak",
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "finalExam"
+    }
+  }
+}

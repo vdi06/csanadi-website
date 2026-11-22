@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000017",
+  "pageType": "standard",
+  "menuLabel": "1. osztályos beiratkozás",
+  "title": "Első évfolyamos beiratkozás",
+  "slug": "elso-evfolyam",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-19T21:00:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 6
+  },
+  "seo": {
+    "title": "Első évfolyamos beiskolázás – Csanádi Sportiskola",
+    "description": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források. A családok a szükséges tájékoztatókat és az első osztályos beiratkozás hivatalos felületeit.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [],
+  "summary": "A beiskolázáshoz szükséges tájékozódási pontok és hivatalos források. A családok a szükséges tájékoztatókat és az első osztályos beiratkozás hivatalos felületeit találják meg.",
+  "blocks": [
+    {
+      "id": "block:000017-section-1",
+      "type": "section",
+      "title": "Első lépések",
+      "children": [
+        {
+          "id": "block:000017-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A családok számára az első iskolai év egyszerre jelent új tanulási környezetet, közösséget és napi ritmust. A beiratkozás előtt célszerű áttekinteni az intézmény pedagógiai programját, az aktuális beiratkozási felhívást és az ügyintézés technikai feltételeit.\n\nA hivatalos beiskolázási oldalon a KRÉTA modul használatához és a szülői nyilatkozatokhoz kapcsolódó anyagok is szerepelnek. Ezekből mindig az adott felvételi időszakra érvényes változatot kell használni."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000017-section-2",
+      "type": "section",
+      "title": "Hivatalos anyagok",
+      "children": [
+        {
+          "id": "block:000017-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Beiratkozási dokumentumok"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000017",
+      "type": "section",
+      "title": "Beiratkozás – 2027. április 22–23.",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000017",
+          "type": "markdown",
+          "data": {
+            "text": "A 2026/2027-es munkaterv szerint az **általános iskolai első évfolyamra történő beiratkozás 2027. április 22-én és 23-án** lesz.\n\nA szükséges nyilatkozatok, a KRÉTA BÁI használati útmutatója és az ügyintézési tudnivalók az intézmény beiratkozási dokumentumai között találhatók; a benyújtás pontos módjánál a végleges intézményi felhívás az irányadó."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/oktatas/felveteli/elso-evfolyam",
+    "verifiedContent": true,
+    "bannerMediaId": "media:felveteli",
+    "contentReview": {
+      "reviewedAt": "2026-11-19",
+      "status": "primary-source-checked",
+      "sourceId": "annual-workplan-2026-27"
+    }
+  }
+}

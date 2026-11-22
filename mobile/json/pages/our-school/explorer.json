@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000072",
+  "pageType": "standard",
+  "menuLabel": "Felfedezőközpont",
+  "title": "Interaktív felfedezőközpont",
+  "slug": "felfedezo",
+  "locale": "hu-HU",
+  "author": {"displayName":"Csanádi Árpád Sportiskola","organization":"Csanádi Árpád Sportiskola"},
+  "createdAt":"2026-11-18T00:00:00+01:00",
+  "updatedAt":"2026-11-18T00:00:00+01:00",
+  "lifecycle":{"status":"published","revision":1},
+  "seo":{"title":"Interaktív felfedezőközpont – Csanádi Sportiskola","description":"Tíz interaktív eszköz a sport, tanulás és közösség felfedezéséhez.","robots":"noindex,nofollow"},
+  "categories":["iskolank"],"tags":["interaktiv","felfedezes"],
+  "summary":"Interaktív iskolai felfedezőeszközök: felvételi, tanév, sportágak, térkép, dokumentumok és kvíz.",
+  "blocks":[],"related":[],
+  "schemaExtensions":{"preview":false,"route":"#/iskolank/felfedezo","spaFeature":"explorer","verifiedContent":false}
+}

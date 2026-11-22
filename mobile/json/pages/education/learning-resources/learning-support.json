@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000069",
+  "pageType": "standard",
+  "menuLabel": "Tanulástámogatás",
+  "title": "Tanulástámogatás és időgazdálkodás",
+  "slug": "tanulastamogatas",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-17T12:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 3
+  },
+  "seo": {
+    "title": "Tanulástámogatás és időgazdálkodás – Csanádi Sportiskola",
+    "description": "Gyakorlati tanulási módszerek, személyes célok és helyi időmérő eszközök. Tanulási célok, feladatbontás és helyben használható időmérők segítik az önálló munkát.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [
+    "tanulás",
+    "időgazdálkodás",
+    "tanulókártyák"
+  ],
+  "summary": "Gyakorlati tanulási módszerek, személyes célok és helyi időmérő eszközök. Tanulási célok, feladatbontás és helyben használható időmérők segítik az önálló munkát.",
+  "blocks": [
+    {
+      "id": "block:tanulas-lepesek",
+      "type": "section",
+      "title": "Felkészülés egyszerű lépésekben",
+      "children": [
+        {
+          "id": "block:tanulas-lepesek-text",
+          "type": "markdown",
+          "data": {
+            "text": "Bontsd a tananyagot kisebb részekre, tűzz ki elérhető célokat, és minden gyakorlás után röviden foglald össze, mire emlékszel. A sport és a tanulás összehangolásakor hagyj időt a pihenésre is."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:tanulas-eszkozok",
+      "type": "section",
+      "title": "Tanulási eszközök",
+      "children": [
+        {
+          "id": "block:tanulas-eszkozok-text",
+          "type": "markdown",
+          "data": {
+            "text": "A tanulási műhelyben külön megnyitható a [fókuszidőzítő és gondolatébresztő kérdéssor](#/megkozelites-es-erkezes), valamint a [személyes tanulási célok követése](#/megkozelites-es-erkezes). Ezek az eszközök már a közös honlap JSON-vezérelt interaktív központjában működnek; a célok mentése csak az adott böngészőben történik. A belső hivatkozások közvetlenül a megfelelő részhez vezetnek."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:tanulas-kapcsolatok",
+      "type": "section",
+      "title": "Kapcsolódó oldalak",
+      "children": [
+        {
+          "id": "block:tanulas-kapcsolatok-text",
+          "type": "markdown",
+          "data": {
+            "text": "[Digitális tananyagközpont](#/oktatas/tananyagok-es-jegyzetek) · [Digitális kultúra](#/oktatas/digitalis-kultura) · [Dokumentumtár](#/informaciok/dokumentumtar)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/tanulastamogatas",
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "editorial-guidance",
+      "sourceId": null
+    }
+  }
+}

@@ -1,0 +1,374 @@
+{
+  "schema": "csanadi-json-audit-v1",
+  "release": "1.47",
+  "summary": {
+    "pageCount": 79,
+    "menuPages": 78,
+    "uniqueRoutes": 79,
+    "uniquePageIds": 79,
+    "uniqueBlockIds": 507,
+    "blockCount": 507,
+    "verifiedPages": 20,
+    "requiresReview": 59,
+    "errors": 0,
+    "warnings": 0
+  },
+  "errors": [],
+  "warnings": [],
+  "requiresContentReview": [
+    {
+      "file": "json/pages/sports.json",
+      "title": "Sportélet",
+      "route": "#/sport",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/home.json",
+      "title": "Csanádi Sportiskola – Sport, tanulás, közösség",
+      "route": "#/",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information.json",
+      "title": "Iskolai információk",
+      "route": "#/informaciok",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/news-and-events.json",
+      "title": "Hírek és események",
+      "route": "#/hirek-es-esemenyek",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education.json",
+      "title": "Oktatás és felvételi",
+      "route": "#/oktatas",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/news-and-events/announcements.json",
+      "title": "Közlemények",
+      "route": "#/hirek-es-esemenyek/kozlemenyek",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/news-and-events/news.json",
+      "title": "Hírek",
+      "route": "#/hirek-es-esemenyek/hirek",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/news-and-events/event-calendar.json",
+      "title": "Eseménynaptár",
+      "route": "#/hirek-es-esemenyek/esemenynaptar",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/document-library.json",
+      "title": "Dokumentumtár",
+      "route": "#/informaciok/dokumentumtar",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/community-service.json",
+      "title": "Közösségi szolgálat",
+      "route": "#/informaciok/kozossegi-szolgalat",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/privacy.json",
+      "title": "Adatvédelem",
+      "route": "#/informaciok/adatvedelem",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/digital-services.json",
+      "title": "Digitális ügyintézés",
+      "route": "#/informaciok/digitalis-ugyintezes",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/daily-information.json",
+      "title": "Mindennapi tudnivalók",
+      "route": "#/informaciok/mindennapi-tudnivalok",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/job-openings.json",
+      "title": "Álláspályázatok",
+      "route": "#/informaciok/allaspalyazatok",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/admissions.json",
+      "title": "Felvételi központ",
+      "route": "#/oktatas/felveteli",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/school-years.json",
+      "title": "Tanévek",
+      "route": "#/oktatas/tanevek",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/library.json",
+      "title": "Könyvtár és tanulás",
+      "route": "#/oktatas/konyvtar",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/programs.json",
+      "title": "Képzéseink",
+      "route": "#/oktatas/kepzeseink",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/exams.json",
+      "title": "Vizsgák",
+      "route": "#/oktatas/vizsgak",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/learning-resources.json",
+      "title": "Digitális tananyagközpont",
+      "route": "#/oktatas/tananyagok-es-jegyzetek",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/digital-culture.json",
+      "title": "Digitális kultúra – értsük és használjuk jól a technológiát",
+      "route": "#/oktatas/digitalis-kultura",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/our-school/partners.json",
+      "title": "Partnereink",
+      "route": "#/iskolank/partnerek",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/our-school/mission-and-values.json",
+      "title": "Küldetésünk és értékeink",
+      "route": "#/iskolank/kuldetes-es-ertekek",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/our-school/history.json",
+      "title": "Iskolánk története",
+      "route": "#/iskolank/tortenet",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/our-school/website-history.json",
+      "title": "A honlap születése – emberi döntések és digitális segítség",
+      "route": "#/iskolank/a-honlap-szuletese",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/sports/sports-results.json",
+      "title": "Sporteredmények",
+      "route": "#/sport/sporteredmenyek",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/sports/sports-disciplines.json",
+      "title": "Sportágak",
+      "route": "#/sport/sportagak",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/sports/athletes.json",
+      "title": "Sportolók",
+      "route": "#/sport/sportolok",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/sports/teams.json",
+      "title": "Csapatok",
+      "route": "#/sport/csapatok",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/sports/sports-galleries.json",
+      "title": "Képgaléria",
+      "route": "#/sport/sportgaleriak",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/sports/coaches.json",
+      "title": "Edzők",
+      "route": "#/sport/edzok",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/admissions/open-days.json",
+      "title": "Nyílt napok",
+      "route": "#/oktatas/felveteli/nyilt-napok",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/admissions/ninth-grade.json",
+      "title": "Kilencedik évfolyamos felvételi",
+      "route": "#/oktatas/felveteli/kilencedik-evfolyam",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/exams/classification-exams.json",
+      "title": "Osztályozó vizsgák",
+      "route": "#/oktatas/vizsgak/osztalyozo-vizsgak",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/programs/secondary-school.json",
+      "title": "Gimnázium",
+      "route": "#/oktatas/kepzeseink/gimnazium",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/programs/primary-school.json",
+      "title": "Általános iskola",
+      "route": "#/oktatas/kepzeseink/altalanos-iskola",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/programs/sports-school-education.json",
+      "title": "Sportiskolai nevelés",
+      "route": "#/oktatas/kepzeseink/sportiskolai-neveles",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/school-years/previous-school-years.json",
+      "title": "Korábbi tanévek",
+      "route": "#/oktatas/tanevek/korabbi-tanevek",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/community-service/community-service-documents.json",
+      "title": "Közösségi szolgálat dokumentumai",
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-dokumentumok",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/community-service/community-service-regulations.json",
+      "title": "Jogszabályok",
+      "route": "#/informaciok/kozossegi-szolgalat/kozossegi-jogszabalyok",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/document-library/policies.json",
+      "title": "Szabályzatok",
+      "route": "#/informaciok/dokumentumtar/szabalyzatok",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/document-library/forms.json",
+      "title": "Nyomtatványok",
+      "route": "#/informaciok/dokumentumtar/nyomtatvanyok",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/document-library/public-disclosures.json",
+      "title": "Közzétételi lista",
+      "route": "#/informaciok/dokumentumtar/kozzeteteli-lista",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/daily-information/meals.json",
+      "title": "Étkezés",
+      "route": "#/informaciok/mindennapi-tudnivalok/etkezes",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/news-and-events/news/school-news.json",
+      "title": "Iskolai hírek",
+      "route": "#/hirek-es-esemenyek/hirek/iskolai-hirek",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/news-and-events/news/sports-news.json",
+      "title": "Sporthírek",
+      "route": "#/hirek-es-esemenyek/hirek/sporthirek",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/news-and-events/news/news-archive.json",
+      "title": "Hírarchívum",
+      "route": "#/hirek-es-esemenyek/hirek/hirarchivum",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/digital-culture/online-safety.json",
+      "title": "Online biztonság és felelős kommunikáció",
+      "route": "#/oktatas/digitalis-kultura/online-biztonsag",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/digital-culture/artificial-intelligence.json",
+      "title": "Mesterséges intelligencia tudatos használata",
+      "route": "#/oktatas/digitalis-kultura/mesterseges-intelligencia",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/learning-resources/learning-support.json",
+      "title": "Tanulástámogatás és időgazdálkodás",
+      "route": "#/tanulastamogatas",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/daily-information/directions.json",
+      "title": "Megközelítés és érkezés",
+      "route": "#/megkozelites-es-erkezes",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/daily-information/map.json",
+      "title": "Térkép és útvonaltervezés",
+      "route": "#/megkozelites-es-erkezes/terkep",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/our-school/explorer.json",
+      "title": "Interaktív felfedezőközpont",
+      "route": "#/iskolank/felfedezo",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/our-school/school-compass.json",
+      "title": "Iskolai iránytű",
+      "route": "#/iskolank/iskolai-iranytu",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/our-school/school-workshop.json",
+      "title": "Interaktív iskolai műhely",
+      "route": "#/iskolank/iskolai-muhely",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/sports/olympic-heritage-and-knowledge.json",
+      "title": "Olimpiai örökség és tudástár",
+      "route": "#/sport/olimpiai-orokseg-es-tudastar",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/education/learning-and-community.json",
+      "title": "Tanulás és közösség",
+      "route": "#/oktatas/tanulas-es-kozosseg",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/offline-reader.json",
+      "title": "Offline olvasási központ",
+      "route": "#/informaciok/offline-olvaso",
+      "status": "forrásellenőrzés szükséges"
+    },
+    {
+      "file": "json/pages/information/guide.json",
+      "title": "Teljes használati kézikönyv",
+      "route": "#/informaciok/utmutato",
+      "status": "forrásellenőrzés szükséges"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000071",
+  "pageType": "standard",
+  "menuLabel": "Térkép és útvonalak",
+  "title": "Térkép és útvonaltervezés",
+  "slug": "terkep",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-17T12:00:00+01:00",
+  "updatedAt": "2026-11-19T00:00:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 4
+  },
+  "seo": {
+    "title": "Térkép és útvonaltervezés – Csanádi Sportiskola",
+    "description": "Helyi hozzájárulásos térkép, közlekedési kapcsolatok és érkezési segítség. A helyi térképes nézet és a gyalogos, kerékpáros, tömegközlekedési tájékozódás.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [
+    "térkép",
+    "útvonal",
+    "BKK",
+    "OpenStreetMap"
+  ],
+  "summary": "Helyi hozzájárulásos térkép, közlekedési kapcsolatok és érkezési segítség. A helyi térképes nézet és a gyalogos, kerékpáros, tömegközlekedési tájékozódás lehetőségei.",
+  "blocks": [
+    {
+      "id": "block:erkezes-terkep",
+      "type": "section",
+      "title": "Interaktív térkép",
+      "children": [
+        {
+          "id": "block:erkezes-terkep-text",
+          "type": "markdown",
+          "data": {
+            "text": "A térkép csak a „Térkép betöltése” gombra kattintva kapcsolódik a külső OpenStreetMap szolgáltatáshoz. A jelölő az iskola **hozzávetőleges** helyét mutatja; nem igazol pontos bejáratot."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:erkezes-utvonalak",
+      "type": "section",
+      "title": "Útvonaltervezési tudnivalók",
+      "children": [
+        {
+          "id": "block:erkezes-utvonalak-text",
+          "type": "markdown",
+          "data": {
+            "text": "**Tömegközlekedés:** [BKK menetrendek](https://bkk.hu/menetrendek/).\n\n**Gyalog és kerékpárral:** indulás előtt tervezz biztonságos útvonalat, és ellenőrizd a helyi közlekedési feltételeket.\n\n**Akadálymentesség:** a konkrét bejárat és útvonal intézményi megerősítést igényel.\n\n[Vissza a Megközelítés és érkezés oldalra](#/megkozelites-es-erkezes)\n\n[Hivatalos kapcsolati és adatvédelmi elérhetőségek – eredeti intézményi forrás](https://csanadi-bp.edu.hu/kapcsolat.html)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119-p000071",
+      "type": "section",
+      "title": "Útvonal megtervezése",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119-p000071",
+          "type": "markdown",
+          "data": {
+            "text": "Indulás előtt ellenőrizd a forgalmi helyzetet, a megállók aktuális helyét és a szükséges átszállásokat. Ha akadálymentes megközelítésre van szükséged, előzetesen érdeklődj az intézménynél a megfelelő bejáratról.\n\nAz online útvonaltervező külső térképszolgáltató használatával működhet, amelyre külön adatvédelmi beállítás vonatkozhat."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/megkozelites-es-erkezes/terkep",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kapcsolat",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "contact"
+    }
+  }
+}

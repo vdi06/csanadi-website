@@ -1,0 +1,4216 @@
+{
+  "schemaVersion": "1.0.0",
+  "jsonFiles": [
+    "json/data/bell-schedule.json",
+    "json/data/documents.json",
+    "json/data/events.json",
+    "json/data/explorer-21.json",
+    "json/data/gallery-videos.json",
+    "json/data/official-news.json",
+    "json/data/compass-22.json",
+    "json/data/school-history-timeline.json",
+    "json/data/photo-gallery.json",
+    "json/data/community-workshop-23.json",
+    "json/data/arrival-and-development-26.json",
+    "json/data/daily-sports-news.json",
+    "json/data/page-media-2026.json",
+    "json/data/heritage-and-knowledge-24.json",
+    "json/data/qr-index-22.json",
+    "json/data/social.json",
+    "json/data/sports-achievements.json",
+    "json/data/teaching-staff.json",
+    "json/data/learning-and-community-25.json",
+    "json/data/student-achievements.json",
+    "json/assets-inventory.json",
+    "json/config.json",
+    "json/media-library.json",
+    "json/languages.json",
+    "json/pages/news-and-events.json",
+    "json/pages/news-and-events/event-calendar.json",
+    "json/pages/news-and-events/event-calendar/school-events.json",
+    "json/pages/news-and-events/event-calendar/sport-events.json",
+    "json/pages/news-and-events/news.json",
+    "json/pages/news-and-events/news/news-archive.json",
+    "json/pages/news-and-events/news/school-news.json",
+    "json/pages/news-and-events/news/sports-news.json",
+    "json/pages/news-and-events/announcements.json",
+    "json/pages/information.json",
+    "json/pages/information/privacy.json",
+    "json/pages/information/job-openings.json",
+    "json/pages/information/digital-services.json",
+    "json/pages/information/document-library.json",
+    "json/pages/information/document-library/public-disclosures.json",
+    "json/pages/information/document-library/forms.json",
+    "json/pages/information/document-library/policies.json",
+    "json/pages/information/community-service.json",
+    "json/pages/information/community-service/community-service-documents.json",
+    "json/pages/information/community-service/community-service-regulations.json",
+    "json/pages/information/community-service/community-service-guide.json",
+    "json/pages/information/daily-information.json",
+    "json/pages/information/daily-information/bell-schedule.json",
+    "json/pages/information/daily-information/meals.json",
+    "json/pages/information/daily-information/parent-information.json",
+    "json/pages/our-school.json",
+    "json/pages/our-school/website-history.json",
+    "json/pages/our-school/foundation.json",
+    "json/pages/our-school/introduction.json",
+    "json/pages/our-school/our-achievements.json",
+    "json/pages/our-school/traditions-and-awards.json",
+    "json/pages/our-school/mission-and-values.json",
+    "json/pages/our-school/eco-school.json",
+    "json/pages/our-school/partners.json",
+    "json/pages/our-school/teaching-staff.json",
+    "json/pages/our-school/history.json",
+    "json/pages/contact.json",
+    "json/pages/home.json",
+    "json/pages/education.json",
+    "json/pages/education/digital-culture.json",
+    "json/pages/education/admissions.json",
+    "json/pages/education/admissions/first-grade.json",
+    "json/pages/education/admissions/admission-deadlines.json",
+    "json/pages/education/admissions/ninth-grade.json",
+    "json/pages/education/admissions/open-days.json",
+    "json/pages/education/programs.json",
+    "json/pages/education/programs/primary-school.json",
+    "json/pages/education/programs/secondary-school.json",
+    "json/pages/education/programs/sports-school-education.json",
+    "json/pages/education/library.json",
+    "json/pages/education/library/library-services.json",
+    "json/pages/education/learning-resources.json",
+    "json/pages/education/school-years.json",
+    "json/pages/education/school-years/current-school-year.json",
+    "json/pages/education/school-years/previous-school-years.json",
+    "json/pages/education/exams.json",
+    "json/pages/education/exams/other-exams.json",
+    "json/pages/education/exams/graduation-exams.json",
+    "json/pages/education/exams/classification-exams.json",
+    "json/pages/sports.json",
+    "json/pages/sports/teams.json",
+    "json/pages/sports/coaches.json",
+    "json/pages/sports/sports-disciplines.json",
+    "json/pages/sports/sports-results.json",
+    "json/pages/sports/sports-galleries.json",
+    "json/pages/sports/athletes.json",
+    "json/page-index.json",
+    "json/schemas/documents.schema.json",
+    "json/schemas/student-achievements.schema.json",
+    "json/structure.json"
+  ],
+  "codeFiles": [
+    "css/compass-2026.css",
+    "css/content-reflow-2026.css",
+    "css/dfg-2026.css",
+    "css/extended-hubs-2026.css",
+    "css/gallery-h-2026.css",
+    "css/gate-key-2026.css",
+    "css/home-gallery-news-gate-2026.css",
+    "css/interactions-be-2026.css",
+    "css/j-home-layout-2026.css",
+    "mobile/j-mobile-home-2026.css",
+    "css/j-search-2026.css",
+    "css/kmil-2026.css",
+    "css/layout-2026.css",
+    "css/media-experience-2026.css",
+    "css/media-manager-2026.css",
+    "css/menu-backdrop-guaranteed-2026.css",
+    "mobile/mobile-compact-h2-2026.css",
+    "css/navigation-student-search-2026.css",
+    "css/next-2026.css",
+    "css/next10-2026.css",
+    "css/orbit-2026.css",
+    "css/organized-2026.css",
+    "css/performance-diagnostics-2026.css",
+    "css/premium-home-2026.css",
+    "css/radial-2026.css",
+    "css/round12-visual-menu-2026.css",
+    "css/round18-upgrades.css",
+    "css/style.css",
+    "css/tenway-2026.css",
+    "css/tools-2026.css",
+    "desktop/navigation.js",
+    "desktop/styles.css",
+    "index.html",
+    "js/advanced-2026.js",
+    "js/app.js",
+    "js/blocks.js",
+    "js/content.js",
+    "js/daily-sport-news.js",
+    "js/document-collections-2026.js",
+    "js/documents.js",
+    "js/experience-2026.js",
+    "js/extended-hubs-2026.js",
+    "js/format-bytes.js",
+    "js/hero-2026.js",
+    "js/home-live.js",
+    "js/interactions-be-2026.js",
+    "js/kmil-2026.js",
+    "js/media-gallery-h-2026.js",
+    "js/media.js",
+    "js/news-2026.js",
+    "js/next10-2026.js",
+    "js/page-media-2026.js",
+    "js/performance-diagnostics-2026.js",
+    "js/premium-home-2026.js",
+    "js/round12-media-performance.js",
+    "js/search-j-2026.js",
+    "js/site-quality-2026.js",
+    "js/sports-successes.js",
+    "js/student-achievements.js",
+    "js/tenway-2026.js",
+    "mobile/navigation.js",
+    "mobile/quick-nav.js",
+    "mobile/round16-responsive.css",
+    "mobile/styles.css",
+    "script.js",
+    "#/informaciok/utmutato"
+  ],
+  "assetReferences": {
+    "assets/documents/csanadi-website-complete-usage-guide-2026.pdf": [
+      "js/document-collections-2026.js",
+      "js/documents.js",
+      "json/data/documents.json",
+      "json/data/heritage-and-knowledge-24.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json",
+      "#/informaciok/utmutato"
+    ],
+    "assets/documents/digital-files-es-submission.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/admissions-tajekozodasi-handout-2026.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-01.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-02.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-03.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-04.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-05.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-06.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-07.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-08.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-09.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-10.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-11.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-12.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-13.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-14.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/handout-2026-15.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/documents/learning-sport-time-management.pdf": [
+      "json/data/documents.json",
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/icon-athletics.svg": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/icon-sustainability.svg": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/icon-book.svg": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/icon-basketball.svg": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/icon-community.svg": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/icon-football.svg": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/icon-laptop.svg": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/icon-calendar.svg": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/icon-volleyball.svg": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/icon-swimming.svg": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/sports-pattern-dark.svg": [
+      "css/next-2026.css",
+      "css/orbit-2026.css",
+      "css/style.css",
+      "json/assets-inventory.json"
+    ],
+    "assets/graphics/sports-pattern-light.svg": [
+      "css/next-2026.css",
+      "css/orbit-2026.css",
+      "css/style.css",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/logo/csanadi-crest-512.webp": [
+      "index.html",
+      "js/advanced-2026.js",
+      "js/hero-2026.js",
+      "js/next10-2026.js",
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "mobile/quick-nav.js",
+      "#/informaciok/utmutato"
+    ],
+    "assets/media/video/montazs-2026-01.mp4": [
+      "json/data/gallery-videos.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-02.mp4": [
+      "json/data/gallery-videos.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-03.mp4": [
+      "json/data/gallery-videos.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-04.mp4": [
+      "json/data/gallery-videos.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-05.mp4": [
+      "json/data/gallery-videos.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-06.mp4": [
+      "json/data/gallery-videos.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-07.mp4": [
+      "json/data/gallery-videos.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-08.mp4": [
+      "json/data/gallery-videos.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-09.mp4": [
+      "json/data/gallery-videos.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/montazs-2026-10.mp4": [
+      "json/data/gallery-videos.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/sport-pillanatok.mp4": [
+      "json/data/gallery-videos.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/video/knowledge-community.mp4": [
+      "json/data/gallery-videos.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/entrance-gate.webp": [
+      "css/interactions-be-2026.css",
+      "css/next-2026.css",
+      "css/style.css",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/entrance-open-mobile.webp": [
+      "js/advanced-2026.js",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/entrance-open.webp": [
+      "css/home-gallery-news-gate-2026.css",
+      "js/advanced-2026.js",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/cs2026-001.webp": [
+      "json/data/gallery-videos.json",
+      "json/data/photo-gallery.json",
+      "json/data/community-workshop-23.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-002.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/community-workshop-23.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-003.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/community-workshop-23.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-004.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/community-workshop-23.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-005.webp": [
+      "json/data/gallery-videos.json",
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-006.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-007.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-008.webp": [
+      "json/data/gallery-videos.json",
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-009.webp": [
+      "json/data/gallery-videos.json",
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-010.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-011.webp": [
+      "json/data/gallery-videos.json",
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-012.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-013.webp": [
+      "json/data/gallery-videos.json",
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-014.webp": [
+      "json/data/gallery-videos.json",
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-015.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-016.webp": [
+      "json/data/gallery-videos.json",
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-017.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-018.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-019.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-020.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-021.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-022.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-023.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-024.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-025.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-026.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-027.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-028.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-029.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-030.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-031.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-032.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-033.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-034.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-035.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-036.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-037.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-038.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-039.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-040.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-041.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-042.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-043.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-044.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-045.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-046.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-047.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-048.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-049.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-050.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-051.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-052.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-053.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-054.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-055.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-056.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-057.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-058.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-059.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-060.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-061.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-062.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-063.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-064.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-065.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-066.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-067.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-068.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-069.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-070.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-071.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-072.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-073.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-074.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-075.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-076.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-077.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-078.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-079.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/cs2026-080.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-01.webp": [
+      "json/data/gallery-videos.json",
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/data/student-achievements.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-02.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/data/student-achievements.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-03.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/student-achievements.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-04.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/student-achievements.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-05.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/data/student-achievements.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-06.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/data/student-achievements.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-07.webp": [
+      "json/data/gallery-videos.json",
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/data/student-achievements.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-08.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/data/student-achievements.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-09.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-10.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-11.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-12.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-13.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-14.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-15.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-16.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-17.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-18.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-19.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-20.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/school-life-21.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-22.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-23.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-24.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-25.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-26.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-27.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-28.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-29.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-30.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-31.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-32.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-33.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-34.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-35.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-36.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-37.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-38.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-39.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-40.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-41.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-42.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-43.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-44.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-45.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-46.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-47.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/school-life-48.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/results-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/esemenyek-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/admissions-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/hero-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/our-school-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/kapcsolat-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/community-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/oktatas-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/entrance-gate-320.webp": [
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/entrance-gate-640.webp": [
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/entrance-gate-960.webp": [
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/entrance-open-320.webp": [
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/entrance-open-640.webp": [
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/entrance-open-960.webp": [
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/cs2026-001-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-001-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-001-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-002-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-002-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-002-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-003-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-003-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-003-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-004-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-004-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-004-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-005-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-005-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-005-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-006-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-006-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-006-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-007-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-007-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-007-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-008-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-008-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-008-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-009-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-009-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-009-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-010-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-010-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-010-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-011-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-011-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-011-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-012-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-012-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-012-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-013-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-013-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-013-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-014-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-014-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-014-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-015-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-015-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-015-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-016-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-016-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-016-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-017-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-017-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-017-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-018-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-018-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-018-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-019-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-019-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-019-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-020-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-020-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-020-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-021-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-021-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-021-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-022-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-022-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-022-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-023-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-023-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-023-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-024-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-024-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-024-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-025-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-025-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-025-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-026-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-026-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-026-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-027-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-027-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-027-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-028-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-028-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-028-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-029-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-029-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-029-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-030-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-030-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-030-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-031-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-031-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-031-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-032-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-032-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-032-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-033-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-033-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-033-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-034-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-034-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-034-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-035-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-035-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-035-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-036-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-036-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-036-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-037-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-037-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-037-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-038-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-038-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-038-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-039-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-039-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-039-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-040-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-040-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-040-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-041-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-041-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-041-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-042-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-042-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-042-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-043-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-043-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-043-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-044-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-044-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-044-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-045-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-045-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-045-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-046-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-046-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-046-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-047-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-047-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-047-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-048-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-048-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-048-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-049-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-049-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-049-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-050-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-050-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-050-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-051-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-051-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-051-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-052-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-052-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-052-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-053-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-053-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-053-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-054-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-054-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-054-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-055-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-055-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-055-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-056-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-056-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-056-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-057-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-057-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-057-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-058-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-058-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-058-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-059-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-059-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-059-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-060-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-060-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-060-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-061-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-061-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-061-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-062-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-062-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-062-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-063-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-063-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-063-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-064-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-064-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-064-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-065-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-065-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-065-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-066-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-066-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-066-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-067-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-067-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-067-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-068-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-068-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-068-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-069-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-069-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-069-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-070-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-070-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-070-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-071-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-071-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-071-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-072-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-072-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-072-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-073-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-073-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-073-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-074-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-074-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-074-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-075-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-075-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-075-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-076-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-076-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-076-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-077-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-077-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-077-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-078-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-078-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-078-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-079-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-079-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-079-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-080-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-080-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/cs2026-080-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-01-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-01-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-01-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-02-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-02-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-02-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-03-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-03-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-03-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-04-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-04-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-04-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-05-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-05-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-05-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-06-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-06-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-06-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-07-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-07-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-07-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-08-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-08-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-08-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-09-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-09-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-09-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-10-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-10-640.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-10-960.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-11-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-12-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-13-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-14-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-15-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-16-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-17-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-18-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-19-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-20-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/school-life-21-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-22-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-23-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-24-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-25-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-26-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-27-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-28-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-29-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-30-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-31-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-32-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-33-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-34-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-35-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-36-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-37-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-38-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-39-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-40-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-41-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-42-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-43-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-44-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-45-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-46-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-47-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/school-life-48-320.webp": [
+      "json/data/photo-gallery.json",
+      "json/data/page-media-2026.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/responsive/results-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/results-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/results-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/esemenyek-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/esemenyek-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/esemenyek-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/admissions-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/admissions-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/admissions-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/hero-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/hero-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/hero-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/our-school-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/our-school-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/our-school-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/kapcsolat-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/kapcsolat-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/kapcsolat-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/community-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/community-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/community-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/oktatas-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/oktatas-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/oktatas-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/success-athletics-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/success-athletics-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/success-athletics-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/success-basketball-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/success-basketball-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/success-basketball-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/success-volleyball-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/success-volleyball-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/success-volleyball-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/success-swimming-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/success-swimming-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/success-swimming-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/sport-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/sport-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/sport-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/success-athletics.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/success-basketball.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/success-volleyball.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/success-swimming.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/sport-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/qr/csanadi-qr-06b6013647d5dabb.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-0bcf56ffaf451cb2.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-0d84a1df3c10958a.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-0eb89f7bb821b763.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-138e9367725e323e.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-159946607e6ce5e6.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-176b4e6402a6c4dd.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-1ac4ce68d2d46d6f.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-20a5c9a47b295209.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-21773bbaa9b2b28a.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-23cb785e3811f230.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-263990dcdf95e979.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-2d2caec6a51d6205.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-3075a04f32904c76.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-3ff2c1ee7730fd07.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-41b847a9fc8c3bf0.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-41d9735ae0b02029.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-4b17b7b0af0826de.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-4c54fef661fff16d.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-4ef4392514ad36cd.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-514eae61749ce1bd.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-535f37604dac513a.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-5372f5709cb9736d.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-549112a531d270f0.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-5a1210dbca644112.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-5c09692eaae4992e.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-68df1cba754e9288.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-6c31597b7b12ce10.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-6c9334e5d6b059f3.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-720d4f1f6672ae3b.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-727f4683fde42954.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-74b265f0c2eddf09.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-74e979fb17bc87ce.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-77162e1e7ae8c535.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-79a675a8ae6f0a50.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-7bee5b30b30758f1.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-8652dd26e8662ab3.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-891d35fbf23ff980.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-8a90e21f33bb7ef2.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-914b7b862426c7e3.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-9181b16ee2fb1a31.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-93a632e4539c1ff9.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-98b5e8ec1dd4a6b3.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-9a3838207cd92cd6.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-9b11dfa6987299bf.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-9f6b35e6b66bbb8b.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-a10ebcb6f9bd7de4.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-a10f7aa201031c9c.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-a53e73bf660347a4.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-a91c104c52f596f6.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-af74ec7de14859f5.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-b37c940608c0cd8c.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-b38a4af88fe8538f.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-b4ed903f0a3e98ea.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-b58a5ab9ac20e679.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-b654b9e8e3ebdeff.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c08ca21ec3b11464.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c0a0c3074fae237b.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c14194e89fc7d2a8.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c28888b0f73ce272.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c2c5dd073f9fc58c.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c7d23a5f9ac34c49.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c8ad80a83c3bae84.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-c94132ac60962a66.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-ca44a7cc800b4936.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-cb6c4b7dacd9eddd.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-ccf643fdda0a8241.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-cf7a5c62ff803b37.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-d3629657e62f6368.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-d3d4b2037a08b48e.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-d5316123ad0159d5.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-d63cbe1e6596e1ec.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-dcce263f08ae2b11.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-df014648b332e367.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-e77214c7fcc2235b.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-e9eaac4335f763cd.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-e9fb2c9139b491d4.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-ecc8b97e9ac7f4a8.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-efa963a1cd50a151.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-f2475368b48da45d.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-f31e7f52b6a31ed2.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-f3baef66a15631d9.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-f593a0d1141c37c8.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-f6256d2687b152dc.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-fdd5b6218adeedfa.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-fdde03c49be816a7.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/qr/csanadi-qr-fe6cb35447110140.svg": [
+      "json/data/qr-index-22.json",
+      "json/assets-inventory.json"
+    ],
+    "assets/media/web/sport2-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/sport2-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/sport2-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/sport2-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/swimming-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/swimming-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/swimming-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/swimming-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/oktatas2-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/oktatas2-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/oktatas2-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/oktatas2-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/digital-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/digital-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/digital-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/digital-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/community2-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/community2-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/community2-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/community2-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/bejarat-1600.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/bejarat-1600-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/bejarat-1600-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/bejarat-1600-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/hero-sport-2026.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/hero-sport-2026-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/hero-sport-2026-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/hero-sport-2026-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/hero-oktatas-2026.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/hero-oktatas-2026-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/hero-oktatas-2026-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/hero-oktatas-2026-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/hero-community-2026.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/hero-community-2026-320.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/hero-community-2026-640.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "assets/media/web/responsive/hero-community-2026-960.webp": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ]
+  },
+  "mediaIdReferences": {
+    "media:logo": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:hero": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json",
+      "json/page-index.json"
+    ],
+    "media:iskolank": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/our-school/website-history.json",
+      "json/pages/our-school/foundation.json",
+      "json/pages/our-school/introduction.json",
+      "json/pages/our-school/traditions-and-awards.json",
+      "json/pages/our-school/mission-and-values.json",
+      "json/pages/our-school/eco-school.json",
+      "json/pages/our-school/partners.json",
+      "json/pages/our-school/history.json",
+      "json/pages/our-school.json",
+      "json/pages/home.json",
+      "json/page-index.json"
+    ],
+    "media:oktatas": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/our-school/teaching-staff.json",
+      "json/pages/home.json",
+      "json/pages/education.json",
+      "json/pages/education/digital-culture.json",
+      "json/pages/education/programs.json",
+      "json/pages/education/programs/primary-school.json",
+      "json/pages/education/programs/secondary-school.json",
+      "json/pages/education/programs/sports-school-education.json",
+      "json/pages/education/library.json",
+      "json/pages/education/library/library-services.json",
+      "json/pages/education/learning-resources.json",
+      "json/pages/education/school-years.json",
+      "json/pages/education/school-years/current-school-year.json",
+      "json/pages/education/school-years/previous-school-years.json",
+      "json/pages/education/exams.json",
+      "json/pages/education/exams/other-exams.json",
+      "json/pages/education/exams/graduation-exams.json",
+      "json/pages/education/exams/classification-exams.json",
+      "json/page-index.json"
+    ],
+    "media:sport": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json",
+      "json/pages/sports.json",
+      "json/pages/sports/sports-disciplines.json",
+      "json/pages/sports/sports-galleries.json",
+      "json/page-index.json"
+    ],
+    "media:kozosseg": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/information.json",
+      "json/pages/information/privacy.json",
+      "json/pages/information/job-openings.json",
+      "json/pages/information/digital-services.json",
+      "json/pages/information/document-library.json",
+      "json/pages/information/document-library/public-disclosures.json",
+      "json/pages/information/document-library/forms.json",
+      "json/pages/information/document-library/policies.json",
+      "json/pages/information/community-service.json",
+      "json/pages/information/community-service/community-service-documents.json",
+      "json/pages/information/community-service/community-service-regulations.json",
+      "json/pages/information/community-service/community-service-guide.json",
+      "json/pages/information/daily-information.json",
+      "json/pages/information/daily-information/bell-schedule.json",
+      "json/pages/information/daily-information/meals.json",
+      "json/pages/information/daily-information/parent-information.json",
+      "json/pages/home.json",
+      "json/page-index.json"
+    ],
+    "media:felveteli": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json",
+      "json/pages/education/admissions/first-grade.json",
+      "json/pages/education/admissions/admission-deadlines.json",
+      "json/pages/education/admissions/ninth-grade.json",
+      "json/pages/education/admissions/open-days.json",
+      "json/pages/education/admissions.json",
+      "json/page-index.json"
+    ],
+    "media:eredmenyek": [
+      "json/data/sports-achievements.json",
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/our-school/our-achievements.json",
+      "json/pages/home.json",
+      "json/pages/sports/teams.json",
+      "json/pages/sports/coaches.json",
+      "json/pages/sports/sports-results.json",
+      "json/pages/sports/athletes.json",
+      "json/page-index.json"
+    ],
+    "media:esemenyek": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/news-and-events/event-calendar/school-events.json",
+      "json/pages/news-and-events/event-calendar/sport-events.json",
+      "json/pages/news-and-events/event-calendar.json",
+      "json/pages/news-and-events/news/news-archive.json",
+      "json/pages/news-and-events/news/school-news.json",
+      "json/pages/news-and-events/news/sports-news.json",
+      "json/pages/news-and-events/news.json",
+      "json/pages/news-and-events/announcements.json",
+      "json/pages/news-and-events.json",
+      "json/pages/home.json",
+      "json/page-index.json"
+    ],
+    "media:kapcsolat": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/contact.json",
+      "json/pages/home.json",
+      "json/page-index.json"
+    ],
+    "media:siker-atletika": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:siker-kosarlabda": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:siker-uszas": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:siker-roplabda": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:eletkep-01": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:eletkep-02": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:eletkep-03": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:eletkep-04": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:eletkep-05": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:eletkep-06": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:eletkep-07": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:eletkep-08": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:eletkep-09": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:eletkep-10": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:eletkep-11": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:eletkep-12": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:eletkep-13": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:eletkep-14": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:eletkep-15": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:eletkep-16": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:eletkep-17": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:eletkep-18": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:eletkep-19": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:eletkep-20": [
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-001": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-002": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-003": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-004": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-005": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-006": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-007": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-008": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-009": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-010": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-011": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-012": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-013": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-014": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-015": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-016": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-017": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-018": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-019": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-020": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-021": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-022": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-023": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-024": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-025": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-026": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-027": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-028": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-029": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-030": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-031": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-032": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-033": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-034": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-035": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-036": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-037": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-038": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-039": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-040": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-041": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-042": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-043": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-044": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-045": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-046": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-047": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-048": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-049": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-050": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-051": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-052": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-053": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-054": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-055": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-056": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-057": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-058": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-059": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-060": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-061": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-062": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-063": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-064": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-065": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-066": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-067": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-068": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-069": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-070": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-071": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-072": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-073": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-074": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-075": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-076": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-077": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-078": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-079": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:cs2026-080": [
+      "json/data/photo-gallery.json",
+      "json/assets-inventory.json",
+      "json/media-library.json"
+    ],
+    "media:sport2": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:uszas": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:oktatas2": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:digitalis": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:kozosseg2": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:bejarat": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:hero-sport-2026": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:hero-oktatas-2026": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ],
+    "media:hero-kozosseg-2026": [
+      "json/assets-inventory.json",
+      "json/media-library.json",
+      "json/pages/home.json"
+    ]
+  }
+}

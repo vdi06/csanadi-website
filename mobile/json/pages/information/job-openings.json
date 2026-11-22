@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000061",
+  "pageType": "standard",
+  "menuLabel": "Állások",
+  "title": "Álláspályázatok",
+  "slug": "allaspalyazatok",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-14T00:00:00+01:00",
+  "updatedAt": "2026-11-17T18:00:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 4
+  },
+  "seo": {
+    "title": "Álláspályázatok – Csanádi Sportiskola",
+    "description": "A nyilvánosan meghirdetett, intézmény által jóváhagyott álláspályázatok megjelenítési helye.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [],
+  "summary": "A nyilvánosan meghirdetett, intézmény által jóváhagyott álláspályázatok megjelenítési helye.",
+  "blocks": [
+    {
+      "id": "block:000061-section-1",
+      "type": "section",
+      "title": "Álláshirdetések követése",
+      "children": [
+        {
+          "id": "block:000061-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A betöltendő munkakör, a jelentkezési feltételek, a szükséges dokumentumok, a határidő és a kapcsolattartás módja minden álláshirdetésnél külön ellenőrizendő."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000061-section-2",
+      "type": "section",
+      "title": "Jelenlegi állapot",
+      "children": [
+        {
+          "id": "block:000061-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskola hivatalos állásoldalán karbantartói és digitális kultúra szakos pedagógusi lehetőség is szerepel a 2026. november 17-i ellenőrzéskor. Ez nem valós idejű álláslista: a betöltöttség, a jelentkezési határidő és a munkavégzés feltételei változhatnak. Jelentkezés előtt az eredeti kiírást és az intézményi elérhetőséget ellenőrizd."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000061-faq",
+      "type": "accordion",
+      "title": "Gyakori kérdés",
+      "data": {
+        "items": [
+          {
+            "title": "Mikor lesznek pontos adatok?",
+            "text": "A végleges, aktuális adatokat csak ellenőrzött intézményi közzététel után lehet megjeleníteni. Addig az oldal tájékozódást segítő összefoglalót tartalmaz."
+          }
+        ]
+      }
+    },
+    {
+      "id": "block:content-review-20261114--p000061",
+      "type": "section",
+      "title": "Az iskola álláshirdetései",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000061",
+          "type": "markdown",
+          "data": {
+            "text": "A hivatalosan közzétett digitális kultúra (informatika) szakos feladat a megtekintett leírás szerint határozott idejű, 2027. június 18-ig tartó jogviszony, heti 4 órás megbízás keretében. Az oldal karbantartói feladatkört is megnevez. Ez 2026. november 17-i állapotfelvétel, nem álláshirdetési garancia.\n\n[Iskolai álláspályázatok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/allas.html)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/informaciok/allaspalyazatok",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "jobs"
+    }
+  }
+}

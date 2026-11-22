@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000038",
+  "pageType": "hub",
+  "menuLabel": "Hírek és események",
+  "title": "Hírek és események",
+  "slug": "hirek-es-esemenyek",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 5
+  },
+  "seo": {
+    "title": "Hírek és események – Csanádi Sportiskola",
+    "description": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum. Keresd meg az iskolai közleményeket, a sporthíreket, az eseménynaptárt és a korábbi.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "hirek-es-esemenyek"
+  ],
+  "tags": [],
+  "summary": "Aktuális iskolai közlemények, sporthírek, naptár és kereshető archívum. Keresd meg az iskolai közleményeket, a sporthíreket, az eseménynaptárt és a korábbi híreket.",
+  "blocks": [
+    {
+      "id": "block:000038-section-1",
+      "type": "section",
+      "title": "Tájékozódj egy helyen",
+      "children": [
+        {
+          "id": "block:000038-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "Az iskolai hírek és események időrendben mutatják meg a közösség fontos időszakait. A közzétett információk mellé lehetőség szerint az intézmény eredeti közleményét kapcsoljuk.\n\nA keresővel és a kategóriaszűrővel az aktuális tájékoztatások és a korábbi bejegyzések között is eligazodhatsz. A naptár csak olyan programot jelöl eseményként, amelyhez ellenőrzött dátum társul."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000038",
+      "type": "section",
+      "title": "Aktuális iskolai közlemények",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000038",
+          "type": "markdown",
+          "data": {
+            "text": "A 2026. november 14-i ellenőrzéskor a hivatalos intézményi oldalon két novemberi gimnáziumi nyílt nap, őszi érettségi tájékoztató és több diákverseny-beszámoló szerepel. Az oldalon az esemény dátumát mindig megkülönböztetjük a hír tényleges közzétételének időpontjától.\n\n[Az intézmény hivatalos nyitóoldala – eredeti intézményi forrás](https://csanadi-bp.edu.hu/)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/hirek-es-esemenyek",
+    "verifiedContent": false,
+    "bannerMediaId": "media:esemenyek",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "time-sensitive",
+      "sourceId": "home"
+    }
+  }
+}

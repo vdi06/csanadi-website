@@ -1,0 +1,27 @@
+ 
+.site-footer .cs-speed-panel{margin-top:22px;margin-bottom:10px;padding:16px 18px 12px;border:1px solid rgba(235,202,142,.32);border-radius:18px;background:#10263f;color:#e4edf5}
+.cs-speed-row{display:grid;grid-template-columns:minmax(175px,1.2fr) repeat(2,minmax(155px,1fr)) minmax(125px,.8fr);gap:11px;align-items:stretch}
+.cs-speed-lead,.cs-speed-metric,.cs-speed-state{min-width:0;padding:12px 14px;border:1px solid rgba(229,200,142,.25);border-radius:12px;background:rgba(255,255,255,.04);display:flex;flex-direction:column;justify-content:center;gap:4px}
+.cs-speed-lead strong{font-size:14px;color:#f7dc9e}.cs-speed-lead span,.cs-speed-metric span,.cs-speed-state span{font-size:11px;color:#ced9e5;line-height:1.35}
+.cs-speed-metric strong{font-size:clamp(18px,2vw,24px);font-variant-numeric:tabular-nums;color:#fff7df}
+.cs-speed-state strong{font-size:13px;color:#f7dc9e;overflow-wrap:anywhere}
+.cs-speed-details{font-size:11px;color:#ced9e5;margin-top:7px;max-width:1100px}
+.cs-speed-details summary{display:inline-block;cursor:pointer;padding:6px 2px;text-decoration:underline;text-underline-offset:3px;color:#ead09b}
+.cs-speed-details summary:focus-visible{outline:2px solid #f8e4af;outline-offset:3px}
+.cs-speed-details p{font-size:11px;color:#ced9e5;max-width:100%;line-height:1.55;margin:5px 0 9px}
+@media(max-width:900px){.cs-speed-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.cs-speed-row{gap:8px}.cs-speed-lead,.cs-speed-metric,.cs-speed-state{padding:10px}.cs-speed-metric strong{font-size:18px}.cs-speed-lead strong{font-size:12px}.cs-speed-lead span,.cs-speed-metric span,.cs-speed-state span{font-size:10px}}
+
+ 
+html[data-theme="light"] .site-footer .cs-speed-panel,
+html[data-theme="dark"] .site-footer .cs-speed-panel{color:#e4edf5 ;background:#10263f }
+html[data-theme="light"] .site-footer .cs-speed-panel :is(.cs-speed-metric,.cs-speed-state,.cs-speed-lead) > span,
+html[data-theme="dark"] .site-footer .cs-speed-panel :is(.cs-speed-metric,.cs-speed-state,.cs-speed-lead) > span,
+html[data-theme="light"] .site-footer .cs-speed-details p,
+html[data-theme="dark"] .site-footer .cs-speed-details p{color:#e0e7ef }
+html[data-theme="light"] .site-footer .cs-speed-metric strong,
+html[data-theme="dark"] .site-footer .cs-speed-metric strong{color:#fff7df }
+html[data-theme="light"] .site-footer .cs-speed-state strong,
+html[data-theme="dark"] .site-footer .cs-speed-state strong,
+html[data-theme="light"] .site-footer .cs-speed-lead strong,
+html[data-theme="dark"] .site-footer .cs-speed-lead strong{color:#f8dda3 }

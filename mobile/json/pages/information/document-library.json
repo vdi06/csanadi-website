@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000052",
+  "pageType": "hub",
+  "menuLabel": "Dokumentumtár",
+  "title": "Dokumentumtár",
+  "slug": "dokumentumtar",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-19T00:00:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 7
+  },
+  "seo": {
+    "title": "Dokumentumtár – Csanádi Sportiskola",
+    "description": "Kereshető szabályzatok, hivatalos források és letölthető tanulási segédletek. Keress intézményi szabályzatokat, nyomtatványokat és tanulási segédleteket.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "informaciok"
+  ],
+  "tags": [],
+  "summary": "Kereshető szabályzatok, hivatalos források és letölthető tanulási segédletek.",
+  "blocks": [
+    {
+      "id": "block:000052-section-1",
+      "type": "section",
+      "title": "Hivatalos intézményi dokumentumok",
+      "children": [
+        {
+          "id": "block:000052-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A pedagógiai program, a házirend, az SZMSZ, a helyi tantervek, a munkaterv és az adatkezelési tájékoztatók az iskola eredeti dokumentumoldalán érhetők el. A beépített PDF-kereső ezzel szemben külön, fejlesztői tanulási segédleteket is tartalmaz. **A két dokumentumtípust ne kezeld azonos jóváhagyásúként.**"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:be2026-nav-000052",
+      "type": "section",
+      "title": "További tájékozódási lehetőségek",
+      "children": [
+        {
+          "id": "block:be2026-navlinks-000052",
+          "type": "markdown",
+          "data": {
+            "text": "[Szabályzatok](#/informaciok/dokumentumtar/szabalyzatok) · [Nyomtatványok](#/informaciok/dokumentumtar/nyomtatvanyok) · [Közzétételi lista](#/informaciok/dokumentumtar/kozzeteteli-lista)\n\n[Intézményi dokumentumok – eredeti intézményi forrás](https://csanadi-bp.edu.hu/docs.html)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:editorial-guide-20261119-p000052",
+      "type": "section",
+      "title": "Dokumentumok ellenőrzése",
+      "children": [
+        {
+          "id": "block:editorial-guide-text-20261119-p000052",
+          "type": "markdown",
+          "data": {
+            "text": "A fájl letöltésekor figyeld a dokumentum címét, érvényességét és kiadási dátumát. A korábbi változatok tájékozódásra használhatók, de hivatalos ügyintézéshez az aktuálisan hatályos változat szükséges.\n\nHa nem egyértelmű, melyik iratot kell használni, kérj segítséget az iskola hivatalos kapcsolattartójától."
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/informaciok/dokumentumtar",
+    "verifiedContent": false,
+    "bannerMediaId": "media:kozosseg",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "documents"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+/* Közös, visszafogott prémium gombnyelv: a speciális körmenü és a képváltó nyilai változatlanok. */
+:root{--action-gold:#d7b66e;--action-navy:#10243e;--action-radius:11px;--action-focus:#d7b66e}
+body :is(button,input[type=button],input[type=submit],input[type=reset],a.btn-gold,a.btn-primary,a.btn-outline-primary){font-family:inherit;letter-spacing:normal;touch-action:manipulation}
+body :is(button,input[type=button],input[type=submit],input[type=reset]):not(.icon-btn):not(.orbit-open-button):not(.hero2026-arrow):not(.cs-sub-hero-prev):not(.cs-sub-hero-next):not(.cs-sub-hero-pause):not(.compass26-choice-link):not(.cs-phone-wheel-item):not(.cs-phone-wheel-center){border-radius:var(--action-radius);min-height:40px;transition:background-color .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease}
+body :is(button,a,[role=button]):focus-visible{outline:3px solid var(--action-focus)!important;outline-offset:3px!important;box-shadow:0 0 0 2px rgba(16,36,62,.4)}
+body :is(button,input[type=button],input[type=submit]):disabled:not(.cs-phone-wheel-center){opacity:.58;cursor:not-allowed;transform:none!important}
+body :is(a.btn-gold,a.btn-primary,a.btn-outline-primary){display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:42px;border-radius:var(--action-radius);font-weight:750;text-decoration:none}
+body #app :is(button,.btn-gold,a.btn-primary):hover:not(:disabled){filter:brightness(1.05)}
+body #app :is(button,.btn-gold,a.btn-primary):active:not(:disabled){transform:translateY(1px)}
+body .arrival2-button{border-radius:12px!important;min-height:45px!important}
+@media(max-width:768px){body #app :is(button,a.btn-gold,a.btn-primary,a.btn-outline-primary){min-height:44px}body .header-actions .icon-btn{min-height:42px;min-width:42px}}
+@media(prefers-reduced-motion:reduce){body :is(button,input[type=button],input[type=submit],a.btn-gold,a.btn-primary):not(.cs-phone-wheel-item):not(.cs-phone-wheel-center){transition:none!important;transform:none!important}}

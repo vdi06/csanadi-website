@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "2.0.0",
+  "collectionId": "collection:tantestulet",
+  "title": "Tantestület és munkaközösségek – 2026/2027",
+  "revision": 3,
+  "status": "published",
+  "privacy": {
+    "publishOnlyApproved": true,
+    "publicPrivateContacts": false,
+    "consentRequiredForPortraits": true
+  },
+  "description": "A 2026/2027-es intézményi munkaterv 40 pedagógusa és öt munkaközössége. Kizárólag nyilvános szakmai adatok; a szakterületi szűrés nem azonos a hivatalos munkaközösségi tagsági jegyzékkel.",
+  "staff": [
+    { "id": "staff:agoston-zsolt", "fullName": "Ágoston Zsolt", "role": "Testnevelés munkaközösség-vezető, 10.C osztályfőnöke", "subjects": ["testnevelés"], "teamIds": ["team:sport", "team:mentors"], "bio": "A testnevelés munkaközösség vezetője és a 10.C osztály osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:bakai-aniko", "fullName": "Bakai Anikó", "role": "Reál munkaközösség-vezető, 12.C osztályfőnöke", "subjects": ["földrajz", "rajz"], "teamIds": ["team:real", "team:mentors"], "bio": "A reál munkaközösség vezetője és a 12.C osztály osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:bakos-karoly", "fullName": "Bakos Károly", "role": "Pedagógus", "subjects": ["fizika", "matematika"], "teamIds": ["team:real"], "bio": "A munkaterv fizika és matematika szakterülettel sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:balda-gabor", "fullName": "Balda Gábor", "role": "Pedagógus", "subjects": ["matematika"], "teamIds": ["team:real"], "bio": "A munkaterv matematika szakterülettel sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:basa-brigitta", "fullName": "Basa Brigitta", "role": "Pedagógus", "subjects": ["kémia"], "teamIds": ["team:real"], "bio": "A munkaterv kémia szakterülettel sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:bencsikne-komaromi-rozsa", "fullName": "Bencsikné Komáromi Rózsa", "role": "Pedagógus", "subjects": ["földrajz", "testnevelés"], "teamIds": ["team:real", "team:sport"], "bio": "Földrajz- és testneveléstanár; alsó tagozatos napközis feladatokban is szerepel.", "status": "published", "publicApproved": true },
+    { "id": "staff:botyanszky-palne", "fullName": "Botyánszky Pálné", "role": "Pedagógus", "subjects": ["testnevelés", "biológia"], "teamIds": ["team:sport", "team:real"], "bio": "Az olimpiai eszmék ápolásáért felelős pedagógus.", "status": "published", "publicApproved": true },
+    { "id": "staff:csimane-biro-borbala", "fullName": "Csimáné Bíró Borbála", "role": "Pedagógus", "subjects": ["matematika", "fizika"], "teamIds": ["team:real"], "bio": "A munkaterv matematika és fizika szakterülettel sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:firgi-vaizer-anett", "fullName": "Firgi-Vaizer Anett", "role": "Pedagógus", "subjects": ["angol", "olasz"], "teamIds": ["team:languages"], "bio": "A munkaterv angol és olasz nyelvi szakterülettel sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:ford-monika-elizabeth", "fullName": "Ford Monika Elizabeth", "role": "Pedagógus", "subjects": ["angol", "német"], "teamIds": ["team:languages"], "bio": "A munkaterv angol és német nyelvi szakterülettel sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:gabor-nagy-katalin", "fullName": "Gábor-Nagy Katalin", "role": "5. osztály osztályfőnöke", "subjects": ["biológia", "történelem"], "teamIds": ["team:real", "team:human", "team:mentors"], "bio": "A 2026/2027-es tanév 5. osztályának osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:gall-barbara", "fullName": "Gáll Barbara", "role": "Idegen nyelvi munkaközösség-vezető, 10.A osztályfőnöke", "subjects": ["angol", "biológia", "földrajz"], "teamIds": ["team:languages", "team:real", "team:mentors"], "bio": "Az idegen nyelvi munkaközösség vezetője és a 10.A osztály osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:hegedus-ferenc", "fullName": "Hegedüs Ferenc", "role": "Könyvtáros, tankönyvfelelős", "subjects": ["könyvtár", "mozgóképkultúra és médiaismeret"], "teamIds": ["team:human"], "bio": "A munkaterv szerint könyvtáros és tankönyvfelelős.", "status": "published", "publicApproved": true },
+    { "id": "staff:horvath-anna", "fullName": "Horváth Anna", "role": "Pedagógus", "subjects": ["magyar", "biológia"], "teamIds": ["team:human", "team:real"], "bio": "A munkaterv magyar és biológia szakterülettel sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:horvath-zsuzsanna", "fullName": "Horváth Zsuzsanna", "role": "Főigazgató-helyettes, mesterpedagógus", "subjects": ["magyar", "történelem", "társadalomismeret"], "teamIds": ["team:human"], "bio": "Főigazgató-helyettes, szakértő és mesterpedagógus; mérés-értékelési felelős.", "status": "published", "publicApproved": true },
+    { "id": "staff:horvath-szabo-erika", "fullName": "Horváth-Szabó Erika", "role": "10.B osztály osztályfőnöke", "subjects": ["matematika"], "teamIds": ["team:real", "team:mentors"], "bio": "A 10.B osztály osztályfőnöke és a közösségi szolgálat felelőse.", "status": "published", "publicApproved": true },
+    { "id": "staff:kerenyi-gergo", "fullName": "Kerényi Gergő", "role": "Pedagógus", "subjects": ["testnevelés"], "teamIds": ["team:sport"], "bio": "A munkaterv testnevelés szakterülettel sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:kiss-andrea", "fullName": "Kiss Andrea", "role": "2. osztály osztályfőnöke", "subjects": ["tanító"], "teamIds": ["team:mentors"], "bio": "A 2026/2027-es tanév 2. osztályának osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:kisteleki-zsuzsa", "fullName": "Kisteleki Zsuzsa", "role": "Pedagógus", "subjects": ["vizuális kultúra", "napközi"], "teamIds": ["team:human", "team:mentors"], "bio": "A munkaterv a vizuális kultúra és a napközi területén sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:kontz-alexandra", "fullName": "Kontz Alexandra", "role": "11.C osztály osztályfőnöke", "subjects": ["angol"], "teamIds": ["team:languages", "team:mentors"], "bio": "A 11.C osztály osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:kovacs-adrienn", "fullName": "Kovács Adrienn", "role": "11.B osztály osztályfőnöke", "subjects": ["angol"], "teamIds": ["team:languages", "team:mentors"], "bio": "A 11.B osztály osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:krajnyakne-nagy-katalin", "fullName": "Krajnyákné Nagy Katalin", "role": "Pedagógus", "subjects": ["matematika"], "teamIds": ["team:real"], "bio": "A munkaterv matematika szakterülettel sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:meszaros-zsofia", "fullName": "Mészáros Zsófia", "role": "7. osztály osztályfőnöke", "subjects": ["angol", "tanulószoba"], "teamIds": ["team:languages", "team:mentors"], "bio": "A 7. osztály osztályfőnöke és tanulószobát vezető tanár.", "status": "published", "publicApproved": true },
+    { "id": "staff:mittich-takacs-eniko", "fullName": "Mittich-Takács Enikő", "role": "9.A osztály osztályfőnöke", "subjects": ["német"], "teamIds": ["team:languages", "team:mentors"], "bio": "A 9.A osztály osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:nemeth-attila", "fullName": "Németh Attila", "role": "Pedagógus", "subjects": ["etika", "sportetika"], "teamIds": ["team:human", "team:sport"], "bio": "A munkaterv etika és sportetika szakterülettel sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:rabi-ferencne", "fullName": "Rabi Ferencné", "role": "Pedagógus", "subjects": ["magyar nyelv és irodalom"], "teamIds": ["team:human"], "bio": "A munkaterv magyar nyelv és irodalom szakterülettel sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:racz-milan", "fullName": "Rácz Milán", "role": "Pedagógus", "subjects": ["testnevelés", "német"], "teamIds": ["team:sport", "team:languages"], "bio": "A munkaterv testnevelés és német nyelv szakterülettel sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:ruzsa-sandor", "fullName": "Rúzsa Sándor", "role": "Főigazgató", "subjects": ["magyar", "történelem", "társadalomismeret", "politológia"], "teamIds": ["team:human"], "bio": "A Csanádi Árpád Sportiskola főigazgatója.", "status": "published", "publicApproved": true },
+    { "id": "staff:ruzsa-sandorne-szabo-judit", "fullName": "Rúzsa Sándorné Szabó Judit", "role": "6. osztály osztályfőnöke", "subjects": ["ének-zene", "tanulásmódszertan"], "teamIds": ["team:human", "team:mentors"], "bio": "A 6. osztály osztályfőnöke, a diákönkormányzat munkáját segítő pedagógus.", "status": "published", "publicApproved": true },
+    { "id": "staff:soosne-imre-gyongyi", "fullName": "Soósné Imre Gyöngyi", "role": "8. osztály osztályfőnöke", "subjects": ["történelem"], "teamIds": ["team:human", "team:mentors"], "bio": "A 8. osztály osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:szabo-zsolt", "fullName": "Szabó Zsolt", "role": "9.B osztály osztályfőnöke", "subjects": ["testnevelés"], "teamIds": ["team:sport", "team:mentors"], "bio": "A 9.B osztály osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:szobonya-cecilia", "fullName": "Szobonya Cecília", "role": "Főigazgató-helyettes", "subjects": ["magyar", "történelem"], "teamIds": ["team:human"], "bio": "A Csanádi Árpád Sportiskola főigazgató-helyettese.", "status": "published", "publicApproved": true },
+    { "id": "staff:szommer-edit", "fullName": "Szommer Edit", "role": "4. osztály osztályfőnöke", "subjects": ["tanító"], "teamIds": ["team:mentors"], "bio": "A 4. osztály osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:toth-zsofia", "fullName": "Tóth Zsófia", "role": "Iskolapszichológus", "subjects": ["sportpszichológia"], "teamIds": ["team:mentors", "team:sport"], "bio": "Az intézményi munkaterv szerint iskolapszichológus és gyermekvédelmi felelős.", "status": "published", "publicApproved": true },
+    { "id": "staff:tothne-veres-noemi", "fullName": "Tóthné Veres Noémi", "role": "1. osztály osztályfőnöke", "subjects": ["tanító"], "teamIds": ["team:mentors"], "bio": "Az 1. osztály osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:utassy-emilia", "fullName": "Utassy Emília", "role": "Osztályfőnöki munkaközösség-vezető, 12.B osztályfőnöke", "subjects": ["olasz", "angol"], "teamIds": ["team:languages", "team:mentors"], "bio": "A munkaközösség-vezetői listán Utassy Emília Antónia néven szerepel.", "status": "published", "publicApproved": true },
+    { "id": "staff:varga-david", "fullName": "Varga Dávid", "role": "Pedagógus", "subjects": ["digitális kultúra"], "teamIds": ["team:real"], "bio": "A munkaterv digitális kultúra szakterülettel sorolja fel.", "status": "published", "publicApproved": true },
+    { "id": "staff:veres-eszter", "fullName": "Veres Eszter", "role": "11.A osztály osztályfőnöke", "subjects": ["magyar", "mozgóképkultúra és médiaismeret"], "teamIds": ["team:human", "team:mentors"], "bio": "A 11.A osztály osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:vida-katalin", "fullName": "Vida Katalin", "role": "Humán munkaközösség-vezető, 12.A osztályfőnöke", "subjects": ["magyar", "történelem"], "teamIds": ["team:human", "team:mentors"], "bio": "A humán munkaközösség vezetője és a 12.A osztály osztályfőnöke.", "status": "published", "publicApproved": true },
+    { "id": "staff:viragh-krisztina", "fullName": "Virágh Krisztina", "role": "Pedagógus", "subjects": ["német"], "teamIds": ["team:languages"], "bio": "A munkaterv német nyelv szakterülettel sorolja fel.", "status": "published", "publicApproved": true }
+  ],
+  "teams": [
+    {
+      "id": "team:human",
+      "name": "Humán munkaközösség",
+      "description": "Vezető: Vida Katalin. Magyar nyelv, irodalom, történelem és társadalomismeret.",
+      "category": "oktatas",
+      "verifiedInstitutionalUnit": true
+    },
+    {
+      "id": "team:real",
+      "name": "Reál munkaközösség",
+      "description": "Vezető: Bakai Anikó. Matematika, természettudományok és digitális kultúra.",
+      "category": "oktatas",
+      "verifiedInstitutionalUnit": true
+    },
+    {
+      "id": "team:languages",
+      "name": "Idegen nyelvi munkaközösség",
+      "description": "Vezető: Gáll Barbara. Angol, német és olasz nyelv.",
+      "category": "oktatas",
+      "verifiedInstitutionalUnit": true
+    },
+    {
+      "id": "team:sport",
+      "name": "Testnevelés munkaközösség",
+      "description": "Vezető: Ágoston Zsolt. Testnevelés és sportpedagógia.",
+      "category": "sport",
+      "verifiedInstitutionalUnit": true
+    },
+    {
+      "id": "team:mentors",
+      "name": "Osztályfőnöki munkaközösség",
+      "description": "Vezető: Utassy Emília Antónia. Osztályfőnöki és közösségi nevelés.",
+      "category": "kozosseg",
+      "verifiedInstitutionalUnit": true
+    }
+  ]
+}

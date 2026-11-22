@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000030",
+  "pageType": "standard",
+  "menuLabel": "Tananyagok és segédletek",
+  "title": "Digitális tananyagközpont",
+  "slug": "tananyagok-es-jegyzetek",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 5
+  },
+  "seo": {
+    "title": "Tananyagok és jegyzetek – Csanádi Sportiskola",
+    "description": "Önálló tanulás, digitális fájlkezelés és felkészülési módszerek. Tanulási módszerek, digitális fájlkezelési gyakorlat és önálló felkészülést támogató eszközök.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "oktatas"
+  ],
+  "tags": [],
+  "summary": "Önálló tanulás, digitális fájlkezelés és felkészülési módszerek. Tanulási módszerek, digitális fájlkezelési gyakorlat és önálló felkészülést támogató eszközök érhetők el.",
+  "blocks": [
+    {
+      "id": "block:000030-section-1",
+      "type": "section",
+      "title": "Tanulj tudatosan",
+      "children": [
+        {
+          "id": "block:000030-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "Az eredményes önálló tanulás a feladatok pontos értelmezésével kezdődik. Hasznos, ha a tananyagot kisebb egységekre bontod, gyakorló kérdéseket készítesz, és rendszeresen visszatérsz a nehéz részekhez.\n\nDigitális munkáknál figyelj a rendezett fájlnevekre, a megfelelő formátumra és a beadási határidőkre. A honlap Dokumentumtárában külön, letölthető gyakorlati segédletek is találhatók."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000030-section-2",
+      "type": "section",
+      "title": "Digitális kompetenciák",
+      "children": [
+        {
+          "id": "block:000030-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "A dokumentumszerkesztés, a táblázatkezelés, a prezentációkészítés és a forráskritika egymást kiegészítő készségek. A feladatoknál érdemes egyértelmű célokat, jól strukturált tartalmat és következetes ellenőrzési lépéseket használni.\n\n[Digitális dokumentumsegédletek megnyitása](#/informaciok/dokumentumtar)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000030",
+      "type": "section",
+      "title": "Tanulást támogató segédletek",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000030",
+          "type": "markdown",
+          "data": {
+            "text": "A honlap digitális dokumentumtára felvételi tervezési, digitális fájlkezelési és sport melletti időgazdálkodási segédleteket tartalmaz. Ezek fejlesztési tájékoztató anyagok, nem helyettesítik az iskola hivatalos pedagógiai programját, tantervét vagy házirendjét.\n\n[Dokumentumtár](#/informaciok/dokumentumtar)\n\n[Intézményi jegyzetek – eredeti intézményi forrás](https://csanadi-bp.edu.hu/sportjegyzet.html)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/oktatas/tananyagok-es-jegyzetek",
+    "verifiedContent": false,
+    "bannerMediaId": "media:oktatas",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "notes"
+    }
+  }
+}

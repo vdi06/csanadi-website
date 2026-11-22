@@ -1,0 +1,54 @@
+/* v1.42.14 – the entire desktop hero folds into the single compact menu crest. */
+@media(min-width:769px){
+  body.cs-home-header #global-hero,
+  body.cs-home-header.cs-home-condensed #global-hero{
+    --cs42-fold:var(--cs41-scroll,0);
+    max-height:none!important;
+    visibility:visible!important;
+    opacity:1!important;
+    overflow:clip!important;
+    border:0!important;
+    box-shadow:none!important;
+    background:transparent!important;
+    transition:none!important;
+    /* At progress 1 the full-size photo shrinks to a zero-radius point; no residual strip. */
+    clip-path:circle(var(--cs42-fold-radius,170%) at 50% 44%)!important;
+    -webkit-clip-path:circle(var(--cs42-fold-radius,170%) at 50% 44%)!important;
+  }
+  body.cs-home-header #global-hero .cs41-home-hero,
+  body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row{
+    clip-path:none!important;
+    -webkit-clip-path:none!important;
+    border:0!important;
+    border-radius:0!important;
+  }
+  body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row{
+    will-change:transform,opacity;
+    transform:scale(var(--cs42-fold-scale,1))!important;
+    transform-origin:50% 44%!important;
+    opacity:var(--cs42-fold-opacity,1)!important;
+  }
+  body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row>.orbit-launch{
+    opacity:var(--cs42-fold-opacity,1)!important;
+  }
+  body.cs-home-header.cs-home-condensed #global-hero{
+    clip-path:circle(0 at 50% 44%)!important;
+    -webkit-clip-path:circle(0 at 50% 44%)!important;
+    pointer-events:none!important;
+  }
+  /* Hide the deprecated mini slide preview entirely; compact navigation is the crest only. */
+  #site-header #cs39-mini-hero{border:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;min-height:0!important}
+  #site-header #cs39-mini-hero .cs39-mini-preview{display:flex;align-items:center;justify-content:center;
+     width:clamp(82px,6.4vw,102px)!important;height:clamp(82px,6.4vw,102px)!important;flex:0 0 clamp(82px,6.4vw,102px)!important;border-radius:50%!important;
+     border:2px solid #e6bd6c!important;background:radial-gradient(circle,#173b5c,#07182b)!important;
+     padding:3px!important;box-shadow:0 0 0 3px #c9a45b33!important}
+  #site-header #cs39-mini-hero .cs39-mini-image{width:clamp(72px,5.55vw,92px)!important;height:clamp(72px,5.55vw,92px)!important;object-fit:contain;border-radius:50%}
+  #site-header #cs39-mini-hero .cs39-mini-description{display:none!important}
+}
+@media(prefers-reduced-motion:reduce) and (min-width:769px){
+  body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row{transition:none!important}
+}
+@media(min-width:769px){
+ #global-hero .cs42-mobile-landing{display:none!important;visibility:hidden!important}
+ html body #site-header #mobile-menu-toggle{display:none!important;visibility:hidden!important}
+}

@@ -1,0 +1,12 @@
+{
+ "schemaVersion":"1.0.0","id":"page:000076","pageType":"standard",
+ "menuLabel":"Tanulás és közösség","title":"Tanulás és közösség","slug":"tanulas-es-kozosseg","locale":"hu-HU",
+ "author":{"displayName":"Csanádi Árpád Sportiskola","organization":"Csanádi Árpád Sportiskola"},
+ "createdAt":"2026-11-18T00:00:00+01:00","updatedAt":"2026-11-18T00:00:00+01:00",
+ "lifecycle":{"status":"published","revision":1},
+ "seo":{"title":"Tanulás és közösség – Csanádi Sportiskola","description":"Iskolai közösségi és tanulási interaktív központ.","robots":"noindex,nofollow"},
+ "categories":["oktatas"],"tags":["tanulas","kozosseg"],
+ "summary":"Interaktív tanulási és közösségi központ.",
+ "blocks":[],"related":[],
+ "schemaExtensions":{"preview":false,"route":"#/oktatas/tanulas-es-kozosseg","spaFeature":"community","verifiedContent":false}
+}

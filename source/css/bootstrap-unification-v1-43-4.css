@@ -1,0 +1,119 @@
+/* v1.43.4 – Bootstrap-komponensek Csanádi arculati rétege.
+   A Collapse / Toast / Breadcrumb / Progress működését a Bootstrap adja. */
+
+#app .breadcrumbs .breadcrumb{
+  --bs-breadcrumb-divider: '›';
+  --bs-breadcrumb-divider-color: rgba(237, 222, 184, .72);
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: .12rem;
+  row-gap: .35rem;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  font-size: inherit;
+}
+#app .page-banner .breadcrumbs{
+  display:inline-flex;
+  width:auto;
+  max-width:100%;
+  padding:.48rem .82rem;
+  border-radius:999px;
+  background:rgba(11,34,58,.83);
+  box-shadow:0 3px 14px rgba(0,0,0,.12);
+}
+#app .breadcrumbs .breadcrumb-item,
+#app .breadcrumbs .breadcrumb-item.active{color:#f5e7c9}
+#app .breadcrumbs .breadcrumb-item + .breadcrumb-item::before{
+  color:rgba(246,226,188,.72);
+  padding-inline:.5rem;
+}
+#app .breadcrumbs .breadcrumb-item a{color:#fff5de;text-underline-offset:.2em}
+#app .breadcrumbs .breadcrumb-item a:focus-visible{
+  outline:2px solid #eecb80;
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+#app .content-accordion .accordion{
+  --bs-accordion-bg:var(--card);
+  --bs-accordion-color:var(--ink);
+  --bs-accordion-btn-bg:var(--card);
+  --bs-accordion-btn-color:var(--ink);
+  --bs-accordion-active-bg:color-mix(in srgb,var(--gold) 16%,var(--card));
+  --bs-accordion-active-color:var(--ink);
+  --bs-accordion-border-color:var(--line);
+  --bs-accordion-btn-focus-box-shadow:0 0 0 .2rem rgba(198,154,73,.3);
+  --bs-accordion-border-radius:12px;
+  --bs-accordion-inner-border-radius:11px;
+}
+#app .content-accordion .accordion-item{
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:10px;
+}
+#app .content-accordion .accordion-button{
+  font-size:1rem;
+  font-weight:750;
+  line-height:1.45;
+}
+#app .content-accordion .accordion-button::after{
+  filter:var(--cs43-accordion-arrow-filter,none);
+}
+#app .content-accordion .accordion-body{
+  line-height:1.75;
+  color:var(--muted);
+  overflow-wrap:anywhere;
+}
+html[data-theme="dark"] #app .content-accordion .accordion{
+  --cs43-accordion-arrow-filter:invert(1);
+}
+
+/* A Bootstrap Card dobozmodelljét az eredeti kártyarács márkázott CSS-e követi. */
+#app .feature-card.card{color:var(--ink);background:var(--card);border-color:var(--line)}
+#app .feature-card.card .card-body{padding:0;display:flex;flex-direction:column}
+#app .editorial-tile.card,#app .body-card.card{
+  color:var(--ink);
+  background:var(--card);
+  border-color:var(--line);
+}
+#app .content-accordion.card{display:block}
+
+#site-header .cs-subpage-reading-progress.progress{
+  --bs-progress-height:4px;
+  --bs-progress-bg:transparent;
+  --bs-progress-border-radius:0;
+  height:4px;
+  padding:0;
+  background:transparent;
+}
+#site-header .cs-subpage-reading-progress .progress-bar{
+  background:var(--gold);
+  transition:width .12s linear;
+}
+
+html #toast.toast-info.toast{
+  --bs-toast-bg:var(--card);
+  --bs-toast-color:var(--ink);
+  --bs-toast-border-color:var(--line);
+  display:none;
+  pointer-events:none;
+}
+html #toast.toast-info.toast.show,
+html #toast.toast-info.toast.showing{
+  display:block;
+}
+html #toast.toast-info.toast[hidden]{display:none!important}
+
+#app .cs-content-review-notice.alert{
+  --bs-alert-bg:color-mix(in srgb,var(--gold) 13%,var(--card));
+  --bs-alert-color:var(--ink);
+  --bs-alert-border-color:var(--gold);
+  color:var(--ink);
+  border-left-width:4px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  #site-header .cs-subpage-reading-progress .progress-bar{transition:none}
+}

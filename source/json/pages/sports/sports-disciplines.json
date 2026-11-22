@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "page:000032",
+  "pageType": "hub",
+  "menuLabel": "Sportágak",
+  "title": "Sportágak",
+  "slug": "sportagak",
+  "locale": "hu-HU",
+  "author": {
+    "displayName": "Csanádi Árpád Sportiskola",
+    "organization": "Csanádi Árpád Sportiskola"
+  },
+  "createdAt": "2026-11-13T00:00:00+01:00",
+  "updatedAt": "2026-11-17T18:30:00+01:00",
+  "lifecycle": {
+    "status": "published",
+    "revision": 5
+  },
+  "seo": {
+    "title": "Sportágak – Csanádi Sportiskola",
+    "description": "Az egyéni és csapatsportok sokszínű világa. Csapat- és egyéni sportágak, felkészülési szempontok és a kapcsolódó sportiskolai tartalmak.",
+    "robots": "noindex,nofollow"
+  },
+  "categories": [
+    "sport"
+  ],
+  "tags": [],
+  "summary": "Az egyéni és csapatsportok sokszínű világa. Csapat- és egyéni sportágak, felkészülési szempontok és a kapcsolódó sportiskolai tartalmak.",
+  "blocks": [
+    {
+      "id": "block:000032-section-1",
+      "type": "section",
+      "title": "Csapatsportok és közös döntések",
+      "children": [
+        {
+          "id": "block:000032-text-1",
+          "type": "markdown",
+          "data": {
+            "text": "A labdarúgás, a kosárlabda, a kézilabda, a vízilabda és a röplabda egyszerre követel gyors helyzetfelismerést, szabályismeretet és egymásra figyelést.\n\nA csapatsportokban az eredmény nemcsak a technikán, hanem a kommunikáción, a szerepek elfogadásán és a közös felkészülésen is múlik."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:000032-section-2",
+      "type": "section",
+      "title": "Egyéni felkészülés és kitartás",
+      "children": [
+        {
+          "id": "block:000032-text-2",
+          "type": "markdown",
+          "data": {
+            "text": "Az atlétika, az úszás, a torna, a birkózás vagy a vívás más-más készségeket állít előtérbe. A fejlődés megfigyelése, az apró célok teljesítése és a pihenés tudatos tervezése minden sportágban fontos.\n\nA konkrét sportági kínálatról és az aktuális edzéslehetőségekről az iskola intézményi tájékoztatása adhat pontos információt."
+          }
+        }
+      ]
+    },
+    {
+      "id": "block:content-review-20261114--p000032",
+      "type": "section",
+      "title": "Sportágak és felkészülés",
+      "children": [
+        {
+          "id": "block:content-review-text-20261114--p000032",
+          "type": "markdown",
+          "data": {
+            "text": "A hivatalos büszkeséglista kajak-kenu, vízilabda, birkózás, torna, gyorskorcsolya, vívás és más sportágak eredményeit is felvonultatja. **Ez történeti eredményjegyzék, nem az aktuálisan választható iskolai sportági képzések listája.** A jelentkezés előtt a képzési kínálatot a [Felvételi](#/oktatas/felveteli) oldalon és az intézménynél kell megerősíteni.\n\n[Az iskola közzétett büszkeséglistája – eredeti intézményi forrás](https://csanadi-bp.edu.hu/buszkeseg.html)"
+          }
+        }
+      ]
+    }
+  ],
+  "related": [],
+  "schemaExtensions": {
+    "preview": false,
+    "route": "#/sport/sportagak",
+    "verifiedContent": false,
+    "bannerMediaId": "media:sport",
+    "contentReview": {
+      "reviewedAt": "2026-11-17",
+      "status": "primary-source-checked",
+      "sourceId": "pride"
+    }
+  }
+}

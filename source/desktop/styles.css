@@ -1,0 +1,7 @@
+/* Kizárólag az asztali nézet szabályai. A közös színek a config.json-ból származnak. */
+@media (min-width:769px){
+ #mobile-menu-mode-switch,#mobile-conventional-navigation{display:none!important}
+ #desktop-navigation .nav-mega-root:focus-within .nav-mega-button{outline:2px solid var(--sport-yellow);outline-offset:2px}
+ #site-map-overlay .compass26-stage{max-width:840px}
+ #site-map-overlay .compass26-choice-link:focus-visible{border-color:var(--sport-green)!important}
+}
