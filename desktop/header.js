@@ -1,9 +1,12 @@
 import { crest, element } from "../shared/js/dom.js";
 import { bindAppearance } from "../shared/js/appearance.js";
+import { trapTab } from "../shared/js/focus.js";
 import { filterSearchItems, makeSocialLink, navLink } from "../shared/js/shell.js";
+import { createDesktopMenu } from "./menu.js";
+import { createDesktopSettings } from "./settings.js";
 
-/** Asztali fejléc: saját vízszintes navigáció, külön nagy lebegő keresőablak.
- * Mobilmenü, mobil-gombállapot és mobil DOM itt nem létezik. */
+/** Asztali fejléc: címerből nyíló körmenü és külön nagy lebegő keresőablak.
+ * A mobilmenü és annak DOM-ja itt nem létezik. */
 export function makeDesktopHeader(config, home) {
   const data = config.home.header;
   const brand = element("a", { className: "home-brand desktop-brand", attributes: {
@@ -11,8 +14,9 @@ export function makeDesktopHeader(config, home) {
   } },
     element("strong", { text: data.schoolLine1 }),
     element("small", { text: data.schoolLine2 }));
-  const crestHome = element("a", { className: "desktop-crest-home shell-crest-toggle",
-    attributes: { href: config.routes.home, "aria-label": config.site.fullName } },
+  const crestToggle = element("button", { className: "desktop-crest-toggle shell-crest-toggle",
+    attributes: { type: "button", "aria-label": data.menuOpenLabel,
+      "aria-controls": "desktop-main-menu", "aria-expanded": "false" } },
     crest(config, "shell-crest"));
   const searchToggle = element("button", { className: "desktop-search-toggle shell-tool",
     text: data.searchGlyph,
@@ -20,6 +24,9 @@ export function makeDesktopHeader(config, home) {
       "aria-controls": "desktop-floating-search", "aria-expanded": "false" } });
   const themeToggle = element("button", { className: "desktop-theme-toggle shell-tool shell-theme-toggle",
     attributes: { type: "button", "aria-label": data.themeLabel } });
+  const settingsToggle = element("button", { className: "desktop-settings-toggle shell-tool",
+    text: data.settingsGlyph, attributes: { type: "button", "aria-label": data.settingsLabel,
+      "aria-controls": "desktop-settings", "aria-expanded": "false" } });
 
   const closeButton = element("button", { className: "desktop-search-close", text: data.closeSymbol,
     attributes: { type: "button", "aria-label": data.searchCloseLabel } });
@@ -38,25 +45,36 @@ export function makeDesktopHeader(config, home) {
     id: "desktop-floating-search"
   } }, backdrop, searchDialog);
   overlay.hidden = true;
+  let searchOverflow;
+
+  const menu = createDesktopMenu(config, crestToggle, () => {
+    closeSearch(false); settings.close(false);
+  });
+  const settings = createDesktopSettings(config, settingsToggle, () => {
+    closeSearch(false); menu.close(false);
+  });
 
   const header = element("header", { className: "desktop-header" },
     element("div", { className: "desktop-headline" }, brand),
     element("div", { className: "desktop-toolbar" },
       element("nav", { className: "desktop-links-left", attributes: { "aria-label": data.socialLabel } },
         ...data.social.map((item) => makeSocialLink(item, "desktop-social shell-tool"))),
-      crestHome,
-      element("div", { className: "desktop-links-right" }, searchToggle, themeToggle)),
+      crestToggle,
+      element("div", { className: "desktop-links-right" }, searchToggle, themeToggle,
+        settingsToggle)),
     element("p", { className: "desktop-motto", text: data.motto }),
-    overlay);
+    overlay, menu.overlay, settings.overlay);
 
-  function closeSearch() {
+  function closeSearch(restoreFocus = true) {
+    if (overlay.hidden) return;
     overlay.hidden = true;
+    if (document.body) document.body.style.overflow = searchOverflow || "";
     searchToggle.setAttribute("aria-expanded", "false");
     searchToggle.setAttribute("aria-label", data.searchOpenLabel);
-    searchToggle.focus({ preventScroll: true });
+    if (restoreFocus) searchToggle.focus({ preventScroll: true });
   }
   function renderSearch() {
-    const matches = filterSearchItems(config, searchInput.value, { includeNavigation: false });
+    const matches = filterSearchItems(config, searchInput.value);
     searchResults.replaceChildren(...(matches.length
       ? matches.map((item) => navLink(item, "desktop-search-result"))
       : [element("p", { text: data.searchNoResults })]));
@@ -64,25 +82,26 @@ export function makeDesktopHeader(config, home) {
   searchInput.addEventListener("input", renderSearch);
   searchToggle.addEventListener("click", () => {
     if (!overlay.hidden) { closeSearch(); return; }
+    menu.close(false); settings.close(false);
+    searchOverflow = document.body?.style.overflow;
+    if (document.body) document.body.style.overflow = "hidden";
     overlay.hidden = false;
     searchToggle.setAttribute("aria-expanded", "true");
     searchToggle.setAttribute("aria-label", data.searchCloseLabel);
     renderSearch();
     searchInput.focus({ preventScroll: true });
   });
-  closeButton.addEventListener("click", closeSearch);
-  backdrop.addEventListener("click", closeSearch);
+  closeButton.addEventListener("click", () => closeSearch());
+  backdrop.addEventListener("click", () => closeSearch());
   searchDialog.addEventListener("keydown", (event) => {
     if (event.key === "Escape") { event.preventDefault(); closeSearch(); return; }
-    if (event.key !== "Tab") return;
-    event.preventDefault();
     const nodes = [closeButton, searchInput,
       ...Array.from(searchResults.children).filter((node) => node.tagName === "A")];
-    const index = nodes.indexOf(document.activeElement);
-    nodes[(index + (event.shiftKey ? nodes.length - 1 : 1) + nodes.length) % nodes.length]
-      .focus({ preventScroll: true });
+    trapTab(event, nodes);
   });
 
   const unbindAppearance = bindAppearance(config, home, themeToggle);
-  return { header, destroy: unbindAppearance };
+  return { header, destroy: () => {
+    closeSearch(false); menu.destroy(); settings.destroy(); unbindAppearance();
+  } };
 }

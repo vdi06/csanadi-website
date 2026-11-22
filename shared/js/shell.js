@@ -50,20 +50,19 @@ export function navLink(item, className = "") {
   } });
 }
 
-export function searchItems(config, { includeNavigation = true } = {}) {
-  const { header, navigation, footer } = config.home;
-  return [...(includeNavigation ? navigation : []),
-    ...header.social.map((item) => ({label:item.label,href:item.url})),
+export function searchItems(config) {
+  const { header, footer } = config.home;
+  return [...header.social.map((item) => ({label:item.label,href:item.url})),
     {label:footer.contactTitle,href:`mailto:${footer.email}`}];
 }
 
-export function filterSearchItems(config, query, options) {
+export function filterSearchItems(config, query) {
   const needle = String(query || "").toLocaleLowerCase("hu").trim();
-  return searchItems(config, options).filter((item) => item.label.toLocaleLowerCase("hu").includes(needle));
+  return searchItems(config).filter((item) => item.label.toLocaleLowerCase("hu").includes(needle));
 }
 
 export function makeFooter(config, platform) {
-  const { footer, navigation } = config.home;
+  const { footer } = config.home;
   return element("footer", { className: `${platform}-footer site-footer` },
     element("div", { className: "footer-inner" },
       element("div", { className: "footer-contact" },
@@ -73,9 +72,5 @@ export function makeFooter(config, platform) {
         element("a", { text: footer.email, attributes: { href: `mailto:${footer.email}` } })),
       element("div", { className: "footer-links" },
         element("h2", { text: footer.linksTitle }),
-        ...(platform === "mobile"
-          ? [element("nav", { className: "footer-subnav", attributes: { "aria-label": footer.linksTitle } },
-            ...navigation.map((item) => navLink(item)))]
-          : []),
         element("p", { className: "footer-version", text: `${footer.versionLabel}: ${config.release}` }))));
 }

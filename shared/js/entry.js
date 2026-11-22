@@ -1,4 +1,5 @@
 /** Egyetlen belépési pont: kapu (#/) és egyetlen kezdőlap (#/kezdolap). */
+import { validateMenu } from "./menu-data.js";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -65,6 +66,7 @@ async function start() {
     if (config.schemaVersion !== "2.06" || config.gate.frames !== 30) {
       throw new Error("A kapu JSON-beállításai hibásak.");
     }
+    validateMenu(config);
     document.title = config.site.fullName;
     for (const [name, value] of Object.entries(config.theme)) {
       document.documentElement.style.setProperty(`--${name}`, value);

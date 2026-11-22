@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.06",
-  "release": "2.09",
+  "release": "2.11",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -45,16 +45,19 @@
       "searchNoResults": "Nincs találat az aktív menüpontok között.",
       "searchGlyph": "⌕",
       "themeLabel": "Megjelenés váltása",
+      "settingsLabel": "Oldalbeállítások megnyitása",
+      "settingsGlyph": "⚙",
       "social": [
         { "label": "Facebook – Csanádi Sportiskola", "icon": "facebook", "url": "https://www.facebook.com/csanadiiskola" },
         { "label": "Instagram – Csanádi Sportiskola", "icon": "instagram", "url": "https://www.instagram.com/_csanadi_/?hl=hu" },
         { "label": "KRÉTA – elektronikus napló", "icon": "kreta", "glyph": "K", "url": "https://klik200346001.e-kreta.hu/" }
       ]
     },
-    "navigation": [
-      { "label": "Főoldal", "href": "#/kezdolap" },
-      { "label": "Vissza a kapuhoz", "href": "#/" }
-    ],
+    "settings": {
+      "title": "Oldalbeállítások",
+      "description": "Megjelenési mód",
+      "closeLabel": "Oldalbeállítások bezárása"
+    },
     "footer": {
       "brand": "CSANÁDI",
       "year": "2026",
@@ -65,11 +68,68 @@
       "versionLabel": "Verzió"
     }
   },
+  "menu": {
+    "title": "Főmenü",
+    "categoryLabel": "Fő témakörök",
+    "sectionsLabel": "Almenük",
+    "closeLabel": "Főmenü bezárása",
+    "items": [
+      { "id": "school", "label": "Iskolánk", "children": [
+        { "id": "school-introduction", "label": "Bemutatkozás" },
+        { "id": "school-values", "label": "Céljaink és értékeink" },
+        { "id": "school-staff", "label": "Tantestület" },
+        { "id": "school-history", "label": "Történetünk és büszkeségeink" },
+        { "id": "school-partners", "label": "Partnereink és alapítványunk" },
+        { "id": "school-eco", "label": "Ökoiskola" },
+        { "id": "school-explore", "label": "Felfedezőközpont" },
+        { "id": "school-compass", "label": "Iskolai iránytű" },
+        { "id": "school-workshop", "label": "Iskolai műhely" }
+      ] },
+      { "id": "education", "label": "Oktatás", "children": [
+        { "id": "education-programs", "label": "Képzéseink", "children": [
+          { "id": "education-primary", "label": "Általános iskola" },
+          { "id": "education-secondary", "label": "Gimnázium" },
+          { "id": "education-sports", "label": "Sportiskolai nevelés" }
+        ] },
+        { "id": "education-years", "label": "Tanévek" },
+        { "id": "education-exams", "label": "Vizsgák" },
+        { "id": "education-resources", "label": "Tananyagok és segédletek" },
+        { "id": "education-library", "label": "Könyvtár" },
+        { "id": "education-digital", "label": "Digitális kultúra" },
+        { "id": "education-community", "label": "Tanulás és közösség" }
+      ] },
+      { "id": "admission", "label": "Felvételi", "children": [
+        { "id": "admission-primary", "label": "1. osztályos beiratkozás" },
+        { "id": "admission-secondary", "label": "9. évfolyamos felvételi" },
+        { "id": "admission-open", "label": "Nyílt napok" },
+        { "id": "admission-deadlines", "label": "Felvételi határidők" }
+      ] },
+      { "id": "sports", "label": "Sportélet", "children": [
+        { "id": "sports-disciplines", "label": "Sportágak" },
+        { "id": "sports-results", "label": "Sporteredmények" },
+        { "id": "sports-gallery", "label": "Képgaléria" },
+        { "id": "sports-olympic", "label": "Olimpiai örökség és tudástár" }
+      ] },
+      { "id": "news", "label": "Hírek és események", "children": [
+        { "id": "news-latest", "label": "Hírek" },
+        { "id": "news-calendar", "label": "Eseménynaptár" },
+        { "id": "news-announcements", "label": "Közlemények" },
+        { "id": "news-archive", "label": "Hírarchívum" }
+      ] },
+      { "id": "information", "label": "Információk", "children": [
+        { "id": "information-daily", "label": "Mindennapi tudnivalók" },
+        { "id": "information-documents", "label": "Dokumentumtár" },
+        { "id": "information-services", "label": "Ügyintézés" },
+        { "id": "information-service", "label": "Közösségi szolgálat" },
+        { "id": "information-contact", "label": "Kapcsolat" }
+      ] }
+    ]
+  },
   "appearance": {
     "defaultMode": "auto",
     "cycle": ["auto", "light", "dark"],
     "labels": { "auto": "Automatikus", "light": "Világos", "dark": "Sötét" },
-    "glyphs": { "auto": "⚙", "light": "☀", "dark": "☾" },
+    "glyphs": { "auto": "◐", "light": "☀", "dark": "☾" },
     "shortLabels": { "auto": "A", "light": "V", "dark": "S" },
     "storageKey": "csanadi-theme-mode-206",
     "light": {

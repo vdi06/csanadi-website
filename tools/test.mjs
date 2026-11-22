@@ -10,10 +10,11 @@ import { fileURLToPath } from "node:url";
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const staticFiles = [
   "index.html", "shared/js/entry.js", "shared/data/site.json", "shared/js/dom.js",
-  "shared/js/gate.js", "shared/js/shell.js", "shared/js/appearance.js", "shared/css/base.css",
+  "shared/js/gate.js", "shared/js/shell.js", "shared/js/appearance.js",
+  "shared/js/focus.js", "shared/js/menu-data.js", "shared/css/base.css",
   "shared/assets/media/logo/csanadi-crest-512.webp",
-  "mobile/app.js", "mobile/header.js", "mobile/styles.css",
-  "desktop/app.js", "desktop/header.js", "desktop/styles.css",
+  "mobile/app.js", "mobile/header.js", "mobile/menu.js", "mobile/settings.js", "mobile/styles.css",
+  "desktop/app.js", "desktop/header.js", "desktop/menu.js", "desktop/settings.js", "desktop/styles.css",
   "tools/test.mjs", "docs/ELLENORZES.md"
 ];
 const assetPaths = [];
@@ -31,11 +32,12 @@ assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths].sort(), "Se
 assert.deepEqual(files(root).filter((path) => path.endsWith(".html")), ["index.html"]);
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
 assert.equal(config.schemaVersion, "2.06");
-assert.equal(config.release, "2.09");
+assert.equal(config.release, "2.11");
 assert.equal(config.appearance.defaultMode, "auto");
 assert.deepEqual(config.appearance.cycle, ["auto", "light", "dark"]);
 assert.deepEqual(Object.keys(config.appearance.shortLabels).sort(), ["auto", "dark", "light"]);
-assert.equal(config.appearance.glyphs.auto, "⚙");
+assert.equal(config.appearance.glyphs.auto, "◐");
+assert.equal(config.home.header.settingsGlyph, "⚙");
 assert.equal(config.gate.skipSymbol, "⏭");
 assert.ok(!Object.hasOwn(config.gate, "desktopHint") && !Object.hasOwn(config.gate, "mobileHint"));
 assert.deepEqual(config.routes, { gate: "#/", home: "#/kezdolap" });
@@ -45,7 +47,17 @@ assert.equal(config.gate.mobileDurationMs, 1750);
 assert.ok(config.gate.finishFadeMs > 0 && config.gate.homeRevealMs > 0);
 assert.equal(config.gate.finishBlurPx, 18);
 assert.equal(config.home.header.social.length, 3);
-assert.equal(config.home.navigation.length, 2);
+assert.ok(!Object.hasOwn(config.home, "navigation"), "A korábbi próbalinkeket végleg ki kell venni.");
+assert.equal(config.menu.items.length, 6, "Az 1.53-as hat főcsoportot olvassuk az új JSON-ból.");
+const { validateMenu } = await import(new URL("../shared/js/menu-data.js", import.meta.url));
+assert.equal(validateMenu(config), config.menu.items);
+assert.equal(new Set(config.menu.items.map((item) => item.id)).size, 6);
+const duplicateMenu = structuredClone(config);
+duplicateMenu.menu.items[1].id = duplicateMenu.menu.items[0].id;
+assert.throws(() => validateMenu(duplicateMenu), /Érvénytelen/);
+const deepMenu = structuredClone(config);
+deepMenu.menu.items[1].children[0].children[0].children = [{ id: "too-deep", label: "Túl mély" }];
+assert.throws(() => validateMenu(deepMenu), /Érvénytelen/);
 assert.ok(config.home.footer.email.includes("@"));
 const frameHashes = new Set();
 for (const file of assetPaths) {
@@ -66,7 +78,8 @@ assert.match(html, /src="\.\/shared\/js\/entry\.js"/);
 assert.match(html, /name="color-scheme" content="light dark"/);
 assert.doesNotMatch(html, /<h[1-6]|<p[ >]|<nav|<article|<img/i);
 const src = ["shared/js/entry.js", "shared/js/dom.js", "shared/js/gate.js", "shared/js/shell.js",
-  "shared/js/appearance.js", "mobile/app.js", "mobile/header.js", "desktop/app.js", "desktop/header.js"]
+  "shared/js/appearance.js", "mobile/app.js", "mobile/header.js", "desktop/app.js", "desktop/header.js",
+  "desktop/menu.js", "mobile/menu.js", "desktop/settings.js", "mobile/settings.js"]
   .map((path) => readFileSync(join(root, path), "utf8"));
 for (const source of src) assert.doesNotMatch(source, /innerHTML|eval\s*\(|carousel|slideshow|fetch\([^)]*pages/i);
 assert.match(src[0], /import\(`\.\.\/\.\.\/\$\{platform\}\/app\.js`\)/);
@@ -124,7 +137,7 @@ class FakeNode {
   focus() { this.focused = true; document.activeElement = this; }
 }
 globalThis.document = { createElement: (tag) => new FakeNode(tag),
-  createElementNS: (_ns, tag) => new FakeNode(tag) };
+  createElementNS: (_ns, tag) => new FakeNode(tag), body: new FakeNode("body") };
 globalThis.location = { hash: "#/" };
 let reducedMotion = false;
 globalThis.window = { matchMedia: (query) => query.includes("prefers-color-scheme")
@@ -196,16 +209,22 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(nodes.filter((n) => n.tag === "footer").length, 1);
   assert.equal(nodes.find((n) => n.tag === "main").children.length, 0, "Még egyetlen középső blokk sem engedélyezett.");
   assert.equal(nodes.filter((n) => n.tag === "h1").length, 0);
-  assert.equal(nodes.filter((n) => n.tag === "img").length, 1, "Csak a fejléc címerképe engedélyezett.");
-  assert.equal(nodes.filter((n) => n.tag === "button").length, platform === "mobile" ? 5 : 3);
+  assert.equal(nodes.filter((n) => n.tag === "img").length, platform === "mobile" ? 1 : 2,
+    "Az asztali körmenünek külön középső címerképe van.");
   assert.equal(nodes.filter((n) => n.className?.includes(`${platform}-social`)).length, 3);
-  assert.equal(nodes.filter((n) => n.tag === "svg").length, 2, "A két közösségi ikon nem függhet betűkészlettől.");
-  assert.equal(nodes.filter((n) => n.tag === "path").length, 1, "A Facebook jelének SVG-ként kell megjelennie.");
+  assert.equal(nodes.filter((n) => n.tag === "svg").length, 2,
+    "A két közösségi ikon saját SVG-képként jelenik meg.");
+  assert.equal(nodes.filter((n) => n.tag === "path").length, 1);
+  const settingsToggle = nodes.find((n) => n.className.includes(`${platform}-settings-toggle`));
+  assert.ok(settingsToggle);
+  assert.equal(settingsToggle.textContent, config.home.header.settingsGlyph);
+  assert.equal(settingsToggle.attributes["aria-label"], config.home.header.settingsLabel);
+  assert.equal(nodes.filter((n) => n.className.includes("contact-link")).length, 0,
+    "A korábbi Kapcsolat-próbagomb nem maradhat a fejlécben.");
   assert.equal(nodes.filter((n) => n.className === "home-brand" || n.className?.includes("home-brand ")).length, 1);
   const footer = nodes.find((n) => n.tag === "footer");
-  assert.equal(scan(footer).filter((n) => n.tag === "a").length,
-    platform === "mobile" ? 3 : 1,
-    "Asztalon nem lehetnek ideiglenes főoldal-/kapu-linkek a láblécben.");
+  assert.equal(scan(footer).filter((n) => n.tag === "a").length, 1,
+    "Egyik láblécben sem maradhatnak ideiglenes próbalinkek.");
   assert.ok(scan(footer).some((n) => n.textContent === config.home.footer.address));
   const informationColumn = scan(footer).find((n) => n.className === "footer-links");
   const versionRow = informationColumn.children.at(-1);
@@ -230,21 +249,36 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(homeNode.style["color-scheme"], "dark", "A beviteli elemek színmódja is a témát kövesse.");
   checkThemeButton("auto");
 
+  const crestToggle = nodes.find((n) => n.className.includes(`${platform}-crest-toggle`));
+  const menuOverlay = nodes.find((n) => n.className === (platform === "mobile"
+    ? "mobile-menu-overlay" : "desktop-wheel-overlay"));
+  const menuDialog = nodes.find((n) => n.className === (platform === "mobile"
+    ? "mobile-menu-dialog" : "desktop-wheel-dialog"));
+  assert.ok(crestToggle && menuOverlay && menuDialog);
+  assert.equal(menuOverlay.hidden, true);
+  crestToggle.emit("click");
+  assert.equal(menuOverlay.hidden, false);
+  assert.equal(document.body.style.overflow, "hidden", "A menü alatt a háttér nem görgethető.");
+  assert.equal(crestToggle.attributes["aria-expanded"], "true");
+  assert.equal(crestToggle.attributes["aria-label"], config.home.header.menuCloseLabel);
   if (platform === "mobile") {
-    const crestToggle = nodes.find((n) => n.className.includes("mobile-crest-toggle"));
-    const menuOverlay = nodes.find((n) => n.className === "mobile-menu-overlay");
-    const menuDialog = nodes.find((n) => n.className === "mobile-menu-dialog");
-    assert.ok(menuOverlay && menuDialog);
-    assert.equal(menuOverlay.hidden, true);
-    assert.equal(nodes.filter((n) => n.className === "desktop-primary-nav").length, 0);
-    crestToggle.emit("click");
-    assert.equal(menuOverlay.hidden, false);
-    assert.equal(crestToggle.attributes["aria-expanded"], "true");
-    assert.deepEqual(scan(menuDialog).filter((n) => n.className === "mobile-menu-link").map((n) => n.attributes.href),
-      config.home.navigation.map((item) => item.href));
-    menuDialog.emit("keydown", { key: "Escape", preventDefault: () => {} });
-    assert.equal(menuOverlay.hidden, true);
-    assert.ok(crestToggle.focused);
+    const rootLevel = scan(menuDialog).find((n) => n.className === "mobile-menu-level mobile-menu-level-1");
+    assert.equal(rootLevel.children.length, config.menu.items.length);
+    const first = rootLevel.children[0].children[0];
+    const firstChildren = rootLevel.children[0].children[1];
+    first.emit("click");
+    assert.equal(first.attributes["aria-expanded"], "true");
+    assert.equal(firstChildren.hidden, false);
+    assert.equal(firstChildren.children.length, config.menu.items[0].children.length);
+    const second = rootLevel.children[1].children[0];
+    const secondChildren = rootLevel.children[1].children[1];
+    second.emit("click");
+    assert.equal(firstChildren.hidden, true);
+    assert.equal(secondChildren.hidden, false);
+    const programs = secondChildren.children[0].children[0];
+    programs.emit("click");
+    assert.equal(secondChildren.children[0].children[1].hidden, false,
+      "A mobilos háromszintű harmonikának működnie kell.");
   } else {
     assert.equal(nodes.filter((n) => n.className === "desktop-primary-nav").length, 0,
       "Nem jelenhet meg a két tesztnavigációs gomb az asztali fejlécben.");
@@ -252,8 +286,41 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
     assert.equal(nodes.filter((n) => n.tag === "a" && n.attributes.href === config.routes.gate).length, 0,
       "Asztalon sehol nem szerepelhet Vissza a kapuhoz hivatkozás.");
     assert.equal(nodes.filter((n) => n.className === "mobile-menu-overlay").length, 0);
-    assert.equal(nodes.filter((n) => n.className === "desktop-crest-home shell-crest-toggle").length, 1);
+    const wheelNodes = scan(menuDialog).filter((n) => n.className.includes("desktop-wheel-node"));
+    assert.equal(wheelNodes.length, 6);
+    assert.equal(wheelNodes[0].style.left, "50.000%");
+    assert.equal(wheelNodes[0].style.top, "15.000%");
+    wheelNodes[1].emit("click");
+    assert.equal(wheelNodes[1].attributes["aria-pressed"], "true");
+    const sectionList = scan(menuDialog).find((n) => n.className === "desktop-wheel-sections");
+    assert.equal(sectionList.children.length, config.menu.items[1].children.length);
+    sectionList.children[0].emit("click");
+    const third = scan(menuDialog).find((n) => n.className === "desktop-wheel-level-three");
+    assert.equal(third.children.length, 3);
+    assert.equal(third.hidden, false);
   }
+  menuDialog.emit("keydown", { key: "Escape", preventDefault: () => {} });
+  assert.equal(menuOverlay.hidden, true);
+  assert.equal(document.body.style.overflow, "", "Bezárás után vissza kell állítani a görgetést.");
+  assert.equal(crestToggle.attributes["aria-label"], config.home.header.menuOpenLabel);
+  assert.ok(crestToggle.focused);
+
+  const settingsOverlay = nodes.find((n) => n.className === `${platform}-settings-overlay`);
+  const settingsDialog = nodes.find((n) => n.className === `${platform}-settings-dialog`);
+  assert.ok(settingsOverlay && settingsDialog);
+  settingsToggle.emit("click");
+  assert.equal(settingsOverlay.hidden, false);
+  assert.equal(document.body.style.overflow, "hidden");
+  const modes = scan(settingsDialog).filter((n) => n.className === `${platform}-settings-option`);
+  assert.deepEqual(modes.map((n) => n.dataset.mode), config.appearance.cycle);
+  modes[1].emit("click");
+  assert.equal(homeNode.dataset.themePreference, "light");
+  modes[0].emit("click");
+  assert.equal(homeNode.dataset.themePreference, "auto");
+  settingsDialog.emit("keydown", { key: "Escape", preventDefault: () => {} });
+  assert.equal(settingsOverlay.hidden, true);
+  assert.equal(document.body.style.overflow, "");
+  assert.ok(settingsToggle.focused);
 
   const searchOverlay = nodes.find((n) => n.className === `${platform}-search-overlay`);
   const searchDialog = nodes.find((n) => n.className === `${platform}-search-dialog`);
@@ -262,20 +329,21 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(searchDialog.attributes["aria-modal"], "true");
   searchToggle.emit("click");
   assert.equal(searchOverlay.hidden, false);
+  assert.equal(document.body.style.overflow, "hidden");
   const searchInput = searchDialog.querySelector("input");
   assert.ok(searchInput.focused);
   searchInput.value = "kapu";
   searchInput.emit("input");
   const resultList = nodes.find((n) => n.className === `${platform}-search-results`);
   assert.equal(resultList.children.length, 1);
-  if (platform === "mobile") assert.equal(resultList.children[0].attributes.href, config.routes.gate);
-  else assert.equal(resultList.children[0].textContent, config.home.header.searchNoResults,
-    "Asztali keresőben sem lehetnek ideiglenes kapu-hivatkozások.");
+  assert.equal(resultList.children[0].textContent, config.home.header.searchNoResults,
+    "Egyik keresőben sem maradhatnak ideiglenes kapu-hivatkozások.");
   searchInput.value = "Facebook";
   searchInput.emit("input");
   assert.equal(resultList.children[0].attributes.target, "_blank");
   searchDialog.emit("keydown", { key: "Escape", preventDefault: () => {} });
   assert.equal(searchOverlay.hidden, true);
+  assert.equal(document.body.style.overflow, "");
   assert.ok(searchToggle.focused);
 
   themeToggle.emit("click");
@@ -376,33 +444,42 @@ assert.match(baseCss, /\.gate-school-name/);
 assert.doesNotMatch(baseCss, /\.gate-hint|\.gate-subtitle/);
 assert.match(block(mobileCss, ".mobile-toolbar"), /grid-template-columns:\s*minmax\(0,1fr\) 58px minmax\(0,1fr\);/);
 assert.match(block(mobileCss, ".mobile-links-left"), /repeat\(3,minmax\(0,1fr\)\)/);
-assert.match(mobileCss, /\.mobile-links-right\s*\{\s*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+assert.match(mobileCss, /\.mobile-links-right\s*\{\s*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
 assert.match(block(desktopCss, ".desktop-toolbar"), /grid-template-columns:\s*minmax\(0,1fr\) 84px minmax\(0,1fr\);/);
+assert.match(block(desktopCss, ".desktop-headline"), /display:flex;\s*justify-content:center;/);
+assert.match(block(desktopCss, ".desktop-brand"), /align-items:center;\s*text-align:center;/);
 assert.doesNotMatch(desktopCss, /\.desktop-primary-nav|\.desktop-primary-link/,
   "Az eltávolított navigációhoz tartozó CSS-t is ki kell venni.");
-assert.match(block(mobileCss, ".mobile-overlay-backdrop"), /backdrop-filter:blur\(22px\)/);
+assert.match(block(mobileCss, ".mobile-overlay-backdrop, .mobile-menu-backdrop, .mobile-settings-backdrop"),
+  /backdrop-filter:blur\(22px\)/);
 assert.match(block(desktopCss, ".desktop-search-backdrop"), /backdrop-filter:blur\(25px\)/);
 assert.match(block(desktopCss, ".desktop-search-dialog"), /width:94vw;\s*height:90dvh;/);
-assert.match(block(mobileCss, ".mobile-menu-overlay, .mobile-search-overlay"), /position:fixed;\s*inset:0;/);
-assert.match(mobileCss, /\.mobile-menu-dialog, \.mobile-search-dialog\s*\{[\s\S]*?width:100%;\s*height:100%;/);
+assert.match(block(mobileCss, ".mobile-menu-overlay, .mobile-search-overlay, .mobile-settings-overlay"),
+  /position:fixed;\s*inset:0;/);
+assert.match(mobileCss, /\.mobile-menu-dialog, \.mobile-search-dialog, \.mobile-settings-dialog\s*\{[\s\S]*?width:100%;\s*height:100%;/);
+assert.match(block(desktopCss, ".desktop-wheel-orbit"), /aspect-ratio:1;/);
+assert.match(block(desktopCss, ".desktop-wheel-node"), /width:23%;/);
+for (const diameter of [390, 432, 500, 640]) {
+  const gap = diameter * (.35 - .23);
+  assert.ok(gap > 40, "A hat körmenügomb ne csússzon egymásra.");
+}
 assert.match(block(desktopCss, ".desktop-footer .footer-inner"), /grid-template-columns:\s*minmax\(0,1\.7fr\) minmax\(230px,\.8fr\);/);
 assert.match(block(mobileCss, ".mobile-home"), /display:\s*flex;\s*flex-direction:\s*column;/);
 assert.match(block(mobileCss, ".mobile-main"), /flex:\s*1 1 auto;/);
 assert.match(block(desktopCss, ".desktop-main"), /flex:\s*1 1 auto;/);
 assert.match(block(mobileCss, ".mobile-brand"), /margin:\s*0 auto 14px;/);
 for (const width of [280, 320, 359, 375, 390, 430, 650, 767]) {
-  const compact = width <= 359;
+  const compact = width <= 369;
   const innerWidth = Math.min(650, width - (compact ? 14 : 20));
   const center = compact ? 54 : 58;
   const gap = compact ? 3 : 4;
   const side = (innerWidth - center - 2 * gap) / 2;
-  const leftCell = (side - 2 * 3) / 3;
-  const rightCell = (side - 3) / 2;
-  assert.ok(leftCell >= 30 && rightCell >= 30, `${width}px: a fejléc elemei túlcsordulnának.`);
+  const cell = compact ? side : (side - 2 * 3) / 3;
+  assert.ok(cell >= 44, `${width}px: a hat ikon érintési célja túl keskeny lenne.`);
   assert.ok(Math.abs((side + gap + center / 2) - innerWidth / 2) < .01,
     `${width}px: a címer nem lenne középen.`);
 }
-console.log("✓ Fejlécgeometria: 8 mobil szélességen középre tett címer, 3+2 elférő vezérlő és lábléc-aljhoz igazítás");
+console.log("✓ Fejlécgeometria: 8 mobil szélességen középre tett címer, szimmetrikus 3+3 gomb és lábléc-aljhoz igazítás");
 for (const [width, height] of [[320, 720], [375, 812], [390, 844], [430, 932], [768, 800], [1024, 768], [1440, 900]]) {
   const stageWidth = Math.max(width, height * 16 / 9);
   const left = (stageWidth * .42) - (stageWidth - width) / 2;

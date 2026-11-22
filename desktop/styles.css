@@ -14,11 +14,12 @@
   border-bottom:1px solid color-mix(in srgb,var(--accent) 42%,transparent);
 }
 .desktop-headline {
+  display:flex; justify-content:center;
   width:min(100%,1120px); margin:0 auto 22px;
 }
 .desktop-brand {
-  min-width:0; max-width:600px; margin:0;
-  align-items:flex-start; text-align:left; line-height:1.2;
+  min-width:0; max-width:600px; margin:0 auto;
+  align-items:center; text-align:center; line-height:1.2;
 }
 .desktop-brand strong {
   font-size:clamp(20px,2.05vw,30px); font-weight:900; letter-spacing:.085em;
@@ -111,12 +112,117 @@
 .desktop-search-result:hover { background:color-mix(in srgb,var(--accent) 18%,var(--surface)); }
 .desktop-search-results p { grid-column:1/-1; color:var(--muted); }
 
+/* Asztali körmenü: a hat főcsoport sugaras elrendezésben, ütközés nélkül. */
+.desktop-wheel-overlay, .desktop-settings-overlay {
+  position:fixed; inset:0; z-index:1600; display:grid;
+  width:100vw; height:100dvh; padding:clamp(12px,2vw,30px);
+  overflow:hidden; isolation:isolate;
+}
+.desktop-wheel-overlay { place-items:center; }
+.desktop-settings-overlay { place-items:center end; }
+.desktop-wheel-overlay[hidden], .desktop-settings-overlay[hidden] { display:none !important; }
+.desktop-wheel-backdrop, .desktop-settings-backdrop {
+  position:absolute; inset:0; z-index:0;
+  background:rgba(3,15,29,.56);
+  -webkit-backdrop-filter:blur(22px); backdrop-filter:blur(22px);
+}
+.desktop-wheel-dialog, .desktop-settings-dialog {
+  position:relative; z-index:1; max-height:94dvh;
+  overflow-y:auto; overscroll-behavior:contain;
+  border:2px solid color-mix(in srgb,var(--accent) 72%,transparent);
+  background:color-mix(in srgb,var(--surface) 95%,transparent);
+  color:var(--text); box-shadow:0 28px 90px rgba(0,0,0,.36);
+}
+.desktop-wheel-dialog { width:min(1180px,96vw); border-radius:26px; padding:20px 24px 24px; }
+.desktop-wheel-heading, .desktop-settings-heading {
+  display:flex; align-items:center; justify-content:space-between; gap:18px;
+}
+.desktop-wheel-heading h2, .desktop-settings-heading h2 { margin:0; font-size:clamp(22px,2.4vw,30px); }
+.desktop-wheel-close, .desktop-settings-close {
+  flex:0 0 48px; width:48px; height:48px; display:grid; place-items:center;
+  border:1px solid var(--accent); border-radius:14px;
+  background:var(--background); color:var(--text); font:inherit; font-size:32px;
+  cursor:pointer;
+}
+.desktop-wheel-orbit {
+  position:relative; width:min(640px,72dvh,100%); aspect-ratio:1;
+  margin:0 auto; isolation:isolate;
+  background:radial-gradient(circle at center,color-mix(in srgb,var(--accent) 9%,transparent),transparent 67%);
+}
+.desktop-wheel-ring {
+  position:absolute; inset:15%; border:1px dashed color-mix(in srgb,var(--accent) 66%,transparent);
+  border-radius:50%; pointer-events:none;
+}
+.desktop-wheel-center {
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:23%; aspect-ratio:1; border:3px solid var(--accent); border-radius:50%;
+  display:grid; place-items:center; background:var(--background);
+  box-shadow:0 11px 32px rgba(0,0,0,.32), inset 0 2px 8px rgba(255,255,255,.08);
+}
+.desktop-wheel-crest { width:72%; height:72%; object-fit:contain; }
+.desktop-wheel-node {
+  position:absolute; transform:translate(-50%,-50%);
+  width:23%; min-height:clamp(49px,7vh,67px); padding:8px 10px;
+  display:grid; place-items:center;
+  border:1px solid color-mix(in srgb,var(--accent) 64%,transparent);
+  border-radius:14px; background:var(--background); color:var(--text);
+  font:inherit; font-weight:850; font-size:clamp(11px,1.2vw,14px);
+  line-height:1.15; overflow-wrap:anywhere; text-align:center; cursor:pointer;
+  box-shadow:0 6px 17px rgba(0,0,0,.16);
+}
+.desktop-wheel-node:hover, .desktop-wheel-node:focus-visible {
+  border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent);
+}
+.desktop-wheel-node.is-selected {
+  background:color-mix(in srgb,var(--accent) 28%,var(--surface));
+  border-width:2px; border-color:var(--accent);
+}
+.desktop-wheel-details {
+  width:min(100%,1000px); margin:8px auto 0; padding:17px 20px;
+  border:1px solid color-mix(in srgb,var(--accent) 42%,transparent);
+  border-radius:17px; background:color-mix(in srgb,var(--background) 72%,transparent);
+}
+.desktop-wheel-selected-title {
+  margin:0 0 13px; font-size:clamp(17px,1.8vw,22px); text-align:center;
+}
+.desktop-wheel-sections {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px;
+}
+.desktop-wheel-section-label, .desktop-wheel-section-button, .desktop-wheel-third-item {
+  display:flex; align-items:center; justify-content:center;
+  min-width:0; min-height:49px; padding:10px 12px;
+  border:1px solid color-mix(in srgb,var(--accent) 38%,transparent);
+  border-radius:12px; background:var(--surface); color:var(--text);
+  font:inherit; font-size:13px; font-weight:750; text-align:center;
+  text-decoration:none; overflow-wrap:anywhere;
+}
+.desktop-wheel-section-button { cursor:pointer; border-color:var(--accent); }
+.desktop-wheel-section-button[aria-expanded="true"] { background:color-mix(in srgb,var(--accent) 22%,var(--surface)); }
+.desktop-wheel-level-three { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; margin-top:12px; }
+.desktop-wheel-level-three[hidden] { display:none !important; }
+.desktop-wheel-third-item { background:var(--background); }
+
+.desktop-settings-dialog { width:min(500px,94vw); border-radius:23px; padding:26px; }
+.desktop-settings-dialog > p { color:var(--muted); font-weight:750; margin:18px 0; }
+.desktop-settings-options { display:grid; gap:11px; }
+.desktop-settings-option {
+  display:flex; align-items:center; justify-content:center; min-height:56px;
+  padding:12px; border:1px solid var(--accent); border-radius:13px;
+  background:var(--background); color:var(--text); font:inherit; font-weight:800;
+  cursor:pointer;
+}
+.desktop-settings-option[aria-pressed="true"] {
+  background:color-mix(in srgb,var(--accent) 24%,var(--surface));
+  box-shadow:inset 0 0 0 2px var(--accent);
+}
+
 @media (min-width:768px) and (max-width:900px) {
   .desktop-toolbar { grid-template-columns:minmax(0,1fr) 74px minmax(0,1fr); gap:10px; }
   .desktop-toolbar .shell-tool { width:48px; height:50px; }
   .desktop-toolbar .shell-crest-toggle { width:74px; height:74px; min-height:74px; }
   .desktop-links-left, .desktop-links-right { gap:6px; }
   .desktop-search-results { grid-template-columns:minmax(0,1fr); }
+  .desktop-wheel-sections { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media (prefers-reduced-motion:reduce) {
   .desktop-home { animation:none; }

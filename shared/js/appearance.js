@@ -16,6 +16,12 @@ function savePreference(config, value) {
   for (const update of subscribers) update();
 }
 
+export function currentAppearanceMode(config) { return initialPreference(config); }
+export function chooseAppearanceMode(config, value) {
+  if (!config.appearance.cycle.includes(value)) throw new Error("Érvénytelen megjelenési mód.");
+  savePreference(config, value);
+}
+
 export function bindAppearance(config, home, themeButton) {
   const appearance = config.appearance;
   const media = window.matchMedia("(prefers-color-scheme: dark)");

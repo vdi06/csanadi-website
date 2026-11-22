@@ -182,7 +182,6 @@ img { max-width: 100%; }
 .footer-inner .footer-brand { color:var(--accent); font-weight:900; letter-spacing:.09em; }
 .footer-inner a { color:var(--text); overflow-wrap:anywhere; }
 .footer-links { display:flex; flex-direction:column; align-items:flex-start; gap:9px; }
-.footer-subnav { display:flex; flex-direction:column; align-items:inherit; gap:9px; }
 .footer-links a { padding:3px 0; min-height:28px; }
 .footer-links .footer-version {
   order: 999; margin: 10px 0 0;

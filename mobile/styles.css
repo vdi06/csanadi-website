@@ -41,7 +41,7 @@
 }
 .mobile-links-left, .mobile-links-right { display:grid; min-width:0; align-items:center; gap:3px; }
 .mobile-links-left { grid-template-columns:repeat(3,minmax(0,1fr)); }
-.mobile-links-right { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.mobile-links-right { grid-template-columns:repeat(3,minmax(0,1fr)); }
 .mobile-toolbar .shell-tool {
   width:100%; min-height:48px; font-size:clamp(17px,4.8vw,22px);
   border-radius:13px;
@@ -62,24 +62,24 @@
   justify-items:center; gap:23px; text-align:center;
 }
 .mobile-footer .footer-links { align-items:center; }
-.mobile-footer .footer-subnav { align-items:center; }
 .mobile-footer .footer-contact { display:grid; justify-items:center; }
 .mobile-footer h2 { margin:6px 0 12px; }
 .mobile-footer .footer-links a { min-height:36px; padding:6px 2px; }
 
-/* Két, kizárólag mobilos, külön teljes képernyős felület. */
-.mobile-menu-overlay, .mobile-search-overlay {
+/* Három külön mobilos, teljes képernyős felület: menü, kereső, beállítások. */
+.mobile-menu-overlay, .mobile-search-overlay, .mobile-settings-overlay {
   position:fixed; inset:0; z-index:1200; display:flex;
   width:100vw; height:100dvh; overflow:hidden;
   isolation:isolate; overscroll-behavior:contain;
 }
-.mobile-menu-overlay[hidden], .mobile-search-overlay[hidden] { display:none !important; }
-.mobile-overlay-backdrop {
+.mobile-menu-overlay[hidden], .mobile-search-overlay[hidden],
+.mobile-settings-overlay[hidden] { display:none !important; }
+.mobile-overlay-backdrop, .mobile-menu-backdrop, .mobile-settings-backdrop {
   position:absolute; inset:0; z-index:0;
   background:rgba(3,15,29,.52);
   -webkit-backdrop-filter:blur(22px); backdrop-filter:blur(22px);
 }
-.mobile-menu-dialog, .mobile-search-dialog {
+.mobile-menu-dialog, .mobile-search-dialog, .mobile-settings-dialog {
   position:relative; z-index:1; width:100%; height:100%;
   padding:calc(22px + env(safe-area-inset-top)) 20px
     calc(24px + env(safe-area-inset-bottom));
@@ -87,26 +87,27 @@
   background:color-mix(in srgb,var(--surface) 84%,transparent);
   color:var(--text); text-align:left;
 }
-.mobile-overlay-heading {
+.mobile-overlay-heading, .mobile-menu-heading, .mobile-settings-heading {
   display:flex; align-items:center; justify-content:space-between;
   gap:16px; width:min(100%,650px); margin:0 auto 20px;
 }
-.mobile-overlay-heading h2 { margin:0; font-size:clamp(24px,7vw,36px); line-height:1.15; }
-.mobile-overlay-close {
+.mobile-overlay-heading h2, .mobile-menu-heading h2, .mobile-settings-heading h2 {
+  margin:0; font-size:clamp(24px,7vw,36px); line-height:1.15;
+}
+.mobile-overlay-close, .mobile-menu-close, .mobile-settings-close {
   flex:0 0 48px; width:48px; height:48px; min-width:48px;
   display:grid; place-items:center; border:1px solid var(--accent);
   border-radius:14px; background:var(--background); color:var(--text);
   font-size:32px; line-height:1; cursor:pointer;
 }
-.mobile-menu-links { width:min(100%,650px); margin:14px auto 0; display:grid; gap:14px; }
-.mobile-menu-link, .mobile-search-result {
+.mobile-search-result {
   display:flex; align-items:center; justify-content:center;
   min-height:64px; padding:15px 18px;
   border:1px solid color-mix(in srgb,var(--accent) 60%,transparent);
   border-radius:16px; background:color-mix(in srgb,var(--background) 75%,transparent);
   color:var(--text); font-weight:800; text-align:center; text-decoration:none;
 }
-.mobile-menu-link:hover, .mobile-search-result:hover {
+.mobile-search-result:hover {
   background:color-mix(in srgb,var(--accent) 18%,var(--surface));
 }
 .mobile-search-input {
@@ -119,9 +120,62 @@
 .mobile-search-results { width:min(100%,650px); margin:19px auto 0; display:grid; gap:10px; }
 .mobile-search-results p { color:var(--muted); line-height:1.5; }
 
-@media (max-width:359px) {
+/* Az 1.53-as körmenütől független, új mobilos harmonikanavigáció. */
+.mobile-menu-level { display:grid; gap:9px; min-width:0; }
+.mobile-menu-level-1 { width:min(100%,650px); margin:0 auto; gap:13px; }
+.mobile-menu-entry { min-width:0; }
+.mobile-menu-expand, .mobile-menu-label, .mobile-menu-target {
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  width:100%; min-height:62px; padding:15px 18px;
+  border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);
+  border-radius:15px; background:color-mix(in srgb,var(--background) 77%,transparent);
+  color:var(--text); font:inherit; font-weight:800; line-height:1.35;
+  text-align:left; text-decoration:none; overflow-wrap:anywhere;
+}
+.mobile-menu-expand { cursor:pointer; }
+.mobile-menu-expand::after {
+  content:""; flex:0 0 10px; width:10px; height:10px;
+  border-right:2px solid var(--accent); border-bottom:2px solid var(--accent);
+  transform:rotate(45deg); transition:transform .2s ease;
+}
+.mobile-menu-expand[aria-expanded="true"]::after { transform:rotate(225deg); }
+.mobile-menu-expand:hover { background:color-mix(in srgb,var(--accent) 15%,var(--surface)); }
+.mobile-menu-level-2, .mobile-menu-level-3 {
+  margin:10px 0 3px 14px; padding-left:12px;
+  border-left:2px solid color-mix(in srgb,var(--accent) 65%,transparent);
+}
+.mobile-menu-level-2 .mobile-menu-expand,
+.mobile-menu-level-2 .mobile-menu-label,
+.mobile-menu-level-2 .mobile-menu-target { min-height:54px; font-size:15px; }
+.mobile-menu-level-3 .mobile-menu-label,
+.mobile-menu-level-3 .mobile-menu-target { min-height:48px; font-size:14px; }
+.mobile-menu-label { color:var(--muted); cursor:default; }
+.mobile-menu-level[hidden] { display:none !important; }
+
+/* A fogaskerék valódi, önálló beállítási felületet nyit. */
+.mobile-settings-dialog > p, .mobile-settings-options {
+  width:min(100%,650px); margin:0 auto 18px;
+}
+.mobile-settings-dialog > p { color:var(--muted); font-weight:750; }
+.mobile-settings-options { display:grid; gap:12px; }
+.mobile-settings-option {
+  display:flex; align-items:center; gap:17px; width:100%; min-height:64px;
+  padding:16px 20px; border:1px solid var(--accent); border-radius:16px;
+  background:var(--background); color:var(--text); font:inherit; font-weight:850;
+  cursor:pointer;
+}
+.mobile-settings-option span:first-child { font-size:25px; width:32px; text-align:center; }
+.mobile-settings-option[aria-pressed="true"] {
+  background:color-mix(in srgb,var(--accent) 24%,var(--surface));
+  box-shadow:inset 0 0 0 2px var(--accent);
+}
+
+/* A keskeny készülékeken a hat gomb két függőleges, szimmetrikus csoport.
+   Így mindegyik érintési cél széles marad, a címer nem mozdul el középről. */
+@media (max-width:369px) {
   .mobile-header { padding-inline:7px; }
   .mobile-toolbar { grid-template-columns:minmax(0,1fr) 54px minmax(0,1fr); gap:3px; }
+  .mobile-links-left, .mobile-links-right { grid-template-columns:minmax(0,1fr); gap:6px; }
   .mobile-toolbar .shell-crest-toggle { width:54px; height:54px; min-height:54px; }
   .mobile-toolbar .shell-tool { min-height:46px; font-size:17px; }
   .mobile-brand strong { letter-spacing:0; }
@@ -129,4 +183,5 @@
 }
 @media (prefers-reduced-motion:reduce) {
   .mobile-home { animation:none; }
+  .mobile-menu-expand::after { transition:none; }
 }
