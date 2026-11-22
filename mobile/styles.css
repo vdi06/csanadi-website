@@ -17,6 +17,7 @@
   display: grid; place-items: center;
   padding: 36px 20px calc(36px + env(safe-area-inset-bottom));
   background: linear-gradient(165deg, #071b2f, #102b40);
+  animation: home-reveal var(--home-reveal-duration, 420ms) ease-out both;
 }
 .mobile-home-content {
   display: flex; flex-direction: column; align-items: center;

@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "2.03",
-  "release": "2.03",
+  "schemaVersion": "2.04",
+  "release": "2.04",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -16,13 +16,15 @@
     "actionLabel": "Belépés a Csanádi Sportiskola kezdőlapjára",
     "skipLabel": "Belépőanimáció kihagyása",
     "skipSymbol": "⏭",
-    "frames": 9,
+    "frames": 30,
     "assetDirectory": "./shared/assets/media/web/gate-frames/",
     "framePrefix": "gate-",
     "mobileSuffix": "-mobile",
     "extension": ".webp",
-    "desktopDurationMs": 2200,
-    "mobileDurationMs": 1700
+    "desktopDurationMs": 2250,
+    "mobileDurationMs": 1750,
+    "finishFadeMs": 380,
+    "homeRevealMs": 420
   },
   "home": {
     "title": "Üdvözlünk a Csanádiban",

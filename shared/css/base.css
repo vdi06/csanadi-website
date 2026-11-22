@@ -28,9 +28,12 @@ img { max-width: 100%; }
 .gate-frames, .gate-frame, .gate-outline { position: absolute; inset: 0; width: 100%; height: 100%; }
 .gate-frame {
   display: block; object-fit: fill; opacity: 0; filter: brightness(.89);
-  transition: opacity .16s linear; user-select: none; pointer-events: none;
+  /* A képek közti opacity-értéket a képkockaidőzítő számolja. Egy külön
+     CSS-transition túlfuthatna a következő fázisra és villogást okozna. */
+  user-select: none; pointer-events: none;
 }
 .gate-frame.is-visible { opacity: 1; }
+.gate-frames { z-index: 1; isolation: isolate; }
 .gate-outline {
   z-index: 2; pointer-events: none;
   filter: drop-shadow(1px 2px 3px rgba(15, 12, 5, .85));
@@ -65,7 +68,24 @@ img { max-width: 100%; }
 .gate-screen.is-opening .gate-door-button { pointer-events: none; }
 .gate-screen.is-opening .gate-outline { opacity: 0; }
 .gate-screen.is-opening .gate-frame { animation: gate-approach var(--opening-duration, 2200ms) ease-in-out both; }
+.gate-screen.is-opening .gate-glass-crest { animation: crest-approach var(--opening-duration, 2200ms) ease-in-out both; }
+.gate-screen.is-opening .gate-bottom-copy { animation: caption-approach var(--opening-duration, 2200ms) ease-in both; }
 @keyframes gate-approach { from { transform: scale(1); } to { transform: scale(1.018); } }
+@keyframes crest-approach {
+  from { transform: translate(-50%, -50%) scale(1); }
+  to { transform: translate(-50%, -50%) translateY(-6px) scale(1.018); }
+}
+@keyframes caption-approach { 0%, 68% { opacity: 1; } 100% { opacity: .4; } }
+
+/* A nyitott utolsó kép nem tűnik el egyik pillanatról a másikra.
+   A következő, címeres oldal ugyanebből a sötét alapszínből lép elő. */
+.gate-screen::after {
+  content: ""; position: absolute; inset: 0; z-index: 7;
+  background: var(--background); opacity: 0; pointer-events: none;
+  transition: opacity var(--finish-duration, 380ms) ease-in-out;
+}
+.gate-screen.is-finishing::after { opacity: 1; }
+@keyframes home-reveal { from { opacity: 0; } to { opacity: 1; } }
 
 /* Az 1.53-as, kizárólag iskolanevet tartalmazó alsó kapusáv. */
 .gate-bottom-bar {
@@ -107,5 +127,9 @@ img { max-width: 100%; }
 }
 .home-return:hover { background: rgba(219,183,114,.15); }
 @media (prefers-reduced-motion: reduce) {
-  .gate-frame, .gate-outline { transition: none; animation: none !important; }
+  .gate-frame, .gate-outline, .gate-glass-crest, .gate-bottom-copy {
+    transition: none; animation: none !important;
+  }
+  .gate-screen::after { transition: none; }
+  .mobile-home, .desktop-home { animation: none !important; }
 }

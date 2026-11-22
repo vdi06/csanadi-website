@@ -63,13 +63,14 @@ async function start() {
     const response = await fetch(settingsUrl);
     if (!response.ok) throw new Error(`Hiányzó JSON: ${response.status}`);
     config = await response.json();
-    if (config.schemaVersion !== "2.03" || config.gate.frames !== 9) {
+    if (config.schemaVersion !== "2.04" || config.gate.frames !== 30) {
       throw new Error("A kapu JSON-beállításai hibásak.");
     }
     document.title = config.site.fullName;
     for (const [name, value] of Object.entries(config.theme)) {
       document.documentElement.style.setProperty(`--${name}`, value);
     }
+    document.documentElement.style.setProperty("--home-reveal-duration", `${config.gate.homeRevealMs}ms`);
     await render();
     window.addEventListener("hashchange", () => render().catch(console.error));
     breakpoint.addEventListener("change", () => render().catch(console.error));

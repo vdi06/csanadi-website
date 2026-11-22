@@ -1,58 +1,69 @@
-# Csanádi 2.03 – eredeti kapu, megtartott új arany keret
+# Csanádi 2.04 – 30 képfázisos kapunyitás
 
-Ez a következő, külön ellenőrizhető újraépítési lépés. **Nem publikált kiadás.**
+Ez a 2.03-as, külön megőrzött tiszta alap következő, **nem publikált** kiadása.
 
-## Pontosan mi van benne?
+## Pontosan mi változott?
 
-- Egyetlen, tartalommentes `index.html`; JSON adatok és hash-alapú két állapot.
-- A nyitókapu képsorozata, eredeti felirata, alsó sávja, kihagyásikonja és a
-  címer arányai pontosan a felhasználó által csatolt 1.53-as ZIP-ből származnak.
-- A kapu körvonalán **szándékosan a 2.02-es új arany, térhatású SVG-perem és
-  az egér fölévitelekor látható fényhatás maradt**, a felhasználó külön kérésére.
-- A címer a kapu fölött, **ovális háttér nélkül**, az eredeti pozícióban.
-- A kapun az eredeti iskolanéven és a kihagyásikonon kívül nincs új felirat.
-- A kapu maga kattintható. A nyitás végén ténylegesen megjelenik a `#/kezdolap`.
-- Külön mobilos és asztali céloldal saját JS- és CSS-fájlból, kizárólag a
-  középre tett címerrel, a korábbról ismert üdvözlőcímmel és a működő visszalépéssel.
-- A kezdőlapon **nincs** nagy fotó, képcsere, automatikus animáció vagy további aloldal.
-- A JSON szabályozza a szövegeket, időtartamokat, képútvonalakat és színeket.
+- A korábbi **9 eredeti, a Csanádi homlokzatát ábrázoló képkockából**
+  mozgáskövető közteskép-számítással **30 egymástól különböző képfázis** készült,
+  külön 1600 × 900-as asztali és 800 × 450-es mobil WebP-sorozatban.
+  Ez **nem 30 külön készített fénykép**: a 21 köztes állapot az eredeti
+  képsorozatból számított kép. Az első és az utolsó kép pontosan az eredeti.
+- A korábbi, egész képenként hirtelen váltó megoldást az **1.53-as verzió
+  eredeti dekódolás-előtti várakozása és szomszédos képek folyamatos
+  kompozitálása** váltotta fel. A CSS-ből kikerült a képkockák külön
+  160 ms-os opacity-áttűnése, amely versenyzett a képcserével.
+- A valódi fotókhoz illeszkedő, *finom* közeledő mozgás, címermozgás és
+  felirathalványítás az eredeti 1.53-as animáció elvét követi.
+- A 30. (teljesen nyitott) kapukép fokozatosan a közös sötét háttérbe úszik;
+  a külön kezdőlap ebből a háttérből jelenik meg, ezért nincs közvetlen
+  fotócsere a nyitás végén. Az időtartamok mind JSON-adatok.
+- A korábban külön jóváhagyott arany, térhatású kapukörvonal és egérfény
+  **változatlanul megmaradt**, csak a nyitás animációját korszerűsítettük.
 
-## Mi nincs benne?
+## Mit tartalmaz a ZIP?
 
-Fejléc, alsó sáv, menü, keresés, hírek, dokumentumok, galéria, más aloldalak,
-régi CSS/JS modulok és választófelület. Az előző kiadásokat külön megőriztük.
+- A tartalmat nélkülöző közös `index.html`, egy közös kapumodul és JSON.
+- Egy mobil és egy asztali megjelenítő, külön saját CSS-sel és JS-sel.
+- A közös médiamappában 30 mobilos és 30 asztali WebP, valamint a címer.
+- Pontosan két aktív állapot: a kapu és az egyetlen, címeres kezdőlap.
+- A kapufelirat és az eredeti ⏭ kihagyásgomb; a kezdőlap visszalépő linkje.
 
-## Futtatás és ellenőrzés
+**Nincs benne** külön fejléc, menü, dokumentumtár, galéria, további aloldal,
+régi modul vagy külön választófelület. Sem FTP-re, sem GitHubra nem történt feltöltés.
 
-A ZIP kibontása után statikus HTTP-szerverrel indítható, például
-`python3 -m http.server 8000` a csomag mappájában.
+## Újraellenőrzés
 
-`node tools/test.mjs` ellenőrzi:
+A ZIP gyökerében: `node tools/test.mjs`.
 
-1. a fájlok pontos készletét és minden képkocka WebP-formátumát;
-2. a valódi mobilos és asztali DOM-kimenetet;
-3. a kapukattintás → képkockaváltás → kezdőlap folyamatot és a régi kihagyásikont;
-4. a visszautat, a dupla kattintás elleni védelmet és a mozgáscsökkentést;
-5. a kép–aranykontúr igazítását és a koppintási célterületet hét képernyőméretnél;
-6. ha a környezet lehetővé teszi, a tényleges Chromium-renderelést.
+Az ellenőrzések:
 
-Élesítés előtt valódi mobilos és asztali böngészőteszt, valamint a kapu
-vizuális jóváhagyása is szükséges.
+1. Fájlok teljes és zárt készlete: nem kerülhet be véletlen régi aloldal.
+2. Mind a 60 WebP fejléce és eltérő SHA-256-azonosítója.
+3. A 30 fájl megfelelő mobilos/asztali útvonala és betöltési szerkezete.
+4. Kapukattintás: **a 30 fotó dekódolásának befejezéséig** nem indul animáció.
+5. A 15. és 16. képfázis között valódi, félátlátszó képpár jelenik meg;
+   a többi képkocka ki van kapcsolva.
+6. A záróképet az átmenet végéig megtartjuk; csak ezután vált útvonalat.
+7. Kihagyásgomb, duplakattintás-védelem, mozgáscsökkentés, kezdőlap,
+   visszalépés, fókuszátadás, breakpoint- és platform-CSS-váltás.
+8. Kapugeometria hét különböző képernyőméreten, külön hover-körvonal.
+9. Sérült fotó szimulálása: asztalon a mobilos változat a tartalék;
+   mobilon a működő szomszédos képkocka marad látható.
 
 ## Eredmény – 2026. november 22.
 
-- **Sikeres:** a 18 kép és a címer ellenőrzése, hiányzó vagy régi funkciófájlok kizárása.
-- **Sikeres:** a kapu kilenckockás nyitása mobilon és asztalon, közvetlen navigáció,
-  kihagyásikon, visszalépés, dupla kattintás védelme, mozgáscsökkentés.
-- **Sikeres:** a tényleges közös belépési pont integrációs tesztje:
-  kapu → egyetlen kezdőlap → kapu, fókuszátadás, platformváltás és CSS-csere.
-- **Sikeres:** a kapukontúr és a kattintható terület képarányos geometriájának
-  matematikai ellenőrzése hét kijelzőméretnél.
-- **Sikeres:** az 1.53-as forrás-ZIP és a helyben megőrzött referencia CSS/kép
-  SHA-256 azonosságának ellenőrzése a fejlesztés előtt.
-- **Nem igazolt:** a tényleges képernyőn történő renderelés és a képváltások
-  vizuális minősége. Az automatikus Chromiumot a futtatókörnyezet blokkolja;
-  a külön natív böngésző nem éri el a helyi projektet.
-- **Nem tesztelt:** valódi iPhone és Android, valamint a fájlok éles tárhelyen.
+- **Sikeres:** valamennyi felsorolt kód-, adat-, képfájl- és DOM-teszt.
+- **Sikeres:** a sötét köztes háttér és az utolsó kép időzítésének tesztje.
+- **Sikeres:** a szomszédos WebP-k mért legnagyobb normalizált
+  képpont-eltérése asztalon 2,31%, mobilon 1,89% (RMSE). Ez képi
+  folytonossági mérés, nem animációs látványteszt.
+- **Képi mintavétellel ellenőrizve:** az interpolált nyitás köztes és utolsó
+  képei, változatlan homlokzati geometria. Az egész animáció esztétikai
+  minősége ebből még nem bizonyítható.
+- **Nem igazolt:** a teljes animáció tényleges Chromium/Safari megjelenése,
+  eszközteljesítménye és színátmenete. A futtatókörnyezet a Chromiumot
+  blokkolta; valódi iPhone/Android sem volt elérhető.
 
-A kódos tesztek teljesítése **nem jelent végső vizuális jóváhagyást**.
+A **2.04 is külön végső vizuális jóváhagyásra vár**; a kódtesztek
+nem helyettesítik a telefonos és számítógépes megtekintést.

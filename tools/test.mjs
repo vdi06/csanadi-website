@@ -16,7 +16,7 @@ const staticFiles = [
   "tools/test.mjs", "docs/ELLENORZES.md"
 ];
 const assetPaths = [];
-for (let i = 0; i < 9; i++) {
+for (let i = 0; i < 30; i++) {
   const number = String(i).padStart(2, "0");
   for (const suffix of ["", "-mobile"]) assetPaths.push(`shared/assets/media/web/gate-frames/gate-${number}${suffix}.webp`);
 }
@@ -28,17 +28,23 @@ function files(directory) {
 }
 assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths].sort(), "Semmilyen régi funkció nem kerülhet az aktív csomagba.");
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
-assert.equal(config.schemaVersion, "2.03");
+assert.equal(config.schemaVersion, "2.04");
 assert.equal(config.gate.skipSymbol, "⏭");
 assert.ok(!Object.hasOwn(config.gate, "desktopHint") && !Object.hasOwn(config.gate, "mobileHint"));
 assert.deepEqual(config.routes, { gate: "#/", home: "#/kezdolap" });
-assert.equal(config.gate.frames, 9);
-assert.ok(config.gate.desktopDurationMs > 0 && config.gate.mobileDurationMs > 0);
+assert.equal(config.gate.frames, 30);
+assert.equal(config.gate.desktopDurationMs, 2250);
+assert.equal(config.gate.mobileDurationMs, 1750);
+assert.ok(config.gate.finishFadeMs > 0 && config.gate.homeRevealMs > 0);
+const frameHashes = new Set();
 for (const file of assetPaths) {
   const buffer = readFileSync(join(root, file));
   assert.equal(buffer.subarray(0, 4).toString(), "RIFF", file);
   assert.equal(buffer.subarray(8, 12).toString(), "WEBP", file);
   assert.ok(buffer.length > 5000, file);
+  const fingerprint = createHash("sha256").update(buffer).digest("hex");
+  assert.ok(!frameHashes.has(fingerprint), `Két egyforma kép lenne a 30 fázis között: ${file}`);
+  frameHashes.add(fingerprint);
 }
 const crest = readFileSync(join(root, "shared/assets/media/logo/csanadi-crest-512.webp"));
 assert.equal(createHash("sha256").update(crest).digest("hex"),
@@ -52,8 +58,10 @@ for (const source of src) assert.doesNotMatch(source, /innerHTML|eval\s*\(|carou
 assert.match(src[0], /import\(`\.\.\/\$\{platform\}\/app\.js`\)/);
 assert.match(src[0], /window\.addEventListener\("hashchange"/);
 assert.match(src[0], /breakpoint\.addEventListener\("change"/);
-console.log("✓ Kizárólag kapu és kezdőlap: 18 képkocka, 1 címer, adatmentes HTML, külön platformok");
+console.log("✓ Kizárólag kapu és kezdőlap: 60 különböző WebP (30 mobil + 30 asztali), adatmentes HTML");
 
+let failDesktopFrame = false;
+let failMobileFrame = false;
 class FakeNode {
   constructor(tag) {
     this.tag = tag; this.children = []; this.attributes = {}; this.className = "";
@@ -65,7 +73,17 @@ class FakeNode {
       remove: (name) => { this.className = this.className.split(/\s+/).filter((value) => value !== name).join(" "); }
     };
   }
-  setAttribute(name, value) { this.attributes[name] = String(value); }
+  setAttribute(name, value) {
+    this.attributes[name] = String(value);
+    if (name === "src") this.src = String(value);
+  }
+  decode() {
+    if (this.tag === "img" && ((failDesktopFrame && this.src?.endsWith("gate-12.webp")) ||
+      (failMobileFrame && this.src?.endsWith("gate-14-mobile.webp")))) {
+      return Promise.reject(new Error("Tesztelt hiányzó képkocka"));
+    }
+    return Promise.resolve();
+  }
   append(...children) { for (const child of children) { if (typeof child === "object") child.parentNode = this; this.children.push(child); } }
   replaceChildren(...children) { this.children = []; this.append(...children); }
   addEventListener(name, callback) { this.events.set(name, callback); }
@@ -98,11 +116,11 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(nodes.filter((n) => n.tag === "button").length, 2);
   assert.equal(nodes.filter((n) => n.tag === "p").length, 0, "A kapun nem lehet új magyarázó szöveg.");
   assert.equal(nodes.find((n) => n.tag === "h1").textContent, config.site.gateCaption);
-  assert.equal(nodes.filter((n) => n.tag === "img" && n.className.includes("gate-frame")).length, 9);
+  assert.equal(nodes.filter((n) => n.tag === "img" && n.className.includes("gate-frame")).length, 30);
   assert.equal(nodes.filter((n) => n.tag === "svg").length, 1);
   assert.equal(nodes.filter((n) => n.tag === "ellipse" || n.tag === "rect").length, 0, "A címer mögött nem lehet ovális.");
   const images = nodes.filter((n) => n.tag === "img" && n.className.includes("gate-frame"));
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i < 30; i++) {
     const suffix = platform === "mobile" ? "-mobile" : "";
     assert.equal(images[i].attributes.src, `${config.gate.assetDirectory}gate-${String(i).padStart(2, "0")}${suffix}.webp`);
   }
@@ -112,14 +130,25 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   button.emit("click");
   button.emit("click");
   assert.equal(button.disabled, true, "A kapu nyitás közben nem kattintható újra.");
+  assert.equal(queue.length, 0, "A kapu nem indulhat a képek előzetes dekódolása előtt.");
+  await new Promise((done) => setImmediate(done));
   const duration = platform === "mobile" ? config.gate.mobileDurationMs : config.gate.desktopDurationMs;
   for (const time of [0, duration / 4, duration / 2, duration * .75, duration]) {
     const next = queue.shift();
     assert.ok(next, "A kapuanimáció időzítője nem fut.");
     next(time);
+    if (time === duration / 2) {
+      assert.equal(images[14].style.opacity, "1", `${platform}: a két kép nem fed át folyamatosan.`);
+      assert.ok(Number(images[15].style.opacity) > .49 && Number(images[15].style.opacity) < .51,
+        `${platform}: nem részleges az áttűnés a szomszédos képek között.`);
+      assert.equal(images[13].style.opacity, "0", "A korábbi képnek ki kell kapcsolnia a kompozitálásból.");
+    }
   }
+  assert.equal(location.hash, config.routes.gate, "A záróképet nem szabad azonnal lecserélni.");
+  assert.ok(scan(parent).some((n) => n.className.includes("is-finishing")));
+  assert.equal(images[29].style.opacity, "1", `${platform}: az utolsó, teljesen nyitott képkocka hiányzik.`);
+  await new Promise((done) => setTimeout(done, config.gate.finishFadeMs + 15));
   assert.equal(location.hash, config.routes.home, `${platform}: a kapu nem a kezdőlapra vezet.`);
-  assert.ok(images[8].className.includes("is-visible"), `${platform}: a kapu nem a nyitott képnél fejeződik be.`);
   dispose();
 
   location.hash = config.routes.gate;
@@ -138,8 +167,35 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(nodes.filter((n) => n.tag === "a").length, 1);
   assert.equal(nodes.find((n) => n.tag === "a").attributes.href, config.routes.gate);
   assert.equal(nodes.filter((n) => n.className?.includes("gate-frame")).length, 0);
-  console.log(`✓ ${platform}: kapunyitás, kihagyásgomb, 9 képkocka, kezdőlap és visszaút`);
+  console.log(`✓ ${platform}: dekódolás, 30 fázis, félátlátszó képpár, sötét áttűnés, kezdőlap és visszaút`);
 }
+
+// Hibás nagy felbontású fotó esetén a mobil változat szolgál tartalékként.
+failDesktopFrame = true;
+const fallbackRoot = new FakeNode("root");
+const fallbackDispose = desktop.mount(fallbackRoot, config, "gate");
+await new Promise((done) => setImmediate(done));
+const fallbackFrame = scan(fallbackRoot).find((node) => node.attributes.src?.endsWith("gate-12.webp"));
+assert.ok(fallbackFrame);
+assert.ok(fallbackFrame.src.endsWith("gate-12-mobile.webp"));
+fallbackDispose();
+failDesktopFrame = false;
+
+// Hibás mobilfotónál is látható marad egy érvényes szomszédos képkocka.
+failMobileFrame = true;
+const brokenMobileRoot = new FakeNode("root");
+const brokenMobileDispose = mobile.mount(brokenMobileRoot, config, "gate");
+scan(brokenMobileRoot).find((node) => node.className === "gate-door-button").emit("click");
+await new Promise((done) => setImmediate(done));
+for (const instant of [0, config.gate.mobileDurationMs / 2]) {
+  const next = queue.shift();
+  assert.ok(next); next(instant);
+}
+assert.equal(scan(brokenMobileRoot).find((node) => node.attributes.src?.endsWith("gate-15-mobile.webp")).style.opacity, "1");
+brokenMobileDispose();
+queue.length = 0;
+failMobileFrame = false;
+console.log("✓ Sérült képkocka: asztali tartalékkép és villogásmentes mobilos továbblépés");
 
 // Külön ellenőrzés: a mozgáscsökkentés azonnal a működő oldalra visz.
 reducedMotion = true;
@@ -165,6 +221,10 @@ assert.match(block(baseCss, ".gate-door-button"), /left:\s*50%;\s*top:\s*59\.6%;
 assert.match(block(baseCss, ".gate-glass-crest"), /left:\s*50%;/);
 assert.match(block(baseCss, ".gate-glass-crest"), /width:\s*9\.1125%;/);
 assert.match(baseCss, /\.gate-stage:has\(\.gate-door-button:hover\) \.gate-outline/);
+assert.doesNotMatch(block(baseCss, ".gate-frame"), /transition:\s*opacity/);
+assert.match(block(baseCss, ".gate-screen::after"), /transition:\s*opacity/);
+assert.match(block(mobileCss, ".mobile-home"), /animation:\s*home-reveal/);
+assert.match(block(desktopCss, ".desktop-home"), /animation:\s*home-reveal/);
 assert.match(baseCss, /\.gate-bottom-bar/);
 assert.match(baseCss, /\.gate-school-name/);
 assert.doesNotMatch(baseCss, /\.gate-hint|\.gate-subtitle/);
@@ -266,7 +326,7 @@ if (chromium) {
         const page = await browser.newPage({ viewport: { width, height: 844 } });
         await page.goto(url, { waitUntil: "networkidle" });
         await page.waitForSelector(".gate-door-button");
-        assert.equal(await page.locator(".gate-frame").count(), 9);
+        assert.equal(await page.locator(".gate-frame").count(), 30);
         const before = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
         assert.ok(before <= 1, `${width}px: vízszintes túllógás`);
         await page.locator(".gate-door-button").click();

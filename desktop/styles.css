@@ -5,6 +5,7 @@
   display: grid; place-items: center;
   padding: 48px clamp(28px, 6vw, 90px);
   background: radial-gradient(ellipse at 50% 10%, #224054, #102a3d 52%, #071b2f);
+  animation: home-reveal var(--home-reveal-duration, 420ms) ease-out both;
 }
 .desktop-home-content {
   width: min(100%, 920px);
