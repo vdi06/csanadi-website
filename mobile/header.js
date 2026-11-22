@@ -17,7 +17,7 @@ export function makeMobileHeader(config, home) {
   const searchToggle = element("button", { className: "mobile-search-toggle shell-tool",
     text: data.searchGlyph, attributes: { type: "button", "aria-label": data.searchOpenLabel,
       "aria-controls": "mobile-search-view", "aria-expanded": "false" } });
-  const themeToggle = element("button", { className: "mobile-theme-toggle shell-tool",
+  const themeToggle = element("button", { className: "mobile-theme-toggle shell-tool shell-theme-toggle",
     attributes: { type: "button", "aria-label": data.themeLabel } });
 
   const navLinks = config.home.navigation.map((item) => navLink(item, "mobile-menu-link"));

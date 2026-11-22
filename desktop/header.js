@@ -11,9 +11,6 @@ export function makeDesktopHeader(config, home) {
   } },
     element("strong", { text: data.schoolLine1 }),
     element("small", { text: data.schoolLine2 }));
-  const topNavigation = element("nav", { className: "desktop-primary-nav", attributes: {
-    "aria-label": data.navigationLabel
-  } }, ...config.home.navigation.map((item) => navLink(item, "desktop-primary-link")));
   const crestHome = element("a", { className: "desktop-crest-home shell-crest-toggle",
     attributes: { href: config.routes.home, "aria-label": config.site.fullName } },
     crest(config, "shell-crest"));
@@ -21,7 +18,7 @@ export function makeDesktopHeader(config, home) {
     text: data.searchGlyph,
     attributes: { type: "button", "aria-label": data.searchOpenLabel,
       "aria-controls": "desktop-floating-search", "aria-expanded": "false" } });
-  const themeToggle = element("button", { className: "desktop-theme-toggle shell-tool",
+  const themeToggle = element("button", { className: "desktop-theme-toggle shell-tool shell-theme-toggle",
     attributes: { type: "button", "aria-label": data.themeLabel } });
 
   const closeButton = element("button", { className: "desktop-search-close", text: data.closeSymbol,
@@ -43,7 +40,7 @@ export function makeDesktopHeader(config, home) {
   overlay.hidden = true;
 
   const header = element("header", { className: "desktop-header" },
-    element("div", { className: "desktop-headline" }, brand, topNavigation),
+    element("div", { className: "desktop-headline" }, brand),
     element("div", { className: "desktop-toolbar" },
       element("nav", { className: "desktop-links-left", attributes: { "aria-label": data.socialLabel } },
         ...data.social.map((item) => makeSocialLink(item, "desktop-social shell-tool"))),
@@ -59,7 +56,7 @@ export function makeDesktopHeader(config, home) {
     searchToggle.focus({ preventScroll: true });
   }
   function renderSearch() {
-    const matches = filterSearchItems(config, searchInput.value);
+    const matches = filterSearchItems(config, searchInput.value, { includeNavigation: false });
     searchResults.replaceChildren(...(matches.length
       ? matches.map((item) => navLink(item, "desktop-search-result"))
       : [element("p", { text: data.searchNoResults })]));

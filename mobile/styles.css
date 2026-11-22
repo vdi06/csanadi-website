@@ -46,6 +46,7 @@
   width:100%; min-height:48px; font-size:clamp(17px,4.8vw,22px);
   border-radius:13px;
 }
+.mobile-theme-toggle .theme-mode-mark { font-size: 9px; }
 .mobile-toolbar .shell-crest-toggle {
   justify-self:center; width:58px; height:58px; min-height:58px; padding:3px;
 }
@@ -61,6 +62,7 @@
   justify-items:center; gap:23px; text-align:center;
 }
 .mobile-footer .footer-links { align-items:center; }
+.mobile-footer .footer-subnav { align-items:center; }
 .mobile-footer .footer-contact { display:grid; justify-items:center; }
 .mobile-footer h2 { margin:6px 0 12px; }
 .mobile-footer .footer-links a { min-height:36px; padding:6px 2px; }

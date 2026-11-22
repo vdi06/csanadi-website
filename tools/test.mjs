@@ -31,9 +31,11 @@ assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths].sort(), "Se
 assert.deepEqual(files(root).filter((path) => path.endsWith(".html")), ["index.html"]);
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
 assert.equal(config.schemaVersion, "2.06");
-assert.equal(config.release, "2.07");
+assert.equal(config.release, "2.09");
 assert.equal(config.appearance.defaultMode, "auto");
 assert.deepEqual(config.appearance.cycle, ["auto", "light", "dark"]);
+assert.deepEqual(Object.keys(config.appearance.shortLabels).sort(), ["auto", "dark", "light"]);
+assert.equal(config.appearance.glyphs.auto, "⚙");
 assert.equal(config.gate.skipSymbol, "⏭");
 assert.ok(!Object.hasOwn(config.gate, "desktopHint") && !Object.hasOwn(config.gate, "mobileHint"));
 assert.deepEqual(config.routes, { gate: "#/", home: "#/kezdolap" });
@@ -201,7 +203,9 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(nodes.filter((n) => n.tag === "path").length, 1, "A Facebook jelének SVG-ként kell megjelennie.");
   assert.equal(nodes.filter((n) => n.className === "home-brand" || n.className?.includes("home-brand ")).length, 1);
   const footer = nodes.find((n) => n.tag === "footer");
-  assert.equal(scan(footer).filter((n) => n.tag === "a").length, 3, "A láblécben kizárólag e-mail és 2 működő útvonal van.");
+  assert.equal(scan(footer).filter((n) => n.tag === "a").length,
+    platform === "mobile" ? 3 : 1,
+    "Asztalon nem lehetnek ideiglenes főoldal-/kapu-linkek a láblécben.");
   assert.ok(scan(footer).some((n) => n.textContent === config.home.footer.address));
   const informationColumn = scan(footer).find((n) => n.className === "footer-links");
   const versionRow = informationColumn.children.at(-1);
@@ -211,9 +215,20 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   const searchToggle = nodes.find((n) => n.className.includes("search-toggle"));
   const themeToggle = nodes.find((n) => n.className.includes("theme-toggle"));
   const homeNode = nodes.find((n) => n.className === `${platform}-home`);
+  const checkThemeButton = (mode) => {
+    assert.equal(themeToggle.dataset.themeMode, mode, "A témagomb külön állapotjelzést igényel.");
+    assert.equal(themeToggle.children.length, 2, "A mód ikonja és jelölése is látható legyen.");
+    assert.equal(themeToggle.children[0].className, "theme-mode-icon");
+    assert.equal(themeToggle.children[0].textContent, config.appearance.glyphs[mode]);
+    assert.equal(themeToggle.children[1].className, "theme-mode-mark");
+    assert.equal(themeToggle.children[1].textContent, config.appearance.shortLabels[mode]);
+    assert.equal(themeToggle.attributes["aria-label"],
+      `${config.home.header.themeLabel}: ${config.appearance.labels[mode]}`);
+  };
   assert.equal(homeNode.dataset.themePreference, "auto", "Alapértelmezésben automatikus téma kell.");
   assert.equal(homeNode.dataset.theme, "dark", "A rendszer sötét módját követnie kell.");
   assert.equal(homeNode.style["color-scheme"], "dark", "A beviteli elemek színmódja is a témát kövesse.");
+  checkThemeButton("auto");
 
   if (platform === "mobile") {
     const crestToggle = nodes.find((n) => n.className.includes("mobile-crest-toggle"));
@@ -231,10 +246,11 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
     assert.equal(menuOverlay.hidden, true);
     assert.ok(crestToggle.focused);
   } else {
-    const nav = nodes.find((n) => n.className === "desktop-primary-nav");
-    assert.ok(nav, "Asztalon vízszintes, állandó navigáció kell.");
-    assert.deepEqual(nav.children.map((node) => node.attributes.href),
-      config.home.navigation.map((item) => item.href));
+    assert.equal(nodes.filter((n) => n.className === "desktop-primary-nav").length, 0,
+      "Nem jelenhet meg a két tesztnavigációs gomb az asztali fejlécben.");
+    assert.equal(nodes.filter((n) => n.className === "desktop-primary-link").length, 0);
+    assert.equal(nodes.filter((n) => n.tag === "a" && n.attributes.href === config.routes.gate).length, 0,
+      "Asztalon sehol nem szerepelhet Vissza a kapuhoz hivatkozás.");
     assert.equal(nodes.filter((n) => n.className === "mobile-menu-overlay").length, 0);
     assert.equal(nodes.filter((n) => n.className === "desktop-crest-home shell-crest-toggle").length, 1);
   }
@@ -252,7 +268,9 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   searchInput.emit("input");
   const resultList = nodes.find((n) => n.className === `${platform}-search-results`);
   assert.equal(resultList.children.length, 1);
-  assert.equal(resultList.children[0].attributes.href, config.routes.gate);
+  if (platform === "mobile") assert.equal(resultList.children[0].attributes.href, config.routes.gate);
+  else assert.equal(resultList.children[0].textContent, config.home.header.searchNoResults,
+    "Asztali keresőben sem lehetnek ideiglenes kapu-hivatkozások.");
   searchInput.value = "Facebook";
   searchInput.emit("input");
   assert.equal(resultList.children[0].attributes.target, "_blank");
@@ -264,17 +282,21 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(homeNode.dataset.themePreference, "light");
   assert.equal(homeNode.dataset.theme, "light");
   assert.equal(homeNode.style["color-scheme"], "light");
+  checkThemeButton("light");
   themeToggle.emit("click");
   assert.equal(homeNode.dataset.themePreference, "dark");
   assert.equal(homeNode.dataset.theme, "dark");
   assert.equal(homeNode.style["color-scheme"], "dark");
+  checkThemeButton("dark");
   themeToggle.emit("click");
   assert.equal(homeNode.dataset.themePreference, "auto");
   assert.equal(homeNode.dataset.theme, "dark");
+  checkThemeButton("auto");
   assert.equal(preferenceMemory.get(config.appearance.storageKey), "auto");
   systemDark = false;
   for (const listener of systemListeners) listener();
   assert.equal(homeNode.dataset.theme, "light", "Automatikus módban a rendszer témájának változását is követni kell.");
+  checkThemeButton("auto");
   systemDark = true;
   for (const listener of systemListeners) listener();
   assert.equal(homeNode.dataset.theme, "dark");
@@ -324,6 +346,12 @@ console.log("✓ Mozgáscsökkentés: közvetlen, animációmentes belépés");
 const baseCss = readFileSync(join(root, "shared/css/base.css"), "utf8");
 const mobileCss = readFileSync(join(root, "mobile/styles.css"), "utf8");
 const desktopCss = readFileSync(join(root, "desktop/styles.css"), "utf8");
+for (const mode of config.appearance.cycle) {
+  assert.match(baseCss, new RegExp(`\\.shell-theme-toggle\\[data-theme-mode="${mode}"\\] \\{`),
+    `A(z) ${mode} módnak saját szín- és keretstílust kell adni.`);
+}
+assert.match(mobileCss, /\.mobile-theme-toggle \.theme-mode-mark/);
+assert.match(desktopCss, /\.desktop-theme-toggle \.theme-mode-mark/);
 assert.doesNotMatch(baseCss + desktopCss + mobileCss,
   /\.shell-panel|\.shell-search-input|\.shell-search-results|\.shell-nav-link/,
   "Nem maradhat meg a korábbi, már nem használt menü-/kereső-CSS.");
@@ -350,7 +378,8 @@ assert.match(block(mobileCss, ".mobile-toolbar"), /grid-template-columns:\s*minm
 assert.match(block(mobileCss, ".mobile-links-left"), /repeat\(3,minmax\(0,1fr\)\)/);
 assert.match(mobileCss, /\.mobile-links-right\s*\{\s*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
 assert.match(block(desktopCss, ".desktop-toolbar"), /grid-template-columns:\s*minmax\(0,1fr\) 84px minmax\(0,1fr\);/);
-assert.match(block(desktopCss, ".desktop-primary-nav"), /display:flex;\s*justify-content:flex-end;/);
+assert.doesNotMatch(desktopCss, /\.desktop-primary-nav|\.desktop-primary-link/,
+  "Az eltávolított navigációhoz tartozó CSS-t is ki kell venni.");
 assert.match(block(mobileCss, ".mobile-overlay-backdrop"), /backdrop-filter:blur\(22px\)/);
 assert.match(block(desktopCss, ".desktop-search-backdrop"), /backdrop-filter:blur\(25px\)/);
 assert.match(block(desktopCss, ".desktop-search-dialog"), /width:94vw;\s*height:90dvh;/);

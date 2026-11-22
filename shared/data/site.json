@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.06",
-  "release": "2.07",
+  "release": "2.09",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -69,7 +69,8 @@
     "defaultMode": "auto",
     "cycle": ["auto", "light", "dark"],
     "labels": { "auto": "Automatikus", "light": "Világos", "dark": "Sötét" },
-    "glyphs": { "auto": "◐", "light": "☀", "dark": "☾" },
+    "glyphs": { "auto": "⚙", "light": "☀", "dark": "☾" },
+    "shortLabels": { "auto": "A", "light": "V", "dark": "S" },
     "storageKey": "csanadi-theme-mode-206",
     "light": {
       "background": "#f5f0e5",

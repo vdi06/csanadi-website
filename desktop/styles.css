@@ -14,11 +14,10 @@
   border-bottom:1px solid color-mix(in srgb,var(--accent) 42%,transparent);
 }
 .desktop-headline {
-  display:flex; align-items:center; justify-content:space-between; gap:32px;
   width:min(100%,1120px); margin:0 auto 22px;
 }
 .desktop-brand {
-  flex:1 1 400px; min-width:0; max-width:600px; margin:0;
+  min-width:0; max-width:600px; margin:0;
   align-items:flex-start; text-align:left; line-height:1.2;
 }
 .desktop-brand strong {
@@ -26,19 +25,6 @@
 }
 .desktop-brand small {
   font-size:clamp(12px,1.16vw,17px); font-weight:760; letter-spacing:.06em;
-}
-.desktop-primary-nav {
-  display:flex; justify-content:flex-end; align-items:center;
-  flex-wrap:wrap; gap:12px; min-width:0;
-}
-.desktop-primary-link {
-  display:grid; place-items:center; min-height:48px; padding:10px 18px;
-  border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);
-  border-radius:13px; background:var(--surface);
-  color:var(--text); text-decoration:none; font-weight:780;
-}
-.desktop-primary-link:hover {
-  background:color-mix(in srgb,var(--accent) 18%,var(--surface));
 }
 .desktop-toolbar {
   display:grid; grid-template-columns:minmax(0,1fr) 84px minmax(0,1fr);
@@ -54,6 +40,7 @@
   flex:0 0 auto; width:clamp(54px,5.5vw,72px); height:56px;
   font-size:24px; border-radius:16px;
 }
+.desktop-theme-toggle .theme-mode-mark { font-size: 10px; letter-spacing: .075em; }
 .desktop-toolbar .shell-crest-toggle {
   justify-self:center; width:84px; height:84px; min-height:84px;
   padding:4px;
@@ -125,9 +112,6 @@
 .desktop-search-results p { grid-column:1/-1; color:var(--muted); }
 
 @media (min-width:768px) and (max-width:900px) {
-  .desktop-headline { gap:14px; }
-  .desktop-primary-nav { gap:6px; }
-  .desktop-primary-link { padding-inline:11px; }
   .desktop-toolbar { grid-template-columns:minmax(0,1fr) 74px minmax(0,1fr); gap:10px; }
   .desktop-toolbar .shell-tool { width:48px; height:50px; }
   .desktop-toolbar .shell-crest-toggle { width:74px; height:74px; min-height:74px; }

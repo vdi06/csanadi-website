@@ -19,6 +19,13 @@ function savePreference(config, value) {
 export function bindAppearance(config, home, themeButton) {
   const appearance = config.appearance;
   const media = window.matchMedia("(prefers-color-scheme: dark)");
+  const modeIcon = document.createElement("span");
+  modeIcon.className = "theme-mode-icon";
+  modeIcon.setAttribute("aria-hidden", "true");
+  const modeMark = document.createElement("span");
+  modeMark.className = "theme-mode-mark";
+  modeMark.setAttribute("aria-hidden", "true");
+  themeButton.replaceChildren(modeIcon, modeMark);
   const apply = () => {
     const selected = initialPreference(config);
     const effective = selected === "auto" ? (media.matches ? "dark" : "light") : selected;
@@ -27,7 +34,9 @@ export function bindAppearance(config, home, themeButton) {
     home.style.setProperty("color-scheme", effective);
     const colors = effective === "light" ? appearance.light : config.theme;
     for (const [name, value] of Object.entries(colors)) home.style.setProperty(`--${name}`, value);
-    themeButton.textContent = appearance.glyphs[selected];
+    themeButton.dataset.themeMode = selected;
+    modeIcon.textContent = appearance.glyphs[selected];
+    modeMark.textContent = appearance.shortLabels[selected];
     const label = `${config.home.header.themeLabel}: ${appearance.labels[selected]}`;
     themeButton.setAttribute("aria-label", label);
     themeButton.setAttribute("title", label);

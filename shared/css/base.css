@@ -139,6 +139,36 @@ img { max-width: 100%; }
   border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, var(--surface));
   box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 20%, transparent);
 }
+/* A három témamódnak saját, egymástól felismerhető jelzése van.
+   A jelölés és az ikon szövege kizárólag JSON-ból származik. */
+.shell-theme-toggle {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 1px; transition: background .18s ease, color .18s ease,
+    border-color .18s ease, box-shadow .18s ease;
+}
+.shell-theme-toggle .theme-mode-icon {
+  display: block; font-size: 1.07em; line-height: 1; font-weight: 900;
+}
+.shell-theme-toggle .theme-mode-mark {
+  display: block; font-size: 10px; line-height: 1; font-weight: 950;
+  letter-spacing: .04em;
+}
+.shell-theme-toggle[data-theme-mode="auto"] {
+  color: #ecfdff; border-color: #87dbe0;
+  background: linear-gradient(130deg, #15485a, #187d86);
+  box-shadow: 0 0 0 2px rgba(84, 199, 207, .25), inset 0 1px 0 rgba(255,255,255,.23);
+}
+.shell-theme-toggle[data-theme-mode="light"] {
+  color: #654006; border-color: #e3ad40;
+  background: linear-gradient(135deg, #fff7d7, #f1cf7b);
+  box-shadow: 0 0 0 2px rgba(227, 173, 64, .22), inset 0 1px 0 #fff9ea;
+}
+.shell-theme-toggle[data-theme-mode="dark"] {
+  color: #e4e7ff; border-color: #8996d6;
+  background: linear-gradient(135deg, #182b4e, #333055);
+  box-shadow: 0 0 0 2px rgba(137, 150, 214, .22), inset 0 1px 0 rgba(255,255,255,.15);
+}
+.shell-theme-toggle:hover { filter: brightness(1.09); }
 .shell-crest-toggle { border-radius: 50%; border-width: 2px; }
 .shell-crest { display:block; width: 86%; height:86%; object-fit:contain; background:transparent; }
 .site-footer {
@@ -152,6 +182,7 @@ img { max-width: 100%; }
 .footer-inner .footer-brand { color:var(--accent); font-weight:900; letter-spacing:.09em; }
 .footer-inner a { color:var(--text); overflow-wrap:anywhere; }
 .footer-links { display:flex; flex-direction:column; align-items:flex-start; gap:9px; }
+.footer-subnav { display:flex; flex-direction:column; align-items:inherit; gap:9px; }
 .footer-links a { padding:3px 0; min-height:28px; }
 .footer-links .footer-version {
   order: 999; margin: 10px 0 0;
