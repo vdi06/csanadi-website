@@ -1,6 +1,6 @@
 import { element } from "../shared/js/dom.js";
 import { mountGate } from "../shared/js/gate.js";
-import { makeFooter } from "../shared/js/shell.js";
+import { makeFooter } from "../shared/js/footer.js";
 import { makeDesktopHeader } from "./header.js";
 
 /** Önálló asztali nézet: a középső tartalom nem aktív és nem renderelődik. */
@@ -13,9 +13,10 @@ export function mount(root, config, page) {
 
   const home = element("div", { className: "desktop-home" });
   const desktopHeader = makeDesktopHeader(config, home);
+  const desktopFooter = makeFooter(config, "desktop");
   home.append(desktopHeader.header,
     element("main", { className: "desktop-main", attributes: { id: "content" } }),
-    makeFooter(config, "desktop"));
+    desktopFooter.footer);
   platformRoot.replaceChildren(home);
-  return desktopHeader.destroy;
+  return () => { desktopHeader.destroy(); desktopFooter.destroy(); };
 }

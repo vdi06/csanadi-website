@@ -11,10 +11,10 @@ const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const staticFiles = [
   "index.html", "shared/js/entry.js", "shared/data/site.json", "shared/js/dom.js",
   "shared/js/gate.js", "shared/js/shell.js", "shared/js/appearance.js",
-  "shared/js/focus.js", "shared/js/menu-data.js", "shared/js/edit-mode.js", "shared/css/base.css",
+  "shared/js/focus.js", "shared/js/menu-data.js", "shared/js/edit-mode.js", "shared/js/footer.js", "shared/css/base.css",
   "shared/assets/media/logo/csanadi-crest-512.webp",
-  "mobile/app.js", "mobile/header.js", "mobile/menu.js", "mobile/styles.css",
-  "desktop/app.js", "desktop/header.js", "desktop/menu.js", "desktop/styles.css",
+  "mobile/app.js", "mobile/header.js", "mobile/menu.js", "mobile/search.js", "mobile/styles.css",
+  "desktop/app.js", "desktop/header.js", "desktop/menu.js", "desktop/search.js", "desktop/styles.css",
   "tools/test.mjs", "docs/ELLENORZES.md"
 ];
 const assetPaths = [];
@@ -32,13 +32,18 @@ assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths].sort(), "Se
 assert.deepEqual(files(root).filter((path) => path.endsWith(".html")), ["index.html"]);
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
 assert.equal(config.schemaVersion, "2.06");
-assert.equal(config.release, "2.12");
+assert.equal(config.release, "2.13");
 assert.equal(config.appearance.defaultMode, "auto");
 assert.deepEqual(config.appearance.cycle, ["auto", "light", "dark"]);
 assert.deepEqual(Object.keys(config.appearance.shortLabels).sort(), ["auto", "dark", "light"]);
 assert.equal(config.appearance.glyphs.auto, "◐");
 assert.equal(config.home.header.settingsGlyph, "⚙");
 assert.equal(config.home.header.finishEditingGlyph, "✓");
+assert.equal(config.home.header.searchResultGlyph, "↗");
+assert.equal(config.menu.backGlyph, "‹");
+assert.equal(config.menu.homeGlyph, "⌂");
+assert.equal(config.home.footer.refreshSeconds, 60);
+assert.equal(config.home.footer.notices.length, 4);
 assert.equal(config.gate.skipSymbol, "⏭");
 assert.ok(!Object.hasOwn(config.gate, "desktopHint") && !Object.hasOwn(config.gate, "mobileHint"));
 assert.deepEqual(config.routes, { gate: "#/", home: "#/kezdolap" });
@@ -80,7 +85,8 @@ assert.match(html, /name="color-scheme" content="light dark"/);
 assert.doesNotMatch(html, /<h[1-6]|<p[ >]|<nav|<article|<img/i);
 const src = ["shared/js/entry.js", "shared/js/dom.js", "shared/js/gate.js", "shared/js/shell.js",
   "shared/js/appearance.js", "mobile/app.js", "mobile/header.js", "desktop/app.js", "desktop/header.js",
-  "desktop/menu.js", "mobile/menu.js", "shared/js/edit-mode.js"]
+  "desktop/menu.js", "mobile/menu.js", "desktop/search.js", "mobile/search.js",
+  "shared/js/edit-mode.js", "shared/js/footer.js"]
   .map((path) => readFileSync(join(root, path), "utf8"));
 for (const source of src) assert.doesNotMatch(source, /innerHTML|eval\s*\(|carousel|slideshow|fetch\([^)]*pages/i);
 assert.match(src[0], /import\(`\.\.\/\.\.\/\$\{platform\}\/app\.js`\)/);
@@ -210,8 +216,8 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(nodes.filter((n) => n.tag === "footer").length, 1);
   assert.equal(nodes.find((n) => n.tag === "main").children.length, 0, "Még egyetlen középső blokk sem engedélyezett.");
   assert.equal(nodes.filter((n) => n.tag === "h1").length, 0);
-  assert.equal(nodes.filter((n) => n.tag === "img").length, platform === "mobile" ? 1 : 2,
-    "Az asztali körmenünek külön középső címerképe van.");
+  assert.equal(nodes.filter((n) => n.tag === "img").length, 2,
+    "Mindkét önálló menünek külön középső címerképe van.");
   assert.equal(nodes.filter((n) => n.className?.includes(`${platform}-social`)).length, 3);
   assert.equal(nodes.filter((n) => n.tag === "svg").length, 2,
     "A két közösségi ikon saját SVG-képként jelenik meg.");
@@ -235,6 +241,31 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
     "Egyik láblécben sem maradhatnak ideiglenes próbalinkek.");
   assert.ok(scan(footer).some((n) => n.textContent === config.home.footer.address));
   const informationColumn = scan(footer).find((n) => n.className === "footer-links");
+  if (platform === "mobile") {
+    const tabList = scan(footer).find((n) => n.className === "footer-mobile-tabs");
+    assert.equal(tabList.attributes.role, "tablist");
+    assert.equal(tabList.children.length, 2, "Mobilon kompakt, kétfüles lábléc szükséges.");
+    const [contactTab, infoTab] = tabList.children;
+    const contactPanel = scan(footer).find((n) => n.className === "footer-contact");
+    assert.equal(contactPanel.hidden, true);
+    assert.equal(informationColumn.hidden, false);
+    assert.equal(infoTab.attributes["aria-selected"], "true");
+    contactTab.emit("click");
+    assert.equal(contactPanel.hidden, false);
+    assert.equal(informationColumn.hidden, true);
+    infoTab.emit("click");
+    assert.equal(contactPanel.hidden, true);
+    assert.equal(informationColumn.hidden, false);
+    contactTab.emit("keydown", { key:"ArrowRight", preventDefault:()=>{} });
+    assert.equal(infoTab.focused, true);
+  }
+  const noticeRows = scan(informationColumn).filter((n) => n.className === "footer-notice");
+  assert.equal(noticeRows.length, 4, "A Tájékoztatás négy valódi, lenyitható JSON-szöveget tartalmazzon.");
+  assert.equal(noticeRows[0].children[0].textContent, "Impresszum");
+  assert.equal(noticeRows[3].children[0].textContent, "A honlap használata");
+  assert.ok(scan(informationColumn).some((n) => n.textContent ===
+    `${config.home.footer.updatedLabel}: 2026. 11. 22.`));
+  assert.ok(scan(informationColumn).some((n) => n.textContent === config.home.footer.pendingLabel));
   const versionRow = informationColumn.children.at(-1);
   assert.equal(versionRow.className, "footer-version", "A verziószámnak a Tájékoztatás oszlop legalsó sorában kell állnia.");
   assert.equal(versionRow.textContent, `${config.home.footer.versionLabel}: ${config.release}`,
@@ -270,23 +301,33 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(crestToggle.attributes["aria-expanded"], "true");
   assert.equal(crestToggle.attributes["aria-label"], config.home.header.menuCloseLabel);
   if (platform === "mobile") {
-    const rootLevel = scan(menuDialog).find((n) => n.className === "mobile-menu-level mobile-menu-level-1");
-    assert.equal(rootLevel.children.length, config.menu.items.length);
-    const first = rootLevel.children[0].children[0];
-    const firstChildren = rootLevel.children[0].children[1];
-    first.emit("click");
-    assert.equal(first.attributes["aria-expanded"], "true");
-    assert.equal(firstChildren.hidden, false);
-    assert.equal(firstChildren.children.length, config.menu.items[0].children.length);
-    const second = rootLevel.children[1].children[0];
-    const secondChildren = rootLevel.children[1].children[1];
-    second.emit("click");
-    assert.equal(firstChildren.hidden, true);
-    assert.equal(secondChildren.hidden, false);
-    const programs = secondChildren.children[0].children[0];
-    programs.emit("click");
-    assert.equal(secondChildren.children[0].children[1].hidden, false,
-      "A mobilos háromszintű harmonikának működnie kell.");
+    const compass = scan(menuDialog).find((n) => n.className === "mobile-compass-stage");
+    const rootButtons = compass.children.filter((n) => n.className === "mobile-compass-node");
+    const rootView = scan(menuDialog).find((n) => n.className === "mobile-compass-root-view");
+    const branchView = scan(menuDialog).find((n) => n.className === "mobile-compass-branch-view");
+    const backButton = scan(menuDialog).find((n) => n.className === "mobile-compass-back");
+    const branchTitle = scan(menuDialog).find((n) => n.className === "mobile-compass-branch-title");
+    const branchList = scan(menuDialog).find((n) => n.className === "mobile-compass-branch-list");
+    assert.equal(rootButtons.length, config.menu.items.length);
+    assert.deepEqual(rootButtons.map((n) => n.dataset.sector), ["1","2","3","4","5","6"]);
+    assert.ok(!rootView.hidden && branchView.hidden);
+    rootButtons[0].emit("click");
+    assert.ok(rootView.hidden && !branchView.hidden);
+    assert.equal(branchTitle.textContent, config.menu.items[0].label);
+    assert.equal(branchList.children.length, config.menu.items[0].children.length);
+    assert.equal(branchList.children.filter((n) => n.tagName === "A").length, 0,
+      "Nem jelenhet meg nem létező aloldalra mutató mobilhivatkozás.");
+    backButton.emit("click");
+    assert.ok(!rootView.hidden && branchView.hidden);
+    rootButtons[1].emit("click");
+    assert.equal(branchTitle.textContent, config.menu.items[1].label);
+    branchList.children[0].emit("click");
+    assert.equal(branchTitle.textContent, config.menu.items[1].children[0].label);
+    assert.equal(branchList.children.length, 3, "A háromszintű mobilmenü harmadik szintje hiányzik.");
+    backButton.emit("click");
+    assert.equal(branchTitle.textContent, config.menu.items[1].label);
+    backButton.emit("click");
+    assert.ok(!rootView.hidden && branchView.hidden);
   } else {
     assert.equal(nodes.filter((n) => n.className === "desktop-primary-nav").length, 0,
       "Nem jelenhet meg a két tesztnavigációs gomb az asztali fejlécben.");
@@ -298,20 +339,76 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
     assert.equal(wheelNodes.length, 6);
     assert.equal(wheelNodes[0].style.left, "50.000%");
     assert.equal(wheelNodes[0].style.top, "32.000%");
+    wheelNodes.forEach((button, i) => {
+      const a = (-90 + i * 360 / wheelNodes.length) * Math.PI / 180;
+      assert.equal(button.style.left, `${(50 + 18 * Math.cos(a)).toFixed(3)}%`,
+        "A belső gyűrű pontjai nem szabályos, szimmetrikus körön vannak.");
+      assert.equal(button.style.top, `${(50 + 18 * Math.sin(a)).toFixed(3)}%`);
+    });
+    const centerButton = scan(menuDialog).find((n) => n.className === "desktop-wheel-center");
+    const homeLink = scan(menuDialog).find((n) => n.className === "desktop-wheel-home");
+    assert.equal(centerButton.tagName, "BUTTON", "A középső címernek bezárógombnak kell lennie.");
+    assert.equal(centerButton.attributes["aria-label"], config.menu.closeLabel);
+    assert.equal(homeLink.attributes.href, config.routes.home);
+    assert.equal(homeLink.attributes["aria-label"], config.menu.homeLabel);
+    assert.equal(scan(menuDialog).filter((n) => n.className === "desktop-wheel-close").length, 0,
+      "Az asztali menünek nem lehet külön bezáró X gombja.");
     assert.equal(scan(menuDialog).filter((n) => n.className.includes("desktop-wheel-guide ")).length, 2,
       "A korábbi egygyűrűs menü helyett két külön körgyűrű szükséges.");
     const outer = scan(menuDialog).find((n) => n.className === "desktop-wheel-ring-sub");
+    const outerGuide = scan(menuDialog).find((n) => n.className === "desktop-wheel-guide desktop-wheel-guide-sub");
     assert.ok(outer.hidden, "Az előző menüszint kijelölése előtt a külső gyűrű üres.");
+    assert.ok(outerGuide.hidden, "Alapállapotban a második gyűrű ne jelezzen nyitott almenüt.");
     wheelNodes[1].emit("click");
     assert.equal(wheelNodes[1].attributes["aria-pressed"], "true");
     assert.equal(outer.hidden, false);
+    assert.equal(outerGuide.hidden, false);
     assert.equal(outer.children.length, config.menu.items[1].children.length);
     assert.equal(outer.children[0].style.top, "10.000%",
       "A második menüszint ténylegesen a külső körön legyen.");
+    const n = outer.children.length;
+    outer.children.forEach((node, i) => {
+      const a = (-90 + i * 360 / n) * Math.PI / 180;
+      assert.equal(node.style.left, `${(50 + 40 * Math.cos(a)).toFixed(3)}%`,
+        "A külső gyűrű elemei nem egyenlő szögközzel helyezkednek el.");
+      assert.equal(node.style.top, `${(50 + 40 * Math.sin(a)).toFixed(3)}%`);
+    });
+    wheelNodes[1].emit("click");
+    assert.equal(outer.hidden, true, "Az aktív főmenü újabb kattintásra csukja össze a saját almenüjét.");
+    assert.equal(outerGuide.hidden, true);
+    assert.equal(outer.children.length, 0);
+    assert.equal(wheelNodes[1].attributes["aria-expanded"], "false");
+    assert.equal(wheelNodes[1].attributes["aria-pressed"], "false");
+    wheelNodes[2].emit("click");
+    assert.equal(outer.hidden, false);
+    assert.equal(outer.children.length, config.menu.items[2].children.length);
+    assert.equal(wheelNodes[2].attributes["aria-pressed"], "true");
+    wheelNodes[1].emit("click");
+    assert.equal(outer.children.length, config.menu.items[1].children.length,
+      "Másik főmenüre kattintva az előző almenü teljesen lecserélődik.");
+    assert.equal(wheelNodes[1].attributes["aria-expanded"], "true");
+    assert.equal(wheelNodes[2].attributes["aria-expanded"], "false");
     outer.children[0].emit("click");
     const third = scan(menuDialog).find((n) => n.className === "desktop-wheel-level-three");
     assert.equal(third.children.length, 3);
     assert.equal(scan(menuDialog).find((n) => n.className === "desktop-wheel-third-panel").hidden, false);
+    wheelNodes[3].emit("click");
+    assert.equal(outer.children.length, config.menu.items[3].children.length);
+    assert.equal(scan(menuDialog).find((n) => n.className === "desktop-wheel-third-panel").hidden, true,
+      "Másik főág kiválasztásakor a korábbi harmadik menüszint is záródjon be.");
+    const backdrop = scan(menuOverlay).find((n) => n.className === "desktop-wheel-backdrop");
+    backdrop.emit("click");
+    assert.equal(menuOverlay.hidden, false, "A menüt kizárólag a címerrel vagy ESC-pel zárjuk.");
+    centerButton.emit("click");
+    assert.equal(menuOverlay.hidden, true, "A középső címerre kattintásnak zárnia kell.");
+    assert.equal(outer.hidden, true, "A bezárt menü ne tartsa meg a korábbi főág állapotát.");
+    crestToggle.emit("click");
+    assert.equal(menuOverlay.hidden, false, "A címer bezárása után a menü újranyitható.");
+    assert.equal(outer.hidden, true, "Újranyitáskor tiszta, nem kijelölt menüállapot szükséges.");
+    homeLink.emit("click");
+    assert.equal(menuOverlay.hidden, true, "A házikóval a főoldalra lépve a menü bezárul.");
+    crestToggle.emit("click");
+    assert.equal(menuOverlay.hidden, false);
   }
   menuDialog.emit("keydown", { key: "Escape", preventDefault: () => {} });
   assert.equal(menuOverlay.hidden, true);
@@ -340,17 +437,31 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   searchToggle.emit("click");
   assert.equal(searchOverlay.hidden, false);
   assert.equal(document.body.style.overflow, "hidden");
+  assert.equal(scan(searchDialog).find((n) => n.className === `${platform}-search-eyebrow`).textContent,
+    config.home.header.searchEyebrow);
   const searchInput = searchDialog.querySelector("input");
   assert.ok(searchInput.focused);
+  const searchCount = scan(searchDialog).find((n) => n.className === `${platform}-search-count`);
+  const clearButton = scan(searchDialog).find((n) => n.className === `${platform}-search-clear`);
+  assert.equal(clearButton.hidden, true);
+  assert.equal(searchCount.textContent, `4 ${config.home.header.searchResultCountLabel}`);
   searchInput.value = "kapu";
   searchInput.emit("input");
+  assert.equal(clearButton.hidden, false);
+  assert.equal(searchCount.textContent, `0 ${config.home.header.searchResultCountLabel}`);
   const resultList = nodes.find((n) => n.className === `${platform}-search-results`);
   assert.equal(resultList.children.length, 1);
   assert.equal(resultList.children[0].textContent, config.home.header.searchNoResults,
     "Egyik keresőben sem maradhatnak ideiglenes kapu-hivatkozások.");
+  clearButton.emit("click");
+  assert.equal(searchInput.value, "");
+  assert.equal(clearButton.hidden, true);
+  assert.equal(resultList.children.length, 4, "Csak a négy valódi hivatkozás szerepelhet a keresőben.");
+  assert.ok(searchInput.focused);
   searchInput.value = "Facebook";
   searchInput.emit("input");
   assert.equal(resultList.children[0].attributes.target, "_blank");
+  assert.equal(resultList.children[0].children[0].textContent, config.home.header.searchResultGlyph);
   searchDialog.emit("keydown", { key: "Escape", preventDefault: () => {} });
   assert.equal(searchOverlay.hidden, true);
   assert.equal(document.body.style.overflow, "");
@@ -383,6 +494,45 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(systemListeners.size, 0, "A platformváltás nem hagyhat témaváltó eseménykezelőt.");
   console.log(`✓ ${platform}: saját fejléc, külön kereső, automatikus/világos/sötét téma és lábléc`);
 }
+
+// A lábléc 60 másodperces JSON-figyelése önállóan is tesztelhető:
+// láthatatlan lapon nem kérdez le, érvényes adatot átvesz, hibásat visszautasít.
+const { makeFooter } = await import(new URL("../shared/js/footer.js", import.meta.url));
+const liveFooter = makeFooter(config, "desktop");
+const liveVersion = scan(liveFooter.footer).find((node) => node.className === "footer-version");
+const liveNotices = scan(liveFooter.footer).find((node) => node.className === "footer-notices");
+const liveUpdated = scan(liveFooter.footer).find((node) => node.className === "footer-updated");
+const liveChecked = scan(liveFooter.footer).find((node) => node.className === "footer-checked");
+liveNotices.children[0].open = true;
+liveNotices.children[0].emit("toggle");
+const refreshed = structuredClone(config);
+refreshed.release = "2.14";
+refreshed.home.footer.updatedAt = "2026-11-23";
+refreshed.home.footer.notices[0].body = "Ellenőrzött, módosított impresszum-adatok.";
+const originalFetch = globalThis.fetch;
+let requests = 0;
+globalThis.fetch = async () => { requests++; return { ok: true, json: async () => refreshed }; };
+document.visibilityState = "hidden";
+assert.equal(await liveFooter.checkForUpdates(), false);
+assert.equal(requests, 0, "Rejtett lapon a frissítés nem terhelheti a hálózatot.");
+document.visibilityState = "visible";
+assert.equal(await liveFooter.checkForUpdates(), true);
+assert.equal(requests, 1);
+assert.equal(liveVersion.textContent, "Verzió: 2.14");
+assert.equal(liveUpdated.textContent, "Utolsó frissítés: 2026. 11. 23.");
+assert.equal(liveNotices.children[0].children[1].textContent, "Ellenőrzött, módosított impresszum-adatok.");
+assert.equal(liveNotices.children[0].open, true, "A nyitott tájékoztató ne csukódjon be adatfrissítéskor.");
+assert.ok(liveChecked.textContent.startsWith(refreshed.home.footer.checkedLabel));
+const invalid = structuredClone(refreshed);
+invalid.release = "2.15";
+invalid.home.footer.notices[0].body = "";
+globalThis.fetch = async () => ({ ok: true, json: async () => invalid });
+assert.equal(await liveFooter.checkForUpdates(), false);
+assert.equal(liveVersion.textContent, "Verzió: 2.14", "Hibás JSON nem írhatja felül az érvényes adatot.");
+assert.equal(liveChecked.textContent, config.home.footer.errorLabel);
+liveFooter.destroy();
+globalThis.fetch = originalFetch;
+console.log("✓ Tájékoztatási oszlop: élő JSON-frissítés, 4 lenyitható szöveg, változatlanul legalsó verzió");
 
 // Hibás nagy felbontású fotó esetén a mobil változat szolgál tartalékként.
 failDesktopFrame = true;
@@ -462,13 +612,25 @@ assert.doesNotMatch(desktopCss, /\.desktop-primary-nav|\.desktop-primary-link/,
   "Az eltávolított navigációhoz tartozó CSS-t is ki kell venni.");
 assert.match(block(mobileCss, ".mobile-overlay-backdrop, .mobile-menu-backdrop"),
   /backdrop-filter:blur\(22px\)/);
-assert.match(block(desktopCss, ".desktop-search-backdrop"), /backdrop-filter:blur\(25px\)/);
+assert.match(block(desktopCss, ".desktop-search-backdrop"), /backdrop-filter:blur\(30px\)/);
+assert.match(block(mobileCss, ".mobile-search-overlay .mobile-overlay-backdrop"), /backdrop-filter:blur\(30px\)/);
 assert.match(block(desktopCss, ".desktop-search-dialog"), /width:94vw;\s*height:90dvh;/);
 assert.match(block(mobileCss, ".mobile-menu-overlay, .mobile-search-overlay"),
   /position:fixed;\s*inset:0;/);
 assert.match(mobileCss, /\.mobile-menu-dialog, \.mobile-search-dialog\s*\{[\s\S]*?width:100%;\s*height:100%;/);
+assert.match(block(mobileCss, ".mobile-compass-stage"), /height:420px;/);
+assert.match(block(mobileCss, ".mobile-compass-arc-upper"), /top:31%/);
+assert.match(block(mobileCss, ".mobile-compass-arc-lower"), /top:57%/);
+assert.doesNotMatch(mobileCss, /\.mobile-menu-level|\.mobile-menu-expand/,
+  "Nem maradhat bent a korábbi mobilharmonika stílusa.");
+assert.match(block(desktopCss, ".desktop-search-field"), /min-height:83px;/);
+assert.match(block(mobileCss, ".mobile-search-field"), /min-height:72px;/);
 assert.match(block(desktopCss, ".desktop-wheel-stage"), /min-width:640px;/);
 assert.match(block(desktopCss, ".desktop-wheel-stage"), /aspect-ratio:1;/);
+assert.match(block(desktopCss, ".desktop-wheel-dialog"), /border:0;\s*border-radius:0;\s*padding:0;/);
+assert.match(block(desktopCss, ".desktop-wheel-dialog"), /background:transparent;/);
+assert.match(block(desktopCss, ".desktop-wheel-backdrop"), /background:rgba\(3,15,29,\.28\)/);
+assert.match(block(desktopCss, ".desktop-wheel-backdrop"), /backdrop-filter:blur\(18px\)/);
 assert.match(block(desktopCss, ".desktop-wheel-guide-main"), /width:36%/);
 assert.match(block(desktopCss, ".desktop-wheel-guide-sub"), /width:80%/);
 assert.doesNotMatch(desktopCss + mobileCss, /settings-overlay|settings-dialog|settings-option/,
@@ -501,9 +663,7 @@ for (const viewport of [768, 900, 1100, 1440]) {
   for (const [index, item] of config.menu.items.entries()) {
     const count = item.children.length;
     const subs = item.children.map((child, i) => {
-      const degrees = count <= 5
-        ? -90 + index * 60 - (count - 1) * 21 + i * 42
-        : -90 + i * 360 / count;
+      const degrees = -90 + i * 360 / count;
       const a = degrees * Math.PI / 180;
       return { id: child.id, x: center + .40 * diameter * Math.cos(a),
         y: center + .40 * diameter * Math.sin(a), width: subWidth, height: 88 };
@@ -519,7 +679,39 @@ for (const viewport of [768, 900, 1100, 1440]) {
   }
 }
 console.log("✓ Két asztali menügyűrű: minden ág és négy szélesség ütközésmentes, konzervatív szövegmagassággal");
-assert.match(block(desktopCss, ".desktop-footer .footer-inner"), /grid-template-columns:\s*minmax\(0,1\.7fr\) minmax\(230px,\.8fr\);/);
+// A telefonos íves főmenü gombjai 360 pixeltől 3×2, alatta 2×3
+// elrendezésben állnak. A hosszabb címkék miatt 92 px-es magassággal
+// és extra 5 px térközzel kell minden méreten elférniük.
+for (const viewport of [280, 320, 359, 360, 375, 390, 430, 650, 767]) {
+  const compact = viewport <= 359;
+  const width = Math.min(480, viewport - 40);
+  const height = compact ? 510 : 420;
+  const buttonWidth = compact ? width * .44 : Math.max(90, Math.min(138, width * .26));
+  const positions = compact
+    ? [[.265,.42],[.735,.42],[.265,.62],[.735,.62],[.265,.82],[.735,.82]]
+    : [[.165,.53],[.5,.60],[.835,.53],[.165,.79],[.5,.86],[.835,.79]];
+  const rects = positions.map(([x,y], i) => ({ id:i+1, x:x*width, y:y*height }));
+  for (const node of rects) {
+    assert.ok(node.x - buttonWidth/2 >= 5 && node.x + buttonWidth/2 <= width - 5,
+      `${viewport}px: a mobilos körmenü gombja kilógna oldalra.`);
+    assert.ok(node.y - 46 >= 5 && node.y + 46 <= height - 5,
+      `${viewport}px: a mobilos körmenü gombja kilógna függőlegesen.`);
+  }
+  for (let i = 0; i < rects.length; i++) for (let j = i+1; j < rects.length; j++) {
+    const a=rects[i],b=rects[j];
+    const horizontal = Math.abs(a.x-b.x) < buttonWidth + 5;
+    const vertical = Math.abs(a.y-b.y) < 92 + 5;
+    assert.ok(!(horizontal && vertical),
+      `${viewport}px: a mobilos iránytű ${a.id}. és ${b.id}. pontja összeérne.`);
+  }
+}
+console.log("✓ Mobilos iránytű: hat főpont kilenc szélességen ütközésmentes, önálló 2–3. menüszintekkel");
+assert.match(block(desktopCss, ".desktop-footer .footer-inner"), /grid-template-columns:repeat\(2,minmax\(0,1fr\)\);/);
+assert.match(block(desktopCss, ".desktop-footer .footer-inner"), /align-items:stretch;/);
+assert.match(block(desktopCss, ".desktop-footer .footer-contact,.desktop-footer .footer-links"), /height:100%;/);
+assert.match(block(mobileCss, ".mobile-footer .footer-inner"), /display:block;/);
+assert.match(block(mobileCss, ".mobile-footer .footer-mobile-tabs"), /grid-template-columns:repeat\(2,minmax\(0,1fr\)\);/);
+assert.match(block(baseCss, ".footer-notices"), /display:grid; gap:9px;/);
 assert.match(block(mobileCss, ".mobile-home"), /display:\s*flex;\s*flex-direction:\s*column;/);
 assert.match(block(mobileCss, ".mobile-main"), /flex:\s*1 1 auto;/);
 assert.match(block(desktopCss, ".desktop-main"), /flex:\s*1 1 auto;/);
@@ -642,10 +834,35 @@ if (chromium) {
         assert.equal(await page.locator("header").count(), 1);
         assert.equal(await page.locator("footer").count(), 1);
         assert.equal(await page.locator("main").locator(":scope > *").count(), 0);
-        await page.locator(".footer-links a").last().click();
+        const platform = width < 768 ? "mobile" : "desktop";
+        await page.locator(`.${platform}-crest-toggle`).click();
+        if (platform === "mobile") {
+          assert.equal(await page.locator(".mobile-compass-node").count(), 6);
+          await page.locator('.mobile-compass-node[data-sector="2"]').click();
+          assert.equal(await page.locator('.mobile-compass-branch-view:not([hidden])').count(), 1);
+          await page.locator('.mobile-compass-branch-action').first().click();
+          await page.locator('.mobile-compass-back').click();
+          await page.locator('.mobile-menu-close').click();
+        } else {
+          assert.equal(await page.locator(".desktop-wheel-node").count(), 6);
+          await page.locator('.desktop-wheel-node').first().click();
+          assert.equal(await page.locator('.desktop-wheel-sub-node').count(), 9);
+          await page.locator('.desktop-wheel-center').click();
+        }
+        await page.locator(`.${platform}-search-toggle`).click();
+        const searchInput = page.locator(`.${platform}-search-input`);
+        await searchInput.fill("Facebook");
+        assert.equal(await page.locator(`.${platform}-search-result`).count(), 1);
+        await page.locator(`.${platform}-search-clear`).click();
+        assert.equal(await searchInput.inputValue(), "");
+        await page.keyboard.press("Escape");
+        await page.locator(`.${platform}-edit-toggle`).click();
+        assert.equal(await page.locator(`.${platform}-edit-toggle`).textContent(), "✓");
+        await page.locator(`.${platform}-edit-toggle`).click();
+        await page.goto(`${url}#/`, { waitUntil: "networkidle" });
         await page.waitForSelector(".gate-door-button");
         await page.close();
-        console.log(`✓ ${width}px: élő kapunyitás, átmenet és visszalépés`);
+        console.log(`✓ ${width}px: élő kapu, menü, Spotlight, szerkesztőkapcsoló`);
       }
     }
   } finally {

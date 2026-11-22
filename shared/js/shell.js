@@ -61,16 +61,3 @@ export function filterSearchItems(config, query) {
   return searchItems(config).filter((item) => item.label.toLocaleLowerCase("hu").includes(needle));
 }
 
-export function makeFooter(config, platform) {
-  const { footer } = config.home;
-  return element("footer", { className: `${platform}-footer site-footer` },
-    element("div", { className: "footer-inner" },
-      element("div", { className: "footer-contact" },
-        element("p", { className: "footer-brand", text: `${footer.brand} · ${footer.year}` }),
-        element("h2", { text: footer.contactTitle }),
-        element("p", { text: footer.address }),
-        element("a", { text: footer.email, attributes: { href: `mailto:${footer.email}` } })),
-      element("div", { className: "footer-links" },
-        element("h2", { text: footer.linksTitle }),
-        element("p", { className: "footer-version", text: `${footer.versionLabel}: ${config.release}` }))));
-}
