@@ -1,6 +1,6 @@
 /* Csanádi 2026 R23: statikus, adatminimalizáló, kizárólag nyilvános tartalmi modulok. */
 import {bindFeatureTheme} from './spa-feature-theme-v1-42.js';
-import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.51';
+import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.53';
 const $=id=>document.getElementById(id);
 const node=(tag,cls='',text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=String(text);return e;};
 const clear=e=>e.replaceChildren();

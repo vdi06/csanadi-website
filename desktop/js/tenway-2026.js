@@ -2,7 +2,7 @@
 const tag=(name,cls,text)=>{const n=document.createElement(name);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
 const link=(title,desc,href,mark='↗')=>{const a=tag('a','cs-portal-link');a.href=href;a.append(tag('span','cs-portal-marker',mark),tag('strong','',title),tag('small','',desc));return a;};
 function heading(kicker,title,detail){const wrap=tag('header','cs-portal-heading');wrap.append(tag('p','section-overline',kicker),tag('h2','',title),tag('p','',detail));return wrap;}
-const JSON_ROOT=new URL('../json/', import.meta.url);
+const JSON_ROOT=new URL('../../shared/json/', import.meta.url);
 const json=async path=>{const response=await fetch(new URL(path,JSON_ROOT),{cache:'no-cache'});if(!response.ok)throw Error('Nem elérhető JSON: '+path);return response.json();};
 const route={sports:'#/sport',results:'#/sport/sporteredmenyek',athletes:'#/sport/sportolok',teams:'#/sport/csapatok',coaches:'#/sport/edzok',gallery:'#/sport/sportgaleriak'};
 export function renderSportsPortal(){
@@ -60,4 +60,4 @@ export function renderDocumentIndexExport(){
   }catch(e){text.textContent='A jegyzék nem készíthető el: az adatforrás nem elérhető.';}finally{button.disabled=false;}
  });wrapper.append(button,text);return wrapper;
 }
-import {setting,settingNumber} from './site-settings-2026.js?v=1.51';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.53';

@@ -1,8 +1,8 @@
 
 
  
-const SPORTS_URL=new URL('../json/data/sports-achievements.json',import.meta.url);
-const EVENTS_URL=new URL('../json/data/events.json',import.meta.url);
+const SPORTS_URL=new URL('../../shared/json/data/sports-achievements.json',import.meta.url);
+const EVENTS_URL=new URL('../../shared/json/data/events.json',import.meta.url);
 const VALID_ROUTE=/^#\/[a-z0-9/-]*$/;
 const SAFE_ID=/^(success|esemeny):[a-z0-9-]{3,60}$/;
 const STRING_TEXT=/^[\p{L}\p{N} ,.\-–()\/:!?]+$/u;
@@ -147,4 +147,4 @@ export function renderLiveDashboard(block){
  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&section.isConnected)refreshData();},{signal:(()=>{const controller=new AbortController();const cleanup=setInterval(()=>{if(!section.isConnected){controller.abort();clearInterval(cleanup);}},settingNumber('runtime.timing.homeDashboardCleanupMs'));return controller.signal;})()});
  return section;
 }
-import {settingNumber} from './site-settings-2026.js?v=1.51';
+import {settingNumber} from './site-settings-2026.js?v=1.53';

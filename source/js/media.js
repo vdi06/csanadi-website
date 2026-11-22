@@ -1,4 +1,4 @@
- 
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
 let mediaMap = new Map();
 const safePath = path => typeof path === 'string' && /^assets\/media\/[a-z0-9/_\-.]+$/i.test(path) && !path.includes('..');
 export function registerMedia(registry) {
@@ -29,7 +29,7 @@ export function createPicture(id,{className='',eager=false,sizes='100vw',decorat
     const mobileVariants=(mobileEntry.variants||[]).filter(v=>v.mimeType==='image/webp'&&safePath(v.path)).sort((a,b)=>a.width-b.width);
     if(mobileVariants.length){
       const mobileSource=document.createElement('source');mobileSource.type='image/webp';mobileSource.media='(max-width: 768px), (pointer: coarse) and (hover: none)';
-      mobileSource.sizes='100vw';mobileSource.srcset=mobileVariants.map(v=>`${v.path} ${v.width}w`).join(', ');
+      mobileSource.sizes='100vw';mobileSource.srcset=mobileVariants.map(v=>`${sharedAssetPath(v.path)} ${v.width}w`).join(', ');
       picture.append(mobileSource);
     }
   }
@@ -37,11 +37,11 @@ export function createPicture(id,{className='',eager=false,sizes='100vw',decorat
   if(variants.length){
     const source=document.createElement('source');source.type='image/webp';
     source.sizes=sizes;
-    source.srcset=variants.map(v=>`${v.path} ${v.width}w`).join(', ');
+    source.srcset=variants.map(v=>`${sharedAssetPath(v.path)} ${v.width}w`).join(', ');
     picture.append(source);
   }
   const img=document.createElement('img');
-  img.src=entry.original.path;
+  img.src=sharedAssetPath(entry.original.path);
   img.alt=decorative?'':(entry.alt||'Sportos vagy iskolai témájú kép');
   img.loading=eager?'eager':'lazy';img.decoding='async';if(!eager)img.setAttribute('fetchpriority','low');
   if(eager)img.setAttribute('fetchpriority','high');

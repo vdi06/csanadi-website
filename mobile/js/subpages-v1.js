@@ -1,6 +1,7 @@
 // Közös, statikus tárhelyen is működő aloldali finomítások.
-import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.51';
-import {optionalSetting} from './site-settings-2026.js?v=1.51';
+import {createSubpageHeaderMotion} from './subpage-header-motion.js?v=1.53';
+import {optionalSetting} from './site-settings-2026.js?v=1.53';
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
 const forbiddenHost = /(^|\.)csanadi-bp\.edu\.hu$/i;
 const legacyRoutes = new Map([
   ['tortenet.html','#/iskolank/tortenet'],
@@ -113,7 +114,7 @@ export function initSubpageEnhancements() {
   const logo=document.createElement('img');logo.className='cs-subpage-menu-logo';
   // Az aloldali menü a config beolvasása előtt létrejöhet; az ikon
   // a korábban JSON-ból felépített favicon beállítását is elfogadja.
-  logo.src=optionalSetting('site.crestImagePath')||
+  logo.src=sharedAssetPath(optionalSetting('site.crestImagePath'))||
    document.querySelector?.('link[rel="icon"]')?.getAttribute('href')||'';
   logo.width=46;logo.height=46;
   logo.alt='';logo.setAttribute('aria-hidden','true');menu.replaceChildren(logo);

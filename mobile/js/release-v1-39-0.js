@@ -120,7 +120,7 @@ function renderArrivalMap(route){
  button.addEventListener('click',async()=>{
   button.disabled=true;button.textContent='Térkép előkészítése…';
   try{
-   const response=await fetch('json/data/arrival-and-development-26.json',{cache:'no-store'});
+   const response=await fetch('../shared/json/data/arrival-and-development-26.json',{cache:'no-store'});
    if(!response.ok)throw Error('Az érkezési adatok átmenetileg nem elérhetők.');
    const data=await response.json();
    if(request!==arrivalRequest||!holder.isConnected)return;

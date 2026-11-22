@@ -1,6 +1,6 @@
  
-const RESULTS=new URL('../json/data/sports-achievements.json',import.meta.url);
-const GALLERY=new URL('../json/data/photo-gallery.json',import.meta.url);
+const RESULTS=new URL('../../shared/json/data/sports-achievements.json',import.meta.url);
+const GALLERY=new URL('../../shared/json/data/photo-gallery.json',import.meta.url);
 const n=(tag,klass='',text)=>{const x=document.createElement(tag);if(klass)x.className=klass;if(text!==undefined)x.textContent=String(text);return x;};
 const append=(p,...c)=>{p.append(...c);return p;};
 async function data(url){const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw Error(`Nem található: ${r.status}`);return r.json();}
@@ -64,4 +64,4 @@ export function renderSportsSuccesses(block){
  }).catch(err=>{console.error(err);box.replaceChildren(n('p','sports-error','A sporttartalom jelenleg nem érhető el.'));});
  return wrap;
 }
-import {settingNumber} from './site-settings-2026.js?v=1.51';
+import {settingNumber} from './site-settings-2026.js?v=1.53';

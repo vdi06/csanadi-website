@@ -1,4 +1,5 @@
 /* R29: a jóváhagyott kezdőlap kiegészítése, a korábbi blokkok megtartásával. */
+import {setting} from './site-settings-2026.js?v=1.53';
 const sections=[
  ['featured','Kiemelt sportos tartalom'],['shortcuts','Gyorselérések'],
  ['daily','Napi központ'],['school-news','Iskolai hírek'],
@@ -439,6 +440,10 @@ function enhanceFold(fold,index){
 }
 function buildLinks(canvas){
  const nav=drawer.querySelector('.cs29-nav-items');if(!nav)return;nav.replaceChildren();
+ const top=create('button','cs29-nav-item cs29-nav-item-top',setting('runtime.homeNavigation.topLabel'));
+ top.type='button';top.dataset.section='top';top.addEventListener('click',()=>{
+  toggle(false);window.scrollTo({top:0,behavior:motion()});
+ });nav.append(top);
  activeObserver?.disconnect();
  const cards=getCards(canvas), visible=sections.filter(([id])=>cards[id]&&!cards[id].hidden);
  visible.sort((a,b)=>{const x=cards[a[0]].compareDocumentPosition(cards[b[0]]);return x&Node.DOCUMENT_POSITION_FOLLOWING?-1:x&Node.DOCUMENT_POSITION_PRECEDING?1:0;});

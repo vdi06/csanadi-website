@@ -1,8 +1,8 @@
 
     #cs-gate-prelude{display:none}
     html.cs-gate-pending #cs-gate-prelude{position:fixed;inset:0;z-index:2601;display:grid;place-items:center;overflow:hidden;background:#07182a;color:#fff;isolation:isolate;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
-    html.cs-gate-pending #cs-gate-prelude::before{content:"";position:absolute;inset:0;background:url('../assets/media/web/gate-frames/gate-00.webp') center/cover no-repeat;filter:brightness(.89)}
-    @media(max-width:768px), (pointer:coarse) and (hover:none){html.cs-gate-pending #cs-gate-prelude::before{background-image:url('../assets/media/web/gate-frames/gate-00-mobile.webp')}}
+    html.cs-gate-pending #cs-gate-prelude::before{content:"";position:absolute;inset:0;background:url('../../shared/assets/media/web/gate-frames/gate-00.webp') center/cover no-repeat;filter:brightness(.89)}
+    @media(max-width:768px), (pointer:coarse) and (hover:none){html.cs-gate-pending #cs-gate-prelude::before{background-image:url('../../shared/assets/media/web/gate-frames/gate-00-mobile.webp')}}
     html.cs-gate-pending #cs-gate-prelude::after{content:"";position:absolute;inset:auto 0 0;height:150px;background:linear-gradient(to top,rgba(4,15,26,.80),transparent);pointer-events:none}
     html.cs-gate-pending #cs-gate-prelude .cs-gate-prelude-door{display:none}
     #cs-gate-prelude .cs-gate-prelude-left{left:0;background-position:left center!important}

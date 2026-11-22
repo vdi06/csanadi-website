@@ -24,7 +24,7 @@
     "links": [
       {
         "rel": "icon",
-        "href": "assets/media/logo/csanadi-crest-512.webp",
+        "href": "../shared/assets/media/logo/csanadi-crest-512.webp",
         "type": "image/webp"
       },
       {
@@ -41,7 +41,7 @@
   "assets": {
     "stylesheets": [
       {
-        "href": "css/gate-prelude-v149.css?v=1.51"
+        "href": "css/gate-prelude-v149.css?v=1.53"
       },
       {
         "rel": "stylesheet",
@@ -51,121 +51,133 @@
       },
       {
         "rel": "stylesheet",
-        "href": "css/site-bundle-v1-42-17.css?v=1.51"
+        "href": "css/site-bundle-v1-42-17.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/home-v1-41.css?v=1.51"
+        "href": "css/home-v1-41.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/entrance-sequence.css?v=1.51"
+        "href": "css/entrance-sequence.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/header-v1-41-full-name.css?v=1.51"
+        "href": "css/header-v1-41-full-name.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/home-refinement-v1-41-4.css?v=1.51"
+        "href": "css/home-refinement-v1-41-4.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/menu-overlay-clean-v1-42-12.css?v=1.51"
+        "href": "css/menu-overlay-clean-v1-42-12.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/site-consistency-v1-42-17.css?v=1.51"
+        "href": "css/site-consistency-v1-42-17.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/responsive-system-v1-42-18.css?v=1.51"
+        "href": "css/responsive-system-v1-42-18.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/editor-workbench-v1-42-18.css?v=1.51"
+        "href": "css/editor-workbench-v1-42-18.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/maintenance-studio.css?v=1.51"
+        "href": "css/maintenance-studio.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/update-notice.css?v=1.51"
+        "href": "css/update-notice.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/theme-coverage-v1-42-21.css?v=1.51"
+        "href": "css/theme-coverage-v1-42-21.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/subpage-premium-v1-42-22.css?v=1.51"
+        "href": "css/subpage-premium-v1-42-22.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/editor-c1-v1-42-23.css?v=1.51"
+        "href": "css/editor-c1-v1-42-23.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/visual-editor-v1-42-24.css?v=1.51"
+        "href": "css/visual-editor-v1-42-24.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/c3-live-preview-v1-42-25.css?v=1.51"
+        "href": "css/c3-live-preview-v1-42-25.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/c4-release-gates-v1-42-26.css?v=1.51"
+        "href": "css/c4-release-gates-v1-42-26.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/viewers-bootstrap-v1-43-3.css?v=1.51"
+        "href": "css/viewers-bootstrap-v1-43-3.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/bootstrap-unification-v1-43-4.css?v=1.51"
+        "href": "css/bootstrap-unification-v1-43-4.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/bootstrap-components-v1-43-5.css?v=1.51"
+        "href": "css/bootstrap-components-v1-43-5.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/home-direct-edit-fix-v1-43-5.css?v=1.51"
+        "href": "css/home-direct-edit-fix-v1-43-5.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/universal-horizontal-centering-v1-43-5.css?v=1.51"
+        "href": "css/universal-horizontal-centering-v1-43-5.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/header-symmetric-rows-v1-43-5.css?v=1.51"
+        "href": "css/header-symmetric-rows-v1-43-5.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/header-persistent-actions-v1-43-6.css?v=1.51"
+        "href": "css/header-persistent-actions-v1-43-6.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "mobile/reboot-design-v1-43-29.css?v=1.51",
+        "href": "mobile/reboot-design-v1-43-29.css?v=1.53",
         "media": "screen and (max-width: 768px), screen and (pointer: coarse) and (hover: none)"
       },
       {
         "rel": "stylesheet",
-        "href": "css/verified-surface-fixes-v1-43-30.css?v=1.51"
+        "href": "css/verified-surface-fixes-v1-43-30.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/v145-polish.css?v=1.51"
+        "href": "css/v145-polish.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "css/visual-json-editor-v149.css?v=1.51"
+        "href": "css/visual-json-editor-v149.css?v=1.53"
       },
       {
         "rel": "stylesheet",
-        "href": "mobile/reboot-stability-v149.css?v=1.51",
+        "href": "mobile/reboot-stability-v149.css?v=1.53",
         "media": "screen and (max-width: 768px), screen and (pointer: coarse) and (hover: none)"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "css/v152-spacing-contract.css?v=1.53"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "mobile/home-page-v152.css?v=1.53"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "mobile/static-hero-v152.css?v=1.53"
       }
     ],
     "scripts": [
@@ -176,15 +188,15 @@
         "defer": "defer"
       },
       {
-        "src": "js/round12-media-performance.js?v=1.51",
+        "src": "js/round12-media-performance.js?v=1.53",
         "defer": "defer"
       },
       {
-        "src": "js/round13-network.js?v=csanadi-r-v1.51",
+        "src": "js/round13-network.js?v=csanadi-r-v1.53",
         "defer": "defer"
       }
     ],
-    "entryModule": "script.js?v=1.51"
+    "entryModule": "script.js?v=1.53"
   },
   "body": [
     {
@@ -630,7 +642,7 @@
                         {
                           "tag": "img",
                           "attrs": {
-                            "src": "assets/media/logo/csanadi-crest-512.webp",
+                            "src": "../shared/assets/media/logo/csanadi-crest-512.webp",
                             "alt": ""
                           },
                           "children": []
@@ -747,7 +759,7 @@
                         {
                           "tag": "img",
                           "attrs": {
-                            "src": "assets/media/logo/csanadi-crest-512.webp",
+                            "src": "../shared/assets/media/logo/csanadi-crest-512.webp",
                             "alt": ""
                           },
                           "children": []

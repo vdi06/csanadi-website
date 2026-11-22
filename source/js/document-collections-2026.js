@@ -1,4 +1,5 @@
-import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.51';
+import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.53';
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
 const STORE=new URL('../json/data/documents.json',import.meta.url);
 const node=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
 const fold=x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
@@ -16,7 +17,7 @@ export function renderDocumentCollections(){
  const manualLead=node('p','','Részletes útmutató a 66 tartalmi oldalhoz, a főmenühöz, a keresőhöz, a médiákhoz és a 10 helyi karbantartó eszközhöz.');
  const manualActions=node('div','doc26-manual-actions');
  const manualWeb=node('a','','Kereshető webes útmutató megnyitása');manualWeb.href='#/informaciok/utmutato';
- const manualPdf=node('a','','Teljes PDF-kézikönyv letöltése');manualPdf.href='assets/documents/csanadi-website-complete-usage-guide-2026.pdf';manualPdf.download='csanadi-website-complete-usage-guide-2026.pdf';
+ const manualPdf=node('a','','Teljes PDF-kézikönyv letöltése');manualPdf.href=sharedAssetPath('assets/documents/csanadi-website-complete-usage-guide-2026.pdf');manualPdf.download='csanadi-website-complete-usage-guide-2026.pdf';
  manualActions.append(manualWeb,manualPdf);manual.append(manualTitle,manualLead,manualActions);
  toolbar.append(search,select);box.append(manual,title,text,toolbar,result,grid,more);
  let docs=[],categories=new Map(),limit=settingNumber('runtime.display.documentCollectionBatch');
@@ -26,7 +27,7 @@ export function renderDocumentCollections(){
   const items=docs.filter(d=>(cat==='all'||d.categoryId===cat)&&(!q||fold([d.title,d.summary,...(d.keywords||[])].join(' ')).includes(q)));
   grid.replaceChildren();for(const d of items.slice(0,limit)){
    const card=node('article','doc26-item card');const label=node('span','doc26-label badge text-bg-secondary',categories.get(d.categoryId)||'Segédlet');const h=node('h3','',d.title);const desc=node('p','',d.summary||'');const actions=node('div','doc26-actions');
-   const preview=node('button','btn btn-primary','Megtekintés');preview.type='button';preview.addEventListener('click',()=>openDocumentViewer(d,preview));const down=node('a','btn btn-outline-secondary','Letöltés');down.href=d.filePath;down.download=d.fileName||'';
+   const preview=node('button','btn btn-primary','Megtekintés');preview.type='button';preview.addEventListener('click',()=>openDocumentViewer(d,preview));const down=node('a','btn btn-outline-secondary','Letöltés');down.href=sharedAssetPath(d.filePath);down.download=d.fileName||'';
    actions.append(preview,down);card.append(label,h,desc,actions);grid.append(card);
   }
   result.textContent=`${items.length} megfelelő segédlet · ${Math.min(limit,items.length)} megjelenítve`;
@@ -41,4 +42,4 @@ export function renderDocumentCollections(){
  }).catch(err=>{result.textContent='A dokumentumtár nem tölthető be: '+err.message;});
  return box;
 }
-import {settingNumber} from './site-settings-2026.js?v=1.51';
+import {settingNumber} from './site-settings-2026.js?v=1.53';

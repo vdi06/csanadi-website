@@ -39,4 +39,4 @@ export function renderDailySportsNews(mode='home'){
  load();const interval=setInterval(()=>{if(!section.isConnected){clearInterval(interval);return;}if(!document.hidden)load();},settingNumber('runtime.timing.dailySportNewsRefreshMs'));
  return section;
 }
-import {setting,settingNumber} from './site-settings-2026.js?v=1.51';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.53';

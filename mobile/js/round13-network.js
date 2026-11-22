@@ -71,7 +71,7 @@
  }
  const check=()=>{
   if(checking)return checking;
-  checking=fetch('json/config.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();})
+  checking=fetch('../shared/json/config.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();})
    .then(config=>{const v=config?.performance?.cacheVersion;if(typeof v==='string')inform(v);return config;})
    .catch(()=>null).finally(()=>{checking=null;});
   return checking;

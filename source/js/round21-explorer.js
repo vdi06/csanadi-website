@@ -1,4 +1,4 @@
-import {createZip,downloadBlob} from './zip-native-2026.js?v=1.51';
+import {createZip,downloadBlob} from './zip-native-2026.js?v=1.53';
 
 const byId=id=>document.getElementById(id);
 const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -90,7 +90,7 @@ function initDocumentBundle(){
   if(!checked.length||checked.length>maximum){status.textContent=`Válassz 1–${maximum} dokumentumot!`;return;}
   button.disabled=true;status.textContent='A kiválasztott dokumentumok ellenőrzött letöltése…';
   try{const entries=new Map();let total=0;
-   for(const d of checked){const r=await fetch(d.filePath,{cache:'no-store'});if(!r.ok)throw Error('Nem érhető el: '+d.filePath);
+   for(const d of checked){const r=await fetch('../shared/'+d.filePath,{cache:'no-store'});if(!r.ok)throw Error('Nem érhető el: '+d.filePath);
     const bytes=new Uint8Array(await r.arrayBuffer());if(bytes.length<5||new TextDecoder().decode(bytes.subarray(0,5))!=='%PDF-')throw Error('Nem érvényes PDF: '+d.fileName);
     total+=bytes.byteLength;if(total>maxBytes)throw Error('Túl nagy dokumentumcsomag.');entries.set(d.filePath,bytes);}
    const blob=await createZip(entries);downloadBlob(blob,'csanadi-dokumentumcsomag.zip');status.textContent=`Elkészült: ${entries.size} PDF · ${new Intl.NumberFormat('hu-HU').format(total)} bájt.`;

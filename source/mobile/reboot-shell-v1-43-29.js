@@ -1,5 +1,6 @@
 /** Új, önálló mobilos felület. A korábbi mobile/ modulokból nem vesz át kódot. */
-import {optionalSetting} from '../js/site-settings-2026.js?v=1.51';
+import {optionalSetting} from '../js/site-settings-2026.js?v=1.53';
+import {sharedAssetPath} from '../js/shared-paths-v152.js?v=1.53';
 const MOBILE='(max-width: 768px), (pointer: coarse) and (hover: none)';
 const make=(tag,cls='',content='')=>{
  const node=document.createElement(tag);
@@ -119,7 +120,7 @@ export function initFreshMobileShell(){
  crest.setAttribute('aria-controls','site-map-overlay');crest.setAttribute('aria-expanded','false');
  // Az indulás elején a központi config még töltődik; a favicon útvonala
  // viszont már a JSON-ból felépített document.head-ben van.
- const emblem=make('img');emblem.src=optionalSetting('site.crestImagePath')||
+ const emblem=make('img');emblem.src=sharedAssetPath(optionalSetting('site.crestImagePath'))||
   document.querySelector?.('link[rel="icon"]')?.getAttribute('href')||'';
  emblem.alt='';emblem.width=64;emblem.height=64;crest.append(emblem);
  const right=make('div','cs-mb-right');

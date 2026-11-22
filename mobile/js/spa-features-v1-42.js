@@ -27,7 +27,7 @@ export function releaseSpaFeatureStyles(){
  if(dispose){dispose();dispose=null;}
 }
 async function data(){
- if(!dataPromise)dataPromise=fetch('json/data/spa-features-42.json',{cache:'no-store'}).then(response=>{
+ if(!dataPromise)dataPromise=fetch('../shared/json/data/spa-features-42.json',{cache:'no-store'}).then(response=>{
   if(!response.ok)throw Error('A SPA-komponensadat nem érhető el.');return response.json();
  }).catch(error=>{dataPromise=null;throw error;});
  return dataPromise;
@@ -59,11 +59,11 @@ function sanitizedHTML(source){
 }
 function safeAttribute(value){return String(value).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');}
 function frameDocument(key,component){
- const css=component.styles.map(path=>`<link rel="stylesheet" href="${safeAttribute(path)}?v=1.51">`).join('')+'<link rel="stylesheet" href="css/spa-frame-unified-v1-42-16.css?v=1.51"><link rel="stylesheet" href="css/theme-coverage-v1-42-21.css?v=1.51">';
+ const css=component.styles.map(path=>`<link rel="stylesheet" href="${safeAttribute(path)}?v=1.53">`).join('')+'<link rel="stylesheet" href="css/spa-frame-unified-v1-42-16.css?v=1.53"><link rel="stylesheet" href="css/theme-coverage-v1-42-21.css?v=1.53">';
  const base=new URL('./',document.baseURI).href;
  // Bootstrap remains pinned to the same CDN version as the original SPA.
  const bootstrap='https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css';
- return `<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><base href="${safeAttribute(base)}"><link rel="stylesheet" href="${bootstrap}" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">${css}</head><body data-spa-feature="${key}" class="${key==='arrival'?'arrival2':''}">${sanitizedHTML(component.html)}<script type="module" src="js/spa-frame-bootstrap-v1-42.js?v=1.51"></script></body></html>`;
+ return `<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><base href="${safeAttribute(base)}"><link rel="stylesheet" href="${bootstrap}" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">${css}</head><body data-spa-feature="${key}" class="${key==='arrival'?'arrival2':''}">${sanitizedHTML(component.html)}<script type="module" src="js/spa-frame-bootstrap-v1-42.js?v=1.53"></script></body></html>`;
 }
 export async function activateSpaFeature(shell,page){
  const token=activation,key=page?.schemaExtensions?.spaFeature;

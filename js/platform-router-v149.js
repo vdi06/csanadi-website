@@ -1,4 +1,4 @@
-/** 1.51: az egyetlen nyilvános HTML-indítópont platformválasztója.
+/** 1.53: az egyetlen nyilvános HTML-indítópont platformválasztója.
     Iskolai szöveget, menüt, képet, tartalmat nem tárol. */
 // Nem a készülék nevét találgatjuk: a keskeny nézet VAGY az elsődlegesen
 // érintős, egérhover nélküli kijelző ugyanazt a mobil futási ágat kapja.
@@ -31,7 +31,7 @@ query.addEventListener?.('change',event=>{
  if((event.matches?'mobile':'desktop')!==platform)location.reload();
 });
 try{
- await import(new URL('js/site-bootstrap-v149.js?v=1.51',branch).href);
+ await import(new URL('js/site-bootstrap-v149.js?v=1.53',branch).href);
 }catch(error){
  console.error('A kiválasztott JSON-vezérelt webhely nem indult:',error);
  const title=document.createElement('h1');title.textContent='A weboldal nem tölthető be';

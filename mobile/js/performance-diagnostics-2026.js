@@ -1,4 +1,4 @@
-import {formatBytes as bytes} from './format-bytes.js?v=1.51';
+import {formatBytes as bytes} from './format-bytes.js?v=1.53';
  
 let panel=null;
 let pending=null;
@@ -28,17 +28,17 @@ export const diagnosticNumber=(key,fallback)=>{
 async function measureBundle(){
  const run=++bundleRun;
  try{
-  const response=await fetch('release-manifest.json',{cache:'no-store'});
+  const response=await fetch('../release-manifest.json',{cache:'no-store'});
   if(!response.ok)throw new Error('HTTP '+response.status);
   const manifest=await response.json();
   if(run!==bundleRun)return;
-  if(!manifest||typeof manifest!=='object'||Array.isArray(manifest)||manifest.schemaVersion!=='1.0.0'||!manifest.files||typeof manifest.files!=='object'||Array.isArray(manifest.files)||!/^[a-z0-9-]+-v\d+\.\d+\.\d+$/.test(manifest.release||''))throw new Error('Hibás kiadási manifest');
-  const configResponse=await fetch('json/config.json',{cache:'no-store'});
+  if(!manifest||typeof manifest!=='object'||Array.isArray(manifest)||manifest.schemaVersion!=='1.0.0'||!manifest.files||typeof manifest.files!=='object'||Array.isArray(manifest.files)||!/^csanadi-website-\d+\.\d+$/.test(manifest.release||''))throw new Error('Hibás kiadási manifest');
+  const configResponse=await fetch('../shared/json/config.json',{cache:'no-store'});
   if(!configResponse.ok)throw new Error('Konfiguráció HTTP '+configResponse.status);
   const config=await configResponse.json();
   if(run!==bundleRun)return;
-  const manifestVersion=/v\d+\.\d+\.\d+$/.exec(manifest.release||'')?.[0]||null;
-  const runtimeVersion=/v\d+\.\d+\.\d+$/.exec(config.performance?.cacheVersion||'')?.[0]||null;
+  const manifestVersion=/\d+\.\d+$/.exec(manifest.release||'')?.[0]||null;
+  const runtimeVersion=/\d+\.\d+$/.exec(config.performance?.cacheVersion||'')?.[0]||null;
   const entries=Object.entries(manifest.files||{});
   if(entries.length<4||entries.length>10000)throw new Error('Hiányos vagy túlméretes kiadási manifest');
   const kinds={Képek:0,Videók:0,Dokumentumok:0,'Kód és adatok':0};
@@ -52,7 +52,7 @@ async function measureBundle(){
   const invalid=entries.filter(([file,meta])=>!file||file.startsWith('/')||file.includes('..')||file.includes('\\')||/[\u0000-\u001f]/.test(file)||!/^[a-f0-9]{64}$/.test(meta.sha256||''));
   if(!Number.isSafeInteger(total)||total<=0||total>100000000000)throw new Error('Érvénytelen teljes kiadási fájlméret');
   if(invalid.length)throw new Error('Érvénytelen kiadási tétel: '+invalid.length);
-  const required=['index.html','json/config.json','json/structure.json','script.js'];
+  const required=['index.html','shared/json/config.json','shared/json/structure.json','js/platform-router-v149.js'];
   if(required.some(file=>!manifest.files?.[file]||manifest.files[file].sizeBytes===0))throw new Error('Hiányzó vagy üres kötelező kiadási állomány');
   if(run===bundleRun)bundleStats={total,count:entries.length,kinds,release:manifest.release,cacheConsistent:!!manifestVersion&&manifestVersion===runtimeVersion&&manifest.bootstrap==='CDN bootstrap@5.3.9',error:null};
  }catch(error){if(run===bundleRun)bundleStats={error:String(error.message||error)};}
@@ -175,4 +175,4 @@ function finish(route,ok){
 }
 export function markRouteRendered(route,{found=true}={}){finish(route,found);}
 export function markRouteError(route){finish(route,false);}
-import {settingNumber} from './site-settings-2026.js?v=1.51';
+import {settingNumber} from './site-settings-2026.js?v=1.53';

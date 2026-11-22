@@ -1,6 +1,7 @@
 /* Static-host compatible, nine-photo entrance. One source of timings: json/config.json.
    The same real-world doorway stays fixed while its two leaves swing inward. */
-import {setting} from './site-settings-2026.js?v=1.51';
+import {setting} from './site-settings-2026.js?v=1.53';
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
 let active=false;
 const tag=(type,cls='',text)=>{const node=document.createElement(type);node.className=cls;if(text!==undefined)node.textContent=text;return node;};
 function dismissPrelude(){document.documentElement.classList.remove('cs-gate-pending');document.getElementById('cs-gate-prelude')?.remove();}
@@ -11,7 +12,7 @@ export function showGateEntrance(){
  const mobile=matchMedia('(max-width: 768px), (pointer: coarse) and (hover: none)').matches;
  const duration=mobile?settings.durationMobileMs:settings.durationDesktopMs;
  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- const file=(index,small=mobile)=>settings.imageDirectory+'/'+settings.framePrefix+String(index).padStart(2,'0')+(small?settings.mobileSuffix:'')+settings.extension;
+ const file=(index,small=mobile)=>sharedAssetPath(settings.imageDirectory+'/'+settings.framePrefix+String(index).padStart(2,'0')+(small?settings.mobileSuffix:'')+settings.extension);
  const resources=Array.from({length:settings.frameCount},(_,i)=>file(i));
  const wrapper=tag('div','gate26 gate26--frames');wrapper.id='gate26';wrapper.style.setProperty('--gate26-duration',duration+'ms');
  // The HTML prelude stays on top until the first real frame is decoded.
@@ -29,7 +30,7 @@ export function showGateEntrance(){
  // Keep it decorative for now; the same anchor can later become the menu trigger.
  const glassCrest=tag('div','gate26-glass-crest');glassCrest.setAttribute('aria-hidden','true');
  const glassLogo=tag('img','gate26-glass-crest-image');
- glassLogo.src=setting('site.crestImagePath');glassLogo.alt='';
+ glassLogo.src=sharedAssetPath(setting('site.crestImagePath'));glassLogo.alt='';
  glassLogo.width=512;glassLogo.height=512;glassLogo.draggable=false;
  glassCrest.append(glassLogo);
  const hit=tag('button','gate26-door-hitbox');hit.type='button';hit.title='A kapu kinyitása';hit.setAttribute('aria-label','A zöld iskolakapu kinyitása');

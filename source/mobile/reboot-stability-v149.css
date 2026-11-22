@@ -1,6 +1,12 @@
-/* 1.51 – telefonon kizárólag az önálló mobilos kezdőkép jelenhet meg.
+/* 1.53 – telefonon kizárólag az önálló, címeres mobilnyitó jelenhet meg.
    A desktop CSS specifikusabb volt, ezért a régi, magas desktop képsor
    a telefonos film alatt megmaradt – ez okozta a látszólag üres részeket. */
+/* A korábbi site-bundle :empty szabálya 247–555 px üres területet
+   tartott fenn akkor is, amikor még nem létezett telefonos dia. */
+html[data-csanadi-platform="mobile"] body #global-hero:empty{
+ display:none!important;height:0!important;min-height:0!important;
+ padding:0!important;margin:0!important
+}
 @media screen and (max-width:768px), screen and (pointer:coarse) and (hover:none){
  html body.cs-home-header #global-hero .cs41-home-hero .csn26-visual-row.csn26-single-image,
  html body.cs-home-header #global-hero .cs41-home-hero #csn26-visual-carousel{

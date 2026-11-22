@@ -1,6 +1,6 @@
 /* Csanádi: static FTP-compatible, version-scoped offline shell.
    Updated workers activate on explicit user refresh; the first install activates normally. */
-const RELEASE_ID='1.51';
+const RELEASE_ID='1.53';
 const SCOPE=new URL('./',self.registration.scope);
 const SHELL=`csanadi-shell-${RELEASE_ID}`;
 const MEDIA=`csanadi-media-${RELEASE_ID}`;

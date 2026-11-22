@@ -1,0 +1,33 @@
+/* 1.53 – forráskód alapján ellenőrizhető távolságok.
+ * Csak valódi tartalmi szülők; a kapu, fejléc és modális felületek nem érintettek. */
+#app .content-tiles--editorial{
+ display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+ row-gap:clamp(18px,2.5vw,30px)!important;column-gap:0!important;
+ align-items:start!important
+}
+#app .content-tiles--editorial>*{
+ position:relative!important;min-width:0!important;max-width:100%!important;
+ margin-block:0!important
+}
+#app .article-flow .article-section + .article-section{
+ margin-block-start:clamp(16px,2vw,26px)!important;
+ padding-block-start:clamp(16px,2vw,26px)!important;
+ border-block-start:1px solid var(--line)!important
+}
+#app :is(.features-grid,.quick-grid,.editorial-grid,.image-gallery){
+ gap:clamp(12px,1.55vw,20px)!important;
+ align-items:stretch!important;min-width:0!important
+}
+#app :is(.features-grid,.quick-grid,.editorial-grid,.image-gallery)>*{
+ min-width:0!important;max-width:100%!important
+}
+#app[data-page-kind="home"] .premium26-visual-grid{
+ gap:clamp(12px,1.55vw,20px)!important
+}
+@media(max-width:768px), (pointer:coarse) and (hover:none){
+ #app .content-tiles--editorial{row-gap:20px!important}
+ #app .article-flow .article-section + .article-section{
+  margin-block-start:18px!important;padding-block-start:18px!important
+ }
+ #app :is(.features-grid,.quick-grid,.editorial-grid,.image-gallery){gap:12px!important}
+}

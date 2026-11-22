@@ -1,6 +1,6 @@
-import {PageHistory,editedPage,sameContent,sourceSignature,listSavedDrafts,restorePageDraft,savePageDraft,deletePageDraft} from '../tools/page-draft-core-v1-42-23.js?v=1.51';
-import {reorderBlock,reorderItem,siblingMove,itemMove,restoreOriginalOrder} from '../tools/visual-order-core-v1-42-24.js?v=1.51';
-import {noteContentChanged} from '../tools/content-workflow-core-v1-42-25.js?v=1.51';
+import {PageHistory,editedPage,sameContent,sourceSignature,listSavedDrafts,restorePageDraft,savePageDraft,deletePageDraft} from '../tools/page-draft-core-v1-42-23.js?v=1.53';
+import {reorderBlock,reorderItem,siblingMove,itemMove,restoreOriginalOrder} from '../tools/visual-order-core-v1-42-24.js?v=1.53';
+import {noteContentChanged} from '../tools/content-workflow-core-v1-42-25.js?v=1.53';
 
 const sessions=new Map();
 const activeMarks=new Set();
@@ -140,11 +140,11 @@ export function attachVisualEditor(root,original,path,release,{rerender,warning=
   setTimeout(()=>URL.revokeObjectURL(objectUrl),2000);announce('Az aktuális oldaltervezet JSON-fájlja letöltve.');
  });
  studio.addEventListener('click',async()=>{
-  try{const {openMaintenanceStudio}=await import('../tools/maintenance-studio.js?v=1.51');await openMaintenanceStudio();}
+  try{const {openMaintenanceStudio}=await import('../tools/maintenance-studio.js?v=1.53');await openMaintenanceStudio();}
   catch(error){announce('A ZIP műhely nem nyitható meg: '+error.message,true);}
  });
  preview.addEventListener('click',async()=>{
-  try{const {openStandalonePreview}=await import('./live-preview-v1-42-25.js?v=1.51');openStandalonePreview({route:original.schemaExtensions.route,title:original.title});}
+  try{const {openStandalonePreview}=await import('./live-preview-v1-42-25.js?v=1.53');openStandalonePreview({route:original.schemaExtensions.route,title:original.title});}
   catch(error){announce('Az előnézet nem nyitható meg: '+error.message,true);}
  });
 

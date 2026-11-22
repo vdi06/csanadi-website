@@ -1,39 +1,39 @@
-import {initRound10Enhancements} from './round10-enhancements.js?v=1.51';
-import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.51';
-import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.51';
-import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=1.51';
-import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=1.51';
-import {setupSmartSearch} from './search-j-2026.js?v=1.51';
-import {installLanguageHighlights} from './language-20.js?v=1.51';
-import {enhanceInlineHomeEditor} from './home-inline-editor-v1-41-4.js?v=1.51';
-import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,syncMobileEmbeddedSections,initRound29Diagnostics} from './round29-home.js?v=1.51';
-import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=1.51';
-import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=1.51';
-import {initEnhancedInteractions} from './interactions-be-2026.js?v=1.51';
-import {renderMediaGallery} from './media-gallery-h-2026.js?v=1.51';
-import {renderDocumentCollections} from './document-collections-2026.js?v=1.51';
-import {renderPageMedia} from './page-media-2026.js?v=1.51';
-import {useSiteSettings,settingNumber} from './site-settings-2026.js?v=1.51';
-import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.51';
-import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.51';
-import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.51';
-import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=1.51';
+import {initRound10Enhancements} from './round10-enhancements.js?v=1.53';
+import {renderHistoryTimeline,renderSportsStatisticsV3,renderDocumentInsights,enhanceNext10Route,initNext10,updatePageMeta} from './next10-2026.js?v=1.53';
+import {initPerformanceDiagnostics,markNavigationStart,markRouteRendered,markRouteError} from './performance-diagnostics-2026.js?v=1.53';
+import {renderSportsCharts,renderCalendarFilters,renderDocumentFinder,renderSmartRelations,enhanceGallery} from './extended-hubs-2026.js?v=1.53';
+import {initDetailedDiagnostics,initSiteHealth} from './site-quality-2026.js?v=1.53';
+import {setupSmartSearch} from './search-j-2026.js?v=1.53';
+import {installLanguageHighlights} from './language-20.js?v=1.53';
+import {enhanceInlineHomeEditor} from './home-inline-editor-v1-41-4.js?v=1.53';
+import {enhanceRound29Home,syncRound29HomeNavigation,syncMobileSubpageSections,syncMobileEmbeddedSections,initRound29Diagnostics} from './round29-home.js?v=1.53';
+import {renderSportsPortal,renderEducationPath,renderUpcomingPanel,renderDocumentIndexExport} from './tenway-2026.js?v=1.53';
+import {learningNavigator,enhanceHomeInterests} from './kmil-2026.js?v=1.53';
+import {initEnhancedInteractions} from './interactions-be-2026.js?v=1.53';
+import {renderMediaGallery} from './media-gallery-h-2026.js?v=1.53';
+import {renderDocumentCollections} from './document-collections-2026.js?v=1.53';
+import {renderPageMedia} from './page-media-2026.js?v=1.53';
+import {useSiteSettings,setting,settingNumber} from './site-settings-2026.js?v=1.53';
+import {renderHomeSportSpotlight} from './premium-home-2026.js?v=1.53';
+import {renderHomeExperience,renderBellCenter,renderCalendarCenter,renderSocialSection,renderStaffCenter,initSocialLinks,openEntrancePortal} from './advanced-2026.js?v=1.53';
+import {registerMedia,createPicture,imageDisclaimer,mediaForRoute} from './media.js?v=1.53';
+import {loadDocumentRegistry,renderDocumentCenter,renderRelatedDocuments,renderDocumentQuickLinks,documentRegistryError,documentRefreshSeconds} from './documents.js?v=1.53';
  
-import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.51';
-import {renderBlock,dom,listCards} from './blocks.js?v=1.51';
-import {createAuthoringWorkbench} from './editor-workbench-v1-42-18.js?v=1.51';
-import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=1.51';
-import {renderSportsSuccesses} from './sports-successes.js?v=1.51';
-import {renderStudentAchievements} from './student-achievements.js?v=1.51';
-import {renderDailySportsNews} from './daily-sport-news.js?v=1.51';
-import {renderDesktopTree} from '../desktop/navigation.js?v=1.51';
+import {buildCatalog,loadJSON,getRoute,routeTitle,childrenOf,contentChildrenOf,norm,safeRoute} from './content.js?v=1.53';
+import {renderBlock,dom,listCards} from './blocks.js?v=1.53';
+import {createAuthoringWorkbench} from './editor-workbench-v1-42-18.js?v=1.53';
+import {renderNewsCenter,renderNewsTeasers} from './news-2026.js?v=1.53';
+import {renderSportsSuccesses} from './sports-successes.js?v=1.53';
+import {renderStudentAchievements} from './student-achievements.js?v=1.53';
+import {renderDailySportsNews} from './daily-sport-news.js?v=1.53';
+import {renderDesktopTree} from '../desktop/navigation.js?v=1.53';
 const renderMobileTree=()=>{};
 const createPhoneRadial=()=>({phone:()=>false,focus:()=>null,setCatalog:()=>{},reset:()=>{},back:()=>false});
-import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.51';
-import {resolveVisualDraft,attachVisualEditor,visualEditingEnabled} from './visual-editor-v1-42-24.js?v=1.51';
-import {validateEditablePage} from '../tools/page-draft-core-v1-42-23.js?v=1.51';
-import {createSubpageHero} from './subpages-v1.js?v=1.51';
-import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.51';
+import {pageTemplateKind,applyPageTemplate} from './page-templates-v1-39-2.js?v=1.53';
+import {resolveVisualDraft,attachVisualEditor,visualEditingEnabled} from './visual-editor-v1-42-24.js?v=1.53';
+import {validateEditablePage} from '../tools/page-draft-core-v1-42-23.js?v=1.53';
+import {createSubpageHero} from './subpages-v1.js?v=1.53';
+import {isSpaFeature,featurePlaceholder,activateSpaFeature,releaseSpaFeatureStyles} from './spa-features-v1-42.js?v=1.53';
 const app=document.getElementById('app');
 const c3Params=new URLSearchParams(location.search);
 const c3Preview=c3Params.get('preview')==='1';
@@ -496,7 +496,8 @@ function homePage(node){
     else place(rendered,'standard');
   }
   const mini=dom('section',{class:'section-wrap'}),container=dom('div',{class:'container-xxl'});
-  container.append(dom('div',{class:'section-overline'},'AZ INTÉZMÉNY VILÁGA'),dom('h2',{class:'section-title mb-4'},'Fő tartalmi területeink'),listCards(catalog.roots));
+  const homeNavigation=setting('runtime.homeNavigation');
+  container.append(dom('div',{class:'section-overline'},homeNavigation.areasEyebrow),dom('h2',{class:'section-title mb-4'},homeNavigation.areasTitle),listCards(catalog.roots));
   mini.append(container);place(mini,'areas');
   const docs=renderDocumentQuickLinks();if(docs)place(docs,'documents');
    
@@ -504,29 +505,20 @@ function homePage(node){
   const units=[...canvas.querySelectorAll(':scope > .home-unit')];
   const roleOf=el=>[...el.classList].find(x=>x.startsWith('home-unit--'))?.slice(11)||'';
   const roleMap=new Map(units.map(el=>[roleOf(el),el]));
-  const nav=dom('nav',{class:'home-j-navrail','aria-label':'Kezdőoldali gyorsnavigáció'});
-  for(const [label,route] of [['Felvételi','#/oktatas/felveteli'],['Hírek','#/hirek-es-esemenyek/hirek'],['Sport','#/sport'],['Dokumentumok','#/informaciok/dokumentumtar']]){
-    nav.append(dom('a',{href:route},label+' ↗'));
+  const nav=dom('nav',{class:'home-j-navrail','aria-label':homeNavigation.ariaLabel});
+  for(const link of homeNavigation.links||[]){
+    if(!/^#\/[a-z0-9\-/]*$/.test(link.href||''))continue;
+    nav.append(dom('a',{href:link.href},link.label+' ↗'));
   }
-  const searchShortcut=dom('button',{type:'button',class:'home-j-search'},'Keresés a honlapon ⌕');
+  const searchShortcut=dom('button',{type:'button',class:'home-j-search'},homeNavigation.searchLabel);
   searchShortcut.addEventListener('click',openSearch);nav.append(searchShortcut);
-  nav.append(dom('a',{href:'#/iskolank/felfedezo',class:'csn21-explorer-link'},'Interaktív felfedezőközpont ↗'));
-  nav.append(dom('a',{href:'#/iskolank/iskolai-iranytu',class:'csn21-explorer-link'},'Iskolai iránytű ↗'));
-  nav.append(dom('a',{href:'#/iskolank/iskolai-muhely',class:'csn21-explorer-link'},'Iskolai műhely · 23. kiadás ↗'));
-  nav.append(dom('a',{href:'#/sport/olimpiai-orokseg-es-tudastar',class:'csn21-explorer-link'},'Olimpiai örökség és tudástár · 24. kiadás ↗'));
-  nav.append(dom('a',{href:'#/oktatas/tanulas-es-kozosseg',class:'csn21-explorer-link'},'Tanulás, sport és közösség · 25. kiadás ↗'));
   const rails=dom('div',{class:'home-j-navrail-unit'});rails.append(nav);
   // A dicsőségfal a kezdőoldali hero UTÁNI első fő tartalmi szakasz.
   // A további, korábban működő modulok és a személyes sorrendezés megmaradnak.
   const visibleRoles=['students','school-news','premium-showcase'];
   canvas.replaceChildren();
   for(const role of visibleRoles){const unit=roleMap.get(role);if(unit)canvas.append(unit);if(role==='premium-showcase')canvas.append(rails);}
-  const foldGroups=[
-    {title:'Napi központ és interaktív információk',sub:'A napi központ részletes elemei egy kattintással',roles:['daily-hub']},
-    {title:'Sporteredmények és statisztikák',sub:'Részletes sporttartalmak és adatok',roles:['sports-story','statistics']},
-    {title:'Sport és iskolai élet – képekben',sub:'Fotógaléria, albumok és közösségi felületek',roles:['gallery','life-gallery','social']},
-    {title:'Fedezd fel az iskolát',sub:'Képzési, közösségi és ügyintézési információk',roles:['shortcuts','editorial','story','areas','documents','standard']}
-  ];
+  const foldGroups=homeNavigation.foldGroups||[];
   for(const info of foldGroups){
     const children=info.roles.map(role=>roleMap.get(role)).filter(Boolean);
     if(!children.length)continue;
@@ -560,7 +552,7 @@ function arrivalSection(route){
 }
 function wireReveal(){
   revealObserver?.disconnect();
-  const targets=[...app.querySelectorAll('.feature-card,.editorial-tile,.gallery-item,.section-title,.premium26-visual-card,.premium26-discover-link,.student-success-card,.cs-achievement')];
+  const targets=[...app.querySelectorAll('.feature-card,.editorial-tile,.gallery-item,.section-title,.student-success-card,.cs-achievement')];
   // Mobilon a tartalom láthatósága sosem függhet iOS görgetési eseménytől.
   if(matchMedia('(max-width: 768px), (pointer: coarse) and (hover: none)').matches){
     for(const element of targets){element.classList.remove('reveal-on-scroll');element.classList.add('is-visible');}
@@ -642,8 +634,8 @@ function renderRoute(options={}){
   document.body.classList.toggle('cs-inner-page',kind!=='home');
   releaseSpaFeatureStyles();
   const inEditor=visualEditingEnabled()&&!c3Preview;
- const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.51');
-  const localRelease=/^csanadi-r-v\d+\.\d+$/.test(version)?'csanadi-website-'+version.slice('csanadi-r-v'.length):'csanadi-website-1.51';
+ const version=String(catalog?.config?.performance?.cacheVersion||'csanadi-r-v1.53');
+  const localRelease=/^csanadi-r-v\d+\.\d+$/.test(version)?'csanadi-website-'+version.slice('csanadi-r-v'.length):'csanadi-website-1.53';
   const previewDraft=node&&node.depth!==0&&!isSpaFeature(node.page)&&(inEditor||(c3Preview&&!c3PreviewBase))?resolveVisualDraft(node.page,'json/'+node.path,localRelease):null;
   const activeDraft=c3Preview&&!c3PreviewBase&&c3Overlay?.path==='json/'+node?.path?c3Overlay.page:previewDraft?.page;
   app.replaceChildren(node?(isSpaFeature(node.page)?featurePlaceholder(node.page):node.depth===0?homePage(node):contentPage(node,activeDraft)):errorPage());

@@ -35,6 +35,6 @@ export async function mountGuide(){
  button.addEventListener('click',click);query.addEventListener?.('change',changed);
  host?.addEventListener('csanadi:feature-unmount',()=>{button.removeEventListener('click',click);query.removeEventListener?.('change',changed);},{once:true});
  apply();
- try{const response=await fetch('json/config.json',{cache:'no-store'});if(response.ok){settings=await response.json();apply();}}
+ try{const response=await fetch('../shared/json/config.json',{cache:'no-store'});if(response.ok){settings=await response.json();apply();}}
  catch(error){console.warn('Kézikönyv-paletta betöltése sikertelen:',error);}
 }

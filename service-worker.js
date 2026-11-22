@@ -1,7 +1,7 @@
 /* Csanádi: static FTP-compatible, version-scoped offline shell.
    Updated workers activate on explicit user refresh; the first install activates normally. */
 const PLATFORM=new URL(self.location.href).searchParams.get('platform')==='desktop'?'desktop':'mobile';
-const RELEASE_ID='1.51-'+PLATFORM;
+const RELEASE_ID='1.53-'+PLATFORM;
 const SCOPE=new URL('./',self.registration.scope);
 const SHELL=`csanadi-shell-${RELEASE_ID}`;
 const MEDIA=`csanadi-media-${RELEASE_ID}`;
@@ -26,9 +26,9 @@ const CORE=['./','./index.html','./js/platform-router-v149.js',...SOURCE_CORE
   (PLATFORM==='desktop'||!/(?:desktop-hero-fold|desktop-hero-controls)/.test(path))&&
   (PLATFORM==='mobile'||!path.startsWith('./mobile/'))&&
   (PLATFORM==='desktop'||!path.startsWith('./desktop/')))
- .map(path=>'./'+PLATFORM+'/'+path.slice(2))];
+ .map(path=>path.startsWith('./assets/')||(path.startsWith('./json/')&&path!=='./json/site-shell.json')?'./shared/'+path.slice(2):'./'+PLATFORM+'/'+path.slice(2))];
 const local=url=>url.origin===SCOPE.origin&&url.pathname.startsWith(SCOPE.pathname);
-const coreURL=path=>new URL(path.startsWith('./')?path:'./'+PLATFORM+'/'+path,SCOPE);
+const coreURL=path=>new URL(path.startsWith('./')?path:'./'+((path.startsWith('json/')&&path!=='json/site-shell.json')||path.startsWith('assets/')?'shared/':PLATFORM+'/')+path,SCOPE);
 let settingsPromise=null;
 async function settings(){
  if(!settingsPromise)settingsPromise=fetch(new Request(coreURL('json/config.json'),{cache:'no-store'}))

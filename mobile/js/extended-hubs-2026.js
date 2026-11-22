@@ -1,15 +1,16 @@
-import {formatBytes} from './format-bytes.js?v=1.51';
-import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.51';
+import {formatBytes} from './format-bytes.js?v=1.53';
+import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.53';
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
 
 
  
 const make=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=String(text);return e;};
 const append=(to,...nodes)=>{nodes.filter(Boolean).forEach(n=>to.append(n));return to;};
-const DATA_ROOT=new URL('../json/', import.meta.url);
+const DATA_ROOT=new URL('../../shared/json/', import.meta.url);
 const getData=async rel=>{const r=await fetch(new URL(rel,DATA_ROOT),{cache:'no-store'});if(!r.ok)throw Error('A JSON-fájl nem érhető el');return r.json();};
 const tokenize=text=>String(text||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().split(/[^a-z0-9]+/).filter(w=>w.length>3&&!['adatok','informaciok','iskola','iskolai','csanadi','tudnivalok','oldalak','egyeb','tovabbi'].includes(w));
 const safeRoute=s=>typeof s==='string'&&/^#\/[a-z0-9/-]*$/.test(s)?s:'#/';
-const safePDF=s=>typeof s==='string'&&/^assets\/documents\/[a-z0-9._-]+\.pdf$/.test(s)?s:null;
+const safePDF=s=>typeof s==='string'&&/^assets\/documents\/[a-z0-9._-]+\.pdf$/.test(s)?sharedAssetPath(s):null;
 function heading(eyebrow,title,desc){const h=make('header','ext26-heading');append(h,make('span','section-overline',eyebrow),make('h2','',title),make('p','',desc));return h;}
 function itemLink(title,desc,href,meta=''){const link=make('a','ext26-tile');link.href=href;append(link,meta?make('span','ext26-label',meta):null,make('strong','',title),make('small','',desc));return link;}
 const format=(d)=>new Intl.DateTimeFormat('hu-HU',{timeZone:setting('modules2026.clock.timezone'),year:'numeric',month:'short',day:'numeric'}).format(new Date(d));
@@ -225,4 +226,4 @@ export function enhanceGallery(root){
  const counter=dialog.querySelector('.media26-lightbox-count');counter?.setAttribute('aria-live','polite');
  const link=make('a','ext26-gallery-skip','Ugrás a galéria képrácsához ↓');link.href='#media26-library-tiles';library.querySelector('.media26-grid')?.setAttribute('id','media26-library-tiles');library.querySelector('.media26-heading')?.after(link);
 }
-import {setting,settingNumber} from './site-settings-2026.js?v=1.51';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.53';

@@ -28,7 +28,7 @@ html[data-theme="dark"] #site-map-overlay .site-map-shade{
  #app :is(.feature-card,.quick-card,.doc-card){min-width:0;min-height:unset ;padding:13px ;border-radius:14px }
  #app .card-index{margin-bottom:8px }
  #app .card-title{font-size:clamp(13px,3.7vw,17px) ;line-height:1.28 }
- #app .card-desc{font-size:12px ;line-height:1.51 }
+ #app .card-desc{font-size:12px ;line-height:1.53 }
  #app .card-arrow{margin-top:7px }
  #app .card-picture{aspect-ratio:4/3 ;max-height:148px}
  #app .media26-video-grid{grid-template-columns:repeat(2,minmax(0,1fr)) ;gap:9px }

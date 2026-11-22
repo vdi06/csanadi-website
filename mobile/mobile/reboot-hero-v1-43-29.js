@@ -1,4 +1,5 @@
 /** Új mobilos filmes nyitófelület; nem használ régi kapu- vagy képváltó modult. */
+import {sharedAssetPath} from '../js/shared-paths-v152.js?v=1.53';
 const make=(tag,cls='',value='')=>{
  const el=document.createElement(tag);if(cls)el.className=cls;
  if(value)el.textContent=value;return el;
@@ -125,7 +126,7 @@ export function createFreshMobileHero({slides=[],createPicture,mediaItem,interva
  };
  const updateFallback=slide=>{
   const path=fallbackFor(slide);
-  if(path)stage.style.setProperty('--cs-mb-fallback-image',`url("${path}")`);
+  if(path)stage.style.setProperty('--cs-mb-fallback-image',`url("${sharedAssetPath(path)}")`);
  };
  const pictureFor=slide=>createPicture(slide.mobileMediaId||slide.mediaId,
   {className:'cs-mb-film-picture',eager:true,sizes:'(max-width: 768px) 100vw, (pointer: coarse) and (hover: none) 100vw, 0px'});

@@ -1,9 +1,9 @@
 // Ugyanazt a modulazonosítót használjuk, mint az app.js: a query-paraméteres
 // import külön modulpéldányt hozott létre inicializálatlan settings állapottal.
-import {setting} from './site-settings-2026.js?v=1.51';
+import {setting} from './site-settings-2026.js?v=1.53';
 export async function installLanguageHighlights(){
  if(!setting('runtime.display.bilingualPanelEnabled'))return;
- const url=new URL('../json/'+setting('content.languagesPath'),import.meta.url),response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error('Nem elérhető a központi nyelvi JSON.');const data=await response.json(),hero=document.getElementById('global-hero');if(!hero||!data.notices)return;
+ const url=new URL('../../shared/json/'+setting('content.languagesPath'),import.meta.url),response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error('Nem elérhető a központi nyelvi JSON.');const data=await response.json(),hero=document.getElementById('global-hero');if(!hero||!data.notices)return;
  const create=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=String(text);return el;};
  const panel=create('section','csn20-language-bar');panel.setAttribute('aria-label','Kiemelt, többnyelvű tájékoztatók');const controls=create('div','csn20-languages'),heading=create('h2'),scope=create('p'),cards=create('div','csn20-language-cards');controls.append(create('span','','Nyelv / Language:'));const buttons=new Map();for(const language of data.languages||[]){const button=create('button','',language.label);button.type='button';button.addEventListener('click',()=>switchTo(language.code));controls.append(button);buttons.set(language.code,button);}
  panel.append(controls,heading,scope,cards);hero.insertAdjacentElement('afterend',panel);

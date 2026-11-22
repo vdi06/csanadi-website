@@ -4,7 +4,7 @@ import {requireValidJsonShell} from './json-validator-v149.js';
 
 async function start(){
  try{
-  const response=await fetch('json/offline-shell.json?v=1.51',{cache:'no-store'});
+  const response=await fetch('json/offline-shell.json?v=1.53',{cache:'no-store'});
   if(!response.ok)throw Error('HTTP '+response.status);
   const shell=await response.json();
   requireValidJsonShell(shell,{kind:'offline'});

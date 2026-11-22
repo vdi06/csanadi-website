@@ -13,7 +13,7 @@
 html[data-theme="light"] #site-map-overlay .compass26-sub-link{color:#152d44 ;background:linear-gradient(145deg,#fffaf0,#ead3a6) }
 html[data-theme="dark"] #site-map-overlay .compass26-sub-link{color:#fff5dd ;background:linear-gradient(145deg,#25465f,#081c31) }
  
-.entry-gate-leaf{background-image:linear-gradient(rgba(4,17,31,.1),rgba(3,15,29,.18)),url('../assets/media/web/entrance-gate.webp') ;background-repeat:no-repeat ;background-size:200% 100% ;border:0 ;box-shadow:0 0 35px rgba(3,13,24,.64) }
+.entry-gate-leaf{background-image:linear-gradient(rgba(4,17,31,.1),rgba(3,15,29,.18)),url('../../shared/assets/media/web/entrance-gate.webp') ;background-repeat:no-repeat ;background-size:200% 100% ;border:0 ;box-shadow:0 0 35px rgba(3,13,24,.64) }
 .entry-gate-left{background-position:left center ;border-right:2px solid rgba(227,184,99,.65) }
 .entry-gate-right{background-position:right center ;border-left:2px solid rgba(227,184,99,.65) }
 .entry-gate-leaf .entry-gate-bars,.entry-gate-leaf .entry-gate-emblem{display:none }
@@ -38,7 +38,7 @@ html[data-theme="dark"] #site-map-overlay .compass26-sub-link{color:#fff5dd ;bac
 @media(max-width:620px){.be2026-toc{padding:14px 10px}.be2026-toc-links{gap:6px}.be2026-toc a{padding:7px 9px;font-size:11px}#site-map-overlay .compass26-subtopics{gap:7px }}
 @media(prefers-reduced-motion:reduce){#site-map-overlay .compass26-subgroup{animation:none }#global-hero .hero2026-slide.is-active .hero2026-photo img{animation:none }#site-map-overlay .compass26-choice-link::before{display:none }#site-map-overlay .compass26-sub-link{transition:none }}
  
-.gate26-door{background-image:linear-gradient(180deg,rgba(2,14,26,.10),rgba(3,14,26,.23)),url('../assets/media/web/entrance-gate.webp') ;background-repeat:no-repeat ;background-size:200% 100% ;box-shadow:0 0 32px rgba(2,12,25,.52) ;border:0 }
+.gate26-door{background-image:linear-gradient(180deg,rgba(2,14,26,.10),rgba(3,14,26,.23)),url('../../shared/assets/media/web/entrance-gate.webp') ;background-repeat:no-repeat ;background-size:200% 100% ;box-shadow:0 0 32px rgba(2,12,25,.52) ;border:0 }
 .gate26-left{background-position:left center ;border-right:2px solid #d8b16a }
 .gate26-right{background-position:right center ;border-left:2px solid #d8b16a }
 .gate26-bars,.gate26-crest{display:none }

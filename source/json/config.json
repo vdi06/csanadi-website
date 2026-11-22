@@ -177,7 +177,7 @@
     }
   },
   "performance": {
-    "cacheVersion": "csanadi-r-v1.51",
+    "cacheVersion": "csanadi-r-v1.53",
     "maxCacheMegabytes": 50,
     "respectReducedMotion": true,
     "mediaCacheEntries": 55,
@@ -190,6 +190,40 @@
     "swUpdateCheckSeconds": 300
   },
   "runtime": {
+    "homeNavigation": {
+      "areasEyebrow": "AZ INTÉZMÉNY VILÁGA",
+      "areasTitle": "Fő tartalmi területeink",
+      "ariaLabel": "Kezdőoldali gyorsnavigáció",
+      "topLabel": "Oldal tetejére",
+      "searchLabel": "Keresés a honlapon ⌕",
+      "links": [
+        {"label":"Dokumentumok","href":"#/informaciok/dokumentumtar"},
+        {"label":"Interaktív felfedezőközpont","href":"#/iskolank/felfedezo"},
+        {"label":"Iskolai iránytű","href":"#/iskolank/iskolai-iranytu"},
+        {"label":"Iskolai műhely","href":"#/iskolank/iskolai-muhely"},
+        {"label":"Olimpiai örökség és tudástár","href":"#/sport/olimpiai-orokseg-es-tudastar"},
+        {"label":"Tanulás, sport és közösség","href":"#/oktatas/tanulas-es-kozosseg"}
+      ],
+      "foldGroups": [
+        {"title":"Napi központ és interaktív információk","sub":"A napi központ elemei","roles":["daily-hub"]},
+        {"title":"Sporteredmények és statisztikák","sub":"Sporttartalmak és adatok","roles":["sports-story","statistics"]},
+        {"title":"Sport és iskolai élet – képekben","sub":"Fotógaléria és közösségi felületek","roles":["gallery","life-gallery","social"]},
+        {"title":"Fedezd fel az iskolát","sub":"Képzési és ügyintézési információk","roles":["shortcuts","editorial","story","areas","documents","standard"]}
+      ]
+    },
+    "mobileHome": {
+      "blocks": [
+        "block:home-sports-successes",
+        "block:home-shortcuts",
+        "block:home-gallery-section",
+        "block:home-editorial-2026",
+        "block:home-section",
+        "block:content-review-20261114"
+      ],
+      "showNews": true,
+      "showDocuments": true,
+      "showStudentAchievements": true
+    },
     "subpageHero": {
       "intervalMs": 6500,
       "maxSlides": 3,

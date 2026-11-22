@@ -1,5 +1,5 @@
  
-const SOURCE=new URL('../json/data/daily-sports-news.json',import.meta.url);
+const SOURCE=new URL('../../shared/json/data/daily-sports-news.json',import.meta.url);
 const make=(tag,cls='',text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 function checkedNews(payload){
  if(payload?.schemaVersion!=='1.0.0'||payload?.collectionId!=='collection:napi-sporthirek'||!Array.isArray(payload.items))throw Error('Hibás sporthír-index.');
@@ -39,4 +39,4 @@ export function renderDailySportsNews(mode='home'){
  load();const interval=setInterval(()=>{if(!section.isConnected){clearInterval(interval);return;}if(!document.hidden)load();},settingNumber('runtime.timing.dailySportNewsRefreshMs'));
  return section;
 }
-import {setting,settingNumber} from './site-settings-2026.js?v=1.51';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.53';

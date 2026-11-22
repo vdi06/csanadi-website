@@ -1,4 +1,5 @@
-import {openImageViewer} from './site-viewers-v1-43-3.js?v=1.51';
+import {openImageViewer} from './site-viewers-v1-43-3.js?v=1.53';
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
 /* Iskolai iránytű – tíz nyilvános, személyesadat-mentes, statikus FTP-eszköz. */
 const $=id=>document.getElementById(id);
 const make=(tag,cls='',value)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(value!==undefined)e.textContent=String(value);return e;};
@@ -67,7 +68,7 @@ function mediaLibrary(){
  for(const c of [...new Set(items.map(m=>m.category))].sort()){const opt=make('option','',c);opt.value=c;select.append(opt);}
  const labelOf=m=>m.verifiedSchoolPhoto===true?'Ellenőrzött iskolai fotó':'Bemutató / illusztráció – nem igazolt eseménykép';
  function draw(){empty(out);visible=items.filter(m=>(select.value==='all'||m.category===select.value)&&normalize(m.title+' '+m.alt+' '+m.category).includes(normalize(query.value)));
-  for(const [i,m] of visible.slice(0,limit).entries()){const button=make('button','r22-media-card card');button.type='button';button.setAttribute('aria-label','Kép megnyitása: '+m.title);const picture=make('img','img-fluid');picture.src=m.thumb||m.src;picture.alt=m.alt||m.title;picture.loading='lazy';picture.decoding='async';const title=make('span');title.append(make('strong','',m.title),make('small','',labelOf(m)));button.append(picture,title);button.addEventListener('click',()=>openImageViewer(visible,i,{title:select.value==='all'?'Médiatár':select.value}));out.append(button);}
+  for(const [i,m] of visible.slice(0,limit).entries()){const button=make('button','r22-media-card card');button.type='button';button.setAttribute('aria-label','Kép megnyitása: '+m.title);const picture=make('img','img-fluid');picture.src=sharedAssetPath(m.thumb||m.src);picture.alt=m.alt||m.title;picture.loading='lazy';picture.decoding='async';const title=make('span');title.append(make('strong','',m.title),make('small','',labelOf(m)));button.append(picture,title);button.addEventListener('click',()=>openImageViewer(visible,i,{title:select.value==='all'?'Médiatár':select.value}));out.append(button);}
   more.hidden=visible.length<=limit;if(!visible.length)out.append(make('p','','Nincs a keresésnek megfelelő kép.'));
  }more.addEventListener('click',()=>{limit+=max;draw();});query.addEventListener('input',()=>{limit=max;draw();});select.addEventListener('change',()=>{limit=max;draw();});draw();
 }
@@ -104,11 +105,11 @@ function printer(){const controls=$('print-choices'),out=$('print-preview'),stat
  };$('print-prepare').addEventListener('click',compose);$('print-go').addEventListener('click',()=>{if(compose())window.print();});compose();
 }
 async function main(){const applyTheme=startTheme();
- try{config=await load('json/config.json');applyTheme();const path=config.runtime?.round22?.dataPath;
+ try{config=await load('../shared/json/config.json');applyTheme();const path=config.runtime?.round22?.dataPath;
   if(typeof path!=='string'||!/^data\/[a-z0-9-]+\.json$/.test(path))throw Error('A 22-es központi adatútvonal hiányzik.');
   const qrPath=config.runtime?.round22?.qrIndexPath;
   if(typeof qrPath!=='string'||!/^data\/[a-z0-9-]+\.json$/.test(qrPath))throw Error('Hiányzó QR-index útvonal a központi beállításban.');
-  const entries=await Promise.allSettled([load('json/'+path),load('json/data/events.json'),load('json/data/photo-gallery.json'),load('json/data/documents.json'),load('json/'+qrPath)]);
+  const entries=await Promise.allSettled([load('../shared/json/'+path),load('../shared/json/data/events.json'),load('../shared/json/data/photo-gallery.json'),load('../shared/json/data/documents.json'),load('../shared/json/'+qrPath)]);
   if(entries[0].status!=='fulfilled')throw entries[0].reason;content=entries[0].value;
   if(!Array.isArray(content.openDayStations)||!Array.isArray(content.glossary)||content.release!==22)throw Error('Hibás 22-es iránytűadat-szerkezet.');
   eventData=entries[1].status==='fulfilled'?entries[1].value:{items:[]};mediaData=entries[2].status==='fulfilled'?entries[2].value:{items:[]};docData=entries[3].status==='fulfilled'?entries[3].value:{documents:[]};qrData=entries[4].status==='fulfilled'?entries[4].value:{entries:[]};

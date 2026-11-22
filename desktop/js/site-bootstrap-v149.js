@@ -1,8 +1,9 @@
-/** Csanádi 1.51: a teljes látható oldalkeret JSON-ból épül fel. */
+/** Csanádi 1.53: a teljes látható oldalkeret JSON-ból épül fel. */
 import {appendJsonStyles,installJsonDocument,safeJsonURL} from './json-dom-v149.js';
 import {requireValidJsonShell} from './json-validator-v149.js';
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
 
-const SHELL_URL='json/site-shell.json?v=1.51';
+const SHELL_URL='json/site-shell.json?v=1.53';
 let shell=null;
 
 function emergency(error){
@@ -51,7 +52,7 @@ function prepareGate(config){
  document.documentElement.classList.add('cs-gate-pending');
  if(safeJsonURL(gate.firstFrame)){
   const preload=document.createElement('link');preload.rel='preload';
-  preload.as='image';preload.type='image/webp';preload.href=gate.firstFrame;
+  preload.as='image';preload.type='image/webp';preload.href=sharedAssetPath(gate.firstFrame);
   document.head.append(preload);
  }
  setTimeout(()=>{document.documentElement.classList.remove('cs-gate-pending');
@@ -68,8 +69,8 @@ function preloadLanding(config){
   Number.isFinite(item[1]));
  if(!files.length)return;
  const link=document.createElement('link');link.rel='preload';link.as='image';link.type='image/webp';
- link.href=selected.base+files.at(-1)[0];
- link.imageSrcSet=files.map(([name,width])=>selected.base+name+' '+width+'w').join(', ');
+ link.href=sharedAssetPath(selected.base+files.at(-1)[0]);
+ link.imageSrcSet=files.map(([name,width])=>sharedAssetPath(selected.base+name)+' '+width+'w').join(', ');
  link.imageSizes=data.sizes||'100vw';link.fetchPriority='high';document.head.append(link);
 }
 
@@ -115,7 +116,7 @@ async function start(){
   const hero=document.getElementById('global-hero');
   const fallback=hero?.getAttribute('data-cs-mb-fallback-image')||'';
   if(/^assets\/media\/[a-z0-9/_\-.]+$/i.test(fallback)&&!fallback.includes('..'))
-   hero.style.setProperty('--cs-mb-fallback-image',`url("${fallback}")`);
+   hero.style.setProperty('--cs-mb-fallback-image',`url("${sharedAssetPath(fallback)}")`);
   setTheme(shell);prepareGate(shell);preloadLanding(shell);
   // A korábbi renderblokkoló stíluslapokhoz hasonlóan a tartalom csak a
   // helyi stílusok rövid várakozása után látható; CDN-hiba nem állítja le.

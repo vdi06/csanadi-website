@@ -1,4 +1,4 @@
-/** Csanádi 1.51: ugyanaz a JSON-szerkezetellenőrzés böngészőben és kiadáskor. */
+/** Csanádi 1.53: ugyanaz a JSON-szerkezetellenőrzés böngészőben és kiadáskor. */
 import {JSON_ALLOWED_ATTR,JSON_ALLOWED_TAGS,safeJsonURL} from './json-dom-v149.js';
 
 export function validateJsonShell(config,{kind='site',maxNodes=3000}={}){

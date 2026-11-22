@@ -1,5 +1,5 @@
 import {fetchJSONResilient} from './fetch-resilience-v1-39-7.js';
-const ROOT = new URL('../json/', import.meta.url);
+const ROOT = new URL('../../shared/json/', import.meta.url);
 const PATH_RE = /^(?:pages\/)[a-z0-9/_-]+\.json$/;
 const ACCENTS = /[\u0300-\u036f]/g;
 export const norm = value => String(value ?? '').normalize('NFD').replace(ACCENTS, '').toLocaleLowerCase('hu-HU');

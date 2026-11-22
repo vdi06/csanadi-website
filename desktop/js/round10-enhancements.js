@@ -1,4 +1,4 @@
-import {settingNumber} from './site-settings-2026.js?v=1.51';
+import {settingNumber} from './site-settings-2026.js?v=1.53';
 const ele=(tag,cls='',text)=>{const item=document.createElement(tag);if(cls)item.className=cls;if(text!==undefined)item.textContent=String(text);return item;};
 const norm=text=>String(text||'').toLocaleLowerCase('hu-HU').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
 function saveText(filename,content,type){const url=URL.createObjectURL(new Blob([content],{type}));const link=ele('a');link.href=url;link.download=filename;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);}
@@ -6,7 +6,7 @@ function csv(value){return '"'+String(value??'').replace(/"/g,'""')+'"';}
 async function makeDocumentList(status){
  try{
   status.textContent='Dokumentumok előkészítése…';
-  const response=await fetch(new URL('../json/data/documents.json',import.meta.url),{cache:'no-store'});
+  const response=await fetch(new URL('../../shared/json/data/documents.json',import.meta.url),{cache:'no-store'});
   if(!response.ok)throw Error('A dokumentum-JSON nem tölthető be.');
   const data=await response.json();
   const docs=(data.documents||[]).filter(item=>item.status==='published');

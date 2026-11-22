@@ -1,11 +1,12 @@
 
 
 
-import {openImageViewer} from './site-viewers-v1-43-3.js?v=1.51';
+import {openImageViewer} from './site-viewers-v1-43-3.js?v=1.53';
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
 const e=(tag,cls='',text)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=String(text);return x;};
 const add=(target,...kids)=>{kids.filter(Boolean).forEach(k=>target.append(k));return target;};
 const safe=(s)=>String(s||'').replace(/[^a-zA-Z0-9À-ž _.,!?–:()/-]/g,'').slice(0,220);
-async function dataJSON(path){const r=await fetch('json/data/'+path,{cache:'no-store'});if(!r.ok)throw new Error('A '+path+' nem tölthető be ('+r.status+')');return r.json();}
+async function dataJSON(path){const r=await fetch('../shared/json/data/'+path,{cache:'no-store'});if(!r.ok)throw new Error('A '+path+' nem tölthető be ('+r.status+')');return r.json();}
 const note=(txt)=>e('p','experience-data-note',txt);
 const timeZone=()=>setting('modules2026.clock.timezone');
 const parts=d=>Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:timeZone(),year:'numeric',month:'2-digit',day:'2-digit',weekday:'short',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).formatToParts(d).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
@@ -136,7 +137,7 @@ export function renderLifeGallery(){
   const items=entries.filter(x=>filter==='mind'||x.category===filter);
   results.textContent=`${Math.min(limit,items.length)} / ${items.length} kép`;
   grid.replaceChildren();items.slice(0,limit).forEach((item,i)=>{
-   const tile=e('button','photo-tile');tile.type='button';tile.setAttribute('aria-label',item.title+' – kép nagyítása');const photo=e('img');photo.src=item.src;photo.alt=item.alt;photo.loading=i<8?'eager':'lazy';photo.decoding='async';
+   const tile=e('button','photo-tile');tile.type='button';tile.setAttribute('aria-label',item.title+' – kép nagyítása');const photo=e('img');photo.src=sharedAssetPath(item.src);photo.alt=item.alt;photo.loading=i<8?'eager':'lazy';photo.decoding='async';
    add(tile,photo,e('span','photo-tile-caption',item.title));tile.addEventListener('click',()=>openImageViewer(items,i,{title:choices.find(x=>x[0]===filter)?.[1]||'Életképek'}));grid.append(tile);
   });more.hidden=items.length<=limit;
  }
@@ -195,4 +196,4 @@ export function renderStaffCenter(){
  }).catch(err=>grid.append(e('p','experience-error',err.message)));
  return wrap;
 }
-import {setting,settingNumber} from './site-settings-2026.js?v=1.51';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.53';

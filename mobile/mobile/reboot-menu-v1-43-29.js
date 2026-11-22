@@ -1,5 +1,6 @@
 /** Nulláról készült mobilos háromszintű menü; a desktop mega-/iránytűmenü nem módosul. */
-import {optionalSetting} from '../js/site-settings-2026.js?v=1.51';
+import {optionalSetting} from '../js/site-settings-2026.js?v=1.53';
+import {sharedAssetPath} from '../js/shared-paths-v152.js?v=1.53';
 // A képernyőosztályt a platformválasztó dönti el: érintős telefon fekvő
 // állásban 768 px fölött is mobil, de ott a rövid magasság miatt rács kell.
 export const PHONE_QUERY='(max-width: 768px), (pointer: coarse) and (hover: none)';
@@ -31,7 +32,7 @@ export function createPhoneRadial({container,title,description,overview,center,
  const chosen=make('a','cs-mb-menu-overview','A témakör oldalának megnyitása');
  const grid=make('nav','cs-mb-menu-grid');grid.setAttribute('aria-label','Menüpontok');
  const centerpiece=make('div','cs-mb-menu-center');
- const crest=make('img');crest.src=optionalSetting('site.crestImagePath')||'';crest.alt='';
+ const crest=make('img');crest.src=sharedAssetPath(optionalSetting('site.crestImagePath'))||'';crest.alt='';
  const centerText=make('span','','CSANÁDI');centerpiece.append(crest,centerText);
  const orbit=make('div','cs-mb-menu-orbit');orbit.append(grid,centerpiece);
  screen.append(back,crumbs,chosen,orbit);container.append(screen);

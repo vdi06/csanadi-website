@@ -1,6 +1,7 @@
-import {createPicture,mediaItem} from './media.js?v=1.51';
-import {setting,settingNumber,isWithinConfiguredWindow} from './site-settings-2026.js?v=1.51';
-import {createFreshMobileHero} from '../mobile/reboot-hero-v1-43-29.js?v=1.51';
+import {createPicture,mediaItem} from './media.js?v=1.53';
+import {setting,settingNumber,isWithinConfiguredWindow} from './site-settings-2026.js?v=1.53';
+import {createFreshMobileHero} from '../mobile/reboot-hero-v1-43-29.js?v=1.53';
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
 const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node;};
 const safeRoute=value=>typeof value==='string'&&/^#\/[a-z0-9/\-]*$/i.test(value)?value:'#/';
 export function renderPremiumHero(block){
@@ -41,7 +42,7 @@ export function renderPremiumHero(block){
   const source=variants.sort((a,b)=>a.width-b.width).find(v=>v.width>=needed)||variants.at(-1)||entry.original;
   if(!source?.path)return;
   prepared.add(next);
-  const preload=new Image();preload.decoding='async';preload.fetchPriority='low';preload.src=source.path;
+  const preload=new Image();preload.decoding='async';preload.fetchPriority='low';preload.src=sharedAssetPath(source.path);
   preload.addEventListener('error',()=>prepared.delete(next),{once:true});
   // A böngésző gyorsítótára őrzi a kész állományt, nem tartunk 30 DOM-képet.
  }

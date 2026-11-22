@@ -81,7 +81,7 @@ html[data-theme=dark] #app :is(input,textarea,select) {color-scheme:dark;}
   width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;flex:0 0 44px!important;
  }
  #app :is(h1,h2,h3,h4) {overflow-wrap:anywhere;line-height:1.25!important;}
- #app :is(p,li) {line-height:1.52;}
+ #app :is(p,li) {line-height:1.53;}
  #app :is(.cs92-news-stream,.cs92-sport-fields,.cs92-documents-layout) {
   grid-template-columns:minmax(0,1fr)!important;
  }

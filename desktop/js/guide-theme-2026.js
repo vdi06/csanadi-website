@@ -25,6 +25,6 @@
  const restore=()=>{try{const value=localStorage.getItem('csanadi-theme');selected=['system','light','dark'].includes(value)?value:'system';}catch{/* A memória szerinti kézi választás marad érvényben. */}apply();};
  addEventListener('pageshow',restore);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)restore();});
- fetch('json/config.json',{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}).then(data=>{settings=data;apply();}).catch(error=>console.warn('A kézikönyv központi színpalettája nem érhető el:',error));
+ fetch('../shared/json/config.json',{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}).then(data=>{settings=data;apply();}).catch(error=>console.warn('A kézikönyv központi színpalettája nem érhető el:',error));
  apply();
 })();

@@ -9,6 +9,10 @@ import {evaluateReleaseGate,synchronizePageIndex,validateReleaseGraph,validateRe
 import {readVerifiedZip} from '../js/zip-integrity-v1-42-26.js?v=1.43.3';
 import {validateJsonShell} from '../js/json-validator-v149.js?v=1.51';
 const ROOT=new URL('../',import.meta.url);
+// A szerkesztő kanonikus kulcsai változatlanok, a futó JSON/képek közösek.
+const sharedURL=relative=>new URL(
+ (relative.startsWith('json/')&&relative!=='json/site-shell.json')||relative.startsWith('assets/')
+  ?'../shared/'+relative:relative,ROOT);
 const PATHS={media:'json/media-library.json',documents:'json/data/documents.json',config:'json/config.json',manifest:'release-manifest.json',pageIndex:'json/page-index.json',structure:'json/structure.json',shell:'json/site-shell.json'};
 const $=(sel,root=document)=>root.querySelector(sel);
 const node=(tag,cls,txt)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(txt!==undefined)el.textContent=String(txt);return el;};
@@ -43,7 +47,7 @@ class Studio{
   if(!this.state||!detail?.path||!detail.page)return;
   try{
    if(!this.sourcePages.has(detail.path)){
-    const response=await fetch(new URL(detail.path,ROOT),{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
+    const response=await fetch(sharedURL(detail.path),{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
     this.sourcePages.set(detail.path,await response.json());
    }
    this.stagePage(detail.path,detail.page,false);
@@ -54,7 +58,7 @@ class Studio{
  }
  async load(){
   const results=await Promise.all(Object.values(PATHS).map(async path=>{
-   const response=await fetch(new URL(path,ROOT),{cache:'no-store'});
+   const response=await fetch(sharedURL(path),{cache:'no-store'});
    if(!response.ok)throw Error(path+': HTTP '+response.status);
    return response.json();
   }));
@@ -68,7 +72,7 @@ class Studio{
   let drafts=[];try{drafts=listSavedDrafts(this.storage(),this.release());}catch(error){this.draftWarnings.push('A helyi tervezetek betöltése sikertelen: '+error.message);return;}
   for(const record of drafts){
    try{
-    const response=await fetch(new URL(record.path,ROOT),{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
+    const response=await fetch(sharedURL(record.path),{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
     const original=await response.json();this.sourcePages.set(record.path,deepCopy(original));
     const page=restorePageDraft(original,record);
     const history=new PageHistory(original);history.commit(page);this.pageHistories.set(record.path,history);
@@ -143,7 +147,7 @@ class Studio{
   const text=String(label||'').trim();if(!text||text.length>150)throw Error('A menüfelirat 1–150 karakter legyen.');
   const source='json/'+relative;
   if(!this.sourcePages.has(source)){
-   const response=await fetch(new URL(source,ROOT),{cache:'no-store'});
+   const response=await fetch(sharedURL(source),{cache:'no-store'});
    if(!response.ok)throw Error('Az oldal nem tölthető be: '+relative);
    this.sourcePages.set(source,await response.json());
   }
@@ -241,7 +245,7 @@ class Studio{
      for(const record of previous){
       if(this.pageDrafts.has(record.path)){skipped++;continue;}
       try{
-       const response=await fetch(new URL(record.path,ROOT),{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
+       const response=await fetch(sharedURL(record.path),{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
        const original=await response.json(),page=restorePageDraft(original,record);
        this.sourcePages.set(record.path,original);this.stagePage(record.path,page);
        if(oldVersion==='1.43.0'||oldVersion==='1.42.26'||oldVersion==='1.42.25'){
@@ -264,7 +268,7 @@ class Studio{
   parent.replaceChildren();const url='json/'+path;
   try{
    if(!this.sourcePages.has(url)){
-    const response=await fetch(new URL(url,ROOT),{cache:'no-store'});
+    const response=await fetch(sharedURL(url),{cache:'no-store'});
     if(!response.ok)throw Error(url+': HTTP '+response.status);
     this.sourcePages.set(url,await response.json());
    }
@@ -414,7 +418,7 @@ class Studio{
    table.replaceChildren();const q=makeSlug(search.field.value);
    const items=this.state.media.items.filter(x=>!q||makeSlug(x.id+' '+x.alt+' '+x.caption).includes(q));
    for(const m of items.slice(0,250)){
-    const row=node('div','cs-tool-item');const img=node('img');img.src=new URL(m.original.path,ROOT).href;img.alt='';img.loading='lazy';
+    const row=node('div','cs-tool-item');const img=node('img');img.src=sharedURL(m.original.path).href;img.alt='';img.loading='lazy';
     const desc=node('div','cs-tool-item-content');desc.append(node('strong','',m.id),node('span','',m.alt));
     const buttons=node('div','cs-tool-item-actions');this.addButton(buttons,'Szerkesztés',()=>this.mediaForm(parent,m.id));this.addButton(buttons,'Törlés',()=>this.deleteMedia(m.id),'cs-tool-danger');
     row.append(img,desc,buttons);table.append(row);
@@ -478,7 +482,7 @@ class Studio{
   const paths=Object.keys(this.state.manifest.files).filter(p=>p.endsWith('.json')&&!Object.values(PATHS).includes(p));
   const result=[];let i=0;
   for(const path of paths){
-   try{const response=await fetch(new URL(path,ROOT),{cache:'no-store'});if(response.ok)result.push([path,await response.text()]);}catch{}
+   try{const response=await fetch(sharedURL(path),{cache:'no-store'});if(response.ok)result.push([path,await response.text()]);}catch{}
    if(++i%25===0)this.status(`Hivatkozások ellenőrzése: ${i}/${paths.length}`);
   }
   this.loadedTexts=result;return result;
@@ -622,7 +626,7 @@ class Studio{
    while(queue.length){
     const path=queue.shift();
     if(this.pageDrafts.has(path)){pages.set(path,deepCopy(this.pageDrafts.get(path)));continue;}
-    const response=await fetch(new URL(path,ROOT),{cache:'no-store'});
+    const response=await fetch(sharedURL(path),{cache:'no-store'});
     if(!response.ok)throw Error('Hiányzó oldal: '+path+' (HTTP '+response.status+')');
     const page=await response.json();pages.set(path,page);
     if(!this.sourcePages.has(path))this.sourcePages.set(path,deepCopy(page));
@@ -791,7 +795,7 @@ class Studio{
      const replacement=this.changed.get(path);let bytes;
      if(replacement){bytes=replacement;}
      else{
-      const result=await fetch(new URL(path,ROOT),{cache:'no-store'});
+      const result=await fetch(sharedURL(path),{cache:'no-store'});
       if(!result.ok)throw Error('Hiányzó kiadási állomány: '+path+' (HTTP '+result.status+')');
       bytes=new Uint8Array(await result.arrayBuffer());
       if(bytes.byteLength!==original.sizeBytes||await sha256(bytes)!==original.sha256)throw Error('A kiinduló fájl ellenőrzőösszege eltér: '+path);

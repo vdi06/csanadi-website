@@ -1,9 +1,9 @@
 
  
-const SOURCE=new URL('../json/data/official-news.json',import.meta.url);
+const SOURCE=new URL('../../shared/json/data/official-news.json',import.meta.url);
 import {inspectNewsRecord} from './news-policy-2026.js';
-import {setting} from './site-settings-2026.js?v=1.51';
-const IMAGE_ROOT='assets/media/web/';
+import {setting} from './site-settings-2026.js?v=1.53';
+const IMAGE_ROOT='../shared/assets/media/web/';
 const ILLUSTRATIONS={Sport:'sport-1600.webp',Felvételi:'admissions-1600.webp',Oktatás:'oktatas-1600.webp',Közlemény:'community-1600.webp',Archívum:'our-school-1600.webp',Iskolánk:'our-school-1600.webp'};
 const el=(tag,cls='',txt)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=String(txt);return n;};
 const add=(p,...nodes)=>{p.append(...nodes);return p;};
@@ -110,4 +110,4 @@ export function renderNewsCenter(route){
  }).catch(err=>{count.textContent='Hírbetöltési hiba';grid.replaceChildren(el('p','dfg-empty',err.message));});
  return section;
 }
-import {settingNumber} from './site-settings-2026.js?v=1.51';
+import {settingNumber} from './site-settings-2026.js?v=1.53';

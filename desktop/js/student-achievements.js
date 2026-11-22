@@ -1,4 +1,5 @@
  
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
 const el=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
 const iso=s=>typeof s==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(s)&&!Number.isNaN(Date.parse(s+'T00:00:00Z'));
 const localDate=()=>new Intl.DateTimeFormat('sv-SE',{timeZone:setting('modules2026.clock.timezone'),year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
@@ -17,14 +18,14 @@ function validate(root){
  }
  return result;
 }
-async function load(){const source=new URL('../json/'+setting('runtime.studentAchievements.dataPath'),import.meta.url);const r=await fetch(source,{cache:'no-store'});if(!r.ok)throw Error('A sporteredmények nem érhetők el.');return validate(await r.json()).filter(item=>!item.isDemo || setting('privacy.allowFictionalStudentSamples')===true);}
+async function load(){const source=new URL('../../shared/json/'+setting('runtime.studentAchievements.dataPath'),import.meta.url);const r=await fetch(source,{cache:'no-store'});if(!r.ok)throw Error('A sporteredmények nem érhetők el.');return validate(await r.json()).filter(item=>!item.isDemo || setting('privacy.allowFictionalStudentSamples')===true);}
 const actualPublication=x=>x.isDemo?datePlus(localDate(),-x.demoDaysAgo):x.publishedAt;
 const actualEventDate=x=>x.isDemo?datePlus(localDate(),-x.demoDaysAgo-1):x.eventDate;
 const isFeatured=x=>{const pub=actualPublication(x);if(!pub)return false;const d=daysSince(pub,localDate());return d>=0&&d<settingNumber('runtime.studentAchievements.featuredDays');};
 function picture(x){
  if(!x.isDemo&&(x.imageApproved!==true||x.photoIsOfStudent!==true))return null;
  if(!/^assets\/media\/web\/[a-z0-9/_-]+\.webp$/.test(x.image||''))return null;
- const img=el('img');img.src=x.image;img.alt=x.isDemo?x.sport+' – sportos témájú kép':x.studentName+' – '+x.sport;img.loading='lazy';img.decoding='async';img.addEventListener('error',()=>img.remove());return img;
+ const img=el('img');img.src=sharedAssetPath(x.image);img.alt=x.isDemo?x.sport+' – sportos témájú kép':x.studentName+' – '+x.sport;img.loading='lazy';img.decoding='async';img.addEventListener('error',()=>img.remove());return img;
 }
 function card(x,featured){
  const article=el('article','student-success-card'+(featured?' is-featured':'')+(x.isDemo?' is-example':''));
@@ -101,4 +102,4 @@ export function renderStudentAchievements(view='home'){
   const timer=setInterval(()=>{if(!section.isConnected){clearInterval(timer);return;}if(!section.querySelector(':focus-within'))mount(section,items,view);},settingNumber('runtime.timing.studentAchievementsRefreshMs'));
  }).catch(err=>{console.warn(err);section.replaceChildren(el('p','student-success-loading','A tanulói eredmények átmenetileg nem tölthetők be.'));});return section;
 }
-import {setting,settingNumber} from './site-settings-2026.js?v=1.51';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.53';

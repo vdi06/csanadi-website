@@ -1,9 +1,10 @@
-import {formatBytes as formatSize} from './format-bytes.js?v=1.51';
-import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.51';
+import {formatBytes as formatSize} from './format-bytes.js?v=1.53';
+import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.53';
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
  
 const ROOT = new URL('../', import.meta.url);
-const REGISTRY = new URL('../json/data/documents.json', import.meta.url);
-const SCHEMA = new URL('../json/schemas/documents.schema.json', import.meta.url);
+const REGISTRY = new URL('../../shared/json/data/documents.json', import.meta.url);
+const SCHEMA = new URL('../../shared/json/schemas/documents.schema.json', import.meta.url);
 const STATE_KEY='csanadi-2026-document-filters-v1';
 const SEARCH_KEY='csanadi-2026-document-saved-v1';
 const KIND={guide:'Segédlet',form:'Nyomtatvány',policy:'Szabályzat',publication:'Közzététel',other:'Egyéb'};
@@ -103,7 +104,7 @@ export function documentRegistryError(){return error;}
 function loadState(){const defaults=initialFilters(),stored=localRead(STATE_KEY,{});return {...defaults,...Object.fromEntries(Object.keys(defaults).filter(k=>Object.hasOwn(stored,k)).map(k=>[k,stored[k]]))};}
 function saveState(s){localWrite(STATE_KEY,s);}
 const formatDate=(s)=>{try{return new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',day:'numeric'}).format(new Date(s+'T12:00:00'));}catch{return s;}};
-const docURL=(d)=>d.filePath?new URL(d.filePath,ROOT).href:'';
+const docURL=(d)=>d.filePath?new URL(sharedAssetPath(d.filePath),ROOT).href:'';
 const safeText=x=>String(x||'');
 function routeCategory(route){
  const last=route.split('/').at(-1);return {'szabalyzatok':'intezmenyi-szabalyzat','nyomtatvanyok':'intezmenyi-nyomtatvany','kozzeteteli-lista':'intezmenyi-kozzetetel'}[last]||'all';
@@ -160,7 +161,7 @@ function renderCenterContents(mount,route,initial){
  manual.append(el('p','doc-kicker','TELJES FELHASZNÁLÓI ÉS KARBANTARTÓI DOKUMENTÁCIÓ'),el('h3',null,'A Csanádi Sportiskola 2026 teljes használati kézikönyve'),el('p',null,'66 tartalmi oldal, 10 karbantartó eszköz, a főmenü, a képes tartalomváltó, a keresés, a médiák, a dokumentumkezelés és az FTP-kiadás lépésről lépésre.'));
  const manualLinks=el('div','csn26-manual-links');
  const online=el('a','doc-center-link','Kereshető webes kézikönyv megnyitása');online.href=new URL('#/informaciok/utmutato',ROOT).href;
- const pdf=el('a','doc-center-link','PDF-kézikönyv letöltése');pdf.href=new URL('assets/documents/csanadi-website-complete-usage-guide-2026.pdf',ROOT).href;pdf.download='csanadi-website-complete-usage-guide-2026.pdf';
+ const pdf=el('a','doc-center-link','PDF-kézikönyv letöltése');pdf.href=new URL(sharedAssetPath('assets/documents/csanadi-website-complete-usage-guide-2026.pdf'),ROOT).href;pdf.download='csanadi-website-complete-usage-guide-2026.pdf';
  const pdfView=htmlButton('PDF megtekintése','btn btn-outline-primary',()=>{const guide=registry.data.documents.find(d=>d.fileName==='csanadi-website-complete-usage-guide-2026.pdf');if(guide)openPreview(guide);});manualLinks.append(online,pdfView,pdf);manual.append(manualLinks);mount.append(manual);
  const officialLinks=[
   ['Intézményi alapdokumentumok','#/informaciok/dokumentumtar','intezmenyi-szabalyzat'],
@@ -263,4 +264,4 @@ export function renderDocumentQuickLinks(){
  }container.append(list);const a=el('a','doc-center-link','Dokumentumtár megnyitása →');a.href='#/informaciok/dokumentumtar';container.append(a);s.append(container);return s;
 }
 export function documentRefreshSeconds(){return settingNumber('runtime.documents.refreshSeconds');}
-import {setting,settingNumber} from './site-settings-2026.js?v=1.51';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.53';

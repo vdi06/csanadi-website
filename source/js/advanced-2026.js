@@ -2,7 +2,8 @@
 
 
  
-import {renderDigitalClock} from './experience-2026.js?v=1.51';
+import {renderDigitalClock} from './experience-2026.js?v=1.53';
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
 const BASE='json/data/';
 const ZONE=()=>setting('modules2026.clock.timezone');
 const e=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
@@ -25,7 +26,7 @@ async function load(name){const r=await fetch(BASE+name,{cache:'no-store'});if(!
 const heading=(over,title,desc)=>{const box=e('div','experience-section-head');add(box,e('span','experience-eyebrow',over),e('h2','experience-title',title));if(desc)box.append(e('p','experience-lead',desc));return box;};
 
  
-import {showGateEntrance} from './gate-sequence-v1-42-17.js?v=1.51';
+import {showGateEntrance} from './gate-sequence-v1-42-17.js?v=1.53';
 export function openEntrancePortal(options={}){showGateEntrance(options);}
 
 function bindPortalButton(){const replay=document.getElementById('portal-replay');if(replay&&!replay.dataset.wired){replay.dataset.wired='1';replay.addEventListener('click',()=>openEntrancePortal({force:true}));}}
@@ -151,9 +152,9 @@ export function renderStaffCenter(){const wrap=e('section','staff-center hub26-s
  const mode=e('div','staff-filter-group');const groupBtn=btn('Munkaközösségek','staff-filter',()=>{tab='teams';draw();}),peopleBtn=btn('Pedagógusok','staff-filter',()=>{tab='people';draw();});const category=e('select','hub26-select');category.setAttribute('aria-label','Munkaterület szűrése');for(const [value,title] of [['all','Minden terület'],['oktatas','Oktatás'],['sport','Sport'],['kozosseg','Közösség']]){const opt=e('option','',title);opt.value=value;category.append(opt);}
  add(mode,peopleBtn,groupBtn);add(toolbar,search,category,mode);const total=e('p','hub26-note','Adatok betöltése…'),grid=e('div','staff-team-grid'),foot=e('p','hub26-note','');add(wrap,toolbar,total,grid,foot);let value=null,tab='teams';
  function matches(q,fields){return slug(fields.join(' ')).includes(slug(q));}
- function showProfile(p){const dialog=e('dialog','hub26-staff-dialog'),box=e('div','hub26-staff-profile');const close=btn('Bezárás ×','hub26-pill',()=>dialog.close());add(box,close,e('h2','',p.fullName),e('p','',p.role||'Pedagógus'),e('p','',p.bio),e('p','',p.subjects.join(' · ')));if(p.portrait&&p.portraitApproved){const img=e('img');img.src=p.portrait;img.alt=p.fullName+' jóváhagyott portréja';box.prepend(img);}dialog.append(box);document.body.append(dialog);dialog.addEventListener('close',()=>dialog.remove(),{once:true});dialog.showModal();}
+ function showProfile(p){const dialog=e('dialog','hub26-staff-dialog'),box=e('div','hub26-staff-profile');const close=btn('Bezárás ×','hub26-pill',()=>dialog.close());add(box,close,e('h2','',p.fullName),e('p','',p.role||'Pedagógus'),e('p','',p.bio),e('p','',p.subjects.join(' · ')));if(p.portrait&&p.portraitApproved){const img=e('img');img.src=sharedAssetPath(p.portrait);img.alt=p.fullName+' jóváhagyott portréja';box.prepend(img);}dialog.append(box);document.body.append(dialog);dialog.addEventListener('close',()=>dialog.remove(),{once:true});dialog.showModal();}
  function draw(){if(!value)return;groupBtn.setAttribute('aria-pressed',String(tab==='teams'));peopleBtn.setAttribute('aria-pressed',String(tab==='people'));grid.replaceChildren();const q=search.value,cat=category.value;
-  if(tab==='teams'){const rows=value.teams.filter(x=>(cat==='all'||x.category===cat)&&matches(q,[x.name,x.description]));total.textContent=rows.length+' bemutatott munkaterület';rows.forEach((t,i)=>{const card=e('article','staff-team-card');const image=e('div','staff-team-photo'),img=e('img');img.src=`assets/media/web/school-life-${pad(18+(i*4)%30)}.webp`;img.loading='lazy';img.alt='Iskolai témájú kép';image.append(img);const body=e('div','staff-team-body');add(body,e('span','staff-team-kicker',t.category==='sport'?'SPORT':t.category==='kozosseg'?'KÖZÖSSÉG':'OKTATÁS'),e('h3','',t.name),e('p','',t.description));card.append(image,body);grid.append(card);});}
+  if(tab==='teams'){const rows=value.teams.filter(x=>(cat==='all'||x.category===cat)&&matches(q,[x.name,x.description]));total.textContent=rows.length+' bemutatott munkaterület';rows.forEach((t,i)=>{const card=e('article','staff-team-card');const image=e('div','staff-team-photo'),img=e('img');img.src=sharedAssetPath(`assets/media/web/school-life-${pad(18+(i*4)%30)}.webp`);img.loading='lazy';img.alt='Iskolai témájú kép';image.append(img);const body=e('div','staff-team-body');add(body,e('span','staff-team-kicker',t.category==='sport'?'SPORT':t.category==='kozosseg'?'KÖZÖSSÉG':'OKTATÁS'),e('h3','',t.name),e('p','',t.description));card.append(image,body);grid.append(card);});}
   else {const rows=value.staff.filter(x=>(cat==='all'||x.teamIds.some(id=>value.teams.find(t=>t.id===id)?.category===cat))&&matches(q,[x.fullName,x.role,x.bio,...x.subjects]));total.textContent=rows.length+' nyilvánosan jóváhagyott pedagógusprofil';rows.forEach(p=>{const card=e('article','hub26-staff-person');add(card,e('h3','',p.fullName),e('p','',p.role||''),e('p','',p.subjects.join(' · ')),btn('Részletes bemutatkozás ↗','hub26-pill',()=>showProfile(p)));grid.append(card);});}
   if(!grid.childElementCount)grid.append(note(tab==='people'?'Jelenleg nincs jóváhagyott, közzétehető pedagógusprofil. A személyes adatok csak intézményi jóváhagyás után kerülnek fel.':'Nincs találat; próbálj más keresést.'));
  }
@@ -189,4 +190,4 @@ function embedBlock(items){const eligible=items.filter(x=>publishedChannel(x)&&x
 export function initSocialLinks(){bindPortalButton();socialData().then(v=>{for(const id of ['social-header','social-footer']){const mount=document.getElementById(id);if(mount)mount.replaceChildren(socialLinks(v.items,true));}}).catch(err=>console.warn('Közösségi adatok:',err.message));}
 export function renderSocialSection(){const s=e('section','social-feature-section section-wrap'),c=e('div','container-xxl');add(c,heading('KÖZÖSSÉG ÉS MEGOSZTÁS','Kapcsolódjunk az iskola közösségéhez','Közösségi elérhetőségek és az oldal megosztása – az adatvédelem tiszteletben tartásával.'));const box=e('div','social-feature-box'),intro=e('div','social-feature-copy'),data=e('div','social-feature-items');add(intro,e('h3','','Egy történet több felületen is folytatódhat.'),e('p','','A hitelesített intézményi profilok gyorselérésként jelennek meg. A beágyazásokhoz a látogató külön hozzájárulása szükséges.'),btn('Az oldal megosztása','hub26-pill',nativeShare));data.append(note('Közösségi adatok betöltése…'));add(box,intro,data);c.append(box);s.append(c);
  socialData().then(v=>{data.replaceChildren(socialLinks(v.items),embedBlock(v.items));}).catch(err=>{data.textContent='Közösségi modul átmenetileg nem elérhető: '+err.message;});return s;}
-import {setting,settingNumber} from './site-settings-2026.js?v=1.51';
+import {setting,settingNumber} from './site-settings-2026.js?v=1.53';

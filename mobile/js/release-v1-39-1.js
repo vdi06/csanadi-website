@@ -18,7 +18,7 @@ function installHomeShell(){
  preview.setAttribute('aria-controls','site-map-overlay');preview.setAttribute('aria-haspopup','dialog');
  preview.setAttribute('aria-expanded','false');
  const image=el('img','cs39-mini-image');image.alt='';image.width=47;image.height=47;
- image.src='assets/media/logo/csanadi-crest-compact.webp';
+ image.src='../shared/assets/media/logo/csanadi-crest-compact.webp';
  const description=el('span','cs39-mini-description');
  description.append(el('strong','cs39-mini-label','FŐMENÜ'),el('small','cs39-mini-hint','Kattints a megnyitáshoz'));
  preview.append(image,description);

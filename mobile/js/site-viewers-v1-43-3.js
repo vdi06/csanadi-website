@@ -1,5 +1,6 @@
 // Csanádi 1.43.3 – helyi PDF-renderelés és tematikus Bootstrap-képnéző.
 // PDF.js 5.7.284 (Apache-2.0) a ZIP-ben, hálózati PDF-szolgáltatás nélkül.
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
 const ROOT = new URL('../', import.meta.url);
 const PDF_LIB = new URL('./vendor/pdfjs/pdf.min.js', import.meta.url);
 const PDF_WORKER = new URL('./vendor/pdfjs/pdf.worker.min.js', import.meta.url);
@@ -119,7 +120,7 @@ async function getPdfLibrary() {
 export function openDocumentViewer(doc, trigger = document.activeElement) {
   if (!doc || !allowedFile.test(doc.filePath || '')) return false;
   const { root, body, footer, instance } = modalShell(doc.title || 'Dokumentum', 'cs43-document-viewer');
-  const fileUrl = new URL(doc.filePath, ROOT).href;
+  const fileUrl = new URL(sharedAssetPath(doc.filePath), ROOT).href;
   const description = el('p', 'cs43-document-description', doc.summary || '');
   const badges = el('div', 'd-flex flex-wrap gap-2 mb-3');
   for (const text of [doc.documentKind || 'dokumentum', doc.status === 'published' ? 'Aktuális' : doc.status, 'v' + (doc.version || '1.0.0')]) {
@@ -253,7 +254,7 @@ export function openImageViewer(items, index = 0, options = {}) {
   for (const [i, item] of safe.entries()) {
     const slide = el('div', 'carousel-item' + (i === start ? ' active' : ''));
     const image = el('img', 'd-block w-100 img-fluid cs43-gallery-image');
-    image.src = item.src; image.alt = item.alt || item.title || 'Galériakép';
+    image.src = sharedAssetPath(item.src); image.alt = item.alt || item.title || 'Galériakép';
     image.decoding = 'async'; image.loading = i === start ? 'eager' : 'lazy';
     slide.append(image); inner.append(slide);
   }

@@ -1,5 +1,6 @@
-import {setting} from './site-settings-2026.js?v=1.51';
-import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.51';
+import {setting} from './site-settings-2026.js?v=1.53';
+import {openDocumentViewer} from './site-viewers-v1-43-3.js?v=1.53';
+import {sharedAssetPath} from './shared-paths-v152.js?v=1.53';
 
 const e=(tag,cls,text)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=String(text);return x;};
 const add=(parent,...children)=>{for(const child of children)if(child)parent.append(child);return parent;};
@@ -20,7 +21,7 @@ export function updatePageMeta(page,route){
  makeMeta('name','description',summary);makeMeta('property','og:type','website');makeMeta('property','og:title',fullTitle);
  makeMeta('property','og:description',summary);makeMeta('property','og:url',seoCanonical);
  makeMeta('property','og:site_name','Csanádi Árpád Sportiskola');makeMeta('property','og:locale','hu_HU');
- makeMeta('property','og:image',new URL(setting('site.crestImagePath'),document.baseURI).href);
+ makeMeta('property','og:image',new URL(sharedAssetPath(setting('site.crestImagePath')),document.baseURI).href);
  makeMeta('name','twitter:card','summary');makeMeta('name','twitter:title',fullTitle);
  makeMeta('name','twitter:description',summary);
  // A közzététel előtti noindex állapotot nem módosítjuk automatikusan.

@@ -1,5 +1,5 @@
-import {formatBytes} from './format-bytes.js?v=1.51';
-import {settingNumber} from './site-settings-2026.js?v=1.51';
+import {formatBytes} from './format-bytes.js?v=1.53';
+import {settingNumber} from './site-settings-2026.js?v=1.53';
  
 export const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;};
 export const append=(to,...nodes)=>{nodes.filter(Boolean).forEach(n=>to.append(n));return to;};
@@ -53,15 +53,21 @@ export function initSiteHealth(catalog){
    const ids=[...document.querySelectorAll('[id]')].map(x=>x.id);check(ids.length===new Set(ids).size,'A jelenlegi oldalon nincs ismétlődő HTML-azonosító');
    const internal=[...document.querySelectorAll('a[href^="#/"]')].map(x=>x.getAttribute('href'));const broken=internal.filter(h=>!unique.has(h)&&h!=='#/');
    check(!broken.length,broken.length?`Hibás belső hivatkozások: ${[...new Set(broken)].slice(0,5).join(', ')}`:`${internal.length} belső hivatkozás ellenőrizve`);
-   const rootURL=new URL('json/',document.baseURI);
+   const rootURL=new URL('../shared/json/',document.baseURI);
    try{const [config,index]=await Promise.all(['config.json','page-index.json'].map(async file=>{const response=await fetch(new URL(file,rootURL),{cache:'no-store'});if(!response.ok)throw Error(file+': '+response.status);return response.json();}));check(!!config&&index?.schemaVersion==='1.0.0'&&Object.keys(index.pages||{}).length>=catalog.items.length,`Konfiguráció és oldalindex: ${Object.keys(index?.pages||{}).length} regisztrált fájl, séma ${index?.schemaVersion||'ismeretlen'}`);}catch(e){check(false,'A konfiguráció vagy oldalindex nem vizsgálható: '+e.message);}
+   const projectRoot=new URL('../',document.baseURI);
+   const asShared=ref=>{
+    if(/^\.{0,2}\/shared\//.test(ref))return 'shared/'+ref.replace(/^.*?shared\//,'');
+    if(/^(?:assets|json)\//.test(ref))return 'shared/'+ref;
+    try{const absolute=new URL(ref,document.baseURI);return absolute.origin===projectRoot.origin&&absolute.pathname.startsWith(projectRoot.pathname)?absolute.pathname.slice(projectRoot.pathname.length):null;}catch{return null;}
+   };
    const list=[...new Set([
-    ...catalog.items.map(x=>'json/'+x.path),
-    ...[...document.querySelectorAll('img[src],video[poster],iframe[src],a[download][href]')].map(e=>e.getAttribute('src')||e.getAttribute('poster')||e.getAttribute('href')).filter(isLocalRef).map(x=>x.split('#')[0].split('?')[0]),
-    'json/structure.json','json/config.json','json/page-index.json','json/media-library.json','json/data/events.json','json/data/documents.json'
-   ])].filter(x=>/^(?:assets\/|json\/)/.test(x));
+    ...catalog.items.map(x=>'shared/json/'+x.path),
+    ...[...document.querySelectorAll('img[src],video[poster],iframe[src],a[download][href]')].map(e=>e.getAttribute('src')||e.getAttribute('poster')||e.getAttribute('href')).filter(isLocalRef).map(asShared),
+    'shared/json/structure.json','shared/json/config.json','shared/json/page-index.json','shared/json/media-library.json','shared/json/data/events.json','shared/json/data/documents.json'
+   ])].filter(x=>x&&x.startsWith('shared/'));
    try{
-    const response=await fetch('release-manifest.json',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
+    const response=await fetch('../release-manifest.json',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
     const manifest=await response.json(),files=manifest.files||{},paths=Object.keys(files);
     check(manifest.ftpCompatible===true&&paths.length>=settingNumber('runtime.release.minimumManifestEntries'),
      `FTP-manifest: ${paths.length} fájl, kiadás ${manifest.release||'ismeretlen'}`);
@@ -72,7 +78,7 @@ export function initSiteHealth(catalog){
    }catch(e){check(false,'A kiadási manifest nem ellenőrizhető: '+e.message);}
    try{
     const sources=['json/data/events.json','json/data/documents.json','json/data/photo-gallery.json'];
-    for(const path of sources){const response=await fetch(path,{cache:'no-store'});if(!response.ok)throw Error(path+' HTTP '+response.status);
+    for(const path of sources){const response=await fetch('../shared/'+path,{cache:'no-store'});if(!response.ok)throw Error(path+' HTTP '+response.status);
      const data=await response.json(),rows=data.items||data.documents||[],ids=rows.map(x=>x.id);
      check(ids.length===new Set(ids).size,`${path}: ${ids.length} rekord, ${ids.length===new Set(ids).size?'egyedi':'ütköző'} azonosítók`);
     }
@@ -81,7 +87,7 @@ export function initSiteHealth(catalog){
    if(list.length>maxChecks){skipped=list.length-maxChecks;list.length=maxChecks;}
    let cursor=0,good=0,bad=[];
    await Promise.all(Array.from({length:Math.min(settingNumber('runtime.tools.auditConcurrentRequests'),list.length)},async()=>{
-    while(cursor<list.length){const path=list[cursor++];try{const response=await fetch(path,{method:'HEAD',cache:'no-store'});if(response.ok)good++;else if([405,501].includes(response.status)){const fallback=await fetch(path,{cache:'no-store'});if(fallback.ok)good++;else bad.push(path+' ('+fallback.status+')');}else bad.push(path+' ('+response.status+')');}catch(e){bad.push(path+' (hálózati hiba)');}}
+    while(cursor<list.length){const path=list[cursor++],url=new URL(path,projectRoot);try{const response=await fetch(url,{method:'HEAD',cache:'no-store'});if(response.ok)good++;else if([405,501].includes(response.status)){const fallback=await fetch(url,{cache:'no-store'});if(fallback.ok)good++;else bad.push(path+' ('+fallback.status+')');}else bad.push(path+' ('+response.status+')');}catch(e){bad.push(path+' (hálózati hiba)');}}
    }));
    check(bad.length===0,`${good}/${list.length} belső fájl elérhető${bad.length?' · hibák: '+bad.slice(0,6).join(', '):''}`);
    const sourcedImages=[...document.images].filter(img=>{const src=img.currentSrc||img.getAttribute('src')||img.getAttribute('srcset')||'';return src.trim().length>0;});

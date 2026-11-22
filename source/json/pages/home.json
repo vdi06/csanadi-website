@@ -47,6 +47,15 @@
         "imageId": "media:hero-kozosseg-2026",
         "logoSafeOnly": true,
         "intervalMs": 7500,
+        "mobileStatic": {
+          "layout": "crest",
+          "eyebrow": "CSANÁDI · SPORT · TUDÁS · KÖZÖSSÉG",
+          "title": "Üdvözlünk a Csanádiban",
+          "subtitle": "Iskolánk mindennapjai, sportélete és tudnivalói egy helyen.",
+          "linkText": "Fedezd fel iskolánkat",
+          "href": "#/iskolank/bemutatkozas",
+          "crestAlt": "A Csanádi Árpád Sportiskola címere"
+        },
         "mobileUi": {
           "sectionLabel": "Mobilos iskolabemutató",
           "filmLabel": "CSANÁDI · SPORT · TUDÁS · KÖZÖSSÉG",
