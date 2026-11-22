@@ -1,8 +1,44 @@
-# Csanádi 2.24 – dinamikus keresés, sportsiker-archívum, egyszerűbb menü
+# Csanádi 2.25 – szűrhető sporteredmény-galéria és lapozható archívum
 
 Ez a ZIP **nem publikált** fejlesztési kiadás. A 2.15-ös forráscsomagot
-és a 2.16–2.21-es fejlesztéseket folytatja az elfogadott funkciók
+és a 2.16–2.24-es fejlesztéseket folytatja az elfogadott funkciók
 megtartásával. A korábbi ZIP-ek változatlanul megmaradtak.
+
+## A 2.25-ös fejlesztés
+
+- A **Sportélet → Sporteredmények** archívum a korábban egyeztetett
+  **A – Szűrhető sportgaléria** változatot kapta. Alaphelyzetben a 24
+  korábbi sportsikerből oldalanként hat látható, asztalon tágas 3 × 2,
+  mobilon kompakt 2 × 3 elrendezésben. A további eredményekhez
+  asztalon számozott, mobilon egyszerű előző/következő lapozó tartozik.
+- A kártyákon **név, sportág, eredmény, dátum** látszik. A képpel
+  rendelkező és kép nélküli kártyák egységes méretűek; hiányzó vagy
+  hibás fotó esetén krém–arany tipográfiai háttér jelenik meg.
+- Az archívum önálló **keresője** névre, sportágra, eredményre és a
+  JSON-ban szereplő szövegekre keres, ékezeteket, rokon értelmű
+  szavakat és kisebb elgépeléseket is kezel. A sport- és évszűrő
+  értékei a JSON-ból származnak; az évszűrő csak több év esetén
+  jelenik meg. A sorrend legújabb/legrégebbi között váltható.
+  A keresés és a szűrők együtt működnek, és módosításuk az első oldalra állít.
+- **Keresés vagy szűrés esetén mind a 30 eredmény részt vesz**:
+  a kezdőlapon kiemelt hat találatát „Kiemelt” címke jelzi.
+  Üres találathoz saját állapot és szűrőtörlés tartozik.
+- Asztalon a szűrés vezérlői közvetlenül látszanak; mobilon a kereső
+  állandóan látható, a sportág/év/sorrend a **Szűrők** gombbal nyitható.
+  A keresés, a rendezés és a megjelenített oldal állapota visszatéréskor
+  megmarad.
+- A lebegő részletezőben a **jelenlegi oldalon látható hat** között
+  előző/következő navigáció működik. A háttér elmosódik és sötétedik;
+  X, háttérkattintás és Escape bezárja az ablakot, a fókusz visszaáll.
+  Közvetlen sporteredmény-hivatkozás esetén az adott részlet megnyílik,
+  és a korábbi archívumszűrőket nem írja felül.
+- Az adatforrás továbbra is a közös `shared/data/site.json`, a logika
+  külön `desktop/successes.js` és `mobile/successes.js` modulban,
+  saját stílusokkal valósul meg. A mintanevek és sporteredmények
+  még **nem hiteles iskolai adatok**; publikálás előtt cserélni kell.
+
+Az alábbi verziótörténeti szakaszok a korábbi kiadások állapotát
+írják le; az aktuális működésben a fenti **2.25-ös változások** érvényesek.
 
 ## A 2.24-es fejlesztés
 
@@ -32,8 +68,8 @@ megtartásával. A korábbi ZIP-ek változatlanul megmaradtak.
   elfogadott arany menügyűrű, a JSON-hiba esetén induló offline nézet és
   az automatikus újrapróbálkozás megmaradtak.
 
-Az alábbi verziótörténeti szakaszok az adott régebbi kiadás állapotát
-írják le; az aktuális működésben a fenti **2.24-es változások** érvényesek.
+Az alábbi szakaszok történeti leírások; az azóta továbbfejlesztett
+archívum jelenlegi viselkedését a 2.25-ös szakasz rögzíti.
 
 ## A 2.23-as fejlesztés
 
@@ -439,13 +475,13 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   visszatéréskor újra ellenőrzünk. Hibás JSON esetén a korábbi érvényes
   információ marad látható.
 - A lábléc paneljeit és külső térközeit jelentősen csökkentettük.
-  A legalsó sor minden frissítés után a `Verzió: 2.24`,
+  A legalsó sor minden frissítés után a `Verzió: 2.25`,
   illetve a későbbi JSON-verzió.
 
 ## Frissítés böngészési adatok törlése nélkül
 
 - A nyitó HTML a `shared/js/entry.js` és az alap CSS fájlt a JSON-ban
-  szereplő kiadáshoz kötött URL-lel (`?v=2.24`) kéri le.
+  szereplő kiadáshoz kötött URL-lel (`?v=2.25`) kéri le.
 - Minden statikus JavaScript-modul-import ugyanilyen verziót kap a
   `node tools/stamp-release.mjs` kiadás-előkészítő lépésben. A két
   platformstílus is verziózott URL-lel töltődik be.
@@ -454,7 +490,7 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   útvonal megtartásával, új verzióparaméterrel tölti újra a teljes oldalt.
 - **Korlát:** a régi, már eltárolt 2.13-as kezdő HTML és programkód
   magától nem feltétlenül tudja alkalmazni az új mechanizmust; az új
-  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.24`
+  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.25`
   URL-t. A tárhely/CDN HTTP gyorsítótárazási szabályai külön is számítanak.
 
 ## A visszaállított asztali kezdőlap és a mobilos következő lépés
@@ -474,7 +510,7 @@ másolata; a felső címeres menügomb nem kerül át máshová.
 A menüvégpontok továbbra is csak minimális, jóváhagyott oldalvázlatokként
 nyílnak meg, valós tartalmuk később épül be.
 A lábléc `Tájékoztatás` oszlopának legalsó sora a JSON-ból
-automatikusan megjelenő `Verzió: 2.24`.
+automatikusan megjelenő `Verzió: 2.25`.
 
 ## Tesztek és korlát
 
@@ -497,14 +533,13 @@ A hibás induló JSON-t követő tartalékoldal, a kézi újrapróbálás és
 az eredeti útvonalra történő visszatérés is célzott tesztet kapott.
 
 **Ellenőrzési megjegyzés:** a `tools/test.mjs` saját, lokális Chromium-indítása
-ebben a környezetben nem elérhető, de a 2.24-es asztali archívum élő,
-külön böngészős előnézetben megnyílt. A lebegő részletezőt, az archív név
-elgépeléses keresését, a közvetlen találati útvonalat és a három státuszsor
-tényleges középre igazítását ellenőriztük. A bővítés után az élő oldalon
-**24 archív kártya** jelent meg, a teljes oldalmagasság 3205 px volt
-936 px magas asztali nézetben. A legújabb JSON-bővítés viselkedési
-regressziós tesztje is lefutott. Valódi telefonon – különösen iOS-en – az
-elmosást, a hosszú menücímeket és a végleges archívum görgetését még
-külön is célszerű kipróbálni. A kódteszt nem helyettesíti ezt.
+ebben a környezetben nem elérhető. A 2.25-ös asztali archívumot azonban
+külön, élő böngészős előnézetben megvizsgáltuk: induló hat kártya,
+elgépeléssel is működő keresés a kiemelt hat között, „Kiemelt” jelölés,
+lebegő részletező, szűrők törlése, második oldal és a második oldalra
+történő visszatérés egyaránt működött. Az automatizált teszt mindkét
+platformon vizsgálja az archívum szűrését, lapozását, részletezőjét,
+közvetlen útvonalát és állapotmegőrzését. Valódi telefonon – különösen
+iOS-en – a végleges elrendezés és a görgetés még külön is kipróbálandó.
 
 Sem GitHubra, sem FTP-re nem töltöttem fel semmit.

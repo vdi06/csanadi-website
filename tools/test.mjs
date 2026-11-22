@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const staticFiles = [
   "index.html", "shared/js/entry.js", "shared/data/site.json", "shared/js/dom.js",
-  "shared/js/gate.js", "shared/js/offline.js", "shared/js/shell.js", "shared/js/search-index.js", "shared/js/appearance.js", "shared/js/successes-data.js",
+  "shared/js/gate.js", "shared/js/offline.js", "shared/js/shell.js", "shared/js/search-index.js", "shared/js/archive-data.js", "shared/js/appearance.js", "shared/js/successes-data.js",
   "shared/js/focus.js", "shared/js/menu-data.js", "shared/js/edit-mode.js", "shared/js/footer.js", "shared/css/base.css",
   "shared/assets/media/logo/csanadi-crest-512.webp",
   "mobile/app.js", "mobile/header.js", "mobile/menu.js", "mobile/search.js", "mobile/page.js", "mobile/story.js", "mobile/successes.js", "mobile/styles.css",
@@ -53,7 +53,7 @@ assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths, ...desktopH
 assert.deepEqual(files(root).filter((path) => path.endsWith(".html")), ["index.html"]);
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
 assert.equal(config.schemaVersion, "2.06");
-assert.equal(config.release, "2.24");
+assert.equal(config.release, "2.25");
 assert.equal(config.appearance.defaultMode, "auto");
 assert.deepEqual(config.appearance.cycle, ["auto", "light", "dark"]);
 assert.deepEqual(Object.keys(config.appearance.shortLabels).sort(), ["auto", "dark", "light"]);
@@ -102,6 +102,8 @@ assert.equal(config.menu.items.length, 6, "Az 1.53-as hat főcsoportot olvassuk 
 const { validateMenu, getMenuPage, menuPageHref } = await import(new URL("../shared/js/menu-data.js", import.meta.url));
 const { checkedSportSuccesses, featuredSportSuccesses, archivedSportSuccesses } =
   await import(new URL("../shared/js/successes-data.js", import.meta.url));
+const { archiveView, archiveOptions, readArchiveState, resetArchiveState, saveArchiveState } =
+  await import(new URL("../shared/js/archive-data.js", import.meta.url));
 const { searchSite, normalizeSearchText } = await import(new URL("../shared/js/search-index.js", import.meta.url));
 assert.equal(normalizeSearchText("Árvíztűrő TÜKÖRFÚRÓGÉP"), "arvizturo tukorfurogep");
 assert.equal(searchSite(config, "Nagy Lilla")[0].href,
@@ -135,6 +137,26 @@ assert.ok(!searchSite(changedSearchData, "Nagy Lilla").some((item) => item.label
 assert.equal(checkedSportSuccesses(config), config.home.sportSuccesses);
 assert.equal(featuredSportSuccesses(config).length, 6);
 assert.equal(archivedSportSuccesses(config).length, 24);
+assert.equal(archiveView(config,{}).total, 24);
+assert.equal(archiveView(config,{}).pageCount, 4);
+assert.equal(archiveView(config,{}).visible.length, 6);
+assert.equal(archiveOptions(config).years.length, 1);
+assert.ok(archiveOptions(config).sports.includes("Röplabda"));
+assert.equal(archiveView(config,{ query:"Nagy Lillla" }).visible[0].name,"Nagy Lilla",
+  "A teljes archívkereső a hat kiemeltben is keressen elgépelés mellett.");
+assert.equal(archiveView(config,{ sport:"Atlétika" }).visible[0].name,"Nagy Lilla");
+assert.equal(archiveView(config,{ order:"oldest" }).visible[0].name,"Kiss Dániel");
+assert.equal(archiveView(config,{ page:4 }).visible.length,6);
+assert.equal(archiveView(config,{ query:"nemlétezősportolónév" }).total,0);
+const multiYear = structuredClone(config);
+multiYear.home.sportSuccesses.items.at(-1).date = "2025-04-17";
+assert.equal(archiveOptions(multiYear).years.length,2);
+assert.equal(archiveView(multiYear,{ year:"2025" }).total,1);
+assert.equal(archiveView(config,{ year:"2025" }).state.year,"",
+  "Az egyetlen rendelkezésre álló évben az érvénytelen évszűrő törlődjön.");
+const invalidArchive = structuredClone(config);
+delete invalidArchive.home.sportSuccesses.archiveUi;
+assert.throws(() => checkedSportSuccesses(invalidArchive), /Érvénytelen archívumfeliratok/);
 assert.deepEqual(featuredSportSuccesses(config).map((item) => item.date),
   [...featuredSportSuccesses(config).map((item) => item.date)].sort().reverse(),
   "A dátum szerinti legfrissebb hat jelenjen meg a kezdőlapon.");
@@ -202,8 +224,8 @@ for (const path of [...desktopHeroAssets, ...mobileStoryAssets, ...sportSuccessA
 }
 const html = readFileSync(join(root, "index.html"), "utf8");
 assert.match(html, /<div id="app"><\/div>/);
-assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.24"/);
-assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.24"/);
+assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.25"/);
+assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.25"/);
 assert.match(html, /name="color-scheme" content="light dark"/);
 assert.doesNotMatch(html, /<h[1-6]|<p[ >]|<nav|<article|<img/i);
 const src = ["shared/js/entry.js", "shared/js/dom.js", "shared/js/gate.js", "shared/js/offline.js", "shared/js/shell.js",
@@ -924,28 +946,89 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.deepEqual(previewList.children.map((n) => n.textContent), config.pagePreview.sections.school);
   assert.equal(leafNodes.filter((n) => n.tag === "h1").length, 1);
   leafDispose();
+  resetArchiveState();
   const archiveDispose = app.mount(parent, config, "page:sports-results");
   const archiveNodes = scan(parent);
   assert.equal(archiveNodes.find((n) => n.className === `${platform}-page-title`).textContent,
     config.home.sportSuccesses.archiveTitle);
   const archiveGrid = archiveNodes.find((n) => n.className === `${platform}-successes-grid`);
-  assert.equal(archiveGrid.children.length, archivedSportSuccesses(config).length);
-  assert.equal(archiveGrid.children.filter((card) => scan(card).some((node) =>
-    node.className === `${platform}-successes-card-image`)).length, 2,
-  "A régebbi eredmények között is legyen két képes próbakártya.");
+  assert.equal(archiveGrid.children.length, 6, "Az archívumon egyszerre csak hat eredmény látszódjon.");
+  assert.equal(scan(archiveGrid).filter((node) => node.className === `${platform}-archive-card-date`).length,6);
+  const pager = archiveNodes.find((n) => n.className === `${platform}-archive-pagination`);
+  assert.ok(pager && !pager.hidden);
+  if (platform === "mobile") {
+    const filters = archiveNodes.find((n) => n.className === "mobile-archive-fields");
+    const toggle = archiveNodes.find((n) => n.className === "mobile-archive-toggle");
+    assert.equal(filters.hidden,true);
+    toggle.emit("click");
+    assert.equal(filters.hidden,false);
+    assert.equal(toggle.attributes["aria-expanded"],"true");
+  }
+  const archiveSearchInput = archiveNodes.find((n) => n.className === `${platform}-archive-search`);
+  archiveSearchInput.value = "Nagy Lillla";
+  archiveSearchInput.emit("input");
+  assert.equal(archiveGrid.children.length,1);
+  assert.ok(scan(archiveGrid).some((node) => node.className === `${platform}-successes-card-name` &&
+    node.textContent === "Nagy Lilla"));
+  assert.ok(scan(archiveGrid).some((node) => node.className === `${platform}-archive-featured` && !node.hidden),
+    "A kiemelt találat az archívum saját rácsában külön jelzést kapjon.");
+  const searchCard = archiveGrid.children[0];
+  searchCard.emit("click");
+  assert.equal(archiveNodes.find((n) => n.className.startsWith(`${platform}-successes-overlay`)).hidden,false);
+  archiveNodes.find((n) => n.className === `${platform}-successes-close`).emit("click");
+  archiveSearchInput.value = ""; archiveSearchInput.emit("input");
+  assert.equal(archiveGrid.children.length,6);
+  const firstArchiveCard = archiveGrid.children[0];
+  firstArchiveCard.emit("click");
+  const archivePrevious = archiveNodes.find((n) => n.className === `${platform}-archive-detail-button`);
+  const archiveDetailButtons = archiveNodes.filter((n) => n.className === `${platform}-archive-detail-button`);
+  assert.ok(archivePrevious.disabled);
+  assert.equal(archiveDetailButtons[1].disabled,false);
+  archiveDetailButtons[1].emit("click");
+  assert.equal(archiveNodes.find((n) => n.className === `${platform}-successes-detail-name`).textContent,
+    "Molnár Emma", "A modalon belüli léptetés csak az aktuális hatos oldalon működjön.");
+  archiveNodes.find((n) => n.className === `${platform}-successes-close`).emit("click");
+  assert.ok(firstArchiveCard.focused,"A navigáció után is az eredetileg megnyitott kártyára térjen vissza a fókusz.");
+  archiveSearchInput.value = "nemlétezősportolónév"; archiveSearchInput.emit("input");
+  assert.ok(scan(archiveGrid).some((n) => n.className === `${platform}-archive-empty`));
+  scan(archiveGrid).find((n) => n.tag === "button").emit("click");
+  assert.equal(archiveGrid.children.length,6);
+  const archiveOrderSelect = archiveNodes.find((n) => n.tag === "select" && n.children.some((option) =>
+    option.textContent === config.home.sportSuccesses.archiveUi.oldest));
+  archiveOrderSelect.value = "oldest"; archiveOrderSelect.emit("change");
+  assert.ok(scan(archiveGrid).some((n) => n.textContent === "Kiss Dániel"),
+    "A legrégebbi eredmény kerüljön előre a rendezés megfordításakor.");
+  archiveOrderSelect.value = "newest"; archiveOrderSelect.emit("change");
+  const pagerNext = scan(pager).find((node) => node.className === `${platform}-archive-page` &&
+    node.attributes["aria-label"] === config.home.sportSuccesses.archiveUi.nextPage);
+  pagerNext.emit("click");
+  assert.ok(scan(archiveGrid).some((node) => node.textContent === "Sipos Anna"),
+    "A második oldal a következő hat eredményt mutassa.");
+  const savedPage = archiveView(config,saveArchiveState({ query:"",sport:"",year:"",order:"newest",page:2 }));
+  assert.equal(savedPage.state.page,2);
   assert.ok(!archiveGrid.children.some((card) => scan(card).some((node) =>
     node.className === `${platform}-successes-card-name` && node.textContent === "Nagy Lilla")),
   "Az archívum ne ismételje meg a kezdőlapon kiemelt hat nevet.");
   archiveDispose();
+  const returnedDispose = app.mount(parent,config,"page:sports-results");
+  const returnedGrid = scan(parent).find((n) => n.className === `${platform}-successes-grid`);
+  assert.ok(scan(returnedGrid).some((n) => n.textContent === "Sipos Anna"),
+    "Az archívumba visszatérve maradjon meg a második oldal.");
+  returnedDispose();
+  saveArchiveState({ query:"Nagy Lillla",sport:"",year:"",order:"oldest",page:1 });
   location.hash = "#/oldal/sports-results/sportsiker/kerekpar-balogh-david";
   const archiveDetailDispose = app.mount(parent, config, "page:sports-results");
-  const archiveDetail = scan(parent).find((n) => n.className === `${platform}-successes-overlay`);
+  const archiveDetail = scan(parent).find((n) => n.className.startsWith(`${platform}-successes-overlay`));
   assert.equal(archiveDetail.hidden, false);
   assert.equal(scan(archiveDetail).find((n) => n.className === `${platform}-successes-detail-name`).textContent,
     "Balogh Dávid");
+  assert.deepEqual(readArchiveState(),
+    { query:"Nagy Lillla",sport:"",year:"",order:"oldest",page:1 },
+    "A közvetlen archív találat nem írhatja felül a megőrzött szűrőket.");
   scan(archiveDetail).find((n) => n.className === `${platform}-successes-close`).emit("click");
   assert.equal(location.hash, "#/oldal/sports-results");
   archiveDetailDispose();
+  resetArchiveState();
   location.hash = "#/kezdolap/sportsiker/atletika-nagy-lilla";
   const detailDispose = app.mount(parent, config, "home");
   const detailOverlay = scan(parent).find((n) => n.className === `${platform}-successes-overlay`);
@@ -984,13 +1067,13 @@ const liveModalText = scan(liveFooter.footer).find((node) => node.className === 
 liveNotices.children[0].emit("click");
 assert.equal(liveModal.hidden, false);
 const refreshed = structuredClone(config);
-refreshed.release = "2.25";
+refreshed.release = "2.26";
 refreshed.home.footer.updatedAt = "2026-11-23";
 refreshed.home.footer.notices[0].body = "Ellenőrzött, módosított impresszum-adatok.";
 const originalFetch = globalThis.fetch;
 let requests = 0;
 let replacementUrl = null;
-window.location = { href:"https://example.test/index.html?v=2.24#/kezdolap",
+window.location = { href:"https://example.test/index.html?v=2.25#/kezdolap",
   replace:(next) => { replacementUrl = next; } };
 globalThis.fetch = async (url, options) => {
   requests++;
@@ -1004,22 +1087,22 @@ assert.equal(requests, 0, "Rejtett lapon a frissítés nem terhelheti a hálóza
 document.visibilityState = "visible";
 assert.equal(await liveFooter.checkForUpdates(), true);
 assert.equal(requests, 1);
-assert.equal(liveVersion.textContent, "Verzió: 2.25");
+assert.equal(liveVersion.textContent, "Verzió: 2.26");
 assert.equal(liveUpdated.textContent, "Utolsó frissítés: 2026. 11. 23.");
 assert.equal(liveModalText.textContent, "Ellenőrzött, módosított impresszum-adatok.");
 assert.equal(liveModal.hidden, false, "A megnyitott tájékoztató maradjon meg adatfrissítéskor.");
-assert.equal(replacementUrl, "https://example.test/index.html?v=2.25#/kezdolap",
+assert.equal(replacementUrl, "https://example.test/index.html?v=2.26#/kezdolap",
   "Új kiadáskor az egész alkalmazás új verziókulccsal töltődjön újra.");
 scan(liveFooter.footer).find((node) => node.className === "footer-modal-close").emit("click");
 assert.equal(liveModal.hidden, true);
 assert.ok(liveNotices.children[0].focused, "Frissítés után is a létező ikonnak jár vissza a fókusz.");
 assert.ok(liveChecked.textContent.startsWith(refreshed.home.footer.checkedLabel));
 const invalid = structuredClone(refreshed);
-invalid.release = "2.24";
+invalid.release = "2.25";
 invalid.home.footer.notices[0].body = "";
 globalThis.fetch = async () => ({ ok: true, json: async () => invalid });
 assert.equal(await liveFooter.checkForUpdates(), false);
-assert.equal(liveVersion.textContent, "Verzió: 2.25", "Hibás JSON nem írhatja felül az érvényes adatot.");
+assert.equal(liveVersion.textContent, "Verzió: 2.26", "Hibás JSON nem írhatja felül az érvényes adatot.");
 const duplicateGlyph = structuredClone(refreshed);
 duplicateGlyph.home.footer.notices[1].glyph = duplicateGlyph.home.footer.notices[0].glyph;
 globalThis.fetch = async () => ({ ok: true, json: async () => duplicateGlyph });
@@ -1399,7 +1482,7 @@ location.hash = config.routes.gate;
 await import(new URL("../shared/js/entry.js", import.meta.url));
 const nextTick = () => new Promise((done) => setImmediate(done));
 await nextTick();
-assert.equal(historyUrl, "https://example.test/index.html?v=2.24#/",
+assert.equal(historyUrl, "https://example.test/index.html?v=2.25#/",
   "A kezdő URL kapjon kiadási verziót a későbbi cache-biztos újratöltéshez.");
 assert.equal(documentRoot.dataset.platform, "mobile");
 assert.equal(documentRoot.dataset.route, "gate");

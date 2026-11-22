@@ -1,10 +1,10 @@
-import { element } from "../shared/js/dom.js?v=2.24";
-import { mountGate } from "../shared/js/gate.js?v=2.24";
-import { makeFooter } from "../shared/js/footer.js?v=2.24";
-import { makeDesktopHeader } from "./header.js?v=2.24";
-import { createDesktopPage } from "./page.js?v=2.24";
-import { createDesktopHero } from "./hero.js?v=2.24";
-import { createDesktopSuccesses } from "./successes.js?v=2.24";
+import { element } from "../shared/js/dom.js?v=2.25";
+import { mountGate } from "../shared/js/gate.js?v=2.25";
+import { makeFooter } from "../shared/js/footer.js?v=2.25";
+import { makeDesktopHeader } from "./header.js?v=2.25";
+import { createDesktopPage } from "./page.js?v=2.25";
+import { createDesktopHero } from "./hero.js?v=2.25";
+import { createDesktopSuccesses } from "./successes.js?v=2.25";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {

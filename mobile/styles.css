@@ -584,3 +584,80 @@
   .mobile-compass-node { transition:none; }
   .mobile-search-chip { transition:none; }
 }
+
+/* 2.25 – saját, keskeny kijelzőre komponált sporteredmény-archívum. */
+.mobile-successes-section.is-archive { min-height:48vh; padding:31px 11px 57px; }
+.mobile-successes-section.is-archive .mobile-successes-inner { width:100%; }
+.mobile-successes-section.is-archive .mobile-successes-heading { margin-bottom:20px; }
+.mobile-successes-section.is-archive .mobile-page-title { margin:0 0 12px; }
+.mobile-archive-toolbar {
+  display:grid; gap:11px; padding:14px; margin-bottom:21px;
+  border:1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius:17px;
+  background:color-mix(in srgb,var(--surface) 93%,var(--background));
+}
+.mobile-archive-search-label,.mobile-archive-field { display:grid; gap:6px; min-width:0; }
+.mobile-archive-search-label > span,.mobile-archive-field > span {
+  font-size:13px; color:var(--muted); font-weight:850;
+}
+.mobile-archive-search,.mobile-archive-field select {
+  width:100%; min-width:0; height:46px; padding:9px 12px;
+  border:1px solid color-mix(in srgb,var(--accent) 38%,transparent);
+  border-radius:12px; background:var(--background); color:var(--text); font:inherit; font-size:14px;
+}
+.mobile-archive-toggle {
+  width:100%; min-height:44px; border:1px solid color-mix(in srgb,var(--accent) 47%,transparent);
+  border-radius:12px; background:var(--background); color:var(--text); font-size:14px; font-weight:850;
+}
+.mobile-archive-toggle::after { content:"⌄"; float:right; padding-right:4px; }
+.mobile-archive-toggle[aria-expanded="true"]::after { content:"⌃"; }
+.mobile-archive-fields { display:grid; gap:10px; }
+.mobile-archive-fields[hidden],.mobile-archive-field[hidden] { display:none !important; }
+.mobile-archive-status { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.mobile-archive-count { margin:0; color:var(--muted); font-size:13px; font-weight:800; }
+.mobile-archive-clear {
+  min-height:40px; padding:8px 11px; border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  border-radius:10px; background:transparent; color:var(--text); font-size:12px; font-weight:800;
+}
+.mobile-successes-section.is-archive .mobile-successes-grid { gap:10px; align-items:stretch; }
+.mobile-successes-section.is-archive .mobile-successes-card-fallback,
+.mobile-successes-section.is-archive .mobile-successes-detail-fallback {
+  background:linear-gradient(140deg,color-mix(in srgb,var(--surface) 82%,var(--accent)),var(--background));
+}
+.mobile-successes-section.is-archive .mobile-successes-fallback-mark,
+.mobile-successes-overlay.is-archive .mobile-successes-fallback-mark { display:none; }
+.mobile-successes-overlay.is-archive .mobile-successes-detail-fallback {
+  background:linear-gradient(140deg,color-mix(in srgb,var(--surface) 82%,var(--accent)),var(--background));
+}
+.mobile-successes-section.is-archive .mobile-successes-card-copy {
+  gap:6px; min-height:100px; padding:10px 11px 12px;
+}
+.mobile-archive-card-date { color:var(--muted); font-size:12px; }
+.mobile-archive-featured {
+  position:absolute; top:7px; right:7px; padding:5px 7px;
+  background:#eacb81; color:#102637; border-radius:999px;
+  font-size:11px; font-weight:900;
+}
+.mobile-archive-featured[hidden] { display:none !important; }
+.mobile-archive-empty { grid-column:1/-1; padding:33px 14px; text-align:center; border:1px dashed var(--accent); border-radius:14px; }
+.mobile-archive-empty p { color:var(--muted); font-size:14px; }
+.mobile-archive-empty button { min-height:44px; padding:10px 14px; border:0; border-radius:10px; background:var(--accent); color:var(--background); }
+.mobile-archive-pagination { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:24px; }
+.mobile-archive-pagination[hidden] { display:none !important; }
+.mobile-archive-page {
+  min-width:47px; min-height:45px; border:1px solid var(--accent); border-radius:12px;
+  background:var(--surface); color:var(--text); font-size:22px;
+}
+.mobile-archive-page:disabled { opacity:.4; }
+.mobile-archive-current { min-width:70px; text-align:center; font-size:14px; font-weight:850; }
+.mobile-archive-range { width:100%; text-align:center; color:var(--muted); font-size:12px; }
+.mobile-archive-detail-nav { display:flex; gap:9px; margin-top:20px; }
+.mobile-archive-detail-button {
+  flex:1; min-height:46px; padding:8px 5px; border:1px solid var(--accent);
+  border-radius:11px; background:var(--background); color:var(--text); font-size:13px; font-weight:800;
+}
+.mobile-archive-detail-button:disabled { opacity:.35; }
+@media (max-width:350px) {
+  .mobile-successes-section.is-archive .mobile-successes-grid { gap:8px; }
+  .mobile-successes-section.is-archive .mobile-successes-card-copy { padding:9px; }
+  .mobile-archive-card-date { font-size:11px; }
+}

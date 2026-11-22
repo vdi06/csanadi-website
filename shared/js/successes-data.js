@@ -1,4 +1,4 @@
-import { getMenuPage } from "./menu-data.js?v=2.24";
+import { getMenuPage } from "./menu-data.js?v=2.25";
 
 /** Közös tartalmi szabályok, eltérő mobilos és asztali megjelenítéshez. */
 export const successImageRoot = "./shared/assets/media/web/sport-successes/";
@@ -10,6 +10,15 @@ export function checkedSportSuccesses(config) {
   if (!data || fields.some((field) => typeof data[field] !== "string" || !data[field].trim()) ||
     !Array.isArray(data.items) || data.items.length < 6 || data.items.length > 250) {
     throw new Error("Érvénytelen sportsiker-tartalom.");
+  }
+  const archiveFields = ["eyebrow", "searchLabel", "searchPlaceholder", "sportLabel", "allSports",
+    "yearLabel", "allYears", "sortLabel", "newest", "oldest", "filtersToggle", "clearLabel",
+    "featuredLabel", "resultsLabel", "fromLabel", "noResults", "previousPage", "nextPage",
+    "previousDetail", "nextDetail", "pageLabel"];
+  if (!data.archiveUi || archiveFields.some((field) =>
+    typeof data.archiveUi[field] !== "string" || !data.archiveUi[field].trim() ||
+    data.archiveUi[field].length > 150)) {
+    throw new Error("Érvénytelen archívumfeliratok.");
   }
   const ids = new Set();
   for (const item of data.items) {

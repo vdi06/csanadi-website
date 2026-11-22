@@ -1,5 +1,5 @@
-import { getMenuPage, menuPageHref } from "./menu-data.js?v=2.24";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.24";
+import { getMenuPage, menuPageHref } from "./menu-data.js?v=2.25";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.25";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */
@@ -135,7 +135,7 @@ function createIndex(config) {
   return entries;
 }
 
-export function searchSite(config, query) {
+function searchEntries(config, query, sportsOnly = false) {
   const words = [...new Set(tokenize(query))].slice(0, 8);
   if (!words.length) return [];
   // Nincs állandó találati lista vagy beragadható gyorsítótár: az index
@@ -144,6 +144,7 @@ export function searchSite(config, query) {
   const phrase = normalizeSearchText(query);
   const matches = [];
   for (const entry of index) {
+    if (sportsOnly && !/\/sportsiker\/[a-z0-9-]+$/.test(entry.href)) continue;
     let score = 0;
     let allMatched = true;
     for (const word of words) {
@@ -164,8 +165,17 @@ export function searchSite(config, query) {
     }
   }
   matches.sort((a, b) => b.score - a.score || a.entry.label.localeCompare(b.entry.label, "hu"));
-  return matches.slice(0, 50).map(({ entry }) => ({
+  return matches.slice(0, sportsOnly ? 250 : 50).map(({ entry }) => ({
     label:entry.label, short:entry.short, summary:entry.summary,
     category:entry.category, href:entry.href
   }));
+}
+
+export function searchSite(config, query) {
+  return searchEntries(config, query);
+}
+
+/** Az archív kereső kizárólag a sportsikereket, de mind a harmincat vizsgálja. */
+export function searchSportSuccessIds(config, query) {
+  return searchEntries(config, query, true).map((entry) => entry.href.split("/").at(-1));
 }
