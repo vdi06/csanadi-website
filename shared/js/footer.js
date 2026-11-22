@@ -1,5 +1,5 @@
-import { element } from "./dom.js?v=2.26";
-import { trapTab } from "./focus.js?v=2.26";
+import { element } from "./dom.js?v=2.28";
+import { trapTab } from "./focus.js?v=2.28";
 
 /** Közös JSON-adatfolyam: a platformok csak a lábléc elrendezését stílusozzák.
  * Az adatok csak ellenőrzött, teljes válasz esetén cserélődnek le. */
@@ -9,6 +9,9 @@ function validFooter(data, release) {
     "versionLabel", "modalCloseLabel", "updatedLabel", "checkedLabel", "pendingLabel", "errorLabel"]) {
     if (typeof data[name] !== "string" || !data[name].trim() || data[name].length > 500) return false;
   }
+  if ((data.pendingLabel.match(/\{seconds\}/g) || []).length !== 1) return false;
+  if (!Number.isInteger(data.refreshSeconds) || data.refreshSeconds < 10 ||
+    data.refreshSeconds > 600) return false;
   if (!/^\d{4}-\d{2}-\d{2}$/.test(data.updatedAt || "") ||
     !Number.isFinite(Date.parse(`${data.updatedAt}T12:00:00Z`))) return false;
   if (!Array.isArray(data.notices) || data.notices.length > 8) return false;
@@ -185,7 +188,10 @@ export function makeFooter(config, platform) {
     return true;
   }
   apply(first, config.release);
-  checked.textContent = first.pendingLabel;
+  let appliedRelease = config.release;
+  let appliedFooter = JSON.stringify(first);
+  const refreshSeconds = first.refreshSeconds;
+  checked.textContent = first.pendingLabel.replace("{seconds}", String(refreshSeconds));
 
   async function checkForUpdates() {
     if (!active || pending || document.visibilityState === "hidden") return false;
@@ -196,7 +202,14 @@ export function makeFooter(config, platform) {
         { cache: "no-store", signal: requestController.signal });
       if (!response.ok) throw new Error("A JSON nem érhető el.");
       const next = await response.json();
-      if (!active || !apply(next?.home?.footer, next?.release)) throw new Error("Érvénytelen frissítés.");
+      const nextFooter = next?.home?.footer;
+      if (!active || !validFooter(nextFooter, next?.release)) throw new Error("Érvénytelen frissítés.");
+      const nextSignature = JSON.stringify(nextFooter);
+      if (next.release !== appliedRelease || nextSignature !== appliedFooter) {
+        if (!apply(nextFooter, next.release)) throw new Error("Érvénytelen frissítés.");
+        appliedRelease = next.release;
+        appliedFooter = nextSignature;
+      }
       const time = new Intl.DateTimeFormat("hu-HU", {
         timeZone: "Europe/Budapest", hour: "2-digit", minute: "2-digit"
       }).format(new Date());
@@ -219,8 +232,7 @@ export function makeFooter(config, platform) {
       requestController = null;
     }
   }
-  const seconds = Math.max(30, Math.min(600, Number(first.refreshSeconds) || 60));
-  const timer = setInterval(() => { void checkForUpdates(); }, seconds * 1000);
+  const timer = setInterval(() => { void checkForUpdates(); }, refreshSeconds * 1000);
   const onVisibility = () => {
     if (document.visibilityState === "visible") void checkForUpdates();
   };

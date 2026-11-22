@@ -22,3 +22,14 @@ export function crest(config, className = "school-crest") {
   } });
 }
 
+/** Az intézménynév egyetlen JSON-mezőből adja a kapu és a fejlécek feliratait. */
+export function schoolDisplayNames(fullName) {
+  const source = String(fullName || "");
+  const [primary, ...rest] = source.split(",");
+  return {
+    line1:primary.trim().toLocaleUpperCase("hu-HU"),
+    line2:rest.join(",").trim().toLocaleUpperCase("hu-HU"),
+    caption:source.toLocaleUpperCase("hu-HU")
+  };
+}
+

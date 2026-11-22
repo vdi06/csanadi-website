@@ -1,19 +1,20 @@
-import { crest, element } from "../shared/js/dom.js?v=2.26";
-import { bindAppearance } from "../shared/js/appearance.js?v=2.26";
-import { createEditMode } from "../shared/js/edit-mode.js?v=2.26";
-import { makeSocialLink } from "../shared/js/shell.js?v=2.26";
-import { createDesktopMenu } from "./menu.js?v=2.26";
-import { createDesktopSearch } from "./search.js?v=2.26";
+import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.28";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.28";
+import { createEditMode } from "../shared/js/edit-mode.js?v=2.28";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.28";
+import { createDesktopMenu } from "./menu.js?v=2.28";
+import { createDesktopSearch } from "./search.js?v=2.28";
 
 /** Asztali fejléc: címerből nyíló körmenü és külön nagy lebegő keresőablak.
  * A mobilmenü és annak DOM-ja itt nem létezik. */
 export function makeDesktopHeader(config, home, { heroMode = false } = {}) {
   const data = config.home.header;
+  const schoolName = schoolDisplayNames(config.site.fullName);
   const brand = element("a", { className: "home-brand desktop-brand", attributes: {
     href: config.routes.home, "aria-label": config.site.fullName
   } },
-    element("strong", { text: data.schoolLine1 }),
-    element("small", { text: data.schoolLine2 }));
+    element("strong", { text: schoolName.line1 }),
+    element("small", { text: schoolName.line2 }));
   const crestToggle = element("button", { className: "desktop-crest-toggle shell-crest-toggle",
     attributes: { type: "button", "aria-label": data.menuOpenLabel,
       "aria-controls": "desktop-main-menu", "aria-expanded": "false" } },

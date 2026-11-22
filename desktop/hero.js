@@ -1,5 +1,5 @@
-import { crest, element } from "../shared/js/dom.js?v=2.26";
-import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.26";
+import { crest, element } from "../shared/js/dom.js?v=2.28";
+import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.28";
 
 const clamp = (value) => Math.max(0, Math.min(1, value));
 const mediaRoot = "./shared/assets/media/web/desktop-hero/";
@@ -17,8 +17,8 @@ export function shuffledHeroOrder(count, previous = -1, random = Math.random) {
   return sequence;
 }
 
-/** Újraépített teljes képes asztali nyitás: a fotó és a címer ugyanabba a
- * fejlécbeli célpontba fut. Mobilon ez a modul nincs betöltve. */
+/** Asztali nyitás: a fotó a következő szakaszig kitart, a címer csak a
+ * ragadós nyitószakasz végére ér a fejlécbe. Mobilon ez a modul nincs betöltve. */
 export function createDesktopHero(config, { openMenu, headerCrest, setCompact }) {
   const data = config.home.desktopHero;
   if (!Array.isArray(data?.slides) || data.slides.length < 2 ||
@@ -48,14 +48,16 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   const accessibleTitle = element("h1", {
     className: "desktop-hero-accessible-title", text: data.schoolTitle
   });
+  const imageLayer = element("div", { className: "desktop-hero-image",
+    attributes: { "aria-hidden": "true" } }, photo,
+    element("div", { className: "desktop-hero-shade" }));
   const stage = element("div", { className: "desktop-hero-stage" },
-    element("div", { className: "desktop-hero-image", attributes: { "aria-hidden": "true" } }, photo,
-      element("div", { className: "desktop-hero-shade" })),
     accessibleTitle, heroCrest, previous, next,
     element("div", { className: "desktop-hero-controls" }, story));
   const track = element("section", { className: "desktop-hero-track", attributes: {
     "aria-label": data.ariaLabel
   } },
+    imageLayer,
     element("div", { className: "desktop-hero-after", attributes: { "aria-hidden": "true" } }),
     stage);
   let sequence = shuffledHeroOrder(data.slides.length);
@@ -110,8 +112,9 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
     scheduled = false;
     if (disposed) return;
     scrollRatio = clamp((window.scrollY || 0) / foldLength());
-    const progress = reduced.matches ? (scrollRatio >= .5 ? 1 : 0)
-      : scrollRatio * scrollRatio * (3 - 2 * scrollRatio);
+    // A felfelé mozgás eleinte lassú, és pontosan a ragadós szakasz végén ér célba.
+    const progress = reduced.matches ? (scrollRatio >= 1 ? 1 : 0)
+      : scrollRatio * scrollRatio * scrollRatio;
     const bounds = stage.getBoundingClientRect?.() || { left:0, top:0,
       width:window.innerWidth || 1440, height:window.innerHeight || 900 };
     const target = headerCrest?.getBoundingClientRect?.() || { left:bounds.width/2 - 38,
@@ -122,23 +125,17 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
     const targetY = target.top + target.height / 2 - bounds.top;
     const moveX = (targetX - startX) * progress;
     const moveY = (targetY - startY) * progress;
-    const clipRadius = Math.hypot(bounds.width, bounds.height) * (1 - progress) +
-      target.width * .48 * progress;
     const sourceCrestWidth = heroCrest.offsetWidth || Math.min(234,
       Math.max(158, (window.innerWidth || 1100) * .16));
     const endScale = Math.min(1, target.width / sourceCrestWidth);
-    stage.style.setProperty("--hero-clip-radius", `${clipRadius.toFixed(2)}px`);
-    stage.style.setProperty("--hero-clip-x", `${(startX + moveX).toFixed(2)}px`);
-    stage.style.setProperty("--hero-clip-y", `${(startY + moveY).toFixed(2)}px`);
     stage.style.setProperty("--hero-crest-x", `${moveX.toFixed(2)}px`);
     stage.style.setProperty("--hero-crest-y", `${moveY.toFixed(2)}px`);
     stage.style.setProperty("--hero-crest-scale", String(1 + (endScale - 1) * progress));
-    stage.style.setProperty("--hero-crest-opacity", String(clamp((1 - progress) / .15)));
-    stage.style.setProperty("--hero-image-opacity", String(clamp((1 - progress) / .13)));
-    stage.style.setProperty("--hero-fold-opacity", String(clamp((1 - progress) / .5)));
-    const compact = progress >= .86;
+    stage.style.setProperty("--hero-crest-opacity", String(clamp((1 - progress) / .045)));
+    stage.style.setProperty("--hero-fold-opacity", String(clamp((1 - scrollRatio) / .35)));
+    const compact = scrollRatio >= .995;
     setCompact(compact);
-    const folded = progress >= .97;
+    const folded = scrollRatio >= .995;
     if (folded !== lastFolded) {
       for (const control of allControls) control.setAttribute("tabindex", folded ? "-1" : "0");
       lastFolded = folded;

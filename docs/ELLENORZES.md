@@ -1,8 +1,85 @@
-# Csanádi 2.26 – középre igazított sporteredmény-találatok
+# Csanádi 2.28 – teljes képes görgetés, kibővített menü és kártyás aloldalak
 
 Ez a ZIP **nem publikált** fejlesztési kiadás. A 2.15-ös forráscsomagot
-és a 2.16–2.25-ös fejlesztéseket folytatja az elfogadott funkciók
+és a 2.16–2.27-es fejlesztéseket folytatja az elfogadott funkciók
 megtartásával. A korábbi ZIP-ek változatlanul megmaradtak.
+
+## A 2.28-as fejlesztések
+
+- **Asztali nyitókép:** a nagy címer eleinte lassabban indul felfelé
+  (köbös, gyorsuló görgetési arány), és csak a nyitó szakasz ragadós
+  részének legvégén ér a felső menügomb helyére. A fejléc címere
+  csak ekkor veszi át a szerepét; visszagörgetéskor a folyamat megfordul.
+  A fotó most a **teljes 160dvh magas nyitószakasz háttere**, nem
+  zsugorodik a címer méretére, nem halványul el, és nem marad üres,
+  egyszínű sáv a következő tartalom megjelenéséig. A mobilos nyitószakasz
+  logikája változatlan.
+- **Menüszerkezet:** továbbra is hat főcsoport, de mindegyik alatt
+  **legalább nyolc közvetlen almenü** van: Iskolánk 9; Tanulás és
+  képzés 8; Felvételi 8; Sport és eredmények 8; Hírek és programok 8;
+  Iskolai tudnivalók 8. Összesen **49 valódi, megnyitható almenüvégpont**.
+  A rövid, pontatlan címeket közérthetőbbekre cseréltük; a meglévő
+  belső ID-k és a sporteredmény-archívum útvonala megmaradtak.
+  Harmadik menüszint továbbra sincs. A JSON ellenőrzése
+  visszautasítja a nyolcnál kevesebb almenüt tartalmazó csoportokat.
+- **Aloldalak:** a korábbi háromsoros, egyszerű felsorolást minden
+  még tartalomvázlatos aloldalon **Bootstrap-szerkezetű
+  `card` / `card-body` / `card-title` kártyák** váltják.
+  Mindegyik lapon három kártya, kártyánként két témacsoport,
+  mindegyik alatt két alpont, alpontonként két részletező sor
+  jelenik meg. Ezek **tervezett szövegek**, nem hitelesített iskolai
+  információk; közzététel előtt az iskola saját tartalmára cserélendők.
+  A Bootstrap osztálynevek helyi, testre szabott CSS-t kapnak,
+  külső CDN vagy hálózati függés nélkül.
+- **Külön platformstílus:** asztalon tágas háromhasábos
+  arany–sötétkék/krém kártyák, a köztes szélességnél két hasáb;
+  mobilon kompakt, egyhasábos, külön kialakított kártyák.
+  Mindkettő követi a sötét/világos témát.
+- **Egyetlen adatforrás:** a hat témacsoport teljes, többszintű
+  kártyatartalma a `shared/data/site.json`
+  `pagePreview.sections` mezőjében található. A kereső a kártyák
+  **összes beágyazott szövegét** is keresi. A menü
+  `menu.items` mezője az egyetlen név- és linkszerkesztési hely.
+- **Ellenőrzés:** a Node-alapú regressziós tesztek sikeresek,
+  az asztali böngészőben képernyőn igazolható, hogy a fotó
+  az alatta induló sportsikerrészig kitart, a címer csak a
+  görgetési szakasz végén jelenik meg a fejlécben, nyolc
+  sportos almenü nyílik, az új aloldalon három
+  kártya és 24 részletező sor látható; világos témában
+  az új kártyák színei is átállnak. Valós telefonon
+  további vizuális próba ajánlott.
+
+## A 2.27-es javítás
+
+- Az asztali nyitókép görgetése után a felső fejlécsorba kerülő **címeres
+  menügomb háttérszíne** korábban sötétkéken maradt világos témában is.
+  Oka: a tömörített fejlécgombra külön, rögzített kék radiális háttér volt
+  megadva; ehhez nem tartozott világostéma-felülírás.
+- Világos témában a gomb most világos krém–arany árnyalatot és hozzá illő
+  arany szegélyt, finom árnyékot kap. Sötét témában a mélykék háttér és az
+  arany szegély megmarad. Automatikus témánál is a tényleges rendszerbeállítást
+  követi, mert ugyanaz a `data-theme` állapot irányítja.
+- A gomb mérete, címerképe, megnyitási működése, görgetési animációja,
+  a fejléc és az összes többi elfogadott funkció változatlan.
+- A felhasználó kérése szerint a lábléc frissítésellenőrzésének időköze
+  **60 helyett 10 másodperc** lett, kezdeti felirata rövidebb:
+  **„Frissítés: 10 mp-enként”**. A JSON-ban a felirat valójában
+  `"Frissítés: {seconds} mp-enként"` sablon, így a **10 csak egyszer**,
+  a `refreshSeconds` értékében szerepel. A sikeres ellenőrzés utáni címke
+  **„Ellenőrizve”**. Rejtett lapon nincs lekérés; a 10 másodperces
+  ellenőrzés változatlan JSON-nál nem építi újra a tájékoztató gombokat.
+  Ezt a teszt 20 másodpercre történő JSON-módosítással is ellenőrzi.
+- Az **intézménynév egyetlen forrása** a `site.fullName`: ebből készül
+  mindkét fejléc kétsoros felirata és a nyitókapu nagybetűs neve. Kivettük
+  a korábbi `gateCaption`, `schoolLine1` és `schoolLine2` másolatokat.
+- A sportsikerek kezdőlapi bevezetőjéből kikerült a külön beírt „hat” szám:
+  a kiemelés darabszámát a valós JSON-elemek és a hatos megjelenítési logika
+  szabja meg. Az Impresszum nem tárol külön cím- és e-mail-másolatot;
+  ezek egyetlen forrása a `home.footer.address` és `home.footer.email`.
+- A következő fejlesztések alapelve: **egy adatnak egy szerkesztési helye
+  legyen**, az ettől függő feliratok és megjelenítések abból képződjenek.
+  Nagy látogatottság esetén az ellenőrzés gyakorisága később JSON-ból
+  módosítható, majd oldalújratöltéssel lép életbe.
 
 ## A 2.26-os javítás
 
@@ -58,7 +135,7 @@ Az alábbi 2.25-ös részletes funkcióleírás továbbra is érvényes.
   még **nem hiteles iskolai adatok**; publikálás előtt cserélni kell.
 
 Az alábbi verziótörténeti szakaszok a korábbi kiadások állapotát
-írják le; az aktuális működésben a fenti **2.26-os változások** is érvényesek.
+írják le; az aktuális működésben a fenti **2.28-as változások** is érvényesek.
 
 ## A 2.24-es fejlesztés
 
@@ -488,29 +565,29 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   ellenőrizetlen állítást nem tettünk: a jelen állapot technikai ismertető.
 - A `Utolsó frissítés` kizárólag a JSON `updatedAt` dátumát mutatja; **nem**
   állítja a böngésző aktuális idejét tartalmi frissítésnek.
-- A látható böngészőlapon 60 másodpercenként újra lekérjük a közös
+- A látható böngészőlapon 10 másodpercenként újra lekérjük a közös
   `shared/data/site.json` fájlt. Érvényes új adatok esetén a négy szöveg,
   a frissítési dátum és a verzió oldalújratöltés nélkül frissül. A nyitott
   lebegő ablak megmarad, tartalma is frissül. Rejtett böngészőlapon nem kérdezünk le;
   visszatéréskor újra ellenőrzünk. Hibás JSON esetén a korábbi érvényes
   információ marad látható.
 - A lábléc paneljeit és külső térközeit jelentősen csökkentettük.
-  A legalsó sor minden frissítés után a `Verzió: 2.26`,
+  A legalsó sor minden frissítés után a `Verzió: 2.27`,
   illetve a későbbi JSON-verzió.
 
 ## Frissítés böngészési adatok törlése nélkül
 
 - A nyitó HTML a `shared/js/entry.js` és az alap CSS fájlt a JSON-ban
-  szereplő kiadáshoz kötött URL-lel (`?v=2.26`) kéri le.
+  szereplő kiadáshoz kötött URL-lel (`?v=2.27`) kéri le.
 - Minden statikus JavaScript-modul-import ugyanilyen verziót kap a
   `node tools/stamp-release.mjs` kiadás-előkészítő lépésben. A két
   platformstílus is verziózott URL-lel töltődik be.
 - Az oldal a közös JSON-t friss, gyorsítótárat kerülő lekéréssel olvassa.
-  Új kiadás észlelésekor a 60 másodperces ellenőrzés az aktuális
+  Új kiadás észlelésekor a 10 másodperces ellenőrzés az aktuális
   útvonal megtartásával, új verzióparaméterrel tölti újra a teljes oldalt.
 - **Korlát:** a régi, már eltárolt 2.13-as kezdő HTML és programkód
   magától nem feltétlenül tudja alkalmazni az új mechanizmust; az új
-  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.26`
+  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.27`
   URL-t. A tárhely/CDN HTTP gyorsítótárazási szabályai külön is számítanak.
 
 ## A visszaállított asztali kezdőlap és a mobilos következő lépés
@@ -530,7 +607,7 @@ másolata; a felső címeres menügomb nem kerül át máshová.
 A menüvégpontok továbbra is csak minimális, jóváhagyott oldalvázlatokként
 nyílnak meg, valós tartalmuk később épül be.
 A lábléc `Tájékoztatás` oszlopának legalsó sora a JSON-ból
-automatikusan megjelenő `Verzió: 2.26`.
+automatikusan megjelenő `Verzió: 2.27`.
 
 ## Tesztek és korlát
 

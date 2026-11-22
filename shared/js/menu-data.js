@@ -22,16 +22,25 @@ export function validateMenu(config) {
     }
   }
   for (const root of items) visit(root, 1);
+  if (items.some((root) => !Array.isArray(root.children) || root.children.length < 8)) {
+    throw new Error("Minden főmenühöz legalább nyolc közvetlen almenüpont tartozzon.");
+  }
   const preview = config.pagePreview;
   if (!preview || typeof preview.intro !== "string" || !preview.intro.trim() ||
     !preview.sections || typeof preview.sections !== "object") {
     throw new Error("Hiányzó JSON-alapú oldalvázlat.");
   }
   for (const item of items) {
-    const lines = preview.sections[item.id];
-    if (!Array.isArray(lines) || lines.length < 2 || lines.length > 4 ||
-      lines.some((line) => typeof line !== "string" || !line.trim() || line.length > 160)) {
-      throw new Error("Hibás vagy hiányzó oldalvázlat a főmenühöz.");
+    const cards = preview.sections[item.id];
+    if (!Array.isArray(cards) || cards.length < 2 || cards.length > 4 || cards.some((card) =>
+      !card || !validLabel(card.title, 90) || !validLabel(card.summary, 200) ||
+      !Array.isArray(card.groups) || card.groups.length < 2 || card.groups.length > 4 ||
+      card.groups.some((group) => !group || !validLabel(group.title, 90) ||
+        !Array.isArray(group.points) || group.points.length < 2 || group.points.length > 5 ||
+        group.points.some((point) => !point || !validLabel(point.title, 90) ||
+          !Array.isArray(point.details) || point.details.length < 1 || point.details.length > 4 ||
+          point.details.some((detail) => !validLabel(detail, 160)))))) {
+      throw new Error("Hibás vagy hiányzó kártyás oldalvázlat a főmenühöz.");
     }
   }
   const locals = preview.localPages;
@@ -48,6 +57,16 @@ export function validateMenu(config) {
     identifiers.add(page.id);
   }
   return items;
+}
+
+const validLabel = (text, maxLength) => typeof text === "string" &&
+  !!text.trim() && text.length <= maxLength;
+
+/** A kártyák minden címe és beágyazott alpontja részt vesz a teljes oldalas keresésben. */
+export function pagePreviewSearchText(cards) {
+  return cards.flatMap((card) => [card.title, card.summary,
+    ...card.groups.flatMap((group) => [group.title,
+      ...group.points.flatMap((point) => [point.title, ...point.details])])]).join(" ");
 }
 
 export function menuPageHref(id) {

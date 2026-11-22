@@ -1,5 +1,5 @@
-import { getMenuPage, menuPageHref } from "./menu-data.js?v=2.26";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.26";
+import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.28";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.28";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */
@@ -87,7 +87,7 @@ function createIndex(config) {
     if (!page) return;
     add({ label:page.title, category:categories.page, href:menuPageHref(node.id),
       summary:parents.join(" · "),
-      details:`${page.intro} ${page.items.join(" ")}` });
+      details:`${page.intro} ${pagePreviewSearchText(page.items)}` });
   }
   for (const root of config.menu.items) visit(root);
   // A menüből kivett, de saját oldalcímmel megtartott képzési témák is
@@ -97,7 +97,7 @@ function createIndex(config) {
     if (!page) continue;
     add({ label:page.title, category:categories.page,
       href:menuPageHref(local.id), summary:local.parentId,
-      details:`${page.intro} ${page.items.join(" ")}` });
+      details:`${page.intro} ${pagePreviewSearchText(page.items)}` });
   }
 
   // Kattintásra valódi sportsiker-részletező nyílik, névre is kereshető.

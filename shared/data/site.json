@@ -1,11 +1,10 @@
 {
   "schemaVersion": "2.06",
-  "release": "2.26",
+  "release": "2.28",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
-    "crestAlt": "A Csanádi Árpád Sportiskola címere",
-    "gateCaption": "CSANÁDI ÁRPÁD SPORTISKOLA, ÁLTALÁNOS ISKOLA ÉS GIMNÁZIUM"
+    "crestAlt": "A Csanádi Árpád Sportiskola címere"
   },
   "routes": {
     "gate": "#/",
@@ -44,7 +43,7 @@
         ["atletika", "atlétika", "futas", "futás"],
         ["uszas", "úszás", "uszoda"],
         ["asztalitenisz", "pingpong"],
-        ["tanar", "tanár", "tanarok", "tanárok", "tantestulet", "tantestület", "pedagogus", "pedagógus"],
+        ["tanar", "tanár", "tanarok", "tanárok", "tantestulet", "tantestület", "pedagogus", "pedagógus", "pedagógusaink"],
         ["informatika", "digitalis", "digitális", "szamitastechnika", "számítástechnika"],
         ["naplo", "napló", "kreta", "kréta"],
         ["felveteli", "felvételi", "beiratkozas", "beiratkozás", "jelentkezes", "jelentkezés"],
@@ -56,7 +55,7 @@
       "ariaLabel": "Diákjaink sportsikerei",
       "eyebrow": "CSANÁDI · SPORTEREDMÉNYEK",
       "title": "Legfrissebb sportsikereink",
-      "intro": "A legutóbbi hat kiemelkedő eredmény diákjainktól.",
+      "intro": "Eredmények, amelyekre büszkék lehetünk.",
       "archiveTitle": "Sporteredmények",
       "archiveIntro": "Diákjaink korábbi sikerei, versenyei és kiemelkedő teljesítményei egy helyen.",
       "archiveUi": {
@@ -503,8 +502,6 @@
       ]
     },
     "header": {
-      "schoolLine1": "CSANÁDI ÁRPÁD SPORTISKOLA",
-      "schoolLine2": "ÁLTALÁNOS ISKOLA ÉS GIMNÁZIUM",
       "motto": "SPORT · TUDÁS · KÖZÖSSÉG",
       "socialLabel": "Közösségi és külső hivatkozások",
       "navigationLabel": "Főoldali navigáció",
@@ -559,16 +556,16 @@
       "versionLabel": "Verzió",
       "updatedLabel": "Utolsó frissítés",
       "updatedAt": "2026-11-22",
-      "checkedLabel": "Frissítések ellenőrizve",
-      "pendingLabel": "Automatikus frissítésellenőrzés: 60 másodpercenként",
+      "checkedLabel": "Ellenőrizve",
+      "pendingLabel": "Frissítés: {seconds} mp-enként",
       "errorLabel": "A frissítések ellenőrzése átmenetileg nem sikerült",
-      "refreshSeconds": 60,
+      "refreshSeconds": 10,
       "notices": [
         {
           "id": "impresszum",
           "glyph": "I",
           "title": "Impresszum",
-          "body": "A Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium honlapjának fejlesztési tájékoztató felülete. Intézményi cím: 1143 Budapest, Őrnagy utca 5–7. Kapcsolat: csanadi@csanadiiskola.hu. A hivatalos fenntartói és közzétételi adatok ellenőrzése az élesítés előtt szükséges."
+          "body": "A honlap fejlesztési tájékoztató felülete. Az intézmény pontos neve a fejlécben, címe és e-mail-címe a Kapcsolat résznél szerepel. A hivatalos fenntartói és közzétételi adatok ellenőrzése az élesítés előtt szükséges."
         },
         {
           "id": "adatkezeles",
@@ -604,65 +601,285 @@
     "items": [
       { "id": "school", "label": "Iskolánk", "children": [
         { "id": "school-introduction", "label": "Bemutatkozás" },
-        { "id": "school-values", "label": "Céljaink és értékeink" },
-        { "id": "school-staff", "label": "Tantestület" },
-        { "id": "school-history", "label": "Történetünk és büszkeségeink" },
-        { "id": "school-partners", "label": "Partnereink és alapítványunk" },
-        { "id": "school-eco", "label": "Ökoiskola" },
-        { "id": "school-explore", "label": "Felfedezőközpont" },
-        { "id": "school-compass", "label": "Iskolai iránytű" },
-        { "id": "school-workshop", "label": "Iskolai műhely" }
+        { "id": "school-values", "label": "Nevelési céljaink" },
+        { "id": "school-staff", "label": "Pedagógusaink" },
+        { "id": "school-history", "label": "Az iskola története" },
+        { "id": "school-partners", "label": "Partnerek és alapítvány" },
+        { "id": "school-eco", "label": "Környezeti nevelés" },
+        { "id": "school-explore", "label": "Felfedezőközpont programjai" },
+        { "id": "school-compass", "label": "Iskolai élet és szabályok" },
+        { "id": "school-workshop", "label": "Iskolai alkotóműhelyek" }
       ] },
-      { "id": "education", "label": "Oktatás", "children": [
-        { "id": "education-programs", "label": "Képzéseink" },
-        { "id": "education-years", "label": "Tanévek" },
-        { "id": "education-exams", "label": "Vizsgák" },
+      { "id": "education", "label": "Tanulás és képzés", "children": [
+        { "id": "education-programs", "label": "Iskolai képzések" },
+        { "id": "education-years", "label": "A tanév rendje" },
+        { "id": "education-exams", "label": "Vizsgák és követelmények" },
         { "id": "education-resources", "label": "Tananyagok és segédletek" },
-        { "id": "education-library", "label": "Könyvtár" },
-        { "id": "education-digital", "label": "Digitális kultúra" },
-        { "id": "education-community", "label": "Tanulás és közösség" }
+        { "id": "education-library", "label": "Iskolai könyvtár" },
+        { "id": "education-digital", "label": "Digitális tanulás" },
+        { "id": "education-community", "label": "Közös tanulási programok" },
+        { "id": "education-talent", "label": "Szakkörök és tehetséggondozás" }
       ] },
       { "id": "admission", "label": "Felvételi", "children": [
         { "id": "admission-primary", "label": "1. osztályos beiratkozás" },
         { "id": "admission-secondary", "label": "9. évfolyamos felvételi" },
         { "id": "admission-open", "label": "Nyílt napok" },
-        { "id": "admission-deadlines", "label": "Felvételi határidők" }
+        { "id": "admission-deadlines", "label": "Jelentkezési határidők" },
+        { "id": "admission-process", "label": "A jelentkezés menete" },
+        { "id": "admission-guide", "label": "Felvételi tájékoztató" },
+        { "id": "admission-documents", "label": "Szükséges dokumentumok" },
+        { "id": "admission-faq", "label": "Felvételi kérdések és válaszok" }
       ] },
-      { "id": "sports", "label": "Sportélet", "children": [
-        { "id": "sports-disciplines", "label": "Sportágak" },
-        { "id": "sports-results", "label": "Sporteredmények" },
-        { "id": "sports-gallery", "label": "Képgaléria" },
-        { "id": "sports-olympic", "label": "Olimpiai örökség és tudástár" }
+      { "id": "sports", "label": "Sport és eredmények", "children": [
+        { "id": "sports-disciplines", "label": "Iskolai sportágak" },
+        { "id": "sports-results", "label": "Diákjaink sporteredményei" },
+        { "id": "sports-gallery", "label": "Sportképek és galériák" },
+        { "id": "sports-olympic", "label": "Olimpiai ismeretek" },
+        { "id": "sports-training", "label": "Edzések és sportprogramok" },
+        { "id": "sports-competitions", "label": "Iskolai versenyek" },
+        { "id": "sports-facilities", "label": "Sportpályák és létesítmények" },
+        { "id": "sports-leisure", "label": "Szabadidős sportok" }
       ] },
-      { "id": "news", "label": "Hírek és események", "children": [
-        { "id": "news-latest", "label": "Hírek" },
-        { "id": "news-calendar", "label": "Eseménynaptár" },
-        { "id": "news-announcements", "label": "Közlemények" },
-        { "id": "news-archive", "label": "Hírarchívum" }
+      { "id": "news", "label": "Hírek és programok", "children": [
+        { "id": "news-latest", "label": "Legfrissebb hírek" },
+        { "id": "news-calendar", "label": "Iskolai eseménynaptár" },
+        { "id": "news-announcements", "label": "Fontos közlemények" },
+        { "id": "news-archive", "label": "Korábbi hírek" },
+        { "id": "news-sports", "label": "Sporthírek" },
+        { "id": "news-studies", "label": "Tanulmányi hírek" },
+        { "id": "news-events", "label": "Iskolai rendezvények" },
+        { "id": "news-community", "label": "Közösségi programok" }
       ] },
-      { "id": "information", "label": "Információk", "children": [
-        { "id": "information-daily", "label": "Mindennapi tudnivalók" },
-        { "id": "information-documents", "label": "Dokumentumtár" },
-        { "id": "information-services", "label": "Ügyintézés" },
+      { "id": "information", "label": "Iskolai tudnivalók", "children": [
+        { "id": "information-daily", "label": "Napi iskolai tudnivalók" },
+        { "id": "information-documents", "label": "Hivatalos dokumentumok" },
+        { "id": "information-services", "label": "Iskolai ügyintézés" },
         { "id": "information-service", "label": "Közösségi szolgálat" },
-        { "id": "information-contact", "label": "Kapcsolat" }
+        { "id": "information-contact", "label": "Elérhetőségek" },
+        { "id": "information-timetable", "label": "Órarend és csengetési rend" },
+        { "id": "information-meals", "label": "Iskolai étkezés" },
+        { "id": "information-absence", "label": "Hiányzások igazolása" }
       ] }
     ]
   },
   "pagePreview": {
-    "intro": "Ezen az oldalon később ezek a tartalmak kapnak helyet:",
+    "intro": "A témakör tervezett tartalmait áttekinthető, részletesen tagolt kártyák mutatják be.",
     "localPages": [
       { "id": "education-primary", "title": "Általános iskola", "parentId": "education-programs" },
       { "id": "education-secondary", "title": "Gimnázium", "parentId": "education-programs" },
       { "id": "education-sports", "title": "Sportiskolai nevelés", "parentId": "education-programs" }
     ],
     "sections": {
-      "school": ["Az adott iskolai témakör részletes bemutatása", "Kapcsolódó iskolai információk", "Hasznos dokumentumok és elérhetőségek"],
-      "education": ["A választott oktatási témakör részletei", "Aktuális tanulmányi információk és időpontok", "Kapcsolódó tananyagok és dokumentumok"],
-      "admission": ["A felvételi témakör részletes tudnivalói", "Határidők és követelmények", "Jelentkezéshez szükséges dokumentumok és kapcsolatok"],
-      "sports": ["A választott sporttémakör bemutatása", "Eredmények, események és képes anyagok", "Kapcsolódó sporthírek és dokumentumok"],
-      "news": ["Hírek és események részletes tartalmai", "Aktuális dátumok és közlemények", "Kapcsolódó fényképek és források"],
-      "information": ["A választott intézményi tudnivalók", "Ügyintézési és kapcsolattartási információk", "Kapcsolódó dokumentumok és hivatkozások"]
+      "school": [
+        { "title": "Ismerd meg az iskolát", "summary": "A témakör háttere, szereplői és legfontosabb tudnivalói.",
+          "groups": [
+            { "title": "Alapok", "points": [
+              { "title": "Rövid bemutatás", "details": ["Miért fontos ez a terület az iskola életében?", "Milyen lehetőségeket kínál a diákoknak?"] },
+              { "title": "Célok és értékek", "details": ["A kapcsolódó nevelési célok áttekintése.", "A mindennapokban megjelenő értékek."] }
+            ] },
+            { "title": "Akik részt vesznek benne", "points": [
+              { "title": "Diákok és pedagógusok", "details": ["Az érintett közösségek bemutatása.", "Az együttműködés legfontosabb formái."] },
+              { "title": "Iskolai partnerek", "details": ["Kapcsolódó programok és együttműködések.", "Hogyan lehet érdeklődni vagy csatlakozni?"] }
+            ] }
+          ] },
+        { "title": "Iskolai élet", "summary": "A gyakorlati működés és a programok témái egy helyen.",
+          "groups": [
+            { "title": "Mindennapok", "points": [
+              { "title": "Szokások és szabályok", "details": ["A témához tartozó általános tudnivalók.", "Mire érdemes figyelni az iskolai napokon?"] },
+              { "title": "Helyszínek és lehetőségek", "details": ["Érintett iskolai terek áttekintése.", "A használathoz szükséges tudnivalók."] }
+            ] },
+            { "title": "Programok", "points": [
+              { "title": "Visszatérő tevékenységek", "details": ["A tervezett programtípusok bemutatása.", "Kapcsolódó évközi alkalmak."] },
+              { "title": "Közösségi részvétel", "details": ["A diákok lehetséges szerepei.", "Az együttműködés bemutatása."] }
+            ] }
+          ] },
+        { "title": "További tájékozódás", "summary": "Kapcsolódó források, kérdések és következő lépések.",
+          "groups": [
+            { "title": "Hasznos anyagok", "points": [
+              { "title": "Iskolai dokumentumok", "details": ["A témához tartozó szabályzatok helye.", "Letölthető anyagok és összefoglalók."] },
+              { "title": "Képek és beszámolók", "details": ["Korábbi programok bemutatásának helye.", "Kapcsolódó iskolai történetek."] }
+            ] },
+            { "title": "Segítség", "points": [
+              { "title": "Gyakori kérdések", "details": ["A legfontosabb visszatérő kérdések.", "Rövid és érthető válaszok."] },
+              { "title": "Kapcsolatfelvétel", "details": ["Kit érdemes keresni ebben a témában?", "Hol találhatók az aktuális elérhetőségek?"] }
+            ] }
+          ] }
+      ],
+      "education": [
+        { "title": "Tanulmányi lehetőségek", "summary": "Képzési utak és tanulási célok áttekintése.",
+          "groups": [
+            { "title": "Képzések", "points": [
+              { "title": "Iskolai szakaszok", "details": ["Az érintett évfolyamok és képzési formák.", "Az egyes utak főbb sajátosságai."] },
+              { "title": "Tanulási célok", "details": ["A fejleszteni kívánt ismeretek és készségek.", "Kapcsolódási pontok a következő évfolyamhoz."] }
+            ] },
+            { "title": "Tantárgyi területek", "points": [
+              { "title": "Alapismeretek", "details": ["Fontos tanulási területek.", "Kapcsolódó tanulási követelmények."] },
+              { "title": "Választható lehetőségek", "details": ["Szakkörök és kiegészítő foglalkozások.", "Tehetséggondozási irányok."] }
+            ] }
+          ] },
+        { "title": "A tanulás mindennapjai", "summary": "Tanévi rend, számonkérés és közös munka.",
+          "groups": [
+            { "title": "Tanév", "points": [
+              { "title": "Fontos időszakok", "details": ["Tanévkezdés és tanítási időszakok.", "Szünetek és kiemelt időpontok."] },
+              { "title": "Tanórák és foglalkozások", "details": ["A tanulás szervezése.", "Tantermi és digitális lehetőségek."] }
+            ] },
+            { "title": "Értékelés", "points": [
+              { "title": "Feladatok és vizsgák", "details": ["A számonkérés főbb típusai.", "Felkészülési szempontok."] },
+              { "title": "Visszajelzés", "details": ["A fejlődés követésének lehetőségei.", "Az egyéni segítség formái."] }
+            ] }
+          ] },
+        { "title": "Tanulási segítség", "summary": "Segédletek, források és továbblépési lehetőségek.",
+          "groups": [
+            { "title": "Források", "points": [
+              { "title": "Tananyagok", "details": ["A később feltölthető tanulási segédletek.", "Ajánlott olvasnivalók és feladatok."] },
+              { "title": "Könyvtár és digitális eszközök", "details": ["A használható források bemutatása.", "Önálló kutatást segítő ötletek."] }
+            ] },
+            { "title": "Támogatás", "points": [
+              { "title": "Közös felkészülés", "details": ["Tanulócsoportok és együttműködés.", "A kérdezés és konzultáció lehetőségei."] },
+              { "title": "További lehetőségek", "details": ["Versenyek és tanulmányi programok.", "Tehetségek kibontakoztatását segítő alkalmak."] }
+            ] }
+          ] }
+      ],
+      "admission": [
+        { "title": "Jelentkezés lépésről lépésre", "summary": "Az érdeklődéstől a beiratkozásig vezető út.",
+          "groups": [
+            { "title": "Tájékozódás", "points": [
+              { "title": "Kinek szól a felvételi?", "details": ["Érintett évfolyamok és képzési formák.", "A választáshoz szükséges alapinformációk."] },
+              { "title": "Ismerkedés az iskolával", "details": ["Nyílt napok és bemutatkozó alkalmak.", "Mire érdemes előre rákérdezni?"] }
+            ] },
+            { "title": "Jelentkezés", "points": [
+              { "title": "Teendők sorrendje", "details": ["Az előkészítés fontos lépései.", "A jelentkezés módjának bemutatása."] },
+              { "title": "Dokumentumok", "details": ["Szükséges igazolások és adatlapok.", "Mire figyeljünk a kitöltésnél?"] }
+            ] }
+          ] },
+        { "title": "Időpontok és feltételek", "summary": "Átlátható határidők és követelmények.",
+          "groups": [
+            { "title": "Ütemezés", "points": [
+              { "title": "Fontos dátumok", "details": ["A jelentkezési időszak áttekintése.", "Értesítések és további időpontok."] },
+              { "title": "Felvételi alkalmak", "details": ["A várható eseménytípusok.", "Részvétellel kapcsolatos tudnivalók."] }
+            ] },
+            { "title": "Elvárások", "points": [
+              { "title": "Jelentkezési feltételek", "details": ["A belépés alapvető feltételei.", "Ellenőrizendő dokumentumok."] },
+              { "title": "Felkészülés", "details": ["Ajánlott tájékozódási források.", "Gyakori hibák és félreértések elkerülése."] }
+            ] }
+          ] },
+        { "title": "Kérdések és segítség", "summary": "Hasznos válaszok a családoknak és a jelentkezőknek.",
+          "groups": [
+            { "title": "Gyakori kérdések", "points": [
+              { "title": "Mit és mikor kell beadni?", "details": ["A hiánytalan jelentkezés ellenőrzése.", "Módosítási lehetőségek bemutatása."] },
+              { "title": "Honnan érkezik visszajelzés?", "details": ["Az értesítési folyamat áttekintése.", "A következő lépések értelmezése."] }
+            ] },
+            { "title": "Kapcsolattartás", "points": [
+              { "title": "További tájékoztatás", "details": ["Hiteles intézményi források helye.", "Hol érdemes ellenőrizni a frissítéseket?"] },
+              { "title": "Személyes kérdések", "details": ["Az érdeklődők kérdésfeltevési lehetőségei.", "A megfelelő kapcsolattartó megtalálása."] }
+            ] }
+          ] }
+      ],
+      "sports": [
+        { "title": "Sportolási lehetőségek", "summary": "Sportágak, edzésformák és a sportiskolai mindennapok.",
+          "groups": [
+            { "title": "Sportágak", "points": [
+              { "title": "Sportágak bemutatása", "details": ["A különböző mozgásformák sajátosságai.", "Kinek lehet érdekes az adott sport?"] },
+              { "title": "A sportolás kezdete", "details": ["A bekapcsolódás általános tudnivalói.", "Felszerelés és felkészülés szempontjai."] }
+            ] },
+            { "title": "Edzések", "points": [
+              { "title": "Rendszeres mozgás", "details": ["Edzési alkalmak és programtípusok.", "Sport és tanulás összehangolása."] },
+              { "title": "Helyszínek", "details": ["Sportpályák és kapcsolódó terek.", "A használat általános szempontjai."] }
+            ] }
+          ] },
+        { "title": "Versenyek és eredmények", "summary": "Diákjaink eredményei és a versenyzés világa.",
+          "groups": [
+            { "title": "Megmérettetések", "points": [
+              { "title": "Versenyprogramok", "details": ["Iskolai és külső versenytípusok.", "A nevezésekhez kapcsolódó tudnivalók."] },
+              { "title": "Eredmények követése", "details": ["Friss sportsikerek és összefoglalók.", "Korábbi eredmények az archívumban."] }
+            ] },
+            { "title": "Sportolói történetek", "points": [
+              { "title": "Személyes sikerek", "details": ["Sportolói fejlődési utak.", "Az eredmények mögötti munka bemutatása."] },
+              { "title": "Képes pillanatok", "details": ["Versenyek és edzések fotói.", "Sportos iskolai beszámolók."] }
+            ] }
+          ] },
+        { "title": "Sportközösség", "summary": "A közös mozgás, egészség és sporthagyományok területei.",
+          "groups": [
+            { "title": "Együtt sportolunk", "points": [
+              { "title": "Közösségi sportnapok", "details": ["Szabadidős sportprogramok tervei.", "Csapatélmények és együttműködés."] },
+              { "title": "Mindennapi egészség", "details": ["Mozgás és regenerálódás alapjai.", "Sportos életmódhoz kapcsolódó tudás."] }
+            ] },
+            { "title": "Hagyományok", "points": [
+              { "title": "Sportiskolai értékek", "details": ["Fair play és kitartás.", "Egymás támogatása a sportban."] },
+              { "title": "Olimpiai ismeretek", "details": ["Sporttörténeti érdekességek.", "Példaképek és sporthagyományok."] }
+            ] }
+          ] }
+      ],
+      "news": [
+        { "title": "Friss hírek", "summary": "Rövid, könnyen áttekinthető iskolai beszámolók.",
+          "groups": [
+            { "title": "Újdonságok", "points": [
+              { "title": "Legutóbbi történések", "details": ["Iskolai események rövid összefoglalói.", "Fontos változások és újdonságok."] },
+              { "title": "Kiemelt közlemények", "details": ["Időszerű tájékoztatások helye.", "A kapcsolódó teendők bemutatása."] }
+            ] },
+            { "title": "Témák szerint", "points": [
+              { "title": "Sport és tanulás", "details": ["Sporteseményekről szóló beszámolók.", "Tanulmányi sikerek és programok."] },
+              { "title": "Közösségi élet", "details": ["Diákprogramok és közös élmények.", "Iskolai kezdeményezések bemutatása."] }
+            ] }
+          ] },
+        { "title": "Programok és időpontok", "summary": "Előre tervezhető alkalmak és rendezvények.",
+          "groups": [
+            { "title": "Eseménynaptár", "points": [
+              { "title": "Közelgő események", "details": ["A dátumok és helyszínek áttekintése.", "Részvétellel kapcsolatos információk."] },
+              { "title": "Fontos határidők", "details": ["Jelentkezési és egyéb időpontok.", "Feladatok és szükséges teendők."] }
+            ] },
+            { "title": "Rendezvények", "points": [
+              { "title": "Iskolai programok", "details": ["Ünnepségek és közös alkalmak.", "Tanulmányi és kulturális programok."] },
+              { "title": "Sportesemények", "details": ["Versenyek és sportnapok.", "Csapatokat érintő események."] }
+            ] }
+          ] },
+        { "title": "Korábbi beszámolók", "summary": "Visszakereshető történetek és kapcsolódó anyagok.",
+          "groups": [
+            { "title": "Hírarchívum", "points": [
+              { "title": "Időrend", "details": ["Korábbi hírek évekre és hónapokra bontva.", "Témák szerinti visszakeresés."] },
+              { "title": "Kiemelkedő pillanatok", "details": ["Fontos iskolai mérföldkövek.", "Közösségi eredmények és sikerek."] }
+            ] },
+            { "title": "Képes tartalmak", "points": [
+              { "title": "Fotók és galériák", "details": ["Rendezvények képes beszámolói.", "Kapcsolódó történetek."] },
+              { "title": "További források", "details": ["Kapcsolódó hivatkozások.", "Háttérinformációk és dokumentumok."] }
+            ] }
+          ] }
+      ],
+      "information": [
+        { "title": "Ügyintézés és kapcsolatok", "summary": "A leggyakoribb teendők és kapcsolattartási lehetőségek.",
+          "groups": [
+            { "title": "Ügyintézés", "points": [
+              { "title": "Kérelmek és bejelentések", "details": ["Milyen ügytípusok intézhetők?", "A szükséges adatok és lépések."] },
+              { "title": "Nyomtatványok", "details": ["Kitölthető dokumentumok helye.", "Leadással kapcsolatos tudnivalók."] }
+            ] },
+            { "title": "Elérhetőségek", "points": [
+              { "title": "Iskolai kapcsolatok", "details": ["Telefonszámok és elektronikus elérhetőségek.", "Melyik kérdéssel kihez forduljunk?"] },
+              { "title": "Ügyfélfogadás", "details": ["A kapcsolattartás időpontjai.", "Személyes ügyintézés előkészítése."] }
+            ] }
+          ] },
+        { "title": "Napi iskolai tudnivalók", "summary": "A hétköznapi működést megkönnyítő információk.",
+          "groups": [
+            { "title": "Iskolai nap", "points": [
+              { "title": "Órarend és csengetés", "details": ["Tanórák időbeosztásának helye.", "A napirendhez kapcsolódó tudnivalók."] },
+              { "title": "Étkezés", "details": ["Étkezési információk és ügyintézés.", "Változások és fontos határidők."] }
+            ] },
+            { "title": "Diákügyek", "points": [
+              { "title": "Hiányzás igazolása", "details": ["Igazolással kapcsolatos teendők.", "Határidők és megfelelő csatornák."] },
+              { "title": "Közösségi szolgálat", "details": ["A teljesítés alapvető tudnivalói.", "Kapcsolódó adminisztráció."] }
+            ] }
+          ] },
+        { "title": "Dokumentumok és segítség", "summary": "Hivatalos tájékoztatók és rövid eligazítások.",
+          "groups": [
+            { "title": "Dokumentumtár", "points": [
+              { "title": "Szabályzatok", "details": ["Intézményi szabályozó dokumentumok.", "Az aktuális változatok ellenőrzése."] },
+              { "title": "Tájékoztatók", "details": ["Hasznos összefoglalók.", "A témához tartozó további olvasnivalók."] }
+            ] },
+            { "title": "Gyakorlati segítség", "points": [
+              { "title": "Kérdések és válaszok", "details": ["Gyakori iskolai ügyintézési kérdések.", "Lépésenkénti eligazítás."] },
+              { "title": "Friss információk", "details": ["Mikor módosult az adott információ?", "Hol jelennek meg a változások?"] }
+            ] }
+          ] }
+      ]
     }
   },
   "appearance": {

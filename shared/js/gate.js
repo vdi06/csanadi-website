@@ -1,4 +1,4 @@
-import { element, crest } from "./dom.js?v=2.26";
+import { element, crest, schoolDisplayNames } from "./dom.js?v=2.28";
 
 const NS = "http://www.w3.org/2000/svg";
 const DOOR_SHAPE = "M 6 78 C 37 48 76 17 140 12 C 204 17 243 48 274 78 L 274 510 Q 274 514 269 514 L 11 514 Q 6 514 6 510 Z";
@@ -112,7 +112,7 @@ export function mountGate(root, config, platform, enter) {
     stage,
     element("div", { className: "gate-bottom-bar" },
       element("div", { className: "gate-bottom-copy" },
-        element("h1", { className: "gate-school-name", text: config.site.gateCaption })),
+        element("h1", { className: "gate-school-name", text: schoolDisplayNames(config.site.fullName).caption })),
       skipButton));
   const duration = platform === "mobile" ? settings.mobileDurationMs : settings.desktopDurationMs;
   screen.style.setProperty("--opening-duration", `${duration}ms`);

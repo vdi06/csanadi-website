@@ -1,18 +1,19 @@
-import { crest, element } from "../shared/js/dom.js?v=2.26";
-import { bindAppearance } from "../shared/js/appearance.js?v=2.26";
-import { createEditMode } from "../shared/js/edit-mode.js?v=2.26";
-import { makeSocialLink } from "../shared/js/shell.js?v=2.26";
-import { createMobileMenu } from "./menu.js?v=2.26";
-import { createMobileSearch } from "./search.js?v=2.26";
+import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.28";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.28";
+import { createEditMode } from "../shared/js/edit-mode.js?v=2.28";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.28";
+import { createMobileMenu } from "./menu.js?v=2.28";
+import { createMobileSearch } from "./search.js?v=2.28";
 
 /** Csak mobilos fejléc: középső címerből nyíló harmonikamenü, külön kereső. */
 export function makeMobileHeader(config, home) {
   const data = config.home.header;
+  const schoolName = schoolDisplayNames(config.site.fullName);
   const brand = element("a", { className: "home-brand mobile-brand", attributes: {
     href: config.routes.home, "aria-label": config.site.fullName
   } },
-    element("strong", { text: data.schoolLine1 }),
-    element("small", { text: data.schoolLine2 }));
+    element("strong", { text: schoolName.line1 }),
+    element("small", { text: schoolName.line2 }));
   const crestToggle = element("button", { className: "mobile-crest-toggle shell-crest-toggle",
     attributes: { type: "button", "aria-label": data.menuOpenLabel,
       "aria-controls": "mobile-main-menu", "aria-expanded": "false" } },
