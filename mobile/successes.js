@@ -1,8 +1,8 @@
-import { element } from "../shared/js/dom.js?v=2.25";
-import { trapTab } from "../shared/js/focus.js?v=2.25";
+import { element } from "../shared/js/dom.js?v=2.26";
+import { trapTab } from "../shared/js/focus.js?v=2.26";
 import { checkedSportSuccesses, featuredSportSuccesses, orderedSportSuccesses,
-  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.25";
-import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.25";
+  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.26";
+import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.26";
 
 /** Önálló mobilos sportsiker-rács: 2×3 kártya és függőlegesen olvasható lebegő ablak. */
 export function createMobileSuccesses(config, { archive = false } = {}) {

@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.25";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.25";
+import { element } from "../shared/js/dom.js?v=2.26";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.26";
 
 /** Az asztali aloldalak tudatosan csak JSON-ból épített tartalomvázlatok. */
 export function createDesktopPage(config, id) {

@@ -1,5 +1,5 @@
-import { getMenuPage, menuPageHref } from "./menu-data.js?v=2.25";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.25";
+import { getMenuPage, menuPageHref } from "./menu-data.js?v=2.26";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.26";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */

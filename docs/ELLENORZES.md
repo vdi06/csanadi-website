@@ -1,8 +1,28 @@
-# Csanádi 2.25 – szűrhető sporteredmény-galéria és lapozható archívum
+# Csanádi 2.26 – középre igazított sporteredmény-találatok
 
 Ez a ZIP **nem publikált** fejlesztési kiadás. A 2.15-ös forráscsomagot
-és a 2.16–2.24-es fejlesztéseket folytatja az elfogadott funkciók
+és a 2.16–2.25-ös fejlesztéseket folytatja az elfogadott funkciók
 megtartásával. A korábbi ZIP-ek változatlanul megmaradtak.
+
+## A 2.26-os javítás
+
+- Az archívum keresése vagy szűrése után a **találati kártyák vízszintesen
+  középre rendeződnek**. Ha csak egy eredmény van, az pontosan középen
+  jelenik meg; két találat is középen áll. A több, de nem teljes sort alkotó
+  eredményeket ugyanez a működés rendezi el.
+- Asztalon megmarad a **háromoszlopos**, mobilon a **kétoszlopos** alapméret.
+  Egyetlen találat sem nyúlik teljes képernyőszélességűre. A kezdőlap
+  hat kiemelt kártyájának rácsát ez a javítás nem érinti.
+- A mobilos, 350 px alatti keskeny képernyőkhöz, illetve a 768–950 px-es
+  asztali átmeneti tartományhoz külön kártyaszélesség-tartalék tartozik.
+  A CSS-szabályokat automatizált regressziós teszt is ellenőrzi.
+- Élő asztali böngészőben az egyetlen „Nagy Lilla” keresési találat
+  középpontja **0 px** eltérést mutatott a 1200 px széles archívrács
+  középpontjához képest. A kártya 385 px körüli, tehát a normál
+  háromoszlopos méretét megőrizte. Telefonon a CSS-tesztek sikeresek,
+  valódi készülékes megjelenés-ellenőrzés még szükséges.
+
+Az alábbi 2.25-ös részletes funkcióleírás továbbra is érvényes.
 
 ## A 2.25-ös fejlesztés
 
@@ -38,7 +58,7 @@ megtartásával. A korábbi ZIP-ek változatlanul megmaradtak.
   még **nem hiteles iskolai adatok**; publikálás előtt cserélni kell.
 
 Az alábbi verziótörténeti szakaszok a korábbi kiadások állapotát
-írják le; az aktuális működésben a fenti **2.25-ös változások** érvényesek.
+írják le; az aktuális működésben a fenti **2.26-os változások** is érvényesek.
 
 ## A 2.24-es fejlesztés
 
@@ -69,7 +89,7 @@ Az alábbi verziótörténeti szakaszok a korábbi kiadások állapotát
   az automatikus újrapróbálkozás megmaradtak.
 
 Az alábbi szakaszok történeti leírások; az azóta továbbfejlesztett
-archívum jelenlegi viselkedését a 2.25-ös szakasz rögzíti.
+archívum többi működését a 2.25-ös szakasz rögzíti.
 
 ## A 2.23-as fejlesztés
 
@@ -475,13 +495,13 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   visszatéréskor újra ellenőrzünk. Hibás JSON esetén a korábbi érvényes
   információ marad látható.
 - A lábléc paneljeit és külső térközeit jelentősen csökkentettük.
-  A legalsó sor minden frissítés után a `Verzió: 2.25`,
+  A legalsó sor minden frissítés után a `Verzió: 2.26`,
   illetve a későbbi JSON-verzió.
 
 ## Frissítés böngészési adatok törlése nélkül
 
 - A nyitó HTML a `shared/js/entry.js` és az alap CSS fájlt a JSON-ban
-  szereplő kiadáshoz kötött URL-lel (`?v=2.25`) kéri le.
+  szereplő kiadáshoz kötött URL-lel (`?v=2.26`) kéri le.
 - Minden statikus JavaScript-modul-import ugyanilyen verziót kap a
   `node tools/stamp-release.mjs` kiadás-előkészítő lépésben. A két
   platformstílus is verziózott URL-lel töltődik be.
@@ -490,7 +510,7 @@ azonosítókat használ majd. A módváltás továbbra sem nyit beállítási ab
   útvonal megtartásával, új verzióparaméterrel tölti újra a teljes oldalt.
 - **Korlát:** a régi, már eltárolt 2.13-as kezdő HTML és programkód
   magától nem feltétlenül tudja alkalmazni az új mechanizmust; az új
-  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.25`
+  kiadás első elérése egyszer kérhet egy frissítést vagy `?v=2.26`
   URL-t. A tárhely/CDN HTTP gyorsítótárazási szabályai külön is számítanak.
 
 ## A visszaállított asztali kezdőlap és a mobilos következő lépés
@@ -510,7 +530,7 @@ másolata; a felső címeres menügomb nem kerül át máshová.
 A menüvégpontok továbbra is csak minimális, jóváhagyott oldalvázlatokként
 nyílnak meg, valós tartalmuk később épül be.
 A lábléc `Tájékoztatás` oszlopának legalsó sora a JSON-ból
-automatikusan megjelenő `Verzió: 2.25`.
+automatikusan megjelenő `Verzió: 2.26`.
 
 ## Tesztek és korlát
 

@@ -1,5 +1,5 @@
-import { crest, element } from "../shared/js/dom.js?v=2.25";
-import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.25";
+import { crest, element } from "../shared/js/dom.js?v=2.26";
+import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.26";
 
 const clamp = (value) => Math.max(0, Math.min(1, value));
 const mediaRoot = "./shared/assets/media/web/desktop-hero/";
