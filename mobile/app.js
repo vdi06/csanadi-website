@@ -1,10 +1,10 @@
-import { element } from "../shared/js/dom.js?v=2.29";
-import { mountGate } from "../shared/js/gate.js?v=2.29";
-import { makeFooter } from "../shared/js/footer.js?v=2.29";
-import { makeMobileHeader } from "./header.js?v=2.29";
-import { createMobilePage } from "./page.js?v=2.29";
-import { createMobileStory } from "./story.js?v=2.29";
-import { createMobileSuccesses } from "./successes.js?v=2.29";
+import { element } from "../shared/js/dom.js?v=2.30";
+import { mountGate } from "../shared/js/gate.js?v=2.30";
+import { makeFooter } from "../shared/js/footer.js?v=2.30";
+import { makeMobileHeader } from "./header.js?v=2.30";
+import { createMobilePage } from "./page.js?v=2.30";
+import { createMobileStory } from "./story.js?v=2.30";
+import { createMobileSuccesses } from "./successes.js?v=2.30";
 
 /** Önálló mobilos nézet: saját fejléc, JSON-vázlatos aloldal és kompakt lábléc. */
 export function mount(root, config, page) {
@@ -22,7 +22,8 @@ export function mount(root, config, page) {
   const isArchive = page === "page:sports-results";
   const successes = story || isArchive ? createMobileSuccesses(config, { archive:isArchive }) : null;
   if (story) main.append(story.track, successes.section);
-  else if (isArchive) main.append(successes.section);
+  else if (isArchive) main.append(successes.section,
+    createMobilePage(config, "sports-results", { hideHeading:true }));
   else if (page.startsWith("page:")) main.append(createMobilePage(config, page.slice(5)));
   home.append(mobileHeader.header,
     ...(successes ? [successes.overlay] : []),

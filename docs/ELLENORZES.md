@@ -1,4 +1,61 @@
-# Csanádi 2.29 – a világos nyitókép láthatóságának javítása
+# Csanádi 2.30 – 49 egyedi tartalomoldal és teljes hibajavítás
+
+Ez a ZIP **nem publikált**, teljes fejlesztési csomag. A 2.29 összes
+funkcióját megtartja. Az alábbi 2.29-es és korábbi szakaszok történeti
+leírások, a háromkártyás sablon és `pagePreview.sections` **már nem az
+aktuális működés**.
+
+## A 2.30 újdonságai
+
+- **49 különálló oldal:** a hat főmenü 9 + 8 + 8 + 8 + 8 + 8
+  végpontjának mindegyike saját `pagePreview.pages[azonosító]` JSON-objektumot
+  kapott. Az oldalankénti kártyaszám, a témacsoportok, alpontok és részletek
+  száma a valódi tartalomhoz igazodik; nincs háromkártyás megszorítás.
+- **Tartalomtípushoz illő komponensek:** helyileg stílusozott,
+  Bootstrap-kompatibilis kártyák, listacsoportok, lépéslisták,
+  idővonalak, natív kinyitható harmonikák, táblázat, mobilos adatlista,
+  figyelmeztető blokkok, jelvények és képgaléria. Külső CDN nélkül működnek.
+- **Külön kód:** a `desktop/page.js` és a `mobile/page.js` önállóan
+  építi meg az oldalakat, de ugyanazt az érvényesített JSON-t használja.
+- **Közös adatok:** `site.fullName`, `site.principal`,
+  `home.footer.address`, `.email`, `.phone` hivatkozásként újrahasznosíthatók;
+  `publicNews` hírei több híroldalon egyetlen szerkesztési helyről jelennek meg.
+  A közös kereső automatikusan indexeli az új oldalakat, a hírbejegyzéseket
+  és a mélyen beágyazott részleteket is.
+- **Közlésfegyelem:** csak nyilvános, intézményi témákból átvett
+  tényszerű információt tettünk hozzá. Új tanulói neveket, képeket vagy
+  személyes eredményeket nem gyűjtöttünk. A 2.29-ből örökölt 30
+  sporteredmény-*mintaadatot* változatlanul megtartottuk a régi modul
+  megőrzésére; ezek **nem minősülnek hitelesített iskolai eredményeknek**,
+  közzététel előtt cserélendők, személyes adatokat csak jogosultsággal.
+- **Nincs szakkör:** a korábbi `education-talent` menüazonosító mellett
+  a megjelenő menünév „Tehetséggondozás”, az új tartalomban nem állítunk
+  szakköri foglalkozásokat.
+- **Archívum megtartása és javítása:** a `sports-results` oldalon a
+  kereshető sportsiker-archívum mellett már a 2.30 saját tartalma is látható.
+  A sportképes galéria nem jeleníti meg kétszer ugyanazt a képsorozatot.
+- **Híridővonalak:** a nyilvános, dátummal ellátott hírek a témának
+  megfelelő nézetben szerepelnek; a közelgő és lezárult események
+  szétválasztása az időadatokból történik.
+
+## Teljes hibajavítás és ellenőrzés
+
+Indítás: `node tools/test.mjs`. Az automatizált teszt ellenőrzi a
+menüszerkezetet, mind a 49 oldalt **két platformon (98 render)**,
+a változó számú komponenseket, harmonikát, táblázatot, galériafájlokat,
+közös JSON-hivatkozásokat, dinamikus keresést és a meglévő kapu-,
+téma-, fejléc-, menü-, archívum- és tájékoztatási működést.
+Lefuttatva: a kód- és viselkedéstesztek sikeresek. A környezet a
+headless Chromium indítását megakadályozta; valós böngészőben és
+telefonon a végső vizuális ellenőrzés még szükséges.
+
+## Korábbi verziók megőrzött története
+
+Az ezt követő szakaszok a 2.29-es és régebbi fejlesztések korabeli
+állapotát írják le. Azok, amelyek „három kártyáról” vagy
+`pagePreview.sections`-ről szólnak, kizárólag a régi kiadásokra igazak.
+
+# Csanádi 2.29 – a világos nyitókép láthatóságának javítása (történet)
 
 Ez a ZIP **nem publikált** fejlesztési kiadás. A 2.15-ös forráscsomagot
 és a 2.16–2.28-as fejlesztéseket folytatja az elfogadott funkciók

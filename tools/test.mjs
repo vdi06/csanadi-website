@@ -52,8 +52,8 @@ assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths, ...desktopH
   "Csak az ellenőrzött és szándékosan visszaállított funkciók szerepelhetnek az aktív csomagban.");
 assert.deepEqual(files(root).filter((path) => path.endsWith(".html")), ["index.html"]);
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
-assert.equal(config.schemaVersion, "2.06");
-assert.equal(config.release, "2.29");
+assert.equal(config.schemaVersion, "2.30");
+assert.equal(config.release, "2.30");
 assert.equal(config.appearance.defaultMode, "auto");
 assert.deepEqual(config.appearance.cycle, ["auto", "light", "dark"]);
 assert.deepEqual(Object.keys(config.appearance.shortLabels).sort(), ["auto", "dark", "light"]);
@@ -138,7 +138,7 @@ assert.ok(searchSite(config, "adatkezeles").some((item) =>
 assert.ok(searchSite(config, "kíváncsiságból").some((item) => item.category ===
   config.home.search.categories.headline), "A húsz kiemelt képes hír tartalma is bekerüljön az indexbe.");
 assert.ok(searchSite(config, "tantestület").some((item) => item.href === "#/oldal/school-staff"));
-assert.ok(searchSite(config, "számonkérés").some((item) => item.href === "#/oldal/education-exams"),
+assert.ok(searchSite(config, "osztályozó vizsga").some((item) => item.href === "#/oldal/education-exams"),
   "A kártyák legmélyebb JSON-alpontjai is részt vegyenek a dinamikus keresésben.");
 const changedSearchData = structuredClone(config);
 changedSearchData.home.sportSuccesses.items[0].name = "Kovács Zelma";
@@ -147,6 +147,9 @@ assert.equal(searchSite(changedSearchData, "Zelma")[0].label, "Kovács Zelma",
 changedSearchData.menu.items[0].children.push({
   id:"school-new-lab", label:"Új csillagászati műhely"
 });
+changedSearchData.pagePreview.pages["school-new-lab"] = structuredClone(
+  changedSearchData.pagePreview.pages["school-introduction"]);
+changedSearchData.pagePreview.pages["school-new-lab"].intro = "Új csillagászati műhely.";
 assert.ok(searchSite(changedSearchData, "csillagászati").some((item) =>
   item.href === "#/oldal/school-new-lab"),
   "A JSON-menübe később bekerülő új aloldal kézi keresőlista nélkül legyen elérhető.");
@@ -199,12 +202,28 @@ assert.ok(config.home.desktopHero.slides.every((slide) => getMenuPage(config, sl
   "A képekhez kizárólag működő JSON-aloldalak kapcsolódhatnak.");
 assert.equal(validateMenu(config), config.menu.items);
 const badCard = structuredClone(config);
-badCard.pagePreview.sections.school[0].groups[0].points[0].details = [];
-assert.throws(() => validateMenu(badCard), /kártyás oldalvázlat/,
+badCard.pagePreview.pages["school-introduction"].items[0].groups[0].points[0].details = [];
+assert.throws(() => validateMenu(badCard), /tartalomkártya/,
   "A megjelenő kártyákból ne hiányozhassanak a legbelső részletek.");
-assert.equal(Object.keys(config.pagePreview.sections).length, config.menu.items.length);
+const invalidNewsDate = structuredClone(config);
+invalidNewsDate.publicNews[0].date = "2026-02-30";
+assert.throws(() => validateMenu(invalidNewsDate), /nyilvános hírbejegyzés/,
+  "Érvénytelen naptári dátum ne kerülhessen át több oldalra.");
+const invalidNewsInterval = structuredClone(config);
+invalidNewsInterval.publicNews[0].endDate = "2026-01-01";
+assert.throws(() => validateMenu(invalidNewsInterval), /nyilvános hírbejegyzés/,
+  "A hír lejárati dátuma nem előzheti meg a kezdődátumot.");
+assert.equal(Object.keys(config.pagePreview.pages).length,49);
 assert.equal(getMenuPage(config, "sports-results").title, "Diákjaink sporteredményei");
-assert.equal(getMenuPage(config, "education-primary").items.length, 3);
+assert.equal(getMenuPage(config, "education-primary").items.length, 1);
+assert.notDeepEqual(getMenuPage(config,"school-introduction").items,
+  getMenuPage(config,"school-values").items, "A külön oldalak tartalma nem ismétlődhet.");
+assert.equal(config.menu.items[1].children.at(-1).label,"Tehetséggondozás");
+assert.ok(!JSON.stringify(config.pagePreview).toLocaleLowerCase("hu-HU").includes("szakkör"),
+  "Nem kerülhet szakköri tartalom az iskolai oldalakra.");
+assert.ok(config.pagePreview.pages["admission-process"].items.length !==
+  config.pagePreview.pages["information-absence"].items.length,
+  "A kártyák száma oldalspecifikus legyen.");
 assert.equal(getMenuPage(config, "education-programs").title, "Iskolai képzések",
   "A képzések önálló aloldalt nyissanak, ne harmadik menüszintet.");
 for (const root of config.menu.items) {
@@ -220,13 +239,13 @@ assert.throws(() => menuPageHref("../"), /Érvénytelen/);
 assert.equal(new Set(config.menu.items.map((item) => item.id)).size, 6);
 const duplicateMenu = structuredClone(config);
 duplicateMenu.menu.items[1].id = duplicateMenu.menu.items[0].id;
-assert.throws(() => validateMenu(duplicateMenu), /Érvénytelen/);
+assert.throws(() => validateMenu(duplicateMenu), /ismétlődő menüazonosító/);
 const deepMenu = structuredClone(config);
 deepMenu.menu.items[1].children[0].children = [{ id: "too-deep", label: "Túl mély" }];
-assert.throws(() => validateMenu(deepMenu), /Hibás menügyermek/);
+assert.throws(() => validateMenu(deepMenu), /almenüszint/);
 const shortMenu = structuredClone(config);
 shortMenu.menu.items[2].children.length = 7;
-assert.throws(() => validateMenu(shortMenu), /legalább nyolc/,
+assert.throws(() => validateMenu(shortMenu), /almenüszint/,
   "A rövid, értelmetlenül üres almenüágak ne kerülhessenek éles JSON-ba.");
 assert.ok(config.home.footer.email.includes("@"));
 const frameHashes = new Set();
@@ -256,8 +275,8 @@ for (const path of [...desktopHeroAssets, ...mobileStoryAssets, ...sportSuccessA
 }
 const html = readFileSync(join(root, "index.html"), "utf8");
 assert.match(html, /<div id="app"><\/div>/);
-assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.29"/);
-assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.29"/);
+assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.30"/);
+assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.30"/);
 assert.match(html, /name="color-scheme" content="light dark"/);
 assert.doesNotMatch(html, /<h[1-6]|<p[ >]|<nav|<article|<img/i);
 const src = ["shared/js/entry.js", "shared/js/dom.js", "shared/js/gate.js", "shared/js/offline.js", "shared/js/shell.js",
@@ -629,7 +648,7 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   scan(footer).find((n) => n.className === "footer-modal-backdrop").emit("click");
   assert.ok(noticeModal.hidden);
   assert.ok(scan(informationColumn).some((n) => n.textContent ===
-    `${config.home.footer.updatedLabel}: 2026. 11. 22.`));
+    `${config.home.footer.updatedLabel}: 2026. 11. 23.`));
   assert.ok(scan(informationColumn).some((n) => n.textContent ===
     config.home.footer.pendingLabel.replace("{seconds}",String(config.home.footer.refreshSeconds))));
   const versionRow = informationColumn.children.at(-1);
@@ -910,7 +929,7 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(resultsHeading.textContent, config.home.header.searchFeaturedTitle);
   assert.equal(clearButton.hidden, true);
   assert.equal(searchCount.textContent, `4 ${config.home.header.searchResultCountLabel}`);
-  searchInput.value = "kapu";
+  searchInput.value = "nemletezo-kereso-kifejezes-7391";
   searchInput.emit("input");
   assert.equal(clearButton.hidden, false);
   assert.equal(searchCount.textContent, `0 ${config.home.header.searchResultCountLabel}`);
@@ -927,8 +946,11 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.ok(searchInput.focused);
   quickList.children[2].emit("click");
   assert.equal(searchInput.value, "KRÉTA");
-  assert.equal(resultList.children.length, 1);
-  assert.equal(resultList.children[0].children[1].children[2].textContent,
+  assert.ok(resultList.children.length >= 1);
+  const kretaResult = resultList.children.find((node) =>
+    node.children[1]?.children[1]?.textContent === config.home.header.social[2].label);
+  assert.ok(kretaResult, "A KRÉTA gyorselérhetőség keresse a valódi külső hivatkozást.");
+  assert.equal(kretaResult.children[1].children[2].textContent,
     config.home.header.social[2].searchSummary);
   let arrowDownPrevented = false;
   searchInput.emit("keydown", { key:"ArrowDown", preventDefault:() => { arrowDownPrevented = true; } });
@@ -988,14 +1010,21 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(leafNodes.find((n) => n.className === `${platform}-page-title`).textContent,
     "Bemutatkozás", "A menüvégpont valódi, külön renderelt oldalt kapjon.");
   const previewCards = leafNodes.find((n) => n.className === `${platform}-page-cards row`);
-  assert.equal(previewCards.children.length, config.pagePreview.sections.school.length,
-    "A régi egyszerű felsorolás helyett három, JSON-vezérelt Bootstrap-kártya legyen.");
+  const initialCards = getMenuPage(config,"school-introduction").items;
+  assert.equal(previewCards.children.length, initialCards.length,
+    "Minden oldal a saját, változó számú JSON-tartalomkártyáját kapja.");
   assert.ok(previewCards.children.every((node) => node.className.includes(" card")));
   assert.deepEqual(leafNodes.filter((n) => n.className === `${platform}-page-card-title card-title`)
-    .map((n) => n.textContent), config.pagePreview.sections.school.map((card) => card.title));
-  assert.equal(leafNodes.filter((n) => n.className === `${platform}-page-card-group`).length,6);
-  assert.equal(leafNodes.filter((n) => n.className === `${platform}-page-card-point`).length,12);
-  assert.equal(leafNodes.filter((n) => n.className === `${platform}-page-card-details`).length,12,
+    .map((n) => n.textContent), initialCards.map((card) => card.title));
+  const expectedGroups = initialCards.reduce((n,card) => n + card.groups.length,0);
+  const expectedPoints = initialCards.reduce((n,card) =>
+    n + card.groups.reduce((sum,group) => sum+group.points.length,0),0);
+  assert.equal(leafNodes.filter((n) => n.className === `${platform}-page-card-group`).length,
+    expectedGroups);
+  assert.equal(leafNodes.filter((n) => n.className === `${platform}-page-card-point`).length,
+    expectedPoints);
+  assert.equal(leafNodes.filter((n) => n.className === `${platform}-page-card-details`).length,
+    expectedPoints,
     "Mindegyik alpont alatt egy újabb, valódi részletező lista szerepeljen.");
   assert.equal(leafNodes.filter((n) => n.tag === "h1").length, 1);
   leafDispose();
@@ -1006,6 +1035,9 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
     config.home.sportSuccesses.archiveTitle);
   const archiveGrid = archiveNodes.find((n) => n.className === `${platform}-successes-grid`);
   assert.equal(archiveGrid.children.length, 6, "Az archívumon egyszerre csak hat eredmény látszódjon.");
+  assert.equal(archiveNodes.filter((n) => n.className?.includes(`${platform}-page-card card`)).length,
+    getMenuPage(config,"sports-results").items.length,
+    "A sportsiker-archívum mellől sem hiányozhat a 49. oldalak egyikének egyedi tartalma.");
   assert.equal(scan(archiveGrid).filter((node) => node.className === `${platform}-archive-card-date`).length,6);
   const pager = archiveNodes.find((n) => n.className === `${platform}-archive-pagination`);
   assert.ok(pager && !pager.hidden);
@@ -1129,13 +1161,13 @@ const liveModalText = scan(liveFooter.footer).find((node) => node.className === 
 liveNotices.children[0].emit("click");
 assert.equal(liveModal.hidden, false);
 const refreshed = structuredClone(config);
-refreshed.release = "2.30";
+refreshed.release = "2.31";
 refreshed.home.footer.updatedAt = "2026-11-23";
 refreshed.home.footer.notices[0].body = "Ellenőrzött, módosított impresszum-adatok.";
 const originalFetch = globalThis.fetch;
 let requests = 0;
 let replacementUrl = null;
-window.location = { href:"https://example.test/index.html?v=2.29#/kezdolap",
+window.location = { href:"https://example.test/index.html?v=2.30#/kezdolap",
   replace:(next) => { replacementUrl = next; } };
 globalThis.fetch = async (url, options) => {
   requests++;
@@ -1149,11 +1181,11 @@ assert.equal(requests, 0, "Rejtett lapon a frissítés nem terhelheti a hálóza
 document.visibilityState = "visible";
 assert.equal(await liveFooter.checkForUpdates(), true);
 assert.equal(requests, 1);
-assert.equal(liveVersion.textContent, "Verzió: 2.30");
+assert.equal(liveVersion.textContent, "Verzió: 2.31");
 assert.equal(liveUpdated.textContent, "Utolsó frissítés: 2026. 11. 23.");
 assert.equal(liveModalText.textContent, "Ellenőrzött, módosított impresszum-adatok.");
 assert.equal(liveModal.hidden, false, "A megnyitott tájékoztató maradjon meg adatfrissítéskor.");
-assert.equal(replacementUrl, "https://example.test/index.html?v=2.30#/kezdolap",
+assert.equal(replacementUrl, "https://example.test/index.html?v=2.31#/kezdolap",
   "Új kiadáskor az egész alkalmazás új verziókulccsal töltődjön újra.");
 scan(liveFooter.footer).find((node) => node.className === "footer-modal-close").emit("click");
 assert.equal(liveModal.hidden, true);
@@ -1164,11 +1196,11 @@ assert.equal(await liveFooter.checkForUpdates(), true);
 assert.equal(liveNotices.children[0], noticeAfterUpdate,
   "Változatlan JSON esetén a 10 másodperces ellenőrzés ne építse újra a gombokat.");
 const invalid = structuredClone(refreshed);
-invalid.release = "2.29";
+invalid.release = "2.31";
 invalid.home.footer.notices[0].body = "";
 globalThis.fetch = async () => ({ ok: true, json: async () => invalid });
 assert.equal(await liveFooter.checkForUpdates(), false);
-assert.equal(liveVersion.textContent, "Verzió: 2.30", "Hibás JSON nem írhatja felül az érvényes adatot.");
+assert.equal(liveVersion.textContent, "Verzió: 2.31", "Hibás JSON nem írhatja felül az érvényes adatot.");
 const duplicateGlyph = structuredClone(refreshed);
 duplicateGlyph.home.footer.notices[1].glyph = duplicateGlyph.home.footer.notices[0].glyph;
 globalThis.fetch = async () => ({ ok: true, json: async () => duplicateGlyph });
@@ -1347,7 +1379,8 @@ assert.doesNotMatch(mobileCss, /\.mobile-compass-third-|\.desktop-wheel-third-/,
 assert.doesNotMatch(desktopCss, /\.desktop-wheel-third-|\.desktop-wheel-level-three/,
   "A harmadik asztali panel stílusa is eltűnjön.");
 assert.match(block(desktopCss, ".desktop-page-preview"), /text-align:center;/);
-assert.match(block(desktopCss, ".desktop-page-cards"), /grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
+assert.match(block(desktopCss, ".desktop-page-cards"), /grid-template-columns:repeat\(auto-fit,minmax\(min\(100%,340px\),1fr\)\)/,
+  "Az asztali kártyarács az oldaltartalom számához igazodjon.");
 assert.match(block(desktopCss, ".desktop-page-card"), /border-radius:23px;/);
 assert.match(block(mobileCss, ".mobile-page-preview"), /text-align:center;/);
 assert.match(block(mobileCss, ".mobile-page-cards"), /grid-template-columns:minmax\(0,1fr\)/);
@@ -1601,7 +1634,7 @@ location.hash = config.routes.gate;
 await import(new URL("../shared/js/entry.js", import.meta.url));
 const nextTick = () => new Promise((done) => setImmediate(done));
 await nextTick();
-assert.equal(historyUrl, "https://example.test/index.html?v=2.29#/",
+assert.equal(historyUrl, "https://example.test/index.html?v=2.30#/",
   "A kezdő URL kapjon kiadási verziót a későbbi cache-biztos újratöltéshez.");
 assert.equal(documentRoot.dataset.platform, "mobile");
 assert.equal(documentRoot.dataset.route, "gate");
@@ -1706,6 +1739,61 @@ try {
 }
 console.log("✓ Hibás JSON → tartalék offline oldal → újrapróbálás → eredeti útvonal helyreáll");
 
+// 2.30 teljes tartalomregresszió: mind a 49 menüvégpont mindkét különálló
+// megjelenítőben ellenőrzendő, a kártyaszám és a megjelenítési típus szabadon változhat.
+const { createDesktopPage } = await import(new URL("../desktop/page.js",import.meta.url));
+const { createMobilePage } = await import(new URL("../mobile/page.js",import.meta.url));
+const allLeaves = config.menu.items.flatMap((root) => root.children);
+for (const [platform, createPage] of [["desktop",createDesktopPage],["mobile",createMobilePage]]) {
+  for (const leaf of allLeaves) {
+    const data = getMenuPage(config,leaf.id);
+    const rendered = createPage(config,leaf.id);
+    const nodes = scan(rendered);
+    const cardNodes = nodes.filter((node) =>
+      node.className?.startsWith(`${platform}-page-card card `));
+    assert.equal(nodes.filter((node) => node.tag === "h1").length,1,`${platform}: ${leaf.id}`);
+    assert.equal(cardNodes.length,data.items.length,`${platform}: ${leaf.id} kártyaszám`);
+    assert.equal(nodes.filter((node) => node.className === `${platform}-page-card-group` ||
+      node.className?.startsWith(`${platform}-page-card-group `)).length,
+      data.items.reduce((count,card) => count + card.groups.length,0),
+      `${platform}: ${leaf.id} témacsoportok`);
+    for (const kind of new Set(data.items.map((card) => card.kind))) {
+      assert.ok(cardNodes.some((node) => node.className.includes(`${platform}-page-kind-${kind}`)),
+        `${platform}: ${leaf.id} hiányzó ${kind} komponens`);
+    }
+    if (data.items.some((card) => card.kind === "accordion")) {
+      assert.ok(nodes.some((node) => node.tag === "details"),`${platform}: ${leaf.id} kinyitható részletek`);
+      assert.ok(nodes.some((node) => node.tag === "summary"),`${platform}: ${leaf.id} kinyitható címke`);
+    }
+    if (data.items.some((card) => card.kind === "table")) {
+      assert.ok(nodes.some((node) => node.tag === (platform === "desktop" ? "table" : "dl")),
+        `${platform}: ${leaf.id} platformhoz illő adatmegjelenítés`);
+    }
+    if (data.items.some((card) => card.kind === "gallery")) {
+      const images = nodes.filter((node) => node.tag === "img");
+      assert.equal(images.length,
+        config.home.desktopHero.slides.filter((slide) => slide.pageId === data.galleryCategory).length,
+        `${platform}: ${leaf.id} egyetlen, teljes képgaléria`);
+      for (const img of images) assert.ok(existsSync(join(root, img.attributes.src.replace(/^\.\//,""))),
+        `${platform}: ${leaf.id} nem létező képfájl: ${img.attributes.src}`);
+    }
+  }
+}
+const changedNews = structuredClone(config);
+changedNews.publicNews[0].title = "Új intézményi értesítés a közös JSON-ból";
+assert.ok(searchSite(changedNews,"intézményi értesítés").some((hit) =>
+  hit.href === "#/oldal/news-latest"),"Az új hírek kézi keresőbejegyzés nélkül jelenjenek meg.");
+assert.ok(getMenuPage(changedNews,"news-latest").items[0].groups[0].points
+  .some((point) => point.title === changedNews.publicNews[0].title),
+"A közösen tárolt hír címének változása az oldalon is azonnal megjelenjen.");
+const principalChange = structuredClone(config);
+principalChange.site.principal = "A JSON-ban frissített intézményvezető";
+assert.ok(getMenuPage(principalChange,"school-staff").items[0].groups[0].points[0].details
+  .includes(principalChange.site.principal),"Az intézményvezető neve egyszer szerkesztendő.");
+assert.ok(!JSON.stringify(config.publicNews).includes("Nagy Lilla"),
+  "Az új intézményi híradatok közé nem kerülhetnek át diákszemélyek nevei.");
+console.log("✓ 49 × 2 oldalrender: változó Bootstrap-komponensek, egyedi csoportok, galéria és közös JSON-adatok");
+
 let chromium;
 try { ({ chromium } = createRequire(import.meta.url)("playwright")); }
 catch { console.warn("⚠ Playwright hiányzik: élő böngészőteszt nem futott."); }
@@ -1793,9 +1881,11 @@ if (chromium) {
         }
         await page.waitForURL(/#\/oldal\/school-introduction$/, { timeout:4000 });
         assert.equal(await page.locator(`.${platform}-page-title`).textContent(), "Bemutatkozás");
-        assert.equal(await page.locator(`.${platform}-page-card.card`).count(), 3);
-        assert.equal(await page.locator(`.${platform}-page-card-group`).count(), 6);
-        assert.equal(await page.locator(`.${platform}-page-card-details > li`).count(), 24);
+        assert.equal(await page.locator(`.${platform}-page-card.card`).count(),
+          getMenuPage(config,"school-introduction").items.length);
+        assert.equal(await page.locator(`.${platform}-page-card-group`).count(),
+          getMenuPage(config,"school-introduction").items.reduce((sum,card) =>
+            sum+card.groups.length,0));
         if (platform === "mobile") await page.locator('.footer-mobile-tab[aria-controls="footer-mobile-info"]').click();
         await page.locator('.footer-notice-icon').first().click();
         assert.equal(await page.locator('.footer-notice-modal:not([hidden])').count(), 1);

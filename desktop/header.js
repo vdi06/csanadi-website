@@ -1,9 +1,9 @@
-import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.29";
-import { bindAppearance } from "../shared/js/appearance.js?v=2.29";
-import { createEditMode } from "../shared/js/edit-mode.js?v=2.29";
-import { makeSocialLink } from "../shared/js/shell.js?v=2.29";
-import { createDesktopMenu } from "./menu.js?v=2.29";
-import { createDesktopSearch } from "./search.js?v=2.29";
+import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.30";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.30";
+import { createEditMode } from "../shared/js/edit-mode.js?v=2.30";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.30";
+import { createDesktopMenu } from "./menu.js?v=2.30";
+import { createDesktopSearch } from "./search.js?v=2.30";
 
 /** Asztali fejléc: címerből nyíló körmenü és külön nagy lebegő keresőablak.
  * A mobilmenü és annak DOM-ja itt nem létezik. */

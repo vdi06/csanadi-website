@@ -1,7 +1,7 @@
 /** Egyetlen HTML, JSON-alapú kapu, kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.29";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.29";
-import { mountOffline } from "./offline.js?v=2.29";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.30";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.30";
+import { mountOffline } from "./offline.js?v=2.30";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -133,7 +133,7 @@ async function loadConfig() {
     const response = await fetch(freshSettings, { cache:"no-store", signal:controller.signal });
     if (!response.ok) throw new Error(`Hiányzó JSON: ${response.status}`);
     const nextConfig = await response.json();
-    if (nextConfig?.schemaVersion !== "2.06" || nextConfig.gate?.frames !== 30) {
+    if (nextConfig?.schemaVersion !== "2.30" || nextConfig.gate?.frames !== 30) {
       throw new Error("A kapu JSON-beállításai hibásak.");
     }
     validateMenu(nextConfig);

@@ -1,10 +1,10 @@
-import { element } from "../shared/js/dom.js?v=2.29";
-import { mountGate } from "../shared/js/gate.js?v=2.29";
-import { makeFooter } from "../shared/js/footer.js?v=2.29";
-import { makeDesktopHeader } from "./header.js?v=2.29";
-import { createDesktopPage } from "./page.js?v=2.29";
-import { createDesktopHero } from "./hero.js?v=2.29";
-import { createDesktopSuccesses } from "./successes.js?v=2.29";
+import { element } from "../shared/js/dom.js?v=2.30";
+import { mountGate } from "../shared/js/gate.js?v=2.30";
+import { makeFooter } from "../shared/js/footer.js?v=2.30";
+import { makeDesktopHeader } from "./header.js?v=2.30";
+import { createDesktopPage } from "./page.js?v=2.30";
+import { createDesktopHero } from "./hero.js?v=2.30";
+import { createDesktopSuccesses } from "./successes.js?v=2.30";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {
@@ -26,7 +26,8 @@ export function mount(root, config, page) {
   const isArchive = page === "page:sports-results";
   const successes = isHome || isArchive ? createDesktopSuccesses(config, { archive:isArchive }) : null;
   if (hero) main.append(hero.track, successes.section);
-  else if (isArchive) main.append(successes.section);
+  else if (isArchive) main.append(successes.section,
+    createDesktopPage(config, "sports-results", { hideHeading:true }));
   else if (page.startsWith("page:")) main.append(createDesktopPage(config, page.slice(5)));
   home.append(desktopHeader.header,
     ...desktopHeader.overlays,
