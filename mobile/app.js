@@ -1,10 +1,10 @@
-import { element } from "../shared/js/dom.js?v=2.28";
-import { mountGate } from "../shared/js/gate.js?v=2.28";
-import { makeFooter } from "../shared/js/footer.js?v=2.28";
-import { makeMobileHeader } from "./header.js?v=2.28";
-import { createMobilePage } from "./page.js?v=2.28";
-import { createMobileStory } from "./story.js?v=2.28";
-import { createMobileSuccesses } from "./successes.js?v=2.28";
+import { element } from "../shared/js/dom.js?v=2.29";
+import { mountGate } from "../shared/js/gate.js?v=2.29";
+import { makeFooter } from "../shared/js/footer.js?v=2.29";
+import { makeMobileHeader } from "./header.js?v=2.29";
+import { createMobilePage } from "./page.js?v=2.29";
+import { createMobileStory } from "./story.js?v=2.29";
+import { createMobileSuccesses } from "./successes.js?v=2.29";
 
 /** Önálló mobilos nézet: saját fejléc, JSON-vázlatos aloldal és kompakt lábléc. */
 export function mount(root, config, page) {

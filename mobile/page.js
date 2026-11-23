@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.28";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.28";
+import { element } from "../shared/js/dom.js?v=2.29";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.29";
 
 /** Önálló mobilos, egymás alá rendezett Bootstrap-kártyaszerkezet. */
 export function createMobilePage(config, id) {

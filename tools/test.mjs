@@ -53,7 +53,7 @@ assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths, ...desktopH
 assert.deepEqual(files(root).filter((path) => path.endsWith(".html")), ["index.html"]);
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
 assert.equal(config.schemaVersion, "2.06");
-assert.equal(config.release, "2.28");
+assert.equal(config.release, "2.29");
 assert.equal(config.appearance.defaultMode, "auto");
 assert.deepEqual(config.appearance.cycle, ["auto", "light", "dark"]);
 assert.deepEqual(Object.keys(config.appearance.shortLabels).sort(), ["auto", "dark", "light"]);
@@ -256,8 +256,8 @@ for (const path of [...desktopHeroAssets, ...mobileStoryAssets, ...sportSuccessA
 }
 const html = readFileSync(join(root, "index.html"), "utf8");
 assert.match(html, /<div id="app"><\/div>/);
-assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.28"/);
-assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.28"/);
+assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.29"/);
+assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.29"/);
 assert.match(html, /name="color-scheme" content="light dark"/);
 assert.doesNotMatch(html, /<h[1-6]|<p[ >]|<nav|<article|<img/i);
 const src = ["shared/js/entry.js", "shared/js/dom.js", "shared/js/gate.js", "shared/js/offline.js", "shared/js/shell.js",
@@ -1129,13 +1129,13 @@ const liveModalText = scan(liveFooter.footer).find((node) => node.className === 
 liveNotices.children[0].emit("click");
 assert.equal(liveModal.hidden, false);
 const refreshed = structuredClone(config);
-refreshed.release = "2.29";
+refreshed.release = "2.30";
 refreshed.home.footer.updatedAt = "2026-11-23";
 refreshed.home.footer.notices[0].body = "Ellenőrzött, módosított impresszum-adatok.";
 const originalFetch = globalThis.fetch;
 let requests = 0;
 let replacementUrl = null;
-window.location = { href:"https://example.test/index.html?v=2.28#/kezdolap",
+window.location = { href:"https://example.test/index.html?v=2.29#/kezdolap",
   replace:(next) => { replacementUrl = next; } };
 globalThis.fetch = async (url, options) => {
   requests++;
@@ -1149,11 +1149,11 @@ assert.equal(requests, 0, "Rejtett lapon a frissítés nem terhelheti a hálóza
 document.visibilityState = "visible";
 assert.equal(await liveFooter.checkForUpdates(), true);
 assert.equal(requests, 1);
-assert.equal(liveVersion.textContent, "Verzió: 2.29");
+assert.equal(liveVersion.textContent, "Verzió: 2.30");
 assert.equal(liveUpdated.textContent, "Utolsó frissítés: 2026. 11. 23.");
 assert.equal(liveModalText.textContent, "Ellenőrzött, módosított impresszum-adatok.");
 assert.equal(liveModal.hidden, false, "A megnyitott tájékoztató maradjon meg adatfrissítéskor.");
-assert.equal(replacementUrl, "https://example.test/index.html?v=2.29#/kezdolap",
+assert.equal(replacementUrl, "https://example.test/index.html?v=2.30#/kezdolap",
   "Új kiadáskor az egész alkalmazás új verziókulccsal töltődjön újra.");
 scan(liveFooter.footer).find((node) => node.className === "footer-modal-close").emit("click");
 assert.equal(liveModal.hidden, true);
@@ -1164,11 +1164,11 @@ assert.equal(await liveFooter.checkForUpdates(), true);
 assert.equal(liveNotices.children[0], noticeAfterUpdate,
   "Változatlan JSON esetén a 10 másodperces ellenőrzés ne építse újra a gombokat.");
 const invalid = structuredClone(refreshed);
-invalid.release = "2.28";
+invalid.release = "2.29";
 invalid.home.footer.notices[0].body = "";
 globalThis.fetch = async () => ({ ok: true, json: async () => invalid });
 assert.equal(await liveFooter.checkForUpdates(), false);
-assert.equal(liveVersion.textContent, "Verzió: 2.29", "Hibás JSON nem írhatja felül az érvényes adatot.");
+assert.equal(liveVersion.textContent, "Verzió: 2.30", "Hibás JSON nem írhatja felül az érvényes adatot.");
 const duplicateGlyph = structuredClone(refreshed);
 duplicateGlyph.home.footer.notices[1].glyph = duplicateGlyph.home.footer.notices[0].glyph;
 globalThis.fetch = async () => ({ ok: true, json: async () => duplicateGlyph });
@@ -1520,6 +1520,12 @@ assert.doesNotMatch(desktopCss, /\.desktop-hero-scroll\s*\{/,
   "Az asztali lefelé mutató nyílgombot valóban ki kell venni.");
 assert.match(desktopCss, /\[data-theme="light"\] \.desktop-hero-shade/,
   "A világos témának az asztali nyitófotó megjelenését is módosítania kell.");
+const lightHeroOverlay = block(desktopCss,
+  '.desktop-home[data-hero-home="true"][data-theme="light"] .desktop-hero-after');
+assert.match(lightHeroOverlay, /rgba\(244,220,175,\.18\),transparent 70%/,
+  "Világos módban is áttetsző legyen a fotó előtt fekvő dekorációs réteg.");
+assert.doesNotMatch(lightHeroOverlay, /#[0-9a-f]{3,8}/i,
+  "A dekorációs réteg ne kapjon átlátszatlan világos hátteret a kép fölé.");
 assert.match(mobileCss, /\.mobile-story-track\s*\{[^}]*position:sticky; top:0;[^}]*height:clamp\(132px,18dvh,152px\)/s,
   "A mobilos képes sáv legyen rövid és tapadjon felül a valódi tartalom görgetésekor.");
 assert.doesNotMatch(mobileCss,/mobile-story-(bottom|state-count|steps|step|scroll-hint)/,
@@ -1595,7 +1601,7 @@ location.hash = config.routes.gate;
 await import(new URL("../shared/js/entry.js", import.meta.url));
 const nextTick = () => new Promise((done) => setImmediate(done));
 await nextTick();
-assert.equal(historyUrl, "https://example.test/index.html?v=2.28#/",
+assert.equal(historyUrl, "https://example.test/index.html?v=2.29#/",
   "A kezdő URL kapjon kiadási verziót a későbbi cache-biztos újratöltéshez.");
 assert.equal(documentRoot.dataset.platform, "mobile");
 assert.equal(documentRoot.dataset.route, "gate");

@@ -270,7 +270,8 @@
   --text:#16334a; --muted:#3b596e; --surface:#fff9ed; --background:#f4efe5;
 }
 .desktop-home[data-hero-home="true"][data-theme="light"] .desktop-hero-after {
-  background:radial-gradient(ellipse at 50% 55%,#f4e4bf,#fff9ea 75%); color:#75511b;
+  /* A réteg a fotó előtt van: világos témában is áttetszőnek kell maradnia. */
+  background:radial-gradient(ellipse at 50% 55%,rgba(244,220,175,.18),transparent 70%);
 }
 .desktop-home[data-hero-home="true"][data-theme="light"] .desktop-hero-shade {
   background:linear-gradient(180deg,rgba(246,239,224,.38),transparent 25%,

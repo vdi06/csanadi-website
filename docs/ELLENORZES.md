@@ -1,8 +1,28 @@
-# Csanádi 2.28 – teljes képes görgetés, kibővített menü és kártyás aloldalak
+# Csanádi 2.29 – a világos nyitókép láthatóságának javítása
 
 Ez a ZIP **nem publikált** fejlesztési kiadás. A 2.15-ös forráscsomagot
-és a 2.16–2.27-es fejlesztéseket folytatja az elfogadott funkciók
+és a 2.16–2.28-as fejlesztéseket folytatja az elfogadott funkciók
 megtartásával. A korábbi ZIP-ek változatlanul megmaradtak.
+
+## A 2.29-es hibajavítás
+
+- Világos témában a 2.28-as, teljes 160dvh-s nyitóképet
+  egy fölötte lévő, átlátszatlan krémszínű háttér
+  eltakarhatta. A réteg a szándék szerint csak finom
+  fényt adjon a fotónak.
+- A világos témához tartozó `.desktop-hero-after`
+  háttér most **áttetsző arany fény**, így a fotó
+  mindkét témában végig látható a következő tartalomig.
+- A képek hárompercenkénti véletlenszerű váltását,
+  a címer lassított görgetését, a témaváltót és
+  az önálló mobilos megjelenítést nem változtattuk meg.
+- A hiba ellen külön CSS-regressziós ellenőrzés készült.
+- **Következő beszélgetésben:** mind a 49 almenühöz egyedi,
+  témaspecifikus, valóban megjelenítendő tartalom készüljön.
+  A hiteles iskolaadatokat ellenőrzött forrásból kell
+  gyűjteni; tanári neveket, órarendet, felvételi
+  dátumokat kitalálni nem szabad. Ez a tartalombővítés
+  **nem része a 2.29-es hibajavításnak**.
 
 ## A 2.28-as fejlesztések
 
@@ -135,7 +155,7 @@ Az alábbi 2.25-ös részletes funkcióleírás továbbra is érvényes.
   még **nem hiteles iskolai adatok**; publikálás előtt cserélni kell.
 
 Az alábbi verziótörténeti szakaszok a korábbi kiadások állapotát
-írják le; az aktuális működésben a fenti **2.28-as változások** is érvényesek.
+írják le; az aktuális működésben a fenti **2.29-es változások** is érvényesek.
 
 ## A 2.24-es fejlesztés
 
