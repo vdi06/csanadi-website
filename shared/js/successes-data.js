@@ -1,4 +1,4 @@
-import { getMenuPage } from "./menu-data.js?v=2.48";
+import { getMenuPage } from "./menu-data.js?v=2.50";
 
 /** Közös tartalmi szabályok, eltérő mobilos és asztali megjelenítéshez. */
 export const successImageRoot = "./shared/assets/media/web/sport-successes/";
@@ -6,7 +6,7 @@ export const successImageRoot = "./shared/assets/media/web/sport-successes/";
 export function checkedSportSuccesses(config) {
   const data = config?.home?.sportSuccesses;
   const fields = ["ariaLabel", "eyebrow", "title", "intro", "archiveTitle", "archiveIntro", "openLabel",
-    "closeLabel", "detailLabel", "linkLabel"];
+    "closeLabel", "detailLabel", "linkLabel", "verificationLabel", "verificationNotice"];
   if (!data || fields.some((field) => typeof data[field] !== "string" || !data[field].trim()) ||
     !Array.isArray(data.items) || data.items.length < 6 || data.items.length > 250) {
     throw new Error("Érvénytelen sportsiker-tartalom.");
@@ -28,6 +28,7 @@ export function checkedSportSuccesses(config) {
       !Number.isFinite(Date.parse(`${item.date}T12:00:00Z`)) ||
       !["name", "sport", "result", "competition", "summary"].every((field) =>
         typeof item[field] === "string" && item[field].trim().length >= 2 && item[field].length < 350) ||
+      typeof item.verified !== "boolean" ||
       !Array.isArray(item.details) || item.details.length < 1 || item.details.length > 4 ||
       item.details.some((detail) => typeof detail !== "string" || !detail.trim() || detail.length > 600) ||
       !/^#\/oldal\/[a-z0-9-]+$/.test(item.href || "") ||

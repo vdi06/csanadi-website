@@ -9,7 +9,7 @@ R=Path(__file__).resolve().parent.parent
 C=json.loads((R/'shared/data/site.json').read_text('utf-8'))
 LEAVES=[(g['label'],p['id'],p['label']) for g in C['menu']['items'] for p in g['children']]
 COUNT=0
-out=Path('/mnt/data/Csanadi_2.48_qa');out.mkdir(exist_ok=True)
+out=Path('/mnt/data/Csanadi_'+C['release']+'_qa');out.mkdir(exist_ok=True)
 
 def check(value,message):
  global COUNT
@@ -63,4 +63,4 @@ with sync_playwright() as p:
   print(f'{name}: 49/49 oldalt bejártam, 0 hiba, összes sikeres állítás eddig {COUNT}',flush=True)
   ctx.close()
  browser.close()
-print('2.48 CHROMIUM QA:',COUNT,'/',COUNT,'SUCCESS',flush=True)
+print(C['release']+' CHROMIUM QA:',COUNT,'/',COUNT,'SUCCESS',flush=True)

@@ -1,20 +1,21 @@
-import { createDesktopFeatureCenter } from "./centers.js?v=2.48";
-import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.48";
-import { element } from "../shared/js/dom.js?v=2.48";
-import { mountGate } from "../shared/js/gate.js?v=2.48";
-import { makeFooter } from "../shared/js/footer.js?v=2.48";
-import { makeDesktopHeader } from "./header.js?v=2.48";
-import { createDesktopPage } from "./page.js?v=2.48";
-import { createDesktopHero } from "./hero.js?v=2.48";
-import { createDesktopSuccesses } from "./successes.js?v=2.48";
-import { createDesktopCalendar } from "./calendar.js?v=2.48";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.48";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.48";
-import { createDesktopInformation } from "./information.js?v=2.48";
-import { createDesktopMedia } from "./gallery.js?v=2.48";
-import { createDesktopTimetable } from "./timetable.js?v=2.48";
-import { createDesktopDocuments } from "./documents.js?v=2.48";
-import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.48";
+import { createDesktopFeatureCenter } from "./centers.js?v=2.50";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.50";
+import { element } from "../shared/js/dom.js?v=2.50";
+import { mountGate } from "../shared/js/gate.js?v=2.50";
+import { makeFooter } from "../shared/js/footer.js?v=2.50";
+import { makeDesktopHeader } from "./header.js?v=2.50";
+import { createDesktopPage } from "./page.js?v=2.50";
+import { createDesktopHero } from "./hero.js?v=2.50";
+import { createDesktopHomeHighlights } from "./home-highlights.js?v=2.50";
+import { createDesktopSuccesses } from "./successes.js?v=2.50";
+import { createDesktopCalendar } from "./calendar.js?v=2.50";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.50";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.50";
+import { createDesktopInformation } from "./information.js?v=2.50";
+import { createDesktopMedia } from "./gallery.js?v=2.50";
+import { createDesktopTimetable } from "./timetable.js?v=2.50";
+import { createDesktopDocuments } from "./documents.js?v=2.50";
+import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.50";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {
@@ -64,7 +65,7 @@ export function mount(root, config, page) {
   const successes = isHome || isArchive ? createDesktopSuccesses(config, { archive:isArchive }) : null;
   const carousel = hero ? createHomeCarousel(config,successes.section,
     (onInteract) => createDesktopCalendar(config,onInteract),"desktop") : null;
-  if (hero) main.append(hero.track, carousel.section);
+  if (hero) main.append(hero.track, createDesktopHomeHighlights(config), carousel.section);
   else if (isArchive) main.append(successes.section,
     createDesktopPage(config, "sports-results", { hideHeading:true }));
   else if (featureCenter) main.append(createDesktopPage(config,featurePageId,{hideCards:true,hideIntro:true}),featureCenter.section);

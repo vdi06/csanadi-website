@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.30",
-  "release": "2.48",
+  "release": "2.50",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -848,13 +848,13 @@
     },
     "sportSuccesses": {
       "ariaLabel": "Diákjaink sportsikerei",
-      "eyebrow": "CSANÁDI · SPORTEREDMÉNYEK",
-      "title": "Legfrissebb sportsikereink",
-      "intro": "Eredmények, amelyekre büszkék lehetünk.",
+      "eyebrow": "CSANÁDI · MINTA SPORTEREDMÉNYEK",
+      "title": "Sportsikerek – bemutatóadatok",
+      "intro": "A bemutatott nevek, versenyek és eredmények nem hitelesítettek. A kártyák kizárólag a felület kipróbálását szolgálják.",
       "archiveTitle": "Diákjaink sporteredményei",
-      "archiveIntro": "Diákjaink korábbi sikerei, versenyei és kiemelkedő teljesítményei egy helyen.",
+      "archiveIntro": "Az archívum jelenlegi bejegyzései nem hitelesített tesztadatok. Valós sportsikert csak intézményi ellenőrzés után lehet közzétenni.",
       "archiveUi": {
-        "eyebrow": "ARCHÍVUM",
+        "eyebrow": "MINTA · SPORTEREDMÉNY-ARCHÍVUM",
         "searchLabel": "Keresés a sporteredmények között",
         "searchPlaceholder": "Név, sportág vagy verseny…",
         "sportLabel": "Sportág",
@@ -895,7 +895,8 @@
             "A versenyen Lilla egyenletes tempóval, magabiztos futással szerezte meg az első helyet. A teljesítmény mögött sok hét tudatos munka és folyamatos fejlődés áll.",
             "A sport és a tanulás összehangolása a mindennapi kitartás egyik legszebb példája."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "labdarugas-kiss-marton",
@@ -910,7 +911,8 @@
             "A csapat egységes védekezéssel és gyors támadásokkal jutott be a döntőbe. Márton a csapatmunka és a sportszerű játék egyik meghatározó szereplője volt.",
             "Az elért eredmény újabb motiváció a következő megmérettetésre."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "uszas-szabo-nora",
@@ -925,7 +927,8 @@
             "Nóra a rajttól a célba érkezésig tartotta a saját ritmusát, és kiemelkedő hajrával szerezte meg az első helyet.",
             "A siker mögött rendszeres edzés, türelem és sok apró technikai fejlődés áll."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "kosarlabda-toth-adam",
@@ -940,7 +943,8 @@
             "A csapat szoros mérkőzéseken küzdötte végig magát a dobogóig. Ádám pontos passzokkal és fegyelmezett védekezéssel segítette társait.",
             "A közös siker jól mutatja, mennyit számít a pályán az egymásra figyelés."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "roplabda-farkas-emese",
@@ -955,7 +959,8 @@
             "A sikerhez pontos nyitások, jó helyezkedés és összeszokott csapatjáték vezetett. Emese a nehéz labdamenetekben is megőrizte a koncentrációját.",
             "Az első helyezés az egész közösség kitartó munkájának közös eredménye."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "asztalitenisz-varga-balint",
@@ -970,7 +975,8 @@
             "Bálint izgalmas mérkőzéseken jutott el a döntőbe, ahol végig szoros játékot mutatott. A második hely megszerzésében a biztos technika és a nyugodt játékvezetés segítette.",
             "Az eredmény jó alapot ad a további versenyekhez és a fejlődéshez."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "kezilabda-nemeth-zsofia",
@@ -985,7 +991,8 @@
             "Zsófia csapata végig küzdelmes mérkőzéseken jutott el a dobogóig.",
             "A második helyezés a közös felkészülés és a jó csapatmunka eredménye."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "tollaslabda-molnar-emma",
@@ -1000,7 +1007,8 @@
             "Emma több szoros játszmában is megőrizte a koncentrációját.",
             "A győzelem mögött következetes technikai gyakorlás áll."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "tenisz-papp-bence",
@@ -1015,7 +1023,8 @@
             "Bence változatos játékkal jutott az elődöntőig, majd megszerezte a harmadik helyet.",
             "A verseny értékes tapasztalatot adott a következő megmérettetésekhez."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "judo-horvath-daniel",
@@ -1030,7 +1039,8 @@
             "Dániel türelmesen építette fel a mérkőzéseit és pontos akciókkal jutott a döntőbe.",
             "Az eredmény a rendszeres felkészülés visszaigazolása."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "vivas-fodor-julia",
@@ -1045,7 +1055,8 @@
             "Júlia szoros asszók után szerezte meg az ezüstérmet.",
             "Az elért eredményhez gyors döntések és kitartó gyakorlás vezettek."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "kerekpar-balogh-david",
@@ -1060,7 +1071,8 @@
             "Dávid az ügyességi pálya változatos feladatait gyorsan és figyelmesen teljesítette.",
             "A harmadik helyezés jó alap a következő versenyhez."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "tajfutas-sipos-anna",
@@ -1075,7 +1087,8 @@
             "Anna pontos térképolvasással és egyenletes futótempóval teljesítette a pályát.",
             "Az első helyet a felkészülés és a helyes döntések együtt hozták meg."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "birkozas-lukacs-mate",
@@ -1090,7 +1103,8 @@
             "Máté több szoros mérkőzést nyert meg, és a döntőig jutott.",
             "A dobogós eredményhez kitartó erőnléti és technikai munka vezetett."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "karate-kelemen-reka",
@@ -1105,7 +1119,8 @@
             "Réka a technikai gyakorlatok során végig összpontosított, és megszerezte a bronzérmet.",
             "A verseny újabb tapasztalatot és motivációt adott a folytatáshoz."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "floorball-barta-peter",
@@ -1120,7 +1135,8 @@
             "Péter csapata összehangolt játékkal jutott a torna élére.",
             "A közös siker mögött sok gyakorlás és egymásra figyelés állt."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "vizilabda-somogyi-dora",
@@ -1135,7 +1151,8 @@
             "Dóra a csapat több fontos támadásában is részt vett a döntő felé vezető úton.",
             "Az ezüstérem a jó összjáték közös eredménye."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "roplabda-hegedus-eszter",
@@ -1150,7 +1167,8 @@
             "Eszter csapata a helyosztón fordulatos mérkőzésen szerezte meg a harmadik helyet.",
             "A játék legfontosabb pillanataiban a pontos együttműködés döntött."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "asztalitenisz-gal-kristof",
@@ -1165,7 +1183,8 @@
             "Kristóf több izgalmas játszma után jutott a döntőbe, ahol pontos labdahelyezései bizonyultak döntőnek.",
             "A győzelem újabb mérföldkő az edzésmunkában."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "triatlon-voros-levente",
@@ -1180,7 +1199,8 @@
             "Levente az úszás, a kerékpározás és a futás szakaszán is megőrizte lendületét.",
             "A harmadik helyezés a sokoldalú felkészülés eredménye."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "torna-takacs-luca",
@@ -1195,7 +1215,8 @@
             "Luca a gyakorlataiban végig megtartotta a ritmust és a mozdulatok pontosságát.",
             "Az első helyezésben a tudatos technikai fejlődés is megmutatkozott."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "okolvivas-kovacs-mira",
@@ -1210,7 +1231,8 @@
             "Míra a mérkőzéseken végig összpontosított és sportszerűen küzdött.",
             "A döntőig tartó út fontos tapasztalatot adott a folytatáshoz."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "futsal-szekeres-noel",
@@ -1225,7 +1247,8 @@
             "Noel társai segítségével több nehéz mérkőzésen is eredményes támadásokat vezetett.",
             "A tornagyőzelem a közös gyakorlást igazolta vissza."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "ugrokotel-simon-petra",
@@ -1240,7 +1263,8 @@
             "Petra az összetett gyakorlatsorokat megbízhatóan teljesítette.",
             "Az ezüstérem mögött sok kitartó ritmus- és koordinációs gyakorlás áll."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "evezes-biro-zsombor",
@@ -1255,7 +1279,8 @@
             "Zsombor a futam teljes hosszában tartotta az előre eltervezett ütemet.",
             "A dobogós helyezés jó alap a következő vízi versenyekhez."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "duatlon-torok-dorina",
@@ -1270,7 +1295,8 @@
             "Dorina a két futószakasz között a kerékpáros részt is egyenletesen teljesítette.",
             "A második helyezés a kitartó állóképességi munkát dicséri."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "akrobatikus-torna-levai-flora",
@@ -1285,7 +1311,8 @@
             "Flóra a páros gyakorlatsorban magabiztos kivitelezéssel segítette a győzelmet.",
             "A sikerhez sok bizalom és együttműködés kellett."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "hegyikerekpar-olah-hunor",
@@ -1300,7 +1327,8 @@
             "Hunor a változatos terepen végig magabiztosan haladt.",
             "A bronzérem a technikai gyakorlás és az erőnlét közös eredménye."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "szertorna-kadar-lili",
@@ -1315,7 +1343,8 @@
             "Lili a verseny minden szakaszán pontos, fegyelmezett kivitelezést mutatott.",
             "A második helyezés fontos visszajelzés a felkészülésről."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         },
         {
           "id": "uszas-kiss-daniel",
@@ -1330,9 +1359,12 @@
             "Dániel az utolsó méterekig megtartotta a technikáját, és elsőként csapott a célba.",
             "A sikerhez rendszeres edzés és kitartó gyakorlás vezetett."
           ],
-          "href": "#/oldal/sports-results"
+          "href": "#/oldal/sports-results",
+          "verified": false
         }
-      ]
+      ],
+      "verificationLabel": "MINTA",
+      "verificationNotice": "MINTAADAT – A megjelenített név, sporteredmény, verseny és beszámoló nem hitelesített intézményi közlés."
     },
     "mobileStory": {
       "ariaLabel": "Mobilos képes történet: Sport, Tudás, Közösség",
@@ -1689,6 +1721,31 @@
       "linksLabel": "További intézményi hírek",
       "allNewsLabel": "Összes iskolai hír",
       "announcementsLabel": "Közlemények"
+    },
+    "homeHighlights": {
+      "kicker": "CSANÁDI · FÓKUSZBAN",
+      "title": "Tudás. Sport. Közösség.",
+      "intro": "Fedezd fel képzéseinket, a sportéletet és az iskola friss információit egy helyen.",
+      "items": [
+        {
+          "title": "Tanulás és képzés",
+          "subtitle": "Képzések és tanulási lehetőségek",
+          "icon": "🎓",
+          "pageId": "education-programs"
+        },
+        {
+          "title": "Sport és eredmények",
+          "subtitle": "Sportági bemutatók és eredmények",
+          "icon": "🏆",
+          "pageId": "sports-disciplines"
+        },
+        {
+          "title": "Hírek és programok",
+          "subtitle": "Iskolai hírek és közösségi események",
+          "icon": "📅",
+          "pageId": "news-latest"
+        }
+      ]
     }
   },
   "menu": {

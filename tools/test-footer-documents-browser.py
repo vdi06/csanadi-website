@@ -53,7 +53,7 @@ with sync_playwright() as pw:
             assert footer.locator('.footer-links,.footer-documents-link,.footer-mobile-tabs').count()==0
             assert footer.locator('.footer-updated').inner_text()=='Utolsó frissítés: 2026. 11. 23.'
             assert footer.locator('.footer-checked').inner_text().startswith('Ellenőrizve: ')
-            assert footer.locator('.footer-version').inner_text()=='Verzió: 2.47'
+            assert footer.locator('.footer-version').inner_text()==f'Verzió: {CFG["release"]}'
             assert 'none'==footer.evaluate('(el)=>getComputedStyle(el).borderTopStyle')
             assert footer.evaluate('(el)=>getComputedStyle(el).boxShadow')!='none'
             assert 'gradient' in footer.evaluate('(el)=>getComputedStyle(el).backgroundImage')

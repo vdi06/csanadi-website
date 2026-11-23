@@ -9,7 +9,7 @@ def ok(cond,reason):
  global checks
  if not cond: raise AssertionError(reason)
  checks+=1
-ok(C['release']=='2.48','version')
+ok(C['release']=='2.50','version')
 menu=C['menu']['items']; pages=C['pagePreview']['pages']
 leaf=[p['id'] for g in menu for p in g['children']]
 ok(len(menu)==6 and len(leaf)==49 and len(set(leaf))==49,'menu 6/49')
@@ -45,4 +45,4 @@ ok((R/'sitemap.xml').read_text().count('<url>')==64,'64 sitemap entries')
 ok('noindex' in (R/'index.html').read_text(),'noindex active')
 ok('csanadi-bp.edu.hu' not in (R/'shared/data/site.json').read_text(),'no legacy website domain in site data')
 ok((R/'docs/TARTALMI_AUDIT_248.md').exists(),'audit documentation')
-print(f'2.48 CONTENT AND STATIC QA: {checks}/{checks} PASSED; 49 intro, 25 added cards, 63 previews, 63 share images + home')
+print(f'{C["release"]} CONTENT AND STATIC QA: {checks}/{checks} PASSED; 49 intro, 25 added cards, 63 previews, 63 share images + home')

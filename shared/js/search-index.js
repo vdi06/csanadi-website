@@ -1,9 +1,9 @@
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.48";
-import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.48";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.48";
-import { calendarEntries } from "./calendar-data.js?v=2.48";
-import { newsStoryHref } from "./news-panel.js?v=2.48";
-import { checkedAdmissions } from "./admission-data.js?v=2.48";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.50";
+import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.50";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.50";
+import { calendarEntries } from "./calendar-data.js?v=2.50";
+import { newsStoryHref } from "./news-panel.js?v=2.50";
+import { checkedAdmissions } from "./admission-data.js?v=2.50";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */
@@ -74,8 +74,12 @@ function createIndex(config) {
     config.pagePreview, config.publicNews, config.admissionCenter, config.featureCenters]);
   if (cached?.signature === signature) return cached.entries;
   const entries = [];
+  const uniqueEntries = new Set();
   const categories = config.home.search.categories;
   const add = ({ label, short = label, summary = "", category, href, details = "" }) => {
+    const identity = `${normalizeSearchText(label)}|${href}`;
+    if (uniqueEntries.has(identity)) return; // Ugyanaz a hír/oldal csak egyszer szerepelhet.
+    uniqueEntries.add(identity);
     const headline = new Set(tokenize(`${label} ${short}`));
     const description = new Set(tokenize(`${summary} ${category}`));
     const extra = new Set(tokenize(details));
@@ -157,12 +161,12 @@ function createIndex(config) {
   const orderedSuccesses = orderedSportSuccesses(config);
   const recentIds = new Set(orderedSuccesses.slice(0, 6).map((item) => item.id));
   for (const success of orderedSuccesses) add({
-    label:success.name, short:success.name,
+    label:success.verified ? success.name : `${config.home.sportSuccesses.verificationLabel} · ${success.name}`, short:success.name,
     category:recentIds.has(success.id) ? categories.success : categories.archive,
     href:recentIds.has(success.id)
       ? `${config.routes.home}/sportsiker/${success.id}`
       : `#/oldal/sports-results/sportsiker/${success.id}`,
-    summary:`${success.sport} · ${success.result} · ${success.competition}`,
+    summary:`${success.verified ? "" : "Nem hitelesített mintabejegyzés · "}${success.sport} · ${success.result} · ${success.competition}`,
     details:`${success.summary} ${success.details.join(" ")} ${success.date} ${config.home.sportSuccesses.title}`
   });
   // Az egyedi JSON-hírek közvetlenül a megfelelő részletes oldalra vezetnek.
@@ -171,15 +175,6 @@ function createIndex(config) {
     category:news.tags.includes("announcement") ? "Közlemény" : "Iskolai hír",
     href:newsStoryHref(config,news),
     details:`${news.details.join(" ")} ${news.tags.join(" ")} ${news.date}`
-  });
-  // Az önálló, menüből elérhető híradatlapokra is van közvetlen találat.
-  // A keresés mindig az aktuális JSON-ból épül fel, így nincs kézi hírindex.
-  for (const news of config.publicNews) add({
-    label:news.title, short:news.title,
-    category:categories.page,
-    href:newsStoryHref(config,news),
-    summary:`${news.date} · ${news.summary}`,
-    details:`${news.tags.join(" ")} ${news.details.join(" ")}`
   });
   // Az események keresőtalálatai a saját napjukhoz és részleteikhez vezetnek.
   for (const event of calendarEntries(config)) add({
@@ -214,10 +209,32 @@ function createIndex(config) {
   return entries;
 }
 
-function searchEntries(config, query, sportsOnly = false) {
+// A kategóriák az eredeti tartalomtípust jelzik, nem menütörténetet.
+export const SEARCH_CATEGORIES = Object.freeze([
+  { id:"all", label:"Összes" },
+  { id:"pages", label:"Oldalak" },
+  { id:"news", label:"Hírek és közlemények" },
+  { id:"events", label:"Események" },
+  { id:"sports", label:"Sport" },
+  { id:"education", label:"Képzés és felvételi" },
+  { id:"contact", label:"Elérhetőségek" },
+  { id:"other", label:"További tartalmak" }
+]);
+
+function categoryId(entry) {
+  const type = normalizeSearchText(entry.category);
+  if (/\/hir\//.test(entry.href) || /kozlemeny|iskolai hir/.test(type)) return "news";
+  if (/\/esemeny\//.test(entry.href) || type.includes("esemeny")) return "events";
+  if (/sportsiker\//.test(entry.href) || /sportagi|sporthelyszin|sportsiker|sporteredmeny/.test(type)) return "sports";
+  if (/kepzesi ut|felveteli/.test(type)) return "education";
+  if (/^mailto:|^https?:/.test(entry.href)) return "contact";
+  if (type.includes("oldal")) return "pages";
+  return "other";
+}
+
+function matchingEntries(config, query, sportsOnly = false) {
   const words = [...new Set(tokenize(query))].slice(0, 8);
   if (!words.length) return [];
-  // Az index változatlan JSON-tartalomnál azonnal újrahasznosítható.
   const index = createIndex(config);
   const phrase = normalizeSearchText(query);
   const matches = [];
@@ -243,17 +260,30 @@ function searchEntries(config, query, sportsOnly = false) {
     }
   }
   matches.sort((a, b) => b.score - a.score || a.entry.label.localeCompare(b.entry.label, "hu"));
-  return matches.slice(0, sportsOnly ? 250 : 50).map(({ entry }) => ({
+  return matches.map(({ entry }) => ({
     label:entry.label, short:entry.short, summary:entry.summary,
-    category:entry.category, href:entry.href
+    category:entry.category, href:entry.href, group:categoryId(entry)
   }));
 }
 
+/** Teljes találatszám és minden kategória darabszáma a lapozás előtt.
+ * A találati lista csak megjelenítéskor rövidül; az index nem vág le eredményeket. */
+export function searchSiteResults(config, query, { category = "all" } = {}) {
+  const matches = matchingEntries(config, query);
+  const counts = Object.fromEntries(SEARCH_CATEGORIES.map(item => [item.id, 0]));
+  counts.all = matches.length;
+  for (const entry of matches) counts[entry.group]++;
+  const items = category === "all" ? matches : matches.filter(item => item.group === category);
+  return { items, total:items.length, allTotal:matches.length,
+    facets:SEARCH_CATEGORIES.filter(item => item.id === "all" || counts[item.id] > 0)
+      .map(item => ({...item,count:counts[item.id]})) };
+}
+
 export function searchSite(config, query) {
-  return searchEntries(config, query);
+  return searchSiteResults(config, query).items.slice(0, 50);
 }
 
 /** Az archív kereső kizárólag a sportsikereket, de mind a harmincat vizsgálja. */
 export function searchSportSuccessIds(config, query) {
-  return searchEntries(config, query, true).map((entry) => entry.href.split("/").at(-1));
+  return matchingEntries(config, query, true).map((entry) => entry.href.split("/").at(-1));
 }

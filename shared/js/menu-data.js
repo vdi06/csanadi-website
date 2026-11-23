@@ -1,10 +1,10 @@
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.48";
-import { checkedDocumentCenter } from "./document-data.js?v=2.48";
-import { checkedAdmissions } from "./admission-data.js?v=2.48";
-import { checkedInformationCenter } from "./information-data.js?v=2.48";
-import { checkedMediaCenter } from "./media-data.js?v=2.48";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.50";
+import { checkedDocumentCenter } from "./document-data.js?v=2.50";
+import { checkedAdmissions } from "./admission-data.js?v=2.50";
+import { checkedInformationCenter } from "./information-data.js?v=2.50";
+import { checkedMediaCenter } from "./media-data.js?v=2.50";
 /** Kétszintű menü, 49 önálló oldal és közösen kezelt, JSON-alapú tartalom. */
-import { checkedCalendar } from "./calendar-data.js?v=2.48";
+import { checkedCalendar } from "./calendar-data.js?v=2.50";
 
 const validLabel = (value, max = 800) => typeof value === "string" &&
   !!value.trim() && value.length <= max;
@@ -135,6 +135,18 @@ export function validateMenu(config) {
       throw new Error("Érvénytelen képzési aloldal.");
     }
     ids.add(local.id);
+  }
+  // A kezdőlap új, szerkeszthető három témakártyája csak valós, létező
+  // almenüoldalra vezethet; hiányos JSON-nál ne jelenjen meg hibás link.
+  const highlights = config.home?.homeHighlights;
+  if (!highlights || !validLabel(highlights.kicker,70) ||
+    !validLabel(highlights.title,130) || !validLabel(highlights.intro,250) ||
+    !Array.isArray(highlights.items) || highlights.items.length !== 3 ||
+    new Set(highlights.items.map((item) => item.pageId)).size !== 3 ||
+    highlights.items.some((item) => !item || !validLabel(item.title,80) ||
+      !validLabel(item.subtitle,170) || !validLabel(item.icon,12) ||
+      !leafIds.includes(item.pageId))) {
+    throw new Error("Érvénytelen kezdőlapi prémium témakártya-adatok.");
   }
   checkedNews(config);
   checkedCalendar(config);

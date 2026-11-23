@@ -1,7 +1,8 @@
 /** Csak fókuszléptetés; a platformok saját modáljaikat és felületeiket építik. */
 export function trapTab(event, controls) {
   if (event.key !== "Tab") return;
-  const available = controls.filter((node) => node && !node.disabled && !node.hidden);
+  const available = controls.filter((node) => node && !node.disabled && !node.hidden &&
+    !node.closest?.("[hidden],[inert]") && node.getAttribute?.("aria-hidden") !== "true");
   if (!available.length) return;
   event.preventDefault();
   const current = available.indexOf(document.activeElement);

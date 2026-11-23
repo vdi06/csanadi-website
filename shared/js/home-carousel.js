@@ -1,10 +1,10 @@
-import { element } from "./dom.js?v=2.48";
-import { checkedHomeCarousel } from "./carousel-data.js?v=2.48";
-import { createNewsPanel } from "./news-panel.js?v=2.48";
-import { menuPageHref } from "./menu-data.js?v=2.48";
+import { element } from "./dom.js?v=2.50";
+import { checkedHomeCarousel } from "./carousel-data.js?v=2.50";
+import { createNewsPanel } from "./news-panel.js?v=2.50";
+import { menuPageHref } from "./menu-data.js?v=2.50";
 
 /** JSON-ból felépített, bővíthető Bootstrap 5 Carousel: nem igényel
- * nyilakat és megállító gombot. CDN-kiesésnél osztályváltásos tartalék.
+ * nyilakat, de kézi Szünet/Folytatás vezérlést biztosít. CDN-kiesésnél osztályváltásos tartalék.
  * A fülek ARIA-tablistként működnek, nem Bootstrap-indikátorokként. */
 export function createHomeCarousel(config, successesSection, makeCalendar, platform) {
   const data = checkedHomeCarousel(config);
@@ -21,6 +21,7 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
   let pendingEventId = null;
   let transitioning = false;
   let pointerInside = false;
+  let pausedByUser = false;
 
   const holdForReading = () => {
     manualHoldUntil = Math.max(manualHoldUntil, Date.now() + data.interactionHoldMs);
@@ -49,17 +50,26 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
       "aria-controls":slides[index].getAttribute("id"),"data-panel-type":panel.type,
       "aria-selected":index === 0 ? "true" : "false",tabindex:index === 0 ? "0" : "-1"}
   }));
+  const pauseButton = element("button",{className:"home-carousel-pause",text:"Szünet",
+    attributes:{type:"button","aria-pressed":"false","aria-label":"Automatikus panelváltás szüneteltetése"}});
+  pauseButton.addEventListener("click",()=>{
+    pausedByUser=!pausedByUser;
+    pauseButton.setAttribute("aria-pressed",String(pausedByUser));
+    pauseButton.setAttribute("aria-label",pausedByUser ? "Automatikus panelváltás folytatása" : "Automatikus panelváltás szüneteltetése");
+    pauseButton.textContent=pausedByUser ? "Folytatás" : "Szünet";
+    if (!pausedByUser) holdForReading();
+  });
   const descriptionId = `${id}-usage-hint`;
   const tabBar = element("div", {className:"home-carousel-tabs",attributes:{
     role:"tablist","aria-label":data.ariaLabel
   }},...tabs);
   const usageHint = element("p",{className:"visually-hidden home-carousel-accessibility-hint",
-    text:"A fülek között a bal és jobb nyílbillentyűvel válthat. A tartalom automatikus váltása szünetel, amíg a kurzor fölötte van vagy billentyűzettel a fülekben tartózkodik.",
+    text:"A fülek között a bal és jobb nyílbillentyűvel válthat. Az automatikus váltás a Szünet gombbal kikapcsolható; billentyűzetes fókusz és egérmutató alatt szintén megáll.",
     attributes:{id:descriptionId}});
   const section = element("section", {className:"carousel slide home-feature-carousel",
     attributes:{id,"aria-label":data.ariaLabel,"aria-roledescription":"váltakozó tartalmak",
       "aria-describedby":descriptionId,"data-bs-interval":"false"}
-  },element("div",{className:"home-carousel-controls"},tabBar,usageHint),
+  },element("div",{className:"home-carousel-controls"},tabBar,pauseButton,usageHint),
     element("div",{className:"carousel-inner home-carousel-inner",attributes:{"aria-live":"off"}},...slides));
 
   function reflect(index,updateClasses=false) {
@@ -145,7 +155,7 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
     observer.observe(section);
   }
   const timer = globalThis.setInterval(() => {
-    if (destroyed || motionPreference?.matches || transitioning || Date.now() < manualHoldUntil || !visible ||
+    if (destroyed || pausedByUser || motionPreference?.matches || transitioning || Date.now() < manualHoldUntil || !visible ||
         document.visibilityState === "hidden") return;
     // WCAG 2.2.2: az olvasni kívánt tartalom ne váltson el egér alatt, illetve
     // a billentyűzetes felhasználó aktív fókusza alatt. Telefonon a tap utáni

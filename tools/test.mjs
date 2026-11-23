@@ -7,7 +7,7 @@ import { execFileSync } from 'node:child_process';
 const root=resolve(fileURLToPath(new URL('..',import.meta.url)));
 const load=(file)=>readFileSync(join(root,file),'utf8');
 const data=JSON.parse(load('shared/data/site.json'));
-assert.equal(data.release,'2.48');
+assert.equal(data.release,'2.50');
 assert.equal(data.schemaVersion,'2.30');
 assert.equal(data.routes.home,'#/kezdolap');
 assert.equal(data.routes.gate,'#/');
@@ -49,9 +49,9 @@ for(const file of allFiles.filter(p=>/^(desktop|mobile|shared\/js)\/.*\.js$/.tes
 const html=load('index.html');
 assert.match(html,/bootstrap@5\.3\.8\/dist\/css\/bootstrap\.min\.css/);
 assert.match(html,/bootstrap@5\.3\.8\/dist\/js\/bootstrap\.bundle\.min\.js/);
-assert.match(html,/shared\/js\/entry\.js\?v=2\.48/);
-assert.match(html,/shared\/css\/base\.css\?v=2\.48/);
-console.log('✓ Kiadás: HTML, verzióhoz kötött Bootstrap CDN, 2.48-as JS/CSS importok, összes JS-szintaxis');
+assert.match(html,/shared\/js\/entry\.js\?v=2\.50/);
+assert.match(html,/shared\/css\/base\.css\?v=2\.50/);
+console.log('✓ Kiadás: HTML, verzióhoz kötött Bootstrap CDN, 2.50-es JS/CSS importok, összes JS-szintaxis');
 // Ne maradjon a régi intézményi honlapra mutató URL sem az adatokban,
 // sem a látogatók által betöltött oldalakban és modulokban.
 const forbiddenSchoolHost=['csanadi-bp','edu','hu'].join('.').replace('.edu.hu','.edu.hu');
@@ -145,4 +145,4 @@ assert.ok(load('shared/js/footer.js').includes('footer-status'));
 assert.ok(load('desktop/styles.css').includes('.desktop-document-grid > .document-card:only-child'));
 assert.ok(load('mobile/styles.css').includes('.mobile-document-card:only-child'));
 console.log('✓ Kereső, minta-sportsikerek, egységes lábléc és középre igazított dokumentumtalálat');
-console.log('ÖSSZES 2.48 NODE REGRESSZIÓS TESZT SIKERES');
+console.log('ÖSSZES 2.50 NODE REGRESSZIÓS TESZT SIKERES');

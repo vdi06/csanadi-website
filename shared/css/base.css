@@ -933,3 +933,16 @@ img { max-width: 100%; }
 .media-premium-opened .media-premium-back{margin-bottom:16px;}
 .media-premium-note{color:var(--muted);font-size:12px;line-height:1.5;margin:6px 0 12px;}
 @media(prefers-reduced-motion:reduce){.media-premium-cover img{transition:none;}.media-premium-cover:hover img{transform:none;}}
+
+/* 2.50: kompakt lábléc, legalább 26px-es érinthető e-mail hivatkozás. */
+.footer-contact-main > a[href^="mailto:"] {
+  display:inline-flex;align-items:center;justify-content:center;min-height:28px;
+  padding:5px 8px;margin:-5px -8px;border-radius:6px;
+}
+.footer-contact-main > a[href^="mailto:"]:focus-visible {outline:2px solid #e8c480;outline-offset:3px;}
+/* A mintabejegyzés részletes felülete ne legyen valódi hírnek nézhető. */
+.successes-verification-warning {
+  color:var(--text);background:color-mix(in srgb,var(--accent) 14%,var(--surface));
+  border-inline-start:4px solid var(--accent);padding:11px 13px;border-radius:8px;
+  font-weight:750;line-height:1.45;
+}

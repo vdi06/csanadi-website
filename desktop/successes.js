@@ -1,9 +1,9 @@
-import { element } from "../shared/js/dom.js?v=2.48";
-import { trapTab } from "../shared/js/focus.js?v=2.48";
-import { isolateModal } from "../shared/js/modal.js?v=2.48";
+import { element } from "../shared/js/dom.js?v=2.50";
+import { trapTab } from "../shared/js/focus.js?v=2.50";
+import { isolateModal } from "../shared/js/modal.js?v=2.50";
 import { checkedSportSuccesses, featuredSportSuccesses, orderedSportSuccesses,
-  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.48";
-import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.48";
+  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.50";
+import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.50";
 
 /** Asztali sportsikerek: tágas 3×2-es rács, teljes nézet fölötti saját lebegő ablak. */
 export function createDesktopSuccesses(config, { archive = false } = {}) {
@@ -72,11 +72,12 @@ export function createDesktopSuccesses(config, { archive = false } = {}) {
     const featuredBadge = element("span", { className:"desktop-archive-featured", text:ui.featuredLabel });
     featuredBadge.hidden = true;
     const card = element("button", { className: "desktop-successes-card", attributes: {
-      type: "button", "aria-label": `${data.openLabel}: ${item.name}, ${item.result}, ${item.sport}`,
+      type: "button", "aria-label": `${item.verified ? "" : data.verificationLabel + ": "}${data.openLabel}: ${item.name}, ${item.result}, ${item.sport}`,
       "aria-haspopup": "dialog", "aria-controls": "desktop-successes-dialog", "aria-expanded": "false"
     } },
       element("div", { className: "desktop-successes-card-image-wrap" },
         ...(image ? [image] : []), fallback,
+        ...(!item.verified ? [element("span", { className:"desktop-successes-card-sample", text:data.verificationLabel })] : []),
         element("span", { className: "desktop-successes-card-sport", text: item.sport }),
         ...(archive ? [featuredBadge] : [])),
       element("div", { className: "desktop-successes-card-copy" },
@@ -243,7 +244,7 @@ export function createDesktopSuccesses(config, { archive = false } = {}) {
     photoFallbackSport.textContent = item.sport;
     if (item.image) photo.setAttribute("src", `${successImageRoot}${item.image}`);
     photo.setAttribute("alt", `${item.sport} – sportpillanat`);
-    description.replaceChildren(...item.details.map((text) => element("p", { text })));
+    description.replaceChildren(...(!item.verified ? [element("p", { className:"successes-verification-warning", text:data.verificationNotice })] : []), ...item.details.map((text) => element("p", { text })));
     if (!archive) link.setAttribute("href", item.href);
     activeIndex = index;
     cards[index].setAttribute("aria-expanded", "true");

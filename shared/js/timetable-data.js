@@ -1,4 +1,4 @@
-import { schoolBellSchedule, todayBudapest } from "./information-data.js?v=2.48";
+import { schoolBellSchedule, todayBudapest } from "./information-data.js?v=2.50";
 const weekdayIds=["mon","tue","wed","thu","fri"];
 const label=(v,max=300)=>typeof v==="string"&&!!v.trim()&&v.length<=max;
 const safeId=/^[a-z0-9-]+$/;

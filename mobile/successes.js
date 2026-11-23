@@ -1,9 +1,9 @@
-import { element } from "../shared/js/dom.js?v=2.48";
-import { trapTab } from "../shared/js/focus.js?v=2.48";
-import { isolateModal } from "../shared/js/modal.js?v=2.48";
+import { element } from "../shared/js/dom.js?v=2.50";
+import { trapTab } from "../shared/js/focus.js?v=2.50";
+import { isolateModal } from "../shared/js/modal.js?v=2.50";
 import { checkedSportSuccesses, featuredSportSuccesses, orderedSportSuccesses,
-  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.48";
-import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.48";
+  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.50";
+import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.50";
 
 /** Önálló mobilos sportsiker-rács: 2×3 kártya és függőlegesen olvasható lebegő ablak. */
 export function createMobileSuccesses(config, { archive = false } = {}) {
@@ -72,11 +72,12 @@ export function createMobileSuccesses(config, { archive = false } = {}) {
     const featuredBadge = element("span", { className:"mobile-archive-featured", text:ui.featuredLabel });
     featuredBadge.hidden = true;
     const card = element("button", { className: "mobile-successes-card", attributes: {
-      type: "button", "aria-label": `${data.openLabel}: ${item.name}, ${item.result}, ${item.sport}`,
+      type: "button", "aria-label": `${item.verified ? "" : data.verificationLabel + ": "}${data.openLabel}: ${item.name}, ${item.result}, ${item.sport}`,
       "aria-haspopup": "dialog", "aria-controls": "mobile-successes-dialog", "aria-expanded": "false"
     } },
       element("div", { className: "mobile-successes-card-image-wrap" },
         ...(image ? [image] : []), fallback,
+        ...(!item.verified ? [element("span", { className:"mobile-successes-card-sample", text:data.verificationLabel })] : []),
         element("span", { className: "mobile-successes-card-sport", text: item.sport }),
         ...(archive ? [featuredBadge] : [])),
       element("div", { className: "mobile-successes-card-copy" },
@@ -234,7 +235,7 @@ export function createMobileSuccesses(config, { archive = false } = {}) {
     detailDate.dateTime = item.date;
     detailDate.textContent = successDateText(item.date);
     detailSummary.textContent = item.summary;
-    detailBody.replaceChildren(...item.details.map((text) => element("p", { text })));
+    detailBody.replaceChildren(...(!item.verified ? [element("p", { className:"successes-verification-warning", text:data.verificationNotice })] : []), ...item.details.map((text) => element("p", { text })));
     detailImage.hidden = !item.image;
     detailFallback.hidden = Boolean(item.image);
     detailFallbackSport.textContent = item.sport;
