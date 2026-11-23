@@ -1,4 +1,5 @@
 /** Kétszintű menü, 49 önálló oldal és közösen kezelt, JSON-alapú tartalom. */
+import { checkedCalendar } from "./calendar-data.js?v=2.33";
 const validLabel = (value, max = 800) => typeof value === "string" &&
   !!value.trim() && value.length <= max;
 const validId = (id) => typeof id === "string" && /^[a-z0-9-]+$/.test(id);
@@ -129,6 +130,7 @@ export function validateMenu(config) {
     ids.add(local.id);
   }
   checkedNews(config);
+  checkedCalendar(config);
   return items;
 }
 

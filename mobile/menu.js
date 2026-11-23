@@ -1,6 +1,7 @@
-import { element } from "../shared/js/dom.js?v=2.30";
-import { trapTab } from "../shared/js/focus.js?v=2.30";
-import { menuPageHref } from "../shared/js/menu-data.js?v=2.30";
+import { element } from "../shared/js/dom.js?v=2.33";
+import { trapTab } from "../shared/js/focus.js?v=2.33";
+import { isolateModal } from "../shared/js/modal.js?v=2.33";
+import { menuPageHref } from "../shared/js/menu-data.js?v=2.33";
 
 /** Mobilos iránytű: kizárólag főpontok és egyetlen almenürács. */
 export function createMobileMenu(config, trigger, beforeOpen = () => {}) {
@@ -29,6 +30,7 @@ export function createMobileMenu(config, trigger, beforeOpen = () => {}) {
   let currentRoot = -1;
   let secondControls = [];
   let previousOverflow;
+  let releaseIsolation = () => {};
 
   function clearRoot() {
     currentRoot = -1;
@@ -83,6 +85,8 @@ export function createMobileMenu(config, trigger, beforeOpen = () => {}) {
   function close(restoreFocus = true) {
     if (overlay.hidden) return;
     overlay.hidden = true;
+    releaseIsolation();
+    releaseIsolation = () => {};
     clearRoot();
     trigger.setAttribute("aria-expanded", "false");
     trigger.setAttribute("aria-label", config.home.header.menuOpenLabel);
@@ -95,6 +99,7 @@ export function createMobileMenu(config, trigger, beforeOpen = () => {}) {
     previousOverflow = document.body?.style.overflow;
     if (document.body) document.body.style.overflow = "hidden";
     overlay.hidden = false;
+    releaseIsolation = isolateModal(overlay);
     clearRoot();
     trigger.setAttribute("aria-expanded", "true");
     trigger.setAttribute("aria-label", config.home.header.menuCloseLabel);

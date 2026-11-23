@@ -1,5 +1,6 @@
-import { element } from "./dom.js?v=2.30";
-import { trapTab } from "./focus.js?v=2.30";
+import { element } from "./dom.js?v=2.33";
+import { trapTab } from "./focus.js?v=2.33";
+import { isolateModal } from "./modal.js?v=2.33";
 
 /** Közös JSON-adatfolyam: a platformok csak a lábléc elrendezését stílusozzák.
  * Az adatok csak ellenőrzött, teljes válasz esetén cserélődnek le. */
@@ -44,8 +45,8 @@ export function makeFooter(config, platform) {
   const linksTitle = element("h2");
   const notices = element("div", { className: "footer-notices" });
   const updated = element("p", { className: "footer-updated" });
-  const checked = element("p", { className: "footer-checked",
-    attributes: { "aria-live": "polite" } });
+  // Tíz másodpercenkénti háttérellenőrzést a képernyőolvasó ne mondja be újra.
+  const checked = element("p", { className: "footer-checked" });
   const version = element("p", { className: "footer-version" });
   const modalTitle = element("h2", { className: "footer-modal-title",
     attributes: { id: `${platform}-footer-modal-title` } });
@@ -99,9 +100,10 @@ export function makeFooter(config, platform) {
     infoTab.addEventListener("click", () => selectTab("info"));
     for (const button of [contactTab, infoTab]) {
       button.addEventListener("keydown", (event) => {
-        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+        if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
         event.preventDefault();
-        const next = button === contactTab ? infoTab : contactTab;
+        const next = event.key === "Home" ? contactTab : event.key === "End" ? infoTab
+          : button === contactTab ? infoTab : contactTab;
         selectTab(next === contactTab ? "contact" : "info");
         next.focus({ preventScroll: true });
       });
@@ -119,11 +121,14 @@ export function makeFooter(config, platform) {
   let noticeById = new Map();
   let triggerById = new Map();
   let previousOverflow;
+  let releaseIsolation = () => {};
 
   function closeModal(restoreFocus = true, restoreRoute = true) {
     if (modal.hidden) return;
     const closingId = currentNoticeId;
     modal.hidden = true;
+    releaseIsolation();
+    releaseIsolation = () => {};
     currentNoticeId = null;
     if (document.body) document.body.style.overflow = previousOverflow || "";
     if (restoreFocus) currentTrigger?.focus({ preventScroll:true });
@@ -141,6 +146,7 @@ export function makeFooter(config, platform) {
     previousOverflow = document.body?.style.overflow;
     if (document.body) document.body.style.overflow = "hidden";
     modal.hidden = false;
+    releaseIsolation = isolateModal(modal);
     modalClose.focus({ preventScroll:true });
   }
   modalClose.addEventListener("click", () => closeModal());

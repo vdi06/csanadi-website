@@ -1,5 +1,5 @@
-import { crest, element } from "../shared/js/dom.js?v=2.30";
-import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.30";
+import { crest, element } from "../shared/js/dom.js?v=2.33";
+import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.33";
 
 const clamp = (value) => Math.max(0, Math.min(1, value));
 const mediaRoot = "./shared/assets/media/web/desktop-hero/";
@@ -32,9 +32,9 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   const eyebrow = element("span", { className: "desktop-hero-story-eyebrow" });
   const storyTitle = element("strong", { className: "desktop-hero-story-title" });
   const story = element("a", { className: "desktop-hero-story" },
-    element("span", { className: "desktop-hero-story-channel", text: "CSANÁDI HÍREK" }),
+    element("span", { className: "desktop-hero-story-channel", text: data.newsLabel }),
     eyebrow, storyTitle,
-    element("span", { className: "desktop-hero-story-action", text: "MEGNYITÁS" }));
+    element("span", { className: "desktop-hero-story-action", text: data.openStoryLabel }));
   const previous = element("button", { className: "desktop-hero-arrow desktop-hero-arrow--prev", text: "‹",
     attributes: { type: "button", "aria-label": data.previousLabel } });
   const next = element("button", { className: "desktop-hero-arrow desktop-hero-arrow--next", text: "›",
@@ -150,7 +150,8 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   window.addEventListener?.("resize", onScroll, { passive: true });
   const intervalMs = Math.max(1000, Math.min(360000, Number(data.intervalMs) || 180000));
   const timer = setInterval(() => {
-    if (!disposed && !reduced.matches) changeSlide(1);
+    if (!disposed && !reduced.matches && document.visibilityState !== "hidden" &&
+      !stage.contains?.(document.activeElement)) changeSlide(1);
   }, intervalMs);
   showSlide();
   updateScroll();

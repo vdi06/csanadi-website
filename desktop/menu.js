@@ -1,6 +1,7 @@
-import { element } from "../shared/js/dom.js?v=2.30";
-import { trapTab } from "../shared/js/focus.js?v=2.30";
-import { menuPageHref } from "../shared/js/menu-data.js?v=2.30";
+import { element } from "../shared/js/dom.js?v=2.33";
+import { trapTab } from "../shared/js/focus.js?v=2.33";
+import { isolateModal } from "../shared/js/modal.js?v=2.33";
+import { menuPageHref } from "../shared/js/menu-data.js?v=2.33";
 
 /** Asztali kétgyűrűs menü: az almenük valós, JSON-vázlatos belső oldalakra visznek. */
 export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
@@ -32,6 +33,7 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
   let secondControls = [];
   let previousOverflow;
   let openOrigin = trigger;
+  let releaseIsolation = () => {};
 
   function itemNode(item, className) {
     return element("a", { className, text: item.label,
@@ -90,6 +92,8 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
   function close(restoreFocus = true) {
     if (overlay.hidden) return;
     overlay.hidden = true;
+    releaseIsolation();
+    releaseIsolation = () => {};
     clearSelection();
     trigger.setAttribute("aria-expanded", "false");
     trigger.setAttribute("aria-label", config.home.header.menuOpenLabel);
@@ -106,6 +110,7 @@ export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {
     previousOverflow = document.body?.style.overflow;
     if (document.body) document.body.style.overflow = "hidden";
     overlay.hidden = false;
+    releaseIsolation = isolateModal(overlay);
     trigger.setAttribute("aria-expanded", "true");
     trigger.setAttribute("aria-label", config.home.header.menuCloseLabel);
     if (openOrigin !== trigger) openOrigin.setAttribute("aria-expanded", "true");

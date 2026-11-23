@@ -11,10 +11,11 @@ const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const staticFiles = [
   "index.html", "shared/js/entry.js", "shared/data/site.json", "shared/js/dom.js",
   "shared/js/gate.js", "shared/js/offline.js", "shared/js/shell.js", "shared/js/search-index.js", "shared/js/archive-data.js", "shared/js/appearance.js", "shared/js/successes-data.js",
-  "shared/js/focus.js", "shared/js/menu-data.js", "shared/js/edit-mode.js", "shared/js/footer.js", "shared/css/base.css",
+  "shared/js/calendar-data.js", "shared/js/calendar-view.js", "shared/js/home-carousel.js",
+  "shared/js/focus.js", "shared/js/modal.js", "shared/js/menu-data.js", "shared/js/edit-mode.js", "shared/js/footer.js", "shared/css/base.css",
   "shared/assets/media/logo/csanadi-crest-512.webp",
-  "mobile/app.js", "mobile/header.js", "mobile/menu.js", "mobile/search.js", "mobile/page.js", "mobile/story.js", "mobile/successes.js", "mobile/styles.css",
-  "desktop/app.js", "desktop/header.js", "desktop/hero.js", "desktop/menu.js", "desktop/search.js", "desktop/page.js", "desktop/successes.js", "desktop/styles.css",
+  "mobile/app.js", "mobile/header.js", "mobile/menu.js", "mobile/search.js", "mobile/page.js", "mobile/story.js", "mobile/successes.js", "mobile/calendar.js", "mobile/styles.css",
+  "desktop/app.js", "desktop/header.js", "desktop/hero.js", "desktop/menu.js", "desktop/search.js", "desktop/page.js", "desktop/successes.js", "desktop/calendar.js", "desktop/styles.css",
   "tools/test.mjs", "tools/stamp-release.mjs", "docs/ELLENORZES.md"
 ];
 const assetPaths = [];
@@ -53,7 +54,7 @@ assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths, ...desktopH
 assert.deepEqual(files(root).filter((path) => path.endsWith(".html")), ["index.html"]);
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
 assert.equal(config.schemaVersion, "2.30");
-assert.equal(config.release, "2.30");
+assert.equal(config.release, "2.33");
 assert.equal(config.appearance.defaultMode, "auto");
 assert.deepEqual(config.appearance.cycle, ["auto", "light", "dark"]);
 assert.deepEqual(Object.keys(config.appearance.shortLabels).sort(), ["auto", "dark", "light"]);
@@ -106,6 +107,32 @@ assert.equal(config.home.sportSuccesses.items.length, 30,
   "A teljes JSON-ban harminc, dátum szerint válogatható sportsiker legyen.");
 assert.equal(config.home.sportSuccesses.items.filter((item) => item.image).length, 6,
   "Hat képes, a többi fénykép nélküli sportsiker ellenőrzendő.");
+const {checkedCalendar,calendarEntries,schoolMonths,eventsOnDay,eventById} =
+  await import(new URL("../shared/js/calendar-data.js",import.meta.url));
+const calendar = checkedCalendar(config);
+const calendarEvents = calendarEntries(config);
+const months = schoolMonths(calendar);
+assert.equal(months.length,12);
+assert.deepEqual([months[0],months[11]],["2026-09","2027-08"]);
+assert.equal(calendarEvents.length,88);
+assert.equal(calendar.undated.length,7);
+assert.equal(new Set(calendarEvents.map((event) => event.id)).size,calendarEvents.length);
+assert.equal(eventsOnDay(calendarEvents,"2026-11-17").length,3,
+  "Egy napon a nyílt nap, érettségi és szülői tájékoztató egyszerre jelenjen meg.");
+assert.ok(eventsOnDay(calendarEvents,"2026-12-25").some((event) => event.id === "teli-szunet"));
+assert.ok(eventsOnDay(calendarEvents,"2027-05-27").some((event) => event.id === "sportnap"));
+assert.ok(!eventsOnDay(calendarEvents,"2027-05-27").some((event) => event.id === "kompetenciameres"),
+  "A hónapokon át tartó mérési időszak ne foglaljon le minden egyes naptári napot.");
+assert.equal(eventById(config,"kazinczy-verseny").month,"2026-11");
+assert.equal(calendarEvents.find((event) => event.id === "nyilt-nap-17").summary,
+  config.publicNews.find((news) => news.id === "nyilt-napok-2026").summary,
+  "A hírek és a naptár azonos tényei egyetlen közös JSON-adatból jöjjenek.");
+const brokenCalendar = structuredClone(config);
+brokenCalendar.home.calendar.events[0].date = "2027-02-30";
+assert.throws(() => checkedCalendar(brokenCalendar),/Hibás naptári esemény/);
+const duplicateCalendar = structuredClone(config);
+duplicateCalendar.home.calendar.undated[0].id = "sportnap";
+assert.throws(() => checkedCalendar(duplicateCalendar),/Hibás, pontosítandó/);
 assert.deepEqual(config.home.sportSuccesses.items.filter((item) => item.image).map((item) => item.image).sort(),
   ["atletika.webp", "labdarugas.webp", "uszas.webp", "kosarlabda.webp",
     "roplabda.webp", "asztalitenisz.webp"].sort());
@@ -121,6 +148,19 @@ const { checkedSportSuccesses, featuredSportSuccesses, archivedSportSuccesses } 
 const { archiveView, archiveOptions, readArchiveState, resetArchiveState, saveArchiveState } =
   await import(new URL("../shared/js/archive-data.js", import.meta.url));
 const { searchSite, normalizeSearchText } = await import(new URL("../shared/js/search-index.js", import.meta.url));
+assert.ok(searchSite(config,"Szalagavató").some((hit) =>
+  hit.href === "#/kezdolap/esemeny/szalagavato"),"Az események külön keresőtalálatként nyíljanak meg.");
+assert.ok(searchSite(config,"Kazinczy-verseny").some((hit) =>
+  hit.href === "#/kezdolap/esemeny/kazinczy-verseny"),"A nap nélküli havi programhoz is vezethet keresés.");
+assert.ok(searchSite(config,"Csanádi-nap").some((hit) =>
+  hit.href === "#/kezdolap/esemeny/csanadi-nap"),"Ékezetes eseménykeresés");
+const changedCalendarData = structuredClone(config);
+changedCalendarData.home.calendar.events.find((event) => event.id === "sportnap").title = "Új sportversenynaptár";
+assert.ok(searchSite(changedCalendarData,"Új sportversenynaptár").some((hit) =>
+  hit.href === "#/kezdolap/esemeny/sportnap"),"A JSON eseménymódosítása automatikusan újraindexeljen.");
+assert.ok(validateMenu(config));
+assert.throws(() => validateMenu(brokenCalendar),/Hibás naptári esemény/,
+  "A hibás naptári JSON-t már a teljes oldal betöltésekor utasítsuk el.");
 assert.equal(normalizeSearchText("Árvíztűrő TÜKÖRFÚRÓGÉP"), "arvizturo tukorfurogep");
 assert.equal(searchSite(config, "Nagy Lilla")[0].href,
   "#/kezdolap/sportsiker/atletika-nagy-lilla", "A diák nevére közvetlen részletes találat kell.");
@@ -275,9 +315,11 @@ for (const path of [...desktopHeroAssets, ...mobileStoryAssets, ...sportSuccessA
 }
 const html = readFileSync(join(root, "index.html"), "utf8");
 assert.match(html, /<div id="app"><\/div>/);
-assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.30"/);
-assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.30"/);
+assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.33"/);
+assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.33"/);
 assert.match(html, /name="color-scheme" content="light dark"/);
+assert.match(html, /bootstrap@5\.3\.8\/dist\/css\/bootstrap\.min\.css" integrity="sha384-/);
+assert.match(html, /bootstrap@5\.3\.8\/dist\/js\/bootstrap\.bundle\.min\.js" integrity="sha384-/);
 assert.doesNotMatch(html, /<h[1-6]|<p[ >]|<nav|<article|<img/i);
 const src = ["shared/js/entry.js", "shared/js/dom.js", "shared/js/gate.js", "shared/js/offline.js", "shared/js/shell.js",
   "shared/js/appearance.js", "mobile/app.js", "mobile/header.js", "desktop/app.js", "desktop/header.js",
@@ -285,7 +327,8 @@ const src = ["shared/js/entry.js", "shared/js/dom.js", "shared/js/gate.js", "sha
   "shared/js/edit-mode.js", "shared/js/footer.js", "mobile/page.js", "desktop/page.js", "desktop/hero.js", "mobile/story.js"]
   .map((path) => readFileSync(join(root, path), "utf8"));
 for (const source of src) assert.doesNotMatch(source, /innerHTML|eval\s*\(|fetch\([^)]*pages/i);
-for (const source of src.slice(0, -1)) assert.doesNotMatch(source, /carousel|slideshow/i);
+for (const source of [src[18],src[19]]) assert.doesNotMatch(source, /carousel|slideshow/i,
+  "A kezdőlapi képsáv belső animációját a sportsikerek/naptár lapozójától külön kell tartani.");
 assert.match(src[0], /import\(`\.\.\/\.\.\/\$\{platform\}\/app\.js\?v=\$\{encodeURIComponent\(config\.release\)\}`\)/);
 assert.match(src[0], /fetch\(freshSettings, \{ cache:"no-store", signal:controller\.signal \}\)/);
 assert.match(src[0], /stylesheet\.href = `\.\/\$\{platform\}\/styles\.css\?v=/);
@@ -322,7 +365,8 @@ class FakeNode {
     this.style = { setProperty: (key, value) => { this.style[key] = value; } };
     this.classList = {
       add: (name) => { this.className = [...new Set([...this.className.split(/\s+/).filter(Boolean), name])].join(" "); },
-      remove: (name) => { this.className = this.className.split(/\s+/).filter((value) => value !== name).join(" "); }
+      remove: (name) => { this.className = this.className.split(/\s+/).filter((value) => value !== name).join(" "); },
+      contains: (name) => this.className.split(/\s+/).includes(name)
     };
   }
   setAttribute(name, value) {
@@ -346,7 +390,8 @@ class FakeNode {
   replaceChildren(...children) { this.children = []; this.append(...children); }
   addEventListener(name, callback) { this.events.set(name, callback); }
   removeEventListener(name, callback) { if (this.events.get(name) === callback) this.events.delete(name); }
-  emit(name, event) { this.events.get(name)?.(event); }
+  emit(name, event = {}) { this.events.get(name)?.(event); }
+  matches(selector) { return selector === ":hover" ? !!this.isHovered : false; }
   remove() { if (this.parentNode) this.parentNode.children = this.parentNode.children.filter((node) => node !== this); }
   querySelector(selector) {
     return scan(this).find((node) => selector.startsWith(".")
@@ -376,6 +421,21 @@ const queue = [];
 globalThis.requestAnimationFrame = (callback) => { queue.push(callback); return queue.length; };
 globalThis.cancelAnimationFrame = () => {};
 const scan = (node) => [node, ...node.children.flatMap((item) => typeof item === "object" ? scan(item) : [])];
+const { isolateModal } = await import(new URL("../shared/js/modal.js", import.meta.url));
+const modalTestHost = new FakeNode("div");
+const modalTestBackground = new FakeNode("main");
+const modalTestWrapper = new FakeNode("header");
+const modalTestSibling = new FakeNode("nav");
+const modalTestOverlay = new FakeNode("div");
+modalTestSibling.inert = true;
+modalTestWrapper.append(modalTestSibling, modalTestOverlay);
+modalTestHost.append(modalTestBackground, modalTestWrapper);
+const restoreModalTest = isolateModal(modalTestOverlay);
+assert.equal(modalTestBackground.inert, true);
+assert.equal(modalTestSibling.inert, true);
+restoreModalTest(); restoreModalTest();
+assert.equal(modalTestBackground.inert, false);
+assert.equal(modalTestSibling.inert, true, "A korábban inaktív háttérelem állapota megmaradjon.");
 const { trapTab } = await import(new URL("../shared/js/focus.js", import.meta.url));
 const focusControls = Array.from({ length:3 }, () => new FakeNode("button"));
 document.activeElement = new FakeNode("button");
@@ -474,13 +534,79 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(location.hash, config.routes.home, `${platform}: a régi kihagyásgomb nem működik.`);
   skipDispose();
 
+  const originalCarouselInterval = globalThis.setInterval;
+  let autoplayCallback = null;
+  globalThis.setInterval = (callback,ms) => {
+    if (ms === calendar.autoplayMs) autoplayCallback = callback;
+    return originalCarouselInterval(callback,ms);
+  };
   const homeDispose = app.mount(parent, config, "home");
+  globalThis.setInterval = originalCarouselInterval;
   nodes = scan(parent);
   assert.equal(nodes.filter((n) => n.tag === "header").length, 1);
   assert.equal(nodes.filter((n) => n.tag === "main").length, 1);
   assert.equal(nodes.filter((n) => n.tag === "footer").length, 1);
+  const mainContent = nodes.find((n) => n.tag === "main");
+  const skipLink = nodes.find((n) => n.className === "skip-to-content");
+  assert.equal(skipLink.tag, "a");
+  assert.equal(skipLink.textContent, config.home.header.skipLinkLabel);
+  assert.equal(skipLink.attributes.href, "#content");
+  let preventedSkipRoute = false;
+  const routeBeforeSkip = location.hash;
+  skipLink.emit("click", { preventDefault:() => { preventedSkipRoute = true; } });
+  assert.ok(preventedSkipRoute && mainContent.focused && location.hash === routeBeforeSkip,
+    "A billentyűzetes főtartalom-ugrás nem módosíthatja a hash útvonalat.");
   assert.equal(nodes.find((n) => n.tag === "main").children.length, 2,
-    "Mindkét kezdőlapon a képes nyitás után közvetlenül a valódi sportsiker-rács jelenjen meg.");
+    "A képes nyitó alatt egy közös, kétpaneles Carousel legyen.");
+  const feature = nodes.find((n) => n.className === "carousel slide home-feature-carousel");
+  assert.ok(feature,`${platform}: hiányzó Bootstrap Carousel`);
+  const featureSlides = scan(feature).filter((node) => node.className.startsWith("carousel-item home-carousel-item"));
+  const featureTabs = scan(feature).filter((node) => node.attributes.role === "tab");
+  assert.equal(featureSlides.length,2);
+  assert.equal(featureTabs.length,2);
+  assert.ok(featureSlides[0].classList.contains("active"));
+  assert.ok(!featureSlides[1].classList.contains("active"));
+  assert.equal(featureSlides[1].attributes["aria-hidden"],"true");
+  assert.equal(featureSlides[1].inert,true);
+  assert.ok(autoplayCallback,`${platform}: hiányzó automatikus váltó időzítő`);
+  autoplayCallback();
+  assert.ok(featureSlides[1].classList.contains("active"),`${platform}: az automatikus Carousel nem vált`);
+  autoplayCallback();
+  assert.ok(featureSlides[0].classList.contains("active"));
+  featureTabs[1].emit("click");
+  assert.ok(featureSlides[1].classList.contains("active"),`${platform}: kézzel nem váltható a naptár`);
+  assert.ok(!featureSlides[0].classList.contains("active"));
+  assert.equal(featureTabs[1].attributes["aria-selected"],"true");
+  featureTabs[0].emit("click");
+  assert.ok(featureSlides[0].classList.contains("active"));
+  const monthCards = scan(featureSlides[1]).filter((node) =>
+    node.className === `school-month school-month--${platform}`);
+  assert.equal(monthCards.length,platform === "desktop" ? 12 : 1);
+  const firstMarkedDay = scan(monthCards[0]).find((node) => node.className === "school-day has-events");
+  assert.ok(firstMarkedDay,`${platform}: az eseményes napok nem különülnek el`);
+  const detail = scan(monthCards[0]).find((node) => node.className === "school-day-detail");
+  firstMarkedDay.emit("click");
+  assert.equal(detail.hidden,false,`${platform}: esemény részlete kattintásra`);
+  assert.equal(firstMarkedDay.attributes["aria-expanded"],"true");
+  firstMarkedDay.emit("click");
+  assert.equal(detail.hidden,true,`${platform}: ismételt koppintás bezár`);
+  if (platform === "desktop") {
+    firstMarkedDay.isHovered = true;
+    firstMarkedDay.emit("mouseenter");
+    assert.equal(detail.hidden,false,"Asztali egér-rámutatásra nyíljon ki a nap.");
+    firstMarkedDay.emit("click");
+    assert.equal(detail.hidden,true,"Asztalon rámutatás közben is zárjon az ismételt kattintás.");
+    firstMarkedDay.emit("mouseenter");
+    firstMarkedDay.isHovered = false;
+    firstMarkedDay.emit("mouseleave");
+    assert.equal(detail.hidden,true,"Az egér levétele zárja be a részleteket.");
+  } else {
+    const monthSelect = scan(featureSlides[1]).find((node) => node.className === "mobile-month-select");
+    assert.equal(monthSelect.children.length,12,"A teljes tanév minden hónapja elérhető legyen.");
+    monthSelect.value = "11";
+    monthSelect.emit("change");
+    assert.ok(scan(featureSlides[1]).some((node) => node.textContent === "2027. augusztus"));
+  }
   assert.equal(nodes.some((n) => n.className?.includes("home-preview") ||
     n.className === "desktop-hero-continuation"), false,
     "A már nem aktuális kezdőlapi tartalomfelsorolás nem jelenhet meg.");
@@ -522,7 +648,7 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
         expected==="intro"||expected==="outro"?3:1);
     }
     assert.equal(nodes.find((n) => n.tag === "main").children[1].className,
-      "mobile-successes-section", "A mobilos képsávot közvetlenül a valódi tartalom kövesse.");
+      "carousel slide home-feature-carousel", "A mobilos képsávot közvetlenül a Carousel kövesse.");
   }
   const successGrid = nodes.find((n) => n.className === `${platform}-successes-grid`);
   const successOverlay = nodes.find((n) => n.className === `${platform}-successes-overlay`);
@@ -623,6 +749,10 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
     assert.equal(informationColumn.hidden, false);
     contactTab.emit("keydown", { key:"ArrowRight", preventDefault:()=>{} });
     assert.equal(infoTab.focused, true);
+    infoTab.emit("keydown", { key:"Home", preventDefault:()=>{} });
+    assert.equal(contactTab.attributes["aria-selected"], "true");
+    contactTab.emit("keydown", { key:"End", preventDefault:()=>{} });
+    assert.equal(infoTab.attributes["aria-selected"], "true");
   }
   const noticeRows = scan(informationColumn).filter((n) => n.className === "footer-notice-icon");
   assert.equal(noticeRows.length, 4, "A Tájékoztatás négy betűs ikont tartalmazzon.");
@@ -636,10 +766,12 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.ok(noticeModal.hidden);
   noticeRows[0].emit("click");
   assert.equal(noticeModal.hidden, false, "A betűikon nyissa meg a saját lebegő szövegablakát.");
+  assert.equal(footer.querySelector(".footer-inner").inert, true);
   assert.equal(scan(modalDialog).find((n) => n.className === "footer-modal-title").textContent, "Impresszum");
   assert.equal(document.body.style.overflow, "hidden");
   modalDialog.emit("keydown", { key:"Escape", preventDefault:()=>{} });
   assert.equal(noticeModal.hidden, true);
+  assert.equal(footer.querySelector(".footer-inner").inert, false);
   assert.equal(document.body.style.overflow, "");
   assert.ok(noticeRows[0].focused, "Bezárás után a betűikon kapja vissza a fókuszt.");
   noticeRows[3].emit("click");
@@ -917,10 +1049,15 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   searchToggle.emit("click");
   assert.equal(searchOverlay.hidden, false);
   assert.equal(document.body.style.overflow, "hidden");
+  const backgroundNode = platform === "desktop" ? homeNode.querySelector(".desktop-header")
+    : homeNode.querySelector(".mobile-brand");
+  assert.equal(backgroundNode.inert, true,
+    "Nyitott keresőnél a háttér ne legyen billentyűzettel elérhető.");
   assert.equal(scan(searchDialog).find((n) => n.className === `${platform}-search-eyebrow`).textContent,
     config.home.header.searchEyebrow);
   const searchInput = searchDialog.querySelector("input");
   assert.ok(searchInput.focused);
+  assert.equal(searchInput.attributes.maxlength, "120");
   const searchCount = scan(searchDialog).find((n) => n.className === `${platform}-search-count`);
   const clearButton = scan(searchDialog).find((n) => n.className === `${platform}-search-clear`);
   const quickList = scan(searchDialog).find((n) => n.className === `${platform}-search-quick-list`);
@@ -978,6 +1115,8 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   searchDialog.emit("keydown", { key: "Escape", preventDefault: () => {} });
   assert.equal(searchOverlay.hidden, true);
   assert.equal(document.body.style.overflow, "");
+  assert.equal(backgroundNode.inert, false,
+    "A párbeszédablak bezárása után a háttér ismét használható.");
   assert.ok(searchToggle.focused);
 
   themeToggle.emit("click");
@@ -1161,7 +1300,7 @@ const liveModalText = scan(liveFooter.footer).find((node) => node.className === 
 liveNotices.children[0].emit("click");
 assert.equal(liveModal.hidden, false);
 const refreshed = structuredClone(config);
-refreshed.release = "2.31";
+refreshed.release = "2.34";
 refreshed.home.footer.updatedAt = "2026-11-23";
 refreshed.home.footer.notices[0].body = "Ellenőrzött, módosított impresszum-adatok.";
 const originalFetch = globalThis.fetch;
@@ -1181,11 +1320,11 @@ assert.equal(requests, 0, "Rejtett lapon a frissítés nem terhelheti a hálóza
 document.visibilityState = "visible";
 assert.equal(await liveFooter.checkForUpdates(), true);
 assert.equal(requests, 1);
-assert.equal(liveVersion.textContent, "Verzió: 2.31");
+assert.equal(liveVersion.textContent, "Verzió: 2.34");
 assert.equal(liveUpdated.textContent, "Utolsó frissítés: 2026. 11. 23.");
 assert.equal(liveModalText.textContent, "Ellenőrzött, módosított impresszum-adatok.");
 assert.equal(liveModal.hidden, false, "A megnyitott tájékoztató maradjon meg adatfrissítéskor.");
-assert.equal(replacementUrl, "https://example.test/index.html?v=2.31#/kezdolap",
+assert.equal(replacementUrl, "https://example.test/index.html?v=2.34#/kezdolap",
   "Új kiadáskor az egész alkalmazás új verziókulccsal töltődjön újra.");
 scan(liveFooter.footer).find((node) => node.className === "footer-modal-close").emit("click");
 assert.equal(liveModal.hidden, true);
@@ -1196,11 +1335,11 @@ assert.equal(await liveFooter.checkForUpdates(), true);
 assert.equal(liveNotices.children[0], noticeAfterUpdate,
   "Változatlan JSON esetén a 10 másodperces ellenőrzés ne építse újra a gombokat.");
 const invalid = structuredClone(refreshed);
-invalid.release = "2.31";
+invalid.release = "2.33";
 invalid.home.footer.notices[0].body = "";
 globalThis.fetch = async () => ({ ok: true, json: async () => invalid });
 assert.equal(await liveFooter.checkForUpdates(), false);
-assert.equal(liveVersion.textContent, "Verzió: 2.31", "Hibás JSON nem írhatja felül az érvényes adatot.");
+assert.equal(liveVersion.textContent, "Verzió: 2.34", "Hibás JSON nem írhatja felül az érvényes adatot.");
 const duplicateGlyph = structuredClone(refreshed);
 duplicateGlyph.home.footer.notices[1].glyph = duplicateGlyph.home.footer.notices[0].glyph;
 globalThis.fetch = async () => ({ ok: true, json: async () => duplicateGlyph });
@@ -1379,12 +1518,33 @@ assert.doesNotMatch(mobileCss, /\.mobile-compass-third-|\.desktop-wheel-third-/,
 assert.doesNotMatch(desktopCss, /\.desktop-wheel-third-|\.desktop-wheel-level-three/,
   "A harmadik asztali panel stílusa is eltűnjön.");
 assert.match(block(desktopCss, ".desktop-page-preview"), /text-align:center;/);
-assert.match(block(desktopCss, ".desktop-page-cards"), /grid-template-columns:repeat\(auto-fit,minmax\(min\(100%,340px\),1fr\)\)/,
-  "Az asztali kártyarács az oldaltartalom számához igazodjon.");
+assert.match(block(desktopCss, ".desktop-page-cards"), /display:flex; flex-wrap:wrap; justify-content:center;/,
+  "Az asztali tartalomkártyák az utolsó, nem teljes sorban is középre kerüljenek.");
 assert.match(block(desktopCss, ".desktop-page-card"), /border-radius:23px;/);
+assert.match(block(desktopCss, ".desktop-page-card"), /max-width:570px;/,
+  "Egyetlen asztali kártya ne nőjön a teljes oldal szélességére.");
 assert.match(block(mobileCss, ".mobile-page-preview"), /text-align:center;/);
 assert.match(block(mobileCss, ".mobile-page-cards"), /grid-template-columns:minmax\(0,1fr\)/);
+assert.match(block(mobileCss, ".mobile-page-cards"), /justify-items:center;/);
 assert.match(block(mobileCss, ".mobile-page-card"), /border-radius:19px;/);
+for (const [platform, css] of [["desktop",desktopCss],["mobile",mobileCss]]) {
+  assert.match(block(css, `.${platform}-page-card-body`), /text-align:center;/,
+    `${platform}: a hierarchikus kártyaszövegek legyenek középen.`);
+  assert.match(block(css, `.${platform}-page-card-point`), /text-align:center;/,
+    `${platform}: minden alpont a kártya középvonalához igazodjon.`);
+  assert.match(block(css, `.${platform}-page-card-details li`), /text-align:center;/,
+    `${platform}: a részletező sorok is középre kerüljenek.`);
+  assert.match(block(css, `.${platform}-page-kind-steps .${platform}-page-card-point::before`),
+    /left:50%/,`${platform}: a számozott lépések jelzése középen maradjon.`);
+  assert.match(block(css, `.${platform}-successes-heading`), /text-align:center;/,
+    `${platform}: a főoldal és az archívum címsora legyen középen.`);
+  assert.match(block(css, `.${platform}-successes-card`), /text-align:center;/,
+    `${platform}: a sportsikerkártyák tartalma legyen középen.`);
+}
+assert.match(block(desktopCss, ".desktop-page-table th,.desktop-page-table td"), /text-align:center;/);
+assert.match(block(mobileCss, ".mobile-page-time-list dt,.mobile-page-time-list dd"), /text-align:center;/);
+assert.match(block(desktopCss, ".desktop-page-gallery-grid"), /justify-content:center;/);
+assert.match(block(mobileCss, ".mobile-page-gallery-grid"), /justify-items:center;/);
 assert.doesNotMatch(mobileCss, /mobile-compass-branch-view|mobile-compass-branch-list|mobile-menu-close/,
   "A régi, külön képernyős mobilalmenü CSS-e nem maradhat aktív.");
 assert.doesNotMatch(mobileCss, /\.mobile-menu-level|\.mobile-menu-expand/,
@@ -1489,19 +1649,19 @@ assert.match(block(desktopCss, ".desktop-footer .footer-contact,.desktop-footer 
 assert.match(block(mobileCss, ".mobile-footer .footer-inner"), /display:block;/);
 assert.match(block(mobileCss, ".mobile-footer .footer-mobile-tabs"), /grid-template-columns:repeat\(2,minmax\(0,1fr\)\);/);
 assert.match(block(baseCss, ".footer-notices"), /display:grid; grid-auto-rows:minmax\(0,1fr\);/);
-assert.match(block(desktopCss, ".desktop-footer .footer-notices"), /flex:0 0 32px; min-height:32px;/);
-assert.match(block(desktopCss, ".desktop-footer .footer-notice-icon"), /min-height:32px;/);
+assert.match(block(desktopCss, ".desktop-footer .footer-notices"), /flex:0 0 44px; min-height:44px;/);
+assert.match(block(desktopCss, ".desktop-footer .footer-notice-icon"), /min-height:44px;/);
 assert.match(block(desktopCss, ".desktop-footer .footer-notices"), /grid-template-columns:repeat\(4,minmax\(0,1fr\)\);/);
 assert.match(block(mobileCss, ".mobile-footer .footer-notices"), /grid-template-columns:repeat\(2,minmax\(0,1fr\)\);/);
-assert.match(block(mobileCss, ".mobile-footer .footer-notices"), /flex:0 0 56px; min-height:56px;/);
-assert.match(block(mobileCss, ".mobile-footer .footer-notice-icon"), /min-height:26px;/);
-assert.match(block(mobileCss, ".mobile-footer .footer-mobile-tab"), /min-height:25px;/);
+assert.match(block(mobileCss, ".mobile-footer .footer-notices"), /flex:0 0 92px; min-height:92px;/);
+assert.match(block(mobileCss, ".mobile-footer .footer-notice-icon"), /min-height:44px;/);
+assert.match(block(mobileCss, ".mobile-footer .footer-mobile-tab"), /min-height:44px;/);
 assert.match(block(baseCss, ".footer-notice-icon"), /width:100%; height:100%;/);
 for (const width of [280, 320, 375, 390, 430, 650, 767]) {
   const available = Math.min(650, width - 20) - 16;
   const buttonWidth = (available - 4) / 2;
-  const buttonHeight = (66 - 4) / 2;
-  assert.ok(buttonWidth >= 44 && buttonHeight >= 30,
+  const buttonHeight = (92 - 3) / 2;
+  assert.ok(buttonWidth >= 44 && buttonHeight >= 44,
     `${width}px mobilnézet: a 2×2 láblécgomb-rács érintési területe túl kicsi.`);
 }
 for (const width of [768, 1024, 1440, 1920]) {
@@ -1595,6 +1755,49 @@ for (const [width, height] of [[320, 720], [375, 812], [390, 844], [430, 932], [
 }
 console.log("✓ CSS-geometria: a kapu és kattintható területe hét képernyőméretnél középen marad");
 
+// Valódi Bootstrap API integrációs próba kontrollált Carousel-implementációval.
+// Ez a fallback-től függetlenül bizonyítja, hogy a panelváltást a Bootstrap .to()
+// metódusára bízzuk, majd a slid.bs.carousel eseménnyel szinkronizálunk.
+const { createHomeCarousel } = await import(new URL("../shared/js/home-carousel.js", import.meta.url));
+let bootstrapInstance;
+class BootstrapCarouselDouble {
+  static getOrCreateInstance(node, options) {
+    bootstrapInstance = new BootstrapCarouselDouble(node,options);
+    return bootstrapInstance;
+  }
+  constructor(node,options) { this.node=node;this.options=options;this.calls=[];this.disposed=false; }
+  to(index) {
+    this.calls.push(index);
+    const panels=scan(this.node).filter((item) => item.className.includes("home-carousel-item"));
+    panels.forEach((panel,i) => panel.classList[i===index ? "add" : "remove"]("active"));
+    this.node.emit("slid.bs.carousel", {to:index});
+  }
+  dispose() { this.disposed=true; }
+}
+window.bootstrap={Carousel:BootstrapCarouselDouble};
+let revealedEvent=null;
+const bootstrapTestCarousel=createHomeCarousel(config,new FakeNode("section"),() => ({
+  section:new FakeNode("section"),
+  showEvent:(id) => {revealedEvent=id;return true;},
+  destroy:() => {}
+}),"test");
+assert.equal(bootstrapInstance.options.interval,false,"Ne induljon saját Bootstrap-időzítő a mi időzítőnk mellett.");
+assert.equal(bootstrapInstance.options.touch,false,"Ne legyen kétszeres, ütköző érintéses swipe.");
+assert.ok(bootstrapTestCarousel.section.classList.contains("bs-ready"));
+bootstrapTestCarousel.show(1,true);
+assert.deepEqual(bootstrapInstance.calls,[1],"A panelváltást a Bootstrap Carousel .to() végezze.");
+const fakeBootstrapPanels=scan(bootstrapTestCarousel.section).filter((node)=>node.className.includes("home-carousel-item"));
+assert.equal(fakeBootstrapPanels[1].attributes["aria-hidden"],"false");
+assert.equal(fakeBootstrapPanels[0].inert,true);
+bootstrapTestCarousel.showEvent("sportnap");
+assert.equal(revealedEvent,"sportnap");
+bootstrapTestCarousel.show(0,true);
+assert.deepEqual(bootstrapInstance.calls,[1,0]);
+bootstrapTestCarousel.destroy();
+assert.equal(bootstrapInstance.disposed,true,"Nézetváltáskor a Bootstrap példány is szűnjön meg.");
+delete window.bootstrap;
+console.log("✓ Bootstrap 5 Carousel API: .to(), slid.bs.carousel, akadálymentes állapot, dispose és CDN-fallback");
+
 // A teljes közös belépési pontot is futtatjuk, nem csupán a két oldal modulját.
 const applicationRoot = new FakeNode("root");
 const head = new FakeNode("head");
@@ -1633,8 +1836,18 @@ globalThis.fetch = async () => ({ ok: true, json: async () => config });
 location.hash = config.routes.gate;
 await import(new URL("../shared/js/entry.js", import.meta.url));
 const nextTick = () => new Promise((done) => setImmediate(done));
-await nextTick();
-assert.equal(historyUrl, "https://example.test/index.html?v=2.30#/",
+// A platformmodul dinamikus importja gépterheléstől függően több eseménykört kérhet.
+// Nem egyetlen vak setImmediate futást, hanem ellenőrizhető célállapotot várunk.
+async function waitFor(predicate, label, maxMs = 6000) {
+  const deadline = Date.now() + maxMs;
+  while (!predicate()) {
+    assert.ok(Date.now() <= deadline, `Időtúllépés a valódi állapotig: ${label}`);
+    await new Promise((done) => setTimeout(done, 10));
+  }
+}
+await waitFor(() => documentRoot.dataset.platform === "mobile" &&
+  documentRoot.dataset.route === "gate" && applicationRoot.querySelector(".gate-door-button"), "mobil kapu inicializálás");
+assert.equal(historyUrl, "https://example.test/index.html?v=2.33#/",
   "A kezdő URL kapjon kiadási verziót a későbbi cache-biztos újratöltéshez.");
 assert.equal(documentRoot.dataset.platform, "mobile");
 assert.equal(documentRoot.dataset.route, "gate");
@@ -1643,14 +1856,14 @@ assert.equal(head.children.length, 1);
 applicationRoot.querySelector(".gate-door-button").emit("click");
 assert.equal(location.hash, config.routes.home);
 windowEvents.get("hashchange")();
-await nextTick();
-assert.equal(documentRoot.dataset.route, "home");
+await waitFor(() => documentRoot.dataset.route === "home" &&
+  applicationRoot.querySelector(".home-brand"), "kezdőlap betöltés");
 assert.ok(applicationRoot.querySelector(".home-brand").focused, "A kezdőlap fejlécére fókuszt kell átadni.");
 location.hash = menuPageHref("school-introduction");
 window.scrollY = 340;
 windowEvents.get("hashchange")();
-await nextTick();
-assert.equal(documentRoot.dataset.route, "page");
+await waitFor(() => documentRoot.dataset.route === "page" &&
+  applicationRoot.querySelector(".mobile-page-title"), "aloldal betöltés");
 assert.equal(window.scrollY, 0,
   "Menünavigáció után az új aloldal mindig a tetejéről induljon.");
 assert.equal(applicationRoot.querySelector(".mobile-page-title").textContent, "Bemutatkozás");
@@ -1658,15 +1871,15 @@ assert.ok(applicationRoot.querySelector(".mobile-page-title").focused);
 assert.ok(document.title.startsWith("Bemutatkozás"));
 location.hash = config.routes.home;
 windowEvents.get("hashchange")();
-await nextTick();
-assert.equal(documentRoot.dataset.route, "home");
+await waitFor(() => documentRoot.dataset.route === "home", "vissza a kezdőlapra");
 location.hash = config.routes.gate;
 windowEvents.get("hashchange")();
-await nextTick();
+await waitFor(() => documentRoot.dataset.route === "gate" &&
+  applicationRoot.querySelector(".gate-door-button"), "vissza a kapuhoz");
 assert.ok(applicationRoot.querySelector(".gate-door-button").focused, "Visszalépés után a kapu fókuszt kap.");
 viewportIsMobile = false;
 breakpointChange();
-await nextTick();
+await waitFor(() => documentRoot.dataset.platform === "desktop", "asztali platformváltás");
 assert.equal(documentRoot.dataset.platform, "desktop");
 assert.equal(head.children.length, 1, "Csak az éppen aktív platform CSS-e maradhat.");
 assert.equal(scan(applicationRoot).filter((n) => n.className === "mobile-app").length, 0);

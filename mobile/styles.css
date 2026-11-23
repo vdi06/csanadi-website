@@ -10,7 +10,7 @@
   line-height: 1.28; letter-spacing: .025em;
 }
 .mobile-app .gate-skip {
-  width: 40px; height: 40px; min-width: 40px; min-height: 40px; right: 10px;
+  width: 44px; height: 44px; min-width: 44px; min-height: 44px; right: 10px;
 }
 
 .mobile-home {
@@ -32,7 +32,7 @@
   font-weight:900; letter-spacing:.048em;
 }
 .mobile-brand small {
-  font-size:clamp(9px,2.38vw,12px); line-height:1.15;
+  font-size:clamp(11px,2.38vw,12px); line-height:1.15;
   font-weight:750; letter-spacing:.035em;
 }
 .mobile-toolbar {
@@ -52,7 +52,7 @@
 }
 .mobile-motto {
   margin:13px auto 0; max-width:100%; color:var(--accent);
-  font-size:clamp(9px,2.48vw,12px); font-weight:900;
+  font-size:clamp(11px,2.48vw,12px); font-weight:900;
   letter-spacing:.13em; line-height:1.45; text-align:center;
 }
 .mobile-main { flex:1 1 auto; width:100%; min-height:0; }
@@ -124,54 +124,59 @@
 }
 .mobile-page-intro { margin:0 auto 22px; color:var(--muted); font-size:15px; line-height:1.5; }
 /* A Bootstrap-kártyák mobilon egy oszlopban, önállóan méretezett tartalommal élnek. */
-.mobile-page-cards { display:grid; grid-template-columns:minmax(0,1fr); gap:15px; text-align:left; }
+.mobile-page-cards { display:grid; grid-template-columns:minmax(0,1fr); justify-items:center; gap:15px; width:100%; text-align:center; }
 .mobile-page-card {
-  position:relative; overflow:hidden; min-width:0;
+  position:relative; overflow:hidden; width:100%; max-width:540px; min-width:0;
   border:1px solid color-mix(in srgb,var(--accent) 49%,transparent); border-radius:19px;
   background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 95%,var(--accent)),var(--surface));
-  color:var(--text); box-shadow:0 10px 27px rgba(0,0,0,.15);
+  color:var(--text); text-align:center; box-shadow:0 10px 27px rgba(0,0,0,.15);
 }
 .mobile-page-card::before { content:""; position:absolute; inset:0 auto 0 0; width:4px;
   background:linear-gradient(180deg,var(--accent),color-mix(in srgb,var(--accent) 24%,transparent)); }
-.mobile-page-card-body { padding:20px 19px 21px 22px; }
+.mobile-page-card-body { padding:20px 19px 21px; text-align:center; }
 .mobile-page-card-title { margin:0 0 7px; font-size:21px; line-height:1.24; }
 .mobile-page-card-summary { margin:0 0 17px; color:var(--muted); font-size:13px; line-height:1.52; }
 .mobile-page-card-group { padding:14px 0 0; border-top:1px solid color-mix(in srgb,var(--accent) 27%,transparent); }
 .mobile-page-card-group + .mobile-page-card-group { margin-top:14px; }
 .mobile-page-card-group-title { margin:0 0 10px; color:var(--accent); font-size:14px; line-height:1.3; }
-.mobile-page-card-points { display:grid; gap:12px; padding:0; margin:0; list-style:none; }
-.mobile-page-card-point { position:relative; padding-left:14px; font-size:13px; line-height:1.42; }
-.mobile-page-card-point::before { content:""; position:absolute; left:0; top:.4em; width:7px; height:7px;
-  border-radius:2px; transform:rotate(45deg); background:var(--accent); }
+.mobile-page-card-points { display:grid; gap:12px; width:100%; padding:0; margin:0 auto; list-style:none; }
+.mobile-page-card-point { position:relative; width:100%; padding:20px 0 0; font-size:13px; line-height:1.42; text-align:center; }
+.mobile-page-card-point::before { content:""; position:absolute; left:50%; top:3px; width:7px; height:7px;
+  border-radius:2px; transform:translateX(-50%) rotate(45deg); background:var(--accent); }
 .mobile-page-card-point-title { display:block; margin-bottom:5px; font-size:14px; }
-.mobile-page-card-details { display:grid; gap:4px; padding-left:16px; margin:0; color:var(--muted); }
-.mobile-page-card-details li::marker { color:var(--accent); }
+.mobile-page-card-details { display:grid; justify-items:center; gap:4px; padding:0; margin:0 auto; color:var(--muted); list-style:none; }
+.mobile-page-card-details li { max-width:100%; overflow-wrap:anywhere; text-align:center; }
+.mobile-page-card-details li::before { content:"•"; margin-right:6px; color:var(--accent); }
 .mobile-page-kind-alert { border-width:2px; border-color:var(--accent); }
 .mobile-page-accordion-item {
   border:1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius:11px;
-  margin:8px 0; background:color-mix(in srgb,var(--surface) 85%,var(--accent));
+  margin:8px auto; background:color-mix(in srgb,var(--surface) 85%,var(--accent));
 }
-.mobile-page-accordion-item .accordion-button { display:block; padding:13px 12px; font-size:14px; font-weight:800; cursor:pointer; }
+.mobile-page-accordion-item .accordion-button { display:block; padding:13px 12px; font-size:14px; font-weight:800; cursor:pointer; text-align:center; }
 .mobile-page-accordion-item[open] .accordion-button { color:var(--accent); }
 .mobile-page-accordion-item .accordion-body { padding:0 11px 14px; }
 .mobile-page-accordion-item .accordion-button:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
-.mobile-page-kind-timeline .mobile-page-card-point { border-left:2px solid color-mix(in srgb,var(--accent) 48%,transparent); padding-left:22px; }
-.mobile-page-kind-timeline .mobile-page-card-point::before { transform:none; border-radius:50%; left:-6px; width:10px; height:10px; }
+.mobile-page-kind-timeline .mobile-page-card-point { border-left:0; padding:24px 0 10px; }
+.mobile-page-kind-timeline .mobile-page-card-point::before { transform:translateX(-50%); border-radius:50%; left:50%; top:0; width:10px; height:10px; }
+.mobile-page-kind-timeline .mobile-page-card-point:not(:last-child)::after {
+  content:""; position:absolute; left:50%; bottom:-14px; width:2px; height:14px;
+  transform:translateX(-50%); background:color-mix(in srgb,var(--accent) 48%,transparent);
+}
 .mobile-page-kind-steps .mobile-page-card-points { counter-reset:mobile-step; }
-.mobile-page-kind-steps .mobile-page-card-point { padding-left:32px; counter-increment:mobile-step; }
+.mobile-page-kind-steps .mobile-page-card-point { padding:38px 0 0; counter-increment:mobile-step; }
 .mobile-page-kind-steps .mobile-page-card-point::before {
-  content:counter(mobile-step); transform:none; border-radius:50%; top:-2px; width:24px; height:24px;
+  content:counter(mobile-step); transform:translateX(-50%); left:50%; border-radius:50%; top:0; width:24px; height:24px;
   display:grid; place-items:center; font-weight:900; font-size:12px; color:var(--background);
 }
 .mobile-page-time-list { display:grid; grid-template-columns:minmax(75px,auto) 1fr; gap:0; margin:0; font-variant-numeric:tabular-nums; }
-.mobile-page-time-list dt,.mobile-page-time-list dd { padding:9px 8px; margin:0; border-bottom:1px solid color-mix(in srgb,var(--accent) 25%,transparent); }
+.mobile-page-time-list dt,.mobile-page-time-list dd { padding:9px 8px; margin:0; text-align:center; border-bottom:1px solid color-mix(in srgb,var(--accent) 25%,transparent); }
 .mobile-page-time-list dt { font-weight:800; color:var(--accent); }
 .mobile-page-time-list dd { min-width:0; overflow-wrap:anywhere; }
-.mobile-page-badge-list { display:grid; gap:12px; }
+.mobile-page-badge-list { display:grid; justify-items:center; gap:12px; }
 .mobile-page-badge-entry .badge { display:inline-block; background:var(--accent); color:var(--background); border-radius:50px; padding:6px 10px; font-size:12px; font-weight:800; }
-.mobile-page-badge-entry p { margin:6px 0 0; font-size:13px; line-height:1.5; color:var(--muted); }
-.mobile-page-gallery-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; margin-top:15px; }
-.mobile-page-gallery-item { margin:0; overflow:hidden; border-radius:11px; background:var(--surface); border:1px solid color-mix(in srgb,var(--accent) 30%,transparent); }
+.mobile-page-badge-entry p { margin:6px auto 0; font-size:13px; line-height:1.5; color:var(--muted); text-align:center; }
+.mobile-page-gallery-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); justify-items:center; gap:9px; margin-top:15px; }
+.mobile-page-gallery-item { width:100%; max-width:260px; min-width:0; margin:0; overflow:hidden; border-radius:11px; background:var(--surface); border:1px solid color-mix(in srgb,var(--accent) 30%,transparent); }
 .mobile-page-gallery-item img { display:block; width:100%; aspect-ratio:3/4; object-fit:cover; }
 .mobile-page-gallery-item figcaption { padding:7px; color:var(--muted); font-size:11px; line-height:1.3; }
 @media (max-width:350px) { .mobile-page-gallery-grid { grid-template-columns:1fr; } }
@@ -186,7 +191,7 @@
   border-radius:10px; background:color-mix(in srgb,var(--background) 64%,var(--surface));
 }
 .mobile-footer .footer-mobile-tab {
-  min-width:0; min-height:25px; padding:2px 6px;
+  min-width:0; min-height:44px; padding:5px 6px;
   border:1px solid transparent; border-radius:7px;
   background:transparent; color:var(--muted); font:inherit;
   font-size:clamp(10px,2.6vw,12px); font-weight:850;
@@ -204,10 +209,10 @@
   padding:5px 8px; gap:2px; border-radius:10px;
 }
 .mobile-footer .footer-notices {
-  flex:0 0 56px; min-height:56px;
+  flex:0 0 92px; min-height:92px;
   grid-template-columns:repeat(2,minmax(0,1fr)); gap:3px;
 }
-.mobile-footer .footer-notice-icon { min-height:26px; font-size:clamp(13px,3.5vw,16px); border-radius:7px; padding:2px; }
+.mobile-footer .footer-notice-icon { min-height:44px; font-size:clamp(13px,3.5vw,16px); border-radius:7px; padding:2px; }
 .mobile-footer .footer-notice-icon::before { inset:2px; border-radius:5px; }
 .mobile-footer .footer-notice-icon::after { bottom:2px; height:1px; }
 .mobile-footer .footer-contact {
@@ -216,12 +221,12 @@
 }
 .mobile-footer .footer-contact-main { justify-items:center; }
 .mobile-footer h2 { display:none; }
-.mobile-footer .footer-inner p { margin:0; line-height:1.12; font-size:10px; }
+.mobile-footer .footer-inner p { margin:0; line-height:1.25; font-size:12px; }
 .mobile-footer .footer-brand { font-size:12px; }
 .mobile-footer .footer-contact a { font-size:11px; }
 .mobile-footer .footer-inner .footer-updated,
-.mobile-footer .footer-inner .footer-checked { font-size:9px; line-height:1.1; }
-.mobile-footer .footer-links .footer-version { font-size:10px; line-height:1.12; padding-top:2px; }
+.mobile-footer .footer-inner .footer-checked { font-size:11px; line-height:1.25; }
+.mobile-footer .footer-links .footer-version { font-size:12px; line-height:1.25; padding-top:2px; }
 .mobile-footer .footer-links :is(.footer-updated,.footer-checked,.footer-version) { text-align:center; }
 
 /* Két külön mobilos, teljes képernyős felület: menü és kereső. */
@@ -328,7 +333,7 @@
   color:var(--text); background:transparent; font:inherit; font-size:16px;
 }
 .mobile-search-input::placeholder { color:var(--muted); opacity:1; }
-.mobile-search-clear { flex:0 0 41px; width:41px; height:41px;
+.mobile-search-clear { flex:0 0 44px; width:44px; height:44px;
   border:1px solid var(--accent); border-radius:12px;
   color:var(--text); background:var(--surface); font:inherit; font-size:27px; cursor:pointer; }
 .mobile-search-clear[hidden] { display:none !important; }
@@ -336,7 +341,7 @@
 .mobile-search-quick-title { color:var(--muted); font-size:12px; font-weight:900; }
 .mobile-search-quick-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
 .mobile-search-chip {
-  min-width:0; min-height:43px; padding:9px 12px;
+  min-width:0; min-height:44px; padding:9px 12px;
   border:1px solid color-mix(in srgb,var(--accent) 54%,transparent); border-radius:14px;
   background:color-mix(in srgb,var(--background) 63%,transparent);
   color:var(--text); font:inherit; font-size:13px; font-weight:850; cursor:pointer;
@@ -395,7 +400,7 @@
 .mobile-compass-crest-image { width:70%; height:70%; object-fit:contain; }
 .mobile-compass-home {
   position:absolute; left:50%; bottom:-14px; transform:translateX(-50%);
-  width:34px; height:34px; display:grid; place-items:center;
+  width:44px; height:44px; display:grid; place-items:center;
   border:2px solid var(--accent); border-radius:50%;
   background:var(--surface); color:var(--text); font-size:24px;
   text-decoration:none; box-shadow:0 5px 12px rgba(0,0,0,.28);
@@ -475,7 +480,7 @@
   background:radial-gradient(circle at 80% 0%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 65%);
 }
 .mobile-successes-inner { width:min(640px,100%); margin-inline:auto; }
-.mobile-successes-heading { margin-bottom:20px; }
+.mobile-successes-heading { margin:0 auto 20px; text-align:center; }
 .mobile-successes-eyebrow {
   display:block; margin-bottom:9px; color:var(--accent);
   font-size:11px; font-weight:900; letter-spacing:.13em;
@@ -491,7 +496,7 @@
   display:flex; flex-direction:column; min-width:0; padding:0; overflow:hidden;
   border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);
   border-radius:17px; background:var(--surface); color:var(--text);
-  text-align:left; box-shadow:0 10px 22px rgba(0,0,0,.17); cursor:pointer;
+  text-align:center; box-shadow:0 10px 22px rgba(0,0,0,.17); cursor:pointer;
   transition:border-color .2s ease,transform .2s ease;
 }
 .mobile-successes-card:is(:hover,:focus-visible) {
@@ -514,14 +519,15 @@
   font-weight:900; letter-spacing:.06em; text-transform:uppercase;
 }
 .mobile-successes-card-sport {
-  position:absolute; left:8px; bottom:8px; max-width:calc(100% - 16px);
+  position:absolute; left:50%; bottom:8px; transform:translateX(-50%);
+  max-width:calc(100% - 16px);
   overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
   border:1px solid rgba(238,197,122,.5); border-radius:999px;
   padding:4px 8px; background:rgba(4,23,38,.83); color:#fff5e5;
   font-size:11px; font-weight:850;
 }
 .mobile-successes-card-copy {
-  display:grid; justify-items:start; align-content:center; gap:7px;
+  display:grid; justify-items:center; align-content:center; gap:7px;
   flex:1 1 auto; min-height:78px; padding:11px 12px 13px;
 }
 .mobile-successes-card-name { width:100%; font-size:clamp(14px,3.6vw,17px); line-height:1.22; }
@@ -563,7 +569,7 @@
 .mobile-successes-detail-scroll { min-height:0; overflow-y:auto; overscroll-behavior:contain; }
 .mobile-successes-detail-visual { height:clamp(145px,27dvh,225px); background:var(--background); }
 .mobile-successes-detail-image { display:block; width:100%; height:100%; object-fit:cover; }
-.mobile-successes-detail-copy { padding:22px 23px 28px; }
+.mobile-successes-detail-copy { padding:22px 23px 28px; text-align:center; }
 .mobile-successes-detail-sport { display:block; color:var(--accent); font-size:12px; font-weight:900; letter-spacing:.10em; }
 .mobile-successes-detail-name { margin:8px 0 14px; font-size:clamp(26px,7vw,35px); line-height:1.12; }
 .mobile-successes-detail-result {
@@ -631,12 +637,12 @@
 /* 2.25 – saját, keskeny kijelzőre komponált sporteredmény-archívum. */
 .mobile-successes-section.is-archive { min-height:48vh; padding:31px 11px 57px; }
 .mobile-successes-section.is-archive .mobile-successes-inner { width:100%; }
-.mobile-successes-section.is-archive .mobile-successes-heading { margin-bottom:20px; }
+.mobile-successes-section.is-archive .mobile-successes-heading { margin:0 auto 20px; }
 .mobile-successes-section.is-archive .mobile-page-title { margin:0 0 12px; }
 .mobile-archive-toolbar {
   display:grid; gap:11px; padding:14px; margin-bottom:21px;
   border:1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius:17px;
-  background:color-mix(in srgb,var(--surface) 93%,var(--background));
+  background:color-mix(in srgb,var(--surface) 93%,var(--background)); text-align:center;
 }
 .mobile-archive-search-label,.mobile-archive-field { display:grid; gap:6px; min-width:0; }
 .mobile-archive-search-label > span,.mobile-archive-field > span {
@@ -655,10 +661,10 @@
 .mobile-archive-toggle[aria-expanded="true"]::after { content:"⌃"; }
 .mobile-archive-fields { display:grid; gap:10px; }
 .mobile-archive-fields[hidden],.mobile-archive-field[hidden] { display:none !important; }
-.mobile-archive-status { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.mobile-archive-status { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px; }
 .mobile-archive-count { margin:0; color:var(--muted); font-size:13px; font-weight:800; }
 .mobile-archive-clear {
-  min-height:40px; padding:8px 11px; border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  min-height:44px; padding:9px 11px; border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
   border-radius:10px; background:transparent; color:var(--text); font-size:12px; font-weight:800;
 }
 .mobile-successes-section.is-archive .mobile-successes-grid {
@@ -707,4 +713,35 @@
   .mobile-successes-section.is-archive .mobile-successes-card { flex-basis:calc(50% - 4px); }
   .mobile-successes-section.is-archive .mobile-successes-card-copy { padding:9px; }
   .mobile-archive-card-date { font-size:11px; }
+}
+/* 2.32: mobilon egy jól olvasható hónap, az összes 12 hónap választható. */
+.mobile-calendar-section {
+  padding:28px 12px 54px;
+  background:radial-gradient(circle at 50% 0%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 60%);
+}
+.mobile-calendar-inner { max-width:560px; margin:0 auto; }
+.mobile-calendar-heading { text-align:center; margin:0 auto 17px; }
+.mobile-calendar-heading > span { color:var(--accent); font-weight:900; font-size:12px; }
+.mobile-calendar-heading h2 { margin:8px 0; font-size:clamp(25px,7vw,32px); }
+.mobile-calendar-heading p { margin:7px auto; color:var(--muted); font-size:13px; line-height:1.5; }
+.mobile-calendar-navigation {
+  display:flex; justify-content:center; align-items:center; gap:8px; margin-bottom:15px;
+}
+.mobile-month-arrow {
+  flex:none; width:46px; min-height:46px; border:1px solid var(--accent);
+  border-radius:13px; color:var(--text); background:var(--surface); font-size:28px;
+}
+.mobile-month-arrow:disabled { opacity:.36; }
+.mobile-month-select {
+  flex:1; min-width:0; max-width:340px; min-height:46px; padding:9px;
+  border:1px solid var(--accent); border-radius:12px; background:var(--surface);
+  color:var(--text); font:inherit; font-size:15px; font-weight:800; text-align:center;
+}
+.mobile-calendar-month-host { min-width:0; }
+.mobile-calendar-month-host .school-month { padding:15px 10px 16px; }
+.mobile-calendar-month-host .school-day { min-height:44px; font-size:14px; }
+@media (max-width:355px) {
+  .mobile-calendar-month-host .school-day { min-height:38px; }
+  .home-carousel-tab { min-width:111px; padding:9px 12px; font-size:13px; }
+  .home-carousel-controls { gap:6px; }
 }

@@ -16,6 +16,15 @@ button, a { font: inherit; }
 a { color: inherit; }
 img { max-width: 100%; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+/* Billentyűzettel azonnal elérhető főtartalom; a hash-alapú útvonal érintetlen marad. */
+.skip-to-content {
+  position:fixed; z-index:10000; left:16px; top:12px;
+  transform:translateY(calc(-100% - 30px));
+  padding:13px 18px; border:2px solid #e5c788; border-radius:10px;
+  background:#071b2f; color:#fff7df; font-weight:800;
+  text-decoration:none; box-shadow:0 8px 25px rgba(0,0,0,.35);
+}
+.skip-to-content:focus-visible { transform:translateY(0); outline:3px solid #e5c788; outline-offset:3px; }
 
 /* JSON-kimaradáskor a már betöltött, egyetlen HTML-en belül élő tartalékoldal. */
 .offline-screen {
@@ -299,10 +308,10 @@ img { max-width: 100%; }
   background:color-mix(in srgb,var(--surface) 94%,var(--background));
   color:var(--text); box-shadow:0 28px 70px rgba(0,0,0,.4);
 }
-.footer-modal-dialog .footer-modal-title { margin:0 50px 16px 0; font-size:clamp(20px,3vw,27px); }
+.footer-modal-dialog .footer-modal-title { margin:0 60px 16px 0; font-size:clamp(20px,3vw,27px); }
 .footer-modal-dialog .footer-modal-content { margin:0; line-height:1.65; color:var(--text); overflow-wrap:anywhere; }
 .footer-modal-close {
-  position:absolute; top:14px; right:14px; width:38px; height:38px;
+  position:absolute; top:14px; right:14px; width:44px; height:44px;
   display:grid; place-items:center; border:1px solid var(--accent); border-radius:50%;
   background:var(--background); color:var(--text); font-size:27px; cursor:pointer;
 }
@@ -316,4 +325,96 @@ img { max-width: 100%; }
   .gate-screen::after { transition: none; }
   .gate-frames { transition: none; }
   .mobile-home, .desktop-home { animation: none !important; }
+}
+/* 2.33 – valódi Bootstrap Carousel, helyi CSS-tartalékkal CDN-kimaradáskor. */
+.home-feature-carousel { width:100%; min-width:0; isolation:isolate; }
+.school-day-detail[hidden],.school-month-extras[hidden] { display:none !important; }
+/* CDN-hibánál a nem aktív panel ne jelenjen meg egyszerre az aktívval. */
+.home-feature-carousel .home-carousel-item { display:none; }
+.home-feature-carousel .home-carousel-item.active,
+.home-feature-carousel .home-carousel-item.carousel-item-next,
+.home-feature-carousel .home-carousel-item.carousel-item-prev { display:block; }
+/* A Bootstrap navigációs elemeinek alapértelmezett abszolút pozíciója itt nem jó. */
+.home-feature-carousel .home-carousel-tabs {
+  position:static; inset:auto; padding:0; margin:0; align-items:stretch;
+}
+.home-feature-carousel .home-carousel-arrow {
+  position:static; inset:auto; z-index:auto; opacity:1; padding:0; flex:0 0 46px;
+}
+.home-feature-carousel .home-carousel-inner { width:100%; overflow:hidden; }
+.home-feature-carousel .home-carousel-item { width:100%; }
+.home-carousel-controls {
+  display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:10px;
+  width:100%; padding:19px 12px; background:color-mix(in srgb,var(--surface) 95%,var(--background));
+  border-block:1px solid color-mix(in srgb,var(--accent) 25%,transparent);
+}
+.home-carousel-tabs { display:flex; align-items:stretch; justify-content:center; flex-wrap:wrap; gap:7px; margin:0; }
+.home-carousel-tab {
+  min-height:46px; min-width:132px; padding:9px 19px; border-radius:999px;
+  border:1px solid color-mix(in srgb,var(--accent) 58%,transparent);
+  background:var(--background); color:var(--text); cursor:pointer; font:inherit; font-weight:850;
+}
+.home-carousel-tab.is-active { background:var(--accent); color:var(--background); }
+.home-carousel-arrow,.home-carousel-play {
+  display:grid; place-items:center; width:46px; height:46px; flex:none;
+  border:1px solid var(--accent); border-radius:50%;
+  background:var(--surface); color:var(--text); cursor:pointer; font:inherit; font-weight:900;
+}
+.home-carousel-arrow { font-size:30px; line-height:1; }
+.home-carousel-play { font-size:19px; }
+.home-feature-carousel :is(button,select):focus-visible,.school-month :is(button,select):focus-visible {
+  outline:3px solid var(--accent); outline-offset:3px;
+}
+.home-feature-carousel:not(.bs-ready) .home-carousel-item.active { animation:home-panel-reveal .33s ease-out both; }
+@keyframes home-panel-reveal { from {opacity:.55;transform:translateY(7px)} to {opacity:1;transform:none} }
+.school-month {
+  min-width:0; align-self:start; padding:16px 13px 17px; text-align:center;
+  border:1px solid color-mix(in srgb,var(--accent) 43%,transparent); border-radius:20px;
+  background:color-mix(in srgb,var(--surface) 96%,var(--background)); color:var(--text);
+  box-shadow:0 13px 30px rgba(0,0,0,.1);
+}
+.school-month-title { margin:0 0 13px; font-size:clamp(18px,2vw,21px); color:var(--text); }
+.school-month-grid { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:3px; align-items:center; }
+.school-month-weekday {
+  display:grid; place-items:center; min-height:30px;
+  color:var(--muted); font-size:12px; font-weight:800; overflow:hidden;
+}
+.school-month-empty { min-width:0; }
+.school-day {
+  display:grid; place-items:center; width:100%; min-height:38px; padding:2px;
+  border:1px solid transparent; border-radius:10px; background:transparent;
+  color:var(--text); font:inherit; font-size:13px; font-weight:700;
+  font-variant-numeric:tabular-nums;
+}
+.school-day:disabled { opacity:.65; }
+.school-day.has-events {
+  cursor:pointer; background:color-mix(in srgb,var(--accent) 19%,var(--surface));
+  border-color:color-mix(in srgb,var(--accent) 40%,transparent); font-weight:950;
+}
+.school-day.has-events:is(:hover,:focus-visible),.school-day[aria-expanded="true"] {
+  background:var(--accent); color:var(--background); border-color:var(--accent);
+}
+.school-day-detail {
+  display:grid; gap:9px; margin-top:13px; padding:13px 11px; text-align:left;
+  border:1px solid var(--accent); border-radius:13px;
+  background:var(--background); animation:home-panel-reveal .2s ease-out;
+}
+.school-day-detail-title { text-align:center; font-size:13px; }
+.school-day-event { padding:9px; border-radius:10px; background:var(--surface); overflow-wrap:anywhere; }
+.school-day-event h4 { margin:4px 0 5px; font-size:15px; }
+.school-day-event p { margin:6px 0 0; font-size:12px; line-height:1.45; }
+.school-day-event time,.school-day-category { display:block; color:var(--accent); font-size:11px; font-weight:850; }
+.school-month-extras { display:grid; gap:6px; margin-top:15px; text-align:left; }
+.school-month-extras strong { font-size:12px; }
+.school-month-extras p {
+  margin:0; padding:8px 10px; border-radius:9px;
+  background:color-mix(in srgb,var(--accent) 9%,var(--surface));
+  font-size:12px; line-height:1.45; color:var(--muted);
+}
+.school-month-extras p.is-highlighted {
+  border:2px solid var(--accent); background:color-mix(in srgb,var(--accent) 23%,var(--surface));
+}
+.school-calendar-hint { font-size:12px !important; }
+@media (prefers-reduced-motion:reduce) {
+  .home-feature-carousel .home-carousel-item,.school-day-detail { animation:none !important; transition:none !important; }
 }

@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.30";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.30";
+import { element } from "../shared/js/dom.js?v=2.33";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.33";
 
 const css = (name) => `mobile-page-${name}`;
 function pointDetails(point) {
@@ -47,7 +47,7 @@ function galleryImages(config, category) {
     element("figure", { className:css("gallery-item") },
       element("img", { attributes:{
         src:`./shared/assets/media/web/desktop-hero/${slide.file}`,
-        alt:slide.title, loading:"lazy", decoding:"async"
+        alt:slide.title, loading:"lazy", decoding:"async", width:1672, height:941
       } }),
       element("figcaption", { text:slide.title }))));
 }

@@ -1,7 +1,8 @@
 /** Egyetlen HTML, JSON-alapú kapu, kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.30";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.30";
-import { mountOffline } from "./offline.js?v=2.30";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.33";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.33";
+import { eventById } from "./calendar-data.js?v=2.33";
+import { mountOffline } from "./offline.js?v=2.33";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -24,6 +25,8 @@ function route() {
   if (sportMatch && featuredSportSuccesses(config).some((item) => item.id === sportMatch[1])) return "home";
   const noticeMatch = /^#\/kezdolap\/tajekoztatas\/([a-z0-9-]+)$/.exec(location.hash);
   if (noticeMatch && config.home.footer.notices.some((item) => item.id === noticeMatch[1])) return "home";
+  const eventMatch = /^#\/kezdolap\/esemeny\/([a-z0-9-]+)$/.exec(location.hash);
+  if (eventMatch && eventById(config,eventMatch[1])) return "home";
   const archiveMatch = /^#\/oldal\/sports-results\/sportsiker\/([a-z0-9-]+)$/.exec(location.hash);
   if (archiveMatch && archivedSportSuccesses(config).some((item) => item.id === archiveMatch[1])) {
     return "page:sports-results";
@@ -43,7 +46,7 @@ function mountView(platform, module, selectedRoute) {
   if (routeChanged) window.scrollTo?.({ top:0, behavior:"instant" });
   if (hasRendered) {
     const searchDetailOpen = (selectedRoute === "home" &&
-      /^#\/kezdolap\/(sportsiker|tajekoztatas)\/[a-z0-9-]+$/.test(location.hash)) ||
+      /^#\/kezdolap\/(sportsiker|tajekoztatas|esemeny)\/[a-z0-9-]+$/.test(location.hash)) ||
       (selectedRoute === "page:sports-results" &&
         /^#\/oldal\/sports-results\/sportsiker\/[a-z0-9-]+$/.test(location.hash));
     const focusTarget = searchDetailOpen ? null : menuPage

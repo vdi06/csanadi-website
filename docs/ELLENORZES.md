@@ -1,9 +1,137 @@
+# Csanádi 2.32 – eseménynaptár és kezdőlapi Carousel
+
+## A 2.32 újdonságai – 2026. november 23.
+
+- **Két teljes kezdőlapi panel:** a meglévő hat sportsiker és a teljes tanév
+  naptára a Bootstrap Carousel szerkezetét követő `carousel / carousel-inner /
+  carousel-item` komponensben váltja egymást. A két, megnevezett fül,
+  előző/következő vezérlő és szüneteltetés/indítás gomb kézzel is használható.
+  Ez nem az archívumban használt lapozó (pagination).
+- **Automatikus váltás:** alapesetben 24 másodpercenként történik; manuális
+  panelválasztás után legalább 45 másodperces nyugalmi időt tart. Az egér
+  rámutatása, a fókusz, a rejtett böngészőlap, a látható területen kívülre
+  görgetés és a csökkentett mozgás beállítása akadályozhatja az önkéntelen
+  továbblépést. Mobilos naptárérintésnél olvasásig megáll, a felhasználó
+  a lejátszásgombbal újraindíthatja.
+- **Valódi tanévi adatok:** a 2026/2027-es iskolai munkaterv és intézményi
+  tájékoztatások alapján **88 dátummal rendelkező esemény** és **7 csak
+  hónaphoz kötött program**. A 12 hónap 2026. szeptember–2027. augusztus,
+  a meghirdetett tanítási programok főként júniusig tartanak. Nincs kitalált
+  tanulói adat és a nem pontosított programokhoz nincs önkényes nap hozzárendelve.
+- **Asztali naptár:** mind a 12 hónap önálló, automatikusan 3/2 oszlopba
+  rendezett, középre igazított hónapkártyán látható; az eseményes napokra
+  mutatva megnyílik a részletezés, az egér elmozdítására bezárul. Kattintás,
+  billentyűzettel kiválasztás és Escape is használható.
+- **Mobilnaptár:** külön `mobile/calendar.js`, nagy érintési felületek,
+  mind a 12 hónapot felsoroló legördülő, előző/következő hónap,
+  egyszeri koppintással nyíló és ismételt koppintással záródó részletezés.
+- **Többnapos események:** a szünetek érintett napjai mind jelöltek.
+  A hosszú vizsga- és mérési időszakok kezdete/vége, valamint havi
+  időszakjelzése jelenik meg, nem kap minden nap hamis önálló időpontot.
+  Az azonos naphoz tartozó események egyetlen részletező panelen sorakoznak.
+- **Egyszeri adatkezelés:** minden új szöveg a `shared/data/site.json`
+  `home.calendar` részében szerepel. A `newsRef` mező korábban közzétett
+  intézményi hírek címét, összefoglalóját és részleteit újrahasználja;
+  a duplikálást a `shared/js/calendar-data.js` kerüli el.
+- **Keresés és közvetlen hivatkozás:** az új események és dátum nélkül
+  közzétett havi programok automatikusan indexelődnek. A
+  `#/kezdolap/esemeny/<id>` megnyitja a megfelelő naptári helyet.
+- **Kód és ellenőrzés:** a közös dátumlogika, hónapmegjelenítő és Carousel
+  vezérlő mellett önálló asztali/mobil naptármodul készült. A JSON validáció
+  már betöltéskor kiszűri a hibás dátumokat, duplikált azonosítókat és
+  hiányzó hírhivatkozásokat. A teszt ellenőrzi a 12 hónapot, a dátumok
+  helyességét, az összetett napokat, szüneteket, automatikus/kézi váltást,
+  kattintást, hoveres nyitást, keresést és 49×2 korábbi aloldalt.
+- **Kiadás:** `release = 2.32`, a visszafelé kompatibilis adatstruktúra
+  `schemaVersion = 2.30` maradt. Az összes import- és HTML cache-kulcs
+  `tools/stamp-release.mjs` használatával frissült.
+- **Korlát:** a helyi Chromium nem indítható ebben a környezetben, ezért a
+  tényleges, képernyőképes 2.32 mobil/asztali ellenőrzés a publikálás
+  előtt kézzel szükséges. A GitHub Pages élő oldalát nem módosítottuk.
+
+### Naptáradat hozzáadása vagy módosítása
+
+1. A `shared/data/site.json` `home.calendar.events` listájában
+   egyéni `id`, ISO `date`, opcionális `endDate`, `title`, `time`,
+   `summary`, `details` és kötelező `category` adható meg.
+2. Már meglévő `publicNews` hírnél használj `newsRef` mezőt;
+   ilyenkor a cím és részletek a hír egyetlen helyéről jönnek.
+3. Ismeretlen nap esetén a `calendar.undated` listába kerüljön `id`,
+   `month`, `title`, `summary`. **Ne találj ki dátumot.**
+4. Új intézményi tények átvételekor az iskola nyilvános munkatervét,
+   tájékoztatóit és hivatalos közleményeit használd; diákszemélyes adatot
+   a naptárba ne rögzíts.
+5. Kiadás előtt `node tools/stamp-release.mjs`, majd
+   `node tools/test.mjs`. A ZIP teljes `csanadi-website-2.32`
+   gyökérmappát tartalmazzon.
+
+---
+
+## Korábbi 2.31 – akadálymentesítési és logikai javítókiadás
+
+## A 2.31 változásai – 2026. november 23.
+
+- **Főtartalomra ugrás:** külön mobilos és asztali billentyűzetes ugrólink,
+  a felirat egyetlen JSON-mezőből érkezik. Nem írja át a hash-alapú útvonalat.
+- **Valódi modális kizárás:** a menü, kereső, sportsiker-részletező és
+  lábléc-tájékoztató nyitva tartása alatt a háttér `inert`; bezáráskor
+  az eredeti állapot és a fókusz helyreáll. A háttér görgetésblokkolása megmaradt.
+- **Keresőoptimalizálás:** JSON-lenyomattal ellenőrzött tartalomindex-gyorsítótár,
+  amely az ugyanazon objektumon belül módosított adatot is észreveszi;
+  a keresési találatok ugyanazok. Mindkét keresőmező legfeljebb 120 karaktert fogad.
+- **Képernyőolvasós javítások:** a tíz másodpercenként frissülő láblécállapot
+  nem szólal meg folyamatosan; a kereső találati régiója címmel azonosított,
+  és csak a találatszám élő státusz. A két szűrőtörlő gombnak eltérő
+  akadálymentes neve van; a táblázatok megkapják témacsoportjuk nevét.
+- **Mobil billentyűzetes fülek:** bal/jobb nyíl mellett Home és End is működik.
+- **Érintési célok és olvashatóság:** láblécfülek, tájékoztatási gombok,
+  mobilos kapukihagyás, iránytű-kezdőlap, keresőgombok és archívumszűrő-törlés
+  legalább 44 px magas/széles célterületet kaptak; több apró felirat nagyobb.
+- **Képek és automatikus váltás:** galériaképek méretadatot kaptak az elrendezés
+  elmozdulásának csökkentéséhez. A kezdőlap képciklusa rejtett böngészőlapon
+  vagy fókuszált nyitókép-vezérlőn nem léptet tovább. Két nyitóképfelirat JSON-ba került.
+- **Kiadási kulcs:** a `site.json` `release` értéke **2.31**, míg az adatstruktúra
+  `schemaVersion` értéke változatlanul **2.30**. A `stamp-release.mjs`
+  frissítette a modulok és HTML erőforrásainak cache-kulcsait.
+- **Regresszió:** a 49×2 oldalrenderelés, sportarchívum, fókusz, offline ág,
+  animáció, keresés, téma, mobil és asztali külön fájlok továbbra is működnek.
+  Az új `shared/js/modal.js` a modális elszigetelés közös segédmodulja.
+- **Korlát:** a javított 2.31 helyi, tényleges böngészős képernyőtesztje
+  a környezetben nem indult; az éles, korábbi 2.30-on több UI-funkciót ellenőriztünk.
+
+## Korábbi 2.30-as kiadás története
+
 # Csanádi 2.30 – 49 egyedi tartalomoldal és teljes hibajavítás
 
 Ez a ZIP **nem publikált**, teljes fejlesztési csomag. A 2.29 összes
 funkcióját megtartja. Az alábbi 2.29-es és korábbi szakaszok történeti
 leírások, a háromkártyás sablon és `pagePreview.sections` **már nem az
 aktuális működés**.
+
+## A 2.30 középre igazítási javítása – 2026. november 23.
+
+- **Mind a 49 aloldal közös szabályai:** a főcím, bevezető, változó számú
+  kártya, témacsoport, alpont és legbelső részlet középre igazodik.
+- **Asztali kártyák:** tördelhető, középre rendezett flexsorok; az utolsó
+  egy vagy két kártya nem marad a bal oldalon. Az általános kártyák
+  szélessége legfeljebb 570 px, a táblázatos, idővonalas és galériás
+  széles kártyáké 1000 px. Köztes szélességnél külön 310 px-es alapméret.
+- **Mobil:** egyoszlopos, középre helyezett kártyák, középre rendezett
+  részletek. A telefonos csengetési időlista továbbra is két könnyen
+  olvasható oszlopban marad, mindkét érték középre igazítva.
+- **Komponensenként:** a számozott lépések és az idővonal csomópontjai
+  a tartalom középvonalára kerültek; a harmonikák címei, jelvények,
+  képgalériák, táblázatcellák és listák is középre igazodnak.
+- **Kezdőlap és sportarchívum:** a sportsiker-szakasz címe, kártyáinak
+  neve/eredménye, a szűrők állapotfeliratai és a részletező szövegek
+  középre kerültek. A fejléc menügombjainak és a keresőmezőknek a
+  megszokott, használható működése megmaradt.
+- **Regresszió:** ismét lefutott a 49 × 2 oldalrenderelés és a teljes
+  működési teszt. Új CSS-ellenőrzések védik a középre igazítást.
+- **Vizuális tesztkorlát:** a headless Chromium indítását a környezet
+  blokkolja, a megnyitott grafikus böngésző pedig nem érheti el a helyi
+  kiszolgálót és a fájl-URL-t. Valódi képernyőképes teszt így nem
+  készülhetett, amit a publikálás előtt pótolni kell.
 
 ## A 2.30 újdonságai
 
@@ -717,3 +845,14 @@ közvetlen útvonalát és állapotmegőrzését. Valódi telefonon – külön�
 iOS-en – a végleges elrendezés és a görgetés még külön is kipróbálandó.
 
 Sem GitHubra, sem FTP-re nem töltöttem fel semmit.
+
+
+## 2.33 – Bootstrap Carousel-integráció és naptári hibajavítás (2026.11.23.)
+
+- A sportsikerek és a tanévi naptár váltását a Bootstrap 5.3.8 hivatalos CDN-es Carousel JavaScript végzi (`Carousel.getOrCreateInstance`, `to`, `slid.bs.carousel`); a saját vezérlő megőrzi a felhasználói szüneteltetést, a 24 másodperces ütemet és az akadálymentes fókuszkezelést.
+- A Bootstrap CSS és a Bootstrap bundle JavaScript verzióhoz rögzített, SRI-integritásellenőrzött CDN-hivatkozással kerül betöltésre. Nem készül helyi Bootstrap-másolat. CDN-kimaradás esetén továbbra is működik az egyszerű panelváltó.
+- A naptári nap asztalon rámutatás közben is bezárható ismételt kattintással. A mutató távozása továbbra is bezárja a részleteket; mobilon a második koppintás bezár.
+- A Carousel a rejtett panelt `inert` és `aria-hidden` segítségével kizárja a billentyűzetes és segédtechnológiás használatból. Valódi Bootstrap-átmenet után szinkronizálja a lapfüleket és a keresőből nyíló eseményeket.
+- A regressziós teszt aszinkron betöltésénél a platformmegjelenés tényleges állapotát várja (időkorláttal), nem egyetlen eseménykört.
+- Önálló tesztet kapott a Bootstrap `.to()` és `slid.bs.carousel` eseménye, a példány felszabadítása, a CDN-tartalék, a desktop hover + második kattintás, valamint a CDN- és SRI-hivatkozások.
+- Az iskolai menü- és eseményadatokat a javítás nem módosítja. Publikálás külön jóváhagyáshoz kötött.

@@ -1,6 +1,7 @@
-import { element } from "../shared/js/dom.js?v=2.30";
-import { trapTab } from "../shared/js/focus.js?v=2.30";
-import { filterSearchItems, navLink, searchItems } from "../shared/js/shell.js?v=2.30";
+import { element } from "../shared/js/dom.js?v=2.33";
+import { trapTab } from "../shared/js/focus.js?v=2.33";
+import { isolateModal } from "../shared/js/modal.js?v=2.33";
+import { filterSearchItems, navLink, searchItems } from "../shared/js/shell.js?v=2.33";
 
 /** Asztali Spotlight: majdnem teljes képernyős, de lebegő üvegpanel. */
 export function createDesktopSearch(config, trigger, beforeOpen = () => {}) {
@@ -15,12 +16,13 @@ export function createDesktopSearch(config, trigger, beforeOpen = () => {}) {
   const searchInput = element("input", { className: "desktop-search-input", attributes: {
     id: "desktop-search-query", type: "search", placeholder: data.searchPlaceholder,
     "aria-label": data.searchPlaceholder,
-    autocomplete: "off" } });
+    autocomplete: "off", maxlength: "120" } });
   const searchCount = element("p", { className: "desktop-search-count",
     attributes: { "aria-live": "polite" } });
-  const resultsTitle = element("h3", { className: "desktop-search-results-title" });
+  const resultsTitle = element("h3", { className: "desktop-search-results-title",
+    attributes: { id: "desktop-search-results-heading" } });
   const searchResults = element("div", { className: "desktop-search-results",
-    attributes: { "aria-live": "polite" } });
+    attributes: { role: "region", "aria-labelledby": "desktop-search-results-heading" } });
   const quickButtons = searchItems(config).map((item) => {
     const button = element("button", { className: "desktop-search-chip", text: item.short,
       attributes: { type: "button", "aria-label": item.short } });
@@ -63,6 +65,7 @@ export function createDesktopSearch(config, trigger, beforeOpen = () => {}) {
     attributes: { id: "desktop-floating-search" } }, backdrop, searchDialog);
   overlay.hidden = true;
   let previousOverflow;
+  let releaseIsolation = () => {};
 
   function render() {
     const matches = filterSearchItems(config, searchInput.value);
@@ -89,6 +92,8 @@ export function createDesktopSearch(config, trigger, beforeOpen = () => {}) {
   function close(restoreFocus = true) {
     if (overlay.hidden) return;
     overlay.hidden = true;
+    releaseIsolation();
+    releaseIsolation = () => {};
     if (document.body) document.body.style.overflow = previousOverflow || "";
     trigger.setAttribute("aria-expanded", "false");
     trigger.setAttribute("aria-label", data.searchOpenLabel);
@@ -100,6 +105,7 @@ export function createDesktopSearch(config, trigger, beforeOpen = () => {}) {
     previousOverflow = document.body?.style.overflow;
     if (document.body) document.body.style.overflow = "hidden";
     overlay.hidden = false;
+    releaseIsolation = isolateModal(overlay);
     trigger.setAttribute("aria-expanded", "true");
     trigger.setAttribute("aria-label", data.searchCloseLabel);
     render();

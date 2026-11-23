@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.30";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.30";
+import { element } from "../shared/js/dom.js?v=2.33";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.33";
 
 const cls = (part) => `desktop-page-${part}`;
 const detailsList = (point) => element("ul", { className:cls("card-details") },
@@ -24,7 +24,8 @@ function richGroup(group, kind) {
   if (kind === "table") {
     return element("section", { className:cls("card-group") }, heading,
       element("div", { className:cls("table-wrap") },
-        element("table", { className:`${cls("table")} table table-striped` },
+        element("table", { className:`${cls("table")} table table-striped`,
+          attributes:{ "aria-label":group.title } },
           element("tbody", {}, ...group.points.map((point) => element("tr", {},
             element("th", { text:point.title, attributes:{scope:"row"} }),
             element("td", { text:point.details.join(" · ") })))))));
@@ -53,7 +54,7 @@ function gallery(config, category) {
     element("figure", { className:cls("gallery-item") },
       element("img", { attributes:{
         src:`./shared/assets/media/web/desktop-hero/${slide.file}`,
-        alt:slide.title, loading:"lazy", decoding:"async"
+        alt:slide.title, loading:"lazy", decoding:"async", width:1672, height:941
       } }), element("figcaption", { text:slide.title }))));
 }
 

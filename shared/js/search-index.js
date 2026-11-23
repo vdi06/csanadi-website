@@ -1,5 +1,6 @@
-import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.30";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.30";
+import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.33";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.33";
+import { calendarEntries } from "./calendar-data.js?v=2.33";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */
@@ -10,6 +11,7 @@ export function normalizeSearchText(value) {
 }
 
 const tokenize = (value) => normalizeSearchText(value).split(" ").filter(Boolean);
+const indexCache = new WeakMap();
 
 function editDistanceAtMost(a, b, limit) {
   if (Math.abs(a.length - b.length) > limit) return false;
@@ -45,6 +47,12 @@ function tokenScore(queryToken, candidate) {
 }
 
 function createIndex(config) {
+  // A változásfigyelő lenyomat az azonos objektumon végzett JSON-adatfrissítést
+  // is észreveszi. Ezzel az adatot szerkesztéskor sem kell kézzel újraindexelni.
+  const signature = JSON.stringify([config.site, config.home, config.menu,
+    config.pagePreview, config.publicNews]);
+  const cached = indexCache.get(config);
+  if (cached?.signature === signature) return cached.entries;
   const entries = [];
   const categories = config.home.search.categories;
   const add = ({ label, short = label, summary = "", category, href, details = "" }) => {
@@ -112,6 +120,19 @@ function createIndex(config) {
     summary:`${success.sport} · ${success.result} · ${success.competition}`,
     details:`${success.summary} ${success.details.join(" ")} ${success.date} ${config.home.sportSuccesses.title}`
   });
+  // Az események keresőtalálatai a saját napjukhoz és részleteikhez vezetnek.
+  for (const event of calendarEntries(config)) add({
+    label:event.title,
+    short:event.title,
+    summary:`${event.date}${event.time ? ` · ${event.time}` : ""} · ${event.categoryLabel}`,
+    details:`${event.summary} ${event.details.join(" ")} ${event.endDate || ""}`,
+    category:categories.calendar,
+    href:`${config.routes.home}/esemeny/${event.id}`
+  });
+  for (const note of config.home.calendar.undated) add({
+    label:note.title,summary:`${note.month} · ${note.summary}`,
+    category:categories.calendar,href:`${config.routes.home}/esemeny/${note.id}`
+  });
   for (const slide of config.home.desktopHero.slides) add({
     label:slide.title, category:categories.headline, href:menuPageHref(slide.pageId),
     summary:`${slide.eyebrow} · ${slide.summary}`
@@ -132,14 +153,14 @@ function createIndex(config) {
     category:categories.notice,
     href:`${config.routes.home}/tajekoztatas/${notice.id}`
   });
+  indexCache.set(config, { signature, entries });
   return entries;
 }
 
 function searchEntries(config, query, sportsOnly = false) {
   const words = [...new Set(tokenize(query))].slice(0, 8);
   if (!words.length) return [];
-  // Nincs állandó találati lista vagy beragadható gyorsítótár: az index
-  // minden kereséskor az éppen rendelkezésre álló JSON-adatokból készül.
+  // Az index változatlan JSON-tartalomnál azonnal újrahasznosítható.
   const index = createIndex(config);
   const phrase = normalizeSearchText(query);
   const matches = [];

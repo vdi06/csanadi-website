@@ -1,8 +1,9 @@
-import { element } from "../shared/js/dom.js?v=2.30";
-import { trapTab } from "../shared/js/focus.js?v=2.30";
+import { element } from "../shared/js/dom.js?v=2.33";
+import { trapTab } from "../shared/js/focus.js?v=2.33";
+import { isolateModal } from "../shared/js/modal.js?v=2.33";
 import { checkedSportSuccesses, featuredSportSuccesses, orderedSportSuccesses,
-  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.30";
-import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.30";
+  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.33";
+import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.33";
 
 /** Önálló mobilos sportsiker-rács: 2×3 kártya és függőlegesen olvasható lebegő ablak. */
 export function createMobileSuccesses(config, { archive = false } = {}) {
@@ -57,6 +58,7 @@ export function createMobileSuccesses(config, { archive = false } = {}) {
   let activeIndex = -1;
   let previousOverflow = "";
   let origin = null;
+  let releaseIsolation = () => {};
   const cards = items.map((item, index) => {
     const image = item.image ? element("img", { className: "mobile-successes-card-image", attributes: {
       src: `${successImageRoot}${item.image}`, alt: `${item.sport} – sportpillanat`,
@@ -167,7 +169,8 @@ export function createMobileSuccesses(config, { archive = false } = {}) {
     grid.replaceChildren(...(view.visible.length ? view.visible.map((item) => cardsById.get(item.id)) : [
       element("div", { className:"mobile-archive-empty" },
         element("p", { text:ui.noResults }),
-        element("button", { text:ui.clearLabel, attributes:{ type:"button" } }))
+        element("button", { text:ui.clearLabel,
+          attributes:{ type:"button", "aria-label":ui.emptyClearLabel } }))
     ]));
     if (!view.visible.length) grid.children[0].children[1].addEventListener("click", () => {
       archiveState = saveArchiveState({ query:"",sport:"",year:"",order:"newest",page:1 });
@@ -199,6 +202,8 @@ export function createMobileSuccesses(config, { archive = false } = {}) {
     if (overlay.hidden) return;
     const activeItem = items[activeIndex];
     overlay.hidden = true;
+    releaseIsolation();
+    releaseIsolation = () => {};
     if (activeIndex >= 0) cards[activeIndex].setAttribute("aria-expanded", "false");
     activeIndex = -1;
     document.body.style.overflow = previousOverflow;
@@ -215,7 +220,8 @@ export function createMobileSuccesses(config, { archive = false } = {}) {
   function open(index, fromNavigation = false) {
     const item = items[index];
     if (!item) return;
-    if (overlay.hidden) {
+    const wasHidden = overlay.hidden;
+    if (wasHidden) {
       origin = cards[index];
       previousOverflow = document.body.style.overflow || "";
       document.body.style.overflow = "hidden";
@@ -243,6 +249,7 @@ export function createMobileSuccesses(config, { archive = false } = {}) {
       nextDetail.disabled = position < 0 || position >= visibleIds.length-1;
     }
     overlay.hidden = false;
+    if (wasHidden) releaseIsolation = isolateModal(overlay);
     closeButton.focus({ preventScroll: true });
   }
   function moveDetail(step) {

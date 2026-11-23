@@ -1,6 +1,7 @@
-import { element } from "../shared/js/dom.js?v=2.30";
-import { trapTab } from "../shared/js/focus.js?v=2.30";
-import { filterSearchItems, navLink, searchItems } from "../shared/js/shell.js?v=2.30";
+import { element } from "../shared/js/dom.js?v=2.33";
+import { trapTab } from "../shared/js/focus.js?v=2.33";
+import { isolateModal } from "../shared/js/modal.js?v=2.33";
+import { filterSearchItems, navLink, searchItems } from "../shared/js/shell.js?v=2.33";
 
 /** Mobilos Spotlight: valódi teljes képernyős, háttérhomályosító kereső. */
 export function createMobileSearch(config, trigger, beforeOpen = () => {}) {
@@ -15,12 +16,13 @@ export function createMobileSearch(config, trigger, beforeOpen = () => {}) {
   const searchInput = element("input", { className: "mobile-search-input", attributes: {
     id: "mobile-search-query", type: "search", placeholder: data.searchPlaceholder,
     "aria-label": data.searchPlaceholder,
-    autocomplete: "off" } });
+    autocomplete: "off", maxlength: "120" } });
   const searchCount = element("p", { className: "mobile-search-count",
     attributes: { "aria-live": "polite" } });
-  const resultsTitle = element("h3", { className: "mobile-search-results-title" });
+  const resultsTitle = element("h3", { className: "mobile-search-results-title",
+    attributes: { id: "mobile-search-results-heading" } });
   const searchResults = element("div", { className: "mobile-search-results",
-    attributes: { "aria-live": "polite" } });
+    attributes: { role: "region", "aria-labelledby": "mobile-search-results-heading" } });
   const quickButtons = searchItems(config).map((item) => {
     const button = element("button", { className: "mobile-search-chip", text: item.short,
       attributes: { type: "button", "aria-label": item.short } });
@@ -63,6 +65,7 @@ export function createMobileSearch(config, trigger, beforeOpen = () => {}) {
     attributes: { id: "mobile-search-view" } }, backdrop, dialog);
   overlay.hidden = true;
   let previousOverflow;
+  let releaseIsolation = () => {};
 
   function render() {
     const matches = filterSearchItems(config, searchInput.value);
@@ -89,6 +92,8 @@ export function createMobileSearch(config, trigger, beforeOpen = () => {}) {
   function close(restoreFocus = true) {
     if (overlay.hidden) return;
     overlay.hidden = true;
+    releaseIsolation();
+    releaseIsolation = () => {};
     if (document.body) document.body.style.overflow = previousOverflow || "";
     trigger.setAttribute("aria-expanded", "false");
     trigger.setAttribute("aria-label", data.searchOpenLabel);
@@ -100,6 +105,7 @@ export function createMobileSearch(config, trigger, beforeOpen = () => {}) {
     previousOverflow = document.body?.style.overflow;
     if (document.body) document.body.style.overflow = "hidden";
     overlay.hidden = false;
+    releaseIsolation = isolateModal(overlay);
     trigger.setAttribute("aria-expanded", "true");
     trigger.setAttribute("aria-label", data.searchCloseLabel);
     render();
