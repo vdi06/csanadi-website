@@ -43,11 +43,8 @@ with sync_playwright() as pw:
   ck(section.locator('a').count()==3,name+' three quick links')
   ck(section.locator('a').evaluate_all('xs=>xs.every(x=>x.getAttribute("href")?.startsWith("#/oldal/"))'),name+' internal links')
   ck(page.locator('.home-carousel-tab').count()==3,name+' original carousel')
-  pause=page.locator('.home-carousel-pause')
-  ck(pause.count()==1,name+' manual pause available')
-  ck(pause.bounding_box()['height']>=44,name+' pause touch target')
-  pause.click();ck(pause.get_attribute('aria-pressed')=='true',name+' pause active')
-  pause.click();ck(pause.get_attribute('aria-pressed')=='false',name+' pause resume')
+  ck(page.locator('.home-carousel-pause').count()==0,name+' pause button removed')
+  ck(page.locator('.home-carousel-controls button').count()==3,name+' only 3 tabs')
   ck(not page.evaluate('document.documentElement.scrollWidth > innerWidth + 3'),name+' homepage overflow')
   if plat=='desktop':
    page.wait_for_function('document.querySelector(".desktop-hero-photo")?.naturalWidth>0',timeout=13000)

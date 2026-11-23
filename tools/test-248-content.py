@@ -9,7 +9,7 @@ def ok(cond,reason):
  global checks
  if not cond: raise AssertionError(reason)
  checks+=1
-ok(C['release']=='2.52','version')
+ok(C['release']=='2.53','version')
 menu=C['menu']['items']; pages=C['pagePreview']['pages']
 leaf=[p['id'] for g in menu for p in g['children']]
 ok(len(menu)==6 and len(leaf)==49 and len(set(leaf))==49,'menu 6/49')

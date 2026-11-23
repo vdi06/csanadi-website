@@ -1176,12 +1176,8 @@
 @media(prefers-reduced-motion:reduce) {.desktop-home-highlight,.desktop-search-category,.desktop-search-more {transition:none!important;}.desktop-home-highlight:is(:hover,:focus-visible) {transform:none;}}
 @media(forced-colors:active) {.desktop-home-highlight,.desktop-search-category[aria-pressed="true"],.desktop-search-more {border:2px solid ButtonText;}.desktop-search-category[aria-pressed="true"] {outline:2px solid Highlight;}}
 
-/* 2.49: hozzáférhető, tartós, kézi Carousel-szüneteltetés. */
+/* 2.53: kizárólag a három Carousel-fül jelenik meg; külön szüneteltető vezérlő nincs. */
 .desktop-home .home-carousel-controls {flex-wrap:wrap;justify-content:center;gap:10px;}
-.desktop-home .home-carousel-pause {min-width:90px;min-height:44px;padding:9px 14px;border-radius:13px;
- border:1px solid var(--accent);background:var(--surface);color:var(--text);font:inherit;font-weight:850;font-size:12px;cursor:pointer;}
-.desktop-home .home-carousel-pause[aria-pressed="true"] {background:var(--accent);color:var(--background);}
-.desktop-home .home-carousel-pause:focus-visible {outline:3px solid var(--accent);outline-offset:3px;}
 
 .desktop-search-quick[hidden] {display:none!important;}
 

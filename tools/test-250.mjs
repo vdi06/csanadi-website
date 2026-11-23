@@ -8,7 +8,7 @@ const read=p=>readFileSync(join(root,p),'utf8');
 const cfg=JSON.parse(read('shared/data/site.json'));
 let count=0;
 const check=(condition,message)=>{assert.ok(condition,message);count++};
-check(cfg.release==='2.52','release');
+check(cfg.release==='2.53','release');
 check(cfg.gate.frames===30,'gate frame count');
 check(!('skipLabel' in cfg.gate),'skip gate absent');
 check(cfg.menu.items.length===6,'six menus');
@@ -38,8 +38,8 @@ check(read('shared/css/base.css').includes('footer-contact-main > a[href^="mailt
 check(read('shared/css/base.css').includes('.successes-verification-warning'),'verification warning style');
 check(!read('index.html').includes('bootstrap.min.css?v='),'no local Bootstrap');
 check(read('index.html').includes('bootstrap@5.3.8'),'pinned Bootstrap');
-check(read('index.html').includes('entry.js?v=2.52'),'new JS entry cache');
-check(read('index.html').includes('base.css?v=2.52'),'new CSS cache');
+check(read('index.html').includes('entry.js?v=2.53'),'new JS entry cache');
+check(read('index.html').includes('base.css?v=2.53'),'new CSS cache');
 const names=readdirSync(join(root,'shared/assets/media/web/gate-frames'));
 check(names.filter(p=>p.endsWith('.webp')).length===60,'60 gate images');
 for(const name of names.filter(p=>p.endsWith('.webp'))) check(existsSync(join(root,'shared/assets/media/web/gate-frames',name)),`gate ${name}`);
@@ -52,4 +52,4 @@ for(const file of readdirSync(join(root,'shared/js')).filter(p=>p.endsWith('.js'
 for(const file of ['index.html','shared/data/site.json','desktop/app.js','mobile/app.js']){
  check(!read(file).includes('csanadi-bp.edu.hu'),`old domain ${file}`);
 }
-console.log(`2.52 NODE MINŐSÉGELLENŐRZÉS: ${count}/${count} sikeres`);
+console.log(`2.53 NODE MINŐSÉGELLENŐRZÉS: ${count}/${count} sikeres`);

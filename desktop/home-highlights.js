@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.52";
-import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.52";
+import { element } from "../shared/js/dom.js?v=2.53";
+import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.53";
 
 /** JSON-vezérelt asztali kezdőlapi gyűjtőpont; nem második menü. */
 export function createDesktopHomeHighlights(config) {

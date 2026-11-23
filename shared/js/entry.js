@@ -1,8 +1,8 @@
 /** Egyetlen HTML, közvetlen kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.52";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.52";
-import { eventById } from "./calendar-data.js?v=2.52";
-import { mountOffline } from "./offline.js?v=2.52";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.53";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.53";
+import { eventById } from "./calendar-data.js?v=2.53";
+import { mountOffline } from "./offline.js?v=2.53";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);

@@ -8,7 +8,7 @@ const c=JSON.parse(readFileSync(join(root,'shared/data/site.json'),'utf8'));
 const {searchSiteResults,searchSite,searchSportSuccessIds,normalizeSearchText}=await import('../shared/js/search-index.js');
 let tests=0;
 function ok(value,description){assert.ok(value,description);tests++;}
-ok(c.release==='2.52','2.49 release');
+ok(c.release==='2.53','2.49 release');
 ok(c.home.homeHighlights.items.length===3,'3 main links');
 for(const item of c.home.homeHighlights.items){ok(Boolean(c.pagePreview.pages[item.pageId]),'home highlight page exists');}
 ok(normalizeSearchText('Árvíztűrő tükörfúrógép')==='arvizturo tukorfurogep','diacritic insensitive');

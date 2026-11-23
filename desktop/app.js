@@ -1,21 +1,21 @@
-import { createDesktopFeatureCenter } from "./centers.js?v=2.52";
-import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.52";
-import { element } from "../shared/js/dom.js?v=2.52";
-import { mountGate } from "../shared/js/gate.js?v=2.52";
-import { makeFooter } from "../shared/js/footer.js?v=2.52";
-import { makeDesktopHeader } from "./header.js?v=2.52";
-import { createDesktopPage } from "./page.js?v=2.52";
-import { createDesktopHero } from "./hero.js?v=2.52";
-import { createDesktopHomeHighlights } from "./home-highlights.js?v=2.52";
-import { createDesktopSuccesses } from "./successes.js?v=2.52";
-import { createDesktopCalendar } from "./calendar.js?v=2.52";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.52";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.52";
-import { createDesktopInformation } from "./information.js?v=2.52";
-import { createDesktopMedia } from "./gallery.js?v=2.52";
-import { createDesktopTimetable } from "./timetable.js?v=2.52";
-import { createDesktopDocuments } from "./documents.js?v=2.52";
-import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.52";
+import { createDesktopFeatureCenter } from "./centers.js?v=2.53";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.53";
+import { element } from "../shared/js/dom.js?v=2.53";
+import { mountGate } from "../shared/js/gate.js?v=2.53";
+import { makeFooter } from "../shared/js/footer.js?v=2.53";
+import { makeDesktopHeader } from "./header.js?v=2.53";
+import { createDesktopPage } from "./page.js?v=2.53";
+import { createDesktopHero } from "./hero.js?v=2.53";
+import { createDesktopHomeHighlights } from "./home-highlights.js?v=2.53";
+import { createDesktopSuccesses } from "./successes.js?v=2.53";
+import { createDesktopCalendar } from "./calendar.js?v=2.53";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.53";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.53";
+import { createDesktopInformation } from "./information.js?v=2.53";
+import { createDesktopMedia } from "./gallery.js?v=2.53";
+import { createDesktopTimetable } from "./timetable.js?v=2.53";
+import { createDesktopDocuments } from "./documents.js?v=2.53";
+import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.53";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {

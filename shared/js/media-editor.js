@@ -1,5 +1,5 @@
-import { element } from "./dom.js?v=2.52";
-import { checkedMediaCenter } from "./media-data.js?v=2.52";
+import { element } from "./dom.js?v=2.53";
+import { checkedMediaCenter } from "./media-data.js?v=2.53";
 const el=element;
 /** Csak localhost + ?media-editor=1 esetén hívott, offline JSON-exportáló szerkesztő. */
 export function createMediaEditor(scope,config,onUpdate){

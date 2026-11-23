@@ -1,21 +1,21 @@
-import { createMobileFeatureCenter } from "./centers.js?v=2.52";
-import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.52";
-import { element } from "../shared/js/dom.js?v=2.52";
-import { mountGate } from "../shared/js/gate.js?v=2.52";
-import { makeFooter } from "../shared/js/footer.js?v=2.52";
-import { makeMobileHeader } from "./header.js?v=2.52";
-import { createMobilePage } from "./page.js?v=2.52";
-import { createMobileStory } from "./story.js?v=2.52";
-import { createMobileHomeHighlights } from "./home-highlights.js?v=2.52";
-import { createMobileSuccesses } from "./successes.js?v=2.52";
-import { createMobileCalendar } from "./calendar.js?v=2.52";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.52";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.52";
-import { createMobileInformation } from "./information.js?v=2.52";
-import { createMobileMedia } from "./gallery.js?v=2.52";
-import { createMobileTimetable } from "./timetable.js?v=2.52";
-import { createMobileDocuments } from "./documents.js?v=2.52";
-import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.52";
+import { createMobileFeatureCenter } from "./centers.js?v=2.53";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.53";
+import { element } from "../shared/js/dom.js?v=2.53";
+import { mountGate } from "../shared/js/gate.js?v=2.53";
+import { makeFooter } from "../shared/js/footer.js?v=2.53";
+import { makeMobileHeader } from "./header.js?v=2.53";
+import { createMobilePage } from "./page.js?v=2.53";
+import { createMobileStory } from "./story.js?v=2.53";
+import { createMobileHomeHighlights } from "./home-highlights.js?v=2.53";
+import { createMobileSuccesses } from "./successes.js?v=2.53";
+import { createMobileCalendar } from "./calendar.js?v=2.53";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.53";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.53";
+import { createMobileInformation } from "./information.js?v=2.53";
+import { createMobileMedia } from "./gallery.js?v=2.53";
+import { createMobileTimetable } from "./timetable.js?v=2.53";
+import { createMobileDocuments } from "./documents.js?v=2.53";
+import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.53";
 
 /** Önálló mobilos nézet: saját fejléc, JSON-vázlatos aloldal és kompakt lábléc. */
 export function mount(root, config, page) {

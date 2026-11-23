@@ -980,12 +980,8 @@
 @media(prefers-reduced-motion:reduce) {.mobile-home-highlight {transition:none!important;}}
 @media(forced-colors:active) {.mobile-home-highlight,.mobile-search-category[aria-pressed="true"],.mobile-search-more {border:2px solid ButtonText;}.mobile-search-category[aria-pressed="true"] {outline:2px solid Highlight;}}
 
-/* 2.49: hozzáférhető, tartós, kézi Carousel-szüneteltetés. */
+/* 2.53: kizárólag a három Carousel-fül jelenik meg; külön szüneteltető vezérlő nincs. */
 .mobile-home .home-carousel-controls {flex-wrap:wrap;justify-content:center;gap:10px;}
-.mobile-home .home-carousel-pause {min-width:90px;min-height:44px;padding:9px 14px;border-radius:13px;
- border:1px solid var(--accent);background:var(--surface);color:var(--text);font:inherit;font-weight:850;font-size:12px;cursor:pointer;}
-.mobile-home .home-carousel-pause[aria-pressed="true"] {background:var(--accent);color:var(--background);}
-.mobile-home .home-carousel-pause:focus-visible {outline:3px solid var(--accent);outline-offset:3px;}
 
 .mobile-search-quick[hidden] {display:none!important;}
 

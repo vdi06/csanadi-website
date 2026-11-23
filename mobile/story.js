@@ -1,4 +1,4 @@
-import { element } from "../shared/js/dom.js?v=2.52";
+import { element } from "../shared/js/dom.js?v=2.53";
 
 const imageRoot = "./shared/assets/media/web/mobile-story/";
 const clamp = (value) => Math.max(0, Math.min(1, value));

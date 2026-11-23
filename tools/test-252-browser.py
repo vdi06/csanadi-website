@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""2.52 independent resilience/accessible UI QA. Load the ACTUAL index.html into Chromium about:blank
+"""2.53 independent resilience/accessible UI QA. Load the ACTUAL index.html into Chromium about:blank
 (sandbox prohibits HTTP navigation); first-party requests served from real extracted files. CDN aborted.
 This is NOT a real CDN or real http://localhost end-to-end test.
 """
@@ -8,7 +8,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 R=Path(__file__).resolve().parent.parent
 C=json.loads((R/'shared/data/site.json').read_text(encoding='utf8'))
-REPORT=Path(os.getenv('CSANADI252_REPORT', '/mnt/data/Csanadi_2.52_qa'))
+REPORT=Path(os.getenv('CSANADI252_REPORT', '/mnt/data/Csanadi_2.53_qa'))
 REPORT.mkdir(exist_ok=True,parents=True)
 CASES=[]; checks=0; errors=[]; requests=[]
 ORIGIN='https://csanadi-local.test/'

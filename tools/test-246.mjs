@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 const root=resolve(fileURLToPath(new URL('..',import.meta.url)));
 const text=p=>readFileSync(join(root,p),'utf8');
 const cfg=JSON.parse(text('shared/data/site.json'));
-assert.equal(cfg.release,'2.52');
+assert.equal(cfg.release,'2.53');
 const {checkedMediaCenter, premiumAlbumCards,mediaResults}=await import('../shared/js/media-data.js');
 checkedMediaCenter(cfg);
 const all=premiumAlbumCards(cfg);
