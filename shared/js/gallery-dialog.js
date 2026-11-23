@@ -1,4 +1,4 @@
-import { element } from "./dom.js?v=2.41";
+import { element } from "./dom.js?v=2.43";
 
 /** Natív, fókuszt csapdázó dialog. A képek címe és leírása a központi JSON-ból érkezik. */
 export function createGalleryDialog(scope, platform) {
@@ -21,7 +21,30 @@ export function createGalleryDialog(scope, platform) {
     el("div",{className:"media-dialog-stage"},prev,image,next),
     el("div",{className:"media-dialog-details"},title,description,related)));
   scope.append(dialog);
-  let items=[],index=0,restore=null,startTouch=null;
+  let items=[],index=0,restore=null,startTouch=null,themeObserver=null;
+  const themeHost=()=>scope.closest(".desktop-home,.mobile-home");
+  function syncTheme(){
+    const host=themeHost();
+    const theme=host?.dataset.theme === "light" ? "light" : "dark";
+    dialog.dataset.theme=theme;
+    dialog.style.colorScheme=theme;
+    if(host && typeof getComputedStyle==="function") {
+      const style=getComputedStyle(host);
+      for(const name of ["background","surface","text","muted","accent"]) {
+        const value=style.getPropertyValue(`--${name}`).trim();
+        if(value) dialog.style.setProperty(`--${name}`,value);
+      }
+    }
+  }
+  function watchTheme(){
+    themeObserver?.disconnect();
+    const host=themeHost();
+    syncTheme();
+    if(host && typeof MutationObserver==="function"){
+      themeObserver=new MutationObserver(syncTheme);
+      themeObserver.observe(host,{attributes:true,attributeFilter:["data-theme","style"]});
+    }
+  }
   function display() {
     const item=items[index];
     if (!item) return;
@@ -36,7 +59,7 @@ export function createGalleryDialog(scope, platform) {
   function show(data,selected,focusEl) {
     if (!data.length) return;
     items=data.slice(); index=Math.max(0,Math.min(items.length-1,selected));
-    restore=focusEl||document.activeElement; display();
+    restore=focusEl||document.activeElement; watchTheme(); display();
     if (typeof dialog.showModal==="function") {
       if (!dialog.open) dialog.showModal();
       closeButton.focus();
@@ -51,7 +74,7 @@ export function createGalleryDialog(scope, platform) {
   }}
   closeButton.addEventListener("click",close);
   prev.addEventListener("click",()=>move(-1)); next.addEventListener("click",()=>move(1));
-  dialog.addEventListener("close",()=>{if(restore?.isConnected)restore.focus({preventScroll:true});});
+  dialog.addEventListener("close",()=>{themeObserver?.disconnect();if(restore?.isConnected)restore.focus({preventScroll:true});});
   dialog.addEventListener("click",(ev)=>{if(ev.target===dialog)close();});
   dialog.addEventListener("keydown",(ev)=>{
     if(ev.key==="ArrowLeft" || ev.key==="ArrowRight") {ev.preventDefault();move(ev.key==="ArrowLeft"?-1:1);}
@@ -66,5 +89,5 @@ export function createGalleryDialog(scope, platform) {
       startTouch=null;
     },{passive:true});
   }
-  return {dialog,show,close,destroy(){close();dialog.remove();}};
+  return {dialog,show,close,destroy(){themeObserver?.disconnect();close();dialog.remove();}};
 }

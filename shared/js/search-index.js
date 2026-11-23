@@ -1,8 +1,9 @@
-import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.41";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.41";
-import { calendarEntries } from "./calendar-data.js?v=2.41";
-import { newsStoryHref } from "./news-panel.js?v=2.41";
-import { checkedAdmissions } from "./admission-data.js?v=2.41";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.43";
+import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.43";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.43";
+import { calendarEntries } from "./calendar-data.js?v=2.43";
+import { newsStoryHref } from "./news-panel.js?v=2.43";
+import { checkedAdmissions } from "./admission-data.js?v=2.43";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */
@@ -70,7 +71,7 @@ function createIndex(config) {
   // Szerkesztési/teszt-konfigurációnál a lenyomat továbbra is észleli az adatváltozást.
   if (cached && config.__staticContent === true) return cached.entries;
   const signature = JSON.stringify([config.site, config.home, config.menu,
-    config.pagePreview, config.publicNews, config.admissionCenter]);
+    config.pagePreview, config.publicNews, config.admissionCenter, config.featureCenters]);
   if (cached?.signature === signature) return cached.entries;
   const entries = [];
   const categories = config.home.search.categories;
@@ -93,6 +94,21 @@ function createIndex(config) {
     });
   };
 
+  // 2.43: a négy külön központból az alaptartalmakat a globális kereső is indexeli.
+  // A találatok mindig működő menüoldalra vezetnek, nem nem létező részoldalra.
+  const centers = checkedFeatureCenters(config);
+  for (const p of centers.education.programs) add({
+    label:p.name, summary:p.summary, details:`${p.level} ${p.points.join(' ')}`,
+    category:'Képzési út', href:menuPageHref('education-programs')
+  });
+  for (const p of centers.sports.topics) add({
+    label:p.name, summary:p.summary, category:'Sportági bemutató',
+    href:menuPageHref('sports-disciplines')
+  });
+  for (const p of centers.sports.facilities) add({
+    label:p.title, summary:p.description, category:'Sporthelyszín információ',
+    href:menuPageHref('sports-facilities')
+  });
   // Országosan ellenőrzött felvételi határidők: a menübeli részletes oldalra vezetnek.
   const admissions = checkedAdmissions(config);
   for (const milestone of admissions.milestones) add({

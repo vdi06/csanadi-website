@@ -843,3 +843,79 @@
 .mobile-admission-sources > :not(summary) {margin:11px 16px;}
 .mobile-admission-shortcuts {margin:18px 0;gap:8px;}
 .mobile-admission-shortcuts a {flex:1 1 auto; min-width:125px;font-size:13px;}
+
+/* 2.42 – Önálló, kompakt, kéthasábos mobil galéria és ikon-only főoldali választó. */
+.mobile-media-center{width:min(calc(100% - 24px),620px);max-width:100%;margin:15px auto 38px;min-width:0;}
+.mobile-media-head{padding:15px 2px;}
+.mobile-media-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+.mobile-media-tile{aspect-ratio:1/1;min-width:0;border-radius:13px;}
+.mobile-media-tile-text{font-size:clamp(11px,3vw,14px);line-height:1.3;padding:26px 10px 10px;overflow-wrap:anywhere;}
+.mobile-media-filter{font-size:12px;padding-inline:12px;}
+.mobile-media-count{text-align:center;}
+.mobile-home .home-carousel-tabs{gap:10px;justify-content:center;overflow:visible;flex-wrap:wrap;max-width:100%;}
+.mobile-home .home-carousel-tab{font-size:0;width:54px;min-width:54px;height:52px;min-height:52px;padding:7px;display:grid;place-items:center;line-height:1;border-radius:14px;}
+.mobile-home .home-carousel-tab::before{display:block;font-size:24px;line-height:1;}
+.mobile-home .home-carousel-tab[data-panel-type="successes"]::before{content:"🏆";}
+.mobile-home .home-carousel-tab[data-panel-type="calendar"]::before{content:"📅";}
+.mobile-home .home-carousel-tab[data-panel-type="news"]::before{content:"📰";}
+@media(max-width:350px){.mobile-media-grid{grid-template-columns:1fr;}.mobile-media-tile{aspect-ratio:16/10;}.mobile-home .home-carousel-tab{width:49px;min-width:49px;height:49px;min-height:49px;}}
+/* 2.42 – Dedikált mobilos, egy napra fókuszáló órarend. */
+.mobile-timetable-center{width:min(calc(100% - 24px),630px);max-width:100%;min-width:0;margin:16px auto 40px;color:var(--text);}
+.mobile-timetable-head{text-align:center;padding:12px 0 17px;}
+.mobile-timetable-head h2{font-size:clamp(20px,5vw,27px);font-weight:850;margin:0 0 9px;}
+.mobile-timetable-head>p:last-child{color:var(--muted);font-size:13px;line-height:1.52;}
+.mobile-timetable-bells,.mobile-timetable-week{padding:14px;margin-bottom:13px;border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);border-radius:17px;background:var(--surface);}
+.mobile-timetable-bells summary{min-height:44px;cursor:pointer;color:var(--text);font-size:15px;font-weight:800;padding:8px;}
+.mobile-timetable-bells ol{list-style:none;padding:6px;margin:0;}
+.mobile-timetable-bells li{display:flex;justify-content:space-between;gap:10px;padding:9px;border-top:1px solid color-mix(in srgb,var(--accent) 24%,transparent);font-size:13px;}
+.mobile-timetable-week h3{text-align:center;font-size:19px;font-weight:850;margin:3px 0 13px;}
+.mobile-timetable-class{min-height:48px;width:100%;padding:8px 12px;border-radius:12px;border:1px solid var(--accent);background:var(--background);color:var(--text);font:inherit;}
+.mobile-timetable-days{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:14px 0 10px;}
+.mobile-timetable-day{min-width:0;min-height:46px;border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:10px;background:var(--background);color:var(--text);font-weight:850;font-size:clamp(10px,3vw,13px);}
+.mobile-timetable-day.is-active{background:var(--accent);color:var(--background);border-color:var(--accent);}
+.mobile-timetable-lessons{display:grid;gap:9px;}
+.mobile-timetable-lesson{display:grid;grid-template-columns:minmax(95px,37%) minmax(0,1fr);align-items:center;gap:9px;min-height:69px;padding:10px;border-radius:12px;border:1px solid color-mix(in srgb,var(--accent) 27%,transparent);background:var(--background);}
+.mobile-timetable-lesson-time{display:grid;gap:4px;text-align:center;}
+.mobile-timetable-lesson-time strong{font-size:14px;color:var(--accent);}
+.mobile-timetable-lesson-time small{font-size:11px;color:var(--muted);white-space:nowrap;}
+.mobile-timetable-lesson p{min-width:0;margin:0;font-size:13px;line-height:1.4;overflow-wrap:anywhere;color:var(--text);}
+
+/* 2.43 – Négy modulhoz külön mobilos, érintésre szerkesztett felületek. */
+.mobile-feature-center{width:min(100% - 20px,620px);max-width:100%;min-width:0;margin:17px auto 42px;color:var(--text);}
+.mobile-feature-head{text-align:center;max-width:550px;margin:0 auto 20px;}
+.mobile-feature-head h2{font-size:clamp(21px,6vw,28px);font-weight:880;line-height:1.22;color:var(--text);}
+.mobile-feature-head p:last-child{color:var(--muted);font-size:13px;line-height:1.6;}
+.mobile-feature-center .feature-eyebrow{color:var(--accent);font-size:10px;font-weight:890;letter-spacing:.13em;}
+.mobile-feature-center .feature-note{margin:0 0 17px;padding:12px 14px;background:var(--surface);color:var(--text);border-radius:12px;border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);font-size:12px;line-height:1.55;}
+.mobile-feature-center :is(h3,h4){color:var(--text);overflow-wrap:anywhere;}
+.mobile-feature-center h3{font-size:17px;font-weight:850;}
+.mobile-feature-center :is(p,li){line-height:1.55;overflow-wrap:anywhere;}
+.mobile-feature-program,.mobile-feature-card,.mobile-feature-event{border:1px solid color-mix(in srgb,var(--accent) 32%,transparent);border-radius:15px;background:var(--surface);margin-bottom:11px;overflow:hidden;min-width:0;}
+.mobile-feature-program>summary{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:18px 17px;color:var(--text);font-size:17px;font-weight:850;min-height:62px;}
+.mobile-feature-program summary small{color:var(--accent);font-size:12px;}
+.mobile-feature-body{padding:2px 17px 18px;color:var(--text);}
+.mobile-feature-body ul{padding-left:21px;}
+.mobile-feature-body li{margin:10px 0;}
+.mobile-feature-card{padding:17px;}
+.mobile-feature-card p{font-size:13px;color:var(--muted);}
+.mobile-feature-center .feature-link{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:10px 13px;border:1px solid var(--accent);border-radius:12px;color:var(--accent);font-weight:800;text-decoration:none;font-size:13px;line-height:1.35;}
+.mobile-feature-center .feature-link:focus-visible,.mobile-feature-center .feature-link:hover{background:var(--accent);color:var(--background);}
+.mobile-feature-center .feature-links{display:flex;flex-direction:column;align-items:stretch;gap:10px;margin:20px 0;}
+.mobile-feature-center .feature-source{font-size:12px;line-height:1.5;color:var(--accent);display:block;margin:15px 0;}
+.mobile-feature-center .feature-search,.mobile-feature-center .feature-select{width:100%;max-width:100%;min-width:0;min-height:49px;margin:0 0 10px;border-radius:12px;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);padding:11px 13px;background:var(--background);color:var(--text);font:inherit;font-size:14px;}
+.mobile-feature-center .feature-search::placeholder{color:var(--muted);opacity:1;}
+.mobile-feature-center .feature-count{text-align:center;font-size:12px;color:var(--muted);margin:9px 0 14px;}
+.mobile-feature-sport-list,.mobile-feature-event-list{display:grid;gap:10px;}
+.mobile-feature-sport{display:grid;grid-template-columns:minmax(90px,34%) minmax(0,1fr);gap:11px;align-items:stretch;overflow:hidden;background:var(--surface);border:1px solid color-mix(in srgb,var(--accent) 31%,transparent);border-radius:15px;min-width:0;}
+.mobile-feature-sport img{display:block;width:100%;height:100%;object-fit:cover;min-height:126px;}
+.mobile-feature-sport>div{padding:13px 12px 13px 0;min-width:0;}
+.mobile-feature-sport h3{font-size:16px;margin:0 0 5px;}
+.mobile-feature-sport p{font-size:12px;color:var(--text);line-height:1.45;margin:5px 0;}
+.mobile-feature-sport small{font-size:10px;color:var(--muted);}
+.mobile-feature-event>summary{cursor:pointer;min-height:60px;display:grid;gap:5px;padding:16px;color:var(--text);font-size:14px;}
+.mobile-feature-event>summary time{font-size:11px;color:var(--accent);font-weight:850;}
+.mobile-feature-event>summary strong{font-size:14px;font-weight:800;}
+.mobile-feature-event .mobile-feature-body p{font-size:13px;color:var(--text);}
+.mobile-feature-event .mobile-feature-body small{font-size:11px;color:var(--muted);display:block;margin-bottom:10px;}
+.mobile-feature-center :is(button,input,select,summary,a):focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+@media(max-width:350px){.mobile-feature-sport{grid-template-columns:minmax(0,1fr)}.mobile-feature-sport img{height:135px;min-height:0;}.mobile-feature-sport>div{padding:12px 14px;}}

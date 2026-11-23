@@ -1,17 +1,20 @@
-import { element } from "../shared/js/dom.js?v=2.41";
-import { mountGate } from "../shared/js/gate.js?v=2.41";
-import { makeFooter } from "../shared/js/footer.js?v=2.41";
-import { makeDesktopHeader } from "./header.js?v=2.41";
-import { createDesktopPage } from "./page.js?v=2.41";
-import { createDesktopHero } from "./hero.js?v=2.41";
-import { createDesktopSuccesses } from "./successes.js?v=2.41";
-import { createDesktopCalendar } from "./calendar.js?v=2.41";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.41";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.41";
-import { createDesktopInformation } from "./information.js?v=2.41";
-import { createDesktopMedia } from "./gallery.js?v=2.41";
-import { createDesktopDocuments } from "./documents.js?v=2.41";
-import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.41";
+import { createDesktopFeatureCenter } from "./centers.js?v=2.43";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.43";
+import { element } from "../shared/js/dom.js?v=2.43";
+import { mountGate } from "../shared/js/gate.js?v=2.43";
+import { makeFooter } from "../shared/js/footer.js?v=2.43";
+import { makeDesktopHeader } from "./header.js?v=2.43";
+import { createDesktopPage } from "./page.js?v=2.43";
+import { createDesktopHero } from "./hero.js?v=2.43";
+import { createDesktopSuccesses } from "./successes.js?v=2.43";
+import { createDesktopCalendar } from "./calendar.js?v=2.43";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.43";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.43";
+import { createDesktopInformation } from "./information.js?v=2.43";
+import { createDesktopMedia } from "./gallery.js?v=2.43";
+import { createDesktopTimetable } from "./timetable.js?v=2.43";
+import { createDesktopDocuments } from "./documents.js?v=2.43";
+import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.43";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {
@@ -47,12 +50,17 @@ export function mount(root, config, page) {
   const infoCenter = isInformation ? createDesktopInformation(config) : null;
   const isMediaPage = page === "page:sports-gallery";
   const mediaCenter = isMediaPage ? createDesktopMedia(config) : null;
+  const isTimetable = page === "page:information-timetable";
+  const timetableCenter = isTimetable ? createDesktopTimetable(config) : null;
   const isDocuments = page === "page:information-documents";
   const documentsCenter = isDocuments ? createDesktopDocuments(config) : null;
   const admissionPageId = page.startsWith("page:admission-") ? page.slice(5) : null;
   const isAdmissionHub = ["admission-guide","admission-deadlines","admission-primary","admission-secondary"].includes(admissionPageId);
   const admissionsCenter = isAdmissionHub ? createDesktopAdmissions(config, admissionPageId) : null;
   const admissionLinks = admissionPageId && !isAdmissionHub ? createDesktopAdmissionLinks(config) : null;
+  const featurePageId = page.startsWith("page:") ? page.slice(5) : "";
+  const featureKind = centerRouteKind(featurePageId);
+  const featureCenter = featureKind ? createDesktopFeatureCenter(config,featureKind,featurePageId) : null;
   const isArchive = page === "page:sports-results";
   const successes = isHome || isArchive ? createDesktopSuccesses(config, { archive:isArchive }) : null;
   const carousel = hero ? createHomeCarousel(config,successes.section,
@@ -60,8 +68,10 @@ export function mount(root, config, page) {
   if (hero) main.append(hero.track, carousel.section);
   else if (isArchive) main.append(successes.section,
     createDesktopPage(config, "sports-results", { hideHeading:true }));
+  else if (featureCenter) main.append(createDesktopPage(config,featurePageId,{hideCards:true}),featureCenter.section);
   else if (isInformation) main.append(createDesktopPage(config, "information-daily", {hideCards:true}), infoCenter.section);
   else if (isMediaPage) main.append(createDesktopPage(config, "sports-gallery", {hideCards:true}), mediaCenter.section);
+  else if (isTimetable) main.append(createDesktopPage(config, "information-timetable", {hideCards:true}), timetableCenter.section);
   else if (isDocuments) main.append(createDesktopPage(config, "information-documents", {hideCards:true}), documentsCenter.section);
   else if (isCalendarPage) main.append(createDesktopPage(config, "news-calendar", {hideCards:true}), fullCalendar.section);
   else if (isAdmissionHub) main.append(createDesktopPage(config, admissionPageId, {hideCards:true}), admissionsCenter.section);
@@ -89,5 +99,5 @@ export function mount(root, config, page) {
   const pageEventId = /^#\/oldal\/news-calendar\/esemeny\/([a-z0-9-]+)$/.exec(location.hash)?.[1];
   if (pageEventId) fullCalendar?.showEvent(pageEventId);
   if (storyId) newsPage?.showStory(storyId);
-  return () => { admissionsCenter?.destroy(); documentsCenter?.destroy(); infoCenter?.destroy(); mediaCenter?.destroy(); newsPage?.destroy(); fullCalendar?.destroy(); carousel?.destroy(); successes?.destroy(); hero?.destroy(); desktopHeader.destroy(); desktopFooter.destroy(); };
+  return () => { featureCenter?.destroy(); admissionsCenter?.destroy(); documentsCenter?.destroy(); infoCenter?.destroy(); mediaCenter?.destroy(); timetableCenter?.destroy(); newsPage?.destroy(); fullCalendar?.destroy(); carousel?.destroy(); successes?.destroy(); hero?.destroy(); desktopHeader.destroy(); desktopFooter.destroy(); };
 }

@@ -1,7 +1,7 @@
-import { element } from "./dom.js?v=2.41";
-import { checkedHomeCarousel } from "./carousel-data.js?v=2.41";
-import { createNewsPanel } from "./news-panel.js?v=2.41";
-import { menuPageHref } from "./menu-data.js?v=2.41";
+import { element } from "./dom.js?v=2.43";
+import { checkedHomeCarousel } from "./carousel-data.js?v=2.43";
+import { createNewsPanel } from "./news-panel.js?v=2.43";
+import { menuPageHref } from "./menu-data.js?v=2.43";
 
 /** JSON-ból felépített, bővíthető Bootstrap 5 Carousel: nem igényel
  * nyilakat és megállító gombot. CDN-kiesésnél osztályváltásos tartalék.
@@ -46,7 +46,7 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
   const tabs = activePanels.map((panel,index) => element("button", {
     className:`home-carousel-tab${index === 0 ? " is-active" : ""}`,text:panel.label,
     attributes:{type:"button",id:`${id}-tab-${index}`,role:"tab",
-      "aria-controls":slides[index].getAttribute("id"),
+      "aria-controls":slides[index].getAttribute("id"),"data-panel-type":panel.type,
       "aria-selected":index === 0 ? "true" : "false",tabindex:index === 0 ? "0" : "-1"}
   }));
   const descriptionId = `${id}-usage-hint`;

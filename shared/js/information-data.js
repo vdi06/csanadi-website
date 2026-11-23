@@ -1,5 +1,5 @@
-import { calendarEntries } from "./calendar-data.js?v=2.41";
-import { newsStoryHref } from "./news-panel.js?v=2.41";
+import { calendarEntries } from "./calendar-data.js?v=2.43";
+import { newsStoryHref } from "./news-panel.js?v=2.43";
 
 const validText = (v, length=200) => typeof v === "string" && v.trim().length > 0 && v.length <= length;
 const validHref = (v) => typeof v === "string" && /^#\/oldal\/[a-z0-9-]+$/.test(v);

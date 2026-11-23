@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.41";
-import { checkedMediaCenter, mediaResults } from "../shared/js/media-data.js?v=2.41";
-import { createGalleryDialog } from "../shared/js/gallery-dialog.js?v=2.41";
+import { element } from "../shared/js/dom.js?v=2.43";
+import { checkedMediaCenter, mediaResults } from "../shared/js/media-data.js?v=2.43";
+import { createGalleryDialog } from "../shared/js/gallery-dialog.js?v=2.43";
 const el=element;
 export function createDesktopMedia(config) {
   const settings=checkedMediaCenter(config);

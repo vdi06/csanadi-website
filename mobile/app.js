@@ -1,17 +1,20 @@
-import { element } from "../shared/js/dom.js?v=2.41";
-import { mountGate } from "../shared/js/gate.js?v=2.41";
-import { makeFooter } from "../shared/js/footer.js?v=2.41";
-import { makeMobileHeader } from "./header.js?v=2.41";
-import { createMobilePage } from "./page.js?v=2.41";
-import { createMobileStory } from "./story.js?v=2.41";
-import { createMobileSuccesses } from "./successes.js?v=2.41";
-import { createMobileCalendar } from "./calendar.js?v=2.41";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.41";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.41";
-import { createMobileInformation } from "./information.js?v=2.41";
-import { createMobileMedia } from "./gallery.js?v=2.41";
-import { createMobileDocuments } from "./documents.js?v=2.41";
-import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.41";
+import { createMobileFeatureCenter } from "./centers.js?v=2.43";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.43";
+import { element } from "../shared/js/dom.js?v=2.43";
+import { mountGate } from "../shared/js/gate.js?v=2.43";
+import { makeFooter } from "../shared/js/footer.js?v=2.43";
+import { makeMobileHeader } from "./header.js?v=2.43";
+import { createMobilePage } from "./page.js?v=2.43";
+import { createMobileStory } from "./story.js?v=2.43";
+import { createMobileSuccesses } from "./successes.js?v=2.43";
+import { createMobileCalendar } from "./calendar.js?v=2.43";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.43";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.43";
+import { createMobileInformation } from "./information.js?v=2.43";
+import { createMobileMedia } from "./gallery.js?v=2.43";
+import { createMobileTimetable } from "./timetable.js?v=2.43";
+import { createMobileDocuments } from "./documents.js?v=2.43";
+import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.43";
 
 /** Önálló mobilos nézet: saját fejléc, JSON-vázlatos aloldal és kompakt lábléc. */
 export function mount(root, config, page) {
@@ -43,12 +46,17 @@ export function mount(root, config, page) {
   const infoCenter = isInformation ? createMobileInformation(config) : null;
   const isMediaPage = page === "page:sports-gallery";
   const mediaCenter = isMediaPage ? createMobileMedia(config) : null;
+  const isTimetable = page === "page:information-timetable";
+  const timetableCenter = isTimetable ? createMobileTimetable(config) : null;
   const isDocuments = page === "page:information-documents";
   const documentsCenter = isDocuments ? createMobileDocuments(config) : null;
   const admissionPageId = page.startsWith("page:admission-") ? page.slice(5) : null;
   const isAdmissionHub = ["admission-guide","admission-deadlines","admission-primary","admission-secondary"].includes(admissionPageId);
   const admissionsCenter = isAdmissionHub ? createMobileAdmissions(config, admissionPageId) : null;
   const admissionLinks = admissionPageId && !isAdmissionHub ? createMobileAdmissionLinks(config) : null;
+  const featurePageId = page.startsWith("page:") ? page.slice(5) : "";
+  const featureKind = centerRouteKind(featurePageId);
+  const featureCenter = featureKind ? createMobileFeatureCenter(config,featureKind,featurePageId) : null;
   const isArchive = page === "page:sports-results";
   const successes = story || isArchive ? createMobileSuccesses(config, { archive:isArchive }) : null;
   const carousel = story ? createHomeCarousel(config,successes.section,
@@ -56,8 +64,10 @@ export function mount(root, config, page) {
   if (story) main.append(story.track, carousel.section);
   else if (isArchive) main.append(successes.section,
     createMobilePage(config, "sports-results", { hideHeading:true }));
+  else if (featureCenter) main.append(createMobilePage(config,featurePageId,{hideCards:true}),featureCenter.section);
   else if (isInformation) main.append(createMobilePage(config, "information-daily", {hideCards:true}), infoCenter.section);
   else if (isMediaPage) main.append(createMobilePage(config, "sports-gallery", {hideCards:true}), mediaCenter.section);
+  else if (isTimetable) main.append(createMobilePage(config, "information-timetable", {hideCards:true}), timetableCenter.section);
   else if (isDocuments) main.append(createMobilePage(config, "information-documents", {hideCards:true}), documentsCenter.section);
   else if (isCalendarPage) main.append(createMobilePage(config, "news-calendar", {hideCards:true}), fullCalendar.section);
   else if (isAdmissionHub) main.append(createMobilePage(config, admissionPageId, {hideCards:true}), admissionsCenter.section);
@@ -81,5 +91,5 @@ export function mount(root, config, page) {
   const pageEventId = /^#\/oldal\/news-calendar\/esemeny\/([a-z0-9-]+)$/.exec(location.hash)?.[1];
   if (pageEventId) fullCalendar?.showEvent(pageEventId);
   if (storyId) newsPage?.showStory(storyId);
-  return () => { admissionsCenter?.destroy(); documentsCenter?.destroy(); infoCenter?.destroy(); mediaCenter?.destroy(); newsPage?.destroy(); fullCalendar?.destroy(); carousel?.destroy(); successes?.destroy(); story?.destroy(); mobileHeader.destroy(); mobileFooter.destroy(); };
+  return () => { featureCenter?.destroy(); admissionsCenter?.destroy(); documentsCenter?.destroy(); infoCenter?.destroy(); mediaCenter?.destroy(); timetableCenter?.destroy(); newsPage?.destroy(); fullCalendar?.destroy(); carousel?.destroy(); successes?.destroy(); story?.destroy(); mobileHeader.destroy(); mobileFooter.destroy(); };
 }

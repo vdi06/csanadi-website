@@ -1,9 +1,10 @@
-import { checkedDocumentCenter } from "./document-data.js?v=2.41";
-import { checkedAdmissions } from "./admission-data.js?v=2.41";
-import { checkedInformationCenter } from "./information-data.js?v=2.41";
-import { checkedMediaCenter } from "./media-data.js?v=2.41";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.43";
+import { checkedDocumentCenter } from "./document-data.js?v=2.43";
+import { checkedAdmissions } from "./admission-data.js?v=2.43";
+import { checkedInformationCenter } from "./information-data.js?v=2.43";
+import { checkedMediaCenter } from "./media-data.js?v=2.43";
 /** Kétszintű menü, 49 önálló oldal és közösen kezelt, JSON-alapú tartalom. */
-import { checkedCalendar } from "./calendar-data.js?v=2.41";
+import { checkedCalendar } from "./calendar-data.js?v=2.43";
 
 const validLabel = (value, max = 800) => typeof value === "string" &&
   !!value.trim() && value.length <= max;
@@ -141,6 +142,7 @@ export function validateMenu(config) {
   checkedMediaCenter(config);
   checkedDocumentCenter(config);
   checkedAdmissions(config);
+  checkedFeatureCenters(config);
   return items;
 }
 

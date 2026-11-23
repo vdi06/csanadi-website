@@ -1,0 +1,24 @@
+A HONLAP HASZNÁLATI ÚTMUTATÓJA
+
+NAVIGÁCIÓ
+A főmenü a fejléc címeréről nyílik. Asztalon a menü közepén lévő címerrel bezárható, a házikó a főoldalra visz. Telefonon a menü témakörei külön szinteken, visszalépéssel érhetők el.
+
+KERESÉS
+A kereső az elérhető JSON-tartalmakban keres; ékezet nélküli és rövidebb kifejezésekre is érdemes próbálkozni. A találati hivatkozások konkrét oldalakra vagy híradatlapokra vezetnek.
+
+FŐOLDALI CAROUSEL
+Három tartalmi panel között lehet váltani: Sportsikerek, Tanévi naptár és Hírek és közlemények. A váltás alapesetben 30 másodpercenként automatikus, de a fülek kézzel is választhatók.
+
+NAPTÁR
+A naptár alapnézete a Havi. Asztali felületen heti, havi és éves nézet elérhető; telefonon heti és havi. Az események egy külön lebegő rétegben olvashatók, amely nem alakítja át a naptárrácsot.
+
+HÍREK ÉS KÖZLEMÉNYEK
+A felületeken a „MINTA” és „BEMUTATÓADAT” feliratú bejegyzések kizárólag az oldal működésének tesztelésére szolgálnak. Nem hivatalos közlemények.
+
+DOKUMENTUMOK
+A Hivatalos dokumentumok menüpontban saját dokumentumnézegető működik. A meglévő, ténylegesen rendelkezésre álló segédletek megnyithatók; a feltöltésre váró hivatalos dokumentumok hiányként szerepelnek.
+
+MEGJELENÉS
+A téma automatikus, világos vagy sötét lehet. A fontos vezérlők billentyűzettel is elérhetők.
+
+Ez a segédlet a weboldal technikai használatáról szól, nem hivatalos intézményi szabályzat.

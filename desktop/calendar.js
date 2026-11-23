@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.41";
-import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.41";
-import { makeCalendarMonth, makeCalendarWeek, createCalendarPopover, schoolWeeks, weekLabel } from "../shared/js/calendar-view.js?v=2.41";
+import { element } from "../shared/js/dom.js?v=2.43";
+import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.43";
+import { makeCalendarMonth, makeCalendarWeek, createCalendarPopover, schoolWeeks, weekLabel } from "../shared/js/calendar-view.js?v=2.43";
 
 /** Asztalon: azonos adatú heti / havi / éves nézet; a hónapok 6 hetes, azonos rácsban. */
 export function createDesktopCalendar(config,onInteract=()=>{}) {
@@ -14,7 +14,7 @@ export function createDesktopCalendar(config,onInteract=()=>{}) {
   let monthIndex=Math.max(0,months.indexOf(todayMonth));
   let weekIndex=Math.max(0,weeks.findIndex((week,i)=>week <= today.toISOString().slice(0,10) &&
     (!weeks[i+1] || weeks[i+1] > today.toISOString().slice(0,10))));
-  let mode="year";
+  let mode="month";
   let views=[];
   // A nézetváltás ne építse újra a teljes, 504 cellás éves naptárat.
   const monthCards = new Map();

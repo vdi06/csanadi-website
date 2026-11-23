@@ -1,3 +1,22 @@
+# Csanádi Sportiskola – aktuális 2.43 kiadási ellenőrzés
+
+A 2.43-as teljes fejlesztés és a 2.42-es munkaváltozat átvett javításainak részletes átadója: `Csanadi_2.43_atadas.md` (a ZIP-en kívül).
+A négy új JSON-vezérelt központ az `education-programs`, `sports-disciplines`, `sports-facilities`, `education-exams`, `education-years`, `news-events`, `news-community`, `education-community` menüoldalakon található. A felületeket **külön** `desktop/centers.js` és `mobile/centers.js` valósítja meg.
+
+Elvárt ellenőrzőparancsok:
+
+```sh
+node tools/stamp-release.mjs
+node tools/test.mjs
+node tools/test-243.mjs
+node tools/check-documents.mjs
+python tools/test-243-browser.py
+```
+
+A `test-243-browser.py` Python Playwright + Chromium telepítést igényel, hálózati letiltás esetén is a teljes DOM-alapú helyi modulbetöltést teszteli. A nyilvános GitHub Pages CDN-kapcsolata ettől külön ellenőrzendő. A 30 örökölt sportsikerminta, 74 demóhír és 22 illusztrációs kép önmagában **nem** hitelesített intézményi közzétételi tartalom.
+
+---
+
 # Csanádi Sportiskola – 2.41 kiadás és ellenőrzés
 
 A 2.40-es eredeti ellenőrzési jegyzék alább megmarad.

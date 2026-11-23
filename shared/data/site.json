@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.30",
-  "release": "2.41",
+  "release": "2.43",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -1628,7 +1628,7 @@
       "address": "1143 Budapest, Őrnagy utca 5–7.",
       "email": "csanadi@csanadiiskola.hu",
       "contactTitle": "Kapcsolat",
-      "linksTitle": "Tájékoztatás",
+      "linksTitle": "Honlapállapot és dokumentumok",
       "modalCloseLabel": "Tájékoztató bezárása",
       "versionLabel": "Verzió",
       "updatedLabel": "Utolsó frissítés",
@@ -1637,32 +1637,7 @@
       "pendingLabel": "Frissítés: {seconds} mp-enként",
       "errorLabel": "A frissítések ellenőrzése átmenetileg nem sikerült",
       "refreshSeconds": 10,
-      "notices": [
-        {
-          "id": "impresszum",
-          "glyph": "I",
-          "title": "Impresszum",
-          "body": "A honlap fejlesztési tájékoztató felülete. Az intézmény pontos neve a fejlécben, címe és e-mail-címe a Kapcsolat résznél szerepel. A hivatalos fenntartói és közzétételi adatok ellenőrzése az élesítés előtt szükséges."
-        },
-        {
-          "id": "adatkezeles",
-          "glyph": "D",
-          "title": "Adatkezelési tájékoztató",
-          "body": "Ebben a fejlesztési változatban nincs bejelentkezés és személyes adatokat bekérő űrlap. A választott megjelenési módot a böngésző helyi tárhelye tárolhatja. A külső szolgáltatásokra vezető hivatkozások saját adatkezelési feltételekhez kapcsolódhatnak. Ez a rövid technikai ismertető nem helyettesíti az intézmény jóváhagyott, teljes adatkezelési dokumentumát."
-        },
-        {
-          "id": "akadalymentesseg",
-          "glyph": "A",
-          "title": "Akadálymentességi nyilatkozat",
-          "body": "A menük és a keresők billentyűzetes kezelését, fókuszát és a mozgáscsökkentést a fejlesztés figyelembe veszi. A teljes akadálymentességi megfelelőséget valós eszközökkel és segítő technológiákkal még ellenőrizni kell. Ez az állapotleírás nem hivatalos megfelelőségi minősítés."
-        },
-        {
-          "id": "hasznalat",
-          "glyph": "M",
-          "title": "Működés",
-          "body": "A főmenüt a címer nyitja meg. Asztalon a menü középső címere zárja be a navigációt, alatta a házikó a főoldalra vezet. Telefonon a témakörök külön szinteken nyílnak meg, visszalépési lehetőséggel. A kereső automatikusan feldolgozza a betöltött JSON-tartalmakat, és ékezet, szinonima vagy kisebb elírás esetén is találhat egyezést. A megjelenés automatikus, világos vagy sötét lehet. A fogaskerék szerkesztő módra vált, a pipa befejezi azt."
-        }
-      ],
+      "notices": [],
       "phone": "+36 30 267 82 08"
     },
     "carousel": {
@@ -1711,7 +1686,8 @@
         "event": "Esemény",
         "studies": "Tanulmányok",
         "sports": "Sport",
-        "community": "Iskolai élet"
+        "community": "Iskolai élet",
+        "demo": "BEMUTATÓADAT"
       },
       "linksLabel": "További intézményi hírek",
       "allNewsLabel": "Összes iskolai hír",
@@ -5137,7 +5113,7 @@
         ]
       },
       "information-timetable": {
-        "intro": "Az órarendhez és csengetéshez kapcsolódó időadatok elkülönítve, jól olvashatóan jelennek meg.",
+        "intro": "A csengetési időpontok, a szünetek és a heti órarend áttekintő felülete. Az osztályórendek jelenleg bemutatóadatok, nem hivatalos beosztások.",
         "items": [
           {
             "title": "A tanítási nap csengetési rendje",
@@ -5403,21 +5379,6 @@
   },
   "publicNews": [
     {
-      "id": "etkezesi-rendszer-2026",
-      "featured": true,
-      "title": "Az étkezési rendszer időszakos szünete",
-      "date": "2026-12-22",
-      "endDate": "2026-12-31",
-      "tags": [
-        "announcement"
-      ],
-      "summary": "Az iskolai közlemény szerint a Multischool5 szülői modulja 2026. december 22-én 9:00-tól december 31-én 9:15-ig nem használható rendelésre vagy lemondásra.",
-      "details": [
-        "A 2027. februári étkezés megrendelésére a közlemény szerint 2027. január 7-től nyílik lehetőség.",
-        "Az időponthoz kötött közlemény az érvényesség lejárta után az archívumban marad."
-      ]
-    },
-    {
       "id": "nyilt-napok-2026",
       "title": "Gimnáziumi nyílt napok 2026 novemberében",
       "date": "2026-11-17",
@@ -5483,6 +5444,1205 @@
       "summary": "Az iskola kitüntetéseket bemutató oldala sportiskolai díjakról és korábbi SIOSZ-gálákról számol be.",
       "details": [
         "A bemutatás az intézmény egészére vonatkozó elismerésekről szól, nem tanulói személyes eredményekről."
+      ]
+    },
+    {
+      "id": "bemutato-hir-01",
+      "featured": true,
+      "title": "MINTA 01 – Tanulási projektek bemutatása",
+      "date": "2026-11-21",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „tanulási projektek bemutatása” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-02",
+      "featured": true,
+      "title": "MINTA 02 – Digitális tanulási lehetőségek",
+      "date": "2026-11-13",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „digitális tanulási lehetőségek” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-03",
+      "featured": true,
+      "title": "MINTA 03 – Könyvtári programötletek",
+      "date": "2026-11-05",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „könyvtári programötletek” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-04",
+      "featured": false,
+      "title": "MINTA 04 – Közösségi találkozók",
+      "date": "2026-10-28",
+      "tags": [
+        "community",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „közösségi találkozók” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-05",
+      "featured": false,
+      "title": "MINTA 05 – Sportági nyílt foglalkozások",
+      "date": "2026-10-20",
+      "tags": [
+        "sports",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „sportági nyílt foglalkozások” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-06",
+      "featured": false,
+      "title": "MINTA 06 – Iskolai versenyek előkészítése",
+      "date": "2026-10-12",
+      "tags": [
+        "sports",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „iskolai versenyek előkészítése” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-07",
+      "featured": false,
+      "title": "MINTA 07 – Egészségtudatos hét",
+      "date": "2026-10-04",
+      "tags": [
+        "community",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „egészségtudatos hét” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-08",
+      "featured": false,
+      "title": "MINTA 08 – Műhelymunka és alkotás",
+      "date": "2026-09-26",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „műhelymunka és alkotás” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-09",
+      "featured": false,
+      "title": "MINTA 09 – Környezeti nevelési nap",
+      "date": "2026-09-18",
+      "tags": [
+        "community",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „környezeti nevelési nap” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-10",
+      "featured": false,
+      "title": "MINTA 10 – Tanévi élményprogramok",
+      "date": "2026-09-10",
+      "tags": [
+        "event",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „tanévi élményprogramok” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-11",
+      "featured": false,
+      "title": "MINTA 11 – Pályaorientációs beszélgetések",
+      "date": "2026-09-02",
+      "tags": [
+        "admission",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „pályaorientációs beszélgetések” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-12",
+      "featured": false,
+      "title": "MINTA 12 – Közös olvasási kihívás",
+      "date": "2026-08-25",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „közös olvasási kihívás” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-13",
+      "featured": false,
+      "title": "MINTA 13 – Szabadidős sportprogram",
+      "date": "2026-08-17",
+      "tags": [
+        "sports",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „szabadidős sportprogram” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-14",
+      "featured": false,
+      "title": "MINTA 14 – Iskolai rendezvények ismertetése",
+      "date": "2026-08-09",
+      "tags": [
+        "event",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „iskolai rendezvények ismertetése” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-15",
+      "featured": false,
+      "title": "MINTA 15 – Tanulói projektek",
+      "date": "2026-08-01",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „tanulói projektek” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-16",
+      "featured": false,
+      "title": "MINTA 16 – Pedagógiai szakmai nap",
+      "date": "2026-07-24",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „pedagógiai szakmai nap” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-17",
+      "featured": false,
+      "title": "MINTA 17 – Tanulási projektek bemutatása",
+      "date": "2026-07-16",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „tanulási projektek bemutatása” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-18",
+      "featured": false,
+      "title": "MINTA 18 – Digitális tanulási lehetőségek",
+      "date": "2026-07-08",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „digitális tanulási lehetőségek” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-19",
+      "featured": false,
+      "title": "MINTA 19 – Könyvtári programötletek",
+      "date": "2026-06-30",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „könyvtári programötletek” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-20",
+      "featured": false,
+      "title": "MINTA 20 – Közösségi találkozók",
+      "date": "2026-06-22",
+      "tags": [
+        "community",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „közösségi találkozók” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-21",
+      "featured": false,
+      "title": "MINTA 21 – Sportági nyílt foglalkozások",
+      "date": "2026-06-14",
+      "tags": [
+        "sports",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „sportági nyílt foglalkozások” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-22",
+      "featured": false,
+      "title": "MINTA 22 – Iskolai versenyek előkészítése",
+      "date": "2026-06-06",
+      "tags": [
+        "sports",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „iskolai versenyek előkészítése” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-23",
+      "featured": false,
+      "title": "MINTA 23 – Egészségtudatos hét",
+      "date": "2026-05-29",
+      "tags": [
+        "community",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „egészségtudatos hét” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-24",
+      "featured": false,
+      "title": "MINTA 24 – Műhelymunka és alkotás",
+      "date": "2026-05-21",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „műhelymunka és alkotás” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-25",
+      "featured": false,
+      "title": "MINTA 25 – Környezeti nevelési nap",
+      "date": "2026-05-13",
+      "tags": [
+        "community",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „környezeti nevelési nap” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-26",
+      "featured": false,
+      "title": "MINTA 26 – Tanévi élményprogramok",
+      "date": "2026-05-05",
+      "tags": [
+        "event",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „tanévi élményprogramok” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-27",
+      "featured": false,
+      "title": "MINTA 27 – Pályaorientációs beszélgetések",
+      "date": "2026-04-27",
+      "tags": [
+        "admission",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „pályaorientációs beszélgetések” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-28",
+      "featured": false,
+      "title": "MINTA 28 – Közös olvasási kihívás",
+      "date": "2026-04-19",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „közös olvasási kihívás” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-29",
+      "featured": false,
+      "title": "MINTA 29 – Szabadidős sportprogram",
+      "date": "2026-04-11",
+      "tags": [
+        "sports",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „szabadidős sportprogram” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-30",
+      "featured": false,
+      "title": "MINTA 30 – Iskolai rendezvények ismertetése",
+      "date": "2026-04-03",
+      "tags": [
+        "event",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „iskolai rendezvények ismertetése” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-31",
+      "featured": false,
+      "title": "MINTA 31 – Tanulói projektek",
+      "date": "2026-03-26",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „tanulói projektek” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-32",
+      "featured": false,
+      "title": "MINTA 32 – Pedagógiai szakmai nap",
+      "date": "2026-03-18",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „pedagógiai szakmai nap” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-33",
+      "featured": false,
+      "title": "MINTA 33 – Tanulási projektek bemutatása",
+      "date": "2026-03-10",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „tanulási projektek bemutatása” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-34",
+      "featured": false,
+      "title": "MINTA 34 – Digitális tanulási lehetőségek",
+      "date": "2026-03-02",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „digitális tanulási lehetőségek” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "bemutato-hir-35",
+      "featured": false,
+      "title": "MINTA 35 – Könyvtári programötletek",
+      "date": "2026-02-22",
+      "tags": [
+        "studies",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – A(z) „könyvtári programötletek” témakör mintahíre. Nem megtörtént iskolai eseményt vagy hivatalos közlést állít.",
+      "details": [
+        "Ez a bejegyzés kizárólag a Csanádi Sportiskola weboldalának hírfelületeit bemutató próbatartalom.",
+        "A kártya, a részletes adatlap, a keresés, a rendezés, az archívum és a kapcsolódó navigáció működése próbálható ki vele.",
+        "Valós intézményi publikálás előtt ellenőrzött, jóváhagyott szövegre és hiteles megjelenési dátumra kell cserélni."
+      ]
+    },
+    {
+      "id": "etkezesi-rendszer-2026",
+      "featured": true,
+      "title": "Az étkezési rendszer időszakos szünete",
+      "date": "2026-12-22",
+      "endDate": "2026-12-31",
+      "tags": [
+        "announcement"
+      ],
+      "summary": "Az iskolai közlemény szerint a Multischool5 szülői modulja 2026. december 22-én 9:00-tól december 31-én 9:15-ig nem használható rendelésre vagy lemondásra.",
+      "details": [
+        "A 2027. februári étkezés megrendelésére a közlemény szerint 2027. január 7-től nyílik lehetőség.",
+        "Az időponthoz kötött közlemény az érvényesség lejárta után az archívumban marad."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-01",
+      "featured": true,
+      "title": "MINTA 01 – Ügyintézés és elérhetőség",
+      "date": "2026-11-22",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Ügyintézés és elérhetőség tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-02",
+      "featured": true,
+      "title": "MINTA 02 – Étkezési tudnivalók",
+      "date": "2026-11-16",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Étkezési tudnivalók tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-03",
+      "featured": true,
+      "title": "MINTA 03 – Iskolai adminisztráció",
+      "date": "2026-11-10",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Iskolai adminisztráció tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-04",
+      "featured": true,
+      "title": "MINTA 04 – Beiratkozási dokumentumok",
+      "date": "2026-11-04",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Beiratkozási dokumentumok tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-05",
+      "featured": false,
+      "title": "MINTA 05 – Tanévi határidők",
+      "date": "2026-10-29",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Tanévi határidők tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-06",
+      "featured": false,
+      "title": "MINTA 06 – Rendkívüli napok",
+      "date": "2026-10-23",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Rendkívüli napok tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-07",
+      "featured": false,
+      "title": "MINTA 07 – Hiányzás igazolása",
+      "date": "2026-10-17",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Hiányzás igazolása tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-08",
+      "featured": false,
+      "title": "MINTA 08 – Elektronikus ügyintézés",
+      "date": "2026-10-11",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Elektronikus ügyintézés tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-09",
+      "featured": false,
+      "title": "MINTA 09 – Vizsgaügyek",
+      "date": "2026-10-05",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Vizsgaügyek tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-10",
+      "featured": false,
+      "title": "MINTA 10 – Fogadóórák és kapcsolattartás",
+      "date": "2026-09-29",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Fogadóórák és kapcsolattartás tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-11",
+      "featured": false,
+      "title": "MINTA 11 – Könyvtári szolgáltatások",
+      "date": "2026-09-23",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Könyvtári szolgáltatások tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-12",
+      "featured": false,
+      "title": "MINTA 12 – Biztonsági tudnivalók",
+      "date": "2026-09-17",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Biztonsági tudnivalók tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-13",
+      "featured": false,
+      "title": "MINTA 13 – Tanítási rend változása",
+      "date": "2026-09-11",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Tanítási rend változása tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-14",
+      "featured": false,
+      "title": "MINTA 14 – Digitális oktatási felületek",
+      "date": "2026-09-05",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Digitális oktatási felületek tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-15",
+      "featured": false,
+      "title": "MINTA 15 – Ügyintézés és elérhetőség",
+      "date": "2026-08-30",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Ügyintézés és elérhetőség tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-16",
+      "featured": false,
+      "title": "MINTA 16 – Étkezési tudnivalók",
+      "date": "2026-08-24",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Étkezési tudnivalók tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-17",
+      "featured": false,
+      "title": "MINTA 17 – Iskolai adminisztráció",
+      "date": "2026-08-18",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Iskolai adminisztráció tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-18",
+      "featured": false,
+      "title": "MINTA 18 – Beiratkozási dokumentumok",
+      "date": "2026-08-12",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Beiratkozási dokumentumok tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-19",
+      "featured": false,
+      "title": "MINTA 19 – Tanévi határidők",
+      "date": "2026-08-06",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Tanévi határidők tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-20",
+      "featured": false,
+      "title": "MINTA 20 – Rendkívüli napok",
+      "date": "2026-07-31",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Rendkívüli napok tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-21",
+      "featured": false,
+      "title": "MINTA 21 – Hiányzás igazolása",
+      "date": "2026-07-25",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Hiányzás igazolása tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-22",
+      "featured": false,
+      "title": "MINTA 22 – Elektronikus ügyintézés",
+      "date": "2026-07-19",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Elektronikus ügyintézés tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-23",
+      "featured": false,
+      "title": "MINTA 23 – Vizsgaügyek",
+      "date": "2026-07-13",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Vizsgaügyek tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-24",
+      "featured": false,
+      "title": "MINTA 24 – Fogadóórák és kapcsolattartás",
+      "date": "2026-07-07",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Fogadóórák és kapcsolattartás tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-25",
+      "featured": false,
+      "title": "MINTA 25 – Könyvtári szolgáltatások",
+      "date": "2026-07-01",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Könyvtári szolgáltatások tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-26",
+      "featured": false,
+      "title": "MINTA 26 – Biztonsági tudnivalók",
+      "date": "2026-06-25",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Biztonsági tudnivalók tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-27",
+      "featured": false,
+      "title": "MINTA 27 – Tanítási rend változása",
+      "date": "2026-06-19",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Tanítási rend változása tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-28",
+      "featured": false,
+      "title": "MINTA 28 – Digitális oktatási felületek",
+      "date": "2026-06-13",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Digitális oktatási felületek tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-29",
+      "featured": false,
+      "title": "MINTA 29 – Ügyintézés és elérhetőség",
+      "date": "2026-06-07",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Ügyintézés és elérhetőség tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-30",
+      "featured": false,
+      "title": "MINTA 30 – Étkezési tudnivalók",
+      "date": "2026-06-01",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Étkezési tudnivalók tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-31",
+      "featured": false,
+      "title": "MINTA 31 – Iskolai adminisztráció",
+      "date": "2026-05-26",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Iskolai adminisztráció tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-32",
+      "featured": false,
+      "title": "MINTA 32 – Beiratkozási dokumentumok",
+      "date": "2026-05-20",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Beiratkozási dokumentumok tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-33",
+      "featured": false,
+      "title": "MINTA 33 – Tanévi határidők",
+      "date": "2026-05-14",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Tanévi határidők tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-34",
+      "featured": false,
+      "title": "MINTA 34 – Rendkívüli napok",
+      "date": "2026-05-08",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Rendkívüli napok tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-35",
+      "featured": false,
+      "title": "MINTA 35 – Hiányzás igazolása",
+      "date": "2026-05-02",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Hiányzás igazolása tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-36",
+      "featured": false,
+      "title": "MINTA 36 – Elektronikus ügyintézés",
+      "date": "2026-04-26",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Elektronikus ügyintézés tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-37",
+      "featured": false,
+      "title": "MINTA 37 – Vizsgaügyek",
+      "date": "2026-04-20",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Vizsgaügyek tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-38",
+      "featured": false,
+      "title": "MINTA 38 – Fogadóórák és kapcsolattartás",
+      "date": "2026-04-14",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Fogadóórák és kapcsolattartás tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
+      ]
+    },
+    {
+      "id": "bemutato-kozlemeny-39",
+      "featured": false,
+      "title": "MINTA 39 – Könyvtári szolgáltatások",
+      "date": "2026-04-08",
+      "tags": [
+        "announcement",
+        "demo"
+      ],
+      "summary": "BEMUTATÓADAT – Könyvtári szolgáltatások tárgyú próbaközlemény. Nem érvényes iskolai intézkedés vagy felhívás.",
+      "details": [
+        "Ez a kizárólag tesztelésre szolgáló közlemény nem tartalmaz hivatalos feladatot, határidőt vagy kötelezettséget.",
+        "A közleménygyűjtemény, a kiemelt hírpanel, a részletes adatlap és a kereső felületeinek ellenőrzéséhez készült.",
+        "Éles közzététel előtt hiteles, megfelelően jóváhagyott intézményi tartalomra kell cserélni vagy el kell távolítani."
       ]
     }
   ],
@@ -5789,7 +6949,7 @@
   },
   "documentCenter": {
     "eyebrow": "INTÉZMÉNYI DOKUMENTUMTÁR",
-    "intro": "Az ellenőrzött, megtekinthető fájlokat az oldalon belül olvashatod. A feltöltésre váró hivatalos szabályzatokat nem tüntetjük fel közzétett dokumentumként.",
+    "intro": "Kereshető, kategorizált dokumentumtár saját, oldalon belüli nézegetővel. A technikai segédletek megtekinthetők; a hivatalos szabályzatok és közzétételi anyagok feltöltésre váróként szerepelnek, amíg a hiteles fájlok rendelkezésre nem állnak.",
     "searchPlaceholder": "Keress címre, tartalomra, kulcsszóra…",
     "categories": [
       {
@@ -5991,6 +7151,66 @@
           "felvételi",
           "hivatalos",
           "feltöltésre vár"
+        ]
+      },
+      {
+        "id": "honlap-technikai-impresszum",
+        "category": "organization",
+        "title": "Honlaptechnikai impresszum",
+        "summary": "Az intézményi honlap technikai és tájékoztató jellegű impresszuma, nem hivatalos szervezeti közzétételi lista.",
+        "kind": "txt",
+        "status": "available",
+        "file": "./shared/assets/documents/honlap_technikai_impresszum.txt",
+        "date": "2026-11-23",
+        "tags": [
+          "fejlesztési segédlet",
+          "honlap",
+          "technikai"
+        ]
+      },
+      {
+        "id": "adatvedelmi-technikai-ismerteto",
+        "category": "privacy",
+        "title": "Adatvédelem – technikai ismertető",
+        "summary": "A honlap működéséhez kapcsolódó adatvédelmi tudnivalók; nem helyettesíti az intézmény hivatalos adatkezelési tájékoztatóját.",
+        "kind": "txt",
+        "status": "available",
+        "file": "./shared/assets/documents/adatvedelmi_technikai_ismerteto.txt",
+        "date": "2026-11-23",
+        "tags": [
+          "fejlesztési segédlet",
+          "honlap",
+          "technikai"
+        ]
+      },
+      {
+        "id": "akadalymentesseg-fejlesztesi-allapot",
+        "category": "guides",
+        "title": "Akadálymentesség – fejlesztési állapot",
+        "summary": "A honlap eddig megvalósított akadálymentességi megoldásainak és még szükséges vizsgálatainak leírása.",
+        "kind": "txt",
+        "status": "available",
+        "file": "./shared/assets/documents/akadalymentesseg_fejlesztesi_allapot.txt",
+        "date": "2026-11-23",
+        "tags": [
+          "fejlesztési segédlet",
+          "honlap",
+          "technikai"
+        ]
+      },
+      {
+        "id": "honlap-hasznalati-utmutato",
+        "category": "guides",
+        "title": "A honlap használati útmutatója",
+        "summary": "Részletes felhasználói útmutató a menühöz, kereséshez, hírekhez, naptárhoz és dokumentumnézegetőhöz.",
+        "kind": "txt",
+        "status": "available",
+        "file": "./shared/assets/documents/honlap_hasznalati_utmutato.txt",
+        "date": "2026-11-23",
+        "tags": [
+          "fejlesztési segédlet",
+          "honlap",
+          "technikai"
         ]
       }
     ],
@@ -6215,5 +7435,367 @@
       "Konkrét nyílt napi, szóbeli és sportalkalmassági időpontok",
       "A felvételi és beiratkozási iratok jóváhagyott helyi listája"
     ]
+  },
+  "timetableCenter": {
+    "eyebrow": "CSENGETÉS ÉS ÓRAREND",
+    "title": "Napi időrend és heti órarend",
+    "summary": "A csengetési idősávok az intézmény ismertetett alapadataiból származnak. Az osztályórarendi minták a felület kipróbálására szolgálnak, nem hivatalos órarendek.",
+    "days": [
+      {
+        "id": "mon",
+        "label": "Hétfő",
+        "short": "H"
+      },
+      {
+        "id": "tue",
+        "label": "Kedd",
+        "short": "K"
+      },
+      {
+        "id": "wed",
+        "label": "Szerda",
+        "short": "Sze"
+      },
+      {
+        "id": "thu",
+        "label": "Csütörtök",
+        "short": "Cs"
+      },
+      {
+        "id": "fri",
+        "label": "Péntek",
+        "short": "P"
+      }
+    ],
+    "classes": [
+      {
+        "id": "demo-1",
+        "label": "Bemutató órarend 1",
+        "verified": false,
+        "description": "KIZÁRÓLAG MINTA – nem intézményi, osztály- vagy tanulóspecifikus órarend.",
+        "days": {
+          "mon": [
+            "Magyar nyelv és irodalom",
+            "Matematika",
+            "Digitális kultúra",
+            "Történelem",
+            "Testnevelés",
+            "Idegen nyelv",
+            "Természettudomány",
+            "Osztályfőnöki"
+          ],
+          "tue": [
+            "Matematika",
+            "Testnevelés",
+            "Magyar nyelv és irodalom",
+            "Idegen nyelv",
+            "Digitális kultúra",
+            "Földrajz",
+            "Közösségi program",
+            "Tanulásmódszertan"
+          ],
+          "wed": [
+            "Idegen nyelv",
+            "Magyar nyelv és irodalom",
+            "Matematika",
+            "Testnevelés",
+            "Természettudomány",
+            "Digitális kultúra",
+            "Projektmunka",
+            "Tanulószoba"
+          ],
+          "thu": [
+            "Történelem",
+            "Matematika",
+            "Magyar nyelv és irodalom",
+            "Idegen nyelv",
+            "Testnevelés",
+            "Digitális kultúra",
+            "Közösségi foglalkozás",
+            "Sportelmélet"
+          ],
+          "fri": [
+            "Matematika",
+            "Digitális kultúra",
+            "Magyar nyelv és irodalom",
+            "Testnevelés",
+            "Idegen nyelv",
+            "Önálló tanulás",
+            "Sportismeret",
+            "—"
+          ]
+        }
+      },
+      {
+        "id": "demo-2",
+        "label": "Bemutató órarend 2",
+        "verified": false,
+        "description": "KIZÁRÓLAG MINTA – nem intézményi, osztály- vagy tanulóspecifikus órarend.",
+        "days": {
+          "mon": [
+            "Történelem",
+            "Testnevelés",
+            "Idegen nyelv",
+            "Természettudomány",
+            "Osztályfőnöki",
+            "Magyar nyelv és irodalom",
+            "Matematika",
+            "Digitális kultúra"
+          ],
+          "tue": [
+            "Idegen nyelv",
+            "Digitális kultúra",
+            "Földrajz",
+            "Közösségi program",
+            "Tanulásmódszertan",
+            "Matematika",
+            "Testnevelés",
+            "Magyar nyelv és irodalom"
+          ],
+          "wed": [
+            "Testnevelés",
+            "Természettudomány",
+            "Digitális kultúra",
+            "Projektmunka",
+            "Tanulószoba",
+            "Idegen nyelv",
+            "Magyar nyelv és irodalom",
+            "Matematika"
+          ],
+          "thu": [
+            "Idegen nyelv",
+            "Testnevelés",
+            "Digitális kultúra",
+            "Közösségi foglalkozás",
+            "Sportelmélet",
+            "Történelem",
+            "Matematika",
+            "Magyar nyelv és irodalom"
+          ],
+          "fri": [
+            "Testnevelés",
+            "Idegen nyelv",
+            "Önálló tanulás",
+            "Sportismeret",
+            "—",
+            "Matematika",
+            "—",
+            "—"
+          ]
+        }
+      }
+    ],
+    "emptyLabel": "Nincs még feltöltött és jóváhagyott osztályórend.",
+    "sourceNote": "Az órák időpontjai az iskola általános csengetési rendjét követik. A rendkívüli napok és az osztályonkénti változások intézményi megerősítés nélkül nem jelenhetnek meg tényként.",
+    "officialHref": "https://csanadi-bp.edu.hu/csengetes.html",
+    "updateStatus": "A csengetési idők a hivatalos intézményi oldalon ellenőrizve (2026. 11. 23.); a mintaként szereplő osztályórarendek nem valós adatok."
+  },
+  "featureCenters": {
+    "education": {
+      "eyebrow": "KÉPZÉSEK ÉS TANULÁSI UTAK",
+      "title": "Képzések egy helyen",
+      "intro": "Az általános iskolai és a négy évfolyamos gimnáziumi tanulmányi út bemutatása. A részletes felvételi feltételeket az aktuális intézményi tájékoztató pontosítja.",
+      "note": "A képzési szerkezet bemutatása nem helyettesíti az aktuális hivatalos felvételi tájékoztatót; tagozatkódot, férőhelyszámot és pontszámítást csak ellenőrzött forrásból lehet közzétenni.",
+      "programs": [
+        {
+          "id": "primary",
+          "name": "Általános iskola",
+          "level": "1–8. évfolyam",
+          "summary": "Alapozó és készségfejlesztő tanulási út, az iskolai és sportos nevelés összekapcsolásával.",
+          "points": [
+            "Alapvető készségek és tudásterületek fejlesztése",
+            "Fokozatos felkészülés a továbbtanulásra",
+            "Mozgás és közösségi nevelés iskolai keretben"
+          ],
+          "pageId": "admission-primary",
+          "related": [
+            "education-years",
+            "education-digital",
+            "admission-primary"
+          ]
+        },
+        {
+          "id": "secondary",
+          "name": "Gimnázium",
+          "level": "9–12. évfolyam",
+          "summary": "Négyévfolyamos középiskolai út az érettségire és a továbbtanulásra készülőknek, sportiskolai szemlélettel.",
+          "points": [
+            "Érettségire felkészítő általános műveltség",
+            "Tanulmányi és sporttevékenység összehangolása",
+            "A felvételihez intézményi feltételek és aktuális dokumentumok tartozhatnak"
+          ],
+          "pageId": "admission-secondary",
+          "related": [
+            "education-exams",
+            "admission-guide",
+            "admission-secondary"
+          ]
+        }
+      ],
+      "pillars": [
+        {
+          "title": "Sport és tanulás",
+          "description": "Az iskola sportiskolai profiljának és a tanulás támogatásának közös szemlélete.",
+          "pageId": "sports-disciplines"
+        },
+        {
+          "title": "Digitális tanulás",
+          "description": "Tanulói eszközök és felelős online együttműködés.",
+          "pageId": "education-digital"
+        },
+        {
+          "title": "Felvételi útmutató",
+          "description": "Határidők és követelmények az aktuálisan ellenőrzött tájékoztatás szerint.",
+          "pageId": "admission-guide"
+        }
+      ],
+      "source": {
+        "label": "KSI – a Csanádi iskola és a sport együttműködésének bemutatása",
+        "url": "https://ksi.hu/hirek/kozpont/egyuttmukodes-a-csanadi-arpad-altalanos-iskola-es-gimnaziummal"
+      }
+    },
+    "sports": {
+      "eyebrow": "SPORTÁGAK ÉS HELYSZÍNEK",
+      "title": "Sportági felfedező",
+      "intro": "Képes bemutató a weboldal sporttémájú illusztrációiból, kapcsolódó iskolai tartalommal. A bemutatott sportágak nem jelentenek ellenőrzött, aktuálisan meghirdetett sportági szakosztálylistát.",
+      "note": "A képek illusztrációk. Aktuális edzési helyszínekről, időpontokról és sportági kínálatról kizárólag jóváhagyott intézményi tájékoztató adhat hiteles információt.",
+      "topics": [
+        {
+          "id": "atletika",
+          "name": "Atlétika",
+          "summary": "Futás, ugrás, dobás és az általános mozgáskultúra témája.",
+          "mediaId": "atletika"
+        },
+        {
+          "id": "labdarugas",
+          "name": "Labdarúgás",
+          "summary": "Csapatjáték, együttműködés és állóképesség.",
+          "mediaId": "labdarugas"
+        },
+        {
+          "id": "roplabda",
+          "name": "Röplabda",
+          "summary": "Labdás ügyesség, összhang és csapatkommunikáció.",
+          "mediaId": "roplabda"
+        },
+        {
+          "id": "kezilabda",
+          "name": "Kézilabda",
+          "summary": "Gyors döntések, térérzékelés és együttműködés.",
+          "mediaId": "kezilabda"
+        },
+        {
+          "id": "uszas",
+          "name": "Úszás",
+          "summary": "Technika, vízbiztonság és az egészséges mozgás.",
+          "mediaId": "uszas"
+        },
+        {
+          "id": "asztalitenisz",
+          "name": "Asztalitenisz",
+          "summary": "Koncentráció, reakcióidő és mozgáskoordináció.",
+          "mediaId": "asztalitenisz"
+        }
+      ],
+      "facilities": [
+        {
+          "id": "sportterek",
+          "title": "Sportoláshoz kapcsolódó terek",
+          "description": "Az intézmény ténylegesen használható sporthelyszíneinek naprakész, ellenőrzött listáját az iskola tudja jóváhagyni.",
+          "status": "Megerősítésre vár",
+          "pageId": "sports-facilities"
+        },
+        {
+          "id": "edzesi-helyszin",
+          "title": "Edzési helyszínek és időbeosztás",
+          "description": "A sportágakhoz kapcsolódó aktuális teremhasználat és külső helyszínek nincsenek hitelesítve ebben a csomagban.",
+          "status": "Megerősítésre vár",
+          "pageId": "sports-training"
+        },
+        {
+          "id": "sporteszkozok",
+          "title": "Eszközhasználat és biztonság",
+          "description": "Az intézményi helyiségek és sporteszközök használatát a hatályos házirend és pedagógusi utasítások határozzák meg.",
+          "status": "Szabályzati forrás szükséges",
+          "pageId": "information-documents"
+        }
+      ]
+    },
+    "exams": {
+      "eyebrow": "TANÉV ÉS VIZSGÁK",
+      "title": "Tanévi vizsga- és eseményáttekintő",
+      "intro": "A tanév fontos időpontjai a központi eseménynaptárból érkeznek. A vizsganapok, vizsgaidőszakok és egyéb iskolai alkalmak ugyanabból az adatforrásból jelennek meg.",
+      "note": "Az időszak kezdete nem jelenti azt, hogy minden köztes napon van vizsga. A pontos helyszínt, tanulói beosztást és követelményeket az iskola külön közölheti.",
+      "filters": [
+        {
+          "id": "all",
+          "label": "Minden esemény"
+        },
+        {
+          "id": "exam",
+          "label": "Vizsgák és mérések"
+        },
+        {
+          "id": "school",
+          "label": "Tanévi események"
+        },
+        {
+          "id": "holiday",
+          "label": "Szünetek"
+        }
+      ],
+      "links": [
+        {
+          "label": "Teljes eseménynaptár",
+          "pageId": "news-calendar"
+        },
+        {
+          "label": "Hivatalos dokumentumok",
+          "pageId": "information-documents"
+        },
+        {
+          "label": "Felvételi határidők",
+          "pageId": "admission-deadlines"
+        }
+      ]
+    },
+    "community": {
+      "eyebrow": "ISKOLAI ÉLET ÉS PROGRAMOK",
+      "title": "Közösségünk eseményei",
+      "intro": "Iskolai, közösségi és sportesemények a tanévnaptárból, illusztrációs képekkel és kapcsolódó híroldalakkal.",
+      "note": "A galéria képei illusztrációk; nem egy adott esemény dokumentált fényképei. A 40+40 bemutatóhír nem jelenik meg hiteles intézményi beszámolóként.",
+      "filters": [
+        {
+          "id": "all",
+          "label": "Minden program"
+        },
+        {
+          "id": "school",
+          "label": "Iskolai alkalmak"
+        },
+        {
+          "id": "community",
+          "label": "Közösségi programok"
+        },
+        {
+          "id": "sports",
+          "label": "Sportesemények"
+        }
+      ],
+      "links": [
+        {
+          "label": "Tanévi naptár",
+          "pageId": "news-calendar"
+        },
+        {
+          "label": "Médiaközpont",
+          "pageId": "sports-gallery"
+        },
+        {
+          "label": "Közösségi szolgálat",
+          "pageId": "information-service"
+        }
+      ]
+    }
   }
 }

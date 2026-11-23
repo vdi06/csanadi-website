@@ -1,0 +1,11 @@
+ADATVÉDELEM – TECHNIKAI ISMERTETŐ
+
+A honlap statikus JSON-alapú megjelenítést használ. A nyilvános felület nem igényel bejelentkezést és nem kér fel személyes adatok megadására szolgáló űrlapot.
+
+A felhasználó választott megjelenési módját (automatikus, világos vagy sötét) a böngésző a saját helyi tárhelyében tárolhatja. Ez nem azonos egy intézményi felhasználói fiókkal.
+
+A külső szolgáltatásokra mutató hivatkozások, a CDN-ről letöltött Bootstrap erőforrások és a külső keresőszolgáltatások saját adatkezelési feltételekkel járhatnak.
+
+A dokumentumnézegető a csomagban található megtekinthető dokumentumokat az oldalon belül jeleníti meg. A dokumentumok hitelességét az intézményi közzététel részeként kell ellenőrizni.
+
+Ez a dokumentum technikai segédlet. A hatályos, jóváhagyott adatkezelési szabályzatot és intézményi adatkezelési tájékoztatót külön kell feltölteni.

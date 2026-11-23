@@ -1,6 +1,6 @@
-import { element } from "./dom.js?v=2.41";
-import { trapTab } from "./focus.js?v=2.41";
-import { isolateModal } from "./modal.js?v=2.41";
+import { element } from "./dom.js?v=2.43";
+import { trapTab } from "./focus.js?v=2.43";
+import { isolateModal } from "./modal.js?v=2.43";
 
 /** Közös JSON-adatfolyam: a platformok csak a lábléc elrendezését stílusozzák.
  * Az adatok csak ellenőrzött, teljes válasz esetén cserélődnek le. */
@@ -68,7 +68,10 @@ export function makeFooter(config, platform) {
     element("div", { className: "footer-contact-main" }, brand, contactTitle, address, email));
   const infoPanel = element("section", { className: "footer-links",
     attributes: { "aria-label": first.linksTitle } },
-    linksTitle, notices, updated, checked, version);
+    linksTitle,
+    element("a",{className:"footer-documents-link",text:"Dokumentumok és honlapsegédletek",
+      attributes:{href:"#/oldal/information-documents"}}),
+    updated, checked, version);
   let tabs;
   let contactTab;
   let infoTab;
@@ -177,7 +180,7 @@ export function makeFooter(config, platform) {
     email.setAttribute("href", `mailto:${data.email}`);
     linksTitle.textContent = data.linksTitle;
     if (infoTab) infoTab.textContent = data.linksTitle;
-    notices.replaceChildren(...items);
+    notices.replaceChildren(...items); // Az alsó külön tájékoztató ikonblokk megszűnt.
     noticeById = nextNotices;
     triggerById = nextTriggers;
     if (currentNoticeId) {

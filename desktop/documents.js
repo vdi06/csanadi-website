@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.41";
-import { checkedDocumentCenter,documentResults } from "../shared/js/document-data.js?v=2.41";
-import { createDocumentReader } from "../shared/js/document-reader.js?v=2.41";
+import { element } from "../shared/js/dom.js?v=2.43";
+import { checkedDocumentCenter,documentResults } from "../shared/js/document-data.js?v=2.43";
+import { createDocumentReader } from "../shared/js/document-reader.js?v=2.43";
 const el=element;
 /** Asztali dokumentumközpont: oldalsáv, többoszlopos rács, saját PDF/TXT-olvasó. */
 export function createDesktopDocuments(config){

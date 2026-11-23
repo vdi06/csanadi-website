@@ -1,0 +1,11 @@
+AKADÁLYMENTESSÉG – FEJLESZTÉSI ÁLLAPOT
+
+A weboldal rendelkezik főtartalomra ugró hivatkozással, látható billentyűzetes fókuszjelölésekkel és csökkentett mozgást figyelembe vevő megjelenítéssel.
+
+A főoldali hárompaneles váltó kézzel is kezelhető. A naptárnapok eseményrészleteit képernyőtől függetlenül elkülönített lebegő ablak jeleníti meg; a dokumentumok saját olvasóablakot használnak.
+
+A világos és sötét témában a fontos szövegek kontrasztját fejlesztői tesztek ellenőrzik. A hírek és próbaközlemények megjelenítésében a szövegek HTML-ként nem futtathatók.
+
+Nyitott ellenőrzések: valós eszközös képernyőolvasó-próbák, az összes tartalmi kép megfelelő helyettesítő szövege, az éles CDN-elérhetőség és a teljes WCAG 2.2 AA audit.
+
+Ez nem hivatalos akadálymentességi nyilatkozat vagy megfelelőségi tanúsítvány. Intézményi jóváhagyás és külön hivatalos nyilatkozat szükséges.
