@@ -5,6 +5,7 @@
   background: radial-gradient(ellipse at 50% 0%,
     color-mix(in srgb,var(--background) 55%,var(--surface)),var(--background) 65%);
   color:var(--text);
+  animation:home-reveal var(--home-reveal-duration,480ms) ease-out both;
 }
 .desktop-header {
   position:relative; z-index:10; width:100%;
@@ -128,16 +129,27 @@
   .desktop-page-cards { gap:16px; }
   .desktop-page-card { flex-basis:310px; }
 }
-/* 2.43 finomítás – balra rendezett, keret nélküli, árnyékolt oldalvége. */
-.desktop-footer { padding:clamp(32px,3.5vw,54px) clamp(22px,4vw,64px) clamp(36px,4vw,58px); }
-.desktop-footer .footer-inner { width:min(100%,1120px); display:block; text-align:left; }
-.desktop-footer .footer-contact { max-width:740px; }
-.desktop-footer .footer-brand {font-size:clamp(24px,2.4vw,33px);line-height:1.1;margin-bottom:6px;}
-.desktop-footer .footer-inner h2 {font-size:14px;font-weight:850;letter-spacing:.04em;}
+/* 2.47 – kompakt, középre rendezett, keret nélküli oldalzáró sáv. */
+.desktop-footer {padding:13px clamp(16px,3vw,42px) 14px;}
+.desktop-footer .footer-inner {width:min(100%,1300px);text-align:center;}
+.desktop-footer .footer-contact {width:100%;max-width:none;align-items:center;gap:6px;}
+.desktop-footer .footer-contact-main {
+  display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;
+  column-gap:clamp(12px,2.2vw,28px);row-gap:3px;
+}
+.desktop-footer .footer-brand {font-size:clamp(21px,2vw,25px);line-height:1.15;margin:0;}
+.desktop-footer .footer-inner h2 {font-size:13px;font-weight:800;letter-spacing:.04em;}
 .desktop-footer .footer-contact-main p:not(.footer-brand),
-.desktop-footer .footer-contact-main a {font-size:13px;line-height:1.55;}
-.desktop-footer .footer-status {margin-top:8px;gap:5px;}
-.desktop-footer .footer-status p {font-size:12px;}
+.desktop-footer .footer-contact-main a {font-size:12px;line-height:1.3;}
+.desktop-footer .footer-status {
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;
+  column-gap:clamp(12px,2.4vw,32px);row-gap:2px;margin:0;
+}
+.desktop-footer .footer-status p {font-size:11px;line-height:1.3;text-align:center;}
+@media (max-width:800px) {
+  .desktop-footer {padding-block:11px 12px;}
+  .desktop-footer .footer-contact-main {column-gap:12px;}
+}
 
 /* Asztali teljes képes nyitás: a teljes fotó kitart a következő tartalomig,
    a nagy címer a ragadós szakasz legvégén kerül a fejlécbe. */
@@ -1097,4 +1109,36 @@
 @media(max-width:980px){.desktop-premium-showcase .media-premium-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.desktop-premium-showcase .media-premium-tile:first-child{grid-column:span 2;}}
 @media(max-width:650px){.desktop-premium-showcase .media-premium-grid{grid-template-columns:1fr;}.desktop-premium-showcase .media-premium-tile:first-child{grid-column:auto;}.desktop-premium-showcase .media-premium-tile:first-child .media-premium-cover{aspect-ratio:16/10;}}
 /* 2.46 asztali oldalak önálló, robotoknak olvasható megosztási útvonala. */
-.desktop-page-preview .page-share-preview{display:table;max-width:100%;margin:0 auto 20px;color:var(--text);font-size:13px;font-weight:800;text-underline-offset:4px;}
+
+/* 2.47: a galéria egyszeri bevezetője után az album és a képböngésző önálló szakasz. */
+.media-browser-title { font-size:clamp(1.18rem,2.1vw,1.55rem); font-weight:800; margin:0 0 1rem; text-align:center; }
+.desktop-media-browser { width:100%; margin-block:clamp(1.4rem,3vw,2.4rem) 0; }
+.desktop-premium-showcase { margin-top:.75rem; }
+
+/* 2.48 – egységes asztali aloldalrács, ritmus és fókusz. */
+.desktop-page-preview {width:min(1160px,calc(100% - 40px));margin:clamp(27px,4vw,55px) auto 42px;}
+.desktop-page-title {max-width:1060px;margin:0 auto 16px;letter-spacing:-.018em;text-wrap:balance;}
+.desktop-page-intro {max-width:860px;margin:0 auto 24px;line-height:1.66;text-wrap:pretty;}
+.desktop-page-cards {gap:clamp(14px,1.8vw,22px);justify-content:center;align-items:stretch;}
+.desktop-page-card {flex:1 1 350px;max-width:555px;min-width:0;border-radius:20px;}
+.desktop-page-card:only-child {flex:0 1 920px;max-width:920px;}
+.desktop-page-card-body {padding:clamp(19px,2vw,27px);}
+.desktop-page-card-title {max-width:830px;margin-inline:auto;text-wrap:balance;}
+.desktop-page-card-summary {max-width:770px;margin:0 auto 18px;line-height:1.63;}
+.desktop-page-card-group-title {text-wrap:balance;}
+.desktop-page-card-point {padding-top:19px;line-height:1.56;}
+.desktop-page-card-details {line-height:1.61;}
+.desktop-page-card :is(a,summary):focus-visible {outline:3px solid var(--accent);outline-offset:4px;border-radius:4px;}
+.desktop-page-card :is(.desktop-page-kind-gallery) {max-width:100%;}
+.desktop-page-preview + .desktop-feature-center,.desktop-page-preview + .desktop-document-center {margin-top:14px;}
+@media(min-width:1400px){.desktop-page-preview{width:min(1160px,calc(100% - 80px));}}
+@media(prefers-reduced-motion:no-preference){.desktop-page-card{transition:box-shadow .2s ease,transform .2s ease;}.desktop-page-card:hover{box-shadow:0 20px 42px rgba(0,0,0,.2);transform:translateY(-2px);}}
+@media(prefers-reduced-motion:reduce){.desktop-page-card{transition:none;transform:none!important;}}
+/* 2.48: speciális oldalközpontok ugyanahhoz az asztali tartalomtengelyhez igazodnak. */
+.desktop-app :is(.desktop-feature-center,.desktop-media-center,.desktop-document-center,.desktop-admission-center,.desktop-timetable-center) {
+  width:min(1160px,calc(100% - 40px));max-width:100%;margin-left:auto;margin-right:auto;min-width:0;
+}
+.desktop-app :is(.desktop-feature-center,.desktop-document-center,.desktop-media-center,.desktop-admission-center) h2 {
+  font-size:clamp(23px,2.2vw,31px);line-height:1.23;text-wrap:balance;
+}
+.desktop-app :is(.desktop-feature-center,.desktop-document-center,.desktop-media-center,.desktop-admission-center) :is(input,select,button) {max-width:100%;}

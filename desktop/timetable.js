@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.46";
-import { checkedTimetable, currentBell, budapestClock } from "../shared/js/timetable-data.js?v=2.46";
+import { element } from "../shared/js/dom.js?v=2.48";
+import { checkedTimetable, currentBell, budapestClock } from "../shared/js/timetable-data.js?v=2.48";
 const el=element;
 /** Asztali időrend: két blokk – hiteles csengetés és jól jelölt bemutató-órarend. */
 export function createDesktopTimetable(config){
@@ -37,7 +37,7 @@ export function createDesktopTimetable(config){
       el("strong",{text:"Mai csengetési állapot"}),el("span",{text:status.text}),
       el("small",{text:"A szokásos csengetési idők alapján; rendkívüli napokon eltérhet."})),
     el("section",{className:"timetable-panel"},el("h3",{text:"Általános csengetési rend"}),timing,
-      el("a",{className:"timetable-source",text:"Az iskola hivatalos csengetési rendje",attributes:{href:settings.officialHref,rel:"noopener noreferrer",target:"_blank"}})),
+      el("p",{className:"timetable-source-note",text:"Csengetési idők – helyben megjelenítve"})),
     el("section",{className:"timetable-panel"},
       el("div",{className:"desktop-timetable-pick"},el("h3",{text:"Heti órarend – bemutató nézet"}),picker),
       example,grid),el("p",{className:"timetable-source-note",text:settings.sourceNote}));

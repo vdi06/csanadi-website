@@ -74,7 +74,7 @@ def picture(kind,slug,title,subtitle,cover=None,check=False):
         d.text((70,y),line,font=pick_font(54,True),fill=white,stroke_width=1,stroke_fill=(4,16,32,255));y+=69
     d.line((72,548,335,548),fill=gold,width=5)
     d.text((72,562),meta_text(subtitle,67),font=pick_font(21),fill=grey)
-    d.text((850,581),'2.46 · ELŐNÉZET',font=pick_font(17,True),fill=gold)
+    d.text((850,581),CFG['release']+' · ELŐNÉZET',font=pick_font(17,True),fill=gold)
     canvas.convert('RGB').save(output,format='JPEG',quality=86,optimize=True,subsampling=0)
     return './'+relative
 
@@ -116,7 +116,7 @@ footer{{background:#061522;padding:26px 20px;text-align:center;color:#c2ced7;fon
 <p>{html.escape(intro)}</p><a class="action" href="{attr(app_link)}">Megnyitás a Csanádi honlapon</a>
 {body}
 <p class="notice">{html.escape(CFG['seo']['shareDisclaimer'])}</p></main>
-<footer>{html.escape(CFG['site']['fullName'])} · 2.46</footer></body></html>
+<footer>{html.escape(CFG['site']['fullName'])} · {CFG['release']}</footer></body></html>
 '''
 
 def publish(output,source,check=False):
@@ -197,7 +197,7 @@ def generate(base,check):
     sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'  <url><loc>{xml_escape(url)}</loc></url>\n' for url in urls)+'</urlset>\n'
     publish(ROOT/'sitemap.xml',sitemap,check)
     publish(ROOT/'robots.txt','User-agent: *\nAllow: /\nSitemap: '+urljoin(base,'sitemap.xml')+'\n',check)
-    print(f'2.46 SEO: {counts["page"]} önálló oldal + {counts["album"]} album, {len(urls)} sitemap-URL, {len(urls)} megosztási kép – '+('ellenőrizve' if check else 'generálva')+('. Indexelés engedélyezve.' if indexable else '. Tesztkiadás: noindex.'))
+    print(f'{CFG["release"]} SEO: {counts["page"]} önálló oldal + {counts["album"]} album, {len(urls)} sitemap-URL, {len(urls)} megosztási kép – '+('ellenőrizve' if check else 'generálva')+('. Indexelés engedélyezve.' if indexable else '. Tesztkiadás: noindex.'))
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser(description=__doc__)

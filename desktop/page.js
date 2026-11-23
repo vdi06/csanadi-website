@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.46";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.46";
+import { element } from "../shared/js/dom.js?v=2.48";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.48";
 
 const cls = (part) => `desktop-page-${part}`;
 const detailsList = (point) => element("ul", { className:cls("card-details") },
@@ -74,16 +74,14 @@ function cardElement(card, config, page) {
 }
 
 /** Asztali, tartalomtípushoz alkalmazkodó, JSON-vezérelt Bootstrap-komponensek. */
-export function createDesktopPage(config, id, { hideHeading = false, hideCards = false, extraContent = null } = {}) {
+export function createDesktopPage(config, id, { hideHeading = false, hideIntro = false, hideCards = false, extraContent = null } = {}) {
   const page = getMenuPage(config,id);
   if (!page) throw new Error("Ismeretlen asztali oldalazonosító.");
   return element("article", { className:cls("preview") },
     ...(hideHeading ? [] : [element("h1", { className:cls("title"), text:page.title,
       attributes:{tabindex:"-1"} })]),
-    element("p", { className:cls("intro"), text:page.intro }),
-    element("a", { className:"page-share-preview", text:"Oldal megosztási előnézete",
-      attributes:{ href:`./share/page/${id}/`,"aria-label":`${page.title} – megosztási előnézet megnyitása` } }),
+    ...(hideIntro ? [] : [element("p", { className:cls("intro"), text:page.intro })]),
     ...(extraContent ? [extraContent] : []),
     ...(hideCards ? [] : [element("div", { className:`${cls("cards")} row` },
-      ...page.items.map((card) => cardElement(card,config,page)))]));;
+      ...page.items.map((card) => cardElement(card,config,page)))]));
 }

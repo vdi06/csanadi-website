@@ -7,27 +7,34 @@ import { execFileSync } from 'node:child_process';
 const root=resolve(fileURLToPath(new URL('..',import.meta.url)));
 const load=(file)=>readFileSync(join(root,file),'utf8');
 const data=JSON.parse(load('shared/data/site.json'));
-assert.equal(data.release,'2.46');
+assert.equal(data.release,'2.48');
 assert.equal(data.schemaVersion,'2.30');
 assert.equal(data.routes.home,'#/kezdolap');
-assert.equal(data.routes.gate,undefined);
-assert.equal(data.gate,undefined);
-
+assert.equal(data.routes.gate,'#/');
+assert.equal(data.gate.frames,30);
+assert.equal(data.gate.desktopDurationMs,2250);
+assert.equal(data.gate.mobileDurationMs,1750);
+assert.ok(!('skipLabel' in data.gate) && !('skipSymbol' in data.gate));
 const walk=(dir)=>readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(join(dir,e.name)):[relative(root,join(dir,e.name)).split(sep).join('/')]);
 const allFiles=walk(root);
-assert.ok(!allFiles.includes('shared/js/gate.js'));
-assert.ok(!allFiles.some(f=>f.includes('/gate-frames/')));
+assert.ok(allFiles.includes('shared/js/gate.js'));
+assert.equal(allFiles.filter(f=>f.startsWith('shared/assets/media/web/gate-frames/gate-')&&f.endsWith('.webp')).length,60);
+const gate=load('shared/js/gate.js');
+assert.ok(gate.includes('gate-door-button'));
+assert.ok(gate.includes('startOpening'));
+assert.ok(!gate.includes('skipButton')&&!gate.includes('gate-skip'));
 for(const p of ['desktop/app.js','mobile/app.js']) {
-  assert.ok(!load(p).includes('mountGate'));
-  assert.ok(!load(p).includes('page === "gate"'));
-  assert.ok(!load(p).includes('home-reveal'));
+  assert.ok(load(p).includes('mountGate'));
+  assert.ok(load(p).includes('page === "gate"'));
+  assert.ok(load(p).includes('config.routes.home'));
 }
-assert.ok(!load('shared/js/entry.js').includes('"gate"'));
-assert.ok(load('shared/js/entry.js').includes(' : "home"'));
-assert.ok(!load('shared/css/base.css').includes('.gate-screen'));
-assert.ok(!load('desktop/styles.css').includes('animation:home-reveal'));
-assert.ok(!load('mobile/styles.css').includes('animation: home-reveal'));
-console.log('✓ Kapu kiiktatva: közvetlen kezdőlap, nincs 30 képkocka vagy belépőáttűnés');
+assert.ok(load('shared/js/entry.js').includes('return "gate"'));
+assert.ok(load('shared/js/entry.js').includes('config.routes.gate'));
+assert.ok(load('shared/css/base.css').includes('.gate-screen'));
+assert.ok(!load('shared/css/base.css').includes('.gate-skip'));
+assert.ok(load('desktop/styles.css').includes('animation:home-reveal'));
+assert.ok(load('mobile/styles.css').includes('animation: home-reveal'));
+console.log('✓ Kapu: eredeti 30+30 animációs kép, kattintásos/érintéses belépés, kihagyó gomb nélkül');
 assert.equal(allFiles.filter(f=>f.endsWith('.html')&&!f.startsWith('share/')).length,1);
 assert.equal(allFiles.filter(f=>f.startsWith('share/')&&f.endsWith('index.html')).length,63);
 assert.ok(allFiles.includes('index.html'));
@@ -42,9 +49,19 @@ for(const file of allFiles.filter(p=>/^(desktop|mobile|shared\/js)\/.*\.js$/.tes
 const html=load('index.html');
 assert.match(html,/bootstrap@5\.3\.8\/dist\/css\/bootstrap\.min\.css/);
 assert.match(html,/bootstrap@5\.3\.8\/dist\/js\/bootstrap\.bundle\.min\.js/);
-assert.match(html,/shared\/js\/entry\.js\?v=2\.46/);
-assert.match(html,/shared\/css\/base\.css\?v=2\.46/);
-console.log('✓ Kiadás: HTML, verzióhoz kötött Bootstrap CDN, 2.46-os JS/CSS importok, összes JS-szintaxis');
+assert.match(html,/shared\/js\/entry\.js\?v=2\.48/);
+assert.match(html,/shared\/css\/base\.css\?v=2\.48/);
+console.log('✓ Kiadás: HTML, verzióhoz kötött Bootstrap CDN, 2.48-as JS/CSS importok, összes JS-szintaxis');
+// Ne maradjon a régi intézményi honlapra mutató URL sem az adatokban,
+// sem a látogatók által betöltött oldalakban és modulokban.
+const forbiddenSchoolHost=['csanadi-bp','edu','hu'].join('.').replace('.edu.hu','.edu.hu');
+for(const file of allFiles.filter(p=>!p.startsWith('tools/') && /\.(html|js|json|css|xml|md|txt)$/.test(p))){
+ assert.ok(!load(file).includes(forbiddenSchoolHost),`Régi honlapra mutató hivatkozás: ${file}`);
+}
+assert.ok(!('officialHref' in data.timetableCenter));
+assert.ok(data.admissionCenter.sources.every(item=>!item.url.includes(forbiddenSchoolHost)));
+console.log('✓ Külső honlaplinkek: régi Csanádi domain kizárva az összes nyilvános fájlból');
+
 
 const {validateMenu,getMenuPage,menuPageHref}=await import('../shared/js/menu-data.js');
 assert.equal(validateMenu(data).length,6);
@@ -128,4 +145,4 @@ assert.ok(load('shared/js/footer.js').includes('footer-status'));
 assert.ok(load('desktop/styles.css').includes('.desktop-document-grid > .document-card:only-child'));
 assert.ok(load('mobile/styles.css').includes('.mobile-document-card:only-child'));
 console.log('✓ Kereső, minta-sportsikerek, egységes lábléc és középre igazított dokumentumtalálat');
-console.log('ÖSSZES 2.46 NODE REGRESSZIÓS TESZT SIKERES');
+console.log('ÖSSZES 2.48 NODE REGRESSZIÓS TESZT SIKERES');

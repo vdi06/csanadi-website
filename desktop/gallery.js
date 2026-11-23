@@ -1,8 +1,8 @@
-import { element } from "../shared/js/dom.js?v=2.46";
-import { checkedMediaCenter, mediaResults } from "../shared/js/media-data.js?v=2.46";
-import { createGalleryDialog } from "../shared/js/gallery-dialog.js?v=2.46";
-import { createAlbumControls, groupedCards, cardImage, allowLocalMediaEditor, createPremiumAlbumShowcase } from "../shared/js/gallery-ui.js?v=2.46";
-import { createMediaEditor } from "../shared/js/media-editor.js?v=2.46";
+import { element } from "../shared/js/dom.js?v=2.48";
+import { checkedMediaCenter, mediaResults } from "../shared/js/media-data.js?v=2.48";
+import { createGalleryDialog } from "../shared/js/gallery-dialog.js?v=2.48";
+import { createAlbumControls, groupedCards, cardImage, allowLocalMediaEditor, createPremiumAlbumShowcase } from "../shared/js/gallery-ui.js?v=2.48";
+import { createMediaEditor } from "../shared/js/media-editor.js?v=2.48";
 const el=element;
 export function createDesktopMedia(config) {
   const settings=checkedMediaCenter(config);
@@ -56,13 +56,12 @@ export function createDesktopMedia(config) {
     resultCount.textContent=`${shown.length} / ${results.length} kép`;
     more.hidden=shown.length>=results.length;
   }
-  section.append(el("div",{className:"desktop-media-lead"},
-    el("p",{className:"desktop-media-eyebrow",text:settings.eyebrow}),
-    el("h2",{text:"Válogass képek és témák között"}),
-    el("p",{text:settings.note})),
-    el("div",{className:"desktop-media-toolbar"},
-      el("label",{className:"visually-hidden",text:settings.searchLabel,attributes:{for:"desktop-media-search"}}),search,
-      categories),el("p",{className:"media-album-disclaimer",text:settings.albumInfo}),showcase.wrapper,albums.group,resultCount,cards,more);
+  section.append(showcase.wrapper,
+    el("section",{className:"desktop-media-browser",attributes:{"aria-label":"Képek keresése és szűrése"}},
+      el("h2",{className:"media-browser-title",text:"Képek keresése és szűrése"}),
+      el("div",{className:"desktop-media-toolbar"},
+        el("label",{className:"visually-hidden",text:settings.searchLabel,attributes:{for:"desktop-media-search"}}),search,
+        categories),albums.group,resultCount,cards,more));
   const editor=allowLocalMediaEditor()?createMediaEditor(section,config,reset):null;
   render();
   if(initial)showcase.openById(initial[1],initial[2]);

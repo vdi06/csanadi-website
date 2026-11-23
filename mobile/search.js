@@ -1,7 +1,7 @@
-import { element } from "../shared/js/dom.js?v=2.46";
-import { trapTab } from "../shared/js/focus.js?v=2.46";
-import { isolateModal } from "../shared/js/modal.js?v=2.46";
-import { filterSearchItems, navLink, searchItems } from "../shared/js/shell.js?v=2.46";
+import { element } from "../shared/js/dom.js?v=2.48";
+import { trapTab } from "../shared/js/focus.js?v=2.48";
+import { isolateModal } from "../shared/js/modal.js?v=2.48";
+import { filterSearchItems, navLink, searchItems } from "../shared/js/shell.js?v=2.48";
 
 /** Mobilos Spotlight: valódi teljes képernyős, háttérhomályosító kereső. */
 export function createMobileSearch(config, trigger, beforeOpen = () => {}) {

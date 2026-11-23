@@ -1,4 +1,4 @@
-import { getMenuPage } from "./menu-data.js?v=2.46";
+import { getMenuPage } from "./menu-data.js?v=2.48";
 
 /** Közös tartalmi szabályok, eltérő mobilos és asztali megjelenítéshez. */
 export const successImageRoot = "./shared/assets/media/web/sport-successes/";

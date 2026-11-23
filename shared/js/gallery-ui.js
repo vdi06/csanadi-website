@@ -1,5 +1,5 @@
-import { element } from "./dom.js?v=2.46";
-import { albumDimensions, mediaGroups, responsiveImageAttributes, premiumAlbumCards } from "./media-data.js?v=2.46";
+import { element } from "./dom.js?v=2.48";
+import { albumDimensions, mediaGroups, responsiveImageAttributes, premiumAlbumCards } from "./media-data.js?v=2.48";
 const el=element;
 export function createAlbumControls(config,platform,change){
   const group=el("div",{className:`${platform}-album-controls media-album-controls`,attributes:{"aria-label":"Albumcsoportok és szűrők"}});
@@ -37,12 +37,11 @@ export function allowLocalMediaEditor(){
 export function createPremiumAlbumShowcase(config,platform,onOpen){
   const settings=config.mediaCenter.premiumAlbums;
   const wrapper=el("section",{className:`media-premium-showcase ${platform}-premium-showcase`,attributes:{"aria-label":"Képalbumok borítói"}});
-  const heading=el("h3",{className:"media-premium-title",text:settings.title});
+  const heading=el("h2",{className:"media-premium-title",text:settings.title});
   const summary=el("p",{className:"media-premium-intro",text:settings.intro});
   const tabs=el("div",{className:"media-premium-tabs",attributes:{role:"group","aria-label":"Albumtípus kiválasztása"}});
   const grid=el("div",{className:"media-premium-grid"});
   const opened=el("div",{className:"media-premium-opened",attributes:{"aria-live":"polite"}});
-  const note=el("p",{className:"media-premium-note",text:settings.disclaimer});
   let dimension="featured",active=null;
   const labels={featured:"Kiemelt",sport:"Sportágak",schoolYear:"Tanévek",event:"Rendezvények",all:"Összes album"};
   function render(){
@@ -61,17 +60,14 @@ export function createPremiumAlbumShowcase(config,platform,onOpen){
           el("strong",{text:album.label}),
           el("span",{className:"media-premium-count",text:`${album.count} kép · Megnyitás`})));
       cover.addEventListener("click",()=>openAlbum(album));
-      const share=el("a",{className:"media-premium-share",text:"Megosztási előnézet",
-        attributes:{href:album.sharePath,"aria-label":`${album.label}: megosztási előnézet`}});
-      return el("div",{className:"media-premium-tile"},cover,share);
+      return el("div",{className:"media-premium-tile"},cover);
     }));
     grid.hidden=Boolean(active);tabs.hidden=Boolean(active);opened.replaceChildren();
     if(active){
       const back=el("button",{className:"media-premium-back",text:"← Vissza az albumokhoz",attributes:{type:"button"}});
       back.addEventListener("click",()=>{active=null;onOpen(null);render();});
       opened.append(back,el("p",{className:"media-premium-eyebrow",text:settings.openedLabel}),
-        el("h3",{text:active.label}),el("p",{text:active.description}),
-        el("a",{className:"media-premium-share",text:settings.shareLabel,attributes:{href:active.sharePath}}));
+        el("h3",{text:active.label}),el("p",{text:active.description}));
     }
     opened.hidden=!active;
   }
@@ -85,6 +81,6 @@ export function createPremiumAlbumShowcase(config,platform,onOpen){
     if(!album)return false;
     openAlbum(album);return true;
   }
-  wrapper.append(heading,summary,tabs,grid,opened,note);render();
+  wrapper.append(heading,summary,tabs,grid,opened);render();
   return {wrapper,openById,clear(){active=null;render();},getActive:()=>active};
 }

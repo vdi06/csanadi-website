@@ -53,6 +53,7 @@ with sync_playwright() as p:
     if only_case:cases=[case for case in cases if case[0]==only_case]
     for name,width,height,theme,motion,all_pages in cases:
         platform='mobile' if width<768 else 'desktop'
+        all_pages = all_pages or os.environ.get('CSANADI_ALL_PAGES')=='1'
         errors=[]
         ctx=browser.new_context(viewport={'width':width,'height':height},
             color_scheme=theme,reduced_motion=motion,
@@ -70,11 +71,18 @@ with sync_playwright() as p:
             <body><div id="app"></div><script type="module" src="shared/js/entry.js?v={release}"></script></body></html>'''
             page.set_content(wrapper)
             page.evaluate("document.addEventListener('click',e => {const a=e.target.closest?.('a[href^=\"#/\"]');if(a){e.preventDefault();e.stopImmediatePropagation();location.hash=a.getAttribute('href')}}, true)")
-            page.locator('.home-carousel-tab').first.wait_for(timeout=15000)
-            check(page.locator('.gate-screen,.gate-door-button').count()==0, f'{name}: gateway removed')
-            check(page.locator(f'.{platform}-home').count()==1, f'{name}: homepage without gateway')
-            check(page.evaluate('location.hash')=='#/kezdolap',f'{name}: legacy gate URL canonicalized')
-            check(getattr(page, 'url', None) is not None, f'{name}: loaded without gate')
+            page.locator('.gate-door-button').wait_for(timeout=15000)
+            check(page.locator('.gate-screen').count()==1, f'{name}: restored gateway visible')
+            check(page.locator('.gate-skip').count()==0, f'{name}: skip animation button removed')
+            check(page.locator('.gate-frame').count()==30, f'{name}: 30 animation frames')
+            check(page.locator('.gate-door-button').is_visible(), f'{name}: gate interaction visible')
+            check(page.evaluate('location.hash')=='#/', f'{name}: initial gateway route')
+            page.locator('.gate-door-button').click(force=True)
+            page.locator('.home-carousel-tab').first.wait_for(timeout=20000)
+            check(page.locator('.gate-screen').count()==0, f'{name}: gateway exits after click')
+            check(page.locator(f'.{platform}-home').count()==1, f'{name}: homepage after animation')
+            check(page.evaluate('location.hash')=='#/kezdolap',f'{name}: home route after gateway')
+            check(getattr(page, 'url', None) is not None, f'{name}: loaded after gateway')
             check(page.locator('.home-carousel-tab').all_inner_texts()==
                 ['Sportsikerek','Tanévi naptár','Hírek és közlemények'], f'{name}: tab data')
             check(page.locator('.home-carousel-tab[aria-selected="true"]').count()==1, f'{name}: selected tab')
@@ -144,6 +152,7 @@ with sync_playwright() as p:
                 page.locator('.'+platform+'-page-title').first.wait_for(timeout=5000)
                 check(page.locator('main#content').count()==1,f'{name}/{leaf}: main')
                 check(page.locator('main h1').count()==1,f'{name}/{leaf}: one h1')
+                check(page.locator('a[href*="csanadi-bp.edu.hu"]').count()==0, f'{name}/{leaf}: prohibited legacy domain in links')
                 has_content = (page.locator('.'+platform+'-page-card').count()>0 or
                     page.locator('.school-news-page').count()>0 or
                     page.locator('.school-calendar-section').count()>0 or
@@ -399,7 +408,7 @@ with sync_playwright() as p:
         errors=[]
         page.on('pageerror',lambda err: errors.append(str(err)))
         try:
-            page.goto('about:blank#/')
+            page.goto('about:blank#/kezdolap')
             page.clock.install()
             page.set_content('<!doctype html><html lang="hu"><head>'
               '<meta name="viewport" content="width=device-width,initial-scale=1">'

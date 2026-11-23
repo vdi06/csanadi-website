@@ -1,4 +1,4 @@
-import { schoolBellSchedule, todayBudapest } from "./information-data.js?v=2.46";
+import { schoolBellSchedule, todayBudapest } from "./information-data.js?v=2.48";
 const weekdayIds=["mon","tue","wed","thu","fri"];
 const label=(v,max=300)=>typeof v==="string"&&!!v.trim()&&v.length<=max;
 const safeId=/^[a-z0-9-]+$/;
@@ -6,10 +6,9 @@ const safeId=/^[a-z0-9-]+$/;
 export function checkedTimetable(config){
   const c=config.timetableCenter;
   const schedule=schoolBellSchedule(config);
-  if(!c||!["eyebrow","title","summary","emptyLabel","sourceNote","updateStatus","officialHref"]
+  if(!c||!["eyebrow","title","summary","emptyLabel","sourceNote","updateStatus"]
       .every(k=>label(c[k],1000))||!Array.isArray(c.days)||c.days.length!==5||
-      !Array.isArray(c.classes)||!c.classes.length||c.classes.length>100||
-      !/^https:\/\/csanadi-bp\.edu\.hu\//.test(c.officialHref))throw new Error("Hibás órarend-regiszter.");
+      !Array.isArray(c.classes)||!c.classes.length||c.classes.length>100)throw new Error("Hibás órarend-regiszter.");
   if(c.days.some((d,i)=>d.id!==weekdayIds[i]||!label(d.label,40)||!label(d.short,12)))throw new Error("Hibás hétköznaplista.");
   const ids=new Set();
   for(const item of c.classes){

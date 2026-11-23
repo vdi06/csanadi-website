@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 const root=resolve(fileURLToPath(new URL('..',import.meta.url)));
 const text=p=>readFileSync(join(root,p),'utf8');
 const cfg=JSON.parse(text('shared/data/site.json'));
-assert.equal(cfg.release,'2.46');
+assert.equal(cfg.release,'2.48');
 const {checkedMediaCenter, premiumAlbumCards,mediaResults}=await import('../shared/js/media-data.js');
 checkedMediaCenter(cfg);
 const all=premiumAlbumCards(cfg);
@@ -64,8 +64,9 @@ assert.equal(new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]))
 assert.ok(text('robots.txt').includes('Sitemap:'));
 for(const platform of ['desktop','mobile']){
  assert.ok(text(`${platform}/gallery.js`).includes('createPremiumAlbumShowcase'));
- assert.ok(text(`${platform}/page.js`).includes('share/page/'));
+ assert.ok(!text(`${platform}/page.js`).includes('share/page/'),'Technikai előnézet nem lehet a látogatói oldalon');
  assert.ok(text(`${platform}/styles.css`).includes('premium-showcase'));
+ assert.ok(!text('shared/js/gallery-ui.js').includes('media-premium-share'),'Albumból sem kerülhet ki technikai előnézeti link');
 }
 assert.ok(text('tools/import-media-batch.py').includes('save_webp'));
 assert.ok(text('tools/generate-seo.py').includes('--public-base'));

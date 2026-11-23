@@ -1,24 +1,28 @@
-import { createMobileFeatureCenter } from "./centers.js?v=2.46";
-import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.46";
-import { element } from "../shared/js/dom.js?v=2.46";
-import { makeFooter } from "../shared/js/footer.js?v=2.46";
-import { makeMobileHeader } from "./header.js?v=2.46";
-import { createMobilePage } from "./page.js?v=2.46";
-import { createMobileStory } from "./story.js?v=2.46";
-import { createMobileSuccesses } from "./successes.js?v=2.46";
-import { createMobileCalendar } from "./calendar.js?v=2.46";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.46";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.46";
-import { createMobileInformation } from "./information.js?v=2.46";
-import { createMobileMedia } from "./gallery.js?v=2.46";
-import { createMobileTimetable } from "./timetable.js?v=2.46";
-import { createMobileDocuments } from "./documents.js?v=2.46";
-import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.46";
+import { createMobileFeatureCenter } from "./centers.js?v=2.48";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.48";
+import { element } from "../shared/js/dom.js?v=2.48";
+import { mountGate } from "../shared/js/gate.js?v=2.48";
+import { makeFooter } from "../shared/js/footer.js?v=2.48";
+import { makeMobileHeader } from "./header.js?v=2.48";
+import { createMobilePage } from "./page.js?v=2.48";
+import { createMobileStory } from "./story.js?v=2.48";
+import { createMobileSuccesses } from "./successes.js?v=2.48";
+import { createMobileCalendar } from "./calendar.js?v=2.48";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.48";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.48";
+import { createMobileInformation } from "./information.js?v=2.48";
+import { createMobileMedia } from "./gallery.js?v=2.48";
+import { createMobileTimetable } from "./timetable.js?v=2.48";
+import { createMobileDocuments } from "./documents.js?v=2.48";
+import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.48";
 
 /** Önálló mobilos nézet: saját fejléc, JSON-vázlatos aloldal és kompakt lábléc. */
 export function mount(root, config, page) {
   const platformRoot = element("div", { className: "mobile-app" });
   root.replaceChildren(platformRoot);
+  if (page === "gate") {
+    return mountGate(platformRoot, config, "mobile", () => { location.hash = config.routes.home; });
+  }
   const home = element("div", { className: "mobile-home" });
   const mobileHeader = makeMobileHeader(config, home);
   const mobileFooter = makeFooter(config, "mobile");
@@ -59,11 +63,11 @@ export function mount(root, config, page) {
   if (story) main.append(story.track, carousel.section);
   else if (isArchive) main.append(successes.section,
     createMobilePage(config, "sports-results", { hideHeading:true }));
-  else if (featureCenter) main.append(createMobilePage(config,featurePageId,{hideCards:true}),featureCenter.section);
+  else if (featureCenter) main.append(createMobilePage(config,featurePageId,{hideCards:true,hideIntro:true}),featureCenter.section);
   else if (isInformation) main.append(createMobilePage(config, "information-daily", {hideCards:true}), infoCenter.section);
   else if (isMediaPage) main.append(createMobilePage(config, "sports-gallery", {hideCards:true}), mediaCenter.section);
   else if (isTimetable) main.append(createMobilePage(config, "information-timetable", {hideCards:true}), timetableCenter.section);
-  else if (isDocuments) main.append(createMobilePage(config, "information-documents", {hideCards:true}), documentsCenter.section);
+  else if (isDocuments) main.append(createMobilePage(config, "information-documents", {hideCards:true,hideIntro:true}), documentsCenter.section);
   else if (isCalendarPage) main.append(createMobilePage(config, "news-calendar", {hideCards:true}), fullCalendar.section);
   else if (isAdmissionHub) main.append(createMobilePage(config, admissionPageId, {hideCards:true}), admissionsCenter.section);
   else if (admissionLinks) main.append(createMobilePage(config, admissionPageId, {extraContent:admissionLinks}));

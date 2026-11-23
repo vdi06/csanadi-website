@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.30",
-  "release": "2.46",
+  "release": "2.48",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -8,7 +8,22 @@
     "principal": "Rúzsa Sándor"
   },
   "routes": {
+    "gate": "#/",
     "home": "#/kezdolap"
+  },
+  "gate": {
+    "title": "Csanádi Sportiskola – nyitókapu",
+    "actionLabel": "Belépés a Csanádi Sportiskola kezdőlapjára",
+    "frames": 30,
+    "assetDirectory": "./shared/assets/media/web/gate-frames/",
+    "framePrefix": "gate-",
+    "mobileSuffix": "-mobile",
+    "extension": ".webp",
+    "desktopDurationMs": 2250,
+    "mobileDurationMs": 1750,
+    "finishFadeMs": 620,
+    "finishBlurPx": 18,
+    "homeRevealMs": 480
   },
   "home": {
     "calendar": {
@@ -836,7 +851,7 @@
       "eyebrow": "CSANÁDI · SPORTEREDMÉNYEK",
       "title": "Legfrissebb sportsikereink",
       "intro": "Eredmények, amelyekre büszkék lehetünk.",
-      "archiveTitle": "Sporteredmények",
+      "archiveTitle": "Diákjaink sporteredményei",
       "archiveIntro": "Diákjaink korábbi sikerei, versenyei és kiemelkedő teljesítményei egy helyen.",
       "archiveUi": {
         "eyebrow": "ARCHÍVUM",
@@ -1944,7 +1959,7 @@
     ],
     "pages": {
       "school-introduction": {
-        "intro": "A Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium egyszerre ad közismereti alapokat és támogatja a sportolói életutat.",
+        "intro": "1897-ben indult iskolai hagyomány, általános iskolai és gimnáziumi tanulás, valamint sportolói életút: így kapcsolódik össze a Csanádi múltja és mai képzési profilja.",
         "items": [
           {
             "title": "Tanulás és sport együtt",
@@ -2044,11 +2059,37 @@
               }
             ],
             "kind": "card"
+          },
+          {
+            "kind": "list",
+            "title": "Ellenőrzött intézményi adatok",
+            "summary": "A megadott adatok ellenőrizhető intézményi és sporttörténeti forrásokhoz kapcsolódnak.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Az iskola történeti alapjai",
+                    "details": [
+                      "Az iskolai működés kezdete: 1897; a mai iskolaépület átadása: 1904.",
+                      "A gimnáziumi oktatás 1988 óta része az iskola történetének."
+                    ]
+                  },
+                  {
+                    "title": "Sport és iskola kapcsolata",
+                    "details": [
+                      "A KSI és az iskola kapcsolata 1987-től dokumentált.",
+                      "Történeti forrás: a KSI 2023. február 23-i megemlékezése Csanádi Árpádról."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "school-values": {
-        "intro": "Az iskola nevelési elvei a 2026-os pedagógiai programban részletesen olvashatók; itt közérthető, témák szerinti áttekintés jelenik meg.",
+        "intro": "A nevelési célok a tanulás, a közösségi felelősség, a méltányos együttműködés és a sportetika területein értelmezhetők. A kötelező követelményeket a jóváhagyott pedagógiai program tartalmazza.",
         "items": [
           {
             "title": "A személyiség fejlődése",
@@ -2159,7 +2200,7 @@
         ]
       },
       "school-staff": {
-        "intro": "Az iskola dolgozóinak bemutatása munkakörök szerint, kizárólag aktuálisan nyilvános intézményi adatokkal.",
+        "intro": "A pedagógusok és az iskolavezetés feladatai munkaterületek szerint követhetők. Naprakész, név szerinti személyi állomány hiányában itt nem jelenítünk meg ellenőrizetlen névsort.",
         "items": [
           {
             "title": "Intézményvezetés",
@@ -2227,11 +2268,35 @@
               }
             ],
             "kind": "list"
+          },
+          {
+            "kind": "list",
+            "title": "Hogyan találod meg az illetékest?",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Tanulmányi kérdés",
+                    "details": [
+                      "Tantárgyi, osztályfőnöki és fogadóórával kapcsolatos megkereséseknél az aktuális iskolai tájékoztatás az irányadó."
+                    ]
+                  },
+                  {
+                    "title": "Személyes adatok védelme",
+                    "details": [
+                      "Név, beosztás és elérhetőség csak ellenőrzött és közzétételre jóváhagyott névjegyzékből kerülhet ide."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "school-history": {
-        "intro": "Az iskola több korszakon át fejlődött a zuglói oktatási intézménytől a sportiskolai képzésig.",
+        "intro": "Az iskola 1897-ben indult; mai épületét 1904-ben adták át, gimnáziumi oktatása 1988-ban kezdődött. A sportiskolai arculat a KSI-vel 1987-ben kialakult együttműködéshez kapcsolódik.",
         "items": [
           {
             "title": "Az iskola történeti korszakai",
@@ -2309,11 +2374,37 @@
               }
             ],
             "kind": "list"
+          },
+          {
+            "kind": "list",
+            "title": "Idővonal – forrásokkal ellenőrzött mérföldkövek",
+            "summary": "A megadott adatok ellenőrizhető intézményi és sporttörténeti forrásokhoz kapcsolódnak.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "1897 és 1904",
+                    "details": [
+                      "1897-ben megkezdődött az iskolai működés.",
+                      "1904-ben átadták az Őrnagy utcai iskolaépületet."
+                    ]
+                  },
+                  {
+                    "title": "1987 és 1988",
+                    "details": [
+                      "1987-ben kialakult a KSI-vel való sportiskolai együttműködés.",
+                      "1988-ban indult gimnáziumi oktatás. A 2023-as KSI-történeti megemlékezés alapján."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "school-partners": {
-        "intro": "Az iskola kapcsolatrendszere az oktatást, a sportot és a tanulók támogatását szolgálja.",
+        "intro": "A sportoló tanulók támogatásában a Központi Sportiskola és az iskola együttműködésének dokumentált múltja van. A további intézményi partnerek és az alapítvány aktuális adatait külön kell hitelesíteni.",
         "items": [
           {
             "title": "Fenntartás és szakmai kapcsolatok",
@@ -2378,11 +2469,30 @@
               }
             ],
             "kind": "card"
+          },
+          {
+            "kind": "list",
+            "title": "A KSI-vel való kapcsolat – ellenőrzött háttér",
+            "summary": "A megadott adatok ellenőrizhető intézményi és sporttörténeti forrásokhoz kapcsolódnak.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Korábbi sportiskolai együttműködés",
+                    "details": [
+                      "A Központi Sportiskola és az iskola együttműködésének kezdete 1987-hez köthető.",
+                      "A sportolói fejlődés és a tanulmányok összehangolását a KSI nyilvánosan leírt együttműködési célként nevezi meg."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "school-eco": {
-        "intro": "A környezeti nevelés célja, hogy a fenntarthatóság a tanulásban és a hétköznapokban is értelmezhetővé váljon.",
+        "intro": "A környezeti nevelés témái közé tartozik az energia-, víz- és anyagtakarékosság, valamint a hulladék megelőzése. A felsorolt példák tanulási ötletek, nem meghirdetett programidőpontok.",
         "items": [
           {
             "title": "Ökoiskolai szemlélet",
@@ -2436,11 +2546,35 @@
               }
             ],
             "kind": "timeline"
+          },
+          {
+            "kind": "list",
+            "title": "Kipróbálható környezeti megfigyelések",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Energia és víz",
+                    "details": [
+                      "Egy hét során mérhető a világítás használata és a feleslegesen folyó csapok előfordulása; az eredményből osztályszintű takarékossági terv készíthető."
+                    ]
+                  },
+                  {
+                    "title": "Hulladékcsökkentés",
+                    "details": [
+                      "Újrahasználható eszközök és tudatos anyagválasztás összehasonlítása megfigyeléssel, egyszerű táblázatban."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "school-explore": {
-        "intro": "A felfedező tanulás olyan tevékenységeket foglal össze, amelyek megfigyelésre, kutatásra és önálló kérdésekre épülnek; ez nem külön program meghirdetése.",
+        "intro": "A felfedező tanulásnál a kérdésfeltevés, megfigyelés, adatgyűjtés és következtetés egyetlen tanulási folyamat részei. Aktuális szakköri jelentkezést ez az oldal nem hirdet.",
         "items": [
           {
             "title": "Megfigyelés és kutatás",
@@ -2499,11 +2633,35 @@
               }
             ],
             "kind": "card"
+          },
+          {
+            "kind": "list",
+            "title": "A felfedező tanulás négy lépése",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Kérdés és hipotézis",
+                    "details": [
+                      "Fogalmazz meg egy mérhető kérdést, és írj hozzá előzetes feltevést."
+                    ]
+                  },
+                  {
+                    "title": "Mérés és következtetés",
+                    "details": [
+                      "Rögzítsd az adatokat, hasonlítsd össze az eredményeket, majd válaszd szét a megfigyelést és a következtetést."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "school-compass": {
-        "intro": "A közösségi együttélés alapját a házirend, a kölcsönös tisztelet és az érthető iskolai ügyintézés adja.",
+        "intro": "A közösségi szabályok megértését a mindennapi helyzetek segítik: érkezés, távollét, biztonság és közös terek használata. A kötelező szabályok hiteles forrása a mindenkori házirend.",
         "items": [
           {
             "title": "Házirend és együttélés",
@@ -2557,11 +2715,35 @@
               }
             ],
             "kind": "card"
+          },
+          {
+            "kind": "list",
+            "title": "Gyakori iskolai helyzetek",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Mulasztás és igazolás",
+                    "details": [
+                      "A hiányzás bejelentése és igazolása az érvényes házirendhez kötött; részletek a Hiányzások igazolása oldalon."
+                    ]
+                  },
+                  {
+                    "title": "Iratok és dokumentumok",
+                    "details": [
+                      "A kötelező iskolai szabályzatok hiteles változata a dokumentumtárban keresendő; a még nem feltöltött fájl külön jelölést kap."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "school-workshop": {
-        "intro": "A kreatív tanulás a különböző tantárgyak és projektfeladatok részeként is megvalósulhat; az oldal dokumentált tanulási módszereket mutat be.",
+        "intro": "Az alkotóműhelyek az ötletből tervet, a tervből bemutatható munkát készítő tanulási módszereket mutatják be. Az itt leírt lehetőségek nem jelentenek automatikus szakköri meghirdetést.",
         "items": [
           {
             "title": "Tervezés és alkotás",
@@ -2620,11 +2802,35 @@
               }
             ],
             "kind": "card"
+          },
+          {
+            "kind": "list",
+            "title": "Az alkotómunka dokumentálása",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Terv és folyamatnapló",
+                    "details": [
+                      "A munka célja, a felhasznált eszközök és a köztes változatok rövid leírása segíti az értékelést."
+                    ]
+                  },
+                  {
+                    "title": "Bemutatás és jogtisztaság",
+                    "details": [
+                      "A digitális alkotásoknál jelölni kell a külső képek és szövegek forrását, valamint a hozzájárulással használható képmásokat."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "education-programs": {
-        "intro": "Az intézmény általános iskolai és gimnáziumi képzést biztosít sportiskolai pedagógiai szemlélettel.",
+        "intro": "Két tényleges képzési szakasz: 1–8. évfolyamos általános iskola és 9–12. évfolyamos gimnázium. A sportiskolai szemlélet az oktatás kapcsolódó sajátossága, nem külön megnyitott harmadik képzés.",
         "items": [
           {
             "title": "Általános iskolai képzés",
@@ -2716,7 +2922,7 @@
         ]
       },
       "education-years": {
-        "intro": "A tanév rendjét a központi tanévbeosztás és az iskola helyi munkaterve együtt határozza meg.",
+        "intro": "A 2026/2027-es tanév országos időrendjét jogszabály határozza meg, az iskolai eseményeket pedig a helyi munkaterv pontosítja. A naptári bejegyzések intézményi jóváhagyását külön ellenőrizni kell.",
         "items": [
           {
             "title": "Tanévi szakaszok",
@@ -2779,7 +2985,7 @@
         ]
       },
       "education-exams": {
-        "intro": "A vizsgákhoz kapcsolódó követelmények, dokumentumok és az adott időszakra érvényes tájékoztatások elkülönítve jelennek meg.",
+        "intro": "A vizsga- és mérési időszakok mellett a jelentkezés, a vizsgatípus és a részletes követelmény is fontos. A naptári időszak nem helyettesíti a tanulóra szóló hivatalos beosztást.",
         "items": [
           {
             "title": "Érettségi vizsgák",
@@ -2855,7 +3061,7 @@
         ]
       },
       "education-resources": {
-        "intro": "A nyilvános tanulási segédletek és sportiskolai jegyzetek tantárgyi témák szerint rendezve böngészhetők.",
+        "intro": "Tanulási módszerek, sportiskolai segédanyagok és a helyi tantervek helye. Csak ténylegesen feltöltött fájl tölthető le; a még hiányzó hivatalos dokumentumokat külön jelezzük.",
         "items": [
           {
             "title": "Sportiskolai jegyzetek",
@@ -2927,11 +3133,35 @@
               }
             ],
             "kind": "list"
+          },
+          {
+            "kind": "list",
+            "title": "Segédanyagok használata",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Feladat és dokumentum",
+                    "details": [
+                      "Ellenőrizd, hogy a keresett tananyag vagy dokumentum valóban feltöltött és megnyitható-e."
+                    ]
+                  },
+                  {
+                    "title": "Tanulási jegyzet",
+                    "details": [
+                      "A fogalmak, példák és az önellenőrző kérdések tanulást segítő anyagok; nem helyettesítik a helyi tantervet."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "education-library": {
-        "intro": "Az iskolai könyvtár a tanulást, kutatást és az olvasáskultúra fejlesztését segíti.",
+        "intro": "A könyvtárhasználatnál a katalógusban keresés, a forrásértékelés és a hivatkozás készítése alapvető készség. Helyi nyitvatartási vagy kölcsönzési szabályt ellenőrzés nélkül nem adunk meg.",
         "items": [
           {
             "title": "Könyvtári tájékozódás",
@@ -2990,11 +3220,35 @@
               }
             ],
             "kind": "card"
+          },
+          {
+            "kind": "list",
+            "title": "Forráskeresési útmutató",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Keresés a könyvtári állományban",
+                    "details": [
+                      "Cím, szerző, témakör és kulcsszó alapján érdemes különböző találatokat összehasonlítani."
+                    ]
+                  },
+                  {
+                    "title": "Forrásmegjelölés",
+                    "details": [
+                      "Egy felhasznált könyvnél rögzítsd a szerzőt, címet, kiadást és az idézett oldalt."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "education-digital": {
-        "intro": "A digitális tanulási környezetben az információkezelés, a feladatvégzés és a biztonságos kommunikáció egyaránt fontos.",
+        "intro": "A digitális tanulás három gyakorlati lépése: a hivatalos üzenetek követése, a feladatok határidős beadása és a fájlok áttekinthető elnevezése. A hozzáférést az iskolai jogosultságok szabályozzák.",
         "items": [
           {
             "title": "Digitális tanulási felületek",
@@ -3053,11 +3307,35 @@
               }
             ],
             "kind": "card"
+          },
+          {
+            "kind": "list",
+            "title": "Digitális beadási ellenőrzőlista",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Feltöltés előtt",
+                    "details": [
+                      "Olvasható fájlnév; megadott formátum; ellenőrzött tartalom; szükség esetén csatolmányok."
+                    ]
+                  },
+                  {
+                    "title": "Feltöltés után",
+                    "details": [
+                      "Ellenőrizd a beadás állapotát és a határidőt; fontos változás esetén a hivatalos tanulási felületen tájékozódj."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "education-community": {
-        "intro": "A közös tanulási helyzetekben a feladatmegosztás, az egymástól tanulás és a felelős részvétel áll a középpontban.",
+        "intro": "A közös tanulásnál a feladatszerepek, a megbeszélés és a közös értékelés kapcsolódnak össze. A megjelenő naptári programok nem jelentenek automatikus részvételi kötelezettséget.",
         "items": [
           {
             "title": "Együttműködő tanulás",
@@ -3120,7 +3398,7 @@
         ]
       },
       "education-talent": {
-        "intro": "A tehetséggondozás és a személyre szabott pedagógiai támogatás célja a tanulók képességeinek kibontakoztatása.",
+        "intro": "A tehetséggondozás a tantárgyi érdeklődés és a sportolói fejlődés összehangolását támogatja. A konkrét egyéni programok megállapítása pedagógusi és intézményi egyeztetést igényel.",
         "items": [
           {
             "title": "Egyéni fejlődési utak",
@@ -3179,11 +3457,35 @@
               }
             ],
             "kind": "card"
+          },
+          {
+            "kind": "list",
+            "title": "Fejlődési célok követése",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Kiindulási helyzet",
+                    "details": [
+                      "A tanulási és sportolói célokat külön, mérhető lépésekre érdemes bontani."
+                    ]
+                  },
+                  {
+                    "title": "Visszajelzés",
+                    "details": [
+                      "A következő cél kitűzéséhez a tantárgyi visszajelzést, a saját haladást és a terhelést egyaránt figyelembe kell venni."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "admission-primary": {
-        "intro": "Az első osztályba történő beiratkozásnál az adott tanévre érvényes hivatalos eljárást és az iskola közzétett dokumentumait kell követni.",
+        "intro": "Első osztályba jelentkezésnél a hivatalos beiratkozási időszak, a szükséges okmányok és a szülői teendők a döntő szempontok. A 2027-es helyi részletek külön megerősítésre várnak.",
         "items": [
           {
             "title": "Ismerkedés az általános iskolával",
@@ -3246,7 +3548,7 @@
         ]
       },
       "admission-secondary": {
-        "intro": "A kilencedik évfolyamra jelentkezők számára a gimnáziumi és sportiskolai képzés sajátosságait, valamint a hivatalos felvételi eljárás részeit mutatjuk be.",
+        "intro": "A négy évfolyamos gimnázium felvételijénél külön kell kezelni az országos eljárási időpontokat és az iskola saját követelményeit. A tanulmányi terület és az alkalmasság aktuális feltétele csak hivatalos tájékoztató alapján végleges.",
         "items": [
           {
             "title": "Képzés és jelentkezési feltételek",
@@ -3344,7 +3646,7 @@
         ]
       },
       "admission-open": {
-        "intro": "A nyílt napok segítik az érdeklődő családokat a képzés és az iskolai környezet megismerésében.",
+        "intro": "Nyílt nap előtt az adott évre szóló meghirdetést, a regisztráció módját és a látogatási szabályokat érdemes ellenőrizni. Ez az oldal nem közöl intézményileg még nem igazolt időpontot.",
         "items": [
           {
             "title": "A nyílt nap célja",
@@ -3403,11 +3705,35 @@
               }
             ],
             "kind": "alert"
+          },
+          {
+            "kind": "list",
+            "title": "Nyílt nap előtt ellenőrizd",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Meghirdetés és jelentkezés",
+                    "details": [
+                      "Az adott évre szóló napot, időpontot, belépési szabályt és esetleges előzetes regisztrációt a hivatalos tájékoztatásból kell megerősíteni."
+                    ]
+                  },
+                  {
+                    "title": "Mire kérdezz rá?",
+                    "details": [
+                      "Képzési szakasz, tanulás és edzés összehangolása, támogatási lehetőségek, felvételi dokumentumok."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "admission-deadlines": {
-        "intro": "A felvételi határidők évfolyamonként és felvételi évenként eltérhetnek, ezért mindegyik időpontot a megfelelő eljáráshoz kell rendelni.",
+        "intro": "Az országos felvételi ütemterv időpontjai a helyi feladatoktól elkülönítve jelennek meg. Minden határidőnél számít, hogy melyik évfolyamra és melyik eljárási szakaszra vonatkozik.",
         "items": [
           {
             "title": "Az eljárás időrendje",
@@ -3470,7 +3796,7 @@
         ]
       },
       "admission-process": {
-        "intro": "A jelentkezés folyamata kisebb, ellenőrizhető lépésekre bontható.",
+        "intro": "A jelentkezés átlátható sorrendje: tájékozódás, jelentkezési dokumentumok, szükséges vizsgák vagy egyeztetések, majd értesítés és beiratkozás. Az egyes lépések pontos ideje eljárásonként eltér.",
         "items": [
           {
             "title": "1. Tájékozódás",
@@ -3543,11 +3869,35 @@
               }
             ],
             "kind": "steps"
+          },
+          {
+            "kind": "list",
+            "title": "A jelentkezés ellenőrzése",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Jelentkezés előkészítése",
+                    "details": [
+                      "Az adott tanévhez tartozó hivatalos határidőt és tanulmányi területet a jelentkezés előtt ellenőrizni kell."
+                    ]
+                  },
+                  {
+                    "title": "Visszaigazolás megőrzése",
+                    "details": [
+                      "A kitöltött jelentkezés és a hivatalos értesítések másolatát érdemes biztonságosan megőrizni."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "admission-guide": {
-        "intro": "A felvételi tájékoztató az iskola képzésének, elvárásainak és eljárási szabályainak együttes áttekintését szolgálja.",
+        "intro": "A felvételi tájékoztatóban külön vizsgálandó a képzés jellege, a tanulmányi terület, az értékelés módja és a beiratkozás. A még ellenőrzésre váró helyi szabály nem tekinthető végleges felvételi feltételnek.",
         "items": [
           {
             "title": "Iskolaválasztási szempontok",
@@ -3610,7 +3960,7 @@
         ]
       },
       "admission-documents": {
-        "intro": "Az első és a kilencedik évfolyamra vonatkozó iratok, nyilatkozatok és útmutatók külön csoportban követhetők.",
+        "intro": "Az első és kilencedik évfolyamra vonatkozó iratokat külön kell ellenőrizni. Az általános ellenőrzőlista segít az előkészületekben, de nem helyettesíti az adott év hivatalos dokumentumlistáját.",
         "items": [
           {
             "title": "Első osztályos beiratkozás",
@@ -3676,11 +4026,35 @@
               }
             ],
             "kind": "list"
+          },
+          {
+            "kind": "list",
+            "title": "Ellenőrzőlista típusonként",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Első évfolyam",
+                    "details": [
+                      "A szülői és a gyermekre vonatkozó igazoló iratokat mindig az aktuális beiratkozási felhívás szerint kell összekészíteni."
+                    ]
+                  },
+                  {
+                    "title": "Kilencedik évfolyam",
+                    "details": [
+                      "A jelentkezési laphoz és vizsgákhoz tartozó követelményeket a KIFIR és az adott intézményi tájékoztató határozza meg."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "admission-faq": {
-        "intro": "A gyakori felvételi kérdéseket a jelentkezés különböző szakaszai szerint rendezzük.",
+        "intro": "A leggyakoribb kérdések a képzésre, a jelentkezés lépéseire és a vizsgaeredmények közlésére vonatkoznak. A helyi, egyéni döntést igénylő kérdéseket az intézménnyel kell egyeztetni.",
         "items": [
           {
             "title": "Képzéssel kapcsolatos kérdések",
@@ -3757,11 +4131,35 @@
               }
             ],
             "kind": "accordion"
+          },
+          {
+            "kind": "list",
+            "title": "Melyik válasz hol található?",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Országos felvételi eljárás",
+                    "details": [
+                      "A központi írásbeli, a jelentkezés és az értesítés fő időpontjait az adott év országos ütemterve határozza meg."
+                    ]
+                  },
+                  {
+                    "title": "Helyi feltételek",
+                    "details": [
+                      "A sportegészségügyi, alkalmassági és egyéb intézményi feltételeket mindig az érvényes helyi felvételi tájékoztatóban kell ellenőrizni."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "sports-disciplines": {
-        "intro": "Az iskola sportiskolai profiljában a sportágválasztás, a rendszeres mozgás és a sportegyesületekkel való együttműködés egyaránt szerepet kap.",
+        "intro": "Hat sportágról jelennek meg kereshető, illusztrált témakártyák. Ezek bemutató sporttémák; önmagukban nem bizonyítják, hogy a sportágban az iskola aktuálisan külön szakosztályt működtet.",
         "items": [
           {
             "title": "A sportágválasztás pedagógiája",
@@ -3824,7 +4222,7 @@
         ]
       },
       "sports-results": {
-        "intro": "Az eredményarchívum a sportágak, versenyek és időszakok áttekintését szolgálja; személyes tanulói adatot új forrásból nem veszünk át.",
+        "intro": "A sporteredményeket csak azonosítható verseny, időpont és ellenőrzött forrás alapján szabad hiteles sikerként közzétenni. A jelenlegi örökölt mintabejegyzéseket nem szabad igazolt tanulói eredménynek tekinteni.",
         "items": [
           {
             "title": "Sporteredmények értelmezése",
@@ -3876,7 +4274,7 @@
         ]
       },
       "sports-gallery": {
-        "intro": "Böngészhető, kereshető képi válogatás sportból, tanulásból és iskolai közösségi témákból. A jelenlegi médiák az oldal illusztrációs képanyagából származnak; nem eseményfotóként vagy valódi tanulókról készült felvételként közöljük őket.",
+        "intro": "Kereshető képalbumok sportág, tanév és programtípus szerint, részletes képnézővel. A jelenlegi 22 galériakép illusztráció, nem igazolt iskolai rendezvényfotó.",
         "items": [
           {
             "title": "Sportmozgások képekben",
@@ -3929,7 +4327,7 @@
         "galleryCategory": "sports-disciplines"
       },
       "sports-olympic": {
-        "intro": "Az olimpiai gondolat és az iskola névadójának életműve a sportiskolai hagyományok fontos része.",
+        "intro": "Az olimpiai mozgalom értékei és az iskola névadója kapcsolódnak össze: Csanádi Árpád sportvezetőként és sportdiplomataként is tevékenykedett. A történeti állításokat korabeli források alapján értelmezzük.",
         "items": [
           {
             "title": "Olimpiai alapértékek",
@@ -4006,11 +4404,30 @@
               }
             ],
             "kind": "list"
+          },
+          {
+            "kind": "list",
+            "title": "Névadónk dokumentált életútja",
+            "summary": "A megadott adatok ellenőrizhető intézményi és sporttörténeti forrásokhoz kapcsolódnak.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Csanádi Árpád (1923–1983)",
+                    "details": [
+                      "1923. február 23-án született; labdarúgóként, testnevelőként, edzőként, sportvezetőként és sportdiplomataként tevékenykedett.",
+                      "Forrás: KSI, „Száz éve született Csanádi Árpád”, 2023. február 23."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "sports-training": {
-        "intro": "A sporttevékenység és az iskolai tanulmányok összehangolása tudatos tervezést kíván.",
+        "intro": "Az edzések és a tanulmányok összehangolásában az időbeosztás, a pihenés és a terhelés követése fontos. Konkrét edzéshelyszínt vagy időpontot csak igazolt egyesületi vagy iskolai közlés alapján lehet megadni.",
         "items": [
           {
             "title": "Edzés és tanulás",
@@ -4064,11 +4481,35 @@
               }
             ],
             "kind": "card"
+          },
+          {
+            "kind": "list",
+            "title": "Edzéstervezési szempontok",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Heti terhelés és regeneráció",
+                    "details": [
+                      "Az órarend, utazás, edzés és pihenés együttes tervezése segít elkerülni az időütközéseket."
+                    ]
+                  },
+                  {
+                    "title": "Sportegészségügyi tájékoztatás",
+                    "details": [
+                      "Az egyéni alkalmasságról és egészségügyi kérdésekről kizárólag megfelelő szakember adhat személyre szabott tájékoztatást."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "sports-competitions": {
-        "intro": "A sportversenyekkel kapcsolatos tájékoztatás az események és a felkészülés általános rendjét mutatja be, tanulói névlista nélkül.",
+        "intro": "Egy versenyadat akkor ellenőrizhető, ha ismert a sportág, a rendező, az időpont és az eredmény forrása. A programnaptár nem helyettesíti a versenykiírást vagy a hivatalos eredménylistát.",
         "items": [
           {
             "title": "Versenytípusok és szerepük",
@@ -4127,11 +4568,35 @@
               }
             ],
             "kind": "timeline"
+          },
+          {
+            "kind": "list",
+            "title": "Versenyeredmények hitelesítése",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Eredmény közzététele előtt",
+                    "details": [
+                      "Ellenőrizendő a verseny hivatalos neve, a dátum, a korcsoport, a helyezés és a közzétételhez szükséges hozzájárulás."
+                    ]
+                  },
+                  {
+                    "title": "Naptári bejegyzés",
+                    "details": [
+                      "A tervezett verseny és a már megtartott rendezvény két külön állapot, ezért a naptári bejegyzés nem minősül eredménybeszámolónak."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "sports-facilities": {
-        "intro": "Az intézmény sporthelyszíneinek bemutatása a nyilvános pedagógiai dokumentumokban szereplő tárgyi feltételekre épül.",
+        "intro": "A sporthoz kapcsolódó helyiségek és használati szempontok tájékoztató kártyákban jelennek meg. Valós teremkapacitást, foglaltságot vagy beosztást az intézményi adatellenőrzésig nem közlünk.",
         "items": [
           {
             "title": "Mozgáshoz használható terek",
@@ -4194,7 +4659,7 @@
         ]
       },
       "sports-leisure": {
-        "intro": "A szabadidős mozgás nem azonos a versenysporttal: célja a jó közérzet, a társas élmény és az egészségtudatosság.",
+        "intro": "A szabadidős mozgás a mindennapi aktivitásról, a biztonságról és a közösségi élményről szól; nem versenyeredményhez kötött. A gyakorlati lehetőségeket évszak és helyszín szerint érdemes megtervezni.",
         "items": [
           {
             "title": "Mozgás a mindennapokban",
@@ -4242,11 +4707,35 @@
               }
             ],
             "kind": "card"
+          },
+          {
+            "kind": "list",
+            "title": "Biztonságos szabadidős mozgás",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Fokozatosság",
+                    "details": [
+                      "A mozgás jellegét és intenzitását az életkorhoz és az egyéni terhelhetőséghez kell igazítani."
+                    ]
+                  },
+                  {
+                    "title": "Közösségi élmény",
+                    "details": [
+                      "A csapatjáték, séta vagy közös sportprogram célja a rendszeresség és az örömteli részvétel is lehet."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "news-latest": {
-        "intro": "A legfrissebb intézményi tájékoztatások és programhírek témák szerint rendezve jelennek meg, tanulók személyes adatai nélkül.",
+        "intro": "A hírek időrendi nézetben kereshetők; a jelenlegi állomány tesztbejegyzéseket is tartalmaz. Minden közzétételnél ellenőrizni kell a forrást, dátumot és a bemutatóadatok megjelölését.",
         "items": [
           {
             "title": "Aktuális intézményi közlemények",
@@ -4317,7 +4806,7 @@
         }
       },
       "news-calendar": {
-        "intro": "Az eseménynaptár az iskola nyilvánosan meghirdetett alkalmait időrendben rendezi.",
+        "intro": "A havi, heti és asztali éves naptár az iskola eseményeit és központi időszakait különféle nézetekben rendezi. A helyi eseménynaptár 2026/2027-es bejegyzései nem mind egyenként hitelesítettek.",
         "items": [
           {
             "title": "Közelgő események",
@@ -4367,7 +4856,7 @@
         }
       },
       "news-announcements": {
-        "intro": "A fontos közlemények a szülőket, munkatársakat és érdeklődőket érintő gyakorlati információkat emelik ki.",
+        "intro": "A közlemények között a határidős és a tájékoztató jellegű bejegyzések különböztethetők meg. A jelenlegi demóközlemények nem jelentenek hivatalos iskolai értesítést.",
         "items": [
           {
             "title": "Azonnali teendőt igénylő közlések",
@@ -4427,7 +4916,7 @@
         }
       },
       "news-archive": {
-        "intro": "A korábbi intézményi hírek időszak és téma szerint böngészhetők.",
+        "intro": "A korábbi bejegyzések időpont és téma szerint kereshetők. Az archivált státusz nem bizonyítja a hír valóságtartalmát: a mintabejegyzések itt is minták maradnak.",
         "items": [
           {
             "title": "Évek szerinti visszakeresés",
@@ -4477,7 +4966,7 @@
         }
       },
       "news-sports": {
-        "intro": "Sporthoz kapcsolódó intézményi hírek jelennek meg, tanulói név, osztály vagy egyéni teljesítmény átvétele nélkül.",
+        "intro": "A sporthíreknél a sportág, az esemény dátuma és az eredmény hiteles forrása a legfontosabb. A személyes adatokat és tanulói eredményeket külön publikációs ellenőrzés védi.",
         "items": [
           {
             "title": "Sportiskolai események",
@@ -4537,7 +5026,7 @@
         }
       },
       "news-studies": {
-        "intro": "A tanulmányi hírek a képzés, vizsgák, szakmai események és pedagógiai újítások intézményi vonatkozásait mutatják be.",
+        "intro": "Tanulmányi hírekhez a tantárgyi tevékenység, az esemény vagy az eredmény pontos megnevezése szükséges. Nem igazolt versenyeredményt vagy iskolai programot az oldal nem állít tényként.",
         "items": [
           {
             "title": "Tanulmányi aktualitások",
@@ -4597,7 +5086,7 @@
         }
       },
       "news-events": {
-        "intro": "Az iskolai rendezvények történeti és közösségi jelentőségük szerint kapnak bemutatást.",
+        "intro": "A rendezvények eseménytípus és szöveg alapján szűrhetők. A naptárhoz kapcsolt jelenlegi adatok tájékoztató munkapéldányok; a megtartott rendezvényekről külön, hitelesített beszámoló készülhet.",
         "items": [
           {
             "title": "Hagyományos alkalmak",
@@ -4658,7 +5147,7 @@
         }
       },
       "news-community": {
-        "intro": "A közösségi hírek a közös iskolai élményt, az együttműködést és a felelősségvállalást állítják előtérbe.",
+        "intro": "A közösségi alkalmak megtekinthetők és kereshetők a központi naptárban. A tematikus illusztrációk nem igazolják egy konkrét iskolai esemény megtörténtét.",
         "items": [
           {
             "title": "Közösségi programok",
@@ -4718,7 +5207,7 @@
         }
       },
       "information-daily": {
-        "intro": "Aktuális iskolai információk, a csengetési rend, közelgő események, közlemények és legfontosabb ügyintézési elérések egy helyen. Az adatok a honlap közös JSON-állományából származnak.",
+        "intro": "Egy helyen érhetők el az iskola napi működéséhez tartozó időrendek, információk és kapcsolódó ügyintézési oldalak. A változásokat az adott hivatalos közlés alapján kell követni.",
         "items": [
           {
             "title": "Iskolai nap időrendje",
@@ -4781,7 +5270,7 @@
         ]
       },
       "information-documents": {
-        "intro": "Dokumentumok tematikusan, kereshetően, közvetlenül az oldalon belüli előnézettel. A még nem feltöltött, hivatalos iratokat külön állapotjelzés mutatja.",
+        "intro": "A dokumentumtár megkülönbözteti a ténylegesen megtekinthető fájlokat és a feltöltésre váró hivatalos iratokat. A technikai segédletek nem helyettesítik a pedagógiai programot vagy a házirendet.",
         "items": [
           {
             "title": "Nevelési és oktatási dokumentumok",
@@ -4873,7 +5362,7 @@
         ]
       },
       "information-services": {
-        "intro": "Az iskolai ügyintézési teendők ügytípusok szerint, közérthető sorrendben jelennek meg.",
+        "intro": "Tanulmányi ügyintézésnél az ügytípust, a szükséges iratot és a megfelelő kapcsolattartási csatornát kell először kiválasztani. Egyedi határidőt csak hivatalos intézményi tájékoztató erősíthet meg.",
         "items": [
           {
             "title": "Tanulmányi ügyek",
@@ -4932,11 +5421,35 @@
               }
             ],
             "kind": "list"
+          },
+          {
+            "kind": "list",
+            "title": "Ügyintézés előkészítése",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Pontos ügytípus",
+                    "details": [
+                      "Tanulmányi igazolás, beiratkozás, mulasztás vagy dokumentumkérés esetén először az ügy tárgyát szükséges meghatározni."
+                    ]
+                  },
+                  {
+                    "title": "Hivatalos visszajelzés",
+                    "details": [
+                      "Az ügyintézés állapotát az iskola által megadott hivatalos csatornán lehet egyeztetni."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "information-service": {
-        "intro": "A közösségi szolgálat az érettségihez kapcsolódó, közösségi célú tevékenység intézményi megszervezése és dokumentálása.",
+        "intro": "Az iskolai közösségi szolgálat szervezéséhez a fogadóhely, az előzetes egyeztetés, a tevékenység és az igazolás dokumentálása tartozik. A konkrét intézményi eljárást külön kell ellenőrizni.",
         "items": [
           {
             "title": "A közösségi szolgálat lényege",
@@ -4995,11 +5508,35 @@
               }
             ],
             "kind": "steps"
+          },
+          {
+            "kind": "list",
+            "title": "Közösségi szolgálat ellenőrzőpontjai",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Tevékenység megkezdése előtt",
+                    "details": [
+                      "A fogadó szervezet és a tevékenység megfelelőségét az iskolai kapcsolattartóval kell egyeztetni."
+                    ]
+                  },
+                  {
+                    "title": "Teljesítés igazolása",
+                    "details": [
+                      "A naplózás, az aláírás és az órák beszámíthatósága a mindenkori intézményi eljárás szerint történik."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "information-contact": {
-        "intro": "Az intézmény hivatalos elérhetőségei és a kapcsolattartás legfontosabb lehetőségei.",
+        "intro": "Az iskola címe: 1143 Budapest, Őrnagy utca 5–7. A levelezési és ügyintézési elérhetőségeket az egységes kapcsolati adatokból jelenítjük meg, ellenőrizetlen személyes telefonszámok nélkül.",
         "items": [
           {
             "title": "Hivatalos kapcsolattartási adatok",
@@ -5091,11 +5628,30 @@
               }
             ],
             "kind": "card"
+          },
+          {
+            "kind": "list",
+            "title": "Azonosításhoz szükséges adatok",
+            "summary": "A megadott adatok ellenőrizhető intézményi és sporttörténeti forrásokhoz kapcsolódnak.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Intézmény és helyszín",
+                    "details": [
+                      "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium – OM azonosító: 200346.",
+                      "Székhely: 1143 Budapest, Őrnagy utca 5–7. Az intézményi név, cím és OM-azonosító az oktatási nyilvántartásban is szerepel."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "information-timetable": {
-        "intro": "A csengetési időpontok, a szünetek és a heti órarend áttekintő felülete. Az osztályórendek jelenleg bemutatóadatok, nem hivatalos beosztások.",
+        "intro": "Nyolc tanóra időrendje böngészhető; az osztályórarendek jelenleg egyértelműen jelölt demóadatok. A tényleges órarendet és esetleges változásokat az intézményi felületeken kell ellenőrizni.",
         "items": [
           {
             "title": "A tanítási nap csengetési rendje",
@@ -5194,7 +5750,7 @@
         ]
       },
       "information-meals": {
-        "intro": "Az iskolai étkezés megrendelésével, lemondásával és a kapcsolódó nyilatkozatokkal összefüggő információk.",
+        "intro": "Étkezés megrendelésénél, lemondásánál és kedvezmények igénylésénél különböző dokumentumok és határidők lehetnek szükségesek. Itt nem szerepel igazolatlan fizetési szolgáltató vagy lemondási határidő.",
         "items": [
           {
             "title": "Étkezés megrendelése",
@@ -5253,11 +5809,35 @@
               }
             ],
             "kind": "accordion"
+          },
+          {
+            "kind": "list",
+            "title": "Étkezési ügyek különválasztása",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Megrendelés és módosítás",
+                    "details": [
+                      "A rendelési lehetőséget és a lemondás szabályait az aktuális szolgáltatói tájékoztatás alapján kell egyeztetni."
+                    ]
+                  },
+                  {
+                    "title": "Kedvezmény igazolása",
+                    "details": [
+                      "A jogosultság és az igazoló iratok körét az adott tanévre érvényes szabályok szerint kell ellenőrizni."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "information-absence": {
-        "intro": "A hiányzás igazolásával kapcsolatos tudnivalók a hivatalos házirend és a szülői dokumentumok alapján követhetők.",
+        "intro": "Mulasztásnál az igazolás módját és határidejét a hatályos házirend és a hivatalos intézményi tájékoztatás szabályozza. A példák segítik a tájékozódást, de nem helyettesítik a szabályzatot.",
         "items": [
           {
             "title": "A mulasztás igazolásának rendje",
@@ -5316,6 +5896,30 @@
               }
             ],
             "kind": "list"
+          },
+          {
+            "kind": "list",
+            "title": "Mulasztás igazolásának lépései",
+            "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+            "groups": [
+              {
+                "title": "Részletes tudnivalók",
+                "points": [
+                  {
+                    "title": "Tájékoztatás",
+                    "details": [
+                      "Az érintett órák és a mulasztás időpontjának egyértelmű megadása segíti az ügyintézést."
+                    ]
+                  },
+                  {
+                    "title": "Igazolás",
+                    "details": [
+                      "Az elfogadható igazolás típusa, a benyújtás és a határidő a hatályos házirendből állapítható meg."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
@@ -7306,14 +7910,14 @@
     "editorNotice": "A szerkesztő kizárólag localhost környezetben nyílik meg. Az adatok módosítása nem publikál automatikusan: az exportált site.json kézi ellenőrzést és visszamásolást igényel.",
     "premiumAlbums": {
       "title": "Kiemelt képalbumok",
-      "intro": "Sportági, tanévi és rendezvényi képalbumok egy helyen. A jelenlegi albumborítók illusztrációkból készültek.",
+      "intro": "Sportági, tanévi és rendezvényi albumok egyedi borítókkal, képszámmal és gyors megnyitással.",
       "openedLabel": "Megnyitott album",
       "dimensions": [
         "sport",
         "schoolYear",
         "event"
       ],
-      "shareLabel": "Album megosztási előnézete",
+      "shareLabel": "Megosztási metaadat (szerkesztői használat)",
       "disclaimer": "Bemutatóképek – a csoportosítás nem igazol megtörtént eseményt."
     }
   },
@@ -7600,13 +8204,6 @@
         "title": "Nemzeti Jogszabálytár – 1/2026. (VII. 31.) OGYM rendelet, 8–9. § és 1. melléklet",
         "url": "https://njt.jog.gov.hu/jogszabaly/2026-1-20-9M",
         "kind": "national",
-        "checkedAt": "2026-11-23"
-      },
-      {
-        "id": "school-home",
-        "title": "Csanádi Sportiskola – hivatalos honlap (helyi tájékoztatók ellenőrzésére)",
-        "url": "https://csanadi-bp.edu.hu/",
-        "kind": "school",
         "checkedAt": "2026-11-23"
       }
     ],
@@ -7957,7 +8554,6 @@
     ],
     "emptyLabel": "Nincs még feltöltött és jóváhagyott osztályórend.",
     "sourceNote": "Az órák időpontjai az iskola általános csengetési rendjét követik. A rendkívüli napok és az osztályonkénti változások intézményi megerősítés nélkül nem jelenhetnek meg tényként.",
-    "officialHref": "https://csanadi-bp.edu.hu/csengetes.html",
     "updateStatus": "A csengetési idők a hivatalos intézményi oldalon ellenőrizve (2026. 11. 23.); a mintaként szereplő osztályórarendek nem valós adatok."
   },
   "featureCenters": {
@@ -8171,7 +8767,7 @@
   "seo": {
     "publicBase": "https://vdi06.github.io/csanadi-website/",
     "indexingApproved": false,
-    "defaultDescription": "A Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium bemutató weboldala: képzések, sportélet, programok és tájékoztatók. A mintatartalom még hitelesítésre vár.",
+    "defaultDescription": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium – képzések, sportélet és tájékoztató felületek. A tesztkiadás egyes adatai intézményi ellenőrzésre várnak.",
     "shareImage": "./shared/assets/media/seo/csanadi-megosztas.jpg",
     "shareDisclaimer": "A weboldal jelenlegi állapota tesztkiadás, illusztrációkkal és ellenőrzésre váró mintatartalmakkal."
   }

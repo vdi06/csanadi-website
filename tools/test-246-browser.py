@@ -46,7 +46,7 @@ with sync_playwright() as pw:
       page.evaluate('''async platform=>{const m=await import('csanadi:'+platform+'/gallery.js');window.__g=(platform==='desktop'?m.createDesktopMedia:m.createMobileMedia)(window.__cfg);document.getElementById('root').append(window.__g.section);}''',platform)
       root=page.locator('.media-premium-showcase');gallery=page.locator('.'+platform+'-media-grid')
       assert root.locator('.media-premium-cover').count()==5;checks+=1
-      assert root.locator('.media-premium-share').count()==5;checks+=1
+      assert root.locator('.media-premium-share').count()==0;checks+=1
       assert root.locator('.media-premium-cover img').first.get_attribute('src').startswith('./shared/assets/media/gallery/covers/');checks+=1
       cover=root.locator('.media-premium-cover').first
       cover.scroll_into_view_if_needed()
@@ -61,6 +61,7 @@ with sync_playwright() as pw:
       root.locator('.media-premium-tab').filter(has_text='Kiemelt').click()
       root.locator('.media-premium-cover').first.click()
       assert root.locator('.media-premium-opened h3').inner_text()=='Atlétika';checks+=1
+      assert root.locator('.media-premium-share').count()==0;checks+=1
       assert gallery.locator('button').count()==1;checks+=1
       assert 'album=sport%3Aatletika' in page.evaluate('window.__nav');checks+=1
       assert root.locator('.media-premium-back').is_visible();checks+=1

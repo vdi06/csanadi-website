@@ -1,8 +1,8 @@
 /** Egyetlen HTML, közvetlen kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.46";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.46";
-import { eventById } from "./calendar-data.js?v=2.46";
-import { mountOffline } from "./offline.js?v=2.46";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.48";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.48";
+import { eventById } from "./calendar-data.js?v=2.48";
+import { mountOffline } from "./offline.js?v=2.48";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -20,6 +20,7 @@ let failedAttempts = 0;
 let offlineView = null;
 
 function route() {
+  if (!location.hash || location.hash === config.routes.gate || location.hash === "#/kapu") return "gate";
   if (location.hash === config.routes.home) return "home";
   const sportMatch = /^#\/kezdolap\/sportsiker\/([a-z0-9-]+)$/.exec(location.hash);
   if (sportMatch && featuredSportSuccesses(config).some((item) => item.id === sportMatch[1])) return "home";
@@ -62,7 +63,7 @@ function mountView(platform, module, selectedRoute) {
     const focusTarget = searchDetailOpen ? null : menuPage
       ? root.querySelector(`.${platform}-page-title`)
       : selectedRoute === "home" ? root.querySelector(".home-brand")
-      : null;
+      : root.querySelector(".gate-door-button");
     if (focusTarget) {
       focusTarget.focus({ preventScroll:true });
     }
@@ -146,7 +147,8 @@ async function loadConfig() {
     const response = await fetch(freshSettings, { cache:"no-store", signal:controller.signal });
     if (!response.ok) throw new Error(`Hiányzó JSON: ${response.status}`);
     const nextConfig = await response.json();
-    if (nextConfig?.schemaVersion !== "2.30" || !nextConfig.routes?.home) {
+    if (nextConfig?.schemaVersion !== "2.30" || !nextConfig.routes?.home ||
+      nextConfig.routes.gate !== "#/" || nextConfig.gate?.frames !== 30) {
       throw new Error("A honlap JSON-beállításai hibásak.");
     }
     validateMenu(nextConfig);
@@ -162,17 +164,12 @@ async function loadConfig() {
         window.history.replaceState(window.history.state, "", current);
       }
     }
-    // Korábbi kapuhivatkozás és hash nélküli URL: azonnal a kezdőlapra.
-    if (!location.hash || location.hash === "#/" || location.hash === "#/kapu") {
-      const destination = new URL(window.location.href);
-      destination.hash = config.routes.home;
-      window.history.replaceState(window.history.state, "", destination);
-    }
     document.title = config.site.fullName;
     for (const [name, value] of Object.entries(config.theme)) {
       document.documentElement.style.setProperty(`--${name}`, value);
     }
-    // A kezdőlap kapu és belépőáttűnés nélkül, azonnal jelenik meg.
+    // A kapu külön kezdőútvonalon jelenik meg; a közvetlen oldalhivatkozások nem sérülnek.
+    document.documentElement.style.setProperty("--home-reveal-duration", `${config.gate.homeRevealMs}ms`);
     await render();
     initialized = true;
     offlineView = null;

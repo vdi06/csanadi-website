@@ -1,8 +1,8 @@
-import { element } from "../shared/js/dom.js?v=2.46";
-import { checkedMediaCenter, mediaResults } from "../shared/js/media-data.js?v=2.46";
-import { createGalleryDialog } from "../shared/js/gallery-dialog.js?v=2.46";
-import { createAlbumControls, groupedCards, cardImage, allowLocalMediaEditor, createPremiumAlbumShowcase } from "../shared/js/gallery-ui.js?v=2.46";
-import { createMediaEditor } from "../shared/js/media-editor.js?v=2.46";
+import { element } from "../shared/js/dom.js?v=2.48";
+import { checkedMediaCenter, mediaResults } from "../shared/js/media-data.js?v=2.48";
+import { createGalleryDialog } from "../shared/js/gallery-dialog.js?v=2.48";
+import { createAlbumControls, groupedCards, cardImage, allowLocalMediaEditor, createPremiumAlbumShowcase } from "../shared/js/gallery-ui.js?v=2.48";
+import { createMediaEditor } from "../shared/js/media-editor.js?v=2.48";
 const el=element;
 export function createMobileMedia(config) {
   const settings=checkedMediaCenter(config);
@@ -53,10 +53,10 @@ export function createMobileMedia(config) {
   }
   search.addEventListener("input",()=>{query=search.value;reset();});
   more.addEventListener("click",()=>{limit+=settings.loadStep;render();});
-  section.append(el("div",{className:"mobile-media-head"},
-    el("p",{text:settings.eyebrow}),el("h2",{text:"Képek témák szerint"}),
-    el("p",{text:settings.note})),search,filters,
-    el("p",{className:"media-album-disclaimer",text:settings.albumInfo}),showcase.wrapper,albums.group,status,grid,more);
+  section.append(showcase.wrapper,
+    el("section",{className:"mobile-media-browser",attributes:{"aria-label":"Képek keresése és szűrése"}},
+      el("h2",{className:"media-browser-title",text:"Képek keresése és szűrése"}),
+      search,filters,albums.group,status,grid,more));
   const editor=allowLocalMediaEditor()?createMediaEditor(section,config,reset):null;
   render();
   if(initial)showcase.openById(initial[1],initial[2]);

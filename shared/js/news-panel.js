@@ -1,6 +1,6 @@
-import { element } from "./dom.js?v=2.46";
-import { menuPageHref } from "./menu-data.js?v=2.46";
-import { calendarEntries } from "./calendar-data.js?v=2.46";
+import { element } from "./dom.js?v=2.48";
+import { menuPageHref } from "./menu-data.js?v=2.48";
+import { calendarEntries } from "./calendar-data.js?v=2.48";
 
 /** Az intézmény JSON-ban rögzített hírei. Az időpontok a hír/esemény dátumai,
  * nem feltételezett közzétételi időpontok. Az összes szöveg textContent-ként kerül a DOM-ba. */

@@ -1,24 +1,28 @@
-import { createDesktopFeatureCenter } from "./centers.js?v=2.46";
-import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.46";
-import { element } from "../shared/js/dom.js?v=2.46";
-import { makeFooter } from "../shared/js/footer.js?v=2.46";
-import { makeDesktopHeader } from "./header.js?v=2.46";
-import { createDesktopPage } from "./page.js?v=2.46";
-import { createDesktopHero } from "./hero.js?v=2.46";
-import { createDesktopSuccesses } from "./successes.js?v=2.46";
-import { createDesktopCalendar } from "./calendar.js?v=2.46";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.46";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.46";
-import { createDesktopInformation } from "./information.js?v=2.46";
-import { createDesktopMedia } from "./gallery.js?v=2.46";
-import { createDesktopTimetable } from "./timetable.js?v=2.46";
-import { createDesktopDocuments } from "./documents.js?v=2.46";
-import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.46";
+import { createDesktopFeatureCenter } from "./centers.js?v=2.48";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.48";
+import { element } from "../shared/js/dom.js?v=2.48";
+import { mountGate } from "../shared/js/gate.js?v=2.48";
+import { makeFooter } from "../shared/js/footer.js?v=2.48";
+import { makeDesktopHeader } from "./header.js?v=2.48";
+import { createDesktopPage } from "./page.js?v=2.48";
+import { createDesktopHero } from "./hero.js?v=2.48";
+import { createDesktopSuccesses } from "./successes.js?v=2.48";
+import { createDesktopCalendar } from "./calendar.js?v=2.48";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.48";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.48";
+import { createDesktopInformation } from "./information.js?v=2.48";
+import { createDesktopMedia } from "./gallery.js?v=2.48";
+import { createDesktopTimetable } from "./timetable.js?v=2.48";
+import { createDesktopDocuments } from "./documents.js?v=2.48";
+import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.48";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {
   const platformRoot = element("div", { className: "desktop-app" });
   root.replaceChildren(platformRoot);
+  if (page === "gate") {
+    return mountGate(platformRoot, config, "desktop", () => { location.hash = config.routes.home; });
+  }
   const home = element("div", { className: "desktop-home" });
   const isHome = page === "home";
   const desktopHeader = makeDesktopHeader(config, home, { heroMode: isHome });
@@ -63,11 +67,11 @@ export function mount(root, config, page) {
   if (hero) main.append(hero.track, carousel.section);
   else if (isArchive) main.append(successes.section,
     createDesktopPage(config, "sports-results", { hideHeading:true }));
-  else if (featureCenter) main.append(createDesktopPage(config,featurePageId,{hideCards:true}),featureCenter.section);
+  else if (featureCenter) main.append(createDesktopPage(config,featurePageId,{hideCards:true,hideIntro:true}),featureCenter.section);
   else if (isInformation) main.append(createDesktopPage(config, "information-daily", {hideCards:true}), infoCenter.section);
   else if (isMediaPage) main.append(createDesktopPage(config, "sports-gallery", {hideCards:true}), mediaCenter.section);
   else if (isTimetable) main.append(createDesktopPage(config, "information-timetable", {hideCards:true}), timetableCenter.section);
-  else if (isDocuments) main.append(createDesktopPage(config, "information-documents", {hideCards:true}), documentsCenter.section);
+  else if (isDocuments) main.append(createDesktopPage(config, "information-documents", {hideCards:true,hideIntro:true}), documentsCenter.section);
   else if (isCalendarPage) main.append(createDesktopPage(config, "news-calendar", {hideCards:true}), fullCalendar.section);
   else if (isAdmissionHub) main.append(createDesktopPage(config, admissionPageId, {hideCards:true}), admissionsCenter.section);
   else if (admissionLinks) main.append(createDesktopPage(config, admissionPageId, {extraContent:admissionLinks}));
