@@ -1,7 +1,7 @@
-import { element } from "../shared/js/dom.js?v=2.43";
-import { trapTab } from "../shared/js/focus.js?v=2.43";
-import { isolateModal } from "../shared/js/modal.js?v=2.43";
-import { filterSearchItems, navLink, searchItems } from "../shared/js/shell.js?v=2.43";
+import { element } from "../shared/js/dom.js?v=2.46";
+import { trapTab } from "../shared/js/focus.js?v=2.46";
+import { isolateModal } from "../shared/js/modal.js?v=2.46";
+import { filterSearchItems, navLink, searchItems } from "../shared/js/shell.js?v=2.46";
 
 /** Asztali Spotlight: majdnem teljes képernyős, de lebegő üvegpanel. */
 export function createDesktopSearch(config, trigger, beforeOpen = () => {}) {

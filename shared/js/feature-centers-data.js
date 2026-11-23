@@ -1,6 +1,6 @@
-import { calendarEntries, validDay } from './calendar-data.js?v=2.43';
-import { checkedMediaCenter } from './media-data.js?v=2.43';
-import { budapestToday } from './admission-data.js?v=2.43';
+import { calendarEntries, validDay } from './calendar-data.js?v=2.46';
+import { checkedMediaCenter } from './media-data.js?v=2.46';
+import { budapestToday } from './admission-data.js?v=2.46';
 
 const idPattern=/^[a-z0-9-]+$/;
 const safeText=(v,n=2000)=>typeof v==='string'&&v.trim().length>0&&v.length<=n;

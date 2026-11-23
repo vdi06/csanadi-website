@@ -32,4 +32,4 @@ assert.equal(c.home.carousel.panels.filter(x=>x.enabled).length,3);
 assert.equal(c.home.carousel.autoplayMs,30000);
 assert.match(readFileSync(new URL('../desktop/calendar.js',import.meta.url),'utf8'), /let mode="month"/);
 assert.match(readFileSync(new URL('../mobile/calendar.js',import.meta.url),'utf8'), /let mode="month"/);
-console.log('✓ 2.43 központok: adatvalidáció, linkek, 24 vizsgás és 11 közösségi esemény, keresés, 6 sportág, 2 képzési út, duplikált adatok kizárása');
+console.log('✓ 2.45 központok: adatvalidáció, linkek, 24 vizsgás és 11 közösségi esemény, keresés, 6 sportág, 2 képzési út, duplikált adatok kizárása');

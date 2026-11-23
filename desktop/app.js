@@ -1,29 +1,24 @@
-import { createDesktopFeatureCenter } from "./centers.js?v=2.43";
-import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.43";
-import { element } from "../shared/js/dom.js?v=2.43";
-import { mountGate } from "../shared/js/gate.js?v=2.43";
-import { makeFooter } from "../shared/js/footer.js?v=2.43";
-import { makeDesktopHeader } from "./header.js?v=2.43";
-import { createDesktopPage } from "./page.js?v=2.43";
-import { createDesktopHero } from "./hero.js?v=2.43";
-import { createDesktopSuccesses } from "./successes.js?v=2.43";
-import { createDesktopCalendar } from "./calendar.js?v=2.43";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.43";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.43";
-import { createDesktopInformation } from "./information.js?v=2.43";
-import { createDesktopMedia } from "./gallery.js?v=2.43";
-import { createDesktopTimetable } from "./timetable.js?v=2.43";
-import { createDesktopDocuments } from "./documents.js?v=2.43";
-import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.43";
+import { createDesktopFeatureCenter } from "./centers.js?v=2.46";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.46";
+import { element } from "../shared/js/dom.js?v=2.46";
+import { makeFooter } from "../shared/js/footer.js?v=2.46";
+import { makeDesktopHeader } from "./header.js?v=2.46";
+import { createDesktopPage } from "./page.js?v=2.46";
+import { createDesktopHero } from "./hero.js?v=2.46";
+import { createDesktopSuccesses } from "./successes.js?v=2.46";
+import { createDesktopCalendar } from "./calendar.js?v=2.46";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.46";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.46";
+import { createDesktopInformation } from "./information.js?v=2.46";
+import { createDesktopMedia } from "./gallery.js?v=2.46";
+import { createDesktopTimetable } from "./timetable.js?v=2.46";
+import { createDesktopDocuments } from "./documents.js?v=2.46";
+import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.46";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {
   const platformRoot = element("div", { className: "desktop-app" });
   root.replaceChildren(platformRoot);
-  if (page === "gate") {
-    return mountGate(platformRoot, config, "desktop", () => { location.hash = config.routes.home; });
-  }
-
   const home = element("div", { className: "desktop-home" });
   const isHome = page === "home";
   const desktopHeader = makeDesktopHeader(config, home, { heroMode: isHome });

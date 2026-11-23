@@ -1,0 +1,16 @@
+{
+  "images": [
+    {
+      "file": "minta-sportkep.jpg",
+      "id": "uj-sportkep-001",
+      "title": "Sportos pillanat – ellenőrzés alatt",
+      "alt": "Sportolást szemléltető kép – részletes, pontos képleírás szükséges",
+      "caption": "Új médiakép előkészítve, intézményi jóváhagyásra vár.",
+      "category": "sport",
+      "href": "#/oldal/sports-gallery",
+      "album": {"sport": "altalanos", "schoolYear": "nincs", "event": "nincs"},
+      "provenance": "illustration",
+      "publication": "draft"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-/** 2.43: teljes kiadás, közös adatforrások és a külön platformkód regenerálható regressziós ellenőrzése. */
+/** 2.45: teljes kiadás, közös adatforrások és a külön platformkód regenerálható regressziós ellenőrzése. */
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -7,11 +7,29 @@ import { execFileSync } from 'node:child_process';
 const root=resolve(fileURLToPath(new URL('..',import.meta.url)));
 const load=(file)=>readFileSync(join(root,file),'utf8');
 const data=JSON.parse(load('shared/data/site.json'));
-assert.equal(data.release,'2.43');
+assert.equal(data.release,'2.46');
 assert.equal(data.schemaVersion,'2.30');
+assert.equal(data.routes.home,'#/kezdolap');
+assert.equal(data.routes.gate,undefined);
+assert.equal(data.gate,undefined);
+
 const walk=(dir)=>readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(join(dir,e.name)):[relative(root,join(dir,e.name)).split(sep).join('/')]);
 const allFiles=walk(root);
-assert.equal(allFiles.filter(f=>f.endsWith('.html')).length,1);
+assert.ok(!allFiles.includes('shared/js/gate.js'));
+assert.ok(!allFiles.some(f=>f.includes('/gate-frames/')));
+for(const p of ['desktop/app.js','mobile/app.js']) {
+  assert.ok(!load(p).includes('mountGate'));
+  assert.ok(!load(p).includes('page === "gate"'));
+  assert.ok(!load(p).includes('home-reveal'));
+}
+assert.ok(!load('shared/js/entry.js').includes('"gate"'));
+assert.ok(load('shared/js/entry.js').includes(' : "home"'));
+assert.ok(!load('shared/css/base.css').includes('.gate-screen'));
+assert.ok(!load('desktop/styles.css').includes('animation:home-reveal'));
+assert.ok(!load('mobile/styles.css').includes('animation: home-reveal'));
+console.log('✓ Kapu kiiktatva: közvetlen kezdőlap, nincs 30 képkocka vagy belépőáttűnés');
+assert.equal(allFiles.filter(f=>f.endsWith('.html')&&!f.startsWith('share/')).length,1);
+assert.equal(allFiles.filter(f=>f.startsWith('share/')&&f.endsWith('index.html')).length,63);
 assert.ok(allFiles.includes('index.html'));
 for(const required of ['desktop/app.js','desktop/page.js','desktop/centers.js','mobile/app.js','mobile/page.js','mobile/centers.js',
  'shared/js/feature-centers-data.js','shared/js/calendar-data.js','shared/js/document-reader.js','shared/js/search-index.js','shared/data/site.json',
@@ -24,9 +42,9 @@ for(const file of allFiles.filter(p=>/^(desktop|mobile|shared\/js)\/.*\.js$/.tes
 const html=load('index.html');
 assert.match(html,/bootstrap@5\.3\.8\/dist\/css\/bootstrap\.min\.css/);
 assert.match(html,/bootstrap@5\.3\.8\/dist\/js\/bootstrap\.bundle\.min\.js/);
-assert.match(html,/shared\/js\/entry\.js\?v=2\.43/);
-assert.match(html,/shared\/css\/base\.css\?v=2\.43/);
-console.log('✓ Kiadás: HTML, verzióhoz kötött Bootstrap CDN, 2.43-as JS/CSS importok, összes JS-szintaxis');
+assert.match(html,/shared\/js\/entry\.js\?v=2\.46/);
+assert.match(html,/shared\/css\/base\.css\?v=2\.46/);
+console.log('✓ Kiadás: HTML, verzióhoz kötött Bootstrap CDN, 2.46-os JS/CSS importok, összes JS-szintaxis');
 
 const {validateMenu,getMenuPage,menuPageHref}=await import('../shared/js/menu-data.js');
 assert.equal(validateMenu(data).length,6);
@@ -98,12 +116,16 @@ const wrong=structuredClone(data);wrong.featureCenters.sports.topics[0].mediaId=
 assert.throws(()=>checkedFeatureCenters(wrong),/sportág-bemutató/);
 assert.ok(load('desktop/styles.css').includes('.desktop-feature-sport-grid'));
 assert.ok(load('mobile/styles.css').includes('.mobile-feature-event-list'));
-console.log('✓ 2.43: négy adatvezérelt központ, 8 bekötött oldal, külön asztali/mobilos felület, hibás médiák kizárása');
+console.log('✓ 2.45: négy adatvezérelt központ, 8 bekötött oldal, külön asztali/mobilos felület, hibás médiák kizárása');
 
 const {searchSite}=await import('../shared/js/search-index.js');
 for(const keyword of ['felvételi','sport','érettségi','Csanádi-nap','Mozgáskoordináció'])assert.ok(searchSite(data,keyword).length>0,`Kereső: ${keyword}`);
 assert.equal(data.home.sportSuccesses.items.length,30);
 assert.equal(data.home.footer.notices.length,0);
-assert.ok(load('shared/js/footer.js').includes('footer-documents-link'));
-console.log('✓ Kereső, történeti minta-sportsikerek és dokumentumhoz vezető lábléc');
-console.log('ÖSSZES 2.43 NODE REGRESSZIÓS TESZT SIKERES');
+assert.ok(!load('shared/js/footer.js').includes('footer-documents-link'));
+assert.ok(!load('shared/js/footer.js').includes('footer-mobile-tab'));
+assert.ok(load('shared/js/footer.js').includes('footer-status'));
+assert.ok(load('desktop/styles.css').includes('.desktop-document-grid > .document-card:only-child'));
+assert.ok(load('mobile/styles.css').includes('.mobile-document-card:only-child'));
+console.log('✓ Kereső, minta-sportsikerek, egységes lábléc és középre igazított dokumentumtalálat');
+console.log('ÖSSZES 2.46 NODE REGRESSZIÓS TESZT SIKERES');

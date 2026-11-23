@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vdi06.github.io/csanadi-website/sitemap.xml

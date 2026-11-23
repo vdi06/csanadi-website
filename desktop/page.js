@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.43";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.43";
+import { element } from "../shared/js/dom.js?v=2.46";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.46";
 
 const cls = (part) => `desktop-page-${part}`;
 const detailsList = (point) => element("ul", { className:cls("card-details") },
@@ -81,6 +81,8 @@ export function createDesktopPage(config, id, { hideHeading = false, hideCards =
     ...(hideHeading ? [] : [element("h1", { className:cls("title"), text:page.title,
       attributes:{tabindex:"-1"} })]),
     element("p", { className:cls("intro"), text:page.intro }),
+    element("a", { className:"page-share-preview", text:"Oldal megosztási előnézete",
+      attributes:{ href:`./share/page/${id}/`,"aria-label":`${page.title} – megosztási előnézet megnyitása` } }),
     ...(extraContent ? [extraContent] : []),
     ...(hideCards ? [] : [element("div", { className:`${cls("cards")} row` },
       ...page.items.map((card) => cardElement(card,config,page)))]));;

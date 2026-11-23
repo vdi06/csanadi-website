@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.43";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.43";
+import { element } from "../shared/js/dom.js?v=2.46";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.46";
 
 const css = (name) => `mobile-page-${name}`;
 function pointDetails(point) {
@@ -74,6 +74,8 @@ export function createMobilePage(config, id, { hideHeading = false, hideCards = 
     ...(hideHeading ? [] : [element("h1", { className:css("title"), text:page.title,
       attributes:{tabindex:"-1"} })]),
     element("p", { className:css("intro"), text:page.intro }),
+    element("a", { className:"page-share-preview", text:"Oldal megosztási előnézete",
+      attributes:{ href:`./share/page/${id}/`,"aria-label":`${page.title} – megosztási előnézet megnyitása` } }),
     ...(extraContent ? [extraContent] : []),
     ...(hideCards ? [] : [element("div", { className:`${css("cards")} row` },
       ...page.items.map((card) => mobileCard(card,config,page)))]));;

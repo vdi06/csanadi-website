@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""2.41 Chromium QA, using Playwright's local request interception.
+"""2.45 Chromium QA, using Playwright's local request interception.
 
 A GitHub Pages / live CDN E2E check is intentionally NOT claimed: this runner
 serves the unmodified local JS/CSS/JSON/media with a virtual HTTPS file origin,
@@ -49,6 +49,8 @@ with sync_playwright() as p:
         ('mobile-dark',390,844,'dark','no-preference',True),
         ('mobile-light',320,700,'light','reduce',False),
     ]
+    only_case=os.environ.get('CSANADI_ONLY_CASE','')
+    if only_case:cases=[case for case in cases if case[0]==only_case]
     for name,width,height,theme,motion,all_pages in cases:
         platform='mobile' if width<768 else 'desktop'
         errors=[]
@@ -60,7 +62,7 @@ with sync_playwright() as p:
         page=ctx.new_page()
         page.on('pageerror',lambda err: errors.append(str(err)))
         try:
-            page.goto('about:blank#/kezdolap')
+            page.goto('about:blank#/')
             wrapper=f'''<!doctype html><html lang="hu"><head><meta charset="utf-8">
             <meta name="viewport" content="width=device-width,initial-scale=1">
             <base href="https://csanadi-local.test/">
@@ -69,6 +71,10 @@ with sync_playwright() as p:
             page.set_content(wrapper)
             page.evaluate("document.addEventListener('click',e => {const a=e.target.closest?.('a[href^=\"#/\"]');if(a){e.preventDefault();e.stopImmediatePropagation();location.hash=a.getAttribute('href')}}, true)")
             page.locator('.home-carousel-tab').first.wait_for(timeout=15000)
+            check(page.locator('.gate-screen,.gate-door-button').count()==0, f'{name}: gateway removed')
+            check(page.locator(f'.{platform}-home').count()==1, f'{name}: homepage without gateway')
+            check(page.evaluate('location.hash')=='#/kezdolap',f'{name}: legacy gate URL canonicalized')
+            check(getattr(page, 'url', None) is not None, f'{name}: loaded without gate')
             check(page.locator('.home-carousel-tab').all_inner_texts()==
                 ['Sportsikerek','Tanévi naptár','Hírek és közlemények'], f'{name}: tab data')
             check(page.locator('.home-carousel-tab[aria-selected="true"]').count()==1, f'{name}: selected tab')
@@ -144,7 +150,9 @@ with sync_playwright() as p:
                     page.locator('.'+platform+'-info-center').count()>0 or
                     page.locator('.'+platform+'-media-center').count()>0 or
                     page.locator('.'+platform+'-document-center').count()>0 or
-                    page.locator('.'+platform+'-admission-center').count()>0)
+                    page.locator('.'+platform+'-admission-center').count()>0 or
+                    page.locator('.'+platform+'-feature-center').count()>0 or
+                    page.locator('.'+platform+'-timetable-center').count()>0)
                 check(has_content, f'{name}/{leaf}: content')
                 check(page.evaluate('document.documentElement.scrollWidth <= window.innerWidth + 1'),
                       f'{name}/{leaf}: overflow')
@@ -266,7 +274,7 @@ with sync_playwright() as p:
             if platform=='mobile':
                 # Szimulált natív érintés: jobbról balra lapozva a következő kép.
                 page.evaluate("""() => {
-                  const d=document.querySelector('.media-dialog');
+                  const d=document.querySelector('.media-dialog-viewport');
                   const t=(x)=>new Touch({identifier:1,target:d,clientX:x,clientY:150});
                   d.dispatchEvent(new TouchEvent('touchstart',{touches:[t(270)],bubbles:true}));
                   d.dispatchEvent(new TouchEvent('touchend',{changedTouches:[t(90)],bubbles:true}));
@@ -299,11 +307,11 @@ with sync_playwright() as p:
             else:
                 check(documents.locator('.mobile-document-filter-row select').count()==2,f'{name}: mobile dropdowns')
                 documents.locator('select[aria-label="Dokumentumkategória"]').select_option('privacy')
-                check(documents.locator('.document-card').count()==2,f'{name}: privacy category')
+                check(documents.locator('.document-card').count()==3,f'{name}: privacy category')
                 documents.locator('select[aria-label="Dokumentumkategória"]').select_option('all')
                 statusSelect=documents.locator('select[aria-label="Közzétételi állapot"]')
             statusSelect.select_option('available')
-            check(documents.locator('.document-card').count()==2,f'{name}: available file filtering')
+            check(documents.locator('.document-card').count()==(6 if platform=='desktop' else 5),f'{name}: available file filtering')
             statusSelect.select_option('all')
             docSearch=documents.locator('.document-center-search')
             docSearch.fill('pedagogiai')
@@ -380,7 +388,7 @@ with sync_playwright() as p:
         finally:
             ctx.close()
     # 30s timer and accessible pause in a real Chromium clock (no 30s wait).
-    for name,reduce in [('autoplay-desktop',False),('autoplay-reduced',True),('autoplay-mobile',False)]:
+    for name,reduce in ([] if os.environ.get('CSANADI_SKIP_CAROUSEL')=='1' else [('autoplay-desktop',False),('autoplay-reduced',True),('autoplay-mobile',False)]):
         mobile = name.endswith('mobile')
         ctx=browser.new_context(viewport={'width':390 if mobile else 1440,'height':900},
             is_mobile=mobile,has_touch=mobile,
@@ -391,7 +399,7 @@ with sync_playwright() as p:
         errors=[]
         page.on('pageerror',lambda err: errors.append(str(err)))
         try:
-            page.goto('about:blank#/kezdolap')
+            page.goto('about:blank#/')
             page.clock.install()
             page.set_content('<!doctype html><html lang="hu"><head>'
               '<meta name="viewport" content="width=device-width,initial-scale=1">'

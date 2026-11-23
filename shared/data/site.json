@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.30",
-  "release": "2.43",
+  "release": "2.46",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -8,24 +8,7 @@
     "principal": "Rúzsa Sándor"
   },
   "routes": {
-    "gate": "#/",
     "home": "#/kezdolap"
-  },
-  "gate": {
-    "title": "Csanádi Sportiskola – nyitókapu",
-    "actionLabel": "Belépés a Csanádi Sportiskola kezdőlapjára",
-    "skipLabel": "Belépőanimáció kihagyása",
-    "skipSymbol": "⏭",
-    "frames": 30,
-    "assetDirectory": "./shared/assets/media/web/gate-frames/",
-    "framePrefix": "gate-",
-    "mobileSuffix": "-mobile",
-    "extension": ".webp",
-    "desktopDurationMs": 2250,
-    "mobileDurationMs": 1750,
-    "finishFadeMs": 620,
-    "finishBlurPx": 18,
-    "homeRevealMs": 480
   },
   "home": {
     "calendar": {
@@ -1628,7 +1611,6 @@
       "address": "1143 Budapest, Őrnagy utca 5–7.",
       "email": "csanadi@csanadiiskola.hu",
       "contactTitle": "Kapcsolat",
-      "linksTitle": "Honlapállapot és dokumentumok",
       "modalCloseLabel": "Tájékoztató bezárása",
       "versionLabel": "Verzió",
       "updatedLabel": "Utolsó frissítés",
@@ -6751,7 +6733,18 @@
         "src": "./shared/assets/media/web/desktop-hero/hero-sport-2026.webp",
         "alt": "Sportolást bemutató illusztráció",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/sports-disciplines"
+        "href": "#/oldal/sports-disciplines",
+        "album": {
+          "sport": "altalanos",
+          "schoolYear": "2026-2027",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/sport.webp",
+          "800": "./shared/assets/media/gallery/800/sport.webp",
+          "1280": "./shared/assets/media/gallery/1280/sport.webp"
+        }
       },
       {
         "id": "atletika",
@@ -6760,7 +6753,18 @@
         "src": "./shared/assets/media/web/desktop-hero/hero-athletics-new.webp",
         "alt": "Atlétikai sporttevékenységet illusztráló kép",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/sports-disciplines"
+        "href": "#/oldal/sports-disciplines",
+        "album": {
+          "sport": "atletika",
+          "schoolYear": "nincs",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/atletika.webp",
+          "800": "./shared/assets/media/gallery/800/atletika.webp",
+          "1280": "./shared/assets/media/gallery/1280/atletika.webp"
+        }
       },
       {
         "id": "labdarugas",
@@ -6769,7 +6773,18 @@
         "src": "./shared/assets/media/web/desktop-hero/hero-football-new.webp",
         "alt": "Labdarúgást bemutató illusztráció",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/sports-disciplines"
+        "href": "#/oldal/sports-disciplines",
+        "album": {
+          "sport": "labdarugas",
+          "schoolYear": "nincs",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/labdarugas.webp",
+          "800": "./shared/assets/media/gallery/800/labdarugas.webp",
+          "1280": "./shared/assets/media/gallery/1280/labdarugas.webp"
+        }
       },
       {
         "id": "roplabda",
@@ -6778,7 +6793,18 @@
         "src": "./shared/assets/media/web/desktop-hero/hero-volleyball-new.webp",
         "alt": "Röplabdát bemutató illusztráció",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/sports-disciplines"
+        "href": "#/oldal/sports-disciplines",
+        "album": {
+          "sport": "roplabda",
+          "schoolYear": "nincs",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/roplabda.webp",
+          "800": "./shared/assets/media/gallery/800/roplabda.webp",
+          "1280": "./shared/assets/media/gallery/1280/roplabda.webp"
+        }
       },
       {
         "id": "kezilabda",
@@ -6787,7 +6813,18 @@
         "src": "./shared/assets/media/web/desktop-hero/hero-handball-new.webp",
         "alt": "Kézilabdát bemutató illusztráció",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/sports-disciplines"
+        "href": "#/oldal/sports-disciplines",
+        "album": {
+          "sport": "kezilabda",
+          "schoolYear": "nincs",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/kezilabda.webp",
+          "800": "./shared/assets/media/gallery/800/kezilabda.webp",
+          "1280": "./shared/assets/media/gallery/1280/kezilabda.webp"
+        }
       },
       {
         "id": "uszas",
@@ -6796,7 +6833,18 @@
         "src": "./shared/assets/media/web/desktop-hero/swimming-1600.webp",
         "alt": "Úszást bemutató illusztráció",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/sports-disciplines"
+        "href": "#/oldal/sports-disciplines",
+        "album": {
+          "sport": "uszas",
+          "schoolYear": "nincs",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/uszas.webp",
+          "800": "./shared/assets/media/gallery/800/uszas.webp",
+          "1280": "./shared/assets/media/gallery/1280/uszas.webp"
+        }
       },
       {
         "id": "asztalitenisz",
@@ -6805,7 +6853,18 @@
         "src": "./shared/assets/media/web/desktop-hero/hero-table-tennis-new.webp",
         "alt": "Asztaliteniszt bemutató illusztráció",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/sports-disciplines"
+        "href": "#/oldal/sports-disciplines",
+        "album": {
+          "sport": "asztalitenisz",
+          "schoolYear": "nincs",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/asztalitenisz.webp",
+          "800": "./shared/assets/media/gallery/800/asztalitenisz.webp",
+          "1280": "./shared/assets/media/gallery/1280/asztalitenisz.webp"
+        }
       },
       {
         "id": "sportnap",
@@ -6814,7 +6873,18 @@
         "src": "./shared/assets/media/web/mobile-story/kozosseg-01-sportsday.webp",
         "alt": "Iskolai sportnap hangulatát szemléltető illusztráció",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/sports-disciplines"
+        "href": "#/oldal/sports-disciplines",
+        "album": {
+          "sport": "altalanos",
+          "schoolYear": "2026-2027",
+          "event": "sportnap"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/sportnap.webp",
+          "800": "./shared/assets/media/gallery/800/sportnap.webp",
+          "1280": "./shared/assets/media/gallery/1280/sportnap.webp"
+        }
       },
       {
         "id": "digitalis",
@@ -6823,7 +6893,18 @@
         "src": "./shared/assets/media/web/desktop-hero/hero-digital-new.webp",
         "alt": "Digitális tanulási helyzetet illusztráló kép",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/education-resources"
+        "href": "#/oldal/education-resources",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "2026-2027",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/digitalis.webp",
+          "800": "./shared/assets/media/gallery/800/digitalis.webp",
+          "1280": "./shared/assets/media/gallery/1280/digitalis.webp"
+        }
       },
       {
         "id": "labor",
@@ -6832,7 +6913,18 @@
         "src": "./shared/assets/media/web/desktop-hero/hero-laboratory-new.webp",
         "alt": "Tudományos felfedezést bemutató illusztráció",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/education-resources"
+        "href": "#/oldal/education-resources",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "nincs",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/labor.webp",
+          "800": "./shared/assets/media/gallery/800/labor.webp",
+          "1280": "./shared/assets/media/gallery/1280/labor.webp"
+        }
       },
       {
         "id": "konyvtar",
@@ -6841,7 +6933,18 @@
         "src": "./shared/assets/media/web/desktop-hero/hero-library-new.webp",
         "alt": "Könyvtári olvasást bemutató illusztráció",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/education-resources"
+        "href": "#/oldal/education-resources",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "nincs",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/konyvtar.webp",
+          "800": "./shared/assets/media/gallery/800/konyvtar.webp",
+          "1280": "./shared/assets/media/gallery/1280/konyvtar.webp"
+        }
       },
       {
         "id": "robotika",
@@ -6850,7 +6953,18 @@
         "src": "./shared/assets/media/web/mobile-story/tudas-05-robotics.webp",
         "alt": "Robotikát szemléltető illusztráció",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/education-resources"
+        "href": "#/oldal/education-resources",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "nincs",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/robotika.webp",
+          "800": "./shared/assets/media/gallery/800/robotika.webp",
+          "1280": "./shared/assets/media/gallery/1280/robotika.webp"
+        }
       },
       {
         "id": "tudas",
@@ -6859,7 +6973,18 @@
         "src": "./shared/assets/media/web/desktop-hero/hero-oktatas-2026.webp",
         "alt": "Oktatási életképet illusztráló kép",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/education-resources"
+        "href": "#/oldal/education-resources",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "2026-2027",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/tudas.webp",
+          "800": "./shared/assets/media/gallery/800/tudas.webp",
+          "1280": "./shared/assets/media/gallery/1280/tudas.webp"
+        }
       },
       {
         "id": "matematika",
@@ -6868,7 +6993,18 @@
         "src": "./shared/assets/media/web/mobile-story/tudas-04-mathematics.webp",
         "alt": "Matematikai tanulást illusztráló kép",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/education-resources"
+        "href": "#/oldal/education-resources",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "nincs",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/matematika.webp",
+          "800": "./shared/assets/media/gallery/800/matematika.webp",
+          "1280": "./shared/assets/media/gallery/1280/matematika.webp"
+        }
       },
       {
         "id": "kozosseg",
@@ -6877,7 +7013,18 @@
         "src": "./shared/assets/media/web/desktop-hero/hero-community-2026.webp",
         "alt": "Iskolai közösségi hangulatot illusztráló kép",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/news-events"
+        "href": "#/oldal/news-events",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "2026-2027",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/kozosseg.webp",
+          "800": "./shared/assets/media/gallery/800/kozosseg.webp",
+          "1280": "./shared/assets/media/gallery/1280/kozosseg.webp"
+        }
       },
       {
         "id": "unnep",
@@ -6886,7 +7033,18 @@
         "src": "./shared/assets/media/web/mobile-story/kozosseg-06-celebration.webp",
         "alt": "Iskolai ünnepi hangulatot illusztráló kép",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/news-events"
+        "href": "#/oldal/news-events",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "2026-2027",
+          "event": "unnepseg"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/unnep.webp",
+          "800": "./shared/assets/media/gallery/800/unnep.webp",
+          "1280": "./shared/assets/media/gallery/1280/unnep.webp"
+        }
       },
       {
         "id": "onkentes",
@@ -6895,7 +7053,18 @@
         "src": "./shared/assets/media/web/mobile-story/kozosseg-03-volunteers.webp",
         "alt": "Önkéntes közösségi munkát illusztráló kép",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/news-events"
+        "href": "#/oldal/news-events",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "2026-2027",
+          "event": "kozossegi-szolgalat"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/onkentes.webp",
+          "800": "./shared/assets/media/gallery/800/onkentes.webp",
+          "1280": "./shared/assets/media/gallery/1280/onkentes.webp"
+        }
       },
       {
         "id": "diaktanacs",
@@ -6904,7 +7073,18 @@
         "src": "./shared/assets/media/web/mobile-story/kozosseg-02-student-council.webp",
         "alt": "Diákok közös munkáját illusztráló kép",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/news-events"
+        "href": "#/oldal/news-events",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "2026-2027",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/diaktanacs.webp",
+          "800": "./shared/assets/media/gallery/800/diaktanacs.webp",
+          "1280": "./shared/assets/media/gallery/1280/diaktanacs.webp"
+        }
       },
       {
         "id": "iskola",
@@ -6913,7 +7093,18 @@
         "src": "./shared/assets/media/web/desktop-hero/bejarat-1600.webp",
         "alt": "Iskolai épület bejáratát bemutató kép",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/school-introduction"
+        "href": "#/oldal/school-introduction",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "2026-2027",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/iskola.webp",
+          "800": "./shared/assets/media/gallery/800/iskola.webp",
+          "1280": "./shared/assets/media/gallery/1280/iskola.webp"
+        }
       },
       {
         "id": "termeszet",
@@ -6922,7 +7113,18 @@
         "src": "./shared/assets/media/web/desktop-hero/hero-nature-new.webp",
         "alt": "Természetközeli tanulást illusztráló kép",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/school-introduction"
+        "href": "#/oldal/school-introduction",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "nincs",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/termeszet.webp",
+          "800": "./shared/assets/media/gallery/800/termeszet.webp",
+          "1280": "./shared/assets/media/gallery/1280/termeszet.webp"
+        }
       },
       {
         "id": "muhely",
@@ -6931,7 +7133,18 @@
         "src": "./shared/assets/media/web/desktop-hero/hero-workshop-new.webp",
         "alt": "Kézműves alkotóműhelyt illusztráló kép",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/school-introduction"
+        "href": "#/oldal/school-introduction",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "nincs",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/muhely.webp",
+          "800": "./shared/assets/media/gallery/800/muhely.webp",
+          "1280": "./shared/assets/media/gallery/1280/muhely.webp"
+        }
       },
       {
         "id": "kozos-terek",
@@ -6940,12 +7153,169 @@
         "src": "./shared/assets/media/web/mobile-story/kozosseg-04-corridor.webp",
         "alt": "Iskolai közösségi teret illusztráló kép",
         "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
-        "href": "#/oldal/school-introduction"
+        "href": "#/oldal/school-introduction",
+        "album": {
+          "sport": "nincs",
+          "schoolYear": "nincs",
+          "event": "nincs"
+        },
+        "provenance": "illustration",
+        "responsive": {
+          "400": "./shared/assets/media/gallery/400/kozos-terek.webp",
+          "800": "./shared/assets/media/gallery/800/kozos-terek.webp",
+          "1280": "./shared/assets/media/gallery/1280/kozos-terek.webp"
+        }
       }
     ],
     "desktopInitialCount": 9,
     "mobileInitialCount": 6,
-    "loadStep": 6
+    "loadStep": 6,
+    "albumInfo": "A jelenlegi bemutatóképek illusztrációk. A tanévi és rendezvényi csoportosítás önmagában nem igazol megtörtént eseményt. Új fotó csak szerkesztői ellenőrzés után jelenhet meg.",
+    "albums": {
+      "sport": [
+        {
+          "id": "all",
+          "label": "Minden sportág"
+        },
+        {
+          "id": "atletika",
+          "label": "Atlétika",
+          "coverId": "atletika",
+          "featured": true,
+          "description": "Atlétika témájú, szerkesztői illusztrációkat tartalmazó képalbum.",
+          "cover": "./shared/assets/media/gallery/covers/sport-atletika.webp"
+        },
+        {
+          "id": "labdarugas",
+          "label": "Labdarúgás",
+          "coverId": "labdarugas",
+          "featured": true,
+          "description": "Labdarúgás témájú, szerkesztői illusztrációkat tartalmazó képalbum.",
+          "cover": "./shared/assets/media/gallery/covers/sport-labdarugas.webp"
+        },
+        {
+          "id": "roplabda",
+          "label": "Röplabda",
+          "coverId": "roplabda",
+          "featured": true,
+          "description": "Röplabda témájú, szerkesztői illusztrációkat tartalmazó képalbum.",
+          "cover": "./shared/assets/media/gallery/covers/sport-roplabda.webp"
+        },
+        {
+          "id": "kezilabda",
+          "label": "Kézilabda",
+          "coverId": "kezilabda",
+          "featured": false,
+          "description": "Kézilabda témájú, szerkesztői illusztrációkat tartalmazó képalbum.",
+          "cover": "./shared/assets/media/gallery/covers/sport-kezilabda.webp"
+        },
+        {
+          "id": "uszas",
+          "label": "Úszás",
+          "coverId": "uszas",
+          "featured": false,
+          "description": "Úszás témájú, szerkesztői illusztrációkat tartalmazó képalbum.",
+          "cover": "./shared/assets/media/gallery/covers/sport-uszas.webp"
+        },
+        {
+          "id": "asztalitenisz",
+          "label": "Asztalitenisz",
+          "coverId": "asztalitenisz",
+          "featured": false,
+          "description": "Asztalitenisz témájú, szerkesztői illusztrációkat tartalmazó képalbum.",
+          "cover": "./shared/assets/media/gallery/covers/sport-asztalitenisz.webp"
+        },
+        {
+          "id": "altalanos",
+          "label": "Általános sport",
+          "coverId": "sport",
+          "featured": false,
+          "description": "Általános sport témájú, szerkesztői illusztrációkat tartalmazó képalbum.",
+          "cover": "./shared/assets/media/gallery/covers/sport-altalanos.webp"
+        },
+        {
+          "id": "nincs",
+          "label": "Nem sportági",
+          "coverId": "digitalis",
+          "featured": false,
+          "description": "Nem sportági témájú, szerkesztői illusztrációkat tartalmazó képalbum.",
+          "cover": "./shared/assets/media/gallery/covers/sport-nincs.webp"
+        }
+      ],
+      "schoolYear": [
+        {
+          "id": "all",
+          "label": "Minden tanév"
+        },
+        {
+          "id": "2026-2027",
+          "label": "2026/2027 – bemutatóalbum",
+          "coverId": "sport",
+          "featured": true,
+          "description": "2026/2027 – bemutatóalbum: tanévhez rendelt bemutatóképek, nem hitelesített eseményfotók.",
+          "cover": "./shared/assets/media/gallery/covers/schoolYear-2026-2027.webp"
+        },
+        {
+          "id": "nincs",
+          "label": "Tanévhez nem rendelt",
+          "coverId": "atletika",
+          "featured": false,
+          "description": "Tanévhez nem rendelt: tanévhez rendelt bemutatóképek, nem hitelesített eseményfotók.",
+          "cover": "./shared/assets/media/gallery/covers/schoolYear-nincs.webp"
+        }
+      ],
+      "event": [
+        {
+          "id": "all",
+          "label": "Minden rendezvény"
+        },
+        {
+          "id": "sportnap",
+          "label": "Sportnap – illusztráció",
+          "coverId": "sportnap",
+          "featured": true,
+          "description": "Sportnap – illusztráció: rendezvénytémájú illusztrációk, nem dokumentált fotóbeszámoló.",
+          "cover": "./shared/assets/media/gallery/covers/event-sportnap.webp"
+        },
+        {
+          "id": "unnepseg",
+          "label": "Iskolai ünnep – illusztráció",
+          "coverId": "unnep",
+          "featured": false,
+          "description": "Iskolai ünnep – illusztráció: rendezvénytémájú illusztrációk, nem dokumentált fotóbeszámoló.",
+          "cover": "./shared/assets/media/gallery/covers/event-unnepseg.webp"
+        },
+        {
+          "id": "kozossegi-szolgalat",
+          "label": "Közösségi szolgálat – illusztráció",
+          "coverId": "onkentes",
+          "featured": false,
+          "description": "Közösségi szolgálat – illusztráció: rendezvénytémájú illusztrációk, nem dokumentált fotóbeszámoló.",
+          "cover": "./shared/assets/media/gallery/covers/event-kozossegi-szolgalat.webp"
+        },
+        {
+          "id": "nincs",
+          "label": "Nem rendezvényhez rendelt",
+          "coverId": "sport",
+          "featured": false,
+          "description": "Nem rendezvényhez rendelt: rendezvénytémájú illusztrációk, nem dokumentált fotóbeszámoló.",
+          "cover": "./shared/assets/media/gallery/covers/event-nincs.webp"
+        }
+      ]
+    },
+    "editorNotice": "A szerkesztő kizárólag localhost környezetben nyílik meg. Az adatok módosítása nem publikál automatikusan: az exportált site.json kézi ellenőrzést és visszamásolást igényel.",
+    "premiumAlbums": {
+      "title": "Kiemelt képalbumok",
+      "intro": "Sportági, tanévi és rendezvényi képalbumok egy helyen. A jelenlegi albumborítók illusztrációkból készültek.",
+      "openedLabel": "Megnyitott album",
+      "dimensions": [
+        "sport",
+        "schoolYear",
+        "event"
+      ],
+      "shareLabel": "Album megosztási előnézete",
+      "disclaimer": "Bemutatóképek – a csoportosítás nem igazol megtörtént eseményt."
+    }
   },
   "documentCenter": {
     "eyebrow": "INTÉZMÉNYI DOKUMENTUMTÁR",
@@ -7797,5 +8167,12 @@
         }
       ]
     }
+  },
+  "seo": {
+    "publicBase": "https://vdi06.github.io/csanadi-website/",
+    "indexingApproved": false,
+    "defaultDescription": "A Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium bemutató weboldala: képzések, sportélet, programok és tájékoztatók. A mintatartalom még hitelesítésre vár.",
+    "shareImage": "./shared/assets/media/seo/csanadi-megosztas.jpg",
+    "shareDisclaimer": "A weboldal jelenlegi állapota tesztkiadás, illusztrációkkal és ellenőrzésre váró mintatartalmakkal."
   }
 }

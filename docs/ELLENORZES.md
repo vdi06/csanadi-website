@@ -1,6 +1,48 @@
-# Csanádi Sportiskola – aktuális 2.43 kiadási ellenőrzés
+# Csanádi Sportiskola – aktuális 2.46 kiadási ellenőrzés
 
-A 2.43-as teljes fejlesztés és a 2.42-es munkaváltozat átvett javításainak részletes átadója: `Csanadi_2.43_atadas.md` (a ZIP-en kívül).
+## 2.46 – F + G + I fejlesztések
+
+- **F – Prémium albumborítók:** 14 egyedi 1200×690 WebP, öt JSON-szerint kiemelt album, képszámláló, albumborítós böngészés, fókuszálható megnyitás/visszalépés, megosztási hivatkozás, animáció a `prefers-reduced-motion` tiszteletben tartásával. `desktop/gallery.js`, `mobile/gallery.js` és a két külön CSS-fragmentum továbbra is platformfüggő.
+- **G – Tömeges médiabeolvasás:** `tools/import-media-batch.py` helyi, offline CLI-ből maximum 200 kép előkészítése, JPG/PNG/WebP felismerés, adat- és jogosultság-ellenőrzés, az eredeti WebP és a 400/800/1280 méretváltozatok generálása, EXIF-eltávolítás, staging `site.json`/import-jelentés. Új feltöltés alapból `draft`, nem kerül a nyilvános galériába. Lásd: `docs/MEDIAIMPORT_246.md` és `tools/media-import-minta.json`.
+- **I – SEO/megosztás:** 49 statikus oldalelőnézet + 14 albumelőnézet + egy kezdőlapi meta = 64 URL/grafika, `sitemap.xml`, `robots.txt`, `WebPage`, `CollectionPage`, `ImageGallery`, `BreadcrumbList` JSON-LD, Open Graph és Twitter-kártyaadatok. A 2.46-os tesztkiadás **`noindex`**, mert jelentős korábbi tartalmak még minták vagy ellenőrzésre várnak. Lásd `docs/SEO_246.md`.
+
+## Automatikus ellenőrzések (helyben)
+
+- Node-regresszió: `node tools/test.mjs`, `node tools/test-245.mjs`, `node tools/test-243.mjs`, `node tools/test-246.mjs`, `node tools/check-documents.mjs` – sikeres.
+- Media/SEO-generálás: `python tools/build-gallery-variants.py --check`, `python tools/build-album-covers.py --check`, `python tools/generate-seo.py --check` – sikeres.
+- Chromium 2.46 – **160/160**, galéria 2.45 – **198/198**, előző galéria – **156/156**, lábléc/dokumentum – **128/128**, teljes komponensbejárás – **777/777**, célzott akadálymentességi teszt – **160/160**.
+- Tömeges import: `python tools/test-246-import.py` – **32/32** sikeres ellenőrzés, 2 valós tesztképpel és tiltott bemenetekkel.
+- Teljes UI-minőségellenőrzés: három kombináció (asztali sötét/világos, mobil sötét) **742 sikeres ellenőrzést** teljesített; a futtató a negyedik kombináció előtt időkorlátba ütközött. A külön futtatott mobil világos kombináció **134/134 sikeres, 0 hiba**. A négy teljesített eset összesen **876 ellenőrzés**, de nem egy megszakítás nélküli futtatásban.
+
+## Nyitott, őszintén jelzett korlátok
+
+- A Bootstrap 5.3.8 verzióhoz kötött CDN és az SRI változatlan; közvetlen hálózati CDN-E2E ebben a környezetben nem igazolt.
+- Nincs tényleges GitHub Pages/FTP-publikálás, ezért a megosztók képelőnézetét nem teszteltük éles Facebook/LinkedIn/WhatsApp felületen; a **nyilvános URL-en elérhető kép** csak feltöltés után fog működni.
+- A statikus médiabeolvasó **helyi parancssoros előkészítő**, nem publikus drag-and-drop backend; nem telepít képet, nem módosít FTP-t, nem ad ki automatikus hozzájárulást.
+- A valódi képernyőolvasós, teljes WCAG-audit és fizikai érintőképernyős képnagyítás-kipróbálás nem történt meg.
+- A kezdőlapi Carousel külön időzített, virtuális órás próbája nem teljesült ebben a kiadási körben; a 30 másodperces beállítást a Node-regresszió és a komponensvizsgálat őrzi.
+- A korábbi **74 MINTA hír/közlemény**, **30 ellenőrzésre váró sportsikerminta**, **22 illusztráció** és **10 hiányzó hivatalos dokumentum** nem vált hiteles tartalommá. Új eredmény- vagy eseményadat nem lett kitalálva.
+
+**Élesítés nem történt**, sem az iskola FTP-jén, sem GitHub Pages-en. A csomag továbbra is statikus HTML + JSON + natív JS + külön asztali/mobilos CSS, a Bootstraphez kizárólag verzióhoz kötött CDN-t használ.
+
+---
+
+# Csanádi Sportiskola – aktuális 2.45 kiadási ellenőrzés
+
+## 2.45 – új médiaközpont, albumok és helyi szerkesztő
+
+- Az eddigi 22 galériaelem sportág, tanév és rendezvény szerint kereshető és csoportosítható. A képek **illusztrációk**; a „2026/2027 – bemutatóalbum” a webes megjelenítés gyűjteménye, **nem** ellenőrzött tanévi eseményfotó.
+- Kétujjas pinch-to-zoom, dupla koppintás, nagykép-mozgatás és lapozás mobilon; külön asztali és mobilos JS/CSS.
+- A JSON-ban megadott képforrásokhoz 22 × 3, összesen 66 WebP méretváltozat a `shared/assets/media/gallery/{400,800,1280}/` könyvtárakban. A böngésző `srcset`/`sizes` alapján választ; 400 px összméretben ~92%-os megtakarítás a 22 eredeti galériaforráshoz képest.
+- Új forrás esetén a `mediaCenter.items` megfelelő elemét ellenőrzötten kell módosítani, és a `python tools/build-gallery-variants.py` paranccsal újraépíteni a méretezett képeket. A generáláshoz fejlesztői gépen Python + Pillow kell; az elkészült statikus honlapnak nem.
+- Helyi szerkesztő: `http://localhost:8000/?media-editor=1#/oldal/sports-gallery` (vagy más helyi port). Csak localhost/127.0.0.1 és `?media-editor=1` esetén jelenik meg. Képcím, alt-szöveg, képleírás, kategória, albumok, kapcsolódó oldal szerkesztése, ellenőrzött `site.json` export. **Nem** tölt fel képet, nem publikál automatikusan, és nem írja át a jelenlegi fájlt. Az exportált fájlt szerkesztői ellenőrzés után kézzel kell `shared/data/site.json` helyére tenni, az új képek variánsait legenerálni és a teszteket futtatni.
+- Kiadás előtti ellenőrzések: `node tools/test.mjs`, `node tools/test-245.mjs`, `node tools/test-243.mjs`, `node tools/check-documents.mjs`, `python tools/build-gallery-variants.py --check`, `python tools/test-245-browser.py`, `python tools/test-245-a11y.py`, `python tools/test-243-browser.py`, `python tools/test-gallery-browser.py`, `python tools/test-footer-documents-browser.py`.
+- Teljes felületi minőségellenőrzés: `CSANADI_SKIP_CAROUSEL=1 python tools/browser-quality.py`. A 30 másodperces Carousel külön élő-időzítési tesztje **nem szerepel ebben**; a korábbi 30 másodperces JSON-konfigurációt a Node-regresszió továbbra is ellenőrzi.
+- A CDN-linkek és a Bootstrap 5.3.8 SRI-integritási értékei megmaradtak; az élő CDN tesztjét a jelenlegi környezet DNS-korlátja blokkolta, ezért ezt telepítési vagy böngészőből elérhető tesztkörnyezetben el kell végezni. Képernyőolvasós, teljes WCAG-ellenőrzés szintén nyitott.
+
+---
+
+A 2.44-es korábbi fejlesztés és módosításainak átadója: `Csanadi_2.44_atadas.md` (a ZIP-en kívül).
 A négy új JSON-vezérelt központ az `education-programs`, `sports-disciplines`, `sports-facilities`, `education-exams`, `education-years`, `news-events`, `news-community`, `education-community` menüoldalakon található. A felületeket **külön** `desktop/centers.js` és `mobile/centers.js` valósítja meg.
 
 Elvárt ellenőrzőparancsok:
@@ -99,7 +141,7 @@ A 2.35-ös naptár heti/havi/éves asztali nézete, heti/havi mobilnézete, azon
 - **Lebegő naptárablak:** billentyűzetes nyitáskor a fókusz a bezárógombra kerül, az Escape visszaadja a fókuszt a megnyitó napnak; a JSON-események továbbra is biztonságosan, szövegként jelennek meg. A felugró szélessége és magassága szűk viewport/erős böngészőnagyítás esetén is korlátozott. A dátumrács nem változtatja meg a magasságát.
 - **Naptár-teljesítmény:** a napi események egyszeri dátumindexből érhetők el, nem minden napcella esetén 88 rekord újbóli bejárásával. A már létrehozott heti/havi és éves hónapkártyák a nézetváltások között újrahasznosulnak. A közös JSON továbbra is a főoldalon és a külön menübeli naptárban használatos.
 - **Kereső:** a betöltött és már validált statikus JSON-nál nem történik minden leütéskor teljes JSON-szerializálás. Az elütéstűrés sávos Damerau–Levenshtein számítást használ a korábbi nagy mátrix helyett. A külön, még szerkesztett/tesztelt konfigurációk továbbra is automatikusan újraindexelődnek.
-- **Hírek és aloldalak:** a kártyák, hivatkozások és dinamikus részletek a korábbi közös JSON-adatforrást használják; a fókuszkeretek, hosszú szavak tördelése, a magas kontrasztú környezetben megjelenő aktív állapotok és az oldalak saját főtartalom-ugrólinkjei ellenőrizve. A világos mód arany színét `#815b24`-re mélyítettük (a világos alapháttérrel kb. **5,35:1** kontraszt a korábbi kb. **4,2:1** helyett). A kapu első képének nagy letöltési prioritása maradt, a többi képkocka alacsonyabb prioritást kapott.
+- **Hírek és aloldalak:** a kártyák, hivatkozások és dinamikus részletek a korábbi közös JSON-adatforrást használják; a fókuszkeretek, hosszú szavak tördelése, a magas kontrasztú környezetben megjelenő aktív állapotok és az oldalak saját főtartalom-ugrólinkjei ellenőrizve. A világos mód arany színét `#815b24`-re mélyítettük (a világos alapháttérrel kb. **5,35:1** kontraszt a korábbi kb. **4,2:1** helyett). A kapus belépőanimáció megszűnt: az oldal közvetlenül a kezdőlapra érkezik, az animáció képkockáit eltávolítottuk.
 - **Kiadás:** `release=2.38`, minden modul-import és saját CSS/JS cache-kulcsa egységes. A Bootstrap 5.3.8 továbbra is verzióhoz kötött CDN-ről töltődik, helyi másolat nélkül.
 
 ### Ellenőrzések

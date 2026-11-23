@@ -1,29 +1,24 @@
-import { createMobileFeatureCenter } from "./centers.js?v=2.43";
-import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.43";
-import { element } from "../shared/js/dom.js?v=2.43";
-import { mountGate } from "../shared/js/gate.js?v=2.43";
-import { makeFooter } from "../shared/js/footer.js?v=2.43";
-import { makeMobileHeader } from "./header.js?v=2.43";
-import { createMobilePage } from "./page.js?v=2.43";
-import { createMobileStory } from "./story.js?v=2.43";
-import { createMobileSuccesses } from "./successes.js?v=2.43";
-import { createMobileCalendar } from "./calendar.js?v=2.43";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.43";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.43";
-import { createMobileInformation } from "./information.js?v=2.43";
-import { createMobileMedia } from "./gallery.js?v=2.43";
-import { createMobileTimetable } from "./timetable.js?v=2.43";
-import { createMobileDocuments } from "./documents.js?v=2.43";
-import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.43";
+import { createMobileFeatureCenter } from "./centers.js?v=2.46";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.46";
+import { element } from "../shared/js/dom.js?v=2.46";
+import { makeFooter } from "../shared/js/footer.js?v=2.46";
+import { makeMobileHeader } from "./header.js?v=2.46";
+import { createMobilePage } from "./page.js?v=2.46";
+import { createMobileStory } from "./story.js?v=2.46";
+import { createMobileSuccesses } from "./successes.js?v=2.46";
+import { createMobileCalendar } from "./calendar.js?v=2.46";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.46";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.46";
+import { createMobileInformation } from "./information.js?v=2.46";
+import { createMobileMedia } from "./gallery.js?v=2.46";
+import { createMobileTimetable } from "./timetable.js?v=2.46";
+import { createMobileDocuments } from "./documents.js?v=2.46";
+import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.46";
 
 /** Önálló mobilos nézet: saját fejléc, JSON-vázlatos aloldal és kompakt lábléc. */
 export function mount(root, config, page) {
   const platformRoot = element("div", { className: "mobile-app" });
   root.replaceChildren(platformRoot);
-  if (page === "gate") {
-    return mountGate(platformRoot, config, "mobile", () => { location.hash = config.routes.home; });
-  }
-
   const home = element("div", { className: "mobile-home" });
   const mobileHeader = makeMobileHeader(config, home);
   const mobileFooter = makeFooter(config, "mobile");

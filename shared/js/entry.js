@@ -1,8 +1,8 @@
-/** Egyetlen HTML, JSON-alapú kapu, kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.43";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.43";
-import { eventById } from "./calendar-data.js?v=2.43";
-import { mountOffline } from "./offline.js?v=2.43";
+/** Egyetlen HTML, közvetlen kezdőlap és valódi menüvégpont-útvonalak. */
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.46";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.46";
+import { eventById } from "./calendar-data.js?v=2.46";
+import { mountOffline } from "./offline.js?v=2.46";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -40,7 +40,7 @@ function route() {
     return "page:sports-results";
   }
   const match = /^#\/oldal\/([a-z0-9-]+)$/.exec(location.hash);
-  return match && getMenuPage(config, match[1]) ? `page:${match[1]}` : "gate";
+  return match && getMenuPage(config, match[1]) ? `page:${match[1]}` : "home";
 }
 
 function mountView(platform, module, selectedRoute) {
@@ -62,7 +62,7 @@ function mountView(platform, module, selectedRoute) {
     const focusTarget = searchDetailOpen ? null : menuPage
       ? root.querySelector(`.${platform}-page-title`)
       : selectedRoute === "home" ? root.querySelector(".home-brand")
-      : root.querySelector(".gate-door-button");
+      : null;
     if (focusTarget) {
       focusTarget.focus({ preventScroll:true });
     }
@@ -146,8 +146,8 @@ async function loadConfig() {
     const response = await fetch(freshSettings, { cache:"no-store", signal:controller.signal });
     if (!response.ok) throw new Error(`Hiányzó JSON: ${response.status}`);
     const nextConfig = await response.json();
-    if (nextConfig?.schemaVersion !== "2.30" || nextConfig.gate?.frames !== 30) {
-      throw new Error("A kapu JSON-beállításai hibásak.");
+    if (nextConfig?.schemaVersion !== "2.30" || !nextConfig.routes?.home) {
+      throw new Error("A honlap JSON-beállításai hibásak.");
     }
     validateMenu(nextConfig);
     // A betöltött kiadás nem írható vissza szerverre; a kereső gyorsítótárát
@@ -162,11 +162,17 @@ async function loadConfig() {
         window.history.replaceState(window.history.state, "", current);
       }
     }
+    // Korábbi kapuhivatkozás és hash nélküli URL: azonnal a kezdőlapra.
+    if (!location.hash || location.hash === "#/" || location.hash === "#/kapu") {
+      const destination = new URL(window.location.href);
+      destination.hash = config.routes.home;
+      window.history.replaceState(window.history.state, "", destination);
+    }
     document.title = config.site.fullName;
     for (const [name, value] of Object.entries(config.theme)) {
       document.documentElement.style.setProperty(`--${name}`, value);
     }
-    document.documentElement.style.setProperty("--home-reveal-duration", `${config.gate.homeRevealMs}ms`);
+    // A kezdőlap kapu és belépőáttűnés nélkül, azonnal jelenik meg.
     await render();
     initialized = true;
     offlineView = null;

@@ -126,6 +126,6 @@ with sync_playwright() as p:
   page.evaluate('window.__dispose?.()')
   page.close()
  b.close()
-print(f'2.43 Chromium-komponenstesztek: {checks-len(issues)}/{checks} ellenőrzés; {len(issues)} hiba')
+print(f'2.45 Chromium-komponenstesztek: {checks-len(issues)}/{checks} ellenőrzés; {len(issues)} hiba')
 if issues:
  print('\n'.join(issues[:25]));raise SystemExit(1)

@@ -74,112 +74,6 @@ img { max-width: 100%; }
   .offline-retry { width:100%; }
 }
 
-/* Az 1.53-as kapufotó képarányos, vágásmentesen együtt mozgó koordinátarendszere. */
-.gate-screen { position: relative; width: 100%; min-height: 100dvh; overflow: hidden; isolation: isolate; background: #07131d; }
-.gate-stage {
-  position: absolute;
-  left: 50%; top: 50%; transform: translate(-50%, -50%);
-  width: max(100vw, 177.77778dvh);
-  aspect-ratio: 16 / 9;
-}
-.gate-frames, .gate-frame, .gate-outline { position: absolute; inset: 0; width: 100%; height: 100%; }
-.gate-frame {
-  display: block; object-fit: fill; opacity: 0; filter: brightness(.89);
-  /* A képek közti opacity-értéket a képkockaidőzítő számolja. Egy külön
-     CSS-transition túlfuthatna a következő fázisra és villogást okozna. */
-  user-select: none; pointer-events: none;
-}
-.gate-frame.is-visible { opacity: 1; }
-.gate-frames {
-  z-index: 1; isolation: isolate;
-  filter: blur(0);
-  transition: filter var(--finish-duration, 620ms) ease-in-out;
-}
-.gate-outline {
-  z-index: 2; pointer-events: none;
-  filter: drop-shadow(1px 2px 3px rgba(15, 12, 5, .85));
-  transition: opacity .5s ease, filter .22s ease;
-}
-/* Az 1.53-as címer pontos mérete és középpontja; nincs kör, ovális vagy keret mögötte. */
-.gate-glass-crest {
-  position: absolute; z-index: 3;
-  left: 50%; top: 21%; width: 9.1125%;
-  transform: translate(-50%, -50%); pointer-events: none;
-  background: transparent; border: 0; border-radius: 0; box-shadow: none;
-}
-.gate-glass-crest img {
-  display: block; width: 100%; height: auto; aspect-ratio: 1;
-  object-fit: contain; background: transparent;
-  filter: drop-shadow(0 5px 6px rgba(0, 0, 0, .7));
-}
-.gate-door-button {
-  position: absolute; z-index: 4;
-  left: 50%; top: 59.6%; width: 16%; height: 53.5%;
-  transform: translate(-50%, -50%);
-  padding: 0; border: 0; border-radius: 0; background: transparent;
-  cursor: pointer; -webkit-tap-highlight-color: transparent;
-  clip-path: polygon(0 15%,5% 11%,18% 5%,33% 1%,50% 0,67% 1%,82% 5%,95% 11%,100% 15%,100% 100%,0 100%);
-}
-.gate-door-button:focus-visible { outline: none; }
-/* Pont a 2.02-ben elfogadott erősebb arany keret és egér-fényhatás. */
-.gate-stage:has(.gate-door-button:focus-visible) .gate-outline,
-.gate-stage:has(.gate-door-button:hover) .gate-outline {
-  filter: drop-shadow(0 0 7px #ffe6a4) drop-shadow(0 0 14px rgba(219,183,114,.8));
-}
-.gate-screen.is-opening .gate-door-button { pointer-events: none; }
-.gate-screen.is-opening .gate-outline { opacity: 0; }
-.gate-screen.is-opening .gate-frame { animation: gate-approach var(--opening-duration, 2200ms) ease-in-out both; }
-.gate-screen.is-finishing .gate-frames { filter: blur(var(--finish-blur, 18px)); }
-.gate-screen.is-opening .gate-glass-crest { animation: crest-approach var(--opening-duration, 2200ms) ease-in-out both; }
-.gate-screen.is-opening .gate-bottom-copy { animation: caption-approach var(--opening-duration, 2200ms) ease-in both; }
-@keyframes gate-approach { from { transform: scale(1); } to { transform: scale(1.018); } }
-@keyframes crest-approach {
-  from { transform: translate(-50%, -50%) scale(1); }
-  to { transform: translate(-50%, -50%) translateY(-6px) scale(1.018); }
-}
-@keyframes caption-approach { 0%, 68% { opacity: 1; } 100% { opacity: .4; } }
-
-/* A nyitott utolsó kép nem tűnik el egyik pillanatról a másikra.
-   A következő, címeres oldal ugyanebből a sötét alapszínből lép elő. */
-.gate-screen::after {
-  content: ""; position: absolute; inset: 0; z-index: 7;
-  background: var(--background); opacity: 0; pointer-events: none;
-  transition: opacity var(--finish-duration, 380ms) ease-in-out;
-}
-.gate-screen.is-finishing::after { opacity: 1; }
-@keyframes home-reveal { from { opacity: 0; } to { opacity: 1; } }
-
-/* Az 1.53-as, kizárólag iskolanevet tartalmazó alsó kapusáv. */
-.gate-bottom-bar {
-  position: absolute; z-index: 5; bottom: 0; inset-inline: 0;
-  width: 100%; height: clamp(120px, 17dvh, 174px);
-  display: flex; align-items: flex-end; justify-content: center;
-  padding: 22px max(20px, env(safe-area-inset-right)) calc(21px + env(safe-area-inset-bottom));
-  background: linear-gradient(to top, rgba(4,15,26,.82), rgba(4,15,26,.40) 44%, transparent);
-  pointer-events: none;
-}
-.gate-bottom-copy {
-  width: min(1020px, calc(100% - 116px));
-  display: flex; align-items: center; justify-content: center;
-  margin: auto; text-align: center; color: #fff6df;
-}
-.gate-school-name {
-  margin: 0; max-width: 100%; color: #f9e6b5;
-  font-size: clamp(16px, 1.55vw, 24px); line-height: 1.33;
-  letter-spacing: .065em; font-weight: 750; text-align: center; text-wrap: balance;
-  text-shadow: 0 2px 4px #000, 0 5px 22px #000;
-}
-.gate-skip {
-  position: absolute; z-index: 6;
-  right: clamp(12px, 2vw, 34px); bottom: calc(17px + env(safe-area-inset-bottom));
-  width: 45px; height: 45px; min-width: 45px; min-height: 45px;
-  display: grid; place-items: center; padding: 0;
-  color: #fff1d1; background: rgba(12,27,43,.52);
-  border: 1px solid rgba(239,206,141,.72); border-radius: 50%;
-  font-size: 22px; cursor: pointer; pointer-events: auto;
-}
-.gate-skip:focus-visible { outline: 3px solid #f8df9f; outline-offset: 3px; }
-
 /* Közös vezérlőstílus: a tényleges elhelyezés platformonként külön CSS-ben. */
 .home-brand { display: flex; flex-direction: column; align-items: center; gap: 3px;
   text-align: center; text-decoration: none; color: inherit; }
@@ -228,23 +122,41 @@ img { max-width: 100%; }
 .shell-theme-toggle:hover { filter: brightness(1.09); }
 .shell-crest-toggle { border-radius: 50%; border-width: 2px; }
 .shell-crest { display:block; width: 86%; height:86%; object-fit:contain; background:transparent; }
+/* A honlap látványos, határozott, de keret nélküli lezárása. */
 .site-footer {
-  border-top: 2px solid color-mix(in srgb,var(--accent) 70%,transparent);
-  background:color-mix(in srgb,var(--surface) 72%,var(--background)); color:var(--text);
+  position:relative; isolation:isolate; overflow:hidden;
+  border:0; border-radius:0;
+  background:
+    radial-gradient(ellipse at 14% 0%, color-mix(in srgb,var(--accent) 15%,transparent),transparent 44%),
+    radial-gradient(ellipse at 100% 100%, color-mix(in srgb,var(--accent) 6%,transparent),transparent 48%),
+    linear-gradient(165deg,#0b2640 0%,#061727 61%,#030e1b 100%);
+  color:#f6f3eb;
+  box-shadow:0 -16px 46px rgba(2,12,25,.26),inset 0 15px 28px -25px rgba(230,195,124,.45);
 }
-.footer-inner { margin-inline:auto; min-width:0; }
-.footer-contact, .footer-links {
-  min-width:0; padding:clamp(14px,1.6vw,20px);
-  border:1px solid color-mix(in srgb,var(--accent) 43%,transparent);
-  border-radius:17px; background:color-mix(in srgb,var(--background) 58%,var(--surface));
+.site-footer::before {
+  content:"";position:absolute;z-index:0;top:-38px;left:5%;width:57%;height:67px;
+  background:radial-gradient(ellipse,rgba(231,188,106,.21),transparent 72%);
+  filter:blur(17px);pointer-events:none;
 }
-.footer-contact { display:flex; flex-direction:column; justify-content:space-between; gap:12px; }
-.footer-contact-main { display:grid; align-content:start; }
-.footer-inner h2 { margin: 3px 0 7px; font-size:1rem; line-height:1.35; color:var(--text); }
-.footer-inner p { margin:0 0 5px; color:var(--muted); line-height:1.4; overflow-wrap:anywhere; }
-.footer-inner .footer-brand { color:var(--accent); font-weight:900; letter-spacing:.09em; }
-.footer-inner a { color:var(--text); overflow-wrap:anywhere; }
-.footer-links { display:flex; flex-direction:column; align-items:stretch; gap:6px; }
+.footer-inner { position:relative; z-index:1; margin-inline:auto; min-width:0; }
+.footer-contact {
+  min-width:0; padding:0; border:0; border-radius:0; background:none; box-shadow:none;
+  display:flex;flex-direction:column;align-items:flex-start;gap:15px;
+}
+.footer-contact-main { display:grid; align-content:start; justify-items:start; gap:5px; }
+.footer-inner h2 { margin:0; font-size:1rem; line-height:1.35; color:#f6f3eb; }
+.footer-inner p { margin:0; color:#d9e1e7; line-height:1.48; overflow-wrap:anywhere; }
+.footer-inner .footer-brand {
+  color:#e8c480; font-weight:950; letter-spacing:.14em;
+  text-shadow:0 3px 20px rgba(219,183,114,.26);
+}
+.footer-inner a { color:#f7f1e6; overflow-wrap:anywhere; text-decoration-color:rgba(232,196,128,.5);text-underline-offset:3px; }
+.footer-inner a:hover {color:#e8c480;}
+.footer-status {display:grid;gap:5px;justify-items:start; padding:0; margin-top:2px;font-variant-numeric:tabular-nums;}
+.footer-inner .footer-updated,.footer-inner .footer-checked,.footer-inner .footer-version {
+  margin:0; color:#b9c9d4; font-size:12px; line-height:1.5; font-weight:580;
+}
+.footer-inner .footer-version {color:#e8c480;font-weight:800;}
 .footer-notices {
   width:100%; min-width:0; display:grid; grid-auto-rows:minmax(0,1fr);
   align-items:stretch; gap:9px;
@@ -284,17 +196,6 @@ img { max-width: 100%; }
 .footer-notice-icon:focus-visible {
   outline:3px solid var(--accent); outline-offset:2px;
 }
-.footer-inner .footer-updated,.footer-inner .footer-checked {
-  margin:0; font-size:11px; color:var(--muted); line-height:1.3;
-}
-.footer-links a { padding:3px 0; min-height:28px; }
-.footer-links .footer-version {
-  order: 999; margin: 1px 0 0; padding-top:7px;
-  border-top:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
-  font-size: .875rem; line-height: 1.4; color: var(--accent);
-  font-variant-numeric: tabular-nums;
-}
-.footer-inner a:hover { color:var(--accent); }
 .footer-notice-modal {
   position:fixed; inset:0; z-index:3000; display:grid; place-items:center;
   padding:16px; isolation:isolate;
@@ -323,12 +224,6 @@ img { max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   .footer-notice-icon { transition:none; }
   .footer-notice-icon:hover { transform:none; }
-  .gate-frame, .gate-outline, .gate-glass-crest, .gate-bottom-copy {
-    transition: none; animation: none !important;
-  }
-  .gate-screen::after { transition: none; }
-  .gate-frames { transition: none; }
-  .mobile-home, .desktop-home { animation: none !important; }
 }
 /* 2.34 – Bootstrap Carousel külön lapfülekkel, nyilak és leállító nélkül. */
 .home-feature-carousel { width:100%; min-width:0; isolation:isolate; }
@@ -861,7 +756,6 @@ img { max-width: 100%; }
 .media-dialog[data-theme="dark"] .media-dialog-related{color:#e9c88d;}
 .media-dialog .media-dialog-image{background:transparent;}
 .media-dialog :is(button,a):focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
-.footer-documents-link{display:inline-block;margin:2px auto 5px;padding:6px 10px;border:1px solid color-mix(in srgb,var(--accent) 38%,transparent);border-radius:8px;max-width:100%;font-size:12px;font-weight:750;text-decoration:none;}
 .footer-notices:empty{display:none!important;}
 /* 2.42 – Hiteles csengetési idők + kifejezetten mintaórarend; közös témaszínek. */
 .timetable-eyebrow{margin:0 0 7px;text-transform:uppercase;font-size:11px;font-weight:900;letter-spacing:.14em;color:var(--accent);}
@@ -875,3 +769,71 @@ img { max-width: 100%; }
 .timetable-source-note{max-width:900px;margin:20px auto;color:var(--muted);text-align:center;line-height:1.55;font-size:13px;}
 .timetable-demo-banner{padding:12px 15px;margin:10px auto 18px;border:2px solid color-mix(in srgb,var(--accent) 70%,transparent);border-radius:12px;background:color-mix(in srgb,var(--surface) 85%,var(--accent));font-size:13px;line-height:1.5;font-weight:700;color:var(--text);text-align:center;}
 :is(.desktop-timetable-center,.mobile-timetable-center) :is(select,button):focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+
+
+/* 2.44 – Emelt, lebegő animált nagyképnéző, natív modal és akadálymentes kilépés. */
+@keyframes csanadi-gallery-open {from {opacity:0;transform:translateY(23px) scale(.966);} to {opacity:1;transform:translateY(0) scale(1);}}
+@keyframes csanadi-gallery-backdrop {from {opacity:0;} to {opacity:1;}}
+.media-dialog[open] {animation:csanadi-gallery-open .32s cubic-bezier(.18,.8,.19,1) both;overscroll-behavior:contain;}
+.media-dialog[open]::backdrop {animation:csanadi-gallery-backdrop .28s ease both;}
+.media-dialog-close:hover,.media-dialog-arrow:not(:disabled):hover {transform:translateY(-2px);border-color:var(--accent);box-shadow:0 6px 18px rgba(0,0,0,.2);}
+.media-dialog-close,.media-dialog-arrow {transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;}
+.media-dialog-stage {touch-action:pan-y;}
+.media-dialog-image {margin-inline:auto;object-position:center;}
+@media(max-width:600px) {.media-dialog {width:min(100vw - 12px,550px);max-width:calc(100vw - 12px);max-height:calc(100dvh - 12px);} .media-dialog-content {max-height:calc(100dvh - 14px);} .media-dialog-stage {padding:0 4px;} .media-dialog-details {padding-bottom:max(17px,env(safe-area-inset-bottom));}}
+@media(prefers-reduced-motion:reduce) {.media-dialog[open],.media-dialog[open]::backdrop {animation:none!important;} .media-dialog-close,.media-dialog-arrow {transition:none;} .media-dialog-close:hover,.media-dialog-arrow:hover {transform:none;}}
+
+
+/* 2.45 – albumok, mobil képnagyítás, statikus helyi szerkesztő */
+.media-album-disclaimer{max-width:900px;margin:14px auto;color:var(--muted);font-size:13px;line-height:1.5;text-align:center;}
+.media-album-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;justify-content:center;margin:18px auto 17px;}
+.media-album-field{display:grid;gap:5px;flex:1 1 175px;max-width:290px;color:var(--text);font-weight:750;font-size:12px;min-width:0;}
+.media-album-select{width:100%;min-width:0;min-height:44px;padding:9px 28px 9px 11px;border:1px solid var(--accent);border-radius:12px;background:var(--surface);color:var(--text);color-scheme:inherit;font-size:13px;}
+.media-album-reset,.media-editor-launch button,.media-editor-actions button,.media-editor-form button{min-height:44px;border-radius:12px;padding:10px 14px;border:1px solid var(--accent);background:var(--surface);color:var(--text);font-weight:800;}
+.media-album-section{width:100%;min-width:0;margin:0 auto 16px;}
+.media-album-heading{text-align:center;font-size:clamp(16px,2vw,20px);color:var(--text);margin:10px 0 15px;}
+.media-album-items{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;min-width:0;}
+.media-dialog-viewport{min-width:0;display:grid;place-items:center;overflow:hidden;position:relative;touch-action:pan-y;cursor:zoom-in;max-height:min(58dvh,630px);}
+.media-dialog-viewport[data-zoomed="true"]{cursor:grab;touch-action:none;}
+.media-dialog-viewport[data-zoomed="true"]:active{cursor:grabbing;}
+.media-dialog-image{max-width:100%;transform-origin:center center;user-select:none;-webkit-user-select:none;-webkit-user-drag:none;will-change:transform;}
+.media-dialog-zoom{min-height:44px;min-width:90px;margin-inline:auto 9px;padding:7px 10px;border:1px solid var(--accent);border-radius:12px;background:var(--background);color:var(--text);font-size:12px;font-weight:800;}
+.media-editor-launch{display:grid;gap:8px;justify-items:center;margin:25px auto;max-width:720px;text-align:center;color:var(--muted);font-size:12px;}
+.media-editor-dialog{width:min(760px,calc(100vw - 20px));max-height:calc(100dvh - 22px);overflow:auto;background:var(--surface);color:var(--text);border:2px solid var(--accent);border-radius:18px;padding:clamp(12px,3vw,26px);}
+.media-editor-dialog::backdrop{background:rgba(0,8,22,.8);}
+.media-editor-dialog h2{font-size:22px;}
+.media-editor-dialog>label,.media-editor-form label{display:grid;gap:5px;margin:10px 0;font-size:13px;font-weight:700;}
+.media-editor-dialog :is(input,textarea,select){width:100%;min-width:0;min-height:44px;padding:8px 12px;background:var(--background);border:1px solid var(--accent);border-radius:10px;color:var(--text);}
+.media-editor-preview{display:block;width:min(100%,420px);max-height:230px;object-fit:contain;margin:10px auto;border-radius:12px;}
+.media-editor-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 14px;}
+.media-editor-form label:nth-child(-n+3){grid-column:1/-1;}
+.media-editor-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;}
+.media-editor-status{min-height:24px;color:var(--accent);}
+.media-album-controls :is(select,button):focus-visible,.media-editor-dialog :is(select,button,input,textarea):focus-visible,.media-dialog-zoom:focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+@media(max-width:580px){.media-album-field{flex-basis:calc(50% - 8px);max-width:none;}.media-editor-form{grid-template-columns:minmax(0,1fr);}.media-editor-form label{grid-column:1/-1;}.media-dialog-viewport{max-height:53dvh;}.media-dialog-toolbar{gap:8px;}}
+@media(prefers-reduced-motion:reduce){.media-dialog-image{transition:none!important;}}
+
+/* 2.46 közös albumborító-mikrointerakciók; a rácsszabályok platformonként külön élnek. */
+.media-premium-showcase{color:var(--text);min-width:0;}
+.media-premium-title{color:var(--text);font-weight:900;margin:0 0 8px;letter-spacing:-.02em;}
+.media-premium-intro{color:var(--muted);line-height:1.55;margin:0 0 16px;font-size:14px;}
+.media-premium-tabs{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.media-premium-tab,.media-premium-back{border:1px solid color-mix(in srgb,var(--accent) 48%,transparent);border-radius:100px;background:var(--surface);color:var(--text);padding:9px 14px;min-height:44px;font-size:13px;font-weight:750;cursor:pointer;}
+.media-premium-tab[aria-pressed="true"]{background:var(--accent);color:#142437;box-shadow:0 5px 18px rgba(0,0,0,.14);}
+.media-premium-tile{min-width:0;display:flex;flex-direction:column;gap:2px;}
+.media-premium-cover{display:block;position:relative;isolation:isolate;width:100%;padding:0;overflow:hidden;text-align:left;cursor:pointer;border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);border-radius:18px;background:#142a40;color:#fff;box-shadow:0 14px 30px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.14);}
+.media-premium-cover img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .45s ease;}
+.media-premium-cover:hover img{transform:scale(1.07);}
+.media-premium-cover:hover{box-shadow:0 19px 36px rgba(0,0,0,.28),0 0 0 2px color-mix(in srgb,var(--accent) 35%,transparent);}
+.media-premium-shade{position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:4px;padding:clamp(12px,3vw,22px);background:linear-gradient(to top,rgba(3,16,29,.96),rgba(5,22,38,.28) 68%,rgba(3,16,29,.05));}
+.media-premium-shade strong{font-size:clamp(15px,1.75vw,22px);line-height:1.23;color:#fff;overflow-wrap:anywhere;}
+.media-premium-tag{font-size:10px;font-weight:950;letter-spacing:.12em;color:#ffe3a3;}
+.media-premium-count{font-size:12px;color:#ecf0f4;}
+.media-premium-share{display:inline-flex;align-items:center;min-height:38px;padding:6px 2px;margin:0 3px 6px;line-height:1.35;color:var(--text);font-weight:700;font-size:12px;text-underline-offset:3px;}
+.media-premium-opened{padding:clamp(15px,3vw,29px);background:linear-gradient(130deg,color-mix(in srgb,var(--surface) 93%,var(--accent)),var(--surface));border-left:4px solid var(--accent);border-radius:0 20px 20px 0;box-shadow:0 13px 27px rgba(0,0,0,.12);}
+.media-premium-opened h3{font-size:clamp(21px,2.5vw,29px);font-weight:900;margin:5px 0;}
+.media-premium-opened p{margin:5px 0;color:var(--muted);}
+.media-premium-opened .media-premium-eyebrow{font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.12em;font-weight:900;}
+.media-premium-opened .media-premium-back{margin-bottom:16px;}
+.media-premium-note{color:var(--muted);font-size:12px;line-height:1.5;margin:6px 0 12px;}
+@media(prefers-reduced-motion:reduce){.media-premium-cover img{transition:none;}.media-premium-cover:hover img{transform:none;}}

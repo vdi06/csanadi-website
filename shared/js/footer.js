@@ -1,12 +1,12 @@
-import { element } from "./dom.js?v=2.43";
-import { trapTab } from "./focus.js?v=2.43";
-import { isolateModal } from "./modal.js?v=2.43";
+import { element } from "./dom.js?v=2.46";
+import { trapTab } from "./focus.js?v=2.46";
+import { isolateModal } from "./modal.js?v=2.46";
 
 /** Közös JSON-adatfolyam: a platformok csak a lábléc elrendezését stílusozzák.
  * Az adatok csak ellenőrzött, teljes válasz esetén cserélődnek le. */
 function validFooter(data, release) {
   if (!data || typeof release !== "string" || !/^\d+\.\d+$/.test(release)) return false;
-  for (const name of ["brand", "year", "address", "email", "contactTitle", "linksTitle",
+  for (const name of ["brand", "year", "address", "email", "contactTitle",
     "versionLabel", "modalCloseLabel", "updatedLabel", "checkedLabel", "pendingLabel", "errorLabel"]) {
     if (typeof data[name] !== "string" || !data[name].trim() || data[name].length > 500) return false;
   }
@@ -42,7 +42,6 @@ export function makeFooter(config, platform) {
   const contactTitle = element("h2");
   const address = element("p");
   const email = element("a");
-  const linksTitle = element("h2");
   const notices = element("div", { className: "footer-notices" });
   const updated = element("p", { className: "footer-updated" });
   // Tíz másodpercenkénti háttérellenőrzést a képernyőolvasó ne mondja be újra.
@@ -63,59 +62,15 @@ export function makeFooter(config, platform) {
   const modal = element("div", { className: "footer-notice-modal" },
     modalBackdrop, modalDialog);
   modal.hidden = true;
+  // Egységes, keret nélküli lábléc: a hitelesítési adatok a Csanádi elérhetőségei alatt.
+  // Nincs második panel, dokumentumhivatkozás vagy mobil lapfül.
   const contactPanel = element("section", { className: "footer-contact",
     attributes: { "aria-label": first.contactTitle } },
-    element("div", { className: "footer-contact-main" }, brand, contactTitle, address, email));
-  const infoPanel = element("section", { className: "footer-links",
-    attributes: { "aria-label": first.linksTitle } },
-    linksTitle,
-    element("a",{className:"footer-documents-link",text:"Dokumentumok és honlapsegédletek",
-      attributes:{href:"#/oldal/information-documents"}}),
-    updated, checked, version);
-  let tabs;
-  let contactTab;
-  let infoTab;
-  if (platform === "mobile") {
-    contactTab = element("button", { className: "footer-mobile-tab",
-      attributes: { type: "button", role: "tab", id: "footer-mobile-contact-tab",
-        "aria-controls": "footer-mobile-contact", "aria-selected": "false", tabindex: "-1" } });
-    infoTab = element("button", { className: "footer-mobile-tab",
-      attributes: { type: "button", role: "tab", id: "footer-mobile-info-tab",
-        "aria-controls": "footer-mobile-info", "aria-selected": "true", tabindex: "0" } });
-    tabs = element("div", { className: "footer-mobile-tabs",
-      attributes: { role: "tablist", "aria-label": first.linksTitle } }, contactTab, infoTab);
-    contactPanel.setAttribute("id", "footer-mobile-contact");
-    contactPanel.setAttribute("role", "tabpanel");
-    contactPanel.setAttribute("aria-labelledby", "footer-mobile-contact-tab");
-    infoPanel.setAttribute("id", "footer-mobile-info");
-    infoPanel.setAttribute("role", "tabpanel");
-    infoPanel.setAttribute("aria-labelledby", "footer-mobile-info-tab");
-    function selectTab(name) {
-      const showContact = name === "contact";
-      contactPanel.hidden = !showContact;
-      infoPanel.hidden = showContact;
-      contactTab.setAttribute("aria-selected", String(showContact));
-      infoTab.setAttribute("aria-selected", String(!showContact));
-      contactTab.setAttribute("tabindex", showContact ? "0" : "-1");
-      infoTab.setAttribute("tabindex", showContact ? "-1" : "0");
-    }
-    contactTab.addEventListener("click", () => selectTab("contact"));
-    infoTab.addEventListener("click", () => selectTab("info"));
-    for (const button of [contactTab, infoTab]) {
-      button.addEventListener("keydown", (event) => {
-        if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
-        event.preventDefault();
-        const next = event.key === "Home" ? contactTab : event.key === "End" ? infoTab
-          : button === contactTab ? infoTab : contactTab;
-        selectTab(next === contactTab ? "contact" : "info");
-        next.focus({ preventScroll: true });
-      });
-    }
-    selectTab("info");
-  }
+    element("div", { className: "footer-contact-main" }, brand, contactTitle, address, email),
+    element("div", { className: "footer-status", "attributes": { "aria-label": "Honlap frissítési adatai" } },
+      updated, checked, version));
   const footer = element("footer", { className: `${platform}-footer site-footer` },
-    ...(tabs ? [tabs] : []),
-    element("div", { className: "footer-inner" }, contactPanel, infoPanel), modal);
+    element("div", { className: "footer-inner" }, contactPanel), modal);
   let active = true;
   let pending = false;
   let requestController = null;
@@ -174,12 +129,9 @@ export function makeFooter(config, platform) {
     });
     brand.textContent = `${data.brand} · ${data.year}`;
     contactTitle.textContent = data.contactTitle;
-    if (contactTab) contactTab.textContent = data.contactTitle;
     address.textContent = data.address;
     email.textContent = data.email;
     email.setAttribute("href", `mailto:${data.email}`);
-    linksTitle.textContent = data.linksTitle;
-    if (infoTab) infoTab.textContent = data.linksTitle;
     notices.replaceChildren(...items); // Az alsó külön tájékoztató ikonblokk megszűnt.
     noticeById = nextNotices;
     triggerById = nextTriggers;
@@ -241,6 +193,8 @@ export function makeFooter(config, platform) {
       requestController = null;
     }
   }
+  // Első sikeres ellenőrzés már betöltéskor frissítse az időbélyeget.
+  void checkForUpdates();
   const timer = setInterval(() => { void checkForUpdates(); }, refreshSeconds * 1000);
   const onVisibility = () => {
     if (document.visibilityState === "visible") void checkForUpdates();
@@ -259,7 +213,6 @@ export function makeFooter(config, platform) {
       const notice = noticeById.get(id);
       const trigger = triggerById.get(id);
       if (!notice || !trigger) return false;
-      if (contactTab && infoTab) infoTab.click?.();
       openModal(notice, trigger);
       return true;
     } };

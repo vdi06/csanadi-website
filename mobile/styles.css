@@ -1,24 +1,10 @@
 /* Önálló mobilos elrendezés: kizárólag az engedélyezett fejléc és lábléc. */
 .mobile-app { width: 100%; min-height: 100dvh; }
-.mobile-app .gate-bottom-bar {
-  height: clamp(124px, 22dvh, 182px);
-  padding: 18px 8px calc(18px + env(safe-area-inset-bottom));
-}
-.mobile-app .gate-bottom-copy { width: calc(100% - 88px); }
-.mobile-app .gate-school-name {
-  font-size: clamp(12px, 3.15vw, 16px);
-  line-height: 1.28; letter-spacing: .025em;
-}
-.mobile-app .gate-skip {
-  width: 44px; height: 44px; min-width: 44px; min-height: 44px; right: 10px;
-}
-
 .mobile-home {
   display: flex; flex-direction: column; min-height: 100dvh; width: 100%;
   background: linear-gradient(160deg, var(--background),
     color-mix(in srgb, var(--background) 70%, var(--surface)));
   color: var(--text);
-  animation: home-reveal var(--home-reveal-duration, 480ms) ease-out both;
 }
 .mobile-header {
   position: relative; z-index: 10; width: 100%;
@@ -180,54 +166,17 @@
 .mobile-page-gallery-item img { display:block; width:100%; aspect-ratio:3/4; object-fit:cover; }
 .mobile-page-gallery-item figcaption { padding:7px; color:var(--muted); font-size:11px; line-height:1.3; }
 @media (max-width:350px) { .mobile-page-gallery-grid { grid-template-columns:1fr; } }
-.mobile-footer { padding:3px 10px calc(4px + env(safe-area-inset-bottom)); }
-.mobile-footer .footer-inner {
-  width:min(100%,650px); display:block; text-align:center;
-}
-.mobile-footer .footer-mobile-tabs {
-  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:3px;
-  width:min(100%,650px); margin:0 auto 3px; padding:2px;
-  border:1px solid color-mix(in srgb,var(--accent) 42%,transparent);
-  border-radius:10px; background:color-mix(in srgb,var(--background) 64%,var(--surface));
-}
-.mobile-footer .footer-mobile-tab {
-  min-width:0; min-height:44px; padding:5px 6px;
-  border:1px solid transparent; border-radius:7px;
-  background:transparent; color:var(--muted); font:inherit;
-  font-size:clamp(10px,2.6vw,12px); font-weight:850;
-  cursor:pointer; text-align:center; overflow-wrap:anywhere;
-}
-.mobile-footer .footer-mobile-tab[aria-selected="true"] {
-  background:color-mix(in srgb,var(--accent) 24%,var(--surface));
-  color:var(--text); border-color:var(--accent);
-  box-shadow:0 5px 16px rgba(0,0,0,.16);
-}
-.mobile-footer .footer-mobile-tab:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
-.mobile-footer .footer-contact[hidden],.mobile-footer .footer-links[hidden] { display:none !important; }
-.mobile-footer .footer-links {
-  align-items:stretch; width:100%; text-align:center;
-  padding:5px 8px; gap:2px; border-radius:10px;
-}
-.mobile-footer .footer-notices {
-  flex:0 0 92px; min-height:92px;
-  grid-template-columns:repeat(2,minmax(0,1fr)); gap:3px;
-}
-.mobile-footer .footer-notice-icon { min-height:44px; font-size:clamp(13px,3.5vw,16px); border-radius:7px; padding:2px; }
-.mobile-footer .footer-notice-icon::before { inset:2px; border-radius:5px; }
-.mobile-footer .footer-notice-icon::after { bottom:2px; height:1px; }
-.mobile-footer .footer-contact {
-  width:100%; align-items:center; text-align:center; gap:3px;
-  padding:6px 8px; border-radius:10px;
-}
-.mobile-footer .footer-contact-main { justify-items:center; }
-.mobile-footer h2 { display:none; }
-.mobile-footer .footer-inner p { margin:0; line-height:1.25; font-size:12px; }
-.mobile-footer .footer-brand { font-size:12px; }
-.mobile-footer .footer-contact a { font-size:11px; }
-.mobile-footer .footer-inner .footer-updated,
-.mobile-footer .footer-inner .footer-checked { font-size:11px; line-height:1.25; }
-.mobile-footer .footer-links .footer-version { font-size:12px; line-height:1.25; padding-top:2px; }
-.mobile-footer .footer-links :is(.footer-updated,.footer-checked,.footer-version) { text-align:center; }
+/* Mobilon is egyetlen, állandóan látható Csanádi-blokk, panel és keret nélkül. */
+.mobile-footer {padding:36px 20px calc(40px + env(safe-area-inset-bottom));}
+.mobile-footer .footer-inner {width:min(100%,620px);display:block;text-align:center;}
+.mobile-footer .footer-contact {width:100%;align-items:center;gap:16px;}
+.mobile-footer .footer-contact-main {justify-items:center;gap:6px;}
+.mobile-footer .footer-brand {font-size:clamp(23px,7vw,29px);line-height:1.1;margin-bottom:5px;}
+.mobile-footer .footer-inner h2 {font-size:13px;font-weight:850;}
+.mobile-footer .footer-contact-main p:not(.footer-brand),
+.mobile-footer .footer-contact-main a {font-size:12px;line-height:1.5;}
+.mobile-footer .footer-status {justify-items:center;margin-top:5px;gap:4px;}
+.mobile-footer .footer-status p {font-size:11.5px;text-align:center;}
 
 /* Két külön mobilos, teljes képernyős felület: menü és kereső. */
 .mobile-menu-overlay, .mobile-search-overlay {
@@ -802,7 +751,9 @@
 .mobile-document-filters{display:grid;gap:10px;padding:14px;background:var(--surface);border:1px solid color-mix(in srgb,var(--accent) 32%,transparent);border-radius:19px;}
 .mobile-document-filter-row{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
 .mobile-document-filter-row select{min-width:0;font-size:.82rem;}
-.mobile-document-list{display:grid;gap:13px;}
+.mobile-document-list{display:grid;gap:13px;justify-items:center;}
+.mobile-document-list > .mobile-document-card{width:100%;}
+.mobile-document-list > .mobile-document-card:only-child{width:min(100%,490px);}
 .mobile-document-card{padding:16px 15px;border-radius:17px;}
 .mobile-document-card h3{font-size:1.05rem;line-height:1.32;}
 .mobile-document-card .document-card-open{margin-top:6px;min-height:48px;width:100%;font-size:.88rem;}
@@ -919,3 +870,37 @@
 .mobile-feature-event .mobile-feature-body small{font-size:11px;color:var(--muted);display:block;margin-bottom:10px;}
 .mobile-feature-center :is(button,input,select,summary,a):focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
 @media(max-width:350px){.mobile-feature-sport{grid-template-columns:minmax(0,1fr)}.mobile-feature-sport img{height:135px;min-height:0;}.mobile-feature-sport>div{padding:12px 14px;}}
+
+
+/* 2.44 – A galéria utolsó, akár egyelemű sorának pontos középre rendezése. */
+.mobile-media-grid {display:flex;flex-wrap:wrap;justify-content:center;gap:10px;}
+.mobile-media-grid > .mobile-media-tile {flex:0 1 calc((100% - 10px)/2);width:calc((100% - 10px)/2);}
+.mobile-media-grid > .mobile-media-empty {flex:0 0 100%;}
+@media(max-width:350px){.mobile-media-grid > .mobile-media-tile {flex-basis:100%;width:100%;}}
+/* A Bootstrap keresővezérlő nem írhatja felül a kiválasztott színséma kontrasztját. */
+.mobile-home[data-theme="dark"] .mobile-media-search,
+.mobile-home[data-theme="dark"] .mobile-media-search:focus {color:#f7f0e5!important;-webkit-text-fill-color:#f7f0e5!important;caret-color:#e9c88d;background-color:#102a40!important;color-scheme:dark;}
+.mobile-home[data-theme="dark"] .mobile-media-search::placeholder {color:#d0dae2!important;-webkit-text-fill-color:#d0dae2!important;opacity:1;}
+.mobile-home[data-theme="light"] .mobile-media-search,
+.mobile-home[data-theme="light"] .mobile-media-search:focus {color:#142b40!important;-webkit-text-fill-color:#142b40!important;caret-color:#79521e;background-color:#fffdf8!important;color-scheme:light;}
+.mobile-home[data-theme="light"] .mobile-media-search::placeholder {color:#486070!important;-webkit-text-fill-color:#486070!important;opacity:1;}
+.mobile-home[data-theme="dark"] .mobile-media-search:-webkit-autofill {-webkit-text-fill-color:#f7f0e5!important;box-shadow:0 0 0 1000px #102a40 inset!important;}
+.mobile-home[data-theme="light"] .mobile-media-search:-webkit-autofill {-webkit-text-fill-color:#142b40!important;box-shadow:0 0 0 1000px #fffdf8 inset!important;}
+
+/* 2.45: albumonként is középre igazított, reszponzív sorok. */
+.mobile-media-grid > .media-album-section{flex:0 0 100%;width:100%;}
+.mobile-media-grid .media-album-items{gap:10px;}
+.mobile-media-grid .media-album-items > .mobile-media-tile{flex:0 1 calc((100% - 10px)/2);width:calc((100% - 10px)/2);}
+@media(max-width:350px){.mobile-media-grid .media-album-items > .mobile-media-tile{flex:0 1 100%;width:100%;}}
+
+/* 2.46: külön mobilos albumborító-felület, jól érinthető gombokkal. */
+.mobile-premium-showcase{width:100%;margin:0 auto 23px;}
+.mobile-premium-showcase .media-premium-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;}
+.mobile-premium-showcase .media-premium-tile:first-child{grid-column:span 2;}
+.mobile-premium-showcase .media-premium-cover{aspect-ratio:1/1;min-height:126px;}
+.mobile-premium-showcase .media-premium-tile:first-child .media-premium-cover{aspect-ratio:16/9;}
+.mobile-premium-showcase .media-premium-title{font-size:21px;}
+.mobile-premium-showcase .media-premium-cover strong{font-size:clamp(13px,3.5vw,18px);}
+@media(max-width:350px){.mobile-premium-showcase .media-premium-grid{grid-template-columns:1fr;}.mobile-premium-showcase .media-premium-tile:first-child{grid-column:auto;}.mobile-premium-showcase .media-premium-cover,.mobile-premium-showcase .media-premium-tile:first-child .media-premium-cover{aspect-ratio:16/10;}}
+/* 2.46 mobilos előnézeti hivatkozás legalább 44px-es érintési felülettel. */
+.mobile-page-preview .page-share-preview{display:flex;align-items:center;justify-content:center;min-height:44px;width:fit-content;max-width:100%;margin:0 auto 18px;color:var(--text);font-size:13px;font-weight:800;text-underline-offset:4px;}
