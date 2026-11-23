@@ -1,118 +1,274 @@
-import { element } from "./dom.js?v=2.34";
-import { eventsOnDay, periodsInMonth, fullDayLabel, monthLabel } from "./calendar-data.js?v=2.34";
+import { element } from "./dom.js?v=2.41";
+import { eventsOnDay, fullDayLabel, monthLabel } from "./calendar-data.js?v=2.41";
+import { newsStoryHref } from "./news-panel.js?v=2.41";
 
-/** Hónapnézet: a desktop hover és a mobil click külön, ugyanabból az adatból. */
-export function makeCalendarMonth(config, entries, month, mode, onInteract = () => {}) {
-  const calendar = config.home.calendar;
-  const [year, monthNumber] = month.split("-").map(Number);
-  const daysInMonth = new Date(Date.UTC(year, monthNumber, 0)).getUTCDate();
-  const firstWeekday = (new Date(Date.UTC(year, monthNumber - 1, 1)).getUTCDay() + 6) % 7;
-  const card = element("article", { className: `school-month school-month--${mode}` });
-  const heading = element("h3", { className: "school-month-title", text: monthLabel(calendar, month) });
-  const grid = element("div", { className: "school-month-grid", attributes:{
-    role:"group", "aria-label":monthLabel(calendar,month)
-  } });
-  for (const weekday of calendar.weekdayNames) grid.append(element("span", {
-    className:"school-month-weekday", text:weekday, attributes:{"aria-hidden":"true"}
-  }));
-  for (let empty = 0; empty < firstWeekday; empty++) grid.append(
-    element("span", { className:"school-month-empty", attributes:{"aria-hidden":"true"} }));
-  const detail = element("div", { className:"school-day-detail", attributes:{
-    id:`${mode}-calendar-detail-${month}`, "aria-live":"polite"
-  } });
-  detail.hidden = true;
-  let activeDay = null;
+export function addCalendarDays(day, count) {
+  const date = new Date(`${day}T12:00:00Z`);
+  date.setUTCDate(date.getUTCDate() + count);
+  return date.toISOString().slice(0,10);
+}
+export function startOfCalendarWeek(day) {
+  const weekday = new Date(`${day}T12:00:00Z`).getUTCDay();
+  return addCalendarDays(day, -((weekday+6)%7));
+}
+export function monthGridStart(month) { return startOfCalendarWeek(`${month}-01`); }
+export function schoolWeeks(calendar) {
+  const first = monthGridStart(calendar.firstMonth);
+  const [y,m] = calendar.firstMonth.split("-").map(Number);
+  const last = new Date(Date.UTC(y,m - 1 + calendar.monthCount,0)).toISOString().slice(0,10);
+  const weeks=[];
+  for (let day=first;day<=last;day=addCalendarDays(day,7)) weeks.push(day);
+  return weeks;
+}
+export function weekLabel(calendar,week) {
+  return `${fullDayLabel(calendar,week)} – ${fullDayLabel(calendar,addCalendarDays(week,6))}`;
+}
+
+/** A felugró részletezés mindig a téma gyökeréhez kapcsolódik, nem a rácshoz:
+ * nem nyújtja meg a hónapot, és a Carousel overflow-ja sem vághatja le. */
+export function createCalendarPopover(config, platformOrEntries, onInteract = () => {}) {
+  const platform = typeof platformOrEntries === "string" ? platformOrEntries : "shared";
+  const settings = config.home.calendar;
+  const id = `${platform}-calendar-floating-detail`;
+  const title = element("strong", {className:"calendar-popover-title",
+    attributes:{id:`${id}-title`}});
+  const list = element("div", {className:"calendar-popover-content"});
+  const closeButton = element("button", {className:"calendar-popover-close",text:"×",
+    attributes:{type:"button","aria-label":"Eseményablak bezárása"}});
+  const header = element("div", {className:"calendar-popover-top"},title,closeButton);
+  const popover = element("div", {className:"school-calendar-popover", attributes:{
+    id,role:"dialog","aria-labelledby":`${id}-title`,"aria-modal":"false"
+  }}, header,list);
+  popover.hidden = true;
+  let activeDate = null;
   let activeButton = null;
-  const buttons = new Map();
+  let dismissedOnHover = null;
+  let hoverLeaveTimer = null;
+  const cancelHoverLeave = () => {
+    if (hoverLeaveTimer !== null) clearTimeout(hoverLeaveTimer);
+    hoverLeaveTimer = null;
+  };
+  const anchorHost = () => document.body;
+  const themeHost = () => document.querySelector?.(`.${platform}-home`) || null;
+  const updateTheme = () => {
+    const theme=themeHost()?.dataset?.theme;
+    popover.setAttribute("data-calendar-theme",theme==="light"?"light":"dark");
+  };
+  let themeWatcher = null;
+  if (typeof MutationObserver !== "undefined") {
+    themeWatcher = new MutationObserver(() => {if (!popover.hidden) updateTheme();});
+    themeWatcher.observe(document.getElementById?.("app") || document.body,{
+      subtree:true,attributes:true,attributeFilter:["data-theme"]
+    });
+  }
+  function place() {
+    if (popover.hidden || !activeButton?.getBoundingClientRect) return;
+    const rect = activeButton.getBoundingClientRect();
+    const screenWidth = window.innerWidth || 390;
+    const screenHeight = window.innerHeight || 760;
+    // 400%-os böngészőnagyításnál is férjen ki a lebegő ablak.
+    const width = Math.min(390, Math.max(1, screenWidth - 20));
+    const measuredHeight = popover.getBoundingClientRect?.().height || 270;
+    const left = Math.max(10, Math.min(rect.left + rect.width/2 - width/2, screenWidth-width-10));
+    const below = rect.bottom + 10;
+    const top = below + measuredHeight <= screenHeight-10 ? below
+      : Math.max(10, Math.min(rect.top-measuredHeight-10,screenHeight-measuredHeight-10));
+    popover.style.setProperty("--popover-width", `${width}px`);
+    popover.style.setProperty("--popover-left", `${left}px`);
+    popover.style.setProperty("--popover-top", `${top}px`);
+    popover.style.setProperty("--popover-max-height", `${Math.max(1,screenHeight-25)}px`);
+  }
   function close() {
-    activeDay = null;
-    activeButton?.setAttribute("aria-expanded","false");
+    cancelHoverLeave();
+    if (activeButton) activeButton.setAttribute("aria-expanded","false");
+    activeDate = null;
     activeButton = null;
-    detail.hidden = true;
-    detail.replaceChildren();
+    popover.hidden = true;
+    list.replaceChildren();
   }
-  function open(day, button) {
-    const events = eventsOnDay(entries, day);
-    if (!events.length) { close(); return; }
+  function open(day, button, entries, {fromHover=false,focusDetails=false} = {}) {
+    const events = eventsOnDay(entries,day);
+    if (!events.length) { close(); return false; }
     close();
-    activeDay = day;
+    activeDate = day;
     activeButton = button;
+    dismissedOnHover = null;
     button.setAttribute("aria-expanded","true");
-    detail.append(element("strong",{ className:"school-day-detail-title",
-      text:`${fullDayLabel(calendar,day)} · ${calendar.dayDetailsLabel}` }));
+    title.textContent = `${fullDayLabel(settings,day)} · ${settings.dayDetailsLabel}`;
     for (const event of events) {
-      const range = event.endDate ? `${fullDayLabel(calendar,event.date)} – ${fullDayLabel(calendar,event.endDate)}` : "";
-      detail.append(element("div",{ className:`school-day-event school-day-event--${event.category}` },
-        element("span",{ className:"school-day-category",text:event.categoryLabel }),
-        element("h4",{ text:event.title }),
-        ...(event.time ? [element("time",{text:event.time})] : []),
-        ...(range ? [element("p",{className:"school-day-range",text:range})] : []),
+      const range = event.endDate ? `${fullDayLabel(settings,event.date)} – ${fullDayLabel(settings,event.endDate)}` : "";
+      list.append(element("div",{className:`calendar-popover-event calendar-popover-event--${event.category}`},
+        element("span",{className:"calendar-popover-category",text:event.categoryLabel}),
+        element("h4",{text:event.title}),
+        ...(event.time ? [element("time",{className:"calendar-popover-time",text:event.time})] : []),
+        ...(range ? [element("p",{className:"calendar-popover-range",text:range})] : []),
         ...(event.summary ? [element("p",{text:event.summary})] : []),
-        ...event.details.map((text) => element("p",{text}))));
+        ...event.details.map((text) => element("p",{text})),
+        ...(event.newsRef ? (() => {
+          const article=config.publicNews.find((news)=>news.id===event.newsRef);
+          if (!article) return [];
+          return [element("a",{className:"calendar-related-news-link",
+            text:"Kapcsolódó hír és részletes tájékoztatás",
+            attributes:{href:newsStoryHref(config,article)}})];
+        })() : [])));
     }
-    detail.hidden = false;
-  }
-  for (let n = 1; n <= daysInMonth; n++) {
-    const date = `${month}-${String(n).padStart(2,"0")}`;
-    const events = eventsOnDay(entries,date);
-    const count = events.length;
-    const label = `${fullDayLabel(calendar,date)}${count ? `, ${count} ${calendar.eventCountLabel}: ${events.map((entry) => entry.title).join(", ")}` : ""}`;
-    const day = element("button", { className:`school-day${count ? " has-events" : ""}`,
-      text:n, attributes:{ type:"button", "aria-label":label, "aria-expanded":"false",
-        "aria-controls":detail.getAttribute("id"), ...(count ? {} : { disabled:"" }) } });
-    if (count) {
-      buttons.set(date, day);
-      day.addEventListener("click", () => {
-        onInteract();
-        // Az ismételt kattintás asztali hover közben is bezár.
-        if (activeDay === date) close(); else open(date, day);
-      });
-      if (mode === "desktop") {
-        day.addEventListener("mouseenter", () => { onInteract(); open(date, day); });
-        day.addEventListener("mouseleave", () => { if (activeDay === date) close(); });
-        day.addEventListener("focus", () => {
-          if (day.matches?.(":focus-visible")) open(date, day);
-        });
-      }
-      day.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") { close(); event.stopPropagation(); }
-      });
-      day.addEventListener("blur", () => {
-        if (mode === "desktop" && activeDay === date) close();
-      });
-    }
-    grid.append(day);
-  }
-  const notes = calendar.undated.filter((note) => note.month === month);
-  const periods = periodsInMonth(entries,month);
-  const extras = element("div",{className:"school-month-extras"});
-  if (periods.length) extras.append(
-    ...periods.map((entry) => element("p",{className:"school-month-period",
-      text:`${entry.title}: ${fullDayLabel(calendar,entry.date)} – ${fullDayLabel(calendar,entry.endDate)}` })));
-  if (notes.length) extras.append(element("strong",{text:calendar.monthNotesLabel}),
-    ...notes.map((note) => element("p",{className:"school-month-note",
-      text:`${note.title}: ${note.summary}`,attributes:{"data-event-id":note.id}})));
-  const hasAny = entries.some((entry) => entry.date.slice(0,7) === month ||
-    entry.endDate?.slice(0,7) === month || (entry.date < month && entry.endDate?.slice(0,7) >= month));
-  if (!hasAny && !notes.length) extras.append(element("p",{text:calendar.emptyMonth}));
-  if (!extras.children.length) extras.hidden = true;
-  card.append(heading,grid,detail,extras);
-  return {card,close,openEvent(id) {
-    const note = notes.find((item) => item.id === id);
-    if (note) {
-      close();
-      const item = [...extras.children].find((child) => child.getAttribute?.("data-event-id") === id);
-      item?.scrollIntoView?.({block:"center",behavior:"instant"});
-      item?.classList.add("is-highlighted");
-      return true;
-    }
-    const event = entries.find((entry) => entry.id === id);
-    if (!event || !(event.date.slice(0,7) === month ||
-        event.endDate?.slice(0,7) === month || (event.date < month && event.endDate?.slice(0,7) >= month))) return false;
-    const date = event.date.slice(0,7) === month ? event.date : `${month}-01`;
-    const button = buttons.get(date) || buttons.get(event.endDate);
-    if (!button) return false;
-    open(buttons.has(date) ? date : event.endDate,button);
+    const parent = anchorHost();
+    if (popover.parentNode !== parent) parent.append(popover);
+    updateTheme();
+    popover.hidden = false;
+    onInteract();
+    place();
+    // Billentyűzettel/switch eszközzel nyitva a hírhivatkozások és a bezárás
+    // közvetlenül elérhetők, nem a teljes naptáron kell újra tabolni.
+    if (focusDetails) closeButton.focus?.({preventScroll:true});
     return true;
+  }
+  function toggle(day, button, entries, {focusDetails=false} = {}) {
+    if (activeDate === day && activeButton === button) {
+      dismissedOnHover = button;
+      close();
+      return false;
+    }
+    return open(day,button,entries,{focusDetails});
+  }
+  function hover(day,button,entries) {
+    if (dismissedOnHover === button) return;
+    if (activeDate === day && activeButton === button) return;
+    open(day,button,entries,{fromHover:true});
+  }
+  function leave(button) {
+    if (activeButton === button) {
+      // A lebegő ablakból a hírre vezető link egérrel is elérhető legyen:
+      // a kurzor a napcella és a popover közti rövid távolságot áthidalhatja.
+      cancelHoverLeave();
+      hoverLeaveTimer = setTimeout(() => {
+        hoverLeaveTimer = null;
+        if (activeButton === button && !popover.matches?.(":hover") &&
+            !popover.contains?.(document.activeElement)) close();
+      }, 190);
+    }
+    if (dismissedOnHover === button) dismissedOnHover = null;
+  }
+  popover.addEventListener("mouseenter", cancelHoverLeave);
+  popover.addEventListener("mouseleave", () => {
+    if (!popover.contains?.(document.activeElement)) close();
+  });
+  popover.addEventListener("focusin", cancelHoverLeave);
+  closeButton.addEventListener("click",() => { const button = activeButton; close(); button?.focus?.(); });
+  const keydown = (event) => {
+    if (event.key === "Escape" && !popover.hidden) {
+      const opener = activeButton;
+      close();
+      opener?.focus?.({preventScroll:true});
+      event.preventDefault?.();
+      event.stopPropagation?.();
+    }
+  };
+  const pointerdown = (event) => {
+    if (!popover.hidden && event.target !== activeButton &&
+      !popover.contains?.(event.target) && !event.target?.closest?.(".school-day")) close();
+  };
+  const scroll = () => { if (!popover.hidden) place(); };
+  document.addEventListener?.("keydown",keydown);
+  document.addEventListener?.("pointerdown",pointerdown);
+  window.addEventListener?.("resize",scroll);
+  window.addEventListener?.("scroll",scroll,true);
+  return {id,popover,open,toggle,hover,leave,close,isOpen:()=>!popover.hidden,
+    destroy() {
+      close();
+      document.removeEventListener?.("keydown",keydown);
+      document.removeEventListener?.("pointerdown",pointerdown);
+      window.removeEventListener?.("resize",scroll);
+      window.removeEventListener?.("scroll",scroll,true);
+      themeWatcher?.disconnect();
+      popover.remove?.();
+    }
+  };
+}
+
+function makeDayButton(config,entries,day,mode,popover,{labelDay=true}={}) {
+  const dayEvents = eventsOnDay(entries,day);
+  const count = dayEvents.length;
+  const number = Number(day.slice(-2));
+  const text = labelDay ? number : fullDayLabel(config.home.calendar,day);
+  const label = `${fullDayLabel(config.home.calendar,day)}${count ? `, ${count} ${config.home.calendar.eventCountLabel}: ${dayEvents.map((entry)=>entry.title).join(", ")}` : ""}`;
+  const button = element("button",{className:`${labelDay?"school-day":"school-week-day"}${count ? " has-events" : ""}`,
+    text,attributes:{type:"button","aria-label":label,"aria-expanded":"false",
+      "aria-controls":popover.id, ...(count ? {} : {disabled:""})}});
+  if (count) {
+    if (labelDay) button.append(element("span",{className:"school-day-marker",text:count>1?String(count):"",attributes:{"aria-hidden":"true"}}));
+    button.addEventListener("click",(event) => popover.toggle(day,button,entries,
+      {focusDetails:event.detail === 0}));
+    if (mode === "desktop") {
+      button.addEventListener("mouseenter",() => popover.hover(day,button,entries));
+      button.addEventListener("mouseleave",() => popover.leave(button));
+    }
+  }
+  return button;
+}
+
+/** Egy hónap pontosan 6×7 cella: egyetlen eseményablak sem része a kártyának. */
+export function makeCalendarMonth(config, entries, month, mode, popover) {
+  const calendar = config.home.calendar;
+  const card = element("article",{className:`school-month school-month--${mode}`});
+  const heading = element("h3",{className:"school-month-title",text:monthLabel(calendar,month)});
+  const grid = element("div",{className:"school-month-grid",attributes:{role:"group","aria-label":monthLabel(calendar,month)}});
+  for (const weekday of calendar.weekdayNames) grid.append(element("span",{className:"school-month-weekday",text:weekday,attributes:{"aria-hidden":"true"}}));
+  const buttons = new Map();
+  const first = monthGridStart(month);
+  for (let offset=0;offset<42;offset++) {
+    const day = addCalendarDays(first,offset);
+    if (day.slice(0,7) !== month) {
+      grid.append(element("span",{className:"school-month-empty",attributes:{"aria-hidden":"true"}}));
+      continue;
+    }
+    const button = makeDayButton(config,entries,day,mode,popover);
+    if (eventsOnDay(entries,day).length) buttons.set(day,button);
+    grid.append(button);
+  }
+  card.append(heading,grid);
+  return {card,close:popover.close,openEvent(id) {
+    const event=entries.find((entry)=>entry.id===id);
+    if (!event || (event.date.slice(0,7)!==month && event.endDate?.slice(0,7)!==month)) return false;
+    const date=event.date.slice(0,7)===month ? event.date : event.endDate;
+    const button=buttons.get(date);
+    if (!button) return false;
+    return popover.open(date,button,entries);
+  }};
+}
+
+/** Heti nézet: egy teljes hét, minden nap azonos méretű helyen. */
+export function makeCalendarWeek(config, entries, weekStart, mode, popover) {
+  const calendar=config.home.calendar;
+  const weekEnd=addCalendarDays(weekStart,6);
+  const card=element("article",{className:`school-week school-week--${mode}`});
+  const heading=element("h3",{className:"school-week-title",
+    text:`${fullDayLabel(calendar,weekStart)} – ${fullDayLabel(calendar,weekEnd)}`});
+  const grid=element("div",{className:"school-week-grid",attributes:{role:"group","aria-label":heading.textContent}});
+  const buttons=new Map();
+  for (let i=0;i<7;i++) {
+    const day=addCalendarDays(weekStart,i);
+    const count=eventsOnDay(entries,day).length;
+    const dayName=calendar.weekdayNames[i];
+    const button=makeDayButton(config,entries,day,mode,popover,{labelDay:false});
+    button.className=`school-week-day${count ? " has-events" : ""}`;
+    const text=element("span",{className:"school-week-day-label",text:dayName});
+    const countLabel=element("span",{className:"school-week-event-count",text:count?`${count} esemény`:"—"});
+    button.replaceChildren(element("span",{className:"school-week-day-meta"},
+      element("span",{className:"school-week-day-name",text:dayName}),
+      element("span",{className:"school-week-day-date",text:String(Number(day.slice(-2)))})),
+      element("span",{className:"school-week-day-events",text:count
+        ? eventsOnDay(entries,day).slice(0,2).map((e)=>e.title).join(" · ")+(count>2?` +${count-2}`:"")
+        :"Nincs meghirdetett esemény"}));
+    if (count) buttons.set(day,button);
+    grid.append(button);
+  }
+  card.append(heading,grid);
+  return {card,close:popover.close,openEvent(id) {
+    const event=entries.find((entry)=>entry.id===id);
+    if (!event) return false;
+    const date=event.date>=weekStart && event.date<=weekEnd ? event.date : event.endDate;
+    const button=buttons.get(date);
+    return button ? popover.open(date,button,entries) : false;
   }};
 }

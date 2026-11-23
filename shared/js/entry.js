@@ -1,8 +1,8 @@
 /** Egyetlen HTML, JSON-alapú kapu, kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.34";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.34";
-import { eventById } from "./calendar-data.js?v=2.34";
-import { mountOffline } from "./offline.js?v=2.34";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.41";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.41";
+import { eventById } from "./calendar-data.js?v=2.41";
+import { mountOffline } from "./offline.js?v=2.41";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -27,6 +27,14 @@ function route() {
   if (noticeMatch && config.home.footer.notices.some((item) => item.id === noticeMatch[1])) return "home";
   const eventMatch = /^#\/kezdolap\/esemeny\/([a-z0-9-]+)$/.exec(location.hash);
   if (eventMatch && eventById(config,eventMatch[1])) return "home";
+  const calendarPageMatch = /^#\/oldal\/news-calendar\/esemeny\/([a-z0-9-]+)$/.exec(location.hash);
+  if (calendarPageMatch && eventById(config,calendarPageMatch[1])) return "page:news-calendar";
+  const newsMatch = /^#\/oldal\/(news-latest|news-announcements|news-archive)\/hir\/([a-z0-9-]+)$/.exec(location.hash);
+  if (newsMatch && config.publicNews.some((item)=>item.id===newsMatch[2] &&
+      (newsMatch[1]!=="news-announcements" || item.tags.includes("announcement")) &&
+      (newsMatch[1]==="news-announcements" || !item.tags.includes("announcement")))) {
+    return `page:${newsMatch[1]}`;
+  }
   const archiveMatch = /^#\/oldal\/sports-results\/sportsiker\/([a-z0-9-]+)$/.exec(location.hash);
   if (archiveMatch && archivedSportSuccesses(config).some((item) => item.id === archiveMatch[1])) {
     return "page:sports-results";
@@ -45,7 +53,9 @@ function mountView(platform, module, selectedRoute) {
   destroyCurrent = module.mount(root, config, selectedRoute) || (() => {});
   if (routeChanged) window.scrollTo?.({ top:0, behavior:"instant" });
   if (hasRendered) {
-    const searchDetailOpen = (selectedRoute === "home" &&
+    const searchDetailOpen = (selectedRoute.startsWith("page:news-") &&
+      /^#\/oldal\/(news-latest|news-announcements|news-archive)\/hir\/[a-z0-9-]+$/.test(location.hash)) || (selectedRoute === "page:news-calendar" &&
+      /^#\/oldal\/news-calendar\/esemeny\/[a-z0-9-]+$/.test(location.hash)) || (selectedRoute === "home" &&
       /^#\/kezdolap\/(sportsiker|tajekoztatas|esemeny)\/[a-z0-9-]+$/.test(location.hash)) ||
       (selectedRoute === "page:sports-results" &&
         /^#\/oldal\/sports-results\/sportsiker\/[a-z0-9-]+$/.test(location.hash));
@@ -54,7 +64,7 @@ function mountView(platform, module, selectedRoute) {
       : selectedRoute === "home" ? root.querySelector(".home-brand")
       : root.querySelector(".gate-door-button");
     if (focusTarget) {
-      focusTarget.focus({ preventScroll: true });
+      focusTarget.focus({ preventScroll:true });
     }
   }
   hasRendered = true;
@@ -140,6 +150,9 @@ async function loadConfig() {
       throw new Error("A kapu JSON-beállításai hibásak.");
     }
     validateMenu(nextConfig);
+    // A betöltött kiadás nem írható vissza szerverre; a kereső gyorsítótárát
+    // csak teljes, validált új JSON-betöltéskor szabad cserélni.
+    Object.defineProperty(nextConfig, "__staticContent", { value:true });
     config = nextConfig;
     // A következő oldalfrissítés is saját, kiadáshoz kötött URL-en történjen.
     if (window.location?.href && window.history?.replaceState) {

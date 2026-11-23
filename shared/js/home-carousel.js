@@ -1,60 +1,84 @@
-import { element } from "./dom.js?v=2.34";
+import { element } from "./dom.js?v=2.41";
+import { checkedHomeCarousel } from "./carousel-data.js?v=2.41";
+import { createNewsPanel } from "./news-panel.js?v=2.41";
+import { menuPageHref } from "./menu-data.js?v=2.41";
 
-/** Kétpaneles, valódi Bootstrap 5 Carousel, saját akadálymentes vezérléssel.
- * Ha a CDN nem érhető el, az osztályváltásos tartalék működés megmarad. */
+/** JSON-ból felépített, bővíthető Bootstrap 5 Carousel: nem igényel
+ * nyilakat és megállító gombot. CDN-kiesésnél osztályváltásos tartalék.
+ * A fülek ARIA-tablistként működnek, nem Bootstrap-indikátorokként. */
 export function createHomeCarousel(config, successesSection, makeCalendar, platform) {
-  const data = config.home.calendar;
+  const data = checkedHomeCarousel(config);
   const id = `${platform}-feature-carousel`;
+  const activePanels = data.activePanels;
+  const calendarIndex = activePanels.findIndex((panel) => panel.type === "calendar");
   let current = 0;
-  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+  const motionPreference = window.matchMedia?.("(prefers-reduced-motion: reduce)");
+  const canHover = window.matchMedia?.("(hover:hover) and (pointer:fine)");
   let manualHoldUntil = 0;
   let visible = true;
   let destroyed = false;
   let pendingIndex = null;
   let pendingEventId = null;
   let transitioning = false;
-  // A naptári interakció csak átmenetileg halasztja az automatikus váltást.
-  const holdForReading = () => {
-    manualHoldUntil = Math.max(manualHoldUntil, Date.now() + data.manualHoldMs);
-  };
-  const calendar = makeCalendar(holdForReading);
-  const slides = [successesSection, calendar.section].map((content, index) => element("div", {
-    className:`carousel-item home-carousel-item${index === 0 ? " active" : ""}`,
-    attributes:{ id:`${id}-panel-${index}`,role:"tabpanel",
-      "aria-labelledby":`${id}-tab-${index}`,"aria-hidden":index === 0 ? "false" : "true" }
-  }, content));
-  slides[1].inert = true;
-  const tabs = data.tabs.map((label, index) => element("button", {
-    className:`home-carousel-tab${index === 0 ? " is-active" : ""}`,text:label,
-    attributes:{ type:"button",id:`${id}-tab-${index}`,role:"tab",
-      "aria-controls":slides[index].getAttribute("id"),"aria-selected":index === 0 ? "true" : "false",
-      tabindex:index === 0 ? "0" : "-1" }
-  }));
-  // A fülek önálló ARIA-tablistet alkotnak, NEM Bootstrap .carousel-indicators-t.
-  // Az a CSS-osztály a Bootstrap belső aktívindikátor-kezelését aktiválná,
-  // amely itt data-bs-target hiányában hibát dobna és megakasztaná a váltást.
-  const tabBar = element("div", {className:"home-carousel-tabs",attributes:{
-    role:"tablist","aria-label":data.panelLabel
-  }}, ...tabs);
-  const controls = element("div", {className:"home-carousel-controls"},tabBar);
-  const section = element("section", {className:"carousel slide home-feature-carousel",
-    attributes:{id,"aria-label":data.panelLabel,"data-bs-interval":"false"}
-  },controls,element("div", {className:"carousel-inner home-carousel-inner"},...slides));
+  let pointerInside = false;
 
-  function reflect(index, updateClasses = false) {
+  const holdForReading = () => {
+    manualHoldUntil = Math.max(manualHoldUntil, Date.now() + data.interactionHoldMs);
+  };
+  // Minden panelnek saját tartalma és életciklusa van; a sorrend kizárólag JSON.
+  const instances = activePanels.map((panel) => {
+    const {type} = panel;
+    if (type === "successes") return { section:successesSection, destroy(){} };
+    if (type === "calendar") return makeCalendar(holdForReading);
+    if (type === "news") return createNewsPanel(config,holdForReading,panel);
+    throw new Error(`Ismeretlen kezdőlapi Carousel-panel: ${type}`);
+  });
+  const calendar = instances[calendarIndex];
+  if (calendar?.section) calendar.section.append(element("nav",{
+    className:"calendar-full-page-link",attributes:{"aria-label":"Naptár további lehetőségei"}},
+    element("a",{text:"Teljes tanévi eseménynaptár",attributes:{href:menuPageHref("news-calendar")}})));
+  const slides = instances.map((instance,index) => element("div", {
+    className:`carousel-item home-carousel-item${index === 0 ? " active" : ""}`,
+    attributes:{id:`${id}-panel-${index}`,role:"tabpanel",
+      "aria-labelledby":`${id}-tab-${index}`,"aria-hidden":index === 0 ? "false" : "true"}
+  },instance.section));
+  slides.forEach((slide,index) => { slide.inert = index !== 0; });
+  const tabs = activePanels.map((panel,index) => element("button", {
+    className:`home-carousel-tab${index === 0 ? " is-active" : ""}`,text:panel.label,
+    attributes:{type:"button",id:`${id}-tab-${index}`,role:"tab",
+      "aria-controls":slides[index].getAttribute("id"),
+      "aria-selected":index === 0 ? "true" : "false",tabindex:index === 0 ? "0" : "-1"}
+  }));
+  const descriptionId = `${id}-usage-hint`;
+  const tabBar = element("div", {className:"home-carousel-tabs",attributes:{
+    role:"tablist","aria-label":data.ariaLabel
+  }},...tabs);
+  const usageHint = element("p",{className:"visually-hidden home-carousel-accessibility-hint",
+    text:"A fülek között a bal és jobb nyílbillentyűvel válthat. A tartalom automatikus váltása szünetel, amíg a kurzor fölötte van vagy billentyűzettel a fülekben tartózkodik.",
+    attributes:{id:descriptionId}});
+  const section = element("section", {className:"carousel slide home-feature-carousel",
+    attributes:{id,"aria-label":data.ariaLabel,"aria-roledescription":"váltakozó tartalmak",
+      "aria-describedby":descriptionId,"data-bs-interval":"false"}
+  },element("div",{className:"home-carousel-controls"},tabBar,usageHint),
+    element("div",{className:"carousel-inner home-carousel-inner",attributes:{"aria-live":"off"}},...slides));
+
+  function reflect(index,updateClasses=false) {
     current = index;
-    slides.forEach((slide, i) => {
+    instances.forEach((instance,i) => {
+      if (i !== index) { instance.closePopover?.(); instance.closeDetails?.(); }
+    });
+    slides.forEach((slide,i) => {
       if (updateClasses) slide.classList[i === index ? "add" : "remove"]("active");
       slide.inert = i !== index;
-      slide.setAttribute("aria-hidden", i === index ? "false" : "true");
-      tabs[i].setAttribute("aria-selected", i === index ? "true" : "false");
-      tabs[i].setAttribute("tabindex", i === index ? "0" : "-1");
+      slide.setAttribute("aria-hidden",i === index ? "false" : "true");
+      tabs[i].setAttribute("aria-selected",i === index ? "true" : "false");
+      tabs[i].setAttribute("tabindex",i === index ? "0" : "-1");
       tabs[i].classList[i === index ? "add" : "remove"]("is-active");
     });
   }
 
-  // Nincs automatikus Bootstrap-időzítő: a közös, hozzáférhető időzítés kezeli
-  // a fókuszt, a kézi váltás utáni olvasási időt és a csökkentett mozgást.
+  // Csak a Bootstrap átmenete fut: a 30 másodperces időzítő egy helyről,
+  // a fókusz- és naptárinterakciók figyelembevételével vezérli a váltást.
   const BootstrapCarousel = window.bootstrap?.Carousel;
   const bootstrapCarousel = typeof BootstrapCarousel === "function"
     ? BootstrapCarousel.getOrCreateInstance(section, {
@@ -65,11 +89,13 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
   const slid = (event) => {
     if (destroyed) return;
     transitioning = false;
-    reflect(Number.isInteger(event.to) ? event.to :
-      (slides[1].classList.contains("active") ? 1 : 0));
-    if (current === 1 && pendingEventId) {
-      calendar.showEvent(pendingEventId);
+    const index = Number.isInteger(event.to) && event.to >= 0 && event.to < slides.length
+      ? event.to : Math.max(0,slides.findIndex((slide) => slide.classList.contains("active")));
+    reflect(index);
+    if (current === calendarIndex && pendingEventId) {
+      const eventId = pendingEventId;
       pendingEventId = null;
+      calendar.showEvent?.(eventId);
     }
     if (pendingIndex !== null) {
       const target = pendingIndex;
@@ -79,29 +105,36 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
   };
   if (bootstrapCarousel) section.addEventListener("slid.bs.carousel",slid);
 
-  function show(index, byUser = false) {
-    if (destroyed || index < 0 || index >= slides.length) return;
+  function show(index,byUser=false) {
+    if (destroyed || !Number.isInteger(index) || index < 0 || index >= slides.length) return;
     if (byUser) holdForReading();
+    if (index !== current) instances[current].closePopover?.();
+    if (index !== current) instances[current].closeDetails?.();
     if (!bootstrapCarousel) { reflect(index,true); return; }
     if (transitioning) { pendingIndex = index; return; }
     if (index === current) return;
     transitioning = true;
     bootstrapCarousel.to(index);
   }
-  tabs.forEach((tab, i) => {
-    tab.addEventListener("click", () => show(i,true));
-    tab.addEventListener("keydown", (event) => {
+  tabs.forEach((tab,index) => {
+    tab.addEventListener("click",() => show(index,true));
+    tab.addEventListener("keydown",(event) => {
       if (!["ArrowLeft","ArrowRight","Home","End"].includes(event.key)) return;
       event.preventDefault();
-      const nextIndex = event.key === "Home" ? 0 : event.key === "End" ? 1
-        : (current + (event.key === "ArrowLeft" ? 1 : 3)) % 2;
+      const nextIndex = event.key === "Home" ? 0 :
+        event.key === "End" ? tabs.length - 1 :
+        (index + (event.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length;
       show(nextIndex,true);
       tabs[nextIndex].focus();
     });
   });
-  // Nem állítjuk meg tartósan a váltást egy telefonos koppintás vagy
-  // a két fülön maradó egérmutató miatt. A billentyűzetes tényleges fókusz,
-  // illetve a megnyitott naptári részletek idején viszont szünetel.
+
+  // A :hover lekérdezés néhány böngészőben/érintéses emulációban ragadhat vagy
+  // nem követi a valós mutatóhelyzetet; a pointerenter/leave állapot az elsődleges.
+  const pointerEntered = (event) => { if (event.pointerType !== "touch") pointerInside = true; };
+  const pointerLeft = () => { pointerInside = false; };
+  section.addEventListener("pointerenter",pointerEntered);
+  section.addEventListener("pointerleave",pointerLeft);
   const visibilityChanged = () => { visible = document.visibilityState !== "hidden"; };
   document.addEventListener?.("visibilitychange",visibilityChanged);
   let observer = null;
@@ -112,35 +145,45 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
     observer.observe(section);
   }
   const timer = globalThis.setInterval(() => {
-    if (destroyed || reducedMotion || transitioning ||
-        Date.now() < manualHoldUntil || !visible ||
+    if (destroyed || motionPreference?.matches || transitioning || Date.now() < manualHoldUntil || !visible ||
         document.visibilityState === "hidden") return;
+    // WCAG 2.2.2: az olvasni kívánt tartalom ne váltson el egér alatt, illetve
+    // a billentyűzetes felhasználó aktív fókusza alatt. Telefonon a tap utáni
+    // ragadós :hover állapot viszont nem fagyaszthatja le a Carouselt.
+    if (canHover?.matches && (pointerInside || section.matches?.(":hover"))) return;
     const active = document.activeElement;
     if (active && section.contains?.(active) && active.matches?.(":focus-visible")) return;
-    if (current === 1 && section.querySelector?.(".school-day-detail:not([hidden])")) return;
-    show((current + 1) % 2);
+    if (instances[current].isOpen?.()) return;
+    show((current + 1) % slides.length);
   },data.autoplayMs);
+
   return {
     section,show,
     showEvent(eventId) {
-      if (bootstrapCarousel && (current !== 1 || transitioning)) {
-        pendingEventId = eventId;
-        show(1,true);
-        return true;
+      if (current === calendarIndex && !transitioning) {
+        holdForReading();
+        return calendar.showEvent?.(eventId) ?? false;
       }
-      show(1,true);
-      return calendar.showEvent(eventId);
+      pendingEventId = eventId;
+      show(calendarIndex,true);
+      if (!bootstrapCarousel) {
+        pendingEventId = null;
+        return calendar.showEvent?.(eventId) ?? false;
+      }
+      return true;
     },
     destroy() {
       destroyed = true;
       globalThis.clearInterval(timer);
       observer?.disconnect();
+      section.removeEventListener("pointerenter",pointerEntered);
+      section.removeEventListener("pointerleave",pointerLeft);
       document.removeEventListener?.("visibilitychange",visibilityChanged);
       if (bootstrapCarousel) {
         section.removeEventListener("slid.bs.carousel",slid);
         bootstrapCarousel.dispose();
       }
-      calendar.destroy();
+      instances.forEach((instance) => instance.destroy?.());
     }
   };
 }

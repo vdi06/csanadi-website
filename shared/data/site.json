@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.30",
-  "release": "2.34",
+  "release": "2.41",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -35,15 +35,8 @@
       "schoolYear": "2026/2027",
       "firstMonth": "2026-09",
       "monthCount": 12,
-      "autoplayMs": 30000,
-      "manualHoldMs": 18000,
-      "tabs": [
-        "Sportsikerek",
-        "Tanévi naptár"
-      ],
       "previousGlyph": "‹",
       "nextGlyph": "›",
-      "panelLabel": "Kiemelt kezdőlapi tartalmak",
       "monthSelectLabel": "Hónap kiválasztása",
       "monthPreviousLabel": "Előző hónap",
       "monthNextLabel": "Következő hónap",
@@ -81,10 +74,9 @@
         "notice": "Tájékoztatás"
       },
       "emptyMonth": "Erre a hónapra még nincs pontos időpontra meghirdetett esemény.",
-      "monthNotesLabel": "Hónaphoz kötött, még nem pontosított időpontok",
       "eventCountLabel": "esemény",
       "detailsHint": "Részletek: rámutatás vagy koppintás",
-      "closeHint": "Bezárás: az egér elmozdítása, ismételt koppintás vagy Escape",
+      "closeHint": "Bezárás: újabb koppintás, a kurzor elmozdítása vagy Escape",
       "dayDetailsLabel": "Események ezen a napon",
       "events": [
         {
@@ -750,50 +742,18 @@
           "category": "school"
         }
       ],
-      "undated": [
-        {
-          "id": "diakok-hangja",
-          "month": "2026-09",
-          "title": "Diákok Hangja",
-          "summary": "A munkaterv szeptember 14–25. közötti időszakot jelöl meg, pontos nap nélkül."
-        },
-        {
-          "id": "kazinczy-verseny",
-          "month": "2026-11",
-          "title": "Kazinczy-verseny",
-          "summary": "November közepére tervezett verseny; a pontos napot nem közölték."
-        },
-        {
-          "id": "also-iskolanyitogato",
-          "month": "2026-11",
-          "title": "Alsós iskolanyitogató alkalmak",
-          "summary": "Novembertől induló programok, külön meghirdetett időpontokkal."
-        },
-        {
-          "id": "mikulas-kupa",
-          "month": "2026-12",
-          "title": "Mikulás-kupa",
-          "summary": "Decemberre tervezett sportprogram; a munkatervben nincs megadva konkrét nap."
-        },
-        {
-          "id": "vers-prozamondo",
-          "month": "2027-02",
-          "title": "Vers- és prózamondó verseny",
-          "summary": "Februári iskolai program, pontos dátum nélkül."
-        },
-        {
-          "id": "termeszettudomanyos-vizsga",
-          "month": "2027-05",
-          "title": "8. évfolyamos természettudományos vizsga",
-          "summary": "Május közepére tervezett vizsga; a pontos dátum még nem szerepel a munkatervben."
-        },
-        {
-          "id": "pedagogusnap",
-          "month": "2027-06",
-          "title": "Pedagógusnap",
-          "summary": "A munkaterv június első hetére jelöli, külön pontosított nap nélkül."
-        }
-      ]
+      "undated": [],
+      "viewLabels": {
+        "week": "Heti",
+        "month": "Havi",
+        "year": "Éves"
+      },
+      "viewGroupLabel": "Naptárnézet",
+      "weekPreviousLabel": "Előző hét",
+      "weekNextLabel": "Következő hét",
+      "weekRangeLabel": "Kiválasztott hét",
+      "monthRangeLabel": "Kiválasztott hónap",
+      "popoverCloseLabel": "Eseményrészletek bezárása"
     },
     "search": {
       "categories": {
@@ -1704,6 +1664,58 @@
         }
       ],
       "phone": "+36 30 267 82 08"
+    },
+    "carousel": {
+      "ariaLabel": "Kiemelt kezdőlapi tartalmak",
+      "autoplayMs": 30000,
+      "interactionHoldMs": 18000,
+      "panels": [
+        {
+          "id": "successes",
+          "type": "successes",
+          "label": "Sportsikerek",
+          "enabled": true
+        },
+        {
+          "id": "calendar",
+          "type": "calendar",
+          "label": "Tanévi naptár",
+          "enabled": true
+        },
+        {
+          "id": "news",
+          "type": "news",
+          "label": "Hírek és közlemények",
+          "enabled": true
+        }
+      ]
+    },
+    "newsSpotlight": {
+      "eyebrow": "Iskolai aktualitások",
+      "heading": "Kiemelt hírek és közlemények",
+      "intro": "Az iskola dátummal közzétett, nyilvános hírei. A régebbi bejegyzések az archívumban kereshetők.",
+      "detailsLabel": "Részletek megjelenítése",
+      "emptyLabel": "Jelenleg nincs friss, dátummal ellátott intézményi hír.",
+      "maxAgeDays": 180,
+      "maxFutureDays": 365,
+      "maxItems": 4,
+      "featuredLabel": "★ Kiemelt tájékoztatás",
+      "stateLabels": {
+        "ongoing": "Aktuális",
+        "upcoming": "Közelgő",
+        "past": "Korábbi hír"
+      },
+      "tagLabels": {
+        "announcement": "Közlemény",
+        "admission": "Felvételi",
+        "event": "Esemény",
+        "studies": "Tanulmányok",
+        "sports": "Sport",
+        "community": "Iskolai élet"
+      },
+      "linksLabel": "További intézményi hírek",
+      "allNewsLabel": "Összes iskolai hír",
+      "announcementsLabel": "Közlemények"
     }
   },
   "menu": {
@@ -1849,7 +1861,7 @@
           },
           {
             "id": "sports-gallery",
-            "label": "Sportképek és galériák"
+            "label": "Képgaléria és médiaközpont"
           },
           {
             "id": "sports-olympic",
@@ -1917,7 +1929,7 @@
         "children": [
           {
             "id": "information-daily",
-            "label": "Napi iskolai tudnivalók"
+            "label": "Iskolai információs központ"
           },
           {
             "id": "information-documents",
@@ -3906,7 +3918,7 @@
         ]
       },
       "sports-gallery": {
-        "intro": "A sportos képi tartalmakat témák szerint csoportosítjuk, személyes tanulói képek újraátvétele nélkül.",
+        "intro": "Böngészhető, kereshető képi válogatás sportból, tanulásból és iskolai közösségi témákból. A jelenlegi médiák az oldal illusztrációs képanyagából származnak; nem eseményfotóként vagy valódi tanulókról készült felvételként közöljük őket.",
         "items": [
           {
             "title": "Sportmozgások képekben",
@@ -4748,7 +4760,7 @@
         }
       },
       "information-daily": {
-        "intro": "A napi iskolai tudnivalók a rendszeres működéshez szükséges információkat fogják össze.",
+        "intro": "Aktuális iskolai információk, a csengetési rend, közelgő események, közlemények és legfontosabb ügyintézési elérések egy helyen. Az adatok a honlap közös JSON-állományából származnak.",
         "items": [
           {
             "title": "Iskolai nap időrendje",
@@ -4811,7 +4823,7 @@
         ]
       },
       "information-documents": {
-        "intro": "A közzétett intézményi dokumentumokat témakör és dokumentumtípus szerint csoportosítjuk.",
+        "intro": "Dokumentumok tematikusan, kereshetően, közvetlenül az oldalon belüli előnézettel. A még nem feltöltött, hivatalos iratokat külön állapotjelzés mutatja.",
         "items": [
           {
             "title": "Nevelési és oktatási dokumentumok",
@@ -5379,7 +5391,7 @@
       "surface": "#ffffff",
       "text": "#142b40",
       "muted": "#465c6d",
-      "accent": "#946b2a"
+      "accent": "#815b24"
     }
   },
   "theme": {
@@ -5392,6 +5404,7 @@
   "publicNews": [
     {
       "id": "etkezesi-rendszer-2026",
+      "featured": true,
       "title": "Az étkezési rendszer időszakos szünete",
       "date": "2026-12-22",
       "endDate": "2026-12-31",
@@ -5472,5 +5485,735 @@
         "A bemutatás az intézmény egészére vonatkozó elismerésekről szól, nem tanulói személyes eredményekről."
       ]
     }
-  ]
+  ],
+  "informationCenter": {
+    "eyebrow": "ISKOLAI INFORMÁCIÓK",
+    "dateLabel": "Mai dátum",
+    "scheduleTitle": "Általános csengetési rend",
+    "scheduleNote": "A tanórák általános időpontjai, nem egyéni órarend vagy élő teremfoglaltság. Rendkívüli tanítási napokon az aktuális intézményi tájékoztatás az irányadó.",
+    "eventsTitle": "Közelgő tanévi események",
+    "newsTitle": "Iskolai hírek és közlemények",
+    "linksTitle": "Gyors ügyintézés és tudnivalók",
+    "eventsLimit": 4,
+    "newsLimit": 3,
+    "quickLinks": [
+      {
+        "id": "bell",
+        "title": "Csengetési rend",
+        "subtitle": "Tanórák és szünetek",
+        "href": "#/oldal/information-timetable",
+        "icon": "◷"
+      },
+      {
+        "id": "calendar",
+        "title": "Tanévi naptár",
+        "subtitle": "Határidők és programok",
+        "href": "#/oldal/news-calendar",
+        "icon": "▦"
+      },
+      {
+        "id": "meals",
+        "title": "Iskolai étkezés",
+        "subtitle": "Rendelés és lemondás",
+        "href": "#/oldal/information-meals",
+        "icon": "◉"
+      },
+      {
+        "id": "admin",
+        "title": "Ügyintézés",
+        "subtitle": "Kérelmek és tudnivalók",
+        "href": "#/oldal/information-services",
+        "icon": "▣"
+      },
+      {
+        "id": "absence",
+        "title": "Hiányzások",
+        "subtitle": "Igazolás és szabályok",
+        "href": "#/oldal/information-absence",
+        "icon": "✓"
+      },
+      {
+        "id": "docs",
+        "title": "Dokumentumok",
+        "subtitle": "Intézményi szabályzatok",
+        "href": "#/oldal/information-documents",
+        "icon": "▤"
+      },
+      {
+        "id": "news",
+        "title": "Közlemények",
+        "subtitle": "Aktuális tájékoztatás",
+        "href": "#/oldal/news-announcements",
+        "icon": "◇"
+      },
+      {
+        "id": "contact",
+        "title": "Elérhetőségek",
+        "subtitle": "Kapcsolattartás",
+        "href": "#/oldal/information-contact",
+        "icon": "☎"
+      }
+    ]
+  },
+  "mediaCenter": {
+    "eyebrow": "KÉPEK ÉS TÖRTÉNETEK",
+    "searchLabel": "Keresés a képek között",
+    "searchPlaceholder": "Keresés címre vagy témára…",
+    "detailsLabel": "Kép részletei",
+    "note": "A válogatás az iskola honlapjához készült illusztrációs képanyagból áll. A képek nem tekinthetők ellenőrzött eseményfotóknak.",
+    "categories": [
+      {
+        "id": "all",
+        "label": "Összes kép"
+      },
+      {
+        "id": "sport",
+        "label": "Sport"
+      },
+      {
+        "id": "tanulas",
+        "label": "Tanulás"
+      },
+      {
+        "id": "kozosseg",
+        "label": "Közösség"
+      },
+      {
+        "id": "iskola",
+        "label": "Iskolai környezet"
+      }
+    ],
+    "items": [
+      {
+        "id": "sport",
+        "category": "sport",
+        "title": "Mozgásban a közösség",
+        "src": "./shared/assets/media/web/desktop-hero/hero-sport-2026.webp",
+        "alt": "Sportolást bemutató illusztráció",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/sports-disciplines"
+      },
+      {
+        "id": "atletika",
+        "category": "sport",
+        "title": "Atlétika és lendület",
+        "src": "./shared/assets/media/web/desktop-hero/hero-athletics-new.webp",
+        "alt": "Atlétikai sporttevékenységet illusztráló kép",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/sports-disciplines"
+      },
+      {
+        "id": "labdarugas",
+        "category": "sport",
+        "title": "Labdarúgás",
+        "src": "./shared/assets/media/web/desktop-hero/hero-football-new.webp",
+        "alt": "Labdarúgást bemutató illusztráció",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/sports-disciplines"
+      },
+      {
+        "id": "roplabda",
+        "category": "sport",
+        "title": "Röplabda",
+        "src": "./shared/assets/media/web/desktop-hero/hero-volleyball-new.webp",
+        "alt": "Röplabdát bemutató illusztráció",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/sports-disciplines"
+      },
+      {
+        "id": "kezilabda",
+        "category": "sport",
+        "title": "Kézilabda",
+        "src": "./shared/assets/media/web/desktop-hero/hero-handball-new.webp",
+        "alt": "Kézilabdát bemutató illusztráció",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/sports-disciplines"
+      },
+      {
+        "id": "uszas",
+        "category": "sport",
+        "title": "Úszás",
+        "src": "./shared/assets/media/web/desktop-hero/swimming-1600.webp",
+        "alt": "Úszást bemutató illusztráció",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/sports-disciplines"
+      },
+      {
+        "id": "asztalitenisz",
+        "category": "sport",
+        "title": "Asztalitenisz",
+        "src": "./shared/assets/media/web/desktop-hero/hero-table-tennis-new.webp",
+        "alt": "Asztaliteniszt bemutató illusztráció",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/sports-disciplines"
+      },
+      {
+        "id": "sportnap",
+        "category": "sport",
+        "title": "Sportnap hangulata",
+        "src": "./shared/assets/media/web/mobile-story/kozosseg-01-sportsday.webp",
+        "alt": "Iskolai sportnap hangulatát szemléltető illusztráció",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/sports-disciplines"
+      },
+      {
+        "id": "digitalis",
+        "category": "tanulas",
+        "title": "Digitális tanulás",
+        "src": "./shared/assets/media/web/desktop-hero/hero-digital-new.webp",
+        "alt": "Digitális tanulási helyzetet illusztráló kép",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/education-resources"
+      },
+      {
+        "id": "labor",
+        "category": "tanulas",
+        "title": "Felfedezés és labor",
+        "src": "./shared/assets/media/web/desktop-hero/hero-laboratory-new.webp",
+        "alt": "Tudományos felfedezést bemutató illusztráció",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/education-resources"
+      },
+      {
+        "id": "konyvtar",
+        "category": "tanulas",
+        "title": "Könyvtári világ",
+        "src": "./shared/assets/media/web/desktop-hero/hero-library-new.webp",
+        "alt": "Könyvtári olvasást bemutató illusztráció",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/education-resources"
+      },
+      {
+        "id": "robotika",
+        "category": "tanulas",
+        "title": "Robotika",
+        "src": "./shared/assets/media/web/mobile-story/tudas-05-robotics.webp",
+        "alt": "Robotikát szemléltető illusztráció",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/education-resources"
+      },
+      {
+        "id": "tudas",
+        "category": "tanulas",
+        "title": "Tanulás és tudás",
+        "src": "./shared/assets/media/web/desktop-hero/hero-oktatas-2026.webp",
+        "alt": "Oktatási életképet illusztráló kép",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/education-resources"
+      },
+      {
+        "id": "matematika",
+        "category": "tanulas",
+        "title": "Matematikai gondolkodás",
+        "src": "./shared/assets/media/web/mobile-story/tudas-04-mathematics.webp",
+        "alt": "Matematikai tanulást illusztráló kép",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/education-resources"
+      },
+      {
+        "id": "kozosseg",
+        "category": "kozosseg",
+        "title": "Iskolai közösség",
+        "src": "./shared/assets/media/web/desktop-hero/hero-community-2026.webp",
+        "alt": "Iskolai közösségi hangulatot illusztráló kép",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/news-events"
+      },
+      {
+        "id": "unnep",
+        "category": "kozosseg",
+        "title": "Közös ünnepek",
+        "src": "./shared/assets/media/web/mobile-story/kozosseg-06-celebration.webp",
+        "alt": "Iskolai ünnepi hangulatot illusztráló kép",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/news-events"
+      },
+      {
+        "id": "onkentes",
+        "category": "kozosseg",
+        "title": "Közösségi szolgálat",
+        "src": "./shared/assets/media/web/mobile-story/kozosseg-03-volunteers.webp",
+        "alt": "Önkéntes közösségi munkát illusztráló kép",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/news-events"
+      },
+      {
+        "id": "diaktanacs",
+        "category": "kozosseg",
+        "title": "Diákközösség",
+        "src": "./shared/assets/media/web/mobile-story/kozosseg-02-student-council.webp",
+        "alt": "Diákok közös munkáját illusztráló kép",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/news-events"
+      },
+      {
+        "id": "iskola",
+        "category": "iskola",
+        "title": "Az iskola épülete",
+        "src": "./shared/assets/media/web/desktop-hero/bejarat-1600.webp",
+        "alt": "Iskolai épület bejáratát bemutató kép",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/school-introduction"
+      },
+      {
+        "id": "termeszet",
+        "category": "iskola",
+        "title": "Környezeti nevelés",
+        "src": "./shared/assets/media/web/desktop-hero/hero-nature-new.webp",
+        "alt": "Természetközeli tanulást illusztráló kép",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/school-introduction"
+      },
+      {
+        "id": "muhely",
+        "category": "iskola",
+        "title": "Alkotóműhely",
+        "src": "./shared/assets/media/web/desktop-hero/hero-workshop-new.webp",
+        "alt": "Kézműves alkotóműhelyt illusztráló kép",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/school-introduction"
+      },
+      {
+        "id": "kozos-terek",
+        "category": "iskola",
+        "title": "Közös terek",
+        "src": "./shared/assets/media/web/mobile-story/kozosseg-04-corridor.webp",
+        "alt": "Iskolai közösségi teret illusztráló kép",
+        "caption": "Illusztrációs képi tartalom a Csanádi Sportiskola honlapjáról.",
+        "href": "#/oldal/school-introduction"
+      }
+    ],
+    "desktopInitialCount": 9,
+    "mobileInitialCount": 6,
+    "loadStep": 6
+  },
+  "documentCenter": {
+    "eyebrow": "INTÉZMÉNYI DOKUMENTUMTÁR",
+    "intro": "Az ellenőrzött, megtekinthető fájlokat az oldalon belül olvashatod. A feltöltésre váró hivatalos szabályzatokat nem tüntetjük fel közzétett dokumentumként.",
+    "searchPlaceholder": "Keress címre, tartalomra, kulcsszóra…",
+    "categories": [
+      {
+        "id": "all",
+        "label": "Összes"
+      },
+      {
+        "id": "guides",
+        "label": "Használati útmutatók"
+      },
+      {
+        "id": "education",
+        "label": "Pedagógia és tanterv"
+      },
+      {
+        "id": "rules",
+        "label": "Szabályzatok"
+      },
+      {
+        "id": "organization",
+        "label": "Intézményi működés"
+      },
+      {
+        "id": "privacy",
+        "label": "Adatkezelés"
+      },
+      {
+        "id": "admission",
+        "label": "Felvételi"
+      }
+    ],
+    "items": [
+      {
+        "id": "dokumentumkozpont-utmutato",
+        "title": "A dokumentumközpont használata",
+        "category": "guides",
+        "kind": "pdf",
+        "status": "available",
+        "date": "2026-11-23",
+        "summary": "Technikai útmutató a dokumentumok kereséséhez és weboldalon belüli megtekintéséhez. Nem hivatalos iskolai szabályzat.",
+        "tags": [
+          "útmutató",
+          "weboldal",
+          "keresés",
+          "nézegető"
+        ],
+        "file": "./shared/assets/documents/dokumentumkozpont_utmutato.pdf",
+        "pages": [
+          "./shared/assets/documents/previews/dokumentumkozpont_utmutato_1.webp",
+          "./shared/assets/documents/previews/dokumentumkozpont_utmutato_2.webp"
+        ],
+        "pageCount": 2,
+        "pageTexts": [
+          "Dokumentumközpont – használati\nútmutató\nTechnikai ismertető, nem hivatalos intézményi szabályzat.\nEz az útmutató a Csanádi Sportiskola weboldalának dokumentumközpontját mutatja be. A\ntartalmi dokumentumok hiteles változatait az intézménynek kell jóváhagynia és feltöltenie.\nDokumentumok keresése\nA dokumentumcímben, rövid leírásban és kulcsszavakban lehet keresni. A\nkategóriaválasztóval például az oktatási, felvételi vagy adatkezelési dokumentumokra\nszűkíthető a lista.\nÁllapotok\nMegtekinthető: az állomány a csomag része. Feltöltésre vár: a tétel témája ismert, de\nhivatalos fájlt még nem rendeltünk hozzá. Ilyenkor nem jelenik meg hamis letöltési vagy\nmegtekintési lehetőség.\nDokumentum megtekintése\nA Megtekintés gombra a dokumentum ugyanazon az oldalon, lebegő olvasóablakban nyílik\nmeg. A PDF oldalai lapozhatók és nagyíthatók. A szöveges dokumentum közvetlenül\nolvasható. Az olvasóablak bezárása visszavisz a dokumentumlistához.",
+          "A dokumentumközpont kezelése\nKezelés billentyűzettel\nTAB: lépkedés a kezelőszervek között. ENTER/SPACE: gomb aktiválása. ESC: az olvasóablak\nbezárása. PDF-nézetben a lapozógombokkal oldalt, a nagyítógombokkal méretet lehet\nváltani.\nPDF előnézet működése\nA dokumentumnézegető saját vezérlőket és beágyazott oldalmegjelenítést alkalmaz. A\ndinamikus PDF-rendereléshez külső PDF-megjelenítő könyvtár szükséges lehet; a csomagba\nelőnézeti képek is kerültek, így ennek hiányában a mellékelt technikai útmutató továbbra is\nmegjelenik az oldalon belül.\nKözzétételi fegyelem\nAz új PDF vagy TXT állományokat csak ellenőrzés után szabad feltölteni. A\nJSON-nyilvántartásban a dokumentum azonosítóját, kategóriáját, dátumát, címét, állapotát\nés helyi fájlútvonalát kell rögzíteni. A hivatalos intézményi dokumentumokat nem\nhelyettesíti e technikai útmutató.\nKiadás: 2.40 · 2026. november 23."
+        ]
+      },
+      {
+        "id": "dokumentumkozzetetel-ellenorzo",
+        "title": "Dokumentumközzétételi ellenőrzőlista",
+        "category": "guides",
+        "kind": "txt",
+        "status": "available",
+        "date": "2026-11-23",
+        "summary": "Technikai segédlet a dokumentumfájlok és JSON-adatok ellenőrzéséhez. Nem hivatalos intézményi dokumentum.",
+        "tags": [
+          "közzététel",
+          "ellenőrzés",
+          "json",
+          "útmutató"
+        ],
+        "file": "./shared/assets/documents/dokumentumkozzetetel_ellenorzo.txt"
+      },
+      {
+        "id": "pedagogiai-program",
+        "title": "Pedagógiai program",
+        "category": "education",
+        "kind": "pdf",
+        "status": "pending",
+        "summary": "A jóváhagyott pedagógiai program helye; a dokumentum hiteles PDF-fájlja még nincs feltöltve.",
+        "tags": [
+          "pedagógiai",
+          "hivatalos",
+          "feltöltésre vár"
+        ]
+      },
+      {
+        "id": "helyi-tantervek",
+        "title": "Helyi tantervek",
+        "category": "education",
+        "kind": "pdf",
+        "status": "pending",
+        "summary": "Képzési szakaszok helyi tanterveinek helye; jóváhagyott fájlra vár.",
+        "tags": [
+          "helyi",
+          "hivatalos",
+          "feltöltésre vár"
+        ]
+      },
+      {
+        "id": "hazirend",
+        "title": "Házirend",
+        "category": "rules",
+        "kind": "pdf",
+        "status": "pending",
+        "summary": "Az aktuális házirend ellenőrzött példányának feltöltésére vár.",
+        "tags": [
+          "házirend",
+          "hivatalos",
+          "feltöltésre vár"
+        ]
+      },
+      {
+        "id": "szmsz",
+        "title": "Szervezeti és működési szabályzat",
+        "category": "organization",
+        "kind": "pdf",
+        "status": "pending",
+        "summary": "A hatályos intézményi SZMSZ még nincs feltöltve.",
+        "tags": [
+          "szervezeti",
+          "hivatalos",
+          "feltöltésre vár"
+        ]
+      },
+      {
+        "id": "munkaterv",
+        "title": "Éves munkaterv",
+        "category": "organization",
+        "kind": "pdf",
+        "status": "pending",
+        "summary": "Az intézmény jóváhagyott tanévi munkatervének feltöltésére vár.",
+        "tags": [
+          "éves",
+          "hivatalos",
+          "feltöltésre vár"
+        ]
+      },
+      {
+        "id": "kozzeteteli-lista",
+        "title": "Közzétételi lista",
+        "category": "organization",
+        "kind": "pdf",
+        "status": "pending",
+        "summary": "Az intézmény aktuális közzétételi listája még nincs feltöltve.",
+        "tags": [
+          "közzétételi",
+          "hivatalos",
+          "feltöltésre vár"
+        ]
+      },
+      {
+        "id": "adatkezelesi-szabalyzat",
+        "title": "Adatkezelési szabályzat",
+        "category": "privacy",
+        "kind": "pdf",
+        "status": "pending",
+        "summary": "Az adatvédelmi előírások jóváhagyott szövegének feltöltésére vár.",
+        "tags": [
+          "adatkezelési",
+          "hivatalos",
+          "feltöltésre vár"
+        ]
+      },
+      {
+        "id": "adatkezelesi-tajekoztato",
+        "title": "Adatkezelési tájékoztató",
+        "category": "privacy",
+        "kind": "pdf",
+        "status": "pending",
+        "summary": "Az intézményi adatkezelési tájékoztató jóváhagyott PDF-példányára vár.",
+        "tags": [
+          "adatkezelési",
+          "hivatalos",
+          "feltöltésre vár"
+        ]
+      },
+      {
+        "id": "felveteli-tajekoztato",
+        "title": "Felvételi tájékoztató",
+        "category": "admission",
+        "kind": "pdf",
+        "status": "pending",
+        "summary": "Az aktuális felvételi tájékoztató dokumentumának feltöltésére vár.",
+        "tags": [
+          "felvételi",
+          "hivatalos",
+          "feltöltésre vár"
+        ]
+      },
+      {
+        "id": "felveteli-dokumentumok",
+        "title": "Felvételi és beiratkozási dokumentumok",
+        "category": "admission",
+        "kind": "pdf",
+        "status": "pending",
+        "summary": "A közzétehető felvételi adatlapok és kapcsolódó fájlok feltöltésére vár.",
+        "tags": [
+          "felvételi",
+          "hivatalos",
+          "feltöltésre vár"
+        ]
+      }
+    ],
+    "defaultSort": "title",
+    "desktopPageSize": 8,
+    "mobilePageSize": 5
+  },
+  "admissionCenter": {
+    "year": "2027/2028",
+    "procedureYear": "2026/2027",
+    "checkedAt": "2026-11-23",
+    "intro": "A 2027/2028-as tanévre szóló felvételi folyamat áttekintése országosan kihirdetett határidőkkel. Az iskolaspecifikus tájékoztató, a nyílt nap, a követelmények és az iratok hitelesítésig külön ellenőrizendők.",
+    "notice": "A határidők országos jogszabályból származnak, nem jelentik azt, hogy az intézmény már meghirdette a saját időpontját, képzési kódját vagy felvételi feltételeit. Az iskolai közlemény az irányadó.",
+    "sources": [
+      {
+        "id": "national-rule",
+        "title": "Nemzeti Jogszabálytár – 1/2026. (VII. 31.) OGYM rendelet, 8–9. § és 1. melléklet",
+        "url": "https://njt.jog.gov.hu/jogszabaly/2026-1-20-9M",
+        "kind": "national",
+        "checkedAt": "2026-11-23"
+      },
+      {
+        "id": "school-home",
+        "title": "Csanádi Sportiskola – hivatalos honlap (helyi tájékoztatók ellenőrzésére)",
+        "url": "https://csanadi-bp.edu.hu/",
+        "kind": "school",
+        "checkedAt": "2026-11-23"
+      }
+    ],
+    "programs": [
+      {
+        "id": "primary",
+        "label": "1. osztály",
+        "summary": "Első osztályos beiratkozás a 2027/2028-as tanévre. A jogszabály szerinti országos beiratkozási napok ellenőrzöttek; a helyi tudnivalók külön megerősítést igényelnek.",
+        "pageId": "admission-primary"
+      },
+      {
+        "id": "secondary",
+        "label": "9. évfolyam",
+        "summary": "A középfokú felvételi országos menetrendje. Az iskola konkrét tanulmányi területeit, követelményeit és saját vizsganapjait a hivatalos tájékoztatóval szükséges összevetni.",
+        "pageId": "admission-secondary"
+      }
+    ],
+    "milestones": [
+      {
+        "id": "secondary-info",
+        "program": "secondary",
+        "title": "A középfokú iskolák felvételi tájékoztatóinak közzétételi határnapja",
+        "start": "2026-10-20",
+        "end": "2026-10-20",
+        "detail": "Országos intézményi közzétételi határidő. Ez önmagában nem bizonyítja, hogy a Csanádi tájékoztatója már elérhető.",
+        "sourceId": "national-rule",
+        "link": "admission-guide"
+      },
+      {
+        "id": "secondary-written-application",
+        "program": "secondary",
+        "title": "Jelentkezés a központi írásbeli vizsgára",
+        "start": "2026-12-01",
+        "end": "2026-12-01",
+        "detail": "A jelentkezést a központi írásbelit szervező intézményhez kell eljuttatni. Ez külön eljárás a középfokú iskolába való jelentkezéstől.",
+        "sourceId": "national-rule",
+        "link": "admission-deadlines"
+      },
+      {
+        "id": "secondary-exam",
+        "program": "secondary",
+        "title": "Központi írásbeli vizsga",
+        "start": "2027-01-23",
+        "end": "2027-01-23",
+        "detail": "Országos központi írásbeli vizsganap az érintett jelentkezőknek; a vizsga helyét külön ellenőrizni kell.",
+        "sourceId": "national-rule",
+        "link": "admission-deadlines",
+        "time": "10:00"
+      },
+      {
+        "id": "secondary-makeup",
+        "program": "secondary",
+        "title": "Pótló központi írásbeli vizsga",
+        "start": "2027-02-03",
+        "end": "2027-02-03",
+        "detail": "Csak a jogszabály szerinti, igazolható okból távol maradt jelentkezők számára.",
+        "sourceId": "national-rule",
+        "link": "admission-deadlines",
+        "time": "14:00"
+      },
+      {
+        "id": "secondary-application",
+        "program": "secondary",
+        "title": "Középfokú jelentkezési lapok továbbításának határideje",
+        "start": "2027-02-22",
+        "end": "2027-02-22",
+        "detail": "Az általános iskola továbbítja a tanulói jelentkezési lapokat és az adatlapot. A központi írásbelire jelentkezés nem helyettesíti ezt.",
+        "sourceId": "national-rule",
+        "link": "admission-deadlines"
+      },
+      {
+        "id": "secondary-interviews",
+        "program": "secondary",
+        "title": "Szóbeli vizsgák és kapcsolódó vizsgálatok országos időszaka",
+        "start": "2027-03-01",
+        "end": "2027-03-19",
+        "detail": "Országos időablak, NEM a Csanádi egyedi szóbeli vagy sportalkalmassági vizsgájának meghirdetett időpontja.",
+        "sourceId": "national-rule",
+        "link": "admission-deadlines"
+      },
+      {
+        "id": "secondary-provisional",
+        "program": "secondary",
+        "title": "Felvételi jegyzék közzétételének határnapja",
+        "start": "2027-03-22",
+        "end": "2027-03-22",
+        "detail": "A középfokú intézmények legkésőbb eddig teszik közzé a jelentkezők felvételi jegyzékét.",
+        "sourceId": "national-rule",
+        "link": "admission-deadlines"
+      },
+      {
+        "id": "secondary-change",
+        "program": "secondary",
+        "title": "Tanulói adatlapok módosításának lehetősége",
+        "start": "2027-04-06",
+        "end": "2027-04-08",
+        "detail": "Az országosan meghatározott módosítási időszak.",
+        "sourceId": "national-rule",
+        "link": "admission-deadlines"
+      },
+      {
+        "id": "secondary-notifications",
+        "program": "secondary",
+        "title": "Felvételi döntésről szóló értesítések megküldése",
+        "start": "2027-05-07",
+        "end": "2027-05-07",
+        "detail": "A középfokú iskolák a felvételről vagy az elutasításról szóló értesítést megküldik.",
+        "sourceId": "national-rule",
+        "link": "admission-deadlines"
+      },
+      {
+        "id": "primary-enrolment",
+        "program": "primary",
+        "title": "Első osztályos beiratkozás",
+        "start": "2027-04-22",
+        "end": "2027-04-23",
+        "detail": "A tanköteles tanulók országosan meghatározott beiratkozási napjai. A helyszínről, órákról és szükséges iratokról az iskola saját közleménye az irányadó.",
+        "sourceId": "national-rule",
+        "link": "admission-primary"
+      }
+    ],
+    "steps": {
+      "primary": [
+        {
+          "id": "primary-info",
+          "title": "Hivatalos tájékoztatás ellenőrzése",
+          "detail": "Ellenőrizd az intézmény közzétett beiratkozási tudnivalóit és az illetékes körzeti tájékoztatást.",
+          "pageId": "admission-primary"
+        },
+        {
+          "id": "primary-docs",
+          "title": "Szükséges iratok ellenőrzése",
+          "detail": "Az iskola hivatalos listájából ellenőrizd a ténylegesen kért iratokat; a weboldal nem feltételez előre dokumentumlistát.",
+          "pageId": "admission-documents"
+        },
+        {
+          "id": "primary-day",
+          "title": "Beiratkozás az országos időszakban",
+          "detail": "A közzétett helyi tájékoztatás szerint járj el 2027. április 22–23-án.",
+          "pageId": "admission-deadlines"
+        }
+      ],
+      "secondary": [
+        {
+          "id": "secondary-choose",
+          "title": "Tanulmányi terület és követelmények ellenőrzése",
+          "detail": "Az iskolai, aktuális évfolyamra érvényes felvételi tájékoztató alapján válassz.",
+          "pageId": "admission-guide"
+        },
+        {
+          "id": "secondary-exam-registration",
+          "title": "Központi írásbeli jelentkezés",
+          "detail": "A központi írásbelire való jelentkezés külön határidős lépés.",
+          "pageId": "admission-deadlines"
+        },
+        {
+          "id": "secondary-examination",
+          "title": "Vizsga és eredmény",
+          "detail": "Kövesd a központi írásbeli vizsgához kapcsolódó országos ütemezést.",
+          "pageId": "admission-deadlines"
+        },
+        {
+          "id": "secondary-form",
+          "title": "Középfokú jelentkezési lapok beadása",
+          "detail": "A felvételi lapokat külön is továbbítani kell; az írásbeli jelentkezés nem elég.",
+          "pageId": "admission-documents"
+        },
+        {
+          "id": "secondary-extra",
+          "title": "Helyi vizsgák és közzétételek ellenőrzése",
+          "detail": "A konkrét szóbeli, sportalkalmassági vagy nyílt napi időpontot csak az iskola hivatalos tájékoztatása alapján tekintsd véglegesnek.",
+          "pageId": "admission-open"
+        },
+        {
+          "id": "secondary-decision",
+          "title": "Döntés és értesítés követése",
+          "detail": "Kövesd a felvételi jegyzék és az értesítések hivatalos időpontját.",
+          "pageId": "admission-deadlines"
+        }
+      ]
+    },
+    "relatedPages": [
+      "admission-guide",
+      "admission-deadlines",
+      "admission-primary",
+      "admission-secondary",
+      "admission-documents",
+      "admission-process",
+      "admission-open",
+      "admission-faq",
+      "information-documents",
+      "news-calendar"
+    ],
+    "schoolPending": [
+      "Az iskola saját 2027/2028-as tanulmányi területi kódjai és pontszámítása",
+      "Konkrét nyílt napi, szóbeli és sportalkalmassági időpontok",
+      "A felvételi és beiratkozási iratok jóváhagyott helyi listája"
+    ]
+  }
 }

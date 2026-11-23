@@ -822,26 +822,156 @@
     flex-basis:calc(33.333333% - 8.67px);
   }
 }
-/* 2.32: asztali eseménynaptár a sportsikerekkel közös, kétpaneles Carouselben. */
+/* 2.35 – prémium naptár: három nézet, egységes évi hónapméretek. */
 .desktop-calendar-section {
-  padding:clamp(35px,5vw,66px) clamp(13px,3vw,42px) 85px;
-  background:radial-gradient(circle at 45% 0%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 45%);
+  padding:clamp(36px,5vw,70px) clamp(14px,3vw,42px) 90px;
+  background:radial-gradient(circle at 45% 0%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 50%);
 }
-.desktop-calendar-inner { max-width:1280px; margin:0 auto; }
-.desktop-calendar-heading { max-width:850px; margin:0 auto 28px; text-align:center; }
-.desktop-calendar-heading > span {
-  display:block; color:var(--accent); font-size:12px; font-weight:900; letter-spacing:.14em;
-}
-.desktop-calendar-heading h2 { margin:8px 0 12px; font-size:clamp(30px,3.4vw,45px); }
-.desktop-calendar-heading p { margin:7px auto; color:var(--muted); line-height:1.55; }
+.desktop-calendar-inner {max-width:1380px;margin-inline:auto;}
+.desktop-calendar-heading {max-width:850px;margin:0 auto 26px;text-align:center;}
+.desktop-calendar-heading > span {display:block;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.14em;}
+.desktop-calendar-heading h2 {margin:9px 0 12px;font-size:clamp(30px,3.4vw,45px);}
+.desktop-calendar-heading p {margin:7px auto;color:var(--muted);line-height:1.55;}
+.desktop-calendar-display {min-width:0;}
 .desktop-calendar-months {
-  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:start;
-  gap:19px; justify-content:center;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;
+  gap:21px;justify-content:center;
 }
-.desktop-calendar-months .school-day { min-height:43px; font-size:14px; }
+.desktop-calendar-focused-month {width:min(710px,100%);margin-inline:auto;}
+.desktop-calendar-focused-month .school-month {padding:25px;}
+.desktop-calendar-focused-month .school-day {min-height:67px;font-size:18px;}
+.desktop-calendar-focused-month .school-month-weekday {font-size:13px;}
+.desktop-calendar-focused-week {width:min(1280px,100%);margin-inline:auto;}
+.desktop-calendar-months .school-day {min-height:41px;}
 @media (min-width:768px) and (max-width:1180px) {
-  .desktop-calendar-months { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .desktop-calendar-months {grid-template-columns:repeat(2,minmax(0,1fr));}
 }
-@media (min-width:768px) and (max-width:850px) {
-  .desktop-calendar-months .school-day { min-height:36px; }
+@media (min-width:768px) and (max-width:900px) {
+  .desktop-calendar-months {grid-template-columns:minmax(0,590px);}
+  .desktop-calendar-focused-week .school-week-grid {gap:5px;}
+  .desktop-calendar-focused-week .school-week-day {min-height:210px;padding:10px 5px;}
+}
+
+/* 2.39: önálló asztali információs központ; a mobilnak külön UI-je van. */
+.desktop-info-center {width:100%;margin:22px auto 45px;color:var(--text);text-align:left;}
+.desktop-info-head {display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 30px;border:1px solid color-mix(in srgb,var(--accent) 42%,transparent);border-radius:24px;background:linear-gradient(125deg,color-mix(in srgb,var(--surface) 95%,var(--accent)),var(--surface));}
+.desktop-info-head h2 {margin:0 0 7px;font-size:clamp(22px,2.2vw,34px);font-weight:850;}
+.desktop-info-head p {margin:0;color:var(--muted);line-height:1.5;}
+.desktop-info-head .desktop-info-overline {font-size:11px;letter-spacing:.18em;color:var(--accent);font-weight:900;margin-bottom:10px;}
+.desktop-info-today {display:grid;gap:5px;text-align:right;border-left:2px solid var(--accent);padding-left:22px;min-width:210px;}
+.desktop-info-today span {color:var(--muted);font-size:12px;}
+.desktop-info-today time {font-size:17px;font-weight:800;text-transform:capitalize;}
+.desktop-info-quick {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:20px 0;}
+.desktop-info-shortcut {min-width:0;display:grid;justify-items:start;align-content:start;gap:5px;padding:17px 18px;background:var(--surface);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);border-radius:17px;text-decoration:none;color:var(--text);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;}
+.desktop-info-shortcut:hover {transform:translateY(-3px);border-color:var(--accent);box-shadow:0 10px 25px rgba(0,0,0,.1);}
+.desktop-info-shortcut-icon {display:grid;place-items:center;width:33px;height:33px;border-radius:10px;color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,var(--surface));font-size:21px;}
+.desktop-info-shortcut strong {font-size:15px;line-height:1.25;}
+.desktop-info-shortcut small {font-size:12px;color:var(--muted);line-height:1.35;}
+.desktop-info-layout {display:grid;grid-template-columns:minmax(0,.97fr) minmax(0,1.03fr);gap:20px;align-items:start;}
+.desktop-info-side {display:grid;gap:20px;min-width:0;}
+.desktop-info-panel {padding:25px;background:var(--surface);border:1px solid color-mix(in srgb,var(--accent) 31%,transparent);border-radius:20px;min-width:0;}
+.desktop-info-panel-heading {display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid color-mix(in srgb,var(--accent) 24%,transparent);padding-bottom:14px;margin-bottom:17px;}
+.desktop-info-panel h2 {font-size:clamp(18px,1.6vw,23px);font-weight:800;margin:0;}
+.desktop-info-panel-heading a {color:var(--accent);font-size:13px;font-weight:750;white-space:nowrap;}
+.desktop-info-bell-grid {margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+.desktop-info-bell-grid li {display:flex;align-items:center;justify-content:space-between;gap:8px;background:color-mix(in srgb,var(--background) 70%,var(--surface));padding:12px;border-radius:11px;font-size:14px;}
+.desktop-info-bell-grid li time {font-variant-numeric:tabular-nums;font-weight:850;color:var(--accent);}
+.desktop-info-disclaimer {margin:17px 0 0;font-size:12px;color:var(--muted);line-height:1.55;}
+.desktop-info-feed {list-style:none;margin:0;padding:0;display:grid;gap:14px;}
+.desktop-info-feed li {display:grid;grid-template-columns:145px minmax(0,1fr);gap:10px;align-items:baseline;border-bottom:1px dashed color-mix(in srgb,var(--accent) 18%,transparent);padding-bottom:11px;}
+.desktop-info-feed li:last-child {border:0;padding-bottom:0;}
+.desktop-info-feed time {font-size:12px;font-weight:750;color:var(--muted);font-variant-numeric:tabular-nums;}
+.desktop-info-feed a {color:var(--text);text-decoration-color:var(--accent);font-weight:650;line-height:1.4;overflow-wrap:anywhere;}
+.desktop-info-feed a:hover {color:var(--accent);}
+@media(max-width:1050px) {
+  .desktop-info-quick {grid-template-columns:repeat(2,minmax(0,1fr));}
+  .desktop-info-layout {grid-template-columns:1fr;}
+  .desktop-info-feed li {grid-template-columns:150px 1fr;}
+}
+
+/* 2.39: prémium asztali médiarács, JSON-vezérelt szűréssel. */
+.desktop-media-center {width:100%;margin:18px auto 48px;text-align:left;color:var(--text);}
+.desktop-media-lead {text-align:center;max-width:850px;margin:0 auto 25px;}
+.desktop-media-eyebrow {color:var(--accent);font-weight:900;letter-spacing:.16em;font-size:12px;margin:0 0 9px;}
+.desktop-media-lead h2 {font-size:clamp(22px,2.3vw,33px);font-weight:850;margin:0 0 12px;}
+.desktop-media-lead>p:last-child {font-size:13px;color:var(--muted);line-height:1.55;}
+.desktop-media-toolbar {display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:18px;background:var(--surface);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);border-radius:18px;}
+.desktop-media-search {flex:0 1 330px;max-width:100%;background:var(--background);color:var(--text);border-color:color-mix(in srgb,var(--accent) 40%,transparent);min-height:46px;}
+.desktop-media-search:focus {background:var(--background);color:var(--text);border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 20%,transparent);}
+.desktop-media-filters {display:flex;flex-wrap:wrap;gap:8px;}
+.desktop-media-filter {background:var(--background);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);color:var(--text);border-radius:999px;padding:10px 13px;cursor:pointer;font-size:13px;font-weight:750;min-height:44px;}
+.desktop-media-filter[aria-pressed="true"] {background:var(--accent);color:var(--background);border-color:var(--accent);}
+.desktop-media-counter {font-size:13px;color:var(--muted);margin:16px 2px;text-align:right;font-variant-numeric:tabular-nums;}
+.desktop-media-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch;}
+.desktop-media-card {position:relative;padding:0;border-radius:17px;overflow:hidden;border:1px solid color-mix(in srgb,var(--accent) 37%,transparent);background:var(--surface);color:#fff;min-height:240px;text-align:left;cursor:pointer;box-shadow:0 13px 25px rgba(0,0,0,.14);}
+.desktop-media-card:first-child {grid-column:span 2;}
+.desktop-media-card img {display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .3s ease;}
+.desktop-media-card:hover img {transform:scale(1.055);}
+.desktop-media-card-caption {position:absolute;inset:auto 0 0;padding:45px 20px 17px;background:linear-gradient(transparent,rgba(0,0,0,.9));display:grid;gap:4px;}
+.desktop-media-card-caption strong {font-weight:850;font-size:19px;}
+.desktop-media-card-caption small {font-size:12px;color:#f4e5c3;}
+.desktop-media-more {display:block;margin:25px auto 0;min-height:44px;border:1px solid var(--accent);color:var(--accent);background:var(--surface);padding:10px 26px;font-weight:800;border-radius:999px;}
+.desktop-media-more:hover {background:var(--accent);color:var(--background);}
+.desktop-media-empty {grid-column:1/-1;text-align:center;padding:30px 15px;color:var(--muted);}
+@media(max-width:960px) {
+  .desktop-media-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+  .desktop-media-toolbar {justify-content:center;}
+  .desktop-media-card:first-child {grid-column:span 2;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .desktop-info-shortcut,.desktop-media-card img {transition:none;}
+  .desktop-info-shortcut:hover,.desktop-media-card:hover img {transform:none;}
+}
+/* 2.40 – dedikált asztali dokumentumtár, saját kétoszlopos kezelőpanellel. */
+.desktop-document-center{width:min(1180px,calc(100% - 28px));margin:clamp(18px,2.8vw,35px) auto 56px;}
+.desktop-document-layout{display:grid;grid-template-columns:minmax(195px,235px) minmax(0,1fr);gap:24px;align-items:start;}
+.desktop-document-categories{display:grid;gap:7px;position:sticky;top:96px;max-height:calc(100dvh - 115px);overflow:auto;padding:15px;border-radius:19px;background:var(--surface);border:1px solid color-mix(in srgb,var(--accent) 27%,transparent);}
+.desktop-document-category{min-height:44px;cursor:pointer;text-align:left;padding:9px 13px;border:1px solid transparent;background:transparent;color:var(--text);font-weight:700;border-radius:10px;}
+.desktop-document-category[aria-pressed="true"]{border-color:var(--accent);color:var(--background);background:var(--accent);}
+.desktop-document-category:hover:not([aria-pressed="true"]){background:color-mix(in srgb,var(--surface) 83%,var(--accent));}
+.desktop-document-toolbar{display:grid;grid-template-columns:minmax(180px,1fr) minmax(146px,182px) minmax(160px,185px);gap:10px;}
+.desktop-document-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;}
+@media(max-width:1100px){.desktop-document-toolbar{grid-template-columns:1fr 1fr;}.desktop-document-search{grid-column:1/-1;}}
+@media(min-width:1400px){.desktop-document-grid{gap:20px;}}
+@media(max-width:800px){.desktop-document-layout{grid-template-columns:170px minmax(0,1fr);gap:14px;}.desktop-document-grid{grid-template-columns:1fr;}}
+
+/* 2.41 – kifejezetten asztali felvételi központ. */
+.desktop-admission-center {width:min(1220px,calc(100% - 64px)); text-align:left; }
+.desktop-admission-center .admission-program-tabs {display:flex; flex-wrap:wrap; gap:11px; justify-content:center; margin:24px 0 16px;}
+.desktop-admission-center .admission-tab {padding:11px 20px; font-weight:800; min-width:140px;}
+.desktop-admission-center .admission-tab[aria-pressed="true"] {background:var(--accent); border-color:var(--accent); color:var(--background); box-shadow:0 8px 24px color-mix(in srgb,var(--accent) 24%,transparent);}
+.desktop-admission-center .admission-stats {display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:18px 0 24px;}
+.desktop-admission-center .admission-stat {display:flex; flex-direction:column; align-items:center; gap:7px; padding:17px; min-width:0;
+  background:var(--surface); border:1px solid var(--admission-line); border-radius:17px; text-align:center;}
+.desktop-admission-center .admission-stat span {font-size:12px; color:var(--muted)}
+.desktop-admission-center .admission-stat strong {font-size:clamp(16px,1.4vw,20px)}
+.desktop-admission-center .admission-desktop-layout {display:grid; grid-template-columns:minmax(0,1.65fr) minmax(270px,1fr); gap:24px; align-items:start;}
+.desktop-admission-center .admission-desktop-main {min-width:0;}
+.desktop-admission-center .admission-toolbar {display:grid; grid-template-columns:auto minmax(170px,1fr) minmax(130px,200px); gap:10px; align-items:center; margin:10px 0;}
+.desktop-admission-center .admission-toolbar label {font-weight:750;}
+.desktop-admission-center .admission-toolbar :is(select,input) {width:100%; padding:10px 13px;}
+.desktop-admission-center .admission-results {color:var(--muted); margin:13px 0; font-size:13px;}
+.desktop-admission-center .admission-desktop-timeline {display:grid; gap:12px; padding:0; list-style:none;}
+.desktop-admission-center .admission-event {display:grid; grid-template-columns:minmax(140px,31%) minmax(0,1fr); gap:16px;
+  background:var(--surface); padding:19px; border:1px solid var(--admission-line); border-radius:17px; position:relative;}
+.desktop-admission-center .admission-event-date {display:flex; flex-direction:column; align-items:flex-start; gap:9px; color:var(--accent); font-weight:850;}
+.desktop-admission-center .admission-event-body {min-width:0;}
+.desktop-admission-center .admission-event-body h3 {font-size:17px; font-weight:850; margin:5px 0;}
+.desktop-admission-center .admission-event-body p {font-size:14px; color:var(--muted); line-height:1.5;}
+.desktop-admission-center .admission-event-program {font-size:11px; font-weight:850; letter-spacing:.06em; text-transform:uppercase;}
+.desktop-admission-center .admission-desktop-aside {display:grid; gap:16px; min-width:0;}
+.desktop-admission-center .admission-steps {display:grid; gap:16px;}
+.desktop-admission-center :is(.admission-steps-card,.admission-pending,.admission-sources) {background:var(--surface); border:1px solid var(--admission-line); border-radius:17px; padding:20px;}
+.desktop-admission-center .admission-steps-card h3 {font-size:18px; font-weight:850;}
+.desktop-admission-center .admission-steps-card ol {padding-left:21px;}
+.desktop-admission-center .admission-steps-card li {margin:13px 0; line-height:1.45;}
+.desktop-admission-center .admission-steps-card p {font-size:13px; color:var(--muted);}
+@media (max-width:1060px) {
+ .desktop-admission-center .admission-desktop-layout {grid-template-columns:minmax(0,1fr)}
+ .desktop-admission-center .admission-desktop-aside {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:790px) {
+ .desktop-admission-center .admission-desktop-aside {grid-template-columns:minmax(0,1fr)}
+ .desktop-admission-center .admission-toolbar {grid-template-columns:minmax(0,1fr)}
+ .desktop-admission-center .admission-stats {grid-template-columns:minmax(0,1fr)}
 }

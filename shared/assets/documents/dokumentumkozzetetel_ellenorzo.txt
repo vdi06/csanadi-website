@@ -1,0 +1,15 @@
+DOKUMENTUMKÖZZÉTÉTEL – TECHNIKAI ELLENŐRZŐLISTA
+Csanádi weboldal 2.40
+
+Ez a fájl a weboldal dokumentumközpontjának működési segédlete, NEM hivatalos iskolai szabályzat.
+
+1. Ellenőrizd, hogy a feltöltendő dokumentum végleges, jóváhagyott és nyilvánosan közölhető.
+2. Ne tölts fel tanulói személyes adatokat tartalmazó, nem nyilvános dokumentumot.
+3. Legyen egyedi, kisbetűs dokumentumazonosítója a JSON-ban.
+4. Helyi fájlútvonalat használj a shared/assets/documents könyvtárban.
+5. A PDF olvasóhoz szükség szerint készíts képes előnézeti oldalakat is.
+6. Ellenőrizd a belső olvasóban a lapozást, a szöveges megjelenítést és a mobilos viselkedést.
+7. A közzétett listában a változat és az érvényesség adatait csak ellenőrzött forrásból írd be.
+8. A változtatás után futtasd a teljes tesztkészletet.
+
+Kiadás: 2.40 · 2026-11-23

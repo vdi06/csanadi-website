@@ -33,7 +33,7 @@ export function checkedCalendar(config) {
     throw new Error("Érvénytelen tanévnaptár-fejléc.");
   }
   if (calendar.weekdayNames?.length !== 7 || calendar.monthNames?.length !== 12 ||
-      calendar.tabs?.length !== 2 || calendar.autoplayMs < 10000) {
+      !Array.isArray(calendar.events)) {
     throw new Error("Hiányos tanévnaptár-megjelenítési adat.");
   }
   const months = schoolMonths(calendar);
@@ -51,7 +51,7 @@ export function checkedCalendar(config) {
     }
     if (!event.newsRef && !event.title) throw new Error(`Hiányzó eseménycím: ${event.id}`);
   }
-  for (const note of calendar.undated) {
+  for (const note of (calendar.undated || [])) {
     if (!/^[a-z0-9-]+$/.test(note.id) || ids.has(note.id) ||
         !months.includes(note.month) || !note.title) throw new Error("Hibás, pontosítandó esemény.");
     ids.add(note.id);
@@ -59,10 +59,12 @@ export function checkedCalendar(config) {
   return calendar;
 }
 
+const cachedEntries = new WeakMap();
 export function calendarEntries(config) {
+  if (config.__staticContent === true && cachedEntries.has(config)) return cachedEntries.get(config);
   const calendar = checkedCalendar(config);
   const news = new Map(config.publicNews.map((record) => [record.id, record]));
-  return calendar.events.map((event) => {
+  const entries = calendar.events.map((event) => {
     const record = event.newsRef ? news.get(event.newsRef) : null;
     return {
       ...event,
@@ -72,6 +74,8 @@ export function calendarEntries(config) {
       categoryLabel: calendar.categories[event.category]
     };
   });
+  if (config.__staticContent === true) cachedEntries.set(config, entries);
+  return entries;
 }
 
 export function eventDuration(event) {
@@ -79,13 +83,32 @@ export function eventDuration(event) {
 }
 
 /** A több hónapos mérési időszak nem jelent minden egyes napra kiírt időpontot. */
-export function eventsOnDay(entries, day) {
-  return entries.filter((event) => {
-    if (eventDuration(event) > 16 && event.category !== "holiday") {
-      return day === event.date || day === event.endDate;
+const indexedDays = new WeakMap();
+function buildDayIndex(entries) {
+  const byDay = new Map();
+  const append = (day, event) => {
+    if (!byDay.has(day)) byDay.set(day, []);
+    byDay.get(day).push(event);
+  };
+  for (const event of entries) {
+    const duration = eventDuration(event);
+    if (duration > 16 && event.category !== "holiday") {
+      append(event.date, event);
+      if (event.endDate && event.endDate !== event.date) append(event.endDate, event);
+      continue;
     }
-    return event.date <= day && day <= (event.endDate ?? event.date);
-  });
+    const from = dayNumber(event.date);
+    for (let i = 0; i < duration; i++) {
+      append(new Date((from + i) * 86400000).toISOString().slice(0,10), event);
+    }
+  }
+  return byDay;
+}
+/** Egyszer indexelt napi lekérés: a 12×42 napcellához nincs újra 88-as teljes szűrés. */
+export function eventsOnDay(entries, day) {
+  if (!Array.isArray(entries)) return [];
+  if (!indexedDays.has(entries)) indexedDays.set(entries, buildDayIndex(entries));
+  return indexedDays.get(entries).get(day) ?? [];
 }
 
 export function periodsInMonth(entries, month) {
@@ -96,7 +119,6 @@ export function periodsInMonth(entries, month) {
 }
 
 export function eventById(config, id) {
-  return calendarEntries(config).find((event) => event.id === id) ??
-    config.home.calendar.undated.find((note) => note.id === id) ?? null;
+  return calendarEntries(config).find((event) => event.id === id) ?? null;
 }
 

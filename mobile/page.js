@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.34";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.34";
+import { element } from "../shared/js/dom.js?v=2.41";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.41";
 
 const css = (name) => `mobile-page-${name}`;
 function pointDetails(point) {
@@ -8,7 +8,9 @@ function pointDetails(point) {
 }
 function item(point) {
   return element("li", { className:css("card-point") },
-    element("strong", { className:css("card-point-title"), text:point.title }),
+    point.href ? element("a",{className:css("card-point-title"),text:point.title,
+      attributes:{href:point.href}}) :
+      element("strong", { className:css("card-point-title"), text:point.title }),
     pointDetails(point));
 }
 function mobileGroup(group, kind) {
@@ -65,13 +67,14 @@ function mobileCard(card, config, page) {
 }
 
 /** Mobilos, külön szerkesztett és reszponzív komponensváltozat. */
-export function createMobilePage(config, id, { hideHeading = false } = {}) {
+export function createMobilePage(config, id, { hideHeading = false, hideCards = false, extraContent = null } = {}) {
   const page = getMenuPage(config,id);
   if (!page) throw new Error("Ismeretlen mobilos oldalazonosító.");
   return element("article", { className:css("preview") },
     ...(hideHeading ? [] : [element("h1", { className:css("title"), text:page.title,
       attributes:{tabindex:"-1"} })]),
     element("p", { className:css("intro"), text:page.intro }),
-    element("div", { className:`${css("cards")} row` },
-      ...page.items.map((card) => mobileCard(card,config,page))));
+    ...(extraContent ? [extraContent] : []),
+    ...(hideCards ? [] : [element("div", { className:`${css("cards")} row` },
+      ...page.items.map((card) => mobileCard(card,config,page)))]));;
 }

@@ -11,12 +11,13 @@ const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const staticFiles = [
   "index.html", "shared/js/entry.js", "shared/data/site.json", "shared/js/dom.js",
   "shared/js/gate.js", "shared/js/offline.js", "shared/js/shell.js", "shared/js/search-index.js", "shared/js/archive-data.js", "shared/js/appearance.js", "shared/js/successes-data.js",
-  "shared/js/calendar-data.js", "shared/js/calendar-view.js", "shared/js/home-carousel.js",
-  "shared/js/focus.js", "shared/js/modal.js", "shared/js/menu-data.js", "shared/js/edit-mode.js", "shared/js/footer.js", "shared/css/base.css",
+  "shared/js/calendar-data.js", "shared/js/calendar-view.js", "shared/js/home-carousel.js", "shared/js/carousel-data.js", "shared/js/news-panel.js",
+  "shared/js/focus.js", "shared/js/modal.js", "shared/js/menu-data.js", "shared/js/news-page.js", "shared/js/edit-mode.js", "shared/js/footer.js",
+  "shared/js/information-data.js", "shared/js/media-data.js", "shared/js/gallery-dialog.js", "shared/js/document-data.js", "shared/js/document-reader.js", "shared/js/admission-data.js", "shared/css/base.css",
   "shared/assets/media/logo/csanadi-crest-512.webp",
-  "mobile/app.js", "mobile/header.js", "mobile/menu.js", "mobile/search.js", "mobile/page.js", "mobile/story.js", "mobile/successes.js", "mobile/calendar.js", "mobile/styles.css",
-  "desktop/app.js", "desktop/header.js", "desktop/hero.js", "desktop/menu.js", "desktop/search.js", "desktop/page.js", "desktop/successes.js", "desktop/calendar.js", "desktop/styles.css",
-  "tools/test.mjs", "tools/stamp-release.mjs", "docs/ELLENORZES.md"
+  "mobile/app.js", "mobile/header.js", "mobile/menu.js", "mobile/search.js", "mobile/page.js", "mobile/story.js", "mobile/successes.js", "mobile/calendar.js", "mobile/information.js", "mobile/gallery.js", "mobile/documents.js", "mobile/admissions.js", "mobile/styles.css",
+  "desktop/app.js", "desktop/header.js", "desktop/hero.js", "desktop/menu.js", "desktop/search.js", "desktop/page.js", "desktop/successes.js", "desktop/calendar.js", "desktop/information.js", "desktop/gallery.js", "desktop/documents.js", "desktop/admissions.js", "desktop/styles.css",
+  "tools/test.mjs", "tools/stamp-release.mjs", "tools/browser-quality.py", "tools/pdf-load-race.py", "tools/document-previews.py", "tools/check-documents.mjs", "docs/ELLENORZES.md"
 ];
 const assetPaths = [];
 for (let i = 0; i < 30; i++) {
@@ -48,13 +49,34 @@ function files(directory) {
     return entry.isDirectory() ? files(file) : [relative(root, file).split(sep).join("/")];
   });
 }
+const documentAssets = [
+  "shared/assets/documents/dokumentumkozpont_utmutato.pdf",
+  "shared/assets/documents/dokumentumkozzetetel_ellenorzo.txt",
+  "shared/assets/documents/previews/dokumentumkozpont_utmutato_1.webp",
+  "shared/assets/documents/previews/dokumentumkozpont_utmutato_2.webp"
+];
 assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths, ...desktopHeroAssets, ...mobileStoryAssets,
-  ...sportSuccessAssets].sort(),
+  ...sportSuccessAssets, ...documentAssets].sort(),
   "Csak az ellenőrzött és szándékosan visszaállított funkciók szerepelhetnek az aktív csomagban.");
 assert.deepEqual(files(root).filter((path) => path.endsWith(".html")), ["index.html"]);
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
 assert.equal(config.schemaVersion, "2.30");
-assert.equal(config.release, "2.34");
+assert.equal(config.release, "2.41");
+// 2.39: az arany kiemelőszín a világos és sötét háttéren is olvasható.
+const luminance = (color) => {
+  const bytes = [1,3,5].map((start) => parseInt(color.slice(start,start+2),16)/255);
+  const linear = bytes.map((v) => v <= 0.04045 ? v/12.92 : ((v+0.055)/1.055)**2.4);
+  return linear[0]*0.2126 + linear[1]*0.7152 + linear[2]*0.0722;
+};
+const contrast = (a,b) => {
+  const [high,low] = [luminance(a),luminance(b)].sort((x,y)=>y-x);
+  return (high+0.05)/(low+0.05);
+};
+assert.ok(contrast(config.appearance.light.accent,config.appearance.light.background)>=4.5,
+  "Világos módban az arany szöveg nem lehet 4,5:1 kontraszt alatt.");
+assert.ok(contrast(config.theme.accent,config.theme.background)>=4.5,
+  "Sötét módban az arany szöveg nem lehet 4,5:1 kontraszt alatt.");
+
 assert.equal(config.appearance.defaultMode, "auto");
 assert.deepEqual(config.appearance.cycle, ["auto", "light", "dark"]);
 assert.deepEqual(Object.keys(config.appearance.shortLabels).sort(), ["auto", "dark", "light"]);
@@ -115,7 +137,7 @@ const months = schoolMonths(calendar);
 assert.equal(months.length,12);
 assert.deepEqual([months[0],months[11]],["2026-09","2027-08"]);
 assert.equal(calendarEvents.length,88);
-assert.equal(calendar.undated.length,7);
+assert.equal(calendar.undated.length,0,"A dátum nélküli, hónaphoz kötött rész teljesen megszűnik.");
 assert.equal(new Set(calendarEvents.map((event) => event.id)).size,calendarEvents.length);
 assert.equal(eventsOnDay(calendarEvents,"2026-11-17").length,3,
   "Egy napon a nyílt nap, érettségi és szülői tájékoztató egyszerre jelenjen meg.");
@@ -123,7 +145,7 @@ assert.ok(eventsOnDay(calendarEvents,"2026-12-25").some((event) => event.id === 
 assert.ok(eventsOnDay(calendarEvents,"2027-05-27").some((event) => event.id === "sportnap"));
 assert.ok(!eventsOnDay(calendarEvents,"2027-05-27").some((event) => event.id === "kompetenciameres"),
   "A hónapokon át tartó mérési időszak ne foglaljon le minden egyes naptári napot.");
-assert.equal(eventById(config,"kazinczy-verseny").month,"2026-11");
+assert.equal(eventById(config,"kazinczy-verseny"),null,"A nem dátumos bejegyzés nem hozható fel külön naptári elemként.");
 assert.equal(calendarEvents.find((event) => event.id === "nyilt-nap-17").summary,
   config.publicNews.find((news) => news.id === "nyilt-napok-2026").summary,
   "A hírek és a naptár azonos tényei egyetlen közös JSON-adatból jöjjenek.");
@@ -131,8 +153,8 @@ const brokenCalendar = structuredClone(config);
 brokenCalendar.home.calendar.events[0].date = "2027-02-30";
 assert.throws(() => checkedCalendar(brokenCalendar),/Hibás naptári esemény/);
 const duplicateCalendar = structuredClone(config);
-duplicateCalendar.home.calendar.undated[0].id = "sportnap";
-assert.throws(() => checkedCalendar(duplicateCalendar),/Hibás, pontosítandó/);
+duplicateCalendar.home.calendar.events[1].id = duplicateCalendar.home.calendar.events[0].id;
+assert.throws(() => checkedCalendar(duplicateCalendar),/Ismétlődő vagy hibás/);
 assert.deepEqual(config.home.sportSuccesses.items.filter((item) => item.image).map((item) => item.image).sort(),
   ["atletika.webp", "labdarugas.webp", "uszas.webp", "kosarlabda.webp",
     "roplabda.webp", "asztalitenisz.webp"].sort());
@@ -150,8 +172,8 @@ const { archiveView, archiveOptions, readArchiveState, resetArchiveState, saveAr
 const { searchSite, normalizeSearchText } = await import(new URL("../shared/js/search-index.js", import.meta.url));
 assert.ok(searchSite(config,"Szalagavató").some((hit) =>
   hit.href === "#/kezdolap/esemeny/szalagavato"),"Az események külön keresőtalálatként nyíljanak meg.");
-assert.ok(searchSite(config,"Kazinczy-verseny").some((hit) =>
-  hit.href === "#/kezdolap/esemeny/kazinczy-verseny"),"A nap nélküli havi programhoz is vezethet keresés.");
+assert.ok(!searchSite(config,"Kazinczy-verseny").some((hit) =>
+  hit.href === "#/kezdolap/esemeny/kazinczy-verseny"),"Dátum nélküli esemény ne vezessen megszüntetett naptári részhez.");
 assert.ok(searchSite(config,"Csanádi-nap").some((hit) =>
   hit.href === "#/kezdolap/esemeny/csanadi-nap"),"Ékezetes eseménykeresés");
 const changedCalendarData = structuredClone(config);
@@ -253,6 +275,100 @@ const invalidNewsInterval = structuredClone(config);
 invalidNewsInterval.publicNews[0].endDate = "2026-01-01";
 assert.throws(() => validateMenu(invalidNewsInterval), /nyilvános hírbejegyzés/,
   "A hír lejárati dátuma nem előzheti meg a kezdődátumot.");
+// 2.40 – kategorizált dokumentumregiszter és saját oldalon belüli olvasó.
+const { checkedDocumentCenter, documentResults } = await import(new URL("../shared/js/document-data.js",import.meta.url));
+const documents=checkedDocumentCenter(config);
+assert.equal(documents.items.length,12);
+assert.equal(documents.items.filter((x)=>x.status==="available").length,2);
+assert.equal(documents.items.filter((x)=>x.status==="pending").length,10);
+assert.equal(documentResults(config,{query:"pedagogiai"}).length,1);
+assert.equal(documentResults(config,{category:"privacy"}).length,2);
+assert.equal(documentResults(config,{status:"available"}).length,2);
+assert.equal(documentResults(config,{query:"nemletezo"}).length,0);
+assert.equal(documentResults(config,{sort:"date"})[0].status,"available");
+assert.ok(readFileSync(join(root,"shared/assets/documents/dokumentumkozpont_utmutato.pdf")).subarray(0,5).toString()==="%PDF-");
+assert.ok(readFileSync(join(root,"shared/assets/documents/dokumentumkozzetetel_ellenorzo.txt"),"utf8").includes("NEM hivatalos"));
+const badDoc=structuredClone(config);
+badDoc.documentCenter.items[0].file="https://attacker.example/file.pdf";
+assert.throws(()=>checkedDocumentCenter(badDoc),/Hibás közzétett dokumentum/);
+const dupDoc=structuredClone(config);
+dupDoc.documentCenter.items[1].id=dupDoc.documentCenter.items[0].id;
+assert.throws(()=>checkedDocumentCenter(dupDoc),/Érvénytelen dokumentum/);
+const pendingDoc=structuredClone(config);
+pendingDoc.documentCenter.items[2].file="./shared/assets/documents/hazirend.pdf";
+assert.throws(()=>checkedDocumentCenter(pendingDoc),/Feltöltésre váró/);
+// 2.41 – a 2027/2028-as beiskolázás országos határidőinek ellenőrzése.
+const { checkedAdmissions, admissionMilestones, milestoneStatus, nextAdmissionMilestone,
+  budapestToday, validIsoDate, normalizedAdmissionText } =
+  await import(new URL("../shared/js/admission-data.js",import.meta.url));
+assert.equal(checkedAdmissions(config).milestones.length,10);
+assert.equal(config.admissionCenter.programs.length,2);
+assert.equal(config.admissionCenter.sources[0].kind,"national");
+assert.equal(config.admissionCenter.schoolPending.length,3);
+assert.equal(admissionMilestones(config,{program:"primary"}).length,1);
+assert.equal(admissionMilestones(config,{program:"secondary"}).length,9);
+assert.equal(admissionMilestones(config,{program:"secondary",query:"irasbeli"}).length,4);
+assert.equal(admissionMilestones(config,{query:"nemletezo"}).length,0);
+assert.equal(admissionMilestones(config,{status:"upcoming",today:"2027-08-01"}).length,0);
+assert.equal(milestoneStatus(config.admissionCenter.milestones[1],"2026-11-23"),"soon");
+assert.equal(milestoneStatus(config.admissionCenter.milestones[1],"2026-12-01"),"active");
+assert.equal(milestoneStatus(config.admissionCenter.milestones[1],"2026-12-02"),"expired");
+assert.equal(nextAdmissionMilestone(config,"primary","2026-11-23").start,"2027-04-22");
+assert.equal(budapestToday(new Date("2026-11-23T00:30:00Z")),"2026-11-23");
+assert.equal(normalizedAdmissionText("KÖZPONTI ÍRÁSBELI"),"kozponti irasbeli");
+assert.equal(validIsoDate("2027-02-29"),false);
+const badAdmission = structuredClone(config);
+badAdmission.admissionCenter.milestones[0].start="2027-02-30";
+assert.throws(()=>validateMenu(badAdmission),/felvételi dátum/);
+const badAdmissionSource=structuredClone(config);
+badAdmissionSource.admissionCenter.sources[0].url="javascript:alert(1)";
+assert.throws(()=>checkedAdmissions(badAdmissionSource),/felvételi forrás/);
+const badAdmissionDuplicate=structuredClone(config);
+badAdmissionDuplicate.admissionCenter.milestones[1].id=badAdmissionDuplicate.admissionCenter.milestones[0].id;
+assert.throws(()=>checkedAdmissions(badAdmissionDuplicate),/felvételi dátum/);
+assert.ok(readFileSync(join(root,"shared/js/document-reader.js"),"utf8").includes("openId!==openSeq"),
+  "A PDF betöltésének ne a lapozási generáció szerint kelljen megszakadnia.");
+console.log("✓ Felvételi 2.41: 10 országos dátum, két út, időzóna, keresés, hibás JSON kizárása, PDF betöltésjavítás");
+// 2.39 – külön mobil/asztali információs központ és médiaközpont.
+const {checkedInformationCenter,schoolBellSchedule,informationView,todayBudapest} =
+  await import(new URL("../shared/js/information-data.js",import.meta.url));
+const {checkedMediaCenter,mediaResults,normalizeMediaText} =
+  await import(new URL("../shared/js/media-data.js",import.meta.url));
+assert.equal(checkedInformationCenter(config),config.informationCenter);
+assert.equal(schoolBellSchedule(config).length,8);
+assert.equal(schoolBellSchedule(config)[0].from,"08:00");
+assert.equal(schoolBellSchedule(config)[7].to,"15:00");
+assert.equal(config.informationCenter.quickLinks.length,8);
+assert.equal(informationView(config,"2026-11-23").events.length,4);
+assert.ok(informationView(config,"2026-11-23").events.every((e)=>(e.endDate||e.date)>="2026-11-23"));
+assert.ok(informationView(config,"2026-11-23").news.every((n)=>n.href.startsWith("#/oldal/news-")));
+assert.equal(todayBudapest(new Date("2026-11-23T07:00:00Z")),"2026-11-23");
+const brokenQuickLink=structuredClone(config);
+brokenQuickLink.informationCenter.quickLinks[0].href="https://malicious.test";
+assert.throws(()=>checkedInformationCenter(brokenQuickLink),/gyorselérési/);
+const brokenTimetable=structuredClone(config);
+brokenTimetable.pagePreview.pages["information-timetable"].items[0].groups[0].points[0].details[0]="10:30–09:45";
+assert.throws(()=>checkedInformationCenter(brokenTimetable),/Fordított/);
+assert.equal(checkedMediaCenter(config),config.mediaCenter);
+assert.equal(config.mediaCenter.items.length,22);
+assert.equal(config.mediaCenter.categories.length,5);
+assert.equal(mediaResults(config,{}).length,22);
+assert.equal(mediaResults(config,{category:"sport"}).length,8);
+assert.equal(mediaResults(config,{query:"roplabda"}).length,1);
+assert.equal(mediaResults(config,{query:"robotika"})[0].id,"robotika");
+assert.equal(normalizeMediaText("KÉZILABDA"),"kezilabda");
+const brokenMedia=structuredClone(config);
+brokenMedia.mediaCenter.items[0].src="https://external.test/broken.webp";
+assert.throws(()=>checkedMediaCenter(brokenMedia),/Érvénytelen médiabejegyzés/);
+for(const item of config.mediaCenter.items) {
+  const file=join(root,item.src.replace(/^\.\//,""));
+  assert.ok(existsSync(file),`Hiányzó galériakép: ${item.src}`);
+  assert.equal(readFileSync(file).subarray(0,4).toString(),"RIFF");
+}
+assert.equal(getMenuPage(config,"information-daily").title,"Iskolai információs központ");
+assert.equal(getMenuPage(config,"sports-gallery").title,"Képgaléria és médiaközpont");
+console.log("✓ Információs központ: közös csengetés, események, hírek, 8 gyorslink és hibás JSON kizárása");
+console.log("✓ Médiaközpont: 22 helyi kép, öt kategória, magyar keresés, útvonal- és fájlellenőrzés");
 assert.equal(Object.keys(config.pagePreview.pages).length,49);
 assert.equal(getMenuPage(config, "sports-results").title, "Diákjaink sporteredményei");
 assert.equal(getMenuPage(config, "education-primary").items.length, 1);
@@ -315,8 +431,8 @@ for (const path of [...desktopHeroAssets, ...mobileStoryAssets, ...sportSuccessA
 }
 const html = readFileSync(join(root, "index.html"), "utf8");
 assert.match(html, /<div id="app"><\/div>/);
-assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.34"/);
-assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.34"/);
+assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.41"/);
+assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.41"/);
 assert.match(html, /name="color-scheme" content="light dark"/);
 assert.match(html, /bootstrap@5\.3\.8\/dist\/css\/bootstrap\.min\.css" integrity="sha384-/);
 assert.match(html, /bootstrap@5\.3\.8\/dist\/js\/bootstrap\.bundle\.min\.js" integrity="sha384-/);
@@ -534,17 +650,17 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(location.hash, config.routes.home, `${platform}: a régi kihagyásgomb nem működik.`);
   skipDispose();
 
-  assert.equal(calendar.autoplayMs,30000,"A Sportsikerek és a Tanévi naptár 30 másodpercenként váltson.");
+  assert.equal(config.home.carousel.autoplayMs,30000,"A Sportsikerek és a Tanévi naptár 30 másodpercenként váltson.");
   const originalCarouselInterval = globalThis.setInterval;
   let autoplayCallback = null;
   globalThis.setInterval = (callback,ms) => {
-    if (ms === calendar.autoplayMs) autoplayCallback = callback;
+    if (ms === config.home.carousel.autoplayMs) autoplayCallback = callback;
     return originalCarouselInterval(callback,ms);
   };
   const homeDispose = app.mount(parent, config, "home");
   globalThis.setInterval = originalCarouselInterval;
   nodes = scan(parent);
-  assert.equal(nodes.filter((n) => n.tag === "header").length, 1);
+  assert.equal(nodes.filter((n) => n.tag === "header" && n.className === `${platform}-header`).length, 1);
   assert.equal(nodes.filter((n) => n.tag === "main").length, 1);
   assert.equal(nodes.filter((n) => n.tag === "footer").length, 1);
   const mainContent = nodes.find((n) => n.tag === "main");
@@ -558,13 +674,18 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.ok(preventedSkipRoute && mainContent.focused && location.hash === routeBeforeSkip,
     "A billentyűzetes főtartalom-ugrás nem módosíthatja a hash útvonalat.");
   assert.equal(nodes.find((n) => n.tag === "main").children.length, 2,
-    "A képes nyitó alatt egy közös, kétpaneles Carousel legyen.");
+    "A képes nyitó alatt egy közös Carousel legyen.");
   const feature = nodes.find((n) => n.className === "carousel slide home-feature-carousel");
   assert.ok(feature,`${platform}: hiányzó Bootstrap Carousel`);
   const featureSlides = scan(feature).filter((node) => node.className.startsWith("carousel-item home-carousel-item"));
   const featureTabs = scan(feature).filter((node) => node.attributes.role === "tab");
-  assert.equal(featureSlides.length,2);
-  assert.equal(featureTabs.length,2);
+  assert.equal(featureSlides.length,3);
+  assert.equal(featureTabs.length,3);
+  assert.deepEqual(featureTabs.map((tab)=>tab.textContent),
+    ["Sportsikerek","Tanévi naptár","Hírek és közlemények"],
+    "A hírek legyenek a harmadik Carousel-fülön mindkét platformon.");
+  assert.ok(scan(featureSlides[2]).some((node)=>node.className.startsWith("home-news-card")),
+    "A harmadik panel a közös JSON híreiből épüljön fel.");
   assert.equal(scan(feature).filter((node) => node.className.includes("home-carousel-arrow") ||
     node.className.includes("home-carousel-play")).length,0,
     "A kezdőlapi Carouselben ne legyen oldalnyíl vagy megállító gomb.");
@@ -578,40 +699,65 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   autoplayCallback();
   assert.ok(featureSlides[1].classList.contains("active"),`${platform}: az automatikus Carousel nem vált`);
   autoplayCallback();
-  assert.ok(featureSlides[0].classList.contains("active"));
+  assert.ok(featureSlides[2].classList.contains("active"),"30 mp után a harmadik panel jelenjen meg.");
+  autoplayCallback();
+  assert.ok(featureSlides[0].classList.contains("active"),"A három panel után az első következzen.");
   featureTabs[1].emit("click");
   assert.ok(featureSlides[1].classList.contains("active"),`${platform}: kézzel nem váltható a naptár`);
   assert.ok(!featureSlides[0].classList.contains("active"));
   assert.equal(featureTabs[1].attributes["aria-selected"],"true");
   featureTabs[0].emit("click");
   assert.ok(featureSlides[0].classList.contains("active"));
+  const viewTabs = scan(featureSlides[1]).filter((node) => node.className.startsWith("calendar-view-tab"));
+  assert.equal(viewTabs.length,platform === "desktop" ? 3 : 2,
+    "Asztalon heti, havi és éves nézet; telefonon kizárólag heti és havi nézet legyen.");
+  assert.ok(!scan(featureSlides[1]).some((node) => node.className.includes("school-month-extras")),
+    "Hónaphoz kötött, dátum nélküli programok blokkja nem jelenhet meg.");
   const monthCards = scan(featureSlides[1]).filter((node) =>
     node.className === `school-month school-month--${platform}`);
   assert.equal(monthCards.length,platform === "desktop" ? 12 : 1);
+  assert.ok(monthCards.every((card)=>scan(card).filter((node)=>node.className === "school-month-empty" ||
+    node.className === "school-day" || node.className === "school-day has-events").length===42),
+    "Minden hónap egységes, hathetes, 42 cellás rács legyen.");
   const firstMarkedDay = scan(monthCards[0]).find((node) => node.className === "school-day has-events");
   assert.ok(firstMarkedDay,`${platform}: az eseményes napok nem különülnek el`);
-  const detail = scan(monthCards[0]).find((node) => node.className === "school-day-detail");
+  assert.ok(!scan(monthCards[0]).some((node)=>node.className === "school-day-detail"),
+    "A lebegő ablak nem lehet a hónapkártya belsejében.");
   firstMarkedDay.emit("click");
-  assert.equal(detail.hidden,false,`${platform}: esemény részlete kattintásra`);
+  const detail = scan(document.body).find((node) => node.className === "school-calendar-popover");
+  assert.ok(detail && !detail.hidden,`${platform}: megnyíló, külön lebegő eseményablak`);
+  assert.equal(detail.attributes.role,"dialog");
   assert.equal(firstMarkedDay.attributes["aria-expanded"],"true");
   firstMarkedDay.emit("click");
   assert.equal(detail.hidden,true,`${platform}: ismételt koppintás bezár`);
   if (platform === "desktop") {
-    firstMarkedDay.isHovered = true;
+    firstMarkedDay.emit("mouseleave");
     firstMarkedDay.emit("mouseenter");
-    assert.equal(detail.hidden,false,"Asztali egér-rámutatásra nyíljon ki a nap.");
+    assert.equal(detail.hidden,false,"Asztali egér-rámutatásra nyíljon ki a lebegő ablak.");
     firstMarkedDay.emit("click");
-    assert.equal(detail.hidden,true,"Asztalon rámutatás közben is zárjon az ismételt kattintás.");
-    firstMarkedDay.emit("mouseenter");
-    firstMarkedDay.isHovered = false;
+    assert.equal(detail.hidden,true,"Rámutatás közben is zárjon az ismételt kattintás.");
     firstMarkedDay.emit("mouseleave");
     assert.equal(detail.hidden,true,"Az egér levétele zárja be a részleteket.");
+    const monthly = viewTabs.find((tab)=>tab.attributes["data-calendar-view"] === "month");
+    const weekly = viewTabs.find((tab)=>tab.attributes["data-calendar-view"] === "week");
+    const annual = viewTabs.find((tab)=>tab.attributes["data-calendar-view"] === "year");
+    monthly.emit("click");
+    assert.equal(scan(featureSlides[1]).filter((node)=>node.className === "school-month school-month--desktop").length,1);
+    weekly.emit("click");
+    const week = scan(featureSlides[1]).find((node)=>node.className === "school-week school-week--desktop");
+    assert.ok(week && scan(week).filter((node)=>node.className.startsWith("school-week-day")).length >= 7);
+    annual.emit("click");
+    assert.equal(scan(featureSlides[1]).filter((node)=>node.className === "school-month school-month--desktop").length,12);
   } else {
     const monthSelect = scan(featureSlides[1]).find((node) => node.className === "mobile-month-select");
     assert.equal(monthSelect.children.length,12,"A teljes tanév minden hónapja elérhető legyen.");
     monthSelect.value = "11";
     monthSelect.emit("change");
     assert.ok(scan(featureSlides[1]).some((node) => node.textContent === "2027. augusztus"));
+    viewTabs.find((tab)=>tab.attributes["data-calendar-view"] === "week").emit("click");
+    assert.ok(scan(featureSlides[1]).some((node)=>node.className === "school-week school-week--mobile"));
+    assert.ok(!viewTabs.some((tab)=>tab.attributes["data-calendar-view"] === "year"));
+    viewTabs.find((tab)=>tab.attributes["data-calendar-view"] === "month").emit("click");
   }
   // A naptári interakció után az automatikus váltás visszatérhet:
   // a felhasználó nem kért külön leállító gombot, és egy koppintás
@@ -619,7 +765,7 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   featureTabs[0].emit("click");
   const carouselDateNow = Date.now;
   try {
-    Date.now = () => carouselDateNow() + calendar.manualHoldMs + 1000;
+    Date.now = () => carouselDateNow() + config.home.carousel.interactionHoldMs + 1000;
     autoplayCallback();
   } finally {
     Date.now = carouselDateNow;
@@ -1186,6 +1332,77 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
     "Mindegyik alpont alatt egy újabb, valódi részletező lista szerepeljen.");
   assert.equal(leafNodes.filter((n) => n.tag === "h1").length, 1);
   leafDispose();
+  // A naptár menüaloldala nem puszta ismertető: ugyanaz a teljes heti/havi/éves
+  // dátumrács és lebegő részletablak működik, mint a kezdőlapon.
+  location.hash = "#/oldal/news-calendar";
+  const calendarPageDispose = app.mount(parent, config, "page:news-calendar");
+  const calendarPageNodes = scan(parent);
+  assert.equal(calendarPageNodes.find((n) => n.className === `${platform}-page-title`).textContent,
+    "Iskolai eseménynaptár");
+  assert.ok(calendarPageNodes.some((n) => n.className.includes("school-calendar-section")));
+  assert.equal(calendarPageNodes.filter((n) => n.attributes["data-calendar-view"]).length,
+    platform === "desktop" ? 3 : 2);
+  assert.ok(!calendarPageNodes.some((n) => n.className === `${platform}-page-cards row`),
+    "A menüből elérhető teljes naptár ne jelenjen meg kétszer, régi idővonalkártyákkal.");
+  calendarPageDispose();
+  location.hash = "#/oldal/news-calendar/esemeny/sportnap";
+  const deepCalendarDispose = app.mount(parent, config, "page:news-calendar");
+  assert.ok(scan(document.body).some((n) => n.className === "school-calendar-popover" && !n.hidden),
+    "Az eseménynek közvetlenül a menübeli naptároldalon, lebegő ablakban kell megnyílnia.");
+  deepCalendarDispose();
+  assert.equal(scan(document.body).filter((n) => n.className === "school-calendar-popover").length,0,
+    "Aloldalváltáskor a naptár lebegő rétege ne maradjon a DOM-ban.");
+  for (const [pageId,newsId] of [["news-announcements","etkezesi-rendszer-2026"],
+    ["news-latest","nyilt-napok-2026"]]) {
+    location.hash=`#/oldal/${pageId}/hir/${newsId}`;
+    const disposeArticle=app.mount(parent,config,`page:${pageId}`);
+    const newsArticle=scan(parent).find((n)=>n.className?.includes("school-news-story") &&
+      n.attributes?.["data-news-id"] === newsId);
+    const newsDetail=newsArticle && scan(newsArticle).find((n)=>n.tag==="h2");
+    assert.ok(newsDetail && newsDetail.textContent === config.publicNews.find((n)=>n.id===newsId).title,
+      `${platform}: a hír közvetlen útvonala a megfelelő teljes hírt mutassa.`);
+    assert.ok(newsArticle.className.includes("is-targeted") &&
+      scan(newsArticle).find((n)=>n.tag==="details").open,
+      `${platform}: közvetlen linkkel a hír automatikusan nyíljon meg.`);
+    const itemLinks=scan(parent).filter((n)=>n.attributes.href === location.hash);
+    assert.ok(itemLinks.length >= 1,
+      `${platform}: a menübeli hírgyűjtemény a saját részletes hírre mutasson.`);
+    disposeArticle();
+  }
+  location.hash="#/oldal/news-announcements";
+  const simpleNewsDispose=app.mount(parent,config,"page:news-announcements");
+  assert.equal(scan(parent).filter((n)=>n.className==="school-news-story is-targeted").length,0,
+    "Normál híroldalon ne legyen korábban megnyitott hír-adatlap.");
+  simpleNewsDispose();
+  // 2.37: a kiemelt hír a saját menübeli részletes oldalára nyíljon meg.
+  const {publicNewsForPage,newsStoryHref} = await import(new URL("../shared/js/news-panel.js",import.meta.url));
+  const {createNewsArchivePage} = await import(new URL("../shared/js/news-page.js",import.meta.url));
+  for (const [newsPageId,expected] of [
+    ["news-latest",3],["news-announcements",1],["news-archive",2]
+  ]) {
+    location.hash = `#/oldal/${newsPageId}`;
+    const newsDispose = app.mount(parent,config,`page:${newsPageId}`);
+    const nodes=scan(parent);
+    assert.ok(nodes.some((node)=>node.className === `school-news-page school-news-page--${platform}`));
+    assert.equal(nodes.filter((node)=>node.className === "school-news-story").length,expected,
+      `${platform}: a ${newsPageId} híroldal valós JSON-híreket tartalmazzon.`);
+    assert.equal(nodes.filter((node)=>node.className === `${platform}-page-cards row`).length,0,
+      "Ne ismétlődjön meg a korábbi statikus hírválogatás az új teljes hírgyűjtemény alatt.");
+    assert.equal(nodes.filter((node)=>node.className.includes("school-news-navigation-link")).length,4);
+    newsDispose();
+  }
+  const story = config.publicNews.find((item)=>item.id==="nyilt-napok-2026");
+  const storyHref = newsStoryHref(config,story);
+  assert.equal(storyHref,"#/oldal/news-latest/hir/nyilt-napok-2026");
+  location.hash = storyHref;
+  const storyDispose = app.mount(parent,config,"page:news-latest");
+  const selectedStory = scan(parent).find((node)=>node.attributes["data-news-id"]===story.id);
+  assert.ok(selectedStory.className.includes("is-targeted"),
+    `${platform}: a megosztott hír megkapta a kiemelést.`);
+  assert.equal(scan(selectedStory).find((node)=>node.tag==="details").open,true,
+    `${platform}: a megosztott hír részlete közvetlenül kinyílik.`);
+  storyDispose();
+  location.hash = config.routes.home;
   resetArchiveState();
   const archiveDispose = app.mount(parent, config, "page:sports-results");
   const archiveNodes = scan(parent);
@@ -1319,7 +1536,7 @@ const liveModalText = scan(liveFooter.footer).find((node) => node.className === 
 liveNotices.children[0].emit("click");
 assert.equal(liveModal.hidden, false);
 const refreshed = structuredClone(config);
-refreshed.release = "2.35";
+refreshed.release = "2.42";
 refreshed.home.footer.updatedAt = "2026-11-23";
 refreshed.home.footer.notices[0].body = "Ellenőrzött, módosított impresszum-adatok.";
 const originalFetch = globalThis.fetch;
@@ -1339,11 +1556,11 @@ assert.equal(requests, 0, "Rejtett lapon a frissítés nem terhelheti a hálóza
 document.visibilityState = "visible";
 assert.equal(await liveFooter.checkForUpdates(), true);
 assert.equal(requests, 1);
-assert.equal(liveVersion.textContent, "Verzió: 2.35");
+assert.equal(liveVersion.textContent, "Verzió: 2.42");
 assert.equal(liveUpdated.textContent, "Utolsó frissítés: 2026. 11. 23.");
 assert.equal(liveModalText.textContent, "Ellenőrzött, módosított impresszum-adatok.");
 assert.equal(liveModal.hidden, false, "A megnyitott tájékoztató maradjon meg adatfrissítéskor.");
-assert.equal(replacementUrl, "https://example.test/index.html?v=2.35#/kezdolap",
+assert.equal(replacementUrl, "https://example.test/index.html?v=2.42#/kezdolap",
   "Új kiadáskor az egész alkalmazás új verziókulccsal töltődjön újra.");
 scan(liveFooter.footer).find((node) => node.className === "footer-modal-close").emit("click");
 assert.equal(liveModal.hidden, true);
@@ -1354,11 +1571,11 @@ assert.equal(await liveFooter.checkForUpdates(), true);
 assert.equal(liveNotices.children[0], noticeAfterUpdate,
   "Változatlan JSON esetén a 10 másodperces ellenőrzés ne építse újra a gombokat.");
 const invalid = structuredClone(refreshed);
-invalid.release = "2.34";
+invalid.release = "2.37";
 invalid.home.footer.notices[0].body = "";
 globalThis.fetch = async () => ({ ok: true, json: async () => invalid });
 assert.equal(await liveFooter.checkForUpdates(), false);
-assert.equal(liveVersion.textContent, "Verzió: 2.35", "Hibás JSON nem írhatja felül az érvényes adatot.");
+assert.equal(liveVersion.textContent, "Verzió: 2.42", "Hibás JSON nem írhatja felül az érvényes adatot.");
 const duplicateGlyph = structuredClone(refreshed);
 duplicateGlyph.home.footer.notices[1].glyph = duplicateGlyph.home.footer.notices[0].glyph;
 globalThis.fetch = async () => ({ ok: true, json: async () => duplicateGlyph });
@@ -1814,7 +2031,132 @@ bootstrapTestCarousel.show(0,true);
 assert.deepEqual(bootstrapInstance.calls,[1,0]);
 bootstrapTestCarousel.destroy();
 assert.equal(bootstrapInstance.disposed,true,"Nézetváltáskor a Bootstrap példány is szűnjön meg.");
+// 2.36: a Carousel füleinek száma, sorrendje és láthatósága JSON-ból
+// állítható. A régi sportsiker-/esemény-útvonalak megmaradnak átrendezéskor is.
+const {checkedHomeCarousel}=await import(new URL("../shared/js/carousel-data.js",import.meta.url));
+assert.deepEqual(checkedHomeCarousel(config).activePanels.map((p)=>p.type),["successes","calendar","news"]);
+const threePanelConfig=structuredClone(config);
+threePanelConfig.home.carousel.panels[2].enabled=true;
+const threePanels=threePanelConfig.home.carousel.panels;
+threePanelConfig.home.carousel.panels=[threePanels[2],threePanels[0],threePanels[1]];
+assert.deepEqual(checkedHomeCarousel(threePanelConfig).activePanels.map((p)=>p.type),
+  ["news","successes","calendar"]);
+let reorderedEvent=null;
+// 2.37: a kiemelt hírek automatikus, időhelyes JSON-válogatását külön is mérjük.
+const {selectedNews,createNewsPanel,createNewsDetail,newsForRoute,newsDetailHref}=
+  await import(new URL("../shared/js/news-panel.js",import.meta.url));
+const featuredNews=selectedNews(config,config.home.carousel.panels[2],"2026-11-23");
+assert.deepEqual(featuredNews.map((news)=>news.id),[
+  "etkezesi-rendszer-2026","nyilt-napok-2026","oszi-erettsegi-2026","tanevnyito-2026"]);
+assert.equal(selectedNews(config,config.home.carousel.panels[2],"2029-09-10").length,0,
+  "Lejárt hírek ne maradjanak örökké kiemeltként a kezdőlapon.");
+assert.deepEqual(selectedNews(config,{tags:["announcement"]},"2026-11-23")
+  .map((news)=>news.id),["etkezesi-rendszer-2026"],"A hírcímkés szűrés legyen automatikus.");
+const newsWithNewItem=structuredClone(config);
+newsWithNewItem.publicNews.push({id:"uj-kozlemeny-2026",title:"Ellenőrzött új közlemény",
+  date:"2026-11-23",tags:["announcement"],summary:"Friss JSON-tartalom.",
+  details:["A szerkesztői adatmezőből érkezik."]});
+assert.ok(selectedNews(newsWithNewItem,{tags:["announcement"]},"2026-11-23")
+  .some((item)=>item.id==="uj-kozlemeny-2026"),
+  "Új, megfelelő dátumos JSON-bejegyzés kézi HTML-átírás nélkül jelenjen meg.");
+const newsWidget=createNewsPanel(config,()=>{},config.home.carousel.panels[2]);
+assert.equal(scan(newsWidget.section).filter((node)=>node.tag==="article").length,4);
+assert.equal(scan(newsWidget.section).filter((node)=>node.tag==="details").length,4);
+assert.deepEqual(scan(newsWidget.section).filter((node)=>node.className==="home-news-link")
+  .map((node)=>node.attributes.href),["#/oldal/news-latest","#/oldal/news-announcements"]);
+assert.deepEqual(scan(newsWidget.section).filter((node)=>node.className==="home-news-title-link")
+  .map((node)=>node.attributes.href),featuredNews.map(newsDetailHref),
+  "A Carousel minden híre a hozzá tartozó teljes, megosztható híradatlapra mutasson.");
+assert.ok(newsForRoute(config,"news-announcements","etkezesi-rendszer-2026"));
+assert.equal(newsForRoute(config,"news-latest","etkezesi-rendszer-2026"),null,
+  "A közleményre mutató hírlink ne nyisson rossz kategóriájú oldalt.");
+const individualNews=createNewsDetail(config,"news-announcements","etkezesi-rendszer-2026");
+assert.ok(individualNews);
+assert.equal(scan(individualNews).find((node)=>node.className==="news-detail-title").textContent,
+  config.publicNews[0].title);
+assert.equal(scan(individualNews).filter((node)=>node.className==="news-detail-body")[0].children.length,
+  config.publicNews[0].details.length);
+assert.equal(createNewsDetail(config,"news-latest","etkezesi-rendszer-2026"),null);
+assert.equal(createNewsDetail(config,"news-latest","nincs-ilyen-hir"),null);
+assert.ok(scan(newsWidget.section).some((node)=>node.className==="home-news-featured"),
+  "A JSON featured állapotot a kiemelt közlemény láthatóan jelezze.");
+assert.ok(scan(newsWidget.section).some((node)=>node.className==="home-news-status home-news-status--upcoming"),
+  "A jövőbeli közlemény ne legyen lezajlott eseményként jelölve.");
+const {newsStoryHref,publicNewsForPage} = await import(new URL("../shared/js/news-panel.js",import.meta.url));
+assert.deepEqual(publicNewsForPage(config,"news-latest","2026-11-23").map(x=>x.id),
+  ["nyilt-napok-2026","oszi-erettsegi-2026","tanevnyito-2026"]);
+assert.deepEqual(publicNewsForPage(config,"news-announcements","2026-11-23").map(x=>x.id),
+  ["etkezesi-rendszer-2026"]);
+assert.deepEqual(publicNewsForPage(config,"news-archive","2026-11-23").map(x=>x.id),
+  ["oko-alvas-2026","sportiskolai-elismeresek-2017"]);
+assert.equal(newsStoryHref(config,config.publicNews[0]),"#/oldal/news-announcements/hir/etkezesi-rendszer-2026");
+assert.equal(newsStoryHref(config,config.publicNews[5]),"#/oldal/news-archive/hir/sportiskolai-elismeresek-2017");
+for(const item of config.publicNews) {
+  assert.ok(searchSite(config,item.title).some(result=>result.href===newsStoryHref(config,item)),
+    "A kereső egyenesen a részletes híroldalra vezessen: "+item.title);
+}
+assert.ok(scan(newsWidget.section).filter((node)=>node.className==="home-news-story-link")
+  .every((node)=>/\/hir\//.test(node.attributes.href)));
+assert.ok(scan(newsWidget.section).some((node)=>node.className==="home-news-calendar-link" &&
+  /^#\/oldal\/news-calendar\/esemeny\//.test(node.attributes.href)),
+  "A kiemelt hírhez kapcsolt eseménynap az önálló naptárban legyen megnyitható.");
+const badNewsFeatured=structuredClone(config);badNewsFeatured.publicNews[0].featured="true";
+assert.throws(()=>validateMenu(badNewsFeatured),/nyilvános hírbejegyzés/);
+const invalidNewsSpotlight=structuredClone(config);delete invalidNewsSpotlight.home.newsSpotlight.stateLabels;
+assert.throws(()=>checkedHomeCarousel(invalidNewsSpotlight),/kiemelt hírek konfiguráció/);
+const maliciousNews=structuredClone(config);
+maliciousNews.publicNews[0].title="<img src=x onerror=alert(1)>";
+const maliciousWidget=createNewsPanel(maliciousNews,()=>{},config.home.carousel.panels[2]);
+assert.ok(scan(maliciousWidget.section).some((node)=>node.tag==="a" && node.className==="home-news-title-link" &&
+  node.textContent==="<img src=x onerror=alert(1)>"),
+  "A külső szöveg szövegcsomópontként, ne HTML-ként kerüljön a DOM-ba.");
+assert.equal(scan(maliciousWidget.section).filter((node)=>node.tag==="img").length,0);
+const emptyNewsConfig=structuredClone(config);
+const emptyWidget=createNewsPanel(emptyNewsConfig,()=>{},config.home.carousel.panels[2]);
+assert.ok(emptyWidget.isOpen()===false && typeof emptyWidget.closeDetails==="function");
+console.log("✓ Harmadik Carousel-panel: JSON-válogatás, frissesség, jövőbeli hírek, szűrés, linksáv, HTML-biztonság");
+const threePanelWidget=createHomeCarousel(threePanelConfig,new FakeNode("section"),()=>({
+  section:new FakeNode("section"),showEvent:(id)=>{reorderedEvent=id;return true;},destroy(){}
+}),"reordered");
+const reorderedTabs=scan(threePanelWidget.section).filter((node)=>node.attributes.role==="tab");
+const reorderedSlides=scan(threePanelWidget.section).filter((node)=>
+  node.className.startsWith("carousel-item home-carousel-item"));
+assert.deepEqual(reorderedTabs.map((tab)=>tab.textContent),
+  ["Hírek és közlemények","Sportsikerek","Tanévi naptár"]);
+assert.equal(reorderedSlides.length,3);
+assert.ok(scan(reorderedSlides[0]).some((node)=>node.className.startsWith("home-news-card")),
+  "A bekapcsolt hírszekció valóban a publicNews adataiból jelenjen meg.");
+reorderedTabs[2].emit("click");
+assert.ok(reorderedSlides[2].classList.contains("active"));
+assert.equal(reorderedSlides[0].inert,true);
+assert.equal(reorderedTabs[2].attributes["aria-selected"],"true");
+threePanelWidget.showEvent("sportnap");
+assert.equal(reorderedEvent,"sportnap","A naptár mélylinkje átrendezett fül esetén is működjön.");
+let preventedArrow=false;
+reorderedTabs[2].emit("keydown",{key:"ArrowRight",preventDefault:()=>{preventedArrow=true;}});
+assert.equal(preventedArrow,true);
+assert.ok(reorderedSlides[0].classList.contains("active"),
+  "Jobbra nyíllal a harmadik fülről az elsőre kell körbefordulni.");
+reorderedTabs[0].emit("keydown",{key:"End",preventDefault:()=>{}});
+assert.ok(reorderedSlides[2].classList.contains("active"),
+  "End billentyűvel az utolsó aktív JSON-fülre kell lépni.");
+threePanelWidget.destroy();
+assert.equal(bootstrapInstance.disposed,true);
+const fourPanelConfig=structuredClone(threePanelConfig);
+fourPanelConfig.home.carousel.panels.push({id:"event-news",type:"news",label:"Programhírek",
+  enabled:true,tags:["event"]});
+assert.equal(checkedHomeCarousel(fourPanelConfig).activePanels.length,4);
+const invalidPanels=structuredClone(threePanelConfig);
+invalidPanels.home.carousel.panels[1].id=invalidPanels.home.carousel.panels[0].id;
+assert.throws(()=>checkedHomeCarousel(invalidPanels),/Carousel-panel/);
+const missingCalendar=structuredClone(threePanelConfig);
+missingCalendar.home.carousel.panels[2].enabled=false;
+assert.throws(()=>checkedHomeCarousel(missingCalendar),/Sportsikerek és a Tanévi naptár/);
+const invalidNewsFilter=structuredClone(fourPanelConfig);
+invalidNewsFilter.home.carousel.panels[3].tags=["event","event"];
+assert.throws(()=>checkedHomeCarousel(invalidNewsFilter),/hírcsoport-szűrő/);
 delete window.bootstrap;
+console.log("✓ JSON-vezérelt Carousel: átrendezés, harmadik/negyedik panel, hírszűrés, ARIA-fülek, mélylink és hibás konfiguráció");
 console.log("✓ Bootstrap 5 Carousel API: .to(), slid.bs.carousel, akadálymentes állapot, dispose és CDN-fallback");
 
 // A teljes közös belépési pontot is futtatjuk, nem csupán a két oldal modulját.
@@ -1866,7 +2208,7 @@ async function waitFor(predicate, label, maxMs = 6000) {
 }
 await waitFor(() => documentRoot.dataset.platform === "mobile" &&
   documentRoot.dataset.route === "gate" && applicationRoot.querySelector(".gate-door-button"), "mobil kapu inicializálás");
-assert.equal(historyUrl, "https://example.test/index.html?v=2.34#/",
+assert.equal(historyUrl, "https://example.test/index.html?v=2.41#/",
   "A kezdő URL kapjon kiadási verziót a későbbi cache-biztos újratöltéshez.");
 assert.equal(documentRoot.dataset.platform, "mobile");
 assert.equal(documentRoot.dataset.route, "gate");
@@ -2018,6 +2360,10 @@ assert.ok(searchSite(changedNews,"intézményi értesítés").some((hit) =>
 assert.ok(getMenuPage(changedNews,"news-latest").items[0].groups[0].points
   .some((point) => point.title === changedNews.publicNews[0].title),
 "A közösen tárolt hír címének változása az oldalon is azonnal megjelenjen.");
+assert.ok(getMenuPage(changedNews,"news-announcements").items[0].groups[0].points
+  .some((point) => point.title===changedNews.publicNews[0].title &&
+    point.href==="#/oldal/news-announcements/hir/etkezesi-rendszer-2026"),
+  "A JSON-hír listanézete közvetlenül az egyedi, helyes kategóriájú cikkhez vezessen.");
 const principalChange = structuredClone(config);
 principalChange.site.principal = "A JSON-ban frissített intézményvezető";
 assert.ok(getMenuPage(principalChange,"school-staff").items[0].groups[0].points[0].details

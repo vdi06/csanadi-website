@@ -1,5 +1,10 @@
+import { checkedDocumentCenter } from "./document-data.js?v=2.41";
+import { checkedAdmissions } from "./admission-data.js?v=2.41";
+import { checkedInformationCenter } from "./information-data.js?v=2.41";
+import { checkedMediaCenter } from "./media-data.js?v=2.41";
 /** Kétszintű menü, 49 önálló oldal és közösen kezelt, JSON-alapú tartalom. */
-import { checkedCalendar } from "./calendar-data.js?v=2.34";
+import { checkedCalendar } from "./calendar-data.js?v=2.41";
+
 const validLabel = (value, max = 800) => typeof value === "string" &&
   !!value.trim() && value.length <= max;
 const validId = (id) => typeof id === "string" && /^[a-z0-9-]+$/.test(id);
@@ -73,6 +78,7 @@ function checkedNews(config) {
   for (const news of config.publicNews) {
     if (!news || !validId(news.id) || ids.has(news.id) ||
       !validLabel(news.title, 150) || !validLabel(news.summary, 800) ||
+      (news.featured !== undefined && typeof news.featured !== "boolean") ||
       !validDate(news.date) ||
       (news.endDate && (!validDate(news.endDate) || news.endDate < news.date)) ||
       !Array.isArray(news.tags) || !news.tags.length || news.tags.some((tag) => !validId(tag)) ||
@@ -131,6 +137,10 @@ export function validateMenu(config) {
   }
   checkedNews(config);
   checkedCalendar(config);
+  checkedInformationCenter(config);
+  checkedMediaCenter(config);
+  checkedDocumentCenter(config);
+  checkedAdmissions(config);
   return items;
 }
 
@@ -160,6 +170,7 @@ function feedCard(config, feed) {
     groups: [{ title: feed.groupTitle,
       points: matches.map((news) => ({
         title: news.title,
+        href:`${menuPageHref(news.tags.includes("announcement") ? "news-announcements" : "news-latest")}/hir/${news.id}`,
         details: [news.date + (news.endDate ? ` – ${news.endDate}` : ""),
           news.summary, ...news.details]
       }))

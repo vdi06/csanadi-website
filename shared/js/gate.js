@@ -1,4 +1,4 @@
-import { element, crest, schoolDisplayNames } from "./dom.js?v=2.34";
+import { element, crest, schoolDisplayNames } from "./dom.js?v=2.41";
 
 const NS = "http://www.w3.org/2000/svg";
 const DOOR_SHAPE = "M 6 78 C 37 48 76 17 140 12 C 204 17 243 48 274 78 L 274 510 Q 274 514 269 514 L 11 514 Q 6 514 6 510 Z";
@@ -64,7 +64,7 @@ export function mountGate(root, config, platform, enter) {
     const picture = element("img", { className: `gate-frame${index === 0 ? " is-visible" : ""}`,
       attributes: { src: imagePath(index, platform === "mobile"), alt: "", draggable: "false",
         decoding: "async", loading: "eager" } });
-    picture.fetchPriority = index === 0 ? "high" : "auto";
+    picture.fetchPriority = index === 0 ? "high" : "low";
     frameHost.append(picture);
     frames.push(picture);
   }

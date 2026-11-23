@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.34";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.34";
+import { element } from "../shared/js/dom.js?v=2.41";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.41";
 
 const cls = (part) => `desktop-page-${part}`;
 const detailsList = (point) => element("ul", { className:cls("card-details") },
@@ -7,7 +7,9 @@ const detailsList = (point) => element("ul", { className:cls("card-details") },
 
 function classicPoint(point) {
   return element("li", { className:cls("card-point") },
-    element("strong", { className:cls("card-point-title"), text:point.title }),
+    point.href ? element("a",{className:cls("card-point-title"),text:point.title,
+      attributes:{href:point.href}}) :
+      element("strong", { className:cls("card-point-title"), text:point.title }),
     detailsList(point));
 }
 
@@ -72,13 +74,14 @@ function cardElement(card, config, page) {
 }
 
 /** Asztali, tartalomtípushoz alkalmazkodó, JSON-vezérelt Bootstrap-komponensek. */
-export function createDesktopPage(config, id, { hideHeading = false } = {}) {
+export function createDesktopPage(config, id, { hideHeading = false, hideCards = false, extraContent = null } = {}) {
   const page = getMenuPage(config,id);
   if (!page) throw new Error("Ismeretlen asztali oldalazonosító.");
   return element("article", { className:cls("preview") },
     ...(hideHeading ? [] : [element("h1", { className:cls("title"), text:page.title,
       attributes:{tabindex:"-1"} })]),
     element("p", { className:cls("intro"), text:page.intro }),
-    element("div", { className:`${cls("cards")} row` },
-      ...page.items.map((card) => cardElement(card,config,page))));
+    ...(extraContent ? [extraContent] : []),
+    ...(hideCards ? [] : [element("div", { className:`${cls("cards")} row` },
+      ...page.items.map((card) => cardElement(card,config,page)))]));;
 }
