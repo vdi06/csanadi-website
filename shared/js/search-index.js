@@ -1,6 +1,6 @@
-import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.33";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.33";
-import { calendarEntries } from "./calendar-data.js?v=2.33";
+import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.34";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.34";
+import { calendarEntries } from "./calendar-data.js?v=2.34";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */

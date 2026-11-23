@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.33";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.33";
+import { element } from "../shared/js/dom.js?v=2.34";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.34";
 
 const cls = (part) => `desktop-page-${part}`;
 const detailsList = (point) => element("ul", { className:cls("card-details") },

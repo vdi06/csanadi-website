@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.33";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.33";
+import { element } from "../shared/js/dom.js?v=2.34";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.34";
 
 const css = (name) => `mobile-page-${name}`;
 function pointDetails(point) {

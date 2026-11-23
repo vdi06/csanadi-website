@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.33";
-import { checkedCalendar, calendarEntries, schoolMonths } from "../shared/js/calendar-data.js?v=2.33";
-import { makeCalendarMonth } from "../shared/js/calendar-view.js?v=2.33";
+import { element } from "../shared/js/dom.js?v=2.34";
+import { checkedCalendar, calendarEntries, schoolMonths } from "../shared/js/calendar-data.js?v=2.34";
+import { makeCalendarMonth } from "../shared/js/calendar-view.js?v=2.34";
 
 /** Asztali tanéváttekintés: a mind a tizenkét hónap önálló, középre zárt rácsa. */
 export function createDesktopCalendar(config, onInteract) {

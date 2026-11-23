@@ -1,12 +1,12 @@
-import { element } from "../shared/js/dom.js?v=2.33";
-import { mountGate } from "../shared/js/gate.js?v=2.33";
-import { makeFooter } from "../shared/js/footer.js?v=2.33";
-import { makeMobileHeader } from "./header.js?v=2.33";
-import { createMobilePage } from "./page.js?v=2.33";
-import { createMobileStory } from "./story.js?v=2.33";
-import { createMobileSuccesses } from "./successes.js?v=2.33";
-import { createMobileCalendar } from "./calendar.js?v=2.33";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.33";
+import { element } from "../shared/js/dom.js?v=2.34";
+import { mountGate } from "../shared/js/gate.js?v=2.34";
+import { makeFooter } from "../shared/js/footer.js?v=2.34";
+import { makeMobileHeader } from "./header.js?v=2.34";
+import { createMobilePage } from "./page.js?v=2.34";
+import { createMobileStory } from "./story.js?v=2.34";
+import { createMobileSuccesses } from "./successes.js?v=2.34";
+import { createMobileCalendar } from "./calendar.js?v=2.34";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.34";
 
 /** Önálló mobilos nézet: saját fejléc, JSON-vázlatos aloldal és kompakt lábléc. */
 export function mount(root, config, page) {

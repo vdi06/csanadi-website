@@ -54,7 +54,7 @@ assert.deepEqual(files(root).sort(), [...staticFiles, ...assetPaths, ...desktopH
 assert.deepEqual(files(root).filter((path) => path.endsWith(".html")), ["index.html"]);
 const config = JSON.parse(readFileSync(join(root, "shared/data/site.json"), "utf8"));
 assert.equal(config.schemaVersion, "2.30");
-assert.equal(config.release, "2.33");
+assert.equal(config.release, "2.34");
 assert.equal(config.appearance.defaultMode, "auto");
 assert.deepEqual(config.appearance.cycle, ["auto", "light", "dark"]);
 assert.deepEqual(Object.keys(config.appearance.shortLabels).sort(), ["auto", "dark", "light"]);
@@ -315,8 +315,8 @@ for (const path of [...desktopHeroAssets, ...mobileStoryAssets, ...sportSuccessA
 }
 const html = readFileSync(join(root, "index.html"), "utf8");
 assert.match(html, /<div id="app"><\/div>/);
-assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.33"/);
-assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.33"/);
+assert.match(html, /src="\.\/shared\/js\/entry\.js\?v=2\.34"/);
+assert.match(html, /href="\.\/shared\/css\/base\.css\?v=2\.34"/);
 assert.match(html, /name="color-scheme" content="light dark"/);
 assert.match(html, /bootstrap@5\.3\.8\/dist\/css\/bootstrap\.min\.css" integrity="sha384-/);
 assert.match(html, /bootstrap@5\.3\.8\/dist\/js\/bootstrap\.bundle\.min\.js" integrity="sha384-/);
@@ -534,6 +534,7 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   assert.equal(location.hash, config.routes.home, `${platform}: a régi kihagyásgomb nem működik.`);
   skipDispose();
 
+  assert.equal(calendar.autoplayMs,30000,"A Sportsikerek és a Tanévi naptár 30 másodpercenként váltson.");
   const originalCarouselInterval = globalThis.setInterval;
   let autoplayCallback = null;
   globalThis.setInterval = (callback,ms) => {
@@ -564,6 +565,11 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
   const featureTabs = scan(feature).filter((node) => node.attributes.role === "tab");
   assert.equal(featureSlides.length,2);
   assert.equal(featureTabs.length,2);
+  assert.equal(scan(feature).filter((node) => node.className.includes("home-carousel-arrow") ||
+    node.className.includes("home-carousel-play")).length,0,
+    "A kezdőlapi Carouselben ne legyen oldalnyíl vagy megállító gomb.");
+  assert.equal(scan(feature).filter((node) => node.className.includes("carousel-indicators")).length,0,
+    "A Bootstrap-indikátor CSS-osztály a lapfülekkel hibára futtatja a gyári Carousel API-t.");
   assert.ok(featureSlides[0].classList.contains("active"));
   assert.ok(!featureSlides[1].classList.contains("active"));
   assert.equal(featureSlides[1].attributes["aria-hidden"],"true");
@@ -607,6 +613,19 @@ for (const [platform, app] of [["mobile", mobile], ["desktop", desktop]]) {
     monthSelect.emit("change");
     assert.ok(scan(featureSlides[1]).some((node) => node.textContent === "2027. augusztus"));
   }
+  // A naptári interakció után az automatikus váltás visszatérhet:
+  // a felhasználó nem kért külön leállító gombot, és egy koppintás
+  // sem állíthatja le végleg a kezdőlapi váltót.
+  featureTabs[0].emit("click");
+  const carouselDateNow = Date.now;
+  try {
+    Date.now = () => carouselDateNow() + calendar.manualHoldMs + 1000;
+    autoplayCallback();
+  } finally {
+    Date.now = carouselDateNow;
+  }
+  assert.ok(featureSlides[1].classList.contains("active"),
+    `${platform}: naptári interakció után is újrainduljon az automatikus váltás`);
   assert.equal(nodes.some((n) => n.className?.includes("home-preview") ||
     n.className === "desktop-hero-continuation"), false,
     "A már nem aktuális kezdőlapi tartalomfelsorolás nem jelenhet meg.");
@@ -1300,7 +1319,7 @@ const liveModalText = scan(liveFooter.footer).find((node) => node.className === 
 liveNotices.children[0].emit("click");
 assert.equal(liveModal.hidden, false);
 const refreshed = structuredClone(config);
-refreshed.release = "2.34";
+refreshed.release = "2.35";
 refreshed.home.footer.updatedAt = "2026-11-23";
 refreshed.home.footer.notices[0].body = "Ellenőrzött, módosított impresszum-adatok.";
 const originalFetch = globalThis.fetch;
@@ -1320,11 +1339,11 @@ assert.equal(requests, 0, "Rejtett lapon a frissítés nem terhelheti a hálóza
 document.visibilityState = "visible";
 assert.equal(await liveFooter.checkForUpdates(), true);
 assert.equal(requests, 1);
-assert.equal(liveVersion.textContent, "Verzió: 2.34");
+assert.equal(liveVersion.textContent, "Verzió: 2.35");
 assert.equal(liveUpdated.textContent, "Utolsó frissítés: 2026. 11. 23.");
 assert.equal(liveModalText.textContent, "Ellenőrzött, módosított impresszum-adatok.");
 assert.equal(liveModal.hidden, false, "A megnyitott tájékoztató maradjon meg adatfrissítéskor.");
-assert.equal(replacementUrl, "https://example.test/index.html?v=2.34#/kezdolap",
+assert.equal(replacementUrl, "https://example.test/index.html?v=2.35#/kezdolap",
   "Új kiadáskor az egész alkalmazás új verziókulccsal töltődjön újra.");
 scan(liveFooter.footer).find((node) => node.className === "footer-modal-close").emit("click");
 assert.equal(liveModal.hidden, true);
@@ -1335,11 +1354,11 @@ assert.equal(await liveFooter.checkForUpdates(), true);
 assert.equal(liveNotices.children[0], noticeAfterUpdate,
   "Változatlan JSON esetén a 10 másodperces ellenőrzés ne építse újra a gombokat.");
 const invalid = structuredClone(refreshed);
-invalid.release = "2.33";
+invalid.release = "2.34";
 invalid.home.footer.notices[0].body = "";
 globalThis.fetch = async () => ({ ok: true, json: async () => invalid });
 assert.equal(await liveFooter.checkForUpdates(), false);
-assert.equal(liveVersion.textContent, "Verzió: 2.34", "Hibás JSON nem írhatja felül az érvényes adatot.");
+assert.equal(liveVersion.textContent, "Verzió: 2.35", "Hibás JSON nem írhatja felül az érvényes adatot.");
 const duplicateGlyph = structuredClone(refreshed);
 duplicateGlyph.home.footer.notices[1].glyph = duplicateGlyph.home.footer.notices[0].glyph;
 globalThis.fetch = async () => ({ ok: true, json: async () => duplicateGlyph });
@@ -1847,7 +1866,7 @@ async function waitFor(predicate, label, maxMs = 6000) {
 }
 await waitFor(() => documentRoot.dataset.platform === "mobile" &&
   documentRoot.dataset.route === "gate" && applicationRoot.querySelector(".gate-door-button"), "mobil kapu inicializálás");
-assert.equal(historyUrl, "https://example.test/index.html?v=2.33#/",
+assert.equal(historyUrl, "https://example.test/index.html?v=2.34#/",
   "A kezdő URL kapjon kiadási verziót a későbbi cache-biztos újratöltéshez.");
 assert.equal(documentRoot.dataset.platform, "mobile");
 assert.equal(documentRoot.dataset.route, "gate");

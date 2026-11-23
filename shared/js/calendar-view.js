@@ -1,5 +1,5 @@
-import { element } from "./dom.js?v=2.33";
-import { eventsOnDay, periodsInMonth, fullDayLabel, monthLabel } from "./calendar-data.js?v=2.33";
+import { element } from "./dom.js?v=2.34";
+import { eventsOnDay, periodsInMonth, fullDayLabel, monthLabel } from "./calendar-data.js?v=2.34";
 
 /** Hónapnézet: a desktop hover és a mobil click külön, ugyanabból az adatból. */
 export function makeCalendarMonth(config, entries, month, mode, onInteract = () => {}) {

@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.33";
-import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.33";
-import { makeCalendarMonth } from "../shared/js/calendar-view.js?v=2.33";
+import { element } from "../shared/js/dom.js?v=2.34";
+import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.34";
+import { makeCalendarMonth } from "../shared/js/calendar-view.js?v=2.34";
 
 /** Mobilon célzott hónapválasztó: nem a kezdőlapi Carousel lapozását használja. */
 export function createMobileCalendar(config, onInteract) {

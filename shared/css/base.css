@@ -326,7 +326,7 @@ img { max-width: 100%; }
   .gate-frames { transition: none; }
   .mobile-home, .desktop-home { animation: none !important; }
 }
-/* 2.33 – valódi Bootstrap Carousel, helyi CSS-tartalékkal CDN-kimaradáskor. */
+/* 2.34 – Bootstrap Carousel külön lapfülekkel, nyilak és leállító nélkül. */
 .home-feature-carousel { width:100%; min-width:0; isolation:isolate; }
 .school-day-detail[hidden],.school-month-extras[hidden] { display:none !important; }
 /* CDN-hibánál a nem aktív panel ne jelenjen meg egyszerre az aktívval. */
@@ -337,9 +337,6 @@ img { max-width: 100%; }
 /* A Bootstrap navigációs elemeinek alapértelmezett abszolút pozíciója itt nem jó. */
 .home-feature-carousel .home-carousel-tabs {
   position:static; inset:auto; padding:0; margin:0; align-items:stretch;
-}
-.home-feature-carousel .home-carousel-arrow {
-  position:static; inset:auto; z-index:auto; opacity:1; padding:0; flex:0 0 46px;
 }
 .home-feature-carousel .home-carousel-inner { width:100%; overflow:hidden; }
 .home-feature-carousel .home-carousel-item { width:100%; }
@@ -355,13 +352,6 @@ img { max-width: 100%; }
   background:var(--background); color:var(--text); cursor:pointer; font:inherit; font-weight:850;
 }
 .home-carousel-tab.is-active { background:var(--accent); color:var(--background); }
-.home-carousel-arrow,.home-carousel-play {
-  display:grid; place-items:center; width:46px; height:46px; flex:none;
-  border:1px solid var(--accent); border-radius:50%;
-  background:var(--surface); color:var(--text); cursor:pointer; font:inherit; font-weight:900;
-}
-.home-carousel-arrow { font-size:30px; line-height:1; }
-.home-carousel-play { font-size:19px; }
 .home-feature-carousel :is(button,select):focus-visible,.school-month :is(button,select):focus-visible {
   outline:3px solid var(--accent); outline-offset:3px;
 }

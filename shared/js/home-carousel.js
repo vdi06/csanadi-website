@@ -1,4 +1,4 @@
-import { element } from "./dom.js?v=2.33";
+import { element } from "./dom.js?v=2.34";
 
 /** Kétpaneles, valódi Bootstrap 5 Carousel, saját akadálymentes vezérléssel.
  * Ha a CDN nem érhető el, az osztályváltásos tartalék működés megmarad. */
@@ -6,17 +6,18 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
   const data = config.home.calendar;
   const id = `${platform}-feature-carousel`;
   let current = 0;
-  let manuallyPaused = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
   let manualHoldUntil = 0;
-  let hovered = false;
-  let focused = false;
   let visible = true;
   let destroyed = false;
   let pendingIndex = null;
   let pendingEventId = null;
   let transitioning = false;
-  const pause = () => { manuallyPaused = true; updatePlay(); };
-  const calendar = makeCalendar(pause);
+  // A naptári interakció csak átmenetileg halasztja az automatikus váltást.
+  const holdForReading = () => {
+    manualHoldUntil = Math.max(manualHoldUntil, Date.now() + data.manualHoldMs);
+  };
+  const calendar = makeCalendar(holdForReading);
   const slides = [successesSection, calendar.section].map((content, index) => element("div", {
     className:`carousel-item home-carousel-item${index === 0 ? " active" : ""}`,
     attributes:{ id:`${id}-panel-${index}`,role:"tabpanel",
@@ -29,24 +30,17 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
       "aria-controls":slides[index].getAttribute("id"),"aria-selected":index === 0 ? "true" : "false",
       tabindex:index === 0 ? "0" : "-1" }
   }));
-  const previous = element("button", {className:"home-carousel-arrow carousel-control-prev",text:data.previousGlyph,
-    attributes:{type:"button","aria-label":data.previousLabel}});
-  const next = element("button", {className:"home-carousel-arrow carousel-control-next",text:data.nextGlyph,
-    attributes:{type:"button","aria-label":data.nextLabel}});
-  const play = element("button", {className:"home-carousel-play",attributes:{type:"button"}});
-  const tabBar = element("div", {className:"carousel-indicators home-carousel-tabs",attributes:{
+  // A fülek önálló ARIA-tablistet alkotnak, NEM Bootstrap .carousel-indicators-t.
+  // Az a CSS-osztály a Bootstrap belső aktívindikátor-kezelését aktiválná,
+  // amely itt data-bs-target hiányában hibát dobna és megakasztaná a váltást.
+  const tabBar = element("div", {className:"home-carousel-tabs",attributes:{
     role:"tablist","aria-label":data.panelLabel
   }}, ...tabs);
-  const controls = element("div", {className:"home-carousel-controls"},previous,tabBar,next,play);
+  const controls = element("div", {className:"home-carousel-controls"},tabBar);
   const section = element("section", {className:"carousel slide home-feature-carousel",
     attributes:{id,"aria-label":data.panelLabel,"data-bs-interval":"false"}
   },controls,element("div", {className:"carousel-inner home-carousel-inner"},...slides));
 
-  function updatePlay() {
-    play.textContent = manuallyPaused ? data.playGlyph : data.pauseGlyph;
-    play.setAttribute("aria-label", manuallyPaused ? data.playLabel : data.pauseLabel);
-    play.setAttribute("aria-pressed", manuallyPaused ? "false" : "true");
-  }
   function reflect(index, updateClasses = false) {
     current = index;
     slides.forEach((slide, i) => {
@@ -60,7 +54,7 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
   }
 
   // Nincs automatikus Bootstrap-időzítő: a közös, hozzáférhető időzítés kezeli
-  // a fókuszt, az érintést, a kézi szüneteltetést és a csökkentett mozgást.
+  // a fókuszt, a kézi váltás utáni olvasási időt és a csökkentett mozgást.
   const BootstrapCarousel = window.bootstrap?.Carousel;
   const bootstrapCarousel = typeof BootstrapCarousel === "function"
     ? BootstrapCarousel.getOrCreateInstance(section, {
@@ -87,7 +81,7 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
 
   function show(index, byUser = false) {
     if (destroyed || index < 0 || index >= slides.length) return;
-    if (byUser) manualHoldUntil = Date.now() + data.manualHoldMs;
+    if (byUser) holdForReading();
     if (!bootstrapCarousel) { reflect(index,true); return; }
     if (transitioning) { pendingIndex = index; return; }
     if (index === current) return;
@@ -105,19 +99,9 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
       tabs[nextIndex].focus();
     });
   });
-  previous.addEventListener("click",() => show((current + 1) % 2,true));
-  next.addEventListener("click",() => show((current + 1) % 2,true));
-  play.addEventListener("click",() => {
-    manuallyPaused = !manuallyPaused;
-    updatePlay();
-  });
-  section.addEventListener("mouseenter",() => { hovered = true; });
-  section.addEventListener("mouseleave",() => { hovered = false; });
-  section.addEventListener("focusin",() => { focused = true; });
-  section.addEventListener("touchstart",pause,{passive:true});
-  section.addEventListener("focusout",(event) => {
-    if (!section.contains(event.relatedTarget)) focused = false;
-  });
+  // Nem állítjuk meg tartósan a váltást egy telefonos koppintás vagy
+  // a két fülön maradó egérmutató miatt. A billentyűzetes tényleges fókusz,
+  // illetve a megnyitott naptári részletek idején viszont szünetel.
   const visibilityChanged = () => { visible = document.visibilityState !== "hidden"; };
   document.addEventListener?.("visibilitychange",visibilityChanged);
   let observer = null;
@@ -128,14 +112,16 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
     observer.observe(section);
   }
   const timer = globalThis.setInterval(() => {
-    if (!manuallyPaused && !transitioning && Date.now() >= manualHoldUntil &&
-        !hovered && !focused && visible && document.visibilityState !== "hidden") {
-      show((current + 1) % 2);
-    }
+    if (destroyed || reducedMotion || transitioning ||
+        Date.now() < manualHoldUntil || !visible ||
+        document.visibilityState === "hidden") return;
+    const active = document.activeElement;
+    if (active && section.contains?.(active) && active.matches?.(":focus-visible")) return;
+    if (current === 1 && section.querySelector?.(".school-day-detail:not([hidden])")) return;
+    show((current + 1) % 2);
   },data.autoplayMs);
-  updatePlay();
   return {
-    section,pause,show,
+    section,show,
     showEvent(eventId) {
       if (bootstrapCarousel && (current !== 1 || transitioning)) {
         pendingEventId = eventId;

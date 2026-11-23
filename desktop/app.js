@@ -1,12 +1,12 @@
-import { element } from "../shared/js/dom.js?v=2.33";
-import { mountGate } from "../shared/js/gate.js?v=2.33";
-import { makeFooter } from "../shared/js/footer.js?v=2.33";
-import { makeDesktopHeader } from "./header.js?v=2.33";
-import { createDesktopPage } from "./page.js?v=2.33";
-import { createDesktopHero } from "./hero.js?v=2.33";
-import { createDesktopSuccesses } from "./successes.js?v=2.33";
-import { createDesktopCalendar } from "./calendar.js?v=2.33";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.33";
+import { element } from "../shared/js/dom.js?v=2.34";
+import { mountGate } from "../shared/js/gate.js?v=2.34";
+import { makeFooter } from "../shared/js/footer.js?v=2.34";
+import { makeDesktopHeader } from "./header.js?v=2.34";
+import { createDesktopPage } from "./page.js?v=2.34";
+import { createDesktopHero } from "./hero.js?v=2.34";
+import { createDesktopSuccesses } from "./successes.js?v=2.34";
+import { createDesktopCalendar } from "./calendar.js?v=2.34";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.34";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {

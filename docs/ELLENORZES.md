@@ -1,3 +1,16 @@
+# 2.34 – Carousel-váltás és vezérlőfelület javítása
+
+- **A végleges időzítés 30 másodperc:** a `shared/data/site.json` fájlban `home.calendar.autoplayMs = 30000`. A kézi fülek és a 18 másodperces olvasási türelmi idő megmaradtak. A korábbi 24 másodperc csak a 2.32/2.33 fejlesztési előzményekre vonatkozik.
+- A sportsikerek és a tanévnaptár fölött **csak két, középre igazított választófül** maradt. A Carousel külön leállító/indító gombja és balra–jobbra mutató nyilai megszűntek.
+- A gyári Bootstrap `carousel-indicators` osztályát eltávolítottuk az egyedi ARIA-tablist-ről. A korábbi osztály miatt a Bootstrap belső indikátorkezelője `null.classList` hibára futott, így sem a kézi, sem az automatikus átmenet nem fejeződött be.
+- A panelváltás Bootstrap API-val és Bootstrap nélküli tartalékmódban is helyesen működik. Az alapértelmezett automatikus váltás továbbra is **30 000 ms**; kézi választás vagy naptári interakció után **18 000 ms** átmeneti olvasási idő van, tartós leállítás nincs.
+- A billentyűzetes navigáció, a naptári nap hover/koppintás/Escape kezelés, a keresőből megnyitás, a láthatóságfigyelés és a csökkentett mozgás kímélete megmaradt.
+- `node tools/test.mjs`: 49 × 2 oldalrender, kézi váltás, automatikus váltás interakció után, Bootstrap API, nincs felesleges vezérlő.
+- Tényleges headless Chromium-próba: 1440 px asztal; 390 és 320 px mobil; Bootstrap 5.3.6 előtelepített helyi JS/CSS (csak tesztkörnyezet, **nem része a ZIP-nek**) és Bootstrap nélküli tartalék. A két fül kézi választása, automatikus váltás, naptári nap nyitása/bezárása, túlcsordulás és JS-hibák vizsgálata sikeres. Az eredeti **30 másodperces** váltást is igazoltuk böngészőóra előrepörgetésével.
+- A kiadás Bootstrap **5.3.8-as CDN** hivatkozásai megmaradtak; a helyi böngészőpróba nem tekintendő a teljes, éles CDN-es honlap end-to-end vizsgálatának. Iskolai FTP-re és GitHub Pages-re nem történt feltöltés.
+
+---
+
 # Csanádi 2.32 – eseménynaptár és kezdőlapi Carousel
 
 ## A 2.32 újdonságai – 2026. november 23.
