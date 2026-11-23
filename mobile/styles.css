@@ -1003,3 +1003,15 @@
   outline:none; text-decoration:underline; text-decoration-color:var(--accent);
   text-underline-offset:.18em; text-decoration-thickness:2px;
 }
+
+/* 2.52 – a felvételi kártyák rövid hivatkozásai is jól érinthetők legyenek.
+   A korábbi 19–22 px magas, sima inline-linkek minimum 36 px-es célfelületet kapnak. */
+.mobile-admission-center .admission-mobile-link,
+.mobile-admission-shortcuts .admission-mobile-link {
+  display:inline-flex;align-items:center;min-height:36px;padding:7px 10px;
+  border-radius:9px;line-height:1.35;max-width:100%;overflow-wrap:anywhere;
+}
+.mobile-admission-center .admission-mobile-link:focus-visible,
+.mobile-admission-shortcuts .admission-mobile-link:focus-visible {
+  outline:3px solid var(--accent);outline-offset:2px;
+}

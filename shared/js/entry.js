@@ -1,8 +1,8 @@
 /** Egyetlen HTML, közvetlen kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.50";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.50";
-import { eventById } from "./calendar-data.js?v=2.50";
-import { mountOffline } from "./offline.js?v=2.50";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.52";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.52";
+import { eventById } from "./calendar-data.js?v=2.52";
+import { mountOffline } from "./offline.js?v=2.52";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -18,6 +18,25 @@ let checkingConfig = false;
 let retryTimer = 0;
 let failedAttempts = 0;
 let offlineView = null;
+let platformRetryTimer = 0;
+let platformRetryFailures = 0;
+
+// A reszponzív stílus átmeneti fájl-/hálózati hibáját is újrapróbáljuk.
+// Enélkül a 767/768 px-es váltás után a régi mobil/asztali nézet maradhat a képernyőn.
+function retryPlatformLater() {
+  if (platformRetryTimer || !initialized) return;
+  const delay = Math.min(30000, 1500 * 2 ** Math.min(platformRetryFailures - 1, 4));
+  platformRetryTimer = setTimeout(() => {
+    platformRetryTimer = 0;
+    if (!initialized || !config || !activeModule) return;
+    const wanted = breakpoint.matches ? "mobile" : "desktop";
+    if (wanted === activePlatform) { platformRetryFailures = 0; return; }
+    void render().catch((error) => {
+      console.warn("[Csanádi] A reszponzív nézet átmenetileg nem tölthető be.", error);
+    });
+  }, delay);
+}
+
 
 function route() {
   if (!location.hash || location.hash === config.routes.gate || location.hash === "#/kapu") return "gate";
@@ -91,17 +110,27 @@ async function render() {
   });
   document.head.append(stylesheet);
   try {
-    const module = await import(`../../${platform}/app.js?v=${encodeURIComponent(config.release)}`);
-    await loaded;
+    // A CSS-betöltés hibáját azonnal figyeljük: egy gyors hálózati elutasítás
+    // ne okozzon külön kezeletlen Promise-rejectiont a JS-import ideje alatt.
+    const [module] = await Promise.all([
+      import(`../../${platform}/app.js?v=${encodeURIComponent(config.release)}`),
+      loaded
+    ]);
     if (version !== serial) { stylesheet.remove(); return; }
     document.querySelectorAll("link[data-platform-style]").forEach((node) => {
       if (node !== stylesheet) node.remove();
     });
     activePlatform = platform;
     activeModule = module;
+    platformRetryFailures = 0;
+    if (platformRetryTimer) { clearTimeout(platformRetryTimer); platformRetryTimer = 0; }
     mountView(platform, module, selectedRoute);
   } catch (error) {
     stylesheet.remove();
+    if (initialized && version === serial && activeModule) {
+      platformRetryFailures++;
+      retryPlatformLater();
+    }
     throw error;
   }
 }

@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 const root=resolve(fileURLToPath(new URL('..',import.meta.url)));
 const get=p=>readFileSync(join(root,p),'utf8');
 const cfg=JSON.parse(get('shared/data/site.json'));
-assert.equal(cfg.release,'2.50');
+assert.equal(cfg.release,'2.52');
 const {checkedMediaCenter,mediaResults,mediaGroups,responsiveImageAttributes}=await import('../shared/js/media-data.js');
 const media=checkedMediaCenter(cfg);
 assert.equal(media.items.length,22);

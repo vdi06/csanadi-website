@@ -1,5 +1,5 @@
-import { element } from "./dom.js?v=2.50";
-import { responsiveImageAttributes } from "./media-data.js?v=2.50";
+import { element } from "./dom.js?v=2.52";
+import { responsiveImageAttributes } from "./media-data.js?v=2.52";
 /** Natív képnéző: billentyűzet, simítás, valódi kétujjas nagyítás és egyujjas panorámázás. */
 export function createGalleryDialog(scope, platform) {
   const el=element;
@@ -80,12 +80,31 @@ export function createGalleryDialog(scope, platform) {
     }else{dialog.setAttribute("open","");closeButton.focus?.();}
   }
   const move=offset=>{if(items.length<2)return;index=(index+offset+items.length)%items.length;display(offset);};
-  function close(){if(typeof dialog.close==="function"&&dialog.open)dialog.close();else{dialog.removeAttribute("open");restore?.focus?.();}}
+  // A bezárást követő fókusz-visszaállítás nem maradhat a későbbi,
+  // aszinkron `close` eseményre: különben felülírhat egy közben
+  // elindított keresőműveletet (mobilon gyors képnézés/kereséstörlés).
+  function returnFocus(){
+    const target=restore;restore=null;
+    if(target?.isConnected)target.focus({preventScroll:true});
+  }
+  function close(){
+    if(typeof dialog.close==="function"&&dialog.open)dialog.close();
+    else dialog.removeAttribute("open");
+    themeObserver?.disconnect();setZoom(1);returnFocus();
+  }
   closeButton.addEventListener("click",close);
   prev.addEventListener("click",()=>move(-1));next.addEventListener("click",()=>move(1));
   zoomButton.addEventListener("click",()=>setZoom(scale>1?1:2.5));
   viewport.addEventListener("dblclick",ev=>{if(Date.now()-lastTouchAt<500)return;ev.preventDefault();setZoom(scale>1?1:2.5);});
-  dialog.addEventListener("close",()=>{themeObserver?.disconnect();setZoom(1);if(restore?.isConnected)restore.focus({preventScroll:true});});
+  dialog.addEventListener("close",()=>{
+    themeObserver?.disconnect();setZoom(1);
+    if(!restore?.isConnected){restore=null;return;}
+    const focused=document.activeElement;
+    // Natív Escape-bezáráskor az előző vezérlő visszakaphatja a fókuszt,
+    // de a felhasználó által már fókuszba helyezett külső mezőt nem írjuk felül.
+    if(!focused||focused===document.body||focused===dialog||dialog.contains(focused))returnFocus();
+    else restore=null;
+  });
   dialog.addEventListener("click",ev=>{if(ev.target===dialog)close();});
   dialog.addEventListener("keydown",ev=>{
     if(ev.key==="ArrowLeft"||ev.key==="ArrowRight"){

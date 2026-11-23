@@ -1,7 +1,7 @@
-import { element } from "./dom.js?v=2.50";
-import { checkedHomeCarousel } from "./carousel-data.js?v=2.50";
-import { createNewsPanel } from "./news-panel.js?v=2.50";
-import { menuPageHref } from "./menu-data.js?v=2.50";
+import { element } from "./dom.js?v=2.52";
+import { checkedHomeCarousel } from "./carousel-data.js?v=2.52";
+import { createNewsPanel } from "./news-panel.js?v=2.52";
+import { menuPageHref } from "./menu-data.js?v=2.52";
 
 /** JSON-ból felépített, bővíthető Bootstrap 5 Carousel: nem igényel
  * nyilakat, de kézi Szünet/Folytatás vezérlést biztosít. CDN-kiesésnél osztályváltásos tartalék.

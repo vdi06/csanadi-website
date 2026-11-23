@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.50";
-import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.50";
+import { element } from "../shared/js/dom.js?v=2.52";
+import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.52";
 
 /** Mobilon külön, függőleges érintésbarát témalista. */
 export function createMobileHomeHighlights(config) {
