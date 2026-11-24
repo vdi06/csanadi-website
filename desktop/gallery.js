@@ -1,8 +1,8 @@
-import { element } from "../shared/js/dom.js?v=2.63";
-import { checkedMediaCenter, mediaResults } from "../shared/js/media-data.js?v=2.63";
-import { createGalleryDialog } from "../shared/js/gallery-dialog.js?v=2.63";
-import { createAlbumControls, groupedCards, cardImage, allowLocalMediaEditor, createPremiumAlbumShowcase } from "../shared/js/gallery-ui.js?v=2.63";
-import { createMediaEditor } from "../shared/js/media-editor.js?v=2.63";
+import { element } from "../shared/js/dom.js?v=2.64";
+import { checkedMediaCenter, mediaResults } from "../shared/js/media-data.js?v=2.64";
+import { createGalleryDialog } from "../shared/js/gallery-dialog.js?v=2.64";
+import { createAlbumControls, groupedCards, cardImage, allowLocalMediaEditor, createPremiumAlbumShowcase } from "../shared/js/gallery-ui.js?v=2.64";
+import { createMediaEditor } from "../shared/js/media-editor.js?v=2.64";
 const el=element;
 export function createDesktopMedia(config) {
   const settings=checkedMediaCenter(config);

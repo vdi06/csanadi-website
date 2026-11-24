@@ -1,5 +1,5 @@
-import { element as el } from './dom.js?v=2.63';
-import { openContentDialog } from './content-expansion.js?v=2.63';
+import { element as el } from './dom.js?v=2.64';
+import { openContentDialog } from './content-expansion.js?v=2.64';
 
 // Every number is derived from the current JSON, never from a decorative sample.
 export function homeDataMetrics(config) {

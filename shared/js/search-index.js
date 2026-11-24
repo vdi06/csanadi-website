@@ -1,9 +1,9 @@
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.63";
-import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.63";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.63";
-import { calendarEntries } from "./calendar-data.js?v=2.63";
-import { newsStoryHref } from "./news-panel.js?v=2.63";
-import { checkedAdmissions } from "./admission-data.js?v=2.63";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.64";
+import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.64";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.64";
+import { calendarEntries } from "./calendar-data.js?v=2.64";
+import { newsStoryHref } from "./news-panel.js?v=2.64";
+import { checkedAdmissions } from "./admission-data.js?v=2.64";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */

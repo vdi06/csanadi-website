@@ -1,7 +1,7 @@
-import { element } from "../shared/js/dom.js?v=2.63";
-import { trapTab } from "../shared/js/focus.js?v=2.63";
-import { isolateModal } from "../shared/js/modal.js?v=2.63";
-import { menuPageHref } from "../shared/js/menu-data.js?v=2.63";
+import { element } from "../shared/js/dom.js?v=2.64";
+import { trapTab } from "../shared/js/focus.js?v=2.64";
+import { isolateModal } from "../shared/js/modal.js?v=2.64";
+import { menuPageHref } from "../shared/js/menu-data.js?v=2.64";
 
 /** Asztali kétgyűrűs menü: az almenük valós, JSON-vázlatos belső oldalakra visznek. */
 export function createDesktopMenu(config, trigger, beforeOpen = () => {}) {

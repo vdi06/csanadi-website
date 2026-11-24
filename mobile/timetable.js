@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.63";
-import { checkedTimetable, currentBell, budapestClock } from "../shared/js/timetable-data.js?v=2.63";
+import { element } from "../shared/js/dom.js?v=2.64";
+import { checkedTimetable, currentBell, budapestClock } from "../shared/js/timetable-data.js?v=2.64";
 const el=element;
 /** Saját mobilos óralista: egy tanítási nap, nagy érintési célok, gyors napváltás. */
 export function createMobileTimetable(config){

@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.63";
-import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.63";
-import { makeCalendarMonth, makeCalendarWeek, createCalendarPopover, schoolWeeks, weekLabel } from "../shared/js/calendar-view.js?v=2.63";
+import { element } from "../shared/js/dom.js?v=2.64";
+import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.64";
+import { makeCalendarMonth, makeCalendarWeek, createCalendarPopover, schoolWeeks, weekLabel } from "../shared/js/calendar-view.js?v=2.64";
 
 /** Telefonon kizárólag heti és havi mód, jól olvasható, kattintható napokkal. */
 export function createMobileCalendar(config,onInteract=()=>{}) {

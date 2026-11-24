@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.30",
-  "release": "2.63",
+  "release": "2.64",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -1869,31 +1869,6 @@
       "linksLabel": "További intézményi hírek",
       "allNewsLabel": "Összes iskolai hír",
       "announcementsLabel": "Közlemények"
-    },
-    "homeHighlights": {
-      "kicker": "CSANÁDI · FÓKUSZBAN",
-      "title": "Tudás. Sport. Közösség.",
-      "intro": "Fedezd fel képzéseinket, a sportéletet és az iskola friss információit egy helyen.",
-      "items": [
-        {
-          "title": "Tanulás és képzés",
-          "subtitle": "Képzések és tanulási lehetőségek",
-          "icon": "🎓",
-          "pageId": "education-programs"
-        },
-        {
-          "title": "Sport és eredmények",
-          "subtitle": "Sportági bemutatók és eredmények",
-          "icon": "🏆",
-          "pageId": "sports-disciplines"
-        },
-        {
-          "title": "Hírek és programok",
-          "subtitle": "Iskolai hírek és közösségi események",
-          "icon": "📅",
-          "pageId": "news-latest"
-        }
-      ]
     },
     "dataStrip": {
       "enabled": true,

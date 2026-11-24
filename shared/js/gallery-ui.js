@@ -1,5 +1,5 @@
-import { element } from "./dom.js?v=2.63";
-import { albumDimensions, mediaGroups, responsiveImageAttributes, premiumAlbumCards } from "./media-data.js?v=2.63";
+import { element } from "./dom.js?v=2.64";
+import { albumDimensions, mediaGroups, responsiveImageAttributes, premiumAlbumCards } from "./media-data.js?v=2.64";
 const el=element;
 export function createAlbumControls(config,platform,change){
   const group=el("div",{className:`${platform}-album-controls media-album-controls`,attributes:{"aria-label":"Albumcsoportok és szűrők"}});

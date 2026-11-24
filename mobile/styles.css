@@ -952,22 +952,6 @@
 }
 .mobile-app :is(.mobile-feature-center,.mobile-document-center,.mobile-media-center,.mobile-admission-center) :is(input,select,button) {max-width:100%;}
 
-/* 2.49 – mobilos, középre komponált, külön kezelt prémium főtémák. */
-.mobile-home-highlights {width:min(600px,calc(100% - 24px));margin:0 auto;padding:34px 4px 27px;text-align:center;}
-.mobile-home-highlights-kicker {color:var(--accent);font-weight:900;letter-spacing:.12em;font-size:11px;margin:0 0 11px;}
-.mobile-home-highlights-title {margin:0 0 13px;font-size:clamp(27px,7vw,37px);line-height:1.12;font-weight:950;text-wrap:balance;}
-.mobile-home-highlights-intro {margin:0 auto 19px;max-width:470px;color:var(--muted);line-height:1.55;font-size:14px;}
-.mobile-home-highlights-list {display:grid;gap:11px;}
-.mobile-home-highlight {display:flex;align-items:center;gap:13px;min-height:87px;padding:12px 14px;
- border:1px solid color-mix(in srgb,var(--accent) 34%,transparent);border-radius:18px;
- color:var(--text);text-decoration:none;text-align:left;box-shadow:0 12px 26px rgba(0,0,0,.13);
- background:linear-gradient(110deg,color-mix(in srgb,var(--surface) 92%,var(--accent)),var(--surface));}
-.mobile-home-highlight-icon {display:grid;place-items:center;flex:0 0 45px;width:45px;height:45px;border-radius:12px;background:color-mix(in srgb,var(--accent) 19%,var(--surface));font-size:24px;}
-.mobile-home-highlight-content {display:grid;gap:3px;min-width:0;flex:1;}
-.mobile-home-highlight-content strong {font-size:15px;line-height:1.25;font-weight:900;}
-.mobile-home-highlight-content small {font-size:12px;line-height:1.35;color:var(--muted);}
-.mobile-home-highlight-arrow {font-size:22px;color:var(--accent);font-weight:900;}
-.mobile-home-highlight:focus-visible {outline:3px solid var(--accent);outline-offset:3px;}
 .mobile-home .home-feature-carousel {width:min(620px,calc(100% - 18px));margin:0 auto 34px;}
 .mobile-search-categories {display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px;}
 .mobile-search-category {padding:9px 12px;min-height:44px;border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);border-radius:99px;background:var(--background);color:var(--text);font-size:12px;font-weight:800;cursor:pointer;}
@@ -978,8 +962,7 @@
 .mobile-search-empty p {margin:0;font-size:13px;color:var(--muted);}
 .mobile-search-reset {min-height:44px;padding:8px 14px;background:var(--background);color:var(--text);border:1px solid var(--accent);border-radius:11px;cursor:pointer;}
 .mobile-search-result-category {color:var(--accent);}
-@media(prefers-reduced-motion:reduce) {.mobile-home-highlight {transition:none!important;}}
-@media(forced-colors:active) {.mobile-home-highlight,.mobile-search-category[aria-pressed="true"],.mobile-search-more {border:2px solid ButtonText;}.mobile-search-category[aria-pressed="true"] {outline:2px solid Highlight;}}
+@media(forced-colors:active) {.mobile-search-category[aria-pressed="true"],.mobile-search-more {border:2px solid ButtonText;}.mobile-search-category[aria-pressed="true"] {outline:2px solid Highlight;}}
 
 /* 2.53: kizárólag a három Carousel-fül jelenik meg; külön szüneteltető vezérlő nincs. */
 .mobile-home .home-carousel-controls {flex-wrap:wrap;justify-content:center;gap:10px;}
@@ -1032,8 +1015,6 @@
 .school-news-page--mobile .school-news-story-details summary{min-height:44px;}
 @media(max-width:350px){.mobile-page-cards,.mobile-feature-event-list,.mobile-feature-sport-list,.mobile-admission-events,.mobile-document-list,.school-news-page--mobile .school-news-page-grid{grid-template-columns:1fr;}}
 
-/* Short quick links, two columns above the small-screen threshold. */
-@media(min-width:351px){.mobile-home-highlights-list{grid-template-columns:repeat(2,minmax(0,1fr));}.mobile-home-highlight{flex-direction:column;align-items:flex-start;gap:9px;min-width:0;}.mobile-home-highlight:last-child:nth-child(odd){grid-column:1/-1;flex-direction:row;align-items:center;}.mobile-home-highlight-arrow{align-self:flex-end;}.mobile-home-highlight-content{overflow-wrap:anywhere;}}
 .mobile-admission-center .admission-mobile-link,.mobile-admission-shortcuts .admission-mobile-link{min-height:44px;}
 .mobile-feature-events>.content-action{display:block;margin:12px auto;}
 /* Mobile: compact two-column overview, one column on very small screens. */

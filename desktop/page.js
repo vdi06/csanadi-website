@@ -1,6 +1,6 @@
-import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.63";
-import { element } from "../shared/js/dom.js?v=2.63";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.63";
+import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.64";
+import { element } from "../shared/js/dom.js?v=2.64";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.64";
 
 const cls = (part) => `desktop-page-${part}`;
 const detailsList = (point) => element("ul", { className:cls("card-details") },

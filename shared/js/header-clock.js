@@ -1,4 +1,4 @@
-import {element} from './dom.js?v=2.63';
+import {element} from './dom.js?v=2.64';
 const NS='http://www.w3.org/2000/svg';
 // Hét szegmens: felül, jobb felső, jobb alsó, alul, bal alsó, bal felső, közép.
 const shapes=['0,0 13,0 16,3 13,6 3,6 0,3','14,5 17,2 20,5 20,18 17,21 14,18','14,25 17,22 20,25 20,38 17,41 14,38','0,40 3,37 13,37 16,40 13,43 3,43','0,25 3,22 6,25 6,38 3,41 0,38','0,5 3,2 6,5 6,18 3,21 0,18','0,21 3,18 13,18 16,21 13,24 3,24'];
