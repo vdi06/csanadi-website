@@ -1,11 +1,12 @@
-import { validateExpansion } from "./content-expansion.js?v=2.56";
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.56";
-import { checkedDocumentCenter } from "./document-data.js?v=2.56";
-import { checkedAdmissions } from "./admission-data.js?v=2.56";
-import { checkedInformationCenter } from "./information-data.js?v=2.56";
-import { checkedMediaCenter } from "./media-data.js?v=2.56";
+import { validatePersonalData } from "./personal-data.js?v=2.62";
+import { validateExpansion } from "./content-expansion.js?v=2.62";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.62";
+import { checkedDocumentCenter } from "./document-data.js?v=2.62";
+import { checkedAdmissions } from "./admission-data.js?v=2.62";
+import { checkedInformationCenter } from "./information-data.js?v=2.62";
+import { checkedMediaCenter } from "./media-data.js?v=2.62";
 /** Kétszintű menü, 63 önálló oldal és közösen kezelt, JSON-alapú tartalom. */
-import { checkedCalendar } from "./calendar-data.js?v=2.56";
+import { checkedCalendar } from "./calendar-data.js?v=2.62";
 
 const validLabel = (value, max = 800) => typeof value === "string" &&
   !!value.trim() && value.length <= max;
@@ -150,6 +151,7 @@ export function validateMenu(config) {
     throw new Error("Érvénytelen kezdőlapi prémium témakártya-adatok.");
   }
   validateExpansion(config);
+  validatePersonalData(config);
   checkedNews(config);
   checkedCalendar(config);
   checkedInformationCenter(config);

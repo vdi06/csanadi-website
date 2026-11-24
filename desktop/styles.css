@@ -563,7 +563,7 @@
 .desktop-wheel-sub-node { width:clamp(110px,12vw,144px); min-height:60px;
   background:color-mix(in srgb,var(--surface) 90%,var(--accent));
   border-color:var(--accent); font-size:clamp(10px,.96vw,13px); }
-.desktop-wheel-sub-node:is(button,a) { cursor:pointer; pointer-events:auto; }
+.desktop-wheel-sub-node:is(button,a) { cursor:pointer; pointer-events:auto; text-decoration:none; }
 .desktop-wheel-sub-node:is(button,a):hover,.desktop-wheel-sub-node:is(button,a):focus-visible {
   box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent),
     0 12px 25px rgba(0,0,0,.24);
@@ -919,7 +919,7 @@
 /* 2.40 – dedikált asztali dokumentumtár, saját kétoszlopos kezelőpanellel. */
 .desktop-document-center{width:min(1180px,calc(100% - 28px));margin:clamp(18px,2.8vw,35px) auto 56px;}
 .desktop-document-layout{display:grid;grid-template-columns:minmax(195px,235px) minmax(0,1fr);gap:24px;align-items:start;}
-.desktop-document-categories{display:grid;gap:7px;position:sticky;top:96px;max-height:calc(100dvh - 115px);overflow:auto;padding:15px;border-radius:19px;background:var(--surface);border:1px solid color-mix(in srgb,var(--accent) 27%,transparent);}
+.desktop-document-categories{display:grid;gap:7px;position:sticky;top:calc(var(--school-header-height,96px) + 12px);max-height:max(44px,calc(100dvh - var(--school-header-height,96px) - 24px));overflow:auto;padding:15px;border-radius:19px;background:var(--surface);border:1px solid color-mix(in srgb,var(--accent) 27%,transparent);}
 .desktop-document-category{min-height:44px;cursor:pointer;text-align:left;padding:9px 13px;border:1px solid transparent;background:transparent;color:var(--text);font-weight:700;border-radius:10px;}
 .desktop-document-category[aria-pressed="true"]{border-color:var(--accent);color:var(--background);background:var(--accent);}
 .desktop-document-category:hover:not([aria-pressed="true"]){background:color-mix(in srgb,var(--surface) 83%,var(--accent));}
@@ -1209,3 +1209,16 @@
 .desktop-toolbar{row-gap:5px;}
 .desktop-home .desktop-motto{margin-top:7px;}
 @media(max-height:550px){.desktop-home:not([data-hero-home="true"]) .desktop-header{padding-block:5px;}.desktop-home .desktop-headline{margin-bottom:5px;}.desktop-home .desktop-toolbar .shell-crest-toggle{height:54px;width:54px;min-height:54px;}.desktop-home .desktop-motto{margin-top:4px;}}
+
+/* 2.60 – két széles kártya, szükség esetén egy. */
+.home-news-grid,.school-news-page--announcements .school-news-page-grid {
+  grid-template-columns:repeat(2,minmax(0,1fr));max-width:1120px;margin-inline:auto;
+}
+@media(max-width:940px) {
+  .home-news-grid,.school-news-page--announcements .school-news-page-grid {grid-template-columns:minmax(0,1fr);max-width:760px;}
+}
+
+.desktop-home .personal-widget-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+@media(max-width:1000px){.desktop-home .personal-widget-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+/* Eight or more tabs remain readable; the active tab stays within the strip. */
+.desktop-home .home-carousel-tabs{overflow-x:auto;flex-wrap:nowrap;max-width:100%;justify-content:safe center;padding:5px;gap:6px}.desktop-home .home-carousel-tab{min-width:0;padding:9px 13px;font-size:.9rem;white-space:nowrap;flex-shrink:0}

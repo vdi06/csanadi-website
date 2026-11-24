@@ -1,9 +1,9 @@
-import { loadActivity } from "./page-activities.js?v=2.56";
+import { loadActivity } from "./page-activities.js?v=2.62";
 /** Egyetlen HTML, közvetlen kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.56";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.56";
-import { eventById } from "./calendar-data.js?v=2.56";
-import { mountOffline } from "./offline.js?v=2.56";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.62";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.62";
+import { eventById } from "./calendar-data.js?v=2.62";
+import { mountOffline } from "./offline.js?v=2.62";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -105,8 +105,10 @@ async function render() {
   const version = ++serial;
   const platform = breakpoint.matches ? "mobile" : "desktop";
   const selectedRoute = route();
+  const requestedHash = location.hash;
+  const isStale = () => version !== serial || requestedHash !== location.hash || platform !== (breakpoint.matches ? "mobile" : "desktop");
   await Promise.all([hydratePage(selectedRoute),selectedRoute.startsWith("page:")?loadActivity(config,selectedRoute.slice(5),settingsUrl):null]);
-  if(version!==serial)return;
+  if (isStale()) return;
   if (activePlatform === platform && activeModule) {
     mountView(platform, activeModule, selectedRoute);
     return;
@@ -115,7 +117,9 @@ async function render() {
   stylesheet.rel = "stylesheet";
   stylesheet.href = `./${platform}/styles.css?v=${encodeURIComponent(config.release)}`;
   stylesheet.dataset.platformStyle = platform;
+  let cssTimeout;
   const loaded = new Promise((resolve, reject) => {
+    cssTimeout = setTimeout(() => reject(new Error("A platformstílus betöltése túllépte az időkorlátot.")), 8000);
     stylesheet.addEventListener("load", resolve, { once: true });
     stylesheet.addEventListener("error", () => reject(new Error("A platformstílus nem tölthető be.")), { once: true });
   });
@@ -127,7 +131,7 @@ async function render() {
       import(`../../${platform}/app.js?v=${encodeURIComponent(config.release)}`),
       loaded
     ]);
-    if (version !== serial) { stylesheet.remove(); return; }
+    if (isStale()) { stylesheet.remove(); return; }
     document.querySelectorAll("link[data-platform-style]").forEach((node) => {
       if (node !== stylesheet) node.remove();
     });
@@ -143,6 +147,8 @@ async function render() {
       retryPlatformLater();
     }
     throw error;
+  } finally {
+    clearTimeout(cssTimeout);
   }
 }
 
@@ -210,7 +216,13 @@ async function loadConfig() {
     }
     // A kapu külön kezdőútvonalon jelenik meg; a közvetlen oldalhivatkozások nem sérülnek.
     document.documentElement.style.setProperty("--home-reveal-duration", `${config.gate.homeRevealMs}ms`);
-    await render();
+    // A betöltés közben változó hash és töréspont ne vesszen el.
+    let requestedHash, requestedMobile;
+    do {
+      requestedHash = location.hash;
+      requestedMobile = breakpoint.matches;
+      await render();
+    } while (requestedHash !== location.hash || requestedMobile !== breakpoint.matches || !activeModule);
     initialized = true;
     offlineView = null;
     failedAttempts = 0;

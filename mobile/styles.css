@@ -423,6 +423,7 @@
   box-shadow:0 6px 16px rgba(0,0,0,.14); cursor:pointer;
 }
 .mobile-compass-grid-item:is(:hover,:focus-visible) {
+  text-decoration:none;
   outline:2px solid var(--accent); outline-offset:2px;
   background:color-mix(in srgb,var(--accent) 22%,var(--surface));
 }
@@ -1054,10 +1055,35 @@
 .mobile-header{position:sticky;top:0;z-index:40;background:var(--background);}
 .mobile-toolbar{row-gap:5px;}
 .mobile-motto{margin-top:7px;}
-.school-header-clock{padding:4px 8px;}
+.school-header-clock{padding:5px 9px;}
 .school-header-clock svg{width:96px;height:24px;}
 .school-clock-date{display:none;}
 .mobile-story-track{top:var(--school-header-height,0px);}
 @media(min-height:700px){html[data-platform="mobile"][data-route="home"]{scroll-padding-top:calc(var(--school-header-height,0px) + clamp(132px,18dvh,152px) + 8px);}}
 @media(max-height:699px){.mobile-story-track{position:relative;top:auto;}}
 @media(max-height:480px){.mobile-header{padding-block:4px;}.mobile-brand{margin-bottom:4px;}.mobile-toolbar .shell-crest-toggle{width:48px;height:48px;min-height:48px;}.mobile-toolbar .shell-tool{min-height:44px;}.mobile-motto{margin-top:3px;}}
+
+/* 2.60 – közlemények: olvasható, széles egyhasábos kivétel. */
+.home-news-grid,.school-news-page--mobile.school-news-page--announcements .school-news-page-grid {
+  grid-template-columns:minmax(0,1fr);width:100%;max-width:580px;margin-inline:auto;gap:12px;align-items:start;
+}
+.home-news-panel {padding-inline:8px;}
+.home-news-card,.school-news-page--mobile.school-news-page--announcements .school-news-story {padding:14px;gap:8px;}
+.school-news-page--mobile.school-news-page--announcements .school-news-story h2 {font-size:1.08rem;line-height:1.3;}
+
+.mobile-home .home-carousel-tab[data-panel-type="widgets"]::before{content:"▦";}
+.mobile-home .personal-widget-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+.mobile-home .personal-widget-tile{padding:10px;min-height:106px;gap:6px;align-items:flex-start;flex-direction:column;position:relative;}
+.mobile-home .personal-widget-icon{height:28px;flex-basis:28px;width:28px;font-size:1.05rem;}
+.mobile-home .personal-widget-arrow{position:absolute;right:10px;top:8px;}
+.mobile-home .personal-widget-copy strong{font-size:.86rem;}.mobile-home .personal-widget-detail{font-size:.72rem;}
+.mobile-home .personal-widget-heading{align-items:flex-start;}.mobile-home .personal-widget-fields{grid-template-columns:minmax(0,1fr) auto;}.mobile-home .personal-widget-fields input{grid-column:1/-1;}
+@media(max-width:350px){.mobile-home .personal-widget-grid{grid-template-columns:1fr;}.mobile-home .personal-widget-tile{flex-direction:row;min-height:78px;align-items:center;}.mobile-home .personal-widget-arrow{position:static;}.site-help-filters{grid-template-columns:1fr;}}
+/* Kéthasábos gyorselérés: a részletek az ablakban maradnak. */
+.mobile-home .personal-widget-tile{min-height:100px;gap:4px;}
+.mobile-home .personal-widget-detail{display:none;}
+.mobile-home .personal-widget-heading p{font-size:.82rem;}
+@media(max-width:767px){.site-help-filters{grid-template-columns:1fr;}}
+@media(max-width:350px){.mobile-home .personal-widget-tile{min-height:70px;}}
+/* Compact scrolling tab strip with visible labels. */
+.mobile-home .home-carousel-tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;max-width:100%;padding:5px;gap:7px;scroll-snap-type:x proximity}.mobile-home .home-carousel-tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:88px;min-width:88px;height:auto;min-height:64px;padding:5px 4px;font-size:11px;line-height:1.2;white-space:normal}.mobile-home .home-carousel-tab::before{content:none!important;display:none!important}.mobile-home .home-tab-icon{display:block;font-size:19px;line-height:1}.mobile-home .home-tab-label{display:block;text-align:center;font-weight:750}.mobile-home .center-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.mobile-home .center-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.mobile-home .center-tile,.mobile-home .center-document{padding:8px;min-height:88px}.mobile-home .center-contact{flex-direction:column}.mobile-home .center-page-tiles,.mobile-home .center-links{gap:6px}.mobile-home .center-links .center-button{flex:1 1 42%}.mobile-home .home-center{padding:12px 4px 16px}@media(max-width:350px){.mobile-home .center-grid{grid-template-columns:1fr}.mobile-home .center-filters{grid-template-columns:1fr}.mobile-home .center-links .center-button{flex-basis:100%}}

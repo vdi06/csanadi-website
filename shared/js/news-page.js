@@ -1,7 +1,7 @@
-import { element } from "./dom.js?v=2.56";
-import { menuPageHref } from "./menu-data.js?v=2.56";
-import { newsDateLabel, newsStoryHref, publicNewsForPage } from "./news-panel.js?v=2.56";
-import { calendarEntries } from "./calendar-data.js?v=2.56";
+import { element } from "./dom.js?v=2.62";
+import { menuPageHref } from "./menu-data.js?v=2.62";
+import { newsDateLabel, newsStoryHref, publicNewsForPage } from "./news-panel.js?v=2.62";
+import { calendarEntries } from "./calendar-data.js?v=2.62";
 
 /** Ugyanazok a központi, ellenőrzött JSON-hírek jelennek meg a kezdőlapon és
  * a menüből elérhető részletes oldalakon. Mobilon és asztalon közös adatlogika,
@@ -71,7 +71,7 @@ export function createNewsArchivePage(config, pageId, platform, selectedId = nul
   const step=platform==="mobile"?8:12;let limit=step;
   function draw(){const q=norm(search.value).split(/\s+/).filter(Boolean);const hits=records.filter(r=>(categoryFilter.value==="all"||r.tags.includes(categoryFilter.value))&&q.every(w=>norm([r.title,r.summary,...r.details].join(" ")).includes(w)));if(sort.value==="old")hits.sort((a,b)=>a.date.localeCompare(b.date));if(sort.value==="title")hits.sort((a,b)=>a.title.localeCompare(b.title,"hu"));list.replaceChildren(...hits.slice(0,limit).map(r=>cards.get(r.id)));count.textContent=`${hits.length} találat · ${Math.min(hits.length,limit)} megjelenítve`;more.hidden=hits.length<=limit;if(!hits.length)list.append(element("p",{className:"school-news-empty",text:"Nincs találat a megadott szűrőkkel."}));}
   for(const el of [search,categoryFilter,sort])el.addEventListener(el===search?"input":"change",()=>{limit=step;draw();});more.addEventListener("click",()=>{limit+=step;draw();});
-  const section=element("section",{className:`school-news-page school-news-page--${platform}`,attributes:{"aria-label":"Nyilvános intézményi hírek"}},navigation,element("div",{className:"content-filters"},search,categoryFilter,sort),count,list,more);draw();
+  const section=element("section",{className:`school-news-page school-news-page--${platform}${pageId==="news-announcements"?" school-news-page--announcements":""}`,attributes:{"aria-label":"Nyilvános intézményi hírek"}},navigation,element("div",{className:"content-filters"},search,categoryFilter,sort),count,list,more);draw();
   const showStory=(id)=>{
     const detail=detailNodes.get(id);
     if(!detail)return false;

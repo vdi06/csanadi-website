@@ -1,7 +1,9 @@
-import { element } from "./dom.js?v=2.56";
-import { checkedHomeCarousel } from "./carousel-data.js?v=2.56";
-import { createNewsPanel } from "./news-panel.js?v=2.56";
-import { menuPageHref } from "./menu-data.js?v=2.56";
+import { createHomeCenter } from "./home-centers.js?v=2.62";
+import { createPersonalWidgets } from "./personal-widgets.js?v=2.62";
+import { element } from "./dom.js?v=2.62";
+import { checkedHomeCarousel } from "./carousel-data.js?v=2.62";
+import { createNewsPanel } from "./news-panel.js?v=2.62";
+import { menuPageHref } from "./menu-data.js?v=2.62";
 
 /** JSON-ból felépített, bővíthető Bootstrap 5 Carousel: nem igényel
  * nyilakat vagy külön szüneteltető gombot. CDN-kiesésnél osztályváltásos tartalék.
@@ -31,8 +33,11 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
     if (type === "successes") return { section:successesSection, destroy(){} };
     if (type === "calendar") return makeCalendar(holdForReading);
     if (type === "news") return createNewsPanel(config,holdForReading,panel);
+    if (type === "center") return createHomeCenter(config,panel,platform,holdForReading);
+    if (type === "widgets") return createPersonalWidgets(config,holdForReading);
     throw new Error(`Ismeretlen kezdőlapi Carousel-panel: ${type}`);
   });
+  instances[0].activate?.();
   const calendar = instances[calendarIndex];
   if (calendar?.section) calendar.section.append(element("nav",{
     className:"calendar-full-page-link",attributes:{"aria-label":"Naptár további lehetőségei"}},
@@ -44,11 +49,11 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
   },instance.section));
   slides.forEach((slide,index) => { slide.inert = index !== 0; });
   const tabs = activePanels.map((panel,index) => element("button", {
-    className:`home-carousel-tab${index === 0 ? " is-active" : ""}`,text:panel.label,
+    className:`home-carousel-tab${index === 0 ? " is-active" : ""}`,
     attributes:{type:"button",id:`${id}-tab-${index}`,role:"tab",
       "aria-controls":slides[index].getAttribute("id"),"data-panel-type":panel.type,
       "aria-selected":index === 0 ? "true" : "false",tabindex:index === 0 ? "0" : "-1"}
-  }));
+  },element("span",{className:"home-tab-icon",text:panel.icon,attributes:{"aria-hidden":"true"}}),element("span",{className:"home-tab-label",text:panel.label})));
   const descriptionId = `${id}-usage-hint`;
   const tabBar = element("div", {className:"home-carousel-tabs",attributes:{
     role:"tablist","aria-label":data.ariaLabel
@@ -64,6 +69,9 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
 
   function reflect(index,updateClasses=false) {
     current = index;
+    instances[index].activate?.();
+    const activeTab=tabs[index];const barRect=tabBar.getBoundingClientRect(),tabRect=activeTab.getBoundingClientRect();
+    if(tabRect.left<barRect.left||tabRect.right>barRect.right)tabBar.scrollLeft+=tabRect.left-barRect.left-(barRect.width-tabRect.width)/2;
     instances.forEach((instance,i) => {
       if (i !== index) { instance.closePopover?.(); instance.closeDetails?.(); }
     });
@@ -153,7 +161,7 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
     if (canHover?.matches && (pointerInside || section.matches?.(":hover"))) return;
     const active = document.activeElement;
     if (active && section.contains?.(active) && active.matches?.(":focus-visible")) return;
-    if (instances[current].isOpen?.()) return;
+    if (instances[current].isOpen?.() || document.querySelector("dialog[open]")) return;
     show((current + 1) % slides.length);
   },data.autoplayMs);
 

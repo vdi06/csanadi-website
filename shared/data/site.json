@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.30",
-  "release": "2.56",
+  "release": "2.62",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -1685,7 +1685,9 @@
       "clock": {
         "timeZone": "Europe/Budapest",
         "label": "Budapesti idő"
-      }
+      },
+      "helpGlyph": "?",
+      "helpLabel": "Használati útmutató megnyitása"
     },
     "editor": {
       "title": "Szerkesztő mód"
@@ -1716,19 +1718,123 @@
           "id": "successes",
           "type": "successes",
           "label": "Sportsikerek",
-          "enabled": true
+          "enabled": true,
+          "pages": [
+            "sports-results"
+          ],
+          "icon": "🏆"
         },
         {
           "id": "calendar",
           "type": "calendar",
           "label": "Tanévi naptár",
-          "enabled": true
+          "enabled": true,
+          "pages": [
+            "news-calendar",
+            "education-years",
+            "news-events"
+          ],
+          "icon": "▦"
         },
         {
           "id": "news",
           "type": "news",
           "label": "Hírek és közlemények",
+          "enabled": true,
+          "pages": [
+            "news-latest",
+            "news-announcements",
+            "news-archive",
+            "news-sports",
+            "news-studies",
+            "news-community"
+          ],
+          "icon": "▤"
+        },
+        {
+          "id": "learning",
+          "type": "center",
+          "mode": "learning",
+          "label": "Tanulási központ",
+          "icon": "▣",
+          "intro": "Gyakorlás, tanulási módszerek és digitális tudás egy helyen.",
+          "pages": [
+            "education-resources",
+            "education-study-skills",
+            "education-subject-guides",
+            "education-digital-safety",
+            "education-digital",
+            "education-library",
+            "education-talent",
+            "sports-quiz"
+          ],
+          "collections": [
+            "learning",
+            "subjects",
+            "digital",
+            "quiz"
+          ],
           "enabled": true
+        },
+        {
+          "id": "documents",
+          "type": "center",
+          "mode": "documents",
+          "label": "Dokumentumközpont",
+          "icon": "▤",
+          "intro": "Keresd meg a szükséges dokumentumot vagy segédletet. A még hiányzó hivatalos iratok nem tölthetők le.",
+          "pages": [
+            "information-documents",
+            "admission-documents",
+            "information-disclosure"
+          ],
+          "enabled": true
+        },
+        {
+          "id": "services",
+          "type": "center",
+          "mode": "services",
+          "label": "Iskolai ügyintézés",
+          "icon": "☎",
+          "intro": "Kapcsolat, gyakori ügyek és szülői tájékozódás.",
+          "pages": [
+            "information-contact",
+            "information-services",
+            "information-service",
+            "information-parent-guide",
+            "information-meals",
+            "information-absence",
+            "admission-faq"
+          ],
+          "collections": [
+            "faq"
+          ],
+          "enabled": true
+        },
+        {
+          "id": "heritage",
+          "type": "center",
+          "mode": "heritage",
+          "label": "Csanádi örökség",
+          "icon": "★",
+          "intro": "Az iskola története, olimpiai értékek és elismerések.",
+          "pages": [
+            "school-history",
+            "sports-olympic",
+            "school-awards"
+          ],
+          "collections": [
+            "olympic"
+          ],
+          "timelinePage": "school-history",
+          "enabled": true
+        },
+        {
+          "id": "widgets",
+          "type": "widgets",
+          "label": "Saját oldalak",
+          "enabled": true,
+          "icon": "▦"
         }
       ]
     },
@@ -1820,6 +1926,253 @@
           "note": "Kizárólag a forrással és ellenőrzött jelöléssel rendelkező csapateredmények száma. Nem az iskola teljes eredménylistája vagy teljesítménytrendje."
         }
       }
+    },
+    "widgets": {
+      "title": "Saját oldalak",
+      "intro": "A gyakran használt, más fő fülön még nem szereplő oldalaid. Nyiss betekintőt vagy alakítsd át a válogatást.",
+      "maxItems": 12,
+      "defaults": [
+        "information-timetable",
+        "sports-gallery",
+        "admission-guide",
+        "education-programs",
+        "sports-disciplines",
+        "school-introduction"
+      ],
+      "icons": {
+        "school": "⌂",
+        "education": "▤",
+        "admission": "✓",
+        "sports": "◆",
+        "news": "▦",
+        "information": "ℹ"
+      }
+    },
+    "help": {
+      "title": "Használati útmutató",
+      "intro": "Válassz témát vagy keress kulcsszóra. Nyisd ki a rövid útmutatót a lépésekhez.",
+      "categories": [
+        "Navigáció",
+        "Keresés",
+        "Saját oldalak",
+        "Tartalmak",
+        "Megjelenés",
+        "Adatok"
+      ],
+      "topics": [
+        {
+          "category": "Navigáció",
+          "title": "Hogyan nyílik meg a főmenü?",
+          "keywords": "címer körmenü almenü",
+          "steps": [
+            "Kattints vagy koppints a fejléc közepén lévő címerre.",
+            "Válassz főmenüt, majd egy aloldalt. A címerrel vagy a bezárással visszatérhetsz."
+          ],
+          "page": "school-introduction"
+        },
+        {
+          "category": "Navigáció",
+          "title": "Hogyan térhetek vissza a kezdőlapra?",
+          "keywords": "home főoldal vissza",
+          "steps": [
+            "Az intézménynévre kattintva visszajutsz a kezdőlapra.",
+            "A böngésző vissza és előre gombja az oldalak közötti navigálásban is használható."
+          ]
+        },
+        {
+          "category": "Navigáció",
+          "title": "Oldalajánló és betekintés",
+          "keywords": "kapcsolódó ajánlás előnézet",
+          "steps": [
+            "Az aloldal alján az Oldalajánló témába vágó és kiemelt oldalakat kínál.",
+            "A kártya megnyitja az előnézetet; a Teljes oldal megnyitása gomb visz tovább."
+          ]
+        },
+        {
+          "category": "Keresés",
+          "title": "Keresés a teljes honlapon",
+          "keywords": "kereső nagyító ékezet találat",
+          "steps": [
+            "Nyisd meg a fejléc nagyító ikonját.",
+            "Írj be egy nevet, témát vagy kulcsszót. A kategóriák segítségével szűkítheted a találatokat."
+          ]
+        },
+        {
+          "category": "Keresés",
+          "title": "További találatok és szűrés",
+          "keywords": "lapozás rendezés üres lista",
+          "steps": [
+            "A találati darabszám megmutatja az egyezéseket.",
+            "A további találatok gombbal folytathatod a böngészést. Ha nincs találat, próbálj rövidebb szót."
+          ]
+        },
+        {
+          "category": "Saját oldalak",
+          "title": "Személyre szabott widgetek",
+          "keywords": "negyedik fül kedvenc gyorselérés",
+          "steps": [
+            "A kezdőlapon válaszd az utolsó, Saját oldalak fület.",
+            "A kompakt widgetekből betekintőt nyithatsz, majd továbbléphetsz a teljes oldalra."
+          ]
+        },
+        {
+          "category": "Saját oldalak",
+          "title": "Oldal hozzáadása és eltávolítása",
+          "keywords": "szerkesztés törlés hozzáadás",
+          "steps": [
+            "A Saját oldalak fülön válaszd a Szerkesztés gombot.",
+            "Keress az oldaljegyzékben, válassz egy oldalt, majd nyomd meg a Hozzáadás gombot. Az × eltávolítja a widgetet.",
+            "A többi aktív fő fülhöz rendelt oldalak automatikusan ki vannak zárva a választóból, a régi mentésekből is."
+          ]
+        },
+        {
+          "category": "Saját oldalak",
+          "title": "Sorrend, mentés és visszaállítás",
+          "keywords": "nyíl sorrendezés localstorage alaphelyzet",
+          "steps": [
+            "A fel és le nyilak a widgetek sorrendjét módosítják.",
+            "A módosítás automatikusan az adott böngészőben mentődik. A Kész gomb lezárja a szerkesztést; az alapértelmezett visszaállítás lecseréli a saját listát."
+          ]
+        },
+        {
+          "category": "Tartalmak",
+          "title": "Hírek és közlemények böngészése",
+          "keywords": "hír közlemény kategória további",
+          "steps": [
+            "Nyisd meg a híroldalt vagy a kezdőlapi hírek fület.",
+            "Használd a keresést és a kategóriákat; a További hírek gomb további elemeket mutat."
+          ],
+          "page": "news-latest"
+        },
+        {
+          "category": "Tartalmak",
+          "title": "Naptár és események",
+          "keywords": "tanév dátum esemény hónap",
+          "steps": [
+            "Válaszd a tanévi naptár fület vagy a teljes eseménynaptárt.",
+            "Válassz dátumot vagy eseményt a részletekhez. A mintaadatokat ne tekintsd hivatalos időpontnak."
+          ],
+          "page": "news-calendar"
+        },
+        {
+          "category": "Tartalmak",
+          "title": "Dokumentumok keresése és megnyitása",
+          "keywords": "pdf irat letöltés dokumentumtár",
+          "steps": [
+            "A dokumentumtárban kereséssel és kategóriákkal szűkítheted a listát.",
+            "Nyisd meg az elérhető fájlt vagy előnézetét. A hiányzó hivatalos dokumentumok jelölve vannak."
+          ],
+          "page": "information-documents"
+        },
+        {
+          "category": "Tartalmak",
+          "title": "Galéria és képnagyítás",
+          "keywords": "album fotó kép mobil zoom",
+          "steps": [
+            "Válassz albumot vagy keress képet a médiaközpontban.",
+            "Nyisd meg a képet; mobilon lapozhatsz és nagyíthatsz. Az illusztrációk nem eseményfotók."
+          ],
+          "page": "sports-gallery"
+        },
+        {
+          "category": "Tartalmak",
+          "title": "Tudástárak és tudáspróbák",
+          "keywords": "kvíz feladat tanulás",
+          "steps": [
+            "Válassz egy tudástári kártyát és nyisd meg a részleteit.",
+            "A tudáspróbákban válaszolj a kérdésekre, majd olvasd el a visszajelzést."
+          ],
+          "page": "sports-quiz"
+        },
+        {
+          "category": "Megjelenés",
+          "title": "Világos és sötét téma",
+          "keywords": "szín kontraszt téma",
+          "steps": [
+            "A fejléc témaváltó ikonjával válthatsz világos és sötét megjelenés között.",
+            "A fejléc, a kártyák és a lebegő ablakok a kiválasztott témához igazodnak."
+          ]
+        },
+        {
+          "category": "Megjelenés",
+          "title": "Lebegő ablakok kezelése",
+          "keywords": "modal escape bezárás vissza fókusz",
+          "steps": [
+            "Az ablak Bezárás gombjával vagy az Escape billentyűvel visszatérhetsz.",
+            "Az új tartalmi ablakok a böngésző vissza gombjával is bezárhatók. Hosszabb tartalomnál görgess az ablakon belül."
+          ]
+        },
+        {
+          "category": "Megjelenés",
+          "title": "Digitális fejlécóra",
+          "keywords": "idő dátum budapest",
+          "steps": [
+            "A címer alatt lévő digitális óra budapesti időt mutat.",
+            "Az óra a készülék rendszeridejéből számol, asztali nézetben a dátum is látható."
+          ]
+        },
+        {
+          "category": "Megjelenés",
+          "title": "Kezdőlapi fő fülek",
+          "keywords": "carousel sportsiker naptár automatikus",
+          "steps": [
+            "A fülsávban válthatsz a nyolc tartalom között; telefonon a sáv vízszintesen görgethető.",
+            "Az automatikus váltás 30 másodperces; szerkesztés vagy megnyitott részletes ablak közben nem vált el."
+          ]
+        },
+        {
+          "category": "Adatok",
+          "title": "Mintaadatok és hiteles információk",
+          "keywords": "hitelesség illusztráció ellenőrzött",
+          "steps": [
+            "A MINTA jelzésű bejegyzések szemléltető tartalmak, nem hivatalos eredmények vagy események.",
+            "Hivatalos ügyintézéshez ellenőrizd az intézményi tájékoztatást; szükség esetén kérdezd az iskolát."
+          ],
+          "page": "information-contact"
+        },
+        {
+          "category": "Adatok",
+          "title": "Hol találom az elérhetőségeket?",
+          "keywords": "kapcsolat cím email telefon",
+          "steps": [
+            "Az elérhetőségek oldalon találod az intézményi kapcsolatfelvételi adatokat.",
+            "A láblécben a cím és az e-mail gyorsan elérhető, valamint látszik a honlap verziója."
+          ],
+          "page": "information-contact"
+        },
+        {
+          "title": "Tanulási központ",
+          "category": "Tartalmak",
+          "keywords": "Tanulási központ",
+          "steps": [
+            "Válassz tanulási témát vagy tudáspróbát, keress a gyűjteményben, majd nyiss meg egy kártyát."
+          ]
+        },
+        {
+          "title": "Dokumentumközpont",
+          "category": "Tartalmak",
+          "keywords": "Dokumentumközpont",
+          "steps": [
+            "Keress címre vagy kulcsszóra, szűrj kategória és elérhetőség szerint. Csak rendelkezésre álló fájl tölthető le."
+          ]
+        },
+        {
+          "title": "Iskolai ügyintézés",
+          "category": "Tartalmak",
+          "keywords": "Iskolai ügyintézés",
+          "steps": [
+            "A központi kapcsolat, ügyintézési betekintők és gyakori kérdések egy helyen találhatók."
+          ]
+        },
+        {
+          "title": "Csanádi örökség",
+          "category": "Tartalmak",
+          "keywords": "Csanádi örökség",
+          "steps": [
+            "Nyiss meg egy történeti mérföldkövet az idővonalon, vagy böngészd az olimpiai ismereteket."
+          ]
+        }
+      ]
     }
   },
   "menu": {

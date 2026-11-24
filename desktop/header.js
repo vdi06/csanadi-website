@@ -1,10 +1,10 @@
-import { createHeaderClock, trackHeaderHeight } from "../shared/js/header-clock.js?v=2.56";
-import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.56";
-import { bindAppearance } from "../shared/js/appearance.js?v=2.56";
-import { createEditMode } from "../shared/js/edit-mode.js?v=2.56";
-import { makeSocialLink } from "../shared/js/shell.js?v=2.56";
-import { createDesktopMenu } from "./menu.js?v=2.56";
-import { createDesktopSearch } from "./search.js?v=2.56";
+import { createHeaderClock, trackHeaderHeight } from "../shared/js/header-clock.js?v=2.62";
+import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.62";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.62";
+import { bindSiteHelp } from "../shared/js/site-help.js?v=2.62";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.62";
+import { createDesktopMenu } from "./menu.js?v=2.62";
+import { createDesktopSearch } from "./search.js?v=2.62";
 
 /** Asztali fejléc: címerből nyíló körmenü és külön nagy lebegő keresőablak.
  * A mobilmenü és annak DOM-ja itt nem létezik. */
@@ -26,13 +26,13 @@ export function makeDesktopHeader(config, home, { heroMode = false } = {}) {
       "aria-controls": "desktop-floating-search", "aria-expanded": "false" } });
   const themeToggle = element("button", { className: "desktop-theme-toggle shell-tool shell-theme-toggle",
     attributes: { type: "button", "aria-label": data.themeLabel } });
-  const editToggle = element("button", { className: "desktop-edit-toggle shell-tool",
-    text: data.settingsGlyph, attributes: { type: "button", "aria-label": data.settingsLabel,
-      "aria-pressed": "false" } });
+  const helpToggle = element("button", { className: "desktop-help-toggle shell-tool",
+    text: data.helpGlyph, attributes: { type: "button", "aria-label": data.helpLabel,
+      "aria-expanded": "false", "aria-haspopup": "dialog", title: data.helpLabel } });
 
   const search = createDesktopSearch(config, searchToggle, () => menu.close(false));
   const menu = createDesktopMenu(config, crestToggle, () => search.close(false));
-  const editor = createEditMode(config, home, editToggle, "desktop");
+  const unbindHelp = bindSiteHelp(config, helpToggle, () => { search.close(false); menu.close(false); });
   home.dataset.heroHome = String(heroMode);
   function setCompact(compact) {
     home.dataset.heroCompact = String(compact);
@@ -51,9 +51,8 @@ export function makeDesktopHeader(config, home, { heroMode = false } = {}) {
         ...data.social.map((item) => makeSocialLink(item, "desktop-social shell-tool"))),
       crestToggle,
       element("div", { className: "desktop-links-right" }, searchToggle, themeToggle,
-        editToggle), clock.node),
-    element("p", { className: "desktop-motto", text: data.motto }),
-    editor.bar);
+        helpToggle), clock.node),
+    element("p", { className: "desktop-motto", text: data.motto }));
 
   const stopTracking = trackHeaderHeight(header, home);
   const unbindAppearance = bindAppearance(config, home, themeToggle);
@@ -62,6 +61,6 @@ export function makeDesktopHeader(config, home, { heroMode = false } = {}) {
   return { header, overlays: [search.overlay, menu.overlay], crestToggle,
     openMenu: (origin) => menu.open(origin), setCompact,
     destroy: () => {
-    clock.destroy(); stopTracking(); search.destroy(); menu.destroy(); editor.destroy(); unbindAppearance();
+    clock.destroy(); stopTracking(); search.destroy(); menu.destroy(); unbindHelp(); unbindAppearance();
   } };
 }
