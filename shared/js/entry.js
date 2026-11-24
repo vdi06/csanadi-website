@@ -1,9 +1,9 @@
-import { loadActivity } from "./page-activities.js?v=2.62";
+import { loadActivity } from "./page-activities.js?v=2.63";
 /** Egyetlen HTML, közvetlen kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.62";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.62";
-import { eventById } from "./calendar-data.js?v=2.62";
-import { mountOffline } from "./offline.js?v=2.62";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.63";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.63";
+import { eventById } from "./calendar-data.js?v=2.63";
+import { mountOffline } from "./offline.js?v=2.63";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);

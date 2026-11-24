@@ -1,4 +1,4 @@
-import { element } from "./dom.js?v=2.62";
+import { element } from "./dom.js?v=2.63";
 /** A dokumentumot NEM új lapon, hanem saját vezérlésű <dialog> olvasóban nyitja. */
 const el=element;
 const pdfModuleUrl="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.mjs";

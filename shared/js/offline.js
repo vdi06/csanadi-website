@@ -1,4 +1,4 @@
-import { element } from "./dom.js?v=2.62";
+import { element } from "./dom.js?v=2.63";
 
 /** Vészhelyzeti, JSON-tól független nézet. Csak a minimális tartalékfeliratok
  * élnek itt: a normál iskolai tartalom továbbra is kizárólag JSON-alapú. */

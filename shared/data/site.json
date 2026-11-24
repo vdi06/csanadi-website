@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.30",
-  "release": "2.62",
+  "release": "2.63",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -1788,7 +1788,11 @@
             "admission-documents",
             "information-disclosure"
           ],
-          "enabled": true
+          "enabled": true,
+          "labelParts": [
+            "Dokumentum",
+            "központ"
+          ]
         },
         {
           "id": "services",
@@ -2116,7 +2120,7 @@
           "title": "Kezdőlapi fő fülek",
           "keywords": "carousel sportsiker naptár automatikus",
           "steps": [
-            "A fülsávban válthatsz a nyolc tartalom között; telefonon a sáv vízszintesen görgethető.",
+            "A fülsávban válthatsz a nyolc tartalom között. Keskeny kijelzőn a fülek több sorba rendeződnek, így vízszintes görgetés nélkül mindegyik elérhető.",
             "Az automatikus váltás 30 másodperces; szerkesztés vagy megnyitott részletes ablak közben nem vált el."
           ]
         },

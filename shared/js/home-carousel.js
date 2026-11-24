@@ -1,9 +1,9 @@
-import { createHomeCenter } from "./home-centers.js?v=2.62";
-import { createPersonalWidgets } from "./personal-widgets.js?v=2.62";
-import { element } from "./dom.js?v=2.62";
-import { checkedHomeCarousel } from "./carousel-data.js?v=2.62";
-import { createNewsPanel } from "./news-panel.js?v=2.62";
-import { menuPageHref } from "./menu-data.js?v=2.62";
+import { createHomeCenter } from "./home-centers.js?v=2.63";
+import { createPersonalWidgets } from "./personal-widgets.js?v=2.63";
+import { element } from "./dom.js?v=2.63";
+import { checkedHomeCarousel } from "./carousel-data.js?v=2.63";
+import { createNewsPanel } from "./news-panel.js?v=2.63";
+import { menuPageHref } from "./menu-data.js?v=2.63";
 
 /** JSON-ból felépített, bővíthető Bootstrap 5 Carousel: nem igényel
  * nyilakat vagy külön szüneteltető gombot. CDN-kiesésnél osztályváltásos tartalék.
@@ -53,7 +53,7 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
     attributes:{type:"button",id:`${id}-tab-${index}`,role:"tab",
       "aria-controls":slides[index].getAttribute("id"),"data-panel-type":panel.type,
       "aria-selected":index === 0 ? "true" : "false",tabindex:index === 0 ? "0" : "-1"}
-  },element("span",{className:"home-tab-icon",text:panel.icon,attributes:{"aria-hidden":"true"}}),element("span",{className:"home-tab-label",text:panel.label})));
+  },element("span",{className:"home-tab-icon",text:panel.icon,attributes:{"aria-hidden":"true"}}),element("span",{className:"home-tab-label",attributes:{"aria-label":panel.label}},...(panel.labelParts ? panel.labelParts.flatMap((part,i)=>i?[element("wbr"),part]:[part]):[panel.label]))));
   const descriptionId = `${id}-usage-hint`;
   const tabBar = element("div", {className:"home-carousel-tabs",attributes:{
     role:"tablist","aria-label":data.ariaLabel
@@ -70,8 +70,6 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
   function reflect(index,updateClasses=false) {
     current = index;
     instances[index].activate?.();
-    const activeTab=tabs[index];const barRect=tabBar.getBoundingClientRect(),tabRect=activeTab.getBoundingClientRect();
-    if(tabRect.left<barRect.left||tabRect.right>barRect.right)tabBar.scrollLeft+=tabRect.left-barRect.left-(barRect.width-tabRect.width)/2;
     instances.forEach((instance,i) => {
       if (i !== index) { instance.closePopover?.(); instance.closeDetails?.(); }
     });

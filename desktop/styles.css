@@ -1221,4 +1221,4 @@
 .desktop-home .personal-widget-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
 @media(max-width:1000px){.desktop-home .personal-widget-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 /* Eight or more tabs remain readable; the active tab stays within the strip. */
-.desktop-home .home-carousel-tabs{overflow-x:auto;flex-wrap:nowrap;max-width:100%;justify-content:safe center;padding:5px;gap:6px}.desktop-home .home-carousel-tab{min-width:0;padding:9px 13px;font-size:.9rem;white-space:nowrap;flex-shrink:0}
+.desktop-home .home-carousel-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;max-width:100%;padding:5px;gap:8px}.desktop-home .home-carousel-tab{min-width:0;width:100%;padding:9px 8px;font-size:.9rem;white-space:normal;overflow-wrap:anywhere;line-height:1.3;display:flex;align-items:center;justify-content:center;gap:5px}.desktop-home .home-tab-label{min-width:0;text-align:center}.desktop-home .home-tab-icon{flex-shrink:0}@media(min-width:1280px){.desktop-home .home-carousel-tabs{grid-template-columns:repeat(8,minmax(0,1fr))}}

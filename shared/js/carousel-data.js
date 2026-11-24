@@ -22,6 +22,7 @@ export function checkedHomeCarousel(config) {
         !panel.label.trim() || panel.label.length > 50) {
       throw new Error("Hibás, ismétlődő vagy nem támogatott Carousel-panel.");
     }
+    if (panel.labelParts !== undefined && (!Array.isArray(panel.labelParts) || panel.labelParts.length < 2 || panel.labelParts.some(part=>typeof part!=="string" || !part.length) || panel.labelParts.join("")!==panel.label)) throw new Error("Hibás fül-felirat tördelés.");
     if (panel.type === "news" && panel.tags !== undefined &&
         (!Array.isArray(panel.tags) || panel.tags.length < 1 || panel.tags.length > 10 ||
          new Set(panel.tags).size !== panel.tags.length ||
