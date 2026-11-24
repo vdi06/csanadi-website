@@ -1,0 +1,21 @@
+{
+  "id": "information-contact",
+  "kind": "tiles",
+  "title": "Kapcsolatfelvételi iránytű",
+  "items": [
+    {
+      "label": "E-mail",
+      "detail": "A hivatalos címre rövid tárggyal, egyértelmű kérdéssel írj."
+    },
+    {
+      "label": "Személyes ügy",
+      "detail": "Előzetesen ellenőrizd, szükséges-e időpontot egyeztetni."
+    },
+    {
+      "label": "Felvételi tájékoztatás",
+      "detail": "Az aktuális felvételi kérdésekhez először a tájékoztatókat tekintsd át.",
+      "related": "admission-guide"
+    }
+  ],
+  "source": "generated"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "information-meals",
+  "kind": "checklist",
+  "title": "Étkezési ügyintézés – felkészülés",
+  "items": [
+    {
+      "label": "Aktuális szolgáltató",
+      "detail": "Ellenőrizd a hatályos étkezési tájékoztatót."
+    },
+    {
+      "label": "Megrendelés",
+      "detail": "Rögzítsd a megfelelő időszakot és az érintett étkezést."
+    },
+    {
+      "label": "Lemondás",
+      "detail": "Az aktuális szolgáltatói határidő szerint járj el."
+    },
+    {
+      "label": "Igazolás",
+      "detail": "Őrizd meg a megrendelés vagy lemondás visszajelzését."
+    }
+  ],
+  "source": "generated"
+}

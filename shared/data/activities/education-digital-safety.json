@@ -1,0 +1,24 @@
+{
+  "id": "education-digital-safety",
+  "kind": "quiz",
+  "title": "Adathalászat felismerése",
+  "question": "Váratlan üzenet azonnali jelszómegadást kér. Mit teszel?",
+  "options": [
+    {
+      "label": "Továbbküldöd a linket mindenkinek.",
+      "explanation": "A veszélyes link további embereket érhet el.",
+      "correct": false
+    },
+    {
+      "label": "A hivatalos felületet külön nyitod meg, ellenőrzöd a feladót.",
+      "explanation": "A sürgetés és gyanús hivatkozás figyelmeztető jel.",
+      "correct": true
+    },
+    {
+      "label": "Megadod a jelszavad a linkelt oldalon.",
+      "explanation": "A hivatkozás hamis felületre vezethet.",
+      "correct": false
+    }
+  ],
+  "source": "generated"
+}

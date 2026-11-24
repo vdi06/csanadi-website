@@ -1,0 +1,24 @@
+{
+  "id": "sports-leisure",
+  "kind": "checklist",
+  "title": "Aktív szabadidő – saját választás",
+  "items": [
+    {
+      "label": "Mozgásforma",
+      "detail": "Válassz kellemes és a körülményeknek megfelelő mozgást."
+    },
+    {
+      "label": "Társas program",
+      "detail": "Egyeztesd a részvételt és a biztonságos szabályokat."
+    },
+    {
+      "label": "Fokozatosság",
+      "detail": "A terhelést igazítsd a saját állapotodhoz és edzésedhez."
+    },
+    {
+      "label": "Pihenés",
+      "detail": "A szabadidőben a regenerációra is hagyj időt."
+    }
+  ],
+  "source": "generated"
+}

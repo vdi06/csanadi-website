@@ -1,0 +1,24 @@
+{
+  "id": "news-events",
+  "kind": "steps",
+  "title": "Program részvételi terv",
+  "items": [
+    {
+      "label": "Kiválasztás",
+      "detail": "Ellenőrizd, hogy a program kiknek szól."
+    },
+    {
+      "label": "Idő és hely",
+      "detail": "A konkrét esemény közzétett adatait nézd meg."
+    },
+    {
+      "label": "Felkészülés",
+      "detail": "Készítsd elő a szükséges eszközöket és engedélyeket."
+    },
+    {
+      "label": "Visszatekintés",
+      "detail": "A program után jegyezd fel a tapasztalatokat."
+    }
+  ],
+  "source": "generated"
+}

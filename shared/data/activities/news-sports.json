@@ -1,0 +1,23 @@
+{
+  "id": "news-sports",
+  "kind": "tiles",
+  "title": "Sporthír-olvasó",
+  "items": [
+    {
+      "label": "Eredmények",
+      "detail": "A helyezések értelmezéséhez nézd meg a korcsoportot és szintet.",
+      "related": "sports-results"
+    },
+    {
+      "label": "Versenyek",
+      "detail": "Tájékozódj a versenytípusok között.",
+      "related": "sports-competitions"
+    },
+    {
+      "label": "Sportági háttér",
+      "detail": "Ismerd meg az adott sportág alapfogalmait.",
+      "related": "sports-knowledge"
+    }
+  ],
+  "source": "generated"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "sports-knowledge",
+  "kind": "quiz",
+  "title": "Sportági alapfogalmak",
+  "question": "Melyik sportágban használják a sáncolás kifejezést?",
+  "options": [
+    {
+      "label": "Úszás",
+      "explanation": "Az úszásban a mozgásnem és forduló más technikai fogalom.",
+      "correct": false
+    },
+    {
+      "label": "Röplabda",
+      "explanation": "A háló közelében a támadó labda útját próbálják elzárni.",
+      "correct": true
+    },
+    {
+      "label": "Atlétika",
+      "explanation": "Az atlétika futó-, ugró- és dobószámokra épül.",
+      "correct": false
+    }
+  ],
+  "source": "generated"
+}

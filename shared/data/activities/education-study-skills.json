@@ -1,0 +1,24 @@
+{
+  "id": "education-study-skills",
+  "kind": "checklist",
+  "title": "25 perces aktív tanulási blokk",
+  "items": [
+    {
+      "label": "Cél",
+      "detail": "Válassz egy konkrét témát és egy ellenőrizhető célt."
+    },
+    {
+      "label": "Felidézés",
+      "detail": "Könyv nélkül írj le mindent, amire emlékszel."
+    },
+    {
+      "label": "Ellenőrzés",
+      "detail": "Hasonlítsd össze a jegyzeteddel, javítsd a hiányokat."
+    },
+    {
+      "label": "Ismétlés",
+      "detail": "Néhány nap múlva térj vissza a nehéz pontokra."
+    }
+  ],
+  "source": "generated"
+}

@@ -1,9 +1,10 @@
-import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.54";
-import { bindAppearance } from "../shared/js/appearance.js?v=2.54";
-import { createEditMode } from "../shared/js/edit-mode.js?v=2.54";
-import { makeSocialLink } from "../shared/js/shell.js?v=2.54";
-import { createDesktopMenu } from "./menu.js?v=2.54";
-import { createDesktopSearch } from "./search.js?v=2.54";
+import { createHeaderClock, trackHeaderHeight } from "../shared/js/header-clock.js?v=2.56";
+import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.56";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.56";
+import { createEditMode } from "../shared/js/edit-mode.js?v=2.56";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.56";
+import { createDesktopMenu } from "./menu.js?v=2.56";
+import { createDesktopSearch } from "./search.js?v=2.56";
 
 /** Asztali fejléc: címerből nyíló körmenü és külön nagy lebegő keresőablak.
  * A mobilmenü és annak DOM-ja itt nem létezik. */
@@ -42,6 +43,7 @@ export function makeDesktopHeader(config, home, { heroMode = false } = {}) {
   }
   setCompact(!heroMode);
 
+  const clock = createHeaderClock(config);
   const header = element("header", { className: "desktop-header" },
     element("div", { className: "desktop-headline" }, brand),
     element("div", { className: "desktop-toolbar" },
@@ -49,16 +51,17 @@ export function makeDesktopHeader(config, home, { heroMode = false } = {}) {
         ...data.social.map((item) => makeSocialLink(item, "desktop-social shell-tool"))),
       crestToggle,
       element("div", { className: "desktop-links-right" }, searchToggle, themeToggle,
-        editToggle)),
+        editToggle), clock.node),
     element("p", { className: "desktop-motto", text: data.motto }),
     editor.bar);
 
+  const stopTracking = trackHeaderHeight(header, home);
   const unbindAppearance = bindAppearance(config, home, themeToggle);
   // A rögzített fejléc backdrop-filtere új pozicionálási környezetet hoz létre.
   // A teljes nézetet fedő menü és kereső ezért a fejléc testvére kell legyen.
   return { header, overlays: [search.overlay, menu.overlay], crestToggle,
     openMenu: (origin) => menu.open(origin), setCompact,
     destroy: () => {
-    search.destroy(); menu.destroy(); editor.destroy(); unbindAppearance();
+    clock.destroy(); stopTracking(); search.destroy(); menu.destroy(); editor.destroy(); unbindAppearance();
   } };
 }

@@ -1,0 +1,24 @@
+{
+  "id": "education-sports",
+  "kind": "checklist",
+  "title": "Tanulás és edzés összehangolása",
+  "items": [
+    {
+      "label": "Heti időrend",
+      "detail": "Írd össze az iskolai és sportkötelezettségeket."
+    },
+    {
+      "label": "Egyeztetés",
+      "detail": "A versenyek és hiányzások ügyében egyeztess a megfelelő felelősökkel."
+    },
+    {
+      "label": "Pótlás",
+      "detail": "Tervezd be a hiányzó tananyag feldolgozását."
+    },
+    {
+      "label": "Regeneráció",
+      "detail": "Hagyj időt a pihenésre és jelezd a túlterhelés tüneteit."
+    }
+  ],
+  "source": "generated"
+}

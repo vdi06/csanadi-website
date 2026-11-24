@@ -1195,3 +1195,17 @@
   outline:none; text-decoration:underline; text-decoration-color:var(--accent);
   text-underline-offset:.18em; text-decoration-thickness:2px;
 }
+/* Desktop: larger editorial panels, centered incomplete rows. */
+.activity-desktop .activity-grid{gap:14px}.activity-desktop .activity-tile{flex-basis:calc((100% - 28px)/3)}.activity-desktop .activity-tile:nth-last-child(1):first-child{flex-basis:100%}.activity-desktop.activity-timeline .activity-tile{flex-basis:calc((100% - 14px)/2)}.activity-desktop.activity-steps .activity-tile{flex-basis:calc((100% - 42px)/4)}
+@media(max-width:1050px){.activity-desktop.activity-steps .activity-tile{flex-basis:calc((100% - 14px)/2)}}
+
+/* Oldalajánló: a hiányos sor is középre igazodik. */
+.content-recommendation.card{flex:0 1 260px;}
+.home-data-strip-desktop{width:100%;max-width:none;}
+.home-data-strip-desktop .home-data-card{grid-template-columns:80px minmax(0,max-content);justify-content:center;}
+.home-data-strip-desktop .home-data-card[data-metric=collections]{grid-template-columns:108px minmax(0,max-content);}
+/* A kezdőlapi hero saját fixed fejléce változatlan; az aloldalakon sticky. */
+.desktop-home:not([data-hero-home="true"]) .desktop-header{position:sticky;top:0;z-index:40;background:var(--background);}
+.desktop-toolbar{row-gap:5px;}
+.desktop-home .desktop-motto{margin-top:7px;}
+@media(max-height:550px){.desktop-home:not([data-hero-home="true"]) .desktop-header{padding-block:5px;}.desktop-home .desktop-headline{margin-bottom:5px;}.desktop-home .desktop-toolbar .shell-crest-toggle{height:54px;width:54px;min-height:54px;}.desktop-home .desktop-motto{margin-top:4px;}}

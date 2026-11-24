@@ -1,15 +1,17 @@
-import { element as el } from './dom.js?v=2.54';
+import { element as el } from './dom.js?v=2.56';
 const norm = x => String(x ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('hu-HU');
 const btn = (text,cl='content-action')=>el('button',{text,className:cl,attributes:{type:'button'}});
-const titleFor=(config,id)=>config.menu.items.flatMap(g=>g.children).find(p=>p.id===id)?.label||id;
+import { validateRecommendations, recommendPages, recommendationPreview, recommendationRoutes } from './recommendations.js?v=2.56';
 export function validateExpansion(config){
  const e=config.contentExpansion;if(!e||e.schema!=='1.0')throw new Error('Hiányzó tartalombővítési adatok.');
  const ids=new Set(config.menu.items.flatMap(g=>g.children.map(p=>p.id)));
  const used=new Set();
+ const routes=new Set(recommendationRoutes(config));
+ validateRecommendations(config);
  if(e.pageCount!==ids.size||Object.keys(e.pageManifest).length!==ids.size)throw new Error('Hibás oldaljegyzék.');
  for(const id of ids){
   const p=config.pagePreview.pages[id],m=p.contentMeta;
-  if(e.pageManifest[id]!==`pages/${id}.json`||!m||!m.sources.length||m.sources.some(s=>!e.sources[s])||!Array.isArray(m.related)||m.related.some(r=>!ids.has(r))||p.collectionId&&!e.collections[p.collectionId])throw new Error('Hibás tartalomkapcsolat: '+id);
+  if(e.pageManifest[id]!==`pages/${id}.json`||!m||!m.sources.length||m.sources.some(s=>!e.sources[s])||!Array.isArray(m.related)||m.related.some(r=>!routes.has(r))||p.collectionId&&!e.collections[p.collectionId])throw new Error('Hibás tartalomkapcsolat: '+id);
  }
  for(const [key,coll] of Object.entries(e.collections)){
   if(!['articles','quiz','stats'].includes(coll.kind)||!coll.title||!Array.isArray(coll.items)||!coll.items.length)throw new Error('Hibás gyűjtemény: '+key);
@@ -48,12 +50,12 @@ export function openContentDialog({title,views,trigger,restore,large=false}){
  window.addEventListener('popstate',onPop);window.addEventListener('hashchange',onHash);
  dialog.addEventListener('keydown',event=>{if(event.key!=='Tab')return;const focusables=[...dialog.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(n=>n.getClientRects().length&&getComputedStyle(n).visibility!=='hidden');if(!focusables.length){event.preventDefault();heading.focus();return;}const first=focusables[0],last=focusables.at(-1),active=document.activeElement;if(!dialog.contains(active)||event.shiftKey&&(active===first||!focusables.includes(active))||!event.shiftKey&&(active===last||!focusables.includes(active))){event.preventDefault();(event.shiftKey?last:first).focus({preventScroll:true});}});
  close.addEventListener('click',dismiss);dialog.addEventListener('cancel',e=>{e.preventDefault();dismiss();});dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dismiss();}});
- dialog.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(a&&a.getAttribute('href').startsWith('#/'))finish(false);});
+ dialog.addEventListener('click',e=>{const a=e.target.closest('a[href]');const href=a?.getAttribute('href');if(href?.startsWith('#/')&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey){e.preventDefault();const destination=new URL(location.href);destination.hash=href;finish(false);if(hasHistory)location.replace(destination.href);else location.hash=href;}});
  prev.addEventListener('click',()=>{if(ix>0){ix--;display();heading.focus({preventScroll:true});}});next.addEventListener('click',()=>{if(ix+1<views.length){ix++;display();heading.focus({preventScroll:true});}});close.focus({preventScroll:true});return true;
 }
 /** Existing closed content panels keep their real DOM; no cloned handlers or lost state. */
 export function installMobilePanelDialogs(root){
- const selectors=['.mobile-feature-program','.mobile-feature-event','.mobile-admission-event','.mobile-admission-process','.mobile-admission-sources','.school-news-story-details','.mobile-timetable-bells'];
+ const selectors=['.mobile-feature-program','.mobile-feature-event','.mobile-admission-event','.mobile-admission-process','.mobile-admission-sources','.school-news-story-details','.mobile-timetable-bells','.mobile-info-bell-details','.home-news-more'];
  const handler=e=>{const summary=e.target.closest('summary');const details=summary?.parentElement;if(!details||!selectors.some(s=>details.matches(s)))return;
   const title=details.closest('.school-news-story')?.querySelector('h2')?.textContent||summary.textContent.trim();
   const nodes=[...details.children].filter(n=>n!==summary);if(!nodes.length)return;
@@ -97,7 +99,26 @@ export function collectionView(config,collectionId,platform){
  }
  section.append(grid,more);render();return section;
 }
-export function relatedView(config,id){const meta=config.pagePreview.pages[id]?.contentMeta;if(!meta?.related?.length)return null;
- return el('nav',{className:'content-related',attributes:{'aria-label':'Kapcsolódó tartalmak'}},el('h2',{text:'Kapcsolódó oldalak'}),el('div',{},...meta.related.map(r=>el('a',{text:titleFor(config,r),attributes:{href:'#/oldal/'+r}}))));}
+export function relatedView(config,id){
+ const groups=recommendPages(config,id),labels=config.contentExpansion.recommendations.labels;
+ if(!groups.topic.length)return null;
+ const nav=el('nav',{className:'content-related',attributes:{'aria-label':labels.title}},el('h2',{text:labels.title}));
+ for(const kind of ['topic','priority']){
+  const grid=el('div',{className:'content-recommendations',attributes:{'data-recommendation-group':kind}});
+  nav.append(el('h3',{className:'recommendation-group-title',text:labels[kind]}),grid);
+  for(const r of groups[kind]){
+   const page=recommendationPreview(config,r);
+   const card=el('button',{className:'content-recommendation card',attributes:{type:'button','aria-haspopup':'dialog','data-recommended-page':r,'data-recommendation-kind':kind}},
+    el('span',{className:'recommendation-icon',attributes:{'aria-hidden':'true'},text:kind==='priority'?'★':'↗'}),
+    el('strong',{text:page.title}),el('span',{className:'recommendation-preview-label',text:labels.preview}));
+   card.addEventListener('click',()=>openContentDialog({title:page.title,trigger:card,views:[()=>el('div',{className:'recommendation-detail'},
+    el('p',{className:'content-kicker',text:labels[kind]}),el('p',{className:'recommendation-intro',text:page.intro}),
+    page.highlights.length?el('section',{},el('h3',{text:'Ezen az oldalon'}),el('ul',{className:'recommendation-highlights'},...page.highlights.map(t=>el('li',{text:t})))):null,
+    el('a',{className:'content-action recommendation-visit',text:'Teljes oldal megnyitása',attributes:{href:'#/oldal/'+r}}))]}));
+   grid.append(card);
+  }
+ }
+ return nav;
+}
 
 export function practicalView(config,id){const n=config.pagePreview.pages[id]?.practicalNote;if(!n)return null;return el('aside',{className:'content-practical'},el('p',{className:'content-kicker',text:'GYAKORLATI ÚTMUTATÓ'}),el('h2',{text:n.title}),el('p',{text:n.text}));}

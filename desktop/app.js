@@ -1,23 +1,24 @@
-import { relatedView, practicalView } from "../shared/js/content-expansion.js?v=2.54";
-import { closeContentDialog } from "../shared/js/content-expansion.js?v=2.54";
-import { createDesktopFeatureCenter } from "./centers.js?v=2.54";
-import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.54";
-import { element } from "../shared/js/dom.js?v=2.54";
-import { mountGate } from "../shared/js/gate.js?v=2.54";
-import { makeFooter } from "../shared/js/footer.js?v=2.54";
-import { makeDesktopHeader } from "./header.js?v=2.54";
-import { createDesktopPage } from "./page.js?v=2.54";
-import { createDesktopHero } from "./hero.js?v=2.54";
-import { createDesktopHomeHighlights } from "./home-highlights.js?v=2.54";
-import { createDesktopSuccesses } from "./successes.js?v=2.54";
-import { createDesktopCalendar } from "./calendar.js?v=2.54";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.54";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.54";
-import { createDesktopInformation } from "./information.js?v=2.54";
-import { createDesktopMedia } from "./gallery.js?v=2.54";
-import { createDesktopTimetable } from "./timetable.js?v=2.54";
-import { createDesktopDocuments } from "./documents.js?v=2.54";
-import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.54";
+import { createHomeDataStrip } from "../shared/js/home-data-strip.js?v=2.56";
+import { activityView } from "../shared/js/page-activities.js?v=2.56";
+import { relatedView, practicalView, closeContentDialog } from "../shared/js/content-expansion.js?v=2.56";
+import { createDesktopFeatureCenter } from "./centers.js?v=2.56";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.56";
+import { element } from "../shared/js/dom.js?v=2.56";
+import { mountGate } from "../shared/js/gate.js?v=2.56";
+import { makeFooter } from "../shared/js/footer.js?v=2.56";
+import { makeDesktopHeader } from "./header.js?v=2.56";
+import { createDesktopPage } from "./page.js?v=2.56";
+import { createDesktopHero } from "./hero.js?v=2.56";
+import { createDesktopHomeHighlights } from "./home-highlights.js?v=2.56";
+import { createDesktopSuccesses } from "./successes.js?v=2.56";
+import { createDesktopCalendar } from "./calendar.js?v=2.56";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.56";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.56";
+import { createDesktopInformation } from "./information.js?v=2.56";
+import { createDesktopMedia } from "./gallery.js?v=2.56";
+import { createDesktopTimetable } from "./timetable.js?v=2.56";
+import { createDesktopDocuments } from "./documents.js?v=2.56";
+import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.56";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {
@@ -81,9 +82,11 @@ export function mount(root, config, page) {
   else if (isNewsPage) main.append(createDesktopPage(config, newsId, {hideCards:true}), newsPage.section);
   else if (page.startsWith("page:")) main.append(createDesktopPage(config, page.slice(5)));
   if(page.startsWith("page:")) {
-    const note=practicalView(config,page.slice(5)),related=relatedView(config,page.slice(5));
+    const activity=activityView(config,page.slice(5),"desktop"),note=practicalView(config,page.slice(5)),related=relatedView(config,page.slice(5));
+    if(activity){const article=main.querySelector("article.desktop-page-preview"); const cards=article?.querySelector(".desktop-page-cards"); if(cards) article.insertBefore(activity,cards); else main.append(activity); }
     if(note)main.append(note); if(related)main.append(related);
   }
+  if (hero) { const strip = createHomeDataStrip(config,"desktop"); if (strip) main.append(strip); }
   home.append(skipLink, desktopHeader.header,
     ...desktopHeader.overlays,
     ...(successes ? [successes.overlay] : []),

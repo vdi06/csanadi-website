@@ -1,0 +1,21 @@
+{
+  "id": "school-awards",
+  "kind": "timeline",
+  "title": "Elismerések és dokumentálás",
+  "items": [
+    {
+      "label": "1989",
+      "detail": "Az intézmény Csanádi Árpád nevét vette fel."
+    },
+    {
+      "label": "1998",
+      "detail": "Az intézmény Olimpiai Érdemérmet kapott."
+    },
+    {
+      "label": "További eredmények",
+      "detail": "Az igazolt sporteredmények a sporteredmény-adatbázisban követhetők.",
+      "related": "sports-results"
+    }
+  ],
+  "source": "old-awards"
+}

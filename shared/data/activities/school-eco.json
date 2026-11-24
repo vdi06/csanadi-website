@@ -1,0 +1,24 @@
+{
+  "id": "school-eco",
+  "kind": "checklist",
+  "title": "Egyhetes zöld kihívás",
+  "items": [
+    {
+      "label": "Kulacsot viszek",
+      "detail": "Az újratölthető kulacs csökkenti az egyszer használatos csomagolást."
+    },
+    {
+      "label": "Megfigyelem a hulladékot",
+      "detail": "Jegyezd fel egy nap, milyen csomagolásokat használsz."
+    },
+    {
+      "label": "Takarékoskodom",
+      "detail": "Távozáskor ellenőrizd az engedélyezett eszközöket és a világítást."
+    },
+    {
+      "label": "Összegzem a változást",
+      "detail": "A hét végén válassz egy fenntartható, tartós szokást."
+    }
+  ],
+  "source": "generated"
+}

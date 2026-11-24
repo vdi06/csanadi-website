@@ -1,0 +1,24 @@
+{
+  "id": "school-explore",
+  "kind": "steps",
+  "title": "Mini kutatás: mi befolyásolja a megfigyelést?",
+  "items": [
+    {
+      "label": "Kérdés",
+      "detail": "Válassz egy mérhető jelenséget, például a különböző felületeken guruló labdát."
+    },
+    {
+      "label": "Mérés",
+      "detail": "Azonos indítási feltételekkel mérd a megtett távolságot több alkalommal."
+    },
+    {
+      "label": "Összehasonlítás",
+      "detail": "Jegyezd fel az eredményeket és keresd az eltéréseket."
+    },
+    {
+      "label": "Következtetés",
+      "detail": "Ne csak a legjobb mérést vedd figyelembe; jelöld a bizonytalanságot."
+    }
+  ],
+  "source": "generated"
+}

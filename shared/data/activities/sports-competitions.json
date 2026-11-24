@@ -1,0 +1,24 @@
+{
+  "id": "sports-competitions",
+  "kind": "steps",
+  "title": "Versenynap szervezése",
+  "items": [
+    {
+      "label": "Kiírás",
+      "detail": "Ellenőrizd a verseny pontos kategóriáját és helyszínét."
+    },
+    {
+      "label": "Utazás",
+      "detail": "Egyeztesd az indulást, kíséretet és felszerelést."
+    },
+    {
+      "label": "Részvétel",
+      "detail": "Kövesd a szervező és edző utasításait."
+    },
+    {
+      "label": "Eredmény",
+      "detail": "A helyezést és eredményt hivatalos eredménylistából rögzítsd."
+    }
+  ],
+  "source": "generated"
+}

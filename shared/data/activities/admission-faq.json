@@ -1,0 +1,23 @@
+{
+  "id": "admission-faq",
+  "kind": "tiles",
+  "title": "Kérdéskör választó",
+  "items": [
+    {
+      "label": "Első osztály",
+      "detail": "Beiratkozás és iskolakezdés.",
+      "related": "admission-primary"
+    },
+    {
+      "label": "Gimnázium",
+      "detail": "Jelentkezés és felkészülés.",
+      "related": "admission-secondary"
+    },
+    {
+      "label": "Iratok",
+      "detail": "Dokumentumok és nyilatkozatok.",
+      "related": "admission-documents"
+    }
+  ],
+  "source": "generated"
+}

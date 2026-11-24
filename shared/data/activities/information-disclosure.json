@@ -1,0 +1,23 @@
+{
+  "id": "information-disclosure",
+  "kind": "tiles",
+  "title": "Közzétételi információk rendszere",
+  "items": [
+    {
+      "label": "Intézményi adatok",
+      "detail": "A hivatalos név és kapcsolat az elérhetőségi oldalon szerepel.",
+      "related": "information-contact"
+    },
+    {
+      "label": "Szabályzatok",
+      "detail": "A ténylegesen elérhető hivatalos iratok és a hiányzó dokumentumok külön jelöltek.",
+      "related": "information-documents"
+    },
+    {
+      "label": "Képzés",
+      "detail": "A képzési szakaszok és felvételi tájékoztatók elkülönítve érhetők el.",
+      "related": "education-programs"
+    }
+  ],
+  "source": "generated"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "education-programs",
+  "kind": "tiles",
+  "title": "Válassz képzési útvonalat",
+  "items": [
+    {
+      "label": "1–8. évfolyam",
+      "detail": "Alapkészségek, tanulási rutinok, fokozatos önállóság.",
+      "related": "education-primary"
+    },
+    {
+      "label": "9–12. évfolyam",
+      "detail": "Tantárgyi elmélyülés és felkészülés a továbbtanulásra.",
+      "related": "education-secondary"
+    },
+    {
+      "label": "Sportiskolai nevelés",
+      "detail": "Tanulási és sportcélok tudatos összehangolása.",
+      "related": "education-sports"
+    }
+  ],
+  "source": "generated"
+}

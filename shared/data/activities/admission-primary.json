@@ -1,0 +1,24 @@
+{
+  "id": "admission-primary",
+  "kind": "checklist",
+  "title": "Első osztály – családi felkészülés",
+  "items": [
+    {
+      "label": "Hivatalos tájékoztató",
+      "detail": "Nézd meg az aktuális beiratkozási feltételeket."
+    },
+    {
+      "label": "Kérdések",
+      "detail": "Írjátok össze a napirenddel és szolgáltatásokkal kapcsolatos kérdéseket."
+    },
+    {
+      "label": "Iratok",
+      "detail": "Az aktuális hivatalos lista szerint készítsétek elő az iratokat."
+    },
+    {
+      "label": "Utazás",
+      "detail": "Próbáljátok ki a lehetséges iskolába vezető útvonalat."
+    }
+  ],
+  "source": "generated"
+}

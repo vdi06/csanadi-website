@@ -1,0 +1,24 @@
+{
+  "id": "information-absence",
+  "kind": "steps",
+  "title": "Hiányzás jelzése és igazolása",
+  "items": [
+    {
+      "label": "Jelzés",
+      "detail": "Az intézmény aktuális szabályai szerint jelezd a mulasztást."
+    },
+    {
+      "label": "Dokumentum",
+      "detail": "A megfelelő igazolást készítsd elő."
+    },
+    {
+      "label": "Rögzítés",
+      "detail": "Kövesd az előírt ügyintézési csatornát."
+    },
+    {
+      "label": "Pótlás",
+      "detail": "Egyeztesd a hiányzó tananyag és feladatok pótlását."
+    }
+  ],
+  "source": "generated"
+}

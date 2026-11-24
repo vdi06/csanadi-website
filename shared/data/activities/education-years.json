@@ -1,0 +1,24 @@
+{
+  "id": "education-years",
+  "kind": "steps",
+  "title": "Tanévi tervező – négy szakasz",
+  "items": [
+    {
+      "label": "Tanévkezdés",
+      "detail": "Gyűjtsd össze az aktuális tanévi szabályokat és időpontokat."
+    },
+    {
+      "label": "Félév",
+      "detail": "Kövesd a tantárgyi célokat, kérj visszajelzést a haladásról."
+    },
+    {
+      "label": "Tavasz",
+      "detail": "Jelöld a közelgő vizsgákat, méréseket és programokat."
+    },
+    {
+      "label": "Tanévzárás",
+      "detail": "Ellenőrizd a beadásokat, a következő tanévhez szükséges teendőket."
+    }
+  ],
+  "source": "generated"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "information-documents",
+  "kind": "tiles",
+  "title": "Dokumentumok használata",
+  "items": [
+    {
+      "label": "Hivatalos iratok",
+      "detail": "Csak ténylegesen elérhető és hatályos szabályzatot tekints irányadónak."
+    },
+    {
+      "label": "Segédletek",
+      "detail": "A saját készítésű gyakorlóanyagok nem intézményi szabályzatok.",
+      "related": "education-resources"
+    },
+    {
+      "label": "Hiányzó tétel",
+      "detail": "A feltöltésre váró dokumentumokról kérj intézményi tájékoztatást.",
+      "related": "information-contact"
+    }
+  ],
+  "source": "generated"
+}

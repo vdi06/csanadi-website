@@ -1,0 +1,24 @@
+{
+  "id": "admission-process",
+  "kind": "steps",
+  "title": "Jelentkezéstől a beiratkozásig",
+  "items": [
+    {
+      "label": "Tájékozódás",
+      "detail": "Hasonlítsd össze a képzési lehetőségeket és feltételeket."
+    },
+    {
+      "label": "Jelentkezés",
+      "detail": "Az aktuális hivatalos útmutató alapján küldd be a szükséges adatokat."
+    },
+    {
+      "label": "Eljárás",
+      "detail": "Kövesd a vizsgák és értesítések rendjét."
+    },
+    {
+      "label": "Döntés",
+      "detail": "A hivatalos értesítés alapján intézd a beiratkozást."
+    }
+  ],
+  "source": "generated"
+}

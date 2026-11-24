@@ -1,9 +1,10 @@
-import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.54";
-import { bindAppearance } from "../shared/js/appearance.js?v=2.54";
-import { createEditMode } from "../shared/js/edit-mode.js?v=2.54";
-import { makeSocialLink } from "../shared/js/shell.js?v=2.54";
-import { createMobileMenu } from "./menu.js?v=2.54";
-import { createMobileSearch } from "./search.js?v=2.54";
+import { createHeaderClock, trackHeaderHeight } from "../shared/js/header-clock.js?v=2.56";
+import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.56";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.56";
+import { createEditMode } from "../shared/js/edit-mode.js?v=2.56";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.56";
+import { createMobileMenu } from "./menu.js?v=2.56";
+import { createMobileSearch } from "./search.js?v=2.56";
 
 /** Csak mobilos fejléc: középső címerből nyíló harmonikamenü, külön kereső. */
 export function makeMobileHeader(config, home) {
@@ -31,18 +32,20 @@ export function makeMobileHeader(config, home) {
   const menu = createMobileMenu(config, crestToggle, () => search.close(false));
   const editor = createEditMode(config, home, editToggle, "mobile");
 
+  const clock = createHeaderClock(config);
   const header = element("header", { className: "mobile-header" },
     brand,
     element("div", { className: "mobile-toolbar" },
       element("nav", { className: "mobile-links-left", attributes: { "aria-label": data.socialLabel } },
         ...data.social.map((item) => makeSocialLink(item, "mobile-social shell-tool"))),
       crestToggle,
-      element("div", { className: "mobile-links-right" }, searchToggle, themeToggle, editToggle)),
+      element("div", { className: "mobile-links-right" }, searchToggle, themeToggle, editToggle), clock.node),
     element("p", { className: "mobile-motto", text: data.motto }),
     menu.overlay, search.overlay, editor.bar);
 
+  const stopTracking = trackHeaderHeight(header, home);
   const unbindAppearance = bindAppearance(config, home, themeToggle);
   return { header, destroy: () => {
-    search.destroy(); menu.destroy(); editor.destroy(); unbindAppearance();
+    clock.destroy(); stopTracking(); search.destroy(); menu.destroy(); editor.destroy(); unbindAppearance();
   } };
 }

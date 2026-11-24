@@ -1,0 +1,24 @@
+{
+  "id": "sports-training",
+  "kind": "checklist",
+  "title": "Edzésnap – tudatos előkészület",
+  "items": [
+    {
+      "label": "Felszerelés",
+      "detail": "A sportág és környezet szerint készítsd össze a megfelelő eszközöket."
+    },
+    {
+      "label": "Edzői terv",
+      "detail": "Az edzővel egyeztesd az aktuális terhelést."
+    },
+    {
+      "label": "Pihenő",
+      "detail": "Tervezz megfelelő időt étkezésre, folyadékra és regenerációra."
+    },
+    {
+      "label": "Visszajelzés",
+      "detail": "Jelezd a szokatlan fájdalmat vagy rosszullétet a felelős felnőttnek."
+    }
+  ],
+  "source": "generated"
+}

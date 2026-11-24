@@ -1,0 +1,24 @@
+{
+  "id": "admission-checklist",
+  "kind": "checklist",
+  "title": "Saját jelentkezési ellenőrzőlista",
+  "items": [
+    {
+      "label": "Képzés kiválasztva",
+      "detail": "Nézd meg az adott tanévre érvényes képzési tájékoztatót."
+    },
+    {
+      "label": "Határidők rögzítve",
+      "detail": "A dátumokat a hivatalos eljárásrendből vedd."
+    },
+    {
+      "label": "Iratok előkészítve",
+      "detail": "Csak az aktuális listán szereplő dokumentumokat gyűjtsd."
+    },
+    {
+      "label": "Visszaigazolás ellenőrizve",
+      "detail": "Ellenőrizd, hogy a jelentkezés ténylegesen beérkezett."
+    }
+  ],
+  "source": "generated"
+}

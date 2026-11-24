@@ -1,0 +1,21 @@
+{
+  "id": "information-timetable",
+  "kind": "tiles",
+  "title": "Iskolai időrend a gyakorlatban",
+  "items": [
+    {
+      "label": "Csengetés",
+      "detail": "A tanórák kezdetét és végét a fenti hivatalos időrendben ellenőrizd."
+    },
+    {
+      "label": "Osztályórarend",
+      "detail": "A bemutató órarend nem a tanuló tényleges órarendje."
+    },
+    {
+      "label": "Változás",
+      "detail": "Rendkívüli napirendnél az aktuális közlemény az irányadó.",
+      "related": "news-announcements"
+    }
+  ],
+  "source": "generated"
+}

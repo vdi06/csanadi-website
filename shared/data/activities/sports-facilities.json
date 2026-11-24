@@ -1,0 +1,20 @@
+{
+  "id": "sports-facilities",
+  "kind": "tiles",
+  "title": "Biztonságos sporttér",
+  "items": [
+    {
+      "label": "Tornaterem",
+      "detail": "A pálya szabad területét és a felszerelés állapotát ellenőrizni kell."
+    },
+    {
+      "label": "Kültéri pálya",
+      "detail": "Időjárás, burkolat és megvilágítás befolyásolja a használatot."
+    },
+    {
+      "label": "Eszközök",
+      "detail": "Csak az adott tevékenységhez engedélyezett felszereléssel gyakorolj."
+    }
+  ],
+  "source": "generated"
+}

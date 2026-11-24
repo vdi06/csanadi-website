@@ -1,0 +1,24 @@
+{
+  "id": "school-values",
+  "kind": "quiz",
+  "title": "Értékek a gyakorlatban",
+  "question": "A társad hibázik a mérkőzésen. Mi segít a csapatnak?",
+  "options": [
+    {
+      "label": "Minden döntést átvállalsz helyette.",
+      "explanation": "Az önálló döntés is része a tanulásnak.",
+      "correct": false
+    },
+    {
+      "label": "Bátorítod és a következő játékra figyelsz.",
+      "explanation": "Ez támogatja a bizalmat és a közös fejlődést.",
+      "correct": true
+    },
+    {
+      "label": "Kineveted.",
+      "explanation": "A hibáztatás nem segíti a javulást.",
+      "correct": false
+    }
+  ],
+  "source": "generated"
+}

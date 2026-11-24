@@ -68,8 +68,9 @@
     ],
     "checkedAt": "2026-11-24",
     "related": [
-      "admission-checklist",
-      "admission-documents"
+      "education-primary",
+      "admission-documents",
+      "admission-checklist"
     ],
     "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
   },

@@ -1,0 +1,23 @@
+{
+  "id": "news-latest",
+  "kind": "tiles",
+  "title": "Hírek böngészési útvonala",
+  "items": [
+    {
+      "label": "Iskolai közlés",
+      "detail": "A hivatalos teendőket tartalmazó információk elkülönítve kereshetők.",
+      "related": "news-announcements"
+    },
+    {
+      "label": "Sport",
+      "detail": "Sporttal kapcsolatos hírek és eredmények.",
+      "related": "news-sports"
+    },
+    {
+      "label": "Visszakeresés",
+      "detail": "Régebbi cikkeket az archívumban találhatsz.",
+      "related": "news-archive"
+    }
+  ],
+  "source": "generated"
+}

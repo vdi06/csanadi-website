@@ -1,9 +1,9 @@
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.54";
-import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.54";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.54";
-import { calendarEntries } from "./calendar-data.js?v=2.54";
-import { newsStoryHref } from "./news-panel.js?v=2.54";
-import { checkedAdmissions } from "./admission-data.js?v=2.54";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.56";
+import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.56";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.56";
+import { calendarEntries } from "./calendar-data.js?v=2.56";
+import { newsStoryHref } from "./news-panel.js?v=2.56";
+import { checkedAdmissions } from "./admission-data.js?v=2.56";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */
@@ -144,7 +144,7 @@ function createIndex(config) {
     if (!page) return;
     add({ label:page.title, category:categories.page, href:menuPageHref(node.id),
       summary:parents.join(" · "),
-      details:`${page.intro} ${pagePreviewSearchText(page.items)} ${config.pagePreview.pages[node.id]?.practicalNote?.text||""}` });
+      details:`${page.intro} ${pagePreviewSearchText(page.items)} ${config.pagePreview.pages[node.id]?.practicalNote?.text||""} ${config.contentExpansion?.activities?.[node.id]?.search||""}` });
   }
   for (const root of config.menu.items) visit(root);
   // A menüből kivett, de saját oldalcímmel megtartott képzési témák is
@@ -154,7 +154,7 @@ function createIndex(config) {
     if (!page) continue;
     add({ label:page.title, category:categories.page,
       href:menuPageHref(local.id), summary:local.parentId,
-      details:`${page.intro} ${pagePreviewSearchText(page.items)}` });
+      details:`${page.intro} ${pagePreviewSearchText(page.items)} ${config.contentExpansion?.activities?.[local.id]?.search||""}` });
   }
 
   for (const coll of Object.values(config.contentExpansion?.collections || {})) {

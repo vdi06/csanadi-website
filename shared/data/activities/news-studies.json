@@ -1,0 +1,23 @@
+{
+  "id": "news-studies",
+  "kind": "tiles",
+  "title": "Tanulmányi hírekből gyakorlás",
+  "items": [
+    {
+      "label": "Tanulási cél",
+      "detail": "Válassz egy konkrét fejlesztendő készséget.",
+      "related": "education-study-skills"
+    },
+    {
+      "label": "Feladatsor",
+      "detail": "Gyakorold a kapcsolódó tantárgyi feladatokat.",
+      "related": "education-subject-guides"
+    },
+    {
+      "label": "Vizsga",
+      "detail": "Ellenőrizd a hivatalos követelményeket és időpontokat.",
+      "related": "education-exams"
+    }
+  ],
+  "source": "generated"
+}

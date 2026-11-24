@@ -1,0 +1,24 @@
+{
+  "id": "news-announcements",
+  "kind": "checklist",
+  "title": "Közlemény olvasási ellenőrzőlista",
+  "items": [
+    {
+      "label": "Dátum",
+      "detail": "Nézd meg, mikor jelent meg és melyik időszakra vonatkozik."
+    },
+    {
+      "label": "Érintettek",
+      "detail": "Ellenőrizd, hogy a te évfolyamodra vagy csoportodra vonatkozik-e."
+    },
+    {
+      "label": "Teendő",
+      "detail": "Külön jegyezd fel, ha válasz, jelentkezés vagy dokumentum szükséges."
+    },
+    {
+      "label": "Forrás",
+      "detail": "Minta vagy ellenőrizendő jelölésű közlést ne kezelj hivatalos utasításként."
+    }
+  ],
+  "source": "generated"
+}

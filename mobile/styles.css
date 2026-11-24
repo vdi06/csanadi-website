@@ -1035,3 +1035,29 @@
 @media(min-width:351px){.mobile-home-highlights-list{grid-template-columns:repeat(2,minmax(0,1fr));}.mobile-home-highlight{flex-direction:column;align-items:flex-start;gap:9px;min-width:0;}.mobile-home-highlight:last-child:nth-child(odd){grid-column:1/-1;flex-direction:row;align-items:center;}.mobile-home-highlight-arrow{align-self:flex-end;}.mobile-home-highlight-content{overflow-wrap:anywhere;}}
 .mobile-admission-center .admission-mobile-link,.mobile-admission-shortcuts .admission-mobile-link{min-height:44px;}
 .mobile-feature-events>.content-action{display:block;margin:12px auto;}
+/* Mobile: compact two-column overview, one column on very small screens. */
+.activity-mobile{max-width:560px;padding:14px;margin:18px auto;border-radius:15px;}.activity-mobile .activity-grid{gap:8px;}.activity-mobile .activity-tile{flex-basis:calc((100% - 8px)/2);min-height:120px;padding:11px;}.activity-mobile .activity-summary{-webkit-line-clamp:2;}.activity-mobile .activity-checklist{gap:8px;}.activity-mobile .activity-check{padding:9px;}.activity-mobile .activity-check small{font-size:.78rem;}.activity-mobile .activity-quiz{grid-template-columns:1fr;}
+@media(max-width:350px){.activity-mobile .activity-tile{flex-basis:100%;min-height:95px;}.activity-mobile .activity-checklist,.activity-mobile .activity-number-grid{grid-template-columns:1fr;}}
+
+/* Oldalajánló: kompakt, középre rendezett kétoszlopos kártyák. */
+.content-related>.content-recommendations{gap:9px;}
+.content-recommendation.card{flex:0 1 calc((100% - 9px)/2);padding:10px 8px;min-height:112px;}
+.content-recommendation strong{font-size:.9rem;}
+@media(max-width:350px){.content-recommendation.card{flex-basis:min(100%,280px);}}
+/* A három minigrafikon a kezdőlapon is egymás mellett marad; nagyított betűnél szabadon nőhet. */
+.home-data-strip-mobile{width:100%;max-width:none;margin:12px 0 0;padding:7px max(4px,env(safe-area-inset-right)) 8px max(4px,env(safe-area-inset-left));border-radius:0;}
+.home-data-strip-mobile h2{font-size:.72rem;margin-bottom:4px;}
+.home-data-strip-mobile .home-data-card{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;text-align:center;min-height:83px;padding:3px 4px;}
+.home-data-strip-mobile .home-data-graphic{height:35px;min-height:35px;width:66px;max-width:100%;}.home-data-strip-mobile .home-data-ring{height:36px;width:48px;}.home-data-strip-mobile .home-data-value{font-size:1.03rem;}.home-data-strip-mobile .home-data-label{font-size:.64rem;line-height:1.2;}.home-data-strip-mobile .home-data-years{gap:6px;}.home-data-strip-mobile .home-data-year{grid-template-rows:8px 15px 10px;gap:1px;}.home-data-strip-mobile .home-data-year-track{height:15px;width:12px;}.home-data-strip-mobile .home-data-year-value,.home-data-strip-mobile .home-data-year-label{font-size:.56rem;}.home-data-strip-mobile .home-data-bars{gap:3px;}.home-data-strip-mobile .home-data-bar-track{height:5px;}
+.home-data-strip-mobile .home-data-card[data-metric=collections] .home-data-graphic{width:95px;}.home-data-strip-mobile .home-data-bar{grid-template-columns:27px minmax(0,1fr) 15px;gap:2px;}.home-data-strip-mobile .home-data-bar-name,.home-data-strip-mobile .home-data-bar-number{font-size:.59rem;}
+/* A címeres menü alatti óra minden tartalmi útvonalon látható. */
+.mobile-header{position:sticky;top:0;z-index:40;background:var(--background);}
+.mobile-toolbar{row-gap:5px;}
+.mobile-motto{margin-top:7px;}
+.school-header-clock{padding:4px 8px;}
+.school-header-clock svg{width:96px;height:24px;}
+.school-clock-date{display:none;}
+.mobile-story-track{top:var(--school-header-height,0px);}
+@media(min-height:700px){html[data-platform="mobile"][data-route="home"]{scroll-padding-top:calc(var(--school-header-height,0px) + clamp(132px,18dvh,152px) + 8px);}}
+@media(max-height:699px){.mobile-story-track{position:relative;top:auto;}}
+@media(max-height:480px){.mobile-header{padding-block:4px;}.mobile-brand{margin-bottom:4px;}.mobile-toolbar .shell-crest-toggle{width:48px;height:48px;min-height:48px;}.mobile-toolbar .shell-tool{min-height:44px;}.mobile-motto{margin-top:3px;}}

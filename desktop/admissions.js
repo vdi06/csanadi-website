@@ -1,5 +1,5 @@
-import {element as el} from '../shared/js/dom.js?v=2.54';
-import {checkedAdmissions,admissionMilestones,milestoneStatus,statusLabel,admissionDateLabel,nextAdmissionMilestone,budapestToday} from '../shared/js/admission-data.js?v=2.54';
+import {element as el} from '../shared/js/dom.js?v=2.56';
+import {checkedAdmissions,admissionMilestones,milestoneStatus,statusLabel,admissionDateLabel,nextAdmissionMilestone,budapestToday} from '../shared/js/admission-data.js?v=2.56';
 const href=(id)=>`#/oldal/${id}`;
 const link=(label,id)=>el('a',{className:'admission-link',text:label,attributes:{href:href(id)}});
 export function createDesktopAdmissionLinks(config){

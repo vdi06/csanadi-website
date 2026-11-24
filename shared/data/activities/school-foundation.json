@@ -1,0 +1,21 @@
+{
+  "id": "school-foundation",
+  "kind": "tiles",
+  "title": "Támogatás – tájékozódási pontok",
+  "items": [
+    {
+      "label": "Célok",
+      "detail": "A tanulást és sportot támogató tevékenységek az alapítványi tájékoztatóhoz kapcsolódnak."
+    },
+    {
+      "label": "Adatok ellenőrzése",
+      "detail": "Adományozás előtt kérd az aktuális hivatalos adatokat; régi számlaadatot ne használj."
+    },
+    {
+      "label": "Kapcsolat",
+      "detail": "Az intézményi kapcsolaton keresztül kérhetsz friss tájékoztatást.",
+      "related": "information-contact"
+    }
+  ],
+  "source": "generated"
+}

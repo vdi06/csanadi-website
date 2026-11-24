@@ -1,0 +1,24 @@
+{
+  "id": "sports-wellbeing",
+  "kind": "checklist",
+  "title": "Regenerációs önellenőrzés",
+  "items": [
+    {
+      "label": "Pihenés",
+      "detail": "Hagyj elegendő időt az alvásra és a napi pihenésre."
+    },
+    {
+      "label": "Folyadék",
+      "detail": "Figyelj a folyadékpótlásra az edzői és környezeti útmutatás szerint."
+    },
+    {
+      "label": "Terhelés",
+      "detail": "Szokatlan fájdalom vagy rosszullét esetén jelezz felnőttnek."
+    },
+    {
+      "label": "Tanulás",
+      "detail": "A tanulási feladatokat oszd el a hét során."
+    }
+  ],
+  "source": "generated"
+}

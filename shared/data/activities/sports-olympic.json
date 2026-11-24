@@ -1,0 +1,24 @@
+{
+  "id": "sports-olympic",
+  "kind": "quiz",
+  "title": "Olimpiai értékek – tudáspróba",
+  "question": "Melyik példa fejezi ki legjobban a tisztességes versenyt?",
+  "options": [
+    {
+      "label": "Csak a győztes ellenfelet tiszteled.",
+      "explanation": "Minden résztvevőt tisztelet illet.",
+      "correct": false
+    },
+    {
+      "label": "A szabályokat akkor is betartod, ha a bíró nem látja.",
+      "explanation": "A fair play nem csak a szabályok kikényszerítésén alapul.",
+      "correct": true
+    },
+    {
+      "label": "A győzelemért bármit megteszel.",
+      "explanation": "A tisztesség a győzelemnél is fontosabb.",
+      "correct": false
+    }
+  ],
+  "source": "generated"
+}

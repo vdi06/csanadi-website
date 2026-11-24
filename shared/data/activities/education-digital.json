@@ -1,0 +1,24 @@
+{
+  "id": "education-digital",
+  "kind": "checklist",
+  "title": "Digitális beadás – önellenőrzés",
+  "items": [
+    {
+      "label": "Fájlnév",
+      "detail": "Az előírt név és kiterjesztés ellenőrzése."
+    },
+    {
+      "label": "Tartalom",
+      "detail": "Nyisd meg a ténylegesen beadandó változatot."
+    },
+    {
+      "label": "Megosztás",
+      "detail": "Ellenőrizd, hogy az előírt csatornán és jogosultsággal adod be."
+    },
+    {
+      "label": "Visszajelzés",
+      "detail": "Nézd meg, hogy a rendszer valóban rögzítette a beadást."
+    }
+  ],
+  "source": "generated"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "admission-guide",
+  "kind": "tiles",
+  "title": "Felvételi döntéstámogató",
+  "items": [
+    {
+      "label": "Képzési cél",
+      "detail": "Melyik képzés felel meg a továbbtanulási terveidnek?",
+      "related": "education-programs"
+    },
+    {
+      "label": "Felkészülés",
+      "detail": "Mely feladattípusokban szükséges több gyakorlás?",
+      "related": "admission-preparation"
+    },
+    {
+      "label": "Gyakori kérdés",
+      "detail": "Ellenőrizd a választ a tájékoztatókban és a hivatalos közlésekben.",
+      "related": "admission-faq"
+    }
+  ],
+  "source": "generated"
+}

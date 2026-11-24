@@ -1,0 +1,23 @@
+{
+  "id": "education-resources",
+  "kind": "tiles",
+  "title": "Gyakorlási útvonalak",
+  "items": [
+    {
+      "label": "Tanulásmódszer",
+      "detail": "Az aktív felidézés segít ellenőrizni, mit tudsz segítség nélkül.",
+      "related": "education-study-skills"
+    },
+    {
+      "label": "Tantárgyi feladatok",
+      "detail": "Válassz témát és próbáld ki a gyakorlófeladatokat.",
+      "related": "education-subject-guides"
+    },
+    {
+      "label": "Digitális forrás",
+      "detail": "Ellenőrizd a szerzőt, a dátumot és a forrás megbízhatóságát.",
+      "related": "education-digital-safety"
+    }
+  ],
+  "source": "generated"
+}

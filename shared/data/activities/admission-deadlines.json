@@ -1,0 +1,24 @@
+{
+  "id": "admission-deadlines",
+  "kind": "steps",
+  "title": "Határidő-napló vezetése",
+  "items": [
+    {
+      "label": "Közzététel",
+      "detail": "Az adott tanév hivatalos eljárásrendjéből indulj ki."
+    },
+    {
+      "label": "Jelentkezés",
+      "detail": "Külön jelöld a központi vizsgát és az intézményi jelentkezést, ha alkalmazandó."
+    },
+    {
+      "label": "Értesítés",
+      "detail": "Figyeld az eredmények és a sorrendmódosítás hivatalos időszakát."
+    },
+    {
+      "label": "Beiratkozás",
+      "detail": "A kapott értesítés szerint készülj az iratokkal."
+    }
+  ],
+  "source": "generated"
+}

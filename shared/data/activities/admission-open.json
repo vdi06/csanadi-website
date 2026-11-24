@@ -1,0 +1,24 @@
+{
+  "id": "admission-open",
+  "kind": "checklist",
+  "title": "Nyílt napra készülök",
+  "items": [
+    {
+      "label": "Időpont",
+      "detail": "A hivatalosan közölt időpontot és részvételi feltételeket ellenőrizd."
+    },
+    {
+      "label": "Tanulás",
+      "detail": "Kérdezz a tantárgyi terhelésről és a támogatásról."
+    },
+    {
+      "label": "Sport",
+      "detail": "Kérdezz a sport és iskolai kötelezettségek összehangolásáról."
+    },
+    {
+      "label": "Összegzés",
+      "detail": "A látogatás után írd le a tapasztalataidat és a nyitott kérdéseidet."
+    }
+  ],
+  "source": "generated"
+}

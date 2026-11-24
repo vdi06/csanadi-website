@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.54";
-import { checkedDocumentCenter, documentResults } from "../shared/js/document-data.js?v=2.54";
-import { createDocumentReader } from "../shared/js/document-reader.js?v=2.54";
+import { element } from "../shared/js/dom.js?v=2.56";
+import { checkedDocumentCenter, documentResults } from "../shared/js/document-data.js?v=2.56";
+import { createDocumentReader } from "../shared/js/document-reader.js?v=2.56";
 const el=element;
 /** Önálló, érintéses mobil dokumentumközpont. Nincs asztali kártyák CSS-kicsinyítése. */
 export function createMobileDocuments(config){

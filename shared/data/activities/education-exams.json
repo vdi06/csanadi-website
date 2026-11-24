@@ -1,0 +1,24 @@
+{
+  "id": "education-exams",
+  "kind": "checklist",
+  "title": "Vizsganapi előkészületek",
+  "items": [
+    {
+      "label": "Időpont ellenőrzése",
+      "detail": "A pontos beosztást mindig a hivatalos értesítésből vedd."
+    },
+    {
+      "label": "Eszközök",
+      "detail": "Csak az adott vizsgán engedélyezett eszközöket készítsd össze."
+    },
+    {
+      "label": "Útvonal és érkezés",
+      "detail": "Tervezd meg az utat ráhagyással."
+    },
+    {
+      "label": "Követelmények",
+      "detail": "Gyakorláskor különítsd el a biztos tudást és a még fejlesztendő részeket."
+    }
+  ],
+  "source": "generated"
+}

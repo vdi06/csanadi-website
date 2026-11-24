@@ -1,0 +1,23 @@
+{
+  "id": "school-introduction",
+  "kind": "tiles",
+  "title": "Ismerd meg az iskola három arcát",
+  "items": [
+    {
+      "label": "Tanulás",
+      "detail": "Általános iskolai alapozás és gimnáziumi továbbtanulás. Nézd meg az eltérő képzési szakaszokat!",
+      "related": "education-programs"
+    },
+    {
+      "label": "Sport",
+      "detail": "A sportiskolai szemlélet a tanulmányokat és sportolói célokat együtt kezeli.",
+      "related": "sports-disciplines"
+    },
+    {
+      "label": "Közösség",
+      "detail": "Az iskolai programok és a közös projektek lehetőséget adnak az együttműködésre.",
+      "related": "news-community"
+    }
+  ],
+  "source": "generated"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "information-services",
+  "kind": "checklist",
+  "title": "Ügyintézés előkészítése",
+  "items": [
+    {
+      "label": "Ügy tárgya",
+      "detail": "Írd le egy mondatban, miben kérsz segítséget."
+    },
+    {
+      "label": "Illetékes",
+      "detail": "Az ügy típusához megfelelő hivatalos kapcsolatot válaszd."
+    },
+    {
+      "label": "Szükséges adat",
+      "detail": "Csak az eljáráshoz szükséges személyes adatot add meg."
+    },
+    {
+      "label": "Visszajelzés",
+      "detail": "Őrizd meg a kapott igazolást vagy tájékoztatást."
+    }
+  ],
+  "source": "generated"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "education-library",
+  "kind": "quiz",
+  "title": "Forráskritika próba",
+  "question": "Két oldal ellentmondó adatot közöl. Mi a legjobb első lépés?",
+  "options": [
+    {
+      "label": "Megkeresed az eredeti, dátummal és szerzővel ellátott forrást.",
+      "explanation": "A forrás eredete és aktualitása segíti az ellenőrzést.",
+      "correct": true
+    },
+    {
+      "label": "A rövidebb cikket választod.",
+      "explanation": "A hossz nem bizonyítja a megbízhatóságot.",
+      "correct": false
+    },
+    {
+      "label": "Mindkét adatot összeadod.",
+      "explanation": "Az eltérés okát kell tisztázni, nem összegezni.",
+      "correct": false
+    }
+  ],
+  "source": "generated"
+}

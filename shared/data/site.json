@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.30",
-  "release": "2.54",
+  "release": "2.56",
   "site": {
     "fullName": "Csanádi Árpád Sportiskola, Általános Iskola és Gimnázium",
     "crest": "./shared/assets/media/logo/csanadi-crest-512.webp",
@@ -1361,6 +1361,40 @@
           ],
           "href": "#/oldal/sports-results",
           "verified": false
+        },
+        {
+          "id": "diakolimpia-leany-labdarugas-2025",
+          "name": "Csanádi leánycsapat",
+          "sport": "Labdarúgás",
+          "result": "3. hely",
+          "competition": "Diákolimpia országos döntő – V–VI. korcsoport",
+          "date": "2025-05-19",
+          "image": null,
+          "summary": "A Magyar Diáksport Szövetség 2025-ös országos döntőről szóló beszámolója igazolja a bronzérmet.",
+          "details": [
+            "A V–VI. korcsoportos leány labdarúgás országos döntőjén a Csanádi csapata harmadik helyezést szerzett.",
+            "Forrás: MDSZ, Diákolimpia hivatalos beszámolója. A dátum a beszámoló közzétételének napja."
+          ],
+          "href": "#/oldal/sports-results",
+          "verified": true,
+          "source": "mdsz-2025"
+        },
+        {
+          "id": "diakolimpia-leany-labdarugas-2026",
+          "name": "Csanádi leánycsapat",
+          "sport": "Labdarúgás",
+          "result": "3. hely",
+          "competition": "Diákolimpia országos döntő – III–IV. korcsoport",
+          "date": "2026-05-31",
+          "image": null,
+          "summary": "A Magyar Diáksport Szövetség 2026-os országos döntőről szóló beszámolója igazolja a bronzérmet.",
+          "details": [
+            "A III–IV. korcsoportos leány labdarúgás országos döntőjén a Csanádi csapata harmadik helyezést szerzett.",
+            "Forrás: MDSZ, Diákolimpia hivatalos beszámolója. A dátum a május 29–31. között megrendezett országos döntő utolsó napja."
+          ],
+          "href": "#/oldal/sports-results",
+          "verified": true,
+          "source": "mdsz-2026"
         }
       ],
       "verificationLabel": "MINTA",
@@ -1647,7 +1681,11 @@
           "glyph": "K",
           "url": "https://klik200346001.e-kreta.hu/"
         }
-      ]
+      ],
+      "clock": {
+        "timeZone": "Europe/Budapest",
+        "label": "Budapesti idő"
+      }
     },
     "editor": {
       "title": "Szerkesztő mód"
@@ -1746,6 +1784,42 @@
           "pageId": "news-latest"
         }
       ]
+    },
+    "dataStrip": {
+      "enabled": true,
+      "title": "Csanádi számokban",
+      "detailKicker": "HONLAP · ADATÁTTEKINTÉS",
+      "labels": {
+        "details": "Részletek megnyitása",
+        "open": "Kapcsolódó oldal megnyitása",
+        "available": "Megnyitható fájlok",
+        "pending": "Hiányzó / nem elérhető fájlok",
+        "news": "Hírek és közlemények",
+        "events": "Naptári bejegyzések",
+        "media": "Galériaelemek",
+        "short": {
+          "news": "Hír",
+          "events": "Naptár",
+          "media": "Kép"
+        }
+      },
+      "cards": {
+        "documents": {
+          "title": "Elérhető dokumentumok",
+          "page": "information-documents",
+          "note": "A dokumentumtár tényleges fájlellátottsága. Az elérhető fájlok között saját készítésű segédletek is vannak; a mutató nem a hivatalos iratok teljességét igazolja."
+        },
+        "collections": {
+          "title": "Tartalmi bejegyzések",
+          "page": "news-latest",
+          "note": "A hírek, naptári bejegyzések és nyilvános galériaelemek összege. Ez a honlap adatmennyiségét jelzi; mintaadatokat és ellenőrizendő tartalmakat is tartalmaz."
+        },
+        "sports": {
+          "title": "Igazolt sportsikerek",
+          "page": "sports-results",
+          "note": "Kizárólag a forrással és ellenőrzött jelöléssel rendelkező csapateredmények száma. Nem az iskola teljes eredménylistája vagy teljesítménytrendje."
+        }
+      }
     }
   },
   "menu": {
@@ -2055,19 +2129,34 @@
         "id": "education-primary",
         "title": "Általános iskola",
         "parentId": "education-programs",
-        "cardIndex": 0
+        "cardIndex": 0,
+        "related": [
+          "admission-primary",
+          "education-resources",
+          "education-study-skills"
+        ]
       },
       {
         "id": "education-secondary",
         "title": "Gimnázium",
         "parentId": "education-programs",
-        "cardIndex": 1
+        "cardIndex": 1,
+        "related": [
+          "admission-secondary",
+          "education-exams",
+          "education-career"
+        ]
       },
       {
         "id": "education-sports",
         "title": "Sportiskolai nevelés",
         "parentId": "education-programs",
-        "cardIndex": 2
+        "cardIndex": 2,
+        "related": [
+          "sports-disciplines",
+          "sports-training",
+          "sports-wellbeing"
+        ]
       }
     ],
     "pages": {
@@ -2209,7 +2298,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "education-programs",
-            "admission-guide"
+            "school-values",
+            "school-history"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -2335,8 +2425,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
-            "sports-knowledge",
-            "education-community"
+            "school-compass",
+            "education-community",
+            "education-sports"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -2474,7 +2565,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "information-contact",
-            "information-services"
+            "information-services",
+            "education-programs"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -2630,7 +2722,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "school-awards",
-            "sports-olympic"
+            "sports-olympic",
+            "school-introduction"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -2736,7 +2829,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "school-foundation",
-            "sports-training"
+            "sports-training",
+            "school-introduction"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -2834,7 +2928,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "school-explore",
-            "sports-statistics"
+            "education-subject-guides",
+            "school-workshop"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -2936,8 +3031,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
+            "school-workshop",
             "education-subject-guides",
-            "sports-statistics"
+            "school-eco"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -3035,6 +3131,7 @@
           "checkedAt": "2026-11-24",
           "related": [
             "school-values",
+            "information-absence",
             "information-parent-guide"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -3137,7 +3234,8 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
-            "education-digital-safety",
+            "school-explore",
+            "education-community",
             "education-resources"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -3245,8 +3343,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
-            "education-career",
-            "admission-guide"
+            "education-primary",
+            "education-secondary",
+            "education-sports"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -3325,7 +3424,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "news-calendar",
-            "education-exams"
+            "education-exams",
+            "information-timetable"
           ],
           "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -3418,7 +3518,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "education-study-skills",
-            "education-resources"
+            "education-resources",
+            "education-secondary"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -3564,7 +3665,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "education-subject-guides",
-            "information-documents"
+            "education-study-skills",
+            "education-library"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -3667,8 +3769,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
-            "education-digital-safety",
-            "education-study-skills"
+            "education-resources",
+            "education-study-skills",
+            "education-digital"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -3796,7 +3899,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "education-digital-safety",
-            "education-subject-guides"
+            "education-subject-guides",
+            "education-resources"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -3875,7 +3979,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "school-workshop",
-            "news-community"
+            "news-community",
+            "education-talent"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -3979,7 +4084,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "education-career",
-            "education-study-skills"
+            "education-study-skills",
+            "school-workshop"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -4059,8 +4165,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
-            "admission-checklist",
-            "admission-documents"
+            "education-primary",
+            "admission-documents",
+            "admission-checklist"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -4175,8 +4282,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
-            "admission-checklist",
-            "admission-preparation"
+            "education-secondary",
+            "admission-preparation",
+            "admission-deadlines"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -4281,7 +4389,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "admission-guide",
-            "education-programs"
+            "education-programs",
+            "admission-deadlines"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -4362,7 +4471,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "admission-process",
-            "admission-checklist"
+            "admission-checklist",
+            "admission-secondary"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -4481,7 +4591,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "admission-documents",
-            "admission-deadlines"
+            "admission-deadlines",
+            "admission-checklist"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -4561,8 +4672,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
-            "education-career",
-            "admission-preparation"
+            "admission-primary",
+            "admission-secondary",
+            "admission-process"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -4674,8 +4786,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
+            "admission-checklist",
             "information-documents",
-            "admission-checklist"
+            "admission-process"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -4799,7 +4912,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "admission-guide",
-            "information-contact"
+            "admission-process",
+            "admission-documents"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -4877,8 +4991,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
-            "sports-knowledge",
-            "sports-facilities"
+            "sports-training",
+            "sports-facilities",
+            "sports-knowledge"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -4941,11 +5056,14 @@
         ],
         "contentMeta": {
           "sources": [
-            "generated"
+            "generated",
+            "mdsz-2025",
+            "mdsz-2026"
           ],
           "checkedAt": "2026-11-24",
           "related": [
             "sports-competitions",
+            "news-sports",
             "school-awards"
           ],
           "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
@@ -5015,8 +5133,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
-            "sports-knowledge",
-            "news-events"
+            "news-events",
+            "sports-results",
+            "news-sports"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -5133,7 +5252,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "school-awards",
-            "sports-quiz"
+            "sports-quiz",
+            "sports-knowledge"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -5230,8 +5350,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
+            "sports-disciplines",
             "sports-wellbeing",
-            "education-study-skills"
+            "education-sports"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -5334,6 +5455,7 @@
           "checkedAt": "2026-11-24",
           "related": [
             "sports-results",
+            "news-sports",
             "sports-statistics"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -5413,6 +5535,7 @@
           "checkedAt": "2026-11-24",
           "related": [
             "sports-disciplines",
+            "sports-training",
             "information-contact"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -5506,7 +5629,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "sports-wellbeing",
-            "sports-knowledge"
+            "sports-knowledge",
+            "sports-facilities"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -5593,7 +5717,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "news-announcements",
-            "news-archive"
+            "news-archive",
+            "news-events"
           ],
           "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -5660,7 +5785,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "education-years",
-            "news-events"
+            "news-events",
+            "education-exams"
           ],
           "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -5736,6 +5862,7 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
+            "information-daily",
             "information-services",
             "news-latest"
           ],
@@ -5804,7 +5931,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "news-latest",
-            "news-announcements"
+            "news-announcements",
+            "news-events"
           ],
           "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -5881,7 +6009,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "sports-results",
-            "sports-competitions"
+            "sports-competitions",
+            "sports-gallery"
           ],
           "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -5958,7 +6087,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "education-resources",
-            "education-exams"
+            "education-exams",
+            "education-talent"
           ],
           "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -6036,7 +6166,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "news-calendar",
-            "sports-gallery"
+            "sports-gallery",
+            "news-community"
           ],
           "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -6112,8 +6243,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
-            "school-compass",
-            "information-service"
+            "education-community",
+            "information-service",
+            "school-workshop"
           ],
           "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -6193,7 +6325,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "information-timetable",
-            "news-announcements"
+            "news-announcements",
+            "information-services"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -6302,7 +6435,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "information-disclosure",
-            "education-resources"
+            "information-services",
+            "admission-documents"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -6405,7 +6539,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "information-parent-guide",
-            "information-contact"
+            "information-contact",
+            "information-documents"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -6533,7 +6668,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "news-community",
-            "school-values"
+            "school-values",
+            "education-secondary"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -6695,7 +6831,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "information-services",
-            "information-parent-guide"
+            "information-parent-guide",
+            "school-staff"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -6834,7 +6971,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "information-daily",
-            "education-years"
+            "education-years",
+            "information-absence"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -6967,8 +7105,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
+            "information-services",
             "information-parent-guide",
-            "information-services"
+            "information-daily"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -7070,8 +7209,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
+            "information-services",
             "information-parent-guide",
-            "education-study-skills"
+            "school-compass"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -7182,8 +7322,8 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
-            "school-history",
             "sports-results",
+            "school-history",
             "sports-olympic"
           ],
           "status": "forrásalapú összefoglalás; aktuális státusz külön ellenőrizendő"
@@ -7261,7 +7401,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "school-partners",
-            "information-contact"
+            "information-contact",
+            "information-disclosure"
           ],
           "status": "forrásalapú összefoglalás; aktuális státusz külön ellenőrizendő"
         }
@@ -7320,7 +7461,7 @@
           "checkedAt": "2026-11-24",
           "related": [
             "education-resources",
-            "education-digital",
+            "education-subject-guides",
             "sports-wellbeing"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -7536,7 +7677,7 @@
           "checkedAt": "2026-11-24",
           "related": [
             "education-programs",
-            "admission-guide",
+            "education-secondary",
             "education-talent"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
@@ -7749,8 +7890,8 @@
           "checkedAt": "2026-11-24",
           "related": [
             "sports-disciplines",
-            "sports-training",
-            "sports-quiz"
+            "sports-quiz",
+            "sports-training"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -7828,7 +7969,7 @@
           "related": [
             "sports-training",
             "education-study-skills",
-            "sports-statistics"
+            "sports-leisure"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -7953,9 +8094,9 @@
           ],
           "checkedAt": "2026-11-24",
           "related": [
+            "sports-competitions",
             "sports-knowledge",
-            "education-subject-guides",
-            "sports-wellbeing"
+            "education-subject-guides"
           ],
           "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
         },
@@ -8142,7 +8283,7 @@
           "related": [
             "information-documents",
             "school-staff",
-            "education-years"
+            "information-contact"
           ],
           "status": "forrásalapú összefoglalás; aktuális státusz külön ellenőrizendő"
         }
@@ -11635,6 +11776,18 @@
       "demo": {
         "title": "Fiktív, név nélküli demonstrációs adatkészlet",
         "checkedAt": "2026-11-24"
+      },
+      "mdsz-2025": {
+        "title": "Magyar Diáksport Szövetség – hivatalos Diákolimpia beszámoló",
+        "url": "https://www.archiv.diakolimpia.hu/hirek-hu/2025/05/19/a-lany-labdarugo-diakolimpia-orszagos-dontok-a-fair-play-jegyeben-zajlottak/",
+        "checkedAt": "2026-11-24",
+        "scope": "csapateredmény, országos döntő"
+      },
+      "mdsz-2026": {
+        "title": "Magyar Diáksport Szövetség – hivatalos Diákolimpia beszámoló",
+        "url": "https://www.diakolimpia.hu/tobb-sportagban-is-bizonyitottak-a-diakolimpia-legjobbjai-a-hetvegen/",
+        "checkedAt": "2026-11-24",
+        "scope": "csapateredmény, országos döntő"
       }
     },
     "collections": {
@@ -12721,6 +12874,150 @@
             "summary": "A végleges beadás előtt nyisd meg a kiválasztott fájlt; a hasonló nevű régi változatok könnyen összekeverhetők.",
             "source": "generated",
             "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-13",
+            "title": "Egyedi jelmondatok",
+            "category": "Fiókbiztonság",
+            "summary": "Különböző szolgáltatásokban ne használd ugyanazt a jelszót. A hosszú, egyedi jelmondat megjegyezhetőbb lehet a rövid, bonyolult karaktersornál.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-14",
+            "title": "Jelszókezelő",
+            "category": "Fiókbiztonság",
+            "summary": "A megbízható jelszókezelő egyedi jelszavakat tárolhat. A fő hozzáférés védelme és a helyreállítási lehetőségek beállítása különösen fontos.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-15",
+            "title": "Helyreállítási kódok",
+            "category": "Fiókbiztonság",
+            "summary": "A kétlépcsős azonosításhoz tartozó tartalék kódokat biztonságos helyen őrizd; ne küldd tovább üzenetben, és ne hagyd nyilvános mappában.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-16",
+            "title": "Frissítések szerepe",
+            "category": "Eszközvédelem",
+            "summary": "Az operációs rendszer és az alkalmazások biztonsági frissítései ismert hibákat javíthatnak. Csak a hivatalos frissítési csatornákat használd.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-17",
+            "title": "Képernyőzár",
+            "category": "Eszközvédelem",
+            "summary": "Állíts be automatikus képernyőzárat. Ha közös gépnél felállsz, jelentkezz ki, vagy zárold a munkamenetet.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-18",
+            "title": "Alkalmazásengedélyek",
+            "category": "Eszközvédelem",
+            "summary": "Nézd meg, indokolt-e a helyadat, kamera vagy mikrofon hozzáférése. A funkcióhoz nem szükséges engedélyt kapcsold ki.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-19",
+            "title": "Elveszett telefon",
+            "category": "Eszközvédelem",
+            "summary": "Az elvesztett eszközről mielőbb értesítsd a szülőt vagy az illetékest, ellenőrizd a fiók munkameneteit, és használd a gyártó hivatalos helyreállítási lehetőségeit.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-20",
+            "title": "Képek eredetének ellenőrzése",
+            "category": "Forráskritika",
+            "summary": "Az újraközölt kép eredeti környezete eltérhet a mellé írt történettől. Keresd meg a korábbi megjelenéseket és hasonlítsd össze a dátumokat.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-21",
+            "title": "Dátum és szerző",
+            "category": "Forráskritika",
+            "summary": "Egy állítás értékeléséhez vizsgáld meg a szerzőt, a kiadás dátumát és azt, hogy a hivatkozott forrás valóban alátámasztja-e a következtetést.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-22",
+            "title": "Grafikonok ellenőrzése",
+            "category": "Forráskritika",
+            "summary": "Nézd meg a tengelyeket, az egységeket, a mintát és az adatforrást. A látványos grafikon önmagában nem bizonyít ok-okozati kapcsolatot.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-23",
+            "title": "Váratlan csatolmány",
+            "category": "Kommunikáció",
+            "summary": "Ismeretlen vagy szokatlan fájl érkezésekor ne a csatolmányból indulj ki. Külön csatornán kérdezz rá a feladó szándékára.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-24",
+            "title": "Üzenetbe rejtett sürgetés",
+            "category": "Kommunikáció",
+            "summary": "A gyors fizetésre vagy jelszóátadásra felszólító üzenetnél lassíts. A valódi szolgáltatást saját könyvjelzőből vagy az ismert címéről nyisd meg.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-25",
+            "title": "Közös dokumentumok etikettje",
+            "category": "Kommunikáció",
+            "summary": "Közös szerkesztéskor nevezd meg a módosítás célját, ne töröld mások munkáját egyeztetés nélkül, és szükség esetén használd a verzióelőzményeket.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-26",
+            "title": "Megosztási kör",
+            "category": "Adatvédelem",
+            "summary": "Küldés előtt ellenőrizd, hogy a fájl megtekintésre vagy szerkesztésre nyílik-e meg, és csak a szükséges címzettek férnek-e hozzá.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-27",
+            "title": "Személyes adatok képen",
+            "category": "Adatvédelem",
+            "summary": "Képernyőkép közzététele előtt takard ki a nevet, e-mail-címet, QR-kódot, azonosítót és az egyéb szükségtelen személyes adatot.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-28",
+            "title": "Biztonságos törlés",
+            "category": "Adatvédelem",
+            "summary": "Ha egy megosztott dokumentum már nem szükséges, ellenőrizd a hozzáféréseket is. A link továbbra is élhet akkor, amikor a fájlt már nem használod.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-29",
+            "title": "MI-válasz ellenőrzése",
+            "category": "MI és tanulás",
+            "summary": "Az MI által készített összefoglalóban külön ellenőrizd a számokat, a neveket és a hivatkozásokat. A válasz meggyőző stílusa nem garancia a helyességre.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
+          },
+          {
+            "id": "digital-30",
+            "title": "Önálló megoldás dokumentálása",
+            "category": "MI és tanulás",
+            "summary": "Írd le saját döntéseidet és a segítségként használt eszközöket. Az ellenőrizhető munkafolyamat többet mutat a tudásodról, mint a kész szöveg önmagában.",
+            "source": "generated",
+            "relatedPage": "education-digital-safety"
           }
         ]
       },
@@ -12807,6 +13104,166 @@
             "summary": "Az eredménycél mellé válassz irányítható folyamatcélt, például a technika következetes végrehajtását.",
             "source": "generated",
             "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-11",
+            "title": "Pihenőnap tervezése",
+            "category": "Regeneráció",
+            "summary": "Az edzővel egyeztetett pihenőnap célja a felépülés. Az iskolai és sportterhelést együtt érdemes figyelembe venni.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-12",
+            "title": "Szubjektív fáradtságnapló",
+            "category": "Regeneráció",
+            "summary": "Jegyezd fel röviden az alvást, fáradtságot és közérzetet. A visszatérő nehézségeket beszéld meg az edzővel vagy szülővel.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-13",
+            "title": "Alvás előtti rutin",
+            "category": "Regeneráció",
+            "summary": "Készíts elő előre mindent a következő napra, hogy este ne kelljen kapkodni. A nyugodt környezet segíthet az elalváshoz szükséges átmenetben.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-14",
+            "title": "Utazás utáni alkalmazkodás",
+            "category": "Regeneráció",
+            "summary": "Hosszabb utazás után ne a fáradtságot figyelmen kívül hagyva kezdj terhelni. Egyeztess az edzővel a következő foglalkozásról.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-15",
+            "title": "Technika a mennyiség előtt",
+            "category": "Terhelés",
+            "summary": "Egy új gyakorlatnál előbb az oktató által ellenőrzött mozdulatot tanuld meg. A több ismétlés nem helyettesíti a biztonságos kivitelezést.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-16",
+            "title": "Időbeosztás a versenyhéten",
+            "category": "Terhelés",
+            "summary": "A tanulási és sportfeladatokat már a hét elején oszd el. Jelöld meg a fix határidőket, és tervezz tartalékidőt.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-17",
+            "title": "Meleg időben végzett sport",
+            "category": "Terhelés",
+            "summary": "A körülményekhez igazodó edzésről az edző dönt. Ha szédülést, rosszullétet vagy szokatlan gyengeséget érzel, jelezd azonnal.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-18",
+            "title": "Visszatérés betegség után",
+            "category": "Terhelés",
+            "summary": "Betegség vagy sérülés után ne próbáld egyetlen edzéssel bepótolni a kimaradást. Az edző és szükség esetén az egészségügyi szakember útmutatása az irányadó.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-19",
+            "title": "Edzésre készülő uzsonna",
+            "category": "Táplálkozás",
+            "summary": "Az iskola és az edzés időrendjéhez igazított étkezésről beszélj a családdal. A számodra bevált, jól tolerált ételeket részesítsd előnyben.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-20",
+            "title": "Kulacs előkészítése",
+            "category": "Táplálkozás",
+            "summary": "Edzés előtt töltsd meg a saját kulacsodat. A folyadékpótlás egyéni szükséglete a környezettől és terheléstől is függ.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-21",
+            "title": "Ismeretlen étrend-kiegészítő",
+            "category": "Táplálkozás",
+            "summary": "Ne használj másoktól kapott, ismeretlen összetételű készítményt. A szükségességről szülővel és képzett szakemberrel egyeztess.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-22",
+            "title": "Verseny előtti megszokott rutin",
+            "category": "Táplálkozás",
+            "summary": "A verseny napján nem ideális új, kipróbálatlan étellel vagy termékkel kísérletezni. Az előkészületeket egyeztesd a felelős felnőttekkel.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-23",
+            "title": "Folyamatcél",
+            "category": "Mentális készségek",
+            "summary": "Egy feladatnál válassz olyan célt, amelyre közvetlenül hatással vagy, például egy technikai elem következetes végrehajtását.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-24",
+            "title": "Hibából tanulás",
+            "category": "Mentális készségek",
+            "summary": "Egy hibás mozdulat után nevezz meg egy konkrét javítandó részletet. Az edzővel beszéld meg, hogyan próbálhatod ki biztonságosan.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-25",
+            "title": "Versenyhelyzetre figyelés",
+            "category": "Mentális készségek",
+            "summary": "A rajt előtt válassz egy rövid, feladathoz kapcsolódó figyelmi jelzést. A végső helyezést ne kezeld az egyetlen értékelési szempontként.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-26",
+            "title": "Támogatás kérése",
+            "category": "Mentális készségek",
+            "summary": "Tartós szorongás, kimerültség vagy motivációvesztés esetén érdemes segítséget kérni egy megbízható felnőttől vagy szakembertől.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-27",
+            "title": "Tisztességes visszajelzés",
+            "category": "Csapatmunka",
+            "summary": "A csapattárs teljesítményét konkrét viselkedés alapján értékeld, személyeskedés nélkül. A javítási ötlet legyen kipróbálható.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-28",
+            "title": "Felszerelés ellenőrzése",
+            "category": "Csapatmunka",
+            "summary": "Indulás előtt nézd át az edzéshez szükséges felszerelést. A sérült eszközt ne használd addig, amíg az edző nem ellenőrizte.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-29",
+            "title": "Közös bemelegítés rendje",
+            "category": "Csapatmunka",
+            "summary": "Figyelj a térközre, a pályára és a társak mozgására. A csoportos gyakorlatok szabályait a foglalkozás vezetője határozza meg.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
+          },
+          {
+            "id": "wellbeing-30",
+            "title": "Sport és tanulás egyensúlya",
+            "category": "Csapatmunka",
+            "summary": "Ha az edzés és a beadási határidő ütközik, jelezd időben a tanárnak és az edzőnek. A korai egyeztetés jobb a mulasztás utólagos magyarázatánál.",
+            "source": "generated",
+            "relatedPage": "sports-wellbeing"
           }
         ]
       },
@@ -12877,6 +13334,182 @@
             "summary": "Előre ellenőrizd az utazást, az időpontot és a behívóban felsorolt eszközöket.",
             "source": "generated",
             "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-09",
+            "title": "Műveleti sorrend",
+            "category": "Matematika",
+            "summary": "Oldd meg: 6 + 3 × 4. A szorzás kerül előre, így 18 az eredmény. Készíts hasonló feladatot zárójellel is.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-10",
+            "title": "Százalékszámítás",
+            "category": "Matematika",
+            "summary": "Egy 2000 forintos termék 15 százalékos kedvezménye 300 forint. A fizetendő ár 1700 forint. Ellenőrizd becsléssel is.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-11",
+            "title": "Tört összehasonlítása",
+            "category": "Matematika",
+            "summary": "Hasonlítsd össze a 3/4 és 5/8 értékét azonos nevezőre hozással. A 6/8 nagyobb az 5/8-nál.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-12",
+            "title": "Arányok",
+            "category": "Matematika",
+            "summary": "Ha három füzet 900 forint, azonos egységár mellett öt füzet 1500 forint. Először az egy füzetre eső árat állapítsd meg.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-13",
+            "title": "Kerület és terület",
+            "category": "Matematika",
+            "summary": "Egy 8 × 5 egységes téglalap kerülete 26 egység, területe 40 négyzetegység. A két mennyiség mértékegysége eltér.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-14",
+            "title": "Átlag",
+            "category": "Matematika",
+            "summary": "Négy próbaeredmény: 8, 10, 12, 14. Összegük 44, így a számtani átlag 11. Ellenőrizd, hogy az átlag a szélső értékek közé esik.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-15",
+            "title": "Egyenlet ellenőrzése",
+            "category": "Matematika",
+            "summary": "A 3x + 5 = 20 egyenlet megoldása x = 5. A visszahelyettesítés: 3 × 5 + 5 = 20.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-16",
+            "title": "Időtartam számítása",
+            "category": "Matematika",
+            "summary": "A 8:35-kor kezdődő és 9:20-kor végződő program 45 perces. Bontsd fel az időszakot az egész óránál, ha úgy egyszerűbb.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-17",
+            "title": "Kulcsszavak keresése",
+            "category": "Szövegértés",
+            "summary": "Olvasás után jelöld meg a kérdésben szereplő fontos fogalmakat, majd keresd vissza az azokhoz tartozó mondatrészeket.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-18",
+            "title": "Fő állítás és példa",
+            "category": "Szövegértés",
+            "summary": "Írd le egy bekezdés fő állítását egy mondatban, és külön nevezd meg a hozzá tartozó példát. Ellenőrizd, hogy nem keverted-e össze őket.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-19",
+            "title": "Tény és vélemény",
+            "category": "Szövegértés",
+            "summary": "Keress olyan mondatot, amely ellenőrizhető állítást tartalmaz, és olyat, amely értékelést fejez ki. Magyarázd meg a különbséget.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-20",
+            "title": "Következtetés",
+            "category": "Szövegértés",
+            "summary": "A szövegből csak olyan következtetést vonj le, amelyet a közölt információk tényleg alátámasztanak. Jelöld a bizonyítékul szolgáló mondatot.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-21",
+            "title": "Mondatalkotás",
+            "category": "Nyelvi gyakorlat",
+            "summary": "Alkoss egy rövid mondatot ugyanazzal a szóval két eltérő jelentésben. Ez segít a szövegkörnyezet szerepének felismerésében.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-22",
+            "title": "Szinonimák",
+            "category": "Nyelvi gyakorlat",
+            "summary": "Válassz egy gyakran használt melléknevet, majd keress két hasonló jelentésű szót. Vizsgáld meg, melyik illik a mondat hangulatához.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-23",
+            "title": "Helyesírási hibalista",
+            "category": "Nyelvi gyakorlat",
+            "summary": "A gyakran elrontott szavakat gyűjtsd saját listába, és írj mindegyikhez egy helyes példamondatot.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-24",
+            "title": "Tömör összefoglaló",
+            "category": "Nyelvi gyakorlat",
+            "summary": "Egy rövid szöveget foglalj össze három mondatban úgy, hogy a fő információk megmaradjanak, a részletek ne ismétlődjenek.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-25",
+            "title": "Feladatok sorrendje",
+            "category": "Próbavizsga",
+            "summary": "Először tekintsd át a feladatsort. Ha elakadsz, jelöld meg a feladatot, és később térj vissza rá, amennyiben a vizsga szabályai megengedik.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-26",
+            "title": "Ellenőrzési idő",
+            "category": "Próbavizsga",
+            "summary": "Próbafeladatok megoldásakor gyakorold, hogy az időkeret végén maradjon néhány perc ellenőrzésre. Ezzel a saját munkatempódat mérheted fel.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-27",
+            "title": "Hibatípusok elkülönítése",
+            "category": "Próbavizsga",
+            "summary": "A próbafeladat után különítsd el a félreolvasást, számolási hibát és a hiányzó ismeretet. Mindegyikhez más javítási módszer szükséges.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-28",
+            "title": "Válasz szerkezete",
+            "category": "Szóbeli felkészülés",
+            "summary": "Gyakorold az állítás, indoklás és példa sorrendjét. Ez rövid válaszban is segít érthetően megmutatni a gondolatmenetet.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-29",
+            "title": "Kérdés pontosítása",
+            "category": "Szóbeli felkészülés",
+            "summary": "Ha gyakorláskor nem egyértelmű a kérdés, fogalmazd meg, melyik részét szeretnéd pontosítani. A vizsgán az aktuális szabályok szerint járj el.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
+          },
+          {
+            "id": "prep-30",
+            "title": "Hivatalos követelmények ellenőrzése",
+            "category": "Szervezés",
+            "summary": "A konkrét tanévre vonatkozó felvételi eljárást az Oktatási Hivatal és az intézmény hivatalos tájékoztatója alapján ellenőrizd. Ez a gyűjtemény gyakorlóanyag.",
+            "source": "generated",
+            "relatedPage": "admission-preparation"
           }
         ]
       },
@@ -12921,6 +13554,206 @@
             "title": "Olimpiai örökség",
             "category": "Sporttörténet",
             "summary": "Az események után megmaradó kulturális, szervezeti és infrastrukturális hatások hosszabb távon értékelhetők.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-06",
+            "title": "Az öt karika",
+            "category": "Olimpiai kultúra",
+            "summary": "Az olimpiai jelkép öt egymásba kapcsolódó karikából áll. A jelképet ne értelmezd úgy, mintha egy-egy színhez hivatalosan külön kontinens tartozna.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-07",
+            "title": "Megnyitóünnepség",
+            "category": "Olimpiai kultúra",
+            "summary": "A résztvevők bevonulása és a játékok hivatalos megnyitása a közös esemény szimbolikus része. A sportversenyek eredményét nem az ünnepség határozza meg.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-08",
+            "title": "Olimpiai láng",
+            "category": "Olimpiai kultúra",
+            "summary": "A láng és a fáklyaváltó az olimpiai hagyományok része. A jelképes esemény különbözik az egyes sportágak versenyszabályaitól.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-09",
+            "title": "Kabalafigura",
+            "category": "Olimpiai kultúra",
+            "summary": "A rendezők által kialakított kabala gyakran a helyi kultúrára utal. A vizuális megjelenés értelmezésekor figyelj a történeti és kulturális összefüggésekre.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-10",
+            "title": "Ötkarikás művészet",
+            "category": "Olimpiai kultúra",
+            "summary": "Egy rendezvény arculatát a helyszínhez, sportágakhoz és közös értékekhez igazítják. Készíts saját sportpiktogramot, amely szöveg nélkül is érthető.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-11",
+            "title": "Selejtező",
+            "category": "Versenyrendszer",
+            "summary": "A selejtező célja a következő versenyszakasz résztvevőinek meghatározása. A továbbjutási feltételeket mindig az adott sportág szabályai rögzítik.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-12",
+            "title": "Döntő",
+            "category": "Versenyrendszer",
+            "summary": "A döntőben a végső helyezésekért versenyeznek. A döntőbe jutás és a dobogós helyezés nem azonos fogalom.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-13",
+            "title": "Egyéni és csapatsport",
+            "category": "Versenyrendszer",
+            "summary": "Egyéni sportágban a teljesítmény közvetlenül az egyéni versenyzőhöz kapcsolódik; a csapatsportban a társak együttműködése is meghatározó.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-14",
+            "title": "Időmérés",
+            "category": "Versenyrendszer",
+            "summary": "Az időeredmény értékelésénél azonos mértékegységet és pontos versenytávot használj. Az eltérő távok ideje közvetlenül nem hasonlítható össze.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-15",
+            "title": "Pontozásos sportok",
+            "category": "Versenyrendszer",
+            "summary": "A pontozásos versenyek értékelése az adott szakág szabályrendszerét követi. A technikai és művészi összetevők sportáganként eltérhetnek.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-16",
+            "title": "Kvalifikáció",
+            "category": "Versenyrendszer",
+            "summary": "Az olimpiai indulási feltételek sportáganként és versenyszámonként különbözhetnek. Egy korábbi játékok szabályát nem szabad automatikusan átvenni.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-17",
+            "title": "Fair play a gyakorlatban",
+            "category": "Sporterkölcs",
+            "summary": "A szabályok tiszteletben tartása mellett az ellenféllel és a versenybíróval való sportszerű kommunikáció is fontos.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-18",
+            "title": "Versenybíró feladata",
+            "category": "Sporterkölcs",
+            "summary": "A versenybíró az adott szabályrendszer alapján jár el. Vitás helyzetben a hivatalos eljárás követése fontosabb a személyeskedő reakciónál.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-19",
+            "title": "Egyenlő esélyek",
+            "category": "Sporterkölcs",
+            "summary": "A tisztességes versenyhez összehasonlítható feltételekre és egyértelmű szabályokra van szükség. Vizsgáld meg, mitől lesz egy iskolai verseny igazságos.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-20",
+            "title": "Tiszta sport",
+            "category": "Sporterkölcs",
+            "summary": "Az egészség és a szabályok tisztelete a versenyzés része. Ismeretlen készítmény használata előtt kérj szakmai segítséget.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-21",
+            "title": "Ellenfél tisztelete",
+            "category": "Sporterkölcs",
+            "summary": "A mérkőzés utáni tiszteletteljes viselkedés eredménytől függetlenül érték. Győzelemkor és vereségkor is törekedj korrekt kommunikációra.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-22",
+            "title": "Aranyérmek szerinti sorrend",
+            "category": "Adatértelmezés",
+            "summary": "Az éremtáblázat sorrendje az alkalmazott rendezési szabálytól függhet. A teljes éremszám és az aranyérmek száma eltérő mérőszám.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-23",
+            "title": "Relatív teljesítmény",
+            "category": "Adatértelmezés",
+            "summary": "Az éremszám értelmezésénél a küldöttség mérete és a nevezett versenyszámok is számíthatnak. Az eltérő környezetet mindig jelöld.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-24",
+            "title": "Rekord és győzelem",
+            "category": "Adatértelmezés",
+            "summary": "Egy verseny megnyerhető új rekord felállítása nélkül is. A rekord történeti összehasonlítást, a győzelem az adott verseny eredményét jelenti.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-25",
+            "title": "Eredmények forrása",
+            "category": "Adatértelmezés",
+            "summary": "Egy érem vagy helyezés ellenőrzéséhez a hivatalos eredménylistát keresd. A verseny nevét, évét és kategóriáját is rögzítsd.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-26",
+            "title": "Versenyek közti változás",
+            "category": "Adatértelmezés",
+            "summary": "Két időeredmény különbségét csak azonos táv és megfelelően összehasonlítható feltételek mellett értelmezd. A környezeti hatások is számíthatnak.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-27",
+            "title": "Sportlétesítmények utóhasználata",
+            "category": "Örökség",
+            "summary": "Egy nagy esemény után a létesítmények fenntartása és közösségi hasznosítása is fontos kérdés. Mérlegeld a sportolási lehetőségeket és költségeket.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-28",
+            "title": "Önkéntesség",
+            "category": "Örökség",
+            "summary": "A versenyek szervezésében számos háttérfeladat van. Az önkéntesek munkáját a rendezvény szabályai és feladatleírása szerint kell megszervezni.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-29",
+            "title": "Hozzáférhető sportélmény",
+            "category": "Örökség",
+            "summary": "Egy sportesemény látogatói útmutatójában a megközelítés, az érthető tájékoztatás és az akadálymentes használat egyaránt fontos.",
+            "source": "generated",
+            "relatedPage": "sports-olympic"
+          },
+          {
+            "id": "olympic-30",
+            "title": "Iskolai olimpiai projekt",
+            "category": "Örökség",
+            "summary": "Készítsetek sportági bemutatót, amelyben a szabályok, a fair play, az eszközök és az ellenőrzött eredmények külön blokkban szerepelnek.",
             "source": "generated",
             "relatedPage": "sports-olympic"
           }
@@ -13772,6 +14605,485 @@
       "information-disclosure": "pages/information-disclosure.json"
     },
     "note": "14 új menüoldal témája ideiglenes; az eredeti 63-as jóváhagyott oldaljegyzék nem állt rendelkezésre.",
-    "footerManifest": "release-status.json"
+    "footerManifest": "release-status.json",
+    "activities": {
+      "school-introduction": {
+        "path": "activities/school-introduction.json",
+        "title": "Ismerd meg az iskola három arcát",
+        "kind": "tiles",
+        "search": "Ismerd meg az iskola három arcát Tanulás Általános iskolai alapozás és gimnáziumi továbbtanulás. Nézd meg az eltérő képzési szakaszokat! education-programs Sport A sportiskolai szemlélet"
+      },
+      "school-values": {
+        "path": "activities/school-values.json",
+        "title": "Értékek a gyakorlatban",
+        "kind": "quiz",
+        "search": "Értékek a gyakorlatban A társad hibázik a mérkőzésen. Mi segít a csapatnak? Bátorítod és a következő játékra figyelsz. Ez támogatja a bizalmat és a"
+      },
+      "school-staff": {
+        "path": "activities/school-staff.json",
+        "title": "Kihez forduljak?",
+        "kind": "tiles",
+        "search": "Kihez forduljak? Tanulmányi kérdés A tantárgyi kérdésben az érintett pedagógus, osztályügyben az osztályfőnök az első tájékozódási pont. information-services Intézményi ügy Hivatalos ügyben készíts rövid"
+      },
+      "school-history": {
+        "path": "activities/school-history.json",
+        "title": "Az iskola történetének mérföldkövei",
+        "kind": "timeline",
+        "search": "Az iskola történetének mérföldkövei 1904 Megnyílt az Őrnagy utcai iskolaépület. 1987 A KSI-vel kapcsolatos sportiskolai együttműködés kezdete. 1988–1989 Gimnáziumi képzés indult, majd az intézmény"
+      },
+      "school-partners": {
+        "path": "activities/school-partners.json",
+        "title": "Együttműködési térkép",
+        "kind": "tiles",
+        "search": "Együttműködési térkép Fenntartás Az intézményi működés és a hivatalos fenntartói tájékoztatás külön információs terület. information-disclosure Sportszakmai kapcsolat A KSI-vel való együttműködés történeti szerepét az"
+      },
+      "school-eco": {
+        "path": "activities/school-eco.json",
+        "title": "Egyhetes zöld kihívás",
+        "kind": "checklist",
+        "search": "Egyhetes zöld kihívás Kulacsot viszek Az újratölthető kulacs csökkenti az egyszer használatos csomagolást. Megfigyelem a hulladékot Jegyezd fel egy nap, milyen csomagolásokat használsz. Takarékoskodom"
+      },
+      "school-explore": {
+        "path": "activities/school-explore.json",
+        "title": "Mini kutatás: mi befolyásolja a megfigyelést?",
+        "kind": "steps",
+        "search": "Mini kutatás: mi befolyásolja a megfigyelést? Kérdés Válassz egy mérhető jelenséget, például a különböző felületeken guruló labdát. Mérés Azonos indítási feltételekkel mérd a megtett"
+      },
+      "school-compass": {
+        "path": "activities/school-compass.json",
+        "title": "Iskolai helyzet: közös szabályok",
+        "kind": "quiz",
+        "search": "Iskolai helyzet: közös szabályok Egy közös eszköz megsérült. Mi a felelős eljárás? Jelzed a megfelelő felnőttnek és nem használod tovább. A sérülés balesetveszélyes lehet."
+      },
+      "school-workshop": {
+        "path": "activities/school-workshop.json",
+        "title": "Alkotói műhely – ötlettől a bemutatóig",
+        "kind": "steps",
+        "search": "Alkotói műhely – ötlettől a bemutatóig Tervezés Rajzolj vázlatot, határozd meg a célt és a szükséges eszközöket. Prototípus Készíts egyszerű változatot és ellenőrizd, teljesíti-e"
+      },
+      "education-programs": {
+        "path": "activities/education-programs.json",
+        "title": "Válassz képzési útvonalat",
+        "kind": "tiles",
+        "search": "Válassz képzési útvonalat 1–8. évfolyam Alapkészségek, tanulási rutinok, fokozatos önállóság. education-primary 9–12. évfolyam Tantárgyi elmélyülés és felkészülés a továbbtanulásra. education-secondary Sportiskolai nevelés Tanulási és"
+      },
+      "education-years": {
+        "path": "activities/education-years.json",
+        "title": "Tanévi tervező – négy szakasz",
+        "kind": "steps",
+        "search": "Tanévi tervező – négy szakasz Tanévkezdés Gyűjtsd össze az aktuális tanévi szabályokat és időpontokat. Félév Kövesd a tantárgyi célokat, kérj visszajelzést a haladásról. Tavasz"
+      },
+      "education-exams": {
+        "path": "activities/education-exams.json",
+        "title": "Vizsganapi előkészületek",
+        "kind": "checklist",
+        "search": "Vizsganapi előkészületek Időpont ellenőrzése A pontos beosztást mindig a hivatalos értesítésből vedd. Eszközök Csak az adott vizsgán engedélyezett eszközöket készítsd össze. Útvonal és érkezés"
+      },
+      "education-resources": {
+        "path": "activities/education-resources.json",
+        "title": "Gyakorlási útvonalak",
+        "kind": "tiles",
+        "search": "Gyakorlási útvonalak Tanulásmódszer Az aktív felidézés segít ellenőrizni, mit tudsz segítség nélkül. education-study-skills Tantárgyi feladatok Válassz témát és próbáld ki a gyakorlófeladatokat. education-subject-guides Digitális"
+      },
+      "education-library": {
+        "path": "activities/education-library.json",
+        "title": "Forráskritika próba",
+        "kind": "quiz",
+        "search": "Forráskritika próba Két oldal ellentmondó adatot közöl. Mi a legjobb első lépés? Megkeresed az eredeti, dátummal és szerzővel ellátott forrást. A forrás eredete és"
+      },
+      "education-digital": {
+        "path": "activities/education-digital.json",
+        "title": "Digitális beadás – önellenőrzés",
+        "kind": "checklist",
+        "search": "Digitális beadás – önellenőrzés Fájlnév Az előírt név és kiterjesztés ellenőrzése. Tartalom Nyisd meg a ténylegesen beadandó változatot. Megosztás Ellenőrizd, hogy az előírt csatornán"
+      },
+      "education-community": {
+        "path": "activities/education-community.json",
+        "title": "Csoportos projekt indítása",
+        "kind": "steps",
+        "search": "Csoportos projekt indítása Feladatmegosztás Határozzátok meg, ki mit vállal. Közös források Rögzítsétek a hivatkozásokat és a megosztott fájlok helyét. Ellenőrzőpont Egyeztessetek a részfeladatok állapotáról."
+      },
+      "education-talent": {
+        "path": "activities/education-talent.json",
+        "title": "Személyes fejlődési terv",
+        "kind": "checklist",
+        "search": "Személyes fejlődési terv Konkrét cél Válassz mérhető, reális tanulási vagy sportbeli célt. Kezdőállapot Rögzítsd, mit tudsz jelenleg önállóan. Gyakorlási idő Jelölj rendszeres, fenntartható alkalmakat."
+      },
+      "admission-primary": {
+        "path": "activities/admission-primary.json",
+        "title": "Első osztály – családi felkészülés",
+        "kind": "checklist",
+        "search": "Első osztály – családi felkészülés Hivatalos tájékoztató Nézd meg az aktuális beiratkozási feltételeket. Kérdések Írjátok össze a napirenddel és szolgáltatásokkal kapcsolatos kérdéseket. Iratok Az"
+      },
+      "admission-secondary": {
+        "path": "activities/admission-secondary.json",
+        "title": "Kilencedik évfolyam – felkészülési útvonal",
+        "kind": "tiles",
+        "search": "Kilencedik évfolyam – felkészülési útvonal Tájékozódás Az adott tanévre vonatkozó feltételeket ellenőrizd. admission-guide Gyakorlás Próbálj időre megoldott feladatsorokat, majd elemezd a hibákat. admission-preparation Határidők"
+      },
+      "admission-open": {
+        "path": "activities/admission-open.json",
+        "title": "Nyílt napra készülök",
+        "kind": "checklist",
+        "search": "Nyílt napra készülök Időpont A hivatalosan közölt időpontot és részvételi feltételeket ellenőrizd. Tanulás Kérdezz a tantárgyi terhelésről és a támogatásról. Sport Kérdezz a sport"
+      },
+      "admission-deadlines": {
+        "path": "activities/admission-deadlines.json",
+        "title": "Határidő-napló vezetése",
+        "kind": "steps",
+        "search": "Határidő-napló vezetése Közzététel Az adott tanév hivatalos eljárásrendjéből indulj ki. Jelentkezés Külön jelöld a központi vizsgát és az intézményi jelentkezést, ha alkalmazandó. Értesítés Figyeld"
+      },
+      "admission-process": {
+        "path": "activities/admission-process.json",
+        "title": "Jelentkezéstől a beiratkozásig",
+        "kind": "steps",
+        "search": "Jelentkezéstől a beiratkozásig Tájékozódás Hasonlítsd össze a képzési lehetőségeket és feltételeket. Jelentkezés Az aktuális hivatalos útmutató alapján küldd be a szükséges adatokat. Eljárás Kövesd"
+      },
+      "admission-guide": {
+        "path": "activities/admission-guide.json",
+        "title": "Felvételi döntéstámogató",
+        "kind": "tiles",
+        "search": "Felvételi döntéstámogató Képzési cél Melyik képzés felel meg a továbbtanulási terveidnek? education-programs Felkészülés Mely feladattípusokban szükséges több gyakorlás? admission-preparation Gyakori kérdés Ellenőrizd a választ"
+      },
+      "admission-documents": {
+        "path": "activities/admission-documents.json",
+        "title": "Dokumentumok rendszerezése",
+        "kind": "checklist",
+        "search": "Dokumentumok rendszerezése Friss lista Csak a megfelelő tanévre szóló hivatalos listát használd. Kitöltés Ellenőrizd, melyik nyilatkozatot kinek kell aláírnia. Másolat A szükséges iratokat biztonságosan"
+      },
+      "admission-faq": {
+        "path": "activities/admission-faq.json",
+        "title": "Kérdéskör választó",
+        "kind": "tiles",
+        "search": "Kérdéskör választó Első osztály Beiratkozás és iskolakezdés. admission-primary Gimnázium Jelentkezés és felkészülés. admission-secondary Iratok Dokumentumok és nyilatkozatok. admission-documents"
+      },
+      "sports-disciplines": {
+        "path": "activities/sports-disciplines.json",
+        "title": "Sportágválasztó – mozgásformák",
+        "kind": "tiles",
+        "search": "Sportágválasztó – mozgásformák Egyéni mérés Atlétika: futás, ugrás, dobás; a saját teljesítmény követése. sports-knowledge Csapatjáték Labdarúgás, kézilabda és röplabda: kommunikáció és közös taktika. sports-knowledge"
+      },
+      "sports-results": {
+        "path": "activities/sports-results.json",
+        "title": "Forrással ellenőrzött országos csapateredmények",
+        "kind": "timeline",
+        "search": "Forrással ellenőrzött országos csapateredmények 2025 · bronz Leány labdarúgás, V–VI. korcsoport, Diákolimpia országos döntő: 3. hely. Forrás: MDSZ, 2025. május 19. 2026 · bronz"
+      },
+      "sports-gallery": {
+        "path": "activities/sports-gallery.json",
+        "title": "Fedezd fel a médiatárat",
+        "kind": "tiles",
+        "search": "Fedezd fel a médiatárat Mozgás Sportági illusztrációk: keresés a sport kategóriában. Iskolai élet Tanulás és közösség témájú képi válogatás. Képnéző Kattints egy képre; lapozás,"
+      },
+      "sports-olympic": {
+        "path": "activities/sports-olympic.json",
+        "title": "Olimpiai értékek – tudáspróba",
+        "kind": "quiz",
+        "search": "Olimpiai értékek – tudáspróba Melyik példa fejezi ki legjobban a tisztességes versenyt? A szabályokat akkor is betartod, ha a bíró nem látja. A fair"
+      },
+      "sports-training": {
+        "path": "activities/sports-training.json",
+        "title": "Edzésnap – tudatos előkészület",
+        "kind": "checklist",
+        "search": "Edzésnap – tudatos előkészület Felszerelés A sportág és környezet szerint készítsd össze a megfelelő eszközöket. Edzői terv Az edzővel egyeztesd az aktuális terhelést. Pihenő"
+      },
+      "sports-competitions": {
+        "path": "activities/sports-competitions.json",
+        "title": "Versenynap szervezése",
+        "kind": "steps",
+        "search": "Versenynap szervezése Kiírás Ellenőrizd a verseny pontos kategóriáját és helyszínét. Utazás Egyeztesd az indulást, kíséretet és felszerelést. Részvétel Kövesd a szervező és edző utasításait."
+      },
+      "sports-facilities": {
+        "path": "activities/sports-facilities.json",
+        "title": "Biztonságos sporttér",
+        "kind": "tiles",
+        "search": "Biztonságos sporttér Tornaterem A pálya szabad területét és a felszerelés állapotát ellenőrizni kell. Kültéri pálya Időjárás, burkolat és megvilágítás befolyásolja a használatot. Eszközök Csak"
+      },
+      "sports-leisure": {
+        "path": "activities/sports-leisure.json",
+        "title": "Aktív szabadidő – saját választás",
+        "kind": "checklist",
+        "search": "Aktív szabadidő – saját választás Mozgásforma Válassz kellemes és a körülményeknek megfelelő mozgást. Társas program Egyeztesd a részvételt és a biztonságos szabályokat. Fokozatosság A"
+      },
+      "news-latest": {
+        "path": "activities/news-latest.json",
+        "title": "Hírek böngészési útvonala",
+        "kind": "tiles",
+        "search": "Hírek böngészési útvonala Iskolai közlés A hivatalos teendőket tartalmazó információk elkülönítve kereshetők. news-announcements Sport Sporttal kapcsolatos hírek és eredmények. news-sports Visszakeresés Régebbi cikkeket az"
+      },
+      "news-calendar": {
+        "path": "activities/news-calendar.json",
+        "title": "Tervezd meg a programjaidat",
+        "kind": "tiles",
+        "search": "Tervezd meg a programjaidat Tanév Az iskolai időrend és tanítási szünetek kontextusa. education-years Vizsgák A vizsgák és mérések külön áttekintése. education-exams Rendezvények Iskolai programok"
+      },
+      "news-announcements": {
+        "path": "activities/news-announcements.json",
+        "title": "Közlemény olvasási ellenőrzőlista",
+        "kind": "checklist",
+        "search": "Közlemény olvasási ellenőrzőlista Dátum Nézd meg, mikor jelent meg és melyik időszakra vonatkozik. Érintettek Ellenőrizd, hogy a te évfolyamodra vagy csoportodra vonatkozik-e. Teendő Külön"
+      },
+      "news-archive": {
+        "path": "activities/news-archive.json",
+        "title": "Archívum – visszakeresési lehetőségek",
+        "kind": "tiles",
+        "search": "Archívum – visszakeresési lehetőségek Időrend Régebbi hírek keresése közzétételi dátum alapján. Témák Szűkíts sport, tanulás vagy közösségi téma szerint. Kulcsszó Használj rövid, jellegzetes kifejezést"
+      },
+      "news-sports": {
+        "path": "activities/news-sports.json",
+        "title": "Sporthír-olvasó",
+        "kind": "tiles",
+        "search": "Sporthír-olvasó Eredmények A helyezések értelmezéséhez nézd meg a korcsoportot és szintet. sports-results Versenyek Tájékozódj a versenytípusok között. sports-competitions Sportági háttér Ismerd meg az adott"
+      },
+      "news-studies": {
+        "path": "activities/news-studies.json",
+        "title": "Tanulmányi hírekből gyakorlás",
+        "kind": "tiles",
+        "search": "Tanulmányi hírekből gyakorlás Tanulási cél Válassz egy konkrét fejlesztendő készséget. education-study-skills Feladatsor Gyakorold a kapcsolódó tantárgyi feladatokat. education-subject-guides Vizsga Ellenőrizd a hivatalos követelményeket és"
+      },
+      "news-events": {
+        "path": "activities/news-events.json",
+        "title": "Program részvételi terv",
+        "kind": "steps",
+        "search": "Program részvételi terv Kiválasztás Ellenőrizd, hogy a program kiknek szól. Idő és hely A konkrét esemény közzétett adatait nézd meg. Felkészülés Készítsd elő a"
+      },
+      "news-community": {
+        "path": "activities/news-community.json",
+        "title": "Közösségi részvétel",
+        "kind": "tiles",
+        "search": "Közösségi részvétel Közös projekt Egyeztessétek a feladatokat, szerepeket és határidőket. education-community Önkéntesség A közösségi szolgálat külön feltételekhez kötött. information-service Képi emlék A médiatárban csak"
+      },
+      "information-daily": {
+        "path": "activities/information-daily.json",
+        "title": "Mai iskolai ügyek – gyorsválasztó",
+        "kind": "tiles",
+        "search": "Mai iskolai ügyek – gyorsválasztó Csengetés A tanórák és szünetek időrendje. information-timetable Hiányzás Mulasztással kapcsolatos ügyintézési tudnivalók. information-absence Étkezés Étkezési megrendeléshez, lemondáshoz kapcsolódó tájékozódás."
+      },
+      "information-documents": {
+        "path": "activities/information-documents.json",
+        "title": "Dokumentumok használata",
+        "kind": "tiles",
+        "search": "Dokumentumok használata Hivatalos iratok Csak ténylegesen elérhető és hatályos szabályzatot tekints irányadónak. Segédletek A saját készítésű gyakorlóanyagok nem intézményi szabályzatok. education-resources Hiányzó tétel A"
+      },
+      "information-services": {
+        "path": "activities/information-services.json",
+        "title": "Ügyintézés előkészítése",
+        "kind": "checklist",
+        "search": "Ügyintézés előkészítése Ügy tárgya Írd le egy mondatban, miben kérsz segítséget. Illetékes Az ügy típusához megfelelő hivatalos kapcsolatot válaszd. Szükséges adat Csak az eljáráshoz"
+      },
+      "information-service": {
+        "path": "activities/information-service.json",
+        "title": "Közösségi szolgálat folyamata",
+        "kind": "steps",
+        "search": "Közösségi szolgálat folyamata Tájékozódás Az aktuális intézményi szabályokat és lehetőségeket ellenőrizd. Egyeztetés A feladatot és fogadóhelyet az illetékessel egyeztesd. Naplózás A teljesített alkalmakat a"
+      },
+      "information-contact": {
+        "path": "activities/information-contact.json",
+        "title": "Kapcsolatfelvételi iránytű",
+        "kind": "tiles",
+        "search": "Kapcsolatfelvételi iránytű E-mail A hivatalos címre rövid tárggyal, egyértelmű kérdéssel írj. Személyes ügy Előzetesen ellenőrizd, szükséges-e időpontot egyeztetni. Felvételi tájékoztatás Az aktuális felvételi kérdésekhez"
+      },
+      "information-timetable": {
+        "path": "activities/information-timetable.json",
+        "title": "Iskolai időrend a gyakorlatban",
+        "kind": "tiles",
+        "search": "Iskolai időrend a gyakorlatban Csengetés A tanórák kezdetét és végét a fenti hivatalos időrendben ellenőrizd. Osztályórarend A bemutató órarend nem a tanuló tényleges órarendje."
+      },
+      "information-meals": {
+        "path": "activities/information-meals.json",
+        "title": "Étkezési ügyintézés – felkészülés",
+        "kind": "checklist",
+        "search": "Étkezési ügyintézés – felkészülés Aktuális szolgáltató Ellenőrizd a hatályos étkezési tájékoztatót. Megrendelés Rögzítsd a megfelelő időszakot és az érintett étkezést. Lemondás Az aktuális szolgáltatói"
+      },
+      "information-absence": {
+        "path": "activities/information-absence.json",
+        "title": "Hiányzás jelzése és igazolása",
+        "kind": "steps",
+        "search": "Hiányzás jelzése és igazolása Jelzés Az intézmény aktuális szabályai szerint jelezd a mulasztást. Dokumentum A megfelelő igazolást készítsd elő. Rögzítés Kövesd az előírt ügyintézési"
+      },
+      "school-awards": {
+        "path": "activities/school-awards.json",
+        "title": "Elismerések és dokumentálás",
+        "kind": "timeline",
+        "search": "Elismerések és dokumentálás 1989 Az intézmény Csanádi Árpád nevét vette fel. 1998 Az intézmény Olimpiai Érdemérmet kapott. További eredmények Az igazolt sporteredmények a sporteredmény-adatbázisban"
+      },
+      "school-foundation": {
+        "path": "activities/school-foundation.json",
+        "title": "Támogatás – tájékozódási pontok",
+        "kind": "tiles",
+        "search": "Támogatás – tájékozódási pontok Célok A tanulást és sportot támogató tevékenységek az alapítványi tájékoztatóhoz kapcsolódnak. Adatok ellenőrzése Adományozás előtt kérd az aktuális hivatalos adatokat;"
+      },
+      "education-study-skills": {
+        "path": "activities/education-study-skills.json",
+        "title": "25 perces aktív tanulási blokk",
+        "kind": "checklist",
+        "search": "25 perces aktív tanulási blokk Cél Válassz egy konkrét témát és egy ellenőrizhető célt. Felidézés Könyv nélkül írj le mindent, amire emlékszel. Ellenőrzés Hasonlítsd"
+      },
+      "education-digital-safety": {
+        "path": "activities/education-digital-safety.json",
+        "title": "Adathalászat felismerése",
+        "kind": "quiz",
+        "search": "Adathalászat felismerése Váratlan üzenet azonnali jelszómegadást kér. Mit teszel? A hivatalos felületet külön nyitod meg, ellenőrzöd a feladót. A sürgetés és gyanús hivatkozás figyelmeztető"
+      },
+      "education-subject-guides": {
+        "path": "activities/education-subject-guides.json",
+        "title": "Válassz gyakorlóállomást",
+        "kind": "tiles",
+        "search": "Válassz gyakorlóállomást Matematika Mértékegységek, arányok és adatok értelmezése. Szövegértés Keresd a fő állítást és az azt alátámasztó bizonyítékokat. Digitális kompetencia Gyakorold az adatok strukturálását"
+      },
+      "education-career": {
+        "path": "activities/education-career.json",
+        "title": "Pályaorientációs önismereti térkép",
+        "kind": "checklist",
+        "search": "Pályaorientációs önismereti térkép Érdeklődés Írj le három tevékenységet, amelyet szívesen végzel. Erősség Gyűjts konkrét példákat arra, amiben fejlődtél. Lehetőségek Hasonlíts össze képzési és szakmai"
+      },
+      "admission-preparation": {
+        "path": "activities/admission-preparation.json",
+        "title": "Négyhetes felkészülési ciklus",
+        "kind": "steps",
+        "search": "Négyhetes felkészülési ciklus 1. hét Mérd fel a kiinduló tudást, gyűjtsd a tipikus hibákat. 2. hét Gyakorolj célzottan a nehezebb feladattípusokra. 3. hét Oldj"
+      },
+      "admission-checklist": {
+        "path": "activities/admission-checklist.json",
+        "title": "Saját jelentkezési ellenőrzőlista",
+        "kind": "checklist",
+        "search": "Saját jelentkezési ellenőrzőlista Képzés kiválasztva Nézd meg az adott tanévre érvényes képzési tájékoztatót. Határidők rögzítve A dátumokat a hivatalos eljárásrendből vedd. Iratok előkészítve Csak"
+      },
+      "sports-knowledge": {
+        "path": "activities/sports-knowledge.json",
+        "title": "Sportági alapfogalmak",
+        "kind": "quiz",
+        "search": "Sportági alapfogalmak Melyik sportágban használják a sáncolás kifejezést? Röplabda A háló közelében a támadó labda útját próbálják elzárni. Atlétika Az atlétika futó-, ugró- és"
+      },
+      "sports-wellbeing": {
+        "path": "activities/sports-wellbeing.json",
+        "title": "Regenerációs önellenőrzés",
+        "kind": "checklist",
+        "search": "Regenerációs önellenőrzés Pihenés Hagyj elegendő időt az alvásra és a napi pihenésre. Folyadék Figyelj a folyadékpótlásra az edzői és környezeti útmutatás szerint. Terhelés Szokatlan"
+      },
+      "sports-quiz": {
+        "path": "activities/sports-quiz.json",
+        "title": "Bemelegítő tudáspróba",
+        "kind": "quiz",
+        "search": "Bemelegítő tudáspróba Miért nem elegendő egyetlen mérésből következtetni? A mérési körülmények és a véletlen eltérések befolyásolhatják. Ismételt mérésből megbízhatóbb összkép készül. Mert egy mérés"
+      },
+      "sports-statistics": {
+        "path": "activities/sports-statistics.json",
+        "title": "Gyakorlási idő – szemléltető kalkulátor",
+        "kind": "calculator",
+        "search": "Gyakorlási idő – szemléltető kalkulátor Alkalmak hetente 3 Perc alkalmanként 45 Heti összes idő A két érték szorzata. Ez számítási példa, nem edzésajánlás."
+      },
+      "information-parent-guide": {
+        "path": "activities/information-parent-guide.json",
+        "title": "Szülői ügyintézési útvonalak",
+        "kind": "tiles",
+        "search": "Szülői ügyintézési útvonalak Mulasztás Jelzés, igazolás, pótlás. information-absence Étkezés Aktuális megrendelési és lemondási információk. information-meals Hivatalos iratok Szabályzatok és tájékoztatók áttekintése. information-documents"
+      },
+      "information-disclosure": {
+        "path": "activities/information-disclosure.json",
+        "title": "Közzétételi információk rendszere",
+        "kind": "tiles",
+        "search": "Közzétételi információk rendszere Intézményi adatok A hivatalos név és kapcsolat az elérhetőségi oldalon szerepel. information-contact Szabályzatok A ténylegesen elérhető hivatalos iratok és a hiányzó"
+      },
+      "education-primary": {
+        "path": "activities/education-primary.json",
+        "title": "Általános iskolai tanulási rutin",
+        "kind": "checklist",
+        "search": "Általános iskolai tanulási rutin Felszerelés Készítsd elő a következő tanítási nap eszközeit. Feladat Olvasd el az utasítást, majd önállóan próbálkozz. Ellenőrzés Nézd át az"
+      },
+      "education-secondary": {
+        "path": "activities/education-secondary.json",
+        "title": "Gimnáziumi fejlődési utak",
+        "kind": "tiles",
+        "search": "Gimnáziumi fejlődési utak Tantárgyi elmélyülés A rendszeres gyakorlás és visszajelzés segíti a felkészülést. education-subject-guides Vizsgák Kövesd a hivatalos vizsgaidőpontokat és követelményeket. education-exams Továbbtanulás Térképezd"
+      },
+      "education-sports": {
+        "path": "activities/education-sports.json",
+        "title": "Tanulás és edzés összehangolása",
+        "kind": "checklist",
+        "search": "Tanulás és edzés összehangolása Heti időrend Írd össze az iskolai és sportkötelezettségeket. Egyeztetés A versenyek és hiányzások ügyében egyeztess a megfelelő felelősökkel. Pótlás Tervezd"
+      }
+    },
+    "recommendations": {
+      "schema": "1.0",
+      "topicCount": 3,
+      "priorityCount": 2,
+      "priorityOrder": [
+        "information-daily",
+        "news-announcements",
+        "admission-guide",
+        "information-contact",
+        "education-programs",
+        "information-documents",
+        "news-calendar",
+        "information-timetable",
+        "admission-primary",
+        "admission-secondary",
+        "admission-deadlines",
+        "news-latest",
+        "sports-disciplines",
+        "information-services",
+        "education-years",
+        "admission-process",
+        "admission-documents",
+        "school-introduction",
+        "information-parent-guide",
+        "education-exams",
+        "sports-results",
+        "information-absence",
+        "information-meals",
+        "admission-faq",
+        "admission-open",
+        "admission-checklist",
+        "information-disclosure",
+        "school-staff",
+        "education-primary",
+        "education-secondary",
+        "education-sports",
+        "sports-training",
+        "sports-facilities",
+        "sports-competitions",
+        "education-resources",
+        "admission-preparation",
+        "education-study-skills",
+        "education-career",
+        "school-compass",
+        "school-values",
+        "school-history",
+        "school-partners",
+        "school-foundation",
+        "school-awards",
+        "information-service",
+        "news-events",
+        "news-sports",
+        "news-studies",
+        "news-community",
+        "sports-gallery",
+        "education-digital",
+        "education-digital-safety",
+        "education-library",
+        "education-talent",
+        "education-community",
+        "school-workshop",
+        "school-explore",
+        "school-eco",
+        "sports-wellbeing",
+        "sports-leisure",
+        "sports-knowledge",
+        "sports-olympic",
+        "sports-quiz",
+        "sports-statistics",
+        "education-subject-guides",
+        "news-archive"
+      ],
+      "labels": {
+        "title": "Oldalajánló",
+        "topic": "A témához kapcsolódó oldalak",
+        "priority": "Fontos intézményi oldalak",
+        "preview": "Betekintés ›",
+        "topicDetail": "A jelenlegi oldal témájához kapcsolódó ajánlás.",
+        "priorityDetail": "Az intézményi tájékozódás szempontjából kiemelt oldal."
+      }
+    }
   }
 }

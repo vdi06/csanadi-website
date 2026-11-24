@@ -1,6 +1,6 @@
-import { element } from "./dom.js?v=2.54";
-import { eventsOnDay, fullDayLabel, monthLabel } from "./calendar-data.js?v=2.54";
-import { newsStoryHref } from "./news-panel.js?v=2.54";
+import { element } from "./dom.js?v=2.56";
+import { eventsOnDay, fullDayLabel, monthLabel } from "./calendar-data.js?v=2.56";
+import { newsStoryHref } from "./news-panel.js?v=2.56";
 
 export function addCalendarDays(day, count) {
   const date = new Date(`${day}T12:00:00Z`);

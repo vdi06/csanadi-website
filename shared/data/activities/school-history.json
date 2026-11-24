@@ -1,0 +1,24 @@
+{
+  "id": "school-history",
+  "kind": "timeline",
+  "title": "Az iskola történetének mérföldkövei",
+  "items": [
+    {
+      "label": "1904",
+      "detail": "Megnyílt az Őrnagy utcai iskolaépület."
+    },
+    {
+      "label": "1987",
+      "detail": "A KSI-vel kapcsolatos sportiskolai együttműködés kezdete."
+    },
+    {
+      "label": "1988–1989",
+      "detail": "Gimnáziumi képzés indult, majd az intézmény Csanádi Árpád nevét vette fel."
+    },
+    {
+      "label": "1998",
+      "detail": "Olimpiai Érdemérem az intézménynek."
+    }
+  ],
+  "source": "old-history"
+}

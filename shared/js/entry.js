@@ -1,8 +1,9 @@
+import { loadActivity } from "./page-activities.js?v=2.56";
 /** Egyetlen HTML, közvetlen kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.54";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.54";
-import { eventById } from "./calendar-data.js?v=2.54";
-import { mountOffline } from "./offline.js?v=2.54";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.56";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.56";
+import { eventById } from "./calendar-data.js?v=2.56";
+import { mountOffline } from "./offline.js?v=2.56";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -104,7 +105,7 @@ async function render() {
   const version = ++serial;
   const platform = breakpoint.matches ? "mobile" : "desktop";
   const selectedRoute = route();
-  await hydratePage(selectedRoute);
+  await Promise.all([hydratePage(selectedRoute),selectedRoute.startsWith("page:")?loadActivity(config,selectedRoute.slice(5),settingsUrl):null]);
   if(version!==serial)return;
   if (activePlatform === platform && activeModule) {
     mountView(platform, activeModule, selectedRoute);

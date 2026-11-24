@@ -1,0 +1,24 @@
+{
+  "id": "information-service",
+  "kind": "steps",
+  "title": "Közösségi szolgálat folyamata",
+  "items": [
+    {
+      "label": "Tájékozódás",
+      "detail": "Az aktuális intézményi szabályokat és lehetőségeket ellenőrizd."
+    },
+    {
+      "label": "Egyeztetés",
+      "detail": "A feladatot és fogadóhelyet az illetékessel egyeztesd."
+    },
+    {
+      "label": "Naplózás",
+      "detail": "A teljesített alkalmakat a szükséges módon igazold."
+    },
+    {
+      "label": "Összesítés",
+      "detail": "Ellenőrizd, hogy a nyilvántartásban minden teljesítés szerepel-e."
+    }
+  ],
+  "source": "generated"
+}

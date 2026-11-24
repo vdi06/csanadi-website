@@ -1,0 +1,23 @@
+{
+  "id": "school-staff",
+  "kind": "tiles",
+  "title": "Kihez forduljak?",
+  "items": [
+    {
+      "label": "Tanulmányi kérdés",
+      "detail": "A tantárgyi kérdésben az érintett pedagógus, osztályügyben az osztályfőnök az első tájékozódási pont.",
+      "related": "information-services"
+    },
+    {
+      "label": "Intézményi ügy",
+      "detail": "Hivatalos ügyben készíts rövid leírást és használd az intézményi kapcsolattartási csatornát.",
+      "related": "information-contact"
+    },
+    {
+      "label": "Felvételi kérdés",
+      "detail": "Az adott évfolyam felvételi tájékoztatója alapján gyűjtsd össze a kérdéseidet.",
+      "related": "admission-guide"
+    }
+  ],
+  "source": "generated"
+}

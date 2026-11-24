@@ -1,0 +1,20 @@
+{
+  "id": "news-archive",
+  "kind": "tiles",
+  "title": "Archívum – visszakeresési lehetőségek",
+  "items": [
+    {
+      "label": "Időrend",
+      "detail": "Régebbi hírek keresése közzétételi dátum alapján."
+    },
+    {
+      "label": "Témák",
+      "detail": "Szűkíts sport, tanulás vagy közösségi téma szerint."
+    },
+    {
+      "label": "Kulcsszó",
+      "detail": "Használj rövid, jellegzetes kifejezést az eseményből."
+    }
+  ],
+  "source": "generated"
+}

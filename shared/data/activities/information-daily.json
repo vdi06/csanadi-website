@@ -1,0 +1,23 @@
+{
+  "id": "information-daily",
+  "kind": "tiles",
+  "title": "Mai iskolai ügyek – gyorsválasztó",
+  "items": [
+    {
+      "label": "Csengetés",
+      "detail": "A tanórák és szünetek időrendje.",
+      "related": "information-timetable"
+    },
+    {
+      "label": "Hiányzás",
+      "detail": "Mulasztással kapcsolatos ügyintézési tudnivalók.",
+      "related": "information-absence"
+    },
+    {
+      "label": "Étkezés",
+      "detail": "Étkezési megrendeléshez, lemondáshoz kapcsolódó tájékozódás.",
+      "related": "information-meals"
+    }
+  ],
+  "source": "generated"
+}

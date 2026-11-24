@@ -1,0 +1,23 @@
+{
+  "id": "admission-secondary",
+  "kind": "tiles",
+  "title": "Kilencedik évfolyam – felkészülési útvonal",
+  "items": [
+    {
+      "label": "Tájékozódás",
+      "detail": "Az adott tanévre vonatkozó feltételeket ellenőrizd.",
+      "related": "admission-guide"
+    },
+    {
+      "label": "Gyakorlás",
+      "detail": "Próbálj időre megoldott feladatsorokat, majd elemezd a hibákat.",
+      "related": "admission-preparation"
+    },
+    {
+      "label": "Határidők",
+      "detail": "Kövesd a felvételi eljárás időpontjait.",
+      "related": "admission-deadlines"
+    }
+  ],
+  "source": "generated"
+}

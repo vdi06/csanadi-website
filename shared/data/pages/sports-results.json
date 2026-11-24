@@ -51,11 +51,14 @@
   ],
   "contentMeta": {
     "sources": [
-      "generated"
+      "generated",
+      "mdsz-2025",
+      "mdsz-2026"
     ],
     "checkedAt": "2026-11-24",
     "related": [
       "sports-competitions",
+      "news-sports",
       "school-awards"
     ],
     "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",

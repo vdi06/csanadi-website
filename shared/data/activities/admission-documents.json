@@ -1,0 +1,24 @@
+{
+  "id": "admission-documents",
+  "kind": "checklist",
+  "title": "Dokumentumok rendszerezése",
+  "items": [
+    {
+      "label": "Friss lista",
+      "detail": "Csak a megfelelő tanévre szóló hivatalos listát használd."
+    },
+    {
+      "label": "Kitöltés",
+      "detail": "Ellenőrizd, melyik nyilatkozatot kinek kell aláírnia."
+    },
+    {
+      "label": "Másolat",
+      "detail": "A szükséges iratokat biztonságosan tárold, ne küldd nyilvános csatornára."
+    },
+    {
+      "label": "Beadás",
+      "detail": "Jegyezd fel a beadás időpontját és a visszaigazolást."
+    }
+  ],
+  "source": "generated"
+}

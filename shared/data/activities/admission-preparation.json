@@ -1,0 +1,24 @@
+{
+  "id": "admission-preparation",
+  "kind": "steps",
+  "title": "Négyhetes felkészülési ciklus",
+  "items": [
+    {
+      "label": "1. hét",
+      "detail": "Mérd fel a kiinduló tudást, gyűjtsd a tipikus hibákat."
+    },
+    {
+      "label": "2. hét",
+      "detail": "Gyakorolj célzottan a nehezebb feladattípusokra."
+    },
+    {
+      "label": "3. hét",
+      "detail": "Oldj meg feladatsorokat a megengedett idő alatt."
+    },
+    {
+      "label": "4. hét",
+      "detail": "Ismételj, ellenőrizd az eszközöket és tervezz pihenőt."
+    }
+  ],
+  "source": "generated"
+}

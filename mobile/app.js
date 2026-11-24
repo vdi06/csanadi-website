@@ -1,23 +1,25 @@
-import { relatedView, practicalView } from "../shared/js/content-expansion.js?v=2.54";
-import { installMobilePanelDialogs } from "../shared/js/content-expansion.js?v=2.54";
-import { createMobileFeatureCenter } from "./centers.js?v=2.54";
-import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.54";
-import { element } from "../shared/js/dom.js?v=2.54";
-import { mountGate } from "../shared/js/gate.js?v=2.54";
-import { makeFooter } from "../shared/js/footer.js?v=2.54";
-import { makeMobileHeader } from "./header.js?v=2.54";
-import { createMobilePage } from "./page.js?v=2.54";
-import { createMobileStory } from "./story.js?v=2.54";
-import { createMobileHomeHighlights } from "./home-highlights.js?v=2.54";
-import { createMobileSuccesses } from "./successes.js?v=2.54";
-import { createMobileCalendar } from "./calendar.js?v=2.54";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.54";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.54";
-import { createMobileInformation } from "./information.js?v=2.54";
-import { createMobileMedia } from "./gallery.js?v=2.54";
-import { createMobileTimetable } from "./timetable.js?v=2.54";
-import { createMobileDocuments } from "./documents.js?v=2.54";
-import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.54";
+import { createHomeDataStrip } from "../shared/js/home-data-strip.js?v=2.56";
+import { activityView } from "../shared/js/page-activities.js?v=2.56";
+import { relatedView, practicalView } from "../shared/js/content-expansion.js?v=2.56";
+import { installMobilePanelDialogs } from "../shared/js/content-expansion.js?v=2.56";
+import { createMobileFeatureCenter } from "./centers.js?v=2.56";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.56";
+import { element } from "../shared/js/dom.js?v=2.56";
+import { mountGate } from "../shared/js/gate.js?v=2.56";
+import { makeFooter } from "../shared/js/footer.js?v=2.56";
+import { makeMobileHeader } from "./header.js?v=2.56";
+import { createMobilePage } from "./page.js?v=2.56";
+import { createMobileStory } from "./story.js?v=2.56";
+import { createMobileHomeHighlights } from "./home-highlights.js?v=2.56";
+import { createMobileSuccesses } from "./successes.js?v=2.56";
+import { createMobileCalendar } from "./calendar.js?v=2.56";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.56";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.56";
+import { createMobileInformation } from "./information.js?v=2.56";
+import { createMobileMedia } from "./gallery.js?v=2.56";
+import { createMobileTimetable } from "./timetable.js?v=2.56";
+import { createMobileDocuments } from "./documents.js?v=2.56";
+import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.56";
 
 /** Önálló mobilos nézet: saját fejléc, JSON-vázlatos aloldal és kompakt lábléc. */
 export function mount(root, config, page) {
@@ -77,9 +79,11 @@ export function mount(root, config, page) {
   else if (isNewsPage) main.append(createMobilePage(config, newsId, {hideCards:true}), newsPage.section);
   else if (page.startsWith("page:")) main.append(createMobilePage(config, page.slice(5)));
   if(page.startsWith("page:")) {
-    const note=practicalView(config,page.slice(5)),related=relatedView(config,page.slice(5));
+    const activity=activityView(config,page.slice(5),"mobile"),note=practicalView(config,page.slice(5)),related=relatedView(config,page.slice(5));
+    if(activity){const article=main.querySelector("article.mobile-page-preview"); const cards=article?.querySelector(".mobile-page-cards"); if(cards) article.insertBefore(activity,cards); else main.append(activity); }
     if(note)main.append(note); if(related)main.append(related);
   }
+  if (story) { const strip = createHomeDataStrip(config,"mobile"); if (strip) main.append(strip); }
   home.append(skipLink, mobileHeader.header,
     ...(successes ? [successes.overlay] : []),
     main,

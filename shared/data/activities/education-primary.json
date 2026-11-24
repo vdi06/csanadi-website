@@ -1,0 +1,24 @@
+{
+  "id": "education-primary",
+  "kind": "checklist",
+  "title": "Általános iskolai tanulási rutin",
+  "items": [
+    {
+      "label": "Felszerelés",
+      "detail": "Készítsd elő a következő tanítási nap eszközeit."
+    },
+    {
+      "label": "Feladat",
+      "detail": "Olvasd el az utasítást, majd önállóan próbálkozz."
+    },
+    {
+      "label": "Ellenőrzés",
+      "detail": "Nézd át az elkészült munkát, kérdezz, ha elakadtál."
+    },
+    {
+      "label": "Pihenő",
+      "detail": "A tanulás és mozgás mellett legyen szabadidő is."
+    }
+  ],
+  "source": "generated"
+}

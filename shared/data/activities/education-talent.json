@@ -1,0 +1,24 @@
+{
+  "id": "education-talent",
+  "kind": "checklist",
+  "title": "Személyes fejlődési terv",
+  "items": [
+    {
+      "label": "Konkrét cél",
+      "detail": "Válassz mérhető, reális tanulási vagy sportbeli célt."
+    },
+    {
+      "label": "Kezdőállapot",
+      "detail": "Rögzítsd, mit tudsz jelenleg önállóan."
+    },
+    {
+      "label": "Gyakorlási idő",
+      "detail": "Jelölj rendszeres, fenntartható alkalmakat."
+    },
+    {
+      "label": "Visszamérés",
+      "detail": "Hasonlítsd össze az eredményed a saját korábbi szinteddel."
+    }
+  ],
+  "source": "generated"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "school-compass",
+  "kind": "quiz",
+  "title": "Iskolai helyzet: közös szabályok",
+  "question": "Egy közös eszköz megsérült. Mi a felelős eljárás?",
+  "options": [
+    {
+      "label": "Megpróbálod engedély nélkül megjavítani.",
+      "explanation": "A javítás szakember feladata lehet.",
+      "correct": false
+    },
+    {
+      "label": "Jelzed a megfelelő felnőttnek és nem használod tovább.",
+      "explanation": "A sérülés balesetveszélyes lehet.",
+      "correct": true
+    },
+    {
+      "label": "Eltitkolod.",
+      "explanation": "A probléma így másokat is veszélyeztethet.",
+      "correct": false
+    }
+  ],
+  "source": "generated"
+}

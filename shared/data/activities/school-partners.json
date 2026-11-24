@@ -1,0 +1,23 @@
+{
+  "id": "school-partners",
+  "kind": "tiles",
+  "title": "Együttműködési térkép",
+  "items": [
+    {
+      "label": "Fenntartás",
+      "detail": "Az intézményi működés és a hivatalos fenntartói tájékoztatás külön információs terület.",
+      "related": "information-disclosure"
+    },
+    {
+      "label": "Sportszakmai kapcsolat",
+      "detail": "A KSI-vel való együttműködés történeti szerepét az iskola történetében is megismerheted.",
+      "related": "school-history"
+    },
+    {
+      "label": "Közösségi támogatás",
+      "detail": "Az alapítványról és a támogatás céljairól az alapítványi oldalon tájékozódhatsz.",
+      "related": "school-foundation"
+    }
+  ],
+  "source": "generated"
+}

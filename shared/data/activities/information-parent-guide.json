@@ -1,0 +1,23 @@
+{
+  "id": "information-parent-guide",
+  "kind": "tiles",
+  "title": "Szülői ügyintézési útvonalak",
+  "items": [
+    {
+      "label": "Mulasztás",
+      "detail": "Jelzés, igazolás, pótlás.",
+      "related": "information-absence"
+    },
+    {
+      "label": "Étkezés",
+      "detail": "Aktuális megrendelési és lemondási információk.",
+      "related": "information-meals"
+    },
+    {
+      "label": "Hivatalos iratok",
+      "detail": "Szabályzatok és tájékoztatók áttekintése.",
+      "related": "information-documents"
+    }
+  ],
+  "source": "generated"
+}

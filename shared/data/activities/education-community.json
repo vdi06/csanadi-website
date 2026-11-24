@@ -1,0 +1,24 @@
+{
+  "id": "education-community",
+  "kind": "steps",
+  "title": "Csoportos projekt indítása",
+  "items": [
+    {
+      "label": "Feladatmegosztás",
+      "detail": "Határozzátok meg, ki mit vállal."
+    },
+    {
+      "label": "Közös források",
+      "detail": "Rögzítsétek a hivatkozásokat és a megosztott fájlok helyét."
+    },
+    {
+      "label": "Ellenőrzőpont",
+      "detail": "Egyeztessetek a részfeladatok állapotáról."
+    },
+    {
+      "label": "Közös bemutató",
+      "detail": "Mindenki tudja elmagyarázni a saját hozzájárulását."
+    }
+  ],
+  "source": "generated"
+}

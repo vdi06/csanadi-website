@@ -1,0 +1,20 @@
+{
+  "id": "sports-statistics",
+  "kind": "calculator",
+  "title": "Gyakorlási idő – szemléltető kalkulátor",
+  "items": [
+    {
+      "label": "Alkalmak hetente",
+      "detail": "3"
+    },
+    {
+      "label": "Perc alkalmanként",
+      "detail": "45"
+    },
+    {
+      "label": "Heti összes idő",
+      "detail": "A két érték szorzata. Ez számítási példa, nem edzésajánlás."
+    }
+  ],
+  "source": "generated"
+}

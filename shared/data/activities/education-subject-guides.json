@@ -1,0 +1,21 @@
+{
+  "id": "education-subject-guides",
+  "kind": "tiles",
+  "title": "Válassz gyakorlóállomást",
+  "items": [
+    {
+      "label": "Matematika",
+      "detail": "Mértékegységek, arányok és adatok értelmezése."
+    },
+    {
+      "label": "Szövegértés",
+      "detail": "Keresd a fő állítást és az azt alátámasztó bizonyítékokat."
+    },
+    {
+      "label": "Digitális kompetencia",
+      "detail": "Gyakorold az adatok strukturálását és ellenőrzését.",
+      "related": "education-digital-safety"
+    }
+  ],
+  "source": "generated"
+}

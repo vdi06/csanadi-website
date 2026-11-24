@@ -1,0 +1,23 @@
+{
+  "id": "sports-disciplines",
+  "kind": "tiles",
+  "title": "Sportágválasztó – mozgásformák",
+  "items": [
+    {
+      "label": "Egyéni mérés",
+      "detail": "Atlétika: futás, ugrás, dobás; a saját teljesítmény követése.",
+      "related": "sports-knowledge"
+    },
+    {
+      "label": "Csapatjáték",
+      "detail": "Labdarúgás, kézilabda és röplabda: kommunikáció és közös taktika.",
+      "related": "sports-knowledge"
+    },
+    {
+      "label": "Technika és ritmus",
+      "detail": "Úszás és asztalitenisz: mozgástechnika és pontos végrehajtás.",
+      "related": "sports-knowledge"
+    }
+  ],
+  "source": "generated"
+}

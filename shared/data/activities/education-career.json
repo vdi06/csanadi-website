@@ -1,0 +1,24 @@
+{
+  "id": "education-career",
+  "kind": "checklist",
+  "title": "Pályaorientációs önismereti térkép",
+  "items": [
+    {
+      "label": "Érdeklődés",
+      "detail": "Írj le három tevékenységet, amelyet szívesen végzel."
+    },
+    {
+      "label": "Erősség",
+      "detail": "Gyűjts konkrét példákat arra, amiben fejlődtél."
+    },
+    {
+      "label": "Lehetőségek",
+      "detail": "Hasonlíts össze képzési és szakmai irányokat hivatalos forrásból."
+    },
+    {
+      "label": "Következő lépés",
+      "detail": "Válassz egy kipróbálható feladatot vagy tájékozódási alkalmat."
+    }
+  ],
+  "source": "generated"
+}

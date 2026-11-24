@@ -1,0 +1,24 @@
+{
+  "id": "school-workshop",
+  "kind": "steps",
+  "title": "Alkotói műhely – ötlettől a bemutatóig",
+  "items": [
+    {
+      "label": "Tervezés",
+      "detail": "Rajzolj vázlatot, határozd meg a célt és a szükséges eszközöket."
+    },
+    {
+      "label": "Prototípus",
+      "detail": "Készíts egyszerű változatot és ellenőrizd, teljesíti-e a célt."
+    },
+    {
+      "label": "Próba",
+      "detail": "Kérj visszajelzést, majd javíts egy jól meghatározott részletet."
+    },
+    {
+      "label": "Bemutatás",
+      "detail": "Mutasd meg a kész munkát, a forrásokat és a tanulságokat."
+    }
+  ],
+  "source": "generated"
+}

@@ -67,7 +67,8 @@
     "checkedAt": "2026-11-24",
     "related": [
       "news-calendar",
-      "education-exams"
+      "education-exams",
+      "information-timetable"
     ],
     "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
     "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"

@@ -1,0 +1,23 @@
+{
+  "id": "education-secondary",
+  "kind": "tiles",
+  "title": "Gimnáziumi fejlődési utak",
+  "items": [
+    {
+      "label": "Tantárgyi elmélyülés",
+      "detail": "A rendszeres gyakorlás és visszajelzés segíti a felkészülést.",
+      "related": "education-subject-guides"
+    },
+    {
+      "label": "Vizsgák",
+      "detail": "Kövesd a hivatalos vizsgaidőpontokat és követelményeket.",
+      "related": "education-exams"
+    },
+    {
+      "label": "Továbbtanulás",
+      "detail": "Térképezd fel az érdeklődési irányokat és képzéseket.",
+      "related": "education-career"
+    }
+  ],
+  "source": "generated"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "sports-results",
+  "kind": "timeline",
+  "title": "Forrással ellenőrzött országos csapateredmények",
+  "items": [
+    {
+      "label": "2025 · bronz",
+      "detail": "Leány labdarúgás, V–VI. korcsoport, Diákolimpia országos döntő: 3. hely. Forrás: MDSZ, 2025. május 19."
+    },
+    {
+      "label": "2026 · bronz",
+      "detail": "Leány labdarúgás, III–IV. korcsoport, Szombathely: 3. hely. Forrás: MDSZ, 2026. június 1."
+    }
+  ],
+  "source": "mdsz-2025",
+  "sources": [
+    "mdsz-2025",
+    "mdsz-2026"
+  ]
+}

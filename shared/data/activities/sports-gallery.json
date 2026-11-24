@@ -1,0 +1,20 @@
+{
+  "id": "sports-gallery",
+  "kind": "tiles",
+  "title": "Fedezd fel a médiatárat",
+  "items": [
+    {
+      "label": "Mozgás",
+      "detail": "Sportági illusztrációk: keresés a sport kategóriában."
+    },
+    {
+      "label": "Iskolai élet",
+      "detail": "Tanulás és közösség témájú képi válogatás."
+    },
+    {
+      "label": "Képnéző",
+      "detail": "Kattints egy képre; lapozás, nagyítás és bezárás érhető el."
+    }
+  ],
+  "source": "generated"
+}

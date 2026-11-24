@@ -1,0 +1,23 @@
+{
+  "id": "news-community",
+  "kind": "tiles",
+  "title": "Közösségi részvétel",
+  "items": [
+    {
+      "label": "Közös projekt",
+      "detail": "Egyeztessétek a feladatokat, szerepeket és határidőket.",
+      "related": "education-community"
+    },
+    {
+      "label": "Önkéntesség",
+      "detail": "A közösségi szolgálat külön feltételekhez kötött.",
+      "related": "information-service"
+    },
+    {
+      "label": "Képi emlék",
+      "detail": "A médiatárban csak megfelelő jogosultsággal közzétett felvételek lehetnek.",
+      "related": "sports-gallery"
+    }
+  ],
+  "source": "generated"
+}

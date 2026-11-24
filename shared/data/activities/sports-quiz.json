@@ -1,0 +1,24 @@
+{
+  "id": "sports-quiz",
+  "kind": "quiz",
+  "title": "Bemelegítő tudáspróba",
+  "question": "Miért nem elegendő egyetlen mérésből következtetni?",
+  "options": [
+    {
+      "label": "A mérési körülmények és a véletlen eltérések befolyásolhatják.",
+      "explanation": "Ismételt mérésből megbízhatóbb összkép készül.",
+      "correct": true
+    },
+    {
+      "label": "Mert egy mérés soha nem lehet helyes.",
+      "explanation": "Egy mérés lehet pontos, de nem mutatja a változékonyságot.",
+      "correct": false
+    },
+    {
+      "label": "Mert mindig a legjobb eredmény az igaz.",
+      "explanation": "A szélsőérték nem feltétlenül jellemző.",
+      "correct": false
+    }
+  ],
+  "source": "generated"
+}

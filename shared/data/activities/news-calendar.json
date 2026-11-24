@@ -1,0 +1,23 @@
+{
+  "id": "news-calendar",
+  "kind": "tiles",
+  "title": "Tervezd meg a programjaidat",
+  "items": [
+    {
+      "label": "Tanév",
+      "detail": "Az iskolai időrend és tanítási szünetek kontextusa.",
+      "related": "education-years"
+    },
+    {
+      "label": "Vizsgák",
+      "detail": "A vizsgák és mérések külön áttekintése.",
+      "related": "education-exams"
+    },
+    {
+      "label": "Rendezvények",
+      "detail": "Iskolai programok és kapcsolódó tájékoztatók.",
+      "related": "news-events"
+    }
+  ],
+  "source": "generated"
+}
