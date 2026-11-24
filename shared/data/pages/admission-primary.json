@@ -1,0 +1,81 @@
+{
+  "intro": "Első osztályba jelentkezésnél a hivatalos beiratkozási időszak, a szükséges okmányok és a szülői teendők a döntő szempontok. A 2027-es helyi részletek külön megerősítésre várnak.",
+  "items": [
+    {
+      "title": "Ismerkedés az általános iskolával",
+      "summary": "Az első iskolai évek nevelési szemlélete.",
+      "groups": [
+        {
+          "title": "Óvoda–iskola átmenet",
+          "points": [
+            {
+              "title": "Fokozatosság",
+              "details": [
+                "A pedagógiai program kiemelten kezeli a biztonságos, támogató átmenetet az óvodából az iskolába."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "A sport szerepe",
+          "points": [
+            {
+              "title": "Mozgás szeretete",
+              "details": [
+                "Az alsó tagozaton a mozgáskultúra és a sport iránti pozitív viszony kialakítása meghatározó."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "card"
+    },
+    {
+      "title": "Beiratkozási teendők",
+      "summary": "Az eljárást évhez kötött tájékoztatás kíséri.",
+      "groups": [
+        {
+          "title": "Lépések",
+          "points": [
+            {
+              "title": "Tájékozódás és jelentkezés",
+              "details": [
+                "A beiratkozás módját, időpontját és az esetleges elektronikus ügyintézést az aktuális iskolai tájékoztatóban kell ellenőrizni."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Dokumentumok",
+          "points": [
+            {
+              "title": "Szükséges iratok",
+              "details": [
+                "A pontos iratlistát a hivatalos beiratkozási felhívás határozza meg; korábbi évek listája nem helyettesíti az aktuálisat."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "steps"
+    }
+  ],
+  "contentMeta": {
+    "sources": [
+      "generated",
+      "old-admission",
+      "old-primary"
+    ],
+    "checkedAt": "2026-11-24",
+    "related": [
+      "admission-checklist",
+      "admission-documents"
+    ],
+    "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
+  },
+  "practicalNote": {
+    "title": "A beiratkozás előkészítése",
+    "text": "A korábbi jegyzék tankötelezettségi tájékoztatót, KRÉTA-segédleteket és szülői nyilatkozatokat is felsorol. Mindig az aktuális eljárás dokumentumait kérd el.",
+    "source": "generated"
+  }
+}

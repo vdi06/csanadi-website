@@ -1,9 +1,9 @@
-import { element } from "../shared/js/dom.js?v=2.53";
-import { trapTab } from "../shared/js/focus.js?v=2.53";
-import { isolateModal } from "../shared/js/modal.js?v=2.53";
+import { element } from "../shared/js/dom.js?v=2.54";
+import { trapTab } from "../shared/js/focus.js?v=2.54";
+import { isolateModal } from "../shared/js/modal.js?v=2.54";
 import { checkedSportSuccesses, featuredSportSuccesses, orderedSportSuccesses,
-  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.53";
-import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.53";
+  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.54";
+import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.54";
 
 /** Önálló mobilos sportsiker-rács: 2×3 kártya és függőlegesen olvasható lebegő ablak. */
 export function createMobileSuccesses(config, { archive = false } = {}) {

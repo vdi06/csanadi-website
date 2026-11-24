@@ -1,0 +1,98 @@
+{
+  "intro": "Az edzések és a tanulmányok összehangolásában az időbeosztás, a pihenés és a terhelés követése fontos. Konkrét edzéshelyszínt vagy időpontot csak igazolt egyesületi vagy iskolai közlés alapján lehet megadni.",
+  "items": [
+    {
+      "title": "Edzés és tanulás",
+      "summary": "Az időbeosztás és terhelés összehangolásának szempontjai.",
+      "groups": [
+        {
+          "title": "Sportolói napirend",
+          "points": [
+            {
+              "title": "Felkészülés és tanulás",
+              "details": [
+                "A sportolói elfoglaltságok mellett a rendszeres tanulási idő és az iskolai feladatok tervezése alapvető."
+              ]
+            },
+            {
+              "title": "Kapcsolattartás",
+              "details": [
+                "Az iskolai és a sportegyesületi környezet közötti kommunikáció segítheti az összehangolást."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "steps"
+    },
+    {
+      "title": "Egészséges sportolói életmód",
+      "summary": "A sportfelkészülés nem csupán edzésmunkából áll.",
+      "groups": [
+        {
+          "title": "Regeneráció",
+          "points": [
+            {
+              "title": "Pihenés és terhelés",
+              "details": [
+                "A megfelelő pihenés, az életkorhoz illeszkedő terhelés és a test jelzéseire figyelés a fenntartható sportolás részei."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Sportetika",
+          "points": [
+            {
+              "title": "Fegyelmezett felkészülés",
+              "details": [
+                "A szabályok betartása és a felkészülés tudatossága a teljesítményt és a közösségi sportélményt is támogatja."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "card"
+    },
+    {
+      "kind": "list",
+      "title": "Edzéstervezési szempontok",
+      "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+      "groups": [
+        {
+          "title": "Részletes tudnivalók",
+          "points": [
+            {
+              "title": "Heti terhelés és regeneráció",
+              "details": [
+                "Az órarend, utazás, edzés és pihenés együttes tervezése segít elkerülni az időütközéseket."
+              ]
+            },
+            {
+              "title": "Sportegészségügyi tájékoztatás",
+              "details": [
+                "Az egyéni alkalmasságról és egészségügyi kérdésekről kizárólag megfelelő szakember adhat személyre szabott tájékoztatást."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "contentMeta": {
+    "sources": [
+      "generated"
+    ],
+    "checkedAt": "2026-11-24",
+    "related": [
+      "sports-wellbeing",
+      "education-study-skills"
+    ],
+    "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
+  },
+  "practicalNote": {
+    "title": "Edzés és tanulás heti tervezése",
+    "text": "A rögzített edzések mellé oszd be a sürgős tanulási feladatokat. A terhelés vagy időbeosztás változását egyeztesd az érintettekkel; a terv ne hagyja ki a pihenést.",
+    "source": "generated"
+  }
+}

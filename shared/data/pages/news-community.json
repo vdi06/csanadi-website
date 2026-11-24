@@ -1,0 +1,77 @@
+{
+  "intro": "A közösségi alkalmak megtekinthetők és kereshetők a központi naptárban. A tematikus illusztrációk nem igazolják egy konkrét iskolai esemény megtörténtét.",
+  "items": [
+    {
+      "title": "Közösségi programok",
+      "summary": "Az intézményi hagyományok és közös alkalmak.",
+      "groups": [
+        {
+          "title": "Élmények és részvétel",
+          "points": [
+            {
+              "title": "Iskolai események",
+              "details": [
+                "A közösségi programok célja a kapcsolatok erősítése és az iskolához tartozás élményének támogatása."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Környezeti szemlélet",
+          "points": [
+            {
+              "title": "Ökoiskolai alkalmak",
+              "details": [
+                "A környezeti neveléshez kapcsolódó közös tevékenységek az iskola közösségi életének is részét képezik."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "card"
+    },
+    {
+      "title": "Felelős együttműködés",
+      "summary": "Önkéntes és támogató közösségi tevékenységek.",
+      "groups": [
+        {
+          "title": "Közösségi szolgálat",
+          "points": [
+            {
+              "title": "Szervezett szerepvállalás",
+              "details": [
+                "A gimnáziumi közösségi szolgálat a helyi közösség javát szolgáló tevékenységeket foglalhat magában a hivatalos intézményi szabályok szerint."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "list"
+    }
+  ],
+  "feed": {
+    "tags": [
+      "community"
+    ],
+    "heading": "Közösségi programok",
+    "summary": "Az egész közösséget érintő tanévnyitó és nevelési kezdeményezések.",
+    "groupTitle": "Közösségi alkalmak"
+  },
+  "contentMeta": {
+    "sources": [
+      "generated"
+    ],
+    "checkedAt": "2026-11-24",
+    "related": [
+      "school-compass",
+      "information-service"
+    ],
+    "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
+    "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
+  },
+  "practicalNote": {
+    "title": "Egy közösségi program megtervezése",
+    "text": "Határozzátok meg a program célját, felelőseit és az előkészítés feladatait. A végén értékeljétek, hogyan járult hozzá a részvétel a közösséghez.",
+    "source": "generated"
+  }
+}

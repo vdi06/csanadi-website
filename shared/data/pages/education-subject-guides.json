@@ -1,0 +1,66 @@
+{
+  "intro": "Közismereti és sporthoz kapcsolódó rövid gyakorlóanyagok, önellenőrzéssel; nem helyettesítik a helyi tantervet.",
+  "items": [
+    {
+      "title": "Gyakorlás és visszajelzés",
+      "summary": "A feladatok a megértést, nem pusztán a memorizálást támogatják.",
+      "kind": "list",
+      "groups": [
+        {
+          "title": "Tudnivalók",
+          "points": [
+            {
+              "title": "Matematika",
+              "details": [
+                "A mértékegységet mindig írd a kiszámolt érték mellé."
+              ]
+            },
+            {
+              "title": "Nyelv",
+              "details": [
+                "Fogalmazd meg saját szavaiddal a megértett szöveg lényegét."
+              ]
+            },
+            {
+              "title": "Természetismeret",
+              "details": [
+                "Válaszd külön a megfigyelést a magyarázattól."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kapcsolódó tájékozódás",
+      "summary": "A témához tartozó további anyagokat a kapcsolódó oldalak és kereső segítik elérni.",
+      "kind": "list",
+      "groups": [
+        {
+          "title": "Tudnivalók",
+          "points": [
+            {
+              "title": "Gyakorlás",
+              "details": [
+                "Használd a témakör szerinti keresést, és válassz egy saját célhoz kapcsolódó anyagot."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "contentMeta": {
+    "sources": [
+      "generated"
+    ],
+    "checkedAt": "2026-11-24",
+    "related": [
+      "education-resources",
+      "education-study-skills",
+      "sports-quiz"
+    ],
+    "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
+  },
+  "collectionId": "subjects"
+}

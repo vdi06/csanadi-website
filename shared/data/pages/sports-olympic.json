@@ -1,0 +1,117 @@
+{
+  "intro": "Az olimpiai mozgalom értékei és az iskola névadója kapcsolódnak össze: Csanádi Árpád sportvezetőként és sportdiplomataként is tevékenykedett. A történeti állításokat korabeli források alapján értelmezzük.",
+  "items": [
+    {
+      "title": "Olimpiai alapértékek",
+      "summary": "A sport versengésen túlmutató tanulságai.",
+      "groups": [
+        {
+          "title": "Olimpiai eszme",
+          "points": [
+            {
+              "title": "Tisztelet és méltányosság",
+              "details": [
+                "A szabálytisztelet, az ellenfél megbecsülése és a kitartás a sportolói nevelés alapelvei."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Olimpiai történet",
+          "points": [
+            {
+              "title": "Nemzetközi sportmozgalom",
+              "details": [
+                "Az olimpiai játékok sporttörténeti és kulturális jelentőségét sporttörténeti ismeretek segítenek megérteni."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "card"
+    },
+    {
+      "title": "Csanádi Árpád az olimpiai mozgalomban",
+      "summary": "Az iskola névadójának nemzetközi sportvezetői munkássága.",
+      "groups": [
+        {
+          "title": "Olimpiai vezető",
+          "points": [
+            {
+              "title": "Nemzetközi szerep",
+              "details": [
+                "Csanádi Árpád a Magyar Olimpiai Bizottság vezetésében és a Nemzetközi Olimpiai Bizottságban is betöltött feladatokat."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Iskolai emlékezet",
+          "points": [
+            {
+              "title": "Névadó és hagyomány",
+              "details": [
+                "Az intézmény a névadó emlékét és az olimpiai gondolatot saját iskolai hagyományaiban is ápolja."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "timeline"
+    },
+    {
+      "title": "Sporttörténeti tájékozódás",
+      "summary": "A sportiskolai jegyzetek kapcsolódó tudásanyagai.",
+      "groups": [
+        {
+          "title": "Sporttörténeti témák",
+          "points": [
+            {
+              "title": "Történeti összefüggések",
+              "details": [
+                "A sporttörténet az egyes sportágak fejlődését, a versenyrendszereket és a sport társadalmi szerepét is vizsgálja."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "list"
+    },
+    {
+      "kind": "list",
+      "title": "Névadónk dokumentált életútja",
+      "summary": "A megadott adatok ellenőrizhető intézményi és sporttörténeti forrásokhoz kapcsolódnak.",
+      "groups": [
+        {
+          "title": "Részletes tudnivalók",
+          "points": [
+            {
+              "title": "Csanádi Árpád (1923–1983)",
+              "details": [
+                "1923. február 23-án született; labdarúgóként, testnevelőként, edzőként, sportvezetőként és sportdiplomataként tevékenykedett.",
+                "Forrás: KSI, „Száz éve született Csanádi Árpád”, 2023. február 23."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collectionId": "olympic",
+  "contentMeta": {
+    "sources": [
+      "generated"
+    ],
+    "checkedAt": "2026-11-24",
+    "related": [
+      "school-awards",
+      "sports-quiz"
+    ],
+    "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
+  },
+  "practicalNote": {
+    "title": "Olimpiai értékek a hétköznapokban",
+    "text": "A tisztelet és fair play megjelenhet edzésen, versenyen és tanórai csoportmunkában is. Beszéljétek meg, hogyan kezelhető sportszerűen a győzelem és a vereség.",
+    "source": "generated"
+  }
+}

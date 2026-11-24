@@ -1,0 +1,10 @@
+Sportstatisztika – fiktív edzésnapló
+Saját készítésű oktatási segédlet – nem hivatalos intézményi dokumentum.
+
+A statisztikai adatok segíthetnek a mintázatok felismerésében, de az adatok önmagukban nem bizonyítanak ok-okozati kapcsolatot. Különböző mutatókat azonos mértékegységben és azonos feltételek mellett hasonlíts össze.
+
+Gyakorlat
+Szemléltető adatok: öt foglalkozás időtartama 35, 40, 45, 30 és 50 perc. Számítsd ki az átlagot, a minimumot és a maximumot. Készíts oszlopdiagramot, adj címet és mértékegységet.
+
+Önellenőrzés
+Mit nem tudsz meg az időtartamból az edzés minőségéről? Az adatsor teljesen fiktív.

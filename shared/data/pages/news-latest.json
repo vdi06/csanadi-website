@@ -1,0 +1,88 @@
+{
+  "intro": "A hírek időrendi nézetben kereshetők; a jelenlegi állomány tesztbejegyzéseket is tartalmaz. Minden közzétételnél ellenőrizni kell a forrást, dátumot és a bemutatóadatok megjelölését.",
+  "items": [
+    {
+      "title": "Aktuális intézményi közlemények",
+      "summary": "A mindennapi működést érintő fontos változások.",
+      "groups": [
+        {
+          "title": "Időszerű tájékoztatás",
+          "points": [
+            {
+              "title": "Határidők és változások",
+              "details": [
+                "Az iskolai étkezéssel, ügyintézéssel, felvételivel vagy vizsgákkal kapcsolatos közlések az adott dátummal együtt értelmezendők."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Frissesség",
+          "points": [
+            {
+              "title": "Érvényességi idő",
+              "details": [
+                "A lezajlott eseményről szóló hír az archívumban maradhat, de nem jelenhet meg közelgőként."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "card"
+    },
+    {
+      "title": "Az iskola életéből",
+      "summary": "Tanulmányi, sportos és közösségi intézményi események.",
+      "groups": [
+        {
+          "title": "Közösségi hírek",
+          "points": [
+            {
+              "title": "Iskolai alkalmak",
+              "details": [
+                "Az ünnepségek, ismeretterjesztő események és közösségi programok az intézményi történések részei."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Téma szerinti bontás",
+          "points": [
+            {
+              "title": "Hírkategóriák",
+              "details": [
+                "A sport, tanulmányok, rendezvények és közlemények külön nézetben is elérhetők, közös adatbázisból."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "list"
+    }
+  ],
+  "feed": {
+    "tags": [
+      "all"
+    ],
+    "heading": "Iskolai hírek és tájékoztatások",
+    "summary": "Az új közlések időrendben, a legfrissebb dátummal kezdve.",
+    "groupTitle": "Legutóbbi közlések"
+  },
+  "contentMeta": {
+    "sources": [
+      "generated"
+    ],
+    "checkedAt": "2026-11-24",
+    "related": [
+      "news-announcements",
+      "news-archive"
+    ],
+    "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
+    "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
+  },
+  "practicalNote": {
+    "title": "Hír vagy hivatalos közlemény?",
+    "text": "A hír eseményről vagy témáról tájékoztat, a közlemény teendőt és határidőt is tartalmazhat. A MINTA jelzésű rekordok nem hivatalos közlések.",
+    "source": "generated"
+  }
+}

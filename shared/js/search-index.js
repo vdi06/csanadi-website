@@ -1,9 +1,9 @@
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.53";
-import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.53";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.53";
-import { calendarEntries } from "./calendar-data.js?v=2.53";
-import { newsStoryHref } from "./news-panel.js?v=2.53";
-import { checkedAdmissions } from "./admission-data.js?v=2.53";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.54";
+import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.54";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.54";
+import { calendarEntries } from "./calendar-data.js?v=2.54";
+import { newsStoryHref } from "./news-panel.js?v=2.54";
+import { checkedAdmissions } from "./admission-data.js?v=2.54";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */
@@ -71,7 +71,7 @@ function createIndex(config) {
   // Szerkesztési/teszt-konfigurációnál a lenyomat továbbra is észleli az adatváltozást.
   if (cached && config.__staticContent === true) return cached.entries;
   const signature = JSON.stringify([config.site, config.home, config.menu,
-    config.pagePreview, config.publicNews, config.admissionCenter, config.featureCenters]);
+    config.pagePreview, config.publicNews, config.admissionCenter, config.featureCenters, config.contentExpansion]);
   if (cached?.signature === signature) return cached.entries;
   const entries = [];
   const uniqueEntries = new Set();
@@ -144,7 +144,7 @@ function createIndex(config) {
     if (!page) return;
     add({ label:page.title, category:categories.page, href:menuPageHref(node.id),
       summary:parents.join(" · "),
-      details:`${page.intro} ${pagePreviewSearchText(page.items)}` });
+      details:`${page.intro} ${pagePreviewSearchText(page.items)} ${config.pagePreview.pages[node.id]?.practicalNote?.text||""}` });
   }
   for (const root of config.menu.items) visit(root);
   // A menüből kivett, de saját oldalcímmel megtartott képzési témák is
@@ -157,6 +157,10 @@ function createIndex(config) {
       details:`${page.intro} ${pagePreviewSearchText(page.items)}` });
   }
 
+  for (const coll of Object.values(config.contentExpansion?.collections || {})) {
+    for (const item of coll.items) add({label:item.title, summary:item.summary, details:item.category,
+      category:categories.page,href:menuPageHref(item.relatedPage)});
+  }
   // Kattintásra valódi sportsiker-részletező nyílik, névre is kereshető.
   const orderedSuccesses = orderedSportSuccesses(config);
   const recentIds = new Set(orderedSuccesses.slice(0, 6).map((item) => item.id));

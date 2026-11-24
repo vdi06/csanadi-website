@@ -1011,3 +1011,27 @@
 .mobile-admission-shortcuts .admission-mobile-link:focus-visible {
   outline:3px solid var(--accent);outline-offset:2px;
 }
+/* Mobile overview: closed, fully tappable cards. Long or urgent content remains single-column. */
+.mobile-page-cards{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:10px;justify-items:stretch;}
+.mobile-page-cards>.mobile-compact-card{width:100%;max-width:none;min-width:0;padding:0;border:0;background:none;box-shadow:none;}
+.mobile-compact-card>.content-tile{height:100%;min-height:132px;}
+.mobile-compact-card.is-important{grid-column:1/-1;}
+.content-important{padding:10px;text-align:left;color:var(--text);}
+.mobile-compact-panel .content-tile-summary{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.mobile-feature-event-list,.mobile-feature-sport-list,.mobile-admission-events,.mobile-document-list,.school-news-page--mobile .school-news-page-grid{grid-template-columns:repeat(2,minmax(0,1fr));display:grid;gap:10px;align-items:stretch;}
+.mobile-document-list>.mobile-document-card{width:100%;min-width:0;max-width:none;overflow-wrap:anywhere;}
+.mobile-document-list>.mobile-document-card .document-card-open{min-height:44px;font-size:.83rem;white-space:normal;}
+.mobile-document-list>.mobile-document-card:only-child{grid-column:1/-1;max-width:280px;justify-self:center;}
+.mobile-feature-sport{grid-template-columns:minmax(0,1fr);}
+.mobile-feature-sport img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;}
+.mobile-feature-sport>div{padding:10px;min-width:0;}
+.mobile-feature-event summary,.mobile-admission-event summary{min-height:44px;padding:10px;overflow-wrap:anywhere;}
+.school-news-page--mobile .school-news-story{min-width:0;overflow-wrap:anywhere;padding:12px;}
+.school-news-page--mobile .school-news-story h2{font-size:1rem;line-height:1.35;}
+.school-news-page--mobile .school-news-story-details summary{min-height:44px;}
+@media(max-width:350px){.mobile-page-cards,.mobile-feature-event-list,.mobile-feature-sport-list,.mobile-admission-events,.mobile-document-list,.school-news-page--mobile .school-news-page-grid{grid-template-columns:1fr;}}
+
+/* Short quick links, two columns above the small-screen threshold. */
+@media(min-width:351px){.mobile-home-highlights-list{grid-template-columns:repeat(2,minmax(0,1fr));}.mobile-home-highlight{flex-direction:column;align-items:flex-start;gap:9px;min-width:0;}.mobile-home-highlight:last-child:nth-child(odd){grid-column:1/-1;flex-direction:row;align-items:center;}.mobile-home-highlight-arrow{align-self:flex-end;}.mobile-home-highlight-content{overflow-wrap:anywhere;}}
+.mobile-admission-center .admission-mobile-link,.mobile-admission-shortcuts .admission-mobile-link{min-height:44px;}
+.mobile-feature-events>.content-action{display:block;margin:12px auto;}

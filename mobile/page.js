@@ -1,5 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.53";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.53";
+import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.54";
+import { element } from "../shared/js/dom.js?v=2.54";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.54";
 
 const css = (name) => `mobile-page-${name}`;
 function pointDetails(point) {
@@ -54,16 +55,19 @@ function galleryImages(config, category) {
       element("figcaption", { text:slide.title }))));
 }
 function mobileCard(card, config, page) {
-  const kind = card.kind || "card";
-  const warning = kind === "alert" ? " alert alert-warning" : "";
-  return element("section", {
-    className:`${css("card")} card ${css("kind-" + kind)}${warning}`
-  }, element("div", { className:`${css("card-body")} card-body` },
-    element("h2", { className:`${css("card-title")} card-title`, text:card.title }),
-    element("p", { className:`${css("card-summary")} card-text`, text:card.summary }),
-    ...card.groups.map((group) => mobileGroup(group,kind)),
-    ...(kind === "gallery" && page.galleryCategory ?
-      [galleryImages(config,page.galleryCategory)] : [])));
+  const kind=card.kind||"card";
+  const views=[];
+  for(const group of card.groups){
+    for(let n=0;n<group.points.length;n+=2){
+      const chunk={...group,points:group.points.slice(n,n+2)};
+      views.push(()=>element("div",{className:"content-card-view"},n===0?element("p",{text:card.summary}):null,mobileGroup(chunk,kind==="accordion"?"list":kind)));
+    }
+  }
+  if(kind==="gallery"&&page.galleryCategory)views.push(()=>galleryImages(config,page.galleryCategory)||element("p",{text:"Jelenleg nincs kép."}));
+  const button=element("button",{className:"content-tile mobile-compact-panel",attributes:{type:"button","aria-haspopup":"dialog"}},element("span",{className:"content-kicker",text:kind==="timeline"?"Idővonal":kind==="steps"?"Útmutató":kind==="table"?"Adatok":"Tudnivalók"}),element("strong",{text:card.title}),element("span",{className:"content-tile-summary",text:card.summary}),element("span",{className:"content-tile-arrow",text:"Részletek ›"}));
+  button.addEventListener("click",()=>openContentDialog({title:card.title,views,trigger:button}));
+  // Az azonnal fontos hivatalos közlések maradjanak láthatók, ne csak a részletekben.
+  return element("section",{className:`${css("card")} mobile-compact-card ${kind==="alert"?"is-important":""}`},element("h2",{className:"visually-hidden",text:card.title}),button,kind==="alert"?element("p",{className:"content-important",text:card.groups.flatMap(g=>g.points.flatMap(p=>p.details)).join(" ")}):null);
 }
 
 /** Mobilos, külön szerkesztett és reszponzív komponensváltozat. */
@@ -75,6 +79,7 @@ export function createMobilePage(config, id, { hideHeading = false, hideIntro = 
       attributes:{tabindex:"-1"} })]),
     ...(hideIntro ? [] : [element("p", { className:css("intro"), text:page.intro })]),
     ...(extraContent ? [extraContent] : []),
+    ...(page.collectionId ? [collectionView(config,page.collectionId,"mobile")] : []),
     ...(hideCards ? [] : [element("div", { className:`${css("cards")} row` },
-      ...page.items.map((card) => mobileCard(card,config,page)))]));
+      ...page.items.map((card) => mobileCard(card,config,page)))]) );
 }

@@ -1,5 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.53";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.53";
+import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.54";
+import { element } from "../shared/js/dom.js?v=2.54";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.54";
 
 const cls = (part) => `desktop-page-${part}`;
 const detailsList = (point) => element("ul", { className:cls("card-details") },
@@ -82,6 +83,7 @@ export function createDesktopPage(config, id, { hideHeading = false, hideIntro =
       attributes:{tabindex:"-1"} })]),
     ...(hideIntro ? [] : [element("p", { className:cls("intro"), text:page.intro })]),
     ...(extraContent ? [extraContent] : []),
+    ...(page.collectionId ? [collectionView(config,page.collectionId,"desktop")] : []),
     ...(hideCards ? [] : [element("div", { className:`${cls("cards")} row` },
-      ...page.items.map((card) => cardElement(card,config,page)))]));
+      ...page.items.map((card) => cardElement(card,config,page)))]) );
 }

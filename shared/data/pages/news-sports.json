@@ -1,0 +1,77 @@
+{
+  "intro": "A sporthíreknél a sportág, az esemény dátuma és az eredmény hiteles forrása a legfontosabb. A személyes adatokat és tanulói eredményeket külön publikációs ellenőrzés védi.",
+  "items": [
+    {
+      "title": "Sportiskolai események",
+      "summary": "A sportos közösség szervezeti és programhírei.",
+      "groups": [
+        {
+          "title": "Sporthagyományok",
+          "points": [
+            {
+              "title": "Csanádi Sportfórum",
+              "details": [
+                "A pedagógiai program bemutatja a sportolókkal és szakemberekkel szervezett Csanádi Sportfórum hagyományát."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Sportszakmai kapcsolatok",
+          "points": [
+            {
+              "title": "Együttműködések",
+              "details": [
+                "A sportiskolai képzéshez kapcsolódó szervezeti együttműködések intézményi szintű hírekben is bemutathatók."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "timeline"
+    },
+    {
+      "title": "Sportiskolai elismerések",
+      "summary": "Az intézmény egészéhez kapcsolódó eredmények.",
+      "groups": [
+        {
+          "title": "Díjak és kitüntetések",
+          "points": [
+            {
+              "title": "Intézményi elismerések",
+              "details": [
+                "A nyilvános kitüntetési oldalon több év sportiskolai elismerései szerepelnek."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "card"
+    }
+  ],
+  "feed": {
+    "tags": [
+      "sports"
+    ],
+    "heading": "Sportiskolai intézményi hírek",
+    "summary": "Az iskolát érintő sportéleti elismerések és sportos közlések.",
+    "groupTitle": "Sportiskolai hírarchívum"
+  },
+  "contentMeta": {
+    "sources": [
+      "generated"
+    ],
+    "checkedAt": "2026-11-24",
+    "related": [
+      "sports-results",
+      "sports-competitions"
+    ],
+    "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
+    "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
+  },
+  "practicalNote": {
+    "title": "Sporthír értelmezése",
+    "text": "Különítsd el az egyéni és csapateredményt, a korosztályt és a verseny szintjét. A hiteles eredmény forrása a hivatalos jegyzőkönyv vagy jóváhagyott beszámoló.",
+    "source": "generated"
+  }
+}

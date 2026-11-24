@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.53";
-import { checkedDocumentCenter, documentResults } from "../shared/js/document-data.js?v=2.53";
-import { createDocumentReader } from "../shared/js/document-reader.js?v=2.53";
+import { element } from "../shared/js/dom.js?v=2.54";
+import { checkedDocumentCenter, documentResults } from "../shared/js/document-data.js?v=2.54";
+import { createDocumentReader } from "../shared/js/document-reader.js?v=2.54";
 const el=element;
 /** Önálló, érintéses mobil dokumentumközpont. Nincs asztali kártyák CSS-kicsinyítése. */
 export function createMobileDocuments(config){
@@ -32,7 +32,7 @@ export function createMobileDocuments(config){
         el("small",{className:"document-card-category",text:settings.categories.find((c)=>c.id===doc.category)?.label||""}));
       if(ready){
         const btn=el("button",{className:"document-card-open btn",text:"Megtekintés a weboldalon",attributes:{type:"button"}});
-        btn.addEventListener("click",()=>reader.open(doc,btn));card.append(btn);
+        btn.addEventListener("click",()=>reader.open(doc,btn));card.append(btn);card.addEventListener("click",e=>{if(!e.target.closest("a,button"))btn.click();});
       }else card.append(el("span",{className:"document-card-notice",text:"Még nincs feltöltve"}));
       return card;
     }));

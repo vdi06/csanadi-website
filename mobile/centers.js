@@ -1,5 +1,5 @@
-import { element as el } from '../shared/js/dom.js?v=2.53';
-import { checkedFeatureCenters, centerEvents,centerDateLabel,centerHref,centerEventHref,centerSportResults } from '../shared/js/feature-centers-data.js?v=2.53';
+import { element as el } from '../shared/js/dom.js?v=2.54';
+import { checkedFeatureCenters, centerEvents,centerDateLabel,centerHref,centerEventHref,centerSportResults } from '../shared/js/feature-centers-data.js?v=2.54';
 const h=(tag,text,cl)=>el(tag,{text,className:cl||''});
 const link=(text,id)=>el('a',{className:'feature-link',text,attributes:{href:centerHref(id)}});
 function header(group){return el('header',{className:'mobile-feature-head'},
@@ -33,22 +33,23 @@ function sports(config,group,pageId){
   return el('div',{className:'mobile-feature-sports'},input,count,list,link('Sporthelyszínek','sports-facilities'));
 }
 function events(config,group,kind){
-  let category='all';const filter=el('select',{className:'feature-select',attributes:{'aria-label':'Eseménytípus szűrése'}},
+  let category='all',limit=8;const filter=el('select',{className:'feature-select',attributes:{'aria-label':'Eseménytípus szűrése'}},
     ...group.filters.map(f=>el('option',{text:f.label,attributes:{value:f.id}})));
   const query=el('input',{className:'feature-search',attributes:{type:'search',placeholder:'Esemény keresése',
     'aria-label':'Események keresése'}});
   const count=h('p','','feature-count');count.setAttribute('role','status');
   const list=el('div',{className:'mobile-feature-event-list'});
+  const more=el('button',{className:'content-action',text:'További események',attributes:{type:'button'}});
   function draw(){const events=centerEvents(config,kind,{category,query:query.value});
-    count.textContent=`${events.length} találat`;
-    list.replaceChildren(...events.map(e=>el('details',{className:'mobile-feature-event'},
+    count.textContent=`${events.length} találat · ${Math.min(limit,events.length)} megjelenítve`;more.hidden=events.length<=limit;
+    list.replaceChildren(...events.slice(0,limit).map(e=>el('details',{className:'mobile-feature-event'},
       el('summary',{},el('time',{text:centerDateLabel(e),attributes:{datetime:e.date}}),h('strong',e.title)),
       el('div',{className:'mobile-feature-body'},h('p',e.summary),h('small',e.categoryLabel),
         el('a',{className:'feature-link',text:'Megnyitás a naptárban',attributes:{href:centerEventHref(e)}})))));
     if(!events.length)list.append(h('p','Nincs találat.'));
   }
-  filter.addEventListener('change',()=>{category=filter.value;draw()});query.addEventListener('input',draw);draw();
-  return el('div',{className:'mobile-feature-events'},filter,query,count,list,
+  filter.addEventListener('change',()=>{category=filter.value;limit=8;draw()});query.addEventListener('input',()=>{limit=8;draw()});more.addEventListener('click',()=>{limit+=8;draw()});draw();
+  return el('div',{className:'mobile-feature-events'},filter,query,count,list,more,
     el('nav',{className:'feature-links',attributes:{'aria-label':'Kapcsolódó oldalak'}},...group.links.map(p=>link(p.label,p.pageId))),
     ...(kind==='community'?[link('Képek és galériák','sports-gallery')]:[]));
 }

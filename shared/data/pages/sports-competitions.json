@@ -1,0 +1,103 @@
+{
+  "intro": "Egy versenyadat akkor ellenőrizhető, ha ismert a sportág, a rendező, az időpont és az eredmény forrása. A programnaptár nem helyettesíti a versenykiírást vagy a hivatalos eredménylistát.",
+  "items": [
+    {
+      "title": "Versenytípusok és szerepük",
+      "summary": "A versenyzés a sportolói fejlődés egyik fontos állomása.",
+      "groups": [
+        {
+          "title": "Iskolai és sportági versenyek",
+          "points": [
+            {
+              "title": "Megmérettetési formák",
+              "details": [
+                "A különböző versenyrendszerek eltérő nevezési, korosztályi és részvételi feltételeket alkalmazhatnak."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Sportszerű részvétel",
+          "points": [
+            {
+              "title": "Fair play",
+              "details": [
+                "A versenyhelyzetekben a szabályok, az ellenfél és a bírói döntések tisztelete alapvető."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "list"
+    },
+    {
+      "title": "Versenynaptár és beszámolók",
+      "summary": "Időrend és eseménytípus szerinti tájékozódás.",
+      "groups": [
+        {
+          "title": "Események",
+          "points": [
+            {
+              "title": "Aktuális kiírások",
+              "details": [
+                "Csak ellenőrzött, jövőbeli versenyalkalmak kerülhetnek az aktuális naptárba."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Korábbi események",
+          "points": [
+            {
+              "title": "Archív beszámolók",
+              "details": [
+                "A múltbeli versenyek intézményi szintű összefoglalói személyes tanulói azonosítók nélkül is megőrizhetők."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "timeline"
+    },
+    {
+      "kind": "list",
+      "title": "Versenyeredmények hitelesítése",
+      "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+      "groups": [
+        {
+          "title": "Részletes tudnivalók",
+          "points": [
+            {
+              "title": "Eredmény közzététele előtt",
+              "details": [
+                "Ellenőrizendő a verseny hivatalos neve, a dátum, a korcsoport, a helyezés és a közzétételhez szükséges hozzájárulás."
+              ]
+            },
+            {
+              "title": "Naptári bejegyzés",
+              "details": [
+                "A tervezett verseny és a már megtartott rendezvény két külön állapot, ezért a naptári bejegyzés nem minősül eredménybeszámolónak."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "contentMeta": {
+    "sources": [
+      "generated"
+    ],
+    "checkedAt": "2026-11-24",
+    "related": [
+      "sports-results",
+      "sports-statistics"
+    ],
+    "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
+  },
+  "practicalNote": {
+    "title": "Verseny előtti és utáni teendők",
+    "text": "Ellenőrizd a részvételi információkat, az eszközöket és az utazást. A verseny után a helyezés mellett az eredeti jegyzőkönyvet és a fejlődés tanulságait is rögzítsd.",
+    "source": "generated"
+  }
+}

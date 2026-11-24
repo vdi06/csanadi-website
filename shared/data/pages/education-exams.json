@@ -1,0 +1,92 @@
+{
+  "intro": "A vizsga- és mérési időszakok mellett a jelentkezés, a vizsgatípus és a részletes követelmény is fontos. A naptári időszak nem helyettesíti a tanulóra szóló hivatalos beosztást.",
+  "items": [
+    {
+      "title": "Érettségi vizsgák",
+      "summary": "Az érettségi az intézmény gimnáziumi képzésének lezáró vizsgája.",
+      "groups": [
+        {
+          "title": "Vizsgarészek",
+          "points": [
+            {
+              "title": "Írásbeli és szóbeli",
+              "details": [
+                "A vizsgatárgyak és vizsgaformák követelményeit a hivatalos érettségi tájékoztatók és az iskola közzétett témakörei részletezik."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vizsgaidőszak",
+          "points": [
+            {
+              "title": "Aktuális tudnivalók",
+              "details": [
+                "A helyszínt, érkezést, időpontot és megtekintési alkalmat csak az adott vizsgaidőszak hivatalos közlése szerint tüntetjük fel."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "list"
+    },
+    {
+      "title": "Osztályozó és egyéb vizsgák",
+      "summary": "A tanulmányok során előforduló külön vizsgák.",
+      "groups": [
+        {
+          "title": "Osztályozó vizsga",
+          "points": [
+            {
+              "title": "Eljárás és tantárgyak",
+              "details": [
+                "A meghirdetett tantárgyi időbeosztás és a vizsgák helyszíne tanévenként változhat."
+              ]
+            },
+            {
+              "title": "Felkészülés",
+              "details": [
+                "A tanulók az aktuálisan közzétett követelmények és vizsgatájékoztatók szerint készülhetnek fel."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "accordion"
+    },
+    {
+      "title": "Vizsgadokumentumok",
+      "summary": "A vizsgához szükséges segédletek egy helyen.",
+      "groups": [
+        {
+          "title": "Témakörök és űrlapok",
+          "points": [
+            {
+              "title": "Letölthető anyagok",
+              "details": [
+                "Az iskola nyilvános vizsgaoldalán szóbeli témakörök és kapcsolódó tájékoztatók szerepelnek."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "list"
+    }
+  ],
+  "contentMeta": {
+    "sources": [
+      "generated"
+    ],
+    "checkedAt": "2026-11-24",
+    "related": [
+      "education-study-skills",
+      "education-resources"
+    ],
+    "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
+  },
+  "practicalNote": {
+    "title": "Felkészülési ellenőrzőpontok",
+    "text": "Egy vizsgához gyűjtsd össze a hatályos követelményeket, oszd témakörökre a tananyagot, és készíts próbahelyzetet. Az egyéni beosztást és engedélyezett eszközöket külön ellenőrizd.",
+    "source": "generated"
+  }
+}

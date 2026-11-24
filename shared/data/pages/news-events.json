@@ -1,0 +1,78 @@
+{
+  "intro": "A rendezvények eseménytípus és szöveg alapján szűrhetők. A naptárhoz kapcsolt jelenlegi adatok tájékoztató munkapéldányok; a megtartott rendezvényekről külön, hitelesített beszámoló készülhet.",
+  "items": [
+    {
+      "title": "Hagyományos alkalmak",
+      "summary": "Az intézmény közös ünnepei és programjai.",
+      "groups": [
+        {
+          "title": "Csanádi-nap",
+          "points": [
+            {
+              "title": "Névadó és iskola",
+              "details": [
+                "Az iskolai hagyományok között kiemelt szerepet kap a névadó emlékéhez kötődő Csanádi-nap."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Tanévi ünnepségek",
+          "points": [
+            {
+              "title": "Tanévnyitó és más alkalmak",
+              "details": [
+                "Az ünnepségek pontos időpontja és gyakorlati rendje tanévenként változhat."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "timeline"
+    },
+    {
+      "title": "Eseménybeszámolók",
+      "summary": "A megtörtént programok időrendje.",
+      "groups": [
+        {
+          "title": "Archív emlékek",
+          "points": [
+            {
+              "title": "Intézményi összefoglalók",
+              "details": [
+                "A rendezvények időpontja, témája és szervezeti tanulságai személyes tanulói adatok nélkül is visszakereshetők."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "card"
+    }
+  ],
+  "feed": {
+    "tags": [
+      "event",
+      "admission"
+    ],
+    "heading": "Iskolai rendezvények",
+    "summary": "Felvételi bemutatók, tanévkezdeti és intézményi programok időrendben.",
+    "groupTitle": "Rendezvények idővonala"
+  },
+  "contentMeta": {
+    "sources": [
+      "generated"
+    ],
+    "checkedAt": "2026-11-24",
+    "related": [
+      "news-calendar",
+      "sports-gallery"
+    ],
+    "inheritedDataStatus": "A korábbi kiadásból átvett naptári és hírbejegyzések intézményi ellenőrzése nem teljes.",
+    "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
+  },
+  "practicalNote": {
+    "title": "Rendezvényre készülve",
+    "text": "Ellenőrizd a pontos helyszínt, időpontot, célcsoportot és a részvétel feltételeit. A naptár többnapos bejegyzéseihez külön beosztás is tartozhat.",
+    "source": "generated"
+  }
+}

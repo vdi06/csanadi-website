@@ -1,0 +1,7 @@
+Dokumentumstílus
+Saját készítésű oktatási segédlet – nem hivatalos intézményi dokumentum.
+
+A címsorstílus nem csak formázás; a tartalom szerkezetét is jelzi, és segít automatikus tartalomjegyzéket készíteni.
+
+Gyakorlat: fogalmazd meg saját szavaiddal a lényeget, próbáld ki egy saját feladaton, és jegyezd fel a tapasztalatot.
+Önellenőrzés: írj egy példát és egy ellenpéldát; ellenőrizd, hogy az eredmény megfelel-e az eredeti célnak.

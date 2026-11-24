@@ -1,21 +1,23 @@
-import { createMobileFeatureCenter } from "./centers.js?v=2.53";
-import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.53";
-import { element } from "../shared/js/dom.js?v=2.53";
-import { mountGate } from "../shared/js/gate.js?v=2.53";
-import { makeFooter } from "../shared/js/footer.js?v=2.53";
-import { makeMobileHeader } from "./header.js?v=2.53";
-import { createMobilePage } from "./page.js?v=2.53";
-import { createMobileStory } from "./story.js?v=2.53";
-import { createMobileHomeHighlights } from "./home-highlights.js?v=2.53";
-import { createMobileSuccesses } from "./successes.js?v=2.53";
-import { createMobileCalendar } from "./calendar.js?v=2.53";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.53";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.53";
-import { createMobileInformation } from "./information.js?v=2.53";
-import { createMobileMedia } from "./gallery.js?v=2.53";
-import { createMobileTimetable } from "./timetable.js?v=2.53";
-import { createMobileDocuments } from "./documents.js?v=2.53";
-import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.53";
+import { relatedView, practicalView } from "../shared/js/content-expansion.js?v=2.54";
+import { installMobilePanelDialogs } from "../shared/js/content-expansion.js?v=2.54";
+import { createMobileFeatureCenter } from "./centers.js?v=2.54";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.54";
+import { element } from "../shared/js/dom.js?v=2.54";
+import { mountGate } from "../shared/js/gate.js?v=2.54";
+import { makeFooter } from "../shared/js/footer.js?v=2.54";
+import { makeMobileHeader } from "./header.js?v=2.54";
+import { createMobilePage } from "./page.js?v=2.54";
+import { createMobileStory } from "./story.js?v=2.54";
+import { createMobileHomeHighlights } from "./home-highlights.js?v=2.54";
+import { createMobileSuccesses } from "./successes.js?v=2.54";
+import { createMobileCalendar } from "./calendar.js?v=2.54";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.54";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.54";
+import { createMobileInformation } from "./information.js?v=2.54";
+import { createMobileMedia } from "./gallery.js?v=2.54";
+import { createMobileTimetable } from "./timetable.js?v=2.54";
+import { createMobileDocuments } from "./documents.js?v=2.54";
+import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.54";
 
 /** Önálló mobilos nézet: saját fejléc, JSON-vázlatos aloldal és kompakt lábléc. */
 export function mount(root, config, page) {
@@ -74,11 +76,16 @@ export function mount(root, config, page) {
   else if (admissionLinks) main.append(createMobilePage(config, admissionPageId, {extraContent:admissionLinks}));
   else if (isNewsPage) main.append(createMobilePage(config, newsId, {hideCards:true}), newsPage.section);
   else if (page.startsWith("page:")) main.append(createMobilePage(config, page.slice(5)));
+  if(page.startsWith("page:")) {
+    const note=practicalView(config,page.slice(5)),related=relatedView(config,page.slice(5));
+    if(note)main.append(note); if(related)main.append(related);
+  }
   home.append(skipLink, mobileHeader.header,
     ...(successes ? [successes.overlay] : []),
     main,
     mobileFooter.footer);
   platformRoot.replaceChildren(home);
+  const removePanelDialogs=installMobilePanelDialogs(main);
   story?.updateScroll();
   const successId = /^#\/kezdolap\/sportsiker\/([a-z0-9-]+)$/.exec(location.hash)?.[1];
   const archiveId = /^#\/oldal\/sports-results\/sportsiker\/([a-z0-9-]+)$/.exec(location.hash)?.[1];
@@ -91,5 +98,5 @@ export function mount(root, config, page) {
   const pageEventId = /^#\/oldal\/news-calendar\/esemeny\/([a-z0-9-]+)$/.exec(location.hash)?.[1];
   if (pageEventId) fullCalendar?.showEvent(pageEventId);
   if (storyId) newsPage?.showStory(storyId);
-  return () => { featureCenter?.destroy(); admissionsCenter?.destroy(); documentsCenter?.destroy(); infoCenter?.destroy(); mediaCenter?.destroy(); timetableCenter?.destroy(); newsPage?.destroy(); fullCalendar?.destroy(); carousel?.destroy(); successes?.destroy(); story?.destroy(); mobileHeader.destroy(); mobileFooter.destroy(); };
+  return () => { removePanelDialogs(); featureCenter?.destroy(); admissionsCenter?.destroy(); documentsCenter?.destroy(); infoCenter?.destroy(); mediaCenter?.destroy(); timetableCenter?.destroy(); newsPage?.destroy(); fullCalendar?.destroy(); carousel?.destroy(); successes?.destroy(); story?.destroy(); mobileHeader.destroy(); mobileFooter.destroy(); };
 }

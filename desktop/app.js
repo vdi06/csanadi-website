@@ -1,21 +1,23 @@
-import { createDesktopFeatureCenter } from "./centers.js?v=2.53";
-import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.53";
-import { element } from "../shared/js/dom.js?v=2.53";
-import { mountGate } from "../shared/js/gate.js?v=2.53";
-import { makeFooter } from "../shared/js/footer.js?v=2.53";
-import { makeDesktopHeader } from "./header.js?v=2.53";
-import { createDesktopPage } from "./page.js?v=2.53";
-import { createDesktopHero } from "./hero.js?v=2.53";
-import { createDesktopHomeHighlights } from "./home-highlights.js?v=2.53";
-import { createDesktopSuccesses } from "./successes.js?v=2.53";
-import { createDesktopCalendar } from "./calendar.js?v=2.53";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.53";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.53";
-import { createDesktopInformation } from "./information.js?v=2.53";
-import { createDesktopMedia } from "./gallery.js?v=2.53";
-import { createDesktopTimetable } from "./timetable.js?v=2.53";
-import { createDesktopDocuments } from "./documents.js?v=2.53";
-import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.53";
+import { relatedView, practicalView } from "../shared/js/content-expansion.js?v=2.54";
+import { closeContentDialog } from "../shared/js/content-expansion.js?v=2.54";
+import { createDesktopFeatureCenter } from "./centers.js?v=2.54";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.54";
+import { element } from "../shared/js/dom.js?v=2.54";
+import { mountGate } from "../shared/js/gate.js?v=2.54";
+import { makeFooter } from "../shared/js/footer.js?v=2.54";
+import { makeDesktopHeader } from "./header.js?v=2.54";
+import { createDesktopPage } from "./page.js?v=2.54";
+import { createDesktopHero } from "./hero.js?v=2.54";
+import { createDesktopHomeHighlights } from "./home-highlights.js?v=2.54";
+import { createDesktopSuccesses } from "./successes.js?v=2.54";
+import { createDesktopCalendar } from "./calendar.js?v=2.54";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.54";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.54";
+import { createDesktopInformation } from "./information.js?v=2.54";
+import { createDesktopMedia } from "./gallery.js?v=2.54";
+import { createDesktopTimetable } from "./timetable.js?v=2.54";
+import { createDesktopDocuments } from "./documents.js?v=2.54";
+import { createDesktopAdmissions, createDesktopAdmissionLinks } from "./admissions.js?v=2.54";
 
 /** Önálló asztali nézet: a visszaállított teljes képes nyitó csak a kezdőlapon él. */
 export function mount(root, config, page) {
@@ -78,6 +80,10 @@ export function mount(root, config, page) {
   else if (admissionLinks) main.append(createDesktopPage(config, admissionPageId, {extraContent:admissionLinks}));
   else if (isNewsPage) main.append(createDesktopPage(config, newsId, {hideCards:true}), newsPage.section);
   else if (page.startsWith("page:")) main.append(createDesktopPage(config, page.slice(5)));
+  if(page.startsWith("page:")) {
+    const note=practicalView(config,page.slice(5)),related=relatedView(config,page.slice(5));
+    if(note)main.append(note); if(related)main.append(related);
+  }
   home.append(skipLink, desktopHeader.header,
     ...desktopHeader.overlays,
     ...(successes ? [successes.overlay] : []),
@@ -99,5 +105,5 @@ export function mount(root, config, page) {
   const pageEventId = /^#\/oldal\/news-calendar\/esemeny\/([a-z0-9-]+)$/.exec(location.hash)?.[1];
   if (pageEventId) fullCalendar?.showEvent(pageEventId);
   if (storyId) newsPage?.showStory(storyId);
-  return () => { featureCenter?.destroy(); admissionsCenter?.destroy(); documentsCenter?.destroy(); infoCenter?.destroy(); mediaCenter?.destroy(); timetableCenter?.destroy(); newsPage?.destroy(); fullCalendar?.destroy(); carousel?.destroy(); successes?.destroy(); hero?.destroy(); desktopHeader.destroy(); desktopFooter.destroy(); };
+  return () => { closeContentDialog(); featureCenter?.destroy(); admissionsCenter?.destroy(); documentsCenter?.destroy(); infoCenter?.destroy(); mediaCenter?.destroy(); timetableCenter?.destroy(); newsPage?.destroy(); fullCalendar?.destroy(); carousel?.destroy(); successes?.destroy(); hero?.destroy(); desktopHeader.destroy(); desktopFooter.destroy(); };
 }

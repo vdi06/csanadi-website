@@ -1,0 +1,93 @@
+{
+  "intro": "A szabadidős mozgás a mindennapi aktivitásról, a biztonságról és a közösségi élményről szól; nem versenyeredményhez kötött. A gyakorlati lehetőségeket évszak és helyszín szerint érdemes megtervezni.",
+  "items": [
+    {
+      "title": "Mozgás a mindennapokban",
+      "summary": "A rendszeres aktivitás értéke minden életkorban.",
+      "groups": [
+        {
+          "title": "Közösségi mozgás",
+          "points": [
+            {
+              "title": "Játékos sporttevékenység",
+              "details": [
+                "A kötetlen mozgásos helyzetek a társas kapcsolatok és az együttműködés fejlesztésére is alkalmasak."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Egészség",
+          "points": [
+            {
+              "title": "Mozgás és pihenés egyensúlya",
+              "details": [
+                "A tartósan fenntartható szabadidős aktivitás a pihenés és az egyéni terhelhetőség figyelembevételével tervezhető."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "card"
+    },
+    {
+      "title": "Közösségi sportkultúra",
+      "summary": "A sport mint közös nyelv.",
+      "groups": [
+        {
+          "title": "Részvétel",
+          "points": [
+            {
+              "title": "Egymás támogatása",
+              "details": [
+                "A sportszerű részvétel, a szabályok ismerete és az inkluzív szemlélet a közös sportélmény részei."
+              ]
+            }
+          ]
+        }
+      ],
+      "kind": "card"
+    },
+    {
+      "kind": "list",
+      "title": "Biztonságos szabadidős mozgás",
+      "summary": "Az alábbi lépések általános tájékozódási segítséget adnak; a helyi eljárások jóváhagyott szabályai az irányadók.",
+      "groups": [
+        {
+          "title": "Részletes tudnivalók",
+          "points": [
+            {
+              "title": "Fokozatosság",
+              "details": [
+                "A mozgás jellegét és intenzitását az életkorhoz és az egyéni terhelhetőséghez kell igazítani."
+              ]
+            },
+            {
+              "title": "Közösségi élmény",
+              "details": [
+                "A csapatjáték, séta vagy közös sportprogram célja a rendszeresség és az örömteli részvétel is lehet."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collectionId": "wellbeing",
+  "contentMeta": {
+    "sources": [
+      "generated"
+    ],
+    "checkedAt": "2026-11-24",
+    "related": [
+      "sports-wellbeing",
+      "sports-knowledge"
+    ],
+    "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
+  },
+  "practicalNote": {
+    "title": "Saját mozgásterv",
+    "text": "Válassz olyan szabadidős mozgást, amely belefér a napirendedbe és biztonságosan végezhető. A cél lehet a rendszeresség és az élmény is, nem csak a teljesítmény.",
+    "source": "generated"
+  }
+}

@@ -1,10 +1,11 @@
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.53";
-import { checkedDocumentCenter } from "./document-data.js?v=2.53";
-import { checkedAdmissions } from "./admission-data.js?v=2.53";
-import { checkedInformationCenter } from "./information-data.js?v=2.53";
-import { checkedMediaCenter } from "./media-data.js?v=2.53";
-/** Kétszintű menü, 49 önálló oldal és közösen kezelt, JSON-alapú tartalom. */
-import { checkedCalendar } from "./calendar-data.js?v=2.53";
+import { validateExpansion } from "./content-expansion.js?v=2.54";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.54";
+import { checkedDocumentCenter } from "./document-data.js?v=2.54";
+import { checkedAdmissions } from "./admission-data.js?v=2.54";
+import { checkedInformationCenter } from "./information-data.js?v=2.54";
+import { checkedMediaCenter } from "./media-data.js?v=2.54";
+/** Kétszintű menü, 63 önálló oldal és közösen kezelt, JSON-alapú tartalom. */
+import { checkedCalendar } from "./calendar-data.js?v=2.54";
 
 const validLabel = (value, max = 800) => typeof value === "string" &&
   !!value.trim() && value.length <= max;
@@ -111,7 +112,7 @@ export function validateMenu(config) {
     } else if (depth === 2) leafIds.push(node.id);
   };
   items.forEach((root) => visit(root,1));
-  if (leafIds.length !== 49) throw new Error("A 49 almenüoldal nem teljes.");
+  if (leafIds.length !== 63) throw new Error("A 63 almenüoldal nem teljes.");
   const pages = config.pagePreview?.pages;
   if (!pages || typeof pages !== "object" ||
     Object.keys(pages).length !== leafIds.length ||
@@ -148,6 +149,7 @@ export function validateMenu(config) {
       !leafIds.includes(item.pageId))) {
     throw new Error("Érvénytelen kezdőlapi prémium témakártya-adatok.");
   }
+  validateExpansion(config);
   checkedNews(config);
   checkedCalendar(config);
   checkedInformationCenter(config);
@@ -226,7 +228,7 @@ export function getMenuPage(config, id) {
     const page = config.pagePreview.pages[id];
     if (!page) return null;
     return { id, title:node.label, intro:page.intro, items:resolvedItems(config,page),
-      galleryCategory:page.galleryCategory };
+      galleryCategory:page.galleryCategory, collectionId:page.collectionId };
   }
   return null;
 }

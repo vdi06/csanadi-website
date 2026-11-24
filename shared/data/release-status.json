@@ -1,0 +1,22 @@
+{
+  "release": "2.54",
+  "home": {
+    "footer": {
+      "brand": "CSANÁDI",
+      "year": "2026",
+      "address": "1143 Budapest, Őrnagy utca 5–7.",
+      "email": "csanadi@csanadiiskola.hu",
+      "contactTitle": "Kapcsolat",
+      "modalCloseLabel": "Tájékoztató bezárása",
+      "versionLabel": "Verzió",
+      "updatedLabel": "Utolsó frissítés",
+      "updatedAt": "2026-11-24",
+      "checkedLabel": "Ellenőrizve",
+      "pendingLabel": "Frissítés: {seconds} mp-enként",
+      "errorLabel": "A frissítések ellenőrzése átmenetileg nem sikerült",
+      "refreshSeconds": 10,
+      "notices": [],
+      "phone": "+36 30 267 82 08"
+    }
+  }
+}

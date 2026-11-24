@@ -1,0 +1,60 @@
+{
+  "intro": "Önellenőrző kérdések sportági, sporttudományi és tanulási fogalmakból, azonnali magyarázattal.",
+  "items": [
+    {
+      "title": "Hogyan működik?",
+      "summary": "A válaszok nem számítanak iskolai osztályzatnak, a gyakorlás helyben történik.",
+      "kind": "steps",
+      "groups": [
+        {
+          "title": "Tudnivalók",
+          "points": [
+            {
+              "title": "Válassz",
+              "details": [
+                "Szűrd a kérdéseket témakör szerint."
+              ]
+            },
+            {
+              "title": "Válaszolj",
+              "details": [
+                "A kérdés megnyitása után válassz egy választ, majd olvasd el a magyarázatot."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kapcsolódó tájékozódás",
+      "summary": "A témához tartozó további anyagokat a kapcsolódó oldalak és kereső segítik elérni.",
+      "kind": "list",
+      "groups": [
+        {
+          "title": "Tudnivalók",
+          "points": [
+            {
+              "title": "Gyakorlás",
+              "details": [
+                "Használd a témakör szerinti keresést, és válassz egy saját célhoz kapcsolódó anyagot."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "contentMeta": {
+    "sources": [
+      "generated"
+    ],
+    "checkedAt": "2026-11-24",
+    "related": [
+      "sports-knowledge",
+      "education-subject-guides",
+      "sports-olympic"
+    ],
+    "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
+  },
+  "collectionId": "quiz"
+}

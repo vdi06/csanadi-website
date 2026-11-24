@@ -1,7 +1,7 @@
-import { element } from "./dom.js?v=2.53";
-import { menuPageHref } from "./menu-data.js?v=2.53";
-import { newsDateLabel, newsStoryHref, publicNewsForPage } from "./news-panel.js?v=2.53";
-import { calendarEntries } from "./calendar-data.js?v=2.53";
+import { element } from "./dom.js?v=2.54";
+import { menuPageHref } from "./menu-data.js?v=2.54";
+import { newsDateLabel, newsStoryHref, publicNewsForPage } from "./news-panel.js?v=2.54";
+import { calendarEntries } from "./calendar-data.js?v=2.54";
 
 /** Ugyanazok a központi, ellenőrzött JSON-hírek jelennek meg a kezdőlapon és
  * a menüből elérhető részletes oldalakon. Mobilon és asztalon közös adatlogika,
@@ -31,7 +31,7 @@ export function createNewsArchivePage(config, pageId, platform, selectedId = nul
     attributes:{href:menuPageHref(id),...(id===pageId?{"aria-current":"page"}:{})}
   })));
   const list=element("div",{className:"school-news-page-grid"});
-  const detailNodes=new Map();
+  const detailNodes=new Map(), cards=new Map();
   const dateOf=(record)=>record.endDate ? `${newsDateLabel(record.date)} – ${newsDateLabel(record.endDate)}`
     :newsDateLabel(record.date);
   const today=new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Budapest",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
@@ -60,17 +60,22 @@ export function createNewsArchivePage(config, pageId, platform, selectedId = nul
       element("time",{className:"school-news-story-date",text:dateOf(record),attributes:{datetime:record.date}}),
       element("h2",{text:record.title}),element("p",{className:"school-news-story-summary",text:record.summary}),
       details);
-    list.append(article);
+    cards.set(record.id,article);
+    if(platform==="mobile")article.addEventListener("click",e=>{if(!e.target.closest("a,button,summary,details"))summary.click();});
   }
-  if (!records.length) list.append(element("p",{
-    className:"school-news-empty",text:"Ebben a kategóriában jelenleg nincs közzétett hír.",
-    attributes:{role:"status"}}));
-  const section=element("section",{className:`school-news-page school-news-page--${platform}`,
-    attributes:{"aria-label":"Nyilvános intézményi hírek"}},navigation,list);
+  const search=element("input",{className:"feature-search",attributes:{type:"search",placeholder:"Hír keresése…","aria-label":"Hírek keresése"}});
+  const categoryFilter=element("select",{attributes:{"aria-label":"Hírkategória"}},element("option",{text:"Minden kategória",attributes:{value:"all"}}),...[...new Set(records.flatMap(r=>r.tags))].map(t=>element("option",{text:spot.tagLabels[t]||t,attributes:{value:t}})));
+  const sort=element("select",{attributes:{"aria-label":"Hírek rendezése"}},...[["new","Legújabb elöl"],["old","Legrégebbi elöl"],["title","Cím szerint"]].map(([v,t])=>element("option",{text:t,attributes:{value:v}})));
+  const count=element("p",{className:"content-count",attributes:{role:"status"}}),more=element("button",{className:"content-action",text:"További hírek",attributes:{type:"button"}});
+  const norm=x=>String(x).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+  const step=platform==="mobile"?8:12;let limit=step;
+  function draw(){const q=norm(search.value).split(/\s+/).filter(Boolean);const hits=records.filter(r=>(categoryFilter.value==="all"||r.tags.includes(categoryFilter.value))&&q.every(w=>norm([r.title,r.summary,...r.details].join(" ")).includes(w)));if(sort.value==="old")hits.sort((a,b)=>a.date.localeCompare(b.date));if(sort.value==="title")hits.sort((a,b)=>a.title.localeCompare(b.title,"hu"));list.replaceChildren(...hits.slice(0,limit).map(r=>cards.get(r.id)));count.textContent=`${hits.length} találat · ${Math.min(hits.length,limit)} megjelenítve`;more.hidden=hits.length<=limit;if(!hits.length)list.append(element("p",{className:"school-news-empty",text:"Nincs találat a megadott szűrőkkel."}));}
+  for(const el of [search,categoryFilter,sort])el.addEventListener(el===search?"input":"change",()=>{limit=step;draw();});more.addEventListener("click",()=>{limit+=step;draw();});
+  const section=element("section",{className:`school-news-page school-news-page--${platform}`,attributes:{"aria-label":"Nyilvános intézményi hírek"}},navigation,element("div",{className:"content-filters"},search,categoryFilter,sort),count,list,more);draw();
   const showStory=(id)=>{
     const detail=detailNodes.get(id);
     if(!detail)return false;
-    detail.open=true;
+    if(!detail.isConnected){search.value="";categoryFilter.value="all";sort.value="new";limit=Math.max(limit,records.findIndex(r=>r.id===id)+1);draw();}
     const article=detail.parentNode;
     article.classList.add("is-targeted");
     // A hivatkozás célja szemantikus cím: közvetlenül az eredeti tartalomra lép a fókusz.
@@ -78,6 +83,7 @@ export function createNewsArchivePage(config, pageId, platform, selectedId = nul
     title?.setAttribute("tabindex","-1");
     title?.focus?.({preventScroll:true});
     article.scrollIntoView?.({block:"center",behavior:"instant"});
+    if(platform==="mobile")detail.querySelector("summary").click();else detail.open=true;
     return true;
   };
   return {section,showStory,destroy(){}};

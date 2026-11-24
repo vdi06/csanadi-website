@@ -1,0 +1,10 @@
+Digitális biztonsági mentés – gyakorlati terv
+Saját készítésű oktatási segédlet – nem hivatalos intézményi dokumentum.
+
+Egyetlen eszközön tárolt fájl elveszhet meghibásodás, törlés vagy téves felülírás miatt. A mentési rendszer célja, hogy visszaállítható legyen a korábbi állapot, és a másolatok ne ugyanattól a hibától függjenek.
+
+Gyakorlat
+Válassz ki egy iskolai gyakorló dokumentumot. Készíts dátumozott másolatot egy külön engedélyezett tárolási helyre. Próbáld ki a visszaállítást egy másolaton, az eredetit ne töröld.
+
+Önellenőrzés
+A szinkronizálás miért nem mindig azonos a verziózott biztonsági mentéssel?

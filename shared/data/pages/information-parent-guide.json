@@ -1,0 +1,85 @@
+{
+  "intro": "Áttekintés az iskolai ügyek előkészítéséről, a korábbi szülői dokumentumjegyzék és általános gyakorlati tanácsok alapján.",
+  "items": [
+    {
+      "title": "Kérelmek és nyilatkozatok",
+      "summary": "A közzétett régi jegyzék többek között az alábbi témákat tartalmazza; az aktuális űrlapokat külön ellenőrizni kell.",
+      "kind": "list",
+      "groups": [
+        {
+          "title": "Tudnivalók",
+          "points": [
+            {
+              "title": "Távollét",
+              "details": [
+                "Szülői igazolás és igazolási szabályok."
+              ]
+            },
+            {
+              "title": "Sportolói igazolás",
+              "details": [
+                "Egyesületi jogviszony igazolása."
+              ]
+            },
+            {
+              "title": "Napközi és tanulószoba",
+              "details": [
+                "A foglalkozások igénybevételére vonatkozó nyilatkozat."
+              ]
+            },
+            {
+              "title": "Személyes adatok",
+              "details": [
+                "Adatkezelési hozzájárulással kapcsolatos nyilatkozatok."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mielőtt írsz",
+      "summary": "A pontos, rövid megkeresés segíti az ügyintézést.",
+      "kind": "steps",
+      "groups": [
+        {
+          "title": "Tudnivalók",
+          "points": [
+            {
+              "title": "Tárgy",
+              "details": [
+                "Írd le, milyen ügyben kérsz segítséget."
+              ]
+            },
+            {
+              "title": "Azonosítás",
+              "details": [
+                "Csak a szükséges adatot add meg az intézmény hivatalos csatornáján."
+              ]
+            },
+            {
+              "title": "Válasz",
+              "details": [
+                "Kérj visszaigazolást és őrizd meg az ügyhöz tartozó iratokat."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "contentMeta": {
+    "sources": [
+      "old-parents",
+      "generated"
+    ],
+    "checkedAt": "2026-11-24",
+    "related": [
+      "information-services",
+      "information-documents",
+      "information-absence"
+    ],
+    "status": "vegyes – örökölt adat és/vagy új szerkesztői tudásanyag"
+  },
+  "collectionId": "faq"
+}

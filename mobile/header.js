@@ -1,9 +1,9 @@
-import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.53";
-import { bindAppearance } from "../shared/js/appearance.js?v=2.53";
-import { createEditMode } from "../shared/js/edit-mode.js?v=2.53";
-import { makeSocialLink } from "../shared/js/shell.js?v=2.53";
-import { createMobileMenu } from "./menu.js?v=2.53";
-import { createMobileSearch } from "./search.js?v=2.53";
+import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.54";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.54";
+import { createEditMode } from "../shared/js/edit-mode.js?v=2.54";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.54";
+import { createMobileMenu } from "./menu.js?v=2.54";
+import { createMobileSearch } from "./search.js?v=2.54";
 
 /** Csak mobilos fejléc: középső címerből nyíló harmonikamenü, külön kereső. */
 export function makeMobileHeader(config, home) {

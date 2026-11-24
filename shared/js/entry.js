@@ -1,8 +1,8 @@
 /** Egyetlen HTML, közvetlen kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.53";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.53";
-import { eventById } from "./calendar-data.js?v=2.53";
-import { mountOffline } from "./offline.js?v=2.53";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.54";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.54";
+import { eventById } from "./calendar-data.js?v=2.54";
+import { mountOffline } from "./offline.js?v=2.54";
 const root = document.getElementById("app");
 const breakpoint = window.matchMedia("(max-width: 767px)");
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -15,6 +15,14 @@ let hasRendered = false;
 let lastRenderedRoute = null;
 let initialized = false;
 let checkingConfig = false;
+const pageLoads=new Map();
+async function hydratePage(selectedRoute){
+  if(!selectedRoute.startsWith("page:"))return;
+  const id=selectedRoute.slice(5),path=config.contentExpansion?.pageManifest?.[id];
+  if(!path||pageLoads.has(id))return pageLoads.get(id);
+  const load=(async()=>{const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),2200);try{const url=new URL(path,settingsUrl);url.searchParams.set("v",config.release);const response=await fetch(url,{signal:controller.signal});if(!response.ok)throw Error("Page response");const data=await response.json();if(JSON.stringify(data)!==JSON.stringify(config.pagePreview.pages[id]))throw Error("Page release mismatch");config.pagePreview.pages[id]=data;}catch{pageLoads.delete(id);}finally{clearTimeout(timer);}})();
+  pageLoads.set(id,load);return load;
+}
 let retryTimer = 0;
 let failedAttempts = 0;
 let offlineView = null;
@@ -96,6 +104,8 @@ async function render() {
   const version = ++serial;
   const platform = breakpoint.matches ? "mobile" : "desktop";
   const selectedRoute = route();
+  await hydratePage(selectedRoute);
+  if(version!==serial)return;
   if (activePlatform === platform && activeModule) {
     mountView(platform, activeModule, selectedRoute);
     return;

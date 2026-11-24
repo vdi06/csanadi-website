@@ -1,0 +1,10 @@
+Személyes adatok – megosztás előtti ellenőrzés
+Saját készítésű oktatási segédlet – nem hivatalos intézményi dokumentum.
+
+Nyilvános közzététel előtt nézd meg a dokumentum tartalmát, a képernyőképen látható neveket és az esetleges rejtett metaadatokat. A szükségtelen személyes adatok megosztása nem indokolt, akkor sem, ha az oktatási célú feladat ártalmatlan.
+
+Gyakorlat
+Készíts egy kizárólag kitalált adatokból álló mintatáblázatot. Jelöld meg benne a szükségtelen oszlopokat, majd készíts egy adatminimalizált változatot.
+
+Önellenőrzés
+Miért különbözik a tanórai beadás és a nyilvános internetes megosztás célja?

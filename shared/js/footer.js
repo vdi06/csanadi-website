@@ -1,6 +1,6 @@
-import { element } from "./dom.js?v=2.53";
-import { trapTab } from "./focus.js?v=2.53";
-import { isolateModal } from "./modal.js?v=2.53";
+import { element } from "./dom.js?v=2.54";
+import { trapTab } from "./focus.js?v=2.54";
+import { isolateModal } from "./modal.js?v=2.54";
 
 /** Közös JSON-adatfolyam: a platformok csak a lábléc elrendezését stílusozzák.
  * Az adatok csak ellenőrzött, teljes válasz esetén cserélődnek le. */
@@ -159,8 +159,10 @@ export function makeFooter(config, platform) {
     pending = true;
     requestController = new AbortController();
     try {
-      const response = await fetch(`./shared/data/site.json?footer=${Date.now()}`,
+      const statusFile=config.contentExpansion?.footerManifest||"site.json";
+      let response = await fetch(`./shared/data/${statusFile}?footer=${Date.now()}`,
         { cache: "no-store", signal: requestController.signal });
+      if (!response.ok && statusFile!=="site.json") response=await fetch(`./shared/data/site.json?footer=${Date.now()}`,{cache:"no-store",signal:requestController.signal});
       if (!response.ok) throw new Error("A JSON nem érhető el.");
       const next = await response.json();
       const nextFooter = next?.home?.footer;
