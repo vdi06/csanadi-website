@@ -1,6 +1,6 @@
-import { element as el } from './dom.js?v=2.71';
-import { openContentDialog, closeContentDialog } from './content-expansion.js?v=2.71';
-import { menuPageHref } from './menu-data.js?v=2.71';
+import { element as el } from './dom.js?v=2.72';
+import { openContentDialog, closeContentDialog } from './content-expansion.js?v=2.72';
+import { menuPageHref } from './menu-data.js?v=2.72';
 const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('hu-HU');
 export function bindSiteHelp(config,toggle,beforeOpen){
  const data=config.home.help;

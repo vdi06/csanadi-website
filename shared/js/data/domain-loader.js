@@ -1,8 +1,8 @@
-import {checkedCalendar} from "../calendar-data.js?v=2.71";
-import {checkedDocumentCenter} from "../document-data.js?v=2.71";
-import {checkedMediaCenter} from "../media-data.js?v=2.71";
-import {recordDataLoad} from "../layout-health.js?v=2.71";
-import {expandMediaCatalog} from "./media-catalog.js?v=2.71";
+import {checkedCalendar} from "../calendar-data.js?v=2.72";
+import {checkedDocumentCenter} from "../document-data.js?v=2.72";
+import {checkedMediaCenter} from "../media-data.js?v=2.72";
+import {recordDataLoad} from "../layout-health.js?v=2.72";
+import {expandMediaCatalog} from "./media-catalog.js?v=2.72";
 export const DOMAIN_FILES=Object.freeze({news:"news/public.json",calendar:"calendar/school-year.json",documents:"documents/catalog.json",media:"media/catalog.json"});
 const base=new URL("../../data/",import.meta.url), pending=new WeakMap();
 export function assembleDomains(config, records){

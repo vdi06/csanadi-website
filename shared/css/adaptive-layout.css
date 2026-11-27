@@ -5,7 +5,6 @@ html[data-layout-family] .mobile-page-card{max-width:none;}
 html[data-layout-family] :is(.mobile-main,.desktop-main){min-width:0;}
 html[data-layout-family] :is(.home-carousel-tabs,.personal-widget-grid,.center-grid,.school-news-page-grid,.desktop-search-results,.mobile-search-results){min-width:0;max-width:100%;}
 html[data-layout-family] :is(.home-carousel-tab,.center-tile,.personal-widget-tile,.school-news-story){min-width:0;overflow-wrap:anywhere;}
-html[data-layout-family] .adaptive-settings-trigger{display:block;margin:4px auto 0;border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);background:var(--surface);color:var(--text);border-radius:8px;min-height:44px;padding:4px 12px;font:inherit;font-size:.78rem;cursor:pointer;}
 .adaptive-settings{width:min(680px,calc(100% - 24px));max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain;background:var(--surface);color:var(--text);border:1px solid var(--accent);border-radius:16px;padding:clamp(12px,3vw,26px);box-shadow:0 12px 45px #0005;}
 .adaptive-settings::backdrop{background:#07192cab;}.adaptive-settings-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}.adaptive-settings h2{font-size:clamp(18px,3vw,27px);margin:0;}.adaptive-settings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px;margin:15px 0;}.adaptive-settings label{display:grid;gap:5px;font-weight:650;}.adaptive-settings select,.adaptive-control{min-height:44px;padding:7px 10px;border:1px solid var(--accent);border-radius:8px;color:var(--text);background:var(--background);font:inherit;max-width:100%;}.adaptive-settings .adaptive-remember{display:flex;align-items:center;gap:10px;}.adaptive-remember input{width:24px;height:24px;}.adaptive-status{margin:12px 0;overflow-wrap:anywhere;}.adaptive-settings details{margin-top:16px;}.adaptive-settings summary{cursor:pointer;min-height:44px;padding:8px 0;}.adaptive-diagnostics-values{white-space:pre-wrap;overflow-wrap:anywhere;}
 html[data-layout-controls=touch] :is(.shell-tool,.home-carousel-tab,.center-button,.document-action,.feature-button,.activity-button,.adaptive-control,.adaptive-settings-trigger){min-height:44px;}
@@ -66,15 +65,10 @@ html[data-layout-low=true] .desktop-home[data-hero-home=true] .desktop-header{po
 html[data-layout-low=true] .desktop-home[data-hero-home=true] .desktop-crest-toggle{opacity:1;visibility:visible;pointer-events:auto;}
 html[data-layout-low=true] :is(.desktop-motto,.mobile-motto){margin-block:3px;}
 html[data-layout-low=true] .adaptive-settings{max-height:calc(100dvh - 12px);}
-html[data-layout-family] .adaptive-header-actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 12px;margin:4px auto 0;}
-html[data-layout-family] .adaptive-header-actions :is(.desktop-motto,.mobile-motto){margin:0;}
-html[data-layout-family] .adaptive-header-actions .adaptive-settings-trigger{margin:0;}
 html[data-layout-family=desktop] .mobile-story-track,html[data-layout-family=tablet] .mobile-story-track{top:auto;}
 html[data-layout-family=desktop] .mobile-header{position:relative;}
 html[data-layout-family=tablet] .mobile-header{position:relative;top:auto;}
 html[data-layout-family=tablet] .desktop-home[data-hero-home=true] .desktop-header{padding:10px 24px;}
-html[data-layout-profile=P1] .adaptive-header-actions{gap:2px 6px;}
-html[data-layout-profile=P1] .adaptive-header-actions .adaptive-settings-trigger{font-size:.72rem;padding:3px 8px;}
 html[data-layout-family=mobile] .desktop-hero-stage .desktop-hero-arrow{width:44px;height:44px;min-width:44px;}
 html[data-layout-family=mobile] .desktop-hero-stage .desktop-hero-story{min-width:0;max-width:100%;}
 html[data-layout-family=mobile] .desktop-successes-dialog-layout{grid-template-columns:1fr;}

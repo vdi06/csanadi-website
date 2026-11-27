@@ -1,7 +1,7 @@
-import {element as el} from "../dom.js?v=2.71";
-import {checkedDocumentCenter,documentResults} from "../document-data.js?v=2.71";
-import {createDocumentReader} from "../document-reader.js?v=2.71";
-import {registerAdaptiveState} from "../state/component-state.js?v=2.71";
+import {element as el} from "../dom.js?v=2.72";
+import {checkedDocumentCenter,documentResults} from "../document-data.js?v=2.72";
+import {createDocumentReader} from "../document-reader.js?v=2.72";
+import {registerAdaptiveState} from "../state/component-state.js?v=2.72";
 /** Shared behavior; platform-specific markup remains distinct. */
 export function createDocumentCenter(config,platform){
  const desktop=platform==="desktop",settings=checkedDocumentCenter(config),pageSize=settings[platform+"PageSize"];

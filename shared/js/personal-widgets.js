@@ -1,8 +1,8 @@
-import { reservedWidgetPages } from "./carousel-data.js?v=2.71";
-import { element as el } from './dom.js?v=2.71';
-import { recommendationPreview } from './recommendations.js?v=2.71';
-import { menuPageHref } from './menu-data.js?v=2.71';
-import { openContentDialog } from './content-expansion.js?v=2.71';
+import { reservedWidgetPages } from "./carousel-data.js?v=2.72";
+import { element as el } from './dom.js?v=2.72';
+import { recommendationPreview } from './recommendations.js?v=2.72';
+import { menuPageHref } from './menu-data.js?v=2.72';
+import { openContentDialog } from './content-expansion.js?v=2.72';
 
 const storageKey='csanadi.personal-widgets.v1';
 let memorySelection=null, unsaved=false;

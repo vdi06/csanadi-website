@@ -1,4 +1,4 @@
-/** Közös állapot, nem közös fejléc: mindkét külön fejléc saját témagombot kap. */
+/** Közös témabeállítás; a fejléc ikonja a megjelenítési párbeszédablak vezérlője. */
 let preference;
 const subscribers = new Set();
 
@@ -43,23 +43,16 @@ export function bindAppearance(config, home, themeButton) {
     themeButton.dataset.themeMode = selected;
     modeIcon.textContent = appearance.glyphs[selected];
     modeMark.textContent = appearance.shortLabels[selected];
-    const label = `${config.home.header.themeLabel}: ${appearance.labels[selected]}`;
+    const label = `${config.home.header.themeLabel}: ${appearance.labels[selected]} téma`;
     themeButton.setAttribute("aria-label", label);
     themeButton.setAttribute("title", label);
   };
-  const switchMode = () => {
-    const current = initialPreference(config);
-    const modes = appearance.cycle;
-    savePreference(config, modes[(modes.indexOf(current) + 1) % modes.length]);
-  };
-  themeButton.addEventListener("click", switchMode);
   if (typeof media.addEventListener === "function") media.addEventListener("change", apply);
   else if (typeof media.addListener === "function") media.addListener(apply);
   subscribers.add(apply);
   apply();
   return () => {
     subscribers.delete(apply);
-    themeButton.removeEventListener("click", switchMode);
     if (typeof media.removeEventListener === "function") media.removeEventListener("change", apply);
     else if (typeof media.removeListener === "function") media.removeListener(apply);
   };

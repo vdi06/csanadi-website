@@ -1,6 +1,6 @@
-import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.71";
-import { element } from "../shared/js/dom.js?v=2.71";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.71";
+import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.72";
+import { element } from "../shared/js/dom.js?v=2.72";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.72";
 
 const css = (name) => `mobile-page-${name}`;
 function pointDetails(point) {

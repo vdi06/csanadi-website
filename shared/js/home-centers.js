@@ -1,9 +1,9 @@
-import {element as el} from './dom.js?v=2.71';
-import {openContentDialog} from './content-expansion.js?v=2.71';
-import {recommendationPreview} from './recommendations.js?v=2.71';
-import {menuPageHref} from './menu-data.js?v=2.71';
-import {documentResults} from './document-data.js?v=2.71';
-import {loadActivity} from './page-activities.js?v=2.71';
+import {element as el} from './dom.js?v=2.72';
+import {openContentDialog} from './content-expansion.js?v=2.72';
+import {recommendationPreview} from './recommendations.js?v=2.72';
+import {menuPageHref} from './menu-data.js?v=2.72';
+import {documentResults} from './document-data.js?v=2.72';
+import {loadActivity} from './page-activities.js?v=2.72';
 const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('hu-HU');
 const button=(text,action,attrs={})=>el('button',{className:'center-button',text,attributes:{type:'button','data-center-action':action,...attrs}});
 const link=(id,text)=>el('a',{className:'center-button',text,attributes:{href:menuPageHref(id)}});

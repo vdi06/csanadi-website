@@ -1,24 +1,24 @@
-import { createHomeDataStrip } from "../shared/js/home-data-strip.js?v=2.71";
-import { activityView } from "../shared/js/page-activities.js?v=2.71";
-import { relatedView, practicalView } from "../shared/js/content-expansion.js?v=2.71";
-import { installMobilePanelDialogs } from "../shared/js/content-expansion.js?v=2.71";
-import { createMobileFeatureCenter } from "./centers.js?v=2.71";
-import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.71";
-import { element } from "../shared/js/dom.js?v=2.71";
-import { mountGate } from "../shared/js/gate.js?v=2.71";
-import { makeFooter } from "../shared/js/footer.js?v=2.71";
-import { makeMobileHeader } from "./header.js?v=2.71";
-import { createMobilePage } from "./page.js?v=2.71";
-import { createMobileStory } from "./story.js?v=2.71";
-import { createMobileSuccesses } from "./successes.js?v=2.71";
-import { createMobileCalendar } from "./calendar.js?v=2.71";
-import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.71";
-import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.71";
-import { createMobileInformation } from "./information.js?v=2.71";
-import { createMobileMedia } from "./gallery.js?v=2.71";
-import { createMobileTimetable } from "./timetable.js?v=2.71";
-import { createMobileDocuments } from "./documents.js?v=2.71";
-import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.71";
+import { createHomeDataStrip } from "../shared/js/home-data-strip.js?v=2.72";
+import { activityView } from "../shared/js/page-activities.js?v=2.72";
+import { relatedView, practicalView } from "../shared/js/content-expansion.js?v=2.72";
+import { installMobilePanelDialogs } from "../shared/js/content-expansion.js?v=2.72";
+import { createMobileFeatureCenter } from "./centers.js?v=2.72";
+import { centerRouteKind } from "../shared/js/feature-centers-data.js?v=2.72";
+import { element } from "../shared/js/dom.js?v=2.72";
+import { mountGate } from "../shared/js/gate.js?v=2.72";
+import { makeFooter } from "../shared/js/footer.js?v=2.72";
+import { makeMobileHeader } from "./header.js?v=2.72";
+import { createMobilePage } from "./page.js?v=2.72";
+import { createMobileStory } from "./story.js?v=2.72";
+import { createMobileSuccesses } from "./successes.js?v=2.72";
+import { createMobileCalendar } from "./calendar.js?v=2.72";
+import { createHomeCarousel } from "../shared/js/home-carousel.js?v=2.72";
+import { createNewsArchivePage } from "../shared/js/news-page.js?v=2.72";
+import { createMobileInformation } from "./information.js?v=2.72";
+import { createMobileMedia } from "./gallery.js?v=2.72";
+import { createMobileTimetable } from "./timetable.js?v=2.72";
+import { createMobileDocuments } from "./documents.js?v=2.72";
+import { createMobileAdmissions, createMobileAdmissionLinks } from "./admissions.js?v=2.72";
 
 /** Önálló mobilos nézet: saját fejléc, JSON-vázlatos aloldal és kompakt lábléc. */
 export function mount(root, config, page) {

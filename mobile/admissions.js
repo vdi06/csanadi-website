@@ -1,5 +1,5 @@
-import {element as el} from '../shared/js/dom.js?v=2.71';
-import {checkedAdmissions,admissionMilestones,milestoneStatus,statusLabel,admissionDateLabel,nextAdmissionMilestone,budapestToday} from '../shared/js/admission-data.js?v=2.71';
+import {element as el} from '../shared/js/dom.js?v=2.72';
+import {checkedAdmissions,admissionMilestones,milestoneStatus,statusLabel,admissionDateLabel,nextAdmissionMilestone,budapestToday} from '../shared/js/admission-data.js?v=2.72';
 const href=(id)=>`#/oldal/${id}`;
 const link=(name,id)=>el('a',{className:'admission-mobile-link',text:name,attributes:{href:href(id)}});
 export function createMobileAdmissionLinks(config){

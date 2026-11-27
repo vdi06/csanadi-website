@@ -1,5 +1,5 @@
-import { orderedSportSuccesses, featuredSportSuccesses } from "./successes-data.js?v=2.71";
-import { searchSportSuccessIds } from "./search-index.js?v=2.71";
+import { orderedSportSuccesses, featuredSportSuccesses } from "./successes-data.js?v=2.72";
+import { searchSportSuccessIds } from "./search-index.js?v=2.72";
 
 const KEY = "csanadi-sports-archive-2.25";
 const defaults = Object.freeze({ query:"", sport:"", year:"", order:"newest", page:1 });

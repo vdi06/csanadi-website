@@ -1,6 +1,6 @@
-import { assignHeroImage } from "../shared/js/responsive-media.js?v=2.71";
-import { dataSaving } from "../shared/js/layout-controller.js?v=2.71";
-import { element } from "../shared/js/dom.js?v=2.71";
+import { assignHeroImage } from "../shared/js/responsive-media.js?v=2.72";
+import { dataSaving } from "../shared/js/layout-controller.js?v=2.72";
+import { element } from "../shared/js/dom.js?v=2.72";
 
 const imageRoot = "./shared/assets/media/web/mobile-story/";
 const clamp = (value) => Math.max(0, Math.min(1, value));
