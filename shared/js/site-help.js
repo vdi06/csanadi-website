@@ -1,10 +1,10 @@
-import { element as el } from './dom.js?v=2.64';
-import { openContentDialog, closeContentDialog } from './content-expansion.js?v=2.64';
-import { menuPageHref } from './menu-data.js?v=2.64';
+import { element as el } from './dom.js?v=2.71';
+import { openContentDialog, closeContentDialog } from './content-expansion.js?v=2.71';
+import { menuPageHref } from './menu-data.js?v=2.71';
 const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('hu-HU');
 export function bindSiteHelp(config,toggle,beforeOpen){
  const data=config.home.help;
- function open(){beforeOpen?.();if(openContentDialog({title:data.title,trigger:toggle,large:true,restore:()=>toggle.setAttribute('aria-expanded','false'),views:[()=>helpView(data)]}))toggle.setAttribute('aria-expanded','true');}
+ function open(){beforeOpen?.();if(openContentDialog({title:data.title,trigger:toggle,large:true,initialFocus:'.site-help input',restore:()=>toggle.setAttribute('aria-expanded','false'),views:[()=>helpView(data)]}))toggle.setAttribute('aria-expanded','true');}
  toggle.addEventListener('click',open);return()=>{toggle.removeEventListener('click',open);if(toggle.getAttribute('aria-expanded')==='true')closeContentDialog();};
 }
 function helpView(data){

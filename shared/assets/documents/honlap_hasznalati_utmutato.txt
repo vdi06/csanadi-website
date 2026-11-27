@@ -7,13 +7,19 @@ KERESÉS
 A kereső az elérhető JSON-tartalmakban keres; ékezet nélküli és rövidebb kifejezésekre is érdemes próbálkozni. A találati hivatkozások konkrét oldalakra vagy híradatlapokra vezetnek.
 
 FŐOLDALI CAROUSEL
-Három tartalmi panel között lehet váltani: Sportsikerek, Tanévi naptár és Hírek és közlemények. A váltás alapesetben 30 másodpercenként automatikus, de a fülek kézzel is választhatók.
+Nyolc fül: Sportsikerek, Tanévi naptár, Hírek és közlemények, Tanulási központ, Dokumentumközpont, Iskolai ügyintézés, Csanádi örökség és Saját oldalak. Minden fül látható vízszintes görgetés nélkül. A váltás alapesetben 30 másodpercenként automatikus; olvasás, szerkesztés, lebegő ablak vagy háttérbe helyezés közben szünetel. Kézzel és nyílbillentyűkkel is választhatók.
+
+SAJÁT OLDALAK
+A Szerkesztés gombbal hozzáadhatsz, eltávolíthatsz és sorrendezhetsz oldalakat, vagy visszaállíthatod az alapelrendezést. Más aktív fülhöz rendelt oldal nem választható. Legfeljebb 12 widget menthető az adott böngészőben; letiltott tárhelynél csak az aktuális munkamenetben.
+
+SÚGÓ
+A fejléc jobb oldali harmadik, kérdőjeles ikonjával nyílik a kereshető, kategóriákba rendezett súgó. Tab/Shift+Tab: léptetés, Escape: bezárás.
 
 NAPTÁR
 A naptár alapnézete a Havi. Asztali felületen heti, havi és éves nézet elérhető; telefonon heti és havi. Az események egy külön lebegő rétegben olvashatók, amely nem alakítja át a naptárrácsot.
 
 HÍREK ÉS KÖZLEMÉNYEK
-A felületeken a „MINTA” és „BEMUTATÓADAT” feliratú bejegyzések kizárólag az oldal működésének tesztelésére szolgálnak. Nem hivatalos közlemények.
+A felületeken a „MINTA” és „BEMUTATÓADAT” feliratú bejegyzések kizárólag az oldal működésének tesztelésére szolgálnak. Nem hivatalos közlemények. A híroldalon a hitelességi szűrővel külön választhatók az ellenőrzött, ellenőrizendő és minta bejegyzések.
 
 DOKUMENTUMOK
 A Hivatalos dokumentumok menüpontban saját dokumentumnézegető működik. A meglévő, ténylegesen rendelkezésre álló segédletek megnyithatók; a feltöltésre váró hivatalos dokumentumok hiányként szerepelnek.
@@ -22,3 +28,8 @@ MEGJELENÉS
 A téma automatikus, világos vagy sötét lehet. A fontos vezérlők billentyűzettel is elérhetők.
 
 Ez a segédlet a weboldal technikai használatáról szól, nem hivatalos intézményi szabályzat.
+
+ADAPTÍV ELRENDEZÉS
+A hat méretprofil határai: 480, 768, 1024, 1440 és 1920 CSS-pixel. A tablet saját belépési modult, stílusréteget és hat gyors navigációs hivatkozást kap. Az érintés és az egér külön képességprofil alapján működik. A fejléc Elrendezés gombja automatikus, mobilos, táblagépes vagy asztali preferenciát, tartalmi sűrűséget, vezérlőméretet, mozgást és adatforgalmi módot kínál. A kézi választás nem írhatja felül a biztonságos szélességet. Nézetcsalád-váltáskor az oldal a felhasználói állapot mentése után szerkezetileg átvált. Az aktív főfül, dokumentumoldal és nagyítás, keresés, galéria, hírszűrő, naptári hét/hónap, widgetek és a gyakorlómodul állapota megőrizhető. Nem exportálható művelet vagy nyitott szerkesztő esetén a meglévő felület biztonságosan alkalmazkodik, a teljes csere elhalasztható. A kapu animációját nem szakítja meg. A megjegyzés kikapcsolása törli a mentett adaptív preferenciát. Tiltott tárolónál a választás a munkamenetben marad. A helyi diagnosztikában ellenőrizhető az aktív profil, a renderer és a szerkezeti váltás státusza; JSON-ként le is tölthető.
+
+Kiadás: 2.68 – 2026. november 27.

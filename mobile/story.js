@@ -1,4 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.64";
+import { assignHeroImage } from "../shared/js/responsive-media.js?v=2.71";
+import { dataSaving } from "../shared/js/layout-controller.js?v=2.71";
+import { element } from "../shared/js/dom.js?v=2.71";
 
 const imageRoot = "./shared/assets/media/web/mobile-story/";
 const clamp = (value) => Math.max(0, Math.min(1, value));
@@ -63,11 +65,8 @@ export function createMobileStory(config) {
   ];
   // A kilenc kiválasztott képet előre kérjük: görgetéskor a következő
   // állapotot nem üres, még betöltetlen képhelyekre úsztatjuk rá.
-  const warmedPhotos = [...new Set(states.flatMap((state) => state.photos))].map((file) => {
-    const photo = document.createElement("img");
-    photo.setAttribute("src", `${imageRoot}${file}`);
-    return photo;
-  });
+  const warmedPhotos = new Map();
+  function warm(state){if(dataSaving())return;for(const file of state?.photos||[]){if(warmedPhotos.has(file))continue;const photo=new Image();photo.decoding="async";photo.fetchPriority="low";assignHeroImage(photo,imageRoot,file,true,state.photos.length);warmedPhotos.set(file,photo);}}
   // Kettős képréteg: a témák közötti váltásnál az előző kép megmarad
   // a háttérben, amíg az új fotóréteg finoman ráúszik.
   const imageLayers = Array.from({ length: 2 }, () => Array.from({ length: 3 }, () =>
@@ -103,13 +102,13 @@ export function createMobileStory(config) {
     for (const [slot, photo] of imageLayers[nextLayer].entries()) {
       const file = state.photos[slot];
       photo.hidden = !file;
-      if (file && photo.getAttribute("src") !== `${imageRoot}${file}`)
-        photo.setAttribute("src", `${imageRoot}${file}`);
+      if (file && photo.dataset.imageFile!==file){photo.dataset.imageFile=file;assignHeroImage(photo,imageRoot,file,true,state.photos.length);}
     }
     layerNodes[nextLayer].dataset.mode = state.mode;
     layerNodes[nextLayer].dataset.active = "true";
     layerNodes[activeLayer].dataset.active = "false";
     activeLayer = nextLayer;
+    warm(states[index+1]);
   }
   function updateScroll() {
     scheduled = false;
@@ -130,7 +129,7 @@ export function createMobileStory(config) {
   renderState(0);
   return { track, updateScroll, destroy() {
     disposed = true;
-    warmedPhotos.length = 0;
+    warmedPhotos.clear();
     window.removeEventListener?.("scroll", onScroll);
     window.removeEventListener?.("resize", onScroll);
   } };

@@ -1,9 +1,10 @@
-import { createHomeCenter } from "./home-centers.js?v=2.64";
-import { createPersonalWidgets } from "./personal-widgets.js?v=2.64";
-import { element } from "./dom.js?v=2.64";
-import { checkedHomeCarousel } from "./carousel-data.js?v=2.64";
-import { createNewsPanel } from "./news-panel.js?v=2.64";
-import { menuPageHref } from "./menu-data.js?v=2.64";
+import { reducedMotion } from "./layout-controller.js?v=2.71";
+import { createHomeCenter } from "./home-centers.js?v=2.71";
+import { createPersonalWidgets } from "./personal-widgets.js?v=2.71";
+import { element } from "./dom.js?v=2.71";
+import { checkedHomeCarousel } from "./carousel-data.js?v=2.71";
+import { createNewsPanel } from "./news-panel.js?v=2.71";
+import { menuPageHref } from "./menu-data.js?v=2.71";
 
 /** JSON-ból felépített, bővíthető Bootstrap 5 Carousel: nem igényel
  * nyilakat vagy külön szüneteltető gombot. CDN-kiesésnél osztályváltásos tartalék.
@@ -23,6 +24,7 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
   let pendingEventId = null;
   let transitioning = false;
   let pointerInside = false;
+  let nextAt = Date.now() + data.autoplayMs;
 
   const holdForReading = () => {
     manualHoldUntil = Math.max(manualHoldUntil, Date.now() + data.interactionHoldMs);
@@ -114,6 +116,7 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
   function show(index,byUser=false) {
     if (destroyed || !Number.isInteger(index) || index < 0 || index >= slides.length) return;
     if (byUser) holdForReading();
+    nextAt = Date.now() + data.autoplayMs;
     if (index !== current) instances[current].closePopover?.();
     if (index !== current) instances[current].closeDetails?.();
     if (!bootstrapCarousel) { reflect(index,true); return; }
@@ -141,7 +144,7 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
   const pointerLeft = () => { pointerInside = false; };
   section.addEventListener("pointerenter",pointerEntered);
   section.addEventListener("pointerleave",pointerLeft);
-  const visibilityChanged = () => { visible = document.visibilityState !== "hidden"; };
+  const visibilityChanged = () => { nextAt = Date.now() + data.autoplayMs; };
   document.addEventListener?.("visibilitychange",visibilityChanged);
   let observer = null;
   if (typeof IntersectionObserver !== "undefined") {
@@ -151,18 +154,22 @@ export function createHomeCarousel(config, successesSection, makeCalendar, platf
     observer.observe(section);
   }
   const timer = globalThis.setInterval(() => {
-    if (destroyed || motionPreference?.matches || transitioning || Date.now() < manualHoldUntil || !visible ||
-        document.visibilityState === "hidden") return;
+    const now=Date.now();
+    const pause = () => { nextAt=now+data.autoplayMs; };
+    if (destroyed || reducedMotion() || motionPreference?.matches || transitioning || now < manualHoldUntil || !visible ||
+        document.visibilityState === "hidden") { pause(); return; }
     // WCAG 2.2.2: az olvasni kívánt tartalom ne váltson el egér alatt, illetve
     // a billentyűzetes felhasználó aktív fókusza alatt. Telefonon a tap utáni
     // ragadós :hover állapot viszont nem fagyaszthatja le a Carouselt.
-    if (canHover?.matches && (pointerInside || section.matches?.(":hover"))) return;
+    if (canHover?.matches && (pointerInside || section.matches?.(":hover"))) { pause(); return; }
     const active = document.activeElement;
-    if (active && section.contains?.(active) && active.matches?.(":focus-visible")) return;
-    if (instances[current].isOpen?.() || document.querySelector("dialog[open]")) return;
-    show((current + 1) % slides.length);
-  },data.autoplayMs);
+    if (active && section.contains?.(active) && active.matches?.(":focus-visible")) { pause(); return; }
+    if (instances[current].isOpen?.() || document.querySelector("dialog[open], [role=dialog][aria-modal=true]:not([hidden])") && [...document.querySelectorAll("dialog[open], [role=dialog][aria-modal=true]")].some(n=>!n.closest("[hidden]")&&n.getClientRects().length&&getComputedStyle(n).visibility!=="hidden")) { pause(); return; }
+    if(now >= nextAt) show((current + 1) % slides.length);
+  },250);
 
+  section.adaptiveSnapshot=()=>({index:current,remaining:Math.max(0,nextAt-Date.now()),hold:Math.max(0,manualHoldUntil-Date.now())});
+  section.adaptiveRestore=(state)=>{const index=Number.isInteger(state.index)?state.index:0;if(index>=0&&index<slides.length){if(bootstrapCarousel)show(index);else reflect(index,true);}nextAt=Date.now()+(Number.isFinite(state.remaining)?state.remaining:data.autoplayMs);manualHoldUntil=Date.now()+(state.hold||0);};
   return {
     section,show,
     showEvent(eventId) {

@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.64";
-import { checkedTimetable, currentBell, budapestClock } from "../shared/js/timetable-data.js?v=2.64";
+import { element } from "../shared/js/dom.js?v=2.71";
+import { checkedTimetable, currentBell, budapestClock } from "../shared/js/timetable-data.js?v=2.71";
 const el=element;
 /** Saját mobilos óralista: egy tanítási nap, nagy érintési célok, gyors napváltás. */
 export function createMobileTimetable(config){
@@ -35,5 +35,5 @@ export function createMobileTimetable(config){
     bells,
     el("section",{className:"mobile-timetable-week"},el("h3",{text:"Órarend – bemutató adatok"}),picker,days,banner,list),
     el("p",{className:"timetable-source-note",text:settings.sourceNote}));
-  render();return {section,destroy(){}};
+  section.dataset.adaptiveState='timetable';section.adaptiveSnapshot=()=>({classId,dayId});section.adaptiveRestore=s=>{if(settings.classes.some(c=>c.id===s.classId)){classId=s.classId;picker.value=classId;}if(s.dayId)dayId=s.dayId;render();};render();return {section,destroy(){}};
 }

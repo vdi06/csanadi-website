@@ -1,9 +1,9 @@
-import { element } from "../shared/js/dom.js?v=2.64";
-import { trapTab } from "../shared/js/focus.js?v=2.64";
-import { isolateModal } from "../shared/js/modal.js?v=2.64";
+import { element } from "../shared/js/dom.js?v=2.71";
+import { trapTab } from "../shared/js/focus.js?v=2.71";
+import { isolateModal } from "../shared/js/modal.js?v=2.71";
 import { checkedSportSuccesses, featuredSportSuccesses, orderedSportSuccesses,
-  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.64";
-import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.64";
+  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.71";
+import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.71";
 
 /** Önálló mobilos sportsiker-rács: 2×3 kártya és függőlegesen olvasható lebegő ablak. */
 export function createMobileSuccesses(config, { archive = false } = {}) {
@@ -23,7 +23,7 @@ export function createMobileSuccesses(config, { archive = false } = {}) {
   const detailSummary = element("p", { className: "mobile-successes-detail-summary" });
   const detailBody = element("div", { className: "mobile-successes-detail-body" });
   const detailImage = element("img", { className: "mobile-successes-detail-image", attributes: {
-    width: 960, height: 640, decoding: "async"
+    width: 960, height: 640, decoding: "async", alt: ""
   } });
   const detailFallbackSport = element("strong", { className: "mobile-successes-fallback-sport" });
   const detailFallback = element("div", { className: "mobile-successes-detail-fallback" },

@@ -1,5 +1,5 @@
-import { element } from "./dom.js?v=2.64";
-import { responsiveImageAttributes } from "./media-data.js?v=2.64";
+import { element } from "./dom.js?v=2.71";
+import { responsiveImageAttributes } from "./media-data.js?v=2.71";
 /** Natív képnéző: billentyűzet, simítás, valódi kétujjas nagyítás és egyujjas panorámázás. */
 export function createGalleryDialog(scope, platform) {
   const el=element;
@@ -153,5 +153,5 @@ export function createGalleryDialog(scope, platform) {
     if(ev.touches.length===0)gesture=null;
   },{passive:true});
   viewport.addEventListener("touchcancel",()=>{gesture=null;lastTap=null;},{passive:true});
-  return {dialog,show,close,destroy(){themeObserver?.disconnect();close();dialog.remove();}};
+  return {dialog,show,close,snapshot:()=>dialog.open?{id:items[index]?.id,scale,x,y}:null,restoreState(state,data,trigger){const i=data.findIndex(item=>item.id===state.id);if(i>=0){show(data,i,trigger);setZoom(state.scale,state.x,state.y);}},destroy(){themeObserver?.disconnect();close();dialog.remove();}};
 }

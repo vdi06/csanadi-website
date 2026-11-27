@@ -1,9 +1,9 @@
-import { element } from "../shared/js/dom.js?v=2.64";
-import { trapTab } from "../shared/js/focus.js?v=2.64";
-import { isolateModal } from "../shared/js/modal.js?v=2.64";
+import { element } from "../shared/js/dom.js?v=2.71";
+import { trapTab } from "../shared/js/focus.js?v=2.71";
+import { isolateModal } from "../shared/js/modal.js?v=2.71";
 import { checkedSportSuccesses, featuredSportSuccesses, orderedSportSuccesses,
-  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.64";
-import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.64";
+  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.71";
+import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.71";
 
 /** Asztali sportsikerek: tágas 3×2-es rács, teljes nézet fölötti saját lebegő ablak. */
 export function createDesktopSuccesses(config, { archive = false } = {}) {
@@ -22,7 +22,7 @@ export function createDesktopSuccesses(config, { archive = false } = {}) {
   const summary = element("p", { className: "desktop-successes-detail-summary" });
   const description = element("div", { className: "desktop-successes-detail-body" });
   const photo = element("img", { className: "desktop-successes-detail-image", attributes: {
-    width: 960, height: 640, decoding: "async"
+    width: 960, height: 640, decoding: "async", alt: ""
   } });
   const photoFallbackSport = element("strong", { className: "desktop-successes-fallback-sport" });
   const photoFallback = element("div", { className: "desktop-successes-detail-fallback" },

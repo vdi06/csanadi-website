@@ -1,7 +1,7 @@
-import { element as el } from './dom.js?v=2.64';
+import { element as el } from './dom.js?v=2.71';
 const norm = x => String(x ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('hu-HU');
 const btn = (text,cl='content-action')=>el('button',{text,className:cl,attributes:{type:'button'}});
-import { validateRecommendations, recommendPages, recommendationPreview, recommendationRoutes } from './recommendations.js?v=2.64';
+import { validateRecommendations, recommendPages, recommendationPreview, recommendationRoutes } from './recommendations.js?v=2.71';
 export function validateExpansion(config){
  const e=config.contentExpansion;if(!e||e.schema!=='1.0')throw new Error('Hiányzó tartalombővítési adatok.');
  const ids=new Set(config.menu.items.flatMap(g=>g.children.map(p=>p.id)));
@@ -10,7 +10,7 @@ export function validateExpansion(config){
  validateRecommendations(config);
  if(e.pageCount!==ids.size||Object.keys(e.pageManifest).length!==ids.size)throw new Error('Hibás oldaljegyzék.');
  for(const id of ids){
-  const p=config.pagePreview.pages[id],m=p.contentMeta;
+  const p=config.pagePreview.catalog?.[id]||config.pagePreview.pages[id],m=p.contentMeta;
   if(e.pageManifest[id]!==`pages/${id}.json`||!m||!m.sources.length||m.sources.some(s=>!e.sources[s])||!Array.isArray(m.related)||m.related.some(r=>!routes.has(r))||p.collectionId&&!e.collections[p.collectionId])throw new Error('Hibás tartalomkapcsolat: '+id);
  }
  for(const [key,coll] of Object.entries(e.collections)){
@@ -27,7 +27,7 @@ export function validateExpansion(config){
 let current=null, counter=0;
 export function closeContentDialog(){ current?.finish(false); }
 /** One native modal; history entry uses same URL so closing does not re-render the SPA. */
-export function openContentDialog({title,views,trigger,restore,large=false}){
+export function openContentDialog({title,views,trigger,restore,large=false,initialFocus=null}){
  if(current||document.querySelector('dialog[open]'))return false;
  const id=`content-dialog-${++counter}`, historyId=id;
  const home=trigger?.closest('.mobile-home,.desktop-home')||document.querySelector('.mobile-home,.desktop-home');
@@ -48,10 +48,10 @@ export function openContentDialog({title,views,trigger,restore,large=false}){
  current={finish};display();try{dialog.showModal();}catch(e){finish(false);return false;}
  try{history.pushState({...priorState,contentDialog:historyId},'',location.href);hasHistory=true;}catch{}
  window.addEventListener('popstate',onPop);window.addEventListener('hashchange',onHash);
- dialog.addEventListener('keydown',event=>{if(event.key!=='Tab')return;const focusables=[...dialog.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(n=>n.getClientRects().length&&getComputedStyle(n).visibility!=='hidden');if(!focusables.length){event.preventDefault();heading.focus();return;}const first=focusables[0],last=focusables.at(-1),active=document.activeElement;if(!dialog.contains(active)||event.shiftKey&&(active===first||!focusables.includes(active))||!event.shiftKey&&(active===last||!focusables.includes(active))){event.preventDefault();(event.shiftKey?last:first).focus({preventScroll:true});}});
+ dialog.addEventListener('keydown',event=>{if(event.key!=='Tab')return;const focusables=[...dialog.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),summary,[tabindex]:not([tabindex="-1"])')].filter(n=>n.tabIndex>=0 && !n.closest('[hidden],[inert]') && n.getClientRects().length&&getComputedStyle(n).visibility!=='hidden');if(!focusables.length){event.preventDefault();heading.focus();return;}const first=focusables[0],last=focusables.at(-1),active=document.activeElement;if(!dialog.contains(active)||event.shiftKey&&(active===first||!focusables.includes(active))||!event.shiftKey&&(active===last||!focusables.includes(active))){event.preventDefault();(event.shiftKey?last:first).focus({preventScroll:true});}});
  close.addEventListener('click',dismiss);dialog.addEventListener('cancel',e=>{e.preventDefault();dismiss();});dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dismiss();}});
  dialog.addEventListener('click',e=>{const a=e.target.closest('a[href]');const href=a?.getAttribute('href');if(href?.startsWith('#/')&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey){e.preventDefault();const destination=new URL(location.href);destination.hash=href;finish(false);if(hasHistory)location.replace(destination.href);else location.hash=href;}});
- prev.addEventListener('click',()=>{if(ix>0){ix--;display();heading.focus({preventScroll:true});}});next.addEventListener('click',()=>{if(ix+1<views.length){ix++;display();heading.focus({preventScroll:true});}});close.focus({preventScroll:true});return true;
+ prev.addEventListener('click',()=>{if(ix>0){ix--;display();heading.focus({preventScroll:true});}});next.addEventListener('click',()=>{if(ix+1<views.length){ix++;display();heading.focus({preventScroll:true});}});(initialFocus ? dialog.querySelector(initialFocus) || close : close).focus({preventScroll:true});return true;
 }
 /** Existing closed content panels keep their real DOM; no cloned handlers or lost state. */
 export function installMobilePanelDialogs(root){

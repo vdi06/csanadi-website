@@ -1,34 +1,44 @@
-import { loadActivity } from "./page-activities.js?v=2.64";
+import {hydrateDomains} from "./data/domain-loader.js?v=2.71";
+import {ensurePage} from "./data/page-loader.js?v=2.71";
+import {installHealth,recordConfig} from "./layout-health.js?v=2.71";
+installHealth();
+import { trackLiveState, resetSwitchState, switchBlocked, captureState, restoreState, noteDeferred } from "./layout-state.js?v=2.71";
+import { configureLegacyMedia } from "./layout-controller.js?v=2.71";
+import { configureResponsiveMedia } from "./responsive-media.js?v=2.71";
+import { initLayout, layoutNow } from "./layout-controller.js?v=2.71";
+import { mountLayoutPanel } from "./layout-panel.js?v=2.71";
+import { loadActivity } from "./page-activities.js?v=2.71";
 /** Egyetlen HTML, közvetlen kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.64";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.64";
-import { eventById } from "./calendar-data.js?v=2.64";
-import { mountOffline } from "./offline.js?v=2.64";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.71";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.71";
+import { eventById } from "./calendar-data.js?v=2.71";
+import { mountOffline } from "./offline.js?v=2.71";
 const root = document.getElementById("app");
-const breakpoint = window.matchMedia("(max-width: 767px)");
+const wantedRenderer = () => layoutNow().family;
 const settingsUrl = new URL("../data/site.json", import.meta.url);
 let config;
+let fullConfigPromise=null;
+const gateHash=()=>!location.hash||location.hash==="#/"||location.hash==="#/kapu";
 let destroyCurrent = () => {};
 let serial = 0;
 let activePlatform = null;
 let activeModule = null;
 let hasRendered = false;
 let lastRenderedRoute = null;
+let lastMountedHash = null;
 let initialized = false;
 let checkingConfig = false;
-const pageLoads=new Map();
-async function hydratePage(selectedRoute){
-  if(!selectedRoute.startsWith("page:"))return;
-  const id=selectedRoute.slice(5),path=config.contentExpansion?.pageManifest?.[id];
-  if(!path||pageLoads.has(id))return pageLoads.get(id);
-  const load=(async()=>{const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),2200);try{const url=new URL(path,settingsUrl);url.searchParams.set("v",config.release);const response=await fetch(url,{signal:controller.signal});if(!response.ok)throw Error("Page response");const data=await response.json();if(JSON.stringify(data)!==JSON.stringify(config.pagePreview.pages[id]))throw Error("Page release mismatch");config.pagePreview.pages[id]=data;}catch{pageLoads.delete(id);}finally{clearTimeout(timer);}})();
-  pageLoads.set(id,load);return load;
-}
 let retryTimer = 0;
 let failedAttempts = 0;
 let offlineView = null;
 let platformRetryTimer = 0;
 let platformRetryFailures = 0;
+let switchTimer=0;
+trackLiveState(root);
+function requestStructural(){clearTimeout(switchTimer);switchTimer=setTimeout(()=>{if(!initialized||lastMountedHash!==location.hash||wantedRenderer()===activePlatform)return;const why=switchBlocked(root,route());if(why){noteDeferred(why);return;}void render(true).catch(console.error);},180);}
+root.addEventListener("close",requestStructural,true);
+root.addEventListener("click",()=>{if(wantedRenderer()!==activePlatform)requestStructural();},true);
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&wantedRenderer()!==activePlatform)requestStructural();});
 
 // A reszponzív stílus átmeneti fájl-/hálózati hibáját is újrapróbáljuk.
 // Enélkül a 767/768 px-es váltás után a régi mobil/asztali nézet maradhat a képernyőn.
@@ -38,9 +48,11 @@ function retryPlatformLater() {
   platformRetryTimer = setTimeout(() => {
     platformRetryTimer = 0;
     if (!initialized || !config || !activeModule) return;
-    const wanted = breakpoint.matches ? "mobile" : "desktop";
+    const wanted = wantedRenderer();
     if (wanted === activePlatform) { platformRetryFailures = 0; return; }
-    void render().catch((error) => {
+    const same=lastMountedHash===location.hash;
+    if(same&&switchBlocked(root,route()))return;
+    void render(same).catch((error) => {
       console.warn("[Csanádi] A reszponzív nézet átmenetileg nem tölthető be.", error);
     });
   }, delay);
@@ -72,14 +84,18 @@ function route() {
   return match && getMenuPage(config, match[1]) ? `page:${match[1]}` : "home";
 }
 
-function mountView(platform, module, selectedRoute) {
+function mountView(platform, module, selectedRoute, snapshot=null) {
+  if(!snapshot)resetSwitchState();
   const routeChanged = hasRendered && selectedRoute !== lastRenderedRoute;
   destroyCurrent();
-  document.documentElement.dataset.platform = platform;
+  document.documentElement.dataset.platform = platform === "tablet" ? "mobile" : platform;
+  document.documentElement.dataset.renderer = platform;
   document.documentElement.dataset.route = selectedRoute.startsWith("page:") ? "page" : selectedRoute;
   const menuPage = selectedRoute.startsWith("page:") ? getMenuPage(config, selectedRoute.slice(5)) : null;
   document.title = menuPage ? `${menuPage.title} – ${config.site.fullName}` : config.site.fullName;
-  destroyCurrent = module.mount(root, config, selectedRoute) || (() => {});
+  const destroyView = module.mount(root, config, selectedRoute) || (() => {});
+  const destroyPanel = mountLayoutPanel(root);
+  destroyCurrent = () => { destroyPanel(); destroyView(); };
   if (routeChanged) window.scrollTo?.({ top:0, behavior:"instant" });
   if (hasRendered) {
     const searchDetailOpen = (selectedRoute.startsWith("page:news-") &&
@@ -89,7 +105,7 @@ function mountView(platform, module, selectedRoute) {
       (selectedRoute === "page:sports-results" &&
         /^#\/oldal\/sports-results\/sportsiker\/[a-z0-9-]+$/.test(location.hash));
     const focusTarget = searchDetailOpen ? null : menuPage
-      ? root.querySelector(`.${platform}-page-title`)
+      ? root.querySelector(`.${platform === "tablet" ? "mobile" : platform}-page-title`)
       : selectedRoute === "home" ? root.querySelector(".home-brand")
       : root.querySelector(".gate-door-button");
     if (focusTarget) {
@@ -98,32 +114,45 @@ function mountView(platform, module, selectedRoute) {
   }
   hasRendered = true;
   lastRenderedRoute = selectedRoute;
+  lastMountedHash = location.hash;
+  if(snapshot)restoreState(root,snapshot);
 }
 
-async function render() {
+async function render(structural=false) {
   if (!config) return;
+  if(config.gateOnly&&!gateHash()){
+    try{await ensureFullConfig();}catch(error){if(!initialized)throw error;console.warn('[Csanádi] Tartalmi konfiguráció nem elérhető.',error);initialized=false;failedAttempts++;showOffline();scheduleRetry();return;}
+  }
   const version = ++serial;
-  const platform = breakpoint.matches ? "mobile" : "desktop";
+  const platform = wantedRenderer();
   const selectedRoute = route();
   const requestedHash = location.hash;
-  const isStale = () => version !== serial || requestedHash !== location.hash || platform !== (breakpoint.matches ? "mobile" : "desktop");
-  await Promise.all([hydratePage(selectedRoute),selectedRoute.startsWith("page:")?loadActivity(config,selectedRoute.slice(5),settingsUrl):null]);
+  const isStale = () => version !== serial || requestedHash !== location.hash || platform !== (wantedRenderer());
+  // A teljes, validált kiadási állomány már tartalmazza az oldalt.
+  // Csak a különálló interaktív modult kell lekérni.
+  if(selectedRoute.startsWith("page:")){
+    const id=selectedRoute.slice(5);
+    try{await Promise.all([ensurePage(config,id),loadActivity(config,id,settingsUrl)]);}catch(error){if(isStale())return;if(!initialized)throw error;console.warn("[Csanádi] Oldaladat nem elérhető.",error);initialized=false;failedAttempts++;showOffline();scheduleRetry();return;}
+  }
   if (isStale()) return;
+  if(structural && switchBlocked(root,selectedRoute)){noteDeferred(switchBlocked(root,selectedRoute));return;}
   if (activePlatform === platform && activeModule) {
+    if(structural)return;
     mountView(platform, activeModule, selectedRoute);
     return;
   }
   const stylesheet = document.createElement("link");
   stylesheet.rel = "stylesheet";
-  stylesheet.href = `./${platform}/styles.css?v=${encodeURIComponent(config.release)}`;
+  stylesheet.href = `./${platform === "tablet" ? "mobile" : platform}/styles.css?v=${encodeURIComponent(config.release)}`;
   stylesheet.dataset.platformStyle = platform;
+  stylesheet.media="not all";
   let cssTimeout;
   const loaded = new Promise((resolve, reject) => {
     cssTimeout = setTimeout(() => reject(new Error("A platformstílus betöltése túllépte az időkorlátot.")), 8000);
     stylesheet.addEventListener("load", resolve, { once: true });
     stylesheet.addEventListener("error", () => reject(new Error("A platformstílus nem tölthető be.")), { once: true });
   });
-  document.head.append(stylesheet);
+  document.head.insertBefore(stylesheet, document.querySelector("link[data-tablet-css]"));
   try {
     // A CSS-betöltés hibáját azonnal figyeljük: egy gyors hálózati elutasítás
     // ne okozzon külön kezeletlen Promise-rejectiont a JS-import ideje alatt.
@@ -132,6 +161,9 @@ async function render() {
       loaded
     ]);
     if (isStale()) { stylesheet.remove(); return; }
+    if(structural && switchBlocked(root,selectedRoute)){stylesheet.remove();noteDeferred(switchBlocked(root,selectedRoute));return;}
+    const snapshot=structural?captureState(root):null;
+    configureLegacyMedia(stylesheet.sheet);stylesheet.media="all";
     document.querySelectorAll("link[data-platform-style]").forEach((node) => {
       if (node !== stylesheet) node.remove();
     });
@@ -139,7 +171,7 @@ async function render() {
     activeModule = module;
     platformRetryFailures = 0;
     if (platformRetryTimer) { clearTimeout(platformRetryTimer); platformRetryTimer = 0; }
-    mountView(platform, module, selectedRoute);
+    mountView(platform, module, selectedRoute,snapshot);
   } catch (error) {
     stylesheet.remove();
     if (initialized && version === serial && activeModule) {
@@ -152,6 +184,20 @@ async function render() {
   }
 }
 
+async function ensureFullConfig(){
+  if(!config?.gateOnly)return;
+  if(!fullConfigPromise)fullConfigPromise=(async()=>{
+    const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),8000);
+    try{const u=new URL(settingsUrl);u.searchParams.set('check',String(Date.now()));const started=performance.now();
+      const response=await fetch(u,{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('Tartalmi JSON: '+response.status);
+      const raw=await response.text(),fetched=performance.now(),parsed=JSON.parse(raw);recordConfig(new TextEncoder().encode(raw).length,fetched-started,performance.now()-fetched);const next=await hydrateDomains(parsed);
+      if(next.release!==config.release||next.schemaVersion!==config.schemaVersion||next.gateOnly)throw Error('Eltérő tartalmi kiadás.');
+      await ensurePage(next,"information-timetable");validateMenu(next);Object.defineProperty(next,'__staticContent',{value:true});config=next;configureResponsiveMedia(config.adaptiveLayout?.responsiveMedia);
+    }finally{clearTimeout(timer);}
+  })().finally(()=>{fullConfigPromise=null;});
+  return fullConfigPromise;
+}
+function onHashChange(){void render().catch(console.error);}
 function clearRetry() {
   clearTimeout(retryTimer);
   retryTimer = 0;
@@ -188,26 +234,34 @@ async function loadConfig() {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 8000);
   try {
-    const freshSettings = new URL(settingsUrl);
+    const freshSettings = new URL(gateHash()?"gate-config.json":settingsUrl,settingsUrl);
     freshSettings.searchParams.set("check", String(Date.now()));
+    const started=performance.now();
     const response = await fetch(freshSettings, { cache:"no-store", signal:controller.signal });
     if (!response.ok) throw new Error(`Hiányzó JSON: ${response.status}`);
-    const nextConfig = await response.json();
+    const raw=await response.text();const fetched=performance.now();const parsed=JSON.parse(raw);recordConfig(new TextEncoder().encode(raw).length,fetched-started,performance.now()-fetched);const nextConfig=await hydrateDomains(parsed);
     if (nextConfig?.schemaVersion !== "2.30" || !nextConfig.routes?.home ||
       nextConfig.routes.gate !== "#/" || nextConfig.gate?.frames !== 30) {
       throw new Error("A honlap JSON-beállításai hibásak.");
     }
-    validateMenu(nextConfig);
+    if(nextConfig.gateOnly===true){if(!nextConfig.site?.fullName||!nextConfig.site?.crest||!nextConfig.adaptiveLayout||!nextConfig.theme)throw Error("Hiányos kapukonfiguráció.");}else {await ensurePage(nextConfig,"information-timetable");validateMenu(nextConfig);}
+    const moduleRelease=new URL(import.meta.url).searchParams.get("v");
+    if(moduleRelease && nextConfig.release !== moduleRelease) throw new Error("A kiadás állományai eltérő verziójúak. Töltsd újra a kezdő HTML-t.");
     // A betöltött kiadás nem írható vissza szerverre; a kereső gyorsítótárát
     // csak teljes, validált új JSON-betöltéskor szabad cserélni.
     Object.defineProperty(nextConfig, "__staticContent", { value:true });
     config = nextConfig;
+    configureResponsiveMedia(config.adaptiveLayout?.responsiveMedia);
+    initLayout(config, () => {
+      if(initialized && lastMountedHash !== location.hash) void render().catch(console.error);
+      else if(initialized && wantedRenderer()!==activePlatform)requestStructural();
+    });
     // A következő oldalfrissítés is saját, kiadáshoz kötött URL-en történjen.
     if (window.location?.href && window.history?.replaceState) {
       const current = new URL(window.location.href);
       if (current.searchParams.get("v") !== config.release) {
         current.searchParams.set("v", config.release);
-        window.history.replaceState(window.history.state, "", current);
+        try { window.history.replaceState(window.history.state, "", current); } catch { /* A megjelenítés nem függhet a history írási jogától. */ }
       }
     }
     document.title = config.site.fullName;
@@ -220,15 +274,15 @@ async function loadConfig() {
     let requestedHash, requestedMobile;
     do {
       requestedHash = location.hash;
-      requestedMobile = breakpoint.matches;
+      requestedMobile = wantedRenderer();
       await render();
-    } while (requestedHash !== location.hash || requestedMobile !== breakpoint.matches || !activeModule);
+    } while (requestedHash !== location.hash || requestedMobile !== wantedRenderer() || !activeModule);
     initialized = true;
     offlineView = null;
     failedAttempts = 0;
     clearRetry();
-    window.addEventListener("hashchange", () => render().catch(console.error));
-    breakpoint.addEventListener("change", () => render().catch(console.error));
+    window.addEventListener("hashchange", onHashChange);
+
   } catch (error) {
     console.warn("[Csanádi] Átmeneti betöltési hiba, újrapróbálás következik.", error);
     failedAttempts++;

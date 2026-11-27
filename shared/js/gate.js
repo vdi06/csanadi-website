@@ -1,4 +1,5 @@
-import { element, crest, schoolDisplayNames } from "./dom.js?v=2.64";
+import {dataSaving,layoutNow} from "./layout-controller.js?v=2.71";
+import { element, crest, schoolDisplayNames } from "./dom.js?v=2.71";
 
 const NS = "http://www.w3.org/2000/svg";
 const DOOR_SHAPE = "M 6 78 C 37 48 76 17 140 12 C 204 17 243 48 274 78 L 274 510 Q 274 514 269 514 L 11 514 Q 6 514 6 510 Z";
@@ -55,14 +56,15 @@ export function mountGate(root, config, platform, enter) {
   let lowerFrame = -1;
   let upperFrame = -1;
   const available = Array(settings.frames).fill(false);
-  const imagePath = (index, mobile) => {
-    const name = `${settings.framePrefix}${String(index).padStart(2, "0")}${mobile ? settings.mobileSuffix : ""}${settings.extension}`;
+  const compact=!!settings.compactSuffix&&dataSaving();
+  const imagePath = (index, mobile, small=false) => {
+    const name = `${settings.framePrefix}${String(index).padStart(2, "0")}${small ? settings.compactSuffix : mobile ? settings.mobileSuffix : ""}${settings.extension}`;
     return `${settings.assetDirectory}${name}`;
   };
   const frameHost = element("div", { className: "gate-frames", attributes: { "aria-hidden": "true" } });
   for (let index = 0; index < settings.frames; index++) {
     const picture = element("img", { className: `gate-frame${index === 0 ? " is-visible" : ""}`,
-      attributes: { src: imagePath(index, platform === "mobile"), alt: "", draggable: "false",
+      attributes: { src: imagePath(index, platform === "mobile",compact), alt: "", draggable: "false",
         decoding: "async", loading: "eager" } });
     picture.fetchPriority = index === 0 ? "high" : "low";
     frameHost.append(picture);
@@ -84,7 +86,7 @@ export function mountGate(root, config, platform, enter) {
       await decodeImage(picture);
       available[index] = true;
     } catch {
-      if (platform === "desktop") {
+      if (platform === "desktop" || compact) {
         picture.src = imagePath(index, true);
         try {
           await decodeImage(picture);
@@ -152,7 +154,7 @@ export function mountGate(root, config, platform, enter) {
     if (opening || destroyed) return;
     opening = true;
     button.disabled = true;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduced = layoutNow().motion==="reduced" || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) { navigate(); return; }
     Promise.all(decoded).then(() => {
       if (destroyed || entered) return;

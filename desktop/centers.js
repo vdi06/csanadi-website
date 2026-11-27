@@ -1,5 +1,5 @@
-import { element as el } from '../shared/js/dom.js?v=2.64';
-import { checkedFeatureCenters, centerEvents, centerDateLabel, centerHref,centerEventHref,centerSportResults } from '../shared/js/feature-centers-data.js?v=2.64';
+import { element as el } from '../shared/js/dom.js?v=2.71';
+import { checkedFeatureCenters, centerEvents, centerDateLabel, centerHref,centerEventHref,centerSportResults } from '../shared/js/feature-centers-data.js?v=2.71';
 const h=(tag,text,cl)=>el(tag,{text,className:cl||''});
 const link=(name,id)=>el('a',{className:'feature-link',text:name,attributes:{href:centerHref(id)}});
 function heading(data){return el('header',{className:'desktop-feature-head'},

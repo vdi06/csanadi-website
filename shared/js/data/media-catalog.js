@@ -1,0 +1,5 @@
+/** A galériaváltozatok egyetlen, azonosítóhoz kötött útvonalszabálya. */
+export const GALLERY_WIDTHS=Object.freeze([400,800,1280]);
+export function galleryVariants(id){if(typeof id!=="string"||!/^[a-z0-9-]+$/.test(id))throw Error("Érvénytelen képazonosító");return Object.fromEntries(GALLERY_WIDTHS.map(w=>[String(w),`./shared/assets/media/gallery/${w}/${id}.webp`]));}
+export function expandMediaCatalog(data){if(!Array.isArray(data?.items))throw Error("Hiányzó médiaelemek");return {...data,items:data.items.map(item=>{if(Object.hasOwn(item,"responsive"))throw Error("Redundáns képvariánsadat");return {...item,responsive:galleryVariants(item.id)};})};}
+export function packMediaCatalog(data){if(!Array.isArray(data?.items))throw Error("Hiányzó médiaelemek");return {...data,items:data.items.map(item=>{const expected=galleryVariants(item.id);if(Object.entries(expected).some(([k,v])=>item.responsive?.[k]!==v))throw Error("Hibás variánsútvonal: "+item.id);const {responsive,...rest}=item;return rest;})};}

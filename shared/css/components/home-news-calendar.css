@@ -1,0 +1,346 @@
+/* 2.34 – Bootstrap Carousel külön lapfülekkel, nyilak és leállító nélkül. */
+.home-feature-carousel { width:100%; min-width:0; isolation:isolate; }
+.school-calendar-popover[hidden] { display:none !important; }
+/* CDN-hibánál a nem aktív panel ne jelenjen meg egyszerre az aktívval. */
+.home-feature-carousel .home-carousel-item { display:none; }
+.home-feature-carousel .home-carousel-item.active,
+.home-feature-carousel .home-carousel-item.carousel-item-next,
+.home-feature-carousel .home-carousel-item.carousel-item-prev { display:block; }
+/* A Bootstrap navigációs elemeinek alapértelmezett abszolút pozíciója itt nem jó. */
+.home-feature-carousel .home-carousel-tabs {
+  position:static; inset:auto; padding:0; margin:0; align-items:stretch;
+}
+.home-feature-carousel .home-carousel-inner { width:100%; overflow:hidden; }
+.home-feature-carousel .home-carousel-item { width:100%; }
+.home-carousel-controls {
+  display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:10px;
+  width:100%; padding:19px 12px; background:color-mix(in srgb,var(--surface) 95%,var(--background));
+  border-block:1px solid color-mix(in srgb,var(--accent) 25%,transparent);
+}
+.home-carousel-tabs { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); align-items:stretch;
+  gap:8px; margin:0; width:100%; max-width:100%; min-width:0; padding:5px; }
+.home-carousel-tab { min-width:0; white-space:normal; overflow-wrap:anywhere; }
+.home-carousel-tab {
+  min-height:46px; min-width:0; padding:9px 19px; border-radius:999px;
+  border:1px solid color-mix(in srgb,var(--accent) 58%,transparent);
+  background:var(--background); color:var(--text); cursor:pointer; font:inherit; font-weight:850;
+}
+.home-carousel-tab.is-active { background:var(--accent); color:var(--background); }
+.home-feature-carousel :is(button,select):focus-visible,.school-month :is(button,select):focus-visible {
+  outline:3px solid var(--accent); outline-offset:3px;
+}
+.home-feature-carousel:not(.bs-ready) .home-carousel-item.active { animation:home-panel-reveal .33s ease-out both; }
+@keyframes home-panel-reveal { from {opacity:.55;transform:translateY(7px)} to {opacity:1;transform:none} }
+/* 2.35 – Egységes, témakövető naptárrendszer. Valódi felugró ablak, elrendezésváltozás nélkül. */
+.school-calendar-section {
+  --cal-card: #102a40; --cal-tile: #17364e; --cal-tile-hover:#224b62;
+  --cal-line:rgba(219,183,114,.32); --cal-soft:rgba(219,183,114,.12);
+  --cal-highlight:#e6c485; --cal-micro:#d6dfe4; --cal-shadow:0 16px 42px rgba(0,0,0,.2);
+  --cal-ink:var(--text); --cal-quiet:var(--muted);
+}
+:is(.desktop-home,.mobile-home)[data-theme="light"] .school-calendar-section {
+  --cal-card:#fffefa; --cal-tile:#f3eee4; --cal-tile-hover:#eae0cd;
+  --cal-line:rgba(122,86,33,.32); --cal-soft:rgba(148,107,42,.10);
+  --cal-highlight:#77521c; --cal-micro:#465c6d; --cal-shadow:0 12px 34px rgba(24,45,62,.09);
+}
+.school-calendar-section :is(.calendar-view-tab,.calendar-period-arrow,.mobile-month-arrow,.mobile-month-select,.school-day,.school-week-day) {
+  -webkit-tap-highlight-color:transparent; touch-action:manipulation;
+}
+.calendar-toolbar {display:grid; justify-items:center; gap:18px; margin:0 0 27px;}
+.calendar-view-switch {
+  display:inline-flex; gap:5px; padding:5px; border:1px solid var(--cal-line);
+  border-radius:999px; background:var(--cal-soft);
+}
+.calendar-view-tab {
+  border:1px solid transparent; border-radius:999px; min-height:44px;
+  min-width:92px; padding:9px 19px; background:transparent; color:var(--cal-ink);
+  font:inherit; font-size:14px; font-weight:850; cursor:pointer;
+  transition:background .18s,color .18s,box-shadow .18s;
+}
+.calendar-view-tab:hover {background:var(--cal-tile-hover);}
+.calendar-view-tab.is-active {
+  background:var(--accent); color:var(--background);
+  box-shadow:0 3px 10px rgba(0,0,0,.12);
+}
+.calendar-period-navigation {
+  display:flex; align-items:center; gap:13px; justify-content:center;
+  font-size:15px; font-weight:800; color:var(--cal-ink);
+}
+.calendar-range-label {text-align:center; font-variant-numeric:tabular-nums; min-width:205px;}
+.calendar-period-arrow {
+  border:1px solid var(--cal-line); border-radius:12px; background:var(--cal-card);
+  color:var(--cal-ink); width:44px; min-height:44px; font-size:25px; cursor:pointer;
+}
+.calendar-period-arrow:is(:hover,:focus-visible),.mobile-month-arrow:is(:hover,:focus-visible) {background:var(--cal-tile-hover);}
+.calendar-period-arrow:disabled,.mobile-month-arrow:disabled {opacity:.4; cursor:not-allowed;}
+.calendar-period-arrow[hidden],.calendar-week-range[hidden],.mobile-month-select[hidden] {display:none!important;}
+.school-month {
+  display:flex; flex-direction:column; min-width:0; height:100%;
+  padding:20px 17px 19px; text-align:center;
+  border:1px solid var(--cal-line); border-radius:22px;
+  background:var(--cal-card); color:var(--cal-ink);
+  box-shadow:var(--cal-shadow);
+}
+.school-month-title {margin:0 0 15px; font-size:clamp(17px,1.7vw,20px); color:var(--cal-ink);font-weight:850;}
+.school-month-grid {
+  display:grid; grid-template-columns:repeat(7,minmax(0,1fr));
+  grid-template-rows:repeat(7,minmax(0,1fr)); gap:4px; min-width:0;
+}
+.school-month-weekday {
+  display:grid;place-items:center;min-height:27px;
+  color:var(--cal-micro); font-size:11px; font-weight:850;
+}
+.school-month-empty {min-width:0; min-height:38px; border-radius:9px; background:var(--cal-soft);opacity:.34;}
+.school-day {
+  display:grid; align-content:center; justify-items:center; position:relative;
+  width:100%; min-width:0; min-height:40px; padding:4px 2px 7px;
+  border:1px solid transparent; border-radius:10px; background:var(--cal-tile);
+  color:var(--cal-ink); font:inherit; font-size:13px; font-weight:750;
+  font-variant-numeric:tabular-nums;
+}
+.school-day:disabled {opacity:.7;}
+.school-day-number {display:block; line-height:1.15;}
+.school-day.has-events {
+  cursor:pointer; background:var(--cal-soft); border-color:var(--cal-line);
+  font-weight:900; color:var(--cal-ink);
+}
+.school-day-marker {
+  position:absolute; bottom:3px; right:4px; display:grid;place-items:center;
+  min-width:6px; min-height:6px; padding:0 2px; border-radius:10px;
+  background:var(--cal-highlight); color:var(--cal-card); font-size:9px;line-height:1.2;
+}
+.school-day.has-events:is(:hover,:focus-visible),.school-day[aria-expanded="true"] {
+  background:var(--accent);color:var(--background);border-color:var(--accent);
+  box-shadow:0 0 0 2px var(--cal-soft);
+}
+.school-day.has-events:is(:hover,:focus-visible) .school-day-marker,.school-day[aria-expanded="true"] .school-day-marker {
+  background:var(--background);color:var(--accent);
+}
+.school-calendar-section :is(.calendar-view-tab,.calendar-period-arrow,.mobile-month-arrow,.mobile-month-select,.school-day,.school-week-day):focus-visible {
+  outline:3px solid var(--accent);outline-offset:2px;
+}
+.school-week {min-width:0; border:1px solid var(--cal-line);border-radius:22px;padding:18px;
+  background:var(--cal-card);box-shadow:var(--cal-shadow);}
+.school-week-grid {display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px;}
+.school-week-day {
+  display:flex;flex-direction:column; gap:12px; min-width:0; min-height:180px;
+  border:1px solid var(--cal-line);border-radius:15px;padding:14px 10px;
+  background:var(--cal-tile);color:var(--cal-ink);font:inherit;text-align:center;
+}
+.school-week-day.has-events {cursor:pointer;border-color:var(--accent);background:var(--cal-soft);}
+.school-week-day.has-events:is(:hover,:focus-visible),.school-week-day[aria-expanded="true"] {
+  background:var(--cal-tile-hover);box-shadow:inset 0 0 0 1px var(--accent);
+}
+.school-week-day:disabled {opacity:.75;}
+.school-week-day-meta {display:grid; gap:8px;}
+.school-week-day-name {color:var(--cal-quiet);font-size:12px;font-weight:900;}
+.school-week-day-date {font-size:24px;font-weight:900;font-variant-numeric:tabular-nums;}
+.school-week-day-events {font-size:12px;line-height:1.5;overflow-wrap:anywhere;}
+.school-calendar-hint {font-size:12px!important;}
+/* Portál: a body alatt nyílik, ezért sem a hónapok magasságát, sem a Carousel rácsát nem változtatja. */
+.school-calendar-popover {
+  --pop-bg:#0c2439; --pop-card:#17364d; --pop-ink:#fff8e9;
+  --pop-muted:#d6dfe4; --pop-gold:#f3d69b; --pop-border:rgba(243,214,155,.45);
+  position:fixed; z-index:20000;
+  left:var(--popover-left,12px); top:var(--popover-top,12px);
+  width:var(--popover-width,min(430px,calc(100vw - 24px)));
+  max-height:var(--popover-max-height,calc(100dvh - 24px));
+  overflow-y:auto;overscroll-behavior:contain;
+  padding:17px; border:1px solid var(--pop-border); border-radius:19px;
+  background:var(--pop-bg);color:var(--pop-ink);
+  box-shadow:0 24px 70px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.05);
+  scrollbar-width:thin; scrollbar-color:var(--pop-border) transparent;
+}
+.school-calendar-popover[data-calendar-theme="light"] {
+  --pop-bg:#fffdf7; --pop-card:#f5f0e6; --pop-ink:#142b40;
+  --pop-muted:#455a68; --pop-gold:#77521c; --pop-border:rgba(119,82,28,.38);
+  box-shadow:0 25px 65px rgba(14,36,55,.23);
+}
+.school-calendar-popover[hidden] {display:none!important;}
+.calendar-popover-top {
+  position:sticky;top:-17px;display:flex;align-items:start;gap:14px;
+  justify-content:space-between;padding:7px 0 13px;margin-bottom:12px;
+  background:var(--pop-bg);border-bottom:1px solid var(--pop-border);z-index:1;
+}
+.calendar-popover-title {margin:0;font-size:17px;line-height:1.38;font-weight:900;}
+.calendar-popover-close {
+  flex:none;display:grid;place-items:center; width:38px;min-height:38px;
+  border:1px solid var(--pop-border);border-radius:11px;
+  background:var(--pop-card);color:var(--pop-ink);font:inherit;font-size:25px;cursor:pointer;
+}
+.calendar-popover-close:is(:hover,:focus-visible) {outline:2px solid var(--pop-gold);outline-offset:2px;}
+.calendar-popover-content {display:grid;gap:12px;}
+.calendar-popover-event {border:1px solid var(--pop-border);border-radius:13px;padding:13px 14px;background:var(--pop-card);}
+.calendar-popover-category {font-size:11px;text-transform:uppercase;letter-spacing:.09em;font-weight:900;color:var(--pop-gold);}
+.calendar-popover-event h4 {font-size:15px;line-height:1.35;font-weight:850;margin:7px 0;}
+.calendar-popover-event p {font-size:13px;line-height:1.55;color:var(--pop-muted);margin:6px 0 0;overflow-wrap:anywhere;}
+.calendar-popover-time {font-weight:850;color:var(--pop-gold)!important;}
+@media (max-width:767px) {
+  .school-calendar-popover {
+    top:auto;bottom:max(12px,env(safe-area-inset-bottom));
+    left:12px;width:calc(100vw - 24px);max-height:min(72dvh,630px);padding:15px;
+    border-radius:20px;
+  }
+  .calendar-popover-top {top:-15px;}
+  .school-week-grid {grid-template-columns:minmax(0,1fr);gap:8px;}
+  .school-week {padding:11px;}
+  .school-week-day {
+    display:grid;grid-template-columns:60px minmax(0,1fr);align-items:center;
+    min-height:68px;gap:10px;text-align:left;padding:10px 12px;
+  }
+  .school-week-day-meta {gap:2px;text-align:center;}
+  .school-week-day-name {font-size:11px;}
+  .school-week-day-date {font-size:20px;}
+  .school-week-day-events {font-size:12px;}
+}
+@media (prefers-reduced-motion:reduce) {
+  .calendar-view-tab {transition:none;}
+}
+
+/* 2.37 – A harmadik Carousel-fül JSON-vezérelt hírei és közleményei. */
+.home-news-panel {
+  position:relative; isolation:isolate; overflow:hidden; min-width:0;
+  padding:clamp(28px,4vw,64px) clamp(14px,3vw,48px);
+  color:var(--text);
+  background:radial-gradient(circle at 14% 0%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 42%),
+    linear-gradient(160deg,color-mix(in srgb,var(--background) 93%,var(--surface)),var(--background));
+}
+.home-news-heading {text-align:center; max-width:880px; margin:0 auto clamp(22px,3vw,38px);}
+.home-news-heading h2 {margin:0 0 12px;font-size:clamp(1.65rem,2.7vw,2.65rem);font-weight:900;line-height:1.16;letter-spacing:-.025em;}
+.home-news-heading .home-news-intro {max-width:690px;margin:0 auto;color:var(--muted);line-height:1.65;}
+.home-news-eyebrow {color:var(--accent);margin:0 0 12px;letter-spacing:.15em;text-transform:uppercase;font-size:.78rem;font-weight:900;}
+.home-news-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,252px),1fr));
+  gap:clamp(12px,1.5vw,20px);max-width:1300px;margin:0 auto;align-items:stretch;}
+.home-news-card {display:flex;flex-direction:column;gap:12px;min-width:0;
+  padding:clamp(17px,2vw,25px);border-radius:20px;
+  border:1px solid color-mix(in srgb,var(--accent) 38%,transparent);
+  border-top:3px solid color-mix(in srgb,var(--accent) 68%,transparent);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--surface) 96%,var(--accent)),var(--surface));
+  color:var(--text);box-shadow:0 12px 35px rgba(0,0,0,.11);overflow-wrap:anywhere;}
+.home-news-card--upcoming {border-top-color:var(--accent);}
+.home-news-card-head {display:flex;align-items:flex-start;flex-wrap:wrap;gap:7px;justify-content:space-between;}
+.home-news-tag,.home-news-status {display:inline-flex;align-items:center;padding:6px 10px;
+  border-radius:999px;font-size:.7rem;line-height:1.2;font-weight:900;letter-spacing:.02em;}
+.home-news-tag {background:color-mix(in srgb,var(--accent) 15%,var(--surface));color:var(--text);border:1px solid color-mix(in srgb,var(--accent) 34%,transparent);}
+.home-news-status {color:var(--background);background:var(--accent);}
+.home-news-status--past {color:var(--text);background:color-mix(in srgb,var(--accent) 15%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);}
+.home-news-featured {margin:0;color:var(--accent);font-size:.75rem;font-weight:900;letter-spacing:.05em;}
+.home-news-date {display:block;margin:0;color:var(--muted);font-size:.81rem;line-height:1.4;font-weight:800;}
+.home-news-card h3 {margin:0;line-height:1.28;font-size:clamp(1.08rem,1.55vw,1.38rem);font-weight:900;}
+.home-news-summary {margin:0;color:var(--text);font-size:.92rem;line-height:1.62;}
+.home-news-more {margin-top:auto;padding-top:13px;border-top:1px solid color-mix(in srgb,var(--accent) 30%,transparent);}
+.home-news-more summary {cursor:pointer;font-weight:900;color:var(--accent);line-height:1.5;min-height:40px;align-content:center;}
+.home-news-more summary:focus-visible {outline:3px solid var(--accent);outline-offset:4px;border-radius:3px;}
+.home-news-detail-content {padding:10px 0 0;}
+.home-news-detail-content p {margin:0 0 10px;color:var(--text);line-height:1.62;font-size:.9rem;}
+.home-news-empty {grid-column:1/-1;text-align:center;padding:28px 18px;
+  border:1px dashed color-mix(in srgb,var(--accent) 50%,transparent);border-radius:18px;color:var(--muted);}
+.home-news-links {display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:11px;margin:clamp(22px,3vw,33px) auto 0;}
+.home-news-link {display:inline-flex;justify-content:center;align-items:center;text-align:center;
+  min-height:46px;min-width:min(100%,170px);padding:10px 18px;border-radius:999px;
+  border:1px solid var(--accent);color:var(--accent);font-weight:850;text-decoration:none;
+  background:color-mix(in srgb,var(--accent) 8%,var(--background));transition:background-color .2s,border-color .2s;}
+.home-news-link:is(:hover,:focus-visible) {background:color-mix(in srgb,var(--accent) 20%,var(--background));text-decoration:underline;}
+.home-news-link:focus-visible {outline:3px solid var(--accent);outline-offset:3px;}
+@media (max-width:650px) {
+  .home-news-grid {grid-template-columns:minmax(0,1fr);max-width:540px;}
+  .home-news-card {padding:19px;gap:11px;}
+  .home-news-panel {padding:27px 14px 38px;}
+  .home-news-links {align-items:stretch;}
+  .home-news-link {flex:1 1 140px;}
+}
+@media (prefers-reduced-motion:reduce) { .home-news-link {transition:none;} }
+@media (forced-colors:active) { .home-news-card,.home-news-link,.home-news-tag,.home-news-status {border:1px solid CanvasText;} }
+@media (prefers-reduced-motion: reduce) {
+ .home-feature-carousel:not(.bs-ready) .home-carousel-item.active { animation:none; }
+}
+/* 2.37 – a kiemelt hírek részletei és a menüből megnyitható teljes híroldalak */
+.home-news-story-link,.home-news-calendar-link {display:inline-block;min-height:44px;padding:10px 0;color:var(--accent);
+  text-decoration:underline;text-underline-offset:3px;font-weight:850;}
+.home-news-story-link:focus-visible,.home-news-calendar-link:focus-visible {outline:3px solid var(--accent);outline-offset:3px;}
+
+/* Teljes naptár a menüből, közös adatforrással és azonos komponensekkel. */
+.calendar-full-page-link {display:flex;justify-content:center;padding:18px 12px 30px;}
+.calendar-full-page-link a {display:inline-flex;align-items:center;justify-content:center;
+ min-height:46px;padding:10px 20px;border:1px solid var(--accent);border-radius:999px;
+ color:var(--accent);background:var(--surface);font-weight:850;text-align:center;text-decoration:none;}
+.calendar-full-page-link a:is(:hover,:focus-visible) {text-decoration:underline;outline:2px solid var(--accent);outline-offset:3px;}
+
+/* 2.37 – egyéni híradatlap a meglévő menüoldalakba ágyazva */
+.home-news-title-link {color:inherit;text-decoration:none;text-underline-offset:4px;}
+.home-news-title-link:is(:hover,:focus-visible) {color:var(--accent);text-decoration:underline;}
+.home-news-title-link:focus-visible {outline:3px solid var(--accent);outline-offset:4px;border-radius:4px;}
+.news-detail-article {max-width:1000px;margin:24px auto 38px;padding:clamp(20px,4vw,42px);
+ border:1px solid color-mix(in srgb,var(--accent) 42%,transparent);border-radius:22px;
+ background:var(--surface);color:var(--text);text-align:left;box-shadow:0 18px 45px rgba(0,0,0,.09);}
+.news-detail-eyebrow {text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;
+ font-weight:850;color:var(--accent);margin:0 0 12px;}
+.news-detail-title {font-size:clamp(1.4rem,3.4vw,2.2rem);font-weight:900;line-height:1.2;
+ margin:0 0 15px;overflow-wrap:break-word;}
+.news-detail-title:focus-visible {outline:3px solid var(--accent);outline-offset:5px;}
+.news-detail-date {font-size:.87rem;color:var(--muted);display:block;margin-bottom:16px;}
+.news-detail-lead {font-size:clamp(1rem,1.35vw,1.15rem);font-weight:700;line-height:1.6;}
+.news-detail-body {border-top:1px solid color-mix(in srgb,var(--accent) 24%,transparent);
+ padding-top:17px;line-height:1.7;}
+.news-detail-body p {margin:0 0 12px;}
+.news-detail-actions {display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+.news-detail-actions a {display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+ padding:10px 18px;border:1px solid var(--accent);border-radius:999px;color:var(--accent);
+ font-weight:800;text-align:center;}
+.news-detail-actions a:is(:hover,:focus-visible) {outline:2px solid var(--accent);outline-offset:3px;text-decoration:underline;}
+@media (max-width:600px) { .news-detail-article {margin:14px auto 25px;border-radius:15px;} }
+@media (forced-colors:active) { .news-detail-article,.news-detail-actions a {border:1px solid CanvasText;} }
+
+/* 2.37 – Menüből elérhető, közös JSON-híradatokból épülő reszponzív hírgyűjtemény. */
+.school-news-page {width:min(1300px,100%);padding:18px clamp(12px,3vw,42px) 60px;margin:0 auto;color:var(--text);}
+.school-news-navigation {display:flex;justify-content:safe center;gap:9px;flex-wrap:wrap;margin:0 auto 30px;max-width:980px;}
+.school-news-navigation-link {display:inline-flex;align-items:center;justify-content:center;text-align:center;
+  min-height:44px;padding:10px 17px;border-radius:999px;border:1px solid color-mix(in srgb,var(--accent) 65%,transparent);
+  background:var(--surface);color:var(--text);font-size:.86rem;font-weight:800;text-decoration:none;line-height:1.35;}
+.school-news-navigation-link.is-current {background:var(--accent);color:var(--background);}
+.school-news-navigation-link:is(:hover,:focus-visible) {text-decoration:underline;text-underline-offset:4px;}
+.school-news-page-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));
+  gap:clamp(15px,2.2vw,26px);justify-content:center;align-items:stretch;}
+.school-news-story {min-width:0;display:flex;flex-direction:column;gap:12px;overflow-wrap:anywhere;
+  padding:clamp(20px,2.5vw,32px);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);
+  border-top:4px solid var(--accent);border-radius:22px;background:var(--surface);color:var(--text);
+  box-shadow:0 14px 32px rgba(0,0,0,.10);}
+.school-news-story.is-targeted {outline:3px solid var(--accent);outline-offset:3px;}
+.school-news-story-labels {display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+.school-news-story-category,.school-news-story-featured,.school-news-story-status {display:inline-flex;align-items:center;
+  padding:5px 10px;border-radius:999px;font-size:.73rem;font-weight:800;line-height:1.3;}
+.school-news-story-category {color:var(--text);background:color-mix(in srgb,var(--accent) 18%,var(--surface));}
+.school-news-story-featured {color:var(--background);background:var(--accent);}
+.school-news-story-status {border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);color:var(--text);}
+.school-news-story-date {color:var(--muted);font-size:.83rem;font-weight:750;}
+.school-news-story h2 {margin:0;color:var(--text);font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.25;font-weight:900;}
+.school-news-story-summary {margin:0;color:var(--text);line-height:1.62;}
+.school-news-story-details {margin-top:auto;border-top:1px solid color-mix(in srgb,var(--accent) 35%,transparent);
+  padding-top:11px;}
+.school-news-story-details summary {cursor:pointer;color:var(--accent);min-height:44px;align-content:center;
+  font-weight:850;line-height:1.45;}
+.school-news-story-body {padding:10px 0 0;line-height:1.62;}
+.school-news-story-body p {margin:0 0 12px;}
+.school-news-story-share {color:var(--accent);font-weight:800;display:inline-flex;min-height:44px;align-items:center;}
+.school-news-empty {grid-column:1/-1;text-align:center;border:1px dashed var(--accent);padding:27px;border-radius:16px;}
+.school-news-page :is(a,summary,h2):focus-visible {outline:3px solid var(--accent);outline-offset:4px;border-radius:4px;}
+@media (max-width:767px) {
+  .school-news-page {padding:12px 12px 44px;}
+  .school-news-page-grid {grid-template-columns:minmax(0,1fr);max-width:580px;margin:0 auto;}
+  .school-news-navigation {gap:7px;margin-bottom:19px;}
+  .school-news-navigation-link {flex:1 1 42%;padding:9px 10px;font-size:.8rem;}
+  .school-news-story {padding:19px;gap:10px;border-radius:17px;}
+}
+@media (forced-colors:active) {
+  .school-news-story,.school-news-navigation-link,.school-news-story-category,.school-news-story-featured {
+    border:1px solid CanvasText;}
+}
+
+/* 2.37 – naptár és híradatlap kétirányú navigációja; a lebegő réteg nem változtatja a rácsot. */
+.calendar-related-news-link {display:inline-flex;min-height:44px;align-items:center;
+  color:var(--accent);font-weight:850;text-decoration:underline;text-underline-offset:3px;
+  padding:10px 4px;max-width:100%;overflow-wrap:anywhere;}
+.calendar-related-news-link:is(:hover,:focus-visible) {outline:2px solid var(--accent);
+  outline-offset:2px;border-radius:4px;}
+@media (forced-colors:active) { .calendar-related-news-link:focus-visible {outline-color:Highlight;} }
+

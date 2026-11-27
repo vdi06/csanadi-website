@@ -1,12 +1,12 @@
-import { validatePersonalData } from "./personal-data.js?v=2.64";
-import { validateExpansion } from "./content-expansion.js?v=2.64";
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.64";
-import { checkedDocumentCenter } from "./document-data.js?v=2.64";
-import { checkedAdmissions } from "./admission-data.js?v=2.64";
-import { checkedInformationCenter } from "./information-data.js?v=2.64";
-import { checkedMediaCenter } from "./media-data.js?v=2.64";
+import { validatePersonalData } from "./personal-data.js?v=2.71";
+import { validateExpansion } from "./content-expansion.js?v=2.71";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.71";
+import { checkedDocumentCenter } from "./document-data.js?v=2.71";
+import { checkedAdmissions } from "./admission-data.js?v=2.71";
+import { checkedInformationCenter } from "./information-data.js?v=2.71";
+import { checkedMediaCenter } from "./media-data.js?v=2.71";
 /** Kétszintű menü, 63 önálló oldal és közösen kezelt, JSON-alapú tartalom. */
-import { checkedCalendar } from "./calendar-data.js?v=2.64";
+import { checkedCalendar } from "./calendar-data.js?v=2.71";
 
 const validLabel = (value, max = 800) => typeof value === "string" &&
   !!value.trim() && value.length <= max;
@@ -82,6 +82,7 @@ function checkedNews(config) {
     if (!news || !validId(news.id) || ids.has(news.id) ||
       !validLabel(news.title, 150) || !validLabel(news.summary, 800) ||
       (news.featured !== undefined && typeof news.featured !== "boolean") ||
+      (news.verification !== undefined && (!["verified","pending","demo"].includes(news.verification) || (news.verification === "demo") !== news.tags?.includes("demo"))) ||
       !validDate(news.date) ||
       (news.endDate && (!validDate(news.endDate) || news.endDate < news.date)) ||
       !Array.isArray(news.tags) || !news.tags.length || news.tags.some((tag) => !validId(tag)) ||
@@ -114,7 +115,8 @@ export function validateMenu(config) {
   };
   items.forEach((root) => visit(root,1));
   if (leafIds.length !== 63) throw new Error("A 63 almenüoldal nem teljes.");
-  const pages = config.pagePreview?.pages;
+  const split = config.pagePreview?.schema === "split-1";
+  const pages = split ? config.pagePreview.catalog : config.pagePreview?.pages;
   if (!pages || typeof pages !== "object" ||
     Object.keys(pages).length !== leafIds.length ||
     Object.keys(pages).some((id) => !leafIds.includes(id))) {
@@ -122,6 +124,7 @@ export function validateMenu(config) {
   }
   const signatures = new Set();
   for (const id of leafIds) {
+    if(split){const meta=pages[id];if(!validLabel(meta?.intro,900)||!Number.isInteger(meta.cardCount)||meta.cardCount<1||meta.cardCount>15||!Array.isArray(meta.highlights))throw Error(`Hibás oldalkatalógus: ${id}`);continue;}
     const page = checkedCards(config,id);
     const signature = JSON.stringify(page.items.map((card) => [card.title,card.groups]));
     if (signatures.has(signature)) throw new Error("Két almenü ugyanazt a tartalmat kapta.");
@@ -133,7 +136,7 @@ export function validateMenu(config) {
     if (!validId(local.id) || ids.has(local.id) || !validLabel(local.title, 100) ||
       !leafIds.includes(local.parentId) || local.parentId !== "education-programs" ||
       !Number.isInteger(local.cardIndex) || local.cardIndex < 0 ||
-      local.cardIndex >= config.pagePreview.pages[local.parentId].items.length) {
+      local.cardIndex >= (split ? pages[local.parentId].cardCount : pages[local.parentId].items.length)) {
       throw new Error("Érvénytelen képzési aloldal.");
     }
     ids.add(local.id);
@@ -165,7 +168,7 @@ export function pagePreviewSearchText(cards) {
 function feedCard(config, feed) {
   const now = localToday();
   const matches = config.publicNews.filter((news) =>
-    (feed.tags.includes("all") || feed.tags.some((tag) => news.tags.includes(tag))) &&
+    news.verification === "verified" && !news.tags.includes("demo") && (feed.tags.includes("all") || feed.tags.some((tag) => news.tags.includes(tag))) &&
     (!feed.pastOnly || (news.endDate || news.date) < now) &&
     (!feed.futureOnly || (news.endDate || news.date) >= now))
     .sort((a,b) => b.date.localeCompare(a.date));
@@ -206,19 +209,21 @@ function resolvedItems(config, page) {
 export function getMenuPage(config, id) {
   const local = config.pagePreview?.localPages?.find((item) => item.id === id);
   if (local) {
-    const parent = config.pagePreview.pages[local.parentId];
-    const card = parent.items[local.cardIndex];
-    if (!card) return null;
+    const parent = config.pagePreview.pages[local.parentId] || config.pagePreview.catalog?.[local.parentId];
+    const card = parent?.items?.[local.cardIndex];
+    if (!parent || (!card && !local.preview)) return null;
     return { id, title:local.title, intro:parent.intro,
-      items:resolvedItems(config,{items:[card]}) };
+      items:card?resolvedItems(config,{items:[card]}):[] };
   }
   for (const root of config.menu.items) {
     const node = root.children?.find((item) => item.id === id);
     if (!node) continue;
-    const page = config.pagePreview.pages[id];
+    const page = config.pagePreview.pages[id] || config.pagePreview.catalog?.[id];
     if (!page) return null;
-    return { id, title:node.label, intro:page.intro, items:resolvedItems(config,page),
+    return { id, title:node.label, intro:page.intro, items:resolvedItems(config,{...page,items:page.items||[]}),
       galleryCategory:page.galleryCategory, collectionId:page.collectionId };
   }
   return null;
 }
+
+export function validatePageContent(config,id,page){const temp={...config,pagePreview:{...config.pagePreview,pages:{[id]:page}}};return checkedCards(temp,id);}

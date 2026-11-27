@@ -1,0 +1,40 @@
+import {element as el} from "../dom.js?v=2.71";
+import {checkedDocumentCenter,documentResults} from "../document-data.js?v=2.71";
+import {createDocumentReader} from "../document-reader.js?v=2.71";
+import {registerAdaptiveState} from "../state/component-state.js?v=2.71";
+/** Shared behavior; platform-specific markup remains distinct. */
+export function createDocumentCenter(config,platform){
+ const desktop=platform==="desktop",settings=checkedDocumentCenter(config),pageSize=settings[platform+"PageSize"];
+ let category="all",status="all",query="",sort=settings.defaultSort,limit=pageSize;
+ const section=el("section",{className:`${platform}-document-center document-center`,attributes:{"aria-label":desktop?"Hivatalos dokumentumok és dokumentumnézegető":"Mobil dokumentumközpont"}});
+ const reader=createDocumentReader(section,platform);
+ const intro=el(desktop?"div":"header",{className:desktop?"document-center-lead":"mobile-document-lead"},el("p",{className:"document-center-eyebrow",text:settings.eyebrow}),el("h2",{text:desktop?"Dokumentumok egy helyen":"Dokumentumtár"}),el("p",{text:settings.intro}));
+ const search=el("input",{className:"document-center-search form-control",attributes:{type:"search",id:`${platform}-document-search`,autocomplete:"off",placeholder:settings.searchPlaceholder,"aria-label":"Dokumentum keresése"}});
+ const select=(label,items)=>el("select",{className:"document-center-select form-select",attributes:{"aria-label":label}},...items.map(([value,text])=>el("option",{text,attributes:{value}})));
+ const statusSelect=select("Közzétételi állapot",[["all",desktop?"Összes állapot":"Minden állapot"],["available","Megtekinthető"],["pending","Feltöltésre vár"]]);
+ const sortSelect=select(desktop?"Dokumentumok sorrendje":"Rendezés",[["title","Cím szerint"],["date",desktop?"Legfrissebb fájl előre":"Legfrissebb"]]);
+ const catSelect=desktop?null:select("Dokumentumkategória",settings.categories.map(c=>[c.id,c.label]));
+ const catBox=desktop?el("nav",{className:"desktop-document-categories",attributes:{"aria-label":"Dokumentumkategóriák"}}):null;
+ const count=el("p",{className:"document-center-result",attributes:{role:"status","aria-live":"polite"}}),grid=el("div",{className:desktop?"desktop-document-grid":"mobile-document-list"});
+ const more=el("button",{className:"document-center-more btn",text:"További dokumentumok",attributes:{type:"button"}});
+ if(desktop)for(const cat of settings.categories){const button=el("button",{className:"desktop-document-category",text:cat.label,attributes:{type:"button","data-category":cat.id,"aria-pressed":String(cat.id===category)}});button.addEventListener("click",()=>{category=cat.id;reset();});catBox.append(button);}
+ else catSelect.addEventListener("change",()=>{category=catSelect.value;reset();});
+ function reset(){limit=pageSize;render();}
+ search.addEventListener("input",()=>{query=search.value;reset();});statusSelect.addEventListener("change",()=>{status=statusSelect.value;reset();});sortSelect.addEventListener("change",()=>{sort=sortSelect.value;reset();});more.addEventListener("click",()=>{limit+=pageSize;render();});
+ function render(){
+  const found=documentResults(config,{category,status,query,sort});catBox?.querySelectorAll("button").forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.category===category)));
+  count.textContent=`${Math.min(limit,found.length)} / ${found.length} dokumentum`+(desktop?` · ${found.filter(d=>d.status==="available").length} megtekinthető`:"");
+  grid.replaceChildren(...found.slice(0,limit).map(doc=>{
+   const ready=doc.status==="available",label=settings.categories.find(c=>c.id===doc.category)?.label||"";
+   const cat=el(desktop?"span":"small",{className:"document-card-category",text:label});
+   const card=el("article",{className:`document-card ${desktop?"":"mobile-document-card "}${ready?"document-card-ready":"document-card-pending"}`},el("div",{className:"document-card-top"},el("span",{className:"document-card-kind",text:doc.kind.toUpperCase()}),el("span",{className:"document-card-status",text:ready?"Megtekinthető":"Feltöltésre vár"})),el("h3",{text:doc.title}),el("p",{text:doc.summary}),desktop?el("div",{className:"document-card-bottom"},cat):cat);
+   if(ready){const button=el("button",{className:"document-card-open btn",text:desktop?"Megtekintés":"Megtekintés a weboldalon",attributes:{type:"button","data-doc-id":doc.id,"aria-label":`${doc.title} megtekintése a dokumentumnézegetőben`}});button.addEventListener("click",()=>reader.open(doc,button));card.append(button);if(!desktop)card.addEventListener("click",e=>{if(!e.target.closest("a,button"))button.click();});}
+   else card.append(el("span",{className:"document-card-notice",text:desktop?"Hiteles fájl még nem érhető el":"Még nincs feltöltve"}));return card;
+  }));
+  if(!found.length)grid.append(el("p",{className:"document-center-empty",text:desktop?"Nincs megfelelő dokumentum. Módosítsd a szűrőket vagy a keresést.":"Nincs ilyen dokumentum."}));more.hidden=limit>=found.length;
+ }
+ const searchLabel=el("label",{className:"visually-hidden",text:"Dokumentum keresése",attributes:{for:`${platform}-document-search`}});
+ if(desktop)section.append(intro,el("div",{className:"desktop-document-layout"},catBox,el("div",{className:"desktop-document-main"},el("div",{className:"desktop-document-toolbar"},searchLabel,search,statusSelect,sortSelect),count,grid,more)));
+ else section.append(intro,el("div",{className:"mobile-document-filters"},searchLabel,search,el("div",{className:"mobile-document-filter-row"},catSelect,statusSelect),sortSelect),count,grid,more);
+ registerAdaptiveState(section,"documents",{snapshot:()=>({category,status,query,sort,limit,reader:reader.snapshot()}),restore:state=>{({category,status,query,sort,limit}=state);search.value=query;if(catSelect)catSelect.value=category;statusSelect.value=status;sortSelect.value=sort;render();if(state.reader){const item=settings.items.find(d=>d.id===state.reader.id);const trigger=[...section.querySelectorAll("[data-doc-id]")].find(e=>e.dataset.docId===item?.id);if(item)reader.open(item,trigger,state.reader);}}});render();return {section,destroy(){reader.destroy();}};
+}

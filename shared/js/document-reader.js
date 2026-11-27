@@ -1,4 +1,4 @@
-import { element } from "./dom.js?v=2.64";
+import { element } from "./dom.js?v=2.71";
 /** A dokumentumot NEM új lapon, hanem saját vezérlésű <dialog> olvasóban nyitja. */
 const el=element;
 const pdfModuleUrl="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.mjs";
@@ -114,15 +114,17 @@ export function createDocumentReader(scope,platform){
       doc=d;count=d.numPages;page=Math.max(1,Math.min(page,count));await render();
     }catch(err){if(openId!==openSeq||!dialog.open)return;doc=null;await render();}
   }
-  function open(item,trigger){
+  function open(item,trigger,state=null){
     if(!item||item.status!=="available")return;
     openSeq++;seq++;task?.cancel?.();task=null;doc?.destroy?.();doc=null;current=item;page=1;count=item.pageCount||item.pages?.length||1;zoom=1;plain=false;
+    if(state){page=Math.max(1,Math.min(count,state.page||1));zoom=Math.min(2.2,Math.max(.65,state.zoom||1));plain=!!state.plain;}
     returnFocus=trigger||document.activeElement;
     title.textContent=item.title;summary.textContent=item.summary;
     download.setAttribute("href",item.file);download.setAttribute("download",item.file.split("/").at(-1));
     if(!dialog.open){if(typeof dialog.showModal==="function")dialog.showModal();else dialog.setAttribute("open","");}
     closeButton.focus({preventScroll:true});updateButtons();
     if(item.kind==="pdf"){ render(); preparePdf(openSeq); } else render();
+    if(state){const ticket=openSeq;const restorePosition=()=>{if(ticket===openSeq&&dialog.open){stage.scrollTop=state.top||0;stage.scrollLeft=state.left||0;}};requestAnimationFrame(restorePosition);for(const img of stage.querySelectorAll("img"))img.addEventListener("load",restorePosition,{once:true});}
   }
   function close(){if(dialog.open){if(typeof dialog.close==="function")dialog.close();else {dialog.removeAttribute("open");onClosed();}}}
   function onClosed(){if(dialog.open)return;openSeq++;seq++;current=null;doc?.destroy?.();doc=null;task?.cancel?.();task=null;stage.replaceChildren();showStatus("");if(returnFocus?.isConnected)returnFocus.focus({preventScroll:true});}
@@ -141,5 +143,5 @@ export function createDocumentReader(scope,platform){
       ev.preventDefault();move(ev.key==="ArrowLeft"?-1:1);
     }
   });
-  return {dialog,open,close,destroy(){close();dialog.remove();}};
+  return {dialog,open,close,snapshot:()=>dialog.open&&current?{id:current.id,page,zoom,plain,top:stage.scrollTop,left:stage.scrollLeft}:null,destroy(){close();dialog.remove();}};
 }

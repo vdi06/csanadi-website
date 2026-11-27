@@ -1,5 +1,5 @@
-import { element } from "./dom.js?v=2.64";
-import { albumDimensions, mediaGroups, responsiveImageAttributes, premiumAlbumCards } from "./media-data.js?v=2.64";
+import { element } from "./dom.js?v=2.71";
+import { albumDimensions, mediaGroups, responsiveImageAttributes, premiumAlbumCards } from "./media-data.js?v=2.71";
 const el=element;
 export function createAlbumControls(config,platform,change){
   const group=el("div",{className:`${platform}-album-controls media-album-controls`,attributes:{"aria-label":"Albumcsoportok és szűrők"}});
@@ -82,5 +82,5 @@ export function createPremiumAlbumShowcase(config,platform,onOpen){
     openAlbum(album);return true;
   }
   wrapper.append(heading,summary,tabs,grid,opened);render();
-  return {wrapper,openById,clear(){active=null;render();},getActive:()=>active};
+  return {wrapper,openById,clear(){active=null;render();},getActive:()=>active,snapshot:()=>({dimension,active:active?{dimension:active.dimension,id:active.id}:null}),restoreState(state){dimension=state.dimension;active=state.active?premiumAlbumCards(config,{dimension:state.active.dimension}).find(a=>a.id===state.active.id)||null:null;render();}};
 }

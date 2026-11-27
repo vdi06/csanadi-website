@@ -1111,7 +1111,7 @@
 /* 2.46 asztali oldalak önálló, robotoknak olvasható megosztási útvonala. */
 
 /* 2.47: a galéria egyszeri bevezetője után az album és a képböngésző önálló szakasz. */
-.media-browser-title { font-size:clamp(1.18rem,2.1vw,1.55rem); font-weight:800; margin:0 0 1rem; text-align:center; }
+
 .desktop-media-browser { width:100%; margin-block:clamp(1.4rem,3vw,2.4rem) 0; }
 .desktop-premium-showcase { margin-top:.75rem; }
 

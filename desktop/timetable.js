@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.64";
-import { checkedTimetable, currentBell, budapestClock } from "../shared/js/timetable-data.js?v=2.64";
+import { element } from "../shared/js/dom.js?v=2.71";
+import { checkedTimetable, currentBell, budapestClock } from "../shared/js/timetable-data.js?v=2.71";
 const el=element;
 /** Asztali időrend: két blokk – hiteles csengetés és jól jelölt bemutató-órarend. */
 export function createDesktopTimetable(config){
@@ -41,5 +41,5 @@ export function createDesktopTimetable(config){
     el("section",{className:"timetable-panel"},
       el("div",{className:"desktop-timetable-pick"},el("h3",{text:"Heti órarend – bemutató nézet"}),picker),
       example,grid),el("p",{className:"timetable-source-note",text:settings.sourceNote}));
-  render();return {section,destroy(){}};
+  let preservedDay=null;section.dataset.adaptiveState='timetable';section.adaptiveSnapshot=()=>({classId:selected,dayId:preservedDay});section.adaptiveRestore=s=>{if(settings.classes.some(c=>c.id===s.classId)){selected=s.classId;picker.value=selected;}preservedDay=s.dayId;render();};render();return {section,destroy(){}};
 }

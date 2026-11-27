@@ -1,5 +1,5 @@
-import {element as el} from '../shared/js/dom.js?v=2.64';
-import {checkedAdmissions,admissionMilestones,milestoneStatus,statusLabel,admissionDateLabel,nextAdmissionMilestone,budapestToday} from '../shared/js/admission-data.js?v=2.64';
+import {element as el} from '../shared/js/dom.js?v=2.71';
+import {checkedAdmissions,admissionMilestones,milestoneStatus,statusLabel,admissionDateLabel,nextAdmissionMilestone,budapestToday} from '../shared/js/admission-data.js?v=2.71';
 const href=(id)=>`#/oldal/${id}`;
 const link=(label,id)=>el('a',{className:'admission-link',text:label,attributes:{href:href(id)}});
 export function createDesktopAdmissionLinks(config){
@@ -19,7 +19,7 @@ export function createDesktopAdmissions(config,pageId){
     el('p',{className:'admission-kicker',text:'FELVÉTELI KÖZPONT · 2027/2028'}),
     el('h2',{text:pageId==='admission-deadlines'?'Jelentkezési határidők':'Tervezd meg a felvételi lépéseit'}),
     el('p',{text:data.intro}),
-    el('p',{className:'admission-checked',text:`Forrásellenőrzés: ${data.checkedAt} · A kijelzett határidők országos jogszabályi adatok.`}));
+    el('p',{className:'admission-checked',text:`Forrásellenőrzés: ${data.checkedAt} · Országos és KIFIR-ben közölt helyi adatok.`}));
   const warning=el('p',{className:'admission-warning',text:data.notice});
   const tabs=el('div',{className:'admission-program-tabs',attributes:{role:'group','aria-label':'Felvételi eljárás kiválasztása'}});
   for(const [id,label] of [['all','Mindkét eljárás'],...data.programs.map(x=>[x.id,x.label])]){
@@ -45,7 +45,7 @@ export function createDesktopAdmissions(config,pageId){
   function renderList(){
     const today=budapestToday();
     const list=admissionMilestones(config,{program,status:filter,query,today});
-    count.textContent=`${list.length} országosan ellenőrzött időpont · ${today} (budapesti idő szerint)`;
+    count.textContent=`${list.length} forrásjelölt időpont · ${today} (budapesti idő szerint)`;
     timeline.replaceChildren(...list.map(m=>{
       const state=milestoneStatus(m,today);
       return el('li',{className:`admission-event state-${state}`},
@@ -71,12 +71,12 @@ export function createDesktopAdmissions(config,pageId){
     const valid=admissionMilestones(config,{program,today});
     summary.replaceChildren(
       el('div',{className:'admission-stat'},el('span',{text:'Következő időpont'}),el('strong',{text:next?admissionDateLabel(next):'A listában nincs további dátum'})),
-      el('div',{className:'admission-stat'},el('span',{text:'Országos dátumok'}),el('strong',{text:String(valid.length)})),
+      el('div',{className:'admission-stat'},el('span',{text:'Forrásjelölt dátumok'}),el('strong',{text:String(valid.length)})),
       el('div',{className:'admission-stat'},el('span',{text:'Mai állapot'}),el('strong',{text:today})));
     renderList();renderSteps();
   }
   root.append(heading,warning,tabs,summary,el('div',{className:'admission-desktop-layout'},
     el('div',{className:'admission-desktop-main'},toolbar,count,timeline),
     el('aside',{className:'admission-desktop-aside'},steps,pending,sources,createDesktopAdmissionLinks(config))));
-  render();return {section:root,destroy(){root.replaceChildren();}};
+  let expanded=[];root.dataset.adaptiveState='admission';root.adaptiveSnapshot=()=>({program,query,filter,expanded});root.adaptiveRestore=s=>{program=s.program;query=s.query;filter=s.filter;expanded=s.expanded||[];search.value=query;select.value=filter;render();};render();return {section:root,destroy(){root.replaceChildren();}};
 }

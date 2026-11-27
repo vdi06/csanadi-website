@@ -1,10 +1,11 @@
-import { createHeaderClock, trackHeaderHeight } from "../shared/js/header-clock.js?v=2.64";
-import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.64";
-import { bindAppearance } from "../shared/js/appearance.js?v=2.64";
-import { bindSiteHelp } from "../shared/js/site-help.js?v=2.64";
-import { makeSocialLink } from "../shared/js/shell.js?v=2.64";
-import { createDesktopMenu } from "./menu.js?v=2.64";
-import { createDesktopSearch } from "./search.js?v=2.64";
+import { layoutNow, subscribeLayout } from "../shared/js/layout-controller.js?v=2.71";
+import { createHeaderClock, trackHeaderHeight } from "../shared/js/header-clock.js?v=2.71";
+import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.71";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.71";
+import { bindSiteHelp } from "../shared/js/site-help.js?v=2.71";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.71";
+import { createDesktopMenu } from "./menu.js?v=2.71";
+import { createDesktopSearch } from "./search.js?v=2.71";
 
 /** Asztali fejléc: címerből nyíló körmenü és külön nagy lebegő keresőablak.
  * A mobilmenü és annak DOM-ja itt nem létezik. */
@@ -37,11 +38,13 @@ export function makeDesktopHeader(config, home, { heroMode = false } = {}) {
   function setCompact(compact) {
     home.dataset.heroCompact = String(compact);
     if (heroMode) {
-      crestToggle.setAttribute("tabindex", compact ? "0" : "-1");
-      crestToggle.setAttribute("aria-hidden", String(!compact));
+      const shown=compact || layoutNow().family!=="desktop" || layoutNow().low;
+      crestToggle.setAttribute("tabindex", shown ? "0" : "-1");
+      crestToggle.setAttribute("aria-hidden", String(!shown));
     }
   }
   setCompact(!heroMode);
+  const stopLayout=subscribeLayout(()=>setCompact(home.dataset.heroCompact==="true"));
 
   const clock = createHeaderClock(config);
   const header = element("header", { className: "desktop-header" },
@@ -61,6 +64,6 @@ export function makeDesktopHeader(config, home, { heroMode = false } = {}) {
   return { header, overlays: [search.overlay, menu.overlay], crestToggle,
     openMenu: (origin) => menu.open(origin), setCompact,
     destroy: () => {
-    clock.destroy(); stopTracking(); search.destroy(); menu.destroy(); unbindHelp(); unbindAppearance();
+    stopLayout(); clock.destroy(); stopTracking(); search.destroy(); menu.destroy(); unbindHelp(); unbindAppearance();
   } };
 }

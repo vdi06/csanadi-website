@@ -3,7 +3,7 @@ export function recommendationRoutes(config){
  return [...config.menu.items.flatMap(g=>g.children.map(p=>p.id)),...(config.pagePreview.localPages||[]).map(p=>p.id)];
 }
 export function recommendationTopics(config,id){
- return config.pagePreview.pages[id]?.contentMeta?.related ?? config.pagePreview.localPages?.find(p=>p.id===id)?.related;
+ return (config.pagePreview.catalog?.[id]||config.pagePreview.pages[id])?.contentMeta?.related ?? config.pagePreview.localPages?.find(p=>p.id===id)?.related;
 }
 export function validateRecommendations(config){
  const r=config.contentExpansion?.recommendations,ids=recommendationRoutes(config),all=new Set(ids);
@@ -19,11 +19,11 @@ export function recommendPages(config,id){
  return {topic:[...topics],priority:r.priorityOrder.filter(x=>!seen.has(x)).slice(0,r.priorityCount)};
 }
 export function recommendationPreview(config,id){
- const local=config.pagePreview.localPages?.find(p=>p.id===id),raw=config.pagePreview.pages[local?.parentId||id];
+ const local=config.pagePreview.localPages?.find(p=>p.id===id),raw=config.pagePreview.pages[local?.parentId||id]||config.pagePreview.catalog?.[local?.parentId||id];
  if(!raw)return null;
- const card=local?raw.items[local.cardIndex]:null;
+ const card=local?raw.items?.[local.cardIndex]:null;
  const title=local?.title||config.menu.items.flatMap(g=>g.children).find(p=>p.id===id)?.label;
  const activity=config.contentExpansion.activities?.[id];
- const highlights=[activity?.title,...(card?(card.groups||[]).map(g=>g.title):(raw.items||[]).map(i=>i.title))].filter(Boolean);
- return {title,intro:card?.summary||raw.intro,highlights:[...new Set(highlights)].slice(0,3)};
+ const highlights=[activity?.title,...(card?(card.groups||[]).map(g=>g.title):(local?.preview?.highlights||raw.highlights||(raw.items||[]).map(i=>i.title)))].filter(Boolean);
+ return {title,intro:card?.summary||local?.preview?.summary||raw.intro,highlights:[...new Set(highlights)].slice(0,3)};
 }

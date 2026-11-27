@@ -1,9 +1,9 @@
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.64";
-import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.64";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.64";
-import { calendarEntries } from "./calendar-data.js?v=2.64";
-import { newsStoryHref } from "./news-panel.js?v=2.64";
-import { checkedAdmissions } from "./admission-data.js?v=2.64";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.71";
+import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.71";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.71";
+import { calendarEntries } from "./calendar-data.js?v=2.71";
+import { newsStoryHref } from "./news-panel.js?v=2.71";
+import { checkedAdmissions } from "./admission-data.js?v=2.71";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */
@@ -15,6 +15,13 @@ export function normalizeSearchText(value) {
 
 const tokenize = (value) => normalizeSearchText(value).split(" ").filter(Boolean);
 const indexCache = new WeakMap();
+const searchTerms=new WeakMap(), pendingSearch=new WeakMap();
+export function searchIndexReady(config){return config.pagePreview?.schema!=="split-1"||searchTerms.has(config);}
+export async function prepareSearchIndex(config){
+ if(searchIndexReady(config))return;
+ if(pendingSearch.has(config))return pendingSearch.get(config);
+ const task=(async()=>{const ctl=new AbortController();const timeout=setTimeout(()=>ctl.abort(),8000);try{const u=new URL("../data/search/page-terms.json",import.meta.url);u.searchParams.set("v",config.release);const res=await fetch(u,{signal:ctl.signal});if(!res.ok)throw Error("Keresőindex nem elérhető.");const data=await res.json();const ids=[...Object.keys(config.pagePreview.catalog),...config.pagePreview.localPages.map(p=>p.id)];if(data.release!==config.release||Object.keys(data.terms||{}).length!==ids.length||ids.some(id=>typeof data.terms[id]!=="string"||data.terms[id].length>100000))throw Error("Hibás keresőindex.");searchTerms.set(config,data.terms);indexCache.delete(config);}finally{clearTimeout(timeout);}})();pendingSearch.set(config,task);try{return await task;}finally{if(pendingSearch.get(config)===task)pendingSearch.delete(config);}
+}
 
 /** Elütéstűrő, sávosan korlátozott Damerau–Levenshtein (OSA).
  * Az előző megoldás minden szópárhoz teljes négyzetes mátrixot foglalt le.
@@ -144,7 +151,7 @@ function createIndex(config) {
     if (!page) return;
     add({ label:page.title, category:categories.page, href:menuPageHref(node.id),
       summary:parents.join(" · "),
-      details:`${page.intro} ${pagePreviewSearchText(page.items)} ${config.pagePreview.pages[node.id]?.practicalNote?.text||""} ${config.contentExpansion?.activities?.[node.id]?.search||""}` });
+      details:`${page.intro} ${searchTerms.get(config)?.[node.id]||""} ${pagePreviewSearchText(page.items)} ${(config.pagePreview.catalog?.[node.id]||config.pagePreview.pages[node.id])?.practicalNote?.text||""} ${config.contentExpansion?.activities?.[node.id]?.search||""}` });
   }
   for (const root of config.menu.items) visit(root);
   // A menüből kivett, de saját oldalcímmel megtartott képzési témák is
@@ -154,7 +161,7 @@ function createIndex(config) {
     if (!page) continue;
     add({ label:page.title, category:categories.page,
       href:menuPageHref(local.id), summary:local.parentId,
-      details:`${page.intro} ${pagePreviewSearchText(page.items)} ${config.contentExpansion?.activities?.[local.id]?.search||""}` });
+      details:`${page.intro} ${searchTerms.get(config)?.[local.id]||""} ${pagePreviewSearchText(page.items)} ${config.contentExpansion?.activities?.[local.id]?.search||""}` });
   }
 
   for (const coll of Object.values(config.contentExpansion?.collections || {})) {

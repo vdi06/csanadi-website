@@ -1,5 +1,5 @@
-import {element as el} from '../shared/js/dom.js?v=2.64';
-import {checkedAdmissions,admissionMilestones,milestoneStatus,statusLabel,admissionDateLabel,nextAdmissionMilestone,budapestToday} from '../shared/js/admission-data.js?v=2.64';
+import {element as el} from '../shared/js/dom.js?v=2.71';
+import {checkedAdmissions,admissionMilestones,milestoneStatus,statusLabel,admissionDateLabel,nextAdmissionMilestone,budapestToday} from '../shared/js/admission-data.js?v=2.71';
 const href=(id)=>`#/oldal/${id}`;
 const link=(name,id)=>el('a',{className:'admission-mobile-link',text:name,attributes:{href:href(id)}});
 export function createMobileAdmissionLinks(config){
@@ -18,7 +18,7 @@ export function createMobileAdmissions(config,pageId){
     ...[['all','1. és 9. évfolyam'],...data.programs.map(p=>[p.id,p.label])].map(([v,l])=>el('option',{text:l,attributes:{value:v}})));
   programSelect.value=program;
   const modeToggle=el('div',{className:'mobile-admission-modes',attributes:{role:'group','aria-label':'Határidők szűrése'}},
-    ...[['upcoming','Közelgők'],['all','Mind']].map(([v,l])=>el('button',{text:l,attributes:{type:'button','data-mode':v,'aria-pressed':String(v===mode)}})));
+    ...[['upcoming','Közelgők'],['all','Mind'],['soon','30 napon belül'],['active','Aktuális'],['expired','Lejárt']].map(([v,l])=>el('button',{text:l,attributes:{type:'button','data-mode':v,'aria-pressed':String(v===mode)}})));
   const search=el('input',{className:'mobile-admission-search',attributes:{type:'search','aria-label':'Határidő keresése',placeholder:'Keress a határidőkben…'}});
   const next=el('div',{className:'mobile-admission-next',attributes:{'aria-live':'polite'}});
   const count=el('p',{className:'mobile-admission-count',attributes:{role:'status','aria-live':'polite'}});
@@ -37,7 +37,7 @@ export function createMobileAdmissions(config,pageId){
         el('summary',{},el('time',{className:'mobile-admission-date',text:admissionDateLabel(m),attributes:{dateTime:m.start}}),
           el('strong',{text:m.title}),el('span',{className:`admission-status state-${status}`,text:statusLabel[status]})),
         el('div',{className:'mobile-admission-details'},el('p',{text:m.detail}),
-          el('p',{text:`Eljárás: ${data.programs.find(p=>p.id===m.program).label} · Forrás: országos rendelet.`}),
+          el('p',{text:`Eljárás: ${data.programs.find(p=>p.id===m.program).label} · Forrás: ${data.sources.find(s=>s.id===m.sourceId)?.title||'Forrásjegyzék'}.`}),
           link('Kapcsolódó részletek',m.link)));
     }));
     if(!events.length)list.append(el('p',{className:'admission-empty',text:'Nincs ilyen határidő. Válts szűrőt vagy módosítsd a keresést.'}));
@@ -65,6 +65,6 @@ export function createMobileAdmissions(config,pageId){
       ...data.sources.map(s=>el('a',{text:s.title,attributes:{href:s.url,target:'_blank',rel:'noopener noreferrer'}})),
       el('ul',{},...data.schoolPending.map(s=>el('li',{text:s})))),
     createMobileAdmissionLinks(config));
-  programSelect.id='mobile-admission-program';render();
+  programSelect.id='mobile-admission-program';root.dataset.adaptiveState='admission';root.adaptiveSnapshot=()=>({program,query:term,filter:mode,expanded:[...list.querySelectorAll('details[open] summary strong')].map(e=>e.textContent)});root.adaptiveRestore=s=>{program=s.program;term=s.query;mode=s.filter;search.value=term;programSelect.value=program;render();for(const d of list.querySelectorAll('details'))d.open=(s.expanded||[]).includes(d.querySelector('summary strong')?.textContent);};render();
   return {section:root,destroy(){root.replaceChildren();}};
 }

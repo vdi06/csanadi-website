@@ -1,7 +1,9 @@
+import {GALLERY_WIDTHS, galleryVariants} from "./data/media-catalog.js?v=2.71";
+import {dataSaving, adaptiveBreakpoints} from "./layout-controller.js?v=2.71";
 const validText=(s,max=350)=>typeof s==="string"&&s.trim().length>0&&s.length<=max;
 const id=/^[a-z0-9-]+$/;
 const acceptedSource=/^\.\/shared\/assets\/media\/web\/(?:desktop-hero|mobile-story|sport-successes|imported)\/[a-z0-9-]+\.webp$/;
-const variants=[400,800,1280];
+const variants=GALLERY_WIDTHS;
 export const albumDimensions=["sport","schoolYear","event"];
 /** A szerkesztési és a nyilvános megjelenítési adatokat ugyanaz a validátor ellenőrzi. */
 export function checkedMediaCenter(config) {
@@ -45,7 +47,7 @@ export function checkedMediaCenter(config) {
       !item.album || albumDimensions.some((dimension)=>
         !albumKeys[dimension].has(item.album[dimension])||item.album[dimension]==="all")||
       !item.responsive||variants.some((w)=>item.responsive[String(w)]!==
-        `./shared/assets/media/gallery/${w}/${item.id}.webp`)) {
+        galleryVariants(item.id)[String(w)])) {
       throw new Error(`Érvénytelen médiabejegyzés: ${item?.id||"ismeretlen"}`);
     }
     if(item.provenance==="verified"&&item.publication==="published"&&
@@ -89,11 +91,7 @@ export function mediaGroups(config,items,groupBy="none"){
     .filter(a=>a.items.length>0);
 }
 export function responsiveImageAttributes(item,stage=false){
-  return {src:item.responsive[stage?"1280":"400"],
-    srcset:[400,800,1280].map(w=>`${item.responsive[String(w)]} ${w}w`).join(", "),
-    sizes:stage?"(max-width: 600px) 94vw, (max-width: 1000px) 78vw, 900px":
-      "(max-width: 350px) 95vw, (max-width: 767px) 47vw, (max-width: 1120px) 43vw, 340px",
-    width:1672,height:941,decoding:"async"};
+  const [small,mobile,tablet]=adaptiveBreakpoints();const candidates=dataSaving()?[400,800]:[400,800,1280];return {src:item.responsive[stage&&!dataSaving()?"1280":"400"],srcset:candidates.map(w=>`${item.responsive[String(w)]} ${w}w`).join(", "),sizes:stage?`(max-width: ${mobile-1}px) 94vw, (max-width: ${tablet-1}px) 78vw, 900px`:`(max-width: ${small-1}px) 95vw, (max-width: ${mobile-1}px) 47vw, (max-width: ${tablet-1}px) 43vw, 340px`,width:1280,height:720,decoding:"async"};
 }
 
 /** 2.46: csak ténylegesen publikálható képekhez készül borító és képszámláló. */

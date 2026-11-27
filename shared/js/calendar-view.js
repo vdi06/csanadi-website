@@ -1,6 +1,7 @@
-import { element } from "./dom.js?v=2.64";
-import { eventsOnDay, fullDayLabel, monthLabel } from "./calendar-data.js?v=2.64";
-import { newsStoryHref } from "./news-panel.js?v=2.64";
+import { layoutNow } from "./layout-controller.js?v=2.71";
+import { element } from "./dom.js?v=2.71";
+import { eventsOnDay, fullDayLabel, monthLabel } from "./calendar-data.js?v=2.71";
+import { newsStoryHref } from "./news-panel.js?v=2.71";
 
 export function addCalendarDays(day, count) {
   const date = new Date(`${day}T12:00:00Z`);
@@ -173,7 +174,7 @@ export function createCalendarPopover(config, platformOrEntries, onInteract = ()
   document.addEventListener?.("pointerdown",pointerdown);
   window.addEventListener?.("resize",scroll);
   window.addEventListener?.("scroll",scroll,true);
-  return {id,popover,open,toggle,hover,leave,close,isOpen:()=>!popover.hidden,
+  return {id,popover,open,toggle,hover,leave,close,isOpen:()=>!popover.hidden,snapshot:()=>!popover.hidden?{date:activeDate,focus:popover.contains(document.activeElement)}:null,
     destroy() {
       close();
       document.removeEventListener?.("keydown",keydown);
@@ -194,15 +195,13 @@ function makeDayButton(config,entries,day,mode,popover,{labelDay=true}={}) {
   const label = `${fullDayLabel(config.home.calendar,day)}${count ? `, ${count} ${config.home.calendar.eventCountLabel}: ${dayEvents.map((entry)=>entry.title).join(", ")}` : ""}`;
   const button = element("button",{className:`${labelDay?"school-day":"school-week-day"}${count ? " has-events" : ""}`,
     text,attributes:{type:"button","aria-label":label,"aria-expanded":"false",
-      "aria-controls":popover.id, ...(count ? {} : {disabled:""})}});
+      "aria-controls":popover.id,"data-calendar-date":day, ...(count ? {} : {disabled:""})}});
   if (count) {
     if (labelDay) button.append(element("span",{className:"school-day-marker",text:count>1?String(count):"",attributes:{"aria-hidden":"true"}}));
     button.addEventListener("click",(event) => popover.toggle(day,button,entries,
       {focusDetails:event.detail === 0}));
-    if (mode === "desktop") {
-      button.addEventListener("mouseenter",() => popover.hover(day,button,entries));
-      button.addEventListener("mouseleave",() => popover.leave(button));
-    }
+    button.addEventListener("pointerenter",event => { if(event.pointerType==="mouse" && ["mouse","hybrid"].includes(layoutNow().input)) popover.hover(day,button,entries); });
+    button.addEventListener("pointerleave",event => { if(event.pointerType==="mouse") popover.leave(button); });
   }
   return button;
 }

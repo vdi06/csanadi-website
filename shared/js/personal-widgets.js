@@ -1,8 +1,8 @@
-import { reservedWidgetPages } from "./carousel-data.js?v=2.64";
-import { element as el } from './dom.js?v=2.64';
-import { recommendationPreview } from './recommendations.js?v=2.64';
-import { menuPageHref } from './menu-data.js?v=2.64';
-import { openContentDialog } from './content-expansion.js?v=2.64';
+import { reservedWidgetPages } from "./carousel-data.js?v=2.71";
+import { element as el } from './dom.js?v=2.71';
+import { recommendationPreview } from './recommendations.js?v=2.71';
+import { menuPageHref } from './menu-data.js?v=2.71';
+import { openContentDialog } from './content-expansion.js?v=2.71';
 
 const storageKey='csanadi.personal-widgets.v1';
 let memorySelection=null, unsaved=false;
@@ -20,7 +20,9 @@ export function createPersonalWidgets(config,holdForReading){
  const defaults=cleanWidgetSelection(data.defaults,allowed,data.maxItems)||[];
  let editing=false,storageFailed=false,selection;
  try{const raw=localStorage.getItem(storageKey);try{selection=raw===null?null:cleanWidgetSelection(JSON.parse(raw),allowed,data.maxItems);}catch{selection=null;}}catch{storageFailed=true;}
- if(unsaved){selection=cleanWidgetSelection(memorySelection,allowed,data.maxItems);storageFailed=true;}
+ if(unsaved){selection=cleanWidgetSelection(memorySelection,allowed,data.maxItems);storageFailed=true;
+  if(selection!==null)try{localStorage.setItem(storageKey,JSON.stringify(selection));storageFailed=false;unsaved=false;}catch{}
+ }
  selection=selection??cleanWidgetSelection(memorySelection,allowed,data.maxItems)??[...defaults];
  // A migráció a mentett, immár foglalt oldalakat is eltávolítja.
  if (!storageFailed) {try {const raw=localStorage.getItem(storageKey);if(raw!==null&&raw!==JSON.stringify(selection))localStorage.setItem(storageKey,JSON.stringify(selection));}catch{storageFailed=true;unsaved=true;}}
@@ -50,5 +52,5 @@ export function createPersonalWidgets(config,holdForReading){
   if(action){const card=[...grid.children].find(c=>c.dataset.widgetId===focusId);const target=card?.querySelector(`[data-action="${action}"]:not([disabled])`)||card?.querySelector('[data-action="preview"]')||edit;target.focus({preventScroll:true});}
  }
  edit.addEventListener('click',()=>{editing=!editing;holdForReading();render();if(editing)search.focus({preventScroll:true});});search.addEventListener('input',choices);add.addEventListener('click',()=>{const id=select.value;if(!allowed.has(id)||selection.includes(id)||selection.length>=data.maxItems)return;selection.push(id);persist();render();announce(`${catalog.get(id).title} hozzáadva`);search.focus({preventScroll:true});});reset.addEventListener('click',()=>{selection=[...defaults];persist();render();announce('Alapértelmezett widgetek visszaállítva');});
- render();return {section,isOpen:()=>editing||Boolean(document.querySelector('dialog[open]')),destroy(){}};
+ section.dataset.adaptiveState='widgets';section.adaptiveSnapshot=()=>({selection:[...selection],editing,query:search.value,selected:select.value});section.adaptiveRestore=state=>{selection=cleanWidgetSelection(state.selection,allowed,data.maxItems)||defaults;editing=state.editing;search.value=state.query;render();if([...select.options].some(o=>o.value===state.selected))select.value=state.selected;};render();return {section,isOpen:()=>editing||Boolean(document.querySelector('dialog[open]')),destroy(){}};
 }

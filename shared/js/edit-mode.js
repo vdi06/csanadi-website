@@ -1,4 +1,4 @@
-import { element } from "./dom.js?v=2.64";
+import { element } from "./dom.js?v=2.71";
 
 /** Közös állapotkezelés, de platformonként külön fejléc és megjelenítés.
  * Jelenleg nincsenek engedélyezett szerkeszthető tartalmi elemek, így
@@ -18,6 +18,7 @@ export function createEditMode(config, home, toggle, platform) {
   }
   function toggleMode() { editing = !editing; update(); }
   toggle.addEventListener("click", toggleMode);
+  bar.dataset.adaptiveState="header-edit";bar.adaptiveSnapshot=()=>({editing});bar.adaptiveRestore=s=>{editing=!!s.editing;update();};
   update();
   return { bar, destroy: () => toggle.removeEventListener("click", toggleMode) };
 }

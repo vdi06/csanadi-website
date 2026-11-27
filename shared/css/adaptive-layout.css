@@ -1,0 +1,121 @@
+/* A méretprofil és a nézetcsalád független a megtartott DOM-renderertől. */
+html[data-layout-family] {--adaptive-gutter:16px;--adaptive-max:1200px;}
+html[data-layout-family] :is(.mobile-page-preview,.desktop-page-preview,.mobile-home .home-feature-carousel,.desktop-home .home-feature-carousel,.page-activity,.mobile-feature-center,.desktop-feature-center,.mobile-document-center,.desktop-document-center,.mobile-media-center,.desktop-media-center,.mobile-admission-center,.desktop-admission-center,.mobile-timetable-center,.desktop-timetable-center,.mobile-calendar-section,.desktop-calendar-section,.mobile-info-center,.desktop-info-center,.school-news-page,.content-related,.content-practical){width:min(var(--adaptive-max),calc(100% - var(--adaptive-gutter)*2));max-width:100%;margin-inline:auto;min-width:0;}
+html[data-layout-family] .mobile-page-card{max-width:none;}
+html[data-layout-family] :is(.mobile-main,.desktop-main){min-width:0;}
+html[data-layout-family] :is(.home-carousel-tabs,.personal-widget-grid,.center-grid,.school-news-page-grid,.desktop-search-results,.mobile-search-results){min-width:0;max-width:100%;}
+html[data-layout-family] :is(.home-carousel-tab,.center-tile,.personal-widget-tile,.school-news-story){min-width:0;overflow-wrap:anywhere;}
+html[data-layout-family] .adaptive-settings-trigger{display:block;margin:4px auto 0;border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);background:var(--surface);color:var(--text);border-radius:8px;min-height:44px;padding:4px 12px;font:inherit;font-size:.78rem;cursor:pointer;}
+.adaptive-settings{width:min(680px,calc(100% - 24px));max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain;background:var(--surface);color:var(--text);border:1px solid var(--accent);border-radius:16px;padding:clamp(12px,3vw,26px);box-shadow:0 12px 45px #0005;}
+.adaptive-settings::backdrop{background:#07192cab;}.adaptive-settings-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}.adaptive-settings h2{font-size:clamp(18px,3vw,27px);margin:0;}.adaptive-settings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px;margin:15px 0;}.adaptive-settings label{display:grid;gap:5px;font-weight:650;}.adaptive-settings select,.adaptive-control{min-height:44px;padding:7px 10px;border:1px solid var(--accent);border-radius:8px;color:var(--text);background:var(--background);font:inherit;max-width:100%;}.adaptive-settings .adaptive-remember{display:flex;align-items:center;gap:10px;}.adaptive-remember input{width:24px;height:24px;}.adaptive-status{margin:12px 0;overflow-wrap:anywhere;}.adaptive-settings details{margin-top:16px;}.adaptive-settings summary{cursor:pointer;min-height:44px;padding:8px 0;}.adaptive-diagnostics-values{white-space:pre-wrap;overflow-wrap:anywhere;}
+html[data-layout-controls=touch] :is(.shell-tool,.home-carousel-tab,.center-button,.document-action,.feature-button,.activity-button,.adaptive-control,.adaptive-settings-trigger){min-height:44px;}
+html[data-layout-density=compact] :is(.mobile-page-card-body,.desktop-page-card-body,.center-tile,.personal-widget-tile){padding:10px;}
+html[data-layout-density=spacious] :is(.mobile-page-card-body,.desktop-page-card-body,.center-tile,.personal-widget-tile){padding:clamp(16px,2vw,28px);}
+html[data-layout-motion=reduced] *,html[data-layout-motion=reduced] *::before,html[data-layout-motion=reduced] *::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important;}
+/* A mobil DOM széles konténerben is használható, ha a felhasználó átméretezi az ablakot. */
+html[data-layout-family=desktop] .mobile-story-track{height:clamp(220px,40dvh,420px);position:relative;}
+html[data-layout-family=desktop] .mobile-story-title{font-size:clamp(26px,3vw,42px);}
+html[data-layout-family=desktop] .mobile-story-copy{inset:38px 5vw auto;}
+html[data-layout-family=desktop] .mobile-toolbar{max-width:1000px;grid-template-columns:minmax(0,1fr) 84px minmax(0,1fr);gap:18px;}
+html[data-layout-family=desktop] .mobile-toolbar .shell-crest-toggle{width:84px;height:84px;}
+html[data-layout-family=desktop] .mobile-brand strong{font-size:clamp(23px,2vw,30px);}
+html[data-layout-family=desktop] .mobile-brand small{font-size:15px;}
+html[data-layout-family=desktop] :is(.mobile-page-cards,.mobile-document-list,.mobile-feature-event-list,.mobile-feature-sport-list,.school-news-page--mobile .school-news-page-grid){grid-template-columns:repeat(3,minmax(0,1fr));}
+html[data-layout-profile=P6][data-layout-family=desktop] :is(.mobile-page-cards,.mobile-document-list,.mobile-feature-sport-list){grid-template-columns:repeat(4,minmax(0,1fr));}
+/* Asztali DOM kompakt nézetben: a menü ugyanazon vezérlői listaként jelennek meg. */
+html:not([data-layout-family=desktop]) .desktop-home[data-hero-home=true] .desktop-header{position:relative;inset:auto;padding:8px 10px;background:var(--background);}
+html:not([data-layout-family=desktop]) .desktop-home[data-hero-home=true] .desktop-crest-toggle{opacity:1;visibility:visible;pointer-events:auto;}
+html:not([data-layout-family=desktop]) .desktop-hero-track{height:clamp(170px,42dvh,360px);min-height:0;}
+html:not([data-layout-family=desktop]) .desktop-hero-stage{height:100%;min-height:0;position:relative;}
+html:not([data-layout-family=desktop]) .desktop-hero-crest{display:none;}
+html:not([data-layout-family=desktop]) .desktop-hero-story{grid-template-columns:minmax(0,1fr) auto;gap:4px;padding:7px 10px;min-height:44px;}
+html:not([data-layout-family=desktop]) .desktop-hero-story-channel{display:none;}
+html:not([data-layout-family=desktop]) .desktop-hero-story-eyebrow{display:none;}
+html:not([data-layout-family=desktop]) .desktop-hero-story-title{font-size:clamp(12px,2.4vw,20px);}
+html:not([data-layout-family=desktop]) .desktop-hero-story-action{font-size:10px;padding:5px;}
+html:not([data-layout-family=desktop]) .desktop-hero-controls{width:calc(100% - 16px);bottom:6px;}
+html:not([data-layout-family=desktop]) .desktop-toolbar{grid-template-columns:minmax(0,1fr) 54px minmax(0,1fr)!important;gap:4px;}
+html:not([data-layout-family=desktop]) :is(.desktop-links-left,.desktop-links-right){display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;}
+html:not([data-layout-family=desktop]) .desktop-toolbar .shell-tool{width:100%!important;min-width:0;height:44px!important;font-size:18px!important;}
+html:not([data-layout-family=desktop]) .desktop-toolbar .shell-crest-toggle{width:54px!important;height:54px!important;min-height:54px!important;}
+html[data-layout-profile=P1] :is(.desktop-links-left,.desktop-links-right){grid-template-columns:repeat(2,minmax(0,1fr));}
+html:not([data-layout-family=desktop]) .desktop-header{padding:10px;}
+html:not([data-layout-family=desktop]) .desktop-headline{margin-bottom:8px;}
+html:not([data-layout-family=desktop]) .desktop-wheel-dialog{width:100%;max-height:calc(100dvh - 20px);padding:10px;background:var(--surface);border:1px solid var(--accent);border-radius:14px;}
+html:not([data-layout-family=desktop]) .desktop-wheel-stage{width:100%;min-width:0;aspect-ratio:auto;display:grid;gap:12px;}
+html:not([data-layout-family=desktop]) .desktop-wheel-stage::before{display:none;}
+html:not([data-layout-family=desktop]) .desktop-wheel-center-group{position:relative;inset:auto;transform:none;width:64px;margin:0 auto 20px;}
+html:not([data-layout-family=desktop]) :is(.desktop-wheel-ring-main,.desktop-wheel-ring-sub){position:relative;inset:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;pointer-events:auto;}
+html:not([data-layout-family=desktop]) :is(.desktop-wheel-node,.desktop-wheel-sub-node){position:relative;inset:auto!important;transform:none;width:100%;min-height:48px;}
+html:not([data-layout-family=desktop]) .desktop-search-dialog{padding:16px;width:100%;height:calc(100dvh - 28px);border-radius:16px;}
+html:not([data-layout-family=desktop]) .desktop-search-heading{gap:8px;margin-bottom:12px;}
+html:not([data-layout-family=desktop]) .desktop-search-heading h2{font-size:30px;}
+html:not([data-layout-family=desktop]) .desktop-search-field{min-height:48px;padding:4px 8px;}
+html:not([data-layout-family=desktop]) .desktop-search-input{min-height:44px;}
+html:not([data-layout-family=desktop]) :is(.desktop-calendar-months,.desktop-document-layout,.desktop-document-toolbar,.desktop-document-grid,.desktop-info-layout,.desktop-admission-center .admission-desktop-layout,.desktop-admission-center .admission-event,.desktop-archive-fields,.desktop-feature-event){grid-template-columns:minmax(0,1fr);}
+html[data-layout-family=mobile] :is(.desktop-search-results,.desktop-info-quick,.desktop-info-bell-grid,.desktop-media-grid,.desktop-feature-compare,.desktop-feature-pillar-grid,.desktop-feature-sport-grid,.desktop-feature-facilities,.desktop-feature-gallery,.desktop-admission-center .admission-desktop-aside,.desktop-admission-center .admission-toolbar,.desktop-info-feed li,.desktop-timetable-bells){grid-template-columns:minmax(0,1fr);}
+html[data-layout-family=mobile] :is(.desktop-page-card,.activity-desktop .activity-tile){flex-basis:100%;max-width:100%;}
+html[data-layout-family=mobile] .desktop-info-today{min-width:0;}
+html[data-layout-family=mobile] .desktop-info-heading{flex-direction:column;}
+html[data-layout-family=mobile] .desktop-search-overlay{padding:8px;}
+html[data-layout-low=true] :is(.mobile-header,.desktop-header,.desktop-home[data-hero-home=true] .desktop-header){padding-block:4px;}
+html[data-layout-low=true] :is(.mobile-story-track,.desktop-hero-track){height:clamp(100px,32dvh,180px);min-height:0;}
+html[data-layout-low=true] .desktop-hero-stage{height:100%;min-height:0;position:relative;}
+html[data-layout-low=true] .desktop-hero-crest{display:none;}
+html[data-layout-low=true] .desktop-home[data-hero-home=true] .desktop-header{position:relative;inset:auto;}
+html[data-layout-low=true] .desktop-home[data-hero-home=true] .desktop-crest-toggle{opacity:1;visibility:visible;pointer-events:auto;}
+html[data-layout-low=true] :is(.desktop-motto,.mobile-motto){margin-block:3px;}
+html[data-layout-low=true] .adaptive-settings{max-height:calc(100dvh - 12px);}
+html[data-layout-family] .adaptive-header-actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 12px;margin:4px auto 0;}
+html[data-layout-family] .adaptive-header-actions :is(.desktop-motto,.mobile-motto){margin:0;}
+html[data-layout-family] .adaptive-header-actions .adaptive-settings-trigger{margin:0;}
+html[data-layout-family=desktop] .mobile-story-track,html[data-layout-family=tablet] .mobile-story-track{top:auto;}
+html[data-layout-family=desktop] .mobile-header{position:relative;}
+html[data-layout-family=tablet] .mobile-header{position:relative;top:auto;}
+html[data-layout-family=tablet] .desktop-home[data-hero-home=true] .desktop-header{padding:10px 24px;}
+html[data-layout-profile=P1] .adaptive-header-actions{gap:2px 6px;}
+html[data-layout-profile=P1] .adaptive-header-actions .adaptive-settings-trigger{font-size:.72rem;padding:3px 8px;}
+html[data-layout-family=mobile] .desktop-hero-stage .desktop-hero-arrow{width:44px;height:44px;min-width:44px;}
+html[data-layout-family=mobile] .desktop-hero-stage .desktop-hero-story{min-width:0;max-width:100%;}
+html[data-layout-family=mobile] .desktop-successes-dialog-layout{grid-template-columns:1fr;}
+html[data-layout-family=mobile] :is(.desktop-archive-grid,.desktop-successes-grid){grid-template-columns:minmax(0,1fr);}
+html[data-layout-family=mobile] .desktop-home .home-data-card{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:4px;text-align:center;min-height:84px;}
+html[data-layout-family=mobile] .desktop-home .home-data-graphic{max-width:100%;width:64px;min-width:0;}
+html[data-layout-family=mobile] .desktop-home .home-data-value{font-size:.94rem;}
+html[data-layout-family=mobile] .desktop-home .home-data-label{font-size:.65rem;overflow-wrap:anywhere;}
+html[data-layout-family=mobile] .desktop-home .home-data-bars{max-width:100%;}
+html[data-layout-family=mobile] .desktop-home .home-data-bar{grid-template-columns:minmax(0,1fr);gap:1px;}
+html[data-layout-family=mobile] .desktop-home .home-data-bar-name{font-size:.58rem;}
+html[data-layout-family=mobile] .desktop-home .home-data-bar-number{font-size:.58rem;}
+html[data-layout-family=mobile] .desktop-home .home-data-year{min-width:0;}
+html[data-layout-family=mobile] .desktop-home .home-data-years{gap:3px;}
+html[data-layout-family=mobile] .desktop-home .home-data-year-value{font-size:.6rem;}
+/* P1: az olvasható kétoszlopos nyolcfüles elrendezés a helyi grid szabályoknál is elsőbbséget élvez. */
+html[data-layout-profile=P1] .home-feature-carousel .home-carousel-tabs{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px;}
+html[data-layout-profile=P1] .home-feature-carousel .home-carousel-tab{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:6px;min-height:48px;height:auto;padding:7px 5px;border-radius:12px;font-size:12px;line-height:1.28;white-space:normal;overflow-wrap:normal;}
+html[data-layout-profile=P1] .home-feature-carousel .home-tab-icon{display:inline-block;font-size:17px;flex-shrink:0;}
+html[data-layout-profile=P1] .home-feature-carousel .home-tab-label{min-width:0;overflow-wrap:anywhere;}
+html[data-layout-family=mobile] .desktop-successes-section.is-archive{padding:24px 12px 38px;}
+html[data-layout-family=mobile] .desktop-archive-toolbar{grid-template-columns:minmax(0,1fr);padding:10px;gap:12px;}
+html[data-layout-family=mobile] .desktop-successes-section.is-archive .desktop-successes-card{flex:0 1 100%;max-width:100%;min-width:0;}
+html[data-layout-family=mobile] .desktop-successes-section.is-archive .desktop-successes-fallback-sport{max-width:100%;overflow-wrap:anywhere;}
+html[data-layout-family=mobile] .desktop-calendar-section{padding:20px 4px 40px;}
+html[data-layout-family=mobile] .calendar-view-switch{width:100%;max-width:100%;display:flex;flex-wrap:wrap;justify-content:center;border-radius:12px;gap:3px;padding:4px;}
+html[data-layout-family=mobile] .calendar-view-tab{flex:1 1 58px;min-width:0;padding:7px 5px;font-size:12px;}
+html[data-layout-family=mobile] .calendar-period-navigation{max-width:100%;width:100%;gap:5px;}
+html[data-layout-family=mobile] .calendar-range-label{min-width:0;flex:1 1 auto;overflow-wrap:anywhere;font-size:12px;}
+html[data-layout-family=mobile] .calendar-period-arrow{flex:0 0 44px;}
+html[data-layout-family=mobile] .desktop-calendar-focused-month .school-month{padding:8px;}
+html[data-layout-family=mobile] .desktop-calendar-focused-month .school-day{font-size:12px;min-height:44px;}
+html[data-layout-family=mobile] .desktop-calendar-focused-month .school-month-weekday{font-size:10px;}
+.adaptive-settings-trigger:focus-visible,.adaptive-settings :is(button,select,input,summary):focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+@media (forced-colors:active){.adaptive-settings,.adaptive-settings-trigger,.adaptive-control{border:1px solid ButtonText;}}
+html[data-layout-family] :is(button,a,input,select,textarea,summary):focus-visible{outline:3px solid var(--accent,#b78a3f);outline-offset:3px;}
+html[data-layout-controls=touch] :is(.calendar-view-tab,.calendar-period-arrow,.document-reader-action,.activity-button,.personal-widget-action,.center-button,.content-action,.document-card-open,.mobile-month-arrow){min-height:44px;}
+html[data-layout-profile=P6] :is(.desktop-page-preview,.mobile-page-preview,.content-related,.page-activity){max-width:1600px;}
+html[data-layout-profile=P1] :is(.desktop-page-title,.mobile-page-title){overflow-wrap:anywhere;}
+html[data-layout-low=true] .tablet-quick-nav{margin-top:4px;}
+.adaptive-diagnostics-values{font-size:.8rem;line-height:1.55;}
+.adaptive-settings-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));}
+.adaptive-settings-grid label,.adaptive-settings-grid select{min-width:0;width:100%;}
+.adaptive-settings{overflow-x:hidden;}

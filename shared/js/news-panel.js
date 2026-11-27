@@ -1,6 +1,6 @@
-import { element } from "./dom.js?v=2.64";
-import { menuPageHref } from "./menu-data.js?v=2.64";
-import { calendarEntries } from "./calendar-data.js?v=2.64";
+import { element } from "./dom.js?v=2.71";
+import { menuPageHref } from "./menu-data.js?v=2.71";
+import { calendarEntries } from "./calendar-data.js?v=2.71";
 
 /** Az intézmény JSON-ban rögzített hírei. Az időpontok a hír/esemény dátumai,
  * nem feltételezett közzétételi időpontok. Az összes szöveg textContent-ként kerül a DOM-ba. */
@@ -24,12 +24,13 @@ const shiftDay = (iso,offset) => {
   d.setUTCDate(d.getUTCDate()+offset);
   return d.toISOString().slice(0,10);
 };
+export const newsProvenance = item => item.tags.includes("demo") ? "demo" : item.verification === "verified" ? "verified" : "pending";
 export function selectedNews(config,panel,today=budapestToday()) {
   const {maxAgeDays,maxFutureDays,maxItems}=config.home.newsSpotlight;
   const earliest=shiftDay(today,-maxAgeDays);
   const latest=shiftDay(today,maxFutureDays);
   return config.publicNews.filter((item) =>
-    (item.endDate ?? item.date) >= earliest && item.date <= latest &&
+    newsProvenance(item)==="verified" && (item.endDate ?? item.date) >= earliest && item.date <= latest &&
     (!panel.tags || panel.tags.some((tag)=>item.tags.includes(tag))))
     .sort((a,b)=>Number(Boolean(b.featured))-Number(Boolean(a.featured)) ||
       b.date.localeCompare(a.date) || a.id.localeCompare(b.id,"hu"))
@@ -53,7 +54,7 @@ export function publicNewsForPage(config,pageId,today=budapestToday()) {
   const limit=shiftDay(today,-config.home.newsSpotlight.maxAgeDays);
   return config.publicNews.filter((record)=>{
     if(pageId==="news-announcements") return record.tags.includes("announcement");
-    if(pageId==="news-archive") return (record.endDate??record.date)<limit;
+    if(pageId==="news-archive") return !record.tags.includes("announcement") && (record.endDate??record.date)<limit;
     if(pageId==="news-latest") return !record.tags.includes("announcement") &&
       (record.endDate??record.date)>=limit;
     return false;

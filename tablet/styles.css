@@ -1,0 +1,26 @@
+/* Önálló táblagépes megjelenítési réteg, az élő komponensek újraépítése nélkül. */
+html[data-layout-family=tablet] :is(.mobile-header,.desktop-header){padding:12px 24px;position:relative;inset:auto;}
+html[data-layout-family=tablet] :is(.mobile-toolbar,.desktop-toolbar){max-width:840px;}
+html[data-layout-family=tablet] :is(.mobile-brand,.desktop-brand) strong{font-size:clamp(18px,2.4vw,25px)}
+html[data-layout-family=tablet] .mobile-story-track{height:clamp(170px,26dvh,290px);position:relative;}
+html[data-layout-family=tablet] .mobile-story-title{font-size:clamp(24px,3vw,34px)}
+html[data-layout-family=tablet] .mobile-story-copy{inset:30px 28px auto;}
+html[data-layout-family=tablet] .mobile-menu-dialog{max-width:var(--tablet-dialog-max,780px);margin:auto;}
+html[data-layout-family=tablet] :is(.mobile-page-cards,.mobile-document-list,.mobile-feature-event-list){grid-template-columns:repeat(2,minmax(0,1fr));}
+.tablet-quick-nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;width:min(960px,100%);margin:8px auto 0;}
+.tablet-quick-nav a{min-width:0;min-height:var(--touch-target,44px);display:grid;place-items:center;text-align:center;padding:5px 3px;border:1px solid var(--accent);border-radius:8px;text-decoration:none;color:var(--text);background:var(--surface);font-size:.8rem;overflow-wrap:anywhere;}
+html[data-layout-low=true] .tablet-quick-nav,html[data-layout-family=mobile] .tablet-quick-nav{grid-template-columns:repeat(3,minmax(0,1fr));}
+
+/* 2.68 tablet component refinement */
+html[data-layout-family=tablet] .tablet-content-section{min-width:0;max-width:100%;}
+html[data-layout-family=tablet] :is(.mobile-admission-modes,.mobile-timetable-days,.calendar-toolbar,.document-reader-controls){display:flex;flex-wrap:wrap;gap:8px;}
+html[data-layout-family=tablet] :is(.mobile-admission-modes button,.mobile-timetable-days button){min-height:var(--touch-target,44px);}
+html[data-layout-family=tablet] :is(.mobile-admission-events,.mobile-admission-steps){min-width:0;}
+html[data-layout-family=tablet] .tablet-quick-nav a[aria-current]{outline:2px solid var(--accent);outline-offset:-3px;font-weight:700;}
+
+/* 2.69: touch-first tablet toolbar, independent of global viewport family. */
+.tablet-app :is(.mobile-month-arrow,.document-reader-controls button,.media-dialog-controls button,.calendar-view-tab){min-height:var(--touch-target,44px);min-width:var(--touch-target,44px);}
+.tablet-app :is(.mobile-menu-dialog,.adaptive-settings,.mobile-search-dialog){max-inline-size:min(90vw,var(--tablet-dialog-max,780px));}
+.tablet-app .tablet-quick-nav a:focus-visible{outline-offset:2px;}
+
+.tablet-section-menu{padding:.35rem 1rem;max-width:100%;color:var(--text);background:var(--surface)}.tablet-section-menu summary{cursor:pointer;min-height:var(--touch-target,44px);display:list-item;padding:.6rem;overflow-wrap:anywhere}.tablet-section-menu nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,var(--tablet-nav-min,224px)),1fr));gap:var(--tablet-nav-gap,8px)}.tablet-section-menu a{min-height:var(--touch-target,44px);padding:.65rem;text-decoration:underline;color:inherit;overflow-wrap:anywhere}.tablet-section-menu a[aria-current=page]{font-weight:800;border-inline-start:3px solid var(--accent)}

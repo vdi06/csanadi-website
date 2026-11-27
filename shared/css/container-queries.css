@@ -1,0 +1,18 @@
+/* Fallback: auto-fit Grid. Container Query alatt a helyi konténer mérete dönt. */
+html[data-layout-family] :is(.home-carousel-tabs){grid-template-columns:repeat(4,minmax(0,1fr));}
+html[data-layout-profile=P1] :is(.home-carousel-tabs){grid-template-columns:repeat(2,minmax(0,1fr));}
+html[data-layout-family] :is(.personal-widget-grid,.center-grid,.school-news-page-grid){grid-template-columns:repeat(auto-fit,minmax(min(100%,225px),1fr));}
+@supports (container-type:inline-size){
+ :is(.home-feature-carousel,.personal-widgets,.home-center,.school-news-page,.desktop-page-preview,.mobile-page-preview,.page-activity,.desktop-document-center,.mobile-document-center,.desktop-media-center,.mobile-media-center){container-type:inline-size;}
+}
+/* 2.67: lokális konténer a húsz funkciócsoport tényleges gyökérelemein.
+   A szélességi feltételeket a központi JSON alapján a layout-controller állítja elő. */
+@supports (container-type:inline-size){
+ :is(.desktop-header,.mobile-header,.desktop-hero-stage,.mobile-story-stage,.desktop-successes-section,.mobile-successes-section,.school-calendar-section,.document-reader-content,.desktop-timetable-center,.mobile-timetable-center,.content-related,.home-data-strip,.footer-inner,.site-help,.desktop-search-dialog,.mobile-search-dialog,.media-editor-dialog,.desktop-info-center,.mobile-info-center,.content-collection){container-type:inline-size;}
+}
+
+/* 2.68 component roots for timetable, admissions, and tablet sections. */
+@supports (container-type:inline-size){:is(.admission-center,.mobile-timetable-center,.desktop-timetable-center){container-type:inline-size;}}
+html[data-layout-family] :is(.admission-center,.mobile-admission-modes,.admission-toolbar){min-width:0;overflow-wrap:anywhere;}
+html[data-layout-family] .mobile-admission-modes{flex-wrap:wrap;}
+html[data-layout-family] :is(.mobile-admission-modes button,.mobile-timetable-days button):focus-visible{outline:2px solid currentColor;outline-offset:2px;}

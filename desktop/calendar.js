@@ -1,6 +1,6 @@
-import { element } from "../shared/js/dom.js?v=2.64";
-import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.64";
-import { makeCalendarMonth, makeCalendarWeek, createCalendarPopover, schoolWeeks, weekLabel } from "../shared/js/calendar-view.js?v=2.64";
+import { element } from "../shared/js/dom.js?v=2.71";
+import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.71";
+import { makeCalendarMonth, makeCalendarWeek, createCalendarPopover, schoolWeeks, weekLabel } from "../shared/js/calendar-view.js?v=2.71";
 
 /** Asztalon: azonos adatú heti / havi / éves nézet; a hónapok 6 hetes, azonos rácsban. */
 export function createDesktopCalendar(config,onInteract=()=>{}) {
@@ -87,6 +87,7 @@ export function createDesktopCalendar(config,onInteract=()=>{}) {
   tabs.forEach((tab)=>tab.addEventListener("click",()=>changeMode(tab.getAttribute("data-calendar-view"))));
   previous.addEventListener("click",()=>changePeriod(-1));
   next.addEventListener("click",()=>changePeriod(1));
+  section.dataset.adaptiveState="calendar";section.adaptiveCanSwitch=()=>mode!=="year";section.adaptiveSnapshot=()=>({mode,monthIndex,weekIndex,popover:popover.snapshot()});section.adaptiveRestore=state=>{mode=state.mode;monthIndex=state.monthIndex;weekIndex=state.weekIndex;render();if(state.popover?.date){const button=[...section.querySelectorAll("[data-calendar-date]")].find(b=>b.dataset.calendarDate===state.popover.date&&!b.disabled);if(button)popover.open(state.popover.date,button,entries,{focusDetails:state.popover.focus});}};
   render();
   return {
     section,closePopover:()=>popover.close(),isOpen:()=>popover.isOpen(),

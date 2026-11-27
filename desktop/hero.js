@@ -1,5 +1,7 @@
-import { crest, element } from "../shared/js/dom.js?v=2.64";
-import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.64";
+import { assignHeroImage } from "../shared/js/responsive-media.js?v=2.71";
+import { reducedMotion } from "../shared/js/layout-controller.js?v=2.71";
+import { crest, element } from "../shared/js/dom.js?v=2.71";
+import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.71";
 
 const clamp = (value) => Math.max(0, Math.min(1, value));
 const mediaRoot = "./shared/assets/media/web/desktop-hero/";
@@ -73,7 +75,7 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   function showSlide() {
     activeIndex = sequence[position];
     const slide = data.slides[activeIndex];
-    photo.setAttribute("src", `${mediaRoot}${slide.file}`);
+    assignHeroImage(photo,mediaRoot,slide.file);
     eyebrow.textContent = slide.eyebrow;
     storyTitle.textContent = slide.title;
     story.setAttribute("href", menuPageHref(slide.pageId));
@@ -91,6 +93,7 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   }
   photo.addEventListener("load", () => failed.delete(activeIndex));
   photo.addEventListener("error", () => {
+    if(photo.getAttribute("srcset")) return;
     failed.add(activeIndex);
     const remaining = data.slides.some((_, index) => !failed.has(index));
     if (remaining) changeSlide(1);
@@ -113,7 +116,7 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
     if (disposed) return;
     scrollRatio = clamp((window.scrollY || 0) / foldLength());
     // A felfelé mozgás eleinte lassú, és pontosan a ragadós szakasz végén ér célba.
-    const progress = reduced.matches ? (scrollRatio >= 1 ? 1 : 0)
+    const progress = reducedMotion() ? (scrollRatio >= 1 ? 1 : 0)
       : scrollRatio * scrollRatio * scrollRatio;
     const bounds = stage.getBoundingClientRect?.() || { left:0, top:0,
       width:window.innerWidth || 1440, height:window.innerHeight || 900 };
@@ -150,7 +153,7 @@ export function createDesktopHero(config, { openMenu, headerCrest, setCompact })
   window.addEventListener?.("resize", onScroll, { passive: true });
   const intervalMs = Math.max(1000, Math.min(360000, Number(data.intervalMs) || 180000));
   const timer = setInterval(() => {
-    if (!disposed && !reduced.matches && document.visibilityState !== "hidden" &&
+    if (!disposed && !reducedMotion() && document.visibilityState !== "hidden" &&
       !stage.contains?.(document.activeElement)) changeSlide(1);
   }, intervalMs);
   showSlide();

@@ -1,5 +1,5 @@
 {
-  "release": "2.64",
+  "release": "2.71",
   "home": {
     "footer": {
       "brand": "CSANÁDI",
@@ -10,7 +10,7 @@
       "modalCloseLabel": "Tájékoztató bezárása",
       "versionLabel": "Verzió",
       "updatedLabel": "Utolsó frissítés",
-      "updatedAt": "2026-11-24",
+      "updatedAt": "2026-11-27",
       "checkedLabel": "Ellenőrizve",
       "pendingLabel": "Frissítés: {seconds} mp-enként",
       "errorLabel": "A frissítések ellenőrzése átmenetileg nem sikerült",
