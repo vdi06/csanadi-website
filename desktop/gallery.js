@@ -1,2 +1,2 @@
-import {createMediaCenter} from "../shared/js/components/gallery-center.js?v=2.81";
+import {createMediaCenter} from "../shared/js/components/gallery-center.js?v=2.82";
 export const createDesktopMedia=config=>createMediaCenter(config,"desktop");

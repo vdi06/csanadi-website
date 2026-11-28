@@ -1,5 +1,5 @@
-import {recordDataLoad} from "./layout-health.js?v=2.81";
-import { element } from "./dom.js?v=2.81";
+import {recordDataLoad} from "./layout-health.js?v=2.82";
+import { element } from "./dom.js?v=2.82";
 /** A dokumentumot NEM új lapon, hanem saját vezérlésű <dialog> olvasóban nyitja. */
 const el=element;
 const pdfModuleUrl="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.mjs";

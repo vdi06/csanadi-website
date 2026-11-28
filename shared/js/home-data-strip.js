@@ -1,10 +1,13 @@
-import {addTimelineControls} from './components/timeline-controls.js?v=2.81';
-import {createHistoryExplorer} from './components/history-explorer.js?v=2.81';
-import {createChartPanel,animateCounter} from './components/svg-charts.js?v=2.81';
-import {getPersonal,patchPersonal} from './state/personal-preferences.js?v=2.81';
-import {verifiedSports,filterSports,groupYears,loadHistory} from "./components/number-model.js?v=2.81";
-import { element as el } from './dom.js?v=2.81';
-import { openContentDialog } from './content-expansion.js?v=2.81';
+import {selectFooterTimeline,budapestDay,timelineStatusLabel} from './components/footer-timeline-model.js?v=2.82';
+import {revalidateDomain} from './data/domain-loader.js?v=2.82';
+import {checkedNews} from './menu-data.js?v=2.82';
+import {addTimelineControls} from './components/timeline-controls.js?v=2.82';
+import {createHistoryExplorer} from './components/history-explorer.js?v=2.82';
+import {createChartPanel,animateCounter} from './components/svg-charts.js?v=2.82';
+import {getPersonal,patchPersonal} from './state/personal-preferences.js?v=2.82';
+import {verifiedSports,filterSports,groupYears,loadHistory} from "./components/number-model.js?v=2.82";
+import { element as el } from './dom.js?v=2.82';
+import { openContentDialog } from './content-expansion.js?v=2.82';
 
 // Every number is derived from the current JSON, never from a decorative sample.
 export function homeDataMetrics(config) {
@@ -57,17 +60,36 @@ export function createHomeDataStrip(config,platform,expanded=false){
  section.append(row,annual,history,el('p' ,{className:'numbers-footnote',text:'A tartalmi darabszám bemutató- és ellenőrizendő rekordokat is tartalmaz. Az idővonal nem az iskola teljes eredménytörténete.'}));return section;
 }
 
+// Egy kiadáson belül a sikeresen ellenőrzött hír-pillanatkép a nézetváltást is túléli.
+const footerFeedCache=new WeakMap();
+function footerFeed(config){let feed=footerFeedCache.get(config);if(!feed){feed={news:config.publicNews,lastFetch:Date.now(),pending:null};footerFeedCache.set(config,feed);}return feed;}
 // A kezdőlapon csak egy vízszintes idősáv; a részletes, közös komponens az első megnyitáskor készül el.
 function createCompactStrip(config,platform){
  const dialogId=`${platform}-numbers-dialog`;
- const points=(config.home.dataStrip.footerMilestones||[]).filter(x=>x&&typeof x.period==='string'&&typeof x.title==='string'&&typeof x.description==='string'&&typeof x.source==='string'&&x.source.startsWith('https://')).slice(0,12);
+ const feed=footerFeed(config);let lastSignature='',disposed=false;
+ const policy=config.home.dataStrip.footerTimeline||{};
+ const refreshMs=Math.max(60,Math.min(3600,Number(policy.refreshSeconds)||300))*1000;
  const open=el('button',{className:'numbers-compact-trigger',attributes:{type:'button','aria-haspopup':'dialog','aria-controls':dialogId,'aria-label':'Csanádi számokban – részletes adatközpont megnyitása'}},el('span',{className:'numbers-compact-title'},el('span',{text:config.home.dataStrip.title}),el('span',{className:'numbers-compact-arrow',text:'↗',attributes:{'aria-hidden':'true'}})));
  const line=el('div',{className:'numbers-compact-line',attributes:{role:'group','aria-label':'Az iskola története és aktuális közleményei'}});
  const outer=el('section',{className:`home-data-strip home-data-strip-${platform} numbers-compact footer-timeline`,attributes:{'aria-label':config.home.dataStrip.title,'data-home-data-strip':platform,'data-adaptive-state':'numbers-explorer'}},open,line);
  let content=null,dialog=null,saved=null,activeTrigger=open,detail=null;
- function ensure(){if(content)return;content=createHomeDataStrip(config,platform,true);if(saved)content.adaptiveRestore(saved);const close=el('button',{className:'numbers-detail-button numbers-dialog-close',text:'Bezárás ×',attributes:{type:'button'}});detail=el('article',{className:'numbers-selected-event',attributes:{'aria-live':'polite'}});detail.hidden=true;dialog=el('dialog',{className:'school-data-dialog',attributes:{id:dialogId,'aria-labelledby':`${platform}-home-data-detail-title`}},close,detail,content);outer.append(dialog);close.addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>{if(activeTrigger.isConnected)activeTrigger.focus({preventScroll:true});});dialog.addEventListener('click',event=>{if(event.target===dialog){const b=dialog.getBoundingClientRect();if(event.clientX<b.left||event.clientX>b.right||event.clientY<b.top||event.clientY>b.bottom)dialog.close();}});}
- function show(trigger,event){ensure();activeTrigger=trigger;detail.hidden=!event;detail.replaceChildren();if(event)detail.append(el('h3',{text:event.period+' – '+event.title}),el('p',{text:event.description}),el('a',{text:'Esemény forrása',attributes:{href:event.source,target:'_blank',rel:'noopener noreferrer'}}));if(!dialog.open){dialog.showModal();dialog.scrollTop=0;dialog.querySelector('.numbers-dialog-close').focus({preventScroll:true});}}
- for(const x of points){const button=el('button',{className:'numbers-compact-point',attributes:{type:'button','aria-haspopup':'dialog','aria-controls':dialogId,'aria-label':x.period+' – '+x.title}},el('span',{className:'numbers-compact-date',text:x.period}),el('span',{className:'numbers-compact-dot',attributes:{'aria-hidden':'true'}}),el('span',{className:'numbers-compact-result',text:x.title}));button.addEventListener('click',()=>show(button,x));line.append(button);}
+ function ensure(){if(content)return;content=createHomeDataStrip(config,platform,true);if(saved)content.adaptiveRestore(saved);const close=el('button',{className:'numbers-detail-button numbers-dialog-close',text:'Bezárás ×',attributes:{type:'button'}});detail=el('article',{className:'numbers-selected-event',attributes:{'aria-live':'polite'}});detail.hidden=true;dialog=el('dialog',{className:'school-data-dialog',attributes:{id:dialogId,'aria-labelledby':`${platform}-home-data-detail-title`}},close,detail,content);outer.append(dialog);close.addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>{if(activeTrigger.isConnected)activeTrigger.focus({preventScroll:true});else open.focus({preventScroll:true});draw();});dialog.addEventListener('click',event=>{if(event.target===dialog){const b=dialog.getBoundingClientRect();if(event.clientX<b.left||event.clientX>b.right||event.clientY<b.top||event.clientY>b.bottom)dialog.close();}});}
+ function show(trigger,event){ensure();activeTrigger=trigger;detail.hidden=!event;detail.replaceChildren();if(event)detail.append(el('h3',{text:event.period+' – '+event.title}),el('p',{className:'numbers-event-status',text:timelineStatusLabel(config,event.status)}),el('p',{text:event.description}),event.verifiedAt?el('p',{className:'numbers-event-source-date',text:'Forrás ellenőrzése: '+event.verifiedAt}):null,el('a',{text:'Esemény forrása',attributes:{href:event.source,target:'_blank',rel:'noopener noreferrer'}}));if(!dialog.open){dialog.showModal();dialog.scrollTop=0;dialog.querySelector('.numbers-dialog-close').focus({preventScroll:true});}}
+ function draw(){
+  if(disposed)return;const points=selectFooterTimeline(config,feed.news,budapestDay()),signature=JSON.stringify(points);
+  if(signature===lastSignature||dialog?.open||line.contains(document.activeElement))return;
+  lastSignature=signature;line.replaceChildren();
+  for(const x of points){const label=timelineStatusLabel(config,x.status), dynamic=!['history','result'].includes(x.status);const button=el('button',{className:'numbers-compact-point',attributes:{type:'button','aria-haspopup':'dialog','aria-controls':dialogId,'aria-label':x.period+' – '+x.title+(dynamic?' – '+label:''),'data-event-status':x.status,'data-event-id':x.id}},el('span',{className:'numbers-compact-date',text:x.period}),el('span',{className:'numbers-compact-dot',attributes:{'aria-hidden':'true'}}),el('span',{className:'numbers-compact-result'},el('span',{text:x.title}),dynamic?el('small',{className:'numbers-compact-status',text:label}):null));button.addEventListener('click',()=>show(button,x));line.append(button);}
+ }
+ draw();line.addEventListener('focusout',()=>queueMicrotask(draw));
+ outer.refreshTimeline=async()=>{
+  if(disposed)return;draw();
+  if(!feed.pending&&Date.now()-feed.lastFetch>=refreshMs){
+   feed.lastFetch=Date.now();feed.pending=revalidateDomain(config,'news').then(record=>{checkedNews({...config,publicNews:record.data});feed.news=record.data;}).catch(e=>console.warn('[Csanádi] Az idővonal híreinek frissítése nem sikerült.',e)).finally(()=>{feed.pending=null;});
+  }
+  if(feed.pending){await feed.pending;draw();}
+ };
+ outer.destroyTimeline=()=>{disposed=true;};
  open.addEventListener('click',()=>show(open,null));
  outer.adaptiveSnapshot=()=>content?.adaptiveSnapshot?.()||saved;outer.adaptiveRestore=value=>{saved=value;if(content&&value)content.adaptiveRestore(value);};
  return outer;

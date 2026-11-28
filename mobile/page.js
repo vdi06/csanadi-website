@@ -1,7 +1,7 @@
-import {makePagePoints} from "../shared/js/components/page-points.js?v=2.81";
-import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.81";
-import { element } from "../shared/js/dom.js?v=2.81";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.81";
+import {makePagePoints} from "../shared/js/components/page-points.js?v=2.82";
+import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.82";
+import { element } from "../shared/js/dom.js?v=2.82";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.82";
 
 const css = (name) => `mobile-page-${name}`;
 const {details:pointDetails,point:item}=makePagePoints(css);

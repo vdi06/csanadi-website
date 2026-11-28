@@ -1,2 +1,2 @@
-import {createDocumentCenter} from "../shared/js/components/document-center.js?v=2.81";
+import {createDocumentCenter} from "../shared/js/components/document-center.js?v=2.82";
 export const createDesktopDocuments=config=>createDocumentCenter(config,"desktop");

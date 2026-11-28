@@ -1,9 +1,9 @@
-import { element } from "../shared/js/dom.js?v=2.81";
-import { trapTab } from "../shared/js/focus.js?v=2.81";
-import { isolateModal } from "../shared/js/modal.js?v=2.81";
+import { element } from "../shared/js/dom.js?v=2.82";
+import { trapTab } from "../shared/js/focus.js?v=2.82";
+import { isolateModal } from "../shared/js/modal.js?v=2.82";
 import { checkedSportSuccesses, featuredSportSuccesses, orderedSportSuccesses,
-  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.81";
-import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.81";
+  successImageRoot, successDateText } from "../shared/js/successes-data.js?v=2.82";
+import { archiveView, readArchiveState, saveArchiveState } from "../shared/js/archive-data.js?v=2.82";
 
 /** Asztali sportsikerek: tágas 3×2-es rács, teljes nézet fölötti saját lebegő ablak. */
 export function createDesktopSuccesses(config, { archive = false } = {}) {

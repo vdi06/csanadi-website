@@ -1,5 +1,5 @@
-import {createCompanionNavigator} from './companion-navigator.js?v=2.81';
-import {element as el} from '../dom.js?v=2.81';
+import {createCompanionNavigator} from './companion-navigator.js?v=2.82';
+import {element as el} from '../dom.js?v=2.82';
 export function viewportState({width,height,visualHeight,visualWidth,scale=1,editing=false,segments=[]}){
  const keyboard=editing&&Math.abs(scale-1)<.05&&height-visualHeight>=120&&visualHeight<height*.8;
  const split=Array.isArray(segments)&&segments.length===2&&segments.every(s=>Number.isFinite(s.width)&&Number.isFinite(s.height)&&s.width>0&&s.height>0);

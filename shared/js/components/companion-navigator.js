@@ -1,6 +1,6 @@
-import {element as el} from '../dom.js?v=2.81';
-import {ensurePage} from '../data/page-loader.js?v=2.81';
-import {recommendationPreview} from '../recommendations.js?v=2.81';
+import {element as el} from '../dom.js?v=2.82';
+import {ensurePage} from '../data/page-loader.js?v=2.82';
+import {recommendationPreview} from '../recommendations.js?v=2.82';
 // Session-local independent reading navigation; no hash mutation, no duplicate page renderer.
 const histories=new WeakMap();
 export function createCompanionNavigator(config){const pages=[...config.menu.items.flatMap(g=>g.children.map(p=>({id:p.id,title:p.label}))),...config.pagePreview.localPages.map(p=>({id:p.id,title:p.title}))];const allowed=new Set(pages.map(p=>p.id));let state=histories.get(config)||{ids:[pages[0]?.id],index:0};histories.set(config,state);let serial=0;

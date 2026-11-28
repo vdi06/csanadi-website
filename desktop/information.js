@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.81";
-import { informationView } from "../shared/js/information-data.js?v=2.81";
+import { element } from "../shared/js/dom.js?v=2.82";
+import { informationView } from "../shared/js/information-data.js?v=2.82";
 const el=element;
 const huDate=(day)=>new Intl.DateTimeFormat("hu-HU",{year:"numeric",month:"long",day:"numeric",weekday:"long",timeZone:"Europe/Budapest"}).format(new Date(`${day}T12:00:00Z`));
 function linkToEvent(e){return `#/oldal/news-calendar/esemeny/${e.id}`;}

@@ -1,8 +1,8 @@
-import {checkedCalendar} from "../calendar-data.js?v=2.81";
-import {checkedDocumentCenter} from "../document-data.js?v=2.81";
-import {checkedMediaCenter} from "../media-data.js?v=2.81";
-import {recordDataLoad} from "../layout-health.js?v=2.81";
-import {expandMediaCatalog} from "./media-catalog.js?v=2.81";
+import {checkedCalendar} from "../calendar-data.js?v=2.82";
+import {checkedDocumentCenter} from "../document-data.js?v=2.82";
+import {checkedMediaCenter} from "../media-data.js?v=2.82";
+import {recordDataLoad} from "../layout-health.js?v=2.82";
+import {expandMediaCatalog} from "./media-catalog.js?v=2.82";
 export const DOMAIN_FILES=Object.freeze({news:"news/public.json",calendar:"calendar/school-year.json",documents:"documents/catalog.json",media:"media/catalog.json"});
 const base=new URL("../../data/",import.meta.url), pending=new WeakMap(), recordsCache=new WeakMap();
 export function assembleDomains(config, records){
@@ -20,8 +20,19 @@ export async function loadDomain(config,id){
  checkManifest(config);if(!Object.hasOwn(DOMAIN_FILES,id))throw Error("Ismeretlen adatkör");
  let records=recordsCache.get(config);if(!records){records=new Map();recordsCache.set(config,records);}
  if(records.has(id))return records.get(id);
- const job=(async()=>{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000),start=performance.now();try{const u=new URL(DOMAIN_FILES[id],base);u.searchParams.set("v",config.release);const response=await fetch(u,{signal:controller.signal});if(!response.ok)throw Error("Adatkör HTTP "+response.status);const text=await response.text(),record=JSON.parse(text);if(record.id!==id||record.release!==config.release||record.schema!=="domain-1"||!record.data||typeof record.data!=="object"||(id==='news'&&!Array.isArray(record.data)))throw Error("Hibás adatkör");recordDataLoad("domain",id,new TextEncoder().encode(text).length,performance.now()-start);return record;}catch(error){recordDataLoad("domain",id,0,0,false);throw error;}finally{clearTimeout(timer);}})();
+ const job=requestDomain(config,id);
  records.set(id,job);try{return await job;}catch(error){if(records.get(id)===job)records.delete(id);throw error;}
+}
+// A frissítő olvasás nem írja felül a már érvényesített teljes konfigurációt.
+const revalidating=new WeakMap();
+function requestDomain(config,id,refresh=false){
+ return (async()=>{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000),start=performance.now();try{const u=new URL(DOMAIN_FILES[id],base);u.searchParams.set("v",config.release);const response=await fetch(u,{signal:controller.signal,...(refresh?{cache:"no-cache"}:{})});if(!response.ok)throw Error("Adatkör HTTP "+response.status);const text=await response.text(),record=JSON.parse(text);if(record.id!==id||record.release!==config.release||record.schema!=="domain-1"||!record.data||typeof record.data!=="object"||(id==='news'&&!Array.isArray(record.data)))throw Error("Hibás adatkör");recordDataLoad("domain",id,new TextEncoder().encode(text).length,performance.now()-start);return record;}catch(error){recordDataLoad("domain",id,0,0,false);throw error;}finally{clearTimeout(timer);}})();
+}
+export async function revalidateDomain(config,id){
+ checkManifest(config);if(!Object.hasOwn(DOMAIN_FILES,id))throw Error("Ismeretlen adatkör");
+ let jobs=revalidating.get(config);if(!jobs){jobs=new Map();revalidating.set(config,jobs);}
+ if(jobs.has(id))return jobs.get(id);
+ const job=requestDomain(config,id,true);jobs.set(id,job);try{return await job;}finally{if(jobs.get(id)===job)jobs.delete(id);}
 }
 export async function hydrateDomains(config){
  if(config.gateOnly)return config;checkManifest(config);if(pending.has(config))return pending.get(config);

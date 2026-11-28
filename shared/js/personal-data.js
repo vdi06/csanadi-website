@@ -1,4 +1,4 @@
-import { reservedWidgetPages } from "./carousel-data.js?v=2.81";
+import { reservedWidgetPages } from "./carousel-data.js?v=2.82";
 /** Validate the local dashboard and help configuration before mounting either platform. */
 export function validatePersonalData(config){
  const ids=new Set([...config.menu.items.flatMap(g=>g.children.map(p=>p.id)),...config.pagePreview.localPages.map(p=>p.id)]);

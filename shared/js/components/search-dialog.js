@@ -1,9 +1,9 @@
-import {highlightText} from "./search-text.js?v=2.81";
-import { element } from "../dom.js?v=2.81";
-import { trapTab } from "../focus.js?v=2.81";
-import { isolateModal } from "../modal.js?v=2.81";
-import { searchSiteResults, prepareSearchIndex, searchIndexReady } from "../search-index.js?v=2.81";
-import { filterSearchItems, navLink, searchItems } from "../shell.js?v=2.81";
+import {highlightText} from "./search-text.js?v=2.82";
+import { element } from "../dom.js?v=2.82";
+import { trapTab } from "../focus.js?v=2.82";
+import { isolateModal } from "../modal.js?v=2.82";
+import { searchSiteResults, prepareSearchIndex, searchIndexReady } from "../search-index.js?v=2.82";
+import { filterSearchItems, navLink, searchItems } from "../shell.js?v=2.82";
 
 /** One shared Spotlight implementation; platform-specific CSS and IDs are selected at mount. */
 export function createSearchDialog(platform, config, trigger, beforeOpen = () => {}) {

@@ -1,11 +1,11 @@
-import {getPersonal,patchPersonal} from './state/personal-preferences.js?v=2.81';
-import {fold as norm} from "./components/search-text.js?v=2.81";
-import {downloadLocal,importLocalJSON} from "./components/local-files.js?v=2.81";
-import { reservedWidgetPages } from "./carousel-data.js?v=2.81";
-import { element as el } from './dom.js?v=2.81';
-import { recommendationPreview } from './recommendations.js?v=2.81';
-import { menuPageHref } from './menu-data.js?v=2.81';
-import { openContentDialog } from './content-expansion.js?v=2.81';
+import {getPersonal,patchPersonal} from './state/personal-preferences.js?v=2.82';
+import {fold as norm} from "./components/search-text.js?v=2.82";
+import {downloadLocal,importLocalJSON} from "./components/local-files.js?v=2.82";
+import { reservedWidgetPages } from "./carousel-data.js?v=2.82";
+import { element as el } from './dom.js?v=2.82';
+import { recommendationPreview } from './recommendations.js?v=2.82';
+import { menuPageHref } from './menu-data.js?v=2.82';
+import { openContentDialog } from './content-expansion.js?v=2.82';
 
 const storageKey='csanadi.personal-widgets.v1';
 let memorySelection=null, memorySizes=null, memoryGrouped=null, unsaved=false;

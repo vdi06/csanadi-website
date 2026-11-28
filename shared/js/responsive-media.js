@@ -1,4 +1,4 @@
-import {dataSaving, adaptiveBreakpoints} from './layout-controller.js?v=2.81';
+import {dataSaving, adaptiveBreakpoints} from './layout-controller.js?v=2.82';
 let registry={};
 const validPath=s=>typeof s==='string'&&/^\.\/shared\/assets\/media\/(?:web\/[A-Za-z0-9_-]+|gallery\/covers)\/(?:[A-Za-z0-9_-]+\/)?[A-Za-z0-9_-]+\.webp$/.test(s);
 export function configureResponsiveMedia(input){registry={};for(const [src,r] of Object.entries(input||{})){if(validPath(src)&&Number.isInteger(r.width)&&Number.isInteger(r.height)&&r.width>0&&r.height>0&&Array.isArray(r.variants)&&r.variants.every((v,i)=>validPath(v.src)&&Number.isInteger(v.width)&&v.width>0&&v.width<=r.width&&(!i||v.width>r.variants[i-1].width))&&r.variants.at(-1)?.src===src&&r.variants.at(-1)?.width===r.width)registry[src]=r;}}

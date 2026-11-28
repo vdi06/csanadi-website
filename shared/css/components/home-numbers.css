@@ -35,7 +35,7 @@ html[data-layout-family] .numbers-full-content .home-data-row{grid-template-colu
 .numbers-full-content .numbers-timeline li,.numbers-full-content .numbers-history-list li{min-width:0;overflow-wrap:anywhere;}
 @media print{html.chart-print-mode .school-data-dialog[open]{position:static!important;overflow:visible!important;width:100%!important;max-width:none!important;height:auto!important;max-height:none!important;margin:0!important;padding:0!important;box-shadow:none!important;border:0!important}html.chart-print-mode .chart-print-target{--strip-text:#173451;--strip-muted:#42556a;--strip-bg:#fff;--strip-gold:#795313;--strip-border:#8093a7;--chart-1:#956521;--chart-2:#176b91;--chart-3:#387243;--chart-4:#79539d;--chart-5:#a44c41;--chart-6:#526b86;background:white!important;color:#173451!important}}
 
-/* 2.81 – láblécbe olvadó hatpontos, vízszintes idővonal. */
+/* 2.82 – láblécbe olvadó hatpontos, vízszintes idővonal. */
 .site-footer .footer-timeline.numbers-compact{background:transparent;border:0;border-radius:0;box-shadow:none;padding:0 0 8px;margin:0 0 7px;min-width:0;width:100%;text-align:left;overflow:visible}
 .site-footer .footer-timeline .numbers-compact-trigger{padding:0 4px;min-height:32px;gap:0;justify-content:stretch;}
 .site-footer .footer-timeline .numbers-compact-title{font-size:.92rem;line-height:1.15;}
@@ -61,3 +61,15 @@ html[data-layout-motion="reduced"] .footer-timeline .numbers-compact-dot{transit
 .site-footer .footer-timeline .numbers-compact-line{grid-auto-columns:minmax(0,1fr);}
 @container footer-timeline (max-width:760px){.site-footer .footer-timeline .numbers-compact-point{grid-template-rows:1fr;align-items:center;min-height:44px;}.site-footer .footer-timeline .numbers-compact-date,.site-footer .footer-timeline .numbers-compact-result{display:none;}.site-footer .footer-timeline .numbers-compact-line:before{top:21px;}}
 @media(max-width:780px){.site-footer .footer-timeline .numbers-compact-point{grid-template-rows:1fr;align-items:center;min-height:44px;}.site-footer .footer-timeline .numbers-compact-date,.site-footer .footer-timeline .numbers-compact-result{display:none;}.site-footer .footer-timeline .numbers-compact-line:before{top:21px;}}
+/* 2.82 – a szín mellett alak és felirat is közli a meghirdetett esemény állapotát. */
+.site-footer .footer-timeline .numbers-compact-result{display:grid;gap:2px;max-width:100%;overflow-wrap:anywhere;}
+.site-footer .numbers-compact-status{font-size:.64rem;line-height:1.05;color:var(--strip-muted);font-weight:500;}
+.site-footer .footer-timeline [data-event-status="upcoming"] .numbers-compact-dot{border-radius:1px;rotate:45deg;}
+.site-footer .footer-timeline [data-event-status="deadline"] .numbers-compact-dot{border-radius:1px;background:var(--strip-bg);border:2px solid var(--strip-gold);}
+.site-footer .footer-timeline [data-event-status="active"] .numbers-compact-dot{background:var(--strip-bg);border:2px solid var(--strip-gold);}
+.site-footer .footer-timeline [data-event-status="archive"] .numbers-compact-dot{background:var(--strip-muted);}
+.site-footer .numbers-event-status{font-weight:700;color:var(--strip-gold);margin:.25rem 0;}
+.site-footer .numbers-event-source-date{font-size:.8rem;color:var(--strip-muted);}
+.site-footer .footer-timeline .numbers-compact-point:focus-visible .numbers-compact-dot{outline:2px solid var(--strip-gold);outline-offset:3px;}
+@container footer-timeline (max-width:760px){.site-footer .footer-timeline .numbers-compact-result{display:none;}}
+@media(max-width:780px){.site-footer .footer-timeline .numbers-compact-result{display:none;}}

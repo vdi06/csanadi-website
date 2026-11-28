@@ -1,4 +1,4 @@
-import {captureComponents,restoreComponents} from "./state/component-state.js?v=2.81";
+import {captureComponents,restoreComponents} from "./state/component-state.js?v=2.82";
 /** Structural switching: never discard a live, opaque component's state. */
 let dirty=false, reason='initial', swaps=0, deferred=0;
 const normalized=s=>String(s||'').replace(/\b(?:desktop|mobile|tablet)-/g,'');

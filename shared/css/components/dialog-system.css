@@ -1,4 +1,4 @@
-/* 2.81: common modal tokens. Do not change the existing per-component layout contracts. */
+/* 2.82: common modal tokens. Do not change the existing per-component layout contracts. */
 :root {--dialog-radius:18px;--dialog-duration:180ms;--dialog-ease:cubic-bezier(.2,.8,.2,1);--dialog-border:#b89a65;--dialog-shadow:0 20px 70px rgba(0,0,0,.42);--dialog-backdrop:rgba(5,15,28,.76);--dialog-surface:#102d47;--dialog-ink:#f4f7fc;--dialog-focus:#edc779;}
 :root[data-site-theme="light"], [data-theme="light"] {--dialog-border:#947443;--dialog-shadow:0 18px 56px rgba(18,39,58,.23);--dialog-backdrop:rgba(23,52,81,.48);--dialog-surface:#fff;--dialog-ink:#173451;--dialog-focus:#795313;}
 :root[data-site-theme="dark"], [data-theme="dark"] {--dialog-border:#b89a65;--dialog-shadow:0 20px 70px rgba(0,0,0,.42);--dialog-backdrop:rgba(5,15,28,.76);--dialog-surface:#102d47;--dialog-ink:#f4f7fc;--dialog-focus:#edc779;}

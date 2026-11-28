@@ -29,3 +29,9 @@ html:has(dialog[open]) .segment-companion,html:has(.mobile-search-overlay:not([h
 
 html:has(.desktop-home[data-theme="light"],.mobile-home[data-theme="light"]) .segment-companion{--companion-bg:#f4f7fa;--companion-fg:#173451;--companion-accent:#795313;--companion-border:#8093a7;color-scheme:light}
 .segment-companion button{background:var(--companion-bg);color:var(--companion-fg);border:1px solid var(--companion-border);border-radius:6px;min-height:44px;padding:6px 9px}.segment-companion button:focus-visible{outline:3px solid var(--companion-accent);outline-offset:2px}.segment-companion button:disabled{opacity:.6}
+
+/* A személyes oldaltár összecsukható címe minden elrendezésben középen marad. */
+.page-library>summary{text-align:center;position:relative;display:block;padding-inline:1.75rem;min-block-size:44px;align-content:center;list-style:none;}
+.page-library>summary::-webkit-details-marker{display:none;}
+.page-library>summary::before{content:"";position:absolute;inset-inline-start:.55rem;top:50%;width:.55rem;height:.55rem;border-inline-end:2px solid currentColor;border-block-end:2px solid currentColor;transform:translateY(-65%) rotate(-45deg);}
+.page-library[open]>summary::before{transform:translateY(-65%) rotate(45deg);}

@@ -15,7 +15,6 @@
 .content-tile:hover,.content-action:hover{border-color:var(--accent);box-shadow:0 6px 16px #0002;}
 .content-action,.content-dialog-close,.content-related a{min-height:44px;padding:10px 14px;border-radius:10px;background:var(--surface);color:var(--text);border:1px solid var(--accent);font:inherit;font-weight:650;cursor:pointer;overflow-wrap:anywhere;}
 .content-action[disabled]{opacity:.55;cursor:default;}
-.content-action[hidden]{display:none!important;}
 .content-collection>.content-action{display:block;margin:16px auto;}
 .content-empty{grid-column:1/-1;text-align:center;padding:15px;color:var(--muted);}
 .content-related{border-top:1px solid color-mix(in srgb,var(--accent) 25%,transparent);padding:16px 0 0;}

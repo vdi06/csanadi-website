@@ -1,11 +1,11 @@
-import { layoutNow, subscribeLayout } from "../shared/js/layout-controller.js?v=2.81";
-import { createHeaderClock, trackHeaderHeight } from "../shared/js/header-clock.js?v=2.81";
-import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.81";
-import { bindAppearance } from "../shared/js/appearance.js?v=2.81";
-import { bindSiteHelp } from "../shared/js/site-help.js?v=2.81";
-import { makeSocialLink } from "../shared/js/shell.js?v=2.81";
-import { createDesktopMenu } from "./menu.js?v=2.81";
-import { createDesktopSearch } from "./search.js?v=2.81";
+import { layoutNow, subscribeLayout } from "../shared/js/layout-controller.js?v=2.82";
+import { createHeaderClock, trackHeaderHeight } from "../shared/js/header-clock.js?v=2.82";
+import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.82";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.82";
+import { bindSiteHelp } from "../shared/js/site-help.js?v=2.82";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.82";
+import { createDesktopMenu } from "./menu.js?v=2.82";
+import { createDesktopSearch } from "./search.js?v=2.82";
 
 /** Asztali fejléc: címerből nyíló körmenü és külön nagy lebegő keresőablak.
  * A mobilmenü és annak DOM-ja itt nem létezik. */

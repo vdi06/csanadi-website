@@ -1,6 +1,6 @@
-import { element } from "./dom.js?v=2.81";
-import { trapTab } from "./focus.js?v=2.81";
-import { isolateModal } from "./modal.js?v=2.81";
+import { element } from "./dom.js?v=2.82";
+import { trapTab } from "./focus.js?v=2.82";
+import { isolateModal } from "./modal.js?v=2.82";
 
 /** Közös JSON-adatfolyam: a platformok csak a lábléc elrendezését stílusozzák.
  * Az adatok csak ellenőrzött, teljes válasz esetén cserélődnek le. */
@@ -156,6 +156,7 @@ export function makeFooter(config, platform) {
 
   async function checkForUpdates() {
     if (!active || pending || document.visibilityState === "hidden") return false;
+    void footer.querySelector(".footer-timeline")?.refreshTimeline?.();
     pending = true;
     requestController = new AbortController();
     const controller = requestController;
@@ -208,6 +209,7 @@ export function makeFooter(config, platform) {
 
   function destroy() {
     active = false;
+    footer.querySelector(".footer-timeline")?.destroyTimeline?.();
     closeModal(false, false);
     clearInterval(timer);
     requestController?.abort();
