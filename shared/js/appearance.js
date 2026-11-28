@@ -40,6 +40,16 @@ export function bindAppearance(config, home, themeButton) {
     home.style.setProperty("color-scheme", effective);
     const colors = effective === "light" ? appearance.light : config.theme;
     for (const [name, value] of Object.entries(colors)) home.style.setProperty(`--${name}`, value);
+    const root = document.documentElement;
+    root.dataset.siteTheme = effective;
+    root.style.colorScheme = effective;
+    for (const [name, value] of Object.entries(colors)) root.style.setProperty(`--${name}`, value);
+    // Detached native dialogs used by content, gallery and document tools must follow live theme changes.
+    for (const dialog of document.querySelectorAll('dialog[open]')) {
+      if (dialog.closest('.mobile-home,.desktop-home')) continue;
+      dialog.dataset.theme = effective;
+      for (const [name,value] of Object.entries(colors)) dialog.style.setProperty(`--${name}`,value);
+    }
     themeButton.dataset.themeMode = selected;
     modeIcon.textContent = appearance.glyphs[selected];
     modeMark.textContent = appearance.shortLabels[selected];

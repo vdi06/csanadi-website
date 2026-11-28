@@ -1,5 +1,5 @@
-import {healthDiagnostics} from "./layout-health.js?v=2.79";
-import { switchDiagnostics } from "./layout-state.js?v=2.79";
+import {healthDiagnostics} from "./layout-health.js?v=2.81";
+import { switchDiagnostics } from "./layout-state.js?v=2.81";
 /** 2.68: tisztán számolható méretprofil és külön interakciós profil. */
 export const DEFAULT_LAYOUT = Object.freeze({version:1,breakpoints:[480,768,1024,1440,1920],lowHeight:480,profiles:[{id:'P1',family:'mobile',gutter:12,max:640},{id:'P2',family:'mobile',gutter:16,max:760},{id:'P3',family:'tablet',gutter:24,max:960},{id:'P4',family:'desktop',gutter:32,max:1200},{id:'P5',family:'desktop',gutter:40,max:1360},{id:'P6',family:'desktop',gutter:48,max:1600}],containerBreakpoints:[360,720,1050],orientationPolicy:{phoneShortMax:600,tabletShortMax:1024}});
 export const DEFAULT_PREF=Object.freeze({version:1,mode:'auto',orientation:'auto',density:'normal',controls:'auto',motion:'auto',data:'auto',fontScale:'normal',contrast:'normal',remember:true});

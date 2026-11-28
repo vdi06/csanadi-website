@@ -1,7 +1,7 @@
 {
   "schema": "local-document-audit-1",
-  "from": "2.78",
-  "to": "2.79",
+  "from": "2.79",
+  "to": "2.81",
   "note": "Két helyi csomag összehasonlítása, nem hivatalos iratverzió vagy hatályossági igazolás.",
   "items": [
     {

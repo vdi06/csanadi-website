@@ -1,6 +1,6 @@
-import { element } from "./dom.js?v=2.79";
-import { trapTab } from "./focus.js?v=2.79";
-import { isolateModal } from "./modal.js?v=2.79";
+import { element } from "./dom.js?v=2.81";
+import { trapTab } from "./focus.js?v=2.81";
+import { isolateModal } from "./modal.js?v=2.81";
 
 /** Közös JSON-adatfolyam: a platformok csak a lábléc elrendezését stílusozzák.
  * Az adatok csak ellenőrzött, teljes válasz esetén cserélődnek le. */

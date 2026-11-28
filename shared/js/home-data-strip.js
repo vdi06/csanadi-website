@@ -1,9 +1,10 @@
-import {createHistoryExplorer} from './components/history-explorer.js?v=2.79';
-import {createChartPanel,animateCounter} from './components/svg-charts.js?v=2.79';
-import {getPersonal,patchPersonal} from './state/personal-preferences.js?v=2.79';
-import {verifiedSports,filterSports,groupYears,loadHistory} from "./components/number-model.js?v=2.79";
-import { element as el } from './dom.js?v=2.79';
-import { openContentDialog } from './content-expansion.js?v=2.79';
+import {addTimelineControls} from './components/timeline-controls.js?v=2.81';
+import {createHistoryExplorer} from './components/history-explorer.js?v=2.81';
+import {createChartPanel,animateCounter} from './components/svg-charts.js?v=2.81';
+import {getPersonal,patchPersonal} from './state/personal-preferences.js?v=2.81';
+import {verifiedSports,filterSports,groupYears,loadHistory} from "./components/number-model.js?v=2.81";
+import { element as el } from './dom.js?v=2.81';
+import { openContentDialog } from './content-expansion.js?v=2.81';
 
 // Every number is derived from the current JSON, never from a decorative sample.
 export function homeDataMetrics(config) {
@@ -17,11 +18,11 @@ export function homeDataMetrics(config) {
 // A három eltérő mutató külön skálát kap; a sportsikerek dátumai a forrásrekordokból érkeznek.
 const fmt=n=>new Intl.NumberFormat('hu-HU').format(n);
 function availability(available,total,labels){const percent=total?Math.round(available/total*100):0;return el('div',{className:'numbers-availability'},el('span',{className:'numbers-percent',text:`${percent}%`}),el('span',{className:'numbers-progress',attributes:{'aria-hidden':'true'}},el('span',{attributes:{style:`--fill:${percent}%`}})),el('span',{className:'numbers-legend'},el('span',{text:`${fmt(available)} megnyitható fájl`}),el('span',{text:`${fmt(total-available)} függő tétel`})))}
-function timeline(items){const ordered=[...items].sort((a,b)=>a.date.localeCompare(b.date));return ordered.length?el('ol',{className:'numbers-timeline'},...ordered.map(x=>el('li',{},el('time',{text:new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}).format(new Date(x.date+'T00:00:00Z')),attributes:{datetime:x.date}}),el('strong',{text:`${x.sport} · ${x.result}`}),el('span',{text:x.competition}),x.dateKind==='publication'?el('small',{text:'A beszámoló közzétételének dátuma'}):null,x.sourceUrl?.startsWith('https://')?el('a',{text:'Forrás',attributes:{href:x.sourceUrl,target:'_blank'}}):null))):el('p',{text:'Nincs igazolt eredmény a nyilvántartásban.'})}
+function timeline(items,interactive=false){const ordered=[...items].sort((a,b)=>a.date.localeCompare(b.date));const list=ordered.length?el('ol',{className:'numbers-timeline'},...ordered.map(x=>el('li',{},el('time',{text:new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}).format(new Date(x.date+'T00:00:00Z')),attributes:{datetime:x.date}}),el('strong',{text:`${x.sport} · ${x.result}`}),el('span',{text:x.competition}),x.dateKind==='publication'?el('small',{text:'A beszámoló közzétételének dátuma'}):null,x.sourceUrl?.startsWith('https://')?el('a',{text:'Forrás',attributes:{href:x.sourceUrl,target:'_blank'}}):null))):el('p',{text:'Nincs igazolt eredmény a nyilvántartásban.'});if(!interactive||!ordered.length)return list;const tools=addTimelineControls(list,'Sportsikerek idővonala');return el('div',{},tools.controls,list);}
 export function createHomeDataStrip(config,platform,expanded=false){
  const settings=config.home.dataStrip;if(!settings?.enabled)return null;
+ if(!expanded)return createCompactStrip(config,platform);
  const m=homeDataMetrics(config),labels=settings.labels,charts=settings.charts||{};
- if(!expanded)return createCompactStrip(config,platform,m.sports.items);
  const titleId=`${platform}-home-data-detail-title`;
  const section=el('section',{className:`numbers-full-content`,attributes:{'aria-labelledby':titleId,'data-home-data-strip':platform}},el('div',{className:'numbers-heading'},el('span',{className:'numbers-kicker',text:'Adatok és eredmények'}),el('h2',{text:settings.title,attributes:{id:titleId}}),el('p',{text:'A honlap nyilvántartásainak áttekintése és az ellenőrzött sportsikerek idővonala.'})));
  const row=el('div',{className:'home-data-row'});if(charts.animation===true)section.classList.add("numbers-animated");
@@ -41,7 +42,7 @@ export function createHomeDataStrip(config,platform,expanded=false){
  const filterStatus=el('p',{className:'numbers-filter-status',attributes:{role:'status','aria-live':'polite'}}),results=el('div',{className:'numbers-filter-results'});
  const explorer=el('div',{className:'numbers-explorer'},el('h3',{text:'Sportsikerek szűrése'}),el('div',{className:'numbers-filters'},el('label',{},el('span',{text:'Év'}),year),el('label',{},el('span',{text:'Sportág'}),sport)),filterStatus,results);
  const sportCard=row.querySelector('[data-metric=sports] .home-data-graphic');sportCard.replaceChildren(explorer);
- function update(){const items=filterSports(m.sports.items,year.value,sport.value);filterStatus.textContent=`${items.length} forrással jelölt eredmény`;results.replaceChildren(timeline(items));}
+ function update(){const items=filterSports(m.sports.items,year.value,sport.value);filterStatus.textContent=`${items.length} forrással jelölt eredmény`;results.replaceChildren(timeline(items,true));}
  year.addEventListener('change',update);sport.addEventListener('change',update);update();
  const years=groupYears(m.sports.items),yearLabels=Object.fromEntries(years.map(x=>[x.id,x.id+' tanév']));const yearView=el('div',{className:'numbers-year-view'},chart('schoolYears','Tanévi sportsikerek',years.map(x=>({label:yearLabels[x.id],value:x.value}))));
  const viewButton=el('button',{className:'numbers-detail-button',text:'Adatok táblázatban',attributes:{type:'button','aria-pressed':'false'}});let table=yearView.querySelector('select').value==='table';const syncButton=()=>{table=yearView.querySelector('select').value==='table';viewButton.textContent=table?'Grafikon megjelenítése':'Adatok táblázatban';viewButton.setAttribute('aria-pressed',String(table));};yearView.querySelector('select').addEventListener('change',syncButton);syncButton();viewButton.addEventListener('click',()=>{table=!table;const input=yearView.querySelector('select');input.value=table?'table':(charts.svg?.schoolYears?.type||'bar');input.dispatchEvent(new Event('change'));viewButton.textContent=table?'Grafikon megjelenítése':'Adatok táblázatban';viewButton.setAttribute('aria-pressed',String(table));});
@@ -57,16 +58,17 @@ export function createHomeDataStrip(config,platform,expanded=false){
 }
 
 // A kezdőlapon csak egy vízszintes idősáv; a részletes, közös komponens az első megnyitáskor készül el.
-function createCompactStrip(config,platform,items){
+function createCompactStrip(config,platform){
  const dialogId=`${platform}-numbers-dialog`;
- const points=[...items].sort((a,b)=>a.date.localeCompare(b.date));
- const dateFormat=new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'2-digit',day:'2-digit',timeZone:'UTC'});
- const line=el('span',{className:'numbers-compact-line'},...points.map(x=>el('span',{className:'numbers-compact-point'},el('time',{text:dateFormat.format(new Date(x.date+'T00:00:00Z')),attributes:{datetime:x.date}}),el('span',{className:'numbers-compact-dot',attributes:{'aria-hidden':'true'}}),el('span',{className:'numbers-compact-result',text:`${x.sport} · ${x.result}${x.dateKind==='publication'?' (közlés)':''}`}))));
- const open=el('button',{className:'numbers-compact-trigger',attributes:{type:'button','aria-haspopup':'dialog','aria-controls':dialogId,'aria-label':'Csanádi számokban – részletes adatközpont megnyitása. '+points.map(x=>`${x.date}: ${x.sport}, ${x.result}${x.dateKind==='publication'?' (közzététel)':''}`).join('; ')}},el('span',{className:'numbers-compact-title'},el('span',{text:config.home.dataStrip.title}),el('span',{className:'numbers-compact-arrow',text:'↗',attributes:{'aria-hidden':'true'}})),points.length?line:el('span',{text:'Nincs igazolt eredmény a nyilvántartásban.'}));
- const outer=el('section',{className:`home-data-strip home-data-strip-${platform} numbers-compact`,attributes:{'aria-label':config.home.dataStrip.title,'data-home-data-strip':platform,'data-adaptive-state':'numbers-explorer'}},open);
- let content=null,dialog=null,saved=null;
- function ensure(){if(content)return;content=createHomeDataStrip(config,platform,true);if(saved)content.adaptiveRestore(saved);const close=el('button',{className:'numbers-detail-button numbers-dialog-close',text:'Bezárás ×',attributes:{type:'button'}});dialog=el('dialog',{className:'school-data-dialog',attributes:{id:dialogId,'aria-labelledby':`${platform}-home-data-detail-title`}},close,content);outer.append(dialog);close.addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>{if(open.isConnected)open.focus({preventScroll:true});});dialog.addEventListener('click',event=>{if(event.target===dialog){const b=dialog.getBoundingClientRect();if(event.clientX<b.left||event.clientX>b.right||event.clientY<b.top||event.clientY>b.bottom)dialog.close();}});}
- open.addEventListener('click',()=>{ensure();if(!dialog.open){dialog.showModal();dialog.querySelector('.numbers-dialog-close').focus({preventScroll:true});}});
+ const points=(config.home.dataStrip.footerMilestones||[]).filter(x=>x&&typeof x.period==='string'&&typeof x.title==='string'&&typeof x.description==='string'&&typeof x.source==='string'&&x.source.startsWith('https://')).slice(0,12);
+ const open=el('button',{className:'numbers-compact-trigger',attributes:{type:'button','aria-haspopup':'dialog','aria-controls':dialogId,'aria-label':'Csanádi számokban – részletes adatközpont megnyitása'}},el('span',{className:'numbers-compact-title'},el('span',{text:config.home.dataStrip.title}),el('span',{className:'numbers-compact-arrow',text:'↗',attributes:{'aria-hidden':'true'}})));
+ const line=el('div',{className:'numbers-compact-line',attributes:{role:'group','aria-label':'Az iskola története és aktuális közleményei'}});
+ const outer=el('section',{className:`home-data-strip home-data-strip-${platform} numbers-compact footer-timeline`,attributes:{'aria-label':config.home.dataStrip.title,'data-home-data-strip':platform,'data-adaptive-state':'numbers-explorer'}},open,line);
+ let content=null,dialog=null,saved=null,activeTrigger=open,detail=null;
+ function ensure(){if(content)return;content=createHomeDataStrip(config,platform,true);if(saved)content.adaptiveRestore(saved);const close=el('button',{className:'numbers-detail-button numbers-dialog-close',text:'Bezárás ×',attributes:{type:'button'}});detail=el('article',{className:'numbers-selected-event',attributes:{'aria-live':'polite'}});detail.hidden=true;dialog=el('dialog',{className:'school-data-dialog',attributes:{id:dialogId,'aria-labelledby':`${platform}-home-data-detail-title`}},close,detail,content);outer.append(dialog);close.addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>{if(activeTrigger.isConnected)activeTrigger.focus({preventScroll:true});});dialog.addEventListener('click',event=>{if(event.target===dialog){const b=dialog.getBoundingClientRect();if(event.clientX<b.left||event.clientX>b.right||event.clientY<b.top||event.clientY>b.bottom)dialog.close();}});}
+ function show(trigger,event){ensure();activeTrigger=trigger;detail.hidden=!event;detail.replaceChildren();if(event)detail.append(el('h3',{text:event.period+' – '+event.title}),el('p',{text:event.description}),el('a',{text:'Esemény forrása',attributes:{href:event.source,target:'_blank',rel:'noopener noreferrer'}}));if(!dialog.open){dialog.showModal();dialog.scrollTop=0;dialog.querySelector('.numbers-dialog-close').focus({preventScroll:true});}}
+ for(const x of points){const button=el('button',{className:'numbers-compact-point',attributes:{type:'button','aria-haspopup':'dialog','aria-controls':dialogId,'aria-label':x.period+' – '+x.title}},el('span',{className:'numbers-compact-date',text:x.period}),el('span',{className:'numbers-compact-dot',attributes:{'aria-hidden':'true'}}),el('span',{className:'numbers-compact-result',text:x.title}));button.addEventListener('click',()=>show(button,x));line.append(button);}
+ open.addEventListener('click',()=>show(open,null));
  outer.adaptiveSnapshot=()=>content?.adaptiveSnapshot?.()||saved;outer.adaptiveRestore=value=>{saved=value;if(content&&value)content.adaptiveRestore(value);};
  return outer;
 }
