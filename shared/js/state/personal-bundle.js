@@ -1,7 +1,7 @@
-import {allowedPages,getPersonal,sanitizePersonal,cleanIds} from './personal-preferences.js?v=2.82';
-import {widgetCatalog,cleanWidgetSizes} from '../personal-widgets.js?v=2.82';
-import {preferences,normalizePreference} from '../layout-controller.js?v=2.82';
-import {currentAppearanceMode} from '../appearance.js?v=2.82';
+import {allowedPages,getPersonal,sanitizePersonal,cleanIds} from './personal-preferences.js?v=2.83';
+import {widgetCatalog,cleanWidgetSizes} from '../personal-widgets.js?v=2.83';
+import {preferences,normalizePreference} from '../layout-controller.js?v=2.83';
+import {currentAppearanceMode} from '../appearance.js?v=2.83';
 const keys={personal:'csanadi.personal-settings.v1',favorites:'csanadi.page-favorites.v1',history:'csanadi.page-history.v1',historyEnabled:'csanadi.page-history.enabled.v1',widgets:'csanadi.personal-widgets.v1',sizes:'csanadi.personal-widget-sizes.v1',grouped:'csanadi.widget-grouped.v1',documents:'csanadi.document-favorites.v1',layout:'csanadi-adaptive-preferences-v1'};
 const json=(store,k,fallback)=>{const s=store.getItem(k);return s===null?fallback:JSON.parse(s);};
 export function bundleSnapshot(config,store=localStorage,includeHistory=false){const allow=allowedPages(config),widgets=new Set(widgetCatalog(config).flatMap(g=>g.items.map(x=>x.id))),docs=new Set(config.documentCenter.items.map(x=>x.id));const list=(key,allowed,max,fallback=[])=>{const x=json(store,key,fallback);return Array.isArray(x)?[...new Set(x.filter(v=>allowed.has(v)))].slice(0,max):[];};return {schema:'csanadi-personal-1',theme:currentAppearanceMode(config),layout:preferences(),personal:getPersonal(config),favorites:list(keys.favorites,allow,66),historyEnabled:store.getItem(keys.historyEnabled)!=='false',history:includeHistory?list(keys.history,allow,20):null,widgets:list(keys.widgets,widgets,config.home.widgets.maxItems,config.home.widgets.defaults),sizes:cleanWidgetSizes(json(store,keys.sizes,{}),widgets),grouped:store.getItem(keys.grouped)==='true',documents:list(keys.documents,docs,docs.size)};}

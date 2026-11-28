@@ -1,7 +1,7 @@
-import { assignHeroImage } from "../shared/js/responsive-media.js?v=2.82";
-import { reducedMotion } from "../shared/js/layout-controller.js?v=2.82";
-import { crest, element } from "../shared/js/dom.js?v=2.82";
-import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.82";
+import { assignHeroImage } from "../shared/js/responsive-media.js?v=2.83";
+import { reducedMotion } from "../shared/js/layout-controller.js?v=2.83";
+import { crest, element } from "../shared/js/dom.js?v=2.83";
+import { getMenuPage, menuPageHref } from "../shared/js/menu-data.js?v=2.83";
 
 const clamp = (value) => Math.max(0, Math.min(1, value));
 const mediaRoot = "./shared/assets/media/web/desktop-hero/";

@@ -1,20 +1,20 @@
-import {mountViewportAdaptation} from "./components/viewport-adaptation.js?v=2.82";
-import {mountPageLibrary} from "./components/page-library.js?v=2.82";
-import {hydrateDomains} from "./data/domain-loader.js?v=2.82";
-import {ensurePage} from "./data/page-loader.js?v=2.82";
-import {installHealth,recordConfig} from "./layout-health.js?v=2.82";
+import {mountViewportAdaptation} from "./components/viewport-adaptation.js?v=2.83";
+import {mountPageLibrary} from "./components/page-library.js?v=2.83";
+import {hydrateStartupDomains,ensureDocuments} from "./data/domain-loader.js?v=2.83";
+import {ensurePage} from "./data/page-loader.js?v=2.83";
+import {installHealth,recordConfig} from "./layout-health.js?v=2.83";
 installHealth();
-import { trackLiveState, resetSwitchState, switchBlocked, captureState, restoreState, noteDeferred } from "./layout-state.js?v=2.82";
-import { configureLegacyMedia } from "./layout-controller.js?v=2.82";
-import { configureResponsiveMedia } from "./responsive-media.js?v=2.82";
-import { initLayout, layoutNow } from "./layout-controller.js?v=2.82";
-import { mountLayoutPanel } from "./layout-panel.js?v=2.82";
-import { loadActivity } from "./page-activities.js?v=2.82";
+import { trackLiveState, resetSwitchState, switchBlocked, captureState, restoreState, noteDeferred } from "./layout-state.js?v=2.83";
+import { configureLegacyMedia } from "./layout-controller.js?v=2.83";
+import { configureResponsiveMedia } from "./responsive-media.js?v=2.83";
+import { initLayout, layoutNow } from "./layout-controller.js?v=2.83";
+import { mountLayoutPanel } from "./layout-panel.js?v=2.83";
+import { loadActivity } from "./page-activities.js?v=2.83";
 /** Egyetlen HTML, közvetlen kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.82";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.82";
-import { eventById } from "./calendar-data.js?v=2.82";
-import { mountOffline } from "./offline.js?v=2.82";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.83";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.83";
+import { eventById } from "./calendar-data.js?v=2.83";
+import { mountOffline } from "./offline.js?v=2.83";
 const root = document.getElementById("app");
 const wantedRenderer = () => layoutNow().family;
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -137,7 +137,7 @@ async function renderActual(structural=false) {
   // Csak a különálló interaktív modult kell lekérni.
   if(selectedRoute.startsWith("page:")){
     const id=selectedRoute.slice(5);
-    try{await Promise.all([ensurePage(config,id),loadActivity(config,id,settingsUrl)]);}catch(error){if(isStale())return;if(!initialized)throw error;console.warn("[Csanádi] Oldaladat nem elérhető.",error);initialized=false;failedAttempts++;showOffline();scheduleRetry();return;}
+    try{await Promise.all([ensurePage(config,id),loadActivity(config,id,settingsUrl),...(id==="information-documents"?[ensureDocuments(config)]:[])]);}catch(error){if(isStale())return;if(!initialized)throw error;console.warn("[Csanádi] Oldaladat nem elérhető.",error);initialized=false;failedAttempts++;showOffline();scheduleRetry();return;}
   }
   if (isStale()) return;
   if(structural && switchBlocked(root,selectedRoute)){noteDeferred(switchBlocked(root,selectedRoute));return;}
@@ -195,9 +195,9 @@ async function ensureFullConfig(){
     const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),8000);
     try{const u=new URL(settingsUrl);u.searchParams.set('check',String(Date.now()));const started=performance.now();
       const response=await fetch(u,{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('Tartalmi JSON: '+response.status);
-      const raw=await response.text(),fetched=performance.now(),parsed=JSON.parse(raw);recordConfig(new TextEncoder().encode(raw).length,fetched-started,performance.now()-fetched);const next=await hydrateDomains(parsed);
+      const raw=await response.text(),fetched=performance.now(),parsed=JSON.parse(raw);recordConfig(new TextEncoder().encode(raw).length,fetched-started,performance.now()-fetched);const next=await hydrateStartupDomains(parsed);
       if(next.release!==config.release||next.schemaVersion!==config.schemaVersion||next.gateOnly)throw Error('Eltérő tartalmi kiadás.');
-      await ensurePage(next,"information-timetable");validateMenu(next);Object.defineProperty(next,'__staticContent',{value:true});config=next;configureResponsiveMedia(config.adaptiveLayout?.responsiveMedia);
+      await ensurePage(next,"information-timetable");validateMenu(next,{deferDocuments:true});Object.defineProperty(next,'__staticContent',{value:true});config=next;configureResponsiveMedia(config.adaptiveLayout?.responsiveMedia);
     }finally{clearTimeout(timer);}
   })().finally(()=>{fullConfigPromise=null;});
   return fullConfigPromise;
@@ -244,12 +244,12 @@ async function loadConfig() {
     const started=performance.now();
     const response = await fetch(freshSettings, { cache:"no-store", signal:controller.signal });
     if (!response.ok) throw new Error(`Hiányzó JSON: ${response.status}`);
-    const raw=await response.text();const fetched=performance.now();const parsed=JSON.parse(raw);recordConfig(new TextEncoder().encode(raw).length,fetched-started,performance.now()-fetched);const nextConfig=await hydrateDomains(parsed);
+    const raw=await response.text();const fetched=performance.now();const parsed=JSON.parse(raw);recordConfig(new TextEncoder().encode(raw).length,fetched-started,performance.now()-fetched);const nextConfig=await hydrateStartupDomains(parsed);
     if (nextConfig?.schemaVersion !== "2.30" || !nextConfig.routes?.home ||
       nextConfig.routes.gate !== "#/" || nextConfig.gate?.frames !== 30) {
       throw new Error("A honlap JSON-beállításai hibásak.");
     }
-    if(nextConfig.gateOnly===true){if(!nextConfig.site?.fullName||!nextConfig.site?.crest||!nextConfig.adaptiveLayout||!nextConfig.theme)throw Error("Hiányos kapukonfiguráció.");}else {await ensurePage(nextConfig,"information-timetable");validateMenu(nextConfig);}
+    if(nextConfig.gateOnly===true){if(!nextConfig.site?.fullName||!nextConfig.site?.crest||!nextConfig.adaptiveLayout||!nextConfig.theme)throw Error("Hiányos kapukonfiguráció.");}else {await ensurePage(nextConfig,"information-timetable");validateMenu(nextConfig,{deferDocuments:true});}
     const moduleRelease=new URL(import.meta.url).searchParams.get("v");
     if(moduleRelease && nextConfig.release !== moduleRelease) throw new Error("A kiadás állományai eltérő verziójúak. Töltsd újra a kezdő HTML-t.");
     // A betöltött kiadás nem írható vissza szerverre; a kereső gyorsítótárát

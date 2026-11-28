@@ -1,8 +1,8 @@
-import {checkedCalendar} from "../calendar-data.js?v=2.82";
-import {checkedDocumentCenter} from "../document-data.js?v=2.82";
-import {checkedMediaCenter} from "../media-data.js?v=2.82";
-import {recordDataLoad} from "../layout-health.js?v=2.82";
-import {expandMediaCatalog} from "./media-catalog.js?v=2.82";
+import {checkedCalendar} from "../calendar-data.js?v=2.83";
+import {checkedDocumentCenter} from "../document-data.js?v=2.83";
+import {checkedMediaCenter} from "../media-data.js?v=2.83";
+import {recordDataLoad} from "../layout-health.js?v=2.83";
+import {expandMediaCatalog} from "./media-catalog.js?v=2.83";
 export const DOMAIN_FILES=Object.freeze({news:"news/public.json",calendar:"calendar/school-year.json",documents:"documents/catalog.json",media:"media/catalog.json"});
 const base=new URL("../../data/",import.meta.url), pending=new WeakMap(), recordsCache=new WeakMap();
 export function assembleDomains(config, records){
@@ -38,4 +38,20 @@ export async function hydrateDomains(config){
  if(config.gateOnly)return config;checkManifest(config);if(pending.has(config))return pending.get(config);
  const job=Promise.allSettled(Object.keys(DOMAIN_FILES).map(async id=>[id,await loadDomain(config,id)])).then(results=>{const failed=results.find(r=>r.status==='rejected');if(failed)throw failed.reason;try{return assembleDomains(config,Object.fromEntries(results.map(r=>r.value)));}catch(error){recordsCache.delete(config);throw error;}});
  pending.set(config,job);try{return await job;}finally{pending.delete(config);}
+}
+
+// A dokumentumkatalógus nem szükséges a normál navigációhoz.
+// A teljes validálás továbbra is rendelkezésre áll a kiadás előtti ellenőrzéshez.
+export async function hydrateStartupDomains(config){
+ if(config.gateOnly)return config;checkManifest(config);
+ const ids=['news','calendar','media'];const records=Object.fromEntries(await Promise.all(ids.map(async id=>[id,await loadDomain(config,id)])));
+ const full={...config,publicNews:records.news.data,home:{...config.home,calendar:records.calendar.data},mediaCenter:expandMediaCatalog(records.media.data)};
+ checkedCalendar(full);checkedMediaCenter(full);return full;
+}
+const documentsPending=new WeakMap();
+export async function ensureDocuments(config){
+ if(config.documentCenter)return checkedDocumentCenter(config);
+ if(documentsPending.has(config))return documentsPending.get(config);
+ const job=(async()=>{const record=await loadDomain(config,'documents');const checked=checkedDocumentCenter({...config,documentCenter:record.data});config.documentCenter=checked;return checked;})();
+ documentsPending.set(config,job);try{return await job;}catch(error){recordsCache.get(config)?.delete('documents');throw error;}finally{if(documentsPending.get(config)===job)documentsPending.delete(config);}
 }

@@ -1,4 +1,4 @@
-import {recordDataLoad} from "../layout-health.js?v=2.82";
+import {recordDataLoad} from "../layout-health.js?v=2.83";
 const cache=new WeakMap();
 const paths=Object.freeze({help:"help/topics.json",documentAudit:"documents/release-audit.json"});
 export async function optionalData(config,id){

@@ -1,4 +1,4 @@
-import {validDay} from '../calendar-data.js?v=2.82';
+import {validDay} from '../calendar-data.js?v=2.83';
 
 const dayNumber=d=>Date.parse(d+'T00:00:00Z')/86400000;
 export function budapestDay(now=new Date()){

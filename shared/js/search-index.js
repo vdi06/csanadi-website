@@ -1,10 +1,10 @@
-import {fold} from "./components/search-text.js?v=2.82";
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.82";
-import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.82";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.82";
-import { calendarEntries } from "./calendar-data.js?v=2.82";
-import { newsStoryHref } from "./news-panel.js?v=2.82";
-import { checkedAdmissions } from "./admission-data.js?v=2.82";
+import {fold} from "./components/search-text.js?v=2.83";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.83";
+import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.83";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.83";
+import { calendarEntries } from "./calendar-data.js?v=2.83";
+import { newsStoryHref } from "./news-panel.js?v=2.83";
+import { checkedAdmissions } from "./admission-data.js?v=2.83";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */

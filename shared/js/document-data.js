@@ -1,4 +1,4 @@
-import {fold} from "./components/search-text.js?v=2.82";
+import {fold} from "./components/search-text.js?v=2.83";
 /** Kiadás előtt ellenőrzött helyi dokumentumregiszter, nem külső dokumentumlinkek. */
 const label=(v,max=500)=>typeof v==="string"&&v.trim().length>0&&v.length<=max;
 const id=/^[a-z0-9-]+$/;

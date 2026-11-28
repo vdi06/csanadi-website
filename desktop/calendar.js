@@ -1,7 +1,7 @@
-import {makeCalendarAgenda} from "../shared/js/components/calendar-agenda.js?v=2.82";
-import { element } from "../shared/js/dom.js?v=2.82";
-import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.82";
-import { makeCalendarMonth, makeCalendarWeek, createCalendarPopover, schoolWeeks, weekLabel } from "../shared/js/calendar-view.js?v=2.82";
+import {makeCalendarAgenda} from "../shared/js/components/calendar-agenda.js?v=2.83";
+import { element } from "../shared/js/dom.js?v=2.83";
+import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.83";
+import { makeCalendarMonth, makeCalendarWeek, createCalendarPopover, schoolWeeks, weekLabel } from "../shared/js/calendar-view.js?v=2.83";
 
 /** Asztalon: azonos adatú heti / havi / éves nézet; a hónapok 6 hetes, azonos rácsban. */
 export function createDesktopCalendar(config,onInteract=()=>{}) {

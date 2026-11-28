@@ -1,12 +1,12 @@
-import { validatePersonalData } from "./personal-data.js?v=2.82";
-import { validateExpansion } from "./content-expansion.js?v=2.82";
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.82";
-import { checkedDocumentCenter } from "./document-data.js?v=2.82";
-import { checkedAdmissions } from "./admission-data.js?v=2.82";
-import { checkedInformationCenter } from "./information-data.js?v=2.82";
-import { checkedMediaCenter } from "./media-data.js?v=2.82";
+import { validatePersonalData } from "./personal-data.js?v=2.83";
+import { validateExpansion } from "./content-expansion.js?v=2.83";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.83";
+import { checkedDocumentCenter } from "./document-data.js?v=2.83";
+import { checkedAdmissions } from "./admission-data.js?v=2.83";
+import { checkedInformationCenter } from "./information-data.js?v=2.83";
+import { checkedMediaCenter } from "./media-data.js?v=2.83";
 /** Kétszintű menü, 63 önálló oldal és közösen kezelt, JSON-alapú tartalom. */
-import { checkedCalendar } from "./calendar-data.js?v=2.82";
+import { checkedCalendar } from "./calendar-data.js?v=2.83";
 
 const validLabel = (value, max = 800) => typeof value === "string" &&
   !!value.trim() && value.length <= max;
@@ -95,7 +95,7 @@ export function checkedNews(config) {
 }
 
 /** Minden egyes almenü saját tartalmat kap, a kártyaszám nincs rögzítve. */
-export function validateMenu(config) {
+export function validateMenu(config,{deferDocuments=false}={}) {
   const items = config.menu?.items;
   if (!Array.isArray(items) || items.length !== 6) throw new Error("A hat főmenü hiányzik.");
   const ids = new Set();
@@ -147,7 +147,7 @@ export function validateMenu(config) {
   checkedCalendar(config);
   checkedInformationCenter(config);
   checkedMediaCenter(config);
-  checkedDocumentCenter(config);
+  if(!deferDocuments || config.documentCenter)checkedDocumentCenter(config);
   checkedAdmissions(config);
   checkedFeatureCenters(config);
   return items;
