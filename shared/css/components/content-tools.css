@@ -91,7 +91,7 @@
 
 .home-data-detail{display:grid;gap:12px;text-align:center;}.home-data-detail p{margin:0;}.home-data-detail-list{display:grid;grid-template-columns:1fr auto;gap:8px 15px;text-align:left;margin:0;padding:12px;background:color-mix(in srgb,var(--accent) 9%,transparent);border-radius:10px;}.home-data-detail-list dd{margin:0;font-weight:800;}.home-data-result-list{text-align:left;margin:0;padding-left:20px;}.home-data-result-list li+li{margin-top:8px;}
 /* 2.56 — saját, hálózatfüggetlen digitális kijelző. */
-.school-header-clock{grid-column:1/-1;justify-self:center;display:flex;flex-direction:column;align-items:center;gap:2px;color:#e8c37f;background:rgba(7,25,43,.62);border:0;border-radius:7px;padding:6px 10px;line-height:1;margin:0;box-shadow:none;flex:none;}
+.school-header-clock{grid-column:1/-1;justify-self:center;display:flex;flex-direction:column;align-items:center;gap:2px;color:#e8c37f;background:transparent;border:0;border-radius:0;padding:0;line-height:1;margin:0;box-shadow:none;flex:none;}
 .school-header-clock svg{display:block;width:112px;height:27px;fill:currentColor;}
 .school-clock-date{font:500 10px/1.3 system-ui,sans-serif;color:#f0e1c3;white-space:nowrap;}
 html{scroll-padding-top:calc(var(--school-header-height,0px) + 8px);}
@@ -164,3 +164,6 @@ html{scroll-padding-top:calc(var(--school-header-height,0px) + 8px);}
 /* 2.69: the light theme uses a dark gold accent; the selected album tab needs light text. */
 :is(.desktop-home,.mobile-home)[data-theme="light"] .media-premium-tab[aria-pressed="true"]{color:#fff;}
 .search-result-excerpt{display:block;font-size:.81em;line-height:1.45;overflow-wrap:anywhere;margin-top:.25em;color:inherit;opacity:.92}
+/* A digitális óra önálló hátlap nélkül, az aktuális témához igazított felirattal. */
+[data-theme="light"] .school-header-clock{color:#795313;}
+[data-theme="light"] .school-clock-date{color:#40566c;}

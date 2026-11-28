@@ -1,4 +1,4 @@
-import { element } from "./dom.js?v=2.78";
+import { element } from "./dom.js?v=2.79";
 
 /** Közös állapotkezelés, de platformonként külön fejléc és megjelenítés.
  * Jelenleg nincsenek engedélyezett szerkeszthető tartalmi elemek, így

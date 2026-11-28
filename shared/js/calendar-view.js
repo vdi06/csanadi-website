@@ -1,7 +1,7 @@
-import { layoutNow } from "./layout-controller.js?v=2.78";
-import { element } from "./dom.js?v=2.78";
-import { eventsOnDay, fullDayLabel, monthLabel } from "./calendar-data.js?v=2.78";
-import { newsStoryHref } from "./news-panel.js?v=2.78";
+import { layoutNow } from "./layout-controller.js?v=2.79";
+import { element } from "./dom.js?v=2.79";
+import { eventsOnDay, fullDayLabel, monthLabel } from "./calendar-data.js?v=2.79";
+import { newsStoryHref } from "./news-panel.js?v=2.79";
 
 export function addCalendarDays(day, count) {
   const date = new Date(`${day}T12:00:00Z`);

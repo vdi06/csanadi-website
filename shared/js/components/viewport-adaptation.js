@@ -1,5 +1,5 @@
-import {recommendationPreview} from '../recommendations.js?v=2.78';
-import {element as el} from '../dom.js?v=2.78';
+import {createCompanionNavigator} from './companion-navigator.js?v=2.79';
+import {element as el} from '../dom.js?v=2.79';
 export function viewportState({width,height,visualHeight,visualWidth,scale=1,editing=false,segments=[]}){
  const keyboard=editing&&Math.abs(scale-1)<.05&&height-visualHeight>=120&&visualHeight<height*.8;
  const split=Array.isArray(segments)&&segments.length===2&&segments.every(s=>Number.isFinite(s.width)&&Number.isFinite(s.height)&&s.width>0&&s.height>0);
@@ -7,11 +7,11 @@ export function viewportState({width,height,visualHeight,visualWidth,scale=1,edi
  return {keyboard,visibleHeight:Math.max(1,Math.min(height,visualHeight||height)),visibleWidth:Math.max(1,Math.min(width,visualWidth||width)),segmented:split,segmentAxis:split?(horizontal?'horizontal':'vertical'):'none',segmentWidth:split?Math.min(...segments.map(s=>s.width)):width};
 }
 export function mountViewportAdaptation(root,config){
- const html=document.documentElement,v=window.visualViewport;let frame=0,compact=false,companion=null;let previewId=null;
+ const html=document.documentElement,v=window.visualViewport;let frame=0,compact=false,companion=null;
  function updateCompanion(state,segments){
   const main=root.querySelector('main');const pair=state.segmentAxis==='horizontal'?[...segments].sort((a,b)=>a.left-b.left):[];const right=pair[1];const usable=main&&right&&right.width>=220&&right.height>=160&&right.left>=0&&right.left+right.width<=innerWidth+2;
   if(!usable){companion?.remove();companion=null;return;}
-  if(!companion){companion=el('aside',{className:'segment-companion',attributes:{'aria-label':'Második kijelzőpanel'}},el('h2',{text:'Gyorselérés'}),el('p',{text:'A fő tartalom az első kijelzőpanelen marad.'}),el('nav',{},...[["Kezdőlap","#/kezdolap"],["Órarend","#/oldal/information-timetable"],["Naptár","#/oldal/news-calendar"],["Dokumentumok","#/oldal/information-documents"],["Kapcsolat","#/oldal/information-contact"]].map(([text,href])=>el('a',{text,attributes:{href}}))));if(config&&!config.gateOnly){const pages=[...config.menu.items.flatMap(g=>g.children.map(p=>({id:p.id,title:p.label}))),...config.pagePreview.localPages.map(p=>({id:p.id,title:p.title}))];const select=el('select',{attributes:{'aria-label':'Második panel oldala'}},...pages.map(p=>el('option',{text:p.title,attributes:{value:p.id}})));const content=el('div',{className:'segment-preview',attributes:{'aria-live':'polite'}});function draw(){previewId=select.value;const info=recommendationPreview(config,previewId);content.replaceChildren(el('h3',{text:info?.title||'Oldalbetekintés'}),el('p',{text:info?.intro||'Nincs előnézet.'}),el('ul',{},...(info?.highlights||[]).map(t=>el('li',{text:t}))),el('a',{text:'Megnyitás a fő panelen',attributes:{href:'#/oldal/'+previewId}}));}select.value=pages.some(p=>p.id===previewId)?previewId:pages[0]?.id||'';select.addEventListener('change',draw);companion.append(el('h2',{text:'Független oldalbetekintés'}),el('label',{},el('span',{text:'Oldal kiválasztása'}),select),content);draw();}root.append(companion);}
+  if(!companion){companion=el('aside',{className:'segment-companion',attributes:{'aria-label':'Második kijelzőpanel'}},el('h2',{text:'Gyorselérés'}),el('p',{text:'A fő tartalom az első kijelzőpanelen marad.'}),el('nav',{},...[["Kezdőlap","#/kezdolap"],["Órarend","#/oldal/information-timetable"],["Naptár","#/oldal/news-calendar"],["Dokumentumok","#/oldal/information-documents"],["Kapcsolat","#/oldal/information-contact"]].map(([text,href])=>el('a',{text,attributes:{href}}))));if(config&&!config.gateOnly)companion.append(createCompanionNavigator(config));root.append(companion);}
   companion.style.setProperty('--segment-left',Math.round(right.left)+'px');companion.style.setProperty('--segment-top',Math.round(Math.max(0,right.top||0))+'px');companion.style.setProperty('--segment-panel-width',Math.round(right.width)+'px');companion.style.setProperty('--segment-panel-height',Math.round(Math.min(right.height,state.visibleHeight))+'px');
  }
  function update(){frame=0;let segments=[];try{segments=Array.from(v?.segments||window.getWindowSegments?.()||[]);}catch{}

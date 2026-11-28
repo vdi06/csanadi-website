@@ -1,10 +1,10 @@
-import {fold} from "./components/search-text.js?v=2.78";
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.78";
-import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.78";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.78";
-import { calendarEntries } from "./calendar-data.js?v=2.78";
-import { newsStoryHref } from "./news-panel.js?v=2.78";
-import { checkedAdmissions } from "./admission-data.js?v=2.78";
+import {fold} from "./components/search-text.js?v=2.79";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.79";
+import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.79";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.79";
+import { calendarEntries } from "./calendar-data.js?v=2.79";
+import { newsStoryHref } from "./news-panel.js?v=2.79";
+import { checkedAdmissions } from "./admission-data.js?v=2.79";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */
@@ -15,12 +15,13 @@ export function normalizeSearchText(value) {
 
 const tokenize = (value) => normalizeSearchText(value).split(" ").filter(Boolean);
 const indexCache = new WeakMap();
+const resultCache = new WeakMap();
 const searchTerms=new WeakMap(), pendingSearch=new WeakMap();
 export function searchIndexReady(config){return config.pagePreview?.schema!=="split-1"||searchTerms.has(config);}
 export async function prepareSearchIndex(config){
  if(searchIndexReady(config))return;
  if(pendingSearch.has(config))return pendingSearch.get(config);
- const task=(async()=>{const ctl=new AbortController();const timeout=setTimeout(()=>ctl.abort(),8000);try{const u=new URL("../data/search/page-terms.json",import.meta.url);u.searchParams.set("v",config.release);const res=await fetch(u,{signal:ctl.signal});if(!res.ok)throw Error("Keresőindex nem elérhető.");const data=await res.json();const ids=[...Object.keys(config.pagePreview.catalog),...config.pagePreview.localPages.map(p=>p.id)];if(data.release!==config.release||Object.keys(data.terms||{}).length!==ids.length||ids.some(id=>typeof data.terms[id]!=="string"||data.terms[id].length>100000))throw Error("Hibás keresőindex.");searchTerms.set(config,data.terms);indexCache.delete(config);}finally{clearTimeout(timeout);}})();pendingSearch.set(config,task);try{return await task;}finally{if(pendingSearch.get(config)===task)pendingSearch.delete(config);}
+ const task=(async()=>{const ctl=new AbortController();const timeout=setTimeout(()=>ctl.abort(),8000);try{const u=new URL("../data/search/page-terms.json",import.meta.url);u.searchParams.set("v",config.release);const res=await fetch(u,{signal:ctl.signal});if(!res.ok)throw Error("Keresőindex nem elérhető.");const data=await res.json();const ids=[...Object.keys(config.pagePreview.catalog),...config.pagePreview.localPages.map(p=>p.id)];if(data.release!==config.release||Object.keys(data.terms||{}).length!==ids.length||ids.some(id=>typeof data.terms[id]!=="string"||data.terms[id].length>100000))throw Error("Hibás keresőindex.");searchTerms.set(config,data.terms);indexCache.delete(config);resultCache.delete(config);}finally{clearTimeout(timeout);}})();pendingSearch.set(config,task);try{return await task;}finally{if(pendingSearch.get(config)===task)pendingSearch.delete(config);}
 }
 
 /** Elütéstűrő, sávosan korlátozott Damerau–Levenshtein (OSA).
@@ -83,11 +84,12 @@ function createIndex(config) {
   const entries = [];
   const uniqueEntries = new Set();
   const categories = config.home.search.categories;
-  const add = ({ label, short = label, summary = "", category, href, details = "" }) => {
+  const add = ({ label, short = label, summary = "", category, href, details = "", aliases = [] }) => {
     const identity = `${normalizeSearchText(label)}|${href}`;
     if (uniqueEntries.has(identity)) return; // Ugyanaz a hír/oldal csak egyszer szerepelhet.
     uniqueEntries.add(identity);
-    const headline = new Set(tokenize(`${label} ${short}`));
+    const routeAliases=Array.isArray(aliases)?aliases.filter(x=>typeof x==='string'&&x.length<=120).slice(0,12):[];
+    const headline = new Set(tokenize(`${label} ${short} ${routeAliases.join(' ')}`));
     const description = new Set(tokenize(`${summary} ${category}`));
     const extra = new Set(tokenize(details));
     const vocabulary = new Set([...headline, ...description, ...extra]);
@@ -101,7 +103,7 @@ function createIndex(config) {
     entries.push({
       label, short, summary, category, href,
       headline:[...headline], description:[...description], extra:[...extra],
-      synonyms:[...synonyms], exactLabel:normalizeSearchText(label), previewSource:String(details).slice(0,12000)
+      synonyms:[...synonyms], exactLabel:normalizeSearchText(label), routeAliases:routeAliases.map(normalizeSearchText), previewSource:String(details).slice(0,12000)
     });
   };
 
@@ -149,7 +151,7 @@ function createIndex(config) {
     }
     const page = getMenuPage(config, node.id);
     if (!page) return;
-    add({ label:page.title, category:categories.page, href:menuPageHref(node.id),
+    add({ label:page.title, category:categories.page, href:menuPageHref(node.id), aliases:config.home.search.routeAliases?.[node.id],
       summary:parents.join(" · "),
       details:`${page.intro} ${searchTerms.get(config)?.[node.id]||""} ${pagePreviewSearchText(page.items)} ${(config.pagePreview.catalog?.[node.id]||config.pagePreview.pages[node.id])?.practicalNote?.text||""} ${config.contentExpansion?.activities?.[node.id]?.search||""}` });
   }
@@ -268,6 +270,7 @@ function matchingEntries(config, query, sportsOnly = false) {
       score += best;
     }
     if (allMatched) {
+      if(entry.routeAliases.includes(phrase))score+=650;
       if (entry.exactLabel === phrase) score += 500;
       else if (entry.exactLabel.startsWith(phrase)) score += 220;
       else if (entry.exactLabel.includes(phrase)) score += 160;
@@ -288,11 +291,12 @@ function matchingEntries(config, query, sportsOnly = false) {
 /** Teljes találatszám és minden kategória darabszáma a lapozás előtt.
  * A találati lista csak megjelenítéskor rövidül; az index nem vág le eredményeket. */
 export function searchSiteResults(config, query, { category = "all" } = {}) {
-  const matches = matchingEntries(config, query);
+  const key=normalizeSearchText(query);let matches;
+  if(config.__staticContent===true){let cache=resultCache.get(config);if(!cache){cache=new Map();resultCache.set(config,cache);}if(cache.has(key)){matches=cache.get(key);cache.delete(key);}else matches=matchingEntries(config,query);cache.set(key,matches);while(cache.size>8)cache.delete(cache.keys().next().value);}else matches=matchingEntries(config,query);
   const counts = Object.fromEntries(SEARCH_CATEGORIES.map(item => [item.id, 0]));
   counts.all = matches.length;
   for (const entry of matches) counts[entry.group]++;
-  const items = category === "all" ? matches : matches.filter(item => item.group === category);
+  const items = (category === "all" ? matches : matches.filter(item => item.group === category)).map(item=>({...item}));
   return { items, total:items.length, allTotal:matches.length,
     facets:SEARCH_CATEGORIES.filter(item => item.id === "all" || counts[item.id] > 0)
       .map(item => ({...item,count:counts[item.id]})) };

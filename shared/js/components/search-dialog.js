@@ -1,9 +1,9 @@
-import {highlightText} from "./search-text.js?v=2.78";
-import { element } from "../dom.js?v=2.78";
-import { trapTab } from "../focus.js?v=2.78";
-import { isolateModal } from "../modal.js?v=2.78";
-import { searchSiteResults, prepareSearchIndex, searchIndexReady } from "../search-index.js?v=2.78";
-import { filterSearchItems, navLink, searchItems } from "../shell.js?v=2.78";
+import {highlightText} from "./search-text.js?v=2.79";
+import { element } from "../dom.js?v=2.79";
+import { trapTab } from "../focus.js?v=2.79";
+import { isolateModal } from "../modal.js?v=2.79";
+import { searchSiteResults, prepareSearchIndex, searchIndexReady } from "../search-index.js?v=2.79";
+import { filterSearchItems, navLink, searchItems } from "../shell.js?v=2.79";
 
 /** One shared Spotlight implementation; platform-specific CSS and IDs are selected at mount. */
 export function createSearchDialog(platform, config, trigger, beforeOpen = () => {}) {
@@ -26,6 +26,7 @@ export function createSearchDialog(platform, config, trigger, beforeOpen = () =>
     attributes: { id: `${platform}-search-results-heading` } });
   const searchResults = element("div", { className: `${platform}-search-results`,
     attributes: { id: `${platform}-search-results-list`, role: "region", "aria-labelledby": `${platform}-search-results-heading` } });
+  const suggestions=element('div',{className:'search-suggestions-279',attributes:{'aria-label':'Keresési javaslatok'}});suggestions.hidden=true;
   const categoryFilters = element("div", { className: `${platform}-search-categories`,
     attributes: { role:"group", "aria-label":"Találatok kategória szerinti szűrése" } });
   categoryFilters.hidden = true;
@@ -67,7 +68,7 @@ export function createSearchDialog(platform, config, trigger, beforeOpen = () =>
   quickArea,
   element("div", { className: `${platform}-search-result-bar` },
     resultsTitle, searchCount),
-  categoryFilters, searchResults, loadMore,
+  suggestions, categoryFilters, searchResults, loadMore,
   element("div", { className: `${platform}-search-bottom` },
     element("p", { text: data.searchScopeHint }),
     element("span", { text: data.searchKeyboardHint })));
@@ -83,7 +84,7 @@ export function createSearchDialog(platform, config, trigger, beforeOpen = () =>
   function render() {
     const query = String(searchInput.value || "").trim();
     const searching = Boolean(query);
-    quickArea.hidden = searching;
+    quickArea.hidden = searching;suggestions.hidden=true;suggestions.replaceChildren();
     clearButton.hidden = !searchInput.value.length;
     resultsTitle.textContent = searching ? data.searchResultsTitle : data.searchFeaturedTitle;
     if(searching&&!searchIndexReady(config)){
@@ -112,6 +113,7 @@ export function createSearchDialog(platform, config, trigger, beforeOpen = () =>
       });
       return button;
     }) : []));
+    if(searching&&overall.items.length){const labels=[...new Set(overall.items.map(x=>x.label))].filter(x=>x.length<=120&&x.toLocaleLowerCase('hu')!==query.toLocaleLowerCase('hu')).slice(0,3);if(labels.length){suggestions.hidden=false;suggestions.append(element('strong',{text:'Keresési javaslatok: '}));for(const label of labels){const b=element('button',{text:label,className:'numbers-detail-button',attributes:{type:'button'}});b.addEventListener('click',()=>{searchInput.value=label;activeCategory='all';visibleLimit=12;render();searchInput.focus();});suggestions.append(b);}}}
     const visible = matches.slice(0, visibleLimit);
     searchResults.replaceChildren(...(visible.length ? visible.map((item,index) => {
       const link = navLink(item,`${platform}-search-result`);

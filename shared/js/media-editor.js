@@ -1,6 +1,6 @@
-import {packMediaCatalog} from "./data/media-catalog.js?v=2.78";
-import { element } from "./dom.js?v=2.78";
-import { checkedMediaCenter } from "./media-data.js?v=2.78";
+import {packMediaCatalog} from "./data/media-catalog.js?v=2.79";
+import { element } from "./dom.js?v=2.79";
+import { checkedMediaCenter } from "./media-data.js?v=2.79";
 const el=element;
 /** Csak localhost + ?media-editor=1 esetén hívott, offline JSON-exportáló szerkesztő. */
 export function createMediaEditor(scope,config,onUpdate){

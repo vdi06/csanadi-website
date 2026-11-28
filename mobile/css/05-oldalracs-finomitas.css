@@ -109,7 +109,7 @@
 .mobile-header{position:sticky;top:0;z-index:40;background:var(--background);}
 .mobile-toolbar{row-gap:5px;}
 .mobile-motto{margin-top:7px;}
-.school-header-clock{padding:5px 9px;}
+.school-header-clock{padding:0;}
 .school-header-clock svg{width:96px;height:24px;}
 .school-clock-date{display:none;}
 .mobile-story-track{top:var(--school-header-height,0px);}

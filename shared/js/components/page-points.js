@@ -1,2 +1,2 @@
-import {element} from '../dom.js?v=2.78';
+import {element} from '../dom.js?v=2.79';
 export function makePagePoints(cls){const details=point=>element('ul',{className:cls('card-details')},...point.details.map(text=>element('li',{text})));const point=record=>element('li',{className:cls('card-point')},record.href?element('a',{className:cls('card-point-title'),text:record.title,attributes:{href:record.href}}):element('strong',{className:cls('card-point-title'),text:record.title}),details(record));return {details,point};}

@@ -1,7 +1,7 @@
-import {makePagePoints} from "../shared/js/components/page-points.js?v=2.78";
-import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.78";
-import { element } from "../shared/js/dom.js?v=2.78";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.78";
+import {makePagePoints} from "../shared/js/components/page-points.js?v=2.79";
+import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.79";
+import { element } from "../shared/js/dom.js?v=2.79";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.79";
 
 const cls = (part) => `desktop-page-${part}`;
 const {details:detailsList,point:classicPoint}=makePagePoints(cls);

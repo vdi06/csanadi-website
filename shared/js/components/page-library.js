@@ -1,7 +1,7 @@
-import {bundleSnapshot,writeBundle} from '../state/personal-bundle.js?v=2.78';
-import {getPersonal,setPersonal,patchPersonal,PROFILES,personalRecommendations,cleanIds,HOME_ORDERS} from '../state/personal-preferences.js?v=2.78';
-import {element as el} from '../dom.js?v=2.78';
-import {downloadLocal,importLocalJSON,readLocalList,saveLocalList} from './local-files.js?v=2.78';
+import {bundleSnapshot,writeBundle} from '../state/personal-bundle.js?v=2.79';
+import {getPersonal,setPersonal,patchPersonal,PROFILES,personalRecommendations,cleanIds,HOME_ORDERS} from '../state/personal-preferences.js?v=2.79';
+import {element as el} from '../dom.js?v=2.79';
+import {downloadLocal,importLocalJSON,readLocalList,saveLocalList} from './local-files.js?v=2.79';
 const favKey='csanadi.page-favorites.v1',histKey='csanadi.page-history.v1',optKey='csanadi.page-history.enabled.v1';
 let fallbackFavorites=null,fallbackHistory=null,historyEnabled=true;
 export function moveRecent(items,id,max=20){return [id,...items.filter(x=>x!==id)].slice(0,max);}

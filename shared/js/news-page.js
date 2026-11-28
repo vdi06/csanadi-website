@@ -1,7 +1,7 @@
-import { element } from "./dom.js?v=2.78";
-import { menuPageHref } from "./menu-data.js?v=2.78";
-import { newsDateLabel, newsStoryHref, publicNewsForPage, newsProvenance } from "./news-panel.js?v=2.78";
-import { calendarEntries } from "./calendar-data.js?v=2.78";
+import { element } from "./dom.js?v=2.79";
+import { menuPageHref } from "./menu-data.js?v=2.79";
+import { newsDateLabel, newsStoryHref, publicNewsForPage, newsProvenance } from "./news-panel.js?v=2.79";
+import { calendarEntries } from "./calendar-data.js?v=2.79";
 
 /** Ugyanazok a központi, ellenőrzött JSON-hírek jelennek meg a kezdőlapon és
  * a menüből elérhető részletes oldalakon. Mobilon és asztalon közös adatlogika,

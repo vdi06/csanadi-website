@@ -1,8 +1,8 @@
-import {optionalData} from "./data/optional-data.js?v=2.78";
-import {validatePersonalData} from "./personal-data.js?v=2.78";
-import { element as el } from './dom.js?v=2.78';
-import { openContentDialog, closeContentDialog } from './content-expansion.js?v=2.78';
-import { menuPageHref } from './menu-data.js?v=2.78';
+import {optionalData} from "./data/optional-data.js?v=2.79";
+import {validatePersonalData} from "./personal-data.js?v=2.79";
+import { element as el } from './dom.js?v=2.79';
+import { openContentDialog, closeContentDialog } from './content-expansion.js?v=2.79';
+import { menuPageHref } from './menu-data.js?v=2.79';
 const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('hu-HU');
 export function bindSiteHelp(config,toggle,beforeOpen){
  const data=config.home.help;

@@ -1,7 +1,7 @@
-import { element as el } from './dom.js?v=2.78';
+import { element as el } from './dom.js?v=2.79';
 const norm = x => String(x ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('hu-HU');
 const btn = (text,cl='content-action')=>el('button',{text,className:cl,attributes:{type:'button'}});
-import { validateRecommendations, recommendPages, recommendationPreview, recommendationRoutes } from './recommendations.js?v=2.78';
+import { validateRecommendations, recommendPages, recommendationPreview, recommendationRoutes } from './recommendations.js?v=2.79';
 export function validateExpansion(config){
  const e=config.contentExpansion;if(!e||e.schema!=='1.0')throw new Error('Hiányzó tartalombővítési adatok.');
  const ids=new Set(config.menu.items.flatMap(g=>g.children.map(p=>p.id)));

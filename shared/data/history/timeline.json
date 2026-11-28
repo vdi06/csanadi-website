@@ -1,6 +1,6 @@
 {
   "schema": "history-1",
-  "release": "2.78",
+  "release": "2.79",
   "items": [
     {
       "period": "1897",
@@ -18,6 +18,12 @@
       "period": "1959–1960",
       "title": "Iskolák egyesítése",
       "description": "A korábbi fiú- és leányiskola ismét egy intézménnyé vált.",
+      "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
+    },
+    {
+      "period": "1986",
+      "title": "A speciális sportiskola előkészítése",
+      "description": "Az Állami Ifjúsági és Sporthivatal javaslatára megkezdődött a KSI sportolóinak oktatását szolgáló iskola tervezése.",
       "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
     },
     {
@@ -39,6 +45,12 @@
       "source": "https://hunskate.hu/hirek/szovetseg/25-eves-csanadi-iskola-olimpikon-korcsolyasokat-koszontottek?p=1911"
     },
     {
+      "period": "1991/1992",
+      "title": "Segédedzői képzés",
+      "description": "Gyakorlati fakultáció keretében vizsgával záruló képzés indult.",
+      "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
+    },
+    {
       "period": "2001/2002",
       "title": "Önállósodás",
       "description": "Az iskola és a KSI SE különvált; más egyesületek sportolói is megjelentek a tanulók között.",
@@ -54,6 +66,12 @@
       "period": "2007/2008",
       "title": "Sportiskolai kerettanterv",
       "description": "A korábban kísérleti helyi tanterv hivatalossá vált.",
+      "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
+    },
+    {
+      "period": "2009",
+      "title": "Pedagógiai Intézet",
+      "description": "Az intézet a sportiskolai kerettantervet alkalmazó iskoláknak szakmai és módszertani segítséget nyújtott.",
       "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
     },
     {

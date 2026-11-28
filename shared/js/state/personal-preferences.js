@@ -9,7 +9,11 @@ export function sanitizePersonal(raw,allowed){
  for(const [id,value] of Object.entries(raw?.groups||{}))if(allowed.has(id)&&cleanName(value))groups[id]=cleanName(value);
  const heights=Object.create(null);for(const [id,value] of Object.entries(raw?.heights||{}))if(allowed.has(id)&&Number.isInteger(value)&&value>=100&&value<=360&&value%20===0)heights[id]=value;
  const charts=Object.create(null);for(const [id,types] of Object.entries({documents:['bar','pie','donut','table'],collections:['bar','pie','donut','table'],schoolYears:['bar','line','table']}))if(types.includes(raw?.charts?.[id]))charts[id]=raw.charts[id];
- return {version:1,charts,heights,profile:Object.hasOwn(PROFILES,raw?.profile)?raw.profile:'visitor',folders,groups,homeOrder:Object.hasOwn(HOME_ORDERS,raw?.homeOrder)?raw.homeOrder:'default'};
+ const widths=Object.create(null);for(const [id,value] of Object.entries(raw?.widths||{}))if(allowed.has(id)&&Number.isInteger(value)&&value>=40&&value<=100&&value%5===0)widths[id]=value;
+ const chartSeries=Object.create(null);for(const id of ['documents','collections','schoolYears'])if(Array.isArray(raw?.chartSeries?.[id])&&raw.chartSeries[id].length<=60&&raw.chartSeries[id].every(x=>typeof x==='string'&&x.length<=150))chartSeries[id]=[...new Set(raw.chartSeries[id])];
+ const groupOrder=Array.isArray(raw?.groupOrder)?[...new Set(raw.groupOrder.map(cleanName).filter(Boolean))].slice(0,66):[];
+ const defaultChartOrder=['documents','collections','sports'];const chartOrder=Array.isArray(raw?.chartOrder)&&raw.chartOrder.length===3&&new Set(raw.chartOrder).size===3&&raw.chartOrder.every(x=>defaultChartOrder.includes(x))?[...raw.chartOrder]:defaultChartOrder;
+ return {version:1,charts,heights,widths,chartSeries,groupOrder,chartOrder,profile:Object.hasOwn(PROFILES,raw?.profile)?raw.profile:'visitor',folders,groups,homeOrder:Object.hasOwn(HOME_ORDERS,raw?.homeOrder)?raw.homeOrder:'default'};
 }
 export function allowedPages(config){return new Set([...config.menu.items.flatMap(g=>g.children.map(p=>p.id)),...config.pagePreview.localPages.map(p=>p.id)]);}
 export function getPersonal(config){let raw=memory;try{if(!raw)raw=JSON.parse(localStorage.getItem(KEY)||'null');}catch{}return sanitizePersonal(raw,allowedPages(config));}

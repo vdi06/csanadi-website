@@ -1,5 +1,5 @@
-import { element as el } from './dom.js?v=2.78';
-import { openContentDialog } from './content-expansion.js?v=2.78';
+import { element as el } from './dom.js?v=2.79';
+import { openContentDialog } from './content-expansion.js?v=2.79';
 const kindLabels={tiles:'Felfedezőpanel',steps:'Lépésenkénti útmutató',timeline:'Idővonal',quiz:'Interaktív tudáspróba',checklist:'Saját ellenőrzőlista',calculator:'Szemléltető kalkulátor'};
 const button=(text)=>el('button',{text,className:'btn activity-button',attributes:{type:'button'}});
 const cache=new WeakMap();

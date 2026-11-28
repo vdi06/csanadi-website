@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.78";
-import { informationView } from "../shared/js/information-data.js?v=2.78";
+import { element } from "../shared/js/dom.js?v=2.79";
+import { informationView } from "../shared/js/information-data.js?v=2.79";
 const el=element;
 const shortDate=(s)=>new Intl.DateTimeFormat("hu-HU",{month:"short",day:"numeric",timeZone:"Europe/Budapest"}).format(new Date(`${s}T12:00:00Z`));
 export function createMobileInformation(config) {

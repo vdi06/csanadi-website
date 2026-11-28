@@ -1,5 +1,5 @@
-import { element } from "../shared/js/dom.js?v=2.78";
-import { checkedTimetable, currentBell, budapestClock } from "../shared/js/timetable-data.js?v=2.78";
+import { element } from "../shared/js/dom.js?v=2.79";
+import { checkedTimetable, currentBell, budapestClock } from "../shared/js/timetable-data.js?v=2.79";
 const el=element;
 /** Asztali időrend: két blokk – hiteles csengetés és jól jelölt bemutató-órarend. */
 export function createDesktopTimetable(config){
