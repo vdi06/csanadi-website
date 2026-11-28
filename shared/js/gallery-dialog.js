@@ -1,5 +1,5 @@
-import { element } from "./dom.js?v=2.72";
-import { responsiveImageAttributes } from "./media-data.js?v=2.72";
+import { element } from "./dom.js?v=2.78";
+import { responsiveImageAttributes } from "./media-data.js?v=2.78";
 /** Natív képnéző: billentyűzet, simítás, valódi kétujjas nagyítás és egyujjas panorámázás. */
 export function createGalleryDialog(scope, platform) {
   const el=element;

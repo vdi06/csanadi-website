@@ -1,9 +1,13 @@
-import { element } from "./dom.js?v=2.72";
+import {recordDataLoad} from "./layout-health.js?v=2.78";
+import { element } from "./dom.js?v=2.78";
 /** A dokumentumot NEM új lapon, hanem saját vezérlésű <dialog> olvasóban nyitja. */
 const el=element;
 const pdfModuleUrl="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.mjs";
 const workerUrl="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.mjs";
 let pdfModulePromise=null;
+const textCache=new Map();
+async function documentText(item){if(Array.isArray(item.pageTexts))return item.pageTexts;if(item.pageTextSource!==true||!/^[a-z0-9-]+$/.test(item.id))throw Error('Nincs szöveges előnézet.');if(textCache.has(item.id))return textCache.get(item.id);const job=(async()=>{const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),8000),start=performance.now();try{const u=new URL('../data/documents/text/'+item.id+'.json',import.meta.url);const release=new URL(import.meta.url).searchParams.get('v')||'2.75';u.searchParams.set('v',release);const response=await fetch(u,{signal:ctl.signal});if(!response.ok)throw Error('Szöveges előnézet nem elérhető.');const text=await response.text(),data=JSON.parse(text);if(data.schema!=='document-text-1'||data.release!==release||data.id!==item.id||!Array.isArray(data.pageTexts)||data.pageTexts.length!==item.pageCount||data.pageTexts.some(t=>typeof t!=='string'||!t.trim()||t.length>30000))throw Error('Hibás szöveges előnézet.');recordDataLoad('domain','document-text',new TextEncoder().encode(text).length,performance.now()-start);return data.pageTexts;}catch(e){recordDataLoad('domain','document-text',0,0,false);throw e;}finally{clearTimeout(timer);}})();textCache.set(item.id,job);try{return await job;}catch(e){textCache.delete(item.id);throw e;}}
+
 const getPdfModule=()=> pdfModulePromise??=import(pdfModuleUrl).catch((err)=>{pdfModulePromise=null;throw err;});
 export function createDocumentReader(scope,platform){
   const uid=`${platform}-document-reader`;
@@ -38,7 +42,7 @@ export function createDocumentReader(scope,platform){
     pageLabel.textContent=`${page}. / ${count}. oldal`;zoomLabel.textContent=`${Math.round(zoom*100)}%`;
     minus.disabled=zoom<=.65;plus.disabled=zoom>=2.1;
     textToggle.setAttribute("aria-pressed",String(plain));
-    textToggle.disabled=!!current && current.kind==="pdf" && !doc && !current.pageTexts?.length;
+    textToggle.disabled=!!current && current.kind==="pdf" && !doc && !current.pageTexts?.length && !current.pageTextSource;
   }
   async function render(){
     if(!current||!dialog.open)return;
@@ -57,9 +61,8 @@ export function createDocumentReader(scope,platform){
       stage.append(el("img",{className:"document-reader-picture",attributes:{src:current.file,alt:current.title}}));
       showStatus("");return;
     }
-    if(plain && !doc && Array.isArray(current.pageTexts)) {
-      stage.append(el("div",{className:"document-reader-pdftext",attributes:{role:"document","aria-label":`${page}. oldal szövege`},text:current.pageTexts[page-1]}));
-      showStatus("A PDF szöveges előnézete látható.");return;
+    if(plain && !doc && (current.pageTextSource||Array.isArray(current.pageTexts))) {
+      showStatus('Szöveges előnézet betöltése…');try{const texts=await documentText(current);if(turn!==seq||!dialog.open)return;stage.append(el("div",{className:"document-reader-pdftext",attributes:{role:"document","aria-label":`${page}. oldal szövege`},text:texts[page-1]}));showStatus("A PDF szöveges előnézete látható.");}catch(e){if(turn!==seq||!dialog.open)return;showStatus('A szöveges előnézet átmenetileg nem érhető el.');const retry=el('button',{className:'document-reader-action',text:'Újrapróbálás',attributes:{type:'button'}});retry.addEventListener('click',render);stage.append(retry);}return;
     }
     if(plain && doc){
       showStatus("Oldalszöveg beolvasása…");

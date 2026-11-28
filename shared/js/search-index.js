@@ -1,16 +1,16 @@
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.72";
-import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.72";
-import { orderedSportSuccesses } from "./successes-data.js?v=2.72";
-import { calendarEntries } from "./calendar-data.js?v=2.72";
-import { newsStoryHref } from "./news-panel.js?v=2.72";
-import { checkedAdmissions } from "./admission-data.js?v=2.72";
+import {fold} from "./components/search-text.js?v=2.78";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.78";
+import { getMenuPage, menuPageHref, pagePreviewSearchText } from "./menu-data.js?v=2.78";
+import { orderedSportSuccesses } from "./successes-data.js?v=2.78";
+import { calendarEntries } from "./calendar-data.js?v=2.78";
+import { newsStoryHref } from "./news-panel.js?v=2.78";
+import { checkedAdmissions } from "./admission-data.js?v=2.78";
 
 /** A kereső az aktuálisan betöltött, ellenőrzött site.json-ból épít indexet.
  * A két külön kereső ugyanazt a találati sorrendet használja. */
 
 export function normalizeSearchText(value) {
-  return String(value ?? "").toLocaleLowerCase("hu-HU").normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+  return fold(value).replace(/[^a-z0-9]+/g, " ").trim();
 }
 
 const tokenize = (value) => normalizeSearchText(value).split(" ").filter(Boolean);
@@ -101,7 +101,7 @@ function createIndex(config) {
     entries.push({
       label, short, summary, category, href,
       headline:[...headline], description:[...description], extra:[...extra],
-      synonyms:[...synonyms], exactLabel:normalizeSearchText(label)
+      synonyms:[...synonyms], exactLabel:normalizeSearchText(label), previewSource:String(details).slice(0,12000)
     });
   };
 
@@ -243,22 +243,25 @@ function categoryId(entry) {
   return "other";
 }
 
+export function searchPreview(text,words){const raw=String(text||'').replace(/\s+/g,' ').trim();if(!raw)return '';const normalized=fold(raw);if(normalized.length!==raw.length)return raw.slice(0,180)+(raw.length>180?'…':'');const hits=words.map(w=>normalized.indexOf(w)).filter(i=>i>=0);const pos=hits.length?Math.min(...hits):0;let start=Math.max(0,pos-40);if(start){const i=raw.indexOf(' ',start);if(i>=0&&i<pos)start=i+1;}const end=Math.min(raw.length,start+180);return (start?'…':'')+raw.slice(start,end)+(end<raw.length?'…':'');}
 function matchingEntries(config, query, sportsOnly = false) {
   const words = [...new Set(tokenize(query))].slice(0, 8);
   if (!words.length) return [];
   const index = createIndex(config);
   const phrase = normalizeSearchText(query);
   const matches = [];
+  const scores=new Map(words.map(w=>[w,new Map()]));
+  const cachedScore=(word,token)=>{const m=scores.get(word);if(m.has(token))return m.get(token);const v=tokenScore(word,token);if(m.size<4000)m.set(token,v);return v;};
   for (const entry of index) {
     if (sportsOnly && !/\/sportsiker\/[a-z0-9-]+$/.test(entry.href)) continue;
     let score = 0;
     let allMatched = true;
     for (const word of words) {
       const best = Math.max(
-        ...entry.headline.map((token) => tokenScore(word, token) * 4),
-        ...entry.description.map((token) => tokenScore(word, token) * 2),
-        ...entry.extra.map((token) => tokenScore(word, token)),
-        ...entry.synonyms.map((token) => tokenScore(word, token) * 1.7),
+        ...entry.headline.map((token) => cachedScore(word, token) * 4),
+        ...entry.description.map((token) => cachedScore(word, token) * 2),
+        ...entry.extra.map((token) => cachedScore(word, token)),
+        ...entry.synonyms.map((token) => cachedScore(word, token) * 1.7),
         0
       );
       if (!best) { allMatched = false; break; }
@@ -266,14 +269,19 @@ function matchingEntries(config, query, sportsOnly = false) {
     }
     if (allMatched) {
       if (entry.exactLabel === phrase) score += 500;
+      else if (entry.exactLabel.startsWith(phrase)) score += 220;
       else if (entry.exactLabel.includes(phrase)) score += 160;
+      if(words.every(word=>entry.headline.some(token=>token===word)))score+=40;
+      const summary=normalizeSearchText(entry.summary);if(phrase.length>=3&&summary.includes(phrase))score+=25;
+      if(words.length>1&&entry.exactLabel.includes(words.join(' ')))score+=55;
+      if(phrase.length>=3&&summary.startsWith(phrase))score+=12;
       matches.push({ entry, score });
     }
   }
   matches.sort((a, b) => b.score - a.score || a.entry.label.localeCompare(b.entry.label, "hu"));
   return matches.map(({ entry }) => ({
     label:entry.label, short:entry.short, summary:entry.summary,
-    category:entry.category, href:entry.href, group:categoryId(entry)
+    category:entry.category, href:entry.href, group:categoryId(entry), preview:searchPreview(entry.previewSource,words)
   }));
 }
 

@@ -1,18 +1,20 @@
-import {hydrateDomains} from "./data/domain-loader.js?v=2.72";
-import {ensurePage} from "./data/page-loader.js?v=2.72";
-import {installHealth,recordConfig} from "./layout-health.js?v=2.72";
+import {mountViewportAdaptation} from "./components/viewport-adaptation.js?v=2.78";
+import {mountPageLibrary} from "./components/page-library.js?v=2.78";
+import {hydrateDomains} from "./data/domain-loader.js?v=2.78";
+import {ensurePage} from "./data/page-loader.js?v=2.78";
+import {installHealth,recordConfig} from "./layout-health.js?v=2.78";
 installHealth();
-import { trackLiveState, resetSwitchState, switchBlocked, captureState, restoreState, noteDeferred } from "./layout-state.js?v=2.72";
-import { configureLegacyMedia } from "./layout-controller.js?v=2.72";
-import { configureResponsiveMedia } from "./responsive-media.js?v=2.72";
-import { initLayout, layoutNow } from "./layout-controller.js?v=2.72";
-import { mountLayoutPanel } from "./layout-panel.js?v=2.72";
-import { loadActivity } from "./page-activities.js?v=2.72";
+import { trackLiveState, resetSwitchState, switchBlocked, captureState, restoreState, noteDeferred } from "./layout-state.js?v=2.78";
+import { configureLegacyMedia } from "./layout-controller.js?v=2.78";
+import { configureResponsiveMedia } from "./responsive-media.js?v=2.78";
+import { initLayout, layoutNow } from "./layout-controller.js?v=2.78";
+import { mountLayoutPanel } from "./layout-panel.js?v=2.78";
+import { loadActivity } from "./page-activities.js?v=2.78";
 /** Egyetlen HTML, közvetlen kezdőlap és valódi menüvégpont-útvonalak. */
-import { validateMenu, getMenuPage } from "./menu-data.js?v=2.72";
-import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.72";
-import { eventById } from "./calendar-data.js?v=2.72";
-import { mountOffline } from "./offline.js?v=2.72";
+import { validateMenu, getMenuPage } from "./menu-data.js?v=2.78";
+import { featuredSportSuccesses, archivedSportSuccesses } from "./successes-data.js?v=2.78";
+import { eventById } from "./calendar-data.js?v=2.78";
+import { mountOffline } from "./offline.js?v=2.78";
 const root = document.getElementById("app");
 const wantedRenderer = () => layoutNow().family;
 const settingsUrl = new URL("../data/site.json", import.meta.url);
@@ -95,7 +97,8 @@ function mountView(platform, module, selectedRoute, snapshot=null) {
   document.title = menuPage ? `${menuPage.title} – ${config.site.fullName}` : config.site.fullName;
   const destroyView = module.mount(root, config, selectedRoute) || (() => {});
   const destroyPanel = mountLayoutPanel(root,config);
-  destroyCurrent = () => { destroyPanel(); destroyView(); };
+  const destroyViewport=mountViewportAdaptation(root,config),destroyLibrary=mountPageLibrary(root,config,selectedRoute);
+  destroyCurrent = () => { destroyViewport(); destroyLibrary(); destroyPanel(); destroyView(); };
   if (routeChanged) window.scrollTo?.({ top:0, behavior:"instant" });
   if (hasRendered) {
     const searchDetailOpen = (selectedRoute.startsWith("page:news-") &&
@@ -118,7 +121,9 @@ function mountView(platform, module, selectedRoute, snapshot=null) {
   if(snapshot)restoreState(root,snapshot);
 }
 
-async function render(structural=false) {
+let inFlightRender=null;
+function render(structural=false){const key=JSON.stringify([location.hash,wantedRenderer(),structural]);if(inFlightRender?.key===key)return inFlightRender.promise;const promise=renderActual(structural).finally(()=>{if(inFlightRender?.promise===promise)inFlightRender=null;});inFlightRender={key,promise};return promise;}
+async function renderActual(structural=false) {
   if (!config) return;
   if(config.gateOnly&&!gateHash()){
     try{await ensureFullConfig();}catch(error){if(!initialized)throw error;console.warn('[Csanádi] Tartalmi konfiguráció nem elérhető.',error);initialized=false;failedAttempts++;showOffline();scheduleRetry();return;}

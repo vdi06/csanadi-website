@@ -8,6 +8,10 @@
       "detail": "Leány labdarúgás, V–VI. korcsoport, Diákolimpia országos döntő: 3. hely. Forrás: MDSZ, 2025. május 19."
     },
     {
+      "label": "2025 · bronz",
+      "detail": "Atlétika, V–VI. korcsoport, leány súlylökés csapatbajnokság, országos döntő: 3. hely. Forrás: MDSZ, 2025. október 13-i beszámoló."
+    },
+    {
       "label": "2026 · bronz",
       "detail": "Leány labdarúgás, III–IV. korcsoport, Szombathely: 3. hely. Forrás: MDSZ, 2026. június 1."
     }
@@ -15,6 +19,7 @@
   "source": "mdsz-2025",
   "sources": [
     "mdsz-2025",
-    "mdsz-2026"
+    "mdsz-2026",
+    "mdsz-2025-atletika"
   ]
 }

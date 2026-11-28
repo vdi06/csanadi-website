@@ -1,0 +1,121 @@
+/* Az 1.53-as menü két koncentrikus navigációs gyűrűje. */
+.desktop-wheel-overlay {
+  position:fixed; inset:0; z-index:1600; display:grid;
+  width:100vw; height:100dvh; padding:clamp(8px,1.5vw,20px);
+  overflow:hidden; isolation:isolate;
+}
+.desktop-wheel-overlay { place-items:center; }
+.desktop-wheel-overlay[hidden] { display:none !important; }
+.desktop-wheel-backdrop {
+  position:absolute; inset:0; z-index:0;
+  background:rgba(3,15,29,.36);
+  -webkit-backdrop-filter:blur(20px) saturate(.78) brightness(.88);
+  backdrop-filter:blur(20px) saturate(.78) brightness(.88);
+}
+.desktop-wheel-dialog {
+  position:relative; z-index:1; width:min(1200px,100vw); max-height:100dvh;
+  overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin;
+  border:0; border-radius:0; padding:0;
+  background:transparent; color:var(--text); box-shadow:none;
+}
+.desktop-wheel-stage {
+  position:relative; width:min(960px,calc(100vw - 100px)); min-width:640px;
+  aspect-ratio:1; margin:0 auto; isolation:isolate;
+  background:transparent;
+}
+.desktop-wheel-stage::before {
+  content:""; position:absolute; top:50%; left:50%; z-index:1;
+  width:58%; aspect-ratio:1; transform:translate(-50%,-50%);
+  border:2px solid color-mix(in srgb,var(--accent) 80%,transparent);
+  border-radius:50%; pointer-events:none;
+  box-shadow:0 0 17px color-mix(in srgb,var(--accent) 23%,transparent);
+}
+.desktop-wheel-ring-main,.desktop-wheel-ring-sub {
+  position:absolute; inset:0;
+  /* A teljes méretű külső navigációs réteg nem takarhatja el a belső gombokat. */
+  pointer-events:none;
+}
+.desktop-wheel-ring-main { z-index:3; }
+.desktop-wheel-ring-sub { z-index:2; }
+.desktop-wheel-ring-sub[hidden] { display:none !important; }
+.desktop-wheel-center-group {
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:14%; aspect-ratio:1; z-index:6;
+}
+.desktop-wheel-center {
+  display:grid; place-items:center; width:100%; height:100%; padding:0;
+  border:3px solid var(--accent); border-radius:50%; cursor:pointer;
+  background:var(--background);
+  box-shadow:0 0 0 7px color-mix(in srgb,var(--accent) 14%,transparent),
+    0 11px 32px rgba(0,0,0,.32), inset 0 2px 8px rgba(255,255,255,.08);
+}
+.desktop-wheel-center:is(:hover,:focus-visible) {
+  outline:3px solid var(--accent); outline-offset:7px;
+  box-shadow:0 0 0 9px color-mix(in srgb,var(--accent) 24%,transparent),
+    0 16px 36px rgba(0,0,0,.38);
+}
+.desktop-wheel-crest { width:72%; height:72%; object-fit:contain; }
+.desktop-wheel-home {
+  position:absolute; left:50%; bottom:-16px; transform:translateX(-50%);
+  display:grid; place-items:center; width:44px; height:44px;
+  border:2px solid var(--accent); border-radius:50%;
+  background:var(--surface); color:var(--text); text-decoration:none;
+  font-size:30px; font-weight:900; line-height:1;
+  box-shadow:0 8px 24px rgba(0,0,0,.35); cursor:pointer;
+}
+.desktop-wheel-home:is(:hover,:focus-visible) {
+  outline:2px solid var(--accent); outline-offset:3px;
+  background:color-mix(in srgb,var(--accent) 30%,var(--surface));
+}
+.desktop-wheel-node,.desktop-wheel-sub-node {
+  position:absolute; transform:translate(-50%,-50%);
+  width:clamp(96px,11vw,132px); min-height:58px; padding:9px 8px;
+  display:grid; place-items:center;
+  border:2px solid color-mix(in srgb,var(--accent) 72%,transparent);
+  border-radius:14px; background:var(--background); color:var(--text);
+  font:inherit; font-weight:850; font-size:clamp(11px,1vw,14px);
+  line-height:1.15; overflow-wrap:anywhere; text-align:center;
+  box-shadow:0 6px 17px rgba(0,0,0,.16);
+}
+.desktop-wheel-node { cursor:pointer; pointer-events:auto; }
+.desktop-wheel-node:hover, .desktop-wheel-node:focus-visible {
+  border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent);
+}
+.desktop-wheel-node.is-selected {
+  background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 54%,var(--surface)),
+    color-mix(in srgb,var(--accent) 22%,var(--surface)));
+  border-width:2px; border-color:var(--accent);
+}
+.desktop-wheel-sub-node { width:clamp(110px,12vw,144px); min-height:60px;
+  background:color-mix(in srgb,var(--surface) 90%,var(--accent));
+  border-color:var(--accent); font-size:clamp(10px,.96vw,13px); }
+.desktop-wheel-sub-node:is(button,a) { cursor:pointer; pointer-events:auto; text-decoration:none; }
+.desktop-wheel-sub-node:is(button,a):hover,.desktop-wheel-sub-node:is(button,a):focus-visible {
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent),
+    0 12px 25px rgba(0,0,0,.24);
+}
+
+/* A szerkesztő mód nem modal: a lap használható marad a lebegő fejléc alatt. */
+.desktop-edit-bar { position:fixed; z-index:1300; top:16px; right:24px;
+  display:flex; align-items:center; padding:16px 22px;
+  border:2px solid var(--accent); border-radius:18px;
+  background:var(--surface); color:var(--text); box-shadow:0 12px 42px rgba(0,0,0,.34); }
+.desktop-edit-bar[hidden] { display:none !important; }
+.desktop-edit-title { font-weight:850; font-size:15px; }
+.desktop-home[data-edit-mode="on"] .desktop-edit-toggle {
+  border-color:var(--accent); background:color-mix(in srgb,var(--accent) 34%,var(--surface)); }
+
+@media (min-width:768px) and (max-width:900px) {
+  .desktop-toolbar { grid-template-columns:minmax(0,1fr) 74px minmax(0,1fr); gap:10px; }
+  .desktop-toolbar .shell-tool { width:48px; height:50px; }
+  .desktop-toolbar .shell-crest-toggle { width:74px; height:74px; min-height:74px; }
+  .desktop-links-left, .desktop-links-right { gap:6px; }
+  .desktop-search-results { grid-template-columns:minmax(0,1fr); }
+  .desktop-wheel-stage { width:640px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .desktop-home { animation:none; }
+  .desktop-search-result,.desktop-search-close,.desktop-search-chip { transition:none; }
+  .desktop-search-result:hover,.desktop-search-close:hover,.desktop-search-chip:hover { transform:none; }
+}
+

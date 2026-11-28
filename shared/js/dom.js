@@ -1,4 +1,4 @@
-import { responsiveMediaAttributes } from "./responsive-media.js?v=2.72";
+import { responsiveMediaAttributes } from "./responsive-media.js?v=2.78";
 /** Kis DOM-építő: feliratok és útvonalak kizárólag JSON-adatokból érkeznek. */
 export function element(tag, { className = "", text, attributes = {} } = {}, ...children) {
   const node = document.createElement(tag);

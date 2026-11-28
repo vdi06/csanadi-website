@@ -122,3 +122,5 @@ export function eventById(config, id) {
   return calendarEntries(config).find((event) => event.id === id) ?? null;
 }
 
+
+export function addDayForExport(date){return new Date(Date.parse(date+"T00:00:00Z")+86400000).toISOString().slice(0,10);}

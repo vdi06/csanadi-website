@@ -1,8 +1,9 @@
-import { element } from "../dom.js?v=2.72";
-import { trapTab } from "../focus.js?v=2.72";
-import { isolateModal } from "../modal.js?v=2.72";
-import { searchSiteResults, prepareSearchIndex, searchIndexReady } from "../search-index.js?v=2.72";
-import { filterSearchItems, navLink, searchItems } from "../shell.js?v=2.72";
+import {highlightText} from "./search-text.js?v=2.78";
+import { element } from "../dom.js?v=2.78";
+import { trapTab } from "../focus.js?v=2.78";
+import { isolateModal } from "../modal.js?v=2.78";
+import { searchSiteResults, prepareSearchIndex, searchIndexReady } from "../search-index.js?v=2.78";
+import { filterSearchItems, navLink, searchItems } from "../shell.js?v=2.78";
 
 /** One shared Spotlight implementation; platform-specific CSS and IDs are selected at mount. */
 export function createSearchDialog(platform, config, trigger, beforeOpen = () => {}) {
@@ -121,6 +122,8 @@ export function createSearchDialog(platform, config, trigger, beforeOpen = () =>
           element("strong", { className:`${platform}-search-result-title`, text:item.label }),
           element("span", { className:`${platform}-search-result-summary`, text:item.summary })),
         element("span", { className:`${platform}-search-result-glyph`,text:data.searchResultGlyph,attributes:{"aria-hidden":"true"} }));
+      highlightText(link.querySelector(`.${platform}-search-result-title`),item.label,query);highlightText(link.querySelector(`.${platform}-search-result-summary`),item.summary,query);
+      if(searching&&item.preview&&item.preview!==item.summary){const excerpt=element('span',{className:'search-result-excerpt'});highlightText(excerpt,item.preview,query);link.querySelector(`.${platform}-search-result-copy`).append(excerpt);}
       return link;
     }) : [element("div", {className:`${platform}-search-empty`,attributes:{role:"status"}},
       element("strong",{text:searching ? "Nincs találat ebben a kategóriában" : "Nincs gyorselérhetőség"}),
@@ -166,6 +169,7 @@ export function createSearchDialog(platform, config, trigger, beforeOpen = () =>
     searchInput.value = ""; activeCategory="all"; visibleLimit=12; render(); searchInput.focus({ preventScroll: true });
   });
   loadMore.addEventListener("click", () => {visibleLimit+=12;render();loadMore.focus({preventScroll:true});});
+  const shortcut=event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==="k"&&![...document.querySelectorAll("dialog[open],[role=dialog][aria-modal=true]")].some(node=>node.getClientRects().length&&!node.closest("[hidden]"))){event.preventDefault();open();}};document.addEventListener("keydown",shortcut);
   trigger.addEventListener("click", () => overlay.hidden ? open() : close());
   closeButton.addEventListener("click", () => close());
   backdrop.addEventListener("click", () => close());
@@ -180,5 +184,5 @@ export function createSearchDialog(platform, config, trigger, beforeOpen = () =>
   overlay.addEventListener("click", (event) => {
     if (event.target.closest?.("a[href]")) close(false);
   });
-  overlay.dataset.adaptiveState='search';overlay.adaptiveSnapshot=()=>({query:searchInput.value,category:activeCategory,limit:visibleLimit,open:!overlay.hidden,start:searchInput.selectionStart,end:searchInput.selectionEnd});overlay.adaptiveRestore=(state)=>{searchInput.value=state.query;activeCategory=state.category;visibleLimit=state.limit;if(state.open){open();try{searchInput.setSelectionRange(state.start,state.end);}catch{}}};return { overlay, close, destroy: () => close(false) };
+  overlay.dataset.adaptiveState='search';overlay.adaptiveSnapshot=()=>({query:searchInput.value,category:activeCategory,limit:visibleLimit,open:!overlay.hidden,start:searchInput.selectionStart,end:searchInput.selectionEnd});overlay.adaptiveRestore=(state)=>{searchInput.value=state.query;activeCategory=state.category;visibleLimit=state.limit;if(state.open){open();try{searchInput.setSelectionRange(state.start,state.end);}catch{}}};return { overlay, close, destroy: () => {document.removeEventListener("keydown",shortcut);close(false);} };
 }

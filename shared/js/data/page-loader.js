@@ -1,5 +1,5 @@
-import {validatePageContent} from "../menu-data.js?v=2.72";
-import {recordDataLoad} from "../layout-health.js?v=2.72";
+import {validatePageContent} from "../menu-data.js?v=2.78";
+import {recordDataLoad} from "../layout-health.js?v=2.78";
 const pending=new WeakMap();
 const base=new URL("../../data/",import.meta.url);
 export async function ensurePage(config,routeId){

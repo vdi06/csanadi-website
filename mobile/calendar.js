@@ -1,6 +1,7 @@
-import { element } from "../shared/js/dom.js?v=2.72";
-import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.72";
-import { makeCalendarMonth, makeCalendarWeek, createCalendarPopover, schoolWeeks, weekLabel } from "../shared/js/calendar-view.js?v=2.72";
+import {makeCalendarAgenda} from "../shared/js/components/calendar-agenda.js?v=2.78";
+import { element } from "../shared/js/dom.js?v=2.78";
+import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.78";
+import { makeCalendarMonth, makeCalendarWeek, createCalendarPopover, schoolWeeks, weekLabel } from "../shared/js/calendar-view.js?v=2.78";
 
 /** Telefonon kizárólag heti és havi mód, jól olvasható, kattintható napokkal. */
 export function createMobileCalendar(config,onInteract=()=>{}) {
@@ -49,6 +50,7 @@ export function createMobileCalendar(config,onInteract=()=>{}) {
       element("p",{text:calendar.intro}),
       element("p",{className:"school-calendar-hint",text:calendar.detailsHint})),
     switcher,period,host));
+  section.append(makeCalendarAgenda(config,onInteract));
   function render() {
     popover.close();
     const isMonth=mode==="month";

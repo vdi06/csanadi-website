@@ -1,0 +1,728 @@
+{
+  "schema": "local-document-audit-1",
+  "from": "2.77",
+  "to": "2.78",
+  "note": "Két helyi csomag összehasonlítása, nem hivatalos iratverzió vagy hatályossági igazolás.",
+  "items": [
+    {
+      "id": "adatkezelesi-szabalyzat",
+      "change": "unchanged",
+      "before": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      },
+      "after": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      }
+    },
+    {
+      "id": "adatkezelesi-tajekoztato",
+      "change": "unchanged",
+      "before": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      },
+      "after": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      }
+    },
+    {
+      "id": "adatvedelmi-technikai-ismerteto",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-23",
+        "file": "shared/assets/documents/adatvedelmi_technikai_ismerteto.txt",
+        "sha256": "0a7d91b0e1d03378743b5808517e057dc344f264c2576ed7fc5aaa71a6c361e4",
+        "size": 969
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-23",
+        "file": "shared/assets/documents/adatvedelmi_technikai_ismerteto.txt",
+        "sha256": "0a7d91b0e1d03378743b5808517e057dc344f264c2576ed7fc5aaa71a6c361e4",
+        "size": 969
+      }
+    },
+    {
+      "id": "akadalymentesseg-fejlesztesi-allapot",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-23",
+        "file": "shared/assets/documents/akadalymentesseg_fejlesztesi_allapot.txt",
+        "sha256": "88d3b9b9cda9c6ef3059e7918e597cdda3aa50724c2a94169a6bcbfb9d7479a1",
+        "size": 979
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-23",
+        "file": "shared/assets/documents/akadalymentesseg_fejlesztesi_allapot.txt",
+        "sha256": "88d3b9b9cda9c6ef3059e7918e597cdda3aa50724c2a94169a6bcbfb9d7479a1",
+        "size": 979
+      }
+    },
+    {
+      "id": "dokumentumkozpont-utmutato",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-23",
+        "file": "shared/assets/documents/dokumentumkozpont_utmutato.pdf",
+        "sha256": "72599ad9b2ba20839bd2a92859e61abb6fe6552624e30ac013b45b6805ed337d",
+        "size": 46622
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-23",
+        "file": "shared/assets/documents/dokumentumkozpont_utmutato.pdf",
+        "sha256": "72599ad9b2ba20839bd2a92859e61abb6fe6552624e30ac013b45b6805ed337d",
+        "size": 46622
+      }
+    },
+    {
+      "id": "dokumentumkozzetetel-ellenorzo",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-23",
+        "file": "shared/assets/documents/dokumentumkozzetetel_ellenorzo.txt",
+        "sha256": "4b898590ceee794fd2c5d437c59c147308b7955782f907fade7cb170684c8415",
+        "size": 900
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-23",
+        "file": "shared/assets/documents/dokumentumkozzetetel_ellenorzo.txt",
+        "sha256": "4b898590ceee794fd2c5d437c59c147308b7955782f907fade7cb170684c8415",
+        "size": 900
+      }
+    },
+    {
+      "id": "felveteli-dokumentumok",
+      "change": "unchanged",
+      "before": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      },
+      "after": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      }
+    },
+    {
+      "id": "felveteli-tajekoztato",
+      "change": "unchanged",
+      "before": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      },
+      "after": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      }
+    },
+    {
+      "id": "guide-digital-01",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_digital_01.txt",
+        "sha256": "f7dd7c1b3b4809f4c7ea3887545cd0c15606e55bdb53078ff458709cb23eb8aa",
+        "size": 492
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_digital_01.txt",
+        "sha256": "f7dd7c1b3b4809f4c7ea3887545cd0c15606e55bdb53078ff458709cb23eb8aa",
+        "size": 492
+      }
+    },
+    {
+      "id": "guide-digital-02",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_digital_02.txt",
+        "sha256": "5f67e4e51c2591c072ade12c64ed13ba8a9ba71d060c6746bae7a38806b6bd44",
+        "size": 462
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_digital_02.txt",
+        "sha256": "5f67e4e51c2591c072ade12c64ed13ba8a9ba71d060c6746bae7a38806b6bd44",
+        "size": 462
+      }
+    },
+    {
+      "id": "guide-digital-03",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_digital_03.txt",
+        "sha256": "ff0682d2c5335887fcf6c570c39a9529e03dde7af5512047af8fd01792690efc",
+        "size": 432
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_digital_03.txt",
+        "sha256": "ff0682d2c5335887fcf6c570c39a9529e03dde7af5512047af8fd01792690efc",
+        "size": 432
+      }
+    },
+    {
+      "id": "guide-digital-05",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_digital_05.txt",
+        "sha256": "398a7dc3ee529a25080041eb357ef60ae43fd576c815ec9125bbf50d608a19f5",
+        "size": 479
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_digital_05.txt",
+        "sha256": "398a7dc3ee529a25080041eb357ef60ae43fd576c815ec9125bbf50d608a19f5",
+        "size": 479
+      }
+    },
+    {
+      "id": "guide-digital-adat",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_digital-adat.txt",
+        "sha256": "df25bd02849328fe1ae55da4ab33de2bf928340c1b2578dd90032a1b057d21c7",
+        "size": 684
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_digital-adat.txt",
+        "sha256": "df25bd02849328fe1ae55da4ab33de2bf928340c1b2578dd90032a1b057d21c7",
+        "size": 684
+      }
+    },
+    {
+      "id": "guide-digital-mentes",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_digital-mentes.txt",
+        "sha256": "3a39c81a42c831b7ffdb88517cc513827a9ac47f12bc6c234f377d201123d528",
+        "size": 684
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_digital-mentes.txt",
+        "sha256": "3a39c81a42c831b7ffdb88517cc513827a9ac47f12bc6c234f377d201123d528",
+        "size": 684
+      }
+    },
+    {
+      "id": "guide-felveteli-terv",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_felveteli-terv.txt",
+        "sha256": "63db2164509a48ca453b8bb1154a9fa1ff1549b3f5092506b38863cd0003a248",
+        "size": 710
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_felveteli-terv.txt",
+        "sha256": "63db2164509a48ca453b8bb1154a9fa1ff1549b3f5092506b38863cd0003a248",
+        "size": 710
+      }
+    },
+    {
+      "id": "guide-kozosseg-projekt",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_kozosseg-projekt.txt",
+        "sha256": "c23fcf68e8fd3b6363237034063ab023cc67ad7e5784bdce5cd1c4fdcf6670a4",
+        "size": 731
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_kozosseg-projekt.txt",
+        "sha256": "c23fcf68e8fd3b6363237034063ab023cc67ad7e5784bdce5cd1c4fdcf6670a4",
+        "size": 731
+      }
+    },
+    {
+      "id": "guide-learning-01",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_learning_01.txt",
+        "sha256": "2c3becf4107ef37646054c2b1701552a51ec58f948d03bc915e7bccc81caf7a6",
+        "size": 462
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_learning_01.txt",
+        "sha256": "2c3becf4107ef37646054c2b1701552a51ec58f948d03bc915e7bccc81caf7a6",
+        "size": 462
+      }
+    },
+    {
+      "id": "guide-learning-02",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_learning_02.txt",
+        "sha256": "7818637e984878b70030d10d29b553e3f8fe4cc751e16d212c41f74d0d148574",
+        "size": 473
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_learning_02.txt",
+        "sha256": "7818637e984878b70030d10d29b553e3f8fe4cc751e16d212c41f74d0d148574",
+        "size": 473
+      }
+    },
+    {
+      "id": "guide-learning-05",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_learning_05.txt",
+        "sha256": "a1fdef2270a6aa558d1af3f4544b58f8a359e9a58f9b669dcb431139ddab9643",
+        "size": 454
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_learning_05.txt",
+        "sha256": "a1fdef2270a6aa558d1af3f4544b58f8a359e9a58f9b669dcb431139ddab9643",
+        "size": 454
+      }
+    },
+    {
+      "id": "guide-learning-06",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_learning_06.txt",
+        "sha256": "64bcf3b06726a3b24274ead34644a745eb1cf0c70eaf4f19215005098315dbf6",
+        "size": 452
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_learning_06.txt",
+        "sha256": "64bcf3b06726a3b24274ead34644a745eb1cf0c70eaf4f19215005098315dbf6",
+        "size": 452
+      }
+    },
+    {
+      "id": "guide-learning-08",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_learning_08.txt",
+        "sha256": "b3589cf9c6fe71cb81c5f6c28a89f02b43ddbcd98643b8fd0e7b7131e22f035b",
+        "size": 437
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_learning_08.txt",
+        "sha256": "b3589cf9c6fe71cb81c5f6c28a89f02b43ddbcd98643b8fd0e7b7131e22f035b",
+        "size": 437
+      }
+    },
+    {
+      "id": "guide-learning-13",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_learning_13.txt",
+        "sha256": "f83caf60875179b831998141ff746c78d0dff65f2b391aa63c3ec724f9111975",
+        "size": 478
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_learning_13.txt",
+        "sha256": "f83caf60875179b831998141ff746c78d0dff65f2b391aa63c3ec724f9111975",
+        "size": 478
+      }
+    },
+    {
+      "id": "guide-sport-adatok",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_sport-adatok.txt",
+        "sha256": "1c5df6a8b858600f766c7db8864c7e72eb5ea66720d766a27789b49c6c68bef8",
+        "size": 678
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_sport-adatok.txt",
+        "sha256": "1c5df6a8b858600f766c7db8864c7e72eb5ea66720d766a27789b49c6c68bef8",
+        "size": 678
+      }
+    },
+    {
+      "id": "guide-sport-forras",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_sport-forras.txt",
+        "sha256": "c0281f75b72a85dc51753bf8ad536387c010d50a4804d4a42f5e776fc3587ca5",
+        "size": 663
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_sport-forras.txt",
+        "sha256": "c0281f75b72a85dc51753bf8ad536387c010d50a4804d4a42f5e776fc3587ca5",
+        "size": 663
+      }
+    },
+    {
+      "id": "guide-sport-megfigyeles",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_sport-megfigyeles.txt",
+        "sha256": "134d0fd49e0aa9dbf94bd43bdcf2bf69d3294a961ed23190547e64ea4992cf32",
+        "size": 685
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_sport-megfigyeles.txt",
+        "sha256": "134d0fd49e0aa9dbf94bd43bdcf2bf69d3294a961ed23190547e64ea4992cf32",
+        "size": 685
+      }
+    },
+    {
+      "id": "guide-sport-napirend",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_sport-napirend.txt",
+        "sha256": "392c45170e2f37acddd183d75db44a1f44b30fc86b85b7cea6f45ecf34965767",
+        "size": 691
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_sport-napirend.txt",
+        "sha256": "392c45170e2f37acddd183d75db44a1f44b30fc86b85b7cea6f45ecf34965767",
+        "size": 691
+      }
+    },
+    {
+      "id": "guide-subjects-01",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_subjects_01.txt",
+        "sha256": "6adb2c20c9e7720be1a4ae656a3ba05ca41c440bcea828e9370d3d8503156f81",
+        "size": 434
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_subjects_01.txt",
+        "sha256": "6adb2c20c9e7720be1a4ae656a3ba05ca41c440bcea828e9370d3d8503156f81",
+        "size": 434
+      }
+    },
+    {
+      "id": "guide-subjects-07",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_subjects_07.txt",
+        "sha256": "9277ead3526f9e9d9b4c134ad02de703f95a1456ecd18758660b904724709d8d",
+        "size": 450
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_subjects_07.txt",
+        "sha256": "9277ead3526f9e9d9b4c134ad02de703f95a1456ecd18758660b904724709d8d",
+        "size": 450
+      }
+    },
+    {
+      "id": "guide-subjects-10",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_subjects_10.txt",
+        "sha256": "98f24bf01906571b102efcf0ae6932e269f5e6a53690547a75c1cd30b416806d",
+        "size": 475
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_subjects_10.txt",
+        "sha256": "98f24bf01906571b102efcf0ae6932e269f5e6a53690547a75c1cd30b416806d",
+        "size": 475
+      }
+    },
+    {
+      "id": "guide-subjects-30",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_subjects_30.txt",
+        "sha256": "20e4579148f8ee433b8e3db4fbd6dfbc4c6732f22463a51337ac83eb555ddc0d",
+        "size": 481
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_subjects_30.txt",
+        "sha256": "20e4579148f8ee433b8e3db4fbd6dfbc4c6732f22463a51337ac83eb555ddc0d",
+        "size": 481
+      }
+    },
+    {
+      "id": "guide-tanulas-cel",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_tanulas-cel.txt",
+        "sha256": "aa69e331f17d2c8861ff78d9f7dddd7e5f8a5eed5232034b1735ac67499b1eb2",
+        "size": 628
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_tanulas-cel.txt",
+        "sha256": "aa69e331f17d2c8861ff78d9f7dddd7e5f8a5eed5232034b1735ac67499b1eb2",
+        "size": 628
+      }
+    },
+    {
+      "id": "guide-tanulas-jegyzet",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_tanulas-jegyzet.txt",
+        "sha256": "afa295468e8b869c480529fce6008c497b1240a87fd01991d8c2a1b284e38135",
+        "size": 672
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-24",
+        "file": "shared/assets/documents/segedlet_tanulas-jegyzet.txt",
+        "sha256": "afa295468e8b869c480529fce6008c497b1240a87fd01991d8c2a1b284e38135",
+        "size": 672
+      }
+    },
+    {
+      "id": "hazirend",
+      "change": "unchanged",
+      "before": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      },
+      "after": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      }
+    },
+    {
+      "id": "helyi-tantervek",
+      "change": "unchanged",
+      "before": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      },
+      "after": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      }
+    },
+    {
+      "id": "honlap-hasznalati-utmutato",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-27",
+        "file": "shared/assets/documents/honlap_hasznalati_utmutato.txt",
+        "sha256": "7b77aa03372801acb226d38e203788c2929c2b2df9df55875660a833bdad198d",
+        "size": 3625
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-27",
+        "file": "shared/assets/documents/honlap_hasznalati_utmutato.txt",
+        "sha256": "7b77aa03372801acb226d38e203788c2929c2b2df9df55875660a833bdad198d",
+        "size": 3625
+      }
+    },
+    {
+      "id": "honlap-technikai-impresszum",
+      "change": "unchanged",
+      "before": {
+        "status": "available",
+        "catalog_date": "2026-11-23",
+        "file": "shared/assets/documents/honlap_technikai_impresszum.txt",
+        "sha256": "808aeba65af5234341adccc130c4d9f06b658bbaf36a3405022a539b2319398a",
+        "size": 910
+      },
+      "after": {
+        "status": "available",
+        "catalog_date": "2026-11-23",
+        "file": "shared/assets/documents/honlap_technikai_impresszum.txt",
+        "sha256": "808aeba65af5234341adccc130c4d9f06b658bbaf36a3405022a539b2319398a",
+        "size": 910
+      }
+    },
+    {
+      "id": "kozzeteteli-lista",
+      "change": "unchanged",
+      "before": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      },
+      "after": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      }
+    },
+    {
+      "id": "munkaterv",
+      "change": "unchanged",
+      "before": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      },
+      "after": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      }
+    },
+    {
+      "id": "pedagogiai-program",
+      "change": "unchanged",
+      "before": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      },
+      "after": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      }
+    },
+    {
+      "id": "szmsz",
+      "change": "unchanged",
+      "before": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      },
+      "after": {
+        "status": "pending",
+        "catalog_date": null,
+        "file": null,
+        "sha256": null,
+        "size": null
+      }
+    }
+  ]
+}

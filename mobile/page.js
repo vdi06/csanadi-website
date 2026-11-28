@@ -1,19 +1,10 @@
-import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.72";
-import { element } from "../shared/js/dom.js?v=2.72";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.72";
+import {makePagePoints} from "../shared/js/components/page-points.js?v=2.78";
+import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.78";
+import { element } from "../shared/js/dom.js?v=2.78";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.78";
 
 const css = (name) => `mobile-page-${name}`;
-function pointDetails(point) {
-  return element("ul", { className:css("card-details") },
-    ...point.details.map((detail) => element("li", { text:detail })));
-}
-function item(point) {
-  return element("li", { className:css("card-point") },
-    point.href ? element("a",{className:css("card-point-title"),text:point.title,
-      attributes:{href:point.href}}) :
-      element("strong", { className:css("card-point-title"), text:point.title }),
-    pointDetails(point));
-}
+const {details:pointDetails,point:item}=makePagePoints(css);
 function mobileGroup(group, kind) {
   const title = element("h3", { className:css("card-group-title"), text:group.title });
   const section = element("section", { className:css("card-group") }, title);

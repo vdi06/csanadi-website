@@ -1,18 +1,10 @@
-import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.72";
-import { element } from "../shared/js/dom.js?v=2.72";
-import { getMenuPage } from "../shared/js/menu-data.js?v=2.72";
+import {makePagePoints} from "../shared/js/components/page-points.js?v=2.78";
+import { collectionView, relatedView, openContentDialog } from "../shared/js/content-expansion.js?v=2.78";
+import { element } from "../shared/js/dom.js?v=2.78";
+import { getMenuPage } from "../shared/js/menu-data.js?v=2.78";
 
 const cls = (part) => `desktop-page-${part}`;
-const detailsList = (point) => element("ul", { className:cls("card-details") },
-  ...point.details.map((detail) => element("li", { text:detail })));
-
-function classicPoint(point) {
-  return element("li", { className:cls("card-point") },
-    point.href ? element("a",{className:cls("card-point-title"),text:point.title,
-      attributes:{href:point.href}}) :
-      element("strong", { className:cls("card-point-title"), text:point.title }),
-    detailsList(point));
-}
+const {details:detailsList,point:classicPoint}=makePagePoints(cls);
 
 function richGroup(group, kind) {
   const heading = element("h3", { className:cls("card-group-title"), text:group.title });

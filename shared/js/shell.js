@@ -1,5 +1,5 @@
-import { element } from "./dom.js?v=2.72";
-import { searchSite } from "./search-index.js?v=2.72";
+import { element } from "./dom.js?v=2.78";
+import { searchSite } from "./search-index.js?v=2.78";
 
 /** Kizárólag közös adatelérés, ikonok és lábléc.
  * Fejlécet itt szándékosan NEM építünk: azt a két platform a saját fájljában teszi. */

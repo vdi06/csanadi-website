@@ -1,0 +1,72 @@
+{
+  "schema": "history-1",
+  "release": "2.78",
+  "items": [
+    {
+      "period": "1897",
+      "title": "Az oktatás kezdete",
+      "description": "Az iskola átalakított bérházban kezdte működését.",
+      "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
+    },
+    {
+      "period": "1904",
+      "title": "Az iskolaépület átadása",
+      "description": "Átadták a mai iskolaépületet.",
+      "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
+    },
+    {
+      "period": "1959–1960",
+      "title": "Iskolák egyesítése",
+      "description": "A korábbi fiú- és leányiskola ismét egy intézménnyé vált.",
+      "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
+    },
+    {
+      "period": "1987. szeptember 1.",
+      "title": "Sportiskolai profil",
+      "description": "Az intézmény a KSI bázisiskolájává vált.",
+      "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
+    },
+    {
+      "period": "1988",
+      "title": "Gimnáziumi oktatás",
+      "description": "Megindult a gimnáziumi képzés.",
+      "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
+    },
+    {
+      "period": "1989. május 25.",
+      "title": "Névadás",
+      "description": "Az iskola felvette Csanádi Árpád nevét.",
+      "source": "https://hunskate.hu/hirek/szovetseg/25-eves-csanadi-iskola-olimpikon-korcsolyasokat-koszontottek?p=1911"
+    },
+    {
+      "period": "2001/2002",
+      "title": "Önállósodás",
+      "description": "Az iskola és a KSI SE különvált; más egyesületek sportolói is megjelentek a tanulók között.",
+      "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
+    },
+    {
+      "period": "2004/2005",
+      "title": "Nyelvi előkészítés",
+      "description": "A képzés nyelvi előkészítő évfolyammal bővült.",
+      "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
+    },
+    {
+      "period": "2007/2008",
+      "title": "Sportiskolai kerettanterv",
+      "description": "A korábban kísérleti helyi tanterv hivatalossá vált.",
+      "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
+    },
+    {
+      "period": "2013. január 1.",
+      "title": "Állami fenntartás",
+      "description": "Az iskola állami fenntartásba került.",
+      "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
+    },
+    {
+      "period": "2017. január 1.",
+      "title": "Fenntartóváltás",
+      "description": "A fenntartói feladatokat a Közép-Pesti Tankerületi Központ vette át.",
+      "source": "https://ksi.hu/hirek/kozpont/szaz-eve-szuletett-csanadi-arpad"
+    }
+  ]
+}

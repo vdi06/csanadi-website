@@ -24,3 +24,6 @@ html[data-layout-family=tablet] .tablet-quick-nav a[aria-current]{outline:2px so
 .tablet-app .tablet-quick-nav a:focus-visible{outline-offset:2px;}
 
 .tablet-section-menu{padding:.35rem 1rem;max-width:100%;color:var(--text);background:var(--surface)}.tablet-section-menu summary{cursor:pointer;min-height:var(--touch-target,44px);display:list-item;padding:.6rem;overflow-wrap:anywhere}.tablet-section-menu nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,var(--tablet-nav-min,224px)),1fr));gap:var(--tablet-nav-gap,8px)}.tablet-section-menu a{min-height:var(--touch-target,44px);padding:.65rem;text-decoration:underline;color:inherit;overflow-wrap:anywhere}.tablet-section-menu a[aria-current=page]{font-weight:800;border-inline-start:3px solid var(--accent)}
+
+html[data-renderer=tablet] :is(.mobile-document-list,.mobile-page-cards,.mobile-feature-event-list){grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:var(--panel-gap,12px);}
+html[data-renderer=tablet] :is(.calendar-agenda,.appearance-preview){max-width:100%;}

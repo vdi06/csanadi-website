@@ -1,7 +1,7 @@
-import { element } from "../shared/js/dom.js?v=2.72";
-import { trapTab } from "../shared/js/focus.js?v=2.72";
-import { isolateModal } from "../shared/js/modal.js?v=2.72";
-import { menuPageHref } from "../shared/js/menu-data.js?v=2.72";
+import { element } from "../shared/js/dom.js?v=2.78";
+import { trapTab } from "../shared/js/focus.js?v=2.78";
+import { isolateModal } from "../shared/js/modal.js?v=2.78";
+import { menuPageHref } from "../shared/js/menu-data.js?v=2.78";
 
 /** Mobilos iránytű: kizárólag főpontok és egyetlen almenürács. */
 export function createMobileMenu(config, trigger, beforeOpen = () => {}) {

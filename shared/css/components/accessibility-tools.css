@@ -1,0 +1,12 @@
+/* Közös 2.74-as beállítási és felhasználói eszközök */
+html[data-layout-font-scale=large]{font-size:112.5%}html[data-layout-font-scale=larger]{font-size:125%}
+html[data-layout-contrast=high] :is(.desktop-home,.mobile-home){--muted:var(--text)!important;--accent:var(--text)!important;}
+html[data-layout-contrast=high] :is(.adaptive-settings,.document-card,.personal-widget-card,.school-calendar-section,.school-news-story,.content-tile){border:2px solid currentColor!important;}
+html[data-layout-contrast=high] :focus-visible{outline:var(--focus-width,3px) solid currentColor!important;outline-offset:3px;}
+.appearance-preview,.calendar-agenda{border:1px solid var(--accent);border-radius:var(--panel-radius,12px);padding:var(--panel-gap,12px);background:var(--surface);color:var(--text);min-width:0;overflow-wrap:anywhere;}
+.appearance-preview-accent{display:inline-block;border:1px solid var(--accent);padding:6px;border-radius:6px;color:var(--text);}
+.utility-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-block:8px;min-width:0;}
+.utility-actions :is(button,input,select),.calendar-agenda :is(button,select,input),.document-favorite{min-height:44px;max-width:100%;font:inherit;color:var(--text);background:var(--surface);border:1px solid var(--accent);border-radius:8px;padding:6px 10px;}
+.calendar-agenda{margin:12px auto;width:100%;}.calendar-agenda summary{cursor:pointer;min-height:44px;padding-block:8px;font-weight:700;}.calendar-agenda ol{padding-inline-start:24px;}.calendar-agenda li{padding-block:5px;overflow-wrap:anywhere;}.calendar-agenda a{color:inherit;text-decoration:underline;}
+.search-highlight{background:#f5dc8c;color:#142b40;padding:0;border-radius:2px;}
+.document-favorite[aria-pressed=true]{font-weight:700;border-width:2px;}.document-card-date{display:block;color:var(--text);font-size:.875rem;}

@@ -1,3 +1,4 @@
+import {fold} from "./components/search-text.js?v=2.78";
 /** Kiadás előtt ellenőrzött helyi dokumentumregiszter, nem külső dokumentumlinkek. */
 const label=(v,max=500)=>typeof v==="string"&&v.trim().length>0&&v.length<=max;
 const id=/^[a-z0-9-]+$/;
@@ -24,20 +25,20 @@ export function checkedDocumentCenter(config) {
       !["available","pending"].includes(item.status)||!Array.isArray(item.tags)||item.tags.length<1||
       item.tags.some((t)=>!label(t,70))) throw new Error(`Érvénytelen dokumentum: ${item?.id||"ismeretlen"}`);
     if(item.status==="available") {
-      if(!localFile.test(item.file||"")||!item.file.endsWith(`.${item.kind}`)||!validDate(item.date)||
+      if((item.pageTextSource!==undefined&&(item.pageTextSource!==true||item.kind!=="pdf"||!Number.isInteger(item.pageCount)||item.pageCount<1))||!localFile.test(item.file||"")||!item.file.endsWith(`.${item.kind}`)||!validDate(item.date)||
         (item.kind==="pdf"&&item.pages!==undefined&&(!Array.isArray(item.pages)||!item.pages.length||
           item.pages.some((p)=>!/^\.\/shared\/assets\/documents\/previews\/[a-z0-9_-]+\.webp$/.test(p))||
           item.pageCount!==item.pages.length)) ||
         (item.pageTexts!==undefined && (!Array.isArray(item.pageTexts)||item.pageTexts.length!==(item.pageCount||item.pages?.length)||
           item.pageTexts.some((t)=>!label(t,30000))))) throw new Error(`Hibás közzétett dokumentum: ${item.id}`);
-    } else if(item.file!==undefined||item.pages!==undefined||item.date!==undefined) {
+    } else if(item.file!==undefined||item.pages!==undefined||item.pageTextSource!==undefined||item.date!==undefined) {
       throw new Error(`Feltöltésre váró dokumentumhoz nem tartozhat közzétett fájl: ${item.id}`);
     }
     ids.add(item.id);
   }
   return src;
 }
-export const normalizedDocumentText=(s)=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("hu-HU").trim();
+export const normalizedDocumentText=(s)=>fold(s).trim();
 export function documentResults(config,{query="",category="all",status="all",sort="title"}={}){
   const data=checkedDocumentCenter(config);
   if(!data.categories.some((c)=>c.id===category))category="all";

@@ -1,0 +1,25 @@
+/* 2.74 – megjelenítési tájolás: a tényleges méret korlátai minden esetben megmaradnak. */
+html[data-layout-family][data-layout-presentation-orientation] :is(.mobile-page-cards,.desktop-page-cards,.personal-widget-grid,.school-news-page-grid,.calendar-agenda,.document-reader-content){min-inline-size:0;max-inline-size:100%;}
+/* Álló mobil: egymás alatti tartalom, olvasható fejléc. */
+html[data-layout-family=mobile][data-layout-presentation-orientation=portrait] :is(.mobile-page-cards,.mobile-document-list,.school-news-page-grid,.personal-widget-grid){grid-template-columns:minmax(0,1fr);}
+/* Fekvő mobil: kisebb nyitókép és rugalmas kétoszlopos tartalmi rács. */
+html[data-layout-family=mobile][data-layout-presentation-orientation=landscape] :is(.mobile-header,.desktop-header){padding-block:5px;}
+html[data-layout-family=mobile][data-layout-presentation-orientation=landscape] .mobile-story-track{height:clamp(112px,30dvh,210px);}
+html[data-layout-family=mobile][data-layout-presentation-orientation=landscape] :is(.mobile-page-cards,.mobile-document-list,.school-news-page-grid,.personal-widget-grid){grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));}
+/* Álló tablet: két kényelmes oszlop; fekvő tablet: három, ha a konténer engedi. */
+html[data-layout-family=tablet][data-layout-presentation-orientation=portrait] .tablet-quick-nav{grid-template-columns:repeat(3,minmax(0,1fr));}
+html[data-layout-family=tablet][data-layout-presentation-orientation=landscape] .tablet-quick-nav{grid-template-columns:repeat(auto-fit,minmax(min(100%,112px),1fr));}
+html[data-layout-family=tablet][data-layout-presentation-orientation=landscape] :is(.mobile-page-cards,.mobile-document-list,.school-news-page-grid,.personal-widget-grid){grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));}
+html[data-layout-family=tablet][data-layout-presentation-orientation=portrait] .mobile-story-track{height:clamp(180px,26dvh,320px);}
+html[data-layout-family=tablet][data-layout-presentation-orientation=landscape] .mobile-story-track{height:clamp(130px,24dvh,260px);}
+/* Álló monitor: olvasóbarát szélesség; fekvő monitor: a meglévő széles arculat. */
+html[data-layout-family=desktop][data-layout-presentation-orientation=portrait] :is(.desktop-page-preview,.desktop-home .home-feature-carousel,.content-related,.page-activity,.desktop-document-center,.school-news-page){max-inline-size:960px;}
+html[data-layout-family=desktop][data-layout-presentation-orientation=portrait] :is(.school-news-page-grid,.personal-widget-grid,.desktop-document-grid){grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));}
+html[data-layout-family=desktop][data-layout-presentation-orientation=landscape] :is(.desktop-page-preview,.desktop-home .home-feature-carousel){max-inline-size:var(--adaptive-max);}
+/* Minden család: fekvő eszközön a kezelősor tördelhető, a dialógus belső görgetése megmarad. */
+html[data-layout-presentation-orientation=landscape] :is(.calendar-toolbar,.document-reader-controls,.utility-actions){flex-wrap:wrap;min-width:0;}
+html[data-layout-low=true] .adaptive-settings{max-block-size:calc(100dvh - 12px);}
+html[data-layout-low=true] .mobile-story-copy{inset-block-start:8px;}
+html[data-layout-low=true] .mobile-story-title{font-size:clamp(16px,3vw,24px);}
+html[data-layout-family] .personal-widget-card[data-widget-size=wide]{grid-column:1/-1;min-width:0;}
+.adaptive-settings input[type=file]{max-width:100%;min-width:0;}

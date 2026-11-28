@@ -1,0 +1,149 @@
+/* 2.46 mobilos előnézeti hivatkozás legalább 44px-es érintési felülettel. */
+
+/* 2.47: a galéria egyszeri bevezetője után az album és a képböngésző önálló szakasz. */
+
+.mobile-media-browser { width:100%; margin-block:clamp(1.4rem,3vw,2.4rem) 0; }
+.mobile-premium-showcase { margin-top:.75rem; }
+
+/* 2.48 – egységes mobilos címsorok, kártyák és vízszintes védelem. */
+.mobile-page-preview {width:min(calc(100% - 24px),560px);margin:25px auto 34px;min-width:0;}
+.mobile-page-title {margin:0 auto 11px;max-width:100%;font-size:clamp(25px,6.6vw,35px);text-wrap:balance;letter-spacing:-.018em;}
+.mobile-page-intro {max-width:520px;margin:0 auto 19px;line-height:1.65;text-wrap:pretty;overflow-wrap:anywhere;}
+.mobile-page-cards {gap:13px;justify-items:center;min-width:0;}
+.mobile-page-card {width:100%;max-width:540px;min-width:0;border-radius:18px;}
+.mobile-page-card-body {padding:clamp(17px,4.2vw,22px);}
+.mobile-page-card-title {margin:0 auto 10px;text-wrap:balance;}
+.mobile-page-card-summary {max-width:480px;margin:0 auto 15px;line-height:1.65;}
+.mobile-page-card-group {padding-top:12px;}
+.mobile-page-card-group-title {text-wrap:balance;}
+.mobile-page-card-details,.mobile-page-card-point {line-height:1.58;overflow-wrap:anywhere;}
+.mobile-page-preview + .mobile-feature-center {margin-top:10px;}
+.mobile-page-card :is(a,summary):focus-visible {outline:3px solid var(--accent);outline-offset:3px;}
+@media(max-width:360px){.mobile-page-preview {width:calc(100% - 18px);}.mobile-page-card-body{padding:17px 13px;}}
+@media(prefers-reduced-motion:reduce){.mobile-page-card{transition:none!important;}}
+/* 2.48: speciális oldalközpontok egységes mobilos oszlopszélességgel. */
+.mobile-app :is(.mobile-feature-center,.mobile-media-center,.mobile-document-center,.mobile-admission-center,.mobile-timetable-center) {
+  width:min(560px,calc(100% - 24px));max-width:100%;margin-left:auto;margin-right:auto;min-width:0;
+}
+.mobile-app :is(.mobile-feature-center,.mobile-document-center,.mobile-media-center,.mobile-admission-center) h2 {
+  font-size:clamp(20px,5.8vw,26px);line-height:1.27;text-wrap:balance;
+}
+.mobile-app :is(.mobile-feature-center,.mobile-document-center,.mobile-media-center,.mobile-admission-center) :is(input,select,button) {max-width:100%;}
+
+.mobile-home .home-feature-carousel {width:min(620px,calc(100% - 18px));margin:0 auto 34px;}
+.mobile-search-categories {display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px;}
+.mobile-search-category {padding:9px 12px;min-height:44px;border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);border-radius:99px;background:var(--background);color:var(--text);font-size:12px;font-weight:800;cursor:pointer;}
+.mobile-search-category[aria-pressed="true"] {background:var(--accent);color:var(--background);}
+.mobile-search-more {display:block;width:100%;min-height:49px;margin:16px 0 0;padding:10px;border-radius:12px;background:var(--surface);color:var(--text);border:1px solid var(--accent);font-weight:850;cursor:pointer;}
+.mobile-search-more[hidden],.mobile-search-categories[hidden],.mobile-search-reset[hidden] {display:none!important;}
+.mobile-search-empty {display:grid;justify-items:center;gap:10px;padding:25px 13px;border-radius:14px;background:var(--surface);text-align:center;}
+.mobile-search-empty p {margin:0;font-size:13px;color:var(--muted);}
+.mobile-search-reset {min-height:44px;padding:8px 14px;background:var(--background);color:var(--text);border:1px solid var(--accent);border-radius:11px;cursor:pointer;}
+.mobile-search-result-category {color:var(--accent);}
+@media(forced-colors:active) {.mobile-search-category[aria-pressed="true"],.mobile-search-more {border:2px solid ButtonText;}.mobile-search-category[aria-pressed="true"] {outline:2px solid Highlight;}}
+
+/* 2.53: kizárólag a három Carousel-fül jelenik meg; külön szüneteltető vezérlő nincs. */
+.mobile-home .home-carousel-controls {flex-wrap:wrap;justify-content:center;gap:10px;}
+
+.mobile-search-quick[hidden] {display:none!important;}
+
+/* 2.50: a nem hitelesített mintasportsikerek látható státusza minden nézetben. */
+.mobile-successes-card-sample {
+  position:absolute; z-index:2; top:9px; left:9px; padding:4px 8px;
+  border:1px solid #fff0d0; border-radius:999px; background:#603515; color:#fff9e9;
+  font-size:11px; font-weight:900; letter-spacing:.08em; line-height:1.35;
+  box-shadow:0 3px 11px rgba(0,0,0,.4); pointer-events:none;
+}
+
+/* 2.50: az oldalváltáskor programozottan fókuszált címsor elegáns jelzése.
+   A billentyűzettel kezelhető vezérlők erős fókuszkerete változatlan. */
+.mobile-page-title[tabindex="-1"]:focus-visible {
+  outline:none; text-decoration:underline; text-decoration-color:var(--accent);
+  text-underline-offset:.18em; text-decoration-thickness:2px;
+}
+
+/* 2.52 – a felvételi kártyák rövid hivatkozásai is jól érinthetők legyenek.
+   A korábbi 19–22 px magas, sima inline-linkek minimum 36 px-es célfelületet kapnak. */
+.mobile-admission-center .admission-mobile-link,
+.mobile-admission-shortcuts .admission-mobile-link {
+  display:inline-flex;align-items:center;min-height:36px;padding:7px 10px;
+  border-radius:9px;line-height:1.35;max-width:100%;overflow-wrap:anywhere;
+}
+.mobile-admission-center .admission-mobile-link:focus-visible,
+.mobile-admission-shortcuts .admission-mobile-link:focus-visible {
+  outline:3px solid var(--accent);outline-offset:2px;
+}
+/* Mobile overview: closed, fully tappable cards. Long or urgent content remains single-column. */
+.mobile-page-cards{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:10px;justify-items:stretch;}
+.mobile-page-cards>.mobile-compact-card{width:100%;max-width:none;min-width:0;padding:0;border:0;background:none;box-shadow:none;}
+.mobile-compact-card>.content-tile{height:100%;min-height:132px;}
+.mobile-compact-card.is-important{grid-column:1/-1;}
+.content-important{padding:10px;text-align:left;color:var(--text);}
+.mobile-compact-panel .content-tile-summary{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.mobile-feature-event-list,.mobile-feature-sport-list,.mobile-admission-events,.mobile-document-list,.school-news-page--mobile .school-news-page-grid{grid-template-columns:repeat(2,minmax(0,1fr));display:grid;gap:10px;align-items:stretch;}
+.mobile-document-list>.mobile-document-card{width:100%;min-width:0;max-width:none;overflow-wrap:anywhere;}
+.mobile-document-list>.mobile-document-card .document-card-open{min-height:44px;font-size:.83rem;white-space:normal;}
+.mobile-document-list>.mobile-document-card:only-child{grid-column:1/-1;max-width:280px;justify-self:center;}
+.mobile-feature-sport{grid-template-columns:minmax(0,1fr);}
+.mobile-feature-sport img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;}
+.mobile-feature-sport>div{padding:10px;min-width:0;}
+.mobile-feature-event summary,.mobile-admission-event summary{min-height:44px;padding:10px;overflow-wrap:anywhere;}
+.school-news-page--mobile .school-news-story{min-width:0;overflow-wrap:anywhere;padding:12px;}
+.school-news-page--mobile .school-news-story h2{font-size:1rem;line-height:1.35;}
+.school-news-page--mobile .school-news-story-details summary{min-height:44px;}
+@media(max-width:350px){.mobile-page-cards,.mobile-feature-event-list,.mobile-feature-sport-list,.mobile-admission-events,.mobile-document-list,.school-news-page--mobile .school-news-page-grid{grid-template-columns:1fr;}}
+
+.mobile-admission-center .admission-mobile-link,.mobile-admission-shortcuts .admission-mobile-link{min-height:44px;}
+.mobile-feature-events>.content-action{display:block;margin:12px auto;}
+/* Mobile: compact two-column overview, one column on very small screens. */
+.activity-mobile{max-width:560px;padding:14px;margin:18px auto;border-radius:15px;}.activity-mobile .activity-grid{gap:8px;}.activity-mobile .activity-tile{flex-basis:calc((100% - 8px)/2);min-height:120px;padding:11px;}.activity-mobile .activity-summary{-webkit-line-clamp:2;}.activity-mobile .activity-checklist{gap:8px;}.activity-mobile .activity-check{padding:9px;}.activity-mobile .activity-check small{font-size:.78rem;}.activity-mobile .activity-quiz{grid-template-columns:1fr;}
+@media(max-width:350px){.activity-mobile .activity-tile{flex-basis:100%;min-height:95px;}.activity-mobile .activity-checklist,.activity-mobile .activity-number-grid{grid-template-columns:1fr;}}
+
+/* Oldalajánló: kompakt, középre rendezett kétoszlopos kártyák. */
+.content-related>.content-recommendations{gap:9px;}
+.content-recommendation.card{flex:0 1 calc((100% - 9px)/2);padding:10px 8px;min-height:112px;}
+.content-recommendation strong{font-size:.9rem;}
+@media(max-width:350px){.content-recommendation.card{flex-basis:min(100%,280px);}}
+/* A három minigrafikon a kezdőlapon is egymás mellett marad; nagyított betűnél szabadon nőhet. */
+/* A címeres menü alatti óra minden tartalmi útvonalon látható. */
+.mobile-header{position:sticky;top:0;z-index:40;background:var(--background);}
+.mobile-toolbar{row-gap:5px;}
+.mobile-motto{margin-top:7px;}
+.school-header-clock{padding:5px 9px;}
+.school-header-clock svg{width:96px;height:24px;}
+.school-clock-date{display:none;}
+.mobile-story-track{top:var(--school-header-height,0px);}
+@media(min-height:700px){html[data-platform="mobile"][data-route="home"]{scroll-padding-top:calc(var(--school-header-height,0px) + clamp(132px,18dvh,152px) + 8px);}}
+@media(max-height:699px){.mobile-story-track{position:relative;top:auto;}}
+@media(max-height:480px){.mobile-header{padding-block:4px;}.mobile-brand{margin-bottom:4px;}.mobile-toolbar .shell-crest-toggle{width:48px;height:48px;min-height:48px;}.mobile-toolbar .shell-tool{min-height:44px;}.mobile-motto{margin-top:3px;}}
+
+/* 2.60 – közlemények: olvasható, széles egyhasábos kivétel. */
+.home-news-grid,.school-news-page--mobile.school-news-page--announcements .school-news-page-grid {
+  grid-template-columns:minmax(0,1fr);width:100%;max-width:580px;margin-inline:auto;gap:12px;align-items:start;
+}
+.home-news-panel {padding-inline:8px;}
+.home-news-card,.school-news-page--mobile.school-news-page--announcements .school-news-story {padding:14px;gap:8px;}
+.school-news-page--mobile.school-news-page--announcements .school-news-story h2 {font-size:1.08rem;line-height:1.3;}
+
+.mobile-home .home-carousel-tab[data-panel-type="widgets"]::before{content:"▦";}
+.mobile-home .personal-widget-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+.mobile-home .personal-widget-tile{padding:10px;min-height:106px;gap:6px;align-items:flex-start;flex-direction:column;position:relative;}
+.mobile-home .personal-widget-icon{height:28px;flex-basis:28px;width:28px;font-size:1.05rem;}
+.mobile-home .personal-widget-arrow{position:absolute;right:10px;top:8px;}
+.mobile-home .personal-widget-copy strong{font-size:.86rem;}.mobile-home .personal-widget-detail{font-size:.72rem;}
+.mobile-home .personal-widget-heading{align-items:flex-start;}.mobile-home .personal-widget-fields{grid-template-columns:minmax(0,1fr) auto;}.mobile-home .personal-widget-fields input{grid-column:1/-1;}
+@media(max-width:350px){.mobile-home .personal-widget-grid{grid-template-columns:1fr;}.mobile-home .personal-widget-tile{flex-direction:row;min-height:78px;align-items:center;}.mobile-home .personal-widget-arrow{position:static;}.site-help-filters{grid-template-columns:1fr;}}
+/* Kéthasábos gyorselérés: a részletek az ablakban maradnak. */
+.mobile-home .personal-widget-tile{min-height:100px;gap:4px;}
+.mobile-home .personal-widget-detail{display:none;}
+.mobile-home .personal-widget-heading p{font-size:.82rem;}
+@media(max-width:767px){.site-help-filters{grid-template-columns:1fr;}}
+@media(max-width:350px){.mobile-home .personal-widget-tile{min-height:70px;}}
+/* Compact scrolling tab strip with visible labels. */
+.mobile-home .home-carousel-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;max-width:100%;padding:5px;gap:7px}.mobile-home .home-carousel-tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;min-width:0;height:auto;min-height:64px;padding:6px 3px;font-size:11px;line-height:1.25;white-space:normal;overflow-wrap:anywhere}@media(max-width:479px){.mobile-home .home-carousel-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.mobile-home .home-carousel-tab{flex-direction:row;gap:6px;min-height:48px;padding:6px;font-size:12px}.mobile-home .home-tab-icon{flex-shrink:0}}.mobile-home .home-carousel-tab::before{content:none!important;display:none!important}.mobile-home .home-tab-icon{display:block;font-size:19px;line-height:1}.mobile-home .home-tab-label{display:block;min-width:0;max-width:100%;text-align:center;font-weight:750;overflow-wrap:anywhere}.mobile-home .center-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.mobile-home .center-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.mobile-home .center-tile,.mobile-home .center-document{padding:8px;min-height:88px}.mobile-home .center-contact{flex-direction:column}.mobile-home .center-page-tiles,.mobile-home .center-links{gap:6px}.mobile-home .center-links .center-button{flex:1 1 42%}.mobile-home .home-center{padding:12px 4px 16px}@media(max-width:350px){.mobile-home .center-grid{grid-template-columns:1fr}.mobile-home .center-filters{grid-template-columns:1fr}.mobile-home .center-links .center-button{flex-basis:100%}}
+
+/* 2.65: kompakt fejléc, a címer és a digitális óra változatlan. */
+.mobile-header{padding-block:calc(8px + env(safe-area-inset-top)) 8px;}
+.mobile-brand{margin-bottom:7px;}
+.mobile-motto{margin-top:5px;}
+@media (min-width:350px) and (max-width:369px){.mobile-links-left,.mobile-links-right{grid-template-columns:repeat(3,minmax(44px,1fr));gap:2px;}.mobile-toolbar .shell-tool{min-height:44px;}}

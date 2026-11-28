@@ -1,0 +1,197 @@
+/* Önálló mobilos elrendezés: kizárólag az engedélyezett fejléc és lábléc. */
+.mobile-app { width: 100%; min-height: 100dvh; }
+.mobile-app .gate-bottom-bar {
+  height: clamp(124px, 22dvh, 182px);
+  padding: 18px 8px calc(18px + env(safe-area-inset-bottom));
+}
+.mobile-app .gate-bottom-copy { width: calc(100% - 88px); }
+.mobile-app .gate-school-name {
+  font-size: clamp(12px, 3.15vw, 16px);
+  line-height: 1.28; letter-spacing: .025em;
+}
+
+.mobile-home {
+  display: flex; flex-direction: column; min-height: 100dvh; width: 100%;
+  background: linear-gradient(160deg, var(--background),
+    color-mix(in srgb, var(--background) 70%, var(--surface)));
+  color: var(--text);
+  animation: home-reveal var(--home-reveal-duration,480ms) ease-out both;
+}
+.mobile-header {
+  position: relative; z-index: 10; width: 100%;
+  padding: calc(16px + env(safe-area-inset-top)) 10px 15px;
+  text-align:center; background:color-mix(in srgb,var(--background) 94%,transparent);
+  border-bottom:1px solid color-mix(in srgb,var(--accent) 45%,transparent);
+}
+.mobile-brand { max-width:650px; margin:0 auto 14px; line-height:1.15; }
+.mobile-brand strong {
+  font-size:clamp(12px,3.45vw,18px); line-height:1.15;
+  font-weight:900; letter-spacing:.048em;
+}
+.mobile-brand small {
+  font-size:clamp(11px,2.38vw,12px); line-height:1.15;
+  font-weight:750; letter-spacing:.035em;
+}
+.mobile-toolbar {
+  display:grid; grid-template-columns:minmax(0,1fr) 58px minmax(0,1fr);
+  gap:4px; align-items:center; width:min(100%,650px); margin-inline:auto;
+}
+.mobile-links-left, .mobile-links-right { display:grid; min-width:0; align-items:center; gap:3px; }
+.mobile-links-left { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.mobile-links-right { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.mobile-toolbar .shell-tool {
+  width:100%; min-height:48px; font-size:clamp(17px,4.8vw,22px);
+  border-radius:13px;
+}
+.mobile-theme-toggle .theme-mode-mark { font-size: 9px; }
+.mobile-toolbar .shell-crest-toggle {
+  justify-self:center; width:58px; height:58px; min-height:58px; padding:3px;
+}
+.mobile-motto {
+  margin:13px auto 0; max-width:100%; color:var(--accent);
+  font-size:clamp(11px,2.48vw,12px); font-weight:900;
+  letter-spacing:.13em; line-height:1.45; text-align:center;
+}
+.mobile-main { flex:1 1 auto; width:100%; min-height:0; }
+/* Kompakt, felül megtapadó képsáv; a tartalom közvetlenül alatta indul.
+   Az öt képállapotot a valódi oldalmozgás váltja, külön görgetési pálya nincs. */
+.mobile-story-track {
+  position:sticky; top:0; z-index:8; width:100%;
+  height:clamp(132px,18dvh,152px); isolation:isolate;
+  background:#0c2c45;
+}
+.mobile-story-stage {
+  position:relative; width:100%; height:100%; isolation:isolate; overflow:hidden;
+  color:#fff7e9; background:#0c2c45;
+  border-top:1px solid rgba(232,191,112,.66);
+  border-bottom:1px solid rgba(232,191,112,.66);
+  box-shadow:0 9px 28px rgba(1,15,28,.25);
+}
+.mobile-story-visual {
+  position:absolute; inset:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  overflow:hidden; background:#0c2c45; opacity:0;
+  transform:scale(1.025); transition:opacity .58s ease,transform 1.5s ease;
+}
+.mobile-story-visual[data-active="true"] { opacity:1; transform:scale(1); }
+.mobile-story-visual[data-mode="single"] { grid-template-columns:minmax(0,1fr); }
+.mobile-story-photo { display:block; width:100%; height:100%; min-width:0; object-fit:cover; object-position:50% 47%; }
+.mobile-story-photo[hidden] { display:none !important; }
+.mobile-story-visual[data-mode="trio"] .mobile-story-photo + .mobile-story-photo {
+  border-left:1px solid rgba(255,229,180,.43);
+}
+.mobile-story-shade {
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(90deg,rgba(3,18,34,.81),rgba(3,18,34,.27) 65%,rgba(3,18,34,.27)),
+    linear-gradient(0deg,rgba(2,12,23,.44),transparent 75%);
+}
+.mobile-story-copy {
+  position:absolute; inset:20px 17px auto; z-index:2;
+  display:grid; gap:4px; justify-items:start; text-align:left;
+  max-width:calc(100% - 34px); text-shadow:0 2px 12px rgba(0,0,0,.8);
+}
+.mobile-story-title {
+  margin:0; font-size:clamp(17px,5.1vw,26px); line-height:1.15;
+  font-weight:950; letter-spacing:.075em; color:#ffe5b4;
+}
+.mobile-story-stage[data-story-mode="trio"] .mobile-story-title {
+  font-size:clamp(14px,4vw,20px); letter-spacing:.025em;
+}
+.mobile-story-subtitle { margin:0; font-size:clamp(12px,3.3vw,15px); line-height:1.28; font-weight:740; }
+.mobile-home[data-theme="light"] .mobile-story-stage {
+  border-top-color:#b68a42; border-bottom-color:#b68a42;
+  box-shadow:0 8px 23px rgba(7,35,55,.14);
+}
+.mobile-home[data-theme="light"] .mobile-story-shade {
+  background:linear-gradient(90deg,rgba(22,54,75,.78),rgba(22,54,75,.3) 55%,rgba(22,54,75,.35)),
+    linear-gradient(0deg,rgba(8,37,55,.62),transparent 72%);
+}
+@media (max-height:580px) { .mobile-story-track { height:124px; } }
+@media (prefers-reduced-motion:reduce) {
+  .mobile-story-stage, .mobile-story-copy, .mobile-story-photo, .mobile-story-visual {
+    transition:none !important; animation:none !important;
+  }
+}
+.mobile-page-preview {
+  width:min(calc(100% - 28px),560px); margin:31px auto 48px;
+  text-align:center; color:var(--text);
+}
+.mobile-page-title {
+  margin:0 0 11px; font-size:clamp(25px,6.8vw,36px); line-height:1.18;
+  font-weight:900; overflow-wrap:anywhere;
+}
+.mobile-page-intro { margin:0 auto 22px; color:var(--muted); font-size:15px; line-height:1.5; }
+/* A Bootstrap-kártyák mobilon egy oszlopban, önállóan méretezett tartalommal élnek. */
+.mobile-page-cards { display:grid; grid-template-columns:minmax(0,1fr); justify-items:center; gap:15px; width:100%; text-align:center; }
+.mobile-page-card {
+  position:relative; overflow:hidden; width:100%; max-width:540px; min-width:0;
+  border:1px solid color-mix(in srgb,var(--accent) 49%,transparent); border-radius:19px;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 95%,var(--accent)),var(--surface));
+  color:var(--text); text-align:center; box-shadow:0 10px 27px rgba(0,0,0,.15);
+}
+.mobile-page-card::before { content:""; position:absolute; inset:0 auto 0 0; width:4px;
+  background:linear-gradient(180deg,var(--accent),color-mix(in srgb,var(--accent) 24%,transparent)); }
+.mobile-page-card-body { padding:20px 19px 21px; text-align:center; }
+.mobile-page-card-title { margin:0 0 7px; font-size:21px; line-height:1.24; }
+.mobile-page-card-summary { margin:0 0 17px; color:var(--muted); font-size:13px; line-height:1.52; }
+.mobile-page-card-group { padding:14px 0 0; border-top:1px solid color-mix(in srgb,var(--accent) 27%,transparent); }
+.mobile-page-card-group + .mobile-page-card-group { margin-top:14px; }
+.mobile-page-card-group-title { margin:0 0 10px; color:var(--accent); font-size:14px; line-height:1.3; }
+.mobile-page-card-points { display:grid; gap:12px; width:100%; padding:0; margin:0 auto; list-style:none; }
+.mobile-page-card-point { position:relative; width:100%; padding:20px 0 0; font-size:13px; line-height:1.42; text-align:center; }
+.mobile-page-card-point::before { content:""; position:absolute; left:50%; top:3px; width:7px; height:7px;
+  border-radius:2px; transform:translateX(-50%) rotate(45deg); background:var(--accent); }
+.mobile-page-card-point-title { display:block; margin-bottom:5px; font-size:14px; }
+.mobile-page-card-details { display:grid; justify-items:center; gap:4px; padding:0; margin:0 auto; color:var(--muted); list-style:none; }
+.mobile-page-card-details li { max-width:100%; overflow-wrap:anywhere; text-align:center; }
+.mobile-page-card-details li::before { content:"•"; margin-right:6px; color:var(--accent); }
+.mobile-page-kind-alert { border-width:2px; border-color:var(--accent); }
+.mobile-page-accordion-item {
+  border:1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius:11px;
+  margin:8px auto; background:color-mix(in srgb,var(--surface) 85%,var(--accent));
+}
+.mobile-page-accordion-item .accordion-button { display:block; padding:13px 12px; font-size:14px; font-weight:800; cursor:pointer; text-align:center; }
+.mobile-page-accordion-item[open] .accordion-button { color:var(--accent); }
+.mobile-page-accordion-item .accordion-body { padding:0 11px 14px; }
+.mobile-page-accordion-item .accordion-button:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+.mobile-page-kind-timeline .mobile-page-card-point { border-left:0; padding:24px 0 10px; }
+.mobile-page-kind-timeline .mobile-page-card-point::before { transform:translateX(-50%); border-radius:50%; left:50%; top:0; width:10px; height:10px; }
+.mobile-page-kind-timeline .mobile-page-card-point:not(:last-child)::after {
+  content:""; position:absolute; left:50%; bottom:-14px; width:2px; height:14px;
+  transform:translateX(-50%); background:color-mix(in srgb,var(--accent) 48%,transparent);
+}
+.mobile-page-kind-steps .mobile-page-card-points { counter-reset:mobile-step; }
+.mobile-page-kind-steps .mobile-page-card-point { padding:38px 0 0; counter-increment:mobile-step; }
+.mobile-page-kind-steps .mobile-page-card-point::before {
+  content:counter(mobile-step); transform:translateX(-50%); left:50%; border-radius:50%; top:0; width:24px; height:24px;
+  display:grid; place-items:center; font-weight:900; font-size:12px; color:var(--background);
+}
+.mobile-page-time-list { display:grid; grid-template-columns:minmax(75px,auto) 1fr; gap:0; margin:0; font-variant-numeric:tabular-nums; }
+.mobile-page-time-list dt,.mobile-page-time-list dd { padding:9px 8px; margin:0; text-align:center; border-bottom:1px solid color-mix(in srgb,var(--accent) 25%,transparent); }
+.mobile-page-time-list dt { font-weight:800; color:var(--accent); }
+.mobile-page-time-list dd { min-width:0; overflow-wrap:anywhere; }
+.mobile-page-badge-list { display:grid; justify-items:center; gap:12px; }
+.mobile-page-badge-entry .badge { display:inline-block; background:var(--accent); color:var(--background); border-radius:50px; padding:6px 10px; font-size:12px; font-weight:800; }
+.mobile-page-badge-entry p { margin:6px auto 0; font-size:13px; line-height:1.5; color:var(--muted); text-align:center; }
+.mobile-page-gallery-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); justify-items:center; gap:9px; margin-top:15px; }
+.mobile-page-gallery-item { width:100%; max-width:260px; min-width:0; margin:0; overflow:hidden; border-radius:11px; background:var(--surface); border:1px solid color-mix(in srgb,var(--accent) 30%,transparent); }
+.mobile-page-gallery-item img { display:block; width:100%; aspect-ratio:3/4; object-fit:cover; }
+.mobile-page-gallery-item figcaption { padding:7px; color:var(--muted); font-size:11px; line-height:1.3; }
+@media (max-width:350px) { .mobile-page-gallery-grid { grid-template-columns:1fr; } }
+/* 2.47 – közel harmadmagasságú, középre rendezett mobilos oldalzárás. */
+.mobile-footer {padding:9px 12px calc(10px + env(safe-area-inset-bottom));}
+.mobile-footer .footer-inner {width:min(100%,620px);text-align:center;}
+.mobile-footer .footer-contact {width:100%;align-items:center;gap:3px;}
+.mobile-footer .footer-contact-main {
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;
+  column-gap:12px;row-gap:1px;
+}
+.mobile-footer .footer-brand {font-size:19px;line-height:1.13;margin:0;}
+.mobile-footer .footer-inner h2 {font-size:12px;line-height:1.25;font-weight:850;}
+.mobile-footer .footer-contact-main p:not(.footer-brand),
+.mobile-footer .footer-contact-main a {width:100%;font-size:12px;line-height:1.22;text-align:center;}
+.mobile-footer .footer-status {
+  display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;
+  column-gap:12px;row-gap:1px;margin:0;
+}
+.mobile-footer .footer-status p {font-size:11px;line-height:1.22;text-align:center;}
+
