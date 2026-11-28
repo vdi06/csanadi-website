@@ -1,5 +1,5 @@
-import {element as el} from '../dom.js?v=2.83';
-import {downloadLocal} from './local-files.js?v=2.83';
+import {element as el} from '../dom.js?v=2.84';
+import {downloadLocal} from './local-files.js?v=2.84';
 export const CHART_TYPES=Object.freeze({bar:'Oszlopdiagram',line:'Vonaldiagram',pie:'Kördiagram',donut:'Gyűrűdiagram',table:'Táblázat'});
 const colors=Array.from({length:6},(_,i)=>`var(--chart-${i+1}, #956521)`);
 const fmt=n=>new Intl.NumberFormat('hu-HU',{maximumFractionDigits:2}).format(n);

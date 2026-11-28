@@ -1,10 +1,10 @@
-import { reducedMotion } from "./layout-controller.js?v=2.83";
-import { createHomeCenter } from "./home-centers.js?v=2.83";
-import { createPersonalWidgets } from "./personal-widgets.js?v=2.83";
-import { element } from "./dom.js?v=2.83";
-import { checkedHomeCarousel } from "./carousel-data.js?v=2.83";
-import { createNewsPanel } from "./news-panel.js?v=2.83";
-import { menuPageHref } from "./menu-data.js?v=2.83";
+import { reducedMotion } from "./layout-controller.js?v=2.84";
+import { createHomeCenter } from "./home-centers.js?v=2.84";
+import { createPersonalWidgets } from "./personal-widgets.js?v=2.84";
+import { element } from "./dom.js?v=2.84";
+import { checkedHomeCarousel } from "./carousel-data.js?v=2.84";
+import { createNewsPanel } from "./news-panel.js?v=2.84";
+import { menuPageHref } from "./menu-data.js?v=2.84";
 
 /** JSON-ból felépített, bővíthető Bootstrap 5 Carousel: nem igényel
  * nyilakat vagy külön szüneteltető gombot. CDN-kiesésnél osztályváltásos tartalék.

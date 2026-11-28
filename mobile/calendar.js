@@ -1,7 +1,7 @@
-import {makeCalendarAgenda} from "../shared/js/components/calendar-agenda.js?v=2.83";
-import { element } from "../shared/js/dom.js?v=2.83";
-import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.83";
-import { makeCalendarMonth, makeCalendarWeek, createCalendarPopover, schoolWeeks, weekLabel } from "../shared/js/calendar-view.js?v=2.83";
+import {makeCalendarAgenda} from "../shared/js/components/calendar-agenda.js?v=2.84";
+import { element } from "../shared/js/dom.js?v=2.84";
+import { checkedCalendar, calendarEntries, schoolMonths, monthLabel } from "../shared/js/calendar-data.js?v=2.84";
+import { makeCalendarMonth, makeCalendarWeek, createCalendarPopover, schoolWeeks, weekLabel } from "../shared/js/calendar-view.js?v=2.84";
 
 /** Telefonon kizárólag heti és havi mód, jól olvasható, kattintható napokkal. */
 export function createMobileCalendar(config,onInteract=()=>{}) {

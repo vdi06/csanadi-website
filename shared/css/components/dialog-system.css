@@ -30,3 +30,7 @@ html[data-route="home"] :is(.desktop-home,.mobile-home) .home-carousel-controls{
 html[data-layout-motion="reduced"]{--component-motion-duration:0ms;}
 @media(prefers-reduced-motion:reduce){:root{--component-motion-duration:0ms;}}
 .footer-timeline .numbers-compact-dot{transition:transform var(--component-motion-duration) var(--component-motion-ease);}
+
+/* A párbeszédablakokon belüli natív vezérlők a tényleges témát öröklik. */
+html[data-site-theme=light] dialog[open]{color-scheme:light}html[data-site-theme=dark] dialog[open]{color-scheme:dark}
+html body dialog[open] :is(button,select,input,textarea):focus-visible{scroll-margin-block:12px;}

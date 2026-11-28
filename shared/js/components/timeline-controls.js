@@ -1,4 +1,4 @@
-import {element as el} from '../dom.js?v=2.83';
+import {element as el} from '../dom.js?v=2.84';
 export const ZOOM_LEVELS=Object.freeze([100,125,150,175,200]);
 export function timelineZoom(value){const n=Number(value);return ZOOM_LEVELS.includes(n)?n:100;}
 export function addTimelineControls(list,label,{minimum=170}={}){

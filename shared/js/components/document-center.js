@@ -1,9 +1,9 @@
-import {optionalData} from '../data/optional-data.js?v=2.83';
-import {readLocalList,saveLocalList} from "./local-files.js?v=2.83";
-import {element as el} from "../dom.js?v=2.83";
-import {checkedDocumentCenter,documentResults} from "../document-data.js?v=2.83";
-import {createDocumentReader} from "../document-reader.js?v=2.83";
-import {registerAdaptiveState} from "../state/component-state.js?v=2.83";
+import {optionalData} from '../data/optional-data.js?v=2.84';
+import {readLocalList,saveLocalList} from "./local-files.js?v=2.84";
+import {element as el} from "../dom.js?v=2.84";
+import {checkedDocumentCenter,documentResults} from "../document-data.js?v=2.84";
+import {createDocumentReader} from "../document-reader.js?v=2.84";
+import {registerAdaptiveState} from "../state/component-state.js?v=2.84";
 /** Shared behavior; platform-specific markup remains distinct. */
 export function createDocumentCenter(config,platform){
  const desktop=platform==="desktop",settings=checkedDocumentCenter(config),pageSize=settings[platform+"PageSize"];

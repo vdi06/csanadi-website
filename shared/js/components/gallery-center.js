@@ -1,9 +1,9 @@
-import {registerAdaptiveState} from "../state/component-state.js?v=2.83";
-import { element } from "../dom.js?v=2.83";
-import { checkedMediaCenter, mediaResults } from "../media-data.js?v=2.83";
-import { createGalleryDialog } from "../gallery-dialog.js?v=2.83";
-import { createAlbumControls, groupedCards, cardImage, allowLocalMediaEditor, createPremiumAlbumShowcase } from "../gallery-ui.js?v=2.83";
-import { createMediaEditor } from "../media-editor.js?v=2.83";
+import {registerAdaptiveState} from "../state/component-state.js?v=2.84";
+import { element } from "../dom.js?v=2.84";
+import { checkedMediaCenter, mediaResults } from "../media-data.js?v=2.84";
+import { createGalleryDialog } from "../gallery-dialog.js?v=2.84";
+import { createAlbumControls, groupedCards, cardImage, allowLocalMediaEditor, createPremiumAlbumShowcase } from "../gallery-ui.js?v=2.84";
+import { createMediaEditor } from "../media-editor.js?v=2.84";
 const el=element;
 export function createMediaCenter(config,platform){
   const settings=checkedMediaCenter(config);

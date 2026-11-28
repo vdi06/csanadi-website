@@ -1,12 +1,12 @@
-import { validatePersonalData } from "./personal-data.js?v=2.83";
-import { validateExpansion } from "./content-expansion.js?v=2.83";
-import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.83";
-import { checkedDocumentCenter } from "./document-data.js?v=2.83";
-import { checkedAdmissions } from "./admission-data.js?v=2.83";
-import { checkedInformationCenter } from "./information-data.js?v=2.83";
-import { checkedMediaCenter } from "./media-data.js?v=2.83";
+import { validatePersonalData } from "./personal-data.js?v=2.84";
+import { validateExpansion } from "./content-expansion.js?v=2.84";
+import { checkedFeatureCenters } from "./feature-centers-data.js?v=2.84";
+import { checkedDocumentCenter } from "./document-data.js?v=2.84";
+import { checkedAdmissions } from "./admission-data.js?v=2.84";
+import { checkedInformationCenter } from "./information-data.js?v=2.84";
+import { checkedMediaCenter } from "./media-data.js?v=2.84";
 /** Kétszintű menü, 63 önálló oldal és közösen kezelt, JSON-alapú tartalom. */
-import { checkedCalendar } from "./calendar-data.js?v=2.83";
+import { checkedCalendar } from "./calendar-data.js?v=2.84";
 
 const validLabel = (value, max = 800) => typeof value === "string" &&
   !!value.trim() && value.length <= max;

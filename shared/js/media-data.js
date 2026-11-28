@@ -1,5 +1,5 @@
-import {GALLERY_WIDTHS, galleryVariants} from "./data/media-catalog.js?v=2.83";
-import {dataSaving, adaptiveBreakpoints} from "./layout-controller.js?v=2.83";
+import {GALLERY_WIDTHS, galleryVariants} from "./data/media-catalog.js?v=2.84";
+import {dataSaving, adaptiveBreakpoints} from "./layout-controller.js?v=2.84";
 const validText=(s,max=350)=>typeof s==="string"&&s.trim().length>0&&s.length<=max;
 const id=/^[a-z0-9-]+$/;
 const acceptedSource=/^\.\/shared\/assets\/media\/web\/(?:desktop-hero|mobile-story|sport-successes|imported)\/[a-z0-9-]+\.webp$/;

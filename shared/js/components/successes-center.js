@@ -1,9 +1,9 @@
-import { element } from "../dom.js?v=2.83";
-import { trapTab } from "../focus.js?v=2.83";
-import { isolateModal } from "../modal.js?v=2.83";
+import { element } from "../dom.js?v=2.84";
+import { trapTab } from "../focus.js?v=2.84";
+import { isolateModal } from "../modal.js?v=2.84";
 import { checkedSportSuccesses, featuredSportSuccesses, orderedSportSuccesses,
-  successImageRoot, successDateText } from "../successes-data.js?v=2.83";
-import { archiveView, readArchiveState, saveArchiveState } from "../archive-data.js?v=2.83";
+  successImageRoot, successDateText } from "../successes-data.js?v=2.84";
+import { archiveView, readArchiveState, saveArchiveState } from "../archive-data.js?v=2.84";
 
 /** Közös sportsiker- és archívummotor. A platform csak a CSS-osztályokat, a mobil szűrőt és a lapozó nézetét határozza meg. */
 export function createSuccesses(config, { archive = false } = {}, platform="desktop") {

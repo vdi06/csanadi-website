@@ -1,10 +1,10 @@
-import {ensureDocuments} from './data/domain-loader.js?v=2.83';
-import {element as el} from './dom.js?v=2.83';
-import {openContentDialog} from './content-expansion.js?v=2.83';
-import {recommendationPreview} from './recommendations.js?v=2.83';
-import {menuPageHref} from './menu-data.js?v=2.83';
-import {documentResults} from './document-data.js?v=2.83';
-import {loadActivity} from './page-activities.js?v=2.83';
+import {ensureDocuments} from './data/domain-loader.js?v=2.84';
+import {element as el} from './dom.js?v=2.84';
+import {openContentDialog} from './content-expansion.js?v=2.84';
+import {recommendationPreview} from './recommendations.js?v=2.84';
+import {menuPageHref} from './menu-data.js?v=2.84';
+import {documentResults} from './document-data.js?v=2.84';
+import {loadActivity} from './page-activities.js?v=2.84';
 const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('hu-HU');
 const button=(text,action,attrs={})=>el('button',{className:'center-button',text,attributes:{type:'button','data-center-action':action,...attrs}});
 const link=(id,text)=>el('a',{className:'center-button',text,attributes:{href:menuPageHref(id)}});

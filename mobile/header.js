@@ -1,10 +1,10 @@
-import { createHeaderClock, trackHeaderHeight } from "../shared/js/header-clock.js?v=2.83";
-import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.83";
-import { bindAppearance } from "../shared/js/appearance.js?v=2.83";
-import { bindSiteHelp } from "../shared/js/site-help.js?v=2.83";
-import { makeSocialLink } from "../shared/js/shell.js?v=2.83";
-import { createMobileMenu } from "./menu.js?v=2.83";
-import { createMobileSearch } from "./search.js?v=2.83";
+import { createHeaderClock, trackHeaderHeight } from "../shared/js/header-clock.js?v=2.84";
+import { crest, element, schoolDisplayNames } from "../shared/js/dom.js?v=2.84";
+import { bindAppearance } from "../shared/js/appearance.js?v=2.84";
+import { bindSiteHelp } from "../shared/js/site-help.js?v=2.84";
+import { makeSocialLink } from "../shared/js/shell.js?v=2.84";
+import { createMobileMenu } from "./menu.js?v=2.84";
+import { createMobileSearch } from "./search.js?v=2.84";
 
 /** Csak mobilos fejléc: középső címerből nyíló harmonikamenü, külön kereső. */
 export function makeMobileHeader(config, home) {

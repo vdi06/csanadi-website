@@ -1,4 +1,4 @@
-/* 2.83 – közös szekció- és lenyitható fejléc-rendszer. A dokumentumcímek olvasási iránya változatlan. */
+/* 2.84 – közös szekció- és lenyitható fejléc-rendszer. A dokumentumcímek olvasási iránya változatlan. */
 :root {--section-space:.75rem;--summary-icon-size:.55rem;--summary-hit:44px;--section-heading-size:clamp(1rem,1.4vw,1.25rem);}
 :is(.page-library,.document-related,.calendar-agenda,.numbers-history,.school-chart-filters,.mobile-timetable-bells,.mobile-info-bell-details,.mobile-admission-process,.mobile-admission-sources,.school-news-story-details,.home-news-more,.site-help-topic,.segment-reading-body details)>summary {
   text-align:center;position:relative;display:block;padding-inline:1.75rem;min-block-size:var(--summary-hit);align-content:center;list-style:none;cursor:pointer;overflow-wrap:anywhere;}
@@ -15,3 +15,13 @@
 html body :is(.content-dialog,.school-data-dialog,.adaptive-settings,.footer-modal-dialog,.media-dialog,.document-reader-dialog) {color-scheme:light;}
 html[data-site-theme=dark] body :is(.content-dialog,.school-data-dialog,.adaptive-settings,.footer-modal-dialog,.media-dialog,.document-reader-dialog){color-scheme:dark;}
 @media (forced-colors:active){.page-library-panel :is(button,input,select,a):focus-visible,.page-library>summary:focus-visible{outline-color:Highlight;}}
+
+/* 2.84: közös, tördelhető eszközsorok és fókuszjelzés. */
+.library-record{display:flex;align-items:center;justify-content:space-between;gap:.5rem;flex-wrap:wrap;padding-block:.2rem;min-inline-size:0}
+.library-record>a{flex:1 1 10rem;min-inline-size:0}.library-remove{min-block-size:44px;max-inline-size:100%;overflow-wrap:anywhere}
+.segment-companion .utility-actions{display:flex;flex-wrap:wrap;gap:var(--section-space)}
+.segment-companion .utility-actions button{min-block-size:44px;max-inline-size:100%;white-space:normal;overflow-wrap:anywhere}
+.site-footer .footer-timeline .numbers-compact-point{min-inline-size:0;touch-action:manipulation}
+.site-footer .footer-timeline .numbers-compact-point:focus-visible{outline:2px solid currentColor;outline-offset:-2px}
+:is(.page-library-panel,.segment-companion) :is(button,select,input):disabled{cursor:not-allowed;opacity:.72}
+@media (forced-colors:active){.library-remove,.segment-companion button{border:1px solid ButtonText}}

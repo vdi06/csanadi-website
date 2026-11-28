@@ -1,8 +1,9 @@
-import {checkedCalendar} from "../calendar-data.js?v=2.83";
-import {checkedDocumentCenter} from "../document-data.js?v=2.83";
-import {checkedMediaCenter} from "../media-data.js?v=2.83";
-import {recordDataLoad} from "../layout-health.js?v=2.83";
-import {expandMediaCatalog} from "./media-catalog.js?v=2.83";
+import {fetchJSON} from "./json-transport.js?v=2.84";
+import {checkedCalendar} from "../calendar-data.js?v=2.84";
+import {checkedDocumentCenter} from "../document-data.js?v=2.84";
+import {checkedMediaCenter} from "../media-data.js?v=2.84";
+import {recordDataLoad} from "../layout-health.js?v=2.84";
+import {expandMediaCatalog} from "./media-catalog.js?v=2.84";
 export const DOMAIN_FILES=Object.freeze({news:"news/public.json",calendar:"calendar/school-year.json",documents:"documents/catalog.json",media:"media/catalog.json"});
 const base=new URL("../../data/",import.meta.url), pending=new WeakMap(), recordsCache=new WeakMap();
 export function assembleDomains(config, records){
@@ -26,7 +27,7 @@ export async function loadDomain(config,id){
 // A frissítő olvasás nem írja felül a már érvényesített teljes konfigurációt.
 const revalidating=new WeakMap();
 function requestDomain(config,id,refresh=false){
- return (async()=>{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000),start=performance.now();try{const u=new URL(DOMAIN_FILES[id],base);u.searchParams.set("v",config.release);const response=await fetch(u,{signal:controller.signal,...(refresh?{cache:"no-cache"}:{})});if(!response.ok)throw Error("Adatkör HTTP "+response.status);const text=await response.text(),record=JSON.parse(text);if(record.id!==id||record.release!==config.release||record.schema!=="domain-1"||!record.data||typeof record.data!=="object"||(id==='news'&&!Array.isArray(record.data)))throw Error("Hibás adatkör");recordDataLoad("domain",id,new TextEncoder().encode(text).length,performance.now()-start);return record;}catch(error){recordDataLoad("domain",id,0,0,false);throw error;}finally{clearTimeout(timer);}})();
+ return (async()=>{try{const u=new URL(DOMAIN_FILES[id],base);u.searchParams.set('v',config.release);const {data:record,bytes,elapsed}=await fetchJSON(u,{refresh});if(record.id!==id||record.release!==config.release||record.schema!=="domain-1"||!record.data||typeof record.data!=="object"||(id==='news'&&!Array.isArray(record.data)))throw Error("Hibás adatkör");recordDataLoad("domain",id,bytes,elapsed);return record;}catch(error){recordDataLoad("domain",id,0,0,false);throw error;}})();
 }
 export async function revalidateDomain(config,id){
  checkManifest(config);if(!Object.hasOwn(DOMAIN_FILES,id))throw Error("Ismeretlen adatkör");

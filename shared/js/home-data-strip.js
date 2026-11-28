@@ -1,13 +1,13 @@
-import {selectFooterTimeline,budapestDay,timelineStatusLabel} from './components/footer-timeline-model.js?v=2.83';
-import {revalidateDomain,ensureDocuments} from './data/domain-loader.js?v=2.83';
-import {checkedNews} from './menu-data.js?v=2.83';
-import {addTimelineControls} from './components/timeline-controls.js?v=2.83';
-import {createHistoryExplorer} from './components/history-explorer.js?v=2.83';
-import {createChartPanel,animateCounter} from './components/svg-charts.js?v=2.83';
-import {getPersonal,patchPersonal} from './state/personal-preferences.js?v=2.83';
-import {verifiedSports,filterSports,groupYears,loadHistory} from "./components/number-model.js?v=2.83";
-import { element as el } from './dom.js?v=2.83';
-import { openContentDialog } from './content-expansion.js?v=2.83';
+import {selectFooterTimeline,budapestDay,timelineStatusLabel} from './components/footer-timeline-model.js?v=2.84';
+import {revalidateDomain,ensureDocuments} from './data/domain-loader.js?v=2.84';
+import {checkedNews} from './menu-data.js?v=2.84';
+import {addTimelineControls} from './components/timeline-controls.js?v=2.84';
+import {createHistoryExplorer} from './components/history-explorer.js?v=2.84';
+import {createChartPanel,animateCounter} from './components/svg-charts.js?v=2.84';
+import {getPersonal,patchPersonal} from './state/personal-preferences.js?v=2.84';
+import {verifiedSports,filterSports,groupYears,loadHistory} from "./components/number-model.js?v=2.84";
+import { element as el } from './dom.js?v=2.84';
+import { openContentDialog } from './content-expansion.js?v=2.84';
 
 // Every number is derived from the current JSON, never from a decorative sample.
 export function homeDataMetrics(config) {

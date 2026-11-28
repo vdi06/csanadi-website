@@ -1,7 +1,7 @@
-import {element as el} from '../dom.js?v=2.83';
-import {calendarEntries,addDayForExport} from '../calendar-data.js?v=2.83';
-import {downloadLocal} from './local-files.js?v=2.83';
-import {registerAdaptiveState} from '../state/component-state.js?v=2.83';
+import {element as el} from '../dom.js?v=2.84';
+import {calendarEntries,addDayForExport} from '../calendar-data.js?v=2.84';
+import {downloadLocal} from './local-files.js?v=2.84';
+import {registerAdaptiveState} from '../state/component-state.js?v=2.84';
 const escapeICS=s=>String(s??'').replace(/\\/g,'\\\\').replace(/\r?\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');
 const day=s=>s.replace(/-/g,'');
 export function calendarICS(entries){const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Csanadi//Tanév//HU','CALSCALE:GREGORIAN'];for(const e of entries){lines.push('BEGIN:VEVENT','UID:'+e.id+'@csanadi.local','DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z'),'DTSTART;VALUE=DATE:'+day(e.date),'DTEND;VALUE=DATE:'+day(addDayForExport(e.endDate||e.date)),'SUMMARY:'+escapeICS(e.title),'DESCRIPTION:'+escapeICS('Tájékoztató jellegű, intézményi ellenőrzés szükséges. '+(e.summary||'')),'STATUS:TENTATIVE','END:VEVENT');}lines.push('END:VCALENDAR');return lines.flatMap(line=>{const out=[];let part='';for(const ch of line){if(new TextEncoder().encode(part+ch).length>75){out.push(part);part=' ';}part+=ch;}out.push(part);return out;}).join('\r\n')+'\r\n';}
